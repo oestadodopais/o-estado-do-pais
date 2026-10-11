@@ -1,0 +1,49 @@
+PLANTA selo com outro cliente: K16 · origem «rp4n-orcamento»: a origem exportada não identifica um cliente da lista fechada
+PLANTA agente do utilizador como cliente: K16 · origem «rp4n-orcamento»: a origem exportada não identifica um cliente da lista fechada
+PLANTA tipo do selo apagado: K16 · origem «rp4n-orcamento»: a origem exportada não tem o selo completo
+PLANTA selo inteiro apagado: K16 · origem «rp4n-orcamento»: a origem exportada não tem o selo completo
+PLANTA nome do projeto de volta numa família: K17 · famílias · oe-2026-despesa-funcao-01, oe-2026-despesa-funcao-02, oe-2026-despesa-funcao-03, oe-2026-despesa-funcao-04, oe-2026-despesa-funcao-05, oe-2026-despesa-funcao-06, oe-2026-despesa-funcao-07, oe-2026-despesa-funcao-08, oe-2026-despesa-funcao-09, oe-2026-despesa-funcao-10, parte 1 («É o que a administração central prevê gastar nesta função…»): o nome do projeto não pode apoiar uma frase
+PLANTA nome do projeto de volta numa série: K17 · séries · «serie-ihpc-rendas-variacao-homologa», parte 1 («É quanto mudaram»): o nome do projeto não pode apoiar uma frase
+PLANTA ausência declarada quando há excerto: K17 · famílias · avisos-pt2030-abertos, parte 1 («A fonte publica este número sem o definir por palavras.»): a ausência não corresponde à falta do excerto
+PLANTA seleção calculada sem resumo do ficheiro: K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): a seleção calculada não tem ficheiros selados iguais aos Excel lidos
+PLANTA nome numa alternativa simples: K17 · famílias · oe-2026-despesa-funcao-01, oe-2026-despesa-funcao-02, oe-2026-despesa-funcao-03, oe-2026-despesa-funcao-04, oe-2026-despesa-funcao-05, oe-2026-despesa-funcao-06, oe-2026-despesa-funcao-07, oe-2026-despesa-funcao-08, oe-2026-despesa-funcao-09, oe-2026-despesa-funcao-10, parte 1 («É o que a administração central prevê gastar nesta função…»): o nome do projeto não pode apoiar uma frase
+PLANTA nome numa alternativa aninhada: K17 · famílias · oe-2026-despesa-funcao-01, oe-2026-despesa-funcao-02, oe-2026-despesa-funcao-03, oe-2026-despesa-funcao-04, oe-2026-despesa-funcao-05, oe-2026-despesa-funcao-06, oe-2026-despesa-funcao-07, oe-2026-despesa-funcao-08, oe-2026-despesa-funcao-09, oe-2026-despesa-funcao-10, parte 1 («É o que a administração central prevê gastar nesta função…»): o nome do projeto não pode apoiar uma frase
+PLANTA nome misturado com uma origem válida: K17 · séries · «serie-ihpc-rendas-variacao-homologa», parte 1 («É quanto mudaram»): o nome do projeto não pode apoiar uma frase
+PLANTA texto simples numa página construída (pt): RP4N: uma página de leitor contém uma marca de informação por confirmar
+PLANTA marca em inglês numa página construída (pt): RP4N: uma página de leitor contém uma marca de informação por confirmar
+PLANTA texto partido numa página construída (pt): RP4N: uma página de leitor contém uma marca de informação por confirmar
+PLANTA marca sem texto numa página construída (pt): RP4N: uma página de leitor contém uma marca de informação por confirmar
+PLANTA texto simples numa página construída (en): RP4N: uma página de leitor contém uma marca de informação por confirmar
+PLANTA marca em inglês numa página construída (en): RP4N: uma página de leitor contém uma marca de informação por confirmar
+PLANTA texto partido numa página construída (en): RP4N: uma página de leitor contém uma marca de informação por confirmar
+PLANTA marca sem texto numa página construída (en): RP4N: uma página de leitor contém uma marca de informação por confirmar
+PLANTA marca num documento citado (pt): RP4N: uma página de leitor contém uma marca de informação por confirmar
+PLANTA marca num documento citado (en): RP4N: uma página de leitor contém uma marca de informação por confirmar
+RP4N: plantas exercitadas, 21 plantas com a mensagem afirmada
+PLANTA PRR coluna inventada: K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): a coluna calculada não está no cabeçalho selado
+PLANTA PRR outro Excel plausível: K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): a seleção calculada não tem ficheiros selados iguais aos Excel lidos
+PLANTA PRR instantâneo alterado: K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): a seleção calculada não tem ficheiros selados iguais aos Excel lidos
+PLANTA PRR seleção alargada: K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): a seleção da casa difere da conta refeita nos Excel
+PLANTA PRR soma alterada: K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): o valor difere da soma conferida nos Excel selados
+PLANTA PRR filtro promovido a fonte: K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): cita o campo «document.computed_over.filter», que não pode apoiar
+PLANTA PRR cabeçalho inventado: K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): o literal não foi lido no cabeçalho ou nas células do Excel selado
+RP4N-d: plantas exercitadas, 28 plantas acumuladas com a mensagem afirmada
+PLANTA recorte mensal numa linha anual: K17 · famílias · oe-2026-despesa-efetiva-administracao-central-seguranca-social, parte 1 («É a despesa efetiva da administração central e da seguran…»): o recorte de janeiro a agosto não apoia uma linha anual
+PLANTA definição retirada: rp4n-diferencas-consolidacao: K17 · famílias · oe-2026-diferencas-consolidacao-funcional, execucao-2026-07-diferencas-consolidacao-funcional, parte 1 («É a diferença entre os registos de despesa e de receita d…»): apoia-se em «rp4n-diferencas-consolidacao», que não está declarada em ORIGENS_DAS_DEFINICOES
+PLANTA definição retirada: rp4n-saldos-gerencia: K17 · famílias · oe-2026-receita-efetiva-administracao-central, execucao-2026-07-receita-efetiva-administracao-central, execucao-2026-08-receita-efetiva-administracao-central, parte 2 («: o que ela recebe sem contar os recebimentos de ativos e…»): apoia-se em «rp4n-saldos-gerencia», que não está declarada em ORIGENS_DAS_DEFINICOES
+RP4N-d documental: plantas exercitadas, 31 plantas e controlos de classificação e de definição
+RP4N-d nota: PASS, ausência da explicação não selada em todas as linhas
+PLANTA legenda da pensão retirada: K17 · famílias · penalizacao-antecipacao-um-ano-neutra, parte 1 («É a redução da pensão calculada para a reforma antecipada…»): cita «Decrementos por reforma antecipada: caso geral», que não está no campo «excerpt» da linha «penalizacao-antecipacao-um-ano-neutra»
+RP4N-d final: plantas exercitadas, 32 plantas com mensagem afirmada
+PLANTA despejo dos eixos no excerto da pensão: RP4N-e: o excerto da pensão deve conter só o rótulo, o valor e a nota da fonte
+PLANTA paráfrase da ausência: K17 · famílias · avisos-pt2030-abertos, parte 1 («Os avisos consultados não definem por palavras esta conta…»): a ausência não corresponde à falta do excerto
+PLANTA despesa bruta reintroduzida sem definição: oe-2026-cem-euros-ministerio-administracao-interna: termo sem definição
+PLANTA origem de outro publicador: K17 · famílias · oe-2026-cem-euros-funcao-01, oe-2026-cem-euros-funcao-02, oe-2026-cem-euros-funcao-03, oe-2026-cem-euros-funcao-04, oe-2026-cem-euros-funcao-05, oe-2026-cem-euros-funcao-06, oe-2026-cem-euros-funcao-07, oe-2026-cem-euros-funcao-08, oe-2026-cem-euros-funcao-09, oe-2026-cem-euros-funcao-10, parte 2 (« que o Orçamento prevê»): rp4n-orcamento, oe-2026-cem-euros-funcao-01: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+PLANTA segunda fonte sem declaração na linha: K17 · famílias · evora-vab-empresarial, parte 2 («: o valor do que produzem menos o valor dos bens e serviç…»): rp4n-vab, evora-vab-empresarial-2024: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+PLANTA linha retirada num cartão plantado: RP4N-e: uma linha retirada chegou a uma página: ciclo-substituicao-condutas
+PLANTA unidade plural com um aviso (pt): RP4N-e: a unidade dos avisos não concorda com o valor
+PLANTA unidade plural com um aviso (en): RP4N-e: a unidade dos avisos não concorda com o valor
+PLANTA água novamente atribuída à APA: K17 · famílias · agua-nao-faturada-portugal, parte 1 («É a parte da água que entra no sistema e não é faturada.»): rp4n-agua-nao-faturada, agua-nao-faturada-portugal-2024: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+PLANTA origem da água apagada do recibo (pt): K17 · recibo · pt · agua-nao-faturada-portugal-2024: a origem visível da definição perdeu o documento ou o excerto
+PLANTA origem da água apagada do recibo (en): K17 · recibo · en · agua-nao-faturada-portugal-2024: a origem visível da definição perdeu o documento ou o excerto
+RP4N-e: PASS, 43 plantas e auditoria íntegra

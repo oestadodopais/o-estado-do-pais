@@ -910,3 +910,256 @@ O gancho local `PreToolUse safety_guard.py` rejeitou a eliminação forçada do 
 ### Números do relatório
 
 `d/numeros-relatorio.json` transcreve o resultado do mapa e o valor da linha da pensão. Para o diagnóstico histórico da voz, lê o total no registo e deriva as ocorrências restantes subtraindo as duas declarações antigas retiradas no commit do inventário. Essa discriminação é uma derivação do diagnóstico guardado, não uma nova contagem dos HTML históricos. O pacote conserva a saída do conferidor numérico.
+
+## A passagem RP4-n-e
+
+### Resultado e âmbito da retoma
+
+A passagem corrige a definição da água, retira as condutas da publicação, recorta a prova da pensão e fecha as alterações determinadas pelo mandato. A retoma conservou os commits anteriores. O estado inicial ainda tinha a definição da APA na família da ERSAR; a primeira corrida completa recusou-a. A corrida interrompida pelo limite de capacidade não tinha códigos e não foi contada como prova. A tentativa concluída e recusada fica em `portoes-e-tentativa-retoma/`. A tentativa seguinte passou a água e detetou declarações antigas da língua: a unidade dos avisos constava das duas tabelas e a unidade da linha retirada ainda constava do dicionário. Removeram-se as declarações obsoletas e a conferência passou a reconhecer também a forma singular produzida para as linhas traduzidas. O diagnóstico fica em `portoes-e-tentativa-lingua/`. A corrida seguinte terminou o build a zero e encontrou expectativas antigas no verify: a guarda dos campos ainda não incluía a retirada e a segunda fonte, e a acessibilidade não recebia o valor ao conferir a unidade singular. As expectativas foram alinhadas com o formato autorizado, sem retirar as verificações. Essa tentativa fica em `portoes-e-tentativa-guardas/`. A revisão final da lista de fontes encontrou entradas de concelhos sem nome de família, comparadas indevidamente com a primeira entrada antiga. O guião passou a identificar cada concelho e a recusar entradas anónimas; a lista foi regenerada só com as frases efetivamente alteradas. A corrida verde anterior conserva-se em `portoes-e-tentativa-inventario/`, e os portões do sítio repetiram-se na cabeça final do guião. O motor permaneceu na mesma cabeça; o registo final do seu portão foi conservado, sem apresentar a cópia como uma nova corrida.
+
+O primeiro commit desta passagem foi o dos registos da direção, antes das alterações. A lista abaixo vem do histórico dos dois repositórios. Os identificadores dos achados são os da leitura a frio; as quantidades e códigos desta secção são lidos dos registos por guião, com a transcrição em `e/numeros-relatorio.json`.
+
+### Achado a achado
+
+| Achado | O que mudou ou ficou reservado | Proteção e prova |
+|---|---|---|
+| 1, 4, 5, 8 e 10 | Eram estragos plantados nas cópias do pacote. Não foram tratados como defeitos do código. | Decisão expressa do mandato e registo `PLANTAS-RP4N-d-2026-10-07.json`; conservadas as asserções reais. |
+| 2 | A família da água passou da APA para o RASARP da ERSAR. O publicador, o documento, a página e o excerto chegam ao recibo nas duas edições. K17 exige o publicador da linha ou segunda fonte declarada nela com recibo. | Plantas de publicador diferente, segunda fonte apagada, água atribuída à APA, página do PDF trocada e origem visível retirada. |
+| 3 | A linha das condutas conserva a marca no livro bruto, com `publication: withdrawn`; sai do carregador público, dos recibos, cartões e índices. As contagens do Método acompanham a publicação. | Planta de referência à linha retirada num cartão; inspeção de todos os HTML em `e/retirada.json`. |
+| 6 | O excerto da pensão conserva apenas o rótulo da figura, o valor e a nota de fonte, com a página. O nome evita a neutralidade que a fonte não afirma. O identificador fica reservado para migração no bloco dos recibos, RP4N-11. | Plantas de legenda retirada e de despejo dos eixos; SHA do PDF e leitura da página no motor. |
+| 7 | A ausência usa exatamente «A fonte publica este número sem o definir por palavras.» e «The source publishes this number without defining it in words.». A unidade concorda no singular e no plural nas duas edições. As marcas de publicador, documento e data do PT2030 continuam aceites pelo mandato para o bloco dos recibos. | Plantas de paráfrase da ausência e de unidade plural com um aviso; conferência de ausência versus excerto. |
+| 9 | A eliminação do ramo antigo pertence ao diretor. Na conferência desta retoma, a referência já não existe, e a consulta da pasta de leitura por HEAD e por todos os ramos vem vazia. Esta sessão não apagou ramos. | RP4N-10 deixou de se observar: comandos, códigos e saídas em `e/historia.json`. |
+| 11 | O inventário enumera por frase os corpos alojados no motor, os recibos e os resumos. O pacote seguinte tem de os incluir. | `inventariar-fontes-e.mjs` relê os bytes e recusa ficheiro ausente ou resumo diferente; lista em `e/fontes-por-frase.json` e `.md`. |
+| 12 | O nome PRR vencido lê a data do instantâneo da computação. As derivadas conservam a seleção de beneficiários intermediários e diretos com sede em Évora. | Mutação da data com asserção do título, asserções das derivadas e plantas da seleção, da coluna, dos ficheiros e da soma. |
+| 13 | O recorte do orçamento anual conserva o título e o quadro anual, sem o período da execução mensal. | Planta do recorte mensal numa linha anual; asserção do cabeçalho anual e da ausência do período mensal no motor. |
+| 14 | Caminhos nos briefs antigos e `Path.home()` do extrator ficam para higiene, RP4N-12. Não foram corrigidos nesta passagem. | A limpeza desta entrega abrange os ficheiros novos e os registos, com prova em `e/privacidade-retoma.json` e nos registos de limpeza dos portões; não se declara saneada a dívida antiga. |
+| 15 | Marcas em `meta` e `og:description` ficam para higiene, RP4N-13. | Sem expansão da célula nesta passagem, por decisão expressa. |
+| 16 | A frase dos ministérios evita «despesa bruta» e refere o total inscrito no mapa por ministérios. | Planta que reintroduz o termo sem definição. |
+| 17 | Mantida a integridade dos ficheiros do código. A forma do próximo pacote cabe à direção. | Histórico e inventário de corpos por frase; os estragos das cópias não foram importados para os repositórios. |
+| 18 | Portões inteiros repetidos na cabeça atual do código. | Códigos e cabeças de início e fim em `portoes-e/`. |
+| 19 | Séries com a metade do motor e travessia com origem repetidas em comandos separados. | `series.codigo`, `cruzamento.codigo` e registos correspondentes; nova execução após o commit final. |
+| 20 | Conservados os resumos dos exportados e a lista fechada de clientes. A origem da água passa a ser a ERSAR. | Plantas de cliente, selo, resumo e página; conferência dos corpos no motor. |
+| 21 | K17 conserva o controlo de coluna, seleção e ausência sem a contar como definição selada. | Plantas de coluna inventada, seleção alargada e ausência onde existe excerto. |
+| 22 | Conservada a recusa das marcas abrangidas e a separação das ausências aceites. Metadados continuam reservados para higiene pelo achado 15. | Plantas de texto simples, partido, marca inglesa e marca sem texto; não se declara coberta a pendência das meta. |
+| 23 | Conservadas as notas de alcance, a frase inglesa do orçamento, o VAB e o recorte da Madeira. A frase dos ministérios evita o termo sem definição. | Plantas das definições e da reintrodução de despesa bruta; auditoria das famílias nas duas edições. |
+| 24 | Capturas refeitas na cabeça do código; histórico e trailers conservados. Não se inventou custo da retoma. | Manifesto com versão e SHA-256 de cada captura; confronto dos bytes e leitura visual. |
+
+### A definição da água encontrada
+
+A ERSAR define o indicador na página física e impressa 106 do RASARP, volume referido no título «RASARP 2025, volume 1, página 106, AA08 Água não faturada». A página foi extraída e vista renderizada. O excerto literal é:
+
+> O indicador é definido como a percentagem de água entrada
+> no sistema que não é faturada (conceito a aplicar a entidades
+> gestoras de sistemas em alta e em baixa).
+
+O corpo foi obtido pelo cliente `core.http.HttpClient.condicional`, em `2026-10-11T08:13:13Z`, e ficou em `content/13 Dominios/source/rp4n/rasarp2025-volume1.pdf`, SHA-256 `cd913fa3af3c782154fbf015c74d4b93005c2fc7f65741e33ac27aba6a829a67`. O recibo é `content/13 Dominios/source/rp4n/rasarp2025-volume1.pedido.json`. O endereço veio do índice oficial e da lista de publicações servida pela ERSAR. Os pedidos usaram a confiança TLS nativa do sistema, com validação ativa, sem desligar a verificação de certificados. A cópia da página vista fica em `e/rasarp-p106.png`.
+
+Cadeia alojada de descoberta do documento:
+
+- `content/13 Dominios/source/rp4n/rasarp-indice.html`, SHA-256 `64299e837cd2a212a3a46aec42302c5a010aad0ab9742e17b2899b8391dfefc5`.
+
+- `content/13 Dominios/source/rp4n/rasarp-indice.pedido.json`, SHA-256 `91f6f5729e7ce611c14abeb1524cc5b8b3523b346355fb514056ae6421faf65f`.
+
+- `content/13 Dominios/source/rp4n/rasarp-lista.json`, SHA-256 `00d709c57304a830defd9d8c4b493b70c356690bfb9a38f7cb97ce044263f050`.
+
+- `content/13 Dominios/source/rp4n/rasarp-lista.pedido.json`, SHA-256 `3a2d679cc7217b625443b4354d118ae8ba7ff5847b6a1de3f3f5c80a86ef6c23`.
+
+O acesso ao relatório não autoriza republicar as condutas: continua por resolver a correspondência entre a fonte, o cálculo e o rótulo da linha retirada, RP4N-8. Não se alargou o mandato a essa investigação.
+
+### Plantas e mensagens observadas
+
+As plantas do sítio produziram 43 recusas afirmadas. As mensagens seguintes são transcritas de `e/plantas-sitio.json`; incluem as novas plantas e as regressões conservadas. As mutações do título PRR e as asserções de valor, recorte e seleção têm de passar além destas recusas.
+
+- **selo com outro cliente**: K16 · origem «rp4n-orcamento»: a origem exportada não identifica um cliente da lista fechada.
+
+- **agente do utilizador como cliente**: K16 · origem «rp4n-orcamento»: a origem exportada não identifica um cliente da lista fechada.
+
+- **tipo do selo apagado**: K16 · origem «rp4n-orcamento»: a origem exportada não tem o selo completo.
+
+- **selo inteiro apagado**: K16 · origem «rp4n-orcamento»: a origem exportada não tem o selo completo.
+
+- **nome do projeto de volta numa família**: K17 · famílias · oe-2026-despesa-funcao-01, oe-2026-despesa-funcao-02, oe-2026-despesa-funcao-03, oe-2026-despesa-funcao-04, oe-2026-despesa-funcao-05, oe-2026-despesa-funcao-06, oe-2026-despesa-funcao-07, oe-2026-despesa-funcao-08, oe-2026-despesa-funcao-09, oe-2026-despesa-funcao-10, parte 1 («É o que a administração central prevê gastar nesta função…»): o nome do projeto não pode apoiar uma frase.
+
+- **nome do projeto de volta numa série**: K17 · séries · «serie-ihpc-rendas-variacao-homologa», parte 1 («É quanto mudaram»): o nome do projeto não pode apoiar uma frase.
+
+- **ausência declarada quando há excerto**: K17 · famílias · avisos-pt2030-abertos, parte 1 («A fonte publica este número sem o definir por palavras.»): a ausência não corresponde à falta do excerto.
+
+- **seleção calculada sem resumo do ficheiro**: K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): a seleção calculada não tem ficheiros selados iguais aos Excel lidos.
+
+- **nome numa alternativa simples**: K17 · famílias · oe-2026-despesa-funcao-01, oe-2026-despesa-funcao-02, oe-2026-despesa-funcao-03, oe-2026-despesa-funcao-04, oe-2026-despesa-funcao-05, oe-2026-despesa-funcao-06, oe-2026-despesa-funcao-07, oe-2026-despesa-funcao-08, oe-2026-despesa-funcao-09, oe-2026-despesa-funcao-10, parte 1 («É o que a administração central prevê gastar nesta função…»): o nome do projeto não pode apoiar uma frase.
+
+- **nome numa alternativa aninhada**: K17 · famílias · oe-2026-despesa-funcao-01, oe-2026-despesa-funcao-02, oe-2026-despesa-funcao-03, oe-2026-despesa-funcao-04, oe-2026-despesa-funcao-05, oe-2026-despesa-funcao-06, oe-2026-despesa-funcao-07, oe-2026-despesa-funcao-08, oe-2026-despesa-funcao-09, oe-2026-despesa-funcao-10, parte 1 («É o que a administração central prevê gastar nesta função…»): o nome do projeto não pode apoiar uma frase.
+
+- **nome misturado com uma origem válida**: K17 · séries · «serie-ihpc-rendas-variacao-homologa», parte 1 («É quanto mudaram»): o nome do projeto não pode apoiar uma frase.
+
+- **texto simples numa página construída (pt)**: RP4N: uma página de leitor contém uma marca de informação por confirmar.
+
+- **marca em inglês numa página construída (pt)**: RP4N: uma página de leitor contém uma marca de informação por confirmar.
+
+- **texto partido numa página construída (pt)**: RP4N: uma página de leitor contém uma marca de informação por confirmar.
+
+- **marca sem texto numa página construída (pt)**: RP4N: uma página de leitor contém uma marca de informação por confirmar.
+
+- **texto simples numa página construída (en)**: RP4N: uma página de leitor contém uma marca de informação por confirmar.
+
+- **marca em inglês numa página construída (en)**: RP4N: uma página de leitor contém uma marca de informação por confirmar.
+
+- **texto partido numa página construída (en)**: RP4N: uma página de leitor contém uma marca de informação por confirmar.
+
+- **marca sem texto numa página construída (en)**: RP4N: uma página de leitor contém uma marca de informação por confirmar.
+
+- **marca num documento citado (pt)**: RP4N: uma página de leitor contém uma marca de informação por confirmar.
+
+- **marca num documento citado (en)**: RP4N: uma página de leitor contém uma marca de informação por confirmar.
+
+- **PRR coluna inventada**: K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): a coluna calculada não está no cabeçalho selado.
+
+- **PRR outro Excel plausível**: K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): a seleção calculada não tem ficheiros selados iguais aos Excel lidos.
+
+- **PRR instantâneo alterado**: K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): a seleção calculada não tem ficheiros selados iguais aos Excel lidos.
+
+- **PRR seleção alargada**: K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): a seleção da casa difere da conta refeita nos Excel.
+
+- **PRR soma alterada**: K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): o valor difere da soma conferida nos Excel selados.
+
+- **PRR filtro promovido a fonte**: K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): cita o campo «document.computed_over.filter», que não pode apoiar.
+
+- **PRR cabeçalho inventado**: K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): o literal não foi lido no cabeçalho ou nas células do Excel selado.
+
+- **recorte mensal numa linha anual**: K17 · famílias · oe-2026-despesa-efetiva-administracao-central-seguranca-social, parte 1 («É a despesa efetiva da administração central e da seguran…»): o recorte de janeiro a agosto não apoia uma linha anual.
+
+- **definição retirada: rp4n-diferencas-consolidacao**: K17 · famílias · oe-2026-diferencas-consolidacao-funcional, execucao-2026-07-diferencas-consolidacao-funcional, parte 1 («É a diferença entre os registos de despesa e de receita d…»): apoia-se em «rp4n-diferencas-consolidacao», que não está declarada em ORIGENS_DAS_DEFINICOES.
+
+- **definição retirada: rp4n-saldos-gerencia**: K17 · famílias · oe-2026-receita-efetiva-administracao-central, execucao-2026-07-receita-efetiva-administracao-central, execucao-2026-08-receita-efetiva-administracao-central, parte 2 («: o que ela recebe sem contar os recebimentos de ativos e…»): apoia-se em «rp4n-saldos-gerencia», que não está declarada em ORIGENS_DAS_DEFINICOES.
+
+- **legenda da pensão retirada**: K17 · famílias · penalizacao-antecipacao-um-ano-neutra, parte 1 («É a redução da pensão calculada para a reforma antecipada…»): cita «Decrementos por reforma antecipada: caso geral», que não está no campo «excerpt» da linha «penalizacao-antecipacao-um-ano-neutra».
+
+- **despejo dos eixos no excerto da pensão**: RP4N-e: o excerto da pensão deve conter só o rótulo, o valor e a nota da fonte.
+
+- **paráfrase da ausência**: K17 · famílias · avisos-pt2030-abertos, parte 1 («Os avisos consultados não definem por palavras esta conta…»): a ausência não corresponde à falta do excerto.
+
+- **despesa bruta reintroduzida sem definição**: oe-2026-cem-euros-ministerio-administracao-interna: termo sem definição.
+
+- **origem de outro publicador**: K17 · famílias · oe-2026-cem-euros-funcao-01, oe-2026-cem-euros-funcao-02, oe-2026-cem-euros-funcao-03, oe-2026-cem-euros-funcao-04, oe-2026-cem-euros-funcao-05, oe-2026-cem-euros-funcao-06, oe-2026-cem-euros-funcao-07, oe-2026-cem-euros-funcao-08, oe-2026-cem-euros-funcao-09, oe-2026-cem-euros-funcao-10, parte 2 (« que o Orçamento prevê»): rp4n-orcamento, oe-2026-cem-euros-funcao-01: a origem tem outro publicador e não está declarada como segunda fonte com recibo.
+
+- **segunda fonte sem declaração na linha**: K17 · famílias · evora-vab-empresarial, parte 2 («: o valor do que produzem menos o valor dos bens e serviç…»): rp4n-vab, evora-vab-empresarial-2024: a origem tem outro publicador e não está declarada como segunda fonte com recibo.
+
+- **linha retirada num cartão plantado**: RP4N-e: uma linha retirada chegou a uma página: ciclo-substituicao-condutas.
+
+- **unidade plural com um aviso (pt)**: RP4N-e: a unidade dos avisos não concorda com o valor.
+
+- **unidade plural com um aviso (en)**: RP4N-e: a unidade dos avisos não concorda com o valor.
+
+- **água novamente atribuída à APA**: K17 · famílias · agua-nao-faturada-portugal, parte 1 («É a parte da água que entra no sistema e não é faturada.»): rp4n-agua-nao-faturada, agua-nao-faturada-portugal-2024: a origem tem outro publicador e não está declarada como segunda fonte com recibo.
+
+- **origem da água apagada do recibo (pt)**: K17 · recibo · pt · agua-nao-faturada-portugal-2024: a origem visível da definição perdeu o documento ou o excerto.
+
+- **origem da água apagada do recibo (en)**: K17 · recibo · en · agua-nao-faturada-portugal-2024: a origem visível da definição perdeu o documento ou o excerto.
+
+As plantas documentais do motor, lidas de `e/plantas-motor.log`:
+
+- segunda fonte com bytes diferentes: segunda fonte sem recibo conferido no motor.
+
+- água atribuída à APA: RO1: as origens ou os selos diferem da seleção e dos recibos.
+
+- água com outra página: RO1: o excerto difere da leitura literal do documento.
+
+- palavra acrescentada: RO1: o excerto difere da leitura literal do documento.
+
+- resumo de outro documento: RO1: o sha256 da origem difere do documento.
+
+- cliente inventado: RO1: as origens ou os selos diferem da seleção e dos recibos.
+
+- origem apagada: RO1: as origens ou os selos diferem da seleção e dos recibos.
+
+- caminho fora do motor: RO1: o ficheiro da origem não existe dentro do motor.
+
+### Ficheiros alojados por frase
+
+O inventário relido contém 32 entradas de frases e 42 caminhos distintos. A lista integral por frase, com caminho no motor e SHA-256, está em [fontes-por-frase.md](e/fontes-por-frase.md); a forma verificável é [fontes-por-frase.json](e/fontes-por-frase.json). O guião recusa qualquer corpo divergente. O pacote seguinte deve levar esses ficheiros e a cadeia de descoberta da ERSAR acima. As ausências e as frases da casa sem ficheiro citado ficam identificadas como tal; não se inventa uma origem.
+
+### Capturas e prova da retirada
+
+Foram geradas 12 capturas da água, do corte da pensão e do aviso, nas duas edições, às larguras 390, 1280 px. `e/capturas.json` guarda a versão da construção, cada resumo, a largura medida e os erros de página. Não houve erros de página nem transbordos horizontais. Os recibos HTML estão em `e/recibos/` e os PNG em `../../capturas/rp4n-2026-10-06/e/`.
+
+Foram vistas todas as capturas desta passagem, incluindo as zonas da definição, da prova e os rodapés. A água mostra a ERSAR e a página do relatório junto da frase; a pensão apresenta o recorte curto da figura; o aviso mostra a frase exata da ausência e a unidade no singular. Não se observou corte de conteúdo nem sobreposição introduzida pela alteração. As marcas de proveniência continuam visíveis nos campos reservados ao bloco dos recibos, incluindo source_url e excerpt da linha da água; o selo da definição é separado desses campos históricos. A dobra do excerto da definição aparece fechada nas capturas; a presença e o texto da prova dentro dela são conferidos pela célula e pelas plantas das duas edições.
+
+A prova `e/retirada.json` percorreu 7905 HTML e encontrou 0 referências ao identificador das condutas. A linha bruta continua conservada e retirada; não pertence ao carregador público. A identidade do conjunto foi selada como `255ef1faa5cefcb3494a2f5ae07b7d497543d414d6674409f088158d9ddc788b`. As páginas inexistentes são:
+
+- `dist/livro-razao/ciclo-substituicao-condutas/index.html`.
+
+- `dist/en/ledger/ciclo-substituicao-condutas/index.html`.
+
+### Cabeças e portões
+
+Cabeça do código do sítio: `5727174ad9a25376242c197f2fe285e58a2510ac`. Cabeça do código e final do motor: `cc68172ca59254770493d01581b4b1cbcc5761a6`. A cabeça final do sítio é o commit seguinte, apenas com relatório, capturas e registos de prova, comunicada na entrega. A captura e o conjunto HTML provêm da cabeça do código. O início e o fim da corrida conservam a mesma cabeça.
+
+| Portão | Ficheiro | Código lido |
+|---|---|---:|
+| build | `portoes-e/build.codigo` | 0 |
+| verify | `portoes-e/verify.codigo` | 0 |
+| typecheck | `portoes-e/typecheck.codigo` | 0 |
+| motor | `portoes-e/motor.codigo` | 0 |
+| series | `portoes-e/series.codigo` | 0 |
+| cruzamento | `portoes-e/cruzamento.codigo` | 0 |
+
+Os portões inteiros do sítio correram pela tranca comum com `RESEARCHHUB_DIR` apontado ao motor. O motor correu o `core.gate` na cabeça do código, pela mesma tranca. Os códigos foram lidos depois de cada processo terminar. As conferências de séries e travessia com `--with-origin` são comandos separados, com ficheiro de código próprio, e voltam a correr na cabeça final depois do commit de provas.
+
+### Commits
+
+Registos primeiro, seguidos do código do sítio:
+
+```text
+a45cf028 docs(rp4n-e): registar leitura, plantas e mandato
+2c815466 fix(rp4n-e): recortar o excerto da pensão à medida
+a44d10a6 fix(rp4n-e): uniformizar ausências e concordar avisos
+24f97316 fix(rp4n-e): receber o recorte anual sem o período mensal
+5c95a6ab fix(rp4n-e): explicar a quota pelo total do mapa por ministérios
+629557b3 fix(rp4n-e): retirar as condutas da publicação conservando o livro
+cfd28a51 fix(rp4n-e): auditar também as linhas retiradas sem as publicar
+0345e2fd fix(rp4n-e): concordar também os títulos e a conferência das unidades
+c46a5ee5 fix(rp4n-e): datar o PRR vencido e alinhar as frases derivadas
+650029fd fix(rp4n-e): exigir o publicador da medida ou segunda fonte com recibo
+2aae0865 fix(rp4n-e): provar a retirada em qualquer página e conservar a auditoria do livro
+050ac3df fix(rp4n-e): concordar avisos nos cartões e provar o plural errado
+fcd54ba7 test(rp4n-e): plantar a reintrodução de despesa bruta sem definição
+f6b6b845 fix(rp4n-e): ligar a data no nome PRR ao campo da computação em todas as vistas
+4242cc24 docs(rp4n-e): sincronizar a voz e os rótulos com as linhas publicadas
+ba71725b test(rp4n-e): preparar os registos das plantas, fontes e capturas finais
+2f4383aa fix(rp4n-e): apoiar a água na ERSAR com a página junto da definição
+86fc5173 fix(rp4n-e): alinhar o dicionário com os avisos e a linha retirada
+60e41eb9 test(rp4n-e): conferir o novo formato e a unidade singular dos avisos
+5727174a fix(rp4n-e): identificar os concelhos na lista de fontes por frase
+```
+
+Motor:
+
+```text
+508fa25 fix(rp4n-e): separar o cabeçalho anual do período da execução
+38d3bf5 fix(rp4n-e): alinhar as contas PRR com os beneficiários selecionados
+e25d96e fix(rp4n-e): declarar e conferir as segundas fontes das definições
+cc68172 fix(rp4n-e): selar a definição da água no RASARP da ERSAR
+```
+
+Commits de código desta retoma no sítio:
+
+```text
+2f4383aa fix(rp4n-e): apoiar a água na ERSAR com a página junto da definição
+86fc5173 fix(rp4n-e): alinhar o dicionário com os avisos e a linha retirada
+60e41eb9 test(rp4n-e): conferir o novo formato e a unidade singular dos avisos
+5727174a fix(rp4n-e): identificar os concelhos na lista de fontes por frase
+```
+
+Commits de código desta retoma no motor:
+
+```text
+cc68172 fix(rp4n-e): selar a definição da água no RASARP da ERSAR
+```
+
+### Pendências e custo
+
+Ficam RP4N-8, a confirmação da fonte e do rótulo das condutas antes de qualquer republicação; RP4N-11, a migração do identificador da pensão; RP4N-12, a higiene dos caminhos antigos; RP4N-13, as marcas nos metadados; e os campos e chips de proveniência reservados ao bloco dos recibos. Mantém-se a pendência histórica RP4N-2 do novo acesso HTTP ao documento das pensões, cuja cópia local foi conferida. A revisão independente da direção e a composição do próximo pacote não são substituídas por esta construção. A definição da água deixou de ser pendência. A antiga RP4N-10 também não subsiste na conferência desta retoma: a referência do ramo antigo está ausente e a consulta da pasta de leitura vem vazia, sem eliminação feita por esta sessão. Não foi executado qualquer push.
+
+O alvo de custo do mandato já tinha sido ultrapassado antes da retoma: a mensagem de retoma da direção comunica «572 662 símbolos até parar». Esse valor é uma informação fornecida pela direção, não uma medição desta ferramenta. A retoma não expôs a linha «tokens used»; não se estima o custo adicional nem um total. O trabalho adicional incluiu a procura da nova publicação oficial da ERSAR, o alojamento e a leitura da página, a substituição da origem que o portão recusava e a repetição das provas nas cabeças corrigidas.
+
+A limitação de capacidade interrompeu a corrida anterior; uma execução sem ficheiro de código não foi convertida em sucesso. Esta secção substitui, para a entrega atual, as conclusões históricas sobre a APA e a disponibilidade do RASARP, sem apagar o registo das passagens anteriores.
