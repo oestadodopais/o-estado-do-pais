@@ -14320,9 +14320,9 @@
   "explicacoes": [
     {
       "slug": "dinheiro-do-estado-2026",
-      "quem": "Claude Opus 5.5",
-      "quando": "2026-10-06",
-      "o_que": "a primeira leitura (05.10.2026), a do EX1-b e a do EX1-c (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216, e as correções da leitura a frio), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X17 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam",
+      "quem": "Claude Opus 5.5 (EX1 a EX1-c); Codex gpt-6-astra (EX1-d)",
+      "quando": "2026-10-11",
+      "o_que": "a primeira leitura (05.10.2026), a do EX1-b e a do EX1-c (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216, e as correções da leitura a frio), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X17 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam; EX1-d: releitura dos apoios selados, correção dos juros e da referência à posição da execução, e saldo do mesmo perímetro com comparação explícita ao ano inteiro (acertos X18 a X20)",
       "origens": [
         "dados-gov-oe-despesa-funcional",
         "eurostat-cofog-divisao-01",
@@ -15417,6 +15417,303 @@
           ]
         },
         {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[0]",
+          "pt": "Até ",
+          "en": "By ",
+          "partes": [
+            {
+              "pt": "Até ",
+              "en": "By ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "acumulados de janeiro a agosto"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[2]",
+          "pt": ", as contas da administração central e da segurança social fecharam com um saldo de ",
+          "en": ", the accounts of central government and social security closed with a balance of ",
+          "partes": [
+            {
+              "pt": ", as contas da administração central e da segurança social fecharam com um saldo de ",
+              "en": ", the accounts of central government and social security closed with a balance of ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "nome",
+                  "literal": "da administração central e da segurança social"
+                },
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "name",
+                  "literal": "Saldo global"
+                },
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.locator",
+                  "literal": "Execução Acumulada"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[3].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[4]",
+          "pt": ", ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[5].positivo[0]",
+          "pt": "um excedente (recebeu mais do que gastou)",
+          "en": "a surplus (it took in more than it spent)",
+          "partes": [
+            {
+              "pt": "um excedente",
+              "en": "a surplus",
+              "classe": "conta"
+            },
+            {
+              "pt": " (recebeu mais do que gastou)",
+              "en": " (it took in more than it spent)",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "ressalva",
+                  "literal": "O saldo global é a receita efetiva menos a despesa efetiva"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[5].negativo[0]",
+          "pt": "um défice (gastou mais do que recebeu)",
+          "en": "a deficit (it spent more than it took in)",
+          "partes": [
+            {
+              "pt": "um défice",
+              "en": "a deficit",
+              "classe": "conta"
+            },
+            {
+              "pt": " (gastou mais do que recebeu)",
+              "en": " (it spent more than it took in)",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "ressalva",
+                  "literal": "O saldo global é a receita efetiva menos a despesa efetiva"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[5].zero[0]",
+          "pt": "um saldo nulo (recebeu o mesmo que gastou)",
+          "en": "a zero balance (it took in as much as it spent)",
+          "partes": [
+            {
+              "pt": "um saldo nulo",
+              "en": "a zero balance",
+              "classe": "conta"
+            },
+            {
+              "pt": " (recebeu o mesmo que gastou)",
+              "en": " (it took in as much as it spent)",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "ressalva",
+                  "literal": "O saldo global é a receita efetiva menos a despesa efetiva"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[6]",
+          "pt": "; o saldo acumulado está ",
+          "en": "; the cumulative balance is ",
+          "partes": [
+            {
+              "pt": "; o saldo acumulado está ",
+              "en": "; the cumulative balance is ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "name",
+                  "literal": "Saldo global"
+                },
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.locator",
+                  "literal": "Execução Acumulada"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].maior[0]",
+          "pt": "acima do que o Orçamento previa",
+          "en": "above what the Budget forecast",
+          "partes": [
+            {
+              "pt": "acima do que ",
+              "en": "above what ",
+              "classe": "conta"
+            },
+            {
+              "pt": "o Orçamento previa",
+              "en": "the Budget forecast",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.locator",
+                  "literal": "Orçamento Inicial"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].menor[0]",
+          "pt": "abaixo do que o Orçamento previa",
+          "en": "below what the Budget forecast",
+          "partes": [
+            {
+              "pt": "abaixo do que ",
+              "en": "below what ",
+              "classe": "conta"
+            },
+            {
+              "pt": "o Orçamento previa",
+              "en": "the Budget forecast",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.locator",
+                  "literal": "Orçamento Inicial"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].igual[0]",
+          "pt": "em linha com o que o Orçamento previa",
+          "en": "in line with what the Budget forecast",
+          "partes": [
+            {
+              "pt": "em linha com o que ",
+              "en": "in line with what ",
+              "classe": "conta"
+            },
+            {
+              "pt": "o Orçamento previa",
+              "en": "the Budget forecast",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.locator",
+                  "literal": "Orçamento Inicial"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[8]",
+          "pt": " para o ano inteiro (",
+          "en": " for the full year (",
+          "partes": [
+            {
+              "pt": " para o ano inteiro (",
+              "en": " for the full year (",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[9].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[10]",
+          "pt": ").",
+          "en": ").",
+          "partes": [
+            {
+              "pt": ").",
+              "en": ").",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
           "caminho": "seccoes[3].titulo",
           "pt": "A dívida e o saldo",
           "en": "Debt and the balance",
@@ -15841,8 +16138,8 @@
         },
         {
           "caminho": "naoDiz[0][0].se[0]",
-          "pt": "O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a de agosto está acima.",
-          "en": "The budget is a forecast: what is actually spent is read in the budget execution, month by month, and August’s is above.",
+          "pt": "O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto é a que esta explicação mostra acima.",
+          "en": "The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is the one this explainer shows above.",
           "partes": [
             {
               "pt": "O orçamento é uma previsão",
@@ -15886,8 +16183,8 @@
               ]
             },
             {
-              "pt": ", e a de agosto",
-              "en": ", and August’s",
+              "pt": ", e a execução até agosto",
+              "en": ", and the execution to August",
               "classe": "diz",
               "apoios": [
                 {
@@ -15898,8 +16195,8 @@
               ]
             },
             {
-              "pt": " está acima.",
-              "en": " is above.",
+              "pt": " é a que esta explicação mostra acima.",
+              "en": " is the one this explainer shows above.",
               "classe": "aponta",
               "secao": "execucao"
             }
@@ -15907,12 +16204,12 @@
         },
         {
           "caminho": "naoDiz[0][1].se[0]",
-          "pt": " Falta aqui o custo dos juros da dívida, que o Orçamento também prevê e que estes números não mostram.",
-          "en": " Missing here is the cost of the interest on the debt, which the Budget also forecasts and which these figures do not show.",
+          "pt": " Estes números não isolam o custo dos juros da dívida, que o Orçamento também prevê e que entra noutra classificação; quando as linhas dos juros existirem no livro-razão, esta explicação diz quanto são.",
+          "en": " These figures do not isolate the cost of the interest on the debt, which the Budget also forecasts and which falls under another classification; when the interest entries exist in the ledger, this explainer will say how much it is.",
           "partes": [
             {
-              "pt": " Falta aqui",
-              "en": " Missing here is",
+              "pt": " Estes números não isolam",
+              "en": " These figures do not isolate",
               "classe": "conta"
             },
             {
@@ -15945,8 +16242,25 @@
               ]
             },
             {
-              "pt": " e que estes números não mostram.",
-              "en": " and which these figures do not show.",
+              "pt": " e que entra noutra classificação",
+              "en": " and which falls under another classification",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "Classificação das Funções do Governo"
+                },
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "excerto",
+                  "literal": "Public debt transactions"
+                }
+              ]
+            },
+            {
+              "pt": "; quando as linhas dos juros existirem no livro-razão, esta explicação diz quanto são.",
+              "en": "; when the interest entries exist in the ledger, this explainer will say how much it is.",
               "classe": "conta"
             }
           ]
