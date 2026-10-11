@@ -63,7 +63,7 @@ try {
         if (tipo === 'correcoes') {
           const inicio = await p.locator('[data-explicacao-secao="execucao"]').boundingBox();
           const fim = await p.locator('[data-explicacao-paragrafo="naoDiz[0]"]').boundingBox();
-          opcoes = { path: ficheiro, clip: { x: 0, y: inicio.y, width: largura, height: fim.y + fim.height - inicio.y + 16 } };
+          opcoes = { path: ficheiro, fullPage: true, clip: { x: 0, y: inicio.y, width: largura, height: fim.y + fim.height - inicio.y + 16 } };
         }
         const bytes = await p.screenshot(opcoes);
         capturas.push({ lang, largura, tipo, ficheiro, sha256: createHash('sha256').update(bytes).digest('hex'), medida });
@@ -71,7 +71,7 @@ try {
       for (const id of ids.slice(2)) {
         await p.locator(`[data-explicacao-secao="execucao"] .claim`).filter({ has: p.locator(`[data-claim="${id}"]`) }).locator('a.src-chip').click();
         if (!new URL(p.url()).pathname.endsWith('/' + id)) throw Error('o selo não abriu o recibo do saldo');
-        if ((await p.locator('main').innerText()).indexOf(linhas.get(id).value) < 0) throw Error('o recibo não mostra o saldo');
+        if (!(await p.locator('main').innerText()).replace(/\s/g, ' ').includes(linhas.get(id).value.replace(/\s/g, ' '))) throw Error('o recibo não mostra o saldo');
         await p.goBack({ waitUntil: 'load' });
       }
       await ctx.close();
