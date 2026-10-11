@@ -122,7 +122,7 @@ import { parse, NodeType } from 'node-html-parser';
 
 import { loadClaims, POR_VERIFICAR, LEDGER_DIR } from '../src/lib/ledger.mjs';
 import { lerSeriesDoPortao } from './series-do-portao.mjs';
-import { UNIDADES, UNIDADES_EM_PORTUGUES } from '../src/i18n/unidades.mjs';
+import { UNIDADES, UNIDADES_EM_PORTUGUES, unidadeDaLinha } from '../src/i18n/unidades.mjs';
 import {
   LINGUA_DOS_TITULOS,
   linguaDoTituloDoDocumento,
@@ -408,7 +408,7 @@ for (const w of WORKS) {
 }
 
 /** O inglês que o dicionário produz, para reconhecer uma unidade já traduzida. */
-const INGLES_DAS_UNIDADES = new Set(Object.values(UNIDADES));
+const INGLES_DAS_UNIDADES = new Set([...Object.values(UNIDADES), ...claims.filter(c => Object.hasOwn(UNIDADES, c.unit)).map(c => unidadeDaLinha(c.unit, 'en', c.value).texto)]);
 
 /**
  * O NOME DE UMA LEI PORTUGUESA, tal como a casa e as fontes o escrevem: «Lei

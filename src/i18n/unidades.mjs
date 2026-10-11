@@ -55,6 +55,7 @@
  */
 export const UNIDADES = {
   '% do valor contratado': '% of contracted amount',
+  // RP4-n-e: unidade de contagem traduzida; o singular depende do valor.
   'avisos': 'notices',
   // OE1: tradução de dicionário da unidade monetária.
   'milhões de euros': 'million euros',
@@ -179,10 +180,6 @@ export const UNIDADES = {
   /* 1 linha (`correcoes-publicadas`). A casa: a rota inglesa do registo é
      `/en/corrections` (`src/lib/routes.mjs`). */
   correções: 'corrections',
-  /* 1 linha (`ciclo-substituicao-condutas`). Dicionário: «anos» é «years». A
-     linha tem documento e excerto «[a verificar]», e por isso não há inglês da
-     fonte; a palavra, essa, não depende de fonte nenhuma. */
-  anos: 'years',
   /* 1 linha. A fonte: «Percentage of individuals», no excerto de
      `competencias-digitais-2025`. */
   '% dos indivíduos': '% of individuals',
@@ -213,12 +210,6 @@ export const UNIDADES = {
  * está para que o rótulo não pareça traduzido quando não foi.
  */
 export const UNIDADES_EM_PORTUGUES = {
-  /* 2 linhas (`avisos-pt2030-abertos`, `avisos-pt2030-pessoas-singulares`). Um
-     «aviso» do Portugal 2030 é um acto administrativo com nome próprio, e as
-     duas linhas têm fonte e documento por confirmar: não há inglês do organismo
-     de onde tirar a palavra, e escolher entre «call» e «notice» seria a casa a
-     decidir o que a fonte quis dizer. */
-  avisos: 'sem inglês do organismo: as duas linhas têm fonte e documento «[a verificar]»',
   /* 1 linha (`factor-sustentabilidade-2026`). O factor de sustentabilidade é o
      nome que o relatório dá ao número, e a linha cita-o em português. */
   factor: 'é o nome que o relatório citado dá ao número, e não uma unidade de contagem',
