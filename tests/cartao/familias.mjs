@@ -384,6 +384,7 @@ export function conferirAuditoriaDasFamilias({
       if (!daFonte) todasNaFonte = false;
     }
     const declaradas = new Set(e.origens ?? []);
+    for (const k of chaves) for (const o of familias[k]?.origens ?? []) if (!usadas.has(o)) falha(`${quem}: a origem visível «${o}» não apoia a frase`);
     for (const o of declaradas) if (!usadas.has(o)) falha(`${quem}: a origem «${o}» está na lista e não apoia parte nenhuma`);
     for (const o of usadas) if (!declaradas.has(o)) falha(`${quem}: a origem «${o}» apoia uma parte e não está na lista`);
     if (todasNaFonte) contas.todas_na_fonte++; else { contas.alguma_da_casa++; contas.lista_da_casa.push(quem); }
@@ -522,6 +523,11 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
     esperado = normal(textoDaFrase(m ? /** @type {any} */ (m.nota)[lang] : ctx.doConcelho[f.chave]?.frase?.[lang]));
   } else {
     const d = ctx.familias[f.chave];
+    for (const origem of d?.origens ?? []) {
+      const bloco = cabeca.querySelector(`[data-def-origem="${origem}"]`);
+      const fonte = ORIGENS_DAS_DEFINICOES[origem];
+      if (!bloco || normal(bloco.querySelector(`[data-verbatim="origem-${origem}-excerto"]`)?.textContent ?? '') !== normal(fonte.excerto) || normal(bloco.querySelector(`[data-verbatim="origem-${origem}-documento"]`)?.textContent ?? '') !== normal(fonte.documento)) falha('a origem visível da definição perdeu o documento ou o excerto');
+    }
     if (d?.cartao) {
       const decl = /** @type {any} */ (LEITURAS_DAS_MEDIDAS)[d.cartao][lang];
       try {

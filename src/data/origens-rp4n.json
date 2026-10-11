@@ -396,28 +396,25 @@
     }
   },
   "rp4n-agua-nao-faturada": {
-    "publicador": "Agência Portuguesa do Ambiente",
-    "documento": "Eficiência hídrica - setor urbano",
-    "url": "https://rea.apambiente.pt/content/efici%C3%AAncia-h%C3%ADdrica-setor-urbano",
-    "lido": "2026-10-07",
+    "publicador": "ERSAR",
+    "documento": "RASARP 2025, volume 1, página 106, AA08 Água não faturada",
+    "url": "https://ersarwebsitedocsstorage.blob.core.windows.net/documents/docs/anuais-do-RASARP/rasarp-2025/rasarp2025-volume1.pdf",
+    "lido": "2026-10-11",
     "lingua": "pt",
-    "excerto": "É expresso em percentagem de água entrada no sistema que não é faturada.",
-    "recibo": "content/13 Dominios/source/rp4n/agua-apa.pedido.json",
+    "excerto": "O indicador é definido como a percentagem de água entrada\nno sistema que não é faturada (conceito a aplicar a entidades\ngestoras de sistemas em alta e em baixa).",
+    "recibo": "content/13 Dominios/source/rp4n/rasarp2025-volume1.pedido.json",
     "extracao": {
-      "caminho": [
-        "html"
-      ],
-      "inicio": "É expresso em percentagem de água entrada",
-      "fim": "</p>\n<p> </p>\n<p align=\"center\"><strong>Água não faturada – valores de referência",
-      "formato": "html"
+      "pagina": 106,
+      "inicio": "O indicador é definido como a percentagem de água entrada",
+      "fim": "Apresenta-se de seguida os valores de referência"
     },
     "selo": {
       "tipo": "rp4n",
-      "motor": "content/13 Dominios/source/rp4n/agua-apa.html",
-      "campo": "html",
-      "hora": "2026-10-07T09:56:44Z",
+      "motor": "content/13 Dominios/source/rp4n/rasarp2025-volume1.pdf",
+      "campo": "página física 106",
+      "hora": "2026-10-11T08:13:13Z",
       "cliente": "core.http.HttpClient.condicional",
-      "sha256": "72f86b8db94b091a1fd13804593fa58c3e484e1a422cb96a284e08b2467415d6"
+      "sha256": "cd913fa3af3c782154fbf015c74d4b93005c2fc7f65741e33ac27aba6a829a67"
     }
   },
   "rp4n-diferencas-consolidacao": {

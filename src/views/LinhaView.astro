@@ -94,6 +94,7 @@ import { t } from '../i18n/strings.mjs';
 import { LICENCA } from '../data/licenca.mjs';
 import { CONJUNTO } from '../lib/conjunto.mjs';
 import { LANGS } from '../lib/routes.mjs';
+import { FAMILIAS_DAS_LINHAS } from '../data/o-que-e-das-familias.mjs';
 import { familiaDaLinha, oQueEDaLinha, nomeNoRecibo, lugarNoRecibo, nomeDaFonteNoRecibo } from '../lib/o-que-e-o-numero.mjs';
 import Marcador from '../components/Marcador.astro';
 import { partesDaLeitura } from '../lib/leitura-da-medida.mjs';
@@ -112,8 +113,10 @@ const nomeRecibo = nomeNoRecibo(id, lang);
 const lugarRecibo = lugarNoRecibo(id, lang);
 const nomeDaFonte = nomeDaFonteNoRecibo(id);
 const oQueE = oQueEDaLinha(id, lang);
-const fontesDaDefinicao = (claim.definition_sources ?? []).map(fonte => Object.entries(ORIGENS_DAS_DEFINICOES)
+const fontesSecundariasDaDefinicao = (claim.definition_sources ?? []).map(fonte => Object.entries(ORIGENS_DAS_DEFINICOES)
   .find(([chave, origem]) => origem.publicador === fonte.publisher && origem.url === fonte.url)?.[0]).filter(Boolean);
+
+const fontesDaDefinicao = [...new Set([...fontesSecundariasDaDefinicao, ...(FAMILIAS_DAS_LINHAS[oQueE.chave]?.origens ?? [])])];
 
 const comparacaoDoCartao = familiaRecibo.tipo === 'cartao' ? partesDaLeitura(id, lang).comparacao : null;
 /* As perguntas das medidas fora dos painéis europeus têm as origens no

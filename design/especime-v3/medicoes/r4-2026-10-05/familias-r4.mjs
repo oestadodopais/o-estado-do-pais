@@ -1104,7 +1104,8 @@ const OUTRAS = [
   },
   {
     chaves: ['agua-nao-faturada-portugal'],
-    partes: [diz('É a parte da água que entra no sistema e não é faturada.', 'It is the share of water entering the system that is not billed.', O('rp4n-agua-nao-faturada', 'É expresso em percentagem de água entrada no sistema que não é faturada.'))],
+    mostrarOrigens: true,
+    partes: [diz('É a parte da água que entra no sistema e não é faturada.', 'It is the share of water entering the system that is not billed.', O('rp4n-agua-nao-faturada', 'percentagem de água entrada\nno sistema que não é faturada'))],
   },
   {
     chaves: ['penalizacao-antecipacao-um-ano-com-factor'],

@@ -5,7 +5,7 @@ import {parse} from 'node-html-parser';
 import {ORIGENS_DAS_DEFINICOES} from '../../src/data/figuras.mjs';
 import {loadClaims} from '../../src/lib/ledger.mjs';
 import {auditarPerguntas} from './perguntas.mjs';
-import {conferirAuditoriaDasFamilias, conferirAuditoriaDasSeries} from './familias.mjs';
+import {conferirAuditoriaDasFamilias, conferirAuditoriaDasSeries, cabecaDoRecibo, conferirCabecaDoRecibo, contextoDasFamilias, reguasDosCartoes} from './familias.mjs';
 import {conferirSemMarcadores} from '../../scripts/sem-marcadores.mjs';
 
 const auditoria = JSON.parse(fs.readFileSync('tests/cartao/leituras-provadas.json', 'utf8'));
@@ -236,6 +236,23 @@ export function conferirExcertoDaPensao(linha) {
  for(const [lang,errada] of [['pt','avisos'],['en','notices']]) {
   const html=parse(`<html lang="${lang}"><p class="linha-valor"><span data-claim="avisos-pt2030-pessoas-singulares">1</span> <span data-linha-campo="unit">${errada}</span></p></html>`);
   morde(`unidade plural com um aviso (${lang})`,conferirValorUnidade(html).erros,'a unidade dos avisos não concorda');
+ }
+}
+// A definição da água conserva a fonte da medida e a página visível nas duas edições.
+{
+ const origem=ORIGENS_DAS_DEFINICOES['rp4n-agua-nao-faturada'];
+ assert.equal(origem.publicador,loadClaims().get('agua-nao-faturada-portugal-2024').source);
+ assert.equal(origem.extracao.pagina,106);
+ const outras=structuredClone(ORIGENS_DAS_DEFINICOES);
+ outras['rp4n-agua-nao-faturada'].publicador='Agência Portuguesa do Ambiente';
+ morde('água novamente atribuída à APA',conferirAuditoriaDasFamilias({origens:outras}).erros,'outro publicador');
+ const ctx=contextoDasFamilias(),cartoes=reguasDosCartoes('dist');
+ for(const lang of ['pt','en']) {
+  const id='agua-nao-faturada-portugal-2024';
+  const cabeca=cabecaDoRecibo(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/${id}/index.html`,'utf8'));
+  assert.deepEqual(conferirCabecaDoRecibo(cabeca,id,lang,{ctx,cartoes}),[]);
+  cabeca.querySelector('[data-def-origem="rp4n-agua-nao-faturada"]').remove();
+  morde(`origem da água apagada do recibo (${lang})`,conferirCabecaDoRecibo(cabeca,id,lang,{ctx,cartoes}),'a origem visível da definição perdeu o documento ou o excerto');
  }
 }
 if(process.argv.includes('--registo-e')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/e/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');

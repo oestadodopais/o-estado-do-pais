@@ -51,7 +51,7 @@ for(const e of atual.familias){
  const arquivos=new Map();anda(e,ids,arquivos);ids.forEach(id=>daLinha(id,arquivos));
  if(e.cartao)anda(atual.medidas.find(m=>m.id===e.cartao),ids,arquivos);
  if(ids.includes('penalizacao-antecipacao-um-ano-neutra')){const y=fs.readFileSync('ledger/claims/penalizacao-antecipacao-um-ano-neutra.yml','utf8');ficheiro('content/13 Dominios/source/rp4n/pensoes-copia-alojada.pdf',y.match(/SHA-256 ([a-f0-9]{64})/)[1],'cópia anteriormente alojada da pensão, conferida na extração',arquivos);}
- frases.push({familias:keys,linhas:ids,folhas:e.folhas,ficheiros:[...arquivos.values()],estado:keys.includes('agua-nao-faturada-portugal')?'rejeitada: a definição ainda é da APA, falta o RASARP':'conferida quanto aos bytes'});
+ frases.push({familias:keys,linhas:ids,folhas:e.folhas,ficheiros:[...arquivos.values()],estado:'conferida quanto aos bytes'});
 }
 const resultado={cabeca:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),motor:execFileSync('git',['-C',motor,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),frases};
 fs.writeFileSync(base+'/fontes-por-frase.json',JSON.stringify(resultado,null,2)+'\n');
