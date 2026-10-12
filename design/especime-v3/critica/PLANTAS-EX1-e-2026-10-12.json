@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-12T11:24:49+00:00",
+ "copia": "<scratchpad>/ex1d/pacote-leitura-e",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/explicacoes/dinheiro-do-estado-2026/index.html",
+   "descricao": "a página construída portuguesa diz «um défice maior» onde os módulos dos dois saldos escolhem «menor», contra as linhas e a declaração",
+   "sha256_antes": "85115b1d772aed21c83396f91d2db079d29cf749327b082eff70307e527fdcc9",
+   "sha256_depois": "a4ff83d76b8bcd223bae03c4b1b74848fdae27d4941f8d572fcdf34b8a7dccaa",
+   "contexto_antes": "ental\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Entidade Orçamental</span></span></a></span>, um défice (gastou mais do que recebeu); é um défice menor do que o que o Orçamento previa para o ano inteiro (<span class=\"claim claim-com-chip\"><span data-claim=\"oe-2026-saldo-global-administracao-central-seguranca-social\" class=\"claim-value\">−1 789,8</span><span cla",
+   "contexto_depois": "ental\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Entidade Orçamental</span></span></a></span>, um défice (gastou mais do que recebeu); é um défice maior do que o que o Orçamento previa para o ano inteiro (<span class=\"claim claim-com-chip\"><span data-claim=\"oe-2026-saldo-global-administracao-central-seguranca-social\" class=\"claim-value\">−1 789,8</span><span cla"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/en/explainers/dinheiro-do-estado-2026/index.html",
+   "descricao": "a página construída inglesa diz «larger deficit» onde a portuguesa e a declaração dizem «smaller», contra as linhas",
+   "sha256_antes": "40fe5e4d21331ac2e9e18a265853d00dd2d36207a7c945388b1e2ac7c6ec01b1",
+   "sha256_depois": "955d771fc2dbb9976ca2bb8a34951d93f697de6c1470ef81e370720b385b4871",
+   "contexto_antes": "s=\"src-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">Entidade Orçamental</span></span></a></span>, a deficit (it spent more than it took in); it is a smaller deficit than the one the Budget forecast for the full year (<span class=\"claim claim-com-chip\"><span data-claim=\"oe-2026-saldo-global-administracao-central-seguranca-social\" class=\"claim-value\">−1 789,8</span><span cla",
+   "contexto_depois": "s=\"src-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">Entidade Orçamental</span></span></a></span>, a deficit (it spent more than it took in); it is a larger deficit than the one the Budget forecast for the full year (<span class=\"claim claim-com-chip\"><span data-claim=\"oe-2026-saldo-global-administracao-central-seguranca-social\" class=\"claim-value\">−1 789,8</span><span cla"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/data/explicacoes/dinheiro-do-estado-2026.mjs",
+   "descricao": "a frase dos juros na cópia da declaração traz de volta «que o Orçamento também prevê», as palavras sem apoio selado que o mandato mandou tirar, contra o diff e a auditoria",
+   "sha256_antes": "98bb158d51dec5007210a7ccba10c762fbf802513bcac473a1c05c4ffed980f2",
+   "sha256_depois": "1b54166e3fff03de5fa14603d2ca100172b7f3f2e6d253821925700f22bc6d30",
+   "contexto_antes": "asta de facto lê-se na execução, mês a mês, e a execução até agosto é a que esta explicação mostra acima.'] },\n        { se: [SEM_LINHAS_DOS_JUROS], partes: [' Estes números não isolam o custo dos juros da dívida.'] },\n        ' O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque.',\n      ],\n      en: [\n        { se:",
+   "contexto_depois": "asta de facto lê-se na execução, mês a mês, e a execução até agosto é a que esta explicação mostra acima.'] },\n        { se: [SEM_LINHAS_DOS_JUROS], partes: [' Estes números não isolam o custo dos juros da dívida, que o Orçamento também prevê.'] },\n        ' O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque.',\n      ],\n      en: [\n        { se:"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "src/data/explicacoes/dinheiro-do-estado-2026.mjs",
+   "descricao": "o ramo deficitMenor da declaração portuguesa, na cópia, diz «maior», uma palavra falsa para o caso que o escolhe, contra o diff e a página",
+   "sha256_antes": "1b54166e3fff03de5fa14603d2ca100172b7f3f2e6d253821925700f22bc6d30",
+   "sha256_depois": "15f5eac4506e0c3ff1bfac27915f02a86a6c1680f018d145f2e508578724d217",
+   "contexto_antes": "Maior: ['é um défice maior do que o que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],\n                deficitMenor: ['é um défice menor do que o que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],\n                deficitIgual: ['é um défice igual ao que o Orçamento previa para o ano inteiro (",
+   "contexto_depois": "Maior: ['é um défice maior do que o que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],\n                deficitMenor: ['é um défice maior do que o que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],\n                deficitIgual: ['é um défice igual ao que o Orçamento previa para o ano inteiro ("
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 28 cenários de saldos onde o ficheiro das provas dá 26",
+   "sha256_antes": "6cf18c39a719faba8f45237196f74ccac3afb2087e4462124778180b33c8eb41",
+   "sha256_depois": "eca32d51131ccec570444f47bec78dea5c0cf350a5a9f2119fe0072be64dc791",
+   "contexto_antes": "los\n- comparaSaldos: diferentesNegativo\n- comparaSaldos: diferentesPositivo\n- comparaSaldos: diferentesZero\n- compara: maior\n- compara: menor\n- compara: igual\n\nOs 26 cenários nas duas línguas cobrem módulos menores, maiores e iguais em défices e excedentes, ambos nulos, cada lado isoladamente nulo e todos os pares de sinais diferentes. Comparam o re",
+   "contexto_depois": "los\n- comparaSaldos: diferentesNegativo\n- comparaSaldos: diferentesPositivo\n- comparaSaldos: diferentesZero\n- compara: maior\n- compara: menor\n- compara: igual\n\nOs 28 cenários nas duas línguas cobrem módulos menores, maiores e iguais em défices e excedentes, ambos nulos, cada lado isoladamente nulo e todos os pares de sinais diferentes. Comparam o re"
+  }
+ ]
+}
