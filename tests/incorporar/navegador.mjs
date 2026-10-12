@@ -39,15 +39,25 @@ delete jsonEndereco.incorporacao;
 const antigo = c.corrections.find(x=>x.kind==='atualizacao' && x.new_value===c.value).old_value;
 const tipos = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css','.json':'application/json','.woff2':'font/woff2','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp'};
 const codigos = Object.fromEntries(['pt','en'].map(lang=>[lang,parse(fs.readFileSync(`${dist}${routePath('linha',lang,{slug:c.id})}/index.html`,'utf8')).querySelector('[data-incorporar-codigo]').textContent]));
+// Estraga as duas fontes em memória. A regra esperada do navegador continua
+// a exigir o separador, mesmo quando o estático e o cliente concordam no erro.
+const fonteCompositor = fs.readFileSync(new URL('../../src/lib/incorporar.mjs',import.meta.url),'utf8');
+const separadorEstatico = "} · ${e(d.atribuicao)}";
+assert(fonteCompositor.includes(separadorEstatico));
+const fonteSemSeparador = fonteCompositor.replace(separadorEstatico, "} ${e(d.atribuicao)}")
+  .replace(/from '([^']+)'/g, (_, caminho) => `from '${new URL(caminho,new URL('../../src/lib/incorporar.mjs',import.meta.url)).href}'`);
+const compositorEstragado = await import('data:text/javascript;base64,'+Buffer.from(fonteSemSeparador).toString('base64'));
+const codigosSemSeparador = Object.fromEntries(['pt','en'].map(lang=>[lang,compositorEstragado.codigoDaIncorporacao(c,lang)]));
 const codigosNotas = Object.fromEntries(['pt','en'].map(lang=>[lang,parse(fs.readFileSync(`${dist}${routePath('linha',lang,{slug:cNotas.id})}/index.html`,'utf8')).querySelector('[data-incorporar-codigo]').textContent]));
 const jsonNotas = JSON.parse(fs.readFileSync(`${dist}/livro-razao/${cNotas.id}.json`,'utf8'));
 const escapar = x=>String(x).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 const modeloBlogue = fs.readFileSync(new URL('./blogue.html',import.meta.url),'utf8');
 function blogue(lang) {
-  const velho = codigos[lang].replaceAll(escapar(c.value),escapar(antigo));
-  const ausente = codigos[lang].replaceAll(c.id,c.id+'-nao-existe');
+  const codigo = modoAtual === 'separador-leitura-retirado' ? codigosSemSeparador[lang] : codigos[lang];
+  const velho = codigo.replaceAll(escapar(c.value),escapar(antigo));
+  const ausente = codigo.replaceAll(c.id,c.id+'-nao-existe');
   const rotulos = lang==='pt' ? ['Valor atual','Valor antigo','Pedido sem resposta'] : ['Current value','Old value','Failed request'];
-  const campos={lang:t(lang).lang,titulo:lang==='pt'?'Blogue de ensaio':'Test blog',anfitria:lang==='pt'?'Conteúdo da página que acolhe os números.':'Content of the page hosting the numbers.',rotulo_atual:rotulos[0],rotulo_antigo:rotulos[1],rotulo_ausente:rotulos[2],codigo_atual:codigos[lang],codigo_antigo:velho,codigo_ausente:ausente,rotulo_notas:lang==='pt'?'Número com notas':'Number with notes',codigo_notas:codigosNotas[lang].replace(/data-oedp-lido="[^"]*"/, 'data-oedp-lido=""')};
+  const campos={lang:t(lang).lang,titulo:lang==='pt'?'Blogue de ensaio':'Test blog',anfitria:lang==='pt'?'Conteúdo da página que acolhe os números.':'Content of the page hosting the numbers.',rotulo_atual:rotulos[0],rotulo_antigo:rotulos[1],rotulo_ausente:rotulos[2],codigo_atual:codigo,codigo_antigo:velho,codigo_ausente:ausente,rotulo_notas:lang==='pt'?'Número com notas':'Number with notes',codigo_notas:codigosNotas[lang].replace(/data-oedp-lido="[^"]*"/, 'data-oedp-lido=""')};
   const codigoCalculado = lerPaginaComCodigo(fs.readFileSync(`${dist}${routePath('linha',lang,{slug:calculada.id})}/index.html`,'utf8')).querySelector('textarea').textContent.replace('data-oedp-valor="'+calculada.value+'"','data-oedp-valor="ensaio"');
   const coladosRecusados = recusadas.map(linha => `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${linha.id}" data-oedp-valor="ensaio" data-oedp-lido="ensaio"><span>${lang === 'pt' ? 'Citação guardada' : 'Saved quotation'}</span></p>`).join('');
   return modeloBlogue.replace('</html>',codigoCalculado+coladosRecusados+'</html>').replace(/\{\{([a-z_]+)\}\}/g,(_,chave)=>campos[chave]);
@@ -75,7 +85,7 @@ const servidor = http.createServer((req,res)=>{
     }
     const bytes=fs.readFileSync(f);
     // Só o argumento da origem muda, em memória. O corpo da função é idêntico.
-    if(caminho==='/incorporar.js') {let codigo=bytes.toString().replace(JSON.stringify(origemPublica),JSON.stringify(sitio));if(modoAtual==='separador-notas-retirado') {assert(codigo.includes("createTextNode(' · ')"));codigo=codigo.replace("notas.textContent = d.notas;\n        novo.appendChild(document.createTextNode(' · '));", "notas.textContent = d.notas;\n        novo.appendChild(document.createTextNode(' '));");}if(modoAtual==='notas-retiradas') {assert(codigo.includes('if (d.notas)'));codigo=codigo.replace('if (d.notas)', 'if (false)');}res.end(codigo);}
+    if(caminho==='/incorporar.js') {let codigo=bytes.toString().replace(JSON.stringify(origemPublica),JSON.stringify(sitio));if(modoAtual==='separador-leitura-retirado') {const trecho="+ ' · ' + d.atribuicao";assert(codigo.includes(trecho));codigo=codigo.replace(trecho,"+ ' ' + d.atribuicao");}if(modoAtual==='separador-notas-retirado') {assert(codigo.includes("createTextNode(' · ')"));codigo=codigo.replace("notas.textContent = d.notas;\n        novo.appendChild(document.createTextNode(' · '));", "notas.textContent = d.notas;\n        novo.appendChild(document.createTextNode(' '));");}if(modoAtual==='notas-retiradas') {assert(codigo.includes('if (d.notas)'));codigo=codigo.replace('if (d.notas)', 'if (false)');}res.end(codigo);}
     else res.end(bytes);
   } catch {res.writeHead(404).end();}
 });
@@ -89,7 +99,7 @@ const diaSeguinte = new Date(Math.max(...[c.access_date,...(c.verifications??[])
 const linhaRelida = {...c,verifications:[...(c.verifications??[]),{date:diaSeguinte,result:'igual'}]};
 const jsonRelido = {...json,linha:linhaRelida,incorporacao:Object.fromEntries(['pt','en'].map(lang=>[lang,dadosDaIncorporacao(linhaRelida,lang)]))};
 try {
-  for (const lang of ['pt','en']) for (const modo of ['normal','releitura','separador-notas-retirado','notas-retiradas','proveniencia-por-confirmar','sem-js','sem-cors','falha','json-malformado','outra-linha','redirecionamento']) {
+  for (const lang of ['pt','en']) for (const modo of ['normal','releitura','separador-leitura-retirado','separador-notas-retirado','notas-retiradas','proveniencia-por-confirmar','sem-js','sem-cors','falha','json-malformado','outra-linha','redirecionamento']) {
     const ctx = await navegador.newContext({javaScriptEnabled:modo!=='sem-js', viewport:{width:390,height:900},deviceScaleFactor:1,colorScheme:'light',reducedMotion:'reduce'});
     const pedidos = [];
     modoAtual=modo;
@@ -119,8 +129,16 @@ try {
       assert.equal(valores[5+indice].html,originaisRecusados[indice].outerHTML,mensagem);
       if (modo === 'normal') r.plantas.push({nome:'recusado-isolado-'+(indice === 0 ? 'excerpt' : 'source_url')+'-'+lang,mensagem,mordeu:true});
     }
-    if (['normal','releitura','separador-notas-retirado','notas-retiradas'].includes(modo)) {
+    if (['normal','releitura','separador-leitura-retirado','separador-notas-retirado','notas-retiradas'].includes(modo)) {
       const esperado = modo==='releitura' ? jsonRelido : json;
+      const d = esperado.incorporacao[lang];
+      const mensagemLeitura = 'ER1 navegador: a leitura até ao fim da atribuição difere, incluindo o separador.';
+      const conferirLeitura = texto => assert.equal(texto.slice(texto.indexOf(d.leitura),texto.indexOf(d.atribuicao)+d.atribuicao.length),d.leitura+' · '+d.atribuicao,mensagemLeitura);
+      if (modo === 'separador-leitura-retirado') {
+        assert.throws(()=>conferirLeitura(parse(codigosSemSeparador[lang]).querySelector('p').textContent),erro=>erro.code==='ERR_ASSERTION' && erro.message.startsWith(mensagemLeitura));
+        assert.throws(()=>conferirLeitura(textos[0]),erro=>erro.code==='ERR_ASSERTION' && erro.message.startsWith(mensagemLeitura));
+        r.plantas.push({nome:'separador-leitura-duas-fontes-'+lang,mensagem:mensagemLeitura,mordeu:true});
+      } else conferirLeitura(textos[0]);
       assert.equal(pedidos.filter(p=>p.caminho.endsWith('.json')).length,valores.length);
       assert.equal(valores[4].valor,calculada.value, 'ER1 navegador: a linha calculada sem data não foi atualizada.');
       assert.equal(textos[4].split(lang==='pt'?'calculado por este projeto':'calculated by this project').length-1,1, 'ER1 calculado: a indicação de cálculo tem de aparecer uma vez.');
