@@ -76,6 +76,8 @@ console.log(JSON.stringify(result));""")
 def relatorio():
     portoes=AQUI/'portoes-c'
     codes={n:int((portoes/(n+'.codigo')).read_text()) for n in ['build','verify','typecheck','motor','series','cruzamento']}
+    tentativa=portoes/'tentativa-1'
+    falha={n:int((tentativa/(n+'.codigo')).read_text()) for n in ['build','verify','typecheck','motor']}
     assert all(v==0 for v in codes.values()),codes
     assert (portoes/'arvore.inicio').read_text().strip()=='limpa'
     code_head=(portoes/'cabeca').read_text().strip()
@@ -98,6 +100,7 @@ def relatorio():
       'Os recibos distinguem o estado de cada ano, dizem a parcela do financiamento por valores selados e a direção da evolução. A dívida direta distingue-se expressamente da dívida de Maastricht. Os guiões fora do bloco recuperam o comportamento anterior.', '',
       f"Cabeça do código do sítio: `{code_head}`. Cabeça do código do motor: `{motor_head}`. Os portões gerais correram sob a mesma tranca, com recusa da árvore suja antes da corrida. `arvore.inicio` diz «limpa»; as diferenças no fim são apenas os registos produzidos pela própria conferência. Os suplementos têm os seus ficheiros de cabeça e de execução.", '',
       'A cabeça do último commit de provas não pode estar escrita dentro do próprio commit. Lê-se com `git rev-parse HEAD`; a resposta de entrega identifica-a. Não houve publicação nem envio.', '',
+      f"A primeira corrida parou em A7: a linha nova não estava na declaração dos assuntos JD1 sem área ministerial. A linha passou a usar a mesma decisão já declarada para as outras contas do bloco. Os códigos reais dessa tentativa estão em `portoes-c/tentativa-1/`: {', '.join(f'{k}={v}' for k,v in falha.items())}. O sítio repetiu os portões completos na cabeça limpa corrigida. O motor conservou a mesma cabeça limpa e o verde obtido sob a tranca nessa primeira corrida; os seus registos são conservados integralmente, com as datas próprias. Não se apresenta a tentativa falhada como verde.", '',
       '### Disposição dos achados','',
       '| Achado | Resultado |','|---|---|',
       '| 1 a 5 | Eram plantas do pacote. As asserções sobre a cabeça inicial estão em `controlos-c.json`; a definição dos juros é agora também ensaiada no recibo do ano seguinte. |',
