@@ -1,6 +1,8 @@
 # Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
 # Campos obrigatórios e regras: ver ledger/README.md.
 
+publication: withdrawn
+
 id: "avisos-pt2030-abertos"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.

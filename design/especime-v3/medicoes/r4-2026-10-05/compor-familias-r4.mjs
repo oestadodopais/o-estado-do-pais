@@ -170,9 +170,14 @@ function confereEntrada(e, ids, chaveDeAuditoria, nomesDaFamilia) {
       for (const lang of ['pt', 'en']) if (texto(p[lang]).replace(/[\s.,:;()−%’'!?]+/g, '') !== '') falha(`${onde}: uma ligação com palavras`);
       continue;
     }
+    if (p.classe === 'retirada') {
+      familiaDaFonte = false;
+      if (e.partes.length !== 1 || p.pt !== 'Por confirmar na fonte.' || p.en !== 'To be confirmed at source.' || p.apoios || ids.some(id => linhas.get(id)?.publication !== 'withdrawn' || linhas.get(id)?.source !== '[a verificar]')) falha(`${onde}: a ausência exige a retirada da linha sem publicador`);
+      continue;
+    }
     if (p.classe === 'ausencia') {
       familiaDaFonte = false;
-      if (e.partes.length !== 1 || !ids.length || !ids.every(id => ['avisos-pt2030-abertos', 'avisos-pt2030-pessoas-singulares', 'ciclo-substituicao-condutas'].includes(id)) || p.pt !== 'A fonte publica este número sem o definir por palavras.' || p.en !== 'The source publishes this number without defining it in words.' || p.apoios || ids.some(id => linhas.get(id)?.excerpt !== '[a verificar]')) falha(`${onde}: a ausência não corresponde à falta do excerto`);
+      if (e.partes.length !== 1 || !ids.length || !ids.every(id => ['avisos-pt2030-abertos', 'avisos-pt2030-pessoas-singulares', 'ciclo-substituicao-condutas'].includes(id)) || p.pt !== 'A fonte publica este número sem o definir por palavras.' || p.en !== 'The source publishes this number without defining it in words.' || p.apoios || ids.some(id => linhas.get(id)?.excerpt !== '[a verificar]' || !linhas.get(id)?.source || linhas.get(id)?.source === '[a verificar]')) falha(`${onde}: a ausência não corresponde à falta do excerto`);
       continue;
     }
     if (!p.apoios?.length) { falha(`${onde}: diz e não tem apoio`); continue; }
