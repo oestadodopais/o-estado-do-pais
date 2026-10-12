@@ -711,3 +711,46 @@ Não são necessárias capturas novas: as páginas conservam o aspeto. O guião 
 Sem push nem publicação. A aterragem pertence ao lugar de direção.
 
 A linha «tokens used» não foi exposta nesta sessão. Custo real e comparação com o custo-alvo: [verify]. Não se infere o custo do orçamento interno.
+
+
+## A passagem ER1-f
+
+O achado seis da leitura ER1-e era um defeito da prova: a igualdade que passava no caso normal era contada como planta mordida. Agora cada recusa tem um JSON verdadeiro, produzido por `jsonDaLinha` sem retoque, e uma cópia estragada à qual o ensaio acrescenta `incorporacao` com apresentação completa e valor correspondente à linha. Só uma falha efetiva da comparação do parágrafo inteiro, com código de asserção e mensagem exata, regista a mordida. O caso normal exige o HTML inteiro intacto; o compositor recusa ambas as linhas nas duas edições. Esta prova substitui a alegação de mordida das recusas isoladas na secção ER1-e, que fica como registo histórico.
+
+A recusa por excerto usa a linha real `evora-prr-aprovado-2026`; o JSON produzido é também comparado com o construído. Para o endereço, a pequena escolha de ensaio é copiar em memória uma linha real, dar-lhe um identificador próprio e marcar apenas `source_url`. A mesma cópia passa a `jsonDaLinha` e a `codigoDaIncorporacao`. O produtor aceita a linha diretamente ou o identificador usado pelas páginas. Na cópia estragada do endereço, a apresentação vem da linha real de origem. Não se altera o livro.
+
+Os achados um a cinco eram plantas nas cópias do pacote; não originaram correções. As marcas nos recibos recusados continuam atribuídas ao bloco dos recibos. Não surgiram questões novas. Sem capturas, porque as páginas não mudam: os 3195 JSON reais são idênticos aos da base `9f240c59`, tanto por identificador como por linha em memória, e coincidem com os ficheiros construídos. Compositor, cliente, componentes e estilos não foram alterados.
+
+Relatório gerado por `node design/especime-v3/medicoes/er1-2026-10-06/relatar-f.mjs`. Cabeça do código: `3af705984751b699a068b31c151f411bd6719a53`.
+
+A cabeça final pertence ao último commit, que só contém o relatório, o anexo de prova e os códigos com os seus registos; não cabe dentro de si própria e consta da resposta da entrega.
+
+| Commit |
+| --- |
+| 3425fd6d docs(er1-f): registar leitura, plantas e mandato |
+| 3af70598 test(er1-f): provar as recusas com JSON estragado no navegador |
+
+### As plantas do navegador
+
+Guião: `node tests/incorporar/navegador.mjs`. Plantas corrigidas: 4. Casos do navegador na corrida: 31. O estrago e a mensagem abaixo são extraídos da saída do navegador no `verify.log`; a mensagem é a da asserção capturada, não uma mensagem do cliente, que continua silencioso. `provas-f.json` conserva os parágrafos antes e depois, o caso normal e a cópia estragada, com o resumo SHA-256 do registo.
+
+| Planta | Estrago na cópia | Mensagem da falha afirmada | Mordeu |
+| --- | --- | --- | --- |
+| recusado-isolado-excerpt-pt | Acrescentado incorporacao com apresentação completa à cópia do JSON recusado só por excerpt. | ER1 navegador: a recusa só por excerpt alterou o parágrafo colado. | sim |
+| recusado-isolado-source_url-pt | Acrescentado incorporacao com apresentação completa à cópia do JSON recusado só por source_url. | ER1 navegador: a recusa só por source_url alterou o parágrafo colado. | sim |
+| recusado-isolado-excerpt-en | Acrescentado incorporacao com apresentação completa à cópia do JSON recusado só por excerpt. | ER1 navegador: a recusa só por excerpt alterou o parágrafo colado. | sim |
+| recusado-isolado-source_url-en | Acrescentado incorporacao com apresentação completa à cópia do JSON recusado só por source_url. | ER1 navegador: a recusa só por source_url alterou o parágrafo colado. | sim |
+
+### Os portões
+
+Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/er1-2026-10-06/portoes-f`. Os portões correram pela tranca na cabeça do código, com a árvore seguida limpa. Cabeça inicial, final, carimbo da construção e verify coincidem. O verify exerce a união inteira conferida com o build. Códigos lidos dos ficheiros depois de terminada a corrida:
+
+| Portão | Código lido | Ficheiro |
+| --- | --- | --- |
+| build | 0 | portoes-f/build.codigo |
+| verify | 0 | portoes-f/verify.codigo |
+| typecheck | 0 | portoes-f/typecheck.codigo |
+
+Sem push nem publicação. A aterragem pertence ao lugar de direção.
+
+A linha «tokens used» não foi exposta nesta sessão. Custo real e comparação com o custo-alvo: [verify]. Não se infere o custo do orçamento interno.
