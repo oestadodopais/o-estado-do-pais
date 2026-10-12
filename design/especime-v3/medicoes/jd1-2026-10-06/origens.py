@@ -109,6 +109,8 @@ origens = {
         anchors=("No apuramento do saldo orçamental", "incluídas no saldo em contabilidade pública.")),
     "jd1-eo-glossario": origem("eo-execucao-agosto-2026.pdf", "Entidade Orçamental", "Síntese da Execução Orçamental | agosto 2026, glossário, folha 83", page=83, clip=300,
         anchors=("Contabilidade Pública (ótica da)", "no âmbito do programa Saúde.")),
+    "jd1-igcp-contabilidade": origem("igcp-relatorio-anual-2025.pdf", "IGCP", "Relatório Anual 2025, quadro 19, folha 53", page=53,
+        anchors=("Quadro 19", "(Contabilidade Pública)")),
     "jd1-igcp-perimetro": origem("igcp-relatorio-anual-2025.pdf", "IGCP", "Relatório Anual 2025, nota 1, folha 31", page=31,
         anchors=("1A dívida direta do Estado", "passivos emitidos pelas próprias Administrações Públicas.")),
     "jd1-igcp-siglas": origem("igcp-relatorio-anual-2025.pdf", "IGCP", "Relatório Anual 2025, siglas e abreviaturas, folha 5", page=5),

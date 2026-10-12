@@ -13365,7 +13365,7 @@
       "origens": [
         "jd1-igcp-perimetro",
         "jd1-igcp-divida",
-        "jd1-igcp-financiamento",
+        "jd1-igcp-contabilidade",
         "jd1-igcp-valoracao",
         "jd1-igcp-siglas"
       ],
@@ -13412,9 +13412,9 @@
                   "literal": "a dívida direta do Estado inclui apenas a dívida emitida pelo Estado"
                 },
                 {
-                  "origem": "jd1-igcp-financiamento",
+                  "origem": "jd1-igcp-contabilidade",
                   "campo": "excerto",
-                  "literal": "contabilidade orçamental pública"
+                  "literal": "Dívida direta do Estado (Contabilidade Pública)"
                 }
               ]
             },

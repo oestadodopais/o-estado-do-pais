@@ -150,6 +150,26 @@ export const ORIGENS_JD1 = {
       }
     }
   },
+  "jd1-igcp-contabilidade": {
+    "publicador": "IGCP",
+    "documento": "Relatório Anual 2025, quadro 19, folha 53",
+    "url": "https://www.igcp.pt/sites/default/files/2026-08/RA2025_signed.pdf",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "Quadro 19 – Dívida direta do Estado (Contabilidade Pública)",
+    "selo": {
+      "motor": "indicators/out/jd1-2026-10-06/007-igcp-relatorio-anual-2025.pdf",
+      "hora": "2026-10-06T10:46:05Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "f36c17f0f95b0e35c8f87323fd48f7fde0e9cc84228a5444f94058ac3f0e3f2f",
+      "campo": "pdftotext -layout, folha 53",
+      "extracao": {
+        "ficheiro": "indicators/out/jd1-2026-10-06/007-igcp-relatorio-anual-2025.txt",
+        "sha256": "da63d6608a5583f65f85e94ab6f9d54c76b85ccf5b22bf48012b105baa802985",
+        "ferramenta": "pdftotext version 26.09.0"
+      }
+    }
+  },
   "jd1-igcp-perimetro": {
     "publicador": "IGCP",
     "documento": "Relatório Anual 2025, nota 1, folha 31",
