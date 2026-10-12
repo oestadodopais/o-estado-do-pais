@@ -16,6 +16,17 @@ set -u
 W="$1"; O="$2"
 case "$W" in /*) ;; *) echo 'portoes: a worktree tem de ser absoluta' >&2; exit 9;; esac
 cd "$W" || exit 9
+# M62 / JD1-c: conferir antes de criar registos dentro da própria árvore.
+[ -z "$(git status --porcelain --untracked-files=all)" ] || {
+  echo 'portoes: árvore suja; registe as mudanças antes de conferir a cabeça do código' >&2
+  exit 9
+}
+if [ "${OEDP_CONFERIR_MOTOR:-0}" = 1 ]; then
+  [ -n "${RESEARCHHUB_DIR:-}" ] && [ -d "$RESEARCHHUB_DIR" ] || { echo 'portoes: falta a pasta do motor' >&2; exit 9; }
+  [ -z "$(git -C "$RESEARCHHUB_DIR" status --porcelain --untracked-files=all)" ] || {
+    echo 'portoes: árvore do motor suja; nenhum portão correu' >&2; exit 9
+  }
+fi
 mkdir -p "$O" || exit 9
 O="$(cd "$O" && pwd)"
 comum="$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null || git rev-parse --git-common-dir)" || exit 9
@@ -89,6 +100,7 @@ mediu=1
 export OEDP_TEMPOS_DIR="$O"
 export npm_config_script_shell="$W/scripts/leituras/tempos-shell.py"
 git rev-parse HEAD > "$O/cabeca"
+printf 'limpa\n' > "$O/arvore.inicio"
 for g in build verify typecheck; do
   date -u +%Y-%m-%dT%H:%M:%SZ > "$O/$g.inicio"
   if [ "$g" = verify ]; then
@@ -110,9 +122,25 @@ for g in build verify typecheck; do
     exit "$codigo"
   fi
 done
+if [ "${OEDP_CONFERIR_MOTOR:-0}" = 1 ]; then
+  git -C "$RESEARCHHUB_DIR" rev-parse HEAD > "$O/motor.cabeca"
+  date -u +%Y-%m-%dT%H:%M:%SZ > "$O/motor.inicio"
+  cd "$RESEARCHHUB_DIR" || exit 9
+  correr "$O/motor.log" python3 -m core.gate
+  codigo=$?
+  echo "$codigo" > "$O/motor.codigo"
+  date -u +%Y-%m-%dT%H:%M:%SZ > "$O/motor.fim"
+  git rev-parse HEAD > "$O/motor.cabeca.fim"
+  git status --short > "$O/motor.estado.fim"
+  cd "$W" || exit 9
+  [ "$codigo" -le 128 ] || exit "$codigo"
+fi
 git rev-parse HEAD > "$O/cabeca.fim"
 git status --short > "$O/estado.fim"
 echo "FIM $(cut -c1-8 "$O/cabeca") build=$(cat "$O/build.codigo") verify=$(cat "$O/verify.codigo") typecheck=$(cat "$O/typecheck.codigo")"
 for g in build verify typecheck; do
   [ "$(cat "$O/$g.codigo")" -eq 0 ] || exit 1
 done
+if [ "${OEDP_CONFERIR_MOTOR:-0}" = 1 ]; then
+  [ "$(cat "$O/motor.codigo")" -eq 0 ] || exit 1
+fi

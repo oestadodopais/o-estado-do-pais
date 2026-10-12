@@ -35,6 +35,12 @@ def main():
     cwd = MOTOR if "--motor" in sys.argv[2:sep] else SITE
     out = AQUI / os.environ.get("JD1_PORTOES", "portoes")
     out.mkdir(exist_ok=True)
+    status = subprocess.check_output(["git", "status", "--porcelain", "--untracked-files=all"], cwd=cwd, text=True)
+    # Os suplementos podem escrever sobre os registos da própria conferência.
+    # O guião dos portões gerais verifica a árvore toda antes de criar a saída.
+    outside = [line for line in status.splitlines() if not line[3:].startswith("design/especime-v3/medicoes/jd1-2026-10-06/portoes-c/")]
+    if outside:
+        raise SystemExit("JD1-c: árvore suja fora dos registos dos portões")
     start = datetime.now(timezone.utc).isoformat()
     head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=cwd, text=True).strip()
     r = subprocess.run(cmd, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
