@@ -42,9 +42,11 @@ for (const [nome, altera, mensagem] of [
   morde('nome do projeto de volta numa série', conferirAuditoriaDasSeries({auditoria:a}).erros, 'o nome do projeto não pode apoiar uma frase');
 }
 {
-  const linhas = structuredClone(loadClaims({ includeWithdrawn: true }));
-  linhas.get('avisos-pt2030-abertos').excerpt = 'Um excerto existente.';
-  morde('ausência declarada quando há excerto', conferirAuditoriaDasFamilias({linhas}).erros, 'a ausência não corresponde à falta do excerto');
+  const a=structuredClone(auditoria), familias=structuredClone((await import('../../src/data/o-que-e-das-familias.mjs')).FAMILIAS_DAS_LINHAS);
+  const e=a.familias.find(e=>e.chaves?.includes('avisos-pt2030-abertos'));
+  const p={classe:'ausencia',pt:'A fonte publica este número sem o definir por palavras.',en:'The source publishes this number without defining it in words.'};
+  e.folhas[0].partes=[p]; for(const k of e.chaves) familias[k].frase={pt:[p.pt],en:[p.en]};
+  morde('ausência atribuída a publicador desconhecido',conferirAuditoriaDasFamilias({auditoria:a,familias}).erros,'a ausência não corresponde à falta do excerto');
 }
 {
   const linhas = structuredClone(loadClaims({ includeWithdrawn: true }));
@@ -166,7 +168,7 @@ export function conferirExcertoDaPensao(linha) {
  const {FAMILIAS_DAS_LINHAS}=await import('../../src/data/o-que-e-das-familias.mjs');
  const familias=structuredClone(FAMILIAS_DAS_LINHAS);
  for(const k of e.chaves) familias[k].frase.pt=[e.folhas[0].partes[0].pt];
- morde('paráfrase da ausência',conferirAuditoriaDasFamilias({auditoria:a,familias}).erros,'a ausência não corresponde');
+ morde('paráfrase da ausência',conferirAuditoriaDasFamilias({auditoria:a,familias}).erros,'a ausência exige a retirada');
  const {unidadeDaLinha}=await import('../../src/i18n/unidades.mjs');
  for(const [lang,um,dois] of [['pt','aviso','avisos'],['en','notice','notices']]) {
   assert.equal(unidadeDaLinha('avisos',lang,'1').texto,um);
@@ -259,7 +261,7 @@ export function conferirExcertoDaPensao(linha) {
  origens['pensao-neutralidade'].excerto += ' frase inventada';
  morde('definição local da pensão adulterada',auditarPerguntas({origens}).erros,'o excerto local difere da leitura da página alojada');
  const l=loadClaims().get('penalizacao-legal-um-ano-antecipacao-2026');
- assert.equal(l.value,'6'); assert(l.excerpt.includes('cerca de 6% por ano')); assert(l.ressalva.includes('Valor aproximado'));
+ assert.equal(l.value,'6'); assert(l.excerpt.includes('cerca de 6% por ano')); assert(l.ressalva.includes('Valor aproximado')); 
 }
 if(process.argv.includes('--registo-e')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/e/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 assert.deepEqual(conferirAuditoriaDasFamilias().erros, []);

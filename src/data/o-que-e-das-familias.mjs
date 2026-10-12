@@ -49,20 +49,20 @@ export const FAMILIAS_DAS_LINHAS = {
   "avisos-pt2030-abertos": {
     "frase": {
       "pt": [
-        "A fonte publica este número sem o definir por palavras."
+        "Por confirmar na fonte."
       ],
       "en": [
-        "The source publishes this number without defining it in words."
+        "To be confirmed at source."
       ]
     }
   },
   "avisos-pt2030-pessoas-singulares": {
     "frase": {
       "pt": [
-        "A fonte publica este número sem o definir por palavras."
+        "Por confirmar na fonte."
       ],
       "en": [
-        "The source publishes this number without defining it in words."
+        "To be confirmed at source."
       ]
     }
   },
@@ -72,10 +72,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "ciclo-substituicao-condutas": {
     "frase": {
       "pt": [
-        "A fonte publica este número sem o definir por palavras."
+        "Por confirmar na fonte."
       ],
       "en": [
-        "The source publishes this number without defining it in words."
+        "To be confirmed at source."
       ]
     }
   },

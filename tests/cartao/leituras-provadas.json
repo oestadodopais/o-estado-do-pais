@@ -12392,13 +12392,13 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "A fonte publica este número sem o definir por palavras.",
-          "en": "The source publishes this number without defining it in words.",
+          "pt": "Por confirmar na fonte.",
+          "en": "To be confirmed at source.",
           "partes": [
             {
-              "classe": "ausencia",
-              "pt": "A fonte publica este número sem o definir por palavras.",
-              "en": "The source publishes this number without defining it in words."
+              "classe": "retirada",
+              "pt": "Por confirmar na fonte.",
+              "en": "To be confirmed at source."
             }
           ]
         }
@@ -12411,13 +12411,13 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "A fonte publica este número sem o definir por palavras.",
-          "en": "The source publishes this number without defining it in words.",
+          "pt": "Por confirmar na fonte.",
+          "en": "To be confirmed at source.",
           "partes": [
             {
-              "classe": "ausencia",
-              "pt": "A fonte publica este número sem o definir por palavras.",
-              "en": "The source publishes this number without defining it in words."
+              "classe": "retirada",
+              "pt": "Por confirmar na fonte.",
+              "en": "To be confirmed at source."
             }
           ]
         }
@@ -12430,13 +12430,13 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "A fonte publica este número sem o definir por palavras.",
-          "en": "The source publishes this number without defining it in words.",
+          "pt": "Por confirmar na fonte.",
+          "en": "To be confirmed at source.",
           "partes": [
             {
-              "classe": "ausencia",
-              "pt": "A fonte publica este número sem o definir por palavras.",
-              "en": "The source publishes this number without defining it in words."
+              "classe": "retirada",
+              "pt": "Por confirmar na fonte.",
+              "en": "To be confirmed at source."
             }
           ]
         }

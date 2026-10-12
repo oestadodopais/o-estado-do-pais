@@ -366,9 +366,14 @@ export function conferirAuditoriaDasFamilias({
         for (const lang of ['pt', 'en']) if (textoDaFrase(p[lang]).replace(PONTUACAO, '') !== '') falha(`${qual}: está marcada como ligação e traz palavras`);
         continue;
       }
+      if (p?.classe === 'retirada') {
+        todasNaFonte = false;
+        if (partes.length !== 1 || p.pt !== 'Por confirmar na fonte.' || p.en !== 'To be confirmed at source.' || p.apoios || ids.some(id => linhas.get(id)?.publication !== 'withdrawn' || linhas.get(id)?.source !== '[a verificar]')) falha(`${qual}: a ausência exige a retirada da linha sem publicador`);
+        continue;
+      }
       if (p?.classe === 'ausencia') {
         todasNaFonte = false;
-        if (partes.length !== 1 || !ids.length || !ids.every(id => ['avisos-pt2030-abertos', 'avisos-pt2030-pessoas-singulares', 'ciclo-substituicao-condutas'].includes(id)) || p.pt !== 'A fonte publica este número sem o definir por palavras.' || p.en !== 'The source publishes this number without defining it in words.' || p.apoios || ids.some(id => linhas.get(id)?.excerpt !== '[a verificar]')) falha(`${qual}: a ausência não corresponde à falta do excerto`);
+        if (partes.length !== 1 || !ids.length || !ids.every(id => ['avisos-pt2030-abertos', 'avisos-pt2030-pessoas-singulares', 'ciclo-substituicao-condutas'].includes(id)) || p.pt !== 'A fonte publica este número sem o definir por palavras.' || p.en !== 'The source publishes this number without defining it in words.' || p.apoios || ids.some(id => linhas.get(id)?.excerpt !== '[a verificar]' || !linhas.get(id)?.source || linhas.get(id)?.source === '[a verificar]')) falha(`${qual}: a ausência não corresponde à falta do excerto`);
         continue;
       }
       if (p?.classe !== 'diz') { falha(`${qual}: não tem classe (diz ou liga)`); continue; }
