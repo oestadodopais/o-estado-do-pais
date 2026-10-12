@@ -2746,6 +2746,7 @@ export const origensDaDefinicao = (definicao, lang = 'pt') =>
       url: o.url,
       lingua: campos.lingua ?? (chave === 'bdp-pii' ? 'pt' : 'en'),
       linguaExcerto: lang === 'en' && o.excertoEn ? 'en' : (campos.lingua ?? (chave === 'bdp-pii' ? 'pt' : 'en')),
+      alojada: 'alojada' in o ? o.alojada : null,
       lido: o.lido,
       excerto: lang === 'en' && o.excertoEn ? o.excertoEn : o.excerto,
       /* K2-c: a coordenada que a resposta fixa, ao lado do título do conjunto, quando a origem a declara. */
