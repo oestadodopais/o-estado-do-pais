@@ -1,0 +1,102 @@
+{
+  "origem": "design/observatorio/mandatos/MANDATO-RP4N-i-2026-10-12.md",
+  "passagens": {
+    "g": {
+      "simbolos": 552340,
+      "alvo": 300000,
+      "excesso": 252340,
+      "tentativas_recusadas": [
+        {
+          "pasta": "portoes-g-tentativa1",
+          "codigos": {
+            "verify": 125,
+            "typecheck": 0,
+            "build": 1
+          }
+        },
+        {
+          "pasta": "portoes-g-tentativa2",
+          "codigos": {
+            "verify": 125,
+            "typecheck": 0,
+            "build": 1
+          }
+        },
+        {
+          "pasta": "portoes-g-tentativa3",
+          "codigos": {
+            "verify": 125,
+            "typecheck": 0,
+            "build": 1
+          }
+        },
+        {
+          "pasta": "portoes-g-tentativa4",
+          "codigos": {
+            "verify": 125,
+            "typecheck": 0,
+            "build": 1
+          }
+        },
+        {
+          "pasta": "portoes-g-tentativa5",
+          "codigos": {
+            "verify": 1,
+            "typecheck": 0,
+            "build": 0
+          }
+        },
+        {
+          "pasta": "portoes-g-tentativa6",
+          "codigos": {
+            "verify": 1,
+            "typecheck": 0,
+            "build": 0
+          }
+        }
+      ],
+      "capturas": [
+        {
+          "ficheiro": "g/capturas.json",
+          "capturas": 12
+        }
+      ],
+      "reescritas": [
+        {
+          "ficheiro": "g/reescrita.json",
+          "pares": 45
+        }
+      ]
+    },
+    "h": {
+      "simbolos": 398154,
+      "alvo": 200000,
+      "excesso": 198154,
+      "tentativas_recusadas": [
+        {
+          "pasta": "portoes-h-tentativa1",
+          "codigos": {
+            "verify": 125,
+            "typecheck": 0,
+            "build": 1
+          }
+        },
+        {
+          "pasta": "portoes-h-tentativa2",
+          "codigos": {
+            "verify": 1,
+            "typecheck": 0,
+            "build": 0
+          }
+        }
+      ],
+      "capturas": [
+        {
+          "ficheiro": "h/capturas-h.json",
+          "capturas": 60
+        }
+      ],
+      "reescritas": []
+    }
+  }
+}
