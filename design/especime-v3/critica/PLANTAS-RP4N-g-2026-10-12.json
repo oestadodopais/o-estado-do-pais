@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-12T14:41:36+00:00",
+ "copia": "<scratchpad>/rp4n/pacote-leitura-g",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/livro-razao/agua-nao-faturada-portugal-2024/index.html",
+   "descricao": "a página portuguesa da água diz que a avaliação global abrange noventa e cinco por cento das entidades gestoras, na cópia, contra o excerto da ERSAR (93 %), a linha e a edição inglesa",
+   "sha256_antes": "be9868138aa777157f97d07a7bd694a20d3db6c9f57203f0f3d2d84b73ffbe00",
+   "sha256_depois": "384a27087ea044c9b4ac56604ade1b04441295584bd6feeb5b59dfe2ce7a9351",
+   "contexto_antes": "-e-parte=\"o-que-e\">É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta. O valor situa-se na faixa «Qualidade do serviço mediana» da ERSAR: acima de vinte e até trinta por cento, inclu",
+   "contexto_depois": "-e-parte=\"o-que-e\">É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e cinco por cento das entidades gestoras; a página apresenta também a avaliação em alta. O valor situa-se na faixa «Qualidade do serviço mediana» da ERSAR: acima de vinte e até trinta por cento, inclu"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/en/ledger/penalizacao-antecipacao-um-ano-neutra/index.html",
+   "descricao": "a página inglesa da pensão diz que a penalização legal é por antecipar dois anos, na cópia, contra a linha da penalização legal e a edição portuguesa",
+   "sha256_antes": "16bfa2e6c3a0ce098f71b98e2d1e68fbe74b74bb8735dc4a32842ba3bef8159d",
+   "sha256_depois": "9a258a1143077ed509bbb6fc60372fdc37528f113353877d8b42428e0ad5a884",
+   "contexto_antes": "cluding contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about <span class=\"claim\"><span data-claim=\"penalizacao-legal-um-ano-antecipacao-2026\" class=\"claim-value\">6</span><span class=\"claim-sufixo\"> %</span></span> and is ",
+   "contexto_depois": "cluding contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring two years early, excluding the sustainability factor, is about <span class=\"claim\"><span data-claim=\"penalizacao-legal-um-ano-antecipacao-2026\" class=\"claim-value\">6</span><span class=\"claim-sufixo\"> %</span></span> and is "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "ledger/claims/penalizacao-antecipacao-um-ano-neutra.yml",
+   "descricao": "a linha da pensão volta a trazer uma data de acesso, 12.10.2026, na cópia, contra o diff (a data retirada por falta de prova), o mandato e o recibo (a data do pedido por confirmar)",
+   "sha256_antes": "aa839ce0ddffd9b9d4323d0d3846303f90f6314d5743d272f62df25826aa1aa3",
+   "sha256_depois": "e834149af98f7dd94733554386040c2121aebf2fc8e46f5336eb29bb112e289b",
+   "contexto_antes": "ce_url: \"https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef#page=273\"\naccess_date: \"[a verificar]\"\nreference_date: \"2026\"\n\nexcerpt: \"Figura 8.4: Decrementos por reforma antecipada: caso geral\"\n\nderivation: null\nderivation_en: null\nderived_from: []\ncheck: nul",
+   "contexto_depois": "ce_url: \"https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef#page=273\"\naccess_date: \"2026-10-12\"\nreference_date: \"2026\"\n\nexcerpt: \"Figura 8.4: Decrementos por reforma antecipada: caso geral\"\n\nderivation: null\nderivation_en: null\nderived_from: []\ncheck: nul"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que a prova da reescrita comparou 44 pares de commits, na cópia, contra a prova (45 pares) e a lista dos commits",
+   "sha256_antes": "985fa6d56f8cb30c8127d6959a294db38c8b8ca4a3130d8070c32f917f47479b",
+   "sha256_depois": "1ca80183bf8adae2e5052d14c0b855e686da3dcc76c88b29a74965c89e00d22e",
+   "contexto_antes": "361 | 542fe4ee9d67ecf2245892fd98ccd1c442829704 |\n\nA cabeça do sítio depois da reescrita, antes dos novos commits, é `478c83688116401055a7ba26b9aa3318d59f1d37`. A prova comparou 45 pares; árvores idênticas: `true`. O guião foi `git filter-branch -f --msg-filter`, limitado a juntar os trailers. A cópia herdada foi reposta num nome separado depoi",
+   "contexto_depois": "361 | 542fe4ee9d67ecf2245892fd98ccd1c442829704 |\n\nA cabeça do sítio depois da reescrita, antes dos novos commits, é `478c83688116401055a7ba26b9aa3318d59f1d37`. A prova comparou 44 pares; árvores idênticas: `true`. O guião foi `git filter-branch -f --msg-filter`, limitado a juntar os trailers. A cópia herdada foi reposta num nome separado depoi"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "motor/publisher/oe1_build.py",
+   "descricao": "a derivação portuguesa da quota dos ministérios divide pela «DESPESA EFETIVA» do MAPA 4, na cópia do motor, contra o diff, a frase inglesa, o excerto do mapa («DESPESA TOTAL») e o mandato (achado 8)",
+   "sha256_antes": "89e7ecd31ff17770c4e18e8798392587545258c7fac98f68d1af5e5d4933573d",
+   "sha256_depois": "2501a3ed822769a9106ee1d6b76af713e2372fcc2a2a6c138061aecb4f0060a5",
+   "contexto_antes": "enominator = byid[\"oe-2026-despesa-bruta-administracao-central\"]\n            id = r[\"id\"].replace(\"-despesa-ministerio-\", \"-cem-euros-ministerio-\")\n            pt = \"Dividir a despesa deste ministério pela «DESPESA TOTAL» do MAPA 4, Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, multiplicar por cem e arredondar a duas casas decimais.\"\n           ",
+   "contexto_depois": "enominator = byid[\"oe-2026-despesa-bruta-administracao-central\"]\n            id = r[\"id\"].replace(\"-despesa-ministerio-\", \"-cem-euros-ministerio-\")\n            pt = \"Dividir a despesa deste ministério pela «DESPESA EFETIVA» do MAPA 4, Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, multiplicar por cem e arredondar a duas casas decimais.\"\n           "
+  }
+ ]
+}
