@@ -15,7 +15,10 @@
  * relation to the world outside» e disse o que ela acrescenta: «standing» traz
  * um sentido de posição avaliada, de classificação, que «posição» não pede. A
  * tradução passou a «position in relation to the outside». É a mesma frase da
- * direção; o que mudou foi a palavra inglesa que a dizia a mais.
+ * direção; o que mudou foi a palavra inglesa que a dizia a mais. A 07.10.2026
+ * (§1.182, a leitura do Codex, o achado 9) a oração «keeps of that measurement a
+ * continuous, clear and permanent record» passou a «keeps a continuous, clear and
+ * permanent record of that measurement»: as mesmas palavras, na ordem do inglês.
  *
  * NENHUM ALGARISMO, aqui nem na página. O Sobre diz a ideia e pára; o que
  * muda com o tempo é estado, e o estado rende-se no Método, que o prova.
@@ -60,7 +63,7 @@ export const SOBRE = {
   },
   en: {
     texto:
-      'O Estado do País measures Portuguese society, in its internal context and in its position in relation to the outside, and keeps of that measurement a continuous, clear and permanent record. It is produced mostly by artificial intelligence, with the minimum of human intervention, to explore what today’s technology makes possible and, with it, to build a site of information about Portugal that is independent and rigorous.',
+      'O Estado do País measures Portuguese society, in its internal context and in its position in relation to the outside, and keeps a continuous, clear and permanent record of that measurement. It is produced mostly by artificial intelligence, with the minimum of human intervention, to explore what today’s technology makes possible and, with it, to build a site of information about Portugal that is independent and rigorous.',
   },
 };
 

@@ -1,0 +1,9 @@
+
+> o-estado-do-pais@0.1.0 sinais
+> node scripts/sinais-da-primeira-pagina.mjs --prova
+
+sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .sinais/primeira-pagina.json.
+sinais · 1 explicação(ões), 0 frase(s) guardada(s) fora da página; o registo está em .sinais/explicacoes.json.
+  mordeu · uma condição falsa numa cópia das declarações (código 0)
+  mordeu · um resolvedor que recusa tudo (código 1)
+  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)

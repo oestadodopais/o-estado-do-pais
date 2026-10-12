@@ -1,0 +1,47 @@
+{
+  "cabeca": "eee10a344e181e520862be5213404816264c7458",
+  "metodo": "Inspeção visual das oito imagens, páginas inteiras e recortes, nas duas línguas e larguras.",
+  "resultado": "Frases, valores e selos legíveis nos recortes; sem cortes nem transbordo visível. As páginas inteiras conservam a ordem das secções e os parágrafos referidos.",
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1f-pt-390-inteira.png",
+      "sha256": "3037fd35ff36e22b881676ef0130f7d87885f6380010559bf96184e43e34e0ab",
+      "cortes_ou_transbordo": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1f-pt-390-correcoes.png",
+      "sha256": "e51dc1048153a9467a8f1fa6c297fce8fa24fb729d4a4ace6cbbdf007f01aa16",
+      "cortes_ou_transbordo": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1f-pt-1280-inteira.png",
+      "sha256": "9f1f4c1b296c36522595274be7c70f64a16c734dced84b0659c52bd38479529e",
+      "cortes_ou_transbordo": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1f-pt-1280-correcoes.png",
+      "sha256": "46f08faefbd85fd634319d9cea229ecb9933b46a2f3da89610a3526387abae3d",
+      "cortes_ou_transbordo": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1f-en-390-inteira.png",
+      "sha256": "4fe9a9517b5bcaad8493d206acdc70effe92ecb37d81b5f08d3b0532961e0ac2",
+      "cortes_ou_transbordo": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1f-en-390-correcoes.png",
+      "sha256": "02dc25014c3e72267c0101cb2beca03195d24e5bf8a944dbcde7177cb11f938b",
+      "cortes_ou_transbordo": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1f-en-1280-inteira.png",
+      "sha256": "2f7868e635f5b51288ec27ad8bbc8cfe9250d464496ea7ef86cbae8a5ba102fe",
+      "cortes_ou_transbordo": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1f-en-1280-correcoes.png",
+      "sha256": "e8f56c7a06f847eea4f696301cdef3fa5462a59c22a6d1a1d3b94e245652a2db",
+      "cortes_ou_transbordo": false
+    }
+  ]
+}

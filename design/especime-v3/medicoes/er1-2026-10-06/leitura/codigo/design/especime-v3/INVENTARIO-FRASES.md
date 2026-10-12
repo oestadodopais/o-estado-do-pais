@@ -1,0 +1,4168 @@
+# Inventário das frases da casa · rota a rota
+
+```
+lida-contra: Emenda 18
+```
+
+*A cabeça do ficheiro, e é uma só linha: contra que emenda da voz é que esta
+tabela foi lida. As emendas que mexem no §5 «Voz» de `direcao.md` marcam-se com a
+cadeia «§5 «Voz» emendado», e `npm run check:voz` procura a mais alta que a leve.
+Quando aparecer uma emenda da voz acima desta, a construção fecha e diz-se: o
+inventário foi lido contra uma regra que já mudou. **O campo só sobe com uma
+entrada nova em `critica/REVISOES-DO-INVENTARIO.md`**, porque a releitura é
+trabalho de outra família sobre o inventário inteiro, e não um número que se
+escreve aqui.*
+
+*Etapa 2l, 21.08.2026. A Emenda 15 («a página do leitor não se explica») traz a
+sua própria medida: «o inventário de todas as frases da casa na superfície
+pública, classificadas em conteúdo, navegação e autorreferência (e, desde
+01.09.2026, divulgação); a terceira
+classe vai a zero fora do Método, do Sobre e do recibo, e a régua imprime a
+contagem para que não volte».*
+
+*Estendido a 21.08.2026 (etapa 3, commit 3-0, decisão 1 do diretor): a régua
+passa a recolher também a **descrição do `<head>`** de cada rota inventariada. A
+`<meta name="description">` é superfície pública, é escrita pela casa, e a da
+primeira página descrevia o método do sítio enquanto a contagem de
+autorreferência do corpo estava a zero. As rotas inventariadas são uma lista
+declarada em `medir-defeitos.mjs` (`ROTAS_DO_INVENTARIO`), e crescem com as
+etapas: uma rota entra no commit em que a sua página é reconstruída e as suas
+frases são classificadas.*
+
+**A tabela tem três colunas desde 26.08.2026** (G2 do bloco «A grelha da voz»):
+a classe, o texto e o **bloco** que acrescentou ou reclassificou a linha. As
+linhas anteriores a esse dia levam `até 2026-08-26`, que é o que elas são: um
+estado herdado, sem o rasto de quem o pôs lá. Cada bloco tem de ter uma entrada
+em `critica/REVISOES-DO-INVENTARIO.md`, com a leitura cruzada do seu diff, e
+`npm run check:voz` fecha a construção quando não tem, ou quando a entrada nomeia
+um ficheiro que não existe.
+
+**E cinco colunas desde 27.08.2026** (G2 do bloco «A grelha, segunda passagem»,
+ISSUES I74): o **estado** e a **razão**. Cada linha diz em que estado está, e a
+construção confere os dois sentidos.
+
+* **`viva`** · a frase rende-se em pelo menos uma rota inventariada. É o estado
+  de 395 das 434 linhas. Uma linha `viva` que não se rende em rota nenhuma fecha
+  a construção: ou a frase mudou e a linha ficou para trás, ou a rota saiu, e nos
+  dois casos a lista está a mentir sobre o sítio.
+* **`retirada`** · a casa tirou aquela frase de propósito. Ela **não pode**
+  render-se: se voltar, a construção fecha e diz o nome dela. A coluna da razão
+  diz que bloco a tirou, e uma linha `retirada` sem razão escrita fecha a
+  construção também — uma proibição sem motivo é uma linha que ninguém sabe
+  levantar. São 39.
+
+**O que isto fecha.** O ficheiro escreve, desde o bloco dos 308, que «uma frase
+corrigida sai desta lista», porque repô-la passaria em silêncio. Era verdade e
+não chegava: nenhuma régua conferia a saída, e a limpeza era à mão. A I74 contou
+**58 declarações que já não se rendiam em página nenhuma** na construção de
+26.08, e este bloco encontrou 57 na sua (a diferença é o que os blocos da voz do
+livro-razão e dos documentos mexeram pelo meio). Uma linha que fica sem se render
+não é uma sentinela: é uma linha morta, e a lista engorda.
+
+**Dezoito saíram em vez de ficarem, e a razão é que não podiam ser sentinelas.**
+Catorze levam uma contagem por dentro («132 afirmações · 19 calculadas», «128 de
+136 linhas com proveniência completa»): uma frase com um número que se move volta
+com outro número, e a linha nunca voltaria a morder. Quatro deixaram de ser
+frases da casa: o nome do lugar passou a declarar-se (`data-lugar`) ou a compor-se
+(`<lugar>`), e a régua deixou de as ler como prosa. Quando uma contagem voltar,
+volta como bloco **por classificar**, que é o portão que a apanha — e foi assim
+que a planta desta passagem se viu vermelha duas vezes, uma por cada régua.
+
+Esta lista é lida por `scripts/medir-defeitos.mjs` (medida 8). O que a régua
+recolhe é mecânico e está escrito lá: todo o bloco de texto de uma rota
+inventariada, nas duas edições, mais a descrição do seu `<head>`, que não seja
+nem contenha uma origem declarada
+(`data-claim`, `data-prova`, `data-verbatim`, `data-nonledger`, …), que não seja
+o nome de uma medida nem a sua linha de unidade (`data-medida-nome`,
+`data-medida-unidade`), e cujo texto não esteja todo dentro de um `<a>` ou de um
+`<button>`. Um bloco que não esteja nesta lista sai na saída como **por
+classificar**, que é o estado que obriga alguém a decidir.
+
+## A regra, escrita uma vez (direção, 21.08.2026, tarde)
+
+> **Uma frase sobrevive numa página do leitor se a sua remoção fizesse um leitor
+> ler mal um número. Ficam as ressalvas sobre os dados (limites, bandeiras de
+> provisório, definições); sai tudo o que existe para mostrar diligência.**
+>
+> *A sentence survives on a reader's page if removing it would make a reader read
+> a number wrongly. The caveats about the data stay (limits, provisional flags,
+> definitions); everything that exists to show diligence goes.*
+
+É o teste da Emenda 15, dito em duas linhas, e é o que decide cada classificação
+desta tabela a partir daqui. Uma frase sobre os LIMITES DO QUE A FONTE PUBLICA é
+conteúdo, por mais longa que seja; uma frase sobre o CUIDADO DA CASA sai, por
+mais curta que seja. O mesmo teste está em `direcao.md`, por baixo da Emenda 15.
+
+## As três classes
+
+- **conteúdo** — o que a coisa medida é: a medida, o valor, a unidade, o
+  período, o nome da fonte, o nome do âmbito, a ausência dita em duas palavras.
+  Uma frase que define uma medida ou nomeia quem a publica é conteúdo, mesmo
+  quando é longa.
+- **navegação** — o que leva a outro sítio, ou o que diz a quem ouve a página
+  como a percorrer: o nome da publicação, os comandos, a porta das correções, o
+  estado vazio de uma pesquisa, a descrição acessível de um instrumento.
+- **autorreferência** — o método, a verificação, a honestidade, a cobertura ou
+  as intenções do próprio sítio. **Zero na primeira página**, nas duas edições.
+- **divulgação**: o que está na página porque a lei o obriga, e sairia no dia em
+  que a lei mudasse: o rótulo de IA do artigo 50.º do Regulamento (UE) 2024/1689,
+  a ficha do artigo 15.º da Lei de Imprensa, e a política publicada que o rótulo
+  aponta. **Entrou a 01.09.2026**, e não abre porta traseira nenhuma à Emenda 15:
+  a autorreferência existe **para mostrar diligência**, a divulgação existe
+  **porque alguém tem de saber quem responde**, a contagem da terceira continua a
+  ir a zero em todas as rotas medidas, e uma frase de divulgação que explique
+  porque se deve confiar na casa é autorreferência com outro nome. A secção do
+  bloco «rotulo-ia», mais abaixo, escreve-o por extenso.
+
+**A frase de identidade é NAVEGAÇÃO (Emenda 18, 25.08.2026).** «Um observatório
+de Portugal.» e «An observatory of Portugal.», por baixo da marca e só na
+primeira página, entram na segunda classe pela razão que a emenda escreve: a
+frase de identidade nomeia o que o sítio é, como o nome da publicação, e não diz
+como ele trabalha nem porque se deve confiar nele. O teste da Emenda 15 continua
+a valer sobre ela: não é o método, não é a verificação, não é a cobertura, não é
+uma intenção. A rota `home` continua a ler autorreferência 0, e é a régua que o
+imprime.
+
+## As frases que ficaram, e porquê
+
+A coluna do texto é a cadeia normalizada, tal como a régua a lê (espaços
+colapsados). As duas edições partilham a mesma tabela: uma frase entra uma vez,
+na língua em que é rendida.
+
+**A tabela perdeu 25 das suas 65 linhas com a Emenda 19 (26.08.2026), e nenhuma
+saiu por ser autorreferência.** Saíram porque a vista de escolha da primeira
+página saiu inteira, e com ela os estados `?ambito=municipio:<slug>`: a primeira
+página deixou de ter blocos de concelho. Contam-se assim:
+
+* **dez deixaram de ser rendidas em rota nenhuma** e saíram do ficheiro: a
+  manchete e o rótulo do bloco do concelho sem linhas («Ainda sem linhas para
+  Águeda .», «Águeda · município · distrito de Aveiro» e as gémeas inglesas), a
+  manchete e o rótulo do bloco de Évora («As medidas do concelho, cada uma com a
+  sua linha.», «Évora · município · distrito de Évora» e as gémeas), e «Évora ·
+  município» e «Évora · municipality», que eram o âmbito das peças daquele
+  painel;
+* **quinze mudaram de rota, e estão agora na tabela de `/municipios/evora`**: as
+  notas das oito medidas do concelho nas duas edições, «Évora», e as duas
+  palavras da ausência («sem linha ainda» e «no row yet»). Não saíram do sítio
+  nesse dia: saíram da PRIMEIRA PÁGINA, onde eram uma segunda rendição da página
+  do concelho, e passaram a ler-se na página dele. **As duas palavras da ausência
+  saíram do sítio inteiro a 28.08.2026** (bloco `vazios`, regra 3 do diretor), e
+  estão declaradas `retirada` mais abaixo, com a razão;
+* **duas mudaram de texto**, e são a descrição acessível do mapa nas duas
+  edições: perderam a terceira frase, «Toque num ponto para escolher o
+  concelho.», que descrevia um gesto que a página deixou de fazer. Um ponto com
+  página é uma ligação, e um destino diz-se na ligação e no seu `<title>`.
+
+«fechar» e «trocar de concelho» não estão nesta contagem, e a razão é a
+definição: um bloco cujo texto é todo ele uma ligação ou um botão não é uma frase
+da casa (`textoForaDeComandos` em `scripts/medir-defeitos.mjs`), e nunca entrou
+nesta tabela. «fechar» deixou de se render; «trocar de concelho» rende-se onde o
+cartão localizador vive, na página do concelho, e leva ao índice dos 308.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | A régua da convergência | regioes | viva | — |
+| navegacao | An observatory of Portugal. | lugar | retirada | a frase de identidade passou a ser a frase de DEFINIÇÃO do sítio (`DECISIONS.md` §1.98, segunda emenda, item 3): diz as três maneiras de ler o sítio e a origem de cada número, que é o que a leitura de um leitor de primeira vez mediu em falta |
+| navegacao | An observatory of Portugal: every number with its source, read by territory, by domain and in studies. | lugar | retirada | ver a razão na gémea portuguesa (item 1 do F1.13, 15.09.2026) |
+| conteudo | Alentejo · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
+| conteudo | Alentejo · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
+| conteudo | Algarve · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
+| conteudo | Algarve · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
+| navegacao | As regiões publicadas na régua da convergência. | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |
+| navegacao | At a glance | até 2026-08-26 | retirada | as duas palavras da densidade de um cartão saem das páginas do leitor (bloco F1.10, item 8.14, 08.09.2026): o diretor viu a 07.09 à noite que o comando «Relance · Leitura breve» mostrava, num estado, cabeçalhos com explicações e nada, e no outro as vinte e uma leituras de uma vez. O comando saiu da primeira página e os títulos de secção que as usavam passaram a dizer o que a secção tem («As medidas», «A leitura de cada medida»), que são as cadeias que a `DECISIONS.md` §1.98 declarou. O termo continua a existir na decisão e no brief; o que sai é a superfície |
+| navegacao | Portugal na União Europeia | lugar | viva | — |
+| conteudo | O painel dos desequilíbrios da economia | lugar | viva | o item 8.4 do F1.10 (08.09.2026): o cabeçalho de cada painel passa a dizer o que ele é, em palavras simples, e o nome oficial com a contagem das medidas desce ao subtítulo. O diretor, a 07.09 à noite: «the European social something … it is not easy to understand what they are» |
+| conteudo | Um conjunto limitado de medidas com que a Comissão Europeia apanha os aspetos internos e externos mais relevantes dos desequilíbrios macroeconómicos, cada uma com o seu limiar indicativo. | p3 | retirada | a palavra «limiar» sai do texto do leitor por decisão do diretor de 15.09.2026 de manhã, e esta definição era a última página do sítio a escrevê-la fora do Método (bloco P3, item 5). A frase é a mesma, com «valor de referência indicativo» no lugar de «limiar indicativo» |
+| conteudo | The scoreboard of macroeconomic imbalances | lugar | viva | o item 8.4 do F1.10 (08.09.2026): o cabeçalho de cada painel passa a dizer o que ele é, em palavras simples, e o nome oficial com a contagem das medidas desce ao subtítulo. O diretor, a 07.09 à noite: «the European social something … it is not easy to understand what they are» |
+| conteudo | A limited set of measures with which the European Commission captures the most relevant internal and external aspects of macroeconomic imbalances, each with its indicative threshold. | p3 | retirada | ver a razão na gémea portuguesa |
+| conteudo | O painel do emprego e das condições sociais | lugar | viva | o item 8.4 do F1.10 (08.09.2026): o cabeçalho de cada painel passa a dizer o que ele é, em palavras simples, e o nome oficial com a contagem das medidas desce ao subtítulo. O diretor, a 07.09 à noite: «the European social something … it is not easy to understand what they are» |
+| conteudo | O painel de medidas que apoia o Pilar Europeu dos Direitos Sociais, e com que se avalia o desempenho de emprego e social dos países da União. | lugar | retirada | achado 11 da leitura do Codex de 14.09.2026: o excerto diz «participating EU countries» e a frase dizia «os países da União», que é uma população maior do que a que a fonte delimita. A frase nova está viva neste ficheiro |
+| conteudo | The employment and social conditions scoreboard | lugar | viva | o item 8.4 do F1.10 (08.09.2026): o cabeçalho de cada painel passa a dizer o que ele é, em palavras simples, e o nome oficial com a contagem das medidas desce ao subtítulo. O diretor, a 07.09 à noite: «the European social something … it is not easy to understand what they are» |
+| conteudo | The scoreboard of key measures that supports the European Pillar of Social Rights, used to assess the employment and social performance of EU countries. | lugar | retirada | ver a razão na gémea portuguesa (achado 11, 14.09.2026) |
+| conteudo | Oito das dezassete medidas principais do Painel Social Europeu. | lugar | retirada | achado 2 da leitura cruzada do inventário (Codex, 14.09.2026): a decisão (5) da §1.98 só deixa dizer o número quando ele estiver conferido numa página da Comissão ou do Eurostat, e as três páginas foram lidas a 14.09.2026 sem o encontrar (a página do Pilar, o painel social do Eurostat e a página do Painel Social da Comissão). A razão inteira, com o que cada uma diz, está em `src/data/figuras.mjs`. A frase nova, sem o denominador, está viva neste ficheiro |
+| conteudo | Eight of the seventeen headline measures of the European Social Scoreboard. | lugar | retirada | ver a razão na gémea portuguesa (achado 2 da leitura cruzada do inventário, 14.09.2026) |
+| conteudo | A dívida do setor das administrações públicas, em percentagem do PIB. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | General government sector debt, as a percentage of GDP. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | A diferença entre os ativos financeiros e os passivos que os residentes de uma economia têm relativamente ao resto do mundo, em percentagem do PIB. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | The difference between the financial assets and liabilities that residents of an economy have vis-à-vis the rest of the world, as a percentage of GDP. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | O índice do custo nominal do trabalho por unidade produzida, por hora trabalhada, e quanto ele mudou em três anos. | lugar | retirada | a definição foi REESCRITA a 09.09.2026 para o que o excerto da fonte diz (Blocking 1): a linha da Comissão diz «nominal unit labour cost index, per hour worked», e a produção era da casa. A frase nova está viva neste ficheiro |
+| conteudo | The nominal unit labour cost index, per hour worked, and how much it changed over three years. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | O índice que mede a variação dos preços de transação das casas compradas pelas famílias. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | The index that measures the changes in the transaction prices of dwellings purchased by households. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | A quota do país nas exportações das economias avançadas, e quanto ela mudou em três anos. | lugar | retirada | a definição foi REESCRITA a 09.09.2026 para o que o excerto da fonte diz (Blocking 1 da leitura a frio, e a decisão do lugar de direção): a linha da Comissão diz «export performance against advanced economies» e a quota era da casa. A frase nova está viva neste ficheiro |
+| conteudo | The country’s share of the exports of advanced economies, and how much it changed over three years. | lugar | retirada | a definição foi REESCRITA a 09.09.2026 para o que o excerto da fonte diz (Blocking 1). A frase nova está viva neste ficheiro |
+| conteudo | A dívida consolidada das sociedades não financeiras, em percentagem do PIB. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | Non-financial corporations’ consolidated debt, as a percentage of GDP. | lugar | retirada | ver a razão na gémea portuguesa (achado 6, 14.09.2026) |
+| conteudo | A dívida consolidada das famílias, incluindo as instituições sem fim lucrativo ao serviço delas, em percentagem do PIB. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | Household consolidated debt, including non-profit institutions serving households, as a percentage of GDP. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | O crédito novo às sociedades não financeiras no ano, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no fim do ano anterior. | lugar | retirada | a definição foi REESCRITA a 09.09.2026 para o que o excerto da fonte diz (Blocking 1): a linha da Comissão diz «consolidated credit flow», e «novo» era da casa. A frase nova está viva neste ficheiro |
+| conteudo | The consolidated credit flow to non-financial corporations in the year, excluding foreign direct investment, as a percentage of their debt stock at the end of the previous year. | lugar | retirada | a definição foi REESCRITA a 09.09.2026 (Blocking 1). A frase nova está viva neste ficheiro |
+| conteudo | O crédito novo às famílias no ano, em percentagem da dívida que elas tinham no fim do ano anterior. | lugar | retirada | a definição foi REESCRITA a 09.09.2026 para o que o excerto da fonte diz (Blocking 1), e ganhou o «incl. NPISH» que a linha da Comissão traz e a frase omitia. A frase nova está viva neste ficheiro |
+| conteudo | The consolidated credit flow to households in the year, as a percentage of their debt stock at the end of the previous year. | lugar | retirada | a definição foi REESCRITA a 09.09.2026 (Blocking 1). A frase nova está viva neste ficheiro |
+| conteudo | O saldo da balança corrente em percentagem do PIB, na média dos três anos anteriores. | lugar | retirada | achado 12 da leitura do Codex de 14.09.2026: o excerto diz «3-year backward moving average» e a gémea inglesa dizia-o; a portuguesa dizia «a média dos três anos anteriores», que é outra coisa. A frase nova está viva neste ficheiro |
+| conteudo | The current account balance as a percentage of GDP, on a three-year backward moving average. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | A percentagem de pessoas ativas, empregadas ou desempregadas, na população comparável, e quanto ela mudou em três anos. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | The percentage of active persons, employed or unemployed, in the comparable total population, and how much it changed over three years. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | A taxa de câmbio efetiva real face às moedas dos outros países industriais, com base nos deflatores dos preços no consumidor, e quanto ela mudou em três anos. | lugar | retirada | a definição foi REESCRITA a 09.09.2026 para o que o excerto da fonte diz (Blocking 1): a linha da Comissão diz «relative to 41 other industrial countries», e as moedas eram da casa. A frase nova leva o número da fonte com a marca de escala de instrumento, e por isso o bloco tem origem declarada e não volta a este ficheiro |
+| conteudo | The real effective exchange rate against the currencies of other industrial countries, based on HICP/CPI deflators, and how much it changed over three years. | lugar | retirada | a definição foi REESCRITA a 09.09.2026 para o que o excerto da fonte diz (Blocking 1). Ver a razão na gémea portuguesa |
+| conteudo | O número de pessoas sem emprego, em percentagem da população ativa. | lugar | retirada | I129, segunda passagem, 22.09.2026: a célula K13 do `check:cartao` apanhou a definição a dizer a medida sem dizer de quem ela é, e o pedido da linha fixa um grupo de idades. A frase nova escreve os dois limites, lidos da etiqueta `Age class` que o excerto da linha passou a trazer. Está viva neste ficheiro |
+| conteudo | The number of people unemployed, as a percentage of the labour force. | lugar | retirada | ver a razão na gémea portuguesa (I129, segunda passagem, 22.09.2026) |
+| conteudo | A percentagem de pessoas com emprego na população comparável. | lugar | retirada | I129, segunda passagem, 22.09.2026: a célula K13 do `check:cartao` apanhou a definição a dizer a medida sem dizer de quem ela é, e o pedido da linha fixa um grupo de idades. A frase nova escreve os dois limites, lidos da etiqueta `Age class` que o excerto da linha passou a trazer. Está viva neste ficheiro |
+| conteudo | The percentage of employed persons in relation to the comparable total population. | lugar | retirada | ver a razão na gémea portuguesa (I129, segunda passagem, 22.09.2026) |
+| conteudo | O número de pessoas dos aos anos sem emprego, em percentagem da população ativa. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | The number of unemployed people aged to , as a percentage of the labour force. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | A percentagem de pessoas dos aos anos com emprego na população comparável. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | The percentage of employed persons aged to in relation to the comparable total population. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | As pessoas sem trabalho que procuram emprego ativamente há pelo menos um ano. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | People who are out of work and have been actively seeking employment for at least a year. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | A percentagem das pessoas de um grupo de idades que não tem emprego e não está em estudos nem em formação. | lugar | retirada | achado 7 da leitura do Codex de 14.09.2026: o excerto diz «a given age group and sex» e a frase deixava cair o sexo. A frase nova está viva neste ficheiro |
+| conteudo | The percentage of the population of a given age group who is not employed and not involved in further education or training. | lugar | retirada | ver a razão na gémea portuguesa (achado 7, 14.09.2026) |
+| conteudo | As pessoas dos aos anos que completaram no máximo o ensino básico e não estão em estudos nem em formação. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | People aged to who have completed at most lower secondary education and are not involved in further education or training. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | A parte da população que está em risco de pobreza, ou em privação material e social grave, ou a viver num agregado com intensidade de trabalho muito baixa; quem está em mais do que uma destas situações conta uma vez só. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | The share of the total population who are either at risk of poverty, or severely materially and socially deprived, or living in a household with a very low work intensity; people are counted only once even if they are in more than one of these situations. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | Uma medida da desigualdade na distribuição do rendimento: o rendimento total do quinto da população com mais rendimento a dividir pelo do quinto com menos. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | A measure of the inequality of income distribution: the total income of the fifth of the population with the highest income divided by that of the fifth with the lowest. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | A percentagem da população que vive em agregados onde o custo total da habitação leva mais de % do rendimento disponível. | lugar | retirada | achado 5 da leitura do Codex de 14.09.2026: o excerto qualifica as duas parcelas, «total housing costs ('net' of housing allowances)» e «disposable income ('net' of housing allowances)», e a frase deixava cair as duas, o que muda o que entra no numerador e no denominador. A frase nova está viva neste ficheiro |
+| conteudo | The percentage of the population living in households where total housing costs take more than % of disposable income. | lugar | retirada | ver a razão na gémea portuguesa (achado 5, 14.09.2026) |
+| navegacao | Números e fontes | lugar | viva | — |
+| conteudo | As áreas da vida do país com medidas publicadas. | lugar | retirada | achado 6 da leitura cruzada do inventário (Codex, 14.09.2026), pelo §9.1 do brief: «com medidas publicadas» é a casa a dizer o que publicou, e a cobertura sai da voz do leitor. A descrição nova diz o que a página tem, e está viva neste ficheiro |
+| conteudo | The areas of the country’s life with published measures. | lugar | retirada | ver a razão na gémea portuguesa (achado 6, 14.09.2026) |
+| navegacao | Numbers and sources | lugar | viva | — |
+| navegacao | Números e fontes · O Estado do País | lugar | viva | achado 12 da leitura cruzada do inventário (Codex, 14.09.2026): é o NOME da página com o nome da publicação, e o nome de uma publicação é navegação por esta lista («o nome da publicação, os comandos»). Não diz nada sobre o país |
+| navegacao | Numbers and sources · O Estado do País | lugar | viva | ver a razão na gémea portuguesa (achado 12, 14.09.2026) |
+| conteudo | Os números e as fontes dos concelhos · O Estado do País | lugar | viva | — |
+| conteudo | The numbers and sources of the municipalities · O Estado do País | lugar | viva | — |
+| navegacao | Portugal in the European Union | lugar | viva | — |
+| conteudo | Os dois quadros da União Europeia que medem Portugal: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu, cada uma com a sua linha. | lugar | retirada | achado 6 da leitura cruzada do inventário (Codex, 14.09.2026), pelo §9.1 do brief: «cada uma com a sua linha» é a casa a dizer o que guarda, e não o que a página mostra. A descrição nova, sem a cauda, está viva neste ficheiro |
+| conteudo | The two European Union frameworks that measure Portugal: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard, each with its ledger row. | lugar | retirada | ver a razão na gémea portuguesa (achado 6, 14.09.2026) |
+| conteudo | no ar | lugar | retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
+| conteudo | live | lugar | retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
+| conteudo | ainda sem medidas conferidas | lugar | retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
+| conteudo | no verified measures yet | lugar | retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
+| navegacao | as medidas estão em | lugar | retirada | o diretor leu a linha de «Trabalho» na primeira página a 15.09.2026 e não a percebeu («I don't even know what that means»). O §1 do brief do F1.10 já escrevia «incluído em», que é a palavra da relação entre dois domínios e não uma frase sobre onde as medidas moram. Substituída por «incluído em» / «included in», as duas linhas abaixo |
+| navegacao | the measures are in | lugar | retirada | ver a razão na gémea portuguesa (15.09.2026) |
+| navegacao | incluído em | lugar | retirada | a relação entre um domínio e o domínio que o inclui sai da superfície (item 6 do brief do P1, 15.09.2026): «Trabalho · incluído em Economia e finanças públicas» é uma frase sobre a arrumação do sítio e não sobre o país, e o diretor leu-a no ar («I don't even know what that means»). O `dentroDe` fica no código, e é ele que decide para onde a porta do Trabalho abre |
+| navegacao | included in | lugar | retirada | a relação entre um domínio e o domínio que o inclui sai da superfície (item 6 do brief do P1, 15.09.2026): «Trabalho · incluído em Economia e finanças públicas» é uma frase sobre a arrumação do sítio e não sobre o país, e o diretor leu-a no ar («I don't even know what that means»). O `dentroDe` fica no código, e é ele que decide para onde a porta do Trabalho abre |
+| navegacao | Brief reading | até 2026-08-26 | retirada | as duas palavras da densidade de um cartão saem das páginas do leitor (bloco F1.10, item 8.14, 08.09.2026): o diretor viu a 07.09 à noite que o comando «Relance · Leitura breve» mostrava, num estado, cabeçalhos com explicações e nada, e no outro as vinte e uma leituras de uma vez. O comando saiu da primeira página e os títulos de secção que as usavam passaram a dizer o que a secção tem («As medidas», «A leitura de cada medida»), que são as cadeias que a `DECISIONS.md` §1.98 declarou. O termo continua a existir na decisão e no brief; o que sai é a superfície |
+| conteudo | concelhos · CAOP | frases | retirada | a linha «308 concelhos · CAOP 2025 · selo» sai da superfície (acerto 4 do P1, 15.09.2026, pela leitura do lugar de direção às capturas): dizia a contagem dos concelhos uma segunda vez, por baixo do mapa, e a norma §2.1 do plano das palavras diz onde ela se diz, que é ao lado do número. O número passou para o lugar do nome do mapa («Portugal · 308 concelhos» com a marca da fonte), com a mesma linha do livro-razão e o mesmo selo; o ano da edição da Carta está no recibo, que é o que a marca abre. A menção da licença fica onde estava, porque é a única obrigação da CC BY 4.0 e a Emenda 20e escreve-a onde o mapa está |
+| conteudo | Custo do trabalho por unidade produzida, por hora trabalhada. | frases | retirada | o item 8.4 do F1.10 (08.09.2026): a definição de cada uma das 21 medidas dos dois painéis passou a sair da descrição da própria Comissão ou do Eurostat, citada com o documento, o endereço, a data de leitura e o excerto literal (`DEFINICOES_DAS_MEDIDAS` e `ORIGENS_DAS_DEFINICOES`, em `src/data/figuras.mjs`). Esta redação era da casa e não tinha origem declarada nenhuma; a que ficou no lugar dela diz o que a fonte diz |
+| conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu, e a descer. | frases | retirada | o F0.9 tirou «e a descer» a 03.09.2026: era uma tendência, e o livro-razão publica um só valor deste indicador (`grep -rl tipsgo10 ledger/claims/` devolve um ficheiro, o de 2025). Uma tendência volta em F3.1, tipada, com a linha do período anterior ao lado, e não com estas palavras |
+| conteudo | Dívida bruta das administrações públicas, no conceito do Procedimento dos Défices Excessivos. Está acima do limiar do painel europeu. | leitura | retirada | o item 8.4 do F1.10 (08.09.2026): a definição de cada uma das 21 medidas dos dois painéis passou a sair da descrição da própria Comissão ou do Eurostat, citada com o documento, o endereço, a data de leitura e o excerto literal (`DEFINICOES_DAS_MEDIDAS` e `ORIGENS_DAS_DEFINICOES`, em `src/data/figuras.mjs`). Esta redação era da casa e não tinha origem declarada nenhuma; a que ficou no lugar dela diz o que a fonte diz. Esta dizia também de que lado do limiar o valor está, que é o que o cartão já diz por palavras desde o item 8.5: uma coisa, um lugar |
+| navegacao | Encontrou um erro? correcoes@oestadodopais.pt · O registo de correções → | b1-peca3 | retirada | segunda porta: mandato B1, peça 3, 22.09.2026. |
+| navegacao | Escreva o nome do concelho | lugar | retirada | o rótulo da busca deixa de ser uma frase de instrução (item 4 do brief do P1, 15.09.2026): a regra 4 do plano das palavras diz que «uma interface que precisa de uma frase para se explicar tem um problema de desenho», e uma caixa de texto ao lado de um botão «Procurar» não precisa de ninguém a dizer que se escreve nela. O campo passa a levar o seu NOME, «Concelho», dentro dele como texto-fantasma e num `<label>` em `.vh`, e o nome não é uma cadeia nova: é `s.ambito.municipio`, a mesma palavra que o resto da página já usa |
+| navegacao | Type the name of the municipality | lugar | retirada | o rótulo da busca deixa de ser uma frase de instrução (item 4 do brief do P1, 15.09.2026): a regra 4 do plano das palavras diz que «uma interface que precisa de uma frase para se explicar tem um problema de desenho», e uma caixa de texto ao lado de um botão «Procurar» não precisa de ninguém a dizer que se escreve nela. O campo passa a levar o seu NOME, «Concelho», dentro dele como texto-fantasma e num `<label>` em `.vh`, e o nome não é uma cadeia nova: é `s.ambito.municipio`, a mesma palavra que o resto da página já usa |
+| navegacao | Procurar | lugar | viva | as quatro cadeias da busca entram no inventário com `data-voz` (bloco F1.10, §9.7, 08.09.2026, pela leitura cruzada do inventário das frases, Major 8). Rendiam-se num `<label>` e num `<button>`, e `BLOCOS_DA_VOZ` não olha para essas duas etiquetas: a régua não as via, e a contagem do inventário estava por isso incompleta. São `navegacao` porque é o que elas são, o rótulo e o verbo de um comando que leva a uma página, e não a casa a falar de si. Rendem-se em `/`, `/municipios`, `/livro-razao` e `/livro-razao/concelhos`, e nas gémeas inglesas; a fusão dos dois desenhos da busca num só componente é o §2.6 e ainda não está feita, e por isso a marca está nos dois sítios |
+| navegacao | Search | lugar | viva | as quatro cadeias da busca entram no inventário com `data-voz` (bloco F1.10, §9.7, 08.09.2026, pela leitura cruzada do inventário das frases, Major 8). Rendiam-se num `<label>` e num `<button>`, e `BLOCOS_DA_VOZ` não olha para essas duas etiquetas: a régua não as via, e a contagem do inventário estava por isso incompleta. São `navegacao` porque é o que elas são, o rótulo e o verbo de um comando que leva a uma página, e não a casa a falar de si. Rendem-se em `/`, `/municipios`, `/livro-razao` e `/livro-razao/concelhos`, e nas gémeas inglesas; a fusão dos dois desenhos da busca num só componente é o §2.6 e ainda não está feita, e por isso a marca está nos dois sítios |
+| conteudo | Fora do limiar da Comissão: dívida pública, posição de investimento internacional, custo unitário do trabalho e preços da habitação , em . | frases | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | A dívida pública é % do PIB e a taxa de desemprego é % da população ativa. | b1-peca3 | retirada | leitura substituída pelo texto da direção: mandato B1, peça 3, 22.09.2026. | · o item 8.15 do F1.10 (08.09.2026) não lhe tocou: os dois caminhos foram medidos e o primeiro bastou. A 390 px a manchete media 3 linhas em `/` e 4 em `/en`, e com o chão do `clamp` de `.cabeca-h1` a descer de 28 para 26 px são 3 e 3, nos dois motores. A frase fica como a direção a escreveu, com a unidade de cada medida por extenso |
+| conteudo | Government debt is % of GDP and the unemployment rate is % of the labour force. | b1-peca3 | retirada | leitura substituída pelo texto da direção: mandato B1, peça 3, 22.09.2026. | · o item 8.15 do F1.10 (08.09.2026) não lhe tocou: os dois caminhos foram medidos e o primeiro bastou. A 390 px a manchete media 3 linhas em `/` e 4 em `/en`, e com o chão do `clamp` de `.cabeca-h1` a descer de 28 para 26 px são 3 e 3, nos dois motores. A frase fica como a direção a escreveu, com a unidade de cada medida por extenso |
+| conteudo | O limiar é o valor de referência do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, fixado no regulamento que criou o Procedimento e revisto pela Comissão Europeia. | lugar | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | The threshold is the reference value of the Macroeconomic Imbalance Procedure scoreboard, set in the regulation that created the Procedure and revised by the European Commission. | lugar | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| navegacao | Found an error? correcoes@oestadodopais.pt · The corrections log → | b1-peca3 | retirada | segunda porta: mandato B1, peça 3, 22.09.2026. |
+| conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold, and falling. | frases | retirada | a gémea inglesa da de cima: o F0.9 tirou «and falling» a 03.09.2026, pela mesma razão e no mesmo dia. Uma linha é uma decisão editorial e leva as duas edições da mesma frase |
+| conteudo | General government gross debt, on the Excessive Deficit Procedure concept. It is above the European scoreboard threshold. | leitura | retirada | o item 8.4 do F1.10 (08.09.2026): a definição de cada uma das 21 medidas dos dois painéis passou a sair da descrição da própria Comissão ou do Eurostat, citada com o documento, o endereço, a data de leitura e o excerto literal (`DEFINICOES_DAS_MEDIDAS` e `ORIGENS_DAS_DEFINICOES`, em `src/data/figuras.mjs`). Esta redação era da casa e não tinha origem declarada nenhuma; a que ficou no lugar dela diz o que a fonte diz. Esta dizia também de que lado do limiar o valor está, que é o que o cartão já diz por palavras desde o item 8.5: uma coisa, um lugar |
+| conteudo | Grande Lisboa · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
+| conteudo | Greater Lisbon · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
+| navegacao | Hover over a point to read the municipality. Keyboard: Tab to the map, arrow keys to move between neighbouring municipalities, Home to return to Évora. | grelha-2 | retirada | a leitura em voz alta do mapa saiu com os pontos da primeira página (Emenda 20a e 20c; bloco do mapa por distritos) |
+| conteudo | Índice nominal de preços da habitação. | frases | retirada | o item 8.4 do F1.10 (08.09.2026): a definição de cada uma das 21 medidas dos dois painéis passou a sair da descrição da própria Comissão ou do Eurostat, citada com o documento, o endereço, a data de leitura e o excerto literal (`DEFINICOES_DAS_MEDIDAS` e `ORIGENS_DAS_DEFINICOES`, em `src/data/figuras.mjs`). Esta redação era da casa e não tinha origem declarada nenhuma; a que ficou no lugar dela diz o que a fonte diz |
+| conteudo | Jovens que deixaram a escola com o secundário incompleto e não estão em formação. | frases | retirada | o item 8.4 do F1.10 (08.09.2026): a definição de cada uma das 21 medidas dos dois painéis passou a sair da descrição da própria Comissão ou do Eurostat, citada com o documento, o endereço, a data de leitura e o excerto literal (`DEFINICOES_DAS_MEDIDAS` e `ORIGENS_DAS_DEFINICOES`, em `src/data/figuras.mjs`). Esta redação era da casa e não tinha origem declarada nenhuma; a que ficou no lugar dela diz o que a fonte diz |
+| conteudo | Labour cost per unit of output, per hour worked. | frases | retirada | o item 8.4 do F1.10 (08.09.2026): a definição de cada uma das 21 medidas dos dois painéis passou a sair da descrição da própria Comissão ou do Eurostat, citada com o documento, o endereço, a data de leitura e o excerto literal (`DEFINICOES_DAS_MEDIDAS` e `ORIGENS_DAS_DEFINICOES`, em `src/data/figuras.mjs`). Esta redação era da casa e não tinha origem declarada nenhuma; a que ficou no lugar dela diz o que a fonte diz |
+| navegacao | Leitura breve | até 2026-08-26 | retirada | as duas palavras da densidade de um cartão saem das páginas do leitor (bloco F1.10, item 8.14, 08.09.2026): o diretor viu a 07.09 à noite que o comando «Relance · Leitura breve» mostrava, num estado, cabeçalhos com explicações e nada, e no outro as vinte e uma leituras de uma vez. O comando saiu da primeira página e os títulos de secção que as usavam passaram a dizer o que a secção tem («As medidas», «A leitura de cada medida»), que são as cadeias que a `DECISIONS.md` §1.98 declarou. O termo continua a existir na decisão e no brief; o que sai é a superfície |
+| conteudo | limiar da Comissão % · abaixo | frases | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | limiar da Comissão % · acima | frases | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | limiar da Comissão − % · abaixo | frases | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | limiar da Comissão − % · acima | frases | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | limiar da Comissão − /+ % | frases | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | limiar da Comissão − pp · acima | frases | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | Madeira · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
+| conteudo | Madeira · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
+| conteudo | municipalities · CAOP | frases | retirada | a linha «308 concelhos · CAOP 2025 · selo» sai da superfície (acerto 4 do P1, 15.09.2026, pela leitura do lugar de direção às capturas): dizia a contagem dos concelhos uma segunda vez, por baixo do mapa, e a norma §2.1 do plano das palavras diz onde ela se diz, que é ao lado do número. O número passou para o lugar do nome do mapa («Portugal · 308 concelhos» com a marca da fonte), com a mesma linha do livro-razão e o mesmo selo; o ano da edição da Carta está no recibo, que é o que a marca abre. A menção da licença fica onde estava, porque é a única obrigação da CC BY 4.0 e a Emenda 20e escreve-a onde o mapa está |
+| navegacao | Nenhum concelho com esse nome. | até 2026-08-26 | viva | — |
+| navegacao | No municipality by that name. | até 2026-08-26 | viva | — |
+| conteudo | Nominal house price index. | frases | retirada | o item 8.4 do F1.10 (08.09.2026): a definição de cada uma das 21 medidas dos dois painéis passou a sair da descrição da própria Comissão ou do Eurostat, citada com o documento, o endereço, a data de leitura e o excerto literal (`DEFINICOES_DAS_MEDIDAS` e `ORIGENS_DAS_DEFINICOES`, em `src/data/figuras.mjs`). Esta redação era da casa e não tinha origem declarada nenhuma; a que ficou no lugar dela diz o que a fonte diz |
+| navegacao | O Estado do País | até 2026-08-26 | viva | — |
+| conteudo | O que o país tem a haver do exterior menos o que lhe deve: negativo quando deve mais do que tem a haver. | até 2026-08-26 | retirada | o item 8.4 do F1.10 (08.09.2026): a definição de cada uma das 21 medidas dos dois painéis passou a sair da descrição da própria Comissão ou do Eurostat, citada com o documento, o endereço, a data de leitura e o excerto literal (`DEFINICOES_DAS_MEDIDAS` e `ORIGENS_DAS_DEFINICOES`, em `src/data/figuras.mjs`). Esta redação era da casa e não tinha origem declarada nenhuma; a que ficou no lugar dela diz o que a fonte diz. **E esta perdeu uma oração que explicava bem e que ninguém pode citar:** a página da Comissão sobre o painel publica «net international investment position as percent of GDP» e mais nada, e o Eurostat não tem página de glossário para o conceito (procurado a 08.09.2026 em três títulos, os três «Page not found»). A definição que ficou dizia o rótulo, e foi a única das 21 assim. **Deixou de o ser no mesmo dia:** o lugar de direção alargou as origens autorizadas ao compilador nacional, e a página do Banco de Portugal «O que é a posição de investimento internacional (PII)?» (https://bpstat.bportugal.pt/conteudos/paginas/940) explica-a nas duas línguas; a definição que está viva sai de lá |
+| conteudo | O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Um valor abaixo da média significa menos poder de compra por pessoa; um valor acima, mais. | regioes | viva | — |
+| conteudo | Outside the Commission threshold: government debt, net international investment position, unit labour cost and house prices , in . | frases | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| navegacao | Passe o cursor sobre um ponto para ler o município. Teclado: Tab até ao mapa, setas para percorrer os municípios vizinhos, Home para voltar a Évora. | grelha-2 | retirada | a leitura em voz alta do mapa saiu com os pontos da primeira página (Emenda 20a e 20c; bloco do mapa por distritos) |
+| conteudo | Península de Setúbal · região | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
+| conteudo | Portugal breaches 4 thresholds of the Macroeconomic Imbalance Procedure and meets 9 . | até 2026-08-26 | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | Portugal nos painéis europeus: os indicadores, os limiares e as fontes. | até 2026-08-26 | retirada | a descrição pública da primeira página descrevia os quadros europeus que o item 8.16 tinha tirado dali, e usava a palavra «indicadores», que a §1.98 fecha (Major 6 da leitura a frio, 09.09.2026). A nova diz o que a página mostra hoje, e a L3 passou a ler o `<title>` e as descrições |
+| conteudo | Portugal on the European scoreboards: the indicators, the thresholds and the sources. | até 2026-08-26 | retirada | ver a razão na gémea portuguesa (Major 6, 09.09.2026) |
+| conteudo | Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 . | até 2026-08-26 | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | Portugal · country | até 2026-08-26 | retirada | o F1.1 tirou o rótulo do âmbito da cabeça do PAÍS a 03.09.2026: dizia o nome do lugar e o tipo dele por cima de uma manchete que começa pela mesma palavra («Portugal ultrapassa…»), custava uma fila do primeiro ecrã do telemóvel, e era o eco do comando de âmbito, que saiu da página no mesmo bloco. O rótulo fica onde separa alguma coisa: nas páginas de região e de concelho, onde o tipo do lugar não está na manchete |
+| conteudo | Portugal · país | até 2026-08-26 | retirada | o F1.1 tirou o rótulo do âmbito da cabeça do PAÍS a 03.09.2026: dizia o nome do lugar e o tipo dele por cima de uma manchete que começa pela mesma palavra («Portugal ultrapassa…»), custava uma fila do primeiro ecrã do telemóvel, e era o eco do comando de âmbito, que saiu da página no mesmo bloco. O rótulo fica onde separa alguma coisa: nas páginas de região e de concelho, onde o tipo do lugar não está na manchete |
+| conteudo | Proporção das pessoas dos aos anos com emprego. | leitura | retirada | o item 8.4 do F1.10 (08.09.2026): a definição de cada uma das 21 medidas dos dois painéis passou a sair da descrição da própria Comissão ou do Eurostat, citada com o documento, o endereço, a data de leitura e o excerto literal (`DEFINICOES_DAS_MEDIDAS` e `ORIGENS_DAS_DEFINICOES`, em `src/data/figuras.mjs`). Esta redação era da casa e não tinha origem declarada nenhuma; a que ficou no lugar dela diz o que a fonte diz |
+| conteudo | Proporção que gasta mais de % do rendimento disponível em habitação. | frases | retirada | o item 8.4 do F1.10 (08.09.2026): a definição de cada uma das 21 medidas dos dois painéis passou a sair da descrição da própria Comissão ou do Eurostat, citada com o documento, o endereço, a data de leitura e o excerto literal (`DEFINICOES_DAS_MEDIDAS` e `ORIGENS_DAS_DEFINICOES`, em `src/data/figuras.mjs`). Esta redação era da casa e não tinha origem declarada nenhuma; a que ficou no lugar dela diz o que a fonte diz |
+| navegacao | Relance | até 2026-08-26 | retirada | as duas palavras da densidade de um cartão saem das páginas do leitor (bloco F1.10, item 8.14, 08.09.2026): o diretor viu a 07.09 à noite que o comando «Relance · Leitura breve» mostrava, num estado, cabeçalhos com explicações e nada, e no outro as vinte e uma leituras de uma vez. O comando saiu da primeira página e os títulos de secção que as usavam passaram a dizer o que a secção tem («As medidas», «A leitura de cada medida»), que são as cadeias que a `DECISIONS.md` §1.98 declarou. O termo continua a existir na decisão e no brief; o que sai é a superfície |
+| conteudo | Setúbal Peninsula · region | regioes | retirada | o bloco de cabeça de cada região saiu da primeira página com o estado `?ambito=regiao:<slug>` que o acendia (Emenda 21b, 27.08.2026); a página de uma região diz o nome como lugar e o tipo, «região NUTS II» |
+| conteudo | The convergence rule | regioes | viva | — |
+| conteudo | The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. A value below the average means less purchasing power per person; a value above it, more. | regioes | viva | — |
+| navegacao | The regions published on the convergence rule. | grelha-2 | retirada | a régua da convergência saiu da primeira página até haver a página das regiões (Emenda 18, consequência decidida a 25.08; bloco A da auditoria de UI e UX, `696b51a`) |
+| conteudo | The share of people aged to who are in employment. | leitura | retirada | o item 8.4 do F1.10 (08.09.2026): a definição de cada uma das 21 medidas dos dois painéis passou a sair da descrição da própria Comissão ou do Eurostat, citada com o documento, o endereço, a data de leitura e o excerto literal (`DEFINICOES_DAS_MEDIDAS` e `ORIGENS_DAS_DEFINICOES`, em `src/data/figuras.mjs`). Esta redação era da casa e não tinha origem declarada nenhuma; a que ficou no lugar dela diz o que a fonte diz |
+| conteudo | The share spending more than % of disposable income on housing. | frases | retirada | o item 8.4 do F1.10 (08.09.2026): a definição de cada uma das 21 medidas dos dois painéis passou a sair da descrição da própria Comissão ou do Eurostat, citada com o documento, o endereço, a data de leitura e o excerto literal (`DEFINICOES_DAS_MEDIDAS` e `ORIGENS_DAS_DEFINICOES`, em `src/data/figuras.mjs`). Esta redação era da casa e não tinha origem declarada nenhuma; a que ficou no lugar dela diz o que a fonte diz |
+| conteudo | Commission threshold % · above | frases | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | Commission threshold % · below | frases | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | Commission threshold − % · above | frases | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | Commission threshold − % · below | frases | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | Commission threshold − /+ % | frases | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | Commission threshold − pp · above | frases | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | What the country is owed from abroad minus what it owes abroad: negative when it owes more than it is owed. | até 2026-08-26 | retirada | o item 8.4 do F1.10 (08.09.2026): a definição de cada uma das 21 medidas dos dois painéis passou a sair da descrição da própria Comissão ou do Eurostat, citada com o documento, o endereço, a data de leitura e o excerto literal (`DEFINICOES_DAS_MEDIDAS` e `ORIGENS_DAS_DEFINICOES`, em `src/data/figuras.mjs`). Esta redação era da casa e não tinha origem declarada nenhuma; a que ficou no lugar dela diz o que a fonte diz. **E esta perdeu uma oração que explicava bem e que ninguém pode citar:** a página da Comissão sobre o painel publica «net international investment position as percent of GDP» e mais nada, e o Eurostat não tem página de glossário para o conceito (procurado a 08.09.2026 em três títulos, os três «Page not found»). A definição que ficou dizia o rótulo, e foi a única das 21 assim. **Deixou de o ser no mesmo dia:** o lugar de direção alargou as origens autorizadas ao compilador nacional, e a página do Banco de Portugal «O que é a posição de investimento internacional (PII)?» (https://bpstat.bportugal.pt/conteudos/paginas/940) explica-a nas duas línguas; a definição que está viva sai de lá |
+
+## `/livro-razao` · `/en/ledger` (etapa 3, subetapa 3b)
+
+*As duas edições partilham a tabela, como acima: uma frase entra uma vez, na
+língua em que é rendida.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | A licença cobre o conjunto: a estrutura, os valores da casa, as derivações e as descrições. Os excertos transcritos das fontes continuam sob os termos de quem os publicou. | p3 | retirada | «a casa» sai do texto do leitor (decisão do diretor de 15.09.2026 às 16:35 UTC; norma §1.3, «casa» é a habitação): «os valores da casa» passa a «os valores deste projeto» (bloco P3, item 3) |
+| conteudo | Com campos por confirmar | grelha-2 | retirada | a legenda dos dois estados do selo de proveniência saiu das páginas do leitor (`46608f4`, 25.08, e a decisão do diretor de 27.08 que tirou as contagens de proveniência dos índices, `ef8a78e`) |
+| conteudo | Complete provenance | grelha-2 | retirada | a legenda dos dois estados do selo de proveniência saiu das páginas do leitor (`46608f4`, 25.08, e a decisão do diretor de 27.08 que tirou as contagens de proveniência dos índices, `ef8a78e`) |
+| navegacao | Descarregar o livro-razão: CSV · JSON | até 2026-08-26 | retirada | «livro-razão» sai do nome visível da página do índice (item 8.8 e decisão 20 da releitura do leitor de primeira vez, 09.09.2026): o índice chama-se «Números e fontes» desde 08.09, e a porta passa a dizer «Descarregar tudo». O termo técnico fica no Método, no JSON e nos endereços |
+| navegacao | Download the ledger: CSV · JSON | até 2026-08-26 | retirada | ver a razão na gémea portuguesa (decisão 20, 09.09.2026) |
+| conteudo | O livro-razão | até 2026-08-26 | viva | — |
+| conteudo | one field unconfirmed | até 2026-08-26 | retirada | ver a razão na gémea portuguesa (item 5 do F1.13, 15.09.2026) |
+| conteudo | provenance complete | até 2026-08-26 | retirada | ver a razão na gémea portuguesa (item 5 do F1.13, 15.09.2026) |
+| conteudo | proveniência completa | até 2026-08-26 | retirada | a legenda dos dois estados passa a uma linha em palavras e a marca passa a chamar-se «a marca da fonte» (item 5 do brief do F1.13, 15.09.2026): o diretor leu a legenda na página de uma área e disse o que ela é para quem não trabalha aqui, «estados» a chamar o nome do sítio para dentro de uma legenda e «selo» a ser um selo de correio. A linha nova está viva neste ficheiro, e a L3 de `check:lugar` passa a contar «selo» a zero nas páginas do leitor fora do Método |
+| conteudo | Os dois estados do selo | até 2026-08-26 | retirada | a legenda dos dois estados passa a uma linha em palavras e a marca passa a chamar-se «a marca da fonte» (item 5 do brief do F1.13, 15.09.2026): o diretor leu a legenda na página de uma área e disse o que ela é para quem não trabalha aqui, «estados» a chamar o nome do sítio para dentro de uma legenda e «selo» a ser um selo de correio. A linha nova está viva neste ficheiro, e a L3 de `check:lugar` passa a contar «selo» a zero nas páginas do leitor fora do Método |
+| conteudo | The ledger | até 2026-08-26 | viva | — |
+| conteudo | The licence covers the dataset: its structure, the house values, the derivations and the descriptions. Excerpts transcribed from sources remain under their publishers’ terms. | p3 | retirada | ver a razão na gémea portuguesa |
+| conteudo | The two states of the seal | até 2026-08-26 | retirada | ver a razão na gémea portuguesa (item 5 do F1.13, 15.09.2026) |
+| navegacao | Um observatório de Portugal. | lugar | retirada | a frase de identidade passou a ser a frase de DEFINIÇÃO do sítio (`DECISIONS.md` §1.98, segunda emenda, item 3): diz as três maneiras de ler o sítio e a origem de cada número, que é o que a leitura de um leitor de primeira vez mediu em falta |
+| navegacao | Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos. | lugar | retirada | o diretor leu a primeira página no ar a 15.09.2026 de manhã e mediu o que a frase fazia: descreve o MÉTODO e as três maneiras de percorrer o sítio, e não diz o que a coisa é a quem chega (item 1 do brief do F1.13). A frase nova, que diz o que o sítio tem, até onde desce e o que cada número traz, está viva neste ficheiro |
+| conteudo | With fields to confirm | grelha-2 | retirada | a legenda dos dois estados do selo de proveniência saiu das páginas do leitor (`46608f4`, 25.08, e a decisão do diretor de 27.08 que tirou as contagens de proveniência dos índices, `ef8a78e`) |
+| conteudo | [a verificar] (to verify) | até 2026-08-26 | viva | — |
+
+### As quatro que ficam em autorreferência, e porquê
+
+**São duas frases, nas duas edições, e são as duas que a `DECISIONS.md` §4 item
+AB manda preservar palavra por palavra.** São as legendas dos dois grupos de
+linhas:
+
+- «Todos os campos preenchidos e conferidos contra a fonte. O selo é um quadrado
+  cheio.» / «Every field filled in and checked against the source. The seal is a
+  filled square.»
+- «Falta pelo menos um campo de proveniência. O campo fica marcado, e nenhum foi
+  preenchido com um valor plausível. O selo é um quadrado a tracejado.» / «At
+  least one provenance field is missing. The field is marked as such, and none
+  has been filled in with a plausible value. The seal is a dashed square.»
+
+Cada uma tem uma parte que é conteúdo («O selo é um quadrado cheio», que nomeia
+o glifo, e é por isso que o brief da etapa 3 as manda ficar «onde descrevem os
+estados do selo como conteúdo») e uma parte que é a casa a falar da sua própria
+verificação («conferidos contra a fonte»; «nenhum foi preenchido com um valor
+plausível»). A classe de um bloco é uma só, e a régua lê o bloco inteiro.
+
+**O conflito está escrito e não foi contornado.** A §4 item AB preserva-as
+palavra por palavra e assinala-as à direção na pré-visualização n.º 2; a Emenda
+15 manda a autorreferência a zero. O brief da etapa 3 §2b resolve o caso em que
+as duas regras se cruzam: «when in doubt, list it in the note as an editorial
+call and keep it». Ficam, e a contagem de `/livro-razao` é **2 por edição** em
+vez de 0. Uma redação que separasse as duas partes é uma chamada da direção.
+
+## `/municipios` · `/en/municipalities` (etapa 3, subetapa 3c)
+
+*Trinta dos trinta e três blocos são **nomes de distrito e de ilha**, tal como a
+Carta Administrativa os escreve, e são iguais nas duas edições: são o nome do
+âmbito de cada grupo da lista, que a Emenda 15 chama conteúdo. Os 308 nomes de
+concelho e as suas duas palavras de estado **não entram aqui**: levam
+`data-cobertura`, que é vocabulário declarado, e a régua passou a excluí-los na
+3c (a razão está escrita em `scripts/medir-defeitos.mjs`). Sem essa exclusão, esta
+tabela teria 307 linhas do feitio «Abrantes sem página ainda», que é a lista dos
+concelhos escrita outra vez e não um inventário de frases.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Aveiro | até 2026-08-26 | viva | — |
+| conteudo | Beja | até 2026-08-26 | viva | — |
+| conteudo | Braga | até 2026-08-26 | viva | — |
+| conteudo | Bragança | até 2026-08-26 | viva | — |
+| conteudo | Castelo Branco | até 2026-08-26 | viva | — |
+| conteudo | Coimbra | até 2026-08-26 | viva | — |
+| conteudo | Every municipality in Portugal, from the official administrative map. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Every municipality, from the Carta Administrativa Oficial de Portugal. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Faro | até 2026-08-26 | viva | — |
+| conteudo | Guarda | até 2026-08-26 | viva | — |
+| conteudo | Ilha Terceira | até 2026-08-26 | viva | — |
+| conteudo | Ilha da Graciosa | até 2026-08-26 | viva | — |
+| conteudo | Ilha da Madeira | até 2026-08-26 | viva | — |
+| conteudo | Ilha das Flores | até 2026-08-26 | viva | — |
+| conteudo | Ilha de Porto Santo | até 2026-08-26 | viva | — |
+| conteudo | Ilha de Santa Maria | até 2026-08-26 | viva | — |
+| conteudo | Ilha de São Jorge | até 2026-08-26 | viva | — |
+| conteudo | Ilha de São Miguel | até 2026-08-26 | viva | — |
+| conteudo | Ilha do Corvo | até 2026-08-26 | viva | — |
+| conteudo | Ilha do Faial | até 2026-08-26 | viva | — |
+| conteudo | Ilha do Pico | até 2026-08-26 | viva | — |
+| conteudo | Leiria | até 2026-08-26 | viva | — |
+| conteudo | Lisboa | até 2026-08-26 | viva | — |
+| conteudo | Os concelhos de Portugal | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Portalegre | até 2026-08-26 | viva | — |
+| conteudo | Porto | até 2026-08-26 | viva | — |
+| conteudo | Santarém | até 2026-08-26 | viva | — |
+| conteudo | Setúbal | até 2026-08-26 | viva | — |
+| conteudo | The municipalities of Portugal | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Todos os concelhos de Portugal, pela Carta Administrativa Oficial. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Todos os concelhos, pela Carta Administrativa Oficial de Portugal. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Viana do Castelo | até 2026-08-26 | viva | — |
+| conteudo | Vila Real | até 2026-08-26 | viva | — |
+| conteudo | Viseu | até 2026-08-26 | viva | — |
+
+**Autorreferência: 0 nas duas edições.** Saíram, nesta subetapa, «O que este
+índice não diz» e «Nada sobre o concelho. É uma lista de nomes e de estados…»,
+que é a classe que a Emenda 15 nomeia por extenso, e a segunda frase da descrição
+do `<head>` («Os que já têm página do observatório levam a ela; os outros dizem
+que ainda não têm»), que é a cobertura do próprio sítio. A frase da contagem foi
+reescrita para levar as duas chaves da prova, e por isso deixou de escrever «Um»
+por extenso, que a `IDENTIDADE.md` §10 recusa.
+
+## `/municipios/evora` · `/en/municipalities/evora` (etapa 4, commit 4-0)
+
+*A rota entra com as decisões da direção de 21.08.2026, tarde: saíram a abertura
+(«Esta página mede o município de Évora… Não interpreta: …»), as contagens por
+extenso do Relance («Oito medidas. Seis vêm de organismos…»), os dois parágrafos
+por baixo de «Quem responde pelo quê» — que fica só como nome da secção, por cima
+da banda dos mandatos —, a sub-linha da Leitura breve, a nota dos trabalhos e a
+segunda frase da descrição do `<head>`.*
+
+***A contagem não fecha a zero, e fica escrita em vez de arredondada.*** *Três
+blocos distintos por edição continuam a ser a casa a falar de si, e os três vivem
+em `metodo`, `naoSabe` e nas notas de mandato de `src/data/municipios.mjs`, que
+são conteúdo editorial da etapa 3 e não estão entre os itens que a decisão de
+21.08 nomeou. Estão listados abaixo com a sua classe, e o pedido está em
+`ISSUES.md` (I52): são uma chamada de conteúdo, não de forma, e pedem a palavra de
+quem escreveu a página.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | A diferença entre as duas contas da mesma dívida | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | A dívida contra o teto legal | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | A última prestação de contas do município | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | A última prestação de contas da câmara | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Accounts of the year before last | até 2026-08-26 | viva | — |
+| navegacao | Background | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Borrowing margin | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Contas do penúltimo ano | até 2026-08-26 | viva | — |
+| conteudo | Corrected budget | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Debt limit | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Decided | até 2026-08-26 | viva | — |
+| conteudo | Decidiu | até 2026-08-26 | viva | — |
+| conteudo | Deixou | até 2026-08-26 | viva | — |
+| conteudo | Despesa paga | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Economia, investidores e portas abertas no município de Évora. | até 2026-08-26 | retirada | «concelho» é a palavra visível do território (§1.98 e Major 5 da leitura a frio, 09.09.2026). Esta descrição é prosa da casa e não uma transcrição, e por isso muda; as duas descrições que SÃO a frase de abertura do documento ficam como a fonte as escreve |
+| conteudo | Economy, investors and open doors in the municipality of Évora. | até 2026-08-26 | viva | — |
+| conteudo | Em funções. | até 2026-08-26 | viva | — |
+| conteudo | Estimativa anual do INE para o concelho. | até 2026-08-26 | retirada | Bloco R2 (03.10.2026, achados 2, 23 e 26 da auditoria dos rótulos): a nota da medida do concelho passa a dizer o que se conta, com o termo da fonte entre parênteses; a forma nova está na secção do bloco r2. |
+| conteudo | Executive installed | até 2026-08-26 | viva | — |
+| conteudo | Executivo instalado | até 2026-08-26 | viva | — |
+| conteudo | Expenditure paid | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Fifteen years of municipal government in Évora, across five terms. | até 2026-08-26 | viva | — |
+| conteudo | Herdou | até 2026-08-26 | viva | — |
+| conteudo | In office. | até 2026-08-26 | viva | — |
+| conteudo | Inherited | até 2026-08-26 | viva | — |
+| conteudo | Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho. | até 2026-08-26 | retirada | Bloco R2 (03.10.2026, achados 2, 23 e 26 da auditoria dos rótulos): a nota da medida do concelho passa a dizer o que se conta, com o termo da fonte entre parênteses; a forma nova está na secção do bloco r2. |
+| conteudo | Left | até 2026-08-26 | viva | — |
+| conteudo | Limite de dívida | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Lugares | até 2026-08-26 | viva | — |
+| conteudo | Margem de endividamento | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | O município publica | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora. | até 2026-08-26 | retirada | «concelho» é a palavra visível do território (§1.98 e Major 5, 09.09.2026). Ver a razão na gémea |
+| conteudo | O que o município orçamentou, o que cobrou, o que pagou, e o que dizia dever no fim do ano. São números do próprio município sobre si mesmo: a prestação de contas é dele. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | O que a câmara orçamentou, o que cobrou, o que pagou, e o que dizia dever no fim do ano. São números da própria câmara sobre si mesma: a prestação de contas é dela. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | O regulador | grelha-2 | retirada | a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `8b55bd3`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `e470212`) |
+| conteudo | O regulador publica | grelha-2 | retirada | a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `8b55bd3`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `e470212`) |
+| conteudo | O traço fino é a dívida total que o regulador publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido. | grelha-2 | retirada | a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `8b55bd3`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `e470212`) |
+| conteudo | Orçamento corrigido | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Os trabalhos sobre este concelho | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | Os estudos sobre este concelho | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Pelouros | até 2026-08-26 | viva | — |
+| conteudo | Poder de compra per capita, publicado pelo INE para todos os concelhos. | l2b-c | retirada | o cartão do poder de compra passa a dizer o que o índice é em palavras comuns, com Portugal a valer cem (passagem L2b-c, 01.10.2026, o achado 7 da leitura a frio do L2b, pela I150); a frase nova está na secção da L2b-c |
+| conteudo | Portfolios | até 2026-08-26 | viva | — |
+| conteudo | Provenance | até 2026-08-26 | viva | — |
+| conteudo | Proveniência | até 2026-08-26 | viva | — |
+| conteudo | Purchasing power per capita, published for every municipality. | l2b-c | retirada | ver a razão na gémea portuguesa (passagem L2b-c, 01.10.2026) |
+| conteudo | Quem administrou, e o que as contas registaram | até 2026-08-26 | viva | — |
+| conteudo | Quem responde pelo quê | até 2026-08-26 | viva | — |
+| conteudo | Quinze anos de governo municipal em Évora, ao longo de cinco mandatos. | até 2026-08-26 | viva | — |
+| conteudo | Receita cobrada | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Registered with the employment service at month end, monthly file by municipality. | até 2026-08-26 | retirada | Bloco R2 (03.10.2026, achados 2, 23 e 26 da auditoria dos rótulos): a nota da medida do concelho passa a dizer o que se conta, com o termo da fonte entre parênteses; a forma nova está na secção do bloco r2. |
+| conteudo | Reportado pelo município: sai da prestação de contas do próprio, não de um agregador central. | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
+| conteudo | Reported by the municipality: it comes from its own accounts, not from a central aggregator. | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
+| conteudo | Revenue collected | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Seats | até 2026-08-26 | viva | — |
+| conteudo | The debt against the legal ceiling | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | The gap between the two accounts of the same debt | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | The municipality publishes | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | The municipality’s latest accounts | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | The recovery-plan totals that appear in that work’s reading are sums over the public register, attributed to the concelho by that register. Of the money contracted in the concelho, the university holds more than the municipality, and the layer that administers the money is made of national bodies. That this makes the accountability address something other than the town hall is that work’s own signed conclusion, and it sits on its page. | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
+| conteudo | The regulator | grelha-2 | retirada | a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `8b55bd3`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `e470212`) |
+| conteudo | The regulator and the municipality publish the same year’s debt with a difference between them. The difference is small, and it is shown because it is the only place where an outside voice and the municipality’s own voice measure the same thing. | grelha-2 | retirada | a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `8b55bd3`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `e470212`) |
+| conteudo | The regulator publishes | grelha-2 | retirada | a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `8b55bd3`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `e470212`) |
+| conteudo | The statistics institute’s annual estimate for the municipality. | até 2026-08-26 | retirada | Bloco R2 (03.10.2026, achados 2, 23 e 26 da auditoria dos rótulos): a nota da medida do concelho passa a dizer o que se conta, com o termo da fonte entre parênteses; a forma nova está na secção do bloco r2. |
+| conteudo | The thin line is the total debt the regulator publishes for the concelho; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. | grelha-2 | retirada | a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `8b55bd3`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `e470212`) |
+| conteudo | The works about this concelho | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
+| conteudo | What the municipality budgeted, what it collected, what it paid, and what it said it owed at year end. These are the municipality’s own figures about itself: the accounts are its own. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | What was budgeted, what was paid and what was left owing in the municipality of Évora. | até 2026-08-26 | viva | — |
+| conteudo | Who answers for what | até 2026-08-26 | viva | — |
+| conteudo | Who governed, and what the accounts recorded | até 2026-08-26 | viva | — |
+| conteudo | Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portfolios cover, and what the reports say those areas did. | até 2026-08-26 | viva | — |
+| conteudo | no row yet | vazios | retirada | as duas palavras da ausência saíram do sítio (diretor, 28.08.2026, regra 3): depois de a execução da receita perder a peça (regra 1) e de as onze linhas que a fonte imprime «N.d.» passarem a mostrar o valor publicado (regra 2), nenhuma peça de concelho fica sem linha; e o campo «Decidiu» do mandato de 2017 a 2021 de Évora, que não tem valores nem nota, deixou de se render em vez de dizer a cadeia. A FORMA fica no código, para uma falta futura genuína (Emenda 14): a peça vazia continua escrita em `Peca.astro` e as duas cadeias continuam em `strings.mjs` |
+| conteudo | sem linha ainda | vazios | retirada | as duas palavras da ausência saíram do sítio (diretor, 28.08.2026, regra 3): depois de a execução da receita perder a peça (regra 1) e de as onze linhas que a fonte imprime «N.d.» passarem a mostrar o valor publicado (regra 2), nenhuma peça de concelho fica sem linha; e o campo «Decidiu» do mandato de 2017 a 2021 de Évora, que não tem valores nem nota, deixou de se render em vez de dizer a cadeia. A FORMA fica no código, para uma falta futura genuína (Emenda 14): a peça vazia continua escrita em `Peca.astro` e as duas cadeias continuam em `strings.mjs` |
+| conteudo | Évora | até 2026-08-26 | viva | — |
+
+## `/correcoes` · `/en/corrections` (etapa 4, subetapa 4a)
+
+*A rota entra na subetapa que reconstrói a forma do registo. **Nenhum bloco desta
+página é autorreferência, e a razão não é indulgência: é o objecto da página.***
+A Emenda 15 tira de uma página do leitor «nenhuma frase sobre o método, a
+verificação, a honestidade, a cobertura ou as intenções do próprio sítio» — e a
+política de correções é o CONTEÚDO desta página, tal como a linha do livro-razão
+é o conteúdo do índice. É a Emenda 17 que o diz por escrito: «a frase da política
+vive em `/correcoes`.» A régua do índice já classificava assim a sua lede («Uma
+linha por número publicado. Cada linha guarda o valor…»), e é a mesma leitura.*
+
+*O que aqui seria autorreferência é uma frase sobre outra coisa que o sítio faz —
+o selo, a cobertura, a verificação de uma linha — e não existe nenhuma. As duas
+frases da caixa de correções são **navegação**: dizem como se usa um comando, que
+é o que a lista declarada chama navegação.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | 26 provenance revisions | c1c | retirada | Registo histórico: a C1c publicou 34 entradas. A C1d repôs o limite municipal e acrescentou a história dos excertos; a contagem vigente está na secção C1d. |
+| conteudo | 26 revisões de proveniência | c1c | retirada | Registo histórico: a C1c publicou 34 entradas. A C1d repôs o limite municipal e acrescentou a história dos excertos; a contagem vigente está na secção C1d. |
+| conteudo | A política | até 2026-08-26 | viva | — |
+| conteudo | A política de correções deste sítio e o registo de todas: o valor anterior à vista, datado, com o motivo, e nada apagado. | até 2026-08-26 | viva | — |
+| conteudo | An entry in the register holds the previous value, the new value, the date, the reason and the ledger row that changed. Nothing is removed: a corrected entry is added to that row’s history, it does not replace it. There are three kinds, and they are not mixed: | até 2026-08-26 | viva | — |
+| conteudo | Anyone who finds an error writes to correcoes@oestadodopais.pt . A confirmed error enters the register with credit to whoever found it, if they wish. | até 2026-08-26 | viva | — |
+| conteudo | Atualização. O valor estava certo e deixou de estar, porque aquilo que mede mudou. Não é um erro. | até 2026-08-26 | viva | — |
+| conteudo | Correcting in silence is the cheapest way of lying. | até 2026-08-26 | viva | — |
+| conteudo | Correction. The published value was wrong. It is a confession, and it is the reason the register exists. | até 2026-08-26 | viva | — |
+| conteudo | Corrections | até 2026-08-26 | viva | — |
+| conteudo | Correção. O valor publicado estava errado. É uma confissão, e é a razão de o registo existir. | até 2026-08-26 | viva | — |
+| conteudo | Correções | até 2026-08-26 | viva | — |
+| conteudo | Corrigir em silêncio é a forma mais barata de mentir. | até 2026-08-26 | viva | — |
+| navegacao | Escreva aqui e o botão abre o seu programa de correio com o texto já dentro. Nada é enviado deste sítio: a mensagem sai de si, para si ficar com uma cópia. | até 2026-08-26 | viva | — |
+| conteudo | Escrever uma correção | até 2026-08-26 | viva | — |
+| navegacao | If the button opens nothing, your computer has no mail program set up. In that case copy the address above and write from wherever you normally write. | até 2026-08-26 | viva | — |
+| conteudo | O que foi corrigido, e o que mudou | até 2026-08-26 | viva | — |
+| conteudo | O registo | até 2026-08-26 | viva | — |
+| conteudo | O valor não mudou; mudou a maneira de lá chegar: uma fonte que muda de endereço, por exemplo. Não são erros nem atualizações, e não se listam aqui uma a uma: são muitas de cada vez e afogariam as correções. Cada linha abaixo leva à sua própria história, onde a revisão está escrita por extenso. | até 2026-08-26 | viva | — |
+| conteudo | Provenance revision. The value did not change; the route to the source did, an address for example. It is neither an error nor an update. | até 2026-08-26 | viva | — |
+| conteudo | Provenance revisions | até 2026-08-26 | viva | — |
+| conteudo | Quem encontrar um erro escreve para correcoes@oestadodopais.pt . Um erro confirmado entra no registo com crédito a quem o encontrou, se o desejar. | até 2026-08-26 | viva | — |
+| conteudo | Revisão de proveniência. O valor não mudou; mudou o caminho até à fonte, um endereço por exemplo. Não é erro nem atualização. | até 2026-08-26 | viva | — |
+| conteudo | Revisões de proveniência | até 2026-08-26 | viva | — |
+| navegacao | Se o botão não abrir nada, o seu computador não tem programa de correio configurado. Nesse caso copie o endereço acima e escreva de onde costuma escrever. | até 2026-08-26 | viva | — |
+| conteudo | The corrections policy of this site and the register of them all: the previous value in plain sight, dated, with the reason, and nothing deleted. | até 2026-08-26 | viva | — |
+| conteudo | The policy | até 2026-08-26 | viva | — |
+| conteudo | The register | até 2026-08-26 | viva | — |
+| conteudo | The value did not change; the way to find it did: a source that moves address, for example. They are neither errors nor updates, and they are not listed one by one here: they come many at a time and would drown the corrections. Each row below leads to its own history, where the revision is written out in full. | até 2026-08-26 | viva | — |
+| conteudo | Uma entrada do registo guarda o valor anterior, o valor novo, a data, o motivo e a linha do livro-razão que mudou. Nada é removido: uma entrada corrigida acresce à história daquela linha, não a substitui. São três naturezas, e não se misturam: | até 2026-08-26 | viva | — |
+| conteudo | Update. The value was right and stopped being so, because what it measures changed. It is not an error. | até 2026-08-26 | viva | — |
+| conteudo | Valores que estavam certos e deixaram de estar, porque aquilo que medem mudou. Não são erros, e não contam para o número acima. | até 2026-08-26 | retirada | as duas listas do registo (as correções e as atualizações, cada uma com o seu título, a sua nota e a sua tabela de quatro colunas) deram lugar a uma lista só, por data, com as três classes de mudança juntas e o lugar de cada linha (B1c, 22.09.2026): a primeira página deixou de mostrar as trinta mudanças e o registo passou a mostrá-las todas. As três naturezas continuam ditas na política, no topo da mesma página, e a de cada entrada continua escrita na sua linha («Correção», «Atualização») |
+| conteudo | Valores que estavam errados. Cada um fica com o valor anterior à vista, datado, e nenhum é removido. | até 2026-08-26 | retirada | as duas listas do registo (as correções e as atualizações, cada uma com o seu título, a sua nota e a sua tabela de quatro colunas) deram lugar a uma lista só, por data, com as três classes de mudança juntas e o lugar de cada linha (B1c, 22.09.2026): a primeira página deixou de mostrar as trinta mudanças e o registo passou a mostrá-las todas. As três naturezas continuam ditas na política, no topo da mesma página, e a de cada entrada continua escrita na sua linha («Correção», «Atualização») |
+| conteudo | Values that were right and stopped being so, because what they measure changed. They are not errors, and they do not count towards the number above. | até 2026-08-26 | retirada | as duas listas do registo (as correções e as atualizações, cada uma com o seu título, a sua nota e a sua tabela de quatro colunas) deram lugar a uma lista só, por data, com as três classes de mudança juntas e o lugar de cada linha (B1c, 22.09.2026): a primeira página deixou de mostrar as trinta mudanças e o registo passou a mostrá-las todas. As três naturezas continuam ditas na política, no topo da mesma página, e a de cada entrada continua escrita na sua linha («Correção», «Atualização») |
+| conteudo | Values that were wrong. Each keeps its previous value in plain sight, dated, and none is removed. | até 2026-08-26 | retirada | as duas listas do registo (as correções e as atualizações, cada uma com o seu título, a sua nota e a sua tabela de quatro colunas) deram lugar a uma lista só, por data, com as três classes de mudança juntas e o lugar de cada linha (B1c, 22.09.2026): a primeira página deixou de mostrar as trinta mudanças e o registo passou a mostrá-las todas. As três naturezas continuam ditas na política, no topo da mesma página, e a de cada entrada continua escrita na sua linha («Correção», «Atualização») |
+| conteudo | What was corrected, and what changed | até 2026-08-26 | viva | — |
+| conteudo | Write a correction | até 2026-08-26 | viva | — |
+| navegacao | Write here and the button opens your own mail program with the text already in it. Nothing is sent from this site: the message leaves from you, so you keep a copy of it. | até 2026-08-26 | viva | — |
+| conteudo | As mudanças, por data | b1c | viva | — |
+| conteudo | Todas as mudanças deste sítio, da mais recente para a mais antiga: as correções e as atualizações de cada linha, cada estudo que se publicou e as mudanças do projeto. Cada uma diz o lugar a que pertence, e nenhuma é removida. | b1c | retirada | a nota da lista descrevia a cobertura da página e o que o projeto faz, que é a classe de frase que a Emenda 15 tira de uma página do leitor (achado 12 da leitura a frio de 22.09.2026). O registo fica com o título, a lista e a norma das correções, que está no topo da mesma página |
+| conteudo | The changes, by date | b1c | viva | — |
+| conteudo | Every change to this site, from the most recent to the oldest: the corrections and updates to each row, the studies published and the changes to the project. Each says the place it belongs to, and none is removed. | b1c | retirada | a nota da lista descrevia a cobertura da página e o que o projeto faz, que é a classe de frase que a Emenda 15 tira de uma página do leitor (achado 12 da leitura a frio de 22.09.2026). O registo fica com o título, a lista e a norma das correções, que está no topo da mesma página |
+
+## `/agenda` · `/en/agenda` (etapa 4, subetapa 4c)
+
+*A rota entra na subetapa que reconstrói a página. **Seis frases saíram** e vão
+listadas em `RELOCACOES.md`: a lede, a nota de origem, o parágrafo do estado
+vazio de «Retirado», as duas notas da pergunta (que ficaram numa), o parágrafo do
+item sem critérios e a segunda frase da lede do calendário. O que sobrou é o
+nome de cada estado, o nome de cada campo do item, e três frases que dizem o que
+a coisa é.*
+
+*A frase da pergunta fica, e a razão é a regra: «O registo do motor escreve-se em
+inglês: o inglês é a forma registada, palavra por palavra…». Um leitor da edição
+portuguesa que a não tivesse tomaria a tradução pelo registo, e é isso que a
+regra da direção chama ler mal. As duas palavras dos estados vazios («Nenhum até
+hoje.», «Sem critério.») são a ausência dita como a Emenda 15 manda. «Nesta
+página» é o rótulo do sumário, e é navegação: leva a outro sítio da página.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | A pergunta | até 2026-08-26 | viva | — |
+| conteudo | A seguir | até 2026-08-26 | viva | — |
+| conteudo | Com data publicada pela fonte | até 2026-08-26 | viva | — |
+| conteudo | Concluded | até 2026-08-26 | viva | — |
+| conteudo | Concluído | até 2026-08-26 | viva | — |
+| conteudo | Criteria | até 2026-08-26 | viva | — |
+| conteudo | Critérios | até 2026-08-26 | viva | — |
+| conteudo | Em curso | até 2026-08-26 | viva | — |
+| conteudo | Nenhum até hoje. | até 2026-08-26 | viva | — |
+| navegacao | Nesta página | até 2026-08-26 | viva | — |
+| conteudo | Next | até 2026-08-26 | viva | — |
+| conteudo | No criterion. | até 2026-08-26 | viva | — |
+| conteudo | None to date. | até 2026-08-26 | viva | — |
+| conteudo | O calendário das fontes | até 2026-08-26 | viva | — |
+| conteudo | O calendário, no tempo | até 2026-08-26 | viva | — |
+| conteudo | O que está em cada estado | até 2026-08-26 | viva | — |
+| conteudo | O que mudou | até 2026-08-26 | viva | — |
+| conteudo | O que se mede a seguir | até 2026-08-26 | viva | — |
+| navegacao | On this page | até 2026-08-26 | viva | — |
+| conteudo | Porquê | até 2026-08-26 | viva | — |
+| conteudo | Retirado | até 2026-08-26 | viva | — |
+| conteudo | Sem critério. | até 2026-08-26 | viva | — |
+| conteudo | Sem data, porque a fonte não publica nenhuma | até 2026-08-26 | viva | — |
+| conteudo | The calendar, in time | até 2026-08-26 | viva | — |
+| conteudo | The question | até 2026-08-26 | viva | — |
+| conteudo | The source calendar | até 2026-08-26 | viva | — |
+| conteudo | Under way | até 2026-08-26 | viva | — |
+| conteudo | What changed | até 2026-08-26 | viva | — |
+| conteudo | What gets measured next | até 2026-08-26 | viva | — |
+| conteudo | What is in each state | até 2026-08-26 | viva | — |
+| conteudo | Why | até 2026-08-26 | viva | — |
+| conteudo | With a date the source publishes | até 2026-08-26 | viva | — |
+| conteudo | With no date, because the source publishes none | até 2026-08-26 | viva | — |
+| conteudo | Withdrawn | até 2026-08-26 | viva | — |
+
+## `/estudos` · `/en/studies` e as páginas de trabalho (etapa 4, subetapa 4e)
+
+*Vinte e quatro rotas (o índice e onze trabalhos, nas duas edições), e **106
+blocos distintos**. A esmagadora maioria é o que a coisa medida é: o nome de uma
+medida, a sua unidade escrita, a descrição de um trabalho, e as ressalvas do
+próprio trabalho sobre o que as suas fontes permitem estabelecer. As ressalvas
+são longas e ficam todas: são limites dos dados, que é a metade da regra que
+sobrevive.*
+
+*Duas frases saíram de dentro de blocos que ficaram, e vão listadas em
+`RELOCACOES.md`: «Inventar uma frase seria pior do que mostrar a falta.» e a
+inglesa, no fim da nota que explica porque é que dois selos aparecem
+tracejados. O limite fica; o cuidado da casa sai. Saíram também cinco cadeias da
+mobília (`RELOCACOES.md`), entre elas o rótulo «Leitura publicada», que era a
+casa a dizer de si que tinha acabado o trabalho por cima de uma página onde o
+trabalho está à vista.*
+
+*«A ligação sai deste domínio.» é **navegação**: avisa que o comando ao lado leva
+o leitor para fora do sítio. Os dois rótulos de estado que ficam («Rascunho · sem
+conteúdo», «Documento alojado · página por escrever») são a ausência declarada,
+e por isso conteúdo.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | % desse valor está nas quatro maiores empresas | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | % dez anos depois | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | % do orçamento foi de facto cobrado no último ano de contas | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | % four years earlier | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | % of that value sits with the four largest enterprises | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | % of the budget was actually collected in the latest year of accounts | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | % quatro anos antes | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | % ten years later | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | A cross-cutting reading of the municipality of Évora: the recovery-plan project register, the public-contracts register and the state auditor's catalogue. | voz-dos-documentos | viva | — |
+| navegacao | A ligação sai deste domínio. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | As contas do penúltimo ano foram rejeitadas em votação e nunca foram certificadas. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Avaliação económica das regiões de Portugal. | até 2026-08-26 | viva | — |
+| conteudo | Datas de publicação por confirmar. | até 2026-08-26 | retirada | retirada: a caixa passou a render-se só quando alguma edição não tem data, e a contá-las («Datas de publicação por confirmar em N edições»); com as dezasseis edições datadas pelo `src/data/datas-de-publicacao.json` do bloco F1.4b (04.09.2026) a caixa não se rende. A frase contada entra aqui no dia em que voltar a render-se |
+| conteudo | Description: house translation of the document’s opening sentence | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
+| conteudo | Description: opening sentence of the document | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
+| conteudo | Description: restatement of the title | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
+| conteudo | Descrição: frase de abertura do documento | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
+| conteudo | Descrição: reformulação do título | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
+| conteudo | Descrição: tradução da casa da frase de abertura do documento | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
+| conteudo | designations, over three people, in the next executive | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | designações, por três pessoas, no executivo seguinte | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Economia, sociedade e estratégia no Alentejo e no Algarve. | até 2026-08-26 | viva | — |
+| conteudo | Economic assessment of Portugal’s regions. | até 2026-08-26 | viva | — |
+| conteudo | Economy, society and strategy in the Alentejo and the Algarve. | até 2026-08-26 | viva | — |
+| conteudo | EN [a verificar] | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN Economic assessment of Portugal’s regions. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN Economy, investors and open doors in the municipality of Évora. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN Economy, society and strategy in the Alentejo and the Algarve. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN Fifteen years of municipal government in Évora, across five terms. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN Long series on the country’s evolution. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN Non-revenue water in Portugal’s public supply systems. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN Public funding in Portugal. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN What was budgeted, what was paid and what was left owing in the municipality of Évora. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN Who held each portfolio of the Câmara Municipal de Évora across five terms, how much the municipality’s own accounts spent in the areas those portfolios cover, and what the reports say those areas did. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Estudos | até 2026-08-26 | viva | — |
+| conteudo | Financiamento público em Portugal. | até 2026-08-26 | viva | — |
+| conteudo | Long series on the country’s evolution. | até 2026-08-26 | viva | — |
+| conteudo | No subject assigned | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Non-revenue water in Portugal’s public supply systems. | até 2026-08-26 | viva | — |
+| conteudo | Os estudos publicados, com as suas edições em português e em inglês. | lugar | retirada | achado 6 da leitura cruzada do inventário (Codex, 14.09.2026), pelo §9.1 do brief: «publicados» é a casa a dizer o que publicou. A descrição nova está viva neste ficheiro |
+| conteudo | O arquivo de estudos publicados, com as suas edições em português e em inglês. | até 2026-08-26 | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
+| conteudo | PT [a verificar] | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | PT Avaliação económica das regiões de Portugal. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | PT Economia, investidores e portas abertas no município de Évora. | até 2026-08-26 | retirada | a mesma descrição, na fila das descrições da página do estudo na edição inglesa (Major 5, 09.09.2026) |
+| conteudo | PT Economia, sociedade e estratégia no Alentejo e no Algarve. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | PT Financiamento público em Portugal. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | PT O que foi orçamentado, o que foi pago e o que ficou em dívida no município de Évora. | até 2026-08-26 | retirada | a mesma descrição, na fila das descrições da página do estudo na edição inglesa (Major 5, 09.09.2026) |
+| conteudo | PT Quinze anos de governo municipal em Évora, ao longo de cinco mandatos. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | PT Séries longas sobre a evolução do país. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | PT Água não faturada nos sistemas de abastecimento em Portugal. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Public funding in Portugal. | até 2026-08-26 | viva | — |
+| conteudo | Publication dates not yet confirmed. | até 2026-08-26 | retirada | retirada: a caixa passou a render-se só quando alguma edição não tem data, e a contá-las («Datas de publicação por confirmar em N edições»); com as dezasseis edições datadas pelo `src/data/datas-de-publicacao.json` do bloco F1.4b (04.09.2026) a caixa não se rende. A frase contada entra aqui no dia em que voltar a render-se |
+| conteudo | Quem teve cada pelouro da Câmara Municipal de Évora ao longo de cinco mandatos, quanto gastaram as contas do próprio município nas áreas que esses pelouros cobrem, e o que os relatórios dizem que essas áreas fizeram. | até 2026-08-26 | viva | — |
+| conteudo | Sem tema atribuído | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Studies | até 2026-08-26 | viva | — |
+| conteudo | Séries longas sobre a evolução do país. | até 2026-08-26 | viva | — |
+| conteudo | The accounts of the second-to-last year were rejected in a vote and were never certified. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | The published studies, with their Portuguese and English editions. | lugar | retirada | ver a razão na gémea portuguesa (achado 6, 14.09.2026) |
+| conteudo | The archive of published studies, with their Portuguese and English editions. | até 2026-08-26 | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
+| navegacao | The link leaves this domain. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Uma leitura transversal do município de Évora: o registo de projetos do plano de recuperação, o registo de contratos públicos e o catálogo do tribunal de contas do Estado. | voz-dos-documentos | viva | — |
+| conteudo | Água não faturada nos sistemas de abastecimento em Portugal. | até 2026-08-26 | viva | — |
+| conteudo | Young people who left school without completing secondary education and are not in training. | frases | retirada | o item 8.4 do F1.10 (08.09.2026): a definição de cada uma das 21 medidas dos dois painéis passou a sair da descrição da própria Comissão ou do Eurostat, citada com o documento, o endereço, a data de leitura e o excerto literal (`DEFINICOES_DAS_MEDIDAS` e `ORIGENS_DAS_DEFINICOES`, em `src/data/figuras.mjs`). Esta redação era da casa e não tinha origem declarada nenhuma; a que ficou no lugar dela diz o que a fonte diz |
+| conteudo | € actually paid | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | € approved and attributed to the concelho by the recovery-plan register | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
+| conteudo | € aprovados e atribuídos ao concelho pelo registo do plano de recuperação | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | € de valor acrescentado bruto das empresas do concelho | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | € efetivamente pagos | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+
+## `/estudos/<slug>/texto` · `/en/studies/<slug>/text` (parte 3, P2)
+
+*Oito rotas (seis edições portuguesas e duas inglesas), e **sete blocos
+distintos por edição**. É a rota mais magra do inventário, e é assim de
+propósito: **o corpo desta página é um documento, não a casa**. Os 829 blocos de
+prosa de estudo que ela rende não entram aqui porque não são frases da casa — a
+régua aprendeu a nona origem (`data-registo`, `data-registo-unidade`,
+`data-registo-linha`, `data-registo-conta`) antes de contar estas páginas, pela
+mesma razão que já sabia `data-verbatim` e `data-agenda`. **Medido**: sem essa
+lição, a contagem de frases de moldura do sítio saltava de 90 para 148 distintas
+e de 2 530 para 3 051 ocorrências, com resumos de origem, nomes de entidades e
+títulos de relatórios do Tribunal de Contas a contarem como moldura da casa; com
+ela, fica em 91 e 2 542, e o único acrescento é o par de portas «Ler o documento
+→ Ler no sítio →» da página do estudo.*
+
+*As sete são rótulos: um antetítulo não entra (a régua conta blocos de texto e o
+antetítulo é um `<span>`), os quatro campos de «As linhas deste documento»
+nomeiam campos, e os três títulos nomeiam secções. **Autorreferência: zero**,
+nas oito páginas e nas duas edições. As palavras da faixa das contagens («blocos
+· algarismos · com linha do livro-razão») também não entram, e a razão é a mesma
+das outras origens declaradas: a faixa está dentro de `data-registo-conta`, que o
+portão reconta do registo em disco.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | As linhas deste documento | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| navegacao | O que cada porta abre: «Ler no sítio», o texto composto aqui; «Ler o documento», a edição tal como foi publicada. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| navegacao | What each door opens: “Read on the site”, the text composed here; “Read the document”, the edition as it was published. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | O documento original | até 2026-08-26 | retirada | o item 8.6 do F1.10 (09.09.2026): as edições de um estudo passam a apresentar-se «de uma só forma em todos os estudos», e o bloco «O documento original» era a primeira das duas apresentações das mesmas portas. A forma que fica é a lista das edições (`EdicoesDoEstudo.astro`), e as portas vivem lá dentro |
+| conteudo | O registo de conteúdo | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | The content record | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | The original document | até 2026-08-26 | retirada | o item 8.6 do F1.10 (09.09.2026): as edições de um estudo passam a apresentar-se «de uma só forma em todos os estudos», e o bloco «O documento original» era a primeira das duas apresentações das mesmas portas. A forma que fica é a lista das edições (`EdicoesDoEstudo.astro`), e as portas vivem lá dentro |
+| conteudo | The rows of this document | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | as this document prints it | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | como este documento o imprime | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | engine row | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | linha do motor | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | o valor como a linha o guarda | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | resumo de origem | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | source digest | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| conteudo | the value as the row keeps it | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+
+## A reclassificação de 21.08.2026 (direção): **limite dos dados**
+
+| frase | era | é | razão |
+| --- | --- | --- | --- |
+| «Não existe contrafactual para nenhum índice. Nada do que foi lido permite separar a parte de um executivo neles.» / «There is no counterfactual for any index…» (entrada de «O que esta página não sabe», `/municipios/evora`) | autorreferência | **conteúdo** | **limite dos dados**. Não fala do cuidado da casa: diz o que as fontes lidas não permitem estabelecer. Sem ela, a banda dos mandatos ao lado de uma curva de dívida lê-se como uma atribuição, e um leitor lê mal um número. É a metade da regra que fica |
+
+## O que saiu, e para onde
+
+| frase retirada | classe | onde vive agora |
+| --- | --- | --- | --- | --- |
+| «Todos os campos preenchidos e conferidos contra a fonte. O selo é um quadrado cheio.» e «Falta pelo menos um campo de proveniência… O selo é um quadrado a tracejado.» (`livro.grupoCompletasV`, `livro.grupoPorConfirmarV`) | autorreferência | retiradas: o nome do grupo é o estado, e a contagem por baixo dele diz quantas linhas o têm (direção, 21.08.2026, tarde) |
+| «Quadrado cheio: a proveniência está completa.» e «Quadrado a tracejado: falta pelo menos um campo, e a linha di-lo.» (a legenda do selo, `/livro-razao`) | conteúdo | encolheram para os nomes dos dois estados, «proveniência completa» e «um campo por confirmar», ao lado dos quadrados que já estavam desenhados |
+| «Oito medidas. Seis vêm de organismos que publicam para todos os concelhos do país; duas só existem porque o próprio município as publica…» (`municipio.relanceSub`) | autorreferência | retirada: contagens por extenso (IDENTIDADE.md §10) e cobertura explicada; cada medida do próprio município di-lo na sua linha |
+| «Uma frase por medida. Todos os números são citações do livro-razão.» (`municipio.breveSub`) | autorreferência | retirada: a segunda metade é o trabalho do selo |
+| «Cinco administrações, contadas como foram instaladas e não como foram eleitas…» e «Uma administração responde pelas decisões que tomou. Não responde por um índice… Não há aqui nenhuma tabela classificativa de partidos, e não vai haver.» (`municipio.tempoBreve`, `municipio.tempoAtribuicaoV`) | autorreferência | retiradas; «Quem responde pelo quê» fica como nome da secção, por cima da banda dos mandatos |
+| «Cada um tem a sua página, com a medida que o faz valer a pena, a frase do que concluiu, o método e o documento original quando está alojado aqui.» (`municipio.estudosV`) | autorreferência | retirada: cada cartão leva o título do trabalho, a sua frase e a porta |
+| «Cada valor tem linha no livro-razão, com fonte, documento e data de acesso.» (segunda frase da descrição do `<head>` de um concelho) | autorreferência | o Método e o recibo de cada linha; a descrição passa a nomear o que a página tem |
+| «Mapa de pontos dos municípios de Portugal. **Use as setas para percorrer os municípios.**» (`inicio.mapa.svgLabel`) | autorreferência | a instrução fica só em `tecladoHint`, dentro de `#mapa-descricao`, que só se constrói onde o script que a torna verdadeira está carregado |
+| «1 de 308 concelhos · tem página» (ficha do mapa, cartão localizador, pesquisa, porta dos Municípios) | autorreferência | `/municipios`, que é a página que a conta |
+| «Os pontos são todos iguais e marcam a posição de cada concelho na Carta Administrativa, e mais nada: não marcam cobertura, qualidade nem importância.» | autorreferência | retirada: diz o que não afirmamos |
+| «Contagem verificada nos ficheiros» e o quadro das três parcelas | autorreferência | a contagem por parcelas vive em `/municipios` (pedido para a etapa 3) |
+| «Método, ressalvas e proveniência» (camada do mapa e do Instrumento n.º 1) | autorreferência | o Método e o recibo de cada linha |
+| «Painel europeu reconferido a …» (por baixo do painel) | autorreferência | a mobília do cabeçalho, que a leva em todas as páginas |
+| «o recibo completo está na linha» | autorreferência | o selo, que é a porta |
+| «Sem referência publicada: não há barra a desenhar.» | autorreferência | a peça diz «sem limiar», em duas palavras |
+| «Nenhuma medida foi lida para <nome>. As fontes que publicam para todos os concelhos…» | autorreferência | as oito peças, cada uma com «sem linha ainda» |
+| «As páginas · o resto vive a uma porta» | autorreferência | retirada: três portas de uma linha não precisam de legenda |
+| «Um toque no mapa devolve os concelhos mais próximos…» | autorreferência | o nome acessível do selo do país |
+| «As regiões não se desenham em pontos de concelho…» | autorreferência | o nome acessível do desenho da banda |
+| «Calculado sobre duas colunas do mesmo ficheiro do regulador. A aritmética está na linha.» | autorreferência | a página de concelho (etapa 3) e a linha do livro-razão; o selo já diz «calculado ·» |
+| «As diferenças em pontos que a régua desenha são calculadas…» | autorreferência | a linha de cada diferença, no livro-razão |
+| «Uma linha por região posta na régua: … não é uma cópia mantida à parte.» | autorreferência | retirada; a porta do CSV fica, sem a frase |
+| «Sem JavaScript, a régua mostra Portugal…» e «Sem JavaScript, este comando não muda a página inteira…» | autorreferência | retiradas: o que descreviam continua verdadeiro |
+| «Esta página mede o município de Évora e mostra de onde vem cada medida. Não interpreta…» | autorreferência | a página de Évora (etapa 3); saiu da rendição na primeira página |
+| «O ponto marca a posição do concelho na Carta Administrativa, e não cobertura. Quando houver linhas para <nome>…» | autorreferência | a manchete e as oito peças vazias |
+| «Um erro confirmado entra no registo de correções e na própria linha, com o valor antigo à vista. Nada é apagado.» | autorreferência | `/correcoes`, que já a diz por extenso, com as três naturezas |
+| «Linha do livro-razão: <estudo>» (texto oculto do selo) | autorreferência | encurtou para «fonte · <estudo>» |
+| «O selo de proveniência junto a cada número é a porta para a sua linha. É este o índice dessas portas.» (`livro.lede2`, a segunda lede do índice) | autorreferência | o selo, que é a porta; a chave saiu de `strings.mjs` nas duas edições |
+| «É o único marcador de incerteza deste sítio. Aparece onde um campo não foi confirmado contra a fonte. Não é um valor por defeito nem uma estimativa: é a ausência declarada.» (`livro.marcadorV`) | autorreferência | `/a-verificar`, que é a página do marcador; a marca e a porta ficam no índice |
+| «O que este índice não diz» e «Só estão aqui os números que este sítio publica…» (`livro.naoDizK`, `livro.naoDizV`) | autorreferência | retiradas: é a classe que a Emenda 15 nomeia por extenso, «nunca o que não afirmamos» |
+| «Observatório de dados sobre Portugal. Cada número publicado tem uma linha no livro-razão, com fonte, documento e data de acesso.» (descrição do `<head>` da primeira página) | autorreferência | o Método e o recibo de cada linha; a descrição passa a nomear o que a página tem |
+| «Nenhuma decisão deste mandato atravessou para o livro-razão com valor próprio. Um campo em branco seria diferente disto: o que falta é a linha, não a decisão.» (`decidiuNota` de um mandato de Évora) | autorreferência | o campo diz «sem linha ainda» / «no row yet», a cadeia da casa para a ausência (direção, 21.08.2026, tarde) |
+| «As decisões desta página vão atribuídas a quem as tomou… Os índices … não vão atribuídos a ninguém: nada do que foi lido fornece o contrafactual…» (entrada «Um partido é dono das suas decisões, não de uma curva», secção «Método e ressalvas» de `/municipios/evora`) | autorreferência | retirada: é a nota de como a página foi feita. O limite dos dados que ela também dizia fica em «O que esta página não sabe», que é onde ele pertence |
+
+
+## Bloco B das correções de UX · 25.08.2026
+
+*As frases que este bloco criou ou mudou, com a classe e a razão. As entradas
+inglesas do item B6 não são novas: são as mesmas de sempre com «concelho»
+traduzido, e foram alteradas na tabela da sua rota, em vez de duplicadas aqui.*
+
+**As três que o bloco A deixou por classificar, e que são desta rota** (a §1.66
+nomeia-as): a contagem do índice do livro-razão, e as duas frases da leitura do
+trabalho das penalizações. Entram aqui, que é o bloco a que pertencem.
+
+| classe | frase | bloco |
+| --- | --- | --- | --- | --- |
+| conteudo | O que a lei cobra por antecipar a reforma, e o que seria atuarialmente neutro. | até 2026-08-26 | viva | — |
+| conteudo | What the law charges for retiring early, and what would be actuarially neutral. | até 2026-08-26 | viva | — |
+| conteudo | PT O que a lei cobra por antecipar a reforma, e o que seria atuarialmente neutro. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | EN What the law charges for retiring early, and what would be actuarially neutral. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | A quem cabe numa das exceções que afastam o fator de sustentabilidade, a lei corta menos do que o valor neutro. As duas medidas acima são os dois extremos da mesma decisão. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | For those who fall within one of the exceptions that set the sustainability factor aside, the law cuts less than the neutral figure. The two measures above are the two ends of the same decision. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | é o que a lei corta a quem não cabe numa das exceções | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | is what the law cuts from those who fall outside the exceptions | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | de redução da pensão seria atuarialmente neutro, por um ano de antecipação | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | pension reduction would be actuarially neutral, for one year of anticipation | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+
+**As frases inglesas da página de um concelho e das leituras que o item B6
+mudou**, e que a régua lê como blocos novos porque o texto mudou:
+
+| classe | frase | bloco |
+| --- | --- | --- | --- | --- |
+| conteudo | € approved and attributed to the municipality by the recovery-plan register | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | € of gross value added by enterprises in the municipality | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | The works about this municipality | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | The studies about this municipality | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | The thin line is the total debt the regulator publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. | grelha-2 | retirada | a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `8b55bd3`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `e470212`) |
+
+**O que este bloco NÃO acrescentou ao inventário, e é uma leitura e não um
+esquecimento:** o índice «Nesta página» da página de leitura não entra, porque
+cada entrada dele é um título transcrito do registo, com a marca
+`data-registo-indice` que a régua já conta como origem declarada; e o comando
+«Subir ↑» também não, porque o seu texto está todo dentro de um `<a>`.
+
+## Passo C das correções de UX · 25.08.2026
+
+*O passo C acrescentou **uma** frase da casa, e ela é o nome de uma secção do
+índice dos concelhos (item C4, decisão 5 do diretor). As outras três correções
+do passo não acrescentaram nenhuma: o item C1 moveu um índice que já estava
+inventariado, o C2 mexeu numa folha de estilos, e o C3 trocou o ponto de código
+de um separador dentro de um valor do livro-razão, que não é prosa da casa.*
+
+| classe | frase | bloco |
+| --- | --- | --- | --- | --- |
+| conteudo | Com página | grelha-2 | retirada | o rótulo de cobertura «Com página» saiu com a vista que o rendia (bloco dos 308, `44ef280`) |
+| conteudo | With a page | grelha-2 | retirada | o rótulo de cobertura «Com página» saiu com a vista que o rendia (bloco dos 308, `44ef280`) |
+
+**Porque é conteúdo.** É o nome do grupo de uma lista, como «Beja» ou «Ilha do
+Faial» são o nome dos outros grupos da mesma página: diz por que critério
+aquelas entradas estão juntas. As duas palavras do estado de cada entrada, «tem
+página» e «sem página ainda», não mudaram e continuam a entrar pela marca
+`data-cobertura`, que a régua exclui desta tabela e conta na medida 7.
+
+**O que o passo C NÃO acrescentou, e é uma leitura e não um esquecimento:** o
+rótulo da caixa de pesquisa («Escreva o nome do concelho») é um `<label>`, que
+não é um bloco desta varredura; o estado vazio da pesquisa («Nenhum concelho com
+esse nome.») já estava classificado como navegação pela primeira página, e a
+tabela é por texto e não por rota; e os 308 resultados não entram, porque cada
+um é um nome de concelho com a marca `data-cobertura` ao lado, que é a mesma
+exclusão que a subetapa 3c escreveu para a lista por distritos.
+
+## Bloco dos 308 concelhos (P2, 26.08.2026)
+
+*As linhas com contagem levam o número de HOJE, e o ficheiro guarda as duas leituras, como já guardava «132 afirmações» ao lado de «136»: a de antes das linhas dos concelhos e a de depois. As entradas que este bloco acrescenta: os dois rótulos das medidas que desceram das peças para a camada das contas de Évora (decisão D2), a nota da dívida com a coluna que usa (D3), a nota do prazo médio lido do regulador, e a página do conjunto do livro-razão (D6) com a sua porta no índice. As duas linhas com contagem levam o número de hoje, como as outras deste ficheiro: quando as linhas dos concelhos chegarem, mudam com elas.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Execução da receita | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Revenue execution | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Average payment time | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | As linhas do livro-razão com as medidas que as fontes centrais publicam para o concelho de <lugar>. | até 2026-08-26 | viva | — |
+| conteudo | The ledger rows with the measures central sources publish for the municipality of <lugar>. | até 2026-08-26 | viva | — |
+| conteudo | Sistema de contas integradas das empresas; cada empresa conta num único concelho. | até 2026-08-26 | retirada | Bloco R2 (03.10.2026, achados 2, 23 e 26 da auditoria dos rótulos): a nota da medida do concelho passa a dizer o que se conta, com o termo da fonte entre parênteses; a forma nova está na secção do bloco r2. |
+| conteudo | Integrated business accounts; each enterprise counts in a single municipality. | até 2026-08-26 | retirada | Bloco R2 (03.10.2026, achados 2, 23 e 26 da auditoria dos rótulos): a nota da medida do concelho passa a dizer o que se conta, com o termo da fonte entre parênteses; a forma nova está na secção do bloco r2. |
+| conteudo | Linhas sem concelho declarado | grelha-2 | retirada | o grupo «Linhas sem concelho declarado» saiu do índice dos concelhos do livro-razão (bloco dos 308, `44ef280`) |
+| conteudo | Rows with no municipality declared | grelha-2 | retirada | o grupo «Linhas sem concelho declarado» saiu do índice dos concelhos do livro-razão (bloco dos 308, `44ef280`) |
+| conteudo | O que as fontes publicam sobre o município de <lugar>: população, poder de compra, emprego, empresas, dívida e execução orçamental. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | O que as fontes publicam sobre o concelho de <lugar>: população, poder de compra, emprego, empresas, dívida e execução orçamental. | lugar | viva | — |
+| conteudo | What the sources publish about the municipality of <lugar>: population, purchasing power, employment, enterprises, debt and budget execution. | até 2026-08-26 | viva | — |
+| conteudo | Concelhos: as medidas centrais | até 2026-08-26 | viva | — |
+| conteudo | Municipalities: the central measures | até 2026-08-26 | viva | — |
+
+## Bloco dos 308 concelhos · P2 (os dados), 26.08.2026
+
+**UMA FRASE CORRIGIDA SAI DESTA LISTA.** O ficheiro guardava as duas leituras de uma contagem lado a lado, porque uma contagem volta a ser o que era no dia em que o livro-razão encolher. Uma frase que foi CORRIGIDA é outra coisa: se continuar declarada, repô-la passa em silêncio, e foi isso que se mediu ao plantar de volta a nota da sede e a que chamava «regulador» à DGAL — nenhuma das duas fechou nada. As entradas das frases que os itens E7 e E11 corrigiram saíram desta lista; repor uma delas passa a ser um bloco por classificar, e a régua fecha.
+
+*As frases que os itens E7 a E12 mudaram: a nota das empresas, que deixou de afirmar o que a verificação das fontes não confirmou; a legenda da dívida, sem a oração em que o sítio falava de si; e as que chamavam «regulador» à Direção-Geral das Autarquias Locais. As duas últimas linhas da tabela são a frase que SAIU, declarada pelo que ela era: autorreferência. Fica declarada para que a régua a apanhe pelo nome se alguém a repuser, em vez de a apanhar como bloco por classificar.*
+
+**O ESPAÇO ANTES DOS DOIS PONTOS NA FRASE DA LEI É A RÉGUA A LER, E NÃO A PÁGINA A ESCREVER** (bloco `pequenas-5`, 29.08.2026). A página publica «…artigo 52.º da Lei n.º 73/2013: uma vez e meia…», carácter a carácter, como publicava. O que mudou foi por dentro: o nome do diploma passou a viver num `<span lang="pt-PT">` para que um leitor de ecrã inglês não leia «Lei n.º 73/2013» com fonética inglesa (I91). A régua junta os pedaços de texto de um bloco com um espaço entre eles (`texto()` em `scripts/medir-defeitos.mjs`), e por isso lê um espaço onde o `<span>` fecha. A coluna do texto é, e sempre foi, **a cadeia normalizada tal como a régua a lê** — é a mesma razão do « ." » da manchete dos painéis europeus, que está nesta lista desde o primeiro dia.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | A Direção-Geral | até 2026-08-26 | viva | — |
+| conteudo | A Direção-Geral publica | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | A série anual da Direção-Geral das Autarquias Locais ainda não chegou a este mandato. | até 2026-08-26 | viva | — |
+| conteudo | Lista anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | Lista anual da Direção-Geral das Autarquias Locais, que publica os dados das contas das câmaras. | b1-peca2 | retirada | a frase descrevia a fonte e não o que a medida mede; a do diretor, de 17.09.2026, entra no lugar dela (achado D6 da leitura do lugar de direção, 21.09.2026) |
+| conteudo | O limite é fixado no artigo 52.º da Lei n.º 73/2013 : uma vez e meia a média da receita corrente líquida dos três anos anteriores. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | O traço fino é a dívida total que a Direção-Geral das Autarquias Locais publica para o concelho; a barra é a distância até ao limite legal do mesmo ano, que é o fio da direita. O índice mede uma contra o outro numa escala em que o teto é o valor permitido. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Série anual da Direção-Geral das Autarquias Locais, que publica os dados das contas dos municípios. Exclui dívidas não orçamentais e exceções legais. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | Série anual da Direção-Geral das Autarquias Locais, que publica os dados das contas das câmaras. Exclui dívidas não orçamentais e exceções legais. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | The annual list of the local-government directorate, which publishes the municipalities’ accounts data. | b1-peca2 | retirada | ver a razão na gémea portuguesa (achado D6, 21.09.2026) |
+| conteudo | The annual series of the local-government directorate, which publishes the municipalities’ accounts data. Excludes non-budgetary debt and legal exceptions. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | The directorate-general | até 2026-08-26 | viva | — |
+| conteudo | The directorate-general publishes | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | The limit is set by article 52.º of Lei n.º 73/2013 : one and a half times the three-year average of net current revenue. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | The local-government directorate’s annual series has not yet reached this term. | até 2026-08-26 | viva | — |
+| conteudo | The thin line is the total debt the local-government directorate publishes for the municipality; the bar is the distance to the legal limit for the same year, which is the rule on the right. The index measures one against the other on a scale whose cap is the permitted value. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Sem linhas ainda. | grelha-2 | retirada | a ausência passou a dizer-se em três palavras, «Sem linha ainda.», e a forma longa saiu (item E4 do bloco dos 308, `8b2a260`) |
+| conteudo | No rows yet. | grelha-2 | retirada | a ausência passou a dizer-se em três palavras, «Sem linha ainda.», e a forma longa saiu (item E4 do bloco dos 308, `8b2a260`) |
+| conteudo | A referência do estudo | até 2026-08-26 | viva | — |
+| conteudo | The study’s reference | até 2026-08-26 | viva | — |
+| conteudo | 2978 afirmações · 330 de 2978 calculadas · 2767 de 2978 linhas de concelhos | b2-peca1 | retirada | A contagem do livro-razão mudou com as linhas seladas do B2; a nova cadeia mantém o contador data-prova que o portão reconta a cada construção. |
+| conteudo | 2978 claims · 330 of 2978 calculated · 2767 of 2978 municipality rows | b2-peca1 | retirada | Ver a razão na gémea portuguesa: os contadores provados do livro-razão incluem as linhas novas do B2. |
+| navegacao | Nenhuma linha do livro-razão tem essas palavras. | nomes | viva | — |
+| navegacao | No row in the ledger matches those words. | nomes | viva | — |
+| navegacao | Procurar por nome, identificador ou fonte | nomes | viva | — |
+| navegacao | Search by name, identifier or source | nomes | viva | — |
+| navegacao | Linhas que casam | nomes | viva | — |
+| navegacao | Rows that match | nomes | viva | — |
+| navegacao | Há mais linhas do que as que cabem aqui. Escreva mais para estreitar. | nomes | viva | — |
+| navegacao | There are more rows than fit here. Type more to narrow it down. | nomes | viva | — |
+| conteudo | estudo ou medida | nomes | viva | — |
+| conteudo | estudos e medidas | nomes | viva | — |
+| conteudo | study or measure | nomes | viva | — |
+| conteudo | studies and measures | nomes | viva | — |
+| conteudo | publicado a | nomes | viva | — |
+| conteudo | published on | nomes | viva | — |
+| autorreferencia | O limite é fixado no artigo 52.º da Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos anteriores. É a lei que o define, não este sítio. | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
+| autorreferencia | The limit is set by article 52.º of Lei n.º 73/2013: one and a half times the three-year average of net current revenue. The law defines it, not this site. | grelha-2 | retirada | saiu com o G6 da grelha da voz, que tirou o método das páginas do leitor: as ressalvas da página do concelho com as secções que as guardavam, os rótulos que diziam como o texto foi feito, e a nota da lei do limite da dívida (`14a339d`, 27.08) |
+
+## Bloco «A grelha da voz» · 26.08.2026
+
+*As frases que o G5 mudou, com a decisão do diretor de 26.08: **as orações em
+que a página fala de si saem, e a ressalva factual fica**. Saíram «e esta página
+não fabrica nenhum», «a sua linha no livro-razão nomeia esse documento e a página
+onde estão», «As duas estão nesta página» (nas duas entradas em que aparecia),
+«mostra-se porque é o único sítio onde…», «e esta página não a usa para atribuir
+dinheiro a ninguém», «e por isso esta página para aqui» e «usada nesta página». As
+citações do trabalho 06 ficaram como citações, que é o que a decisão manda.*
+
+*Saiu também o rótulo da camada da leitura breve, «Leitura breve · prosa da casa,
+assente numa frase do trabalho»: a página a dizer de que género é o texto que traz
+e em que assenta. A chave `leituraBreveRotulo` saiu de `src/i18n/strings.mjs` nas
+duas edições e o gabarito passou a ler `leituraBreveK`, que já existia e não se
+rendia; «Leitura breve» e «Brief reading» já estavam declaradas, e por isso não há
+linha nova para elas.*
+
+***As entradas antigas destas frases saíram do ficheiro***, e a razão é a que o
+bloco dos 308 escreveu: uma frase CORRIGIDA que continue declarada volta em
+silêncio. Saíram com elas nove entradas mais velhas das MESMAS frases, que os itens
+E7, E10 e E11 daquele bloco corrigiram e deixaram para trás.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | A Direção-Geral das Autarquias Locais e o município publicam a dívida do mesmo ano com uma diferença. A diferença é pequena. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | A Direção-Geral das Autarquias Locais e a câmara publicam a dívida do mesmo ano com uma diferença. A diferença é pequena. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | A série anual da Direção-Geral das Autarquias Locais começa depois deste mandato. | grelha-da-voz | viva | — |
+| conteudo | How far the debt exceeded the legal limit, in the first and the last year in which the report publishes it as a positive figure. After that the table turns negative, and a negative there is no longer excess but borrowing capacity. | grelha-da-voz | viva | — |
+| conteudo | O que a dívida excedia o limite legal, no primeiro e no último ano em que o relatório o publica como um valor positivo. Depois disso o quadro passa a números negativos, que já não são excesso mas capacidade de endividamento. | grelha-da-voz | viva | — |
+
+### A frase da outra edição sai da página do trabalho
+
+*A página de um trabalho imprimia, por baixo da leitura breve, a MESMA frase na
+outra edição, com o rótulo «A mesma frase na outra edição». Era o sítio a provar
+ao leitor que as duas edições dizem o mesmo, numa página do leitor: a classe que
+a Emenda 15 tira de lá. As duas declarações do rótulo saem desta lista; a frase
+da outra edição nunca esteve aqui, porque leva afirmações e a régua já a excluía
+como origem declarada.*
+
+*A prova muda de sítio e não se perde. `scripts/gate-html.mjs` passou a conferir,
+em 39 peças das páginas de leitura, que as duas edições citam as mesmas
+afirmações pela mesma ordem, e fecha a construção quando não citam. E a folga que
+existia por causa daquele bloco saiu com ele: o selo de um valor tinha de abrir a
+linha em QUALQUER uma das duas edições, e passa a ter de abrir a da própria
+página.*
+| conteudo | The local-government directorate and the municipality publish the same year’s debt with a difference between them. The difference is small. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | The local-government directorate’s annual series begins after this term. | grelha-da-voz | viva | — |
+
+### A DGAL pelo nome, e a leitura da casa fora do rótulo
+
+*O item E11 do bloco dos 308 tirou «o regulador» das notas das medidas e da
+legenda da dívida, e não chegou a `src/data/leituras.mjs` nem ao rótulo do
+relance da linha do tempo: a busca dele foi pelas notas das oito peças e pelas
+cadeias de `strings.mjs` da página do concelho. Saem agora as três que ficaram. E
+sai «legível», que é o sítio a descrever os limites da sua própria leitura: o
+rótulo passa a nomear de que série são os dois números.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | % de índice de dívida no primeiro ano da série da Direção-Geral das Autarquias Locais | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | % debt index in the first year of the local-government directorate’s series | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Antes do primeiro ano da série da Direção-Geral das Autarquias Locais. | grelha-da-voz | viva | — |
+| conteudo | Before the first year of the local-government directorate’s series. | grelha-da-voz | viva | — |
+
+## Bloco «A grelha da voz» · G6, o método sai das páginas de trabalho · 26.08.2026
+
+*A camada «Método e ressalvas» saiu das seis páginas de trabalho, com as suas
+dezanove ressalvas, e com ela o rótulo da porta que explicava o que uma edição
+de registo é. Decisão do diretor de 26.08: esta classe de texto não é útil nem
+simples, o método vive no Método e no recibo de cada linha, e uma ressalva só
+sobrevive quando muda a leitura de um número, e então é UMA frase, com o facto
+por sujeito, na nota das medidas. A tabela de todas as dezanove, com a razão de
+cada uma, está em `design/especime-v3/notas/grelha-da-voz.md`.*
+
+*Saíram do ficheiro 34 declarações: as ressalvas que se rendiam como blocos de
+texto, nas duas edições, e as suas variantes mais velhas de «concelho» e
+«municipality» que o item B6 corrigiu. As ressalvas com um período entre
+parênteses nunca estiveram aqui, porque um `{ref}` rende um
+`data-nonledger` e a régua já as excluía como origem declarada.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | As contas das empresas do concelho creditam toda a atividade de uma empresa a um único concelho, e não são um produto interno bruto municipal. A média nacional é a base do índice de poder de compra. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | The accounts of the municipality’s enterprises credit a firm’s whole activity to a single municipality, and are not a municipal gross domestic product. The national average is the base of the purchasing-power index. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Each count is the list of portfolios the council’s page attributes to that person. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Estes dois valores são somas sobre o registo público inteiro do plano de recuperação, e não uma linha de um documento. Vencido é o valor aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | These two values are sums over the whole public register of the recovery plan, and not a line in a document. Overdue is the value approved at locations whose planned completion date has passed with no completion recorded. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | O sistema contabilístico mudou por baixo da série, um ano de contas foi publicado em digitalizações e outro não foi publicado de todo. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | The accounting system changed underneath the series, one year of accounts was published as scans and another was not published at all. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+
+### E o método sai também da página do concelho
+
+*As secções «Método e ressalvas» e «O que esta página não sabe» saíram da página
+de Évora, com os seus doze parágrafos, e com elas a dobra «Como esta linha do
+tempo é feita». Três ressalvas ficaram, cada uma como UMA frase com o facto por
+sujeito e no sítio onde ela muda a leitura de um número: o ano de contas sem
+certificação, na nota da camada das contas; as contagens de pelouros que são
+designações e o contrafactual que não existe, nas duas notas do instrumento dos
+mandatos. Os dois valores do excesso sobre o teto legal ficaram, com a frase que
+diz porque é que a série pára ali, fora da dobra que os escondia.*
+
+*Saíram 18 declarações. A dobra e o seu parágrafo nunca estiveram aqui, pela
+mesma razão das ressalvas de trabalho com um período entre parênteses.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | As contagens de pelouros são designações, não despesa. | grelha-da-voz | viva | — |
+| conteudo | The portfolio counts are designations, not spending. | grelha-da-voz | viva | — |
+| conteudo | Não existe contrafactual para nenhum índice, e a parte de um executivo neles não é separável. | grelha-da-voz | viva | — |
+| conteudo | There is no counterfactual for any index, and an executive’s share of them is not separable. | grelha-da-voz | viva | — |
+
+### E a ressalva diz o facto, não quem o leu
+
+*Os marcadores deste bloco ganharam dez entradas, tiradas dos parágrafos que o
+G6 retirou: «o trabalho», «este livro-razão», «atravessou», «mostra-o» e
+«avaliável», com as suas gémeas inglesas. O único sítio da superfície pública em
+que um deles ainda mordia era a nota do mandato sem repartição de pelouros, cujo
+sujeito era o trabalho e cuja frase era a citação dele sobre os seus próprios
+limites. Passa a dizer o facto.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Não estabelecido: o presidente desse mandato, e todos os outros membros dele, não foram identificados. | e1 | retirada | bloco E1 (01.10.2026): a ficha de Évora dizia que o presidente desse mandato não fora identificado e nomeava-o acima; a nota diz agora só que as fontes dos pelouros não registam nenhum membro |
+| conteudo | Not established: the president of that mandate, and every other member of it, were not identified. | e1 | retirada | bloco E1 (01.10.2026): a ficha de Évora dizia que o presidente desse mandato não fora identificado e nomeava-o acima; a nota diz agora só que as fontes dos pelouros não registam nenhum membro |
+
+## A leitura de fora do bloco · V1 a V4, 27.08.2026
+
+*A leitura cruzada deste bloco (Codex, 27.08) apanhou o que o tripwire não via e
+o que ele ainda não tinha marcador para ver. Três coisas mudaram.*
+
+*O TRIPWIRE PASSOU A VARRER O TEXTO FORA DAS ORIGENS DECLARADAS.* A medida 8
+deixa cair um bloco inteiro que contenha um valor do livro-razão, e está certa:
+o que ela conta são frases da casa. Mas três das quatro frases que a leitura
+apanhou na página de Évora partilhavam o bloco com um valor, e por isso nunca
+chegaram ao tripwire. A varredura da medida 9 passa a ser a do texto que fica
+fora das origens declaradas e fora dos comandos: de 395 para 579 frases
+distintas.
+
+*A LEITURA DO CABEÇALHO PERDEU O VERBO* (V2): «Painel europeu reconferido a
+<data>» passa a «Painel europeu · <data>», em todas as páginas e no cartão de
+partilha. Nomes e datas ficam; o verbo da diligência sai. Nenhuma das duas
+cadeias entrava nesta tabela, porque a leitura do cabeçalho vive num bloco com a
+data marcada.
+
+*E CINCO SUPERFÍCIES DEIXARAM DE DESCREVER O PROCESSO* (V3): o calendário nomeia
+as fontes citadas, a lede da agenda diz o que está a ser medido em vez de quem o
+mede, a nota da pergunta diz que ela está registada em inglês em vez de nomear o
+registo do motor, o arquivo nomeia o que tem em vez do seu estado de migração, e
+os dois estados vazios encolhem para a ausência em duas palavras.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | A pergunta está registada em inglês, palavra por palavra; o português é a edição portuguesa dessa mesma pergunta. | grelha-da-voz | viva | — |
+| conteudo | The question is registered in English, word for word; the Portuguese is the Portuguese edition of that same question. | grelha-da-voz | viva | — |
+| conteudo | O que está a ser medido, o que se segue, e o critério que pôs lá cada coisa. Com o calendário do que as fontes publicam a seguir. | grelha-da-voz | viva | — |
+| conteudo | What is being measured, what comes next, and the criterion that put each thing there. With the calendar of what the sources publish next. | grelha-da-voz | viva | — |
+| conteudo | O que as fontes citadas publicam a seguir. | grelha-da-voz | viva | — |
+| conteudo | What the cited sources publish next. | grelha-da-voz | viva | — |
+| conteudo | Cada estudo publicado, com as suas edições e datas. Os que estão alojados noutro sítio levam a ligação para lá. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Every published study, with its editions and dates. Those hosted elsewhere carry the link to it. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Documento alojado | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Document hosted | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | Sem ficheiros. | grelha-da-voz | retirada | o §7.4 do F1.10 (09.09.2026): «"Descarregar · Sem ficheiros" não se imprime quando está vazio». Não estava vazio às vezes: estava vazio sempre, nas doze páginas e nas duas edições, porque não há neste sítio nenhuma fonte de ficheiros de um estudo. Saiu o bloco, e não só a frase |
+| conteudo | No files. | grelha-da-voz | retirada | o §7.4 do F1.10 (09.09.2026): «"Descarregar · Sem ficheiros" não se imprime quando está vazio». Não estava vazio às vezes: estava vazio sempre, nas doze páginas e nas duas edições, porque não há neste sítio nenhuma fonte de ficheiros de um estudo. Saiu o bloco, e não só a frase |
+
+## Bloco «A voz do livro-razão» · 27.08.2026
+
+*A decisão do diretor de 27.08.2026 fechou as duas linhas que o
+`PROTOCOLO-DAS-LEITURAS.md` guardava. **As ledes do livro-razão saem**: a do
+índice principal, a do índice dos concelhos, a de cada página de concelho e a
+descrição do `<head>` do índice principal, nas duas edições. Uma página do
+livro-razão leva o seu título, as suas contagens, a sua pesquisa onde a tem e as
+suas linhas; o que uma linha guarda lê-se na linha, e o método vive no Método.*
+
+*As entradas antigas dessas frases saíram desta tabela*, pela regra que o bloco
+dos 308 escreveu: uma frase corrigida que continue declarada volta em silêncio.
+Saíram catorze linhas de texto e quatro de contagem.
+
+***E as contagens de proveniência saem dos índices.*** «2544 de 2552 linhas com
+proveniência completa» e «8 de 2552 linhas com campos por confirmar» eram os
+títulos dos dois grupos do índice principal, e saíram com os grupos; «2417 com
+proveniência completa» era a terceira parcela da linha de contagens do índice dos
+concelhos, e saiu dela. É a escrituração da casa: uma linha por confirmar leva o
+seu marcador ao lado do campo que falta, e todas juntas estão em `/a-verificar`.
+**As chaves da prova que as contavam continuam contadas.** `indexaveis`,
+`divida` e `concelhos_linhas_completas` ficam na tabela de `src/lib/prova.mjs`, e
+o portão exige saber contar cada chave e não que alguma página a renda (§1.66
+A3).
+
+*As quatro cadeias novas: a descrição do `<head>` do índice do livro-razão, que
+passa a nomear a página, e a linha de contagens do índice dos concelhos sem a
+terceira parcela. As linhas com contagem levam o número de hoje, como as outras
+deste ficheiro, e a leitura de zero ao lado, para o dia em que o livro-razão
+estiver vazio.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Livro-razão · O Estado do País | voz-do-livro-razao | retirada | o nome visível do índice e da entrada do menu passa a «Números e fontes» / «Numbers and sources» (bloco F1.10, item 8.8, 08.09.2026), pelo tropeço R2 da ronda de leitores de 07.09 («the livro-razão doesn't really match what it is; people don't really understand it») e pela decisão que o diretor aceitou nessa noite. «livro-razão» fica como o termo técnico no Método, no JSON e nos endereços, que não mudam, e «linha do livro-razão» continua a ser o nome de uma linha |
+| conteudo | Ledger · O Estado do País | voz-do-livro-razao | retirada | o nome visível do índice e da entrada do menu passa a «Números e fontes» / «Numbers and sources» (bloco F1.10, item 8.8, 08.09.2026), pelo tropeço R2 da ronda de leitores de 07.09 («the livro-razão doesn't really match what it is; people don't really understand it») e pela decisão que o diretor aceitou nessa noite. «livro-razão» fica como o termo técnico no Método, no JSON e nos endereços, que não mudam, e «linha do livro-razão» continua a ser o nome de uma linha |
+| conteudo | 2 767 linhas · 308 concelhos | k2 | viva | as contagens da prova de quatro algarismos ou mais escrevem-se com os milhares separados desde o K2 (02.10.2026, item 5 do brief; `src/lib/formato.mjs`, conferido pelo portão de HTML e pela F1 do check:formato), e a frase muda com elas; os números são os mesmos |
+| conteudo | 2 767 rows · 308 municipalities | k2 | viva | as contagens da prova de quatro algarismos ou mais escrevem-se com os milhares separados desde o K2 (02.10.2026, item 5 do brief; `src/lib/formato.mjs`, conferido pelo portão de HTML e pela F1 do check:formato), e a frase muda com elas; os números são os mesmos |
+
+## Bloco «A voz do livro-razão» · a leitura de fora, L1 a L5 · 27.08.2026
+
+*A leitura de fora do bloco leu as páginas construídas e não só o diff, e trouxe
+cinco itens. Os que mudam cadeias desta tabela são dois. **L1:** os rótulos e as
+dicas de `title` das duas páginas do livro-razão diziam a maquinaria em vez da
+coisa, e um `title` é texto do leitor como outro qualquer; o bloco do conjunto de
+dados dizia «Todas as linhas, com todos os campos publicados.», que é uma
+afirmação de cobertura sobre o próprio ficheiro, e passa a nomear o que se
+descarrega. **L2:** a descrição do `<head>` do índice dos concelhos, que sai
+também no Open Graph, explicava a cobertura da página e passa a nomeá-la, como a
+do índice do livro-razão.*
+
+*As entradas antigas das quatro cadeias saíram, pela regra do bloco dos 308: uma
+frase corrigida que continue declarada volta em silêncio.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Todas as linhas. | voz-do-livro-razao | viva | — |
+| conteudo | Every row. | voz-do-livro-razao | viva | — |
+| conteudo | Livro-razão dos concelhos · O Estado do País | voz-do-livro-razao | retirada | o nome visível do índice e da entrada do menu passa a «Números e fontes» / «Numbers and sources» (bloco F1.10, item 8.8, 08.09.2026), pelo tropeço R2 da ronda de leitores de 07.09 («the livro-razão doesn't really match what it is; people don't really understand it») e pela decisão que o diretor aceitou nessa noite. «livro-razão» fica como o termo técnico no Método, no JSON e nos endereços, que não mudam, e «linha do livro-razão» continua a ser o nome de uma linha |
+| conteudo | Municipalities ledger · O Estado do País | voz-do-livro-razao | retirada | o nome visível do índice e da entrada do menu passa a «Números e fontes» / «Numbers and sources» (bloco F1.10, item 8.8, 08.09.2026), pelo tropeço R2 da ronda de leitores de 07.09 («the livro-razão doesn't really match what it is; people don't really understand it») e pela decisão que o diretor aceitou nessa noite. «livro-razão» fica como o termo técnico no Método, no JSON e nos endereços, que não mudam, e «linha do livro-razão» continua a ser o nome de uma linha |
+
+## Bloco «O mapa por distritos» · Emenda 20 · 27.08.2026
+
+*As páginas novas do bloco: o índice das 29 unidades da Carta (`/distritos`,
+`/en/districts`) e a página de cada uma (`/distritos/<slug>`,
+`/en/districts/<slug>`). As duas rotas entram em `ROTAS_DO_INVENTARIO` no mesmo
+commit em que são construídas, que é a regra desta tabela.*
+
+*Dezasseis cadeias, oito por edição, e nenhuma é autorreferência: o título, a
+lede e a descrição do `<head>` nomeiam o que a página tem; «distrito» e «ilha da
+Região Autónoma» são as duas naturezas que a Carta e a Constituição dão às 29
+unidades, escolhidas pelo campo `tipo` do artefacto e nunca por uma leitura do
+nome; «Os concelhos» é o título da lista. A contagem das 29 leva o número de
+hoje, como as outras linhas com contagem deste ficheiro.*
+
+*O nome de cada unidade e o de cada concelho NÃO entram aqui: vão declarados
+como lugar (`data-lugar`) ou dentro da sua ligação, e por isso a tabela não ganha
+337 entradas com a lista da Carta escrita outra vez. A contagem de concelhos de
+cada unidade não se rende (a razão está em `src/views/DistritoView.astro`), e por
+isso também não tem cadeia.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Os distritos e as ilhas de Portugal | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Os distritos e as ilhas de Portugal, pela Carta Administrativa Oficial. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | The districts and islands of Portugal, from the official administrative map. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | As unidades da Carta Administrativa Oficial de Portugal, e os concelhos de cada uma. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | The units of the Carta Administrativa Oficial de Portugal, and the municipalities of each. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | 29 distritos e ilhas | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | 29 districts and islands | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | Os concelhos de <lugar>, pela Carta Administrativa Oficial de Portugal. | mapa-distritos | viva | — |
+| conteudo | The municipalities of <lugar>, from the Carta Administrativa Oficial de Portugal. | mapa-distritos | viva | — |
+| conteudo | Os concelhos | mapa-distritos | viva | — |
+| conteudo | The municipalities | mapa-distritos | viva | — |
+| conteudo | ilha da Região Autónoma | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | island of the Autonomous Region | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+
+*Nota da Emenda 20e (27.08.2026), para que a ausência fique explicada: a menção
+da fonte da Carta que passou a viver ao pé dos dois mapas («Direção-Geral do
+Território · Carta Administrativa Oficial de Portugal (CAOP) 2025 · CC BY 4.0») e
+o rótulo do bloco que a leva na página de uma unidade («De onde vem o desenho» /
+«Where the drawing comes from») **não entram nesta tabela**. A menção leva
+`data-nonledger="fonte-da-carta"`, que é uma origem declarada, e o rótulo é irmão
+dela dentro do mesmo bloco: a régua deixa de fora todo o bloco que contenha uma
+origem declarada, e por isso não os recolhe. É a mesma disciplina, e o mesmo
+resultado, do «De onde vem a lista» de `/municipios`, que também não está aqui.*
+
+## Bloco «A grelha, segunda passagem» · as dicas e os rótulos de acessibilidade · 27.08.2026
+
+*ISSUES I79. A régua lia os blocos de texto e a descrição do `<head>`, e não lia
+os atributos: um `title` é o que o navegador mostra quando o cursor pára em cima
+de um número, e um `aria-label` é o nome por que um leitor de ecrã chama um
+instrumento. As duas coisas são superfície pública escritas pela casa, e a Emenda
+15 não conhece a diferença entre uma frase no corpo e uma frase num atributo. A
+dica «itens da agenda atravessados do motor» foi corrigida à mão a 27.08 e nada
+impedia que voltasse; a partir daqui volta a vermelho, pelo nome e pelo marcador
+«atravess».*
+
+*Cinquenta cadeias distintas nas treze rotas inventariadas, e duas normalizações
+que as impedem de crescer com os dados: uma dica que repete um `data-*` do
+próprio elemento não entra (é o caso do selo, cujo `title` é o
+`data-selo-etiqueta` com o estado da linha e o nome do trabalho que a publica, e
+seriam trinta linhas a crescer com o arquivo), e o identificador que o próprio
+elemento aponta sai da dica e deixa a marca `<linha>` (é o caso das portas das
+figuras de uma página de leitura, e seriam uma por figura de cada documento).*
+
+*As vinte e quatro primeiras são **navegação**: o nome dos comandos do cabeçalho
+e do rodapé, a descrição acessível de um instrumento e o nome da porta que salta
+para a linha de uma figura, que é o que a lista já chama navegação desde a etapa
+2l. As vinte e seis seguintes são **conteúdo**: são as dicas dos valores da
+prova, e cada uma nomeia o que se conta — que é o que a Emenda 15 deixa numa
+página do leitor.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | As páginas | b1-peca3 | retirada | segunda porta: mandato B1, peça 3, 22.09.2026. |
+| navegacao | Debt index, from the first to the last year of the local-government directorate’s series | grelha-2 | viva | — |
+| navegacao | Footer navigation | grelha-2 | viva | — |
+| navegacao | Idioma | b1-peca3 | retirada | segunda porta: mandato B1, peça 3, 22.09.2026. |
+| navegacao | Language | b1-peca3 | retirada | segunda porta: mandato B1, peça 3, 22.09.2026. |
+| navegacao | Main navigation | grelha-2 | viva | — |
+| navegacao | Mandatos, no tempo | grelha-2 | viva | — |
+| navegacao | Map of the districts and islands of Portugal, one area per unit. | grelha-2 | viva | — |
+| navegacao | Map of the municipalities, one area per municipality. | grelha-2 | viva | — |
+| navegacao | Mapa de pontos dos municípios de Portugal. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| navegacao | Mapa de pontos dos concelhos de Portugal. | lugar | retirada | o rótulo acessível do MAPA DE PONTOS, que só se rendia no cartão localizador da página de um concelho. O cartão saiu com o item 8.17 do F1.10 (08.09.2026): o diretor viu-o a 08.09 («the dotted map shows up but with no useful purpose») e no lugar dele entrou o nível da região do mapa do F1.1d, com o seu rótulo. Os 308 pontos continuam a existir no componente, na postura do selo, que hoje nenhuma página rende; se voltarem a render-se, a linha volta a `viva` com a rota que a rende |
+| navegacao | Mapa dos concelhos, com uma área por concelho. | grelha-2 | viva | — |
+| navegacao | Mapa dos concelhos da região, com uma área por concelho. | lugar | retirada | o item 8.17b do F1.10 (08.09.2026): a página do concelho passou a render o nível da UNIDADE do mapa do F1.1e (o distrito ou a ilha do concelho, com os concelhos dela e o da página marcado) e não o nível da região, que era o que o mapa daquele dia tinha. A emenda de 08.09 à tarde dizia que a região servia «até o F1.1e existir», e ele existe: o rótulo acessível do mapa desta página é agora o `concelhosLabel` da unidade, que já estava declarado |
+| navegacao | Map of the municipalities of the region, one area per municipality. | lugar | retirada | o item 8.17b do F1.10 (08.09.2026): a página do concelho passou a render o nível da UNIDADE do mapa do F1.1e (o distrito ou a ilha do concelho, com os concelhos dela e o da página marcado) e não o nível da região, que era o que o mapa daquele dia tinha. A emenda de 08.09 à tarde dizia que a região servia «até o F1.1e existir», e ele existe: o rótulo acessível do mapa desta página é agora o `concelhosLabel` da unidade, que já estava declarado |
+| navegacao | Mapa dos concelhos do distrito ou da ilha, com uma área por concelho. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| navegacao | Map of the municipalities of the district or island, one area per municipality. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| navegacao | Mapa dos distritos e das ilhas de Portugal, com uma área por unidade. | grelha-2 | viva | — |
+| navegacao | Menu · Main navigation | b1-peca3 | retirada | segunda porta: mandato B1, peça 3, 22.09.2026. |
+| navegacao | Menu · Navegação principal | b1-peca3 | retirada | segunda porta: mandato B1, peça 3, 22.09.2026. |
+| navegacao | Navegação do rodapé | grelha-2 | viva | — |
+| navegacao | Navegação principal | grelha-2 | viva | — |
+| navegacao | Onde está | lugar | viva | o item 5 do encargo do F1.10 (§2.5 do brief, medida L5, 09.09.2026): é o nome da região de navegação do CAMINHO do cabeçalho («Início › Concelhos › Évora»), que só se ouve. Quem vê o caminho sabe o que ele é pela forma; quem o ouve tinha, sem este nome, mais uma fila de portas sem dizer qual. Os degraus do caminho não acrescentam linha nenhuma a esta tabela: são âncoras com as etiquetas que o menu já declara, e a folha é um nome com marca de origem (`data-lugar`, `data-nome`, o título de um estudo ou o nome de uma linha do livro-razão) |
+| navegacao | Point map of the municipalities of Portugal. | lugar | retirada | o rótulo acessível do MAPA DE PONTOS, que só se rendia no cartão localizador da página de um concelho. O cartão saiu com o item 8.17 do F1.10 (08.09.2026): o diretor viu-o a 08.09 («the dotted map shows up but with no useful purpose») e no lugar dele entrou o nível da região do mapa do F1.1d, com o seu rótulo. Os 308 pontos continuam a existir no componente, na postura do selo, que hoje nenhuma página rende; se voltarem a render-se, a linha volta a `viva` com a rota que a rende |
+| navegacao | Tema | p4 | viva | o nome do grupo do comando do tema, na fila da marca do cabeçalho de todas as páginas (bloco P4, 02.10.2026, item 00 do brief P4; a Emenda 12 de 21.08.2026, §1.52, de volta), que só se ouve: quem vê os dois botões sabe o que são pela forma; quem os ouve tinha, sem este nome, dois botões sem dizer de quê. Não é linha nova de mobília à vista: os botões dizem «claro» e «escuro» (na edição inglesa «light» e «dark»), e o comando só aparece com guião |
+| navegacao | Terms, in time | grelha-2 | viva | — |
+| navegacao | The pages | b1-peca3 | retirada | segunda porta: mandato B1, peça 3, 22.09.2026. |
+| navegacao | Theme | p4 | viva | o nome do grupo do comando do tema, na fila da marca do cabeçalho de todas as páginas (bloco P4, 02.10.2026, item 00 do brief P4; a Emenda 12 de 21.08.2026, §1.52, de volta), que só se ouve: quem vê os dois botões sabe o que são pela forma; quem os ouve tinha, sem este nome, dois botões sem dizer de quê. Não é linha nova de mobília à vista: os botões dizem «claro» e «escuro» (na edição inglesa «light» e «dark»), e o comando só aparece com guião |
+| navegacao | Where you are | lugar | viva | o item 5 do encargo do F1.10 (§2.5 do brief, medida L5, 09.09.2026): é o nome da região de navegação do CAMINHO do cabeçalho («Início › Concelhos › Évora»), que só se ouve. Quem vê o caminho sabe o que ele é pela forma; quem o ouve tinha, sem este nome, mais uma fila de portas sem dizer qual. Os degraus do caminho não acrescentam linha nenhuma a esta tabela: são âncoras com as etiquetas que o menu já declara, e a folha é um nome com marca de origem (`data-lugar`, `data-nome`, o título de um estudo ou o nome de uma linha do livro-razão) |
+| navegacao | engine row: <linha> | pequenas-3 | retirada | o rótulo de acessibilidade da porta de uma figura nomeava a chave interna da linha do motor e não o que a porta abre (I83, 28.08.2026); a chave ficou só no `href`, o rótulo passou a «a linha desta figura» e «this figure’s row», e a normalização que punha `<linha>` no lugar do identificador saiu da régua com ela |
+| navegacao | linha do motor: <linha> | pequenas-3 | retirada | o rótulo de acessibilidade da porta de uma figura nomeava a chave interna da linha do motor e não o que a porta abre (I83, 28.08.2026); a chave ficou só no `href`, o rótulo passou a «a linha desta figura» e «this figure’s row», e a normalização que punha `<linha>` no lugar do identificador saiu da régua com ela |
+| navegacao | Índice de dívida, do primeiro ao último ano da série da Direção-Geral das Autarquias Locais | grelha-2 | viva | — |
+| conteudo | agenda items | grelha-2 | viva | — |
+| conteudo | calculated rows | grelha-2 | viva | — |
+| conteudo | concelhos com pelo menos uma linha desse estudo | grelha-2 | viva | — |
+| conteudo | concelhos in the coordinates file of the official administrative map | b1-peca3 | retirada | palavra fora do lugar: mandato B1, peça 3, 22.09.2026. |
+| conteudo | concelhos no ficheiro de coordenadas da Carta Administrativa | b1-peca3 | retirada | palavra fora do lugar: mandato B1, peça 3, 22.09.2026. |
+| navegacao | published editions | lugar | retirada | a contagem das edições dos estudos sai do cartão dos estudos (item 7 do brief do P1, 15.09.2026): a porta diz o tamanho do que está do outro lado, e o arquivo mede-se em estudos. A chave da prova fica, e o portão continua a recontá-la; o que sai é a rendição, e com ela a frase de origem que esta linha declara |
+| conteudo | editions in the archive | grelha-2 | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
+| navegacao | edições publicadas | lugar | retirada | a contagem das edições dos estudos sai do cartão dos estudos (item 7 do brief do P1, 15.09.2026): a porta diz o tamanho do que está do outro lado, e o arquivo mede-se em estudos. A chave da prova fica, e o portão continua a recontá-la; o que sai é a rendição, e com ela a frase de origem que esta linha declara |
+| conteudo | edições no arquivo | grelha-2 | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
+| conteudo | entradas de natureza revisão de proveniência no livro-razão | grelha-2 | viva | — |
+| conteudo | entries of kind provenance revision in the ledger | grelha-2 | viva | — |
+| conteudo | itens da agenda | grelha-2 | viva | — |
+| conteudo | ledger rows | grelha-2 | viva | — |
+| conteudo | ledger rows of the municipalities study | grelha-2 | viva | — |
+| conteudo | linhas calculadas | grelha-2 | viva | — |
+| conteudo | linhas do livro-razão | grelha-2 | viva | — |
+| conteudo | linhas do livro-razão do estudo dos concelhos | grelha-2 | viva | — |
+| conteudo | medidas do painel cujo valor está dentro do limiar publicado | grelha-2 | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | medidas do painel cujo valor está fora do limiar publicado | grelha-2 | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | municipalities with at least one row of that study | grelha-2 | viva | — |
+| conteudo | panel measures whose value is inside the published threshold | grelha-2 | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | panel measures whose value is outside the published threshold | grelha-2 | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | trabalhos no arquivo | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| navegacao | estudos publicados | b1-peca3 | retirada | palavra fora do lugar: mandato B1, peça 3, 22.09.2026. |
+| conteudo | estudos no arquivo | lugar | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
+| conteudo | unidades da Carta Administrativa: os distritos e as ilhas | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | units of the official administrative map: the districts and the islands | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | works in the archive | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| navegacao | published studies | b1-peca3 | retirada | palavra fora do lugar: mandato B1, peça 3, 22.09.2026. |
+| conteudo | studies in the archive | lugar | retirada | o §7.4 do F1.10 (09.09.2026): «um só nome para os estudos, "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A frase mudou de palavras e não de sentido, e a linha nova está no bloco `lugar` |
+
+## Bloco «As regiões» · Emenda 21 · 27.08.2026
+
+*As páginas novas do bloco: o índice das regiões (`/regioes`, `/en/regions`) e a
+página de cada região com linhas (`/regioes/<slug>`, `/en/regions/<slug>`). São
+páginas do leitor, e a Emenda 15 governa-as: a autorreferência delas é zero, e o
+que fica é o que a coisa é.*
+
+*Quatro linhas VOLTAM À VIDA e não são novas: «A régua da convergência», «The
+convergence rule» e as duas frases do que o índice compara estavam declaradas
+`retirada` desde a segunda passagem da grelha, porque a régua tinha saído da
+primeira página a 25.08 «até haver a página das regiões». A página existe, e a
+razão da retirada era esta. Mudam de estado e de bloco, e o texto delas não muda
+uma letra: é o que a coluna do estado serve para deixar ver.*
+
+*Duas continuam `retirada` de propósito, e não voltam com a régua: «As regiões
+publicadas na régua da convergência.» e a sua inglesa eram a meta da FILA das
+regiões da primeira página, o painel que o comando «Região» abria. A fila não
+volta — a Emenda 21b manda a região viver na sua página, e o comando é uma
+ligação para o índice.*
+
+*O nome de cada região é `data-lugar`, como o das 29 unidades e o dos 308
+concelhos: é o nome da coisa de que a página trata, transcrito da lista, e não
+prosa da casa. Por isso a descrição do `<head>` de uma região conta-se UMA vez,
+com o `<lugar>` no lugar do nome, e não uma por região.*
+
+*Segunda passagem, 28.08.2026, com as quatro regiões que o motor trouxe e com a
+leitura cruzada do Codex. A contagem passa de cinco a nove e a frase deixa de
+falar da cobertura: «5 regiões com linhas publicadas.» era a casa a dizer o
+estado da sua própria publicação, e o que fica é «9 regiões», o número e o que
+ele conta. As duas dicas das chaves da prova mudam pela mesma razão. As quatro
+linhas velhas ficam `retirada`, com o motivo escrito, para que a forma não volte.*
+
+*E duas linhas de contagem mudam de número sem mudar de forma: o índice do
+livro-razão diz «2 560 afirmações · 329 calculadas», porque as oito linhas das
+quatro regiões entraram no livro-razão. É o caso que a I74 descreve — «uma frase
+com um número que se move volta com outro número» —, e a escolha da casa para
+estas duas foi mantê-las declaradas: mudam de bloco, para que o rasto diga quem
+lhes mexeu no número.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | As regiões de Portugal | regioes | viva | — |
+| conteudo | The regions of Portugal | regioes | viva | — |
+| conteudo | O índice de PIB per capita de cada região, em paridades de poder de compra, contra a média da UE-27. | regioes | viva | — |
+| conteudo | Each region’s GDP per capita index, in purchasing power standards, against the EU-27 average. | regioes | viva | — |
+| conteudo | As regiões NUTS II de <lugar>, e a distância de cada uma à média da UE-27. | regioes | viva | — |
+| conteudo | The NUTS II regions of <lugar>, and how far each one is from the EU-27 average. | regioes | viva | — |
+| conteudo | 5 regiões com linhas publicadas. | regioes | retirada | a frase falava da cobertura da casa e não do que conta («com linhas publicadas», «no livro-razão»), e a Emenda 15 manda a autorreferência a zero numa página do leitor; fica o número e o que ele conta (leitura cruzada do Codex, 28.08.2026) |
+| conteudo | 5 regions with published rows. | regioes | retirada | a frase falava da cobertura da casa e não do que conta («com linhas publicadas», «no livro-razão»), e a Emenda 15 manda a autorreferência a zero numa página do leitor; fica o número e o que ele conta (leitura cruzada do Codex, 28.08.2026) |
+| conteudo | O índice de PIB per capita de <lugar>, em paridades de poder de compra, contra a média da UE-27. | regioes | viva | — |
+| conteudo | The GDP per capita index of <lugar>, in purchasing power standards, against the EU-27 average. | regioes | viva | — |
+| conteudo | As medidas | regioes | viva | — |
+| navegacao | O país lê-se em quatro níveis: país, região NUTS II, distrito ou ilha, concelho. | lugar | viva | achado 11 da leitura cruzada do inventário (Codex, 14.09.2026), e a classe FICA: a frase diz como este sítio organiza o território (é a frase de hierarquia do §2.2 do brief, a mesma nos cinco índices, e o que ela faz é dizer a quem lê por onde pode entrar). A única afirmação sobre o país que ela traz («as regiões não contêm distritos inteiros») foi conferida nos dados da CAOP antes de se escrever, e saiu da frase quando a conferência a dispensou |
+| navegacao | The country is read at four levels: country, NUTS II region, district or island, municipality. | lugar | viva | ver a razão na gémea portuguesa (achado 11, 14.09.2026) |
+| navegacao | Uma área de governo é um ministério; um domínio é um assunto da carta dos conteúdos. | lugar | viva | — |
+| navegacao | A government area is a ministry; a domain is a subject from the content charter. | lugar | viva | — |
+| conteudo | A leitura de cada medida | lugar | viva | — |
+| conteudo | The reading of each measure | lugar | viva | — |
+| conteudo | The measures | regioes | viva | — |
+| conteudo | regiões com linhas publicadas no livro-razão | regioes | retirada | a frase falava da cobertura da casa e não do que conta («com linhas publicadas», «no livro-razão»), e a Emenda 15 manda a autorreferência a zero numa página do leitor; fica o número e o que ele conta (leitura cruzada do Codex, 28.08.2026) |
+| conteudo | regions with rows published in the ledger | regioes | retirada | a frase falava da cobertura da casa e não do que conta («com linhas publicadas», «no livro-razão»), e a Emenda 15 manda a autorreferência a zero numa página do leitor; fica o número e o que ele conta (leitura cruzada do Codex, 28.08.2026) |
+| conteudo | 9 regiões | regioes | viva | — |
+| conteudo | 9 regions | regioes | viva | — |
+| conteudo | regiões desenhadas na régua da convergência | regioes | viva | — |
+| conteudo | regions drawn on the convergence rule | regioes | viva | — |
+
+## Bloco «Correções pequenas, terceira passagem» · I83 · 28.08.2026
+
+*Uma frase por edição, e é a mesma porta com outro nome. A porta que vai a
+seguir a uma ligação do documento numa página de leitura não tem texto: o que
+ela diz, di-lo em `aria-label`, e o que dizia era «linha do motor:
+tc-year-1-2008». Quem ouve a página ouvia o identificador de um artefacto do
+motor. O rótulo passa a nomear o que a porta abre, a chave fica só no `href`, e a
+classe é navegação porque é o que a porta é: uma saída para outro sítio da mesma
+página.*
+
+*As duas linhas antigas ficam `retirada` com o motivo escrito, e não saem do
+ficheiro: eram 34 cadeias distintas nas duas edições, arrumadas em duas linhas
+por uma normalização da régua que punha `<linha>` no lugar do identificador. A
+normalização sai com elas, porque já não há identificador nenhum na dica; se uma
+dica composta com uma chave voltar, volta como bloco POR CLASSIFICAR, que é o
+portão que a apanha.*
+
+*A frase de Évora da I88 não entra nesta tabela, e a razão é mecânica: o bloco
+que a leva tem um `data-claim` lá dentro, e a régua deixa cair um bloco com
+origem declarada. Nenhuma cadeia do inventário muda com ela.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | a linha desta figura | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+| navegacao | this figure’s row | B1-peca1 | retirada | correção do achado 7: a secção só mostra recibos completos do livro-razão; o aparato do motor sai da superfície |
+
+## Bloco «app» · o sítio no ecrã principal · 28.08.2026
+
+*O sítio passou a poder ser posto no ecrã principal de um telemóvel, e isso
+abriu uma superfície pública que não existia: o NOME e o NOME CURTO da
+aplicação, que o leitor lê por baixo do ícone e na lista de aplicações
+instaladas, sem estar no sítio. O `BRIEF-app.md` §5 manda classificá-los, e é o
+que esta secção faz.*
+
+*A régua alcança-os desde este bloco, e é a mesma extensão que a descrição do
+`<head>` levou a 21.08.2026, pela mesma razão: são superfície pública, são
+escritas pela casa, e ficavam de fora só porque a varredura era sobre o
+`<body>`. A medida 8 lê agora, em cada rota inventariada, a etiqueta
+`apple-mobile-web-app-title` daquela página e o `name` e o `short_name` do
+manifesto que aquela página liga. Sem essa extensão, o BRIEF pedia frases
+«classificadas» e o inventário ficava com linhas que nenhuma régua alcança, ou
+seja declarações que ninguém confere, que é a coisa que a I74 fechou.*
+
+**Uma linha só, e não duas.** O `name` da aplicação é «O Estado do País», que já
+está declarado neste ficheiro (o nome da publicação, `navegacao`, bloco `até
+2026-08-26`), porque é a mesma cadeia que o cabeçalho compõe. Declará-la outra
+vez neste bloco não acrescentava nada e mudava a classe da que já existe, porque
+o mapa do inventário é `texto → classe` e a última linha ganharia: o nome da
+publicação passaria a `conteudo` sem ninguém decidir isso. O que é novo é o nome
+curto.
+
+**E uma tensão que fica dita, para quem ler o diff.** O BRIEF §5 escreve «classe
+conteúdo» para os dois, e é o que esta tabela faz. A régua das três classes deste
+ficheiro diz outra coisa sobre a mesma cadeia: «navegação — … o nome da
+publicação», e foi por essa régua que a Emenda 18 classificou a frase de
+identidade como navegação, «como o nome da publicação». «O Estado» é o nome da
+publicação encurtado para caber numa cela de 60 pt. **Segue-se o BRIEF, que é a
+instrução escrita da direção, e regista-se a divergência aqui em vez de a
+resolver sozinho**: nenhuma das duas classes muda a contagem que a construção
+fecha (a autorreferência continua a zero em todas as rotas), e a escolha entre
+elas é da direção.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | O Estado | app | viva | navegação como o nome da publicação (regra do inventário); o brief dizia conteúdo e o lugar de direção corrigiu no fecho |
+## Bloco «As áreas de governo» · decisão 6 da auditoria de 25.08.2026 · 28.08.2026
+
+*As páginas novas do bloco: o índice das áreas de governo (`/areas`, `/en/areas`)
+e a página de cada área com peças (`/areas/<slug>`, `/en/areas/<slug>`). São
+páginas do leitor, e a Emenda 15 governa-as: a autorreferência delas é zero, e o
+que fica é o que a coisa é.*
+
+*A REGRA MUDOU A 28.08.2026, E COM ELA DUAS FRASES E A LISTA DAS ÁREAS. A área de
+uma peça era a do organismo que publica o número dela; passou a ser a do
+ministério cujas matérias, tal como a lei orgânica as lista, cobrem o assunto
+dela. As duas descrições do `<head>` que diziam «publicados pelos organismos de»
+saíram, e as que entraram dizem «cujo assunto é matéria de». A Presidência saiu
+da lista de áreas com as suas quatro linhas: a população e as empresas de um
+concelho eram dela por o INE ser tutelado por aquele ministro, e pela regra do
+assunto ficam fora, porque «estatística» não é matéria de ministério nenhum
+neste diploma. Entraram seis áreas: Finanças, Infraestruturas e Habitação,
+Justiça, Educação, Ciência e Inovação, Saúde e Ambiente e Energia.*
+
+*SEGUNDA LEITURA, 28.08.2026: O QUE ESTE BLOCO PASSOU A DECLARAR. A leitura
+cruzada do Codex e o lugar de direção mandaram sete alterações, e três mexem na
+voz. **Saíram vinte e quatro linhas para `retirada`**: as duas descrições do
+índice, as dezoito descrições das páginas de área (todas diziam o método do sítio
+na superfície pública), o título antigo do índice nas duas edições e a lede que
+definia o que uma área é. **Entraram vinte e cinco**: o título novo nas duas
+edições, os vinte e um rótulos de matéria e o rótulo da cabeça nas duas edições,
+que estava rendido em vinte sítios e declarado em nenhum. A descrição do `<head>` de uma página
+de área passou a ser o NOME da área, que já estava declarado, e a do índice o seu
+título: por isso as vinte novas descrições não trazem linha nenhuma.*
+
+*OS RÓTULOS DE MATÉRIA SÃO UMA LINHA CADA E NÃO DUAS, e a razão é o que eles são:
+as palavras da lei orgânica, citadas. Uma citação de uma lei portuguesa não se
+traduz, e por isso o rótulo é o mesmo carácter a carácter nas duas edições, com
+`lang="pt-PT"` em ambas. Vinte e um rótulos, vinte e uma linhas. O portão das
+áreas confere que o rótulo rendido é a matéria declarada, palavra por palavra, e
+que leva a marca da língua: uma paráfrase da casa por cima de uma citação da lei
+fecha a construção.*
+
+*A LINHA DO ÍNDICE («Finanças · 1 peça») CONTINUA A NÃO ENTRAR NESTA TABELA, e
+não é um esquecimento: a régua do inventário deixa cair um bloco cujo texto está
+todo dentro de um `<a>`, e a linha inteira de cada área é uma ligação. Declará-la
+aqui punha na tabela uma linha `viva` que não se rende em rota nenhuma, e a
+construção fecha nesse caso. **Para a declarar era preciso partir a linha em duas**
+(o nome dentro da ligação e a contagem fora dela), e isso traz de volta os dois
+defeitos que a forma atual evita: o alvo de 44 px passava a ser só o nome, e a
+tabela ganhava uma frase com um número por dentro, que é a I74. O nome de cada
+área está declarado, e a contagem tem a sua chave da prova, com quem a reconte.*
+
+*O RÓTULO DA CABEÇA («Áreas de governo», «Government areas») ENTROU A 28.08.2026,
+e a medição cega é que o encontrou: estava rendido no índice e nas nove páginas
+de área, nas duas edições, e declarado em lado nenhum. **A causa não é deste
+bloco, e está medida**: a régua da voz mede elementos de bloco que não contêm
+outro bloco, e o rótulo era um `<span>` dentro de uma cabeça que também tem o
+`<h1>`, ou seja, nem uma coisa nem outra. A prova de que é isto e não uma
+suposição está no próprio inventário: «Relance» e «At a glance» são o mesmo
+rótulo, com a mesma classe, escritos num `<h2>`, e estão declarados desde sempre
+como `navegacao`. Nestas páginas o `<span>` passou a `<p>`, que é um bloco, e a
+classe já era `display: block` com `margin: 0`: não muda um pixel. **Dezasseis
+outras vistas do sítio têm o mesmo rótulo em `<span>` e continuam por declarar**,
+e isso é um bloco do inventário e não deste.*
+
+*A PALAVRA «provisório» NÃO ENTRA, e a razão é o que ela é: a bandeira
+`source_flag: "p"` de uma linha do livro-razão dita por palavras, que é a FONTE a
+dizer que o número dela é provisório (o Eurostat marca assim os valores regionais
+do primeiro ano de referência). Não é uma frase da casa: a régua deixa cair o
+bloco inteiro que a contém, porque ele contém uma origem declarada, que é a mesma
+razão por que o valor não entra. O que a guarda é uma célula da régua do
+navegador deste bloco, a M8, com o seu estrago plantado.*
+
+*O NOME DE CADA ÁREA ENTROU AQUI a 28.08.2026, uma linha por edição, e **as
+dezoito linhas saíram a 29.08.2026 com a marca `data-nome`**. A razão está escrita
+no bloco «Correções pequenas, quarta passagem» mais abaixo: a marca irmã de
+`data-lugar` que esta nota descrevia foi feita, o nome de uma área passou a
+declarar de que ficheiro de dados vem, e a régua confere que o texto rendido é o
+daquele ficheiro. Com as dezasseis áreas do Governo estas seriam sessenta e
+quatro linhas, que é a lista dos ministérios escrita outra vez dentro do
+inventário.*
+
+*OS DEZOITO NOMES SÃO OS QUE O GOVERNO PUBLICA, e nenhum é tradução da casa. O
+brief manda dizer quando um nome inglês é nosso, e não há nenhum: os nove
+portugueses estão na lista da composição do Governo e nos títulos dos artigos da
+lei orgânica, e os nove ingleses foram lidos no navegador a 28.08.2026, três na
+página da composição e seis na página das áreas de governo
+(`/en/gc25/ministries`), esta pelo lugar de direção. `src/data/areas.mjs` diz, no
+campo `nomeEnFonte` de cada área, de onde veio o nome inglês dela.*
+
+*OS CAMPOS DAS MEDIDAS NÃO TRAZEM LINHAS NOVAS, e é a razão mais forte para
+reutilizar a forma da origem. Desde 28.08.2026 cada medida de uma página de área
+rende-se na linha-espécime do livro-razão, com a unidade, a data de referência, a
+fonte, o documento e a data de leitura. Nenhum desses campos é prosa da casa: são
+campos do livro-razão, marcados `data-linha-*`, e a régua deixa cair um bloco
+inteiro que contenha uma origem declarada. Os rótulos («Fonte», «Documento»,
+«Lido a», «Dados de») são os mesmos que o índice dos 308 já rendia.*
+
+*A DICA DA CHAVE DA PROVA É A MESMA PARA AS NOVE ÁREAS, pela mesma razão: uma
+frase composta com o nome de cada área punha aqui nove linhas por edição que não
+diziam mais do que uma. O nome da área está na própria linha do índice, ao lado
+do número.*
+
+*«As medidas» e «The measures» não entram: já estavam declaradas pelo bloco das
+regiões, e a mesma cadeia entra uma vez só.*
+
+*A legenda dos dois estados do selo não traz linhas novas: é a mesma do
+livro-razão, palavra por palavra. O que mudou foi a coluna das rotas da exceção
+de `VOZ-MARCADORES.md`, onde a rota `area` entra ao lado de `livro`,
+`livroConcelhos` e `livroConcelho`: «proveniência completa» é o nome do estado de
+um CAMPO de uma linha, e não uma afirmação sobre o que este sítio cobre.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Por área de governo | areas | viva | — |
+| conteudo | By area of government | areas | viva | — |
+| navegacao | Áreas de governo | areas | viva | — |
+| navegacao | Government areas | areas | viva | — |
+| conteudo | As áreas de governo | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): um título que anuncia «as áreas de governo» sobre uma lista de nove das dezasseis promete a lista oficial inteira, e a única correção possível era uma frase de cobertura. O título passou a nomear o eixo de navegação, «Por área de governo» |
+| conteudo | The areas of government | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): um título que anuncia «as áreas de governo» sobre uma lista de nove das dezasseis promete a lista oficial inteira, e a única correção possível era uma frase de cobertura. O título passou a nomear o eixo de navegação, «Por área de governo» |
+| conteudo | Uma área de governo é o conjunto de matérias de um ministério, tal como a lei orgânica do Governo o fixa. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): definia o que uma área de governo é, e uma definição do vocabulário do sítio é o sítio a explicar-se (Emenda 15) |
+| conteudo | An area of government is the set of matters of one ministry, as the Government’s organic law fixes it. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): definia o que uma área de governo é, e uma definição do vocabulário do sítio é o sítio a explicar-se (Emenda 15) |
+| conteudo | As áreas de governo de Portugal, e os trabalhos e as medidas cujo assunto é matéria de cada uma. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The areas of government of Portugal, and the studies and measures whose subject is a matter of each one. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | peças na página desta área de governo | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| navegacao | estudos e medidas na página desta área de governo | lugar | viva | achado 6 da leitura cruzada do inventário (Codex, 14.09.2026), pelo §9 do brief: é a dica de uma chave da prova, e o que ela diz é o que a contagem ao lado conta dentro desta página. Diz a estrutura da página a quem a ouve, que é o que esta lista chama navegação («a descrição acessível de um instrumento»), e não uma afirmação sobre o país |
+| conteudo | pieces on this area of government’s page | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| navegacao | studies and measures on this area of government’s page | lugar | viva | ver a razão na gémea portuguesa (achado 6, 14.09.2026) |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Finanças, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Finance, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Economia e Coesão Territorial, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Economy and of Territorial Cohesion, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Infraestruturas e Habitação, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Infrastructure and Housing, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Justiça, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Justice, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Administração Interna, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Home Affairs, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Educação, Ciência e Inovação, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Education, Science and Innovation, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Saúde, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Health, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Trabalho, Solidariedade e Segurança Social, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Labour, Solidarity and Social Security, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | Os trabalhos e as medidas cujo assunto é matéria de Ambiente e Energia, área de governo. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | The studies and measures whose subject is a matter of Environment and Energy, an area of government. | areas | retirada | saiu com a segunda leitura do bloco `areas` (28.08.2026): a descrição do `<head>` dizia o método do sítio na superfície pública, e a Emenda 15 tira isso de uma página do leitor. A descrição de uma página de área passou a ser o nome da área, e a do índice o seu título |
+| conteudo | área do XXV Governo Constitucional | cartao | retirada | a linha do tipo saiu das nove páginas de área com o item 3 do bloco P2 (15.09.2026), pela leitura do diretor de 15.09 de manhã: estava debaixo do título de cada área, nas duas edições, e é uma explicação da estrutura do sítio e não conteúdo daquela página. A regra 5 do plano das palavras manda dizê-la uma vez, na página que explica a estrutura, e o índice das áreas passou a dizê-la com o diploma ao lado |
+| conteudo | area of the XXV Constitutional Government | cartao | retirada | ver a razão na gémea portuguesa (item 3 do P2, 15.09.2026) |
+| conteudo | Os trabalhos | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | Os estudos | lugar | viva | — |
+| conteudo | The studies | areas | viva | — |
+| conteudo | Os estudos de dados | areas | viva | — |
+| conteudo | The data studies | areas | viva | — |
+| conteudo | a política financeira do Estado | areas | viva | — |
+| conteudo | administração local | areas | viva | — |
+| conteudo | coesão territorial | areas | viva | — |
+| conteudo | crescimento da economia | areas | viva | — |
+| conteudo | competitividade | areas | viva | — |
+| conteudo | investimento | areas | viva | — |
+| conteudo | internacionalização das empresas | areas | viva | — |
+| conteudo | os programas financiados por fundos europeus, nomeadamente no âmbito da política de coesão da União Europeia e do Plano de Recuperação e Resiliência (PRR) | areas | viva | — |
+| conteudo | habitação | areas | viva | — |
+| conteudo | construção | areas | viva | — |
+| conteudo | a política de justiça | areas | viva | — |
+| conteudo | administração eleitoral | areas | viva | — |
+| conteudo | o sistema educativo | areas | viva | — |
+| conteudo | a ciência | areas | viva | — |
+| conteudo | as orientações em matéria de competências digitais | areas | viva | — |
+| conteudo | a política nacional de saúde | areas | viva | — |
+| conteudo | emprego | areas | viva | — |
+| conteudo | segurança social | areas | viva | — |
+| conteudo | combate à pobreza e de promoção da inclusão social | areas | viva | — |
+| conteudo | apoio à família, crianças | areas | viva | — |
+| conteudo | relações laborais e condições de trabalho | areas | viva | — |
+| conteudo | água | areas | viva | — |
+
+
+## Bloco «Correções pequenas, quarta passagem» · os rótulos em `<span>` · 29.08.2026
+
+*A RÉGUA PASSOU A VER O QUE JÁ ESTAVA NA PÁGINA, e estas treze linhas são o que
+ela viu. A medida 8 mede blocos de texto, e um bloco é uma etiqueta de uma lista
+fechada (`p`, `li`, `h1`, `h2`, …): um `<span>` não está nela, e o elemento à
+volta da cabeça de uma página é um `<div>`, que também não. O rótulo da cabeça de
+dezasseis vistas do sítio vivia exactamente aí, entre as duas coisas que a régua
+não olha, e passava por baixo dela sem ninguém o ver. A medição cega de 28.08 é
+que o encontrou, nas páginas das áreas, com vinte rendições e nenhuma linha.*
+
+*A ESCOLHA FOI MEXER NA RÉGUA E NÃO NAS PÁGINAS, e a razão é o que cada uma das
+duas resolve. Pôr o rótulo de cada vista num `<p>`, que foi o que o bloco das
+áreas fez nas suas duas, corrige as páginas de hoje e deixa a régua como estava:
+o próximo rótulo escrito num `<span>` volta a passar por baixo dela. `medir-defeitos.mjs`
+passa a medir os `<span>` de uma lista declarada de classes de rótulo
+(`CLASSES_DE_ROTULO`, hoje só `.eyebrow`), e um rótulo em `<span>` não
+inventariado é um bloco POR CLASSIFICAR como qualquer outro. Medido: o portão da
+voz fechou a construção com 1 328 queixas em treze cadeias distintas, que são
+estas.*
+
+*A CLASSE É `navegacao`, e é a do positivo conhecido. «Relance» e «At a glance»
+são o mesmo rótulo, com a mesma classe, escritos num `<h2>`, e estão declarados
+como `navegacao` desde sempre; «Áreas de governo» e «Government areas» entraram
+assim a 28.08. Um antetítulo de cabeça nomeia em que família de páginas o leitor
+está, e é isso que ele faz aqui: «Município» por cima do nome de um concelho,
+«Livro-razão» por cima do índice das linhas.*
+
+*E A RÉGUA PROVA, EM CADA CONSTRUÇÃO, QUE AINDA VÊ. Uma lista de classes é uma
+dependência de uma folha de estilos: renomear `.eyebrow` deixava a régua cega com
+a contagem de «nada por classificar» a dizer zero, que é o defeito que ela veio
+fechar. `check:voz` conta as ocorrências de cada classe declarada em `dist/` e
+fecha a construção quando uma delas for a zero.*
+
+*DUAS ROTAS TÊM O MESMO RÓTULO E NÃO ENTRAM AQUI, e não é um esquecimento: a
+página de uma linha do livro-razão («Linha do livro-razão», «Ledger row», 2 602
+rendições por edição) e a página do marcador («O marcador», «The marker») não
+estão em `ROTAS_DO_INVENTARIO`. A régua vê-lhes o rótulo desde hoje; o que as
+mantém fora da conta é a lista das rotas medidas, que é outra regra e cresce no
+commit em que cada página é reconstruída. O antetítulo da obra citada
+(`/estudos/<slug>/documento`) também não entra, porque a régua salta essa rota
+inteira: é a obra de outrem.*
+
+*TRÊS CADEIAS NÃO TRAZEM LINHA NOVA porque já estavam declaradas por outra
+rendição, e a tabela mapeia por texto: «Correções» e «Corrections» (declaradas
+desde antes de 26.08) e «Documento alojado» e «Document hosted» (do bloco da
+grelha da voz).*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Concelho | lugar | viva | — |
+| navegacao | Municipality | pequenas-4 | viva | — |
+| navegacao | Municípios | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| navegacao | Distritos e ilhas | pequenas-4 | viva | — |
+| navegacao | Districts and islands | pequenas-4 | viva | — |
+| navegacao | Regiões | pequenas-4 | viva | — |
+| navegacao | Regions | pequenas-4 | viva | — |
+| navegacao | Agenda | pequenas-4 | viva | — |
+| navegacao | Documento do estudo · texto | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| navegacao | Study document · text | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+
+## Bloco «Correções pequenas, quarta passagem» · a marca `data-nome` · 29.08.2026
+
+*A DÍVIDA DE FORMA QUE O BLOCO DAS ÁREAS NOMEOU DUAS VEZES ESTÁ PAGA. O nome de
+cada área de governo custava duas linhas desta tabela, uma por edição, e a
+descrição do `<head>` composta com ele custava outras duas. Com quatro áreas eram
+dezasseis linhas; com nove, trinta e seis; com as dezasseis áreas do Governo
+seriam sessenta e quatro. Isso não é um inventário das frases da casa: é a lista
+dos ministérios escrita outra vez dentro dele.*
+
+*A MARCA É `data-nome`, e é a irmã de `data-lugar`: diz «este texto é o nome de
+uma entrada de um ficheiro de dados, e não prosa que a casa escreveu». Não podia
+ser `data-lugar`, e a marca dos lugares tem escrito o que marca, o nome de um
+concelho e a etiqueta que a Carta Administrativa lhe dá: uma área de governo não
+é um lugar.*
+
+*A REGRA É ESTREITA, E O VALOR DO ATRIBUTO NOMEIA A FONTE. Só o nome de uma
+entrada de um ficheiro de dados com fonte declarada a pode levar, e hoje são dois:
+`src/data/areas.mjs`, cujos nomes vêm das páginas do Governo lidas a 28.08.2026
+(`FONTE_DOS_NOMES`, com a data), e `src/data/regioes.mjs`, cujos nomes vêm da
+classificação NUTS 2024, com o código de cada região ao lado do nome.*
+
+*E A MARCA TRAZ A SUA PRÓPRIA VERIFICAÇÃO, que é a diferença que mais importa.
+`data-lugar` exclui e não confere: um nome trocado sai do inventário sem que
+ninguém o veja. `check:voz` fecha a construção quando um `data-nome` nomeia uma
+fonte que não é uma das duas, e quando o texto marcado não é, carácter a carácter,
+um nome daquele ficheiro. Uma marca que dispensa um texto da declaração sem trazer
+verificação troca uma lista por um buraco.*
+
+*AS REGIÕES CONTINUAM EM `data-lugar`, e não é um descuido: uma região NUTS II é
+um lugar, e as quatro linhas da descrição das suas páginas já se contam com
+`<lugar>` lá dentro. Trocar a marca mudava o texto dessas linhas sem mudar o que
+elas dizem. O ficheiro fica na lista das fontes porque a regra é sobre que
+ficheiros podem sustentar a marca; a medição diz quantas vezes cada fonte se
+exerce (hoje `areas 36`, `regioes 0`), para que uma fonte por exercer não fique em
+silêncio.*
+
+*DEZOITO LINHAS SAEM E UMA ENTRA. As dezoito são os nomes das nove áreas nas duas
+edições, e **saem do ficheiro em vez de ficarem `retirada`**: uma linha `retirada`
+diz «a casa tirou esta frase e ela não pode voltar», e estes nomes não foram
+tirados de lado nenhum, e continuam na cabeça de cada página, onde sempre
+estiveram. O que mudou foi quem os conta. A que entra é a descrição do `<head>`
+de uma página de área, que é o nome da área e mais nada: com a substituição, ela
+conta-se uma vez, com `<nome>` no lugar do nome, e não uma por área e por edição.
+É a mesma forma das descrições que se contam com `<lugar>`.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | <nome> | pequenas-4 | viva | — |
+
+## Bloco «Os nomes ao lado do mapa, e os dois painéis com nome» · 29.08.2026
+
+*Oito linhas, e todas da primeira página. Duas famílias.*
+
+**As quatro dicas dos dois valores novos.** `<ValorDaProva>` põe a glosa da chave
+no `title`, e a régua lê os atributos desde a I79: cada painel ganhou um algarismo
+da prova, e com ele a dica daquela chave nas duas edições. São a definição do que
+se conta, escrita em `src/lib/prova.mjs`, e são conteúdo pela mesma razão que as
+outras quatro dicas do painel que já estavam declaradas.
+
+**As quatro linhas de nome dos dois painéis.** Duas saem e quatro entram. Saíam
+«Painel Social Europeu» e «European Social Scoreboard», que eram o nome do painel
+de baixo sozinho, e **saem do ficheiro em vez de ficarem `retirada`**: a casa não
+tirou aquele nome de lado nenhum, ele continua onde estava, e o que mudou foi o
+que está ao lado dele. Entram as quatro linhas inteiras, uma por painel e por
+edição: o nome que a fonte dá ao painel, o ponto, e quantas medidas dele estão na
+página.
+
+*AS DUAS LINHAS DE NOME LEVAM A CONTAGEM DE HOJE (13 e 8), como «2602 afirmações
+· 330 calculadas» leva a dela, e pela mesma razão: o algarismo não está escrito em
+cadeia nenhuma, é um `<ValorDaProva>` que o portão reconta (`painel_com_limiar` e
+`painel_social_total`), e a régua da voz lê o texto rendido. Quando uma das
+contagens mudar, a linha deixa de se render e a construção fecha a dizer o nome
+dela: é o portão a pedir que alguém volte a olhar para a frase, que é o que estas
+linhas existem para fazer.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | European Social Scoreboard · 8 measures | inicio-lista | viva | o §9.4 do brief do F1.10 (08.09.2026), da leitura cruzada do inventário pelo Codex: as quatro contagens dos cabeçalhos dos painéis dizem quantos cartões há abaixo, como uma numeração de secção, e não são uma afirmação sobre o mundo. Passam a `navegacao`. Com o item 8.4 desceram do `<h2>` para o subtítulo, onde continuam a levar a chave da prova que o portão reconta |
+| conteudo | European Social Scoreboard measures the ledger holds | inicio-lista | viva | — |
+| navegacao | Macroeconomic Imbalance Procedure · 13 measures with a threshold | inicio-lista | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| navegacao | Painel Social Europeu · 8 medidas | inicio-lista | viva | o §9.4 do brief do F1.10 (08.09.2026), da leitura cruzada do inventário pelo Codex: as quatro contagens dos cabeçalhos dos painéis dizem quantos cartões há abaixo, como uma numeração de secção, e não são uma afirmação sobre o mundo. Passam a `navegacao`. Com o item 8.4 desceram do `<h2>` para o subtítulo, onde continuam a levar a chave da prova que o portão reconta |
+| navegacao | Procedimento dos Desequilíbrios Macroeconómicos · 13 medidas com limiar | inicio-lista | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | medidas do Painel Social Europeu que o livro-razão guarda | inicio-lista | viva | — |
+| conteudo | medidas do painel cujo quadro publica um limiar | inicio-lista | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | panel measures whose scoreboard publishes a threshold | inicio-lista | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+
+## Bloco «rotulo-ia» · a divulgação pela via B · 01.09.2026
+
+*Emendado na segunda passagem do mesmo dia, depois da leitura a frio: as quatro
+linhas da primeira passagem mudam de classe e entram trinta e quatro que
+faltavam.*
+
+**Trinta e oito cadeias, e nenhuma entra por uma escolha editorial.** O artigo
+50.º, n.º 4, segundo parágrafo, do Regulamento (UE) 2024/1689 manda divulgar que
+um texto publicado para informar o público sobre matérias de interesse público
+foi gerado por IA, e o n.º 5 manda dá-lo «de forma clara e percetível, o mais
+tardar no momento da primeira interação ou exposição». A isenção do mesmo
+parágrafo é para quem tem revisão humana ou controlo editorial; a casa escolheu a
+via B (rotular tudo) a 30.08.2026 e não a invoca. O artigo 15.º, n.º 1 da Lei de
+Imprensa acrescenta o nome do diretor e a menção de gratuitidade na primeira
+página de cada edição. **A lei obriga a divulgar E obriga a que a política
+divulgada exista publicada**: por isso entram as duas cadeias do rótulo, as duas
+da ficha, e as trinta e quatro da secção da política que o rótulo aponta, no
+Método e no Sobre.
+
+## A classe é `divulgacao`, e é nova
+
+A primeira passagem meteu as quatro cadeias do rótulo em `navegacao`, e era a
+classificação a torcer-se para caber. **Nenhuma das três classes descrevia o que
+elas são.** Conteúdo é o que a coisa medida é; navegação é o que leva a outro
+sítio; autorreferência é o método, a verificação, a honestidade, a cobertura ou
+as intenções do próprio sítio. Uma divulgação obrigatória não é nada disso: está
+na página porque a lei a põe lá, e sairia no dia em que a lei mudasse.
+
+**`autorreferencia` continua a ir a ZERO em todas as rotas medidas**, e a classe
+nova não abre uma porta traseira à Emenda 15. A diferença entre as duas é a que a
+própria emenda escreve: a autorreferência existe **para mostrar diligência**, e a
+divulgação existe **porque alguém tem de saber quem responde**. Uma frase de
+divulgação que comece a explicar porque se deve confiar na casa é
+autorreferência com outro nome, e continua a ir a zero: quem a apanha é o mesmo
+`npm run check:voz`, que conta a classe e não a intenção.
+
+**As duas cabeças de secção ficam em `navegacao`**, e não em `divulgacao`: «A
+política da casa» e «The house policy» nomeiam um lugar da página, como qualquer
+outro nome de secção, e é o que a lista já chama navegação.
+
+## Onde é que estas cadeias se rendem, e como é que a régua as vê
+
+As trinta e quatro da secção rendem-se em `/metodo` e `/en/method`, e a frase da
+política também no Sobre. **Nenhuma dessas rotas é medida**, porque a Emenda 15
+isenta o Método e o Sobre da contagem: ali a autorreferência é o objecto da
+página. A régua usava a mesma lista para duas perguntas diferentes, e a segunda
+não é a mesma: «esta linha declarada ainda se rende em algum lado?». Ganhou uma
+lista à parte (`ROTAS_QUE_PROVAM_A_RENDICAO` em `scripts/medir-defeitos.mjs`) que
+serve só para responder a essa, sem entrar na contagem por classe, nos blocos por
+classificar, nem na proibição das linhas retiradas.
+
+*O texto de cada linha foi extraído das páginas construídas com a mesma
+definição de bloco que a régua usa, e não datilografado.*
+
+| divulgacao | A casa não aceita dinheiro de nenhuma entidade que mede. | p3 | retirada | «a casa» sai do texto do leitor (decisão do diretor de 15.09.2026 às 16:35 UTC; norma §1.3: em português «casa» é a habitação, que é uma das coisas que este projeto mede). As cinco recusas da política abriam todas com «A casa não …» e passam a abrir com «Este projeto não …» (bloco P3, item 3) |
+| divulgacao | A casa não chama jornalista à IA e não se diz jornalística. | p3 | retirada | ver a razão na primeira das cinco recusas; esta troca também «IA» por «inteligência artificial», pela regra que o P1 aplicou ao rótulo |
+| divulgacao | A casa não escreve para o alcance: mede-se por citações, não por visitas. | p3 | retirada | ver a razão na primeira das cinco recusas |
+| divulgacao | A casa não guarda dados pessoais dos leitores nem os põe no repositório. | p3 | retirada | ver a razão na primeira das cinco recusas |
+| divulgacao | A casa não publica um número que não tenha lido na fonte, não aproxima o que não existe, e diz as ausências. | p3 | retirada | ver a razão na primeira das cinco recusas |
+| divulgacao | A construção constrói o sítio, e verifica lotes na fonte. | rotulo-ia | viva | — |
+| divulgacao | A direção dirige o trabalho: escreve os briefs, revê e funde. | rotulo-ia | viva | — |
+| divulgacao | A leitura lê sem contexto prévio, com erros plantados que tem de encontrar. | rotulo-ia | viva | — |
+| divulgacao | A medição mede numa cópia, com código próprio, sem ver a construção. | rotulo-ia | viva | — |
+| navegacao | A política da casa | rotulo-ia | retirada | o título da secção da política dentro do Método muda com o rótulo que a abre (item 1 do brief do P1, 15.09.2026, com a emenda do diretor das 16:35 UTC): «a política da casa» era o decalque de *house policy* e «regras da casa» trocava-o por outro problema, porque em português casa é a habitação. A secção passa a chamar-se «Como a inteligência artificial escreve este sítio», que diz o que ela faz |
+| divulgacao | AI-generated text under the house policy · editorial responsibility: o diretor | rotulo-ia | retirada | o rótulo de IA de todas as páginas construídas passa a dizer «Texto gerado por inteligência artificial, segundo o Método.» (item 1 do brief do P1, 15.09.2026). Três coisas ao mesmo tempo, e cada uma é uma leitura do diretor no ar: «política da casa» é decalque, «IA» vira «inteligência artificial» por extenso, que é a palavra da lei, e o nome de quem responde sai do rótulo. A porta passa a ser «Método», que é o nome da página onde a política vive |
+| divulgacao | Building builds the site, and checks batches at the source. | rotulo-ia | viva | — |
+| divulgacao | Direction directs the work: it writes the briefs, reviews and merges. | rotulo-ia | viva | — |
+| divulgacao | Director: o diretor · Free of charge | rotulo-ia | retirada | a ficha da primeira página fica com a menção de gratuitidade sozinha (item 2 do brief do P1, 15.09.2026): a palavra «Diretor» e o nome saem, por decisão do diretor («posing as a director with my name is just not right»). A leitura do artigo 15.º da Lei de Imprensa fica escrita em `src/data/politica-ia.mjs`, com a data da saída e a razão |
+| divulgacao | Diretor: o diretor · Publicação gratuita | rotulo-ia | retirada | a ficha da primeira página fica com a menção de gratuitidade sozinha (item 2 do brief do P1, 15.09.2026): a palavra «Diretor» e o nome saem, por decisão do diretor («posing as a director with my name is just not right»). A leitura do artigo 15.º da Lei de Imprensa fica escrita em `src/data/politica-ia.mjs`, com a data da saída e a razão |
+| divulgacao | Escrito, conferido e atualizado por sistemas de IA sob uma política publicada; nenhum humano revê cada peça antes de sair; uma pessoa com nome detém a responsabilidade editorial, define as regras e as recusas, e responde. | rotulo-ia | retirada | a frase da política deixa de dizer «responsabilidade editorial» / «editorial responsibility», que é o decalque de *editorial responsibility* que o diretor apanhou a 15.09.2026, e passa a dizer o que a mesma frase dizia sem ele: uma pessoa com nome define as regras e as recusas, e responde (item 3 do brief do P1). A frase mudou de lugar ao mesmo tempo: fica no Método, e o Sobre passa a dizer o que este projeto é |
+| divulgacao | Everything the house publishes carries the AI-generated label, on every page, at the moment the page is seen. Review is done by gates and by sample, not piece by piece. | p3 | retirada | ver a razão na gémea portuguesa |
+| divulgacao | Measurement measures on a copy, with its own code, without seeing the build. | rotulo-ia | viva | — |
+| divulgacao | Não se publica, e uma pessoa é avisada · Uma medida nova; uma definição mudada; um ficheiro que a leitura já não reconhece; uma revisão da fonte; um portão vermelho; uma fonte que deixou de responder. | rotulo-ia | viva | — |
+| divulgacao | Never without a person · Any piece that names a person; mail to third parties in the name of the house; a change of identity; money, contracts, accounts. | p3 | retirada | ver a razão na gémea portuguesa |
+| divulgacao | Not published, and a person is told · A new measure; a changed definition; a file the reader no longer recognises; a revision at the source; a red gate; a source that has stopped answering. | rotulo-ia | viva | — |
+| divulgacao | Nunca sem uma pessoa · Qualquer peça que nomeie uma pessoa; correio a terceiros em nome da casa; uma mudança de identidade; dinheiro, contratos, contas. | p3 | retirada | «a casa» sai do texto do leitor (bloco P3, item 3): «correio a terceiros em nome da casa» passa a «em nome deste projeto» |
+| divulgacao | Publica-se · Um valor novo da mesma medida, no mesmo formato, da mesma fonte, com todos os portões verdes. | rotulo-ia | viva | — |
+| divulgacao | Published · A new value of the same measure, in the same format, from the same source, with every gate green. | rotulo-ia | viva | — |
+| divulgacao | Reading reads with no prior context, with planted errors it has to find. | rotulo-ia | viva | — |
+| divulgacao | São os modelos Claude da Anthropic, em três lugares (a direção, a construção, a medição), e o Codex da OpenAI na leitura. Um modelo novo só ocupa um lugar depois de passar os mesmos testes que o titular passou, e a troca fica escrita com a data. | rotulo-ia | viva | — |
+| divulgacao | São quatro lugares, e a verificação é sempre de outra família de modelos: | rotulo-ia | viva | — |
+| divulgacao | Texto gerado por IA sob a política da casa · responsável editorial: o diretor | rotulo-ia | retirada | o rótulo de IA de todas as páginas construídas passa a dizer «Texto gerado por inteligência artificial, segundo o Método.» (item 1 do brief do P1, 15.09.2026). Três coisas ao mesmo tempo, e cada uma é uma leitura do diretor no ar: «política da casa» é decalque, «IA» vira «inteligência artificial» por extenso, que é a palavra da lei, e o nome de quem responde sai do rótulo. A porta passa a ser «Método», que é o nome da página onde a política vive |
+| divulgacao | The house does not call the AI a journalist and does not call itself journalism. | p3 | retirada | ver a razão na gémea portuguesa |
+| divulgacao | The house does not write for reach: it is measured by citations, not by visits. | p3 | retirada | ver a razão na gémea portuguesa |
+| divulgacao | The house keeps no personal data of its readers and puts none in the repository. | p3 | retirada | ver a razão na gémea portuguesa |
+| navegacao | The house policy | rotulo-ia | retirada | o título da secção da política dentro do Método muda com o rótulo que a abre (item 1 do brief do P1, 15.09.2026, com a emenda do diretor das 16:35 UTC): «a política da casa» era o decalque de *house policy* e «regras da casa» trocava-o por outro problema, porque em português casa é a habitação. A secção passa a chamar-se «Como a inteligência artificial escreve este sítio», que diz o que ela faz |
+| divulgacao | The house publishes no figure it has not read at the source, does not approximate what does not exist, and says what is missing. | p3 | retirada | ver a razão na gémea portuguesa |
+| divulgacao | The house takes no money from any entity it measures. | p3 | retirada | ver a razão na gémea portuguesa |
+| divulgacao | There are four places, and checking is always done by a different family of models: | rotulo-ia | viva | — |
+| divulgacao | They are the Claude models from Anthropic in three of the places (direction, building, measurement), and Codex from OpenAI in the reading. A new model takes a place only after passing the same tests the incumbent passed, and the change is written down with its date. | rotulo-ia | viva | — |
+| divulgacao | Tudo o que a casa publica leva o rótulo de gerado por IA, em cada página, no momento em que a página é vista. A revisão faz-se por portões e por amostra, e não peça a peça. | p3 | retirada | ver a razão na gémea portuguesa |
+| divulgacao | Written, checked and updated by AI systems under a published policy; no human reviews each piece before it goes out; a named person holds editorial responsibility, sets the rules and the refusals, and answers for it. | rotulo-ia | retirada | a frase da política deixa de dizer «responsabilidade editorial» / «editorial responsibility», que é o decalque de *editorial responsibility* que o diretor apanhou a 15.09.2026, e passa a dizer o que a mesma frase dizia sem ele: uma pessoa com nome define as regras e as recusas, e responde (item 3 do brief do P1). A frase mudou de lugar ao mesmo tempo: fica no Método, e o Sobre passa a dizer o que este projeto é |
+
+## Bloco «A cabeça nova como contentor» · 01.09.2026
+
+*Duas linhas, e são a mesma frase nas duas edições: o nome da faixa de cartões
+que passou a viver entre a manchete e o mapa.*
+
+**É a frase que substitui «Âmbito» e «Densidade» na cabeça do telemóvel.** As
+duas palavras eram os rótulos dos dois grupos da linha de comando, e a linha
+desceu para o cabeçalho do painel; o que fica no lugar delas é a faixa, e uma
+lista precisa de um nome para quem a ouve. Nenhuma das duas palavras estava neste
+ficheiro — vivem em `<span class="cmd-k">`, e a régua recolhe os blocos de texto e
+os rótulos em `span` da classe `eyebrow`, não este —, e por isso não há aqui uma
+linha a retirar: elas continuam a render-se, no fim de `.inicio`, com o comando.
+
+**A CLASSE É `navegacao`, e é a do positivo conhecido.** O nome do mapa da
+primeira página («Mapa dos distritos e das ilhas de Portugal, com uma área por
+unidade.») está classificado assim desde o bloco `grelha-2`, e é a mesma coisa
+feita da mesma maneira: um `aria-label` que diz o que um instrumento de navegação
+é e como está feito, sem verbo sobre a casa, sem porta, sem algarismo e sem selo.
+
+**NÃO NOMEIA O LUGAR, e isso é a razão de ser uma linha e não trezentas e
+dezoito.** «As medidas de Portugal» obrigaria a «As medidas de Évora» nas 308
+páginas de concelho e a «As medidas do Alentejo» nas 9 de região, com a
+preposição a contrair-se por nome; a régua lê os `aria-label` desde a I79, e o
+inventário ganharia uma linha por lugar. O lugar está dito no rótulo da cabeça e
+na manchete, a três linhas de distância.
+
+**AS TRÊS PALAVRAS DE ESTADO NÃO ENTRAM, e a razão está no componente.** A
+primeira construção deste bloco punha a fila do estado do cartão num `<p>`, e a
+régua passou a recolher «fora do limiar», «dentro do limiar» e «sem limiar» como
+frases novas em 6 590 rotas. A peça rende-as, desde a Emenda 13, dentro de um
+`<div class="peca-topo">`, e por isso nunca foram recolhidas: são o vocabulário
+fechado do estado e não prosa da casa. A faixa passou a fazer o mesmo. A mesma
+palavra, no mesmo sítio da mesma casa, lê-se da mesma maneira nos dois sítios.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | As medidas, uma por cartão | cabeca | viva | — |
+| navegacao | The measures, one per card | cabeca | viva | — |
+
+## Bloco «A cabeça nova» · segunda passagem · os `<summary>` entram na régua · 01.09.2026
+
+*Nove linhas, sete delas vivas e duas retiradas depois, e nenhuma é uma frase
+nova no sítio: são frases que já lá estavam e que a régua da voz não via. A
+prosa desta secção dizia «sete» e a tabela abaixo tem nove desde que o F1.1
+tirou a gaveta da busca a 03.09.2026; a contagem corrige-se aqui pelo §9.8 do
+brief do F1.10, com a leitura cruzada do inventário pelo Codex de 08.09.2026 a
+apanhá-la (Minor 11).*
+
+**O QUE ESTAVA ABERTO.** `frasesDaCasa()` em `scripts/medir-defeitos.mjs` saltava
+todos os `<summary>` sem condição, debaixo de um comentário que falava de outra
+coisa («uma ligação inteira não é uma frase: é um destino», que é a regra do
+texto fora das âncoras e vale para todos os blocos). Um `<summary>` é texto à
+vista, escrito pela casa, e é a palavra que o leitor lê antes de decidir se abre.
+O bloco da cabeça nova acrescentou dois e encontrou o buraco; a primeira passagem
+registou-o como dúvida e esta fecha-o.
+
+**O QUE APARECEU quando a régua passou a ver.** Cinco frases distintas por
+edição, e só duas delas são novas no sítio: o «Menu» do cabeçalho, que já estava
+declarado pelo `aria-label` («Menu · Navegação principal») e não pelo texto; o
+«abrir/fechar» da densidade de cada peça, cujas duas palavras já estavam
+declaradas em separado mas não como o par que o `<summary>` mostra; a porta das
+linhas de um documento, no fim de cada página de texto de um trabalho; e os nomes
+das duas gavetas do mapa, que são deste bloco. As duas edições escrevem «Menu»
+com a mesma palavra, e por isso é uma linha e não duas.
+
+**A CLASSE É `navegacao` nas nove**, e é a do positivo conhecido: são nomes de
+comandos e de portas, não conteúdo. «Relance», «Leitura breve», «Menu ·
+Navegação principal» e «Áreas de governo» estão classificadas assim desde sempre.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | A municipality by name | cabeca | retirada | o F1.1 tirou a gaveta da busca a 03.09.2026: a busca dos 308 saiu de ao lado do mapa e subiu para debaixo da manchete como `<form>` com destino, sem gaveta nenhuma, porque é a porta para o concelho no primeiro ecrã (itens 3 e 12 do brief). O nome da gaveta ficou sem superfície |
+| navegacao | Menu | b1-peca3 | retirada | segunda porta: mandato B1, peça 3, 22.09.2026. |
+| navegacao | Os nomes no mapa | b1-peca3 | retirada | palavra fora do lugar: mandato B1, peça 3, 22.09.2026. |
+| navegacao | The names on the map | b1-peca3 | retirada | palavra fora do lugar: mandato B1, peça 3, 22.09.2026. |
+| navegacao | Um concelho pelo nome | cabeca | retirada | o F1.1 tirou a gaveta da busca a 03.09.2026: a busca dos 308 saiu de ao lado do mapa e subiu para debaixo da manchete como `<form>` com destino, sem gaveta nenhuma, porque é a porta para o concelho no primeiro ecrã (itens 3 e 12 do brief). O nome da gaveta ficou sem superfície |
+| navegacao | abrir fechar | cabeca | retirada | a dobra de uma peça só se rende quando tem alguma coisa dentro (decisão 19 da releitura do leitor de primeira vez, 09.09.2026): na página de uma região o comando «abrir/fechar» abria um corpo vazio, e um controlo que promete e não entrega é pior do que não haver controlo nenhum |
+| navegacao | open close | cabeca | retirada | ver a razão na gémea portuguesa (decisão 19, 09.09.2026) |
+| navegacao | As linhas deste documento → | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| navegacao | The rows of this document → | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+
+## As frases da página do primeiro domínio (bloco F1.2, 03.09.2026)
+
+**Duas rotas novas, e as duas entram no inventário no commit em que nascem**, que
+é a regra desta lista («uma rota entra no commit em que a sua página é
+reconstruída e as suas frases são classificadas»). Entram também em
+`ROTAS_COM_ORIGEM_LIDA`, e essa é a diferença que faz o número: a régua lê o
+bloco com as marcas de origem retiradas, e por isso vê o aparelho de cada leitura
+breve («período · lido · conferido», «fonte · ·», «limiar % · fora do limiar»)
+que nas rotas ainda não migradas fica escondido. Nenhuma das linhas abaixo é uma
+cadeia que já se rendesse noutro lado: são todas deste bloco.
+
+**Três classes de linha, e nenhuma é autorreferência.** As perguntas são as da
+`CARTA-DOS-CONTEUDOS.md` §3, palavra por palavra: são o conteúdo do domínio, e
+não a casa a falar de si. A frase da fronteira é o que o
+`BRIEF-forma-dos-dominios.md` §2 chama «o que este domínio mede e o que não
+mede», e as suas palavras vêm da carta. A ausência é conteúdo por decisão da
+carta (§1, regra 6): «não há número público para isto» é a resposta, e não uma
+falha.
+
+**O que NÃO está aqui, e porquê.** Os nomes dos dezoito domínios levam
+`data-nome="dominios"` e a régua confere-os contra `src/data/dominios.mjs`; os
+nomes de lugar da barra do concelho contra o país («Évora», «Portugal») levam
+`data-lugar`, como o nome de um concelho na sua página; o nome da camada
+(«Leitura breve», «Brief reading») é o da densidade e já estava declarado desde
+26.08.2026; e os intervalos das classes do mapa («1 200 a 1 400») são marcas de
+régua inteiras, e não palavras da casa com números pelo meio, exactamente para
+que a régua não passasse a ter uma linha cujo texto é a letra «a».
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | As áreas da vida do país com medidas publicadas, e as que ainda não têm medidas conferidas. | dominio| retirada | a segunda metade da descrição saiu com o §7.8 e o §9.1: o índice deixou de listar as dezasseis áreas sem medidas conferidas, que passaram ao Método, e uma frase que descreve a página tem de ser verdadeira sobre a página (bloco F1.10, 08.09.2026) |
+| conteudo | The areas of the country’s life with published measures, and the ones with no verified measures yet. | dominio| retirada | a segunda metade da descrição saiu com o §7.8 e o §9.1: o índice deixou de listar as dezasseis áreas sem medidas conferidas, que passaram ao Método, e uma frase que descreve a página tem de ser verdadeira sobre a página (bloco F1.10, 08.09.2026) |
+| conteudo | no ar primeira vaga | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
+| conteudo | live first wave | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
+| conteudo | as medidas estão em primeira vaga | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
+| conteudo | the measures are in first wave | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
+| conteudo | ainda sem medidas conferidas primeira vaga | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
+| conteudo | ainda sem medidas conferidas segunda vaga | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
+| conteudo | ainda sem medidas conferidas terceira vaga | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
+| conteudo | no verified measures yet first wave | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
+| conteudo | no verified measures yet second wave | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
+| conteudo | no verified measures yet third wave | dominio| retirada | o índice dos domínios deixa de falar da cobertura da casa (bloco F1.10, §7.8 e §9.1, 08.09.2026, pela leitura cruzada do inventário das frases): as dezasseis linhas «ainda sem medidas conferidas · vaga» passaram ao Método, à secção «O que se mede a seguir», e «no ar» e «vaga» saem da voz do leitor. O índice lista os domínios com página, cada um com o nome, a contagem das suas medidas e a porta. O Método não é uma rota do inventário (Emenda 15: é a casa do método), e por isso a mesma frase ali não é uma linha deste ficheiro |
+| conteudo | A dívida pública é % do PIB, fora do limiar da Comissão de %; o saldo das administrações públicas é % do PIB, dentro do limiar do Pacto de Estabilidade e Crescimento de − %. | dominio | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | Government debt is % of GDP, outside the Commission threshold of %; the general government balance is % of GDP, within the Stability and Growth Pact threshold of − %. | dominio | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida dos municípios e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, que nenhum publicador oficial calcula. | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
+| conteudo | Este domínio mede as contas do Estado, o que a economia produz por pessoa, a dívida das câmaras e o que se ganha e se trabalha em Portugal; não mede a produtividade, que é pergunta de estudo, nem o produto abaixo das regiões, nem a disparidade salarial entre sexos ao nível do concelho, que nenhum publicador oficial calcula. | lugar | retirada | achado 10 da leitura cruzada do inventário (Codex, 14.09.2026): «nenhum publicador oficial calcula» é uma afirmação sobre TODOS os publicadores do país, e o que a casa leu foi um indicador (o `0012661` do INE sobre os Quadros de Pessoal do MTSSS/GEP, que por concelho dá um coeficiente de variação do ganho). A frase passa a dizer a ausência na forma da casa, pela regra 6 da carta, e o cartão da ausência T4a, na mesma página, diz onde se procurou. A frase nova está viva neste ficheiro |
+| conteudo | This domain measures the State’s accounts, what the economy produces per person, municipal debt, and what is earned and worked in Portugal; it does not measure productivity, which is a question for a study, nor output below the regions, nor the gender pay gap at municipal level, which no official publisher computes. | lugar | retirada | ver a razão na gémea portuguesa (achado 10, 14.09.2026) |
+| conteudo | Quanto deve a minha câmara, e qual é o limite? | dominio | viva | — |
+| conteudo | Quanto se ganha? | dominio | viva | — |
+| conteudo | As mulheres ganham o mesmo, no meu concelho? | dominio | viva | — |
+| conteudo | How much does my municipality owe, and what is the cap? | dominio | viva | — |
+| conteudo | How much do people earn? | dominio | viva | — |
+| conteudo | Do women earn the same, in my municipality? | dominio | viva | — |
+| conteudo | Não há número público para isto. | dominio | viva | — |
+| conteudo | There is no published figure for this. | dominio | viva | — |
+| conteudo | O indicador que o publicador dá por concelho é um coeficiente de variação do ganho, e não a disparidade entre sexos. | dominio | viva | — |
+| conteudo | The indicator the publisher gives by municipality is a coefficient of variation of earnings, not the gap between sexes. | dominio | viva | — |
+| conteudo | procurado em INE, Quadros de Pessoal do MTSSS/GEP, indicador | dominio | viva | — |
+| conteudo | looked for in Statistics Portugal, MTSSS/GEP staff records, indicator | dominio | viva | — |
+| conteudo | período de referência · lido na fonte a · verificado a | p3 | retirada | as três datas de uma medida saem da dobra da leitura breve e vivem no recibo da linha (decisão do diretor de 16.09.2026; bloco P3, item 2). A carta dos conteúdos, §1, regra 3, passa a dizer «Três datas por medida, sempre, no recibo da linha», e o `check:formas` (F5) mede-as lá, nas duas edições. O período de referência continua ao lado do número, na linha do valor do cartão |
+| conteudo | reference period · read at the source on · verified on | p3 | retirada | ver a razão na gémea portuguesa |
+| conteudo | fonte · · | dominio | retirada | a linha da fonte da página do domínio deixou de dizer «fonte» e deixou de levar o título do documento (§7.2 e decisão 16 da releitura do leitor de primeira vez, 09.09.2026): a palavra «fonte» é do SELO, e o título do documento vive na página da linha. A linha diz agora «Publicado por <organismo> · <unidade>», e está viva neste ficheiro com essa forma |
+| conteudo | source · · | dominio | retirada | ver a razão na gémea portuguesa (decisão 16, 09.09.2026) |
+| conteudo | limiar da Comissão % · fora do limiar da Comissão | dominio | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | limiar do Pacto de Estabilidade e Crescimento − % · dentro do limiar do Pacto de Estabilidade e Crescimento | dominio | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | limiar recomendado pelo Conselho da UE % · fora do limiar recomendado pelo Conselho da UE | dominio | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | threshold recommended by the Council of the EU % · outside the threshold recommended by the Council of the EU | dominio | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | Commission threshold % · outside the Commission threshold | dominio | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | Stability and Growth Pact threshold − % · within the Stability and Growth Pact threshold | dominio | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | O limiar é o limite de défice que os Estados-Membros se comprometeram a respeitar no Pacto de Estabilidade e Crescimento. | dominio | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | The threshold is the deficit limit that Member States pledged to keep to under the Stability and Growth Pact. | dominio | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | O limiar é a taxa de crescimento da trajetória da despesa líquida com que Portugal se comprometeu e que o Conselho da União Europeia aprovou. | dominio | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | The threshold is the growth rate of the net expenditure path that Portugal committed to and that the Council of the European Union approved. | dominio | retirada | a palavra «limiar» sai do texto que o leitor vê (item 8 do brief do P1, 15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): o que fica é «valor de referência», e a palavra do estado passa a dizer o LADO («acima do valor de referência»), que sai do sinal do limiar que a linha já declara. O dono do valor continua dito na linha da leitura e na frase que diz o que ele é: o que saiu foi a palavra, não a atribuição |
+| conteudo | dentro do limite legal | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean». As duas classes do mapa do índice de dívida são o teto legal, e não um limiar da Comissão |
+| conteudo | fora do limite legal | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean». As duas classes do mapa do índice de dívida são o teto legal, e não um limiar da Comissão |
+| conteudo | within the legal limit | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | outside the legal limit | dominio | viva | o item 8.5 do F1.10 (08.09.2026) põe o fixador do limiar dentro da palavra: «limiar» nunca aparece sozinho, e o rótulo diz de quem o limiar é. A decisão (2) da emenda de 07.09 à §1.101, pela delegação da §1.98, depois de o diretor dizer que a palavra «doesn't really reflect exactly what they mean» |
+| conteudo | menos de | dominio | viva | — |
+| conteudo | less than | dominio | viva | — |
+| conteudo | ou mais | dominio | viva | — |
+| conteudo | or more | dominio | viva | — |
+| conteudo | sem valor publicado | dominio | viva | — |
+| conteudo | no published value | dominio | viva | — |
+| conteudo | Quadros de Pessoal do Gabinete de Estratégia e Planeamento do Ministério do Trabalho; trabalhadores por conta de outrem a tempo completo com remuneração completa. | l2b-c | retirada | o cartão do ganho médio passa a dizer que o ganho é antes de descontos, como «Lugares» já diz (passagem L2b-c, 01.10.2026, o achado 8 da leitura a frio do L2b, pela I150); a frase nova está na secção da L2b-c |
+| conteudo | Staff records of the labour ministry’s strategy and planning office; full-time employees on full pay. | l2b-c | retirada | ver a razão na gémea portuguesa (passagem L2b-c, 01.10.2026) |
+
+## As frases da segunda passagem (bloco F1.2, Claude Sonnet 5, 03.09.2026)
+
+**Sete cadeias novas, todas dentro da manchete, da leitura breve ou do mapa por
+concelho.** A leitura a frio do Codex (Blocking 2, 3, 4; Major 7, 13) pediu a
+barra do ganho contra o país nas 308 páginas de concelho, a ressalva visível de
+T1 e de T5, a nota da escala do mapa do ganho, e a tabela dos 308 valores dentro
+da própria página. As duas primeiras entram porque a rota `dominio` já está em
+`ROTAS_COM_ORIGEM_LIDA` (F0.9): a régua conta agora o texto de um bloco com as
+marcas de origem retiradas, e não deita fora o bloco inteiro por ter uma marca
+lá dentro.
+
+**A ressalva de T1 e de T5 leva o marcador da casa por extenso**, porque o
+bloco que a contém não tem NENHUMA outra marca de origem lá dentro (nem
+`data-claim`, nem `data-lugar`, nem `data-medida-nome`): é o `<a class="marcador">`
+sozinho, e por isso a régua lê o parágrafo inteiro, marcador incluído, como
+lê qualquer parágrafo sem marca (a mesma regra que já vale para «Bragança
+… `[a verificar]` … 2013» na página de Évora).
+
+**A frase da barra do ganho reduz-se a pontuação, e é a mesma classe de
+`fonte · ·` e `limiar % · fora do limiar` ali em cima**: os dois nomes de
+lugar (`data-lugar`), os dois valores (`data-claim`, dentro de `<Claim
+chip={true}/>`) e as duas unidades (`data-medida-unidade`) saem antes de contar,
+e o que sobra é a pontuação que os liga. Não é um número solto: é o molde da
+frase, sem os números.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | : ; : . | dominio | retirada | N1c: a barra isolada de Évora saiu dos lugares; o molde da frase da barra do ganho contra o país (`BarraConcelhoPais.astro`), sem os dois nomes de lugar, os dois valores e as duas unidades, que saem por `data-lugar`, `data-claim` e `data-medida-unidade` |
+| conteudo | A meta desta medida é da União Europeia no seu conjunto e não de Portugal; uma meta nacional própria permanece [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado . | dominio | viva | a ressalva de T1 (Blocking 4): a meta de 2030 do Plano de Ação do Pilar Europeu é da União e não de Portugal, e a carta di-lo; a meta nacional própria não está pesquisada · o §9.2 do F1.10 (08.09.2026) mandou-a da página do domínio para a página da sua linha, que é o recibo daquela linha: é ali que o perímetro do que o número cobre se lê, ao pé do valor e das datas. As palavras não mudaram, e o marcador é dívida de proveniência e palavra pendente do diretor. A rota `linha` é uma das três que a Emenda 15 isenta da contagem («o Método, o Sobre e o recibo») e prova só que a linha se rende |
+| conteudo | This measure’s target belongs to the European Union as a whole, not to Portugal; a national target of its own remains [a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published . | dominio | viva |o §9.2 do F1.10 (08.09.2026) mandou-a da página do domínio para a página da sua linha, que é o recibo daquela linha: é ali que o perímetro do que o número cobre se lê, ao pé do valor e das datas. As palavras não mudaram, e o marcador é dívida de proveniência e palavra pendente do diretor. A rota `linha` é uma das três que a Emenda 15 isenta da contagem («o Método, o Sobre e o recibo») e prova só que a linha se rende |
+| conteudo | Este valor é o do território continental. Os Açores e a Madeira fixam o seu por diploma regional próprio, que não foi lido: [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado . | dominio | retirada | Passagem R2-b (04.10.2026, a decisão do lugar de direção): a ressalva dizia que os diplomas regionais não tinham sido lidos, e o recibo da mesma linha rende o diploma dos Açores como origem da pergunta, lido a 24.09.2026; a ressalva compõe-se agora da lista dos diplomas regionais (`DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO`), e a forma nova está na secção da passagem r2b. |
+| conteudo | This value is for mainland Portugal. The Azores and Madeira set their own value by separate regional decree, which has not been read: [a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published . | dominio | retirada | Passagem R2-b (04.10.2026, a decisão do lugar de direção): a ressalva dizia que os diplomas regionais não tinham sido lidos, e o recibo da mesma linha rende o diploma dos Açores como origem da pergunta, lido a 24.09.2026; a ressalva compõe-se agora da lista dos diplomas regionais (`DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO`), e a forma nova está na secção da passagem r2b. |
+| conteudo | As classes são marcas redondas da escala, e não um limite oficial. | dominio | viva | a nota do mapa do ganho médio (Blocking 3): distingue a sua paleta `escala` da paleta `limiar` do mapa do índice de dívida, ao lado · o §9.2 do F1.10 (08.09.2026) mandou-a da página do domínio para o Método: não é uma coisa daquele mapa, é a regra com que a casa desenha uma escala em qualquer mapa, e vive no fecho «A forma», ao pé da cor e da letra. A cadeia saiu de `src/i18n/strings.mjs` e vive em `src/data/metodo.mjs`, que é o único sítio onde ela se rende |
+| conteudo | The classes are round scale marks, not an official limit. | dominio | viva |o §9.2 do F1.10 (08.09.2026) mandou-a da página do domínio para o Método: não é uma coisa daquele mapa, é a regra com que a casa desenha uma escala em qualquer mapa, e vive no fecho «A forma», ao pé da cor e da letra. A cadeia saiu de `src/i18n/strings.mjs` e vive em `src/data/metodo.mjs`, que é o único sítio onde ela se rende |
+| navegacao | Concelho | dominio | viva | o cabeçalho da coluna do nome, na tabela dos 308 valores (Major 7). o §9.5 do brief do F1.10 (08.09.2026), da leitura cruzada do inventário pelo Codex: é um rótulo de navegação e não uma afirmação sobre o mundo, como a gémea «Municipality» já estava classificada |
+| navegacao | Valor | dominio | viva | o cabeçalho da coluna do valor, na mesma tabela. o §9.5 do brief do F1.10 (08.09.2026), da leitura cruzada do inventário pelo Codex: é um rótulo de navegação e não uma afirmação sobre o mundo, como a gémea «Municipality» já estava classificada |
+| navegacao | Value | dominio | viva | o cabeçalho da coluna do valor, na mesma tabela, na edição inglesa. o §9.5 do brief do F1.10 (08.09.2026), da leitura cruzada do inventário pelo Codex: é um rótulo de navegação e não uma afirmação sobre o mundo, como a gémea «Municipality» já estava classificada |
+| navegacao | Os valores, concelho a concelho | dominio | viva | o rótulo do `<details>` que abre a tabela dos 308 valores: a alternativa em texto do mapa, na própria página (Major 7) |
+| navegacao | The values, municipality by municipality | dominio | viva | — |
+
+## Segunda passagem do bloco F1.9a (Sonnet) · 03.09.2026
+
+*A leitura a frio do Codex sobre a primeira passagem (guardada na árvore
+principal como `design/especime-v3/critica/2026-09-03-codex-leitura-f19-indice.md`,
+e não citada aqui entre plicas pela mesma razão que já vale para a leitura do
+`rotulo-ia`, acima: a conferência do portão exige que um ficheiro nomeado
+assim exista NESTE ramo, e este vive só no principal) apontou, no Major 7,
+que os rótulos novos ficavam sem entrada nomeada com origem. Nenhum dos dois
+GANHA uma linha na tabela, e as duas razões são diferentes uma da outra e
+estão escritas por extenso, porque confundi-las seria esconder um limite
+mecânico atrás de uma escolha editorial.*
+
+**«Subir» / «Back to top» NÃO PODE ser uma linha `viva`, e não é falta de
+tentar: `npm run check:voz` fecha a construção se o for.** A medida 8 (os
+blocos de texto da casa) e a medida 9 (o tripwire, que varre o texto fora das
+origens declaradas) EXCLUEM as duas, por regra, o texto que vive dentro de um
+`<a>` ou de um `<button>` — é a mesma exclusão que já tirava «Subir ↑» da
+contagem de blocos por classificar, e ela corre nos dois sentidos: também
+impede a régua de confirmar que uma linha `viva` SE RENDE. Uma frase cujo
+texto inteiro é sempre a etiqueta de uma ligação não tem como entrar na
+tabela deste ficheiro enquanto a régua não souber ler dentro de `<a>` — é o
+que a nota de 25.08 já dizia, com a razão certa; o que faltava era dizê-lo
+sem soar a esquecimento. «Subir» / «Back to top» é a palavra de duas portas
+desde esta passagem (o comando fixo do computador, a partir de 1024px onde a
+goteira existe, e a porta em fluxo no fim de cada secção de nível 2, abaixo
+disso, Blocking 4 da mesma leitura), sempre para o mesmo destino
+(`#texto-indice`), declarada em `src/i18n/strings.mjs` (`estudos.textoSubir`)
+nas duas línguas, e nomeada aqui por essa razão.
+
+**«Secção {n} de {total}» / «Section {n} of {total}» também não ganha linha,
+e a razão é outra: é origem declarada, não prosa solta.** O modelo vive em
+`src/i18n/strings.mjs` (`estudos.textoPosicaoSeccaoModelo`); a vista substitui
+os dois números em cada título de nível 2 (Major 8 da mesma leitura: a
+indicação de progresso ganha nome acessível), e a instância rendida leva
+`data-registo-posicao`, que o L8 do portão de `scripts/gate-html.mjs` confere
+a cada construção — a contagem, o texto contra este modelo e a referência do
+título. É a mesma classe do `{ref}` que a grelha da voz já tira da tabela
+(«A grelha da voz» · G6, acima) e do índice «Nesta página», que entra pela
+marca `data-registo-indice`: um número do próprio sítio não se escreve à
+mão, verifica-se, e o que se verifica assim não é uma frase da casa para
+classificar.
+
+**O que isto deixa por resolver, e é do F3.1 e não desta passagem.** A régua
+da voz não lê texto dentro de `<a>` em nenhuma rota do sítio, não só nesta: é
+uma exclusão geral, e alargá-la é redesenhar `medir-defeitos.mjs` para saber
+distinguir «rótulo de comando, sem origem própria» de «prosa da casa dentro
+de uma ligação» — o mesmo problema que o F0.9 mediu do lado de fora do
+arame (190 cadeias em 2 118 ocorrências) e deixou escrito para aquele bloco.
+
+## Bloco «porta» · a porta da frente · 03.09.2026
+
+*O bloco F1.1 do `design/observatorio/PLANO-fiabilidade-2026-09-02.md` §3, com o
+brief `design/observatorio/BRIEF-F1.1-porta-da-frente.md`. Quatro cadeias novas e
+quatro retiradas.*
+
+**AS QUATRO PRIMEIRAS SÃO AS FRASES DE CONTEXTO DOS DOIS PAINÉIS**, nas duas
+edições, e são a resposta ao achado C6 da auditoria de UX de 25.08 («não se
+percebe porque estão ali treze indicadores… "Procedimento dos Desequilíbrios
+Macroeconómicos" nunca explicado, "limiar 60% · acima" sem dizer quem o fixou»).
+A classe é **conteúdo**, pelo teste da Emenda 15: sem elas o leitor lê «limiar
+60% · acima» como uma avaliação da casa, que é ler mal o número. Nenhuma fala do
+método, da verificação, da cobertura ou das intenções da casa; dizem o que o
+painel é, quem publica as medidas e quem publica os limiares, e a origem de cada
+afirmação está escrita, afirmação a afirmação, no cabeçalho de
+`CONTEXTO_DOS_PAINEIS` em `src/data/figuras.mjs`, com o comando que a confirma
+no livro-razão.
+
+**O TEXTO DECLARADO ACABA NUMA VÍRGULA E NUM PONTO**, e não é um erro de
+transcrição: o identificador do documento da Comissão é uma citação transcrita
+(`data-verbatim="swd-2026-222"`, conferida carácter a carácter contra
+`src/data/verbatim.mjs`), e a régua da voz conta o bloco com as origens
+declaradas retiradas, como faz a todas as outras. É a mesma forma das linhas do
+limiar, que declaram «limiar % · acima» sem o algarismo.
+
+**«1 de 21» NÃO TRAZ CADEIA NENHUMA PARA ESTA TABELA**, e a razão está medida no
+relatório do bloco: os dois algarismos são numeração declarada
+(`data-nonledger="numeracao"`), o separador « de » é uma cadeia de
+`strings.mjs`, e a fila onde eles vivem é um `<div>` e não um bloco de texto,
+como a fila da palavra de estado que já lá estava. A régua da voz não recolhe
+`<div>`, e a primeira passagem deste bloco chegou a declarar a dica de uma chave
+da prova que entretanto saiu.
+
+**AS QUATRO RETIRADAS** estão nas secções onde viviam, com a razão em cada
+linha: o rótulo «Portugal · país» e a sua gémea inglesa, que saíram da cabeça do
+país, e o nome da gaveta da busca nas duas edições, que ficou sem superfície
+quando a busca subiu para debaixo da manchete.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Os indicadores do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, com os limiares que o Procedimento publica. Os valores são do Eurostat, confirmados contra a Comissão Europeia, . | porta | retirada | a segunda passagem do F1.1 apertou os verbos a 03.09.2026, depois do Blocking 6 da leitura a frio do Codex: «com os limiares que o Procedimento publica» e «que não publica limiares» são dois verbos que as linhas não sustentam. Uma nota do livro-razão diz que o limiar É do Procedimento, não que ele o publica; e a Emenda 16 diz que o Painel Social «não tem limiares», que é outra coisa de «não publica limiares». A frase que ficou diz o que a nota e a emenda dizem, palavra por palavra, e nomeia o documento contra o qual os valores foram confirmados, que a primeira redação deixava por dizer |
+| conteudo | Os indicadores do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, cada um com o limiar do Procedimento. Os valores são do Eurostat, confirmados contra o da Comissão Europeia, . | porta | retirada | o §9.3 do brief do F1.10 (08.09.2026), sobre a leitura cruzada do inventário pelo Codex: as duas frases de contexto dos painéis diziam contra o que a casa tinha confirmado os valores, e a Emenda 15 não deixa a página do leitor falar do trabalho da casa. No lugar delas entrou a definição de cada painel (item 8.4), que cita a Comissão como FONTE DA DEFINIÇÃO e não como testemunha desta casa |
+| conteudo | Os indicadores do Painel Social Europeu, que não publica limiares. Os valores são do Eurostat, confirmados contra a Comissão Europeia, . | porta | retirada | a segunda passagem do F1.1 apertou os verbos a 03.09.2026, depois do Blocking 6 da leitura a frio do Codex: «com os limiares que o Procedimento publica» e «que não publica limiares» são dois verbos que as linhas não sustentam. Uma nota do livro-razão diz que o limiar É do Procedimento, não que ele o publica; e a Emenda 16 diz que o Painel Social «não tem limiares», que é outra coisa de «não publica limiares». A frase que ficou diz o que a nota e a emenda dizem, palavra por palavra, e nomeia o documento contra o qual os valores foram confirmados, que a primeira redação deixava por dizer |
+| conteudo | Os indicadores que o livro-razão guarda e cujo registo nomeia o Painel Social Europeu, sem cor porque não tem limiares. Os valores são do Eurostat, confirmados contra o da Comissão Europeia, . | porta | retirada | o bloco F1.6 pôs a seleção à cabeça da frase (decisão (5) da §1.98, cumprida a 04.09.2026): a frase passou a abrir por «Oito das dezassete medidas principais do Painel Social Europeu», com o numerador composto de `FIGURAS_SOCIAL.length` e o denominador declarado com a origem da Comissão. Esta redação não pode voltar: sem a seleção, o leitor lê oito cartões e não sabe que são oito de dezassete |
+| conteudo | The indicators of the Macroeconomic Imbalance Procedure scoreboard, with the thresholds the Procedure publishes. The values are from Eurostat, confirmed against the European Commission, . | porta | retirada | a segunda passagem do F1.1 apertou os verbos a 03.09.2026, depois do Blocking 6 da leitura a frio do Codex: «com os limiares que o Procedimento publica» e «que não publica limiares» são dois verbos que as linhas não sustentam. Uma nota do livro-razão diz que o limiar É do Procedimento, não que ele o publica; e a Emenda 16 diz que o Painel Social «não tem limiares», que é outra coisa de «não publica limiares». A frase que ficou diz o que a nota e a emenda dizem, palavra por palavra, e nomeia o documento contra o qual os valores foram confirmados, que a primeira redação deixava por dizer |
+| conteudo | The indicators of the Macroeconomic Imbalance Procedure scoreboard, each with the threshold of the Procedure. The values are from Eurostat, confirmed against the European Commission’s country report, . | porta | retirada | o §9.3 do brief do F1.10 (08.09.2026), sobre a leitura cruzada do inventário pelo Codex: as duas frases de contexto dos painéis diziam contra o que a casa tinha confirmado os valores, e a Emenda 15 não deixa a página do leitor falar do trabalho da casa. No lugar delas entrou a definição de cada painel (item 8.4), que cita a Comissão como FONTE DA DEFINIÇÃO e não como testemunha desta casa |
+| conteudo | The indicators of the European Social Scoreboard, which publishes no thresholds. The values are from Eurostat, confirmed against the European Commission, . | porta | retirada | a segunda passagem do F1.1 apertou os verbos a 03.09.2026, depois do Blocking 6 da leitura a frio do Codex: «com os limiares que o Procedimento publica» e «que não publica limiares» são dois verbos que as linhas não sustentam. Uma nota do livro-razão diz que o limiar É do Procedimento, não que ele o publica; e a Emenda 16 diz que o Painel Social «não tem limiares», que é outra coisa de «não publica limiares». A frase que ficou diz o que a nota e a emenda dizem, palavra por palavra, e nomeia o documento contra o qual os valores foram confirmados, que a primeira redação deixava por dizer |
+| conteudo | The indicators the ledger holds whose record names the European Social Scoreboard, with no colour because it has no thresholds. The values are from Eurostat, confirmed against the European Commission’s country report, . | porta | retirada | o bloco F1.6 pôs a seleção à cabeça da frase (decisão (5) da §1.98, cumprida a 04.09.2026): a frase passou a abrir por «Oito das dezassete medidas principais do Painel Social Europeu», com o numerador composto de `FIGURAS_SOCIAL.length` e o denominador declarado com a origem da Comissão. Esta redação não pode voltar: sem a seleção, o leitor lê oito cartões e não sabe que são oito de dezassete |
+
+## Bloco F1.6 · o atraso do IEFP e a seleção do Painel Social · 04.09.2026
+
+*O bloco escreveu três frases novas e reescreveu uma. **O atraso de uma série**
+diz-se com três rótulos e três valores lidos, na página de cada linha atrasada e
+no cartão dela na página do concelho: «Último período publicado pela fonte:
+2026-07; a casa publica 2025-12 desde 26.08.2026». **O contador** do cabeçalho
+diz quantas séries estão nesse estado e quantas linhas do livro-razão elas
+apanham. **A frase do Painel Social** passou a abrir pela seleção.*
+
+*AS CADEIAS DOS RÓTULOS SÃO MARCADAS `data-voz`, e é a única maneira de elas
+poderem estar aqui: a régua salta um bloco com uma marca de origem lá dentro em
+qualquer rota fora de `ROTAS_COM_ORIGEM_LIDA` (e `municipio` não está nessa
+lista), e o rótulo do contador vive dentro de uma âncora, que é um destino e não
+uma frase. A marca só alarga a peneira e não dispensa nada: ver a razão ao lado
+de `VOZ_DECLARADA` em `scripts/medir-defeitos.mjs`.*
+
+*AS DUAS DICAS DAS CHAVES DA PROVA entram como as outras: um `title` é
+superfície pública desde a I79, e a frase que diz COMO um número é obtido é
+prosa da casa.*
+
+*SETE DESTAS CADEIAS SÃO DA SEGUNDA PASSAGEM (04.09.2026, Major 8 e Major 9 da
+leitura a frio do Codex), e as sete que elas substituem não chegaram a sair
+deste ramo. A primeira redação dizia «a casa publica 2025-12 desde 26.08.2026» e
+«séries que a casa publica atrás do último período da fonte»: a Emenda 15 tira da
+página do leitor as frases sobre a casa, e vale num `title` como vale num
+parágrafo. A forma nova é deíctica, «nesta linha: … lido a …», e aponta para a
+linha em que está. A oitava é a frase inglesa do Painel Social, que dizia
+«headline indicators»: «indicador» sai do vocabulário do sítio pela §1.98, e o
+termo da Comissão entra uma vez, entre aspas e atribuído, porque é por ele que
+um leitor encontra a lista no documento dela.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Séries atrasadas: | frescura | viva | — |
+| conteudo | Series behind: | frescura | viva | — |
+| conteudo | séries publicadas atrás do último período da fonte | frescura | viva | — |
+| conteudo | series published behind the source’s latest period | frescura | viva | — |
+| conteudo | linhas do livro-razão dessas séries | frescura | viva | — |
+| conteudo | ledger rows in those series | frescura | viva | — |
+| conteudo | Último período publicado pela fonte: | frescura | viva | — |
+| conteudo | Latest period published by the source: | frescura | viva | — |
+| conteudo | nesta linha: | frescura | viva | — |
+| conteudo | this row: | frescura | viva | — |
+| conteudo | lido a | frescura | viva | — |
+| conteudo | read on | frescura | viva | — |
+| conteudo | Oito das dezassete medidas principais do Painel Social Europeu: as que o livro-razão guarda e cujo registo nomeia esse painel, sem cor porque não tem limiares. Os valores são do Eurostat, confirmados contra o da Comissão Europeia, . | frescura | retirada | o §9.3 do brief do F1.10 (08.09.2026), sobre a leitura cruzada do inventário pelo Codex: as duas frases de contexto dos painéis diziam contra o que a casa tinha confirmado os valores, e a Emenda 15 não deixa a página do leitor falar do trabalho da casa. No lugar delas entrou a definição de cada painel (item 8.4), que cita a Comissão como FONTE DA DEFINIÇÃO e não como testemunha desta casa. Com ela saiu a glosa do §9.4 («as que o livro-razão guarda …»); **a fração ficou**, sozinha, numa linha própria: sem ela um leitor lê o subtítulo «Painel Social Europeu · 8 medidas» e fica a pensar que o painel tem oito medidas |
+| conteudo | Eight of the seventeen headline measures of the European Social Scoreboard, which the Commission calls “headline indicators”: the ones the ledger holds whose record names that scoreboard, with no colour because it has no thresholds. The values are from Eurostat, confirmed against the European Commission’s country report, . | frescura | retirada | o §9.3 do brief do F1.10 (08.09.2026), sobre a leitura cruzada do inventário pelo Codex: as duas frases de contexto dos painéis diziam contra o que a casa tinha confirmado os valores, e a Emenda 15 não deixa a página do leitor falar do trabalho da casa. No lugar delas entrou a definição de cada painel (item 8.4), que cita a Comissão como FONTE DA DEFINIÇÃO e não como testemunha desta casa. Com ela saiu a glosa do §9.4 («as que o livro-razão guarda …»); **a fração ficou**, sozinha, numa linha própria: sem ela um leitor lê o subtítulo «Painel Social Europeu · 8 medidas» e fica a pensar que o painel tem oito medidas |
+| conteudo | «Provisório» é a marca que a própria fonte põe ao valor. | lugar | viva | o §7.6 do F1.10 (09.09.2026): ««provisório» explicado uma vez no índice das regiões». A palavra rende-se ao lado de onze valores do livro-razão (a bandeira `source_flag` da própria fonte) e em lado nenhum se dizia de quem ela era. A frase diz de quem a marca é, e mais nada: a primeira redação dizia também onde ler a nota da fonte, e o portão da voz apanhou-a («a página», o marcador da casa a falar de si). Vive por baixo da régua, e não na cabeça, porque é a legenda de uma marca que só se vê depois de se ver a marca (item 8.11) |
+| conteudo | “Provisional” is the flag the source itself puts on the value. | lugar | viva | o §7.6 do F1.10 (09.09.2026): ««provisório» explicado uma vez no índice das regiões». A palavra rende-se ao lado de onze valores do livro-razão (a bandeira `source_flag` da própria fonte) e em lado nenhum se dizia de quem ela era. A frase diz duas coisas e mais nada: a marca é da fonte, e a nota da fonte sobre aquele valor está na página da linha, transcrita. Vive por baixo da régua, e não na cabeça, porque é a legenda de uma marca que só se vê depois de se ver a marca (item 8.11) |
+
+*AS DUAS ÚLTIMAS LINHAS LEVAM UMA CONTAGEM POR EXTENSO, e o inventário já disse
+uma vez que uma frase com um número que se move não pode ser sentinela. A
+diferença está medida e não afirmada: nenhum dos dois números é escrito na
+frase. O numerador compõe-se de `FIGURAS_SOCIAL.length` no próprio ficheiro de
+dados, pelo que a frase muda sozinha se uma medida entrar ou sair do painel, e
+nesse dia esta linha deixa de se render e a construção fecha com o nome dela,
+que é a régua a funcionar e não a falhar. O denominador é da Comissão, declarado
+em `MEDIDAS_PRINCIPAIS_DO_PAINEL_SOCIAL` com o documento, o endereço e a data em
+que foi lido, e o `check:formas` (F16) exige que a frase continue a dizê-lo.*
+
+## As frases da área de leitura da primeira página (bloco F1.1b, 04.09.2026)
+
+**Nenhuma linha nova, e isso mediu-se antes de se escrever.** O bloco tirou os dois
+painéis da primeira página e pôs no lugar deles a área de leitura: 21 `<details>`
+fechados, com o nome da medida como `<summary>`. Todo o texto que ela mostra já
+estava declarado ou já tem origem declarada:
+
+* o **nome** e a **unidade** de cada medida levam `data-medida-nome` e
+  `data-medida-unidade`, que são marcas de origem: a régua não as recolhe, e o
+  texto vem de `src/data/figuras.mjs`;
+* a **definição** de cada medida (a frase que a peça do painel imprimia) é, linha
+  a linha, a que já estava classificada nesta tabela, e continua a render-se: a
+  segunda passagem de 04.09 repô-la nas três leituras que a primeira tinha
+  reduzido a uma porta (ver mais abaixo);
+* a linha do **limiar** («limiar 60% · acima») é, carácter a carácter, a que a
+  peça do painel imprimia, e já estava classificada;
+* a linha das **três datas** («período · lido · conferido») é a mesma que a página
+  do domínio imprime desde o F1.2, e já está na tabela deste ficheiro. O que o
+  bloco acrescentou foi a rota `home` à exceção da raiz «confer» em
+  `VOZ-MARCADORES.md`, que já existia para a rota `dominio` e pela mesma razão: é
+  o nome de um CAMPO da linha, e `npm run check:formas` recompõe-o do livro-razão
+  e compara-o carácter a carácter;
+* a **frase de contexto** de cada um dos dois quadros e o **nome** de cada um deles
+  ficam onde estavam, uma vez cada, e nenhuma mudou uma palavra.
+
+**«Ver no domínio →» / «See it in the domain →» NÃO PODE ser uma linha `viva`, e
+não é falta de tentar: `npm run check:voz` fecha a construção se o for.** É a
+porta que fecha a leitura breve de uma medida que vive num domínio, e leva à
+leitura dela em `/dominios/<slug>#m-<chave>`; está declarada em
+`src/i18n/strings.mjs` (`dominios.verNoDominio`) nas duas línguas, e nomeada aqui
+por essa razão. A medida 8 (os blocos de texto da casa) e a medida 9 (o tripwire)
+excluem, por regra, o texto que vive dentro de um `<a>` ou de um `<button>`, e a
+exclusão corre nos dois sentidos: também impede a régua de confirmar que uma linha
+`viva` SE RENDE. Uma frase cujo texto inteiro é sempre a etiqueta de uma ligação
+não tem como entrar na tabela deste ficheiro enquanto a régua não souber ler
+dentro de `<a>`. É a mesma razão, palavra por palavra, que a segunda passagem do
+F1.9a escreveu para «Subir» / «Back to top», acima. **A cadeia diz o que a coisa é
+e para onde leva, não fala da casa, e usa as palavras do vocabulário fechado da
+§1.98 («domínio»).**
+
+**O que isto deixa por resolver é do F3.1**, e não deste bloco: a régua da voz não
+lê texto dentro de `<a>` em nenhuma rota do sítio, e alargá-la é redesenhar
+`medir-defeitos.mjs` para distinguir «rótulo de comando, sem origem própria» de
+«prosa da casa dentro de uma ligação». Está escrito na secção do F1.9a com o
+tamanho do buraco (190 cadeias em 2 118 ocorrências, medidas pelo F0.9).
+
+**Nenhuma frase saiu do sítio com este bloco.** A primeira passagem passou quatro
+linhas a «retirada» (a definição da dívida pública e a da taxa de emprego, nas
+duas edições), porque a leitura dessas medidas na primeira página tinha sido
+reduzida a uma linha com a porta. A leitura a frio do Codex mediu o custo dessa
+instrução (Blocking 3: a primeira página passava de 7 para 5 definições, de 13
+para 12 limiares e réguas, e de 21 para 18 selos de fonte), o lugar de direção
+corrigiu a decisão no mesmo dia, e as quatro linhas voltaram a «viva»: as 21
+leituras têm a mesma forma, e as três do domínio acrescentam a porta.
+
+## Bloco F1.7 · acessibilidade e alvos · 04.09.2026
+
+*O bloco não escreveu uma palavra nova: tudo o que ele mudou à vista é
+estrutura, folha e marcas de língua. Duas cadeias mudam de superfície, e é por
+isso que entram aqui.*
+
+**«PROCURAR» E «SEARCH» PASSAM A VER-SE EM `/municipios`.** A cadeia é
+`ambito.pesquisaSubmeter` de `src/i18n/strings.mjs`, e não é nova: é o botão do
+formulário de busca que a primeira página já rende desde o F1.1 (item 12 do
+brief da porta da frente, a busca como `<form>` com destino). O que muda é a
+superfície. Até 04.09 o índice dos 308 rendia a peça `Pesquisa` sem formulário e
+com a fila de 308 resultados; com a fila fora (uma lista só, item 13 do brief
+F1.7), o campo passa a ser um `<form>` `GET` para a própria página, e o botão
+que o submete passa a ver-se ali. **Origem: a mesma chave, a mesma palavra, uma
+segunda superfície.**
+
+**«UM CONCELHO PELO NOME» E «SEARCH FOR A MUNICIPALITY» continuam a ver-se**, e
+são o rótulo do campo (`ambito.pesquisaRotulo`), que o índice já rendia antes
+deste bloco: não mudam de estado nem de superfície, e ficam onde já estavam.
+
+**NADA MAIS ENTROU.** Os nomes que este bloco pôs em `aria-label` e em
+`aria-labelledby` (as caixas que se deslocam de lado, item 2) não são cadeias
+novas: cada um aponta, pelo `id`, para texto que a página já rendia — o `<title>`
+do próprio desenho, o rótulo por cima do eixo da agenda, o título da secção onde
+uma tabela vive. E o título do sumário do Método, que estava vazio, passou a
+render `leitura.sumarioK`, que é a mesma cadeia que a Agenda e as páginas de
+leitura já imprimem para o mesmo sumário.
+
+**E ESTA DECLARAÇÃO NÃO É UMA LINHA DA TABELA, porque a tabela é a leitura da
+régua e a régua não lê botões.** Medido a 04.09.2026: `frasesDaCasa()` recolhe
+`p, li, dd, dt, h1, h2, h3, h4, figcaption, summary, blockquote, td, th,
+caption` e os rótulos que vivem num `<span>` sozinho
+(`scripts/medir-defeitos.mjs`, `BLOCOS` e `ROTULOS_EM_SPAN`). Um `<button>` e um
+`<label>` não estão nessa lista, e nunca estiveram: uma linha «viva» para
+«Procurar» fecha a construção com «linha viva que não se rende em rota nenhuma»,
+não porque a cadeia não se veja, mas porque a régua não olha para onde ela está.
+
+**O buraco fica medido e nomeado, e é maior do que esta cadeia.** Nas nove rotas
+inventariadas há **doze textos distintos de `<button>` e de `<label>`** fora da
+leitura da régua: «claro» e «escuro» (e «light» e «dark») do controlo do tema,
+«Relance» e «Leitura breve» (e «At a glance» e «Brief reading») da porta do
+telemóvel, «Procurar» e «Search», e «Escreva o nome do concelho» e «Type the
+name of the municipality», que é o rótulo do campo. Quatro deles já têm linha
+nesta tabela por serem lidos noutra superfície; os outros oito não têm.
+
+Alargar `BLOCOS_DA_VOZ` a `button` e a `label` é a correção certa, e não se faz
+aqui: mexe na régua de que dependem os blocos que correm em paralelo, e pede as
+oito linhas novas e a entrada em `critica/REVISOES-DO-INVENTARIO.md` que uma
+leitura cruzada do inventário obriga. **Fica para a direção**, com a contagem
+feita.
+
+## A linha da área de leitura em repouso (bloco F1.1c, 04.09.2026)
+
+**Uma cadeia nova, nas duas edições, e é a única do bloco.** O F1.1c cumpre a
+segunda metade da decisão do diretor de 04.09, dada depois de ver a página no ar:
+os cartões ficam, e por baixo da faixa não se mostra nada até que um cartão seja
+tocado. Com guião, as vinte e uma leituras fechadas saem da página e no lugar
+delas fica esta linha, que diz o gesto que enche a área.
+
+**A ORIGEM É A DECISÃO E A CHAVE ESTÁ DECLARADA**: `inicio.painel.semLeituraAberta`
+em `src/i18n/strings.mjs`, rendida uma vez por página em `src/views/HomeView.astro`,
+no cabeçalho da área de leitura. Não leva algarismo nenhum, não fala da casa e não
+traz vocabulário novo: um cartão e uma medida são as duas palavras que a página já
+usa.
+
+**É `navegacao` e não `conteudo`**, e a razão é a definição das três classes: não
+diz nada sobre o que se mede, diz o que fazer para chegar ao que se mede. É a
+mesma classe da linha vazia da busca dos concelhos.
+
+**SEM GUIÃO NÃO SE VÊ**, e mesmo assim é declarada: o servidor rende-a `hidden` e
+a régua lê o documento entregue, não o ecrã. Uma linha que a régua recolhe e a
+tabela não declara sai como bloco **por classificar**, que é o portão que a
+apanha.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Toque num cartão para ler a medida. | correcao-p1p2 | retirada | a frase de instrução sai da página de conteúdo (achado 4 da leitura a frio de 15.09.2026, e a norma §1.4: «Nenhuma frase de instrução: a busca, o mapa e as portas explicam-se ao funcionar»). Era a linha que ficava à vista na área de leitura em repouso, com guião, em «Portugal na União Europeia» e nas 308 páginas de concelho; sem guião nunca se rendeu. O nó saiu com ela das duas vistas, e a J13 de `tests/inicio/leitura.mjs` passa a morder se a linha voltar |
+| navegacao | Tap a card to read the measure. | correcao-p1p2 | retirada | ver a razão na gémea portuguesa (achado 4, 15.09.2026) |
+
+## O lugar do nome do mapa, e o rótulo das nove regiões na lista (F1.1d, 07.09.2026)
+
+O mapa da primeira página passou a ter dois níveis (as nove regiões NUTS II, e
+dentro de cada uma os seus concelhos) e um lugar fixo para o nome da área
+apontada. Sete frases novas, catorze linhas com as duas edições (seis na
+primeira passagem, a sétima na segunda, a 08.09.2026).
+
+**AS QUATRO FRASES VAZIAS SÃO QUATRO, E NÃO DUAS**, e a razão é o gesto: quem tem
+rato passa por cima e quem tem dedo toca. As duas formas rendem-se as duas, e é a
+folha que mostra a que serve (`@media (hover: hover) and (pointer: fine)`), sem
+uma linha de guião; um `display: none` é lido pelo leitor de ecrã, e por isso
+quem ouve ouve uma só. O `hidden` que o guião troca diz de que nível é cada uma.
+
+**É `navegacao` e não `conteudo`**: nenhuma diz o que se mede, todas dizem o que
+fazer para chegar ao que se mede. É a mesma classe da linha da área de leitura em
+repouso e da linha vazia da busca dos concelhos.
+
+**«As regiões» SAIU COM O GRUPO QUE NOMEAVA (F1.1e, 08.09.2026)**: era o rótulo
+das nove regiões na lista dos nomes, à frente das 29 unidades da Carta. O desenho
+da primeira página voltou a ser as 29, por decisão do diretor, e a lista é o
+índice do desenho: um nome sem área no mapa não pertence ao índice dele.
+
+**AS SUAS DUAS LINHAS SAEM DO FICHEIRO, E NÃO PASSAM A `retirada`**, e a razão é
+o que a régua da voz mede: as rotas medidas por classe são `/` e `/en/`, e a
+prova do estado varre o sítio inteiro. «As regiões» deixou de se render na
+primeira página e continua a render-se em `/regioes`, que é outra superfície: uma
+linha `viva` neste bloco falharia por não render na rota dele, e uma `retirada`
+falharia por render fora dela. A frase não foi retirada da casa; foi retirada
+deste bloco, e é o bloco que a declara.
+
+**SEM GUIÃO NÃO SE VÊEM AS QUATRO**: o servidor rende o lugar do nome `hidden` e
+o guião acende-o, porque sem ele não há nível de unidade nem nome a preencher.
+Ficam declaradas na mesma, porque a régua lê o documento entregue, não o ecrã.
+
+**AS FRASES DO NÍVEL DE CIMA MUDARAM COM O DESENHO (F1.1e, 08.09.2026)**: «Toque
+numa região» e «Passe o rato por uma região» passam a «Toque num distrito ou numa
+ilha» e «Passe o rato por um distrito ou por uma ilha», porque o que cresce
+passou a ser uma unidade da Carta. As duas antigas ficam `retirada` com a razão,
+e as do nível de baixo («Toque num concelho», «Passe o rato por um concelho»)
+não mudam: o que está lá dentro continua a ser um concelho.
+
+**O NOME ACESSÍVEL DO LUGAR ENTRA** («A área apontada no mapa»): é o `aria-label`
+do grupo, e a régua recolhe-o. **E O DO PRÓPRIO DESENHO TAMBÉM, DESDE A SEGUNDA
+PASSAGEM DE 08.09.2026**: a primeira passagem escreveu aqui que a régua não o
+recolhia, e a razão verdadeira não era essa. A régua lê os `aria-label` desde a
+I79; o que ela deita fora é a dica igual a um `data-` do PRÓPRIO elemento,
+porque essa é composta do livro-razão, e o `<svg>` levava um `data-rotulo-pais`
+com a mesma cadeia do seu `aria-label`. A cópia saiu (o guião lê o `aria-label`
+que o servidor desenhou), a régua vê a frase, e as duas linhas do nome do mapa
+da primeira página voltaram a `viva` no bloco `grelha-2`. O rótulo do nível de
+baixo continua a viver num `data-` e não se declara: quando ele se render como
+`aria-label`, com o F1.10 na página do concelho, declara-se então.
+
+**AS DUAS PORTAS NÃO ENTRAM** («Abrir →» e «← Voltar ao país»): vivem inteiras
+dentro de um `<a>`, e as medidas 8 e 9 da régua excluem esses blocos nos dois
+sentidos, como a leitura do índice de 03.09 escreveu sobre «Subir».
+
+**A SÉTIMA FRASE ENTROU NA SEGUNDA PASSAGEM DO F1.1d (08.09.2026)**: «O mapa
+desta região não abriu. A porta leva à página dela.» O guião pede o ficheiro dos
+concelhos ao tocar numa área, e um pedido que não volta deixava o leitor com um
+toque sem resposta e sem explicação (leitura a frio do Codex, achado 9). A frase
+vive dentro da região viva do lugar do nome, para que quem ouve a oiça como oiria
+o nome, e diz as duas coisas que o leitor precisa de saber: o que aconteceu, e
+que a porta que está ali leva à página da área. É `navegacao` pela mesma razão
+das outras: não diz o que se mede, diz o que fazer.
+
+**E MUDOU DE PALAVRA NO F1.1e**: «O mapa desta ÁREA não abriu», porque as 29
+unidades são 18 distritos e 11 ilhas, e uma frase que nomeasse o distrito estava
+errada em onze delas. Com «As regiões» fora, o bloco fica com **seis frases e
+doze linhas** vivas, e **seis linhas `retirada`** com a razão: as quatro frases
+que diziam «região» nas duas edições e as duas do aviso do pedido que não volta.
+(A primeira passagem escreveu aqui «oito», por ter contado as duas linhas do nome
+do mapa que já estavam `retirada` desde o F1.1d e que só mudaram de razão; a
+leitura a frio do Codex de 08.09.2026 apanhou-o, achado 13, e as duas voltaram a
+`viva` na segunda passagem.)
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Toque num distrito ou numa ilha | mapa | retirada | as quatro frases vazias do lugar do nome do mapa saem (item 5 do brief do P1, 15.09.2026): são instruções, que a regra 4 do plano não deixa entrar sem uma falha medida, e duas delas são o decalque «passe o rato» que o diretor apanhou. Em repouso o lugar passa a dizer onde o leitor está e quantos concelhos esse território tem, que é a legenda do desenho ao lado e não um gesto |
+| navegacao | Passe o rato por um distrito ou por uma ilha | mapa | retirada | as quatro frases vazias do lugar do nome do mapa saem (item 5 do brief do P1, 15.09.2026): são instruções, que a regra 4 do plano não deixa entrar sem uma falha medida, e duas delas são o decalque «passe o rato» que o diretor apanhou. Em repouso o lugar passa a dizer onde o leitor está e quantos concelhos esse território tem, que é a legenda do desenho ao lado e não um gesto |
+| navegacao | Toque num concelho | mapa | retirada | as quatro frases vazias do lugar do nome do mapa saem (item 5 do brief do P1, 15.09.2026): são instruções, que a regra 4 do plano não deixa entrar sem uma falha medida, e duas delas são o decalque «passe o rato» que o diretor apanhou. Em repouso o lugar passa a dizer onde o leitor está e quantos concelhos esse território tem, que é a legenda do desenho ao lado e não um gesto |
+| navegacao | Passe o rato por um concelho | mapa | retirada | as quatro frases vazias do lugar do nome do mapa saem (item 5 do brief do P1, 15.09.2026): são instruções, que a regra 4 do plano não deixa entrar sem uma falha medida, e duas delas são o decalque «passe o rato» que o diretor apanhou. Em repouso o lugar passa a dizer onde o leitor está e quantos concelhos esse território tem, que é a legenda do desenho ao lado e não um gesto |
+| navegacao | Tap a district or island | mapa | retirada | as quatro frases vazias do lugar do nome do mapa saem (item 5 do brief do P1, 15.09.2026): são instruções, que a regra 4 do plano não deixa entrar sem uma falha medida, e duas delas são o decalque «passe o rato» que o diretor apanhou. Em repouso o lugar passa a dizer onde o leitor está e quantos concelhos esse território tem, que é a legenda do desenho ao lado e não um gesto |
+| navegacao | Hover over a district or island | mapa | retirada | as quatro frases vazias do lugar do nome do mapa saem (item 5 do brief do P1, 15.09.2026): são instruções, que a regra 4 do plano não deixa entrar sem uma falha medida, e duas delas são o decalque «passe o rato» que o diretor apanhou. Em repouso o lugar passa a dizer onde o leitor está e quantos concelhos esse território tem, que é a legenda do desenho ao lado e não um gesto |
+| navegacao | Tap a municipality | mapa | retirada | as quatro frases vazias do lugar do nome do mapa saem (item 5 do brief do P1, 15.09.2026): são instruções, que a regra 4 do plano não deixa entrar sem uma falha medida, e duas delas são o decalque «passe o rato» que o diretor apanhou. Em repouso o lugar passa a dizer onde o leitor está e quantos concelhos esse território tem, que é a legenda do desenho ao lado e não um gesto |
+| navegacao | Hover over a municipality | mapa | retirada | as quatro frases vazias do lugar do nome do mapa saem (item 5 do brief do P1, 15.09.2026): são instruções, que a regra 4 do plano não deixa entrar sem uma falha medida, e duas delas são o decalque «passe o rato» que o diretor apanhou. Em repouso o lugar passa a dizer onde o leitor está e quantos concelhos esse território tem, que é a legenda do desenho ao lado e não um gesto |
+| navegacao | A área apontada no mapa | mapa | viva | — |
+| navegacao | The area pointed at on the map | mapa | viva | — |
+| navegacao | O mapa desta área não abriu. A porta leva à página dela. | mapa | viva | — |
+| navegacao | This map did not open. The door goes to its own page. | mapa | viva | — |
+| navegacao | Toque numa região | mapa | retirada | o F1.1e devolveu o desenho da primeira página às 29 unidades da Carta, por decisão do diretor de 08.09.2026 («the map on the first page we had before was quite alright»); as nove regiões NUTS II saíram do desenho e da lista dos nomes, e com elas as frases que as nomeavam. Continuam a ter página, régua e menu |
+| navegacao | Passe o rato por uma região | mapa | retirada | o F1.1e devolveu o desenho da primeira página às 29 unidades da Carta, por decisão do diretor de 08.09.2026 («the map on the first page we had before was quite alright»); as nove regiões NUTS II saíram do desenho e da lista dos nomes, e com elas as frases que as nomeavam. Continuam a ter página, régua e menu |
+| navegacao | Tap a region | mapa | retirada | o F1.1e devolveu o desenho da primeira página às 29 unidades da Carta, por decisão do diretor de 08.09.2026 («the map on the first page we had before was quite alright»); as nove regiões NUTS II saíram do desenho e da lista dos nomes, e com elas as frases que as nomeavam. Continuam a ter página, régua e menu |
+| navegacao | Hover over a region | mapa | retirada | o F1.1e devolveu o desenho da primeira página às 29 unidades da Carta, por decisão do diretor de 08.09.2026 («the map on the first page we had before was quite alright»); as nove regiões NUTS II saíram do desenho e da lista dos nomes, e com elas as frases que as nomeavam. Continuam a ter página, régua e menu |
+| navegacao | O mapa desta região não abriu. A porta leva à página dela. | mapa | retirada | o F1.1e devolveu o desenho da primeira página às 29 unidades da Carta, por decisão do diretor de 08.09.2026 («the map on the first page we had before was quite alright»); as nove regiões NUTS II saíram do desenho e da lista dos nomes, e com elas as frases que as nomeavam. Continuam a ter página, régua e menu; a frase continua, com «desta área» em vez de «desta região», porque as 29 são 18 distritos e 11 ilhas |
+| navegacao | This map did not open. The door goes to the region page. | mapa | retirada | o F1.1e devolveu o desenho da primeira página às 29 unidades da Carta, por decisão do diretor de 08.09.2026 («the map on the first page we had before was quite alright»); as nove regiões NUTS II saíram do desenho e da lista dos nomes, e com elas as frases que as nomeavam. Continuam a ter página, régua e menu; a frase continua, com «its own page» em vez de «the region page» |
+
+## Bloco F1.10 · «Números e fontes» e o menu em dois pesos · 08.09.2026
+
+**Seis linhas novas, quatro passadas a `retirada`, e duas APAGADAS do ficheiro.**
+São as do item 8.8 (o nome visível do índice do livro-razão) e as do 8.9 (o menu
+em dois pesos), com o §7.5 («Áreas de governo» por extenso).
+
+**O que muda, e o que não muda.** O nome VISÍVEL do índice e da entrada do menu
+passa a «Números e fontes» / «Numbers and sources», pelo tropeço R2 da ronda de
+leitores de 07.09 e pela decisão que o diretor aceitou nessa noite. **«livro-razão»
+fica como o termo técnico no Método, no JSON e nos endereços**, que não mudam, e
+por isso as duas linhas «O livro-razão» e «The ledger» continuam `viva`: rendem-se
+no `<h2>` do Método, que é onde a decisão as manda ficar. «Linha do livro-razão»
+também fica, pela mesma razão.
+
+**Duas linhas saíram do ficheiro em vez de passarem a `retirada`, e a razão é a
+régua.** Eram `| navegacao | Livro-razão | pequenas-4 |` e a gémea inglesa, o
+rótulo do menu. `retirada` não serve: `ondeVolta()`, em
+`scripts/medir-defeitos.mjs`, procura a frase retirada **por palavra inteira
+dentro de qualquer frase rendida**, e a varredura das dicas recolhe o `title` de
+cada contagem da prova, onde vive «linhas do livro-razão dessas séries». Uma
+linha `retirada` que a régua acha por dentro de uma dica fecharia a construção
+para sempre. É a mesma saída que o «Município» da primeira sessão tomou, e este
+ficheiro já a escreve: «ou a linha sai do ficheiro, ou passa a `retirada` com a
+razão escrita».
+
+**As quatro que passaram a `retirada`** são os títulos de página, que agora dizem
+o nome novo: «Livro-razão · O Estado do País», «Ledger · O Estado do País»,
+«Livro-razão dos concelhos · O Estado do País» e «Municipalities ledger · O
+Estado do País».
+
+**«Áreas de governo» por extenso** (§7.5): a etiqueta do menu era «Áreas», e o
+leitor de 04.09 mediu que «Áreas» e «Domínios» não se distinguem pelo nome. Com o
+menu em dois pesos a fila do país é a mais leve e o nome inteiro cabe lá, que é o
+«se couber» do brief; a frase de hierarquia dos dois índices diz o resto.
+
+## Bloco F1.10 · segunda sessão · a página europeia e o índice dos domínios · 08.09.2026
+
+**Dez linhas novas, e nenhuma retirada.** São as do item 8.16 (a página
+«Portugal na União Europeia») e as do item 8.13 (a secção dos domínios da
+primeira página passa a ser o índice dos domínios).
+
+**As quatro da página nova.** O nome dela, nas duas edições, que é a mesma cadeia
+no `<h1>`, no `<title>`, no menu, no rodapé e na porta da faixa: a regra §0 do
+brief é «um nome por coisa em todo o sítio», e uma abreviatura no menu seriam
+dois nomes para a mesma coisa. E a descrição da página, nas duas edições, que diz
+o que a página tem e não o que a casa faz. **As vinte e uma leituras, os dois
+nomes de quadro, as duas frases de contexto e a linha do repouso não entram aqui:
+já estavam declaradas, e o que mudou foi a página que as rende.**
+
+**As seis do índice dos domínios.** «no ar», «ainda sem medidas conferidas» e «as
+medidas estão em», nas duas edições. São as mesmas três palavras de estado que
+`/dominios` já rende, e são vocabulário fechado com marca (`data-dominio-estado`):
+o que muda é que agora se leem também na primeira página. Não podiam herdar as
+linhas de `/dominios`, porque ali o bloco de texto leva a vaga colada ao estado
+(«ainda sem medidas conferidas primeira vaga») e aqui não leva: a secção da
+primeira página é a porta para o que existe, e o calendário das vagas fica no
+índice, onde ele é o assunto.
+
+**Duas exceções de marcador ganharam uma rota** em `VOZ-MARCADORES.md`, nenhuma
+nova: a raiz «confer» na ausência declarada de um domínio passa a valer também em
+`home` (o índice dos domínios entrou na primeira página), e a mesma raiz no rótulo
+da terceira data de uma medida passa a valer em `uniaoEuropeia` (as vinte e uma
+leituras mudaram-se para lá).
+
+## Bloco F1.10 · uma coisa, um lugar · 04.09.2026
+
+**O que este bloco mexeu na tabela.** Trinta e nove linhas: dezanove passaram a
+`retirada` e vinte entraram `viva`, e são os dois lados das mesmas vinte
+mudanças. Dezanove delas são o **vocabulário fechado** do sítio, que a
+`DECISIONS.md` §1.98, segunda emenda, item 2, decide pela delegação do diretor de
+04.09.2026: a palavra visível do território é «concelho», o trabalho de autor é
+um «estudo», e quem tem a dívida e presta contas é a **câmara**, que é o
+organismo e não o território. A vigésima é a **frase de definição** da primeira
+página (§1.98, segunda emenda, item 3), que cresceu a partir da frase de
+identidade da Emenda 18 sem sair do lugar onde a Emenda a pôs.
+
+**Uma linha saiu do ficheiro em vez de passar a `retirada`, e a razão é a régua.**
+Era `| navegacao | Município | pequenas-4 | viva | — |`, o antetítulo da página de
+um concelho, que passou a dizer «Concelho». `retirada` não serve: `ondeVolta()`,
+em `scripts/medir-defeitos.mjs`, procura a frase retirada **por palavra inteira
+dentro de qualquer frase rendida**, e a varredura das dicas (I79) recolhe o
+`title` de cada campo do livro-razão — onde vive «Município de Évora», que é o
+`source` de dezenas de linhas do estudo dos concelhos. Uma linha `retirada` que a
+régua acha por dentro de um campo transcrito fecharia a construção para sempre, e
+a casa não edita o que transcreve. A linha sai, que é a outra saída que este
+ficheiro já escreve («ou a linha sai do ficheiro, ou passa a `retirada` com a
+razão escrita»).
+
+**O que impede a palavra de voltar não é esta tabela: é a régua do bloco.** A L3
+do brief F1.10 mede «município(s)» visível a zero fora dos endereços, sobre o
+`dist/` e nas duas edições, com as exceções escritas. Essa régua ainda não existe
+— o bloco parou a meio — e é ela que fecha este caso; enquanto não existir, a
+proteção desta palavra é a leitura de quem revê o diff.
+
+**As chaves novas deste bloco não estão aqui, e é de propósito.** Nove cadeias
+novas entraram em `src/i18n/strings.mjs` (as frases de hierarquia, os dois
+títulos de secção, o rótulo do caminho e as três portas) e **nenhuma se rende
+ainda**: a vista que as usa é a parte do bloco que ficou por construir. Uma linha
+`viva` que não se rende fecha a construção, e é a régua a dizer a verdade sobre o
+sítio. Estão listadas em `design/especime-v3/CHAVES-EN.md`, e quem as render
+declara-as aqui no mesmo commit.
+
+## Bloco F1.10 · terceira sessão · a manchete do país e quem fixou o limiar · 08.09.2026
+
+**Quatro linhas novas, vinte e quatro mudadas, nenhuma retirada.** São as duas
+decisões do lugar de direção de 08.09.2026, pela delegação da §1.98.
+
+**A manchete do país (itens 8.15 e 8.16).** Com os 21 cartões dos dois quadros da
+União em «Portugal na União Europeia», a manchete de `/` deixou de falar do
+Procedimento e passou a ser uma frase com as duas medidas de cabeça do domínio
+vivo: a dívida pública e a taxa de desemprego, as duas primeiras linhas da faixa
+desta página. Uma frase, dois algarismos selados, sem adjetivo, que é a regra da
+manchete sem uma emenda. **A frase antiga não saiu do sítio nem mudou uma
+palavra:** «Portugal ultrapassa 4 limiares do Procedimento dos Desequilíbrios
+Macroeconómicos e cumpre 9» é agora a manchete da página europeia, e a lede que
+nomeia as medidas fora do limiar foi com ela. As linhas dessas duas frases ficam
+onde estavam na tabela, `viva`, porque continuam a render-se; o que mudou foi a
+página que as rende, e uma linha do inventário é sobre a frase e não sobre a
+rota.
+
+**«limiar» nunca sozinho (item 8.5).** A decisão (2) da emenda de 07.09 à §1.101,
+depois de o diretor dizer que a palavra «doesn't really reflect exactly what they
+mean»: a palavra fica, porque é a que a Comissão e o INE usam, e nunca aparece
+sozinha. **Não foi uma troca de duas cadeias.** «dentro do limiar» servia, com a
+mesma cadeia, os dois quadros da União E o índice de dívida de uma câmara, cujo
+limiar é o limite que a lei portuguesa fixa: escrever «limiar da Comissão» em 616
+páginas de concelho seria dar à Comissão um número que não é dela. Cada medida
+com limiar passou a declarar quem o fixou (`limiarFixadoPor`, lista fechada em
+`src/data/figuras.mjs`, com um guarda que fecha a construção sem ele), e o par de
+palavras do estado e o rótulo da linha do limiar saem daí. Vinte e duas linhas da
+tabela mudaram de texto por causa disso, e cada uma leva a razão na sua coluna.
+
+**«limiar publicado» durou um dia, e o que o tirou foi ler os documentos.** As
+duas medidas do domínio cujo limiar não tinha autor (o saldo das administrações
+públicas e o crescimento da despesa líquida) diziam «dentro do limiar publicado»,
+que era honesto enquanto ninguém tinha lido o que as suas linhas citam. A decisão
+do lugar de direção no fecho do dia (§1.102): o fixador vem do documento que a
+linha cita, e de mais lado nenhum. **Os dois documentos dizem-no**, palavra por
+palavra: a página Statistics Explained do Eurostat que a nota do saldo nomeia
+escreve «Under the terms of the EU's Stability and Growth Pact (SGP), Member
+States pledged to keep their deficits and debt below certain limits: a Member
+State's government deficit may not exceed 3% of its gross domestic product
+(GDP)», e o Parecer n.º 02/2026 do Conselho das Finanças Públicas que a linha da
+despesa líquida cita escreve, na página anterior à do excerto, «comprometeu-se
+com uma determinada trajetória de crescimento da despesa líquida, que depois foi
+aprovada pelo Conselho da UE». O par `porRegistar` saiu da lista fechada dos
+fixadores, e no lugar dele entraram `pacto` e `conselho`; seis linhas desta
+tabela mudaram de texto com eles.
+
+**A frase que diz o que o limiar é e quem o fixou** vive dentro do par de cada
+fixador, e rende-se na leitura de qualquer medida cujo fixador traga uma: as
+treze do painel do Procedimento, o saldo das administrações públicas e o
+crescimento da despesa líquida. Só o `lei` não tem, e não é por esquecimento: tem
+a sua frase na página do concelho, uma vez («O limite é fixado no artigo 52.º da
+Lei n.º 73/2013: uma vez e meia a média da receita corrente líquida dos três anos
+anteriores.»), e o §0 do brief manda uma coisa num lugar só. **Nenhuma das três
+leva um algarismo**, que numa página do leitor seria um algarismo sem marca: a da
+Comissão diz «fixado no regulamento que criou o Procedimento e revisto pela
+Comissão Europeia», com as palavras do motivo `limiar-do-quadro` de
+`ledger/allowlist.yml` e sem o número do diploma; a do Pacto diz o que a página
+do Eurostat diz, sem o «3%»; a do Conselho diz o que o parecer diz, sem a data da
+Recomendação.
+
+## Bloco F1.10 · terceira sessão · a página do concelho e o mapa da região · 08.09.2026
+
+**Duas linhas novas, duas retiradas, e nenhuma cadeia nova em `strings.mjs`.** É
+o §7.1 do brief e o item 8.17, que o lugar de direção decidiu a 08.09 depois de o
+diretor andar pela página de Évora no telemóvel.
+
+**As duas novas são o rótulo acessível do mapa da região**, nas duas edições
+(«Mapa dos concelhos da região, com uma área por concelho.» / «Map of the
+municipalities of the region, one area per municipality.»). A cadeia já existia
+em `src/i18n/strings.mjs` desde o F1.1d, onde era o rótulo que o guião escreve no
+`<svg>` quando uma região cresce na primeira página: ali nunca chegou ao documento
+entregue, e por isso nunca esteve nesta tabela. Com o item 8.17 ela passa a ser
+rendida pelo servidor em 616 páginas.
+
+**As duas retiradas são o rótulo do mapa de pontos**, nas duas edições («Mapa de
+pontos dos concelhos de Portugal.»). O cartão localizador dos 308 pontos saiu da
+página do concelho e era o único sítio que o rendia. Os pontos continuam a existir
+no componente, na postura do selo, que hoje nenhuma página rende; se voltarem, a
+linha volta a `viva` com a rota que a rende.
+
+**Nenhuma frase da página do concelho mudou de texto, e todas mudaram de lugar.**
+A grelha das oito peças grandes saiu, e a prosa que corria por baixo dela passou a
+ser a leitura que abre do cartão de cada medida. A régua da voz lê o documento
+entregue e não o ecrã: as mesmas frases, no mesmo número de rotas, dentro de
+`<details>` em vez de `<p>` soltos. O que mudou na régua foi uma exceção de
+marcador, e é a única: **a raiz «confer» no rótulo da terceira data ganha a rota
+`municipio`** em `VOZ-MARCADORES.md` (eram três rotas, são quatro), porque cada
+leitura leva as três datas da carta, como as da página do domínio e as da página
+europeia.
+
+
+## Bloco F1.10 · segunda passagem · a leitura a frio e a releitura do leitor de primeira vez · 09.09.2026
+
+*Trinta e uma linhas novas e vinte e uma passadas a `retirada`. As decisões são
+as vinte e cinco que o lugar de direção tomou a 09.09.2026 sobre a leitura a frio
+do bloco e sobre a releitura do leitor de primeira vez (a régua L7), e cada linha
+diz qual delas a pôs aqui.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | A Direção-Geral das Autarquias Locais não publicou figura para este concelho nesta edição da lista, e o valor ao lado é a marca que ela imprime. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | A Direção-Geral das Autarquias Locais não publicou figura para este concelho nesta edição da lista, e o valor ao lado é a marca que ela imprime. Lista anual da Direção-Geral das Autarquias Locais, que publica os dados das contas das câmaras. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | A Direção-Geral das Autarquias Locais não publicou figura para este concelho nesta edição da lista, e o valor ao lado é a marca que ela imprime. Série anual da Direção-Geral das Autarquias Locais, que publica os dados das contas das câmaras. Exclui dívidas não orçamentais e exceções legais. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| navegacao | As medidas de cabeça de cada domínio, a busca e o mapa dos concelhos, e as portas para os estudos e para os números com as suas fontes. | b1-peca3-correcao2 | retirada | descrição substituída pelo guião da segunda correção, 22.09.2026; a página passou a abrir com a leitura do país e os temas. |
+| navegacao | Descarregar tudo: CSV · JSON | lugar | viva | «livro-razão» sai do nome visível da página do índice (item 8.8 e decisão 20 da releitura do leitor de primeira vez, 09.09.2026): a página chama-se «Números e fontes», e a porta do conjunto passa a dizer o que faz |
+| navegacao | Download everything: CSV · JSON | lugar | viva | ver a razão na gémea portuguesa (decisão 20, 09.09.2026) |
+| conteudo | Economia, investidores e portas abertas no concelho de Évora. | lugar | viva | «concelho» é a palavra visível do território (§1.98 e Major 5 da leitura a frio, 09.09.2026). Esta descrição é prosa da casa e não uma transcrição do documento, e por isso mudou |
+| navegacao | Excerpt | lugar | viva | ver a razão na gémea portuguesa |
+| navegacao | Excerto | lugar | viva | o comando da dobra que abre o excerto literal da origem de uma definição: diz o que a dobra tem (Blocking 1 da leitura a frio, 09.09.2026). O excerto lá dentro é transcrição registada em `src/data/verbatim.mjs`, comparada carácter a carácter pelo portão |
+| conteudo | O desempenho das exportações do país face às economias avançadas, e quanto ele mudou em três anos. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | O fluxo de crédito consolidado às famílias, incluindo as instituições sem fim lucrativo ao serviço delas, em percentagem da dívida que elas tinham no fim do ano anterior. | lugar | retirada | achado 4 da leitura do Codex de 14.09.2026: o excerto diz «household debt stock in t-1», que é o período antes do de referência; «no fim do ano anterior» acrescentava o «fim» e o «ano», que a fonte não escreve. A frase nova está viva neste ficheiro |
+| conteudo | O fluxo de crédito consolidado às sociedades não financeiras, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no fim do ano anterior. | lugar | retirada | achados 4 e 6 da leitura do Codex de 14.09.2026: o tempo passa a ser o do excerto («in t-1») e a expansão de «NFC» passa a `[a verificar]`. As razões inteiras estão nas gémeas destas duas mudanças. A frase nova está viva neste ficheiro |
+| conteudo | O índice nominal do custo unitário do trabalho, por hora trabalhada, e quanto ele mudou em três anos. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | O que foi orçamentado, o que foi pago e o que ficou em dívida no concelho de Évora. | lugar | viva | «concelho» é a palavra visível do território (§1.98 e Major 5, 09.09.2026). Ver a razão na gémea |
+| conteudo | PT Economia, investidores e portas abertas no concelho de Évora. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | PT O que foi orçamentado, o que foi pago e o que ficou em dívida no concelho de Évora. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| navegacao | Publicado por · | correcao-p1p2 | retirada | o rótulo da origem de uma definição deixa de ser o do recibo (achado 2, 15.09.2026): «Publicado por» é o rótulo do publicador de uma LINHA, e ao pé de uma frase citada da Comissão lia-se como se aquele fosse o publicador do número. A gémea nova, com «Definição de», está `viva` neste ficheiro |
+| navegacao | Publicado por · · lido na fonte a | lugar | retirada | achado 5 da leitura cruzada do inventário (Codex, 14.09.2026): a data de leitura de uma origem saiu da linha à vista e entrou na dobra do excerto, onde é o «acedido a» daquela citação. O rótulo continua vivo, sozinho, dentro da dobra |
+| navegacao | Published by · | correcao-p1p2 | retirada | ver a razão na gémea portuguesa (achado 2, 15.09.2026) |
+| navegacao | Published by · · read at the source on | lugar | retirada | ver a razão na gémea portuguesa (achado 5 da leitura cruzada do inventário, 14.09.2026) |
+| navegacao | Sem guião, a lista mostra todos os estudos. | p3 | retirada | «sem guião» está na lista das palavras que o sítio não usa (norma §1.3), e o plano das palavras (§4) escreve o que fica no lugar: «sem JavaScript», que é o nome da tecnologia que falta (bloco P3, item 5) |
+| navegacao | Sem guião, o botão leva à lista inteira dos concelhos, agrupada por distrito e por ilha. | p3 | retirada | ver a razão na gémea da lista dos estudos |
+| conteudo | The consolidated credit flow to households, including non-profit institutions serving households, as a percentage of their debt stock at the end of the previous year. | lugar | retirada | ver a razão na gémea portuguesa (achado 4, 14.09.2026) |
+| conteudo | The consolidated credit flow to non-financial corporations, excluding foreign direct investment, as a percentage of their debt stock at the end of the previous year. | lugar | retirada | ver a razão na gémea portuguesa (achados 4 e 6, 14.09.2026) |
+| conteudo | The country’s export performance against advanced economies, and how much it changed over three years. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | The Directorate-General for Local Authorities published no figure for this municipality in this edition of the list, and the value beside it is the mark the list prints. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | The Directorate-General for Local Authorities published no figure for this municipality in this edition of the list, and the value beside it is the mark the list prints. The annual list of the local-government directorate, which publishes the municipalities’ accounts data. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| conteudo | The Directorate-General for Local Authorities published no figure for this municipality in this edition of the list, and the value beside it is the mark the list prints. The annual series of the local-government directorate, which publishes the municipalities’ accounts data. Excludes non-budgetary debt and legal exceptions. | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| navegacao | The head measures of each domain, the search and the map of the municipalities, and the doors to the studies and to the numbers with their sources. | b1-peca3-correcao2 | retirada | descrição substituída pelo guião da segunda correção, 22.09.2026; a página passou a abrir com a leitura do país e os temas. |
+| navegacao | Without scripting, the button leads to the full list of municipalities, grouped by district and island. | p3 | retirada | ver a razão na gémea portuguesa |
+| navegacao | Without scripting, the list shows every study. | p3 | retirada | ver a razão na gémea portuguesa |
+| navegacao | · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado | lugar | viva | achado 4 da leitura cruzada do inventário (Codex, 14.09.2026): é a LEGENDA de uma marca, e `VOZ-MARCADORES.md` não dá classe a legendas: dá ao próprio marcador a razão por que a raiz «verific» não morde nele («é o marcador de incerteza do sítio, com página própria em `/a-verificar`: diz que falta um campo de proveniência»). Sem classe escrita para a legenda, fica `navegacao`, que é a classe desta lista para «a descrição acessível de um instrumento»: a frase não diz nada sobre o país, diz o que a marca ao lado quer dizer a quem a encontra |
+| navegacao | · a field not confirmed against the source, not a doubt about what is published | lugar | viva | ver a razão na gémea portuguesa (achado 4, 14.09.2026) |
+| navegacao | [a verificar] · a field not confirmed against the source, not a doubt about what is published | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+
+## Bloco F1.10 · segunda passagem · as duas leituras do Codex de 14.09.2026
+
+*As duas leituras estão em `critica/2026-09-14-codex-leitura-uniao-definicoes.md`
+(as 23 definições da página europeia contra as fontes) e em
+`critica/2026-09-14-codex-leitura-inventario-lugar.md` (a leitura cruzada deste
+inventário). A triagem do lugar de direção, achado a achado, está no encargo da
+segunda passagem; as linhas que saíram levam a razão na sua própria coluna, onde
+estavam. Nenhuma frase desta secção é nova por gosto: cada uma substitui uma que
+dizia mais do que a fonte, ou entra porque se rendia sem estar declarada.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | lido na fonte a | lugar | viva | achado 5 da leitura cruzada do inventário (Codex, 14.09.2026): o rótulo da data de leitura de uma origem, agora sozinho dentro da dobra do excerto, que é onde a data passou a viver. É o nome de um campo da citação, como «acedido a», e é a mesma razão que `VOZ-MARCADORES.md` escreve para «verificado a»: não é a casa a dizer que confere, é o nome da data que ela publica ao lado do que citou |
+| navegacao | read at the source on | lugar | viva | ver a razão na gémea portuguesa (achado 5, 14.09.2026) |
+| conteudo | A dívida consolidada das NFC, em percentagem do PIB; o nome por extenso da sigla permanece [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado . | r1 | retirada | a sigla sai da definição (bloco R1, 23.09.2026, I142): a resposta do Eurostat ao pedido da linha da dívida das empresas (`tipspd30`) escreve o setor por extenso, «Non-financial corporations», e passou a ser uma origem da definição; a frase nova escreve «sociedades não financeiras», sem marcador |
+| conteudo | NFC consolidated debt, as a percentage of GDP; the full name behind the abbreviation remains [a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published . | r1 | retirada | ver a razão na gémea portuguesa (bloco R1, I142, 23.09.2026) |
+| conteudo | O fluxo de crédito consolidado às NFC, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no período anterior; o nome por extenso da sigla permanece [a verificar] . | lugar | retirada | achado 3 da releitura do Codex de 14.09.2026, sobre a cabeça `7b85bb7f`: a linha da Comissão repete a exclusão depois do «t-1» («NFC (excl. FDI) consolidated credit flow in % of NFC debt stock in t-1 (excl. FDI)») e a frase dizia-a uma vez só, o que deixava o denominador por qualificar. A frase nova diz os dois lados e está viva neste ficheiro |
+| conteudo | The consolidated credit flow to NFC, excluding foreign direct investment, as a percentage of their debt stock in the previous period; the full name behind the abbreviation remains [a verificar] (to verify) . | lugar | retirada | ver a razão na gémea portuguesa (achado 3 da releitura, 14.09.2026) |
+| conteudo | O fluxo de crédito consolidado às famílias, incluindo as instituições sem fim lucrativo ao serviço delas, em percentagem da dívida que elas tinham no período anterior. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | The consolidated credit flow to households, including non-profit institutions serving households, as a percentage of their debt stock in the previous period. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | A percentagem das pessoas de um grupo de idades e sexo que não tem emprego e não está em estudos nem em formação. | lugar | retirada | I129, 22.09.2026: a condição era dupla e ficava por preencher nas duas metades. A frase nova diz o grupo que a linha fixa, lido da etiqueta `Age class: From 15 to 29 years` da resposta do Eurostat, e o sexo total que ela declara. Está viva neste ficheiro |
+| conteudo | The percentage of the population of a given age group and sex who is not employed and not involved in further education or training. | lugar | retirada | ver a razão na gémea portuguesa (I129, 22.09.2026) |
+| conteudo | A percentagem das pessoas dos aos anos, de ambos os sexos, que não tem emprego e não está em estudos nem em formação. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | The percentage of the population aged to , of both sexes, who is not employed and not involved in further education or training. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | O painel de medidas que apoia o Pilar Europeu dos Direitos Sociais, e com que se avalia o desempenho de emprego e social dos países da União participantes. | lugar | viva | achado 11 da leitura do Codex de 14.09.2026: o excerto diz «participating EU countries», e a frase alargava a população que a fonte delimita |
+| conteudo | The scoreboard of key measures that supports the European Pillar of Social Rights, used to assess the employment and social performance of participating EU countries. | lugar | viva | ver a razão na gémea portuguesa (achado 11, 14.09.2026) |
+| conteudo | O saldo da balança corrente em percentagem do PIB, na média móvel de três anos para trás. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | A percentagem da população que vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de % do rendimento disponível, líquido de subsídios à habitação. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | The percentage of the population living in households where total housing costs, net of housing allowances, take more than % of disposable income, net of housing allowances. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | Oito das medidas principais do Painel Social Europeu. | lugar | viva | achado 2 da leitura cruzada do inventário (Codex, 14.09.2026): a fração fica, porque sem ela um leitor que veja «Painel Social Europeu · 8 medidas» pensa que o painel tem oito; o denominador sai, porque nenhuma página da Comissão ou do Eurostat escreve o número das medidas principais, e a decisão (5) da §1.98 só o deixa dizer quando estiver conferido numa delas |
+| conteudo | Eight of the headline measures of the European Social Scoreboard. | lugar | viva | ver a razão na gémea portuguesa (achado 2, 14.09.2026) |
+| navegacao | Os dois quadros da União Europeia que medem Portugal: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu. | ue2-b | retirada | Passagem UE2-b (02.10.2026), ponto 5: a descrição da página da União passa a dizer também os países, porque a página abre com a secção dos países desde o UE2; a nova está declarada na secção do bloco ue2-b. |
+| navegacao | The two European Union frameworks that measure Portugal: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard. | ue2-b | retirada | Passagem UE2-b (02.10.2026), ponto 5: a descrição da página da União passa a dizer também os países, porque a página abre com a secção dos países desde o UE2; a nova está declarada na secção do bloco ue2-b. |
+| navegacao | Os estudos, com as suas edições em português e em inglês. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| navegacao | The studies, with their Portuguese and English editions. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| navegacao | das medidas de cabeça dos domínios | b1-peca3 | retirada | palavra fora do lugar: mandato B1, peça 3, 22.09.2026. |
+| navegacao | das medidas deste concelho | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| navegacao | das medidas dos dois quadros da União Europeia | lugar | viva | ver a razão na primeira das quatro (achado 3, 14.09.2026) |
+| navegacao | of the head measures of the domains | b1-peca3 | retirada | palavra fora do lugar: mandato B1, peça 3, 22.09.2026. |
+| navegacao | of the measures of this municipality | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
+| navegacao | of the measures of the two European Union scoreboards | lugar | viva | ver a razão na gémea portuguesa (achado 3, 14.09.2026) |
+| conteudo | O fluxo de crédito consolidado às NFC, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no período anterior, também sem o investimento direto estrangeiro; o nome por extenso da sigla permanece [a verificar] . | r1 | retirada | a sigla sai da definição (bloco R1, 23.09.2026, I142): a resposta do Eurostat ao pedido da linha da dívida das empresas (`tipspd30`) escreve o setor por extenso, «Non-financial corporations», e passou a ser uma origem da definição; a frase nova escreve «sociedades não financeiras», sem marcador |
+| conteudo | The consolidated credit flow to NFC, excluding foreign direct investment, as a percentage of their debt stock in the previous period, also excluding foreign direct investment; the full name behind the abbreviation remains [a verificar] (to verify) . | r1 | retirada | ver a razão na gémea portuguesa (bloco R1, I142, 23.09.2026) |
+
+
+## As frases do F1.13 · «As palavras da porta e o índice dos domínios» (15.09.2026)
+
+**O bloco é `palavras-da-porta`, e as suas dezoito linhas saem todas de uma
+leitura do diretor** (oito novas, sete passadas a `retirada` e três saídas do ficheiro). A 15.09.2026 de manhã ele leu a primeira página no ar e a página de
+uma área, e escreveu o que viu: a frase de definição descrevia o método e não
+dizia o que o sítio é; as três portas diziam «a página inteira →», que é o
+mecanismo e não o destino; o primeiro ecrã tinha três caminhos para o mesmo
+lugar; o índice dos domínios dizia «10 medidas» e não dizia quais; e a legenda da
+marca chamava-lhe «selo», que para quem lê é um selo de correio.
+
+**As seis etiquetas das portas ESTÃO aqui, e a primeira construção deste bloco
+não as pôs.** O brief mandava inventariá-las e o construtor deixou-as de fora com
+a razão de sempre: o texto de uma etiqueta de porta vive todo dentro de um `<a>`,
+e um bloco assim é um destino e não uma frase (`textoForaDeComandos`, em
+`scripts/medir-defeitos.mjs`); foi por isso que «a página inteira» nunca esteve
+nesta tabela. **A leitura a frio do Codex de 15.09.2026 mostrou o que isso custa,
+e mostrou-o com uma planta que passou** (o achado 7, e a planta W1): uma cadeia
+trocada no ficheiro das cadeias, «All the studies» por «All studies», não cai em
+régua nenhuma quando o inventário não tem a linha que a apanharia.
+
+A marca que resolve isto já existe na casa desde 04.09.2026 e é `data-voz`: diz
+«este texto é prosa da casa, recolhe-o onde quer que ele esteja», não dispensa
+nada e só alarga a peneira. É a mesma marca que o rótulo e o botão da busca levam
+desde o §9.7 do F1.10. As seis entram como `navegacao`, com a seta, que é o que o
+leitor lê; as duas antigas entram `retirada`.
+
+**A linha do domínio entra com os buracos que a régua deixa**, e isso é o que ela
+é: os cinco nomes das medidas de cabeça vivem cada um dentro de um
+`data-nome="medidas"`, que a régua exclui porque é origem declarada, e a contagem
+e o numeral do «e mais» vivem dentro de um `data-nonledger="numeracao"`. O que
+sobra do bloco é a pontuação e as duas palavras da casa, e é isso que a sentinela
+tem de morder. É a mesma forma das linhas da manchete do país, que estão nesta
+tabela desde 08.09.2026.
+
+**Três linhas SAÍRAM do ficheiro, e é a primeira vez que isso acontece neste
+bloco.** «medidas», «measures» e «um campo por confirmar» eram blocos que se
+rendiam sozinhos (os dois primeiros na linha de um domínio do índice, o terceiro
+no segundo item da lista do aparelho), e os três blocos deixaram de existir. Não
+podiam passar a `retirada`, e a razão é a definição da régua: a medida 8 casa uma
+linha `retirada` por CONTENÇÃO («medidas» está dentro de «As medidas», o título
+da secção; «um campo por confirmar» é a cauda da linha nova da legenda) e uma
+linha `viva` por IGUALDADE. As três ficavam num estado impossível, e o portão da
+voz diz o que se faz: «a linha sai do ficheiro, ou passa a "retirada" com a razão
+escrita.» A primeira das duas é a única verdadeira aqui. As gémeas inglesas das
+duas primeiras saem com elas; a da terceira («one field unconfirmed») mudou
+mesmo de palavras e está `retirada`, com a razão na sua linha.
+
+**A linha da legenda da marca é uma só, e rende-se em 319 rotas por edição**: as
+nove páginas de área, o índice dos números e fontes, a lista dos concelhos do
+livro-razão e as 308 páginas de linhas de um concelho. Era, até 15.09, quatro
+marcações diferentes com as mesmas três cadeias; passa a ser um componente
+(`src/components/LegendaDaMarca.astro`).
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Os números oficiais de Portugal, do país ao seu concelho, cada um com a fonte. | b1-peca3 | retirada | explica a página: mandato B1, peça 3, 22.09.2026. |
+| navegacao | Portugal’s official numbers, from the country to your municipality, each with its source. | b1-peca3 | retirada | explica a página: mandato B1, peça 3, 22.09.2026. |
+| navegacao | Escreva o nome do concelho, ou toque no mapa. | palavras-da-porta | retirada | o rótulo da busca deixa de ser uma frase de instrução (item 4 do brief do P1, 15.09.2026): a regra 4 do plano das palavras diz que «uma interface que precisa de uma frase para se explicar tem um problema de desenho», e uma caixa de texto ao lado de um botão «Procurar» não precisa de ninguém a dizer que se escreve nela. O campo passa a levar o seu NOME, «Concelho», dentro dele como texto-fantasma e num `<label>` em `.vh`, e o nome não é uma cadeia nova: é `s.ambito.municipio`, a mesma palavra que o resto da página já usa |
+| navegacao | Type the name of a municipality, or tap the map. | palavras-da-porta | retirada | o rótulo da busca deixa de ser uma frase de instrução (item 4 do brief do P1, 15.09.2026): a regra 4 do plano das palavras diz que «uma interface que precisa de uma frase para se explicar tem um problema de desenho», e uma caixa de texto ao lado de um botão «Procurar» não precisa de ninguém a dizer que se escreve nela. O campo passa a levar o seu NOME, «Concelho», dentro dele como texto-fantasma e num `<label>` em `.vh`, e o nome não é uma cadeia nova: é `s.ambito.municipio`, a mesma palavra que o resto da página já usa |
+| navegacao | medidas: , , , , , e mais | palavras-da-porta | retirada | os nomes das medidas de cabeça e o «e mais N» saem da linha de um domínio (item 6 do brief do P1, 15.09.2026), no mesmo dia em que o F1.13 os pôs: «e mais cinco» não é frase de jornal e os nomes das medidas são o jargão da fonte, e o diretor leu as duas coisas nas capturas. A linha passa a dizer o nome do domínio e a contagem das medidas que o sítio já publica nele |
+| navegacao | measures: , , , , , and more | palavras-da-porta | retirada | os nomes das medidas de cabeça e o «e mais N» saem da linha de um domínio (item 6 do brief do P1, 15.09.2026), no mesmo dia em que o F1.13 os pôs: «e mais cinco» não é frase de jornal e os nomes das medidas são o jargão da fonte, e o diretor leu as duas coisas nas capturas. A linha passa a dizer o nome do domínio e a contagem das medidas que o sítio já publica nele |
+| conteudo | Ao pé de cada número, a marca da fonte: fonte, excerto e data conferidos · um campo por confirmar. | palavras-da-porta | viva | a legenda da marca da fonte, numa linha em palavras, no lugar do aparelho «Os dois estados do selo» e da sua lista de dois itens (item 5 do brief do F1.13, 15.09.2026). É `conteudo` como as três cadeias que substitui: diz o que a marca ao lado de cada número quer dizer, e sem ela um leitor lê mal um estado de proveniência, que é o teste da regra desta lista. As duas amostras da marca desenham-se dentro da frase e não levam texto (`aria-hidden`) |
+| conteudo | Beside every number, the source mark: source, excerpt and date checked · one field still to confirm. | palavras-da-porta | viva | ver a razão na gémea portuguesa (item 5 do F1.13, 15.09.2026) |
+| navegacao | Todos os concelhos → | palavras-da-porta | retirada | as três etiquetas das portas saem (item 7 do brief do P1, 15.09.2026), no mesmo dia em que o F1.13 as escreveu: a regra 3 do plano das palavras diz que «um cartão que leva a uma página é a ligação inteira», e «Concelhos · 308 concelhos · Todos os concelhos →» dizia o nome da página três vezes na mesma linha. Os cartões passam a ser a ligação, com o nome, o número quando ele é informação, e a seta |
+| navegacao | Todos os estudos → | palavras-da-porta | retirada | as três etiquetas das portas saem (item 7 do brief do P1, 15.09.2026), no mesmo dia em que o F1.13 as escreveu: a regra 3 do plano das palavras diz que «um cartão que leva a uma página é a ligação inteira», e «Concelhos · 308 concelhos · Todos os concelhos →» dizia o nome da página três vezes na mesma linha. Os cartões passam a ser a ligação, com o nome, o número quando ele é informação, e a seta |
+| navegacao | Toda a agenda → | palavras-da-porta | retirada | as três etiquetas das portas saem (item 7 do brief do P1, 15.09.2026), no mesmo dia em que o F1.13 as escreveu: a regra 3 do plano das palavras diz que «um cartão que leva a uma página é a ligação inteira», e «Concelhos · 308 concelhos · Todos os concelhos →» dizia o nome da página três vezes na mesma linha. Os cartões passam a ser a ligação, com o nome, o número quando ele é informação, e a seta |
+| navegacao | All municipalities → | palavras-da-porta | retirada | as três etiquetas das portas saem (item 7 do brief do P1, 15.09.2026), no mesmo dia em que o F1.13 as escreveu: a regra 3 do plano das palavras diz que «um cartão que leva a uma página é a ligação inteira», e «Concelhos · 308 concelhos · Todos os concelhos →» dizia o nome da página três vezes na mesma linha. Os cartões passam a ser a ligação, com o nome, o número quando ele é informação, e a seta |
+| navegacao | All studies → | palavras-da-porta | retirada | as três etiquetas das portas saem (item 7 do brief do P1, 15.09.2026), no mesmo dia em que o F1.13 as escreveu: a regra 3 do plano das palavras diz que «um cartão que leva a uma página é a ligação inteira», e «Concelhos · 308 concelhos · Todos os concelhos →» dizia o nome da página três vezes na mesma linha. Os cartões passam a ser a ligação, com o nome, o número quando ele é informação, e a seta |
+| navegacao | The whole agenda → | palavras-da-porta | retirada | as três etiquetas das portas saem (item 7 do brief do P1, 15.09.2026), no mesmo dia em que o F1.13 as escreveu: a regra 3 do plano das palavras diz que «um cartão que leva a uma página é a ligação inteira», e «Concelhos · 308 concelhos · Todos os concelhos →» dizia o nome da página três vezes na mesma linha. Os cartões passam a ser a ligação, com o nome, o número quando ele é informação, e a seta |
+| navegacao | a página inteira → | palavras-da-porta | retirada | a etiqueta única das três portas dizia o mecanismo e não o destino, e saiu com o item 2 do brief do F1.13 (15.09.2026): cada porta passa a dizer o nome do que está do outro lado. A linha entra aqui `retirada` e não estava aqui `viva`, e a razão é o achado 7 da leitura a frio do mesmo dia: as etiquetas das portas só passaram a ser vistas pela régua quando ganharam `data-voz`, e o que se declara agora é o estado delas, incluindo o da que saiu |
+| navegacao | the whole page → | palavras-da-porta | retirada | ver a razão na gémea portuguesa (item 2 do F1.13, 15.09.2026) |
+
+
+## As frases do P1 · «O rodapé e a primeira página» (15.09.2026)
+
+**O bloco é `palavras-do-rodape`, e as suas linhas saem todas da leitura que o
+diretor fez do rodapé, da primeira página e de uma página de área no ar**, ao
+fim da tarde de 15.09.2026, e da emenda que ele escreveu às 16:35 UTC. O que
+ele disse cabe em quatro frases, e as quatro estão no
+`design/observatorio/PLANO-palavras-e-sentido-2026-09-15.md`: o português é
+traduzido do inglês palavra a palavra; a página tem legendas a mais e sentido a
+menos; há repetições que não são conteúdo; e cada correção anterior tinha
+acrescentado palavras.
+
+**Este bloco tira mais do que põe, e é uma regra e não um acaso** (§0.2 do
+brief): setenta linhas passam a `retirada` e trinta e seis entram. As que entram
+são de três famílias: as duas cadeias do rodapé que a lei obriga (o rótulo e a
+menção de gratuitidade), as do índice dos dezoito domínios e da legenda do mapa,
+e as do item 8, que são a mesma frase de antes com «limiar» trocado por «valor
+de referência».
+
+**AS CADEIAS DO ITEM 8 NÃO SÃO FRASES NOVAS**, e é por isso que entram e saem aos
+pares: cada uma tem a sua gémea `retirada` neste ficheiro, com a mesma razão
+escrita dos dois lados. O que mudou foi uma palavra, por decisão do diretor da
+manhã de 15.09 (`DECISIONS.md` §1.108), e o que a lista guarda é o rasto disso.
+
+**«A casa» não entra em cadeia nenhuma escrita neste bloco** (emenda do diretor
+das 16:35 UTC): em português, casa é a habitação, que o sítio também mede. Onde
+o sítio fala de si, diz «este projeto» ou «O Estado do País».
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| divulgacao | Texto gerado por inteligência artificial, segundo o Método . | palavras-do-rodape | viva | o rótulo de IA de todas as páginas construídas, na redação do item 1 do brief do P1 (15.09.2026, com a emenda do diretor das 16:35 UTC). É `divulgacao` como o que substitui: é a divulgação que o artigo 50.º, n.º 4 do Regulamento (UE) 2024/1689 obriga, e não uma frase escolhida pela casa. O que mudou: «política da casa» era decalque de *house policy* e «regras da casa» trocava-o por outro problema (em português, casa é a habitação); «IA» passa a «inteligência artificial», que é a palavra da lei; e o nome de quem responde sai. A porta é «Método», o nome da página onde a política vive |
+| divulgacao | Text generated by artificial intelligence, according to the Method . | palavras-do-rodape | viva | o rótulo de IA de todas as páginas construídas, na redação do item 1 do brief do P1 (15.09.2026, com a emenda do diretor das 16:35 UTC). É `divulgacao` como o que substitui: é a divulgação que o artigo 50.º, n.º 4 do Regulamento (UE) 2024/1689 obriga, e não uma frase escolhida pela casa. O que mudou: «política da casa» era decalque de *house policy* e «regras da casa» trocava-o por outro problema (em português, casa é a habitação); «IA» passa a «inteligência artificial», que é a palavra da lei; e o nome de quem responde sai. A porta é «Método», o nome da página onde a política vive |
+| divulgacao | Publicação gratuita | palavras-do-rodape | viva | a ficha da primeira página, com a menção de gratuitidade sozinha (item 2 do brief do P1, 15.09.2026, por decisão do diretor). Continua `divulgacao` porque continua a ser o artigo 15.º, n.º 1 da Lei de Imprensa a pedi-la; o que saiu foi o nome do diretor, e a leitura do artigo fica escrita em `src/data/politica-ia.mjs` com a data da saída |
+| divulgacao | Free of charge | palavras-do-rodape | viva | a ficha da primeira página, com a menção de gratuitidade sozinha (item 2 do brief do P1, 15.09.2026, por decisão do diretor). Continua `divulgacao` porque continua a ser o artigo 15.º, n.º 1 da Lei de Imprensa a pedi-la; o que saiu foi o nome do diretor, e a leitura do artigo fica escrita em `src/data/politica-ia.mjs` com a data da saída |
+| navegacao | Os domínios do país, e os números que este projeto já publica em cada um. | correcao-p1p2 | retirada | a linha de abertura da secção dos domínios sai (achados 9 e 10 da leitura a frio de 15.09.2026). Duas coisas erradas ao mesmo tempo: é prosa sobre o projeto numa página de conteúdo, que a norma §1.4 manda para o Sobre e para o Método, e promete «os números que este projeto já publica em cada um» quando a contagem é a das medidas que se leem nas páginas (duas linhas do livro-razão sem página de conteúdo não entram, e a triagem do lugar de direção mantém as contagens como estão). A lista diz o que é sem uma frase por cima: dezoito nomes e, ao lado de cada um, quantas medidas se leem nele |
+| navegacao | The country’s domains, and the numbers this project already publishes in each. | correcao-p1p2 | retirada | ver a razão na gémea portuguesa (achados 9 e 10, 15.09.2026) |
+| conteudo | O valor de referência é o do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, fixado no regulamento que criou o Procedimento e revisto pela Comissão Europeia. | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
+| conteudo | The reference value is the one of the Macroeconomic Imbalance Procedure scoreboard, set in the regulation that created the Procedure and revised by the European Commission. | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
+| conteudo | O valor de referência é o limite de défice que os Estados-Membros se comprometeram a respeitar no Pacto de Estabilidade e Crescimento. | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
+| conteudo | The reference value is the deficit limit that Member States pledged to keep to under the Stability and Growth Pact. | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
+| conteudo | O valor de referência é a taxa de crescimento da trajetória da despesa líquida com que Portugal se comprometeu e que o Conselho da União Europeia aprovou. | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
+| conteudo | The reference value is the growth rate of the net expenditure path that Portugal committed to and that the Council of the European Union approved. | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
+| conteudo | valor de referência da Comissão % · acima do valor de referência | correcao-p1p2 | retirada | a linha do valor de referência com o rótulo de quem o fixou sai da página do domínio com o cartão (achado 2 da leitura a frio de 15.09.2026): o cartão de uma medida diz o valor de referência e o lado na sua régua, e uma segunda linha a dizer o mesmo por baixo era a mesma coisa duas vezes. O nome de quem fixa o valor continua dito na frase que diz o que ele é, que fica na página |
+| conteudo | Commission reference value % · above the reference value | correcao-p1p2 | retirada | ver a razão na gémea portuguesa (achado 2, 15.09.2026) |
+| conteudo | valor de referência do Pacto de Estabilidade e Crescimento − % · acima do valor de referência | correcao-p1p2 | retirada | a linha do valor de referência com o rótulo de quem o fixou sai da página do domínio com o cartão (achado 2 da leitura a frio de 15.09.2026): o cartão de uma medida diz o valor de referência e o lado na sua régua, e uma segunda linha a dizer o mesmo por baixo era a mesma coisa duas vezes. O nome de quem fixa o valor continua dito na frase que diz o que ele é, que fica na página |
+| conteudo | Stability and Growth Pact reference value − % · above the reference value | correcao-p1p2 | retirada | ver a razão na gémea portuguesa (achado 2, 15.09.2026) |
+| conteudo | valor de referência recomendado pelo Conselho da UE % · acima do valor de referência | correcao-p1p2 | retirada | a linha do valor de referência com o rótulo de quem o fixou sai da página do domínio com o cartão (achado 2 da leitura a frio de 15.09.2026): o cartão de uma medida diz o valor de referência e o lado na sua régua, e uma segunda linha a dizer o mesmo por baixo era a mesma coisa duas vezes. O nome de quem fixa o valor continua dito na frase que diz o que ele é, que fica na página |
+| conteudo | reference value recommended by the Council of the EU % · above the reference value | correcao-p1p2 | retirada | ver a razão na gémea portuguesa (achado 2, 15.09.2026) |
+| navegacao | Procedimento dos Desequilíbrios Macroeconómicos · 13 medidas com valor de referência | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
+| navegacao | Macroeconomic Imbalance Procedure · 13 measures with a reference value | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
+| conteudo | Portugal ultrapassa 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 . | correcao-p1p2 | retirada | a palavra que dizia o lado errado numa das quatro (achado 7 da leitura a frio de 15.09.2026): passa a «falha», e a gémea nova está `viva` neste ficheiro, com a razão por extenso |
+| conteudo | Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 . | correcao-p1p2 | viva | a manchete de «Portugal na União Europeia» com a palavra que não diz o lado (achado 7 da leitura a frio de 15.09.2026). Das quatro medidas fora do valor de referência, uma está ABAIXO do seu (a posição de investimento internacional, a −50,2 contra −35) e o cartão dela diz-o: «ultrapassa» contava as quatro como excessos para cima. «Falha» diz o que as quatro têm em comum sem dizer o lado, que é o que a inglesa já fazia com «breaches», e por isso a inglesa não muda. Os dois algarismos são selados e o portão reconta-os |
+| conteudo | Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9 . | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
+| conteudo | medidas do painel cujo quadro publica um valor de referência | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
+| conteudo | panel measures whose scoreboard publishes a reference value | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
+| conteudo | medidas do painel cujo valor está dentro do valor de referência publicado | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
+| conteudo | panel measures whose value is inside the published reference value | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
+| conteudo | medidas do painel cujo valor está fora do valor de referência publicado | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
+| conteudo | panel measures whose value is outside the published reference value | palavras-do-rodape | viva | a redação nova da palavra que o item 8 do brief do P1 troca (15.09.2026, pela decisão do diretor da manhã de 15.09, `DECISIONS.md` §1.108): «limiar» sai do texto que o leitor vê e fica «valor de referência». A gémea antiga está `retirada` neste ficheiro, com a mesma razão. O dono do valor continua dito: o que saiu foi a palavra, não a atribuição |
+## As frases do cartão de uma medida (bloco P2, 15.09.2026)
+
+**O que sai antes do que entra.** O cartão de uma medida tinha dez pedaços de
+texto à vista, e passa a ter cinco. O que entra de novo são **quatro cadeias**,
+nas duas edições: a preposição que liga o valor ao período, e as três palavras da
+régua. O que sai são as duas linhas do tipo de uma área (acima, `retirada`), a
+legenda da marca da fonte em 319 rotas por edição (que continua `viva`, porque
+continua a render-se no índice do livro-razão), e os quatro rótulos de recibo que
+o cartão escrevia ao pé de cada número, que continuam `vivos` porque continuam a
+render-se no recibo, que é a página da linha.
+
+**«União Europeia» entrou no mesmo dia**, e a história dela é a regra desta lista
+a funcionar: foi escrita em `strings.mjs` de manhã e não entrou aqui, porque não
+se rendia em rota nenhuma e uma linha `viva` que não se rende fecha a construção;
+às 19:43 UTC o lugar de direção copiou para esta worktree as 27 linhas do agregado
+da União que o motor selou, a cadeia passou a render-se, e a linha entra no commit
+que a rende. É a regra escrita na cabeça deste ficheiro: «uma rota entra no commit
+em que a sua página é reconstruída e as suas frases são classificadas».
+
+**As três palavras da régua são as MESMAS CHAVES que o bloco P1 escreve** para as
+cadeias da primeira página, pela decisão do diretor de 15.09.2026 de manhã
+(«limiar» sai do texto que o leitor vê). As duas metades da troca correm em ramos
+separados; o texto é um só.
+
+| conteudo | em | cartao | viva | a preposição que liga o valor ao período na primeira linha do cartão de uma medida («17,6 variação anual média, % em 2025»), no lugar do rótulo «Dados de» (item 1b do brief do P2, 15.09.2026). É `conteudo` porque é a gramática da legenda de um número, como a unidade e o período que ela liga: sem ela, o cartão escrevia três campos em fila e o rótulo do recibo a dizer qual era qual. O valor, a unidade e o período não estão no texto acima porque são origem declarada (`data-claim` e `data-linha-campo`), e é essa a forma que a régua recolhe. Rende-se nas nove páginas de área |
+| conteudo | in | cartao | viva | ver a razão na gémea portuguesa (item 1b do P2, 15.09.2026) |
+| conteudo | abaixo do valor de referência | b2-peca1 | retirada | A palavra de direção deu lugar ao estado dentro ou fora e à direção do valor de referência entre parênteses. A construção deixou de render esta cadeia, que não permanece como fragmento de outra frase. |
+| conteudo | entre os valores de referência | b2-peca1 | retirada | A palavra de direção deu lugar ao estado dentro ou fora e à direção do valor de referência entre parênteses. A construção deixou de render esta cadeia, que não permanece como fragmento de outra frase. |
+| conteudo | between the reference values | b2-peca1 | retirada | A palavra de direção deu lugar ao estado dentro ou fora e à direção do valor de referência entre parênteses. A construção deixou de render esta cadeia, que não permanece como fragmento de outra frase. |
+| conteudo | As áreas seguem a orgânica do Governo em funções, o XXV Governo Constitucional. | correcao-p1p2 | retirada | a redação decalcada do inglês sai (achado 17 da leitura a frio de 15.09.2026); a gémea nova está `viva` neste ficheiro |
+| conteudo | The areas follow the structure of the Government in office, the XXV Constitutional Government. | correcao-p1p2 | retirada | ver a razão na gémea portuguesa (achado 17, 15.09.2026) |
+| conteudo | As áreas são as do Governo em funções (o XXV Governo Constitucional). | correcao-p1p2 | viva | a frase da orgânica reescrita em português de jornal (achado 17 da leitura a frio de 15.09.2026). «Seguem a orgânica do Governo em funções, o XXV Governo Constitucional» era a sintaxe inglesa vestida de português, com a aposição atrás e a palavra do diploma («orgânica») no lugar da do leitor. O que a frase diz é de quem são as áreas. Rende-se em `/areas` e em mais lado nenhum; o nome do diploma não está no texto acima porque é origem declarada (`data-nonledger="referencia-legal"`) |
+| conteudo | The areas are those of the Government in office (the XXV Constitutional Government). | correcao-p1p2 | viva | ver a razão na gémea portuguesa (achado 17, 15.09.2026) |
+| conteudo | União Europeia | cartao | viva | o nome do agregado com que a régua de um cartão compara o número (item 1d do brief do P2, 15.09.2026). É `conteudo` porque diz com o quê o número se compara, que é metade da informação da régua; o valor ao lado é uma linha do livro-razão, com a marca da fonte dela, e por isso não está no texto acima. Rende-se onde a linha `<slug>-<período>-ue` existe, que são vinte e sete das trinta e duas medidas: as outras cinco não a têm porque o conjunto do Eurostat não traz valor no agregado naquele período, e o cartão desenha-se sem a comparação europeia sem o dizer por palavras |
+| conteudo | European Union | cartao | viva | ver a razão na gémea portuguesa (item 1d do P2, 15.09.2026) |
+| conteudo | : União Europeia : | correcao-p1p2 | viva | a régua de um cartão de medida, com os valores tirados: o rótulo do período anterior, o nome do agregado europeu e os dois valores, que são linhas do livro-razão. Entra no inventário porque o cartão passou a render-se na página do domínio, que é rota inventariada (achado 2 da leitura a frio de 15.09.2026); nas páginas de área rendia-se desde 15.09 sem nenhuma rota o ver |
+| conteudo | : European Union : | correcao-p1p2 | viva | ver a razão na gémea portuguesa (achado 2, 15.09.2026) |
+| conteudo | : União Europeia : acima do valor de referência ( %) | b2-peca1 | retirada | B2, peça 1: a régua passa a dizer o estado e a direção; a cor repete o estado e os números conservam as suas marcas de origem. |
+| conteudo | : European Union : above the reference value ( %) | b2-peca1 | retirada | B2, peça 1: a régua passa a dizer o estado e a direção; a cor repete o estado e os números conservam as suas marcas de origem. |
+| conteudo | A licença cobre o conjunto: a estrutura, os valores deste projeto, as derivações e as descrições. Os excertos transcritos das fontes continuam sob os termos de quem os publicou. | p3 | viva | «os valores da casa» passa a «os valores deste projeto» (decisão do diretor de 15.09.2026 às 16:35 UTC; norma §1.3; bloco P3, item 3) |
+| conteudo | A limited set of measures with which the European Commission captures the most relevant internal and external aspects of macroeconomic imbalances, each with its indicative reference value. | p3 | viva | ver a razão na gémea portuguesa |
+| conteudo | Anyone named may reply: the reply is published beside the piece, unedited, through the same address as the corrections. | p3 | retirada | ver a razão na gémea portuguesa |
+| navegacao | lido na fonte a · verificado a | p3 | retirada | ver a razão na linha das três datas da leitura breve da primeira página: as duas datas saem da dobra da página do domínio pela mesma decisão de 16.09.2026 (bloco P3, item 2) |
+| navegacao | read at the source on · verified on | p3 | retirada | ver a razão na gémea portuguesa |
+| navegacao | Definição de · | correcao-p1p2 | viva | os dois rótulos da linha da origem de uma definição, com os nomes da fonte tirados. Era «Publicado por ·», que é o rótulo do publicador de uma linha do livro-razão: ao pé de uma frase citada da Comissão lia-se como se aquele fosse o publicador do número (achado 2, 15.09.2026). A gémea antiga está `retirada` neste ficheiro |
+| navegacao | Definition by · | correcao-p1p2 | viva | ver a razão na gémea portuguesa (achado 2, 15.09.2026) |
+| conteudo | Quem for nomeado pode responder: a resposta publica-se ao lado da peça, sem edição, pelo mesmo endereço das correções. | p3 | retirada | a passagem de correção de 16.09.2026 ao fim do dia (achado 9 da leitura a frio do Codex): a preposição passa de «pelo» a «para», que é a que a página já usa para o mesmo endereço («escreve para correcoes@oestadodopais.pt»). A gémea nova está `viva` no fim deste ficheiro. A razão de origem: o direito de resposta, que é a segunda das três proteções da emenda de 15.09.2026 da `design/observatorio/POLITICA-DA-AUTONOMIA.md` e que o diretor mandou escrever a 16.09.2026 às 08:25 UTC (bloco P3, item 8). Vive na página das correções porque é aí que a resposta se pede, e não se repete em página nenhuma: a norma dos nomes diz-se no Sobre, uma vez (norma §1.4) |
+| navegacao | Sem JavaScript, a lista mostra todos os estudos. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| navegacao | Sem JavaScript, o botão leva à lista inteira dos concelhos, agrupada por distrito e por ilha. | b1-peca2 | retirada | deixou de ser verdade quando o índice dos concelhos passou a redirecionamento, e era a página a explicar o que faz sem guião (achado D8 e Codex 9, 21.09.2026) |
+| conteudo | The licence covers the dataset: its structure, this project’s values, the derivations and the descriptions. Excerpts transcribed from sources remain under their publishers’ terms. | p3 | viva | ver a razão na gémea portuguesa |
+| conteudo | Um conjunto limitado de medidas com que a Comissão Europeia apanha os aspetos internos e externos mais relevantes dos desequilíbrios macroeconómicos, cada uma com o seu valor de referência indicativo. | p3 | retirada | a passagem de correção de 16.09.2026 ao fim do dia (achado 9 da leitura a frio do Codex): «apanha os aspetos» não é português de jornal, e a frase passa a dizer «abrange os aspetos». A gémea inglesa não muda, porque o verbo dela é o do excerto selado da Comissão («designed to capture the most relevant internal and external aspects»). A razão de origem: a definição do painel do Procedimento, com «valor de referência indicativo» no lugar de «limiar indicativo» (decisão do diretor de 15.09.2026 de manhã; bloco P3, item 5) |
+| navegacao | Without JavaScript, the button leads to the full list of municipalities, grouped by district and island. | b1-peca2 | retirada | ver a razão na gémea portuguesa (achado D8, 21.09.2026) |
+| navegacao | Without JavaScript, the list shows every study. | B1-peca1 | retirada | explica a página; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+
+## As frases da passagem de correção do P3 (16.09.2026, depois da leitura a frio)
+
+**Três cadeias mudam de texto, e nenhuma muda de sentido.** A triagem do lugar de direção sobre a leitura a frio
+do Codex (achado 9) leu as frases que o bloco reescreveu de manhã com a pergunta da norma §5.2 e recusou sete. As
+três que passam por este inventário estão aqui; as outras quatro vivem no Método, no Sobre e na política de
+inteligência artificial, que a Emenda 15 isenta da contagem, e ficam escritas na §1.110 do `DECISIONS.md`.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Quem for nomeado pode responder: a resposta publica-se ao lado da peça, sem edição, para o mesmo endereço das correções. | p3 | retirada | a segunda passagem de correção de 16.09.2026, por decisão do lugar de direção: a preposição «para» prendia-se ao verbo errado («a resposta publica-se … para o mesmo endereço»), e a frase reordena-se para que ela fique ao pé de «responder», que é a quem pertence. A gémea nova está `viva` no fim deste ficheiro. A razão de origem: o direito de resposta, que é a segunda das três proteções da emenda de 15.09.2026 da `design/observatorio/POLITICA-DA-AUTONOMIA.md` e que o diretor mandou escrever a 16.09.2026 às 08:25 UTC (bloco P3, item 8). Vive na página das correções porque é aí que a resposta se pede, e não se repete em página nenhuma (norma §1.4). A preposição é a da passagem de correção do fim do dia: «para o mesmo endereço», como a página já escreve na linha de cima |
+| conteudo | Anyone named may reply: the reply is published beside the piece, unedited, to the same address as the corrections. | p3 | retirada | ver a razão na gémea portuguesa |
+| conteudo | Um conjunto limitado de medidas com que a Comissão Europeia abrange os aspetos internos e externos mais relevantes dos desequilíbrios macroeconómicos, cada uma com o seu valor de referência indicativo. | p3 | viva | a definição do painel do Procedimento, com «abrange» no lugar de «apanha» (achado 9 da leitura a frio de 16.09.2026) e «valor de referência indicativo» no lugar de «limiar indicativo» (decisão do diretor de 15.09.2026 de manhã). O excerto selado da Comissão não muda, e a gémea inglesa continua a dizer «captures», que é o verbo dele |
+
+## A frase reordenada do direito de resposta (16.09.2026, segunda passagem de correção)
+
+**Uma cadeia muda de ordem nas duas edições, e não muda de sentido.** O lugar de direção leu a frase do direito
+de resposta depois da primeira passagem e apanhou o que a troca de preposição tinha deixado por resolver: com
+«para» no fim, o complemento prende-se a «publica-se» e não a «responder». A frase reordena-se, e o endereço
+fica ao pé do verbo a que pertence. As duas gémeas de cima ficam `retirada`.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Quem for nomeado pode responder para o mesmo endereço das correções: a resposta publica-se ao lado da peça, sem edição. | p3 | viva | o direito de resposta, que é a segunda das três proteções da emenda de 15.09.2026 da `design/observatorio/POLITICA-DA-AUTONOMIA.md` e que o diretor mandou escrever a 16.09.2026 às 08:25 UTC (bloco P3, item 8). Vive na página das correções porque é aí que a resposta se pede, e não se repete em página nenhuma (norma §1.4). A ordem é a da segunda passagem de correção do fim do dia: o endereço ao pé de «responder», que é a quem pertence |
+| conteudo | Anyone named may reply to the same address as the corrections: the reply is published beside the piece, unedited. | p3 | viva | ver a razão na gémea portuguesa |
+
+## As frases do E1 · «Évora 2027: o prometido, o painel, o dinheiro» (16.09.2026)
+
+**Quatro cadeias novas, e são uma frase por edição.** O bloco E1 põe no arquivo um trabalho novo, e a única
+prosa deste projeto que ele acrescenta à superfície é a descrição do estudo nas duas edições. Não é
+transcrição: o documento tem a sua frase de abertura e ela fica no documento, e a descrição diz, numa frase, o
+que o estudo põe lado a lado. Por não ser transcrição não leva `data-verbatim`, e por isso entra aqui, ao
+contrário das descrições do «Prometido, Pago, Auditado» e dos «Pelouros», que são a frase de abertura
+transcrita e saem do inventário pela marca.
+
+**Duas das quatro são a mesma frase com o prefixo da língua**: a página de um estudo rende as descrições das
+duas edições numa fila, cada uma com o seu selo de língua, e a régua lê o bloco inteiro, prefixo incluído. É a
+mesma forma que as linhas «PT …» e «EN …» dos outros estudos já têm neste ficheiro.
+
+**Nenhuma linha saiu, e nenhuma mudou de estado.** O corpo do documento não passa por aqui: a página de texto
+compõe-o do registo do motor, e a régua tira da superfície a região `data-registo`.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | O que a candidatura de Évora a Capital Europeia da Cultura prometeu, o que o painel de peritos da Comissão Europeia escreveu sobre isso, e o dinheiro escrito em atos públicos. | e1-evora-2027 | viva | — |
+| conteudo | PT O que a candidatura de Évora a Capital Europeia da Cultura prometeu, o que o painel de peritos da Comissão Europeia escreveu sobre isso, e o dinheiro escrito em atos públicos. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+| conteudo | What Évora’s bid for European Capital of Culture promised, what the European Commission’s expert panel wrote about it, and the money written into public acts. | e1-evora-2027 | viva | — |
+| conteudo | EN What Évora’s bid for European Capital of Culture promised, what the European Commission’s expert panel wrote about it, and the money written into public acts. | B1-peca1 | retirada | segunda porta; B1, 17.09.2026, retirada da capa ou da lista antiga; dados e documentos conservados |
+
+<!-- B1: rótulos fechados e abertura transcrita, 17.09.2026. -->
+| conteudo | A água de Portugal: onde está, de onde vem e o que a autonomia exigiria de facto. | B1-peca1 | viva | |
+| navegacao | By place | r1 | retirada | ver a razão na gémea portuguesa (bloco R1, I144, 23.09.2026) |
+| navegacao | Fontes e verificação | B1-peca1 | viva | |
+| navegacao | Fontes e verificação → | B1-peca1 | viva | |
+| navegacao | Por lugar | r1 | retirada | a secção «Por lugar» saiu da lista dos estudos (bloco R1, 23.09.2026, I144): a lista é uma só, do mais recente para o mais antigo, e o lugar e o tema de cada estudo dizem-se na sua entrada |
+| conteudo | Portugal's water, where it is, where it comes from, and what autonomy would actually take. | B1-peca1 | viva | |
+| navegacao | Sources and verification | B1-peca1 | viva | |
+| navegacao | Sources and verification → | B1-peca1 | viva | |
+| navegacao | Edições | B1-peca1 | retirada | segunda porta; B1, 17.09.2026 |
+| navegacao | Editions | B1-peca1 | retirada | segunda porta; B1, 17.09.2026 |
+| navegacao | Ler no sítio | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026 |
+| navegacao | Read on the site | B1-peca1 | retirada | palavra fora do lugar; B1, 17.09.2026 |
+| navegacao | Ler o documento | B1-peca1 | retirada | segunda porta; B1, 17.09.2026 |
+| navegacao | Read the document | B1-peca1 | retirada | segunda porta; B1, 17.09.2026 |
+| conteudo | Medida | B1-peca1 | viva | correção do achado 7: campo do recibo publicado, conferido por L6 no livro-razão |
+| conteudo | Fonte | B1-peca1 | viva | correção do achado 7: campo do recibo publicado, conferido por L6 no livro-razão |
+| conteudo | Verificado a | B1-peca1 | viva | correção do achado 7: campo do recibo publicado, conferido por L6 no livro-razão |
+| conteudo | Measure | B1-peca1 | viva | correção do achado 7: campo do recibo publicado, conferido por L6 no livro-razão |
+| conteudo | Source | B1-peca1 | viva | correção do achado 7: campo do recibo publicado, conferido por L6 no livro-razão |
+| conteudo | Verified on | B1-peca1 | viva | correção do achado 7: campo do recibo publicado, conferido por L6 no livro-razão |
+| conteudo | Temas | b1-peca2 | viva | — |
+| conteudo | Themes | b1-peca2 | viva | — |
+| conteudo | Série anual da Direção-Geral das Autarquias Locais, que publica os dados das contas das câmaras. | b1-peca2 | retirada | o cartão leva uma frase de definição só, e esta descrevia a fonte; a ressalva do que a coluna exclui é do recibo (achado D6, 21.09.2026) |
+| conteudo | The annual series of the local-government directorate, which publishes the municipalities’ accounts data. | b1-peca2 | retirada | ver a razão na gémea portuguesa (achado D6, 21.09.2026) |
+| conteudo | acima da média do país | b1-peca2 | viva | — |
+| conteudo | abaixo da média do país | b1-peca2 | viva | — |
+| conteudo | above the country average | b1-peca2 | viva | — |
+| conteudo | below the country average | b1-peca2 | viva | — |
+| conteudo | Estudos sobre este lugar | b1-peca2 | viva | — |
+| conteudo | Studies about this place | b1-peca2 | viva | — |
+| conteudo | Dias que a câmara demora a pagar aos fornecedores, pela lista anual da Direção-Geral das Autarquias Locais. | b1-peca2 | retirada | Bloco R2 (03.10.2026, achados 2, 23 e 26 da auditoria dos rótulos): a nota da medida do concelho passa a dizer o que se conta, com o termo da fonte entre parênteses; a forma nova está na secção do bloco r2. |
+| conteudo | Days the council takes to pay its suppliers, from the annual list of the Directorate-General for Local Authorities. | b1-peca2 | retirada | Bloco R2 (03.10.2026, achados 2, 23 e 26 da auditoria dos rótulos): a nota da medida do concelho passa a dizer o que se conta, com o termo da fonte entre parênteses; a forma nova está na secção do bloco r2. |
+| conteudo | O que a câmara deve no fim do ano, pela série anual da Direção-Geral das Autarquias Locais. | b1-peca2 | retirada | Bloco R2 (03.10.2026, achados 2, 23 e 26 da auditoria dos rótulos): a nota da medida do concelho passa a dizer o que se conta, com o termo da fonte entre parênteses; a forma nova está na secção do bloco r2. |
+| conteudo | What the council owes at the end of the year, from the annual series of the Directorate-General for Local Authorities. | b1-peca2 | retirada | Bloco R2 (03.10.2026, achados 2, 23 e 26 da auditoria dos rótulos): a nota da medida do concelho passa a dizer o que se conta, com o termo da fonte entre parênteses; a forma nova está na secção do bloco r2. |
+| navegacao | Todas as medidas de | b1-peca2 | viva | — |
+| navegacao | All measures for | b1-peca2 | viva | — |
+| conteudo | O que as fontes publicam sobre o concelho de Ferreira do <lugar>: população, poder de compra, emprego, empresas, dívida e execução orçamental. | b1-peca2 | viva | — |
+| conteudo | O que as fontes publicam sobre o concelho de Viana do <lugar>: população, poder de compra, emprego, empresas, dívida e execução orçamental. | b1-peca2 | viva | — |
+| conteudo | What the sources publish about the municipality of Ferreira do <lugar>: population, purchasing power, employment, enterprises, debt and budget execution. | b1-peca2 | viva | — |
+| conteudo | What the sources publish about the municipality of Viana do <lugar>: population, purchasing power, employment, enterprises, debt and budget execution. | b1-peca2 | viva | — |
+
+## B1, peça 3: a leitura do país e os estudos recentes
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | A dívida pública desceu de % para % do PIB num ano e continua acima da média da União Europeia, que é de % . O desemprego está nos % , a par da média europeia , e os preços das casas subiram % num ano, contra % na União. | r1 | retirada | a leitura do país passou a dizer as duas leituras oficiais da dívida (bloco R1, 23.09.2026, I147, §1.124), numa frase do lugar de direção entregue no prompt do bloco; a nova está na secção do bloco R1 |
+| conteudo | A penalização por antecipar a reforma um ano é de % ou de % , consoante a porta por onde o trabalhador entra, quando o valor atuarialmente neutro calculado pelo próprio relatório é de % : a lei falha nos dois sentidos, e é mais dura com quem se desvia menos. | k2 | retirada | a frase do estudo ganhou a explicação dos termos que um leitor comum não conhecia (o brief K2, item 7, e a I182), sem mudar um número nem a origem registada; a frase nova está na secção do K2 |
+| conteudo | Do dinheiro do plano de recuperação contratado no concelho, a universidade tem mais do que a câmara: € contra € . Da soma aprovada para o concelho, % está vencida contra % paga. | b2-peca1 | retirada | B2, peça 1: a unidade monetária escreve-se com a palavra da linha, pela tabela de unidades, sem mudar os valores nem a leitura. |
+| conteudo | Portugal Segurança social e pensões publicado a | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
+| conteudo | publicado a · | b1-peca3-correcao | retirada | O rótulo ficava sem data; a linha de mudança passa a dizer que se publicou um estudo. |
+| conteudo | Évora Economia e finanças públicas publicado a | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
+| conteudo | O orçamento de Évora afastou-se do dinheiro que chega, e o aperto aparece nas faturas por pagar e na fila de pagamento, não na dívida legal: dias para pagar a um fornecedor, e euros em atraso, com a dívida total ainda abaixo do limite. | e1 | viva | A leitura do estudo das contas (bloco E1), a mesma frase da leitura do «Orçamentado, Pago, Devido», que a lista dos estudos e a primeira página rendem; conferida pela sinopse e pela lista fechada. |
+| conteudo | Évora’s budget has drifted from the money that arrives, and the strain shows in unpaid invoices and the payment queue, not in the legal debt: days to pay a supplier, and euros overdue, with total debt still below the limit. | e1 | viva | A leitura do estudo das contas (bloco E1), a mesma frase da leitura do «Orçamentado, Pago, Devido», que a lista dos estudos e a primeira página rendem; conferida pela sinopse e pela lista fechada. |
+| conteudo | Os pelouros de Évora ficam com a lista do presidente nos mandatos em que a câmara publica a repartição, e as contas do município não são cortadas de maneira que permita dizer quanto gastou cada vereador: no mandato de , e designações repartidas por duas pessoas; a câmara instalada em tem lugares. | k2 | retirada | a frase do estudo ganhou a explicação dos termos que um leitor comum não conhecia (o brief K2, item 7, e a I182), sem mudar um número nem a origem registada; a frase nova está na secção do K2 |
+| conteudo | Évora’s portfolios sit with the president’s own list in the terms for which the council publishes the split, and the municipality’s accounts are not cut in a way that lets anyone say what each councillor spent: in the term, and designations split between two people; the council installed in has seats. | k2 | retirada | a frase do estudo ganhou a explicação dos termos que um leitor comum não conhecia (o brief K2, item 7, e a I182), sem mudar um número nem a origem registada; a frase nova está na secção do K2 |
+| conteudo | O dinheiro do Estado é o que chegou; o da câmara é o que falta. Os documentos mostram três totais diferentes para o custo do evento e nenhum documento que os concilie, porque o protocolo que reparte o dinheiro entre as partes não está publicado. | e1b | viva | A leitura do Évora 2027 (passagem E1b, decisão 4 do lugar de direção): as duas frases impressas na abertura do estudo que a origem em src/data/leituras.mjs cita, sem as duas datas e com «a câmara» no lugar de «o município», pelo vocabulário fechado (§1.98); a lista dos estudos e a página de Évora rendem-na como resumo do estudo. |
+| conteudo | The State’s money is what arrived; the council’s is what is missing. The documents show three different totals for the cost of the event and no document that reconciles them, because the protocol that divides the money between the parties is not published. | e1b | viva | ver a razão na gémea portuguesa |
+| conteudo | Évora Governo e democracia publicado a | e1 | viva | Texto composto do lugar, do tema e da data de um estudo (bloco E1, o estudo de quem governou na primeira página), conferido pela lista fechada do país. |
+| conteudo | Évora Government and democracy published on | e1 | viva | Texto composto do lugar, do tema e da data de um estudo (bloco E1, o estudo de quem governou na primeira página), conferido pela lista fechada do país. |
+| conteudo | O orçamento, a cobrança, a dívida e a certificação das contas da Câmara de Évora. | e1 | viva | A descrição de um dos quatro estudos de Évora (bloco E1): uma reformulação do título, sem números. |
+| conteudo | The budget, what was collected, the debt and the certification of the accounts of the Câmara de Évora. | e1 | viva | A descrição de um dos quatro estudos de Évora (bloco E1): uma reformulação do título, sem números. |
+| conteudo | As eleições, os executivos, os pelouros e as decisões da Câmara de Évora. | e1 | viva | A descrição de um dos quatro estudos de Évora (bloco E1): uma reformulação do título, sem números. |
+| conteudo | The elections, the executives, the portfolios and the decisions of the Câmara de Évora. | e1 | viva | A descrição de um dos quatro estudos de Évora (bloco E1): uma reformulação do título, sem números. |
+| conteudo | A economia do concelho de Évora e o dinheiro público que lhe chega por fora da câmara. | e1 | viva | A descrição de um dos quatro estudos de Évora (bloco E1): uma reformulação do título, sem números. |
+| conteudo | The economy of the municipality of Évora and the public money that reaches it outside the council. | e1 | viva | A descrição de um dos quatro estudos de Évora (bloco E1): uma reformulação do título, sem números. |
+| conteudo | O que a candidatura de Évora a Capital Europeia da Cultura prometeu, o que o painel europeu escreveu e o dinheiro nos atos públicos. | e1 | viva | A descrição de um dos quatro estudos de Évora (bloco E1): uma reformulação do título, sem números. |
+| conteudo | What Évora’s bid for European Capital of Culture promised, what the European panel wrote and the money in the official acts. | e1 | viva | A descrição de um dos quatro estudos de Évora (bloco E1): uma reformulação do título, sem números. |
+| conteudo | Não estabelecido: as fontes dos pelouros só têm, deste mandato, a biografia de uma vereadora, escrita depois; não registam o presidente nem os outros membros. | e1 | viva | A nota do mandato de 2009 a 2013 na ficha de Évora (bloco E1): uma só afirmação, sobre as fontes dos pelouros, que deste mandato só têm a biografia de uma vereadora, escrita depois, e não registam o presidente nem os outros membros (o estudo de quem governou a câmara di-lo). |
+| conteudo | Not established: of this term, the portfolio sources hold only a councillor’s biography, written afterwards; they record neither the president nor the other members. | e1 | viva | A nota do mandato de 2009 a 2013 na ficha de Évora (bloco E1): uma só afirmação, sobre as fontes dos pelouros, que deste mandato só têm a biografia de uma vereadora, escrita depois, e não registam o presidente nem os outros membros (o estudo de quem governou a câmara di-lo). |
+| conteudo | As fontes dos pelouros registam a repartição deste mandato, e ela está no estudo de quem governou a câmara. | e1 | viva | A nota dos mandatos de 2013 a 2017 e de 2017 a 2021 na ficha de Évora (bloco E1, I180): dizia que as capturas da repartição começavam em 2021, e o estudo dos pelouros data-as de outubro de 2014. |
+| conteudo | The portfolio sources record this term’s split, and it is in the study of who governed the council. | e1 | viva | ver a razão na gémea portuguesa |
+| navegacao | (in Portuguese) | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
+| conteudo | Of the recovery-plan money contracted in the municipality, the university holds more than the council: € against € . Of the sum approved for the municipality, % is overdue against % paid. | b2-peca1 | retirada | B2, peça 1: a unidade monetária escreve-se com a palavra da linha, pela tabela de unidades, sem mudar os valores nem a leitura. |
+| conteudo | Portugal Social security and pensions published on | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
+| conteudo | Public debt fell from % to % of GDP in a year and remains above the European Union average of % . Unemployment stands at % , level with the European average , and house prices rose % in a year, against % in the Union. | r1 | retirada | ver a razão na gémea portuguesa (bloco R1, I147, 23.09.2026) |
+| conteudo | The penalty for retiring one year early is % or % , depending on which door the worker comes through, when the actuarially neutral figure calculated by the report itself is % : the law misses in both directions, and is harshest on those who deviate least. | k2 | retirada | a frase do estudo ganhou a explicação dos termos que um leitor comum não conhecia (o brief K2, item 7, e a I182), sem mudar um número nem a origem registada; a frase nova está na secção do K2 |
+| conteudo | published on · | b1-peca3-correcao | retirada | O rótulo ficava sem data; a linha de mudança passa a dizer que se publicou um estudo. |
+| conteudo | Évora Economy and public finances published on | b1-peca3 | viva | Leitura aprovada ou texto composto dos estudos e das datas existentes, conferido pela lista fechada do país. |
+| conteudo | → | b1-peca3 | viva | Passagem entre valores e marca de incerteza das correções declaradas. |
+| conteudo | → · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado | b1-peca3 | viva | Passagem entre valores e marca de incerteza das correções declaradas. |
+| conteudo | → · a field not confirmed against the source, not a doubt about what is published | b1-peca3 | viva | Passagem entre valores e marca de incerteza das correções declaradas. |
+
+## B1, peça 3: correção dos olhos e das publicações, 22.09.2026
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Estudos recentes | b1-peca3-correcao | viva | Rótulo declarado em ROTULOS_B1, conferido pela lista fechada do país. |
+| conteudo | Recent studies | b1-peca3-correcao | viva | Rótulo declarado em ROTULOS_B1, conferido pela lista fechada do país. |
+| conteudo | Estudo publicado · | b1-peca3-correcao | viva | Rótulo declarado em ROTULOS_B1, conferido pela lista fechada do país. |
+| conteudo | Study published · | b1-peca3-correcao | viva | Rótulo declarado em ROTULOS_B1, conferido pela lista fechada do país. |
+
+## B1, peça 3, segunda correção de 22.09.2026
+
+| classe | frase | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | A leitura do país e os números oficiais por tema, cada um com a sua fonte, o mapa dos 308 concelhos e os estudos mais recentes. | pp1 | retirada | a descrição da primeira página saiu com o bloco PP1 (28.09.2026): a leitura do país e os números por tema deixaram de estar na primeira página, e a descrição passou a dizer o que se passa e as seis entradas (linha nova na secção do PP1). Estava ditada pelo lugar de direção no B1 |
+| navegacao | The country's reading and the official numbers by theme, each with its source, the map of the 308 municipalities and the most recent studies. | pp1 | retirada | edição inglesa da descrição retirada; ver a razão na gémea portuguesa (bloco PP1, 28.09.2026) |
+
+## As frases do bloco R1 · o lado do leitor depois da leitura de fora (23.09.2026)
+
+*O bloco escreveu oito cadeias novas e trouxe uma de volta. **A leitura do país**
+passou a dizer as duas leituras oficiais da dívida, na frase do lugar de direção
+(§1.124); a data da notificação e o ano entre parênteses são campos conferidos
+das linhas do INE e saem da contagem como os valores. **A frescura** de um cartão
+de concelho diz que a fonte já publicou um período mais recente do que o da
+linha; o período e a data em que isso se leu têm marca própria. **As definições
+das empresas** escrevem o setor por extenso, provado pela resposta do Eurostat
+ao pedido da linha, e a da dívida volta a ser a frase que o achado 6 de
+14.09.2026 tinha retirado. **O molde «:»** é a régua do cartão da sobrecarga do
+custo da habitação sem a média da União, até o B2 a trazer com a medida por
+regime de ocupação. As retiradas estão no seu lugar no ficheiro, com a razão.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | A dívida pública desceu de % para % do PIB num ano, pela notificação de abril publicada pelo Eurostat, e a segunda notificação do INE, de e ainda provisória, revê-a para % ( % em ); continua acima da média da União Europeia, que é de % . O desemprego está nos % , a par da média europeia , e os preços das casas subiram % num ano, contra % na União. | pp1 | retirada | a leitura do país saiu da primeira página com o bloco PP1 (28.09.2026, §1.133): prendia nove valores e fechava a construção quando um mudava; o que ela dizia está nos blocos de «O que se passa», com condições em vez de valores presos, e as palavras dos blocos são conferidas pela célula dos blocos (`tests/inicio/blocos.mjs`). Se a frase voltar, a construção fecha |
+| conteudo | Public debt fell from % to % of GDP in a year, by the April notification published by Eurostat, and the INE’s second notification of , still provisional, revises it to % ( % in ); it remains above the European Union average of % . Unemployment stands at % , level with the European average , and house prices rose % in a year, against % in the Union. | pp1 | retirada | edição inglesa da leitura do país retirada; ver a razão na gémea portuguesa (bloco PP1, 28.09.2026) |
+| conteudo | a fonte já publicou | r1 | viva | a frescura ao pé do período, nos cartões de um concelho cuja fonte já publicou um período mais recente do que o da linha (bloco R1, 23.09.2026, I146). O período da fonte e a data em que se leu saem de `src/data/frescura.mjs` com marca própria, pela mesma conta que o recibo faz, e o `check:formas` (F17) confere que a frase só se rende quando a fonte tem um período mais recente, e que se rende sempre que tem. «lido a», que vem a seguir, já estava declarado pelo bloco da frescura de 04.09.2026 |
+| conteudo | the source has already published | r1 | viva | ver a razão na gémea portuguesa (bloco R1, I146, 23.09.2026) |
+| conteudo | Consolidated debt of non-financial corporations, as a percentage of GDP. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | O fluxo de crédito consolidado às sociedades não financeiras, sem o investimento direto estrangeiro, em percentagem da dívida que elas tinham no período anterior, também sem o investimento direto estrangeiro. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | The consolidated credit flow to non-financial corporations, excluding foreign direct investment, as a percentage of their debt stock in the previous period, also excluding foreign direct investment. | b2-peca1 | retirada | B2, peça 1: a definição passa a ser a pergunta do leitor; as origens seladas mantêm-se em DEFINICOES_DAS_MEDIDAS. A pergunta está declarada na secção deste bloco. |
+| conteudo | : | r1 | viva | a régua do cartão da sobrecarga do custo da habitação sem a média da União (bloco R1, 23.09.2026, I138): fica o período anterior com o seu valor, que são um campo da linha e uma linha do livro-razão e saem da contagem, e sobram os dois pontos. É a régua «: União Europeia :» sem o agregado europeu; a média volta com a medida por regime de ocupação, no B2 |
+
+## B2, peça 1: o veredicto e a pergunta do leitor (23.09.2026)
+
+As definições passam a perguntas, mantendo as origens e os números selados. Os limites do grupo etário e da sobrecarga continuam marcados e saem destas cadeias recolhidas. A pergunta da taxa de câmbio efetiva real continua sob a conferência da K6; a sua frase com origem não é recolhida nas rotas em que se rende. A pergunta dos inquilinos a preço de mercado distingue o regime de ocupação; a do total passa a dizê-lo.
+
+As formas declaradas em `s.estado` são «fora do valor de referência», «dentro do valor de referência», «fora dos valores de referência» e «dentro dos valores de referência», e as gémeas «outside the reference value», «within the reference value», «outside the reference values» e «within the reference values». A forma de fora de uma banda não é uma linha viva desta tabela porque nenhuma medida publicada a rende nesta cabeça; a planta da K15 exerce-a. As direções e os valores são conferidos pela mesma célula.
+
+O veredicto do país e o cartão das câmaras são contagens da prova. A V1 e a V2 conferem as frases inteiras, com as chaves e as portas; a recolha do inventário tira os valores dessas chaves e as ligações aos nomes, conservando as palavras entre eles. Os algarismos podem mudar sem uma segunda contagem escrita nesta tabela. As dicas da prova continuam inventariadas. A leitura do país existente conserva-se; nas leituras com dinheiro muda apenas a unidade para a palavra da linha.
+
+As palavras antigas «acima do valor de referência», «abaixo do valor de referência», «entre os valores de referência» e as inglesas ficam enquanto se renderem nas leituras europeias e no texto do tema da economia. Uma cadeia curta que deixe de ser bloco, mas permaneça dentro de uma frase legítima, sai da tabela em vez de ficar proibida. O molde «:» mantém-se porque há réguas só com o período anterior, incluindo o total da habitação.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Quanto devem as administrações públicas, em percentagem do que o país produz num ano? | b2-peca1-correcao-2 | retirada | Achado 8 da leitura a frio: a origem escreve «in % of GDP» e não define o PIB; a glosa «do que o país produz num ano» era da casa, sem origem, e a pergunta diz agora o que a origem diz. |
+| conteudo | Quanto devem as administrações públicas, em percentagem do PIB? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | How much does general government owe, as a percentage of what the country produces in a year? | b2-peca1-correcao-2 | retirada | Ver a razão na gémea portuguesa (achado 8). |
+| conteudo | How much does general government owe, as a percentage of GDP? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Qual é a diferença entre os ativos financeiros e os passivos dos residentes face ao resto do mundo, em percentagem do PIB? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | What is the difference between residents’ financial assets and liabilities relative to the rest of the world, as a percentage of GDP? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Quanto mudou em três anos o índice nominal do custo unitário do trabalho, por hora trabalhada? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | How much has the nominal unit labour cost index, per hour worked, changed over three years? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Quanto mudaram os preços de transação das casas compradas pelas famílias? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | How much have the transaction prices of homes purchased by households changed? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Quanto mudou em três anos o desempenho das exportações do país face às economias avançadas? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | How much has the country’s export performance against advanced economies changed over three years? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Quanto devem as sociedades não financeiras, em dívida consolidada e em percentagem do PIB? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | How much do non-financial corporations owe in consolidated debt, as a percentage of GDP? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, em dívida consolidada e em percentagem do PIB? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | How much do households and non-profit institutions serving them owe in consolidated debt, as a percentage of GDP? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Quanto representa o fluxo de crédito consolidado às sociedades não financeiras na dívida que tinham no período anterior, excluindo o investimento direto estrangeiro das duas parcelas? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | What percentage of non-financial corporations’ debt in the previous period does their consolidated credit flow represent, excluding foreign direct investment from both amounts? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Que percentagem da dívida das famílias e das instituições sem fim lucrativo ao seu serviço no período anterior representa o fluxo de crédito consolidado que recebem? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | What percentage of the debt of households and non-profit institutions serving them in the previous period does their consolidated credit flow represent? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Qual é o saldo da balança corrente em percentagem do PIB, na média móvel de três anos para trás? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | What is the current account balance as a percentage of GDP, on a three-year backward moving average? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Quanto mudou em três anos a percentagem de pessoas ativas, empregadas ou desempregadas, na população comparável? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | How much has the percentage of active people, employed or unemployed, in the comparable total population changed over three years? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Que parte da população ativa dos aos anos está sem emprego? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | What share of the labour force aged to is unemployed? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Que parte das pessoas dos aos anos tem emprego? | b2-peca1 | viva | A pergunta do leitor, declarada em figuras.mjs e conferida pela K6; as origens mantêm-se e a K13 confere as idades onde a linha as fixa. |
+| conteudo | What share of people aged to is employed? | b2-peca1 | viva | A pergunta do leitor, declarada em figuras.mjs e conferida pela K6; as origens mantêm-se e a K13 confere as idades onde a linha as fixa. |
+| conteudo | Que parte das pessoas ativas está sem trabalho e procura emprego ativamente há pelo menos um ano? | b2-peca1-correcao-2 | retirada | Achado 8 da leitura a frio: a população ativa como denominador não tinha origem declarada; a descrição do indicador tesem130, pedida pelo cliente da casa e selada no motor, di-lo e fixa o grupo dos 15 aos 74 anos, que a pergunta passa a escrever. |
+| conteudo | Que parte da população ativa dos aos anos está sem trabalho e procura emprego ativamente há pelo menos um ano? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | What share of the labour force is out of work and has been actively seeking employment for at least a year? | b2-peca1-correcao-2 | retirada | Ver a razão na gémea portuguesa (achado 8). |
+| conteudo | What share of the labour force aged to is out of work and has been actively seeking employment for at least a year? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Que parte dos jovens dos aos anos, de ambos os sexos, não trabalha nem estuda nem está em formação? | b2-peca1 | viva | A pergunta do leitor, declarada em figuras.mjs e conferida pela K6; as origens mantêm-se e a K13 confere as idades onde a linha as fixa. |
+| conteudo | What share of young people aged to , of both sexes, is not employed and is not in education or training? | b2-peca1 | viva | A pergunta do leitor, declarada em figuras.mjs e conferida pela K6; as origens mantêm-se e a K13 confere as idades onde a linha as fixa. |
+| conteudo | Que parte das pessoas dos aos anos concluiu no máximo o ensino básico e não está em estudos nem em formação? | b2-peca1 | viva | A pergunta do leitor, declarada em figuras.mjs e conferida pela K6; as origens mantêm-se e a K13 confere as idades onde a linha as fixa. |
+| conteudo | What share of people aged to has completed at most lower secondary education and is not in education or training? | b2-peca1 | viva | A pergunta do leitor, declarada em figuras.mjs e conferida pela K6; as origens mantêm-se e a K13 confere as idades onde a linha as fixa. |
+| conteudo | Que parte da população está em risco de pobreza, em privação material e social grave ou num agregado com intensidade de trabalho muito baixa, contando cada pessoa uma única vez? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | What share of the population is at risk of poverty, severely materially and socially deprived or living in a household with very low work intensity, counting each person only once? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Quantas vezes é maior o rendimento total do quinto da população com mais rendimento do que o do quinto com menos? | b2-peca1 | viva | A pergunta do leitor, declarada em figuras.mjs e conferida pela K6; as origens mantêm-se e a K13 confere as idades onde a linha as fixa. |
+| conteudo | How many times greater is the total income of the fifth of the population with the highest income than that of the fifth with the lowest? | b2-peca1 | viva | A pergunta do leitor, declarada em figuras.mjs e conferida pela K6; as origens mantêm-se e a K13 confere as idades onde a linha as fixa. |
+| conteudo | Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de % do rendimento disponível, também líquido de subsídios à habitação? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | What share of tenants at market rent are in households where total housing costs, net of housing allowances, take more than % of disposable income, also net of housing allowances? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de % do rendimento disponível, também líquido de subsídios à habitação? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | What share of people, across all tenure statuses, are in households where total housing costs, net of housing allowances, take more than % of disposable income, also net of housing allowances? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Do dinheiro do plano de recuperação contratado no concelho, a universidade tem mais do que a câmara: euros contra euros . Da soma aprovada para o concelho, % está vencida contra % paga. | e1c | retirada | Passagem E1c, ponto 8 do mandato: a frase punha o vencido «contra» o pago, como duas metades da soma aprovada, e o estudo regista dinheiro já pago dentro das localizações vencidas; a frase nova diz que as duas partes se sobrepõem. |
+| conteudo | Do dinheiro do plano de recuperação contratado no concelho, a universidade tem mais do que a câmara: euros contra euros . Da soma aprovada para o concelho, % está em localizações de projeto vencidas e % já foi paga, e as duas partes sobrepõem-se: as localizações vencidas também receberam dinheiro. | k2 | retirada | a frase do estudo ganhou a explicação dos termos que um leitor comum não conhecia (o brief K2, item 7, e a I182), sem mudar um número nem a origem registada; a frase nova está na secção do K2 |
+| conteudo | Of the recovery-plan money contracted in the municipality, the university holds more than the council: euros against euros . Of the sum approved for the municipality, % is overdue against % paid. | e1c | retirada | Passagem E1c, ponto 8 do mandato: a frase punha o vencido «contra» o pago, como duas metades da soma aprovada, e o estudo regista dinheiro já pago dentro das localizações vencidas; a frase nova diz que as duas partes se sobrepõem. |
+| conteudo | Of the recovery-plan money contracted in the municipality, the university holds more than the council: euros against euros . Of the sum approved for the municipality, % sits in overdue project locations and % has been paid, and the two parts overlap: the overdue locations have also received money. | k2 | retirada | a frase do estudo ganhou a explicação dos termos que um leitor comum não conhecia (o brief K2, item 7, e a I182), sem mudar um número nem a origem registada; a frase nova está na secção do K2 |
+| conteudo | outside the reference value | b2-peca1 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
+| conteudo | within the reference value | b2-peca1 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
+| conteudo | within the reference values | b2-peca1 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
+| conteudo | : União Europeia : fora do valor de referência (acima de %) | b2-peca1 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
+| conteudo | : European Union : outside the reference value (above %) | b2-peca1 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
+| conteudo | Portugal está fora de dos valores de referência da Comissão Europeia e dentro de : , , e . | b2-peca1-correcao-2 | retirada | Segunda passagem de correção do B2 (achados 9 e 10 da leitura a frio): a frase do veredicto diz o ano das linhas e separa a lista das medidas fora («Fora: …»), na forma escrita pelo lugar de direção; a V1 confere a forma nova. |
+| conteudo | Portugal is outside of the reference values of the European Commission and within : , , and . | b2-peca1-correcao-2 | retirada | Ver a razão na gémea portuguesa (achados 9 e 10 da leitura a frio). |
+| conteudo | de câmaras; dentro do limite legal ( % ); sem valor publicado | p4-c | retirada | Passagem P4-c (02.10.2026, pela leitura do diretor de 02.10 à noite na página de Évora): o cartão das câmaras diz as mesmas palavras do cartão do índice de dívida, «dentro do limite legal, que é 150 %», e já não «dentro do limite legal (150 %)»; a V2 do `check:pais` confere a forma nova, com as contagens e o limite lidos das linhas. |
+| conteudo | of councils; within the legal limit ( % ); with no published value | p4-c | retirada | A mesma frase na edição inglesa, retirada pela mesma razão (passagem P4-c, 02.10.2026). |
+| conteudo | câmaras cujo índice de dívida publicado é superior ao limite legal | b2-peca1-correcao-2 | retirada | Achado 14 da leitura a frio: o índice de dívida de cada câmara é calculado, e a dica diz «calculado». |
+| conteudo | câmaras cujo índice de dívida calculado é superior ao limite legal | b2-peca1-correcao-2 | viva | A V1, V2 e K15 conferem a forma e a origem. |
+| conteudo | councils whose published debt index exceeds the legal limit | b2-peca1-correcao-2 | retirada | Ver a razão na gémea portuguesa (achado 14). |
+| conteudo | councils whose calculated debt index exceeds the legal limit | b2-peca1-correcao-2 | viva | A V1, V2 e K15 conferem a forma e a origem. |
+| conteudo | câmaras cujo índice de dívida publicado não excede o limite legal | b2-peca1-correcao-2 | retirada | Achado 14 da leitura a frio: o índice de dívida de cada câmara é calculado, e a dica diz «calculado». |
+| conteudo | câmaras cujo índice de dívida calculado não excede o limite legal | b2-peca1-correcao-2 | viva | A V1, V2 e K15 conferem a forma e a origem. |
+| conteudo | councils whose published debt index does not exceed the legal limit | b2-peca1-correcao-2 | retirada | Ver a razão na gémea portuguesa (achado 14). |
+| conteudo | councils whose calculated debt index does not exceed the legal limit | b2-peca1-correcao-2 | viva | A V1, V2 e K15 conferem a forma e a origem. |
+| conteudo | câmaras cuja fonte não publica um valor numérico do índice de dívida | b2-peca1-correcao-2 | retirada | Achado 14 da leitura a frio: o índice é calculado pela casa, e o que falta é o valor da fonte para o calcular; a dica passa a dizê-lo. |
+| conteudo | câmaras sem valor numérico para calcular o índice de dívida | b2-peca1-correcao-2 | viva | A V1, V2 e K15 conferem a forma e a origem. |
+| conteudo | councils whose source publishes no numeric debt index | b2-peca1-correcao-2 | retirada | Ver a razão na gémea portuguesa (achado 14). |
+| conteudo | councils with no numeric value to calculate the debt index | b2-peca1-correcao-2 | viva | A V1, V2 e K15 conferem a forma e a origem. |
+| conteudo | : dentro do valor de referência (acima de − %) | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
+| conteudo | : dentro do valor de referência do Pacto (acima de − %) | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
+| conteudo | : fora do valor de referência do Conselho da UE (acima de %) | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
+| conteudo | : within the reference value (above − %) | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
+| conteudo | : within the reference value of the Pact (above − %) | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
+| conteudo | : outside the reference value of the Council of the EU (above %) | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
+| conteudo | concelhos | b2-peca1 | viva | A dica da chave municipios_com_pagina nomeia a unidade da contagem, no cartão das câmaras. É a etiqueta da chave da prova nas duas edições, sem introduzir uma contagem escrita à mão. |
+| conteudo | 3 195 afirmações · 366 de 3 195 calculadas · 2 767 de 3 195 linhas de concelhos | k2 | viva | OE1-b: contagem relida no HTML do livro após a entrada das linhas do bloco. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |
+| conteudo | 3 195 claims · 366 of 3 195 calculated · 2 767 of 3 195 municipality rows | k2 | viva | OE1-b: contagem relida no HTML do livro após a entrada das linhas do bloco. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |
+| conteudo | dentro do valor de referência do Pacto | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
+| conteudo | fora do valor de referência do Conselho da UE | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
+| conteudo | within the reference value of the Pact | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
+| conteudo | outside the reference value of the Council of the EU | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
+| conteudo | municipalities | b2-peca1-correcao-2 | viva | O período, o dono ou a unidade vêm da declaração conferida. |
+| conteudo | câmaras em | b2-peca1-correcao-2 | viva | O período, o dono ou a unidade vêm da declaração conferida. |
+| conteudo | councils in | b2-peca1-correcao-2 | viva | O período, o dono ou a unidade vêm da declaração conferida. |
+
+## L1 · a leitura de cada medida (24.09.2026)
+
+*A regra do diretor de 23.09.2026 (I150, §1.129): cada conteúdo diz o que significa
+para uma pessoa sem conhecimento do assunto. Por baixo do número de cada cartão
+nacional passa a haver uma leitura em palavras correntes, escrita pelo lugar de
+direção numa gramática com ramos: os números e os ramos são da máquina. Entram aqui
+as vinte leituras que a primeira página rende, nas duas edições, tal como a régua as
+recolhe (os valores, os períodos, os valores de referência e as contagens das
+câmaras saem como origens conferidas). As dos temas não entram: os temas não leem
+os blocos com origem, e as trinta e seis leituras de lá são as mesmas declarações,
+conferidas pela K17 do `check:cartao` carácter a carácter contra o resolvedor e
+contra a conta da própria célula.*
+
+*UMA LEITURA COM RAMOS MUDA DE FRASE QUANDO O VALOR MUDA DE LADO («Subiu» passa a
+«Desceu»). A frase nova é das palavras do lugar de direção, que o ficheiro das
+leituras já declara, mas é uma cadeia que esta tabela ainda não tem, e o portão da
+voz fecha a construção até ela entrar aqui. É o preço de o inventário guardar as
+frases rendidas e não as declarações, e fica escrito no relatório do bloco.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Em as administrações públicas (o Estado, as regiões autónomas, as autarquias e a segurança social) receberam mais do que gastaram: um excedente de % do PIB, o valor de tudo o que o país produz num ano. O saldo subiu face a . O Pacto de Estabilidade e Crescimento não deixa o défice passar de % do PIB: Portugal cumpre. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | Entre as pessoas que vivem em casa arrendada a preço de mercado, é a parte cujo agregado gasta mais de % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação. Desceu face a . Está acima da média da União Europeia. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | Os % da população com mais rendimento recebem, no total, vezes o que recebem os % com menos rendimento. A diferença encolheu face a . É maior do que na média da União Europeia. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | Uma câmara acima do limite legal deve mais do que a lei lhe permite dever. Em o número de câmaras acima do limite era em , e o número sem valor publicado era . | l1-correcao | viva | A leitura do que o número significa, por baixo do número de um cartão nacional (bloco L1), mudada na passagem de correção de 26.09.2026, depois da leitura a frio do Codex: a frase reescrita pelo lugar de direção no seu ficheiro, a concordar com «o número» seja qual for a contagem. As palavras são do lugar de direção com os acertos conferidos por `acertos-l1.py`; os valores, os períodos, as referências e as contagens saem da recolha como origens conferidas, e a K17 do `check:cartao` confere o texto, os ramos e a auditoria das origens (`tests/cartao/leituras-provadas.json`). |
+| conteudo | É a parte da população que está em pelo menos uma de três situações: rendimento abaixo de % do rendimento mediano do país, privação material e social grave, ou viver num agregado onde quase ninguém trabalha; cada pessoa conta uma só vez. O rendimento mediano é o do meio: metade da população tem mais e metade tem menos. Desceu face a . Está abaixo da média da União Europeia. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | É a parte das crianças com menos de anos que está numa creche ou noutro cuidado formal: um programa planeado por entidades públicas ou privadas reconhecidas, e não o cuidado dado pelos avós, por outros familiares, por amigos ou vizinhos, ou por uma ama profissional. Desceu face a . Está acima da média da União Europeia. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | É a parte das pessoas com pelo menos competências digitais básicas: saber procurar informação, comunicar, criar conteúdos, proteger-se e resolver problemas no uso da internet e de programas informáticos. Subiu face a . Está abaixo da média da União Europeia. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | É a parte das pessoas dos aos anos que não foi além do ensino básico e já não estuda nem está em formação. Desceu face a . Está abaixo da média da União Europeia. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | É a parte das pessoas dos aos anos que tem emprego. Subiu face a . Está acima da média da União Europeia. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | É a parte das pessoas que diz ter precisado de um médico e não o ter tido, por ser caro, por a espera ser longa ou por ficar longe. Ficou igual a . Está acima da média da União Europeia. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | É a parte das pessoas que, num inquérito europeu, considera a independência dos tribunais e dos juízes do seu país muito boa ou razoavelmente boa. Subiu face a . Está acima da média da União Europeia. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | É a área de habitação nova licenciada num ano, em metros quadrados por cada habitantes: quanto mais alta, mais construção de casas foi autorizada. Subiu face a . Está acima da média da União Europeia. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano. Subiu face a . Está abaixo da média da União Europeia. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | É o que se gastou no país em investigação e desenvolvimento num ano, pelas empresas, pelo Estado, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que o país produz num ano. Subiu face a . Está abaixo da média da União Europeia. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | É o que um trabalhador por conta de outrem a tempo completo ganhou por mês, em média, em , com o que lhe é pago com caráter regular pelas horas normais e extraordinárias, antes de descontos. | l1 | viva | A leitura do que o número significa, por baixo do número de um cartão nacional (bloco L1, 24.09.2026, I150). As palavras são do lugar de direção, declaradas em `src/data/leituras-das-medidas.mjs` com os acertos A1 a A15 da auditoria das origens; os valores, os períodos, as referências e as contagens saem da recolha como origens conferidas, e os ramos são os que os valores selados mandam. A K17 do `check:cartao` confere o texto, os ramos e a auditoria das origens (`tests/cartao/leituras-provadas.json`); um ramo que mude com um valor novo rende outra frase, que entra aqui quando se render. |
+| conteudo | É o salário mínimo nacional: o valor mensal mínimo que a lei garante a quem trabalha por conta de outrem, em vigor no continente em . | l1 | viva | A leitura do que o número significa, por baixo do número de um cartão nacional (bloco L1, 24.09.2026, I150). As palavras são do lugar de direção, declaradas em `src/data/leituras-das-medidas.mjs` com os acertos A1 a A15 da auditoria das origens; os valores, os períodos, as referências e as contagens saem da recolha como origens conferidas, e os ramos são os que os valores selados mandam. A K17 do `check:cartao` confere o texto, os ramos e a auditoria das origens (`tests/cartao/leituras-provadas.json`); um ramo que mude com um valor novo rende outra frase, que entra aqui quando se render. |
+| conteudo | É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços. Subiu face a . Está abaixo da média da União Europeia. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | É quanto cresceu num ano a despesa pública líquida: a que não conta os juros da dívida, a despesa financiada por fundos europeus nem a que sobe e desce com o desemprego, apurada pelo Conselho das Finanças Públicas. Cresceu menos do que em . Portugal comprometeu-se, num compromisso endossado pelo Conselho da União Europeia, a não a deixar crescer mais de % em : cresceu mais do que isso. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | A council above the legal limit owes more than the law allows it to owe. In the number of councils above the limit was out of , and the number with no published value was . | l1-correcao | viva | Ver a razão na gémea portuguesa (bloco L1, passagem de correção de 26.09.2026). |
+| conteudo | Among people living in a home rented at market price, it is the share whose household spends more than % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs. Down from . Above the European Union average. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | In general government (the State, the autonomous regions, local authorities and social security) took in more than it spent: a surplus of % of GDP, the value of everything the country produces in a year. The balance rose from . The Stability and Growth Pact does not allow the deficit to exceed % of GDP: Portugal complies. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | It is how much net public expenditure grew in a year: the expenditure that leaves out interest on the debt, spending financed by European funds and the spending that rises and falls with unemployment, as computed by the Public Finance Council. It grew less than in . Portugal committed, in a commitment endorsed by the Council of the European Union, not to let it grow by more than % in : it grew more than that. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | It is the floor area of new housing permitted in a year, in square metres per inhabitants: the higher it is, the more housing construction was authorised. Up from . Above the European Union average. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | It is the national minimum wage: the lowest monthly pay the law guarantees to employees, in force on the mainland in . | l1 | viva | Ver a razão na gémea portuguesa (bloco L1, 24.09.2026, I150). |
+| conteudo | It is the share of children under who are in a nursery or other formal childcare: a programme planned through public organisations or recognised private bodies, and not care given by grandparents, other relatives, friends or neighbours, or a professional child-minder. Down from . Above the European Union average. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | It is the share of people aged to who are employed. Up from . Above the European Union average. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | It is the share of people aged to who went no further than lower secondary education and are no longer studying or in training. Down from . Below the European Union average. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | It is the share of people who say they needed medical care and did not get it, because it was too expensive, the wait too long or too far away. Unchanged from . Above the European Union average. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | It is the share of people who, in a European survey, rate the independence of their country’s courts and judges as very good or fairly good. Up from . Above the European Union average. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | It is the share of people with at least basic digital skills: knowing how to find information, communicate, create content, stay safe and solve problems when using the internet or software. Up from . Below the European Union average. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | It is the share of the population in at least one of three situations: income below % of the country’s median income, severe material and social deprivation, or living in a household where almost no one works; each person counts only once. The median income is the one in the middle: half the population has more and half has less. Down from . Below the European Union average. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices. Up from . Below the European Union average. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | It is what a full-time employee earned per month, on average, in , including what is paid on a regular basis for normal and overtime hours, before deductions. | l1 | viva | Ver a razão na gémea portuguesa (bloco L1, 24.09.2026, I150). |
+| conteudo | It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year. Up from . Below the European Union average. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | It is what was spent in the country on research and development in a year, by companies, the State, higher education and non-profit institutions, as a percentage of GDP, the value of everything the country produces in a year. Up from . Below the European Union average. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | The % of the population with the highest income receive, in total, times what the % with the lowest income receive. The gap narrowed from . It is wider than the European Union average. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+
+
+## RP1 · rendimentos e preços
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Qual é o valor anual médio das pensões pagas pela Segurança Social por pensionista? | rp1 | viva | Pergunta ou leitura das novas medidas seladas; as palavras têm origem na K16 ou na K17 e os valores continuam a ser lidos das linhas. |
+| conteudo | Quantas pessoas recebem o rendimento social de inserção por cada mil pessoas em idade ativa? | rp1 | viva | Pergunta ou leitura das novas medidas seladas; as palavras têm origem na K16 ou na K17 e os valores continuam a ser lidos das linhas. |
+| conteudo | Quanto mudou o nível médio dos preços no consumidor sem a habitação nos últimos doze meses? | rp1 | viva | Pergunta ou leitura das novas medidas seladas; as palavras têm origem na K16 ou na K17 e os valores continuam a ser lidos das linhas. |
+| conteudo | How many people receive social insertion income for every thousand people of working age? | rp1 | viva | Pergunta ou leitura das novas medidas seladas; as palavras têm origem na K16 ou na K17 e os valores continuam a ser lidos das linhas. |
+| conteudo | How much has the average level of consumer prices excluding housing changed over the last twelve months? | rp1 | viva | Pergunta ou leitura das novas medidas seladas; as palavras têm origem na K16 ou na K17 e os valores continuam a ser lidos das linhas. |
+| conteudo | What is the average annual amount of pensions paid by Social Security per pensioner? | rp1 | viva | Pergunta ou leitura das novas medidas seladas; as palavras têm origem na K16 ou na K17 e os valores continuam a ser lidos das linhas. |
+| conteudo | Below what annual income is a person living alone at risk of poverty? | rp1 | viva | Pergunta ou leitura das novas medidas seladas; as palavras têm origem na K16 ou na K17 e os valores continuam a ser lidos das linhas. |
+| conteudo | How much do employees receive per month, on average and before deductions? | rp1 | viva | Pergunta ou leitura das novas medidas seladas; as palavras têm origem na K16 ou na K17 e os valores continuam a ser lidos das linhas. |
+| conteudo | How much has the average level of consumer prices changed over the last twelve months compared with the previous twelve months? | rp1 | viva | Pergunta ou leitura das novas medidas seladas; as palavras têm origem na K16 ou na K17 e os valores continuam a ser lidos das linhas. |
+| conteudo | How much have consumer prices changed since the same month a year earlier? | rp1 | viva | Pergunta ou leitura das novas medidas seladas; as palavras têm origem na K16 ou na K17 e os valores continuam a ser lidos das linhas. |
+| conteudo | How much have food and non-alcoholic beverage prices changed since the same month a year earlier? | rp1 | viva | Pergunta ou leitura das novas medidas seladas; as palavras têm origem na K16 ou na K17 e os valores continuam a ser lidos das linhas. |
+| conteudo | Abaixo de que rendimento anual fica em risco de pobreza uma pessoa que vive sozinha? | rp1 | viva | Pergunta ou leitura das novas medidas seladas; as palavras têm origem na K16 ou na K17 e os valores continuam a ser lidos das linhas. |
+| conteudo | Quanto mudaram os preços dos alimentos e das bebidas não alcoólicas face ao mesmo mês do ano anterior? | rp1 | viva | Pergunta ou leitura das novas medidas seladas; as palavras têm origem na K16 ou na K17 e os valores continuam a ser lidos das linhas. |
+| conteudo | Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior? | rp1 | viva | Pergunta ou leitura das novas medidas seladas; as palavras têm origem na K16 ou na K17 e os valores continuam a ser lidos das linhas. |
+| conteudo | Quanto mudou o nível médio dos preços no consumidor nos últimos doze meses face aos doze meses anteriores? | rp1 | viva | Pergunta ou leitura das novas medidas seladas; as palavras têm origem na K16 ou na K17 e os valores continuam a ser lidos das linhas. |
+| conteudo | Quanto recebe por mês, em média e antes de descontos, quem trabalha por conta de outrem? | rp1 | viva | Pergunta ou leitura das novas medidas seladas; as palavras têm origem na K16 ou na K17 e os valores continuam a ser lidos das linhas. |
+
+## RP1b · preços e ressalva do provisório
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Em as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor, % acima dos de há um ano. A variação é menor do que a do mês anterior. | c1 | retirada | C1, I160: a quarta redação faz a concordância com «as rendas», «acima das de há um ano». Esta redação anterior já foi publicada no RP1 e fica como sentinela da concordância corrigida. |
+| conteudo | Quanto mudaram as rendas efetivamente pagas pela habitação face ao mesmo mês do ano anterior? | rp1b | viva | Cadeia recolhida no HTML desta peça; pergunta conferida pela K16 ou leitura pela K17, com origens seladas. Os valores continuam nas linhas e a seleção da primeira página conserva a sua regra. |
+| conteudo | How much have rents actually paid for housing changed since the same month a year earlier? | rp1b | viva | Cadeia recolhida no HTML desta peça; pergunta conferida pela K16 ou leitura pela K17, com origens seladas. Os valores continuam nas linhas e a seleção da primeira página conserva a sua regra. |
+| conteudo | In the rents paid by tenants were, on the consumer price index measure, % above a year earlier. The change is smaller than the previous month’s. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | How much have consumer prices in Portugal changed since the same month a year earlier, on the harmonised measure used to compare European Union countries? | rp1b | viva | Cadeia recolhida no HTML desta peça; pergunta conferida pela K16 ou leitura pela K17, com origens seladas. Os valores continuam nas linhas e a seleção da primeira página conserva a sua regra. |
+| conteudo | How much have fuel and lubricant prices for vehicles changed since the same month a year earlier? | rp1b | viva | Cadeia recolhida no HTML desta peça; pergunta conferida pela K16 ou leitura pela K17, com origens seladas. Os valores continuam nas linhas e a seleção da primeira página conserva a sua regra. |
+| conteudo | How much have the prices of electricity, gas and other fuels used at home changed since the same month a year earlier? | rp1b | viva | Cadeia recolhida no HTML desta peça; pergunta conferida pela K16 ou leitura pela K17, com origens seladas. Os valores continuam nas linhas e a seleção da primeira página conserva a sua regra. |
+| conteudo | Quanto mudaram os preços da eletricidade, do gás e dos outros combustíveis usados em casa face ao mesmo mês do ano anterior? | rp1b | viva | Cadeia recolhida no HTML desta peça; pergunta conferida pela K16 ou leitura pela K17, com origens seladas. Os valores continuam nas linhas e a seleção da primeira página conserva a sua regra. |
+| conteudo | Quanto mudaram os preços dos combustíveis e dos lubrificantes para os veículos face ao mesmo mês do ano anterior? | rp1b | viva | Cadeia recolhida no HTML desta peça; pergunta conferida pela K16 ou leitura pela K17, com origens seladas. Os valores continuam nas linhas e a seleção da primeira página conserva a sua regra. |
+| conteudo | Quanto mudaram os preços no consumidor em Portugal face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia? | rp1b | viva | Cadeia recolhida no HTML desta peça; pergunta conferida pela K16 ou leitura pela K17, com origens seladas. Os valores continuam nas linhas e a seleção da primeira página conserva a sua regra. |
+
+## RP1c · passagem de correção
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | (dado provisório) em | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
+| conteudo | : (dado provisório) | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
+| conteudo | Em havia pessoas a receber o rendimento social de inserção por cada mil pessoas em idade ativa, dos aos anos: é o apoio da Segurança Social a quem vive em pobreza extrema, com um programa de inserção no trabalho e na comunidade. Menos do que em . | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | Em o valor das pensões pagas pela Segurança Social foi, em média, de euros por pensionista no ano inteiro, no total das pensões de velhice, de invalidez e de sobrevivência. Subiu face a . | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | Por cada hora de trabalho, as mulheres ganharam em média menos do que os homens, em , nas empresas com ou mais trabalhadores: a diferença, em percentagem do ganho dos homens, foi de % (dado provisório) . A diferença encolheu face a . | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | no | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
+| conteudo | (provisional data) in | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
+| conteudo | : (provisional data) | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
+| conteudo | In the amount of pensions paid by Social Security was, on average, euros per pensioner over the whole year, in the total of old-age, invalidity and survivors’ pensions. Up from . | c1 | retirada | C1, I160: a quarta redação usa «across old-age, invalidity and survivors’ pensions». Esta redação anterior já foi publicada no RP1 e fica como sentinela da expressão corrigida. |
+| conteudo | In there were people receiving social insertion income for every thousand people of working age, from to years old: it is Social Security’s support for people living in extreme poverty, with a programme of integration into work and the community. Fewer than in . | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | Per hour worked, women earned on average less than men, in , in enterprises with or more employees: the gap, as a percentage of men’s earnings, was % (provisional data) . The gap narrowed from . | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | in the | rp1c | viva | Cadeia recolhida no HTML desta peça. A K17 confere as palavras da terceira redação e os acertos com literal; a ressalva usa a nota da fonte e a F1 confere a preposição do período. |
+
+## C1 · as correções de confiança, 28.09.2026
+
+As duas leituras abaixo são as cadeias efetivamente recolhidas na construção
+preparatória pelo `medir-defeitos.mjs --json`: as rendas na primeira página
+portuguesa e a pensão na inglesa. Os valores e os períodos são origens declaradas
+e saem da recolha. As redações anteriores ficam retiradas nas secções do RP1,
+com a razão da troca, porque já foram publicadas. As cadeias curtas que continuam
+a render-se, como «no» e «in the», mantêm o seu estado.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Em as rendas pagas pelos inquilinos estavam, na medida do índice de preços no consumidor, % acima das de há um ano. A variação é menor do que a do mês anterior. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | In the amount of pensions paid by Social Security was, on average, euros per pensioner over the whole year, across old-age, invalidity and survivors’ pensions. Up from . | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+
+As leituras da inflação e do IHPC também mudam na quarta redação, mas os cartões
+com essas leituras não pertencem à fatia da primeira página. A página dos temas
+está no inventário, mas não está em `ROTAS_COM_ORIGEM_LIDA`; os blocos das leituras
+levam origens e não são recolhidos como frases sem origem. Não se declaram aqui
+ocorrências vivas que a régua não recolheu. A K17 conserva a comparação integral
+dessas leituras, e os casos sintéticos de `tests/confianca/c1.mjs` exercem os
+sinais positivo, negativo e zero da inflação e as comparações do IHPC com taxas
+negativas.
+
+**As palavras do recibo.** A rota de cada linha não pertence a
+`ROTAS_DO_INVENTARIO`; o recibo é uma das páginas em que a regra da voz permite
+explicar a verificação. Estas cadeias ficam registadas em prosa, sem linhas com
+estado `viva` fora do âmbito da régua:
+
+- «O que foi conferido» / «What was checked» nomeia a secção. «Lido na fonte a» /
+  «Read at the source on» continua a dar a data da primeira leitura da linha.
+- «Segunda leitura a» / «Second reading on» precede a data de uma releitura do
+  número; «Ficheiro da fonte relido a» / «Source file read again on» distingue
+  a conferência do ficheiro feita pelo corredor. Uma conferência do ficheiro
+  não passa a ser apresentada como uma releitura do número.
+- «Ainda sem segunda leitura.» / «No second reading yet.» diz a ausência de
+  registo de releitura, como no recibo da inflação nesta construção.
+- «igual à fonte» / «matches the source» dá o resultado igual; «a fonte publica
+  agora outro valor:» / «the source now publishes a different value:» precede
+  o valor encontrado na divergência; «não foi possível reler o número na fonte
+  nesse dia» / «the number could not be read again from the source that day»
+  mantém a tentativa sem sucesso datada, mesmo quando uma leitura posterior
+  já conseguiu reler o número.
+- «Ver a atualização deste valor» / «See the update to this value» está
+  declarada para a ligação à atualização que corresponda ao valor encontrado.
+  Não se apresenta como uma frase rendida nesta entrega: a atualização da
+  dívida das famílias parou no circuito real da linha. As plantas da conferência
+  do recibo exigem a correspondência e o destino da ligação quando há atualização.
+
+**As portas dos ficheiros dos concelhos.** «posições dos concelhos no mapa (CSV)» /
+«municipality positions on the map (CSV)» e «medidas dos concelhos (CSV)» /
+«municipal measures (CSV)» são navegação. Na página dos lugares vivem inteiras
+dentro de ligações, que a régua exclui nos dois sentidos; a alteração fica
+documentada aqui, sem declarar frases vivas que não sejam recolhidas.
+
+**O mandato em curso.** A faixa de Évora reutiliza «em funções» / «in office»,
+já usado na ligação para o mandato. Não se introduziu uma nova redação. A F18
+confere o rótulo dentro do segmento aberto e a posição de cada dívida no
+calendário comum; a proteção da I77 sobre o nome por verificar mantém-se.
+
+## C1c · a passagem de correção de 28.09.2026
+
+| classe | frase | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | 34 provenance revisions | c1c | retirada | A C1d repôs o limite municipal e registou os excertos; a contagem vigente está abaixo. |
+| conteudo | 34 revisões de proveniência | c1c | retirada | A C1d repôs o limite municipal e registou os excertos; a contagem vigente está abaixo. |
+| conteudo | : (dado provisório) União Europeia : | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
+| conteudo | : (provisional data) European Union : | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
+| conteudo | A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média. | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
+| conteudo | Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average. | c1c | viva | Conteúdo rendido: contagem do registo, bandeira da fonte ou definição sustentada na DGAL. |
+
+Os rótulos dos recibos do C1 ficam substituídos por «Releitura a» / «Re-read on»,
+«a releitura encontrou:» / «the re-read found:» e «não foi possível reler o
+número nesse dia» / «the number could not be re-read that day». Não se atribui
+uma razão que a entrada não guarda. Quando há diferença, «O valor do título
+é o que esta página usa.» / «This page uses the value shown in the title.»
+distingue o publicado do encontrado. A porta «Ver a atualização deste valor»
+passa a render-se no recibo da dívida das famílias da União.
+
+A frase inglesa da dívida municipal intercala o sujeito antes de «collected»
+para não fazer regressar o cabeçalho retirado «Revenue collected». Conserva a
+média da receita corrente líquida cobrada nos três anos anteriores, que o
+literal da DGAL publica. A procura das frases retiradas não muda.
+
+## C1d · segunda passagem de correção, 28.09.2026
+
+| classe | frase | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | 44 revisões de proveniência | c1d | retirada | A C1f reconstituiu os acessos do PRR; a contagem vigente está abaixo. |
+| conteudo | 44 provenance revisions | c1d | retirada | A C1f reconstituiu os acessos do PRR; a contagem vigente está abaixo. |
+| conteudo | : União Europeia : (valor estimado) | c1d | viva | Contagem do livro ou marca da fonte junto da observação, conferidas nas duas edições. |
+| conteudo | : European Union : (estimated value) | c1d | viva | Contagem do livro ou marca da fonte junto da observação, conferidas nas duas edições. |
+
+Os recibos, fora das rotas do inventário, substituem a frase do C1c sobre o dia
+inteiro por «Releitura tentada a 28.09.2026, sem resposta a esse pedido» /
+«Re-read attempted on 28.09.2026, with no answer to that request». A data vem da
+entrada. A ausência
+concorda no rótulo e no texto: «Segunda leitura: ainda nenhuma» / «Second
+reading: none yet». Uma releitura anterior a uma atualização diz «confirmou o
+valor anterior:» / «confirmed the previous value:», seguido desse valor.
+
+Os nomes dos campos da história são «publicador», «endereço da fonte»,
+«documento», «edição», «local no documento», «dia da leitura» e «excerto da
+fonte»; na edição inglesa, «publisher», «source address», «document», «edition»,
+«place in the document», «reading date» e «source excerpt». Entradas do mesmo
+dia, natureza e razão partilham uma linha, mantendo cada par antigo e novo.
+O nome português citado numa história inglesa leva a língua desse nome.
+
+«valor estimado» / «estimated value» vem de `source_flag_note` e acompanha a
+observação nos mesmos lugares da marca provisória. O objetivo institucional do
+BCE tem a classe `objetivo-institucional`, com definição nas duas edições no
+livro; não recebe um veredicto nacional.
+
+## C1e · terceira passagem de correção, 28.09.2026
+
+Nos recibos, a tentativa sem valor lido substitui a frase da C1d:
+«Releitura tentada a DD.MM.AAAA, sem valor lido» / «Re-read attempted on
+DD.MM.AAAA, no value read». A data continua a ser a da entrada. O resultado
+`inacessivel` não permite afirmar que a fonte ficou sem responder.
+
+Uma linha calculada escreve, sob «Segunda leitura:» / «Second reading:»,
+«Recalculada em cada construção a partir das suas origens» / «Recomputed at
+every build from its sources». As outras linhas sem releitura conservam
+«ainda nenhuma» / «none yet».
+
+As quatro linhas retiradas que antes continham o nome do diretor são
+protegidas pelo detetor de privacidade sobre as páginas construídas. O nome
+é lido do Git durante a corrida e não volta a ser escrito neste inventário.
+
+## C1f · os acessos do PRR reconstituídos pela história do Git
+
+| Classe | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | 54 revisões de proveniência | c1f | retirada | O C2 acrescentou dezoito entradas de proveniência (o acesso e o excerto das nove linhas relidas); a contagem vigente está na secção C2. |
+| conteudo | 54 provenance revisions | c1f | retirada | O C2 acrescentou dezoito entradas de proveniência (o acesso e o excerto das nove linhas relidas); a contagem vigente está na secção C2. |
+
+## PP1 · a primeira página de um leitor comum (28.09.2026)
+
+*A primeira página passou a ser «O que se passa» em cinco blocos, as seis entradas, os lugares, os
+estudos recentes e o veredicto com título seu, e nasceram as cinco páginas das entradas (`/o-meu-dinheiro`,
+`/o-meu-trabalho`, `/a-minha-casa`, `/a-escola-e-a-saude`, `/o-estado-e-a-economia` e as gémeas
+inglesas). **As palavras dos blocos não entram nesta tabela**: são do lugar de direção, em
+`src/data/primeira-pagina.mjs`, mudam com os ramos e com as condições, e levam a marca
+`data-bloco-declarado`, que a régua das frases honra só na primeira página e nas entradas, onde a
+célula dos blocos (`tests/inicio/blocos.mjs`) as reconta na mesma corrida. A lista «Os números deste
+bloco» leva a mesma marca, porque o sufixo e o provisório de cada linha mudam com os dados, e a célula
+confere o texto dela fora das marcas. **Os cartões das entradas leem-se como na página dos temas**: são
+o mesmo componente, com as mesmas leituras, e o K17 do `check:cartao` confere-as nas duas. O que fica
+aqui é a mobília: os títulos, as datas, os nomes e as linhas das entradas, as secções, os estudos e as
+descrições. Saem quatro linhas, com a razão no seu lugar: a descrição antiga da primeira página e a
+leitura do país, nas duas edições. **E saem do ficheiro as duas linhas da frase do veredicto** (a portuguesa e a inglesa, do bloco b2-peca1-correcao-2), que a V1 passou a conferir sozinha na primeira página: a linha contava as vírgulas da lista das medidas fora do valor de referência, e uma revisão de rotina que tirasse uma medida da lista fechava a construção (a planta do valor revisto, `design/especime-v3/medicoes/pp1-2026-09-28/valor-revisto.json`). Não ficam como retiradas porque a frase continua na página e o arame da voz continua a lê-la, e uma linha retirada que se lê fecha a construção.*
+
+| classe | frase | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | O que se passa | pp1 | viva | o título da secção dos blocos da primeira página, declarado em `strings.mjs` (`primeira.oQueSePassa`) |
+| conteudo | What is happening | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Os números mais recentes são de | pp1 | viva | o rótulo da data de «O que se passa»: a data é o período de referência mais recente das linhas dos blocos mostrados, pelo fim do período, com a marca `data-da-linha`, e a célula dos blocos reconta-a |
+| conteudo | The most recent figures are for | pp1 | viva | ver a razão na gémea portuguesa |
+| navegacao | Por onde começar | pp1 | viva | o título da lista das seis entradas da primeira página; os nomes e as linhas das entradas vivem dentro das ligações |
+| navegacao | Where to start | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Os números deste bloco | pp1 | viva | o título da dobra de cada bloco com os números que ele mostra, cada um com o seu recibo e o seu período; o texto das linhas da lista sai do inventário com a marca dos blocos e a célula dos blocos confere-o fora das marcas |
+| conteudo | The figures in this block | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Os valores de referência da Comissão Europeia | pp1 | viva | o título da secção do veredicto, que passou a ter título seu na primeira página (§2, ponto 3, do brief do PP1); a frase do veredicto continua conferida pela V1 |
+| conteudo | The European Commission’s reference values | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Places | pp1 | viva | o título da secção dos lugares na edição inglesa da primeira página (`ROTULOS_B1.lugares`); a portuguesa, «Lugares», já estava declarada |
+| navegacao | Os números de <lugar>: preços, salários, pensões e apoios, pobreza e desigualdade, emprego, habitação, educação e saúde, Estado e economia, e os lugares. | pp1 | viva | a descrição da primeira página, reescrita pelo construtor do PP1 porque a anterior dizia a leitura do país e os números por tema, que saíram da página; diz o que a página tem: o que se passa e as seis entradas, pelos nomes das declarações |
+| navegacao | <lugar>’s figures: prices, pay, pensions and benefits, poverty and inequality, employment, housing, education and health, state and economy, and places. | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Os preços | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Prices | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | O salário | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Pay | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | As pensões e os apoios | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Pensions and benefits | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | A pobreza e a desigualdade | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Poverty and inequality | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | As dívidas e o crédito das famílias | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Household debt and credit | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | O emprego e o desemprego | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Employment and unemployment | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | O custo do trabalho | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | The cost of labour | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Os jovens e as diferenças entre homens e mulheres | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Young people and the gaps between men and women | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | O peso da habitação | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações (com o acerto A4 do PP1, «casa» por «habitação») |
+| conteudo | The cost of housing | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | As rendas | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Rents | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Os preços e a construção | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Prices and building | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | A escola | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | School | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | A saúde | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Health | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | O crescimento e o investimento | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Growth and investment | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | As contas com o exterior | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | The external accounts | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | As empresas | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Companies | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | A justiça | pp1 | viva | o nome de uma secção de cartões de uma entrada, das declarações |
+| conteudo | Justice | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Portugal Economia e finanças públicas publicado a | pp1 | viva | texto composto de um estudo do país e da sua data, na lista dos estudos da entrada «O Estado e a economia» (a mesma composição da lista dos estudos recentes, `EstudoDaLista`) |
+| conteudo | Portugal Economy and public finances published on | pp1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Portugal Investimento publicado a | pp1 | viva | texto composto de um estudo do país e da sua data, na lista dos estudos da entrada «O Estado e a economia» |
+| conteudo | Portugal Investment published on | pp1 | viva | ver a razão na gémea portuguesa |
+| navegacao | (em inglês) | pp1 | viva | a língua de um estudo que só tem edição inglesa, na lista dos estudos da entrada «O Estado e a economia» (`ROTULOS_B1.outraLingua`); a gémea «(in Portuguese)» já estava declarada |
+
+## UE1 · onde Portugal fica entre os 27 (29.09.2026)
+
+*A faixa da União nos cartões nacionais das dez medidas que os blocos da primeira página comparam com a União, na página dos temas
+e nas das entradas, nas duas edições. Entram o rótulo da marca da União no desenho e a frase do lugar de Portugal, na forma em que a
+régua da voz a recolhe (sem os valores, os nomes dos países, a contagem, o lugar e o período, que são origens conferidas), um ramo
+por linha e só os ramos que se rendem. A porta «Todos os países» vive dentro de uma ligação e não é uma frase. O recibo de cada série
+(`/livro-razao/series/<id>`) não é uma rota inventariada, como o recibo de uma linha.*
+
+| classe | frase | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | média da União | ue1 | viva | o rótulo da marca da média da União no desenho da faixa da União (bloco UE1, 29.09.2026), declarado em `src/data/faixa-da-uniao.mjs`; a marca e a posição dela são refeitas do valor pela F19 do `check:formas` |
+| conteudo | EU average | ue1 | viva | ver a razão na gémea portuguesa |
+| conteudo | Entre os países da União, em , o valor mais baixo é ( ) e o mais alto ( ); a média da União é . ( ) está em .º lugar, do mais alto para o mais baixo. | ue1 | viva | a frase do lugar de Portugal entre os 27, por baixo da faixa da União de um cartão nacional (bloco UE1, 29.09.2026). As palavras são do lugar de direção (o §3, ponto 5, do `BRIEF-UE1-onde-portugal-fica-entre-os-27.md`), declaradas em `src/data/faixa-da-uniao.mjs` com os acertos F0 a F3 (conferidos por `acertos-ue1.py`, na pasta das medições do bloco); a contagem dos países, o período, os valores, os nomes e o lugar saem da série como origens conferidas pelo portão de HTML, e a F19 do `check:formas` e a K18 do `check:cartao` recompõem a frase inteira. É o ramo sem empate, que nove das dez medidas rendem hoje. |
+| conteudo | Among the EU countries in , the lowest value is ( ) and the highest is ( ); the EU average is . ( ) ranks th from the highest. | ue1b | viva | a frase do lugar de Portugal na edição inglesa com o ordinal (a passagem UE1b, 29.09.2026, o acerto F4 do lugar de direção): o sufixo do ordinal fica fora da marca do lugar (`data-ponto-lugar`, que é origem) e por isso a régua recolhe-o, e cada sufixo que se rende é uma forma. Os sufixos são palavras declaradas em `src/data/faixa-da-uniao.mjs`; a F19 e a K18 conferem a escolha contra os 27 ordinais escritos à mão, com uma planta de cada sufixo. É o ramo sem empate com o sufixo `th`, que oito das dez medidas rendem hoje (entre elas o 12.º e o 13.º, a exceção dos 11 a 13). |
+| conteudo | Among the EU countries in , the lowest value is ( ) and the highest is ( ); the EU average is . ( ) ranks nd from the highest. | ue1b | viva | a frase do lugar de Portugal na edição inglesa com o ordinal (a passagem UE1b, 29.09.2026, o acerto F4 do lugar de direção): o sufixo do ordinal fica fora da marca do lugar (`data-ponto-lugar`, que é origem) e por isso a régua recolhe-o, e cada sufixo que se rende é uma forma. Os sufixos são palavras declaradas em `src/data/faixa-da-uniao.mjs`; a F19 e a K18 conferem a escolha contra os 27 ordinais escritos à mão, com uma planta de cada sufixo. É o ramo sem empate com o sufixo `nd`: o 2.º lugar dos preços da habitação de 2025. |
+| conteudo | Entre os países da União, em , o valor mais baixo é ( ) e o mais alto ( ); a média da União é . ( ) está em .º lugar, do mais alto para o mais baixo, a par de outros países com o mesmo valor ( e ). | ue1 | viva | a frase do lugar de Portugal entre os 27, por baixo da faixa da União de um cartão nacional (bloco UE1, 29.09.2026). As palavras são do lugar de direção (o §3, ponto 5, do `BRIEF-UE1-onde-portugal-fica-entre-os-27.md`), declaradas em `src/data/faixa-da-uniao.mjs` com os acertos F0 a F3 (conferidos por `acertos-ue1.py`, na pasta das medições do bloco); a contagem dos países, o período, os valores, os nomes e o lugar saem da série como origens conferidas pelo portão de HTML, e a F19 do `check:formas` e a K18 do `check:cartao` recompõem a frase inteira. É o ramo do empate com dois países, que a pobreza ou exclusão de 2025 rende hoje (Portugal, a Áustria e a Suécia têm o mesmo valor). O ramo de um país só («a par de outro país com o mesmo valor») está declarado e não se rende hoje: entra aqui quando se render. |
+| conteudo | Among the EU countries in , the lowest value is ( ) and the highest is ( ); the EU average is . ( ) ranks th from the highest, level with other countries with the same value ( and ). | ue1b | viva | a frase do lugar de Portugal na edição inglesa com o ordinal (a passagem UE1b, 29.09.2026, o acerto F4 do lugar de direção): o sufixo do ordinal fica fora da marca do lugar (`data-ponto-lugar`, que é origem) e por isso a régua recolhe-o, e cada sufixo que se rende é uma forma. Os sufixos são palavras declaradas em `src/data/faixa-da-uniao.mjs`; a F19 e a K18 conferem a escolha contra os 27 ordinais escritos à mão, com uma planta de cada sufixo. É o ramo do empate com dois países, na pobreza ou exclusão de 2025 (o 15.º lugar). |
+| conteudo | (dado provisório) | ue1b | viva | a ressalva da fonte na ponta de uma faixa da União (a passagem UE1b, 29.09.2026): um ponto com marca mostra-a na forma que o sítio usa para o provisório e o estimado nos cartões, o valor e as palavras entre parênteses, e não a letra crua. As palavras são declaradas em `src/data/faixa-da-uniao.mjs` (as de `p` e de `e` são as do sítio) e a F19 e a K18 conferem-nas contra a marca do ponto; o recibo da série diz, ao lado da tabela, a definição que a resposta do Eurostat traz. Rende-se hoje na ponta mais alta dos preços da habitação de 2025 (a Hungria, marca `p`). |
+| conteudo | (provisional data) | ue1b | viva | ver a razão na gémea portuguesa |
+| conteudo | (definição diferente) | ue1b | viva | a ressalva da fonte na ponta de uma faixa da União, com as palavras declaradas da marca `d` (na resposta do Eurostat, «definition differs (see metadata)»). Rende-se hoje na ponta mais alta da taxa de desemprego de 2025 (a Espanha). Ver a razão da forma na linha de «(dado provisório)». |
+| conteudo | (definition differs) | ue1b | viva | ver a razão na gémea portuguesa |
+| conteudo | No total de todos os regimes de ocupação (casa própria com ou sem crédito, arrendada a preço de mercado ou a renda reduzida ou gratuita), é a parte das pessoas cujo agregado gasta mais de % do rendimento disponível com a habitação. O rendimento disponível é o que o agregado recebe, do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais; os apoios à habitação descontam-se do rendimento e do que se gasta com a habitação. Desceu face a . Está abaixo da média da União Europeia. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | Across all tenure statuses (owned with or without a mortgage, rented at market price or at a reduced rent or free), it is the share of people whose household spends more than % of its disposable income on housing. Disposable income is what the household receives, from work, investment and social benefits, after the taxes and social contributions it pays; housing allowances are deducted from both the income and the housing costs. Down from . Below the European Union average. | k2 | retirada | desde o K2 (02.10.2026) a leitura do cartão rende-se em duas metades, a que diz o que o número é dentro da dobra «O que é este número» e a que compara à vista, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as confere parte a parte na mesma corrida do check:voz (o brief K2, item 1); a frase inteira deixou de se render |
+| conteudo | Este total mistura situações muito diferentes, e a Comissão Europeia diz que deve ler-se com a estrutura por regime de ocupação. | ue1d | viva | A ressalva da Comissão num cartão da sobrecarga do custo da habitação no total (a passagem UE1d, 29.09.2026, a §1.140): onde a comparação com a União aparece, a ressalva aparece no mesmo cartão, num bloco próprio. O texto é o que a primeira página já dizia no bloco `casa`, lido agora da fonte única `src/data/ressalvas-da-uniao.mjs`, e a primeira página prende-o ao seu literal em `tests/inicio/blocos-provados.json`; a K14 do `check:cartao` exige-o onde a União aparece, e a K1 admite o bloco só nas medidas que a K14 nomeia. |
+| conteudo | This total mixes very different situations, and the European Commission says it should be read together with the breakdown by tenure status. | ue1d | viva | ver a razão na gémea portuguesa |
+
+## N1 · as portas por assunto
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Contas públicas | n1 | viva | A secção conserva os cartões e distingue-se do título do bloco da primeira página. |
+| conteudo | Public accounts | n1 | viva | A edição inglesa da mesma secção. |
+
+As linhas das rotas retiradas saem desta tabela; as palavras genéricas não ficam proibidas noutros contextos. A lista exata das linhas removidas está em `medicoes/n1-2026-09-30/inventario-retirado.json`. As frases que identificam quem fixou os valores de referência passam para Estado e economia. As linhas novas nomeiam os assuntos, o âmbito, as secções e as comparações municipais. A linha do salário mínimo a doze meses conserva a medida do Eurostat.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | <lugar>’s figures on municipalities, districts, islands and regions. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | As medidas dos concelhos | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | As regiões | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Education and health | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Educação e saúde | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Employment | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Emprego | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Estado e economia | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Habitação | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Housing | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Municipal figures | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Municipalities | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os assuntos e os lugares de Portugal, com uma página para os números de cada assunto. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os distritos e as ilhas | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de <lugar> sobre os concelhos, os distritos, as ilhas e as regiões. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de Portugal sobre a pobreza, a desigualdade, as dívidas e o crédito das famílias. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de Portugal sobre as contas públicas, o crescimento, o investimento, as contas com o exterior, as empresas e a justiça. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de Portugal sobre o abandono escolar, as competências digitais, a creche e o acesso aos cuidados de saúde. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de Portugal sobre o emprego, o desemprego, os jovens e o custo do trabalho. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de Portugal sobre o peso da habitação, as rendas, os preços e a construção. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de Portugal sobre os concelhos, os distritos, as ilhas e as regiões. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de Portugal sobre os preços dos bens e serviços. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Os números de Portugal sobre os salários, as pensões e os apoios sociais. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Pay, pensions and benefits | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Pobreza e desigualdade | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Portugal’s figures on early school leaving, digital skills, childcare and access to healthcare. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Portugal’s figures on employment, unemployment, young people and labour costs. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Portugal’s figures on housing costs, rents, prices and building. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Portugal’s figures on municipalities, districts, islands and regions. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Portugal’s figures on pay, pensions and social benefits. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Portugal’s figures on poverty, inequality, household debt and credit. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Portugal’s figures on public accounts, growth, investment, external accounts, companies and justice. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Portugal’s figures on the prices of goods and services. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Subjects and places in Portugal: a page of figures for each subject. | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Preços | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | Salários, pensões e apoios | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | State and economy | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| conteudo | em doze meses, na base do Eurostat: € | n1 | retirada | N1c: a linha passa a ler o nome e a unidade mensal do livro, com a base explícita. |
+| conteudo | over twelve months, on the Eurostat basis: € | n1 | retirada | N1c: a edição inglesa acompanha o nome, a unidade mensal e a base. |
+| navegacao | · concelhos | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+| navegacao | · municipalities | n1 | viva | N1: o nome, o âmbito ou o conteúdo transferido da página. |
+
+## N1c · as unidades e as notas junto dos números, 30.09.2026
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | , em base de doze meses: euros por mês O Eurostat ajusta os pagamentos quando o salário mínimo é pago por mais de doze meses por ano. | n1c | retirada | N1d: a frase passa a dizer que se ajusta o valor para contar com os pagamentos. |
+| conteudo | , on a twelve-month basis: euros per month Eurostat adjusts the payments when the minimum wage is paid for more than twelve months a year. | n1c | retirada | N1d: a frase passa a dizer que se ajusta o valor para contar com os pagamentos. |
+| navegacao | Valor ( ) | n1c | viva | Cabeçalho da tabela, com a unidade conferida separadamente contra as linhas municipais. |
+| navegacao | Value ( ) | n1c | viva | O mesmo cabeçalho na edição inglesa. |
+
+## N1d · o contexto das medidas municipais e o valor ajustado, 30.09.2026
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | , em base de doze meses: euros por mês O Eurostat ajusta o valor para contar com esses pagamentos quando o salário mínimo é pago por mais de doze meses por ano. | n1d | viva | A unidade é da linha; a explicação vem da ficha citada na nota da mesma linha. |
+| conteudo | , on a twelve-month basis: euros per month Eurostat adjusts the value to take those payments into account when the minimum wage is paid for more than twelve months a year. | n1d | viva | A mesma unidade e a mesma explicação na edição inglesa. |
+| conteudo | Em . A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média. | n1d | viva | Contexto municipal lido da definição declarada, com o período e o valor nacional conferidos à parte. |
+| conteudo | In . Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average. | n1d | viva | Contexto municipal lido da definição declarada, com o período e o valor nacional conferidos à parte. |
+| conteudo | É o que um trabalhador por conta de outrem a tempo completo ganhou por mês, em média, em , com o que lhe é pago com caráter regular pelas horas normais e extraordinárias, antes de descontos. Portugal: euros por mês . | n1d | viva | Contexto municipal lido da definição declarada, com o período e o valor nacional conferidos à parte. |
+| conteudo | It is what a full-time employee earned per month, on average, in , including what is paid on a regular basis for normal and overtime hours, before deductions. Portugal: euros per month . | n1d | viva | Contexto municipal lido da definição declarada, com o período e o valor nacional conferidos à parte. |
+
+## L2a · o mapa primeiro, 01.10.2026
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Mapa de Portugal | l2a | viva | O texto alternativo do sinal da porta «Lugares», na primeira página e na dos temas (§1.149): o contorno do país, sem dados. |
+| navegacao | Map of Portugal | l2a | viva | O mesmo texto alternativo na edição inglesa. |
+| conteudo | regiões NUTS II de Portugal | l2a | viva | A glosa (`title`) da contagem das regiões na gaveta de «Lugares», a chave `regioes_total`, que o portão de HTML reconta. |
+| conteudo | NUTS II regions of Portugal | l2a | viva | A mesma glosa na edição inglesa. |
+| conteudo | distritos e ilhas da Carta Administrativa Oficial de Portugal | l2a | viva | A glosa (`title`) da contagem dos distritos e das ilhas na gaveta de «Lugares», a chave `mapa_unidades`; a glosa antiga, com «unidades», continua retirada. |
+| conteudo | districts and islands of Portugal’s official administrative map | l2a | viva | A mesma glosa na edição inglesa. |
+
+## L2b · o concelho entre os 308, 01.10.2026
+
+As frases da faixa de cada cartão de concelho e da leitura do ganho médio contra Portugal que a régua lê. A frase do lugar
+(«Évora (…) está em …º lugar entre os … concelhos com valor, do mais alto para o mais baixo.») e a frase do ganho na leitura
+do lugar levam marcas de origem (o nome do lugar, os valores, o lugar e a contagem recontados pelo portão de HTML) e a régua
+salta-as nas páginas de concelho, como salta o resto da leitura; ficam conferidas carácter a carácter pela célula FC4 do
+`check:navegacao` e pela P1 do `check:lugares`. Rendem-se só os ramos que os valores de hoje dão: o «igual a Portugal» não se
+rende em página nenhuma e não entra; entra quando se render.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | abaixo de Portugal | l2b | viva | A palavra do lado na faixa do cartão e na frase do ganho médio da leitura do lugar, escolhida pelos dois valores das linhas (o do concelho e o de Portugal, ou a base do índice); a FC5 e a P1 recontam-na. |
+| conteudo | acima de Portugal | l2b | viva | A mesma palavra, quando o valor do concelho é maior. |
+| conteudo | below Portugal | l2b | viva | A mesma palavra na edição inglesa. |
+| conteudo | above Portugal | l2b | viva | A mesma palavra na edição inglesa. |
+| conteudo | Está abaixo de Portugal , que é a base do índice. | l2b | retirada | Bloco R2 (03.10.2026, achado 22 da auditoria dos rótulos): a comparação com a base do índice diz a média de Portugal e a base, «Está acima da média de Portugal (100).»; o bloco tem agora uma marca de origem e a régua lê só as palavras do lado, que estão na secção do bloco r2. |
+| conteudo | Está acima de Portugal , que é a base do índice. | l2b | retirada | Bloco R2 (03.10.2026, achado 22 da auditoria dos rótulos): a comparação com a base do índice diz a média de Portugal e a base, «Está acima da média de Portugal (100).»; o bloco tem agora uma marca de origem e a régua lê só as palavras do lado, que estão na secção do bloco r2. |
+| conteudo | It is below Portugal , which is the base of the index. | l2b | retirada | Bloco R2 (03.10.2026, achado 22 da auditoria dos rótulos): a comparação com a base do índice diz a média de Portugal e a base, «Está acima da média de Portugal (100).»; o bloco tem agora uma marca de origem e a régua lê só as palavras do lado, que estão na secção do bloco r2. |
+| conteudo | It is above Portugal , which is the base of the index. | l2b | retirada | Bloco R2 (03.10.2026, achado 22 da auditoria dos rótulos): a comparação com a base do índice diz a média de Portugal e a base, «Está acima da média de Portugal (100).»; o bloco tem agora uma marca de origem e a régua lê só as palavras do lado, que estão na secção do bloco r2. |
+| conteudo | Sem comparação com Portugal no mesmo período. | l2b | viva | A faixa de uma medida sem linha nacional da mesma medida e do mesmo período diz que não compara, e não escolhe outro período (o brief L2b, §5, decisão 3); não diz que o valor do país não existe, que é coisa que as linhas não provam. |
+| conteudo | No comparison with Portugal for the same period. | l2b | viva | A mesma frase na edição inglesa. |
+
+## L2b-c · as frases dos cartões do concelho e a nota da pesquisa sem guião, 01.10.2026
+
+As duas frases novas dos cartões do concelho (o poder de compra e o ganho médio, os achados 7 e 8 da leitura a frio do
+L2b, pela I150) e a nota da pesquisa de «Lugares» para quem não tem guião (o achado 6), que volta verdadeira: a antiga,
+que dizia que o botão levava à lista inteira dos concelhos, continua retirada.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Índice do poder de compra por pessoa, em que Portugal vale cem: acima de cem, o poder de compra por pessoa no concelho é maior do que a média do país; publicado pelo INE para todos os concelhos. | l2b-c | viva | A frase do cartão do poder de compra em palavras comuns: a escala é a da unidade de cada linha, «índice (Portugal = 100)», e a comparação com a média do país é a que a leitura do lugar e a faixa já fazem pela mesma base. |
+| conteudo | Index of purchasing power per person, where Portugal is one hundred: above one hundred, purchasing power per person in the municipality is higher than the country average; published for every municipality. | l2b-c | viva | A mesma frase na edição inglesa. |
+| conteudo | O que os trabalhadores por conta de outrem a tempo completo com remuneração completa ganham por mês, em média, antes de descontos, pelos Quadros de Pessoal do Gabinete de Estratégia e Planeamento do Ministério do Trabalho. | l2b-c | viva | A frase do cartão do ganho médio com «antes de descontos», pela definição da linha nacional do mesmo indicador do INE, auditada pela K17. |
+| conteudo | What full-time employees on full pay earn per month, on average, before deductions, from the staff records of the labour ministry’s strategy and planning office. | l2b-c | viva | A mesma frase na edição inglesa. |
+| navegacao | Sem JavaScript, a pesquisa não procura: para chegar a um concelho, use a lista dos distritos e das ilhas, abaixo. | l2b-c | viva | A nota `<noscript>` da pesquisa de «Lugares», à vista: sem guião o formulário submete para a própria página e não procura, e o caminho para um concelho é a gaveta dos distritos e das ilhas (a decisão 4 da §1.150). |
+| navegacao | Without JavaScript, the search finds nothing: to reach a municipality, use the list of districts and islands below. | l2b-c | viva | A mesma nota na edição inglesa. |
+
+## K2 · o cartão para o telemóvel, 02.10.2026
+
+A linha que abre a definição dobrada de cada cartão de medida, nas duas edições, e as frases das leituras dos
+estudos com os termos explicados (o brief K2, items 1 e 7). As leituras dos cartões nacionais não entram: desde o
+K2 rendem-se em duas metades, e nas páginas dos assuntos nenhuma das duas se conta no inventário, porque a K17 as
+confere parte a parte na mesma corrida do `check:voz` (a regra do PP1, alargada às duas metades em
+`scripts/medir-defeitos.mjs`); as linhas das leituras inteiras saem como retiradas, com a razão.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Do dinheiro do plano de recuperação contratado no concelho, a universidade tem mais do que a câmara: euros contra euros . Da soma aprovada para o concelho, % está em localizações de projeto vencidas, isto é, na parte de cada projeto que o registo atribui ao concelho cuja data prevista de conclusão já passou sem conclusão registada, e % já foi paga, e as duas partes sobrepõem-se: as localizações vencidas também receberam dinheiro. | k2 | viva | A frase da leitura do estudo do dinheiro público de fora da câmara, com a localização de projeto vencida explicada (o brief K2, item 7): a parte de cada projeto que o registo atribui ao concelho cuja data prevista de conclusão já passou sem conclusão registada, pela secção do que está vencido do próprio estudo. |
+| conteudo | Os pelouros de Évora ficam com a lista do presidente nos mandatos em que a câmara publica a repartição, e as contas do município não são cortadas de maneira que permita dizer quanto gastou cada vereador: no mandato de , e designações de pelouro repartidas por duas pessoas (um pelouro é uma área do trabalho da câmara que o presidente atribui por despacho a um membro do executivo); a câmara instalada em tem lugares. | k2 | viva | A frase da leitura do estudo de quem governou a câmara (e da edição datada dos pelouros), com a designação de pelouro explicada (o brief K2, item 7): uma área do trabalho da câmara que o presidente atribui por despacho, pela frase do próprio estudo. |
+| navegacao | O que é este número | k2 | viva | A linha que abre a definição dobrada de cada cartão de medida (o `<summary>` da dobra), com as palavras do brief K2 (item 1 e decisão 1), nas páginas dos assuntos, das áreas, dos concelhos e em «Lugares». |
+| conteudo | Of the recovery-plan money contracted in the municipality, the university holds more than the council: euros against euros . Of the sum approved for the municipality, % sits in overdue project locations, that is, in the part of each project that the register attributes to the municipality whose planned completion date has passed with no completion recorded, and % has been paid, and the two parts overlap: the overdue locations have also received money. | k2 | viva | A mesma frase na edição inglesa. |
+| conteudo | Évora’s portfolios sit with the president’s own list in the terms for which the council publishes the split, and the municipality’s accounts are not cut in a way that lets anyone say what each councillor spent: in the term, and portfolio designations split between two people (a portfolio is an area of the council’s work that the president assigns by order to a member of the executive); the council installed in has seats. | k2 | viva | A mesma frase na edição inglesa. |
+| navegacao | What this number is | k2 | viva | A mesma linha na edição inglesa. |
+| conteudo | The penalty for retiring one year early is % or % , depending on which door the worker comes through (one of the exceptions that set the sustainability factor aside, or the general rule), when the actuarially neutral figure calculated by the report itself, the cut that would exactly pay for the cost the early retirement imposes on the system, is % : the law misses in both directions, and is harshest on those who deviate least. | k2 | viva | A mesma frase na edição inglesa. |
+| conteudo | A penalização por antecipar a reforma um ano é de % ou de % , consoante a porta por onde o trabalhador entra (uma das exceções que afastam o fator de sustentabilidade, ou a regra geral), quando o valor atuarialmente neutro calculado pelo próprio relatório, o corte que pagaria exatamente o custo que a antecipação impõe ao sistema, é de % : a lei falha nos dois sentidos, e é mais dura com quem se desvia menos. | k2 | viva | A frase da leitura do estudo das penalizações, com o valor atuarialmente neutro e as duas portas explicados (o brief K2, item 7, e a I182), pelas frases do próprio estudo. |
+
+## UE2 · a página dos países, 02.10.2026
+
+A secção «Os 27 países» da página da União e as definições dobradas dos seus 21 cartões em palavras comuns (o brief
+UE2, itens 1 e 3). Entram as perguntas na forma da página da União (`uniao`, em `DEFINICOES_DAS_MEDIDAS`), nas duas
+edições: as palavras comuns primeiro e o termo da fonte entre parênteses, cada pedaço auditado pela K16 contra as
+origens que a forma declara, e a régua 8.4 do `check:lugar` confere que a página as rende. A da taxa de câmbio efetiva
+real não entra, porque leva um algarismo declarado (os 41 países industriais) e a régua das frases salta um bloco com
+marca de origem nesta rota. As perguntas do cartão continuam vivas nos cartões das páginas de assunto. As peças da
+secção dos países não entram: o título, o resumo de cada lista, os itens e as etiquetas do toque levam marcas de
+origem (a contagem, os nomes da tabela de autoridade, os valores dos pontos), que nesta rota fazem a régua saltar o
+bloco, e as palavras com `data-voz` (o rótulo da média da União) já estavam declaradas pelo UE1.
+
+*Desde a passagem UE2-b (02.10.2026) a forma em palavras comuns é a única forma das definições, em todo o sítio: ver a secção desse bloco, no fim.*
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Quanto mudou em três anos a remuneração por hora de trabalho, aos preços de cada ano, a dividir pelo que se produz numa hora de trabalho (o índice nominal do custo unitário do trabalho, por hora trabalhada)? | ue2 | viva | A definição dobrada do cartão «custo-unitario-do-trabalho-2025» na página da União, na forma em palavras comuns com o termo da fonte entre parênteses (o brief UE2, item 3 e decisão 3), declarada em `src/data/figuras.mjs` (`uniao`) e auditada pedaço a pedaço pela K16; a pergunta do cartão continua viva nas páginas de assunto. Desde a passagem UE2-b é a forma única, e rende-se também nas páginas de assunto. |
+| conteudo | How much has pay per hour of work, at each year’s prices, divided by what an hour of work produces, changed over three years (the nominal unit labour cost index, per hour worked)? | ue2 | viva | A mesma definição na edição inglesa. Desde a passagem UE2-b é a forma única, e rende-se também nas páginas de assunto. |
+| conteudo | Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da OCDE e dos países da União que não são da OCDE (o desempenho das exportações face às economias avançadas)? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | How much has the part that the country’s exports of goods and services make up of the total exports of OECD countries and of EU countries outside the OECD changed over three years (export performance against advanced economies)? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Quanto devem as empresas que não são financeiras, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada das sociedades não financeiras), em percentagem do PIB? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | How much do companies other than financial companies owe in loans and debt securities, leaving out what they owe one another (the consolidated debt of non-financial corporations), as a percentage of GDP? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada), em percentagem do PIB? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | How much do households and non-profit institutions serving them owe in loans and debt securities, leaving out what they owe one another (consolidated debt), as a percentage of GDP? | ue2-b | retirada | Passagem UE2-b (02.10.2026): a forma em palavras comuns passa a ser a única forma das definições, em todo o sítio (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2); esta pergunta deixa de se render, e a que a substitui está declarada na secção do bloco ue2-b. |
+| conteudo | Quanto crédito contraíram num ano as empresas que não são financeiras, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado das sociedades não financeiras), em percentagem da dívida que tinham no fim do ano anterior, excluindo o investimento direto estrangeiro das duas parcelas? | ue2 | viva | A definição dobrada do cartão «fluxo-de-credito-as-empresas-2025» na página da União, na forma em palavras comuns com o termo da fonte entre parênteses (o brief UE2, item 3 e decisão 3), declarada em `src/data/figuras.mjs` (`uniao`) e auditada pedaço a pedaço pela K16; a pergunta do cartão continua viva nas páginas de assunto. Desde a passagem UE2-b é a forma única, e rende-se também nas páginas de assunto. |
+| conteudo | How much credit did companies other than financial companies take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow of non-financial corporations), as a percentage of the debt they had at the end of the previous year, excluding foreign direct investment from both amounts? | ue2 | viva | A mesma definição na edição inglesa. Desde a passagem UE2-b é a forma única, e rende-se também nas páginas de assunto. |
+| conteudo | Quanto crédito contraíram num ano as famílias e as instituições sem fim lucrativo ao seu serviço, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado), em percentagem da dívida que tinham no fim do ano anterior? | ue2 | viva | A definição dobrada do cartão «fluxo-de-credito-as-familias-2025» na página da União, na forma em palavras comuns com o termo da fonte entre parênteses (o brief UE2, item 3 e decisão 3), declarada em `src/data/figuras.mjs` (`uniao`) e auditada pedaço a pedaço pela K16; a pergunta do cartão continua viva nas páginas de assunto. Desde a passagem UE2-b é a forma única, e rende-se também nas páginas de assunto. |
+| conteudo | How much credit did households and non-profit institutions serving them take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow), as a percentage of the debt they had at the end of the previous year? | ue2 | viva | A mesma definição na edição inglesa. Desde a passagem UE2-b é a forma única, e rende-se também nas páginas de assunto. |
+| conteudo | As medidas dos dois quadros da União Europeia | ue2 | viva | O título da fila dos 21 cartões da página da União (bloco UE2): a secção dos países passou a ficar entre a manchete e a fila, e a fila diz o que os cartões são, com as palavras do conjunto que o contador de cada cartão já diz a quem o ouve. |
+| conteudo | The measures of the two European Union scoreboards | ue2 | viva | O mesmo título na edição inglesa. |
+
+## UE2-b · as palavras comuns como forma única, 02.10.2026
+
+A passagem UE2-b, pela decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2: a forma em palavras
+comuns passa a ser a única forma das definições, nas páginas de assunto também, porque uma definição é uma coisa e vive
+num lugar (§1.143). Mudam 18 perguntas, e os termos que a leitura apontou ganham a explicação na primeira vez (o PIB, os
+ativos e os passivos, a balança corrente e a média móvel, a OCDE, a população ativa, os pontos percentuais, a privação
+material e social grave, o rendimento disponível e os apoios à habitação). As perguntas que levam algarismos declarados
+(as idades, os limites de 40 e 60 por cento, os 41 países) entram como a régua as recolhe, sem eles. As perguntas de
+antes passam a retiradas, com a razão. Entram também a definição da inflação na forma do recibo da série, que a faixa
+dela na secção dos países passou a dizer por baixo do nome (as outras nove faixas dizem as perguntas dos seus cartões,
+já declaradas aqui), e a descrição nova da página da União, que diz também os países. Escrito por
+`design/especime-v3/medicoes/ue2-2026-10-02/inventario-ue2-b.mjs` a partir das declarações.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Quanto devem as administrações públicas, em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)? | ue2-b | viva | A pergunta do leitor em palavras comuns, com o termo da fonte entre parênteses: a forma única desde a passagem UE2-b, declarada em figuras.mjs e rendida em cada página onde a medida aparece; cada pedaço tem o apoio que a K16 confere em tests/cartao/perguntas-provadas.json. |
+| conteudo | How much does general government owe, as a percentage of the value of the final goods and services the economy produces in a year (GDP)? | ue2-b | viva | A mesma pergunta na edição inglesa. |
+| conteudo | Qual é a diferença entre o que os residentes do país têm no resto do mundo e o que lhe devem (os ativos financeiros e os passivos face ao exterior), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)? | ue2-b | viva | A pergunta do leitor em palavras comuns, com o termo da fonte entre parênteses: a forma única desde a passagem UE2-b, declarada em figuras.mjs e rendida em cada página onde a medida aparece; cada pedaço tem o apoio que a K16 confere em tests/cartao/perguntas-provadas.json. |
+| conteudo | What is the difference between what the country’s residents own in the rest of the world and what they owe to it (financial assets and liabilities relative to the rest of the world), as a percentage of the value of the final goods and services the economy produces in a year (GDP)? | ue2-b | viva | A mesma pergunta na edição inglesa. |
+| conteudo | Quanto mudaram num ano os preços de transação das casas compradas pelas famílias? | ue2-b | viva | A pergunta do leitor em palavras comuns, com o termo da fonte entre parênteses: a forma única desde a passagem UE2-b, declarada em figuras.mjs e rendida em cada página onde a medida aparece; cada pedaço tem o apoio que a K16 confere em tests/cartao/perguntas-provadas.json. |
+| conteudo | How much have the transaction prices of homes purchased by households changed in a year? | ue2-b | viva | A mesma pergunta na edição inglesa. |
+| conteudo | Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (o desempenho das exportações face às economias avançadas)? | ue2-b | retirada | Passagem R2-b (04.10.2026, o achado 4 da auditoria dos rótulos, pela decisão do lugar de direção): a pergunta da quota das exportações diz o que são as economias avançadas pelo termo da fonte; a forma nova está na secção da passagem r2b. |
+| conteudo | How much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD changed over three years (export performance against advanced economies)? | ue2-b | retirada | Passagem R2-b (04.10.2026, o achado 4 da auditoria dos rótulos, pela decisão do lugar de direção): a pergunta da quota das exportações diz o que são as economias avançadas pelo termo da fonte; a forma nova está na secção da passagem r2b. |
+| conteudo | Quanto devem as empresas que não são financeiras, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada das sociedades não financeiras), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)? | ue2-b | viva | A pergunta do leitor em palavras comuns, com o termo da fonte entre parênteses: a forma única desde a passagem UE2-b, declarada em figuras.mjs e rendida em cada página onde a medida aparece; cada pedaço tem o apoio que a K16 confere em tests/cartao/perguntas-provadas.json. |
+| conteudo | How much do companies other than financial companies owe in loans and debt securities, leaving out what they owe one another (the consolidated debt of non-financial corporations), as a percentage of the value of the final goods and services the economy produces in a year (GDP)? | ue2-b | viva | A mesma pergunta na edição inglesa. |
+| conteudo | Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)? | ue2-b | viva | A pergunta do leitor em palavras comuns, com o termo da fonte entre parênteses: a forma única desde a passagem UE2-b, declarada em figuras.mjs e rendida em cada página onde a medida aparece; cada pedaço tem o apoio que a K16 confere em tests/cartao/perguntas-provadas.json. |
+| conteudo | How much do households and non-profit institutions serving them owe in loans and debt securities, leaving out what they owe one another (consolidated debt), as a percentage of the value of the final goods and services the economy produces in a year (GDP)? | ue2-b | viva | A mesma pergunta na edição inglesa. |
+| conteudo | Qual é a diferença entre o que o país recebeu do resto do mundo e o que lhe pagou, por bens, serviços e rendimentos (o saldo da balança corrente), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB), na média desse ano e dos dois anteriores (a média móvel de três anos para trás)? | ue2-b | viva | A pergunta do leitor em palavras comuns, com o termo da fonte entre parênteses: a forma única desde a passagem UE2-b, declarada em figuras.mjs e rendida em cada página onde a medida aparece; cada pedaço tem o apoio que a K16 confere em tests/cartao/perguntas-provadas.json. |
+| conteudo | What is the difference between what the country received from the rest of the world and what it paid to it, for goods, services and income (the current account balance), as a percentage of the value of the final goods and services the economy produces in a year (GDP), on the average of that year and the two before it (the three-year backward moving average)? | ue2-b | viva | A mesma pergunta na edição inglesa. |
+| conteudo | Quanto mudou em três anos a parte das pessoas dos aos anos que trabalham ou procuram trabalho (as pessoas ativas, empregadas ou desempregadas), contada como a diferença entre a percentagem desse ano e a de três anos antes (em pontos percentuais)? | ue2-b | viva | A pergunta do leitor em palavras comuns, com o termo da fonte entre parênteses: a forma única desde a passagem UE2-b, declarada em figuras.mjs e rendida em cada página onde a medida aparece; cada pedaço tem o apoio que a K16 confere em tests/cartao/perguntas-provadas.json. |
+| conteudo | How much has the share of people aged to who work or are looking for work (active people, employed or unemployed) changed over three years, counted as the difference between that year’s percentage and the one three years earlier (in percentage points)? | ue2-b | viva | A mesma pergunta na edição inglesa. |
+| conteudo | Quanto mudaram em três anos os preços do país face aos de outros países industriais, contando as taxas de câmbio e os preços no consumidor de cada um (a taxa de câmbio efetiva real, com base nos deflatores dos índices de preços no consumidor)? | ue2-b | viva | A pergunta do leitor em palavras comuns, com o termo da fonte entre parênteses: a forma única desde a passagem UE2-b, declarada em figuras.mjs e rendida em cada página onde a medida aparece; cada pedaço tem o apoio que a K16 confere em tests/cartao/perguntas-provadas.json. |
+| conteudo | How much have the country’s prices relative to those of other industrial countries, allowing for exchange rates and each country’s consumer prices, changed over three years (the real effective exchange rate, based on consumer price index deflators)? | ue2-b | viva | A mesma pergunta na edição inglesa. |
+| conteudo | Que parte das pessoas dos aos anos que trabalham ou procuram trabalho (a população ativa) está sem emprego? | ue2-b | viva | A pergunta do leitor em palavras comuns, com o termo da fonte entre parênteses: a forma única desde a passagem UE2-b, declarada em figuras.mjs e rendida em cada página onde a medida aparece; cada pedaço tem o apoio que a K16 confere em tests/cartao/perguntas-provadas.json. |
+| conteudo | What share of people aged to who work or are looking for work (the labour force) is unemployed? | ue2-b | viva | A mesma pergunta na edição inglesa. |
+| conteudo | Que parte das pessoas dos aos anos que trabalham ou procuram trabalho (a população ativa) está sem trabalho e procura emprego ativamente há pelo menos um ano? | ue2-b | viva | A pergunta do leitor em palavras comuns, com o termo da fonte entre parênteses: a forma única desde a passagem UE2-b, declarada em figuras.mjs e rendida em cada página onde a medida aparece; cada pedaço tem o apoio que a K16 confere em tests/cartao/perguntas-provadas.json. |
+| conteudo | What share of people aged to who work or are looking for work (the labour force) is out of work and has been actively seeking employment for at least a year? | ue2-b | viva | A mesma pergunta na edição inglesa. |
+| conteudo | Que parte da população está em pelo menos uma de três situações: rendimento abaixo de % do rendimento que deixa metade da população do país acima dele e metade abaixo, o mediano (risco de pobreza); pelo menos sete de treze privações por falta de recursos (privação material e social grave); ou viver num agregado onde quase ninguém trabalha (intensidade de trabalho muito baixa), contando cada pessoa uma única vez? | ue2-b | viva | A pergunta do leitor em palavras comuns, com o termo da fonte entre parênteses: a forma única desde a passagem UE2-b, declarada em figuras.mjs e rendida em cada página onde a medida aparece; cada pedaço tem o apoio que a K16 confere em tests/cartao/perguntas-provadas.json. |
+| conteudo | What share of the population is in at least one of three situations: income below % of the income that leaves half of the country’s population above it and half below, the median (at risk of poverty); at least seven out of thirteen deprivations because of a lack of resources (severe material and social deprivation); or living in a household where almost nobody works (very low work intensity), counting each person only once? | ue2-b | viva | A mesma pergunta na edição inglesa. |
+| conteudo | Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação? | ue2-b | retirada | Bloco P4 (02.10.2026, item 3 do brief P4; a §1.152, decisão 4): «regimes de ocupação» ficava por explicar; a pergunta passa à forma única com os regimes em palavras comuns (casa própria com ou sem crédito, arrendada a preço de mercado ou a renda reduzida ou gratuita) e o termo entre parênteses, e a linha nova está logo abaixo. A K16 audita a forma nova em tests/cartao/perguntas-provadas.json. |
+| conteudo | What share of people, across all tenure statuses, are in households where total housing costs, after deducting housing allowances, take more than % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances? | ue2-b | retirada | A mesma pergunta na edição inglesa, retirada pela mesma razão (bloco P4, 02.10.2026). |
+| conteudo | Que parte das pessoas, em casa própria com ou sem crédito ou arrendada a preço de mercado ou a renda reduzida ou gratuita (todos os regimes de ocupação), vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação? | p4 | viva | A pergunta do leitor em palavras comuns, com os regimes de ocupação explicados pelas categorias da resposta do Eurostat e o termo entre parênteses (bloco P4, 02.10.2026, item 3 do brief P4); cada pedaço tem o apoio que a K16 confere em tests/cartao/perguntas-provadas.json. |
+| conteudo | What share of people, whether their home is owned with or without a mortgage or rented at market price or at a reduced rent or free (all tenure statuses), are in households where total housing costs, after deducting housing allowances, take more than % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances? | p4 | viva | A mesma pergunta na edição inglesa. |
+| conteudo | Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação? | ue2-b | viva | A pergunta do leitor em palavras comuns, com o termo da fonte entre parênteses: a forma única desde a passagem UE2-b, declarada em figuras.mjs e rendida em cada página onde a medida aparece; cada pedaço tem o apoio que a K16 confere em tests/cartao/perguntas-provadas.json. |
+| conteudo | What share of tenants at market rent are in households where total housing costs, after deducting housing allowances, take more than % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances? | ue2-b | viva | A mesma pergunta na edição inglesa. |
+| conteudo | Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia? | ue2-b | viva | A definição da inflação na forma do recibo da série (sem o lugar), por baixo do nome da sua faixa na secção dos países da página da União (passagem UE2-b, achado 7 da leitura a frio do UE2): diz a base da comparação, o mesmo mês do ano anterior. |
+| conteudo | How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries? | ue2-b | viva | A mesma definição na edição inglesa. |
+| navegacao | Onde Portugal fica entre os países da União Europeia, com o valor de cada um, e os dois quadros da União que o medem: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu. | ue2-b | viva | A descrição da página da União no <head> e no cartão de partilha, que desde a passagem UE2-b (ponto 5) diz também os países, pela ordem da página; sem algarismos, porque o <head> não tem onde os provar. |
+| navegacao | Where Portugal stands among the European Union countries, with each country’s value, and the two European Union frameworks that measure it: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard. | ue2-b | viva | A mesma descrição na edição inglesa. |
+
+## P4-c · o cartão do índice de dívida diz de que é a percentagem e qual é o teto, 02.10.2026
+
+*A passagem P4-c, pela leitura do diretor de 02.10.2026 à noite na página de Évora: «105,5 % (limite legal = 150)» lia-se «105,5 % de 150». A unidade do cartão passa a ser a da casa, declarada na medida («% da receita de três anos», desde a passagem P4-d «% da receita média de três anos»; é um dado e não uma frase: entra pela marca `data-unidade-da-casa` e o portão de HTML confere-a contra a declaração), e a linha do estado diz o teto, com o 150 lido da linha do limite.*
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | dentro do limite legal, que é | p4-c | viva | A linha do estado do cartão do índice de dívida nas páginas dos concelhos, seguida do teto lido da linha `indice-de-divida-limite-legal` («150 %»), num item da régua cuja porta é a marca do cartão (passagem P4-c, 02.10.2026). As palavras sozinhas, «dentro do limite legal», ficam vivas nas classes do mapa e na leitura do lugar. A célula ID de `tests/municipio/indice-de-divida.mjs` escolhe a palavra pela conta do valor contra o teto, em todas as páginas. |
+| conteudo | fora do limite legal, que é | p4-c | viva | A mesma linha do estado, nos concelhos cujo índice passa o teto (passagem P4-c, 02.10.2026). |
+| conteudo | within the legal limit, which is | p4-c | viva | A mesma linha do estado na edição inglesa (passagem P4-c, 02.10.2026). |
+| conteudo | outside the legal limit, which is | p4-c | viva | A mesma linha do estado na edição inglesa, nos concelhos cujo índice passa o teto (passagem P4-c, 02.10.2026). |
+| conteudo | de câmaras; dentro do limite legal, que é % ; sem valor publicado | p4-c | viva | O cartão «Câmaras com a dívida acima do limite legal», na página «Lugares», com as palavras do cartão do índice de dívida (passagem P4-c, 02.10.2026); as contagens e o limite, que a régua da voz tira antes de comparar, são conferidos pela V2 do `check:pais` contra as linhas, e a célula ID6 confere as palavras. |
+| conteudo | of councils; within the legal limit, which is % ; with no published value | p4-c | viva | A mesma frase na edição inglesa (passagem P4-c, 02.10.2026). |
+
+## P4-d · a média na unidade, e o mapa da dívida com as palavras do cartão, 02.10.2026
+
+*A passagem P4-d: a unidade da casa do índice de dívida passa a «% da receita média de três anos» / «% of the three-year average revenue», e o mapa da dívida em «Lugares» diz, na legenda e no cabeçalho da tabela, essa unidade e o teto, com o 150 lido da linha do limite e a sua marca. A unidade e o teto saem dos blocos abaixo quando a régua da voz os lê (a unidade é a declaração da medida, que o portão de HTML confere pela marca `data-unidade-da-casa-do-mapa`; o 150 é um valor selado), e por isso as linhas ficam com o que sobra deles.*
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | o limite legal é | p4-d | viva | Na legenda e no cabeçalho da tabela do mapa da dívida em «Lugares», seguida do teto lido da linha `indice-de-divida-limite-legal`, com a sua marca (passagem P4-d, 02.10.2026). A célula ID7 de `tests/municipio/indice-de-divida.mjs` e a N1M de `tests/inicio/concelhos-nos-lugares.mjs` conferem a palavra, a unidade e o teto nas duas edições. |
+| conteudo | the legal limit is | p4-d | viva | A mesma palavra na edição inglesa (passagem P4-d, 02.10.2026). |
+| conteudo | % da receita média de três anos · o limite legal é % | p4-d | retirada | Bloco R2 (03.10.2026, achado 3 da auditoria dos rótulos): a unidade do índice de dívida passa a «% da receita média dos três anos anteriores»; a legenda e o cabeçalho novos estão na secção do bloco r2. |
+| conteudo | % of the three-year average revenue · the legal limit is % | p4-d | retirada | Bloco R2 (03.10.2026, achado 3 da auditoria dos rótulos): a unidade do índice de dívida passa a «% da receita média dos três anos anteriores»; a legenda e o cabeçalho novos estão na secção do bloco r2. |
+| conteudo | Valor ( % da receita média de três anos ; o limite legal é % ) | p4-d | retirada | Bloco R2 (03.10.2026, achado 3 da auditoria dos rótulos): a unidade do índice de dívida passa a «% da receita média dos três anos anteriores»; a legenda e o cabeçalho novos estão na secção do bloco r2. |
+| conteudo | Value ( % of the three-year average revenue ; the legal limit is % ) | p4-d | retirada | Bloco R2 (03.10.2026, achado 3 da auditoria dos rótulos): a unidade do índice de dívida passa a «% da receita média dos três anos anteriores»; a legenda e o cabeçalho novos estão na secção do bloco r2. |
+## S1 · a caixa das sugestões, 02.10.2026
+
+A página do formulário (`/sugestoes`, `/en/suggestions`) e as quatro do resultado entram no inventário no commit em que
+nascem, e a página das correções ganha a frase com a porta das sugestões (o brief S1, §5.1). Os textos são os do §5.4 e
+do §5.5 do brief, à letra, em `src/data/sugestoes.mjs`, menos a frase da página das correções, que é do construtor. As
+linhas estão escritas como a régua as lê: uma ligação no fim de uma frase deixa um espaço antes do ponto, e o apóstrofo
+do texto inglês do brief, que é o da máquina de escrever, chega à régua escapado pelo Astro (`&#39;`), porque a régua
+compara o texto como o HTML o escreve.
+
+A classe de cada uma, pela regra da casa: o título da página e o parágrafo que diz para que serve a caixa são
+**conteúdo**, porque são o objeto da página, como a política o é em `/correcoes`; a descrição do `<head>` é o começo
+desse parágrafo; os rótulos das caixas, as frases do resultado e a frase das correções são **navegação**, porque dizem
+como se usa um comando, o estado dele depois de usado, ou levam a outra página; e a nota do que fica guardado é
+**divulgação**: está na página porque quem recolhe dados pessoais junto de quem os deixa tem de lhe dar, no momento em
+que os recolhe, a informação que o artigo 13.º do Regulamento (UE) 2016/679 enumera, e é um rascunho do lugar de
+direção à espera do «sim» do diretor (§5.4 do brief). As marcas da voz que a nota e a página do
+obrigado levam («a página de onde veio», «não tem resposta garantida») têm exceção de contexto nas suas rotas, em
+`VOZ-MARCADORES.md`; e a palavra «language» da nota inglesa, que a sentinela da frase retirada «Language» apanharia, tem
+a dispensa da frase inteira em `scripts/medir-defeitos.mjs` e mais nenhuma.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Sugestões | s1 | viva | O título da página do formulário e das quatro do resultado (bloco S1). |
+| conteudo | Suggestions | s1 | viva | O mesmo título na edição inglesa. |
+| conteudo | O que procurou aqui e não encontrou? Que estudo gostava de ler? Escreva. As sugestões não se publicam: lê-as a direção do projeto e decide o que entra no plano. Para corrigir um número ou uma frase, a porta é outra: a página das correções . | s1 | viva | O parágrafo da página do formulário, à letra do §5.5 do brief: para que serve a caixa e para que não serve, com a porta das correções. |
+| conteudo | What did you look for here and not find? Which study would you like to read? Write it down. Suggestions are not published: the project&#39;s direction reads them and decides what enters the plan. To correct a number or a sentence, the door is another one: the corrections page . | s1 | viva | O mesmo parágrafo na edição inglesa, à letra do brief; o `&#39;` é o apóstrofo do brief, como a régua o lê. |
+| conteudo | O que procurou aqui e não encontrou? Que estudo gostava de ler? | s1 | viva | A descrição do `<head>` da página do formulário: as duas primeiras frases do parágrafo. |
+| conteudo | What did you look for here and not find? Which study would you like to read? | s1 | viva | A mesma descrição na edição inglesa. |
+| navegacao | O que procurou e não encontrou? | s1 | viva | O rótulo da primeira caixa do formulário (§5.5 do brief). |
+| navegacao | What did you look for and not find? | s1 | viva | O mesmo rótulo na edição inglesa. |
+| navegacao | Que estudo ou que número gostava de ver aqui? | s1 | viva | O rótulo da segunda caixa. |
+| navegacao | Which study or number would you like to see here? | s1 | viva | O mesmo rótulo na edição inglesa. |
+| navegacao | Outra coisa | s1 | viva | O rótulo da terceira caixa. |
+| navegacao | Anything else | s1 | viva | O mesmo rótulo na edição inglesa. |
+| navegacao | Contacto, se quiser resposta (opcional) | s1-c | retirada | S1-c (03.10.2026): o campo do contacto saiu do formulário por decisão do diretor (§1.154): a caixa não tem resposta. |
+| navegacao | Contact, if you want a reply (optional) | s1-c | retirada | A gémea inglesa da de cima, retirada pela mesma razão (S1-c, §1.154). |
+| divulgacao | O que fica guardado: o que escrever, a língua, a página de onde veio e, se o deixar, o contacto. O endereço IP não se guarda: fica durante uma hora uma marca cifrada dele, só para travar envios em massa. Os dados ficam em servidores na União Europeia. Uma sugestão decidida apaga-se ao fim de noventa dias; uma por decidir, ao fim de um ano. O contacto serve só para responder. Para saber o que enviou ou pedir que se apague, escreva para correcoes@oestadodopais.pt . | s1-c | retirada | S1-c (03.10.2026): a nota passou ao texto aprovado pelo diretor (§1.154), sem o contacto, com o resumo feito com um sal no lugar da «marca cifrada», e com quem aloja e trata os dados, porque se guardam, quem responde pelo tratamento e o direito de reclamar. |
+| divulgacao | What is kept: what you write, the language, the page you came from and, if you leave it, the contact. The IP address is not kept: an encrypted mark of it stays for one hour, only to stop mass sending. The data is held on servers in the European Union. A decided suggestion is deleted after ninety days; an undecided one after a year. The contact is used only to reply. To know what you sent or to ask for it to be deleted, write to correcoes@oestadodopais.pt . | s1-c | retirada | A gémea inglesa da de cima, retirada pela mesma razão (S1-c, §1.154). |
+| navegacao | Obrigado. A sugestão chegou. Não se publica e não tem resposta garantida; o que entrar no plano aparece nestas páginas. | s1 | viva | A página do obrigado: o estado do envio depois de a base aceitar a sugestão (§5.5 do brief). |
+| navegacao | Thank you. The suggestion arrived. It is not published and a reply is not guaranteed; what enters the plan appears on these pages. | s1 | viva | A mesma frase na edição inglesa. |
+| navegacao | A sugestão vinha vazia. Escreva pelo menos numa das três caixas. | s1 | viva | A página da sugestão vazia. |
+| navegacao | The suggestion was empty. Write in at least one of the three boxes. | s1 | viva | A mesma frase na edição inglesa. |
+| navegacao | Chegaram cinco sugestões deste endereço na última hora. Volte mais tarde. | s1-b | retirada | S1-b (03.10.2026): a página dizia «na última hora», e a janela da marca começa no primeiro envio e dura uma hora (o achado 6 da leitura a frio do Sol); o texto passou a «numa hora», por decisão do lugar de direção. |
+| navegacao | Five suggestions arrived from this address in the last hour. Please come back later. | s1-b | retirada | A gémea inglesa da de cima, retirada pela mesma razão (S1-b, o achado 6). |
+| navegacao | A caixa não conseguiu guardar a sugestão. Volte a tentar mais tarde. | s1 | viva | A página do não chegou: a base não respondeu, a caixa do dia estava cheia, ou faltava o sal da marca. |
+| navegacao | The box could not keep the suggestion. Please try again later. | s1 | viva | A mesma frase na edição inglesa. |
+| navegacao | Para dizer o que procurou e não encontrou, ou que estudo gostava de ler, a porta é outra: a página das sugestões . | s1 | viva | A frase da página das correções para quem chegar à porta errada (§5.1 do brief), escrita pelo construtor no molde da última frase do parágrafo do formulário, e por ler pelo lugar de direção. |
+| navegacao | To say what you looked for and did not find, or which study you would like to read, the door is another one: the suggestions page . | s1 | viva | A mesma frase na edição inglesa. |
+
+## S1-b · a passagem de correção da caixa das sugestões, 03.10.2026
+
+A página do limite deixa de dizer «na última hora», porque a janela da marca começa no primeiro envio e dura uma hora (o
+achado 6 da leitura a frio do Sol, `design/especime-v3/critica/LEITURA-S1-2026-10-03.md`): o texto novo é do lugar de
+direção, e as duas frases antigas ficam `retiradas` na secção do S1, com a razão.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Chegaram cinco sugestões deste endereço numa hora. Volte mais tarde. | s1-b | viva | A página do limite da hora, no texto do lugar de direção da passagem S1-b; o número por extenso é a regra das migrações da base, e o portão de HTML confere-o. |
+| navegacao | Five suggestions arrived from this address within one hour. Please come back later. | s1-b | viva | A mesma frase na edição inglesa. |
+
+
+## S1-c · o contacto sai, a nota aprovada e a recusa do Método, 03.10.2026
+
+O diretor decidiu a 03.10.2026 (§1.154): o campo do contacto sai do formulário (a caixa não tem resposta), a nota do que
+fica guardado passa ao texto que ele aprovou, e a quinta recusa do Método passa a dizer que este projeto só guarda
+dados pessoais de quem usa a caixa. As quatro linhas do contacto e da nota antiga ficam `retiradas` na secção do S1,
+com a razão. A nota é **divulgação** pela mesma razão do S1 (a informação que o artigo 13.º do Regulamento (UE)
+2016/679 enumera, dada no momento da recolha), e está escrita como a régua a lê: o endereço de correio é uma ligação
+a meio da frase, com um espaço de cada lado, e o apóstrofo e as aspas do texto inglês chegam escapados pelo Astro. A
+recusa do Método é **divulgação**, como as outras recusas da página; o Método é uma rota isenta da contagem, e a linha
+viva prova que a frase se rende lá. A cadeia «alojam este sítio» / «host this site» da nota tem exceção de contexto na
+rota da caixa, em `VOZ-MARCADORES.md`, e a palavra «language» da nota inglesa tem a dispensa da frase inteira em
+`scripts/medir-defeitos.mjs`, posta em dia para o texto novo.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| divulgacao | O que fica guardado: o que escrever, a língua e a página de onde veio. O endereço IP não se guarda: fica durante uma hora um resumo dele feito com um sal, só para travar envios em massa, e apaga-se a seguir. Os dados ficam em servidores na União Europeia, nos dois serviços que alojam este sítio e a caixa (a Vercel e a Supabase), que os tratam por conta do projeto. Guardam-se porque os enviou: ao carregar em «Enviar a sugestão», aceita que fiquem guardados para este fim. Uma sugestão decidida apaga-se ao fim de noventa dias; uma por decidir, ao fim de um ano. Por este tratamento responde a direção deste projeto, pelo endereço correcoes@oestadodopais.pt . Para saber o que enviou, corrigi-lo ou pedir que se apague, escreva para esse endereço; pode também reclamar junto da Comissão Nacional de Proteção de Dados (cnpd.pt). | h3 | retirada | H3 (05.10.2026): a nota passou a uma linha e à porta «Como tratamos os seus dados», no texto que o diretor aprovou nesse dia (o §5, decisão 1, do brief H3); o que ela dizia está, com o texto novo do diretor, na página «Privacidade» (a secção do bloco h3). |
+| divulgacao | What is kept: what you write, the language and the page you came from. The IP address is not kept: a salted hash of it stays for one hour, only to stop mass sending, and is then deleted. The data is held on servers in the European Union, in the two services that host this site and the box (Vercel and Supabase), which process it on the project&#39;s behalf. It is kept because you sent it: by pressing &quot;Send the suggestion&quot; you accept that it is kept for this purpose. A decided suggestion is deleted after ninety days; an undecided one after a year. The project&#39;s direction is responsible for this processing, at correcoes@oestadodopais.pt . To know what you sent, to correct it or to ask for it to be deleted, write to that address; you may also complain to the Portuguese data protection authority, the Comissão Nacional de Proteção de Dados (cnpd.pt). | h3 | retirada | A gémea inglesa da de cima, retirada pela mesma razão (H3). |
+| divulgacao | Este projeto só guarda dados pessoais de quem usa a caixa das sugestões, pelo tempo e para o fim que a página «Privacidade» diz, e nunca os põe no repositório. | s1-c | viva | A quinta recusa do Método, no texto aprovado pelo diretor a 03.10.2026 (§1.154), com a referência mudada a 05.10.2026 pelo lugar de direção na aterragem do H3 (a I206): o prazo passou da nota da caixa para a página «Privacidade»; o §6 da `POLITICA-DA-AUTONOMIA.md` diz o mesmo, com a data. |
+| divulgacao | This project keeps personal data only of those who use the suggestions box, for the time and the purpose that the Privacy page states, and never puts it in the repository. | s1-c | viva | A mesma recusa na edição inglesa, com a referência mudada a 05.10.2026 na aterragem do H3 (a I206). |
+
+## H3 · a caixa das sugestões numa linha e a página «Privacidade», 05.10.2026
+
+A passagem de higiene H3 (o brief `design/observatorio/BRIEF-H3-a-passagem-de-higiene-de-05-10.md`, §3, pontos 1 e 2):
+a nota do que fica guardado passa a uma linha e à porta «Como tratamos os seus dados», e a página «Privacidade»
+(`/privacidade`, `/en/privacy`) entra no inventário no commit em que nasce, com o texto que o diretor aprovou a
+05.10.2026 (o §5, decisões 1 e 2), à letra, e a edição inglesa fiel. As duas linhas da nota de 03.10.2026 ficam
+`retiradas` na secção do S1-c, com a razão. A classe segue a da nota que saiu: a linha da nota e o texto da página são
+**divulgação** (a informação que o artigo 13.º do Regulamento (UE) 2016/679 manda dar a quem deixa os seus dados, no
+momento em que os deixa e numa ligação a partir daí), e a descrição do `<head>` da página é a primeira frase desse
+texto; o título é **conteúdo**, como «Sugestões» e «Índice», porque é o objeto da página, e é também a porta do rodapé
+e a última migalha do caminho dela. As linhas estão escritas como a régua as lê: uma ligação a meio de uma frase fica
+com um espaço de cada lado, e o apóstrofo do texto inglês chega escapado pelo Astro. As marcas da voz que os textos
+levam («a página de onde veio», «Este sítio não usa cookies», «We only keep what you write») têm exceção de contexto
+nas suas rotas, em `VOZ-MARCADORES.md`, e a palavra «language» do texto inglês da página tem a dispensa do texto inteiro
+em `scripts/medir-defeitos.mjs`, que passou da nota para aqui.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| divulgacao | Só guardamos o que escrever e a página de onde veio, para decidir a sugestão. Como tratamos os seus dados | h3 | viva | A nota do que fica guardado, numa linha, e a porta para a página «Privacidade», no texto aprovado pelo diretor a 05.10.2026 (o §5, decisão 1, do brief H3), à letra. |
+| divulgacao | We only keep what you write and the page you came from, to decide on the suggestion. How we handle your data | h3 | viva | A mesma nota e a mesma porta na edição inglesa, à letra do brief. |
+| conteudo | Privacidade | h3 | viva | O título da página «Privacidade» (bloco H3), que é também a porta do rodapé, ao lado da das sugestões, e a última migalha do caminho dela (`nav.privacidade`). |
+| conteudo | Privacy | h3 | viva | O mesmo título na edição inglesa. |
+| divulgacao | O que fica guardado quando envia uma sugestão: o que escrever, a língua e a página de onde veio. O endereço IP não se guarda; dele fica, durante uma hora, uma marca que não o deixa recuperar, só para travar envios em massa. Os dados ficam em servidores na União Europeia, nos serviços que alojam o sítio e a caixa, que os tratam por conta do projeto. Guardam-se porque os enviou. Uma sugestão decidida apaga-se ao fim de noventa dias; uma por decidir, ao fim de um ano. Por estes dados responde O Estado do País, pelo endereço correcoes@oestadodopais.pt : escreva para saber o que enviou, corrigi-lo ou pedir que se apague; pode também queixar-se à Comissão Nacional de Proteção de Dados (cnpd.pt). Este sítio não usa cookies nem segue quem o lê. | h3 | viva | O texto da página «Privacidade», o do diretor, à letra (o §5, decisão 2, do brief H3); os números por extenso são as regras das migrações da base, e o portão de HTML confere-os; a última frase, o portão confere-a contra as páginas, os guiões, a configuração da Vercel e as funções. |
+| divulgacao | What is kept when you send a suggestion: what you write, the language and the page you came from. The IP address is not kept; what remains of it, for one hour, is a mark from which it cannot be recovered, only to stop mass sending. The data is held on servers in the European Union, in the services that host the site and the box, which process it on the project&#39;s behalf. It is kept because you sent it. A decided suggestion is deleted after ninety days; an undecided one after a year. O Estado do País is responsible for this data, at correcoes@oestadodopais.pt : write to know what you sent, to correct it or to ask for it to be deleted; you may also complain to the Portuguese data protection authority, the Comissão Nacional de Proteção de Dados (cnpd.pt). This site does not use cookies or track who reads it. | h3 | viva | O mesmo texto na edição inglesa, fiel frase a frase (`src/data/privacidade.mjs` diz de onde vem cada frase). |
+| divulgacao | O que fica guardado quando envia uma sugestão: o que escrever, a língua e a página de onde veio. | h3 | viva | A descrição do `<head>` da página «Privacidade»: a primeira frase do texto. |
+| divulgacao | What is kept when you send a suggestion: what you write, the language and the page you came from. | h3 | viva | A mesma descrição na edição inglesa. |
+
+## R2 · os rótulos do sítio, 03.10.2026
+
+*O bloco R2, pela auditoria dos rótulos de 03.10.2026 e pela triagem do lugar de direção
+(`design/especime-v3/critica/AUDITORIA-R2-rotulos-2026-10-03.md`): as notas das medidas dos concelhos dizem o que se conta,
+o estado diz quem fixa o valor de referência, a comparação com a base do índice diz a média de Portugal, as perguntas novas
+de sete cartões, e a legenda do mapa da dívida com a unidade nova. As unidades dos cartões não entram aqui: são dados
+declarados (`src/data/unidades-dos-cartoes.mjs`) que o portão de HTML confere pela marca `data-unidade-da-casa`. As frases
+da faixa do concelho com o nome, o valor e o lugar levam marcas de origem e a régua salta-as nas páginas de concelho; a
+célula FC recompõe-nas e a régua do inventário dos rótulos confere a forma. A pergunta da disparidade salarial leva um
+algarismo declarado e a régua salta-a nas rotas onde ela se rende. Escrito por
+`design/especime-v3/medicoes/r2-2026-10-03/inventario-frases-r2.mjs`.*
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | Estima quantas pessoas vivem no concelho (população residente), pela estimativa anual do INE. | r2 | viva | A dobra do cartão da população residente em cada página de concelho (achado 23): diz o que se conta, com o termo da fonte entre parênteses. A célula do inventário dos rótulos (`scripts/inventario-rotulos.mjs`) confere-a contra a nota declarada da medida. |
+| conteudo | Estimates how many people have their home in the municipality (resident population), from the statistics institute’s annual estimate. | r2 | viva | A mesma dobra na edição inglesa; «have their home», e não «live», que é uma frase retirada deste inventário. |
+| conteudo | Conta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado). | r2 | viva | A dobra do cartão do desemprego registado em cada página de concelho (achado 23). |
+| conteudo | Counts the unemployed people registered with the employment service at month end (registered unemployment). | r2 | viva | A mesma dobra na edição inglesa. |
+| conteudo | Conta as empresas não financeiras atribuídas ao concelho (sistema de contas integradas das empresas). | r2 | viva | A dobra do cartão das empresas em cada página de concelho (achado 23). |
+| conteudo | Counts the non-financial enterprises attributed to the municipality (integrated business accounts system). | r2 | viva | A mesma dobra na edição inglesa. |
+| conteudo | A dívida da câmara que conta para o limite legal no fim do ano (a «dívida total» da DGAL, sem as dívidas não orçamentais e as exceções da lei). | r2 | retirada | Passagem R2-b (04.10.2026, a decisão do lugar de direção): a dobra da dívida dos concelhos diz também a contribuição para o Fundo de Apoio Municipal, que a coluna da DGAL exclui; a forma nova está na secção da passagem r2b. |
+| conteudo | The council’s debt that counts towards the legal limit at year end (DGAL’s “ dívida total ”, without non-budget debts and the exceptions in the law). | r2 | retirada | Passagem R2-b (04.10.2026, a decisão do lugar de direção): a dobra da dívida dos concelhos diz também a contribuição para o Fundo de Apoio Municipal, que a coluna da DGAL exclui; a forma nova está na secção da passagem r2b. |
+| conteudo | O número médio de dias que a câmara demora a pagar aos fornecedores (prazo médio de pagamento), pela lista anual da DGAL. | r2 | viva | A dobra do cartão do prazo médio de pagamento em cada página de concelho (achado 26), com o termo do título da lista da DGAL, no singular. |
+| conteudo | The average number of days the council takes to pay its suppliers (DGAL’s “ prazo médio de pagamento ”, from its annual list). | r2 | viva | A mesma dobra na edição inglesa, com o termo da DGAL em português e a marca da língua; «average payment time» é uma frase retirada deste inventário. |
+| conteudo | abaixo da média de Portugal | r2 | viva | A palavra do lado na comparação do poder de compra com a média de Portugal, que é a base do índice (achado 22): «Está abaixo da média de Portugal (100).»; o resto da frase leva a marca da base, que a célula FC confere contra a unidade da linha. |
+| conteudo | acima da média de Portugal | r2 | viva | A mesma palavra, quando o índice do concelho passa a base. |
+| conteudo | below Portugal’s average | r2 | viva | A mesma palavra na edição inglesa. |
+| conteudo | above Portugal’s average | r2 | viva | A mesma palavra na edição inglesa, quando o índice passa a base. |
+| conteudo | fora do valor de referência da Comissão | r2 | viva | O estado de um cartão contra o valor de referência do painel da Comissão (achado 20): diz quem o fixa. A K15 escolhe o lado pelas contas, e a régua do inventário dos rótulos confere que a forma é a do dono declarado. |
+| conteudo | dentro do valor de referência da Comissão | r2 | viva | A mesma forma, dentro do valor de referência. |
+| conteudo | dentro dos valores de referência da Comissão | r2 | viva | A mesma forma, numa banda de dois lados (o saldo da balança corrente, a taxa de câmbio efetiva real). |
+| conteudo | outside the Commission’s reference value | r2 | viva | A mesma forma na edição inglesa. |
+| conteudo | within the Commission’s reference value | r2 | viva | A mesma forma na edição inglesa. |
+| conteudo | within the Commission’s reference values | r2 | viva | A mesma forma na edição inglesa, numa banda. |
+| conteudo | dentro do limite do Pacto de Estabilidade | r2 | viva | O estado do saldo das contas públicas contra o limite do défice do Pacto de Estabilidade (achado 20). |
+| conteudo | within the Stability Pact limit | r2 | viva | A mesma forma na edição inglesa. |
+| conteudo | fora da trajetória da despesa aprovada pelo Conselho da UE | r2 | viva | O estado do crescimento da despesa líquida contra a trajetória que o Conselho da UE aprovou (achado 20). |
+| conteudo | outside the expenditure path approved by the Council of the EU | r2 | viva | A mesma forma na edição inglesa. |
+| conteudo | Que parte das crianças com menos de três anos é cuidada fora da família, num programa planeado por entidades públicas ou privadas reconhecidas (os cuidados formais para a infância)? | r2 | viva | A pergunta nova do cartão das crianças com menos de três anos (achado 5), pela forma única; cada pedaço tem o apoio que a K16 confere em tests/cartao/perguntas-provadas.json. |
+| conteudo | What share of children under three are cared for outside the family, in a programme planned by public or recognised private bodies (formal childcare)? | r2 | viva | A mesma pergunta na edição inglesa. |
+| conteudo | Qual é o valor mínimo que a lei garante por mês a quem trabalha por conta de outrem no continente, sem o acréscimo que a lei dos Açores lhe soma (a retribuição mínima mensal garantida)? | r2 | viva | A pergunta nova do cartão do salário mínimo (achado 6), pela forma única; «garante» é a palavra da lei e não a casa a falar de si. |
+| conteudo | What is the lowest monthly pay the law guarantees to employees on the mainland, without the increase that Azores law adds to it (the guaranteed minimum monthly wage)? | r2 | viva | A mesma pergunta na edição inglesa; «guarantees» é a palavra da lei. |
+| conteudo | Quanto valem, por pessoa, os bens e serviços finais que a economia produz num ano, descontada a subida dos preços (o PIB real por habitante, em volumes encadeados)? | r2 | viva | A pergunta nova do cartão do PIB real por habitante (achado 12), que guarda o termo da fonte, «volumes encadeados». |
+| conteudo | How much are the final goods and services the economy produces in a year worth per person, leaving out price rises (real GDP per capita, in chain linked volumes)? | r2 | viva | A mesma pergunta na edição inglesa. |
+| conteudo | Que parte das pessoas diz ter precisado de um exame ou tratamento médico e não o ter tido por razões financeiras, por estar em lista de espera ou por ficar longe (as necessidades de cuidados médicos por satisfazer, declaradas pela própria pessoa)? | r2 | viva | A pergunta nova do cartão das necessidades de cuidados médicos por satisfazer (achado 18), com a regra da contagem. |
+| conteudo | What share of people say they needed a medical examination or treatment and did not get it because of the cost, a waiting list or the distance (self-reported unmet needs for medical care)? | r2 | viva | A mesma pergunta na edição inglesa. |
+| conteudo | Que parte das pessoas inquiridas considera muito boa ou razoavelmente boa a independência dos tribunais e dos juízes (a perceção da independência da justiça)? | r2 | viva | A pergunta nova do cartão da perceção da independência da justiça (achado 18); «independência» é a palavra da fonte e não a casa a falar de si. |
+| conteudo | What share of respondents rate the independence of the courts and judges as very good or fairly good (perceived independence of the justice system)? | r2 | viva | A mesma pergunta na edição inglesa; «independence» é a palavra da fonte. |
+| conteudo | Quanto ganham por mês, em média e antes de descontos, os trabalhadores por conta de outrem a tempo completo com remuneração completa (o ganho médio mensal)? | r2 | viva | A pergunta nova do cartão do ganho médio mensal do país (achado 24); «completo» e «completa» são as palavras do INE e não a casa a falar de si. |
+| conteudo | How much do full-time employees on full pay earn per month, on average and before deductions (average monthly earnings)? | r2 | viva | A mesma pergunta na edição inglesa. |
+| conteudo | % da receita média dos três anos anteriores · o limite legal é % | r2 | viva | A legenda do mapa da dívida em «Lugares» com a unidade do cartão do índice de dívida (achado 3) e o teto, que a régua da voz lê sem o 150. |
+| conteudo | % of the average revenue of the previous three years · the legal limit is % | r2 | viva | A mesma legenda na edição inglesa. |
+| conteudo | Valor ( % da receita média dos três anos anteriores ; o limite legal é % ) | r2 | viva | O cabeçalho da coluna dos valores na tabela do mapa da dívida, com a unidade e o teto do cartão. |
+| conteudo | Value ( % of the average revenue of the previous three years ; the legal limit is % ) | r2 | viva | O mesmo cabeçalho na edição inglesa. |
+
+## R2-b · a passagem de correção dos rótulos, 04.10.2026
+
+*A passagem de correção depois da leitura a frio do Sol, pelas decisões do lugar de direção
+(`design/especime-v3/critica/LEITURA-R2-2026-10-04.md`): a pergunta da quota das exportações pela forma do excerto, as
+explicações de três termos em palavras comuns (a quarta, a paridade do poder de compra, leva um algarismo declarado e a régua
+salta-a nas rotas onde ela se rende), a dobra da dívida com o fundo de apoio municipal, e a ressalva do recibo do salário
+mínimo composta da lista dos diplomas regionais. Os nomes de nível dos cartões de preços não entram aqui: são nomes declarados
+(`NOMES_COM_A_VARIACAO_NA_UNIDADE`), com a marca `data-nome="cartao"`. Escrito por
+`design/especime-v3/medicoes/r2-2026-10-03/inventario-frases-r2b.mjs`.*
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | A dívida da câmara que conta para o limite legal no fim do ano (a «dívida total» da DGAL, sem as dívidas não orçamentais, as exceções da lei e a contribuição para o Fundo de Apoio Municipal). | r2b | viva | A dobra do cartão da dívida total em cada página de concelho: diz também o fundo de apoio municipal, que a coluna da DGAL exclui (o localizador de cada linha e o quadro da DGAL, transcrito no inventário das fontes). |
+| conteudo | The council’s debt that counts towards the legal limit at year end (DGAL’s “ dívida total ”, without non-budget debts, the exceptions in the law and the contribution to the municipal support fund, the “ Fundo de Apoio Municipal ”). | r2b | viva | A mesma dobra na edição inglesa, com o termo da DGAL e o nome do fundo em português e a marca da língua. |
+| conteudo | Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (as economias avançadas)? | r2b | viva | A pergunta da quota das exportações (o achado 4 da auditoria dos rótulos): diz o que são as economias avançadas pelo termo da fonte, com a auditoria da K16. |
+| conteudo | Over three years, how much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD (the advanced economies) changed? | r2b | viva | A mesma pergunta na edição inglesa, com os três anos à cabeça. |
+| conteudo | O valor acrescentado bruto (VAB) é o valor do que se produz menos o valor dos bens e serviços consumidos para o produzir. | r2b | viva | A explicação do termo na dobra do primeiro cartão que o usa numa página de área (`TERMOS_DOS_CARTOES`), lida contra o ponto 9.31 do SEC 2010. |
+| conteudo | Gross value added is the value of what is produced minus the value of the goods and services used up in producing it. | r2b | viva | A mesma explicação na edição inglesa. |
+| conteudo | Reexpressa quer dizer apresentada de novo mais tarde: é a dívida do início do mandato como a apresenta um relatório de gestão posterior da câmara. | r2b | viva | A explicação do termo na dobra do cartão da dívida do início do mandato, lida contra o documento e o excerto da linha. |
+| conteudo | Restated means presented again later: it is the debt at the start of the term as a later management report of the council presents it. | r2b | viva | A mesma explicação na edição inglesa. |
+| conteudo | O fator multiplica o montante da pensão: abaixo de um, a pensão baixa, e o que falta para chegar a um é a parte que se corta. | r2b | viva | A explicação do termo na dobra do cartão do fator de sustentabilidade, lida contra o excerto da linha. |
+| conteudo | The factor multiplies the amount of the pension: below one, the pension falls, and the gap to one is the share that is cut. | r2b | viva | A mesma explicação na edição inglesa. |
+| conteudo | Este valor é o do território continental. Nos Açores, a lei regional soma-lhe um acréscimo, e o diploma é uma das fontes da pergunta abaixo. Na Madeira, o valor é fixado por diploma regional próprio, que não é fonte de nenhuma linha deste livro: [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado . | r2b | viva | A ressalva de alcance do recibo do salário mínimo, composta da lista dos diplomas regionais: diz o que foi lido (o diploma dos Açores, origem da pergunta) e o que não é fonte (o da Madeira, com o marcador). |
+| conteudo | This value is for mainland Portugal. In the Azores, regional law adds an increase to it, and the decree is one of the sources of the question below. In Madeira, the value is set by a separate regional decree, which is not a source of any line in this ledger: [a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published . | r2b | viva | A mesma ressalva na edição inglesa. |
+
+## R3 · o índice do sítio, 04.10.2026
+
+A página «Índice» (`/indice`, `/en/index`) entra no inventário no commit em que nasce (o brief R3, §3, ponto 5). As portas
+são ligações, e o texto de uma porta é um destino e não uma frase: não se classifica. Os nomes dos lugares, os títulos dos
+estudos, as datas, as perguntas transcritas e os valores de «O que mudou» são origens. O que se classifica é o título da
+página, os nomes das secções que ainda não estavam declarados e a descrição do `<head>`; os outros nomes de secção
+(«Os estudos», «Os distritos e as ilhas», «Os concelhos», «O que mudou», «Places», «Studies», «Numbers and sources»)
+já estavam no inventário. A classe segue a das outras páginas de índice: o título é **conteúdo**, como «Temas» e
+«Sugestões», porque é o objeto da página; os nomes das secções e a descrição são **navegação**, como «Os distritos e as
+ilhas» e a descrição da página dos temas, porque nomeiam grupos de portas e dizem para onde a página leva. Nenhuma tem
+marcador da voz (`VOZ-MARCADORES.md`).
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Índice | r3 | viva | O título da página do índice (bloco R3), que é também a porta do rodapé e a última migalha do caminho dela (`nav.indice`). |
+| conteudo | Index | r3 | viva | O mesmo título na edição inglesa. |
+| navegacao | O país | r3 | viva | O nome da secção do índice com a primeira página, os temas e as áreas de governo (`indice.seccoes.pais`). |
+| navegacao | The country | r3 | viva | O mesmo nome na edição inglesa. |
+| navegacao | Os lugares | r3 | viva | O nome da secção do índice com a página dos lugares, as regiões, os distritos e as ilhas, e os concelhos. |
+| navegacao | A União Europeia | r3 | viva | O nome da secção do índice com a página dos países da União. |
+| navegacao | The European Union | r3 | viva | O mesmo nome na edição inglesa. |
+| navegacao | Os números e as fontes | r3 | viva | O nome da secção do índice com o índice das linhas, o dos concelhos, as séries, as correções e a página do marcador. A edição inglesa diz «Numbers and sources», que já estava declarado. |
+| navegacao | O projeto | r3 | viva | O nome da secção do índice com o Sobre, o Método, a agenda e as sugestões. |
+| navegacao | The project | r3 | viva | O mesmo nome na edição inglesa. |
+| navegacao | O país e os seus temas, os lugares, a União Europeia, os estudos, os números e as fontes, e o que mudou, cada um com a sua porta. | r3 | viva | A descrição do `<head>` da página do índice: as secções que ela tem, e que cada coisa tem a sua porta. |
+| navegacao | The country and its themes, places, the European Union, studies, numbers and sources, and what changed, each with its door. | r3 | viva | A mesma descrição na edição inglesa. |
+
+## OE1-d · a ressalva publicada no índice, 04.10.2026
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Ressalva | oe1-d | viva | Abre a ressalva da própria linha, escrita pelo motor e conferida no recibo e no índice. |
+| navegacao | Caveat | oe1-d | viva | Abre na edição inglesa o mesmo campo, sem recurso à língua portuguesa. |
+
+## OE1-e · a conta que sustenta uma ressalva, 04.10.2026
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | A conta da ressalva | oe1-e | viva | Nomeia a conta de apoio de uma ressalva numa linha transcrita, sem a apresentar como cálculo do valor. |
+| navegacao | The caveat calculation | oe1-e | viva | O mesmo rótulo na edição inglesa; as contas dos valores calculados mantêm o seu título. |
+
+## H2 · o estado dos estudos recentes, 04.10.2026
+
+Composição de conteúdo dependente da ficha, conferida por `scripts/meta-do-estudo.mjs`
+e pela E1 do `check:pais`. As palavras ficam declaradas aqui; não são linhas
+«vivas» obrigatórias quando o último estudo deixa de estar em curso. A régua
+só dispensa da classificação estática a linha inteira depois de comparar
+lugar, tema, data e estado, e conserva a varredura dos marcadores da voz.
+
+| chave | português | inglês | classe |
+|---|---|---|---|
+| `primeira.emCurso` | em curso até {ano} | ongoing until {ano} | conteúdo, estado declarado na ficha |
+
+
+## RP4 · palavras do desenho e da tabela das séries
+
+O título do SVG é conteúdo composto, conferido carácter a carácter pela F21 em `tests/formas/serie-do-pais.mjs`: nome declarado da série, primeiro período e último período por extenso. Não é uma frase fixa: quando o livro ganha um ponto, o extremo muda. A régua lexical não extrai o interior do SVG nem os cabeçalhos destas tabelas de dados; as cadeias usadas ficam aqui registadas, sem as declarar falsamente como frases fixas rendidas. A planta de uma série trocada e a recomposição do título guardam a ligação ao livro. A S6 confere os cabeçalhos da tabela pela cadência e a expressão da lacuna contra a série.
+
+| cadeia de conteúdo | pt | en |
+|---|---|---|
+| `livro.serieNoTempo.grafico` | {nome}, {intervalo} | {nome}, {intervalo} |
+| `livro.serieNoTempo.periodoPorExtenso` | {periodo} de {ano} | {periodo} of {ano} |
+| `livro.serieNoTempo.anoK` | Ano | Year |
+| `livro.serieNoTempo.semValor` | sem valor | no value |
+| `livro.serieNoTempo.meses` | jan. · fev. · mar. · abr. · mai. · jun. · jul. · ago. · set. · out. · nov. · dez. | Jan · Feb · Mar · Apr · May · Jun · Jul · Aug · Sep · Oct · Nov · Dec |
+| `livro.serieNoTempo.trimestres` | Primeiro trimestre · Segundo trimestre · Terceiro trimestre · Quarto trimestre | First quarter · Second quarter · Third quarter · Fourth quarter |
+| `livro.serieNoTempo.semestres` | Primeiro semestre · Segundo semestre | First half · Second half |
+| `livro.serieNoTempo.numeros` | zero · um · dois · três · quatro · cinco · seis · sete · oito · nove · dez · onze · doze · treze · catorze · quinze · dezasseis · dezassete · dezoito · dezanove | zero · one · two · three · four · five · six · seven · eight · nine · ten · eleven · twelve · thirteen · fourteen · fifteen · sixteen · seventeen · eighteen · nineteen |
+| `livro.serieNoTempo.dezenas` | vinte · trinta · quarenta · cinquenta · sessenta · setenta · oitenta · noventa | twenty · thirty · forty · fifty · sixty · seventy · eighty · ninety |
+| `livro.serieNoTempo.centenas` | cento · duzentos · trezentos · quatrocentos · quinhentos · seiscentos · setecentos · oitocentos · novecentos | one hundred · two hundred · three hundred · four hundred · five hundred · six hundred · seven hundred · eight hundred · nine hundred |
+| `livro.serieNoTempo.cem` | cem | one hundred |
+| `livro.serieNoTempo.mil` | mil | thousand |
+| `livro.serieNoTempo.uneNumero` |  e  |  and  |
+
+Na passagem RP4-b sai a leitura do cartão europeu autónomo e a sua auditoria. O desenho europeu entra no cartão da comparação com a legenda `cartao.uniaoEuropeia`, «União Europeia» e «European Union», já inventariada. A K20 confere a legenda contra a cadeia da casa nas duas edições, com plantas da sua ausência e troca.
+
+### RP4-b · unidade visível, exclusões e anos nos títulos
+
+A primeira página lê a unidade em `unidades-dos-cartoes.mjs` para a linha que nomeia a série. A célula dos blocos confere essa cadeia na mesma corrida da voz, e a planta retira-a ou troca-a. Os recibos já dizem o nome e a unidade no cabeçalho. Os títulos de um desenho com nome visível dizem o intervalo e a unidade, sem repetir o nome.
+
+| cadeia de conteúdo | pt | en |
+|---|---|---|
+| `livro.serieNoTempo.intervalo` | de {primeiro} a {ultimo} | from {primeiro} to {ultimo} |
+| `livro.serieNoTempo.intervaloOrdinal` | do {primeiro} ao {ultimo} | from the {primeiro} to the {ultimo} |
+| `livro.serieNoTempo.graficoSemNome` | {intervalo}, {unidade} | {intervalo}, {unidade} |
+| `livro.serieNoTempo.excluidaSemBase` | {nome}: sem observação no período de base, {periodo}. | {nome}: no observation in the base period, {periodo}. |
+| `livro.serieNoTempo.excluidaBaseNula` | {nome}: a observação no período de base, {periodo}, é zero. | {nome}: the observation in the base period, {periodo}, is zero. |
+| `livro.serieNoTempo.anoZero` | zero | oh |
+| `livro.serieNoTempo.anoCem` | cem | hundred |
+| `livro.serieNoTempo.uneAno` | espaço | espaço |
+| `livro.serieNoTempo.uneDezena` | e, entre espaços | hífen |
+
+Os anos ingleses usam pares, como «nineteen ninety-two» e «twenty twenty-six», e o começo do milénio conserva «two thousand» e os anos seguintes por extenso. O conversor tem provas próprias. As exclusões só aparecem quando uma linha fica sem base utilizável no modo indexado; nenhuma página deste bloco usa esse modo.
+
+## C2 · as nove revisões da Eurostat de 02.10.2026, relidas (05.10.2026)
+
+| Classe | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | 72 revisões de proveniência | c2 | viva | Contagem do livro depois das dezoito entradas de proveniência das nove releituras (o acesso e o excerto de cada linha), que acompanham as nove atualizações. |
+| conteudo | 72 provenance revisions | c2 | viva | Contagem do livro depois das dezoito entradas de proveniência das nove releituras (o acesso e o excerto de cada linha), que acompanham as nove atualizações. |
+
+## R4 · as palavras correntes em cada número, 05.10.2026
+
+O bloco R4 (o brief `design/observatorio/BRIEF-R4-as-palavras-correntes-em-cada-numero.md`, o ponto 4) põe por baixo do
+veredicto da primeira página o que cada valor de referência da Comissão Europeia mede e de que lado Portugal ficou: as
+medidas de fora à vista, as de dentro numa porta dobrada. A frase de cada medida é a metade «o que é» da leitura
+auditada do seu cartão, a mesma que o cartão mostra (a decisão 1 do brief), e é por isso que as linhas são conteúdo e
+que o texto é o da leitura; o lado é uma forma por cada palavra do lado e por cada maneira de escrever a referência (um
+valor, um valor negativo, pontos percentuais, uma banda), com o valor de referência e o sinal tirados, porque são
+origens (a marca `limiar-do-quadro`). As linhas estão escritas como a régua as lê. As explicações só saem da lista
+fechada da primeira página depois de a V1-R4 do `check:pais` as conferir na mesma corrida (`scripts/voz-pais.mjs`).
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Em os preços das casas compradas pelas famílias subiram % em média. | r4 | viva | A metade «o que é» da leitura auditada do cartão da medida (a K17), a mesma frase do cartão, agora também por baixo do veredicto da primeira página (bloco R4, o ponto 4 e a decisão 1 do brief); os valores e os períodos são origens e saem do bloco. |
+| conteudo | Mede a competitividade dos preços portugueses face aos principais concorrentes, contando a inflação e as taxas de câmbio, em três anos. Uma subida é uma apreciação: os preços de Portugal sobem face aos dos parceiros e perde-se competitividade de preços. | r4 | viva | A metade «o que é» da leitura auditada do cartão da medida (a K17), a mesma frase do cartão, agora também por baixo do veredicto da primeira página (bloco R4, o ponto 4 e a decisão 1 do brief); os valores e os períodos são origens e saem do bloco. |
+| conteudo | Os valores de referência de que Portugal ficou dentro | r4 | viva | O rótulo da porta dobrada com os valores de referência de que Portugal ficou dentro (bloco R4, o ponto 4 do brief), por baixo do veredicto da primeira página. |
+| conteudo | Portugal está abaixo do valor de referência da Comissão Europeia, que é %. | r4 | viva | O lado de um valor de referência, como a régua o lê (o valor de referência e o sinal são origens, pela marca do registo, e saem do bloco); a palavra do lado escolhe-a a conta, e a V1-R4 do `check:pais` reconta-a (bloco R4, o ponto 4 e a decisão 5 do brief). |
+| conteudo | Portugal está abaixo do valor de referência da Comissão Europeia, que é − %. | r4 | viva | O lado de um valor de referência, como a régua o lê (o valor de referência e o sinal são origens, pela marca do registo, e saem do bloco); a palavra do lado escolhe-a a conta, e a V1-R4 do `check:pais` reconta-a (bloco R4, o ponto 4 e a decisão 5 do brief). |
+| conteudo | Portugal está acima do valor de referência da Comissão Europeia, que é %. | r4 | viva | O lado de um valor de referência, como a régua o lê (o valor de referência e o sinal são origens, pela marca do registo, e saem do bloco); a palavra do lado escolhe-a a conta, e a V1-R4 do `check:pais` reconta-a (bloco R4, o ponto 4 e a decisão 5 do brief). |
+| conteudo | Portugal está acima do valor de referência da Comissão Europeia, que é − %. | r4 | viva | O lado de um valor de referência, como a régua o lê (o valor de referência e o sinal são origens, pela marca do registo, e saem do bloco); a palavra do lado escolhe-a a conta, e a V1-R4 do `check:pais` reconta-a (bloco R4, o ponto 4 e a decisão 5 do brief). |
+| conteudo | Portugal está acima do valor de referência da Comissão Europeia, que é − pp. | r4 | viva | O lado de um valor de referência, como a régua o lê (o valor de referência e o sinal são origens, pela marca do registo, e saem do bloco); a palavra do lado escolhe-a a conta, e a V1-R4 do `check:pais` reconta-a (bloco R4, o ponto 4 e a decisão 5 do brief). |
+| conteudo | Portugal está entre os valores de referência da Comissão Europeia, que são − % e %. | r4 | viva | O lado de um valor de referência, como a régua o lê (o valor de referência e o sinal são origens, pela marca do registo, e saem do bloco); a palavra do lado escolhe-a a conta, e a V1-R4 do `check:pais` reconta-a (bloco R4, o ponto 4 e a decisão 5 do brief). |
+| conteudo | É a diferença entre o que Portugal recebeu do resto do mundo e o que lhe pagou, em bens, serviços e rendimentos, na média dos últimos três anos e em percentagem do PIB, o valor de tudo o que o país produz num ano. Positivo quer dizer que o país recebeu mais do que pagou. | r4 | viva | A metade «o que é» da leitura auditada do cartão da medida (a K17), a mesma frase do cartão, agora também por baixo do veredicto da primeira página (bloco R4, o ponto 4 e a decisão 1 do brief); os valores e os períodos são origens e saem do bloco. |
+| conteudo | É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano. | r4 | viva | A metade «o que é» da leitura auditada do cartão da medida (a K17), a mesma frase do cartão, agora também por baixo do veredicto da primeira página (bloco R4, o ponto 4 e a decisão 1 do brief); os valores e os períodos são origens e saem do bloco. |
+| conteudo | É a parte das pessoas dos aos anos que está sem emprego, entre as que trabalham ou procuram trabalho. | r4 | viva | A metade «o que é» da leitura auditada do cartão da medida (a K17), a mesma frase do cartão, agora também por baixo do veredicto da primeira página (bloco R4, o ponto 4 e a decisão 1 do brief); os valores e os períodos são origens e saem do bloco. |
+| conteudo | É o que as empresas devem em empréstimos e títulos de dívida, fora as financeiras, em percentagem do PIB, o valor de tudo o que o país produz num ano. | r4 | viva | A metade «o que é» da leitura auditada do cartão da medida (a K17), a mesma frase do cartão, agora também por baixo do veredicto da primeira página (bloco R4, o ponto 4 e a decisão 1 do brief); os valores e os períodos são origens e saem do bloco. |
+| conteudo | É o que as famílias e as instituições sem fim lucrativo ao seu serviço devem em empréstimos e títulos de dívida, em percentagem do PIB, o valor de tudo o que o país produz num ano. | r4 | viva | A metade «o que é» da leitura auditada do cartão da medida (a K17), a mesma frase do cartão, agora também por baixo do veredicto da primeira página (bloco R4, o ponto 4 e a decisão 1 do brief); os valores e os períodos são origens e saem do bloco. |
+| conteudo | É quanto crédito as empresas contraíram num ano, descontado o que reembolsaram, fora as financeiras e sem contar o investimento direto estrangeiro, em percentagem da dívida que já tinham no fim do ano anterior. | r4 | viva | A metade «o que é» da leitura auditada do cartão da medida (a K17), a mesma frase do cartão, agora também por baixo do veredicto da primeira página (bloco R4, o ponto 4 e a decisão 1 do brief); os valores e os períodos são origens e saem do bloco. |
+| conteudo | É quanto crédito as famílias e as instituições sem fim lucrativo ao seu serviço contraíram num ano, descontado o que reembolsaram, em percentagem da dívida que já tinham no fim do ano anterior. | r4 | viva | A metade «o que é» da leitura auditada do cartão da medida (a K17), a mesma frase do cartão, agora também por baixo do veredicto da primeira página (bloco R4, o ponto 4 e a decisão 1 do brief); os valores e os períodos são origens e saem do bloco. |
+| conteudo | É quanto mudou em três anos a quota de Portugal nas exportações das economias avançadas: a parte que as exportações de bens e serviços de Portugal têm no total das exportações dos países da OCDE e dos países da União que não são da OCDE. Positiva quer dizer que Portugal ganhou quota. | r4 | viva | A metade «o que é» da leitura auditada do cartão da medida (a K17), a mesma frase do cartão, agora também por baixo do veredicto da primeira página (bloco R4, o ponto 4 e a decisão 1 do brief); os valores e os períodos são origens e saem do bloco. |
+| conteudo | É quanto mudou em três anos, em pontos percentuais, a parte da população dos aos anos que está ativa: a trabalhar ou à procura de trabalho. Positiva quer dizer que a parte ativa cresceu. | r4 | viva | A metade «o que é» da leitura auditada do cartão da medida (a K17), a mesma frase do cartão, agora também por baixo do veredicto da primeira página (bloco R4, o ponto 4 e a decisão 1 do brief); os valores e os períodos são origens e saem do bloco. |
+| conteudo | É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz. | r4 | viva | A metade «o que é» da leitura auditada do cartão da medida (a K17), a mesma frase do cartão, agora também por baixo do veredicto da primeira página (bloco R4, o ponto 4 e a decisão 1 do brief); os valores e os períodos são origens e saem do bloco. |
+| conteudo | É tudo o que as administrações públicas devem, em percentagem do PIB, o valor de tudo o que o país produz num ano. | r4 | viva | A metade «o que é» da leitura auditada do cartão da medida (a K17), a mesma frase do cartão, agora também por baixo do veredicto da primeira página (bloco R4, o ponto 4 e a decisão 1 do brief); os valores e os períodos são origens e saem do bloco. |
+| conteudo | In the prices of homes bought by households rose % on average. | r4 | viva | A mesma metade «o que é» do cartão na edição inglesa (R4). |
+| conteudo | It is everything general government owes, as a percentage of GDP, the value of everything the country produces in a year. | r4 | viva | A mesma metade «o que é» do cartão na edição inglesa (R4). |
+| conteudo | It is how much Portugal’s share of the exports of advanced economies changed over three years: the part that Portugal’s exports of goods and services make up of the total exports of OECD countries and of EU countries outside the OECD. Positive means Portugal gained share. | r4 | viva | A mesma metade «o que é» do cartão na edição inglesa (R4). |
+| conteudo | It is how much credit companies took on in a year, minus what they repaid, excluding financial companies and foreign direct investment, as a percentage of the debt they already had at the end of the previous year. | r4 | viva | A mesma metade «o que é» do cartão na edição inglesa (R4). |
+| conteudo | It is how much credit households and non-profit institutions serving them took on in a year, minus what they repaid, as a percentage of the debt they already had at the end of the previous year. | r4 | viva | A mesma metade «o que é» do cartão na edição inglesa (R4). |
+| conteudo | It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces. | r4 | viva | A mesma metade «o que é» do cartão na edição inglesa (R4). |
+| conteudo | It is how much the share of the population aged to that is active, working or looking for work, changed over three years, in percentage points. Positive means the active share grew. | r4 | viva | A mesma metade «o que é» do cartão na edição inglesa (R4). |
+| conteudo | It is the difference between what Portugal received from the rest of the world and what it paid to it, in goods, services and income, averaged over the last three years and as a percentage of GDP, the value of everything the country produces in a year. Positive means the country received more than it paid. | r4 | viva | A mesma metade «o que é» do cartão na edição inglesa (R4). |
+| conteudo | It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year. | r4 | viva | A mesma metade «o que é» do cartão na edição inglesa (R4). |
+| conteudo | It is the share of people aged to who are out of work, among those who work or are looking for work. | r4 | viva | A mesma metade «o que é» do cartão na edição inglesa (R4). |
+| conteudo | It is what companies owe in loans and debt securities, excluding financial companies, as a percentage of GDP, the value of everything the country produces in a year. | r4 | viva | A mesma metade «o que é» do cartão na edição inglesa (R4). |
+| conteudo | It is what households and non-profit institutions serving them owe in loans and debt securities, as a percentage of GDP, the value of everything the country produces in a year. | r4 | viva | A mesma metade «o que é» do cartão na edição inglesa (R4). |
+| conteudo | It measures the price competitiveness of Portugal against its main competitors, allowing for inflation and exchange rates, over three years. A rise is an appreciation: prices in Portugal increase relative to those of its partners and price competitiveness falls. | r4 | viva | A mesma metade «o que é» do cartão na edição inglesa (R4). |
+| conteudo | Portugal is above the European Commission’s reference value, which is %. | r4 | viva | A forma inglesa do lado de um valor de referência, com a mesma conta (R4). |
+| conteudo | Portugal is above the European Commission’s reference value, which is − %. | r4 | viva | A forma inglesa do lado de um valor de referência, com a mesma conta (R4). |
+| conteudo | Portugal is above the European Commission’s reference value, which is − pp. | r4 | viva | A forma inglesa do lado de um valor de referência, com a mesma conta (R4). |
+| conteudo | Portugal is below the European Commission’s reference value, which is %. | r4 | viva | A forma inglesa do lado de um valor de referência, com a mesma conta (R4). |
+| conteudo | Portugal is below the European Commission’s reference value, which is − %. | r4 | viva | A forma inglesa do lado de um valor de referência, com a mesma conta (R4). |
+| conteudo | Portugal is between the European Commission’s reference values, which are − % and %. | r4 | viva | A forma inglesa do lado de um valor de referência, com a mesma conta (R4). |
+| conteudo | The reference values Portugal was within | r4 | viva | O mesmo rótulo na edição inglesa (R4). |
+
+## R4-b · a passagem de correção depois da leitura, 06.10.2026
+
+A leitura a frio do R4 (o achado 6) pediu que a explicação da posição de investimento internacional, por baixo do
+veredicto da primeira página, diga também o que o sinal quer dizer, como o cartão e o recibo dizem: a parte do sinal da
+leitura auditada do cartão, que vive na metade que compara e por isso não vinha com a metade «o que é». Sai da lista
+fechada e do arame da classe com as outras partes da explicação, conferida pela V1-R4 na mesma corrida.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Negativa quer dizer que o país deve ao exterior mais do que tem lá. | r4b | viva | A parte do sinal da leitura auditada do cartão da posição de investimento internacional (a K17), na explicação dos valores de referência da primeira página (passagem R4-b, o achado 6 da leitura a frio); o ramo escolhe-o o valor da linha. |
+| conteudo | Negative means the country owes abroad more than it owns there. | r4b | viva | A mesma parte do sinal na edição inglesa (R4-b). |
+## EX1 · o espaço das explicações e a leitura semanal, 05.10.2026
+
+O bloco EX1 (o brief `design/observatorio/BRIEF-EX1-o-espaco-das-explicacoes-e-a-leitura-semanal.md`): a lista das
+explicações (`/explicacoes`, `/en/explainers`), a leitura da semana (`/explicacoes/leitura-da-semana`,
+`/en/explainers/weekly-reading`) e a página de cada explicação (`/explicacoes/<slug>`, `/en/explainers/<slug>`) entram no
+inventário no commit em que nascem, e o bloco «Para perceber» entra na primeira página. O texto de uma explicação é do
+lugar de direção, auditado parte a parte (a secção «explicacoes» de `tests/cartao/leituras-provadas.json`), e as frases da
+leitura da semana compõem-se em cada construção: as duas coisas mudam com os dados e saem do inventário só conferidas, pela
+marca `data-explicacao-declarado` e `data-semana-declarado` e pelas células da explicação e da semana, que o `check:voz`
+corre na mesma corrida. Ficam aqui a mobília das três páginas e do bloco, e as descrições do `<head>`; os títulos das
+páginas são **conteúdo**, como «Índice» e «Privacidade», porque são o objeto da página.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Para perceber | ex1 | viva | O título do bloco que fecha «O que se passa» na primeira página (`primeira.paraPerceber`), com a porta da explicação mais recente e a da leitura da semana. |
+| conteudo | To understand | ex1 | viva | O mesmo título na edição inglesa. |
+| conteudo | Explicações | ex1 | viva | O título da lista das explicações, a migalha dela, a porta dela no índice e, desde o EX1-b (06.10.2026, a I211), a porta do rodapé (`nav.explicacoes`). |
+| conteudo | Explainers | ex1 | viva | O mesmo título na edição inglesa, e o nome da secção do índice que a abre. |
+| conteudo | As explicações | ex1 | viva | O título da lista na página das explicações e o nome da secção do índice (`explicacoes.listaK`, `indice.seccoes.explicacoes`). |
+| conteudo | The explainers | ex1 | viva | O título da lista na edição inglesa. |
+| conteudo | A leitura da semana | ex1 | viva | O título da leitura da semana: à cabeça da lista das explicações, no `<h1>` da página dela e na migalha dela (`semana.titulo`). |
+| conteudo | This week’s reading | ex1 | viva | O mesmo título na edição inglesa. |
+| conteudo | O que mudou nos números do país na última semana, e explicações em português corrente de como os números se ligam. | ex1 | viva | A descrição do `<head>` da lista das explicações: o que a página tem. |
+| conteudo | What changed in the country’s figures over the last week, and explainers in everyday words on how the figures fit together. | ex1 | viva | A mesma descrição na edição inglesa; «everyday words» e não «plain language», porque a frase retirada «Language» morde dentro de uma frase nova. |
+| conteudo | O que mudou nos números do país nos últimos sete dias, de quanto para quanto, e lido de onde. | ex1 | viva | A descrição do `<head>` da leitura da semana. |
+| conteudo | What changed in the country’s figures over the last seven days, from how much to how much, and read from where. | ex1 | viva | A mesma descrição na edição inglesa. |
+| conteudo | Os números desta figura | ex1 | viva | O resumo da lista dobrada dos números de uma figura de uma explicação, com a porta do recibo de cada um (`explicacoes.numerosDaFigura`). |
+| conteudo | The figures in this chart | ex1 | viva | O mesmo resumo na edição inglesa. |
+| conteudo | Para onde vai o dinheiro do Estado em 2026 | ex1 | viva | A descrição do `<head>` da primeira explicação, que é o título dela, com o ano pelo período da linha nomeada; o portão de HTML recompõe-a por conta própria. |
+| conteudo | Where the State’s money goes in 2026 | ex1 | viva | A mesma descrição na edição inglesa. |
+
+## O código incorporável (ER1)
+
+O código é recomposto antes de sair da leitura da prosa. Os estados da cópia
+são conferidos nos atributos pelo portão e exercidos no navegador.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Incorporar este número | er1 | viva | O rótulo do campo do código. |
+| navegacao | Embed this number | er1 | viva | O rótulo na edição inglesa. |
+| navegacao | Copiar | er1 | viva | O comando de cópia do código. |
+| navegacao | Copy | er1 | viva | O comando na edição inglesa. |

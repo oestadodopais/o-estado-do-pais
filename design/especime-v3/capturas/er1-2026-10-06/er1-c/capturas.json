@@ -1,0 +1,350 @@
+{
+  "cabecaCodigo": "9d65ba384daf1b87a2f2d33b5d789359a94e64a0",
+  "carimbo": {
+    "commit": "9d65ba384daf1b87a2f2d33b5d789359a94e64a0",
+    "ref": "er1-2026-10-06",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-07T11:40:46.990Z"
+  },
+  "comando": "node design/especime-v3/medicoes/er1-2026-10-06/capturar-c.mjs",
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/comCodigo-pt-390-pagina.png",
+      "estado": "comCodigo",
+      "lang": "pt",
+      "rota": "/livro-razao/divida-publica-2025",
+      "largura": 390,
+      "recorte": "pagina",
+      "dimensoes": {
+        "janela": 390,
+        "documento": 390
+      },
+      "externos": [],
+      "sha256": "e92f44c1f5d200a8e76edd22f50d7dcac3a4d0572e8a83f8897369423a6cb0e6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/comCodigo-pt-390-incorporar.png",
+      "estado": "comCodigo",
+      "lang": "pt",
+      "rota": "/livro-razao/divida-publica-2025",
+      "largura": 390,
+      "recorte": "incorporar",
+      "dimensoes": {
+        "janela": 390,
+        "documento": 390
+      },
+      "externos": [],
+      "sha256": "cbefe9bc8ea14096200364fcd72be6a3629ca0d33204512fb22898f2a3049754"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/comCodigo-pt-1280-pagina.png",
+      "estado": "comCodigo",
+      "lang": "pt",
+      "rota": "/livro-razao/divida-publica-2025",
+      "largura": 1280,
+      "recorte": "pagina",
+      "dimensoes": {
+        "janela": 1280,
+        "documento": 1280
+      },
+      "externos": [],
+      "sha256": "4b43f963903b38637305f3fabcaa8b601e258f4591aeb814c7f463cf2596e8bf"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/comCodigo-pt-1280-incorporar.png",
+      "estado": "comCodigo",
+      "lang": "pt",
+      "rota": "/livro-razao/divida-publica-2025",
+      "largura": 1280,
+      "recorte": "incorporar",
+      "dimensoes": {
+        "janela": 1280,
+        "documento": 1280
+      },
+      "externos": [],
+      "sha256": "5d8c5f11dcaabef5a03714cd2cb1e72cb961f1a7b105b055f0280c6786821eca"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/semCodigo-pt-390-pagina.png",
+      "estado": "semCodigo",
+      "lang": "pt",
+      "rota": "/livro-razao/avisos-pt2030-abertos",
+      "largura": 390,
+      "recorte": "pagina",
+      "dimensoes": {
+        "janela": 390,
+        "documento": 390
+      },
+      "externos": [],
+      "sha256": "b0f8a4bf09906073d90ccb03ef6e371d254c3d92b223b7d160630b12e94817df"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/semCodigo-pt-390-incorporar.png",
+      "estado": "semCodigo",
+      "lang": "pt",
+      "rota": "/livro-razao/avisos-pt2030-abertos",
+      "largura": 390,
+      "recorte": "incorporar",
+      "dimensoes": {
+        "janela": 390,
+        "documento": 390
+      },
+      "externos": [],
+      "sha256": "b196d98429dc665cebeea2c5f4bf6d895c3f2c48d695b9c8d38b7dcccd3a8fcc"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/semCodigo-pt-1280-pagina.png",
+      "estado": "semCodigo",
+      "lang": "pt",
+      "rota": "/livro-razao/avisos-pt2030-abertos",
+      "largura": 1280,
+      "recorte": "pagina",
+      "dimensoes": {
+        "janela": 1280,
+        "documento": 1280
+      },
+      "externos": [],
+      "sha256": "df8cb4d418ca128972a497a25109ce5ce931ab4b9f683cd87d244da8a7a8ed7f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/semCodigo-pt-1280-incorporar.png",
+      "estado": "semCodigo",
+      "lang": "pt",
+      "rota": "/livro-razao/avisos-pt2030-abertos",
+      "largura": 1280,
+      "recorte": "incorporar",
+      "dimensoes": {
+        "janela": 1280,
+        "documento": 1280
+      },
+      "externos": [],
+      "sha256": "0f3880bbe34c493c3721cc7ddd9a53153745edf0913593a52804cba56620ff46"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/calculado-pt-390-pagina.png",
+      "estado": "calculado",
+      "lang": "pt",
+      "rota": "/livro-razao/abrantes-indice-de-divida-2024",
+      "largura": 390,
+      "recorte": "pagina",
+      "dimensoes": {
+        "janela": 390,
+        "documento": 390
+      },
+      "externos": [],
+      "sha256": "37ed21c5c332debf33390ace8b066b871014979f4d9be0c72c629cbd36ece98e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/calculado-pt-390-incorporar.png",
+      "estado": "calculado",
+      "lang": "pt",
+      "rota": "/livro-razao/abrantes-indice-de-divida-2024",
+      "largura": 390,
+      "recorte": "incorporar",
+      "dimensoes": {
+        "janela": 390,
+        "documento": 390
+      },
+      "externos": [],
+      "sha256": "2d547b8c9401c78eec5ee1c21141b3232b034063ea4cdc8f3e62f9afdff54cbd"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/calculado-pt-1280-pagina.png",
+      "estado": "calculado",
+      "lang": "pt",
+      "rota": "/livro-razao/abrantes-indice-de-divida-2024",
+      "largura": 1280,
+      "recorte": "pagina",
+      "dimensoes": {
+        "janela": 1280,
+        "documento": 1280
+      },
+      "externos": [],
+      "sha256": "5003176218fa855d2a16c7b84ad296a1c62cc4d26e1576d4719f84dc6db2eec5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/calculado-pt-1280-incorporar.png",
+      "estado": "calculado",
+      "lang": "pt",
+      "rota": "/livro-razao/abrantes-indice-de-divida-2024",
+      "largura": 1280,
+      "recorte": "incorporar",
+      "dimensoes": {
+        "janela": 1280,
+        "documento": 1280
+      },
+      "externos": [],
+      "sha256": "304b93e18122ba3ea77458a6bdb0a52b8808abc2cf3e34bbaa489a3a93296b48"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/comCodigo-en-390-pagina.png",
+      "estado": "comCodigo",
+      "lang": "en",
+      "rota": "/en/ledger/divida-publica-2025",
+      "largura": 390,
+      "recorte": "pagina",
+      "dimensoes": {
+        "janela": 390,
+        "documento": 390
+      },
+      "externos": [],
+      "sha256": "31eafb17fdd0136e295815b5e0e2f7cb5dabd218274c3318e0e638eb74377636"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/comCodigo-en-390-incorporar.png",
+      "estado": "comCodigo",
+      "lang": "en",
+      "rota": "/en/ledger/divida-publica-2025",
+      "largura": 390,
+      "recorte": "incorporar",
+      "dimensoes": {
+        "janela": 390,
+        "documento": 390
+      },
+      "externos": [],
+      "sha256": "d199078ebeb619910f8172fa67efec2d51276fbb053376acaef2e36db5bdf4a5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/comCodigo-en-1280-pagina.png",
+      "estado": "comCodigo",
+      "lang": "en",
+      "rota": "/en/ledger/divida-publica-2025",
+      "largura": 1280,
+      "recorte": "pagina",
+      "dimensoes": {
+        "janela": 1280,
+        "documento": 1280
+      },
+      "externos": [],
+      "sha256": "41cf23a93d1cc858e6cbe8d942f9157e5acbc96f703d2587b04f963ca77e0a11"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/comCodigo-en-1280-incorporar.png",
+      "estado": "comCodigo",
+      "lang": "en",
+      "rota": "/en/ledger/divida-publica-2025",
+      "largura": 1280,
+      "recorte": "incorporar",
+      "dimensoes": {
+        "janela": 1280,
+        "documento": 1280
+      },
+      "externos": [],
+      "sha256": "4f10b31258fe7354ce56f7e481ef8ec8b4315d01e647bc63bf58a6a2e88652ff"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/semCodigo-en-390-pagina.png",
+      "estado": "semCodigo",
+      "lang": "en",
+      "rota": "/en/ledger/avisos-pt2030-abertos",
+      "largura": 390,
+      "recorte": "pagina",
+      "dimensoes": {
+        "janela": 390,
+        "documento": 390
+      },
+      "externos": [],
+      "sha256": "7a77ad4b07c505aacfb464148f4a4c7125f21a9f6d369d42dfadaf2216f199d0"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/semCodigo-en-390-incorporar.png",
+      "estado": "semCodigo",
+      "lang": "en",
+      "rota": "/en/ledger/avisos-pt2030-abertos",
+      "largura": 390,
+      "recorte": "incorporar",
+      "dimensoes": {
+        "janela": 390,
+        "documento": 390
+      },
+      "externos": [],
+      "sha256": "b6570f6f8044f7b619b2ce3441930acaa8ed201f42fffed4c6b62abc027cd41c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/semCodigo-en-1280-pagina.png",
+      "estado": "semCodigo",
+      "lang": "en",
+      "rota": "/en/ledger/avisos-pt2030-abertos",
+      "largura": 1280,
+      "recorte": "pagina",
+      "dimensoes": {
+        "janela": 1280,
+        "documento": 1280
+      },
+      "externos": [],
+      "sha256": "88baf17cedfc87de0b3a84169b0bc511e6a4e91694a7c084689030f6eb66e87f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/semCodigo-en-1280-incorporar.png",
+      "estado": "semCodigo",
+      "lang": "en",
+      "rota": "/en/ledger/avisos-pt2030-abertos",
+      "largura": 1280,
+      "recorte": "incorporar",
+      "dimensoes": {
+        "janela": 1280,
+        "documento": 1280
+      },
+      "externos": [],
+      "sha256": "6bfc8f912b077fe826ece8a913170df9f0a0be5085c79eae705bb32c211208cb"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/calculado-en-390-pagina.png",
+      "estado": "calculado",
+      "lang": "en",
+      "rota": "/en/ledger/abrantes-indice-de-divida-2024",
+      "largura": 390,
+      "recorte": "pagina",
+      "dimensoes": {
+        "janela": 390,
+        "documento": 390
+      },
+      "externos": [],
+      "sha256": "ae309f6756ba0dc6b15b7605a053b2cb68f6b4ae71ca9c18c5222fdcd95fb2c3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/calculado-en-390-incorporar.png",
+      "estado": "calculado",
+      "lang": "en",
+      "rota": "/en/ledger/abrantes-indice-de-divida-2024",
+      "largura": 390,
+      "recorte": "incorporar",
+      "dimensoes": {
+        "janela": 390,
+        "documento": 390
+      },
+      "externos": [],
+      "sha256": "c4dbd722e0aba7c96345b74f222f2b2bac18ff19daa1ee2ce730e3cfe8e34008"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/calculado-en-1280-pagina.png",
+      "estado": "calculado",
+      "lang": "en",
+      "rota": "/en/ledger/abrantes-indice-de-divida-2024",
+      "largura": 1280,
+      "recorte": "pagina",
+      "dimensoes": {
+        "janela": 1280,
+        "documento": 1280
+      },
+      "externos": [],
+      "sha256": "fe5b2376bd298a3e653b8b461a64740c6e902abdab37a76d5e6d239cad359420"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-c/calculado-en-1280-incorporar.png",
+      "estado": "calculado",
+      "lang": "en",
+      "rota": "/en/ledger/abrantes-indice-de-divida-2024",
+      "largura": 1280,
+      "recorte": "incorporar",
+      "dimensoes": {
+        "janela": 1280,
+        "documento": 1280
+      },
+      "externos": [],
+      "sha256": "7298bc376b8530a2f5c6269386fa180550e9c5803b8a17cb9f11660bcf96dd30"
+    }
+  ]
+}

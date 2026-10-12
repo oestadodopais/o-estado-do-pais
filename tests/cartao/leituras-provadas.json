@@ -15377,9 +15377,9 @@
   "explicacoes": [
     {
       "slug": "dinheiro-do-estado-2026",
-      "quem": "Claude Opus 5.5",
-      "quando": "2026-10-06",
-      "o_que": "a primeira leitura (05.10.2026), a do EX1-b e a do EX1-c (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216, e as correções da leitura a frio), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X17 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam",
+      "quem": "Claude Opus 5.5 (EX1 a EX1-c); Codex gpt-6-astra (EX1-d e EX1-e)",
+      "quando": "2026-10-12",
+      "o_que": "a primeira leitura (05.10.2026), a do EX1-b e a do EX1-c (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216, e as correções da leitura a frio), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X17 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam; EX1-d: releitura dos apoios selados, correção dos juros e da referência à posição da execução, e saldo do mesmo perímetro com comparação explícita ao ano inteiro (acertos X18 a X20); EX1-e: comparação dos módulos dos saldos, com sinais diferentes e nulos declarados; os juros não são localizados nem anunciados sem apoio: a frase curta é a ausência calculada pela condição sem_linhas, e as transferências mantêm o literal selado; saldo acumulado sem fecho anual e distinção dos perímetros apoiada nos dois literais da nota interna autorizados pelo mandato EX1-e, sem publicar a nota",
       "origens": [
         "dados-gov-oe-despesa-funcional",
         "eurostat-cofog-divisao-01",
@@ -15618,8 +15618,8 @@
         },
         {
           "caminho": "abertura[0][19].se[4]",
-          "pt": ", onde a classificação das funções conta os juros da dívida e as transferências entre administrações.",
-          "en": ", where the classification of functions counts the interest on the debt and the transfers between levels of government.",
+          "pt": ", onde a classificação das funções conta as transferências entre administrações.",
+          "en": ", where the classification of functions counts the transfers between levels of government.",
           "partes": [
             {
               "pt": ", onde a classificação das funções",
@@ -15634,20 +15634,8 @@
               ]
             },
             {
-              "pt": " conta os juros da dívida",
-              "en": " counts the interest on the debt",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "eurostat-cofog-divisao-01",
-                  "campo": "excerto",
-                  "literal": "Public debt transactions"
-                }
-              ]
-            },
-            {
-              "pt": " e as transferências entre administrações.",
-              "en": " and the transfers between levels of government.",
+              "pt": " conta as transferências entre administrações.",
+              "en": " counts the transfers between levels of government.",
               "classe": "diz",
               "apoios": [
                 {
@@ -16474,6 +16462,803 @@
           ]
         },
         {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[0]",
+          "pt": "No fim de ",
+          "en": "By the end of ",
+          "partes": [
+            {
+              "pt": "No fim de ",
+              "en": "By the end of ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "acumulados de janeiro a agosto"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[2]",
+          "pt": ", as contas da administração central e da segurança social apresentavam um saldo acumulado de ",
+          "en": ", the accounts of central government and social security showed a cumulative balance of ",
+          "partes": [
+            {
+              "pt": ", as contas da administração central e da segurança social apresentavam um saldo acumulado de ",
+              "en": ", the accounts of central government and social security showed a cumulative balance of ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "nome",
+                  "literal": "da administração central e da segurança social"
+                },
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "name",
+                  "literal": "Saldo global"
+                },
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.locator",
+                  "literal": "Execução Acumulada"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[3].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[4]",
+          "pt": ", ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[5].positivo[0]",
+          "pt": "um excedente (recebeu mais do que gastou)",
+          "en": "a surplus (it took in more than it spent)",
+          "partes": [
+            {
+              "pt": "um excedente",
+              "en": "a surplus",
+              "classe": "conta"
+            },
+            {
+              "pt": " (recebeu mais do que gastou)",
+              "en": " (it took in more than it spent)",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "ressalva",
+                  "literal": "O saldo global é a receita efetiva menos a despesa efetiva"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[5].negativo[0]",
+          "pt": "um défice (gastou mais do que recebeu)",
+          "en": "a deficit (it spent more than it took in)",
+          "partes": [
+            {
+              "pt": "um défice",
+              "en": "a deficit",
+              "classe": "conta"
+            },
+            {
+              "pt": " (gastou mais do que recebeu)",
+              "en": " (it spent more than it took in)",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "ressalva",
+                  "literal": "O saldo global é a receita efetiva menos a despesa efetiva"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[5].zero[0]",
+          "pt": "um saldo nulo (recebeu o mesmo que gastou)",
+          "en": "a nil balance (it took in the same as it spent)",
+          "partes": [
+            {
+              "pt": "um saldo nulo",
+              "en": "a nil balance",
+              "classe": "conta"
+            },
+            {
+              "pt": " (recebeu o mesmo que gastou)",
+              "en": " (it took in the same as it spent)",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "ressalva",
+                  "literal": "O saldo global é a receita efetiva menos a despesa efetiva"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[6]",
+          "pt": "; ",
+          "en": "; ",
+          "partes": [
+            {
+              "pt": "; ",
+              "en": "; ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].deficitMaior[0]",
+          "pt": "é um défice maior do que o que o Orçamento previa para o ano inteiro (",
+          "en": "it is a larger deficit than the one the Budget forecast for the full year (",
+          "partes": [
+            {
+              "pt": "é um défice maior do que o que ",
+              "en": "it is a larger deficit than the one ",
+              "classe": "conta"
+            },
+            {
+              "pt": "o Orçamento previa para o ano inteiro (",
+              "en": "the Budget forecast for the full year (",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.locator",
+                  "literal": "Orçamento Inicial"
+                },
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].deficitMaior[1].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].deficitMaior[2]",
+          "pt": ")",
+          "en": ")",
+          "partes": [
+            {
+              "pt": ")",
+              "en": ")",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].deficitMenor[0]",
+          "pt": "é um défice menor do que o que o Orçamento previa para o ano inteiro (",
+          "en": "it is a smaller deficit than the one the Budget forecast for the full year (",
+          "partes": [
+            {
+              "pt": "é um défice menor do que o que ",
+              "en": "it is a smaller deficit than the one ",
+              "classe": "conta"
+            },
+            {
+              "pt": "o Orçamento previa para o ano inteiro (",
+              "en": "the Budget forecast for the full year (",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.locator",
+                  "literal": "Orçamento Inicial"
+                },
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].deficitMenor[1].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].deficitMenor[2]",
+          "pt": ")",
+          "en": ")",
+          "partes": [
+            {
+              "pt": ")",
+              "en": ")",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].deficitIgual[0]",
+          "pt": "é um défice igual ao que o Orçamento previa para o ano inteiro (",
+          "en": "it is the same deficit as the one the Budget forecast for the full year (",
+          "partes": [
+            {
+              "pt": "é um défice igual ao que ",
+              "en": "it is the same deficit as the one ",
+              "classe": "conta"
+            },
+            {
+              "pt": "o Orçamento previa para o ano inteiro (",
+              "en": "the Budget forecast for the full year (",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.locator",
+                  "literal": "Orçamento Inicial"
+                },
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].deficitIgual[1].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].deficitIgual[2]",
+          "pt": ")",
+          "en": ")",
+          "partes": [
+            {
+              "pt": ")",
+              "en": ")",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].excedenteMaior[0]",
+          "pt": "é um excedente maior do que o que o Orçamento previa para o ano inteiro (",
+          "en": "it is a larger surplus than the one the Budget forecast for the full year (",
+          "partes": [
+            {
+              "pt": "é um excedente maior do que o que ",
+              "en": "it is a larger surplus than the one ",
+              "classe": "conta"
+            },
+            {
+              "pt": "o Orçamento previa para o ano inteiro (",
+              "en": "the Budget forecast for the full year (",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.locator",
+                  "literal": "Orçamento Inicial"
+                },
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].excedenteMaior[1].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].excedenteMaior[2]",
+          "pt": ")",
+          "en": ")",
+          "partes": [
+            {
+              "pt": ")",
+              "en": ")",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].excedenteMenor[0]",
+          "pt": "é um excedente menor do que o que o Orçamento previa para o ano inteiro (",
+          "en": "it is a smaller surplus than the one the Budget forecast for the full year (",
+          "partes": [
+            {
+              "pt": "é um excedente menor do que o que ",
+              "en": "it is a smaller surplus than the one ",
+              "classe": "conta"
+            },
+            {
+              "pt": "o Orçamento previa para o ano inteiro (",
+              "en": "the Budget forecast for the full year (",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.locator",
+                  "literal": "Orçamento Inicial"
+                },
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].excedenteMenor[1].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].excedenteMenor[2]",
+          "pt": ")",
+          "en": ")",
+          "partes": [
+            {
+              "pt": ")",
+              "en": ")",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].excedenteIgual[0]",
+          "pt": "é um excedente igual ao que o Orçamento previa para o ano inteiro (",
+          "en": "it is the same surplus as the one the Budget forecast for the full year (",
+          "partes": [
+            {
+              "pt": "é um excedente igual ao que ",
+              "en": "it is the same surplus as the one ",
+              "classe": "conta"
+            },
+            {
+              "pt": "o Orçamento previa para o ano inteiro (",
+              "en": "the Budget forecast for the full year (",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.locator",
+                  "literal": "Orçamento Inicial"
+                },
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].excedenteIgual[1].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].excedenteIgual[2]",
+          "pt": ")",
+          "en": ")",
+          "partes": [
+            {
+              "pt": ")",
+              "en": ")",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].nulos[0]",
+          "pt": "é um saldo nulo, como o que o Orçamento previa para o ano inteiro (",
+          "en": "it is a nil balance, as the Budget forecast for the full year (",
+          "partes": [
+            {
+              "pt": "é um saldo nulo, como o que ",
+              "en": "it is a nil balance, as ",
+              "classe": "conta"
+            },
+            {
+              "pt": "o Orçamento previa para o ano inteiro (",
+              "en": "the Budget forecast for the full year (",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.locator",
+                  "literal": "Orçamento Inicial"
+                },
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].nulos[1].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].nulos[2]",
+          "pt": ")",
+          "en": ")",
+          "partes": [
+            {
+              "pt": ")",
+              "en": ")",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].diferentesNegativo[0]",
+          "pt": "o Orçamento previa para o ano inteiro um défice de ",
+          "en": "the Budget forecast for the full year a deficit of ",
+          "partes": [
+            {
+              "pt": "o Orçamento previa para o ano inteiro",
+              "en": "the Budget forecast for the full year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.locator",
+                  "literal": "Orçamento Inicial"
+                },
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            },
+            {
+              "pt": " um défice de ",
+              "en": " a deficit of ",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].diferentesNegativo[1].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].diferentesPositivo[0]",
+          "pt": "o Orçamento previa para o ano inteiro um excedente de ",
+          "en": "the Budget forecast for the full year a surplus of ",
+          "partes": [
+            {
+              "pt": "o Orçamento previa para o ano inteiro",
+              "en": "the Budget forecast for the full year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.locator",
+                  "literal": "Orçamento Inicial"
+                },
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            },
+            {
+              "pt": " um excedente de ",
+              "en": " a surplus of ",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].diferentesPositivo[1].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].diferentesZero[0]",
+          "pt": "o Orçamento previa para o ano inteiro um saldo nulo de ",
+          "en": "the Budget forecast for the full year a nil balance of ",
+          "partes": [
+            {
+              "pt": "o Orçamento previa para o ano inteiro",
+              "en": "the Budget forecast for the full year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.locator",
+                  "literal": "Orçamento Inicial"
+                },
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            },
+            {
+              "pt": " um saldo nulo de ",
+              "en": " a nil balance of ",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].diferentesZero[1].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[8]",
+          "pt": ", e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de ",
+          "en": ", and September to December are still to come. It is a different account, not the one of the public accounts of ",
+          "partes": [
+            {
+              "pt": ", e ainda faltam os meses de setembro a dezembro",
+              "en": ", and September to December are still to come",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "acumulados de janeiro a agosto"
+                },
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            },
+            {
+              "pt": ". ",
+              "en": ". ",
+              "classe": "liga"
+            },
+            {
+              "pt": "É outra conta, e não a das contas públicas de ",
+              "en": "It is a different account, not the one of the public accounts of ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "note",
+                  "literal": "Não são grandezas diretamente comparáveis."
+                },
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "note",
+                  "literal": "O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local"
+                },
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.title",
+                  "literal": "Síntese da Execução Orçamental"
+                },
+                {
+                  "linha": "saldo-das-administracoes-publicas-2025",
+                  "campo": "excerpt",
+                  "literal": "General government"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[10]",
+          "pt": " do parágrafo seguinte.",
+          "en": " in the next paragraph.",
+          "partes": [
+            {
+              "pt": " do parágrafo seguinte.",
+              "en": " in the next paragraph.",
+              "classe": "aponta",
+              "paragrafo": "seccoes[3].conteudo[0].paragrafo",
+              "posicao": "seguinte"
+            }
+          ]
+        },
+        {
           "caminho": "seccoes[3].titulo",
           "pt": "A dívida e o saldo",
           "en": "Debt and the balance",
@@ -16863,11 +17648,11 @@
         {
           "caminho": "seccoes[3].conteudo[0].paragrafo[9].zero[0]",
           "pt": "um saldo nulo (recebeu o mesmo que gastou)",
-          "en": "a zero balance (it took in as much as it spent)",
+          "en": "a nil balance (it took in as much as it spent)",
           "partes": [
             {
               "pt": "um saldo nulo",
-              "en": "a zero balance",
+              "en": "a nil balance",
               "classe": "conta"
             },
             {
@@ -16898,8 +17683,8 @@
         },
         {
           "caminho": "naoDiz[0][0].se[0]",
-          "pt": "O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a de agosto está acima.",
-          "en": "The budget is a forecast: what is actually spent is read in the budget execution, month by month, and August’s is above.",
+          "pt": "O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto é a que esta explicação mostra acima.",
+          "en": "The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is the one this explainer shows above.",
           "partes": [
             {
               "pt": "O orçamento é uma previsão",
@@ -16943,8 +17728,8 @@
               ]
             },
             {
-              "pt": ", e a de agosto",
-              "en": ", and August’s",
+              "pt": ", e a execução até agosto",
+              "en": ", and the execution to August",
               "classe": "diz",
               "apoios": [
                 {
@@ -16955,8 +17740,8 @@
               ]
             },
             {
-              "pt": " está acima.",
-              "en": " is above.",
+              "pt": " é a que esta explicação mostra acima.",
+              "en": " is the one this explainer shows above.",
               "classe": "aponta",
               "secao": "execucao"
             }
@@ -16964,46 +17749,12 @@
         },
         {
           "caminho": "naoDiz[0][1].se[0]",
-          "pt": " Falta aqui o custo dos juros da dívida, que o Orçamento também prevê e que estes números não mostram.",
-          "en": " Missing here is the cost of the interest on the debt, which the Budget also forecasts and which these figures do not show.",
+          "pt": " Estes números não isolam o custo dos juros da dívida.",
+          "en": " These figures do not isolate the cost of the interest on the debt.",
           "partes": [
             {
-              "pt": " Falta aqui",
-              "en": " Missing here is",
-              "classe": "conta"
-            },
-            {
-              "pt": " o custo dos juros da dívida",
-              "en": " the cost of the interest on the debt",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "eurostat-cofog-divisao-01",
-                  "campo": "excerto",
-                  "literal": "Public debt transactions"
-                }
-              ]
-            },
-            {
-              "pt": ", que o Orçamento também prevê",
-              "en": ", which the Budget also forecasts",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "dados-gov-oe-despesa-funcional",
-                  "campo": "excerto",
-                  "literal": "contemplam as despesas a pagar no ano"
-                },
-                {
-                  "origem": "eurostat-cofog-divisao-01",
-                  "campo": "excerto",
-                  "literal": "Public debt transactions"
-                }
-              ]
-            },
-            {
-              "pt": " e que estes números não mostram.",
-              "en": " and which these figures do not show.",
+              "pt": " Estes números não isolam o custo dos juros da dívida.",
+              "en": " These figures do not isolate the cost of the interest on the debt.",
               "classe": "conta"
             }
           ]
