@@ -14338,9 +14338,10 @@
       "origens": [
         "dados-gov-oe-despesa-funcional",
         "eurostat-cofog-divisao-01",
+        "eurostat-gfs-saldo",
         "eurostat-tipsgo10-descricao",
         "eurostat-tipsna40-descricao",
-        "eurostat-gfs-saldo"
+        "rp4n-mapa-ministerios"
       ],
       "folhas": [
         {
@@ -15049,14 +15050,14 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "oe-2026-cem-euros-ministerio-financas",
-                  "campo": "derivation",
-                  "literal": "não mede a repartição da despesa efetiva consolidada"
+                  "origem": "rp4n-mapa-ministerios",
+                  "campo": "excerto",
+                  "literal": "Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central"
                 },
                 {
-                  "linha": "oe-2026-cem-euros-ministerio-financas",
-                  "campo": "derivation_en",
-                  "literal": "it does not measure the allocation of consolidated effective expenditure"
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "Esta classificação especifica os fins e atividades típicos do Estado"
                 }
               ]
             },
@@ -15137,9 +15138,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "oe-2026-cem-euros-ministerio-financas",
-                  "campo": "derivation",
-                  "literal": "despesa bruta deste ministério"
+                  "origem": "rp4n-mapa-ministerios",
+                  "campo": "excerto",
+                  "literal": "Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central"
                 },
                 {
                   "linha": "oe-2026-despesa-ministerio-financas",
@@ -15981,7 +15982,12 @@
             }
           ]
         }
-      ]
+      ],
+      "emenda_rp4ng": {
+        "quem": "Codex gpt-6-astra",
+        "quando": "2026-10-12",
+        "o_que": "Os apoios da comparação entre a classificação funcional e a orgânica passam às palavras das fontes. O texto da explicação não mudou. A leitura cruzada desta emenda fica pendente."
+      }
     }
   ]
 }
