@@ -7,7 +7,7 @@ import { parse } from 'node-html-parser';
 import { getClaim } from '../../src/lib/ledger.mjs';
 import { quadroFinanciamentoJd1 } from '../../src/lib/quadro-financiamento-jd1.mjs';
 const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-const id = 'necessidades-brutas-de-financiamento-2025';
+for (const id of ['necessidades-brutas-de-financiamento-2025', 'amortizacoes-e-anulacoes-de-divida-fundada-2025']) {
 const linha = getClaim(id);
 const norm = s => s.replace(/\s+/g, ' ').trim();
 const q = quadroFinanciamentoJd1(linha.excerpt);
@@ -51,5 +51,6 @@ if (!process.argv.includes('--sem-dist')) for (const rota of ['livro-razao', 'en
     const copia = parse(tabela.outerHTML).querySelector('table'); estragar(copia);
     assert.throws(() => conferir(copia), assert.AssertionError, nome);
   }
+}
 }
 console.log('JD1 quadro: transcrição integral, anos, parcela/total de 2025 e plantas conferidos.');
