@@ -1,0 +1,20 @@
+{
+  "operacao": "Retirar apenas espaços no fim das linhas e linhas vazias finais dos registos; os códigos e as mensagens conservam-se.",
+  "registos": [
+    {
+      "ficheiro": "verify.log",
+      "antes_sha256": "fc6aafa9b00092b1abef83e4da24d34759576255032de1ad17d499b4c21fbdfa",
+      "depois_sha256": "db634dc8115c05da9bbb58d26a462583319edb30149dd506f4a87dc98a68ec45"
+    },
+    {
+      "ficheiro": "typecheck.log",
+      "antes_sha256": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b",
+      "depois_sha256": "def8b7c9f74254cfdad4730436583f73e413bc3d3cd7b0c9ecab585398cee8ae"
+    },
+    {
+      "ficheiro": "build.log",
+      "antes_sha256": "d78667baf558e425e0131cc8bf633a3ee85c5ce9998dcd1f056a43684f62137f",
+      "depois_sha256": "58717bcc042e7642ffe77881612c7d91044fe238304b0d2f57ce455309834fca"
+    }
+  ]
+}
