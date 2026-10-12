@@ -140,6 +140,7 @@ def relatorio():
     sections += ['### Custo','', 'A linha «tokens used» desta sessão não foi exposta durante a construção. O custo e a comparação com o alvo ficam por verificar; não se inferem dos ficheiros nem do número de chamadas.', '']
     report=AQUI/'LEIA-ME.md'
     old=report.read_text().split('## A passagem JD1-c')[0]
+    old=re.sub(r'^Estado da passagem JD1-b,.*?\n', 'Estado atual: passagem JD1-c. As provas, decisões e limitações desta passagem estão na secção [A passagem JD1-c](#a-passagem-jd1-c). As secções anteriores conservam o histórico da JD1-b.\n', old, count=1, flags=re.M)
     old=re.sub(r' Uma planta real do gate, em leitura interceptada,.*?transcrição infiel\.','',old)
     old=re.sub(r'Os três seletores novos foram também comparados com a implementação anterior:.*?resultado\. ','',old)
     old=old.replace('cuja cabeça é a da fusão. São provas do ponto de partida, não provas das alterações posteriores.', 'cuja cabeça nominal é a da fusão. A árvore tinha alterações por registar, como mostra `estado.fim`; estes códigos não provam a árvore exata do commit.')
