@@ -212,6 +212,9 @@ def main():
         'portao': portao, 'portao_cabeca_codigo': gate['cabeca'] == codigo,
         'plantas': all(x['passou'] for x in plantas['plantas']),
         'codigo_motor': codigo, 'codigo_sitio': codigo_sitio, 'tokens_used': None}
+    aceites['aceitacao_corridas_cumprida'] = (aceites['segunda_leu_tres_fontes']
+        and all(v is True for v in aceites['segunda_sem_novas_ou_revisoes'].values())
+        and not any(aceites['falhas']))
     if a.fecho:
         assert aceites['segunda_leu_tres_fontes'] and all(v is True for v in aceites['segunda_sem_novas_ou_revisoes'].values())
         assert portao == 0 and aceites['portao_cabeca_codigo'] and aceites['plantas']
@@ -223,7 +226,8 @@ def main():
         'commits_sitio': git(SITIO, 'log', '--reverse', '--format=%H %s', '7cb8760d..HEAD').splitlines()}
     guardar('cabecas-c.json', cabecas)
     linhas = ['## A passagem V1-c', '',
-        'Medida por `python3 <medicoes>/medir_v1c.py --motor <motor> --provas --fecho`. As decisões V1-9, V1-16 e V1-17 ficam substituídas pelas regras desta passagem: limitações separadas das falhas, orçamento próprio do cumulativo, DAR e DR primeiro e reconferência semanal declarada.', '',
+        'Medida por `python3 <medicoes>/medir_v1c.py --motor <motor> --provas --portao`. As decisões V1-9, V1-16 e V1-17 ficam substituídas pelas regras desta passagem: limitações separadas das falhas, orçamento próprio do cumulativo, DAR e DR primeiro e reconferência semanal declarada.', '',
+        ('Aceitação das corridas: **cumprida**. A conferência `--fecho` passa.' if aceites['aceitacao_corridas_cumprida'] else 'Aceitação das corridas: **por cumprir**. A conferência `--fecho` não passa; falhas reais de recolha impedem afirmar a leitura das três fontes. O par abaixo é o último par executado, conservado com os seus resultados, não um par aceite.'), '',
         '### Corridas finais', '',
         '| Corrida | Pedidos | Bytes comuns | Bytes cumulativo | Segundos | Novas | Revisões | Iguais | Falhas |',
         '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |']
