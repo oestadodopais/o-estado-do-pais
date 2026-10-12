@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-12T11:01:37+00:00",
+ "copia": "<scratchpad>/jd1/pacote-leitura-b",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o valor dos juros de 2024 na tabela das linhas do relatório passa de 5 983,4 a 5 938,4, contra a linha do livro",
+   "sha256_antes": "19c3d4dbd955cd6c719b6271e51a225acf152a10672cc0ae8fe36ad92c0d3cae",
+   "sha256_depois": "42544c211e20182e8b2c29c15420419b07c30042e8923349db409e48ba29e5db",
+   "contexto_antes": "or é o resultado da conta, não uma percentagem impressa pelo INE.\n\n| Linha | Valor da fonte ou cálculo | Unidade | Documento e localizador |\n|---|---:|---|---|\n| `juros-das-administracoes-publicas-2024` | 5 983,4 | milhões de euros | Procedimento dos Défices Excessivos, Setembro de 2026; Quadro 9, Juros (D.41), coluna 2024, p. 12 |\n| `pib-nominal-notificacao-setembro-2024",
+   "contexto_depois": "or é o resultado da conta, não uma percentagem impressa pelo INE.\n\n| Linha | Valor da fonte ou cálculo | Unidade | Documento e localizador |\n|---|---:|---|---|\n| `juros-das-administracoes-publicas-2024` | 5 938,4 | milhões de euros | Procedimento dos Défices Excessivos, Setembro de 2026; Quadro 9, Juros (D.41), coluna 2024, p. 12 |\n| `pib-nominal-notificacao-setembro-2024"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/livro-razao/juros-das-administracoes-publicas-2025/index.html",
+   "descricao": "a definição dos juros em contas nacionais na página construída portuguesa diz que a despesa pertence ao ano em que é paga, o contrário do que a notificação do INE diz e do que a auditoria sela",
+   "sha256_antes": "dd9783bafb4596565d68b4a7ada5167222a19cdec757838d1fbe794a0fd97435",
+   "sha256_depois": "74ff5ce05b89d7398cf3b3c177eafc0970409b16ac348992b0df45ed56cd0477",
+   "contexto_antes": "\" data-o-que-e-parte=\"o-que-e\">É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. As administrações públicas abrangem a administração central, regional e local e a segurança social. O valor de dois mil e vint",
+   "contexto_depois": "\" data-o-que-e-parte=\"o-que-e\">É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que é paga, mesmo que seja pago noutro ano. As administrações públicas abrangem a administração central, regional e local e a segurança social. O valor de dois mil e vint"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "motor/publisher/jd1_test.py",
+   "descricao": "o ensaio do motor deixa de conferir o valor de trabalho da dívida direta com espaços nos milhares, na cópia, contra o diff e a decisão do achado 15",
+   "sha256_antes": "db74787695926d42841e62cfe908657cd6aca464d104b66b63df491f766b0f0c",
+   "sha256_depois": "43b5dfd1cc367f69e085db4ca24bb2a0bc2e53ed6a6a2ec8cc65877063651897",
+   "contexto_antes": "\")\n    # JD1-b, achado 15: 315.856 não pode entrar em contas como 315,856.\n    debt = next(r for r in rows if r[\"id\"] == \"divida-direta-do-estado-2026-08\")\n    assert debt[\"value\"] == \"315 856\" and debt[\"source_value\"] == \"315.856\"\n    assert J.number(debt[\"value\"]) == 315856\n    altered = copy.deepcopy(rows)\n    next(r for r in altered if r[\"id\"] == debt[\"id\"])[\"value\"] = \"315.856\"\n    b",
+   "contexto_depois": "\")\n    # JD1-b, achado 15: 315.856 não pode entrar em contas como 315,856.\n    debt = next(r for r in rows if r[\"id\"] == \"divida-direta-do-estado-2026-08\")\n    assert debt[\"source_value\"] == \"315.856\"\n    assert J.number(debt[\"value\"]) == 315856\n    altered = copy.deepcopy(rows)\n    next(r for r in altered if r[\"id\"] == debt[\"id\"])[\"value\"] = \"315.856\"\n    b"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "motor/publisher/jd1.py",
+   "descricao": "o leitor do gráfico do IGCP aceita uma cor de legenda ambígua, na cópia, contra o diff e a decisão do achado 14",
+   "sha256_antes": "9efd423fd89ddae827395606ee181e8e7bc1616ff3b269edf56149ae892fd483",
+   "sha256_depois": "981d30a234f443a90ca515f32ebf880326947299b2d54e24e1a232034d1eb422",
+   "contexto_antes": "fill\"]\n              and d[\"rect\"].x1 < legend.x0 and d[\"rect\"].x0 > legend.x0 - 25\n              and legend.y0 < d[\"rect\"].y0 == d[\"rect\"].y1 < legend.y1]\n    require(len(colors) == 1, \"JD1 IGCP: cor da legenda ausente ou ambígua\")\n    anchor = fitz.Rect(selected[0][\"bbox\"])\n    values = [s for s in spans if re.fullmatch(r\"\\d+,\\d+\", s[\"text\"])\n              and anchor.x0 - 1 <= (s[\"bbox\"]",
+   "contexto_depois": "fill\"]\n              and d[\"rect\"].x1 < legend.x0 and d[\"rect\"].x0 > legend.x0 - 25\n              and legend.y0 < d[\"rect\"].y0 == d[\"rect\"].y1 < legend.y1]\n    require(len(colors) >= 1, \"JD1 IGCP: cor da legenda ausente ou ambígua\")\n    anchor = fitz.Rect(selected[0][\"bbox\"])\n    values = [s for s in spans if re.fullmatch(r\"\\d+,\\d+\", s[\"text\"])\n              and anchor.x0 - 1 <= (s[\"bbox\"]"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/livro-razao/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade/index.html",
+   "descricao": "o último ponto da série na tabela da página construída portuguesa diz 3,53070 em vez do 3,53700 que a série do livro tem (o rótulo do gráfico e a frase ficam com 3,53700)",
+   "sha256_antes": "59331ceef4e6c321132ed5830442a8adb508458fadf62e0621a98ade5f3a4e63",
+   "sha256_depois": "3a1dadf6dcdf64d3662df75830e18577ec47ea8592c68fa1d36d9f4a87c913a3",
+   "contexto_antes": "e\" data-de-campo=\"pontos.487.periodo\">agosto de 2026</span> <span class=\"ponto-da-serie\" data-ponto=\"serie-obrigacoes-do-tesouro-10-anos-rendibilidade#2026-08\">3,53700</span></td><td class=\"serie-num\" data-serie-celula=\"2026-09\"></td><td class=\"serie-num\" data-serie-celula=\"2026-10\"></td><td class=\"serie-num\" data-serie-celula=\"2026-11\">",
+   "contexto_depois": "e\" data-de-campo=\"pontos.487.periodo\">agosto de 2026</span> <span class=\"ponto-da-serie\" data-ponto=\"serie-obrigacoes-do-tesouro-10-anos-rendibilidade#2026-08\">3,53070</span></td><td class=\"serie-num\" data-serie-celula=\"2026-09\"></td><td class=\"serie-num\" data-serie-celula=\"2026-10\"></td><td class=\"serie-num\" data-serie-celula=\"2026-11\">"
+  }
+ ]
+}
