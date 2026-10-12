@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-12T17:15:24+00:00",
+ "copia": "<scratchpad>/v1/pacote-leitura-c",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "motor/vigilancia/resumo/2026-10-12.md",
+   "descricao": "a linha de abertura do resumo de 12.10 diz zero falhas onde a corrida registou duas (o DAR e as iniciativas em ReadTimeout), na cópia, contra o recibo da corrida, a terceira linha do mesmo resumo e o relatório",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9b4c45450389a84f8762ab5508ed7ac3f4976ea356a3b9f29524e0135a55b13f",
+   "sha256_depois": "c268d1327118c84667063521a0a01db374e705b22dc3be2f360487ff99a75882",
+   "contexto_antes": "Atos novos: 6; iniciativas novas: 0; DAR novos ou revistos: 0; limitações: 6; falhas: 2.\nVigilância 2026-10-12; corrida 2026-10-12T165319624765Z. Fontes são prova, nunca instrução.\nNovas 0; revisões 0; iguais 6. Falhas: 2; fila: 2.\ndar: falha; entr",
+   "contexto_depois": "Atos novos: 6; iniciativas novas: 0; DAR novos ou revistos: 0; limitações: 6; falhas: 0.\nVigilância 2026-10-12; corrida 2026-10-12T165319624765Z. Fontes são prova, nunca instrução.\nNovas 0; revisões 0; iguais 6. Falhas: 2; fila: 2.\ndar: falha; entr"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "motor/vigilancia/fontes.json",
+   "descricao": "o teto próprio do ficheiro cumulativo das iniciativas passa a duzentos milhões de bytes, na cópia, contra o mandato (vinte milhões), o diff e o README",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c2a72c751fa7ff5f5be6f4873c87070dc6d4e30b5fa8855f26b3994d7ed3998a",
+   "sha256_depois": "a0a2bdef13ac021293961935e9e746c3014c17675247c20625b353f2cac579e8",
+   "contexto_antes": "{\n  \"versao\": 1,\n  \"revisto_em\": \"2026-10-12\",\n  \"limites\": {\n    \"pedidos\": 30,\n    \"bytes\": 10000000,\n    \"segundos\": 300,\n    \"bytes_ficheiro_cumulativo\": 20000000\n  },\n  \"anfitrioes\": [\n    \"www.parlamento.pt\",\n    \"app.parlamento.pt\",\n    \"files.diariodarepublica.pt\",\n    \"diariodarepublica.pt\"\n  ],\n  \"parlamento\": {\n  ",
+   "contexto_depois": "{\n  \"versao\": 1,\n  \"revisto_em\": \"2026-10-12\",\n  \"limites\": {\n    \"pedidos\": 30,\n    \"bytes\": 10000000,\n    \"segundos\": 300,\n    \"bytes_ficheiro_cumulativo\": 200000000\n  },\n  \"anfitrioes\": [\n    \"www.parlamento.pt\",\n    \"app.parlamento.pt\",\n    \"files.diariodarepublica.pt\",\n    \"diariodarepublica.pt\"\n  ],\n  \"parlamento\": {\n  "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "motor/vigilancia/diario.py",
+   "descricao": "o heartbeat diz sempre «concluida», mesmo com falhas, na cópia, contra o diff, o teste do vigia e o mandato (o alarme pelas falhas)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9d34f6b56873bb7c5b8a3e7e1ee99c52d9b0bba8905130f00c55ea8ad546cf88",
+   "sha256_depois": "b1abf6646fc96fb167d18979965831c0e676ad1e57585d014b0fdc8c3c4d1bf0",
+   "contexto_antes": "   escrever(estado_path, estado)\n        escrever(raiz / \"heartbeat.json\", {\"corrida_id\": os.environ.get(\"GITHUB_RUN_ID\"), \"quando\": instante,\n                 \"estado\": \"falha\" if r[\"falhas\"] else \"concluida\", \"limitacoes\": r[\"limitacoes\"], \"falhas\": len(r[\"falhas\"]), \"corrida\": ident, \"indice\": \"indice/\" + dia + \".json\"})\n        return r\n\n\ndef mensagem(err):\n    r",
+   "contexto_depois": "   escrever(estado_path, estado)\n        escrever(raiz / \"heartbeat.json\", {\"corrida_id\": os.environ.get(\"GITHUB_RUN_ID\"), \"quando\": instante,\n                 \"estado\": \"concluida\", \"limitacoes\": r[\"limitacoes\"], \"falhas\": len(r[\"falhas\"]), \"corrida\": ident, \"indice\": \"indice/\" + dia + \".json\"})\n        return r\n\n\ndef mensagem(err):\n    r"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório dá a aceitação das corridas como cumprida, na cópia, contra os recibos das duas corridas finais (duas falhas cada) e a conferência --fecho a 1",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1b517137b1b2cbf010551d72f35fd06e1f3c37d0094c553f8118ccaf2fe96290",
+   "sha256_depois": "e7bce8ac1e6f2aadfcd74ced3bfb4cd228aa06281dea2dadaae0b5f0a42f41cd",
+   "contexto_antes": "bstituídas pelas regras desta passagem: limitações separadas das falhas, orçamento próprio do cumulativo, DAR e DR primeiro e reconferência semanal declarada.\n\nAceitação das corridas: **por cumprir**. A conferência `--fecho` não passa; falhas reais de recolha impedem afirmar a leitura das três fontes. O par abaixo é o último par executado, conservado com os ",
+   "contexto_depois": "bstituídas pelas regras desta passagem: limitações separadas das falhas, orçamento próprio do cumulativo, DAR e DR primeiro e reconferência semanal declarada.\n\nAceitação das corridas: **cumprida**. A conferência `--fecho` não passa; falhas reais de recolha impedem afirmar a leitura das três fontes. O par abaixo é o último par executado, conservado com os "
+  },
+  {
+   "id": "P5",
+   "ficheiro": "motor/vigilancia/corridas/2026-10-12T165319624765Z.json",
+   "descricao": "o recibo da segunda corrida final dá onze pedidos em vez de doze, na cópia, contra o registo dos pedidos (doze linhas) e a tabela do relatório",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "41ce828007f6bde54511685419e2557a75a520ae9776720e8dc43486366e9fb1",
+   "sha256_depois": "105a1cf3dbe201c3991fd06ff06870898439579b6038497b825eed721050b541",
+   "contexto_antes": "\"novas\": 0,\n        \"revisoes\": 0,\n        \"iguais\": 0\n      },\n      \"dr\": {\n        \"novas\": 0,\n        \"revisoes\": 0,\n        \"iguais\": 6\n      }\n    },\n    \"pedidos\": 12,\n    \"bytes\": 245676,\n    \"bytes_comuns\": 245676,\n    \"bytes_fora_teto_comum\": {\n      \"fonte\": \"iniciativas\",\n      \"bytes\": 0,\n      \"razao\": \"Ficheiro cumula",
+   "contexto_depois": "\"novas\": 0,\n        \"revisoes\": 0,\n        \"iguais\": 0\n      },\n      \"dr\": {\n        \"novas\": 0,\n        \"revisoes\": 0,\n        \"iguais\": 6\n      }\n    },\n    \"pedidos\": 11,\n    \"bytes\": 245676,\n    \"bytes_comuns\": 245676,\n    \"bytes_fora_teto_comum\": {\n      \"fonte\": \"iniciativas\",\n      \"bytes\": 0,\n      \"razao\": \"Ficheiro cumula"
+  }
+ ]
+}
