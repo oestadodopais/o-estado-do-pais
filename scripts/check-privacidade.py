@@ -134,7 +134,9 @@ def medir_rastreados(raiz, prova):
                                       ('design/especime-v3/medicoes/ensaio/registo.json.gz', gzip.compress(marca), 'gzip'),
                                       ('design/especime-v3/critica/' + (marca + b'ficheiro.md').decode(), b'inocuo', 'nome')]:
                 plantas.append({'id': f'ramo-estrutura-{i}-{caso}', 'mordeu': tem_estrutura_local(nome, dados)})
-        plantas.append({'id': 'ramo-estrutura-inocua', 'mordeu': not tem_estrutura_local('registo.json.gz', gzip.compress(b'<worktree>/dist <sitio>/src <motor>/content'))})
+        nome = 'design/especime-v3/medicoes/ensaio/registo.json.gz'
+        assert e_registo(nome), 'A planta inócua tem de entrar no detetor dos registos.'
+        plantas.append({'id': 'ramo-estrutura-inocua', 'mordeu': not tem_estrutura_local(nome, gzip.compress(b'<worktree>/dist <sitio>/src <motor>/content')), 'mensagem': 'Registo comprimido dentro do âmbito, com marcadores portáveis, lido e aceite.'})
     if prova:
         plantas.append({'id': 'guiao-com-casa-portavel', 'mordeu': not tem_estrutura_local('scripts/ensaio.sh', b'$HOME/' + ESTRUTURA_LOCAL[0] + b'ResearchHub'), 'mensagem': 'Caminho relativo à casa permitido no guião.'})
     return {'ficheiros': ficheiros, 'quantidade': len(achados), 'achados': achados, 'plantas': plantas,
