@@ -934,10 +934,15 @@ export function plantasDaExplicacao(dist) {
   naPagina('EX1-d: a previsão anual apresentada como mensal', (r) => {
     const p = saldoExecucao(r); p.set_content(p.innerHTML.replace('para o ano inteiro', 'para agosto'));
   }, /X6 ·/);
-  naPagina('EX1-d: a contradição dos juros reposta', (r) => {
-    const p = r.querySelector('[data-explicacao-paragrafo="naoDiz[0]"]');
-    p.set_content(p.innerHTML.replace('Estes números não isolam', 'Falta aqui'));
-  }, /X6 ·/);
+  /* JD1 (12.10.2026): a frase «Estes números não isolam o custo dos juros» só se rende quando o livro não tem linhas
+     dos juros (SEM_LINHAS_DOS_JUROS). Com as linhas do JD1 no livro a frase sai, e a planta não se aplica: declara-o
+     em vez de fingir que mordeu ou de falhar por não haver o que estragar. */
+  if (parse(html).querySelector('[data-explicacao-paragrafo="naoDiz[0]"]')?.textContent.includes('Estes números não isolam')) {
+    naPagina('EX1-d: a contradição dos juros reposta', (r) => {
+      const p = r.querySelector('[data-explicacao-paragrafo="naoDiz[0]"]');
+      p.set_content(p.innerHTML.replace('Estes números não isolam', 'Falta aqui'));
+    }, /X6 ·/);
+  } else out.push({ nome: 'EX1-d: a contradição dos juros reposta', mordeu: false, aplica: false, queixa: 'a frase «Estes números não isolam» não se rende porque o livro tem linhas dos juros (JD1): a planta não se aplica' });
   naPagina('as palavras de uma condição falsa rendidas (os três programas)', (r) => { const p = paragrafo(r, 'tinham gasto'); p.set_content(p.innerHTML.replace(/\.\s*$/, '; os programas que mais gastaram foram o do Trabalho, Solidariedade e Segurança Social.')); }, /X6 ·/);
   naPagina('o nome de outra função', (r) => { const n = r.querySelector('[data-explicacao-nome="oe-2026-cem-euros-funcao-07"]'); n.set_content('educação'); }, /X6 ·/);
   naPagina('um parágrafo a menos', (r) => { paragrafo(r, 'tinham gasto').remove(); }, /X6 · os parágrafos rendidos/);

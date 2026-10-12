@@ -1,10 +1,11 @@
+import { homedir as jd1Casa } from 'node:os';
 // U3 (bónus) — um clique de RATO (não toque) num concelho: o código sugere
 // que navega logo ao primeiro clique, sem o passo intermédio "diz o nome" que
 // o toque tem (o hover já mostrou o nome antes do clique).
 import fs from 'node:fs';
 import { abrePagina, BASE, pontosEmEcraNoNavegador } from './lib.mjs';
 
-const RAIZ = '<casa>/<projetos>/OEstadoDoPais/<worktrees>/medicao-distritos';
+const RAIZ = (jd1Casa() + '/Instruments/OEstadoDoPais/.claude/worktrees/medicao-distritos');
 const evora = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/distritos/evora.json`, 'utf8'));
 
 const { browser, page } = await abrePagina({ viewport: { width: 1280, height: 1200 }, hasTouch: false });

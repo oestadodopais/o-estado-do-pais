@@ -43,6 +43,10 @@
 
 /** `pt` ou `en`, para cada título distinto do campo `document.title`. */
 export const LINGUA_DOS_TITULOS = {
+  /* JD1: títulos lidos nos documentos recebidos nesta corrida. */
+  'Boletim Mensal': 'pt',
+  'Gestão da Tesouraria do Estado e da Dívida Pública · Relatório Anual 2025': 'pt',
+  'Government revenue, expenditure and main aggregates': 'en',
   /* OE1: línguas conferidas nos documentos e nas células de origem. */
   "Execução Orçamental de julho 2026 - despesa por classificação funcional": "pt",
   "Execução orçamental de julho 2026 – Indicadores da Administração Central (contabilidade pública)": "pt",
@@ -217,6 +221,17 @@ export const LINGUA_DOS_ROTULOS = {
   'dcum x : cumulative reduction': 'en',
   'penalização legal': 'pt',
   'AA08b – Água não faturada': 'pt',
+  /* JD1: conserva-se o rótulo impresso, incluindo o paralelo inglês do IGCP. */
+  'Custo da dívida emitida': 'pt',
+  'Custo do stock da dívida': 'pt',
+  'Dívida total / Total debt': 'pt',
+  'p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada)': 'pt',
+  'Juros': 'pt',
+  'Interest, expenditure': 'en',
+  'Juros e outros encargos': 'pt',
+  '3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.)': 'pt',
+  '2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada)': 'pt',
+  'Produto Interno Bruto, a preços de mercado': 'pt',
   /* OE1: línguas conferidas nos documentos e nas células de origem. */
   "ADMINISTRAÇÃO INTERNA": "pt",
   "AGRICULTURA E MAR": "pt",
@@ -409,6 +424,9 @@ export function linguaDoRotuloDaFonte(rotulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada valor distinto do campo `source`. */
 export const LINGUA_DAS_FONTES = {
+  /* JD1: nomes dos organismos portugueses, conservados nas duas edições. */
+  'IGCP': 'pt',
+  'Instituto Nacional de Estatística': 'pt',
   /* OE1: línguas conferidas nos documentos e nas células de origem. */
   "Entidade Orçamental": "pt",
   /* --- os organismos portugueses ---------------------------------------- */
@@ -495,6 +513,11 @@ export function linguaDaFonte(fonte, lang = 'pt') {
 
 /** `pt`, `en`, ou `null` para uma edição que não está em língua nenhuma. */
 export const LINGUA_DAS_EDICOES = {
+  /* JD1: a prosa tem língua; o identificador do conjunto é um código. */
+  'setembro de 2026': 'pt',
+  'Setembro de 2026': 'pt',
+  'gov_10a_main': null,
+  'agosto 2026': 'pt',
   /* OE1: línguas conferidas nos documentos e nas células de origem. */
   "2026": null,
   'gov_10a_exp; geo=PT': null,

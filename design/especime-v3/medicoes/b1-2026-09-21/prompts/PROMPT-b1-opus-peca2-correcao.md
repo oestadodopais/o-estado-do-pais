@@ -1,6 +1,6 @@
 A passagem de correção da peça 2 do B1 (os lugares), na mesma worktree e no mesmo ramo: a leitura a frio do Codex e a leitura de editor do lugar de direção estão triadas abaixo, e é só isto que se faz.
 
-És o mesmo construtor, na mesma worktree (`<casa>/<projetos>/OEstadoDoPais/<worktrees>/b1-peca2-2026-09-21`, ramo `b1-peca2-2026-09-21`, cabeça `39540e08`). As regras são as de sempre (caminhos explícitos, nunca `push`, nunca tocar fora da worktree, nenhum número à mão, prosa sem travessões, o vocabulário do §6, a regra de paragem). Uma coisa muda nos trailers: a sessão ganhou endereço, e os commits desta passagem levam `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` e `Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd`.
+És o mesmo construtor, na mesma worktree (`<worktree>`, ramo `b1-peca2-2026-09-21`, cabeça `39540e08`). As regras são as de sempre (caminhos explícitos, nunca `push`, nunca tocar fora da worktree, nenhum número à mão, prosa sem travessões, o vocabulário do §6, a regra de paragem). Uma coisa muda nos trailers: a sessão ganhou endereço, e os commits desta passagem levam `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` e `Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd`.
 
 A tua construção foi boa: uma corrida só, sem paragens por contradição entre o brief e os dados, as três paragens certas nos três portões que protegem uma pessoa, um número e uma fonte, e um relatório que diz o que ficou sem porta. O que se segue é o que dois leitores viram.
 

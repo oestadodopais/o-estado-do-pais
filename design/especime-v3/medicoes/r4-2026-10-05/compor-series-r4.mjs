@@ -14,6 +14,7 @@
  * Uso, a partir da raiz do sítio:  node design/especime-v3/medicoes/r4-2026-10-05/compor-series-r4.mjs [--seco]
  */
 import fs from 'node:fs';
+import { registarLeitura } from './registar-leitura.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SERIES_R4 } from './series-r4.mjs';
@@ -47,12 +48,8 @@ const linhaDaSerie = (id) => {
   return presas.length ? presas[presas.length - 1].id : null;
 };
 
-/** A proibição vale também dentro das alternativas e nos apoios com mais de uma forma. @param {any} a @returns {boolean} */
-function temNomeDoProjeto(a) { return a?.declaracao === 'nome' || (Array.isArray(a?.ou) && a.ou.some(temNomeDoProjeto)); }
-
 /** @param {any} a @param {any} s @returns {string|null} */
 function verifica(a, s) {
-  if (temNomeDoProjeto(a)) return 'o nome do projeto não pode apoiar uma frase';
   if (typeof a.literal !== 'string' || a.literal.trim().length < 4) return `o literal «${a.literal}» tem menos de quatro caracteres`;
   if (a.origem) {
     const o = /** @type {any} */ (ORIGENS_DAS_DEFINICOES)[a.origem];
@@ -60,7 +57,11 @@ function verifica(a, s) {
     if (!['excerto', 'excertoEn', 'documento', 'publicador'].includes(a.campo) || typeof o[a.campo] !== 'string' || !o[a.campo].includes(a.literal)) return `«${a.literal}» não está no campo «${a.campo}» da origem «${a.origem}»`;
     return null;
   }
-  if (a.declaracao === 'nome') return 'o nome do projeto não pode apoiar uma frase';
+  if (a.declaracao === 'nome') {
+    const n = /** @type {any} */ (NOMES_DAS_SERIES)[s.id]?.nome?.[a.lingua];
+    if (typeof n !== 'string' || !n.includes(a.literal)) return `o nome da série (${a.lingua}) não traz «${a.literal}»`;
+    return null;
+  }
   if (a.serie === 'propria') {
     if (!CAMPOS_DA_FONTE.has(a.campo) && !CAMPOS_DA_CASA.has(a.campo)) return `o campo «${a.campo}» não pode apoiar`;
     const v = campoDaSerie(s, a.campo);
@@ -140,15 +141,14 @@ const cabeca = `/**
  */
 `;
 const ordenado = Object.fromEntries(Object.keys(declaracao).sort().map((k) => [k, declaracao[k]]));
-fs.writeFileSync(DECLARACAO, `${cabeca}export const FRASES_DAS_SERIES = ${JSON.stringify(ordenado, null, 2)};\n\n/** As séries cuja frase está por confirmar na fonte (R4-b): a K17 e o portão HTML recusam o recibo. */\n/** @type {string[]} */\nexport const SERIES_POR_CONFIRMAR_NA_FONTE = ${JSON.stringify(porConfirmar.sort(), null, 2)};\n`);
+fs.writeFileSync(DECLARACAO, `${cabeca}export const FRASES_DAS_SERIES = ${JSON.stringify(ordenado, null, 2)};\n\n/** As séries cuja frase está por confirmar na fonte (R4-b): o recibo leva o marcador da casa ao pé dela. */\nexport const SERIES_POR_CONFIRMAR_NA_FONTE = ${JSON.stringify(porConfirmar.sort(), null, 2)};\n`);
 const AUD = JSON.parse(fs.readFileSync(AUDITORIA, 'utf8'));
 const leitura = {
   quem: 'Claude Opus 5.5',
   quando: '2026-10-05',
   o_que: 'o bloco R4, as séries: as frases «o que é» das dez séries no tempo sem linha do livro-razão, cada parte com o literal que a apoia num campo da própria série, numa origem declarada (com os rótulos das classes do IHPC e da unidade do índice de preços da habitação trimestral, lidos na API do Eurostat a 05.10.2026) ou, onde nenhum dos dois o diz, no nome que o projeto dá à série',
 };
-AUD.leituras = [...AUD.leituras.filter((/** @type {any} */ l) => !(l.quando === leitura.quando && l.o_que.startsWith('o bloco R4, as séries'))), leitura];
-AUD.leituras = [...AUD.leituras.filter(l => !l.o_que.startsWith('RP4-n: séries')), {quem: 'Codex', quando: '2026-10-06', o_que: 'RP4-n: séries recompostas pelos rótulos dos corpos selados e pelas contas declaradas; construção para leitura a frio, não aprovação.'}];
+AUD.leituras = registarLeitura(AUD.leituras, leitura);
 AUD.series = auditoria;
 fs.writeFileSync(AUDITORIA, `${JSON.stringify(AUD, null, 2)}\n`);
 console.log(`escrito: ${path.relative(RAIZ, DECLARACAO)} e a chave series de ${path.relative(RAIZ, AUDITORIA)}`);

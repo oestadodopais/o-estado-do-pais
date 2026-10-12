@@ -1,3 +1,4 @@
+import { homedir as jd1Casa } from 'node:os';
 // U1 — o alvo de cada área: o lado do maior quadrado (grelha de 2px, 9 âncoras
 // em torno do ponto representativo) que cabe dentro da área e contém o ponto.
 // Ponto usado: o campo `ponto` do artefacto (mapa/pais.json e
@@ -6,7 +7,7 @@
 import fs from 'node:fs';
 import { abrePagina, BASE, medirAlvosNoNavegador, mediana } from './lib.mjs';
 
-const RAIZ = '<casa>/<projetos>/OEstadoDoPais/<worktrees>/medicao-distritos';
+const RAIZ = (jd1Casa() + '/Instruments/OEstadoDoPais/.claude/worktrees/medicao-distritos');
 const pais = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/pais.json`, 'utf8'));
 
 async function medirPais(width) {

@@ -1,8 +1,9 @@
+import { homedir as jd1Casa } from 'node:os';
 // U4 — sem guião (JavaScript desligado).
 import fs from 'node:fs';
 import { abrePagina, BASE } from './lib.mjs';
 
-const RAIZ = '<casa>/<projetos>/OEstadoDoPais/<worktrees>/medicao-distritos';
+const RAIZ = (jd1Casa() + '/Instruments/OEstadoDoPais/.claude/worktrees/medicao-distritos');
 const pais = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/pais.json`, 'utf8'));
 
 // As nove regiões (a lista dita "NUTS II" pela casa), de src/data/regioes.mjs,

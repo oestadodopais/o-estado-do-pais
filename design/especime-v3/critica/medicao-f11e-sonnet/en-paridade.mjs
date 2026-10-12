@@ -1,10 +1,11 @@
+import { homedir as jd1Casa } from 'node:os';
 // Paridade da edição inglesa (/en/): o bloco cobre as duas edições, e as
 // medidas U1-U7 foram feitas na edição portuguesa; este é um confronto por
 // amostragem da inglesa, e não uma segunda varredura completa.
 import fs from 'node:fs';
 import { abrePagina, BASE, pontosEmEcraNoNavegador } from './lib.mjs';
 
-const RAIZ = '<casa>/<projetos>/OEstadoDoPais/<worktrees>/medicao-distritos';
+const RAIZ = (jd1Casa() + '/Instruments/OEstadoDoPais/.claude/worktrees/medicao-distritos');
 const pais = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/pais.json`, 'utf8'));
 const evora = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/distritos/evora.json`, 'utf8'));
 

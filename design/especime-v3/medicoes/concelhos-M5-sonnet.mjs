@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { homedir as jd1Casa } from 'node:os';
 // concelhos-M5-sonnet.mjs
 //
 // BRIEF-concelhos-M5 · medição cega (Claude Sonnet) das páginas dos 308
@@ -6,7 +7,7 @@
 // scripts/medir-defeitos.mjs, que só se corre), notas ou briefs dos
 // construtores. Lê: a Emenda 14 e a Emenda 19 de direcao.md, a
 // tabela-resumo de fontes-308-2026-08-26.md, e os ficheiros da fonte
-// alojados em ~/<projetos>/ResearchHub/content/12 Concelhos/source/
+// alojados em ~/Instruments/ResearchHub/content/12 Concelhos/source/
 // (extraídos por extrai_fontes.py, ao lado deste ficheiro).
 //
 // Cada detetor prova-se num caso conhecido (vermelho) antes de poder
@@ -22,10 +23,10 @@ import { load as yamlLoad } from "js-yaml";
 import { chromium } from "playwright";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const REPO = "<casa>/<projetos>/OEstadoDoPais";
+const REPO = (jd1Casa() + '/Instruments/OEstadoDoPais');
 const BASE = "http://127.0.0.1:4731";
 const SCRATCH =
-  "<temporario>";
+  "/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad";
 const WORK = path.join(SCRATCH, "work");
 const LEDGER_DIR = path.join(REPO, "ledger", "claims");
 const DIST_DIR = path.join(SCRATCH, "dist-concelhos");

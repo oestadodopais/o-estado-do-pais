@@ -52,7 +52,7 @@ Onze linhas novas, onze publicadas, zero calculadas: 329 antes e 329 depois. Se 
 derivadas · 334 com aritmética reavaliada no build»: a aritmética reavaliada sobe
 de 333 para 334, e a que entrou é a que dá uma marca em vez de um número.
 
-**A saída do exportador**, corrido de `~/<projetos>/ResearchHub` (motor em
+**A saída do exportador**, corrido de `<motor>` (motor em
 `41ce466`), com o comando que o brief fixa e mais nada tocado no motor:
 
 ```

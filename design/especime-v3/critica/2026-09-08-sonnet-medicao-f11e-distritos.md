@@ -13,7 +13,7 @@ Esta medição não leu nem correu as réguas do construtor (`tests/inicio/mapa-
 
 ## Condições
 
-- Worktree de medição: `~/<projetos>/OEstadoDoPais/<worktrees>/medicao-distritos`, criada com `git worktree add ... 635e6d7f`, `npm ci`, `npm run build`.
+- Worktree de medição: `<worktree>`, criada com `git worktree add ... 635e6d7f`, `npm ci`, `npm run build`.
 - Servidor: `npx astro preview --port 4390 --host 127.0.0.1` sobre o `dist/` dessa worktree (saída estática, `trailingSlash: 'ignore'`).
 - Chromium: o do Playwright já instalado no repositório — `npx playwright --version` → 1.60.0; o navegador reportou-se como Chromium 148.0.7778.96 (`browser.version()`).
 - Fontes: `document.fonts.status` = `loaded`, `document.fonts.check()` verdadeiro para as três famílias declaradas em `src/styles/tokens.css` (`Spectral`, `Bitter`, `Spectral SC`) — ver U5.

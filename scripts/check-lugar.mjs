@@ -289,6 +289,12 @@ const TETOS = {
      lugar de direção ou o selo de um valor desenhado. As plantas da omissão das vezes, de uma página a mais, de uma
      página das explicações em falta, de uma página do main agravada, de um destino que não é um recibo desenhado e
      citado e de um recibo com três portas continuam a fechar. */
+  /* JD1: a medição em jd1-2026-10-06/l1-jd1.json compara os destinos repetidos de cada página
+     e a multiplicidade desses destinos com a prova da fusão EX1; não mede as portas sem repetição.
+     Só entram os recibos do cruzamento JD1, nas duas edições, cada um com as portas do Método que
+     a família já tinha. Nenhuma página anterior muda de destinos repetidos. medir-l1.mjs prova a
+     comparação e planta uma repetição na página da série e uma divergência entre o teto e o registo,
+     exigindo a mensagem de cada recusa. O horizonte continua a zero. */
   l1_paginas: TETO_B1.l1_paginas, // B1: o teto medido está escrito uma só vez no registo.
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.

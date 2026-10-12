@@ -1,5 +1,6 @@
 import { conferirPublicador } from './publicador-da-definicao.mjs';
 import { conferirComputacaoPRR, conferirLiteralPRR } from './computacoes-rp4n.mjs';
+import { NOTAS_JD1 } from '../../src/data/notas-jd1.mjs';
 /**
  * =============================================================================
  * K17 · AS FAMÍLIAS: O QUE É CADA NÚMERO, AUDITADO E CONFERIDO EM CADA RECIBO · bloco R4 (05.10.2026)
@@ -556,7 +557,7 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
         falha(`a conta desta célula não recompõe a frase do cartão «${d.cartao}» contra a linha: ${e instanceof Error ? e.message : e}`);
       }
     } else {
-      esperado = normal(textoDaFrase(d?.frase?.[lang]));
+      esperado = normal(textoDaFrase(d?.frase?.[lang]) + notasJd1Aqui(id, lang));
       if(d?.compara) {
         const c=d.compara,a=ctx.linhas.get(c.a),b=ctx.linhas.get(c.b);
         const n=x=>Number(String(x).replace(/[\s\u202f\u00a0]/g,'').replace(',','.'));
@@ -795,7 +796,7 @@ function oQueEDaLinhaAqui(id, lang, ctx) {
     const m = MEDIDAS_DO_CONCELHO.find((x) => x.chave === f.chave);
     return normal(textoDaFrase(m ? /** @type {any} */ (m.nota)[lang] : ctx.doConcelho[f.chave]?.frase?.[lang]));
   }
-  return normal(textoDaFrase(ctx.familias[f.chave]?.frase?.[lang]));
+  return normal(textoDaFrase(ctx.familias[f.chave]?.frase?.[lang]) + notasJd1Aqui(id, lang));
 }
 
 /**
@@ -1046,4 +1047,13 @@ export function plantasDasFamilias(dist) {
     regista('o selo de volta na frase de uma série, com a porta que a lista já tem', conferirFraseDaSerie(root, s, 'pt', { ctx, ...conjuntos }), 'duas portas para o mesmo sítio');
   }
   return out;
+}
+
+/** Conta independente das linhas que têm estado ou comparação, JD1-c.
+ * @param {string} id @param {'pt'|'en'} lang */
+function notasJd1Aqui(id, lang) {
+  let texto = '';
+  if (/^(juros-das-administracoes-publicas(?:-pib)?|pib-nominal-notificacao-setembro)-202[45]$/.test(id)) texto += NOTAS_JD1[id.endsWith('2024') ? 'final' : 'provisorio'][lang];
+  if (['juros-das-administracoes-publicas-pib-2025', 'juros-das-administracoes-publicas-2025-ue'].includes(id)) texto += NOTAS_JD1.versoes[lang];
+  return texto;
 }

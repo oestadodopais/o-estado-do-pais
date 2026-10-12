@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { homedir as jd1Casa } from 'node:os';
 // design/especime-v3/medicoes/ilhas-M6-sonnet.mjs
 //
 // M6 · As ilhas · medição cega (Claude Sonnet). Código do zero: nenhuma linha
@@ -24,7 +25,7 @@ const CLAIMS_DIR = path.join(REPO, 'ledger', 'claims');
 const DADOS_DIR = path.join(REPO, 'dist', 'dados');
 const PORT = process.env.MEDIDOR_PORT || '4801';
 const BASE_URL = `http://127.0.0.1:${PORT}`;
-const RH = '<casa>/<projetos>/ResearchHub/content/12 Concelhos/source';
+const RH = (jd1Casa() + '/Instruments/ResearchHub/content/12 Concelhos/source');
 const ACORES_PDF = path.join(RH, 'acores', 'desemprego-registado-2025-12.pdf');
 const MADEIRA_PDF = path.join(RH, 'madeira', 'boletim-concelhos-2025-12.pdf');
 

@@ -1,8 +1,9 @@
+import { homedir as jd1Casa } from 'node:os';
 // U3 — o primeiro toque nunca navega.
 import fs from 'node:fs';
 import { abrePagina, BASE, pontosEmEcraNoNavegador } from './lib.mjs';
 
-const RAIZ = '<casa>/<projetos>/OEstadoDoPais/<worktrees>/medicao-distritos';
+const RAIZ = (jd1Casa() + '/Instruments/OEstadoDoPais/.claude/worktrees/medicao-distritos');
 const pais = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/pais.json`, 'utf8'));
 const evora = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/distritos/evora.json`, 'utf8'));
 

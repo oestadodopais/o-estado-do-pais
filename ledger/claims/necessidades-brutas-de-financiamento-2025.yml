@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "necessidades-brutas-de-financiamento-2025"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "67 601"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.)"
+name_source: "Quadro 9, 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.), coluna 2025, p. 45"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "IGCP"
+document:
+  title: "Gestão da Tesouraria do Estado e da Dívida Pública · Relatório Anual 2025"
+  edition: "2025"
+  locator: "Quadro 9, 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.), coluna 2025, p. 45"
+  page: 45
+  kind: "pdf"
+source_url: "https://www.igcp.pt/sites/default/files/2026-08/RA2025_signed.pdf#page=45"
+access_date: "2026-10-06"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "          (milhões de euros)                                                      2024         2025\n          1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO                                   9 772       10 625\n            Défice Orçamental                                                         5 656        7 436\n            Aquisição líquida de activos financeiros (excepto privatizações)          4 116        3 189\n          2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada)                               47 402       56 976\n            Certificados de Aforro + Certificados do Tesouro                          4 469        4 482\n            Dívida de curto prazo em euros                                           32 198       32 976\n            Dívida de médio e longo prazo em euros                                    8 324       19 518\n            Dívida em moedas não euro                                                 2 429              0\n            Fluxos de capital de swaps (líq.)                                            -18             0\n          3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.)                          57 174       67 601"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: Quadro 9, 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.), coluna 2025, p. 45. Estado, numa ótica de contabilidade orçamental pública. Montante realizado no ano civil. Contas nacionais, execução orçamental e dívida direta têm perímetros e critérios distintos; esta linha conserva o do documento citado. · Cruzado de ResearchHub content/20 Orcamento do Estado · necessidades-brutas-de-financiamento-2025."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

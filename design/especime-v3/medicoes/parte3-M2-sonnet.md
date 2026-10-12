@@ -507,6 +507,6 @@ Duas figuras sem linha do sítio (`16` e `2018`) dentro da mesma ligação (`tex
 
 ## 9 · Ficheiros
 
-* Programa: `<casa>/<projetos>/OEstadoDoPais/design/especime-v3/medicoes/parte3-M2-sonnet.py` — corre com `python3 parte3-M2-sonnet.py [--dist PATH] [--json OUT.json] [--no-selftest]`; sem `--dist`, usa a cópia congelada (`dist-p4`, commit `180148c`); sem `--no-selftest`, corre sempre as 17 provas de mutação primeiro e para sem medir se alguma falhar.
-* Este relatório: `<casa>/<projetos>/OEstadoDoPais/design/especime-v3/medicoes/parte3-M2-sonnet.md`.
+* Programa: `<sitio>/design/especime-v3/medicoes/parte3-M2-sonnet.py` — corre com `python3 parte3-M2-sonnet.py [--dist PATH] [--json OUT.json] [--no-selftest]`; sem `--dist`, usa a cópia congelada (`dist-p4`, commit `180148c`); sem `--no-selftest`, corre sempre as 17 provas de mutação primeiro e para sem medir se alguma falhar.
+* Este relatório: `<sitio>/design/especime-v3/medicoes/parte3-M2-sonnet.md`.
 * Nada foi escrito, corrigido nem commitado fora da pasta `design/especime-v3/medicoes/`; nada foi lido fora do que os dois briefs listam (mais o formato do registo e os próprios ficheiros de dados que eles apontam).

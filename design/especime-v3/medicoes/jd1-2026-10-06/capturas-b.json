@@ -1,0 +1,1190 @@
+{
+  "comando": "node design/especime-v3/medicoes/jd1-2026-10-06/captar.mjs --code-head 466f83871ae13eff45a9cd28dcb73470a45114cc",
+  "cabeca": "466f83871ae13eff45a9cd28dcb73470a45114cc",
+  "cabeca_codigo": "466f83871ae13eff45a9cd28dcb73470a45114cc",
+  "construcao": "466f83871ae13eff45a9cd28dcb73470a45114cc",
+  "linhas": [
+    "custo-da-divida-emitida-2026-08",
+    "custo-do-stock-da-divida-direta-2025",
+    "divida-direta-do-estado-2026-08",
+    "emissoes-de-divida-fundada-2025",
+    "juros-das-administracoes-publicas-2024",
+    "juros-das-administracoes-publicas-2025",
+    "juros-das-administracoes-publicas-2025-ue",
+    "juros-das-administracoes-publicas-pib-2024",
+    "juros-das-administracoes-publicas-pib-2025",
+    "juros-e-outros-encargos-execucao-2025-08",
+    "juros-e-outros-encargos-execucao-2026-08",
+    "necessidades-brutas-de-financiamento-2025",
+    "pib-nominal-notificacao-setembro-2024",
+    "pib-nominal-notificacao-setembro-2025"
+  ],
+  "larguras": [
+    390,
+    1280
+  ],
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-da-divida-emitida-2026-08-pt-390.png",
+      "url": "/livro-razao/custo-da-divida-emitida-2026-08/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Custo médio ponderado da dívida emitida pelo Estado",
+        "frase": "É o custo médio de o Estado pedir dinheiro emprestado no ano, através de Bilhetes do Tesouro, Obrigações do Tesouro, Obrigações do Tesouro de Rendimento Variável e Medium Term Notes. As emissões pesam nesta média de acordo com os montantes e os prazos. O valor é de dois mil e vinte e seis, até à data do boletim de setembro.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 59.171875
+          }
+        ]
+      },
+      "sha256": "84bea81f0fe4a22743a8cee7a0ef120131d7dba1a04a62308baed153a412f6fc"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-da-divida-emitida-2026-08-pt-1280.png",
+      "url": "/livro-razao/custo-da-divida-emitida-2026-08/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Custo médio ponderado da dívida emitida pelo Estado",
+        "frase": "É o custo médio de o Estado pedir dinheiro emprestado no ano, através de Bilhetes do Tesouro, Obrigações do Tesouro, Obrigações do Tesouro de Rendimento Variável e Medium Term Notes. As emissões pesam nesta média de acordo com os montantes e os prazos. O valor é de dois mil e vinte e seis, até à data do boletim de setembro.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 38.390625
+          }
+        ]
+      },
+      "sha256": "206b4aef468bcac62640199dae24bd345578f4dcfc1d2a37eb0c3368f35a4b60"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-da-divida-emitida-2026-08-en-390.png",
+      "url": "/en/ledger/custo-da-divida-emitida-2026-08/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Weighted average cost of State debt issued",
+        "frase": "It is the average cost of the State’s borrowing during the year through Treasury bills, Treasury bonds, floating-rate Treasury bonds and Medium Term Notes. Issues are weighted in this average by their amounts and maturities. The value is for two thousand and twenty-six, as of the September bulletin.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 59.171875
+          }
+        ]
+      },
+      "sha256": "d55cd77a858ce3a17919b88ef01a188cca6228643b1294711c9259f258993373"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-da-divida-emitida-2026-08-en-1280.png",
+      "url": "/en/ledger/custo-da-divida-emitida-2026-08/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Weighted average cost of State debt issued",
+        "frase": "It is the average cost of the State’s borrowing during the year through Treasury bills, Treasury bonds, floating-rate Treasury bonds and Medium Term Notes. Issues are weighted in this average by their amounts and maturities. The value is for two thousand and twenty-six, as of the September bulletin.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 38.390625
+          }
+        ]
+      },
+      "sha256": "89559fb3ffa1aa7a4535d177f3ed681f29446dd5d6590b4f95688c2b58afe86b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-do-stock-da-divida-direta-2025-pt-390.png",
+      "url": "/livro-razao/custo-do-stock-da-divida-direta-2025/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Custo da dívida direta do Estado em circulação, juros em contas nacionais",
+        "frase": "Mede o custo dos juros da dívida que o Estado tem: compara os juros atribuídos ao ano pelas contas nacionais com o saldo médio da dívida direta no fim desse ano e do anterior. Os juros são registados quando o encargo é assumido, mesmo que sejam pagos noutro ano.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 59.171875
+          }
+        ]
+      },
+      "sha256": "f974025350410021b0489efe34b293df7cdf7ac9db7f79b02e483ecd00d9eeef"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-do-stock-da-divida-direta-2025-pt-1280.png",
+      "url": "/livro-razao/custo-do-stock-da-divida-direta-2025/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Custo da dívida direta do Estado em circulação, juros em contas nacionais",
+        "frase": "Mede o custo dos juros da dívida que o Estado tem: compara os juros atribuídos ao ano pelas contas nacionais com o saldo médio da dívida direta no fim desse ano e do anterior. Os juros são registados quando o encargo é assumido, mesmo que sejam pagos noutro ano.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 38.390625
+          }
+        ]
+      },
+      "sha256": "e43cb40e6d668a81dfd345b9bdb9de56ce484193c4d519c72045447d27660e5e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-do-stock-da-divida-direta-2025-en-390.png",
+      "url": "/en/ledger/custo-do-stock-da-divida-direta-2025/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Cost of outstanding State direct debt, interest in national accounts",
+        "frase": "It measures the interest cost of the State’s outstanding debt: interest attributed to the year in national accounts is compared with average direct debt at the end of that year and the previous one. Interest is recorded when the cost is incurred, even if it is paid in another year.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 59.171875
+          }
+        ]
+      },
+      "sha256": "a298fb01988528730c1cdf23ce3abe43f408d6a76d18f4d5c28d09cdf2e0e0c1"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-do-stock-da-divida-direta-2025-en-1280.png",
+      "url": "/en/ledger/custo-do-stock-da-divida-direta-2025/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Cost of outstanding State direct debt, interest in national accounts",
+        "frase": "It measures the interest cost of the State’s outstanding debt: interest attributed to the year in national accounts is compared with average direct debt at the end of that year and the previous one. Interest is recorded when the cost is incurred, even if it is paid in another year.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 38.390625
+          }
+        ]
+      },
+      "sha256": "b394cb2c182e2c116cd74d26ea1394a01c1189e856d3bb5f378c3ce928cd2386"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/divida-direta-do-estado-2026-08-pt-390.png",
+      "url": "/livro-razao/divida-direta-do-estado-2026-08/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Dívida direta do Estado no fim de agosto, valor nominal ou descontado",
+        "frase": "É a dívida emitida pelo Estado que ainda estava por pagar no fim de agosto. A dívida pública de Maastricht abrange todas as administrações públicas e retira a dívida que umas entidades públicas detêm de outras. O saldo usa o valor nominal da dívida, exceto nos instrumentos emitidos a desconto, como os Bilhetes do Tesouro, que entram pelo valor descontado. A dívida em moeda estrangeira é convertida ao câmbio do fim do período.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 59.171875
+          }
+        ]
+      },
+      "sha256": "24a6ebb4d343cf34266dc077ad2a279a135d6d4d1f511bd5018b2d67cb28e30d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/divida-direta-do-estado-2026-08-pt-1280.png",
+      "url": "/livro-razao/divida-direta-do-estado-2026-08/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Dívida direta do Estado no fim de agosto, valor nominal ou descontado",
+        "frase": "É a dívida emitida pelo Estado que ainda estava por pagar no fim de agosto. A dívida pública de Maastricht abrange todas as administrações públicas e retira a dívida que umas entidades públicas detêm de outras. O saldo usa o valor nominal da dívida, exceto nos instrumentos emitidos a desconto, como os Bilhetes do Tesouro, que entram pelo valor descontado. A dívida em moeda estrangeira é convertida ao câmbio do fim do período.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 38.390625
+          }
+        ]
+      },
+      "sha256": "ae0c51ce52bfefc41a3bf0364528dc5c0f8da7c71dbaf23d1a5def5201107672"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/divida-direta-do-estado-2026-08-en-390.png",
+      "url": "/en/ledger/divida-direta-do-estado-2026-08/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "State direct debt at the end of August, nominal or discounted value",
+        "frase": "It is the amount still owed at the end of August on debt issued by the State. Maastricht public debt covers all general government bodies and removes debt held by other government bodies. The balance uses the debt’s nominal value, except for instruments issued at a discount, such as Treasury bills, which are included at discounted value. Debt in foreign currency is converted at the end-of-period exchange rate.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 59.171875
+          }
+        ]
+      },
+      "sha256": "44eb06768c93ed037df8f62b60b252ff3db3a7445471b1195507bd7f788ff3e3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/divida-direta-do-estado-2026-08-en-1280.png",
+      "url": "/en/ledger/divida-direta-do-estado-2026-08/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "State direct debt at the end of August, nominal or discounted value",
+        "frase": "It is the amount still owed at the end of August on debt issued by the State. Maastricht public debt covers all general government bodies and removes debt held by other government bodies. The balance uses the debt’s nominal value, except for instruments issued at a discount, such as Treasury bills, which are included at discounted value. Debt in foreign currency is converted at the end-of-period exchange rate.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 38.390625
+          }
+        ]
+      },
+      "sha256": "8ce20bdb5fb97f795228eb26a7ba57d5db4679682a73960b39fd117085dad85b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/emissoes-de-divida-fundada-2025-pt-390.png",
+      "url": "/livro-razao/emissoes-de-divida-fundada-2025/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Emissões de dívida fundada do Estado no ano civil, contabilidade orçamental pública",
+        "frase": "É o dinheiro que o Estado pediu emprestado no ano civil através de dívida fundada. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 59.171875
+          }
+        ]
+      },
+      "sha256": "b2aa92325a90431c550df3132aded66f222b43d9276baf68c9280e2c215fa8b8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/emissoes-de-divida-fundada-2025-pt-1280.png",
+      "url": "/livro-razao/emissoes-de-divida-fundada-2025/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Emissões de dívida fundada do Estado no ano civil, contabilidade orçamental pública",
+        "frase": "É o dinheiro que o Estado pediu emprestado no ano civil através de dívida fundada. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 38.390625
+          }
+        ]
+      },
+      "sha256": "a95f07a55de72ac0bb8c10294a448d1884779a31b02cd2ce682472f59156e76c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/emissoes-de-divida-fundada-2025-en-390.png",
+      "url": "/en/ledger/emissoes-de-divida-fundada-2025/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "State funded debt issued during the calendar year, public budget accounts",
+        "frase": "It is the money the State borrowed during the calendar year through funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 59.171875
+          }
+        ]
+      },
+      "sha256": "dee49a004b9a2a06bd5c8c371d1df7e1f4fdf886251fe8422544cb38bfcfd579"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/emissoes-de-divida-fundada-2025-en-1280.png",
+      "url": "/en/ledger/emissoes-de-divida-fundada-2025/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "State funded debt issued during the calendar year, public budget accounts",
+        "frase": "It is the money the State borrowed during the calendar year through funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 38.390625
+          }
+        ]
+      },
+      "sha256": "50889feab780a08d93cbeae1c1b428a15832477f24906aa12261b64c2a845a8d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2024-pt-390.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-2024/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Juros das administrações públicas, contas nacionais",
+        "frase": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. As administrações públicas abrangem a administração central, regional e local e a segurança social. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "bdcc00374207e0decb6b808d77dc564761a7fa24490154a1993543ccdff13557"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2024-pt-1280.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-2024/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Juros das administrações públicas, contas nacionais",
+        "frase": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. As administrações públicas abrangem a administração central, regional e local e a segurança social. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "505d9bf98a576aae029f2916685d25ada7377e380810ce03c490eb518e806444"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2024-en-390.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-2024/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "General government interest expenditure, national accounts",
+        "frase": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. General government covers central, regional and local government and social security. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "39d433e4370b3aaba1f48a52bf6c4177fe332f88cc6715a761647189842dcc6b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2024-en-1280.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-2024/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "General government interest expenditure, national accounts",
+        "frase": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. General government covers central, regional and local government and social security. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "51feeb95a8f17f3d1fde716fe8cfe534e398c1b0d525532f76861fd5dbc5fc04"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-pt-390.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-2025/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Juros das administrações públicas, contas nacionais",
+        "frase": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. As administrações públicas abrangem a administração central, regional e local e a segurança social. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "9b723564a1b4c395158854ae467f1d0eca5bb666cb2a1ec74282de5e5c6bf8fb"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-pt-1280.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-2025/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Juros das administrações públicas, contas nacionais",
+        "frase": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. As administrações públicas abrangem a administração central, regional e local e a segurança social. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "7ddc5b2ea2c171c5742d88e14055d1ae763c76564ffb7201858122a4b1ca5b45"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-en-390.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-2025/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "General government interest expenditure, national accounts",
+        "frase": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. General government covers central, regional and local government and social security. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "0de4deb70ad4e61b172d65330e509934791ebbf1ab141e8586d4ed57e5441c41"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-en-1280.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-2025/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "General government interest expenditure, national accounts",
+        "frase": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. General government covers central, regional and local government and social security. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "ff3805d1f6bbe489ee677bce0a2c3c1707c51a4f9a35f0cca32dc0229bc4c255"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-ue-pt-390.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-2025-ue/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Juros das administrações públicas na União Europeia, em percentagem do PIB, contas nacionais",
+        "frase": "Compara a despesa em juros das administrações públicas do conjunto da União Europeia com o seu produto interno bruto, em percentagem. O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia. São contas nacionais: a despesa pertence ao período em que o encargo é assumido, mesmo que seja pago noutro período. A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "f7a3c7e7263b96639945b8d58663aa1d38dc8bdf5830aec1ffa2d1d975e5a68e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-ue-pt-1280.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-2025-ue/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Juros das administrações públicas na União Europeia, em percentagem do PIB, contas nacionais",
+        "frase": "Compara a despesa em juros das administrações públicas do conjunto da União Europeia com o seu produto interno bruto, em percentagem. O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia. São contas nacionais: a despesa pertence ao período em que o encargo é assumido, mesmo que seja pago noutro período. A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "9d78a92501743bc9222dec9e8d62cd21c42fb42fce966f102e2f29ab95984d29"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-ue-en-390.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-2025-ue/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "General government interest expenditure in the European Union, as a share of GDP, national accounts",
+        "frase": "It compares general government interest expenditure across the European Union with its gross domestic product, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. These are national accounts: expenditure belongs to the period in which the cost is incurred, even if it is paid in another period. The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "9121a182d882d9fc1a98a294d60070fc90414c170ff5595eab83a581e3c64007"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-ue-en-1280.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-2025-ue/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "General government interest expenditure in the European Union, as a share of GDP, national accounts",
+        "frase": "It compares general government interest expenditure across the European Union with its gross domestic product, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. These are national accounts: expenditure belongs to the period in which the cost is incurred, even if it is paid in another period. The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "5424954aeaf25153a2bb47695c03e9ba1848a7e1ea028363c7a61d16a7068364"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2024-pt-390.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-pib-2024/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Juros das administrações públicas em percentagem do PIB, contas nacionais",
+        "frase": "Compara a despesa em juros das administrações públicas com o produto interno bruto do mesmo ano, em percentagem. O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia. A conta usa os montantes da mesma notificação do INE, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis. A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "843446c434feafa26fc12845a8a538ee64671f04c837a921f32fc9f9668569cd"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2024-pt-1280.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-pib-2024/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Juros das administrações públicas em percentagem do PIB, contas nacionais",
+        "frase": "Compara a despesa em juros das administrações públicas com o produto interno bruto do mesmo ano, em percentagem. O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia. A conta usa os montantes da mesma notificação do INE, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis. A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "05392a0914bc1e3d624060b92a3b300c17693b7a26444e9d0ce7d3f363e1964a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2024-en-390.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-pib-2024/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "General government interest expenditure as a share of GDP, national accounts",
+        "frase": "It compares general government interest expenditure with gross domestic product for the same year, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. The calculation uses amounts from the same INE notification, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification. The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "da685d6a39e4dd4216aee7bb455049c365540a2f07fc456f4e8cfd70e653dc3c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2024-en-1280.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-pib-2024/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "General government interest expenditure as a share of GDP, national accounts",
+        "frase": "It compares general government interest expenditure with gross domestic product for the same year, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. The calculation uses amounts from the same INE notification, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification. The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "f63586032c99ae634aa3f83a01be9afa4d2caaa638e00413e8c4fbd031cc8134"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2025-pt-390.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-pib-2025/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Juros das administrações públicas em percentagem do PIB, contas nacionais",
+        "frase": "Compara a despesa em juros das administrações públicas com o produto interno bruto do mesmo ano, em percentagem. O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia. A conta usa os montantes da mesma notificação do INE, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis. A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "c7c10279ac48be3261cb37f8ffebc422e7b1a407ab3720590bc138b16d816ef6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2025-pt-1280.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-pib-2025/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Juros das administrações públicas em percentagem do PIB, contas nacionais",
+        "frase": "Compara a despesa em juros das administrações públicas com o produto interno bruto do mesmo ano, em percentagem. O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia. A conta usa os montantes da mesma notificação do INE, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis. A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "919607491714c43e515a36d31736551d7c0b9dff673b98986db828f7492f7433"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2025-en-390.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-pib-2025/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "General government interest expenditure as a share of GDP, national accounts",
+        "frase": "It compares general government interest expenditure with gross domestic product for the same year, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. The calculation uses amounts from the same INE notification, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification. The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "976ea5d695ea5deff0ccad056fe8695ef815e9097c3f496439980443f2316d53"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2025-en-1280.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-pib-2025/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "General government interest expenditure as a share of GDP, national accounts",
+        "frase": "It compares general government interest expenditure with gross domestic product for the same year, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. The calculation uses amounts from the same INE notification, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification. The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "5dc057577d5a0d954bcb75362a68e05065602d93b3a1710874df1e8156fbb65f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2025-08-pt-390.png",
+      "url": "/livro-razao/juros-e-outros-encargos-execucao-2025-08/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Juros e outros encargos das administrações públicas, caixa, janeiro a agosto",
+        "frase": "É o dinheiro pago pelas administrações públicas em juros e outros encargos, de janeiro a agosto. O total é consolidado: descontam-se os pagamentos entre as entidades públicas abrangidas. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 97.546875
+          }
+        ]
+      },
+      "sha256": "66e8d8d5c69c1cab0263c0a9d9abf3bd8538c66fa0fa84ee5b9f1fbe96bb16c8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2025-08-pt-1280.png",
+      "url": "/livro-razao/juros-e-outros-encargos-execucao-2025-08/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Juros e outros encargos das administrações públicas, caixa, janeiro a agosto",
+        "frase": "É o dinheiro pago pelas administrações públicas em juros e outros encargos, de janeiro a agosto. O total é consolidado: descontam-se os pagamentos entre as entidades públicas abrangidas. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 55.984375
+          }
+        ]
+      },
+      "sha256": "c08608ee1bc7208814967b1fce55287411cf8ac0e8c9c96024f05ecce4e03b04"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2025-08-en-390.png",
+      "url": "/en/ledger/juros-e-outros-encargos-execucao-2025-08/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "General government interest and other charges, cash basis, January to August",
+        "frase": "It is money paid by general government in interest and other charges from January to August. The total is consolidated: payments between the public bodies covered are removed. Public budget accounts record receipts and payments during the period.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 97.546875
+          }
+        ]
+      },
+      "sha256": "f9d349131819c72b5e86adb62be3b3942a3e355d12d9bc6c0588ee6a2609a3bb"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2025-08-en-1280.png",
+      "url": "/en/ledger/juros-e-outros-encargos-execucao-2025-08/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "General government interest and other charges, cash basis, January to August",
+        "frase": "It is money paid by general government in interest and other charges from January to August. The total is consolidated: payments between the public bodies covered are removed. Public budget accounts record receipts and payments during the period.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 55.984375
+          }
+        ]
+      },
+      "sha256": "c839cd312183196181f9f0e644e191439c334ab45bfef661086811a8bbf30ae1"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2026-08-pt-390.png",
+      "url": "/livro-razao/juros-e-outros-encargos-execucao-2026-08/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Juros e outros encargos das administrações públicas, caixa, janeiro a agosto",
+        "frase": "É o dinheiro pago pelas administrações públicas em juros e outros encargos, de janeiro a agosto. O total é consolidado: descontam-se os pagamentos entre as entidades públicas abrangidas. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 97.546875
+          }
+        ]
+      },
+      "sha256": "66681226756ed262fbc58ad2d5523c516a1ea7bece64decd26f6b05953c96930"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2026-08-pt-1280.png",
+      "url": "/livro-razao/juros-e-outros-encargos-execucao-2026-08/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Juros e outros encargos das administrações públicas, caixa, janeiro a agosto",
+        "frase": "É o dinheiro pago pelas administrações públicas em juros e outros encargos, de janeiro a agosto. O total é consolidado: descontam-se os pagamentos entre as entidades públicas abrangidas. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 55.984375
+          }
+        ]
+      },
+      "sha256": "a79857ce2858446dedbe9549771278bb773746a7156d7cb405d157e69caacc39"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2026-08-en-390.png",
+      "url": "/en/ledger/juros-e-outros-encargos-execucao-2026-08/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "General government interest and other charges, cash basis, January to August",
+        "frase": "It is money paid by general government in interest and other charges from January to August. The total is consolidated: payments between the public bodies covered are removed. Public budget accounts record receipts and payments during the period.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 97.546875
+          }
+        ]
+      },
+      "sha256": "736ae4d80efe139524770635fcddb01a290806642f1e69d9f8c04c5ac3c262da"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2026-08-en-1280.png",
+      "url": "/en/ledger/juros-e-outros-encargos-execucao-2026-08/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "General government interest and other charges, cash basis, January to August",
+        "frase": "It is money paid by general government in interest and other charges from January to August. The total is consolidated: payments between the public bodies covered are removed. Public budget accounts record receipts and payments during the period.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 55.984375
+          }
+        ]
+      },
+      "sha256": "ccf91d308d26eb0192946e93ceeabd3b0f574009eac938c4fe5ad2cf4c98672c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/necessidades-brutas-de-financiamento-2025-pt-390.png",
+      "url": "/livro-razao/necessidades-brutas-de-financiamento-2025/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Necessidades brutas de financiamento do Estado, contabilidade orçamental pública",
+        "frase": "É o financiamento de que o Estado precisou para cobrir o défice do orçamento e adquirir ativos financeiros, descontando os recebimentos dessas operações e excluindo privatizações, e para reembolsar ou extinguir dívida. O défice é a despesa que excede a receita. Os ativos financeiros incluem títulos, participações e empréstimos. O quadro chama amortizações e anulações à parcela dos reembolsos e extinções, que aparece no excerto da fonte junto do total. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 59.171875
+          }
+        ]
+      },
+      "sha256": "2c12bf1d13693af4e4d54d4eab428d15ebf6a02c5f60ff540bf656518889f320"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/necessidades-brutas-de-financiamento-2025-pt-1280.png",
+      "url": "/livro-razao/necessidades-brutas-de-financiamento-2025/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Necessidades brutas de financiamento do Estado, contabilidade orçamental pública",
+        "frase": "É o financiamento de que o Estado precisou para cobrir o défice do orçamento e adquirir ativos financeiros, descontando os recebimentos dessas operações e excluindo privatizações, e para reembolsar ou extinguir dívida. O défice é a despesa que excede a receita. Os ativos financeiros incluem títulos, participações e empréstimos. O quadro chama amortizações e anulações à parcela dos reembolsos e extinções, que aparece no excerto da fonte junto do total. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 38.390625
+          }
+        ]
+      },
+      "sha256": "e600ba2ddaadcf1265da710e5f2f729dcd2d5120e9b745ae4b76f4bb181f559a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/necessidades-brutas-de-financiamento-2025-en-390.png",
+      "url": "/en/ledger/necessidades-brutas-de-financiamento-2025/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Gross State financing needs, public budget accounts",
+        "frase": "It is the financing the State needed to cover the budget deficit and acquire financial assets, net of receipts from those operations and excluding privatisations, and to repay or extinguish debt. The deficit is expenditure in excess of revenue. Financial assets include securities, equity interests and loans. The table calls the repayment and cancellation component redemptions and cancellations; it appears in the source excerpt alongside the total. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 59.171875
+          }
+        ]
+      },
+      "sha256": "39df56c2f846863cce0b7a4c482450f2e9b6c1c95e45e3985324404ee15ac096"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/necessidades-brutas-de-financiamento-2025-en-1280.png",
+      "url": "/en/ledger/necessidades-brutas-de-financiamento-2025/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Gross State financing needs, public budget accounts",
+        "frase": "It is the financing the State needed to cover the budget deficit and acquire financial assets, net of receipts from those operations and excluding privatisations, and to repay or extinguish debt. The deficit is expenditure in excess of revenue. Financial assets include securities, equity interests and loans. The table calls the repayment and cancellation component redemptions and cancellations; it appears in the source excerpt alongside the total. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 38.390625
+          }
+        ]
+      },
+      "sha256": "94cac3227f40e3edf60199bf5ae3b124bcb0f8a30a40be89f60f7a52f227d8ea"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2024-pt-390.png",
+      "url": "/livro-razao/pib-nominal-notificacao-setembro-2024/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "PIB de Portugal a preços de mercado, contas nacionais",
+        "frase": "É o valor dos bens e serviços finais produzidos na economia portuguesa durante o ano, o produto interno bruto, a preços de mercado, nas contas nacionais enviadas pelo INE ao Eurostat em setembro. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "6f1da65e676cac975d47a9f078991a1993445fd870d2d6bdd32bce1cca53e172"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2024-pt-1280.png",
+      "url": "/livro-razao/pib-nominal-notificacao-setembro-2024/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "PIB de Portugal a preços de mercado, contas nacionais",
+        "frase": "É o valor dos bens e serviços finais produzidos na economia portuguesa durante o ano, o produto interno bruto, a preços de mercado, nas contas nacionais enviadas pelo INE ao Eurostat em setembro. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "bd53f11a71095cd487ca9cce84a226c3a02172c669b6041b62fc3bc406a96f00"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2024-en-390.png",
+      "url": "/en/ledger/pib-nominal-notificacao-setembro-2024/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Portugal’s GDP at market prices, national accounts",
+        "frase": "It is the value of final goods and services produced in the Portuguese economy during the year, gross domestic product at market prices, in the national accounts sent by INE to Eurostat in September. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "96da6c2e71dc21e0a3a4a437902888337c524767104ce85e13eeaa130272dc5d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2024-en-1280.png",
+      "url": "/en/ledger/pib-nominal-notificacao-setembro-2024/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Portugal’s GDP at market prices, national accounts",
+        "frase": "It is the value of final goods and services produced in the Portuguese economy during the year, gross domestic product at market prices, in the national accounts sent by INE to Eurostat in September. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "70fdad26a9e2def3903362b523e2720198c84b91d2f3054e57a66b7c6255b55f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2025-pt-390.png",
+      "url": "/livro-razao/pib-nominal-notificacao-setembro-2025/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "PIB de Portugal a preços de mercado, contas nacionais",
+        "frase": "É o valor dos bens e serviços finais produzidos na economia portuguesa durante o ano, o produto interno bruto, a preços de mercado, nas contas nacionais enviadas pelo INE ao Eurostat em setembro. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "32cf0bcda77befc1a6885dc09f8a2e11bdf7ed834fe3c889f2b86d5643ef0196"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2025-pt-1280.png",
+      "url": "/livro-razao/pib-nominal-notificacao-setembro-2025/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "PIB de Portugal a preços de mercado, contas nacionais",
+        "frase": "É o valor dos bens e serviços finais produzidos na economia portuguesa durante o ano, o produto interno bruto, a preços de mercado, nas contas nacionais enviadas pelo INE ao Eurostat em setembro. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "d44b488d1c3a35099e08979f0197014c79a5bc7ed10e08e38fd85a3264ce394a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2025-en-390.png",
+      "url": "/en/ledger/pib-nominal-notificacao-setembro-2025/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Portugal’s GDP at market prices, national accounts",
+        "frase": "It is the value of final goods and services produced in the Portuguese economy during the year, gross domestic product at market prices, in the national accounts sent by INE to Eurostat in September. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "b74a03831508e5d3682af5977a1d26f6b171cab17276bd2d5466168935aa07b4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2025-en-1280.png",
+      "url": "/en/ledger/pib-nominal-notificacao-setembro-2025/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Portugal’s GDP at market prices, national accounts",
+        "frase": "It is the value of final goods and services produced in the Portuguese economy during the year, gross domestic product at market prices, in the national accounts sent by INE to Eurostat in September. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "bf842106801c1e496ce9f285bbdc4ebf580703c59c81566c4b78225342e1e7cd"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/serie-pt-390.png",
+      "url": "/livro-razao/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Taxa das obrigações do Tesouro a dez anos",
+        "frase": "É a taxa de juro anual a que o mercado empresta ao Estado português, observada na compra e venda de obrigações já emitidas, antes de impostos, a que faltam cerca de dez anos até ao reembolso, apresentada mês a mês.",
+        "ultimo": "Em agosto de 2026, o valor foi 3,53700 %: mais do que no mesmo mês de há um ano, agosto de 2025, quando foi 3,12000 %.",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "d6effe0a24a9a65e31419c35685262bac00eb95861161e134204a703b1ce40d2"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/serie-pt-1280.png",
+      "url": "/livro-razao/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Taxa das obrigações do Tesouro a dez anos",
+        "frase": "É a taxa de juro anual a que o mercado empresta ao Estado português, observada na compra e venda de obrigações já emitidas, antes de impostos, a que faltam cerca de dez anos até ao reembolso, apresentada mês a mês.",
+        "ultimo": "Em agosto de 2026, o valor foi 3,53700 %: mais do que no mesmo mês de há um ano, agosto de 2025, quando foi 3,12000 %.",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "221474ef38a396e57e8e45c73d799a7660e1b2b6765bddd1c902c2f0fe4c4e69"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/serie-en-390.png",
+      "url": "/en/ledger/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Ten-year Treasury bond yield",
+        "frase": "It is the annual interest rate at which the market lends to central government in Portugal, observed in trading of bonds already issued, before tax, with around ten years remaining until repayment, reported monthly.",
+        "ultimo": "In August 2026, the value was 3,53700 %: more than in the same month a year earlier, August 2025, when it was 3,12000 %.",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "36f9f7269b68e0606e9166b5d69ac1706c54c8e67e8cf4a0ca30bf23aa8b9874"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/serie-en-1280.png",
+      "url": "/en/ledger/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Ten-year Treasury bond yield",
+        "frase": "It is the annual interest rate at which the market lends to central government in Portugal, observed in trading of bonds already issued, before tax, with around ten years remaining until repayment, reported monthly.",
+        "ultimo": "In August 2026, the value was 3,53700 %: more than in the same month a year earlier, August 2025, when it was 3,12000 %.",
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "72e23b91ad4ebe2fe1c8d6c591c37870f5ea04033b4bed698759c8db2a2b0e51"
+    }
+  ],
+  "interacoes": [
+    {
+      "url": "/livro-razao/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade/",
+      "lingua": "pt",
+      "largura": 390,
+      "pedidos_abertos": true,
+      "pedidos_abertos_teclado": true,
+      "dimensoes": {
+        "largura": 354,
+        "tabela": 1017
+      },
+      "deslocamento": 1
+    },
+    {
+      "url": "/livro-razao/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade/",
+      "lingua": "pt",
+      "largura": 1280,
+      "pedidos_abertos": true,
+      "pedidos_abertos_teclado": true,
+      "dimensoes": {
+        "largura": 544,
+        "tabela": 1017
+      },
+      "deslocamento": 1
+    },
+    {
+      "url": "/en/ledger/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade/",
+      "lingua": "en",
+      "largura": 390,
+      "pedidos_abertos": true,
+      "pedidos_abertos_teclado": true,
+      "dimensoes": {
+        "largura": 354,
+        "tabela": 1017
+      },
+      "deslocamento": 1
+    },
+    {
+      "url": "/en/ledger/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade/",
+      "lingua": "en",
+      "largura": 1280,
+      "pedidos_abertos": true,
+      "pedidos_abertos_teclado": true,
+      "dimensoes": {
+        "largura": 544,
+        "tabela": 1017
+      },
+      "deslocamento": 1
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "Rótulo e endereço comprimidos na mesma fila",
+      "mensagem": "O rótulo da página não fica acima do endereço.",
+      "queixas": [
+        "O rótulo da página não fica acima do endereço."
+      ],
+      "planta": true,
+      "passou": true
+    }
+  ],
+  "problemas": []
+}

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { homedir as jd1Casa } from 'node:os';
 /**
  * M11b · a segunda medição do mesmo bloco, depois dos seis consertos.
  * Reaproveita nucleo.mjs (novaPagina, vaiA, medePar, pontoDeEcra, dprDe,
@@ -12,7 +13,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { chromium } from '<casa>/<projetos>/OEstadoDoPais/node_modules/playwright/index.mjs';
+const { chromium } = await import(jd1Casa() + '/Instruments/OEstadoDoPais/node_modules/playwright/index.mjs');
 import {
   AQUI, LARGURAS, LARGURAS_TELEMOVEL, dprDe, novaPagina, vaiA, medePar, arrancaServidor,
 } from './nucleo.mjs';

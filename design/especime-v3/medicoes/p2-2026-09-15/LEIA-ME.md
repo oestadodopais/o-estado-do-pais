@@ -2,7 +2,7 @@
 
 *O relatório do construtor (Claude Opus 5), na forma do §3 do brief
 `design/observatorio/BRIEF-P2-o-numero-e-o-seu-sentido.md`. Worktree
-`<worktrees>/cartao-2026-09-15`, ramo `cartao-2026-09-15`, sobre
+`<pasta-das-worktrees>/cartao-2026-09-15`, ramo `cartao-2026-09-15`, sobre
 `2ab86986`. Prosa em português, sem travessões.*
 
 ---

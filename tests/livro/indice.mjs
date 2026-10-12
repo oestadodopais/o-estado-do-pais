@@ -245,7 +245,7 @@ const LINHAS_DA_REGUA = loadClaims();
  * coordenadas de página, 278 `Quadro_I, linha 4, coluna 13`, 7 `label`). Uma
  * forma nova entra aqui à mão, com o leitor que a escreve nomeado ao lado.
  *
- * @typedef {{id?: unknown, name?: unknown, reference_date?: unknown, document?: {locator?: unknown, crop?: {page?: unknown}}|null}} ContextoDoLocalizador
+ * @typedef {{id?: unknown, name?: unknown, reference_date?: unknown, document?: {locator?: unknown, page?: unknown, title?: unknown, edition?: unknown, kind?: unknown, crop?: {page?: unknown}}|null}} ContextoDoLocalizador
  * @type {{ nome: string, forma: RegExp, onde: string, confere?: (onde: string, linha?: ContextoDoLocalizador) => boolean }[]}
  */
 const LOCALIZADORES_CONHECIDOS = [
@@ -317,7 +317,61 @@ const LOCALIZADORES_CONHECIDOS = [
     forma: /^[^,]+, linha \d+, coluna \d+$/,
     onde: 'a grelha de uma folha ODS',
   },
+  // JD1: formas escritas por publisher/jd1.py; a página, o período e a identidade também têm de bater.
+  { nome: 'JD1, juros no quadro 9 do INE', forma: /^Quadro 9, Juros \(D\.41\), coluna (2024|2025), p\. 12$/, onde: 'publisher/jd1.py: quadro dos juros do INE', confere: localizadorJd1Confere },
+  { nome: 'JD1, PIB no quadro 1 do INE', forma: /^Quadro 1, Produto Interno Bruto, a preços de mercado, coluna (2024|2025), p\. 2$/, onde: 'publisher/jd1.py: quadro do PIB do INE', confere: localizadorJd1Confere },
+  { nome: 'JD1, juros no quadro 1 da execução', forma: /^Quadro 1, Conta consolidada das Administrações Públicas, execução acumulada (2025|2026), janeiro a agosto, folha 7 do PDF \(numeração impressa: 3\)$/, onde: 'publisher/jd1.py: conta consolidada da execução', confere: localizadorJd1Confere },
+  { nome: 'JD1, custo da dívida no gráfico do IGCP', forma: /^Custo da dívida direta do Estado, Custo (?:da dívida emitida|do stock da dívida), ponto (?:2025|2026), p\. 3; rótulo na coluna (?:104|114) da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5$/, onde: 'publisher/jd1.py: gráfico do custo da dívida', confere: localizadorJd1Confere },
+  { nome: 'JD1, saldo da dívida direta do IGCP', forma: /^Movimento da dívida direta do Estado, Dívida total \/ Total debt, saldo em 31\/ago\/26, p\. 2$/, onde: 'publisher/jd1.py: movimento da dívida direta', confere: localizadorJd1Confere },
+  { nome: 'JD1, quadro anual do financiamento do IGCP', forma: /^Quadro 9, (?:2\. AMORTIZAÇÕES E ANULAÇÕES \(Dívida Fundada\)|p\.m\. EMISSÕES DE DÍVIDA NO ANO CIVIL \(Dívida Fundada\)|3\. NECESSIDADES BRUTAS DE FINANCIAMENTO \(1\. \+ 2\.\)), coluna 2025, p\. 45$/, onde: 'publisher/jd1.py: quadro anual de financiamento', confere: localizadorJd1Confere },
+  { nome: 'JD1, coordenada dos juros da União', forma: /^freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=EU27_2020; time=2025; \$\.value\["0"\]; \$\.updated$/, onde: 'publisher/jd1.py: célula dos juros no Eurostat', confere: localizadorJd1Confere },
 ];
+
+/** @param {string} onde @param {ContextoDoLocalizador} [linha] */
+function localizadorJd1Confere(onde, linha) {
+  if (!linha || typeof linha.id !== 'string') return false;
+  const id = linha.id, d = linha.document;
+  if (id === 'juros-das-administracoes-publicas-2025-ue') return linha.name === 'Interest, expenditure' &&
+    linha.reference_date === '2025' && d?.kind === 'serie' && d.edition === 'gov_10a_main' &&
+    d.title === 'Government revenue, expenditure and main aggregates' &&
+    onde === 'freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=EU27_2020; time=2025; $.value["0"]; $.updated';
+  if (!d || d.kind !== 'pdf' || d.locator !== onde) return false;
+  const ine = /^(juros-das-administracoes-publicas|pib-nominal-notificacao-setembro)-(2024|2025)$/.exec(id);
+  if (ine) {
+    const juros = ine[1] === 'juros-das-administracoes-publicas';
+    const nome = juros ? 'Juros' : 'Produto Interno Bruto, a preços de mercado';
+    const quadro = juros ? 9 : 1, pagina = juros ? 12 : 2;
+    return linha.name === nome && linha.reference_date === ine[2] && d.page === pagina &&
+      d.title === 'Procedimento dos Défices Excessivos 2ª Notificação' &&
+      onde === `Quadro ${quadro}, ${nome}${juros ? ' (D.41)' : ''}, coluna ${ine[2]}, p. ${pagina}`;
+  }
+  const eo = /^juros-e-outros-encargos-execucao-(2025|2026)-08$/.exec(id);
+  if (eo) return linha.name === 'Juros e outros encargos' && linha.reference_date === `${eo[1]}-08` &&
+    d.page === 7 && d.title === 'Síntese da Execução Orçamental | agosto 2026' &&
+    onde === `Quadro 1, Conta consolidada das Administrações Públicas, execução acumulada ${eo[1]}, janeiro a agosto, folha 7 do PDF (numeração impressa: 3)`;
+  /** @type {Record<string, string[]>} */
+  const custos = {
+    'custo-da-divida-emitida-2026-08': ['Custo da dívida emitida', '2026', '2026', '114'],
+    'custo-do-stock-da-divida-direta-2025': ['Custo do stock da dívida', '2025', '2025', '104'],
+  };
+  if (id in custos) {
+    const [nome, periodo, ano, coluna] = custos[id];
+    return linha.name === nome && linha.reference_date === periodo && d.page === 3 && d.title === 'Boletim Mensal' &&
+      onde === `Custo da dívida direta do Estado, ${nome}, ponto ${ano}, p. 3; rótulo na coluna ${coluna} da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5`;
+  }
+  if (id === 'divida-direta-do-estado-2026-08') return linha.name === 'Dívida total / Total debt' &&
+    linha.reference_date === '2026-08' && d.page === 2 && d.title === 'Boletim Mensal' &&
+    onde === 'Movimento da dívida direta do Estado, Dívida total / Total debt, saldo em 31/ago/26, p. 2';
+  /** @type {Record<string, string>} */
+  const anuais = {
+    'amortizacoes-e-anulacoes-de-divida-fundada-2025': '2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada)',
+    'emissoes-de-divida-fundada-2025': 'p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada)',
+    'necessidades-brutas-de-financiamento-2025': '3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.)',
+  };
+  return id in anuais && linha.name === anuais[id] && linha.reference_date === '2025' && d.page === 45 &&
+    d.title === 'Gestão da Tesouraria do Estado e da Dívida Pública · Relatório Anual 2025' &&
+    onde === `Quadro 9, ${anuais[id]}, coluna 2025, p. 45`;
+}
 
 /**
  * OE1-d: no orçamento a coluna seguinte contém o valor; na execução há mais
@@ -1784,6 +1838,15 @@ function provaLocalizadores() {
       ['Localizador livre', 0, 'uma cadeia sem localizador'],
       ['Rótulo de total inventado', 4, 'p. 6, RECEITA INVENTADA, última coluna'],
       ['Coluna do valor orçamental disfarçada de rótulo', 1, 'FUNCIONAL!D2', 'oe-2026-despesa-funcao-01'],
+      ['JD1: página dos juros trocada', 11, 'Quadro 9, Juros (D.41), coluna 2024, p. 13', 'juros-das-administracoes-publicas-2024'],
+      ['JD1: ano do PIB trocado', 12, 'Quadro 1, Produto Interno Bruto, a preços de mercado, coluna 2025, p. 2', 'pib-nominal-notificacao-setembro-2024'],
+      ['JD1: ano da execução trocado', 13, 'Quadro 1, Conta consolidada das Administrações Públicas, execução acumulada 2026, janeiro a agosto, folha 7 do PDF (numeração impressa: 3)', 'juros-e-outros-encargos-execucao-2025-08'],
+      ['JD1: ano do custo do stock trocado', 14, 'Custo da dívida direta do Estado, Custo do stock da dívida, ponto 2026, p. 3; rótulo na coluna 104 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5', 'custo-do-stock-da-divida-direta-2025'],
+      ['JD1: coluna do custo do stock trocada', 14, 'Custo da dívida direta do Estado, Custo do stock da dívida, ponto 2025, p. 3; rótulo na coluna 114 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5', 'custo-do-stock-da-divida-direta-2025'],
+      ['JD1: dia do saldo trocado', 15, 'Movimento da dívida direta do Estado, Dívida total / Total debt, saldo em 30/ago/26, p. 2', 'divida-direta-do-estado-2026-08'],
+      ['JD1: emissões no lugar das necessidades', 16, 'Quadro 9, p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada), coluna 2025, p. 45', 'necessidades-brutas-de-financiamento-2025'],
+      ['JD1: geografia da União trocada', 17, 'freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=PT; time=2025; $.value["0"]; $.updated', 'juros-das-administracoes-publicas-2025-ue'],
+      ['JD1: célula JSON da União trocada', 17, 'freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=EU27_2020; time=2025; $.value["1"]; $.updated', 'juros-das-administracoes-publicas-2025-ue'],
     ];
     const plantas = [];
     for (const [nome, grupo, valor, escolhido] of estragos) {
@@ -1799,6 +1862,7 @@ function provaLocalizadores() {
       const [id, original] = par;
       const copia = structuredClone(original);
       copia.name_source = valor;
+      if (nome.startsWith('JD1:') && copia.document?.locator) copia.document.locator = valor;
       const antes = { I1: medida.I1, I3: medida.I3 };
       const queixas = { I1: [], I3: [] };
       const nomesAntes = ['pt', 'en'].map((lang) => nomeEsperadoComDegrau(id, lang));

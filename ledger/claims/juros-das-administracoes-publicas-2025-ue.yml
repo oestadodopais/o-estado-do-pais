@@ -1,0 +1,43 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "juros-das-administracoes-publicas-2025-ue"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "1,9"
+unit: "% do PIB"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Interest, expenditure"
+name_source: "freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=EU27_2020; time=2025; $.value[\"0\"]; $.updated"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Eurostat"
+document:
+  title: "Government revenue, expenditure and main aggregates"
+  edition: "gov_10a_main"
+  locator: null
+  kind: "serie"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_main?lang=EN&freq=A&sector=S13&na_item=D41PAY&geo=EU27_2020&unit=PC_GDP&time=2025"
+access_date: "2026-10-06"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "\"updated\":\"2026-07-21T11:00:00+0200\",\"value\":{\"0\":1.9}"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=EU27_2020; time=2025; $.value[\"0\"]; $.updated. Agregado da União Europeia publicado pelo Eurostat. Atualização do conjunto: 2026-07-21T11:00:00+0200. O destaque do INE de setembro é uma versão posterior das contas portuguesas. Contas nacionais, execução orçamental e dívida direta têm perímetros e critérios distintos; esta linha conserva o do documento citado. · Cruzado de ResearchHub content/20 Orcamento do Estado · juros-das-administracoes-publicas-2025-ue."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
