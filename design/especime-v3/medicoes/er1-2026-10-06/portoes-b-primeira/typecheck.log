@@ -1,0 +1,9 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/lugar-da-incorporacao.mjs(15,34): error TS2532: Object is possibly 'undefined'.
+src/lib/lugar-da-incorporacao.mjs(16,35): error TS2532: Object is possibly 'undefined'.
+src/lib/lugar-da-incorporacao.mjs(20,58): error TS2532: Object is possibly 'undefined'.
+src/lib/lugar-da-incorporacao.mjs(20,58): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ pt: string; en: string; } | { pt: string; en: string; } | { pt: string; en: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ pt: string; en: string; } | { pt: string; en: string; } | { pt: string; en: string; }'.

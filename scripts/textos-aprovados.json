@@ -27,7 +27,16 @@
     "política da IA vive; «IA» passou a «inteligência artificial»; o nome de quem responde saiu",
     "do rótulo e da ficha da primeira página; e o Sobre passou a dizer o que o projeto é em vez",
     "de dizer de quem é. «A casa» e «regras da casa» não entram em cadeia nenhuma escrita neste",
-    "bloco (emenda do diretor das 16:35 UTC: em português, casa é a habitação)."
+    "bloco (emenda do diretor das 16:35 UTC: em português, casa é a habitação).",
+    "",
+    "A REDAÇÃO MUDOU OUTRA VEZ A 07.10.2026 (`DECISIONS.md` §1.181, o acrescento (f), e a §1.182, o bloco",
+    "dos textos públicos), por decisão do diretor: o sítio não diz quem responde por ele, porque é um",
+    "projeto de inteligência artificial independente, financiado em privado. A `frase` deixa de dizer",
+    "«uma pessoa com nome define as regras e as recusas, e responde» e diz onde estão as regras e as",
+    "recusas; a `o_projeto` diz, nas palavras do diretor, o que o projeto é; e entra o `contacto`, a",
+    "terceira frase do Sobre, com o endereço das correções dentro (o único endereço deste projeto por",
+    "agora). O `responsavel` fica: é o que os portões usam para provar que o nome não se rende em",
+    "página nenhuma, e continua a ser verdade. O rótulo e a ficha não mudam."
   ],
   "responsavel": "Nuno dos Santos",
   "lingua_do_responsavel": "pt-PT",
@@ -41,15 +50,19 @@
     "en": "Method"
   },
   "frase": {
-    "pt": "Escrito, conferido e atualizado por sistemas de inteligência artificial, segundo regras publicadas; nenhum humano revê cada peça antes de sair; uma pessoa com nome define as regras e as recusas, e responde.",
-    "en": "Written, checked and updated by artificial intelligence systems, under published rules; no human reviews each piece before it goes out; a named person sets the rules and the refusals, and answers for it."
+    "pt": "Escrito, conferido e atualizado por sistemas de inteligência artificial, segundo regras publicadas; nenhum humano revê cada mudança antes de se publicar, e as regras e as recusas estão nesta página.",
+    "en": "Written, checked and updated by artificial intelligence systems, under published rules; no human reviews each change before it is published, and the rules and the refusals are on this page."
   },
   "ficha": {
     "pt": "Publicação gratuita",
     "en": "Free of charge"
   },
   "o_projeto": {
-    "pt": "O Estado do País é um projeto pessoal e independente: explora a possibilidade de um observatório sobre o país feito com inteligência artificial.",
-    "en": "O Estado do País is a personal, independent project: it explores the possibility of an observatory of the country made with artificial intelligence."
+    "pt": "O Estado do País é um projeto independente, conduzido por uma inteligência artificial e financiado em privado.",
+    "en": "O Estado do País is an independent project, run by an artificial intelligence and privately funded."
+  },
+  "contacto": {
+    "pt": "Para contactar este projeto, escreva para o endereço das correções, correcoes@oestadodopais.pt.",
+    "en": "To contact this project, write to the corrections address, correcoes@oestadodopais.pt."
   }
 }

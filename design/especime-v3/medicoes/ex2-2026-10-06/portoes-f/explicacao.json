@@ -1,0 +1,1202 @@
+{
+  "cenariosDosSaldos": {
+    "coexistencia": [
+      {
+        "lang": "pt",
+        "contas": [
+          {
+            "caminho": "seccoes[2].conteudo[1].paragrafo",
+            "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de −845,8 milhões de euros, um défice (gastou mais do que recebeu); é um défice menor do que o que o Orçamento previa para o ano inteiro (−1 789,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de 2025 do parágrafo seguinte."
+          },
+          {
+            "caminho": "seccoes[3].conteudo[0].paragrafo",
+            "texto": "No fim de 2025, a dívida pública valia 89,7 % do que o país produz num ano, acima dos 81,7 % da média da União Europeia, e as contas públicas fecharam o ano com um saldo de 0,7 % do produto, um excedente (recebeu mais do que gastou)."
+          }
+        ],
+        "erros": []
+      },
+      {
+        "lang": "en",
+        "contas": [
+          {
+            "caminho": "seccoes[2].conteudo[1].paragrafo",
+            "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of −845,8 million euros, a deficit (it spent more than it took in); it is a smaller deficit than the one the Budget forecast for the full year (−1 789,8 million euros), and September to December are still to come. It is a different account, not the one of the public accounts of 2025 in the next paragraph."
+          },
+          {
+            "caminho": "seccoes[3].conteudo[0].paragrafo",
+            "texto": "At the end of 2025, public debt was worth 89,7 % of what the country produces in a year, above the 81,7 % average of the European Union, and the public accounts closed the year with a balance of 0,7 % of output, a surplus (it took in more than it spent)."
+          }
+        ],
+        "erros": []
+      }
+    ],
+    "cenarios": [
+      {
+        "execucao": "-845,8",
+        "previsao": "-1789,8",
+        "lang": "pt",
+        "ramo": "deficitMenor",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de -845,8 milhões de euros, um défice (gastou mais do que recebeu); é um défice menor do que o que o Orçamento previa para o ano inteiro (-1789,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de 2025 do parágrafo seguinte."
+      },
+      {
+        "execucao": "-845,8",
+        "previsao": "-1789,8",
+        "lang": "en",
+        "ramo": "deficitMenor",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of -845,8 million euros, a deficit (it spent more than it took in); it is a smaller deficit than the one the Budget forecast for the full year (-1789,8 million euros), and September to December are still to come. It is a different account, not the one of the public accounts of 2025 in the next paragraph."
+      },
+      {
+        "execucao": "-1789,8",
+        "previsao": "-845,8",
+        "lang": "pt",
+        "ramo": "deficitMaior",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de -1789,8 milhões de euros, um défice (gastou mais do que recebeu); é um défice maior do que o que o Orçamento previa para o ano inteiro (-845,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de 2025 do parágrafo seguinte."
+      },
+      {
+        "execucao": "-1789,8",
+        "previsao": "-845,8",
+        "lang": "en",
+        "ramo": "deficitMaior",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of -1789,8 million euros, a deficit (it spent more than it took in); it is a larger deficit than the one the Budget forecast for the full year (-845,8 million euros), and September to December are still to come. It is a different account, not the one of the public accounts of 2025 in the next paragraph."
+      },
+      {
+        "execucao": "-845,8",
+        "previsao": "-845,8",
+        "lang": "pt",
+        "ramo": "deficitIgual",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de -845,8 milhões de euros, um défice (gastou mais do que recebeu); é um défice igual ao que o Orçamento previa para o ano inteiro (-845,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de 2025 do parágrafo seguinte."
+      },
+      {
+        "execucao": "-845,8",
+        "previsao": "-845,8",
+        "lang": "en",
+        "ramo": "deficitIgual",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of -845,8 million euros, a deficit (it spent more than it took in); it is the same deficit as the one the Budget forecast for the full year (-845,8 million euros), and September to December are still to come. It is a different account, not the one of the public accounts of 2025 in the next paragraph."
+      },
+      {
+        "execucao": "845,8",
+        "previsao": "1789,8",
+        "lang": "pt",
+        "ramo": "excedenteMenor",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de 845,8 milhões de euros, um excedente (recebeu mais do que gastou); é um excedente menor do que o que o Orçamento previa para o ano inteiro (1789,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de 2025 do parágrafo seguinte."
+      },
+      {
+        "execucao": "845,8",
+        "previsao": "1789,8",
+        "lang": "en",
+        "ramo": "excedenteMenor",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of 845,8 million euros, a surplus (it took in more than it spent); it is a smaller surplus than the one the Budget forecast for the full year (1789,8 million euros), and September to December are still to come. It is a different account, not the one of the public accounts of 2025 in the next paragraph."
+      },
+      {
+        "execucao": "1789,8",
+        "previsao": "845,8",
+        "lang": "pt",
+        "ramo": "excedenteMaior",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de 1789,8 milhões de euros, um excedente (recebeu mais do que gastou); é um excedente maior do que o que o Orçamento previa para o ano inteiro (845,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de 2025 do parágrafo seguinte."
+      },
+      {
+        "execucao": "1789,8",
+        "previsao": "845,8",
+        "lang": "en",
+        "ramo": "excedenteMaior",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of 1789,8 million euros, a surplus (it took in more than it spent); it is a larger surplus than the one the Budget forecast for the full year (845,8 million euros), and September to December are still to come. It is a different account, not the one of the public accounts of 2025 in the next paragraph."
+      },
+      {
+        "execucao": "845,8",
+        "previsao": "845,8",
+        "lang": "pt",
+        "ramo": "excedenteIgual",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de 845,8 milhões de euros, um excedente (recebeu mais do que gastou); é um excedente igual ao que o Orçamento previa para o ano inteiro (845,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de 2025 do parágrafo seguinte."
+      },
+      {
+        "execucao": "845,8",
+        "previsao": "845,8",
+        "lang": "en",
+        "ramo": "excedenteIgual",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of 845,8 million euros, a surplus (it took in more than it spent); it is the same surplus as the one the Budget forecast for the full year (845,8 million euros), and September to December are still to come. It is a different account, not the one of the public accounts of 2025 in the next paragraph."
+      },
+      {
+        "execucao": "0",
+        "previsao": "0",
+        "lang": "pt",
+        "ramo": "nulos",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de 0 milhões de euros, um saldo nulo (recebeu o mesmo que gastou); é um saldo nulo, como o que o Orçamento previa para o ano inteiro (0 milhões de euros), e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de 2025 do parágrafo seguinte."
+      },
+      {
+        "execucao": "0",
+        "previsao": "0",
+        "lang": "en",
+        "ramo": "nulos",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of 0 million euros, a nil balance (it took in the same as it spent); it is a nil balance, as the Budget forecast for the full year (0 million euros), and September to December are still to come. It is a different account, not the one of the public accounts of 2025 in the next paragraph."
+      },
+      {
+        "execucao": "845,8",
+        "previsao": "-1789,8",
+        "lang": "pt",
+        "ramo": "diferentesNegativo",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de 845,8 milhões de euros, um excedente (recebeu mais do que gastou); o Orçamento previa para o ano inteiro um défice de -1789,8 milhões de euros, e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de 2025 do parágrafo seguinte."
+      },
+      {
+        "execucao": "845,8",
+        "previsao": "-1789,8",
+        "lang": "en",
+        "ramo": "diferentesNegativo",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of 845,8 million euros, a surplus (it took in more than it spent); the Budget forecast for the full year a deficit of -1789,8 million euros, and September to December are still to come. It is a different account, not the one of the public accounts of 2025 in the next paragraph."
+      },
+      {
+        "execucao": "-845,8",
+        "previsao": "1789,8",
+        "lang": "pt",
+        "ramo": "diferentesPositivo",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de -845,8 milhões de euros, um défice (gastou mais do que recebeu); o Orçamento previa para o ano inteiro um excedente de 1789,8 milhões de euros, e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de 2025 do parágrafo seguinte."
+      },
+      {
+        "execucao": "-845,8",
+        "previsao": "1789,8",
+        "lang": "en",
+        "ramo": "diferentesPositivo",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of -845,8 million euros, a deficit (it spent more than it took in); the Budget forecast for the full year a surplus of 1789,8 million euros, and September to December are still to come. It is a different account, not the one of the public accounts of 2025 in the next paragraph."
+      },
+      {
+        "execucao": "-845,8",
+        "previsao": "0",
+        "lang": "pt",
+        "ramo": "diferentesZero",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de -845,8 milhões de euros, um défice (gastou mais do que recebeu); o Orçamento previa para o ano inteiro um saldo nulo de 0 milhões de euros, e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de 2025 do parágrafo seguinte."
+      },
+      {
+        "execucao": "-845,8",
+        "previsao": "0",
+        "lang": "en",
+        "ramo": "diferentesZero",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of -845,8 million euros, a deficit (it spent more than it took in); the Budget forecast for the full year a nil balance of 0 million euros, and September to December are still to come. It is a different account, not the one of the public accounts of 2025 in the next paragraph."
+      },
+      {
+        "execucao": "845,8",
+        "previsao": "0",
+        "lang": "pt",
+        "ramo": "diferentesZero",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de 845,8 milhões de euros, um excedente (recebeu mais do que gastou); o Orçamento previa para o ano inteiro um saldo nulo de 0 milhões de euros, e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de 2025 do parágrafo seguinte."
+      },
+      {
+        "execucao": "845,8",
+        "previsao": "0",
+        "lang": "en",
+        "ramo": "diferentesZero",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of 845,8 million euros, a surplus (it took in more than it spent); the Budget forecast for the full year a nil balance of 0 million euros, and September to December are still to come. It is a different account, not the one of the public accounts of 2025 in the next paragraph."
+      },
+      {
+        "execucao": "0",
+        "previsao": "-1789,8",
+        "lang": "pt",
+        "ramo": "diferentesNegativo",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de 0 milhões de euros, um saldo nulo (recebeu o mesmo que gastou); o Orçamento previa para o ano inteiro um défice de -1789,8 milhões de euros, e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de 2025 do parágrafo seguinte."
+      },
+      {
+        "execucao": "0",
+        "previsao": "-1789,8",
+        "lang": "en",
+        "ramo": "diferentesNegativo",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of 0 million euros, a nil balance (it took in the same as it spent); the Budget forecast for the full year a deficit of -1789,8 million euros, and September to December are still to come. It is a different account, not the one of the public accounts of 2025 in the next paragraph."
+      },
+      {
+        "execucao": "0",
+        "previsao": "1789,8",
+        "lang": "pt",
+        "ramo": "diferentesPositivo",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de 0 milhões de euros, um saldo nulo (recebeu o mesmo que gastou); o Orçamento previa para o ano inteiro um excedente de 1789,8 milhões de euros, e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de 2025 do parágrafo seguinte."
+      },
+      {
+        "execucao": "0",
+        "previsao": "1789,8",
+        "lang": "en",
+        "ramo": "diferentesPositivo",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of 0 million euros, a nil balance (it took in the same as it spent); the Budget forecast for the full year a surplus of 1789,8 million euros, and September to December are still to come. It is a different account, not the one of the public accounts of 2025 in the next paragraph."
+      }
+    ],
+    "ramos": [
+      {
+        "token": "sinal",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.5",
+        "ramo": "positivo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.pt[5] não declara o ramo «positivo»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.5",
+        "ramo": "negativo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.pt[5] não declara o ramo «negativo»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.5",
+        "ramo": "zero",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.pt[5] não declara o ramo «zero»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "deficitMaior",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «deficitMaior»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "deficitMenor",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «deficitMenor»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "deficitIgual",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «deficitIgual»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "excedenteMaior",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «excedenteMaior»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "excedenteMenor",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «excedenteMenor»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "excedenteIgual",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «excedenteIgual»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "nulos",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «nulos»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "diferentesNegativo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «diferentesNegativo»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "diferentesPositivo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «diferentesPositivo»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "diferentesZero",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «diferentesZero»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.5",
+        "ramo": "positivo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.en[5] não declara o ramo «positivo»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.5",
+        "ramo": "negativo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.en[5] não declara o ramo «negativo»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.5",
+        "ramo": "zero",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.en[5] não declara o ramo «zero»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "deficitMaior",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «deficitMaior»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "deficitMenor",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «deficitMenor»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "deficitIgual",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «deficitIgual»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "excedenteMaior",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «excedenteMaior»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "excedenteMenor",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «excedenteMenor»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "excedenteIgual",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «excedenteIgual»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "nulos",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «nulos»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "diferentesNegativo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «diferentesNegativo»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "diferentesPositivo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «diferentesPositivo»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "diferentesZero",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «diferentesZero»"
+      },
+      {
+        "token": "compara",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.pt.5",
+        "ramo": "maior",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «compara» em seccoes[3].conteudo[0].paragrafo.pt[5] não declara o ramo «maior»"
+      },
+      {
+        "token": "compara",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.pt.5",
+        "ramo": "menor",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «compara» em seccoes[3].conteudo[0].paragrafo.pt[5] não declara o ramo «menor»"
+      },
+      {
+        "token": "compara",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.pt.5",
+        "ramo": "igual",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «compara» em seccoes[3].conteudo[0].paragrafo.pt[5] não declara o ramo «igual»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.pt.9",
+        "ramo": "positivo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.pt[9] não declara o ramo «positivo»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.pt.9",
+        "ramo": "negativo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.pt[9] não declara o ramo «negativo»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.pt.9",
+        "ramo": "zero",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.pt[9] não declara o ramo «zero»"
+      },
+      {
+        "token": "compara",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.en.5",
+        "ramo": "maior",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «compara» em seccoes[3].conteudo[0].paragrafo.en[5] não declara o ramo «maior»"
+      },
+      {
+        "token": "compara",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.en.5",
+        "ramo": "menor",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «compara» em seccoes[3].conteudo[0].paragrafo.en[5] não declara o ramo «menor»"
+      },
+      {
+        "token": "compara",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.en.5",
+        "ramo": "igual",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «compara» em seccoes[3].conteudo[0].paragrafo.en[5] não declara o ramo «igual»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.en.9",
+        "ramo": "positivo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.en[9] não declara o ramo «positivo»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.en.9",
+        "ramo": "negativo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.en[9] não declara o ramo «negativo»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.en.9",
+        "ramo": "zero",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.en[9] não declara o ramo «zero»"
+      }
+    ],
+    "erros": []
+  },
+  "auditoria": {
+    "explicacoes": 1,
+    "folhas": 117,
+    "partes": 166,
+    "diz": 79,
+    "conta": 25,
+    "liga": 59,
+    "aponta": 3,
+    "leitura": 0,
+    "apoios": 118,
+    "origens": 5
+  },
+  "origens": {
+    "origens": 2,
+    "lidas_no_motor": 2,
+    "motor": true
+  },
+  "maiores": {
+    "tokens": 2
+  },
+  "ramos": {
+    "tokens": 8,
+    "palavras": [
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.pt[5]",
+        "ramo": "positivo",
+        "contem": [
+          "excedente"
+        ],
+        "naoContem": [
+          "défice",
+          "nulo"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.pt[5]",
+        "ramo": "negativo",
+        "contem": [
+          "défice"
+        ],
+        "naoContem": [
+          "excedente",
+          "nulo"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.pt[5]",
+        "ramo": "zero",
+        "contem": [
+          "nulo"
+        ],
+        "naoContem": [
+          "excedente",
+          "défice"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.pt[7]",
+        "ramo": "deficitMaior",
+        "contem": [
+          "défice",
+          "maior"
+        ],
+        "naoContem": [
+          "excedente",
+          "nulo",
+          "menor",
+          "igual"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.pt[7]",
+        "ramo": "deficitMenor",
+        "contem": [
+          "défice",
+          "menor"
+        ],
+        "naoContem": [
+          "excedente",
+          "nulo",
+          "maior",
+          "igual"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.pt[7]",
+        "ramo": "deficitIgual",
+        "contem": [
+          "défice",
+          "igual"
+        ],
+        "naoContem": [
+          "excedente",
+          "nulo",
+          "maior",
+          "menor"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.pt[7]",
+        "ramo": "excedenteMaior",
+        "contem": [
+          "excedente",
+          "maior"
+        ],
+        "naoContem": [
+          "défice",
+          "nulo",
+          "menor",
+          "igual"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.pt[7]",
+        "ramo": "excedenteMenor",
+        "contem": [
+          "excedente",
+          "menor"
+        ],
+        "naoContem": [
+          "défice",
+          "nulo",
+          "maior",
+          "igual"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.pt[7]",
+        "ramo": "excedenteIgual",
+        "contem": [
+          "excedente",
+          "igual"
+        ],
+        "naoContem": [
+          "défice",
+          "nulo",
+          "maior",
+          "menor"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.pt[7]",
+        "ramo": "nulos",
+        "contem": [
+          "nulo"
+        ],
+        "naoContem": [
+          "excedente",
+          "défice",
+          "maior",
+          "menor",
+          "igual"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.pt[7]",
+        "ramo": "diferentesNegativo",
+        "contem": [
+          "défice"
+        ],
+        "naoContem": [
+          "excedente",
+          "nulo",
+          "maior",
+          "menor",
+          "igual"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.pt[7]",
+        "ramo": "diferentesPositivo",
+        "contem": [
+          "excedente"
+        ],
+        "naoContem": [
+          "défice",
+          "nulo",
+          "maior",
+          "menor",
+          "igual"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.pt[7]",
+        "ramo": "diferentesZero",
+        "contem": [
+          "nulo"
+        ],
+        "naoContem": [
+          "excedente",
+          "défice",
+          "maior",
+          "menor",
+          "igual"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.en[5]",
+        "ramo": "positivo",
+        "contem": [
+          "surplus"
+        ],
+        "naoContem": [
+          "deficit",
+          "nil"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.en[5]",
+        "ramo": "negativo",
+        "contem": [
+          "deficit"
+        ],
+        "naoContem": [
+          "surplus",
+          "nil"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.en[5]",
+        "ramo": "zero",
+        "contem": [
+          "nil"
+        ],
+        "naoContem": [
+          "surplus",
+          "deficit"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.en[7]",
+        "ramo": "deficitMaior",
+        "contem": [
+          "deficit",
+          "larger"
+        ],
+        "naoContem": [
+          "surplus",
+          "nil",
+          "smaller",
+          "the same"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.en[7]",
+        "ramo": "deficitMenor",
+        "contem": [
+          "deficit",
+          "smaller"
+        ],
+        "naoContem": [
+          "surplus",
+          "nil",
+          "larger",
+          "the same"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.en[7]",
+        "ramo": "deficitIgual",
+        "contem": [
+          "deficit",
+          "the same"
+        ],
+        "naoContem": [
+          "surplus",
+          "nil",
+          "larger",
+          "smaller"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.en[7]",
+        "ramo": "excedenteMaior",
+        "contem": [
+          "surplus",
+          "larger"
+        ],
+        "naoContem": [
+          "deficit",
+          "nil",
+          "smaller",
+          "the same"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.en[7]",
+        "ramo": "excedenteMenor",
+        "contem": [
+          "surplus",
+          "smaller"
+        ],
+        "naoContem": [
+          "deficit",
+          "nil",
+          "larger",
+          "the same"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.en[7]",
+        "ramo": "excedenteIgual",
+        "contem": [
+          "surplus",
+          "the same"
+        ],
+        "naoContem": [
+          "deficit",
+          "nil",
+          "larger",
+          "smaller"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.en[7]",
+        "ramo": "nulos",
+        "contem": [
+          "nil"
+        ],
+        "naoContem": [
+          "surplus",
+          "deficit",
+          "larger",
+          "smaller",
+          "the same"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.en[7]",
+        "ramo": "diferentesNegativo",
+        "contem": [
+          "deficit"
+        ],
+        "naoContem": [
+          "surplus",
+          "nil",
+          "larger",
+          "smaller",
+          "the same"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.en[7]",
+        "ramo": "diferentesPositivo",
+        "contem": [
+          "surplus"
+        ],
+        "naoContem": [
+          "deficit",
+          "nil",
+          "larger",
+          "smaller",
+          "the same"
+        ]
+      },
+      {
+        "caminho": "seccoes[2].conteudo[1].paragrafo.en[7]",
+        "ramo": "diferentesZero",
+        "contem": [
+          "nil"
+        ],
+        "naoContem": [
+          "surplus",
+          "deficit",
+          "larger",
+          "smaller",
+          "the same"
+        ]
+      },
+      {
+        "caminho": "seccoes[3].conteudo[0].paragrafo.pt[5]",
+        "ramo": "maior",
+        "contem": [
+          "acima"
+        ],
+        "naoContem": [
+          "abaixo",
+          "igual"
+        ]
+      },
+      {
+        "caminho": "seccoes[3].conteudo[0].paragrafo.pt[5]",
+        "ramo": "menor",
+        "contem": [
+          "abaixo"
+        ],
+        "naoContem": [
+          "acima",
+          "igual"
+        ]
+      },
+      {
+        "caminho": "seccoes[3].conteudo[0].paragrafo.pt[5]",
+        "ramo": "igual",
+        "contem": [
+          "igual"
+        ],
+        "naoContem": [
+          "acima",
+          "abaixo"
+        ]
+      },
+      {
+        "caminho": "seccoes[3].conteudo[0].paragrafo.pt[9]",
+        "ramo": "positivo",
+        "contem": [
+          "excedente"
+        ],
+        "naoContem": [
+          "défice",
+          "nulo"
+        ]
+      },
+      {
+        "caminho": "seccoes[3].conteudo[0].paragrafo.pt[9]",
+        "ramo": "negativo",
+        "contem": [
+          "défice"
+        ],
+        "naoContem": [
+          "excedente",
+          "nulo"
+        ]
+      },
+      {
+        "caminho": "seccoes[3].conteudo[0].paragrafo.pt[9]",
+        "ramo": "zero",
+        "contem": [
+          "nulo"
+        ],
+        "naoContem": [
+          "excedente",
+          "défice"
+        ]
+      },
+      {
+        "caminho": "seccoes[3].conteudo[0].paragrafo.en[5]",
+        "ramo": "maior",
+        "contem": [
+          "above"
+        ],
+        "naoContem": [
+          "below",
+          "equal"
+        ]
+      },
+      {
+        "caminho": "seccoes[3].conteudo[0].paragrafo.en[5]",
+        "ramo": "menor",
+        "contem": [
+          "below"
+        ],
+        "naoContem": [
+          "above",
+          "equal"
+        ]
+      },
+      {
+        "caminho": "seccoes[3].conteudo[0].paragrafo.en[5]",
+        "ramo": "igual",
+        "contem": [
+          "equal"
+        ],
+        "naoContem": [
+          "above",
+          "below"
+        ]
+      },
+      {
+        "caminho": "seccoes[3].conteudo[0].paragrafo.en[9]",
+        "ramo": "positivo",
+        "contem": [
+          "surplus"
+        ],
+        "naoContem": [
+          "deficit",
+          "nil"
+        ]
+      },
+      {
+        "caminho": "seccoes[3].conteudo[0].paragrafo.en[9]",
+        "ramo": "negativo",
+        "contem": [
+          "deficit"
+        ],
+        "naoContem": [
+          "surplus",
+          "nil"
+        ]
+      },
+      {
+        "caminho": "seccoes[3].conteudo[0].paragrafo.en[9]",
+        "ramo": "zero",
+        "contem": [
+          "nil"
+        ],
+        "naoContem": [
+          "surplus",
+          "deficit"
+        ]
+      }
+    ]
+  },
+  "paginas": 2,
+  "plantas": [
+    {
+      "nome": "o ramo do sinal trocado (excedente por défice, ou o contrário)",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · o parágrafo seccoes[3].conteudo[0].paragrafo difere da conta.\n      esperado: No fim de 2025, a dívida pública valia 89,7 % do que o país produz …\n      rendido:  No fim de 2025, a dívida pública valia 89,7 % do que o país produz … | X6 · palavras do ramo: seccoes[3].conteudo[0].paragrafo, ramo «positivo» falta «excedente» | X6 · palavras do ramo: seccoes[3].conteudo[0].paragrafo, ramo «positivo» contém a palavra proibida «défice»"
+    },
+    {
+      "nome": "EX1-e: o sinal da execução trocado",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.\n      esperado: No fim de agosto de 2026, as contas da administração central e da s…\n      rendido:  No fim de agosto de 2026, as contas da administração central e da s… | X6 · palavras do ramo: seccoes[2].conteudo[1].paragrafo, ramo «negativo» falta «défice» | X6 · palavras do ramo: seccoes[2].conteudo[1].paragrafo, ramo «negativo» contém a palavra proibida «excedente»"
+    },
+    {
+      "nome": "EX1-e: ramo em prosa sem token, um défice (gastou mais do que recebeu)",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «um défice (gastou mais do que recebeu)»"
+    },
+    {
+      "nome": "EX1-e: ramo em prosa sem token, um saldo nulo (recebeu o mesmo que gastou)",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «um saldo nulo (recebeu o mesmo que gastou)»"
+    },
+    {
+      "nome": "EX1-e: ramo disfarçado com a classe de um selo",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «um saldo nulo (recebeu o mesmo que gastou)»"
+    },
+    {
+      "nome": "EX1-d: o ramo do ano anterior acrescentado à execução",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.\n      esperado: No fim de agosto de 2026, as contas da administração central e da s…\n      rendido:  No fim de agosto de 2026, as contas da administração central e da s… | X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «um excedente (recebeu mais do que gastou)»"
+    },
+    {
+      "nome": "EX1-e: a comparação dos módulos invertida",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.\n      esperado: No fim de agosto de 2026, as contas da administração central e da s…\n      rendido:  No fim de agosto de 2026, as contas da administração central e da s… | X6 · palavras do ramo: seccoes[2].conteudo[1].paragrafo, ramo «deficitMenor» falta «menor» | X6 · palavras do ramo: seccoes[2].conteudo[1].paragrafo, ramo «deficitMenor» contém a palavra proibida «maior» | X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «é um défice maior do que o que o Orçamento previa para o ano inteir…»"
+    },
+    {
+      "nome": "EX1-f: o sinal da previsão trocado rende diferentesPositivo",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.\n      esperado: No fim de agosto de 2026, as contas da administração central e da s…\n      rendido:  No fim de agosto de 2026, as contas da administração central e da s… | X6 · palavras do ramo: seccoes[2].conteudo[1].paragrafo, ramo «deficitMenor» falta «défice» | X6 · palavras do ramo: seccoes[2].conteudo[1].paragrafo, ramo «deficitMenor» falta «menor» | X6 · palavras do ramo: seccoes[2].conteudo[1].paragrafo, ramo «deficitMenor» contém a palavra proibida «excedente» | X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «o Orçamento previa para o ano inteiro um excedente de −1 789,8 milh…»"
+    },
+    {
+      "nome": "EX1-e: os dois sinais trocados",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.\n      esperado: No fim de agosto de 2026, as contas da administração central e da s…\n      rendido:  No fim de agosto de 2026, as contas da administração central e da s… | X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «um excedente (recebeu mais do que gastou)» | X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «é um excedente menor do que o que o Orçamento previa para o ano int…»"
+    },
+    {
+      "nome": "EX1-e: valor de outro perímetro, igualdade X6 com selo intacto",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.\n      esperado: No fim de agosto de 2026, as contas da administração central e da s…\n      rendido:  No fim de agosto de 2026, as contas da administração central e da s…"
+    },
+    {
+      "nome": "EX1-d: a previsão anual apresentada como mensal",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.\n      esperado: No fim de agosto de 2026, as contas da administração central e da s…\n      rendido:  No fim de agosto de 2026, as contas da administração central e da s…"
+    },
+    {
+      "nome": "EX1-d: a contradição dos juros reposta",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · o parágrafo naoDiz[0] difere da conta.\n      esperado: O orçamento é uma previsão: o que se gasta de facto lê-se na execuç…\n      rendido:  O orçamento é uma previsão: o que se gasta de facto lê-se na execuç…"
+    },
+    {
+      "nome": "as palavras de uma condição falsa rendidas (os três programas)",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · o parágrafo seccoes[2].conteudo[0].paragrafo difere da conta.\n      esperado: Até agosto de 2026, a administração central e a segurança social ti…\n      rendido:  Até agosto de 2026, a administração central e a segurança social ti…"
+    },
+    {
+      "nome": "o nome de outra função",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · o parágrafo abertura[0] difere da conta.\n      esperado: O Orçamento do Estado para 2026 diz, euro a euro, para onde vai o d…\n      rendido:  O Orçamento do Estado para 2026 diz, euro a euro, para onde vai o d…"
+    },
+    {
+      "nome": "um parágrafo a menos",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · os parágrafos rendidos (abertura[0], seccoes[0].conteudo[1].paragrafo, seccoes[1].conteudo[0].paragrafo, seccoes[1].conteudo[2].paragrafo, seccoes[2].conteudo[1].paragrafo, seccoes[3].conteudo[0].paragrafo, naoDiz[0]) não são os que a conta dá (abertura[0], seccoes[0].conteudo[1].paragrafo, seccoes[1].conteudo[0].paragrafo, seccoes[1].conteudo[2].paragrafo, seccoes[2].conteudo[0].paragrafo, seccoes[2].conteudo[1].paragrafo, seccoes[3].conteudo[0].paragrafo, naoDiz[0])"
+    },
+    {
+      "nome": "o ano trocado no título",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X5 · o título rendido («Para onde vai o dinheiro do Estado em 2025») não é o recomposto («Para onde vai o dinheiro do Estado em 2026»)"
+    },
+    {
+      "nome": "o título de uma secção trocado",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X7 · os títulos das secções (Por programa | Por ministério | O que já se gastou este ano | A dívida e o saldo | O que isto não diz) não são os declarados (Por função | Por ministério | O que já se gastou este ano | A dívida e o saldo | O que isto não diz)"
+    },
+    {
+      "nome": "a ordem dos programas que mais gastaram trocada",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · o parágrafo seccoes[2].conteudo[0].paragrafo difere da conta.\n      esperado: Até agosto de 2026, a administração central e a segurança social ti…\n      rendido:  Até agosto de 2026, a administração central e a segurança social ti…"
+    },
+    {
+      "nome": "a porta dos números tirada do fim",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X8 · falta a porta para os números e as fontes no fim | X8 · as portas do fim (nenhuma) não são as declaradas (/livro-razao Números e fontes →)"
+    },
+    {
+      "nome": "o lado da dívida trocado",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X6 · o parágrafo seccoes[3].conteudo[0].paragrafo difere da conta.\n      esperado: No fim de 2025, a dívida pública valia 89,7 % do que o país produz …\n      rendido:  No fim de 2025, a dívida pública valia 89,7 % do que o país produz … | X6 · palavras do ramo: seccoes[3].conteudo[0].paragrafo, ramo «maior» falta «acima» | X6 · palavras do ramo: seccoes[3].conteudo[0].paragrafo, ramo «maior» contém a palavra proibida «abaixo» | X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «abaixo dos 81,7 % da média da União Europeia»"
+    },
+    {
+      "nome": "uma marca das palavras declaradas num parágrafo que a célula não compara",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X · a marca das palavras declaradas está num sítio que a célula da explicação não confere (explicacao): <p> «Uma frase que ninguém compara.»"
+    },
+    {
+      "nome": "uma figura declarada tirada da página",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "F22 · a figura declarada «ministerios» da explicação «dinheiro-do-estado-2026» não está na página"
+    },
+    {
+      "nome": "o selo de um valor tirado",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X8 · o valor de «oe-2026-cem-euros-funcao-07» num parágrafo não tem ao lado o selo do seu recibo"
+    },
+    {
+      "nome": "uma linha que não é dos programas no token «maiores»",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.pt[6] tem linhas fora da família /^execucao-2026-08-despesa-programa-\\d{3}$/: oe-2026-despesa-ministerio-saude | X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.en[6] tem linhas fora da família /^execucao-2026-08-despesa-programa-\\d{3}$/: oe-2026-despesa-ministerio-saude"
+    },
+    {
+      "nome": "um programa a menos no token «maiores»",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.pt[6] não tem a família inteira /^execucao-2026-08-despesa-programa-\\d{3}$/ do livro: faltam execucao-2026-08-despesa-programa-020 | X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.en[6] não tem a família inteira /^execucao-2026-08-despesa-programa-\\d{3}$/ do livro: faltam execucao-2026-08-despesa-programa-020"
+    },
+    {
+      "nome": "EX1-f (pt): deficitMenor diz maior",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.pt[7], ramo «deficitMenor» falta «menor» | X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.pt[7], ramo «deficitMenor» contém a palavra proibida «maior»"
+    },
+    {
+      "nome": "EX1-f (pt): diferentesPositivo sem a palavra do sinal",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.pt[7], ramo «diferentesPositivo» falta «excedente»"
+    },
+    {
+      "nome": "EX1-f (pt): ramo sem declaração das palavras",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.pt[7], ramo «deficitMenor» não declara as palavras obrigatórias e proibidas"
+    },
+    {
+      "nome": "EX1-f (en): deficitMenor diz maior",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.en[7], ramo «deficitMenor» falta «smaller» | X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.en[7], ramo «deficitMenor» contém a palavra proibida «larger»"
+    },
+    {
+      "nome": "EX1-f (en): diferentesPositivo sem a palavra do sinal",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.en[7], ramo «diferentesPositivo» falta «surplus»"
+    },
+    {
+      "nome": "EX1-f (en): ramo sem declaração das palavras",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.en[7], ramo «deficitMenor» não declara as palavras obrigatórias e proibidas"
+    },
+    {
+      "nome": "o ramo «zero» tirado do sinal do saldo",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.pt[5] não declara o ramo «zero» | X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.en[5] não declara o ramo «zero» | X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.pt[9] não declara o ramo «zero» | X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.en[9] não declara o ramo «zero»"
+    },
+    {
+      "nome": "um «n» maior do que a lista no token «maiores»",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.pt[6] tem n=21, fora de 1 a 20 | X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.en[6] tem n=21, fora de 1 a 20"
+    },
+    {
+      "nome": "EX1-f: a referência aponta para o parágrafo anterior",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X · dinheiro-do-estado-2026: X2 · a folha « do parágrafo seguinte.» (seccoes[2].conteudo[1].paragrafo[10]), parte 1 (« do parágrafo seguinte.») não aponta para o parágrafo anterior declarado | X · dinheiro-do-estado-2026: X2 · a folha « do parágrafo seguinte.» (seccoes[2].conteudo[1].paragrafo[10]), parte 1 (« do parágrafo seguinte.») não diz a posição declarada nas duas línguas"
+    },
+    {
+      "nome": "um literal que não está no campo que cita",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X · dinheiro-do-estado-2026: X2 · a folha «Para onde vai o dinheiro do Estado em » (titulo[0]), parte 1 («Para onde vai o dinheiro do Estado») cita «uma frase que nenhuma fonte escreveu», que não está no campo «excerto» da origem «dados-gov-oe-despesa-funcional»"
+    },
+    {
+      "nome": "uma conta fora de um ramo e de uma condição",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X · dinheiro-do-estado-2026: X2 · a folha « diz, euro a euro, para onde vai o dinheiro. De cada cem euros, » (abertura[0][2]), parte 1 (« diz, euro a euro,») está marcada como conta e não está num ramo do sinal nem em palavras guardadas por condições"
+    },
+    {
+      "nome": "uma folha sem auditoria",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X · dinheiro-do-estado-2026: X1 · a folha «Para onde vai o dinheiro do Estado em » (titulo[0]) não tem auditoria: uma explicação mudada precisa de nova leitura das origens"
+    },
+    {
+      "nome": "uma ligação com uma palavra que diz alguma coisa",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X · dinheiro-do-estado-2026: X1 · a folha « e » (abertura[0][14]) não tem auditoria: uma explicação mudada precisa de nova leitura das origens | X · dinheiro-do-estado-2026: X1 · a auditoria tem uma folha (« e só », abertura[0][14]) que a declaração não tem"
+    },
+    {
+      "nome": "uma leitura do projeto sem dizer sobre o que é",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X · dinheiro-do-estado-2026: X2 · a folha «Para onde vai o dinheiro do Estado em » (titulo[0]), parte 1 («Para onde vai o dinheiro do Estado») é uma leitura do projeto e não diz sobre o que é («sobre»)"
+    },
+    {
+      "nome": "uma porta do fim que a explicação não declara",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X · dinheiro-do-estado-2026: X2 · a folha « O detalhe por programa e por ministério, com a fonte de cada númer…» (naoDiz[0][2]), parte 2 («, com a fonte de cada número, está no recibo de cada um, a um toque.») aponta para a porta «estudo-oe-2026», que a explicação não declara no fim"
+    },
+    {
+      "nome": "o sha256 de uma origem trocado (com o motor ao lado)",
+      "mordeu": true,
+      "aplica": true,
+      "queixa": "X3 · origem «dados-gov-oe-despesa-funcional»: o sha256 do ficheiro no motor (43bb18f15b66…) não é o do selo (000000000000…) | X3 · origem «dados-gov-oe-despesa-funcional»: o sha256 do registo do pedido não é o do selo"
+    }
+  ],
+  "erros": []
+}

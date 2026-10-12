@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-12T11:53:59+00:00",
+ "copia": "<scratchpad>/ex1d/pacote-leitura-f",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/explicacoes/dinheiro-do-estado-2026/index.html",
+   "descricao": "a página construída portuguesa diz que faltam os meses de outubro a dezembro, contra o período da linha (janeiro a agosto)",
+   "sha256_antes": "44596882a1ff7b9d4fdc9f5bc500bdcf87b7e2e84e6413d34098e9142f0ea859",
+   "sha256_depois": "75dfaf45d89a88ab4f6f777118c7f24c87cd4d12891102ac3412e32309a81de1",
+   "contexto_antes": "idade Orçamental\" title=\"Entidade Orçamental\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Entidade Orçamental</span></span></a></span>), e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"saldo-das-administracoes-publicas-2025",
+   "contexto_depois": "idade Orçamental\" title=\"Entidade Orçamental\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Entidade Orçamental</span></span></a></span>), e ainda faltam os meses de outubro a dezembro. É outra conta, e não a das contas públicas de <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"saldo-das-administracoes-publicas-2025"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/en/explainers/dinheiro-do-estado-2026/index.html",
+   "descricao": "a página construída inglesa diz «October to December», contra a portuguesa e o período da linha",
+   "sha256_antes": "411550a901d9085832fd4176ab6d7c461949df4f2f73c675a695336bfd88b122",
+   "sha256_depois": "ed3f2b4ee28e4d99dceddbff8af963c3d1ecfa2b3ee4289d95a64e53633856c7",
+   "contexto_antes": "title=\"Entidade Orçamental\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">Entidade Orçamental</span></span></a></span>), and September to December are still to come. It is a different account, not the one of the public accounts of <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"saldo-das-administr",
+   "contexto_depois": "title=\"Entidade Orçamental\"><span class=\"src-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">Entidade Orçamental</span></span></a></span>), and October to December are still to come. It is a different account, not the one of the public accounts of <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"saldo-das-administr"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/data/explicacoes/dinheiro-do-estado-2026.mjs",
+   "descricao": "a lista das palavras proibidas do ramo deficitMenor, na cópia, deixa de proibir «maior», contra o diff",
+   "sha256_antes": "6e602f884ab1519853d13bb8af8b15645bf4476c1ca0c52f2a04512768627a7a",
+   "sha256_depois": "5aa2bfe8f3ec9c87c1d24473eb8ac331a59e24594df33d68864128e10abe6d34",
+   "contexto_antes": "             palavras: {\n                  deficitMaior: { contem: ['défice', 'maior'], naoContem: ['excedente', 'nulo', 'menor', 'igual'] },\n                  deficitMenor: { contem: ['défice', 'menor'], naoContem: ['excedente', 'nulo', 'maior', 'igual'] },\n                  deficitIgual: { contem: ['défice', 'igual'], naoContem: ['excedente', 'nulo', 'maior', 'menor'] },\n                  excedenteMaior: { contem",
+   "contexto_depois": "             palavras: {\n                  deficitMaior: { contem: ['défice', 'maior'], naoContem: ['excedente', 'nulo', 'menor', 'igual'] },\n                  deficitMenor: { contem: ['défice', 'menor'], naoContem: ['excedente', 'nulo', 'igual'] },\n                  deficitIgual: { contem: ['défice', 'igual'], naoContem: ['excedente', 'nulo', 'maior', 'menor'] },\n                  excedenteMaior: { contem"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "tests/explicacoes/explicacao.mjs",
+   "descricao": "a célula das palavras dos ramos, na cópia, nunca encontra uma palavra proibida, contra o diff e as plantas",
+   "sha256_antes": "2b7dfca7fa61761e3be2faf3b0b87771b9dc0b7bd34a5b829065f8739f5241ea",
+   "sha256_depois": "799bb266a28094f4520c63e7c520f7575e9f34f46fad948571251dab35e11e3c",
+   "contexto_antes": "s(s)} `);\n  return [\n    ...(regra?.contem ?? []).filter((/** @type {string} */ s) => !tem(s)).map((/** @type {string} */ s) => `${onde} falta «${s}»`),\n    ...(regra?.naoContem ?? []).filter(tem).map((/** @type {string} */ s) => `${onde} contém a palavra proibida «${s}»`),\n  ];\n}\n\n/** X6: isola o texto rendido de cada token entre o prefixo e o sufixo do",
+   "contexto_depois": "s(s)} `);\n  return [\n    ...(regra?.contem ?? []).filter((/** @type {string} */ s) => !tem(s)).map((/** @type {string} */ s) => `${onde} falta «${s}»`),\n    ...(regra?.naoContem ?? []).filter(() => false).map((/** @type {string} */ s) => `${onde} contém a palavra proibida «${s}»`),\n  ];\n}\n\n/** X6: isola o texto rendido de cada token entre o prefixo e o sufixo do"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 40 plantas onde o registo das provas dá 41",
+   "sha256_antes": "9157a0bdbc8dca900a76cfa94c080a612148ae29e9eff74aa82dde76c88ed74b",
+   "sha256_depois": "e70106c8273d65e21a948d4009b79ff7f6742948ef445d76d6694006e622aab4",
+   "contexto_antes": "ramos independentemente destes cenários e sem consultar a auditoria das folhas.\n\nA célula recontou 2 páginas, 117 folhas e 166 partes auditadas. Morderam 41 de 41 plantas. Todas as mensagens são as devolvidas pela célula, guardadas também em [explicacao.json](portoes-f/explicacao.json).\n\n| Planta | Mordeu | Mensagem |\n|---|---|-",
+   "contexto_depois": "ramos independentemente destes cenários e sem consultar a auditoria das folhas.\n\nA célula recontou 2 páginas, 117 folhas e 166 partes auditadas. Morderam 41 de 40 plantas. Todas as mensagens são as devolvidas pela célula, guardadas também em [explicacao.json](portoes-f/explicacao.json).\n\n| Planta | Mordeu | Mensagem |\n|---|---|-"
+  }
+ ]
+}

@@ -533,3 +533,17 @@
   line-height: 1.55;
   color: var(--ink);
 }
+
+/* O código incorporável cabe na coluna e seleciona-se também sem guião. */
+.incorporar-bloco { min-width: 0; }
+.incorporar-bloco textarea {
+  display: block; width: 100%; max-width: 100%; box-sizing: border-box;
+  margin-block: 10px; padding: 10px; resize: vertical;
+  font: 12px/1.5 ui-monospace, monospace; color: var(--ink); background: var(--paper);
+  border: 1px solid var(--rule); overflow-wrap: anywhere;
+}
+.incorporar-bloco button {
+  min-height: 44px; padding: 8px 14px; font: 14px/1.5 var(--f-instr);
+  color: var(--ink); background: transparent; border: 1px solid var(--rule); cursor: pointer;
+}
+.incorporar-bloco button:hover { border-color: var(--ink); }

@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-07T11:01:39+00:00",
+ "copia": "<casa>/pacote-leitura",
+ "plantas": [
+  {
+   "id": "er1b-p1",
+   "ficheiro": "src/data/metodo.mjs",
+   "descricao": "a fonte: a frase inglesa do Método diz que o alojamento guarda a origem ('which keeps it'); o português, o diff e a página dizem que não guarda",
+   "sha256_antes": "23925841545a40c24a3cc58e9dc32f2d9d2bb859a8215f22f3a7011263816f19",
+   "sha256_depois": "453ee9a4bda4e7ebdd64528b2c808d4e89c82bb6674690eae4615d69125a6ebc",
+   "contexto_antes": "ing the row's JSON. The script reads only its own paragraphs and requests only that JSON; as with any browser request, the origin of the embedding page reaches this project's host, which does not keep it. The licence is the dataset's, Creative Commons attribution.\",\n      ],\n    },\n    prova: [\n      { chave: 'afirmacoes', rotulo: { pt: 'linhas publicadas', en: ",
+   "contexto_depois": "ing the row's JSON. The script reads only its own paragraphs and requests only that JSON; as with any browser request, the origin of the embedding page reaches this project's host, which keeps it. The licence is the dataset's, Creative Commons attribution.\",\n      ],\n    },\n    prova: [\n      { chave: 'afirmacoes', rotulo: { pt: 'linhas publicadas', en: "
+  },
+  {
+   "id": "er1b-p2",
+   "ficheiro": "scripts/incorporar-do-portao.mjs",
+   "descricao": "a régua: a expressão regular da marca no campo passa a '[a verifcar]' e deixa de apanhar a marca; a conferência fica vazia",
+   "sha256_antes": "33613fe67fe1a0b50126c64f4912414bf06ea8fcbdd7683d63c15737f046d5cc",
+   "sha256_depois": "3801fff43817855ee8a6ea1f91bf3231cc5a1fae9dac89b1a597d477593746d1",
+   "contexto_antes": "Literais.has(root)) erros.push('ER1 código: falta a leitura literal do campo.');\n  const linha = rota?.key === 'linha' ? linhas.get(rota.params.slug) : null;\n  for (const campo of campos) if (/\\[a verificar\\]/i.test(campo.textContent))\n    erros.push('ER1 código: uma marca por confirmar não se incorpora.');\n  if (linha && LICENCA && !provenienciaConfirmada(linha)) {\n    if (campos.length || r",
+   "contexto_depois": "Literais.has(root)) erros.push('ER1 código: falta a leitura literal do campo.');\n  const linha = rota?.key === 'linha' ? linhas.get(rota.params.slug) : null;\n  for (const campo of campos) if (/\\[a verifcar\\]/i.test(campo.textContent))\n    erros.push('ER1 código: uma marca por confirmar não se incorpora.');\n  if (linha && LICENCA && !provenienciaConfirmada(linha)) {\n    if (campos.length || r"
+  },
+  {
+   "id": "er1b-p3",
+   "ficheiro": "built/livro-razao/gois-prazo-medio-de-pagamento-2025-12/index.html",
+   "descricao": "a página construída: o rótulo do bloco do código diz 'Incorporar este valor' na cópia do recibo português; a fonte e o inventário dizem 'Incorporar este número'",
+   "sha256_antes": "294188596638815edd8d62af2aa053dcb0d921296d12518300e45fee9c94daf9",
+   "sha256_depois": "43b8e82226daa1ac07f566510de2f093eb2de3c4ef2c1612a26f1020b020fb34",
+   "contexto_antes": "on\" download>JSON</a></p></div><div class=\"aparelho-bloco incorporar-bloco\" data-incorporar-bloco><label class=\"linha-campo-k\" data-voz for=\"codigo-incorporar\">Incorporar este número</label><textarea id=\"codigo-incorporar\" data-incorporar-codigo=\"gois-prazo-medio-de-pagamento-2025-12\" readonly spellcheck=\"false\" rows=\"6\">&lt;p class=&quot;o",
+   "contexto_depois": "on\" download>JSON</a></p></div><div class=\"aparelho-bloco incorporar-bloco\" data-incorporar-bloco><label class=\"linha-campo-k\" data-voz for=\"codigo-incorporar\">Incorporar este valor</label><textarea id=\"codigo-incorporar\" data-incorporar-codigo=\"gois-prazo-medio-de-pagamento-2025-12\" readonly spellcheck=\"false\" rows=\"6\">&lt;p class=&quot;o"
+  },
+  {
+   "id": "er1b-p4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório: 'São 40 imagens' passa a 'São 42 imagens'; a pasta das capturas e a tabela dos sha256 dizem 40",
+   "sha256_antes": "b24b095e278f0aaf230c7881d9021e9d96d977ffb1a626b798d3f3f07dcf8160",
+   "sha256_depois": "cdde9f0d92a09a3b3c7b760606745c9fcc6bbd7b6bef976ffbfc2567867cf77e",
+   "contexto_antes": "ertencem à cabeça do código e cobrem as duas edições e as larguras 390, 768, 1024, 1280, 1600 px, incluindo o recibo com código e o recibo com a marca na data. São 40 imagens entre páginas completas e recortes do bloco. O manifesto captura a identidade dos recursos, os sha256, a largura do documento e a ausência de pedidos externos,",
+   "contexto_depois": "ertencem à cabeça do código e cobrem as duas edições e as larguras 390, 768, 1024, 1280, 1600 px, incluindo o recibo com código e o recibo com a marca na data. São 42 imagens entre páginas completas e recortes do bloco. O manifesto captura a identidade dos recursos, os sha256, a largura do documento e a ausência de pedidos externos,"
+  },
+  {
+   "id": "er1b-p5",
+   "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+   "descricao": "o inventário: a cadeia 'calculado por este projeto' passa a 'calculado pelo projeto' na cópia; a fonte (strings.mjs) e a página dizem 'por este projeto'",
+   "sha256_antes": "cf6f0b6478cecd5b1e18c91e1571faa88a4d7ad56e28f1bef33d800f47491a71",
+   "sha256_depois": "722939e7d9eb9dca84c607871422ffdc92b86270e4a33134a0cfff84d1097a4b",
+   "contexto_antes": "opiado | Copied | navegação |\n| `incorporar.selecionado` | Código selecionado | Code selected | navegação |\n| `incorporar.lido` | lido a | read on | conteúdo |\n| `incorporar.calculado` | calculado por este projeto | calculated by this project | conteúdo |\n| `incorporar.periodoEmFalta` | período não indicado | period not stated | conteúdo |\n| `incorporar.atualizado` | Este ",
+   "contexto_depois": "opiado | Copied | navegação |\n| `incorporar.selecionado` | Código selecionado | Code selected | navegação |\n| `incorporar.lido` | lido a | read on | conteúdo |\n| `incorporar.calculado` | calculado pelo projeto | calculated by this project | conteúdo |\n| `incorporar.periodoEmFalta` | período não indicado | period not stated | conteúdo |\n| `incorporar.atualizado` | Este "
+  }
+ ]
+}

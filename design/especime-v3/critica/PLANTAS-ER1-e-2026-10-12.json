@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-12T11:11:28+00:00",
+ "copia": "<scratchpad>/er1/pacote-leitura-e",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a tabela da ER1-e diz 7 JSON sem campo na edição portuguesa, contra contagens-e.json e a igualdade que o relatório afirma",
+   "sha256_antes": "a88415cfb6f096f4d7cdb9789a143a4a4caba12d0aabb6dd3f8202651881fbaf",
+   "sha256_depois": "dd2d91b77cd21130a56041d24f7b43564b42f20e9ccdca236d8650ebce06a4d1",
+   "contexto_antes": "SON com campo | Método completa | Recibos com código | JSON sem campo | Método por confirmar | Recibos sem código |\n| --- | --- | --- | --- | --- | --- | --- |\n| pt | 3187 | 3187 | 3187 | 8 | 8 | 8 |\n| en | 3187 | 3187 | 3187 | 8 | 8 | 8 |\n\nLinhas não derivadas sem `access_date`, contadas pelo mesmo guião: **0**. A lista de identificadores fica no anexo, me",
+   "contexto_depois": "SON com campo | Método completa | Recibos com código | JSON sem campo | Método por confirmar | Recibos sem código |\n| --- | --- | --- | --- | --- | --- | --- |\n| pt | 3187 | 3187 | 3187 | 8 | 7 | 8 |\n| en | 3187 | 3187 | 3187 | 8 | 8 | 8 |\n\nLinhas não derivadas sem `access_date`, contadas pelo mesmo guião: **0**. A lista de identificadores fica no anexo, me"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/livro-razao/evora-prr-aprovado-2026.json",
+   "descricao": "o JSON construído de uma linha recusada só pelo excerto leva o campo incorporacao, contra o mandato, a célula e o diff",
+   "sha256_antes": "0d9cb7c8b8b1c9f8b010e4f500d836e8d05702c241a928484fa952dbe6d4acd9",
+   "sha256_depois": "a1aaa410dbf0da4f8e4bf9928e1ea0538349bfad42f80f0a4edf10631df371ab",
+   "contexto_antes": "    \"O campo \\\"note\\\" do formato não é publicado, e por isso não está aqui.\",\n    \"\\\"value\\\" vai exatamente como foi publicado, em formatação portuguesa.\"\n  ],\n  \"licenca\": {\n    \"nome\": \"CC BY 4.0\",\n    \"url\": \"https://creativecommons.org/licenses/by/4.0/\",\n    \"atribuicao\": \"O Estado do País, oestadodopaís.pt\"\n  },\n  \"linha\": {\n  ",
+   "contexto_depois": "    \"O campo \\\"note\\\" do formato não é publicado, e por isso não está aqui.\",\n    \"\\\"value\\\" vai exatamente como foi publicado, em formatação portuguesa.\"\n  ],\n  \"incorporacao\": {\n    \"pt\": {}\n  },\n  \"licenca\": {\n    \"nome\": \"CC BY 4.0\",\n    \"url\": \"https://creativecommons.org/licenses/by/4.0/\",\n    \"atribuicao\": \"O Estado do País, oestadodopaís.pt\"\n  },\n  \"linha\": {\n  "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/lib/conjunto.mjs",
+   "descricao": "a porta do JSON na cópia escreve o campo a qualquer linha existente, e não só às que o predicado partilhado aceita, contra o diff",
+   "sha256_antes": "b6a1dded72c8bf6115091a1dc95dba65d5c161ec07405ae76d1351afb11ad726",
+   "sha256_depois": "4fed55774f87d02e255cc9e10b0ce854b9f19fd68f9abca28c9b4b558024b5dd",
+   "contexto_antes": "xport function jsonDaLinha(id) {\n  const c = getClaim(id);\n  return (\n    JSON.stringify({ _: nota('uma'), licenca: licenca(), linha: linhaDoConjunto(c),\n      ...(podeIncorporar(c) ? { incorporacao: { pt: dadosDaIncorporacao(c, 'pt'), en: dadosDaIncorporacao(c, 'en') } } : {}) }, null, 2) +\n    '\\n'\n  );\n}\n\n/**\n * Escape RFC 4180, e fim de li",
+   "contexto_depois": "xport function jsonDaLinha(id) {\n  const c = getClaim(id);\n  return (\n    JSON.stringify({ _: nota('uma'), licenca: licenca(), linha: linhaDoConjunto(c),\n      ...(c ? { incorporacao: { pt: dadosDaIncorporacao(c, 'pt'), en: dadosDaIncorporacao(c, 'en') } } : {}) }, null, 2) +\n    '\\n'\n  );\n}\n\n/**\n * Escape RFC 4180, e fim de li"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "tests/incorporar/conferir.mjs",
+   "descricao": "a mensagem da planta do JSON elegível sem campo difere, na cópia, da do diff e da tabela do relatório",
+   "sha256_antes": "111dae7216a49584ca345e8dc18bf5c1fbb98b4e1ce78e73b40fedf38e9ff6a8",
+   "sha256_depois": "2875ec5838293da18945f9d7f2ea0adaf0f952f3251ce6a0f2fa54656af6ddf0",
+   "contexto_antes": " === null ? 'null' : valor === '' ? 'vazio' : 'objeto')+'-'+lang,mensagem,mordeu:true});\n  }\n  const copia = structuredClone(doc); delete copia.incorporacao;\n  const mensagem = 'ER1 JSON: falta a incorporação da linha com código.';\n  assert.deepEqual(conferirJson(copia,c,lang), [mensagem]);\n  resultados.plantas.push({nome:'json-com-codigo-sem-campo-'+lang,mensagem,mordeu:true});\n}\n\nfor(co",
+   "contexto_depois": " === null ? 'null' : valor === '' ? 'vazio' : 'objeto')+'-'+lang,mensagem,mordeu:true});\n  }\n  const copia = structuredClone(doc); delete copia.incorporacao;\n  const mensagem = 'ER1 JSON: falta a incorporação.';\n  assert.deepEqual(conferirJson(copia,c,lang), [mensagem]);\n  resultados.plantas.push({nome:'json-com-codigo-sem-campo-'+lang,mensagem,mordeu:true});\n}\n\nfor(co"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "public/incorporar.js",
+   "descricao": "o guião do cliente, na cópia, compõe a partir da linha quando o JSON não traz o campo, reabrindo a porta que o mandato fechou, contra o diff e o guião de origem",
+   "sha256_antes": "da942c7d061bce65be64f2554aafd8472abb95c51101d80cef5070b8180af4a3",
+   "sha256_depois": "47d3d2df51c367def13b983f117a7da90f479b625b52998f83a9ff1646b7c9ae",
+   "contexto_antes": " 'no-cache'\n    }).then(function (r) {\n      if (!r.ok) throw Error('resposta');\n      return r.json();\n    }).then(function (j) {\n      var c = j.linha;\n      var d = j.incorporacao && j.incorporacao[lang];\n      var campos = ['nome', 'periodo', 'valor', 'unidade', 'unidadeLang', 'fonte', 'fonteLang', 'data', 'leitura', 'atribuicao', 'notas', 'atualizacao'];\n     ",
+   "contexto_depois": " 'no-cache'\n    }).then(function (r) {\n      if (!r.ok) throw Error('resposta');\n      return r.json();\n    }).then(function (j) {\n      var c = j.linha;\n      var d = (j.incorporacao && j.incorporacao[lang]) || j.linha;\n      var campos = ['nome', 'periodo', 'valor', 'unidade', 'unidadeLang', 'fonte', 'fonteLang', 'data', 'leitura', 'atribuicao', 'notas', 'atualizacao'];\n     "
+  }
+ ]
+}

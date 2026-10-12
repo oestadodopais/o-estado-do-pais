@@ -1,3 +1,5 @@
+import { conferirCors } from './incorporar-do-portao.mjs';
+import { allClaims } from '../src/lib/ledger.mjs';
 /**
  * Confere o que está NO AR contra o que está no repositório.
  *
@@ -328,6 +330,18 @@ for (const edicao of /** @type {const} */ (['pt', 'en'])) {
 {
   const r = await ler(`https://${host}/`, { comCorpo: true });
   conferir('/ sem Set-Cookie', r.cabecalho('set-cookie'), null);
+}
+
+/* ER1: a configuração local não prova os cabeçalhos que a CDN entrega. */
+{
+  const id = allClaims()[0].id;
+  const respostas = [];
+  for (const caminho of [`/livro-razao/${id}.json`, '/livro-razao.json', '/livro-razao.csv', '/incorporar.js', `/livro-razao/${id}`, '/']) {
+    const r = await ler(`https://${host}${caminho}`);
+    respostas.push({ caminho, estado: r.estado, cors: r.cabecalho('access-control-allow-origin'), frame: r.cabecalho('x-frame-options') });
+  }
+  for (const msg of conferirCors(respostas)) erros.push(msg);
+  console.log(cinza('  ER1: cabeçalhos do conjunto, do guião e das páginas conferidos.'));
 }
 
 console.log();

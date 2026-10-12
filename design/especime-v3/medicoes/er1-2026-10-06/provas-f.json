@@ -1,0 +1,152 @@
+{
+  "cabecaCodigo": "3af705984751b699a068b31c151f411bd6719a53",
+  "gates": [
+    {
+      "nome": "build",
+      "codigo": 0,
+      "ficheiro": "portoes-f/build.codigo"
+    },
+    {
+      "nome": "verify",
+      "codigo": 0,
+      "ficheiro": "portoes-f/verify.codigo"
+    },
+    {
+      "nome": "typecheck",
+      "codigo": 0,
+      "ficheiro": "portoes-f/typecheck.codigo"
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "recusado-isolado-excerpt-pt",
+      "estrago": "Acrescentado incorporacao com apresentação completa à cópia do JSON recusado só por excerpt.",
+      "mensagem": "ER1 navegador: a recusa só por excerpt alterou o parágrafo colado.",
+      "mordeu": true
+    },
+    {
+      "nome": "recusado-isolado-source_url-pt",
+      "estrago": "Acrescentado incorporacao com apresentação completa à cópia do JSON recusado só por source_url.",
+      "mensagem": "ER1 navegador: a recusa só por source_url alterou o parágrafo colado.",
+      "mordeu": true
+    },
+    {
+      "nome": "recusado-isolado-excerpt-en",
+      "estrago": "Acrescentado incorporacao com apresentação completa à cópia do JSON recusado só por excerpt.",
+      "mensagem": "ER1 navegador: a recusa só por excerpt alterou o parágrafo colado.",
+      "mordeu": true
+    },
+    {
+      "nome": "recusado-isolado-source_url-en",
+      "estrago": "Acrescentado incorporacao com apresentação completa à cópia do JSON recusado só por source_url.",
+      "mensagem": "ER1 navegador: a recusa só por source_url alterou o parágrafo colado.",
+      "mordeu": true
+    }
+  ],
+  "recusas": [
+    {
+      "lang": "pt",
+      "modo": "normal",
+      "campo": "excerpt",
+      "linha": "evora-prr-aprovado-2026",
+      "jsonComCampo": false,
+      "compositor": null,
+      "antes": "<p class=\"oedp-numero\" lang=\"pt-PT\" data-oedp=\"evora-prr-aprovado-2026\" data-oedp-valor=\"ensaio\" data-oedp-lido=\"ensaio\"><span>Citação guardada</span></p>",
+      "depois": "<p class=\"oedp-numero\" lang=\"pt-PT\" data-oedp=\"evora-prr-aprovado-2026\" data-oedp-valor=\"ensaio\" data-oedp-lido=\"ensaio\"><span>Citação guardada</span></p>",
+      "falha": null
+    },
+    {
+      "lang": "pt",
+      "modo": "normal",
+      "campo": "source_url",
+      "linha": "custo-unitario-do-trabalho-2024-recusado-endereco",
+      "jsonComCampo": false,
+      "compositor": null,
+      "antes": "<p class=\"oedp-numero\" lang=\"pt-PT\" data-oedp=\"custo-unitario-do-trabalho-2024-recusado-endereco\" data-oedp-valor=\"ensaio\" data-oedp-lido=\"ensaio\"><span>Citação guardada</span></p>",
+      "depois": "<p class=\"oedp-numero\" lang=\"pt-PT\" data-oedp=\"custo-unitario-do-trabalho-2024-recusado-endereco\" data-oedp-valor=\"ensaio\" data-oedp-lido=\"ensaio\"><span>Citação guardada</span></p>",
+      "falha": null
+    },
+    {
+      "lang": "pt",
+      "modo": "recusado-com-campo-excerpt",
+      "campo": "excerpt",
+      "linha": "evora-prr-aprovado-2026",
+      "jsonComCampo": true,
+      "compositor": null,
+      "antes": "<p class=\"oedp-numero\" lang=\"pt-PT\" data-oedp=\"evora-prr-aprovado-2026\" data-oedp-valor=\"ensaio\" data-oedp-lido=\"ensaio\"><span>Citação guardada</span></p>",
+      "depois": "<p class=\"oedp-numero\" lang=\"pt-PT\" data-oedp=\"evora-prr-aprovado-2026\" data-oedp-valor=\"167 372 755,84\" data-oedp-lido=\"2026-09-03\"><a href=\"http://127.0.0.1:51591/livro-razao/evora-prr-aprovado-2026\">Verbas do Plano de Recuperação e Resiliência (PRR) aprovadas para Évora · Évora, 19.08.2026: 167 372 755,84 <span lang=\"pt-PT\">euros</span></a> · <span lang=\"pt-PT\">Estrutura de Missão Recuperar Portugal</span>, lido a 03.09.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · <a href=\"http://127.0.0.1:51591/livro-razao/evora-prr-aprovado-2026\" data-oedp-atualizado=\"\">Este número foi atualizado a 20.08.2026</a></p>",
+      "falha": {
+        "codigo": "ERR_ASSERTION",
+        "mensagem": "ER1 navegador: a recusa só por excerpt alterou o parágrafo colado."
+      }
+    },
+    {
+      "lang": "pt",
+      "modo": "recusado-com-campo-source_url",
+      "campo": "source_url",
+      "linha": "custo-unitario-do-trabalho-2024-recusado-endereco",
+      "jsonComCampo": true,
+      "compositor": null,
+      "antes": "<p class=\"oedp-numero\" lang=\"pt-PT\" data-oedp=\"custo-unitario-do-trabalho-2024-recusado-endereco\" data-oedp-valor=\"ensaio\" data-oedp-lido=\"ensaio\"><span>Citação guardada</span></p>",
+      "depois": "<p class=\"oedp-numero\" lang=\"pt-PT\" data-oedp=\"custo-unitario-do-trabalho-2024-recusado-endereco\" data-oedp-valor=\"17,9\" data-oedp-lido=\"2026-10-05\"><a href=\"http://127.0.0.1:51591/livro-razao/custo-unitario-do-trabalho-2024-recusado-endereco\">Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 <span lang=\"pt-PT\">variação em três anos, %</span></a> · <span lang=\"en\">Eurostat</span>, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · <a href=\"http://127.0.0.1:51591/livro-razao/custo-unitario-do-trabalho-2024-recusado-endereco\" data-oedp-atualizado=\"\">Este número foi atualizado a 05.10.2026</a></p>",
+      "falha": {
+        "codigo": "ERR_ASSERTION",
+        "mensagem": "ER1 navegador: a recusa só por source_url alterou o parágrafo colado."
+      }
+    },
+    {
+      "lang": "en",
+      "modo": "normal",
+      "campo": "excerpt",
+      "linha": "evora-prr-aprovado-2026",
+      "jsonComCampo": false,
+      "compositor": null,
+      "antes": "<p class=\"oedp-numero\" lang=\"en\" data-oedp=\"evora-prr-aprovado-2026\" data-oedp-valor=\"ensaio\" data-oedp-lido=\"ensaio\"><span>Saved quotation</span></p>",
+      "depois": "<p class=\"oedp-numero\" lang=\"en\" data-oedp=\"evora-prr-aprovado-2026\" data-oedp-valor=\"ensaio\" data-oedp-lido=\"ensaio\"><span>Saved quotation</span></p>",
+      "falha": null
+    },
+    {
+      "lang": "en",
+      "modo": "normal",
+      "campo": "source_url",
+      "linha": "custo-unitario-do-trabalho-2024-recusado-endereco",
+      "jsonComCampo": false,
+      "compositor": null,
+      "antes": "<p class=\"oedp-numero\" lang=\"en\" data-oedp=\"custo-unitario-do-trabalho-2024-recusado-endereco\" data-oedp-valor=\"ensaio\" data-oedp-lido=\"ensaio\"><span>Saved quotation</span></p>",
+      "depois": "<p class=\"oedp-numero\" lang=\"en\" data-oedp=\"custo-unitario-do-trabalho-2024-recusado-endereco\" data-oedp-valor=\"ensaio\" data-oedp-lido=\"ensaio\"><span>Saved quotation</span></p>",
+      "falha": null
+    },
+    {
+      "lang": "en",
+      "modo": "recusado-com-campo-excerpt",
+      "campo": "excerpt",
+      "linha": "evora-prr-aprovado-2026",
+      "jsonComCampo": true,
+      "compositor": null,
+      "antes": "<p class=\"oedp-numero\" lang=\"en\" data-oedp=\"evora-prr-aprovado-2026\" data-oedp-valor=\"ensaio\" data-oedp-lido=\"ensaio\"><span>Saved quotation</span></p>",
+      "depois": "<p class=\"oedp-numero\" lang=\"en\" data-oedp=\"evora-prr-aprovado-2026\" data-oedp-valor=\"167 372 755,84\" data-oedp-lido=\"2026-09-03\"><a href=\"http://127.0.0.1:51591/en/ledger/evora-prr-aprovado-2026\">Recovery and Resilience Plan (PRR) funds approved for Évora · Évora, 19.08.2026: 167 372 755,84 <span lang=\"en\">euros</span></a> · <span lang=\"pt-PT\">Estrutura de Missão Recuperar Portugal</span>, read on 03.09.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · <a href=\"http://127.0.0.1:51591/en/ledger/evora-prr-aprovado-2026\" data-oedp-atualizado=\"\">This number was updated on 20.08.2026</a></p>",
+      "falha": {
+        "codigo": "ERR_ASSERTION",
+        "mensagem": "ER1 navegador: a recusa só por excerpt alterou o parágrafo colado."
+      }
+    },
+    {
+      "lang": "en",
+      "modo": "recusado-com-campo-source_url",
+      "campo": "source_url",
+      "linha": "custo-unitario-do-trabalho-2024-recusado-endereco",
+      "jsonComCampo": true,
+      "compositor": null,
+      "antes": "<p class=\"oedp-numero\" lang=\"en\" data-oedp=\"custo-unitario-do-trabalho-2024-recusado-endereco\" data-oedp-valor=\"ensaio\" data-oedp-lido=\"ensaio\"><span>Saved quotation</span></p>",
+      "depois": "<p class=\"oedp-numero\" lang=\"en\" data-oedp=\"custo-unitario-do-trabalho-2024-recusado-endereco\" data-oedp-valor=\"17,9\" data-oedp-lido=\"2026-10-05\"><a href=\"http://127.0.0.1:51591/en/ledger/custo-unitario-do-trabalho-2024-recusado-endereco\">Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 <span lang=\"en\">three-year change, %</span></a> · <span lang=\"en\">Eurostat</span>, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · <a href=\"http://127.0.0.1:51591/en/ledger/custo-unitario-do-trabalho-2024-recusado-endereco\" data-oedp-atualizado=\"\">This number was updated on 05.10.2026</a></p>",
+      "falha": {
+        "codigo": "ERR_ASSERTION",
+        "mensagem": "ER1 navegador: a recusa só por source_url alterou o parágrafo colado."
+      }
+    }
+  ],
+  "casosNavegador": 31,
+  "jsonComparados": 3195,
+  "base": "9f240c59",
+  "sha256LogVerify": "65fb60587081858632b3ba1968e13af21da6bdc924e9fc2ccb39dfdbdec4d740"
+}
