@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-12T10:39:48+00:00",
+ "copia": "<scratchpad>/ex1d/pacote-leitura-d",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o valor do saldo da execução na tabela das linhas do relatório passa de −845,8 a −854,8, contra a linha do livro no pacote",
+   "sha256_antes": "e313f18c47878829d43b9af030a4f3c9e99ad5870dbfaf725f18453d29d6ad80",
+   "sha256_depois": "0739beaf369a84c9973e63eb82c5619f56d3944c87e9db8458c38d46a23ea2da",
+   "contexto_antes": "al` | 79 618,7 | milhões de euros, acumulados de janeiro a agosto | 2026-08 | p. 49 do ficheiro, página impressa 45, Receita efetiva, Execução Acumulada 2026 |\n| `execucao-2026-08-saldo-global-administracao-central-seguranca-social` | −845,8 | milhões de euros, acumulados de janeiro a agosto | 2026-08 | p. 49 do ficheiro, página impressa 45, Saldo global, Execução Acumulada 2026 |\n| `oe-2026-saldo-gl",
+   "contexto_depois": "al` | 79 618,7 | milhões de euros, acumulados de janeiro a agosto | 2026-08 | p. 49 do ficheiro, página impressa 45, Receita efetiva, Execução Acumulada 2026 |\n| `execucao-2026-08-saldo-global-administracao-central-seguranca-social` | −854,8 | milhões de euros, acumulados de janeiro a agosto | 2026-08 | p. 49 do ficheiro, página impressa 45, Saldo global, Execução Acumulada 2026 |\n| `oe-2026-saldo-gl"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/data/explicacoes/dinheiro-do-estado-2026.mjs",
+   "descricao": "a frase dos juros na cópia da declaração nomeia a função das operações da dívida, que o mandato só autorizava se a origem selada o dissesse, contra o diff e a decisão EX1-6",
+   "sha256_antes": "43960f6bbec9e7db2b11b21af47f7f2f96c74713babc81b3b47433ad775bb5fe",
+   "sha256_depois": "07f6ed2b9b9271199c9e6b727cd0bb92983deebb10b7182d56c96c6ee3f3e4d9",
+   "contexto_antes": "icação mostra acima.'] },\n        { se: [SEM_LINHAS_DOS_JUROS], partes: [' Estes números não isolam o custo dos juros da dívida, que o Orçamento também prevê e que entra noutra classificação; quando as linhas dos juros existirem no livro-razão, esta explicação diz quanto são.'] },\n        ' O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, ",
+   "contexto_depois": "icação mostra acima.'] },\n        { se: [SEM_LINHAS_DOS_JUROS], partes: [' Estes números não isolam o custo dos juros da dívida, que o Orçamento também prevê e que entra na função das operações da dívida; quando as linhas dos juros existirem no livro-razão, esta explicação diz quanto são.'] },\n        ' O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, "
+  },
+  {
+   "id": "P4",
+   "ficheiro": "tests/explicacoes/explicacao.mjs",
+   "descricao": "a X10 deixa de exigir o ramo «igual» de cada token compara, na cópia, contra o diff",
+   "sha256_antes": "fc69b072807f1f8de6b59ac9a45b9da02465445554d271d71c9ff714e5bb3a55",
+   "sha256_depois": "6859665f3cafa5df068f6b5d6d77d09cc8c248a435e50c1f707e2bad0bcaad55",
+   "contexto_antes": "|| typeof x !== 'object') return;\n      const o = /** @type {Record<string, any>} */ (x);\n      const ramos = 'sinal' in o ? ['positivo', 'negativo', 'zero'] : 'compara' in o ? ['maior', 'menor', 'igual'] : null;\n      if (ramos) {\n        tokens++;\n        const faltam = ramos.filter((r) => !(r in o));\n        if (faltam.length) erros.push(`X10 · ${e.slug}: o token «$",
+   "contexto_depois": "|| typeof x !== 'object') return;\n      const o = /** @type {Record<string, any>} */ (x);\n      const ramos = 'sinal' in o ? ['positivo', 'negativo', 'zero'] : 'compara' in o ? ['maior', 'menor'] : null;\n      if (ramos) {\n        tokens++;\n        const faltam = ramos.filter((r) => !(r in o));\n        if (faltam.length) erros.push(`X10 · ${e.slug}: o token «$"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/explicacoes/dinheiro-do-estado-2026/index.html",
+   "descricao": "a página construída portuguesa diz «um excedente (recebeu mais do que gastou)» para um saldo negativo, contra a linha e a declaração",
+   "sha256_antes": "0329d318c5bea0c2fdf1f14978f79578f44665f2c6eef4f8257805dad4aedd5c",
+   "sha256_depois": "43bcbb10f2e4d2e14c889066171124811b4afc24313820b4e362711a7ccf2694",
+   "contexto_antes": "tidade Orçamental\" title=\"Entidade Orçamental\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Entidade Orçamental</span></span></a></span>, um défice (gastou mais do que recebeu); o saldo acumulado está acima do que o Orçamento previa para o ano inteiro (<span class=\"claim claim-com-chip\"><span data-claim=\"oe-2026-saldo-global-administracao-central-segura",
+   "contexto_depois": "tidade Orçamental\" title=\"Entidade Orçamental\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span>Entidade Orçamental</span></span></a></span>, um excedente (recebeu mais do que gastou); o saldo acumulado está acima do que o Orçamento previa para o ano inteiro (<span class=\"claim claim-com-chip\"><span data-claim=\"oe-2026-saldo-global-administracao-central-segura"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/en/explainers/dinheiro-do-estado-2026/index.html",
+   "descricao": "a página construída inglesa diz «below» onde o token compara escolhe «above», contra a declaração e a edição portuguesa",
+   "sha256_antes": "a4a2a2e3449559b49358de163636d10c34e7ac027c11fcb599b41f1af51beb3c",
+   "sha256_depois": "afe3e96cedccf5aaefe043a82b10bcef706642d12e277dc25daac8eccabb8a12",
+   "contexto_antes": "s=\"src-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">Entidade Orçamental</span></span></a></span>, a deficit (it spent more than it took in); the cumulative balance is above what the Budget forecast for the full year (<span class=\"claim claim-com-chip\"><span data-claim=\"oe-2026-saldo-global-administracao-central-seguranca-social\" class=\"claim-value\">−1 789,8</span><span cla",
+   "contexto_depois": "s=\"src-chip-texto\">source</span><span class=\"vh\"> · <span lang=\"pt-PT\">Entidade Orçamental</span></span></a></span>, a deficit (it spent more than it took in); the cumulative balance is below what the Budget forecast for the full year (<span class=\"claim claim-com-chip\"><span data-claim=\"oe-2026-saldo-global-administracao-central-seguranca-social\" class=\"claim-value\">−1 789,8</span><span cla"
+  }
+ ]
+}
