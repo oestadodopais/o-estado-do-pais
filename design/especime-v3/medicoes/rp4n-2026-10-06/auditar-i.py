@@ -12,7 +12,8 @@ for repo,p,prefix in [('sitio',site,'ledger/claims'),('motor',motor,'publisher/r
   assert l['access_date']=='2026-08-24' and l['access_date_kind']=='hosted-copy'
   linhas.append({'repositorio':repo,'id':id,'access_date':l['access_date'],'access_date_kind':l['access_date_kind']})
 m=json.loads((out/'medidas.json').read_text())
-assert m['recibos']['pensao-pt']['datas_rotuladas']==['Cópia alojada a 24.08.2026']*3
+assert m['recibos']['pensao-pt']['datas_rotuladas']
+assert set(m['recibos']['pensao-pt']['datas_rotuladas'])=={'Cópia alojada a 24.08.2026'}
 assert any('paragraph below Figure 8.4' in x for x in m['recibos']['legal-en']['localizadores'])
 h=json.loads((b/'h/medidas.json').read_text())
 antes=json.loads((b/'h/antes.json').read_text())

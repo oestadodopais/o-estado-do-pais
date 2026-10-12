@@ -1,6 +1,9 @@
 id: penalizacao-legal-um-ano-antecipacao-2026
 value: '6'
 unit: '%'
+name: penalização legal
+name_source: Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, parágrafo abaixo da Figura 8.4
+name_source_en: Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, paragraph below Figure 8.4
 source: Grupo de Trabalho para a Reforma da Segurança Social
 document:
   title: 'Reformar as Pensões em Portugal: Por um Sistema Sustentável, Adequado e
