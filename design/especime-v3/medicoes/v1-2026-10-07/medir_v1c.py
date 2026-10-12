@@ -154,6 +154,8 @@ def main():
     if len(finais) < 2:
         print('Corridas finais ainda por executar.')
         return
+    anteriores = [{'id': r['id'], 'falhas': r['falhas'], 'medidas': r['medidas']} for r in finais[:-2]]
+    guardar('tentativas-c.json', anteriores)
     finais = finais[-2:]
     resultados = []
     for r in finais:
@@ -233,6 +235,8 @@ def main():
             f"Reconferências adiadas por cadência, por fonte: `{json.dumps(dict(Counter(x['origem'] for x in r['reconferencias_adiadas'])))}`. Os índices foram consultados; os documentos adiados não foram reconfirmados remotamente nesta corrida.",
             f"Estados: `{json.dumps({k: v['estado'] for k, v in r['fontes'].items()}, ensure_ascii=False)}`. Fontes lidas: `{json.dumps({k: v.get('lida', False) for k, v in r['fontes'].items()})}`.",
             f"Limitações por código: `{json.dumps(dict(Counter(l['codigo'] for l in r['limitacoes'])), ensure_ascii=False)}`. Falhas: `{json.dumps(r['falhas_detalhe'], ensure_ascii=False)}`. Fila: `{json.dumps(r['fila'], ensure_ascii=False)}`."]
+    for tentativa in anteriores:
+        linhas += ['', f"Tentativa anterior conservada: `{tentativa['id']}`; falhas `{json.dumps(tentativa['falhas'], ensure_ascii=False)}`. Não integra o par final; recibo e pedidos permanecem no motor e as medidas estão em `tentativas-c.json`."]
     sem_data = [l for l in finais[-1]['limitacoes'] if l['codigo'] == 'sem_data']
     linhas += ['', f"Registos sem data: `{json.dumps([{k: l[k] for k in ('contagem', 'identificadores')} for l in sem_data], ensure_ascii=False)}`. As provas e razões completas estão nos recibos. O heartbeat separa limitações e falhas.",
         f"Aceitação de entrada datada na janela: `{json.dumps(aceites['entrada_datada_por_fonte'], ensure_ascii=False)}`. A falta de entrada não é alarme.", '',
