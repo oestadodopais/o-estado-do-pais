@@ -111,7 +111,7 @@ def aritmetica(raiz, finais, reg):
             'segundos': 'não extrapolados: uma transferência diferente exige medição real'})
     resultado = {'transferencia_observada': {'pedido': ficheiro, 'linha': linha, 'arquivo': corpo,
         'bytes': len(bruto), 'saltos': len(transferencia['saltos'])},
-        'hipotese': 'Mesmo tamanho comprimido e cadeia GET da última transferência integral observada; restantes pedidos como nas corridas finais. Não é uma corrida observada com mudança. Uma base com falhas não demonstra o custo de concluir as fontes que falharam.',
+        'hipotese': 'Mesmo tamanho comprimido e cadeia GET da última transferência integral observada; restantes pedidos como na corrida-base identificada. Não é uma corrida observada com mudança. Uma base com falhas não demonstra o custo de concluir as fontes que falharam.',
         'cenarios': cenarios}
     guardar('aritmetica-c.json', resultado)
     return resultado
@@ -243,13 +243,16 @@ def main():
     for r in resultados:
         linhas += ['', f"Recibo: `<motor>/vigilancia/corridas/{r['id']}.json`; pedidos: `<motor>/vigilancia/pedidos/{r['id']}.jsonl`.",
             f"Bytes por fonte: `{json.dumps(r['bytes_por_fonte'], ensure_ascii=False)}`. Pedidos por fonte: `{json.dumps(r['pedidos_por_fonte'], ensure_ascii=False)}`.",
-            f"Reconferências adiadas por cadência, por fonte: `{json.dumps(dict(Counter(x['origem'] for x in r['reconferencias_adiadas'])))}`. Os índices foram consultados; os documentos adiados não foram reconfirmados remotamente nesta corrida.",
+            f"Reconferências adiadas por cadência, por fonte: `{json.dumps(dict(Counter(x['origem'] for x in r['reconferencias_adiadas'])))}`. Os documentos adiados não foram reconfirmados remotamente nesta corrida; as fontes efetivamente lidas são discriminadas abaixo.",
             f"Estados: `{json.dumps({k: v['estado'] for k, v in r['fontes'].items()}, ensure_ascii=False)}`. Fontes lidas: `{json.dumps({k: v.get('lida', False) for k, v in r['fontes'].items()})}`.",
             f"Limitações por código: `{json.dumps(dict(Counter(l['codigo'] for l in r['limitacoes'])), ensure_ascii=False)}`. Falhas: `{json.dumps(r['falhas_detalhe'], ensure_ascii=False)}`. Fila: `{json.dumps(r['fila'], ensure_ascii=False)}`."]
     for tentativa in anteriores:
         linhas += ['', f"Tentativa anterior conservada: `{tentativa['id']}`; falhas `{json.dumps(tentativa['falhas'], ensure_ascii=False)}`. Não integra o par final; recibo e pedidos permanecem no motor e as medidas estão em `tentativas-c.json`."]
     sem_data = [l for l in finais[-1]['limitacoes'] if l['codigo'] == 'sem_data']
-    linhas += ['', f"Registos sem data: `{json.dumps([{k: l[k] for k in ('contagem', 'identificadores')} for l in sem_data], ensure_ascii=False)}`. As provas e razões completas estão nos recibos. O heartbeat separa limitações e falhas.",
+    ultima_iniciativas = next(r for r in reversed(corridas) if r['id'] in finais_ids and r['fontes'].get('iniciativas', {}).get('lida'))
+    sem_data_lida = [{k: l[k] for k in ('contagem', 'identificadores')} for l in ultima_iniciativas['limitacoes'] if l['codigo'] == 'sem_data']
+    linhas += ['', f"Última leitura completa das iniciativas: `{ultima_iniciativas['id']}`; registos sem data `{json.dumps(sem_data_lida, ensure_ascii=False)}`. Uma lista vazia no recibo de uma fonte falhada não demonstra ausência de registos sem data."]
+    linhas += ['', f"Limitações sem data declaradas no último recibo: `{json.dumps([{k: l[k] for k in ('contagem', 'identificadores')} for l in sem_data], ensure_ascii=False)}`. As provas e razões completas estão nos recibos. O heartbeat separa limitações e falhas.",
         f"Aceitação de entrada datada na janela: `{json.dumps(aceites['entrada_datada_por_fonte'], ensure_ascii=False)}`. A falta de entrada não é alarme.", '',
         '### A aritmética do achado 7', '', 'As bases da conta são as últimas corridas completas observadas com este código, identificadas abaixo. Tentativas com falhas não reduzem artificialmente o custo atribuído a uma leitura completa.', '', conta['hipotese'], '',
         f"Transferência observada: `{conta['transferencia_observada']['pedido']}`, linha {conta['transferencia_observada']['linha']}, {conta['transferencia_observada']['bytes']} bytes, {conta['transferencia_observada']['saltos']} salto(s). Arquivo: `{conta['transferencia_observada']['arquivo']}`.", '',
@@ -279,6 +282,7 @@ def main():
         '* **V1-29**: a cadência semanal reduz os pedidos ordinários, mas não prova que todos os PDFs antigos caibam para sempre num único dia semanal. O teto comum continua a valer e o excesso conserva a sua tarefa em fila; a aritmética mede a configuração observada.', '',
         '* **V1-30**: uma mudança observada por HEAD prevalece sobre a coincidência posterior do tamanho comprimido. A planta usa dois corpos de tamanhos expandidos diferentes com gzip do mesmo tamanho; o segundo corpo tem de ser transferido.', '',
         '* **V1-31**: o inventário persistente dos números arquivados conserva as reconferências quando esses números saem da página corrente. A prova atravessa uma janela sem índices recentes e substitui o número do catálogo por um segundo número sintético.', '',
+        '* **V1-32**: o fecho exige duas corridas que leiam as três fontes sem falhas. As tentativas de rede, incluindo as falhadas, ficam conservadas; uma corrida isolada sem falhas não basta para fechar o par. O estado de aceitação acima é calculado, não decidido por omissão de recibos.', '',
         'Custo: linha `tokens used` não observada. Não se estima o total nem se afirma cumprimento do alvo de custo.', '']
     relatorio = PASTA / 'LEIA-ME.md'
     antigo = relatorio.read_text()
