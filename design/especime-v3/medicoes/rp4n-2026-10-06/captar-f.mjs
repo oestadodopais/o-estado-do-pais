@@ -7,14 +7,15 @@ import path from 'node:path';
 import http from 'node:http';
 import { createHash } from 'node:crypto';
 import { chromium } from 'playwright';
+import { execFileSync } from 'node:child_process';
 
 const fase = process.argv[2];
-if (!['f-antes', 'f'].includes(fase)) throw Error('Indique antes, depois, d ou e.');
+if (!['f-antes', 'f', 'f-final'].includes(fase)) throw Error('Indique antes, depois, d ou e.');
 const base = 'design/especime-v3/medicoes/rp4n-2026-10-06';
 const saida = `design/especime-v3/capturas/rp4n-2026-10-06/${fase}`;
 const dist = path.resolve('dist');
 const versao = JSON.parse(await fs.readFile('dist/version.json', 'utf8'));
-const amostra = fase === 'f-antes' ? {area:'@areas/economia-e-coesao-territorial'} : fase === 'f' ? {agua:'agua-nao-faturada-portugal-2024', corte:'penalizacao-antecipacao-um-ano-neutra', area:'@areas/economia-e-coesao-territorial'} : {
+const amostra = fase === 'f-antes' ? {area:'@areas/economia-e-coesao-territorial'} : ['f','f-final'].includes(fase) ? {agua:'agua-nao-faturada-portugal-2024', corte:'penalizacao-antecipacao-um-ano-neutra', area:'@areas/economia-e-coesao-territorial'} : {
   orcamento: 'oe-2026-despesa-funcao-01',
   execucao: 'execucao-2026-07-despesa-funcao-01',
   evora: 'evora-pelouros-2025-presidente',
@@ -71,6 +72,6 @@ try {
     }
   }
 } finally { await browser.close(); servidor.close(); }
-await fs.writeFile(`${base}/${fase}/capturas.json`, JSON.stringify({versao,capturas,problemas},null,2)+'\n');
+await fs.writeFile(`${base}/${fase}/capturas.json`, JSON.stringify({cabeca_da_captura:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),versao,capturas,problemas},null,2)+'\n');
 console.log(JSON.stringify({capturas:capturas.length,problemas}));
 if (problemas.length) process.exitCode = 1;

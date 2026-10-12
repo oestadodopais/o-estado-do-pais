@@ -4,7 +4,7 @@ import getpass
 import json
 import subprocess
 import sys
-BASE = Path('design/especime-v3/medicoes/rp4n-2026-10-06/f')
+BASE = Path(sys.argv[1]) if len(sys.argv)>1 else Path('design/especime-v3/medicoes/rp4n-2026-10-06/f')
 BASE.mkdir(parents=True,exist_ok=True)
 nome=getpass.getuser()
 tmp='/private'+'/tmp/'

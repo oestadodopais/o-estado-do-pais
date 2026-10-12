@@ -2,8 +2,9 @@
 from pathlib import Path
 import json
 import os
+import sys
 import subprocess
-BASE=Path('design/especime-v3/medicoes/rp4n-2026-10-06/f')
+BASE=Path(sys.argv[1]) if len(sys.argv)>1 else Path('design/especime-v3/medicoes/rp4n-2026-10-06/f')
 BASE.mkdir(parents=True,exist_ok=True)
 repos={'sitio':(Path.cwd(),'b1962dfa'),'motor':(Path(os.environ['RESEARCHHUB_DIR']),'cc68172')}
 resultado={}
