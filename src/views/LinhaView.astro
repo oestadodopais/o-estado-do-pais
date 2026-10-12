@@ -1509,6 +1509,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
               <dt>{claim.access_date_kind === 'hosted-copy' ? s.prov.copiaAlojada : s.prov.lido}</dt>
               <dd>
                 <CampoDaLinha id={id} campo="access_date" valor={claim.access_date} lang={lang} />
+                {claim.access_date_kind === 'hosted-copy' && ['penalizacao-antecipacao-um-ano-neutra','penalizacao-legal-um-ano-antecipacao-2026'].includes(id) && <>{' · '}<a href="/provas/pensao-alojamento.json">{s.prov.registoDaCopia}</a></>}
               </dd>
             </>
           )}
