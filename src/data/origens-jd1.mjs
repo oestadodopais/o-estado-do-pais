@@ -20,26 +20,6 @@ export const ORIGENS_JD1 = {
       }
     }
   },
-  "jd1-eo-administracoes": {
-    "publicador": "Entidade Orçamental",
-    "documento": "Síntese da Execução Orçamental | agosto 2026, glossário, folha 82",
-    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
-    "lido": "2026-10-06",
-    "lingua": "pt",
-    "excerto": "Administrações Públicas — Universo que compreende a Administração Central (serviços integrados e serviços e fundos autónomos), a Administração Regional (órgãos de governos regionais e serviços e fundos autónomos) e Local (municípios e freguesias) e a Segurança Social.",
-    "selo": {
-      "motor": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf",
-      "hora": "2026-10-06T10:46:01Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
-      "campo": "pdftotext -layout, folha 82, coluna esquerda",
-      "extracao": {
-        "ficheiro": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026-coluna-esquerda-82-w300.txt",
-        "sha256": "3852ac2b0d15b5bfb1bde650519c68e1a90e8fcf84989d8c731d274c6bd36203",
-        "ferramenta": "pdftotext version 26.09.0"
-      }
-    }
-  },
   "jd1-eo-ativos": {
     "publicador": "Entidade Orçamental",
     "documento": "Síntese da Execução Orçamental | agosto 2026, glossário, folha 82",

@@ -7,13 +7,6 @@
     "alojamento": true
   },
   {
-    "origem": "jd1-eo-administracoes",
-    "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
-    "literal": true,
-    "pedido": true,
-    "alojamento": true
-  },
-  {
     "origem": "jd1-eo-ativos",
     "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
     "literal": true,

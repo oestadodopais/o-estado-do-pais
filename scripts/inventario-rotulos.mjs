@@ -96,7 +96,7 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const INVENTARIO_DECLARADO = path.join(RAIZ, 'design', 'especime-v3', 'rotulos', 'INVENTARIO.json');
 const LINHAS = loadClaims();
 /** O conjunto fechado OE1, conferido contra as linhas e contra cada edição construída. */
-const LINHAS_ESPERADAS = { oe1: 186, jd1: 14 };
+const LINHAS_ESPERADAS = { oe1: 186, jd1: 15 };
 /** O estudo recebe outros blocos; a pertença vem do cruzamento de cada entrega. */
 const BLOCOS_DO_LIVRO = Object.fromEntries(['oe1', 'jd1'].map((bloco) => {
   const ids = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(RAIZ, 'ledger', 'cruzamentos', `${bloco}.json`), 'utf8')).rows));
@@ -984,7 +984,7 @@ export function plantas(dist) {
     BLOCOS_DO_LIVRO.jd1.ids.delete(id);
     try {
       const erros = corre(rel, root);
-      const queixa = erros.find(e => e === 'JD1-unidade · /livro-razao: o índice tem 13 entradas JD1 e deve ter 14');
+      const queixa = erros.find(e => e === 'JD1-unidade · /livro-razao: o índice tem 14 entradas JD1 e deve ter 15');
       resultados.push({ nome: 'jd1b-linha-retirada-do-cruzamento-e-do-indice', campo: 'contagem', mordeu: Boolean(queixa), queixa: queixa ?? 'nenhuma queixa' });
     } finally {
       BLOCOS_DO_LIVRO.jd1.ids.add(id);

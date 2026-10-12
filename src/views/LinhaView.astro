@@ -770,7 +770,6 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           sinal vive na metade que compara (a posição de investimento internacional do ano anterior). E O MARCADOR,
           acima, quando uma parte da frase está por confirmar na fonte: o marcador da casa, com a classe que diz à L1
           que é um marcador obrigatório (`marcador-da-frase`), e que a K17 confere onde a auditoria o declara. */}
-      {parcelaFinanciamento && <p class="linha-o-que-e-frase" data-jd1-parcela><Frase partes={parcelaFinanciamento} lang={lang} selos={false} /></p>}
       {oQueE.sinal && (
         <p class="linha-o-que-e-frase" data-o-que-e-parte="sinal">{oQueE.sinal.join('')}</p>
       )}
@@ -778,6 +777,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         <p class="linha-o-que-e-frase" data-o-que-e-parte="comparacao"><Frase partes={comparacaoDoCartao.pedacos} lang={lang} selos={false} /></p>
       )}
     </div>
+    {parcelaFinanciamento && <div class="linha-o-que-e"><p class="linha-o-que-e-frase" data-jd1-parcela><Frase partes={parcelaFinanciamento} lang={lang} selos={false} /></p></div>}
     <p class="linha-valor">
       <Claim id={id} lang={lang} as="span" class="linha-valor-num" plano>
       {/* O ESPAÇO ENTRE O VALOR E A UNIDADE É TEXTO DA PÁGINA (bloco R1,

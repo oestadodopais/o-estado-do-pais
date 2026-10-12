@@ -4,7 +4,16 @@ import fs from 'node:fs';
 import { parse } from 'node-html-parser';
 import { oQueEDaLinha } from '../../src/lib/o-que-e-o-numero.mjs';
 import { reguaDaMedida } from '../../src/lib/enquadramento.mjs';
+import { conferirAuditoriaDasLeituras } from '../cartao/leituras.mjs';
+import { ORIGENS_DAS_DEFINICOES } from '../../src/data/figuras.mjs';
 export const plantas = [];
+for (const [chave, nome] of [['jd1-ine-provisorio', 'Nota de estado sem literal'], ['jd1-eurostat-versao', 'Nota de comparação sem literal']]) {
+  const origens = structuredClone(ORIGENS_DAS_DEFINICOES);
+  origens[chave].excerto = 'Literal retirado nesta cópia.';
+  const erro = conferirAuditoriaDasLeituras({origens}).erros.find(e => e.includes('nota «') && e.includes(`da origem «${chave}»`));
+  assert.ok(erro, nome + ': a guarda do apoio não mordeu');
+  plantas.push({nome, mensagem: erro, passou: true});
+}
 function recusa(nome, erros, mensagem) {
   assert.ok(erros.includes(mensagem), nome + ': a planta não mordeu');
   plantas.push({nome, mensagem, passou: true});
@@ -42,6 +51,7 @@ for (const lang of ['pt','en']) {
   recusa(`Parcela literal/${lang}`, confereParcela(frase.map(p => p.claim === AMORTIZACOES_JD1 ? '56 976' : p)), 'JD1-c: parcela sem os dois montantes por token');
   if (!process.argv.includes('--declaracoes')) {
     const root = parse(fs.readFileSync(`dist/${lang === 'pt' ? 'livro-razao' : 'en/ledger'}/${FINANCIAMENTO_JD1}/index.html`, 'utf8'));
+    assert.equal(root.querySelector('[data-jd1-parcela]').closest('[data-o-que-e]'), null);
     assert.deepEqual(root.querySelector('[data-jd1-parcela]').querySelectorAll('[data-claim]').map(n => n.getAttribute('data-claim')), [FINANCIAMENTO_JD1, AMORTIZACOES_JD1]);
   }
 }
