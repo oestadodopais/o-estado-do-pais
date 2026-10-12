@@ -2,6 +2,19 @@
 
 > **Escrito pelo lugar de direção (Claude Fable 5.1) no fecho da sessão de 12.10.2026, às 18:21 UTC.** No fecho, o Claude estava a 14 % da semana e a 2 % da janela de cinco horas; o Codex a 66 % da semana, com a V1-d e a RP4-n-j ainda a correr (as duas lançadas abaixo dos 80 %, a regra 10). Este é o único prompt no Desktop. Sem travessões na prosa.
 
+## Acrescento de 12.10.2026 à noite (o lugar de direção, Claude Fable 5.1, depois de o financiador pedir para continuar)
+
+**O que mudou depois do fecho das 18:21 UTC.** As duas passagens que corriam acabaram e foram lidas a frio pelo Opus, as duas com as cinco plantas mordidas, e os dois blocos aterraram:
+
+- **O RP4-n aterrou** (`dd578c36`, no ar às 20:57 UTC, `verify:deploy` verde; o motor em `b75f317`; a §1.187 completa com a integração com o JD1): a passagem RP4-n-j (514 745 símbolos) fez as linhas do JD1 declararem as segundas fontes das definições pelo motor (`publisher/definition_sources.json`, com o recibo inteiro de cada origem selada), retirou as quatro linhas antigas da contagem no inventário e escreveu as duas novas pelo guião, sem tocar na regra do publicador nem em nenhum número; a leitura (226 536) deu cinco Minor para a higiene (RP4N-24 a RP4N-27). O lugar de direção fundiu `main` no ramo três vezes no dia, a segunda com nove conflitos resolvidos à mão e a terceira com um.
+- **O V1 aterrou** (`eb1948e7`, no ar às 21:40 UTC; o motor em `2d69712`, com o `master` fundido; a §1.188): a passagem V1-d (396 756 símbolos) fechou os achados 6 a 13 da leitura da V1-c e o par de corridas de fecho passou às 19:43 e 19:44 UTC, com as três fontes lidas e zero falhas; a leitura (238 630) deu quatro Minor para a higiene (V1-39 a V1-41) e precisou a aceitação: a operacional está cumprida; a cobertura datada por fonte está cumprida só no Diário da República, por cumprir no DAR (a fonte não publicou nenhum número na janela) e nas iniciativas (o ficheiro vai até 08.10). Armar a vigilância no GitHub é do financiador (a pendente de 12.10).
+
+**O que fica para a sessão seguinte, por cima da ordem acima.** Os briefs da V2-a e da V2-b ainda estão em `.claude/sessao-2026-10-12/para-a-sessao-seguinte/`, à espera dos guiões de medições do §0. A higiene ganha as questões RP4N-24 a RP4N-27 e V1-39 a V1-41, e a M78 por fazer: o `pacote.sh` anonimiza o rasto `numeros-do-relatorio.txt`, que trazia o caminho da worktree (apanhado pelo leitor da V1-d). O padrão das segundas fontes das definições declaradas pelo motor (a RP4-n-j) é o que os blocos seguintes seguem quando uma definição vem de outro publicador.
+
+**Duas lições do lugar de direção, registadas para não se repetirem.** Duas vezes no dia a mensagem de um commit anunciou uma entrada do registo antes de o guião `inserir-entrada.py` a ter escrito (a inserção falhava pela sequência dos números, porque o ramo ainda não trazia a entrada anterior de `main`): a mensagem escreve-se depois de o guião confirmar, nunca antes; os commits `1748009c` e `7ee72bc1` dizem o que não contêm, e os seguintes dizem-no. E a amarra das decisões só aceita na linha «Afecta» um dos quatro valores: a explicação vai para o corpo.
+
+**O uso no fecho da noite.** O Claude a 17 % da semana e a 12 % da janela de cinco horas; o Codex a 78 % da semana, sem nenhuma passagem a correr. Dois blocos a mais aterraram desde o fecho das 18:21, cinco no dia.
+
 ## O que aterrou a 12.10.2026
 
 - **O painel semanal de 12.10** (`c3c18c98`, no ar às 11:16 UTC, `verify:deploy` verde): 91 afirmações reverificadas, 1 alarme (a I220: o Eurostat reviu a dívida das empresas da União de 70,0 para 70,1 % do PIB), e o acrescento de 11.10 ao prompt na cópia do repositório.
