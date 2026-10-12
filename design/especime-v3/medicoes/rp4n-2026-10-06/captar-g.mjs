@@ -15,7 +15,7 @@ const saida = `design/especime-v3/capturas/rp4n-2026-10-06/${fase}`;
 const dist = path.resolve('dist');
 const versao = JSON.parse(await fs.readFile('dist/version.json', 'utf8'));
 const amostra = fase === 'g-antes' ? {area:'@areas/economia-e-coesao-territorial'} : {agua:'agua-nao-faturada-portugal-2024', corte:'penalizacao-antecipacao-um-ano-neutra', area:'@areas/economia-e-coesao-territorial'};
-const tipos = {'.html':'text/html; charset=utf-8', '.css':'text/css', '.woff2':'font/woff2', '.svg':'image/svg+xml', '.png':'image/png', '.js':'text/javascript'};
+const tipos = {'.html':'text/html; charset=utf-8', '.css':'text/css', '.woff2':'font/woff2', '.svg':'image/svg+xml', '.png':'image/png', '.webp':'image/webp', '.js':'text/javascript'};
 const servidor = http.createServer(async (req, res) => {
   try {
     let p = path.resolve(dist, '.' + decodeURIComponent(new URL(req.url, 'http://localhost').pathname));
@@ -43,13 +43,21 @@ try {
       const resposta = await p.goto(origem + rota, {waitUntil:'networkidle'});
       if (resposta.status() !== 200) throw Error(`Recibo não encontrado: ${rota}`);
       await p.evaluate(() => document.fonts.ready);
+      const imagens = await p.evaluate(async () => {
+        return Promise.all([...document.images].map(async img => {
+          img.loading = 'eager';
+          try { await img.decode(); } catch {}
+          return {src:img.getAttribute('src'),carregada:img.complete && img.naturalWidth>0};
+        }));
+      });
+      for (const img of imagens) if (!img.carregada) problemas.push(`${nome}/${lang}/${largura}: imagem não carregada ${img.src}`);
       const m = await p.evaluate(() => ({largura_documento:document.documentElement.scrollWidth,
         frase:(document.querySelector('[data-o-que-e]') ?? document.querySelector('[data-o-que-e-da-serie]'))?.textContent.trim(),
         marcadores:document.querySelectorAll('[data-por-confirmar-na-fonte]').length}));
       const ficheiro = `${saida}/${nome}-${lang}-${largura}.png`;
       const bytes = await p.screenshot({path:ficheiro,fullPage:true});
       if (m.largura_documento > largura) problemas.push(`${nome}/${lang}/${largura}: transbordo ${m.largura_documento}`);
-      capturas.push({ficheiro,rota,lang,largura,...m,sha256:createHash('sha256').update(bytes).digest('hex')});
+      capturas.push({ficheiro,rota,lang,largura,...m,imagens,sha256:createHash('sha256').update(bytes).digest('hex')});
       await ctx.close();
     }
   }
