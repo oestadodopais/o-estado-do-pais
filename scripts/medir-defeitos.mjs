@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
 /**
  * A régua deste bloco — mede o que o BRIEF-confianca.md mediu, para se poder
  * dizer «antes» e «depois» com o mesmo instrumento.
@@ -38,7 +39,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { parse, NodeType } from 'node-html-parser';
+import { NodeType } from 'node-html-parser';
 
 import { loadClaims } from '../src/lib/ledger.mjs';
 import { matchPath, routePath } from '../src/lib/routes.mjs';
@@ -1303,7 +1304,8 @@ for (const file of ficheiros) {
   paginas++;
 
   const html = fs.readFileSync(file, 'utf8');
-  const root = parse(html, { comment: false, blockTextElements: { script: true, style: true } });
+  const root = lerPaginaComCodigo(html, { comment: false, blockTextElements: { script: true, style: true } });
+  tirarCodigoConferido(root, rota);
 
   /* 1 — a porta de correcções */
   const portas = root.querySelectorAll('[data-porta-correccoes]');

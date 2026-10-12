@@ -1,0 +1,137 @@
+{
+  "comando": "node tests/incorporar/conferir.mjs",
+  "recibos": 6390,
+  "json": 3195,
+  "plantas": [
+    {
+      "nome": "valor-trocado",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "codigo-em-falta",
+      "mensagem": "ER1 código: falta o único código do recibo.",
+      "mordeu": true
+    },
+    {
+      "nome": "marca-no-paragrafo",
+      "mensagem": "ER1 código: marca fora do campo do recibo da própria linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "codigo-editavel",
+      "mensagem": "ER1 código: marca fora do campo do recibo da própria linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "campo-conferido-fora-do-bloco",
+      "mensagem": "ER1 código: o campo conferido não é o que o botão copia.",
+      "mordeu": true
+    },
+    {
+      "nome": "comentario-no-codigo",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "leitura-nao-literal",
+      "mensagem": "ER1 código: falta a leitura literal do campo.",
+      "mordeu": true
+    },
+    {
+      "nome": "cors-em-falta",
+      "mensagem": "ER1 CORS: /livro-razao/custo-unitario-do-trabalho-2024.json tem estado ou cabeçalho incorreto.",
+      "mordeu": true
+    },
+    {
+      "nome": "cors-em-html",
+      "mensagem": "ER1 CORS: / tem estado ou cabeçalho incorreto.",
+      "mordeu": true
+    },
+    {
+      "nome": "moldura-aberta",
+      "mensagem": "ER1 moldura: / perdeu SAMEORIGIN.",
+      "mordeu": true
+    },
+    {
+      "nome": "data-inacessivel-pt",
+      "mensagem": "Uma tentativa sem confirmação não avança a data de leitura.",
+      "mordeu": true
+    },
+    {
+      "nome": "data-diverge-pt",
+      "mensagem": "Uma tentativa sem confirmação não avança a data de leitura.",
+      "mordeu": true
+    },
+    {
+      "nome": "data-inacessivel-en",
+      "mensagem": "Uma tentativa sem confirmação não avança a data de leitura.",
+      "mordeu": true
+    },
+    {
+      "nome": "data-diverge-en",
+      "mensagem": "Uma tentativa sem confirmação não avança a data de leitura.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-nome",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-periodo",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-valor",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-unidade",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-unidadeLang",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-fonte",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-fonteLang",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-data",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-leitura",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-atribuicao",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-notas",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-atualizacao",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    }
+  ]
+}

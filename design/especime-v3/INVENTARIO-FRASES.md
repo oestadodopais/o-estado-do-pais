@@ -4155,6 +4155,47 @@ páginas são **conteúdo**, como «Índice» e «Privacidade», porque são o o
 | conteudo | Para onde vai o dinheiro do Estado em 2026 | ex1 | viva | A descrição do `<head>` da primeira explicação, que é o título dela, com o ano pelo período da linha nomeada; o portão de HTML recompõe-a por conta própria. |
 | conteudo | Where the State’s money goes in 2026 | ex1 | viva | A mesma descrição na edição inglesa. |
 
+## O código incorporável (ER1)
+
+O código é recomposto antes de sair da leitura da prosa. Os estados da cópia
+são conferidos nos atributos pelo portão e exercidos no navegador.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Incorporar este número | er1 | viva | O rótulo do campo do código. |
+| navegacao | Embed this number | er1 | viva | O rótulo na edição inglesa. |
+| navegacao | Copiar | er1 | viva | O comando de cópia do código. |
+| navegacao | Copy | er1 | viva | O comando na edição inglesa. |
+
+
+
+### ER1-b: cadeias e composições aprovadas
+
+Leitura do lugar de direção: mandato ER1-b, achados 4 e 10, lançado a 07.10.2026.
+Os estados do botão e os prefixos compostos são condicionais; a célula ER1
+confere cada chave nas duas edições antes de retirar qualquer código da prosa.
+A data ausente e o aviso sem data foram retirados; não se inventa uma data.
+A porta de exemplo do Método pertence ao texto governado, que a voz retira
+apenas depois de conferido. A célula ER1 confere a porta e esta entrada.
+
+| chave | português | inglês | classe |
+| --- | --- | --- | --- |
+| `metodo.exemplo` | Ver o recibo de exemplo | See the example receipt | navegação, texto governado |
+| `incorporar.indisponivel` | Este número ainda não se pode incorporar: um campo da sua proveniência está por confirmar na fonte. | This number cannot be embedded yet: one field of its provenance is still to be confirmed at the source. | conteúdo |
+| `incorporar.titulo` | Incorporar este número | Embed this number | navegação |
+| `incorporar.copiar` | Copiar | Copy | navegação |
+| `incorporar.copiado` | Copiado | Copied | navegação |
+| `incorporar.selecionado` | Código selecionado | Code selected | navegação |
+| `incorporar.lido` | lido a | read on | conteúdo |
+| `incorporar.calculado` | calculado por este projeto | calculated by this project | conteúdo |
+| `incorporar.periodoEmFalta` | período não indicado | period not stated | conteúdo |
+| `incorporar.atualizado` | Este número foi atualizado a | This number was updated on | conteúdo |
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Este número ainda não se pode incorporar: um campo da sua proveniência está por confirmar na fonte. | er1b | viva | Recusa aprovada pela direção, nas linhas sem proveniência confirmada. |
+| conteudo | This number cannot be embedded yet: one field of its provenance is still to be confirmed at the source. | er1b | viva | Recusa aprovada pela direção, nas linhas sem proveniência confirmada. |
+
 ## EX2-b · as revisões da fonte
 
 As frases das mudanças no índice passam pela mesma auditoria `data-semana-declarado` da leitura da semana.

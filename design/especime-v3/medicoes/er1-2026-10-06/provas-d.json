@@ -1,0 +1,2631 @@
+{
+  "cabecaCodigo": "8ed75dfd1fdb00d57d977eee3beae009675b0ff0",
+  "celula": {
+    "comando": "node tests/incorporar/conferir.mjs",
+    "recibos": 6390,
+    "semCodigo": 16,
+    "comCodigo": 6374,
+    "json": 3195,
+    "plantas": [
+      {
+        "nome": "separador-em-falta",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "marca-por-confirmar",
+        "mensagem": "ER1 código: uma marca por confirmar não se incorpora.",
+        "mordeu": true
+      },
+      {
+        "nome": "valor-trocado",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "codigo-em-falta",
+        "mensagem": "ER1 código: falta o único código do recibo.",
+        "mordeu": true
+      },
+      {
+        "nome": "marca-no-paragrafo",
+        "mensagem": "ER1 código: marca fora do campo do recibo da própria linha.",
+        "mordeu": true
+      },
+      {
+        "nome": "codigo-editavel",
+        "mensagem": "ER1 código: marca fora do campo do recibo da própria linha.",
+        "mordeu": true
+      },
+      {
+        "nome": "campo-conferido-fora-do-bloco",
+        "mensagem": "ER1 código: o campo conferido não é o que o botão copia.",
+        "mordeu": true
+      },
+      {
+        "nome": "comentario-no-codigo",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "leitura-nao-literal",
+        "mensagem": "ER1 código: falta a leitura literal do campo.",
+        "mordeu": true
+      },
+      {
+        "nome": "codigo-sem-proveniencia-pt",
+        "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+        "mordeu": true
+      },
+      {
+        "nome": "aviso-em-falta-pt",
+        "mensagem": "ER1 aviso: falta a recusa de incorporação da edição.",
+        "mordeu": true
+      },
+      {
+        "nome": "codigo-sem-proveniencia-en",
+        "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+        "mordeu": true
+      },
+      {
+        "nome": "aviso-em-falta-en",
+        "mensagem": "ER1 aviso: falta a recusa de incorporação da edição.",
+        "mordeu": true
+      },
+      {
+        "nome": "marca-isolada-source-pt",
+        "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+        "mordeu": true
+      },
+      {
+        "nome": "marca-isolada-access_date-pt",
+        "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+        "mordeu": true
+      },
+      {
+        "nome": "marca-isolada-excerpt-pt",
+        "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+        "mordeu": true
+      },
+      {
+        "nome": "marca-isolada-source_url-pt",
+        "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+        "mordeu": true
+      },
+      {
+        "nome": "marca-isolada-document.title-pt",
+        "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+        "mordeu": true
+      },
+      {
+        "nome": "marca-isolada-document.edition-pt",
+        "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+        "mordeu": true
+      },
+      {
+        "nome": "marca-isolada-document.locator-pt",
+        "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+        "mordeu": true
+      },
+      {
+        "nome": "calculada-sem-data-sem-codigo-pt",
+        "mensagem": "ER1 código: falta o único código do recibo.",
+        "mordeu": true
+      },
+      {
+        "nome": "marca-isolada-source-en",
+        "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+        "mordeu": true
+      },
+      {
+        "nome": "marca-isolada-access_date-en",
+        "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+        "mordeu": true
+      },
+      {
+        "nome": "marca-isolada-excerpt-en",
+        "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+        "mordeu": true
+      },
+      {
+        "nome": "marca-isolada-source_url-en",
+        "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+        "mordeu": true
+      },
+      {
+        "nome": "marca-isolada-document.title-en",
+        "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+        "mordeu": true
+      },
+      {
+        "nome": "marca-isolada-document.edition-en",
+        "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+        "mordeu": true
+      },
+      {
+        "nome": "marca-isolada-document.locator-en",
+        "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+        "mordeu": true
+      },
+      {
+        "nome": "calculada-sem-data-sem-codigo-en",
+        "mensagem": "ER1 código: falta o único código do recibo.",
+        "mordeu": true
+      },
+      {
+        "nome": "separador-licenca-notas-pt",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "separador-licenca-notas-en",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "lugar-em-falta-custo-unitario-do-trabalho-2025-pt",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "lugar-em-falta-custo-unitario-do-trabalho-2025-en",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "lugar-em-falta-pib-pc-alentejo-2024-pt",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "lugar-em-falta-pib-pc-alentejo-2024-en",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "lugar-em-falta-evora-populacao-2021-pt",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "lugar-em-falta-evora-populacao-2021-en",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "lugar-em-falta-taxa-de-desemprego-2025-ue-pt",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "lugar-em-falta-taxa-de-desemprego-2025-ue-en",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "lugar-em-falta-despesa-por-funcao-2024-gf01-es-pt",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "lugar-em-falta-despesa-por-funcao-2024-gf01-es-en",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "lugar-em-falta-portugal-concentracao-vab4-2024-pt",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "lugar-em-falta-portugal-concentracao-vab4-2024-en",
+        "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+        "mordeu": true
+      },
+      {
+        "nome": "cors-em-falta",
+        "mensagem": "ER1 CORS: /livro-razao/custo-unitario-do-trabalho-2024.json tem estado ou cabeçalho incorreto.",
+        "mordeu": true
+      },
+      {
+        "nome": "cors-em-html",
+        "mensagem": "ER1 CORS: / tem estado ou cabeçalho incorreto.",
+        "mordeu": true
+      },
+      {
+        "nome": "moldura-aberta",
+        "mensagem": "ER1 moldura: / perdeu SAMEORIGIN.",
+        "mordeu": true
+      },
+      {
+        "nome": "data-inacessivel-pt",
+        "mensagem": "Uma tentativa sem confirmação não avança a data de leitura.",
+        "mordeu": true
+      },
+      {
+        "nome": "data-diverge-pt",
+        "mensagem": "Uma tentativa sem confirmação não avança a data de leitura.",
+        "mordeu": true
+      },
+      {
+        "nome": "data-inacessivel-en",
+        "mensagem": "Uma tentativa sem confirmação não avança a data de leitura.",
+        "mordeu": true
+      },
+      {
+        "nome": "data-diverge-en",
+        "mensagem": "Uma tentativa sem confirmação não avança a data de leitura.",
+        "mordeu": true
+      },
+      {
+        "nome": "json-nome",
+        "mensagem": "ER1 JSON: a apresentação difere da linha.",
+        "mordeu": true
+      },
+      {
+        "nome": "json-periodo",
+        "mensagem": "ER1 JSON: a apresentação difere da linha.",
+        "mordeu": true
+      },
+      {
+        "nome": "json-valor",
+        "mensagem": "ER1 JSON: a apresentação difere da linha.",
+        "mordeu": true
+      },
+      {
+        "nome": "json-unidade",
+        "mensagem": "ER1 JSON: a apresentação difere da linha.",
+        "mordeu": true
+      },
+      {
+        "nome": "json-unidadeLang",
+        "mensagem": "ER1 JSON: a apresentação difere da linha.",
+        "mordeu": true
+      },
+      {
+        "nome": "json-fonte",
+        "mensagem": "ER1 JSON: a apresentação difere da linha.",
+        "mordeu": true
+      },
+      {
+        "nome": "json-fonteLang",
+        "mensagem": "ER1 JSON: a apresentação difere da linha.",
+        "mordeu": true
+      },
+      {
+        "nome": "json-data",
+        "mensagem": "ER1 JSON: a apresentação difere da linha.",
+        "mordeu": true
+      },
+      {
+        "nome": "json-leitura",
+        "mensagem": "ER1 JSON: a apresentação difere da linha.",
+        "mordeu": true
+      },
+      {
+        "nome": "json-atribuicao",
+        "mensagem": "ER1 JSON: a apresentação difere da linha.",
+        "mordeu": true
+      },
+      {
+        "nome": "json-notas",
+        "mensagem": "ER1 JSON: a apresentação difere da linha.",
+        "mordeu": true
+      },
+      {
+        "nome": "json-atualizacao",
+        "mensagem": "ER1 JSON: a apresentação difere da linha.",
+        "mordeu": true
+      },
+      {
+        "nome": "metodo-sem-exemplo-pt",
+        "mensagem": "ER1 Método: falta a porta para o recibo de exemplo da edição.",
+        "mordeu": true
+      },
+      {
+        "nome": "metodo-sem-exemplo-en",
+        "mensagem": "ER1 Método: falta a porta para o recibo de exemplo da edição.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-metodo.exemplo-pt",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada metodo.exemplo nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-metodo.exemplo-en",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada metodo.exemplo nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.indisponivel-pt",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.indisponivel nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.indisponivel-en",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.indisponivel nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.titulo-pt",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.titulo nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.titulo-en",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.titulo nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.copiar-pt",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.copiar nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.copiar-en",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.copiar nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.copiado-pt",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.copiado nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.copiado-en",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.copiado nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.selecionado-pt",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.selecionado nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.selecionado-en",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.selecionado nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.lido-pt",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.lido nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.lido-en",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.lido nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.calculado-pt",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.calculado nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.calculado-en",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.calculado nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.periodoEmFalta-pt",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.periodoEmFalta nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.periodoEmFalta-en",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.periodoEmFalta nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.atualizado-pt",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.atualizado nas duas edições.",
+        "mordeu": true
+      },
+      {
+        "nome": "inventario-incorporar.atualizado-en",
+        "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.atualizado nas duas edições.",
+        "mordeu": true
+      }
+    ]
+  },
+  "navegador": {
+    "transporte": "Apenas o argumento da origem e o src do guião são mapeados ao servidor local; os pedidos entre portas distintas são reais, sem fulfill.",
+    "comando": "node tests/incorporar/navegador.mjs",
+    "linha": "custo-unitario-do-trabalho-2024",
+    "linhaComNotas": "credito-malparado-2024",
+    "antigo": "17,7",
+    "atual": "17,9",
+    "casos": [
+      {
+        "lang": "pt",
+        "modo": "normal",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": "Este número foi atualizado a 05.10.2026"
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "7,4",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · Este número foi atualizado a 05.10.2026",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Crédito malparado · Portugal, 2024: 2,4 % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · dado provisório",
+          "Índice de dívida · Abrantes, 2024: 7,4 % (limite legal = 150) · calculado por este projeto · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "pt",
+        "modo": "releitura",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-06",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-06",
+            "aviso": "Este número foi atualizado a 05.10.2026"
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "7,4",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 06.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 06.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · Este número foi atualizado a 05.10.2026",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Crédito malparado · Portugal, 2024: 2,4 % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · dado provisório",
+          "Índice de dívida · Abrantes, 2024: 7,4 % (limite legal = 150) · calculado por este projeto · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "pt",
+        "modo": "separador-notas-retirado",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": "Este número foi atualizado a 05.10.2026"
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "7,4",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · Este número foi atualizado a 05.10.2026",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Crédito malparado · Portugal, 2024: 2,4 % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 dado provisório",
+          "Índice de dívida · Abrantes, 2024: 7,4 % (limite legal = 150) · calculado por este projeto · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "pt",
+        "modo": "notas-retiradas",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": "Este número foi atualizado a 05.10.2026"
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "7,4",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · Este número foi atualizado a 05.10.2026",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Crédito malparado · Portugal, 2024: 2,4 % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Índice de dívida · Abrantes, 2024: 7,4 % (limite legal = 150) · calculado por este projeto · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "pt",
+        "modo": "proveniencia-por-confirmar",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,7",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "",
+            "aviso": null
+          },
+          {
+            "valor": "ensaio",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,7 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Crédito malparado · Portugal, 2024: 2,4 % · Eurostat, lido a 15.09.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · dado provisório",
+          "Índice de dívida · Abrantes, 2024: 7,4 % (limite legal = 150) · calculado por este projeto · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "pt",
+        "modo": "sem-js",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,7",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "",
+            "aviso": null
+          },
+          {
+            "valor": "ensaio",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,7 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Crédito malparado · Portugal, 2024: 2,4 % · Eurostat, lido a 15.09.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · dado provisório",
+          "Índice de dívida · Abrantes, 2024: 7,4 % (limite legal = 150) · calculado por este projeto · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [],
+        "cookies": 0
+      },
+      {
+        "lang": "pt",
+        "modo": "sem-cors",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,7",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "",
+            "aviso": null
+          },
+          {
+            "valor": "ensaio",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,7 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Crédito malparado · Portugal, 2024: 2,4 % · Eurostat, lido a 15.09.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · dado provisório",
+          "Índice de dívida · Abrantes, 2024: 7,4 % (limite legal = 150) · calculado por este projeto · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "pt",
+        "modo": "falha",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,7",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "",
+            "aviso": null
+          },
+          {
+            "valor": "ensaio",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,7 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Crédito malparado · Portugal, 2024: 2,4 % · Eurostat, lido a 15.09.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · dado provisório",
+          "Índice de dívida · Abrantes, 2024: 7,4 % (limite legal = 150) · calculado por este projeto · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "pt",
+        "modo": "json-malformado",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,7",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "",
+            "aviso": null
+          },
+          {
+            "valor": "ensaio",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,7 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Crédito malparado · Portugal, 2024: 2,4 % · Eurostat, lido a 15.09.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · dado provisório",
+          "Índice de dívida · Abrantes, 2024: 7,4 % (limite legal = 150) · calculado por este projeto · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "pt",
+        "modo": "outra-linha",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,7",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "",
+            "aviso": null
+          },
+          {
+            "valor": "ensaio",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,7 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Crédito malparado · Portugal, 2024: 2,4 % · Eurostat, lido a 15.09.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · dado provisório",
+          "Índice de dívida · Abrantes, 2024: 7,4 % (limite legal = 150) · calculado por este projeto · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "pt",
+        "modo": "redirecionamento",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,7",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "",
+            "aviso": null
+          },
+          {
+            "valor": "ensaio",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,7 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Custo do trabalho por unidade produzida (custo unitário do trabalho) · Portugal, 2024: 17,9 variação em três anos, % · Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Crédito malparado · Portugal, 2024: 2,4 % · Eurostat, lido a 15.09.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · dado provisório",
+          "Índice de dívida · Abrantes, 2024: 7,4 % (limite legal = 150) · calculado por este projeto · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "en",
+        "modo": "normal",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": "This number was updated on 05.10.2026"
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "7,4",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · This number was updated on 05.10.2026",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Non-performing loans · Portugal, 2024: 2,4 % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · provisional data",
+          "Debt index · Abrantes, 2024: 7,4 % (legal cap = 150) · calculated by this project · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "en",
+        "modo": "releitura",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-06",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-06",
+            "aviso": "This number was updated on 05.10.2026"
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "7,4",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 06.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 06.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · This number was updated on 05.10.2026",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Non-performing loans · Portugal, 2024: 2,4 % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · provisional data",
+          "Debt index · Abrantes, 2024: 7,4 % (legal cap = 150) · calculated by this project · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "en",
+        "modo": "separador-notas-retirado",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": "This number was updated on 05.10.2026"
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "7,4",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · This number was updated on 05.10.2026",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Non-performing loans · Portugal, 2024: 2,4 % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 provisional data",
+          "Debt index · Abrantes, 2024: 7,4 % (legal cap = 150) · calculated by this project · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "en",
+        "modo": "notas-retiradas",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": "This number was updated on 05.10.2026"
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "7,4",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · This number was updated on 05.10.2026",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Non-performing loans · Portugal, 2024: 2,4 % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Debt index · Abrantes, 2024: 7,4 % (legal cap = 150) · calculated by this project · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "en",
+        "modo": "proveniencia-por-confirmar",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,7",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "",
+            "aviso": null
+          },
+          {
+            "valor": "ensaio",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,7 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Non-performing loans · Portugal, 2024: 2,4 % · Eurostat, read on 15.09.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · provisional data",
+          "Debt index · Abrantes, 2024: 7,4 % (legal cap = 150) · calculated by this project · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "en",
+        "modo": "sem-js",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,7",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "",
+            "aviso": null
+          },
+          {
+            "valor": "ensaio",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,7 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Non-performing loans · Portugal, 2024: 2,4 % · Eurostat, read on 15.09.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · provisional data",
+          "Debt index · Abrantes, 2024: 7,4 % (legal cap = 150) · calculated by this project · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [],
+        "cookies": 0
+      },
+      {
+        "lang": "en",
+        "modo": "sem-cors",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,7",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "",
+            "aviso": null
+          },
+          {
+            "valor": "ensaio",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,7 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Non-performing loans · Portugal, 2024: 2,4 % · Eurostat, read on 15.09.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · provisional data",
+          "Debt index · Abrantes, 2024: 7,4 % (legal cap = 150) · calculated by this project · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "en",
+        "modo": "falha",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,7",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "",
+            "aviso": null
+          },
+          {
+            "valor": "ensaio",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,7 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Non-performing loans · Portugal, 2024: 2,4 % · Eurostat, read on 15.09.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · provisional data",
+          "Debt index · Abrantes, 2024: 7,4 % (legal cap = 150) · calculated by this project · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "en",
+        "modo": "json-malformado",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,7",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "",
+            "aviso": null
+          },
+          {
+            "valor": "ensaio",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,7 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Non-performing loans · Portugal, 2024: 2,4 % · Eurostat, read on 15.09.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · provisional data",
+          "Debt index · Abrantes, 2024: 7,4 % (legal cap = 150) · calculated by this project · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "en",
+        "modo": "outra-linha",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,7",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "",
+            "aviso": null
+          },
+          {
+            "valor": "ensaio",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,7 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Non-performing loans · Portugal, 2024: 2,4 % · Eurostat, read on 15.09.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · provisional data",
+          "Debt index · Abrantes, 2024: 7,4 % (legal cap = 150) · calculated by this project · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "en",
+        "modo": "redirecionamento",
+        "valores": [
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,7",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "17,9",
+            "lido": "2026-10-05",
+            "aviso": null
+          },
+          {
+            "valor": "2,4",
+            "lido": "",
+            "aviso": null
+          },
+          {
+            "valor": "ensaio",
+            "lido": "",
+            "aviso": null
+          }
+        ],
+        "textos": [
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,7 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Labour cost per unit of output (unit labour cost) · Portugal, 2024: 17,9 three-year change, % · Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+          "Non-performing loans · Portugal, 2024: 2,4 % · Eurostat, read on 15.09.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · provisional data",
+          "Debt index · Abrantes, 2024: 7,4 % (legal cap = 150) · calculated by this project · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+        ],
+        "pedidos": [
+          {
+            "caminho": "/incorporar.js",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/credito-malparado-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          },
+          {
+            "caminho": "/livro-razao/abrantes-indice-de-divida-2024.json",
+            "origem": "<servidor do projeto>",
+            "referer": null,
+            "metodo": "GET",
+            "corpo": null
+          }
+        ],
+        "cookies": 0
+      },
+      {
+        "lang": "pt",
+        "modo": "codigo-literal",
+        "comentarioConservado": true,
+        "textoCopiado": "<p><!--planta--></p>"
+      },
+      {
+        "lang": "pt",
+        "modo": "copia",
+        "clipboard": true,
+        "recusadoSeleciona": true,
+        "ausenteSeleciona": true
+      },
+      {
+        "lang": "en",
+        "modo": "copia",
+        "clipboard": true,
+        "recusadoSeleciona": true,
+        "ausenteSeleciona": true
+      }
+    ],
+    "capturas": [],
+    "plantas": [
+      {
+        "nome": "separador-notas-retirado-pt",
+        "mensagem": "ER1 navegador: falta o separador entre licença e notas.",
+        "mordeu": true
+      },
+      {
+        "nome": "notas-retiradas-pt",
+        "mensagem": "ER1 navegador: desapareceram as notas da linha.",
+        "mordeu": true
+      },
+      {
+        "nome": "proveniencia-por-confirmar-pt",
+        "mensagem": "O pedido recusado conserva o código colado inteiro.",
+        "mordeu": true
+      },
+      {
+        "nome": "sem-cors-pt",
+        "mensagem": "O pedido recusado conserva o código colado inteiro.",
+        "mordeu": true
+      },
+      {
+        "nome": "falha-pt",
+        "mensagem": "O pedido recusado conserva o código colado inteiro.",
+        "mordeu": true
+      },
+      {
+        "nome": "json-malformado-pt",
+        "mensagem": "O pedido recusado conserva o código colado inteiro.",
+        "mordeu": true
+      },
+      {
+        "nome": "outra-linha-pt",
+        "mensagem": "O pedido recusado conserva o código colado inteiro.",
+        "mordeu": true
+      },
+      {
+        "nome": "redirecionamento-pt",
+        "mensagem": "O pedido recusado conserva o código colado inteiro.",
+        "mordeu": true
+      },
+      {
+        "nome": "separador-notas-retirado-en",
+        "mensagem": "ER1 navegador: falta o separador entre licença e notas.",
+        "mordeu": true
+      },
+      {
+        "nome": "notas-retiradas-en",
+        "mensagem": "ER1 navegador: desapareceram as notas da linha.",
+        "mordeu": true
+      },
+      {
+        "nome": "proveniencia-por-confirmar-en",
+        "mensagem": "O pedido recusado conserva o código colado inteiro.",
+        "mordeu": true
+      },
+      {
+        "nome": "sem-cors-en",
+        "mensagem": "O pedido recusado conserva o código colado inteiro.",
+        "mordeu": true
+      },
+      {
+        "nome": "falha-en",
+        "mensagem": "O pedido recusado conserva o código colado inteiro.",
+        "mordeu": true
+      },
+      {
+        "nome": "json-malformado-en",
+        "mensagem": "O pedido recusado conserva o código colado inteiro.",
+        "mordeu": true
+      },
+      {
+        "nome": "outra-linha-en",
+        "mensagem": "O pedido recusado conserva o código colado inteiro.",
+        "mordeu": true
+      },
+      {
+        "nome": "redirecionamento-en",
+        "mensagem": "O pedido recusado conserva o código colado inteiro.",
+        "mordeu": true
+      }
+    ]
+  },
+  "verify": {
+    "cabeca": "8ed75dfd1fdb00d57d977eee3beae009675b0ff0",
+    "paralelo": 4,
+    "segundos": 252.715,
+    "ok": true,
+    "plantas": [
+      {
+        "falhas": [],
+        "planta": "a cadeia limpa passa, e o que o build já correu não corre outra vez",
+        "mordeu": true
+      },
+      {
+        "falhas": [],
+        "planta": "uma conferência nova só no verify corre sozinha",
+        "mordeu": true
+      },
+      {
+        "falhas": [
+          "U: «\"<casa>/.nvm/versions/node/v22.23.1/bin/node\" -e \"require('fs').writeFileSync(require('path').join('marcas','v2'),'')\"» está no verify, não é um passo do build e não correu aqui"
+        ],
+        "planta": "uma conferência tirada da escolha fecha a célula U",
+        "mordeu": true
+      },
+      {
+        "falhas": [
+          "U: «\"<casa>/.nvm/versions/node/v22.23.1/bin/node\" -e \"process.exit(3)\"» correu e não saiu com 0"
+        ],
+        "planta": "uma conferência vermelha fecha a corrida, e as outras acabam",
+        "mordeu": true
+      },
+      {
+        "falhas": [
+          "D: dist/x/index.html mudou de bytes durante as conferências"
+        ],
+        "planta": "uma conferência que escreve no dist/ fecha a célula D",
+        "mordeu": true
+      },
+      {
+        "falhas": [
+          "C: dist/version.json é de dddddddddddddddddddddddddddddddddddddddd e a árvore está em cccccccccccccccccccccccccccccccccccccccc",
+          "C: dist/prova.json é de dddddddddddddddddddddddddddddddddddddddd e a árvore está em cccccccccccccccccccccccccccccccccccccccc"
+        ],
+        "planta": "um dist/ de outra cabeça fecha a célula C",
+        "mordeu": true
+      },
+      {
+        "falhas": [
+          "U: o verify tem 5 passos pelos &&, e o leitor leu 4"
+        ],
+        "planta": "um passo vazio na cadeia não passa despercebido à contagem",
+        "mordeu": true
+      },
+      {
+        "falhas": [
+          "D: dist/x/index.html foi escrito durante as conferências (os bytes podem ter voltado, a hora de escrita não)"
+        ],
+        "planta": "uma conferência que escreve no dist/ e repõe os bytes fecha a célula D",
+        "mordeu": true
+      },
+      {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791371931963999000",
+          "inode": "240321570",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791371931963999000",
+          "inode": "240321578",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      },
+      {
+        "falhas": [
+          "D: fonte.txt foi escrito durante as conferências (os bytes podem ter voltado, a hora de escrita não)"
+        ],
+        "planta": "uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D",
+        "mordeu": true
+      },
+      {
+        "falhas": [
+          "C: dist/cadeia.json foi escrito a 2026-10-07T11:18:52.082Z, antes do carimbo desta construção (2026-10-07T12:17:52.083Z): é de outra construção"
+        ],
+        "planta": "um cadeia.json de outra construção fecha a célula C",
+        "mordeu": true
+      },
+      {
+        "falhas": [],
+        "planta": "uma conferência que escreve na árvore corre sozinha, depois do grupo",
+        "mordeu": true
+      }
+    ],
+    "corridos": [
+      {
+        "passo": "npm run check:alvos",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 183.407,
+        "inicio_s": 0,
+        "fim_s": 183.407
+      },
+      {
+        "passo": "npm run check:palavras",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 180.688,
+        "inicio_s": 0.001,
+        "fim_s": 180.689
+      },
+      {
+        "passo": "npm run check:moldura",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 137.68,
+        "inicio_s": 0.002,
+        "fim_s": 137.682
+      },
+      {
+        "passo": "npm run check:lugar",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 45.131,
+        "inicio_s": 0.003,
+        "fim_s": 45.134
+      },
+      {
+        "passo": "npm run check:indice",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 22.455,
+        "inicio_s": 45.134,
+        "fim_s": 67.589
+      },
+      {
+        "passo": "npm run check:cartao",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 11.933,
+        "inicio_s": 67.59,
+        "fim_s": 79.523
+      },
+      {
+        "passo": "npm run check:cabeca",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 5.882,
+        "inicio_s": 79.523,
+        "fim_s": 85.405
+      },
+      {
+        "passo": "npm run check:css",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 6.399,
+        "inicio_s": 85.405,
+        "fim_s": 91.804
+      },
+      {
+        "passo": "npm run check:alcance",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 4.966,
+        "inicio_s": 91.804,
+        "fim_s": 96.77
+      },
+      {
+        "passo": "npm run check:briefs",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 0.67,
+        "inicio_s": 96.77,
+        "fim_s": 97.44
+      },
+      {
+        "passo": "npm run check:leituras",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 21.425,
+        "inicio_s": 97.44,
+        "fim_s": 118.865
+      },
+      {
+        "passo": "npm run check:fontes",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 1.333,
+        "inicio_s": 118.865,
+        "fim_s": 120.198
+      },
+      {
+        "passo": "npm run mapa:unidades -- --verifica",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 0.161,
+        "inicio_s": 120.198,
+        "fim_s": 120.359
+      },
+      {
+        "passo": "npm run check:pais:auto-teste",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 1.449,
+        "inicio_s": 120.359,
+        "fim_s": 121.808
+      },
+      {
+        "passo": "npm run provar:eyetext",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 0.356,
+        "inicio_s": 121.808,
+        "fim_s": 122.164
+      },
+      {
+        "passo": "npm run provar:guardas",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 0.18,
+        "inicio_s": 122.164,
+        "fim_s": 122.344
+      },
+      {
+        "passo": "npm run check:mortos",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 2.122,
+        "inicio_s": 122.344,
+        "fim_s": 124.466
+      },
+      {
+        "passo": "npm run check:primeira",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 123.78,
+        "inicio_s": 124.466,
+        "fim_s": 248.246
+      },
+      {
+        "passo": "npm run check:privacidade",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 22.862,
+        "inicio_s": 137.682,
+        "fim_s": 160.544
+      },
+      {
+        "passo": "npm run check:sugestoes",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 0.198,
+        "inicio_s": 160.544,
+        "fim_s": 160.742
+      },
+      {
+        "passo": "npm run check:rotulos",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 3.262,
+        "inicio_s": 160.742,
+        "fim_s": 164.004
+      },
+      {
+        "passo": "npm run check:series",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 1.536,
+        "inicio_s": 164.005,
+        "fim_s": 165.541
+      },
+      {
+        "passo": "npm run check:indice-do-sitio",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 17.822,
+        "inicio_s": 165.541,
+        "fim_s": 183.363
+      },
+      {
+        "passo": "npm run check:explicacoes",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 5.749,
+        "inicio_s": 180.689,
+        "fim_s": 186.438
+      },
+      {
+        "passo": "npm run check:frases-compostas",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 33.577,
+        "inicio_s": 183.364,
+        "fim_s": 216.941
+      },
+      {
+        "passo": "npm run check:incorporar",
+        "fase": "grupo",
+        "codigo": 0,
+        "segundos": 17.68,
+        "inicio_s": 183.407,
+        "fim_s": 201.087
+      },
+      {
+        "passo": "npm run design:feixe",
+        "fase": "depois",
+        "codigo": 0,
+        "segundos": 2.09,
+        "inicio_s": 248.246,
+        "fim_s": 250.336
+      }
+    ],
+    "celulas": {
+      "U": {
+        "ok": true,
+        "falhas": [],
+        "passos_do_verify": 47,
+        "cobertos_pelo_build": 20,
+        "corridos_aqui": 27
+      },
+      "D": {
+        "ok": true,
+        "falhas": [],
+        "diferencas": 0,
+        "ficheiros": 14649,
+        "ficheiros_da_arvore": 21027
+      },
+      "C": {
+        "ok": true,
+        "falhas": [],
+        "cabeca": "8ed75dfd1fdb00d57d977eee3beae009675b0ff0",
+        "carimbo": "2026-10-07T12:15:38.083Z",
+        "escritos": {
+          "prova.json": "2026-10-07T12:16:45.023Z",
+          "cadeia.json": "2026-10-07T12:16:47.400Z"
+        }
+      }
+    }
+  },
+  "sha256LogVerify": "f098a4cfefa4975913cebe479d6dbec1fc413f4bae14d6758d3f993fadede9a0"
+}
