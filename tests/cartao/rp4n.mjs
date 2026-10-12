@@ -48,6 +48,11 @@ for (const [nome, altera, mensagem] of [
   const p={classe:'ausencia',pt:'A fonte publica este número sem o definir por palavras.',en:'The source publishes this number without defining it in words.'};
   e.folhas[0].partes=[p]; for(const k of e.chaves) familias[k].frase={pt:[p.pt],en:[p.en]};
   morde('ausência atribuída a publicador desconhecido',conferirAuditoriaDasFamilias({auditoria:a,familias}).erros,'a ausência não corresponde à falta do excerto');
+  const linhas=structuredClone(loadClaims({includeWithdrawn:true}));
+  for(const id of ['avisos-pt2030-abertos','avisos-pt2030-pessoas-singulares']) linhas.get(id).source='Publicador conhecido no ensaio';
+  assert.deepEqual(conferirAuditoriaDasFamilias({auditoria:a,familias,linhas}).erros,[],'a ausência com publicador conhecido tem de passar');
+  linhas.get('avisos-pt2030-abertos').excerpt='A fonte define a medida neste excerto.';
+  morde('ausência falsa com excerto existente',conferirAuditoriaDasFamilias({auditoria:a,familias,linhas}).erros,'a ausência não corresponde à falta do excerto');
 }
 {
   const linhas = structuredClone(loadClaims({ includeWithdrawn: true }));
@@ -288,9 +293,13 @@ export function conferirExcertoDaPensao(linha) {
 {
  const {conferirCaminhoFinal}=await import('../../scripts/caminho-final.mjs');
  for(const lang of ['pt','en']) {
-  morde(`separador final solto (${lang})`,conferirCaminhoFinal(parse('<nav class="caminho"><a>Livro</a><span class="caminho-sep">›</span></nav>')),'o caminho termina num separador sem destino');
+  const root=parse(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/agua-nao-faturada-portugal-2024/index.html`,'utf8'));
+  assert.deepEqual(conferirCaminhoFinal(root),[]);
+  root.querySelector('nav.caminho').insertAdjacentHTML('beforeend','<span class="caminho-sep">›</span>');
+  morde(`separador final solto (${lang})`,conferirCaminhoFinal(root),'o caminho termina num separador sem destino');
  }
 }
+if(process.argv.includes('--registo-g')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/g/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 if(process.argv.includes('--registo-f')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/f/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 if(process.argv.includes('--registo-e')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/e/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 assert.deepEqual(conferirAuditoriaDasFamilias().erros, []);
