@@ -12,14 +12,14 @@ unit: "milhões de euros"
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Dívida total / Total debt"
-name_source: "Movimento da dívida direta do Estado, Dívida total / Total debt, saldo em 31/a go/26, p. 2"
+name_source: "Movimento da dívida direta do Estado, Dívida total / Total debt, saldo em 31/ago/26, p. 2"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "IGCP"
 document:
   title: "Boletim Mensal"
   edition: "setembro de 2026"
-  locator: "Movimento da dívida direta do Estado, Dívida total / Total debt, saldo em 31/a go/26, p. 2"
+  locator: "Movimento da dívida direta do Estado, Dívida total / Total debt, saldo em 31/ago/26, p. 2"
   page: 2
   kind: "pdf"
 source_url: "https://www.igcp.pt/sites/default/files/2026-09/BM_set26.pdf#page=2"
@@ -38,7 +38,7 @@ check: null
 
 study: "oe-2026"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Localizador: Movimento da dívida direta do Estado, Dívida total / Total debt, saldo em 31/a go/26, p. 2. Saldo antes da cobertura cambial. O ponto no valor impresso separa milhares; não é uma casa decimal. Não é a dívida consolidada das administrações públicas na ótica de Maastricht. Contas nacionais, execução orçamental e dívida direta têm perímetros e critérios distintos; esta linha conserva o do documento citado. · Cruzado de ResearchHub content/20 Orcamento do Estado · divida-direta-do-estado-2026-08."
+note: "[note do motor] Localizador: Movimento da dívida direta do Estado, Dívida total / Total debt, saldo em 31/ago/26, p. 2. Saldo antes da cobertura cambial. O ponto no valor impresso separa milhares; não é uma casa decimal. Não é a dívida consolidada das administrações públicas na ótica de Maastricht. Contas nacionais, execução orçamental e dívida direta têm perímetros e critérios distintos; esta linha conserva o do documento citado. · Cruzado de ResearchHub content/20 Orcamento do Estado · divida-direta-do-estado-2026-08."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
