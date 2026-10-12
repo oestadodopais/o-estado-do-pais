@@ -13882,6 +13882,8 @@ Tudo aterrou dormente, sem nenhum interruptor.
 
 **O custo.** O construtor: 991 409 (a primeira passagem, 06.10, lida do registo da sessão do Codex como o total menos os símbolos em cache, a mesma conta que a linha «tokens used» faz: a ER1-e dá 123 087 pelas duas vias), 514 681 (ER1-b), 221 745 (ER1-c), 242 347 (a sessão retomada da ER1-d, o total com a parte de 07.10) 123 087 (ER1-e) e 97 478 (ER1-f) símbolos, pelas linhas «tokens used»; as leituras do Opus: 329 667 (a primeira, `xhigh`), 152 778 (ER1-b, `high`), 151 092 (ER1-c e ER1-d, `high`) e 105 226 (ER1-e, `high`) e 89 217 (ER1-f, `high`), pelos totais que a ferramenta reporta. A corrida `portão` do GitHub verde na cabeça que aterra.
 
+**Acrescento de 12.10.2026, na aterragem.** O `verify:deploy` da cabeça `44292c95` ficou vermelho na conferência nova do bloco (`ER1 CORS`): no ar, o cabeçalho `Access-Control-Allow-Origin: *` chegava a todas as respostas (a primeira página, os recibos HTML, o 404), e não só aos quatro caminhos da regra, porque a Vercel aplica os cabeçalhos de uma rota com `continue: true` a toda a resposta que passa por ela; o ensaio local do construtor (`cabecalhos.json`) simulava a regra e não a Vercel, e passou. A regra passa a terminal (sem `continue`), colocada depois dos redirecionamentos de anfitrião, no commit desta correção, e a conferência do `verify:deploy` é a única prova dos cabeçalhos no ar (M74).
+
 ### 1.185 As passagens EX1-d, EX1-e e EX1-f aterram: a explicação «Para onde vai o dinheiro do Estado em 2026» diz o que o saldo da execução até agosto quer dizer, compara o tamanho do défice com o que o Orçamento previa para o ano inteiro, e deixa de afirmar onde os juros se contam
 
 **Afecta:** nenhum

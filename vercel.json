@@ -20,13 +20,6 @@
       "continue": true
     },
     {
-      "src": "^/(?:livro-razao/(.*)\\.json|livro-razao\\.json|livro-razao\\.csv|incorporar\\.js)$",
-      "headers": {
-        "Access-Control-Allow-Origin": "*"
-      },
-      "continue": true
-    },
-    {
       "src": "/(.*)",
       "has": [
         {
@@ -76,6 +69,12 @@
       "status": 308,
       "headers": {
         "Location": "https://xn--oestadodopas-2fb.pt/$1"
+      }
+    },
+    {
+      "src": "^/(?:livro-razao/(.*)\\.json|livro-razao\\.json|livro-razao\\.csv|incorporar\\.js)$",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
       }
     },
     {
