@@ -676,6 +676,11 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | --- | --- | --- | --- |
 | h4 | 6 cadeias novas, 8 retiradas | por ler | Codex gpt-6-astra: texto do brief H4, §3, ponto 4, confirmado como final pela H4-3 na passagem H4-b. Os lugares e as famílias dizem a organização decidida na §1.172; a medição cega sai porque não foi exercida. A leitura a frio pelo Claude Opus fica a cargo do lugar de direção antes da fusão. A passagem H4-b acrescenta as portas do menu aos usos dos rótulos já inventariados, sem mudar frases de conteúdo. |
 
+## TP1 · os textos públicos dizem o que o projeto é, 07.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| tp1 | 4 cadeias novas, 4 retiradas | lida (`design/especime-v3/critica/LEITURA-TP1-2026-10-07.md`, o Codex `gpt-6-astra`, 07.10.2026, cinco plantas mordidas) | Redação do lugar de direção (Claude Fable 5.1) pela §1.181 (o acrescento (f)) e pela §1.182: os dois casos da secção da política do Método deixam de falar de uma pessoa e de portões («verificações automáticas», explicadas uma vez; «a direção decide»), e o terceiro caso («Nunca sem uma pessoa») sai. As quatro frases antigas dos casos passam a «retirada» na secção da divulgação. A frase da política, a frase do projeto e a frase do contacto não entram no inventário: o `gate:html` compara-as com o oráculo. Como a redação é de um modelo Claude, o diff lê-o o Codex `gpt-6-astra` antes da fusão, com cinco estragos plantados nas cópias do pacote; a entrada passa a «lida» com o nome do ficheiro da leitura. |
 
 ## ER1-b · o recibo incorporável, 07.10.2026
 

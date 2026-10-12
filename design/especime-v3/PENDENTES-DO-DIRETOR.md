@@ -1,5 +1,7 @@
 # Pendentes do diretor: o que só ele pode fazer, e ainda não está feito
 
+*Desde 07.10.2026 (§1.183) «o diretor» nomeia o lugar de direção; este ficheiro conserva o nome por ser história e lista o que só o financiador pode fazer (o dinheiro, as contas, o correio para fora, a exposição legal, a lista de recusa da conta dele). Onde as linhas dizem «o diretor», lê-se «o financiador».*
+
 *Mantido pelo lugar de direção. Uma linha por coisa, com a data em que ficou pendente, o que é, porque é dele, e o que destrava. Quando uma se faz, a linha ganha a data e passa para «Feitas»; nunca se apaga. A sessão seguinte lê este ficheiro antes de começar (está apontado no prompt), e logo a seguir a visão da casa, `VISAO.md` na raiz do repositório (o que a casa é, a pilha de camadas, as regras que não mudam, o horizonte das ideias): uma ideia que não esteja lá não existe para a sessão seguinte. Sem travessões na prosa.*
 
 ## Por fazer
@@ -45,6 +47,9 @@
 | 28.09.2026 | **O teto semanal do ciclo autónomo e o interruptor de pausa** (§1.134): o lugar de direção propõe o que já vale para as sessões (um quinto de cada semana de reserva, e o ciclo parado quando o uso passar os quatro quintos) e um interruptor que é uma variável do repositório do motor que ele liga e desliga | o dinheiro e os limites da subscrição são dele | o bloco AUT2, a sessão autónoma |
 | 28.09.2026 | **Ver a primeira página nova no ar**, em `oestadodopaís.pt` desde a aterragem do PP1 a 29.09.2026, no telemóvel, e passá-la aos amigos que acharam a anterior «too much», com as perguntas de sempre: o que procuraram, se encontraram, o que custou a ler | o diretor é o leitor | a iteração sobre o que ele disser |
 | 28.09.2026 | **As calculadoras do leitor** (o memorando do Codex de 28.09: a renda do próximo ano a partir da renda de hoje; o salário real a partir do salário de há um ano): o leitor escreve um número seu, que o navegador usa e não envia a lado nenhum | um formulário com um número pessoal precisa do «sim» dele | as calculadoras, depois do PP1 |
+
+| 07.10.2026 | **Apagar o ramo local antigo `rp4n-2026-10-06` do sítio** (nunca foi ao remoto; o ramo novo `rp4n-2026-10-07` tem a mesma história sem a pasta da leitura do construtor, e é o que aterra; o gancho recusou o apagar ao construtor do Codex, RP4N-10, e a lista de recusa reserva-o ao diretor): o comando é o de apagar um ramo com a opção de forçar, depois de a worktree `rp4n-2026-10-06` (hoje no ramo novo) ser removida na aterragem | a lista de recusa é dele | a condição da forma da RP4-n-d (`git log --all` sem a pasta `leitura-frio`) |
+| 07.10.2026 | **O terceiro lugar de leitura por subscrição**: conferir se o Antigravity da Google dá um cliente que os guiões possam lançar com a subscrição do Gemini dele, e qual é o plano; ou outra subscrição com cliente de várias famílias (o Copilot, a conferir); o ensaio com cinco plantas sobre o pacote da RP4-n-d, que o Opus leu a 07.10, está pronto para comparar | o acesso e a subscrição são dele | o terceiro leitor, para as semanas em que o Claude ou o Codex esgotem (a 07.10 o Claude parou aos noventa por cento com três leituras por fazer) |
 
 ## Feitas
 
