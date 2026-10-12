@@ -1,6 +1,6 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": "281b3a77e9b625d7e9308b4b19326a9ee4152e0c",
+ "cabeca": "793d2d7eba2ae075b89cdef47a29c409cced1244",
  "contas": {
   "paginas": 7902,
   "paginas_com_cartoes": 704,
@@ -1620,7 +1620,7 @@
   },
   "nacional|en|evora-prr-vencido-aprovado-2026": {
    "nome": {
-    "Funds contracted by intermediate and direct beneficiaries headquartered in Évora, in projects with an execution deadline before the snapshot date and no completion recorded, in the snapshot of 19.08.2026": 1
+    "Funds contracted by intermediate and direct beneficiaries headquartered in Évora, in projects with a completion deadline before the snapshot date and no completion recorded, in the snapshot of 19.08.2026": 1
    },
    "periodo": {
     "in #": 1
@@ -3404,7 +3404,7 @@
   },
   "nacional|pt|evora-prr-vencido-aprovado-2026": {
    "nome": {
-    "Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo de execução anterior à data do instantâneo e sem conclusão registada, no instantâneo de 19.08.2026": 1
+    "Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo de conclusão anterior à data do instantâneo e sem conclusão registada, no instantâneo de 19.08.2026": 1
    },
    "periodo": {
     "em #": 1
