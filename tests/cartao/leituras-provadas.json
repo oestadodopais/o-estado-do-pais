@@ -13478,8 +13478,8 @@
       ],
       "folhas": [
         {
-          "pt": "É o financiamento de que o Estado precisou para cobrir o défice do orçamento e adquirir ativos financeiros, descontando os recebimentos dessas operações e excluindo privatizações, e para reembolsar ou extinguir dívida. O défice é a despesa que excede a receita. Os ativos financeiros incluem títulos, participações e empréstimos. O quadro chama amortizações e anulações à parcela dos reembolsos e extinções, que aparece no excerto da fonte junto do total. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
-          "en": "It is the financing the State needed to cover the budget deficit and acquire financial assets, net of receipts from those operations and excluding privatisations, and to repay or extinguish debt. The deficit is expenditure in excess of revenue. Financial assets include securities, equity interests and loans. The table calls the repayment and cancellation component redemptions and cancellations; it appears in the source excerpt alongside the total. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period.",
+          "pt": "É o financiamento de que o Estado precisou para cobrir o défice do orçamento e adquirir ativos financeiros, descontando os recebimentos dessas operações e excluindo privatizações, e para reembolsar ou extinguir dívida. O défice é a despesa que excede a receita. Os ativos financeiros incluem títulos, participações e empréstimos. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+          "en": "It is the financing the State needed to cover the budget deficit and acquire financial assets, net of receipts from those operations and excluding privatisations, and to repay or extinguish debt. The deficit is expenditure in excess of revenue. Financial assets include securities, equity interests and loans. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period.",
           "partes": [
             {
               "pt": "É o financiamento de que o Estado precisou para cobrir o défice do orçamento e adquirir ativos financeiros, descontando os recebimentos dessas operações e excluindo privatizações, e para reembolsar ou extinguir dívida",
@@ -13548,14 +13548,75 @@
               ]
             },
             {
-              "pt": ". O quadro chama amortizações e anulações à parcela dos reembolsos e extinções, que aparece no excerto da fonte junto do total",
-              "en": ". The table calls the repayment and cancellation component redemptions and cancellations; it appears in the source excerpt alongside the total",
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            },
+            {
+              "pt": " Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação.",
+              "en": " Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred.",
               "classe": "diz",
               "apoios": [
                 {
+                  "origem": "jd1-divida-fundada",
+                  "campo": "excerto",
+                  "literal": "dívida pública contraída para ser totalmente amortizada num exercício orçamental subsequente ao exercício em que foi gerada."
+                }
+              ]
+            },
+            {
+              "pt": " A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+              "en": " Public budget accounts record receipts and payments during the period.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-eo-glossario",
+                  "campo": "excerto",
+                  "literal": "Contabilidade Pública (ótica da) ou Contabilidade Orçamental"
+                },
+                {
+                  "origem": "jd1-eo-glossario",
+                  "campo": "excerto",
+                  "literal": "recebimentos e pagamentos ocorridos em dado período."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "amortizacoes-e-anulacoes-de-divida-fundada"
+      ],
+      "nome": {
+        "pt": "Amortizações e anulações de dívida fundada do Estado, contabilidade orçamental pública",
+        "en": "State funded debt redemptions and cancellations, public budget accounts"
+      },
+      "origens": [
+        "jd1-igcp-financiamento",
+        "jd1-divida-fundada",
+        "jd1-eo-glossario"
+      ],
+      "folhas": [
+        {
+          "pt": "É a parcela do financiamento do Estado usada para reembolsar ou extinguir dívida fundada. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+          "en": "It is the share of State financing used to repay or extinguish funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period.",
+          "partes": [
+            {
+              "pt": "É a parcela do financiamento do Estado usada para reembolsar ou extinguir dívida fundada",
+              "en": "It is the share of State financing used to repay or extinguish funded debt",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada)"
+                },
+                {
                   "origem": "jd1-igcp-financiamento",
                   "campo": "excerto",
-                  "literal": "2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada)"
+                  "literal": "financiamento do Estado"
                 }
               ]
             },

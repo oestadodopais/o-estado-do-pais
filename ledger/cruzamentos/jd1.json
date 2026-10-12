@@ -9,6 +9,17 @@
   "exporter": "ResearchHub/publisher/export_site_rows.py",
   "origin": "ResearchHub",
   "rows": {
+    "amortizacoes-e-anulacoes-de-divida-fundada-2025": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-10-12",
+      "exported_row_sha256": "a4518c5edbf9e2d96554173122b815acb9ed712bee1e542b8cef3d39c2b8c2b4",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "8739ac639c5c2550ef45a8a9b20f037a65a9e882c55b1a2558269ae458736e46",
+      "rh_id": "amortizacoes-e-anulacoes-de-divida-fundada-2025",
+      "rh_ledger_sha256": "17c1cab92ec697a1a530482f319a982b9e9cfb3c64eb4eacb4f7c0a68bc15d7a",
+      "rh_study": "20 Orcamento do Estado",
+      "verifications_at_export": 0
+    },
     "custo-da-divida-emitida-2026-08": {
       "corrections_at_export": 0,
       "crop_sha256": "b29033cbba25a2182ff6da4bd1a6bdf68d5b190ce1207d9c453a342cb9a18ce9",
@@ -17,7 +28,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ef836b5316c57eac6c69f844b0c0fdb6f8c6a137887804a31e4855320c0a8935",
       "rh_id": "custo-da-divida-emitida-2026-08",
-      "rh_ledger_sha256": "76e85b3d987159b037b119a426b0e7c47579869ac0b7daff55a58270499a2dda",
+      "rh_ledger_sha256": "17c1cab92ec697a1a530482f319a982b9e9cfb3c64eb4eacb4f7c0a68bc15d7a",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -29,7 +40,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "951803edcf4d49d05bfdc40785f962db8736e941e457314e6ff37b6d2c19cecd",
       "rh_id": "custo-do-stock-da-divida-direta-2025",
-      "rh_ledger_sha256": "76e85b3d987159b037b119a426b0e7c47579869ac0b7daff55a58270499a2dda",
+      "rh_ledger_sha256": "17c1cab92ec697a1a530482f319a982b9e9cfb3c64eb4eacb4f7c0a68bc15d7a",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -40,7 +51,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2cfab7c450ec430955569b20875fd99ac78796dbde8ca2fca93264315383bbec",
       "rh_id": "divida-direta-do-estado-2026-08",
-      "rh_ledger_sha256": "76e85b3d987159b037b119a426b0e7c47579869ac0b7daff55a58270499a2dda",
+      "rh_ledger_sha256": "17c1cab92ec697a1a530482f319a982b9e9cfb3c64eb4eacb4f7c0a68bc15d7a",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -51,7 +62,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7db465693d165111cebb385df74a873fea71cdd62a4e79bab364a792dc3e22fe",
       "rh_id": "emissoes-de-divida-fundada-2025",
-      "rh_ledger_sha256": "76e85b3d987159b037b119a426b0e7c47579869ac0b7daff55a58270499a2dda",
+      "rh_ledger_sha256": "17c1cab92ec697a1a530482f319a982b9e9cfb3c64eb4eacb4f7c0a68bc15d7a",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -62,7 +73,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "842f87b9e5d8d5247947a1b0d7a3d129637044bb0eaaef3693f9021c2230c9b1",
       "rh_id": "juros-das-administracoes-publicas-2024",
-      "rh_ledger_sha256": "76e85b3d987159b037b119a426b0e7c47579869ac0b7daff55a58270499a2dda",
+      "rh_ledger_sha256": "17c1cab92ec697a1a530482f319a982b9e9cfb3c64eb4eacb4f7c0a68bc15d7a",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -73,7 +84,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "60bdb4381dc4357f630dacce836372d264e89e9c68ad9dcc757236a8f79f8d67",
       "rh_id": "juros-das-administracoes-publicas-2025",
-      "rh_ledger_sha256": "76e85b3d987159b037b119a426b0e7c47579869ac0b7daff55a58270499a2dda",
+      "rh_ledger_sha256": "17c1cab92ec697a1a530482f319a982b9e9cfb3c64eb4eacb4f7c0a68bc15d7a",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -84,7 +95,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2d974a0f6e4e9b2ceb772fe4f1312675a864c078f3f0841590286df9ab4609e4",
       "rh_id": "juros-das-administracoes-publicas-2025-ue",
-      "rh_ledger_sha256": "76e85b3d987159b037b119a426b0e7c47579869ac0b7daff55a58270499a2dda",
+      "rh_ledger_sha256": "17c1cab92ec697a1a530482f319a982b9e9cfb3c64eb4eacb4f7c0a68bc15d7a",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -95,7 +106,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ccc02480272e26f42c88e61f3708fb2295bad3b11a9baefe47ba159c647c3b0a",
       "rh_id": "juros-das-administracoes-publicas-pib-2024",
-      "rh_ledger_sha256": "76e85b3d987159b037b119a426b0e7c47579869ac0b7daff55a58270499a2dda",
+      "rh_ledger_sha256": "17c1cab92ec697a1a530482f319a982b9e9cfb3c64eb4eacb4f7c0a68bc15d7a",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -106,7 +117,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6d31f97a5ac5786683caa3ab2c83b054fdce48b886e7b37053289926763bde1d",
       "rh_id": "juros-das-administracoes-publicas-pib-2025",
-      "rh_ledger_sha256": "76e85b3d987159b037b119a426b0e7c47579869ac0b7daff55a58270499a2dda",
+      "rh_ledger_sha256": "17c1cab92ec697a1a530482f319a982b9e9cfb3c64eb4eacb4f7c0a68bc15d7a",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -117,7 +128,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "45078c6564edcd4be6416e3b0f1d5c36495f95d175c613020bb677e3bff62d63",
       "rh_id": "juros-e-outros-encargos-execucao-2025-08",
-      "rh_ledger_sha256": "76e85b3d987159b037b119a426b0e7c47579869ac0b7daff55a58270499a2dda",
+      "rh_ledger_sha256": "17c1cab92ec697a1a530482f319a982b9e9cfb3c64eb4eacb4f7c0a68bc15d7a",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -128,7 +139,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "013662323e7689b9e38fe12125782f772774791af527061e3cf92f0459052991",
       "rh_id": "juros-e-outros-encargos-execucao-2026-08",
-      "rh_ledger_sha256": "76e85b3d987159b037b119a426b0e7c47579869ac0b7daff55a58270499a2dda",
+      "rh_ledger_sha256": "17c1cab92ec697a1a530482f319a982b9e9cfb3c64eb4eacb4f7c0a68bc15d7a",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -139,7 +150,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4792914435119d22f9db4816e4610fe971d40bf17b5bf540eccc911c8fc61965",
       "rh_id": "necessidades-brutas-de-financiamento-2025",
-      "rh_ledger_sha256": "76e85b3d987159b037b119a426b0e7c47579869ac0b7daff55a58270499a2dda",
+      "rh_ledger_sha256": "17c1cab92ec697a1a530482f319a982b9e9cfb3c64eb4eacb4f7c0a68bc15d7a",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -150,7 +161,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "79ccd515705da03b07967e259487c9d5545fe35cf339e0dc59c4a0af9b4e4868",
       "rh_id": "pib-nominal-notificacao-setembro-2024",
-      "rh_ledger_sha256": "76e85b3d987159b037b119a426b0e7c47579869ac0b7daff55a58270499a2dda",
+      "rh_ledger_sha256": "17c1cab92ec697a1a530482f319a982b9e9cfb3c64eb4eacb4f7c0a68bc15d7a",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     },
@@ -161,7 +172,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9d9f2b223523a18b1b03adb07930e94e175d60d6f034ca871a2d444e4c422749",
       "rh_id": "pib-nominal-notificacao-setembro-2025",
-      "rh_ledger_sha256": "76e85b3d987159b037b119a426b0e7c47579869ac0b7daff55a58270499a2dda",
+      "rh_ledger_sha256": "17c1cab92ec697a1a530482f319a982b9e9cfb3c64eb4eacb4f7c0a68bc15d7a",
       "rh_study": "20 Orcamento do Estado",
       "verifications_at_export": 0
     }

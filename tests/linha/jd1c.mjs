@@ -31,4 +31,18 @@ for (const base of ['juros-das-administracoes-publicas', 'pib-nominal-notificaca
     recusa(`Comparação sem União ${id}/${lang}`, conferirNotas(id, frase + (lang === 'pt' ? ' A comparação' : ' The comparison'), lang), 'JD1-c: frase de comparação sem a linha da União');
   }
 }
+const { parcelaDoFinanciamento, FINANCIAMENTO_JD1, AMORTIZACOES_JD1 } = await import('../../src/lib/frases-jd1.mjs');
+function confereParcela(partes) {
+  return JSON.stringify(partes.filter(p => typeof p !== 'string').map(p => p.claim)) === JSON.stringify([FINANCIAMENTO_JD1, AMORTIZACOES_JD1])
+    ? [] : ['JD1-c: parcela sem os dois montantes por token'];
+}
+for (const lang of ['pt','en']) {
+  const frase = parcelaDoFinanciamento(FINANCIAMENTO_JD1, lang);
+  assert.deepEqual(confereParcela(frase), []);
+  recusa(`Parcela literal/${lang}`, confereParcela(frase.map(p => p.claim === AMORTIZACOES_JD1 ? '56 976' : p)), 'JD1-c: parcela sem os dois montantes por token');
+  if (!process.argv.includes('--declaracoes')) {
+    const root = parse(fs.readFileSync(`dist/${lang === 'pt' ? 'livro-razao' : 'en/ledger'}/${FINANCIAMENTO_JD1}/index.html`, 'utf8'));
+    assert.deepEqual(root.querySelector('[data-jd1-parcela]').querySelectorAll('[data-claim]').map(n => n.getAttribute('data-claim')), [FINANCIAMENTO_JD1, AMORTIZACOES_JD1]);
+  }
+}
 console.log(JSON.stringify({passou: true, plantas}, null, 2));
