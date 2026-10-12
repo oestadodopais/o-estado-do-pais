@@ -141,7 +141,7 @@ def escrever_relatorio(resultados, finais, anteriores, aceites, gate, plantas, c
             f"Bytes por fonte: `{json.dumps(r['bytes_por_fonte'], ensure_ascii=False)}`. Pedidos por fonte: `{json.dumps(r['pedidos_por_fonte'], ensure_ascii=False)}`.",
             f"Estados: `{json.dumps({k: v['estado'] for k, v in r['fontes'].items()}, ensure_ascii=False)}`. Fontes lidas: `{json.dumps({k: v.get('lida', False) for k, v in r['fontes'].items()})}`.",
             f"Limitações por código: `{json.dumps(dict(Counter(l['codigo'] for l in r['limitacoes'])), ensure_ascii=False)}`."]
-        linhas += [f"* {origem}: " + ' '.join(dict.fromkeys(l['razao'] for l in r['limitacoes'] if l['origem'] == origem)) for origem in r['fontes'] if any(l['origem'] == origem for l in r['limitacoes'])]
+        linhas += [''] + [f"* {origem}: " + ' '.join(dict.fromkeys(l['razao'] for l in r['limitacoes'] if l['origem'] == origem)) for origem in r['fontes'] if any(l['origem'] == origem for l in r['limitacoes'])]
         linhas += ['', f"Falhas: `{json.dumps(r['falhas_detalhe'], ensure_ascii=False)}`. Tarefas pendentes: {len(r['fila'])}, integralmente em `corridas-d.json`.",
             f"Reconferências adiadas por fonte: `{json.dumps(dict(Counter(x['origem'] for x in r['reconferencias_adiadas'])))}`. Os corpos adiados não foram reconfirmados remotamente nessa corrida."]
     for r in anteriores:
@@ -160,13 +160,14 @@ def escrever_relatorio(resultados, finais, anteriores, aceites, gate, plantas, c
         '| --- | --- | ---: | ---: | ---: | ---: | --- |']
     for c in conta['cenarios']:
         linhas.append(f"| `{c['base']}` | {c['base_sem_falhas']} | {c['bytes_comuns']} / {c['tetos']['bytes']} | {c['bytes_cumulativo']} / {c['tetos']['bytes_ficheiro_cumulativo']} | {c['bytes_totais']} | {c['pedidos']} / {c['tetos']['pedidos']} | {c['cabe_comum'] and c['cabe_cumulativo'] and c['cabem_pedidos']} |")
+    for c in conta['cenarios']:
         linhas += ['', f"Código da base: `{c['codigo_base']}`. Bytes por fonte: `{json.dumps(c['bytes_por_fonte'])}`. Pedidos por fonte: `{json.dumps(c['pedidos_por_fonte'])}`.", '']
     linhas += ['Não se extrapola o tempo de uma transferência alterada nem o crescimento do corpo. O cenário é uma conta com o corpo observado, não uma corrida com mudança.', '',
         '### O resumo de 12.10 refeito, inteiro', '', '```text', resumos['2026-10-12'].rstrip(), '```', '',
         'As designações de todos os atos novos ficam no resumo; as descrições literais e os oradores ocupam o espaço restante. As razões não são cortadas e cada falha aparece uma vez. A arrumação fica no fim. O espaço exterior ao CDATA é removido na apresentação, mantendo intactos o arquivo e os selos históricos.', '',
         '### Plantas, portão e preservação', '',
         f"Plantas e controlos: {sum(x['passou'] for x in plantas['plantas'])} de {len(plantas['plantas'])}, em `plantas-d.json`."]
-    linhas += [f"* `{x['planta']}`: «{x['mensagem']}»; passou: {x['passou']}." for x in plantas['plantas']]
+    linhas += [''] + [f"* `{x['planta']}`: «{x['mensagem']}»; passou: {x['passou']}." for x in plantas['plantas']]
     linhas += ['', f"Portão do motor: `{aceites['portao']}`, lido de `portoes-d/motor.codigo`, na cabeça `{gate['cabeca']}`. O registo lista a suite de vigilância e as plantas executadas. Provas dos fluxos em `fluxo-d.json` e `fluxos-motor-d.json`.", '',
         f"Código do motor: `{codigo}`. Código dos guiões do sítio: `{codigo_sitio}`. Cabeças medidas e commits em `cabecas-d.json`; o commit de fecho é posterior à medição. Hashes de todas as corridas em `d/hashes-todas-corridas.json`.", '',
         'A procura de fugas cobre as listas dos ficheiros tocados nos dois repositórios e os corpos descodificados. O conhecido-positivo cria uma cópia temporária, planta um ficheiro e chama o mesmo detetor; resultado em `d/fugas-positivo.json`. Listas completas e caminhos protegidos em `preservacao-d.json`.', '',
