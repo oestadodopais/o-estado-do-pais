@@ -201,6 +201,8 @@ export function lugarNoRecibo(id, lang) {
 export function nomeDaFonteNoRecibo(id) {
   const c = /** @type {any} */ (getClaim(id));
   const util = (/** @type {unknown} */ v) => typeof v === 'string' && v.trim() !== '' && v !== '[a verificar]';
+  // RP4-n-f: o AA08b tem rótulo relido na página; o título do relatório não é o nome do indicador.
+  if (id === 'agua-nao-faturada-portugal-2024' && util(c.name)) return { campo: /** @type {const} */ ('name'), valor: /** @type {string} */ (c.name) };
   if (util(c.document?.title)) return { campo: /** @type {const} */ ('document.title'), valor: /** @type {string} */ (c.document.title) };
   if (util(c.name)) return { campo: /** @type {const} */ ('name'), valor: /** @type {string} */ (c.name) };
   return null;

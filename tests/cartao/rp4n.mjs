@@ -248,6 +248,9 @@ export function conferirExcertoDaPensao(linha) {
   const id='agua-nao-faturada-portugal-2024';
   const cabeca=cabecaDoRecibo(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/${id}/index.html`,'utf8'));
   assert.deepEqual(conferirCabecaDoRecibo(cabeca,id,lang,{ctx,cartoes}),[]);
+  const semRotulo=cabecaDoRecibo(cabeca.outerHTML);
+  semRotulo.querySelector('.linha-nome-da-fonte [data-linha-campo="name"]').setAttribute('data-linha-campo','document.title');
+  morde(`título do relatório em vez do rótulo da água (${lang})`,conferirCabecaDoRecibo(semRotulo,id,lang,{ctx,cartoes}),'o nome na fonte da água não é o rótulo AA08b conferido');
   cabeca.querySelector('[data-def-origem="rp4n-agua-nao-faturada"]').remove();
   morde(`origem da água apagada do recibo (${lang})`,conferirCabecaDoRecibo(cabeca,id,lang,{ctx,cartoes}),'a origem visível da definição perdeu o documento ou o excerto');
  }
