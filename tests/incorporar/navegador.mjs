@@ -11,7 +11,8 @@ import { allClaims, eDerivada, camposPorVerificar } from '../../src/lib/ledger.m
 import { SITE_URL, SITE_HOST_DISPLAY } from '../../site.config.mjs';
 import { routePath } from '../../src/lib/routes.mjs';
 import { t } from '../../src/i18n/strings.mjs';
-import { dadosDaIncorporacao, podeIncorporar } from '../../src/lib/incorporar.mjs';
+import { codigoDaIncorporacao, dadosDaIncorporacao, podeIncorporar } from '../../src/lib/incorporar.mjs';
+import { jsonDaLinha } from '../../src/lib/conjunto.mjs';
 import { lerPaginaComCodigo } from '../../scripts/incorporar-do-portao.mjs';
 const dist = path.resolve(process.env.OEDP_DIST || 'dist');
 const i = process.argv.indexOf('--json');
@@ -33,9 +34,19 @@ assert.deepEqual(camposPorVerificar(recusadaExcerto), ['excerpt']);
 assert.deepEqual(camposPorVerificar(recusadaEndereco), ['source_url']);
 assert.equal(podeIncorporar(recusadaEndereco), false);
 const recusadas = [recusadaExcerto, recusadaEndereco];
-const jsonEndereco = JSON.parse(fs.readFileSync(`${dist}/livro-razao/${c.id}.json`, 'utf8'));
-jsonEndereco.linha = {...jsonEndereco.linha, id:recusadaEndereco.id, source_url:recusadaEndereco.source_url};
-delete jsonEndereco.incorporacao;
+const recusas = recusadas.map((linha, indice) => {
+  const campo = indice === 0 ? 'excerpt' : 'source_url';
+  const verdadeiro = JSON.parse(jsonDaLinha(linha));
+  assert.equal(Object.hasOwn(verdadeiro, 'incorporacao'), false);
+  if (campo === 'excerpt') assert.deepEqual(verdadeiro, JSON.parse(fs.readFileSync(`${dist}/livro-razao/${linha.id}.json`, 'utf8')));
+  for (const lang of ['pt','en']) assert.equal(codigoDaIncorporacao(linha, lang), null);
+  // Só a cópia recebe apresentação indevida. O JSON verdadeiro não é retocado.
+  const estragado = structuredClone(verdadeiro);
+  estragado.incorporacao = Object.fromEntries(['pt','en'].map(lang => [lang, dadosDaIncorporacao(campo === 'source_url' ? c : linha, lang)]));
+  for (const lang of ['pt','en']) assert.equal(estragado.incorporacao[lang].valor, verdadeiro.linha.value);
+  return {linha, campo, verdadeiro, estragado,
+    estrago:`Acrescentado incorporacao com apresentação completa à cópia do JSON recusado só por ${campo}.`};
+});
 const antigo = c.corrections.find(x=>x.kind==='atualizacao' && x.new_value===c.value).old_value;
 const tipos = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css','.json':'application/json','.woff2':'font/woff2','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp'};
 const codigos = Object.fromEntries(['pt','en'].map(lang=>[lang,parse(fs.readFileSync(`${dist}${routePath('linha',lang,{slug:c.id})}/index.html`,'utf8')).querySelector('[data-incorporar-codigo]').textContent]));
@@ -67,8 +78,10 @@ const servidor = http.createServer((req,res)=>{
   try {
     const caminho = new URL(req.url,'http://local.invalid').pathname;
     for (const r of regras) if (r.src && !r.has && new RegExp('^'+r.src+'$').test(caminho)) for (const [k,v] of Object.entries(r.headers??{})) res.setHeader(k,v);
-    if (caminho === `/livro-razao/${recusadaEndereco.id}.json`) {
-      res.setHeader('Content-Type',tipos['.json']); res.end(JSON.stringify(jsonEndereco)); return;
+    const recusa = recusas.find(r => caminho === `/livro-razao/${r.linha.id}.json`);
+    if (recusa) {
+      const doc = modoAtual === 'recusado-com-campo-'+recusa.campo ? recusa.estragado : recusa.verdadeiro;
+      res.setHeader('Content-Type',tipos['.json']); res.end(JSON.stringify(doc)); return;
     }
     let f = path.resolve(dist,'.'+decodeURIComponent(caminho));
     if (!f.startsWith(dist+path.sep) && f!==dist) throw Error('fora');
@@ -93,13 +106,13 @@ const blog = http.createServer((req,res)=>res.setHeader('Content-Type','text/htm
 async function abrir(s) {await new Promise(ok=>s.listen(0,'127.0.0.1',ok));return `http://127.0.0.1:${s.address().port}`;}
 const sitio = await abrir(servidor), anfitria = await abrir(blog);
 const navegador = await chromium.launch({headless:true});
-const r = {transporte:'Apenas o argumento da origem e o src do guião são mapeados ao servidor local; os pedidos entre portas distintas são reais, sem fulfill.',comando:'node tests/incorporar/navegador.mjs',linha:c.id,linhaComNotas:cNotas.id,antigo,atual:c.value,casos:[],capturas:[],plantas:[]};
+const r = {transporte:'Apenas o argumento da origem e o src do guião são mapeados ao servidor local; os pedidos entre portas distintas são reais, sem fulfill.',comando:'node tests/incorporar/navegador.mjs',linha:c.id,linhaComNotas:cNotas.id,antigo,atual:c.value,casos:[],capturas:[],plantas:[],recusas:[]};
 const json = JSON.parse(fs.readFileSync(`${dist}/livro-razao/${c.id}.json`,'utf8'));
 const diaSeguinte = new Date(Math.max(...[c.access_date,...(c.verifications??[]).map(v=>v.date)].filter(Boolean).map(d=>Date.parse(d))) + 24*60*60*1000).toISOString().slice(0,10);
 const linhaRelida = {...c,verifications:[...(c.verifications??[]),{date:diaSeguinte,result:'igual'}]};
 const jsonRelido = {...json,linha:linhaRelida,incorporacao:Object.fromEntries(['pt','en'].map(lang=>[lang,dadosDaIncorporacao(linhaRelida,lang)]))};
 try {
-  for (const lang of ['pt','en']) for (const modo of ['normal','releitura','separador-leitura-retirado','separador-notas-retirado','notas-retiradas','proveniencia-por-confirmar','sem-js','sem-cors','falha','json-malformado','outra-linha','redirecionamento']) {
+  for (const lang of ['pt','en']) for (const modo of ['normal',...recusas.map(r => 'recusado-com-campo-'+r.campo),'releitura','separador-leitura-retirado','separador-notas-retirado','notas-retiradas','proveniencia-por-confirmar','sem-js','sem-cors','falha','json-malformado','outra-linha','redirecionamento']) {
     const ctx = await navegador.newContext({javaScriptEnabled:modo!=='sem-js', viewport:{width:390,height:900},deviceScaleFactor:1,colorScheme:'light',reducedMotion:'reduce'});
     const pedidos = [];
     modoAtual=modo;
@@ -124,12 +137,23 @@ try {
     assert.equal(valores[2].valor,c.value);
     assert.equal(valores[2].aviso,null);
     const originaisRecusados = parse(blogue(lang)).querySelectorAll('.oedp-numero').slice(-recusadas.length);
-    for (const [indice, linha] of recusadas.entries()) {
-      const mensagem = `ER1 navegador: a recusa só por ${indice === 0 ? 'excerpt' : 'source_url'} alterou o parágrafo colado.`;
-      assert.equal(valores[5+indice].html,originaisRecusados[indice].outerHTML,mensagem);
-      if (modo === 'normal') r.plantas.push({nome:'recusado-isolado-'+(indice === 0 ? 'excerpt' : 'source_url')+'-'+lang,mensagem,mordeu:true});
+    for (const [indice, recusa] of recusas.entries()) {
+      const mensagem = `ER1 navegador: a recusa só por ${recusa.campo} alterou o parágrafo colado.`;
+      const conferirRecusa = () => assert.equal(valores[5+indice].html,originaisRecusados[indice].outerHTML,mensagem);
+      const plantada = modo === 'recusado-com-campo-'+recusa.campo;
+      let falha = null;
+      if (plantada) {
+        assert.throws(conferirRecusa, erro => {
+          falha = {codigo:erro.code, mensagem:erro.message.split('\n')[0]};
+          return falha.codigo === 'ERR_ASSERTION' && falha.mensagem === mensagem;
+        });
+        r.plantas.push({nome:'recusado-isolado-'+recusa.campo+'-'+lang,estrago:recusa.estrago,mensagem:falha.mensagem,mordeu:true});
+      } else conferirRecusa();
+      if (modo === 'normal' || plantada) r.recusas.push({lang,modo,campo:recusa.campo,linha:recusa.linha.id,
+        jsonComCampo:Object.hasOwn(plantada ? recusa.estragado : recusa.verdadeiro,'incorporacao'),
+        compositor:codigoDaIncorporacao(recusa.linha,lang),antes:originaisRecusados[indice].outerHTML,depois:valores[5+indice].html,falha});
     }
-    if (['normal','releitura','separador-leitura-retirado','separador-notas-retirado','notas-retiradas'].includes(modo)) {
+    if (modo.startsWith('recusado-com-campo-') || ['normal','releitura','separador-leitura-retirado','separador-notas-retirado','notas-retiradas'].includes(modo)) {
       const esperado = modo==='releitura' ? jsonRelido : json;
       const d = esperado.incorporacao[lang];
       const mensagemLeitura = 'ER1 navegador: a leitura até ao fim da atribuição difere, incluindo o separador.';
