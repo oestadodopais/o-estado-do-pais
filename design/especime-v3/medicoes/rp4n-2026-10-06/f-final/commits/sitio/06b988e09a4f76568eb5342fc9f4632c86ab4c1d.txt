@@ -1,0 +1,5 @@
+06b988e09a4f76568eb5342fc9f4632c86ab4c1d
+docs(rp4n-f): registar leitura, plantas e mandato sem caminhos locais
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

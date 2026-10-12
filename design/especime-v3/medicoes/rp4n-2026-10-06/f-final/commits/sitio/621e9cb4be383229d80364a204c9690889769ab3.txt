@@ -1,0 +1,5 @@
+621e9cb4be383229d80364a204c9690889769ab3
+test(rp4n-f): recusar retiradas em todas as exportações de texto
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

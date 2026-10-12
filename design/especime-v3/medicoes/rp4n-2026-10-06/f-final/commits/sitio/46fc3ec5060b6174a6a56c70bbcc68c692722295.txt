@@ -1,0 +1,5 @@
+46fc3ec5060b6174a6a56c70bbcc68c692722295
+fix(rp4n-f): retirar da publicação as linhas sem publicador
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

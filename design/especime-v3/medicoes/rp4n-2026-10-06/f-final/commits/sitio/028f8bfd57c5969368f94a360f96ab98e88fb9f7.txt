@@ -1,0 +1,5 @@
+028f8bfd57c5969368f94a360f96ab98e88fb9f7
+fix(rp4n-f): provar a pensão pela legenda e pelo recorte da figura
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444
