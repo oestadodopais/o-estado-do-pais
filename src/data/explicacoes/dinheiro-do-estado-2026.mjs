@@ -98,7 +98,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
         { claim: F('09') }, ' para a ', { nome: F('09') }, ' e ', { claim: F('04') }, ' para os ', { nome: F('04') }, '.',
         { se: [A_MAIOR_FUNCAO], partes: [
           ' A maior fatia, ', { claim: F('01') }, ', é a dos ', { nome: F('01') },
-          ', onde a classificação das funções conta os juros da dívida e as transferências entre administrações.',
+          ', onde a classificação das funções conta as transferências entre administrações.',
         ] },
       ],
       en: [
@@ -107,7 +107,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
         { claim: F('09') }, ' to ', { nome: F('09') }, ' and ', { claim: F('04') }, ' to ', { nome: F('04') }, '.',
         { se: [A_MAIOR_FUNCAO], partes: [
           ' The largest share, ', { claim: F('01') }, ', is ', { nome: F('01') },
-          ', where the classification of functions counts the interest on the debt and the transfers between levels of government.',
+          ', where the classification of functions counts the transfers between levels of government.',
         ] },
       ],
     },
@@ -279,12 +279,12 @@ export const DINHEIRO_DO_ESTADO_2026 = {
     {
       pt: [
         { se: [A_EXECUCAO_E_DE_AGOSTO], partes: ['O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto é a que esta explicação mostra acima.'] },
-        { se: [SEM_LINHAS_DOS_JUROS], partes: [' Estes números não isolam o custo dos juros da dívida, que o Orçamento também prevê e que entra noutra classificação; quando as linhas dos juros existirem no livro-razão, esta explicação diz quanto são.'] },
+        { se: [SEM_LINHAS_DOS_JUROS], partes: [' Estes números não isolam o custo dos juros da dívida.'] },
         ' O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque.',
       ],
       en: [
         { se: [A_EXECUCAO_E_DE_AGOSTO], partes: ['The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is the one this explainer shows above.'] },
-        { se: [SEM_LINHAS_DOS_JUROS], partes: [' These figures do not isolate the cost of the interest on the debt, which the Budget also forecasts and which falls under another classification; when the interest entries exist in the ledger, this explainer will say how much it is.'] },
+        { se: [SEM_LINHAS_DOS_JUROS], partes: [' These figures do not isolate the cost of the interest on the debt.'] },
         ' The detail by programme and by ministry, with the source of each figure, is in each one’s receipt, one tap away.',
       ],
     },
@@ -320,6 +320,7 @@ export const ACERTOS = [
   { id: 'X17', onde: 'o que isto não diz', o_que: '«Os juros da dívida não estão ainda no livro-razão deste projeto como linha própria; quando entrarem, esta explicação diz quanto são.» passa a «Falta aqui o custo dos juros da dívida, que o Orçamento também prevê e que estes números não mostram.»', razao: 'o achado 16 da leitura a frio (EX1-c, 06.10.2026): a frase falava do livro-razão do projeto e prometia uma atualização, e o sítio não se explica a si próprio nas páginas de conteúdo; a frase continua guardada pela condição de nenhuma linha dos juros' },
   { id: 'X18', onde: 'o que isto não diz', o_que: 'os juros não estão isolados, com a alternativa «noutra classificação» e a atualização prevista pelo mandato EX1-d', razao: 'o excerto selado nomeia Public debt transactions, mas não explicita os juros; aplica-se a alternativa autorizada, mantendo a condição da ausência de linhas' },
   { id: 'X19', onde: 'o que isto não diz', o_que: 'a execução até agosto é a que esta explicação mostra acima', razao: 'EX1-d: a referência à posição na página deixa de parecer uma comparação de valores' },
+  { id: 'X22', onde: 'abertura e o que isto não diz', o_que: 'retirar a inclusão dos juros numa classificação, a previsão não apoiada e a promessa de atualização', razao: 'EX1-e, achados 5 e 10: o selo sustenta as transferências; a ausência dos juros isolados é a condição sem_linhas, sem afirmar onde entram' },
   { id: 'X21', onde: 'execução', o_que: 'comparar a dimensão dos défices ou excedentes pelo token comparaSaldos, com todos os ramos declarados', razao: 'EX1-e, achado 4: os módulos evitam inverter o sentido da comparação de défices; sinais diferentes só apresentam a previsão anual' },
   { id: 'X20', onde: 'execução', o_que: 'o saldo global do mesmo perímetro, o significado pelo sinal e a comparação com o saldo previsto para o ano inteiro', razao: 'EX1-d: as linhas do saldo executado e previsto constam do mesmo quadro dos totais; compara-se o saldo com sinal, sem afirmar cumprimento de uma meta mensal' },
 ];

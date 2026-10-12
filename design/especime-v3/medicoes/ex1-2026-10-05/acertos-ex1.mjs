@@ -104,6 +104,8 @@ const SALDO_EXEC = 'execucao-2026-08-saldo-global-administracao-central-seguranc
 const SALDO_OE = 'oe-2026-saldo-global-administracao-central-seguranca-social';
 acerto('X20', '\n\n## A dívida e o saldo', `\n\nAté ⟨periodo:${SALDO_EXEC}⟩, as contas da administração central e da segurança social fecharam com um saldo de ⟨claim:${SALDO_EXEC}⟩ milhões de euros, ⟨sinal:${SALDO_EXEC}:um excedente (recebeu mais do que gastou)|um défice (gastou mais do que recebeu)|um saldo nulo (recebeu o mesmo que gastou)⟩; o saldo acumulado está ⟨compara:${SALDO_EXEC},${SALDO_OE}⟩ para o ano inteiro (⟨claim:${SALDO_OE}⟩ milhões de euros).\n\n## A dívida e o saldo`);
 acerto('X21', `; o saldo acumulado está ⟨compara:${SALDO_EXEC},${SALDO_OE}⟩ para o ano inteiro (⟨claim:${SALDO_OE}⟩ milhões de euros).`, `; ⟨comparaSaldos:${SALDO_EXEC},${SALDO_OE}⟩.`);
+acerto('X22', 'conta os juros da dívida e as transferências', 'conta as transferências');
+acerto('X22', 'Estes números não isolam o custo dos juros da dívida, que o Orçamento também prevê e que entra noutra classificação; quando as linhas dos juros existirem no livro-razão, esta explicação diz quanto são.', 'Estes números não isolam o custo dos juros da dívida.');
 /* X9 não muda palavras: as frases que comparam ficam guardadas por condições. Conta-se aqui quantas guardas a declaração tem. */
 const guardas = (JSON.stringify(E).match(/"se":\[/g) ?? []).length / 2;
 exercidos.push({ id: 'X9', vezes: guardas });
