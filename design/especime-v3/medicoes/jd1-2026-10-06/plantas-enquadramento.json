@@ -1,0 +1,18 @@
+{
+  "recibos": 730,
+  "erros": [],
+  "plantas": [
+    {
+      "nome": "Referência europeia em percentagem junto dos juros em milhões",
+      "mensagem": "Enquadramento da União: unidades diferentes em juros-das-administracoes-publicas-2025 e juros-das-administracoes-publicas-2025-ue",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Referência europeia de outro período",
+      "mensagem": "Enquadramento da União: períodos diferentes em precos-da-habitacao-2025 e precos-da-habitacao-2025-ue",
+      "planta": true,
+      "passou": true
+    }
+  ]
+}

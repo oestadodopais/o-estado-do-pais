@@ -389,6 +389,7 @@ export const STRINGS = {
       /* O recorte da linha impressa (bloco T2). O texto alternativo compõe-se
          só dos campos que existem: sem título de documento, fica a página. */
       recorteAlt: 'Recorte da linha impressa, página',
+      recorteGraficoAlt: 'Recorte do gráfico com o rótulo assinalado, página',
       recorteAltDe: 'de',
       recortePagina: 'página',
       /* O ficheiro de dados que este sítio aloja, e de que a linha é contada
@@ -3371,6 +3372,7 @@ export const STRINGS = {
       campoDevolvido: 'Field returned',
       abrirNaPagina: 'Open at page',
       recorteAlt: 'Crop of the printed line, page',
+      recorteGraficoAlt: 'Crop of the chart with the label marked, page',
       recorteAltDe: 'of',
       recortePagina: 'page',
       alojado: 'Hosted file',

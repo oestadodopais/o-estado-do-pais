@@ -1,0 +1,163 @@
+[
+  {
+    "origem": "jd1-igcp-valoracao",
+    "sha256": "e327feb73d210f958b1a40b3c86d6c681b686629416f070946902e00310392cb",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-eo-ativos",
+    "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-eo-saldo",
+    "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-eurostat-unidade",
+    "sha256": "6ab562de6933196bf29e8ad6417fec647094f2a7824df2b2f43e5a83881433a0",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-eurostat-versao",
+    "sha256": "2e5b39eccba8b3ea9fddb04a4265bae436a09fb0ccdc5491da5b147338e495f9",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-ine-contas",
+    "sha256": "58696e3c11ed4233c7a06a8fce374043de7ce6ca57898064c52bc7b9faff673d",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-eo-glossario",
+    "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-igcp-contabilidade",
+    "sha256": "f36c17f0f95b0e35c8f87323fd48f7fde0e9cc84228a5444f94058ac3f0e3f2f",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-igcp-perimetro",
+    "sha256": "f36c17f0f95b0e35c8f87323fd48f7fde0e9cc84228a5444f94058ac3f0e3f2f",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-igcp-siglas",
+    "sha256": "f36c17f0f95b0e35c8f87323fd48f7fde0e9cc84228a5444f94058ac3f0e3f2f",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-eurostat-contas",
+    "sha256": "2e5b39eccba8b3ea9fddb04a4265bae436a09fb0ccdc5491da5b147338e495f9",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-pib-definicao",
+    "sha256": "65e07dfb4d6043e71431b40ad6b709b75a03b2dc4dbbf9e497b23aeb2d8fffec",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-divida-fundada",
+    "sha256": "fef4529244ff3f7af994b2a15d5b677be33250f1175749220729739085213b0c",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-mercado-secundario",
+    "sha256": "fef4529244ff3f7af994b2a15d5b677be33250f1175749220729739085213b0c",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-ine-provisorio",
+    "sha256": "58696e3c11ed4233c7a06a8fce374043de7ce6ca57898064c52bc7b9faff673d",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-ine-ambito",
+    "sha256": "58696e3c11ed4233c7a06a8fce374043de7ce6ca57898064c52bc7b9faff673d",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-ine-despesa",
+    "sha256": "58696e3c11ed4233c7a06a8fce374043de7ce6ca57898064c52bc7b9faff673d",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-eo-conta",
+    "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-eo-caixa",
+    "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-igcp-custo",
+    "sha256": "e327feb73d210f958b1a40b3c86d6c681b686629416f070946902e00310392cb",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-igcp-divida",
+    "sha256": "e327feb73d210f958b1a40b3c86d6c681b686629416f070946902e00310392cb",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-igcp-financiamento",
+    "sha256": "f36c17f0f95b0e35c8f87323fd48f7fde0e9cc84228a5444f94058ac3f0e3f2f",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
+    "origem": "jd1-eurostat-obrigacoes",
+    "sha256": "6ab562de6933196bf29e8ad6417fec647094f2a7824df2b2f43e5a83881433a0",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  }
+]

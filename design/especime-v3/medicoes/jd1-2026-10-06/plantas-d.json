@@ -1,0 +1,40 @@
+{
+  "plantas": [
+    {
+      "id": "ramo-estrutura-1-texto",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-estrutura-1-gzip",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-estrutura-1-nome",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-estrutura-2-texto",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-estrutura-2-gzip",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-estrutura-2-nome",
+      "mordeu": true
+    },
+    {
+      "id": "ramo-estrutura-inocua",
+      "mordeu": true,
+      "mensagem": "Registo comprimido dentro do âmbito, com marcadores portáveis, lido e aceite."
+    },
+    {
+      "id": "guiao-com-casa-portavel",
+      "mordeu": true,
+      "mensagem": "Caminho relativo à casa permitido no guião."
+    }
+  ],
+  "registo_inocuo_lido": true,
+  "passou": true
+}

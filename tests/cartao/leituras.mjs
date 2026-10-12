@@ -62,6 +62,7 @@ import { loadClaims } from '../../src/lib/ledger.mjs';
 import { t } from '../../src/i18n/strings.mjs';
 import { recontagemDasCamaras } from '../../scripts/pais-camaras.mjs';
 import { ENTRADAS } from '../../src/data/primeira-pagina.mjs';
+import { NOTAS_JD1 } from '../../src/data/notas-jd1.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '..', '..');
@@ -414,6 +415,24 @@ export function conferirAuditoriaDasLeituras({
      apoia uma delas está usada (a célula das famílias, `familias.mjs`, confere-lhe o literal). */
   for (const o of origensCitadas(auditoria.familias ?? [])) usadas.add(o);
   for (const o of origensCitadas(auditoria.series ?? [])) usadas.add(o);
+  // JD1-c: as notas de estado e de comparação pertencem às linhas, não às famílias.
+  // Reconta-se onde se aplicam e confere-se cada literal com a mesma guarda de apoio.
+  for (const [id, linha] of linhas) {
+    /** @type {('final'|'provisorio'|'versoes')[]} */
+    const notas = [];
+    if (/^(juros-das-administracoes-publicas(?:-pib)?|pib-nominal-notificacao-setembro)-202[45]$/.test(id)) {
+      if (linha.reference_date !== id.slice(-4)) falha(id, 'nota de estado com período divergente');
+      notas.push(id.endsWith('2024') ? 'final' : 'provisorio');
+    }
+    if (['juros-das-administracoes-publicas-pib-2025', 'juros-das-administracoes-publicas-2025-ue'].includes(id)) {
+      const outro = id.endsWith('-ue') ? 'juros-das-administracoes-publicas-pib-2025' : 'juros-das-administracoes-publicas-2025-ue';
+      if (linhas.get(outro)?.reference_date === linha.reference_date) notas.push('versoes');
+    }
+    for (const nota of notas) for (const [origem, literal] of NOTAS_JD1[nota].apoios) {
+      const o = apoio(id, { origem, campo: 'excerto', literal }, `nota «${nota}»`);
+      if (o) usadas.add(o);
+    }
+  }
   for (const chave of Object.keys(origens)) {
     if (!usadas.has(chave)) erros.push(`K17 · origem «${chave}»: está declarada e não apoia pergunta, painel, leitura ou bloco da primeira página nenhum`);
   }

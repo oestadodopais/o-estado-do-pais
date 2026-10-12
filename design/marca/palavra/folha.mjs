@@ -1,6 +1,7 @@
+import { homedir as jd1Casa } from 'node:os';
 import { chromium } from 'playwright';
 import fs from 'node:fs';
-const REPO = '<casa>/<projetos>/OEstadoDoPais';
+const REPO = (jd1Casa() + '/Instruments/OEstadoDoPais');
 const out = process.argv[2];
 const font = "data:font/woff2;base64," + fs.readFileSync(`${REPO}/public/tipos/spectral/Spectral-Regular.woff2`).toString("base64");
 const k180 = 'data:image/png;base64,' + fs.readFileSync(`${REPO}/public/apple-touch-icon.png`).toString('base64');

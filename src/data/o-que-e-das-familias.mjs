@@ -48,6 +48,20 @@ export const FAMILIAS_DAS_LINHAS = {
       ]
     }
   },
+  "amortizacoes-e-anulacoes-de-divida-fundada": {
+    "nome": {
+      "pt": "Amortizações e anulações de dívida fundada do Estado, contabilidade orçamental pública",
+      "en": "State funded debt redemptions and cancellations, public budget accounts"
+    },
+    "frase": {
+      "pt": [
+        "É a parcela do financiamento do Estado usada para reembolsar ou extinguir dívida fundada. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período."
+      ],
+      "en": [
+        "It is the share of State financing used to repay or extinguish funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period."
+      ]
+    }
+  },
   "avisos-pt2030-abertos": {
     "frase": {
       "pt": [
@@ -133,6 +147,34 @@ export const FAMILIAS_DAS_LINHAS = {
     "nome": {
       "pt": "Crianças com menos de três anos em creche ou outros cuidados formais na União Europeia",
       "en": "Children under three in formal childcare in the European Union"
+    }
+  },
+  "custo-da-divida-emitida": {
+    "nome": {
+      "pt": "Custo médio ponderado da dívida emitida pelo Estado",
+      "en": "Weighted average cost of State debt issued"
+    },
+    "frase": {
+      "pt": [
+        "É o custo médio de o Estado pedir dinheiro emprestado no ano, através de Bilhetes do Tesouro, Obrigações do Tesouro, Obrigações do Tesouro de Rendimento Variável e Medium Term Notes. As emissões pesam nesta média de acordo com os montantes e os prazos. O valor é de dois mil e vinte e seis, até à data do boletim de setembro."
+      ],
+      "en": [
+        "It is the average cost of the State’s borrowing during the year through Treasury bills, Treasury bonds, floating-rate Treasury bonds and Medium Term Notes. Issues are weighted in this average by their amounts and maturities. The value is for two thousand and twenty-six, as of the September bulletin."
+      ]
+    }
+  },
+  "custo-do-stock-da-divida-direta": {
+    "nome": {
+      "pt": "Custo da dívida direta do Estado em circulação, juros em contas nacionais",
+      "en": "Cost of outstanding State direct debt, interest in national accounts"
+    },
+    "frase": {
+      "pt": [
+        "Mede o custo dos juros da dívida que o Estado tem: compara os juros do subsetor Estado atribuídos ao ano pelas contas nacionais com o saldo médio da dívida direta no fim desse ano e do anterior. Os juros são registados quando o encargo é assumido, mesmo que sejam pagos noutro ano."
+      ],
+      "en": [
+        "It measures the interest cost of the State’s outstanding debt: interest of the State subsector attributed to the year in national accounts is compared with average direct debt at the end of that year and the previous one. Interest is recorded when the cost is incurred, even if it is paid in another year."
+      ]
     }
   },
   "custo-unitario-do-trabalho": {
@@ -628,6 +670,20 @@ export const FAMILIAS_DAS_LINHAS = {
       ]
     }
   },
+  "divida-direta-do-estado": {
+    "nome": {
+      "pt": "Dívida direta do Estado no fim de agosto, valor nominal ou descontado",
+      "en": "State direct debt at the end of August, nominal or discounted value"
+    },
+    "frase": {
+      "pt": [
+        "É a dívida emitida pelo Estado que ainda estava por pagar no fim de agosto. É a dívida direta do Estado em contabilidade pública, não a dívida de todas as administrações públicas na ótica de Maastricht. A dívida pública de Maastricht abrange todas as administrações públicas e retira a dívida que umas entidades públicas detêm de outras. O saldo usa o valor nominal da dívida, exceto nos instrumentos emitidos a desconto, como os Bilhetes do Tesouro, que entram pelo valor descontado. A dívida em moeda estrangeira é convertida ao câmbio do fim do período."
+      ],
+      "en": [
+        "It is the amount still owed at the end of August on debt issued by the State. This is State direct debt in public accounts, not the Maastricht debt of all general government bodies. Maastricht public debt covers all general government bodies and removes debt held by other government bodies. The balance uses the debt’s nominal value, except for instruments issued at a discount, such as Treasury bills, which are included at discounted value. Debt in foreign currency is converted at the end-of-period exchange rate."
+      ]
+    }
+  },
   "divida-publica": {
     "cartao": "divida-publica-2025"
   },
@@ -680,6 +736,20 @@ export const FAMILIAS_DAS_LINHAS = {
       ],
       "en": [
         "It is the number of editions of the studies published; the Portuguese and English editions of the same study count separately."
+      ]
+    }
+  },
+  "emissoes-de-divida-fundada": {
+    "nome": {
+      "pt": "Emissões de dívida fundada do Estado no ano civil, contabilidade orçamental pública",
+      "en": "State funded debt issued during the calendar year, public budget accounts"
+    },
+    "frase": {
+      "pt": [
+        "É o dinheiro que o Estado pediu emprestado no ano civil através de dívida fundada. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período."
+      ],
+      "en": [
+        "It is the money the State borrowed during the calendar year through funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period."
       ]
     }
   },
@@ -1912,6 +1982,62 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": "Young people not in employment, education or training in the European Union"
     }
   },
+  "juros-das-administracoes-publicas": {
+    "nome": {
+      "pt": "Juros das administrações públicas, contas nacionais",
+      "en": "General government interest expenditure, national accounts"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública."
+      ],
+      "en": [
+        "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance."
+      ]
+    }
+  },
+  "juros-das-administracoes-publicas-pib": {
+    "nome": {
+      "pt": "Juros das administrações públicas em percentagem do PIB, contas nacionais",
+      "en": "General government interest expenditure as a share of GDP, national accounts"
+    },
+    "frase": {
+      "pt": [
+        "Compara a despesa em juros das administrações públicas com o produto interno bruto do mesmo ano, em percentagem. O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia. A conta usa os montantes da mesma notificação do INE, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano."
+      ],
+      "en": [
+        "It compares general government interest expenditure with gross domestic product for the same year, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. The calculation uses amounts from the same INE notification, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year."
+      ]
+    }
+  },
+  "juros-das-administracoes-publicas-ue": {
+    "nome": {
+      "pt": "Juros das administrações públicas na União Europeia, em percentagem do PIB, contas nacionais",
+      "en": "General government interest expenditure in the European Union, as a share of GDP, national accounts"
+    },
+    "frase": {
+      "pt": [
+        "Compara a despesa em juros das administrações públicas do conjunto da União Europeia com o seu produto interno bruto, em percentagem. O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia. São contas nacionais: a despesa pertence ao período em que o encargo é assumido, mesmo que seja pago noutro período."
+      ],
+      "en": [
+        "It compares general government interest expenditure across the European Union with its gross domestic product, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. These are national accounts: expenditure belongs to the period in which the cost is incurred, even if it is paid in another period."
+      ]
+    }
+  },
+  "juros-e-outros-encargos-execucao": {
+    "nome": {
+      "pt": "Juros e outros encargos das administrações públicas, caixa, janeiro a agosto",
+      "en": "General government interest and other charges, cash basis, January to August"
+    },
+    "frase": {
+      "pt": [
+        "É o dinheiro pago pelas administrações públicas em juros e outros encargos, de janeiro a agosto. O total é consolidado: descontam-se os pagamentos entre as entidades públicas abrangidas. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período."
+      ],
+      "en": [
+        "It is money paid by general government in interest and other charges from January to August. The total is consolidated: payments between the public bodies covered are removed. Public budget accounts record receipts and payments during the period."
+      ]
+    }
+  },
   "licencas-de-construcao": {
     "cartao": "licencas-de-construcao-2025"
   },
@@ -1990,6 +2116,20 @@ export const FAMILIAS_DAS_LINHAS = {
       ],
       "en": [
         "It is the number of municipalities that do not yet have an in-depth study published: all municipalities minus those that already have one."
+      ]
+    }
+  },
+  "necessidades-brutas-de-financiamento": {
+    "nome": {
+      "pt": "Necessidades brutas de financiamento do Estado, contabilidade orçamental pública",
+      "en": "Gross State financing needs, public budget accounts"
+    },
+    "frase": {
+      "pt": [
+        "É o financiamento de que o Estado precisou para cobrir o défice do orçamento e adquirir ativos financeiros, descontando os recebimentos dessas operações e excluindo privatizações, e para reembolsar ou extinguir dívida. O défice é a despesa que excede a receita. Os ativos financeiros incluem títulos, participações e empréstimos. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período."
+      ],
+      "en": [
+        "It is the financing the State needed to cover the budget deficit and acquire financial assets, net of receipts from those operations and excluding privatisations, and to repay or extinguish debt. The deficit is expenditure in excess of revenue. Financial assets include securities, equity interests and loans. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period."
       ]
     }
   },
@@ -3208,6 +3348,20 @@ export const FAMILIAS_DAS_LINHAS = {
   },
   "pensao-media-anual": {
     "cartao": "pensao-media-anual-2025"
+  },
+  "pib-nominal-notificacao-setembro": {
+    "nome": {
+      "pt": "PIB de Portugal a preços de mercado, contas nacionais",
+      "en": "Portugal’s GDP at market prices, national accounts"
+    },
+    "frase": {
+      "pt": [
+        "É o valor dos bens e serviços finais produzidos na economia portuguesa durante o ano, o produto interno bruto, a preços de mercado, nas contas nacionais enviadas pelo INE ao Eurostat em setembro."
+      ],
+      "en": [
+        "It is the value of final goods and services produced in the Portuguese economy during the year, gross domestic product at market prices, in the national accounts sent by INE to Eurostat in September."
+      ]
+    }
   },
   "pib-pc-acores": {
     "frase": {

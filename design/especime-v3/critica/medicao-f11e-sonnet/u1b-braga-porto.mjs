@@ -1,9 +1,10 @@
+import { homedir as jd1Casa } from 'node:os';
 // U1 (bónus) — o mesmo alvo do quadrado inscrito para os concelhos de Braga e
 // do Porto, crescidos a partir do mapa do país, a 390px.
 import fs from 'node:fs';
 import { abrePagina, BASE, medirAlvosNoNavegador, pontosEmEcraNoNavegador, mediana } from './lib.mjs';
 
-const RAIZ = '<casa>/<projetos>/OEstadoDoPais/<worktrees>/medicao-distritos';
+const RAIZ = (jd1Casa() + '/Instruments/OEstadoDoPais/.claude/worktrees/medicao-distritos');
 const pais = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/pais.json`, 'utf8'));
 
 async function medirUnidadeCrescida(slugUnidade, width) {

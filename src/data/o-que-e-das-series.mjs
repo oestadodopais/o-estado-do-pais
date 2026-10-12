@@ -80,6 +80,16 @@ export const FRASES_DAS_SERIES = {
       ]
     }
   },
+  "serie-obrigacoes-do-tesouro-10-anos-rendibilidade": {
+    "frase": {
+      "pt": [
+        "É a taxa de juro anual a que o mercado empresta ao Estado português, observada na compra e venda de obrigações já emitidas, antes de impostos, a que faltam cerca de dez anos até ao reembolso, apresentada mês a mês."
+      ],
+      "en": [
+        "It is the annual interest rate at which the market lends to central government in Portugal, observed in trading of bonds already issued, before tax, with around ten years remaining until repayment, reported monthly."
+      ]
+    }
+  },
   "serie-precos-da-habitacao-variacao-homologa": {
     "frase": {
       "pt": [

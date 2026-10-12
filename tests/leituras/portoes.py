@@ -28,6 +28,11 @@ with tempfile.TemporaryDirectory(prefix='oedp-portoes-') as tmp:
     def correr(nome, **mudancas):
         return subprocess.run(['sh', str(RAIZ / 'scripts/leituras/portoes.sh'), str(p), nome],
                               env={**env, **mudancas}, capture_output=True, text=True)
+    comando('git', 'case "$*" in *status*) [ "${ARVORE_SUJA:-0}" = 0 ] || echo " M ficheiro";; *--git-common-dir*) echo "$COMUM";; *HEAD*) echo cabeca-sintetica;; esac\n')
+    r = correr('suja', ARVORE_SUJA='1')
+    assert r.returncode == 9 and 'árvore suja' in r.stderr
+    assert not (p / 'suja/build.codigo').exists() and not (comum / 'oedp-construcao.lock').exists()
+    casos.append({'planta': 'árvore suja recusada antes da tranca e dos portões', 'codigo': r.returncode, 'mensagem': r.stderr.strip()})
     r = correr('vermelho')
     assert r.returncode == 1
     assert 'o build não ficou verde e não pode pagar passos da união' in (p / 'vermelho/verify.log').read_text()
@@ -94,6 +99,16 @@ with tempfile.TemporaryDirectory(prefix='oedp-portoes-') as tmp:
         if proc.poll() is None:
             proc.terminate()
             proc.communicate(timeout=10)
+    motor = p / 'motor'; (motor / 'core').mkdir(parents=True)
+    (motor / 'core/__init__.py').write_text('')
+    (motor / 'core/gate.py').write_text('print("motor de ensaio conferido")\n')
+    comando('npm', 'exit 0\n')
+    r = correr('com-motor', OEDP_CONFERIR_MOTOR='1', RESEARCHHUB_DIR=str(motor))
+    assert r.returncode == 0, r.stderr
+    assert (p / 'com-motor/motor.codigo').read_text().strip() == '0'
+    assert 'motor de ensaio conferido' in (p / 'com-motor/motor.log').read_text()
+    assert not tranca.exists()
+    casos.append({'planta': 'motor exercido sob a tranca comum', 'codigo': r.returncode, 'mensagem': 'Motor e sítio conferidos antes de soltar a tranca.'})
 saida = {'ok': True, 'casos': casos}
 if '--json' in sys.argv:
     Path(sys.argv[sys.argv.index('--json') + 1]).write_text(json.dumps(saida, ensure_ascii=False, indent=2) + '\n')

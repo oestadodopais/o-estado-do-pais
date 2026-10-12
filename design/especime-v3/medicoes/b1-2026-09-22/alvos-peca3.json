@@ -1,6 +1,6 @@
 {
   "quando": "2026-09-21T20:44:16.082Z",
-  "dist": "<casa>/<projetos>/OEstadoDoPais/<worktrees>/b1-peca3-2026-09-22/dist",
+  "dist": "<worktree>/dist",
   "rotas": [
     "/",
     "/en/",

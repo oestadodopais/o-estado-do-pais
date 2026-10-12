@@ -2,6 +2,7 @@ import ORIGENS_PENSAO from './pensao-rp4n.json' with {type: 'json'};
 import ORIGENS_RP4N from './origens-rp4n.json' with {type: 'json'};
 import { ORIGENS_C1C } from './origens-c1c.mjs';
 import { ORIGENS_RP1 } from './origens-rp1.mjs';
+import { ORIGENS_JD1 } from './origens-jd1.mjs';
 import { PERGUNTAS_RP1 } from './medidas-rp1.mjs';
 /**
  * ---------------------------------------------------------------------------
@@ -1965,6 +1966,7 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
   },
   ...ORIGENS_RP1,
   ...ORIGENS_RP4N,
+  ...ORIGENS_JD1,
 });
 
 /**

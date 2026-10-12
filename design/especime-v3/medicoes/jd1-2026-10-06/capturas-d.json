@@ -1,0 +1,741 @@
+{
+  "comando": "node design/especime-v3/medicoes/jd1-2026-10-06/captar-d.mjs --code-head d3649355dab5c75a9ced5eaafc08493e9424263b",
+  "cabeca": "d3649355dab5c75a9ced5eaafc08493e9424263b",
+  "cabeca_codigo": "d3649355dab5c75a9ced5eaafc08493e9424263b",
+  "construcao": "d3649355dab5c75a9ced5eaafc08493e9424263b",
+  "linhas": [
+    "amortizacoes-e-anulacoes-de-divida-fundada-2025",
+    "juros-das-administracoes-publicas-2024",
+    "juros-das-administracoes-publicas-2025"
+  ],
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/amortizacoes-e-anulacoes-de-divida-fundada-2025-pt-390.png",
+      "url": "/livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Amortizações e anulações de dívida fundada do Estado, contabilidade orçamental pública",
+        "frase": "É a parcela do financiamento do Estado usada para reembolsar ou extinguir dívida fundada. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+        "ultimo": "",
+        "parcela": "Das necessidades brutas de financiamento do Estado em 2025, 67 601 milhões de euros, estes 56 976 milhões serviram para reembolsar ou extinguir dívida fundada. Mais do que na coluna de 2024 do mesmo quadro.",
+        "evolucao": "",
+        "excerto": "(milhões de euros) 2024 2025 1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO 9 772 10 625 Défice Orçamental 5 656 7 436 Aquisição líquida de activos financeiros (excepto privatizações) 4 116 3 189 2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada) 47 402 56 976 Certificados de Aforro + Certificados do Tesouro 4 469 4 482 Dívida de curto prazo em euros 32 198 32 976 Dívida de médio e longo prazo em euros 8 324 19 518 Dívida em moedas não euro 2 429 0 Fluxos de capital de swaps (líq.) -18 0 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.) 57 174 67 601",
+        "cabecalho": [
+          "(milhões de euros)",
+          "2024",
+          "2025"
+        ],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 59.171875
+          }
+        ]
+      },
+      "sha256": "5ceebe1afdc66b1084dc84a5333a3b31d010f762ea666b13f10336dd852900ed"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/amortizacoes-e-anulacoes-de-divida-fundada-2025-pt-768.png",
+      "url": "/livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "pt",
+      "largura": 768,
+      "medidas": {
+        "largura": 768,
+        "documento": 768,
+        "titulo": "Amortizações e anulações de dívida fundada do Estado, contabilidade orçamental pública",
+        "frase": "É a parcela do financiamento do Estado usada para reembolsar ou extinguir dívida fundada. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+        "ultimo": "",
+        "parcela": "Das necessidades brutas de financiamento do Estado em 2025, 67 601 milhões de euros, estes 56 976 milhões serviram para reembolsar ou extinguir dívida fundada. Mais do que na coluna de 2024 do mesmo quadro.",
+        "evolucao": "",
+        "excerto": "(milhões de euros) 2024 2025 1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO 9 772 10 625 Défice Orçamental 5 656 7 436 Aquisição líquida de activos financeiros (excepto privatizações) 4 116 3 189 2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada) 47 402 56 976 Certificados de Aforro + Certificados do Tesouro 4 469 4 482 Dívida de curto prazo em euros 32 198 32 976 Dívida de médio e longo prazo em euros 8 324 19 518 Dívida em moedas não euro 2 429 0 Fluxos de capital de swaps (líq.) -18 0 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.) 57 174 67 601",
+        "cabecalho": [
+          "(milhões de euros)",
+          "2024",
+          "2025"
+        ],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 44
+          }
+        ]
+      },
+      "sha256": "c039777e4682f46f1a4a63e78c27adaea6fbe5d813e30c24e839009171df1500"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/amortizacoes-e-anulacoes-de-divida-fundada-2025-pt-1024.png",
+      "url": "/livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "pt",
+      "largura": 1024,
+      "medidas": {
+        "largura": 1024,
+        "documento": 1024,
+        "titulo": "Amortizações e anulações de dívida fundada do Estado, contabilidade orçamental pública",
+        "frase": "É a parcela do financiamento do Estado usada para reembolsar ou extinguir dívida fundada. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+        "ultimo": "",
+        "parcela": "Das necessidades brutas de financiamento do Estado em 2025, 67 601 milhões de euros, estes 56 976 milhões serviram para reembolsar ou extinguir dívida fundada. Mais do que na coluna de 2024 do mesmo quadro.",
+        "evolucao": "",
+        "excerto": "(milhões de euros) 2024 2025 1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO 9 772 10 625 Défice Orçamental 5 656 7 436 Aquisição líquida de activos financeiros (excepto privatizações) 4 116 3 189 2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada) 47 402 56 976 Certificados de Aforro + Certificados do Tesouro 4 469 4 482 Dívida de curto prazo em euros 32 198 32 976 Dívida de médio e longo prazo em euros 8 324 19 518 Dívida em moedas não euro 2 429 0 Fluxos de capital de swaps (líq.) -18 0 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.) 57 174 67 601",
+        "cabecalho": [
+          "(milhões de euros)",
+          "2024",
+          "2025"
+        ],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 38.390625
+          }
+        ]
+      },
+      "sha256": "ca515bfbda484ceb501e698ab54f0d78e548b0fa0aeffcc04d3c23724cd65a2b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/amortizacoes-e-anulacoes-de-divida-fundada-2025-pt-1280.png",
+      "url": "/livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Amortizações e anulações de dívida fundada do Estado, contabilidade orçamental pública",
+        "frase": "É a parcela do financiamento do Estado usada para reembolsar ou extinguir dívida fundada. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+        "ultimo": "",
+        "parcela": "Das necessidades brutas de financiamento do Estado em 2025, 67 601 milhões de euros, estes 56 976 milhões serviram para reembolsar ou extinguir dívida fundada. Mais do que na coluna de 2024 do mesmo quadro.",
+        "evolucao": "",
+        "excerto": "(milhões de euros) 2024 2025 1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO 9 772 10 625 Défice Orçamental 5 656 7 436 Aquisição líquida de activos financeiros (excepto privatizações) 4 116 3 189 2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada) 47 402 56 976 Certificados de Aforro + Certificados do Tesouro 4 469 4 482 Dívida de curto prazo em euros 32 198 32 976 Dívida de médio e longo prazo em euros 8 324 19 518 Dívida em moedas não euro 2 429 0 Fluxos de capital de swaps (líq.) -18 0 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.) 57 174 67 601",
+        "cabecalho": [
+          "(milhões de euros)",
+          "2024",
+          "2025"
+        ],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 38.390625
+          }
+        ]
+      },
+      "sha256": "d9f7113da5594fa74666f7ac4cd78b1968302753321281e448c793241382046b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/amortizacoes-e-anulacoes-de-divida-fundada-2025-pt-1600.png",
+      "url": "/livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "pt",
+      "largura": 1600,
+      "medidas": {
+        "largura": 1600,
+        "documento": 1600,
+        "titulo": "Amortizações e anulações de dívida fundada do Estado, contabilidade orçamental pública",
+        "frase": "É a parcela do financiamento do Estado usada para reembolsar ou extinguir dívida fundada. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+        "ultimo": "",
+        "parcela": "Das necessidades brutas de financiamento do Estado em 2025, 67 601 milhões de euros, estes 56 976 milhões serviram para reembolsar ou extinguir dívida fundada. Mais do que na coluna de 2024 do mesmo quadro.",
+        "evolucao": "",
+        "excerto": "(milhões de euros) 2024 2025 1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO 9 772 10 625 Défice Orçamental 5 656 7 436 Aquisição líquida de activos financeiros (excepto privatizações) 4 116 3 189 2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada) 47 402 56 976 Certificados de Aforro + Certificados do Tesouro 4 469 4 482 Dívida de curto prazo em euros 32 198 32 976 Dívida de médio e longo prazo em euros 8 324 19 518 Dívida em moedas não euro 2 429 0 Fluxos de capital de swaps (líq.) -18 0 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.) 57 174 67 601",
+        "cabecalho": [
+          "(milhões de euros)",
+          "2024",
+          "2025"
+        ],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 38.390625
+          }
+        ]
+      },
+      "sha256": "558f943578654a1ef8428b25893e4dec49cc521e854f90be9b8222064aa0a63f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/amortizacoes-e-anulacoes-de-divida-fundada-2025-en-390.png",
+      "url": "/en/ledger/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "State funded debt redemptions and cancellations, public budget accounts",
+        "frase": "It is the share of State financing used to repay or extinguish funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period.",
+        "ultimo": "",
+        "parcela": "Of the State’s gross financing needs in 2025, 67 601 million euros, these 56 976 million were used to repay or extinguish funded debt. More than in the 2024 column of the same table.",
+        "evolucao": "",
+        "excerto": "(milhões de euros) 2024 2025 1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO 9 772 10 625 Défice Orçamental 5 656 7 436 Aquisição líquida de activos financeiros (excepto privatizações) 4 116 3 189 2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada) 47 402 56 976 Certificados de Aforro + Certificados do Tesouro 4 469 4 482 Dívida de curto prazo em euros 32 198 32 976 Dívida de médio e longo prazo em euros 8 324 19 518 Dívida em moedas não euro 2 429 0 Fluxos de capital de swaps (líq.) -18 0 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.) 57 174 67 601",
+        "cabecalho": [
+          "(milhões de euros)",
+          "2024",
+          "2025"
+        ],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 59.171875
+          }
+        ]
+      },
+      "sha256": "91fbcd9df1afdd21f720bef0db24d4f1b6330edfd3fe9db7e9e871aeabac26a1"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/amortizacoes-e-anulacoes-de-divida-fundada-2025-en-768.png",
+      "url": "/en/ledger/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "en",
+      "largura": 768,
+      "medidas": {
+        "largura": 768,
+        "documento": 768,
+        "titulo": "State funded debt redemptions and cancellations, public budget accounts",
+        "frase": "It is the share of State financing used to repay or extinguish funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period.",
+        "ultimo": "",
+        "parcela": "Of the State’s gross financing needs in 2025, 67 601 million euros, these 56 976 million were used to repay or extinguish funded debt. More than in the 2024 column of the same table.",
+        "evolucao": "",
+        "excerto": "(milhões de euros) 2024 2025 1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO 9 772 10 625 Défice Orçamental 5 656 7 436 Aquisição líquida de activos financeiros (excepto privatizações) 4 116 3 189 2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada) 47 402 56 976 Certificados de Aforro + Certificados do Tesouro 4 469 4 482 Dívida de curto prazo em euros 32 198 32 976 Dívida de médio e longo prazo em euros 8 324 19 518 Dívida em moedas não euro 2 429 0 Fluxos de capital de swaps (líq.) -18 0 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.) 57 174 67 601",
+        "cabecalho": [
+          "(milhões de euros)",
+          "2024",
+          "2025"
+        ],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 44
+          }
+        ]
+      },
+      "sha256": "623c5edd6124bf844a7bc75d1335255b2ed51e96dd2baa7e10d9585f63bad1c2"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/amortizacoes-e-anulacoes-de-divida-fundada-2025-en-1024.png",
+      "url": "/en/ledger/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "en",
+      "largura": 1024,
+      "medidas": {
+        "largura": 1024,
+        "documento": 1024,
+        "titulo": "State funded debt redemptions and cancellations, public budget accounts",
+        "frase": "It is the share of State financing used to repay or extinguish funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period.",
+        "ultimo": "",
+        "parcela": "Of the State’s gross financing needs in 2025, 67 601 million euros, these 56 976 million were used to repay or extinguish funded debt. More than in the 2024 column of the same table.",
+        "evolucao": "",
+        "excerto": "(milhões de euros) 2024 2025 1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO 9 772 10 625 Défice Orçamental 5 656 7 436 Aquisição líquida de activos financeiros (excepto privatizações) 4 116 3 189 2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada) 47 402 56 976 Certificados de Aforro + Certificados do Tesouro 4 469 4 482 Dívida de curto prazo em euros 32 198 32 976 Dívida de médio e longo prazo em euros 8 324 19 518 Dívida em moedas não euro 2 429 0 Fluxos de capital de swaps (líq.) -18 0 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.) 57 174 67 601",
+        "cabecalho": [
+          "(milhões de euros)",
+          "2024",
+          "2025"
+        ],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 38.390625
+          }
+        ]
+      },
+      "sha256": "2af8285ff1667a5651abd80bfe253b477175c3f09ebb8d570338227266a876ef"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/amortizacoes-e-anulacoes-de-divida-fundada-2025-en-1280.png",
+      "url": "/en/ledger/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "State funded debt redemptions and cancellations, public budget accounts",
+        "frase": "It is the share of State financing used to repay or extinguish funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period.",
+        "ultimo": "",
+        "parcela": "Of the State’s gross financing needs in 2025, 67 601 million euros, these 56 976 million were used to repay or extinguish funded debt. More than in the 2024 column of the same table.",
+        "evolucao": "",
+        "excerto": "(milhões de euros) 2024 2025 1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO 9 772 10 625 Défice Orçamental 5 656 7 436 Aquisição líquida de activos financeiros (excepto privatizações) 4 116 3 189 2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada) 47 402 56 976 Certificados de Aforro + Certificados do Tesouro 4 469 4 482 Dívida de curto prazo em euros 32 198 32 976 Dívida de médio e longo prazo em euros 8 324 19 518 Dívida em moedas não euro 2 429 0 Fluxos de capital de swaps (líq.) -18 0 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.) 57 174 67 601",
+        "cabecalho": [
+          "(milhões de euros)",
+          "2024",
+          "2025"
+        ],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 38.390625
+          }
+        ]
+      },
+      "sha256": "4616253e186cb271a0bb4f183a636b8569184132dfb8487ccb316f2d82ba49e5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/amortizacoes-e-anulacoes-de-divida-fundada-2025-en-1600.png",
+      "url": "/en/ledger/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "en",
+      "largura": 1600,
+      "medidas": {
+        "largura": 1600,
+        "documento": 1600,
+        "titulo": "State funded debt redemptions and cancellations, public budget accounts",
+        "frase": "It is the share of State financing used to repay or extinguish funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period.",
+        "ultimo": "",
+        "parcela": "Of the State’s gross financing needs in 2025, 67 601 million euros, these 56 976 million were used to repay or extinguish funded debt. More than in the 2024 column of the same table.",
+        "evolucao": "",
+        "excerto": "(milhões de euros) 2024 2025 1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO 9 772 10 625 Défice Orçamental 5 656 7 436 Aquisição líquida de activos financeiros (excepto privatizações) 4 116 3 189 2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada) 47 402 56 976 Certificados de Aforro + Certificados do Tesouro 4 469 4 482 Dívida de curto prazo em euros 32 198 32 976 Dívida de médio e longo prazo em euros 8 324 19 518 Dívida em moedas não euro 2 429 0 Fluxos de capital de swaps (líq.) -18 0 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.) 57 174 67 601",
+        "cabecalho": [
+          "(milhões de euros)",
+          "2024",
+          "2025"
+        ],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": [
+          {
+            "rotulo_acima": true,
+            "alvo": 38.390625
+          }
+        ]
+      },
+      "sha256": "136ef0919502a2f39dcf2dfaac7ae4d4523966277eb33b8f2c062c3be08bcda4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2024-pt-390.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-2024/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Juros das administrações públicas, contas nacionais",
+        "frase": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública. O valor é final, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "2000f261140ea03d3514ccdc2be0e8a6cc06de44e09beb9cd5fe2d2415cd77ec"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2024-pt-768.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-2024/",
+      "lingua": "pt",
+      "largura": 768,
+      "medidas": {
+        "largura": 768,
+        "documento": 768,
+        "titulo": "Juros das administrações públicas, contas nacionais",
+        "frase": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública. O valor é final, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "534f13b6ac0d3808129b073b9c1f4d9ecc6e8d960a013b92cbd9efa7ef690370"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2024-pt-1024.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-2024/",
+      "lingua": "pt",
+      "largura": 1024,
+      "medidas": {
+        "largura": 1024,
+        "documento": 1024,
+        "titulo": "Juros das administrações públicas, contas nacionais",
+        "frase": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública. O valor é final, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "53ba51b7491dd19de55a27c7efe2e1b03897a75c16a330287c89243ad2e7bf03"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2024-pt-1280.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-2024/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Juros das administrações públicas, contas nacionais",
+        "frase": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública. O valor é final, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "57dc441c0b9f878d9bad83a314f96687df1c009463d75c9f93f732e481fffcbb"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2024-pt-1600.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-2024/",
+      "lingua": "pt",
+      "largura": 1600,
+      "medidas": {
+        "largura": 1600,
+        "documento": 1600,
+        "titulo": "Juros das administrações públicas, contas nacionais",
+        "frase": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública. O valor é final, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "d6c20530a2239acc79579b903736b6a8cbc8b2be5e00b0ec7aed883cfbcb8f78"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2024-en-390.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-2024/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "General government interest expenditure, national accounts",
+        "frase": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance. The value is final, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "554b03b2354fb8a7dcb46796cbd82a171462c62f34ae1e880d8560366608f53e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2024-en-768.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-2024/",
+      "lingua": "en",
+      "largura": 768,
+      "medidas": {
+        "largura": 768,
+        "documento": 768,
+        "titulo": "General government interest expenditure, national accounts",
+        "frase": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance. The value is final, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "3e412ee9213ebcbcb8d27e0ccbac7d89c187164e5f1de4fcb6d021953f3a5c2c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2024-en-1024.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-2024/",
+      "lingua": "en",
+      "largura": 1024,
+      "medidas": {
+        "largura": 1024,
+        "documento": 1024,
+        "titulo": "General government interest expenditure, national accounts",
+        "frase": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance. The value is final, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "98386e1609cc8345843896885f30bf64952d3e30c908548c3d18d9557251b752"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2024-en-1280.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-2024/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "General government interest expenditure, national accounts",
+        "frase": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance. The value is final, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "04aae9b18ccc2a9e184e6fc2e98f4f8e9e17a55511c42ab5c00df6f3835a40de"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2024-en-1600.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-2024/",
+      "lingua": "en",
+      "largura": 1600,
+      "medidas": {
+        "largura": 1600,
+        "documento": 1600,
+        "titulo": "General government interest expenditure, national accounts",
+        "frase": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance. The value is final, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "8871690a46b0d4f69953923ca53b5b107481ed5b7de8dc56e42121e9196ebd11"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2025-pt-390.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-2025/",
+      "lingua": "pt",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "Juros das administrações públicas, contas nacionais",
+        "frase": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "Subiu de 5 983,4 para 6 028,2.",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "4c71871828306d505d36c9e0a172cf385146471c0bf17141819b0655f38b149c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2025-pt-768.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-2025/",
+      "lingua": "pt",
+      "largura": 768,
+      "medidas": {
+        "largura": 768,
+        "documento": 768,
+        "titulo": "Juros das administrações públicas, contas nacionais",
+        "frase": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "Subiu de 5 983,4 para 6 028,2.",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "9fdf8910ee27f8efb4608fd97ba3ca689e1b5e1ddf2c4163f053e7860ef5395f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2025-pt-1024.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-2025/",
+      "lingua": "pt",
+      "largura": 1024,
+      "medidas": {
+        "largura": 1024,
+        "documento": 1024,
+        "titulo": "Juros das administrações públicas, contas nacionais",
+        "frase": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "Subiu de 5 983,4 para 6 028,2.",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "81bdc3f530f57076d685ddf228e09f6e801589cced28b5cac5747514af443a89"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2025-pt-1280.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-2025/",
+      "lingua": "pt",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "Juros das administrações públicas, contas nacionais",
+        "frase": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "Subiu de 5 983,4 para 6 028,2.",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "b886b343bbb4ee4c76a18529f1ee6678c377fe66b83bcd991d1f218991a427fa"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2025-pt-1600.png",
+      "url": "/livro-razao/juros-das-administracoes-publicas-2025/",
+      "lingua": "pt",
+      "largura": 1600,
+      "medidas": {
+        "largura": 1600,
+        "documento": 1600,
+        "titulo": "Juros das administrações públicas, contas nacionais",
+        "frase": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "Subiu de 5 983,4 para 6 028,2.",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "9ed36913a36fab727dc100a294e42db1fe94ab83f036e5841efe25f11baa493d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2025-en-390.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-2025/",
+      "lingua": "en",
+      "largura": 390,
+      "medidas": {
+        "largura": 390,
+        "documento": 390,
+        "titulo": "General government interest expenditure, national accounts",
+        "frase": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "Rose from 5 983,4 to 6 028,2.",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "ac9418d1887d048b567c54bf5651f50c8fb09481f4d911c6af5e6ccd2deae7be"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2025-en-768.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-2025/",
+      "lingua": "en",
+      "largura": 768,
+      "medidas": {
+        "largura": 768,
+        "documento": 768,
+        "titulo": "General government interest expenditure, national accounts",
+        "frase": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "Rose from 5 983,4 to 6 028,2.",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "ad37e5beedd2d1b5b930ffb43c479a9482ec7253ac9a48a8c5b5a31b9584ba51"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2025-en-1024.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-2025/",
+      "lingua": "en",
+      "largura": 1024,
+      "medidas": {
+        "largura": 1024,
+        "documento": 1024,
+        "titulo": "General government interest expenditure, national accounts",
+        "frase": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "Rose from 5 983,4 to 6 028,2.",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "3690642f3f6b9cd3a0e424a3e24a12773455883917ce30be109f3841afa4186a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2025-en-1280.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-2025/",
+      "lingua": "en",
+      "largura": 1280,
+      "medidas": {
+        "largura": 1280,
+        "documento": 1280,
+        "titulo": "General government interest expenditure, national accounts",
+        "frase": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "Rose from 5 983,4 to 6 028,2.",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "10d590795ddfd5f14ea13298729899ae3a3883e5790de7d26deeeaef6c8fb457"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1d/juros-das-administracoes-publicas-2025-en-1600.png",
+      "url": "/en/ledger/juros-das-administracoes-publicas-2025/",
+      "lingua": "en",
+      "largura": 1600,
+      "medidas": {
+        "largura": 1600,
+        "documento": 1600,
+        "titulo": "General government interest expenditure, national accounts",
+        "frase": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+        "ultimo": "",
+        "parcela": "",
+        "evolucao": "Rose from 5 983,4 to 6 028,2.",
+        "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+        "cabecalho": [],
+        "excerto_grafico": null,
+        "por_confirmar": 0,
+        "portas": []
+      },
+      "sha256": "a88ef843a8bcb88d4ee93b354785ad14b9729ca77ed6e981df37ab02b1626bae"
+    }
+  ],
+  "problemas": []
+}

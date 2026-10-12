@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "pib-nominal-notificacao-setembro-2025"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "308 538,2"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Produto Interno Bruto, a preços de mercado"
+name_source: "Quadro 1, Produto Interno Bruto, a preços de mercado, coluna 2025, p. 2"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Instituto Nacional de Estatística"
+document:
+  title: "Procedimento dos Défices Excessivos 2ª Notificação"
+  edition: "Setembro de 2026"
+  locator: "Quadro 1, Produto Interno Bruto, a preços de mercado, coluna 2025, p. 2"
+  page: 2
+  kind: "pdf"
+source_url: "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=816377733&att_display=n&att_download=y"
+access_date: "2026-10-06"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "    Produto Interno Bruto, a preços de mercado                B.1*g        243 957,1       270 352,6       291 152,8     308 538,2       322 702,9"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: Quadro 1, Produto Interno Bruto, a preços de mercado, coluna 2025, p. 2.  Contas nacionais, execução orçamental e dívida direta têm perímetros e critérios distintos; esta linha conserva o do documento citado. · Cruzado de ResearchHub content/20 Orcamento do Estado · pib-nominal-notificacao-setembro-2025."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

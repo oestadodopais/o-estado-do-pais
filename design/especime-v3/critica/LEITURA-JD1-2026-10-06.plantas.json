@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-06T17:18:11+00:00",
+ "copia": "<scratchpad>/juros/pacote-leitura",
+ "plantas": [
+  {
+   "id": "p2",
+   "ficheiro": "ledger/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade.yml",
+   "descricao": "o último ponto da série das obrigações diz 3,57300 onde o excerto e o corpo do Eurostat dizem 3,53700",
+   "sha256_antes": "fcf77af503dfeafb44c136c4a922ab679154b9a3de6568133a448dc653081ddc",
+   "sha256_depois": "bf663b2e0d69f689c15248daade7c648dbda196a44dfc4a83d2f8d1f56efe6c4",
+   "contexto_antes": "6\\\":557 · \\\"557\\\":3.32800\"\n    bandeira: null\n  - periodo: \"2026-07\"\n    valor: \"3,44300\"\n    excerto: \"\\\"2026-07\\\":558 · \\\"558\\\":3.44300\"\n    bandeira: null\n  - periodo: \"2026-08\"\n    valor: \"3,53700\"\n    excerto: \"\\\"2026-08\\\":559 · \\\"559\\\":3.53700\"\n    bandeira: null\n\n# Numa série derivada, a conta em palavras nas duas línguas, as séries de origem e a\n# exp",
+   "contexto_depois": "6\\\":557 · \\\"557\\\":3.32800\"\n    bandeira: null\n  - periodo: \"2026-07\"\n    valor: \"3,44300\"\n    excerto: \"\\\"2026-07\\\":558 · \\\"558\\\":3.44300\"\n    bandeira: null\n  - periodo: \"2026-08\"\n    valor: \"3,57300\"\n    excerto: \"\\\"2026-08\\\":559 · \\\"559\\\":3.53700\"\n    bandeira: null\n\n# Numa série derivada, a conta em palavras nas duas línguas, as séries de origem e a\n# exp"
+  },
+  {
+   "id": "p3",
+   "ficheiro": "built/livro-razao/juros-das-administracoes-publicas-2024/index.html",
+   "descricao": "o recibo construído dos juros de 2024 diz «receita» onde a linha e a fonte dizem «despesa»",
+   "sha256_antes": "df75c3299dad4e8769ea88d1a9894400581dceb2d818ce620f1f328dba48f630",
+   "sha256_depois": "03e3c18652b152fe717ce739d1fa7b5d7521a3b0ac91a895d739cdca41c242e2",
+   "contexto_antes": "ilia=\"juros-das-administracoes-publicas\"><p class=\"linha-o-que-e-k\" data-voz>O que é este número</p><p class=\"linha-o-que-e-frase\" data-o-que-e-parte=\"o-que-e\">É a despesa em juros das administrações públicas, nas contas nacionais.</p></div><p class=\"linha-valor\"><span data-claim=\"juros-das-administracoes-publicas-2024\" class=\"claim-value linha-valor-num\">5 983,4</span> <span class=\"campo",
+   "contexto_depois": "ilia=\"juros-das-administracoes-publicas\"><p class=\"linha-o-que-e-k\" data-voz>O que é este número</p><p class=\"linha-o-que-e-frase\" data-o-que-e-parte=\"o-que-e\">É a receita em juros das administrações públicas, nas contas nacionais.</p></div><p class=\"linha-valor\"><span data-claim=\"juros-das-administracoes-publicas-2024\" class=\"claim-value linha-valor-num\">5 983,4</span> <span class=\"campo"
+  },
+  {
+   "id": "p4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que os dezanove pedidos responderam todos com HTTP 200, e a sua própria tabela e o registo dizem dezoito",
+   "sha256_antes": "12418f36cc2b04668a28689389730c4b68597153a1878b4105cd746c17eaf1b4",
+   "sha256_depois": "1647792e4f49d5fde81d4f1c7e65e2971388571392ce2e405d4c4ffe8a9e9ec3",
+   "contexto_antes": "th a residual maturity of around 10 years».\n- «, apresentada mês a mês»: própria série: name «monthly data».\n\n## Pedidos e extrações\n\nPedidos efetivos: **19**, dos quais **18** responderam com HTTP 200. O registo copiado para a pasta do corredor não conta como um novo pedido. Extrações registadas: **6**, incluindo a coluna portuguesa da nota do IGCP.\n\n| Fiche",
+   "contexto_depois": "th a residual maturity of around 10 years».\n- «, apresentada mês a mês»: própria série: name «monthly data».\n\n## Pedidos e extrações\n\nPedidos efetivos: **19**, dos quais **19** responderam com HTTP 200. O registo copiado para a pasta do corredor não conta como um novo pedido. Extrações registadas: **6**, incluindo a coluna portuguesa da nota do IGCP.\n\n| Fiche"
+  },
+  {
+   "id": "p5",
+   "ficheiro": "motor/indicators/out/jd1-2026-10-06/pedidos.jsonl",
+   "descricao": "o registo do pedido do boletim do IGCP traz um sha256 que não é o do ficheiro alojado",
+   "sha256_antes": "9739985aec1b2e9fc3e9b8a081d108beaefc69b3613181e4b89470fcc446e6c4",
+   "sha256_depois": "91091dc585d571e6cc80f28063a3a50977af4f6910a0ebd3b170901d2bd06b71",
+   "contexto_antes": "plication/pdf\", \"user_agent\": \"OEstadoDoPais/corredor\", \"cliente\": \"publisher.dominios_fetch.buscar → core.http.HttpClient.condicional\", \"teto_bytes\": 8388608, \"sha256\": \"e327feb73d210f958b1a40b3c86d6c681b686629416f070946902e00310392cb\", \"file\": \"006-igcp-boletim-setembro-2026.pdf\", \"estado\": \"lido\", \"erro\": null, \"tentativa\": 1}\n{\"nome\": \"igcp-relatorio-anual-2025.pdf\", \"url\": \"https://www.ig",
+   "contexto_depois": "plication/pdf\", \"user_agent\": \"OEstadoDoPais/corredor\", \"cliente\": \"publisher.dominios_fetch.buscar → core.http.HttpClient.condicional\", \"teto_bytes\": 8388608, \"sha256\": \"e327feb73d210f958b1a40b3c86d6c681b686629416f070946902e00310392cc\", \"file\": \"006-igcp-boletim-setembro-2026.pdf\", \"estado\": \"lido\", \"erro\": null, \"tentativa\": 1}\n{\"nome\": \"igcp-relatorio-anual-2025.pdf\", \"url\": \"https://www.ig"
+  },
+  {
+   "id": "p1",
+   "ficheiro": "ledger/claims/juros-das-administracoes-publicas-2024.yml",
+   "descricao": "a linha dos juros de 2024 diz 5 938,4 onde o excerto e o quadro do INE dizem 5 983,4",
+   "sha256_antes": "cd159d2af58feabdb93788c6cda8ed8da62d5200d81861779a81900cd7bad471",
+   "sha256_depois": "813033ccf66253952502312388a8e407fc32ff72910c57e0b9c2c53735650bac",
+   "contexto_antes": "e scripts/check-cruzamento.mjs.\n\nid: \"juros-das-administracoes-publicas-2024\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"5 983,4\"\nunit: \"milhões de euros\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.",
+   "contexto_depois": "e scripts/check-cruzamento.mjs.\n\nid: \"juros-das-administracoes-publicas-2024\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"5 938,4\"\nunit: \"milhões de euros\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão."
+  }
+ ]
+}

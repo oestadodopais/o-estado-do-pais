@@ -217,7 +217,7 @@ São **2 850 linhas cruzadas a 03.09.2026**, de quatro ficheiros de travessia, e
 
 ## 7 · O `.gitignore` (item 7)
 
-Era `<worktrees>/` e passa a `.claude/` inteiro. Nenhum ficheiro `.claude` estava seguido pelo git quando a linha mudou (`git ls-files '.claude*'` a zero de saída), portanto isto não desliga o seguimento de coisa nenhuma: fecha a porta antes de alguém lá pôr as definições locais da sessão ou os caminhos da máquina do diretor num repositório público.
+Era `<pasta-das-worktrees>/` e passa a `.claude/` inteiro. Nenhum ficheiro `.claude` estava seguido pelo git quando a linha mudou (`git ls-files '.claude*'` a zero de saída), portanto isto não desliga o seguimento de coisa nenhuma: fecha a porta antes de alguém lá pôr as definições locais da sessão ou os caminhos da máquina do diretor num repositório público.
 
 ## 8 · Os dois `[a verificar]` das notas (item 8)
 

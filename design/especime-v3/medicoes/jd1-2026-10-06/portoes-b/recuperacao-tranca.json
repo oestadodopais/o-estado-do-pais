@@ -1,0 +1,10 @@
+{
+  "dono_pid": 29131,
+  "dono_worktree": "<outra-worktree>",
+  "idade_segundos": 609,
+  "dono_inexistente": true,
+  "construcoes_ativas": [],
+  "bytes_reconferidos_sob_exclusao": true,
+  "acao": "Removida apenas a tranca abandonada; sem alterar o mecanismo, os processos ou ficheiros de outra worktree.",
+  "exclusao": "flock do ficheiro auxiliar de expiração"
+}

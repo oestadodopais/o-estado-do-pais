@@ -12,7 +12,7 @@ As cinco regras foram provadas num defeito plantado antes de esta corrida contar
 ========================================================================
 
 DIREÇÃO B · INSTRUMENTO À FRENTE · conferência dos protótipos
-origem dos algarismos: <casa>/<projetos>/OEstadoDoPais/dist
+origem dos algarismos: <casa>/Instruments/OEstadoDoPais/dist
 
 ficheiro            KiB      <script>  pedidos  exemplos  estado
 ------------------------------------------------------------------

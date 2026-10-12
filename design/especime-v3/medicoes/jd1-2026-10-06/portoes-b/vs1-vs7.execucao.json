@@ -1,0 +1,7 @@
+{
+  "comando": "python3 -m publisher.series_paises_test",
+  "inicio": "2026-10-07T12:13:14.083155+00:00",
+  "fim": "2026-10-07T12:13:15.298639+00:00",
+  "codigo": 0,
+  "cabeca": "481e15e2ba384703dfdfb83b7aca62f4b3ae24ef"
+}

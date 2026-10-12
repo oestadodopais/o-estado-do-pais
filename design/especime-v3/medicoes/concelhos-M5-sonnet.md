@@ -2,7 +2,7 @@
 
 Corrido sobre o ramo `concelhos-2026-08-26`, contra o build congelado servido de
 `scratchpad/dist-concelhos` (porta 4731) e contra os ficheiros da fonte alojados em
-`~/<projetos>/ResearchHub/content/12 Concelhos/source/` (só leitura). Código próprio, do
+`<motor>/content/12 Concelhos/source/` (só leitura). Código próprio, do
 zero: `concelhos-M5-sonnet.mjs` (Node, com o Playwright do repositório) e `extrai_fontes.py`
 (Python, pdfplumber + pandas/odf), os dois em `design/especime-v3/medicoes/`. Não li
 `publisher/`, `src/`, `scripts/` (salvo correr `scripts/medir-defeitos.mjs`, autorizado pelo

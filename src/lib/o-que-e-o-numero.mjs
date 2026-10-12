@@ -1,3 +1,4 @@
+import { palavrasDaLinhaJd1 } from '../data/notas-jd1.mjs';
 /**
  * ===========================================================================
  * O QUE É CADA NÚMERO · o resolvedor (bloco R4, 05.10.2026, os pontos 1 e 2 do brief
@@ -155,7 +156,7 @@ export function oQueEDaLinha(id, lang) {
     pedacos = [...frase.slice(0,-1), frase.at(-1).replace(/\.$/, ''), lang === 'pt' ? ', no instantâneo de ' : ', in the snapshot of ', {data:{id,campo:'document.computed_over.files.0.snapshot_date',valor:data}}, '.'];
   }
   if (d.compara) pedacos = [...pedacos,...comparaLinhas(d.compara,lang)];
-  return { pedacos, tipo: 'familia', chave: f.chave, cartao: null, sinal: null, porConfirmar };
+  return { pedacos: [...pedacos, palavrasDaLinhaJd1(id, lang)], tipo: 'familia', chave: f.chave, cartao: null, sinal: null, porConfirmar };
 }
 
 /**

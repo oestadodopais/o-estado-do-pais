@@ -218,6 +218,6 @@ Duas coisas que não são falsas alarmes mas que registo por transparência, por
 
 ## 9 · Ficheiros
 
-* Programa: `<casa>/<projetos>/OEstadoDoPais/design/especime-v3/medicoes/parte3-M1-sonnet.py` — corre com `python3 parte3-M1-sonnet.py [--dist PATH] [--json OUT.json]`; sem `--dist`, usa a cópia congelada acima.
-* Este relatório: `<casa>/<projetos>/OEstadoDoPais/design/especime-v3/medicoes/parte3-M1-sonnet.md`.
+* Programa: `<sitio>/design/especime-v3/medicoes/parte3-M1-sonnet.py` — corre com `python3 parte3-M1-sonnet.py [--dist PATH] [--json OUT.json]`; sem `--dist`, usa a cópia congelada acima.
+* Este relatório: `<sitio>/design/especime-v3/medicoes/parte3-M1-sonnet.md`.
 * Nada foi escrito, corrigido nem commitado fora da pasta `design/especime-v3/medicoes/`.

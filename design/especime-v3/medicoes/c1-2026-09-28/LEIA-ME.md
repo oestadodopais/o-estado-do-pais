@@ -172,7 +172,7 @@ numérica nem uma normalização da escrita dos outros valores.
 | 24 | O comentário do motor usa um anfitrião genérico. O detetor reconhece o formato antigo, com uma amostra lida do próprio Git, sem a copiar para a entrega. | Medição `C1c.caminhos` em `medidas.json`, com conhecido-positivo do anfitrião. |
 
 **O circuito e as diferenças.** A geração está em
-`~/<projetos>/ResearchHub`, pasta `indicators/out/enquadramento-2026-09-28/`.
+`<motor>`, pasta `indicators/out/enquadramento-2026-09-28/`.
 Produziu 59 linhas. A comparação integral, campo a campo, está em
 `c1c/comparacao-gerada.json`; a tabela completa das outras 58 linhas está em
 `c1c/diferencas-outras-linhas.md`; a tabela seguinte mostra todas as diferenças

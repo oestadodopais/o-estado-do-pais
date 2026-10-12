@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { homedir as jd1Casa } from 'node:os';
 // mapa-distritos-M3-sonnet.mjs
 //
 // Medição cega do bloco "O mapa por distritos" (M3), por Claude Sonnet (o medidor).
@@ -8,7 +9,7 @@
 // mapa/pais.json, mapa/distritos/*.json, e o BRIEF-mapa-distritos-M3.md.
 //
 // Corre com:
-//   NODE_PATH=<casa>/<projetos>/OEstadoDoPais/node_modules node design/especime-v3/medicoes/mapa-distritos-M3-sonnet.mjs
+//   NODE_PATH=<casa>/Instruments/OEstadoDoPais/node_modules node design/especime-v3/medicoes/mapa-distritos-M3-sonnet.mjs
 // a partir da raiz da cópia (o git worktree), com o dist/ servido em AFTER_BASE.
 
 import { chromium, devices } from 'playwright';

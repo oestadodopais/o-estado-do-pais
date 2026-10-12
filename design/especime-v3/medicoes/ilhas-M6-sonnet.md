@@ -3,7 +3,7 @@
 Corrido na cópia `scratchpad/wt-medidor` (um `git worktree` fora do checkout principal,
 ao commit do bloco), contra o build congelado do próprio `dist/` dessa cópia, servido por
 `python3 -m http.server 4801 --bind 127.0.0.1`, e contra os ficheiros da fonte alojados em
-`~/<projetos>/ResearchHub/content/12 Concelhos/source/` (só leitura). Código próprio, do
+`<motor>/content/12 Concelhos/source/` (só leitura). Código próprio, do
 zero: `ilhas-M6-sonnet.mjs` (Node 22, `fetch` nativo, sem dependências de `node_modules`) e
 dois extractores Python ao lado, `extrai_acores.py` e `extrai_madeira.py` (`pdftotext
 -layout` por `subprocess`, sem `pdfplumber` nem outra biblioteca de PDF: o texto em bruto

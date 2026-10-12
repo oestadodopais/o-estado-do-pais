@@ -1,0 +1,29 @@
+---
+/** A marca cobre a tabela inteira: o gate continua a conferir a transcrição completa do excerpt. */
+import { quadroFinanciamentoJd1 } from '../lib/quadro-financiamento-jd1.mjs';
+interface Props { id: string; excerto: string; }
+const { id, excerto } = Astro.props;
+const quadro = quadroFinanciamentoJd1(excerto);
+---
+<table
+  class="linha-quadro-financiamento"
+  lang="pt-PT"
+  aria-labelledby="excerto"
+  data-linha-claim={id}
+  data-linha-campo="excerpt"
+>
+  <thead>
+    <tr>{quadro.cabecalho.map(celula => <th scope="col">{celula}{' '}</th>)}</tr>
+  </thead>
+  <tbody>
+    {quadro.linhas.map(linha => (
+      <tr class:list={{ 'quadro-financiamento-grupo': linha.grupo, 'quadro-financiamento-total': linha.destaque === 'total' }}>
+        <th scope="row">{linha.celulas[0]}{' '}</th>
+        <td>{linha.celulas[1]}{' '}</td>
+        <td data-quadro-jd1-celula={linha.destaque ?? undefined}>
+          {linha.destaque ? <strong>{linha.celulas[2]}</strong> : linha.celulas[2]}{' '}
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>

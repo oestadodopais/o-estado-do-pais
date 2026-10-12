@@ -27,7 +27,7 @@
    "sha256_antes": "19cd6ee6f86ad84e8959f7c72821d6e3489cec2289b8abbf125290d5a11fb9ee",
    "sha256_depois": "966a2d4f09e572d20df3f0e6330c50055ccef3a78ca4311740964cf007c30331",
    "contexto_antes": "e decision that governs it.\")\n\n\ndef main(argv: list[str]) -> int:\n    p = argparse.ArgumentParser(description=\"Confere as decisões sem escrever no sítio.\")\n    p.add_argument(\"--site\", default=os.environ.get(\"OEDP_SITE\"))\n    a = p.parse_args(argv)\n    if not a.site or not a.site.strip():\n        p.error(\"--site ou OEDP_SITE é obrigatório; não há caminho por omissão\")\n    site =",
-   "contexto_depois": "e decision that governs it.\")\n\n\ndef main(argv: list[str]) -> int:\n    p = argparse.ArgumentParser(description=\"Confere as decisões sem escrever no sítio.\")\n    p.add_argument(\"--site\", default=os.environ.get(\"OEDP_SITE\") or os.path.expanduser(\"~/<projetos>/OEstadoDoPais\"))\n    a = p.parse_args(argv)\n    if not a.site or not a.site.strip():\n        p.error(\"--site ou OEDP_SITE é obrigatório; não há caminho por omissão\")\n    site ="
+   "contexto_depois": "e decision that governs it.\")\n\n\ndef main(argv: list[str]) -> int:\n    p = argparse.ArgumentParser(description=\"Confere as decisões sem escrever no sítio.\")\n    p.add_argument(\"--site\", default=os.environ.get(\"OEDP_SITE\") or os.path.expanduser(\"<sitio>\"))\n    a = p.parse_args(argv)\n    if not a.site or not a.site.strip():\n        p.error(\"--site ou OEDP_SITE é obrigatório; não há caminho por omissão\")\n    site ="
   },
   {
    "id": "P4",

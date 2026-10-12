@@ -1,0 +1,36 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "juros-das-administracoes-publicas-pib-2024"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "2,06"
+unit: "% do PIB"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2024"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "Dividir os juros das administrações públicas pelo produto interno bruto a preços de mercado do mesmo ano, na mesma notificação do INE, e multiplicar por cem. Arredondar a duas casas decimais, com as metades para fora de zero."
+derivation_en: "Divide general government interest expenditure by gross domestic product at market prices for the same year, in the same INE notification, and multiply by one hundred. Round to two decimal places, with halves away from zero."
+derived_from:
+  - "juros-das-administracoes-publicas-2024"
+  - "pib-nominal-notificacao-setembro-2024"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( juros-das-administracoes-publicas-2024 / pib-nominal-notificacao-setembro-2024 * 100 , 2 )"
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] Dividir os juros das administrações públicas pelo produto interno bruto a preços de mercado do mesmo ano, na mesma notificação do INE, e multiplicar por cem. Arredondar a duas casas decimais, com as metades para fora de zero. · [note do motor] Cálculo sobre os montantes impressos nos quadros da mesma notificação. Não é uma percentagem impressa pelo INE. · Cruzado de ResearchHub content/20 Orcamento do Estado · juros-das-administracoes-publicas-pib-2024."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

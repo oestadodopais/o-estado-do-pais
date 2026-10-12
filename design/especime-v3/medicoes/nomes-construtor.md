@@ -266,7 +266,7 @@ publicação de nove trabalhos é uma decisão dele.
 
 **Como se mediu.** As duas colunas saem da MESMA régua, corrida sobre duas
 construções: a de `origin/main` em `8b2bbafc`, construída numa worktree à parte
-(`<worktrees>/base-nomes-antes`), e a deste ramo. As duas leram 7 238
+(`<pasta-das-worktrees>/base-nomes-antes`), e a deste ramo. As duas leram 7 238
 páginas. A medição inteira de cada uma está no JSON da régua, e o «depois»
 correu com `--contra` sobre o «antes», que é o que fecha o G10.
 

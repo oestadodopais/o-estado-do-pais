@@ -1,0 +1,306 @@
+{
+  "erros": [],
+  "contas": {
+    "paginas": 7936,
+    "paginas_com_cartoes": 706,
+    "cartoes": 5290,
+    "familias": {
+      "nacional": 318,
+      "uniao": 42,
+      "concelho": 4928,
+      "camaras": 2
+    },
+    "nomes": {
+      "projeto": 214,
+      "medidas": 24,
+      "figuras": 66,
+      "cartao": 14
+    },
+    "estados": 688,
+    "unidades": {
+      "declaradas": 780,
+      "da_linha": 4442,
+      "em_divida": 2,
+      "na_faixa_dos_paises": 18
+    },
+    "faixas": {
+      "lugar": 2464,
+      "comparacao": 2464,
+      "presentes": 2464
+    },
+    "dobras": {
+      "perguntas": 138,
+      "notas": 4928,
+      "referencias": 12,
+      "termos": 8,
+      "uniao": 42,
+      "paises": 20
+    },
+    "oe1": {
+      "recibos": {
+        "pt": 186,
+        "en": 186
+      },
+      "entradas": {
+        "pt": 186,
+        "en": 186
+      },
+      "acumuladas": {
+        "pt": 124,
+        "en": 124
+      }
+    },
+    "jd1": {
+      "recibos": {
+        "pt": 14,
+        "en": 14
+      },
+      "entradas": {
+        "pt": 14,
+        "en": 14
+      },
+      "acumuladas": {
+        "pt": 0,
+        "en": 0
+      }
+    },
+    "faixas_dos_paises": 20,
+    "ressalvas": 2
+  },
+  "chaves": 376,
+  "formas_por_campo": {
+    "dobra": 164,
+    "nome": 374,
+    "periodo": 272,
+    "regua": 106,
+    "unidade": 332,
+    "comparacao": 12,
+    "faixa": 49,
+    "estado": 60,
+    "dobra-referencia": 12,
+    "faixa-ue": 20,
+    "dobra-termo": 8,
+    "ressalva": 2
+  },
+  "em_dia_com_o_declarado": true,
+  "diferencas_do_declarado": 0,
+  "comparado_com_o_declarado": {
+    "chaves": 376,
+    "campos": 1362,
+    "formas": 1411,
+    "ocorrencias": 26844
+  },
+  "plantas": [
+    {
+      "nome": "r2-nome-trocado-num-cartao-nacional",
+      "campo": "nome",
+      "mordeu": true,
+      "queixa": "R2-nome · /emprego · jovens-nem-2025: o nome diz «Jovens» (figuras) e a declaração (figuras) diz «Jovens sem emprego, escola ou formação»"
+    },
+    {
+      "nome": "r2-nome-pelo-titulo-da-fonte",
+      "campo": "nome",
+      "mordeu": true,
+      "queixa": "R2-nome · /areas/trabalho-solidariedade-e-seguranca-social · retribuicao-minima-mensal-doze-meses-2027-planta: o cartão nomeia-se «Ganho médio mensal» pelo nada da fonte, e a linha não tem nome declarado (FIGURAS, MEDIDAS_DO_DOMINIO_1, NOMES_DO_PROJETO): um rótulo sem declaração"
+    },
+    {
+      "nome": "r2-unidade-da-casa-trocada",
+      "campo": "unidade",
+      "mordeu": true,
+      "queixa": "R2-unidade · /emprego · jovens-nem-2025: a unidade diz «% da população» e a declaração diz «% das pessoas dos 15 aos 29 anos»"
+    },
+    {
+      "nome": "r2-unidade-da-linha-em-vez-da-declarada",
+      "campo": "unidade",
+      "mordeu": true,
+      "queixa": "R2-unidade · /en/employment · taxa-de-emprego-2025: a unidade diz «% of the population» (sem a marca da unidade da casa) e a declaração diz «% of people aged 20 to 64»"
+    },
+    {
+      "nome": "r2-unidade-da-linha-nao-aceite",
+      "campo": "unidade",
+      "mordeu": true,
+      "queixa": "R2-unidade · /areas/ambiente-e-energia · criancas-em-creche-2024: imprime a unidade da linha «%», que não está na lista das que um cartão imprime como estão, e o cartão não tem unidade declarada: um rótulo sem declaração"
+    },
+    {
+      "nome": "r2-estado-sem-o-dono",
+      "campo": "estado",
+      "mordeu": true,
+      "queixa": "R2-estado · /estado-e-economia · divida-publica-2025: o estado diz «fora do valor de referência (acima de # %)», que não é uma forma declarada para o dono da referência da medida"
+    },
+    {
+      "nome": "r2-estado-do-dono-errado",
+      "campo": "estado",
+      "mordeu": true,
+      "queixa": "R2-estado · /en/state-and-economy · saldo-das-administracoes-publicas-2025: o estado diz «within the Commission’s reference value (above −# %)», que não é uma forma declarada para o dono da referência da medida"
+    },
+    {
+      "nome": "r2-faixa-sem-a-medida",
+      "campo": "faixa",
+      "mordeu": true,
+      "queixa": "R2-faixa · /municipios/evora · concelho:indice: a frase do lugar diz «L (#) está em #.º lugar entre os # concelhos com valor, do mais baixo para o mais alto.», que não é uma forma declarada para a medida"
+    },
+    {
+      "nome": "r2-comparacao-de-antes",
+      "campo": "faixa",
+      "mordeu": true,
+      "queixa": "R2-faixa · /en/municipalities/evora · concelho:poderDeCompra: a comparação diz «It is above Portugal, which is the base of the index.», que não é uma forma declarada para a medida"
+    },
+    {
+      "nome": "r2-pergunta-trocada",
+      "campo": "dobra",
+      "mordeu": true,
+      "queixa": "R2-dobra · /areas/trabalho-solidariedade-e-seguranca-social · criancas-em-creche-2025: a pergunta do cartão diz «Que parte das crianças está em creche?» e a declaração diz «Que parte das crianças com menos de três anos é cuidada fora da famíli»"
+    },
+    {
+      "nome": "r2-pergunta-tirada",
+      "campo": "dobra",
+      "mordeu": true,
+      "queixa": "R2-dobra · /areas/saude · necessidades-medicas-nao-satisfeitas-2025: a pergunta do cartão falta e a declaração diz «Que parte das pessoas diz ter precisado de um exame ou tratamento médi»"
+    },
+    {
+      "nome": "r2-nota-do-concelho-de-antes",
+      "campo": "dobra",
+      "mordeu": true,
+      "queixa": "R2-dobra · /municipios/evora · concelho:populacao: a dobra diz «Estimativa anual do INE para o concelho.» e a nota da medida diz «Estima quantas pessoas vivem no concelho (população residente), pela e»"
+    },
+    {
+      "nome": "r2-referencia-na-dobra-de-outro-dono",
+      "campo": "dobra",
+      "mordeu": true,
+      "queixa": "R2-dobra · /areas/financas · saldo-das-administracoes-publicas-2025: a frase da referência diz «O valor de referência é o do painel do Procedimento relativo aos Deseq» e a declaração do dono diz «O valor de referência é o limite de défice que os Estados-Membros se c»"
+    },
+    {
+      "nome": "r2-unidade-do-cartao-da-uniao-de-antes",
+      "campo": "unidade",
+      "mordeu": true,
+      "queixa": "R2-unidade · /uniao-europeia · jovens-nem-2025: a linha da unidade do cartão da União diz «Percentagem da população · 2025» e a figura declara «Percentagem das pessoas dos 15 aos 29 anos · 2025»"
+    },
+    {
+      "nome": "r2-cartao-sem-chave",
+      "campo": "chave",
+      "mordeu": true,
+      "queixa": "R2-chave · /precos · ?: um cartão de medida sem a marca da sua linha nem da sua medida: o inventário não o chaveia, e um rótulo sem chave não tem declaração"
+    },
+    {
+      "nome": "r2b-estado-que-falta-num-cartao-nacional",
+      "campo": "estado",
+      "mordeu": true,
+      "queixa": "R2-estado · /estado-e-economia · divida-publica-2025: a medida tem valor de referência declarado e o cartão não diz o estado"
+    },
+    {
+      "nome": "r2b-estado-do-limite-que-falta",
+      "campo": "estado",
+      "mordeu": true,
+      "queixa": "R2-estado · /municipios/evora · concelho:indice: a medida tem teto declarado e o cartão com valor tem 0 linha(s) do estado, e não uma"
+    },
+    {
+      "nome": "r2b-frase-do-lugar-que-falta",
+      "campo": "faixa",
+      "mordeu": true,
+      "queixa": "R2-faixa · /en/municipalities/evora · concelho:ganho: a medida tem faixa declarada e o cartão tem 0 frase(s) do lugar e 1 da comparação, e não uma de cada"
+    },
+    {
+      "nome": "r2b-unidade-da-faixa-dos-paises-pela-serie",
+      "campo": "unidade",
+      "mordeu": true,
+      "queixa": "R2-unidade · /uniao-europeia · paises:taxa-de-emprego-2025: a unidade da faixa dos 27 diz «% da população» e a declaração do cartão diz «% das pessoas dos 20 aos 64 anos»"
+    },
+    {
+      "nome": "r2b-termo-trocado",
+      "campo": "dobra",
+      "mordeu": true,
+      "queixa": "R2-dobra · /areas/economia-e-coesao-territorial · evora-concentracao-vab4-2024: o primeiro cartão do termo «vab» na página explica «O VAB é a riqueza das empresas.» e a declaração diz «O valor acrescentado bruto (VAB) é o valor do que se produz menos o va»"
+    },
+    {
+      "nome": "r2b-termo-repetido",
+      "campo": "dobra",
+      "mordeu": true,
+      "queixa": "R2-dobra · /en/areas/economia-e-coesao-territorial · evora-vab-empresarial-2024: o cartão explica o termo «vab» e não é o primeiro cartão desse termo na página, ou o termo não é dele"
+    },
+    {
+      "nome": "r2b-ressalva-escrita-a-mao",
+      "campo": "ressalva",
+      "mordeu": true,
+      "queixa": "R2-ressalva · /livro-razao/retribuicao-minima-mensal-garantida-continente-2026 · retribuicao-minima-mensal-garantida-continente-2026: a ressalva do recibo diz «Este valor é o do território continental. Os Açores e a Madeira fixam o seu por diploma re» e a lista dos diplomas regionais compõe «Este valor é o do território continental. Nos Açores, a lei regional soma-lhe um acréscimo»"
+    },
+    {
+      "nome": "r2b-diploma-dos-acores-dado-como-por-ler",
+      "campo": "ressalva",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-nome-de-nivel-trocado",
+      "campo": "nome",
+      "mordeu": true,
+      "queixa": "R2-nome · /precos · ipc-combustiveis-variacao-homologa: o nome diz «Preços dos combustíveis, variação num ano» (cartao) e a declaração (cartao) diz «Preços dos combustíveis»"
+    },
+    {
+      "nome": "oe1-unidade-sem-acumulado",
+      "campo": "unidade",
+      "mordeu": true,
+      "queixa": "OE1-unidade · /livro-razao/execucao-2026-07-despesa-funcao-01 · execucao-2026-07-despesa-funcao-01: a unidade diz «milhões de euros» e o campo unit da linha nesta edição diz «milhões de euros, acumulados de janeiro a julho», com as marcas da própria linha"
+    },
+    {
+      "nome": "oe1-unidade-com-mes-trocado-em-ingles",
+      "campo": "unidade",
+      "mordeu": true,
+      "queixa": "OE1-unidade · /en/ledger/execucao-2026-08-despesa-programa-001 · execucao-2026-08-despesa-programa-001: a unidade diz «million euros, cumulative January to July» e o campo unit da linha nesta edição diz «million euros, cumulative January to August», com as marcas da própria linha"
+    },
+    {
+      "nome": "oe1-entrada-retirada-do-indice-pt",
+      "campo": "contagem",
+      "mordeu": true,
+      "queixa": "OE1-unidade · /livro-razao: o índice tem 185 entradas OE1 e deve ter 186"
+    },
+    {
+      "nome": "oe1-entrada-retirada-do-indice-en",
+      "campo": "contagem",
+      "mordeu": true,
+      "queixa": "OE1-unidade · /en/ledger: o índice tem 185 entradas OE1 e deve ter 186"
+    },
+    {
+      "nome": "jd1-unidade-trocada-pt",
+      "campo": "unidade",
+      "mordeu": true,
+      "queixa": "JD1-unidade · /livro-razao/juros-das-administracoes-publicas-2025 · juros-das-administracoes-publicas-2025: a unidade diz «%» e o campo unit da linha nesta edição diz «milhões de euros», com as marcas da própria linha"
+    },
+    {
+      "nome": "jd1-entrada-retirada-do-indice-pt",
+      "campo": "contagem",
+      "mordeu": true,
+      "queixa": "JD1-unidade · /livro-razao: o índice tem 13 entradas JD1 e deve ter 14"
+    },
+    {
+      "nome": "jd1-unidade-trocada-en",
+      "campo": "unidade",
+      "mordeu": true,
+      "queixa": "JD1-unidade · /en/ledger/juros-das-administracoes-publicas-2025 · juros-das-administracoes-publicas-2025: a unidade diz «%» e o campo unit da linha nesta edição diz «million euros», com as marcas da própria linha"
+    },
+    {
+      "nome": "jd1-entrada-retirada-do-indice-en",
+      "campo": "contagem",
+      "mordeu": true,
+      "queixa": "JD1-unidade · /en/ledger: o índice tem 13 entradas JD1 e deve ter 14"
+    },
+    {
+      "nome": "r2b-concelho-sem-o-cartao",
+      "campo": "contagem",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-estado-a-menos-na-contagem",
+      "campo": "estado",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-frase-do-lugar-a-menos-na-contagem",
+      "campo": "faixa",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-chave-declarada-que-nao-se-rende",
+      "campo": "chave",
+      "mordeu": true
+    }
+  ]
+}
