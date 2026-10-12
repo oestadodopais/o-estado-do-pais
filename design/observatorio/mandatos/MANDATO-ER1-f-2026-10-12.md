@@ -1,0 +1,18 @@
+# O mandato da passagem ER1-f (escrito a 12.10.2026 pelo lugar de direção, depois da leitura curta da passagem ER1-e)
+
+És o construtor da passagem ER1-f do bloco ER1 do projeto O Estado do País (o recibo incorporável). És o Codex `gpt-6-astra`, com o raciocínio em `high`. A leitura curta do Claude Opus 5.5 sobre a passagem ER1-e está em `design/especime-v3/critica/LEITURA-ER1-e-2026-10-12.md` (lê-a inteira primeiro); o lugar de direção decidiu o que se faz com cada achado, abaixo. Esta passagem fecha o bloco.
+
+## As decisões do lugar de direção, achado a achado
+
+- **Os achados 1, 2, 3, 4 e 5** eram os cinco estragos plantados nas cópias do pacote (`design/especime-v3/critica/PLANTAS-ER1-e-2026-10-12.json`); nada a corrigir por eles.
+- **O achado 6 (as duas plantas «recusado-isolado» do navegador ficam registadas como mordidas sem que nada tenha sido plantado: no modo normal a célula escreve `mordeu:true` depois de uma igualdade que passa; e o caso do endereço da fonte constrói o JSON apagando o campo à mão, o que não prova o que `jsonDaLinha` dá a uma linha marcada só no endereço).** Uma planta só conta como mordida se a afirmação falhar numa cópia estragada. As duas plantas do navegador passam a ter o seu estrago: o parágrafo colado de uma linha recusada só pelo excerto, e o de uma linha recusada só pelo endereço, servidos com um JSON estragado que traz o campo `incorporacao` (a cópia), têm de fazer a célula falhar com a mensagem («ER1 navegador: a recusa só por excerpt alterou o parágrafo colado.», e a do endereço), e com o JSON verdadeiro (o que `jsonDaLinha` dá) têm de passar sem o guião tocar no parágrafo; como o livro não tem hoje nenhuma linha marcada só no endereço da fonte, o caso do endereço constrói a linha em memória (uma cópia de uma linha real com a marca posta só em `source_url`) e passa-a a `jsonDaLinha` e ao compositor, em vez de apagar o campo à mão; o relatório diz, para cada uma das quatro plantas do navegador, o que se estragou e qual foi a mensagem.
+- **O achado 7 (nenhum ficheiro dá a cabeça final).** É a convenção do projeto: o último commit só leva o relatório e os códigos, e a sua cabeça não cabe dentro de si próprio; a resposta da entrega di-la. Nada a fazer; o relatório diz a convenção numa linha.
+- **O achado 8 (as marcas «[a verificar]» nos recibos recusados)** é anterior ao bloco e fica com o bloco dos recibos; nada a fazer.
+
+## O que fazes
+
+Primeiro, comprometes os ficheiros que o lugar de direção deixou na worktree por registar (`design/especime-v3/critica/LEITURA-ER1-e-2026-10-12.md`, `design/especime-v3/critica/PLANTAS-ER1-e-2026-10-12.json`) e este mandato, num commit só de registos. Depois o ponto do achado 6, num commit; o relatório com a secção «A passagem ER1-f» (as quatro plantas do navegador, o estrago e a mensagem de cada uma, por guião); os três portões inteiros pela tranca na cabeça do código, a 0, lidos de ficheiro, em `design/especime-v3/medicoes/er1-2026-10-06/portoes-f`; o último commit só com o relatório e os códigos. Sem capturas: as páginas não mudam. O custo-alvo é de cem mil símbolos: se o passares, di-lo.
+
+## As regras de sempre
+
+Nenhum número à mão no relatório; nenhum caminho da máquina nem o nome do utilizador em ficheiro nenhum (`<worktree>`, `<casa>`, `<utilizador>`); prosa em português sem travessões, as cadeias nas duas línguas; só um portão que protege um número, uma fonte ou uma pessoa te faz parar; as ambiguidades pequenas decides e anotas; nunca `git push`; nunca `git add -A` nem `git add .`; os dois trailers em cada commit: `Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>` e `Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444`. As questões novas numeram-se a partir de `ER1-13`.
