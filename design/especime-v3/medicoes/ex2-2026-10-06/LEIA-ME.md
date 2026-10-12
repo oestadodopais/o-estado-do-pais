@@ -565,6 +565,8 @@ Custo-alvo: cento e cinquenta mil símbolos. Não foi observada uma linha «toke
 
 ## A passagem EX1-f
 
+*Nota do lugar de direção (12.10.2026): as questões desta passagem tinham saído como EX1-9 e EX1-10 por erro do mandato, números que a passagem EX1-e já dera à conferência do perímetro e à redação da abertura; passam a EX1-11 (o saldo homólogo de 2025) e EX1-12 (as duas transferências), e os números da EX1-e ficam como estavam (o achado 5 da leitura curta da EX1-f).*
+
 A X10 exigia todos os ramos mas não prendia as palavras ao caso que os escolhe. Agora cada token de valor declara, na própria edição, palavras obrigatórias e proibidas para cada ramo. A X10 confere todos, mesmo os não escolhidos, com a mensagem própria «X10 · palavras do ramo». A X6 confere também as palavras do trecho rendido de cada token que consegue isolar pelo prefixo e pelo sufixo do parágrafo. Alterações nesses limites continuam cobertas pela igualdade X6; não se apresenta esta conferência de palavras como um analisador semântico geral.
 
 Base: `6f5264b9`, ramo `ex1d-2026-10-11`. Cabeça do código: `eee10a344e181e520862be5213404816264c7458`. As capturas são da construção desta cabeça, a última que muda código; o commit final só acrescenta este relatório, capturas e registos das conferências. Nenhuma mudança de ramo ou publicação. Os trailers seguem o mandato.
@@ -574,13 +576,13 @@ Base: `6f5264b9`, ramo `ex1d-2026-10-11`. Cabeça do código: `eee10a344e181e520
 - **1 a 5:** eram os cinco estragos das cópias da leitura. Os registos e o mandato foram comprometidos antes das correções.
 - **6:** os oito tokens nas duas edições declaram o vocabulário de todos os seus ramos. A comparação usa palavras inteiras, com acentos, e aceita expressões como «the same». As plantas trocam menor por maior e retiram a palavra do sinal de diferentesPositivo, isoladamente nas duas línguas; outra retira a própria declaração das palavras. O ramo zero da outra conta passou de «zero balance» a «nil balance», para usar o vocabulário pedido; a auditoria acompanha a mudança.
 - **7:** a comparação termina com os meses que ainda faltam, sem escrever números à mão. A parte tem apoio em unit da linha executada, «acumulados de janeiro a agosto», e no período anual da previsão. O excerto da linha do saldo contém a linha numérica do quadro, não a expressão «janeiro a agosto»; essa expressão está em unit e na nota. Regista-se esta precisão em relação ao mandato, sem atribuir palavras ao excerto que ele não contém.
-- **EX1-9, reservada ao motor:** selar `execucao-2025-08-saldo-global-administracao-central-seguranca-social`, a partir do mesmo quadro. O excerto selado já traz o valor homólogo, mas o livro não tem essa linha. Só uma passagem própria poderá dizer que o saldo passou de excedente a défice nos mesmos oito meses. Não se transcreveu esse valor para a página.
+- **EX1-11, reservada ao motor:** selar `execucao-2025-08-saldo-global-administracao-central-seguranca-social`, a partir do mesmo quadro. O excerto selado já traz o valor homólogo, mas o livro não tem essa linha. Só uma passagem própria poderá dizer que o saldo passou de excedente a défice nos mesmos oito meses. Não se transcreveu esse valor para a página.
 - **8:** usa-se «contas públicas» e «parágrafo seguinte» nas duas edições. O HTML confirma que seccoes[3].conteudo[0].paragrafo vem imediatamente depois de seccoes[2].conteudo[1].paragrafo, embora haja um título de secção entre ambos. A auditoria apoia a distinção na nota autorizada da linha e nos campos publicados já citados; a posição é uma parte aponta, conferida contra a ordem dos parágrafos. A planta de posição contrária falha pela X2.
-- **9, EX1-10, reservada ao bloco de higiene:** distinguir transferências entre administrações de transferências entre os serviços exige palavras seladas que distingam as duas. A passagem regista a questão e mantém o texto existente.
+- **9, EX1-12, reservada ao bloco de higiene:** distinguir transferências entre administrações de transferências entre os serviços exige palavras seladas que distingam as duas. A passagem regista a questão e mantém o texto existente.
 - **10:** a planta do sinal da previsão rende o ramo real diferentesPositivo que a inversão do sinal escolheria; mantém os valores e os selos originais, para isolar a escolha indevida das palavras. Tem de falhar tanto pela contabilidade dos ramos como pela conferência das palavras do ramo escolhido, em mensagens distintas. Os cenários continuam a provar a lógica dos sinais e dos módulos.
 - **11:** o typecheck em zero segundos é o compilador nativo do TypeScript 7, provado pelo lugar de direção com um erro de tipo plantado em 12.10.2026 (M67); não se mudou a maquinaria.
 
-As designações EX1-9 e EX1-10 acima são as do mandato EX1-f e substituem, nesta passagem, os usos desses números na secção histórica EX1-e. Não surgiu uma questão nova a numerar a partir de EX1-11.
+As designações EX1-11 e EX1-12 acima são as do mandato EX1-f e substituem, nesta passagem, os usos desses números na secção histórica EX1-e. Não surgiu uma questão nova a numerar a partir de EX1-11.
 
 ### Frases novas lidas do HTML
 
@@ -721,6 +723,6 @@ O [manifesto](capturas-ex1f.json) guarda a cabeça, as frases, a ordem dos pará
 - `9962c656 EX1-f: render o ramo real na planta do sinal da previsão`
 - `eee10a34 EX1-f: preparar os acertos e as provas da entrega`
 
-O último commit acrescenta apenas os artefactos da entrega. Permanecem reservadas as questões EX1-9 e EX1-10 acima, além das linhas dos juros e do arredondamento de EX1-5 para JD1. A leitura a frio e a integração pertencem ao lugar de direção. Nenhum portão foi dispensado.
+O último commit acrescenta apenas os artefactos da entrega. Permanecem reservadas as questões EX1-11 e EX1-12 acima, além das linhas dos juros e do arredondamento de EX1-5 para JD1. A leitura a frio e a integração pertencem ao lugar de direção. Nenhum portão foi dispensado.
 
 Custo-alvo: cem mil símbolos. Não foi observada uma linha «tokens used» desta construção; custo efetivo e confronto com o alvo: [verify], a apurar no registo do lançador.
