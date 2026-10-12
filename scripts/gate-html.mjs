@@ -3758,9 +3758,9 @@ function seloDaLinha(id, lang) {
   const calculado = eDerivada(claim) ? `${s.prov.calculado} · ` : '';
   /* Sem espaço antes do marcador: o gabarito põe-no no elemento a seguir e o
      DOM não traz espaço nenhum entre os dois, e é o DOM que o leitor vê. */
-  const marcador = provenienciaIncompleta(claim) ? POR_VERIFICAR : '';
+  const marcador = provenienciaIncompleta(claim) ? s.prov.marcadorDoSelo : '';
   const etiqueta = normalizeWhitespace(
-    conhecido ? `${calculado}${publicador}` : porConfirmar ? POR_VERIFICAR : s.prov.calculado,
+    conhecido ? `${calculado}${publicador}` : porConfirmar ? s.prov.marcadorDoSelo : s.prov.calculado,
   );
   /* E ONDE O PUBLICADOR É A CASA, a palavra do selo é «linha» e não «fonte»: são
      as cinco linhas cujo `source` é o nome deste sítio, e o §2.4 escreve-o à
