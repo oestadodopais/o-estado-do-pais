@@ -260,6 +260,15 @@ export function conferirExcertoDaPensao(linha) {
  const l=loadClaims().get('penalizacao-legal-um-ano-antecipacao-2026');
  assert.equal(l.value,'6'); assert(l.excerpt.includes('cerca de 6% por ano')); assert(l.ressalva.includes('Valor aproximado')); 
 }
+{
+ const {conferirPublicacaoRetirada}=await import('../../scripts/linhas-retiradas.mjs');
+ const os=await import('node:os'),path=await import('node:path');
+ const pasta=fs.mkdtempSync(path.join(os.tmpdir(),'rp4nf-retirada-'));
+ try {
+  fs.writeFileSync(path.join(pasta,'livro-razao.json'),JSON.stringify([{id:'avisos-pt2030-abertos'}]));
+  morde('linha retirada no JSON do conjunto',conferirPublicacaoRetirada(pasta,loadClaims({includeWithdrawn:true})).map(e=>e.mensagem),'uma linha retirada chegou a uma página: avisos-pt2030-abertos');
+ }finally{fs.rmSync(pasta,{recursive:true,force:true});}
+}
 if(process.argv.includes('--registo-e')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/e/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 assert.deepEqual(conferirAuditoriaDasFamilias().erros, []);
 console.log(`RP4N-e: PASS, ${plantas.length} plantas e auditoria íntegra`);
