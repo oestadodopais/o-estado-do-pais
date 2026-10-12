@@ -536,8 +536,8 @@ const ficha = [
      relatório» de «está nesta página deste relatório». */
   {
     k: s.prov.localizacao,
-    campo: 'document.locator',
-    valor: claim.document?.locator ?? null,
+    campo: lang === 'en' && claim.document?.locator_en ? 'document.locator_en' : 'document.locator',
+    valor: (lang === 'en' && claim.document?.locator_en) || claim.document?.locator || null,
     /**
      * O LOCALIZADOR ESTÁ NA LÍNGUA DO DOCUMENTO QUE ELE LOCALIZA (I91,
      * 29.08.2026), e por isso leva a marca do título.
@@ -551,7 +551,7 @@ const ficha = [
      * um localizador aparecer numa linha de documento inglês — que é o dia em
      * que esta regra deixa de valer e alguém tem de decidir.
      */
-    lingua: linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
+    lingua: lang === 'en' && claim.document?.locator_en ? null : linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
   },
   /* O RÓTULO COM QUE A FONTE PUBLICA ESTA FIGURA, e onde no ficheiro alojado
      ele foi lido (29.08.2026). Vem a seguir ao localizador porque é o par dele
@@ -567,9 +567,9 @@ const ficha = [
   },
   {
     k: s.prov.rotuloOnde,
-    campo: 'name_source',
-    valor: claim.name_source ?? null,
-    lingua: linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
+    campo: lang === 'en' && claim.name_source_en ? 'name_source_en' : 'name_source',
+    valor: (lang === 'en' && claim.name_source_en) || claim.name_source || null,
+    lingua: lang === 'en' && claim.name_source_en ? null : linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
   },
   /* A DATA DE LEITURA NÃO ENTRA NA FICHA (09.09.2026, decisão 17): vive uma vez
      só, no bloco das verificações. O período de referência fica, porque é uma

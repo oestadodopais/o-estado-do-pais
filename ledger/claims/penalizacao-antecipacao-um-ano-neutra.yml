@@ -11,12 +11,14 @@ value: "8,2"
 unit: "%"
 name: "dcum x : cumulative reduction"
 name_source: "p. 273, Figura 8.4, rótulo da redução cumulativa"
+name_source_en: "p. 273, Figure 8.4, cumulative reduction label"
 
 source: "Grupo de Trabalho para a Reforma da Segurança Social"
 document:
   title: "Reformar as Pensões em Portugal: Por um Sistema Sustentável, Adequado e Justo — um Contrato entre Gerações"
   edition: "Relatório final, Junho de 2026"
   locator: "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, Figura 8.4"
+  locator_en: "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, Figure 8.4"
   page: 273
   kind: "pdf"
   crop: {"asset": "recortes/penalizacao-antecipacao-um-ano-neutra.webp", "sha256": "afa7a9ae82aef193332c18501236ff51511a5b6313d51407520d14afc085b967", "page": 273}

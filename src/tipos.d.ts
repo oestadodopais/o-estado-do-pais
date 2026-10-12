@@ -198,6 +198,7 @@ interface Linha {
   unit: unknown;
   name?: unknown;
   name_source?: unknown;
+  name_source_en?: string;
   source: unknown;
   document: unknown;
   source_url: unknown;
@@ -263,7 +264,6 @@ interface Serie {
   source: unknown;
   document: unknown;
   source_url: unknown;
-  access_date_kind?: 'hosted-copy' | 'source-read';
   access_date: unknown;
   published_at: unknown;
   excerpt: unknown;
