@@ -31,6 +31,7 @@ function serie(partes) {
     if ('nome' in p) return `⟨nome:${p.nome}⟩`;
     /* EX1-c: o sinal serializa-se com as palavras dos ramos (positivo|negativo|zero), para que o acerto X16 se veja. */
     if ('sinal' in p) return `⟨sinal:${p.sinal}:${['positivo', 'negativo', 'zero'].map((r) => (r in p ? serie(p[r]) : '')).join('|')}⟩`;
+    if ('comparaSaldos' in p) return `⟨comparaSaldos:${p.comparaSaldos.join(',')}⟩`;
     if ('compara' in p) return `⟨compara:${p.compara.join(',')}⟩`;
     if ('se' in p) return serie(p.partes);
     /* EX1-b: o token `maiores` serializa-se pela frase que o apresenta e pela contagem (as palavras de cada item estão no
@@ -102,6 +103,7 @@ acerto('X19', 'e a de agosto está acima.', 'e a execução até agosto é a que
 const SALDO_EXEC = 'execucao-2026-08-saldo-global-administracao-central-seguranca-social';
 const SALDO_OE = 'oe-2026-saldo-global-administracao-central-seguranca-social';
 acerto('X20', '\n\n## A dívida e o saldo', `\n\nAté ⟨periodo:${SALDO_EXEC}⟩, as contas da administração central e da segurança social fecharam com um saldo de ⟨claim:${SALDO_EXEC}⟩ milhões de euros, ⟨sinal:${SALDO_EXEC}:um excedente (recebeu mais do que gastou)|um défice (gastou mais do que recebeu)|um saldo nulo (recebeu o mesmo que gastou)⟩; o saldo acumulado está ⟨compara:${SALDO_EXEC},${SALDO_OE}⟩ para o ano inteiro (⟨claim:${SALDO_OE}⟩ milhões de euros).\n\n## A dívida e o saldo`);
+acerto('X21', `; o saldo acumulado está ⟨compara:${SALDO_EXEC},${SALDO_OE}⟩ para o ano inteiro (⟨claim:${SALDO_OE}⟩ milhões de euros).`, `; ⟨comparaSaldos:${SALDO_EXEC},${SALDO_OE}⟩.`);
 /* X9 não muda palavras: as frases que comparam ficam guardadas por condições. Conta-se aqui quantas guardas a declaração tem. */
 const guardas = (JSON.stringify(E).match(/"se":\[/g) ?? []).length / 2;
 exercidos.push({ id: 'X9', vezes: guardas });

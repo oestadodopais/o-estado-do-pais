@@ -90,6 +90,7 @@ const PREFIXO = { pt: ' que vai para ', en: ' going to ' };
 /* O NOME DE UM PROGRAMA DA EXECUÇÃO (EX1-b), pela regra desta célula: o que fica entre o começo e o fim do nome do projeto. */
 const PROGRAMA = { pt: ['Despesa executada do programa ', ' ('], en: ['Executed expenditure of the ', ' programme ('] };
 const PALAVRAS_DOS_MAIORES = ['frase', 'antes', 'abre', 'sufixo', 'fecha', 'entre', 'ultimo'];
+const RAMOS_DOS_SALDOS = ['deficitMaior', 'deficitMenor', 'deficitIgual', 'excedenteMaior', 'excedenteMenor', 'excedenteIgual', 'nulos', 'diferentesNegativo', 'diferentesPositivo', 'diferentesZero'];
 const NUMEROS_POR_EXTENSO = { dez: 10, dezasseis: 16, ten: 10, sixteen: 16 };
 const MESES = {
   pt: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
@@ -158,6 +159,11 @@ export function folhasDaExplicacao(e) {
       anda(a.partes, b.partes, `${c}.se`, 'se');
       return;
     }
+    if ('comparaSaldos' in a) {
+      if (JSON.stringify(a.comparaSaldos) !== JSON.stringify(b.comparaSaldos)) throw new Error(`X1 · as duas edições comparam saldos diferentes em ${c}`);
+      for (const r of RAMOS_DOS_SALDOS) if (r in a) anda(a[r], b[r], `${c}.${r}`, 'compara');
+      return;
+    }
     if ('compara' in a) {
       if (JSON.stringify(a.compara) !== JSON.stringify(b.compara)) throw new Error(`X1 · as duas edições comparam linhas diferentes em ${c}`);
       for (const r of ['maior', 'menor', 'igual']) if (r in a) anda(a[r], b[r], `${c}.${r}`, 'compara');
@@ -204,7 +210,7 @@ export function linhasDaExplicacao(e, linhas) {
     else if (x && typeof x === 'object') {
       for (const [k, v] of Object.entries(x)) {
         if (['claim', 'periodo', 'nome', 'sinal'].includes(k) && typeof v === 'string') out.add(v);
-        else if (['linhas', 'primeiros', 'de', 'maiores', 'compara'].includes(k) && Array.isArray(v)) v.forEach((id) => typeof id === 'string' && out.add(id));
+        else if (['linhas', 'primeiros', 'de', 'maiores', 'compara', 'comparaSaldos'].includes(k) && Array.isArray(v)) v.forEach((id) => typeof id === 'string' && out.add(id));
         else anda(v);
       }
     }
@@ -411,11 +417,11 @@ export function conferirRamosDasExplicacoes({ explicacoes = EXPLICACOES } = {}) 
       if (Array.isArray(x)) { x.forEach((y, i) => anda(y, `${c}[${i}]`)); return; }
       if (!x || typeof x !== 'object') return;
       const o = /** @type {Record<string, any>} */ (x);
-      const ramos = 'sinal' in o ? ['positivo', 'negativo', 'zero'] : 'compara' in o ? ['maior', 'menor', 'igual'] : null;
+      const ramos = 'sinal' in o ? ['positivo', 'negativo', 'zero'] : 'compara' in o ? ['maior', 'menor', 'igual'] : 'comparaSaldos' in o ? RAMOS_DOS_SALDOS : null;
       if (ramos) {
         tokens++;
         const faltam = ramos.filter((r) => !(r in o));
-        if (faltam.length) erros.push(`X10 · ${e.slug}: o token «${'sinal' in o ? 'sinal' : 'compara'}» em ${c} não declara o ramo ${faltam.map((r) => `«${r}»`).join(', ')}`);
+        if (faltam.length) erros.push(`X10 · ${e.slug}: o token «${'sinal' in o ? 'sinal' : 'compara' in o ? 'compara' : 'comparaSaldos'}» em ${c} não declara o ramo ${faltam.map((r) => `«${r}»`).join(', ')}`);
       }
       for (const [k, v] of Object.entries(o)) anda(v, c ? `${c}.${k}` : k);
     };
@@ -509,6 +515,17 @@ function maioresAqui(p, linhas) {
   return /** @type {{ id: string, v: number }[]} */ (v.slice(0, p.n));
 }
 
+/** A comparação dos módulos e sinais, por conta independente do resolvedor. @param {any} p @param {Map<string, any>} linhas */
+function ramoDosSaldosAqui(p, linhas) {
+  const a = numero(linhas.get(p.comparaSaldos[0])?.value), b = numero(linhas.get(p.comparaSaldos[1])?.value);
+  if (a === null || b === null) return null;
+  if ((a < 0 && b < 0) || (a > 0 && b > 0)) {
+    const moduloA = a < 0 ? -a : a, moduloB = b < 0 ? -b : b;
+    return (a < 0 ? 'deficit' : 'excedente') + (moduloA === moduloB ? 'Igual' : moduloA < moduloB ? 'Menor' : 'Maior');
+  }
+  return a === 0 && b === 0 ? 'nulos' : b < 0 ? 'diferentesNegativo' : b > 0 ? 'diferentesPositivo' : 'diferentesZero';
+}
+
 /**
  * O TEXTO DE UMA PARTE DECLARADA, pela conta desta célula, com o texto dos ramos não escolhidos e das palavras que
  * uma condição falsa guarda, para se conferir que não estão na página.
@@ -534,6 +551,11 @@ function textoAqui(partes, lang, linhas, ausentes) {
     if ('nome' in p) {
       const n = nomeAqui(p.nome, lang) ?? '';
       return p.inicial ? n.charAt(0).toUpperCase() + n.slice(1) : n;
+    }
+    if ('comparaSaldos' in p) {
+      const ramo = ramoDosSaldosAqui(p, linhas);
+      for (const r of RAMOS_DOS_SALDOS) if (r !== ramo && r in p) ausentes.push(normal(textoAqui(p[r], lang, linhas, [])));
+      return ramo && ramo in p ? textoAqui(p[ramo], lang, linhas, ausentes) : '';
     }
     if ('compara' in p) {
       const [a, b] = p.compara.map((/** @type {string} */ id) => numero(linhas.get(id)?.value));
@@ -733,20 +755,27 @@ export function plantasDaExplicacao(dist) {
   /* EX1-d: as duas contas podem ter sinais diferentes. As plantas isolam o saldo da execução, incluindo
      o caso em que se lhe acrescenta o ramo que é legítimo na conta do ano anterior. */
   const saldoExecucao = (/** @type {any} */ r) => r.querySelector('[data-explicacao-paragrafo="seccoes[2].conteudo[1].paragrafo"]');
-  naPagina('EX1-d: o sinal da execução trocado', (r) => {
+  naPagina('EX1-e: o sinal da execução trocado', (r) => {
     const p = saldoExecucao(r);
     const de = /um excedente|um défice|um saldo nulo/.exec(p.textContent)?.[0];
     p.set_content(p.innerHTML.replace(de, de === 'um défice' ? 'um excedente' : 'um défice'));
-  }, /X6 ·/);
+  }, /X6 · o parágrafo seccoes\[2\]\.conteudo\[1\]\.paragrafo difere da conta/);
   naPagina('EX1-d: o ramo do ano anterior acrescentado à execução', (r) => {
     const p = saldoExecucao(r);
     p.set_content(p.innerHTML + ' um excedente (recebeu mais do que gastou)');
-  }, /X6 ·/);
-  naPagina('EX1-d: a comparação anual invertida', (r) => {
+  }, /X6 · o parágrafo seccoes\[2\]\.conteudo\[1\]\.paragrafo difere da conta/);
+  naPagina('EX1-e: a comparação dos módulos invertida', (r) => {
     const p = saldoExecucao(r);
-    const de = /acima do que|abaixo do que|em linha com o que/.exec(p.textContent)?.[0];
-    p.set_content(p.innerHTML.replace(de, de === 'acima do que' ? 'abaixo do que' : 'acima do que'));
-  }, /X6 ·/);
+    const de = /défice menor|défice maior|défice igual/.exec(p.textContent)?.[0];
+    p.set_content(p.innerHTML.replace(de, de === 'défice menor' ? 'défice maior' : 'défice menor'));
+  }, /X6 · o parágrafo seccoes\[2\]\.conteudo\[1\]\.paragrafo difere da conta/);
+  for (const [nome, de, para] of [
+    ['o sinal da previsão trocado', 'é um défice menor do que o que o Orçamento previa para o ano inteiro (', 'o Orçamento previa para o ano inteiro um excedente de ('],
+    ['os dois sinais trocados', 'é um défice menor', 'é um excedente menor'],
+  ]) naPagina(`EX1-e: ${nome}`, (r) => {
+    const p = saldoExecucao(r);
+    p.set_content(p.innerHTML.replace(de, para));
+  }, /X6 · o parágrafo seccoes\[2\]\.conteudo\[1\]\.paragrafo difere da conta/);
   naPagina('EX1-d: o saldo de outro perímetro', (r) => {
     const c = saldoExecucao(r).querySelector('[data-claim]');
     c.set_content(linhas.get('execucao-2026-08-saldo-global-administracao-central').value);
@@ -865,9 +894,10 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     paginas++;
     erros.push(...conferirPaginaDaExplicacao(parse(fs.readFileSync(f, 'utf8')), lang, e.slug).map((x) => `${base}/${e.slug}: ${x}`));
   }
+  const cenariosDosSaldos = (await import('./saldos.mjs')).conferirCenariosDosSaldos();
   const plantas = prova ? plantasDaExplicacao(DIST) : [];
   for (const p of plantas) if (!p.mordeu && /** @type {any} */ (p).aplica !== false) erros.push(`X · a planta «${p.nome}» não mordeu: ${p.queixa}`);
-  const resumo = { auditoria: a.contas, origens: o.contas, maiores: x9.contas, ramos: x10.contas, paginas, plantas: plantas.map((p) => ({ nome: p.nome, mordeu: p.mordeu, aplica: /** @type {any} */ (p).aplica !== false })), erros };
+  const resumo = { cenariosDosSaldos, auditoria: a.contas, origens: o.contas, maiores: x9.contas, ramos: x10.contas, paginas, plantas: plantas.map((p) => ({ nome: p.nome, mordeu: p.mordeu, aplica: /** @type {any} */ (p).aplica !== false, queixa: p.queixa })), erros };
   if (json) fs.writeFileSync(json, JSON.stringify(resumo, null, 2) + '\n');
   console.log(`X · a explicação: ${a.contas.explicacoes} explicação(ões), ${a.contas.folhas} folhas e ${a.contas.partes} partes auditadas (${a.contas.diz} diz, ${a.contas.leitura} leitura, ${a.contas.conta} conta, ${a.contas.aponta} aponta, ${a.contas.liga} liga), ${a.contas.origens} origens usadas; ${x9.contas.tokens} token(s) «maiores» conferidos nas duas edições; ${x10.contas.tokens} token(s) de ramos (sinal e compara) com os três ramos; ${o.contas.origens} origens das explicações${o.contas.motor ? `, ${o.contas.lidas_no_motor} lidas no motor` : ', sem o motor ao lado'}; ${paginas} página(s) recontadas${prova ? `; ${plantas.filter((p) => p.mordeu).length} de ${plantas.length} plantas em memória` : ''}.`);
   if (erros.length) {
