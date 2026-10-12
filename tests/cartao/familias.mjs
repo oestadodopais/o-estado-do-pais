@@ -481,6 +481,10 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
   /** @type {string[]} */
   const erros = [];
   const falha = (/** @type {string} */ m) => erros.push(`K17 · recibo · ${lang} · ${id}: ${m}`);
+  if (id === 'agua-nao-faturada-portugal-2024') {
+    const rotulo = cabeca.querySelector('.linha-nome-da-fonte [data-linha-campo="name"]');
+    if (!rotulo || normal(rotulo.textContent) !== normal(ctx.linhas.get(id)?.name)) falha('o nome na fonte da água não é o rótulo AA08b conferido');
+  }
   const frases = cabeca.querySelectorAll('[data-o-que-e]');
   if (frases.length !== 1) { falha(`o recibo tem ${frases.length} frase(s) «O que é este número», e tem uma`); return erros; }
   const el = frases[0];

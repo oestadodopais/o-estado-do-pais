@@ -288,6 +288,12 @@ const LOCALIZADORES_CONHECIDOS = [
   { nome: 'IndicadorDsg', forma: /^IndicadorDsg$/, onde: 'a resposta do json_indicador do INE' },
   { nome: 'label', forma: /^label$/, onde: 'a resposta JSON-stat do Eurostat' },
   {
+    nome: 'AA08b, Quadro 49 do RASARP, baixa continental e cobertura',
+    forma: /^p\. 106, Quadro 49, AA08 baixa, avaliação global para 93 % de EG em Portugal continental$/,
+    onde: 'publisher/rp4n_agua.py: linha AA08b relida na página alojada',
+    confere: (onde, linha) => linha?.id === 'agua-nao-faturada-portugal-2024' && linha?.document?.locator === onde,
+  },
+  {
     nome: 'p.<n>, linha <n>, campo <n>',
     forma: /^p\.\d+, linha \d+, campo \d+$/,
     onde: 'a extração de página de um PDF',
