@@ -20,12 +20,16 @@ O nome na fonte da penalização legal passa a ser a expressão literal do pará
 s+=tabela(['Repositório','Linha','Data','Tipo'],[(x['repositorio'],x['id'],x['access_date'],x['access_date_kind']) for x in direcao['linhas']])
 s+=f"As definições do recibo português dizem: {'; '.join(direcao['datas_definicoes'])}. O localizador legal inglês é {'; '.join(direcao['localizador_legal_en'])}. O relatório h diz {direcao['paginas_com_marca_h']} páginas com marca, como a sua medição. Os estragos da cópia não estavam no ramo. Prova: `i/plantas-da-direcao.json`.\n"
 s+='### As frases e os campos, lidos do HTML\n'
+s+='\nMétodo inglês, atributos `title`: '+ '; '.join(sorted(set(m['metodo_en']['titulos'])))+'.\n'
 for k,x in m['frases'].items():s+=f'\n**{k}**\n\n> {x}\n'
 s+=tabela(['Recibo','Nome na fonte','O que foi conferido'],[(k,x['nome_na_fonte'],x['bloco_verificacoes']) for k,x in m['recibos'].items() if k.startswith(('pensao','legal'))])
 s+='### Fontes para repetir a leitura\n'
 arquivos={x['motor']:x for f in fontes['frases'] for x in f['ficheiros']}
 s+=f"O inventário `i/fontes-por-frase.json`, medido no sítio `{fontes['cabeca']}` e no motor `{fontes['motor']}`, lista {len(arquivos)} ficheiros alojados por frase ou decisão, todos conferidos pelos bytes. Inclui o PDF do MAPA, o PDF da pensão, o manifesto atual e a cópia literal do manifesto original recuperado do commit que prova o alojamento. O manifesto atual não foi confundido com a versão original.\n"
 s+=tabela(['Ficheiro no motor','sha256'],[(k,x['sha256']) for k,x in sorted(arquivos.items())])
+for x in arquivos.values():
+ if 'original' in x:
+  o=x['original'];s+=f"O original de `{x['motor']}`, no commit `{o['commit']}`, está também em `{o['copia_no_sitio']}`, SHA-256 `{o['sha256']}`. O pacote deve levar esta versão histórica juntamente com a atual.\n"
 s+='### Cabeças e códigos lidos\n'
 s+=tabela(['Repositório','Base','Cabeça do código'],[(k,x['base'],x['cabeca']) for k,x in heads.items()])
 codigos=[]

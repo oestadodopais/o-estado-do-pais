@@ -64,8 +64,9 @@ ficheiro(pensao.pdf,pensao.pdf_sha256,'prova do alojamento da pensão',decisoes)
 ficheiro(pensao.alojamento.manifesto,null,'manifesto atual do alojamento da pensão',decisoes);
 const original=execFileSync('git',['-C',motor,'show',pensao.alojamento.commit+':'+pensao.alojamento.manifesto]);
 if(sha(original)!==pensao.alojamento.manifesto_sha256)throw Error('O manifesto original difere da prova');
-const arquivo='content/13 Dominios/source/rp4n/pensoes-manifesto-original.sha256';
-ficheiro(arquivo,pensao.alojamento.manifesto_sha256,'manifesto original no commit '+pensao.alojamento.commit,decisoes);
+const arquivo=base+'/pensoes-manifesto-original.sha256';
+fs.writeFileSync(arquivo,original);
+decisoes.get(pensao.alojamento.manifesto).original={commit:pensao.alojamento.commit,sha256:sha(original),copia_no_sitio:arquivo};
 frases.push({familias:['decisoes-rp4n-i'],linhas:[],folhas:[],ficheiros:[...decisoes.values()],estado:'conferida quanto aos bytes'});
 const resultado={cabeca:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),motor:execFileSync('git',['-C',motor,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),frases};
 fs.writeFileSync(base+'/fontes-por-frase.json',JSON.stringify(resultado,null,2)+'\n');
