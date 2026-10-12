@@ -8249,41 +8249,42 @@
         "oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social"
       ],
       "origens": [
-        "rp4n-orcamento"
+        "rp4n-total-ministerios",
+        "rp4n-mapa-ministerios"
       ],
       "folhas": [
         {
-          "pt": "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte.",
-          "en": "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source.",
+          "pt": "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central.",
+          "en": "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector.",
           "partes": [
             {
-              "pt": "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central",
-              "en": "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure",
+              "pt": "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central.",
+              "en": [
+                "It is the amount for this ministry out of every hundred euros of “",
+                {
+                  "termo": "DESPESA TOTAL",
+                  "lingua": "pt-PT"
+                },
+                "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+              ],
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
-                  "campo": "derivation",
-                  "literal": "pela despesa bruta da administração central, multiplicar por cem"
-                }
-              ]
-            },
-            {
-              "pt": " que o Orçamento prevê",
-              "en": " planned in the Budget",
-              "classe": "diz",
-              "apoios": [
+                  "campo": "check",
+                  "literal": " / oe-2026-despesa-bruta-administracao-central * 100 , 2 )"
+                },
                 {
-                  "origem": "rp4n-orcamento",
+                  "origem": "rp4n-total-ministerios",
                   "campo": "excerto",
-                  "literal": "Orçamento aprovado"
+                  "literal": "DESPESA TOTAL"
+                },
+                {
+                  "origem": "rp4n-mapa-ministerios",
+                  "campo": "excerto",
+                  "literal": "Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central"
                 }
               ]
-            },
-            {
-              "classe": "ausencia-definicao",
-              "pt": ". A definição de despesa bruta por palavras está por confirmar na fonte.",
-              "en": ". The definition of gross expenditure in words is to be confirmed at source."
             }
           ]
         }
@@ -8294,53 +8295,42 @@
         "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado"
       ],
       "origens": [
-        "rp4n-orcamento"
+        "rp4n-total-ministerios",
+        "rp4n-mapa-ministerios"
       ],
       "folhas": [
         {
-          "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania. A definição de despesa bruta por palavras está por confirmar na fonte.",
-          "en": "It is the amount for the general charges of the State out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies. The definition of gross expenditure in words is to be confirmed at source.",
+          "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central.",
+          "en": "It is the amount for the general charges of the State out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector.",
           "partes": [
             {
-              "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros, dividindo pela despesa bruta da administração central",
-              "en": "It is the amount for the general charges of the State out of every hundred euros, dividing by central administration’s gross expenditure",
+              "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central.",
+              "en": [
+                "It is the amount for the general charges of the State out of every hundred euros of “",
+                {
+                  "termo": "DESPESA TOTAL",
+                  "lingua": "pt-PT"
+                },
+                "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+              ],
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
-                  "campo": "derivation",
-                  "literal": "Dividir a despesa bruta dos Encargos Gerais do Estado pela despesa bruta da administração central, multiplicar por cem"
-                }
-              ]
-            },
-            {
-              "pt": " que o Orçamento prevê",
-              "en": " planned in the Budget",
-              "classe": "diz",
-              "apoios": [
+                  "campo": "check",
+                  "literal": " / oe-2026-despesa-bruta-administracao-central * 100 , 2 )"
+                },
                 {
-                  "origem": "rp4n-orcamento",
+                  "origem": "rp4n-total-ministerios",
                   "campo": "excerto",
-                  "literal": "Orçamento aprovado"
-                }
-              ]
-            },
-            {
-              "pt": "; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania",
-              "en": "; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies",
-              "classe": "diz",
-              "apoios": [
+                  "literal": "DESPESA TOTAL"
+                },
                 {
-                  "linha": "propria",
-                  "campo": "derivation",
-                  "literal": "A igualdade referida na ressalva compara os Encargos Gerais do Estado com o programa 001, Órgãos de Soberania"
+                  "origem": "rp4n-mapa-ministerios",
+                  "campo": "excerto",
+                  "literal": "Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central"
                 }
               ]
-            },
-            {
-              "classe": "ausencia-definicao",
-              "pt": ". A definição de despesa bruta por palavras está por confirmar na fonte.",
-              "en": ". The definition of gross expenditure in words is to be confirmed at source."
             }
           ]
         }
