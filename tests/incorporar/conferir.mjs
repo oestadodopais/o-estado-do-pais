@@ -144,12 +144,15 @@ const vercel = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));
 const respostas = caminhos.map(caminho=> {
   const headers = {};
   for (const r of vercel.routes) if (r.src && !r.has && new RegExp('^'+r.src+'$').test(caminho)) Object.assign(headers,r.headers);
-  return {caminho,estado:200,cors:headers['Access-Control-Allow-Origin']??null,frame:headers['X-Frame-Options']??null};
+  // O CORS não vem do vercel.json: a Vercel envia Access-Control-Allow-Origin: * em todas as
+  // respostas de ficheiros estáticos (medido a 12.10.2026; §1.184, terceiro acrescento). A simulação
+  // modela essa omissão da plataforma, e o verify:deploy confere-a no ar.
+  return {caminho,estado:200,cors:'*',frame:headers['X-Frame-Options']??null};
 });
 assert.deepEqual(conferirCors(respostas),[]);
 for (const [nome, n, campo, valor, mensagem] of [
   ['cors-em-falta',0,'cors',null,`ER1 CORS: ${caminhos[0]} tem estado ou cabeçalho incorreto.`],
-  ['cors-em-html',4,'cors','*',`ER1 CORS: ${caminhos[4]} tem estado ou cabeçalho incorreto.`],
+  ['cors-em-falta-csv',2,'cors',null,`ER1 CORS: ${caminhos[2]} tem estado ou cabeçalho incorreto.`],
   ['moldura-aberta',4,'frame',null,`ER1 moldura: ${caminhos[4]} perdeu SAMEORIGIN.`],
 ]) {
   const copia = structuredClone(respostas); copia[n][campo]=valor;
