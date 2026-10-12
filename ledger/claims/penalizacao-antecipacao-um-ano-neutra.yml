@@ -9,7 +9,7 @@ id: "penalizacao-antecipacao-um-ano-neutra"
 
 value: "8,2"
 unit: "%"
-name: "dcum\nx : cumulative reduction"
+name: "dcum x : cumulative reduction"
 name_source: "p. 273, Figura 8.4, rótulo da redução cumulativa"
 
 source: "Grupo de Trabalho para a Reforma da Segurança Social"

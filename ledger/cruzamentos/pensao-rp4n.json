@@ -10,8 +10,8 @@
     "penalizacao-antecipacao-um-ano-neutra.yml": {
       "destino": "ledger/claims",
       "origin_path": "publisher/recortes/penalizacao-antecipacao-um-ano-neutra.yml",
-      "origin_sha256": "382a1e5c0394ac8230923e88fbab296c61fbe24d1c515d81b25502e2ee2ec992",
-      "exported_sha256": "382a1e5c0394ac8230923e88fbab296c61fbe24d1c515d81b25502e2ee2ec992",
+      "origin_sha256": "aa839ce0ddffd9b9d4323d0d3846303f90f6314d5743d272f62df25826aa1aa3",
+      "exported_sha256": "aa839ce0ddffd9b9d4323d0d3846303f90f6314d5743d272f62df25826aa1aa3",
       "exporter": "ResearchHub/publisher/rp4n_pensao.py"
     },
     "penalizacao-legal-um-ano-antecipacao-2026.yml": {
