@@ -301,6 +301,17 @@ export function conferirExcertoDaPensao(linha) {
   morde(`separador final solto (${lang})`,conferirCaminhoFinal(root),'o caminho termina num separador sem destino');
  }
 }
+// RP4-n-j: uma fonte declarada para validar a frase não altera a lista visível.
+{
+ const ctx=contextoDasFamilias(),cartoes=reguasDosCartoes('dist');
+ const id='custo-do-stock-da-divida-direta-2025';
+ for(const lang of ['pt','en']) {
+  const cabeca=cabecaDoRecibo(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/${id}/index.html`,'utf8'));
+  assert.deepEqual(conferirCabecaDoRecibo(cabeca,id,lang,{ctx,cartoes}),[]);
+  cabeca.querySelector('.linha-cabeca').insertAdjacentHTML('beforeend','<div data-def-origem="ine-pde-subsetores"></div>');
+  morde(`excerto alheio acrescentado pela segunda fonte (${lang})`,conferirCabecaDoRecibo(cabeca,id,lang,{ctx,cartoes}),'as origens visíveis não são a lista explícita da família');
+ }
+}
 if(process.argv.includes('--registo-g')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/g/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 if(process.argv.includes('--registo-f')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/f/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 if(process.argv.includes('--registo-e')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/e/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');

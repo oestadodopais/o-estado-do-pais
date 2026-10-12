@@ -544,6 +544,10 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
     esperado = normal(textoDaFrase(m ? /** @type {any} */ (m.nota)[lang] : ctx.doConcelho[f.chave]?.frase?.[lang]));
   } else {
     const d = ctx.familias[f.chave];
+    if (d?.origens !== undefined) {
+      const visiveis = [...new Set(cabeca.querySelectorAll('[data-def-origem]').map(el => el.getAttribute('data-def-origem')))].sort();
+      if (JSON.stringify(visiveis) !== JSON.stringify([...new Set(d.origens)].sort())) falha('as origens visíveis não são a lista explícita da família');
+    }
     for (const origem of d?.origens ?? []) {
       const bloco = cabeca.querySelector(`[data-def-origem="${origem}"]`);
       const fonte = ORIGENS_DAS_DEFINICOES[origem];

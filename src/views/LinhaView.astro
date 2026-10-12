@@ -120,7 +120,9 @@ const oQueE = oQueEDaLinha(id, lang);
 const fontesSecundariasDaDefinicao = (claim.definition_sources ?? []).map(fonte => Object.entries(ORIGENS_DAS_DEFINICOES)
   .find(([chave, origem]) => origem.publicador === fonte.publisher && origem.url === fonte.url)?.[0]).filter(Boolean);
 
-const fontesDaDefinicao = [...new Set([...fontesSecundariasDaDefinicao, ...(FAMILIAS_DAS_LINHAS[oQueE.chave]?.origens ?? [])])];
+// A lista visível explícita, mesmo vazia, decide a apresentação. A declaração
+// de segundas fontes conserva a proveniência e continua sujeita à K17.
+const fontesDaDefinicao = [...new Set(FAMILIAS_DAS_LINHAS[oQueE.chave]?.origens ?? fontesSecundariasDaDefinicao)];
 
 const parcelaFinanciamento = parcelaDoFinanciamento(id, lang);
 const comparacaoDoCartao = familiaRecibo.tipo === 'cartao' ? partesDaLeitura(id, lang).comparacao : null;

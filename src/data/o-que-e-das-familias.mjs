@@ -60,7 +60,8 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": [
         "It is the share of State financing used to repay or extinguish funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period."
       ]
-    }
+    },
+    "origens": []
   },
   "avisos-pt2030-abertos": {
     "frase": {
@@ -161,7 +162,8 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": [
         "It is the average cost of the State’s borrowing during the year through Treasury bills, Treasury bonds, floating-rate Treasury bonds and Medium Term Notes. Issues are weighted in this average by their amounts and maturities. The value is for two thousand and twenty-six, as of the September bulletin."
       ]
-    }
+    },
+    "origens": []
   },
   "custo-do-stock-da-divida-direta": {
     "nome": {
@@ -175,7 +177,8 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": [
         "It measures the interest cost of the State’s outstanding debt: interest of the State subsector attributed to the year in national accounts is compared with average direct debt at the end of that year and the previous one. Interest is recorded when the cost is incurred, even if it is paid in another year."
       ]
-    }
+    },
+    "origens": []
   },
   "custo-unitario-do-trabalho": {
     "cartao": "custo-unitario-do-trabalho-2025"
@@ -682,7 +685,8 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": [
         "It is the amount still owed at the end of August on debt issued by the State. This is State direct debt in public accounts, not the Maastricht debt of all general government bodies. Maastricht public debt covers all general government bodies and removes debt held by other government bodies. The balance uses the debt’s nominal value, except for instruments issued at a discount, such as Treasury bills, which are included at discounted value. Debt in foreign currency is converted at the end-of-period exchange rate."
       ]
-    }
+    },
+    "origens": []
   },
   "divida-publica": {
     "cartao": "divida-publica-2025"
@@ -751,7 +755,8 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": [
         "It is the money the State borrowed during the calendar year through funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period."
       ]
-    }
+    },
+    "origens": []
   },
   "estudos-evora-publicados": {
     "frase": {
@@ -1994,7 +1999,8 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": [
         "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance."
       ]
-    }
+    },
+    "origens": []
   },
   "juros-das-administracoes-publicas-pib": {
     "nome": {
@@ -2008,7 +2014,8 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": [
         "It compares general government interest expenditure with gross domestic product for the same year, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. The calculation uses amounts from the same INE notification, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year."
       ]
-    }
+    },
+    "origens": []
   },
   "juros-das-administracoes-publicas-ue": {
     "nome": {
@@ -2022,7 +2029,8 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": [
         "It compares general government interest expenditure across the European Union with its gross domestic product, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. These are national accounts: expenditure belongs to the period in which the cost is incurred, even if it is paid in another period."
       ]
-    }
+    },
+    "origens": []
   },
   "juros-e-outros-encargos-execucao": {
     "nome": {
@@ -2036,7 +2044,8 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": [
         "It is money paid by general government in interest and other charges from January to August. The total is consolidated: payments between the public bodies covered are removed. Public budget accounts record receipts and payments during the period."
       ]
-    }
+    },
+    "origens": []
   },
   "licencas-de-construcao": {
     "cartao": "licencas-de-construcao-2025"
@@ -2131,7 +2140,8 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": [
         "It is the financing the State needed to cover the budget deficit and acquire financial assets, net of receipts from those operations and excluding privatisations, and to repay or extinguish debt. The deficit is expenditure in excess of revenue. Financial assets include securities, equity interests and loans. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period."
       ]
-    }
+    },
+    "origens": []
   },
   "necessidades-medicas-nao-satisfeitas": {
     "cartao": "necessidades-medicas-nao-satisfeitas-2025"
@@ -3361,7 +3371,8 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": [
         "It is the value of final goods and services produced in the Portuguese economy during the year, gross domestic product at market prices, in the national accounts sent by INE to Eurostat in September."
       ]
-    }
+    },
+    "origens": []
   },
   "pib-pc-acores": {
     "frase": {

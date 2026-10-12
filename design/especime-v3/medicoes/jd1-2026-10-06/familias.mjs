@@ -17,6 +17,8 @@ const fundada = diz(' Dívida fundada é a que se contrai para acabar de ser pag
 
 export const FAMILIAS_JD1 = [
   {
+    // RP4-n-j: a proveniência não acrescenta blocos visíveis ao recibo.
+    origens: [],
     chaves: ['juros-das-administracoes-publicas'],
     nome: { pt: 'Juros das administrações públicas, contas nacionais', en: 'General government interest expenditure, national accounts' },
     partes: [
@@ -32,6 +34,8 @@ export const FAMILIAS_JD1 = [
     ],
   },
   {
+    // RP4-n-j: a proveniência não acrescenta blocos visíveis ao recibo.
+    origens: [],
     chaves: ['pib-nominal-notificacao-setembro'],
     nome: { pt: 'PIB de Portugal a preços de mercado, contas nacionais', en: 'Portugal’s GDP at market prices, national accounts' },
     partes: [
@@ -46,6 +50,8 @@ export const FAMILIAS_JD1 = [
     ],
   },
   {
+    // RP4-n-j: a proveniência não acrescenta blocos visíveis ao recibo.
+    origens: [],
     chaves: ['juros-das-administracoes-publicas-pib'],
     nome: { pt: 'Juros das administrações públicas em percentagem do PIB, contas nacionais', en: 'General government interest expenditure as a share of GDP, national accounts' },
     partes: [
@@ -60,6 +66,8 @@ export const FAMILIAS_JD1 = [
     ],
   },
   {
+    // RP4-n-j: a proveniência não acrescenta blocos visíveis ao recibo.
+    origens: [],
     chaves: ['juros-das-administracoes-publicas-ue'],
     nome: { pt: 'Juros das administrações públicas na União Europeia, em percentagem do PIB, contas nacionais', en: 'General government interest expenditure in the European Union, as a share of GDP, national accounts' },
     partes: [
@@ -78,6 +86,8 @@ export const FAMILIAS_JD1 = [
     ],
   },
   {
+    // RP4-n-j: a proveniência não acrescenta blocos visíveis ao recibo.
+    origens: [],
     chaves: ['juros-e-outros-encargos-execucao'],
     nome: { pt: 'Juros e outros encargos das administrações públicas, caixa, janeiro a agosto', en: 'General government interest and other charges, cash basis, January to August' },
     partes: [
@@ -92,6 +102,8 @@ export const FAMILIAS_JD1 = [
     ],
   },
   {
+    // RP4-n-j: a proveniência não acrescenta blocos visíveis ao recibo.
+    origens: [],
     chaves: ['custo-do-stock-da-divida-direta'],
     nome: { pt: 'Custo da dívida direta do Estado em circulação, juros em contas nacionais', en: 'Cost of outstanding State direct debt, interest in national accounts' },
     partes: [
@@ -105,6 +117,8 @@ export const FAMILIAS_JD1 = [
     ],
   },
   {
+    // RP4-n-j: a proveniência não acrescenta blocos visíveis ao recibo.
+    origens: [],
     chaves: ['custo-da-divida-emitida'],
     nome: { pt: 'Custo médio ponderado da dívida emitida pelo Estado', en: 'Weighted average cost of State debt issued' },
     partes: [
@@ -122,6 +136,8 @@ export const FAMILIAS_JD1 = [
     ],
   },
   {
+    // RP4-n-j: a proveniência não acrescenta blocos visíveis ao recibo.
+    origens: [],
     chaves: ['divida-direta-do-estado'],
     nome: { pt: 'Dívida direta do Estado no fim de agosto, valor nominal ou descontado', en: 'State direct debt at the end of August, nominal or discounted value' },
     partes: [
@@ -150,6 +166,8 @@ export const FAMILIAS_JD1 = [
     ],
   },
   {
+    // RP4-n-j: a proveniência não acrescenta blocos visíveis ao recibo.
+    origens: [],
     chaves: ['necessidades-brutas-de-financiamento'],
     nome: { pt: 'Necessidades brutas de financiamento do Estado, contabilidade orçamental pública', en: 'Gross State financing needs, public budget accounts' },
     partes: [
@@ -168,6 +186,8 @@ export const FAMILIAS_JD1 = [
     ],
   },
   {
+    // RP4-n-j: a proveniência não acrescenta blocos visíveis ao recibo.
+    origens: [],
     chaves: ['amortizacoes-e-anulacoes-de-divida-fundada'],
     nome: { pt: 'Amortizações e anulações de dívida fundada do Estado, contabilidade orçamental pública', en: 'State funded debt redemptions and cancellations, public budget accounts' },
     partes: [
@@ -178,6 +198,8 @@ export const FAMILIAS_JD1 = [
     ],
   },
   {
+    // RP4-n-j: a proveniência não acrescenta blocos visíveis ao recibo.
+    origens: [],
     chaves: ['emissoes-de-divida-fundada'],
     nome: { pt: 'Emissões de dívida fundada do Estado no ano civil, contabilidade orçamental pública', en: 'State funded debt issued during the calendar year, public budget accounts' },
     partes: [
