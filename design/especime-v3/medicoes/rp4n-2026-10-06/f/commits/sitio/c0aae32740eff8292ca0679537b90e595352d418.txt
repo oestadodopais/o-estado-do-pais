@@ -1,0 +1,5 @@
+c0aae32740eff8292ca0679537b90e595352d418
+fix(rp4n-f): mostrar e conferir AA08b no cabeçalho do recibo
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

@@ -1,0 +1,82 @@
+{
+  "cabeca": "a10b0ee3d3f9d30c9ab8b31edeb4901efb3d2199",
+  "base": "b84d21a3",
+  "historico_grep_c": 0,
+  "diff_grep_c": 0,
+  "cabeca_nome_e_casa_grep_c": 0,
+  "legados_ficheiros": 16,
+  "RP4N-14": [
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-auditoria-ux-2026-08-25.md",
+      "linha": 61
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-etapa-2.md",
+      "linha": 66
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-mapa-navegacao-M4.md",
+      "linha": 7
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-maquetas.md",
+      "linha": 7
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-maquetas.md",
+      "linha": 120
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/2026-09-04-fable-leitor-no-navegador.md",
+      "linha": 11
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/2026-09-08-sonnet-medicao-f11e-distritos.md",
+      "linha": 20
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/LEITURA-c1-2026-09-28.md",
+      "linha": 129
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/LEITURA-rp1bc-2026-09-26.md",
+      "linha": 40
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-21/prompts/PROMPT-b1-opus-peca2-correcao.md",
+      "linha": 13
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-21/prompts/PROMPT-b1-opus-peca2-correcao.md",
+      "linha": 34
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/correcoes-ux-M3-sonnet.md",
+      "linha": 319
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/fontes-308-2026-08-26.md",
+      "linha": 357
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/p1-2026-09-15/contagens-antes.txt",
+      "linha": 2
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/parte3-M1-sonnet.md",
+      "linha": 6
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/parte3-M2-sonnet.md",
+      "linha": 6
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/prompts/PROMPT-rp1c-codex.md",
+      "linha": 24
+    },
+    {
+      "ficheiro": "design/observatorio/evora/BRIEF-E1-evora-2027.md",
+      "linha": 13
+    }
+  ]
+}

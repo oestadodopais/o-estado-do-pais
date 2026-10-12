@@ -1,0 +1,3 @@
+92933611d162016ae39801a55f372612f9317e8e
+fix(rp4n-f): reler AA08b e a cobertura na página alojada
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>

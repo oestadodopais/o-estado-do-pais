@@ -1,0 +1,204 @@
+{
+  "plantas": [
+    {
+      "nome": "selo com outro cliente",
+      "mensagem": "K16 · origem «rp4n-orcamento»: a origem exportada não identifica um cliente da lista fechada"
+    },
+    {
+      "nome": "agente do utilizador como cliente",
+      "mensagem": "K16 · origem «rp4n-orcamento»: a origem exportada não identifica um cliente da lista fechada"
+    },
+    {
+      "nome": "tipo do selo apagado",
+      "mensagem": "K16 · origem «rp4n-orcamento»: a origem exportada não tem o selo completo"
+    },
+    {
+      "nome": "selo inteiro apagado",
+      "mensagem": "K16 · origem «rp4n-orcamento»: a origem exportada não tem o selo completo"
+    },
+    {
+      "nome": "nome do projeto de volta numa família",
+      "mensagem": "K17 · famílias · oe-2026-despesa-funcao-01, oe-2026-despesa-funcao-02, oe-2026-despesa-funcao-03, oe-2026-despesa-funcao-04, oe-2026-despesa-funcao-05, oe-2026-despesa-funcao-06, oe-2026-despesa-funcao-07, oe-2026-despesa-funcao-08, oe-2026-despesa-funcao-09, oe-2026-despesa-funcao-10, parte 1 («É o que a administração central prevê gastar nesta função…»): o nome do projeto não pode apoiar uma frase"
+    },
+    {
+      "nome": "nome do projeto de volta numa série",
+      "mensagem": "K17 · séries · «serie-ihpc-rendas-variacao-homologa», parte 1 («É quanto mudaram»): o nome do projeto não pode apoiar uma frase"
+    },
+    {
+      "nome": "ausência atribuída a publicador desconhecido",
+      "mensagem": "K17 · famílias · avisos-pt2030-abertos, parte 1 («A fonte publica este número sem o definir por palavras.»): a ausência não corresponde à falta do excerto"
+    },
+    {
+      "nome": "seleção calculada sem resumo do ficheiro",
+      "mensagem": "K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): a seleção calculada não tem ficheiros selados iguais aos Excel lidos"
+    },
+    {
+      "nome": "nome numa alternativa simples",
+      "mensagem": "K17 · famílias · oe-2026-despesa-funcao-01, oe-2026-despesa-funcao-02, oe-2026-despesa-funcao-03, oe-2026-despesa-funcao-04, oe-2026-despesa-funcao-05, oe-2026-despesa-funcao-06, oe-2026-despesa-funcao-07, oe-2026-despesa-funcao-08, oe-2026-despesa-funcao-09, oe-2026-despesa-funcao-10, parte 1 («É o que a administração central prevê gastar nesta função…»): o nome do projeto não pode apoiar uma frase"
+    },
+    {
+      "nome": "nome numa alternativa aninhada",
+      "mensagem": "K17 · famílias · oe-2026-despesa-funcao-01, oe-2026-despesa-funcao-02, oe-2026-despesa-funcao-03, oe-2026-despesa-funcao-04, oe-2026-despesa-funcao-05, oe-2026-despesa-funcao-06, oe-2026-despesa-funcao-07, oe-2026-despesa-funcao-08, oe-2026-despesa-funcao-09, oe-2026-despesa-funcao-10, parte 1 («É o que a administração central prevê gastar nesta função…»): o nome do projeto não pode apoiar uma frase"
+    },
+    {
+      "nome": "nome misturado com uma origem válida",
+      "mensagem": "K17 · séries · «serie-ihpc-rendas-variacao-homologa», parte 1 («É quanto mudaram»): o nome do projeto não pode apoiar uma frase"
+    },
+    {
+      "nome": "texto simples numa página construída (pt)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "marca em inglês numa página construída (pt)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "texto partido numa página construída (pt)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "marca sem texto numa página construída (pt)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "texto simples numa página construída (en)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "marca em inglês numa página construída (en)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "texto partido numa página construída (en)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "marca sem texto numa página construída (en)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "marca num documento citado (pt)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "marca num documento citado (en)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "PRR coluna inventada",
+      "mensagem": "K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): a coluna calculada não está no cabeçalho selado"
+    },
+    {
+      "nome": "PRR outro Excel plausível",
+      "mensagem": "K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): a seleção calculada não tem ficheiros selados iguais aos Excel lidos"
+    },
+    {
+      "nome": "PRR instantâneo alterado",
+      "mensagem": "K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): a seleção calculada não tem ficheiros selados iguais aos Excel lidos"
+    },
+    {
+      "nome": "PRR seleção alargada",
+      "mensagem": "K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): a seleção da casa difere da conta refeita nos Excel"
+    },
+    {
+      "nome": "PRR soma alterada",
+      "mensagem": "K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): o valor difere da soma conferida nos Excel selados"
+    },
+    {
+      "nome": "PRR filtro promovido a fonte",
+      "mensagem": "K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): cita o campo «document.computed_over.filter», que não pode apoiar"
+    },
+    {
+      "nome": "PRR cabeçalho inventado",
+      "mensagem": "K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): o literal não foi lido no cabeçalho ou nas células do Excel selado"
+    },
+    {
+      "nome": "recorte mensal numa linha anual",
+      "mensagem": "K17 · famílias · oe-2026-despesa-efetiva-administracao-central-seguranca-social, parte 1 («É a despesa efetiva da administração central e da seguran…»): o recorte de janeiro a agosto não apoia uma linha anual"
+    },
+    {
+      "nome": "definição retirada: rp4n-diferencas-consolidacao",
+      "mensagem": "K17 · famílias · oe-2026-diferencas-consolidacao-funcional, execucao-2026-07-diferencas-consolidacao-funcional, parte 1 («É a diferença entre os registos de despesa e de receita d…»): apoia-se em «rp4n-diferencas-consolidacao», que não está declarada em ORIGENS_DAS_DEFINICOES"
+    },
+    {
+      "nome": "definição retirada: rp4n-saldos-gerencia",
+      "mensagem": "K17 · famílias · oe-2026-receita-efetiva-administracao-central, execucao-2026-07-receita-efetiva-administracao-central, execucao-2026-08-receita-efetiva-administracao-central, parte 2 («: o que ela recebe sem contar os recebimentos de ativos e…»): apoia-se em «rp4n-saldos-gerencia», que não está declarada em ORIGENS_DAS_DEFINICOES"
+    },
+    {
+      "nome": "legenda da pensão retirada",
+      "mensagem": "K17 · famílias · penalizacao-antecipacao-um-ano-neutra, parte 1 («É a estimativa preliminar do grupo de trabalho da redução…»): cita «Decrementos por reforma antecipada: caso geral», que não está no campo «excerpt» da linha «penalizacao-antecipacao-um-ano-neutra»"
+    },
+    {
+      "nome": "emenda do valor à legenda da pensão",
+      "mensagem": "RP4N-f: a pensão exige a legenda contígua e o recorte da figura"
+    },
+    {
+      "nome": "paráfrase da ausência",
+      "mensagem": "K17 · famílias · avisos-pt2030-abertos, parte 1 («Os avisos consultados não definem por palavras esta conta…»): a ausência exige a retirada da linha sem publicador"
+    },
+    {
+      "nome": "ministério sem apoio literal da despesa bruta",
+      "mensagem": "K17 · famílias · oe-2026-cem-euros-ministerio-administracao-interna, oe-2026-cem-euros-ministerio-agricultura-e-mar, oe-2026-cem-euros-ministerio-ambiente-e-energia, oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto, oe-2026-cem-euros-ministerio-defesa-nacional, oe-2026-cem-euros-ministerio-economia-e-coesao-territorial, oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao, oe-2026-cem-euros-ministerio-financas, oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao, oe-2026-cem-euros-ministerio-justica, oe-2026-cem-euros-ministerio-negocios-estrangeiros, oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros, oe-2026-cem-euros-ministerio-reforma-do-estado, oe-2026-cem-euros-ministerio-saude, oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social, parte 1 («É quanto vai para este ministério em cada cem euros, divi…»): cita «pela despesa bruta da administração central, multiplicar …», que não está no campo «derivation» da linha «oe-2026-cem-euros-ministerio-saude»"
+    },
+    {
+      "nome": "origem de outro publicador",
+      "mensagem": "K17 · famílias · oe-2026-cem-euros-funcao-01, oe-2026-cem-euros-funcao-02, oe-2026-cem-euros-funcao-03, oe-2026-cem-euros-funcao-04, oe-2026-cem-euros-funcao-05, oe-2026-cem-euros-funcao-06, oe-2026-cem-euros-funcao-07, oe-2026-cem-euros-funcao-08, oe-2026-cem-euros-funcao-09, oe-2026-cem-euros-funcao-10, parte 2 (« que o Orçamento prevê»): rp4n-orcamento, oe-2026-cem-euros-funcao-01: a origem tem outro publicador e não está declarada como segunda fonte com recibo"
+    },
+    {
+      "nome": "segunda fonte sem declaração na linha",
+      "mensagem": "K17 · famílias · evora-vab-empresarial, parte 2 («: o valor do que produzem menos o valor dos bens e serviç…»): rp4n-vab, evora-vab-empresarial-2024: a origem tem outro publicador e não está declarada como segunda fonte com recibo"
+    },
+    {
+      "nome": "linha retirada num cartão plantado",
+      "mensagem": "RP4N-e: uma linha retirada chegou a uma página: ciclo-substituicao-condutas"
+    },
+    {
+      "nome": "unidade plural com um aviso (pt)",
+      "mensagem": "RP4N-e: a unidade dos avisos não concorda com o valor"
+    },
+    {
+      "nome": "unidade plural com um aviso (en)",
+      "mensagem": "RP4N-e: a unidade dos avisos não concorda com o valor"
+    },
+    {
+      "nome": "água novamente atribuída à APA",
+      "mensagem": "K17 · famílias · agua-nao-faturada-portugal, parte 1 («É a parte da água entrada no sistema que não é faturada, …»): rp4n-agua-nao-faturada, agua-nao-faturada-portugal-2024: a origem tem outro publicador e não está declarada como segunda fonte com recibo"
+    },
+    {
+      "nome": "título do relatório em vez do rótulo da água (pt)",
+      "mensagem": "K17 · recibo · pt · agua-nao-faturada-portugal-2024: o nome na fonte da água não é o rótulo AA08b conferido"
+    },
+    {
+      "nome": "origem da água apagada do recibo (pt)",
+      "mensagem": "K17 · recibo · pt · agua-nao-faturada-portugal-2024: a origem visível da definição perdeu o documento ou o excerto"
+    },
+    {
+      "nome": "título do relatório em vez do rótulo da água (en)",
+      "mensagem": "K17 · recibo · en · agua-nao-faturada-portugal-2024: o nome na fonte da água não é o rótulo AA08b conferido"
+    },
+    {
+      "nome": "origem da água apagada do recibo (en)",
+      "mensagem": "K17 · recibo · en · agua-nao-faturada-portugal-2024: a origem visível da definição perdeu o documento ou o excerto"
+    },
+    {
+      "nome": "definição local da pensão adulterada",
+      "mensagem": "K16 · origem «pensao-neutralidade»: o excerto local difere da leitura da página alojada"
+    },
+    {
+      "nome": "definição local da pensão adulterada na K17",
+      "mensagem": "K17 · origem «pensao-neutralidade»: o excerto local difere da leitura da página alojada"
+    },
+    {
+      "nome": "linha retirada no JSON do conjunto",
+      "mensagem": "RP4N-e: uma linha retirada chegou a uma página: avisos-pt2030-abertos"
+    },
+    {
+      "nome": "separador final solto (pt)",
+      "mensagem": "RP4N-f: o caminho termina num separador sem destino"
+    },
+    {
+      "nome": "separador final solto (en)",
+      "mensagem": "RP4N-f: o caminho termina num separador sem destino"
+    }
+  ]
+}

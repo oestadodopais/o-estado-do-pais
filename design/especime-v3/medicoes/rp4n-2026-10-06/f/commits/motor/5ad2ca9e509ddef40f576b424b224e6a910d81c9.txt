@@ -1,0 +1,3 @@
+5ad2ca9e509ddef40f576b424b224e6a910d81c9
+fix(rp4n-f): separar a estimativa neutra da penalização legal
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>

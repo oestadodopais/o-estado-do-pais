@@ -1,0 +1,96 @@
+{
+  "cabeca": "de26e52bf675478ee1af329b62abd45293ae8a6f",
+  "inicio": "2026-10-12T11:54:00.592Z",
+  "fim": "2026-10-12T11:54:52.136Z",
+  "segundos": 51.544,
+  "passos": [
+    {
+      "passo": "cadeia:build",
+      "cadeia": "build",
+      "inicio": "2026-10-12T11:54:00.592+00:00",
+      "fim": "2026-10-12T11:54:51.722+00:00",
+      "segundos": 51.13006741600111,
+      "codigo": 1
+    },
+    {
+      "passo": "npm run mapa:unidades",
+      "cadeia": "build",
+      "inicio": "2026-10-12T11:54:00.592+00:00",
+      "fim": "2026-10-12T11:54:00.748+00:00",
+      "segundos": 0.1556914999964647,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run ledger:check",
+      "cadeia": "build",
+      "inicio": "2026-10-12T11:54:00.748+00:00",
+      "fim": "2026-10-12T11:54:06.165+00:00",
+      "segundos": 5.416752416000236,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:registo",
+      "cadeia": "build",
+      "inicio": "2026-10-12T11:54:06.165+00:00",
+      "fim": "2026-10-12T11:54:06.523+00:00",
+      "segundos": 0.3580124999862164,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:cruzamento",
+      "cadeia": "build",
+      "inicio": "2026-10-12T11:54:06.523+00:00",
+      "fim": "2026-10-12T11:54:07.011+00:00",
+      "segundos": 0.4882663330063224,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:documentos",
+      "cadeia": "build",
+      "inicio": "2026-10-12T11:54:07.012+00:00",
+      "fim": "2026-10-12T11:54:07.192+00:00",
+      "segundos": 0.1801487920456566,
+      "codigo": 0
+    },
+    {
+      "passo": "astro build",
+      "cadeia": "build",
+      "inicio": "2026-10-12T11:54:07.192+00:00",
+      "fim": "2026-10-12T11:54:21.496+00:00",
+      "segundos": 14.304161749954801,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run stamp:version",
+      "cadeia": "build",
+      "inicio": "2026-10-12T11:54:21.496+00:00",
+      "fim": "2026-10-12T11:54:21.644+00:00",
+      "segundos": 0.14788350003072992,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run cartoes",
+      "cadeia": "build",
+      "inicio": "2026-10-12T11:54:21.644+00:00",
+      "fim": "2026-10-12T11:54:51.585+00:00",
+      "segundos": 29.940201209043153,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run gate:html",
+      "cadeia": "build",
+      "inicio": "2026-10-12T11:54:51.585+00:00",
+      "fim": "2026-10-12T11:54:51.722+00:00",
+      "segundos": 0.13733729103114456,
+      "codigo": 1
+    },
+    {
+      "passo": "npm run typecheck",
+      "cadeia": "typecheck",
+      "inicio": "2026-10-12T11:54:51.891+00:00",
+      "fim": "2026-10-12T11:54:52.136+00:00",
+      "segundos": 0.2450499580008909,
+      "codigo": 0
+    }
+  ]
+}
