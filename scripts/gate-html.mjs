@@ -256,7 +256,7 @@ import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
 import { parse, NodeType } from 'node-html-parser';
 
-import { conferirRetiradas, conferirPublicacaoRetirada } from './linhas-retiradas.mjs';
+import { conferirPublicacaoRetirada } from './linhas-retiradas.mjs';
 import { t } from '../src/i18n/strings.mjs';
 import { unidadeDaLinha } from '../src/i18n/unidades.mjs';
 import {
