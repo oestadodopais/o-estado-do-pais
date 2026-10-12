@@ -7,7 +7,7 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { chromium } from 'playwright';
 import { parse } from 'node-html-parser';
-import { allClaims, eDerivada } from '../../src/lib/ledger.mjs';
+import { allClaims, eDerivada, camposPorVerificar } from '../../src/lib/ledger.mjs';
 import { SITE_URL, SITE_HOST_DISPLAY } from '../../site.config.mjs';
 import { routePath } from '../../src/lib/routes.mjs';
 import { t } from '../../src/i18n/strings.mjs';
@@ -25,6 +25,17 @@ const c = linhas.find(c=>c.source_url && c.corrections?.some(x=>x.kind==='atuali
 const cNotas = linhas.find(c => podeIncorporar(c) && (c.source_flag_note || c.ressalva) && (c.source_flag_note_en || c.ressalva_en));
 assert(cNotas, 'O navegador precisa de uma linha real com notas nas duas edições.');
 const calculada = linhas.find(c => eDerivada(c) && !c.access_date && podeIncorporar(c));
+// O livro tem uma recusa só pelo excerto. O endereço isolado é uma planta
+// em memória sobre uma linha completa, sem alterar o livro.
+const recusadaExcerto = linhas.find(c => c.id === 'evora-prr-aprovado-2026');
+const recusadaEndereco = {...c, id:c.id+'-recusado-endereco', source_url:'[a verificar]'};
+assert.deepEqual(camposPorVerificar(recusadaExcerto), ['excerpt']);
+assert.deepEqual(camposPorVerificar(recusadaEndereco), ['source_url']);
+assert.equal(podeIncorporar(recusadaEndereco), false);
+const recusadas = [recusadaExcerto, recusadaEndereco];
+const jsonEndereco = JSON.parse(fs.readFileSync(`${dist}/livro-razao/${c.id}.json`, 'utf8'));
+jsonEndereco.linha = {...jsonEndereco.linha, id:recusadaEndereco.id, source_url:recusadaEndereco.source_url};
+delete jsonEndereco.incorporacao;
 const antigo = c.corrections.find(x=>x.kind==='atualizacao' && x.new_value===c.value).old_value;
 const tipos = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css','.json':'application/json','.woff2':'font/woff2','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp'};
 const codigos = Object.fromEntries(['pt','en'].map(lang=>[lang,parse(fs.readFileSync(`${dist}${routePath('linha',lang,{slug:c.id})}/index.html`,'utf8')).querySelector('[data-incorporar-codigo]').textContent]));
@@ -38,13 +49,17 @@ function blogue(lang) {
   const rotulos = lang==='pt' ? ['Valor atual','Valor antigo','Pedido sem resposta'] : ['Current value','Old value','Failed request'];
   const campos={lang:t(lang).lang,titulo:lang==='pt'?'Blogue de ensaio':'Test blog',anfitria:lang==='pt'?'Conteúdo da página que acolhe os números.':'Content of the page hosting the numbers.',rotulo_atual:rotulos[0],rotulo_antigo:rotulos[1],rotulo_ausente:rotulos[2],codigo_atual:codigos[lang],codigo_antigo:velho,codigo_ausente:ausente,rotulo_notas:lang==='pt'?'Número com notas':'Number with notes',codigo_notas:codigosNotas[lang].replace(/data-oedp-lido="[^"]*"/, 'data-oedp-lido=""')};
   const codigoCalculado = lerPaginaComCodigo(fs.readFileSync(`${dist}${routePath('linha',lang,{slug:calculada.id})}/index.html`,'utf8')).querySelector('textarea').textContent.replace('data-oedp-valor="'+calculada.value+'"','data-oedp-valor="ensaio"');
-  return modeloBlogue.replace('</html>',codigoCalculado+'</html>').replace(/\{\{([a-z_]+)\}\}/g,(_,chave)=>campos[chave]);
+  const coladosRecusados = recusadas.map(linha => `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${linha.id}" data-oedp-valor="ensaio" data-oedp-lido="ensaio"><span>${lang === 'pt' ? 'Citação guardada' : 'Saved quotation'}</span></p>`).join('');
+  return modeloBlogue.replace('</html>',codigoCalculado+coladosRecusados+'</html>').replace(/\{\{([a-z_]+)\}\}/g,(_,chave)=>campos[chave]);
 }
 let modoAtual = 'normal';
 const servidor = http.createServer((req,res)=>{
   try {
     const caminho = new URL(req.url,'http://local.invalid').pathname;
     for (const r of regras) if (r.src && !r.has && new RegExp('^'+r.src+'$').test(caminho)) for (const [k,v] of Object.entries(r.headers??{})) res.setHeader(k,v);
+    if (caminho === `/livro-razao/${recusadaEndereco.id}.json`) {
+      res.setHeader('Content-Type',tipos['.json']); res.end(JSON.stringify(jsonEndereco)); return;
+    }
     let f = path.resolve(dist,'.'+decodeURIComponent(caminho));
     if (!f.startsWith(dist+path.sep) && f!==dist) throw Error('fora');
     if (fs.statSync(f).isDirectory()) f=path.join(f,'index.html');
@@ -55,7 +70,7 @@ const servidor = http.createServer((req,res)=>{
       if (modoAtual==='redirecionamento') {res.writeHead(302,{location:'https://fora.invalid/receber'}).end();return;}
       if (modoAtual==='json-malformado') {res.end('{');return;}
       if (modoAtual==='outra-linha') {res.end(JSON.stringify({...json,linha:{...json.linha,id:c.id+'-outra'}}));return;}
-      if (modoAtual==='proveniencia-por-confirmar') {const doc=JSON.parse(fs.readFileSync(f,'utf8'));doc.linha.access_date='[a verificar]';res.end(JSON.stringify(doc));return;}
+      if (modoAtual==='proveniencia-por-confirmar') {const doc=JSON.parse(fs.readFileSync(f,'utf8'));delete doc.incorporacao;res.end(JSON.stringify(doc));return;}
       if (modoAtual==='releitura' && caminho===`/livro-razao/${c.id}.json`) {res.end(JSON.stringify(jsonRelido));return;}
     }
     const bytes=fs.readFileSync(f);
@@ -98,6 +113,12 @@ try {
     assert.equal(valores.length,parse(blogue(lang)).querySelectorAll('.oedp-numero').length);
     assert.equal(valores[2].valor,c.value);
     assert.equal(valores[2].aviso,null);
+    const originaisRecusados = parse(blogue(lang)).querySelectorAll('.oedp-numero').slice(-recusadas.length);
+    for (const [indice, linha] of recusadas.entries()) {
+      const mensagem = `ER1 navegador: a recusa só por ${indice === 0 ? 'excerpt' : 'source_url'} alterou o parágrafo colado.`;
+      assert.equal(valores[5+indice].html,originaisRecusados[indice].outerHTML,mensagem);
+      if (modo === 'normal') r.plantas.push({nome:'recusado-isolado-'+(indice === 0 ? 'excerpt' : 'source_url')+'-'+lang,mensagem,mordeu:true});
+    }
     if (['normal','releitura','separador-notas-retirado','notas-retiradas'].includes(modo)) {
       const esperado = modo==='releitura' ? jsonRelido : json;
       assert.equal(pedidos.filter(p=>p.caminho.endsWith('.json')).length,valores.length);
@@ -130,7 +151,7 @@ try {
       assert.deepEqual(textos,original,`${modo}: o texto colado não ficou inteiro`);
       if (modo!=='sem-js') r.plantas.push({nome:modo+'-'+lang,mensagem:'O pedido recusado conserva o código colado inteiro.',mordeu:true});
     }
-    assert(pedidos.every(p=>p.origem==='<servidor do projeto>' && (p.caminho==='/incorporar.js'||p.caminho===`/livro-razao/${c.id}.json`||p.caminho===`/livro-razao/${c.id}-nao-existe.json`||p.caminho===`/livro-razao/${cNotas.id}.json`||p.caminho===`/livro-razao/${calculada.id}.json`)));
+    assert(pedidos.every(p=>p.origem==='<servidor do projeto>' && (p.caminho==='/incorporar.js'||p.caminho===`/livro-razao/${c.id}.json`||p.caminho===`/livro-razao/${c.id}-nao-existe.json`||p.caminho===`/livro-razao/${cNotas.id}.json`||p.caminho===`/livro-razao/${calculada.id}.json`||recusadas.some(c=>p.caminho===`/livro-razao/${c.id}.json`))));
     assert(pedidos.every(p=>p.referer===null && p.metodo==='GET' && p.corpo===null));
     assert.equal(await pagina.locator('#anfitria').textContent(),parse(blogue(lang)).querySelector('#anfitria').textContent);
     if(modo!=='sem-js') assert.deepEqual(acessos,[]);
