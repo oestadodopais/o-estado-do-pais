@@ -1,5 +1,5 @@
-import {conferirCaminhoFinal} from './caminho-final.mjs';
 #!/usr/bin/env node
+import {conferirCaminhoFinal} from './caminho-final.mjs';
 import { contarFrasesDasMudancas, errosDoSeloDaDefinicao } from '../tests/explicacoes/o-que-e.mjs';
 import { conferirLugaresIA } from './lugares-ia-do-portao.mjs';
 import { inventariarMarcadores, resumirMarcadores } from './sem-marcadores.mjs';
