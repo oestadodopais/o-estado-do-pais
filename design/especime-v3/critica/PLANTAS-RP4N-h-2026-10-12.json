@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-12T16:12:01+00:00",
+ "copia": "<scratchpad>/rp4n/pacote-leitura-h",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/livro-razao/penalizacao-antecipacao-um-ano-neutra/index.html",
+   "descricao": "a data de leitura da definição da estimativa no recibo português da pensão diz 24.09.2026, na cópia, contra a linha, a prova do alojamento (24.08.2026) e a edição inglesa",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f5a0cc18d86168d30d8c1ee9e2773840a742ca461e6d3fb0eae789d82c916fe6",
+   "sha256_depois": "557d241af2b6d92fb88e97dc2ea24cfd2e28ccbb0bc8ace903fb66b73624ebea",
+   "contexto_antes": "io 2023-2025.</blockquote><p class=\"def-excerto-lido\"><span class=\"def-origem-k\">Cópia alojada a</span> <span data-nonledger=\"data-de-leitura-de-uma-definicao\" data-def-lido=\"pensao-estimativa\">24.08.2026</span></p></details></div><div class=\"def-origem\" data-def-origem=\"pensao-neutralidade\"><p class=\"def-origem-linha\"><span class=\"def-origem-k\">Definição de</span> <sp",
+   "contexto_depois": "io 2023-2025.</blockquote><p class=\"def-excerto-lido\"><span class=\"def-origem-k\">Cópia alojada a</span> <span data-nonledger=\"data-de-leitura-de-uma-definicao\" data-def-lido=\"pensao-estimativa\">24.09.2026</span></p></details></div><div class=\"def-origem\" data-def-origem=\"pensao-neutralidade\"><p class=\"def-origem-linha\"><span class=\"def-origem-k\">Definição de</span> <sp"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/index.html",
+   "descricao": "o localizador inglês da penalização legal aponta ao parágrafo abaixo da Figura 8.5, na cópia, contra a linha (Figura 8.4), o PDF e a edição portuguesa",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "9f8e2ada342c491d2e025b9716532e00fc8fbb3e76b1215e37b98f6e1a44c463",
+   "sha256_depois": "c314a78f74005b7bd34740622ddb33f3859009186e31db6640c286e29e77f1a6",
+   "contexto_antes": "data-linha-claim=\"penalizacao-legal-um-ano-antecipacao-2026\" data-linha-campo=\"document.locator_en\">Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, paragraph below Figure 8.4</span></dd><dt>Data for</dt><dd><span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"penalizacao-legal-um-ano-antecipacao-2026",
+   "contexto_depois": "data-linha-claim=\"penalizacao-legal-um-ano-antecipacao-2026\" data-linha-campo=\"document.locator_en\">Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, paragraph below Figure 8.5</span></dd><dt>Data for</dt><dd><span class=\"data-da-linha campo-valor\" data-nonledger=\"data-da-linha\" data-de-linha=\"penalizacao-legal-um-ano-antecipacao-2026"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "ledger/claims/penalizacao-legal-um-ano-antecipacao-2026.yml",
+   "descricao": "a linha da penalização legal diz 25.08.2026 como data da cópia alojada, na cópia, contra o diff, a prova do alojamento (o commit de 24.08.2026) e o recibo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "dc38cb2c443b91cba70bed62967cc6a4ef5701db12dccb9e50886f6b41f925e8",
+   "sha256_depois": "55f672456dbb2f935e5f03927426b3dddad70e6ac04c85c26847ac08559ed0b8",
+   "contexto_antes": "urce_url: https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef#page=273\naccess_date: '2026-08-24'\naccess_date_kind: hosted-copy\nreference_date: '2026'\nexcerpt: 'No caso da reforma antecipada, os resultados indicam que a penalização actuarialmente\n  neutral ",
+   "contexto_depois": "urce_url: https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef#page=273\naccess_date: '2026-08-25'\naccess_date_kind: hosted-copy\nreference_date: '2026'\nexcerpt: 'No caso da reforma antecipada, os resultados indicam que a penalização actuarialmente\n  neutral "
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 26 páginas com a marca depois da passagem, na cópia, contra as medidas (28) e a lista das páginas",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "27eae97ac578a67c4e265422220d583236aaf2ed64a9159c787181360c159ef7",
+   "sha256_depois": "c5d4158a1b226b9a8283107329b26c4b2bedb8125df36214cfa36255939dfe2f",
+   "contexto_antes": ": hosted-copy`; a porta pública da prova é `/provas/pensao-alojamento.json`.\n\n### As marcas e as linhas incompletas\n\n| Medição | Antes | Depois |\n|---|---|---|\n| Páginas com marca | 38 | 28 |\n| Linhas publicadas incompletas | 6 | 4 |\n\nAntes: varredura do `dist/` conservado da cabeça `344081c34eef1f792feef6bfd2d77fd764f7a1b5`, com o ramo em `d430d6dd",
+   "contexto_depois": ": hosted-copy`; a porta pública da prova é `/provas/pensao-alojamento.json`.\n\n### As marcas e as linhas incompletas\n\n| Medição | Antes | Depois |\n|---|---|---|\n| Páginas com marca | 38 | 26 |\n| Linhas publicadas incompletas | 6 | 4 |\n\nAntes: varredura do `dist/` conservado da cabeça `344081c34eef1f792feef6bfd2d77fd764f7a1b5`, com o ramo em `d430d6dd"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "motor/publisher/recortes/penalizacao-antecipacao-um-ano-neutra.yml",
+   "descricao": "a linha da pensão no motor diz que a data é de uma leitura na fonte e não de uma cópia alojada, na cópia, contra o diff, a prova e o recibo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "261e267e415860bf2a4d8b7e80688dae781b9aa500fe74f718a1213aecfdf220",
+   "sha256_depois": "2fbb2a33e85f2c685e39bea81e5e7af6900a804aaa50e07b1a9a3c3642c349ba",
+   "contexto_antes": "mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef#page=273\"\naccess_date: \"2026-08-24\"\naccess_date_kind: hosted-copy\nreference_date: \"2026\"\n\nexcerpt: \"Figura 8.4: Decrementos por reforma antecipada: caso geral\"\n\nderivation: null\nderivation_en: null\nderived_from: []\ncheck: nul",
+   "contexto_depois": "mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef#page=273\"\naccess_date: \"2026-08-24\"\naccess_date_kind: source-read\nreference_date: \"2026\"\n\nexcerpt: \"Figura 8.4: Decrementos por reforma antecipada: caso geral\"\n\nderivation: null\nderivation_en: null\nderived_from: []\ncheck: nul"
+  }
+ ]
+}
