@@ -70,5 +70,22 @@ assert.deepEqual(faixaAgua(loadClaims()),[]);
  const linhas=structuredClone(loadClaims());linhas.get('agua-nao-faturada-portugal-2024').value='20';
  morde('água no limite excluído da faixa mediana',faixaAgua(linhas),'o valor da água não pertence');
 }
+const {comparaLinhas}=await import('../../src/lib/o-que-e-o-numero.mjs');
+const {FAMILIAS_DAS_LINHAS}=await import('../../src/data/o-que-e-das-familias.mjs');
+const comparacao=FAMILIAS_DAS_LINHAS['penalizacao-antecipacao-um-ano-neutra'].compara;
+for(const lang of ['pt','en']) {
+ const {cabecaDoRecibo,conferirCabecaDoRecibo,contextoDasFamilias,reguasDosCartoes}=await import('./familias.mjs');
+ const id='penalizacao-antecipacao-um-ano-neutra';
+ const c=cabecaDoRecibo(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/${id}/index.html`,'utf8'));
+ const e={ctx:contextoDasFamilias(),cartoes:reguasDosCartoes('dist')};
+ assert.deepEqual(conferirCabecaDoRecibo(c,id,lang,e),[]);
+ const frase=c.querySelector('[data-o-que-e-parte="o-que-e"]');
+ frase.set_content(frase.innerHTML.replace(comparacao[lang].menor,comparacao[lang].maior));
+ morde(`lei dita maior que a estimativa (${lang})`,conferirCabecaDoRecibo(c,id,lang,e),'a frase rendida não é');
+ for(const [valor,ramo] of [['9','maior'],['8,2','igual'],['6','menor']]) {
+  const copia=structuredClone(loadClaims());copia.get(comparacao.a).value=valor;
+  assert(comparaLinhas(comparacao,lang,copia).includes(comparacao[lang][ramo]),`a comparação não acompanha ${ramo}`);
+ }
+}
 if(process.argv.includes('--registo-g'))fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/g/plantas-novas.json',JSON.stringify({plantas},null,2)+'\n');
 console.log(`RP4N-g: PASS, ${plantas.length} plantas`);

@@ -2139,7 +2139,12 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "It is the amount for this ministry out of every hundred euros of “",
+        {
+          "termo": "DESPESA TOTAL",
+          "lingua": "pt-PT"
+        },
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
       ]
     },
     "origens": [
@@ -2153,7 +2158,12 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "It is the amount for this ministry out of every hundred euros of “",
+        {
+          "termo": "DESPESA TOTAL",
+          "lingua": "pt-PT"
+        },
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
       ]
     },
     "origens": [
@@ -2167,7 +2177,12 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "It is the amount for this ministry out of every hundred euros of “",
+        {
+          "termo": "DESPESA TOTAL",
+          "lingua": "pt-PT"
+        },
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
       ]
     },
     "origens": [
@@ -2181,7 +2196,12 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "It is the amount for this ministry out of every hundred euros of “",
+        {
+          "termo": "DESPESA TOTAL",
+          "lingua": "pt-PT"
+        },
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
       ]
     },
     "origens": [
@@ -2195,7 +2215,12 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "It is the amount for this ministry out of every hundred euros of “",
+        {
+          "termo": "DESPESA TOTAL",
+          "lingua": "pt-PT"
+        },
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
       ]
     },
     "origens": [
@@ -2209,7 +2234,12 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "It is the amount for this ministry out of every hundred euros of “",
+        {
+          "termo": "DESPESA TOTAL",
+          "lingua": "pt-PT"
+        },
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
       ]
     },
     "origens": [
@@ -2223,7 +2253,12 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "It is the amount for this ministry out of every hundred euros of “",
+        {
+          "termo": "DESPESA TOTAL",
+          "lingua": "pt-PT"
+        },
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
       ]
     },
     "origens": [
@@ -2237,7 +2272,12 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para os encargos gerais do Estado em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
       ],
       "en": [
-        "It is the amount for the general charges of the State out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "It is the amount for the general charges of the State out of every hundred euros of “",
+        {
+          "termo": "DESPESA TOTAL",
+          "lingua": "pt-PT"
+        },
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
       ]
     },
     "origens": [
@@ -2251,7 +2291,12 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "It is the amount for this ministry out of every hundred euros of “",
+        {
+          "termo": "DESPESA TOTAL",
+          "lingua": "pt-PT"
+        },
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
       ]
     },
     "origens": [
@@ -2265,7 +2310,12 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "It is the amount for this ministry out of every hundred euros of “",
+        {
+          "termo": "DESPESA TOTAL",
+          "lingua": "pt-PT"
+        },
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
       ]
     },
     "origens": [
@@ -2279,7 +2329,12 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "It is the amount for this ministry out of every hundred euros of “",
+        {
+          "termo": "DESPESA TOTAL",
+          "lingua": "pt-PT"
+        },
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
       ]
     },
     "origens": [
@@ -2293,7 +2348,12 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "It is the amount for this ministry out of every hundred euros of “",
+        {
+          "termo": "DESPESA TOTAL",
+          "lingua": "pt-PT"
+        },
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
       ]
     },
     "origens": [
@@ -2307,7 +2367,12 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "It is the amount for this ministry out of every hundred euros of “",
+        {
+          "termo": "DESPESA TOTAL",
+          "lingua": "pt-PT"
+        },
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
       ]
     },
     "origens": [
@@ -2321,7 +2386,12 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "It is the amount for this ministry out of every hundred euros of “",
+        {
+          "termo": "DESPESA TOTAL",
+          "lingua": "pt-PT"
+        },
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
       ]
     },
     "origens": [
@@ -2335,7 +2405,12 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "It is the amount for this ministry out of every hundred euros of “",
+        {
+          "termo": "DESPESA TOTAL",
+          "lingua": "pt-PT"
+        },
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
       ]
     },
     "origens": [
@@ -2349,7 +2424,12 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "It is the amount for this ministry out of every hundred euros of “",
+        {
+          "termo": "DESPESA TOTAL",
+          "lingua": "pt-PT"
+        },
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
       ]
     },
     "origens": [
@@ -3020,10 +3100,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "penalizacao-antecipacao-um-ano-neutra": {
     "frase": {
       "pt": [
-        "É a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que mantém igual o valor atual esperado entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação."
+        "É a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação."
       ],
       "en": [
-        "It is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that keeps the expected present value equal between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty."
+        "It is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty."
       ]
     },
     "origens": [
@@ -3031,7 +3111,32 @@ export const FAMILIAS_DAS_LINHAS = {
       "pensao-neutralidade",
       "pensao-direitos",
       "pensao-legal"
-    ]
+    ],
+    "compara": {
+      "a": "penalizacao-legal-um-ano-antecipacao-2026",
+      "b": "penalizacao-antecipacao-um-ano-neutra",
+      "pt": {
+        "antes": " A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de ",
+        "menor": " e é menor do que a redução atuarialmente neutra de ",
+        "maior": " e é maior do que a redução atuarialmente neutra de ",
+        "igual": " e é igual à redução atuarialmente neutra de ",
+        "depois": "."
+      },
+      "en": {
+        "antes": " The statutory penalty for retiring one year early, excluding the sustainability factor, is about ",
+        "menor": " and is lower than the actuarially neutral reduction of ",
+        "maior": " and is higher than the actuarially neutral reduction of ",
+        "igual": " and is equal to the actuarially neutral reduction of ",
+        "depois": "."
+      },
+      "apoios": [
+        {
+          "origem": "pensao-legal",
+          "campo": "excerto",
+          "literal": "equivalente a cerca de 6% por ano"
+        }
+      ]
+    }
   },
   "penalizacao-antecipacao-um-ano-sem-factor": {
     "frase": {
