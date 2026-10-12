@@ -1163,3 +1163,263 @@ Ficam RP4N-8, a confirmação da fonte e do rótulo das condutas antes de qualqu
 O alvo de custo do mandato já tinha sido ultrapassado antes da retoma: a mensagem de retoma da direção comunica «572 662 símbolos até parar». Esse valor é uma informação fornecida pela direção, não uma medição desta ferramenta. A retoma não expôs a linha «tokens used»; não se estima o custo adicional nem um total. O trabalho adicional incluiu a procura da nova publicação oficial da ERSAR, o alojamento e a leitura da página, a substituição da origem que o portão recusava e a repetição das provas nas cabeças corrigidas.
 
 A limitação de capacidade interrompeu a corrida anterior; uma execução sem ficheiro de código não foi convertida em sucesso. Esta secção substitui, para a entrega atual, as conclusões históricas sobre a APA e a disponibilidade do RASARP, sem apagar o registo das passagens anteriores.
+
+
+## A passagem RP4-n-f
+
+A reescrita precedeu o commit dos registos e todas as correções. A direção confirmou a conservação da base e da referência de cópia. As frases foram corrigidas nas duas edições e as ausências mantidas como ausências. Não houve publicação, push, eliminação de ramos ou de referências.
+
+### As decisões e a sua execução
+
+- Achado 6: saiu a emenda por `trechos`. O cabeçalho anual conserva o período, a unidade, CGE, Orçamento Inicial e os anos como a extração contígua os dá. A frase distingue a coluna do orçamento da execução acumulada ao lado. O localizador da linha conserva a coluna e a linha do quadro.
+- Achado 7: o excerto da pensão ficou reduzido à legenda contígua. A figura foi relida visualmente e guardada como recorte no motor, com resumo criptográfico no manifesto e ligação por `document.crop`. O ensaio compara a legenda com a página e reproduz o recorte a partir dos bytes alojados.
+- Achado 8: a estimativa preliminar de redução atuarialmente neutra ficou distinta da penalização legal. A leitura da fonte obrigou a precisar a orientação: a neutralidade é individual, em valor atual esperado, e a própria fonte diz que não garante a sustentabilidade do sistema. Por isso não se escreveu que o custo do sistema fica igual. A linha legal nova conserva a aproximação da fonte na ressalva e no nome; o livro não aceita uma bandeira livre para «cerca de». Os direitos são os que deixam de ser formados.
+- Achado 9: todas as linhas sem publicador conhecido ficam retiradas, conservadas no livro bruto. Os cartões saíram das páginas. A K17 recusa atribuir a um publicador desconhecido a frase de que a fonte publica sem definir.
+- Achado 10: as quotas dos ministérios dizem «pela despesa bruta da administração central», apoiadas na derivação literal. A definição em palavras de despesa bruta fica por confirmar na fonte. A procura registada nos documentos alojados não encontrou a expressão; não se apresenta isto como leitura de um relatório do Orçamento que não estava alojado. A planta agora retira o apoio literal, em vez de proibir as palavras do apoio.
+- Achado 11: o recibo da água foi reexportado pelo motor. O nome na fonte é o rótulo AA08b, o excerto é a linha contígua do quadro e o endereço corresponde ao PDF alojado. A frase situa a baixa no continente, dá a cobertura em palavras e distingue a avaliação em alta. A releitura local está registada na nota da linha e no ensaio do motor. A data de acesso continua a ser a do pedido alojado; não se inventou uma nova resposta HTTP nem uma segunda leitura pública pelo corredor.
+- Achado 12: a retirada é conferida em todos os ficheiros de texto de `dist/`, incluindo JSON, CSV e mapas XML. A planta injeta um identificador retirado no JSON do conjunto.
+- Achado 14: os comandos de reconferência escrevem as cabeças reais antes e depois, e a lista de commits é extraída por guião, com um ficheiro para cada commit.
+- Achado 15: os avisos usam a mesma palavra inglesa no título e na unidade, mesmo permanecendo retirados. O caminho não deixa um separador final sem destino; há planta nas duas edições.
+- Achado 16: o título PRR diz que o prazo é anterior à data do instantâneo, que continua ligada ao campo da computação.
+- Achado 17: a lista de páginas com marcas aceites foi refeita depois das retiradas, a partir da célula do portão.
+
+Os achados declarados plantas pela direção não deram correções ao produto. O achado sobre a forma do pacote e o que fica para a integração de `main` mantêm a decisão do mandato.
+
+O cabeçalho comum apoia 3 linhas anuais e 3 mensais, inventariadas em `f/medidas.json`. O inventário de documentos por frase foi refeito em [fontes-por-frase.md](f/fontes-por-frase.md), com os resumos efetivamente lidos no motor.
+
+### RP4N-8: linhas sem publicador
+
+A confirmação da fonte continua pendente antes de qualquer republicação:
+
+- `avisos-pt2030-abertos`: `withdrawn`.
+- `avisos-pt2030-pessoas-singulares`: `withdrawn`.
+- `ciclo-substituicao-condutas`: `withdrawn`.
+
+A medição leu 3196 linhas no livro bruto e 3193 publicadas. A conferência percorreu 12878 ficheiros de texto e encontrou 0 referências aos identificadores retirados. O Método conserva 4 linhas publicadas com proveniência incompleta. A água passou de incompleta a completa; os avisos deixaram o conjunto público. A comparação está em `f/metodo.json`.
+
+### Texto percorrido
+
+| Extensão | Ficheiros |
+|---|---|
+| .css | 9 |
+| .csv | 7 |
+| .html | 7903 |
+| .js | 10 |
+| .json | 4940 |
+| .svg | 1 |
+| .txt | 4 |
+| .webmanifest | 2 |
+| .xml | 2 |
+
+### Privacidade e reescrita
+
+Usou-se `filter-branch` com um guião limitado aos dois registos indicados. Os registos novos foram limpos antes de entrar no Git. A referência `refs/original/refs/heads/rp4n-2026-10-07` fica para a direção. A autorização de retoma distingue expressamente os legados temporários da cabeça e a história nova.
+
+### Prova lida de ficheiro
+
+| Âmbito | Contagem |
+|---|---|
+| História desde b84d21a3, grep -c dos quatro pedaços | 0 |
+| Diff inteiro desde b84d21a3, grep -c dos quatro pedaços | 0 |
+| Cabeça, nome do utilizador e prefixo da pasta pessoal | 0 |
+
+Os quatro pedaços são o nome do utilizador, o prefixo temporário privado, o diretório dos projetos e o segmento das worktrees. A prova executável está em `privacidade-f.py` e a saída em `f/privacidade.json`. Não se declara limpa de todos os caminhos históricos a árvore herdada.
+
+### Cabeças antigas e novas
+
+| Antiga | Nova | Commit |
+|---|---|---|
+| a45cf02837fae63da5d506e7a5d2c59c11cabf1a | 0775309eb34c6bfc918b6ba9aa7ddb859542fae6 | docs(rp4n-e): registar leitura, plantas e mandato |
+| 2c815466f33a54b6961725b3a526d893fdbc3ae6 | 0279a053db27fa7cbfef2ba447b750747da8b21a | fix(rp4n-e): recortar o excerto da pensão à medida |
+| a44d10a64d62784c31fa6d3f574fa9e9a9c8fd88 | 892dfa0ac0604eda61bb92e19bdd296630c6baa8 | fix(rp4n-e): uniformizar ausências e concordar avisos |
+| 24f97316b33530f2b108999a3c153833575d9e49 | 5e8d9b1493ba116bc50207f655a13fca5fe0894b | fix(rp4n-e): receber o recorte anual sem o período mensal |
+| 5c95a6aba18ab1aa9b7cc02a70bd4a85754ca849 | ba3c557393647c23e9dc0c621016f5d0f0da05fe | fix(rp4n-e): explicar a quota pelo total do mapa por ministérios |
+| 629557b3cfab84ec5e79acb984fca2c4bb084285 | ac383ec624631d25285b41ce07a8969b170cf2ac | fix(rp4n-e): retirar as condutas da publicação conservando o livro |
+| cfd28a517f27e2e3fc14264965e91f0e63a1dbd5 | 58192aeb5a5a66c9dbae11bbfb2b2d47825a2496 | fix(rp4n-e): auditar também as linhas retiradas sem as publicar |
+| 0345e2fd7efadac2c60555c112289dcb4acc9c75 | 862c26f0f268c242e9507a09555f80adb22e613d | fix(rp4n-e): concordar também os títulos e a conferência das unidades |
+| c46a5ee5987b71216c50aadb92e33e3f777847c5 | 32578d1ddd7a6a686c9ecdbde36ec6a326f8147b | fix(rp4n-e): datar o PRR vencido e alinhar as frases derivadas |
+| 650029fd89e0e67b98ffc4d3a30bce80a5a6f7a6 | 91c2871c96abf54d6e996492c8fba422c1c800f1 | fix(rp4n-e): exigir o publicador da medida ou segunda fonte com recibo |
+| 2aae0865ec071dd2b90322ca4750752f14042b71 | 6c9a90465ccbd1d2f9021cafa660f4f8d1e09f2b | fix(rp4n-e): provar a retirada em qualquer página e conservar a auditoria do livro |
+| 050ac3df5e90bf191dfb9328d5e11516d033e591 | 7399a556ca1bfd4b6322f4d43af88d422471de6c | fix(rp4n-e): concordar avisos nos cartões e provar o plural errado |
+| fcd54ba7c649441d095a6850f9fb60dcab2c4ee5 | 2a35e83cbc26a6ba7669f61281ae54f3a193eb03 | test(rp4n-e): plantar a reintrodução de despesa bruta sem definição |
+| f6b6b8455ac9b8ba62df9fcf17ba0d669a562165 | c62d323fd614a0b6b05578807562b896a81915da | fix(rp4n-e): ligar a data no nome PRR ao campo da computação em todas as vistas |
+| 4242cc244273445e373b664249d8c80553573ae2 | 44c6ddc15a9b750dd5bbb9535ff138b2daeecb77 | docs(rp4n-e): sincronizar a voz e os rótulos com as linhas publicadas |
+| ba71725be2038c8e4e2195afb6e9885c3e9fd7dc | d57d91bd897edeeaf3ee0781642cf2e239f5a89a | test(rp4n-e): preparar os registos das plantas, fontes e capturas finais |
+| 2f4383aab0a7889d5208d9aae97ea59afd087113 | 8381f17adaf62cbac4c1c8c9e93bba4881725dca | fix(rp4n-e): apoiar a água na ERSAR com a página junto da definição |
+| 86fc51735ced3e857e8b92f488aacd85aa971190 | 5a2baef72009bc1b0080100901693b36d0f73277 | fix(rp4n-e): alinhar o dicionário com os avisos e a linha retirada |
+| 60e41eb9ae2824e1f08c450b7480b4e57cdf5be8 | 3f8eb89bd837eccf230c63759c0ef8b5ebe72328 | test(rp4n-e): conferir o novo formato e a unidade singular dos avisos |
+| 5727174ad9a25376242c197f2fe285e58a2510ac | bcbfcc713edbe5c6d7fb57de9123c1375c7ab098 | fix(rp4n-e): identificar os concelhos na lista de fontes por frase |
+| 8ed6ed6ae1d60f3a47ccc5c45face2be7fcecd51 | b1962dfabb5167968a1bdb4ace7574c514798e3f | docs(rp4n-e): fechar o relatório e as provas nas cabeças verificadas |
+
+### RP4N-14: higiene dos legados
+
+Os 16 ficheiros seguintes já tinham o prefixo temporário na base. Não foram alterados. O bloco de higiene deve trocar esses caminhos por `<scratchpad>`. A lista, incluindo cada linha encontrada, saiu do guião:
+
+- `design/especime-v3/briefs/BRIEF-auditoria-ux-2026-08-25.md:61`.
+- `design/especime-v3/briefs/BRIEF-etapa-2.md:66`.
+- `design/especime-v3/briefs/BRIEF-mapa-navegacao-M4.md:7`.
+- `design/especime-v3/briefs/BRIEF-maquetas.md:7`.
+- `design/especime-v3/briefs/BRIEF-maquetas.md:120`.
+- `design/especime-v3/critica/2026-09-04-fable-leitor-no-navegador.md:11`.
+- `design/especime-v3/critica/2026-09-08-sonnet-medicao-f11e-distritos.md:20`.
+- `design/especime-v3/critica/LEITURA-c1-2026-09-28.md:129`.
+- `design/especime-v3/critica/LEITURA-rp1bc-2026-09-26.md:40`.
+- `design/especime-v3/medicoes/b1-2026-09-21/prompts/PROMPT-b1-opus-peca2-correcao.md:13`.
+- `design/especime-v3/medicoes/b1-2026-09-21/prompts/PROMPT-b1-opus-peca2-correcao.md:34`.
+- `design/especime-v3/medicoes/correcoes-ux-M3-sonnet.md:319`.
+- `design/especime-v3/medicoes/fontes-308-2026-08-26.md:357`.
+- `design/especime-v3/medicoes/p1-2026-09-15/contagens-antes.txt:2`.
+- `design/especime-v3/medicoes/parte3-M1-sonnet.md:6`.
+- `design/especime-v3/medicoes/parte3-M2-sonnet.md:6`.
+- `design/especime-v3/medicoes/rp1-2026-09-26/prompts/PROMPT-rp1c-codex.md:24`.
+- `design/observatorio/evora/BRIEF-E1-evora-2027.md:13`.
+
+No motor continuam para JD1-9 os caminhos antigos em `publisher/manifest.evora.json`, `indicators/generate_claims.py` e `publisher/export_site_rows.py`. Nenhum destes ficheiros foi alterado nesta passagem.
+
+### Plantas novas ou refeitas no sítio
+
+| Planta | Mensagem real |
+|---|---|
+| ausência atribuída a publicador desconhecido | K17 · famílias · avisos-pt2030-abertos, parte 1 («A fonte publica este número sem o definir por palavras.»): a ausência não corresponde à falta do excerto |
+| legenda da pensão retirada | K17 · famílias · penalizacao-antecipacao-um-ano-neutra, parte 1 («É a estimativa preliminar do grupo de trabalho da redução…»): cita «Decrementos por reforma antecipada: caso geral», que não está no campo «excerpt» da linha «penalizacao-antecipacao-um-ano-neutra» |
+| emenda do valor à legenda da pensão | RP4N-f: a pensão exige a legenda contígua e o recorte da figura |
+| paráfrase da ausência | K17 · famílias · avisos-pt2030-abertos, parte 1 («Os avisos consultados não definem por palavras esta conta…»): a ausência exige a retirada da linha sem publicador |
+| ministério sem apoio literal da despesa bruta | K17 · famílias · oe-2026-cem-euros-ministerio-administracao-interna, oe-2026-cem-euros-ministerio-agricultura-e-mar, oe-2026-cem-euros-ministerio-ambiente-e-energia, oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto, oe-2026-cem-euros-ministerio-defesa-nacional, oe-2026-cem-euros-ministerio-economia-e-coesao-territorial, oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao, oe-2026-cem-euros-ministerio-financas, oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao, oe-2026-cem-euros-ministerio-justica, oe-2026-cem-euros-ministerio-negocios-estrangeiros, oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros, oe-2026-cem-euros-ministerio-reforma-do-estado, oe-2026-cem-euros-ministerio-saude, oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social, parte 1 («É quanto vai para este ministério em cada cem euros, divi…»): cita «pela despesa bruta da administração central, multiplicar …», que não está no campo «derivation» da linha «oe-2026-cem-euros-ministerio-saude» |
+| água novamente atribuída à APA | K17 · famílias · agua-nao-faturada-portugal, parte 1 («É a parte da água entrada no sistema que não é faturada, …»): rp4n-agua-nao-faturada, agua-nao-faturada-portugal-2024: a origem tem outro publicador e não está declarada como segunda fonte com recibo |
+| título do relatório em vez do rótulo da água (pt) | K17 · recibo · pt · agua-nao-faturada-portugal-2024: o nome na fonte da água não é o rótulo AA08b conferido |
+| título do relatório em vez do rótulo da água (en) | K17 · recibo · en · agua-nao-faturada-portugal-2024: o nome na fonte da água não é o rótulo AA08b conferido |
+| definição local da pensão adulterada | K16 · origem «pensao-neutralidade»: o excerto local difere da leitura da página alojada |
+| definição local da pensão adulterada na K17 | K17 · origem «pensao-neutralidade»: o excerto local difere da leitura da página alojada |
+| linha retirada no JSON do conjunto | RP4N-e: uma linha retirada chegou a uma página: avisos-pt2030-abertos |
+| separador final solto (pt) | RP4N-f: o caminho termina num separador sem destino |
+| separador final solto (en) | RP4N-f: o caminho termina num separador sem destino |
+
+O registo integral está em `f/plantas-sitio.json`. As plantas do motor foram extraídas do ensaio executado:
+
+```text
+PLANTA pensão com valor emendado à legenda: RP4N-f: o excerto da pensão não é a legenda contígua da página
+PLANTA segunda fonte com bytes diferentes: segunda fonte sem recibo conferido no motor
+PLANTA excerto emendado por trechos: RO1: um excerto tem de ser uma sequência contígua, sem trechos
+PLANTA água atribuída à APA: RO1: as origens ou os selos diferem da seleção e dos recibos
+PLANTA água com outra página: RO1: o excerto difere da leitura literal do documento
+PLANTA palavra acrescentada: RO1: o excerto difere da leitura literal do documento
+PLANTA resumo de outro documento: RO1: o sha256 da origem difere do documento
+PLANTA cliente inventado: RO1: as origens ou os selos diferem da seleção e dos recibos
+PLANTA origem apagada: RO1: as origens ou os selos diferem da seleção e dos recibos
+PLANTA caminho fora do motor: RO1: o ficheiro da origem não existe dentro do motor
+```
+
+### Capturas e cabeças
+
+A captura anterior conserva a versão `5727174ad9a25376242c197f2fe285e58a2510ac` do conjunto que existia antes da retirada, sem a renomear como uma construção nova. São 4 capturas e 0 problemas medidos. Depois das correções foram recolhidas 12 capturas, com 0 problemas medidos, da água, da pensão e da área que mostrava os avisos, nas duas edições e nas larguras declaradas no manifesto. Os HTML completos acompanham-nas.
+
+Cabeça do código do sítio: `a10b0ee3d3f9d30c9ab8b31edeb4901efb3d2199`. Cabeça do código e final do motor: `92933611d162016ae39801a55f372612f9317e8e`. Os portões inteiros correram pela tranca comum, com a mesma cabeça no início e no fim.
+
+O commit desta secção é apenas documental. Para evitar atribuir-lhe antecipadamente um hash que ainda não existe, a cabeça final do sítio é lida depois dele no anexo `f-final/cabecas-e-commits.json`. Esse anexo posterior ao commit inclui a sua ficha, os registos de séries e cruzamento e a reconferência final de privacidade. Fica deliberadamente fora do próprio commit que identifica. As capturas finais são refeitas nessa cabeça e acompanhadas pelo manifesto final; não há um segundo commit que volte a mudar a cabeça.
+
+### Códigos lidos dos ficheiros
+
+| Portão | Ficheiro | Código |
+|---|---|---|
+| build | portoes-f/build.codigo | 0 |
+| verify | portoes-f/verify.codigo | 0 |
+| typecheck | portoes-f/typecheck.codigo | 0 |
+| motor | portoes-f/motor.codigo | 0 |
+| series | portoes-f/series.codigo | 0 |
+| cruzamento | portoes-f/cruzamento.codigo | 0 |
+
+As tentativas anteriores ficam em `portoes-f-tentativa1`, `portoes-f-tentativa2`, `portoes-f-tentativa3` e `portoes-f-tentativa4`, com as falhas reais: posição do cabeçalho executável, matéria em falta para a nova linha legal e integração das novas origens, rótulos e retiradas. A quarta isolou o autoteste que ainda procurava a contagem antiga dos formatos na mensagem, embora a célula recusasse os localizadores adulterados. A terceira acabou integralmente antes da tentativa de interrupção; não houve sinal enviado nem interrupção dessa corrida. Os códigos de recusa não foram convertidos em sucesso. A limpeza complementar de um registo, feita apenas depois da corrida, está documentada em `f/limpeza-complementar.json`: retirou preenchimento nulo introduzido por uma limpeza de caminhos prematura, sem alterar a saída textual dos ensaios nem os códigos.
+
+### Capturas da cabeça do código
+
+| Página | Edição | Largura | Ficheiro |
+|---|---|---|---|
+| /livro-razao/agua-nao-faturada-portugal-2024/ | pt | 390 | design/especime-v3/capturas/rp4n-2026-10-06/f/agua-pt-390.png |
+| /livro-razao/agua-nao-faturada-portugal-2024/ | pt | 1280 | design/especime-v3/capturas/rp4n-2026-10-06/f/agua-pt-1280.png |
+| /en/ledger/agua-nao-faturada-portugal-2024/ | en | 390 | design/especime-v3/capturas/rp4n-2026-10-06/f/agua-en-390.png |
+| /en/ledger/agua-nao-faturada-portugal-2024/ | en | 1280 | design/especime-v3/capturas/rp4n-2026-10-06/f/agua-en-1280.png |
+| /livro-razao/penalizacao-antecipacao-um-ano-neutra/ | pt | 390 | design/especime-v3/capturas/rp4n-2026-10-06/f/corte-pt-390.png |
+| /livro-razao/penalizacao-antecipacao-um-ano-neutra/ | pt | 1280 | design/especime-v3/capturas/rp4n-2026-10-06/f/corte-pt-1280.png |
+| /en/ledger/penalizacao-antecipacao-um-ano-neutra/ | en | 390 | design/especime-v3/capturas/rp4n-2026-10-06/f/corte-en-390.png |
+| /en/ledger/penalizacao-antecipacao-um-ano-neutra/ | en | 1280 | design/especime-v3/capturas/rp4n-2026-10-06/f/corte-en-1280.png |
+| /areas/economia-e-coesao-territorial/ | pt | 390 | design/especime-v3/capturas/rp4n-2026-10-06/f/area-pt-390.png |
+| /areas/economia-e-coesao-territorial/ | pt | 1280 | design/especime-v3/capturas/rp4n-2026-10-06/f/area-pt-1280.png |
+| /en/areas/economia-e-coesao-territorial/ | en | 390 | design/especime-v3/capturas/rp4n-2026-10-06/f/area-en-390.png |
+| /en/areas/economia-e-coesao-territorial/ | en | 1280 | design/especime-v3/capturas/rp4n-2026-10-06/f/area-en-1280.png |
+
+### Páginas com marcas aceites
+
+| Página | Tipos e ocorrências |
+|---|---|
+| dist/a-verificar/index.html | pagina-da-marca: 2 |
+| dist/agenda/index.html | data: 11 |
+| dist/areas/economia-e-coesao-territorial/index.html | selo-proveniencia: 3 |
+| dist/correcoes/index.html | selo-proveniencia: 9 |
+| dist/en/agenda/index.html | data: 11 |
+| dist/en/areas/economia-e-coesao-territorial/index.html | selo-proveniencia: 3 |
+| dist/en/corrections/index.html | selo-proveniencia: 9 |
+| dist/en/ledger/evora-prr-aprovado-2026/index.html | excerto: 2 |
+| dist/en/ledger/evora-prr-pago-2026/index.html | excerto: 2 |
+| dist/en/ledger/evora-prr-vencido-aprovado-2026/index.html | excerto: 2 |
+| dist/en/ledger/index.html | data: 1, selo-proveniencia: 4, referencia-no-livro: 1 |
+| dist/en/ledger/saldo-natural-portugal-2025/index.html | data: 1, excerto: 2, endereco: 2, selo-proveniencia: 1, titulo-documento: 1, edicao-documento: 1 |
+| dist/en/method/index.html | referencia-metodo: 1 |
+| dist/en/municipalities/evora/index.html | pessoa-I77: 1, selo-proveniencia: 4 |
+| dist/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html | selo-proveniencia: 13 |
+| dist/en/studies/evora-prometido-pago-auditado-2026/index.html | selo-proveniencia: 8 |
+| dist/en/to-verify/index.html | pagina-da-marca: 2 |
+| dist/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html | selo-proveniencia: 13 |
+| dist/estudos/evora-prometido-pago-auditado-2026/index.html | selo-proveniencia: 8 |
+| dist/estudos/evora-quem-governou-a-camara-2009-2025/documento/index.html | pessoa-I77: 2 |
+| dist/estudos/evora-quem-governou-a-camara-2009-2025/index.html | pessoa-I77: 2 |
+| dist/livro-razao/evora-prr-aprovado-2026/index.html | excerto: 2 |
+| dist/livro-razao/evora-prr-pago-2026/index.html | excerto: 2 |
+| dist/livro-razao/evora-prr-vencido-aprovado-2026/index.html | excerto: 2 |
+| dist/livro-razao/index.html | data: 1, selo-proveniencia: 4, referencia-no-livro: 1 |
+| dist/livro-razao/saldo-natural-portugal-2025/index.html | data: 1, excerto: 2, endereco: 2, selo-proveniencia: 1, titulo-documento: 1, edicao-documento: 1 |
+| dist/metodo/index.html | referencia-metodo: 1 |
+| dist/municipios/evora/index.html | pessoa-I77: 1, selo-proveniencia: 4 |
+
+A lista distingue as marcas aceites no corpo das páginas da procura bruta no HTML de `f/medidas.json`, que também encontra metadados e scripts. As marcas de proveniência que permanecem não se converteram em frases de definição.
+
+### Commits do sitio
+
+| Commit | Assunto | Ficha |
+|---|---|---|
+| 06b988e09a4f76568eb5342fc9f4632c86ab4c1d | docs(rp4n-f): registar leitura, plantas e mandato sem caminhos locais | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/06b988e09a4f76568eb5342fc9f4632c86ab4c1d.txt |
+| c5278bef74106b59767d88968ba1f53615604a75 | fix(rp4n-f): distinguir a coluna anual no quadro da execução | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/c5278bef74106b59767d88968ba1f53615604a75.txt |
+| 028f8bfd57c5969368f94a360f96ab98e88fb9f7 | fix(rp4n-f): provar a pensão pela legenda e pelo recorte da figura | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/028f8bfd57c5969368f94a360f96ab98e88fb9f7.txt |
+| c5b08875b164ac3cad264445c8108f4aa8d499e8 | fix(rp4n-f): separar a estimativa atuarial da penalização legal | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/c5b08875b164ac3cad264445c8108f4aa8d499e8.txt |
+| 46fc3ec5060b6174a6a56c70bbcc68c692722295 | fix(rp4n-f): retirar da publicação as linhas sem publicador | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/46fc3ec5060b6174a6a56c70bbcc68c692722295.txt |
+| b76e370a946db5122eb3816ee8872056c1e54a32 | fix(rp4n-f): apoiar a conta dos ministérios na despesa bruta literal | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/b76e370a946db5122eb3816ee8872056c1e54a32.txt |
+| 723b1f732a5af6d8b54cc413e3aca38c120ef7de | fix(rp4n-f): identificar AA08b, cobertura e prova da água | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/723b1f732a5af6d8b54cc413e3aca38c120ef7de.txt |
+| 621e9cb4be383229d80364a204c9690889769ab3 | test(rp4n-f): recusar retiradas em todas as exportações de texto | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/621e9cb4be383229d80364a204c9690889769ab3.txt |
+| ba3df6a4b1870bd19546e83fde418d5f515be78f | test(rp4n-f): preparar provas de cabeça, privacidade e capturas | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/ba3df6a4b1870bd19546e83fde418d5f515be78f.txt |
+| 2d4565d178acb48e0ce3b1ebe2b4a2a6e94e4d49 | fix(rp4n-f): uniformizar notices e fechar o caminho sem separador solto | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/2d4565d178acb48e0ce3b1ebe2b4a2a6e94e4d49.txt |
+| 155dbf8117e718b8d1b0742f99204c40bb98aab1 | fix(rp4n-f): explicitar a data de referência do prazo PRR vencido | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/155dbf8117e718b8d1b0742f99204c40bb98aab1.txt |
+| de26e52bf675478ee1af329b62abd45293ae8a6f | test(rp4n-f): medir retiradas e páginas com marcas após a publicação | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/de26e52bf675478ee1af329b62abd45293ae8a6f.txt |
+| b588abcf7227cf9e343c93f1c8e34955647766f1 | test(rp4n-f): registar as reconferências com as cabeças e corrigir a entrada do portão | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/b588abcf7227cf9e343c93f1c8e34955647766f1.txt |
+| d07806c81c778b3392776bb34d7558493a60ffc5 | fix(rp4n-f): alinhar a língua com AA08b e com os avisos retirados | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/d07806c81c778b3392776bb34d7558493a60ffc5.txt |
+| 77b90814ea5c18c05d545e4bbb34278576ee6857 | fix(rp4n-f): atualizar o inventário pela contagem publicada | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/77b90814ea5c18c05d545e4bbb34278576ee6857.txt |
+| 91fd9d3aa3bf6727f5c327787055bad0989a8677 | fix(rp4n-f): atribuir a penalização legal à segurança social | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/91fd9d3aa3bf6727f5c327787055bad0989a8677.txt |
+| c0aae32740eff8292ca0679537b90e595352d418 | fix(rp4n-f): mostrar e conferir AA08b no cabeçalho do recibo | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/c0aae32740eff8292ca0679537b90e595352d418.txt |
+| 79e98237bc904fed4da1a2b1ed7365641e5844e8 | fix(rp4n-f): conferir a cópia local e a unidade legal em todas as células | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/79e98237bc904fed4da1a2b1ed7365641e5844e8.txt |
+| a73fc55ace8dab236e92d1a42b1e2ad475cf1081 | test(rp4n-f): conservar os controlos depois da retirada dos avisos | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/a73fc55ace8dab236e92d1a42b1e2ad475cf1081.txt |
+| 281b3a77e9b625d7e9308b4b19326a9ee4152e0c | test(rp4n-f): guardar a cabeça final em anexo posterior ao commit | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/281b3a77e9b625d7e9308b4b19326a9ee4152e0c.txt |
+| 6f950485dcd4c31f7b035b5216e63a1871ab1cc2 | test(rp4n-f): registar os rótulos medidos das pensões e do prazo PRR | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/6f950485dcd4c31f7b035b5216e63a1871ab1cc2.txt |
+| a10b0ee3d3f9d30c9ab8b31edeb4901efb3d2199 | test(rp4n-f): ler a contagem dos formatos na mensagem das plantas | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/a10b0ee3d3f9d30c9ab8b31edeb4901efb3d2199.txt |
+
+### Commits do motor
+
+| Commit | Assunto | Ficha |
+|---|---|---|
+| 7242ca737e2678d45b308bceea565c61c109e233 | fix(rp4n-f): exigir excertos contíguos no cabeçalho anual | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/motor/7242ca737e2678d45b308bceea565c61c109e233.txt |
+| e93093ad80afaeb31416b9ca4611807174b615d5 | fix(rp4n-f): conferir a legenda e o recorte da pensão alojada | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/motor/e93093ad80afaeb31416b9ca4611807174b615d5.txt |
+| 5ad2ca9e509ddef40f576b424b224e6a910d81c9 | fix(rp4n-f): separar a estimativa neutra da penalização legal | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/motor/5ad2ca9e509ddef40f576b424b224e6a910d81c9.txt |
+| 92933611d162016ae39801a55f372612f9317e8e | fix(rp4n-f): reler AA08b e a cobertura na página alojada | design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/motor/92933611d162016ae39801a55f372612f9317e8e.txt |
+
+### Limites e custo
+
+RP4N-2 continua com o novo acesso HTTP à cópia das pensões sem confirmação: a tentativa desta passagem está em `pensoes-f.pedido.json` no motor e falhou a validação do certificado. A releitura usa os bytes da cópia local com resumo conferido; não se criou um selo de acesso bem-sucedido. Ficam também a migração do identificador da pensão em RP4N-11, a higiene e os campos dos recibos já reservados à direção. A definição de despesa bruta continua explicitamente por confirmar na fonte.
+
+A linha «tokens used» não foi exposta por esta execução. Não se estima um total nem se afirma que o custo-alvo foi cumprido. O trabalho adicional às correções incluiu a reescrita e a prova da história, a distinção dos legados decidida na retoma, a releitura das páginas alojadas, os portões obrigatórios por commit do motor e a repetição dos portões de integração após as falhas registadas.

@@ -1,0 +1,80 @@
+{
+  "cabeca": "a10b0ee3d3f9d30c9ab8b31edeb4901efb3d2199",
+  "versao": {
+    "commit": "a10b0ee3d3f9d30c9ab8b31edeb4901efb3d2199",
+    "ref": "rp4n-2026-10-07",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-12T12:34:45.866Z"
+  },
+  "linhas_livro": 3196,
+  "linhas_publicadas": 3193,
+  "linhas_sem_publicador": [
+    {
+      "id": "avisos-pt2030-abertos",
+      "publication": "withdrawn"
+    },
+    {
+      "id": "avisos-pt2030-pessoas-singulares",
+      "publication": "withdrawn"
+    },
+    {
+      "id": "ciclo-substituicao-condutas",
+      "publication": "withdrawn"
+    }
+  ],
+  "anuais": [
+    "oe-2026-despesa-efetiva-administracao-central-seguranca-social",
+    "oe-2026-receita-efetiva-administracao-central-seguranca-social",
+    "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social"
+  ],
+  "mensais": [
+    "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+    "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social",
+    "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social"
+  ],
+  "ficheiros_texto": 12878,
+  "por_extensao": {
+    ".html": 7903,
+    ".css": 9,
+    ".json": 4940,
+    ".csv": 7,
+    ".webmanifest": 2,
+    ".svg": 1,
+    ".js": 10,
+    ".txt": 4,
+    ".xml": 2
+  },
+  "referencias": [],
+  "paginas_com_marcas": [
+    "/a-verificar/index.html",
+    "/agenda/index.html",
+    "/areas/economia-e-coesao-territorial/index.html",
+    "/correcoes/index.html",
+    "/en/agenda/index.html",
+    "/en/areas/economia-e-coesao-territorial/index.html",
+    "/en/corrections/index.html",
+    "/en/ledger/evora-prr-aprovado-2026/index.html",
+    "/en/ledger/evora-prr-pago-2026/index.html",
+    "/en/ledger/evora-prr-vencido-aprovado-2026/index.html",
+    "/en/ledger/index.html",
+    "/en/ledger/saldo-natural-portugal-2025/index.html",
+    "/en/method/index.html",
+    "/en/municipalities/evora/index.html",
+    "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html",
+    "/en/studies/evora-prometido-pago-auditado-2026/index.html",
+    "/en/to-verify/index.html",
+    "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html",
+    "/estudos/evora-prometido-pago-auditado-2026/index.html",
+    "/estudos/evora-quem-governou-a-camara-2009-2025/documento/index.html",
+    "/estudos/evora-quem-governou-a-camara-2009-2025/index.html",
+    "/livro-razao/evora-prr-aprovado-2026/index.html",
+    "/livro-razao/evora-prr-pago-2026/index.html",
+    "/livro-razao/evora-prr-vencido-aprovado-2026/index.html",
+    "/livro-razao/index.html",
+    "/livro-razao/saldo-natural-portugal-2025/index.html",
+    "/metodo/index.html",
+    "/municipios/evora/index.html"
+  ]
+}
