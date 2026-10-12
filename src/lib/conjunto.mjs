@@ -173,10 +173,11 @@ export function jsonDoConjunto() {
 /**
  * `/livro-razao/<id>.json` — uma linha, com o mesmo invólucro.
  *
- * @param {string} id
+ * Aceita também a linha em memória para exercer o mesmo produtor nos ensaios.
+ * @param {string | Record<string, any>} linhaOuId
  */
-export function jsonDaLinha(id) {
-  const c = getClaim(id);
+export function jsonDaLinha(linhaOuId) {
+  const c = typeof linhaOuId === 'string' ? getClaim(linhaOuId) : linhaOuId;
   return (
     JSON.stringify({ _: nota('uma'), licenca: licenca(), linha: linhaDoConjunto(c),
       ...(podeIncorporar(c) ? { incorporacao: { pt: dadosDaIncorporacao(c, 'pt'), en: dadosDaIncorporacao(c, 'en') } } : {}) }, null, 2) +
