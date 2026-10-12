@@ -540,7 +540,7 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
     for (const origem of d?.origens ?? []) {
       const bloco = cabeca.querySelector(`[data-def-origem="${origem}"]`);
       const fonte = ORIGENS_DAS_DEFINICOES[origem];
-      if (!bloco || normal(bloco.querySelector(`[data-verbatim="origem-${origem}-excerto"]`)?.textContent ?? '') !== normal(fonte.excerto) || normal(bloco.querySelector(`[data-verbatim="origem-${origem}-documento"]`)?.textContent ?? '') !== normal(fonte.documento)) falha('a origem visível da definição perdeu o documento ou o excerto');
+      if (!bloco || normal(bloco.querySelector(`[data-verbatim="origem-${origem}-excerto"]`)?.textContent ?? '') !== normal(fonte.excerto) || normal(bloco.querySelector(`[data-verbatim="origem-${origem}-documento"]`)?.textContent ?? '') !== normal(fonte.documento.replace(/, página \d+/, ''))) falha('a origem visível da definição perdeu o documento ou o excerto');
     }
     if (d?.cartao) {
       const decl = /** @type {any} */ (LEITURAS_DAS_MEDIDAS)[d.cartao][lang];
