@@ -1,3 +1,4 @@
+import {conferirOrigemLocal,chavesLocais} from './origens-locais-rp4n.mjs';
 /**
  * =============================================================================
  * K16 · CADA PEDAÇO DE CADA PERGUNTA TEM ORIGEM · B2, peça 1, segunda passagem
@@ -283,6 +284,10 @@ export function auditarPerguntas({
     }
   }
 
+  for (const chave of chavesLocais()) {
+    const erro=conferirOrigemLocal(chave,origens[chave]);
+    if(erro) erros.push(`K16 · origem «${chave}»: ${erro}`);
+  }
   /* O SELO DE CADA RESPOSTA DA API. */
   for (const [chave, o] of Object.entries(origens)) {
     const daApi = API_DO_EUROSTAT.test(o?.url ?? '');

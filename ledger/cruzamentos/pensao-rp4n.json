@@ -13,6 +13,20 @@
       "origin_sha256": "22b7894805065b04fd19981869787310fe2ff2606933e8d7aa5ad4cafb271e9e",
       "exported_sha256": "22b7894805065b04fd19981869787310fe2ff2606933e8d7aa5ad4cafb271e9e",
       "exporter": "ResearchHub/publisher/rp4n_pensao.py"
+    },
+    "penalizacao-legal-um-ano-antecipacao-2026.yml": {
+      "destino": "ledger/claims",
+      "origin_path": "publisher/recortes/penalizacao-legal-um-ano-antecipacao-2026.yml",
+      "origin_sha256": "41d31b11e212e41e614aa59ecad410a4df018f5ee9d1eb38be152dbb5ab60c71",
+      "exported_sha256": "41d31b11e212e41e614aa59ecad410a4df018f5ee9d1eb38be152dbb5ab60c71",
+      "exporter": "ResearchHub/publisher/rp4n_pensao.py"
+    },
+    "pensao-rp4n.json": {
+      "destino": "src/data",
+      "origin_path": "content/13 Dominios/pensao-rp4n.json",
+      "origin_sha256": "7860107842abd393841085e590dda37913d9754bf7a58cf371f9020857528699",
+      "exported_sha256": "7860107842abd393841085e590dda37913d9754bf7a58cf371f9020857528699",
+      "exporter": "ResearchHub/publisher/rp4n_pensao.py"
     }
   }
 }

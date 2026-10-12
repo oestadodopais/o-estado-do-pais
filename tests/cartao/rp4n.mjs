@@ -253,6 +253,14 @@ export function conferirExcertoDaPensao(linha) {
   morde(`origem da água apagada do recibo (${lang})`,conferirCabecaDoRecibo(cabeca,id,lang,{ctx,cartoes}),'a origem visível da definição perdeu o documento ou o excerto');
  }
 }
+// RP4-n-f: a prova local conserva o excerto, a página e a distinção face à lei.
+{
+ const origens=structuredClone(ORIGENS_DAS_DEFINICOES);
+ origens['pensao-neutralidade'].excerto += ' frase inventada';
+ morde('definição local da pensão adulterada',auditarPerguntas({origens}).erros,'o excerto local difere da leitura da página alojada');
+ const l=loadClaims().get('penalizacao-legal-um-ano-antecipacao-2026');
+ assert.equal(l.value,'6'); assert(l.excerpt.includes('cerca de 6% por ano')); assert(l.ressalva.includes('Valor aproximado'));
+}
 if(process.argv.includes('--registo-e')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/e/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 assert.deepEqual(conferirAuditoriaDasFamilias().erros, []);
 console.log(`RP4N-e: PASS, ${plantas.length} plantas e auditoria íntegra`);
