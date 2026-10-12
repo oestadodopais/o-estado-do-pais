@@ -79,6 +79,7 @@ def relatorio():
     tentativa=portoes/'tentativa-1'
     falha={n:int((tentativa/(n+'.codigo')).read_text()) for n in ['build','verify','typecheck','motor']}
     falha2={n:int((portoes/('tentativa-2/'+n+'.codigo')).read_text()) for n in ['build','verify','typecheck']}
+    falha3={n:int((portoes/('tentativa-3/'+n+'.codigo')).read_text()) for n in ['build','verify','typecheck']}
     assert all(v==0 for v in codes.values()),codes
     assert (portoes/'arvore.inicio').read_text().strip()=='limpa'
     code_head=(portoes/'cabeca').read_text().strip()
@@ -103,6 +104,7 @@ def relatorio():
       'A cabeça do último commit de provas não pode estar escrita dentro do próprio commit. Lê-se com `git rev-parse HEAD`; a resposta de entrega identifica-a. Não houve publicação nem envio.', '',
       f"A primeira corrida parou em A7: a linha nova não estava na declaração dos assuntos JD1 sem área ministerial. A linha passou a usar a mesma decisão já declarada para as outras contas do bloco. Os códigos reais dessa tentativa estão em `portoes-c/tentativa-1/`: {', '.join(f'{k}={v}' for k,v in falha.items())}. O sítio repetiu os portões completos na cabeça limpa corrigida. O motor conservou a mesma cabeça limpa e o verde obtido sob a tranca nessa primeira corrida; os seus registos são conservados integralmente, com as datas próprias. Não se apresenta a tentativa falhada como verde.", '',
       f"A segunda corrida apanhou a contagem antiga no inventário de frases do índice. `inventario.mjs --write` releu as duas contagens do HTML, sem números escritos à mão. A conferência dirigida seguinte encontrou a língua por declarar do novo rótulo da fonte; ficou declarada como português, para a marca linguística do recibo inglês. Os códigos de `portoes-c/tentativa-2/` são {', '.join(f'{k}={v}' for k,v in falha2.items())}. A corrida final usa a cabeça que inclui também estas atualizações.", '',
+      f"A terceira corrida teve o build verde e o verify recusou os vínculos incompletos da K17 e a contagem antiga no inventário dos rótulos. A K17 passou a conferir os apoios das notas por linha, com plantas que retiram os literais; a origem orçamental sem uso saiu. O parágrafo calculado da parcela fica fora da definição da família, conservando os dois tokens e a guarda contra números escritos à mão. O conjunto fechado dos rótulos inclui a nova linha, com a planta da remoção conjunta conservada. Códigos de `portoes-c/tentativa-3/`: {', '.join(f'{k}={v}' for k,v in falha3.items())}.", '',
       '### Disposição dos achados','',
       '| Achado | Resultado |','|---|---|',
       '| 1 a 5 | Eram plantas do pacote. As asserções sobre a cabeça inicial estão em `controlos-c.json`; a definição dos juros é agora também ensaiada no recibo do ano seguinte. |',

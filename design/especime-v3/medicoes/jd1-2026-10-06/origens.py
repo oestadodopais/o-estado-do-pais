@@ -95,8 +95,6 @@ def nova(nome, publicador, documento, lingua, inicio, fim):
 origens = {
     "jd1-igcp-valoracao": origem("igcp-boletim-setembro-2026.pdf", "IGCP", "Boletim Mensal, setembro de 2026, nota 1, folha 5", page=5, clip=True,
         anchors=("Os saldos em dívida", "ao valor de encaixe.")),
-    "jd1-eo-administracoes": origem("eo-execucao-agosto-2026.pdf", "Entidade Orçamental", "Síntese da Execução Orçamental | agosto 2026, glossário, folha 82", page=82, clip=300,
-        anchors=("Administrações Públicas — Universo", "e a Segurança Social.")),
     "jd1-eo-ativos": origem("eo-execucao-agosto-2026.pdf", "Entidade Orçamental", "Síntese da Execução Orçamental | agosto 2026, glossário, folha 82", page=82, clip=300,
         anchors=("Ativos financeiros (receita)", "determinado momento.")),
     "jd1-eo-saldo": origem("eo-execucao-agosto-2026.pdf", "Entidade Orçamental", "Síntese da Execução Orçamental | agosto 2026, glossário, folha 87", page=87, clip=300,
