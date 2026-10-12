@@ -7,7 +7,7 @@ id: "evora-prr-execucao-2026"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "51,95"
-unit: "% do valor aprovado"
+unit: "% do valor contratado"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
