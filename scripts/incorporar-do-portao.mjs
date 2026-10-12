@@ -163,7 +163,11 @@ export function conferirCors(respostas) {
   for (const r of respostas) {
     const permitido = /^\/livro-razao\/[^/]+\.json$/.test(r.caminho) ||
       ['/livro-razao.json','/livro-razao.csv','/incorporar.js'].includes(r.caminho);
-    if (r.estado !== 200 || r.cors !== (permitido ? '*' : null))
+    // A Vercel envia Access-Control-Allow-Origin: * em todas as respostas de ficheiros
+    // estáticos (medido a 12.10.2026 no sítio, no 404 e no robots.txt, e em react.dev,
+    // nextjs.org e vercel.com): a conferência exige o cabeçalho nos quatro caminhos do
+    // recibo incorporável e não afirma a sua ausência nos outros (§1.184, terceiro acrescento).
+    if (r.estado !== 200 || (permitido && r.cors !== '*'))
       erros.push(`ER1 CORS: ${r.caminho} tem estado ou cabeçalho incorreto.`);
     if (r.frame !== 'SAMEORIGIN') erros.push(`ER1 moldura: ${r.caminho} perdeu SAMEORIGIN.`);
   }
