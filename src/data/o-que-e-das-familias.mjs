@@ -43,6 +43,20 @@ export const FAMILIAS_DAS_LINHAS = {
       ]
     }
   },
+  "amortizacoes-e-anulacoes-de-divida-fundada": {
+    "nome": {
+      "pt": "Amortizações e anulações de dívida fundada do Estado, contabilidade orçamental pública",
+      "en": "State funded debt redemptions and cancellations, public budget accounts"
+    },
+    "frase": {
+      "pt": [
+        "É a parcela do financiamento do Estado usada para reembolsar ou extinguir dívida fundada. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período."
+      ],
+      "en": [
+        "It is the share of State financing used to repay or extinguish funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period."
+      ]
+    }
+  },
   "avisos-pt2030-abertos": {
     "frase": {
       "pt": [
@@ -2104,10 +2118,10 @@ export const FAMILIAS_DAS_LINHAS = {
     },
     "frase": {
       "pt": [
-        "É o financiamento de que o Estado precisou para cobrir o défice do orçamento e adquirir ativos financeiros, descontando os recebimentos dessas operações e excluindo privatizações, e para reembolsar ou extinguir dívida. O défice é a despesa que excede a receita. Os ativos financeiros incluem títulos, participações e empréstimos. O quadro chama amortizações e anulações à parcela dos reembolsos e extinções, que aparece no excerto da fonte junto do total. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período."
+        "É o financiamento de que o Estado precisou para cobrir o défice do orçamento e adquirir ativos financeiros, descontando os recebimentos dessas operações e excluindo privatizações, e para reembolsar ou extinguir dívida. O défice é a despesa que excede a receita. Os ativos financeiros incluem títulos, participações e empréstimos. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período."
       ],
       "en": [
-        "It is the financing the State needed to cover the budget deficit and acquire financial assets, net of receipts from those operations and excluding privatisations, and to repay or extinguish debt. The deficit is expenditure in excess of revenue. Financial assets include securities, equity interests and loans. The table calls the repayment and cancellation component redemptions and cancellations; it appears in the source excerpt alongside the total. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period."
+        "It is the financing the State needed to cover the budget deficit and acquire financial assets, net of receipts from those operations and excluding privatisations, and to repay or extinguish debt. The deficit is expenditure in excess of revenue. Financial assets include securities, equity interests and loans. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period."
       ]
     }
   },

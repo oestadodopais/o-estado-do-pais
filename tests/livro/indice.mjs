@@ -303,7 +303,7 @@ const LOCALIZADORES_CONHECIDOS = [
   { nome: 'JD1, juros no quadro 1 da execução', forma: /^Quadro 1, Conta consolidada das Administrações Públicas, execução acumulada (2025|2026), janeiro a agosto, folha 7 do PDF \(numeração impressa: 3\)$/, onde: 'publisher/jd1.py: conta consolidada da execução', confere: localizadorJd1Confere },
   { nome: 'JD1, custo da dívida no gráfico do IGCP', forma: /^Custo da dívida direta do Estado, Custo (?:da dívida emitida|do stock da dívida), ponto (?:2025|2026), p\. 3; rótulo na coluna (?:104|114) da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5$/, onde: 'publisher/jd1.py: gráfico do custo da dívida', confere: localizadorJd1Confere },
   { nome: 'JD1, saldo da dívida direta do IGCP', forma: /^Movimento da dívida direta do Estado, Dívida total \/ Total debt, saldo em 31\/a go\/26, p\. 2$/, onde: 'publisher/jd1.py: movimento da dívida direta', confere: localizadorJd1Confere },
-  { nome: 'JD1, quadro anual do financiamento do IGCP', forma: /^Quadro 9, (?:p\.m\. EMISSÕES DE DÍVIDA NO ANO CIVIL \(Dívida Fundada\)|3\. NECESSIDADES BRUTAS DE FINANCIAMENTO \(1\. \+ 2\.\)), coluna 2025, p\. 45$/, onde: 'publisher/jd1.py: quadro anual de financiamento', confere: localizadorJd1Confere },
+  { nome: 'JD1, quadro anual do financiamento do IGCP', forma: /^Quadro 9, (?:2\. AMORTIZAÇÕES E ANULAÇÕES \(Dívida Fundada\)|p\.m\. EMISSÕES DE DÍVIDA NO ANO CIVIL \(Dívida Fundada\)|3\. NECESSIDADES BRUTAS DE FINANCIAMENTO \(1\. \+ 2\.\)), coluna 2025, p\. 45$/, onde: 'publisher/jd1.py: quadro anual de financiamento', confere: localizadorJd1Confere },
   { nome: 'JD1, coordenada dos juros da União', forma: /^freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=EU27_2020; time=2025; \$\.value\["0"\]; \$\.updated$/, onde: 'publisher/jd1.py: célula dos juros no Eurostat', confere: localizadorJd1Confere },
 ];
 
@@ -344,6 +344,7 @@ function localizadorJd1Confere(onde, linha) {
     onde === 'Movimento da dívida direta do Estado, Dívida total / Total debt, saldo em 31/a go/26, p. 2';
   /** @type {Record<string, string>} */
   const anuais = {
+    'amortizacoes-e-anulacoes-de-divida-fundada-2025': '2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada)',
     'emissoes-de-divida-fundada-2025': 'p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada)',
     'necessidades-brutas-de-financiamento-2025': '3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.)',
   };

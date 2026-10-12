@@ -94,6 +94,7 @@ import { t } from '../i18n/strings.mjs';
 import { LICENCA } from '../data/licenca.mjs';
 import { CONJUNTO } from '../lib/conjunto.mjs';
 import { LANGS } from '../lib/routes.mjs';
+import { parcelaDoFinanciamento } from '../lib/frases-jd1.mjs';
 import { familiaDaLinha, oQueEDaLinha, nomeNoRecibo, lugarNoRecibo, nomeDaFonteNoRecibo } from '../lib/o-que-e-o-numero.mjs';
 import Marcador from '../components/Marcador.astro';
 import { partesDaLeitura } from '../lib/leitura-da-medida.mjs';
@@ -112,6 +113,7 @@ const nomeRecibo = nomeNoRecibo(id, lang);
 const lugarRecibo = lugarNoRecibo(id, lang);
 const nomeDaFonte = nomeDaFonteNoRecibo(id);
 const oQueE = oQueEDaLinha(id, lang);
+const parcelaFinanciamento = parcelaDoFinanciamento(id, lang);
 const comparacaoDoCartao = familiaRecibo.tipo === 'cartao' ? partesDaLeitura(id, lang).comparacao : null;
 /* As perguntas das medidas fora dos painéis europeus têm as origens no
    recibo que o cartão abre. A célula 8.4 confere a pergunta e cada campo das
@@ -766,6 +768,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           sinal vive na metade que compara (a posição de investimento internacional do ano anterior). E O MARCADOR,
           acima, quando uma parte da frase está por confirmar na fonte: o marcador da casa, com a classe que diz à L1
           que é um marcador obrigatório (`marcador-da-frase`), e que a K17 confere onde a auditoria o declara. */}
+      {parcelaFinanciamento && <p class="linha-o-que-e-frase" data-jd1-parcela><Frase partes={parcelaFinanciamento} lang={lang} selos={false} /></p>}
       {oQueE.sinal && (
         <p class="linha-o-que-e-frase" data-o-que-e-parte="sinal">{oQueE.sinal.join('')}</p>
       )}
