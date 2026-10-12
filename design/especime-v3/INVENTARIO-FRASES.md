@@ -3170,8 +3170,8 @@ As palavras antigas «acima do valor de referência», «abaixo do valor de refe
 | conteudo | : within the reference value of the Pact (above − %) | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
 | conteudo | : outside the reference value of the Council of the EU (above %) | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
 | conteudo | concelhos | b2-peca1 | viva | A dica da chave municipios_com_pagina nomeia a unidade da contagem, no cartão das câmaras. É a etiqueta da chave da prova nas duas edições, sem introduzir uma contagem escrita à mão. |
-| conteudo | 3 210 afirmações · 368 de 3 210 calculadas · 2 767 de 3 210 linhas de concelhos | k2 | viva | JD1: contagem relida no HTML do livro. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |
-| conteudo | 3 210 claims · 368 of 3 210 calculated · 2 767 of 3 210 municipality rows | k2 | viva | JD1: contagem relida no HTML do livro. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |
+| conteudo | 3 210 afirmações · 368 de 3 210 calculadas · 2 767 de 3 210 linhas de concelhos | k2 | retirada | a fusão do JD1 e do RP4-n mudou a contagem. |
+| conteudo | 3 210 claims · 368 of 3 210 calculated · 2 767 of 3 210 municipality rows | k2 | retirada | a fusão do JD1 e do RP4-n mudou a contagem. |
 | conteudo | 3 195 afirmações · 366 de 3 195 calculadas · 2 767 de 3 195 linhas de concelhos | k2 | retirada | OE1-b: contagem relida no HTML do livro após a entrada das linhas do bloco. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |
 | conteudo | 3 195 claims · 366 of 3 195 calculated · 2 767 of 3 195 municipality rows | k2 | retirada | OE1-b: contagem relida no HTML do livro após a entrada das linhas do bloco. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |
 | conteudo | dentro do valor de referência do Pacto | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
@@ -4296,8 +4296,8 @@ As frases já publicadas nas páginas dos concelhos, nas duas edições, e confe
 
 | tipo | frase | bloco | estado | razão |
 |---|---|---|---|---|
-| conteudo | 3 193 afirmações · 366 de 3 193 calculadas · 2 767 de 3 193 linhas de concelhos | rp4ne | viva | Contagem lida do HTML construído depois da retirada das condutas; o livro conserva a linha retirada. |
-| conteudo | 3 193 claims · 366 of 3 193 calculated · 2 767 of 3 193 municipality rows | rp4ne | viva | Contagem lida do HTML construído depois da retirada das condutas; o livro conserva a linha retirada. |
+| conteudo | 3 193 afirmações · 366 de 3 193 calculadas · 2 767 de 3 193 linhas de concelhos | rp4ne | retirada | a fusão do JD1 e do RP4-n mudou a contagem. |
+| conteudo | 3 193 claims · 366 of 3 193 calculated · 2 767 of 3 193 municipality rows | rp4ne | retirada | a fusão do JD1 e do RP4-n mudou a contagem. |
 
 ## RP4-n-g: ausências da data e das contagens
 
@@ -4307,3 +4307,10 @@ As frases já publicadas nas páginas dos concelhos, nas duas edições, e confe
 | conteudo | The counts of open calls and of calls admitting natural persons in this study are to be confirmed at source. The archived edition preserves the text published on its date. | rp4ng | viva | Texto lido da construção em `/en/studies/which-door-is-yours`: a falta de data da cópia da pensão ou a ausência das contagens do estudo. |
 | conteudo | As contagens de avisos abertos e de avisos que admitem pessoas singulares neste estudo estão por confirmar na fonte. A edição arquivada conserva o texto publicado na sua data. | rp4ng | viva | Texto lido da construção em `/estudos/which-door-is-yours`: a falta de data da cópia da pensão ou a ausência das contagens do estudo. |
 | conteudo | A penalização por antecipar a reforma um ano é de % ou de % , consoante a porta por onde o trabalhador entra (uma das exceções que afastam o fator de sustentabilidade, ou a regra geral), quando o valor atuarialmente neutro calculado pelo próprio relatório, o corte que pagaria exatamente o custo que a antecipação impõe ao sistema, é de % · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado : a lei falha nos dois sentidos, e é mais dura com quem se desvia menos. | rp4ng | retirada | A RP4-n-h provou a data de alojamento. A glosa saiu da frase e a redação K2 voltou a ser a forma rendida. |
+
+## RP4-n-j: contagem após a integração
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | 3 208 afirmações · 368 de 3 208 calculadas · 2 767 de 3 208 linhas de concelhos | rp4nj | viva | Contagem lida do HTML construído após a fusão do JD1 e do RP4-n. |
+| conteudo | 3 208 claims · 368 of 3 208 calculated · 2 767 of 3 208 municipality rows | rp4nj | viva | Contagem lida do HTML construído após a fusão do JD1 e do RP4-n. |
