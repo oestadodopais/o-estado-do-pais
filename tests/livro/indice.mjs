@@ -243,7 +243,7 @@ const LINHAS_DA_REGUA = loadClaims();
  * coordenadas de página, 278 `Quadro_I, linha 4, coluna 13`, 7 `label`). Uma
  * forma nova entra aqui à mão, com o leitor que a escreve nomeado ao lado.
  *
- * @typedef {{id?: unknown, reference_date?: unknown, document?: {locator?: unknown}|null}} ContextoDoLocalizador
+ * @typedef {{id?: unknown, name?: unknown, reference_date?: unknown, document?: {locator?: unknown, crop?: {page?: unknown}}|null}} ContextoDoLocalizador
  * @type {{ nome: string, forma: RegExp, onde: string, confere?: (onde: string, linha?: ContextoDoLocalizador) => boolean }[]}
  */
 const LOCALIZADORES_CONHECIDOS = [
@@ -297,6 +297,12 @@ const LOCALIZADORES_CONHECIDOS = [
     nome: 'p.<n>, linha <n>, campo <n>',
     forma: /^p\.\d+, linha \d+, campo \d+$/,
     onde: 'a extração de página de um PDF',
+  },
+  {
+    nome: 'página e figura da redução cumulativa da pensão',
+    forma: /^p\. 273, Figura 8\.4, rótulo da redução cumulativa$/,
+    onde: 'publisher/rp4n_pensao.py: rótulo conferido na figura alojada',
+    confere: (_onde, linha) => linha?.id === 'penalizacao-antecipacao-um-ano-neutra' && linha?.name === 'dcum x : cumulative reduction' && linha?.document?.crop?.page === 273,
   },
   {
     nome: '<folha>, linha <n>, coluna <n>',
@@ -1733,6 +1739,15 @@ async function comNavegador() {
  */
 function provaLocalizadores() {
   celula('I1p', 'as plantas dos localizadores recusam a origem desconhecida', (falhas) => {
+    const pensao = LINHAS_DA_REGUA.get('penalizacao-antecipacao-um-ano-neutra');
+    for (const [nome, localizador, linha] of [
+      ['página da pensão trocada', 'p. 272, Figura 8.4, rótulo da redução cumulativa', pensao],
+      ['rótulo da pensão atribuído a outra linha', pensao?.name_source, {...pensao, id: 'outra-linha'}],
+    ]) {
+      const mordeu = !localizadorConhecido(localizador, linha);
+      if (!mordeu) falhas.push(`RP4N-g: a planta ${nome} passou`);
+      console.log(`PLANTA ${nome}: ${mordeu ? 'RP4N-g: o localizador da pensão não corresponde à figura e à linha conferidas' : 'passou'}`);
+    }
     if (['I1', 'I3'].some((id) => !celulas.find((c) => c.id === id)?.passa)) {
       falhas.push('As plantas dos localizadores exigem I1 e I3 limpas antes do estrago.');
       return '';
