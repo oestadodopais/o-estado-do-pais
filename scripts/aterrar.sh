@@ -22,7 +22,8 @@
 #      pronto com esta cabeça no /version.json; se ao fim de cinco pedidos a
 #      integração Git não tiver criado nenhum lançamento desta cabeça, o guião
 #      cria-o pela API da Vercel, a partir do mesmo commit publicado (M75,
-#      12.10.2026: a integração falhou duas vezes no mesmo dia, I223);
+#      12.10.2026: a integração falhou duas vezes no mesmo dia, I223); um
+#      lançamento da cabeça nascido com erro não conta (M77, a aterragem do JD1);
 #   5. corre o npm run verify:deploy;
 #   6. diz o endereço da corrida de main, sem esperar por uma prova repetida.
 #
@@ -111,7 +112,9 @@ for i in {1..45}; do
     PID="$(python3 -c 'import sys,json;print(json.load(open(sys.argv[1]))["id"])' "$LOGS/projeto.json" 2>/dev/null)"
     REPOID="$(python3 -c 'import sys,json;print(json.load(open(sys.argv[1]))["link"]["repoId"])' "$LOGS/projeto.json" 2>/dev/null)"
     (cd "$SITIO" && vercel api "/v6/deployments?projectId=$PID&target=production&limit=10") > "$LOGS/lancamentos.json" 2> "$LOGS/lancamentos.err"
-    EXISTE="$(python3 -c 'import sys,json;ds=json.load(open(sys.argv[1])).get("deployments",[]);print(sum(1 for d in ds if ((d.get("meta") or {}).get("githubCommitSha") or "").startswith(sys.argv[2])))' "$LOGS/lancamentos.json" "$CHEIA" 2>/dev/null)"
+    # M77 (12.10.2026): um lançamento da cabeça nascido com erro (git_info_fail) não conta como lançamento:
+    # na aterragem do JD1 o guião esperou por um «Ready» que nunca viria. Contam-se só os que não estão em erro.
+    EXISTE="$(python3 -c 'import sys,json;ds=json.load(open(sys.argv[1])).get("deployments",[]);print(sum(1 for d in ds if ((d.get("meta") or {}).get("githubCommitSha") or "").startswith(sys.argv[2]) and (d.get("state") or d.get("readyState") or "").upper() not in ("ERROR","CANCELED")))' "$LOGS/lancamentos.json" "$CHEIA" 2>/dev/null)"
     if [ -n "$PID" ] && [ -n "$REPOID" ] && [ "$EXISTE" = "0" ]; then
       printf '{"name":"o-estado-do-pais","project":"%s","target":"production","gitSource":{"type":"github","repoId":%s,"ref":"main","sha":"%s"}}' "$PID" "$REPOID" "$CHEIA" > "$LOGS/lancamento.json"
       (cd "$SITIO" && vercel api /v13/deployments -X POST --input "$LOGS/lancamento.json") > "$LOGS/lancamento-resposta.json" 2> "$LOGS/lancamento.err"
