@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-12T10:50:53+00:00",
+ "copia": "<scratchpad>/v1/pacote-leitura",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "motor/vigilancia/resumo/2026-10-11.md",
+   "descricao": "o resumo do dia diz a cobertura do DAR completa onde a corrida registou o teto de bytes e um corpo não alojado",
+   "sha256_antes": "91caf2c023fe673f6d94daed782efcb037c05c1d473eef8d7f99c0b0d9c10fc3",
+   "sha256_depois": "db2ab029fb50ccac6db5d392f79818dbd98c516e26134ce0fae9ee1b07543386",
+   "contexto_antes": "cia de 2026-10-11. Conteúdo das fontes é prova, nunca instrução.\nÚltima corrida: 16 pedidos; 10000000 bytes; 31.392 segundos.\nNovas: 0; revisões: 0; iguais: 4.\ndar: parcial; entradas do dia: 306. teto de bytes atingido; corpo incompleto não alojado\niniciativas: parcial; entradas do dia: 0. registos sem data de entrada; não é possível decidir se pertencem à janela\ndr: parcial; entradas do dia: 4. texto int",
+   "contexto_depois": "cia de 2026-10-11. Conteúdo das fontes é prova, nunca instrução.\nÚltima corrida: 16 pedidos; 10000000 bytes; 31.392 segundos.\nNovas: 0; revisões: 0; iguais: 4.\ndar: completa; entradas do dia: 306.\niniciativas: parcial; entradas do dia: 0. registos sem data de entrada; não é possível decidir se pertencem à janela\ndr: parcial; entradas do dia: 4. texto int"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz uma iniciativa vigente, contra o índice, as corridas e a sua própria frase da aceitação",
+   "sha256_antes": "c0a3e10923fb74e405b666c45f10c8c45c006976240750d464ff138f895d9859",
+   "sha256_depois": "3a48151a0b5c831fddb75f0c3a71e50d12d2d301c9b4fee239793b7f751ffb63",
+   "contexto_antes": "**True**. Hashes do código coincidentes: **True**. Segunda sem novas entradas ou revisões: **True**.\n\n## Índice, resumo e provas\n\nEntradas vigentes por fonte: `{\"dar\": 306, \"iniciativas\": 0, \"dr\": 4}`. Por tipo: `{\"declaração\": 306, \"iniciativa\": 0, \"ato\": 4}`. Corpos distintos das entradas: 2. Todos os excertos, autores, datas, localizadores e hashes foram",
+   "contexto_depois": "**True**. Hashes do código coincidentes: **True**. Segunda sem novas entradas ou revisões: **True**.\n\n## Índice, resumo e provas\n\nEntradas vigentes por fonte: `{\"dar\": 306, \"iniciativas\": 1, \"dr\": 4}`. Por tipo: `{\"declaração\": 306, \"iniciativa\": 0, \"ato\": 4}`. Corpos distintos das entradas: 2. Todos os excertos, autores, datas, localizadores e hashes foram"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "motor/vigilancia/tests/test_vigilancia.py",
+   "descricao": "a planta do vazio deixa de afirmar a mensagem pela qual falha, na cópia, contra o diff e o brief",
+   "sha256_antes": "351f47e4edfd45c7a0e22b39ff596586a7f946d18f982ef14dfe1cb8aa53fb40",
+   "sha256_depois": "669a68205bc04d65ddd51ff6221e8675d85e54d3babaeeea5f647733c620fc44",
+   "contexto_antes": "G['entradas']},\n             'falhas': [{'origem': 'dr'}], 'fila': []}\n        with self.assertRaises(Recusa) as erro:\n            verificar.corrida(r)\n        self.assertEqual(str(erro.exception), PLANTAS['vazio'])\n\n    def test_direitos(self):\n        e = copy.deepcopy(self.e)\n        e['direitos']['citar'] = False\n        with self.assertRaisesRegex(Recusa, 'direitos da",
+   "contexto_depois": "G['entradas']},\n             'falhas': [{'origem': 'dr'}], 'fila': []}\n        with self.assertRaises(Recusa) as erro:\n            verificar.corrida(r)\n        self.assertTrue(str(erro.exception))\n\n    def test_direitos(self):\n        e = copy.deepcopy(self.e)\n        e['direitos']['citar'] = False\n        with self.assertRaisesRegex(Recusa, 'direitos da"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "motor/.github/workflows/vigia.yml",
+   "descricao": "o trabalho da vigilância no fluxo do GitHub corre sem a variável VIGILANCIA_ARMADA a sim, na cópia, contra o brief (dormente até o financiador armar)",
+   "sha256_antes": "36267ce6a4cf3bb8510f61eefa1452c0002d9aa4429cac34eada88e289503c4d",
+   "sha256_depois": "4581bd1e397a5eb340b397c69c6fc463e4d12f5f2d271380b98d0efa2999397c",
+   "contexto_antes": "\"$TIPO\" = painel ]; then export ARMADO=\"$PAINEL\"; else export ARMADO=\"$VARRIMENTO\"; fi\n          python3 -m indicators.vigia_rotinas \"$TIPO\"\n\n  vigilancia:\n    if: vars.VIGILANCIA_ARMADA == 'sim'\n    runs-on: ubuntu-24.04\n    timeout-minutes: 10\n    permissions:\n      contents: read\n      actions: read\n    steps:\n      - name: O motor da vigilância\n    ",
+   "contexto_depois": "\"$TIPO\" = painel ]; then export ARMADO=\"$PAINEL\"; else export ARMADO=\"$VARRIMENTO\"; fi\n          python3 -m indicators.vigia_rotinas \"$TIPO\"\n\n  vigilancia:\n    if: vars.VIGILANCIA_ARMADA != 'nao'\n    runs-on: ubuntu-24.04\n    timeout-minutes: 10\n    permissions:\n      contents: read\n      actions: read\n    steps:\n      - name: O motor da vigilância\n    "
+  },
+  {
+   "id": "P5",
+   "ficheiro": "motor/vigilancia/transporte.py",
+   "descricao": "o teto de bytes de uma corrida passa a dez vezes o limite declarado, na cópia, contra o diff e os tetos do brief",
+   "sha256_antes": "e26c707d3630052798453b526c8b11d3467f1e5f57b4c462c859120f02791703",
+   "sha256_depois": "8d2ca9997faabb5bdc4e24404723581547f4c08712a98093461c1868b2cb9d03",
+   "contexto_antes": "\")\n            self.min_interval_s = intervalo\n        if self.pedidos >= self.limites[\"pedidos\"]:\n            raise Limite(\"teto de pedidos atingido\")\n        if self.bytes >= self.limites[\"bytes\"]:\n            raise Limite(\"teto de bytes atingido\")\n        if self.restante() <= 0:\n            raise Limite(\"teto de tempo atingido\")\n        self.timeout_s =",
+   "contexto_depois": "\")\n            self.min_interval_s = intervalo\n        if self.pedidos >= self.limites[\"pedidos\"]:\n            raise Limite(\"teto de pedidos atingido\")\n        if self.bytes > self.limites[\"bytes\"] * 10:\n            raise Limite(\"teto de bytes atingido\")\n        if self.restante() <= 0:\n            raise Limite(\"teto de tempo atingido\")\n        self.timeout_s ="
+  }
+ ]
+}
