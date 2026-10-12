@@ -356,6 +356,12 @@ export function conferirAuditoriaDasFamilias({
       falha(`${quem}: as partes juntas não dão a frase declarada, nas duas edições (uma frase mudada precisa de nova leitura das origens)`);
       continue;
     }
+    if(JSON.stringify(e.compara)!==JSON.stringify(familias[chaves[0]]?.compara)) falha(`${quem}: a comparação não corresponde à auditoria`);
+    if(e.compara) {
+      for(const a of e.compara.apoios??[]) { const erro=verifica(a,ids);if(erro)falha(`${quem}: ${erro}`); }
+      const a=linhas.get(e.compara.a),b=linhas.get(e.compara.b);
+      if(!a||!b||a.unit!==b.unit||a.reference_date!==b.reference_date)falha(`${quem}: a comparação não tem duas linhas compatíveis`);
+    }
     let todasNaFonte = true;
     /** @type {Set<string>} */
     const usadas = new Set();
@@ -551,6 +557,15 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
       }
     } else {
       esperado = normal(textoDaFrase(d?.frase?.[lang]));
+      if(d?.compara) {
+        const c=d.compara,a=ctx.linhas.get(c.a),b=ctx.linhas.get(c.b);
+        const n=x=>Number(String(x).replace(/[\s\u202f\u00a0]/g,'').replace(',','.'));
+        const ramo=n(a.value)<n(b.value)?'menor':n(a.value)>n(b.value)?'maior':'igual';
+        esperado=normal(esperado+c[lang].antes+a.value+' '+a.unit+c[lang][ramo]+b.value+' '+b.unit+c[lang].depois);
+        const citadas=oQueE.querySelectorAll('[data-claim]').map(x=>x.getAttribute('data-claim'));
+        if(JSON.stringify(citadas)!==JSON.stringify([c.a,c.b]))falha('a comparação não cita as duas linhas pelos seus tokens');
+      }
+
       if (d?.instantaneo) {
         const files = ctx.linhas.get(id)?.document?.computed_over?.files;
         const data = files?.[0]?.snapshot_date;

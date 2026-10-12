@@ -1119,9 +1119,15 @@ const OUTRAS = [
   {
     chaves: ['penalizacao-antecipacao-um-ano-neutra'],
     mostrarOrigens: true,
+    compara: {
+      a:'penalizacao-legal-um-ano-antecipacao-2026', b:'penalizacao-antecipacao-um-ano-neutra',
+      pt:{antes:' A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de ', menor:' e é menor do que a redução atuarialmente neutra de ', maior:' e é maior do que a redução atuarialmente neutra de ', igual:' e é igual à redução atuarialmente neutra de ', depois:'.'},
+      en:{antes:' The statutory penalty for retiring one year early, excluding the sustainability factor, is about ', menor:' and is lower than the actuarially neutral reduction of ', maior:' and is higher than the actuarially neutral reduction of ', igual:' and is equal to the actuarially neutral reduction of ', depois:'.'},
+      apoios:[O('pensao-legal','equivalente a cerca de 6% por ano')],
+    },
     partes: [
       diz('É a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano', 'It is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early', O('pensao-estimativa','estimativa preliminar dos factores de ajustamento actuarial neutrais'), L('excerpt','Decrementos por reforma antecipada: caso geral')),
-      diz(': a redução que mantém igual o valor atual esperado entre reformar-se já e adiar a reforma um ano', ': the reduction that keeps the expected present value equal between retiring now and postponing retirement by one year', O('pensao-neutralidade','financeiramente indiferente, em termos de valor actual esperado')),
+      diz(': a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano', ': the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year', O('pensao-neutralidade','financeiramente indiferente, em termos de valor actual esperado')),
       diz(', contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados.', ', including contributions no longer paid and pension rights no longer accrued.', O('pensao-direitos','no esforço contributivo e no'), O('pensao-direitos','acréscimo de direitos sobre o sistema de pensões')),
       diz(' Não é a penalização legal por antecipação.', ' It is not the statutory early-retirement penalty.', O('pensao-legal','essa penalização isolada tende a ficar abaixo do valor actuarialmente neutral')),
     ],

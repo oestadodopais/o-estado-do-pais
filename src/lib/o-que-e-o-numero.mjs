@@ -112,6 +112,15 @@ function medidaDoConcelho(chave) {
  * @param {string} id @param {'pt'|'en'} lang
  * @returns {{ pedacos: any[], tipo: 'cartao'|'concelho'|'familia', chave: string, cartao: string|null, sinal: string[] | null, porConfirmar: boolean }}
  */
+/** Comparação por duas linhas, com os valores lidos e palavras escolhidas pela relação. */
+export function comparaLinhas(c,lang,linhas=loadClaims()) {
+ const a=linhas.get(c.a),b=linhas.get(c.b);
+ const numero=v=>Number(String(v).replace(/[\s\u202f\u00a0]/g,'').replace(',','.'));
+ if(!a||!b||a.unit!==b.unit||a.reference_date!==b.reference_date||!Number.isFinite(numero(a.value))||!Number.isFinite(numero(b.value)))throw new Error('RP4N-g: comparação sem duas linhas compatíveis');
+ const ramo=numero(a.value)<numero(b.value)?'menor':numero(a.value)>numero(b.value)?'maior':'igual';
+ return [c[lang].antes,{claim:a.id,sufixo:' '+a.unit},c[lang][ramo],{claim:b.id,sufixo:' '+b.unit},c[lang].depois];
+}
+
 export function oQueEDaLinha(id, lang) {
   const f = familiaDaLinha(id);
   const porConfirmar = POR_CONFIRMAR.has(id);
@@ -142,6 +151,7 @@ export function oQueEDaLinha(id, lang) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(data ?? '') || !Array.isArray(ficheiros) || !ficheiros.every(x => x.snapshot_date === data)) throw fecha(id, 'o instantâneo não tem uma data única nos ficheiros da computação.');
     pedacos = [...frase.slice(0,-1), frase.at(-1).replace(/\.$/, ''), lang === 'pt' ? ', no instantâneo de ' : ', in the snapshot of ', {data:{id,campo:'document.computed_over.files.0.snapshot_date',valor:data}}, '.'];
   }
+  if (d.compara) pedacos = [...pedacos,...comparaLinhas(d.compara,lang)];
   return { pedacos, tipo: 'familia', chave: f.chave, cartao: null, sinal: null, porConfirmar };
 }
 
