@@ -42,6 +42,9 @@ def main():
     assert (portoes / 'arvore.inicio').read_text().strip() == 'limpa'
     for repo, path, f in [('sitio', SITE, 'cabeca'), ('motor', MOTOR, 'motor.cabeca')]:
         assert heads[repo] == (portoes / (f + '.fim')).read_text().strip() == git(path, 'rev-parse', 'HEAD')
+    tentativa = portoes / 'tentativa-1'
+    interrompida = {f.stem: int(f.read_text()) for f in tentativa.glob('*.codigo')}
+    assert interrompida and 'verify' not in interrompida
     horas = {n: {k: (portoes / (n + '.' + k)).read_text().strip() for k in ['inicio', 'fim']} for n in nomes}
     caps = read('capturas-d.json')
     assert not caps['problemas'] and caps['cabeca_codigo'] == heads['sitio']
@@ -132,6 +135,9 @@ def main():
         'Achado 9: a planta inócua usa um nome dentro do âmbito dos registos. A conferência contou a chamada ao descompressor e voltou a usar o mesmo nome com conteúdo proibido; o limpo passa e o proibido morde. As plantas corridas estão abaixo.', '',
         'Achado 10: ' + fontes['ine']['decisao'] + ' As páginas e os literais consultados estão em `fontes-d.json`. Nada foi acrescentado de memória.', '',
         'Achado 12: o comentário do exportador descreve a resolução do sítio sem nomear a disposição local das pastas. Achado 13: o texto e o gerador do relatório anterior distinguem agora as horas das corridas do motor e do sítio; o portão do motor desta passagem foi repetido sobre a cabeça nova.', '',
+        'JD1-13, questão para a higiene: a opção exportada `OEDP_CONFERIR_MOTOR` entrou nos testes sintéticos da tranca e lançou o portão real do motor dentro deles. A corrida foi interrompida; os registos completos estão em `portoes-d/tentativa-1/`. A corrida final mantém a opção como variável local do shell principal, não exportada, e corre todos os portões. Não se alterou a maquinaria do repositório.', '',
+        f"Códigos existentes da tentativa interrompida, lidos dos ficheiros: {', '.join(f'{n}={v}' for n,v in sorted(interrompida.items()))}. Os portões sem ficheiro de código não terminaram nem são apresentados como verdes.", '',
+        'Comando final: `RESEARCHHUB_DIR=<motor> OEDP_SITE=<sitio> sh -c \'unset OEDP_CONFERIR_MOTOR; OEDP_CONFERIR_MOTOR=1; . scripts/leituras/portoes.sh\' sh <sitio> design/especime-v3/medicoes/jd1-2026-10-06/portoes-d`.', '',
         '### Portões, códigos e horas lidos dos ficheiros', '',
         '| Ficheiro em `portoes-d/` | Código | Início UTC | Fim UTC |', '|---|---:|---|---|']
     sec += [f"| `{n}.codigo` | {codes[n]} | {horas[n]['inicio']} | {horas[n]['fim']} |" for n in nomes]
