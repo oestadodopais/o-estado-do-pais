@@ -49,7 +49,7 @@ for (const [nome, altera, mensagem] of [
   e.folhas[0].partes=[p]; for(const k of e.chaves) familias[k].frase={pt:[p.pt],en:[p.en]};
   morde('ausência atribuída a publicador desconhecido',conferirAuditoriaDasFamilias({auditoria:a,familias}).erros,'a ausência não corresponde à falta do excerto');
   const linhas=structuredClone(loadClaims({includeWithdrawn:true}));
-  for(const id of ['avisos-pt2030-abertos','avisos-pt2030-pessoas-singulares']) linhas.get(id).source='Publicador conhecido no ensaio';
+  linhas.get('avisos-pt2030-abertos').source='Publicador conhecido no ensaio';
   assert.deepEqual(conferirAuditoriaDasFamilias({auditoria:a,familias,linhas}).erros,[],'a ausência com publicador conhecido tem de passar');
   linhas.get('avisos-pt2030-abertos').excerpt='A fonte define a medida neste excerto.';
   morde('ausência falsa com excerto existente',conferirAuditoriaDasFamilias({auditoria:a,familias,linhas}).erros,'a ausência não corresponde à falta do excerto');
