@@ -9,6 +9,7 @@ export function conferirOrigemLocal(chave,origem) {
  const h=createHash('sha256').update(bytes).digest('hex');
  if(r.exported_sha256!==h||r.origin_sha256!==h||r.origin_path!=='content/13 Dominios/pensao-rp4n.json')return 'a cópia documental local difere da travessia';
  if(JSON.stringify(origem)!==JSON.stringify(fontes[chave])||origem?.alojada?.modo!=='copia-local'||!origem?.alojada?.pagina||!origem?.excerto)return 'o excerto local difere da leitura da página alojada';
+ if(origem.lido==='[a verificar]' ? origem.alojada.data_ausente!==true : origem.alojada.data_ausente!==false || !/^\d{4}-\d{2}-\d{2}$/.test(origem.lido))return 'a data local não distingue o pedido ausente';
  return null;
 }
 export const chavesLocais=()=>Object.keys(JSON.parse(fs.readFileSync(caminho)));

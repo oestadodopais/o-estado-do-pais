@@ -10,22 +10,22 @@
     "penalizacao-antecipacao-um-ano-neutra.yml": {
       "destino": "ledger/claims",
       "origin_path": "publisher/recortes/penalizacao-antecipacao-um-ano-neutra.yml",
-      "origin_sha256": "891cf820d3d4724ba2b0daf8f8b383cf522957b359ff8c8290f270289fbe1680",
-      "exported_sha256": "891cf820d3d4724ba2b0daf8f8b383cf522957b359ff8c8290f270289fbe1680",
+      "origin_sha256": "382a1e5c0394ac8230923e88fbab296c61fbe24d1c515d81b25502e2ee2ec992",
+      "exported_sha256": "382a1e5c0394ac8230923e88fbab296c61fbe24d1c515d81b25502e2ee2ec992",
       "exporter": "ResearchHub/publisher/rp4n_pensao.py"
     },
     "penalizacao-legal-um-ano-antecipacao-2026.yml": {
       "destino": "ledger/claims",
       "origin_path": "publisher/recortes/penalizacao-legal-um-ano-antecipacao-2026.yml",
-      "origin_sha256": "41d31b11e212e41e614aa59ecad410a4df018f5ee9d1eb38be152dbb5ab60c71",
-      "exported_sha256": "41d31b11e212e41e614aa59ecad410a4df018f5ee9d1eb38be152dbb5ab60c71",
+      "origin_sha256": "d310cd66a6e0fbcb561ef20b9e2b0d210c6506513bab0cb83651dd4298289458",
+      "exported_sha256": "d310cd66a6e0fbcb561ef20b9e2b0d210c6506513bab0cb83651dd4298289458",
       "exporter": "ResearchHub/publisher/rp4n_pensao.py"
     },
     "pensao-rp4n.json": {
       "destino": "src/data",
       "origin_path": "content/13 Dominios/pensao-rp4n.json",
-      "origin_sha256": "7860107842abd393841085e590dda37913d9754bf7a58cf371f9020857528699",
-      "exported_sha256": "7860107842abd393841085e590dda37913d9754bf7a58cf371f9020857528699",
+      "origin_sha256": "56458c213b862df0f3fffa18ff11c0058764c9a40db5646e084ebc42a6bceefa",
+      "exported_sha256": "56458c213b862df0f3fffa18ff11c0058764c9a40db5646e084ebc42a6bceefa",
       "exporter": "ResearchHub/publisher/rp4n_pensao.py"
     }
   }
