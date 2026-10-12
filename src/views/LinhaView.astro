@@ -67,6 +67,7 @@ import {
 } from '../lib/ledger.mjs';
 import { caminhoDaLinha, caminhoDoLivro, tituloDaLinha, descricaoDaLinha } from '../lib/livro.mjs';
 import { estadoDaFonte } from '../lib/prova.mjs';
+import { copiaSemLeitura, estadoDaCopia } from '../lib/estado-da-copia.mjs';
 import { ANFITRIOES_SEM_RESPOSTA } from '../data/fontes.mjs';
 import { atrasoDaLinha } from '../lib/frescura.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
@@ -394,7 +395,7 @@ function estadoDoAnfitriaoDaLinha(sourceUrl) {
   return estado === null ? null : { ...estado, anfitriao };
 }
 
-const fonteSemResposta = estadoDaFonte(claim.source_url) ?? estadoDoAnfitriaoDaLinha(claim.source_url);
+const fonteSemResposta = estadoDaCopia(claim, estadoDaFonte(claim.source_url) ?? estadoDoAnfitriaoDaLinha(claim.source_url));
 
 /**
  * ---------------------------------------------------------------------------
@@ -1568,9 +1569,9 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           {
             verificacoes.length === 0 ? (
               <>
-                <dt>{s.livro.linha.segundaLeituraVaziaK}</dt>
+                <dt>{copiaSemLeitura(claim) ? s.livro.linha.leituraNaFonteK : s.livro.linha.segundaLeituraVaziaK}</dt>
                 <dd>
-                  <span data-sem-segunda-leitura>{derivada && typeof claim.check === 'string' && claim.check.trim() ? s.livro.linha.segundaLeituraCalculada : s.livro.linha.semSegundaLeitura}</span>{' '}
+                  <span data-sem-segunda-leitura>{copiaSemLeitura(claim) ? s.livro.linha.semLeituraDaCopia : derivada && typeof claim.check === 'string' && claim.check.trim() ? s.livro.linha.segundaLeituraCalculada : s.livro.linha.semSegundaLeitura}</span>{' '}
                   <a href={`${routePath('metodo', lang)}#releitura`}>
                     {s.livro.linha.releituraPorta} →
                   </a>
