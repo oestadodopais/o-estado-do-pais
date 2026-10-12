@@ -7,6 +7,9 @@ import {loadClaims} from '../../src/lib/ledger.mjs';
 const plantas=[];
 const ids=['penalizacao-antecipacao-um-ano-neutra','penalizacao-legal-um-ano-antecipacao-2026'];
 const linhas=loadClaims();
+const {conferirDataLocal}=await import('./origens-locais-rp4n.mjs');
+const fontes=JSON.parse(fs.readFileSync('src/data/pensao-rp4n.json','utf8'));
+
 const criacao=execFileSync('git',['log','--follow','--diff-filter=A','--format=%cs','--',`ledger/claims/${ids[1]}.yml`],{encoding:'utf8'}).trim();
 assert.match(criacao,/^\d{4}-\d{2}-\d{2}$/);
 function historia(c) {return (c.verifications??[]).some(v=>v.date<criacao)?['RP4N-h: reconferência anterior à criação da linha legal']:[];}
@@ -46,6 +49,15 @@ function morde(nome,erros,mensagem) {
  const real=erros.find(x=>x.includes(mensagem));assert(real,nome+': passou');plantas.push({nome,mensagem:real});
 }
 morde('reconferência anterior à criação',historia({verifications:[{date:'1900-01-01'}]}),'reconferência anterior');
+for(const [nome,mexer] of [
+ ['data local sem prova',o=>delete o.alojada.prova_data],
+ ['data local trocada',o=>o.lido='1900-01-01'],
+ ['manifesto local sem commit',o=>delete o.alojada.prova_data.registo.commit],
+ ['tipo da data local inventado',o=>o.alojada.prova_data.tipo='data-inventada'],
+]) {
+ const origem=structuredClone(fontes['pensao-legal']);assert.equal(conferirDataLocal(origem),null);mexer(origem);
+ morde(nome,[conferirDataLocal(origem)].filter(Boolean),'a data');
+}
 for(const f of fs.readdirSync('dist',{recursive:true}).filter(f=>f.endsWith('.html'))) {
  const root=le('dist/'+f);const lang=f.startsWith('en/')?'en':'pt';
  assert.deepEqual(lingua(root,lang),[],f);
