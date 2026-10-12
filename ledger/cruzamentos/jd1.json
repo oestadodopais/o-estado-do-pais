@@ -90,8 +90,8 @@
     },
     "juros-das-administracoes-publicas-2025-ue": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-07",
-      "exported_row_sha256": "3070a97fa55ca67119e7a6ce1fdc2aac7fd0a111ffe0fdd1cb6f897af20a0937",
+      "exported_at": "2026-10-12",
+      "exported_row_sha256": "4ee07dd14b5464d0a522257bcf7c066d338a6d7fc5411d0d8af42dfe00e0e024",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2d974a0f6e4e9b2ceb772fe4f1312675a864c078f3f0841590286df9ab4609e4",
       "rh_id": "juros-das-administracoes-publicas-2025-ue",
