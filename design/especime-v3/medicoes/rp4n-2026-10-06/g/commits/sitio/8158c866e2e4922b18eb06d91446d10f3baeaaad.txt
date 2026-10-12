@@ -1,0 +1,4 @@
+8158c866e2e4922b18eb06d91446d10f3baeaaad
+fix(rp4n-g): comparar por tokens a penalização legal e a estimativa neutra
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

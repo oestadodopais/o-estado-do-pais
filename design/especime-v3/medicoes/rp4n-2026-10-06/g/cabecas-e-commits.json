@@ -1,0 +1,164 @@
+{
+  "sitio": {
+    "cabeca": "344081c34eef1f792feef6bfd2d77fd764f7a1b5",
+    "base": "478c8368",
+    "commits": [
+      {
+        "sha": "071b9dfdade099b5b6b522da8dd376ecc80084b5",
+        "titulo": "docs(rp4n-g): registar a leitura, as plantas e o mandato",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/071b9dfdade099b5b6b522da8dd376ecc80084b5.txt"
+      },
+      {
+        "sha": "9d907997bbd35f0392da8533766351614e04fda9",
+        "titulo": "fix(rp4n-g): preferir o rótulo da medida ao título do documento",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/9d907997bbd35f0392da8533766351614e04fda9.txt"
+      },
+      {
+        "sha": "a58623ac55fa35a645ec073b50d9278117b704a5",
+        "titulo": "fix(rp4n-g): render o selo na língua de cada edição",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/a58623ac55fa35a645ec073b50d9278117b704a5.txt"
+      },
+      {
+        "sha": "c5e5738785d468a640e4567e8f55b94c08ce4f4f",
+        "titulo": "test(rp4n-g): provar a ausência válida e os caminhos das duas edições",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/c5e5738785d468a640e4567e8f55b94c08ce4f4f.txt"
+      },
+      {
+        "sha": "992ecd5acd24277eb32e7084bd04ca96eaaa74a9",
+        "titulo": "fix(rp4n-g): dizer contratado na unidade da execução PRR",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/992ecd5acd24277eb32e7084bd04ca96eaaa74a9.txt"
+      },
+      {
+        "sha": "2bea05413c13608e90ee8980e4ad9c7274a33811",
+        "titulo": "fix(rp4n-g): separar a coordenada do documento e traduzir página",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/2bea05413c13608e90ee8980e4ad9c7274a33811.txt"
+      },
+      {
+        "sha": "be7f53f398c0acf43c0632db84b6be27d8f45783",
+        "titulo": "fix(rp4n-g): alinhar o prazo PRR com a conclusão da computação",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/be7f53f398c0acf43c0632db84b6be27d8f45783.txt"
+      },
+      {
+        "sha": "a925f0e14cf861f75f1696a270e9d177a7f7037b",
+        "titulo": "test(rp4n-g): conferir todos os padrões de privacidade na cabeça",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/a925f0e14cf861f75f1696a270e9d177a7f7037b.txt"
+      },
+      {
+        "sha": "0fbabb73df50ef1da36d7ca0fd1c6a645022e05a",
+        "titulo": "fix(rp4n-g): conservar o estudo na área e declarar as contagens ausentes",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/0fbabb73df50ef1da36d7ca0fd1c6a645022e05a.txt"
+      },
+      {
+        "sha": "a33711176a3eb9781c258ba09a075672e2800955",
+        "titulo": "fix(rp4n-g): situar a água na faixa mediana selada pela ERSAR",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/a33711176a3eb9781c258ba09a075672e2800955.txt"
+      },
+      {
+        "sha": "78050c6439436bb02471aee8ac8925bed912e6a4",
+        "titulo": "fix(rp4n-g): apoiar a quota dos ministérios na DESPESA TOTAL do mapa",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/78050c6439436bb02471aee8ac8925bed912e6a4.txt"
+      },
+      {
+        "sha": "8158c866e2e4922b18eb06d91446d10f3baeaaad",
+        "titulo": "fix(rp4n-g): comparar por tokens a penalização legal e a estimativa neutra",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/8158c866e2e4922b18eb06d91446d10f3baeaaad.txt"
+      },
+      {
+        "sha": "ea709d649952f101f262be4006218d0d0e1a2222",
+        "titulo": "fix(rp4n-g): declarar os tipos da comparação e da coordenada",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/ea709d649952f101f262be4006218d0d0e1a2222.txt"
+      },
+      {
+        "sha": "6d4c59965a526e0db8f2b15245fb7e0bc828d151",
+        "titulo": "fix(rp4n-g): retirar a data da pensão sem pedido bem-sucedido",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/6d4c59965a526e0db8f2b15245fb7e0bc828d151.txt"
+      },
+      {
+        "sha": "67d22d625e30d1fcc9371c554ae6fb78495ee88f",
+        "titulo": "fix(rp4n-g): conservar o rótulo matemático da pensão numa linha",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/67d22d625e30d1fcc9371c554ae6fb78495ee88f.txt"
+      },
+      {
+        "sha": "f591e2cfdc3a2cac857ea46b63dd474ab5816943",
+        "titulo": "fix(rp4n-g): reconhecer os rótulos dos YAML atravessados por inteiro",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/f591e2cfdc3a2cac857ea46b63dd474ab5816943.txt"
+      },
+      {
+        "sha": "ce1cf8d1816fce004255009cb17f3d288ebc8701",
+        "titulo": "test(rp4n-g): provar os tokens da comparação e as duas edições",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/ce1cf8d1816fce004255009cb17f3d288ebc8701.txt"
+      },
+      {
+        "sha": "be0d0b54d3e17f71cf41d04b4e8141bd39ac24cb",
+        "titulo": "fix(rp4n-g): conferir a ausência do estudo e a glosa nas sinopses",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/be0d0b54d3e17f71cf41d04b4e8141bd39ac24cb.txt"
+      },
+      {
+        "sha": "1b08a019d0400b7289ffc1639e536c0a69b558b7",
+        "titulo": "test(rp4n-g): preparar a medição das frases e as capturas finais",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/1b08a019d0400b7289ffc1639e536c0a69b558b7.txt"
+      },
+      {
+        "sha": "793d2d7eba2ae075b89cdef47a29c409cced1244",
+        "titulo": "fix(rp4n-g): declarar a língua do rótulo impresso da pensão",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/793d2d7eba2ae075b89cdef47a29c409cced1244.txt"
+      },
+      {
+        "sha": "e0e45accac3b19d96a0600ea2a287fbcc8d9b66d",
+        "titulo": "test(rp4n-g): declarar os rótulos medidos do prazo de conclusão",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/e0e45accac3b19d96a0600ea2a287fbcc8d9b66d.txt"
+      },
+      {
+        "sha": "e1c0959a0dd324120df160e3f19a68a7df2c767f",
+        "titulo": "fix(rp4n-g): apoiar a explicação nas classificações das fontes",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/e1c0959a0dd324120df160e3f19a68a7df2c767f.txt"
+      },
+      {
+        "sha": "6ab47eddb628edfcb2811f3631208aabc51d1dd8",
+        "titulo": "test(rp4n-g): conferir o localizador da figura da pensão no índice",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/6ab47eddb628edfcb2811f3631208aabc51d1dd8.txt"
+      },
+      {
+        "sha": "344081c34eef1f792feef6bfd2d77fd764f7a1b5",
+        "titulo": "test(rp4n-g): esperar pelas imagens antes das capturas integrais",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/sitio/344081c34eef1f792feef6bfd2d77fd764f7a1b5.txt"
+      }
+    ]
+  },
+  "motor": {
+    "cabeca": "542fe4ee9d67ecf2245892fd98ccd1c442829704",
+    "base": "9293361",
+    "commits": [
+      {
+        "sha": "a5c4eadf7deb83d85e7369e49168e499c1d73118",
+        "titulo": "fix(rp4n-g): conferir o nome da pensão na figura alojada",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/motor/a5c4eadf7deb83d85e7369e49168e499c1d73118.txt"
+      },
+      {
+        "sha": "71a2be5f18d867a0e4010af467a0d892aa3780f5",
+        "titulo": "fix(rp4n-g): alinhar a unidade da quota PRR com o contratado",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/motor/71a2be5f18d867a0e4010af467a0d892aa3780f5.txt"
+      },
+      {
+        "sha": "b0276ebe8c9e9d5fa5aa2934acb35c922061329a",
+        "titulo": "fix(rp4n-g): selar a faixa mediana da água no Quadro 47",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/motor/b0276ebe8c9e9d5fa5aa2934acb35c922061329a.txt"
+      },
+      {
+        "sha": "3e96a5e248d1d20129905f0b2fe31ad124566acd",
+        "titulo": "fix(rp4n-g): prender a quota orgânica à DESPESA TOTAL do MAPA 4",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/motor/3e96a5e248d1d20129905f0b2fe31ad124566acd.txt"
+      },
+      {
+        "sha": "9d56c0f1785c2e3719d741608895e5cfd015ffd4",
+        "titulo": "fix(rp4n-g): exigir o pedido para datar a cópia das pensões",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/motor/9d56c0f1785c2e3719d741608895e5cfd015ffd4.txt"
+      },
+      {
+        "sha": "542fe4ee9d67ecf2245892fd98ccd1c442829704",
+        "titulo": "fix(rp4n-g): registar os resumos da releitura do MAPA 4",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/g/commits/motor/542fe4ee9d67ecf2245892fd98ccd1c442829704.txt"
+      }
+    ]
+  }
+}

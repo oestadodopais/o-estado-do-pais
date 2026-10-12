@@ -1,0 +1,162 @@
+{
+  "cabeca_da_captura": "344081c34eef1f792feef6bfd2d77fd764f7a1b5",
+  "versao": {
+    "commit": "344081c34eef1f792feef6bfd2d77fd764f7a1b5",
+    "ref": "rp4n-2026-10-07",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-12T14:08:03.377Z"
+  },
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/g/agua-pt-390.png",
+      "rota": "/livro-razao/agua-nao-faturada-portugal-2024/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta. O valor situa-se na faixa «Qualidade do serviço mediana» da ERSAR: acima de vinte e até trinta por cento, incluindo o limite superior.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "4e1d00f2a9db27936e73149c9c0eda3cad8506196d3528f06ca623f2b60c35cf"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/g/agua-pt-1280.png",
+      "rota": "/livro-razao/agua-nao-faturada-portugal-2024/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta. O valor situa-se na faixa «Qualidade do serviço mediana» da ERSAR: acima de vinte e até trinta por cento, incluindo o limite superior.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "4e41a7050cd7af1244d1b0e783fedf701fb9bee86c80c2216d3a4ca3356ca004"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/g/agua-en-390.png",
+      "rota": "/en/ledger/agua-nao-faturada-portugal-2024/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the share of water entering the system that is not billed by retail operators in mainland Portugal. The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment. The value falls in ERSAR’s “medium service quality” band: above twenty and up to thirty per cent, including the upper limit.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "7b1bac95beff472368175c1e3985c3d13d5fc1eb62ef3f202697e0b7516e962a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/g/agua-en-1280.png",
+      "rota": "/en/ledger/agua-nao-faturada-portugal-2024/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the share of water entering the system that is not billed by retail operators in mainland Portugal. The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment. The value falls in ERSAR’s “medium service quality” band: above twenty and up to thirty per cent, including the upper limit.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "1432393ae1e99fb9934d51118436c87873a96a8da8450335c68a2abed358bf2c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/g/corte-pt-390.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "62cd01890722e1f0c1ef37421f2879793262b2c3daae11e50163d0e4ee33b4b6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/g/corte-pt-1280.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "18911c809d1abae685d967af559a538073acf78e34d80960080d2e3f6d347350"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/g/corte-en-390.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "f9f858bb3e1c607f44df68101bb8fbdda93ef23f6a7cf49bdcd44ea8aa561623"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/g/corte-en-1280.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "bcd851a9531b60f913f32f33f9ecdb8e3748a6d9644dad5faacf9157ca4bdb9a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/g/area-pt-390.png",
+      "rota": "/areas/economia-e-coesao-territorial/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "cea59c8df0cc127dabb46b982cefec57e2ff9b1f7d73cff3f8165e3a55b83563"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/g/area-pt-1280.png",
+      "rota": "/areas/economia-e-coesao-territorial/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "8b461c25f19571bf8d960d95f2de781d17f261f1f412af59f4a2a7652bee09c0"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/g/area-en-390.png",
+      "rota": "/en/areas/economia-e-coesao-territorial/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "5ac779906129f4d02e1a6ba92e23ddb586d41645a818a76b1bb5678d24e8c305"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/g/area-en-1280.png",
+      "rota": "/en/areas/economia-e-coesao-territorial/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "f9c9cfc5b6765284c2cfb9f0156c89d59ba8625459a2bdfdce32359ba82188ec"
+    }
+  ],
+  "problemas": []
+}

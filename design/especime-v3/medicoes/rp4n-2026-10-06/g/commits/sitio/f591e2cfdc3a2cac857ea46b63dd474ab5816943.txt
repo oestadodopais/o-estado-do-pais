@@ -1,0 +1,4 @@
+f591e2cfdc3a2cac857ea46b63dd474ab5816943
+fix(rp4n-g): reconhecer os rótulos dos YAML atravessados por inteiro
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

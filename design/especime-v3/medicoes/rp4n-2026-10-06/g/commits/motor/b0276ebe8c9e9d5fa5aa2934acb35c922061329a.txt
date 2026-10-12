@@ -1,0 +1,3 @@
+b0276ebe8c9e9d5fa5aa2934acb35c922061329a
+fix(rp4n-g): selar a faixa mediana da água no Quadro 47
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>

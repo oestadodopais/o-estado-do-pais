@@ -1423,3 +1423,331 @@ A lista distingue as marcas aceites no corpo das páginas da procura bruta no HT
 RP4N-2 continua com o novo acesso HTTP à cópia das pensões sem confirmação: a tentativa desta passagem está em `pensoes-f.pedido.json` no motor e falhou a validação do certificado. A releitura usa os bytes da cópia local com resumo conferido; não se criou um selo de acesso bem-sucedido. Ficam também a migração do identificador da pensão em RP4N-11, a higiene e os campos dos recibos já reservados à direção. A definição de despesa bruta continua explicitamente por confirmar na fonte.
 
 A linha «tokens used» não foi exposta por esta execução. Não se estima um total nem se afirma que o custo-alvo foi cumprido. O trabalho adicional às correções incluiu a reescrita e a prova da história, a distinção dos legados decidida na retoma, a releitura das páginas alojadas, os portões obrigatórios por commit do motor e a repetição dos portões de integração após as falhas registadas.
+
+## A passagem RP4-n-g
+
+O achado da data original da pensão permanece aberto como RP4N-15. A cópia alojada está conferida, mas não se encontrou o pedido bem-sucedido que a trouxe. Não se substituiu essa prova por uma data de construção, pela hora do ficheiro ou por um pedido falhado. A entrega corrige a afirmação falsa, mostra a ausência e deixa esta condição de fecho para a direção.
+
+### A ordem e as cabeças
+
+A reescrita das mensagens veio antes do commit dos registos, e os registos antes das correções. Não houve publicação nem mudança de worktree. Os hashes seguintes foram lidos do Git e dos ficheiros dos portões. A cabeça final de entrega é o commit que contém esta secção; não se inventa neste ficheiro o hash do próprio commit.
+
+| Repositório | Cabeça recebida | Cabeça do código medida |
+|---|---|---|
+| sítio | 7d8994e835ee70b4673fc76fa2385713365917dc | 344081c34eef1f792feef6bfd2d77fd764f7a1b5 |
+| motor | 9293361 | 542fe4ee9d67ecf2245892fd98ccd1c442829704 |
+
+A cabeça do sítio depois da reescrita, antes dos novos commits, é `478c83688116401055a7ba26b9aa3318d59f1d37`. A prova comparou 45 pares; árvores idênticas: `true`. O guião foi `git filter-branch -f --msg-filter`, limitado a juntar os trailers. A cópia herdada foi reposta num nome separado depois de o comando substituir o espaço de referências originais. As duas referências de cópia permanecem:
+
+- `refs/original/refs/heads/rp4n-2026-10-07 7d8994e835ee70b4673fc76fa2385713365917dc`.
+- `refs/original/rp4n-f/refs/heads/rp4n-2026-10-07 8ed6ed6ae1d60f3a47ccc5c45face2be7fcecd51`.
+
+### Cada decisão
+
+- **Achados 1 a 5:** Eram as plantas da direção. Não deram correções ao produto.
+- **Achado 6:** A data já não está escrita no gerador. O gerador exige estado bem-sucedido, bytes e sha256 coincidentes no pedido original e deriva a data da hora desse pedido. Sem esse recibo, ambas as linhas levam a ausência de data. A releitura falhada continua falhada e o estado da fonte conserva a reconferência histórica. A planta rejeita a data escrita no guião. RP4N-15 continua aberta.
+- **Achado 7:** A regra geral escolhe o rótulo da medida, não o título do relatório. A K17 compara o nome conferido das linhas com definição selada. A água e a pensão têm plantas nas duas línguas. O índice reconhece o localizador restrito da figura e recusa a página ou a linha trocadas. O índice matemático do rótulo da pensão só sofreu normalização de espaço da extração; o recorte continua a provar a figura.
+- **Achado 8:** A frase e a derivação usam DESPESA TOTAL e o nome do mapa. O apoio da frase saiu da derivação do projeto e passou para excertos contíguos do mapa alojado. A conta continua a conferir o denominador pelo campo check. A auditoria da explicação do orçamento também foi ligada às duas classificações das fontes, sem mudar a prosa da direção; a emenda identifica o construtor e fica por ler. A procura antiga de despesa bruta está em f/despesa-bruta-procura.json e foi feita nos documentos abaixo, não no MAPA 4.
+- **Achado 9:** A definição da água ganhou o nome e os limites da faixa do quadro da ERSAR, com origem selada. A régua verifica que o valor pertence à faixa e recusa o limite inferior excluído.
+- **Achado 10:** A pensão explica a indiferença financeira individual em palavras comuns. A comparação usa tokens das duas linhas; menor, maior ou igual são escolhidos pelos valores. A K17 recompõe independentemente a frase e exige os dois identificadores. Números sem token continuam recusados.
+- **Achado 11:** O marcador dentro do selo vem da tabela da língua. Os selos aceites continuam, incluindo os da área. Há uma planta por edição.
+- **Achado 12:** A unidade da quota do PRR foi corrigida no motor e reexportada. Diz valor contratado, de acordo com a coluna da computação, em ambas as edições.
+- **Achado 13:** A cabeça, o diff e a história são varridos por todos os pedaços pedidos. A saída abaixo conserva as exceções herdadas individualmente, sem abrir novas exceções.
+- **Achado 14:** A ausência passa com publicador conhecido e excerto ausente; falha com publicador desconhecido ou excerto existente. A planta do caminho parte agora do HTML próprio de cada edição.
+- **Achado 15:** Os trailers foram juntos por reescrita de mensagens antes dos novos commits. O Git lê ambos e a prova verifica também a adjacência literal.
+- **Achado 16:** A coordenada de página deixou de fazer parte do título transcrito. O número mantém a sua origem; a palavra página ou page vem da tabela, com plantas nas duas famílias e línguas.
+- **Achado 17:** A retirada das contagens tinha retirado o estudo da área, porque a lista dependia das linhas. A lista depende agora também da declaração do estudo. O estudo voltou nas duas edições e a aterragem declara a ausência exata das contagens. A edição inglesa arquivada mantém o texto da sua data, sem ser apresentada como contagem atual.
+- **Achado 18:** O nome do cartão e a derivação da quota dizem prazo de conclusão, o campo que a computação usa. Há planta para a redação antiga.
+
+| Documentos da procura anterior | sha256 | Ocorrências |
+|---|---|---|
+| content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf | 8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5 | 0 |
+| content/20 Orcamento do Estado/source/eo-sintese-julho.pdf | b5ca757c64943e605ddff5dfd27cde4f49005d17946eeab3239d1b812640a5ce | 0 |
+
+### RP4N-15: o pedido original da pensão
+
+O documento `content/13 Dominios/source/rp4n/pensoes-copia-alojada.pdf` tem sha256 `555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366` e 4521348 bytes. O manifesto não nomeia o pedido original. Os recibos encontrados, copiados em `g/pensao-pedidos.json`, são:
+
+| Recibo | Hora | Estado | Erro |
+|---|---|---|---|
+| content/13 Dominios/source/rp4n/pensoes-d.pedido.json | 2026-10-07T09:52:50Z | None | SSLError: HTTPSConnectionPool(host='www.dgcp.mtsss.gov.pt', port=443): Max retries exceeded with url: /documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)'))) |
+| content/13 Dominios/source/rp4n/pensoes-f.pedido.json | 2026-10-12T11:42:09Z | None | SSLError: HTTPSConnectionPool(host='www.dgcp.mtsss.gov.pt', port=443): Max retries exceeded with url: /documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)'))) |
+| content/13 Dominios/source/rp4n/pensoes.pedido.json | 2026-10-06T09:48:13Z | None | SSLError: HTTPSConnectionPool(host='www.dgcp.mtsss.gov.pt', port=443): Max retries exceeded with url: /documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)'))) |
+
+A condição de fecho é recuperar o pedido que efetivamente trouxe esta cópia, com o mesmo sha256 e tamanho. A data permanece por confirmar enquanto esse recibo não for recuperado. Não se inventou essa data.
+
+
+| Recibo | Nome na fonte | Datas das definições | Ausência declarada |
+|---|---|---|---|
+| agua-pt | AA08b – Água não faturada | 11.10.2026, 11.10.2026, 11.10.2026 |  |
+| agua-en | AA08b – Água não faturada | 11.10.2026, 11.10.2026, 11.10.2026 |  |
+| pensao-pt | dcum x : cumulative reduction |  | Data do pedido original por confirmar. |
+| pensao-en | dcum x : cumulative reduction |  | Original request date to be confirmed. |
+| ministerios-pt |  | 12.10.2026, 12.10.2026 |  |
+| ministerios-en |  | 12.10.2026, 12.10.2026 |  |
+
+
+| Recibo da pensão | Estado da fonte no HTML |
+|---|---|
+| penalizacao-antecipacao-um-ano-neutra/pt | Sem resposta desde 01.09.2026 |
+| penalizacao-legal-um-ano-antecipacao-2026/pt | Sem resposta desde 01.09.2026 |
+| penalizacao-antecipacao-um-ano-neutra/en | No answer since 01.09.2026 |
+| penalizacao-legal-um-ano-antecipacao-2026/en | No answer since 01.09.2026 |
+
+### As frases lidas dos recibos
+
+**agua-pt**
+
+> É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta. O valor situa-se na faixa «Qualidade do serviço mediana» da ERSAR: acima de vinte e até trinta por cento, incluindo o limite superior.
+
+**agua-en**
+
+> It is the share of water entering the system that is not billed by retail operators in mainland Portugal. The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment. The value falls in ERSAR’s “medium service quality” band: above twenty and up to thirty per cent, including the upper limit.
+
+**pensao-pt**
+
+> É a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.
+
+**pensao-en**
+
+> It is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.
+
+**ministerios-pt**
+
+> É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central.
+
+**ministerios-en**
+
+> It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector.
+
+### O estudo e as capturas
+
+- `pt`: `/estudos/which-door-is-yours`. A página diz: «As contagens de avisos abertos e de avisos que admitem pessoas singulares neste estudo estão por confirmar na fonte. A edição arquivada conserva o texto publicado na sua data.».
+- `en`: `/en/studies/which-door-is-yours`. A página diz: «The counts of open calls and of calls admitting natural persons in this study are to be confirmed at source. The archived edition preserves the text published on its date.».
+
+Antes: 4 capturas da construção conservada `a10b0ee3d3f9d30c9ab8b31edeb4901efb3d2199`, captadas quando o ramo estava em `a58623ac55fa35a645ec073b50d9278117b704a5`. A captura anterior não é apresentada como uma construção dessa cabeça de captura. Depois: 12 capturas, cabeça `344081c34eef1f792feef6bfd2d77fd764f7a1b5`, versão construída `344081c34eef1f792feef6bfd2d77fd764f7a1b5`. Problemas de navegação ou transbordo medidos: 0. Foram inspecionadas visualmente as capturas da água e da pensão em largura estreita e a área em largura larga; a geometria das restantes foi medida pelo navegador. A primeira inspeção visual apanhou a figura adiada da pensão em branco numa captura. O guião passou a esperar pela descodificação das imagens e repetiu o conjunto; os estados de carga ficam em g/capturas.json. Esta correção da medição foi registada antes da nova corrida integral. A tentativa anterior passou os passos individuais mas fechou na guarda D porque o construtor editou o guião durante as conferências; não se aproveita essa corrida como verde. Os HTML completos ficam junto das capturas medidas.
+
+| Captura | Largura | Largura do documento | sha256 |
+|---|---|---|---|
+| design/especime-v3/capturas/rp4n-2026-10-06/g-antes/area-pt-390.png | 390 | 390 | 54aa6657f8bbd86a0678ad2912fa3ff862f6d0f0d9da5374f0399acc5f4cb57f |
+| design/especime-v3/capturas/rp4n-2026-10-06/g-antes/area-pt-1280.png | 1280 | 1280 | aff5b89b740f387b902d03a3afcb065f6cc2bc192022c49f726e7a9df9bb2e76 |
+| design/especime-v3/capturas/rp4n-2026-10-06/g-antes/area-en-390.png | 390 | 390 | ff7364520d573099ed7128c9ebf64f7379e01c17a461d07c882c350945bb04ff |
+| design/especime-v3/capturas/rp4n-2026-10-06/g-antes/area-en-1280.png | 1280 | 1280 | 8c0551fddbbe9bb086c968cdc691a20d4ba31bcb887b6c21c8ec808a40002d66 |
+| design/especime-v3/capturas/rp4n-2026-10-06/g/agua-pt-390.png | 390 | 390 | 4e1d00f2a9db27936e73149c9c0eda3cad8506196d3528f06ca623f2b60c35cf |
+| design/especime-v3/capturas/rp4n-2026-10-06/g/agua-pt-1280.png | 1280 | 1280 | 4e41a7050cd7af1244d1b0e783fedf701fb9bee86c80c2216d3a4ca3356ca004 |
+| design/especime-v3/capturas/rp4n-2026-10-06/g/agua-en-390.png | 390 | 390 | 7b1bac95beff472368175c1e3985c3d13d5fc1eb62ef3f202697e0b7516e962a |
+| design/especime-v3/capturas/rp4n-2026-10-06/g/agua-en-1280.png | 1280 | 1280 | 1432393ae1e99fb9934d51118436c87873a96a8da8450335c68a2abed358bf2c |
+| design/especime-v3/capturas/rp4n-2026-10-06/g/corte-pt-390.png | 390 | 390 | 62cd01890722e1f0c1ef37421f2879793262b2c3daae11e50163d0e4ee33b4b6 |
+| design/especime-v3/capturas/rp4n-2026-10-06/g/corte-pt-1280.png | 1280 | 1280 | 18911c809d1abae685d967af559a538073acf78e34d80960080d2e3f6d347350 |
+| design/especime-v3/capturas/rp4n-2026-10-06/g/corte-en-390.png | 390 | 390 | f9f858bb3e1c607f44df68101bb8fbdda93ef23f6a7cf49bdcd44ea8aa561623 |
+| design/especime-v3/capturas/rp4n-2026-10-06/g/corte-en-1280.png | 1280 | 1280 | bcd851a9531b60f913f32f33f9ecdb8e3748a6d9644dad5faacf9157ca4bdb9a |
+| design/especime-v3/capturas/rp4n-2026-10-06/g/area-pt-390.png | 390 | 390 | cea59c8df0cc127dabb46b982cefec57e2ff9b1f7d73cff3f8165e3a55b83563 |
+| design/especime-v3/capturas/rp4n-2026-10-06/g/area-pt-1280.png | 1280 | 1280 | 8b461c25f19571bf8d960d95f2de781d17f261f1f412af59f4a2a7652bee09c0 |
+| design/especime-v3/capturas/rp4n-2026-10-06/g/area-en-390.png | 390 | 390 | 5ac779906129f4d02e1a6ba92e23ddb586d41645a818a76b1bb5678d24e8c305 |
+| design/especime-v3/capturas/rp4n-2026-10-06/g/area-en-1280.png | 1280 | 1280 | f9c9cfc5b6765284c2cfb9f0156c89d59ba8625459a2bdfdce32359ba82188ec |
+
+### Portões e reconferências
+
+
+| Ficheiro | Código lido |
+|---|---|
+| build | 0 |
+| verify | 0 |
+| typecheck | 0 |
+| motor | 0 |
+| series | 0 |
+| cruzamento | 0 |
+
+Os portões inteiros correram sob a tranca comum. As séries e o cruzamento correram com RESEARCHHUB_DIR, este último com --with-origin, e os registos escrevem as duas cabeças antes e depois. Depois do commit de entrega, estas duas conferências voltam a correr na cabeça final; os seus códigos e cabeças são comunicados na resposta, sem alterar outra vez este anexo.
+
+
+| Tentativa | build | verify | typecheck |
+|---|---|---|---|
+| portoes-g-tentativa1 | 1 | 125 | 0 |
+| portoes-g-tentativa2 | 1 | 125 | 0 |
+| portoes-g-tentativa3 | 1 | 125 | 0 |
+| portoes-g-tentativa4 | 1 | 125 | 0 |
+| portoes-g-tentativa5 | 0 | 1 | 0 |
+| portoes-g-tentativa6 | 0 | 1 | 0 |
+
+As tentativas vermelhas ficam conservadas em portoes-g-tentativa*: detetaram a quebra de linha do rótulo, o reconhecimento dos ficheiros YAML na travessia as frases novas do inventário, a língua do rótulo impresso e a declaração do prazo de conclusão. Não são apresentadas como portões verdes.
+
+A varredura final leu 3196 linhas no livro bruto e 3193 publicadas, percorreu 12878 ficheiros de texto e encontrou 0 referências públicas às linhas retiradas.
+### Plantas novas ou refeitas e mensagens reais
+
+
+| Planta no sítio | Mensagem |
+|---|---|
+| ausência atribuída a publicador desconhecido | K17 · famílias · avisos-pt2030-abertos, parte 1 («A fonte publica este número sem o definir por palavras.»): a ausência não corresponde à falta do excerto |
+| ausência falsa com excerto existente | K17 · famílias · avisos-pt2030-abertos, parte 1 («A fonte publica este número sem o definir por palavras.»): a ausência não corresponde à falta do excerto |
+| ministério dividido por outro total | K17 · famílias · oe-2026-cem-euros-ministerio-administracao-interna, oe-2026-cem-euros-ministerio-agricultura-e-mar, oe-2026-cem-euros-ministerio-ambiente-e-energia, oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto, oe-2026-cem-euros-ministerio-defesa-nacional, oe-2026-cem-euros-ministerio-economia-e-coesao-territorial, oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao, oe-2026-cem-euros-ministerio-financas, oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao, oe-2026-cem-euros-ministerio-justica, oe-2026-cem-euros-ministerio-negocios-estrangeiros, oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros, oe-2026-cem-euros-ministerio-reforma-do-estado, oe-2026-cem-euros-ministerio-saude, oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social, parte 1 («É quanto vai para este ministério em cada cem euros da «D…»): cita « / oe-2026-despesa-bruta-administracao-central * 100 , 2 )», que não está no campo «check» da linha «oe-2026-cem-euros-ministerio-saude» |
+| total do mapa trocado por palavras do projeto | K17 · famílias · oe-2026-cem-euros-ministerio-administracao-interna, oe-2026-cem-euros-ministerio-agricultura-e-mar, oe-2026-cem-euros-ministerio-ambiente-e-energia, oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto, oe-2026-cem-euros-ministerio-defesa-nacional, oe-2026-cem-euros-ministerio-economia-e-coesao-territorial, oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao, oe-2026-cem-euros-ministerio-financas, oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao, oe-2026-cem-euros-ministerio-justica, oe-2026-cem-euros-ministerio-negocios-estrangeiros, oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros, oe-2026-cem-euros-ministerio-reforma-do-estado, oe-2026-cem-euros-ministerio-saude, oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social, parte 1 («É quanto vai para este ministério em cada cem euros da «D…»): cita «DESPESA TOTAL», que não está no campo «excerto» da origem «rp4n-total-ministerios» |
+| título do relatório em vez do rótulo da água (pt) | K17 · recibo · pt · agua-nao-faturada-portugal-2024: o nome na fonte não é o rótulo da medida conferido |
+| título do relatório em vez do rótulo da água (en) | K17 · recibo · en · agua-nao-faturada-portugal-2024: o nome na fonte não é o rótulo da medida conferido |
+| título do relatório em vez do rótulo da pensão (pt) | K17 · recibo · pt · penalizacao-antecipacao-um-ano-neutra: o nome na fonte não é o rótulo da medida conferido |
+| título do relatório em vez do rótulo da pensão (en) | K17 · recibo · en · penalizacao-antecipacao-um-ano-neutra: o nome na fonte não é o rótulo da medida conferido |
+| separador final solto (pt) | RP4N-f: o caminho termina num separador sem destino |
+| separador final solto (en) | RP4N-f: o caminho termina num separador sem destino |
+| selo na outra língua (pt) | RP4N-g: o selo não está na língua da edição pt |
+| selo na outra língua (en) | RP4N-g: o selo não está na língua da edição en |
+| quota contratada rotulada como aprovada | RP4N-g: o rótulo da quota não corresponde ao denominador contratado |
+| página na outra língua (agua-nao-faturada-portugal-2024, pt) | RP4N-g: a coordenada da definição não diz página na língua pt |
+| página na outra língua (penalizacao-antecipacao-um-ano-neutra, pt) | RP4N-g: a coordenada da definição não diz página na língua pt |
+| página na outra língua (agua-nao-faturada-portugal-2024, en) | RP4N-g: a coordenada da definição não diz página na língua en |
+| página na outra língua (penalizacao-antecipacao-um-ano-neutra, en) | RP4N-g: a coordenada da definição não diz página na língua en |
+| prazo de execução em vez de conclusão | RP4N-g: o nome e a quota não dizem o prazo de conclusão da computação |
+| estudo retirado da área (pt) | RP4N-g: o estudo desapareceu da área depois da retirada das contagens |
+| estudo retirado da área (en) | RP4N-g: o estudo desapareceu da área depois da retirada das contagens |
+| água no limite excluído da faixa mediana | RP4N-g: o valor da água não pertence à faixa mediana citada |
+| lei dita maior que a estimativa (pt) | K17 · recibo · pt · penalizacao-antecipacao-um-ano-neutra: a frase rendida não é a que a conta desta célula dá: «É a estimativa preliminar do grupo de trabalho da redução…» contra «É a estimativa preliminar do grupo de trabalho da redução…» |
+| valor da comparação sem token (pt) | K17 · recibo · pt · penalizacao-antecipacao-um-ano-neutra: a comparação não cita as duas linhas pelos seus tokens |
+| lei dita maior que a estimativa (en) | K17 · recibo · en · penalizacao-antecipacao-um-ano-neutra: a frase rendida não é a que a conta desta célula dá: «It is the working group’s preliminary estimate of the act…» contra «It is the working group’s preliminary estimate of the act…» |
+| valor da comparação sem token (en) | K17 · recibo · en · penalizacao-antecipacao-um-ano-neutra: a comparação não cita as duas linhas pelos seus tokens |
+| glosa alterada na sinopse (pt) | RP4N-g: a glosa alterada permanece na comparação da sinopse |
+| glosa alterada na sinopse (en) | RP4N-g: a glosa alterada permanece na comparação da sinopse |
+| página da pensão trocada | RP4N-g: o localizador da pensão não corresponde à figura e à linha conferidas |
+| rótulo da pensão atribuído a outra linha | RP4N-g: o localizador da pensão não corresponde à figura e à linha conferidas |
+
+O caso positivo da ausência e os três ramos da comparação também passaram. As plantas do motor foram relidas do seu registo:
+
+
+| Planta no motor | Mensagem |
+|---|---|
+| data escrita no guião em vez do pedido | RP4N-g: a data da pensão não vem do pedido que trouxe o corpo alojado |
+| pensão com valor emendado à legenda | RP4N-f: o excerto da pensão não é a legenda contígua da página |
+| segunda fonte com bytes diferentes | segunda fonte sem recibo conferido no motor |
+| excerto emendado por trechos | RO1: um excerto tem de ser uma sequência contígua, sem trechos |
+| água atribuída à APA | RO1: as origens ou os selos diferem da seleção e dos recibos |
+| água com outra página | RO1: o excerto difere da leitura literal do documento |
+| palavra acrescentada | RO1: o excerto difere da leitura literal do documento |
+| resumo de outro documento | RO1: o sha256 da origem difere do documento |
+| cliente inventado | RO1: as origens ou os selos diferem da seleção e dos recibos |
+| origem apagada | RO1: as origens ou os selos diferem da seleção e dos recibos |
+| caminho fora do motor | RO1: o ficheiro da origem não existe dentro do motor |
+
+### Trailers e privacidade
+
+Na cabeça do código, 69 commits desde a base e 69 trailers Claude-Session lidos pelo Git; 0 falhas de presença ou adjacência. A saída literal está em `g/trailers-codigo.log`, obtida com `git log --format=%(trailers:key=Claude-Session) b84d21a3..HEAD`.
+
+| Conferência de privacidade | Saída |
+|---|---|
+| historico_grep_c | 0 |
+| diff_grep_c | 0 |
+| cabeca_sem_excecoes_grep_c | 0 |
+| legados_ficheiros | 16 |
+
+Padrões: utilizador, casa, temporario, projetos, worktrees. A lista herdada, saída de `privacidade-g.py`, é:
+
+- `design/especime-v3/briefs/BRIEF-auditoria-ux-2026-08-25.md:61`.
+- `design/especime-v3/briefs/BRIEF-etapa-2.md:66`.
+- `design/especime-v3/briefs/BRIEF-mapa-navegacao-M4.md:7`.
+- `design/especime-v3/briefs/BRIEF-maquetas.md:7`.
+- `design/especime-v3/briefs/BRIEF-maquetas.md:120`.
+- `design/especime-v3/critica/2026-09-04-fable-leitor-no-navegador.md:11`.
+- `design/especime-v3/critica/2026-09-08-sonnet-medicao-f11e-distritos.md:20`.
+- `design/especime-v3/critica/LEITURA-c1-2026-09-28.md:129`.
+- `design/especime-v3/critica/LEITURA-rp1bc-2026-09-26.md:40`.
+- `design/especime-v3/medicoes/b1-2026-09-21/prompts/PROMPT-b1-opus-peca2-correcao.md:13`.
+- `design/especime-v3/medicoes/b1-2026-09-21/prompts/PROMPT-b1-opus-peca2-correcao.md:34`.
+- `design/especime-v3/medicoes/correcoes-ux-M3-sonnet.md:319`.
+- `design/especime-v3/medicoes/fontes-308-2026-08-26.md:357`.
+- `design/especime-v3/medicoes/p1-2026-09-15/contagens-antes.txt:2`.
+- `design/especime-v3/medicoes/parte3-M1-sonnet.md:6`.
+- `design/especime-v3/medicoes/parte3-M2-sonnet.md:6`.
+- `design/especime-v3/medicoes/rp1-2026-09-26/prompts/PROMPT-rp1c-codex.md:24`.
+- `design/observatorio/evora/BRIEF-E1-evora-2027.md:13`.
+
+### Mapa completo da reescrita
+
+| Antiga | Nova |
+|---|---|
+| 0775309eb34c6bfc918b6ba9aa7ddb859542fae6 | 0775309eb34c6bfc918b6ba9aa7ddb859542fae6 |
+| 0279a053db27fa7cbfef2ba447b750747da8b21a | 0279a053db27fa7cbfef2ba447b750747da8b21a |
+| 892dfa0ac0604eda61bb92e19bdd296630c6baa8 | 892dfa0ac0604eda61bb92e19bdd296630c6baa8 |
+| 5e8d9b1493ba116bc50207f655a13fca5fe0894b | 5e8d9b1493ba116bc50207f655a13fca5fe0894b |
+| ba3c557393647c23e9dc0c621016f5d0f0da05fe | ba3c557393647c23e9dc0c621016f5d0f0da05fe |
+| ac383ec624631d25285b41ce07a8969b170cf2ac | ac383ec624631d25285b41ce07a8969b170cf2ac |
+| 58192aeb5a5a66c9dbae11bbfb2b2d47825a2496 | 58192aeb5a5a66c9dbae11bbfb2b2d47825a2496 |
+| 862c26f0f268c242e9507a09555f80adb22e613d | 862c26f0f268c242e9507a09555f80adb22e613d |
+| 32578d1ddd7a6a686c9ecdbde36ec6a326f8147b | 32578d1ddd7a6a686c9ecdbde36ec6a326f8147b |
+| 91c2871c96abf54d6e996492c8fba422c1c800f1 | 2ffa3e311ae822278c1b2a07262f2346d26d244b |
+| 6c9a90465ccbd1d2f9021cafa660f4f8d1e09f2b | 4ea6ce486c7251fe56f81c9fe65f02a1a61d9198 |
+| 7399a556ca1bfd4b6322f4d43af88d422471de6c | b98aa6e8857e32d251f10b215c418988c9ae0b94 |
+| 2a35e83cbc26a6ba7669f61281ae54f3a193eb03 | 3ec7bf6fb4e271ce45967c7052db8e5d0a659b80 |
+| c62d323fd614a0b6b05578807562b896a81915da | 5b03263f1d3e0f68470367130e17c87e2a2a1fb1 |
+| 44c6ddc15a9b750dd5bbb9535ff138b2daeecb77 | 11ecc41d9be047a3fddf5d29003342c7326a4463 |
+| d57d91bd897edeeaf3ee0781642cf2e239f5a89a | 097e5c3403c712e98dff3dad53794077fd9dfed5 |
+| 8381f17adaf62cbac4c1c8c9e93bba4881725dca | 0d71a2c552f4a92ae802a13850a0a21b0f404348 |
+| 5a2baef72009bc1b0080100901693b36d0f73277 | 98a90cd74b6ccda5fb5d3ace068e97bbcd4a5dac |
+| 3f8eb89bd837eccf230c63759c0ef8b5ebe72328 | 84bf61357f156c54653bc1340ed95fc200d3f837 |
+| bcbfcc713edbe5c6d7fb57de9123c1375c7ab098 | e51faedcdfc04217a2ecbe28b9357f73291e2f3a |
+| b1962dfabb5167968a1bdb4ace7574c514798e3f | d14e621f46303770690bba1c13d569f4f1213580 |
+| 06b988e09a4f76568eb5342fc9f4632c86ab4c1d | 4d36ce02c29722416f5c92cddd4cdf4a4ef2c881 |
+| c5278bef74106b59767d88968ba1f53615604a75 | dca49e935109778c8f29aedd9fdfa6c93179cac5 |
+| 028f8bfd57c5969368f94a360f96ab98e88fb9f7 | 966cfc3c6b84f9883833d503fec2e0b9c8b0e1f8 |
+| c5b08875b164ac3cad264445c8108f4aa8d499e8 | b0d85b09379f6af3c01a85dc4cf1e36ce861a094 |
+| 46fc3ec5060b6174a6a56c70bbcc68c692722295 | eeb23e13bd305c07d8d1cc13ab9c124e28e74431 |
+| b76e370a946db5122eb3816ee8872056c1e54a32 | 4aaa2ac3742b3ae563704269bb5a1bd869e83e75 |
+| 723b1f732a5af6d8b54cc413e3aca38c120ef7de | 6f98ab805480c37cca3f1e28b8d69df166996e5d |
+| 621e9cb4be383229d80364a204c9690889769ab3 | b14017fc6659cc74a5ff8f31f5e12a7d8f79fcce |
+| ba3df6a4b1870bd19546e83fde418d5f515be78f | dfb3bb65b0907baeeaf59e242f327119c231f903 |
+| 2d4565d178acb48e0ce3b1ebe2b4a2a6e94e4d49 | 1288e95d7b3a71a4cc35bfa117efadefe5813668 |
+| 155dbf8117e718b8d1b0742f99204c40bb98aab1 | 6b28e6c24b18c155fe1a034477d42a22ed9637e1 |
+| de26e52bf675478ee1af329b62abd45293ae8a6f | 219ff1db4d04bc058a97cbff3b11006243dc7837 |
+| b588abcf7227cf9e343c93f1c8e34955647766f1 | 411d82adb5aecf1e0439e3208fff9549a505a62d |
+| d07806c81c778b3392776bb34d7558493a60ffc5 | 1760f21e9df3f3b3b99b2b5e67f8589b79d83b21 |
+| 77b90814ea5c18c05d545e4bbb34278576ee6857 | cedd13a41cc8a0ddcb256641ac4d54b3e12c796e |
+| 91fd9d3aa3bf6727f5c327787055bad0989a8677 | 07a9179f3cc5748c6c3cdfb32efcc6f02d2a5ca1 |
+| c0aae32740eff8292ca0679537b90e595352d418 | 8a0d914f9b1cc95659c679fa901dbd7a199e99bd |
+| 79e98237bc904fed4da1a2b1ed7365641e5844e8 | 5fdf6fc0472aa1fa6f667ef68988e021ebe99ddb |
+| a73fc55ace8dab236e92d1a42b1e2ad475cf1081 | 525ddcc528b3cf9989ddd649c42109b9b609aa48 |
+| 281b3a77e9b625d7e9308b4b19326a9ee4152e0c | 8b824dc08056e8cd749fb6354ed74e93dc8a86c8 |
+| 6f950485dcd4c31f7b035b5216e63a1871ab1cc2 | 008a0a01abac9d20811669256c7e7c0a593f7581 |
+| a10b0ee3d3f9d30c9ab8b31edeb4901efb3d2199 | f06d8763e252d9149674eff7fd3e3b215b1014f6 |
+| 5ddb51449330c2dda319b7e28a05c1913fefd9fd | db4b55d85cf1214c04e9c5c32c15f0edba075420 |
+| 7d8994e835ee70b4673fc76fa2385713365917dc | 478c83688116401055a7ba26b9aa3318d59f1d37 |
+
+### Commits desta passagem
+
+| sitio | Mensagem |
+|---|---|
+| 071b9dfdade099b5b6b522da8dd376ecc80084b5 | docs(rp4n-g): registar a leitura, as plantas e o mandato |
+| 9d907997bbd35f0392da8533766351614e04fda9 | fix(rp4n-g): preferir o rótulo da medida ao título do documento |
+| a58623ac55fa35a645ec073b50d9278117b704a5 | fix(rp4n-g): render o selo na língua de cada edição |
+| c5e5738785d468a640e4567e8f55b94c08ce4f4f | test(rp4n-g): provar a ausência válida e os caminhos das duas edições |
+| 992ecd5acd24277eb32e7084bd04ca96eaaa74a9 | fix(rp4n-g): dizer contratado na unidade da execução PRR |
+| 2bea05413c13608e90ee8980e4ad9c7274a33811 | fix(rp4n-g): separar a coordenada do documento e traduzir página |
+| be7f53f398c0acf43c0632db84b6be27d8f45783 | fix(rp4n-g): alinhar o prazo PRR com a conclusão da computação |
+| a925f0e14cf861f75f1696a270e9d177a7f7037b | test(rp4n-g): conferir todos os padrões de privacidade na cabeça |
+| 0fbabb73df50ef1da36d7ca0fd1c6a645022e05a | fix(rp4n-g): conservar o estudo na área e declarar as contagens ausentes |
+| a33711176a3eb9781c258ba09a075672e2800955 | fix(rp4n-g): situar a água na faixa mediana selada pela ERSAR |
+| 78050c6439436bb02471aee8ac8925bed912e6a4 | fix(rp4n-g): apoiar a quota dos ministérios na DESPESA TOTAL do mapa |
+| 8158c866e2e4922b18eb06d91446d10f3baeaaad | fix(rp4n-g): comparar por tokens a penalização legal e a estimativa neutra |
+| ea709d649952f101f262be4006218d0d0e1a2222 | fix(rp4n-g): declarar os tipos da comparação e da coordenada |
+| 6d4c59965a526e0db8f2b15245fb7e0bc828d151 | fix(rp4n-g): retirar a data da pensão sem pedido bem-sucedido |
+| 67d22d625e30d1fcc9371c554ae6fb78495ee88f | fix(rp4n-g): conservar o rótulo matemático da pensão numa linha |
+| f591e2cfdc3a2cac857ea46b63dd474ab5816943 | fix(rp4n-g): reconhecer os rótulos dos YAML atravessados por inteiro |
+| ce1cf8d1816fce004255009cb17f3d288ebc8701 | test(rp4n-g): provar os tokens da comparação e as duas edições |
+| be0d0b54d3e17f71cf41d04b4e8141bd39ac24cb | fix(rp4n-g): conferir a ausência do estudo e a glosa nas sinopses |
+| 1b08a019d0400b7289ffc1639e536c0a69b558b7 | test(rp4n-g): preparar a medição das frases e as capturas finais |
+| 793d2d7eba2ae075b89cdef47a29c409cced1244 | fix(rp4n-g): declarar a língua do rótulo impresso da pensão |
+| e0e45accac3b19d96a0600ea2a287fbcc8d9b66d | test(rp4n-g): declarar os rótulos medidos do prazo de conclusão |
+| e1c0959a0dd324120df160e3f19a68a7df2c767f | fix(rp4n-g): apoiar a explicação nas classificações das fontes |
+| 6ab47eddb628edfcb2811f3631208aabc51d1dd8 | test(rp4n-g): conferir o localizador da figura da pensão no índice |
+| 344081c34eef1f792feef6bfd2d77fd764f7a1b5 | test(rp4n-g): esperar pelas imagens antes das capturas integrais |
+
+
+| motor | Mensagem |
+|---|---|
+| a5c4eadf7deb83d85e7369e49168e499c1d73118 | fix(rp4n-g): conferir o nome da pensão na figura alojada |
+| 71a2be5f18d867a0e4010af467a0d892aa3780f5 | fix(rp4n-g): alinhar a unidade da quota PRR com o contratado |
+| b0276ebe8c9e9d5fa5aa2934acb35c922061329a | fix(rp4n-g): selar a faixa mediana da água no Quadro 47 |
+| 3e96a5e248d1d20129905f0b2fe31ad124566acd | fix(rp4n-g): prender a quota orgânica à DESPESA TOTAL do MAPA 4 |
+| 9d56c0f1785c2e3719d741608895e5cfd015ffd4 | fix(rp4n-g): exigir o pedido para datar a cópia das pensões |
+| 542fe4ee9d67ecf2245892fd98ccd1c442829704 | fix(rp4n-g): registar os resumos da releitura do MAPA 4 |
+
+O commit final de provas, que contém esta tabela, é identificado na resposta de entrega.
+
+### Custo
+
+A linha «tokens used» não estava disponível no registo visível da execução ao preparar este relatório. O custo e o cumprimento do alvo não ficam demonstrados; não foi inventada uma contagem.

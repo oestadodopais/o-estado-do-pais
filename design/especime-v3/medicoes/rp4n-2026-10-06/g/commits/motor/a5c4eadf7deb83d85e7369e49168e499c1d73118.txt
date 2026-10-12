@@ -1,0 +1,3 @@
+a5c4eadf7deb83d85e7369e49168e499c1d73118
+fix(rp4n-g): conferir o nome da pensão na figura alojada
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>

@@ -1,0 +1,4 @@
+0fbabb73df50ef1da36d7ca0fd1c6a645022e05a
+fix(rp4n-g): conservar o estudo na área e declarar as contagens ausentes
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444
