@@ -180,6 +180,8 @@ function recorte(html, marca) {
  *  de lá: uma régua que importasse a função da página confirmava-a em vez de a
  *  conferir. */
 function estadoEsperado(claim) {
+  // RP4-n-i: o estado do endereço não regista uma leitura própria da cópia.
+  if (claim.access_date_kind === 'hosted-copy' && !(claim.verifications ?? []).length) return null;
   const u = claim?.source_url;
   if (typeof u !== 'string' || !u.startsWith('http')) return null;
   const pedido = u.split('#')[0];
