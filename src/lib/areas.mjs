@@ -147,6 +147,17 @@ function pecasDaArea(area, claims) {
     }
   }
 
+  // A matéria pode declarar o estudo, independentemente das linhas publicáveis.
+  for (const m of area.materias) for (const r of m.regras) {
+    if (!('listarEstudo' in r) || r.listarEstudo !== true) continue;
+    for (const id of r.estudos ?? []) {
+      const w=WORKS.find(w=>w.id===id);
+      if (!w) throw new Error(`Área: estudo declarado inexistente ${id}`);
+      const p=trabalhos.get(id) ?? {id,slug:w.slug,linhas:[],materias:new Set()};
+      p.materias.add(m.materia);trabalhos.set(id,p);
+    }
+  }
+
   /* AS MEDIDAS AGRUPAM-SE PELA MATÉRIA QUE AS PÔS AQUI (decisão do lugar de
      direção, 28.08.2026). A ordem dos grupos é a das matérias declaradas, e a
      ordem dentro de cada grupo é a do livro-razão. Um grupo sem medidas não

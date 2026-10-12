@@ -459,6 +459,10 @@ export const WORKS = [
   },
   {
     id: 'which-door-is-yours',
+    ausenciaAtual: {
+      pt: 'As contagens de avisos abertos e de avisos que admitem pessoas singulares neste estudo estão por confirmar na fonte. A edição arquivada conserva o texto publicado na sua data.',
+      en: 'The counts of open calls and of calls admitting natural persons in this study are to be confirmed at source. The archived edition preserves the text published on its date.',
+    },
     slug: 'which-door-is-yours',
     tema: 'investimento',
     editions: [
