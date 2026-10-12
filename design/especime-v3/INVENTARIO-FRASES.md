@@ -4243,5 +4243,5 @@ As frases já publicadas nas páginas dos concelhos, nas duas edições, e confe
 
 | tipo | frase | bloco | estado | razão |
 |---|---|---|---|---|
-| conteudo | 3 194 afirmações · 366 de 3 194 calculadas · 2 767 de 3 194 linhas de concelhos | rp4ne | viva | Contagem lida do HTML construído depois da retirada das condutas; o livro conserva a linha retirada. |
-| conteudo | 3 194 claims · 366 of 3 194 calculated · 2 767 of 3 194 municipality rows | rp4ne | viva | Contagem lida do HTML construído depois da retirada das condutas; o livro conserva a linha retirada. |
+| conteudo | 3 193 afirmações · 366 de 3 193 calculadas · 2 767 de 3 193 linhas de concelhos | rp4ne | viva | Contagem lida do HTML construído depois da retirada das condutas; o livro conserva a linha retirada. |
+| conteudo | 3 193 claims · 366 of 3 193 calculated · 2 767 of 3 193 municipality rows | rp4ne | viva | Contagem lida do HTML construído depois da retirada das condutas; o livro conserva a linha retirada. |
