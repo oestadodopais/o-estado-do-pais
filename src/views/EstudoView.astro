@@ -99,6 +99,7 @@ const jsonld = {
 ---
 <Base lang={lang} path={path} title={`${jsonld.headline} · ${SITE_NAME}`}
   description={work.description[lang]} jsonld={jsonld} noindex={!indexavel(work)}>
+  {work.ausenciaAtual && <p class="estudo-descricao" data-ausencia-atual>{work.ausenciaAtual[lang]}</p>}
   {registo ? (
     <div class="estudo-b1 texto-corpo" style={`--seccoes: ${seccoes}`} data-seccoes={seccoes}>
       <div id="documento" data-registo-edicao={chave}>

@@ -1,0 +1,5 @@
+d07806c81c778b3392776bb34d7558493a60ffc5
+fix(rp4n-f): alinhar a língua com AA08b e com os avisos retirados
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

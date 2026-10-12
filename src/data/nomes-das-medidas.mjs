@@ -1,3 +1,4 @@
+import { getClaim } from '../lib/ledger.mjs';
 import { NOMES_RP1 } from './medidas-rp1.mjs';
 import { NOMES_OE1 } from './medidas-oe1.mjs';
 /**
@@ -129,8 +130,12 @@ export const NOMES_DO_PROJETO = {
     en: 'Pension sustainability factor',
   },
   'penalizacao-antecipacao-um-ano-neutra': {
-    pt: 'Corte na pensão por um ano de antecipação, sem custo para o sistema',
-    en: 'Pension cut for one year of early retirement, at no cost to the system',
+    pt: 'Redução atuarialmente neutra da pensão por um ano de antecipação (estimativa do grupo de trabalho)',
+    en: 'Actuarially neutral pension reduction for one year of early retirement (working group estimate)',
+  },
+  'penalizacao-legal-um-ano-antecipacao-2026': {
+    pt: 'Penalização legal por um ano de antecipação, sem o fator de sustentabilidade (cerca de)',
+    en: 'Statutory penalty for one year of early retirement, excluding the sustainability factor (approximately)',
   },
   'penalizacao-antecipacao-um-ano-sem-factor-2026': {
     pt: 'Corte na pensão por um ano de antecipação, sem o fator de sustentabilidade',
@@ -399,16 +404,16 @@ export const NOMES_DO_PROJETO = {
   /* ------------------------------ o concelho de Évora: o Plano de Recuperação */
   'evora-prr-aprovado-2026': {
     /* R2 (03.10.2026, achado 25): a sigla por extenso no nome de cada cartão, porque cada cartão se lê sozinho. */
-    pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) aprovadas para Évora',
-    en: 'Recovery and Resilience Plan (PRR) funds approved for Évora',
+    pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) contratadas por beneficiários intermediários e diretos com sede em Évora',
+    en: 'Recovery and Resilience Plan (PRR) funds contracted by intermediate and direct beneficiaries headquartered in Évora',
   },
   'evora-prr-pago-2026': {
-    pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) pagas em Évora',
-    en: 'Recovery and Resilience Plan (PRR) funds paid in Évora',
+    pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) pagas a beneficiários intermediários e diretos com sede em Évora',
+    en: 'Recovery and Resilience Plan (PRR) funds paid to intermediate and direct beneficiaries headquartered in Évora',
   },
   'evora-prr-vencido-aprovado-2026': {
-    pt: 'Verbas aprovadas em projetos fora de prazo',
-    en: 'Approved funds in projects past their deadline',
+    get pt() { return 'Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo de conclusão anterior à data do instantâneo e sem conclusão registada, no instantâneo de ' + dataDoInstantaneoPRR(); },
+    get en() { return 'Funds contracted by intermediate and direct beneficiaries headquartered in Évora, in projects with a completion deadline before the snapshot date and no completion recorded, in the snapshot of ' + dataDoInstantaneoPRR(); },
   },
   'evora-prr-municipio-contratado': {
     pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) contratadas pelo município de Évora',
@@ -607,12 +612,12 @@ export const NOMES_DAS_LINHAS_DERIVADAS = {
     en: 'Portfolios allocated across the executive',
   },
   'evora-prr-execucao-2026': {
-    pt: 'Parte das verbas aprovadas que já foi paga',
-    en: 'Share of approved funds already paid',
+    pt: 'Parte das verbas contratadas por beneficiários intermediários e diretos com sede em Évora que já foi paga',
+    en: 'Share of funds contracted by intermediate and direct beneficiaries headquartered in Évora already paid',
   },
   'evora-prr-vencido-quota-2026': {
-    pt: 'Parte das verbas aprovadas em projetos fora de prazo',
-    en: 'Share of approved funds in projects past their deadline',
+    pt: 'Parte das verbas contratadas em projetos com prazo anterior ao instantâneo e sem conclusão registada',
+    en: 'Share of contracted funds in projects with a deadline before the snapshot and no completion recorded',
   },
   /* SEM O NOME DO PROGRAMA, e a razão é a regra dos algarismos: «Portugal 2030»
      traz um número que não é uma medição e não resolve em linha nenhuma, e o
@@ -622,11 +627,11 @@ export const NOMES_DAS_LINHAS_DERIVADAS = {
      que a proveniência deixar de ser o marcador deste projeto. */
   'avisos-pt2030-abertos': {
     pt: 'Avisos de candidatura abertos',
-    en: 'Open calls for applications',
+    en: 'Open application notices',
   },
   'avisos-pt2030-pessoas-singulares': {
     pt: 'Avisos abertos a pessoas singulares',
-    en: 'Open calls for individuals',
+    en: 'Open notices for individuals',
   },
   'ciclo-substituicao-condutas': {
     pt: 'Ciclo de substituição das condutas',
@@ -659,4 +664,12 @@ for (const id of Object.keys(NOMES_DAS_LINHAS_DERIVADAS)) {
       `nomes-das-medidas: a linha "${id}" está nas duas tabelas, e cada uma rende noutra forma.`,
     );
   }
+}
+
+/** A data vem da computação da própria linha. @returns {string} */
+function dataDoInstantaneoPRR() {
+ const d=/** @type {any} */ (getClaim('evora-prr-vencido-aprovado-2026').document).computed_over.files;
+ const data=d[0]?.snapshot_date;
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(data ?? '') || !d.every((/** @type {{snapshot_date:string}} */ x)=>x.snapshot_date===data)) throw Error('PRR: falta uma data única do instantâneo');
+ return data.split('-').reverse().join('.');
 }

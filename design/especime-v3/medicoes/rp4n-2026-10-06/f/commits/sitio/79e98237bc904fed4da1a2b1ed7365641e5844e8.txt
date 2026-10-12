@@ -1,0 +1,5 @@
+79e98237bc904fed4da1a2b1ed7365641e5844e8
+fix(rp4n-f): conferir a cópia local e a unidade legal em todas as células
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

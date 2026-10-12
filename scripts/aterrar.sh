@@ -28,7 +28,7 @@
 #   6. diz o endereço da corrida de main, sem esperar por uma prova repetida.
 #
 # Nenhum caminho desta máquina fica escrito aqui: a árvore principal lê-se do Git,
-# o motor lê-se de OEDP_MOTOR ou de $HOME/Instruments/ResearchHub, e os registos
+# o motor lê-se de OEDP_MOTOR ou como irmão da árvore principal, e os registos
 # vão para uma pasta temporária nova, que o guião diz no começo.
 #
 # uso: zsh scripts/aterrar.sh [--ensaio] <ramo do sítio> <cabeça curta> [<ramo do motor>|-]
@@ -45,7 +45,7 @@ RAMO="$1"; CAB="$2"; RAMO_MOTOR="${3:--}"
 REPO=oestadodopais/o-estado-do-pais
 AQUI="$(cd "$(dirname "$0")" && pwd)"
 SITIO="$(git -C "$AQUI" worktree list --porcelain | awk '/^worktree /{print substr($0, 10); exit}')"
-MOTOR="${OEDP_MOTOR:-$HOME/Instruments/ResearchHub}"
+MOTOR="${OEDP_MOTOR:-$(dirname "$SITIO")/ResearchHub}"
 LOGS="$(mktemp -d "${TMPDIR:-/tmp}/oedp-aterragem.XXXXXX")"
 agora() { date -u +%H:%M:%S; }
 para() { echo "PAROU: $2 (código $1) · registos em $LOGS"; exit "$1"; }

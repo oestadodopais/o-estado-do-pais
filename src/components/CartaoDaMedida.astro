@@ -114,7 +114,7 @@ import { TERMOS_DOS_CARTOES } from '../data/termos-dos-cartoes.mjs';
 const { linha: c, lang = 'pt', leitura: comLeitura = false, referencia: comReferencia = false, termo = null, ...resto } = Astro.props;
 const s = t(lang);
 
-const unidade = unidadeDaLinha(c.unit, lang);
+const unidade = unidadeDaLinha(c.unit, lang, c.value);
 /* O PERÍODO É O CAMPO DA LINHA, e não um ano composto aqui. Vinte e uma das 131
    medidas das páginas de área não têm `reference_date`: nessas a linha do valor
    acaba na unidade, e não se lhes escreve um período. */

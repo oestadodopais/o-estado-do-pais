@@ -1,0 +1,4 @@
+c5e5738785d468a640e4567e8f55b94c08ce4f4f
+test(rp4n-g): provar a ausência válida e os caminhos das duas edições
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

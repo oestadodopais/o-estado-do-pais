@@ -1,0 +1,11 @@
+{
+  "regra_publicador_intacta": true,
+  "regra_sha256": "45e4b6fe009d868eaedfa52df6553e2f0104cf4a87f0746fdcb48896785327d5",
+  "ficheiros_motor_alterados": [
+    "content/13 Dominios/rotulos-series.json",
+    "publisher/definition_sources.json",
+    "publisher/export_series.py",
+    "publisher/jd1_test.py"
+  ],
+  "ficheiros_proibidos_alterados": []
+}

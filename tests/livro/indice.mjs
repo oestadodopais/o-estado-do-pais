@@ -245,7 +245,7 @@ const LINHAS_DA_REGUA = loadClaims();
  * coordenadas de página, 278 `Quadro_I, linha 4, coluna 13`, 7 `label`). Uma
  * forma nova entra aqui à mão, com o leitor que a escreve nomeado ao lado.
  *
- * @typedef {{id?: unknown, name?: unknown, reference_date?: unknown, document?: {locator?: unknown, page?: unknown, title?: unknown, edition?: unknown, kind?: unknown}|null}} ContextoDoLocalizador
+ * @typedef {{id?: unknown, name?: unknown, reference_date?: unknown, document?: {locator?: unknown, page?: unknown, title?: unknown, edition?: unknown, kind?: unknown, crop?: {page?: unknown}}|null}} ContextoDoLocalizador
  * @type {{ nome: string, forma: RegExp, onde: string, confere?: (onde: string, linha?: ContextoDoLocalizador) => boolean }[]}
  */
 const LOCALIZADORES_CONHECIDOS = [
@@ -290,9 +290,27 @@ const LOCALIZADORES_CONHECIDOS = [
   { nome: 'IndicadorDsg', forma: /^IndicadorDsg$/, onde: 'a resposta do json_indicador do INE' },
   { nome: 'label', forma: /^label$/, onde: 'a resposta JSON-stat do Eurostat' },
   {
+    nome: 'AA08b, Quadro 49 do RASARP, baixa continental e cobertura',
+    forma: /^p\. 106, Quadro 49, AA08 baixa, avaliação global para 93 % de EG em Portugal continental$/,
+    onde: 'publisher/rp4n_agua.py: linha AA08b relida na página alojada',
+    confere: (onde, linha) => linha?.id === 'agua-nao-faturada-portugal-2024' && linha?.document?.locator === onde,
+  },
+  {
     nome: 'p.<n>, linha <n>, campo <n>',
     forma: /^p\.\d+, linha \d+, campo \d+$/,
     onde: 'a extração de página de um PDF',
+  },
+  {
+    nome: 'página e figura da redução cumulativa da pensão',
+    forma: /^p\. 273, Figura 8\.4, rótulo da redução cumulativa$/,
+    onde: 'publisher/rp4n_pensao.py: rótulo conferido na figura alojada',
+    confere: (_onde, linha) => linha?.id === 'penalizacao-antecipacao-um-ano-neutra' && linha?.name === 'dcum x : cumulative reduction' && linha?.document?.crop?.page === 273,
+  },
+  {
+    nome: 'página e parágrafo da penalização legal',
+    forma: /^Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026\.pdf, p\. 273, parágrafo abaixo da Figura 8\.4$/,
+    onde: 'publisher/rp4n_pensao.py: nome literal conferido no parágrafo alojado',
+    confere: (onde, linha) => linha?.id === 'penalizacao-legal-um-ano-antecipacao-2026' && linha?.name === 'penalização legal' && linha?.document?.locator === onde,
   },
   {
     nome: '<folha>, linha <n>, coluna <n>',
@@ -1784,6 +1802,15 @@ async function comNavegador() {
  */
 function provaLocalizadores() {
   celula('I1p', 'as plantas dos localizadores recusam a origem desconhecida', (falhas) => {
+    const pensao = LINHAS_DA_REGUA.get('penalizacao-antecipacao-um-ano-neutra');
+    for (const [nome, localizador, linha] of [
+      ['página da pensão trocada', 'p. 272, Figura 8.4, rótulo da redução cumulativa', pensao],
+      ['rótulo da pensão atribuído a outra linha', pensao?.name_source, {...pensao, id: 'outra-linha'}],
+    ]) {
+      const mordeu = !localizadorConhecido(localizador, linha);
+      if (!mordeu) falhas.push(`RP4N-g: a planta ${nome} passou`);
+      console.log(`PLANTA ${nome}: ${mordeu ? 'RP4N-g: o localizador da pensão não corresponde à figura e à linha conferidas' : 'passou'}`);
+    }
     if (['I1', 'I3'].some((id) => !celulas.find((c) => c.id === id)?.passa)) {
       falhas.push('As plantas dos localizadores exigem I1 e I3 limpas antes do estrago.');
       return '';
@@ -1795,35 +1822,42 @@ function provaLocalizadores() {
       return { formato: formato.nome, id: linha?.id, aceite };
     });
     const estragos = [
-      ['Outra dimensão JSON-stat', 0, 'dimension.geo.category.label.GF01'],
-      ['Função fora da lista', 0, 'dimension.cofog99.category.label.GF11'],
-      ['Coluna numérica em vez do rótulo XLS', 1, 'FUNCIONAL!E2'],
-      ['Folha XLS desconhecida', 1, 'DESCONHECIDA!C2'],
-      ['Campo numérico em vez do rótulo XML', 2, 'Mapa1/Registos/Registo[1]/TotalEmEuros; Programa=P-001'],
-      ['Registo XML zero', 2, 'Mapa1/Registos/Registo[0]/DesignacaoPrograma; Programa=P-001'],
-      ['Código ministerial zero', 3, 'p. 1, POR MINISTÉRIOS, código 00'],
-      ['Total sem página', 4, 'p. , DESPESA TOTAL, última coluna'],
-      ['Página impressa trocada', 5, 'p. 49 do ficheiro, página impressa 46, Despesa efetiva, Execução Acumulada 2026'],
-      ['Coluna da síntese desconhecida', 5, 'p. 49 do ficheiro, página impressa 45, Despesa efetiva, Outra coluna 2026'],
-      ['Programa da síntese zero', 6, 'p. 72 do ficheiro, página impressa 68, programa 000, Execução Acumulada 2026'],
-      ['Localizador livre', 0, 'uma cadeia sem localizador'],
-      ['Rótulo de total inventado', 4, 'p. 6, RECEITA INVENTADA, última coluna'],
-      ['Coluna do valor orçamental disfarçada de rótulo', 1, 'FUNCIONAL!D2', 'oe-2026-despesa-funcao-01'],
-      ['JD1: página dos juros trocada', 11, 'Quadro 9, Juros (D.41), coluna 2024, p. 13', 'juros-das-administracoes-publicas-2024'],
-      ['JD1: ano do PIB trocado', 12, 'Quadro 1, Produto Interno Bruto, a preços de mercado, coluna 2025, p. 2', 'pib-nominal-notificacao-setembro-2024'],
-      ['JD1: ano da execução trocado', 13, 'Quadro 1, Conta consolidada das Administrações Públicas, execução acumulada 2026, janeiro a agosto, folha 7 do PDF (numeração impressa: 3)', 'juros-e-outros-encargos-execucao-2025-08'],
-      ['JD1: ano do custo do stock trocado', 14, 'Custo da dívida direta do Estado, Custo do stock da dívida, ponto 2026, p. 3; rótulo na coluna 104 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5', 'custo-do-stock-da-divida-direta-2025'],
-      ['JD1: coluna do custo do stock trocada', 14, 'Custo da dívida direta do Estado, Custo do stock da dívida, ponto 2025, p. 3; rótulo na coluna 114 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5', 'custo-do-stock-da-divida-direta-2025'],
-      ['JD1: dia do saldo trocado', 15, 'Movimento da dívida direta do Estado, Dívida total / Total debt, saldo em 30/ago/26, p. 2', 'divida-direta-do-estado-2026-08'],
-      ['JD1: emissões no lugar das necessidades', 16, 'Quadro 9, p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada), coluna 2025, p. 45', 'necessidades-brutas-de-financiamento-2025'],
-      ['JD1: geografia da União trocada', 17, 'freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=PT; time=2025; $.value["0"]; $.updated', 'juros-das-administracoes-publicas-2025-ue'],
-      ['JD1: célula JSON da União trocada', 17, 'freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=EU27_2020; time=2025; $.value["1"]; $.updated', 'juros-das-administracoes-publicas-2025-ue'],
+      ['Outra dimensão JSON-stat', 'dimension.cofog99.category.label.GFnn', 'dimension.geo.category.label.GF01'],
+      ['Função fora da lista', 'dimension.cofog99.category.label.GFnn', 'dimension.cofog99.category.label.GF11'],
+      ['Coluna numérica em vez do rótulo XLS', 'folha OE1 e célula do rótulo', 'FUNCIONAL!E2'],
+      ['Folha XLS desconhecida', 'folha OE1 e célula do rótulo', 'DESCONHECIDA!C2'],
+      ['Campo numérico em vez do rótulo XML', 'Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn', 'Mapa1/Registos/Registo[1]/TotalEmEuros; Programa=P-001'],
+      ['Registo XML zero', 'Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn', 'Mapa1/Registos/Registo[0]/DesignacaoPrograma; Programa=P-001'],
+      ['Código ministerial zero', 'página e código ministerial do Mapa 4', 'p. 1, POR MINISTÉRIOS, código 00'],
+      ['Total sem página', 'página, rótulo e última coluna de um total dos mapas', 'p. , DESPESA TOTAL, última coluna'],
+      ['Página impressa trocada', 'páginas 49 e 50, rótulo e coluna da síntese de agosto', 'p. 49 do ficheiro, página impressa 46, Despesa efetiva, Execução Acumulada 2026'],
+      ['Coluna da síntese desconhecida', 'páginas 49 e 50, rótulo e coluna da síntese de agosto', 'p. 49 do ficheiro, página impressa 45, Despesa efetiva, Outra coluna 2026'],
+      ['Programa da síntese zero', 'página 72, programa ou total da síntese de agosto', 'p. 72 do ficheiro, página impressa 68, programa 000, Execução Acumulada 2026'],
+      ['Página legal trocada', 'página e parágrafo da penalização legal', 'Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 272, parágrafo abaixo da Figura 8.4', 'penalizacao-legal-um-ano-antecipacao-2026'],
+      ['Figura legal trocada', 'página e parágrafo da penalização legal', 'Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, parágrafo abaixo da Figura 8.5', 'penalizacao-legal-um-ano-antecipacao-2026'],
+      ['Localizador livre', 'dimension.cofog99.category.label.GFnn', 'uma cadeia sem localizador'],
+      ['Rótulo de total inventado', 'página, rótulo e última coluna de um total dos mapas', 'p. 6, RECEITA INVENTADA, última coluna'],
+      ['Coluna do valor orçamental disfarçada de rótulo', 'folha OE1 e célula do rótulo', 'FUNCIONAL!D2', 'oe-2026-despesa-funcao-01'],
+      ['JD1: página dos juros trocada', 'JD1, juros no quadro 9 do INE', 'Quadro 9, Juros (D.41), coluna 2024, p. 13', 'juros-das-administracoes-publicas-2024'],
+      ['JD1: ano do PIB trocado', 'JD1, PIB no quadro 1 do INE', 'Quadro 1, Produto Interno Bruto, a preços de mercado, coluna 2025, p. 2', 'pib-nominal-notificacao-setembro-2024'],
+      ['JD1: ano da execução trocado', 'JD1, juros no quadro 1 da execução', 'Quadro 1, Conta consolidada das Administrações Públicas, execução acumulada 2026, janeiro a agosto, folha 7 do PDF (numeração impressa: 3)', 'juros-e-outros-encargos-execucao-2025-08'],
+      ['JD1: ano do custo do stock trocado', 'JD1, custo da dívida no gráfico do IGCP', 'Custo da dívida direta do Estado, Custo do stock da dívida, ponto 2026, p. 3; rótulo na coluna 104 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5', 'custo-do-stock-da-divida-direta-2025'],
+      ['JD1: coluna do custo do stock trocada', 'JD1, custo da dívida no gráfico do IGCP', 'Custo da dívida direta do Estado, Custo do stock da dívida, ponto 2025, p. 3; rótulo na coluna 114 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5', 'custo-do-stock-da-divida-direta-2025'],
+      ['JD1: dia do saldo trocado', 'JD1, saldo da dívida direta do IGCP', 'Movimento da dívida direta do Estado, Dívida total / Total debt, saldo em 30/ago/26, p. 2', 'divida-direta-do-estado-2026-08'],
+      ['JD1: emissões no lugar das necessidades', 'JD1, quadro anual do financiamento do IGCP', 'Quadro 9, p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada), coluna 2025, p. 45', 'necessidades-brutas-de-financiamento-2025'],
+      ['JD1: geografia da União trocada', 'JD1, coordenada dos juros da União', 'freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=PT; time=2025; $.value["0"]; $.updated', 'juros-das-administracoes-publicas-2025-ue'],
+      ['JD1: célula JSON da União trocada', 'JD1, coordenada dos juros da União', 'freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=EU27_2020; time=2025; $.value["1"]; $.updated', 'juros-das-administracoes-publicas-2025-ue'],
     ];
     const plantas = [];
     for (const [nome, grupo, valor, escolhido] of estragos) {
-      const formato = LOCALIZADORES_CONHECIDOS[grupo];
+      const formatos = LOCALIZADORES_CONHECIDOS.filter((f) => f.nome === grupo);
+      if (formatos.length !== 1) {
+        falhas.push(`A planta ${nome} exige um único formato chamado ${grupo}; encontrou ${formatos.length}.`);
+        continue;
+      }
+      const formato = formatos[0];
       const par = [...LINHAS_DA_REGUA].find(([id, linha]) =>
-        linha.study === 'oe-2026' && (!escolhido || id === escolhido) &&
+        (escolhido ? id === escolhido : linha.study === 'oe-2026') &&
         typeof linha.name === 'string' && linha.name !== linha.document?.title &&
         formato.forma.test(linha.name_source ?? '') && localizadorConhecido(linha.name_source, linha));
       if (!par) {

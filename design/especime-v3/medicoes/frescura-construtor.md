@@ -53,9 +53,9 @@ acabou, lidos dos ficheiros de registo e não de memória:
 
 | portão | comando | UTC | código de saída |
 | --- | --- | --- | --- |
-| construção | `npm run build > /tmp/f16-build.log 2>&1` | 2026-09-07 15:53:05 a 16:00:24 | **0** |
-| verificação | `npm run verify > /tmp/f16-verify.log 2>&1` | 2026-09-07 16:00:31 a 16:06:49 | **0** |
-| tipos | `npm run typecheck > /tmp/f16-typecheck.log 2>&1` | 2026-09-07 16:06:55 | **0** |
+| construção | `npm run build > <temporario> 2>&1` | 2026-09-07 15:53:05 a 16:00:24 | **0** |
+| verificação | `npm run verify > <temporario> 2>&1` | 2026-09-07 16:00:31 a 16:06:49 | **0** |
+| tipos | `npm run typecheck > <temporario> 2>&1` | 2026-09-07 16:06:55 | **0** |
 
 **O `typecheck` sai a 0 em menos de um segundo, e isso é o compilador e não uma
 régua desligada.** O `node_modules` desta árvore tem TypeScript **7.0.2**, que é

@@ -1,0 +1,9 @@
+PLANTA segunda fonte com bytes diferentes: segunda fonte sem recibo conferido no motor
+PLANTA água atribuída à APA: RO1: as origens ou os selos diferem da seleção e dos recibos
+PLANTA água com outra página: RO1: o excerto difere da leitura literal do documento
+PLANTA palavra acrescentada: RO1: o excerto difere da leitura literal do documento
+PLANTA resumo de outro documento: RO1: o sha256 da origem difere do documento
+PLANTA cliente inventado: RO1: as origens ou os selos diferem da seleção e dos recibos
+PLANTA origem apagada: RO1: as origens ou os selos diferem da seleção e dos recibos
+PLANTA caminho fora do motor: RO1: o ficheiro da origem não existe dentro do motor
+ORIGENS: PASS, 27 origens, 7 plantas

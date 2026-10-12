@@ -5,6 +5,7 @@ import { parse } from 'node-html-parser';
 import { conferirAuditoriaDasFamilias } from '../cartao/familias.mjs';
 import { nomeNaLista } from '../../src/lib/primeira-pagina.mjs';
 import { t } from '../../src/i18n/strings.mjs';
+import { loadClaims } from '../../src/lib/ledger.mjs';
 
 const normal = s => String(s ?? '').replace(/\s+/g, ' ').trim();
 const numero = s => Number(normal(s).replaceAll(' ', '').replace('−','-').replace(',','.'));
@@ -137,17 +138,17 @@ export function conferirOQueENasMudancas(root, lang, rota, dist, prova = estado(
   return erros;
 }
 
-/** Plantas em memória: os recibos reais fornecem tanto a frase confirmada como a marcada. */
+/** Plantas em memória: o recibo real fornece a frase; a cópia da auditoria declara a ausência plantada. */
 export function plantasDoOQueE(dist) {
   const prova=estado(), plantas=[];
   for(const [lang,f,rota] of [['pt','explicacoes/leitura-da-semana/index.html','leituraDaSemana'],['en','en/explainers/weekly-reading/index.html','leituraDaSemana'],['pt','indice/index.html','indice'],['en','en/index/index.html','indice']]) {
     const html=fs.readFileSync(path.join(dist,f),'utf8');
     const controlo=conferirOQueENasMudancas(parse(html),lang,rota,dist,prova);
     const raiz=parse(html), original=raiz.querySelector('main [data-o-que-e]');
-    const regista=(nome,base,estraga,mensagem) => {
-      const r=parse(base), limpo=conferirOQueENasMudancas(r,lang,rota,dist,prova);
+    const regista=(nome,base,estraga,mensagem,estadoDaPlanta=prova) => {
+      const r=parse(base), limpo=conferirOQueENasMudancas(r,lang,rota,dist,estadoDaPlanta);
       estraga(r);
-      const q=conferirOQueENasMudancas(r,lang,rota,dist,prova);
+      const q=conferirOQueENasMudancas(r,lang,rota,dist,estadoDaPlanta);
       plantas.push({nome:`${nome}, ${rota}, ${lang}`,mensagem,queixa:q.join(' | '),mordeu:!controlo.length&&!limpo.length&&q.some(x=>x.includes(mensagem))});
     };
     if(original) {
@@ -167,16 +168,18 @@ export function plantasDoOQueE(dist) {
       regista('uma palavra trocada no sinal',html,r=>r.querySelector('[data-o-que-e-sinal]').set_content('Ontem.'),'o sinal mostrado não é o do recibo');
       regista('o sinal em falta no grupo',html,r=>r.querySelector('[data-o-que-e-sinal]').remove(),'o grupo não tem os sinais dos recibos');
     }
-    const id=[...prova.porConfirmar][0];
-    if(!id) throw Error('W4 · a planta exige uma linha realmente marcada pela auditoria');
+    // Com todas as definições públicas confirmadas, a ausência continua a ser plantada num recibo real.
+    const id=[...prova.porConfirmar][0] ?? original?.getAttribute('data-o-que-e') ?? [...loadClaims().keys()].find(chave=>fs.existsSync(path.join(dist,lang==='en'?'en/ledger':'livro-razao',chave,'index.html')));
+    if(!id) throw Error('W4 · a planta exige uma linha com recibo real');
+    const provaAusencia={...prova,porConfirmar:new Set([...prova.porConfirmar,id])};
     const recibo=parse(fs.readFileSync(path.join(dist,lang==='en'?'en/ledger':'livro-razao',id,'index.html'),'utf8'));
     const frase=recibo.querySelector('[data-o-que-e-parte="o-que-e"]');
     frase.querySelectorAll('[data-por-confirmar-na-fonte]').forEach(x=>x.remove());
     const item=`<li data-correcao-entrada="${id}" data-semana-mudanca="${id}"><span data-correcao-campo="old_value">1</span><span data-correcao-campo="new_value">2</span><p data-o-que-e-por-confirmar="${id}">${t(lang).semana.oQueEPorConfirmar}</p></li>`;
     const base=`<main><ol ${rota==='indice'?'data-mudou-ambito="indice"':'data-semana-mudancas'}>${item}</ol></main>`;
-    regista('uma frase por confirmar publicada',base,r=>{const p=r.querySelector('p');p.removeAttribute('data-o-que-e-por-confirmar');p.setAttribute('data-o-que-e',id);p.set_content(frase.innerHTML);},'a frase está por confirmar na fonte; exige a ausência e recusa a frase');
-    regista('a ausência por confirmar retirada',base,r=>r.querySelector('p').remove(),'exige uma');
-    regista('a ausência por confirmar com palavras trocadas',base,r=>r.querySelector('p').set_content('Já foi confirmada.'),'a frase está por confirmar na fonte; exige a ausência e recusa a frase');
+    regista('uma frase por confirmar publicada',base,r=>{const p=r.querySelector('p');p.removeAttribute('data-o-que-e-por-confirmar');p.setAttribute('data-o-que-e',id);p.set_content(frase.innerHTML);},'a frase está por confirmar na fonte; exige a ausência e recusa a frase',provaAusencia);
+    regista('a ausência por confirmar retirada',base,r=>r.querySelector('p').remove(),'exige uma',provaAusencia);
+    regista('a ausência por confirmar com palavras trocadas',base,r=>r.querySelector('p').set_content('Já foi confirmada.'),'a frase está por confirmar na fonte; exige a ausência e recusa a frase',provaAusencia);
     regista('uma frase fora da lista',html,r=>r.querySelector('main').insertAdjacentHTML('beforeend',`<p data-o-que-e="${id}">Palavras sem conferência.</p>`),'uma frase ou ausência está fora de uma mudança de valor');
   }
   return plantas;

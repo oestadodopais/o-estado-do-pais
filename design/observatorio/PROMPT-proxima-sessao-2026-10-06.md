@@ -64,10 +64,10 @@ As leituras do Opus de hoje: EX2 350 369 e 306 644; M-A 325 236 e 286 282; H4 35
 - ramos locais: `c2-2026-10-05 461de524`, `er1-2026-10-06 56a582dd`, `jd1-2026-10-06 d1755ff4`, `main 3948eb89`, `registos-2026-10-06-noite 3948eb89`, `rp4n-2026-10-06 be23d525`  (`git branch`)
 - ramos no remoto: `er1-2026-10-06`, `main`  (`git ls-remote --heads origin`)
 - worktree: `<sitio> 3948eb89 [main]`
-- worktree: `<sitio>/.claude/worktrees/er1-2026-10-06 56a582dd [er1-2026-10-06]`
-- worktree: `<sitio>/.claude/worktrees/jd1-2026-10-06 d1755ff4 [jd1-2026-10-06]`
-- worktree: `<sitio>/.claude/worktrees/registos-noite 3948eb89 [registos-2026-10-06-noite]`
-- worktree: `<sitio>/.claude/worktrees/rp4n-2026-10-06 be23d525 [rp4n-2026-10-06]`
+- worktree: `<sitio>/<worktrees>/er1-2026-10-06 56a582dd [er1-2026-10-06]`
+- worktree: `<sitio>/<worktrees>/jd1-2026-10-06 d1755ff4 [jd1-2026-10-06]`
+- worktree: `<sitio>/<worktrees>/registos-noite 3948eb89 [registos-2026-10-06-noite]`
+- worktree: `<sitio>/<worktrees>/rp4n-2026-10-06 be23d525 [rp4n-2026-10-06]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
 - 37517593624 · `3948eb89` · main · portão · **completed / success** · criada 2026-10-06T19:15:28Z · atualizada 2026-10-06T19:48:12Z
@@ -90,8 +90,8 @@ As leituras do Opus de hoje: EX2 350 369 e 306 644; M-A 325 236 e 286 282; H4 35
 - ramos locais: `jd1-2026-10-06 f503a5b`, `master 465d01e`, `rp4n-2026-10-06 eb4a5cb`  (`git branch`)
 - ramos no remoto: `master`  (`git ls-remote --heads origin`)
 - worktree: `<motor> 465d01e [master]`
-- worktree: `<motor>/.claude/worktrees/jd1-2026-10-06 f503a5b [jd1-2026-10-06]`
-- worktree: `<motor>/.claude/worktrees/rp4n-2026-10-06 eb4a5cb [rp4n-2026-10-06]`
+- worktree: `<motor>/<worktrees>/jd1-2026-10-06 f503a5b [jd1-2026-10-06]`
+- worktree: `<motor>/<worktrees>/rp4n-2026-10-06 eb4a5cb [rp4n-2026-10-06]`
 
 ### O uso das duas subscrições (`python3 scripts/leituras/uso.py`)
     Claude (escrito pela linha de estado a 06.10.2026 19:51 UTC):

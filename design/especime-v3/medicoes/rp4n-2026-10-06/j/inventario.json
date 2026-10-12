@@ -1,0 +1,54 @@
+{
+  "versao": {
+    "commit": "3ecc7c72bce1bbc06e207aca368c9dcbb579b7ec",
+    "ref": "rp4n-2026-10-07",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-12T18:12:06.874Z"
+  },
+  "retiradas": [
+    {
+      "linha": 3173,
+      "texto": "3 210 afirmações · 368 de 3 210 calculadas · 2 767 de 3 210 linhas de concelhos",
+      "bloco": "k2",
+      "estado": "retirada",
+      "razao": "a fusão do JD1 e do RP4-n mudou a contagem"
+    },
+    {
+      "linha": 3174,
+      "texto": "3 210 claims · 368 of 3 210 calculated · 2 767 of 3 210 municipality rows",
+      "bloco": "k2",
+      "estado": "retirada",
+      "razao": "a fusão do JD1 e do RP4-n mudou a contagem"
+    },
+    {
+      "linha": 4299,
+      "texto": "3 193 afirmações · 366 de 3 193 calculadas · 2 767 de 3 193 linhas de concelhos",
+      "bloco": "rp4ne",
+      "estado": "retirada",
+      "razao": "a fusão do JD1 e do RP4-n mudou a contagem"
+    },
+    {
+      "linha": 4300,
+      "texto": "3 193 claims · 366 of 3 193 calculated · 2 767 of 3 193 municipality rows",
+      "bloco": "rp4ne",
+      "estado": "retirada",
+      "razao": "a fusão do JD1 e do RP4-n mudou a contagem"
+    }
+  ],
+  "novas": [
+    {
+      "html": "dist/livro-razao/index.html",
+      "sha256": "74f0c09b5d3e44582f232f9df9c7d70b5abdf75dd7595194fdbe238f83ddde99",
+      "texto": "3 208 afirmações · 368 de 3 208 calculadas · 2 767 de 3 208 linhas de concelhos",
+      "declaracao": "| conteudo | 3 208 afirmações · 368 de 3 208 calculadas · 2 767 de 3 208 linhas de concelhos | rp4nj | viva | Contagem lida do HTML construído após a fusão do JD1 e do RP4-n. |"
+    },
+    {
+      "html": "dist/en/ledger/index.html",
+      "sha256": "04da13ef4a3ce932fb2faf4a00aa0798ba85cd873d6dc24b5dae4528547bf89e",
+      "texto": "3 208 claims · 368 of 3 208 calculated · 2 767 of 3 208 municipality rows",
+      "declaracao": "| conteudo | 3 208 claims · 368 of 3 208 calculated · 2 767 of 3 208 municipality rows | rp4nj | viva | Contagem lida do HTML construído após a fusão do JD1 e do RP4-n. |"
+    }
+  ]
+}

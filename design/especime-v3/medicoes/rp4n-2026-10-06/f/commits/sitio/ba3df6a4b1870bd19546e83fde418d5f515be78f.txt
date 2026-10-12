@@ -1,0 +1,5 @@
+ba3df6a4b1870bd19546e83fde418d5f515be78f
+test(rp4n-f): preparar provas de cabeça, privacidade e capturas
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

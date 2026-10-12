@@ -1,3 +1,5 @@
+import ORIGENS_PENSAO from './pensao-rp4n.json' with {type: 'json'};
+import ORIGENS_RP4N from './origens-rp4n.json' with {type: 'json'};
 import { ORIGENS_C1C } from './origens-c1c.mjs';
 import { ORIGENS_RP1 } from './origens-rp1.mjs';
 import { ORIGENS_JD1 } from './origens-jd1.mjs';
@@ -688,6 +690,7 @@ const LISTA_SOCIAL = [
  * extenso. O nome por extenso é do glossário do Eurostat, e é ele que o declara.
  */
 export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
+  ...ORIGENS_PENSAO,
   ...ORIGENS_C1C,
   /* TRÊS ORIGENS SELADAS NO MOTOR (B2, peça 1, segunda passagem de correção,
      23.09.2026; achado 8 da leitura a frio). A pergunta do desemprego de longa
@@ -789,10 +792,11 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
      definição desta casa; as outras três medidas do Procedimento têm glossário
      próprio no Eurostat ou no Banco de Portugal, e é dele que a frase sai. */
   'pdm-divida-publica': {
+    alojada: {"motor":"content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html","hora":"2026-09-26T08:30:08Z","cliente":"publisher/dominios_fetch.py, core.http.HttpClient (OEstadoDoPais/corredor)","sha256":"0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa","campo":"texto da página alojada"},
     publicador: 'Comissão Europeia',
     documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
     url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
-    lido: '2026-09-09',
+    lido: '2026-09-26',
     excerto: 'general government sector debt in % of GDP with a threshold of 60%.',
   },
   /* A SEGUNDA ORIGEM DA POSIÇÃO DE INVESTIMENTO INTERNACIONAL (achado 3 da
@@ -803,78 +807,88 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
      declarar as duas origens, como as outras medidas que juntam o conceito de
      um glossário ao recorte que o painel usa. */
   'pdm-posicao-de-investimento': {
+    alojada: {"motor":"content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html","hora":"2026-09-26T08:30:08Z","cliente":"publisher/dominios_fetch.py, core.http.HttpClient (OEstadoDoPais/corredor)","sha256":"0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa","campo":"texto da página alojada"},
     publicador: 'Comissão Europeia',
     documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
     url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
-    lido: '2026-09-14',
+    lido: '2026-09-26',
     excerto: 'net international investment position as percent of GDP, with a threshold of -35%.',
   },
   'pdm-custo-do-trabalho': {
+    alojada: {"motor":"content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html","hora":"2026-09-26T08:30:08Z","cliente":"publisher/dominios_fetch.py, core.http.HttpClient (OEstadoDoPais/corredor)","sha256":"0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa","campo":"texto da página alojada"},
     publicador: 'Comissão Europeia',
     documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
     url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
-    lido: '2026-09-09',
+    lido: '2026-09-26',
     excerto:
       'nominal unit labour cost index, per hour worked (3-year percentage change), with thresholds of +9% for euro area countries and +12% for non-euro area countries.',
   },
   'pdm-exportacoes': {
+    alojada: {"motor":"content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html","hora":"2026-09-26T08:30:08Z","cliente":"publisher/dominios_fetch.py, core.http.HttpClient (OEstadoDoPais/corredor)","sha256":"0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa","campo":"texto da página alojada"},
     publicador: 'Comissão Europeia',
     documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
     url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
-    lido: '2026-09-09',
+    lido: '2026-09-26',
     excerto:
       'export performance against advanced economies (3-year percentage change), with a threshold of -3%.',
   },
   'pdm-divida-das-empresas': {
+    alojada: {"motor":"content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html","hora":"2026-09-26T08:30:08Z","cliente":"publisher/dominios_fetch.py, core.http.HttpClient (OEstadoDoPais/corredor)","sha256":"0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa","campo":"texto da página alojada"},
     publicador: 'Comissão Europeia',
     documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
     url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
-    lido: '2026-09-09',
+    lido: '2026-09-26',
     excerto: 'NFC consolidated debt in % of GDP with a threshold of 85%.',
   },
   'pdm-divida-das-familias': {
+    alojada: {"motor":"content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html","hora":"2026-09-26T08:30:08Z","cliente":"publisher/dominios_fetch.py, core.http.HttpClient (OEstadoDoPais/corredor)","sha256":"0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa","campo":"texto da página alojada"},
     publicador: 'Comissão Europeia',
     documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
     url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
-    lido: '2026-09-09',
+    lido: '2026-09-26',
     excerto: 'household (incl. NPISH) consolidated debt in % of GDP with a threshold of 55%.',
   },
   'pdm-credito-as-empresas': {
+    alojada: {"motor":"content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html","hora":"2026-09-26T08:30:08Z","cliente":"publisher/dominios_fetch.py, core.http.HttpClient (OEstadoDoPais/corredor)","sha256":"0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa","campo":"texto da página alojada"},
     publicador: 'Comissão Europeia',
     documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
     url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
-    lido: '2026-09-09',
+    lido: '2026-09-26',
     excerto:
       'NFC (excl. FDI) consolidated credit flow in % of NFC debt stock in t-1 (excl. FDI), with a threshold of 13%.',
   },
   'pdm-credito-as-familias': {
+    alojada: {"motor":"content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html","hora":"2026-09-26T08:30:08Z","cliente":"publisher/dominios_fetch.py, core.http.HttpClient (OEstadoDoPais/corredor)","sha256":"0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa","campo":"texto da página alojada"},
     publicador: 'Comissão Europeia',
     documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
     url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
-    lido: '2026-09-09',
+    lido: '2026-09-26',
     excerto:
       'household (incl. NPISH) consolidated credit flow in % of household debt stock in t-1 with a threshold of 14%.',
   },
   'pdm-balanca-corrente': {
+    alojada: {"motor":"content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html","hora":"2026-09-26T08:30:08Z","cliente":"publisher/dominios_fetch.py, core.http.HttpClient (OEstadoDoPais/corredor)","sha256":"0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa","campo":"texto da página alojada"},
     publicador: 'Comissão Europeia',
     documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
     url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
-    lido: '2026-09-09',
+    lido: '2026-09-26',
     excerto:
       'current account balance as percent of GDP (3-year backward moving average), with thresholds of +6% and -4%.',
   },
   'pdm-taxa-de-actividade': {
+    alojada: {"motor":"content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html","hora":"2026-09-26T08:30:08Z","cliente":"publisher/dominios_fetch.py, core.http.HttpClient (OEstadoDoPais/corredor)","sha256":"0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa","campo":"texto da página alojada"},
     publicador: 'Comissão Europeia',
     documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
     url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
-    lido: '2026-09-09',
+    lido: '2026-09-26',
     excerto: 'labour force participation rate (3-year change in pps), with a threshold of -0.2%',
   },
   'pdm-cambio-efectivo-real': {
+    alojada: {"motor":"content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html","hora":"2026-09-26T08:30:08Z","cliente":"publisher/dominios_fetch.py, core.http.HttpClient (OEstadoDoPais/corredor)","sha256":"0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa","campo":"texto da página alojada"},
     publicador: 'Comissão Europeia',
     documento: 'Scoreboard · Macroeconomic Imbalance Procedure',
     url: 'https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en',
-    lido: '2026-09-09',
+    lido: '2026-09-26',
     excerto:
       'real effective exchange rates (3-year percentage change) based on HICP/CPI deflators, relative to 41 other industrial countries, with thresholds of -/+3% for euro area countries and -/+10% for non-euro area countries.',
   },
@@ -1059,10 +1073,11 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
       "The housing cost overburden rate is the percentage of the population living in households where the total housing costs ('net' of housing allowances) represent more than 40 % of disposable income ('net' of housing allowances).",
   },
   'bdp-pii': {
+    alojada: {"motor":"content/13 Dominios/source/bdp/bpstat-pagina-940.html","hora":"2026-09-24T06:29:42Z","cliente":"publisher/dominios_fetch.py, core.http.HttpClient (OEstadoDoPais/corredor)","sha256":"36bed0374ac4a38bd8115bd3596a9f332a0c9f318428e3bca1ace1148684fdd5","campo":"texto da página alojada"},
     publicador: 'Banco de Portugal',
     documento: 'BPstat · O que é a posição de investimento internacional (PII)?',
     url: 'https://bpstat.bportugal.pt/conteudos/paginas/940',
-    lido: '2026-09-08',
+    lido: '2026-09-24',
     excerto:
       'A posição de investimento internacional, também conhecida por PII, apresenta o saldo entre os ativos financeiros e os passivos que os residentes de uma economia têm relativamente ao resto do mundo. … A diferença entre os ativos financeiros e os passivos corresponde ao valor líquido da posição de investimento internacional.',
     excertoEn:
@@ -1950,6 +1965,7 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
     },
   },
   ...ORIGENS_RP1,
+  ...ORIGENS_RP4N,
   ...ORIGENS_JD1,
 });
 
@@ -2727,10 +2743,12 @@ export const origensDaDefinicao = (definicao, lang = 'pt') =>
     return {
       chave,
       publicador: o.publicador,
-      documento: o.documento,
+      documento: o.documento.replace(/, página \d+/, ''),
+      pagina: o.documento.match(/, página (\d+)/)?.[1] ?? null,
       url: o.url,
       lingua: campos.lingua ?? (chave === 'bdp-pii' ? 'pt' : 'en'),
       linguaExcerto: lang === 'en' && o.excertoEn ? 'en' : (campos.lingua ?? (chave === 'bdp-pii' ? 'pt' : 'en')),
+      alojada: 'alojada' in o ? o.alojada : null,
       lido: o.lido,
       excerto: lang === 'en' && o.excertoEn ? o.excertoEn : o.excerto,
       /* K2-c: a coordenada que a resposta fixa, ao lado do título do conjunto, quando a origem a declara. */

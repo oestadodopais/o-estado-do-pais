@@ -1,6 +1,6 @@
 # Brief M1 · O `name` das entradas do índice sem nome (04.09.2026)
 
-*Escrito pelo lugar de direção (Claude Fable 5.1) para um construtor Claude Opus 5 no motor (`~/Instruments/ResearchHub`), a partir do achado do bloco F1.4 do sítio (`design/especime-v3/medicoes/nomes-construtor.md` §3: 79 entradas do índice do livro-razão chamam-se pelo título do documento porque a linha não traz `name`; dez são «Prestação de Contas 2025») e da linha correspondente dos pendentes. Sem travessões na prosa.*
+*Escrito pelo lugar de direção (Claude Fable 5.1) para um construtor Claude Opus 5 no motor (`~/<projetos>/ResearchHub`), a partir do achado do bloco F1.4 do sítio (`design/especime-v3/medicoes/nomes-construtor.md` §3: 79 entradas do índice do livro-razão chamam-se pelo título do documento porque a linha não traz `name`; dez são «Prestação de Contas 2025») e da linha correspondente dos pendentes. Sem travessões na prosa.*
 
 ## 0 · O que este bloco é
 
@@ -19,7 +19,7 @@ Nenhum nome inventado; nenhuma mudança de valor, de unidade, de fonte ou de dat
 
 ## 3 · Onde se constrói
 
-No motor: ramo `nomes-2026-09-04` numa worktree própria (`git worktree add ~/Instruments/ResearchHub-worktrees/nomes-2026-09-04 -b nomes-2026-09-04 master`). Ficheiros: `publisher/export_site_rows.py`, `publisher/export_site_rows_test.py`, `publisher/RELATORIO-nomes-2026-09-04.md`. O pre-commit corre `python3 -m core.gate` (cerca de dois minutos e meio). No sítio: uma worktree própria a partir de `origin/main` para o ramo `nomes-motor-2026-09-04`, só com os `ledger/claims/*.yml` reexportados e o que o `check:cruzamento` exigir. Dois construtores do sítio correm em paralelo (F1.6 e o F1.10 pausado): não tocam no `ledger/`.
+No motor: ramo `nomes-2026-09-04` numa worktree própria (`git worktree add ~/<projetos>/ResearchHub-worktrees/nomes-2026-09-04 -b nomes-2026-09-04 master`). Ficheiros: `publisher/export_site_rows.py`, `publisher/export_site_rows_test.py`, `publisher/RELATORIO-nomes-2026-09-04.md`. O pre-commit corre `python3 -m core.gate` (cerca de dois minutos e meio). No sítio: uma worktree própria a partir de `origin/main` para o ramo `nomes-motor-2026-09-04`, só com os `ledger/claims/*.yml` reexportados e o que o `check:cruzamento` exigir. Dois construtores do sítio correm em paralelo (F1.6 e o F1.10 pausado): não tocam no `ledger/`.
 
 ## 4 · As medidas de aceitação
 

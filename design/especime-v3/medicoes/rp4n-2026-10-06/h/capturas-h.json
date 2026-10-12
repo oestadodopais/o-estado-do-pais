@@ -1,0 +1,684 @@
+{
+  "cabeca_da_captura": "19723a9f3876bff3ad4364d00bb017c63cda56d3",
+  "versao": {
+    "commit": "19723a9f3876bff3ad4364d00bb017c63cda56d3",
+    "ref": "rp4n-2026-10-07",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-12T15:49:05.810Z"
+  },
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/corte-pt-390.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "bd041938dca0d9ea8768f327fe4ab479c64172ecea5497c6dabefe3ec01f75b3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/corte-pt-768.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "9f15e1e971e281cf931b5023024aab89d53f82ef26d43fdae1b8e5a7fc4535d4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/corte-pt-1024.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "9e3d7ae154fd7d173f38dca93e24093f29b6f0ff893faa3a42e2982b4c2af7e3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/corte-pt-1280.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "4e102cb7419cefe7fb3742c3932e95c3ef57f1ecf260da8ef973d5daf31e2a46"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/corte-pt-1600.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "606c450759775bb2b7233f4ae566a72c41bfc0e5bbc04c5b9aadff2689e79dbc"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/corte-en-390.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "21358068def1e82f89e2143218f601e3e0a7ed7984a075961cdd8c899b2c107d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/corte-en-768.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "7e70835d5822e67f2a88ad98cd6638c9c542356f91d100b1e39c58aed10e9861"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/corte-en-1024.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "ff986f53d6c0849336a16ebb434a68401bc7298de44a09fa025558439668922f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/corte-en-1280.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "7f45c4a159bdf81cd77dee9aa50b0bf16d881c15b336cdc9220e1e0dd2e2d74a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/corte-en-1600.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "b6ed6bf51735c442585f6e58cef9b2c9184790f71f3a67e4553890fce2d8ffad"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/legal-pt-390.png",
+      "rota": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "87571cedb9c801dfe5cacc672b3d17566caa0dadc5fccdcc0e7dbe271200f767"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/legal-pt-768.png",
+      "rota": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "6cf7b797d7e817937b1369890afaaa1beabc6132de0c23d5d964b25fa26a9d3d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/legal-pt-1024.png",
+      "rota": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "58e9b59727533fba0b6da93daa551e9fdb1862942d67b7c04e5519568b990931"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/legal-pt-1280.png",
+      "rota": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "bf7c170cf8c7f46380a7d061d241915964fe6298d4718ca3791773157fd38cd8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/legal-pt-1600.png",
+      "rota": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "62d17a9509b97932941e040cb7945bddfa4994afdb8d06ca235f2d3decc06c17"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/legal-en-390.png",
+      "rota": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "9055c8270d9d71c767ed78364513d357585e0a1d186b1c6ed577ea1dc3a740b5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/legal-en-768.png",
+      "rota": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "2271cbc4c86b28f19a4b5596631fd7eb5581aab00c7ae452b30662ac8d6de669"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/legal-en-1024.png",
+      "rota": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "0198e0d54722af2b3a356de864dfd11c20c22495c1e8de54de7ec6bc8902a662"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/legal-en-1280.png",
+      "rota": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "b734d024347497e174fdcc026e70d4fe0defb453747db1923c8dd38336f5f49a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/legal-en-1600.png",
+      "rota": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "dad1a8f18f181605203f19d0e88e8dc63a67180f3e7fad923633c9180c496067"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/tema-pt-390.png",
+      "rota": "/salarios-pensoes-e-apoios/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "f9b3fd8368487e41873e567fd07499540b7927cb9527ec63b6c05a647d010049"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/tema-pt-768.png",
+      "rota": "/salarios-pensoes-e-apoios/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "57dc3cc4fe6d26cc48edc189e05a3aa23d54da0bd8e5b013990c094a488f0357"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/tema-pt-1024.png",
+      "rota": "/salarios-pensoes-e-apoios/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "be86702080311dc30fd5b8ee1f0bda6924d14a7ee3f277c2eb8bf8aafaebe165"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/tema-pt-1280.png",
+      "rota": "/salarios-pensoes-e-apoios/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "c3695254735fa9eb3ab45c30a51c7f42049880cb595dcdac6b652f3b96febf7b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/tema-pt-1600.png",
+      "rota": "/salarios-pensoes-e-apoios/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "d6a734f18b24d3fe60961869e6387b8713fcc451aa4c5b9ccb008c6bf4540512"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/tema-en-390.png",
+      "rota": "/en/pay-pensions-and-benefits/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "d271bbc37124e447f7fc3f617350a2be817920caa307b4220accdc38aa27a118"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/tema-en-768.png",
+      "rota": "/en/pay-pensions-and-benefits/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "bd8f2f3308d978bbb580925978f0f2212ccbafb36bf5d1dc0e48ab034879f4d4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/tema-en-1024.png",
+      "rota": "/en/pay-pensions-and-benefits/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "93fe5ca2b8c2d1da8894cc3460bcc4d5896f0d1b2f76683bbb3aaefa542cd019"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/tema-en-1280.png",
+      "rota": "/en/pay-pensions-and-benefits/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "4e4cd75dd659e318d5f52c8da4dfb1217d7a21d280d57aa7ff748c01e6cd5d73"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/tema-en-1600.png",
+      "rota": "/en/pay-pensions-and-benefits/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "11545b3833da5ff465ad9ecbd9e708cd4960a41d8b22fed0882ba00880f36f2c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/area-pt-390.png",
+      "rota": "/areas/trabalho-solidariedade-e-seguranca-social/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "5e8955bb5b996a2db8db7e9e89963879b1fb3425e1a038d13e41aa190c33a53d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/area-pt-768.png",
+      "rota": "/areas/trabalho-solidariedade-e-seguranca-social/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "28e120863a70dee2e36035f4b20b43eb0bd0d84ff066e191e0227ae1be8cd6fd"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/area-pt-1024.png",
+      "rota": "/areas/trabalho-solidariedade-e-seguranca-social/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "86dadf04f70cc698c2c0b30a391eea873c4e63d95d92c0f56a5df0a200cc1203"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/area-pt-1280.png",
+      "rota": "/areas/trabalho-solidariedade-e-seguranca-social/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "4a9eb3daaa6b05b0aaecf054835db0f894f162aecd779456011bcf9c3ee8ffca"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/area-pt-1600.png",
+      "rota": "/areas/trabalho-solidariedade-e-seguranca-social/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "48756f9df25a75782f9a9edf3e89f184f6d6a692b3f3d47a9c1fae8372a53ba6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/area-en-390.png",
+      "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "5f1e12383fa325880d2bfae0ecb7f2616ad461b3db15d444b594d039fd3e32c4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/area-en-768.png",
+      "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "e2b12eec716a1ef6e920a65193e9e9f16836e6618f1448f74412fb6f09e53af3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/area-en-1024.png",
+      "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "661fa4d4caaaefdca971b416289ddd5ba995ed96d9d58b57967e75627b90e7e4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/area-en-1280.png",
+      "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "e9b74bffa4fcdfe707fb561745a8c692dde7e797e89086ad066f240ab688fd92"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/area-en-1600.png",
+      "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "c69c663be7694b97046e55ce7f2874808f4a2ee7a5e11354e13dac4bbe7ac9b9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-pt-390.png",
+      "rota": "/estudos/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "e366f49ea3ac3ee71f588c3ae41a4a877942b93fb97d847f542679a99519c015"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-pt-768.png",
+      "rota": "/estudos/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "9278e0fe80d3322cea6f78dce30516965bf09476564f3590643684485bf5431c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-pt-1024.png",
+      "rota": "/estudos/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "65fc4a70e17a4625f53302087968ba2e199e6fb083712a02ea3bd27251bd93f9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-pt-1280.png",
+      "rota": "/estudos/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "ceb2adbd10a2cbb34754be63d5007b11c4c28d08e9f11dc3d5f4041d2a92b145"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-pt-1600.png",
+      "rota": "/estudos/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "b7ed065dfcf40e54e6f39ae4a4648747d09982b33b6fce0f009688a967b66dad"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-en-390.png",
+      "rota": "/en/studies/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "8d48bae03325ec3b4edf77d81657a02d2156837827a090af3c894b08d3d28f57"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-en-768.png",
+      "rota": "/en/studies/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "e5c6fb2add1be0ebd9837e1e5c106563eccef37b4364be5078be8dfeda11032c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-en-1024.png",
+      "rota": "/en/studies/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "ae8d1138187525f092a8ea860306d5685de39599ed98319b5767f83d2f531260"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-en-1280.png",
+      "rota": "/en/studies/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "d58f6deb4742e2314d25a378868140c3a2f46258d18b63993282bf5ceb904d70"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-en-1600.png",
+      "rota": "/en/studies/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "28402416076933519735242fce4d3d8e4d2db274132f5f3a0081aa044deb4647"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-pt-390.png",
+      "rota": "/metodo/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "24cbe16c8519e50dd47946fd025c532210e825c600454ad77f200e0d7735d52f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-pt-768.png",
+      "rota": "/metodo/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "1938d46034f2f0e33086aa17b4859dc7d2c7a3bda2d621fde91ded42e91c11b6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-pt-1024.png",
+      "rota": "/metodo/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "cce601c70c2b1af30426c1ac2a47fc046ce9734b3a30710edebe0638d2c023c9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-pt-1280.png",
+      "rota": "/metodo/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "981751f087527614af75cd0c094c414a981809019b6fce41fe6cb81030fbcf9c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-pt-1600.png",
+      "rota": "/metodo/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "82929d2121f4957b3b0829299092fe3ad554be499ad21cf9cb70c402f90186f5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-en-390.png",
+      "rota": "/en/method/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "d4eb0eb322e1da9a54ae820ca4c73301a09f1a7dd0a5706341105a57b28598e5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-en-768.png",
+      "rota": "/en/method/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "8342f6ad304858a8c898404f9d6dfd3771a6b2e59a014497968a799d45d6f5b9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-en-1024.png",
+      "rota": "/en/method/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "070c53d41eb97c84406dd0569c758589b80f16a289e97ac8c2ebb0a99bf4ed98"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-en-1280.png",
+      "rota": "/en/method/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "7a537942cdf6cf98688f1fe26df604650e45b454fdf807521b457e8ba978ffff"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-en-1600.png",
+      "rota": "/en/method/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "cd70d675e68a2fc6ba765e886ecafe2305145cb3d2bf234f70572a7695753e61"
+    }
+  ],
+  "problemas": []
+}

@@ -1429,7 +1429,7 @@ function varreCartoes() {
      */
     const doLivro = u.livro ?? u.texto;
     if (u.livro === undefined) semLivro++;
-    const esperado = unidadeDaLinha(doLivro, 'en');
+    const esperado = unidadeDaLinha(doLivro, 'en', claimOuNulo(u.linha ?? r.linha)?.value);
     if (esperado.lingua === 'pt-PT') {
       /* A tabela da casa manda esta unidade ficar em português, e diz porquê.
          Não é uma falha: é uma declaração, e conta-se com a razão ao lado. */
@@ -2006,7 +2006,7 @@ async function avalia(p, dist, cartoes, leis, folhas) {
   for (const u of unidadesEn) {
     const claim = u.id ? claimOuNulo(u.id) : null;
     if (!claim) continue;
-    const esperado = unidadeDaLinha(claim.unit, 'en');
+    const esperado = unidadeDaLinha(claim.unit, 'en', claim.value);
     if (u.texto !== esperado.texto) {
       unidadesMas.push(`${u.chave}: «${u.texto}», e a tabela dá «${esperado.texto}»`);
     } else if ((u.lingua ?? null) !== (esperado.lingua ?? null)) {

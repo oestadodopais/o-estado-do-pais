@@ -4,7 +4,7 @@
 
 ## Contexto útil
 
-O sítio publica já, do Painel Social Europeu, o abandono precoce de educação e formação (`~/Instruments/OEstadoDoPais/ledger/claims/abandono-escolar-precoce-2025.yml`) e as necessidades de cuidados médicos não satisfeitas (`necessidades-medicas-nao-satisfeitas-2025.yml`); lê-as para o endereço exato. Educação: a armadilha é a chave do ano letivo (2023/24 não é 2024), a diferença entre Portugal e Continente nos dados da DGEEC, e a taxa bruta contra a taxa real de pré-escolarização. Saúde: o SNS mede por Unidade Local de Saúde (ULS), o INE por município, e as duas unidades não encaixam; uma medida do SNS nunca se diz «por concelho».
+O sítio publica já, do Painel Social Europeu, o abandono precoce de educação e formação (`~/<projetos>/OEstadoDoPais/ledger/claims/abandono-escolar-precoce-2025.yml`) e as necessidades de cuidados médicos não satisfeitas (`necessidades-medicas-nao-satisfeitas-2025.yml`); lê-as para o endereço exato. Educação: a armadilha é a chave do ano letivo (2023/24 não é 2024), a diferença entre Portugal e Continente nos dados da DGEEC, e a taxa bruta contra a taxa real de pré-escolarização. Saúde: o SNS mede por Unidade Local de Saúde (ULS), o INE por município, e as duas unidades não encaixam; uma medida do SNS nunca se diz «por concelho».
 
 ## As linhas
 

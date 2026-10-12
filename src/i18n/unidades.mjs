@@ -54,6 +54,8 @@
  * raras, para que quem lê veja primeiro o que mais se rende.
  */
 export const UNIDADES = {
+  '% do valor contratado': '% of contracted amount',
+  // RP4-n-e: unidade de contagem traduzida; o singular depende do valor.
   // OE1: tradução de dicionário da unidade monetária.
   'milhões de euros': 'million euros',
   // OE1-d: factos de dicionário, incluindo o período acumulado da linha.
@@ -150,7 +152,6 @@ export const UNIDADES = {
   /* 2 linhas (`evora-prr-execucao-2026` e `evora-prr-vencido-quota-2026`).
      Dicionário: «valor aprovado» é «approved amount». As duas são linhas
      calculadas, sem documento e sem excerto: não há inglês do organismo. */
-  '% do valor aprovado': '% of the approved amount',
   /* 1 linha. A fonte: «Percentage point change (t-(t-3))», no excerto de
      `taxa-de-actividade-2025`. */
   'variação em três anos, pontos percentuais': 'three-year change, percentage points',
@@ -177,10 +178,6 @@ export const UNIDADES = {
   /* 1 linha (`correcoes-publicadas`). A casa: a rota inglesa do registo é
      `/en/corrections` (`src/lib/routes.mjs`). */
   correções: 'corrections',
-  /* 1 linha (`ciclo-substituicao-condutas`). Dicionário: «anos» é «years». A
-     linha tem documento e excerto «[a verificar]», e por isso não há inglês da
-     fonte; a palavra, essa, não depende de fonte nenhuma. */
-  anos: 'years',
   /* 1 linha. A fonte: «Percentage of individuals», no excerto de
      `competencias-digitais-2025`. */
   '% dos indivíduos': '% of individuals',
@@ -211,12 +208,6 @@ export const UNIDADES = {
  * está para que o rótulo não pareça traduzido quando não foi.
  */
 export const UNIDADES_EM_PORTUGUES = {
-  /* 2 linhas (`avisos-pt2030-abertos`, `avisos-pt2030-pessoas-singulares`). Um
-     «aviso» do Portugal 2030 é um acto administrativo com nome próprio, e as
-     duas linhas têm fonte e documento por confirmar: não há inglês do organismo
-     de onde tirar a palavra, e escolher entre «call» e «notice» seria a casa a
-     decidir o que a fonte quis dizer. */
-  avisos: 'sem inglês do organismo: as duas linhas têm fonte e documento «[a verificar]»',
   /* 1 linha (`factor-sustentabilidade-2026`). O factor de sustentabilidade é o
      nome que o relatório dá ao número, e a linha cita-o em português. */
   factor: 'é o nome que o relatório citado dá ao número, e não uma unidade de contagem',
@@ -242,8 +233,10 @@ export const UNIDADES_EM_PORTUGUES = {
  *
  * @param {unknown} unit
  * @param {string} [lang]
+ * @param {unknown} [value]
  */
-export function unidadeDaLinha(unit, lang = 'pt') {
+export function unidadeDaLinha(unit, lang = 'pt', value = null) {
+  if (unit === 'avisos') return { texto: lang === 'en' ? (String(value) === '1' ? 'notice' : 'notices') : (String(value) === '1' ? 'aviso' : 'avisos'), lingua: lang === 'en' ? null : 'pt-PT' };
   const cru = unit === null || unit === undefined ? '' : String(unit);
   if (lang !== 'en') return { texto: dinheiroComPalavra(cru), lingua: 'pt-PT' };
   const traduzida = Object.prototype.hasOwnProperty.call(UNIDADES, cru)

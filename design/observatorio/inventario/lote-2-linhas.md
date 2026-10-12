@@ -4,7 +4,7 @@
 
 ## Contexto útil
 
-O sítio publica a população residente dos 308 concelhos (linhas `~/Instruments/OEstadoDoPais/ledger/claims/<concelho>-populacao-2025.yml`; lê uma). Está aberta uma questão, I99: essas linhas citam o indicador 0012918 do INE no documento e no `source_url`, e o extrato alojado é do indicador 0012917; há dois indicadores da população residente e a linha não diz de qual saiu o valor. Na linha P1 lê a metainformação dos dois e diz em que diferem (designação, nomenclatura territorial, períodos), sem corrigir nada no sítio.
+O sítio publica a população residente dos 308 concelhos (linhas `~/<projetos>/OEstadoDoPais/ledger/claims/<concelho>-populacao-2025.yml`; lê uma). Está aberta uma questão, I99: essas linhas citam o indicador 0012918 do INE no documento e no `source_url`, e o extrato alojado é do indicador 0012917; há dois indicadores da população residente e a linha não diz de qual saiu o valor. Na linha P1 lê a metainformação dos dois e diz em que diferem (designação, nomenclatura territorial, períodos), sem corrigir nada no sítio.
 
 A migração é o domínio de maior procura e o que mais precisa de fonte séria. Regra da casa: um observatório (o Observatório das Migrações, hoje na AIMA, `om.aima.gov.pt`; o Observatório da Emigração, DGACCP com o CIES/ISCTE, `observatorioemigracao.pt`) é quase sempre segundo publicador; o livro-razão cita o primário; um observatório só é fonte onde for ele o compilador primário. E dizer «não há número público para isto» é conteúdo de observatório: se uma medida não existe como série oficial, regista-o com as pistas seguidas.
 

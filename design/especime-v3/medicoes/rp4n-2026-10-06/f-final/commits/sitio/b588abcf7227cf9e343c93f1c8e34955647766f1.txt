@@ -1,0 +1,5 @@
+b588abcf7227cf9e343c93f1c8e34955647766f1
+test(rp4n-f): registar as reconferências com as cabeças e corrigir a entrada do portão
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

@@ -1,0 +1,4 @@
+be0d0b54d3e17f71cf41d04b4e8141bd39ac24cb
+fix(rp4n-g): conferir a ausência do estudo e a glosa nas sinopses
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

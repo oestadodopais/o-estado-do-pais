@@ -97,7 +97,7 @@ duas tabelas na entrada §1.48.
   pequenos, mensagens em português na voz da casa (ver `git log`). **Não fundir,
   não empurrar para `main`.** No fim, `git push -u origin decisoes-2026-08-20`
   para a pré-visualização protegida do Vercel e parar.
-- **Não tocar** em `ledger/claims/`, no motor (`~/Instruments/ResearchHub`), nem
+- **Não tocar** em `ledger/claims/`, no motor (`~/<projetos>/ResearchHub`), nem
   em mais nenhum texto governado além da regra 6.
 
 ## 2. O que fica para o lugar de direção, depois do builder parar

@@ -440,7 +440,7 @@ const FRASES = {
   },
   divida: {
     pt: 'linhas com pelo menos um campo marcado [a verificar]',
-    en: 'rows with at least one field marked [a verificar]',
+    en: 'rows with at least one field marked [to verify]',
   },
   derivadas: {
     pt: 'linhas calculadas',

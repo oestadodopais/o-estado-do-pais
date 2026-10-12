@@ -1,0 +1,1851 @@
+
+> o-estado-do-pais@0.1.0 verify
+> npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run check:briefs && npm run gate:html && npm run check:css && npm run check:datas && npm run check:moldura && npm run check:alvos && npm run check:cabeca && npm run check:fontes && npm run check:cadeia && npm run check:dados && npm run mapa:unidades -- --verifica && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:alcance && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:lingua && npm run check:formato && npm run check:lugar && npm run provar:eyetext && npm run provar:guardas && npm run check:mortos && npm run check:indice && npm run check:cartao && npm run check:navegacao && npm run check:primeira && npm run sinais && npm run check:nomes && npm run check:palavras && npm run design:feixe && npm run check:privacidade && npm run check:sugestoes && npm run check:rotulos && npm run check:series && npm run check:indice-do-sitio && npm run check:explicacoes && npm run check:frases-compostas
+
+
+> o-estado-do-pais@0.1.0 ledger:check
+> node tests/linha/cadeias-proveniencia.mjs && node scripts/check-ledger.mjs && node tests/linha/historia-da-proveniencia.mjs && node tests/linha/historia-do-valor.mjs
+
+{
+  "controlos": [
+    {
+      "nome": "cadeia de source",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de source_url",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de document.title",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de document.edition",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de document.locator",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de access_date",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de excerpt",
+      "passou": true
+    },
+    {
+      "nome": "instantâneo com as cinco condições",
+      "passou": true
+    },
+    {
+      "nome": "Bandeiras: JSON-stat e formatos anteriores, antes e depois das plantas",
+      "passou": true
+    },
+    {
+      "nome": "Ressalvas e geografias intactas depois das plantas, com bandeiras antigas preservadas",
+      "passou": true
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "source: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "source: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "source: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "source_url: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\": o último \"new_value\" é https://fonte.invalid/b, mas a linha declara https://fonte.invalid/c."
+    },
+    {
+      "nome": "source_url: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-03: cadeia contraditória; \"old_value\" é https://fonte.invalid/a, mas antes vigorava https://fonte.invalid/b."
+    },
+    {
+      "nome": "source_url: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "document.title: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.title\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "document.title: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.title\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "document.title: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.title\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "document.edition: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.edition\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "document.edition: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.edition\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "document.edition: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.edition\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "document.locator: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.locator\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "document.locator: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.locator\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "document.locator: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.locator\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "access_date: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"access_date\": o último \"new_value\" é 2026-08-02, mas a linha declara 2026-08-03."
+    },
+    {
+      "nome": "access_date: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"access_date\" a 2026-08-03: cadeia contraditória; \"old_value\" é 2026-08-01, mas antes vigorava 2026-08-02."
+    },
+    {
+      "nome": "access_date: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"access_date\" a 2026-07-31: o acesso não pode ser posterior à mudança que o declara."
+    },
+    {
+      "nome": "excerpt: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"excerpt\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "excerpt: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"excerpt\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "excerpt: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"excerpt\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "documento sem classe ficheiro",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "documento sem lista de ficheiros",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "endereço novo diferente do vigente",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/outro/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "recurso de outro conjunto",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/outro-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "recurso posterior à entrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-203527-9f913853/listagem-de-entidades-prr-20260819.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "ficheiro sem a data do recurso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "razão portuguesa sem endereço",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "razão inglesa sem endereço",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    }
+  ],
+  "bandeiras": [
+    {
+      "nome": "JSON-stat: bandeira junto de outro valor",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: bandeira no índice de outra célula",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: outro país no corpo",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: outro país no pedido",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: outro período",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: valor ausente",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: duas células",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: bandeira retirada",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: significado da bandeira alterado",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: diferença além da precisão float64",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: dimensão repetida",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: bandeira retirada",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: bandeira junto de outro valor",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: outro país no excerto",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: outro país no pedido",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: bandeira fora do fim",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    }
+  ],
+  "ressalvas": [
+    {
+      "nome": "Ressalva: falta a versão inglesa",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-ministerio-saude.yml] \"ressalva_en\" tem de ser texto não vazio; as duas línguas da ressalva são obrigatórias."
+    },
+    {
+      "nome": "Ressalva: texto vazio",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-ministerio-saude.yml] \"ressalva\" tem de ser texto não vazio; as duas línguas da ressalva são obrigatórias."
+    },
+    {
+      "nome": "Ressalva: número inventado",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-ministerio-saude.yml] \"ressalva\" contém o número \"987654321\" sem esse número completo no excerto ou na derivação."
+    },
+    {
+      "nome": "Conta numa linha transcrita sem ressalva",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-ministerio-saude.yml] uma linha transcrita com \"derivation\" exige a ressalva nas duas línguas; a conta não pode explicar o valor publicado."
+    },
+    {
+      "nome": "Conta da ressalva sem a versão inglesa",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-efetiva-administracao-central.yml] uma linha transcrita com \"derivation\" exige a ressalva nas duas línguas; a conta não pode explicar o valor publicado."
+    }
+  ],
+  "geografias": [
+    {
+      "nome": "JSON-stat: linha portuguesa com pedido e corpo de Espanha",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo."
+    },
+    {
+      "nome": "JSON-stat: etiqueta de Espanha sob o código de Portugal",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo."
+    },
+    {
+      "nome": "JSON-stat: edição de outro país",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo."
+    },
+    {
+      "nome": "JSON-stat: agregado sem bandeira com país trocado",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-ue.yml] JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo."
+    }
+  ],
+  "contagens": {
+    "controlos": 10,
+    "plantas": 29,
+    "bandeiras": 16,
+    "ressalvas": 5,
+    "geografias": 4
+  },
+  "erros_do_livro": [],
+  "avisos_do_livro": [
+    "[evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-pago-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-pago-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço."
+  ]
+}
+
+  aritmética · 77 conferência(s): a especificação partilhada com o motor e os estragos plantados num livro-razão de mentira
+  ✓ os quatro empates a meio, a divisão exata e as duas derivações que o float64 aceitava.
+
+  livro-razão · 3195 afirmações
+
+  10 aviso(s):
+    · [evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-pago-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-pago-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+
+  ✓ 3195 afirmações válidas · 366 derivadas · 370 com aritmética reavaliada no build · 2046 com o rótulo da fonte
+
+  casas decimais do excerto · 1367 linha(s) lida(s): 117 pelo literal do valor no fim do excerto e 1250 pela forma que o INE publica (1 com o sinal da fonte declarado); 1431 por ler (sem nenhum dos dois), 378 derivada(s) fora da regra · 19 planta(s), 19 certa(s)
+  casas decimais do excerto · linhas do INE sem a forma publicada: 0
+  casas decimais do excerto · 11 linha(s) do INE com o excerto sem o registo da resposta, pelo caminho geral: alentejo-central-poder-de-compra-2023, divida-publica-2024-notificacao-ine-2026-09, divida-publica-2025-notificacao-ine-2026-09, evora-concentracao-vab4-2024, evora-empresas-2024, evora-poder-de-compra-2023, evora-populacao-2021, evora-populacao-2025, evora-vab-empresarial-2024, portugal-concentracao-vab4-2024, saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09
+  ✓ nenhuma linha sem derivação escreve menos casas decimais do que o excerto da sua fonte.
+  ✓ 0 marcador(es) «[a verificar]» em notas não publicadas, todos datados e dentro do prazo · 5 plantas apanhadas pelo detetor
+
+  Dívida de proveniência: 8 afirmação(ões) com campos "[a verificar]"
+    agua-nao-faturada-portugal-2024 → source_url, excerpt
+    avisos-pt2030-abertos → source, source_url, access_date, excerpt, document.title, document.edition
+    avisos-pt2030-pessoas-singulares → source, source_url, access_date, excerpt, document.title, document.edition
+    ciclo-substituicao-condutas → source, source_url, access_date, reference_date, excerpt, document.title, document.edition
+    evora-prr-aprovado-2026 → excerpt
+    evora-prr-pago-2026 → excerpt
+    evora-prr-vencido-aprovado-2026 → excerpt
+    saldo-natural-portugal-2025 → source_url, access_date, excerpt, document.title, document.edition
+    Isto não impede o build. Impede que se diga que o livro-razão está fechado.
+
+  séries · 34 série(s) de 8119 ponto(s), 24 com marca da fonte · 24 no tempo · 12 linha(s) presa(s) à sua série · 29 planta(s), uma ou mais por regra, vistas a morder
+  ✓ cada série de países tem os 27 e a União e as gémeas batem como números; cada série no tempo tem a cadência com as lacunas declaradas, cada valor no seu excerto, a derivada refeita, e cada linha presa é o ponto do seu período.
+
+
+  amarra das decisões · 136 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»
+  ✓ cada texto no ar tem uma decisão registada que o governa, e cada frase que a constituição lhe cita está lá.
+
+  bytes de controlo · 3 de 3 ficheiro(s) sem nenhum · 3 planta(s) vista(s)
+  ✓ os ficheiros desta régua leem-se como texto, do primeiro byte ao último.
+
+{"controlos":11,"plantas":9,"controlos_integros":11,"plantas_mordidas":9}
+História do valor: 2 controlos e 4 plantas.
+
+> o-estado-do-pais@0.1.0 check:registo
+> node scripts/check-registo.mjs
+
+
+  registo · os números dos documentos que governam, contra a fonte
+
+  os factos, medidos:
+     3195  linhas do livro-razão                                ledger/claims/*.yml
+           2.ª medição: loadClaims().size · subconjunto: as que o painel semanal reconfere = 91
+      308  concelhos com página                                 src/data/municipios.mjs · MUNICIPIOS_COM_PAGINA
+           2.ª medição: src/data/concelhos.gerado.json · linha `municipios-portugal-caop-2025`
+       17  estudos (trabalhos) no arquivo                       src/data/studies.mjs · WORKS
+           uma só fonte · linha `estudos-publicados`
+       25  edições do arquivo                                   src/data/studies.mjs · EDITIONS
+           uma só fonte · linha `edicoes-publicadas`
+       25  documentos alojados                                  studies-src/<slug>/<lingua>.html, declarados em studies-src/manifest.yml
+           2.ª medição: studies-src/manifest.yml · edicoes
+        7  correções publicadas                                 ledger/claims/*.yml · corrections[].kind == 'correcao'
+           uma só fonte · linha `correcoes-publicadas`
+       24  passos da construção                                 package.json · scripts.build
+           uma só fonte
+       17  páginas de leitura (edições com registo de conteúdo) registos/manifest.json
+           uma só fonte
+
+  hoje é 06.10.2026; uma afirmação datada de hoje confere-se como corrente.
+
+  ✓ VISAO.md                                          2 corrente(s) ·  5 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 7 avaliada(s), chão 4
+      VISAO.md:23 «2 916 linhas» saltada pela forma (i) · 02.09.2026
+      VISAO.md:23 «2 602 linhas» saltada pela forma (iii-a)
+      VISAO.md:35 «2 975 linhas» saltada pela forma (i) · 22.09.2026
+      VISAO.md:38 «treze estudos» saltada pela forma (i) · 22.09.2026
+      VISAO.md:38 «doze estudos» saltada pela forma (iii-a)
+      VISAO.md:23 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.
+  ✓ README.md                                         5 corrente(s) · 10 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 15 avaliada(s), chão 15
+      README.md:30 «quinze passos encadeados» saltada pela forma (i) · 02.09.2026
+      README.md:42 «2 916 linhas» saltada pela forma (i) · 02.09.2026
+      README.md:42 «132 linhas» saltada pela forma (iii-a)
+      README.md:246 «oito edições com registo» saltada pela forma (i) · 02.09.2026
+      README.md:263 «vinte e cinco documentos» saltada pela forma (i) · 01.10.2026
+      README.md:266 «dezoito documentos» saltada pela forma (iii-a)
+      README.md:267 «dezoito edições do arquivo» saltada pela forma (iii-a)
+      README.md:267 «treze trabalhos» saltada pela forma (iii-a)
+      README.md:344 «2 916 linhas» saltada pela forma (i) · 02.09.2026
+      README.md:344 «132 linhas» saltada pela forma (iii-a)
+      README.md:195 «…ebe `lang` e mais nada; as rotas PT e EN são duas linhas cada. Os dados são partilhados; só as palavr…» distributiva (é por unidade, não é um total): não conferida
+      README.md:61 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.
+      README.md:89 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.
+      README.md:93 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.
+      README.md:97 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.
+      README.md:157 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.
+      README.md:162 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.
+      README.md:194 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.
+      README.md:248 «oito edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.
+      README.md:327 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.
+      README.md:352 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.
+  ✓ design/especime-v3/PENDENTES-DO-DIRETOR.md        2 corrente(s) ·  1 datada(s) ·  0 subconjunto(s) ·  1 valor(es) do sítio · 4 avaliada(s), chão 3
+      design/especime-v3/PENDENTES-DO-DIRETOR.md:9 «oito páginas de leitura» saltada pela forma (i) · 24.08.2026
+      design/especime-v3/PENDENTES-DO-DIRETOR.md:21 «uma edição» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.
+      design/especime-v3/PENDENTES-DO-DIRETOR.md:26 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.
+  ✓ CLAUDE.md                                         0 corrente(s) ·  0 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 0 avaliada(s), chão 0
+      CLAUDE.md:40 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.
+  ✓ design/observatorio/PLANO-fiabilidade-2026-09-02.md  0 corrente(s) ·  1 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 1 avaliada(s), chão 1
+      design/observatorio/PLANO-fiabilidade-2026-09-02.md:11 «32 linhas» saltada pela forma (ii) · 02.09.2026
+
+  ✓ 8 facto(s) medidos na fonte (3 com segunda medição, 4 reconciliados com a linha que os publica) · 9 afirmação(ões) corrente(s) conferida(s) · 17 datada(s) saltada(s) · 0 subconjunto(s) · 1 valor(es) do sítio com o id ao lado
+        5 documento(s) lidos · 42 unidade(s) no vocabulário do livro-razão · chão total 23 · prosa não se lê: «hoje só `evora`» e «o arquivo vazio» são do check:prosa (F3.1).
+
+
+> o-estado-do-pais@0.1.0 check:cruzamento
+> node scripts/check-cruzamento.mjs
+
+
+  cruzamentos · 3070 linha(s) de origem externa em 5 registo(s) · 2155 com reconferência de programa acrescentada (3077 entrada(s)) · 5 planta(s) vista(s)
+  rótulos da fonte · 2046 de 3195 linha(s) com "name", todas vindas do motor · 3 planta(s) vista(s)
+  séries · 34 linha(s) de série em 1 registo(s) · 4 planta(s) vista(s)
+  cruzamentos · 7 ficheiro(s) inteiro(s) em 5 registo(s) · 5 item(ns) da agenda reconferidos
+    avaliacao-economica-regional-de-portugal-2026: 8
+    concelhos-2026: 2767
+    dominios-2026: 40
+    evora-contas-da-camara-2010-2025: 33
+    evora-economia-e-dinheiro-publico-de-fora-da-camara: 17
+    evora-quem-governou-a-camara-2009-2025: 19
+    oe-2026: 186
+
+  ✓ cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou.
+
+
+> o-estado-do-pais@0.1.0 check:documentos
+> node scripts/check-documentos.mjs
+
+
+  portão dos documentos · 25 edição(ões) no manifesto · 25 em disco
+    · "evora-quinze-anos-cinco-mandatos/pt" não é artefacto: veio de «researchhub» — content/08 Évora Mandates/Évora — Quinze Anos, Cinco Mandatos (pt-PT).html @ afb8bfbcdb200c6547d3f614c3a3c84d35736019
+    · "evora-economia-investidores-portas-abertas-2026/pt" não é artefacto: veio de «researchhub» — content/06 Évora Economy/Évora — Economia, Investidores, Portas Abertas 2026 (pt-PT).html @ 5faeb63f2c581178ff12d4a042df6d9cf09c96b5
+    · "evora-orcamentado-pago-devido-2025/pt" não é artefacto: veio de «researchhub» — content/07 Évora Municipal Accounts/Évora — Orçamentado, Pago, Devido 2025 (pt-PT).html @ addeb8483e97a126f37be2f21ec29b1a0ac21303
+    · "evora-orcamentado-pago-devido-2025/en" não é artefacto: veio de «researchhub» — content/07 Évora Municipal Accounts/Évora — Budgeted, Paid, Owed 2025.html @ addeb8483e97a126f37be2f21ec29b1a0ac21303
+    · "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt" não é artefacto: veio de «researchhub» — content/09 Évora Pelouros/Évora — Os Pelouros, Quem Os Teve, O Que Fizeram (pt-PT).html @ 42578647d01979df0b15af1b4de64f31ffe81022
+    · "evora-prometido-pago-auditado-2026/pt" não é artefacto: veio de «researchhub» — content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ 530e380f8db07eda5b611cee0dc573b0ed908d84
+    · "evora-prometido-pago-auditado-2026/en" não é artefacto: veio de «researchhub» — content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ 530e380f8db07eda5b611cee0dc573b0ed908d84
+    · "penalizacoes-por-reforma-antecipada-2026/pt" não é artefacto: veio de «researchhub» — content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html @ e53a3f2d77b65d72a994b8a8976645c5b9885df2
+    · "evora-2027-prometido-painel-dinheiro/pt" não é artefacto: veio de «researchhub» — content/14 Évora 2027/Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b
+    · "evora-2027-prometido-painel-dinheiro/en" não é artefacto: veio de «researchhub» — content/14 Évora 2027/Évora 2027 — Promised, Panel, Money.html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b
+    · "evora-contas-da-camara-2010-2025/pt" não é artefacto: veio de «researchhub» — content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html @ a8febe004599c0ebcf62d62d6c45487ccf0542d4
+    · "evora-contas-da-camara-2010-2025/en" não é artefacto: veio de «researchhub» — content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.html @ a8febe004599c0ebcf62d62d6c45487ccf0542d4
+    · "evora-quem-governou-a-camara-2009-2025/pt" não é artefacto: veio de «researchhub» — content/17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).html @ 1f1fe1ba4f0d61b9a279f3c6018fcab4abcd1087
+    · "evora-economia-e-dinheiro-publico-de-fora-da-camara/pt" não é artefacto: veio de «researchhub» — content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).html @ 1f1fe1ba4f0d61b9a279f3c6018fcab4abcd1087
+    · "evora-economia-e-dinheiro-publico-de-fora-da-camara/en" não é artefacto: veio de «researchhub» — content/18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.html @ 1f1fe1ba4f0d61b9a279f3c6018fcab4abcd1087
+    · "evora-2027-capital-europeia-da-cultura/pt" não é artefacto: veio de «researchhub» — content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html @ a8febe004599c0ebcf62d62d6c45487ccf0542d4
+    · "evora-2027-capital-europeia-da-cultura/en" não é artefacto: veio de «researchhub» — content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html @ a8febe004599c0ebcf62d62d6c45487ccf0542d4
+  registos de conteúdo · 17 atravessado(s) · D5 correu em 16 e não corre em 1
+    · "avaliacao-economica-regional-de-portugal-2026/pt" · 53 bloco(s) · 411 referência(s) · o D5 não corre: os bytes alojados são um artefacto do claude.ai e a edição que o motor prova é «Technical Source/artifact_pt.html», que o sítio não aloja (DECISIONS §1.64)
+    · "evora-2027-capital-europeia-da-cultura/en" · 134 bloco(s) · 176 referência(s) · o D5 correu e bate
+    · "evora-2027-capital-europeia-da-cultura/pt" · 134 bloco(s) · 176 referência(s) · o D5 correu e bate
+    · "evora-2027-prometido-painel-dinheiro/en" · 130 bloco(s) · 190 referência(s) · o D5 correu e bate
+    · "evora-2027-prometido-painel-dinheiro/pt" · 130 bloco(s) · 190 referência(s) · o D5 correu e bate
+    · "evora-contas-da-camara-2010-2025/en" · 171 bloco(s) · 486 referência(s) · o D5 correu e bate
+    · "evora-contas-da-camara-2010-2025/pt" · 172 bloco(s) · 486 referência(s) · o D5 correu e bate
+    · "evora-economia-e-dinheiro-publico-de-fora-da-camara/en" · 161 bloco(s) · 530 referência(s) · o D5 correu e bate
+    · "evora-economia-e-dinheiro-publico-de-fora-da-camara/pt" · 161 bloco(s) · 530 referência(s) · o D5 correu e bate
+    · "evora-economia-investidores-portas-abertas-2026/pt" · 49 bloco(s) · 171 referência(s) · o D5 correu e bate
+    · "evora-orcamentado-pago-devido-2025/en" · 87 bloco(s) · 194 referência(s) · o D5 correu e bate
+    · "evora-orcamentado-pago-devido-2025/pt" · 88 bloco(s) · 194 referência(s) · o D5 correu e bate
+    · "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt" · 138 bloco(s) · 296 referência(s) · o D5 correu e bate
+    · "evora-prometido-pago-auditado-2026/en" · 95 bloco(s) · 324 referência(s) · o D5 correu e bate
+    · "evora-prometido-pago-auditado-2026/pt" · 95 bloco(s) · 324 referência(s) · o D5 correu e bate
+    · "evora-quem-governou-a-camara-2009-2025/pt" · 211 bloco(s) · 484 referência(s) · o D5 correu e bate
+    · "evora-quinze-anos-cinco-mandatos/pt" · 173 bloco(s) · 682 referência(s) · o D5 correu e bate
+
+  ✓ cada documento alojado e cada registo de conteúdo são, byte a byte, o que o seu manifesto declara.
+
+
+> o-estado-do-pais@0.1.0 check:briefs
+> python3 scripts/check-briefs.py
+
+  portão dos briefs · 73 brief(s) em design/observatorio/ · 37 conferido(s) · 33 isento(s) por data (anteriores a 22.09.2026) · 3 isento(s) por nomeação, os 36 presos por sha256 em design/observatorio/medidas/isentos.json
+    conferido: BRIEF-B2-o-veredicto-e-as-paginas-dos-temas.md (medidas/BRIEF-B2.json)
+    conferido: BRIEF-C1-as-correcoes-de-confianca.md (medidas/BRIEF-C1.json)
+    conferido: BRIEF-C2-as-nove-revisoes-da-eurostat.md (medidas/BRIEF-C2.json)
+    conferido: BRIEF-CI1-o-portao-em-metade-do-tempo.md (medidas/BRIEF-CI1.json)
+    conferido: BRIEF-E0-as-linhas-da-casa-no-registo-das-mudancas.md (medidas/BRIEF-E0.json)
+    conferido: BRIEF-E1-os-estudos-de-evora-um-conjunto-coerente.md (medidas/BRIEF-E1.json)
+    conferido: BRIEF-EX1-o-espaco-das-explicacoes-e-a-leitura-semanal.md (medidas/BRIEF-EX1.json)
+    conferido: BRIEF-EX2-a-leitura-da-semana-com-o-que-cada-numero-e.md (medidas/BRIEF-EX2.json)
+    conferido: BRIEF-F22b-as-corridas-prontas-a-armar.md (medidas/BRIEF-F22b.json)
+    conferido: BRIEF-H2-a-passagem-de-higiene-de-04-10.md (medidas/BRIEF-H2.json)
+    conferido: BRIEF-H3-a-passagem-de-higiene-de-05-10.md (medidas/BRIEF-H3.json)
+    conferido: BRIEF-H4-o-menu-do-telefone-em-duas-linhas.md (medidas/BRIEF-H4.json)
+    conferido: BRIEF-K2-o-cartao-para-o-telemovel.md (medidas/BRIEF-K2.json)
+    conferido: BRIEF-L1-a-leitura-de-cada-medida.md (medidas/BRIEF-L1.json)
+    conferido: BRIEF-L2a-o-mapa-primeiro.md (medidas/BRIEF-L2a.json)
+    conferido: BRIEF-L2b-o-concelho-entre-os-308.md (medidas/BRIEF-L2b.json)
+    conferido: BRIEF-M4b-o-livro-razao-do-11-reparado-e-declarado.md (medidas/BRIEF-M4b.json)
+    conferido: BRIEF-M5-as-medicoes-provam-que-veem.md (medidas/BRIEF-M5.json)
+    conferido: BRIEF-MA-a-maquinaria-sem-perda-de-protecao.md (medidas/BRIEF-MA.json)
+    conferido: BRIEF-N1-uma-porta-por-assunto.md (medidas/BRIEF-N1.json)
+    conferido: BRIEF-OE1-o-dinheiro-do-estado-por-ministerio.md (medidas/BRIEF-OE1.json)
+    conferido: BRIEF-P4-os-pequenos-do-sitio.md (medidas/BRIEF-P4.json)
+    conferido: BRIEF-PP1-a-primeira-pagina-de-um-leitor-comum.md (medidas/BRIEF-PP1.json)
+    conferido: BRIEF-R1-o-lado-do-leitor-depois-da-leitura-de-fora.md (medidas/BRIEF-R1.json)
+    conferido: BRIEF-R2-os-rotulos-do-sitio.md (medidas/BRIEF-R2.json)
+    conferido: BRIEF-R3-o-indice-do-sitio.md (medidas/BRIEF-R3.json)
+    conferido: BRIEF-R4-as-palavras-correntes-em-cada-numero.md (medidas/BRIEF-R4.json)
+    conferido: BRIEF-RP1-rendimentos-e-precos-os-cartoes.md (medidas/BRIEF-RP1.json)
+    conferido: BRIEF-RP2-rendimentos-e-precos-os-documentos-e-as-outras-apis.md (medidas/BRIEF-RP2.json)
+    conferido: BRIEF-RP3-as-series-no-motor-e-no-livro.md (medidas/BRIEF-RP3.json)
+    conferido: BRIEF-RP4-o-grafico-das-series-no-cartao-e-no-recibo.md (medidas/BRIEF-RP4.json)
+    conferido: BRIEF-RP4C-as-ajudas-de-leitura-do-grafico.md (medidas/BRIEF-RP4C.json)
+    conferido: BRIEF-RP4M-as-series-que-faltam-e-o-corredor-das-series.md (medidas/BRIEF-RP4M.json)
+    conferido: BRIEF-RP4N-selar-na-fonte-o-que-as-frases-ainda-dizem-pelo-nome.md (medidas/BRIEF-RP4N.json)
+    conferido: BRIEF-S1-a-caixa-das-sugestoes.md (medidas/BRIEF-S1.json)
+    conferido: BRIEF-UE1-onde-portugal-fica-entre-os-27.md (medidas/BRIEF-UE1.json)
+    conferido: BRIEF-UE2-a-pagina-dos-paises.md (medidas/BRIEF-UE2.json)
+      §0 liga «35» a `cartoes_nacionais_nos_temas`
+      §0 liga «9» a `temas_com_medidas`
+      §0 liga «18» a `temas_da_carta`
+      §0 liga «13» a `cartoes_com_valor_de_referencia`
+      §0 liga «13» a `cartoes_com_valor_de_referencia`
+      §0 liga «13» a `cartoes_com_valor_de_referencia`
+      §0 liga «19» a `cartoes_na_primeira_pagina`
+      §0 liga «0» a `cartoes_com_referencia_na_primeira_pagina`
+      §0 liga «24» a `cartoes_com_media_da_uniao`
+      §0 liga «29» a `cartoes_com_periodo_anterior`
+      §0 liga «6» a `cartoes_sem_regua`
+      §0 liga «20» a `cartoes_com_definicao`
+      §0 liga «34» a `cartoes_com_a_marca_entre_o_valor_e_a_unidade`
+      §0 liga «5» a `cartoes_com_precisao_mista`
+      §0 liga «2» a `formas_do_euro_nos_temas`
+      §0 liga «3» a `precisoes_do_euro_nos_temas`
+      §0 liga «1» a `cartao_do_limite_legal_nos_temas`
+      §0 liga «150» a `limite_legal`
+      §0 liga «308» a `concelhos_no_ficheiro`
+      §0 liga «10» a `camaras_acima_do_limite`
+      §0 liga «297» a `camaras_dentro_do_limite`
+      §0 liga «1» a `camaras_sem_valor`
+      §0 liga «21» a `medidas_na_faixa_europeia`
+      §0 liga «4» a `fora_do_valor_de_referencia`
+      §0 liga «9» a `dentro_do_valor_de_referencia`
+      §0 liga «8» a `sem_valor_de_referencia`
+      §0 liga «1» a `posicao_na_faixa_europeia`
+      §0 liga «21» a `medidas_na_faixa_europeia`
+      §0 liga «1» a `posicao_na_faixa_europeia`
+      §0 liga «8» a `mourao_cartoes`
+      §0 liga «1» a `mourao_cartoes_com_regua`
+      §0 liga «34» a `nome_do_projeto_a_390`
+      §0 liga «68» a `nome_do_projeto_a_1280`
+      §0 liga «30» a `titulo_a_390`
+      §0 liga «46» a `titulo_a_1280`
+      §0 liga «10» a `ligacoes_no_rodape`
+      §0 liga «1» a `dominios_com_pagina`
+      §0 liga «9» a `areas_de_governo_com_pagina`
+      §0 liga «17» a `ficheiros_que_dependem_das_rotas`
+      §0 liga «6,3» a `sobrecarga_pt_2025`
+      §0 liga «6,9» a `sobrecarga_pt_2024`
+      §0 liga «7,7» a `sobrecarga_ue_2025`
+      §0 liga «1» a `sobrecarga_sem_media_europeia_declarada`
+      §0 liga «27,2» a `inquilinos_a_preco_de_mercado_pt`
+      §0 liga «18,6» a `inquilinos_a_preco_de_mercado_ue`
+      §0 liga «3,0» a `proprietarios_com_credito_pt`
+      §0 liga «5,0» a `proprietarios_com_credito_ue`
+      §0 liga «1,3» a `proprietarios_sem_credito_pt`
+      §0 liga «3,8» a `proprietarios_sem_credito_ue`
+      §0 liga «2,8» a `inquilinos_a_renda_reduzida_ou_gratuita_pt`
+      §0 liga «9,2» a `inquilinos_a_renda_reduzida_ou_gratuita_ue`
+      §0 liga «47» a `cartoes_na_pagina_dos_temas`
+      §0 liga «47» a `cartoes_na_pagina_dos_temas`
+      §0 liga «0» a `valores_separados_da_unidade`
+      §0 liga «2» a `frases_fixas_da_subida`
+      §0 liga «6» a `ramos_da_uniao_com_subida`
+      §0 liga «1» a `rendas_com_dos_de_ha_um_ano`
+      §0 liga «49,3» a `valor_selado_da_divida_das_familias_ue`
+      §0 liga «49,2» a `valor_revisto_segundo_o_painel`
+      §0 liga «3» a `linhas_do_pib_por_habitante`
+      §0 liga «3» a `linhas_do_pib_por_habitante`
+      §0 liga «5» a `colunas_do_csv_dos_concelhos`
+      §0 liga «0» a `valores_separados_da_unidade`
+      §0 liga «82» a `linhas_com_uma_verificacao_igual_de_05_10_2026`
+      §0 liga «9» a `linhas_com_uma_verificacao_divergente_de_05_10_2026`
+      §0 liga «0» a `linhas_com_uma_verificacao_inacessivel_de_05_10_2026`
+      §0 liga «9» a `dessas_as_lidas_na_eurostat`
+      §0 liga «3» a `linhas_divergentes_usadas_na_primeira_pagina`
+      §0 liga «1» a `correcoes_do_tipo_atualizacao_no_livro`
+      §0 liga «2» a `mencoes_da_v16_no_readme_do_livro`
+      §0 liga «21» a `passos_do_build`
+      §0 liga «33» a `passos_do_verify`
+      §0 liga «17» a `passos_repetidos`
+      §0 liga «1» a `trabalhos_da_corrida`
+      §0 liga «2» a `linhas_do_desemprego_com_o_inteiro_onde_a_fonte_escreve_o_decimal`
+      §0 liga «3» a `correcoes_publicadas_contadas_no_livro`
+      §0 liga «3» a `correcoes_publicadas_contadas_no_livro`
+      §0 liga «9» a `linhas_com_historia_selada`
+      §0 liga «0» a `entradas_seladas_do_contador_das_correcoes`
+      §0 liga «2» a `linhas_com_lugar_declarado_a_mao`
+      §0 liga «1» a `lugares_fora_do_pais_que_o_registo_aceita`
+      §0 liga «6» a `estudos_de_evora_alojados`
+      §0 liga «43 866» a `palavras_dos_seis_estudos`
+      §0 liga «4» a `estudos_com_mais_de_cinco_mil_palavras`
+      §0 liga «61» a `seccoes_dos_seis_estudos`
+      §0 liga «5» a `estudos_de_evora_com_linhas_no_livro`
+      §0 liga «69» a `linhas_do_livro_dos_estudos_de_evora`
+      §0 liga «1» a `estudos_de_evora_sem_linhas_proprias`
+      §0 liga «6» a `contador_dos_estudos_de_evora_publicados`
+      §0 liga «94» a `linhas_do_orcamento_do_estado_de_2026`
+      §0 liga «10» a `linhas_dos_cem_euros_por_funcao`
+      §0 liga «16» a `linhas_dos_cem_euros_por_ministerio`
+      §0 liga «16» a `linhas_dos_cem_euros_por_ministerio`
+      §0 liga «30» a `linhas_da_despesa_por_funcao_de_2024`
+      §0 liga «31» a `linhas_da_execucao_orcamental_de_agosto_de_2026`
+      §0 liga «5» a `linhas_da_divida_publica`
+      §0 liga «3» a `linhas_do_saldo_das_administracoes_publicas`
+      §0 liga «0» a `linhas_sobre_os_juros_da_divida`
+      §0 liga «3 870» a `entradas_datadas_nas_linhas`
+      §0 liga «203» a `entradas_datadas_desde_28_09_2026`
+      §0 liga «18» a `estudos_publicados`
+      §0 liga «0» a `rotas_de_explicacoes_no_sitio`
+      §0 liga «13» a `blocos_da_primeira_pagina`
+      §0 liga «4» a `frases_com_ramo_decidido_pelos_numeros_na_primeira_pagina`
+      §0 liga «6» a `portas_do_menu`
+      §0 liga «3195» a `linhas_do_livro`
+      §0 liga «3184» a `linhas_no_ambito_da_leitura_da_semana`
+      §0 liga «41» a `unidades_distintas_no_ambito`
+      §0 liga «25» a `unidades_que_comecam_por_palavra`
+      §0 liga «9» a `linhas_com_entradas_de_valor_na_semana_ate_06_10`
+      §0 liga «181» a `familias_com_frase_provada`
+      §0 liga «1» a `funcao_da_frase_o_que_e_no_recibo`
+      §0 liga «1» a `vezes_que_a_unidade_entra_na_frase_da_semana`
+      §0 liga «8» a `paginas_lidas_pela_celula_das_frases_compostas`
+      §0 liga «3009» a `linhas_do_livro`
+      §0 liga «91» a `linhas_com_carimbo_do_painel`
+      §0 liga «2545» a `linhas_com_carimbo_do_corredor`
+      §0 liga «6» a `commits_do_painel_semanal`
+      §0 liga «93» a `ficheiros_do_painel_de_28_09`
+      §0 liga «91» a `linhas_mudadas_pelo_painel_de_28_09`
+      §0 liga «3» a `estudos_recentes_na_primeira_pagina`
+      §0 liga «11» a `estudos_sem_sucessor`
+      §0 liga «4» a `estudos_sem_sucessor_datados_a_01_10_2026`
+      §0 liga «1» a `chamadas_a_routePath_texto_na_pagina_da_area`
+      §0 liga «1» a `portas_que_embrulham_o_titulo_na_lista_dos_estudos`
+      §0 liga «1» a `existeConstruido_aceita_o_ficheiro_html_irmao`
+      §0 liga «1» a `isencoes_json_indicador_na_check_lugar`
+      §0 liga «1» a `plantas_da_copia_com_a_mesma_hora_no_verify_depois_do_build`
+      §0 liga «0» a `variaveis_PACOTE_RETIRA_e_PACOTE_MOTOR_no_pacote_sh`
+      §0 liga «5» a `questoes_I190_a_I194_abertas`
+      §0 liga «144» a `palavras_da_nota_da_caixa_das_sugestoes_em_portugues`
+      §0 liga «0» a `rotas_de_privacidade_no_sitio`
+      §0 liga «1» a `portas_do_menu_com_o_nome_europa`
+      §0 liga «10» a `faixas_de_paises_no_livro`
+      §0 liga «9» a `faixas_com_paises_no_mesmo_valor`
+      §0 liga «4» a `maximo_de_paises_no_mesmo_valor_numa_faixa`
+      §0 liga «6» a `portas_do_menu`
+      §0 liga «8» a `portas_do_rodape`
+      §0 liga «430» a `largura_da_regra_do_telefone_px`
+      §0 liga «6» a `espaco_entre_portas_ate_430_px`
+      §0 liga «13» a `letra_do_menu_ate_430_px`
+      §0 liga «16» a `espaco_minimo_entre_portas_nas_outras_larguras`
+      §0 liga «15» a `letra_do_menu_nas_outras_larguras`
+      §0 liga «390» a `largura_do_telefone_px`
+      §0 liga «344» a `largura_natural_das_seis_portas_pt_a_390_px`
+      §0 liga «354» a `coluna_do_menu_a_390_px`
+      §0 liga «435» a `largura_natural_das_sete_portas_pt_a_390_px`
+      §0 liga «2» a `linhas_do_menu_com_sete_portas_pt_a_390_px`
+      §0 liga «6» a `portas_exigidas_pela_celula_tm4`
+      §0 liga «4» a `lugares_declarados_na_politica_de_ia`
+      §0 liga «21» a `cartoes_declarados_nos_quadros`
+      §0 liga «4» a `cartoes_com_variacao_sob_nome_de_nivel`
+      §0 liga «2» a `linhas_com_menos_decimais_do_que_a_fonte`
+      §0 liga «11» a `frases_das_leituras_com_termos_por_explicar`
+      §0 liga «0» a `ficheiros_que_a_construcao_le_mudados_entre_as_copias_e_a_cabeca`
+      §0 liga «36» a `cartoes_nacionais_nos_temas`
+      §0 liga «35» a `cartoes_de_linha_nos_temas`
+      §0 liga «1» a `cartoes_das_camaras_nos_temas`
+      §0 liga «36» a `cartoes_nacionais_na_edicao_inglesa`
+      §0 liga «20» a `cartoes_na_primeira_pagina`
+      §0 liga «21» a `cartoes_com_pergunta`
+      §0 liga «15» a `cartoes_sem_pergunta`
+      §0 liga «8» a `perguntas_com_algarismos`
+      §0 liga «15» a `cartoes_com_valor_de_referencia`
+      §0 liga «5» a `cartoes_fora_do_valor_de_referencia`
+      §0 liga «10» a `cartoes_dentro_do_valor_de_referencia`
+      §0 liga «15» a `referencias_declaradas`
+      §0 liga «13» a `referencias_da_comissao`
+      §0 liga «1» a `referencias_do_pacto`
+      §0 liga «1» a `referencias_do_pacto`
+      §0 liga «4» a `formas_do_veredicto`
+      §0 liga «33» a `cartoes_com_periodo_anterior`
+      §0 liga «25» a `cartoes_com_media_da_uniao`
+      §0 liga «2» a `cartoes_de_linha_sem_regua`
+      §0 liga «0» a `cartoes_so_com_referencia_e_sem_comparacao`
+      §0 liga «59» a `valores_de_linha_nas_reguas_dos_temas`
+      §0 liga «0» a `cartoes_com_leitura`
+      §0 liga «1» a `marcas_da_fonte_por_cartao_maximo`
+      §0 liga «1» a `marcas_da_fonte_por_cartao_maximo`
+      §0 liga «36» a `cartoes_nacionais_nos_temas`
+      §0 liga «1» a `medidas_com_valor_negativo`
+      §0 liga «5» a `inventario_das_medidas`
+      §0 liga «16» a `unidades_distintas`
+      §0 liga «0,7» a `saldo_valor`
+      §0 liga «0,6» a `saldo_anterior_valor`
+      §0 liga «7» a `disparidade_valor`
+      §0 liga «8,6» a `disparidade_anterior_valor`
+      §0 liga «22» a `definicoes_declaradas`
+      §0 liga «31» a `origens_das_definicoes_declaradas`
+      §0 liga «22» a `definicoes_declaradas`
+      §0 liga «72» a `pedacos_auditados`
+      §0 liga «85» a `apoios_auditados`
+      §0 liga «32» a `indicadores_no_ficheiro_do_motor`
+      §0 liga «13» a `indicadores_com_limiar_no_motor`
+      §0 liga «19» a `indicadores_sem_limiar_no_motor`
+      §0 liga «28» a `tamanho_do_numero_px`
+      §0 liga «16» a `tamanho_do_nome_px`
+      §0 liga «14» a `tamanho_da_regua_px`
+      §0 liga «12» a `tamanho_da_pergunta_px`
+      §0 liga «3» a `pecas_de_lugares_antes_do_mapa`
+      §0 liga «9» a `regioes_na_lista`
+      §0 liga «29» a `distritos_e_ilhas_na_lista`
+      §0 liga «2» a `seccoes_da_primeira_pagina_antes_dos_lugares`
+      §0 liga «1» a `pesquisas_na_primeira_pagina`
+      §0 liga «1» a `pesquisas_na_primeira_pagina`
+      §0 liga «5321» a `altura_da_captura_de_lugares_a_390`
+      §0 liga «7194» a `altura_da_captura_da_primeira_pagina_a_390`
+      §0 liga «308» a `concelhos_com_linha_de_populacao`
+      §0 liga «9» a `medidas_com_linhas_por_concelho`
+      §0 liga «308» a `linhas_do_ganho_medio_por_concelho`
+      §0 liga «0» a `faixas_na_pagina_do_concelho`
+      §0 liga «0» a `faixas_na_pagina_do_concelho`
+      §0 liga «2» a `reguas_a_mao_que_procuram_o_mapa_na_primeira_pagina`
+      §0 liga «55» a `linhas`
+      §0 liga «28» a `linhas_recusadas`
+      §0 liga «9» a `valor_de_texto`
+      §0 liga «7» a `sem_valor_no_excerto`
+      §0 liga «20» a `source_type_invalido`
+      §0 liga «10» a `derived`
+      §0 liga «149» a `numeros_html`
+      §0 liga «41» a `casados_html`
+      §0 liga «89» a `orfaos_html`
+      §0 liga «9» a `erradas_html`
+      §0 liga «654» a `numeros_relatorio`
+      §0 liga «154» a `casados_relatorio`
+      §0 liga «328» a `orfaos_relatorio`
+      §0 liga «95» a `erradas_relatorio`
+      §0 liga «40» a `desvios_do_par`
+      §0 liga «38» a `briefs_ate_22_09_2026`
+      §0 liga «35» a `briefs_com_seccao_de_medicoes`
+      §0 liga «2» a `briefs_com_guiao_de_medicoes`
+      §0 liga «2» a `briefs_conferidos_pelo_portao`
+      §0 liga «33» a `briefs_isentos_por_data`
+      §0 liga «3» a `briefs_isentos_por_nomeacao`
+      §0 liga «0» a `ocorrencias_do_nome_de_quem_responde_em_src_e_public`
+      §0 liga «0» a `exportacoes_de_politica_ia_com_o_nome_de_quem_responde`
+      §0 liga «44» a `passos_do_verify`
+      §0 liga «24» a `passos_do_build`
+      §0 liga «20» a `passos_repetidos_do_build_no_verify`
+      §0 liga «13» a `corridas_inteiras_registadas`
+      §0 liga «186» a `build_segundos_minimo`
+      §0 liga «220» a `build_segundos_maximo`
+      §0 liga «1010» a `verify_segundos_minimo`
+      §0 liga «1165» a `verify_segundos_maximo`
+      §0 liga «75» a `build_segundos_a_28_09_arredondado`
+      §0 liga «471» a `verify_segundos_a_28_09_arredondado`
+      §0 liga «34» a `briefs_com_guiao_de_medidas`
+      §0 liga «5» a `larguras_do_check_alvos`
+      §0 liga «120» a `espera_fixa_depois_de_networkidle_ms`
+      §0 liga «1» a `esperas_pela_corrida_de_main_no_aterrar`
+      §0 liga «274406» a `bytes_do_mapa`
+      §0 liga «862» a `citacoes_do_mapa`
+      §0 liga «47» a `cartoes_nas_entradas`
+      §0 liga «47» a `cartoes_nos_temas`
+      §0 liga «47» a `cartoes_nos_temas`
+      §0 liga «0» a `cartoes_so_numa_das_duas`
+      §0 liga «5» a `blocos_da_primeira_pagina`
+      §0 liga «5» a `blocos_da_primeira_pagina`
+      §0 liga «4» a `entradas_que_copiam_blocos`
+      §0 liga «5» a `blocos_da_primeira_pagina`
+      §0 liga «9» a `temas`
+      §0 liga «18» a `dominios`
+      §0 liga «1» a `dominios_no_ar`
+      §0 liga «16» a `dominios_sem_pagina`
+      §0 liga «9» a `temas`
+      §0 liga «3009» a `linhas_do_livro`
+      §0 liga «0» a `linhas_da_entidade_orcamental`
+      §0 liga «0» a `linhas_da_despesa_por_funcao_do_eurostat`
+      §0 liga «3» a `linhas_do_saldo_das_administracoes_publicas`
+      §0 liga «5» a `linhas_da_divida_publica`
+      §0 liga «5» a `linhas_com_fonte_no_dados_gov`
+      §0 liga «9» a `areas_do_governo_declaradas`
+      §0 liga «1» a `linhas_do_orcamento_de_evora`
+      §0 liga «3» a `folhas_que_seguem_a_preferencia_do_aparelho`
+      §0 liga «0» a `lugares_onde_o_comando_do_tema_e_rendido`
+      §0 liga «5» a `entradas_do_menu`
+      §0 liga «5» a `reguas_a_mao_que_leem_a_primeira_pagina_antiga`
+      §0 liga «117» a `linhas_que_a_regra_das_casas_decimais_le`
+      §0 liga «2535» a `linhas_que_a_regra_das_casas_decimais_deixa_por_ler`
+      §0 liga «6» a `ocorrencias_dos_dois_termos_nas_definicoes`
+      §0 liga «0» a `palavras_da_nota_do_sucessor_que_dizem_a_reconciliacao`
+      §0 liga «1» a `codigo_do_decisoes_em_vigor_num_intervalo_com_png`
+      §0 liga «8» a `linhas_de_chaves_en_com_a_descricao_de_setembro`
+      §0 liga «23» a `cartoes_na_primeira_pagina`
+      §0 liga «9» a `temas_na_primeira_pagina`
+      §0 liga «1» a `mapas_na_primeira_pagina`
+      §0 liga «0» a `numeros_no_mapa`
+      §0 liga «4» a `mudancas_na_primeira_pagina`
+      §0 liga «126» a `palavras_antes_do_primeiro_titulo`
+      §0 liga «8» a `numeros_antes_do_primeiro_titulo`
+      §0 liga «9» a `valores_fixos_da_leitura_do_pais`
+      §0 liga «5» a `blocos_declarados`
+      §0 liga «30» a `linhas_dos_blocos`
+      §0 liga «30» a `linhas_dos_blocos`
+      §0 liga «18» a `condicoes_dos_blocos`
+      §0 liga «18» a `condicoes_dos_blocos`
+      §0 liga «8» a `condicoes_do_mesmo_periodo`
+      §0 liga «8» a `condicoes_do_mesmo_periodo`
+      §0 liga «6» a `entradas_declaradas`
+      §0 liga «47» a `cartoes_nas_entradas`
+      §0 liga «0» a `cartoes_repetidos_nas_entradas`
+      §0 liga «48» a `artigos_da_pagina_dos_temas`
+      §0 liga «1» a `cartoes_fora_das_entradas`
+      §0 liga «0» a `cartoes_das_entradas_fora_dos_temas`
+      §0 liga «1» a `pesquisa_lista_nasce_escondida`
+      §0 liga «0» a `pesquisa_lista_nunca_se_mostra`
+      §0 liga «0» a `pesquisa_enter_recarrega`
+      §0 liga «0» a `cor_de_estado_na_primeira_pagina`
+      §0 liga «0» a `cor_de_estado_na_primeira_pagina`
+      §0 liga «39» a `cor_de_estado_na_pagina_europeia`
+      §0 liga «1» a `metodo_frase_da_cor`
+      §0 liga «0» a `ficheiros_com_a_ressalva_fora_da_agenda`
+      §0 liga «1» a `agenda_diz_que_a_primeira_pagina_ja_diz`
+      §0 liga «1» a `agenda_diz_que_a_primeira_pagina_ja_diz`
+      §0 liga «1» a `cartao_da_habitacao_com_media_europeia`
+      §0 liga «2» a `mudancas_declaradas`
+      §0 liga «1» a `mudancas_com_palavras_internas`
+      §0 liga «1» a `estudos_seccao_por_lugar`
+      §0 liga «2» a `definicoes_com_sigla_por_verificar`
+      §0 liga «1» a `vistas_com_o_rotulo_no_topo`
+      §0 liga «1» a `recibo_valor_e_unidade_colados`
+      §0 liga «8» a `cartoes_do_concelho`
+      §0 liga «1» a `cartoes_do_concelho_com_regua`
+      §0 liga «1» a `metodo_frase_do_base`
+      §0 liga «89,2» a `ine_divida_2025`
+      §0 liga «93,0» a `ine_divida_2024`
+      §0 liga «0,7» a `ine_saldo_2025`
+      §0 liga «3009» a `linhas_do_livro`
+      §0 liga «41» a `unidades_distintas_nas_linhas`
+      §0 liga «28» a `nomes_de_medida_distintos_nas_linhas`
+      §0 liga «3» a `unidades_com_o_simbolo_do_euro_em_vez_da_palavra`
+      §0 liga «1» a `unidades_que_dizem_um_limite_na_propria_unidade`
+      §0 liga «2» a `unidades_de_indice_com_base_cem`
+      §0 liga «25» a `entradas_do_dicionario_das_unidades_inglesas`
+      §0 liga «16» a `unidades_das_linhas_sem_entrada_inglesa`
+      §0 liga «7466» a `paginas_construidas_lidas_pelo_inventario`
+      §0 liga «5248» a `cartoes_de_medida_nas_paginas`
+      §0 liga «34» a `formas_distintas_da_unidade_nos_cartoes_portugueses`
+      §0 liga «25» a `formas_distintas_do_estado_nos_cartoes_portugueses`
+      §0 liga «8» a `formas_distintas_da_dobra_nos_cartoes_portugueses`
+      §0 liga «40» a `rotas_declaradas`
+      §0 liga «0» a `rotas_de_indice_declaradas`
+      §0 liga «6» a `portas_do_menu`
+      §0 liga «6» a `portas_do_menu`
+      §0 liga «0» a `portas_do_rodape_para_um_indice`
+      §0 liga «32» a `ficheiros_de_pagina_portugueses`
+      §0 liga «32» a `ficheiros_de_pagina_portugueses`
+      §0 liga «17» a `estudos_declarados`
+      §0 liga «6» a `estudos_com_sucessor`
+      §0 liga «3 195» a `linhas_do_livro_razao`
+      §0 liga «48» a `linhas_com_leitura_provada_num_cartao`
+      §0 liga «303» a `familias_de_medida_sem_frase_provada`
+      §0 liga «12» a `familias_municipais_sem_frase_provada`
+      §0 liga «2 817» a `linhas_dos_concelhos_sem_frase_provada`
+      §0 liga «330» a `linhas_nacionais_e_da_uniao_sem_frase_provada`
+      §0 liga «121» a `linhas_com_nome_do_projeto`
+      §0 liga «24» a `series_no_tempo`
+      §0 liga «2» a `series_com_frase_do_ultimo_ponto`
+      §0 liga «22» a `series_sem_frase_do_ultimo_ponto`
+      §0 liga «0» a `ficheiros_que_a_construcao_le_mudados_entre_as_copias_e_a_cabeca`
+      §0 liga «36» a `cartoes_nacionais_nos_temas`
+      §0 liga «9» a `temas_com_medidas`
+      §0 liga «18» a `temas_da_carta`
+      §0 liga «13» a `cartoes_por_tema`
+      §0 liga «10» a `cartoes_por_tema`
+      §0 liga «2» a `cartoes_por_tema`
+      §0 liga «3» a `cartoes_por_tema`
+      §0 liga «1» a `cartoes_por_tema`
+      §0 liga «4» a `cartoes_por_tema`
+      §0 liga «1» a `cartoes_por_tema`
+      §0 liga «1» a `cartoes_por_tema`
+      §0 liga «1» a `cartoes_por_tema`
+      §0 liga «0» a `cartoes_de_precos_no_consumidor`
+      §0 liga «0» a `cartoes_de_precos_no_consumidor`
+      §0 liga «0» a `cartoes_de_precos_no_consumidor`
+      §0 liga «0» a `cartoes_de_precos_no_consumidor`
+      §0 liga «0» a `cartoes_de_precos_no_consumidor`
+      §0 liga «0» a `cartoes_nacionais_com_periodo_mensal`
+      §0 liga «2» a `cartoes_de_linha_sem_regua`
+      §0 liga «920,00» a `valor_do_salario_minimo_no_sitio`
+      §0 liga «2 984» a `linhas_do_livro`
+      §0 liga «288» a `linhas_de_documento_alojado`
+      §0 liga «1 358» a `linhas_de_serie_de_api`
+      §0 liga «9» a `linhas_da_tabela_do_memorando`
+      §0 liga «8» a `linhas_do_memorando_verificadas`
+      §0 liga «15» a `marcas_por_verificar_no_memorando`
+      §0 liga «2 984» a `linhas_do_livro`
+      §0 liga «303,7» a `segundos_do_build`
+      §0 liga «7 354» a `paginas_construidas`
+      §0 liga «486,9» a `segundos_do_verify`
+      §0 liga «45» a `grupos_com_varios_periodos`
+      §0 liga «28» a `grupos_que_misturam_uniao`
+      §0 liga «2 655» a `linhas_lidas_para_os_grupos`
+      §0 liga «16» a `series_no_tempo_no_livro`
+      §0 liga «4 131» a `pontos_das_series_no_tempo`
+      §0 liga «2» a `lacunas_declaradas_nas_series_no_tempo`
+      §0 liga «944» a `pontos_da_maior_serie_no_tempo`
+      §0 liga «7» a `linhas_presas_a_uma_serie`
+      §0 liga «10» a `linhas_com_as_coordenadas_0014666_ou_0014647`
+      §0 liga «0» a `dessas_as_presas_a_uma_serie`
+      §0 liga «8» a `formas_na_lista_fechada_da_check_formas`
+      §0 liga «0» a `ocorrencias_de_serie_do_pais_em_src`
+      §0 liga «0» a `desenhos_svg_no_cartao_da_medida`
+      §0 liga «0» a `desenhos_svg_no_cartao_da_medida`
+      §0 liga «0» a `desenhos_svg_no_cartao_da_medida`
+      §0 liga «64» a `pixeis_minimos_de_uma_marca_intermedia_do_tempo_as_pontas`
+      §0 liga «0» a `marcas_do_eixo_vertical_com_o_simbolo_da_unidade`
+      §0 liga «0» a `linhas_de_referencia_no_modulo_da_forma`
+      §0 liga «2» a `regras_de_passagem_ou_foco_na_folha_do_desenho`
+      §0 liga «0» a `etiquetas_de_valor_por_ponto_no_componente`
+      §0 liga «378» a `linhas_do_livro_com_derivation_nao_nula`
+      §0 liga «416» a `pontos_da_serie_da_inflacao`
+      §0 liga «2» a `mencoes_ao_banco_central_europeu_nas_leituras`
+      §0 liga «16» a `series_no_tempo_no_livro`
+      §0 liga «1» a `series_no_tempo_derivadas`
+      §0 liga «7» a `linhas_presas_a_uma_serie`
+      §0 liga «10» a `linhas_do_ipc_com_as_coordenadas_0014666_ou_0014647`
+      §0 liga «5» a `dessas_as_linhas_principais_sem_o_periodo_anterior`
+      §0 liga «0» a `dessas_as_presas_a_uma_serie`
+      §0 liga «1» a `meses_entre_a_linha_do_ihpc_de_portugal_e_o_ultimo_ponto_da_sua_serie`
+      §0 liga «1» a `meses_entre_a_linha_do_ihpc_de_portugal_e_o_ultimo_ponto_da_sua_serie`
+      §0 liga «13» a `series_no_tempo_com_ponto_no_periodo_de_base_de_2015`
+      §0 liga «6» a `pontos_da_serie_da_remuneracao_bruta_mensal_media`
+      §0 liga «174» a `linhas_com_a_frase_por_confirmar`
+      §0 liga «11» a `linhas_marcadas_do_desemprego_registado_da_madeira`
+      §0 liga «92» a `linhas_marcadas_do_orcamento_de_2026`
+      §0 liga «56» a `linhas_marcadas_da_execucao_de_2026`
+      §0 liga «11» a `linhas_marcadas_do_desemprego_registado_da_madeira`
+      §0 liga «4» a `linhas_marcadas_restantes`
+      §0 liga «6» a `series_com_a_frase_por_confirmar`
+      §0 liga «5» a `series_marcadas_do_eurostat`
+      §0 liga «45» a `partes_apoiadas_no_nome_do_projeto_nas_familias`
+      §0 liga «6» a `partes_apoiadas_no_nome_do_projeto_nas_series`
+      §0 liga «0» a `ficheiros_na_pasta_das_funcoes`
+      §0 liga «1» a `portas_do_rodape_para_escrever_ao_projeto`
+      §0 liga «5» a `ficheiros_de_codigo_que_leem_a_porta_das_correcoes`
+      §0 liga «2» a `vistas_com_formulario`
+      §0 liga «0» a `ficheiros_fonte_que_falam_de_sugestoes`
+      §0 liga «35» a `rotas_declaradas`
+      §0 liga «0» a `rotas_de_sugestoes_declaradas`
+      §0 liga «2» a `tabelas_no_registo_da_base`
+      §0 liga «1» a `funcoes_no_registo_da_base`
+      §0 liga «5» a `envios_por_marca_e_por_hora`
+      §0 liga «200» a `envios_por_dia_na_caixa_inteira`
+      §0 liga «90» a `dias_de_retencao_depois_da_decisao`
+      §0 liga «1» a `papeis_que_podem_chamar_a_funcao`
+      §0 liga «10» a `linhas_da_uniao_nos_blocos`
+      §0 liga «10» a `linhas_da_uniao_nos_blocos`
+      §0 liga «10» a `gemeas_portuguesas`
+      §0 liga «10» a `gemeas_portuguesas`
+      §0 liga «3 009» a `linhas_do_livro`
+      §0 liga «0» a `linhas_de_serie_no_livro`
+      §0 liga «10» a `series_de_paises_no_livro`
+      §0 liga «21» a `cartoes_dos_dois_quadros`
+      §0 liga «2» a `paises_nomeados_em_cada_faixa_hoje`
+      §0 liga «44» a `termos_tecnicos_nas_definicoes_dos_quadros`
+      §0 liga «1205» a `altura_da_pagina_da_uniao_a_390_depois_do_k2`
+    isento por nomeação: BRIEF-B1c-o-que-mudou-no-seu-lugar.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.120)
+    isento por nomeação: BRIEF-I129-o-grupo-etario-dos-jovens-nem.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.119)
+    isento por nomeação: BRIEF-M3b-os-nomes-confirmados-voltam-aos-recibos.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.118)
+    chave repetida entre isentos, dita e não fatal: «BRIEF-fatia» · BRIEF-fatia-css-alcance-2026-09-16.md, BRIEF-fatia-dominios-css-2026-09-15.md · fecha o portão no dia em que um deles deixar de ser isento
+    apagado antes de contar no §0: codigo 680, enderecos 0, seccoes 44, datas 52, resumos 0, ordinais 1, identificadores 42, anos 6
+  ✓ 457 número(s) do §0 ligado(s) à sua medição, cada detetor provou que vê, e os briefs isentos estão presos pelo resumo.
+
+> o-estado-do-pais@0.1.0 gate:html
+> node scripts/gate-html.mjs
+
+  o nome de quem responde · 0 ficheiro(s) com o nome em 395 lido(s) de src/ e public/
+  B1 leitura evora-orcamentado-pago-devido-2025/en: sem leitura, o registo não começa por In brief.
+  B1 leitura evora-prometido-pago-auditado-2026/en: sem leitura, o registo não começa por In brief.
+  B1 leitura avaliacao-economica-regional-de-portugal-2026/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-economia-investidores-portas-abertas-2026/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-orcamentado-pago-devido-2025/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-os-pelouros-quem-os-teve-o-que-fizeram/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-prometido-pago-auditado-2026/pt: sem leitura, o registo não começa por Em resumo.
+  B1 leitura evora-quinze-anos-cinco-mandatos/pt: sem leitura, o registo não começa por Em resumo.
+  EX1 · 36 marca(s) da leitura da semana recontadas na janela que acaba a 2026-10-06, 2 página(s) de explicação e 2 <head> de explicação conferidos.
+  R3 · as 8 portas do rodapé conferidas em 7882 página(s), com 14 planta(s) em memória.
+  H3 · a porta da privacidade em 7882 de 7882 página(s), 2 página(s) da privacidade conferida(s), 22 planta(s) em memória; a frase dos cookies no texto, conferida em 7907 página(s), 10 guião(ões) servido(s), 1 configuração e 1 função(ões): 0 achado(s); 560 etiqueta(s) das marcas da faixa da União conferidas no title.
+  R2-b, o autoteste da unidade: «dos 21 aos 65 anos» recusada (4 falta(s)), a origem de outra linha recusada, a declaração certa aceite.
+  RP4N: 50 plantas com mensagem e contagem afirmadas
+  RP4N aceites · data: 44 ocorrência(s)
+    dist/agenda/index.html: 11
+    dist/areas/ambiente-e-energia/index.html: 1
+    dist/en/agenda/index.html: 11
+    dist/en/areas/ambiente-e-energia/index.html: 1
+    dist/en/ledger/avisos-pt2030-abertos/index.html: 1
+    dist/en/ledger/avisos-pt2030-pessoas-singulares/index.html: 1
+    dist/en/ledger/ciclo-substituicao-condutas/index.html: 2
+    dist/en/ledger/index.html: 5
+    dist/en/ledger/saldo-natural-portugal-2025/index.html: 1
+    dist/livro-razao/avisos-pt2030-abertos/index.html: 1
+    dist/livro-razao/avisos-pt2030-pessoas-singulares/index.html: 1
+    dist/livro-razao/ciclo-substituicao-condutas/index.html: 2
+    dist/livro-razao/index.html: 5
+    dist/livro-razao/saldo-natural-portugal-2025/index.html: 1
+  RP4N aceites · excerto: 16 ocorrência(s)
+    dist/en/ledger/agua-nao-faturada-portugal-2024/index.html: 1
+    dist/en/ledger/avisos-pt2030-abertos/index.html: 1
+    dist/en/ledger/avisos-pt2030-pessoas-singulares/index.html: 1
+    dist/en/ledger/ciclo-substituicao-condutas/index.html: 1
+    dist/en/ledger/evora-prr-aprovado-2026/index.html: 1
+    dist/en/ledger/evora-prr-pago-2026/index.html: 1
+    dist/en/ledger/evora-prr-vencido-aprovado-2026/index.html: 1
+    dist/en/ledger/saldo-natural-portugal-2025/index.html: 1
+    dist/livro-razao/agua-nao-faturada-portugal-2024/index.html: 1
+    dist/livro-razao/avisos-pt2030-abertos/index.html: 1
+    dist/livro-razao/avisos-pt2030-pessoas-singulares/index.html: 1
+    dist/livro-razao/ciclo-substituicao-condutas/index.html: 1
+    dist/livro-razao/evora-prr-aprovado-2026/index.html: 1
+    dist/livro-razao/evora-prr-pago-2026/index.html: 1
+    dist/livro-razao/evora-prr-vencido-aprovado-2026/index.html: 1
+    dist/livro-razao/saldo-natural-portugal-2025/index.html: 1
+  RP4N aceites · endereco: 10 ocorrência(s)
+    dist/en/ledger/agua-nao-faturada-portugal-2024/index.html: 1
+    dist/en/ledger/avisos-pt2030-abertos/index.html: 1
+    dist/en/ledger/avisos-pt2030-pessoas-singulares/index.html: 1
+    dist/en/ledger/ciclo-substituicao-condutas/index.html: 1
+    dist/en/ledger/saldo-natural-portugal-2025/index.html: 1
+    dist/livro-razao/agua-nao-faturada-portugal-2024/index.html: 1
+    dist/livro-razao/avisos-pt2030-abertos/index.html: 1
+    dist/livro-razao/avisos-pt2030-pessoas-singulares/index.html: 1
+    dist/livro-razao/ciclo-substituicao-condutas/index.html: 1
+    dist/livro-razao/saldo-natural-portugal-2025/index.html: 1
+  RP4N aceites · pessoa-I77: 6 ocorrência(s)
+    dist/en/municipalities/evora/index.html: 1
+    dist/estudos/evora-quem-governou-a-camara-2009-2025/documento/index.html: 2
+    dist/estudos/evora-quem-governou-a-camara-2009-2025/index.html: 2
+    dist/municipios/evora/index.html: 1
+  RP4N aceites · referencia-metodo: 2 ocorrência(s)
+    dist/en/method/index.html: 1
+    dist/metodo/index.html: 1
+  RP4N aceites · referencia-sobre: 0 ocorrência(s)
+  RP4N recusadas · o-que-e-linha: 0 ocorrência(s)
+  RP4N recusadas · o-que-e-familia: 0 ocorrência(s)
+  RP4N recusadas · o-que-e-serie: 0 ocorrência(s)
+  RP4N recusadas · nome-medida: 0 ocorrência(s)
+  RP4N recusadas · nome-serie: 0 ocorrência(s)
+  RP4N recusadas · nome-lugar: 0 ocorrência(s)
+  RP4N recusadas · titulo-estudo: 0 ocorrência(s)
+  RP4N recusadas · leitura-cartao: 0 ocorrência(s)
+  RP4N recusadas · primeira-pagina: 0 ocorrência(s)
+  RP4N recusadas · explicacao: 0 ocorrência(s)
+  RP4N recusadas · fora-dos-tipos: 136 ocorrência(s)
+    dist/a-verificar/index.html: 2
+    dist/areas/ambiente-e-energia/index.html: 2
+    dist/areas/economia-e-coesao-territorial/index.html: 5
+    dist/correcoes/index.html: 9
+    dist/en/areas/ambiente-e-energia/index.html: 2
+    dist/en/areas/economia-e-coesao-territorial/index.html: 5
+    dist/en/corrections/index.html: 9
+    dist/en/ledger/avisos-pt2030-abertos/index.html: 3
+    dist/en/ledger/avisos-pt2030-pessoas-singulares/index.html: 3
+    dist/en/ledger/ciclo-substituicao-condutas/index.html: 3
+    dist/en/ledger/index.html: 12
+    dist/en/ledger/retribuicao-minima-mensal-garantida-continente-2026/index.html: 1
+    dist/en/ledger/saldo-natural-portugal-2025/index.html: 2
+    dist/en/ledger/taxa-de-emprego-2025/index.html: 1
+    dist/en/municipalities/evora/index.html: 4
+    dist/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html: 13
+    dist/en/studies/evora-prometido-pago-auditado-2026/index.html: 8
+    dist/en/to-verify/index.html: 2
+    dist/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html: 13
+    dist/estudos/evora-prometido-pago-auditado-2026/index.html: 8
+    dist/livro-razao/avisos-pt2030-abertos/index.html: 3
+    dist/livro-razao/avisos-pt2030-pessoas-singulares/index.html: 3
+    dist/livro-razao/ciclo-substituicao-condutas/index.html: 3
+    dist/livro-razao/index.html: 12
+    dist/livro-razao/retribuicao-minima-mensal-garantida-continente-2026/index.html: 1
+    dist/livro-razao/saldo-natural-portugal-2025/index.html: 2
+    dist/livro-razao/taxa-de-emprego-2025/index.html: 1
+    dist/municipios/evora/index.html: 4
+
+  portão de HTML · 7907 páginas · 2691/3195 afirmações citadas fora do livro-razão · 6390 páginas de linha · 6390 títulos de linha com o valor e a unidade separados · R4: 6390 recibo(s) com a frase «O que é este número» · 25 documento(s) de estudo, conferidos contra a origem · 17 página(s) de leitura, conferidas contra o seu registo de conteúdo · 0 página(s) com o nome de quem responde · séries: 68 página(s), 27196 ponto(s), 3248 nome(s) de país, 5448 campo(s), 100 recontagem(ns) conferidos · RP4-c: 9474 período(s) de pontos nos desenhos, cada um com o valor do mesmo ponto ao lado · UE1b: 20 porta(s) dos recibos das linhas para as séries, 22 legenda(s) das marcas com 34 marca(s) · UE1d: 20 definição(ões) declarada(s) nos recibos das séries · UE1e: 20 recibo(s) das séries sem Portugal na definição, 2 com a forma do recibo da série (1 declarada(s)) · S1: 7882 porta(s) das sugestões em 7882 página(s), 12 página(s) da caixa conferida(s), 7832 endereço(s) lidos no mapa do sítio, 21 planta(s) em memória, 2 migração(ões) da base lidas por ordem · L2b: 2444 lugar(es), 2464 contagem(ns) e 528 empate(s) recontados das linhas dos concelhos, 2444 valor(es) do concelho e 616 de Portugal nas faixas, pela marca do cartão
+  allowlist · 19 motivo(s) e 3 token(s), com os usos que os provam vivos: data-de-atualizacao 2 · data-da-conferencia 588 · nome-oficial-da-medida 44 · referencia-legal 20 · titulo-de-estudo 455 · escala-de-instrumento 3520 · objetivo-institucional 4 · limiar-do-quadro 250 · data-da-linha 53104 · data-do-repositorio 110 · periodo-da-fonte 1112 · data-de-referencia 5170 · numeracao 124 · proveniencia 17583 · data-da-agenda 170 · data-de-leitura-de-uma-definicao 190 · identificador-tecnico 4 · fonte-da-carta 68 · licenca-do-conjunto 2 · UE-27 (scope: any) 21 · EU-27 (scope: any) 21 · sha256 (scope: body) 958
+  rótulo de IA · 7882 no topo (de 7882 páginas fora dos documentos alojados) · 0 no rodapé · 2 ficha(s) da primeira página · 2 frase(s) da política e 2 do projeto, comparadas com o texto decidido
+  ortografia · Acordo de 1990 como se aplica em Portugal · 254 pares, 50 iguais · restante: 0 ocorrência(s) em 0 rota(s), todas de linhas cruzadas · 8 dispensada(s) por estarem entre «…»
+  factos por verificar · 2 campo(s) declarados, com o marcador na página e a porta da edição certa
+  as duas edições · 37 peça(s) de página de leitura com os mesmos ids pela mesma ordem
+
+  504 aviso(s):
+    · a afirmação "abrantes-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "agua-nao-faturada-portugal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "agueda-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "aguiar-da-beira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "alandroal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "albergaria-a-velha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "albufeira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "alcacer-do-sal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "alcanena-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "alcobaca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "alcochete-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "alcoutim-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "alenquer-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "alentejo-central-poder-de-compra-2023" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "alfandega-da-fe-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "alijo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "aljezur-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "aljezur-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "aljustrel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "aljustrel-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "almada-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "almada-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "almeida-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "almeirim-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "almodovar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "alpiarca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "alter-do-chao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "alvaiazere-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "alvito-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "amadora-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "amarante-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "amares-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "anadia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "angra-do-heroismo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ansiao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "arcos-de-valdevez-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "arganil-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "armamar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "arouca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "arraiolos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "arronches-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "arruda-dos-vinhos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "aveiro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "avis-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "avisos-pt2030-abertos" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "avisos-pt2030-pessoas-singulares" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "azambuja-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "baiao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "barcelos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "barrancos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "barreiro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "batalha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "batalha-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "beja-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "belmonte-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "benavente-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "bombarral-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "borba-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "boticas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "braga-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "braganca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "cabeceiras-de-basto-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "cadaval-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "caldas-da-rainha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "calheta-de-sao-jorge-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "calheta-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "camara-de-lobos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "caminha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "campo-maior-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "cantanhede-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "carrazeda-de-ansiaes-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "carregal-do-sal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "cartaxo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "cascais-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "castanheira-de-pera-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "castelo-branco-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "castelo-de-paiva-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "castelo-de-vide-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "castro-daire-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "castro-marim-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "castro-verde-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "celorico-da-beira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "celorico-de-basto-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "chamusca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "chaves-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ciclo-substituicao-condutas" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "cinfaes-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "coimbra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "condeixa-a-nova-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "constancia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "coruche-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "corvo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "covilha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "crato-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "cuba-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf01-es" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf01-pt" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf01-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf02-es" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf02-pt" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf02-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf03-es" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf03-pt" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf03-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf04-es" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf04-pt" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf04-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf05-es" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf05-pt" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf05-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf06-es" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf06-pt" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf06-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf07-es" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf07-pt" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf07-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf08-es" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf08-pt" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf08-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf09-es" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf09-pt" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf09-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf10-es" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf10-pt" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "despesa-por-funcao-2024-gf10-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "distancia-portugal-ue27-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "divida-publica-2024-notificacao-ine-2026-09" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "elvas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "entroncamento-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "espinho-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "esposende-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "estarreja-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "estremoz-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-concentracao-vab4-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-desemprego-registado-2013" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-desemprego-registado-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-despesa-paga-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-divergencia-municipio-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-divida-total-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-execucao-da-receita-2021" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-execucao-da-receita-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-limite-divida-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-margem-endividamento-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-orcamento-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-populacao-2021" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-prazo-medio-de-pagamento-2023" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-receita-cobrada-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "evora-vab-empresarial-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-ativos-e-passivos-da-receita-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-cem-euros-funcao-01" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-cem-euros-funcao-02" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-cem-euros-funcao-03" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-cem-euros-funcao-04" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-cem-euros-funcao-05" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-cem-euros-funcao-06" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-cem-euros-funcao-07" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-cem-euros-funcao-08" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-cem-euros-funcao-09" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-cem-euros-funcao-10" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-despesa-efetiva-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-despesa-funcao-01" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-despesa-funcao-02" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-despesa-funcao-03" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-despesa-funcao-04" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-despesa-funcao-05" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-despesa-funcao-06" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-despesa-funcao-07" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-despesa-funcao-08" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-despesa-funcao-09" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-despesa-funcao-10" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-despesa-orcamental-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-despesa-primaria-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-diferencas-consolidacao-funcional" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-receita-efetiva-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-receita-orcamental-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-saldo-global-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-saldo-global-administracoes-publicas-contabilidade-publica" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-07-saldo-primario-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-efetiva-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-001" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-002" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-003" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-005" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-006" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-007" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-008" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-009" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-010" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-011" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-012" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-013" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-014" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-017" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-018" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-019" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-despesa-programa-020" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-diferencas-consolidacao-programas" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-fluxos-entre-programas" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-receita-efetiva-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-saldo-global-administracao-central-seguranca-social" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-saldo-global-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "execucao-2026-08-subtotal-programas" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "factor-sustentabilidade-2026" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "fafe-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "faro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "felgueiras-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ferreira-do-alentejo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ferreira-do-zezere-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "figueira-da-foz-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "figueira-de-castelo-rodrigo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "figueiro-dos-vinhos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "fornos-de-algodres-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "freixo-de-espada-a-cinta-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "fronteira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "funchal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "fundao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "gaviao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "gois-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "golega-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "gondomar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "gouveia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "grandola-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "guarda-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "guimaraes-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "horta-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "idanha-a-nova-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ilhavo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "indice-de-percepcao-da-corrupcao-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "indice-de-percepcao-da-corrupcao-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "indice-de-percepcao-da-corrupcao-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "lagoa-faro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "lagoa-ilha-de-sao-miguel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "lagos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "lajes-das-flores-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "lajes-do-pico-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "lamego-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "leiria-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "lisboa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "loule-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "loures-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "lourinha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "lousa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "lousada-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "macao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "macedo-de-cavaleiros-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "machico-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "madalena-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "mafra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "maia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "mangualde-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "manteigas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "marco-de-canaveses-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "marinha-grande-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "marvao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "matosinhos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "mealhada-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "meda-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "melgaco-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "mertola-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "mesao-frio-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "mira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "miranda-do-corvo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "miranda-do-douro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "mirandela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "mogadouro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "moimenta-da-beira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "moimenta-da-beira-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "moita-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "moncao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "monchique-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "mondim-de-basto-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "monforte-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "montalegre-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "montemor-o-novo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "montemor-o-velho-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "montijo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "mora-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "mortagua-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "moura-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "mourao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "municipios-com-estudo-aprofundado" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "municipios-sem-estudo-aprofundado" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "murca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "murtosa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "nazare-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "nelas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "nisa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "nordeste-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "obidos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "odemira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "odivelas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-ativos-e-passivos-da-despesa-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-ativos-e-passivos-da-receita-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-bruta-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-consolidada-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-consolidada-seguranca-social" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-efetiva-administracao-central-seguranca-social" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-efetiva-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-funcao-01" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-funcao-02" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-funcao-03" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-funcao-04" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-funcao-05" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-funcao-06" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-funcao-07" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-funcao-08" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-funcao-09" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-funcao-10" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-ministerio-administracao-interna" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-ministerio-agricultura-e-mar" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-ministerio-ambiente-e-energia" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-ministerio-cultura-juventude-e-desporto" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-ministerio-defesa-nacional" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-ministerio-economia-e-coesao-territorial" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-ministerio-encargos-gerais-do-estado" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-ministerio-infraestruturas-e-habitacao" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-ministerio-justica" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-ministerio-negocios-estrangeiros" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-ministerio-reforma-do-estado" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-ministerio-saude" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-orcamental-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-primaria-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-001" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-002" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-003" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-004" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-005" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-006" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-007" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-008" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-009" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-010" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-011" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-012" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-013" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-014" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-015" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-016" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-017" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-018" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-019" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-programa-020" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-despesa-total" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-diferencas-consolidacao-funcional" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-receita-bruta-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-receita-consolidada-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-receita-consolidada-seguranca-social" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-receita-efetiva-administracao-central-seguranca-social" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-receita-efetiva-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-receita-orcamental-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-saldo-global-administracao-central-seguranca-social" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-saldo-global-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oe-2026-saldo-primario-administracao-central" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oeiras-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oleiros-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "olhao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oliveira-de-azemeis-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oliveira-de-frades-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oliveira-do-bairro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "oliveira-do-hospital-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ourem-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ourique-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ovar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "pacos-de-ferreira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "palmela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "pampilhosa-da-serra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "paredes-de-coura-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "paredes-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "pedrogao-grande-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "pedrogao-grande-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "penacova-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "penafiel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "penalva-do-castelo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "penamacor-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "penedono-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "penedono-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "penedono-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "penela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "peniche-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "peso-da-regua-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "pinhel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "pombal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ponta-delgada-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ponta-do-sol-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ponte-da-barca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ponte-de-lima-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ponte-de-sor-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "portalegre-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "portel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "portimao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "porto-de-mos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "porto-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "porto-moniz-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "porto-santo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "portugal-concentracao-vab4-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "povoa-de-lanhoso-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "povoa-de-varzim-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "povoacao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "praia-da-vitoria-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "proenca-a-nova-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "redondo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "reguengos-de-monsaraz-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "resende-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ribeira-brava-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ribeira-de-pena-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "ribeira-grande-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "rio-maior-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sabrosa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sabugal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "saldo-natural-portugal-2025" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "salvaterra-de-magos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "santa-comba-dao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "santa-cruz-da-graciosa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "santa-cruz-das-flores-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "santa-cruz-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "santa-maria-da-feira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "santa-marta-de-penaguiao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "santana-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "santarem-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "santiago-do-cacem-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "santo-tirso-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sao-bras-de-alportel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sao-joao-da-madeira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sao-joao-da-pesqueira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sao-pedro-do-sul-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sao-roque-do-pico-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sao-vicente-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sardoal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "satao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "seia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "seixal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sernancelhe-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "serpa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "serta-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sesimbra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "setubal-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sever-do-vouga-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "silves-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sines-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sintra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sobral-de-monte-agraco-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "soure-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "sousel-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "tabua-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "tabuaco-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "tarouca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "tavira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "taxa-de-desemprego-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "taxa-de-desemprego-2025-ue" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "terras-de-bouro-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "tomar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "tondela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "torre-de-moncorvo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "torres-novas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "torres-vedras-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "trancoso-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "trancoso-prazo-medio-de-pagamento-2025-12" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "trofa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vagos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vale-de-cambra-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "valenca-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "valongo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "valpacos-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "velas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vendas-novas-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "viana-do-alentejo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "viana-do-castelo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vidigueira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vieira-do-minho-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-de-rei-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-do-bispo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-do-conde-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-do-porto-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-flor-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-franca-de-xira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-franca-do-campo-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-nova-da-barquinha-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-nova-de-cerveira-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-nova-de-famalicao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-nova-de-foz-coa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-nova-de-gaia-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-nova-de-paiva-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-nova-de-poiares-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-pouca-de-aguiar-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-real-de-santo-antonio-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-real-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-velha-de-rodao-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-verde-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vila-vicosa-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vimioso-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vinhais-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "viseu-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vizela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+    · a afirmação "vouzela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.
+
+  O PORTÃO DE HTML FECHOU — 136 erro(s):
+
+  a-verificar/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (O marcador [a verificar] · O Estado do País)
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado)
+
+  areas/ambiente-e-energia/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · ERSAR[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte[a verificar])
+
+  areas/economia-e-coesao-territorial/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+
+  correcoes/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+
+  en/areas/ambiente-e-energia/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · ERSAR[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source[a verificar])
+
+  en/areas/economia-e-coesao-territorial/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+
+  en/corrections/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+
+  en/ledger/avisos-pt2030-abertos/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] (to verify))
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] (to verify))
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] (to verify))
+
+  en/ledger/avisos-pt2030-pessoas-singulares/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] (to verify))
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] (to verify))
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] (to verify))
+
+  en/ledger/ciclo-substituicao-condutas/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] (to verify))
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] (to verify))
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] (to verify))
+
+  en/ledger/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · ERSAR[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] (to verify))
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] (to verify))
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] (to verify))
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · PORDATA[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] (to verify))
+
+  en/ledger/retribuicao-minima-mensal-garantida-continente-2026/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (This value is for mainland Portugal. In the Azores, regional law adds an increase to it, and the decree is one of the sources of the question below. In Madeira, the value is set by a separate regional decree, which is not a source of any line in this ledger: [)
+
+  en/ledger/saldo-natural-portugal-2025/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] (to verify))
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] (to verify))
+
+  en/ledger/taxa-de-emprego-2025/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (This measure’s target belongs to the European Union as a whole, not to Portugal; a national target of its own remains [a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published.)
+
+  en/municipalities/evora/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+
+  en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+
+  en/studies/evora-prometido-pago-auditado-2026/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (source · Estrutura de Missão Recuperar Portugal[a verificar])
+
+  en/to-verify/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (The [a verificar] marker · O Estado do País)
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar] · a field not confirmed against the source, not a doubt about what is published)
+
+  estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+
+  estudos/evora-prometido-pago-auditado-2026/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+
+  livro-razao/avisos-pt2030-abertos/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar])
+
+  livro-razao/avisos-pt2030-pessoas-singulares/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar])
+
+  livro-razao/ciclo-substituicao-condutas/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar])
+
+  livro-razao/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · ERSAR[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · PORDATA[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar])
+
+  livro-razao/retribuicao-minima-mensal-garantida-continente-2026/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (Este valor é o do território continental. Nos Açores, a lei regional soma-lhe um acréscimo, e o diploma é uma das fontes da pergunta abaixo. Na Madeira, o valor é fixado por diploma regional próprio, que não é fonte de nenhuma linha deste livro: [a verificar] )
+
+  livro-razao/saldo-natural-portugal-2025/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar ([a verificar])
+
+  livro-razao/taxa-de-emprego-2025/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (A meta desta medida é da União Europeia no seu conjunto e não de Portugal; uma meta nacional própria permanece [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado.)
+
+  municipios/evora/index.html
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])
+    ✗ RP4N: uma página de leitor contém uma marca de informação por confirmar (fonte · Estrutura de Missão Recuperar Portugal[a verificar])

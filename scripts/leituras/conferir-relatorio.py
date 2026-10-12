@@ -100,7 +100,7 @@ def main(argv):
     achados, contagens = numeros.do_texto(texto)
     faltam = numeros.em_falta(achados, formas, valores)
 
-    # Os caminhos saem relativos ao diretório de trabalho, e nunca em `/Users/…`:
+    # Os caminhos saem relativos ao diretório de trabalho, e nunca em `<casa>
     # um ficheiro de saída que entra num repositório público não leva o caminho
     # da máquina de ninguém, e um caminho relativo é o que outra pessoa pode
     # usar tal como está (M5, 22.09.2026).

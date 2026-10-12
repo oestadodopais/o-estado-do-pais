@@ -24,6 +24,9 @@ reference_date: "2025"
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "De acordo com os resultados provisórios obtidos neste exercício, as Administrações Públicas (AP) apresentaram um saldo positivo de 2 045,4 milhões de euros em 2025, o que correspondeu a 0,7% do PIB (0,7% em 2024)."
 
+# Fontes secundárias da definição, com os recibos dos ficheiros alojados.
+definition_sources: [{"publisher": "Eurostat", "receipt": {"campo": "o texto da página, a secção «Data sources»", "cliente": "publisher/dominios_fetch.py, core.http.HttpClient (OEstadoDoPais/corredor)", "hora": "2026-09-01T13:21:32Z", "motor": "content/13 Dominios/source/eurostat/statistics-explained-government-finance-statistics.html", "sha256": "f1b107c69c196b756a56239bfac1bf0a2754bad9f0b90a3265ddc2e916b97372"}, "url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Government_finance_statistics"}]
+
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
 derivation_en: null

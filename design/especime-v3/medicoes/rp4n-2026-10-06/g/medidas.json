@@ -1,0 +1,180 @@
+{
+  "cabeca": "344081c34eef1f792feef6bfd2d77fd764f7a1b5",
+  "versao": {
+    "commit": "344081c34eef1f792feef6bfd2d77fd764f7a1b5",
+    "ref": "rp4n-2026-10-07",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-12T14:08:03.377Z"
+  },
+  "linhas_livro": 3196,
+  "linhas_publicadas": 3193,
+  "linhas_sem_publicador": [
+    {
+      "id": "avisos-pt2030-abertos",
+      "publication": "withdrawn"
+    },
+    {
+      "id": "avisos-pt2030-pessoas-singulares",
+      "publication": "withdrawn"
+    },
+    {
+      "id": "ciclo-substituicao-condutas",
+      "publication": "withdrawn"
+    }
+  ],
+  "anuais": [
+    "oe-2026-despesa-efetiva-administracao-central-seguranca-social",
+    "oe-2026-receita-efetiva-administracao-central-seguranca-social",
+    "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social"
+  ],
+  "mensais": [
+    "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+    "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social",
+    "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social"
+  ],
+  "ficheiros_texto": 12878,
+  "por_extensao": {
+    ".html": 7903,
+    ".css": 9,
+    ".json": 4940,
+    ".csv": 7,
+    ".webmanifest": 2,
+    ".svg": 1,
+    ".js": 10,
+    ".txt": 4,
+    ".xml": 2
+  },
+  "referencias": [],
+  "paginas_com_marcas": [
+    "/a-verificar/index.html",
+    "/agenda/index.html",
+    "/areas/economia-e-coesao-territorial/index.html",
+    "/areas/trabalho-solidariedade-e-seguranca-social/index.html",
+    "/correcoes/index.html",
+    "/en/agenda/index.html",
+    "/en/areas/economia-e-coesao-territorial/index.html",
+    "/en/areas/trabalho-solidariedade-e-seguranca-social/index.html",
+    "/en/corrections/index.html",
+    "/en/ledger/evora-prr-aprovado-2026/index.html",
+    "/en/ledger/evora-prr-pago-2026/index.html",
+    "/en/ledger/evora-prr-vencido-aprovado-2026/index.html",
+    "/en/ledger/index.html",
+    "/en/ledger/penalizacao-antecipacao-um-ano-neutra/index.html",
+    "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/index.html",
+    "/en/ledger/saldo-natural-portugal-2025/index.html",
+    "/en/method/index.html",
+    "/en/municipalities/evora/index.html",
+    "/en/pay-pensions-and-benefits/index.html",
+    "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html",
+    "/en/studies/evora-prometido-pago-auditado-2026/index.html",
+    "/en/studies/index.html",
+    "/en/to-verify/index.html",
+    "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html",
+    "/estudos/evora-prometido-pago-auditado-2026/index.html",
+    "/estudos/evora-quem-governou-a-camara-2009-2025/documento/index.html",
+    "/estudos/evora-quem-governou-a-camara-2009-2025/index.html",
+    "/estudos/index.html",
+    "/livro-razao/evora-prr-aprovado-2026/index.html",
+    "/livro-razao/evora-prr-pago-2026/index.html",
+    "/livro-razao/evora-prr-vencido-aprovado-2026/index.html",
+    "/livro-razao/index.html",
+    "/livro-razao/penalizacao-antecipacao-um-ano-neutra/index.html",
+    "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/index.html",
+    "/livro-razao/saldo-natural-portugal-2025/index.html",
+    "/metodo/index.html",
+    "/municipios/evora/index.html",
+    "/salarios-pensoes-e-apoios/index.html"
+  ],
+  "frases": {
+    "agua-pt": "É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta. O valor situa-se na faixa «Qualidade do serviço mediana» da ERSAR: acima de vinte e até trinta por cento, incluindo o limite superior.",
+    "agua-en": "It is the share of water entering the system that is not billed by retail operators in mainland Portugal. The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment. The value falls in ERSAR’s “medium service quality” band: above twenty and up to thirty per cent, including the upper limit.",
+    "pensao-pt": "É a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.",
+    "pensao-en": "It is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.",
+    "ministerios-pt": "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central.",
+    "ministerios-en": "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+  },
+  "recibos": {
+    "agua-pt": {
+      "id": "agua-nao-faturada-portugal-2024",
+      "nome_na_fonte": "AA08b – Água não faturada",
+      "datas": [
+        "11.10.2026",
+        "11.10.2026",
+        "11.10.2026"
+      ],
+      "datas_ausentes": []
+    },
+    "agua-en": {
+      "id": "agua-nao-faturada-portugal-2024",
+      "nome_na_fonte": "AA08b – Água não faturada",
+      "datas": [
+        "11.10.2026",
+        "11.10.2026",
+        "11.10.2026"
+      ],
+      "datas_ausentes": []
+    },
+    "pensao-pt": {
+      "id": "penalizacao-antecipacao-um-ano-neutra",
+      "nome_na_fonte": "dcum x : cumulative reduction",
+      "datas": [],
+      "datas_ausentes": [
+        "Data do pedido original por confirmar.",
+        "Data do pedido original por confirmar.",
+        "Data do pedido original por confirmar.",
+        "Data do pedido original por confirmar."
+      ]
+    },
+    "pensao-en": {
+      "id": "penalizacao-antecipacao-um-ano-neutra",
+      "nome_na_fonte": "dcum x : cumulative reduction",
+      "datas": [],
+      "datas_ausentes": [
+        "Original request date to be confirmed.",
+        "Original request date to be confirmed.",
+        "Original request date to be confirmed.",
+        "Original request date to be confirmed."
+      ]
+    },
+    "ministerios-pt": {
+      "id": "oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao",
+      "nome_na_fonte": "",
+      "datas": [
+        "12.10.2026",
+        "12.10.2026"
+      ],
+      "datas_ausentes": []
+    },
+    "ministerios-en": {
+      "id": "oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao",
+      "nome_na_fonte": "",
+      "datas": [
+        "12.10.2026",
+        "12.10.2026"
+      ],
+      "datas_ausentes": []
+    }
+  },
+  "estudo": {
+    "pt": {
+      "portas": [
+        {
+          "texto": "Which Door Is Yours — public funding in Portugal, August 2026",
+          "href": "/estudos/which-door-is-yours"
+        }
+      ],
+      "ausencia": "As contagens de avisos abertos e de avisos que admitem pessoas singulares neste estudo estão por confirmar na fonte. A edição arquivada conserva o texto publicado na sua data."
+    },
+    "en": {
+      "portas": [
+        {
+          "texto": "Which Door Is Yours — public funding in Portugal, August 2026",
+          "href": "/en/studies/which-door-is-yours"
+        }
+      ],
+      "ausencia": "The counts of open calls and of calls admitting natural persons in this study are to be confirmed at source. The archived edition preserves the text published on its date."
+    }
+  }
+}

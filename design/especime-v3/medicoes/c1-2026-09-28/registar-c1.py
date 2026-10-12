@@ -21,7 +21,7 @@ spec.loader.exec_module(detetor)
 def publico(texto):
     for origem, destino in (
         (str(RAIZ), '<worktree do sítio>'),
-        (str(Path.home() / 'Instruments' / 'ResearchHub'), '~/Instruments/ResearchHub'),
+        (str(Path.home() / 'Instruments' / 'ResearchHub'), '~/<projetos>/ResearchHub'),
     ):
         texto = texto.replace(origem, destino)
     for prefixo in (str(Path.home().parent), tempfile.gettempdir(), '/private' + '/tmp', '/' + 'tmp'):

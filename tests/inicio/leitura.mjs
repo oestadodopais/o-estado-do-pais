@@ -339,7 +339,7 @@ const ALTURA_DA_PARTIDA = { pt: 6959, en: 6911 };
  * A EXPECTATIVA NÃO SE INVENTOU: correu-se a célula, leu-se o que cada motor faz
  * e é isso que fica preso aqui. A medição é
  *
- *     node tests/inicio/leitura.mjs --json /tmp/f11c2-leitura-depois.json
+ *     node tests/inicio/leitura.mjs --json <temporario>
  *
  * sobre a construção deste ramo, com os quatro valores de `fragmento.semGuiao`
  * lidos do JSON. O que se mediu a 07.09.2026, nas duas edições e nos dois

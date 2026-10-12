@@ -1,3 +1,4 @@
+const X = (ficheiro, campo, literal) => ({ ficheiro, campo, literal });
 /**
  * =============================================================================
  * AS FRASES DAS FAMÍLIAS · a especificação do bloco R4 (05.10.2026)
@@ -26,9 +27,7 @@
  *   · `OU(...)` · para cada linha da família, pelo menos um dos apoios vale (as famílias dos concelhos têm a linha de
  *     Évora, lida de outra fonte);
  *   · `ANO` · o período de cada linha é um ano;
- *   · `NOME(lingua, literal)` · um literal no nome do projeto de cada linha (a declaração da medida: o mandato manda
- *     que, onde a fonte não diz o que a medida é, a frase diga o que a declaração diz, e a família fica «por confirmar
- *     na fonte»);
+ *   · `AUSENCIA` · frase fixa que só pode aparecer quando a linha não tem excerto da fonte; a K17 confere a falta.
  *   · `TERMO(chave)` · a explicação de um termo em palavras comuns declarada em `TERMOS_DOS_CARTOES` (a decisão do
  *     lugar de direção de 04.10.2026, passagem R2-b), lida contra a fonte, para linhas que essa entrada já nomeia.
  *
@@ -41,7 +40,8 @@ export const L = (campo, literal) => ({ linha: 'propria', campo, literal });
 export const O = (origem, literal, campo = 'excerto') => ({ origem, campo, literal });
 export const OU = (...alternativas) => ({ ou: alternativas });
 export const ANO = { linha: 'propria', campo: 'reference_date', forma: 'ano' };
-export const NOME = (lingua, literal) => ({ declaracao: 'nome', lingua, literal });
+const AUSENCIA = { classe: 'retirada', pt: 'Por confirmar na fonte.', en: 'To be confirmed at source.' };
+const FONTE_DO_CALCULO_AUSENTE = AUSENCIA;
 export const TERMO = (termo) => ({ termo });
 export const diz = (pt, en, ...apoios) => ({ pt, en, classe: 'diz', apoios });
 export const liga = (pt, en) => ({ pt, en, classe: 'liga' });
@@ -153,7 +153,7 @@ const UNIAO_COM_FRASE_PROPRIA = [
     nome: { pt: 'Dívida pública' + UE, en: 'Government debt' + IN_EU },
     partes: [
       diz('É tudo o que as administrações públicas devem, ', 'It is everything general government owes, ',
-        O('eurostat-tipsgo10-descricao', 'debt means total gross debt'), O('pdm-divida-publica', 'general government sector debt')),
+        O('eurostat-tipsgo10-descricao', 'debt means total gross debt')),
       ...PIB_DA_ECONOMIA,
     ],
   },
@@ -236,11 +236,10 @@ const UNIAO_COM_FRASE_PROPRIA = [
         O('eurostat-tipser10-descricao', 'price or cost competitiveness relative to its principal competitors')),
       diz(', contando a inflação e as taxas de câmbio', ', allowing for inflation and exchange rates',
         O('eurostat-tipser10-descricao', 'depend not only on exchange rate movements but also on cost and price trends')),
-      diz(', em três anos.', ', over three years.', O('pdm-cambio-efectivo-real', '3-year percentage change'), L('unit', 'variação em três anos')),
+      diz(', em três anos.', ', over three years.', L('unit', 'variação em três anos')),
       diz(' Uma subida é uma apreciação: os preços sobem face aos dos parceiros e perde-se competitividade de preços.',
         ' A rise is an appreciation: prices increase relative to those of the partners and price competitiveness falls.',
-        O('c1c-eurostat-sinal-cambio', 'A positive value means real appreciation.'),
-        O('c1c-bce-competitividade', 'I have shown that the price competitiveness of the euro area has deteriorated mainly because producer prices there have moved unfavourably relative to those of key trading partners – especially in Asia, and in China in particular.')),
+        O('c1c-eurostat-sinal-cambio', 'A positive value means real appreciation.')),
     ],
   },
   {
@@ -325,10 +324,8 @@ const PROGRAMAS = Array.from({ length: 20 }, (_, i) => String(i + 1).padStart(3,
 
 const SEM_FINANCEIRAS = diz(': a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.',
   ': spending without transactions in financial assets and liabilities or transfers between its own services.',
-  L('ressalva', 'A despesa efetiva consolidada exclui ativos e passivos financeiros e transferências internas entre os serviços considerados.'));
-const BRUTA = diz('; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.',
-  '; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up.',
-  L('ressalva', 'A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma.'));
+  O('rp4n-despesa-efetiva', 'com exclusão dos «ativos financeiros»'), O('rp4n-consolidacao', 'transferências'));
+const BRUTA = ponto;
 
 const ORCAMENTO = [
   /* 4.1 · a despesa por função do Eurostat (COFOG), em percentagem do PIB, em Portugal, em Espanha e na União */
@@ -348,9 +345,9 @@ const ORCAMENTO = [
   {
     chaves: FUNCOES.map((f) => `oe-2026-cem-euros-funcao-${f}`),
     partes: [
-      diz('É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central', 'It is how much of every hundred euros of central administration’s consolidated effective expenditure goes to this function',
+      diz('É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central', 'It is the amount for this function out of every hundred euros of central administration’s consolidated effective expenditure',
         L('derivation', 'Dividir a despesa efetiva consolidada desta função pela despesa efetiva consolidada da administração central'), L('derivation', 'multiplicar por cem')),
-      diz(' que o Orçamento prevê', ' that the Budget plans', NOME('pt', 'orçamentada'), NOME('en', 'budgeted')),
+      diz(' que o Orçamento prevê', ' planned in the Budget', O('rp4n-orcamento', 'Orçamento aprovado')),
       SEM_FINANCEIRAS,
     ],
   },
@@ -363,34 +360,23 @@ const ORCAMENTO = [
       SEM_FINANCEIRAS,
     ],
   },
-  /* 4.3 · em cada cem euros da despesa bruta, por ministério */
-  {
-    chaves: MINISTERIOS.map((m) => `oe-2026-cem-euros-ministerio-${m}`),
-    partes: [
-      diz('É quanto vai para este ministério em cada cem euros da despesa bruta da administração central', 'It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry',
-        L('derivation', 'pela despesa bruta da administração central, multiplicar por cem')),
-      diz(' que o Orçamento prevê', ' that the Budget plans', NOME('pt', 'orçamentada'), NOME('en', 'budgeted')),
-      BRUTA,
-    ],
-  },
-  {
-    chaves: ['oe-2026-cem-euros-ministerio-encargos-gerais-do-estado'],
-    partes: [
-      diz('É quanto vai para os encargos gerais do Estado em cada cem euros da despesa bruta da administração central', 'It is how much of every hundred euros of central administration’s gross expenditure goes to the general charges of the State',
-        L('derivation', 'Dividir a despesa bruta dos Encargos Gerais do Estado pela despesa bruta da administração central, multiplicar por cem')),
-      diz(' que o Orçamento prevê', ' that the Budget plans', NOME('pt', 'orçamentada'), NOME('en', 'budgeted')),
-      diz('; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania', '; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies',
-        L('derivation', 'A igualdade referida na ressalva compara os Encargos Gerais do Estado com o programa 001, Órgãos de Soberania')),
-      BRUTA,
-    ],
-  },
+  /* A quota por ministérios: operação conferida e palavras do MAPA alojado. */
+  ...[
+    [MINISTERIOS.map(m=>`oe-2026-cem-euros-ministerio-${m}`), 'este ministério', 'this ministry'],
+    [['oe-2026-cem-euros-ministerio-encargos-gerais-do-estado'], 'os encargos gerais do Estado', 'the general charges of the State'],
+  ].map(([chaves,pt,en])=>({chaves,mostrarOrigens:true,partes:[
+    diz(`É quanto vai para ${pt} em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central.`,
+      [`It is the amount for ${en} out of every hundred euros of “`, {termo:'DESPESA TOTAL',lingua:'pt-PT'}, '” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector.'],
+      L('check',' / oe-2026-despesa-bruta-administracao-central * 100 , 2 )'),
+      O('rp4n-total-ministerios','DESPESA TOTAL'), O('rp4n-mapa-ministerios','Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central')),
+  ]})),
   /* 4.4 · a despesa por função, em despesa efetiva consolidada: o orçamentado e o executado */
   {
     chaves: FUNCOES.map((f) => `oe-2026-despesa-funcao-${f}`),
     partes: [
       diz('É o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções', 'It is what central administration plans to spend on this function in a year, under the classification of expenditure by function',
-        L('document.title', 'OE2026 - Despesa por classificação funcional'), NOME('pt', 'orçamentada'), NOME('en', 'Budgeted')),
-      diz(', em despesa efetiva consolidada', ', in consolidated effective expenditure', NOME('pt', 'despesa efetiva consolidada'), NOME('en', 'consolidated effective expenditure')),
+        L('document.title', 'OE2026 - Despesa por classificação funcional'), O('rp4n-funcional', 'Os dados abrangem todas as entidades públicas integradas no perímetro da Administração Central'), O('rp4n-orcamento', 'Orçamento aprovado')),
+      diz(', em despesa efetiva consolidada', ', in consolidated effective expenditure', O('rp4n-despesa-efetiva', 'Despesa efetiva'), O('rp4n-consolidacao', 'Consolidação/Consolidado')),
       SEM_FINANCEIRAS,
     ],
   },
@@ -399,17 +385,15 @@ const ORCAMENTO = [
     partes: [
       diz('É o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções', 'It is what central administration spent on this function from January to July, under the classification of expenditure by function',
         L('document.title', 'despesa por classificação funcional'), L('unit', 'acumulados de janeiro a julho')),
-      diz(', em despesa efetiva consolidada', ', in consolidated effective expenditure', NOME('pt', 'despesa efetiva consolidada'), NOME('en', 'consolidated effective expenditure')),
+      diz(', em despesa efetiva consolidada', ', in consolidated effective expenditure', O('rp4n-despesa-efetiva', 'Despesa efetiva'), O('rp4n-consolidacao', 'Consolidação/Consolidado')),
       SEM_FINANCEIRAS,
     ],
   },
   {
     chaves: ['oe-2026-diferencas-consolidacao-funcional', 'execucao-2026-07-diferencas-consolidacao-funcional'],
     partes: [
-      diz('É a diferença de consolidação da despesa por funções da administração central', 'It is the consolidation difference in central administration’s expenditure by function',
-        L('name', 'DIFERENÇAS DE CONSOLIDAÇÃO'), L('document.title', 'classificação funcional')),
-      diz(': o acerto que se soma às funções para chegar ao total da despesa efetiva consolidada, e não uma função.', ': the adjustment added to the functions to reach total consolidated effective expenditure, and not a function.',
-        L('ressalva', 'A soma das funções exige a diferença de consolidação'), L('ressalva', 'Esta é uma diferença de consolidação, não uma função.')),
+      diz('É a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta por funções da administração central', 'It is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in central administration’s account by function', O('rp4n-diferencas-consolidacao', 'diferenças entre os registos de despesa'), O('rp4n-diferencas-consolidacao', 'comum aos registos de receita e despesa'), L('document.title', 'classificação funcional')),
+      ponto,
     ],
   },
   /* 4.5 · a despesa por ministério e por programa, em despesa bruta, no Orçamento */
@@ -417,8 +401,7 @@ const ORCAMENTO = [
     chaves: MINISTERIOS.map((m) => `oe-2026-despesa-ministerio-${m}`),
     partes: [
       diz('É o que o Orçamento prevê que este ministério gaste num ano', 'It is what the Budget plans for this ministry to spend in a year',
-        L('document.locator', 'POR MINISTÉRIOS'), NOME('pt', 'orçamentada'), NOME('en', 'Budgeted')),
-      diz(', em despesa bruta', ', in gross expenditure', NOME('pt', 'despesa bruta'), NOME('en', 'gross')),
+        L('document.locator', 'POR MINISTÉRIOS'), O('rp4n-orcamento', 'Orçamento aprovado')),
       BRUTA,
     ],
   },
@@ -426,8 +409,7 @@ const ORCAMENTO = [
     chaves: ['oe-2026-despesa-ministerio-encargos-gerais-do-estado'],
     partes: [
       diz('É o que o Orçamento prevê para os encargos gerais do Estado num ano', 'It is what the Budget plans for the general charges of the State in a year',
-        L('document.locator', 'POR MINISTÉRIOS'), L('name', 'ENCARGOS GERAIS DO ESTADO'), NOME('pt', 'orçamentada'), NOME('en', 'Budgeted')),
-      diz(', em despesa bruta', ', in gross expenditure', NOME('pt', 'despesa bruta'), NOME('en', 'gross')),
+        L('document.locator', 'POR MINISTÉRIOS'), L('name', 'ENCARGOS GERAIS DO ESTADO'), O('rp4n-orcamento', 'Orçamento aprovado')),
       BRUTA,
     ],
   },
@@ -435,8 +417,7 @@ const ORCAMENTO = [
     chaves: PROGRAMAS.map((p) => `oe-2026-despesa-programa-${p}`),
     partes: [
       diz('É o que o Orçamento prevê gastar neste programa da administração central num ano', 'It is what the Budget plans to spend on this central administration programme in a year',
-        L('document.title', 'DESAGREGADAS POR PROGRAMAS'), NOME('pt', 'orçamentada do programa'), NOME('en', 'Budgeted expenditure of the')),
-      diz(', em despesa bruta', ', in gross expenditure', NOME('pt', 'despesa bruta'), NOME('en', 'gross')),
+        L('document.title', 'DESAGREGADAS POR PROGRAMAS'), O('rp4n-orcamento', 'Orçamento aprovado')),
       BRUTA,
     ],
   },
@@ -447,11 +428,8 @@ const ORCAMENTO = [
       diz('É o que a administração central gastou neste programa de janeiro a agosto', 'It is what central administration spent on this programme from January to August',
         L('unit', 'acumulados de janeiro a agosto'), L('document.locator', 'Execução Acumulada')),
       diz(', em despesa efetiva consolidada dentro do programa', ', in effective expenditure consolidated within the programme',
-        L('ressalva', 'Neste caso, a consolidação é dentro de cada programa')),
-      diz(': sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam.',
-        ': without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count.',
-        L('ressalva', 'A despesa efetiva consolidada exclui ativos e passivos financeiros e transferências internas entre os serviços considerados.'),
-        L('ressalva', 'a soma dos programas ainda inclui transferências entre programas')),
+        O('rp4n-programas', 'consolidados de fluxos internos aos mesmos')),
+      diz(': sem operações com ativos e passivos financeiros nem os fluxos internos ao programa.', ': excluding financial asset and liability transactions and flows within the programme.', O('rp4n-despesa-efetiva', 'com exclusão dos «ativos financeiros»'), O('rp4n-programas', 'consolidados de fluxos internos aos mesmos')),
     ],
   },
   {
@@ -459,8 +437,7 @@ const ORCAMENTO = [
     partes: [
       diz('É a soma da despesa efetiva consolidada de cada programa da administração central, de janeiro a agosto', 'It is the sum of the consolidated effective expenditure of each central administration programme, from January to August',
         L('name', 'Subtotal despesa efetiva consolidada dos Programas Orçamentais'), L('unit', 'acumulados de janeiro a agosto')),
-      diz(': cada programa sem as suas transferências internas, mas com as transferências entre programas ainda por tirar.', ': each programme without its internal transfers, but with the transfers between programmes still to be removed.',
-        L('ressalva', 'a consolidação é dentro de cada programa; a soma dos programas ainda inclui transferências entre programas')),
+      diz(': cada programa sem os seus fluxos internos.', ': each programme excluding its internal flows.', O('rp4n-programas', 'consolidados de fluxos internos aos mesmos')),
     ],
   },
   {
@@ -475,8 +452,7 @@ const ORCAMENTO = [
   {
     chaves: ['execucao-2026-08-diferencas-consolidacao-programas'],
     partes: [
-      diz('São as diferenças de consolidação da despesa entre os programas da administração central, de janeiro a agosto', 'They are the consolidation differences in expenditure between central administration programmes, from January to August',
-        L('name', 'Diferenças de consolidação'), L('unit', 'acumulados de janeiro a agosto'), NOME('pt', 'Diferenças de consolidação da despesa entre programas'), NOME('en', 'consolidation differences')),
+      diz('É a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta dos programas da administração central, de janeiro a agosto', 'It is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in the account of central administration programmes from January to August', O('rp4n-diferencas-consolidacao', 'diferenças entre os registos de despesa'), O('rp4n-diferencas-consolidacao', 'comum aos registos de receita e despesa'), L('unit', 'acumulados de janeiro a agosto')),
       ponto,
     ],
   },
@@ -485,56 +461,50 @@ const ORCAMENTO = [
     chaves: ['oe-2026-despesa-efetiva-administracao-central', 'execucao-2026-07-despesa-efetiva-administracao-central', 'execucao-2026-08-despesa-efetiva-administracao-central'],
     partes: [
       diz('É a despesa efetiva da administração central', 'It is central administration’s effective expenditure', OU(L('name', 'DESPESA EFETIVA'), L('name', 'Despesa efetiva'))),
-      diz(': o que ela gasta sem contar as operações com ativos e passivos financeiros.', ': what it spends without counting transactions in financial assets and liabilities.',
-        OU(L('ressalva', 'receita e despesa efetivas excluem-nas'), L('ressalva', 'A despesa efetiva consolidada exclui ativos e passivos financeiros'))),
+      diz(": o que ela gasta sem contar as operações com ativos e passivos financeiros.", ": what it spends without counting transactions in financial assets and liabilities.", O('rp4n-despesa-efetiva', 'financeiros')),
     ],
   },
   {
     chaves: ['oe-2026-despesa-efetiva-administracao-central-seguranca-social', 'execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social'],
     partes: [
       diz('É a despesa efetiva da administração central e da segurança social, somadas sem as transferências entre os seus serviços', 'It is the effective expenditure of central administration and social security, added together without the transfers between their services',
-        L('name', 'Despesa efetiva'), L('ressalva', 'transferências internas entre os serviços considerados'), NOME('pt', 'administração central e da segurança social'), NOME('en', 'central administration and social security')),
-      diz(': o que gastam sem contar as operações com ativos e passivos financeiros.', ': what they spend without counting transactions in financial assets and liabilities.',
-        L('ressalva', 'A despesa efetiva consolidada exclui ativos e passivos financeiros')),
+        L('name', 'Despesa efetiva'), L('ressalva', 'transferências internas entre os serviços considerados'), O('rp4n-ac-ss', 'Administração Central e Segurança Social')),
+      diz(": o que gastam sem contar as operações com ativos e passivos financeiros.", ": what they spend without counting transactions in financial assets and liabilities.", O('rp4n-despesa-efetiva', 'financeiros')),
     ],
   },
   {
     chaves: ['oe-2026-receita-efetiva-administracao-central', 'execucao-2026-07-receita-efetiva-administracao-central', 'execucao-2026-08-receita-efetiva-administracao-central'],
     partes: [
       diz('É a receita efetiva da administração central', 'It is central administration’s effective revenue', OU(L('name', 'RECEITA EFETIVA'), L('name', 'Receita efetiva'))),
-      diz(': o que ela recebe sem contar os recebimentos de ativos e passivos financeiros.', ': what it takes in without counting receipts from financial assets and liabilities.',
-        OU(L('ressalva', 'receita e despesa efetivas excluem-nas'), L('ressalva', 'A receita efetiva exclui os recebimentos de ativos e passivos financeiros.'))),
+      diz(": o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.", ": what it takes in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.", O('rp4n-receita-efetiva', 'financeiros'), O('rp4n-receita-efetiva', 'saldos de gerência'), O('rp4n-saldos-gerencia', 'gerência (ano) anterior.')),
     ],
   },
   {
     chaves: ['oe-2026-receita-efetiva-administracao-central-seguranca-social', 'execucao-2026-08-receita-efetiva-administracao-central-seguranca-social'],
     partes: [
       diz('É a receita efetiva da administração central e da segurança social', 'It is the effective revenue of central administration and social security',
-        L('name', 'Receita efetiva'), NOME('pt', 'administração central e da segurança social'), NOME('en', 'central administration and social security')),
-      diz(': o que recebem sem contar os recebimentos de ativos e passivos financeiros.', ': what they take in without counting receipts from financial assets and liabilities.',
-        L('ressalva', 'A receita efetiva exclui os recebimentos de ativos e passivos financeiros.')),
+        L('name', 'Receita efetiva'), O('rp4n-ac-ss', 'Administração Central e Segurança Social')),
+      diz(": o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.", ": what they take in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.", O('rp4n-receita-efetiva', 'financeiros'), O('rp4n-receita-efetiva', 'saldos de gerência'), O('rp4n-saldos-gerencia', 'gerência (ano) anterior.')),
     ],
   },
   {
     chaves: ['oe-2026-despesa-orcamental-administracao-central', 'execucao-2026-07-despesa-orcamental-administracao-central'],
     partes: [
       diz('É toda a despesa orçamental da administração central', 'It is all of central administration’s budget expenditure', L('name', 'DESPESA ORÇAMENTAL')),
-      diz(', incluindo as operações com ativos e passivos financeiros, que a despesa efetiva não conta.', ', including transactions in financial assets and liabilities, which effective expenditure does not count.',
-        L('ressalva', 'Receita e despesa orçamentais incluem operações financeiras; receita e despesa efetivas excluem-nas.')),
+      diz(", incluindo as operações com ativos e passivos financeiros, que a despesa efetiva não conta.", ", including transactions in financial assets and liabilities, which effective expenditure does not count.", O('rp4n-despesa-efetiva', 'financeiros')),
     ],
   },
   {
     chaves: ['oe-2026-receita-orcamental-administracao-central', 'execucao-2026-07-receita-orcamental-administracao-central'],
     partes: [
       diz('É toda a receita orçamental da administração central', 'It is all of central administration’s budget revenue', L('name', 'RECEITA ORÇAMENTAL')),
-      diz(', incluindo os recebimentos de ativos e passivos financeiros, que a receita efetiva não conta.', ', including receipts from financial assets and liabilities, which effective revenue does not count.',
-        L('ressalva', 'Receita e despesa orçamentais incluem operações financeiras; receita e despesa efetivas excluem-nas.')),
+      diz(", incluindo os recebimentos de ativos e passivos financeiros, que a receita efetiva não conta.", ", including receipts from financial assets and liabilities, which effective revenue does not count.", O('rp4n-receita-efetiva', 'financeiros')),
     ],
   },
   {
     chaves: ['oe-2026-despesa-primaria-administracao-central', 'execucao-2026-07-despesa-primaria-administracao-central'],
     partes: [
-      diz('É a despesa da administração central sem os juros da dívida', 'It is central administration’s expenditure without the interest on the debt', NOME('pt', 'sem juros'), NOME('en', 'excluding interest')),
+      diz('É a despesa efetiva da administração central sem a rubrica de juros e outros encargos', 'It is central administration’s effective expenditure excluding interest and other charges', O('rp4n-despesa-primaria', 'Despesa primária')),
       diz(', a que a fonte chama despesa primária.', ', which the source calls primary expenditure.', L('name', 'DESPESA PRIMÁRIA')),
     ],
   },
@@ -544,22 +514,22 @@ const ORCAMENTO = [
       diz('É o saldo global da administração central', 'It is central administration’s overall balance', OU(L('name', 'SALDO GLOBAL'), L('name', 'Saldo global'))),
       diz(': a diferença entre o que ela recebe e o que gasta, sem contar as operações com ativos e passivos financeiros; negativo quer dizer que gastou mais do que recebeu.',
         ': the difference between what it takes in and what it spends, without counting transactions in financial assets and liabilities; negative means it spent more than it took in.',
-        O('eurostat-gfs-saldo', 'The difference between total revenue and total expenditure'),
-        OU(L('ressalva', 'receita e despesa efetivas excluem-nas'), L('ressalva', 'O saldo global é a receita efetiva menos a despesa efetiva'))),
+        O('rp4n-saldo', 'Diferença entre a receita efetiva e a despesa'),
+        OU(L('ressalva', 'receita e despesa efetivas excluem-nas'), O('rp4n-saldo', 'Diferença entre a receita efetiva e a despesa'))),
     ],
   },
   {
     chaves: ['oe-2026-saldo-global-administracao-central-seguranca-social', 'execucao-2026-08-saldo-global-administracao-central-seguranca-social'],
     partes: [
       diz('É o saldo global da administração central e da segurança social: a receita efetiva menos a despesa efetiva', 'It is the overall balance of central administration and social security: effective revenue minus effective expenditure',
-        L('name', 'Saldo global'), L('ressalva', 'O saldo global é a receita efetiva menos a despesa efetiva')),
-      diz('; não é a dívida que se emitiu.', '; it is not the debt that was issued.', L('ressalva', 'não é o montante de dívida emitida')),
+        L('name', 'Saldo global'), O('rp4n-saldo', 'Diferença entre a receita efetiva e a despesa')),
+      ponto,
     ],
   },
   {
     chaves: ['oe-2026-saldo-primario-administracao-central', 'execucao-2026-07-saldo-primario-administracao-central'],
     partes: [
-      diz('É o saldo da administração central sem os juros da dívida', 'It is central administration’s balance without the interest on the debt', NOME('pt', 'Saldo sem juros'), NOME('en', 'balance excluding interest')),
+      diz('É a receita efetiva da administração central menos a sua despesa efetiva sem juros e outros encargos', 'It is central administration’s effective revenue minus its effective expenditure excluding interest and other charges', O('rp4n-saldo', 'Saldo Primário'), O('rp4n-despesa-primaria', 'excluindo a rubrica de')),
       diz(', a que a fonte chama saldo primário.', ', which the source calls primary balance.', L('name', 'SALDO PRIMÁRIO')),
     ],
   },
@@ -567,8 +537,8 @@ const ORCAMENTO = [
     chaves: ['execucao-2026-07-saldo-global-administracoes-publicas-contabilidade-publica'],
     partes: [
       diz('É o saldo global de todas as administrações públicas, contado em contabilidade pública', 'It is the overall balance of all general government, counted in public accounting',
-        L('name', 'SALDO GLOBAL DAS AP EM CP'), NOME('pt', 'administrações públicas em contabilidade pública'), NOME('en', 'general government on a public accounting basis')),
-      diz(': a diferença entre o que recebem e o que gastam.', ': the difference between what they take in and what they spend.', O('eurostat-gfs-saldo', 'The difference between total revenue and total expenditure')),
+        L('name', 'SALDO GLOBAL DAS AP EM CP')),
+      diz(': a diferença entre o que recebem e o que gastam.', ': the difference between what they take in and what they spend.', O('rp4n-saldo', 'Diferença entre a receita efetiva e a despesa')),
     ],
   },
   {
@@ -576,7 +546,7 @@ const ORCAMENTO = [
     partes: [
       diz('É a parte da despesa orçamental da administração central feita em operações com ativos e passivos financeiros', 'It is the part of central administration’s budget expenditure made in transactions in financial assets and liabilities',
         L('name', 'ATIVOS E PASSIVOS DA DESPESA')),
-      diz(', que a despesa efetiva não conta.', ', which effective expenditure does not count.', L('ressalva', 'Receita e despesa orçamentais incluem operações financeiras; receita e despesa efetivas excluem-nas.')),
+      diz(", que a despesa efetiva não conta.", ", which effective expenditure does not count.", O('rp4n-despesa-efetiva', 'financeiros')),
     ],
   },
   {
@@ -584,14 +554,14 @@ const ORCAMENTO = [
     partes: [
       diz('É a parte da receita orçamental da administração central que vem de operações com ativos e passivos financeiros', 'It is the part of central administration’s budget revenue that comes from transactions in financial assets and liabilities',
         L('name', 'ATIVOS E PASSIVOS DA RECEITA')),
-      diz(', que a receita efetiva não conta.', ', which effective revenue does not count.', L('ressalva', 'Receita e despesa orçamentais incluem operações financeiras; receita e despesa efetivas excluem-nas.')),
+      diz(", que a receita efetiva não conta.", ", which effective revenue does not count.", O('rp4n-receita-efetiva', 'financeiros')),
     ],
   },
   {
     chaves: ['oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social', 'execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social'],
     partes: [
       diz('É o que a administração central e a segurança social puseram em ativos financeiros, descontados os reembolsos que receberam', 'It is what central administration and social security put into financial assets, less the repayments they received',
-        L('name', 'Ativos financeiros líquidos de reembolsos'), NOME('pt', 'administração central e da segurança social'), NOME('en', 'central administration and social security')),
+        L('name', 'Ativos financeiros líquidos de reembolsos'), O('rp4n-ac-ss', 'Administração Central e Segurança Social')),
       diz(' (a fonte chama-lhes ativos financeiros líquidos de reembolsos).', ' (the source calls them financial assets net of repayments).', L('name', 'Ativos financeiros líquidos de reembolsos')),
     ],
   },
@@ -599,16 +569,15 @@ const ORCAMENTO = [
     chaves: ['oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social', 'execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social'],
     partes: [
       diz('É o que a administração central e a segurança social receberam de novos passivos financeiros, menos o que amortizaram', 'It is what central administration and social security received from new financial liabilities, less what they repaid',
-        L('ressalva', 'Os passivos financeiros líquidos são a receita de passivos menos as amortizações'), L('name', 'Passivos financeiros líquidos de amortizações')),
-      diz('; não é a parte da despesa paga com dívida.', '; it is not the part of spending paid for with debt.', L('ressalva', 'não a parcela da despesa efetiva financiada por dívida')),
+        O('rp4n-passivos', 'entre valores de passivos financeiros da receita e despesa'), L('name', 'Passivos financeiros líquidos de amortizações')),
+      ponto,
     ],
   },
   {
     chaves: ['oe-2026-despesa-bruta-administracao-central'],
     partes: [
       diz('É a soma de toda a despesa dos serviços da administração central que o Orçamento prevê para o ano', 'It is the sum of all the expenditure of central administration services that the Budget plans for the year',
-        L('name', 'DESPESA TOTAL'), L('document.title', 'MAPA 4'), NOME('pt', 'orçamentada'), NOME('en', 'Budgeted')),
-      diz(', em bruto', ', in gross terms', NOME('pt', 'Despesa bruta'), NOME('en', 'Budgeted gross expenditure')),
+        L('name', 'DESPESA TOTAL'), L('document.title', 'MAPA 4'), O('rp4n-orcamento', 'Orçamento aprovado')),
       BRUTA,
     ],
   },
@@ -616,33 +585,36 @@ const ORCAMENTO = [
     chaves: ['oe-2026-receita-bruta-administracao-central'],
     partes: [
       diz('É a soma de toda a receita dos serviços da administração central que o Orçamento prevê para o ano', 'It is the sum of all the revenue of central administration services that the Budget plans for the year',
-        L('name', 'RECEITA TOTAL'), L('document.title', 'MAPA 5'), NOME('pt', 'orçamentada'), NOME('en', 'Budgeted')),
-      diz(', em bruto; a receita bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.',
-        ', in gross terms; gross revenue counts financial transactions and transfers between State services, as the budget map adds them up.',
-        L('ressalva', 'A receita bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma.')),
+        L('name', 'RECEITA TOTAL'), L('document.title', 'MAPA 5'), O('rp4n-orcamento', 'Orçamento aprovado')),
+      ponto,
     ],
   },
   {
     chaves: ['oe-2026-despesa-consolidada-administracao-central', 'oe-2026-despesa-consolidada-seguranca-social', 'oe-2026-despesa-total'],
     partes: [
-      diz('É a despesa total que o Orçamento prevê para o ano, consolidada', 'It is the total expenditure that the Budget plans for the year, consolidated',
-        OU(L('name', 'DESPESA TOTAL CONSOLIDADA'), L('name', 'Despesa total consolidada'), L('name', 'Total da Administração Central e Segurança Social consolidado')), NOME('pt', 'orçamentada'), NOME('en', 'Budgeted')),
-      diz(': sem as transferências entre os serviços de que é feita, mas com as operações financeiras.', ': without the transfers between the services it is made of, but with financial transactions.',
-        L('ressalva', 'O total inclui operações financeiras; a consolidação retira as transferências internas entre os serviços do perímetro indicado no nome.')),
+      diz('É a despesa total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados', 'It is the total expenditure planned in the Budget for the year, excluding money flows between the services added together',
+        OU(L('name', 'DESPESA TOTAL CONSOLIDADA'), L('name', 'Despesa total consolidada'), L('name', 'Total da Administração Central e Segurança Social consolidado')), O('rp4n-orcamento', 'Orçamento aprovado'), O('rp4n-consolidacao', 'efetuados entre as entidades do universo em análise.')),
+      ponto,
     ],
   },
   {
     chaves: ['oe-2026-receita-consolidada-administracao-central', 'oe-2026-receita-consolidada-seguranca-social'],
     partes: [
-      diz('É a receita total que o Orçamento prevê para o ano, consolidada', 'It is the total revenue that the Budget plans for the year, consolidated',
-        OU(L('name', 'RECEITA TOTAL CONSOLIDADA'), L('name', 'Receita total consolidada')), NOME('pt', 'orçamentada'), NOME('en', 'Budgeted')),
-      diz(': sem as transferências entre os serviços de que é feita, mas com as operações financeiras.', ': without the transfers between the services it is made of, but with financial transactions.',
-        L('ressalva', 'O total inclui operações financeiras; a consolidação retira as transferências internas entre os serviços do perímetro indicado no nome.')),
+      diz('É a receita total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados', 'It is the total revenue planned in the Budget for the year, excluding money flows between the services added together',
+        OU(L('name', 'RECEITA TOTAL CONSOLIDADA'), L('name', 'Receita total consolidada')), O('rp4n-orcamento', 'Orçamento aprovado'), O('rp4n-consolidacao', 'efetuados entre as entidades do universo em análise.')),
+      ponto,
     ],
   },
 ];
 
-export const FAMILIAS_PARTE_2 = ORCAMENTO;
+// O cabeçalho mensal não apoia a coluna anual do Orçamento Inicial.
+export const FAMILIAS_PARTE_2 = ORCAMENTO.flatMap(e => {
+  if (!e.partes.some(p => p.apoios?.some(a => a.origem === 'rp4n-ac-ss'))) return [e];
+  return [false, true].map(anual => ({...e,
+    chaves:e.chaves.filter(k => k.startsWith('oe-') === anual),
+    partes:[...e.partes.map(p => ({...p, ...(p.apoios ? {apoios:p.apoios.map(a => anual && a.origem === 'rp4n-ac-ss' ? {...a,origem:'rp4n-ac-ss-orcamento'} : a)} : {})})), ...(anual ? [diz(' O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.', ' The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.', O('rp4n-ac-ss-orcamento', 'Orçamento\nInicial'), O('rp4n-ac-ss-orcamento', '2026'), O('rp4n-ac-ss-orcamento', 'Período: janeiro a agosto'))] : [])],
+  })).filter(e => e.chaves.length);
+});
 
 /* =============================================================================
  * 5 · AS REGIÕES: o produto por habitante face à média da União, e a distância a ela
@@ -695,10 +667,10 @@ const AS_REGIOES = [
     partes: [
       diz('É a distância, em pontos, entre a Grande Lisboa e a Península de Setúbal, duas regiões vizinhas',
         'It is the distance, in points, between Greater Lisbon and the Setúbal Peninsula, two neighbouring regions',
-        L('derivation', 'Distância entre duas regiões vizinhas, em pontos de índice'), L('unit', 'pontos de índice'), NOME('pt', 'entre a Península de Setúbal e a Grande Lisboa')),
+        L('derivation', 'Distância entre duas regiões vizinhas, em pontos de índice'), L('unit', 'pontos de índice')),
       diz(', no índice do valor de tudo o que cada uma produz por habitante, em que a média da União Europeia vale cem.',
         ', on the index of the value of everything each produces per inhabitant, where the European Union average is one hundred.',
-        NOME('pt', 'Distância do PIB por habitante'), L('derivation', '129 − 55')),
+        L('derivation', '129 − 55')),
     ],
   },
 ];
@@ -745,7 +717,7 @@ const EVORA = [
       diz('É a parte do valor acrescentado bruto das empresas que cabe às quatro maiores', 'It is the share of companies’ gross value added that goes to the four largest',
         L('name', 'Indicador de concentração do valor acrescentado bruto das quatro maiores empresas'), L('unit', '% do VAB empresarial')),
       diz('; o valor acrescentado bruto é o valor do que se produz menos o valor dos bens e serviços consumidos para o produzir.',
-        '; gross value added is the value of what is produced minus the value of the goods and services used up in producing it.', TERMO('vab')),
+        '; gross value added is the value of what is produced minus the value of the goods and services used up in producing it.', O('rp4n-vab', 'It is\noutput valued at basic prices less intermediate consumption valued at purchasers’ prices.')),
     ],
   },
   {
@@ -753,7 +725,7 @@ const EVORA = [
     partes: [
       diz('É o valor acrescentado bruto das empresas do concelho, somado sobre todas as atividades', 'It is the gross value added of the municipality’s companies, added up over all activities',
         L('name', 'Valor acrescentado bruto (€) das Empresas por Localização geográfica'), L('document.locator', 'total das divisões CAE')),
-      diz(': o valor do que produzem menos o valor dos bens e serviços consumidos para o produzir.', ': the value of what they produce minus the value of the goods and services used up in producing it.', TERMO('vab')),
+      diz(': o valor do que produzem menos o valor dos bens e serviços consumidos para o produzir.', ': the value of what they produce minus the value of the goods and services used up in producing it.', O('rp4n-vab', 'It is\noutput valued at basic prices less intermediate consumption valued at purchasers’ prices.')),
     ],
   },
   {
@@ -792,7 +764,7 @@ const EVORA = [
     chaves: ['evora-divida-31-10'],
     partes: [
       diz('É a dívida que a câmara tinha registada no início do mandato', 'It is the debt the council had on its books at the start of the term',
-        L('excerpt', 'A 31/10/2013'), NOME('pt', 'Dívida registada no início do mandato'), NOME('en', 'Debt recorded at the start of the term')),
+        L('excerpt', 'A 31/10/2013'), O('rp4n-evora-divida-inicio', 'Dívida Total no Início do Mandato')),
       diz(', como o relatório de gestão a apresenta.', ', as the management report presents it.', L('document.title', 'Relatório de Gestão')),
     ],
   },
@@ -801,7 +773,7 @@ const EVORA = [
     partes: [
       diz('É a dívida do início do mandato como a apresenta um relatório de gestão posterior', 'It is the debt at the start of the term as a later management report presents it',
         L('name', 'Dívida Total no Início do Mandato'), L('document.title', 'Relatório de Gestão'), TERMO('reexpressa')),
-      diz(': reexpressa quer dizer apresentada de novo mais tarde.', ': restated means presented again later.', TERMO('reexpressa')),
+      ponto,
     ],
   },
   {
@@ -827,7 +799,7 @@ const EVORA = [
     chaves: ['evora-excesso-endividamento'],
     partes: [
       diz('É o montante em que a dívida da câmara passava do limite legal', 'It is the amount by which the council’s debt exceeded the legal limit',
-        L('excerpt', 'Montante em Excesso'), NOME('pt', 'Dívida acima do limite legal'), NOME('en', 'Debt above the legal limit')),
+        L('excerpt', 'Montante em Excesso'), O('c1c-dgal-limites', 'A dívida total de operações orçamentais do município')),
       diz(', pelas contas da própria câmara.', ', from the council’s own accounts.', L('source', 'Município de Évora'), L('document.title', 'Relatório de Gestão')),
     ],
   },
@@ -835,7 +807,7 @@ const EVORA = [
     chaves: ['evora-execucao-da-receita'],
     partes: [
       diz('É a receita que a câmara cobrou no ano em percentagem da que o orçamento previa', 'It is the revenue the council collected in the year as a percentage of what the budget foresaw',
-        L('unit', '% do orçamento'), NOME('pt', 'Receita cobrada face ao orçamento'), NOME('en', 'Revenue collected against the budget')),
+        L('unit', '% do orçamento'), O('rp4n-evora-receita', 'percentagem de execução')),
       diz(', pela prestação de contas.', ', from its annual accounts.', L('document.title', 'Prestação de Contas')),
     ],
   },
@@ -870,14 +842,14 @@ const EVORA = [
     chaves: ['evora-margem-endividamento'],
     partes: [
       diz('É quanto a câmara ainda podia dever até chegar ao limite legal da dívida, no fim do ano', 'It is how much more the council could still owe before reaching the legal debt limit, at year end',
-        L('excerpt', 'margem de endividamento absoluta'), NOME('pt', 'Margem até ao limite da dívida'), NOME('en', 'Headroom up to the debt limit')),
+        L('excerpt', 'margem de endividamento absoluta'), O('c1c-dgal-limites', 'não pode ultrapassar, em 31 de dezembro de cada ano')),
       diz(', pela prestação de contas.', ', from its annual accounts.', L('document.title', 'Prestação de Contas')),
     ],
   },
   {
     chaves: ['evora-orcamento'],
     partes: [
-      diz('É o orçamento da câmara para o ano', 'It is the council’s budget for the year', NOME('pt', 'Orçamento do município'), NOME('en', 'Budget of the municipality'), ANO),
+      diz('É o orçamento da câmara para o ano', 'It is the council’s budget for the year', O('rp4n-evora-orcamento', 'O orçamento inicial é'), ANO),
       diz(', como a prestação de contas o apresenta.', ', as its annual accounts present it.', L('document.title', 'Prestação de Contas')),
     ],
   },
@@ -885,7 +857,7 @@ const EVORA = [
     chaves: ['evora-pael-emprestimo'],
     partes: [
       diz('É o montante do empréstimo que a câmara contraiu no programa de apoio à economia local', 'It is the amount of the loan the council took out under the local economy support programme',
-        L('excerpt', 'do total de empréstimo no montante de'), NOME('pt', 'Empréstimo do apoio à economia local'), NOME('en', 'local economy support programme')),
+        L('excerpt', 'do total de empréstimo no montante de'), O('rp4n-evora-pael', 'Programa de Apoio à Economia Local')),
       diz(', como o relatório de gestão o apresenta.', ', as the management report presents it.', L('document.title', 'Relatório de Gestão')),
     ],
   },
@@ -901,7 +873,7 @@ const EVORA = [
     partes: [
       diz('É o número de pelouros que a página do executivo da câmara atribui a este membro do executivo', 'It is the number of portfolios that the council executive’s page assigns to this member of the executive',
         L('excerpt', 'Pelouro:'), L('document.title', 'Executivo — Câmara Municipal de Évora'), L('document.locator', 'página do executivo da Câmara Municipal de Évora')),
-      diz(': cada pelouro é uma área da câmara a seu cargo.', ': each portfolio is an area of the council in their charge.', NOME('pt', 'Pelouros')),
+      ponto,
     ],
   },
   {
@@ -924,32 +896,32 @@ const EVORA = [
     chaves: ['evora-prazo-medio-de-pagamento'],
     partes: [
       diz('O número médio de dias que a câmara demora a pagar aos fornecedores', 'The average number of days the council takes to pay its suppliers',
-        L('excerpt', 'o PMP do Município de Évora é de'), L('unit', 'dias'), NOME('pt', 'Prazo médio de pagamento a fornecedores'), NOME('en', 'Average time to pay suppliers')),
+        L('excerpt', 'o PMP do Município de Évora é de'), L('unit', 'dias'), O('rp4n-evora-pmp', 'pagamento a fornecedores')),
       diz(' (prazo médio de pagamento), pelas contas da própria câmara.', ' (average payment period), from the council’s own accounts.',
-        NOME('pt', 'Prazo médio de pagamento'), L('source', 'Município de Évora')),
+        O('rp4n-evora-pmp', 'Prazo Médio de Pagamento'), L('source', 'Município de Évora')),
     ],
   },
   {
     chaves: ['evora-prr-aprovado'],
+    instantaneo: true,
     partes: [
-      diz('São as verbas do Plano de Recuperação e Resiliência aprovadas para projetos no concelho', 'They are the Recovery and Resilience Plan funds approved for projects in the municipality',
-        NOME('pt', 'Verbas do Plano de Recuperação e Resiliência (PRR) aprovadas para Évora'), NOME('en', 'Recovery and Resilience Plan (PRR) funds approved for Évora')),
+      diz("São as verbas contratadas do Plano de Recuperação e Resiliência por beneficiários intermediários e diretos com sede no concelho", "These are Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality", L('document.computed_over.column', 'valor_contratado'), X('entidades', 'papel_entidade', 'Beneficiário Intermediário'), X('entidades', 'papel_entidade', 'Beneficiário Direto'), X('entidades', 'localizacao_sede', 'Évora')),
       diz(', pela listagem de entidades do plano.', ', from the plan’s list of entities.', L('document.title', 'Listagem de entidades PRR')),
     ],
   },
   {
     chaves: ['evora-prr-pago'],
+    instantaneo: true,
     partes: [
-      diz('São as verbas do Plano de Recuperação e Resiliência já pagas a projetos no concelho', 'They are the Recovery and Resilience Plan funds already paid to projects in the municipality',
-        NOME('pt', 'Verbas do Plano de Recuperação e Resiliência (PRR) pagas em Évora'), NOME('en', 'Recovery and Resilience Plan (PRR) funds paid in Évora')),
+      diz("São as verbas pagas do Plano de Recuperação e Resiliência a beneficiários intermediários e diretos com sede no concelho", "These are Recovery and Resilience Plan funds paid to intermediate and direct beneficiaries headquartered in the municipality", L('document.computed_over.column', 'valor_pago'), X('entidades', 'papel_entidade', 'Beneficiário Intermediário'), X('entidades', 'papel_entidade', 'Beneficiário Direto'), X('entidades', 'localizacao_sede', 'Évora')),
       diz(', pela listagem de entidades do plano.', ', from the plan’s list of entities.', L('document.title', 'Listagem de entidades PRR')),
     ],
   },
   {
     chaves: ['evora-prr-vencido-aprovado'],
+    instantaneo: true,
     partes: [
-      diz('São as verbas aprovadas em projetos no concelho cujo prazo de conclusão já passou', 'They are the funds approved for projects in the municipality whose completion deadline has passed',
-        NOME('pt', 'Verbas aprovadas em projetos fora de prazo'), NOME('en', 'Approved funds in projects past their deadline')),
+      diz("São as verbas contratadas por beneficiários intermediários e diretos com sede no concelho, com prazo de conclusão anterior ao instantâneo e sem conclusão registada", "These are funds contracted by intermediate and direct beneficiaries headquartered in the municipality, with a completion deadline before the snapshot and no completion recorded", L('document.computed_over.column', 'valor_contratado'), X('entidades', 'papel_entidade', 'Beneficiário Intermediário'), X('entidades', 'papel_entidade', 'Beneficiário Direto'), X('entidades', 'localizacao_sede', 'Évora'), X('projetos', 'cabecalho', 'dt_prevista_conclusao'), X('projetos', 'cabecalho', 'dt_efetiva_conclusao')),
       diz(', pela listagem de entidades do Plano de Recuperação e Resiliência.', ', from the Recovery and Resilience Plan’s list of entities.', L('document.title', 'Listagem de entidades PRR')),
     ],
   },
@@ -964,16 +936,16 @@ const EVORA = [
   {
     chaves: ['evora-prr-execucao'],
     partes: [
-      diz('É a parte das verbas do Plano de Recuperação e Resiliência aprovadas para o concelho que já foi paga.', 'It is the share of the Recovery and Resilience Plan funds approved for the municipality that has already been paid.',
-        L('derivation', 'O que já foi pago, a dividir pelo que foi aprovado e atribuído ao concelho')),
+      diz('É a parte das verbas do Plano de Recuperação e Resiliência contratadas por beneficiários intermediários e diretos com sede no concelho que já foi paga.', 'It is the share of Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality that has already been paid.',
+        L('derivation', 'As verbas pagas a beneficiários intermediários e diretos com sede em Évora')),
     ],
   },
   {
     chaves: ['evora-prr-vencido-quota'],
     partes: [
-      diz('É a parte das verbas aprovadas para o concelho que está em projetos cuja data prevista de conclusão já passou sem conclusão registada.',
-        'It is the share of the funds approved for the municipality that sits in projects whose planned completion date has passed with no completion recorded.',
-        L('derivation', 'O dinheiro aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada')),
+      diz('É a parte das verbas contratadas por beneficiários intermediários e diretos com sede no concelho em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada.',
+        'It is the share of funds contracted by intermediate and direct beneficiaries headquartered in the municipality in projects with a completion deadline before the snapshot and no completion recorded.',
+        L('derivation', 'As verbas contratadas por beneficiários intermediários e diretos com sede em Évora em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada')),
     ],
   },
   {
@@ -987,7 +959,7 @@ const EVORA = [
     chaves: ['evora-saneamento-financeiro'],
     partes: [
       diz('É o montante do empréstimo de saneamento financeiro que a câmara contraiu', 'It is the amount of the financial recovery loan the council took out',
-        L('excerpt', 'Passivos Financeiros'), NOME('pt', 'Empréstimo de saneamento financeiro'), NOME('en', 'Financial recovery loan')),
+        L('excerpt', 'Passivos Financeiros'), O('rp4n-evora-saneamento', 'Empréstimo de Saneamento Financeiro')),
       diz(', como o relatório de gestão o apresenta.', ', as the management report presents it.', L('document.title', 'Relatório de Gestão')),
     ],
   },
@@ -1105,31 +1077,25 @@ const OUTRAS = [
   {
     chaves: ['avisos-pt2030-abertos'],
     partes: [
-      diz('É o número de avisos de candidatura que estavam abertos.', 'It is the number of calls for applications that were open.',
-        L('unit', 'avisos'), NOME('pt', 'Avisos de candidatura abertos'), NOME('en', 'Open calls for applications')),
+      AUSENCIA,
     ],
   },
   {
     chaves: ['avisos-pt2030-pessoas-singulares'],
     partes: [
-      diz('É o número de avisos de candidatura abertos a pessoas singulares.', 'It is the number of calls for applications open to individuals.',
-        L('unit', 'avisos'), NOME('pt', 'Avisos abertos a pessoas singulares'), NOME('en', 'Open calls for individuals')),
+      AUSENCIA,
     ],
   },
   {
     chaves: ['ciclo-substituicao-condutas'],
     partes: [
-      diz('É o ciclo de substituição das condutas de água, em anos.', 'It is the replacement cycle of the water mains, in years.',
-        L('unit', 'anos'), NOME('pt', 'Ciclo de substituição das condutas'), NOME('en', 'Replacement cycle of water mains')),
+      FONTE_DO_CALCULO_AUSENTE,
     ],
   },
   {
     chaves: ['agua-nao-faturada-portugal'],
-    partes: [
-      diz('É a parte da água que não é faturada', 'It is the share of water that is not billed', NOME('pt', 'Água não faturada'), NOME('en', 'Unbilled water')),
-      diz(', pelo relatório anual dos serviços de águas e resíduos.', ', from the annual report on water and waste services.',
-        L('document.title', 'Relatório Anual dos Serviços de Águas e Resíduos em Portugal'), L('source', 'ERSAR')),
-    ],
+    mostrarOrigens: true,
+    partes: [diz('É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental.', 'It is the share of water entering the system that is not billed by retail operators in mainland Portugal.', O('rp4n-agua-nao-faturada', 'percentagem de água entrada\nno sistema que não é faturada'), O('rp4n-agua-ambito','Avaliação em Portugal continental'), O('rp4n-agua-ambito','AA08 baixa')), diz(' A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta.', ' The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment.', O('rp4n-agua-ambito','(para 93 % de EG)'), O('rp4n-agua-ambito','AA08 alta')), diz(' O valor situa-se na faixa «Qualidade do serviço mediana» da ERSAR: acima de vinte e até trinta por cento, incluindo o limite superior.', ' The value falls in ERSAR’s “medium service quality” band: above twenty and up to thirty per cent, including the upper limit.', O('rp4n-agua-faixas','Qualidade do serviço mediana'), O('rp4n-agua-faixas',']20,0; 30,0]'))],
   },
   {
     chaves: ['penalizacao-antecipacao-um-ano-com-factor'],
@@ -1153,21 +1119,30 @@ const OUTRAS = [
   },
   {
     chaves: ['penalizacao-antecipacao-um-ano-neutra'],
+    mostrarOrigens: true,
+    compara: {
+      a:'penalizacao-legal-um-ano-antecipacao-2026', b:'penalizacao-antecipacao-um-ano-neutra',
+      pt:{antes:' A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de ', menor:' e é menor do que a redução atuarialmente neutra de ', maior:' e é maior do que a redução atuarialmente neutra de ', igual:' e é igual à redução atuarialmente neutra de ', depois:'.'},
+      en:{antes:' The statutory penalty for retiring one year early, excluding the sustainability factor, is about ', menor:' and is lower than the actuarially neutral reduction of ', maior:' and is higher than the actuarially neutral reduction of ', igual:' and is equal to the actuarially neutral reduction of ', depois:'.'},
+      apoios:[O('pensao-legal','equivalente a cerca de 6% por ano')],
+    },
     partes: [
-      diz('É o corte na pensão por um ano de antecipação da reforma que deixaria o sistema de pensões sem ganhar nem perder', 'It is the pension cut for retiring one year early that would leave the pension system neither gaining nor losing',
-        NOME('pt', 'sem custo para o sistema'), NOME('en', 'at no cost to the system')),
-      diz(', contando o que se deixa de descontar e os direitos que se acrescentam', ', counting the contributions no longer paid and the rights that are added',
-        L('excerpt', 'considerando o efeito da antecipação da idade de reforma'), L('excerpt', 'no esforço contributivo e no acréscimo de direitos sobre o sistema de pensões')),
-      diz(', pelas contas do relatório final sobre a reforma da segurança social.', ', from the calculations of the final report on social security reform.',
-        L('document.locator', 'Relatorio_Final_GT_Reforma_Seg_Social'), L('source', 'Grupo de Trabalho para a Reforma da Segurança Social')),
+      diz('É a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano', 'It is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early', O('pensao-estimativa','estimativa preliminar dos factores de ajustamento actuarial neutrais'), L('excerpt','Decrementos por reforma antecipada: caso geral')),
+      diz(': a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano', ': the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year', O('pensao-neutralidade','financeiramente indiferente, em termos de valor actual esperado')),
+      diz(', contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados.', ', including contributions no longer paid and pension rights no longer accrued.', O('pensao-direitos','no esforço contributivo e no'), O('pensao-direitos','acréscimo de direitos sobre o sistema de pensões')),
+      diz(' Não é a penalização legal por antecipação.', ' It is not the statutory early-retirement penalty.', O('pensao-legal','essa penalização isolada tende a ficar abaixo do valor actuarialmente neutral')),
     ],
+  },
+  {
+    chaves: ['penalizacao-legal-um-ano-antecipacao'],
+    partes: [diz('É a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.', 'It is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.', L('excerpt','a penalização legal'), L('excerpt','equivalente a cerca de 6% por ano'), L('source','Grupo de Trabalho para a Reforma da Segurança Social'))],
   },
   {
     chaves: ['factor-sustentabilidade'],
     partes: [
       diz('É o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica', 'It is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies',
         L('excerpt', 'Para as pensões de velhice iniciadas em 2026 às quais seja aplicável o factor de sustentabilidade, este factor é de'), TERMO('fator-de-sustentabilidade')),
-      diz(': abaixo de um, a pensão baixa, e o que falta para chegar a um é a parte que se corta.', ': below one, the pension falls, and the gap to one is the share that is cut.', TERMO('fator-de-sustentabilidade')),
+      ponto,
     ],
   },
   {
@@ -1223,14 +1198,14 @@ const CONCELHOS = [
     partes: [
       diz('Conta as pessoas desempregadas inscritas nos serviços de emprego', 'Counts the unemployed people registered with the employment service',
         OU(L('document.title', 'Desemprego registado'), L('name', 'DESEMPREGO REGISTADO'), L('source', 'Instituto de Emprego da Madeira'))),
-      diz(' no fim do mês', ' at month end', L('document.edition', 'dezembro de 2025')),
-      diz(' (desemprego registado).', ' (registered unemployment).', OU(L('document.title', 'Desemprego registado'), L('name', 'DESEMPREGO REGISTADO'), NOME('pt', 'Desemprego registado'))),
+      diz(' no mês de referência', ' in the reference month', L('document.edition', 'dezembro de 2025')),
+      diz(' (desemprego registado).', ' (registered unemployment).', OU(L('document.title', 'Desemprego registado'), L('name', 'DESEMPREGO REGISTADO'), O('rp4n-madeira', 'DESEMPREGADOS/DESEMPREGO REGISTADO'))),
     ],
   },
   {
     concelho: 'empresas',
     partes: [
-      diz('Conta as empresas não financeiras', 'Counts the non-financial enterprises', L('document.title', 'Empresas (N.º)'), NOME('pt', 'Empresas não financeiras'), NOME('en', 'Non-financial enterprises')),
+      diz('Conta as empresas', 'Counts the enterprises', L('document.title', 'Empresas (N.º)')),
       diz(' atribuídas ao concelho', ' attributed to the municipality', OU(L('document.title', 'por Localização geográfica'), L('name', 'por Localização geográfica'))),
       diz(' (sistema de contas integradas das empresas).', ' (integrated business accounts system).',
         OU(L('document.title', 'Sistema de contas integradas das empresas'), L('name', 'Sistema de contas integradas das empresas'))),

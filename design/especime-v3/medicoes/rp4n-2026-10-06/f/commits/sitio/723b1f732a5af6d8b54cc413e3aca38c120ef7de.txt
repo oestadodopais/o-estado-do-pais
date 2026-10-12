@@ -1,0 +1,5 @@
+723b1f732a5af6d8b54cc413e3aca38c120ef7de
+fix(rp4n-f): identificar AA08b, cobertura e prova da água
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

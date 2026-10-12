@@ -585,6 +585,7 @@ function anda(dir) {
           (titulo.getAttribute('lang') === 'pt' ? 'pt-PT' : titulo.getAttribute('lang') ?? null) !== (linguaDoTitulo(ed.title, lang) ?? null))
         erros.push(`A4: ${onde}: o título de ${par} difere do arquivo ou da língua que o texto tem.`);
 
+      if (ed.titleUnverified === true) erros.push(`A4: ${onde}: o título de ${par} está declarado por confirmar.`);
     }
 
     /* ------------------------------------------------------- A1, A2 e A3 */

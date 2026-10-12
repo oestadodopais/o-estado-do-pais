@@ -1,0 +1,12 @@
+PLANTA data escrita no guião em vez do pedido: RP4N-g: a data da pensão não vem do pedido que trouxe o corpo alojado
+PLANTA pensão com valor emendado à legenda: RP4N-f: o excerto da pensão não é a legenda contígua da página
+PLANTA segunda fonte com bytes diferentes: segunda fonte sem recibo conferido no motor
+PLANTA excerto emendado por trechos: RO1: um excerto tem de ser uma sequência contígua, sem trechos
+PLANTA água atribuída à APA: RO1: as origens ou os selos diferem da seleção e dos recibos
+PLANTA água com outra página: RO1: o excerto difere da leitura literal do documento
+PLANTA palavra acrescentada: RO1: o excerto difere da leitura literal do documento
+PLANTA resumo de outro documento: RO1: o sha256 da origem difere do documento
+PLANTA cliente inventado: RO1: as origens ou os selos diferem da seleção e dos recibos
+PLANTA origem apagada: RO1: as origens ou os selos diferem da seleção e dos recibos
+PLANTA caminho fora do motor: RO1: o ficheiro da origem não existe dentro do motor
+ORIGENS: PASS, 31 origens, 8 plantas

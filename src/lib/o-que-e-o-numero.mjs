@@ -38,7 +38,7 @@ import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { partesDaLeitura, oQueEContraALinha, sinalDaLeitura } from './leitura-da-medida.mjs';
 import { notaDaBandeira } from './bandeira-da-fonte.mjs';
 import { nomeDaMedida, nomeDaLinhaDerivada } from './nomes.mjs';
-import { getClaim, allClaims } from './ledger.mjs';
+import { getClaim, loadClaims, allClaims } from './ledger.mjs';
 import { allSeries, getSerie, pontoDaSerie } from './series.mjs';
 import { NOMES_DAS_SERIES } from '../data/series-no-tempo.mjs';
 import { FRASES_DAS_SERIES, SERIES_POR_CONFIRMAR_NA_FONTE } from '../data/o-que-e-das-series.mjs';
@@ -113,6 +113,18 @@ function medidaDoConcelho(chave) {
  * @param {string} id @param {'pt'|'en'} lang
  * @returns {{ pedacos: any[], tipo: 'cartao'|'concelho'|'familia', chave: string, cartao: string|null, sinal: string[] | null, porConfirmar: boolean }}
  */
+/** Comparação por duas linhas, com os valores lidos e palavras escolhidas pela relação.
+ * @param {any} c @param {'pt'|'en'} lang
+ */
+export function comparaLinhas(c,lang,linhas=loadClaims()) {
+ const a=linhas.get(c.a),b=linhas.get(c.b);
+ const numero=(/** @type {unknown} */ v)=>Number(String(v).replace(/[\s\u202f\u00a0]/g,'').replace(',','.'));
+ if(!a||!b||a.unit!==b.unit||a.reference_date!==b.reference_date||!Number.isFinite(numero(a.value))||!Number.isFinite(numero(b.value)))throw new Error('RP4N-g: comparação sem duas linhas compatíveis');
+ const ramo=numero(a.value)<numero(b.value)?'menor':numero(a.value)>numero(b.value)?'maior':'igual';
+ return [c[lang].antes,{claim:a.id,sufixo:' '+a.unit},c[lang][ramo],{claim:b.id,sufixo:' '+b.unit},c[lang].depois];
+}
+
+/** @param {string} id @param {'pt'|'en'} lang */
 export function oQueEDaLinha(id, lang) {
   const f = familiaDaLinha(id);
   const porConfirmar = POR_CONFIRMAR.has(id);
@@ -135,7 +147,16 @@ export function oQueEDaLinha(id, lang) {
   }
   const frase = d.frase?.[lang];
   if (!Array.isArray(frase) || frase.length === 0) throw fecha(`${id} · ${lang}`, `a família «${f.chave}» não declara frase nesta edição.`);
-  return { pedacos: [...frase, palavrasDaLinhaJd1(id, lang)], tipo: 'familia', chave: f.chave, cartao: null, sinal: null, porConfirmar };
+  let pedacos = frase;
+  if (d.instantaneo) {
+    const documento = /** @type {{computed_over?: {files?: Array<{snapshot_date?: string}>}} | undefined} */ (getClaim(id)?.document);
+    const ficheiros = documento?.computed_over?.files;
+    const data = ficheiros?.[0]?.snapshot_date;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(data ?? '') || !Array.isArray(ficheiros) || !ficheiros.every(x => x.snapshot_date === data)) throw fecha(id, 'o instantâneo não tem uma data única nos ficheiros da computação.');
+    pedacos = [...frase.slice(0,-1), frase.at(-1).replace(/\.$/, ''), lang === 'pt' ? ', no instantâneo de ' : ', in the snapshot of ', {data:{id,campo:'document.computed_over.files.0.snapshot_date',valor:data}}, '.'];
+  }
+  if (d.compara) pedacos = [...pedacos,...comparaLinhas(d.compara,lang)];
+  return { pedacos: [...pedacos, palavrasDaLinhaJd1(id, lang)], tipo: 'familia', chave: f.chave, cartao: null, sinal: null, porConfirmar };
 }
 
 /**
@@ -194,6 +215,8 @@ export function lugarNoRecibo(id, lang) {
 export function nomeDaFonteNoRecibo(id) {
   const c = /** @type {any} */ (getClaim(id));
   const util = (/** @type {unknown} */ v) => typeof v === 'string' && v.trim() !== '' && v !== '[a verificar]';
+  // O rótulo da medida tem precedência sobre o título do documento, em todas as famílias.
+  if (util(c.name)) return { campo: /** @type {const} */ ('name'), valor: /** @type {string} */ (c.name) };
   if (util(c.document?.title)) return { campo: /** @type {const} */ ('document.title'), valor: /** @type {string} */ (c.document.title) };
   if (util(c.name)) return { campo: /** @type {const} */ ('name'), valor: /** @type {string} */ (c.name) };
   return null;
@@ -251,10 +274,10 @@ export function errosDasFamilias(familias = FAMILIAS_DAS_LINHAS, doConcelho = FA
 
 /**
  * AS LINHAS SEM FRASE, SEM NOME, E AS FAMÍLIAS SEM LINHA, sobre o livro-razão inteiro.
- * @param {Iterable<{ id: string }>} [linhas]
+ * @param {Iterable<{ id: string, publication?: unknown }>} [linhas]
  * @returns {{ erros: string[], porTipo: Record<string, number>, familiasUsadas: Set<string> }}
  */
-export function cobertura(linhas = allClaims()) {
+export function cobertura(linhas = [...loadClaims({includeWithdrawn:true}).values()]) {
   /** @type {string[]} */
   const erros = [];
   /** @type {Record<string, number>} */
@@ -262,6 +285,7 @@ export function cobertura(linhas = allClaims()) {
   /** @type {Set<string>} */
   const usadas = new Set();
   for (const c of linhas) {
+    if (c.publication === 'withdrawn') { usadas.add(familiaDaLinha(c.id).chave); continue; }
     for (const lang of /** @type {const} */ (['pt', 'en'])) {
       try {
         const o = oQueEDaLinha(c.id, lang);

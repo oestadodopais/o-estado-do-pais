@@ -1,0 +1,7 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/estado-da-copia.mjs(2,33): error TS7006: Parameter 'claim' implicitly has an 'any' type.
+src/lib/estado-da-copia.mjs(5,31): error TS7006: Parameter 'claim' implicitly has an 'any' type.
+src/lib/estado-da-copia.mjs(5,38): error TS7006: Parameter 'estadoDoEndereco' implicitly has an 'any' type.

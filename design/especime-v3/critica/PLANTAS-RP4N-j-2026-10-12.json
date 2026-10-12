@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-12T19:59:15+00:00",
+ "copia": "<scratchpad>/rp4n/pacote-leitura-j",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "ledger/claims/pib-nominal-notificacao-setembro-2024.yml",
+   "descricao": "a segunda fonte da definição do PIB nominal de 2024 diz INE como publicador, na cópia, contra o diff, a origem jd1-pib-definicao (Eurostat), o registo do motor e o cruzamento",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "e03473e27e3bb6f25499097e0f1a15dc12d6161cd44ebd2ec61eed5bf74a0057",
+   "sha256_depois": "ecd7f48279cb3fe35dda3783bc7c41dc059d5072013e8513f2c1deab1b546391",
+   "contexto_antes": ".1*g        243 957,1       270 352,6       291 152,8     308 538,2       322 702,9\"\n\n# Fontes secundárias da definição, com os recibos dos ficheiros alojados.\ndefinition_sources: [{\"publisher\": \"Eurostat\", \"receipt\": {\"campo\": \"texto da entrada nomeada, extraído por HTMLParser\", \"cliente\": \"core.http.HttpClient.condicional\", \"extracao\": {\"ferramenta\": \"Python ht",
+   "contexto_depois": ".1*g        243 957,1       270 352,6       291 152,8     308 538,2       322 702,9\"\n\n# Fontes secundárias da definição, com os recibos dos ficheiros alojados.\ndefinition_sources: [{\"publisher\": \"INE\", \"receipt\": {\"campo\": \"texto da entrada nomeada, extraído por HTMLParser\", \"cliente\": \"core.http.HttpClient.condicional\", \"extracao\": {\"ferramenta\": \"Python ht"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "motor/publisher/definition_sources.json",
+   "descricao": "o registo das segundas fontes do motor dá a Direção-Geral do Orçamento como publicador do glossário da execução, na cópia, contra o diff, a origem jd1-eo-glossario (Entidade Orçamental) e a linha do sítio",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "df7619a1e2bfd08905d37b95a6b773a14ba05e02271c2600eee2fc706ca9dab4",
+   "sha256_depois": "763f97b268e7409a2803a52e491e1097b16bf9d3464d7a3ec4dc1718615abc53",
+   "contexto_antes": "{\n  \"amortizacoes-e-anulacoes-de-divida-fundada-2025\": [\n    {\n      \"publisher\": \"Entidade Orçamental\",\n      \"receipt\": {\n        \"campo\": \"pdftotext -layout, folha 83, coluna esquerda\",\n        \"cliente\": \"core.http.HttpClient.condicional\",\n        \"extracao\":",
+   "contexto_depois": "{\n  \"amortizacoes-e-anulacoes-de-divida-fundada-2025\": [\n    {\n      \"publisher\": \"Direção-Geral do Orçamento\",\n      \"receipt\": {\n        \"campo\": \"pdftotext -layout, folha 83, coluna esquerda\",\n        \"cliente\": \"core.http.HttpClient.condicional\",\n        \"extracao\":"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+   "descricao": "a linha nova da contagem no inventário diz 386 calculadas em vez de 368, na cópia, contra o HTML do Método construído, a linha inglesa e o diff",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "2512449d137a477b064d3b23979361e6bbe5a40cbee86b6d61633247c87a9057",
+   "sha256_depois": "9f23bb72ea2b2d86a9a357a8e88b5cc2381bc75a5a17d5f4242815fbdc5ec9be",
+   "contexto_antes": "frase e a redação K2 voltou a ser a forma rendida. |\n\n## RP4-n-j: contagem após a integração\n\n| classe | texto | bloco | estado | razão |\n|---|---|---|---|---|\n| conteudo | 3 208 afirmações · 368 de 3 208 calculadas · 2 767 de 3 208 linhas de concelhos | rp4nj | viva | Contagem lida do HTML construído após a fusão do JD1 e do RP4-n. |\n| conteudo | 3 208 claims · 368 of 3 208 calculated · 2 767 of 3 208 municipality row",
+   "contexto_depois": "frase e a redação K2 voltou a ser a forma rendida. |\n\n## RP4-n-j: contagem após a integração\n\n| classe | texto | bloco | estado | razão |\n|---|---|---|---|---|\n| conteudo | 3 208 afirmações · 386 de 3 208 calculadas · 2 767 de 3 208 linhas de concelhos | rp4nj | viva | Contagem lida do HTML construído após a fusão do JD1 e do RP4-n. |\n| conteudo | 3 208 claims · 368 of 3 208 calculated · 2 767 of 3 208 municipality row"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz duas páginas HTML alteradas pela integração, na cópia, contra a medição da comparação alargada (zero) e a afirmação de que nenhuma página mudou",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "95d207247c6926574af9460d5a591b9d0a11b170eba05e78173921deebc815d6",
+   "sha256_depois": "35ad18a4e360995d8e96b5c36de0c5d880e3d345f67a44e9e8ac3c0f17bd4bf7",
+   "contexto_antes": "ex.html | True | True |\n| en/index.html | True | True |\n| livro-razao/index.html | True | True |\n| en/ledger/index.html | True | True |\n\n\nA comparação alargada encontrou 7935 páginas HTML antes e 7935 depois, com 0 páginas alteradas. Nos 16 JSON comparados, o livro inteiro e os recibos do JD1, só definition_sources difere.\n### Cabeças, commits e códigos lidos dos ficheiros\n\n| Repositório |",
+   "contexto_depois": "ex.html | True | True |\n| en/index.html | True | True |\n| livro-razao/index.html | True | True |\n| en/ledger/index.html | True | True |\n\n\nA comparação alargada encontrou 7935 páginas HTML antes e 7935 depois, com 2 páginas alteradas. Nos 16 JSON comparados, o livro inteiro e os recibos do JD1, só definition_sources difere.\n### Cabeças, commits e códigos lidos dos ficheiros\n\n| Repositório |"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "motor/publisher/export_series.py",
+   "descricao": "o exportador das séries do motor deixa cair a primeira linha do YAML das segundas fontes, na cópia, contra o diff, o teste do jd1_test.py e a série exportada",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "79953f06a4575a363e46db3bab75e901184d6343ec5fdd6007bcef9f06b5ab96",
+   "sha256_depois": "c440613546cbd75200c707e8d51795acfe7d1d1438fb1834aae83cbb8566d7c5",
+   "contexto_antes": "    \"\",\n        \"# Proveniência.\",\n        f\"source: {v(s['source'])}\",\n    ]\n    # As definições de outro publicador atravessam com o mesmo recibo das linhas.\n    linhas.extend(campo_yaml(s[\"id\"]).splitlines())\n    d = s[\"document\"]\n    if d is None:\n        linhas.append(\"document: null\")\n    else:\n        linhas += [\"document:\", f\"  title: {yaml_str(d['title'])}\", f",
+   "contexto_depois": "    \"\",\n        \"# Proveniência.\",\n        f\"source: {v(s['source'])}\",\n    ]\n    # As definições de outro publicador atravessam com o mesmo recibo das linhas.\n    linhas.extend(campo_yaml(s[\"id\"]).splitlines()[1:])\n    d = s[\"document\"]\n    if d is None:\n        linhas.append(\"document: null\")\n    else:\n        linhas += [\"document:\", f\"  title: {yaml_str(d['title'])}\", f"
+  }
+ ]
+}

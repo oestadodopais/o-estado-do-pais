@@ -614,6 +614,11 @@ const EXCECOES_DO_VOCABULARIO = [
     padrao: /procuram trabalho|custo unitário do trabalho|custo nominal do trabalho|Trabalho, Solidariedade e Segurança Social|mercado de trabalho|postos de trabalho|condições de trabalho|sem trabalho|intensidade de trabalho|trabalho de quem não escreveu|dirige o trabalho|[Oo] custo do trabalho|O trabalho: mais emprego/,
   },
   {
+    conta: 'trabalho',
+    porque: 'o grupo de trabalho é o publicador identificado do relatório das pensões, não o nome de um estudo',
+    padrao: /estimativa preliminar do grupo de trabalho|relatório do grupo de trabalho/,
+  },
+  {
     /* «indicador» A NOMEAR O CAMPO DA FONTE, e não a medida da casa (Major 5,
        09.09.2026). A página do domínio diz, na ausência de um número por
        concelho, que campo é que o publicador dá em vez dele: «O indicador que o
@@ -1704,6 +1709,13 @@ for (const ficheiro of paginas) {
          contivesse a esperada passava. Agora o campo tem marca própria
          (`data-def-lido`, dentro da dobra do excerto desde hoje) e compara-se o
          que ele diz com o que a declaração diz, carácter a carácter. */
+      if(o.lido==='[a verificar]') {
+        const campo=bloco.querySelector(`[data-def-sem-data="${o.chave}"]`);
+        if(campo?.textContent!==t(lang).prov.dataOriginalAusente || bloco.querySelector('[data-def-lido]')) {
+          medidas.d84_definicoes_fora++;anota('d84_definicoes_fora',`${url}: a data ausente não está declarada como ausente`);
+        }
+        continue;
+      }
       const data = `${o.lido.slice(8, 10)}.${o.lido.slice(5, 7)}.${o.lido.slice(0, 4)}`;
       const campoDaData = bloco.querySelector(`[data-def-lido="${o.chave}"]`);
       const dataRendida = campoDaData ? campoDaData.text.replace(/\s+/g, ' ').trim() : null;

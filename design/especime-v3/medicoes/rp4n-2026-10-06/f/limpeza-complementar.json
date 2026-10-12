@@ -1,0 +1,7 @@
+{
+  "ficheiro": "portoes-f/build.log",
+  "bytes_de_preenchimento_retirados": 67,
+  "antes_sha256": "26de7133d3234bcb5fb32a2dd3f74480f7b721ccee764001407f4f9dccbc516a",
+  "depois_sha256": "d6705e8bd1915ae7c578853f63eba9bb58ac960166ee0c9e86dd6c88e465a8e6",
+  "motivo": "A limpeza de caminhos das reconferências abriu o registo antes de a construção acabar. O descritor que continuou a escrever deixou preenchimento NUL. Depois da corrida retirou-se apenas esse preenchimento, preservando a saída textual e os códigos."
+}

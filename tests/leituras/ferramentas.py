@@ -74,14 +74,22 @@ with tempfile.TemporaryDirectory(prefix='oedp-ma-comuns-') as tmp:
     assert (pasta/'imagem.png').read_bytes()==b'\x89PNG\0\xff' and fora.read_text()==texto
     assert limpar.limpar(**args)['mudados']==[]
     registar('limpeza de texto, gzip, binários e ligações','Caminhos retirados; segunda passagem sem mudanças; binário e alvo da ligação intactos.')
-    (pasta/'temporarios.log').write_text('/private/var/folders/ab/cd/T/ensaio/ficheiro /tmp/ensaio/ficheiro ' + str(p/'tmp-especial'/'ficheiro'))
+    (pasta/'temporarios.log').write_text('<temporario> <temporario> ' + str(p/'tmp-especial'/'ficheiro'))
     limpar.limpar(**args, temporario=p/'tmp-especial')
     assert (pasta/'temporarios.log').read_text() == '<temporario> <temporario> <temporario>/ficheiro'
     # Um «/tmp/» no meio de um caminho do repositório ou de um endereço não é uma pasta temporária (a segunda leitura do M-A, o achado 9).
-    (pasta/'nao-temporarios.log').write_text('dist/tmp/pagina.html https://exemplo.pt/tmp/relatorio.pdf e /tmp/ensaio/f')
+    (pasta/'nao-temporarios.log').write_text('dist/tmp/pagina.html https://exemplo.pt/tmp/relatorio.pdf e <temporario>')
     limpar.limpar(**args, temporario=p/'tmp-especial')
     assert (pasta/'nao-temporarios.log').read_text() == 'dist/tmp/pagina.html https://exemplo.pt/tmp/relatorio.pdf e <temporario>', (pasta/'nao-temporarios.log').read_text()
     registar('caminhos temporários', 'Pastas temporárias do sistema e TMPDIR retirados.')
+    componentes = ['Instruments', '.claude', 'worktrees']
+    resto = '<casa>/' + componentes[0] + '/Projeto/' + '/'.join(componentes[1:]) + '/ramo/log'
+    limpo = limpar.substituir_texto(resto, {}, None)
+    assert limpo == '<pasta-dos-projetos>/Projeto/<pasta-das-worktrees>/ramo/log'
+    assert componentes[0] not in limpo and '/'.join(componentes[1:]) not in limpo
+    assert limpar.substituir_texto(limpo, {}, None) == limpo
+    registar('restos de caminhos abreviados', 'As duas estruturas locais também saem dos caminhos já anonimizados.')
+
     (pasta/'palavra.log').write_text('transportoes portoes /pasta/portoes/ficheiro')
     limpar.limpar(**{**args, 'utilizador': 'portoes'})
     assert (pasta/'palavra.log').read_text() == 'transportoes portoes /pasta/<utilizador>/ficheiro'

@@ -1,0 +1,52 @@
+
+  sítio: <worktree>
+
+  manifesto jd1 · 15 linhas · 2 grupos excluídos
+
+    juros-das-administracoes-publicas-2024       engine value          5 983,4
+    pib-nominal-notificacao-setembro-2024        engine value          291 152,8
+    juros-das-administracoes-publicas-2025       engine value          6 028,2
+    pib-nominal-notificacao-setembro-2025        engine value          308 538,2
+    juros-das-administracoes-publicas-2025-ue    engine value          1,9
+    juros-e-outros-encargos-execucao-2025-08     engine value          4 727,8
+      ↳ #page=7 from the declared document.page
+    juros-e-outros-encargos-execucao-2026-08     engine value          5 218,2
+      ↳ #page=7 from the declared document.page
+    custo-do-stock-da-divida-direta-2025         engine value          2,1
+      ↳ #page=3 from the declared document.page
+    custo-da-divida-emitida-2026-08              engine value          3,4
+      ↳ #page=3 from the declared document.page
+    divida-direta-do-estado-2026-08              engine value          315 856
+      ↳ #page=2 from the declared document.page
+    necessidades-brutas-de-financiamento-2025    engine value          67 601
+      ↳ #page=45 from the declared document.page
+    emissoes-de-divida-fundada-2025              engine value          65 214
+      ↳ #page=45 from the declared document.page
+    amortizacoes-e-anulacoes-de-divida-fundada-2025 engine value          56 976
+      ↳ #page=45 from the declared document.page
+      sem recorte: juros-das-administracoes-publicas-2024 · no record in the vertical's snippets.json
+      sem recorte: pib-nominal-notificacao-setembro-2024 · no record in the vertical's snippets.json
+      sem recorte: juros-das-administracoes-publicas-2025 · no record in the vertical's snippets.json
+      sem recorte: pib-nominal-notificacao-setembro-2025 · no record in the vertical's snippets.json
+      sem recorte: juros-e-outros-encargos-execucao-2025-08 · no record in the vertical's snippets.json
+      sem recorte: juros-e-outros-encargos-execucao-2026-08 · no record in the vertical's snippets.json
+      sem recorte: divida-direta-do-estado-2026-08 · no record in the vertical's snippets.json
+      sem recorte: necessidades-brutas-de-financiamento-2025 · no record in the vertical's snippets.json
+      sem recorte: emissoes-de-divida-fundada-2025 · no record in the vertical's snippets.json
+      sem recorte: amortizacoes-e-anulacoes-de-divida-fundada-2025 · no record in the vertical's snippets.json
+    juros-das-administracoes-publicas-pib-2024   derived               2,06   (= 2.06, engine agrees)
+    juros-das-administracoes-publicas-pib-2025   derived               1,95   (= 1.95, engine agrees)
+
+  recortes: 2 de 12 linha(s) com página · 51,944 bytes
+
+  0 nova(s) · 1 alterada(s) · 14 inalterada(s) · registo a escrever
+  dívida de proveniência que atravessa: 0 linha(s) com excerto "[a verificar]" — nenhuma
+  rótulo da fonte: 13 de 15 linha(s), 10 rótulo(s) distinto(s): 2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada) · 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. +… · Custo da dívida emitida · Custo do stock da dívida · Dívida total / Total debt · Interest, expenditure · Juros · Juros e outros encargos · Produto Interno Bruto, a preços de mercado · p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida …
+  sem rótulo impresso: 2 de 15 linha(s), a que a página chama pelo título do documento: juros-das-administracoes-publicas-pib-2024, juros-das-administracoes-publicas-pib-2025
+  pending_page: 0 linha(s) sem sítio desenhado onde ser impressa
+
+  Escritas 15 linhas em <worktree>/ledger/claims
+  Registo em <worktree>/ledger/cruzamentos/jd1.json
+  Recortes: 0 ficheiro(s) escrito(s) de 2 em <worktree>/public/recortes
+  Manifesto dos recortes em <motor>/publisher/recortes/manifest.jd1.json
+

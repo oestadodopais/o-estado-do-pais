@@ -1,0 +1,5 @@
+c5b08875b164ac3cad264445c8108f4aa8d499e8
+fix(rp4n-f): separar a estimativa atuarial da penalização legal
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

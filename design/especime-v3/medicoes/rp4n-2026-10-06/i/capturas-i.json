@@ -1,0 +1,444 @@
+{
+  "cabeca_da_captura": "f99ad385789e293373951ddb77f25ac221181daf",
+  "versao": {
+    "commit": "f99ad385789e293373951ddb77f25ac221181daf",
+    "ref": "rp4n-2026-10-07",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-12T17:04:44.072Z"
+  },
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/corte-pt-390.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "5a83480aba796d6d395ca07d381d8158f5c74c61d6d12f1086a57707af2c14a9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/corte-pt-768.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "6d88558ca755d85d67f2984f985820c74f74b5d641422689b4989911f0ece606"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/corte-pt-1024.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "0e690e1d21f7b132879cb28f20e121e1ebe4b1302d845209c1061b5f56bdfcf1"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/corte-pt-1280.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "fa8e36aaaa5aa11b9198e04e7480fbf6888e5e2aed8cdaa519483c96833fdd2f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/corte-pt-1600.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "4ca4f2f7195793c63c28cf9c0256d09fd4990d1a042c79d74e4961a294536e15"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/corte-en-390.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "4bebc48cfd2ae644e384281b20511c5ed5b1f66cfb8c71434b8f23d8b30c95fa"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/corte-en-768.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "f565475e275b22d8208b1e7ae652f319bac090a27920bb2e681d402ac5bbe581"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/corte-en-1024.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "612d0d858022a32f072c7ffa04496ee25f41ad5f1b16c8138d670beb2ce2ccde"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/corte-en-1280.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "da29004b046e3ca20bdb01477159d51dc9c016efb23326cd3b66f4ad60a2d41c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/corte-en-1600.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "4677451a18493be246d7554306a0a35b2cb0f42323e22d62887abbba36f46063"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/legal-pt-390.png",
+      "rota": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "6cb068da9da10b15639e4fe5bf866c970ed18ca1c9fd677999268202981bcabf"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/legal-pt-768.png",
+      "rota": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "d8d508505cceb99f1379fc195c35d4d2b605855a208d44f8a4505ec98ec92719"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/legal-pt-1024.png",
+      "rota": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "778967b65d6290d1450140d4203343f7211da8938be4f535f0ee267ac0d72c25"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/legal-pt-1280.png",
+      "rota": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "7e5ff935b046ced5f05a8f35d911a38b12a6b991a27175c7af939088623a6b44"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/legal-pt-1600.png",
+      "rota": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "0926eacd61d9919351291b03da8231854f4437d23bd69bedde9b7d233683aaf3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/legal-en-390.png",
+      "rota": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "b60039edaf6f6848511fa4438b7cccacf808af2d90ec8cbbe2a310d58bd26a69"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/legal-en-768.png",
+      "rota": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "4f0fb640ffe191bd52200375d939aa6f24421d4c2da909c47a794231037e0c49"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/legal-en-1024.png",
+      "rota": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "5d0e18e552e090c3fa8a3d8a735076c50e8637db71f92414925d70f264cd92fd"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/legal-en-1280.png",
+      "rota": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "f85c7da27b96cfea7b18dad69f70b291f9586cf39d7b51db6aaee7802725875c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/legal-en-1600.png",
+      "rota": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "5291b66510b54c4fa0e570fb6ab2d415a8fefe7c00f06760807024bed388bceb"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-pt-390.png",
+      "rota": "/livro-razao/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA».",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "36ca12b395f752bc1173ba67a60e73e8666a9916b32f9d20f9635f0ae11152ed"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-pt-768.png",
+      "rota": "/livro-razao/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA».",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "9d0f015f608ce39d985bd7270f8b47a53e52d00530bd43b7f78b5082c2088fea"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-pt-1024.png",
+      "rota": "/livro-razao/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA».",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "23809c4915623d0f7ca261e06ebefb7a8c4de5b36505d0d301e1fe90d3945207"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-pt-1280.png",
+      "rota": "/livro-razao/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA».",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "17e9d85747f51807b3f65983e73d454777f24718c145b1517b6e3eb2473827c4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-pt-1600.png",
+      "rota": "/livro-razao/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA».",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "8e986269e89b46c5cc1e9362370926122f80ffc1e1de7ea27eb9d5c40e5460f3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-en-390.png",
+      "rota": "/en/ledger/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “DESPESA TOTAL CONSOLIDADA”.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "b3d87b29cf431f99cc858949344eda2dc8bd5d7df52f442587c2f9237404c2b2"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-en-768.png",
+      "rota": "/en/ledger/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “DESPESA TOTAL CONSOLIDADA”.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "7e5c4f4ab68fb3733751a4ec4a8686a1a042995392e272c84a35f3262015a524"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-en-1024.png",
+      "rota": "/en/ledger/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “DESPESA TOTAL CONSOLIDADA”.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "a060875b389e133988447405445167f5f291fbfe8e7cae29cd1f66d691f4a9b3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-en-1280.png",
+      "rota": "/en/ledger/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “DESPESA TOTAL CONSOLIDADA”.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "109d903db1a89eb7d4ebf7ce3fa860c715ecdf6d03a42aa2e284d4e4bbc7567b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-en-1600.png",
+      "rota": "/en/ledger/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “DESPESA TOTAL CONSOLIDADA”.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "077629c488891f69defcca905324e9d5de141c98f58b8b7b7416323f57543cd1"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/metodo-en-390.png",
+      "rota": "/en/method/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "9f6e3e01da734fb171232194354a83bd10e22de298d15d2c11f815193d5946ff"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/metodo-en-768.png",
+      "rota": "/en/method/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "34a420318ea05e926ec9514b10091d064c5b60f22107a2c224eda5271cb951a0"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/metodo-en-1024.png",
+      "rota": "/en/method/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "5e84550563b5d016f50c262393ed5bfb56691a5920369aa96d7a36c21ed5485d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/metodo-en-1280.png",
+      "rota": "/en/method/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "876031fbf612b274e678bba9a45d57844cbab7e26af662d096041351d62e64f6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/metodo-en-1600.png",
+      "rota": "/en/method/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "ead39995e64d833e924ab1f41d5ebfc9f943bc9aa61537014aeb6368e2dd98b6"
+    }
+  ],
+  "problemas": []
+}

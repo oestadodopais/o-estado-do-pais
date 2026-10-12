@@ -14,6 +14,13 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_path": "content/13 Dominios/series.json",
       "origin_sha256": "5bd35b299fae44aa0408e9f29e4a3a465f3bd96cb7159442b7616ce55b5b7422"
+    },
+    "rotulos-das-series.json": {
+      "destino": "src/data",
+      "exported_sha256": "a26a9eac853e70461062bf353284b3d4982c32c9cf94a3a33493625a7f9a7eb0",
+      "exporter": "ResearchHub/publisher/export_series.py",
+      "origin_path": "content/13 Dominios/rotulos-series.json",
+      "origin_sha256": "a26a9eac853e70461062bf353284b3d4982c32c9cf94a3a33493625a7f9a7eb0"
     }
   },
   "origin": "ResearchHub",
@@ -260,8 +267,8 @@
     },
     "serie-obrigacoes-do-tesouro-10-anos-rendibilidade": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-06",
-      "exported_row_sha256": "fcf77af503dfeafb44c136c4a922ab679154b9a3de6568133a448dc653081ddc",
+      "exported_at": "2026-10-12",
+      "exported_row_sha256": "42cd0e7e70ae9740401cbe38cb15874cde7b08e6a644dffceeb8f1625a0e1990",
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "a13e7603d23ca29aadfe4287045ffe66f95844da6936f7ffd4d58ca4719802d9",
       "rh_id": "serie-obrigacoes-do-tesouro-10-anos-rendibilidade",

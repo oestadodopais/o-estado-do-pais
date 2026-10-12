@@ -1,0 +1,104 @@
+{
+  "plantas": [
+    {
+      "nome": "reconferência anterior à criação",
+      "mensagem": "RP4N-h: reconferência anterior à criação da linha legal"
+    },
+    {
+      "nome": "data local sem prova",
+      "mensagem": "a data local não tem prova de leitura ou alojamento"
+    },
+    {
+      "nome": "data local trocada",
+      "mensagem": "a data local não tem prova de leitura ou alojamento"
+    },
+    {
+      "nome": "manifesto local sem commit",
+      "mensagem": "a data de alojamento não aponta para o manifesto do commit"
+    },
+    {
+      "nome": "tipo da data local inventado",
+      "mensagem": "a data local não distingue alojamento de leitura"
+    },
+    {
+      "nome": "localizador trocado (penalizacao-antecipacao-um-ano-neutra, pt, name_source)",
+      "mensagem": "RP4N-h: localizador fora da língua da edição (pt, name_source)"
+    },
+    {
+      "nome": "localizador trocado (penalizacao-antecipacao-um-ano-neutra, pt, document.locator)",
+      "mensagem": "RP4N-h: localizador fora da língua da edição (pt, document.locator)"
+    },
+    {
+      "nome": "alojamento dito leitura (penalizacao-antecipacao-um-ano-neutra, pt)",
+      "mensagem": "RP4N-h: o recibo não distingue alojamento de leitura na fonte (pt)"
+    },
+    {
+      "nome": "localizador trocado (penalizacao-legal-um-ano-antecipacao-2026, pt, document.locator)",
+      "mensagem": "RP4N-h: localizador fora da língua da edição (pt, document.locator)"
+    },
+    {
+      "nome": "alojamento dito leitura (penalizacao-legal-um-ano-antecipacao-2026, pt)",
+      "mensagem": "RP4N-h: o recibo não distingue alojamento de leitura na fonte (pt)"
+    },
+    {
+      "nome": "glosa a meio da K2 (pt)",
+      "mensagem": "RP4N-h: a glosa interrompe a frase K2"
+    },
+    {
+      "nome": "marca traduzida incorretamente (pt, selo)",
+      "mensagem": "RP4N-h: marca fora da língua da edição (pt, texto)"
+    },
+    {
+      "nome": "marca traduzida incorretamente (pt, campo)",
+      "mensagem": "RP4N-h: marca fora da língua da edição (pt, texto)"
+    },
+    {
+      "nome": "marca traduzida incorretamente (pt, frase)",
+      "mensagem": "RP4N-h: marca fora da língua da edição (pt, texto fora do componente)"
+    },
+    {
+      "nome": "marca traduzida incorretamente (pt, marca de água)",
+      "mensagem": "RP4N-h: marca fora da língua da edição (pt, marca de água)"
+    },
+    {
+      "nome": "localizador trocado (penalizacao-antecipacao-um-ano-neutra, en, name_source)",
+      "mensagem": "RP4N-h: localizador fora da língua da edição (en, name_source)"
+    },
+    {
+      "nome": "localizador trocado (penalizacao-antecipacao-um-ano-neutra, en, document.locator)",
+      "mensagem": "RP4N-h: localizador fora da língua da edição (en, document.locator)"
+    },
+    {
+      "nome": "alojamento dito leitura (penalizacao-antecipacao-um-ano-neutra, en)",
+      "mensagem": "RP4N-h: o recibo não distingue alojamento de leitura na fonte (en)"
+    },
+    {
+      "nome": "localizador trocado (penalizacao-legal-um-ano-antecipacao-2026, en, document.locator)",
+      "mensagem": "RP4N-h: localizador fora da língua da edição (en, document.locator)"
+    },
+    {
+      "nome": "alojamento dito leitura (penalizacao-legal-um-ano-antecipacao-2026, en)",
+      "mensagem": "RP4N-h: o recibo não distingue alojamento de leitura na fonte (en)"
+    },
+    {
+      "nome": "glosa a meio da K2 (en)",
+      "mensagem": "RP4N-h: a glosa interrompe a frase K2"
+    },
+    {
+      "nome": "marca traduzida incorretamente (en, selo)",
+      "mensagem": "RP4N-h: marca fora da língua da edição (en, texto)"
+    },
+    {
+      "nome": "marca traduzida incorretamente (en, campo)",
+      "mensagem": "RP4N-h: marca fora da língua da edição (en, texto)"
+    },
+    {
+      "nome": "marca traduzida incorretamente (en, frase)",
+      "mensagem": "RP4N-h: marca fora da língua da edição (en, texto fora do componente)"
+    },
+    {
+      "nome": "marca traduzida incorretamente (en, marca de água)",
+      "mensagem": "RP4N-h: marca fora da língua da edição (en, marca de água)"
+    }
+  ]
+}

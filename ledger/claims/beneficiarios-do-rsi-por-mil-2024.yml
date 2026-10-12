@@ -33,6 +33,9 @@ serie: "serie-beneficiarios-do-rsi-por-mil"
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"ind_string\" : \"24,22\", \"valor\" : \"24.22\" }"
 
+# Fontes secundárias da definição, com os recibos dos ficheiros alojados.
+definition_sources: [{"publisher": "Segurança Social", "receipt": {"campo": "breadcrumb.description", "cliente": "core.http.HttpClient.condicional", "hora": "2026-09-26T17:14:29Z", "motor": "indicators/out/rp1-2026-09-26/038-seguranca-social-rsi-conteudo-rp1c.json", "sha256": "4fc174f6751fde822749d79161898406758d5aeec3ad456e22ac961429b8a9bc"}, "url": "https://www.seg-social.pt/ptss/rest/public/pssd/service?path=%2Fpssd%2Fmenu%2Facao-social%2Fapoios-respostas-sociais%2Frendimento-social-insercao"}]
+
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
 derivation_en: null

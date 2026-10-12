@@ -1,3 +1,4 @@
+import {conferirOrigemLocal,chavesLocais} from './origens-locais-rp4n.mjs';
 /**
  * =============================================================================
  * K16 · CADA PEDAÇO DE CADA PERGUNTA TEM ORIGEM · B2, peça 1, segunda passagem
@@ -52,6 +53,7 @@ import {
 } from '../../src/data/figuras.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
 import { UNIDADES_DOS_CARTOES } from '../../src/data/unidades-dos-cartoes.mjs';
+import { conferirOrigemRP4N, eOrigemRP4N } from './origens-rp4n.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 export const AUDITORIA_DAS_PERGUNTAS = path.join(AQUI, 'perguntas-provadas.json');
@@ -282,9 +284,22 @@ export function auditarPerguntas({
     }
   }
 
+  for (const chave of chavesLocais()) {
+    const erro=conferirOrigemLocal(chave,origens[chave]);
+    if(erro) erros.push(`K16 · origem «${chave}»: ${erro}`);
+  }
   /* O SELO DE CADA RESPOSTA DA API. */
   for (const [chave, o] of Object.entries(origens)) {
     const daApi = API_DO_EUROSTAT.test(o?.url ?? '');
+    /* A forma documental conserva o cliente literal do recibo, incluindo os
+       pedidos do OE1 que registam a identidade HTTP. Só a exportação conferida
+       no motor admite esta forma. O selo antigo conserva todas as exigências. */
+    if (eOrigemRP4N(chave) || o?.selo?.tipo === 'rp4n') {
+      const erro = conferirOrigemRP4N(chave, o);
+      if (erro) erros.push(`K16 · origem «${chave}»: ${erro}`);
+      contas.origens_seladas++;
+      continue;
+    }
     if (!daApi && !o?.selo) continue;
     const s = o?.selo;
     if (!s) {

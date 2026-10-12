@@ -6,7 +6,7 @@ import { getClaim } from '../lib/ledger.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 const { id, lang = 'pt' } = Astro.props;
 const linha = getClaim(id);
-const unidade = unidadeDaLinha(linha.unit, lang);
+const unidade = unidadeDaLinha(linha.unit, lang, linha.value);
 /* A explicação depende desta cadeia inglesa exata, transcrita na nota Eurostat.
    Se a nota mudar, a célula N1c recusa o desaparecimento silencioso da explicação;
    uma nota diferente exige voltar a conferir o que ela permite dizer. */

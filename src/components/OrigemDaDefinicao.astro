@@ -116,6 +116,7 @@ const chaveDaPorta = origens.map((o) => {
             {o.documento}
           </span>
         )}
+        {o.pagina && <span class="def-origem-pagina">{', '}{s.prov.paginaDaDefinicao}{' '}<span data-verbatim={`origem-${o.chave}-pagina`}>{o.pagina}</span></span>}
         {/* A COORDENADA QUE A RESPOSTA FIXA, AO LADO DO TÍTULO DO CONJUNTO (passagem K2-c, 02.10.2026): quando o título
             diz outra coisa («aged 15-24» num indicador dos 15 aos 29), a etiqueta da dimensão e a da categoria, como o
             excerto da linha as escreve. O separador é o «·» da casa, o mesmo entre o publicador e o documento: o
@@ -145,10 +146,11 @@ const chaveDaPorta = origens.map((o) => {
           {o.excerto}
         </blockquote>
         <p class="def-excerto-lido">
-          <span class="def-origem-k">{s.dominios.dataLido}</span>{' '}
+          {o.lido === '[a verificar]' ? <span data-def-sem-data={o.chave}>{s.prov.dataOriginalAusente}</span> : <>
+          <span class="def-origem-k">{o.alojada?.prova_data?.tipo === 'hosted-copy' ? s.prov.copiaAlojada : s.dominios.dataLido}</span>{' '}
           <span data-nonledger="data-de-leitura-de-uma-definicao" data-def-lido={o.chave}>
             {dataDaCasa(o.lido)}
-          </span>
+          </span></>}
         </p>
       </details>
     </div>

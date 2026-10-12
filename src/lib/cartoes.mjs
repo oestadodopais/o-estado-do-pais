@@ -277,7 +277,7 @@ export function cartoesAConstruir(rotasDoSitio) {
 function valorDaLinha(claim, campo, lang) {
   const doLivro = String(claim[campo]);
   return {
-    texto: campo === 'unit' ? unidadeDaLinha(claim.unit, lang).texto : doLivro,
+    texto: campo === 'unit' ? unidadeDaLinha(claim.unit, lang, claim.value).texto : doLivro,
     livro: doLivro,
     origem: 'linha',
     linha: claim.id,

@@ -1,0 +1,4 @@
+071b9dfdade099b5b6b522da8dd376ecc80084b5
+docs(rp4n-g): registar a leitura, as plantas e o mandato
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

@@ -117,7 +117,7 @@ function conferir(composicao, oficial) {
   for (const k of ks) if (composicao.paginas[k].destinos !== oficial.paginas[k].destinos) throw new Error(`${k}: a composição e a L1 não contam os mesmos destinos.`);
 }
 if (acao === 'preparar') {
-  const dist = path.resolve(process.argv[3] ?? '/tmp/oedp-b2-antes-7f658299');
+  const dist = path.resolve(process.argv[3] ?? '<temporario>');
   const cabeca = git('rev-parse', process.argv[4] ?? '7f658299');
   const versao = json(path.join(dist, 'version.json'));
   if (versao.commit !== cabeca) throw new Error('O dist do antes não é da cabeça pedida.');

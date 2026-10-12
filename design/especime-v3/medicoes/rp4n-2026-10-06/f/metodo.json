@@ -1,0 +1,47 @@
+{
+  "publicadas": 3193,
+  "total": 3196,
+  "por_confirmar": 4,
+  "agua_por_confirmar": false,
+  "linhas_sem_prova": [
+    "evora-prr-aprovado-2026",
+    "evora-prr-pago-2026",
+    "evora-prr-vencido-aprovado-2026",
+    "saldo-natural-portugal-2025"
+  ],
+  "mudancas": [
+    {
+      "id": "agua-nao-faturada-portugal-2024",
+      "antes": {
+        "publication": "publicada",
+        "por_confirmar": true
+      },
+      "depois": {
+        "publication": "publicada",
+        "por_confirmar": false
+      }
+    },
+    {
+      "id": "avisos-pt2030-abertos",
+      "antes": {
+        "publication": "publicada",
+        "por_confirmar": true
+      },
+      "depois": {
+        "publication": "withdrawn",
+        "por_confirmar": null
+      }
+    },
+    {
+      "id": "avisos-pt2030-pessoas-singulares",
+      "antes": {
+        "publication": "publicada",
+        "por_confirmar": true
+      },
+      "depois": {
+        "publication": "withdrawn",
+        "por_confirmar": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "comando": "node tests/cartao/rp4nb.mjs --registo",
+  "plantas": [
+    {
+      "nome": "o-que-e-linha (pt)",
+      "tipo": "o-que-e-linha",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em o-que-e-linha",
+      "contagem": 1
+    },
+    {
+      "nome": "o-que-e-linha (en)",
+      "tipo": "o-que-e-linha",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em o-que-e-linha",
+      "contagem": 1
+    },
+    {
+      "nome": "o-que-e-familia (pt)",
+      "tipo": "o-que-e-familia",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em o-que-e-familia",
+      "contagem": 1
+    },
+    {
+      "nome": "o-que-e-familia (en)",
+      "tipo": "o-que-e-familia",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em o-que-e-familia",
+      "contagem": 1
+    },
+    {
+      "nome": "o-que-e-serie (pt)",
+      "tipo": "o-que-e-serie",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em o-que-e-serie",
+      "contagem": 1
+    },
+    {
+      "nome": "o-que-e-serie (en)",
+      "tipo": "o-que-e-serie",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em o-que-e-serie",
+      "contagem": 1
+    },
+    {
+      "nome": "nome-medida (pt)",
+      "tipo": "nome-medida",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em nome-medida",
+      "contagem": 1
+    },
+    {
+      "nome": "nome-medida (en)",
+      "tipo": "nome-medida",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em nome-medida",
+      "contagem": 1
+    },
+    {
+      "nome": "nome-serie (pt)",
+      "tipo": "nome-serie",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em nome-serie",
+      "contagem": 1
+    },
+    {
+      "nome": "nome-serie (en)",
+      "tipo": "nome-serie",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em nome-serie",
+      "contagem": 1
+    },
+    {
+      "nome": "nome-lugar (pt)",
+      "tipo": "nome-lugar",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em nome-lugar",
+      "contagem": 1
+    },
+    {
+      "nome": "nome-lugar (en)",
+      "tipo": "nome-lugar",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em nome-lugar",
+      "contagem": 1
+    },
+    {
+      "nome": "titulo-estudo (pt)",
+      "tipo": "titulo-estudo",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em titulo-estudo",
+      "contagem": 1
+    },
+    {
+      "nome": "titulo-estudo (en)",
+      "tipo": "titulo-estudo",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em titulo-estudo",
+      "contagem": 1
+    },
+    {
+      "nome": "leitura-cartao (pt)",
+      "tipo": "leitura-cartao",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em leitura-cartao",
+      "contagem": 1
+    },
+    {
+      "nome": "leitura-cartao (en)",
+      "tipo": "leitura-cartao",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em leitura-cartao",
+      "contagem": 1
+    },
+    {
+      "nome": "primeira-pagina (pt)",
+      "tipo": "primeira-pagina",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em primeira-pagina",
+      "contagem": 1
+    },
+    {
+      "nome": "primeira-pagina (en)",
+      "tipo": "primeira-pagina",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em primeira-pagina",
+      "contagem": 1
+    },
+    {
+      "nome": "explicacao (pt)",
+      "tipo": "explicacao",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em explicacao",
+      "contagem": 1
+    },
+    {
+      "nome": "explicacao (en)",
+      "tipo": "explicacao",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em explicacao",
+      "contagem": 1
+    },
+    {
+      "nome": "fora-dos-tipos (pt)",
+      "tipo": "fora-dos-tipos",
+      "estado": "recusadas",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
+      "contagem": 1
+    },
+    {
+      "nome": "fora-dos-tipos (en)",
+      "tipo": "fora-dos-tipos",
+      "estado": "recusadas",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
+      "contagem": 1
+    },
+    {
+      "nome": "data published_at",
+      "tipo": "data",
+      "estado": "aceites",
+      "mensagem": "RP4N: marca aceite provisoriamente (data)",
+      "contagem": 1
+    },
+    {
+      "nome": "data access_date",
+      "tipo": "data",
+      "estado": "aceites",
+      "mensagem": "RP4N: marca aceite provisoriamente (data)",
+      "contagem": 1
+    },
+    {
+      "nome": "data reference_date",
+      "tipo": "data",
+      "estado": "aceites",
+      "mensagem": "RP4N: marca aceite provisoriamente (data)",
+      "contagem": 1
+    },
+    {
+      "nome": "data document.computed_over.files.0.snapshot_date",
+      "tipo": "data",
+      "estado": "aceites",
+      "mensagem": "RP4N: marca aceite provisoriamente (data)",
+      "contagem": 1
+    },
+    {
+      "nome": "data pelo componente de datas",
+      "tipo": "data",
+      "estado": "aceites",
+      "mensagem": "RP4N: marca aceite provisoriamente (data)",
+      "contagem": 1
+    },
+    {
+      "nome": "excerto ausente",
+      "tipo": "excerto",
+      "estado": "aceites",
+      "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+      "contagem": 1
+    },
+    {
+      "nome": "marca partida entre elementos de um excerto",
+      "tipo": "excerto",
+      "estado": "aceites",
+      "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+      "contagem": 1
+    },
+    {
+      "nome": "declaração proibida numa parte da marca",
+      "tipo": "o-que-e-linha",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em o-que-e-linha",
+      "contagem": 1
+    },
+    {
+      "nome": "endereço ausente",
+      "tipo": "endereco",
+      "estado": "aceites",
+      "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+      "contagem": 1
+    },
+    {
+      "nome": "data ausente na agenda",
+      "tipo": "data",
+      "estado": "aceites",
+      "mensagem": "RP4N: marca aceite provisoriamente (data)",
+      "contagem": 1
+    },
+    {
+      "nome": "proteção da pessoa na I77",
+      "tipo": "pessoa-I77",
+      "estado": "aceites",
+      "mensagem": "RP4N: marca aceite provisoriamente (pessoa-I77)",
+      "contagem": 1
+    },
+    {
+      "nome": "referência à marca em metodo",
+      "tipo": "referencia-metodo",
+      "estado": "aceites",
+      "mensagem": "RP4N: marca aceite provisoriamente (referencia-metodo)",
+      "contagem": 1
+    },
+    {
+      "nome": "referência à marca em sobre",
+      "tipo": "referencia-sobre",
+      "estado": "aceites",
+      "mensagem": "RP4N: marca aceite provisoriamente (referencia-sobre)",
+      "contagem": 1
+    },
+    {
+      "nome": "texto partido",
+      "tipo": "fora-dos-tipos",
+      "estado": "recusadas",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
+      "contagem": 1
+    },
+    {
+      "nome": "entidades",
+      "tipo": "fora-dos-tipos",
+      "estado": "recusadas",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
+      "contagem": 1
+    },
+    {
+      "nome": "classe vazia",
+      "tipo": "fora-dos-tipos",
+      "estado": "recusadas",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
+      "contagem": 1
+    },
+    {
+      "nome": "declaração sem texto",
+      "tipo": "o-que-e-linha",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em o-que-e-linha",
+      "contagem": 1
+    },
+    {
+      "nome": "campo permitido dentro de o-que-e-linha",
+      "tipo": "o-que-e-linha",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em o-que-e-linha",
+      "contagem": 1
+    },
+    {
+      "nome": "campo permitido dentro de leitura-cartao",
+      "tipo": "leitura-cartao",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em leitura-cartao",
+      "contagem": 1
+    },
+    {
+      "nome": "campo permitido dentro de titulo-estudo",
+      "tipo": "titulo-estudo",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em titulo-estudo",
+      "contagem": 1
+    },
+    {
+      "nome": "campo permitido dentro de primeira-pagina",
+      "tipo": "primeira-pagina",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em primeira-pagina",
+      "contagem": 1
+    },
+    {
+      "nome": "campo permitido dentro de explicacao",
+      "tipo": "explicacao",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em explicacao",
+      "contagem": 1
+    },
+    {
+      "nome": "campo sem linha no livro",
+      "tipo": "fora-dos-tipos",
+      "estado": "recusadas",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
+      "contagem": 1
+    },
+    {
+      "nome": "campo não permitido",
+      "tipo": "nome-medida",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em nome-medida",
+      "contagem": 1
+    },
+    {
+      "nome": "afirmação acrescentada ao campo de excerto",
+      "tipo": "fora-dos-tipos",
+      "estado": "recusadas",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
+      "contagem": 1
+    },
+    {
+      "nome": "pessoa fora do mandato protegido",
+      "tipo": "fora-dos-tipos",
+      "estado": "recusadas",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
+      "contagem": 1
+    },
+    {
+      "nome": "afirmação em metodo",
+      "tipo": "fora-dos-tipos",
+      "estado": "recusadas",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
+      "contagem": 1
+    },
+    {
+      "nome": "afirmação em sobre",
+      "tipo": "fora-dos-tipos",
+      "estado": "recusadas",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
+      "contagem": 1
+    }
+  ]
+}

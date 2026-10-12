@@ -1,0 +1,4 @@
+992ecd5acd24277eb32e7084bd04ca96eaaa74a9
+fix(rp4n-g): dizer contratado na unidade da execução PRR
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

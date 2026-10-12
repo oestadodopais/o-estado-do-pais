@@ -1,0 +1,3 @@
+7242ca737e2678d45b308bceea565c61c109e233
+fix(rp4n-f): exigir excertos contíguos no cabeçalho anual
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>

@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-12T12:51:45+00:00",
+ "copia": "<scratchpad>/rp4n/pacote-leitura-f",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 12788 ficheiros de texto percorridos pela prova da retirada, contra o registo em f-final",
+   "sha256_antes": "4eb7ead2708632440168505a0fd0a791e30dcdca1246d81611b9a9d7ea7ce1ec",
+   "sha256_depois": "1057f10cd7ccbbcad8908bdeed5c4f9cf714b482e497d31a9027b7f758b91433",
+   "contexto_antes": "2030-pessoas-singulares`: `withdrawn`.\n- `ciclo-substituicao-condutas`: `withdrawn`.\n\nA medição leu 3196 linhas no livro bruto e 3193 publicadas. A conferência percorreu 12878 ficheiros de texto e encontrou 0 referências aos identificadores retirados. O Método conserva 4 linhas publicadas com proveniência incompleta. A água passou de incompleta a compl",
+   "contexto_depois": "2030-pessoas-singulares`: `withdrawn`.\n- `ciclo-substituicao-condutas`: `withdrawn`.\n\nA medição leu 3196 linhas no livro bruto e 3193 publicadas. A conferência percorreu 12788 ficheiros de texto e encontrou 0 referências aos identificadores retirados. O Método conserva 4 linhas publicadas com proveniência incompleta. A água passou de incompleta a compl"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "motor/publisher/rp4n_origens.py",
+   "descricao": "a recusa dos excertos por trechos da RO1 fica desligada na cópia do motor, contra o diff e a planta",
+   "sha256_antes": "8faeb8d7e66ef3535cb02644f9ca2685347b838b97db178890bd0dd71c3296af",
+   "sha256_depois": "0cd976a8dfae9b7e537b4522e3b7e33289923b77d82627020fe7ef196605c214",
+   "contexto_antes": "\n        for k in selecao[\"caminho\"]:\n            texto = texto[k]\n    if not isinstance(texto, str):\n        raise ValueError(\"RO1: o campo não contém texto\")\n    if \"trechos\" in selecao:\n        raise ValueError(\"RO1: um excerto tem de ser uma sequência contígua, sem trechos\")\n    inicio, fim = selecao.get(\"inicio\"), selecao.get(\"fim\")\n    if inicio:\n        if texto.count(inicio) != 1:\n            raise ValueError(\"RO1: o início do ",
+   "contexto_depois": "\n        for k in selecao[\"caminho\"]:\n            texto = texto[k]\n    if not isinstance(texto, str):\n        raise ValueError(\"RO1: o campo não contém texto\")\n    if \"trechos\" in selecao and False:\n        raise ValueError(\"RO1: um excerto tem de ser uma sequência contígua, sem trechos\")\n    inicio, fim = selecao.get(\"inicio\"), selecao.get(\"fim\")\n    if inicio:\n        if texto.count(inicio) != 1:\n            raise ValueError(\"RO1: o início do "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "built/livro-razao.json",
+   "descricao": "a exportação pública do livro leva o identificador de uma linha retirada (avisos-pt2030-abertos), contra a retirada e a prova",
+   "sha256_antes": "c3d5ee22ce1646f7e4a151d02a012e075ecd0ac57aafd53ddaba303e01b03155",
+   "sha256_depois": "0fbbb73a357bceac89c1b37b4d19a76bb27034b6e7d82206495c72951e85192e",
+   "contexto_antes": ": \"CC BY 4.0\",\n    \"url\": \"https://creativecommons.org/licenses/by/4.0/\",\n    \"atribuicao\": \"O Estado do País, oestadodopaís.pt\"\n  },\n  \"linhas\": [\n    {\n      \"id\": \"abandono-escolar-precoce-2024\",\n      \"value\": \"6,6\",\n      \"unit\": \"%\",\n      \"name\": null,\n      \"name_source\": null,\n      \"source\": \"Eurostat\",\n      \"document\": {\n        \"title\": \"Earl",
+   "contexto_depois": ": \"CC BY 4.0\",\n    \"url\": \"https://creativecommons.org/licenses/by/4.0/\",\n    \"atribuicao\": \"O Estado do País, oestadodopaís.pt\"\n  },\n  \"linhas\": [\n    {\n      \"id\": \"avisos-pt2030-abertos\",\n      \"value\": \"6,6\",\n      \"unit\": \"%\",\n      \"name\": null,\n      \"name_source\": null,\n      \"source\": \"Eurostat\",\n      \"document\": {\n        \"title\": \"Earl"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "ledger/claims/agua-nao-faturada-portugal-2024.yml",
+   "descricao": "a página da definição na cópia da linha da água diz 160, contra o PDF alojado, o registo do motor e a página construída",
+   "sha256_antes": "bb98de177a24168ea229d31ccba27a61842aaf1a8ea7feabca0990e4d1c3938e",
+   "sha256_depois": "395c16115371458c7b7670fe4e366b5b079c09389c03ab18273e6c06019f432e",
+   "contexto_antes": "cument:\n  title: \"RASARP 2025, volume 1\"\n  edition: \"2025\"\n  locator: \"p. 106, Quadro 49, AA08 baixa, avaliação global para 93 % de EG em Portugal continental\"\n  page: 106\n  kind: \"pdf\"\nsource_url: \"https://ersarwebsitedocsstorage.blob.core.windows.net/documents/docs/anuais-do-RASARP/rasarp-2025/rasarp2025-volume1.pdf#page=106\"\na",
+   "contexto_depois": "cument:\n  title: \"RASARP 2025, volume 1\"\n  edition: \"2025\"\n  locator: \"p. 106, Quadro 49, AA08 baixa, avaliação global para 93 % de EG em Portugal continental\"\n  page: 160\n  kind: \"pdf\"\nsource_url: \"https://ersarwebsitedocsstorage.blob.core.windows.net/documents/docs/anuais-do-RASARP/rasarp-2025/rasarp2025-volume1.pdf#page=106\"\na"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "src/lib/ledger.mjs",
+   "descricao": "o carregador público deixa de excluir as linhas retiradas, na cópia, contra o diff e a prova da retirada",
+   "sha256_antes": "522cd186774d56f9eb85fb4e9c4572f22c8e476c15820a4514c06c596c6cb655",
+   "sha256_depois": "01a4adea309faeb33da1cc5d9ce59749413300aa1673a9674048b6a3a24ea687",
+   "contexto_antes": "id repetido \"${doc.id}\" (${file} e ${map.get(doc.id)?.__file}).`);\n    }\n    map.set(doc.id, doc);\n  }\n  _cache = map;\n  _publicCache = new Map([...map].filter(([, c]) => c.publication !== 'withdrawn'));\n  return includeWithdrawn ? map : _publicCache;\n}\n\n/**\n * Uma afirmação, pelo id. Lança — em build — se não existir. Este é o portão (a).\n *\n * @param {strin",
+   "contexto_depois": "id repetido \"${doc.id}\" (${file} e ${map.get(doc.id)?.__file}).`);\n    }\n    map.set(doc.id, doc);\n  }\n  _cache = map;\n  _publicCache = new Map([...map].filter(([, c]) => c.publication !== 'retirada'));\n  return includeWithdrawn ? map : _publicCache;\n}\n\n/**\n * Uma afirmação, pelo id. Lança — em build — se não existir. Este é o portão (a).\n *\n * @param {strin"
+  }
+ ]
+}

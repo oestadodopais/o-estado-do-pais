@@ -1,7 +1,8 @@
+import {loadClaims} from '../src/lib/ledger.mjs';
 /** I143 e I158: o espaço do desenho também existe no texto que se copia e ouve.
  *  R4 (05.10.2026): o valor do recibo de uma linha deixou de ser o `<h1>` (o título passou a ser o nome da medida) e
  *  vive em `p.linha-valor`; a célula lê-o pela classe, com a mesma conferência. */
-export function conferirValorUnidade(root) {
+export function conferirValorUnidade(root, linhas = loadClaims()) {
   const erros = [];
   const contas = { titulos: 0, cartoes: 0 };
   const declarados = root.querySelectorAll('[data-cartao-medida]');
@@ -13,6 +14,12 @@ export function conferirValorUnidade(root) {
     /* K2-c (02.10.2026): a unidade é o campo da linha ou, onde a definição declarada a traz, a unidade da casa; o
        espaço entre o número e a unidade exige-se nas duas (§1.135). */
     const unidade = el.querySelector('[data-linha-campo="unit"]') ?? el.querySelector('[data-unidade-da-casa]') ?? (contagem ? el.querySelector('.cartao-medida-unidade') : null);
+    const claim = linhas.get(valor?.getAttribute('data-claim'));
+    if (claim?.unit === 'avisos' && unidade) {
+      const en = root.querySelector('html')?.getAttribute('lang')?.startsWith('en');
+      const esperado = String(claim.value) === '1' ? (en ? 'notice' : 'aviso') : (en ? 'notices' : 'avisos');
+      if (unidade.textContent.trim() !== esperado) erros.push('RP4N-e: a unidade dos avisos não concorda com o valor');
+    }
     const tipo = el.classList.contains('linha-valor') ? 'titulos' : 'cartoes';
     contas[tipo]++;
     const marca = el.querySelector('.cartao-medida-marca');

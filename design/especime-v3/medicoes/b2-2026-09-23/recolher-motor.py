@@ -7,7 +7,7 @@ import subprocess
 from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent
-MOTOR = Path.home() / 'Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23'
+MOTOR = Path.home() / '<projetos>/ResearchHub/.worktrees/b2-peca1-2026-09-23'
 BASE = 'aa35e2e'
 def git(*args):
     return subprocess.check_output(['git', '-C', str(MOTOR), *args], text=True).strip()

@@ -316,6 +316,9 @@ export const STRINGS = {
          diferentes e passam a ter dois rótulos diferentes; o de recibo fica no
          recibo, que é onde ele diz o que diz. */
       definicaoDe: 'Definição de',
+      paginaDaDefinicao: 'página',
+      dataOriginalAusente: 'Data do pedido original por confirmar.',
+      marcadorDoSelo: '[a verificar]',
       /* A palavra que o selo escreve, à vista (IDENTIDADE.md §5.4). Esteve
          escondida para leitores de ecrã até à v2, e um leitor com vista via só
          um título de estudo em cinzento. */
@@ -344,6 +347,8 @@ export const STRINGS = {
          cartão de partilha e a agenda das fontes. É a mesma cadeia, e por isso
          uma só: um nome por coisa em todo o sítio (§0 do brief). */
       lido: 'Lido na fonte a',
+      copiaAlojada: 'Cópia alojada a',
+      registoDaCopia: 'Registo da cópia',
       /* «PUBLICADO POR» E NÃO «FONTE» (F1.10, §7.2, 09.09.2026). O leitor de
          04.09 contou duas «fonte» em cada bloco de medida e em cada linha: o
          selo, que é a PORTA para a linha, e o rótulo do campo `source`, que é o
@@ -2475,6 +2480,8 @@ export const STRINGS = {
         camposHistorico: {"source": "publicador", "source_url": "endereço da fonte", "document.title": "documento", "document.edition": "edição", "document.locator": "local no documento", "access_date": "dia da leitura", "excerpt": "excerto da fonte"},
         ficheiroRelidoK: 'Ficheiro da fonte relido a',
         semSegundaLeitura: 'ainda nenhuma',
+        leituraNaFonteK: 'Leitura na fonte',
+        semLeituraDaCopia: 'Não há leitura na fonte registada para esta linha.',
         segundaLeituraCalculada: 'Recalculada em cada construção a partir das suas origens',
         verAtualizacao: 'Ver a atualização deste valor',
         valorEmUso: 'O valor do título é o que esta página usa.',
@@ -3334,11 +3341,16 @@ export const STRINGS = {
       calculado: 'calculated',
       /** Ver a razão na edição portuguesa (achado 2, 15.09.2026). */
       definicaoDe: 'Definition by',
+      paginaDaDefinicao: 'page',
+      dataOriginalAusente: 'Original request date to be confirmed.',
+      marcadorDoSelo: '[to verify]',
       selo: 'source',
       seloDaCasa: 'row',
       provisorio: 'provisional',
       dadoProvisorio: 'provisional data',
       lido: 'Read at the source on',
+      copiaAlojada: 'Copy hosted on',
+      registoDaCopia: 'Copy record',
       fonte: 'Published by',
       documento: 'Document',
       edicao: 'Edition',
@@ -3470,13 +3482,13 @@ export const STRINGS = {
     },
 
     marcador: {
-      metaTitle: 'The [a verificar] marker · O Estado do País',
+      metaTitle: 'The [to verify] marker · O Estado do País',
       metaDescription:
         'What this site’s uncertainty marker means, why it exists, and what happens to a row that carries it.',
       eyebrow: 'The marker',
       h1: 'What this marker means',
       lede:
-        'It is the only uncertainty marker on this site. It appears where a field has not been confirmed against the source. The marker is kept in Portuguese, as in the original; it reads “to verify”.',
+        'It is the only uncertainty marker on this site. It appears where a field has not been confirmed against the source. The marker reads “[to verify]” in the English edition.',
       /* O par inglês da definição (CHAVES-EN.md). O marcador fica em português
          nas duas edições, e a frase que o define é da língua da página. */
       definicao: 'a field not confirmed against the source, not a doubt about what is published',
@@ -4307,6 +4319,8 @@ export const STRINGS = {
         camposHistorico: {"source": "publisher", "source_url": "source address", "document.title": "document", "document.edition": "edition", "document.locator": "place in the document", "access_date": "reading date", "excerpt": "source excerpt"},
         ficheiroRelidoK: 'Source file read again on',
         semSegundaLeitura: 'none yet',
+        leituraNaFonteK: 'Reading at the source',
+        semLeituraDaCopia: 'No reading at the source is recorded for this row.',
         segundaLeituraCalculada: 'Recomputed at every build from its sources',
         verAtualizacao: 'See the update to this value',
         valorEmUso: 'This page uses the value shown in the title.',

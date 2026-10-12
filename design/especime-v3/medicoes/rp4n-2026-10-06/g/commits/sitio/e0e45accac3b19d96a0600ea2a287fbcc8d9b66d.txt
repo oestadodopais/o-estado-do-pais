@@ -1,0 +1,4 @@
+e0e45accac3b19d96a0600ea2a287fbcc8d9b66d
+test(rp4n-g): declarar os rótulos medidos do prazo de conclusão
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

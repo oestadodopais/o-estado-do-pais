@@ -1,0 +1,47 @@
+{
+  "manifesto": "publisher/recortes/pensao-rp4n.json",
+  "pedido_original_no_manifesto": null,
+  "pdf": "content/13 Dominios/source/rp4n/pensoes-copia-alojada.pdf",
+  "pdf_sha256": "555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366",
+  "pdf_bytes": 4521348,
+  "pedidos_encontrados": [
+    {
+      "ficheiro": "content/13 Dominios/source/rp4n/pensoes-d.pedido.json",
+      "recibo": {
+        "url": "https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef",
+        "url_final": "https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef",
+        "hora": "2026-10-07T09:52:50Z",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": null,
+        "erro": "SSLError: HTTPSConnectionPool(host='www.dgcp.mtsss.gov.pt', port=443): Max retries exceeded with url: /documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)')))",
+        "tipo": null
+      }
+    },
+    {
+      "ficheiro": "content/13 Dominios/source/rp4n/pensoes-f.pedido.json",
+      "recibo": {
+        "url": "https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef",
+        "url_final": "https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef",
+        "hora": "2026-10-12T11:42:09Z",
+        "cliente": "core.http.HttpClient.condicional",
+        "estado": null,
+        "erro": "SSLError: HTTPSConnectionPool(host='www.dgcp.mtsss.gov.pt', port=443): Max retries exceeded with url: /documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)')))"
+      }
+    },
+    {
+      "ficheiro": "content/13 Dominios/source/rp4n/pensoes.pedido.json",
+      "recibo": {
+        "url": "https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef",
+        "url_final": "https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef",
+        "hora": "2026-10-06T09:48:13Z",
+        "cliente": "core.http.HttpClient.condicional",
+        "user_agent": "OEstadoDoPais/corredor",
+        "estado": null,
+        "erro": "SSLError: HTTPSConnectionPool(host='www.dgcp.mtsss.gov.pt', port=443): Max retries exceeded with url: /documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)')))",
+        "tipo": null
+      }
+    }
+  ],
+  "conclusao": "Nenhum destes pedidos trouxe o corpo alojado; a data original não está provada."
+}

@@ -1,0 +1,4 @@
+e1c0959a0dd324120df160e3f19a68a7df2c767f
+fix(rp4n-g): apoiar a explicação nas classificações das fontes
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

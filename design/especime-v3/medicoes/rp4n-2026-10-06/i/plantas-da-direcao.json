@@ -1,0 +1,41 @@
+{
+  "linhas": [
+    {
+      "repositorio": "sitio",
+      "id": "penalizacao-antecipacao-um-ano-neutra",
+      "access_date": "2026-08-24",
+      "access_date_kind": "hosted-copy"
+    },
+    {
+      "repositorio": "sitio",
+      "id": "penalizacao-legal-um-ano-antecipacao-2026",
+      "access_date": "2026-08-24",
+      "access_date_kind": "hosted-copy"
+    },
+    {
+      "repositorio": "motor",
+      "id": "penalizacao-antecipacao-um-ano-neutra",
+      "access_date": "2026-08-24",
+      "access_date_kind": "hosted-copy"
+    },
+    {
+      "repositorio": "motor",
+      "id": "penalizacao-legal-um-ano-antecipacao-2026",
+      "access_date": "2026-08-24",
+      "access_date_kind": "hosted-copy"
+    }
+  ],
+  "datas_definicoes": [
+    "Cópia alojada a 24.08.2026",
+    "Cópia alojada a 24.08.2026",
+    "Cópia alojada a 24.08.2026",
+    "Cópia alojada a 24.08.2026"
+  ],
+  "localizador_legal_en": [
+    "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, paragraph below Figure 8.4",
+    "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, paragraph below Figure 8.4"
+  ],
+  "paginas_com_marca_h": 28,
+  "sitio": "f99ad385789e293373951ddb77f25ac221181daf",
+  "motor": "cc75e215caf71d5e8cfa77850f1896f3b418c75f"
+}

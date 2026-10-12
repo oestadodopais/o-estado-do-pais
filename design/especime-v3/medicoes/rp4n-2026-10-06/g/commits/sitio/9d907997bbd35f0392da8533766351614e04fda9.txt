@@ -1,0 +1,4 @@
+9d907997bbd35f0392da8533766351614e04fda9
+fix(rp4n-g): preferir o rótulo da medida ao título do documento
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

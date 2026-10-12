@@ -16,7 +16,8 @@
  * do que não marcar»: a §6 já o dizia, e a porta é o que faltava para ele o
  * deixar de ser.
  *
- * O TEXTO E A CLASSE NÃO MUDAM. A cadeia é `POR_VERIFICAR` de
+ * RP4-n-h: a marca é traduzida pela tabela da edição.
+ * A convenção anterior segue descrita abaixo para contexto. A cadeia é `POR_VERIFICAR` de
  * `src/lib/ledger.mjs`, e mais nenhuma; a classe é `.marcador`, e mais nenhuma;
  * a língua é `pt-PT` nas duas edições, porque o marcador fica em português nas
  * duas (decisão da página do marcador, `CHAVES-EN.md`). O que se acrescenta é
@@ -38,7 +39,7 @@
  * de um trabalho, o índice do livro-razão, a agenda, o Método, a página de um
  * concelho.
  */
-import { POR_VERIFICAR } from '../lib/ledger.mjs';
+import { t } from '../i18n/strings.mjs';
 import { routePath } from '../lib/routes.mjs';
 import DefinicaoDoMarcador from './DefinicaoDoMarcador.astro';
 
@@ -50,4 +51,4 @@ if (!lang) {
 const porta = routePath('marcador', lang);
 ---
 
-<a class:list={['marcador', classe]} href={porta} lang="pt-PT">{POR_VERIFICAR}</a><DefinicaoDoMarcador lang={lang} />
+<a class:list={['marcador', classe]} href={porta} lang={lang === 'pt' ? 'pt-PT' : 'en'}>{t(lang).prov.marcadorDoSelo}</a><DefinicaoDoMarcador lang={lang} />

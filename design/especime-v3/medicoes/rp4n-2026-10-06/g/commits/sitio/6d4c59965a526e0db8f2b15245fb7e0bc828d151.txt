@@ -1,0 +1,4 @@
+6d4c59965a526e0db8f2b15245fb7e0bc828d151
+fix(rp4n-g): retirar a data da pensão sem pedido bem-sucedido
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

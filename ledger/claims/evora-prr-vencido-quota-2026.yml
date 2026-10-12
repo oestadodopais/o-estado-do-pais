@@ -7,7 +7,7 @@ id: "evora-prr-vencido-quota-2026"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "61,32"
-unit: "% do valor aprovado"
+unit: "% do valor contratado"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
@@ -20,8 +20,8 @@ reference_date: null
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "O dinheiro aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada, a dividir por todo o dinheiro aprovado para o concelho, vezes cem."
-derivation_en: "Approved money on project-locations whose planned completion date had passed with no completion recorded, divided by all the money approved for the concelho, times one hundred."
+derivation: "As verbas contratadas por beneficiários intermediários e diretos com sede em Évora em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada, a dividir pelo total contratado pelos mesmos beneficiários no mesmo instantâneo, vezes cem."
+derivation_en: "Funds contracted by intermediate and direct beneficiaries headquartered in Évora in projects with a completion deadline before the snapshot and no completion recorded, divided by the total contracted by the same beneficiaries in the same snapshot, times one hundred."
 derived_from:
   - "evora-prr-vencido-aprovado-2026"
   - "evora-prr-aprovado-2026"

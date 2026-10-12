@@ -1,0 +1,40 @@
+{
+  "cabeca": "d6c899b3a6d3f1ca417b5dbe107f9ab162764fa0",
+  "inicio": "2026-10-07T10:53:32.797Z",
+  "fim": "2026-10-07T10:53:33.791Z",
+  "segundos": 0.994,
+  "passos": [
+    {
+      "passo": "cadeia:build",
+      "cadeia": "build",
+      "inicio": "2026-10-07T10:53:32.797+00:00",
+      "fim": "2026-10-07T10:53:33.382+00:00",
+      "segundos": 0.5843661660328507,
+      "codigo": 1
+    },
+    {
+      "passo": "npm run mapa:unidades",
+      "cadeia": "build",
+      "inicio": "2026-10-07T10:53:32.797+00:00",
+      "fim": "2026-10-07T10:53:33.007+00:00",
+      "segundos": 0.2102283330168575,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run ledger:check",
+      "cadeia": "build",
+      "inicio": "2026-10-07T10:53:33.008+00:00",
+      "fim": "2026-10-07T10:53:33.381+00:00",
+      "segundos": 0.37368762493133545,
+      "codigo": 1
+    },
+    {
+      "passo": "npm run typecheck",
+      "cadeia": "typecheck",
+      "inicio": "2026-10-07T10:53:33.547+00:00",
+      "fim": "2026-10-07T10:53:33.791+00:00",
+      "segundos": 0.24462504195980728,
+      "codigo": 1
+    }
+  ]
+}

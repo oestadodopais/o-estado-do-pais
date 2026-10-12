@@ -28,6 +28,16 @@
       "o_que": "o K2, items 3 e 4 do brief: a diferença de emprego entre sexos diz que é a diferença entre duas taxas, em pontos percentuais (com a origem nova do quadro do Painel Social no Relatório por País de Portugal); a quota nas exportações diz em palavras comuns o que é a quota e quem são as economias avançadas; o PIB por habitante diz o que a unidade chama volumes encadeados"
     },
     {
+      "quem": "Codex",
+      "quando": "2026-10-06",
+      "o_que": "RP4-n: séries recompostas pelos rótulos dos corpos selados e pelas contas declaradas; construção para leitura a frio, não aprovação."
+    },
+    {
+      "quem": "Codex gpt-6-astra",
+      "quando": "2026-10-07",
+      "o_que": "RP4-n-d, RP4N-9: a explicação conserva a distinção entre as duas contas e perde só a oração apoiada na nota não selada da despesa bruta. O cliente da origem funcional acompanha o recibo corrigido no motor. Construção para conferência da direção."
+    },
+    {
       "quem": "Claude Opus 5.5",
       "quando": "2026-10-05",
       "o_que": "o bloco R4: as frases «o que é» das famílias das linhas sem cartão nacional (as do ano anterior e da União das medidas com cartão leem a frase do cartão contra a própria linha; as outras têm frase própria), e as partes das oito notas das medidas dos concelhos e da frase nova do limite da dívida, cada parte com o literal que a apoia nas linhas da família, numa origem declarada, num termo explicado em TERMOS_DOS_CARTOES ou, onde a fonte não diz o que a medida é, no nome do projeto"
@@ -41,6 +51,11 @@
       "quem": "Codex gpt-6-astra",
       "quando": "2026-10-06",
       "o_que": "Construção JD1: frases das famílias e da série, relidas contra as fontes seladas desta corrida. A leitura a frio pertence à entrega seguinte."
+    },
+    {
+      "quem": "Codex",
+      "quando": "2026-10-06",
+      "o_que": "RP4-n: famílias recompostas com as origens documentais exportadas pelo motor; as ausências ficam declaradas. Construção para leitura a frio, não aprovação."
     }
   ],
   "comuns": [
@@ -7001,7 +7016,6 @@
       },
       "origens": [
         "eurostat-tipsgo10-descricao",
-        "pdm-divida-publica",
         "eurostat-tipsna40-descricao"
       ],
       "folhas": [
@@ -7018,11 +7032,6 @@
                   "origem": "eurostat-tipsgo10-descricao",
                   "campo": "excerto",
                   "literal": "debt means total gross debt"
-                },
-                {
-                  "origem": "pdm-divida-publica",
-                  "campo": "excerto",
-                  "literal": "general government sector debt"
                 }
               ]
             },
@@ -7594,9 +7603,7 @@
       },
       "origens": [
         "eurostat-tipser10-descricao",
-        "pdm-cambio-efectivo-real",
-        "c1c-eurostat-sinal-cambio",
-        "c1c-bce-competitividade"
+        "c1c-eurostat-sinal-cambio"
       ],
       "folhas": [
         {
@@ -7633,11 +7640,6 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "origem": "pdm-cambio-efectivo-real",
-                  "campo": "excerto",
-                  "literal": "3-year percentage change"
-                },
-                {
                   "linha": "propria",
                   "campo": "unit",
                   "literal": "variação em três anos"
@@ -7653,11 +7655,6 @@
                   "origem": "c1c-eurostat-sinal-cambio",
                   "campo": "excerto",
                   "literal": "A positive value means real appreciation."
-                },
-                {
-                  "origem": "c1c-bce-competitividade",
-                  "campo": "excerto",
-                  "literal": "I have shown that the price competitiveness of the euro area has deteriorated mainly because producer prices there have moved unfavourably relative to those of key trading partners – especially in Asia, and in China in particular."
                 }
               ]
             }
@@ -8111,16 +8108,19 @@
         "oe-2026-cem-euros-funcao-09",
         "oe-2026-cem-euros-funcao-10"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-orcamento",
+        "rp4n-despesa-efetiva",
+        "rp4n-consolidacao"
+      ],
       "folhas": [
         {
           "pt": "É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central que o Orçamento prevê: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
-          "en": "It is how much of every hundred euros of central administration’s consolidated effective expenditure goes to this function that the Budget plans: spending without transactions in financial assets and liabilities or transfers between its own services.",
+          "en": "It is the amount for this function out of every hundred euros of central administration’s consolidated effective expenditure planned in the Budget: spending without transactions in financial assets and liabilities or transfers between its own services.",
           "partes": [
             {
               "pt": "É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central",
-              "en": "It is how much of every hundred euros of central administration’s consolidated effective expenditure goes to this function",
+              "en": "It is the amount for this function out of every hundred euros of central administration’s consolidated effective expenditure",
               "classe": "diz",
               "apoios": [
                 {
@@ -8137,18 +8137,13 @@
             },
             {
               "pt": " que o Orçamento prevê",
-              "en": " that the Budget plans",
+              "en": " planned in the Budget",
               "classe": "diz",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "orçamentada"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "budgeted"
+                  "origem": "rp4n-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento aprovado"
                 }
               ]
             },
@@ -8158,9 +8153,14 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "A despesa efetiva consolidada exclui ativos e passivos financeiros e transferências internas entre os serviços considerados."
+                  "origem": "rp4n-despesa-efetiva",
+                  "campo": "excerto",
+                  "literal": "com exclusão dos «ativos financeiros»"
+                },
+                {
+                  "origem": "rp4n-consolidacao",
+                  "campo": "excerto",
+                  "literal": "transferências"
                 }
               ]
             }
@@ -8181,8 +8181,10 @@
         "execucao-2026-07-cem-euros-funcao-09",
         "execucao-2026-07-cem-euros-funcao-10"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-despesa-efetiva",
+        "rp4n-consolidacao"
+      ],
       "folhas": [
         {
           "pt": "É quanto foi para esta função em cada cem euros da despesa efetiva consolidada que a administração central gastou de janeiro a julho: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
@@ -8223,9 +8225,14 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "A despesa efetiva consolidada exclui ativos e passivos financeiros e transferências internas entre os serviços considerados."
+                  "origem": "rp4n-despesa-efetiva",
+                  "campo": "excerto",
+                  "literal": "com exclusão dos «ativos financeiros»"
+                },
+                {
+                  "origem": "rp4n-consolidacao",
+                  "campo": "excerto",
+                  "literal": "transferências"
                 }
               ]
             }
@@ -8251,51 +8258,52 @@
         "oe-2026-cem-euros-ministerio-saude",
         "oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-total-ministerios",
+        "rp4n-mapa-ministerios",
+        "rp4n-consolidada-ministerios"
+      ],
       "folhas": [
         {
-          "pt": "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
-          "en": "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up.",
+          "pt": "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA».",
+          "en": "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “DESPESA TOTAL CONSOLIDADA”.",
           "partes": [
             {
-              "pt": "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central",
-              "en": "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry",
+              "pt": "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA».",
+              "en": [
+                "It is the amount for this ministry out of every hundred euros of “",
+                {
+                  "termo": "DESPESA TOTAL",
+                  "lingua": "pt-PT"
+                },
+                "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+                {
+                  "termo": "DESPESA TOTAL CONSOLIDADA",
+                  "lingua": "pt-PT"
+                },
+                "”."
+              ],
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
-                  "campo": "derivation",
-                  "literal": "pela despesa bruta da administração central, multiplicar por cem"
-                }
-              ]
-            },
-            {
-              "pt": " que o Orçamento prevê",
-              "en": " that the Budget plans",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "orçamentada"
+                  "campo": "check",
+                  "literal": " / oe-2026-despesa-bruta-administracao-central * 100 , 2 )"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "budgeted"
-                }
-              ]
-            },
-            {
-              "pt": "; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
-              "en": "; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up.",
-              "classe": "diz",
-              "apoios": [
+                  "origem": "rp4n-total-ministerios",
+                  "campo": "excerto",
+                  "literal": "DESPESA TOTAL"
+                },
                 {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma."
+                  "origem": "rp4n-mapa-ministerios",
+                  "campo": "excerto",
+                  "literal": "Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central"
+                },
+                {
+                  "origem": "rp4n-consolidada-ministerios",
+                  "campo": "excerto",
+                  "literal": "DESPESA TOTAL CONSOLIDADA"
                 }
               ]
             }
@@ -8307,63 +8315,52 @@
       "chaves": [
         "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-total-ministerios",
+        "rp4n-mapa-ministerios",
+        "rp4n-consolidada-ministerios"
+      ],
       "folhas": [
         {
-          "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros da despesa bruta da administração central que o Orçamento prevê; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
-          "en": "It is how much of every hundred euros of central administration’s gross expenditure goes to the general charges of the State that the Budget plans; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up.",
+          "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA».",
+          "en": "It is the amount for the general charges of the State out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “DESPESA TOTAL CONSOLIDADA”.",
           "partes": [
             {
-              "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros da despesa bruta da administração central",
-              "en": "It is how much of every hundred euros of central administration’s gross expenditure goes to the general charges of the State",
+              "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA».",
+              "en": [
+                "It is the amount for the general charges of the State out of every hundred euros of “",
+                {
+                  "termo": "DESPESA TOTAL",
+                  "lingua": "pt-PT"
+                },
+                "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+                {
+                  "termo": "DESPESA TOTAL CONSOLIDADA",
+                  "lingua": "pt-PT"
+                },
+                "”."
+              ],
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
-                  "campo": "derivation",
-                  "literal": "Dividir a despesa bruta dos Encargos Gerais do Estado pela despesa bruta da administração central, multiplicar por cem"
-                }
-              ]
-            },
-            {
-              "pt": " que o Orçamento prevê",
-              "en": " that the Budget plans",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "orçamentada"
+                  "campo": "check",
+                  "literal": " / oe-2026-despesa-bruta-administracao-central * 100 , 2 )"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "budgeted"
-                }
-              ]
-            },
-            {
-              "pt": "; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania",
-              "en": "; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies",
-              "classe": "diz",
-              "apoios": [
+                  "origem": "rp4n-total-ministerios",
+                  "campo": "excerto",
+                  "literal": "DESPESA TOTAL"
+                },
                 {
-                  "linha": "propria",
-                  "campo": "derivation",
-                  "literal": "A igualdade referida na ressalva compara os Encargos Gerais do Estado com o programa 001, Órgãos de Soberania"
-                }
-              ]
-            },
-            {
-              "pt": "; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
-              "en": "; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up.",
-              "classe": "diz",
-              "apoios": [
+                  "origem": "rp4n-mapa-ministerios",
+                  "campo": "excerto",
+                  "literal": "Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central"
+                },
                 {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma."
+                  "origem": "rp4n-consolidada-ministerios",
+                  "campo": "excerto",
+                  "literal": "DESPESA TOTAL CONSOLIDADA"
                 }
               ]
             }
@@ -8384,8 +8381,12 @@
         "oe-2026-despesa-funcao-09",
         "oe-2026-despesa-funcao-10"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-funcional",
+        "rp4n-orcamento",
+        "rp4n-despesa-efetiva",
+        "rp4n-consolidacao"
+      ],
       "folhas": [
         {
           "pt": "É o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
@@ -8402,14 +8403,14 @@
                   "literal": "OE2026 - Despesa por classificação funcional"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "orçamentada"
+                  "origem": "rp4n-funcional",
+                  "campo": "excerto",
+                  "literal": "Os dados abrangem todas as entidades públicas integradas no perímetro da Administração Central"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Budgeted"
+                  "origem": "rp4n-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento aprovado"
                 }
               ]
             },
@@ -8419,14 +8420,14 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "despesa efetiva consolidada"
+                  "origem": "rp4n-despesa-efetiva",
+                  "campo": "excerto",
+                  "literal": "Despesa efetiva"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "consolidated effective expenditure"
+                  "origem": "rp4n-consolidacao",
+                  "campo": "excerto",
+                  "literal": "Consolidação/Consolidado"
                 }
               ]
             },
@@ -8436,9 +8437,14 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "A despesa efetiva consolidada exclui ativos e passivos financeiros e transferências internas entre os serviços considerados."
+                  "origem": "rp4n-despesa-efetiva",
+                  "campo": "excerto",
+                  "literal": "com exclusão dos «ativos financeiros»"
+                },
+                {
+                  "origem": "rp4n-consolidacao",
+                  "campo": "excerto",
+                  "literal": "transferências"
                 }
               ]
             }
@@ -8459,8 +8465,10 @@
         "execucao-2026-07-despesa-funcao-09",
         "execucao-2026-07-despesa-funcao-10"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-despesa-efetiva",
+        "rp4n-consolidacao"
+      ],
       "folhas": [
         {
           "pt": "É o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
@@ -8489,14 +8497,14 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "despesa efetiva consolidada"
+                  "origem": "rp4n-despesa-efetiva",
+                  "campo": "excerto",
+                  "literal": "Despesa efetiva"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "consolidated effective expenditure"
+                  "origem": "rp4n-consolidacao",
+                  "campo": "excerto",
+                  "literal": "Consolidação/Consolidado"
                 }
               ]
             },
@@ -8506,9 +8514,14 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "A despesa efetiva consolidada exclui ativos e passivos financeiros e transferências internas entre os serviços considerados."
+                  "origem": "rp4n-despesa-efetiva",
+                  "campo": "excerto",
+                  "literal": "com exclusão dos «ativos financeiros»"
+                },
+                {
+                  "origem": "rp4n-consolidacao",
+                  "campo": "excerto",
+                  "literal": "transferências"
                 }
               ]
             }
@@ -8521,22 +8534,28 @@
         "oe-2026-diferencas-consolidacao-funcional",
         "execucao-2026-07-diferencas-consolidacao-funcional"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-diferencas-consolidacao"
+      ],
       "folhas": [
         {
-          "pt": "É a diferença de consolidação da despesa por funções da administração central: o acerto que se soma às funções para chegar ao total da despesa efetiva consolidada, e não uma função.",
-          "en": "It is the consolidation difference in central administration’s expenditure by function: the adjustment added to the functions to reach total consolidated effective expenditure, and not a function.",
+          "pt": "É a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta por funções da administração central.",
+          "en": "It is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in central administration’s account by function.",
           "partes": [
             {
-              "pt": "É a diferença de consolidação da despesa por funções da administração central",
-              "en": "It is the consolidation difference in central administration’s expenditure by function",
+              "pt": "É a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta por funções da administração central",
+              "en": "It is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in central administration’s account by function",
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "name",
-                  "literal": "DIFERENÇAS DE CONSOLIDAÇÃO"
+                  "origem": "rp4n-diferencas-consolidacao",
+                  "campo": "excerto",
+                  "literal": "diferenças entre os registos de despesa"
+                },
+                {
+                  "origem": "rp4n-diferencas-consolidacao",
+                  "campo": "excerto",
+                  "literal": "comum aos registos de receita e despesa"
                 },
                 {
                   "linha": "propria",
@@ -8546,21 +8565,9 @@
               ]
             },
             {
-              "pt": ": o acerto que se soma às funções para chegar ao total da despesa efetiva consolidada, e não uma função.",
-              "en": ": the adjustment added to the functions to reach total consolidated effective expenditure, and not a function.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "A soma das funções exige a diferença de consolidação"
-                },
-                {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "Esta é uma diferença de consolidação, não uma função."
-                }
-              ]
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -8584,12 +8591,13 @@
         "oe-2026-despesa-ministerio-saude",
         "oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-orcamento"
+      ],
       "folhas": [
         {
-          "pt": "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
-          "en": "It is what the Budget plans for this ministry to spend in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up.",
+          "pt": "É o que o Orçamento prevê que este ministério gaste num ano.",
+          "en": "It is what the Budget plans for this ministry to spend in a year.",
           "partes": [
             {
               "pt": "É o que o Orçamento prevê que este ministério gaste num ano",
@@ -8602,45 +8610,16 @@
                   "literal": "POR MINISTÉRIOS"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "orçamentada"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Budgeted"
+                  "origem": "rp4n-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento aprovado"
                 }
               ]
             },
             {
-              "pt": ", em despesa bruta",
-              "en": ", in gross expenditure",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "despesa bruta"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "gross"
-                }
-              ]
-            },
-            {
-              "pt": "; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
-              "en": "; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma."
-                }
-              ]
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -8650,12 +8629,13 @@
       "chaves": [
         "oe-2026-despesa-ministerio-encargos-gerais-do-estado"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-orcamento"
+      ],
       "folhas": [
         {
-          "pt": "É o que o Orçamento prevê para os encargos gerais do Estado num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
-          "en": "It is what the Budget plans for the general charges of the State in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up.",
+          "pt": "É o que o Orçamento prevê para os encargos gerais do Estado num ano.",
+          "en": "It is what the Budget plans for the general charges of the State in a year.",
           "partes": [
             {
               "pt": "É o que o Orçamento prevê para os encargos gerais do Estado num ano",
@@ -8673,45 +8653,16 @@
                   "literal": "ENCARGOS GERAIS DO ESTADO"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "orçamentada"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Budgeted"
+                  "origem": "rp4n-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento aprovado"
                 }
               ]
             },
             {
-              "pt": ", em despesa bruta",
-              "en": ", in gross expenditure",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "despesa bruta"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "gross"
-                }
-              ]
-            },
-            {
-              "pt": "; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
-              "en": "; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma."
-                }
-              ]
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -8740,12 +8691,13 @@
         "oe-2026-despesa-programa-019",
         "oe-2026-despesa-programa-020"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-orcamento"
+      ],
       "folhas": [
         {
-          "pt": "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
-          "en": "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up.",
+          "pt": "É o que o Orçamento prevê gastar neste programa da administração central num ano.",
+          "en": "It is what the Budget plans to spend on this central administration programme in a year.",
           "partes": [
             {
               "pt": "É o que o Orçamento prevê gastar neste programa da administração central num ano",
@@ -8758,45 +8710,16 @@
                   "literal": "DESAGREGADAS POR PROGRAMAS"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "orçamentada do programa"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Budgeted expenditure of the"
+                  "origem": "rp4n-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento aprovado"
                 }
               ]
             },
             {
-              "pt": ", em despesa bruta",
-              "en": ", in gross expenditure",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "despesa bruta"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "gross"
-                }
-              ]
-            },
-            {
-              "pt": "; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
-              "en": "; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma."
-                }
-              ]
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -8825,12 +8748,14 @@
         "execucao-2026-08-despesa-programa-019",
         "execucao-2026-08-despesa-programa-020"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-programas",
+        "rp4n-despesa-efetiva"
+      ],
       "folhas": [
         {
-          "pt": "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam.",
-          "en": "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count.",
+          "pt": "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa.",
+          "en": "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme.",
           "partes": [
             {
               "pt": "É o que a administração central gastou neste programa de janeiro a agosto",
@@ -8855,26 +8780,26 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "Neste caso, a consolidação é dentro de cada programa"
+                  "origem": "rp4n-programas",
+                  "campo": "excerto",
+                  "literal": "consolidados de fluxos internos aos mesmos"
                 }
               ]
             },
             {
-              "pt": ": sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam.",
-              "en": ": without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count.",
+              "pt": ": sem operações com ativos e passivos financeiros nem os fluxos internos ao programa.",
+              "en": ": excluding financial asset and liability transactions and flows within the programme.",
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "A despesa efetiva consolidada exclui ativos e passivos financeiros e transferências internas entre os serviços considerados."
+                  "origem": "rp4n-despesa-efetiva",
+                  "campo": "excerto",
+                  "literal": "com exclusão dos «ativos financeiros»"
                 },
                 {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "a soma dos programas ainda inclui transferências entre programas"
+                  "origem": "rp4n-programas",
+                  "campo": "excerto",
+                  "literal": "consolidados de fluxos internos aos mesmos"
                 }
               ]
             }
@@ -8886,12 +8811,13 @@
       "chaves": [
         "execucao-2026-08-subtotal-programas"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-programas"
+      ],
       "folhas": [
         {
-          "pt": "É a soma da despesa efetiva consolidada de cada programa da administração central, de janeiro a agosto: cada programa sem as suas transferências internas, mas com as transferências entre programas ainda por tirar.",
-          "en": "It is the sum of the consolidated effective expenditure of each central administration programme, from January to August: each programme without its internal transfers, but with the transfers between programmes still to be removed.",
+          "pt": "É a soma da despesa efetiva consolidada de cada programa da administração central, de janeiro a agosto: cada programa sem os seus fluxos internos.",
+          "en": "It is the sum of the consolidated effective expenditure of each central administration programme, from January to August: each programme excluding its internal flows.",
           "partes": [
             {
               "pt": "É a soma da despesa efetiva consolidada de cada programa da administração central, de janeiro a agosto",
@@ -8911,14 +8837,14 @@
               ]
             },
             {
-              "pt": ": cada programa sem as suas transferências internas, mas com as transferências entre programas ainda por tirar.",
-              "en": ": each programme without its internal transfers, but with the transfers between programmes still to be removed.",
+              "pt": ": cada programa sem os seus fluxos internos.",
+              "en": ": each programme excluding its internal flows.",
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "a consolidação é dentro de cada programa; a soma dos programas ainda inclui transferências entre programas"
+                  "origem": "rp4n-programas",
+                  "campo": "excerto",
+                  "literal": "consolidados de fluxos internos aos mesmos"
                 }
               ]
             }
@@ -8973,36 +8899,33 @@
       "chaves": [
         "execucao-2026-08-diferencas-consolidacao-programas"
       ],
-      "origens": [],
+      "origens": [
+        "rp4n-diferencas-consolidacao"
+      ],
       "folhas": [
         {
-          "pt": "São as diferenças de consolidação da despesa entre os programas da administração central, de janeiro a agosto.",
-          "en": "They are the consolidation differences in expenditure between central administration programmes, from January to August.",
+          "pt": "É a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta dos programas da administração central, de janeiro a agosto.",
+          "en": "It is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in the account of central administration programmes from January to August.",
           "partes": [
             {
-              "pt": "São as diferenças de consolidação da despesa entre os programas da administração central, de janeiro a agosto",
-              "en": "They are the consolidation differences in expenditure between central administration programmes, from January to August",
+              "pt": "É a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta dos programas da administração central, de janeiro a agosto",
+              "en": "It is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in the account of central administration programmes from January to August",
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "name",
-                  "literal": "Diferenças de consolidação"
+                  "origem": "rp4n-diferencas-consolidacao",
+                  "campo": "excerto",
+                  "literal": "diferenças entre os registos de despesa"
+                },
+                {
+                  "origem": "rp4n-diferencas-consolidacao",
+                  "campo": "excerto",
+                  "literal": "comum aos registos de receita e despesa"
                 },
                 {
                   "linha": "propria",
                   "campo": "unit",
                   "literal": "acumulados de janeiro a agosto"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Diferenças de consolidação da despesa entre programas"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "consolidation differences"
                 }
               ]
             },
@@ -9021,8 +8944,9 @@
         "execucao-2026-07-despesa-efetiva-administracao-central",
         "execucao-2026-08-despesa-efetiva-administracao-central"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-despesa-efetiva"
+      ],
       "folhas": [
         {
           "pt": "É a despesa efetiva da administração central: o que ela gasta sem contar as operações com ativos e passivos financeiros.",
@@ -9055,18 +8979,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "ou": [
-                    {
-                      "linha": "propria",
-                      "campo": "ressalva",
-                      "literal": "receita e despesa efetivas excluem-nas"
-                    },
-                    {
-                      "linha": "propria",
-                      "campo": "ressalva",
-                      "literal": "A despesa efetiva consolidada exclui ativos e passivos financeiros"
-                    }
-                  ]
+                  "origem": "rp4n-despesa-efetiva",
+                  "campo": "excerto",
+                  "literal": "financeiros"
                 }
               ]
             }
@@ -9076,11 +8991,12 @@
     },
     {
       "chaves": [
-        "oe-2026-despesa-efetiva-administracao-central-seguranca-social",
         "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-ac-ss",
+        "rp4n-despesa-efetiva"
+      ],
       "folhas": [
         {
           "pt": "É a despesa efetiva da administração central e da segurança social, somadas sem as transferências entre os seus serviços: o que gastam sem contar as operações com ativos e passivos financeiros.",
@@ -9102,14 +9018,9 @@
                   "literal": "transferências internas entre os serviços considerados"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "administração central e da segurança social"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "central administration and social security"
+                  "origem": "rp4n-ac-ss",
+                  "campo": "excerto",
+                  "literal": "Administração Central e Segurança Social"
                 }
               ]
             },
@@ -9119,9 +9030,82 @@
               "classe": "diz",
               "apoios": [
                 {
+                  "origem": "rp4n-despesa-efetiva",
+                  "campo": "excerto",
+                  "literal": "financeiros"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2026-despesa-efetiva-administracao-central-seguranca-social"
+      ],
+      "origens": [
+        "rp4n-ac-ss-orcamento",
+        "rp4n-despesa-efetiva"
+      ],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva da administração central e da segurança social, somadas sem as transferências entre os seus serviços: o que gastam sem contar as operações com ativos e passivos financeiros. O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+          "en": "It is the effective expenditure of central administration and social security, added together without the transfers between their services: what they spend without counting transactions in financial assets and liabilities. The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva da administração central e da segurança social, somadas sem as transferências entre os seus serviços",
+              "en": "It is the effective expenditure of central administration and social security, added together without the transfers between their services",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "Despesa efetiva"
+                },
+                {
                   "linha": "propria",
                   "campo": "ressalva",
-                  "literal": "A despesa efetiva consolidada exclui ativos e passivos financeiros"
+                  "literal": "transferências internas entre os serviços considerados"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Administração Central e Segurança Social"
+                }
+              ]
+            },
+            {
+              "pt": ": o que gastam sem contar as operações com ativos e passivos financeiros.",
+              "en": ": what they spend without counting transactions in financial assets and liabilities.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-despesa-efetiva",
+                  "campo": "excerto",
+                  "literal": "financeiros"
+                }
+              ]
+            },
+            {
+              "pt": " O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+              "en": " The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento\nInicial"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "2026"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Período: janeiro a agosto"
                 }
               ]
             }
@@ -9135,12 +9119,14 @@
         "execucao-2026-07-receita-efetiva-administracao-central",
         "execucao-2026-08-receita-efetiva-administracao-central"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-receita-efetiva",
+        "rp4n-saldos-gerencia"
+      ],
       "folhas": [
         {
-          "pt": "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros.",
-          "en": "It is central administration’s effective revenue: what it takes in without counting receipts from financial assets and liabilities.",
+          "pt": "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.",
+          "en": "It is central administration’s effective revenue: what it takes in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.",
           "partes": [
             {
               "pt": "É a receita efetiva da administração central",
@@ -9164,23 +9150,24 @@
               ]
             },
             {
-              "pt": ": o que ela recebe sem contar os recebimentos de ativos e passivos financeiros.",
-              "en": ": what it takes in without counting receipts from financial assets and liabilities.",
+              "pt": ": o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.",
+              "en": ": what it takes in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.",
               "classe": "diz",
               "apoios": [
                 {
-                  "ou": [
-                    {
-                      "linha": "propria",
-                      "campo": "ressalva",
-                      "literal": "receita e despesa efetivas excluem-nas"
-                    },
-                    {
-                      "linha": "propria",
-                      "campo": "ressalva",
-                      "literal": "A receita efetiva exclui os recebimentos de ativos e passivos financeiros."
-                    }
-                  ]
+                  "origem": "rp4n-receita-efetiva",
+                  "campo": "excerto",
+                  "literal": "financeiros"
+                },
+                {
+                  "origem": "rp4n-receita-efetiva",
+                  "campo": "excerto",
+                  "literal": "saldos de gerência"
+                },
+                {
+                  "origem": "rp4n-saldos-gerencia",
+                  "campo": "excerto",
+                  "literal": "gerência (ano) anterior."
                 }
               ]
             }
@@ -9190,15 +9177,17 @@
     },
     {
       "chaves": [
-        "oe-2026-receita-efetiva-administracao-central-seguranca-social",
         "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-ac-ss",
+        "rp4n-receita-efetiva",
+        "rp4n-saldos-gerencia"
+      ],
       "folhas": [
         {
-          "pt": "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros.",
-          "en": "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities.",
+          "pt": "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.",
+          "en": "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.",
           "partes": [
             {
               "pt": "É a receita efetiva da administração central e da segurança social",
@@ -9211,26 +9200,110 @@
                   "literal": "Receita efetiva"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "administração central e da segurança social"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "central administration and social security"
+                  "origem": "rp4n-ac-ss",
+                  "campo": "excerto",
+                  "literal": "Administração Central e Segurança Social"
                 }
               ]
             },
             {
-              "pt": ": o que recebem sem contar os recebimentos de ativos e passivos financeiros.",
-              "en": ": what they take in without counting receipts from financial assets and liabilities.",
+              "pt": ": o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.",
+              "en": ": what they take in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-receita-efetiva",
+                  "campo": "excerto",
+                  "literal": "financeiros"
+                },
+                {
+                  "origem": "rp4n-receita-efetiva",
+                  "campo": "excerto",
+                  "literal": "saldos de gerência"
+                },
+                {
+                  "origem": "rp4n-saldos-gerencia",
+                  "campo": "excerto",
+                  "literal": "gerência (ano) anterior."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2026-receita-efetiva-administracao-central-seguranca-social"
+      ],
+      "origens": [
+        "rp4n-ac-ss-orcamento",
+        "rp4n-receita-efetiva",
+        "rp4n-saldos-gerencia"
+      ],
+      "folhas": [
+        {
+          "pt": "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior. O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+          "en": "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year. The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
+          "partes": [
+            {
+              "pt": "É a receita efetiva da administração central e da segurança social",
+              "en": "It is the effective revenue of central administration and social security",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "A receita efetiva exclui os recebimentos de ativos e passivos financeiros."
+                  "campo": "name",
+                  "literal": "Receita efetiva"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Administração Central e Segurança Social"
+                }
+              ]
+            },
+            {
+              "pt": ": o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.",
+              "en": ": what they take in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-receita-efetiva",
+                  "campo": "excerto",
+                  "literal": "financeiros"
+                },
+                {
+                  "origem": "rp4n-receita-efetiva",
+                  "campo": "excerto",
+                  "literal": "saldos de gerência"
+                },
+                {
+                  "origem": "rp4n-saldos-gerencia",
+                  "campo": "excerto",
+                  "literal": "gerência (ano) anterior."
+                }
+              ]
+            },
+            {
+              "pt": " O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+              "en": " The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento\nInicial"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "2026"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Período: janeiro a agosto"
                 }
               ]
             }
@@ -9243,8 +9316,9 @@
         "oe-2026-despesa-orcamental-administracao-central",
         "execucao-2026-07-despesa-orcamental-administracao-central"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-despesa-efetiva"
+      ],
       "folhas": [
         {
           "pt": "É toda a despesa orçamental da administração central, incluindo as operações com ativos e passivos financeiros, que a despesa efetiva não conta.",
@@ -9268,9 +9342,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "Receita e despesa orçamentais incluem operações financeiras; receita e despesa efetivas excluem-nas."
+                  "origem": "rp4n-despesa-efetiva",
+                  "campo": "excerto",
+                  "literal": "financeiros"
                 }
               ]
             }
@@ -9283,8 +9357,9 @@
         "oe-2026-receita-orcamental-administracao-central",
         "execucao-2026-07-receita-orcamental-administracao-central"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-receita-efetiva"
+      ],
       "folhas": [
         {
           "pt": "É toda a receita orçamental da administração central, incluindo os recebimentos de ativos e passivos financeiros, que a receita efetiva não conta.",
@@ -9308,9 +9383,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "Receita e despesa orçamentais incluem operações financeiras; receita e despesa efetivas excluem-nas."
+                  "origem": "rp4n-receita-efetiva",
+                  "campo": "excerto",
+                  "literal": "financeiros"
                 }
               ]
             }
@@ -9323,27 +9398,23 @@
         "oe-2026-despesa-primaria-administracao-central",
         "execucao-2026-07-despesa-primaria-administracao-central"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-despesa-primaria"
+      ],
       "folhas": [
         {
-          "pt": "É a despesa da administração central sem os juros da dívida, a que a fonte chama despesa primária.",
-          "en": "It is central administration’s expenditure without the interest on the debt, which the source calls primary expenditure.",
+          "pt": "É a despesa efetiva da administração central sem a rubrica de juros e outros encargos, a que a fonte chama despesa primária.",
+          "en": "It is central administration’s effective expenditure excluding interest and other charges, which the source calls primary expenditure.",
           "partes": [
             {
-              "pt": "É a despesa da administração central sem os juros da dívida",
-              "en": "It is central administration’s expenditure without the interest on the debt",
+              "pt": "É a despesa efetiva da administração central sem a rubrica de juros e outros encargos",
+              "en": "It is central administration’s effective expenditure excluding interest and other charges",
               "classe": "diz",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "sem juros"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "excluding interest"
+                  "origem": "rp4n-despesa-primaria",
+                  "campo": "excerto",
+                  "literal": "Despesa primária"
                 }
               ]
             },
@@ -9370,7 +9441,7 @@
         "execucao-2026-08-saldo-global-administracao-central"
       ],
       "origens": [
-        "eurostat-gfs-saldo"
+        "rp4n-saldo"
       ],
       "folhas": [
         {
@@ -9404,9 +9475,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "origem": "eurostat-gfs-saldo",
+                  "origem": "rp4n-saldo",
                   "campo": "excerto",
-                  "literal": "The difference between total revenue and total expenditure"
+                  "literal": "Diferença entre a receita efetiva e a despesa"
                 },
                 {
                   "ou": [
@@ -9416,9 +9487,9 @@
                       "literal": "receita e despesa efetivas excluem-nas"
                     },
                     {
-                      "linha": "propria",
-                      "campo": "ressalva",
-                      "literal": "O saldo global é a receita efetiva menos a despesa efetiva"
+                      "origem": "rp4n-saldo",
+                      "campo": "excerto",
+                      "literal": "Diferença entre a receita efetiva e a despesa"
                     }
                   ]
                 }
@@ -9433,12 +9504,13 @@
         "oe-2026-saldo-global-administracao-central-seguranca-social",
         "execucao-2026-08-saldo-global-administracao-central-seguranca-social"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-saldo"
+      ],
       "folhas": [
         {
-          "pt": "É o saldo global da administração central e da segurança social: a receita efetiva menos a despesa efetiva; não é a dívida que se emitiu.",
-          "en": "It is the overall balance of central administration and social security: effective revenue minus effective expenditure; it is not the debt that was issued.",
+          "pt": "É o saldo global da administração central e da segurança social: a receita efetiva menos a despesa efetiva.",
+          "en": "It is the overall balance of central administration and social security: effective revenue minus effective expenditure.",
           "partes": [
             {
               "pt": "É o saldo global da administração central e da segurança social: a receita efetiva menos a despesa efetiva",
@@ -9451,23 +9523,16 @@
                   "literal": "Saldo global"
                 },
                 {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "O saldo global é a receita efetiva menos a despesa efetiva"
+                  "origem": "rp4n-saldo",
+                  "campo": "excerto",
+                  "literal": "Diferença entre a receita efetiva e a despesa"
                 }
               ]
             },
             {
-              "pt": "; não é a dívida que se emitiu.",
-              "en": "; it is not the debt that was issued.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "não é o montante de dívida emitida"
-                }
-              ]
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -9478,27 +9543,29 @@
         "oe-2026-saldo-primario-administracao-central",
         "execucao-2026-07-saldo-primario-administracao-central"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-saldo",
+        "rp4n-despesa-primaria"
+      ],
       "folhas": [
         {
-          "pt": "É o saldo da administração central sem os juros da dívida, a que a fonte chama saldo primário.",
-          "en": "It is central administration’s balance without the interest on the debt, which the source calls primary balance.",
+          "pt": "É a receita efetiva da administração central menos a sua despesa efetiva sem juros e outros encargos, a que a fonte chama saldo primário.",
+          "en": "It is central administration’s effective revenue minus its effective expenditure excluding interest and other charges, which the source calls primary balance.",
           "partes": [
             {
-              "pt": "É o saldo da administração central sem os juros da dívida",
-              "en": "It is central administration’s balance without the interest on the debt",
+              "pt": "É a receita efetiva da administração central menos a sua despesa efetiva sem juros e outros encargos",
+              "en": "It is central administration’s effective revenue minus its effective expenditure excluding interest and other charges",
               "classe": "diz",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Saldo sem juros"
+                  "origem": "rp4n-saldo",
+                  "campo": "excerto",
+                  "literal": "Saldo Primário"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "balance excluding interest"
+                  "origem": "rp4n-despesa-primaria",
+                  "campo": "excerto",
+                  "literal": "excluindo a rubrica de"
                 }
               ]
             },
@@ -9523,7 +9590,7 @@
         "execucao-2026-07-saldo-global-administracoes-publicas-contabilidade-publica"
       ],
       "origens": [
-        "eurostat-gfs-saldo"
+        "rp4n-saldo"
       ],
       "folhas": [
         {
@@ -9539,16 +9606,6 @@
                   "linha": "propria",
                   "campo": "name",
                   "literal": "SALDO GLOBAL DAS AP EM CP"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "administrações públicas em contabilidade pública"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "general government on a public accounting basis"
                 }
               ]
             },
@@ -9558,9 +9615,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "origem": "eurostat-gfs-saldo",
+                  "origem": "rp4n-saldo",
                   "campo": "excerto",
-                  "literal": "The difference between total revenue and total expenditure"
+                  "literal": "Diferença entre a receita efetiva e a despesa"
                 }
               ]
             }
@@ -9573,8 +9630,9 @@
         "oe-2026-ativos-e-passivos-da-despesa-administracao-central",
         "execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-despesa-efetiva"
+      ],
       "folhas": [
         {
           "pt": "É a parte da despesa orçamental da administração central feita em operações com ativos e passivos financeiros, que a despesa efetiva não conta.",
@@ -9598,9 +9656,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "Receita e despesa orçamentais incluem operações financeiras; receita e despesa efetivas excluem-nas."
+                  "origem": "rp4n-despesa-efetiva",
+                  "campo": "excerto",
+                  "literal": "financeiros"
                 }
               ]
             }
@@ -9613,8 +9671,9 @@
         "oe-2026-ativos-e-passivos-da-receita-administracao-central",
         "execucao-2026-07-ativos-e-passivos-da-receita-administracao-central"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-receita-efetiva"
+      ],
       "folhas": [
         {
           "pt": "É a parte da receita orçamental da administração central que vem de operações com ativos e passivos financeiros, que a receita efetiva não conta.",
@@ -9638,9 +9697,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "Receita e despesa orçamentais incluem operações financeiras; receita e despesa efetivas excluem-nas."
+                  "origem": "rp4n-receita-efetiva",
+                  "campo": "excerto",
+                  "literal": "financeiros"
                 }
               ]
             }
@@ -9650,10 +9709,11 @@
     },
     {
       "chaves": [
-        "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social",
         "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social"
       ],
-      "origens": [],
+      "origens": [
+        "rp4n-ac-ss"
+      ],
       "folhas": [
         {
           "pt": "É o que a administração central e a segurança social puseram em ativos financeiros, descontados os reembolsos que receberam (a fonte chama-lhes ativos financeiros líquidos de reembolsos).",
@@ -9670,14 +9730,9 @@
                   "literal": "Ativos financeiros líquidos de reembolsos"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "administração central e da segurança social"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "central administration and social security"
+                  "origem": "rp4n-ac-ss",
+                  "campo": "excerto",
+                  "literal": "Administração Central e Segurança Social"
                 }
               ]
             },
@@ -9699,42 +9754,64 @@
     },
     {
       "chaves": [
-        "oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social",
-        "execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social"
+        "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-ac-ss-orcamento"
+      ],
       "folhas": [
         {
-          "pt": "É o que a administração central e a segurança social receberam de novos passivos financeiros, menos o que amortizaram; não é a parte da despesa paga com dívida.",
-          "en": "It is what central administration and social security received from new financial liabilities, less what they repaid; it is not the part of spending paid for with debt.",
+          "pt": "É o que a administração central e a segurança social puseram em ativos financeiros, descontados os reembolsos que receberam (a fonte chama-lhes ativos financeiros líquidos de reembolsos). O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+          "en": "It is what central administration and social security put into financial assets, less the repayments they received (the source calls them financial assets net of repayments). The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
           "partes": [
             {
-              "pt": "É o que a administração central e a segurança social receberam de novos passivos financeiros, menos o que amortizaram",
-              "en": "It is what central administration and social security received from new financial liabilities, less what they repaid",
+              "pt": "É o que a administração central e a segurança social puseram em ativos financeiros, descontados os reembolsos que receberam",
+              "en": "It is what central administration and social security put into financial assets, less the repayments they received",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "Os passivos financeiros líquidos são a receita de passivos menos as amortizações"
+                  "campo": "name",
+                  "literal": "Ativos financeiros líquidos de reembolsos"
                 },
                 {
-                  "linha": "propria",
-                  "campo": "name",
-                  "literal": "Passivos financeiros líquidos de amortizações"
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Administração Central e Segurança Social"
                 }
               ]
             },
             {
-              "pt": "; não é a parte da despesa paga com dívida.",
-              "en": "; it is not the part of spending paid for with debt.",
+              "pt": " (a fonte chama-lhes ativos financeiros líquidos de reembolsos).",
+              "en": " (the source calls them financial assets net of repayments).",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "não a parcela da despesa efetiva financiada por dívida"
+                  "campo": "name",
+                  "literal": "Ativos financeiros líquidos de reembolsos"
+                }
+              ]
+            },
+            {
+              "pt": " O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+              "en": " The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento\nInicial"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "2026"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Período: janeiro a agosto"
                 }
               ]
             }
@@ -9744,14 +9821,54 @@
     },
     {
       "chaves": [
-        "oe-2026-despesa-bruta-administracao-central"
+        "oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social",
+        "execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-passivos"
+      ],
       "folhas": [
         {
-          "pt": "É a soma de toda a despesa dos serviços da administração central que o Orçamento prevê para o ano, em bruto; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
-          "en": "It is the sum of all the expenditure of central administration services that the Budget plans for the year, in gross terms; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up.",
+          "pt": "É o que a administração central e a segurança social receberam de novos passivos financeiros, menos o que amortizaram.",
+          "en": "It is what central administration and social security received from new financial liabilities, less what they repaid.",
+          "partes": [
+            {
+              "pt": "É o que a administração central e a segurança social receberam de novos passivos financeiros, menos o que amortizaram",
+              "en": "It is what central administration and social security received from new financial liabilities, less what they repaid",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-passivos",
+                  "campo": "excerto",
+                  "literal": "entre valores de passivos financeiros da receita e despesa"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "Passivos financeiros líquidos de amortizações"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2026-despesa-bruta-administracao-central"
+      ],
+      "origens": [
+        "rp4n-orcamento"
+      ],
+      "folhas": [
+        {
+          "pt": "É a soma de toda a despesa dos serviços da administração central que o Orçamento prevê para o ano.",
+          "en": "It is the sum of all the expenditure of central administration services that the Budget plans for the year.",
           "partes": [
             {
               "pt": "É a soma de toda a despesa dos serviços da administração central que o Orçamento prevê para o ano",
@@ -9769,45 +9886,16 @@
                   "literal": "MAPA 4"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "orçamentada"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Budgeted"
+                  "origem": "rp4n-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento aprovado"
                 }
               ]
             },
             {
-              "pt": ", em bruto",
-              "en": ", in gross terms",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Despesa bruta"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Budgeted gross expenditure"
-                }
-              ]
-            },
-            {
-              "pt": "; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
-              "en": "; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma."
-                }
-              ]
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -9817,12 +9905,13 @@
       "chaves": [
         "oe-2026-receita-bruta-administracao-central"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-orcamento"
+      ],
       "folhas": [
         {
-          "pt": "É a soma de toda a receita dos serviços da administração central que o Orçamento prevê para o ano, em bruto; a receita bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
-          "en": "It is the sum of all the revenue of central administration services that the Budget plans for the year, in gross terms; gross revenue counts financial transactions and transfers between State services, as the budget map adds them up.",
+          "pt": "É a soma de toda a receita dos serviços da administração central que o Orçamento prevê para o ano.",
+          "en": "It is the sum of all the revenue of central administration services that the Budget plans for the year.",
           "partes": [
             {
               "pt": "É a soma de toda a receita dos serviços da administração central que o Orçamento prevê para o ano",
@@ -9840,28 +9929,16 @@
                   "literal": "MAPA 5"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "orçamentada"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Budgeted"
+                  "origem": "rp4n-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento aprovado"
                 }
               ]
             },
             {
-              "pt": ", em bruto; a receita bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
-              "en": ", in gross terms; gross revenue counts financial transactions and transfers between State services, as the budget map adds them up.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "A receita bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma."
-                }
-              ]
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -9873,16 +9950,18 @@
         "oe-2026-despesa-consolidada-seguranca-social",
         "oe-2026-despesa-total"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-orcamento",
+        "rp4n-consolidacao"
+      ],
       "folhas": [
         {
-          "pt": "É a despesa total que o Orçamento prevê para o ano, consolidada: sem as transferências entre os serviços de que é feita, mas com as operações financeiras.",
-          "en": "It is the total expenditure that the Budget plans for the year, consolidated: without the transfers between the services it is made of, but with financial transactions.",
+          "pt": "É a despesa total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados.",
+          "en": "It is the total expenditure planned in the Budget for the year, excluding money flows between the services added together.",
           "partes": [
             {
-              "pt": "É a despesa total que o Orçamento prevê para o ano, consolidada",
-              "en": "It is the total expenditure that the Budget plans for the year, consolidated",
+              "pt": "É a despesa total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados",
+              "en": "It is the total expenditure planned in the Budget for the year, excluding money flows between the services added together",
               "classe": "diz",
               "apoios": [
                 {
@@ -9905,28 +9984,21 @@
                   ]
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "orçamentada"
+                  "origem": "rp4n-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento aprovado"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Budgeted"
+                  "origem": "rp4n-consolidacao",
+                  "campo": "excerto",
+                  "literal": "efetuados entre as entidades do universo em análise."
                 }
               ]
             },
             {
-              "pt": ": sem as transferências entre os serviços de que é feita, mas com as operações financeiras.",
-              "en": ": without the transfers between the services it is made of, but with financial transactions.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "O total inclui operações financeiras; a consolidação retira as transferências internas entre os serviços do perímetro indicado no nome."
-                }
-              ]
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -9937,16 +10009,18 @@
         "oe-2026-receita-consolidada-administracao-central",
         "oe-2026-receita-consolidada-seguranca-social"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-orcamento",
+        "rp4n-consolidacao"
+      ],
       "folhas": [
         {
-          "pt": "É a receita total que o Orçamento prevê para o ano, consolidada: sem as transferências entre os serviços de que é feita, mas com as operações financeiras.",
-          "en": "It is the total revenue that the Budget plans for the year, consolidated: without the transfers between the services it is made of, but with financial transactions.",
+          "pt": "É a receita total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados.",
+          "en": "It is the total revenue planned in the Budget for the year, excluding money flows between the services added together.",
           "partes": [
             {
-              "pt": "É a receita total que o Orçamento prevê para o ano, consolidada",
-              "en": "It is the total revenue that the Budget plans for the year, consolidated",
+              "pt": "É a receita total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados",
+              "en": "It is the total revenue planned in the Budget for the year, excluding money flows between the services added together",
               "classe": "diz",
               "apoios": [
                 {
@@ -9964,28 +10038,21 @@
                   ]
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "orçamentada"
+                  "origem": "rp4n-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento aprovado"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Budgeted"
+                  "origem": "rp4n-consolidacao",
+                  "campo": "excerto",
+                  "literal": "efetuados entre as entidades do universo em análise."
                 }
               ]
             },
             {
-              "pt": ": sem as transferências entre os serviços de que é feita, mas com as operações financeiras.",
-              "en": ": without the transfers between the services it is made of, but with financial transactions.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "ressalva",
-                  "literal": "O total inclui operações financeiras; a consolidação retira as transferências internas entre os serviços do perímetro indicado no nome."
-                }
-              ]
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -10271,11 +10338,6 @@
                   "linha": "propria",
                   "campo": "unit",
                   "literal": "pontos de índice"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "entre a Península de Setúbal e a Grande Lisboa"
                 }
               ]
             },
@@ -10284,11 +10346,6 @@
               "en": ", on the index of the value of everything each produces per inhabitant, where the European Union average is one hundred.",
               "classe": "diz",
               "apoios": [
-                {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Distância do PIB por habitante"
-                },
                 {
                   "linha": "propria",
                   "campo": "derivation",
@@ -10474,8 +10531,9 @@
         "evora-concentracao-vab4",
         "portugal-concentracao-vab4"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-vab"
+      ],
       "folhas": [
         {
           "pt": "É a parte do valor acrescentado bruto das empresas que cabe às quatro maiores; o valor acrescentado bruto é o valor do que se produz menos o valor dos bens e serviços consumidos para o produzir.",
@@ -10504,7 +10562,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "termo": "vab"
+                  "origem": "rp4n-vab",
+                  "campo": "excerto",
+                  "literal": "It is\noutput valued at basic prices less intermediate consumption valued at purchasers’ prices."
                 }
               ]
             }
@@ -10516,8 +10576,9 @@
       "chaves": [
         "evora-vab-empresarial"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-vab"
+      ],
       "folhas": [
         {
           "pt": "É o valor acrescentado bruto das empresas do concelho, somado sobre todas as atividades: o valor do que produzem menos o valor dos bens e serviços consumidos para o produzir.",
@@ -10546,7 +10607,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "termo": "vab"
+                  "origem": "rp4n-vab",
+                  "campo": "excerto",
+                  "literal": "It is\noutput valued at basic prices less intermediate consumption valued at purchasers’ prices."
                 }
               ]
             }
@@ -10724,7 +10787,9 @@
       "chaves": [
         "evora-divida-31-10"
       ],
-      "origens": [],
+      "origens": [
+        "rp4n-evora-divida-inicio"
+      ],
       "folhas": [
         {
           "pt": "É a dívida que a câmara tinha registada no início do mandato, como o relatório de gestão a apresenta.",
@@ -10741,14 +10806,9 @@
                   "literal": "A 31/10/2013"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Dívida registada no início do mandato"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Debt recorded at the start of the term"
+                  "origem": "rp4n-evora-divida-inicio",
+                  "campo": "excerto",
+                  "literal": "Dívida Total no Início do Mandato"
                 }
               ]
             },
@@ -10773,11 +10833,10 @@
         "evora-divida-inicio-mandato-reexpressa"
       ],
       "origens": [],
-      "por_confirmar_na_fonte": true,
       "folhas": [
         {
-          "pt": "É a dívida do início do mandato como a apresenta um relatório de gestão posterior: reexpressa quer dizer apresentada de novo mais tarde.",
-          "en": "It is the debt at the start of the term as a later management report presents it: restated means presented again later.",
+          "pt": "É a dívida do início do mandato como a apresenta um relatório de gestão posterior.",
+          "en": "It is the debt at the start of the term as a later management report presents it.",
           "partes": [
             {
               "pt": "É a dívida do início do mandato como a apresenta um relatório de gestão posterior",
@@ -10800,14 +10859,9 @@
               ]
             },
             {
-              "pt": ": reexpressa quer dizer apresentada de novo mais tarde.",
-              "en": ": restated means presented again later.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "termo": "reexpressa"
-                }
-              ]
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -10926,7 +10980,9 @@
       "chaves": [
         "evora-excesso-endividamento"
       ],
-      "origens": [],
+      "origens": [
+        "c1c-dgal-limites"
+      ],
       "folhas": [
         {
           "pt": "É o montante em que a dívida da câmara passava do limite legal, pelas contas da própria câmara.",
@@ -10943,14 +10999,9 @@
                   "literal": "Montante em Excesso"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Dívida acima do limite legal"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Debt above the legal limit"
+                  "origem": "c1c-dgal-limites",
+                  "campo": "excerto",
+                  "literal": "A dívida total de operações orçamentais do município"
                 }
               ]
             },
@@ -10979,7 +11030,9 @@
       "chaves": [
         "evora-execucao-da-receita"
       ],
-      "origens": [],
+      "origens": [
+        "rp4n-evora-receita"
+      ],
       "folhas": [
         {
           "pt": "É a receita que a câmara cobrou no ano em percentagem da que o orçamento previa, pela prestação de contas.",
@@ -10996,14 +11049,9 @@
                   "literal": "% do orçamento"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Receita cobrada face ao orçamento"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Revenue collected against the budget"
+                  "origem": "rp4n-evora-receita",
+                  "campo": "excerto",
+                  "literal": "percentagem de execução"
                 }
               ]
             },
@@ -11167,7 +11215,9 @@
       "chaves": [
         "evora-margem-endividamento"
       ],
-      "origens": [],
+      "origens": [
+        "c1c-dgal-limites"
+      ],
       "folhas": [
         {
           "pt": "É quanto a câmara ainda podia dever até chegar ao limite legal da dívida, no fim do ano, pela prestação de contas.",
@@ -11184,14 +11234,9 @@
                   "literal": "margem de endividamento absoluta"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Margem até ao limite da dívida"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Headroom up to the debt limit"
+                  "origem": "c1c-dgal-limites",
+                  "campo": "excerto",
+                  "literal": "não pode ultrapassar, em 31 de dezembro de cada ano"
                 }
               ]
             },
@@ -11215,7 +11260,9 @@
       "chaves": [
         "evora-orcamento"
       ],
-      "origens": [],
+      "origens": [
+        "rp4n-evora-orcamento"
+      ],
       "folhas": [
         {
           "pt": "É o orçamento da câmara para o ano, como a prestação de contas o apresenta.",
@@ -11227,14 +11274,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Orçamento do município"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Budget of the municipality"
+                  "origem": "rp4n-evora-orcamento",
+                  "campo": "excerto",
+                  "literal": "O orçamento inicial é"
                 },
                 {
                   "linha": "propria",
@@ -11263,7 +11305,9 @@
       "chaves": [
         "evora-pael-emprestimo"
       ],
-      "origens": [],
+      "origens": [
+        "rp4n-evora-pael"
+      ],
       "folhas": [
         {
           "pt": "É o montante do empréstimo que a câmara contraiu no programa de apoio à economia local, como o relatório de gestão o apresenta.",
@@ -11280,14 +11324,9 @@
                   "literal": "do total de empréstimo no montante de"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Empréstimo do apoio à economia local"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "local economy support programme"
+                  "origem": "rp4n-evora-pael",
+                  "campo": "excerto",
+                  "literal": "Programa de Apoio à Economia Local"
                 }
               ]
             },
@@ -11354,11 +11393,10 @@
         "evora-pelouros-2025-vereadora"
       ],
       "origens": [],
-      "por_confirmar_na_fonte": true,
       "folhas": [
         {
-          "pt": "É o número de pelouros que a página do executivo da câmara atribui a este membro do executivo: cada pelouro é uma área da câmara a seu cargo.",
-          "en": "It is the number of portfolios that the council executive’s page assigns to this member of the executive: each portfolio is an area of the council in their charge.",
+          "pt": "É o número de pelouros que a página do executivo da câmara atribui a este membro do executivo.",
+          "en": "It is the number of portfolios that the council executive’s page assigns to this member of the executive.",
           "partes": [
             {
               "pt": "É o número de pelouros que a página do executivo da câmara atribui a este membro do executivo",
@@ -11383,16 +11421,9 @@
               ]
             },
             {
-              "pt": ": cada pelouro é uma área da câmara a seu cargo.",
-              "en": ": each portfolio is an area of the council in their charge.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Pelouros"
-                }
-              ]
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -11493,7 +11524,9 @@
       "chaves": [
         "evora-prazo-medio-de-pagamento"
       ],
-      "origens": [],
+      "origens": [
+        "rp4n-evora-pmp"
+      ],
       "folhas": [
         {
           "pt": "O número médio de dias que a câmara demora a pagar aos fornecedores (prazo médio de pagamento), pelas contas da própria câmara.",
@@ -11515,14 +11548,9 @@
                   "literal": "dias"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Prazo médio de pagamento a fornecedores"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Average time to pay suppliers"
+                  "origem": "rp4n-evora-pmp",
+                  "campo": "excerto",
+                  "literal": "pagamento a fornecedores"
                 }
               ]
             },
@@ -11532,9 +11560,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Prazo médio de pagamento"
+                  "origem": "rp4n-evora-pmp",
+                  "campo": "excerto",
+                  "literal": "Prazo Médio de Pagamento"
                 },
                 {
                   "linha": "propria",
@@ -11552,26 +11580,36 @@
         "evora-prr-aprovado"
       ],
       "origens": [],
-      "por_confirmar_na_fonte": true,
+      "instantaneo": true,
       "folhas": [
         {
-          "pt": "São as verbas do Plano de Recuperação e Resiliência aprovadas para projetos no concelho, pela listagem de entidades do plano.",
-          "en": "They are the Recovery and Resilience Plan funds approved for projects in the municipality, from the plan’s list of entities.",
+          "pt": "São as verbas contratadas do Plano de Recuperação e Resiliência por beneficiários intermediários e diretos com sede no concelho, pela listagem de entidades do plano.",
+          "en": "These are Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality, from the plan’s list of entities.",
           "partes": [
             {
-              "pt": "São as verbas do Plano de Recuperação e Resiliência aprovadas para projetos no concelho",
-              "en": "They are the Recovery and Resilience Plan funds approved for projects in the municipality",
+              "pt": "São as verbas contratadas do Plano de Recuperação e Resiliência por beneficiários intermediários e diretos com sede no concelho",
+              "en": "These are Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality",
               "classe": "diz",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Verbas do Plano de Recuperação e Resiliência (PRR) aprovadas para Évora"
+                  "linha": "propria",
+                  "campo": "document.computed_over.column",
+                  "literal": "valor_contratado"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Recovery and Resilience Plan (PRR) funds approved for Évora"
+                  "ficheiro": "entidades",
+                  "campo": "papel_entidade",
+                  "literal": "Beneficiário Intermediário"
+                },
+                {
+                  "ficheiro": "entidades",
+                  "campo": "papel_entidade",
+                  "literal": "Beneficiário Direto"
+                },
+                {
+                  "ficheiro": "entidades",
+                  "campo": "localizacao_sede",
+                  "literal": "Évora"
                 }
               ]
             },
@@ -11596,26 +11634,36 @@
         "evora-prr-pago"
       ],
       "origens": [],
-      "por_confirmar_na_fonte": true,
+      "instantaneo": true,
       "folhas": [
         {
-          "pt": "São as verbas do Plano de Recuperação e Resiliência já pagas a projetos no concelho, pela listagem de entidades do plano.",
-          "en": "They are the Recovery and Resilience Plan funds already paid to projects in the municipality, from the plan’s list of entities.",
+          "pt": "São as verbas pagas do Plano de Recuperação e Resiliência a beneficiários intermediários e diretos com sede no concelho, pela listagem de entidades do plano.",
+          "en": "These are Recovery and Resilience Plan funds paid to intermediate and direct beneficiaries headquartered in the municipality, from the plan’s list of entities.",
           "partes": [
             {
-              "pt": "São as verbas do Plano de Recuperação e Resiliência já pagas a projetos no concelho",
-              "en": "They are the Recovery and Resilience Plan funds already paid to projects in the municipality",
+              "pt": "São as verbas pagas do Plano de Recuperação e Resiliência a beneficiários intermediários e diretos com sede no concelho",
+              "en": "These are Recovery and Resilience Plan funds paid to intermediate and direct beneficiaries headquartered in the municipality",
               "classe": "diz",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Verbas do Plano de Recuperação e Resiliência (PRR) pagas em Évora"
+                  "linha": "propria",
+                  "campo": "document.computed_over.column",
+                  "literal": "valor_pago"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Recovery and Resilience Plan (PRR) funds paid in Évora"
+                  "ficheiro": "entidades",
+                  "campo": "papel_entidade",
+                  "literal": "Beneficiário Intermediário"
+                },
+                {
+                  "ficheiro": "entidades",
+                  "campo": "papel_entidade",
+                  "literal": "Beneficiário Direto"
+                },
+                {
+                  "ficheiro": "entidades",
+                  "campo": "localizacao_sede",
+                  "literal": "Évora"
                 }
               ]
             },
@@ -11640,26 +11688,46 @@
         "evora-prr-vencido-aprovado"
       ],
       "origens": [],
-      "por_confirmar_na_fonte": true,
+      "instantaneo": true,
       "folhas": [
         {
-          "pt": "São as verbas aprovadas em projetos no concelho cujo prazo de conclusão já passou, pela listagem de entidades do Plano de Recuperação e Resiliência.",
-          "en": "They are the funds approved for projects in the municipality whose completion deadline has passed, from the Recovery and Resilience Plan’s list of entities.",
+          "pt": "São as verbas contratadas por beneficiários intermediários e diretos com sede no concelho, com prazo de conclusão anterior ao instantâneo e sem conclusão registada, pela listagem de entidades do Plano de Recuperação e Resiliência.",
+          "en": "These are funds contracted by intermediate and direct beneficiaries headquartered in the municipality, with a completion deadline before the snapshot and no completion recorded, from the Recovery and Resilience Plan’s list of entities.",
           "partes": [
             {
-              "pt": "São as verbas aprovadas em projetos no concelho cujo prazo de conclusão já passou",
-              "en": "They are the funds approved for projects in the municipality whose completion deadline has passed",
+              "pt": "São as verbas contratadas por beneficiários intermediários e diretos com sede no concelho, com prazo de conclusão anterior ao instantâneo e sem conclusão registada",
+              "en": "These are funds contracted by intermediate and direct beneficiaries headquartered in the municipality, with a completion deadline before the snapshot and no completion recorded",
               "classe": "diz",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Verbas aprovadas em projetos fora de prazo"
+                  "linha": "propria",
+                  "campo": "document.computed_over.column",
+                  "literal": "valor_contratado"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Approved funds in projects past their deadline"
+                  "ficheiro": "entidades",
+                  "campo": "papel_entidade",
+                  "literal": "Beneficiário Intermediário"
+                },
+                {
+                  "ficheiro": "entidades",
+                  "campo": "papel_entidade",
+                  "literal": "Beneficiário Direto"
+                },
+                {
+                  "ficheiro": "entidades",
+                  "campo": "localizacao_sede",
+                  "literal": "Évora"
+                },
+                {
+                  "ficheiro": "projetos",
+                  "campo": "cabecalho",
+                  "literal": "dt_prevista_conclusao"
+                },
+                {
+                  "ficheiro": "projetos",
+                  "campo": "cabecalho",
+                  "literal": "dt_efetiva_conclusao"
                 }
               ]
             },
@@ -11730,18 +11798,18 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É a parte das verbas do Plano de Recuperação e Resiliência aprovadas para o concelho que já foi paga.",
-          "en": "It is the share of the Recovery and Resilience Plan funds approved for the municipality that has already been paid.",
+          "pt": "É a parte das verbas do Plano de Recuperação e Resiliência contratadas por beneficiários intermediários e diretos com sede no concelho que já foi paga.",
+          "en": "It is the share of Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality that has already been paid.",
           "partes": [
             {
-              "pt": "É a parte das verbas do Plano de Recuperação e Resiliência aprovadas para o concelho que já foi paga.",
-              "en": "It is the share of the Recovery and Resilience Plan funds approved for the municipality that has already been paid.",
+              "pt": "É a parte das verbas do Plano de Recuperação e Resiliência contratadas por beneficiários intermediários e diretos com sede no concelho que já foi paga.",
+              "en": "It is the share of Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality that has already been paid.",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "derivation",
-                  "literal": "O que já foi pago, a dividir pelo que foi aprovado e atribuído ao concelho"
+                  "literal": "As verbas pagas a beneficiários intermediários e diretos com sede em Évora"
                 }
               ]
             }
@@ -11756,18 +11824,18 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É a parte das verbas aprovadas para o concelho que está em projetos cuja data prevista de conclusão já passou sem conclusão registada.",
-          "en": "It is the share of the funds approved for the municipality that sits in projects whose planned completion date has passed with no completion recorded.",
+          "pt": "É a parte das verbas contratadas por beneficiários intermediários e diretos com sede no concelho em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada.",
+          "en": "It is the share of funds contracted by intermediate and direct beneficiaries headquartered in the municipality in projects with a completion deadline before the snapshot and no completion recorded.",
           "partes": [
             {
-              "pt": "É a parte das verbas aprovadas para o concelho que está em projetos cuja data prevista de conclusão já passou sem conclusão registada.",
-              "en": "It is the share of the funds approved for the municipality that sits in projects whose planned completion date has passed with no completion recorded.",
+              "pt": "É a parte das verbas contratadas por beneficiários intermediários e diretos com sede no concelho em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada.",
+              "en": "It is the share of funds contracted by intermediate and direct beneficiaries headquartered in the municipality in projects with a completion deadline before the snapshot and no completion recorded.",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "derivation",
-                  "literal": "O dinheiro aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada"
+                  "literal": "As verbas contratadas por beneficiários intermediários e diretos com sede em Évora em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada"
                 }
               ]
             }
@@ -11822,7 +11890,9 @@
       "chaves": [
         "evora-saneamento-financeiro"
       ],
-      "origens": [],
+      "origens": [
+        "rp4n-evora-saneamento"
+      ],
       "folhas": [
         {
           "pt": "É o montante do empréstimo de saneamento financeiro que a câmara contraiu, como o relatório de gestão o apresenta.",
@@ -11839,14 +11909,9 @@
                   "literal": "Passivos Financeiros"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Empréstimo de saneamento financeiro"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Financial recovery loan"
+                  "origem": "rp4n-evora-saneamento",
+                  "campo": "excerto",
+                  "literal": "Empréstimo de Saneamento Financeiro"
                 }
               ]
             },
@@ -12349,30 +12414,13 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É o número de avisos de candidatura que estavam abertos.",
-          "en": "It is the number of calls for applications that were open.",
+          "pt": "Por confirmar na fonte.",
+          "en": "To be confirmed at source.",
           "partes": [
             {
-              "pt": "É o número de avisos de candidatura que estavam abertos.",
-              "en": "It is the number of calls for applications that were open.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "unit",
-                  "literal": "avisos"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Avisos de candidatura abertos"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Open calls for applications"
-                }
-              ]
+              "classe": "retirada",
+              "pt": "Por confirmar na fonte.",
+              "en": "To be confirmed at source."
             }
           ]
         }
@@ -12385,30 +12433,13 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É o número de avisos de candidatura abertos a pessoas singulares.",
-          "en": "It is the number of calls for applications open to individuals.",
+          "pt": "Por confirmar na fonte.",
+          "en": "To be confirmed at source.",
           "partes": [
             {
-              "pt": "É o número de avisos de candidatura abertos a pessoas singulares.",
-              "en": "It is the number of calls for applications open to individuals.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "unit",
-                  "literal": "avisos"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Avisos abertos a pessoas singulares"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Open calls for individuals"
-                }
-              ]
+              "classe": "retirada",
+              "pt": "Por confirmar na fonte.",
+              "en": "To be confirmed at source."
             }
           ]
         }
@@ -12421,30 +12452,13 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É o ciclo de substituição das condutas de água, em anos.",
-          "en": "It is the replacement cycle of the water mains, in years.",
+          "pt": "Por confirmar na fonte.",
+          "en": "To be confirmed at source.",
           "partes": [
             {
-              "pt": "É o ciclo de substituição das condutas de água, em anos.",
-              "en": "It is the replacement cycle of the water mains, in years.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "unit",
-                  "literal": "anos"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Ciclo de substituição das condutas"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Replacement cycle of water mains"
-                }
-              ]
+              "classe": "retirada",
+              "pt": "Por confirmar na fonte.",
+              "en": "To be confirmed at source."
             }
           ]
         }
@@ -12454,44 +12468,69 @@
       "chaves": [
         "agua-nao-faturada-portugal"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "rp4n-agua-nao-faturada",
+        "rp4n-agua-ambito",
+        "rp4n-agua-faixas"
+      ],
       "folhas": [
         {
-          "pt": "É a parte da água que não é faturada, pelo relatório anual dos serviços de águas e resíduos.",
-          "en": "It is the share of water that is not billed, from the annual report on water and waste services.",
+          "pt": "É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta. O valor situa-se na faixa «Qualidade do serviço mediana» da ERSAR: acima de vinte e até trinta por cento, incluindo o limite superior.",
+          "en": "It is the share of water entering the system that is not billed by retail operators in mainland Portugal. The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment. The value falls in ERSAR’s “medium service quality” band: above twenty and up to thirty per cent, including the upper limit.",
           "partes": [
             {
-              "pt": "É a parte da água que não é faturada",
-              "en": "It is the share of water that is not billed",
+              "pt": "É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental.",
+              "en": "It is the share of water entering the system that is not billed by retail operators in mainland Portugal.",
               "classe": "diz",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Água não faturada"
+                  "origem": "rp4n-agua-nao-faturada",
+                  "campo": "excerto",
+                  "literal": "percentagem de água entrada\nno sistema que não é faturada"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Unbilled water"
+                  "origem": "rp4n-agua-ambito",
+                  "campo": "excerto",
+                  "literal": "Avaliação em Portugal continental"
+                },
+                {
+                  "origem": "rp4n-agua-ambito",
+                  "campo": "excerto",
+                  "literal": "AA08 baixa"
                 }
               ]
             },
             {
-              "pt": ", pelo relatório anual dos serviços de águas e resíduos.",
-              "en": ", from the annual report on water and waste services.",
+              "pt": " A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta.",
+              "en": " The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment.",
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "document.title",
-                  "literal": "Relatório Anual dos Serviços de Águas e Resíduos em Portugal"
+                  "origem": "rp4n-agua-ambito",
+                  "campo": "excerto",
+                  "literal": "(para 93 % de EG)"
                 },
                 {
-                  "linha": "propria",
-                  "campo": "source",
-                  "literal": "ERSAR"
+                  "origem": "rp4n-agua-ambito",
+                  "campo": "excerto",
+                  "literal": "AA08 alta"
+                }
+              ]
+            },
+            {
+              "pt": " O valor situa-se na faixa «Qualidade do serviço mediana» da ERSAR: acima de vinte e até trinta por cento, incluindo o limite superior.",
+              "en": " The value falls in ERSAR’s “medium service quality” band: above twenty and up to thirty per cent, including the upper limit.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-agua-faixas",
+                  "campo": "excerto",
+                  "literal": "Qualidade do serviço mediana"
+                },
+                {
+                  "origem": "rp4n-agua-faixas",
+                  "campo": "excerto",
+                  "literal": "]20,0; 30,0]"
                 }
               ]
             }
@@ -12599,56 +12638,128 @@
       "chaves": [
         "penalizacao-antecipacao-um-ano-neutra"
       ],
-      "origens": [],
-      "por_confirmar_na_fonte": true,
+      "origens": [
+        "pensao-estimativa",
+        "pensao-neutralidade",
+        "pensao-direitos",
+        "pensao-legal"
+      ],
+      "compara": {
+        "a": "penalizacao-legal-um-ano-antecipacao-2026",
+        "b": "penalizacao-antecipacao-um-ano-neutra",
+        "pt": {
+          "antes": " A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de ",
+          "menor": " e é menor do que a redução atuarialmente neutra de ",
+          "maior": " e é maior do que a redução atuarialmente neutra de ",
+          "igual": " e é igual à redução atuarialmente neutra de ",
+          "depois": "."
+        },
+        "en": {
+          "antes": " The statutory penalty for retiring one year early, excluding the sustainability factor, is about ",
+          "menor": " and is lower than the actuarially neutral reduction of ",
+          "maior": " and is higher than the actuarially neutral reduction of ",
+          "igual": " and is equal to the actuarially neutral reduction of ",
+          "depois": "."
+        },
+        "apoios": [
+          {
+            "origem": "pensao-legal",
+            "campo": "excerto",
+            "literal": "equivalente a cerca de 6% por ano"
+          }
+        ]
+      },
       "folhas": [
         {
-          "pt": "É o corte na pensão por um ano de antecipação da reforma que deixaria o sistema de pensões sem ganhar nem perder, contando o que se deixa de descontar e os direitos que se acrescentam, pelas contas do relatório final sobre a reforma da segurança social.",
-          "en": "It is the pension cut for retiring one year early that would leave the pension system neither gaining nor losing, counting the contributions no longer paid and the rights that are added, from the calculations of the final report on social security reform.",
+          "pt": "É a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação.",
+          "en": "It is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty.",
           "partes": [
             {
-              "pt": "É o corte na pensão por um ano de antecipação da reforma que deixaria o sistema de pensões sem ganhar nem perder",
-              "en": "It is the pension cut for retiring one year early that would leave the pension system neither gaining nor losing",
+              "pt": "É a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano",
+              "en": "It is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early",
               "classe": "diz",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "sem custo para o sistema"
+                  "origem": "pensao-estimativa",
+                  "campo": "excerto",
+                  "literal": "estimativa preliminar dos factores de ajustamento actuarial neutrais"
                 },
                 {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "at no cost to the system"
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Decrementos por reforma antecipada: caso geral"
                 }
               ]
             },
             {
-              "pt": ", contando o que se deixa de descontar e os direitos que se acrescentam",
-              "en": ", counting the contributions no longer paid and the rights that are added",
+              "pt": ": a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano",
+              "en": ": the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pensao-neutralidade",
+                  "campo": "excerto",
+                  "literal": "financeiramente indiferente, em termos de valor actual esperado"
+                }
+              ]
+            },
+            {
+              "pt": ", contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados.",
+              "en": ", including contributions no longer paid and pension rights no longer accrued.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pensao-direitos",
+                  "campo": "excerto",
+                  "literal": "no esforço contributivo e no"
+                },
+                {
+                  "origem": "pensao-direitos",
+                  "campo": "excerto",
+                  "literal": "acréscimo de direitos sobre o sistema de pensões"
+                }
+              ]
+            },
+            {
+              "pt": " Não é a penalização legal por antecipação.",
+              "en": " It is not the statutory early-retirement penalty.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pensao-legal",
+                  "campo": "excerto",
+                  "literal": "essa penalização isolada tende a ficar abaixo do valor actuarialmente neutral"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "penalizacao-legal-um-ano-antecipacao"
+      ],
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+          "en": "It is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
+          "partes": [
+            {
+              "pt": "É a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+              "en": "It is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "considerando o efeito da antecipação da idade de reforma"
+                  "literal": "a penalização legal"
                 },
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "no esforço contributivo e no acréscimo de direitos sobre o sistema de pensões"
-                }
-              ]
-            },
-            {
-              "pt": ", pelas contas do relatório final sobre a reforma da segurança social.",
-              "en": ", from the calculations of the final report on social security reform.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "document.locator",
-                  "literal": "Relatorio_Final_GT_Reforma_Seg_Social"
+                  "literal": "equivalente a cerca de 6% por ano"
                 },
                 {
                   "linha": "propria",
@@ -12666,11 +12777,10 @@
         "factor-sustentabilidade"
       ],
       "origens": [],
-      "por_confirmar_na_fonte": true,
       "folhas": [
         {
-          "pt": "É o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica: abaixo de um, a pensão baixa, e o que falta para chegar a um é a parte que se corta.",
-          "en": "It is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies: below one, the pension falls, and the gap to one is the share that is cut.",
+          "pt": "É o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica.",
+          "en": "It is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies.",
           "partes": [
             {
               "pt": "É o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica",
@@ -12688,14 +12798,9 @@
               ]
             },
             {
-              "pt": ": abaixo de um, a pensão baixa, e o que falta para chegar a um é a parte que se corta.",
-              "en": ": below one, the pension falls, and the gap to one is the share that is cut.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "termo": "fator-de-sustentabilidade"
-                }
-              ]
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         }
@@ -13873,26 +13978,13 @@
     },
     {
       "concelho": "desempregoRegistado",
-      "origens": [],
-      "por_confirmar_na_fonte": {
-        "linhas": [
-          "calheta-desemprego-registado-2025-12",
-          "camara-de-lobos-desemprego-registado-2025-12",
-          "funchal-desemprego-registado-2025-12",
-          "machico-desemprego-registado-2025-12",
-          "ponta-do-sol-desemprego-registado-2025-12",
-          "porto-moniz-desemprego-registado-2025-12",
-          "porto-santo-desemprego-registado-2025-12",
-          "ribeira-brava-desemprego-registado-2025-12",
-          "santa-cruz-desemprego-registado-2025-12",
-          "santana-desemprego-registado-2025-12",
-          "sao-vicente-desemprego-registado-2025-12"
-        ]
-      },
+      "origens": [
+        "rp4n-madeira"
+      ],
       "folhas": [
         {
-          "pt": "Conta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).",
-          "en": "Counts the unemployed people registered with the employment service at month end (registered unemployment).",
+          "pt": "Conta as pessoas desempregadas inscritas nos serviços de emprego no mês de referência (desemprego registado).",
+          "en": "Counts the unemployed people registered with the employment service in the reference month (registered unemployment).",
           "partes": [
             {
               "pt": "Conta as pessoas desempregadas inscritas nos serviços de emprego",
@@ -13921,8 +14013,8 @@
               ]
             },
             {
-              "pt": " no fim do mês",
-              "en": " at month end",
+              "pt": " no mês de referência",
+              "en": " in the reference month",
               "classe": "diz",
               "apoios": [
                 {
@@ -13950,9 +14042,9 @@
                       "literal": "DESEMPREGO REGISTADO"
                     },
                     {
-                      "declaracao": "nome",
-                      "lingua": "pt",
-                      "literal": "Desemprego registado"
+                      "origem": "rp4n-madeira",
+                      "campo": "excerto",
+                      "literal": "DESEMPREGADOS/DESEMPREGO REGISTADO"
                     }
                   ]
                 }
@@ -13967,28 +14059,18 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "Conta as empresas não financeiras atribuídas ao concelho (sistema de contas integradas das empresas).",
-          "en": "Counts the non-financial enterprises attributed to the municipality (integrated business accounts system).",
+          "pt": "Conta as empresas atribuídas ao concelho (sistema de contas integradas das empresas).",
+          "en": "Counts the enterprises attributed to the municipality (integrated business accounts system).",
           "partes": [
             {
-              "pt": "Conta as empresas não financeiras",
-              "en": "Counts the non-financial enterprises",
+              "pt": "Conta as empresas",
+              "en": "Counts the enterprises",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "document.title",
                   "literal": "Empresas (N.º)"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "Empresas não financeiras"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Non-financial enterprises"
                 }
               ]
             },
@@ -14553,14 +14635,14 @@
       "serie": "serie-ihpc-combustiveis-variacao-homologa-ue",
       "origens": [
         "rp1-ihpc-homologa",
+        "rp4n-combustiveis-ue",
         "rp1-ihpc-comparavel",
         "rp1-ihpc-uniao"
       ],
-      "por_confirmar_na_fonte": true,
       "folhas": [
         {
-          "pt": "É quanto mudaram os preços dos combustíveis face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor); o valor da União é uma média dos países, ponderada pelo peso de cada um.",
-          "en": "It is how much fuel prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices); the European Union’s value is an average of the countries, weighted by each country’s weight.",
+          "pt": "É quanto mudaram os preços dos combustíveis e lubrificantes para transporte pessoal face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor); o valor da União é uma média dos países, ponderada pelo peso de cada um.",
+          "en": "It is how much fuel and lubricant prices for personal transport changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices); the European Union’s value is an average of the countries, weighted by each country’s weight.",
           "partes": [
             {
               "classe": "diz",
@@ -14576,18 +14658,13 @@
             },
             {
               "classe": "diz",
-              "pt": " os preços dos combustíveis",
-              "en": " fuel prices changed",
+              "pt": " os preços dos combustíveis e lubrificantes para transporte pessoal",
+              "en": " fuel and lubricant prices for personal transport changed",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "combustíveis"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Fuel prices"
+                  "origem": "rp4n-combustiveis-ue",
+                  "campo": "excerto",
+                  "literal": "Fuels and lubricants for personal transport equipment"
                 }
               ]
             },
@@ -14657,13 +14734,13 @@
       "serie": "serie-ihpc-combustiveis-variacao-homologa",
       "origens": [
         "rp1-ihpc-homologa",
+        "rp4n-combustiveis",
         "rp1-ihpc-comparavel"
       ],
-      "por_confirmar_na_fonte": true,
       "folhas": [
         {
-          "pt": "É quanto mudaram, em Portugal, os preços dos combustíveis face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
-          "en": "It is how much, in Portugal, fuel prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
+          "pt": "É quanto mudaram, em Portugal, os preços dos combustíveis e lubrificantes para transporte pessoal face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
+          "en": "It is how much, in Portugal, fuel and lubricant prices for personal transport changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
           "partes": [
             {
               "classe": "diz",
@@ -14691,18 +14768,13 @@
             },
             {
               "classe": "diz",
-              "pt": " os preços dos combustíveis",
-              "en": " fuel prices changed",
+              "pt": " os preços dos combustíveis e lubrificantes para transporte pessoal",
+              "en": " fuel and lubricant prices for personal transport changed",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "combustíveis"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Fuel prices"
+                  "origem": "rp4n-combustiveis",
+                  "campo": "excerto",
+                  "literal": "Fuels and lubricants for personal transport equipment"
                 }
               ]
             },
@@ -14755,13 +14827,13 @@
       "serie": "serie-ihpc-energia-da-casa-variacao-homologa",
       "origens": [
         "rp1-ihpc-homologa",
+        "rp4n-energia",
         "rp1-ihpc-comparavel"
       ],
-      "por_confirmar_na_fonte": true,
       "folhas": [
         {
-          "pt": "É quanto mudaram, em Portugal, os preços da energia usada em casa face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
-          "en": "It is how much, in Portugal, the prices of energy used at home changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
+          "pt": "É quanto mudaram, em Portugal, os preços da eletricidade, do gás e de outros combustíveis face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
+          "en": "It is how much, in Portugal, electricity, gas and other fuel prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
           "partes": [
             {
               "classe": "diz",
@@ -14789,18 +14861,13 @@
             },
             {
               "classe": "diz",
-              "pt": " os preços da energia usada em casa",
-              "en": " the prices of energy used at home changed",
+              "pt": " os preços da eletricidade, do gás e de outros combustíveis",
+              "en": " electricity, gas and other fuel prices changed",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "energia em casa"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Home energy prices"
+                  "origem": "rp4n-energia",
+                  "campo": "excerto",
+                  "literal": "Electricity, gas and other fuels"
                 }
               ]
             },
@@ -14853,9 +14920,9 @@
       "serie": "serie-ihpc-rendas-variacao-homologa",
       "origens": [
         "rp1-ihpc-homologa",
+        "rp4n-rendas",
         "rp1-ihpc-comparavel"
       ],
-      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
@@ -14891,14 +14958,9 @@
               "en": " rent prices changed",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "rendas"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "Rent prices"
+                  "origem": "rp4n-rendas",
+                  "campo": "excerto",
+                  "literal": "Actual rental payments made for housing"
                 }
               ]
             },
@@ -15060,10 +15122,10 @@
     {
       "serie": "serie-precos-da-habitacao-variacao-homologa",
       "origens": [
+        "rp4n-hpi-anual",
         "glossario-hpi",
         "eurostat-tipsho20-descricao"
       ],
-      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É quanto mudaram num ano os preços de transação das casas compradas pelas famílias em Portugal, novas e usadas, em cada trimestre (índice de preços da habitação).",
@@ -15075,14 +15137,9 @@
               "en": "It is the change over a year in",
               "apoios": [
                 {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "variação num ano"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "change over a year"
+                  "origem": "rp4n-hpi-anual",
+                  "campo": "excerto",
+                  "literal": "Annual rate of change"
                 }
               ]
             },
@@ -15285,11 +15342,10 @@
     {
       "serie": "serie-remuneracao-bruta-mensal-media-real",
       "origens": [],
-      "por_confirmar_na_fonte": true,
       "folhas": [
         {
-          "pt": "É a remuneração média antes de descontos de cada ano contada nos euros do ano que a unidade nomeia, isto é, descontada a subida dos preços desde esse ano (remuneração em termos reais).",
-          "en": "It is each year’s average pay before deductions counted in euros of the year the unit names, that is, net of the rise in prices since that year (pay in real terms).",
+          "pt": "É a remuneração média antes de descontos de cada ano contada nos euros do ano que a unidade nomeia, isto é, descontada a subida dos preços desde esse ano.",
+          "en": "It is each year’s average pay before deductions counted in euros of the year the unit names, that is, net of the rise in prices since that year.",
           "partes": [
             {
               "classe": "diz",
@@ -15348,23 +15404,6 @@
               ]
             },
             {
-              "classe": "diz",
-              "pt": " (remuneração em termos reais)",
-              "en": " (pay in real terms)",
-              "apoios": [
-                {
-                  "declaracao": "nome",
-                  "lingua": "pt",
-                  "literal": "em termos reais"
-                },
-                {
-                  "declaracao": "nome",
-                  "lingua": "en",
-                  "literal": "in real terms"
-                }
-              ]
-            },
-            {
               "classe": "liga",
               "pt": ".",
               "en": "."
@@ -15383,9 +15422,10 @@
       "origens": [
         "dados-gov-oe-despesa-funcional",
         "eurostat-cofog-divisao-01",
+        "eurostat-gfs-saldo",
         "eurostat-tipsgo10-descricao",
         "eurostat-tipsna40-descricao",
-        "eurostat-gfs-saldo"
+        "rp4n-mapa-ministerios"
       ],
       "folhas": [
         {
@@ -16073,8 +16113,8 @@
         },
         {
           "caminho": "seccoes[1].conteudo[2].paragrafo[0]",
-          "pt": "As duas contas não batem porque medem coisas diferentes: a conta por função soma o que a administração central gasta com cada fim, como a saúde ou a educação, sem as operações financeiras nem as transferências entre os seus serviços; a conta por ministério é o orçamento de cada ministério, com as operações financeiras e as transferências entre serviços do Estado.",
-          "en": "The two counts do not match because they measure different things: the count by function adds up what central government spends on each purpose, such as health or education, without financial transactions or transfers between its own services; the count by ministry is each ministry’s budget, including financial transactions and transfers between State services.",
+          "pt": "As duas contas não batem porque medem coisas diferentes: a conta por função soma o que a administração central gasta com cada fim, como a saúde ou a educação, sem as operações financeiras nem as transferências entre os seus serviços; a conta por ministério é o orçamento de cada ministério.",
+          "en": "The two counts do not match because they measure different things: the count by function adds up what central government spends on each purpose, such as health or education, without financial transactions or transfers between its own services; the count by ministry is each ministry’s budget.",
           "partes": [
             {
               "pt": "As duas contas não batem porque medem coisas diferentes",
@@ -16082,14 +16122,14 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "oe-2026-cem-euros-ministerio-financas",
-                  "campo": "derivation",
-                  "literal": "não mede a repartição da despesa efetiva consolidada"
+                  "origem": "rp4n-mapa-ministerios",
+                  "campo": "excerto",
+                  "literal": "Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central"
                 },
                 {
-                  "linha": "oe-2026-cem-euros-ministerio-financas",
-                  "campo": "derivation_en",
-                  "literal": "it does not measure the allocation of consolidated effective expenditure"
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "Esta classificação especifica os fins e atividades típicos do Estado"
                 }
               ]
             },
@@ -16170,9 +16210,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "oe-2026-cem-euros-ministerio-financas",
-                  "campo": "derivation",
-                  "literal": "despesa bruta deste ministério"
+                  "origem": "rp4n-mapa-ministerios",
+                  "campo": "excerto",
+                  "literal": "Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central"
                 },
                 {
                   "linha": "oe-2026-despesa-ministerio-financas",
@@ -16182,21 +16222,9 @@
               ]
             },
             {
-              "pt": ", com as operações financeiras e as transferências entre serviços do Estado.",
-              "en": ", including financial transactions and transfers between State services.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "oe-2026-cem-euros-ministerio-financas",
-                  "campo": "ressalva",
-                  "literal": "inclui operações financeiras e transferências entre serviços do Estado"
-                },
-                {
-                  "linha": "oe-2026-cem-euros-ministerio-financas",
-                  "campo": "ressalva_en",
-                  "literal": "includes financial transactions and transfers between State services"
-                }
-              ]
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         },
@@ -17789,7 +17817,12 @@
             }
           ]
         }
-      ]
+      ],
+      "emenda_rp4ng": {
+        "quem": "Codex gpt-6-astra",
+        "quando": "2026-10-12",
+        "o_que": "Os apoios da comparação entre a classificação funcional e a orgânica passam às palavras das fontes. O texto da explicação não mudou. A leitura cruzada desta emenda fica pendente."
+      }
     }
   ]
 }

@@ -1,5 +1,7 @@
 # Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
 # Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
 
 id: "agua-nao-faturada-portugal-2024"
 
@@ -7,26 +9,36 @@ id: "agua-nao-faturada-portugal-2024"
 value: "26,5"
 unit: "%"
 
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "AA08b – Água não faturada"
+name_source: "p. 106, Quadro 49, AA08 baixa, avaliação global para 93 % de EG em Portugal continental"
+
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "ERSAR"
 document:
-  title: "RASARP — Relatório Anual dos Serviços de Águas e Resíduos em Portugal"
+  title: "RASARP 2025, volume 1"
   edition: "2025"
-source_url: "[a verificar]"
-access_date: "2026-07-28"
+  locator: "p. 106, Quadro 49, AA08 baixa, avaliação global para 93 % de EG em Portugal continental"
+  page: 106
+  kind: "pdf"
+source_url: "https://ersarwebsitedocsstorage.blob.core.windows.net/documents/docs/anuais-do-RASARP/rasarp-2025/rasarp2025-volume1.pdf#page=106"
+access_date: "2026-10-11"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "[a verificar]"
+excerpt: "AA08b – Água não faturada                                                                        26,5 %"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
+derivation_en: null
 derived_from: []
 # Expressão verificada no build: tem de dar exactamente o valor acima.
 check: null
 
 study: "agua-nao-faturada"
-note: "Dados de 2024, publicados no RASARP 2025. O título completo do relatório e o URL exato do documento estão por confirmar contra a fonte."
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] p. 106, Quadro 49, AA08 baixa, avaliação global para 93 % de EG em Portugal continental. Releitura local dos bytes alojados em 2026-10-12. O relatório também apresenta o indicador em alta. A cobertura é a que o quadro publica. · Cruzado de ResearchHub content/13 Dominios/RP4N Agua · agua-nao-faturada-portugal-2024."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

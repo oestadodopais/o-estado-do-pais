@@ -1,0 +1,55 @@
+id: penalizacao-legal-um-ano-antecipacao-2026
+value: '6'
+unit: '%'
+name: penalização legal
+name_source: Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, parágrafo abaixo da Figura 8.4
+name_source_en: Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, paragraph below Figure 8.4
+source: Grupo de Trabalho para a Reforma da Segurança Social
+document:
+  title: 'Reformar as Pensões em Portugal: Por um Sistema Sustentável, Adequado e
+    Justo — um Contrato entre Gerações'
+  edition: Relatório final, Junho de 2026
+  locator: Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, parágrafo abaixo
+    da Figura 8.4
+  locator_en: Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, paragraph below Figure 8.4
+  page: 273
+  kind: pdf
+source_url: https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef#page=273
+access_date: '2026-08-24'
+access_date_kind: hosted-copy
+reference_date: '2026'
+excerpt: 'No caso da reforma antecipada, os resultados indicam que a penalização actuarialmente
+  neutral é mais
+
+  elevada quando se considera o caso geral do que no caso especial. No cenário com
+  𝐾 𝑥 ≠ 0 e 𝐵 𝑥+1 ≠ 𝐵 𝑥 ,
+
+  os decréscimos marginais do factor de ajustamento situam-se em torno de 7,9% a 8,2%
+  por ano, enquanto
+
+  os decréscimos marginais sobre a pensão total ajustada se aproximam de 9,0% a 9,3%.
+  No caso especial,
+
+  os decréscimos marginais são inferiores, variando entre cerca de 5,8% e 6,8%. Assim,
+  a penalização legal
+
+  de 0,5% por mês, equivalente a cerca de 6% por ano, aproxima-se da neutralidade
+  apenas no caso especial
+
+  e, sobretudo, nas idades próximas da idade de reforma. Quando se incorporam contribuições
+  e acréscimos
+
+  de direitos, essa penalização isolada tende a ficar abaixo do valor actuarialmente
+  neutral.'
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+study: penalizacoes-por-reforma-antecipada-2026
+note: A fonte escreve «equivalente a cerca de 6% por ano». Valor aproximado; penalização
+  mensal isolada, sem o fator de sustentabilidade. Cópia alojada conferida pelo sha256;
+  data de alojamento provada pelo commit 7c0b24700d76cb3a67442f2495178212169c7586 e pelo manifesto de content/11 Seguranca Social/source/. Não é a data de um pedido HTTP.
+corrections: []
+ressalva: 'Valor aproximado: a fonte escreve «cerca de».'
+ressalva_en: 'Approximate value: the source says “about”.'
+verifications: []

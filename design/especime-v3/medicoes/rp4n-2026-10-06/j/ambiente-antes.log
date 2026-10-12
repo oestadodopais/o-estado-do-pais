@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<worktree>/tests/leituras/portoes.py", line 37, in <module>
+    assert r.returncode == 1
+           ^^^^^^^^^^^^^^^^^
+AssertionError

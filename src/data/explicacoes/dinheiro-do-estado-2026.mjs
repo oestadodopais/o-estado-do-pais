@@ -175,8 +175,8 @@ export const DINHEIRO_DO_ESTADO_2026 = {
            no dados.gov.pt e as ressalvas e derivações das linhas), e nenhuma parte fica como leitura do projeto. */
         {
           paragrafo: {
-            pt: ['As duas contas não batem porque medem coisas diferentes: a conta por função soma o que a administração central gasta com cada fim, como a saúde ou a educação, sem as operações financeiras nem as transferências entre os seus serviços; a conta por ministério é o orçamento de cada ministério, com as operações financeiras e as transferências entre serviços do Estado.'],
-            en: ['The two counts do not match because they measure different things: the count by function adds up what central government spends on each purpose, such as health or education, without financial transactions or transfers between its own services; the count by ministry is each ministry’s budget, including financial transactions and transfers between State services.'],
+            pt: ['As duas contas não batem porque medem coisas diferentes: a conta por função soma o que a administração central gasta com cada fim, como a saúde ou a educação, sem as operações financeiras nem as transferências entre os seus serviços; a conta por ministério é o orçamento de cada ministério.'],
+            en: ['The two counts do not match because they measure different things: the count by function adds up what central government spends on each purpose, such as health or education, without financial transactions or transfers between its own services; the count by ministry is each ministry’s budget.'],
           },
         },
       ],
@@ -354,4 +354,5 @@ export const ACERTOS = [
   { id: 'X22', onde: 'abertura e o que isto não diz', o_que: 'retirar a inclusão dos juros numa classificação, a previsão não apoiada e a promessa de atualização', razao: 'EX1-e, achados 5 e 10: o selo sustenta as transferências; a ausência dos juros isolados é a condição sem_linhas, sem afirmar onde entram' },
   { id: 'X21', onde: 'execução', o_que: 'comparar a dimensão dos défices ou excedentes pelo token comparaSaldos, com todos os ramos declarados', razao: 'EX1-e, achado 4: os módulos evitam inverter o sentido da comparação de défices; sinais diferentes só apresentam a previsão anual' },
   { id: 'X20', onde: 'execução', o_que: 'o saldo global do mesmo perímetro, o significado pelo sinal e a comparação com o saldo previsto para o ano inteiro', razao: 'EX1-d: as linhas do saldo executado e previsto constam do mesmo quadro dos totais; compara-se o saldo com sinal, sem afirmar cumprimento de uma meta mensal' },
+  { id: 'RP4N-9', onde: 'por ministério', o_que: 'sai a oração final sobre operações financeiras e transferências na conta por ministério', razao: 'RP4-n-d, achado 14: a oração apoiava-se apenas na ressalva não selada que saiu do recibo. Conservam-se a distinção entre funções e ministérios e os restantes apoios da I215; não se promove a ressalva retirada a fonte da explicação.' },
 ];

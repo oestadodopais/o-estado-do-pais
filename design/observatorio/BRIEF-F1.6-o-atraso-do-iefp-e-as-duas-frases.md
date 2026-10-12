@@ -18,7 +18,7 @@ Nenhum número escrito à mão (o 2026-07, o 2025-12, o «desde» e o «n» vêm
 
 ## 3 · Onde se constrói
 
-Ramo `frescura-2026-09-04` numa worktree própria a partir de `origin/main` (confirma o SHA). Ficheiros: `src/views/LinhaView.astro` (só o bloco do atraso; o F1.4 toca as datas e o endereço, o F1.7 as unidades e as leis: linhas diferentes, e diz o que tocaste), `src/views/MunicipioView.astro` (só o cartão do desemprego registado), `src/data/frescura.mjs` ou o ficheiro de dados da frescura que existir, `src/data/metodo.mjs`, `src/data/figuras.mjs`, `src/i18n/strings.mjs` (chaves novas só), `DECISIONS.md` (só a §1.100 com o carimbo), `tests/linha/*.mjs`, `design/especime-v3/medicoes/frescura-construtor.md`. No motor (`~/Instruments/ResearchHub`, só leitura) o `indicators/refresh_report.json` e o relatório do corredor dizem o período que a fonte publica.
+Ramo `frescura-2026-09-04` numa worktree própria a partir de `origin/main` (confirma o SHA). Ficheiros: `src/views/LinhaView.astro` (só o bloco do atraso; o F1.4 toca as datas e o endereço, o F1.7 as unidades e as leis: linhas diferentes, e diz o que tocaste), `src/views/MunicipioView.astro` (só o cartão do desemprego registado), `src/data/frescura.mjs` ou o ficheiro de dados da frescura que existir, `src/data/metodo.mjs`, `src/data/figuras.mjs`, `src/i18n/strings.mjs` (chaves novas só), `DECISIONS.md` (só a §1.100 com o carimbo), `tests/linha/*.mjs`, `design/especime-v3/medicoes/frescura-construtor.md`. No motor (`~/<projetos>/ResearchHub`, só leitura) o `indicators/refresh_report.json` e o relatório do corredor dizem o período que a fonte publica.
 
 ## 4 · As medidas de aceitação
 

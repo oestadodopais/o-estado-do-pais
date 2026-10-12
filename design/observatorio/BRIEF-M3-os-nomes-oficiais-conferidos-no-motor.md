@@ -1,6 +1,6 @@
 # Brief · M3 · Os nomes oficiais conferidos no motor, e nenhum estado de verificação em prosa
 
-*Escrito pelo lugar de direção (Claude Fable 5.1) a 21.09.2026, a partir da §1.115, da I123 e da M13. Um bloco do motor (`~/Instruments/ResearchHub`, numa worktree em `.worktrees/<ramo>`), com uma pequena parte no sítio no fim. O construtor é o Claude Opus; quem confere cada correspondência é um agente que não a escolheu; a leitura a frio é do Codex. Sem travessões na prosa.*
+*Escrito pelo lugar de direção (Claude Fable 5.1) a 21.09.2026, a partir da §1.115, da I123 e da M13. Um bloco do motor (`~/<projetos>/ResearchHub`, numa worktree em `.worktrees/<ramo>`), com uma pequena parte no sítio no fim. O construtor é o Claude Opus; quem confere cada correspondência é um agente que não a escolheu; a leitura a frio é do Codex. Sem travessões na prosa.*
 
 ## 0 · O teste de aceitação, dito antes
 

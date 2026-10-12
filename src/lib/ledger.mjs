@@ -265,10 +265,12 @@ export const CAMPOS = /** @type {const} */ ([
    */
   'name',
   'name_source',
+  'name_source_en',
   'source',
   'document',
   'source_url',
   'access_date',
+  'access_date_kind',
   /**
    * A data que o PUBLICADOR carimba no que serve (01.09.2026, o corredor).
    *
@@ -329,6 +331,8 @@ export const CAMPOS = /** @type {const} */ ([
   'attributed_to',
   'study',
   'note',
+  'publication',
+  'definition_sources',
   'corrections',
   'verifications',
 ]);
@@ -366,7 +370,7 @@ export const CAMPOS = /** @type {const} */ ([
  * descarregável não a leva, e quem escrever a terceira superfície tira-a da
  * mesma lista em vez de se lembrar dela.
  */
-export const CAMPOS_NAO_PUBLICADOS = ['note'];
+export const CAMPOS_NAO_PUBLICADOS = ['note', 'publication'];
 
 /** Os campos publicados, na ordem do formato. */
 export const CAMPOS_PUBLICADOS = CAMPOS.filter((c) => !CAMPOS_NAO_PUBLICADOS.includes(c));
@@ -384,6 +388,7 @@ export const CAMPOS_DO_DOCUMENTO = /** @type {const} */ ([
   'title',
   'edition',
   'locator',
+  'locator_en',
   'page',
   'kind',
   'url',
@@ -1043,10 +1048,12 @@ export const VERIFICACOES_MOSTRADAS = 2;
 
 /** @type {Map<string, Linha> | null} */
 let _cache = null;
+/** @type {Map<string, Linha>|null} */
+let _publicCache = null;
 
 /** Carrega e devolve Map<id, claim>. Lança se o YAML estiver partido. */
-export function loadClaims() {
-  if (_cache) return _cache;
+export function loadClaims({ includeWithdrawn = false } = {}) {
+  if (_cache && _publicCache) return includeWithdrawn ? _cache : _publicCache;
   /** @type {Map<string, Linha>} */
   const map = new Map();
   /** @type {string[]} */
@@ -1077,7 +1084,8 @@ export function loadClaims() {
     map.set(doc.id, doc);
   }
   _cache = map;
-  return map;
+  _publicCache = new Map([...map].filter(([, c]) => c.publication !== 'withdrawn'));
+  return includeWithdrawn ? map : _publicCache;
 }
 
 /**
@@ -1546,7 +1554,7 @@ function ausente(v) {
  * Devolve { errors: string[], warnings: string[], stats }.
  */
 export function validateLedger() {
-  const claims = loadClaims();
+  const claims = loadClaims({ includeWithdrawn: true });
   const historiasSeladas = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'ledger', 'historias-valores.json'), 'utf8'));
   // As expressões `check` também podem contar o próprio registo de correções.
   const env = { ...COUNTS, ...contagensDoRegisto(claims) };
@@ -1563,6 +1571,8 @@ export function validateLedger() {
 
   for (const [id, c] of claims) {
     const onde = `[${c.__file}]`;
+    if (c.definition_sources !== undefined && (!Array.isArray(c.definition_sources) || !c.definition_sources.length || c.definition_sources.some(s => !s.publisher || !/^https:\/\//.test(s.url ?? '') || !s.receipt?.motor || !/^[a-f0-9]{64}$/.test(s.receipt?.sha256 ?? '')))) errors.push(`${onde} definition_sources exige publicador, endereço e recibo de cada segunda fonte`);
+    if (c.publication !== undefined && c.publication !== 'withdrawn') errors.push(`${onde} publication só aceita withdrawn ou a ausência do campo`);
     /* O bloco `document`, conferido uma vez: é um mapa, ou é `null`. Os valores
        lá dentro continuam por conferir, e cada conferência abaixo confere o seu. */
     const doc = documentoDaLinha(c);
@@ -1628,6 +1638,8 @@ export function validateLedger() {
     {
       const temNome = !ausente(c.name);
       const temOnde = !ausente(c.name_source);
+      if (c.access_date_kind !== undefined && !['hosted-copy', 'source-read'].includes(c.access_date_kind)) errors.push(`${onde} access_date_kind inválido.`);
+      if (c.name_source_en !== undefined && (typeof c.name_source_en !== 'string' || !c.name_source_en.trim() || !temOnde)) errors.push(`${onde} name_source_en precisa de localizador original e tradução não vazia.`);
       if (temNome) comRotulo++;
       if (c.name !== null && c.name !== undefined && typeof c.name !== 'string') {
         errors.push(
@@ -1898,6 +1910,7 @@ export function validateLedger() {
           );
         }
         const loc = doc.locator;
+        if (doc.locator_en !== undefined && (typeof doc.locator_en !== 'string' || !doc.locator_en.trim() || !loc)) errors.push(`${onde} document.locator_en precisa de localizador original e tradução não vazia.`);
         if (loc !== null && loc !== undefined) {
           if (typeof loc !== 'string' || loc.trim() === '') {
             errors.push(
