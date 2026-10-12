@@ -80,4 +80,13 @@ if (!process.argv.includes('--declaracoes')) for (const id of ['custo-do-stock-d
   assert.equal(literal.textContent, loadClaims().get(id).excerpt);
   assert.match(root.querySelector('.linha-recorte img').getAttribute('alt'), lang === 'pt' ? /Recorte do gráfico com o rótulo assinalado/ : /Crop of the chart with the label marked/);
 }
+const { FAMILIAS_JD1 } = await import('../../design/especime-v3/medicoes/jd1-2026-10-06/familias.mjs');
+const perimetro = FAMILIAS_JD1.find(f => f.chaves.includes('juros-das-administracoes-publicas')).partes.find(p => p.pt.startsWith(' Inclui'));
+assert.ok(perimetro.apoios.every(a => a.origem === 'jd1-ine-contas'));
+for (const lang of ['pt','en']) {
+  const frase = oQueEDaLinha('custo-do-stock-da-divida-direta-2025', lang).pedacos.join('');
+  const termo = lang === 'pt' ? 'juros do subsetor Estado' : 'interest of the State subsector';
+  assert.ok(frase.includes(termo));
+  recusa(`Subsetor apagado/${lang}`, frase.replace(termo, '').includes(termo) ? [] : ['JD1-c: custo sem o subsetor Estado'], 'JD1-c: custo sem o subsetor Estado');
+}
 console.log(JSON.stringify({passou: true, plantas}, null, 2));
