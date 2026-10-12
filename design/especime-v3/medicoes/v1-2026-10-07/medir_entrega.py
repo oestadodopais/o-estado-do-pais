@@ -116,7 +116,8 @@ def main():
     tipos = {f['tipo']: sum(e['tipo'] == f['tipo'] for e in vigentes) for f in reg['entradas'].values()}
     codigo_ficheiros = {str(p.relative_to(raiz)): sha(p.read_bytes()) for p in sorted(raiz.rglob('*.py'))}
     atuais = [r for r in corridas if r['codigo_sha256'] == codigo_ficheiros and r['registo_sha256'] == sha(json.dumps(reg, sort_keys=True, ensure_ascii=False).encode())]
-    mesmo_codigo = bool(atuais) and all(r['codigo_sha256'] == codigo_ficheiros for r in atuais)
+    mesmo_codigo = bool(corridas) and all(r['codigo_sha256'] == codigo_ficheiros for r in corridas)
+    guardar('hashes-todas-corridas.json', [{'id': r['id'], 'codigo_igual': r['codigo_sha256'] == codigo_ficheiros} for r in corridas])
     gate = PASTA / 'portoes/motor.codigo'
     gate_meta = json.loads((PASTA / 'portoes/motor.json').read_text()) if gate.exists() else {}
     plantas = json.loads((PASTA / 'plantas.json').read_text()) if (PASTA / 'plantas.json').exists() else {'plantas': []}
@@ -126,7 +127,7 @@ def main():
                'plantas_passaram': sum(p['passou'] for p in plantas['plantas']), 'plantas_total': len(plantas['plantas']),
                'codigo_portao': int(gate.read_text()) if gate.exists() else None, 'portao_cabeca': gate_meta.get('cabeca'),
                'duas_corridas_com_codigo_final': len(atuais) >= 2, 'mesmo_codigo_das_corridas': mesmo_codigo,
-               'segunda_sem_duplicados': len(atuais) >= 2 and atuais[-1]['novas'] == 0 and atuais[-1]['revisoes'] == 0,
+               'segunda_sem_duplicados': (atuais[-1]['novas'] == 0 and atuais[-1]['revisoes'] == 0) if len(atuais) >= 2 and all(f.get('lida') for f in atuais[-1]['fontes'].values()) else 'não medido',
                'fila_final_sem_duplicados': bool(atuais) and all(r['fila_sem_duplicados'] for r in atuais),
                'entrada_de_cada_fonte': all(por_fonte.values()), 'tokens_used': None, 'custo_verificavel': False}
     guardar('aceitacao.json', medidas)

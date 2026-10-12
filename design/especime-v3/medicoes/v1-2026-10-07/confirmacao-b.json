@@ -1,0 +1,24 @@
+{
+  "motor_partida": "f8e07849f57270bd4d3256ccfffde185196f7823",
+  "plantas_apenas_nas_copias": {
+    "resumo_dar_parcial_com_razao": true,
+    "teto_maior_ou_igual": true,
+    "planta_vazio_afirma_mensagem": true,
+    "vigia_so_armado": true,
+    "relatorio_zero_iniciativas": true
+  },
+  "preexistentes_preservados": {
+    "design/observatorio/AUDITORIA-2026-09-02.md": true,
+    "design/observatorio/BRIEF-P2-o-numero-e-o-seu-sentido.md": true,
+    "design/observatorio/ORDEM-cabeca-2026-09-01.md": true,
+    "design/observatorio/ORDEM-linhas-dominio-1-2-2026-09-01.md": true,
+    "design/observatorio/ORDEM-piloto-corredor-2026-09-01.md": true,
+    "design/observatorio/ORDEM-rotulo-2026-09-01.md": true,
+    "design/observatorio/PROMPT-proxima-sessao-2026-09-22.md": true,
+    "design/observatorio/PROMPT-proxima-sessao-2026-09-23-noite.md": true,
+    "design/observatorio/PROMPT-proxima-sessao-2026-09-23.md": true,
+    "design/observatorio/PROMPT-proxima-sessao-2026-09-24.md": true,
+    "design/observatorio/evora/FONTES-evora-2027.baixar.sh": true,
+    "design/observatorio/inventario/amostra-sonnet.py": true
+  }
+}
