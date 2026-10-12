@@ -61,5 +61,14 @@ for(const lang of ['pt','en']) {
  const pagina=parse(fs.readFileSync(`dist/${lang==='pt'?'estudos':'en/studies'}/which-door-is-yours/index.html`,'utf8'));
  assert(pagina.querySelector('[data-ausencia-atual]'),'o estudo tem de dizer a ausência das contagens');
 }
+function faixaAgua(linhas) {
+ const n=Number(linhas.get('agua-nao-faturada-portugal-2024').value.replace(',','.'));
+ return n>20 && n<=30 ? [] : ['RP4N-g: o valor da água não pertence à faixa mediana citada'];
+}
+assert.deepEqual(faixaAgua(loadClaims()),[]);
+{
+ const linhas=structuredClone(loadClaims());linhas.get('agua-nao-faturada-portugal-2024').value='20';
+ morde('água no limite excluído da faixa mediana',faixaAgua(linhas),'o valor da água não pertence');
+}
 if(process.argv.includes('--registo-g'))fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/g/plantas-novas.json',JSON.stringify({plantas},null,2)+'\n');
 console.log(`RP4N-g: PASS, ${plantas.length} plantas`);

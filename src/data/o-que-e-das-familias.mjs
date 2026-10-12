@@ -26,15 +26,16 @@ export const FAMILIAS_DAS_LINHAS = {
   "agua-nao-faturada-portugal": {
     "frase": {
       "pt": [
-        "É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta."
+        "É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta. O valor situa-se na faixa «Qualidade do serviço mediana» da ERSAR: acima de vinte e até trinta por cento, incluindo o limite superior."
       ],
       "en": [
-        "It is the share of water entering the system that is not billed by retail operators in mainland Portugal. The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment."
+        "It is the share of water entering the system that is not billed by retail operators in mainland Portugal. The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment. The value falls in ERSAR’s “medium service quality” band: above twenty and up to thirty per cent, including the upper limit."
       ]
     },
     "origens": [
       "rp4n-agua-nao-faturada",
-      "rp4n-agua-ambito"
+      "rp4n-agua-ambito",
+      "rp4n-agua-faixas"
     ]
   },
   "alentejo-central-poder-de-compra": {

@@ -12448,12 +12448,13 @@
       ],
       "origens": [
         "rp4n-agua-nao-faturada",
-        "rp4n-agua-ambito"
+        "rp4n-agua-ambito",
+        "rp4n-agua-faixas"
       ],
       "folhas": [
         {
-          "pt": "É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta.",
-          "en": "It is the share of water entering the system that is not billed by retail operators in mainland Portugal. The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment.",
+          "pt": "É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta. O valor situa-se na faixa «Qualidade do serviço mediana» da ERSAR: acima de vinte e até trinta por cento, incluindo o limite superior.",
+          "en": "It is the share of water entering the system that is not billed by retail operators in mainland Portugal. The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment. The value falls in ERSAR’s “medium service quality” band: above twenty and up to thirty per cent, including the upper limit.",
           "partes": [
             {
               "pt": "É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental.",
@@ -12491,6 +12492,23 @@
                   "origem": "rp4n-agua-ambito",
                   "campo": "excerto",
                   "literal": "AA08 alta"
+                }
+              ]
+            },
+            {
+              "pt": " O valor situa-se na faixa «Qualidade do serviço mediana» da ERSAR: acima de vinte e até trinta por cento, incluindo o limite superior.",
+              "en": " The value falls in ERSAR’s “medium service quality” band: above twenty and up to thirty per cent, including the upper limit.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-agua-faixas",
+                  "campo": "excerto",
+                  "literal": "Qualidade do serviço mediana"
+                },
+                {
+                  "origem": "rp4n-agua-faixas",
+                  "campo": "excerto",
+                  "literal": "]20,0; 30,0]"
                 }
               ]
             }
