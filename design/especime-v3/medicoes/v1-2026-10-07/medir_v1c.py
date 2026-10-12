@@ -51,6 +51,7 @@ def provas(motor, codigo):
         'cumulativo_teto_proprio_e_uma_transferencia': 'teto de uma transferência cumulativa por dia atingido; ficheiro alterado fica em fila',
         'cumulativo_excedente_nao_alojado': 'teto de bytes atingido; corpo incompleto não alojado',
         'indice_mesmo_tamanho_le_corpo': 'índice reutilizado só pelo tamanho',
+        'head_mudado_nao_reutiliza_gzip_mesmo_tamanho': 'HEAD alterado foi ignorado pelo tamanho comprimido',
         'aviso_descompressao': 'ficheiro descomprimido acima de oitenta por cento do limite',
     }
     plantas.extend((t.Provas, nome, mensagem) for nome, mensagem in novas.items())
@@ -166,7 +167,7 @@ def main():
         assert sum(p['bytes_recebidos'] for p in ps if p['orcamento'] == 'ficheiro_cumulativo') == r['medidas']['bytes_fora_teto_comum']['bytes']
         assert r['codigo_cabeca'] == codigo
         resultados.append({'id': r['id'], 'recibo': 'vigilancia/corridas/' + r['id'] + '.json',
-            'pedidos': 'vigilancia/pedidos/' + r['id'] + '.jsonl', **r['medidas'],
+            'registo_pedidos': 'vigilancia/pedidos/' + r['id'] + '.jsonl', **r['medidas'],
             'fontes': r['fontes'], 'limitacoes': r['limitacoes'], 'falhas_detalhe': r['falhas'],
             'fila': r['fila'], 'aceitacao_entrada_datada': r['aceitacao_entrada_datada'],
             'segunda_leitura': medir.segunda_leitura(r), 'avisos_descompressao': r['avisos_descompressao']})
@@ -190,6 +191,7 @@ def main():
     for f in arquivos:
         assert sha(f.read_bytes()) == f.parent.name + f.name
     verificar.fundamentos(reg, raiz)
+    assert len({f.parent.name + f.name[:10] for f in arquivos}) == len(arquivos), 'prefixo de arquivo ambíguo no resumo'
     guardar('integridade-c.json', {'indices': integridade, 'corpos': len(arquivos), 'fundamentos': reg['fundamentos_arquivados']})
     conta = aritmetica(raiz, finais, reg)
     preservados = {n: sha((SITIO / n).read_bytes()) == digest for n, digest in json.loads((PASTA / 'alteracoes-preexistentes.json').read_text()).items()}
@@ -238,7 +240,8 @@ def main():
         '| --- | ---: | ---: | ---: | ---: | --- |']
     for c in conta['cenarios']:
         linhas.append(f"| `{c['base']}` | {c['bytes_comuns']} / {c['tetos']['bytes']} | {c['bytes_cumulativo']} / {c['tetos']['bytes_ficheiro_cumulativo']} | {c['bytes_totais']} | {c['pedidos']} / {c['tetos']['pedidos']} | {c['cabe_comum'] and c['cabe_cumulativo'] and c['cabem_pedidos']} |")
-        linhas += ['', f"Bytes por fonte: `{json.dumps(c['bytes_por_fonte'])}`; pedidos por fonte: `{json.dumps(c['pedidos_por_fonte'])}`.", '']
+    for c in conta['cenarios']:
+        linhas += ['', f"Base `{c['base']}`: bytes por fonte `{json.dumps(c['bytes_por_fonte'])}`; pedidos por fonte `{json.dumps(c['pedidos_por_fonte'])}`.", '']
     linhas += ['A duração de uma transferência alterada não foi extrapolada. Os tetos de pedidos e tempo continuam comuns; qualquer excesso real fica em fila como falha. A margem de bytes é uma conta com o corpo observado, não uma previsão do crescimento.', '',
         '### O resumo de 12.10 refeito, inteiro', '', '```text', resumos['2026-10-12'].rstrip(), '```', '',
         'A descrição é literal, cortada em fronteira de palavra. Permite identificar o que faz pelo menos um ato listado e redigir a sua apresentação factual; não prova efeitos ou execução da medida. O DAR antigo não volta como novidade. O limite conserva as razões de cobertura e todos os cabeçalhos dos números selecionados, declarando separadamente as omissões.', '',
@@ -256,6 +259,8 @@ def main():
         '* **V1-26**: a janela de aceitação usa data de publicação e o início efetivo da vigilância. Uma entrada recolhida agora mas publicada antes da janela não a cumpre.',
         '* **V1-27**: o limite conservador de bytes do resumo pode cortar atos e oradores, com aviso. Se até os cabeçalhos e razões obrigatórios excederem o limite, o guião recusa a escrita em vez de os omitir silenciosamente.',
         f'* **V1-28**: a descompressão permite {MAX_EXPANDIDO} bytes; avisos acima de oitenta por cento são medidos por corpo e copiados para o recibo.', '',
+        '* **V1-29**: a cadência semanal reduz os pedidos ordinários, mas não prova que todos os PDFs antigos caibam para sempre num único dia semanal. O teto comum continua a valer e o excesso conserva a sua tarefa em fila; a aritmética mede a configuração observada.', '',
+        '* **V1-30**: uma mudança observada por HEAD prevalece sobre a coincidência posterior do tamanho comprimido. A planta usa dois corpos de tamanhos expandidos diferentes com gzip do mesmo tamanho; o segundo corpo tem de ser transferido.', '',
         'Custo: linha `tokens used` não observada. Não se estima o total nem se afirma cumprimento do alvo de custo.', '']
     relatorio = PASTA / 'LEIA-ME.md'
     antigo = relatorio.read_text()
