@@ -1,0 +1,14 @@
+{
+  "cenario": "simulação identificada com declarações do arquivo; a prova de duas execuções está na suite",
+  "declaracoes": 306,
+  "primeira_grupos": [
+    "dar:2026-09-26:006"
+  ],
+  "segunda_grupos": [
+    "dar:2026-09-26:006"
+  ],
+  "primeira_contagens": "No dia: atos novos: 6; iniciativas novas: 0; DAR novos ou revistos: 1; nesta corrida: limitações: 9; falhas: 0.",
+  "segunda_contagens": "No dia: atos novos: 6; iniciativas novas: 0; DAR novos ou revistos: 1; nesta corrida: limitações: 9; falhas: 0.",
+  "segunda_iguais": 306,
+  "grupo_e_contagem_conservados": true
+}

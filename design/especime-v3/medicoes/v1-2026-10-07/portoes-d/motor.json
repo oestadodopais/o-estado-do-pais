@@ -1,0 +1,21 @@
+{
+  "comando": "OEDP_SITE=<sitio> python3 -m core.gate",
+  "cabeca": "f36540de9baecefd1ab857fe9a9d2c1fd17fe655",
+  "codigo": 0,
+  "segundos": 542.327,
+  "codigo_sha256": {
+    "__init__.py": "5e5ec4fed0dbbe82598949fa59ac0bbb6300ee29f2342c6f3b1260245e9b3057",
+    "diario.py": "3dfc6ede2d6cbc66b9c1bfb27fd431f63d1bd8a543b6801fa9f3e30907c91722",
+    "extrair.py": "eb3c68a7ab1041b507e5fbf8a2f82ebe93b4b7dc58d3ec35833840fd066550cf",
+    "fluxo.py": "92d64dac8b0e3df8dd716fdae5fffdc4ec18ef65127015abee9bc13d57b6c0a3",
+    "medir.py": "32251baaab4eb65497de2a723ee158a365e0f8cbd1ee16b99e270fd004a19486",
+    "recontar.py": "8346163fbf4872cd0bbff7b845474d1251b8449ffa0ba1de7d734ba6979a7f16",
+    "tests/__init__.py": "ba5dd9d965ede849d8dd7266ce437ed8d979bc5fd71b11ba0abf9f958dbd1d3b",
+    "tests/__main__.py": "d903388d895d223456d15dde5f41ebdf8216e1072cdce8ea813a97cb0d7fd5d0",
+    "tests/test_vigilancia.py": "da38cdf061a7a44c7affb496e411c87f28dc918a93f7abc24276232e34c795ba",
+    "transporte.py": "8fde712aad43bae6fba69def9150d47ed283dc9d023736ffdfefb1617a0eb6b0",
+    "verificar.py": "e750ec4c39b2171b4abaf04bab06e2868e7d56e479f9c1a7e6a437ac2bfe1a9b",
+    "vigia.py": "a7550e8746ab13a1e8643539b372105ab59fed54a7d443e255f10cdfec6127d9"
+  },
+  "core_gate_sha256": "1d5b3874064f36d4dd77a50fb1badfc810e9652b05e341195de28bf82915bd1a"
+}

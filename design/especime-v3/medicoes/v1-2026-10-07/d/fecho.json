@@ -1,0 +1,5 @@
+{
+  "comando": "python3 <medicoes>/medir_v1d.py --motor <motor> --fecho",
+  "codigo": 0,
+  "cabeca_codigo": "f36540de9baecefd1ab857fe9a9d2c1fd17fe655"
+}

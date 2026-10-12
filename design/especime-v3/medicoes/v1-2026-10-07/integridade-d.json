@@ -1,0 +1,79 @@
+{
+  "indices": [
+    {
+      "dia": "2026-10-11",
+      "versoes": 616,
+      "bytes_resumo": 2475,
+      "entradas": [
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-conselho-ministros/196-2026-1178585148",
+        "ato:https://diariodarepublica.pt/dr/detalhe/portaria/451-2026-1178585149",
+        "ato:https://diariodarepublica.pt/dr/detalhe/portaria/451-a-2026-1179331456",
+        "ato:https://diariodarepublica.pt/dr/detalhe/portaria/451-b-2026-1179433119"
+      ],
+      "designacoes": [
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-conselho-ministros/196-2026-1178585148",
+        "ato:https://diariodarepublica.pt/dr/detalhe/portaria/451-2026-1178585149",
+        "ato:https://diariodarepublica.pt/dr/detalhe/portaria/451-a-2026-1179331456",
+        "ato:https://diariodarepublica.pt/dr/detalhe/portaria/451-b-2026-1179433119"
+      ],
+      "descricoes": {
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-conselho-ministros/196-2026-1178585148": "Presidência do Conselho de Ministros Adapta a Estrutura de Missão «Recuperar Portugal» à fase de encerramento do Plano de Recuperação e Resiliência.",
+        "ato:https://diariodarepublica.pt/dr/detalhe/portaria/451-2026-1178585149": "Finanças e Cultura, Juventude e Desporto Aprova o Regulamento Arquivístico da Inspeção-Geral de Finanças.",
+        "ato:https://diariodarepublica.pt/dr/detalhe/portaria/451-a-2026-1179331456": "Finanças e Ambiente e Energia Procede à revisão e fixação das taxas unitárias do imposto sobre os produtos petrolíferos e energéticos.",
+        "ato:https://diariodarepublica.pt/dr/detalhe/portaria/451-b-2026-1179433119": "Cultura, Juventude e Desporto Aprova o Regulamento da Rede Portuguesa Saber Fazer."
+      },
+      "grupos_dar": [
+        "dar:2026-09-26:006"
+      ],
+      "omitidas": 0,
+      "descricoes_cortadas": 0,
+      "reprocessadas": 0
+    },
+    {
+      "dia": "2026-10-12",
+      "versoes": 316,
+      "bytes_resumo": 2450,
+      "entradas": [
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114"
+      ],
+      "designacoes": [
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+        "ato:https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+        "ato:https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116"
+      ],
+      "descricoes": {
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111": "Assembleia da República Apreciação do relatório do Governo «Portugal na União Europeia 2025».",
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112": "Assembleia da República Recomenda ao Governo medidas para melhorar as condições de vida das pessoas com esclerose lateral amiotrófica.",
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113": "Assembleia da República Recomenda ao Governo a criação de um mecanismo extraordinário de apoio à vindima de 2026 na Região Demarcada do Douro.",
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114": "Assembleia da República Recomenda ao Governo a criação de medidas de apoio ao montado."
+      },
+      "grupos_dar": [],
+      "omitidas": 0,
+      "descricoes_cortadas": 2,
+      "reprocessadas": 4
+    }
+  ],
+  "corpos": 79,
+  "fundamentos": [
+    {
+      "fonte": "dr",
+      "url": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-lei/1985-34475475",
+      "sha256": "d535a4226e06dcf7328576480b3c42298eae1d46914d455558c60fe93db3e059",
+      "arquivo": "arquivo/sha256/d5/35a4226e06dcf7328576480b3c42298eae1d46914d455558c60fe93db3e059",
+      "encoding": null,
+      "obtido_em": "2026-10-12",
+      "metodo": "Extração textual da página oficial pela ferramenta web.run em 12.10.2026, limpa por guião das marcas de citação, numeração de linhas e cabeçalho da ferramenta. Palavras da fonte preservadas; não é o corpo HTTP original. Tentativa com o cliente da casa em direitos-sonda.json.",
+      "artigos": [
+        "7.º",
+        "8.º"
+      ],
+      "localizador": "Artigos 7.º e 8.º na extração textual limpa."
+    }
+  ]
+}
