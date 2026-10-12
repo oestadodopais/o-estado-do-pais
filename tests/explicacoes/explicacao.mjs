@@ -847,11 +847,12 @@ export function plantasDaExplicacao(dist) {
     const p = saldoExecucao(r);
     p.set_content(p.innerHTML.replace(de, para));
   }, /X6 · o parágrafo seccoes\[2\]\.conteudo\[1\]\.paragrafo difere da conta/);
-  naPagina('EX1-d: o saldo de outro perímetro', (r) => {
+  // Não há uma célula autónoma de perímetro: X6 confere o valor da linha declarada.
+  // Só o valor visível muda; identificador, href e todo o selo permanecem válidos.
+  naPagina('EX1-e: valor de outro perímetro, igualdade X6 com selo intacto', (r) => {
     const c = saldoExecucao(r).querySelector('[data-claim]');
     c.set_content(linhas.get('execucao-2026-08-saldo-global-administracao-central').value);
-    c.setAttribute('data-claim', 'execucao-2026-08-saldo-global-administracao-central');
-  }, /X6 ·|X8 ·/);
+  }, /X6 · o parágrafo seccoes\[2\]\.conteudo\[1\]\.paragrafo difere da conta/);
   naPagina('EX1-d: a previsão anual apresentada como mensal', (r) => {
     const p = saldoExecucao(r); p.set_content(p.innerHTML.replace('para o ano inteiro', 'para agosto'));
   }, /X6 ·/);
