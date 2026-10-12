@@ -1,0 +1,24 @@
+{
+  "_": [
+    "Registo de travessia — rp4n-agua. Uma entrada por linha do livro-razão que veio do",
+    "motor de investigação (ResearchHub), com o resumo criptográfico da linha de",
+    "origem e o dos bytes que aqui foram escritos.",
+    "FICHEIRO GERADO. Escrito por ResearchHub/publisher/export_site_rows.py.",
+    "Conferido a cada build por scripts/check-cruzamento.mjs — ver ledger/README.md."
+  ],
+  "exporter": "ResearchHub/publisher/export_site_rows.py",
+  "origin": "ResearchHub",
+  "rows": {
+    "agua-nao-faturada-portugal-2024": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-10-12",
+      "exported_row_sha256": "bb98de177a24168ea229d31ccba27a61842aaf1a8ea7feabca0990e4d1c3938e",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "5e71f8e3e6b82d0ed9378d516e4a75b014a19192c5fa94e4127853c043bcfd2c",
+      "rh_id": "agua-nao-faturada-portugal-2024",
+      "rh_ledger_sha256": "978b24cc99ed0949489711d5ad7bc5fe52485021c72f12f30ac4ca6c89407d47",
+      "rh_study": "13 Dominios/RP4N Agua",
+      "verifications_at_export": 0
+    }
+  }
+}

@@ -26,14 +26,15 @@ export const FAMILIAS_DAS_LINHAS = {
   "agua-nao-faturada-portugal": {
     "frase": {
       "pt": [
-        "É a parte da água que entra no sistema e não é faturada."
+        "É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta."
       ],
       "en": [
-        "It is the share of water entering the system that is not billed."
+        "It is the share of water entering the system that is not billed by retail operators in mainland Portugal. The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment."
       ]
     },
     "origens": [
-      "rp4n-agua-nao-faturada"
+      "rp4n-agua-nao-faturada",
+      "rp4n-agua-ambito"
     ]
   },
   "alentejo-central-poder-de-compra": {

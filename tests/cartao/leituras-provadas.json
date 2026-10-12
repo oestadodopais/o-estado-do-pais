@@ -12447,22 +12447,50 @@
         "agua-nao-faturada-portugal"
       ],
       "origens": [
-        "rp4n-agua-nao-faturada"
+        "rp4n-agua-nao-faturada",
+        "rp4n-agua-ambito"
       ],
       "folhas": [
         {
-          "pt": "É a parte da água que entra no sistema e não é faturada.",
-          "en": "It is the share of water entering the system that is not billed.",
+          "pt": "É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta.",
+          "en": "It is the share of water entering the system that is not billed by retail operators in mainland Portugal. The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment.",
           "partes": [
             {
-              "pt": "É a parte da água que entra no sistema e não é faturada.",
-              "en": "It is the share of water entering the system that is not billed.",
+              "pt": "É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental.",
+              "en": "It is the share of water entering the system that is not billed by retail operators in mainland Portugal.",
               "classe": "diz",
               "apoios": [
                 {
                   "origem": "rp4n-agua-nao-faturada",
                   "campo": "excerto",
                   "literal": "percentagem de água entrada\nno sistema que não é faturada"
+                },
+                {
+                  "origem": "rp4n-agua-ambito",
+                  "campo": "excerto",
+                  "literal": "Avaliação em Portugal continental"
+                },
+                {
+                  "origem": "rp4n-agua-ambito",
+                  "campo": "excerto",
+                  "literal": "AA08 baixa"
+                }
+              ]
+            },
+            {
+              "pt": " A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta.",
+              "en": " The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-agua-ambito",
+                  "campo": "excerto",
+                  "literal": "(para 93 % de EG)"
+                },
+                {
+                  "origem": "rp4n-agua-ambito",
+                  "campo": "excerto",
+                  "literal": "AA08 alta"
                 }
               ]
             }

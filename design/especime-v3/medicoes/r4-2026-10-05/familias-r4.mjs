@@ -1106,7 +1106,7 @@ const OUTRAS = [
   {
     chaves: ['agua-nao-faturada-portugal'],
     mostrarOrigens: true,
-    partes: [diz('É a parte da água que entra no sistema e não é faturada.', 'It is the share of water entering the system that is not billed.', O('rp4n-agua-nao-faturada', 'percentagem de água entrada\nno sistema que não é faturada'))],
+    partes: [diz('É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental.', 'It is the share of water entering the system that is not billed by retail operators in mainland Portugal.', O('rp4n-agua-nao-faturada', 'percentagem de água entrada\nno sistema que não é faturada'), O('rp4n-agua-ambito','Avaliação em Portugal continental'), O('rp4n-agua-ambito','AA08 baixa')), diz(' A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta.', ' The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment.', O('rp4n-agua-ambito','(para 93 % de EG)'), O('rp4n-agua-ambito','AA08 alta'))],
   },
   {
     chaves: ['penalizacao-antecipacao-um-ano-com-factor'],
