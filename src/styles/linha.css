@@ -598,3 +598,10 @@
   border-top: 2px solid var(--rule-strong);
   border-bottom: 2px solid var(--rule-strong);
 }
+
+/* JD1-c: a coluna citada continua contável no excerto literal do gráfico. */
+.linha-excerto-grafico {
+  white-space: pre;
+  overflow-x: auto;
+  max-width: 100%;
+}

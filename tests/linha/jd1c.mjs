@@ -74,4 +74,10 @@ for (const lang of ['pt','en']) {
   const frase = oQueEDaLinha('divida-direta-do-estado-2026-08', lang).pedacos.join('');
   assert.match(frase, lang === 'pt' ? /não a dívida de todas as administrações públicas na ótica de Maastricht/ : /not the Maastricht debt of all general government bodies/);
 }
+if (!process.argv.includes('--declaracoes')) for (const id of ['custo-do-stock-da-divida-direta-2025','custo-da-divida-emitida-2026-08']) for (const lang of ['pt','en']) {
+  const root = parse(fs.readFileSync(`dist/${lang === 'pt' ? 'livro-razao' : 'en/ledger'}/${id}/index.html`, 'utf8'));
+  const literal = root.querySelector('.linha-excerto-grafico [data-linha-campo="excerpt"]');
+  assert.equal(literal.textContent, loadClaims().get(id).excerpt);
+  assert.match(root.querySelector('.linha-recorte img').getAttribute('alt'), lang === 'pt' ? /Recorte do gráfico com o rótulo assinalado/ : /Crop of the chart with the label marked/);
+}
 console.log(JSON.stringify({passou: true, plantas}, null, 2));
