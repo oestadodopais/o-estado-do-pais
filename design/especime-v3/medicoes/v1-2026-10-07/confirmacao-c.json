@@ -1,0 +1,9 @@
+{
+  "resumo_falhas_1": true,
+  "fecha_429_5xx": true,
+  "teto_bytes": 10000000,
+  "dr_segunda_bytes": 6144,
+  "revisoes": 0,
+  "iguais": 312,
+  "tabela": true
+}
