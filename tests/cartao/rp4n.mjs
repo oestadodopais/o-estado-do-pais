@@ -5,6 +5,7 @@ import {parse} from 'node-html-parser';
 import {ORIGENS_DAS_DEFINICOES} from '../../src/data/figuras.mjs';
 import {loadClaims} from '../../src/lib/ledger.mjs';
 import {auditarPerguntas} from './perguntas.mjs';
+import {conferirAuditoriaDasLeituras} from './leituras.mjs';
 import {conferirAuditoriaDasFamilias, conferirAuditoriaDasSeries, cabecaDoRecibo, conferirCabecaDoRecibo, contextoDasFamilias, reguasDosCartoes} from './familias.mjs';
 import {conferirSemMarcadores} from '../../scripts/sem-marcadores.mjs';
 
@@ -260,6 +261,7 @@ export function conferirExcertoDaPensao(linha) {
  const origens=structuredClone(ORIGENS_DAS_DEFINICOES);
  origens['pensao-neutralidade'].excerto += ' frase inventada';
  morde('definição local da pensão adulterada',auditarPerguntas({origens}).erros,'o excerto local difere da leitura da página alojada');
+ morde('definição local da pensão adulterada na K17',conferirAuditoriaDasLeituras({origens}).erros,'o excerto local difere da leitura da página alojada');
  const l=loadClaims().get('penalizacao-legal-um-ano-antecipacao-2026');
  assert.equal(l.value,'6'); assert(l.excerpt.includes('cerca de 6% por ano')); assert(l.ressalva.includes('Valor aproximado')); 
 }

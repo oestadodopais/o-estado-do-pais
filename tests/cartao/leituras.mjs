@@ -1,4 +1,5 @@
 import { conferirPublicador } from './publicador-da-definicao.mjs';
+import { conferirOrigemLocal, chavesLocais } from './origens-locais-rp4n.mjs';
 /**
  * =============================================================================
  * K17 · A LEITURA DE CADA MEDIDA, AUDITADA E RECONTADA · bloco L1 (24.09.2026)
@@ -417,7 +418,13 @@ export function conferirAuditoriaDasLeituras({
     if (!usadas.has(chave)) erros.push(`K17 · origem «${chave}»: está declarada e não apoia pergunta, painel, leitura ou bloco da primeira página nenhum`);
   }
   /* AS ORIGENS ALOJADAS: a mesma forma do selo, com o ficheiro no estudo 13. */
+  const locais = new Set(chavesLocais());
+  for (const chave of locais) {
+    const erro = conferirOrigemLocal(chave, origens[chave]);
+    if (erro) erros.push(`K17 · origem «${chave}»: ${erro}`);
+  }
   for (const [chave, o] of Object.entries(origens)) {
+    if (locais.has(chave)) continue;
     const s = o?.alojada;
     if (!s) continue;
     const faltas = [];
