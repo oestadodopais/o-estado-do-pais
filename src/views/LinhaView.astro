@@ -1278,7 +1278,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
             </p>
           ) : (
             <>
-              {id === 'necessidades-brutas-de-financiamento-2025' ? (
+              {['necessidades-brutas-de-financiamento-2025', 'amortizacoes-e-anulacoes-de-divida-fundada-2025'].includes(id) ? (
                 <QuadroFinanciamentoJd1 id={id} excerto={claim.excerpt} />
               ) : (
                 <blockquote class:list={["linha-excerto", { "linha-excerto-grafico": eCustoJd1 }]} tabindex={eCustoJd1 ? "0" : undefined}>

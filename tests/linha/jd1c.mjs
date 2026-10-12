@@ -42,15 +42,17 @@ for (const base of ['juros-das-administracoes-publicas', 'pib-nominal-notificaca
 }
 const { parcelaDoFinanciamento, FINANCIAMENTO_JD1, AMORTIZACOES_JD1 } = await import('../../src/lib/frases-jd1.mjs');
 function confereParcela(partes) {
-  return JSON.stringify(partes.filter(p => typeof p !== 'string').map(p => p.claim)) === JSON.stringify([FINANCIAMENTO_JD1, AMORTIZACOES_JD1])
+  return JSON.stringify(partes.filter(p => typeof p !== 'string' && p.claim).map(p => p.claim)) === JSON.stringify([FINANCIAMENTO_JD1, AMORTIZACOES_JD1])
     ? [] : ['JD1-c: parcela sem os dois montantes por token'];
 }
-for (const lang of ['pt','en']) {
-  const frase = parcelaDoFinanciamento(FINANCIAMENTO_JD1, lang);
+for (const id of [FINANCIAMENTO_JD1, AMORTIZACOES_JD1]) for (const lang of ['pt','en']) {
+  const frase = parcelaDoFinanciamento(id, lang);
   assert.deepEqual(confereParcela(frase), []);
   recusa(`Parcela literal/${lang}`, confereParcela(frase.map(p => p.claim === AMORTIZACOES_JD1 ? '56 976' : p)), 'JD1-c: parcela sem os dois montantes por token');
   if (!process.argv.includes('--declaracoes')) {
-    const root = parse(fs.readFileSync(`dist/${lang === 'pt' ? 'livro-razao' : 'en/ledger'}/${FINANCIAMENTO_JD1}/index.html`, 'utf8'));
+    const root = parse(fs.readFileSync(`dist/${lang === 'pt' ? 'livro-razao' : 'en/ledger'}/${id}/index.html`, 'utf8'));
+    assert.match(root.querySelector('[data-jd1-parcela]').textContent, lang === 'pt' ? /serviram para reembolsar ou extinguir dívida/ : /were used to repay or extinguish (?:funded )?debt/);
+    if (id === AMORTIZACOES_JD1) assert.match(root.querySelector('[data-jd1-parcela]').textContent, lang === 'pt' ? /Mais do que na coluna de 2024/ : /More than in the 2024 column/);
     assert.equal(root.querySelector('[data-jd1-parcela]').closest('[data-o-que-e]'), null);
     assert.deepEqual(root.querySelector('[data-jd1-parcela]').querySelectorAll('[data-claim]').map(n => n.getAttribute('data-claim')), [FINANCIAMENTO_JD1, AMORTIZACOES_JD1]);
   }
@@ -66,7 +68,7 @@ function confereDirecao(id, palavra) {
 for (const id of idsEvolucao) for (const lang of ['pt','en']) {
   const e = evolucaoJd1(id, lang);
   assert.deepEqual(confereDirecao(id, e.direcao), []);
-  assert.deepEqual(e.partes.filter(p => typeof p !== 'string').map(p => p.claim), [e.anterior, id]);
+  assert.deepEqual(e.partes.filter(p => typeof p !== 'string' && p.claim).map(p => p.claim), [e.anterior, id]);
   recusa(`Direção trocada ${id}/${lang}`, confereDirecao(id, e.direcao === 'subiu' ? 'desceu' : 'subiu'), 'JD1-c: direção da evolução trocada');
   const alteradas = structuredClone(loadClaims());
   alteradas.get(id).value = alteradas.get(e.anterior).value;
