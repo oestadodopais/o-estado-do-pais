@@ -343,3 +343,386 @@ A entrega foi medida por `node design/especime-v3/medicoes/ex2-2026-10-06/medir-
   It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.
 
   Negative means the country owes abroad more than it owns there. (Recibo: `posicao-de-investimento-internacional-2024`.)
+
+## A passagem EX1-d
+
+A explicação deixa de dizer que os juros faltam aos agregados: diz que estes números não os isolam. A referência à execução «acima» passa a indicar a posição na página. O saldo da execução passa a dizer se houve défice ou excedente, pelo sinal da linha, e a comparar o saldo acumulado com o saldo previsto para o ano inteiro, pelo token `compara`.
+
+A base foi `d7564f21`, no ramo `ex1d-2026-10-11`. A cabeça do código é `7355de78920d6efaf5484e73667dea067e0a9f9b`. Construção pelo Codex, com a identificação `gpt-6-astra` e o raciocínio `high` pedidos no lançamento, que prevalece sobre o `xhigh` do mandato. O último commit contém apenas este relatório, as capturas e os registos de verificação. Não houve publicação nem mudança de ramo. A leitura a frio pelo Claude Opus 5.5 e a conferência do lugar de direção continuam por fazer antes de aterrar.
+
+### As linhas e o perímetro
+
+O perímetro é a conta consolidada da administração central e da segurança social, em contabilidade pública. A execução acumula janeiro a agosto. As quatro linhas pertencem ao mesmo quadro da Síntese da Execução Orçamental, identificado nos localizadores abaixo. A previsão é o Orçamento Inicial reproduzido nessa síntese.
+
+| Linha | Valor | Unidade | Período | Localizador |
+|---|---|---|---|---|
+| `execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social` | 80 464,5 | milhões de euros, acumulados de janeiro a agosto | 2026-08 | p. 49 do ficheiro, página impressa 45, Despesa efetiva, Execução Acumulada 2026 |
+| `execucao-2026-08-receita-efetiva-administracao-central-seguranca-social` | 79 618,7 | milhões de euros, acumulados de janeiro a agosto | 2026-08 | p. 49 do ficheiro, página impressa 45, Receita efetiva, Execução Acumulada 2026 |
+| `execucao-2026-08-saldo-global-administracao-central-seguranca-social` | −845,8 | milhões de euros, acumulados de janeiro a agosto | 2026-08 | p. 49 do ficheiro, página impressa 45, Saldo global, Execução Acumulada 2026 |
+| `oe-2026-saldo-global-administracao-central-seguranca-social` | −1 789,8 | milhões de euros | 2026 | p. 49 do ficheiro, página impressa 45, Saldo global, Orçamento Inicial 2026 |
+
+O guião `captar-ex1d.mjs` confirma a identidade receita menos despesa igual a saldo, em décimos inteiros de milhão, sem arredondar nem criar uma linha nova. A [medição e o manifesto das capturas](capturas-ex1d.json) conservam os campos lidos, as frases do HTML, a cabeça e os resumos SHA-256 das imagens. O saldo não é uma medida de dívida emitida, como a ressalva da própria linha explica.
+
+### As decisões pequenas e os limites
+
+- **EX1-5, para JD1.** O valor em euros do Ministério das Finanças permanece como a fonte o publicou. O arredondamento para mil milhões depende de uma linha derivada no motor e fica por fazer, por decisão expressa do mandato.
+- **EX1-6.** Aplica-se a alternativa autorizada «que entra noutra classificação». O excerto selado `eurostat-cofog-divisao-01` nomeia literalmente «Public debt transactions», mas não explicita os juros. A descrição `dados-gov-oe-despesa-funcional` identifica a classificação funcional, sem explicitar essa inclusão. Não se acrescentou uma definição obtida fora das origens seladas. Os dois selos conferiram contra os ficheiros e os registos locais dos pedidos no motor. A abertura conserva o texto, como o mandato determina; a leitura a frio deve conhecer o limite destes apoios.
+- **EX1-7.** Existe saldo anual do mesmo perímetro, por isso a comparação entra. «Acima» compara os valores com sinal, não a dimensão do défice. Os ramos são «acima», «abaixo» e «em linha», com «para o ano inteiro» e o valor anual visíveis. «Dentro do que o Orçamento previa» sugeriria cumprimento de uma meta para agosto que nenhuma destas linhas estabelece. Não se conclui se a execução está dentro do previsto para agosto nem como fechará o ano.
+- **EX1-8.** A X6 tratava os ramos não escolhidos como palavras proibidas na página inteira. Com o défice da execução e o excedente do ano anterior, isso recusava duas frases corretas. Cada ausência passou a ser conferida no seu parágrafo; a igualdade integral do texto e a lista dos caminhos mantêm-se. As plantas trocam o sinal da execução, acrescentam-lhe o excedente da outra conta, invertem a comparação, mudam o perímetro, fazem passar a previsão anual por mensal e repõem a contradição dos juros. Nenhum portão de número, fonte ou pessoa foi dispensado.
+
+### As três frases, lidas da página
+
+Os textos abaixo retiram apenas os selos e normalizam os espaços; os números foram lidos do HTML, não compostos à mão.
+
+**PT**
+
+> Estes números não isolam o custo dos juros da dívida, que o Orçamento também prevê e que entra noutra classificação; quando as linhas dos juros existirem no livro-razão, esta explicação diz quanto são.
+
+> O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto é a que esta explicação mostra acima.
+
+> Até agosto de 2026, as contas da administração central e da segurança social fecharam com um saldo de −845,8 milhões de euros, um défice (gastou mais do que recebeu); o saldo acumulado está acima do que o Orçamento previa para o ano inteiro (−1 789,8 milhões de euros).
+
+**EN**
+
+> These figures do not isolate the cost of the interest on the debt, which the Budget also forecasts and which falls under another classification; when the interest entries exist in the ledger, this explainer will say how much it is.
+
+> The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is the one this explainer shows above.
+
+> By August 2026, the accounts of central government and social security closed with a balance of −845,8 million euros, a deficit (it spent more than it took in); the cumulative balance is above what the Budget forecast for the full year (−1 789,8 million euros).
+
+### Conferências e capturas
+
+Comando dos portões: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/ex2-2026-10-06/portoes-d`, com `<worktree>` substituído pelo caminho absoluto apenas na execução. A tranca foi tomada pelo guião. Os códigos abaixo foram lidos dos ficheiros depois do fim dos processos, sem canalização. As cabeças de início e de fim coincidem com a cabeça do código.
+
+| Portão | Código lido |
+|---|---|
+| [build](portoes-d/build.codigo) | 0 |
+| [verify](portoes-d/verify.codigo) | 0 |
+| [typecheck](portoes-d/typecheck.codigo) | 0 |
+| [explicacao](portoes-d/explicacao.codigo) | 0 |
+| [acertos](portoes-d/acertos.codigo) | 0 |
+
+A célula X recontou 2 páginas, auditou 94 folhas e 139 partes, e as 29 plantas morderam. As origens foram também conferidas com o motor local por `RESEARCHHUB_DIR=<motor> node tests/explicacoes/explicacao.mjs --prova --json design/especime-v3/medicoes/ex2-2026-10-06/portoes-d/explicacao.json`. O guião dos acertos foi corrido com `node design/especime-v3/medicoes/ex1-2026-10-05/acertos-ex1.mjs --json design/especime-v3/medicoes/ex2-2026-10-06/portoes-d/acertos.json`.
+
+As 8 capturas são a página inteira e o recorte das correções, a 390 e a 1 280 px, nas duas edições. Foram inspecionadas visualmente: sem cortes nem transbordos. O guião mediu 0 erros de transbordo e abriu os recibos dos dois saldos em cada combinação de língua e largura. Comando: `RESEARCHHUB_DIR=<motor> node design/especime-v3/medicoes/ex2-2026-10-06/captar-ex1d.mjs`.
+
+- [PT, 390 px](../../capturas/ex2-2026-10-06/ex1d-pt-390-correcoes.png).
+- [PT, 1280 px](../../capturas/ex2-2026-10-06/ex1d-pt-1280-correcoes.png).
+- [EN, 390 px](../../capturas/ex2-2026-10-06/ex1d-en-390-correcoes.png).
+- [EN, 1280 px](../../capturas/ex2-2026-10-06/ex1d-en-1280-correcoes.png).
+
+Uma corrida inicial foi interrompida durante a geração dos cartões, antes de obter os três códigos, para corrigir o guião de capturas: equivalência dos espaços dos milhares nos recibos e recorte fora da janela sobre a página inteira. Essa tentativa não serve de prova; os registos finais são os de `portoes-d`.
+
+O resultado detalhado do portão de alvos fica em `portoes-d/alvos.json.gz`, comprimido sem perda depois da corrida. A descompressão foi comparada byte a byte com o original; o portão e os seus códigos não foram alterados.
+
+### Commits e custo
+
+- `e33ea4fadc4699653377d3911622110d6ebf405c EX1-d: esclarecer os juros e o saldo da execução`
+- `77dab7c2a659c7227c647fe728d7062021bae231 EX1-d: preparar a medição e as capturas da entrega`
+- `7355de78920d6efaf5484e73667dea067e0a9f9b EX1-d: conferir os recibos e o recorte da página inteira`
+
+Custo-alvo: trezentos mil símbolos. Não foi observada uma linha «tokens used» desta construção; custo efetivo e confronto com o alvo: [verify], a apurar no registo do lançador. Não se inventa uma contagem nem se afirma que o alvo foi cumprido.
+
+## A passagem EX1-e
+
+A comparação com sinal da EX1-d podia levar o leitor a entender que o défice era maior. Agora compara a dimensão dos défices ou excedentes. As afirmações sem apoio sobre a classificação dos juros e a promessa de atualização saíram. A contabilidade dos ramos voltou a abranger todo o texto de main, com uma mensagem própria e plantas que a exercem.
+
+Base: `f3060fa4`, ramo `ex1d-2026-10-11`. Cabeça do código: `95f2a857e418f60af2125b65aba23c735c0df1b7`. O commit final contém apenas este relatório, as capturas e os registos das conferências. As capturas são da construção desta cabeça do código; o commit de entrega não muda o código nem o HTML. Sem mudança de ramo, sem publicação e sem push. A identificação de autoria nos trailers é a pedida no mandato.
+
+### Decisões por achado e questões
+
+- **1, 2, 3, 7 e 9:** eram as cinco plantas nas cópias. A X10 da base já exigia maior, menor e igual para compara. A prova nova retira cada ramo de cada token isoladamente e exige a mensagem X10 que o nomeia.
+- **4, EX1-7 fechada:** comparaSaldos lê as duas linhas do saldo e compara os seus módulos quando têm o mesmo sinal. Não afirma cumprimento de uma meta mensal. Os dez ramos estão declarados por extenso em ambas as línguas; a previsão anual e a unidade vêm da linha por token. Com sinais diferentes, diz apenas o que o Orçamento previa. Os dois zeros têm uma frase própria.
+- **5 e 10, EX1-6 substituída:** o literal selado «Transfers of a general character between different levels of government» sustenta as transferências na abertura. «Public debt transactions» não sustenta a inclusão dos juros nem «que o Orçamento também prevê»: ambas saíram, com a promessa. A frase curta sobre não isolar os juros é auditada como conta, inteira, sob a condição sem_linhas; não usa aquele literal para afirmar uma localização dos juros.
+- **6, EX1-8 substituída:** saiu o ciclo redundante de ausências por parágrafo e a respetiva recolha de ausências. Cada ocorrência de texto de ramo, escolhido ou não, em main tem de estar contida num parágrafo cujo token o escolheu. A procura atravessa elementos HTML e normaliza os espaços. Lê main com e sem os selos, para também apanhar texto disfarçado com a classe de um selo. As duas plantas de prosa sem token falham pela mensagem «X6 · contabilidade dos ramos». O ramo não escolhido acrescentado ao seu parágrafo falha pela igualdade X6 e também pela contabilidade; não se apresenta a igualdade como prova da regra nova. Os controlos em PT e EN preservam as duas contas corretas, com défice e excedente em parágrafos distintos.
+- **8, EX1-9:** não existe uma conferência autónoma de perímetro nesta célula. A planta muda apenas o valor visível para o saldo da administração central; mantém data-claim, href e o restante selo. Falha pela igualdade da X6 com o valor da linha declarada, como o nome e a mensagem da planta dizem. Não depende da X8.
+- **11, EX1-10:** «No fim de» e «apresentavam um saldo acumulado» substituem a abertura repetida e o fecho indevido. A frase distingue a conta das administrações públicas do outro ano, que entra por periodo. O exemplo do mandato dizia «parágrafo anterior», mas a ordem real coloca essa conta depois. Optou-se por não indicar posição. O apoio na nota interna é uma exceção estreita da auditoria: só a linha do saldo executado e os dois literais citados são admitidos. A nota inteira não é publicada.
+- **12:** origens.mjs não precisava de correção. As duas origens foram conferidas contra os ficheiros e os registos dos pedidos no motor. A duração do typecheck continua com o lugar de direção; esta passagem não muda a maquinaria.
+
+### Frases novas lidas do HTML
+
+O guião de capturas extraiu estes textos do HTML construído, retirando os selos e normalizando os espaços. Os valores e os anos não foram transcritos à mão.
+
+**PT**
+
+> O Orçamento do Estado para 2026 diz, euro a euro, para onde vai o dinheiro. De cada cem euros, 17,07 vão para a saúde, 13,73 para a proteção social, 10,91 para a educação e 11,77 para os assuntos económicos. A maior fatia, 33,18, é a dos serviços gerais das administrações públicas, onde a classificação das funções conta as transferências entre administrações.
+
+> Estes números não isolam o custo dos juros da dívida.
+
+> No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de −845,8 milhões de euros, um défice (gastou mais do que recebeu); é um défice menor do que o que o Orçamento previa para o ano inteiro (−1 789,8 milhões de euros). É outra conta, diferente da das administrações públicas de 2025.
+
+**EN**
+
+> The State Budget for 2026 says, euro by euro, where the money goes. Of every hundred euros, 17,07 go to health, 13,73 to social protection, 10,91 to education and 11,77 to economic affairs. The largest share, 33,18, is general public services, where the classification of functions counts the transfers between levels of government.
+
+> These figures do not isolate the cost of the interest on the debt.
+
+> By the end of August 2026, the accounts of central government and social security showed a cumulative balance of −845,8 million euros, a deficit (it spent more than it took in); it is a smaller deficit than the one the Budget forecast for the full year (−1 789,8 million euros). This is a different account from that of general government in 2025.
+
+### Ramos e provas
+
+- sinal: positivo
+- sinal: negativo
+- sinal: zero
+- comparaSaldos: deficitMaior
+- comparaSaldos: deficitMenor
+- comparaSaldos: deficitIgual
+- comparaSaldos: excedenteMaior
+- comparaSaldos: excedenteMenor
+- comparaSaldos: excedenteIgual
+- comparaSaldos: nulos
+- comparaSaldos: diferentesNegativo
+- comparaSaldos: diferentesPositivo
+- comparaSaldos: diferentesZero
+- compara: maior
+- compara: menor
+- compara: igual
+
+Os 26 cenários nas duas línguas cobrem módulos menores, maiores e iguais em défices e excedentes, ambos nulos, cada lado isoladamente nulo e todos os pares de sinais diferentes. Comparam o resolvedor com a conta independente da célula e afirmam o ramo esperado. As 38 retiradas isoladas exigem que a X10 nomeie o ramo retirado. Os textos, caminhos e mensagens estão em [explicacao.json](portoes-e/explicacao.json), incluindo os dois controlos de coexistência.
+
+A célula recontou 2 páginas, 117 folhas e 165 partes auditadas. As 34 plantas abaixo morderam. A mensagem de cada uma é a devolvida pela célula, não uma etiqueta do construtor.
+
+| Planta | Mordeu | Mensagem |
+|---|---|---|
+| o ramo do sinal trocado (excedente por défice, ou o contrário) | sim | X6 · o parágrafo seccoes[3].conteudo[0].paragrafo difere da conta.<br>      esperado: No fim de 2025, a dívida pública valia 89,7 % do que o país produz …<br>      rendido:  No fim de 2025, a dívida pública valia 89,7 % do que o país produz … |
+| EX1-e: o sinal da execução trocado | sim | X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.<br>      esperado: No fim de agosto de 2026, as contas da administração central e da s…<br>      rendido:  No fim de agosto de 2026, as contas da administração central e da s… |
+| EX1-e: ramo em prosa sem token, um défice (gastou mais do que recebeu) | sim | X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «um défice (gastou mais do que recebeu)» |
+| EX1-e: ramo em prosa sem token, um saldo nulo (recebeu o mesmo que gastou) | sim | X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «um saldo nulo (recebeu o mesmo que gastou)» |
+| EX1-e: ramo disfarçado com a classe de um selo | sim | X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «um saldo nulo (recebeu o mesmo que gastou)» |
+| EX1-d: o ramo do ano anterior acrescentado à execução | sim | X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.<br>      esperado: No fim de agosto de 2026, as contas da administração central e da s…<br>      rendido:  No fim de agosto de 2026, as contas da administração central e da s… \| X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «um excedente (recebeu mais do que gastou)» |
+| EX1-e: a comparação dos módulos invertida | sim | X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.<br>      esperado: No fim de agosto de 2026, as contas da administração central e da s…<br>      rendido:  No fim de agosto de 2026, as contas da administração central e da s… \| X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «é um défice maior do que o que o Orçamento previa para o ano inteir…» |
+| EX1-e: o sinal da previsão trocado | sim | X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.<br>      esperado: No fim de agosto de 2026, as contas da administração central e da s…<br>      rendido:  No fim de agosto de 2026, as contas da administração central e da s… |
+| EX1-e: os dois sinais trocados | sim | X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.<br>      esperado: No fim de agosto de 2026, as contas da administração central e da s…<br>      rendido:  No fim de agosto de 2026, as contas da administração central e da s… \| X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «um excedente (recebeu mais do que gastou)» \| X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «é um excedente menor do que o que o Orçamento previa para o ano int…» |
+| EX1-e: valor de outro perímetro, igualdade X6 com selo intacto | sim | X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.<br>      esperado: No fim de agosto de 2026, as contas da administração central e da s…<br>      rendido:  No fim de agosto de 2026, as contas da administração central e da s… |
+| EX1-d: a previsão anual apresentada como mensal | sim | X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.<br>      esperado: No fim de agosto de 2026, as contas da administração central e da s…<br>      rendido:  No fim de agosto de 2026, as contas da administração central e da s… |
+| EX1-d: a contradição dos juros reposta | sim | X6 · o parágrafo naoDiz[0] difere da conta.<br>      esperado: O orçamento é uma previsão: o que se gasta de facto lê-se na execuç…<br>      rendido:  O orçamento é uma previsão: o que se gasta de facto lê-se na execuç… |
+| as palavras de uma condição falsa rendidas (os três programas) | sim | X6 · o parágrafo seccoes[2].conteudo[0].paragrafo difere da conta.<br>      esperado: Até agosto de 2026, a administração central e a segurança social ti…<br>      rendido:  Até agosto de 2026, a administração central e a segurança social ti… |
+| o nome de outra função | sim | X6 · o parágrafo abertura[0] difere da conta.<br>      esperado: O Orçamento do Estado para 2026 diz, euro a euro, para onde vai o d…<br>      rendido:  O Orçamento do Estado para 2026 diz, euro a euro, para onde vai o d… |
+| um parágrafo a menos | sim | X6 · os parágrafos rendidos (abertura[0], seccoes[0].conteudo[1].paragrafo, seccoes[1].conteudo[0].paragrafo, seccoes[1].conteudo[2].paragrafo, seccoes[2].conteudo[1].paragrafo, seccoes[3].conteudo[0].paragrafo, naoDiz[0]) não são os que a conta dá (abertura[0], seccoes[0].conteudo[1].paragrafo, seccoes[1].conteudo[0].paragrafo, seccoes[1].conteudo[2].paragrafo, seccoes[2].conteudo[0].paragrafo, seccoes[2].conteudo[1].paragrafo, seccoes[3].conteudo[0].paragrafo, naoDiz[0]) |
+| o ano trocado no título | sim | X5 · o título rendido («Para onde vai o dinheiro do Estado em 2025») não é o recomposto («Para onde vai o dinheiro do Estado em 2026») |
+| o título de uma secção trocado | sim | X7 · os títulos das secções (Por programa \| Por ministério \| O que já se gastou este ano \| A dívida e o saldo \| O que isto não diz) não são os declarados (Por função \| Por ministério \| O que já se gastou este ano \| A dívida e o saldo \| O que isto não diz) |
+| a ordem dos programas que mais gastaram trocada | sim | X6 · o parágrafo seccoes[2].conteudo[0].paragrafo difere da conta.<br>      esperado: Até agosto de 2026, a administração central e a segurança social ti…<br>      rendido:  Até agosto de 2026, a administração central e a segurança social ti… |
+| a porta dos números tirada do fim | sim | X8 · falta a porta para os números e as fontes no fim \| X8 · as portas do fim (nenhuma) não são as declaradas (/livro-razao Números e fontes →) |
+| o lado da dívida trocado | sim | X6 · o parágrafo seccoes[3].conteudo[0].paragrafo difere da conta.<br>      esperado: No fim de 2025, a dívida pública valia 89,7 % do que o país produz …<br>      rendido:  No fim de 2025, a dívida pública valia 89,7 % do que o país produz … \| X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «abaixo dos 81,7 % da média da União Europeia» |
+| uma marca das palavras declaradas num parágrafo que a célula não compara | sim | X · a marca das palavras declaradas está num sítio que a célula da explicação não confere (explicacao): <p> «Uma frase que ninguém compara.» |
+| uma figura declarada tirada da página | sim | F22 · a figura declarada «ministerios» da explicação «dinheiro-do-estado-2026» não está na página |
+| o selo de um valor tirado | sim | X8 · o valor de «oe-2026-cem-euros-funcao-07» num parágrafo não tem ao lado o selo do seu recibo |
+| uma linha que não é dos programas no token «maiores» | sim | X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.pt[6] tem linhas fora da família /^execucao-2026-08-despesa-programa-\d{3}$/: oe-2026-despesa-ministerio-saude \| X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.en[6] tem linhas fora da família /^execucao-2026-08-despesa-programa-\d{3}$/: oe-2026-despesa-ministerio-saude |
+| um programa a menos no token «maiores» | sim | X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.pt[6] não tem a família inteira /^execucao-2026-08-despesa-programa-\d{3}$/ do livro: faltam execucao-2026-08-despesa-programa-020 \| X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.en[6] não tem a família inteira /^execucao-2026-08-despesa-programa-\d{3}$/ do livro: faltam execucao-2026-08-despesa-programa-020 |
+| o ramo «zero» tirado do sinal do saldo | sim | X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.pt[5] não declara o ramo «zero» \| X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.en[5] não declara o ramo «zero» \| X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.pt[9] não declara o ramo «zero» \| X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.en[9] não declara o ramo «zero» |
+| um «n» maior do que a lista no token «maiores» | sim | X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.pt[6] tem n=21, fora de 1 a 20 \| X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.en[6] tem n=21, fora de 1 a 20 |
+| um literal que não está no campo que cita | sim | X · dinheiro-do-estado-2026: X2 · a folha «Para onde vai o dinheiro do Estado em » (titulo[0]), parte 1 («Para onde vai o dinheiro do Estado») cita «uma frase que nenhuma fonte escreveu», que não está no campo «excerto» da origem «dados-gov-oe-despesa-funcional» |
+| uma conta fora de um ramo e de uma condição | sim | X · dinheiro-do-estado-2026: X2 · a folha « diz, euro a euro, para onde vai o dinheiro. De cada cem euros, » (abertura[0][2]), parte 1 (« diz, euro a euro,») está marcada como conta e não está num ramo do sinal nem em palavras guardadas por condições |
+| uma folha sem auditoria | sim | X · dinheiro-do-estado-2026: X1 · a folha «Para onde vai o dinheiro do Estado em » (titulo[0]) não tem auditoria: uma explicação mudada precisa de nova leitura das origens |
+| uma ligação com uma palavra que diz alguma coisa | sim | X · dinheiro-do-estado-2026: X1 · a folha « e » (abertura[0][14]) não tem auditoria: uma explicação mudada precisa de nova leitura das origens \| X · dinheiro-do-estado-2026: X1 · a auditoria tem uma folha (« e só », abertura[0][14]) que a declaração não tem |
+| uma leitura do projeto sem dizer sobre o que é | sim | X · dinheiro-do-estado-2026: X2 · a folha «Para onde vai o dinheiro do Estado em » (titulo[0]), parte 1 («Para onde vai o dinheiro do Estado») é uma leitura do projeto e não diz sobre o que é («sobre») |
+| uma porta do fim que a explicação não declara | sim | X · dinheiro-do-estado-2026: X2 · a folha « O detalhe por programa e por ministério, com a fonte de cada númer…» (naoDiz[0][2]), parte 2 («, com a fonte de cada número, está no recibo de cada um, a um toque.») aponta para a porta «estudo-oe-2026», que a explicação não declara no fim |
+| o sha256 de uma origem trocado (com o motor ao lado) | sim | X3 · origem «dados-gov-oe-despesa-funcional»: o sha256 do ficheiro no motor (43bb18f15b66…) não é o do selo (000000000000…) \| X3 · origem «dados-gov-oe-despesa-funcional»: o sha256 do registo do pedido não é o do selo |
+
+### Portões e capturas
+
+Comando: `sh scripts/leituras/portoes.sh <worktree absoluta> design/especime-v3/medicoes/ex2-2026-10-06/portoes-e`, com RESEARCHHUB_DIR a apontar para o motor local apenas no ambiente da execução. Os códigos foram lidos de ficheiro depois de os processos terminarem. A tranca protegeu a corrida; as cabeças de início e fim coincidem.
+
+| Portão | Código lido |
+|---|---|
+| [build](portoes-e/build.codigo) | 0 |
+| [verify](portoes-e/verify.codigo) | 0 |
+| [typecheck](portoes-e/typecheck.codigo) | 0 |
+| [explicacao](portoes-e/explicacao.codigo) | 0 |
+| [acertos](portoes-e/acertos.codigo) | 0 |
+
+- [PT, 390 px, inteira](../../capturas/ex2-2026-10-06/ex1e-pt-390-inteira.png).
+- [PT, 390 px, correcoes](../../capturas/ex2-2026-10-06/ex1e-pt-390-correcoes.png).
+- [PT, 1280 px, inteira](../../capturas/ex2-2026-10-06/ex1e-pt-1280-inteira.png).
+- [PT, 1280 px, correcoes](../../capturas/ex2-2026-10-06/ex1e-pt-1280-correcoes.png).
+- [EN, 390 px, inteira](../../capturas/ex2-2026-10-06/ex1e-en-390-inteira.png).
+- [EN, 390 px, correcoes](../../capturas/ex2-2026-10-06/ex1e-en-390-correcoes.png).
+- [EN, 1280 px, inteira](../../capturas/ex2-2026-10-06/ex1e-en-1280-inteira.png).
+- [EN, 1280 px, correcoes](../../capturas/ex2-2026-10-06/ex1e-en-1280-correcoes.png).
+
+O [manifesto](capturas-ex1e.json) guarda a cabeça, os resumos SHA-256, os textos e as medidas de largura. Mede 0 erros de transbordo e abre os recibos dos dois saldos em cada combinação de língua e largura. A inspeção visual está em [inspecao-ex1e.json](inspecao-ex1e.json).
+
+A conferência adicional dos números do relatório também passou. Os dois números históricos da planta L1 do EX2 estavam no registo de texto, mas não nos JSON que o detetor lê. Foram extraídos desse registo existente, com o seu SHA-256, para [apoio-numeros-historicos.json](portoes-e/apoio-numeros-historicos.json), sem mudar a medição histórica. O resultado está em [numeros-relatorio.log](portoes-e/numeros-relatorio.log).
+
+O registo grande de alvos fica em [alvos.json.gz](portoes-e/alvos.json.gz). A descompressão foi comparada byte a byte com o original; [compressao.json](portoes-e/compressao.json) guarda o resumo e os tamanhos. Os códigos e as medições não foram alterados.
+
+### Commits, trabalho reservado e custo
+
+- `9862924a EX1-e: registar a leitura, as plantas e o mandato`
+- `d54661f2 EX1-e: comparar a dimensão dos défices e excedentes`
+- `7dff1862 EX1-e: retirar as afirmações sem apoio sobre os juros`
+- `f71dd65b EX1-e: contar os ramos em toda a página`
+- `72b45a0e EX1-e: provar o valor de outro perímetro com o selo intacto`
+- `c5811c8b EX1-e: distinguir o saldo acumulado e as duas contas`
+- `df839ae6 EX1-e: preparar as provas e os artefactos da entrega`
+- `95f2a857 EX1-e: recusar ramos disfarçados com a classe dos selos`
+
+Uma corrida inicial dos portões foi interrompida antes dos três códigos, quando uma planta adicional encontrou texto indevido disfarçado com a classe de um selo. A lacuna foi corrigida; essa tentativa não serve de prova. Uma segunda corrida foi interrompida para juntar os dois trailers num único bloco final das mensagens: o Git só reconhecia o último enquanto estavam separados por uma linha vazia. Foram reescritas apenas as mensagens dos oito commits locais, verificando que cada árvore de ficheiros ficou idêntica e que os dois trailers eram reconhecidos. A corrida final de portoes-e começou de novo na cabeça corrigida.
+
+O último commit acrescenta só os artefactos da entrega. Ficam para JD1 as linhas próprias dos juros e o arredondamento previsto em EX1-5, por decisão do mandato; esta passagem não promete esses valores na página. A leitura a frio e a decisão de integração pertencem ao lugar de direção. Nenhum portão foi dispensado.
+
+Custo-alvo: cento e cinquenta mil símbolos. Não foi observada uma linha «tokens used» desta construção; custo efetivo e confronto com o alvo: [verify], a apurar no registo do lançador. Não se inventa uma contagem.
+
+## A passagem EX1-f
+
+*Nota do lugar de direção (12.10.2026): as questões desta passagem tinham saído como EX1-9 e EX1-10 por erro do mandato, números que a passagem EX1-e já dera à conferência do perímetro e à redação da abertura; passam a EX1-11 (o saldo homólogo de 2025) e EX1-12 (as duas transferências), e os números da EX1-e ficam como estavam (o achado 5 da leitura curta da EX1-f).*
+
+A X10 exigia todos os ramos mas não prendia as palavras ao caso que os escolhe. Agora cada token de valor declara, na própria edição, palavras obrigatórias e proibidas para cada ramo. A X10 confere todos, mesmo os não escolhidos, com a mensagem própria «X10 · palavras do ramo». A X6 confere também as palavras do trecho rendido de cada token que consegue isolar pelo prefixo e pelo sufixo do parágrafo. Alterações nesses limites continuam cobertas pela igualdade X6; não se apresenta esta conferência de palavras como um analisador semântico geral.
+
+Base: `6f5264b9`, ramo `ex1d-2026-10-11`. Cabeça do código: `eee10a344e181e520862be5213404816264c7458`. As capturas são da construção desta cabeça, a última que muda código; o commit final só acrescenta este relatório, capturas e registos das conferências. Nenhuma mudança de ramo ou publicação. Os trailers seguem o mandato.
+
+### Decisões por achado e questões reservadas
+
+- **1 a 5:** eram os cinco estragos das cópias da leitura. Os registos e o mandato foram comprometidos antes das correções.
+- **6:** os oito tokens nas duas edições declaram o vocabulário de todos os seus ramos. A comparação usa palavras inteiras, com acentos, e aceita expressões como «the same». As plantas trocam menor por maior e retiram a palavra do sinal de diferentesPositivo, isoladamente nas duas línguas; outra retira a própria declaração das palavras. O ramo zero da outra conta passou de «zero balance» a «nil balance», para usar o vocabulário pedido; a auditoria acompanha a mudança.
+- **7:** a comparação termina com os meses que ainda faltam, sem escrever números à mão. A parte tem apoio em unit da linha executada, «acumulados de janeiro a agosto», e no período anual da previsão. O excerto da linha do saldo contém a linha numérica do quadro, não a expressão «janeiro a agosto»; essa expressão está em unit e na nota. Regista-se esta precisão em relação ao mandato, sem atribuir palavras ao excerto que ele não contém.
+- **EX1-11, reservada ao motor:** selar `execucao-2025-08-saldo-global-administracao-central-seguranca-social`, a partir do mesmo quadro. O excerto selado já traz o valor homólogo, mas o livro não tem essa linha. Só uma passagem própria poderá dizer que o saldo passou de excedente a défice nos mesmos oito meses. Não se transcreveu esse valor para a página.
+- **8:** usa-se «contas públicas» e «parágrafo seguinte» nas duas edições. O HTML confirma que seccoes[3].conteudo[0].paragrafo vem imediatamente depois de seccoes[2].conteudo[1].paragrafo, embora haja um título de secção entre ambos. A auditoria apoia a distinção na nota autorizada da linha e nos campos publicados já citados; a posição é uma parte aponta, conferida contra a ordem dos parágrafos. A planta de posição contrária falha pela X2.
+- **9, EX1-12, reservada ao bloco de higiene:** distinguir transferências entre administrações de transferências entre os serviços exige palavras seladas que distingam as duas. A passagem regista a questão e mantém o texto existente.
+- **10:** a planta do sinal da previsão rende o ramo real diferentesPositivo que a inversão do sinal escolheria; mantém os valores e os selos originais, para isolar a escolha indevida das palavras. Tem de falhar tanto pela contabilidade dos ramos como pela conferência das palavras do ramo escolhido, em mensagens distintas. Os cenários continuam a provar a lógica dos sinais e dos módulos.
+- **11:** o typecheck em zero segundos é o compilador nativo do TypeScript 7, provado pelo lugar de direção com um erro de tipo plantado em 12.10.2026 (M67); não se mudou a maquinaria.
+
+As designações EX1-11 e EX1-12 acima são as do mandato EX1-f e substituem, nesta passagem, os usos desses números na secção histórica EX1-e. Não surgiu uma questão nova a numerar a partir de EX1-11.
+
+### Frases novas lidas do HTML
+
+Os anos e os valores abaixo foram extraídos da página construída pelo guião das capturas, retirando os selos e normalizando os espaços.
+
+**PT**
+
+> No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de −845,8 milhões de euros, um défice (gastou mais do que recebeu); é um défice menor do que o que o Orçamento previa para o ano inteiro (−1 789,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de 2025 do parágrafo seguinte.
+
+**EN**
+
+> By the end of August 2026, the accounts of central government and social security showed a cumulative balance of −845,8 million euros, a deficit (it spent more than it took in); it is a smaller deficit than the one the Budget forecast for the full year (−1 789,8 million euros), and September to December are still to come. It is a different account, not the one of the public accounts of 2025 in the next paragraph.
+
+### Palavras declaradas por ramo
+
+Cada linha abaixo foi lida da própria declaração pela X10. A tabela conserva todas as ocorrências, incluindo os dois tokens sinal por língua.
+
+| Caminho e edição | Ramo | Tem de conter | Não pode conter |
+|---|---|---|---|
+| seccoes[2].conteudo[1].paragrafo.pt[5] | positivo | excedente | défice, nulo |
+| seccoes[2].conteudo[1].paragrafo.pt[5] | negativo | défice | excedente, nulo |
+| seccoes[2].conteudo[1].paragrafo.pt[5] | zero | nulo | excedente, défice |
+| seccoes[2].conteudo[1].paragrafo.pt[7] | deficitMaior | défice, maior | excedente, nulo, menor, igual |
+| seccoes[2].conteudo[1].paragrafo.pt[7] | deficitMenor | défice, menor | excedente, nulo, maior, igual |
+| seccoes[2].conteudo[1].paragrafo.pt[7] | deficitIgual | défice, igual | excedente, nulo, maior, menor |
+| seccoes[2].conteudo[1].paragrafo.pt[7] | excedenteMaior | excedente, maior | défice, nulo, menor, igual |
+| seccoes[2].conteudo[1].paragrafo.pt[7] | excedenteMenor | excedente, menor | défice, nulo, maior, igual |
+| seccoes[2].conteudo[1].paragrafo.pt[7] | excedenteIgual | excedente, igual | défice, nulo, maior, menor |
+| seccoes[2].conteudo[1].paragrafo.pt[7] | nulos | nulo | excedente, défice, maior, menor, igual |
+| seccoes[2].conteudo[1].paragrafo.pt[7] | diferentesNegativo | défice | excedente, nulo, maior, menor, igual |
+| seccoes[2].conteudo[1].paragrafo.pt[7] | diferentesPositivo | excedente | défice, nulo, maior, menor, igual |
+| seccoes[2].conteudo[1].paragrafo.pt[7] | diferentesZero | nulo | excedente, défice, maior, menor, igual |
+| seccoes[2].conteudo[1].paragrafo.en[5] | positivo | surplus | deficit, nil |
+| seccoes[2].conteudo[1].paragrafo.en[5] | negativo | deficit | surplus, nil |
+| seccoes[2].conteudo[1].paragrafo.en[5] | zero | nil | surplus, deficit |
+| seccoes[2].conteudo[1].paragrafo.en[7] | deficitMaior | deficit, larger | surplus, nil, smaller, the same |
+| seccoes[2].conteudo[1].paragrafo.en[7] | deficitMenor | deficit, smaller | surplus, nil, larger, the same |
+| seccoes[2].conteudo[1].paragrafo.en[7] | deficitIgual | deficit, the same | surplus, nil, larger, smaller |
+| seccoes[2].conteudo[1].paragrafo.en[7] | excedenteMaior | surplus, larger | deficit, nil, smaller, the same |
+| seccoes[2].conteudo[1].paragrafo.en[7] | excedenteMenor | surplus, smaller | deficit, nil, larger, the same |
+| seccoes[2].conteudo[1].paragrafo.en[7] | excedenteIgual | surplus, the same | deficit, nil, larger, smaller |
+| seccoes[2].conteudo[1].paragrafo.en[7] | nulos | nil | surplus, deficit, larger, smaller, the same |
+| seccoes[2].conteudo[1].paragrafo.en[7] | diferentesNegativo | deficit | surplus, nil, larger, smaller, the same |
+| seccoes[2].conteudo[1].paragrafo.en[7] | diferentesPositivo | surplus | deficit, nil, larger, smaller, the same |
+| seccoes[2].conteudo[1].paragrafo.en[7] | diferentesZero | nil | surplus, deficit, larger, smaller, the same |
+| seccoes[3].conteudo[0].paragrafo.pt[5] | maior | acima | abaixo, igual |
+| seccoes[3].conteudo[0].paragrafo.pt[5] | menor | abaixo | acima, igual |
+| seccoes[3].conteudo[0].paragrafo.pt[5] | igual | igual | acima, abaixo |
+| seccoes[3].conteudo[0].paragrafo.pt[9] | positivo | excedente | défice, nulo |
+| seccoes[3].conteudo[0].paragrafo.pt[9] | negativo | défice | excedente, nulo |
+| seccoes[3].conteudo[0].paragrafo.pt[9] | zero | nulo | excedente, défice |
+| seccoes[3].conteudo[0].paragrafo.en[5] | maior | above | below, equal |
+| seccoes[3].conteudo[0].paragrafo.en[5] | menor | below | above, equal |
+| seccoes[3].conteudo[0].paragrafo.en[5] | igual | equal | above, below |
+| seccoes[3].conteudo[0].paragrafo.en[9] | positivo | surplus | deficit, nil |
+| seccoes[3].conteudo[0].paragrafo.en[9] | negativo | deficit | surplus, nil |
+| seccoes[3].conteudo[0].paragrafo.en[9] | zero | nil | surplus, deficit |
+
+### Plantas e cenários
+
+Os 26 cenários de saldos continuam a confrontar o resolvedor com a conta independente; as 38 retiradas isoladas exigem a mensagem do ramo em falta. Os dois controlos de coexistência mantêm a execução em défice e as contas públicas em excedente, cada qual no seu parágrafo. A X10 verifica as palavras dos ramos independentemente destes cenários e sem consultar a auditoria das folhas.
+
+A célula recontou 2 páginas, 117 folhas e 166 partes auditadas. Morderam 41 de 41 plantas. Todas as mensagens são as devolvidas pela célula, guardadas também em [explicacao.json](portoes-f/explicacao.json).
+
+| Planta | Mordeu | Mensagem |
+|---|---|---|
+| o ramo do sinal trocado (excedente por défice, ou o contrário) | sim | X6 · o parágrafo seccoes[3].conteudo[0].paragrafo difere da conta.<br>      esperado: No fim de 2025, a dívida pública valia 89,7 % do que o país produz …<br>      rendido:  No fim de 2025, a dívida pública valia 89,7 % do que o país produz … \| X6 · palavras do ramo: seccoes[3].conteudo[0].paragrafo, ramo «positivo» falta «excedente» \| X6 · palavras do ramo: seccoes[3].conteudo[0].paragrafo, ramo «positivo» contém a palavra proibida «défice» |
+| EX1-e: o sinal da execução trocado | sim | X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.<br>      esperado: No fim de agosto de 2026, as contas da administração central e da s…<br>      rendido:  No fim de agosto de 2026, as contas da administração central e da s… \| X6 · palavras do ramo: seccoes[2].conteudo[1].paragrafo, ramo «negativo» falta «défice» \| X6 · palavras do ramo: seccoes[2].conteudo[1].paragrafo, ramo «negativo» contém a palavra proibida «excedente» |
+| EX1-e: ramo em prosa sem token, um défice (gastou mais do que recebeu) | sim | X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «um défice (gastou mais do que recebeu)» |
+| EX1-e: ramo em prosa sem token, um saldo nulo (recebeu o mesmo que gastou) | sim | X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «um saldo nulo (recebeu o mesmo que gastou)» |
+| EX1-e: ramo disfarçado com a classe de um selo | sim | X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «um saldo nulo (recebeu o mesmo que gastou)» |
+| EX1-d: o ramo do ano anterior acrescentado à execução | sim | X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.<br>      esperado: No fim de agosto de 2026, as contas da administração central e da s…<br>      rendido:  No fim de agosto de 2026, as contas da administração central e da s… \| X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «um excedente (recebeu mais do que gastou)» |
+| EX1-e: a comparação dos módulos invertida | sim | X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.<br>      esperado: No fim de agosto de 2026, as contas da administração central e da s…<br>      rendido:  No fim de agosto de 2026, as contas da administração central e da s… \| X6 · palavras do ramo: seccoes[2].conteudo[1].paragrafo, ramo «deficitMenor» falta «menor» \| X6 · palavras do ramo: seccoes[2].conteudo[1].paragrafo, ramo «deficitMenor» contém a palavra proibida «maior» \| X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «é um défice maior do que o que o Orçamento previa para o ano inteir…» |
+| EX1-f: o sinal da previsão trocado rende diferentesPositivo | sim | X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.<br>      esperado: No fim de agosto de 2026, as contas da administração central e da s…<br>      rendido:  No fim de agosto de 2026, as contas da administração central e da s… \| X6 · palavras do ramo: seccoes[2].conteudo[1].paragrafo, ramo «deficitMenor» falta «défice» \| X6 · palavras do ramo: seccoes[2].conteudo[1].paragrafo, ramo «deficitMenor» falta «menor» \| X6 · palavras do ramo: seccoes[2].conteudo[1].paragrafo, ramo «deficitMenor» contém a palavra proibida «excedente» \| X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «o Orçamento previa para o ano inteiro um excedente de −1 789,8 milh…» |
+| EX1-e: os dois sinais trocados | sim | X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.<br>      esperado: No fim de agosto de 2026, as contas da administração central e da s…<br>      rendido:  No fim de agosto de 2026, as contas da administração central e da s… \| X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «um excedente (recebeu mais do que gastou)» \| X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «é um excedente menor do que o que o Orçamento previa para o ano int…» |
+| EX1-e: valor de outro perímetro, igualdade X6 com selo intacto | sim | X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.<br>      esperado: No fim de agosto de 2026, as contas da administração central e da s…<br>      rendido:  No fim de agosto de 2026, as contas da administração central e da s… |
+| EX1-d: a previsão anual apresentada como mensal | sim | X6 · o parágrafo seccoes[2].conteudo[1].paragrafo difere da conta.<br>      esperado: No fim de agosto de 2026, as contas da administração central e da s…<br>      rendido:  No fim de agosto de 2026, as contas da administração central e da s… |
+| EX1-d: a contradição dos juros reposta | sim | X6 · o parágrafo naoDiz[0] difere da conta.<br>      esperado: O orçamento é uma previsão: o que se gasta de facto lê-se na execuç…<br>      rendido:  O orçamento é uma previsão: o que se gasta de facto lê-se na execuç… |
+| as palavras de uma condição falsa rendidas (os três programas) | sim | X6 · o parágrafo seccoes[2].conteudo[0].paragrafo difere da conta.<br>      esperado: Até agosto de 2026, a administração central e a segurança social ti…<br>      rendido:  Até agosto de 2026, a administração central e a segurança social ti… |
+| o nome de outra função | sim | X6 · o parágrafo abertura[0] difere da conta.<br>      esperado: O Orçamento do Estado para 2026 diz, euro a euro, para onde vai o d…<br>      rendido:  O Orçamento do Estado para 2026 diz, euro a euro, para onde vai o d… |
+| um parágrafo a menos | sim | X6 · os parágrafos rendidos (abertura[0], seccoes[0].conteudo[1].paragrafo, seccoes[1].conteudo[0].paragrafo, seccoes[1].conteudo[2].paragrafo, seccoes[2].conteudo[1].paragrafo, seccoes[3].conteudo[0].paragrafo, naoDiz[0]) não são os que a conta dá (abertura[0], seccoes[0].conteudo[1].paragrafo, seccoes[1].conteudo[0].paragrafo, seccoes[1].conteudo[2].paragrafo, seccoes[2].conteudo[0].paragrafo, seccoes[2].conteudo[1].paragrafo, seccoes[3].conteudo[0].paragrafo, naoDiz[0]) |
+| o ano trocado no título | sim | X5 · o título rendido («Para onde vai o dinheiro do Estado em 2025») não é o recomposto («Para onde vai o dinheiro do Estado em 2026») |
+| o título de uma secção trocado | sim | X7 · os títulos das secções (Por programa \| Por ministério \| O que já se gastou este ano \| A dívida e o saldo \| O que isto não diz) não são os declarados (Por função \| Por ministério \| O que já se gastou este ano \| A dívida e o saldo \| O que isto não diz) |
+| a ordem dos programas que mais gastaram trocada | sim | X6 · o parágrafo seccoes[2].conteudo[0].paragrafo difere da conta.<br>      esperado: Até agosto de 2026, a administração central e a segurança social ti…<br>      rendido:  Até agosto de 2026, a administração central e a segurança social ti… |
+| a porta dos números tirada do fim | sim | X8 · falta a porta para os números e as fontes no fim \| X8 · as portas do fim (nenhuma) não são as declaradas (/livro-razao Números e fontes →) |
+| o lado da dívida trocado | sim | X6 · o parágrafo seccoes[3].conteudo[0].paragrafo difere da conta.<br>      esperado: No fim de 2025, a dívida pública valia 89,7 % do que o país produz …<br>      rendido:  No fim de 2025, a dívida pública valia 89,7 % do que o país produz … \| X6 · palavras do ramo: seccoes[3].conteudo[0].paragrafo, ramo «maior» falta «acima» \| X6 · palavras do ramo: seccoes[3].conteudo[0].paragrafo, ramo «maior» contém a palavra proibida «abaixo» \| X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu: «abaixo dos 81,7 % da média da União Europeia» |
+| uma marca das palavras declaradas num parágrafo que a célula não compara | sim | X · a marca das palavras declaradas está num sítio que a célula da explicação não confere (explicacao): <p> «Uma frase que ninguém compara.» |
+| uma figura declarada tirada da página | sim | F22 · a figura declarada «ministerios» da explicação «dinheiro-do-estado-2026» não está na página |
+| o selo de um valor tirado | sim | X8 · o valor de «oe-2026-cem-euros-funcao-07» num parágrafo não tem ao lado o selo do seu recibo |
+| uma linha que não é dos programas no token «maiores» | sim | X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.pt[6] tem linhas fora da família /^execucao-2026-08-despesa-programa-\d{3}$/: oe-2026-despesa-ministerio-saude \| X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.en[6] tem linhas fora da família /^execucao-2026-08-despesa-programa-\d{3}$/: oe-2026-despesa-ministerio-saude |
+| um programa a menos no token «maiores» | sim | X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.pt[6] não tem a família inteira /^execucao-2026-08-despesa-programa-\d{3}$/ do livro: faltam execucao-2026-08-despesa-programa-020 \| X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.en[6] não tem a família inteira /^execucao-2026-08-despesa-programa-\d{3}$/ do livro: faltam execucao-2026-08-despesa-programa-020 |
+| EX1-f (pt): deficitMenor diz maior | sim | X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.pt[7], ramo «deficitMenor» falta «menor» \| X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.pt[7], ramo «deficitMenor» contém a palavra proibida «maior» |
+| EX1-f (pt): diferentesPositivo sem a palavra do sinal | sim | X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.pt[7], ramo «diferentesPositivo» falta «excedente» |
+| EX1-f (pt): ramo sem declaração das palavras | sim | X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.pt[7], ramo «deficitMenor» não declara as palavras obrigatórias e proibidas |
+| EX1-f (en): deficitMenor diz maior | sim | X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.en[7], ramo «deficitMenor» falta «smaller» \| X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.en[7], ramo «deficitMenor» contém a palavra proibida «larger» |
+| EX1-f (en): diferentesPositivo sem a palavra do sinal | sim | X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.en[7], ramo «diferentesPositivo» falta «surplus» |
+| EX1-f (en): ramo sem declaração das palavras | sim | X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.en[7], ramo «deficitMenor» não declara as palavras obrigatórias e proibidas |
+| o ramo «zero» tirado do sinal do saldo | sim | X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.pt[5] não declara o ramo «zero» \| X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.en[5] não declara o ramo «zero» \| X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.pt[9] não declara o ramo «zero» \| X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.en[9] não declara o ramo «zero» |
+| um «n» maior do que a lista no token «maiores» | sim | X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.pt[6] tem n=21, fora de 1 a 20 \| X9 · dinheiro-do-estado-2026: o token «maiores» em seccoes[2].conteudo[0].paragrafo.en[6] tem n=21, fora de 1 a 20 |
+| EX1-f: a referência aponta para o parágrafo anterior | sim | X · dinheiro-do-estado-2026: X2 · a folha « do parágrafo seguinte.» (seccoes[2].conteudo[1].paragrafo[10]), parte 1 (« do parágrafo seguinte.») não aponta para o parágrafo anterior declarado \| X · dinheiro-do-estado-2026: X2 · a folha « do parágrafo seguinte.» (seccoes[2].conteudo[1].paragrafo[10]), parte 1 (« do parágrafo seguinte.») não diz a posição declarada nas duas línguas |
+| um literal que não está no campo que cita | sim | X · dinheiro-do-estado-2026: X2 · a folha «Para onde vai o dinheiro do Estado em » (titulo[0]), parte 1 («Para onde vai o dinheiro do Estado») cita «uma frase que nenhuma fonte escreveu», que não está no campo «excerto» da origem «dados-gov-oe-despesa-funcional» |
+| uma conta fora de um ramo e de uma condição | sim | X · dinheiro-do-estado-2026: X2 · a folha « diz, euro a euro, para onde vai o dinheiro. De cada cem euros, » (abertura[0][2]), parte 1 (« diz, euro a euro,») está marcada como conta e não está num ramo do sinal nem em palavras guardadas por condições |
+| uma folha sem auditoria | sim | X · dinheiro-do-estado-2026: X1 · a folha «Para onde vai o dinheiro do Estado em » (titulo[0]) não tem auditoria: uma explicação mudada precisa de nova leitura das origens |
+| uma ligação com uma palavra que diz alguma coisa | sim | X · dinheiro-do-estado-2026: X1 · a folha « e » (abertura[0][14]) não tem auditoria: uma explicação mudada precisa de nova leitura das origens \| X · dinheiro-do-estado-2026: X1 · a auditoria tem uma folha (« e só », abertura[0][14]) que a declaração não tem |
+| uma leitura do projeto sem dizer sobre o que é | sim | X · dinheiro-do-estado-2026: X2 · a folha «Para onde vai o dinheiro do Estado em » (titulo[0]), parte 1 («Para onde vai o dinheiro do Estado») é uma leitura do projeto e não diz sobre o que é («sobre») |
+| uma porta do fim que a explicação não declara | sim | X · dinheiro-do-estado-2026: X2 · a folha « O detalhe por programa e por ministério, com a fonte de cada númer…» (naoDiz[0][2]), parte 2 («, com a fonte de cada número, está no recibo de cada um, a um toque.») aponta para a porta «estudo-oe-2026», que a explicação não declara no fim |
+| o sha256 de uma origem trocado (com o motor ao lado) | sim | X3 · origem «dados-gov-oe-despesa-funcional»: o sha256 do ficheiro no motor (43bb18f15b66…) não é o do selo (000000000000…) \| X3 · origem «dados-gov-oe-despesa-funcional»: o sha256 do registo do pedido não é o do selo |
+
+### Portões e capturas
+
+Comando: `sh scripts/leituras/portoes.sh <worktree absoluta> design/especime-v3/medicoes/ex2-2026-10-06/portoes-f`. RESEARCHHUB_DIR foi definido apenas no ambiente para conferir as origens contra o motor local. Códigos lidos dos ficheiros após terminarem os processos, pela tranca comum; as cabeças inicial e final coincidem.
+
+| Portão | Código lido |
+|---|---|
+| [build](portoes-f/build.codigo) | 0 |
+| [verify](portoes-f/verify.codigo) | 0 |
+| [typecheck](portoes-f/typecheck.codigo) | 0 |
+| [explicacao](portoes-f/explicacao.codigo) | 0 |
+| [acertos](portoes-f/acertos.codigo) | 0 |
+
+- [PT, 390 px, inteira](../../capturas/ex2-2026-10-06/ex1f-pt-390-inteira.png).
+- [PT, 390 px, correcoes](../../capturas/ex2-2026-10-06/ex1f-pt-390-correcoes.png).
+- [PT, 1280 px, inteira](../../capturas/ex2-2026-10-06/ex1f-pt-1280-inteira.png).
+- [PT, 1280 px, correcoes](../../capturas/ex2-2026-10-06/ex1f-pt-1280-correcoes.png).
+- [EN, 390 px, inteira](../../capturas/ex2-2026-10-06/ex1f-en-390-inteira.png).
+- [EN, 390 px, correcoes](../../capturas/ex2-2026-10-06/ex1f-en-390-correcoes.png).
+- [EN, 1280 px, inteira](../../capturas/ex2-2026-10-06/ex1f-en-1280-inteira.png).
+- [EN, 1280 px, correcoes](../../capturas/ex2-2026-10-06/ex1f-en-1280-correcoes.png).
+
+O [manifesto](capturas-ex1f.json) guarda a cabeça, as frases, a ordem dos parágrafos, os SHA-256 e as medidas de largura. As capturas têm 0 erros de transbordo medidos; os recibos dos dois saldos abriram em cada edição e largura. A [inspeção visual](inspecao-ex1f.json) regista a leitura das imagens.
+
+### Commits e custo
+
+- `abdb2f4a EX1-f: registar a leitura, as plantas e o mandato`
+- `6ac3e465 EX1-f: prender as palavras ao ramo que os valores escolhem`
+- `f8770ba9 EX1-f: dizer que ainda faltam setembro a dezembro`
+- `3db5ecd1 EX1-f: apontar para as contas públicas do parágrafo seguinte`
+- `9962c656 EX1-f: render o ramo real na planta do sinal da previsão`
+- `eee10a34 EX1-f: preparar os acertos e as provas da entrega`
+
+O último commit acrescenta apenas os artefactos da entrega. Permanecem reservadas as questões EX1-11 e EX1-12 acima, além das linhas dos juros e do arredondamento de EX1-5 para JD1. A leitura a frio e a integração pertencem ao lugar de direção. Nenhum portão foi dispensado.
+
+Custo-alvo: cem mil símbolos. Não foi observada uma linha «tokens used» desta construção; custo efetivo e confronto com o alvo: [verify], a apurar no registo do lançador.

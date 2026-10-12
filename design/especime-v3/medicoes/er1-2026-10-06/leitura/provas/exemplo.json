@@ -1,0 +1,11 @@
+{
+  "comando": "node design/especime-v3/medicoes/er1-2026-10-06/fechar.mjs",
+  "id": "custo-unitario-do-trabalho-2024",
+  "valor": "17,9",
+  "antigo": "17,7",
+  "data": "2026-10-05",
+  "codigos": {
+    "pt": "<p class=\"oedp-numero\" lang=\"pt-PT\" data-oedp=\"custo-unitario-do-trabalho-2024\" data-oedp-valor=\"17,9\" data-oedp-lido=\"2026-10-05\"><a href=\"https://oestadodopaís.pt/livro-razao/custo-unitario-do-trabalho-2024\">Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 <span lang=\"pt-PT\">variação em três anos, %</span></a> <span lang=\"en\">Eurostat</span>, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0</p><script async src=\"https://oestadodopaís.pt/incorporar.js\" referrerpolicy=\"no-referrer\" crossorigin=\"anonymous\"></script>",
+    "en": "<p class=\"oedp-numero\" lang=\"en\" data-oedp=\"custo-unitario-do-trabalho-2024\" data-oedp-valor=\"17,9\" data-oedp-lido=\"2026-10-05\"><a href=\"https://oestadodopaís.pt/en/ledger/custo-unitario-do-trabalho-2024\">Labour cost per unit of output (unit labour cost), 2024: 17,9 <span lang=\"en\">three-year change, %</span></a> <span lang=\"en\">Eurostat</span>, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0</p><script async src=\"https://oestadodopaís.pt/incorporar.js\" referrerpolicy=\"no-referrer\" crossorigin=\"anonymous\"></script>"
+  }
+}

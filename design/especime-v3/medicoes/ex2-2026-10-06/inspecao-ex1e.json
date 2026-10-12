@@ -1,0 +1,55 @@
+{
+  "cabeca": "95f2a857e418f60af2125b65aba23c735c0df1b7",
+  "metodo": "Inspeção visual das oito imagens, páginas inteiras e recortes, nas duas línguas e larguras. Após corrigir os trailers, as novas capturas foram comparadas por SHA-256 com as imagens inspecionadas.",
+  "resultado": "Sem cortes nem transbordo nas frases, nos valores ou nos selos.",
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1e-pt-390-inteira.png",
+      "sha256": "28f538ff67d137510b42cad16caf8a23428ab5f9b662544aec7f07d57c6ae7d1",
+      "identica_a_inspecionada": true,
+      "cortes_ou_transbordo": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1e-pt-390-correcoes.png",
+      "sha256": "649395fd78329b2a5aa86c7b9caf451d3256bca379a8f8b46c1893f94e1eddbb",
+      "identica_a_inspecionada": true,
+      "cortes_ou_transbordo": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1e-pt-1280-inteira.png",
+      "sha256": "0e8c3eb80171d12ebd92c52a5fee38c74264f9243ccdf685168ef9efe82ff5a9",
+      "identica_a_inspecionada": true,
+      "cortes_ou_transbordo": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1e-pt-1280-correcoes.png",
+      "sha256": "666c6f8ed790c03549a7b6a3836cd9fd5a5ea4e01861175eee8d90239a557870",
+      "identica_a_inspecionada": true,
+      "cortes_ou_transbordo": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1e-en-390-inteira.png",
+      "sha256": "19e7681720d9ddb70622163472c68a6bcf25fbe0403c34e7b34a55c50fba2448",
+      "identica_a_inspecionada": true,
+      "cortes_ou_transbordo": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1e-en-390-correcoes.png",
+      "sha256": "c97d39474e4712f0593ad78b2fe00978d30a39134f046a62ee8fd3d967742aa9",
+      "identica_a_inspecionada": true,
+      "cortes_ou_transbordo": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1e-en-1280-inteira.png",
+      "sha256": "7ea472394a13ca8acc39c9250c9496e672c05739c02414bf74414c9d1ef86ae4",
+      "identica_a_inspecionada": true,
+      "cortes_ou_transbordo": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1e-en-1280-correcoes.png",
+      "sha256": "c2a6ecfd024fa23d8fe9ef2c94b20b2488dc8bc929388f7866e545529a74d720",
+      "identica_a_inspecionada": true,
+      "cortes_ou_transbordo": false
+    }
+  ]
+}

@@ -72,6 +72,41 @@
       }
     },
     {
+      "src": "^/livro-razao/([^/]+)\\.json$",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/livro-razao\\.json$",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/livro-razao\\.csv$",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/incorporar\\.js$",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/sobre/$",
+      "headers": {
+        "X-Ensaio-Rota": "sobre"
+      },
+      "continue": true
+    },
+    {
       "src": "/estudos/avaliacao-economica-regional-de-portugal-2026/texto/?",
       "status": 301,
       "headers": {

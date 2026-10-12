@@ -1,6 +1,6 @@
 #!/bin/sh
 # Lança o Codex como construtor numa worktree, com o modelo e o raciocínio fixados, e regista o fim.
-# uso: construir-codex.sh <worktree> <prompt.md> <relatorio.md> [<outra pasta com escrita>...]
+# uso: [CODEX_RACIOCINIO=high] construir-codex.sh <worktree> <prompt.md> <relatorio.md> [<outra pasta com escrita>...]
 # O lugar de direção lança-o desde 23.09.2026 (§1.128), e o diretor pode continuar a lançá-lo:
 # `nohup scripts/leituras/construir-codex.sh <worktree> <prompt> <relatorio> [<outra worktree>] >> <log> 2>&1 &`
 # A regra de paragem do construtor vai no prompt: só um portão que protege um número, uma fonte ou uma
@@ -28,8 +28,14 @@ done
 # propósito e registado, depois de `sondar-modelo.sh` dizer que a conta o aceita. A 30.09 a conta recusou o
 # `gpt-6.1-sol` («not supported when using Codex with a ChatGPT account»), e o construtor fica no `gpt-6-astra`.
 modelo="${CODEX_CONSTRUTOR:-gpt-6-astra}"
+# O RACIOCÍNIO VAI POR VARIÁVEL (§1.177, M57, 06.10.2026): `high` nas construções e nas passagens mecânicas,
+# `xhigh` só onde o lugar de direção o pedir; por omissão fica xhigh, como até aqui, para uma troca ser sempre
+# deliberada: `CODEX_RACIOCINIO=high construir-codex.sh …`. O guião imprime o nível na linha INICIO, que é o que
+# o registo do bloco cita.
+raciocinio="${CODEX_RACIOCINIO:-xhigh}"
+case "$raciocinio" in low|medium|high|xhigh) ;; *) echo "CODEX_RACIOCINIO tem de ser low, medium, high ou xhigh (recebi: ${raciocinio})" >&2; exit 9;; esac
 cd "$worktree" || exit 9
-echo "INICIO $(date -u +%H:%M:%S) modelo=$modelo raciocínio=xhigh pastas_com_escrita=[$worktree$(for p in "$@"; do printf ' %s' "$p"; done)]"
+echo "INICIO $(date -u +%H:%M:%S) modelo=$modelo raciocínio=$raciocinio pastas_com_escrita=[$worktree$(for p in "$@"; do printf ' %s' "$p"; done)]"
 # shellcheck disable=SC2086
-codex exec -m "$modelo" -c 'model_reasoning_effort="xhigh"' -C "$worktree" $extras --approve-for-me --skip-git-repo-check --color never -o "$relatorio" - < "$prompt"
+codex exec -m "$modelo" -c "model_reasoning_effort=\"$raciocinio\"" -C "$worktree" $extras --approve-for-me --skip-git-repo-check --color never -o "$relatorio" - < "$prompt"
 echo "FIM exit=$? $(date -u +%H:%M:%S)"
