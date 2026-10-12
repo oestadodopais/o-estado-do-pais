@@ -74,8 +74,8 @@ def provas(motor, codigo):
 
 def aritmetica(raiz, finais, reg):
     # O corpo é identificado pelo arquivo da iniciativa, não por um tamanho presumido.
-    estado = json.loads((raiz / 'estado.json').read_text())
-    corpo = next(v['arquivo'] for k, v in estado['http'].items() if k.startswith('documento:Iniciativas'))
+    atual_cumulativo = next(p for p in pedidos(raiz, finais[-1]) if p.get('orcamento') == 'ficheiro_cumulativo')
+    corpo = atual_cumulativo['arquivo']
     historicos = []
     for f in sorted((raiz / 'pedidos').glob('*.jsonl')):
         for linha, texto in enumerate(f.read_text().splitlines(), 1):
@@ -170,7 +170,7 @@ def main():
             'registo_pedidos': 'vigilancia/pedidos/' + r['id'] + '.jsonl', **r['medidas'],
             'fontes': r['fontes'], 'limitacoes': r['limitacoes'], 'falhas_detalhe': r['falhas'],
             'fila': r['fila'], 'aceitacao_entrada_datada': r['aceitacao_entrada_datada'],
-            'segunda_leitura': medir.segunda_leitura(r), 'avisos_descompressao': r['avisos_descompressao']})
+            'segunda_leitura': medir.segunda_leitura(r), 'reconferencias_adiadas': r['reconferencias_adiadas'], 'avisos_descompressao': r['avisos_descompressao']})
     guardar('corridas-c.json', resultados)
     integridade, resumos, cache = [], {}, {}
     for f in sorted((raiz / 'indice').glob('*.json')):
@@ -229,6 +229,7 @@ def main():
     for r in resultados:
         linhas += ['', f"Recibo: `<motor>/vigilancia/corridas/{r['id']}.json`; pedidos: `<motor>/vigilancia/pedidos/{r['id']}.jsonl`.",
             f"Bytes por fonte: `{json.dumps(r['bytes_por_fonte'], ensure_ascii=False)}`. Pedidos por fonte: `{json.dumps(r['pedidos_por_fonte'], ensure_ascii=False)}`.",
+            f"Reconferências adiadas por cadência, por fonte: `{json.dumps(dict(Counter(x['origem'] for x in r['reconferencias_adiadas'])))}`. Os índices foram consultados; os documentos adiados não foram reconfirmados remotamente nesta corrida.",
             f"Estados: `{json.dumps({k: v['estado'] for k, v in r['fontes'].items()}, ensure_ascii=False)}`. Fontes lidas: `{json.dumps({k: v.get('lida', False) for k, v in r['fontes'].items()})}`.",
             f"Limitações por código: `{json.dumps(dict(Counter(l['codigo'] for l in r['limitacoes'])), ensure_ascii=False)}`. Falhas: `{json.dumps(r['falhas_detalhe'], ensure_ascii=False)}`. Fila: `{json.dumps(r['fila'], ensure_ascii=False)}`."]
     sem_data = [l for l in finais[-1]['limitacoes'] if l['codigo'] == 'sem_data']
