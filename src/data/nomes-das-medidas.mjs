@@ -627,11 +627,11 @@ export const NOMES_DAS_LINHAS_DERIVADAS = {
      que a proveniência deixar de ser o marcador deste projeto. */
   'avisos-pt2030-abertos': {
     pt: 'Avisos de candidatura abertos',
-    en: 'Open calls for applications',
+    en: 'Open application notices',
   },
   'avisos-pt2030-pessoas-singulares': {
     pt: 'Avisos abertos a pessoas singulares',
-    en: 'Open calls for individuals',
+    en: 'Open notices for individuals',
   },
   'ciclo-substituicao-condutas': {
     pt: 'Ciclo de substituição das condutas',

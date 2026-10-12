@@ -1,3 +1,4 @@
+import {conferirCaminhoFinal} from './caminho-final.mjs';
 #!/usr/bin/env node
 import { contarFrasesDasMudancas, errosDoSeloDaDefinicao } from '../tests/explicacoes/o-que-e.mjs';
 import { conferirLugaresIA } from './lugares-ia-do-portao.mjs';
@@ -4635,6 +4636,7 @@ for (const file of ficheirosHtml(DIST)) {
   });
 
   const err = (msg) => erros.push({ rel, msg });
+  for(const erro of conferirCaminhoFinal(root)) err(erro);
 
 
   // H2, I190: antes das saídas de documentos alojados, em qualquer página.
