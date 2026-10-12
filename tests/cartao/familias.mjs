@@ -582,13 +582,13 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
   const anda = (/** @type {any} */ n) => {
     if (n.nodeType === NodeType.TEXT_NODE) {
       if (/\d/.test(n.text)) {
-        let marcado = false;
+        let marcado = false, tokenComparado = false;
         for (let p = n.parentNode; p && p !== el.parentNode; p = p.parentNode) {
           const a = p.attributes ?? {};
-          if ('data-claim' in a || 'data-nonledger' in a) { marcado = true; break; }
+          if ('data-claim' in a || 'data-nonledger' in a) { marcado = true; const c=ctx.familias[f.chave]?.compara; tokenComparado=Boolean(c && [c.a,c.b].includes(a['data-claim'])); break; }
         }
         const dataDoInstantaneo = ctx.familias[f.chave]?.instantaneo && n.parentNode?.matches?.('[data-nonledger="data-da-linha"][data-de-campo="document.computed_over.files.0.snapshot_date"]') && n.parentNode.getAttribute('data-de-linha') === id;
-        if (!marcado || f.tipo === 'concelho' || (f.tipo === 'familia' && !ctx.familias[f.chave]?.cartao && !dataDoInstantaneo)) falha(`a frase escreve um algarismo${marcado ? ' numa frase de família' : ' sem marca de origem'}: «${curto(normal(n.text))}»`);
+        if (!marcado || f.tipo === 'concelho' || (f.tipo === 'familia' && !ctx.familias[f.chave]?.cartao && !dataDoInstantaneo && !tokenComparado)) falha(`a frase escreve um algarismo${marcado ? ' numa frase de família' : ' sem marca de origem'}: «${curto(normal(n.text))}»`);
       }
       return;
     }

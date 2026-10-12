@@ -50,12 +50,12 @@ assert.deepEqual(prazo(NOMES_DO_PROJETO,loadClaims()),[]);
  morde('prazo de execução em vez de conclusão',prazo(nomes,loadClaims()),'o nome e a quota não dizem');
 }
 function estudo(root,lang) {
- return root.querySelector(`a[href="/${lang==='pt'?'estudos':'en/studies'}/which-door-is-yours/"]`) ? [] : ['RP4N-g: o estudo desapareceu da área depois da retirada das contagens'];
+ return root.querySelector(`a[href="/${lang==='pt'?'estudos':'en/studies'}/which-door-is-yours"]`) ? [] : ['RP4N-g: o estudo desapareceu da área depois da retirada das contagens'];
 }
 for(const lang of ['pt','en']) {
  const root=parse(fs.readFileSync(`dist/${lang==='en'?'en/':''}areas/economia-e-coesao-territorial/index.html`,'utf8'));
  assert.deepEqual(estudo(root,lang),[]);
- const links=root.querySelectorAll('a').filter(a=>a.getAttribute('href')?.includes('/which-door-is-yours/'));
+ const links=root.querySelectorAll('a').filter(a=>a.getAttribute('href')?.includes('/which-door-is-yours'));
  for(const a of links)a.remove();
  morde(`estudo retirado da área (${lang})`,estudo(root,lang),'o estudo desapareceu');
  const pagina=parse(fs.readFileSync(`dist/${lang==='pt'?'estudos':'en/studies'}/which-door-is-yours/index.html`,'utf8'));
@@ -82,16 +82,27 @@ for(const lang of ['pt','en']) {
  const frase=c.querySelector('[data-o-que-e-parte="o-que-e"]');
  frase.set_content(frase.innerHTML.replace(comparacao[lang].menor,comparacao[lang].maior));
  morde(`lei dita maior que a estimativa (${lang})`,conferirCabecaDoRecibo(c,id,lang,e),'a frase rendida não é');
+ const semToken=cabecaDoRecibo(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/${id}/index.html`,'utf8'));
+ semToken.querySelector('[data-o-que-e-parte="o-que-e"] [data-claim]').removeAttribute('data-claim');
+ morde(`valor da comparação sem token (${lang})`,conferirCabecaDoRecibo(semToken,id,lang,e),'a comparação não cita as duas linhas');
  for(const [valor,ramo] of [['9','maior'],['8,2','igual'],['6','menor']]) {
   const copia=structuredClone(loadClaims());copia.get(comparacao.a).value=valor;
   assert(comparaLinhas(comparacao,lang,copia).includes(comparacao[lang][ramo]),`a comparação não acompanha ${ramo}`);
  }
 }
+const {textoSemSelos}=await import('../../scripts/voz-pais.mjs');
+for(const lang of ['pt','en']) {
+ const root=parse(`<p>Sinopse<span class="marcador-definicao"> · ${t(lang).marcador.definicao}</span></p>`);
+ assert.equal(textoSemSelos(root),'Sinopse');
+ root.querySelector('.marcador-definicao').set_content('Uma frase intrusa.');
+ assert.notEqual(textoSemSelos(root),'Sinopse');
+ plantas.push({nome:`glosa alterada na sinopse (${lang})`,mensagem:'RP4N-g: a glosa alterada permanece na comparação da sinopse'});
+}
 for(const lang of ['pt','en']) {
  const root=parse(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/penalizacao-antecipacao-um-ano-neutra/index.html`,'utf8'));
  assert.equal(root.querySelectorAll('[data-def-lido]').length,0);
  assert.equal(root.querySelectorAll('[data-def-sem-data]').length,4);
- assert(root.textContent.includes(lang==='pt'?'Sem resposta desde 01.09.2026':'No response since 01.09.2026'));
+ assert(root.textContent.includes(lang==='pt'?'Sem resposta desde 01.09.2026':'No answer since 01.09.2026'));
 }
 if(process.argv.includes('--registo-g'))fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/g/plantas-novas.json',JSON.stringify({plantas},null,2)+'\n');
 console.log(`RP4N-g: PASS, ${plantas.length} plantas`);
