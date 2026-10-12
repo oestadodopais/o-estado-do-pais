@@ -52,6 +52,7 @@ def main():
                 plantas.append({'planta': classe.__name__ + '.' + nome, 'mensagem': mensagem,
                     'passou': resultado.wasSuccessful(), 'testes': resultado.testsRun, 'registo': limpar(saida.getvalue(), motor)})
         novas = {
+            'resumo_iniciativas_sem_ligacao_rotativa': 'ligação rotativa da iniciativa entrou no resumo',
             'dar_servido_com_outra_ligacao_na_segunda_corrida': 'ligação rotativa apresentada como revisão',
             'planta_limitacao_como_falha': 'limitação conhecida apresentada como falha',
             'planta_falha_como_limitacao': 'falha apresentada como limitação',
@@ -168,12 +169,15 @@ def main():
         'commits_sitio': git(SITIO, 'log', '--reverse', '--format=%H %s', '241e15d9..HEAD').splitlines()}
     guardar('cabecas-b.json', cabecas)
     guardar('aceitacao-b.json', {'criterios': aceites, 'corridas_finais': medidas_finais,
-        'por_fonte': dict(Counter(e['origem'] for e in atuais)), 'por_tipo': dict(Counter(e['tipo'] for e in atuais)),
+        'por_fonte': {k: sum(e['origem'] == k for e in atuais) for k in reg['entradas']}, 'por_tipo': {f['tipo']: sum(e['tipo'] == f['tipo'] for e in atuais) for f in reg['entradas'].values()},
         'dias': dias, 'codigo': codigo, 'sitio_codigo': sitio_codigo, 'todos_hashes': comparacoes})
+    sem_data = finais[-1]['fontes'].get('iniciativas', {}).get('sem_data', []) if finais else []
+    estado_iniciativas = (f'O ficheiro das iniciativas foi lido; registos sem data de entrada: {len(sem_data)}. ' + ('Estes registos continuam nomeados como falha e ficam fora da contagem das entradas datadas. ' if sem_data else '')) if finais else 'Corridas finais ainda por registar. '
+    estado_aceitacao = 'Existe uma entrada verificada de cada fonte.' if aceites['entrada_de_cada_fonte'] else 'A aceitação de uma entrada de cada fonte continua por cumprir enquanto não houver uma iniciativa verificável na janela.'
     linhas = ['## A passagem V1-b', '',
         'Medida por `python3 <medicoes>/medir_v1b.py --motor <motor> --provas --fecho`. Os recibos de diagnóstico são preservados; as medidas desta secção substituem as conclusões anteriores sobre revisões, cobertura, segunda leitura e igualdade do código.', '',
         ('A segunda corrida leu as três fontes dentro dos tetos.' if aceites['segunda_leu_tres_fontes'] else 'A segunda leitura integral das fontes ainda não foi demonstrada.') +
-        ' O ficheiro das iniciativas foi lido, mas conserva um registo sem data de entrada, nomeado nos recibos como falha. A medida de novidades das iniciativas refere-se aos registos datados. A aceitação de uma entrada de cada fonte continua por cumprir enquanto não houver uma iniciativa verificável na janela.', '',
+        ' ' + estado_iniciativas + estado_aceitacao, '',
         '| Corrida | Pedidos | Bytes | Segundos | Novas | Revisões reais | Iguais | Falhas |',
         '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |']
     for r in medidas_finais:
@@ -182,7 +186,7 @@ def main():
         linhas += ['', f"Bytes por fonte: `{json.dumps(r['bytes_por_fonte'], ensure_ascii=False)}`.",
             f"Entradas por fonte: `{json.dumps(r['entradas_por_fonte'], ensure_ascii=False)}`. Por tipo: `{json.dumps(r['entradas_por_tipo'], ensure_ascii=False)}`.",
             f"Leitura por fonte: `{json.dumps({k: f.get('lida', False) for k, f in r['fontes'].items()}, ensure_ascii=False)}`. Comparação: `{json.dumps(r['segunda_leitura'], ensure_ascii=False)}`.", '']
-    linhas += ['Os bytes foram recalculados pelos saltos de cada pedido. A parcela `politicas` contém os robots comuns. `corridas-b.json` conserva as reutilizações, as razões das falhas, as limitações e o âmbito da comparação. Os atos de JavaScript ficam como cobertura parcial, sem alimentar o alarme; o registo das iniciativas sem data continua como falha.', '']
+    linhas += ['Os bytes foram recalculados pelos saltos de cada pedido. A parcela `politicas` contém os robots comuns. `corridas-b.json` conserva as reutilizações, as razões das falhas, as limitações e o âmbito da comparação. Os atos de JavaScript ficam como cobertura parcial, sem alimentar o alarme; os registos das iniciativas sem data, quando existem, continuam como falha.', '']
     for d in dias:
         linhas.append(f"* Resumo de {d['dia']}: {d['bytes_resumo']} bytes UTF-8; {len(d['entradas'])} atos/iniciativas listados; {len(d['grupos_dar'])} grupos do DAR; {d['omitidas']} atos/iniciativas remetidos para o índice.")
         if d['recontagem']:
@@ -203,7 +207,7 @@ def main():
         f"Ficheiros preexistentes preservados: {len(preservados)} de {len(preservados)}; caminhos protegidos do motor sem alterações; fugas de caminhos ou nome local: {len(fugas)}. `confirmacao-b.json` confirma os achados plantados nas cópias.", '',
         '### Questões novas', '',
         '* **V1-15**: tamanho e validadores iguais autorizam reutilização pelo mandato, mas não provam igualdade criptográfica do conteúdo remoto. Sem validadores, uma alteração do mesmo tamanho pode não ser detetada.',
-        '* **V1-16**: uma iniciativa sem data não permite decidir a pertença à janela. O corpo inteiro foi lido; o registo é identificado e continua em falha, sem inventar uma data nem alargar o período para obter uma entrada.',
+        f'* **V1-16**: registos sem data não permitem decidir a pertença à janela. Na última corrida final: {len(sem_data)}, identificados como `{json.dumps(sem_data, ensure_ascii=False)}`. Não se atribui uma data presumida nem se alarga a janela para obter uma entrada.',
         '* **V1-17**: o catálogo consultado expõe o ficheiro corrente cumulativo. HEAD torna a comparação diária viável, pelo que não foi ativada a alternativa semanal. O resumo e o registo mantêm a cadência diária.',
         '* **V1-18**: a reconferência inicial limita-se ao número de dias declarado no registo. Os vistos persistentes mantêm os identificadores anteriores; uma interrupção longa exige atenção à cobertura declarada.',
         '* **V1-19**: a prova dos direitos do DR é uma extração textual identificada da página oficial, com sha256. A tentativa HTTP direta do cliente da casa recebeu JavaScript e está conservada separadamente. Não se afirma ter alojado o HTML integral dessa página.',
