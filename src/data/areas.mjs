@@ -703,7 +703,7 @@ export const AREAS = [
 export const SEM_AREA = [
   {
     estudos: ['oe-2026'],
-    id: /^(?!.*-ue$)(?:juros-das-administracoes-publicas|juros-e-outros-encargos-execucao|pib-nominal-notificacao-setembro|custo-do-stock-da-divida-direta|custo-da-divida-emitida|divida-direta-do-estado|necessidades-brutas-de-financiamento|emissoes-de-divida-fundada)-/,
+    id: /^(?!.*-ue$)(?:juros-das-administracoes-publicas|juros-e-outros-encargos-execucao|pib-nominal-notificacao-setembro|custo-do-stock-da-divida-direta|custo-da-divida-emitida|divida-direta-do-estado|necessidades-brutas-de-financiamento|emissoes-de-divida-fundada|amortizacoes-e-anulacoes-de-divida-fundada)-/,
     assunto: 'Juros, dívida e financiamento do Estado, base do bloco JD1',
     motivo: 'O JD1 acrescenta recibos e uma série ao livro para a futura explicação do endividamento. Atribuir estas contas a uma área ministerial excede esse âmbito.',
   },
