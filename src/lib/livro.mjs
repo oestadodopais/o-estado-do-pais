@@ -115,7 +115,7 @@ export function descricaoDaLinha(claim, lang) {
   }
   /* «Lido a 2026-08-12», não «Lido a: 2026-08-12» — o rótulo já traz a
      preposição. A fonte leva dois pontos porque o rótulo é um substantivo. */
-  if (claim.access_date) partes.push(`${s.prov.lido} ${claim.access_date}`);
+  if (claim.access_date) partes.push(`${claim.access_date_kind === 'hosted-copy' ? s.prov.copiaAlojada : s.prov.lido} ${claim.access_date}`);
   if (claim.reference_date) partes.push(`${s.prov.referencia} ${claim.reference_date}`);
 
   return partes.join(' · ') + '.';
