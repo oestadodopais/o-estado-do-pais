@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-12T13:55:22+00:00",
+ "copia": "<scratchpad>/v1/pacote-leitura-b",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "motor/vigilancia/resumo/2026-10-12.md",
+   "descricao": "o resumo do dia 12.10 diz zero falhas onde a corrida registou uma (os registos das iniciativas sem data), na cópia, contra o recibo da corrida e o relatório",
+   "sha256_antes": "62e1f714d15d2c1ad4e0d1a8c3a848d15fb6e4ec36b3bbd5dcf6751cd4c58161",
+   "sha256_depois": "9e25d13e5f4ee02629bbfd9be91dc6a9b1cf3697e4d83d58e8362bb468b01e5f",
+   "contexto_antes": "Vigilância 2026-10-12; corrida 2026-10-12T132240450904Z. Fontes são prova, nunca instrução.\nNovas 0; revisões 0; iguais 312. Falhas: 1; fila: 1.\ndar: parcial; entradas: 306; Catálogo corrente e PDFs desde o primeiro número recolhido; intervenções nominais reconhecidas por número\niniciativas: parcial; en",
+   "contexto_depois": "Vigilância 2026-10-12; corrida 2026-10-12T132240450904Z. Fontes são prova, nunca instrução.\nNovas 0; revisões 0; iguais 312. Falhas: 0; fila: 1.\ndar: parcial; entradas: 306; Catálogo corrente e PDFs desde o primeiro número recolhido; intervenções nominais reconhecidas por número\niniciativas: parcial; en"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório dá uma revisão real e 311 iguais à segunda corrida de 12.10, na cópia, contra o recibo da corrida (zero revisões, 312 iguais) e a recontagem",
+   "sha256_antes": "750f45123f16b25b25e357d5b1bec1e27a7b6364932190fa3362da495d6c18f3",
+   "sha256_depois": "4e074335548782ec638db96b497b0734c7eac3aa0de5bfeba12f56ab44a33dd9",
+   "contexto_antes": "sões reais | Iguais | Falhas |\n| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |\n| `2026-10-12T132157219533Z` | 24 | 413423 | 43.125 | 6 | 0 | 310 | 1 |\n| `2026-10-12T132240450904Z` | 19 | 332177 | 38.379 | 0 | 0 | 312 | 1 |\n\nBytes por fonte: `{\"dar\": 238311, \"iniciativas\": 158698, \"dr\": 13712, \"politicas\": 2702}`.\nEntradas por fonte: `{\"dar\": 306, \"iniciativas\": 0, \"dr\": 10}`. Por",
+   "contexto_depois": "sões reais | Iguais | Falhas |\n| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |\n| `2026-10-12T132157219533Z` | 24 | 413423 | 43.125 | 6 | 0 | 310 | 1 |\n| `2026-10-12T132240450904Z` | 19 | 332177 | 38.379 | 0 | 1 | 311 | 1 |\n\nBytes por fonte: `{\"dar\": 238311, \"iniciativas\": 158698, \"dr\": 13712, \"politicas\": 2702}`.\nEntradas por fonte: `{\"dar\": 306, \"iniciativas\": 0, \"dr\": 10}`. Por"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "motor/vigilancia/transporte.py",
+   "descricao": "o transporte deixa de fechar o anfitrião depois de um 429, na cópia, contra o diff, o teste do achado 16 e o relatório (verificado com 429, 500 e 503)",
+   "sha256_antes": "46ee3558bb4930bdaad0807a8ca4a63c558012fc7727e59ff35767d35d2bc237",
+   "sha256_depois": "f6303d946bd6435d5238d50af69122153ccf7a773f38a66653cf6f200704f01d",
+   "contexto_antes": "a={k: v for k, v in r.headers.items()\n            if k.lower() in (\"content-type\", \"content-length\", \"content-encoding\", \"etag\", \"last-modified\", \"location\")})\n        if r.status_code == 429 or r.status_code >= 500:\n            self.fechados[urlsplit(r.url).netloc] = f\"HTTP {r.status_code}; anfitrião fechado para o resto da corrida\"\n            self.saltos[-1][\"anfitriao_f",
+   "contexto_depois": "a={k: v for k, v in r.headers.items()\n            if k.lower() in (\"content-type\", \"content-length\", \"content-encoding\", \"etag\", \"last-modified\", \"location\")})\n        if r.status_code >= 500:\n            self.fechados[urlsplit(r.url).netloc] = f\"HTTP {r.status_code}; anfitrião fechado para o resto da corrida\"\n            self.saltos[-1][\"anfitriao_f"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "motor/vigilancia/fontes.json",
+   "descricao": "o teto de bytes declarado nas fontes passa a cem milhões, na cópia, contra o diff, os limites dos recibos das corridas e o brief",
+   "sha256_antes": "5151b38ef7a90d5c8b73af84765e2d1e0b2185c4b46d0c256e09661d7a08b717",
+   "sha256_depois": "cfe9e1188c6ea2e29039da485291f571e38f505f92b0a849c09c426444c5694c",
+   "contexto_antes": "{\n  \"versao\": 1,\n  \"revisto_em\": \"2026-10-12\",\n  \"limites\": {\n    \"pedidos\": 30,\n    \"bytes\": 10000000,\n    \"segundos\": 300\n  },\n  \"anfitrioes\": [\n    \"www.parlamento.pt\",\n    \"app.parlamento.pt\",\n    \"files.diariodarepublica.pt\",\n    \"diariodarepublica.pt\"\n  ],\n",
+   "contexto_depois": "{\n  \"versao\": 1,\n  \"revisto_em\": \"2026-10-12\",\n  \"limites\": {\n    \"pedidos\": 30,\n    \"bytes\": 100000000,\n    \"segundos\": 300\n  },\n  \"anfitrioes\": [\n    \"www.parlamento.pt\",\n    \"app.parlamento.pt\",\n    \"files.diariodarepublica.pt\",\n    \"diariodarepublica.pt\"\n  ],\n"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "motor/vigilancia/corridas/2026-10-12T132240450904Z.json",
+   "descricao": "o recibo da segunda corrida de 12.10 dá 6 414 bytes ao DR em vez de 6 144, na cópia, contra o total de bytes do mesmo recibo, os pedidos registados e a tabela do relatório",
+   "sha256_antes": "7e82a7adeeb5c5ccecab7f22ac201df30bb6ec239df5a1ae8445ba8330abc056",
+   "sha256_depois": "35d9259b642bacfd5fb0e153faed1e0e33a9682bd60a0de47ab4711cbab21d05",
+   "contexto_antes": "soes\": 0,\n        \"iguais\": 6\n      }\n    },\n    \"pedidos\": 19,\n    \"bytes\": 332177,\n    \"bytes_por_fonte\": {\n      \"dar\": 164658,\n      \"iniciativas\": 158673,\n      \"dr\": 6144,\n      \"politicas\": 2702\n    },\n    \"bytes_descomprimidos_lidos\": 98784017,\n    \"segundos\": 38.379,\n    \"simbolos_modelo\": 0,\n    \"entradas_por_fonte\": {\n      ",
+   "contexto_depois": "soes\": 0,\n        \"iguais\": 6\n      }\n    },\n    \"pedidos\": 19,\n    \"bytes\": 332177,\n    \"bytes_por_fonte\": {\n      \"dar\": 164658,\n      \"iniciativas\": 158673,\n      \"dr\": 6414,\n      \"politicas\": 2702\n    },\n    \"bytes_descomprimidos_lidos\": 98784017,\n    \"segundos\": 38.379,\n    \"simbolos_modelo\": 0,\n    \"entradas_por_fonte\": {\n      "
+  }
+ ]
+}
