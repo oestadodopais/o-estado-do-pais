@@ -232,7 +232,7 @@ export function conferirExcertoDaPensao(linha) {
  const {conferirValorUnidade}=await import('../../scripts/valor-unidade.mjs');
  for(const [lang,errada] of [['pt','avisos'],['en','notices']]) {
   const html=parse(`<html lang="${lang}"><p class="linha-valor"><span data-claim="avisos-pt2030-pessoas-singulares">1</span> <span data-linha-campo="unit">${errada}</span></p></html>`);
-  morde(`unidade plural com um aviso (${lang})`,conferirValorUnidade(html).erros,'a unidade dos avisos não concorda');
+  morde(`unidade plural com um aviso (${lang})`,conferirValorUnidade(html,loadClaims({includeWithdrawn:true})).erros,'a unidade dos avisos não concorda');
  }
 }
 // A definição da água conserva a fonte da medida e a página visível nas duas edições.
@@ -268,6 +268,12 @@ export function conferirExcertoDaPensao(linha) {
   fs.writeFileSync(path.join(pasta,'livro-razao.json'),JSON.stringify([{id:'avisos-pt2030-abertos'}]));
   morde('linha retirada no JSON do conjunto',conferirPublicacaoRetirada(pasta,loadClaims({includeWithdrawn:true})).map(e=>e.mensagem),'uma linha retirada chegou a uma página: avisos-pt2030-abertos');
  }finally{fs.rmSync(pasta,{recursive:true,force:true});}
+}
+{
+ const {conferirCaminhoFinal}=await import('../../scripts/caminho-final.mjs');
+ for(const lang of ['pt','en']) {
+  morde(`separador final solto (${lang})`,conferirCaminhoFinal(parse('<nav class="caminho"><a>Livro</a><span class="caminho-sep">›</span></nav>')),'o caminho termina num separador sem destino');
+ }
 }
 if(process.argv.includes('--registo-e')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/e/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 assert.deepEqual(conferirAuditoriaDasFamilias().erros, []);
