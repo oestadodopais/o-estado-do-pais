@@ -1,0 +1,8 @@
+{'sitio': '5ddb51449330c2dda319b7e28a05c1913fefd9fd', 'motor': '92933611d162016ae39801a55f372612f9317e8e'}
+
+> o-estado-do-pais@0.1.0 check:series
+> node tests/series/series.mjs --prova
+
+  check:series · 24 série(s) no tempo de 7839 ponto(s) · 2 derivada(s) com 152 ponto(s) refeitos · 12 linha(s) presa(s), 12 cartão(ões) no último ponto · 48 recibo(s) lidos · metade do motor da S3: 7687 ponto(s) no seu corpo · 32 de 32 planta(s) morderam
+  ✓ as séries no tempo têm a forma, a cadência, cada valor no seu excerto, a derivada refeita, cada linha presa no seu ponto e cada cartão no último, e os recibos com todos os pontos nas duas edições.
+{'sitio': '5ddb51449330c2dda319b7e28a05c1913fefd9fd', 'motor': '92933611d162016ae39801a55f372612f9317e8e'}

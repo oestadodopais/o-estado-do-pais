@@ -1,0 +1,5 @@
+281b3a77e9b625d7e9308b4b19326a9ee4152e0c
+test(rp4n-f): guardar a cabeça final em anexo posterior ao commit
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

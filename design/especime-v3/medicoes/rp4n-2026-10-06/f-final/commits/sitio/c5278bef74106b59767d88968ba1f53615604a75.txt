@@ -1,0 +1,5 @@
+c5278bef74106b59767d88968ba1f53615604a75
+fix(rp4n-f): distinguir a coluna anual no quadro da execução
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

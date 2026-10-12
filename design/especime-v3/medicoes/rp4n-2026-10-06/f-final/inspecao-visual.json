@@ -1,0 +1,70 @@
+{
+  "comparacao_com_captura_do_codigo": [
+    {
+      "ficheiro": "agua-pt-390.png",
+      "mesmos_pixels": true,
+      "regiao_diferente": null
+    },
+    {
+      "ficheiro": "agua-pt-1280.png",
+      "mesmos_pixels": true,
+      "regiao_diferente": null
+    },
+    {
+      "ficheiro": "agua-en-390.png",
+      "mesmos_pixels": true,
+      "regiao_diferente": null
+    },
+    {
+      "ficheiro": "agua-en-1280.png",
+      "mesmos_pixels": true,
+      "regiao_diferente": null
+    },
+    {
+      "ficheiro": "corte-pt-390.png",
+      "mesmos_pixels": false,
+      "regiao_diferente": [
+        19,
+        1593,
+        371,
+        1889
+      ]
+    },
+    {
+      "ficheiro": "corte-pt-1280.png",
+      "mesmos_pixels": true,
+      "regiao_diferente": null
+    },
+    {
+      "ficheiro": "corte-en-390.png",
+      "mesmos_pixels": true,
+      "regiao_diferente": null
+    },
+    {
+      "ficheiro": "corte-en-1280.png",
+      "mesmos_pixels": true,
+      "regiao_diferente": null
+    },
+    {
+      "ficheiro": "area-pt-390.png",
+      "mesmos_pixels": true,
+      "regiao_diferente": null
+    },
+    {
+      "ficheiro": "area-pt-1280.png",
+      "mesmos_pixels": true,
+      "regiao_diferente": null
+    },
+    {
+      "ficheiro": "area-en-390.png",
+      "mesmos_pixels": true,
+      "regiao_diferente": null
+    },
+    {
+      "ficheiro": "area-en-1280.png",
+      "mesmos_pixels": true,
+      "regiao_diferente": null
+    }
+  ],
+  "inspecao": "A água foi vista nas duas edições. A pensão foi vista em inglês à largura maior e a captura final portuguesa estreita foi inspecionada diretamente: a figura está visível e ligada à legenda. A diferença de pixels face à captura do código limita-se à região da figura nessa captura. As áreas foram comparadas antes e depois e os identificadores retirados foram contados no HTML."
+}

@@ -1,0 +1,5 @@
+6f950485dcd4c31f7b035b5216e63a1871ab1cc2
+test(rp4n-f): registar os rótulos medidos das pensões e do prazo PRR
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444
