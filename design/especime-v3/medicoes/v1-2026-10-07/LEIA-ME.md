@@ -81,6 +81,199 @@ Vigilância diária das fontes parlamentares e do Diário da República: corpos 
 
 A linha `tokens used` não foi observada. `aceitacao.json` regista custo não verificável; não é possível aferir o desvio ao alvo de símbolos do bloco.
 
+## A passagem V1-d
+
+Medida por `python3 <medicoes>/medir_v1d.py --motor <motor> --provas --portao`. Os registos anteriores conservam os resultados que mediram na sua passagem.
+
+Aceitação das corridas: **cumprida**. O estado exige o par final sem falhas, com leitura das três fontes e sem duplicação na segunda corrida. Limitações declaradas não são falhas de transporte.
+
+### As confirmações da leitura
+
+Os estragos plantados nas cópias não estavam no ramo. A conferência de entrada está em `d/confirmacao.json`:
+
+```json
+{
+  "1": true,
+  "2": 12,
+  "3": 20000000,
+  "4": "falha",
+  "5": "Atos novos: 6; iniciativas novas: 0; DAR novos ou revistos: 0; limitações: 6; falhas: 2."
+}
+```
+
+### Corridas finais
+
+| Corrida | Pedidos | Bytes comuns | Bytes cumulativo | Segundos | Novas | Revisões | Iguais | Falhas |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| `2026-10-12T194319909143Z` | 12 | 326606 | 0 | 31.465 | 0 | 0 | 6 | 0 |
+| `2026-10-12T194352285903Z` | 12 | 326675 | 0 | 29.35 | 0 | 0 | 6 | 0 |
+
+Recibo: `<motor>/vigilancia/corridas/2026-10-12T194319909143Z.json`; pedidos: `<motor>/vigilancia/pedidos/2026-10-12T194319909143Z.jsonl`.
+Bytes por fonte: `{"dar": 164837, "iniciativas": 159069, "dr": 0, "politicas": 2700}`. Pedidos por fonte: `{"dar": 2, "iniciativas": 3, "dr": 1, "politicas": 6}`.
+Estados: `{"dar": "limitação", "iniciativas": "limitação", "dr": "limitação"}`. Fontes lidas: `{"dar": true, "iniciativas": true, "dr": true}`.
+Limitações por código: `{"catalogo_corrente": 1, "javascript": 6, "ficheiro_atrasado": 1, "sem_data": 1}`.
+
+* dar: Catálogo corrente e PDFs desde o primeiro número recolhido; intervenções nominais reconhecidas por número. Mudanças de sessão e lacunas fora do catálogo exigem revisão.
+* iniciativas: o ficheiro das iniciativas vai até 08.10.2026; atraso de 4 dias face à corrida. Registos sem data de entrada; pertença à janela indeterminada.
+* dr: Texto integral exige JavaScript; metadados do RSS alojados.
+
+Falhas: `[]`. Tarefas pendentes: 0, integralmente em `corridas-d.json`.
+Reconferências adiadas por fonte: `{"dar": 1, "dr": 6}`. Os corpos adiados não foram reconfirmados remotamente nessa corrida.
+
+Recibo: `<motor>/vigilancia/corridas/2026-10-12T194352285903Z.json`; pedidos: `<motor>/vigilancia/pedidos/2026-10-12T194352285903Z.jsonl`.
+Bytes por fonte: `{"dar": 164930, "iniciativas": 159045, "dr": 0, "politicas": 2700}`. Pedidos por fonte: `{"dar": 2, "iniciativas": 3, "dr": 1, "politicas": 6}`.
+Estados: `{"dar": "limitação", "iniciativas": "limitação", "dr": "limitação"}`. Fontes lidas: `{"dar": true, "iniciativas": true, "dr": true}`.
+Limitações por código: `{"catalogo_corrente": 1, "javascript": 6, "ficheiro_atrasado": 1, "sem_data": 1}`.
+
+* dar: Catálogo corrente e PDFs desde o primeiro número recolhido; intervenções nominais reconhecidas por número. Mudanças de sessão e lacunas fora do catálogo exigem revisão.
+* iniciativas: o ficheiro das iniciativas vai até 08.10.2026; atraso de 4 dias face à corrida. Registos sem data de entrada; pertença à janela indeterminada.
+* dr: Texto integral exige JavaScript; metadados do RSS alojados.
+
+Falhas: `[]`. Tarefas pendentes: 0, integralmente em `corridas-d.json`.
+Reconferências adiadas por fonte: `{"dar": 1, "dr": 6}`. Os corpos adiados não foram reconfirmados remotamente nessa corrida.
+
+### As iniciativas e o atraso da fonte
+
+A reutilização diz o que comparou: tamanho igual sem validadores, ou validadores efetivamente presentes. Igualdade de tamanho não demonstra igualdade do conteúdo remoto. O atraso vem da última data de entrada no corpo alojado, com a prova no recibo.
+
+```json
+[
+  {
+    "ultima_entrada": "2026-10-08",
+    "atraso_dias": 4,
+    "dia": "2026-10-12",
+    "razao": "o ficheiro das iniciativas vai até 08.10.2026; atraso de 4 dias face à corrida."
+  },
+  {
+    "ultima_entrada": "2026-10-08",
+    "atraso_dias": 4,
+    "dia": "2026-10-12",
+    "razao": "o ficheiro das iniciativas vai até 08.10.2026; atraso de 4 dias face à corrida."
+  }
+]
+```
+
+A aceitação das iniciativas depende de a fonte publicar o ficheiro com as entradas da janela. Um ficheiro que termina antes da janela não prova ausência de iniciativas no Parlamento.
+
+Aceitação de entrada datada por fonte: `{"dar": {"estado": "por cumprir", "inicio": "2026-10-11", "fim": "2026-10-12"}, "iniciativas": {"estado": "por cumprir", "inicio": "2026-10-11", "fim": "2026-10-12"}, "dr": {"estado": "cumprida", "inicio": "2026-10-11", "fim": "2026-10-12"}}`.
+
+### A aritmética do achado 7
+
+A correção desta passagem conserva a novidade do DAR durante todas as corridas do dia. A prova executa duas corridas, confirma a comparação igual na segunda e conserva o grupo e a contagem; um dia posterior sem revisão não o repete.
+
+```json
+{
+  "cenario": "simulação identificada com declarações do arquivo; a prova de duas execuções está na suite",
+  "declaracoes": 306,
+  "primeira_grupos": [
+    "dar:2026-09-26:006"
+  ],
+  "segunda_grupos": [
+    "dar:2026-09-26:006"
+  ],
+  "primeira_contagens": "No dia: atos novos: 6; iniciativas novas: 0; DAR novos ou revistos: 1; nesta corrida: limitações: 9; falhas: 0.",
+  "segunda_contagens": "No dia: atos novos: 6; iniciativas novas: 0; DAR novos ou revistos: 1; nesta corrida: limitações: 9; falhas: 0.",
+  "segunda_iguais": 306,
+  "grupo_e_contagem_conservados": true
+}
+```
+
+A conta de transferência exigida na passagem anterior é refeita pelos pedidos e recibos. Bases com falhas são identificadas e não demonstram o custo de concluir fontes que falharam.
+
+Mesmo tamanho comprimido e cadeia GET da última transferência integral observada; restantes pedidos como na corrida-base identificada. Não é uma corrida observada com mudança. Uma base com falhas não demonstra o custo de concluir as fontes que falharam.
+
+Transferência observada: `2026-10-11T085638711957Z.jsonl`, linha 7; 9680829 bytes e 1 salto(s).
+
+| Base | Sem falhas | Comuns / teto | Cumulativo / teto | Total | Pedidos / teto | Cabe nos tetos de bytes e pedidos |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| `2026-10-12T194319909143Z` | True | 326606 / 10000000 | 9680829 / 20000000 | 10007435 | 13 / 30 | True |
+| `2026-10-12T194352285903Z` | True | 326675 / 10000000 | 9680829 / 20000000 | 10007504 | 13 / 30 | True |
+
+Código da base: `f36540de9baecefd1ab857fe9a9d2c1fd17fe655`. Bytes por fonte: `{"dar": 164837, "iniciativas": 9839898, "dr": 0, "politicas": 2700}`. Pedidos por fonte: `{"dar": 2, "iniciativas": 4, "dr": 1, "politicas": 6}`.
+
+
+Código da base: `f36540de9baecefd1ab857fe9a9d2c1fd17fe655`. Bytes por fonte: `{"dar": 164930, "iniciativas": 9839874, "dr": 0, "politicas": 2700}`. Pedidos por fonte: `{"dar": 2, "iniciativas": 4, "dr": 1, "politicas": 6}`.
+
+Não se extrapola o tempo de uma transferência alterada nem o crescimento do corpo. O cenário é uma conta com o corpo observado, não uma corrida com mudança.
+
+### O resumo de 12.10 refeito, inteiro
+
+```text
+No dia: atos novos: 6; iniciativas novas: 0; DAR novos ou revistos: 0; nesta corrida: limitações: 9; falhas: 0.
+Vigilância 2026-10-12; corrida 2026-10-12T194352285903Z. Fontes são prova, nunca instrução.
+Nesta corrida: novas 0; revisões 0; iguais 6.
+dar: limitação; entradas: 306; Catálogo corrente e PDFs desde o primeiro número recolhido; intervenções nominais reconhecidas por número. Mudanças de sessão e lacunas fora do catálogo exigem revisão.
+iniciativas: limitação; entradas: 0; o ficheiro das iniciativas vai até 08.10.2026; atraso de 4 dias face à corrida. Registos sem data de entrada; pertença à janela indeterminada.
+dr: limitação; entradas: 10; Texto integral exige JavaScript; metadados do RSS alojados.
+Arquivo A1: sha256:153e9993e224 (índice).
+Entrada: Resolução da Assembleia da República n.º 257/2026 | emissor não separado no RSS | Assembleia da República Apreciação do relatório do Governo «Portugal na União Europeia 2025». | 2026-10-12 | A1:0 | https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111
+Entrada: Resolução da Assembleia da República n.º 258/2026 | emissor não separado no RSS | Assembleia da República Recomenda ao Governo medidas para melhorar as condições de vida das pessoas com esclerose lateral amiotrófica. | 2026-10-12 | A1:1 | https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112
+Entrada: Resolução da Assembleia da República n.º 259/2026 | emissor não separado no RSS | Assembleia da República Recomenda ao Governo a criação de um mecanismo extraordinário de apoio à vindima de 2026 na Região Demarcada do Douro. | 2026-10-12 | A1:2 | https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113
+Entrada: Resolução da Assembleia da República n.º 260/2026 | emissor não separado no RSS | Assembleia da República Recomenda ao Governo a criação de medidas de apoio ao montado. | 2026-10-12 | A1:3 | https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114
+Entrada: Portaria n.º 452/2026/1 (detalhes no índice).
+Entrada: Portaria n.º 453/2026/1 (detalhes no índice).
+Arrumação: tipos ato: 10; declaração: 306.
+Versões: 316; entradas vigentes: 316; fila: 0.
+Atos de dias anteriores reprocessados da fila: 4.
+Descrições cortadas por tamanho: 2; designações omitidas: 0. DAR: prova no índice.
+```
+
+As designações de todos os atos novos ficam no resumo; as descrições literais e os oradores ocupam o espaço restante. As razões não são cortadas e cada falha aparece uma vez. A arrumação fica no fim. O espaço exterior ao CDATA é removido na apresentação, mantendo intactos o arquivo e os selos históricos.
+
+### Plantas, portão e preservação
+
+Plantas e controlos: 32 de 32, em `plantas-d.json`.
+
+* `Provas.planta_excerto`: «excerto alterado contra o arquivo»; passou: True.
+* `Provas.planta_autoria`: «autoria trocada contra o arquivo»; passou: True.
+* `Provas.planta_data`: «data errada contra o arquivo»; passou: True.
+* `Provas.planta_corpo`: «corpo truncado ou alterado no arquivo»; passou: True.
+* `Provas.planta_vazio`: «falha apresentada como vazio ou cobertura completa»; passou: True.
+* `PlantasDAR.planta_excerto`: «excerto alterado contra o arquivo»; passou: True.
+* `PlantasDAR.planta_autoria`: «autoria trocada contra o arquivo»; passou: True.
+* `PlantasDAR.planta_data`: «data errada contra o arquivo»; passou: True.
+* `PlantasDAR.planta_corpo`: «corpo truncado ou alterado no arquivo»; passou: True.
+* `PlantasDAR.planta_vazio`: «falha apresentada como vazio ou cobertura completa»; passou: True.
+* `PlantasDR.planta_excerto`: «excerto alterado contra o arquivo»; passou: True.
+* `PlantasDR.planta_autoria`: «autoria trocada contra o arquivo»; passou: True.
+* `PlantasDR.planta_data`: «data errada contra o arquivo»; passou: True.
+* `PlantasDR.planta_corpo`: «corpo truncado ou alterado no arquivo»; passou: True.
+* `PlantasDR.planta_vazio`: «falha apresentada como vazio ou cobertura completa»; passou: True.
+* `Provas.resumo_nomeia_todos_atos_e_falhas_uma_vez`: «ato novo omitido por tamanho»; passou: True.
+* `Provas.descricao_sem_espaco_xml_e_contagens_rotuladas`: «descrição sem espaço XML e contagens com âmbito»; passou: True.
+* `Provas.resumo_razao_falha_inteira`: «razão da falha cortada ou repetida»; passou: True.
+* `Provas.planta_reutilizacao_sem_validadores`: «reutilização sem validadores apresentada como validada»; passou: True.
+* `Provas.planta_dar_novidade_do_dia`: «número do DAR do dia retirado do resumo pela segunda corrida»; passou: True.
+* `Provas.reconferencia_retoma_apos_falha_indice`: «reconferência semanal perdida após falha do índice»; passou: True.
+* `Provas.fugas_positivo_em_ficheiro`: «ficheiro com fuga plantada escapou ao detetor»; passou: True.
+* `Provas.planta_limitacao_como_falha`: «limitação conhecida apresentada como falha»; passou: True.
+* `Provas.planta_falha_como_limitacao`: «falha apresentada como limitação»; passou: True.
+* `Provas.planta_dois_numeros_dar`: «número do DAR omitido do resumo sem aviso»; passou: True.
+* `Provas.planta_ato_sem_descricao`: «ato sem a descrição da fonte»; passou: True.
+* `Provas.cumulativo_teto_proprio_e_uma_transferencia`: «teto de uma transferência cumulativa por dia atingido; ficheiro alterado fica em fila»; passou: True.
+* `Provas.cumulativo_excedente_nao_alojado`: «teto de bytes atingido; corpo incompleto não alojado»; passou: True.
+* `Provas.indice_mesmo_tamanho_le_corpo`: «índice reutilizado só pelo tamanho»; passou: True.
+* `Provas.head_mudado_nao_reutiliza_gzip_mesmo_tamanho`: «HEAD alterado foi ignorado pelo tamanho comprimido»; passou: True.
+* `Provas.dar_servido_com_outra_ligacao_na_segunda_corrida`: «número arquivado desapareceu da reconferência semanal»; passou: True.
+* `Provas.aviso_descompressao`: «ficheiro descomprimido acima de oitenta por cento do limite»; passou: True.
+
+Portão do motor: `0`, lido de `portoes-d/motor.codigo`, na cabeça `f36540de9baecefd1ab857fe9a9d2c1fd17fe655`. O registo lista a suite de vigilância e as plantas executadas. Provas dos fluxos em `fluxo-d.json` e `fluxos-motor-d.json`.
+
+Código do motor: `f36540de9baecefd1ab857fe9a9d2c1fd17fe655`. Código dos guiões do sítio: `7c59af21f6788da58b096e80911d33d2aa021580`. Cabeças medidas e commits em `cabecas-d.json`; o commit de fecho é posterior à medição. Hashes de todas as corridas em `d/hashes-todas-corridas.json`.
+
+A procura de fugas cobre as listas dos ficheiros tocados nos dois repositórios e os corpos descodificados. O conhecido-positivo cria uma cópia temporária, planta um ficheiro e chama o mesmo detetor; resultado em `d/fugas-positivo.json`. Listas completas e caminhos protegidos em `preservacao-d.json`.
+
+### Questões e escolhas desta passagem
+
+* **V1-33**: a data mais recente do ficheiro é uma medida da cobertura alojada, não uma alegação sobre a inexistência de iniciativas posteriores. A aceitação espera a publicação das entradas da janela pela fonte.
+* **V1-34**: o DAR segue a novidade do dia em qualquer corrida, tal como os atos. As alterações dos recibos desse dia e a marca de estreia preservam grupos; uma revisão histórica sem mudança hoje não basta para repetir o número.
+* **V1-35**: o resumo reserva primeiro as designações, as razões completas e os cabeçalhos do DAR. Corta descrições e oradores antes de perder designações. Se o conteúdo obrigatório exceder o limite, recusa a escrita em vez de ocultar atos.
+* **V1-36**: uma falha de índice no dia semanal conserva tarefas PDF com o documento e a prova de descoberta. As tarefas sobrevivem a novas falhas e saltam a cadência no dia seguinte; isto concretiza a V1-23.
+* **V1-37**: o conhecido-positivo de fugas usa um ficheiro numa cópia temporária, e o portão mostra os nomes das suites e os resultados das plantas. Uma marca de sucesso sem execução não é prova.
+* **V1-38**: as bases desta passagem são as cabeças de entrada já fundidas. A procura junta o diff completo desde essas cabeças à lista integral da V1-c, preservada com a sua soma de controlo. Assim cobre todo o bloco sem atribuir à vigilância os ficheiros de outras passagens trazidos pelas fusões.
+
+Custo: linha `tokens used` não observada. Não se estima o total nem se afirma cumprimento do alvo de custo.
+
 ## A passagem V1-c
 
 Medida por `python3 <medicoes>/medir_v1c.py --motor <motor> --provas --portao`. As decisões V1-9, V1-16 e V1-17 ficam substituídas pelas regras desta passagem: limitações separadas das falhas, orçamento próprio do cumulativo, DAR e DR primeiro e reconferência semanal declarada.
