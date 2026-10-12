@@ -39,7 +39,7 @@ q=i/'reconferencia-codigo';cab=json.loads((q/'cabecas.json').read_text())
 for nome in ['series','cruzamento']:codigos.append((str((q/(nome+'.codigo')).relative_to(b)),(q/(nome+'.codigo')).read_text().strip(),cab['sitio']+'; motor '+cab['motor']))
 s+=tabela(['Ficheiro','Código','Cabeça'],codigos)
 s+='As árvores do código estavam limpas no início dos portões e as cabeças foram lidas antes e depois. As séries e o cruzamento com `--with-origin` correram depois do último commit que muda os ficheiros que leem. Os commits posteriores conservam apenas provas, capturas e este relato. A cabeça final é comunicada na resposta, sem inventar o hash do commit que contém o próprio relatório.\n'
-s+='A tentativa anterior foi conservada em `portoes-i-tentativa1/`: o C1 ainda exigia a frase antiga de ausência, e a função nova precisava das declarações de tipos. A regra independente e as plantas foram corrigidas antes da repetição.\n'
+s+='As tentativas anteriores foram conservadas: na primeira, o C1 ainda exigia a frase antiga de ausência, e a função nova precisava das declarações de tipos; na segunda, o índice recusou a forma nova do localizador do nome legal. A regra independente, a forma exata do localizador e as plantas foram corrigidas antes da repetição.\n'
 s+=tabela(['Tentativa','build','verify','typecheck'],[(q.name,*[(q/(k+'.codigo')).read_text().strip() for k in ['build','verify','typecheck']]) for q in sorted(b.glob('portoes-i-tentativa*'))])
 s+='### Privacidade e questões\n'
 s+=f"A RP4N-17 fecha como aceite, por decisão do mandato, apenas para os pares de commit e resumo de linha declarados em `i/privacidade.json`: {len(v['RP4N-17']['excecoes'])} ocorrências. A planta recusa a mesma linha noutro commit e uma linha nova num commit aceite. Os códigos da procura real distinguem encontro, ausência e erro; um erro impede a conferência.\n"
@@ -50,6 +50,9 @@ plantas=le('plantas-sitio.json')['plantas']+le('plantas-copia.json')['plantas']+
 for x in le('plantas-c1.json')['plantas']:
  if x['grupo']=='rp4ni':
   plantas.append({'nome':x['nome'],'mensagem':'; '.join(x['erros'])})
+for x in le('plantas-indice.json')['medida']['plantas_localizadores']['plantas']:
+ if x['nome'] in ['Página legal trocada','Figura legal trocada']:
+  plantas.append({'nome':x['nome'],'mensagem':x['queixa_I1']})
 for linha in (i/'plantas-motor.log').read_text().splitlines():
  if linha.startswith('PLANTA nome legal'):
   nome,msg=linha.removeprefix('PLANTA ').split(': ',1);plantas.append({'nome':nome,'mensagem':msg})
