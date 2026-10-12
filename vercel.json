@@ -20,6 +20,13 @@
       "continue": true
     },
     {
+      "src": "^/(?:livro-razao/(.*)\\.json|livro-razao\\.json|livro-razao\\.csv|incorporar\\.js)$",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      },
+      "continue": true
+    },
+    {
       "src": "/(.*)",
       "has": [
         {

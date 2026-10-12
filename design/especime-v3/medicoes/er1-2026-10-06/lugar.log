@@ -1,0 +1,43 @@
+
+> o-estado-do-pais@0.1.0 check:lugar
+> node scripts/check-lugar.mjs
+
+  H2 I193: 5 controlos do endereço e da prosa no mesmo bloco
+  8.4, o que a régua leu: 88 definições (esperadas 88) · 190 origens (esperadas 190)
+  item 5, o que a régua leu no Método: pt «selo» ×6 · en «seal» ×6 (chão 1 por edição; a rota do Método está fora da conta da L3, pela medida P9 do brief)
+  item 5, o autoteste da L3 nos rótulos das marcas: à vista 1 (esperada 1) · escondido no «.vh» 0 (esperado 0)
+  RP3, o autoteste da marca das séries: «threshold» e «indicador» nos campos transcritos 0 (esperado 0) · «limiar» na prosa da casa a conta em palavras 1, o motivo de uma correção 1, o motivo inglês de uma correção 1, um invólucro sem campo 1 (esperado 1 em cada) · o seletor e a lista fechada de acordo
+  §7.4 e 8.6, o que os dados dizem: estudo 34 · texto 17 · indice 2 · edicoes 34 · linhas 22
+check:lugar · 7907 páginas em dist/
+  L1 · páginas com dois destinos iguais fora da mobília         2716  (teto 2716) ok
+      · /agenda · 8 destinos repetidos (ex.: /agenda ×4)
+      · /correcoes · 22 destinos repetidos (ex.: /livro-razao/correcoes-publicadas ×3)
+      · /distritos/aveiro · 19 destinos repetidos (ex.: /municipios/agueda ×2)
+      · /distritos/beja · 14 destinos repetidos (ex.: /municipios/aljustrel ×2)
+      · /distritos/braga · 14 destinos repetidos (ex.: /municipios/amares ×2)
+      · /distritos/braganca · 12 destinos repetidos (ex.: /municipios/alfandega-da-fe ×2)
+  L2 · segundas listas dos concelhos                               0  (teto 0) ok
+  L2 · réguas da convergência fora de /regioes                     0  (teto 0) ok
+  L2 · sinopses de estudo fora de /estudos                         0  (teto 0) ok
+  L3 · palavras fora do vocabulário fechado                        0  (teto 0) ok
+  L4 · frases de definição e de hierarquia em falta                0  (teto 0) ok
+  L5 · páginas sem caminho no cabeçalho                            0  (teto 0) ok
+  L6 · selos que não dizem o publicador                            0  (teto 0) ok
+  8.5 · «limiar» sozinho                                           0  (teto 0) ok
+  8.8 · «livro-razão» nos menus e nos títulos                      0  (teto 0) ok
+  8.13 · valores selados na secção dos domínios de /               0  (teto 0) ok
+  8.14 · «Relance» e «Leitura breve» nas páginas do leitor         0  (teto 0) ok
+  8.17 · pontos dos 308 na página de um concelho                   0  (teto 0) ok
+  8.17 · páginas de concelho sem o mapa da sua unidade             0  (teto 0) ok
+  8.11 · leituras de aparelho no cabeçalho                         0  (teto 0) ok
+  8.4 · definições de painel fora da declaração                    0  (teto 0) ok
+  §7.10 · «[a verificar]» sem definição ao pé do primeiro          0  (teto 0) ok
+  §7.10 · valores desenhados sem o seu texto na legenda            0  (teto 0) ok
+  §7.4 e 8.6 · estudos fora da forma única                         0  (teto 0) ok
+  §7.4 e 8.6, o que a régua leu: estudo 34 · texto 17 · indice 2 · edicoes 34 · linhas 22
+  as exceções, e quantas vezes cada uma foi precisa:
+      · «peça»     5 · a política de IA copia a POLITICA-DA-AUTONOMIA.md e fica como a fonte a escreveu
+      · «trabalho»    34 · «trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo
+      · «indicador»     1 · «indicador» a nomear o campo que o publicador dá, e não uma medida da casa
+      · «indicador»    26 · «indicador» dentro do endereço da API do INE (`json_indicador`), que é um caminho da fonte e não uma palavra da casa
+check:lugar · verde.

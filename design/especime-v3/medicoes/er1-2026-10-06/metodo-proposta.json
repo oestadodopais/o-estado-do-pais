@@ -1,0 +1,16 @@
+{
+  "comando": "node design/especime-v3/medicoes/er1-2026-10-06/medir-metodo.mjs",
+  "proposta": {
+    "pt": "Cada número pode ser incorporado com a sua fonte e o seu recibo, sob a licença Creative Commons de atribuição indicada junto dos dados.",
+    "en": "Each number can be embedded with its source and receipt, under the Creative Commons attribution licence stated alongside the data."
+  },
+  "codigo": 1,
+  "mensagens": [
+    "    \u001b[31m✗\u001b[0m \"metodo\": o texto mudou depois da última decisão que o governa, ou a decisão foi registada contra outro texto.",
+    "        src/data/metodo.mjs está hoje em 5db06fdbfd05",
+    "        Escreva a entrada que regista a mudança, com o resumo de hoje."
+  ],
+  "antes": "f15e24c3a84aeffa158e4bf9b619eded77470e82352ad133387fb33532ff4d16",
+  "reposto": "f15e24c3a84aeffa158e4bf9b619eded77470e82352ad133387fb33532ff4d16",
+  "aplicado": false
+}

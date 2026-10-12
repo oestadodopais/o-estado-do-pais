@@ -699,6 +699,22 @@ fazer, que é não convidar ninguém a reutilizá-lo e não declarar termos que
 ninguém decidiu. Construí-los sempre é o que impede que o dia da decisão seja o
 dia de estreia de um caminho que nunca foi construído nem conferido.
 
+**O recibo incorporável (ER1).** O JSON de uma linha acrescenta `incorporacao`,
+com a apresentação em português e inglês recomposta da própria linha e das
+declarações do recibo. `linha` conserva os campos publicados; os ficheiros do
+conjunto inteiro conservam a forma anterior. A apresentação transporta também
+as ressalvas, a unidade traduzida, o lugar e o período, para não deixar campos
+antigos junto de um valor revisto. O portão compara o código colável e a célula
+`check:incorporar` confere os campos publicados nas duas apresentações.
+
+Sem guião, o parágrafo conserva a leitura que foi copiada. Com o guião, cada
+carregamento pede apenas o JSON da linha, sem credenciais nem referência à
+página que o acolhe, e recusa redirecionamentos. Uma resposta falhada ou
+inválida conserva o parágrafo. A data de leitura só avança com uma confirmação
+do valor; uma tentativa inacessível ou divergente não a substitui. O aviso de
+valor diferente usa a última correção de valor que termina no valor atual;
+sem essa entrada, anuncia a mudança sem inventar a data.
+
 ## `[a verificar]`
 
 Um campo que não se conhece escreve-se `"[a verificar]"`. **Nunca um valor

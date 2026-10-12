@@ -1,0 +1,20 @@
+{
+  "cabeca": "645ecde7ea61c044d7c0648b020c6392a48674ce",
+  "portoes": [
+    {
+      "nome": "build",
+      "codigo": 0
+    },
+    {
+      "nome": "verify",
+      "codigo": 0
+    },
+    {
+      "nome": "typecheck",
+      "codigo": 0
+    }
+  ],
+  "recibos": 6390,
+  "capturas": 30,
+  "pacote": "design/especime-v3/medicoes/er1-2026-10-06/leitura"
+}

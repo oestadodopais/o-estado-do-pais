@@ -1,0 +1,339 @@
+{
+  "comando": "node tests/incorporar/conferir.mjs",
+  "recibos": 6390,
+  "semCodigo": 738,
+  "comCodigo": 5652,
+  "json": 3195,
+  "plantas": [
+    {
+      "nome": "separador-em-falta",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "marca-por-confirmar",
+      "mensagem": "ER1 código: uma marca por confirmar não se incorpora.",
+      "mordeu": true
+    },
+    {
+      "nome": "valor-trocado",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "codigo-em-falta",
+      "mensagem": "ER1 código: falta o único código do recibo.",
+      "mordeu": true
+    },
+    {
+      "nome": "marca-no-paragrafo",
+      "mensagem": "ER1 código: marca fora do campo do recibo da própria linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "codigo-editavel",
+      "mensagem": "ER1 código: marca fora do campo do recibo da própria linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "campo-conferido-fora-do-bloco",
+      "mensagem": "ER1 código: o campo conferido não é o que o botão copia.",
+      "mordeu": true
+    },
+    {
+      "nome": "comentario-no-codigo",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "leitura-nao-literal",
+      "mensagem": "ER1 código: falta a leitura literal do campo.",
+      "mordeu": true
+    },
+    {
+      "nome": "codigo-sem-proveniencia-pt",
+      "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+      "mordeu": true
+    },
+    {
+      "nome": "aviso-em-falta-pt",
+      "mensagem": "ER1 aviso: falta a recusa de incorporação da edição.",
+      "mordeu": true
+    },
+    {
+      "nome": "codigo-sem-proveniencia-en",
+      "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+      "mordeu": true
+    },
+    {
+      "nome": "aviso-em-falta-en",
+      "mensagem": "ER1 aviso: falta a recusa de incorporação da edição.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-custo-unitario-do-trabalho-2025-pt",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-custo-unitario-do-trabalho-2025-en",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-pib-pc-alentejo-2024-pt",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-pib-pc-alentejo-2024-en",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-evora-populacao-2021-pt",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-evora-populacao-2021-en",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-taxa-de-desemprego-2025-ue-pt",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-taxa-de-desemprego-2025-ue-en",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-despesa-por-funcao-2024-gf01-es-pt",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-despesa-por-funcao-2024-gf01-es-en",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-portugal-concentracao-vab4-2024-pt",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-portugal-concentracao-vab4-2024-en",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "cors-em-falta",
+      "mensagem": "ER1 CORS: /livro-razao/custo-unitario-do-trabalho-2024.json tem estado ou cabeçalho incorreto.",
+      "mordeu": true
+    },
+    {
+      "nome": "cors-em-html",
+      "mensagem": "ER1 CORS: / tem estado ou cabeçalho incorreto.",
+      "mordeu": true
+    },
+    {
+      "nome": "moldura-aberta",
+      "mensagem": "ER1 moldura: / perdeu SAMEORIGIN.",
+      "mordeu": true
+    },
+    {
+      "nome": "data-inacessivel-pt",
+      "mensagem": "Uma tentativa sem confirmação não avança a data de leitura.",
+      "mordeu": true
+    },
+    {
+      "nome": "data-diverge-pt",
+      "mensagem": "Uma tentativa sem confirmação não avança a data de leitura.",
+      "mordeu": true
+    },
+    {
+      "nome": "data-inacessivel-en",
+      "mensagem": "Uma tentativa sem confirmação não avança a data de leitura.",
+      "mordeu": true
+    },
+    {
+      "nome": "data-diverge-en",
+      "mensagem": "Uma tentativa sem confirmação não avança a data de leitura.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-nome",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-periodo",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-valor",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-unidade",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-unidadeLang",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-fonte",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-fonteLang",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-data",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-leitura",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-atribuicao",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-notas",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-atualizacao",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "metodo-sem-exemplo-pt",
+      "mensagem": "ER1 Método: falta a porta para o recibo de exemplo da edição.",
+      "mordeu": true
+    },
+    {
+      "nome": "metodo-sem-exemplo-en",
+      "mensagem": "ER1 Método: falta a porta para o recibo de exemplo da edição.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-metodo.exemplo-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada metodo.exemplo nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-metodo.exemplo-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada metodo.exemplo nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.indisponivel-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.indisponivel nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.indisponivel-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.indisponivel nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.titulo-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.titulo nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.titulo-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.titulo nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.copiar-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.copiar nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.copiar-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.copiar nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.copiado-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.copiado nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.copiado-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.copiado nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.selecionado-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.selecionado nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.selecionado-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.selecionado nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.lido-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.lido nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.lido-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.lido nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.calculado-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.calculado nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.calculado-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.calculado nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.periodoEmFalta-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.periodoEmFalta nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.periodoEmFalta-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.periodoEmFalta nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.atualizado-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.atualizado nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.atualizado-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.atualizado nas duas edições.",
+      "mordeu": true
+    }
+  ]
+}

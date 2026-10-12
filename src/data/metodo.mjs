@@ -332,9 +332,11 @@ export const REGRAS = [
     mecanismo: {
       pt: [
         'Cada linha tem endereço próprio e página própria, nas duas edições, e o índice de todas é o livro-razão. A construção falha se uma linha ficar sem página: um selo que aponte para o vazio é uma porta que não abre.',
+        "Cada número deste projeto pode ser incorporado noutra página com a sua fonte, a data em que foi lido e a porta para o recibo: o código está no recibo de cada linha, e um guião pequeno deste projeto mantém o número em dia lendo o JSON da linha. O guião lê só os seus próprios parágrafos e pede só esse JSON; como em qualquer pedido de um navegador, a origem da página que incorpora chega ao alojamento deste projeto, que não a guarda. A licença é a do conjunto de dados, Creative Commons de atribuição.",
       ],
       en: [
         'Every row has its own address and its own page, in both editions, and the index of them all is the ledger. The build fails if a row is left without a page: a seal pointing at nothing is a door that does not open.',
+        "Any number on this site can be embedded in another page with its source, the date it was read and the door to its receipt: the code is on each row's receipt, and a small script from this project keeps the number current by reading the row's JSON. The script reads only its own paragraphs and requests only that JSON; as with any browser request, the origin of the embedding page reaches this project's host, which does not keep it. The licence is the dataset's, Creative Commons attribution.",
       ],
     },
     prova: [
@@ -344,7 +346,11 @@ export const REGRAS = [
         rotulo: { pt: 'com proveniência completa', en: 'with complete provenance' },
       },
     ],
-    ligacoes: [{ rota: 'livro', rotulo: { pt: 'Ver o livro-razão', en: 'See the ledger' } }],
+    ligacoes: [
+      { rota: 'livro', rotulo: { pt: 'Ver o livro-razão', en: 'See the ledger' } },
+      { rota: 'linha', params: { slug: 'divida-publica-2025' },
+        rotulo: { pt: 'Ver o recibo de exemplo', en: 'See the example receipt' } },
+    ],
   },
 
   {
