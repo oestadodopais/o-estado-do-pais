@@ -227,6 +227,7 @@ export const LINGUA_DOS_ROTULOS = {
   'Interest, expenditure': 'en',
   'Juros e outros encargos': 'pt',
   '3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.)': 'pt',
+  '2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada)': 'pt',
   'Produto Interno Bruto, a preços de mercado': 'pt',
   /* OE1: línguas conferidas nos documentos e nas células de origem. */
   "ADMINISTRAÇÃO INTERNA": "pt",
