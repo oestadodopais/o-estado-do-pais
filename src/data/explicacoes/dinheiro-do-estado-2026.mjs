@@ -329,6 +329,8 @@ export const DINHEIRO_DO_ESTADO_2026 = {
  * @type {{ id: string, onde: string, o_que: string, razao: string }[]}
  */
 export const ACERTOS = [
+  { id: 'X24', onde: 'execução', o_que: 'dizer que ainda faltam os meses de setembro a dezembro', razao: 'EX1-f, achado 7: o saldo é acumulado de janeiro a agosto e a previsão é anual' },
+  { id: 'X25', onde: 'execução', o_que: 'apontar para as contas públicas do parágrafo seguinte', razao: 'EX1-f, achado 8: usar as palavras e a posição real do parágrafo de destino' },
   { id: 'X1', onde: 'título, abertura, execução, dívida', o_que: 'os anos «2026», «agosto de 2026» e «2025» entram por `{ periodo }` de uma linha nomeada', razao: 'nenhum algarismo escrito à mão (o mandato, ponto 3); o texto rendido é o mesmo' },
   { id: 'X2', onde: 'abertura', o_que: 'o parêntese «(a fonte desta frase é a classificação das funções das administrações públicas, a divisão 01, que o construtor cita na auditoria da leitura)» não se rende', razao: 'é uma instrução ao construtor: a fonte está na auditoria, nas origens `eurostat-cofog-divisao-01` e `dados-gov-oe-despesa-funcional`' },
   { id: 'X3', onde: 'por função', o_que: '«As dez funções, de cada cem euros:» é o título da figura, e «a figura das barras, uma por linha, da maior para a menor» e «(os ids oe-2026-cem-euros-funcao-NN)» não se rendem', razao: 'são instruções ao construtor: a figura é a forma `barras-do-livro`' },

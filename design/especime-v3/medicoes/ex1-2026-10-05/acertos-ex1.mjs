@@ -108,6 +108,8 @@ acerto('X22', 'conta os juros da dívida e as transferências', 'conta as transf
 acerto('X22', 'Estes números não isolam o custo dos juros da dívida, que o Orçamento também prevê e que entra noutra classificação; quando as linhas dos juros existirem no livro-razão, esta explicação diz quanto são.', 'Estes números não isolam o custo dos juros da dívida.');
 acerto('X23', `Até ⟨periodo:${SALDO_EXEC}⟩, as contas da administração central e da segurança social fecharam com um saldo de`, `No fim de ⟨periodo:${SALDO_EXEC}⟩, as contas da administração central e da segurança social apresentavam um saldo acumulado de`);
 acerto('X23', `⟨comparaSaldos:${SALDO_EXEC},${SALDO_OE}⟩.`, `⟨comparaSaldos:${SALDO_EXEC},${SALDO_OE}⟩. É outra conta, diferente da das administrações públicas de ⟨periodo:saldo-das-administracoes-publicas-2025⟩.`);
+acerto('X24', `⟨comparaSaldos:${SALDO_EXEC},${SALDO_OE}⟩.`, `⟨comparaSaldos:${SALDO_EXEC},${SALDO_OE}⟩, e ainda faltam os meses de setembro a dezembro.`);
+acerto('X25', 'É outra conta, diferente da das administrações públicas de ⟨periodo:saldo-das-administracoes-publicas-2025⟩.', 'É outra conta, e não a das contas públicas de ⟨periodo:saldo-das-administracoes-publicas-2025⟩ do parágrafo seguinte.');
 /* X9 não muda palavras: as frases que comparam ficam guardadas por condições. Conta-se aqui quantas guardas a declaração tem. */
 const guardas = (JSON.stringify(E).match(/"se":\[/g) ?? []).length / 2;
 exercidos.push({ id: 'X9', vezes: guardas });
