@@ -112,15 +112,18 @@ function medidaDoConcelho(chave) {
  * @param {string} id @param {'pt'|'en'} lang
  * @returns {{ pedacos: any[], tipo: 'cartao'|'concelho'|'familia', chave: string, cartao: string|null, sinal: string[] | null, porConfirmar: boolean }}
  */
-/** Comparação por duas linhas, com os valores lidos e palavras escolhidas pela relação. */
+/** Comparação por duas linhas, com os valores lidos e palavras escolhidas pela relação.
+ * @param {any} c @param {'pt'|'en'} lang
+ */
 export function comparaLinhas(c,lang,linhas=loadClaims()) {
  const a=linhas.get(c.a),b=linhas.get(c.b);
- const numero=v=>Number(String(v).replace(/[\s\u202f\u00a0]/g,'').replace(',','.'));
+ const numero=(/** @type {unknown} */ v)=>Number(String(v).replace(/[\s\u202f\u00a0]/g,'').replace(',','.'));
  if(!a||!b||a.unit!==b.unit||a.reference_date!==b.reference_date||!Number.isFinite(numero(a.value))||!Number.isFinite(numero(b.value)))throw new Error('RP4N-g: comparação sem duas linhas compatíveis');
  const ramo=numero(a.value)<numero(b.value)?'menor':numero(a.value)>numero(b.value)?'maior':'igual';
  return [c[lang].antes,{claim:a.id,sufixo:' '+a.unit},c[lang][ramo],{claim:b.id,sufixo:' '+b.unit},c[lang].depois];
 }
 
+/** @param {string} id @param {'pt'|'en'} lang */
 export function oQueEDaLinha(id, lang) {
   const f = familiaDaLinha(id);
   const porConfirmar = POR_CONFIRMAR.has(id);
