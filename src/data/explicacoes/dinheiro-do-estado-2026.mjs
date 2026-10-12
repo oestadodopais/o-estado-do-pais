@@ -22,6 +22,8 @@
  *   · `{ compara: [a, b], maior, menor, igual }` (desde o EX1-c, 06.10.2026, o achado 9 da leitura a frio, pela
  *     gramática da primeira página): as palavras que a comparação dos valores de a e de b escolhe («acima dos …
  *     da média da União Europeia» ou «abaixo»);
+ *   · `{ comparaSaldos: [a, b], deficitMaior, deficitMenor, deficitIgual, excedenteMaior, excedenteMenor, excedenteIgual, nulos, diferentesNegativo, diferentesPositivo, diferentesZero }`:
+ *     compara os módulos quando os sinais coincidem; com sinais diferentes, declara a previsão sem comparar tamanhos.
  *   · `{ se: [condições], partes }`: palavras que só se rendem enquanto as condições declaradas forem
  *     verdadeiras. É assim que uma frase que compara («a maior fatia», «o maior é o das Finanças») se
  *     mantém certa sozinha: quando os números deixam de lhe dar razão, sai da página, e o guião dos sinais
@@ -205,19 +207,39 @@ export const DINHEIRO_DO_ESTADO_2026 = {
               'Até ', { periodo: SALDO_EXECUTADO }, ', as contas da administração central e da segurança social fecharam com um saldo de ',
               { claim: SALDO_EXECUTADO, sufixo: ' milhões de euros' }, ', ',
               { sinal: SALDO_EXECUTADO, positivo: ['um excedente (recebeu mais do que gastou)'], negativo: ['um défice (gastou mais do que recebeu)'], zero: ['um saldo nulo (recebeu o mesmo que gastou)'] },
-              '; o saldo acumulado está ',
-              { compara: [SALDO_EXECUTADO, SALDO_PREVISTO],
-                maior: ['acima do que o Orçamento previa'], menor: ['abaixo do que o Orçamento previa'], igual: ['em linha com o que o Orçamento previa'] },
-              ' para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ').',
+              '; ',
+              { comparaSaldos: [SALDO_EXECUTADO, SALDO_PREVISTO],
+                deficitMaior: ['é um défice maior do que o que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],
+                deficitMenor: ['é um défice menor do que o que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],
+                deficitIgual: ['é um défice igual ao que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],
+                excedenteMaior: ['é um excedente maior do que o que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],
+                excedenteMenor: ['é um excedente menor do que o que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],
+                excedenteIgual: ['é um excedente igual ao que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],
+                nulos: ['é um saldo nulo, como o que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],
+                diferentesNegativo: ['o Orçamento previa para o ano inteiro um défice de ', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }],
+                diferentesPositivo: ['o Orçamento previa para o ano inteiro um excedente de ', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }],
+                diferentesZero: ['o Orçamento previa para o ano inteiro um saldo nulo de ', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }],
+              },
+              '.',
             ],
             en: [
               'By ', { periodo: SALDO_EXECUTADO }, ', the accounts of central government and social security closed with a balance of ',
               { claim: SALDO_EXECUTADO, sufixo: ' million euros' }, ', ',
-              { sinal: SALDO_EXECUTADO, positivo: ['a surplus (it took in more than it spent)'], negativo: ['a deficit (it spent more than it took in)'], zero: ['a zero balance (it took in as much as it spent)'] },
-              '; the cumulative balance is ',
-              { compara: [SALDO_EXECUTADO, SALDO_PREVISTO],
-                maior: ['above what the Budget forecast'], menor: ['below what the Budget forecast'], igual: ['in line with what the Budget forecast'] },
-              ' for the full year (', { claim: SALDO_PREVISTO, sufixo: ' million euros' }, ').',
+              { sinal: SALDO_EXECUTADO, positivo: ['a surplus (it took in more than it spent)'], negativo: ['a deficit (it spent more than it took in)'], zero: ['a nil balance (it took in the same as it spent)'] },
+              '; ',
+              { comparaSaldos: [SALDO_EXECUTADO, SALDO_PREVISTO],
+                deficitMaior: ['it is a larger deficit than the one the Budget forecast for the full year (', { claim: SALDO_PREVISTO, sufixo: ' million euros' }, ')'],
+                deficitMenor: ['it is a smaller deficit than the one the Budget forecast for the full year (', { claim: SALDO_PREVISTO, sufixo: ' million euros' }, ')'],
+                deficitIgual: ['it is the same deficit as the one the Budget forecast for the full year (', { claim: SALDO_PREVISTO, sufixo: ' million euros' }, ')'],
+                excedenteMaior: ['it is a larger surplus than the one the Budget forecast for the full year (', { claim: SALDO_PREVISTO, sufixo: ' million euros' }, ')'],
+                excedenteMenor: ['it is a smaller surplus than the one the Budget forecast for the full year (', { claim: SALDO_PREVISTO, sufixo: ' million euros' }, ')'],
+                excedenteIgual: ['it is the same surplus as the one the Budget forecast for the full year (', { claim: SALDO_PREVISTO, sufixo: ' million euros' }, ')'],
+                nulos: ['it is a nil balance, as the Budget forecast for the full year (', { claim: SALDO_PREVISTO, sufixo: ' million euros' }, ')'],
+                diferentesNegativo: ['the Budget forecast for the full year a deficit of ', { claim: SALDO_PREVISTO, sufixo: ' million euros' }],
+                diferentesPositivo: ['the Budget forecast for the full year a surplus of ', { claim: SALDO_PREVISTO, sufixo: ' million euros' }],
+                diferentesZero: ['the Budget forecast for the full year a nil balance of ', { claim: SALDO_PREVISTO, sufixo: ' million euros' }],
+              },
+              '.',
             ],
           },
         },
@@ -298,5 +320,6 @@ export const ACERTOS = [
   { id: 'X17', onde: 'o que isto não diz', o_que: '«Os juros da dívida não estão ainda no livro-razão deste projeto como linha própria; quando entrarem, esta explicação diz quanto são.» passa a «Falta aqui o custo dos juros da dívida, que o Orçamento também prevê e que estes números não mostram.»', razao: 'o achado 16 da leitura a frio (EX1-c, 06.10.2026): a frase falava do livro-razão do projeto e prometia uma atualização, e o sítio não se explica a si próprio nas páginas de conteúdo; a frase continua guardada pela condição de nenhuma linha dos juros' },
   { id: 'X18', onde: 'o que isto não diz', o_que: 'os juros não estão isolados, com a alternativa «noutra classificação» e a atualização prevista pelo mandato EX1-d', razao: 'o excerto selado nomeia Public debt transactions, mas não explicita os juros; aplica-se a alternativa autorizada, mantendo a condição da ausência de linhas' },
   { id: 'X19', onde: 'o que isto não diz', o_que: 'a execução até agosto é a que esta explicação mostra acima', razao: 'EX1-d: a referência à posição na página deixa de parecer uma comparação de valores' },
+  { id: 'X21', onde: 'execução', o_que: 'comparar a dimensão dos défices ou excedentes pelo token comparaSaldos, com todos os ramos declarados', razao: 'EX1-e, achado 4: os módulos evitam inverter o sentido da comparação de défices; sinais diferentes só apresentam a previsão anual' },
   { id: 'X20', onde: 'execução', o_que: 'o saldo global do mesmo perímetro, o significado pelo sinal e a comparação com o saldo previsto para o ano inteiro', razao: 'EX1-d: as linhas do saldo executado e previsto constam do mesmo quadro dos totais; compara-se o saldo com sinal, sem afirmar cumprimento de uma meta mensal' },
 ];
