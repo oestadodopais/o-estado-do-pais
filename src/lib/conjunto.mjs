@@ -73,7 +73,7 @@ import {
 import { LICENCA, CONJUNTO } from '../data/licenca.mjs';
 import { SITE_NAME, SITE_HOST_DISPLAY } from '../../site.config.mjs';
 
-import { dadosDaIncorporacao } from './incorporar.mjs';
+import { dadosDaIncorporacao, podeIncorporar } from './incorporar.mjs';
 
 export { CONJUNTO };
 
@@ -176,9 +176,10 @@ export function jsonDoConjunto() {
  * @param {string} id
  */
 export function jsonDaLinha(id) {
+  const c = getClaim(id);
   return (
-    JSON.stringify({ _: nota('uma'), licenca: licenca(), linha: linhaDoConjunto(getClaim(id)),
-      incorporacao: { pt: dadosDaIncorporacao(getClaim(id), 'pt'), en: dadosDaIncorporacao(getClaim(id), 'en') } }, null, 2) +
+    JSON.stringify({ _: nota('uma'), licenca: licenca(), linha: linhaDoConjunto(c),
+      ...(podeIncorporar(c) ? { incorporacao: { pt: dadosDaIncorporacao(c, 'pt'), en: dadosDaIncorporacao(c, 'en') } } : {}) }, null, 2) +
     '\n'
   );
 }

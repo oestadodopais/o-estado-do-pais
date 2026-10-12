@@ -133,6 +133,12 @@ export function conferirCodigo(root, rota, livro = linhas) {
 }
 
 export function conferirJson(doc, c, lang) {
+  if (doc?.linha?.id !== c.id || doc?.linha?.value !== c.value)
+    return ['ER1 JSON: a apresentação difere da linha.'];
+  const presente = Object.hasOwn(doc ?? {}, 'incorporacao');
+  if (!provenienciaConfirmada(c)) return presente
+    ? ['ER1 JSON: proveniência por confirmar oferece incorporação.'] : [];
+  if (!presente) return ['ER1 JSON: falta a incorporação da linha com código.'];
   const d = doc?.incorporacao?.[lang];
   const esperado = dadosEsperados(c, lang);
   return doc?.linha?.id === c.id && doc?.linha?.value === c.value && d &&

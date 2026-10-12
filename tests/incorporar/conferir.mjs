@@ -160,6 +160,20 @@ for (const lang of ['pt','en']) {
   assert.equal(dadosDaIncorporacao(base,lang).data,depois);
 }
 const doc=JSON.parse(fs.readFileSync(`${dist}/livro-razao/${c.id}.json`,'utf8'));
+for (const lang of ['pt','en']) {
+  const recusada = linhas.find(x => !podeIncorporar(x));
+  const recusado = JSON.parse(fs.readFileSync(`${dist}/livro-razao/${recusada.id}.json`, 'utf8'));
+  for (const valor of [doc.incorporacao, null, '']) {
+    const mensagem = 'ER1 JSON: proveniência por confirmar oferece incorporação.';
+    assert.deepEqual(conferirJson({...recusado, incorporacao: valor}, recusada, lang), [mensagem]);
+    resultados.plantas.push({nome:'json-recusado-com-campo-'+(valor === null ? 'null' : valor === '' ? 'vazio' : 'objeto')+'-'+lang,mensagem,mordeu:true});
+  }
+  const copia = structuredClone(doc); delete copia.incorporacao;
+  const mensagem = 'ER1 JSON: falta a incorporação da linha com código.';
+  assert.deepEqual(conferirJson(copia,c,lang), [mensagem]);
+  resultados.plantas.push({nome:'json-com-codigo-sem-campo-'+lang,mensagem,mordeu:true});
+}
+
 for(const campo of Object.keys(doc.incorporacao.pt)){
   const copia=structuredClone(doc);copia.incorporacao.pt[campo]+=' alterado';
   const mensagem='ER1 JSON: a apresentação difere da linha.';
