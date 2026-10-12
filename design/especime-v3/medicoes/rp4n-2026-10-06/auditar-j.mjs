@@ -68,7 +68,32 @@ for(const rel of paginas) {
  comparacoes.push({pagina:rel,antes:sha(a),depois:sha(d),iguais:a.equals(d),iguais_sem_definition_sources:na===nd});
  if(na!==nd) {fs.writeFileSync(path.join(out,rel.replaceAll('/','_')+'.antes.html'),na);fs.writeFileSync(path.join(out,rel.replaceAll('/','_')+'.depois.html'),nd);}
 }
-const resultado={base,cabecas:{sitio:cabeca('.'),motor:cabeca(motor)},declaracoes,recusas_antes:recusas,recusas_depois:finais,comparacoes};
+const jsonComparados=[];
+for(const rel of ['livro-razao.json',...ids.map(id=>`livro-razao/${id}.json`)]) {
+ const a=fs.readFileSync(path.join(baseline,'dist',rel)),d=fs.readFileSync(path.join('dist',rel));
+ const antigo=JSON.parse(a),novo=JSON.parse(d);
+ function semFontes(x) {
+  if(!x || typeof x!=='object') return;
+  if(Array.isArray(x)){x.forEach(semFontes);return;}
+  delete x.definition_sources;Object.values(x).forEach(semFontes);
+ }
+ semFontes(antigo);semFontes(novo);
+ assert.deepEqual(novo,antigo,`${rel}: outro campo mudou`);
+ jsonComparados.push({ficheiro:rel,antes:sha(a),depois:sha(d),iguais:a.equals(d),apenas_definition_sources:true});
+}
+function htmlAbaixo(pasta) {
+ const encontrados=[];
+ function andar(rel) {for(const e of fs.readdirSync(path.join(pasta,rel),{withFileTypes:true})) {
+  const p=path.join(rel,e.name);if(e.isDirectory())andar(p);else if(e.isFile()&&p.endsWith('.html'))encontrados.push(p);
+ }}
+ andar('');return encontrados.sort();
+}
+const htmlAntes=htmlAbaixo(path.join(baseline,'dist')),htmlDepois=htmlAbaixo('dist');
+assert.deepEqual(htmlDepois,htmlAntes,'Mudou o conjunto de páginas HTML.');
+const alteradas=htmlAntes.filter(rel=>!fs.readFileSync(path.join(baseline,'dist',rel)).equals(fs.readFileSync(path.join('dist',rel))));
+assert.deepEqual(alteradas,[],'Mudou HTML fora dos JSON das linhas.');
+const htmlTodo={paginas_antes:htmlAntes.length,paginas_depois:htmlDepois.length,alteradas};
+const resultado={base,cabecas:{sitio:cabeca('.'),motor:cabeca(motor)},declaracoes,recusas_antes:recusas,recusas_depois:finais,comparacoes,json:jsonComparados,html_todo:htmlTodo};
 fs.writeFileSync(path.join(out,'integracao.json'),JSON.stringify(resultado,null,2)+'\n');
 assert.ok(comparacoes.every(x=>x.iguais_sem_definition_sources),'O HTML tem diferenças adicionais.');
-console.log(JSON.stringify({linhas:declaracoes.length,recusas_antes:recusas.length,recusas_depois:finais.length,paginas:comparacoes.length}));
+console.log(JSON.stringify({linhas:declaracoes.length,recusas_antes:recusas.length,recusas_depois:finais.length,paginas:comparacoes.length,json:jsonComparados.length}));
