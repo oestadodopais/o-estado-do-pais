@@ -366,6 +366,11 @@ export function conferirAuditoriaDasFamilias({
         for (const lang of ['pt', 'en']) if (textoDaFrase(p[lang]).replace(PONTUACAO, '') !== '') falha(`${qual}: está marcada como ligação e traz palavras`);
         continue;
       }
+      if (p?.classe === 'ausencia-definicao') {
+        todasNaFonte = false;
+        if (p.pt !== '. A definição de despesa bruta por palavras está por confirmar na fonte.' || p.en !== '. The definition of gross expenditure in words is to be confirmed at source.' || p.apoios || ids.some(id => !id.startsWith('oe-2026-cem-euros-ministerio-') || !linhas.get(id)?.derivation?.includes('pela despesa bruta da administração central'))) falha(`${qual}: a ausência da definição não corresponde à conta por ministérios`);
+        continue;
+      }
       if (p?.classe === 'retirada') {
         todasNaFonte = false;
         if (partes.length !== 1 || p.pt !== 'Por confirmar na fonte.' || p.en !== 'To be confirmed at source.' || p.apoios || ids.some(id => linhas.get(id)?.publication !== 'withdrawn' || linhas.get(id)?.source !== '[a verificar]')) falha(`${qual}: a ausência exige a retirada da linha sem publicador`);

@@ -176,15 +176,12 @@ export function conferirExcertoDaPensao(linha) {
  }
 }
 
-// RP4-n-e: a frase dos ministérios não reintroduz um termo sem definição.
+// RP4-n-f: a conta por ministérios exige as palavras literais da derivação.
 {
- const {FAMILIAS_DAS_LINHAS}=await import('../../src/data/o-que-e-das-familias.mjs');
- const conferir = familias => Object.entries(familias).filter(([k,v]) => k.startsWith('oe-2026-cem-euros-ministerio-') && /despesa bruta|gross expenditure/.test(JSON.stringify(v.frase))).map(([k]) => `${k}: termo sem definição`);
- assert.deepEqual(conferir(FAMILIAS_DAS_LINHAS),[]);
- const copia=structuredClone(FAMILIAS_DAS_LINHAS);
- const k=Object.keys(copia).find(k=>k.startsWith('oe-2026-cem-euros-ministerio-'));
- copia[k].frase.pt=['Parte da despesa bruta.'];
- morde('despesa bruta reintroduzida sem definição',conferir(copia),'termo sem definição');
+ const linhas=structuredClone(loadClaims({includeWithdrawn:true}));
+ const l=linhas.get('oe-2026-cem-euros-ministerio-saude');
+ l.derivation=l.derivation.replace('pela despesa bruta da administração central','pelo total do mapa');
+ morde('ministério sem apoio literal da despesa bruta',conferirAuditoriaDasFamilias({linhas}).erros,'não está no campo «derivation»');
 }
 
 // RP4-n-e: a linha retirada fica no livro, mas não no carregador de publicação.

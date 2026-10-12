@@ -2134,160 +2134,160 @@ export const FAMILIAS_DAS_LINHAS = {
   "oe-2026-cem-euros-ministerio-administracao-interna": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê."
+        "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry planned in the Budget."
+        "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-agricultura-e-mar": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê."
+        "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry planned in the Budget."
+        "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-ambiente-e-energia": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê."
+        "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry planned in the Budget."
+        "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê."
+        "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry planned in the Budget."
+        "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-defesa-nacional": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê."
+        "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry planned in the Budget."
+        "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-economia-e-coesao-territorial": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê."
+        "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry planned in the Budget."
+        "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê."
+        "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry planned in the Budget."
+        "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado": {
     "frase": {
       "pt": [
-        "É quanto vai para os encargos gerais do Estado em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania."
+        "É quanto vai para os encargos gerais do Estado em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania. A definição de despesa bruta por palavras está por confirmar na fonte."
       ],
       "en": [
-        "It is the amount for the general charges of the State out of every hundred euros entered in the total of the table by ministry planned in the Budget; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies."
+        "It is the amount for the general charges of the State out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies. The definition of gross expenditure in words is to be confirmed at source."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-financas": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê."
+        "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry planned in the Budget."
+        "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê."
+        "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry planned in the Budget."
+        "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-justica": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê."
+        "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry planned in the Budget."
+        "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-negocios-estrangeiros": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê."
+        "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry planned in the Budget."
+        "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê."
+        "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry planned in the Budget."
+        "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-reforma-do-estado": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê."
+        "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry planned in the Budget."
+        "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-saude": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê."
+        "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry planned in the Budget."
+        "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê."
+        "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte."
       ],
       "en": [
-        "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry planned in the Budget."
+        "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source."
       ]
     }
   },

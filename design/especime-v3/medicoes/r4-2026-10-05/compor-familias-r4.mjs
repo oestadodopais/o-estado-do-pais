@@ -170,6 +170,11 @@ function confereEntrada(e, ids, chaveDeAuditoria, nomesDaFamilia) {
       for (const lang of ['pt', 'en']) if (texto(p[lang]).replace(/[\s.,:;()−%’'!?]+/g, '') !== '') falha(`${onde}: uma ligação com palavras`);
       continue;
     }
+    if (p.classe === 'ausencia-definicao') {
+      familiaDaFonte = false;
+      if (p.pt !== '. A definição de despesa bruta por palavras está por confirmar na fonte.' || p.en !== '. The definition of gross expenditure in words is to be confirmed at source.' || p.apoios || ids.some(id => !id.startsWith('oe-2026-cem-euros-ministerio-') || !linhas.get(id)?.derivation?.includes('pela despesa bruta da administração central'))) falha(`${onde}: a ausência da definição não corresponde à conta por ministérios`);
+      continue;
+    }
     if (p.classe === 'retirada') {
       familiaDaFonte = false;
       if (e.partes.length !== 1 || p.pt !== 'Por confirmar na fonte.' || p.en !== 'To be confirmed at source.' || p.apoios || ids.some(id => linhas.get(id)?.publication !== 'withdrawn' || linhas.get(id)?.source !== '[a verificar]')) falha(`${onde}: a ausência exige a retirada da linha sem publicador`);
