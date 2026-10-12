@@ -9028,8 +9028,8 @@
       ],
       "folhas": [
         {
-          "pt": "É a despesa efetiva da administração central e da segurança social, somadas sem as transferências entre os seus serviços: o que gastam sem contar as operações com ativos e passivos financeiros.",
-          "en": "It is the effective expenditure of central administration and social security, added together without the transfers between their services: what they spend without counting transactions in financial assets and liabilities.",
+          "pt": "É a despesa efetiva da administração central e da segurança social, somadas sem as transferências entre os seus serviços: o que gastam sem contar as operações com ativos e passivos financeiros. O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+          "en": "It is the effective expenditure of central administration and social security, added together without the transfers between their services: what they spend without counting transactions in financial assets and liabilities. The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
           "partes": [
             {
               "pt": "É a despesa efetiva da administração central e da segurança social, somadas sem as transferências entre os seus serviços",
@@ -9062,6 +9062,28 @@
                   "origem": "rp4n-despesa-efetiva",
                   "campo": "excerto",
                   "literal": "financeiros"
+                }
+              ]
+            },
+            {
+              "pt": " O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+              "en": " The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento\nInicial"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "2026"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Período: janeiro a agosto"
                 }
               ]
             }
@@ -9199,8 +9221,8 @@
       ],
       "folhas": [
         {
-          "pt": "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.",
-          "en": "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.",
+          "pt": "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior. O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+          "en": "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year. The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
           "partes": [
             {
               "pt": "É a receita efetiva da administração central e da segurança social",
@@ -9238,6 +9260,28 @@
                   "origem": "rp4n-saldos-gerencia",
                   "campo": "excerto",
                   "literal": "gerência (ano) anterior."
+                }
+              ]
+            },
+            {
+              "pt": " O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+              "en": " The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento\nInicial"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "2026"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Período: janeiro a agosto"
                 }
               ]
             }
@@ -9695,8 +9739,8 @@
       ],
       "folhas": [
         {
-          "pt": "É o que a administração central e a segurança social puseram em ativos financeiros, descontados os reembolsos que receberam (a fonte chama-lhes ativos financeiros líquidos de reembolsos).",
-          "en": "It is what central administration and social security put into financial assets, less the repayments they received (the source calls them financial assets net of repayments).",
+          "pt": "É o que a administração central e a segurança social puseram em ativos financeiros, descontados os reembolsos que receberam (a fonte chama-lhes ativos financeiros líquidos de reembolsos). O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+          "en": "It is what central administration and social security put into financial assets, less the repayments they received (the source calls them financial assets net of repayments). The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
           "partes": [
             {
               "pt": "É o que a administração central e a segurança social puseram em ativos financeiros, descontados os reembolsos que receberam",
@@ -9724,6 +9768,28 @@
                   "linha": "propria",
                   "campo": "name",
                   "literal": "Ativos financeiros líquidos de reembolsos"
+                }
+              ]
+            },
+            {
+              "pt": " O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+              "en": " The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento\nInicial"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "2026"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Período: janeiro a agosto"
                 }
               ]
             }
