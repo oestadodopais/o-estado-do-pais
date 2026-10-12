@@ -175,8 +175,8 @@ def escrever_relatorio(resultados, finais, anteriores, aceites, gate, plantas, c
         '* **V1-34**: o DAR segue a novidade do dia em qualquer corrida, tal como os atos. As alterações dos recibos desse dia e a marca de estreia preservam grupos; uma revisão histórica sem mudança hoje não basta para repetir o número.',
         '* **V1-35**: o resumo reserva primeiro as designações, as razões completas e os cabeçalhos do DAR. Corta descrições e oradores antes de perder designações. Se o conteúdo obrigatório exceder o limite, recusa a escrita em vez de ocultar atos.',
         '* **V1-36**: uma falha de índice no dia semanal conserva tarefas PDF com o documento e a prova de descoberta. As tarefas sobrevivem a novas falhas e saltam a cadência no dia seguinte; isto concretiza a V1-23.',
-        '* **V1-38**: as bases desta passagem são as cabeças de entrada já fundidas. A procura junta o diff completo desde essas cabeças à lista integral da V1-c, preservada com a sua soma de controlo. Assim cobre todo o bloco sem atribuir à vigilância os ficheiros de outras passagens trazidos pelas fusões.',
-        '* **V1-37**: o conhecido-positivo de fugas usa um ficheiro numa cópia temporária, e o portão mostra os nomes das suites e os resultados das plantas. Uma marca de sucesso sem execução não é prova.', '',
+        '* **V1-37**: o conhecido-positivo de fugas usa um ficheiro numa cópia temporária, e o portão mostra os nomes das suites e os resultados das plantas. Uma marca de sucesso sem execução não é prova.',
+        '* **V1-38**: as bases desta passagem são as cabeças de entrada já fundidas. A procura junta o diff completo desde essas cabeças à lista integral da V1-c, preservada com a sua soma de controlo. Assim cobre todo o bloco sem atribuir à vigilância os ficheiros de outras passagens trazidos pelas fusões.', '',
         'Custo: linha `tokens used` não observada. Não se estima o total nem se afirma cumprimento do alvo de custo.', '']
     p = PASTA / 'LEIA-ME.md'
     antigo = p.read_text()
@@ -279,6 +279,10 @@ def main():
     plantas = json.loads((PASTA / 'plantas-d.json').read_text())
     portao = int((PASTA / 'portoes-d/motor.codigo').read_text())
     gate = json.loads((PASTA / 'portoes-d/motor.json').read_text())
+    assert gate['codigo_sha256'] == finais[-1]['codigo_sha256']
+    assert gate['core_gate_sha256'] == sha((motor / 'core/gate.py').read_bytes())
+    assert plantas['codigo'] == codigo
+    assert not git(motor, 'diff', 'HEAD', '--', 'vigilancia/*.py', 'vigilancia/tests', 'vigilancia/fontes.json', 'core/gate.py')
     aceites = {'duas_corridas_codigo_final': len(finais) == 2,
         'segunda_leu_tres_fontes': all(f.get('lida') for f in finais[-1]['fontes'].values()),
         'segunda_sem_novas_ou_revisoes': medir.segunda_leitura(finais[-1]),
