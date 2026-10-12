@@ -197,7 +197,10 @@ def main():
     assert len({f.parent.name + f.name[:10] for f in arquivos}) == len(arquivos), 'prefixo de arquivo ambíguo no resumo'
     guardar('integridade-c.json', {'indices': integridade, 'corpos': len(arquivos), 'fundamentos': reg['fundamentos_arquivados']})
     conta = aritmetica(raiz, finais, reg)
-    preservados = {n: sha((SITIO / n).read_bytes()) == digest for n, digest in json.loads((PASTA / 'alteracoes-preexistentes.json').read_text()).items()}
+    base_preservacao = json.loads((PASTA / 'confirmacao-c.json').read_text())['sitio_verificado']
+    preservacao_hashes = {n: {'entrada': sha(subprocess.check_output(['git', 'show', base_preservacao + ':' + n], cwd=SITIO)),
+        'atual': sha((SITIO / n).read_bytes())} for n in json.loads((PASTA / 'alteracoes-preexistentes.json').read_text())}
+    preservados = {n: h['entrada'] == h['atual'] for n, h in preservacao_hashes.items()}
     assert all(preservados.values())
     protegidos = git(motor, 'diff', '--name-only', BASE_MOTOR, '--', 'indicators/*.json', 'indicators/vintages.json', '.maintenance-locks/', 'sweeps/', 'publisher/recortes/manifest.regioes.json')
     assert not protegidos
@@ -261,7 +264,7 @@ def main():
     linhas += [f"* `{x['planta']}`: «{x['mensagem']}»; passou: {x['passou']}." for x in plantas['plantas']]
     linhas += ['', f"Portão do motor: `{portao}`, lido de `portoes-c/motor.codigo`, na cabeça `{gate['cabeca']}`. Os hashes do código estão em `portoes-c/motor.json`. Autotestes e validadores dos fluxos: `autotestes-c.json`, `fluxo-c.json`, `fluxos-motor-c.json`.", '',
         f"Código do motor: `{codigo}`. Código dos guiões do sítio: `{codigo_sitio}`. Cabeças medidas e commits em `cabecas-c.json`; o commit do relatório é posterior a essa medição. Todas as corridas, sem filtragem prévia, constam de `hashes-todas-corridas.json`.", '',
-        f"Preservação: {sum(preservados.values())} de {len(preservados)} ficheiros preexistentes; caminhos protegidos sem alterações. A procura de fugas usa as listas completas do diff desde as bases dos dois repositórios, mais os ficheiros por registar; listas e resultado em `preservacao-c.json`. As confirmações das cinco plantas da leitura estão em `confirmacao-c.json`.", '',
+        f"Preservação: {sum(preservados.values())} de {len(preservados)} ficheiros preexistentes, comparados com a cabeça de entrada `{base_preservacao}`; o registo histórico `alteracoes-preexistentes.json` não foi reescrito. Caminhos protegidos sem alterações. A procura de fugas usa as listas completas do diff desde as bases dos dois repositórios, mais os ficheiros por registar; listas e resultado em `preservacao-c.json`. As confirmações das cinco plantas da leitura estão em `confirmacao-c.json`.", '',
         '### Questões e escolhas desta passagem', '',
         '* **V1-23**: o dia semanal escolhido é o declarado no registo, segunda-feira. Uma fonte indisponível nesse dia fica pendente para retoma; PDFs recentes continuam diários.',
         '* **V1-24**: a marca da transferência cumulativa é escrita antes de ler o corpo. Uma interrupção ou excesso consome a tentativa diária, para não repetir a descarga. A fila conserva a razão até ao dia seguinte.',
@@ -292,7 +295,7 @@ def main():
                 corpo = descodificar((raiz / p['arquivo']).read_bytes(), p.get('encoding'))
                 proibidos = (str(Path.home()).encode(), Path.home().name.encode(), '/'.join(('Instruments', '')).encode(), '/'.join(('.claude', 'worktrees', '')).encode())
                 assert not any(v in corpo for v in proibidos), p['arquivo']
-    guardar('preservacao-c.json', {**fugas, 'preexistentes': preservados, 'protegidos': protegidos, 'corpos_descodificados': len(vistos)})
+    guardar('preservacao-c.json', {**fugas, 'preexistentes': preservados, 'base_preservacao': base_preservacao, 'hashes_preservacao': preservacao_hashes, 'protegidos': protegidos, 'corpos_descodificados': len(vistos)})
     assert not fugas['fugas'], fugas['fugas']
     assert fugas['positivo_conhecido']
     print(json.dumps(aceites, ensure_ascii=False))
