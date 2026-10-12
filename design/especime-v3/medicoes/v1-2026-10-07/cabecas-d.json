@@ -1,0 +1,27 @@
+{
+  "motor": "51fdc31c879626ef625bde820714ea705a27c06f",
+  "motor_codigo": "f36540de9baecefd1ab857fe9a9d2c1fd17fe655",
+  "sitio_antes_fecho": "507e41de5726baa3ae13e9efe7a600be11ab0897",
+  "sitio_codigo": "7c59af21f6788da58b096e80911d33d2aa021580",
+  "commits_motor": [
+    "3def2fceb2faf48bfc14502c769db3be92c934c0 V1-d, achado 6: declarar tamanho sem validadores e atraso das iniciativas",
+    "a8512506d1f0c3bbe35bf2b5085c1d94d3a19177 V1-d, achado 7: conservar a novidade do DAR em todas as corridas do dia",
+    "9334c214d042ddd28867a9efc7f97ef5ade83ea7 V1-d, achado 8: nomear todos os atos novos e retirar falhas repetidas",
+    "e75fefa9d695cab3b851e96eddd839c8baebd174 V1-d, achado 9: limpar espaço XML e rotular as contagens",
+    "505508bbe1fa47057b9ca2c848abffaa20a8d864 V1-d, achado 10: conservar inteiras as razões das falhas",
+    "b197b3c03a3dc956577650fa8352e20e9ee59c6c V1-d, achado 11: provar a procura de fugas num ficheiro plantado",
+    "9e953e4a4e42a12e319e3fc0ab5f7d09c2c7b21d V1-d, achado 12: retomar reconferências semanais após falha do índice",
+    "570f0f3b0e419ec126b74e5b6995b81544875925 V1-d, achado 13: mostrar suites e plantas no portão e documentar a passagem",
+    "f36540de9baecefd1ab857fe9a9d2c1fd17fe655 V1-d, achado 9: explicitar o âmbito das falhas na abertura do resumo",
+    "51fdc31c879626ef625bde820714ea705a27c06f V1-d: registar o par operacional aceite e os resumos verificados"
+  ],
+  "commits_sitio": [
+    "1fb711879a301d05ca0a5b92f8afe2b6148665a0 V1-d: registar leitura, plantas e mandato da direção",
+    "8d95f6d323c653f0642eb8012a0724320ca6e3c3 V1-d: medir recibos, novidade diária, plantas e portão por guião",
+    "9ae34da01480bd0e22774a7013f86858142fa70d V1-d: separar os registos de provas dos da passagem anterior",
+    "6df43bf142c18d2ce9c56d7855d429340892e399 V1-d: conferir a identidade do código nas provas de fecho",
+    "d920b0a7a39b6c0afceb17d47e5daec643b550e7 V1-d: conferir a razão de reutilização nos pedidos finais",
+    "7c59af21f6788da58b096e80911d33d2aa021580 V1-d: manter juntas as linhas da tabela de aritmética",
+    "507e41de5726baa3ae13e9efe7a600be11ab0897 V1-d: registar corridas, aritmética, plantas e portão final"
+  ]
+}
