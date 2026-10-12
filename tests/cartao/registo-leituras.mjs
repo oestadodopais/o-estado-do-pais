@@ -15,3 +15,10 @@ assert.deepEqual(registarLeitura([familias], outroAutor), [familias, outroAutor]
 const filtroAntigo = [...[series].filter(l => !(l.quando === familias.quando && l.o_que.startsWith('o bloco R4'))), familias];
 assert.throws(() => assert.deepEqual(filtroAntigo, [series, familias]), assert.AssertionError);
 console.log('JD1-b registo: duas leituras R4 presentes; mesma data preservada; idempotência; autor distinto; filtro antigo recusado.');
+const refeita = { ...familias, o_que: 'o bloco R4: leitura revista com outro objeto' };
+assert.deepEqual(registarLeitura([series, familias], refeita), [series, refeita], 'JD1-c: a leitura refeita duplicou a entrada do dia.');
+const duplicadas = [familias, series, refeita];
+assert.deepEqual(registarLeitura(duplicadas, refeita), [refeita, series], 'JD1-c: entradas antigas duplicadas não foram substituídas.');
+const generica = { quem: 'autor de ensaio', quando: '2026-10-12', o_que: 'antes' };
+assert.deepEqual(registarLeitura([generica], {...generica, o_que: 'depois'}), [{...generica, o_que: 'depois'}]);
+console.log('JD1-c: leitura do mesmo autor, dia e âmbito substituída; leituras distintas conservadas.');
