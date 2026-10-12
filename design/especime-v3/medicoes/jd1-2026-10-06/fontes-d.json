@@ -1,0 +1,46 @@
+{
+  "igcp": {
+    "ficheiro": "indicators/out/jd1-2026-10-06/007-igcp-relatorio-anual-2025.pdf",
+    "sha256": "f36c17f0f95b0e35c8f87323fd48f7fde0e9cc84228a5444f94058ac3f0e3f2f",
+    "paginas": [
+      45
+    ],
+    "cabecalho": "          (milhões de euros)                                                      2024         2025",
+    "parcela": "          2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada)                               47 402       56 976",
+    "anterior": "47 402",
+    "atual": "56 976",
+    "anos": [
+      "2024",
+      "2025"
+    ]
+  },
+  "ine": {
+    "ficheiro": "indicators/out/jd1-2026-10-06/002-ine-pde-setembro-2026.pdf",
+    "sha256": "58696e3c11ed4233c7a06a8fce374043de7ce6ca57898064c52bc7b9faff673d",
+    "paginas": [
+      2,
+      4,
+      7,
+      12
+    ],
+    "subsetores_noutros_quadros": [
+      "- Administração Central                                  S.1311          -4 966,1        -2 447,4        -4 189,4      -5 781,9        -7 129,2",
+      "- Administração Local                                    S.1313             - 90,5        - 243,0           261,7         665,8           678,4",
+      "- Fundos de Segurança Social                             S.1314           4 299,4         5 720,2         6 035,0       7 161,5         6 576,4",
+      "Transferências da Administração Central para:",
+      "Administração Regional da Madeira                                                173,8          181,2       196,7          199,8",
+      "Administração Regional dos Açores                                                281,2          288,9       315,1          319,3",
+      "Administração Local                                                            2 444,7        2 607,5      3 163,0       3 055,2",
+      "- Administração Regional e Local                                                     - 90,5       - 243,0       261,7          665,8",
+      "Administração Regional da Madeira                                               - 145,6          19,9       162,5          156,5",
+      "Administração Regional dos Açores                                               - 403,4       - 132,4      - 281,6       - 305,5",
+      "Administração Local                                                              458,5        - 130,4       380,8          814,8",
+      "- Administração Regional e Local                                                  11 216,3       11 328,8     11 429,5      11 824,1",
+      "Administração Regional da Madeira                                              5 031,0        5 002,3      4 924,8       4 832,1",
+      "Administração Regional dos Açores                                              3 063,5        3 203,6      3 394,4       3 797,8",
+      "Administração Local                                                            3 121,8        3 122,9      3 110,2       3 194,3"
+    ],
+    "rubrica_juros": "     Juros                                                                                      D.41             5 983,4          6 028,2            0,7",
+    "decisao": "Os subsetores são nomeados nos quadros de saldo, dívida e transferências; não há discriminação dos juros por esses subsetores no quadro da medida. Conserva-se apenas o corte da oração circular."
+  }
+}

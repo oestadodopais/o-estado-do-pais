@@ -1,6 +1,6 @@
 # JD1 · juros e dívida do Estado
 
-Estado atual: passagem JD1-c. As provas, decisões e limitações desta passagem estão na secção [A passagem JD1-c](#a-passagem-jd1-c). As secções anteriores conservam o histórico da JD1-b.
+Estado atual: passagem JD1-d. As provas, decisões e limitações desta passagem estão na secção [A passagem JD1-d](#a-passagem-jd1-d). As secções anteriores conservam o histórico da JD1-b.
 
 ## A passagem JD1-b
 
@@ -657,6 +657,112 @@ Para a leitura a frio, o diff do motor é `git diff 465d01e7853f2729fcaa4ba63160
 A entrega inclui as fontes, extrações, recibos e as plantas reproduzíveis para a leitura a frio. Não houve envio para o remoto nem alteração de `ISSUES.md`. Retificação JD1-b: o lançador registou 1 581 631 tokens para esta primeira passagem; ver o custo e os limites da medição na secção atual acima.
 
 </details>
+
+## A passagem JD1-d
+
+O recibo das amortizações identifica o total, o destino da parcela e a comparação com a coluna anterior. O excerto conserva um bloco contínuo do quadro, com os anos e o total, apresentado como tabela nas duas edições. A frase circular do perímetro foi cortada.
+
+Cabeça do código do sítio: `d3649355dab5c75a9ced5eaafc08493e9424263b`. Cabeça do código do motor: `aa4b9e74ee0fe302c351507488335c375d538b60`. A árvore estava limpa no início (`arvore.inicio`); as cabeças de início e fim coincidem. Os portões têm as suas horas reais abaixo. Não houve push nem publicação.
+
+### Decisões e limites de fonte
+
+Achados 1 a 5: confirmados em `controlos-d.json`. O recibo português dos juros diz «provisório»; o inglês das necessidades brutas diz «to repay or extinguish debt». A parcela conserva o valor selado e o resumo do ficheiro coincide com `exported_row_sha256`, na base e depois do alargamento do excerto. O padrão da data do motor continua genérico, sem data literal. O relatório anterior diz as 64 capturas do manifesto.
+
+Achado 6: na página 45 do PDF selado, o cabeçalho é «(milhões de euros) 2024 2025». A mesma rubrica tem 47 402 na primeira coluna, 2024, e 56 976 na segunda, 2025. O cabeçalho não as rotula como execução ou estimativa. Permite comparar a mesma medida, sem acrescentar esses rótulos. O excerto publicado é contíguo e idêntico ao texto extraído dessa página.
+
+JD1-12, decisão pequena: a frase diz a direção da comparação, calculada pelas duas células seladas, e aponta à coluna do mesmo quadro. O montante anterior permanece visível na tabela transcrita; não se cria uma linha adicional nem um número literal na prosa para o repetir. Os montantes do total e da parcela entram pelos tokens existentes.
+
+Achados 7 e 11: ficam para a higiene, nas questões JD1-10 e JD1-11 do mandato. O mapa e o registo de leituras não foram alterados. Achado 8: o lugar de direção aceitou a exceção à reversão para retirar a disposição local da máquina, por prevalência da regra de privacidade; não se refez a JD1-c.
+
+Achado 9: a planta inócua usa um nome dentro do âmbito dos registos. A conferência contou a chamada ao descompressor e voltou a usar o mesmo nome com conteúdo proibido; o limpo passa e o proibido morde. As plantas corridas estão abaixo.
+
+Achado 10: Os subsetores são nomeados nos quadros de saldo, dívida e transferências; não há discriminação dos juros por esses subsetores no quadro da medida. Conserva-se apenas o corte da oração circular. As páginas e os literais consultados estão em `fontes-d.json`. Nada foi acrescentado de memória.
+
+Achado 12: o comentário do exportador descreve a resolução do sítio sem nomear a disposição local das pastas. Achado 13: o texto e o gerador do relatório anterior distinguem agora as horas das corridas do motor e do sítio; o portão do motor desta passagem foi repetido sobre a cabeça nova.
+
+JD1-13, questão para a higiene: a opção exportada `OEDP_CONFERIR_MOTOR` entrou nos testes sintéticos da tranca e lançou o portão real do motor dentro deles. A corrida foi interrompida; os registos completos estão em `portoes-d/tentativa-1/`. A corrida final mantém a opção como variável local do shell principal, não exportada, e corre todos os portões. Não se alterou a maquinaria do repositório.
+
+Códigos existentes da tentativa interrompida, lidos dos ficheiros: build=0. Os portões sem ficheiro de código não terminaram nem são apresentados como verdes.
+
+Comando final: `RESEARCHHUB_DIR=<motor> OEDP_SITE=<sitio> sh -c 'unset OEDP_CONFERIR_MOTOR; OEDP_CONFERIR_MOTOR=1; . scripts/leituras/portoes.sh' sh <sitio> design/especime-v3/medicoes/jd1-2026-10-06/portoes-d`.
+
+### Portões, códigos e horas lidos dos ficheiros
+
+| Ficheiro em `portoes-d/` | Código | Início UTC | Fim UTC |
+|---|---:|---|---|
+| `build.codigo` | 0 | 2026-10-12T14:36:42Z | 2026-10-12T14:40:01Z |
+| `verify.codigo` | 0 | 2026-10-12T14:40:01Z | 2026-10-12T14:44:17Z |
+| `typecheck.codigo` | 0 | 2026-10-12T14:44:17Z | 2026-10-12T14:44:17Z |
+| `motor.codigo` | 0 | 2026-10-12T14:44:17Z | 2026-10-12T14:52:43Z |
+
+Capturas verificadas: 30; problemas reportados: 0. Larguras: 390, 768, 1024, 1280, 1600 px. Manifesto: `capturas-d.json`. As imagens foram inspecionadas visualmente no fecho.
+
+### Frases lidas dos recibos
+
+**`amortizacoes-e-anulacoes-de-divida-fundada-2025` · pt**
+
+É a parcela do financiamento do Estado usada para reembolsar ou extinguir dívida fundada. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.
+Das necessidades brutas de financiamento do Estado em 2025, 67 601 milhões de euros, estes 56 976 milhões serviram para reembolsar ou extinguir dívida fundada. Mais do que na coluna de 2024 do mesmo quadro.
+
+**`amortizacoes-e-anulacoes-de-divida-fundada-2025` · en**
+
+It is the share of State financing used to repay or extinguish funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period.
+Of the State’s gross financing needs in 2025, 67 601 million euros, these 56 976 million were used to repay or extinguish funded debt. More than in the 2024 column of the same table.
+
+**`juros-das-administracoes-publicas-2024` · pt**
+
+É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública. O valor é final, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.
+
+**`juros-das-administracoes-publicas-2024` · en**
+
+It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance. The value is final, as published in the September two thousand and twenty-six notification.
+
+**`juros-das-administracoes-publicas-2025` · pt**
+
+É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.
+Subiu de 5 983,4 para 6 028,2.
+
+**`juros-das-administracoes-publicas-2025` · en**
+
+It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.
+Rose from 5 983,4 to 6 028,2.
+
+### Plantas da privacidade corridas
+
+| Planta | Resultado |
+|---|---|
+| `ramo-estrutura-1-texto` | passou |
+| `ramo-estrutura-1-gzip` | passou |
+| `ramo-estrutura-1-nome` | passou |
+| `ramo-estrutura-2-texto` | passou |
+| `ramo-estrutura-2-gzip` | passou |
+| `ramo-estrutura-2-nome` | passou |
+| `ramo-estrutura-inocua` | passou |
+| `guiao-com-casa-portavel` | passou |
+
+### Commits
+
+**sítio**
+
+- `345e40a4 JD1-d: registar a leitura, as plantas e o mandato`
+- `6a6eae98 JD1-d: ligar a parcela ao total e identificar as colunas (achado 6)`
+- `baeb38e7 JD1-d: pôr a planta inócua no âmbito dos registos (achado 9)`
+- `d71b0daa JD1-d: cortar a oração circular do perímetro (achado 10)`
+- `8ffcc7d1 JD1-d: distinguir as horas dos portões anteriores (achado 13)`
+- `29c26f6f JD1-d: recusar células ausentes na comparação (achado 6)`
+- `3fbcd3e1 JD1-d: preparar a recolha das capturas e do fecho`
+- `d3649355 JD1-d: documentar a herança do modo do motor na tentativa interrompida`
+
+**motor**
+
+- `9bf2e6f JD1-d: conservar os anos no excerto das amortizações (achado 6)`
+- `aa4b9e7 JD1-d: descrever a resolução do sítio sem pastas locais (achado 12)`
+
+O commit final de provas identifica-se com `git rev-parse HEAD`, e na resposta de entrega; não pode conter a sua própria cabeça.
+
+### Custo
+
+A linha «tokens used» não foi exposta durante a construção. O custo fica por verificar; não se estima pelo número de chamadas.
 
 ## A passagem JD1-c
 
