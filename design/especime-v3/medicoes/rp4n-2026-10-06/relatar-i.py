@@ -39,12 +39,17 @@ q=i/'reconferencia-codigo';cab=json.loads((q/'cabecas.json').read_text())
 for nome in ['series','cruzamento']:codigos.append((str((q/(nome+'.codigo')).relative_to(b)),(q/(nome+'.codigo')).read_text().strip(),cab['sitio']+'; motor '+cab['motor']))
 s+=tabela(['Ficheiro','Código','Cabeça'],codigos)
 s+='As árvores do código estavam limpas no início dos portões e as cabeças foram lidas antes e depois. As séries e o cruzamento com `--with-origin` correram depois do último commit que muda os ficheiros que leem. Os commits posteriores conservam apenas provas, capturas e este relato. A cabeça final é comunicada na resposta, sem inventar o hash do commit que contém o próprio relatório.\n'
+s+='A tentativa anterior foi conservada em `portoes-i-tentativa1/`: o C1 ainda exigia a frase antiga de ausência, e a função nova precisava das declarações de tipos. A regra independente e as plantas foram corrigidas antes da repetição.\n'
+s+=tabela(['Tentativa','build','verify','typecheck'],[(q.name,*[(q/(k+'.codigo')).read_text().strip() for k in ['build','verify','typecheck']]) for q in sorted(b.glob('portoes-i-tentativa*'))])
 s+='### Privacidade e questões\n'
 s+=f"A RP4N-17 fecha como aceite, por decisão do mandato, apenas para os pares de commit e resumo de linha declarados em `i/privacidade.json`: {len(v['RP4N-17']['excecoes'])} ocorrências. A planta recusa a mesma linha noutro commit e uma linha nova num commit aceite. Os códigos da procura real distinguem encontro, ausência e erro; um erro impede a conferência.\n"
 s+=tabela(['Conferência','Valor'],[(k,v[k]) for k in ['codigo_procura_cabeca','historico_grep_c','historico_sem_excecoes','diff_grep_c','cabeca_sem_excecoes_grep_c']]+[('Código em i/privacidade.codigo',(i/'privacidade.codigo').read_text().strip())])
 s+='A RP4N-18 permanece aberta no histórico publicado: a fusão de `main` trouxe outros registos locais, incluindo um caminho temporário com identificador de utilizador no registo das plantas TP1. Os registos foram anonimizados na cabeça; `i/rp4n-18.json` conserva apenas nomes e hashes. A exceção da RP4N-17 não foi alargada. Não houve reescrita nem publicação. Esta entrega não autoriza a aterragem enquanto a direção não resolver a privacidade histórica.\n\nA revisão automática recusou uma tentativa de commit por interpretar o ficheiro de diagnóstico anterior como preservação dos caminhos sensíveis. O comando não correu; o commit seguinte contém apenas os registos anonimizados e os hashes, sem esse ficheiro.\n'
 s+='### Plantas e mensagens reais\n'
 plantas=le('plantas-sitio.json')['plantas']+le('plantas-copia.json')['plantas']+v['plantas']
+for x in le('plantas-c1.json')['plantas']:
+ if x['grupo']=='rp4ni':
+  plantas.append({'nome':x['nome'],'mensagem':'; '.join(x['erros'])})
 for linha in (i/'plantas-motor.log').read_text().splitlines():
  if linha.startswith('PLANTA nome legal'):
   nome,msg=linha.removeprefix('PLANTA ').split(': ',1);plantas.append({'nome':nome,'mensagem':msg})

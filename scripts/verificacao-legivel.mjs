@@ -63,14 +63,19 @@ export function conferirVerificacaoLegivel(root, linha, lang) {
   const n = v => Number(String(v).replace(/[\s\u202f]/g, '').replace('−', '-').replace(',', '.'));
   const vazio = root.querySelectorAll('[data-sem-segunda-leitura]');
   const calculada = (linha.derived_from ?? []).length > 0 && typeof linha.check === 'string' && linha.check.trim().length > 0;
-  const sem = calculada
+  const copiaSemLeitura = linha.access_date_kind === 'hosted-copy' && !(linha.verifications ?? []).length;
+  const sem = copiaSemLeitura
+    ? (lang === 'en' ? 'No reading at the source is recorded for this row.' : 'Não há leitura na fonte registada para esta linha.')
+    : calculada
     ? (lang === 'en' ? 'Recomputed at every build from its sources' : 'Recalculada em cada construção a partir das suas origens')
     : (lang === 'en' ? 'none yet' : 'ainda nenhuma');
   const tem = (linha.verifications ?? []).length > 0;
   if (tem ? vazio.length !== 0 : vazio.length !== 1 || vazio[0]?.textContent !== sem) {
     erros.push('C1: a ausência de segunda leitura não corresponde ao registo');
   }
-  if (!tem && vazio.length === 1 && vazio[0].parentNode.previousElementSibling?.textContent !== (lang === 'en' ? 'Second reading:' : 'Segunda leitura:')) erros.push('C1d: a ausência de releitura não tem o rótulo correspondente');
+  const rotuloVazio = copiaSemLeitura ? (lang === 'en' ? 'Reading at the source' : 'Leitura na fonte') : (lang === 'en' ? 'Second reading:' : 'Segunda leitura:');
+  if (copiaSemLeitura && root.querySelector('.linha-sem-resposta, .linha-selo-estado')) erros.push('C1i: a cópia sem verificação própria herdou o estado do endereço');
+  if (!tem && vazio.length === 1 && vazio[0].parentNode.previousElementSibling?.textContent !== rotuloVazio) erros.push('C1d: a ausência de releitura não tem o rótulo correspondente');
   for (const el of root.querySelectorAll('[data-linha-verificacao]')) {
     const v = linha.verifications?.[Number(el.getAttribute('data-linha-verificacao'))];
     if (!v) { erros.push('C1: segunda leitura sem entrada no registo'); continue; }

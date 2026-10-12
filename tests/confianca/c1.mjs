@@ -124,6 +124,12 @@ for (const lang of ['pt', 'en']) {
   const destino = '<div id="alteracao-0"></div>';
   const confere = (html, linha) => conferirVerificacaoLegivel(parse(html), linha, lang);
   controlo('verificacao', `${lang}-ainda-sem-segunda-leitura`, confere(vazio, linhaSemLeitura));
+  const copia = {...linhaSemLeitura, access_date_kind:'hosted-copy'};
+  const copiaHtml = `<dl><dt>${lang==='pt'?'Leitura na fonte':'Reading at the source'}</dt><dd><span data-sem-segunda-leitura>${lang==='pt'?'Não há leitura na fonte registada para esta linha.':'No reading at the source is recorded for this row.'}</span></dd></dl>`;
+  controlo('rp4ni',`${lang}-copia-sem-leitura`,confere(copiaHtml,copia));
+  planta('rp4ni',`${lang}-copia-diz-so-nenhuma`,confere(vazio,copia),'ausência de segunda leitura');
+  planta('rp4ni',`${lang}-copia-herda-estado-endereco`,confere(copiaHtml+'<p class="linha-selo-estado">Estado do endereço plantado</p>',copia),'herdou o estado do endereço');
+
   planta('verificacao', `${lang}-rotulo-vazio-em-desacordo`, confere(vazio.replace(lang === 'pt' ? 'Segunda leitura:' : 'Second reading:', numero), linhaSemLeitura), 'rótulo correspondente');
   planta('verificacao', `${lang}-frase-vazia-em-desacordo`, confere(vazio.replace(sem, lang === 'pt' ? 'nenhuma' : 'no reading'), linhaSemLeitura), 'ausência de segunda leitura');
   const calculada = {...linhaSemLeitura, derived_from:['origem-sintetica'], check:'origem-sintetica * 2'};
