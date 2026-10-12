@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-12T11:40:13+00:00",
+ "copia": "<scratchpad>/er1/pacote-leitura-f",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a tabela da ER1-f diz que o estrago da planta do excerto português foi no campo access_date, contra o guião do navegador e a planta",
+   "sha256_antes": "1d10ab961bd43ca8405520bf414bb0bb79e49743c8d92a2238df9553d72112f1",
+   "sha256_depois": "54800192dd18dffda0397758d9ad88a1d2e9e1b7b51413e1981e099b233516c4",
+   "contexto_antes": "aso normal e a cópia estragada, com o resumo SHA-256 do registo.\n\n| Planta | Estrago na cópia | Mensagem da falha afirmada | Mordeu |\n| --- | --- | --- | --- |\n| recusado-isolado-excerpt-pt | Acrescentado incorporacao com apresentação completa à cópia do JSON recusado só por excerpt. | ER1 navegador: a recusa só por excerpt alterou o parágrafo colado. | sim |\n| recusado-isolado-source_url-pt | Acrescentado incorporacao com apresentação comp",
+   "contexto_depois": "aso normal e a cópia estragada, com o resumo SHA-256 do registo.\n\n| Planta | Estrago na cópia | Mensagem da falha afirmada | Mordeu |\n| --- | --- | --- | --- |\n| recusado-isolado-excerpt-pt | Acrescentado incorporacao com apresentação completa à cópia do JSON recusado só por access_date. | ER1 navegador: a recusa só por excerpt alterou o parágrafo colado. | sim |\n| recusado-isolado-source_url-pt | Acrescentado incorporacao com apresentação comp"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/incorporar/navegador.mjs",
+   "descricao": "a mensagem das plantas «recusado-isolado» na cópia do guião do navegador diz «não alterou», o contrário do que a tabela do relatório e o diff dizem",
+   "sha256_antes": "8aecb2eb9f113cdd98fd69a79b3a8eedc13ed7ce198f0a917b0acad6075253d5",
+   "sha256_depois": "ad7d5bcd05dd565bebec4776b0659d5d935ade50568e628aa924c1c37ef46834",
+   "contexto_antes": "mero').slice(-recusadas.length);\n    for (const [indice, recusa] of recusas.entries()) {\n      const mensagem = `ER1 navegador: a recusa só por ${recusa.campo} alterou o parágrafo colado.`;\n      const conferirRecusa = () => assert.equal(valores[5+indice].html,originaisRecusados[indice].outerHTML,mensagem);\n      const plantada = modo === 'recusad",
+   "contexto_depois": "mero').slice(-recusadas.length);\n    for (const [indice, recusa] of recusas.entries()) {\n      const mensagem = `ER1 navegador: a recusa só por ${recusa.campo} não alterou o parágrafo colado.`;\n      const conferirRecusa = () => assert.equal(valores[5+indice].html,originaisRecusados[indice].outerHTML,mensagem);\n      const plantada = modo === 'recusad"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/lib/conjunto.mjs",
+   "descricao": "a porta do JSON na cópia volta a escrever o campo a qualquer linha, contra o diff e a célula",
+   "sha256_antes": "de74e1200a4197692193b9604ddf063e95343ed8c2d015bd9395f251baa5f209",
+   "sha256_depois": "7c6a41ef5725fbfa6bcb49a15b2f076ad45015709afadca2cc81114c7ab19f11",
+   "contexto_antes": " linhaOuId === 'string' ? getClaim(linhaOuId) : linhaOuId;\n  return (\n    JSON.stringify({ _: nota('uma'), licenca: licenca(), linha: linhaDoConjunto(c),\n      ...(podeIncorporar(c) ? { incorporacao: { pt: dadosDaIncorporacao(c, 'pt'), en: dadosDaIncorporacao(c, 'en') } } : {}) }, null, 2) +\n    '\\n'\n  );\n}\n\n/**\n * Escape RFC 4180, e fim de li",
+   "contexto_depois": " linhaOuId === 'string' ? getClaim(linhaOuId) : linhaOuId;\n  return (\n    JSON.stringify({ _: nota('uma'), licenca: licenca(), linha: linhaDoConjunto(c),\n      ...(c ? { incorporacao: { pt: dadosDaIncorporacao(c, 'pt'), en: dadosDaIncorporacao(c, 'en') } } : {}) }, null, 2) +\n    '\\n'\n  );\n}\n\n/**\n * Escape RFC 4180, e fim de li"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/livro-razao/evora-prr-aprovado-2026.json",
+   "descricao": "o JSON construído da linha recusada só pelo excerto leva o campo incorporacao, contra a célula e o mandato",
+   "sha256_antes": "0d9cb7c8b8b1c9f8b010e4f500d836e8d05702c241a928484fa952dbe6d4acd9",
+   "sha256_depois": "a1aaa410dbf0da4f8e4bf9928e1ea0538349bfad42f80f0a4edf10631df371ab",
+   "contexto_antes": "    \"O campo \\\"note\\\" do formato não é publicado, e por isso não está aqui.\",\n    \"\\\"value\\\" vai exatamente como foi publicado, em formatação portuguesa.\"\n  ],\n  \"licenca\": {\n    \"nome\": \"CC BY 4.0\",\n    \"url\": \"https://creativecommons.org/licenses/by/4.0/\",\n    \"atribuicao\": \"O Estado do País, oestadodopaís.pt\"\n  },\n  \"linha\": {\n  ",
+   "contexto_depois": "    \"O campo \\\"note\\\" do formato não é publicado, e por isso não está aqui.\",\n    \"\\\"value\\\" vai exatamente como foi publicado, em formatação portuguesa.\"\n  ],\n  \"incorporacao\": {\n    \"pt\": {}\n  },\n  \"licenca\": {\n    \"nome\": \"CC BY 4.0\",\n    \"url\": \"https://creativecommons.org/licenses/by/4.0/\",\n    \"atribuicao\": \"O Estado do País, oestadodopaís.pt\"\n  },\n  \"linha\": {\n  "
+  },
+  {
+   "id": "P5",
+   "ficheiro": "scripts/incorporar-do-portao.mjs",
+   "descricao": "a mensagem do portão para um JSON recusado com o campo perde o acento na cópia, e deixa de ser a que a célula afirma",
+   "sha256_antes": "fb4470398da77225cc940f750581f1713324a3ee775720e08cab4a1ab1bf2c96",
+   "sha256_depois": "ccc28d25d42aa66862bb0f29ff38c47d0e922cb6c03757ad03028d5b086e65de",
+   "contexto_antes": " JSON: a apresentação difere da linha.'];\n  const presente = Object.hasOwn(doc ?? {}, 'incorporacao');\n  if (!provenienciaConfirmada(c)) return presente\n    ? ['ER1 JSON: proveniência por confirmar oferece incorporação.'] : [];\n  if (!presente) return ['ER1 JSON: falta a incorporação da linha com código.'];\n  const d = doc?.incorporacao?.[lang];\n  const esperado = dadosEsperado",
+   "contexto_depois": " JSON: a apresentação difere da linha.'];\n  const presente = Object.hasOwn(doc ?? {}, 'incorporacao');\n  if (!provenienciaConfirmada(c)) return presente\n    ? ['ER1 JSON: proveniencia por confirmar oferece incorporacao.'] : [];\n  if (!presente) return ['ER1 JSON: falta a incorporação da linha com código.'];\n  const d = doc?.incorporacao?.[lang];\n  const esperado = dadosEsperado"
+  }
+ ]
+}

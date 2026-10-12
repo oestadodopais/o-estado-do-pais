@@ -1,0 +1,328 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "regions": ["dub1"],
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "*": false
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Strict-Transport-Security": "max-age=15552000",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/(?:livro-razao/(.*)\\.json|livro-razao\\.json|livro-razao\\.csv|incorporar\\.js)$",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      },
+      "continue": true
+    },
+    {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "o-estado-do-pais.vercel.app"
+        }
+      ],
+      "headers": {
+        "X-Robots-Tag": "noindex"
+      },
+      "continue": true
+    },
+    {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.xn--oestadodopas-2fb.pt"
+        }
+      ],
+      "status": 308,
+      "headers": {
+        "Location": "https://xn--oestadodopas-2fb.pt/$1"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "oestadodopais.pt"
+        }
+      ],
+      "status": 308,
+      "headers": {
+        "Location": "https://xn--oestadodopas-2fb.pt/$1"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.oestadodopais.pt"
+        }
+      ],
+      "status": 308,
+      "headers": {
+        "Location": "https://xn--oestadodopas-2fb.pt/$1"
+      }
+    },
+    {
+      "src": "/estudos/avaliacao-economica-regional-de-portugal-2026/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/avaliacao-economica-regional-de-portugal-2026/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-2027-capital-europeia-da-cultura/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-2027-capital-europeia-da-cultura/"
+      }
+    },
+    {
+      "src": "/estudos/evora-2027-capital-europeia-da-cultura/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-2027-capital-europeia-da-cultura/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-2027-prometido-painel-dinheiro/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-2027-prometido-painel-dinheiro/"
+      }
+    },
+    {
+      "src": "/estudos/evora-2027-prometido-painel-dinheiro/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-2027-prometido-painel-dinheiro/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-contas-da-camara-2010-2025/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-contas-da-camara-2010-2025/"
+      }
+    },
+    {
+      "src": "/estudos/evora-contas-da-camara-2010-2025/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-contas-da-camara-2010-2025/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
+      }
+    },
+    {
+      "src": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/"
+      }
+    },
+    {
+      "src": "/estudos/evora-economia-investidores-portas-abertas-2026/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-economia-investidores-portas-abertas-2026/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-orcamentado-pago-devido-2025/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-orcamentado-pago-devido-2025/"
+      }
+    },
+    {
+      "src": "/estudos/evora-orcamentado-pago-devido-2025/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-orcamentado-pago-devido-2025/"
+      }
+    },
+    {
+      "src": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-os-pelouros-quem-os-teve-o-que-fizeram/"
+      }
+    },
+    {
+      "src": "/en/studies/evora-prometido-pago-auditado-2026/text/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/studies/evora-prometido-pago-auditado-2026/"
+      }
+    },
+    {
+      "src": "/estudos/evora-prometido-pago-auditado-2026/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-prometido-pago-auditado-2026/"
+      }
+    },
+    {
+      "src": "/estudos/evora-quem-governou-a-camara-2009-2025/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-quem-governou-a-camara-2009-2025/"
+      }
+    },
+    {
+      "src": "/estudos/evora-quinze-anos-cinco-mandatos/texto/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estudos/evora-quinze-anos-cinco-mandatos/"
+      }
+    },
+    {
+      "src": "/municipios/?",
+      "status": 301,
+      "headers": {
+        "Location": "/lugares/"
+      }
+    },
+    {
+      "src": "/distritos/?",
+      "status": 301,
+      "headers": {
+        "Location": "/lugares/"
+      }
+    },
+    {
+      "src": "/en/municipalities/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/places/"
+      }
+    },
+    {
+      "src": "/en/districts/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/places/"
+      }
+    },
+    {
+      "src": "/o-meu-dinheiro/?",
+      "status": 301,
+      "headers": {
+        "Location": "/temas/"
+      }
+    },
+    {
+      "src": "/en/my-money/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/themes/"
+      }
+    },
+    {
+      "src": "/o-meu-trabalho/?",
+      "status": 301,
+      "headers": {
+        "Location": "/emprego/"
+      }
+    },
+    {
+      "src": "/en/my-work/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/employment/"
+      }
+    },
+    {
+      "src": "/a-minha-casa/?",
+      "status": 301,
+      "headers": {
+        "Location": "/habitacao/"
+      }
+    },
+    {
+      "src": "/en/my-home/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/housing/"
+      }
+    },
+    {
+      "src": "/a-escola-e-a-saude/?",
+      "status": 301,
+      "headers": {
+        "Location": "/educacao-e-saude/"
+      }
+    },
+    {
+      "src": "/en/school-and-health/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/education-and-health/"
+      }
+    },
+    {
+      "src": "/o-estado-e-a-economia/?",
+      "status": 301,
+      "headers": {
+        "Location": "/estado-e-economia/"
+      }
+    },
+    {
+      "src": "/dominios/?",
+      "status": 301,
+      "headers": {
+        "Location": "/temas/"
+      }
+    },
+    {
+      "src": "/dominios/economia-e-financas-publicas/?",
+      "status": 301,
+      "headers": {
+        "Location": "/temas/"
+      }
+    },
+    {
+      "src": "/en/domains/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/themes/"
+      }
+    },
+    {
+      "src": "/en/domains/economia-e-financas-publicas/?",
+      "status": 301,
+      "headers": {
+        "Location": "/en/themes/"
+      }
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/en/(.*)",
+      "status": 404,
+      "dest": "/en/404/index.html"
+    }
+  ]
+}

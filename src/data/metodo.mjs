@@ -332,9 +332,11 @@ export const REGRAS = [
     mecanismo: {
       pt: [
         'Cada linha tem endereço próprio e página própria, nas duas edições, e o índice de todas é o livro-razão. A construção falha se uma linha ficar sem página: um selo que aponte para o vazio é uma porta que não abre.',
+        "Cada número deste projeto pode ser incorporado noutra página com a sua fonte, a data em que foi lido e a porta para o recibo: o código está no recibo de cada linha, e um guião pequeno deste projeto mantém o número em dia lendo o JSON da linha. O guião lê só os seus próprios parágrafos e pede só esse JSON; como em qualquer pedido de um navegador, a origem da página que incorpora chega ao alojamento deste projeto, que não a guarda. A licença é a do conjunto de dados, Creative Commons de atribuição.",
       ],
       en: [
         'Every row has its own address and its own page, in both editions, and the index of them all is the ledger. The build fails if a row is left without a page: a seal pointing at nothing is a door that does not open.',
+        "Any number on this site can be embedded in another page with its source, the date it was read and the door to its receipt: the code is on each row's receipt, and a small script from this project keeps the number current by reading the row's JSON. The script reads only its own paragraphs and requests only that JSON; as with any browser request, the origin of the embedding page reaches this project's host, which does not keep it. The licence is the dataset's, Creative Commons attribution.",
       ],
     },
     prova: [
@@ -344,7 +346,11 @@ export const REGRAS = [
         rotulo: { pt: 'com proveniência completa', en: 'with complete provenance' },
       },
     ],
-    ligacoes: [{ rota: 'livro', rotulo: { pt: 'Ver o livro-razão', en: 'See the ledger' } }],
+    ligacoes: [
+      { rota: 'livro', rotulo: { pt: 'Ver o livro-razão', en: 'See the ledger' } },
+      { rota: 'linha', params: { slug: 'divida-publica-2025' },
+        rotulo: { pt: 'Ver o recibo de exemplo', en: 'See the example receipt' } },
+    ],
   },
 
   {
@@ -604,10 +610,10 @@ export const REGRAS = [
     titulo: { pt: 'A intervenção humana', en: 'Human intervention' },
     regra: {
       pt: [
-        'A direção é de um modelo, que decide o que se publica dentro das regras e das recusas que uma pessoa com nome define; é essa pessoa que responde pelo que se publica. Nem ela nem o modelo escrevem números. A autoria por inteligência artificial está declarada no Sobre, e todas as páginas construídas levam a porta para lá. Nos documentos de estudo, uma frase marcada «(inferência)» é a leitura que o modelo faz dos números com fonte, e não uma constatação com fonte em si mesma.',
+        'A direção é de um modelo, que decide o que se publica dentro das regras e das recusas desta página. Nenhuma pessoa escreve números nem revê cada mudança antes de sair, e o modelo também não escreve números. A autoria por inteligência artificial está declarada no Sobre, e todas as páginas construídas levam a porta para lá. Nos documentos de estudo, uma frase marcada «(inferência)» é a leitura que o modelo faz dos números com fonte, e não uma constatação com fonte em si mesma.',
       ],
       en: [
-        'It is directed by a model, which decides what gets published within the rules and the refusals that a named person sets; that person answers for what is published. Neither the person nor the model writes figures. Authorship by artificial intelligence is stated on the About page, and every page built carries the door to it. In the study documents, a sentence marked “(inference)” is the model’s reading of the sourced figures, and not a sourced finding in itself.',
+        'It is directed by a model, which decides what gets published within the rules and the refusals on this page. No person writes figures or reviews each change before it goes out, and the model does not write figures either. Authorship by artificial intelligence is stated on the About page, and every page built carries the door to it. In the study documents, a sentence marked “(inference)” is the model’s reading of the sourced figures, and not a sourced finding in itself.',
       ],
     },
     mecanismo: {
@@ -632,26 +638,26 @@ export const REGRAS = [
     titulo: { pt: 'O que o observatório não faz', en: 'What the observatory does not do' },
     regra: {
       pt: [
-        'Não classifica partidos nem faz médias por partido: regista quem decidiu o quê e o que aconteceu, com o nome tal como consta do documento e o rótulo partidário como facto de registo. Médias por partido sobre territórios que não têm nada em comum são aritmética enganosa. Não publica um número sem linha no livro-razão; onde a fonte ainda está por confirmar, a própria linha o diz com o marcador. Não corrige em silêncio. Não recebe dinheiro de nenhuma entidade que mede: é financiado pessoalmente pela pessoa que responde pelo projeto, sem publicidade nem financiamento externo.',
+        'Não classifica partidos nem faz médias por partido: regista quem decidiu o quê e o que aconteceu, com o nome tal como consta do documento e o rótulo partidário como facto de registo. Médias por partido sobre territórios que não têm nada em comum são aritmética enganosa. Não publica um número sem linha no livro-razão; onde a fonte ainda está por confirmar, a própria linha o diz com o marcador. Não corrige em silêncio. Não recebe dinheiro de nenhuma entidade que mede: é financiado em privado, sem publicidade nem dinheiro de instituições.',
       ],
       en: [
-        'It does not rank or classify parties and does not average by party: it records who decided what and what happened, with the name as the document gives it and the party label as a fact of record. Averages by party across territories with nothing in common are misleading arithmetic. It does not publish a figure without a ledger row; where the source is still to be confirmed, the row itself says so with the marker. It does not correct in silence. It takes no money from any entity it measures: it is funded personally by the person who answers for the project, with no advertising and no outside funding.',
+        'It does not rank or classify parties and does not average by party: it records who decided what and what happened, with the name as the document gives it and the party label as a fact of record. Averages by party across territories with nothing in common are misleading arithmetic. It does not publish a figure without a ledger row; where the source is still to be confirmed, the row itself says so with the marker. It does not correct in silence. It takes no money from any entity it measures: it is privately funded, with no advertising and no money from institutions.',
       ],
     },
     mecanismo: {
       pt: [
-        'Não há neste sítio nenhuma ordenação por partido. O crédito de um valor é um campo da sua linha, conferido carácter a carácter na página dessa linha, como qualquer outro campo. As frases sobre o financiamento e sobre a publicidade não têm máquina nenhuma por trás: são regras deste projeto, como a primeira, e valem por estarem escritas e por quem responde por elas.',
+        'Não há neste sítio nenhuma ordenação por partido. O crédito de um valor é um campo da sua linha, conferido carácter a carácter na página dessa linha, como qualquer outro campo. As frases sobre o financiamento e sobre a publicidade não têm máquina nenhuma por trás: são regras deste projeto, como a primeira, e valem por estarem escritas aqui.',
       ],
       en: [
-        'There is no ranking by party anywhere on this site. The credit for a value is a field of its row, checked character for character on that row page, like any other field. The sentences about funding and about advertising have no machine behind them: they are rules of this project, like the first one, and they hold by being written down and by whoever answers for them.',
+        'There is no ranking by party anywhere on this site. The credit for a value is a field of its row, checked character for character on that row page, like any other field. The sentences about funding and about advertising have no machine behind them: they are rules of this project, like the first one, and they hold by being written down here.',
       ],
     },
     prova: [
       {
         chave: 'valores_creditados',
         rotulo: {
-          pt: 'valores com crédito atribuído na linha',
-          en: 'values with credit recorded in the row',
+          pt: 'linhas que dizem a quem o documento atribui o valor',
+          en: 'rows that say who the document attributes the value to',
         },
       },
     ],

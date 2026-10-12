@@ -1,0 +1,5 @@
+
+> o-estado-do-pais@0.1.0 check:palavras
+> node tests/voz/palavras-proibidas.mjs --prova
+
+[32m  palavras ✓ [0m[90m23 de 23 plantas vistas (14 palavras, 9 buracos da superfície) · 7907 página(s) medidas em repouso, 0 achados · 59 página(s) com a superfície estreitada por rota declarada[0m

@@ -1,0 +1,8 @@
+{
+  "comando": "node design/especime-v3/medicoes/er1-2026-10-06/medir-tranca.mjs",
+  "agora": "2026-10-06T12:27:37.665Z",
+  "presente": true,
+  "modificada": "2026-10-06T12:26:46.505Z",
+  "idadeSegundos": 51,
+  "conteudo": "2026-10-06T12:14:47Z EX2-b pid=76211\n"
+}

@@ -14,6 +14,13 @@ export const STRINGS = {
   pt: {
     lang: 'pt-PT',
     langNome: 'Português',
+    incorporar: {
+      indisponivel: 'Este número ainda não se pode incorporar: um campo da sua proveniência está por confirmar na fonte.',
+      titulo: 'Incorporar este número', copiar: 'Copiar', copiado: 'Copiado',
+      selecionado: 'Código selecionado', lido: 'lido a', calculado: 'calculado por este projeto',
+      periodoEmFalta: 'período não indicado',
+      atualizado: 'Este número foi atualizado a',
+    },
     outraLingua: 'English',
     outraLinguaCodigo: 'EN',
 
@@ -3234,6 +3241,13 @@ export const STRINGS = {
   en: {
     lang: 'en',
     langNome: 'English',
+    incorporar: {
+      indisponivel: 'This number cannot be embedded yet: one field of its provenance is still to be confirmed at the source.',
+      titulo: 'Embed this number', copiar: 'Copy', copiado: 'Copied',
+      selecionado: 'Code selected', lido: 'read on', calculado: 'calculated by this project',
+      periodoEmFalta: 'period not stated',
+      atualizado: 'This number was updated on',
+    },
     outraLingua: 'Português',
     outraLinguaCodigo: 'PT',
 

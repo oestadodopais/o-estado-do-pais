@@ -25,6 +25,7 @@ leu **só o diff do inventário**. É essa a leitura que esta tabela regista.
 
 | bloco | linhas | leitura | quem, quando |
 | --- | --- | --- | --- |
+| er1 | rótulo e comando nas duas edições | por ler | Codex gpt-6-astra: código recomposto dos dados antes de sair da prosa; leitura a frio do Opus pendente. |
 | oe1-d | 2 novas | por ler | Codex gpt-6-astra, 04.10.2026: os rótulos de navegação «Ressalva» e «Caveat» identificam o aviso publicado de cada linha nos recibos e no índice. A leitura cruzada deste diff fica pendente antes da fusão. |
 | b1c | 4 novas; 4 retiradas; 2 saem do ficheiro | por ler | Claude Opus 5, 22.09.2026: o registo de `/correcoes` passou a ser uma lista só, por data, com as três classes de mudança e o lugar de cada linha. Entram o título e a nota da lista, nas duas edições; saem os dois títulos de grupo («Atualizações», «Updates») e as duas notas de grupo, nas duas edições, com a razão escrita. Os quatro cabeçalhos de coluna e os dois prefixos de leitor de ecrã saíram do `strings.mjs` com a tabela que os pedia e não tinham linha no inventário. |
 | b1-peca3-correcao | 4 novas; 2 retiradas | por ler | Codex gpt-6-astra, 22.09.2026: os dois rótulos ditados, nas duas línguas; o olho dos lugares continua vivo nas páginas de lugar. |
@@ -675,6 +676,19 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | --- | --- | --- | --- |
 | h4 | 6 cadeias novas, 8 retiradas | por ler | Codex gpt-6-astra: texto do brief H4, §3, ponto 4, confirmado como final pela H4-3 na passagem H4-b. Os lugares e as famílias dizem a organização decidida na §1.172; a medição cega sai porque não foi exercida. A leitura a frio pelo Claude Opus fica a cargo do lugar de direção antes da fusão. A passagem H4-b acrescenta as portas do menu aos usos dos rótulos já inventariados, sem mudar frases de conteúdo. |
 
+## TP1 · os textos públicos dizem o que o projeto é, 07.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| tp1 | 4 cadeias novas, 4 retiradas | lida (`design/especime-v3/critica/LEITURA-TP1-2026-10-07.md`, o Codex `gpt-6-astra`, 07.10.2026, cinco plantas mordidas) | Redação do lugar de direção (Claude Fable 5.1) pela §1.181 (o acrescento (f)) e pela §1.182: os dois casos da secção da política do Método deixam de falar de uma pessoa e de portões («verificações automáticas», explicadas uma vez; «a direção decide»), e o terceiro caso («Nunca sem uma pessoa») sai. As quatro frases antigas dos casos passam a «retirada» na secção da divulgação. A frase da política, a frase do projeto e a frase do contacto não entram no inventário: o `gate:html` compara-as com o oráculo. Como a redação é de um modelo Claude, o diff lê-o o Codex `gpt-6-astra` antes da fusão, com cinco estragos plantados nas cópias do pacote; a entrada passa a «lida» com o nome do ficheiro da leitura. |
+
+## ER1-b · o recibo incorporável, 07.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| er1b | Todas as cadeias do incorporador, nas duas edições | lida (as leituras ER1-b, ER1-c/d, ER1-e e ER1-f pelo Opus, 07 e 12.10.2026, cinco plantas mordidas em cada) | O mandato ER1-b, achados 4 e 10, aprova o aviso, conserva Copiado e Código selecionado, substitui Calculado por calculado por este projeto e retira a data não indicada. Os estados condicionais têm tabela própria conferida pela célula ER1; a recusa tem frases vivas. A leitura curta de outra família fica com o lugar de direção antes da aterragem. |
+
+A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recibo de exemplo» / «See the example receipt». Estas cadeias de navegação entram no texto governado e na tabela própria do inventário, conferidas pela célula ER1 porque a leitura geral da voz já retirou o Método após a sua conferência; a leitura curta do diff inclui-as.
 ## RP4-n-c · sincronização do inventário da voz
 
 | bloco | mudança | estado | nota |

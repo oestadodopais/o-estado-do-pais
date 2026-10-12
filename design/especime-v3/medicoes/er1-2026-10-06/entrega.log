@@ -1,0 +1,53 @@
+{
+  "comando": "node design/especime-v3/medicoes/er1-2026-10-06/conferir-entrega.mjs",
+  "cabecaMedida": "645ecde7ea61c044d7c0648b020c6392a48674ce",
+  "cabecaCodigo": "645ecde7ea61c044d7c0648b020c6392a48674ce",
+  "portoes": [
+    {
+      "nome": "build",
+      "codigo": 0
+    },
+    {
+      "nome": "verify",
+      "codigo": 0
+    },
+    {
+      "nome": "typecheck",
+      "codigo": 0
+    }
+  ],
+  "ficheirosDoPacote": 109,
+  "plantas": 5,
+  "capturas": 30,
+  "ficheirosLidosSemCaminhosPrivados": 188,
+  "commitsConferidos": [
+    "16ddc66c22876784284c7240ca1d9a5699ea4a08",
+    "0c63b7a496dab5a93b238625821897db3455cfbf",
+    "8252915ed97cc4a96eacc20881722201e470c17d",
+    "eeb282d97baa9dad851a8ba7e0df700a570bbc34",
+    "645ecde7ea61c044d7c0648b020c6392a48674ce"
+  ],
+  "alteracoesDepoisDoCodigo": [],
+  "falhasSemAlteracao": [
+    {
+      "lang": "pt",
+      "texto": "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+      "atributos": {
+        "valor": "17,9",
+        "lido": "2026-10-05",
+        "aviso": null
+      },
+      "iguaisAoCodigoSemGuiao": true
+    },
+    {
+      "lang": "en",
+      "texto": "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+      "atributos": {
+        "valor": "17,9",
+        "lido": "2026-10-05",
+        "aviso": null
+      },
+      "iguaisAoCodigoSemGuiao": true
+    }
+  ]
+}

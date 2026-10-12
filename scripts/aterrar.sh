@@ -19,7 +19,10 @@
 #      exige a mesma verificação verde);
 #   3. avança o master do motor e publica-o, quando há ramo do motor;
 #   4. vigia a Vercel, um pedido por minuto, até ver o lançamento de produção
-#      pronto com esta cabeça no /version.json;
+#      pronto com esta cabeça no /version.json; se ao fim de cinco pedidos a
+#      integração Git não tiver criado nenhum lançamento desta cabeça, o guião
+#      cria-o pela API da Vercel, a partir do mesmo commit publicado (M75,
+#      12.10.2026: a integração falhou duas vezes no mesmo dia, I223);
 #   5. corre o npm run verify:deploy;
 #   6. diz o endereço da corrida de main, sem esperar por uma prova repetida.
 #
@@ -101,6 +104,27 @@ for i in {1..45}; do
   (cd "$SITIO" && vercel ls --yes) > "$LOGS/vercel-ls.txt" 2>&1
   LINHA="$(grep -m1 -E 'Production' "$LOGS/vercel-ls.txt")"
   echo "$(agora) pedido $i: ${LINHA:0:110}"
+  # M75: a integração Git da Vercel falhou duas vezes a 12.10.2026 (I223). Ao quinto
+  # pedido sem lançamento desta cabeça, o guião cria-o pela API, do mesmo commit.
+  if [ "$i" -eq 5 ] && [ -z "${CRIADO:-}" ]; then
+    (cd "$SITIO" && vercel api /v9/projects/o-estado-do-pais) > "$LOGS/projeto.json" 2> "$LOGS/projeto.err"
+    PID="$(python3 -c 'import sys,json;print(json.load(open(sys.argv[1]))["id"])' "$LOGS/projeto.json" 2>/dev/null)"
+    REPOID="$(python3 -c 'import sys,json;print(json.load(open(sys.argv[1]))["link"]["repoId"])' "$LOGS/projeto.json" 2>/dev/null)"
+    (cd "$SITIO" && vercel api "/v6/deployments?projectId=$PID&target=production&limit=10") > "$LOGS/lancamentos.json" 2> "$LOGS/lancamentos.err"
+    EXISTE="$(python3 -c 'import sys,json;ds=json.load(open(sys.argv[1])).get("deployments",[]);print(sum(1 for d in ds if ((d.get("meta") or {}).get("githubCommitSha") or "").startswith(sys.argv[2])))' "$LOGS/lancamentos.json" "$CHEIA" 2>/dev/null)"
+    if [ -n "$PID" ] && [ -n "$REPOID" ] && [ "$EXISTE" = "0" ]; then
+      printf '{"name":"o-estado-do-pais","project":"%s","target":"production","gitSource":{"type":"github","repoId":%s,"ref":"main","sha":"%s"}}' "$PID" "$REPOID" "$CHEIA" > "$LOGS/lancamento.json"
+      (cd "$SITIO" && vercel api /v13/deployments -X POST --input "$LOGS/lancamento.json") > "$LOGS/lancamento-resposta.json" 2> "$LOGS/lancamento.err"
+      echo "   M75: a integração Git não criou o lançamento de $CURTA em cinco pedidos; criado pela API: $(python3 -c 'import sys,json;d=json.load(open(sys.argv[1]));print(d.get("id","?"), d.get("readyState","?"))' "$LOGS/lancamento-resposta.json" 2>/dev/null || echo "a resposta não se leu, ver $LOGS/lancamento-resposta.json")"
+      CRIADO=sim
+    elif [ "$EXISTE" != "0" ]; then
+      echo "   M75: a Vercel já tem $EXISTE lançamento(s) de $CURTA; a vigia continua"
+      CRIADO=visto
+    else
+      echo "   M75: não consegui ler o projeto ou os lançamentos pela API (ver $LOGS/projeto.err e $LOGS/lancamentos.err); a vigia continua"
+      CRIADO=falhou
+    fi
+  fi
   if echo "$LINHA" | grep -q "Ready"; then
     NO_AR="$(curl -s https://xn--oestadodopas-2fb.pt/version.json | python3 -c 'import sys,json;print(json.load(sys.stdin).get("commit","")[:8])' 2>/dev/null)"
     echo "   version.json no ar: $NO_AR"

@@ -1,0 +1,60 @@
+{
+  "comando": "node design/especime-v3/medicoes/er1-2026-10-06/medir-metodo-contexto.mjs",
+  "base": "f5fb384e5c7a6664a137ada57667700ed5eace96",
+  "fontes": [
+    {
+      "ficheiro": "src/data/metodo.mjs",
+      "identicoABase": true,
+      "mencoesConjuntoOuLicenca": 0
+    },
+    {
+      "ficheiro": "src/views/MetodoView.astro",
+      "identicoABase": true,
+      "mencoesConjuntoOuLicenca": 0
+    }
+  ],
+  "paginas": [
+    {
+      "lang": "pt",
+      "rota": "/metodo",
+      "titulos": [
+        "Nesta página",
+        "As fontes",
+        "O motor",
+        "O livro-razão",
+        "A construção",
+        "O selo",
+        "A releitura",
+        "As correções",
+        "O que se mede a seguir",
+        "A intervenção humana",
+        "O que o observatório não faz",
+        "Como a inteligência artificial escreve este sítio",
+        "A forma",
+        "O que se mede a seguir"
+      ],
+      "seccoesConjuntoDeDados": 0
+    },
+    {
+      "lang": "en",
+      "rota": "/en/method",
+      "titulos": [
+        "On this page",
+        "The sources",
+        "The engine",
+        "The ledger",
+        "The build",
+        "The seal",
+        "The re-reading",
+        "The corrections",
+        "What gets measured next",
+        "Human intervention",
+        "What the observatory does not do",
+        "How artificial intelligence writes this site",
+        "The form",
+        "What gets measured next"
+      ],
+      "seccoesConjuntoDeDados": 0
+    }
+  ]
+}
