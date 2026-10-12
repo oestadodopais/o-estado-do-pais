@@ -670,9 +670,9 @@ Achados 1 a 5: confirmados em `controlos-d.json`. O recibo português dos juros 
 
 Achado 6: na página 45 do PDF selado, o cabeçalho é «(milhões de euros) 2024 2025». A mesma rubrica tem 47 402 na primeira coluna, 2024, e 56 976 na segunda, 2025. O cabeçalho não as rotula como execução ou estimativa. Permite comparar a mesma medida, sem acrescentar esses rótulos. O excerto publicado é contíguo e idêntico ao texto extraído dessa página.
 
-JD1-12, decisão pequena: a frase diz a direção da comparação, calculada pelas duas células seladas, e aponta à coluna do mesmo quadro. O montante anterior permanece visível na tabela transcrita; não se cria uma linha adicional nem um número literal na prosa para o repetir. Os montantes do total e da parcela entram pelos tokens existentes.
+JD1-14, decisão pequena: a frase diz a direção da comparação, calculada pelas duas células seladas, e aponta à coluna do mesmo quadro. O montante anterior permanece visível na tabela transcrita; não se cria uma linha adicional nem um número literal na prosa para o repetir. Os montantes do total e da parcela entram pelos tokens existentes.
 
-Achados 7 e 11: ficam para a higiene, nas questões JD1-10 e JD1-11 do mandato. O mapa e o registo de leituras não foram alterados. Achado 8: o lugar de direção aceitou a exceção à reversão para retirar a disposição local da máquina, por prevalência da regra de privacidade; não se refez a JD1-c.
+Achados 7 e 11: ficam para a higiene, nas questões JD1-11 e JD1-12 do mandato (o mandato dizia JD1-10 e JD1-11 por engano; a JD1-10 é da JD1-c, e o lugar de direção renumerou). O mapa e o registo de leituras não foram alterados. Achado 8: o lugar de direção aceitou a exceção à reversão para retirar a disposição local da máquina, por prevalência da regra de privacidade; não se refez a JD1-c.
 
 Achado 9: a planta inócua usa um nome dentro do âmbito dos registos. A conferência contou a chamada ao descompressor e voltou a usar o mesmo nome com conteúdo proibido; o limpo passa e o proibido morde. As plantas corridas estão abaixo.
 
