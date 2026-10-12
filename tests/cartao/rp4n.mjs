@@ -182,12 +182,14 @@ export function conferirExcertoDaPensao(linha) {
  }
 }
 
-// RP4-n-f: a conta por ministérios exige as palavras literais da derivação.
+// A quota recusa outro denominador, mesmo mantendo as palavras da fonte.
 {
  const linhas=structuredClone(loadClaims({includeWithdrawn:true}));
  const l=linhas.get('oe-2026-cem-euros-ministerio-saude');
- l.derivation=l.derivation.replace('pela despesa bruta da administração central','pelo total do mapa');
- morde('ministério sem apoio literal da despesa bruta',conferirAuditoriaDasFamilias({linhas}).erros,'não está no campo «derivation»');
+ l.check=l.check.replace('oe-2026-despesa-bruta-administracao-central','oe-2026-despesa-efetiva-administracao-central');
+ morde('ministério dividido por outro total',conferirAuditoriaDasFamilias({linhas}).erros,'não está no campo «check»');
+ const origens=structuredClone(ORIGENS_DAS_DEFINICOES);origens['rp4n-total-ministerios'].excerto='DESPESA BRUTA';
+ morde('total do mapa trocado por palavras do projeto',conferirAuditoriaDasFamilias({origens}).erros,'não está no campo «excerto»');
 }
 
 // RP4-n-e: a linha retirada fica no livro, mas não no carregador de publicação.

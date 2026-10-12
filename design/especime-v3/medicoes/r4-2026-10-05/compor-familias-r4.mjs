@@ -61,7 +61,7 @@ for (const id of linhas.keys()) {
 
 /* ------------------------------------------------------------------ os campos que apoiam */
 const CAMPOS_DA_FONTE = new Set(['excerpt', 'unit', 'name', 'source', 'document.title', 'document.locator', 'document.edition', 'document.computed_over.column']);
-const CAMPOS_DA_CASA = new Set(['derivation', 'derivation_en', 'ressalva', 'ressalva_en']);
+const CAMPOS_DA_CASA = new Set(['check', 'derivation', 'derivation_en', 'ressalva', 'ressalva_en']);
 const campoDaLinha = (l, c) => (c === 'document.title' ? l?.document?.title : c === 'document.locator' ? l?.document?.locator : c === 'document.edition' ? l?.document?.edition : c === 'document.computed_over.column' ? l?.document?.computed_over?.column : l?.[c]);
 const nomeDaCasa = (id, lingua) => {
   const c = linhas.get(id);
