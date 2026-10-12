@@ -1,0 +1,201 @@
+{
+  "codigo": "9dd3a96142b2692c17c97de3a73fb1cd3c620a22",
+  "plantas": [
+    {
+      "planta": "Provas.excerto",
+      "mensagem": "excerto alterado contra o arquivo",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_excerto (vigilancia.tests.test_vigilancia.Provas.test_planta_excerto) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.autoria",
+      "mensagem": "autoria trocada contra o arquivo",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_autoria (vigilancia.tests.test_vigilancia.Provas.test_planta_autoria) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.data",
+      "mensagem": "data errada contra o arquivo",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_data (vigilancia.tests.test_vigilancia.Provas.test_planta_data) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.corpo",
+      "mensagem": "corpo truncado ou alterado no arquivo",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_corpo (vigilancia.tests.test_vigilancia.Provas.test_planta_corpo) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.vazio",
+      "mensagem": "falha apresentada como vazio ou cobertura completa",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_vazio (vigilancia.tests.test_vigilancia.Provas.test_planta_vazio) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDAR.excerto",
+      "mensagem": "excerto alterado contra o arquivo",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_excerto (vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_excerto) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.167s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDAR.autoria",
+      "mensagem": "autoria trocada contra o arquivo",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_autoria (vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_autoria) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.167s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDAR.data",
+      "mensagem": "data errada contra o arquivo",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_data (vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_data) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.164s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDAR.corpo",
+      "mensagem": "corpo truncado ou alterado no arquivo",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_corpo (vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_corpo) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.088s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDAR.vazio",
+      "mensagem": "falha apresentada como vazio ou cobertura completa",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_vazio (vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_vazio) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.087s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDR.excerto",
+      "mensagem": "excerto alterado contra o arquivo",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_excerto (vigilancia.tests.test_vigilancia.PlantasDR.test_planta_excerto) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.008s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDR.autoria",
+      "mensagem": "autoria trocada contra o arquivo",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_autoria (vigilancia.tests.test_vigilancia.PlantasDR.test_planta_autoria) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.008s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDR.data",
+      "mensagem": "data errada contra o arquivo",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_data (vigilancia.tests.test_vigilancia.PlantasDR.test_planta_data) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.008s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDR.corpo",
+      "mensagem": "corpo truncado ou alterado no arquivo",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_corpo (vigilancia.tests.test_vigilancia.PlantasDR.test_planta_corpo) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.008s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDR.vazio",
+      "mensagem": "falha apresentada como vazio ou cobertura completa",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_vazio (vigilancia.tests.test_vigilancia.PlantasDR.test_planta_vazio) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.007s\n\nOK\n"
+    },
+    {
+      "planta": "resumo_iniciativas_sem_ligacao_rotativa",
+      "mensagem": "ligação rotativa da iniciativa entrou no resumo",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_resumo_iniciativas_sem_ligacao_rotativa (vigilancia.tests.test_vigilancia.Provas.test_resumo_iniciativas_sem_ligacao_rotativa) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "dar_servido_com_outra_ligacao_na_segunda_corrida",
+      "mensagem": "ligação rotativa apresentada como revisão",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_dar_servido_com_outra_ligacao_na_segunda_corrida (vigilancia.tests.test_vigilancia.Provas.test_dar_servido_com_outra_ligacao_na_segunda_corrida) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 1.015s\n\nOK\n"
+    },
+    {
+      "planta": "planta_limitacao_como_falha",
+      "mensagem": "limitação conhecida apresentada como falha",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_limitacao_como_falha (vigilancia.tests.test_vigilancia.Provas.test_planta_limitacao_como_falha) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "planta_falha_como_limitacao",
+      "mensagem": "falha apresentada como limitação",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_falha_como_limitacao (vigilancia.tests.test_vigilancia.Provas.test_planta_falha_como_limitacao) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "planta_data_sessao",
+      "mensagem": "data da sessão errada contra o arquivo",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_data_sessao (vigilancia.tests.test_vigilancia.Provas.test_planta_data_sessao) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.159s\n\nOK\n"
+    },
+    {
+      "planta": "planta_declaracao_deslocada",
+      "mensagem": "declaração deslocada contou duas vezes",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_declaracao_deslocada (vigilancia.tests.test_vigilancia.Provas.test_planta_declaracao_deslocada) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.085s\n\nOK\n"
+    },
+    {
+      "planta": "planta_outro_orador_na_posicao",
+      "mensagem": "outro orador apresentado como revisão da declaração anterior",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_planta_outro_orador_na_posicao (vigilancia.tests.test_vigilancia.Provas.test_planta_outro_orador_na_posicao) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.085s\n\nOK\n"
+    },
+    {
+      "planta": "outro_orador_mesmas_palavras_tem_outro_id",
+      "mensagem": "outro orador com as mesmas palavras herdou a identidade anterior",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_outro_orador_mesmas_palavras_tem_outro_id (vigilancia.tests.test_vigilancia.Provas.test_outro_orador_mesmas_palavras_tem_outro_id) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.084s\n\nOK\n"
+    },
+    {
+      "planta": "bytes_pdf_sem_mudar_declaracao",
+      "mensagem": "bytes do PDF apresentaram declarações intactas como revistas",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_bytes_pdf_sem_mudar_declaracao (vigilancia.tests.test_vigilancia.Provas.test_bytes_pdf_sem_mudar_declaracao) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.084s\n\nOK\n"
+    },
+    {
+      "planta": "head_compara_tamanho_descomprimido",
+      "mensagem": "HEAD voltou a transferir o corpo arquivado",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_head_compara_tamanho_descomprimido (vigilancia.tests.test_vigilancia.Provas.test_head_compara_tamanho_descomprimido) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 1.021s\n\nOK\n"
+    },
+    {
+      "planta": "documento_429_ou_5xx_fecha_anfitriao",
+      "mensagem": "HTTP {status}; anfitrião fechado para o resto da corrida",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_documento_429_ou_5xx_fecha_anfitriao (vigilancia.tests.test_vigilancia.Provas.test_documento_429_ou_5xx_fecha_anfitriao) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.029s\n\nOK\n"
+    },
+    {
+      "planta": "teto_exato_impede_segundo_pedido",
+      "mensagem": "teto de bytes atingido",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_teto_exato_impede_segundo_pedido (vigilancia.tests.test_vigilancia.Provas.test_teto_exato_impede_segundo_pedido) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.010s\n\nOK\n"
+    },
+    {
+      "planta": "hashes_comparam_todas_as_corridas",
+      "mensagem": "corrida com código diferente desapareceu da medida",
+      "passou": true,
+      "testes": 1,
+      "registo": "test_hashes_comparam_todas_as_corridas (vigilancia.tests.test_vigilancia.Provas.test_hashes_comparam_todas_as_corridas) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.003s\n\nOK\n"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "motor": "e3608ab8886486dad7bef51261907b700cf6c810",
+  "motor_codigo": "9dd3a96142b2692c17c97de3a73fb1cd3c620a22",
+  "sitio_antes_fecho": "497d1342bbb0bc40a94a1ff7538ab2db437f40d7",
+  "sitio_codigo": "497d1342bbb0bc40a94a1ff7538ab2db437f40d7",
+  "commits_motor": [
+    "f0ba6a63927ab9f8b7d7c396d6fabcb29cfc6db4 V1-b, achado 6: não apresentar ligações rotativas como revisões",
+    "5741b627ad57b999230a213682d1e933ab6bbfc3 V1-b, achado 7: reutilizar corpos por validadores e tamanho antes da transferência",
+    "2b8358229caae80038dee36294c5f4ec848e8f30 V1-b, achado 8: separar limitações conhecidas de falhas",
+    "2f61d7dea9a4ed965d65584f0e5ef5419e266edb V1-b, achado 9: ler e conferir a data da sessão do DAR",
+    "7fc246d4753e746a0cd0f0d1a29040fd332f0243 V1-b, achado 10: retirar declarações deslocadas e distinguir outro orador",
+    "6d38404dd4e7b2d239ee3701155278c1e6834843 V1-b, achado 11: priorizar atos e iniciativas e agrupar o DAR no resumo",
+    "56d0f82a72f057354b1aa310e0e3bb1ea3ca9d8b V1-b, achado 12-13: medir leitura efetiva e comparar o código de todas as corridas",
+    "e8691b0cb12a8a7b40e00cbc2fe97a7a85a0ec4a V1-b, achado 14: exercer as cinco plantas sobre DAR e DR reais",
+    "cc54539f7a7378d6c9d5336d5a1424b0499e7526 V1-b, achado 15: limitar a reconferência aos últimos dias declarados",
+    "fc826f850f2b8e0ab1488bbc4ce9e358de71edf8 V1-b, achado 16: fechar o anfitrião após 429 ou erro de servidor",
+    "9dd3a96142b2692c17c97de3a73fb1cd3c620a22 V1-b, achado 17: alojar a prova dos direitos e fechar a documentação",
+    "e3608ab8886486dad7bef51261907b700cf6c810 V1-b: registar a recontagem e as duas corridas finais de 12.10"
+  ],
+  "commits_sitio": [
+    "0ab81e2068e1a7f1faa715767ea81c09ffbc0476 V1-b: registar a leitura, as plantas e o mandato",
+    "60ce22a220791202367ca4ecee148ae069bcf45b V1-b: tornar as medidas de leitura e de código verificáveis",
+    "ae6d85d4296869064ff7ad0d6eed0d4b9c2d8ecc V1-b: conferir também fragmentos de caminhos locais nas provas",
+    "497d1342bbb0bc40a94a1ff7538ab2db437f40d7 V1-b: derivar as conclusões das fontes observadas no fecho"
+  ]
+}
