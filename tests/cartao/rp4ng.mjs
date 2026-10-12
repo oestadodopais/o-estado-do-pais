@@ -18,5 +18,16 @@ for(const lang of ['pt','en']) {
  el.set_content(t(lang==='pt'?'en':'pt').prov.marcadorDoSelo);
  morde(`selo na outra língua (${lang})`,selos(root,lang),'o selo não está na língua');
 }
+// O denominador tem de concordar com a coluna da computação e com a unidade.
+const {loadClaims}=await import('../../src/lib/ledger.mjs');
+function denominador(linhas) {
+ const l=linhas.get('evora-prr-execucao-2026'),d=linhas.get(l.derived_from[1]);
+ return d.document.computed_over.column==='valor_contratado' && l.derivation.includes('verbas contratadas') && l.unit==='% do valor contratado' ? [] : ['RP4N-g: o rótulo da quota não corresponde ao denominador contratado'];
+}
+assert.deepEqual(denominador(loadClaims()),[]);
+{
+ const copia=structuredClone(loadClaims());copia.get('evora-prr-execucao-2026').unit='% do valor aprovado';
+ morde('quota contratada rotulada como aprovada',denominador(copia),'o rótulo da quota não corresponde');
+}
 if(process.argv.includes('--registo-g'))fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/g/plantas-novas.json',JSON.stringify({plantas},null,2)+'\n');
 console.log(`RP4N-g: PASS, ${plantas.length} plantas`);

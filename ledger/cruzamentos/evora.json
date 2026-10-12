@@ -699,8 +699,8 @@
     },
     "evora-prr-execucao-2026": {
       "corrections_at_export": 2,
-      "exported_at": "2026-10-07",
-      "exported_row_sha256": "cc09c8f67518d55a8fb5be3f32ffbc3c4061aa7fe1fc6dd42aaf9441d7ec46c4",
+      "exported_at": "2026-10-12",
+      "exported_row_sha256": "17b0492b763bbce14cc0448217ad6e561563e989c356c1d8ff71f4f00dcb3fd7",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4d3935ee6ed7dd9ab6938534b5ad1e1cfdb19ef1b3b8a88b12d958bd7f452252",
       "rh_id": "prr-execution-evora",

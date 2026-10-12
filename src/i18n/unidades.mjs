@@ -152,7 +152,6 @@ export const UNIDADES = {
   /* 2 linhas (`evora-prr-execucao-2026` e `evora-prr-vencido-quota-2026`).
      Dicionário: «valor aprovado» é «approved amount». As duas são linhas
      calculadas, sem documento e sem excerto: não há inglês do organismo. */
-  '% do valor aprovado': '% of the approved amount',
   /* 1 linha. A fonte: «Percentage point change (t-(t-3))», no excerto de
      `taxa-de-actividade-2025`. */
   'variação em três anos, pontos percentuais': 'three-year change, percentage points',
