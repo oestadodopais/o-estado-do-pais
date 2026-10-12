@@ -52,6 +52,7 @@ def provas(motor, codigo):
         'cumulativo_excedente_nao_alojado': 'teto de bytes atingido; corpo incompleto não alojado',
         'indice_mesmo_tamanho_le_corpo': 'índice reutilizado só pelo tamanho',
         'head_mudado_nao_reutiliza_gzip_mesmo_tamanho': 'HEAD alterado foi ignorado pelo tamanho comprimido',
+        'dar_servido_com_outra_ligacao_na_segunda_corrida': 'número arquivado desapareceu da reconferência semanal',
         'aviso_descompressao': 'ficheiro descomprimido acima de oitenta por cento do limite',
     }
     plantas.extend((t.Provas, nome, mensagem) for nome, mensagem in novas.items())
@@ -262,6 +263,7 @@ def main():
         f'* **V1-28**: a descompressão permite {MAX_EXPANDIDO} bytes; avisos acima de oitenta por cento são medidos por corpo e copiados para o recibo.', '',
         '* **V1-29**: a cadência semanal reduz os pedidos ordinários, mas não prova que todos os PDFs antigos caibam para sempre num único dia semanal. O teto comum continua a valer e o excesso conserva a sua tarefa em fila; a aritmética mede a configuração observada.', '',
         '* **V1-30**: uma mudança observada por HEAD prevalece sobre a coincidência posterior do tamanho comprimido. A planta usa dois corpos de tamanhos expandidos diferentes com gzip do mesmo tamanho; o segundo corpo tem de ser transferido.', '',
+        '* **V1-31**: o inventário persistente dos números arquivados conserva as reconferências quando esses números saem da página corrente. A prova atravessa uma janela sem índices recentes e substitui o número do catálogo por um segundo número sintético.', '',
         'Custo: linha `tokens used` não observada. Não se estima o total nem se afirma cumprimento do alvo de custo.', '']
     relatorio = PASTA / 'LEIA-ME.md'
     antigo = relatorio.read_text()
