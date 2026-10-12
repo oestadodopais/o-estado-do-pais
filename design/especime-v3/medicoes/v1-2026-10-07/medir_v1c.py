@@ -75,7 +75,8 @@ def provas(motor, codigo):
 
 def aritmetica(raiz, finais, reg):
     # O corpo é identificado pelo arquivo da iniciativa, não por um tamanho presumido.
-    atual_cumulativo = next(p for p in pedidos(raiz, finais[-1]) if p.get('orcamento') == 'ficheiro_cumulativo')
+    atual_cumulativo = next(json.loads(linha) for f in reversed(sorted((raiz / 'pedidos').glob(finais[-1]['id'][:10] + 'T*.jsonl')))
+        for linha in f.read_text().splitlines() if json.loads(linha).get('orcamento') == 'ficheiro_cumulativo' and json.loads(linha).get('arquivo'))
     corpo = atual_cumulativo['arquivo']
     historicos = []
     for f in sorted((raiz / 'pedidos').glob('*.jsonl')):
@@ -101,7 +102,7 @@ def aritmetica(raiz, finais, reg):
         extras = len(transferencia['saltos']) if all(s['metodo'] == 'HEAD' for s in atual['saltos']) else 0
         pedidos_fontes['iniciativas'] += extras
         comuns = sum(bytes_fontes.values()) - len(bruto)
-        cenarios.append({'base': r['id'], 'bytes_por_fonte': bytes_fontes, 'pedidos_por_fonte': pedidos_fontes,
+        cenarios.append({'base': r['id'], 'base_sem_falhas': not r['falhas'], 'bytes_por_fonte': bytes_fontes, 'pedidos_por_fonte': pedidos_fontes,
             'bytes_totais': sum(bytes_fontes.values()), 'bytes_comuns': comuns,
             'bytes_cumulativo': len(bruto), 'pedidos': sum(pedidos_fontes.values()),
             'tetos': reg['limites'], 'cabe_comum': comuns <= reg['limites']['bytes'],
@@ -110,7 +111,7 @@ def aritmetica(raiz, finais, reg):
             'segundos': 'não extrapolados: uma transferência diferente exige medição real'})
     resultado = {'transferencia_observada': {'pedido': ficheiro, 'linha': linha, 'arquivo': corpo,
         'bytes': len(bruto), 'saltos': len(transferencia['saltos'])},
-        'hipotese': 'Mesmo tamanho comprimido e cadeia GET da última transferência integral observada; restantes pedidos como nas corridas finais. Não é uma corrida observada com mudança.',
+        'hipotese': 'Mesmo tamanho comprimido e cadeia GET da última transferência integral observada; restantes pedidos como nas corridas finais. Não é uma corrida observada com mudança. Uma base com falhas não demonstra o custo de concluir as fontes que falharam.',
         'cenarios': cenarios}
     guardar('aritmetica-c.json', resultado)
     return resultado
