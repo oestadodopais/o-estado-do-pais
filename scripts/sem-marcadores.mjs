@@ -59,14 +59,14 @@ function aceite(n, {rota, claims, municipios = []}) {
     if (ficha && ficha.querySelectorAll('[data-linha-campo][data-linha-claim]').some(c =>
       c.getAttribute('data-linha-claim') === rota.params.slug &&
       ['source','document.title','document.edition','published_at','access_date','reference_date'].includes(c.getAttribute('data-linha-campo')) &&
-      falta(valor(linha, c.getAttribute('data-linha-campo'))) && texto(c).trim() === '[a verificar]')) return 'selo-proveniencia';
+      falta(valor(linha, c.getAttribute('data-linha-campo'))) && texto(c).trim() === (rota.lang === 'en' ? '[to verify]' : '[a verificar]'))) return 'selo-proveniencia';
   }
   const campo = perto(n, '[data-linha-campo][data-linha-claim], [data-de-campo][data-de-linha]');
   if (campo) {
     const chave = campo.getAttribute('data-linha-campo') ?? campo.getAttribute('data-de-campo');
     const linha = claims?.get(campo.getAttribute('data-linha-claim') ?? campo.getAttribute('data-de-linha'));
     // O campo que dá a exceção tem de existir no livro e declarar a ausência.
-    if (texto(campo).trim() !== valor(linha, chave) || typeof valor(linha, chave) !== 'string' || !/^\[\s*(?:a\s+verificar|to\s+verify)\s*\]$/iu.test(valor(linha, chave))) return null;
+    if (texto(campo).trim() !== (rota?.lang === 'en' && valor(linha,chave) === '[a verificar]' ? '[to verify]' : valor(linha,chave)) || typeof valor(linha, chave) !== 'string' || !/^\[\s*(?:a\s+verificar|to\s+verify)\s*\]$/iu.test(valor(linha, chave))) return null;
     if (['published_at','access_date','reference_date','document.hosted.snapshot_date'].includes(chave) || /^document\.computed_over\.files\.\d+\.snapshot_date$/.test(chave) || /^verifications\.\d+\.date$/.test(chave)) return 'data';
     if (chave === 'excerpt') return 'excerto';
     if (chave === 'source_url' || chave === 'document.url') return 'endereco';
@@ -81,7 +81,7 @@ function aceite(n, {rota, claims, municipios = []}) {
   if (destino?.key === 'linha' && provenienciaIncompleta(claims?.get(destino.params.slug))) return 'selo-proveniencia';
   // No livro, a referência é uma amostra isolada, com a glosa inglesa opcional.
   const referencia = perto(n, '.aparelho-nota');
-  if (rota?.key === 'livro' && referencia && /^\[a verificar\](?:\s*\(to verify\))?$/.test(texto(referencia).trim())) return 'referencia-no-livro';
+  if (rota?.key === 'livro' && referencia && /^\[(?:a verificar|to verify)\](?:\s*\(to verify\))?$/.test(texto(referencia).trim())) return 'referencia-no-livro';
   if (rota?.key === 'marcador') return 'pagina-da-marca';
   if (rota?.key === 'agenda' && perto(n, '[data-agenda-sem-data]') && perto(n, '[data-agenda]')) return 'data';
   if (rota?.key === 'municipio') {
@@ -92,9 +92,9 @@ function aceite(n, {rota, claims, municipios = []}) {
   }
   const paragrafo = perto(n, 'p');
   if (['estudo','documento'].includes(rota?.key) && rota.params?.slug === 'evora-quem-governou-a-camara-2009-2025' && paragrafo && PESSOA_I77.has(resumo(paragrafo))) return 'pessoa-I77';
-  if (rota?.key === 'metodo' && paragrafo && REFERENCIAS_METODO.has(resumo(paragrafo))) return 'referencia-metodo';
+  if (rota?.key === 'metodo' && paragrafo && REFERENCIAS_METODO.has(createHash('sha256').update(texto(paragrafo).replaceAll('[to verify]', '[a verificar] (to verify)').replace(/\s+/g,' ').trim()).digest('hex'))) return 'referencia-metodo';
   // Uma demonstração isolada da marca, sem uma afirmação ao lado, nos lugares que a explicam.
-  if (['metodo','sobre'].includes(rota?.key) && paragrafo && /^\[a verificar\]$/.test(texto(paragrafo).trim())) return `referencia-${rota.key}`;
+  if (['metodo','sobre'].includes(rota?.key) && paragrafo && /^\[(?:a verificar|to verify)\]$/.test(texto(paragrafo).trim())) return `referencia-${rota.key}`;
   return null;
 }
 
