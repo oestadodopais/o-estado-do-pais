@@ -711,7 +711,7 @@ for (const ficheiro of paginasDe(DIST)) {
   /* --- L4 · os títulos de documento, nas duas edições --- */
   for (const el of root.querySelectorAll('[data-linha-campo="document.title"]')) {
     const texto = norm(el.text);
-    if (texto === POR_VERIFICAR) continue;
+    if (texto === POR_VERIFICAR || texto === '[to verify]') continue;
     contas.titulos++;
     const esperada = linguaDoTituloDoDocumento(texto, lang);
     if (esperada === null) continue;
@@ -738,7 +738,7 @@ for (const ficheiro of paginasDe(DIST)) {
   /* --- L4d · o nome do organismo, nas duas edições (I97) --- */
   for (const el of root.querySelectorAll('[data-linha-campo="source"]')) {
     const texto = norm(el.text);
-    if (texto === POR_VERIFICAR) continue;
+    if (texto === POR_VERIFICAR || texto === '[to verify]') continue;
     contas.fontes++;
     if (!Object.prototype.hasOwnProperty.call(LINGUA_DAS_FONTES, texto)) continue;
     const declarada = LINGUA_DAS_FONTES[texto];
@@ -762,7 +762,7 @@ for (const ficheiro of paginasDe(DIST)) {
   /* --- L4e · a edição do documento, nas duas edições (I97) --- */
   for (const el of root.querySelectorAll('[data-linha-campo="document.edition"]')) {
     const texto = norm(el.text);
-    if (texto === POR_VERIFICAR) continue;
+    if (texto === POR_VERIFICAR || texto === '[to verify]') continue;
     contas.edicoes++;
     if (!Object.prototype.hasOwnProperty.call(LINGUA_DAS_EDICOES, texto)) continue;
     const declarada = LINGUA_DAS_EDICOES[texto];
@@ -809,7 +809,7 @@ for (const ficheiro of paginasDe(DIST)) {
   /* --- L4b · o localizador, que fala a língua do seu documento --- */
   for (const el of root.querySelectorAll('[data-linha-campo="document.locator"]')) {
     const texto = norm(el.text);
-    if (texto === POR_VERIFICAR) continue;
+    if (texto === POR_VERIFICAR || texto === '[to verify]') continue;
     contas.localizadores++;
     if (lang !== 'en') continue;
     if (langDe(el) === 'pt-PT') contas.localizadores_en_com_marca++;
