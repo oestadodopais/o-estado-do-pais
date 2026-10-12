@@ -251,9 +251,20 @@ export function conferirExcertoDaPensao(linha) {
   assert.deepEqual(conferirCabecaDoRecibo(cabeca,id,lang,{ctx,cartoes}),[]);
   const semRotulo=cabecaDoRecibo(cabeca.outerHTML);
   semRotulo.querySelector('.linha-nome-da-fonte [data-linha-campo="name"]').setAttribute('data-linha-campo','document.title');
-  morde(`título do relatório em vez do rótulo da água (${lang})`,conferirCabecaDoRecibo(semRotulo,id,lang,{ctx,cartoes}),'o nome na fonte da água não é o rótulo AA08b conferido');
+  morde(`título do relatório em vez do rótulo da água (${lang})`,conferirCabecaDoRecibo(semRotulo,id,lang,{ctx,cartoes}),'o nome na fonte não é o rótulo da medida conferido');
   cabeca.querySelector('[data-def-origem="rp4n-agua-nao-faturada"]').remove();
   morde(`origem da água apagada do recibo (${lang})`,conferirCabecaDoRecibo(cabeca,id,lang,{ctx,cartoes}),'a origem visível da definição perdeu o documento ou o excerto');
+ }
+}
+// RP4-n-g: a mesma regra do nome na fonte protege a família da pensão.
+{
+ const ctx=contextoDasFamilias(),cartoes=reguasDosCartoes('dist');
+ const id='penalizacao-antecipacao-um-ano-neutra';
+ for(const lang of ['pt','en']) {
+  const cabeca=cabecaDoRecibo(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/${id}/index.html`,'utf8'));
+  assert.deepEqual(conferirCabecaDoRecibo(cabeca,id,lang,{ctx,cartoes}),[]);
+  cabeca.querySelector('.linha-nome-da-fonte [data-linha-campo="name"]').setAttribute('data-linha-campo','document.title');
+  morde(`título do relatório em vez do rótulo da pensão (${lang})`,conferirCabecaDoRecibo(cabeca,id,lang,{ctx,cartoes}),'o nome na fonte não é o rótulo da medida conferido');
  }
 }
 // RP4-n-f: a prova local conserva o excerto, a página e a distinção face à lei.
