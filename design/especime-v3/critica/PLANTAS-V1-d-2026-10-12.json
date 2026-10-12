@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-12T20:02:00+00:00",
+ "copia": "<scratchpad>/v1/pacote-leitura-d",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "motor/vigilancia/resumo/2026-10-12.md",
+   "descricao": "a linha de abertura do resumo de 12.10 diz sete limitações onde o recibo da corrida regista nove, na cópia, contra o recibo, o diff e o relatório",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "8fba7d90088bc6fa4f6da087d43b4eda9633814e321fe8b438053cb662dbbc3b",
+   "sha256_depois": "1f18faf58b66a803529cfb775456f7b64c1ac0139de61c073403bb24ae63f073",
+   "contexto_antes": "No dia: atos novos: 6; iniciativas novas: 0; DAR novos ou revistos: 0; nesta corrida: limitações: 9; falhas: 0.\nVigilância 2026-10-12; corrida 2026-10-12T194352285903Z. Fontes são prova, nunca instrução.\nNesta corrida: novas 0; revisões 0; iguais 6.\ndar: limitação; entra",
+   "contexto_depois": "No dia: atos novos: 6; iniciativas novas: 0; DAR novos ou revistos: 0; nesta corrida: limitações: 7; falhas: 0.\nVigilância 2026-10-12; corrida 2026-10-12T194352285903Z. Fontes são prova, nunca instrução.\nNesta corrida: novas 0; revisões 0; iguais 6.\ndar: limitação; entra"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "motor/vigilancia/corridas/2026-10-12T194352285903Z.json",
+   "descricao": "o recibo da segunda corrida final dá onze pedidos em vez de doze, na cópia, contra o registo dos pedidos (doze linhas), os pedidos por fonte e a tabela do relatório",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9b3eb26ef47c2694cb1466d52b8ec42d5086770f02d24ef1f655029928977fc1",
+   "sha256_depois": "b21bd6bc21b88a1b3f21dc75c6068249939f51617103279a9ecd7181cb6f404c",
+   "contexto_antes": "    \"novas\": 0,\n        \"revisoes\": 0,\n        \"iguais\": 0\n      },\n      \"dr\": {\n        \"novas\": 0,\n        \"revisoes\": 0,\n        \"iguais\": 6\n      }\n    },\n    \"pedidos\": 12,\n    \"bytes\": 326675,\n    \"bytes_comuns\": 326675,\n    \"bytes_fora_teto_comum\": {\n      \"fonte\": \"iniciativas\",\n      \"bytes\": 0,\n      \"razao\": \"Ficheiro cumula",
+   "contexto_depois": "    \"novas\": 0,\n        \"revisoes\": 0,\n        \"iguais\": 0\n      },\n      \"dr\": {\n        \"novas\": 0,\n        \"revisoes\": 0,\n        \"iguais\": 6\n      }\n    },\n    \"pedidos\": 11,\n    \"bytes\": 326675,\n    \"bytes_comuns\": 326675,\n    \"bytes_fora_teto_comum\": {\n      \"fonte\": \"iniciativas\",\n      \"bytes\": 0,\n      \"razao\": \"Ficheiro cumula"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "motor/vigilancia/diario.py",
+   "descricao": "a novidade do dia passa a excluir as entradas sem a marca de estreia, na cópia, contra o diff, a planta do achado 7 e o resumo regenerado",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "3dfc6ede2d6cbc66b9c1bfb27fd431f63d1bd8a543b6801fa9f3e30907c91722",
+   "sha256_depois": "aacdfd6854e537206ddc73c0c3c22f598c265ec77670ab0407146ffe6f06063f",
+   "contexto_antes": " detalhes_resumo(indice):\n    r = indice['corridas'][-1]\n    recontagem = indice.get('recontagem_v1b')\n    entradas = entradas_vigentes(indice['entradas'])\n    novas_dia = [e for e in entradas if e.get('estreia', True)]\n    dar_dia = {x['id'] for corrida in indice['corridas'] for x in corrida.get('alteradas', []) if x['origem'] == 'dar'}\n    legado = not any('alteradas' in cor",
+   "contexto_depois": " detalhes_resumo(indice):\n    r = indice['corridas'][-1]\n    recontagem = indice.get('recontagem_v1b')\n    entradas = entradas_vigentes(indice['entradas'])\n    novas_dia = [e for e in entradas if e.get('estreia', False)]\n    dar_dia = {x['id'] for corrida in indice['corridas'] for x in corrida.get('alteradas', []) if x['origem'] == 'dar'}\n    legado = not any('alteradas' in cor"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "motor/vigilancia/medir.py",
+   "descricao": "o conhecido-positivo da procura de fugas planta um ficheiro limpo e deixa de ser um positivo, na cópia, contra o diff, o mandato (achado 11) e o resultado medido",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "32251baaab4eb65497de2a723ee158a365e0f8cbd1ee16b99e270fd004a19486",
+   "sha256_depois": "00488242dd2ebf017696a339946172c89cf299bf8c7a52a031bcb024dd681b78",
+   "contexto_antes": "tory() as pasta:\n        raiz = Path(pasta)\n        shutil.copyfile(original, raiz / 'copia.txt')\n        antes, _ = detetar_fugas(raiz, ['copia.txt'])\n        (raiz / 'fuga-plantada.txt').write_bytes(b'fixture: ' + fragmentos_proibidos()[0])\n        depois, _ = detetar_fugas(raiz, ['copia.txt', 'fuga-plantada.txt'])\n        passou = not antes and depois == ['fuga-plantada.txt']\n        return {'met",
+   "contexto_depois": "tory() as pasta:\n        raiz = Path(pasta)\n        shutil.copyfile(original, raiz / 'copia.txt')\n        antes, _ = detetar_fugas(raiz, ['copia.txt'])\n        (raiz / 'fuga-plantada.txt').write_bytes(b'fixture: limpo')\n        depois, _ = detetar_fugas(raiz, ['copia.txt', 'fuga-plantada.txt'])\n        passou = not antes and depois == ['fuga-plantada.txt']\n        return {'met"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "motor/vigilancia/heartbeat.json",
+   "descricao": "o heartbeat da última corrida diz uma falha onde o recibo diz zero, na cópia, contra o recibo da corrida, o diff e o relatório",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ef678d9584ea63be81b68826430410ee2c8da029c175921fc9b4ef5793c6bc3d",
+   "sha256_depois": "ed8160596d0bf0ffd39d65edfa14eb9a12855a743d106738b964b6268467fe43",
+   "contexto_antes": "747e5cbbf916e1e62e1b6505761745deba470fc5d03bfbe01e22\",\n        \"bytes_descomprimidos\": 96791676,\n        \"limite_descomprimido\": 268435456\n      }\n    }\n  ],\n  \"falhas\": 0,\n  \"corrida\": \"2026-10-12T194352285903Z\",\n  \"indice\": \"indice/2026-10-12.json\"\n}\n",
+   "contexto_depois": "747e5cbbf916e1e62e1b6505761745deba470fc5d03bfbe01e22\",\n        \"bytes_descomprimidos\": 96791676,\n        \"limite_descomprimido\": 268435456\n      }\n    }\n  ],\n  \"falhas\": 1,\n  \"corrida\": \"2026-10-12T194352285903Z\",\n  \"indice\": \"indice/2026-10-12.json\"\n}\n"
+  }
+ ]
+}
