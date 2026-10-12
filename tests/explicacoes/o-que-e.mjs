@@ -5,6 +5,7 @@ import { parse } from 'node-html-parser';
 import { conferirAuditoriaDasFamilias } from '../cartao/familias.mjs';
 import { nomeNaLista } from '../../src/lib/primeira-pagina.mjs';
 import { t } from '../../src/i18n/strings.mjs';
+import { loadClaims } from '../../src/lib/ledger.mjs';
 
 const normal = s => String(s ?? '').replace(/\s+/g, ' ').trim();
 const numero = s => Number(normal(s).replaceAll(' ', '').replace('−','-').replace(',','.'));
@@ -167,7 +168,8 @@ export function plantasDoOQueE(dist) {
       regista('uma palavra trocada no sinal',html,r=>r.querySelector('[data-o-que-e-sinal]').set_content('Ontem.'),'o sinal mostrado não é o do recibo');
       regista('o sinal em falta no grupo',html,r=>r.querySelector('[data-o-que-e-sinal]').remove(),'o grupo não tem os sinais dos recibos');
     }
-    const id=[...prova.porConfirmar][0] ?? original?.getAttribute('data-o-que-e');
+    // Com todas as definições públicas confirmadas, a ausência continua a ser plantada num recibo real.
+    const id=[...prova.porConfirmar][0] ?? original?.getAttribute('data-o-que-e') ?? [...loadClaims().keys()].find(chave=>fs.existsSync(path.join(dist,lang==='en'?'en/ledger':'livro-razao',chave,'index.html')));
     if(!id) throw Error('W4 · a planta exige uma linha com recibo real');
     const provaAusencia={...prova,porConfirmar:new Set([...prova.porConfirmar,id])};
     const recibo=parse(fs.readFileSync(path.join(dist,lang==='en'?'en/ledger':'livro-razao',id,'index.html'),'utf8'));
