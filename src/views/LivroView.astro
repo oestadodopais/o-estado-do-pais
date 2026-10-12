@@ -390,9 +390,7 @@ const p = prova(lang);
         <span class="linha-campo-k">{s.livro.marcadorK}</span>
         <p class="aparelho-nota">
           <Marcador lang={lang} />
-          {lang !== 'pt' && s.livro.marcadorGloss && (
-            <span class="marcador-gloss"> ({s.livro.marcadorGloss})</span>
-          )}
+
         </p>
         <p><a href={routePath('marcador', lang)}>{s.livro.linha.marcadorLink} →</a></p>
       </div>

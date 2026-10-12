@@ -1002,7 +1002,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
       {/* --------------------------------------------------- iii · a prova */}
       <section class="linha-bloco" aria-labelledby="prova-k" id="prova">
         {faltaNoExcerto && (
-        <span class="marca-agua" aria-hidden="true" data-marca={POR_VERIFICAR} />
+        <span class="marca-agua" aria-hidden="true" data-marca={s.prov.marcadorDoSelo} />
         )}
         <h2 class="linha-bloco-titulo" id="prova-k">{s.livro.linha.provaK}</h2>
 
@@ -1347,7 +1347,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         temBlocoDoPedido && (
           <section class="linha-bloco" aria-labelledby="pedido">
             {faltaNoEndereco && (
-        <span class="marca-agua" aria-hidden="true" data-marca={POR_VERIFICAR} />
+        <span class="marca-agua" aria-hidden="true" data-marca={s.prov.marcadorDoSelo} />
             )}
             <h2 class="linha-bloco-titulo" id="pedido">
               {ehSerieDeDados ? s.prov.pedido : s.prov.endereco}
@@ -1678,7 +1678,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
 
       <dl class="aparelho-ficha">
         {faltaNaFicha && (
-        <span class="marca-agua" aria-hidden="true" data-marca={POR_VERIFICAR} />
+        <span class="marca-agua" aria-hidden="true" data-marca={s.prov.marcadorDoSelo} />
         )}
         {
           ficha.map((l) => (
