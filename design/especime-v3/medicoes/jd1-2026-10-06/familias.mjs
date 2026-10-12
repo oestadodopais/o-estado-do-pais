@@ -134,7 +134,7 @@ export const FAMILIAS_JD1 = [
         '. This is State direct debt in public accounts, not the Maastricht debt of all general government bodies',
         O('jd1-igcp-perimetro', 'A dívida direta do Estado é um conceito que difere da dívida pública'),
         O('jd1-igcp-perimetro', 'a dívida direta do Estado inclui apenas a dívida emitida pelo Estado'),
-        O('jd1-igcp-financiamento', 'contabilidade orçamental pública')),
+        O('jd1-igcp-contabilidade', 'Dívida direta do Estado (Contabilidade Pública)')),
       diz('. A dívida pública de Maastricht abrange todas as administrações públicas e retira a dívida que umas entidades públicas detêm de outras',
         '. Maastricht public debt covers all general government bodies and removes debt held by other government bodies',
         O('jd1-igcp-perimetro', 'na dívida de Maastricht se incluem todas as entidades classificadas, para fins estatísticos, no setor institucional das Administrações Públicas'),

@@ -56,6 +56,13 @@
     "alojamento": true
   },
   {
+    "origem": "jd1-igcp-contabilidade",
+    "sha256": "f36c17f0f95b0e35c8f87323fd48f7fde0e9cc84228a5444f94058ac3f0e3f2f",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
     "origem": "jd1-igcp-perimetro",
     "sha256": "f36c17f0f95b0e35c8f87323fd48f7fde0e9cc84228a5444f94058ac3f0e3f2f",
     "literal": true,
