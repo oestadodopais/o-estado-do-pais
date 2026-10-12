@@ -8250,22 +8250,28 @@
       ],
       "origens": [
         "rp4n-total-ministerios",
-        "rp4n-mapa-ministerios"
+        "rp4n-mapa-ministerios",
+        "rp4n-consolidada-ministerios"
       ],
       "folhas": [
         {
-          "pt": "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central.",
-          "en": "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector.",
+          "pt": "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA».",
+          "en": "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “DESPESA TOTAL CONSOLIDADA”.",
           "partes": [
             {
-              "pt": "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central.",
+              "pt": "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA».",
               "en": [
                 "It is the amount for this ministry out of every hundred euros of “",
                 {
                   "termo": "DESPESA TOTAL",
                   "lingua": "pt-PT"
                 },
-                "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+                "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+                {
+                  "termo": "DESPESA TOTAL CONSOLIDADA",
+                  "lingua": "pt-PT"
+                },
+                "”."
               ],
               "classe": "diz",
               "apoios": [
@@ -8283,6 +8289,11 @@
                   "origem": "rp4n-mapa-ministerios",
                   "campo": "excerto",
                   "literal": "Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central"
+                },
+                {
+                  "origem": "rp4n-consolidada-ministerios",
+                  "campo": "excerto",
+                  "literal": "DESPESA TOTAL CONSOLIDADA"
                 }
               ]
             }
@@ -8296,22 +8307,28 @@
       ],
       "origens": [
         "rp4n-total-ministerios",
-        "rp4n-mapa-ministerios"
+        "rp4n-mapa-ministerios",
+        "rp4n-consolidada-ministerios"
       ],
       "folhas": [
         {
-          "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central.",
-          "en": "It is the amount for the general charges of the State out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector.",
+          "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA».",
+          "en": "It is the amount for the general charges of the State out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “DESPESA TOTAL CONSOLIDADA”.",
           "partes": [
             {
-              "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central.",
+              "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA».",
               "en": [
                 "It is the amount for the general charges of the State out of every hundred euros of “",
                 {
                   "termo": "DESPESA TOTAL",
                   "lingua": "pt-PT"
                 },
-                "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+                "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+                {
+                  "termo": "DESPESA TOTAL CONSOLIDADA",
+                  "lingua": "pt-PT"
+                },
+                "”."
               ],
               "classe": "diz",
               "apoios": [
@@ -8329,6 +8346,11 @@
                   "origem": "rp4n-mapa-ministerios",
                   "campo": "excerto",
                   "literal": "Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central"
+                },
+                {
+                  "origem": "rp4n-consolidada-ministerios",
+                  "campo": "excerto",
+                  "literal": "DESPESA TOTAL CONSOLIDADA"
                 }
               ]
             }

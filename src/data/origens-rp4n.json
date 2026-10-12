@@ -571,6 +571,27 @@
       "sha256": "9e8005620a71179fc461f3b9f0472d253677ca35aa829d0b860864625dec5438"
     }
   },
+  "rp4n-consolidada-ministerios": {
+    "publicador": "Entidade Orçamental",
+    "documento": "MAPA 4, página 6",
+    "url": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2026/OrcamentoEstadoAprovado/MapasContabilisticos/OE2026_doc05_Mapa04.pdf",
+    "lido": "2026-10-12",
+    "lingua": "pt",
+    "excerto": "DESPESA TOTAL CONSOLIDADA\n\n245 121 564 003\n\nFonte: MF/EO\nNota:\nA \"DESPESA TOTAL CONSOLIDADA\" exclui os fluxos intrasetoriais e intersetoriais de juros, subsídios, transferências correntes e de capital, ativos e passivos no\nâmbito da Administração Central, bem como da aquisição de bens e serviços efetuada no âmbito do Programa Saúde da Administração Central.",
+    "recibo": "content/13 Dominios/source/rp4n/mapa4-g.pedido.json",
+    "extracao": {
+      "pagina": 6,
+      "inicio": "DESPESA TOTAL CONSOLIDADA\n"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/mapa4-g.pdf",
+      "campo": "página física 6",
+      "hora": "2026-10-12T13:22:21Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "9e8005620a71179fc461f3b9f0472d253677ca35aa829d0b860864625dec5438"
+    }
+  },
   "rp4n-combustiveis": {
     "publicador": "Eurostat",
     "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",

@@ -2136,7 +2136,7 @@ export const FAMILIAS_DAS_LINHAS = {
   "oe-2026-cem-euros-ministerio-administracao-interna": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
+        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA»."
       ],
       "en": [
         "It is the amount for this ministry out of every hundred euros of “",
@@ -2144,18 +2144,21 @@ export const FAMILIAS_DAS_LINHAS = {
           "termo": "DESPESA TOTAL",
           "lingua": "pt-PT"
         },
-        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+        {"termo": "DESPESA TOTAL CONSOLIDADA", "lingua": "pt-PT"},
+        "”."
       ]
     },
     "origens": [
       "rp4n-total-ministerios",
-      "rp4n-mapa-ministerios"
+      "rp4n-mapa-ministerios",
+      "rp4n-consolidada-ministerios"
     ]
   },
   "oe-2026-cem-euros-ministerio-agricultura-e-mar": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
+        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA»."
       ],
       "en": [
         "It is the amount for this ministry out of every hundred euros of “",
@@ -2163,18 +2166,21 @@ export const FAMILIAS_DAS_LINHAS = {
           "termo": "DESPESA TOTAL",
           "lingua": "pt-PT"
         },
-        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+        {"termo": "DESPESA TOTAL CONSOLIDADA", "lingua": "pt-PT"},
+        "”."
       ]
     },
     "origens": [
       "rp4n-total-ministerios",
-      "rp4n-mapa-ministerios"
+      "rp4n-mapa-ministerios",
+      "rp4n-consolidada-ministerios"
     ]
   },
   "oe-2026-cem-euros-ministerio-ambiente-e-energia": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
+        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA»."
       ],
       "en": [
         "It is the amount for this ministry out of every hundred euros of “",
@@ -2182,18 +2188,21 @@ export const FAMILIAS_DAS_LINHAS = {
           "termo": "DESPESA TOTAL",
           "lingua": "pt-PT"
         },
-        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+        {"termo": "DESPESA TOTAL CONSOLIDADA", "lingua": "pt-PT"},
+        "”."
       ]
     },
     "origens": [
       "rp4n-total-ministerios",
-      "rp4n-mapa-ministerios"
+      "rp4n-mapa-ministerios",
+      "rp4n-consolidada-ministerios"
     ]
   },
   "oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
+        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA»."
       ],
       "en": [
         "It is the amount for this ministry out of every hundred euros of “",
@@ -2201,18 +2210,21 @@ export const FAMILIAS_DAS_LINHAS = {
           "termo": "DESPESA TOTAL",
           "lingua": "pt-PT"
         },
-        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+        {"termo": "DESPESA TOTAL CONSOLIDADA", "lingua": "pt-PT"},
+        "”."
       ]
     },
     "origens": [
       "rp4n-total-ministerios",
-      "rp4n-mapa-ministerios"
+      "rp4n-mapa-ministerios",
+      "rp4n-consolidada-ministerios"
     ]
   },
   "oe-2026-cem-euros-ministerio-defesa-nacional": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
+        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA»."
       ],
       "en": [
         "It is the amount for this ministry out of every hundred euros of “",
@@ -2220,18 +2232,21 @@ export const FAMILIAS_DAS_LINHAS = {
           "termo": "DESPESA TOTAL",
           "lingua": "pt-PT"
         },
-        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+        {"termo": "DESPESA TOTAL CONSOLIDADA", "lingua": "pt-PT"},
+        "”."
       ]
     },
     "origens": [
       "rp4n-total-ministerios",
-      "rp4n-mapa-ministerios"
+      "rp4n-mapa-ministerios",
+      "rp4n-consolidada-ministerios"
     ]
   },
   "oe-2026-cem-euros-ministerio-economia-e-coesao-territorial": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
+        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA»."
       ],
       "en": [
         "It is the amount for this ministry out of every hundred euros of “",
@@ -2239,18 +2254,21 @@ export const FAMILIAS_DAS_LINHAS = {
           "termo": "DESPESA TOTAL",
           "lingua": "pt-PT"
         },
-        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+        {"termo": "DESPESA TOTAL CONSOLIDADA", "lingua": "pt-PT"},
+        "”."
       ]
     },
     "origens": [
       "rp4n-total-ministerios",
-      "rp4n-mapa-ministerios"
+      "rp4n-mapa-ministerios",
+      "rp4n-consolidada-ministerios"
     ]
   },
   "oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
+        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA»."
       ],
       "en": [
         "It is the amount for this ministry out of every hundred euros of “",
@@ -2258,18 +2276,21 @@ export const FAMILIAS_DAS_LINHAS = {
           "termo": "DESPESA TOTAL",
           "lingua": "pt-PT"
         },
-        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+        {"termo": "DESPESA TOTAL CONSOLIDADA", "lingua": "pt-PT"},
+        "”."
       ]
     },
     "origens": [
       "rp4n-total-ministerios",
-      "rp4n-mapa-ministerios"
+      "rp4n-mapa-ministerios",
+      "rp4n-consolidada-ministerios"
     ]
   },
   "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado": {
     "frase": {
       "pt": [
-        "É quanto vai para os encargos gerais do Estado em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
+        "É quanto vai para os encargos gerais do Estado em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA»."
       ],
       "en": [
         "It is the amount for the general charges of the State out of every hundred euros of “",
@@ -2277,18 +2298,21 @@ export const FAMILIAS_DAS_LINHAS = {
           "termo": "DESPESA TOTAL",
           "lingua": "pt-PT"
         },
-        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+        {"termo": "DESPESA TOTAL CONSOLIDADA", "lingua": "pt-PT"},
+        "”."
       ]
     },
     "origens": [
       "rp4n-total-ministerios",
-      "rp4n-mapa-ministerios"
+      "rp4n-mapa-ministerios",
+      "rp4n-consolidada-ministerios"
     ]
   },
   "oe-2026-cem-euros-ministerio-financas": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
+        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA»."
       ],
       "en": [
         "It is the amount for this ministry out of every hundred euros of “",
@@ -2296,18 +2320,21 @@ export const FAMILIAS_DAS_LINHAS = {
           "termo": "DESPESA TOTAL",
           "lingua": "pt-PT"
         },
-        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+        {"termo": "DESPESA TOTAL CONSOLIDADA", "lingua": "pt-PT"},
+        "”."
       ]
     },
     "origens": [
       "rp4n-total-ministerios",
-      "rp4n-mapa-ministerios"
+      "rp4n-mapa-ministerios",
+      "rp4n-consolidada-ministerios"
     ]
   },
   "oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
+        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA»."
       ],
       "en": [
         "It is the amount for this ministry out of every hundred euros of “",
@@ -2315,18 +2342,21 @@ export const FAMILIAS_DAS_LINHAS = {
           "termo": "DESPESA TOTAL",
           "lingua": "pt-PT"
         },
-        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+        {"termo": "DESPESA TOTAL CONSOLIDADA", "lingua": "pt-PT"},
+        "”."
       ]
     },
     "origens": [
       "rp4n-total-ministerios",
-      "rp4n-mapa-ministerios"
+      "rp4n-mapa-ministerios",
+      "rp4n-consolidada-ministerios"
     ]
   },
   "oe-2026-cem-euros-ministerio-justica": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
+        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA»."
       ],
       "en": [
         "It is the amount for this ministry out of every hundred euros of “",
@@ -2334,18 +2364,21 @@ export const FAMILIAS_DAS_LINHAS = {
           "termo": "DESPESA TOTAL",
           "lingua": "pt-PT"
         },
-        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+        {"termo": "DESPESA TOTAL CONSOLIDADA", "lingua": "pt-PT"},
+        "”."
       ]
     },
     "origens": [
       "rp4n-total-ministerios",
-      "rp4n-mapa-ministerios"
+      "rp4n-mapa-ministerios",
+      "rp4n-consolidada-ministerios"
     ]
   },
   "oe-2026-cem-euros-ministerio-negocios-estrangeiros": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
+        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA»."
       ],
       "en": [
         "It is the amount for this ministry out of every hundred euros of “",
@@ -2353,18 +2386,21 @@ export const FAMILIAS_DAS_LINHAS = {
           "termo": "DESPESA TOTAL",
           "lingua": "pt-PT"
         },
-        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+        {"termo": "DESPESA TOTAL CONSOLIDADA", "lingua": "pt-PT"},
+        "”."
       ]
     },
     "origens": [
       "rp4n-total-ministerios",
-      "rp4n-mapa-ministerios"
+      "rp4n-mapa-ministerios",
+      "rp4n-consolidada-ministerios"
     ]
   },
   "oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
+        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA»."
       ],
       "en": [
         "It is the amount for this ministry out of every hundred euros of “",
@@ -2372,18 +2408,21 @@ export const FAMILIAS_DAS_LINHAS = {
           "termo": "DESPESA TOTAL",
           "lingua": "pt-PT"
         },
-        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+        {"termo": "DESPESA TOTAL CONSOLIDADA", "lingua": "pt-PT"},
+        "”."
       ]
     },
     "origens": [
       "rp4n-total-ministerios",
-      "rp4n-mapa-ministerios"
+      "rp4n-mapa-ministerios",
+      "rp4n-consolidada-ministerios"
     ]
   },
   "oe-2026-cem-euros-ministerio-reforma-do-estado": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
+        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA»."
       ],
       "en": [
         "It is the amount for this ministry out of every hundred euros of “",
@@ -2391,18 +2430,21 @@ export const FAMILIAS_DAS_LINHAS = {
           "termo": "DESPESA TOTAL",
           "lingua": "pt-PT"
         },
-        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+        {"termo": "DESPESA TOTAL CONSOLIDADA", "lingua": "pt-PT"},
+        "”."
       ]
     },
     "origens": [
       "rp4n-total-ministerios",
-      "rp4n-mapa-ministerios"
+      "rp4n-mapa-ministerios",
+      "rp4n-consolidada-ministerios"
     ]
   },
   "oe-2026-cem-euros-ministerio-saude": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
+        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA»."
       ],
       "en": [
         "It is the amount for this ministry out of every hundred euros of “",
@@ -2410,18 +2452,21 @@ export const FAMILIAS_DAS_LINHAS = {
           "termo": "DESPESA TOTAL",
           "lingua": "pt-PT"
         },
-        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+        {"termo": "DESPESA TOTAL CONSOLIDADA", "lingua": "pt-PT"},
+        "”."
       ]
     },
     "origens": [
       "rp4n-total-ministerios",
-      "rp4n-mapa-ministerios"
+      "rp4n-mapa-ministerios",
+      "rp4n-consolidada-ministerios"
     ]
   },
   "oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central."
+        "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA»."
       ],
       "en": [
         "It is the amount for this ministry out of every hundred euros of “",
@@ -2429,12 +2474,15 @@ export const FAMILIAS_DAS_LINHAS = {
           "termo": "DESPESA TOTAL",
           "lingua": "pt-PT"
         },
-        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector."
+        "” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “",
+        {"termo": "DESPESA TOTAL CONSOLIDADA", "lingua": "pt-PT"},
+        "”."
       ]
     },
     "origens": [
       "rp4n-total-ministerios",
-      "rp4n-mapa-ministerios"
+      "rp4n-mapa-ministerios",
+      "rp4n-consolidada-ministerios"
     ]
   },
   "oe-2026-despesa-bruta-administracao-central": {
