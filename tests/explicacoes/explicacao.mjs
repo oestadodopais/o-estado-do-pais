@@ -465,6 +465,36 @@ function conferirPalavrasDoRamo(texto, regra, onde) {
   ];
 }
 
+/** X6: isola o texto rendido de cada token entre o prefixo e o sufixo do parágrafo.
+ * A igualdade cobre alterações nesses limites; as palavras têm uma mensagem própria.
+ * @param {any} partes @param {string} texto @param {'pt'|'en'} lang @param {Map<string, any>} linhas @param {string} caminho
+ */
+function conferirPalavrasRendidas(partes, texto, lang, linhas, caminho) {
+  const lista = Array.isArray(partes) ? partes : [partes];
+  const erros = [];
+  for (const [i, p] of lista.entries()) {
+    if (!p || typeof p !== 'object') continue;
+    let ramo;
+    if ('comparaSaldos' in p) ramo = ramoDosSaldosAqui(p, linhas);
+    else if ('sinal' in p) {
+      const v = numero(linhas.get(p.sinal)?.value);
+      ramo = v === null ? null : v < 0 ? 'negativo' : v > 0 ? 'positivo' : 'zero';
+    } else if ('compara' in p) {
+      const [a, b] = p.compara.map(id => numero(linhas.get(id)?.value));
+      ramo = a === null || b === null ? null : a > b ? 'maior' : a < b ? 'menor' : 'igual';
+    }
+    const subpartes = ramo ? p[ramo] : p.se?.every(c => condicaoAqui(c, linhas)) ? p.partes : null;
+    if (!subpartes) continue;
+    const antes = normal(textoAqui(lista.slice(0, i), lang, linhas));
+    const depois = normal(textoAqui(lista.slice(i + 1), lang, linhas));
+    if (!texto.startsWith(antes) || !texto.endsWith(depois) || antes.length + depois.length > texto.length) continue;
+    const trecho = texto.slice(antes.length, depois ? -depois.length : undefined).trim();
+    if (ramo) erros.push(...conferirPalavrasDoRamo(trecho, p.palavras?.[ramo], `X6 · palavras do ramo: ${caminho}, ramo «${ramo}»`));
+    erros.push(...conferirPalavrasRendidas(subpartes, trecho, lang, linhas, caminho));
+  }
+  return erros;
+}
+
 /**
  * X3: as origens das explicações. Com o motor ao lado, os ficheiros e os registos dos pedidos.
  * @param {{ origens?: Record<string, any>, motor?: string|undefined }} [entrada]
@@ -734,6 +764,8 @@ export function conferirPaginaDaExplicacao(root, lang, slug, linhas = loadClaims
     if (!el) continue;
     const texto = textoSemSelos(el);
     if (texto !== p.texto) erros.push(`X6 · o parágrafo ${p.caminho} difere da conta.\n      esperado: ${curto(p.texto)}\n      rendido:  ${curto(texto)}`);
+    const declaracao = p.caminho.match(/[^.[\]]+/g).reduce((v, k) => v[k], e);
+    erros.push(...conferirPalavrasRendidas(declaracao[lang], texto, lang, linhas, p.caminho));
   }
   erros.push(...conferirContabilidadeDosRamos(main, e, lang, linhas));
   const titulos = main.querySelectorAll('[data-explicacao-secao] > h2').map((/** @type {any} */ h) => normal(h.textContent));
@@ -873,8 +905,20 @@ export function plantasDaExplicacao(dist) {
     const de = /défice menor|défice maior|défice igual/.exec(p.textContent)?.[0];
     p.set_content(p.innerHTML.replace(de, de === 'défice menor' ? 'défice maior' : 'défice menor'));
   }, /X6 · o parágrafo seccoes\[2\]\.conteudo\[1\]\.paragrafo difere da conta/);
+  {
+    const r = parse(html), p = saldoExecucao(r);
+    const t = e.seccoes[2].conteudo[1].paragrafo.pt.find(t => t.comparaSaldos);
+    const simuladas = new Map(linhas);
+    const id = t.comparaSaldos[1], linha = linhas.get(id);
+    simuladas.set(id, { ...linha, value: String(-numero(linha.value)).replace('.', ',') });
+    const escolhido = ramoDosSaldosAqui(t, linhas), trocado = ramoDosSaldosAqui(t, simuladas);
+    // Rende o ramo verdadeiro que o sinal trocado escolheria, conservando os valores e selos da página.
+    const render = ramo => t[ramo].map(x => typeof x === 'string' ? x : p.querySelector(`[data-claim="${x.claim}"]`).closest('.claim').outerHTML).join('');
+    p.set_content(p.innerHTML.replace(render(escolhido), render(trocado)));
+    const q = conferirPaginaDaExplicacao(r, 'pt', e.slug, linhas);
+    out.push({ nome: `EX1-f: o sinal da previsão trocado rende ${trocado}`, mordeu: controlo.length === 0 && q.some(x => x.startsWith('X6 · contabilidade dos ramos:')) && q.some(x => x.startsWith('X6 · palavras do ramo:') && x.includes(`«${escolhido}»`)), queixa: q.join(' | ') || 'nenhuma' });
+  }
   for (const [nome, de, para] of [
-    ['o sinal da previsão trocado', 'é um défice menor do que o que o Orçamento previa para o ano inteiro (', 'o Orçamento previa para o ano inteiro um excedente de ('],
     ['os dois sinais trocados', 'é um défice menor', 'é um excedente menor'],
   ]) naPagina(`EX1-e: ${nome}`, (r) => {
     const p = saldoExecucao(r);
