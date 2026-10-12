@@ -1,0 +1,1 @@
+{"comando": "python3 -m vigilancia.recontar --dia 2026-10-11", "revisoes_reais": 0, "revisoes_so_ligacao": 306, "numeros_dar": ["dar:2026-09-26:006"], "recibos_originais_preservados": true, "refeito_em": "2026-10-12", "corrida_origem": "2026-10-11T085638711957Z"}

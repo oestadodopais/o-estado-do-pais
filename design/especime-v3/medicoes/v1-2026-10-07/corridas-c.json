@@ -1,0 +1,886 @@
+[
+  {
+    "id": "2026-10-12T165158114077Z",
+    "recibo": "vigilancia/corridas/2026-10-12T165158114077Z.json",
+    "registo_pedidos": "vigilancia/pedidos/2026-10-12T165158114077Z.jsonl",
+    "novas": 0,
+    "revisoes": 0,
+    "iguais": 6,
+    "alteracoes_por_fonte": {
+      "dar": {
+        "novas": 0,
+        "revisoes": 0,
+        "iguais": 0
+      },
+      "iniciativas": {
+        "novas": 0,
+        "revisoes": 0,
+        "iguais": 0
+      },
+      "dr": {
+        "novas": 0,
+        "revisoes": 0,
+        "iguais": 6
+      }
+    },
+    "pedidos": 12,
+    "bytes": 245669,
+    "bytes_comuns": 245669,
+    "bytes_fora_teto_comum": {
+      "fonte": "iniciativas",
+      "bytes": 0,
+      "razao": "Ficheiro cumulativo imposto pela fonte; teto próprio e uma transferência por dia."
+    },
+    "pedidos_por_fonte": {
+      "dar": 2,
+      "iniciativas": 3,
+      "dr": 1,
+      "politicas": 6
+    },
+    "bytes_por_fonte": {
+      "dar": 84300,
+      "iniciativas": 158669,
+      "dr": 0,
+      "politicas": 2700
+    },
+    "bytes_descomprimidos_lidos": 1084585,
+    "segundos": 81.374,
+    "simbolos_modelo": 0,
+    "entradas_por_fonte": {
+      "dar": 306,
+      "iniciativas": 0,
+      "dr": 10
+    },
+    "entradas_por_tipo": {
+      "declaração": 306,
+      "iniciativa": 0,
+      "ato": 10
+    },
+    "versoes_preservadas": 316,
+    "contagem": "entradas vigentes por identificador",
+    "falhas": 2,
+    "fontes": {
+      "dar": {
+        "estado": "falha",
+        "razao": "pedido sem resposta completa: ReadTimeout"
+      },
+      "iniciativas": {
+        "estado": "falha",
+        "razao": "arquivo ou resposta ilegível: ReadTimeout"
+      },
+      "dr": {
+        "estado": "limitação",
+        "data_feed": "2026-10-12",
+        "razao": "Texto integral exige JavaScript; metadados do RSS alojados.",
+        "lida": true
+      }
+    },
+    "limitacoes": [
+      {
+        "origem": "dr",
+        "codigo": "javascript",
+        "documento_id": "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+        "razao": "Texto integral exige JavaScript; metadados do RSS alojados.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "codigo": "javascript",
+        "documento_id": "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+        "razao": "Texto integral exige JavaScript; metadados do RSS alojados.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "codigo": "javascript",
+        "documento_id": "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+        "razao": "Texto integral exige JavaScript; metadados do RSS alojados.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "codigo": "javascript",
+        "documento_id": "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+        "razao": "Texto integral exige JavaScript; metadados do RSS alojados.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "codigo": "javascript",
+        "documento_id": "ato:https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+        "razao": "Texto integral exige JavaScript; metadados do RSS alojados.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "codigo": "javascript",
+        "documento_id": "ato:https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116",
+        "razao": "Texto integral exige JavaScript; metadados do RSS alojados.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      }
+    ],
+    "falhas_detalhe": [
+      {
+        "origem": "dar",
+        "razao": "pedido sem resposta completa: ReadTimeout"
+      },
+      {
+        "origem": "iniciativas",
+        "razao": "arquivo ou resposta ilegível: ReadTimeout"
+      }
+    ],
+    "fila": [
+      {
+        "origem": "dar",
+        "acao": "indice"
+      },
+      {
+        "origem": "iniciativas",
+        "acao": "indice"
+      }
+    ],
+    "aceitacao_entrada_datada": {
+      "dar": {
+        "estado": "por cumprir",
+        "inicio": "2026-10-11",
+        "fim": "2026-10-12"
+      },
+      "iniciativas": {
+        "estado": "por cumprir",
+        "inicio": "2026-10-11",
+        "fim": "2026-10-12"
+      },
+      "dr": {
+        "estado": "cumprida",
+        "inicio": "2026-10-11",
+        "fim": "2026-10-12"
+      }
+    },
+    "segunda_leitura": {
+      "dar": "não medido",
+      "iniciativas": "não medido",
+      "dr": true
+    },
+    "reconferencias_adiadas": [
+      {
+        "origem": "dr",
+        "id": "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+        "razao": "JavaScript já provado; reconferência semanal.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "id": "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+        "razao": "JavaScript já provado; reconferência semanal.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "id": "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+        "razao": "JavaScript já provado; reconferência semanal.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "id": "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+        "razao": "JavaScript já provado; reconferência semanal.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "id": "ato:https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+        "razao": "JavaScript já provado; reconferência semanal.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "id": "ato:https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116",
+        "razao": "JavaScript já provado; reconferência semanal.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      }
+    ],
+    "avisos_descompressao": []
+  },
+  {
+    "id": "2026-10-12T165319624765Z",
+    "recibo": "vigilancia/corridas/2026-10-12T165319624765Z.json",
+    "registo_pedidos": "vigilancia/pedidos/2026-10-12T165319624765Z.jsonl",
+    "novas": 0,
+    "revisoes": 0,
+    "iguais": 6,
+    "alteracoes_por_fonte": {
+      "dar": {
+        "novas": 0,
+        "revisoes": 0,
+        "iguais": 0
+      },
+      "iniciativas": {
+        "novas": 0,
+        "revisoes": 0,
+        "iguais": 0
+      },
+      "dr": {
+        "novas": 0,
+        "revisoes": 0,
+        "iguais": 6
+      }
+    },
+    "pedidos": 12,
+    "bytes": 245676,
+    "bytes_comuns": 245676,
+    "bytes_fora_teto_comum": {
+      "fonte": "iniciativas",
+      "bytes": 0,
+      "razao": "Ficheiro cumulativo imposto pela fonte; teto próprio e uma transferência por dia."
+    },
+    "pedidos_por_fonte": {
+      "dar": 2,
+      "iniciativas": 3,
+      "dr": 1,
+      "politicas": 6
+    },
+    "bytes_por_fonte": {
+      "dar": 84301,
+      "iniciativas": 158675,
+      "dr": 0,
+      "politicas": 2700
+    },
+    "bytes_descomprimidos_lidos": 1084585,
+    "segundos": 80.949,
+    "simbolos_modelo": 0,
+    "entradas_por_fonte": {
+      "dar": 306,
+      "iniciativas": 0,
+      "dr": 10
+    },
+    "entradas_por_tipo": {
+      "declaração": 306,
+      "iniciativa": 0,
+      "ato": 10
+    },
+    "versoes_preservadas": 316,
+    "contagem": "entradas vigentes por identificador",
+    "falhas": 2,
+    "fontes": {
+      "dar": {
+        "estado": "falha",
+        "razao": "pedido sem resposta completa: ReadTimeout"
+      },
+      "iniciativas": {
+        "estado": "falha",
+        "razao": "arquivo ou resposta ilegível: ReadTimeout"
+      },
+      "dr": {
+        "estado": "limitação",
+        "data_feed": "2026-10-12",
+        "razao": "Texto integral exige JavaScript; metadados do RSS alojados.",
+        "lida": true
+      }
+    },
+    "limitacoes": [
+      {
+        "origem": "dr",
+        "codigo": "javascript",
+        "documento_id": "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+        "razao": "Texto integral exige JavaScript; metadados do RSS alojados.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "codigo": "javascript",
+        "documento_id": "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+        "razao": "Texto integral exige JavaScript; metadados do RSS alojados.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "codigo": "javascript",
+        "documento_id": "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+        "razao": "Texto integral exige JavaScript; metadados do RSS alojados.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "codigo": "javascript",
+        "documento_id": "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+        "razao": "Texto integral exige JavaScript; metadados do RSS alojados.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "codigo": "javascript",
+        "documento_id": "ato:https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+        "razao": "Texto integral exige JavaScript; metadados do RSS alojados.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "codigo": "javascript",
+        "documento_id": "ato:https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116",
+        "razao": "Texto integral exige JavaScript; metadados do RSS alojados.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      }
+    ],
+    "falhas_detalhe": [
+      {
+        "origem": "dar",
+        "razao": "pedido sem resposta completa: ReadTimeout"
+      },
+      {
+        "origem": "iniciativas",
+        "razao": "arquivo ou resposta ilegível: ReadTimeout"
+      }
+    ],
+    "fila": [
+      {
+        "origem": "dar",
+        "acao": "indice"
+      },
+      {
+        "origem": "iniciativas",
+        "acao": "indice"
+      }
+    ],
+    "aceitacao_entrada_datada": {
+      "dar": {
+        "estado": "por cumprir",
+        "inicio": "2026-10-11",
+        "fim": "2026-10-12"
+      },
+      "iniciativas": {
+        "estado": "por cumprir",
+        "inicio": "2026-10-11",
+        "fim": "2026-10-12"
+      },
+      "dr": {
+        "estado": "cumprida",
+        "inicio": "2026-10-11",
+        "fim": "2026-10-12"
+      }
+    },
+    "segunda_leitura": {
+      "dar": "não medido",
+      "iniciativas": "não medido",
+      "dr": true
+    },
+    "reconferencias_adiadas": [
+      {
+        "origem": "dr",
+        "id": "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+        "razao": "JavaScript já provado; reconferência semanal.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "id": "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+        "razao": "JavaScript já provado; reconferência semanal.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "id": "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+        "razao": "JavaScript já provado; reconferência semanal.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "id": "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+        "razao": "JavaScript já provado; reconferência semanal.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "id": "ato:https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+        "razao": "JavaScript já provado; reconferência semanal.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/portaria/452-2026-1179433115",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      },
+      {
+        "origem": "dr",
+        "id": "ato:https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116",
+        "razao": "JavaScript já provado; reconferência semanal.",
+        "prova": {
+          "url": "https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116",
+          "chave": "https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116",
+          "origem": "dr",
+          "quando": "2026-10-12T13:22:40.450904+00:00",
+          "pedido": {
+            "User-Agent": "OEstadoDoPais/corredor",
+            "If-None-Match": null,
+            "If-Modified-Since": null
+          },
+          "http": 200,
+          "url_final": "https://diariodarepublica.pt/dr/detalhe/portaria/453-2026-1179433116",
+          "redireccionamentos": [],
+          "erro": null,
+          "etag": null,
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8",
+          "sha256": "819ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876",
+          "encoding": "gzip",
+          "arquivo": "arquivo/sha256/81/9ea5948ec69b887188cfbc80b9cd0ad2256ad127cbeb5bc170563c21a3c876"
+        }
+      }
+    ],
+    "avisos_descompressao": []
+  }
+]

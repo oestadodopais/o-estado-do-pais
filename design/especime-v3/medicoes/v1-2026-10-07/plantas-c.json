@@ -1,0 +1,155 @@
+{
+  "codigo": "253cfc3658c603b6c89b86cc6cb6605500e4484d",
+  "plantas": [
+    {
+      "planta": "Provas.planta_excerto",
+      "mensagem": "excerto alterado contra o arquivo",
+      "passou": true,
+      "registo": "test_planta_excerto (vigilancia.tests.test_vigilancia.Provas.test_planta_excerto) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.planta_autoria",
+      "mensagem": "autoria trocada contra o arquivo",
+      "passou": true,
+      "registo": "test_planta_autoria (vigilancia.tests.test_vigilancia.Provas.test_planta_autoria) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.planta_data",
+      "mensagem": "data errada contra o arquivo",
+      "passou": true,
+      "registo": "test_planta_data (vigilancia.tests.test_vigilancia.Provas.test_planta_data) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.planta_corpo",
+      "mensagem": "corpo truncado ou alterado no arquivo",
+      "passou": true,
+      "registo": "test_planta_corpo (vigilancia.tests.test_vigilancia.Provas.test_planta_corpo) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.planta_vazio",
+      "mensagem": "falha apresentada como vazio ou cobertura completa",
+      "passou": true,
+      "registo": "test_planta_vazio (vigilancia.tests.test_vigilancia.Provas.test_planta_vazio) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDAR.planta_excerto",
+      "mensagem": "excerto alterado contra o arquivo",
+      "passou": true,
+      "registo": "test_planta_excerto (vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_excerto) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.166s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDAR.planta_autoria",
+      "mensagem": "autoria trocada contra o arquivo",
+      "passou": true,
+      "registo": "test_planta_autoria (vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_autoria) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.163s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDAR.planta_data",
+      "mensagem": "data errada contra o arquivo",
+      "passou": true,
+      "registo": "test_planta_data (vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_data) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.157s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDAR.planta_corpo",
+      "mensagem": "corpo truncado ou alterado no arquivo",
+      "passou": true,
+      "registo": "test_planta_corpo (vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_corpo) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.085s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDAR.planta_vazio",
+      "mensagem": "falha apresentada como vazio ou cobertura completa",
+      "passou": true,
+      "registo": "test_planta_vazio (vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_vazio) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.233s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDR.planta_excerto",
+      "mensagem": "excerto alterado contra o arquivo",
+      "passou": true,
+      "registo": "test_planta_excerto (vigilancia.tests.test_vigilancia.PlantasDR.test_planta_excerto) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.009s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDR.planta_autoria",
+      "mensagem": "autoria trocada contra o arquivo",
+      "passou": true,
+      "registo": "test_planta_autoria (vigilancia.tests.test_vigilancia.PlantasDR.test_planta_autoria) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.008s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDR.planta_data",
+      "mensagem": "data errada contra o arquivo",
+      "passou": true,
+      "registo": "test_planta_data (vigilancia.tests.test_vigilancia.PlantasDR.test_planta_data) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.008s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDR.planta_corpo",
+      "mensagem": "corpo truncado ou alterado no arquivo",
+      "passou": true,
+      "registo": "test_planta_corpo (vigilancia.tests.test_vigilancia.PlantasDR.test_planta_corpo) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.008s\n\nOK\n"
+    },
+    {
+      "planta": "PlantasDR.planta_vazio",
+      "mensagem": "falha apresentada como vazio ou cobertura completa",
+      "passou": true,
+      "registo": "test_planta_vazio (vigilancia.tests.test_vigilancia.PlantasDR.test_planta_vazio) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.008s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.planta_limitacao_como_falha",
+      "mensagem": "limitação conhecida apresentada como falha",
+      "passou": true,
+      "registo": "test_planta_limitacao_como_falha (vigilancia.tests.test_vigilancia.Provas.test_planta_limitacao_como_falha) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.planta_falha_como_limitacao",
+      "mensagem": "falha apresentada como limitação",
+      "passou": true,
+      "registo": "test_planta_falha_como_limitacao (vigilancia.tests.test_vigilancia.Provas.test_planta_falha_como_limitacao) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.planta_dois_numeros_dar",
+      "mensagem": "número do DAR omitido do resumo sem aviso",
+      "passou": true,
+      "registo": "test_planta_dois_numeros_dar (vigilancia.tests.test_vigilancia.Provas.test_planta_dois_numeros_dar) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.085s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.planta_ato_sem_descricao",
+      "mensagem": "ato sem a descrição da fonte",
+      "passou": true,
+      "registo": "test_planta_ato_sem_descricao (vigilancia.tests.test_vigilancia.Provas.test_planta_ato_sem_descricao) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.006s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.cumulativo_teto_proprio_e_uma_transferencia",
+      "mensagem": "teto de uma transferência cumulativa por dia atingido; ficheiro alterado fica em fila",
+      "passou": true,
+      "registo": "test_cumulativo_teto_proprio_e_uma_transferencia (vigilancia.tests.test_vigilancia.Provas.test_cumulativo_teto_proprio_e_uma_transferencia) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.020s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.cumulativo_excedente_nao_alojado",
+      "mensagem": "teto de bytes atingido; corpo incompleto não alojado",
+      "passou": true,
+      "registo": "test_cumulativo_excedente_nao_alojado (vigilancia.tests.test_vigilancia.Provas.test_cumulativo_excedente_nao_alojado) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.010s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.indice_mesmo_tamanho_le_corpo",
+      "mensagem": "índice reutilizado só pelo tamanho",
+      "passou": true,
+      "registo": "test_indice_mesmo_tamanho_le_corpo (vigilancia.tests.test_vigilancia.Provas.test_indice_mesmo_tamanho_le_corpo) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 1.023s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.head_mudado_nao_reutiliza_gzip_mesmo_tamanho",
+      "mensagem": "HEAD alterado foi ignorado pelo tamanho comprimido",
+      "passou": true,
+      "registo": "test_head_mudado_nao_reutiliza_gzip_mesmo_tamanho (vigilancia.tests.test_vigilancia.Provas.test_head_mudado_nao_reutiliza_gzip_mesmo_tamanho) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 2.039s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.dar_servido_com_outra_ligacao_na_segunda_corrida",
+      "mensagem": "número arquivado desapareceu da reconferência semanal",
+      "passou": true,
+      "registo": "test_dar_servido_com_outra_ligacao_na_segunda_corrida (vigilancia.tests.test_vigilancia.Provas.test_dar_servido_com_outra_ligacao_na_segunda_corrida) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 2.258s\n\nOK\n"
+    },
+    {
+      "planta": "Provas.aviso_descompressao",
+      "mensagem": "ficheiro descomprimido acima de oitenta por cento do limite",
+      "passou": true,
+      "registo": "test_aviso_descompressao (vigilancia.tests.test_vigilancia.Provas.test_aviso_descompressao) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.010s\n\nOK\n"
+    }
+  ]
+}

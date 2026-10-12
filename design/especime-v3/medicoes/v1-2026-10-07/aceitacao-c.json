@@ -1,0 +1,37 @@
+{
+  "duas_corridas_codigo_final": true,
+  "segunda_leu_tres_fontes": false,
+  "segunda_sem_novas_ou_revisoes": {
+    "dar": "não medido",
+    "iniciativas": "não medido",
+    "dr": true
+  },
+  "falhas": [
+    2,
+    2
+  ],
+  "entrada_datada_por_fonte": {
+    "dar": {
+      "estado": "por cumprir",
+      "inicio": "2026-10-11",
+      "fim": "2026-10-12"
+    },
+    "iniciativas": {
+      "estado": "por cumprir",
+      "inicio": "2026-10-11",
+      "fim": "2026-10-12"
+    },
+    "dr": {
+      "estado": "cumprida",
+      "inicio": "2026-10-11",
+      "fim": "2026-10-12"
+    }
+  },
+  "portao": 0,
+  "portao_cabeca_codigo": true,
+  "plantas": true,
+  "codigo_motor": "253cfc3658c603b6c89b86cc6cb6605500e4484d",
+  "codigo_sitio": "e00d0c1ad299e80262f328b0602d0140315bd4f2",
+  "tokens_used": null,
+  "aceitacao_corridas_cumprida": false
+}

@@ -1,0 +1,36 @@
+{
+  "motor": "1b990527231e57ee6cde272b2a8fdf1562bacba6",
+  "motor_codigo": "253cfc3658c603b6c89b86cc6cb6605500e4484d",
+  "sitio_antes_fecho": "e00d0c1ad299e80262f328b0602d0140315bd4f2",
+  "sitio_codigo": "e00d0c1ad299e80262f328b0602d0140315bd4f2",
+  "commits_motor": [
+    "81fe39510b3c23e7cd40dac0da52f7d51d9c17b5 V1-c, achado 6: separar limitações, falhas e aceitação da janela",
+    "12c4ed6fb18e00d6292d075ccf52a298114df8c7 V1-c, achado 7: orçamento cumulativo e reconferência semanal",
+    "00f9fa3a9a870a05a3e9544f7287a4014c65e371 V1-c, achado 8: reservar todos os números do DAR no resumo",
+    "2e490933bc71efc2135356880571e79124a02d43 V1-c, achado 9: dar conteúdo editorial ao resumo com descrições literais",
+    "8e257637bf1cd45533ca68a4b229a7ad8b62cfb6 V1-c, achado 10: identificar a recontagem e conservar contagens do recibo",
+    "a9a68f01d29cb78374f0ee83f8b8f59f3dac2fbd V1-c, achado 11: separar reprocessamentos de omissões por tamanho",
+    "3eb5f4326064847486c6a2a56bfe09c463501e7c V1-c, achado 12: conservar a razão inteira da cobertura",
+    "78ab3953d33f8c87fb904d45f54bc93fbcaf1acf V1-c, achado 13: restringir o atalho do tamanho aos documentos",
+    "d292f1f62ab8628379442a35878cc901e7953c4c V1-c, achado 14: procurar fugas em todos os ficheiros do bloco",
+    "a5de5693a4d956bc6d9bb69d0419c29149b40394 V1-c, achado 15: gravar a comparação integral dos hashes",
+    "1696c6fcc534feef397ee8daf2d99afce3ff795a V1-c, achado 16: limpar a prova dos direitos e fundamentar o DAR",
+    "d82bb4b652a4ae3ac20afd572bd1f0c6eb3cc739 V1-c, achado 17: conferir o conteúdo na planta do vazio",
+    "f357e58bc2fbdfd0f292de0c55b3c227633a5ef2 V1-c, achado 18: dar folga à descompressão e avisar no recibo",
+    "253cfc3658c603b6c89b86cc6cb6605500e4484d V1-c, achado 7: manter a reconferência dos números fora do catálogo",
+    "1b990527231e57ee6cde272b2a8fdf1562bacba6 V1-c: registar corridas reais e o impedimento de rede no fecho"
+  ],
+  "commits_sitio": [
+    "53a3a1ccae19aa27d4f26017ce1d507f97aa7da7 V1-c: registar a leitura, as plantas e o mandato",
+    "19eae39e254f5b1ebbacc80c56a2197da0cd7894 V1-c: medir recibos, aritmética, plantas e procura integral de fugas",
+    "27e0f5d73066d5615ba8523b99c546128225470f V1-c: fechar a medição dos cenários e do atalho HEAD",
+    "127154f4e32ca6b9384c7a26cb685295e3cd4395 V1-c: medir o arquivo efetivo e explicitar a cadência observada",
+    "338b03fefe4d9601de0ab3c7c7519cee518685b7 V1-c: fixar as bases da confirmação e a prova da agenda semanal",
+    "efb58b83ffc8cb74a6f34a73661b98e1259aa9c1 V1-c: conservar a tentativa de rede anterior ao par final",
+    "0a858a64f00df7c9923d858f4e98b9005d312ecd V1-c: declarar a aceitação pendente quando a fonte falha",
+    "d8291c1d2d6503f1cd1378634f33eddd2d6d61a0 V1-c: conferir a preservação contra a cabeça de entrada",
+    "c776fcff46d141b783b43e0911afaaf9c7573c79 V1-c: usar a última prova disponível quando o HEAD falha",
+    "1ddc0b25fc6a34e9408749e3303616d4d8c1ff83 V1-c: basear o custo ordinário apenas em leituras completas",
+    "e00d0c1ad299e80262f328b0602d0140315bd4f2 V1-c: distinguir fonte falhada de limitação ausente no relatório"
+  ]
+}

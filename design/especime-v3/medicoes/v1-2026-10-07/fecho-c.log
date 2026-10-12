@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "<sitio>/design/especime-v3/medicoes/v1-2026-10-07/medir_v1c.py", line 313, in <module>
+    main()
+    ~~~~^^
+  File "<sitio>/design/especime-v3/medicoes/v1-2026-10-07/medir_v1c.py", line 226, in main
+    assert aceites['segunda_leu_tres_fontes'] and all(v is True for v in aceites['segunda_sem_novas_ou_revisoes'].values())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

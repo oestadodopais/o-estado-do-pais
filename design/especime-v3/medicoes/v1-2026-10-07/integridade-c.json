@@ -1,0 +1,51 @@
+{
+  "indices": [
+    {
+      "dia": "2026-10-11",
+      "versoes": 616,
+      "bytes_resumo": 2382,
+      "entradas": [
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-conselho-ministros/196-2026-1178585148",
+        "ato:https://diariodarepublica.pt/dr/detalhe/portaria/451-2026-1178585149",
+        "ato:https://diariodarepublica.pt/dr/detalhe/portaria/451-a-2026-1179331456",
+        "ato:https://diariodarepublica.pt/dr/detalhe/portaria/451-b-2026-1179433119"
+      ],
+      "grupos_dar": [
+        "dar:2026-09-26:006"
+      ],
+      "omitidas": 0,
+      "reprocessadas": 0
+    },
+    {
+      "dia": "2026-10-12",
+      "versoes": 316,
+      "bytes_resumo": 2157,
+      "entradas": [
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/257-2026-1179433111",
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/258-2026-1179433112",
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/259-2026-1179433113",
+        "ato:https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/260-2026-1179433114"
+      ],
+      "grupos_dar": [],
+      "omitidas": 2,
+      "reprocessadas": 4
+    }
+  ],
+  "corpos": 71,
+  "fundamentos": [
+    {
+      "fonte": "dr",
+      "url": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-lei/1985-34475475",
+      "sha256": "d535a4226e06dcf7328576480b3c42298eae1d46914d455558c60fe93db3e059",
+      "arquivo": "arquivo/sha256/d5/35a4226e06dcf7328576480b3c42298eae1d46914d455558c60fe93db3e059",
+      "encoding": null,
+      "obtido_em": "2026-10-12",
+      "metodo": "Extração textual da página oficial pela ferramenta web.run em 12.10.2026, limpa por guião das marcas de citação, numeração de linhas e cabeçalho da ferramenta. Palavras da fonte preservadas; não é o corpo HTTP original. Tentativa com o cliente da casa em direitos-sonda.json.",
+      "artigos": [
+        "7.º",
+        "8.º"
+      ],
+      "localizador": "Artigos 7.º e 8.º na extração textual limpa."
+    }
+  ]
+}
