@@ -315,7 +315,15 @@ export function conferirAuditoriaDasExplicacoes({
           if (!f.ramo) falha(`X2 · ${qp} está marcada como conta e não está num ramo do sinal nem em palavras guardadas por condições`);
         } else if (p?.classe === 'aponta') {
           contas.aponta++;
-          if (typeof p.porta === 'string') {
+          if (typeof p.paragrafo === 'string') {
+            const caminhos = explicacaoPelaCelula(e, 'pt', linhas).paragrafos.map(x => x.caminho);
+            const atual = caminhos.findIndex(c => f.caminho.startsWith(c + '['));
+            const alvo = caminhos.indexOf(p.paragrafo);
+            const deslocamento = p.posicao === 'seguinte' ? 1 : p.posicao === 'anterior' ? -1 : 0;
+            if (atual < 0 || alvo < 0 || !deslocamento || alvo !== atual + deslocamento) falha(`X2 · ${qp} não aponta para o parágrafo ${p.posicao} declarado`);
+            const termos = p.posicao === 'seguinte' ? ['seguinte', 'next'] : ['anterior', 'previous'];
+            if (!String(p.pt).includes(termos[0]) || !String(p.en).includes(termos[1])) falha(`X2 · ${qp} não diz a posição declarada nas duas línguas`);
+          } else if (typeof p.porta === 'string') {
             /* Uma porta do fim que a explicação declara; se for a página de um assunto, a parte nomeia-o entre «». */
             const porta = (Array.isArray(e.portas) ? e.portas : []).find((/** @type {any} */ x) => (x.entrada ?? x.rota) === p.porta);
             if (!porta) { falha(`X2 · ${qp} aponta para a porta «${p.porta}», que a explicação não declara no fim`); continue; }
@@ -965,6 +973,9 @@ export function plantasDaExplicacao(dist) {
     out.push({ nome, mordeu: q.some((x) => mordida.test(x)), queixa: q.join(' | ') || 'nenhuma' });
   };
   const folhaDiz = (/** @type {any} */ a) => a.explicacoes[0].folhas.find((/** @type {any} */ f) => f.partes.some((/** @type {any} */ p) => p.classe === 'diz' && p.apoios?.some((/** @type {any} */ x) => x.literal)));
+  naAuditoria('EX1-f: a referência aponta para o parágrafo anterior', (a) => {
+    a.explicacoes[0].folhas.flatMap(f => f.partes).find(p => p.paragrafo).posicao = 'anterior';
+  }, /X2 · .* não aponta para o parágrafo anterior declarado/);
   naAuditoria('um literal que não está no campo que cita', (a) => { const p = folhaDiz(a).partes.find((/** @type {any} */ x) => x.classe === 'diz'); p.apoios.find((/** @type {any} */ x) => x.literal).literal = 'uma frase que nenhuma fonte escreveu'; }, /X2 · .* não está no campo/);
   naAuditoria('uma conta fora de um ramo e de uma condição', (a) => { const f = a.explicacoes[0].folhas.find((/** @type {any} */ x) => x.caminho === 'abertura[0][2]'); f.partes[0].classe = 'conta'; delete f.partes[0].apoios; }, /X2 · .* marcada como conta/);
   naAuditoria('uma folha sem auditoria', (a) => { a.explicacoes[0].folhas = a.explicacoes[0].folhas.filter((/** @type {any} */ x) => x.caminho !== 'titulo[0]'); }, /X1 · .* não tem auditoria/);

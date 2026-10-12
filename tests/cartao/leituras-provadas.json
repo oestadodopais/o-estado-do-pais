@@ -16133,8 +16133,8 @@
         },
         {
           "caminho": "seccoes[2].conteudo[1].paragrafo[8]",
-          "pt": ", e ainda faltam os meses de setembro a dezembro. É outra conta, diferente da das administrações públicas de ",
-          "en": ", and September to December are still to come. This is a different account from that of general government in ",
+          "pt": ", e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de ",
+          "en": ", and September to December are still to come. It is a different account, not the one of the public accounts of ",
           "partes": [
             {
               "pt": ", e ainda faltam os meses de setembro a dezembro",
@@ -16159,8 +16159,8 @@
               "classe": "liga"
             },
             {
-              "pt": "É outra conta, diferente da das administrações públicas de ",
-              "en": "This is a different account from that of general government in ",
+              "pt": "É outra conta, e não a das contas públicas de ",
+              "en": "It is a different account, not the one of the public accounts of ",
               "classe": "diz",
               "apoios": [
                 {
@@ -16189,13 +16189,15 @@
         },
         {
           "caminho": "seccoes[2].conteudo[1].paragrafo[10]",
-          "pt": ".",
-          "en": ".",
+          "pt": " do parágrafo seguinte.",
+          "en": " in the next paragraph.",
           "partes": [
             {
-              "pt": ".",
-              "en": ".",
-              "classe": "liga"
+              "pt": " do parágrafo seguinte.",
+              "en": " in the next paragraph.",
+              "classe": "aponta",
+              "paragrafo": "seccoes[3].conteudo[0].paragrafo",
+              "posicao": "seguinte"
             }
           ]
         },
