@@ -1,0 +1,33 @@
+{
+  "sitio": "744a80eb",
+  "motor": "481e15e",
+  "controlos": [
+    {
+      "achado": 1,
+      "valor": "3,53700",
+      "periodo": "2026-08",
+      "passou": true,
+      "origem": "ledger/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade.yml"
+    },
+    {
+      "achado": 2,
+      "frase": "ao ano em que o encargo é assumido",
+      "passou": true
+    },
+    {
+      "achado": 3,
+      "guarda": "len(colors) == 1",
+      "passou": true
+    },
+    {
+      "achado": 4,
+      "valor": "315 856",
+      "passou": true
+    },
+    {
+      "achado": 5,
+      "valor": "5 983,4",
+      "passou": true
+    }
+  ]
+}

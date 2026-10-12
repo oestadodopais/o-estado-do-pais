@@ -1,0 +1,144 @@
+{
+  "cabeca": "9b1617c2a9c86a9a5785035ca8cb322ac9f9b6b4",
+  "inicio": "2026-10-12T12:42:10.035Z",
+  "fim": "2026-10-12T12:43:36.050Z",
+  "segundos": 86.015,
+  "passos": [
+    {
+      "passo": "cadeia:build",
+      "cadeia": "build",
+      "inicio": "2026-10-12T12:42:10.035+00:00",
+      "fim": "2026-10-12T12:43:35.690+00:00",
+      "segundos": 85.65433954098262,
+      "codigo": 1
+    },
+    {
+      "passo": "npm run mapa:unidades",
+      "cadeia": "build",
+      "inicio": "2026-10-12T12:42:10.035+00:00",
+      "fim": "2026-10-12T12:42:10.173+00:00",
+      "segundos": 0.1378496250254102,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run ledger:check",
+      "cadeia": "build",
+      "inicio": "2026-10-12T12:42:10.173+00:00",
+      "fim": "2026-10-12T12:42:14.726+00:00",
+      "segundos": 4.55328254197957,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:registo",
+      "cadeia": "build",
+      "inicio": "2026-10-12T12:42:14.727+00:00",
+      "fim": "2026-10-12T12:42:15.049+00:00",
+      "segundos": 0.32205875002546236,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:cruzamento",
+      "cadeia": "build",
+      "inicio": "2026-10-12T12:42:15.049+00:00",
+      "fim": "2026-10-12T12:42:15.480+00:00",
+      "segundos": 0.43142987502506003,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:documentos",
+      "cadeia": "build",
+      "inicio": "2026-10-12T12:42:15.480+00:00",
+      "fim": "2026-10-12T12:42:15.647+00:00",
+      "segundos": 0.16705062502296641,
+      "codigo": 0
+    },
+    {
+      "passo": "astro build",
+      "cadeia": "build",
+      "inicio": "2026-10-12T12:42:15.648+00:00",
+      "fim": "2026-10-12T12:42:27.655+00:00",
+      "segundos": 12.007267499982845,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run stamp:version",
+      "cadeia": "build",
+      "inicio": "2026-10-12T12:42:27.655+00:00",
+      "fim": "2026-10-12T12:42:27.788+00:00",
+      "segundos": 0.13241449999623,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run cartoes",
+      "cadeia": "build",
+      "inicio": "2026-10-12T12:42:27.788+00:00",
+      "fim": "2026-10-12T12:42:58.247+00:00",
+      "segundos": 30.458491750003304,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run gate:html",
+      "cadeia": "build",
+      "inicio": "2026-10-12T12:42:58.247+00:00",
+      "fim": "2026-10-12T12:43:30.958+00:00",
+      "segundos": 32.710842708998825,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:datas",
+      "cadeia": "build",
+      "inicio": "2026-10-12T12:43:30.958+00:00",
+      "fim": "2026-10-12T12:43:32.651+00:00",
+      "segundos": 1.6931468750117347,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:cadeia",
+      "cadeia": "build",
+      "inicio": "2026-10-12T12:43:32.651+00:00",
+      "fim": "2026-10-12T12:43:32.900+00:00",
+      "segundos": 0.24845670897047967,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:dados",
+      "cadeia": "build",
+      "inicio": "2026-10-12T12:43:32.900+00:00",
+      "fim": "2026-10-12T12:43:34.544+00:00",
+      "segundos": 1.6444268749910407,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:mapa",
+      "cadeia": "build",
+      "inicio": "2026-10-12T12:43:34.545+00:00",
+      "fim": "2026-10-12T12:43:34.953+00:00",
+      "segundos": 0.40853529202286154,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:regioes",
+      "cadeia": "build",
+      "inicio": "2026-10-12T12:43:34.953+00:00",
+      "fim": "2026-10-12T12:43:35.250+00:00",
+      "segundos": 0.2967353329877369,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:areas",
+      "cadeia": "build",
+      "inicio": "2026-10-12T12:43:35.250+00:00",
+      "fim": "2026-10-12T12:43:35.690+00:00",
+      "segundos": 0.43965016695437953,
+      "codigo": 1
+    },
+    {
+      "passo": "npm run typecheck",
+      "cadeia": "typecheck",
+      "inicio": "2026-10-12T12:43:35.833+00:00",
+      "fim": "2026-10-12T12:43:36.050+00:00",
+      "segundos": 0.21729312499519438,
+      "codigo": 0
+    }
+  ]
+}

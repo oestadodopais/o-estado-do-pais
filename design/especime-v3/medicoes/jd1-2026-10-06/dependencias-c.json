@@ -1,0 +1,12 @@
+[
+  {
+    "nome": "PyMuPDF",
+    "versao": "1.26.7",
+    "licenca": "Dual Licensed - GNU AFFERO GPL 3.0 or Artifex Commercial License"
+  },
+  {
+    "nome": "Pillow",
+    "versao": "12.3.0",
+    "licenca": "MIT-CMU"
+  }
+]
