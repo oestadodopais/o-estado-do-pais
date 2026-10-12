@@ -38,6 +38,7 @@ for(const lang of ['pt','en']){
  const estudo=parse(fs.readFileSync(`dist/${lang==='pt'?'estudos':'en/studies'}/which-door-is-yours/index.html`,'utf8'));
  r.estudo[lang]={portas:area.querySelectorAll('a').filter(a=>a.getAttribute('href')?.includes('/which-door-is-yours')).map(a=>({texto:a.textContent,href:a.getAttribute('href')})),ausencia:estudo.querySelector('[data-ausencia-atual]')?.textContent.trim()};
 }
+r.metodo_en={titulos:parse(fs.readFileSync('dist/en/method/index.html','utf8')).querySelectorAll('[title]').map(e=>e.getAttribute('title')).filter(t=>t.includes('field marked'))};
 fs.writeFileSync(base+'/medidas.json',JSON.stringify(r,null,2)+'\n');
 console.log(JSON.stringify(r));
 if(referencias.length||retiradas.some(l=>l.publication!=='withdrawn'))process.exitCode=1;

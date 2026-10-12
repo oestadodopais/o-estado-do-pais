@@ -15,7 +15,8 @@ m=json.loads((out/'medidas.json').read_text())
 assert m['recibos']['pensao-pt']['datas_rotuladas']==['Cópia alojada a 24.08.2026']*3
 assert any('paragraph below Figure 8.4' in x for x in m['recibos']['legal-en']['localizadores'])
 h=json.loads((b/'h/medidas.json').read_text())
-assert f"| Páginas com marca | 38 | {len(h['paginas_com_marcas'])} |" in (b/'LEIA-ME.md').read_text()
+antes=json.loads((b/'h/antes.json').read_text())
+assert f"| Páginas com marca | {len(antes['paginas_com_marcas'])} | {len(h['paginas_com_marcas'])} |" in (b/'LEIA-ME.md').read_text()
 escreve('plantas-da-direcao.json',{'linhas':linhas,'datas_definicoes':m['recibos']['pensao-pt']['datas_rotuladas'],'localizador_legal_en':m['recibos']['legal-en']['localizadores'],'paginas_com_marca_h':len(h['paginas_com_marcas']),'sitio':git(site,'rev-parse','HEAD'),'motor':git(motor,'rev-parse','HEAD')})
 for nome,p,base in [('sitio',site,'c2630801'),('motor',motor,'e2fd95f')]:
  commits=[]
