@@ -233,6 +233,8 @@ def main():
     for r in finais:
         verificar.corrida(r, raiz)
         ps = pedidos(raiz, r)
+        for pedido in ps:
+            verificar.reutilizacao(pedido)
         saltos = [s for p in ps for s in p['saltos']]
         assert sum(s['bytes'] for s in saltos) == r['medidas']['bytes']
         assert len(saltos) == r['medidas']['pedidos']
