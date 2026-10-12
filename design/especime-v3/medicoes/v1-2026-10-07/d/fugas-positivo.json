@@ -1,0 +1,13 @@
+{
+  "metodo": "cópia temporária, ficheiro plantado e execução de detetar_fugas",
+  "ficheiros": [
+    "copia.txt",
+    "fuga-plantada.txt"
+  ],
+  "antes": [],
+  "depois": [
+    "fuga-plantada.txt"
+  ],
+  "passou": true,
+  "mensagem": "ficheiro com fuga plantada escapou ao detetor"
+}

@@ -1,0 +1,165 @@
+PROVA vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_autoria: passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_autoria: «autoria trocada contra o arquivo»; passou
+PROVA vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_corpo: passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_corpo: «corpo truncado ou alterado no arquivo»; passou
+PROVA vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_data: passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_data: «data errada contra o arquivo»; passou
+PROVA vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_excerto: passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_excerto: «excerto alterado contra o arquivo»; passou
+PROVA vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_vazio: passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_vazio: «falha apresentada como vazio ou cobertura completa»; passou
+PROVA vigilancia.tests.test_vigilancia.PlantasDR.test_planta_autoria: passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDR.test_planta_autoria: «autoria trocada contra o arquivo»; passou
+PROVA vigilancia.tests.test_vigilancia.PlantasDR.test_planta_corpo: passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDR.test_planta_corpo: «corpo truncado ou alterado no arquivo»; passou
+PROVA vigilancia.tests.test_vigilancia.PlantasDR.test_planta_data: passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDR.test_planta_data: «data errada contra o arquivo»; passou
+PROVA vigilancia.tests.test_vigilancia.PlantasDR.test_planta_excerto: passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDR.test_planta_excerto: «excerto alterado contra o arquivo»; passou
+PROVA vigilancia.tests.test_vigilancia.PlantasDR.test_planta_vazio: passou
+PLANTA vigilancia.tests.test_vigilancia.PlantasDR.test_planta_vazio: «falha apresentada como vazio ou cobertura completa»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_aviso_descompressao: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_bytes_pdf_sem_mudar_declaracao: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_cadencia_documentos: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_condicional_e_redirecionamento: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_corte_iniciativas: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_cumulativo_excedente_nao_alojado: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_cumulativo_teto_proprio_e_uma_transferencia: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_dar_antigo_nao_volta_ao_resumo: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_dar_ligacao_rotativa_sem_revisao: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_dar_servido_com_outra_ligacao_na_segunda_corrida: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_descricao_sem_espaco_xml_e_contagens_rotuladas: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_direitos: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_documento_429_ou_5xx_fecha_anfitriao: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_duas_corridas_revisao_fila_e_recuperacao: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_fila_da_vez_as_fontes_adiadas: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_fluxos_em_seco: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_fugas_positivo_em_ficheiro: passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_fugas_positivo_em_ficheiro: «ficheiro com fuga plantada escapou ao detetor»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_fundamentos_dr_alojados: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_gzip: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_hashes_comparam_todas_as_corridas: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_head_compara_tamanho_descomprimido: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_head_mudado_nao_reutiliza_gzip_mesmo_tamanho: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_indice_mesmo_tamanho_le_corpo: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_iniciativa_sem_data_nao_apaga_as_datadas: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_intervencoes_e_localizadores_pdf: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_ligacao_cifrada_rotativa_nao_cria_revisao: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_ligacao_rss_e_identificador: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_mesmo_tamanho_sem_transferir_e_validadores_mudados: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_outro_orador_mesmas_palavras_tem_outro_id: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_planta_ato_sem_descricao: passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_ato_sem_descricao: «ato sem a descrição da fonte»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_planta_autoria: passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_autoria: «autoria trocada contra o arquivo»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_planta_corpo: passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_corpo: «corpo truncado ou alterado no arquivo»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_planta_dar_novidade_do_dia: passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_dar_novidade_do_dia: «número do DAR do dia retirado do resumo pela segunda corrida»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_planta_data: passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_data: «data errada contra o arquivo»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_planta_data_sessao: passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_data_sessao: «data da sessão errada contra o arquivo»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_planta_declaracao_deslocada: passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_declaracao_deslocada: «declaração deslocada contou duas vezes»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_planta_dois_numeros_dar: passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_dois_numeros_dar: «número do DAR omitido do resumo sem aviso»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_planta_excerto: passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_excerto: «excerto alterado contra o arquivo»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_planta_falha_como_limitacao: passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_falha_como_limitacao: «falha apresentada como limitação»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_planta_limitacao_como_falha: passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_limitacao_como_falha: «limitação conhecida apresentada como falha»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_planta_outro_orador_na_posicao: passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_outro_orador_na_posicao: «outro orador apresentado como revisão da declaração anterior»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_planta_reutilizacao_sem_validadores: passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_reutilizacao_sem_validadores: «reutilização sem validadores apresentada como validada»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_planta_vazio: passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_vazio: «falha apresentada como vazio ou cobertura completa»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_reconferencia_retoma_apos_falha_indice: passou
+PLANTA vigilancia.tests.test_vigilancia.Provas.test_reconferencia_retoma_apos_falha_indice: «reconferência semanal perdida após falha do índice»; passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_resumo_grande_conserva_fontes_e_falha: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_resumo_iniciativas_sem_ligacao_rotativa: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_resumo_nomeia_todos_atos_e_falhas_uma_vez: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_resumo_prioriza_atos_e_agrupa_dar: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_resumo_razao_falha_inteira: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_robots: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_robots_falhado_fecha_e_direitos: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_rss_truncado_e_intervalo_nao_finito: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_segunda_leitura_so_mede_fontes_lidas: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_teto_exato_impede_segundo_pedido: passou
+PROVA vigilancia.tests.test_vigilancia.Provas.test_tetos_e_sem_arquivo_parcial: passou
+Vigilância dormente; não se procura uma corrida desarmada.
+PROVA vigilancia.tests.test_vigilancia.Provas.test_vigia_dormente_ausente_ou_carimbo_trocado: passou
+PASS vigilancia: 66
+test_planta_autoria (vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_autoria) ... ok
+test_planta_corpo (vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_corpo) ... ok
+test_planta_data (vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_data) ... ok
+test_planta_excerto (vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_excerto) ... ok
+test_planta_vazio (vigilancia.tests.test_vigilancia.PlantasDAR.test_planta_vazio) ... ok
+test_planta_autoria (vigilancia.tests.test_vigilancia.PlantasDR.test_planta_autoria) ... ok
+test_planta_corpo (vigilancia.tests.test_vigilancia.PlantasDR.test_planta_corpo) ... ok
+test_planta_data (vigilancia.tests.test_vigilancia.PlantasDR.test_planta_data) ... ok
+test_planta_excerto (vigilancia.tests.test_vigilancia.PlantasDR.test_planta_excerto) ... ok
+test_planta_vazio (vigilancia.tests.test_vigilancia.PlantasDR.test_planta_vazio) ... ok
+test_aviso_descompressao (vigilancia.tests.test_vigilancia.Provas.test_aviso_descompressao) ... ok
+test_bytes_pdf_sem_mudar_declaracao (vigilancia.tests.test_vigilancia.Provas.test_bytes_pdf_sem_mudar_declaracao) ... ok
+test_cadencia_documentos (vigilancia.tests.test_vigilancia.Provas.test_cadencia_documentos) ... ok
+test_condicional_e_redirecionamento (vigilancia.tests.test_vigilancia.Provas.test_condicional_e_redirecionamento) ... ok
+test_corte_iniciativas (vigilancia.tests.test_vigilancia.Provas.test_corte_iniciativas) ... ok
+test_cumulativo_excedente_nao_alojado (vigilancia.tests.test_vigilancia.Provas.test_cumulativo_excedente_nao_alojado) ... ok
+test_cumulativo_teto_proprio_e_uma_transferencia (vigilancia.tests.test_vigilancia.Provas.test_cumulativo_teto_proprio_e_uma_transferencia) ... ok
+test_dar_antigo_nao_volta_ao_resumo (vigilancia.tests.test_vigilancia.Provas.test_dar_antigo_nao_volta_ao_resumo) ... ok
+test_dar_ligacao_rotativa_sem_revisao (vigilancia.tests.test_vigilancia.Provas.test_dar_ligacao_rotativa_sem_revisao) ... ok
+test_dar_servido_com_outra_ligacao_na_segunda_corrida (vigilancia.tests.test_vigilancia.Provas.test_dar_servido_com_outra_ligacao_na_segunda_corrida) ... ok
+test_descricao_sem_espaco_xml_e_contagens_rotuladas (vigilancia.tests.test_vigilancia.Provas.test_descricao_sem_espaco_xml_e_contagens_rotuladas) ... ok
+test_direitos (vigilancia.tests.test_vigilancia.Provas.test_direitos) ... ok
+test_documento_429_ou_5xx_fecha_anfitriao (vigilancia.tests.test_vigilancia.Provas.test_documento_429_ou_5xx_fecha_anfitriao) ... ok
+test_duas_corridas_revisao_fila_e_recuperacao (vigilancia.tests.test_vigilancia.Provas.test_duas_corridas_revisao_fila_e_recuperacao) ... ok
+test_fila_da_vez_as_fontes_adiadas (vigilancia.tests.test_vigilancia.Provas.test_fila_da_vez_as_fontes_adiadas) ... ok
+test_fluxos_em_seco (vigilancia.tests.test_vigilancia.Provas.test_fluxos_em_seco) ... ok
+test_fugas_positivo_em_ficheiro (vigilancia.tests.test_vigilancia.Provas.test_fugas_positivo_em_ficheiro) ... ok
+test_fundamentos_dr_alojados (vigilancia.tests.test_vigilancia.Provas.test_fundamentos_dr_alojados) ... ok
+test_gzip (vigilancia.tests.test_vigilancia.Provas.test_gzip) ... ok
+test_hashes_comparam_todas_as_corridas (vigilancia.tests.test_vigilancia.Provas.test_hashes_comparam_todas_as_corridas) ... ok
+test_head_compara_tamanho_descomprimido (vigilancia.tests.test_vigilancia.Provas.test_head_compara_tamanho_descomprimido) ... ok
+test_head_mudado_nao_reutiliza_gzip_mesmo_tamanho (vigilancia.tests.test_vigilancia.Provas.test_head_mudado_nao_reutiliza_gzip_mesmo_tamanho) ... ok
+test_indice_mesmo_tamanho_le_corpo (vigilancia.tests.test_vigilancia.Provas.test_indice_mesmo_tamanho_le_corpo) ... ok
+test_iniciativa_sem_data_nao_apaga_as_datadas (vigilancia.tests.test_vigilancia.Provas.test_iniciativa_sem_data_nao_apaga_as_datadas) ... ok
+test_intervencoes_e_localizadores_pdf (vigilancia.tests.test_vigilancia.Provas.test_intervencoes_e_localizadores_pdf) ... ok
+test_ligacao_cifrada_rotativa_nao_cria_revisao (vigilancia.tests.test_vigilancia.Provas.test_ligacao_cifrada_rotativa_nao_cria_revisao) ... ok
+test_ligacao_rss_e_identificador (vigilancia.tests.test_vigilancia.Provas.test_ligacao_rss_e_identificador) ... ok
+test_mesmo_tamanho_sem_transferir_e_validadores_mudados (vigilancia.tests.test_vigilancia.Provas.test_mesmo_tamanho_sem_transferir_e_validadores_mudados) ... ok
+test_outro_orador_mesmas_palavras_tem_outro_id (vigilancia.tests.test_vigilancia.Provas.test_outro_orador_mesmas_palavras_tem_outro_id) ... ok
+test_planta_ato_sem_descricao (vigilancia.tests.test_vigilancia.Provas.test_planta_ato_sem_descricao) ... ok
+test_planta_autoria (vigilancia.tests.test_vigilancia.Provas.test_planta_autoria) ... ok
+test_planta_corpo (vigilancia.tests.test_vigilancia.Provas.test_planta_corpo) ... ok
+test_planta_dar_novidade_do_dia (vigilancia.tests.test_vigilancia.Provas.test_planta_dar_novidade_do_dia) ... ok
+test_planta_data (vigilancia.tests.test_vigilancia.Provas.test_planta_data) ... ok
+test_planta_data_sessao (vigilancia.tests.test_vigilancia.Provas.test_planta_data_sessao) ... ok
+test_planta_declaracao_deslocada (vigilancia.tests.test_vigilancia.Provas.test_planta_declaracao_deslocada) ... ok
+test_planta_dois_numeros_dar (vigilancia.tests.test_vigilancia.Provas.test_planta_dois_numeros_dar) ... ok
+test_planta_excerto (vigilancia.tests.test_vigilancia.Provas.test_planta_excerto) ... ok
+test_planta_falha_como_limitacao (vigilancia.tests.test_vigilancia.Provas.test_planta_falha_como_limitacao) ... ok
+test_planta_limitacao_como_falha (vigilancia.tests.test_vigilancia.Provas.test_planta_limitacao_como_falha) ... ok
+test_planta_outro_orador_na_posicao (vigilancia.tests.test_vigilancia.Provas.test_planta_outro_orador_na_posicao) ... ok
+test_planta_reutilizacao_sem_validadores (vigilancia.tests.test_vigilancia.Provas.test_planta_reutilizacao_sem_validadores) ... ok
+test_planta_vazio (vigilancia.tests.test_vigilancia.Provas.test_planta_vazio) ... ok
+test_reconferencia_retoma_apos_falha_indice (vigilancia.tests.test_vigilancia.Provas.test_reconferencia_retoma_apos_falha_indice) ... ok
+test_resumo_grande_conserva_fontes_e_falha (vigilancia.tests.test_vigilancia.Provas.test_resumo_grande_conserva_fontes_e_falha) ... ok
+test_resumo_iniciativas_sem_ligacao_rotativa (vigilancia.tests.test_vigilancia.Provas.test_resumo_iniciativas_sem_ligacao_rotativa) ... ok
+test_resumo_nomeia_todos_atos_e_falhas_uma_vez (vigilancia.tests.test_vigilancia.Provas.test_resumo_nomeia_todos_atos_e_falhas_uma_vez) ... ok
+test_resumo_prioriza_atos_e_agrupa_dar (vigilancia.tests.test_vigilancia.Provas.test_resumo_prioriza_atos_e_agrupa_dar) ... ok
+test_resumo_razao_falha_inteira (vigilancia.tests.test_vigilancia.Provas.test_resumo_razao_falha_inteira) ... ok
+test_robots (vigilancia.tests.test_vigilancia.Provas.test_robots) ... ok
+test_robots_falhado_fecha_e_direitos (vigilancia.tests.test_vigilancia.Provas.test_robots_falhado_fecha_e_direitos) ... ok
+test_rss_truncado_e_intervalo_nao_finito (vigilancia.tests.test_vigilancia.Provas.test_rss_truncado_e_intervalo_nao_finito) ... ok
+test_segunda_leitura_so_mede_fontes_lidas (vigilancia.tests.test_vigilancia.Provas.test_segunda_leitura_so_mede_fontes_lidas) ... ok
+test_teto_exato_impede_segundo_pedido (vigilancia.tests.test_vigilancia.Provas.test_teto_exato_impede_segundo_pedido) ... ok
+test_tetos_e_sem_arquivo_parcial (vigilancia.tests.test_vigilancia.Provas.test_tetos_e_sem_arquivo_parcial) ... ok
+test_vigia_dormente_ausente_ou_carimbo_trocado (vigilancia.tests.test_vigilancia.Provas.test_vigia_dormente_ausente_ou_carimbo_trocado) ... ok
+
+----------------------------------------------------------------------
+Ran 66 tests in 15.461s
+
+OK

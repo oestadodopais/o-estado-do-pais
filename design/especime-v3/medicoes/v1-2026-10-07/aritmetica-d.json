@@ -1,0 +1,74 @@
+{
+  "transferencia_observada": {
+    "pedido": "2026-10-11T085638711957Z.jsonl",
+    "linha": 7,
+    "arquivo": "arquivo/sha256/ab/e5b2fa9959747e5cbbf916e1e62e1b6505761745deba470fc5d03bfbe01e22",
+    "bytes": 9680829,
+    "saltos": 1
+  },
+  "hipotese": "Mesmo tamanho comprimido e cadeia GET da última transferência integral observada; restantes pedidos como na corrida-base identificada. Não é uma corrida observada com mudança. Uma base com falhas não demonstra o custo de concluir as fontes que falharam.",
+  "cenarios": [
+    {
+      "base": "2026-10-12T194319909143Z",
+      "base_sem_falhas": true,
+      "codigo_base": "f36540de9baecefd1ab857fe9a9d2c1fd17fe655",
+      "bytes_por_fonte": {
+        "dar": 164837,
+        "iniciativas": 9839898,
+        "dr": 0,
+        "politicas": 2700
+      },
+      "pedidos_por_fonte": {
+        "dar": 2,
+        "iniciativas": 4,
+        "dr": 1,
+        "politicas": 6
+      },
+      "bytes_totais": 10007435,
+      "bytes_comuns": 326606,
+      "bytes_cumulativo": 9680829,
+      "pedidos": 13,
+      "tetos": {
+        "pedidos": 30,
+        "bytes": 10000000,
+        "segundos": 300,
+        "bytes_ficheiro_cumulativo": 20000000
+      },
+      "cabe_comum": true,
+      "cabe_cumulativo": true,
+      "cabem_pedidos": true,
+      "segundos": "não extrapolados: uma transferência diferente exige medição real"
+    },
+    {
+      "base": "2026-10-12T194352285903Z",
+      "base_sem_falhas": true,
+      "codigo_base": "f36540de9baecefd1ab857fe9a9d2c1fd17fe655",
+      "bytes_por_fonte": {
+        "dar": 164930,
+        "iniciativas": 9839874,
+        "dr": 0,
+        "politicas": 2700
+      },
+      "pedidos_por_fonte": {
+        "dar": 2,
+        "iniciativas": 4,
+        "dr": 1,
+        "politicas": 6
+      },
+      "bytes_totais": 10007504,
+      "bytes_comuns": 326675,
+      "bytes_cumulativo": 9680829,
+      "pedidos": 13,
+      "tetos": {
+        "pedidos": 30,
+        "bytes": 10000000,
+        "segundos": 300,
+        "bytes_ficheiro_cumulativo": 20000000
+      },
+      "cabe_comum": true,
+      "cabe_cumulativo": true,
+      "cabem_pedidos": true,
+      "segundos": "não extrapolados: uma transferência diferente exige medição real"
+    }
+  ]
+}
