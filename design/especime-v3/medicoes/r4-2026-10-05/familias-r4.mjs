@@ -622,7 +622,7 @@ export const FAMILIAS_PARTE_2 = ORCAMENTO.flatMap(e => {
   if (!e.partes.some(p => p.apoios?.some(a => a.origem === 'rp4n-ac-ss'))) return [e];
   return [false, true].map(anual => ({...e,
     chaves:e.chaves.filter(k => k.startsWith('oe-') === anual),
-    partes:e.partes.map(p => ({...p, ...(p.apoios ? {apoios:p.apoios.map(a => anual && a.origem === 'rp4n-ac-ss' ? {...a,origem:'rp4n-ac-ss-orcamento'} : a)} : {})})),
+    partes:[...e.partes.map(p => ({...p, ...(p.apoios ? {apoios:p.apoios.map(a => anual && a.origem === 'rp4n-ac-ss' ? {...a,origem:'rp4n-ac-ss-orcamento'} : a)} : {})})), ...(anual ? [diz(' O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.', ' The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.', O('rp4n-ac-ss-orcamento', 'Orçamento\nInicial'), O('rp4n-ac-ss-orcamento', '2026'), O('rp4n-ac-ss-orcamento', 'Período: janeiro a agosto'))] : [])],
   })).filter(e => e.chaves.length);
 });
 
