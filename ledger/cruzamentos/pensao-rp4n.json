@@ -17,8 +17,8 @@
     "penalizacao-legal-um-ano-antecipacao-2026.yml": {
       "destino": "ledger/claims",
       "origin_path": "publisher/recortes/penalizacao-legal-um-ano-antecipacao-2026.yml",
-      "origin_sha256": "b06770b11523767d789d597720709ee65a3d9ce05b8161313640fbb1ef7cfda8",
-      "exported_sha256": "b06770b11523767d789d597720709ee65a3d9ce05b8161313640fbb1ef7cfda8",
+      "origin_sha256": "ed521654cdc4691c5044a07bfb8a118bedebfed055249fdd1bb4543046a8a8eb",
+      "exported_sha256": "ed521654cdc4691c5044a07bfb8a118bedebfed055249fdd1bb4543046a8a8eb",
       "exporter": "ResearchHub/publisher/rp4n_pensao.py"
     },
     "pensao-rp4n.json": {
