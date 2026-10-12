@@ -1790,7 +1790,7 @@ function provaLocalizadores() {
         Object.assign(medida, antes);
       }
       const origem = queixas.I1.find((q) => q.startsWith(`ledger/claims/${id}.yml:`) &&
-        q.includes(`e o localizador ${JSON.stringify(valor)}, que não é nenhuma das 11 formas`));
+        q.includes(`e o localizador ${JSON.stringify(valor)}, que não é nenhuma das ${LOCALIZADORES_CONHECIDOS.length} formas`));
       const buscas = ['pt', 'en'].map((lang) =>
         `/dados/livro-indice.${lang}.json: 1 entrada(s) com um nome que não é o da sua linha.`);
       const buscaConferida = projeto ? nomeProjetoPreservado && queixas.I3.length === 0 :
