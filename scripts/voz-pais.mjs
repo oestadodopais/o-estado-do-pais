@@ -29,6 +29,11 @@ const FONTE_DA_CARTA = (() => {
 const texto = el => {
   const copia = parse(el.outerHTML);
   copia.querySelectorAll('.src-chip, .claim-provisorio').forEach(n=>n.remove());
+  // A glosa do selo pode aparecer pela primeira vez numa sinopse. Só sai a
+  // cadeia exata da tabela; uma alteração continua a fazer falhar a igualdade.
+  for (const n of copia.querySelectorAll('.marcador-definicao')) {
+    if (['pt', 'en'].some(lang => normal(n.textContent) === `· ${t(lang).marcador.definicao}`)) n.remove();
+  }
   return normal(copia.textContent);
 };
 /* A SINOPSE DE UM ESTUDO, CONFERIDA INTEIRA, NUM SÍTIO SÓ (bloco R1, 23.09.2026).

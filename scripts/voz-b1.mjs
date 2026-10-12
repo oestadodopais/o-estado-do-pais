@@ -65,7 +65,7 @@ export function verificaB1(raiz) {
         ...Object.values(ROTULOS_B1[lang]),
         ...Object.values(SUBJECTS).map(s => s[lang]),
         ...DOMINIOS.map(d => d.nome[lang]),
-        ...dados.flatMap(w => [w.description[lang], ...w.editions.map(e => e.title),
+        ...dados.flatMap(w => [w.description[lang], ...(w.ausenciaAtual?.[lang] ? [w.ausenciaAtual[lang]] : []), ...w.editions.map(e => e.title),
           ...primeirasFrases(leituraDe(w.id)?.frase[lang] ?? []).filter(p => typeof p === 'string')]),
         ...sucessores.flatMap(({ s, x }) => [...x.editions.map(e => e.title), s.parte?.[lang]].filter(Boolean)),
         ...(sucessores.length ? ['.', ';'] : []),
