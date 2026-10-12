@@ -58,7 +58,7 @@ export const CAMPOS_DA_CORRECAO_DA_SERIE = /** @type {const} */ ([
 
 /** Os campos de uma série no tempo (`eixo: periodo`, bloco RP3), e mais nenhum (regra S9). */
 export const CAMPOS_DA_SERIE_NO_TEMPO = /** @type {const} */ ([
-  'id', 'eixo', 'name', 'name_source', 'unit', 'periodicidade', 'source', 'document', 'source_url',
+  'id', 'eixo', 'name', 'name_source', 'unit', 'periodicidade', 'source', 'definition_sources', 'document', 'source_url',
   'access_date', 'published_at', 'pedidos', 'excerpt', 'primeiro_periodo', 'ultimo_periodo', 'lacunas',
   'bandeiras', 'pontos', 'derivation', 'derivation_en', 'derived_from', 'check', 'attributed_to', 'study',
   'note', 'corrections',
@@ -727,7 +727,17 @@ function validarSerieNoTempo(id, s, series, hoje, agora) {
     if (!(/** @type {readonly string[]} */ (CAMPOS_DA_SERIE_NO_TEMPO)).includes(k)) erro(`S9: campo desconhecido «${k}».`);
   }
   for (const k of CAMPOS_DA_SERIE_NO_TEMPO) {
-    if (k !== 'note' && !(k in s)) erro(`S9: falta «${k}».`);
+    if (k !== 'note' && k !== 'definition_sources' && !(k in s)) erro(`S9: falta «${k}».`);
+  }
+  const fontes = campos.definition_sources;
+  if (fontes !== undefined && (!Array.isArray(fontes) || !fontes.length || fontes.some((f) =>
+    !eMapa(f) || typeof f.publisher !== 'string' || !f.publisher.trim() ||
+    typeof f.url !== 'string' || !/^https:\/\//.test(f.url) || !eMapa(f.receipt) ||
+    typeof f.receipt.motor !== 'string' || !/^(?!\/)(?!.*(?:^|\/)\.\.(?:\/|$)).+/.test(f.receipt.motor) ||
+    typeof f.receipt.sha256 !== 'string' || !/^[a-f0-9]{64}$/.test(f.receipt.sha256) ||
+    typeof f.receipt.cliente !== 'string' || !f.receipt.cliente.trim() ||
+    typeof f.receipt.hora !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(f.receipt.hora)))) {
+    erro('S9: definition_sources exige publicador, endereço e recibo completo de cada segunda fonte.');
   }
   if (!/^serie-[a-z0-9]+(-[a-z0-9]+)*$/.test(id)) erro('S9: o id de uma série no tempo é «serie-…», em minúsculas com hífenes.');
   const periodicidade = /** @type {typeof PERIODICIDADES[number]} */ (String(campos.periodicidade));
