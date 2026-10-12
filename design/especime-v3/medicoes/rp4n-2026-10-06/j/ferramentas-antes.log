@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<worktree>/tests/leituras/ferramentas.py", line 87, in <module>
+    assert limpar.substituir_texto(resto, {}, None) == '<casa>/<projetos>/Projeto/<worktrees>/ramo/log'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

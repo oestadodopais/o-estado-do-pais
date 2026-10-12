@@ -1,0 +1,36 @@
+{
+  "j": {
+    "mudados": [
+      "ambiente-antes.log",
+      "cruzamento-inicial.log",
+      "exportar-final.log",
+      "exportar.log",
+      "ferramentas-antes.log",
+      "indice-antes.log",
+      "indice-depois.log",
+      "origens-antes.log",
+      "rotulos-antes.log"
+    ],
+    "binarios_conservados": 0
+  },
+  "portoes-j": {
+    "mudados": [],
+    "binarios_conservados": 0
+  },
+  "portoes-j-previa1": {
+    "mudados": [],
+    "binarios_conservados": 0
+  },
+  "portoes-j-previa2": {
+    "mudados": [],
+    "binarios_conservados": 0
+  },
+  "portoes-j-previa3-interrompida": {
+    "mudados": [],
+    "binarios_conservados": 0
+  },
+  "portoes-j-previa4-indice": {
+    "mudados": [],
+    "binarios_conservados": 0
+  }
+}

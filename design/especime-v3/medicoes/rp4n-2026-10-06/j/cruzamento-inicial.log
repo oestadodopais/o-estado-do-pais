@@ -1,0 +1,53 @@
+
+[90m  cruzamentos · 3086 linha(s) de origem externa em 7 registo(s) · 0 conferida(s) contra o motor · 2155 com reconferência de programa acrescentada (3077 entrada(s)) · 5 planta(s) vista(s)[0m
+[90m  rótulos da fonte · 2062 de 3211 linha(s) com "name", todas vindas do motor · 3 planta(s) vista(s)[0m
+[90m  séries · 35 linha(s) de série em 1 registo(s) · 0 conferida(s) contra o motor · 4 planta(s) vista(s)[0m
+[90m  cruzamentos · 12 ficheiro(s) inteiro(s) em 7 registo(s) · 0 conferido(s) contra o motor · 5 item(ns) da agenda reconferidos[0m
+[90m    agua-nao-faturada: 1[0m
+[90m    avaliacao-economica-regional-de-portugal-2026: 8[0m
+[90m    concelhos-2026: 2767[0m
+[90m    dominios-2026: 40[0m
+[90m    evora-contas-da-camara-2010-2025: 33[0m
+[90m    evora-economia-e-dinheiro-publico-de-fora-da-camara: 17[0m
+[90m    evora-quem-governou-a-camara-2009-2025: 19[0m
+[90m    oe-2026: 201[0m
+
+[31m  A TRAVESSIA NÃO CONFERE — 36 erro(s):[0m
+
+    [31m✗[0m --with-origin: não encontrei o motor em <sitio>/<pasta-das-worktrees>/ResearchHub. Defina RESEARCHHUB_DIR, ou corra sem --with-origin.
+    [31m✗[0m --with-origin: [series.json] desemprego-de-longa-duracao-2025-paises: o motor não tem a série "desemprego-de-longa-duracao-2025-paises" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] divida-publica-2025-paises: o motor não tem a série "divida-publica-2025-paises" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] ihpc-variacao-homologa-paises: o motor não tem a série "ihpc-variacao-homologa-paises" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] precos-da-habitacao-2025-paises: o motor não tem a série "precos-da-habitacao-2025-paises" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] racio-s80-s20-2025-paises: o motor não tem a série "racio-s80-s20-2025-paises" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] risco-de-pobreza-ou-exclusao-2025-paises: o motor não tem a série "risco-de-pobreza-ou-exclusao-2025-paises" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-beneficiarios-do-rsi-por-mil: o motor não tem a série "serie-beneficiarios-do-rsi-por-mil" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-cem-euros-de-2015-01: o motor não tem a série "serie-cem-euros-de-2015-01" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-ihpc-combustiveis-variacao-homologa: o motor não tem a série "serie-ihpc-combustiveis-variacao-homologa" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-ihpc-combustiveis-variacao-homologa-ue: o motor não tem a série "serie-ihpc-combustiveis-variacao-homologa-ue" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-ihpc-energia-da-casa-variacao-homologa: o motor não tem a série "serie-ihpc-energia-da-casa-variacao-homologa" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-ihpc-rendas-variacao-homologa: o motor não tem a série "serie-ihpc-rendas-variacao-homologa" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-ihpc-variacao-homologa: o motor não tem a série "serie-ihpc-variacao-homologa" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-ihpc-variacao-homologa-ue: o motor não tem a série "serie-ihpc-variacao-homologa-ue" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-ipc-alimentacao-variacao-homologa: o motor não tem a série "serie-ipc-alimentacao-variacao-homologa" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-ipc-combustiveis-variacao-homologa: o motor não tem a série "serie-ipc-combustiveis-variacao-homologa" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-ipc-energia-em-casa-variacao-homologa: o motor não tem a série "serie-ipc-energia-em-casa-variacao-homologa" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-ipc-indice: o motor não tem a série "serie-ipc-indice" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-ipc-indice-anual: o motor não tem a série "serie-ipc-indice-anual" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-ipc-rendas-variacao-homologa: o motor não tem a série "serie-ipc-rendas-variacao-homologa" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-ipc-sem-habitacao-variacao-media-12-meses: o motor não tem a série "serie-ipc-sem-habitacao-variacao-media-12-meses" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-ipc-variacao-homologa: o motor não tem a série "serie-ipc-variacao-homologa" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-ipc-variacao-media-12-meses: o motor não tem a série "serie-ipc-variacao-media-12-meses" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-linha-de-risco-de-pobreza: o motor não tem a série "serie-linha-de-risco-de-pobreza" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-obrigacoes-do-tesouro-10-anos-rendibilidade: o motor não tem a série "serie-obrigacoes-do-tesouro-10-anos-rendibilidade" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-pensao-media-anual: o motor não tem a série "serie-pensao-media-anual" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-precos-da-habitacao-variacao-homologa: o motor não tem a série "serie-precos-da-habitacao-variacao-homologa" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-remuneracao-bruta-mensal-media: o motor não tem a série "serie-remuneracao-bruta-mensal-media" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-remuneracao-bruta-mensal-media-anual: o motor não tem a série "serie-remuneracao-bruta-mensal-media-anual" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-remuneracao-bruta-mensal-media-real: o motor não tem a série "serie-remuneracao-bruta-mensal-media-real" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] serie-salario-minimo-mensal: o motor não tem a série "serie-salario-minimo-mensal" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] sobrecarga-do-custo-da-habitacao-2025-paises: o motor não tem a série "sobrecarga-do-custo-da-habitacao-2025-paises" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises: o motor não tem a série "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] taxa-de-desemprego-mip-2025-paises: o motor não tem a série "taxa-de-desemprego-mip-2025-paises" em 13 Dominios/{series.json,series-periodo.json}.
+    [31m✗[0m --with-origin: [series.json] taxa-de-emprego-2025-paises: o motor não tem a série "taxa-de-emprego-2025-paises" em 13 Dominios/{series.json,series-periodo.json}.
+

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "RP4N-24",
+    "estado": "resolvida",
+    "descricao": "A conferência das famílias encontrou a mesma falta na linha juros-das-administracoes-publicas-2025-ue: o Eurostat publica a medida, mas a parte sobre o registo do encargo usa jd1-ine-contas. A linha passa a declarar a definição do Instituto Nacional de Estatística com o recibo já conservado no JD1. Correção ao abrigo do ponto seguinte do mandato, sem mudar a frase, o número ou a regra do publicador."
+  },
+  {
+    "id": "RP4N-25",
+    "estado": "resolvida",
+    "descricao": "O hook recusou o primeiro commit do motor em rotulos_series_test e rp4n_origens_test. A fusão trouxera a série de obrigações a dez anos do JD1, mas o registo dos rótulos conservava apenas as séries anteriores. O exportador normal publisher.export_series releu o corpo selado e acrescentou os rótulos em falta, sem alterar valores nem enfraquecer a cobertura. A correção deste registo teve de preceder o commit das declarações, porque o hook impedia qualquer commit enquanto a cobertura estava incompleta."
+  },
+  {
+    "id": "RP4N-26",
+    "estado": "resolvida",
+    "descricao": "A comparação prévia encontrou blocos visíveis novos nos recibos: a vista inferia um excerto pela primeira coincidência de publicador e endereço. Uma definição JD1 podia assim mostrar outra passagem do mesmo documento. A lista explícita de origens da família passa a decidir a apresentação, incluindo uma lista vazia. As famílias JD1 declaram essa lista vazia na especificação e conservam a apresentação anterior. A conferência do recibo recusa blocos fora da lista, com plantas nas duas edições. As declarações de segundas fontes e a regra dos publicadores permanecem completas."
+  },
+  {
+    "id": "RP4N-27",
+    "estado": "resolvida",
+    "descricao": "O verify prévio recusou os resumos dos briefs isentos trazidos por main. A comparação com a cabeça fundida provou que apenas os caminhos tinham sido anonimizados, sem outra alteração de conteúdo. A lista foi regenerada pelo modo --escrever-isentos do guião existente; não se acrescentaram isenções nem se mudou a regra."
+  },
+  {
+    "id": "RP4N-28",
+    "estado": "resolvida",
+    "descricao": "A segunda tentativa de verify parou na planta dos caminhos abreviados: o teste RP4-n exigia as marcas anteriores, mas o limpador JD1 já usava as marcas novas. A expectativa foi alinhada com o limpador fundido, mantendo a saída exata e acrescentando a ausência dos fragmentos locais e a idempotência. O limpador e a proteção de privacidade não foram enfraquecidos."
+  },
+  {
+    "id": "RP4N-29",
+    "estado": "resolvida",
+    "descricao": "A opção OEDP_CONFERIR_MOTOR da corrida final foi herdada pelo teste sintético tests/leituras/portoes.py, que começou a chamar o motor real. A tentativa foi interrompida pelo executor e a tranca foi solta. O teste passa a retirar a opção e o caminho do motor exterior do seu ambiente; a prova própria com motor continua a usar o motor sintético que o teste cria. A planta com a opção ligada e um caminho exterior inexistente falhava antes e passa depois."
+  },
+  {
+    "id": "RP4N-30",
+    "estado": "resolvida",
+    "descricao": "As plantas dos localizadores do índice escolhiam os formatos pela posição numa lista que a fusão alterou. A seleção passou a usar o nome exato do formato, recusando nomes ausentes ou repetidos. As verificações de páginas, períodos, rótulos e coordenadas continuam iguais; as plantas do JD1 voltam a atingir a regra certa."
+  },
+  {
+    "id": "RP4N-31",
+    "estado": "resolvida",
+    "descricao": "A conferência dos cartões encontrou a mesma falta de segunda fonte na definição da série de obrigações a dez anos: a medida é publicada pelo Eurostat e a explicação do mercado secundário usa o glossário do IGCP. O registo comum do motor passa a declarar o recibo já conservado em jd1-mercado-secundario. O exportador de séries no tempo passa a ler esse registo e reexporta a série pelo caminho normal. Um ensaio exige os mesmos pontos e campos anteriores e recusa um recibo adulterado."
+  },
+  {
+    "id": "RP4N-32",
+    "estado": "resolvida",
+    "descricao": "Depois da exportação da segunda fonte, a lista fechada de campos das séries recusou definition_sources. Os dois leitores independentes passam a admitir apenas esse campo opcional, na posição da proveniência, exigindo a lista não vazia, publicador, endereço HTTPS e recibo com caminho relativo, resumo, cliente e hora. As plantas de campos desconhecidos permanecem; novas plantas recusam fontes incompletas. A conferência da definição continua a exigir o recibo exato da origem citada."
+  }
+]

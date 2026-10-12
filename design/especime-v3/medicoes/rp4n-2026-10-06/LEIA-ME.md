@@ -1424,6 +1424,234 @@ RP4N-2 continua com o novo acesso HTTP à cópia das pensões sem confirmação:
 
 A linha «tokens used» não foi exposta por esta execução. Não se estima um total nem se afirma que o custo-alvo foi cumprido. O trabalho adicional às correções incluiu a reescrita e a prova da história, a distinção dos legados decidida na retoma, a releitura das páginas alojadas, os portões obrigatórios por commit do motor e a repetição dos portões de integração após as falhas registadas.
 
+## A passagem RP4-n-j (a integração com o JD1)
+
+As definições do JD1 passam a declarar as segundas fontes no registo comum do motor, `publisher/definition_sources.json`, lido pelo exportador `publisher/export_site_rows.py`. Este é o caminho já usado pelas linhas da RP4-n. O exportador de séries no tempo também lê esse registo. O leitor numérico `publisher/jd1.py` não precisa de mudar: a declaração pertence à exportação, e os testes do JD1 conferem-na na travessia. Nenhum YAML do sítio foi editado à mão. A regra do publicador e o seu mapa de nomes permanecem intactos.
+
+O inventário conserva as contagens anteriores como retiradas, com a razão «a fusão do JD1 e do RP4-n mudou a contagem», e declara as contagens lidas no HTML. O guião `inventario-j.mjs` segue o padrão de leitura do JD1 e pode voltar a conferir a contagem sem escrever.
+
+### As segundas fontes declaradas pelo motor
+
+Linhas alteradas: 9; séries alteradas: 1. A conferência isolada das famílias reproduziu 17 recusas antes e 0 depois. As mensagens completas estão em `j/integracao.json`; esta contagem é a da conferência isolada, sem duplicar a chamada da construção. Recusas na conferência das definições das séries: 1 antes e 0 depois.
+
+| Linha | Origem | Publicador | Recibo no motor | sha256 | Hora | Cliente |
+|---|---|---|---|---|---|---|
+| amortizacoes-e-anulacoes-de-divida-fundada-2025 | jd1-eo-glossario | Entidade Orçamental | indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf | 8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5 | 2026-10-06T10:46:01Z | core.http.HttpClient.condicional |
+| amortizacoes-e-anulacoes-de-divida-fundada-2025 | jd1-eo-ativos | Entidade Orçamental | indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf | 8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5 | 2026-10-06T10:46:01Z | core.http.HttpClient.condicional |
+| amortizacoes-e-anulacoes-de-divida-fundada-2025 | jd1-eo-saldo | Entidade Orçamental | indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf | 8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5 | 2026-10-06T10:46:01Z | core.http.HttpClient.condicional |
+| custo-do-stock-da-divida-direta-2025 | jd1-ine-contas | Instituto Nacional de Estatística | indicators/out/jd1-2026-10-06/002-ine-pde-setembro-2026.pdf | 58696e3c11ed4233c7a06a8fce374043de7ce6ca57898064c52bc7b9faff673d | 2026-10-06T10:45:57Z | core.http.HttpClient.condicional |
+| emissoes-de-divida-fundada-2025 | jd1-eo-glossario | Entidade Orçamental | indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf | 8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5 | 2026-10-06T10:46:01Z | core.http.HttpClient.condicional |
+| emissoes-de-divida-fundada-2025 | jd1-eo-ativos | Entidade Orçamental | indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf | 8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5 | 2026-10-06T10:46:01Z | core.http.HttpClient.condicional |
+| emissoes-de-divida-fundada-2025 | jd1-eo-saldo | Entidade Orçamental | indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf | 8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5 | 2026-10-06T10:46:01Z | core.http.HttpClient.condicional |
+| juros-das-administracoes-publicas-2025-ue | jd1-ine-contas | Instituto Nacional de Estatística | indicators/out/jd1-2026-10-06/002-ine-pde-setembro-2026.pdf | 58696e3c11ed4233c7a06a8fce374043de7ce6ca57898064c52bc7b9faff673d | 2026-10-06T10:45:57Z | core.http.HttpClient.condicional |
+| juros-das-administracoes-publicas-pib-2024 | jd1-pib-definicao | Eurostat | indicators/out/jd1b-2026-10-07/005-eurostat-pib-iniciantes.html | 65e07dfb4d6043e71431b40ad6b709b75a03b2dc4dbbf9e497b23aeb2d8fffec | 2026-10-07T09:49:11Z | core.http.HttpClient.condicional |
+| juros-das-administracoes-publicas-pib-2025 | jd1-pib-definicao | Eurostat | indicators/out/jd1b-2026-10-07/005-eurostat-pib-iniciantes.html | 65e07dfb4d6043e71431b40ad6b709b75a03b2dc4dbbf9e497b23aeb2d8fffec | 2026-10-07T09:49:11Z | core.http.HttpClient.condicional |
+| necessidades-brutas-de-financiamento-2025 | jd1-eo-glossario | Entidade Orçamental | indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf | 8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5 | 2026-10-06T10:46:01Z | core.http.HttpClient.condicional |
+| necessidades-brutas-de-financiamento-2025 | jd1-eo-ativos | Entidade Orçamental | indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf | 8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5 | 2026-10-06T10:46:01Z | core.http.HttpClient.condicional |
+| necessidades-brutas-de-financiamento-2025 | jd1-eo-saldo | Entidade Orçamental | indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf | 8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5 | 2026-10-06T10:46:01Z | core.http.HttpClient.condicional |
+| pib-nominal-notificacao-setembro-2024 | jd1-pib-definicao | Eurostat | indicators/out/jd1b-2026-10-07/005-eurostat-pib-iniciantes.html | 65e07dfb4d6043e71431b40ad6b709b75a03b2dc4dbbf9e497b23aeb2d8fffec | 2026-10-07T09:49:11Z | core.http.HttpClient.condicional |
+| pib-nominal-notificacao-setembro-2025 | jd1-pib-definicao | Eurostat | indicators/out/jd1b-2026-10-07/005-eurostat-pib-iniciantes.html | 65e07dfb4d6043e71431b40ad6b709b75a03b2dc4dbbf9e497b23aeb2d8fffec | 2026-10-07T09:49:11Z | core.http.HttpClient.condicional |
+| serie-obrigacoes-do-tesouro-10-anos-rendibilidade | jd1-mercado-secundario | IGCP | indicators/out/jd1b-2026-10-07/004-igcp-glossario.html | fef4529244ff3f7af994b2a15d5b677be33250f1175749220729739085213b0c | 2026-10-07T09:49:11Z | core.http.HttpClient.condicional |
+
+
+Os endereços completos e os recibos, incluindo os campos de extração, estão em `j/integracao.json`. Cada recibo foi comparado com a origem do JD1 e o sha256 foi recalculado sobre os bytes do motor. O ensaio do motor planta recibos alterados e exige a sua recusa.
+### As contagens do inventário
+
+| Linha anterior | Bloco | Texto retirado | Razão |
+|---|---|---|---|
+| 3173 | k2 | 3 210 afirmações · 368 de 3 210 calculadas · 2 767 de 3 210 linhas de concelhos | a fusão do JD1 e do RP4-n mudou a contagem |
+| 3174 | k2 | 3 210 claims · 368 of 3 210 calculated · 2 767 of 3 210 municipality rows | a fusão do JD1 e do RP4-n mudou a contagem |
+| 4299 | rp4ne | 3 193 afirmações · 366 de 3 193 calculadas · 2 767 de 3 193 linhas de concelhos | a fusão do JD1 e do RP4-n mudou a contagem |
+| 4300 | rp4ne | 3 193 claims · 366 of 3 193 calculated · 2 767 of 3 193 municipality rows | a fusão do JD1 e do RP4-n mudou a contagem |
+
+
+| HTML lido | Nova linha viva |
+|---|---|
+| dist/livro-razao/index.html | 3 208 afirmações · 368 de 3 208 calculadas · 2 767 de 3 208 linhas de concelhos |
+| dist/en/ledger/index.html | 3 208 claims · 368 of 3 208 calculated · 2 767 of 3 208 municipality rows |
+
+### Recusas e decisões desta integração
+
+**RP4N-24 · resolvida.** A conferência das famílias encontrou a mesma falta na linha juros-das-administracoes-publicas-2025-ue: o Eurostat publica a medida, mas a parte sobre o registo do encargo usa jd1-ine-contas. A linha passa a declarar a definição do Instituto Nacional de Estatística com o recibo já conservado no JD1. Correção ao abrigo do ponto seguinte do mandato, sem mudar a frase, o número ou a regra do publicador.
+
+**RP4N-25 · resolvida.** O hook recusou o primeiro commit do motor em rotulos_series_test e rp4n_origens_test. A fusão trouxera a série de obrigações a dez anos do JD1, mas o registo dos rótulos conservava apenas as séries anteriores. O exportador normal publisher.export_series releu o corpo selado e acrescentou os rótulos em falta, sem alterar valores nem enfraquecer a cobertura. A correção deste registo teve de preceder o commit das declarações, porque o hook impedia qualquer commit enquanto a cobertura estava incompleta.
+
+**RP4N-26 · resolvida.** A comparação prévia encontrou blocos visíveis novos nos recibos: a vista inferia um excerto pela primeira coincidência de publicador e endereço. Uma definição JD1 podia assim mostrar outra passagem do mesmo documento. A lista explícita de origens da família passa a decidir a apresentação, incluindo uma lista vazia. As famílias JD1 declaram essa lista vazia na especificação e conservam a apresentação anterior. A conferência do recibo recusa blocos fora da lista, com plantas nas duas edições. As declarações de segundas fontes e a regra dos publicadores permanecem completas.
+
+**RP4N-27 · resolvida.** O verify prévio recusou os resumos dos briefs isentos trazidos por main. A comparação com a cabeça fundida provou que apenas os caminhos tinham sido anonimizados, sem outra alteração de conteúdo. A lista foi regenerada pelo modo --escrever-isentos do guião existente; não se acrescentaram isenções nem se mudou a regra.
+
+**RP4N-28 · resolvida.** A segunda tentativa de verify parou na planta dos caminhos abreviados: o teste RP4-n exigia as marcas anteriores, mas o limpador JD1 já usava as marcas novas. A expectativa foi alinhada com o limpador fundido, mantendo a saída exata e acrescentando a ausência dos fragmentos locais e a idempotência. O limpador e a proteção de privacidade não foram enfraquecidos.
+
+**RP4N-29 · resolvida.** A opção OEDP_CONFERIR_MOTOR da corrida final foi herdada pelo teste sintético tests/leituras/portoes.py, que começou a chamar o motor real. A tentativa foi interrompida pelo executor e a tranca foi solta. O teste passa a retirar a opção e o caminho do motor exterior do seu ambiente; a prova própria com motor continua a usar o motor sintético que o teste cria. A planta com a opção ligada e um caminho exterior inexistente falhava antes e passa depois.
+
+**RP4N-30 · resolvida.** As plantas dos localizadores do índice escolhiam os formatos pela posição numa lista que a fusão alterou. A seleção passou a usar o nome exato do formato, recusando nomes ausentes ou repetidos. As verificações de páginas, períodos, rótulos e coordenadas continuam iguais; as plantas do JD1 voltam a atingir a regra certa.
+
+**RP4N-31 · resolvida.** A conferência dos cartões encontrou a mesma falta de segunda fonte na definição da série de obrigações a dez anos: a medida é publicada pelo Eurostat e a explicação do mercado secundário usa o glossário do IGCP. O registo comum do motor passa a declarar o recibo já conservado em jd1-mercado-secundario. O exportador de séries no tempo passa a ler esse registo e reexporta a série pelo caminho normal. Um ensaio exige os mesmos pontos e campos anteriores e recusa um recibo adulterado.
+
+**RP4N-32 · resolvida.** Depois da exportação da segunda fonte, a lista fechada de campos das séries recusou definition_sources. Os dois leitores independentes passam a admitir apenas esse campo opcional, na posição da proveniência, exigindo a lista não vazia, publicador, endereço HTTPS e recibo com caminho relativo, resumo, cliente e hora. As plantas de campos desconhecidos permanecem; novas plantas recusam fontes incompletas. A conferência da definição continua a exigir o recibo exato da origem citada.
+
+O registo dos rótulos passou de 76 para 79, com 3 entradas novas e 0 retiradas. São declarações dos corpos já alojados, não observações novas.
+
+| Série | Dimensão | Código | Rótulo literal | sha256 |
+|---|---|---|---|---|
+| serie-obrigacoes-do-tesouro-10-anos-rendibilidade | freq | M | Monthly | e6ba45206d0ab0ad81f99e5e7fc649458df903352658deaeef82327f1e2e4f63 |
+| serie-obrigacoes-do-tesouro-10-anos-rendibilidade | int_rt | MCBY | EMU convergence criterion bond yields | e6ba45206d0ab0ad81f99e5e7fc649458df903352658deaeef82327f1e2e4f63 |
+| serie-obrigacoes-do-tesouro-10-anos-rendibilidade | geo | PT | Portugal | e6ba45206d0ab0ad81f99e5e7fc649458df903352658deaeef82327f1e2e4f63 |
+
+
+| Conferência dirigida | Antes | Depois |
+|---|---|---|
+| rotulos | 1 | 0 |
+| origens | 1 | 0 |
+| ferramentas | 1 | 0 |
+| ambiente | 1 | 0 |
+| indice | 1 | 0 |
+| definicao-serie | 1 | 0 |
+
+
+Foram regenerados 10 resumos de briefs isentos. A prova compara os bytes com a cabeça de main que foi fundida e afirma que a única diferença é a anonimização de caminhos. Código da conferência depois: `0`.
+
+| Brief | Resumo trazido por main | Resumo do texto anonimizado |
+|---|---|---|
+| design/observatorio/BRIEF-B1-as-quatro-paginas.md | 8420cf0c63d3df967d70a618d42332c547790f28c73366d9ea7633ea02c75daf | 78bc64d296456771232f78b618f21cb712ed2570cbdf24368e258e0a15d1b125 |
+| design/observatorio/BRIEF-F1.1-porta-da-frente.md | 105b30ceff14fde506fc622a9c9e4f05ea96e206430c6cd7e058e2791f279ec9 | 782185f4d5166cfea153ed3cc450162750ccdd593ed0bd3a969b077ad1c483f7 |
+| design/observatorio/BRIEF-F1.2-pagina-do-dominio.md | c5052f9910ad53acd3767fba953e2977a5aff61e37ec403c1db8cd75d12e3c98 | 99714da0335c2d7b5eed161fe244c717e1dec2da9d2ca7c7914a2373bd47ac66 |
+| design/observatorio/BRIEF-F1.6-o-atraso-do-iefp-e-as-duas-frases.md | 4abe22136d238480d715c9beba75bcb668b74efd9e517881f27b6f6067786cd1 | 75ec0e47a56cd79c91cdd3ef2ca9b9ffaeb8a412ada9f48db9c99784fe4b467c |
+| design/observatorio/BRIEF-F2.6-o-calendario-a-serio.md | 4007bbcd854b5610e386a775560301733248de0ac6886cf261ba2e1822dbfa4b | 55aa67bcce25a78d5ab9f6dcfe8b17adf61fd77b566317d279964dc8a8a04d94 |
+| design/observatorio/BRIEF-I129-o-grupo-etario-dos-jovens-nem.md | 384742d47680f834f28c8a435d3a5dbd8632937e3506062d686c3bf50766fe60 | 5ed060216b7f5fd98fc44a932ae5c92e949b7443b455003857549ff36babdf3a |
+| design/observatorio/BRIEF-M1-o-nome-das-entradas-sem-nome.md | bc040df71a6ec83d40a2efa9601b54c90eb27e616d1879b814f3708e01be55d5 | 5aaa02706e9d7e8b49ce53003b9867c3fa1c3f687f8433766913a95c8e1f5aa6 |
+| design/observatorio/BRIEF-M2-o-estudo-14-entra-no-portao-do-motor.md | cb276e41800f33320f96f81c3937d3c60437d43407c9101c43e477305ad45638 | 3ea7c960130fe34a9e49c88a0f88c62972a6d3ced32e517debedc0cdb96159cc |
+| design/observatorio/BRIEF-M3-os-nomes-oficiais-conferidos-no-motor.md | 2c4781923fe4488950820dd29958efd5454b72e6c251bba9c2dbc8e68eb4e082 | f91ba2dac1470ab35ad5d0cda3d6a1cb3a81552f4b227904e6beffdac9c5bd01 |
+| design/observatorio/BRIEF-P3-os-nomes-e-a-lingua.md | c32462d965d8b53ddfb2fe99b2fccd74dde38ee33ba7291fa3d868309ab40f2a | 281f7e321ba48675e7400729a4b81094b021c6688f10db68c186c54b53a65ddb |
+
+
+| Conferência adicional | Código |
+|---|---|
+| serie-jd1-final | 0 |
+| cartao-final-dirigido | 0 |
+| forma-serie-depois | 0 |
+| forma-serie-ledger | 0 |
+| forma-serie-typecheck | 0 |
+
+### Comparação das páginas
+O guião `auditar-j.mjs` comparou 36 páginas com a construção conservada da cabeça `3ecc7c72`. As linhas YAML conservaram todos os campos exceto `definition_sources`. O HTML conserva o texto e a estrutura; a comparação só retira esse campo dos blocos JSON antes de exigir igualdade. Não foram necessárias capturas novas.
+
+| Página | Bytes iguais | Igual sem o campo novo |
+|---|---|---|
+| livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025/index.html | True | True |
+| en/ledger/amortizacoes-e-anulacoes-de-divida-fundada-2025/index.html | True | True |
+| livro-razao/custo-da-divida-emitida-2026-08/index.html | True | True |
+| en/ledger/custo-da-divida-emitida-2026-08/index.html | True | True |
+| livro-razao/custo-do-stock-da-divida-direta-2025/index.html | True | True |
+| en/ledger/custo-do-stock-da-divida-direta-2025/index.html | True | True |
+| livro-razao/divida-direta-do-estado-2026-08/index.html | True | True |
+| en/ledger/divida-direta-do-estado-2026-08/index.html | True | True |
+| livro-razao/emissoes-de-divida-fundada-2025/index.html | True | True |
+| en/ledger/emissoes-de-divida-fundada-2025/index.html | True | True |
+| livro-razao/juros-das-administracoes-publicas-2024/index.html | True | True |
+| en/ledger/juros-das-administracoes-publicas-2024/index.html | True | True |
+| livro-razao/juros-das-administracoes-publicas-2025/index.html | True | True |
+| en/ledger/juros-das-administracoes-publicas-2025/index.html | True | True |
+| livro-razao/juros-das-administracoes-publicas-2025-ue/index.html | True | True |
+| en/ledger/juros-das-administracoes-publicas-2025-ue/index.html | True | True |
+| livro-razao/juros-das-administracoes-publicas-pib-2024/index.html | True | True |
+| en/ledger/juros-das-administracoes-publicas-pib-2024/index.html | True | True |
+| livro-razao/juros-das-administracoes-publicas-pib-2025/index.html | True | True |
+| en/ledger/juros-das-administracoes-publicas-pib-2025/index.html | True | True |
+| livro-razao/juros-e-outros-encargos-execucao-2025-08/index.html | True | True |
+| en/ledger/juros-e-outros-encargos-execucao-2025-08/index.html | True | True |
+| livro-razao/juros-e-outros-encargos-execucao-2026-08/index.html | True | True |
+| en/ledger/juros-e-outros-encargos-execucao-2026-08/index.html | True | True |
+| livro-razao/necessidades-brutas-de-financiamento-2025/index.html | True | True |
+| en/ledger/necessidades-brutas-de-financiamento-2025/index.html | True | True |
+| livro-razao/pib-nominal-notificacao-setembro-2024/index.html | True | True |
+| en/ledger/pib-nominal-notificacao-setembro-2024/index.html | True | True |
+| livro-razao/pib-nominal-notificacao-setembro-2025/index.html | True | True |
+| en/ledger/pib-nominal-notificacao-setembro-2025/index.html | True | True |
+| livro-razao/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade/index.html | True | True |
+| en/ledger/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade/index.html | True | True |
+| index.html | True | True |
+| en/index.html | True | True |
+| livro-razao/index.html | True | True |
+| en/ledger/index.html | True | True |
+
+
+A comparação alargada encontrou 7935 páginas HTML antes e 7935 depois, com 0 páginas alteradas. Nos 16 JSON comparados, o livro inteiro e os recibos do JD1, só definition_sources difere.
+### Cabeças, commits e códigos lidos dos ficheiros
+
+| Repositório | Base | Cabeça do código |
+|---|---|---|
+| sitio | 3ecc7c72bce1bbc06e207aca368c9dcbb579b7ec | 1fb08e30365399bd817175c90ec5f697ff13645a |
+| motor | 2d32da6f493530aa3158d13690603aa5d6c9c784 | b75f3170e3bb6b5f925f9654e41c7a32f8484236 |
+
+
+| Repositório | Commit | Assunto |
+|---|---|---|
+| sitio | 97c95d2185e1b20b1985654aea0955fd7c500c68 | docs(rp4n-j): registar o mandato de integração com o JD1 |
+| sitio | 546fcd39c1b4fff18a70cc1f7864c2edce758a08 | fix(rp4n-j): importar as segundas fontes declaradas pelo motor |
+| sitio | 8c4d1ca04cd94a192311d459486e0085871e6ba3 | fix(rp4n-j): reler no HTML as contagens após a fusão |
+| sitio | d59887a0ec908c9e08f734abd8a13d36c0f10baf | fix(rp4n-j): completar as declarações e os rótulos vindos do JD1 |
+| sitio | d164a38006213cbf84390cb7657ba85096d0110e | fix(rp4n-j): conservar a apresentação e integrar os selos dos briefs |
+| sitio | ac4ca9c0a257891e95344564fee28047952b15ed | test(rp4n-j): comparar todo o HTML e os JSON exportados |
+| sitio | 1ca31f13faf9e930cd01dc105006194793a511a3 | test(rp4n-j): integrar as marcas de anonimização do JD1 |
+| sitio | c1a375f7f5d656f47e5b1d1dd3ad456ed9146e0b | test(rp4n-j): isolar o motor dos ensaios do executor |
+| sitio | 9a60fa27c9e987ea64fef8d22822529e5429ee97 | test(rp4nj): ligar plantas do índice ao nome do formato |
+| sitio | 877e75cef1988316d68019c4e73e42e17247eea6 | fix(rp4nj): importar o recibo da definição da série JD1 |
+| sitio | 1fb08e30365399bd817175c90ec5f697ff13645a | fix(rp4nj): conferir recibos de definições nas séries |
+| motor | 90f1e406173708e90c6ab5a37746d0a9f40a058a | fix(rp4n-j): integrar os rótulos da série de obrigações do JD1 |
+| motor | bc09b6d5f5a7a6bf5895314074331a8eca4fb710 | fix(rp4n-j): declarar as segundas fontes do JD1 com recibos |
+| motor | b75f3170e3bb6b5f925f9654e41c7a32f8484236 | fix(rp4nj): declarar segunda fonte da definição da série JD1 |
+
+
+| Ficheiro | Código | Cabeças |
+|---|---|---|
+| portoes-j/build.codigo | 0 | 1fb08e30365399bd817175c90ec5f697ff13645a |
+| portoes-j/verify.codigo | 0 | 1fb08e30365399bd817175c90ec5f697ff13645a |
+| portoes-j/typecheck.codigo | 0 | 1fb08e30365399bd817175c90ec5f697ff13645a |
+| portoes-j/motor.codigo | 0 | b75f3170e3bb6b5f925f9654e41c7a32f8484236 |
+| portoes-j/series.codigo | 0 | 1fb08e30365399bd817175c90ec5f697ff13645a; motor b75f3170e3bb6b5f925f9654e41c7a32f8484236 |
+| portoes-j/cruzamento.codigo | 0 | 1fb08e30365399bd817175c90ec5f697ff13645a; motor b75f3170e3bb6b5f925f9654e41c7a32f8484236 |
+
+### Tentativas anteriores à conferência final
+
+| Pasta | Portão | Código |
+|---|---|---|
+| portoes-j-previa1 | build | 0 |
+| portoes-j-previa1 | typecheck | 0 |
+| portoes-j-previa1 | verify | 1 |
+
+
+| Pasta | Portão | Código |
+|---|---|---|
+| portoes-j-previa2 | build | 0 |
+| portoes-j-previa2 | typecheck | 0 |
+| portoes-j-previa2 | verify | 1 |
+
+
+| Pasta | Portão | Código |
+|---|---|---|
+| portoes-j-previa3-interrompida | build | 0 |
+| portoes-j-previa3-interrompida | execucao | 130 |
+
+
+| Pasta | Portão | Código |
+|---|---|---|
+| portoes-j-previa4-indice | build | 0 |
+| portoes-j-previa4-indice | motor | 0 |
+| portoes-j-previa4-indice | typecheck | 0 |
+| portoes-j-previa4-indice | verify | 1 |
+
+As tentativas prévias são diagnóstico, não prova final de ambas as árvores limpas. A primeira expôs os resumos de briefs incompatíveis com os textos anonimizados. A segunda parou na expectativa das marcas de anonimização. A tentativa com motor foi interrompida porque o teste sintético herdou a opção do motor real; conserva só os códigos que chegaram a ser escritos, incluindo o código de interrupção do executor. Outra comparação prévia detetou o efeito de apresentação das segundas fontes. A tentativa seguinte revelou a seleção de formatos por posições antigas nas plantas do índice; o portão do motor terminou nessa tentativa sobre a árvore limpa. O ensaio das etapas restantes encontrou a segunda fonte em falta na definição da série. Depois dessa correção, os portões foram repetidos nas novas cabeças. A conferência final foi repetida depois dos commits, sem ficheiros de produto por registar.
+
+Os portões correram sobre as árvores limpas nas cabeças do código. A corrida do motor e a do sítio foram executadas em paralelo, cada uma com os seus estados, cabeças, horas e código real, sem alterações de ficheiros durante as medições. Foram lidos os estados e as cabeças no início e no fim. `verify` executou a cadeia integral de `npm run verify`. As séries e o cruzamento usaram `RESEARCHHUB_DIR=<motor>`, este último com `--with-origin`. Os commits posteriores guardam apenas as provas e o relato. A resposta comunica a cabeça final, sem inventar o hash do commit que contém este texto.
+
+A primeira tentativa de cruzamento não tinha `RESEARCHHUB_DIR` e consultou outra árvore do motor. Foi recusada; a repetição com a worktree autorizada passou. Os códigos e registos de ambas estão em `j/`. Não se confundiu essa tentativa com a prova final.
+
+A regra do publicador conserva o sha256 `45e4b6fe009d868eaedfa52df6553e2f0104cf4a87f0746fdcb48896785327d5` da cabeça de partida. No motor mudaram apenas: `content/13 Dominios/rotulos-series.json`, `publisher/definition_sources.json`, `publisher/export_series.py`, `publisher/jd1_test.py`. Ficheiros de outras corridas alterados: 0. Os trailers foram conferidos em `j/trailers.json`.
+### Custo
+
+A linha `tokens used` não estava disponível nesta sessão. O custo não foi estimado nem confundido com o alvo do mandato.
+
 ## A passagem RP4-n-i
 
 O Método inglês passa a usar `[to verify]` também nos atributos. A conferência lê todos os atributos de todos os elementos de todas as páginas construídas, além do texto, com estragos em `title`, `aria-label`, `alt`, `data-*` e `content`. A cobertura nova encontrou também a marca portuguesa nas descrições `meta content` do saldo natural inglês; a composição dessas descrições passou a usar a marca da edição. A afirmação excessiva do relato h foi corrigida também no seu gerador.
