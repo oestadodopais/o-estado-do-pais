@@ -3,13 +3,27 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { allClaims, eDerivada } from '../../../../src/lib/ledger.mjs';
+import { codigoDaIncorporacao, dadosDaIncorporacao, podeIncorporar } from '../../../../src/lib/incorporar.mjs';
 import { routePath, matchPath } from '../../../../src/lib/routes.mjs';
 import { conferirJson, conferirCodigo, lerPaginaComCodigo } from '../../../../scripts/incorporar-do-portao.mjs';
 const pasta = 'design/especime-v3/medicoes/er1-2026-10-06';
 const linhas = allClaims();
 const cabecaCodigo = execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
 assert.equal(JSON.parse(fs.readFileSync('dist/version.json','utf8')).commit,cabecaCodigo);
-const r = {comando:`node ${pasta}/medir-e.mjs`,cabecaCodigo,edicoes:{},naoDerivadasSemData:linhas.filter(c=>!eDerivada(c)&&!c.access_date).map(c=>c.id)};
+const fonteAnterior = execFileSync('git',['show','1352d49a:src/lib/incorporar.mjs'],{encoding:'utf8'})
+  .replace(/from '([^']+)'/g,(_,caminho)=>`from '${new URL(caminho,new URL('../../../../src/lib/incorporar.mjs',import.meta.url)).href}'`);
+const anterior = await import('data:text/javascript;base64,'+Buffer.from(fonteAnterior).toString('base64'));
+const aparencia = {base:'1352d49a',codigosComparados:0,apresentacoesComparadas:0,diferencas:[]};
+for (const c of linhas) for (const lang of ['pt','en']) {
+  if (codigoDaIncorporacao(c,lang)!==anterior.codigoDaIncorporacao(c,lang)) aparencia.diferencas.push({id:c.id,lang,tipo:'codigo'});
+  aparencia.codigosComparados++;
+  if (podeIncorporar(c)) {
+    if (JSON.stringify(dadosDaIncorporacao(c,lang))!==JSON.stringify(anterior.dadosDaIncorporacao(c,lang))) aparencia.diferencas.push({id:c.id,lang,tipo:'apresentacao'});
+    aparencia.apresentacoesComparadas++;
+  }
+}
+assert.deepEqual(aparencia.diferencas,[]);
+const r = {aparencia,comando:`node ${pasta}/medir-e.mjs`,cabecaCodigo,edicoes:{},naoDerivadasSemData:linhas.filter(c=>!eDerivada(c)&&!c.access_date).map(c=>c.id)};
 for (const lang of ['pt','en']) {
   const metodo = lerPaginaComCodigo(fs.readFileSync(`dist${routePath('metodo',lang)}/index.html`,'utf8'));
   function contagem(chave) {
