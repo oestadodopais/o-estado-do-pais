@@ -27,7 +27,7 @@ s+=f"Antes: varredura do `dist/` conservado da cabeça `{a['versao']['commit']}`
 s+='Páginas que deixaram de ter marca:\n\n'+''.join('- `'+x+'`.\n' for x in sorted(set(a['paginas_com_marcas'])-set(m['paginas_com_marcas'])))
 s+='\nLinhas ainda incompletas:\n\n'+''.join('- `'+x+'`.\n' for x in m['linhas_incompletas'])
 s+='''
-A marca inglesa passou a `[to verify]` em todos os componentes: campos, selos, frases, agenda, livro e marcas de água. O Método usa a mesma forma e a página explicativa já não promete manter a grafia portuguesa. Os dados e as transcrições históricas conservam a forma que lhes pertence. A planta percorre todas as páginas construídas e planta as formas de texto e atributo; as páginas dos temas não contêm a glosa dentro da frase K2, com conhecido-positivo que a volta a inserir.
+Na passagem h, a marca inglesa passou a `[to verify]` nos textos dos componentes: campos, selos, frases, agenda, livro e marcas de água. Ficaram por corrigir os atributos `title` do Método, como a leitura a frio apurou. O texto do Método usa a mesma forma e a página explicativa já não promete manter a grafia portuguesa. Os dados e as transcrições históricas conservam a forma que lhes pertence. A planta da passagem h percorre o texto de todas as páginas construídas e o atributo `data-marca`, mas não os restantes atributos; as páginas dos temas não contêm a glosa dentro da frase K2, com conhecido-positivo que a volta a inserir.
 
 ### Os outros achados
 

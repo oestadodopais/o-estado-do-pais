@@ -1463,7 +1463,7 @@ Linhas ainda incompletas:
 - `evora-prr-vencido-aprovado-2026`.
 - `saldo-natural-portugal-2025`.
 
-A marca inglesa passou a `[to verify]` em todos os componentes: campos, selos, frases, agenda, livro e marcas de água. O Método usa a mesma forma e a página explicativa já não promete manter a grafia portuguesa. Os dados e as transcrições históricas conservam a forma que lhes pertence. A planta percorre todas as páginas construídas e planta as formas de texto e atributo; as páginas dos temas não contêm a glosa dentro da frase K2, com conhecido-positivo que a volta a inserir.
+Na passagem h, a marca inglesa passou a `[to verify]` nos textos dos componentes: campos, selos, frases, agenda, livro e marcas de água. Ficaram por corrigir os atributos `title` do Método, como a leitura a frio apurou. O texto do Método usa a mesma forma e a página explicativa já não promete manter a grafia portuguesa. Os dados e as transcrições históricas conservam a forma que lhes pertence. A planta da passagem h percorre o texto de todas as páginas construídas e o atributo `data-marca`, mas não os restantes atributos; as páginas dos temas não contêm a glosa dentro da frase K2, com conhecido-positivo que a volta a inserir.
 
 ### Os outros achados
 
