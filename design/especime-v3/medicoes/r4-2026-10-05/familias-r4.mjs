@@ -325,6 +325,7 @@ const SEM_FINANCEIRAS = diz(': a despesa sem as operações com ativos e passivo
   ': spending without transactions in financial assets and liabilities or transfers between its own services.',
   O('rp4n-despesa-efetiva', 'com exclusão dos «ativos financeiros»'), O('rp4n-consolidacao', 'transferências'));
 const BRUTA = ponto;
+const DEFINICAO_BRUTA_AUSENTE = {classe:'ausencia-definicao', pt:'. A definição de despesa bruta por palavras está por confirmar na fonte.', en:'. The definition of gross expenditure in words is to be confirmed at source.'};
 
 const ORCAMENTO = [
   /* 4.1 · a despesa por função do Eurostat (COFOG), em percentagem do PIB, em Portugal, em Espanha e na União */
@@ -363,21 +364,21 @@ const ORCAMENTO = [
   {
     chaves: MINISTERIOS.map((m) => `oe-2026-cem-euros-ministerio-${m}`),
     partes: [
-      diz('É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios', 'It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry',
+      diz('É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central', 'It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure',
         L('derivation', 'pela despesa bruta da administração central, multiplicar por cem')),
       diz(' que o Orçamento prevê', ' planned in the Budget', O('rp4n-orcamento', 'Orçamento aprovado')),
-      BRUTA,
+      DEFINICAO_BRUTA_AUSENTE,
     ],
   },
   {
     chaves: ['oe-2026-cem-euros-ministerio-encargos-gerais-do-estado'],
     partes: [
-      diz('É quanto vai para os encargos gerais do Estado em cada cem euros inscritos no total do mapa por ministérios', 'It is the amount for the general charges of the State out of every hundred euros entered in the total of the table by ministry',
+      diz('É quanto vai para os encargos gerais do Estado em cada cem euros, dividindo pela despesa bruta da administração central', 'It is the amount for the general charges of the State out of every hundred euros, dividing by central administration’s gross expenditure',
         L('derivation', 'Dividir a despesa bruta dos Encargos Gerais do Estado pela despesa bruta da administração central, multiplicar por cem')),
       diz(' que o Orçamento prevê', ' planned in the Budget', O('rp4n-orcamento', 'Orçamento aprovado')),
       diz('; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania', '; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies',
         L('derivation', 'A igualdade referida na ressalva compara os Encargos Gerais do Estado com o programa 001, Órgãos de Soberania')),
-      BRUTA,
+      DEFINICAO_BRUTA_AUSENTE,
     ],
   },
   /* 4.4 · a despesa por função, em despesa efetiva consolidada: o orçamentado e o executado */
