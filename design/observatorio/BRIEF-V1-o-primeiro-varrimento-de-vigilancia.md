@@ -4,7 +4,7 @@
 
 ## 0 · O que se mede antes de construir
 
-Na worktree do motor, antes de tocar em nada: `python3 -m core.gate` a 0 na cabeça de partida; as decisões em vigor nos ficheiros que o bloco vai tocar (`python3 scripts/leituras/decisoes-em-vigor.py` do sítio sobre `core/http.py`, `.github/workflows/corredor.yml`, `.github/workflows/vigia.yml`); o que o cliente da casa (`core/http.py`, `HttpClient`, o agente `OEstadoDoPais/corredor`) já faz (pedidos condicionais, sha256, registo do pedido) e o que o arquivo do corredor guarda, para o guião reutilizar e não duplicar. Os números do §0 escrevem-se no relatório por guião.
+Na worktree do motor, antes de tocar em nada: `python3 -m core.gate` a 0 na cabeça de partida (`portao_inicial_do_motor`, o código que o construtor escreve em `portoes/inicial.codigo`); as decisões em vigor nos ficheiros que o bloco vai tocar (`python3 scripts/leituras/decisoes-em-vigor.py` do sítio sobre `core/http.py`, `.github/workflows/corredor.yml`, `.github/workflows/vigia.yml`); o que o cliente da casa (`core/http.py`, `HttpClient`, o agente `OEstadoDoPais/corredor`) já faz (pedidos condicionais, a soma de controlo do corpo, o registo do pedido) e o que o arquivo do corredor guarda, para o guião reutilizar e não duplicar. Os números do §0 escrevem-se no relatório por guião.
 
 ## 1 · O que o bloco é
 

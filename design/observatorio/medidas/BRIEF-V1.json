@@ -1,0 +1,16 @@
+{
+  "brief": "design/observatorio/BRIEF-V1-o-primeiro-varrimento-de-vigilancia.md",
+  "guiao": "design/observatorio/medidas/BRIEF-V1.py",
+  "cabeca_lida": "HEAD",
+  "medidas": [
+    {
+      "nome": "portao_inicial_do_motor",
+      "valor": 0,
+      "comando": "git show HEAD:design/especime-v3/medicoes/v1-2026-10-07/portoes/inicial.codigo · o código de saída do python3 -m core.gate na cabeça de partida do motor",
+      "conhecido_positivo": {
+        "o_que": "o registo da corrida (portoes/inicial.json) nomeia o core.gate e a cabeça do motor",
+        "encontrado": true
+      }
+    }
+  ]
+}
