@@ -1,0 +1,29 @@
+{
+  "aparencia": {
+    "base": "1352d49a",
+    "codigosComparados": 6390,
+    "apresentacoesComparadas": 6374,
+    "diferencas": []
+  },
+  "comando": "node design/especime-v3/medicoes/er1-2026-10-06/medir-e.mjs",
+  "cabecaCodigo": "ac4022106fbca310da2fbb2f31739e2a41e486d5",
+  "edicoes": {
+    "pt": {
+      "jsonComCampo": 3187,
+      "jsonSemCampo": 8,
+      "recibosComCodigo": 3187,
+      "recibosSemCodigo": 8,
+      "metodoCompleta": 3187,
+      "metodoPorConfirmar": 8
+    },
+    "en": {
+      "jsonComCampo": 3187,
+      "jsonSemCampo": 8,
+      "recibosComCodigo": 3187,
+      "recibosSemCodigo": 8,
+      "metodoCompleta": 3187,
+      "metodoPorConfirmar": 8
+    }
+  },
+  "naoDerivadasSemData": []
+}

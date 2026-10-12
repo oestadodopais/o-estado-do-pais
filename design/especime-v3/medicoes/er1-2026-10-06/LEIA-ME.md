@@ -638,3 +638,76 @@ Capturas por `node design/especime-v3/medicoes/er1-2026-10-06/capturar-d.mjs`: 8
 Não ficam questões novas desta passagem. A apresentação das marcas anteriores ao bloco continua reservada ao bloco dos recibos, como já decidiu a direção. A leitura a frio e a aterragem pertencem ao lugar de direção. Não houve push nem publicação.
 
 A linha «tokens used» não foi exposta nesta sessão. Custo real e comparação com o custo-alvo: [verify]. Não se infere o custo do orçamento interno.
+
+
+## A passagem ER1-e
+
+O cliente repetia uma regra de recusa mais estreita e recebia apresentação mesmo para linhas recusadas. O achado seis fica fechado: `jsonDaLinha` só acrescenta `incorporacao` quando `podeIncorporar` permite, usando a proveniência partilhada com o Método. O campo fica ausente, nunca nulo ou vazio. O cliente deixou de procurar marcas na fonte ou na data; exige a apresentação completa da edição no JSON, conserva as validações de identidade e transporte e sai em silêncio se ela não existe. O portão confere presença, ausência e cada campo contra a linha.
+
+O achado oito fica fechado pela comparação, no navegador, do texto completo desde a leitura ao fim da atribuição, incluindo o separador. A planta remove o separador no compositor estático e no cliente, ambos em memória, e exige a mensagem de falha nas duas edições.
+
+O achado nove fica fechado: `leituraDaIncorporacao` escreve uma vez a regra usada pelos compositores estático, JSON e do portão. Com data há leitura; sem data só uma linha derivada pode dizer que foi calculada pelo projeto. A confirmação posterior continua a atualizar a leitura no JSON, como antes. O portão rejeita uma linha não derivada sem data de origem, mesmo que tenha releituras, com a mensagem afirmada pela planta.
+
+Os achados um a cinco eram estragos nas cópias da leitura, identificados no registo de plantas da direção, e não originaram correções. O achado sete fica registado como **ER1-12**, para o bloco de higiene: o conjunto da diferença de `medir-c.mjs` é vazio por construção e não constitui prova independente. Esse guião histórico não foi corrigido aqui. O achado dez, marcas nos recibos recusados, permanece no bloco dos recibos conforme a decisão anterior. Não se introduzem questões novas.
+
+Relatório gerado por `node design/especime-v3/medicoes/er1-2026-10-06/relatar-e.mjs`. Cabeça do código: `ac4022106fbca310da2fbb2f31739e2a41e486d5`. A cabeça final é a do último commit, que contém apenas este relatório, os anexos medidos e os códigos com os seus registos; consta da resposta da entrega.
+
+| Commit |
+| --- |
+| 511066bc docs(er1-e): registar leitura, plantas e mandato |
+| 17cb0e8c fix(er1-e): fazer do JSON a única porta da incorporação |
+| ff6b03d4 test(er1-e): afirmar a leitura e o separador no navegador |
+| 961357c9 fix(er1-e): partilhar a leitura e recusar linhas sem data de origem |
+| ac402210 docs(er1-e): preparar contagens e relatório extraídos das provas |
+
+### As contagens lado a lado
+
+Guião: `node design/especime-v3/medicoes/er1-2026-10-06/medir-e.mjs`. Anexo: `contagens-e.json`. Cada JSON construído e cada recibo construído é lido. As contagens do Método são extraídas separadamente do HTML português e inglês, incluindo a concordância entre todas as ocorrências de cada contagem na página. O JSON é comum às edições; a apresentação de cada edição é conferida por inteiro quando o campo existe.
+
+| Edição | JSON com campo | Método completa | Recibos com código | JSON sem campo | Método por confirmar | Recibos sem código |
+| --- | --- | --- | --- | --- | --- | --- |
+| pt | 3187 | 3187 | 3187 | 8 | 8 | 8 |
+| en | 3187 | 3187 | 3187 | 8 | 8 | 8 |
+
+Linhas não derivadas sem `access_date`, contadas pelo mesmo guião: **0**. A lista de identificadores fica no anexo, mesmo quando vazia. As igualdades da tabela são exigidas pelo guião.
+
+### As plantas novas e as mensagens
+
+| Planta | Mensagem afirmada | Mordeu |
+| --- | --- | --- |
+| nao-derivada-sem-data-pt | ER1 livro: uma linha não derivada não tem data de leitura. | sim |
+| nao-derivada-sem-data-en | ER1 livro: uma linha não derivada não tem data de leitura. | sim |
+| json-recusado-com-campo-objeto-pt | ER1 JSON: proveniência por confirmar oferece incorporação. | sim |
+| json-recusado-com-campo-null-pt | ER1 JSON: proveniência por confirmar oferece incorporação. | sim |
+| json-recusado-com-campo-vazio-pt | ER1 JSON: proveniência por confirmar oferece incorporação. | sim |
+| json-com-codigo-sem-campo-pt | ER1 JSON: falta a incorporação da linha com código. | sim |
+| json-recusado-com-campo-objeto-en | ER1 JSON: proveniência por confirmar oferece incorporação. | sim |
+| json-recusado-com-campo-null-en | ER1 JSON: proveniência por confirmar oferece incorporação. | sim |
+| json-recusado-com-campo-vazio-en | ER1 JSON: proveniência por confirmar oferece incorporação. | sim |
+| json-com-codigo-sem-campo-en | ER1 JSON: falta a incorporação da linha com código. | sim |
+| recusado-isolado-excerpt-pt | ER1 navegador: a recusa só por excerpt alterou o parágrafo colado. | sim |
+| recusado-isolado-source_url-pt | ER1 navegador: a recusa só por source_url alterou o parágrafo colado. | sim |
+| separador-leitura-duas-fontes-pt | ER1 navegador: a leitura até ao fim da atribuição difere, incluindo o separador. | sim |
+| recusado-isolado-excerpt-en | ER1 navegador: a recusa só por excerpt alterou o parágrafo colado. | sim |
+| recusado-isolado-source_url-en | ER1 navegador: a recusa só por source_url alterou o parágrafo colado. | sim |
+| separador-leitura-duas-fontes-en | ER1 navegador: a leitura até ao fim da atribuição difere, incluindo o separador. | sim |
+
+A recusa só pelo excerto usa a linha real `evora-prr-aprovado-2026`. Não há no livro uma linha recusada só pelo endereço: a célula cria essa marca isolada sobre uma linha completa, em memória, e serve um JSON sem o campo. Esta é a pequena escolha de ensaio desta passagem. Nas duas situações, compara o HTML inteiro do parágrafo colado depois de o cliente receber o JSON, incluindo o texto e os atributos de valor e leitura. As condições de conservação são afirmações de comportamento, não mensagens produzidas pelo cliente, que permanece silencioso.
+
+A célula conferiu 6390 recibos e 3195 JSON. O navegador registou 27 casos. As saídas completas e as plantas vieram do `verify.log` da corrida, sem repetir ensaios para preencher o relatório, e estão em `provas-e.json`, com o resumo do registo.
+
+### Portões e aparência
+
+Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/er1-2026-10-06/portoes-e`. Cabeça inicial e final da corrida: `ac4022106fbca310da2fbb2f31739e2a41e486d5`. Os códigos seguintes foram lidos dos ficheiros depois do fim. O verify executou a união conferida com o build pela tranca existente. Nenhum portão de proteção de números, fontes ou pessoas foi enfraquecido.
+
+| Portão | Código lido | Ficheiro |
+| --- | --- | --- |
+| build | 0 | portoes-e/build.codigo |
+| verify | 0 | portoes-e/verify.codigo |
+| typecheck | 0 | portoes-e/typecheck.codigo |
+
+Não são necessárias capturas novas: as páginas conservam o aspeto. O guião comparou com `1352d49a` os 6390 resultados do compositor estático, incluindo recusas, e as 6374 apresentações elegíveis, nas duas edições. Diferenças: 0. Não foram alterados componentes, vistas ou folhas de estilo. A mudança visível no comportamento é a conservação do parágrafo colado quando a proveniência é recusada; a célula do navegador guarda esse texto e os atributos.
+
+Sem push nem publicação. A aterragem pertence ao lugar de direção.
+
+A linha «tokens used» não foi exposta nesta sessão. Custo real e comparação com o custo-alvo: [verify]. Não se infere o custo do orçamento interno.
