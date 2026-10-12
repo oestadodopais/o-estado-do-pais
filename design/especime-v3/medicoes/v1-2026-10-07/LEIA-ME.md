@@ -2,7 +2,7 @@
 
 Relatório gerado por `python3 <medicoes>/medir_entrega.py --motor <motor> --provas`. As medidas abaixo são lidas dos ficheiros referidos; não são contagens introduzidas à mão.
 
-**A aceitação de uma entrada de cada fonte não está cumprida.** Não se fabricou uma iniciativa de hoje. O índice e os recibos declaram a cobertura e as falhas. A leitura a frio do Opus e a conferência da direção continuam por fazer.
+**A aceitação de uma entrada de cada fonte não está cumprida.** Não se fabricou uma iniciativa de hoje. O índice e os recibos declaram a cobertura e as falhas. Esta secção documenta a entrega inicial; a leitura a frio e a passagem V1-b constam dos registos e da secção final.
 
 ## Antes da construção
 
@@ -80,3 +80,97 @@ Vigilância diária das fontes parlamentares e do Diário da República: corpos 
 ## Custo
 
 A linha `tokens used` não foi observada. `aceitacao.json` regista custo não verificável; não é possível aferir o desvio ao alvo de símbolos do bloco.
+
+## A passagem V1-b
+
+Medida por `python3 <medicoes>/medir_v1b.py --motor <motor> --provas --fecho`. Os recibos de diagnóstico são preservados; as medidas desta secção substituem as conclusões anteriores sobre revisões, cobertura, segunda leitura e igualdade do código.
+
+A segunda corrida leu as três fontes dentro dos tetos. O ficheiro das iniciativas foi lido; registos sem data de entrada: 1. Estes registos continuam nomeados como falha e ficam fora da contagem das entradas datadas. A aceitação de uma entrada de cada fonte continua por cumprir enquanto não houver uma iniciativa verificável na janela.
+
+| Corrida | Pedidos | Bytes | Segundos | Novas | Revisões reais | Iguais | Falhas |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| `2026-10-12T132157219533Z` | 24 | 413423 | 43.125 | 6 | 0 | 310 | 1 |
+| `2026-10-12T132240450904Z` | 19 | 332177 | 38.379 | 0 | 0 | 312 | 1 |
+
+Bytes por fonte: `{"dar": 238311, "iniciativas": 158698, "dr": 13712, "politicas": 2702}`.
+Entradas por fonte: `{"dar": 306, "iniciativas": 0, "dr": 10}`. Por tipo: `{"declaração": 306, "iniciativa": 0, "ato": 10}`.
+Leitura por fonte: `{"dar": true, "iniciativas": true, "dr": true}`. Comparação: `{"dar": true, "iniciativas": true, "dr": false}`.
+
+
+Bytes por fonte: `{"dar": 164658, "iniciativas": 158673, "dr": 6144, "politicas": 2702}`.
+Entradas por fonte: `{"dar": 306, "iniciativas": 0, "dr": 10}`. Por tipo: `{"declaração": 306, "iniciativa": 0, "ato": 10}`.
+Leitura por fonte: `{"dar": true, "iniciativas": true, "dr": true}`. Comparação: `{"dar": true, "iniciativas": true, "dr": true}`.
+
+Os bytes foram recalculados pelos saltos de cada pedido. A parcela `politicas` contém os robots comuns. `corridas-b.json` conserva as reutilizações, as razões das falhas, as limitações e o âmbito da comparação. Os atos de JavaScript ficam como cobertura parcial, sem alimentar o alarme; os registos das iniciativas sem data, quando existem, continuam como falha.
+
+* Resumo de 2026-10-11: 2422 bytes UTF-8; 4 atos/iniciativas listados; 1 grupos do DAR; 0 atos/iniciativas remetidos para o índice.
+* Recontagem: 0 revisões reais; 306 diagnósticos de revisão só por ligação. Números do DAR: `["dar:2026-09-26:006"]`. Os recibos originais permanecem iguais aos das corridas.
+* Resumo de 2026-10-12: 2415 bytes UTF-8; 6 atos/iniciativas listados; 1 grupos do DAR; 4 atos/iniciativas remetidos para o índice.
+
+A Portaria dos combustíveis consta do resumo refeito de 11.10, verificado pela planta do resumo. As declarações mostram a sessão lida no PDF. O resumo usa a designação do ato, sem a referência repetida da edição, com autoria quando disponível, data, arquivo e ligação. As ligações cifradas do Parlamento ficam no índice.
+
+### Plantas e portão
+
+Plantas e controlos: 28 aprovados em 28, em `plantas-b.json`. As cinco plantas originais são exercidas sobre iniciativa sintética, declaração real e ato real.
+
+* `Provas.excerto`: «excerto alterado contra o arquivo»; passou: True.
+* `Provas.autoria`: «autoria trocada contra o arquivo»; passou: True.
+* `Provas.data`: «data errada contra o arquivo»; passou: True.
+* `Provas.corpo`: «corpo truncado ou alterado no arquivo»; passou: True.
+* `Provas.vazio`: «falha apresentada como vazio ou cobertura completa»; passou: True.
+* `PlantasDAR.excerto`: «excerto alterado contra o arquivo»; passou: True.
+* `PlantasDAR.autoria`: «autoria trocada contra o arquivo»; passou: True.
+* `PlantasDAR.data`: «data errada contra o arquivo»; passou: True.
+* `PlantasDAR.corpo`: «corpo truncado ou alterado no arquivo»; passou: True.
+* `PlantasDAR.vazio`: «falha apresentada como vazio ou cobertura completa»; passou: True.
+* `PlantasDR.excerto`: «excerto alterado contra o arquivo»; passou: True.
+* `PlantasDR.autoria`: «autoria trocada contra o arquivo»; passou: True.
+* `PlantasDR.data`: «data errada contra o arquivo»; passou: True.
+* `PlantasDR.corpo`: «corpo truncado ou alterado no arquivo»; passou: True.
+* `PlantasDR.vazio`: «falha apresentada como vazio ou cobertura completa»; passou: True.
+* `resumo_iniciativas_sem_ligacao_rotativa`: «ligação rotativa da iniciativa entrou no resumo»; passou: True.
+* `dar_servido_com_outra_ligacao_na_segunda_corrida`: «ligação rotativa apresentada como revisão»; passou: True.
+* `planta_limitacao_como_falha`: «limitação conhecida apresentada como falha»; passou: True.
+* `planta_falha_como_limitacao`: «falha apresentada como limitação»; passou: True.
+* `planta_data_sessao`: «data da sessão errada contra o arquivo»; passou: True.
+* `planta_declaracao_deslocada`: «declaração deslocada contou duas vezes»; passou: True.
+* `planta_outro_orador_na_posicao`: «outro orador apresentado como revisão da declaração anterior»; passou: True.
+* `outro_orador_mesmas_palavras_tem_outro_id`: «outro orador com as mesmas palavras herdou a identidade anterior»; passou: True.
+* `bytes_pdf_sem_mudar_declaracao`: «bytes do PDF apresentaram declarações intactas como revistas»; passou: True.
+* `head_compara_tamanho_descomprimido`: «HEAD voltou a transferir o corpo arquivado»; passou: True.
+* `documento_429_ou_5xx_fecha_anfitriao`: «HTTP {status}; anfitrião fechado para o resto da corrida»; passou: True.
+* `teto_exato_impede_segundo_pedido`: «teto de bytes atingido»; passou: True.
+* `hashes_comparam_todas_as_corridas`: «corrida com código diferente desapareceu da medida»; passou: True.
+
+Portão: `0`, lido de `portoes-b/motor.codigo`; cabeça: `9dd3a96142b2692c17c97de3a73fb1cd3c620a22`. Log e metadados em `portoes-b/motor.log` e `portoes-b/motor.json`. Os dois validadores locais dos fluxos constam de `fluxo-b.json` e `fluxos-motor-b.json`.
+
+### Aceitação do brief
+
+| Critério | Medida |
+| --- | --- |
+| Corridas e segunda leitura | `{"duas_corridas_12_10_codigo_final": true, "segunda_leu_tres_fontes": true, "segunda_sem_entradas_ou_revisoes": {"dar": true, "iniciativas": true, "dr": true}}` |
+| Entrada de cada fonte | False |
+| Plantas | True |
+| Portão na cabeça, fluxos e preservação | 0; cabeça coincidente: True; ver provas e preservação |
+| README e proposta de melhoria | True; proposta abaixo |
+| Medidas por guião e custo | Guião e recibos alojados; linha tokens used não observada |
+
+Código do motor: `9dd3a96142b2692c17c97de3a73fb1cd3c620a22`. Motor na medição: `e3608ab8886486dad7bef51261907b700cf6c810`. Código dos guiões do sítio: `497d1342bbb0bc40a94a1ff7538ab2db437f40d7`. As cabeças e os commits anteriores ao fecho estão em `cabecas-b.json`; a cabeça final do sítio será posterior ao relatório que ela contém.
+
+A comparação `hashes-b.json` inclui todas as corridas, sem as filtrar por igualdade antes de as medir. As corridas antigas com código diferente estão identificadas individualmente. Os recibos finais são selecionados pela igualdade do código e do registo, não pelo nome do ramo.
+
+Ficheiros preexistentes preservados: 12 de 12; caminhos protegidos do motor sem alterações; fugas de caminhos ou nome local: 0. `confirmacao-b.json` confirma os achados plantados nas cópias.
+
+### Questões novas
+
+* **V1-15**: tamanho e validadores iguais autorizam reutilização pelo mandato, mas não provam igualdade criptográfica do conteúdo remoto. Sem validadores, uma alteração do mesmo tamanho pode não ser detetada.
+* **V1-16**: registos sem data não permitem decidir a pertença à janela. Na última corrida final: 1, identificados como `[{"posicao": 1509, "IniId": "377355"}]`. Não se atribui uma data presumida nem se alarga a janela para obter uma entrada.
+* **V1-17**: o catálogo consultado expõe o ficheiro corrente cumulativo. HEAD torna a comparação diária viável, pelo que não foi ativada a alternativa semanal. O resumo e o registo mantêm a cadência diária.
+* **V1-18**: a reconferência inicial limita-se ao número de dias declarado no registo. Os vistos persistentes mantêm os identificadores anteriores; uma interrupção longa exige atenção à cobertura declarada.
+* **V1-19**: a prova dos direitos do DR é uma extração textual identificada da página oficial, com sha256. A tentativa HTTP direta do cliente da casa recebeu JavaScript e está conservada separadamente. Não se afirma ter alojado o HTML integral dessa página.
+* **V1-20**: o resumo mantém um limite conservador de bytes UTF-8 e declara as omissões. Não existe medição por tokenizador de modelo no guião.
+* **V1-21**: as revisões artificiais foram retificadas no índice e na leitura do resumo, com os valores de diagnóstico conservados e sem reescrever os recibos das corridas antigas.
+
+Proposta para o registo das melhorias: vigilância diária com reutilização verificável dos arquivos, identidade das declarações independente da ligação e da paginação, datas separadas, limitações distintas das falhas e resumo orientado para atos e iniciativas. A direção decide o registo.
+
+Custo: a linha `tokens used` não foi exposta. O desvio ao alvo do mandato não é verificável e não é estimado.
