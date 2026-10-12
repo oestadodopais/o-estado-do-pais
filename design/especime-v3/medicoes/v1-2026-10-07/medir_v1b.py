@@ -126,7 +126,8 @@ def main():
     protegidos = git(motor, 'status', '--short', '--', 'indicators/*.json', 'indicators/vintages.json', '.maintenance-locks/', 'sweeps/', 'publisher/recortes/manifest.regioes.json')
     assert not protegidos
     fugas = []
-    proibidos = (str(Path.home()).encode(), Path.home().name.encode())
+    proibidos = (str(Path.home()).encode(), Path.home().name.encode(),
+                 '/'.join(('Instruments', '')).encode(), '/'.join(('.claude', 'worktrees', '')).encode())
     candidatos = [f for pasta in (raiz, PASTA) for f in pasta.rglob('*') if f.is_file() and '__pycache__' not in f.parts and '.cache' not in f.parts and f.name != '.lock']
     for f in candidatos:
         b = f.read_bytes()
