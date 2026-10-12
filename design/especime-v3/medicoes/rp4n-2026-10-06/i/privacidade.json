@@ -1,0 +1,763 @@
+{
+  "plantas": [
+    {
+      "nome": "utilizador",
+      "mensagem": "RP4N-i: caminho ou identificador local (utilizador)"
+    },
+    {
+      "nome": "casa",
+      "mensagem": "RP4N-i: caminho ou identificador local (casa)"
+    },
+    {
+      "nome": "temporario",
+      "mensagem": "RP4N-i: caminho ou identificador local (temporario)"
+    },
+    {
+      "nome": "projetos",
+      "mensagem": "RP4N-i: caminho ou identificador local (projetos)"
+    },
+    {
+      "nome": "worktrees",
+      "mensagem": "RP4N-i: caminho ou identificador local (worktrees)"
+    },
+    {
+      "nome": "prefixo novo num commit aceite",
+      "mensagem": "RP4N-i: ocorrência nova não recebe a exceção histórica"
+    },
+    {
+      "nome": "prefixo aceite noutro commit",
+      "mensagem": "RP4N-i: outro commit não recebe a exceção histórica"
+    },
+    {
+      "nome": "procura real na cabeça",
+      "mensagem": "RP4N-i: a procura da cabeça encontrou o conhecido-positivo",
+      "codigo": 0
+    },
+    {
+      "nome": "procura sem ocorrência",
+      "mensagem": "RP4N-i: ausência distinguida do erro",
+      "codigo": 1
+    },
+    {
+      "nome": "erro real do git grep",
+      "mensagem": "RP4N-i: erro na procura da cabeça, código 128"
+    }
+  ],
+  "legados_lidos": [
+    "design/especime-v3/briefs/BRIEF-auditoria-ux-2026-08-25.md",
+    "design/especime-v3/briefs/BRIEF-etapa-2.md",
+    "design/especime-v3/briefs/BRIEF-mapa-navegacao-M4.md",
+    "design/especime-v3/briefs/BRIEF-maquetas.md",
+    "design/especime-v3/critica/2026-09-04-fable-leitor-no-navegador.md",
+    "design/especime-v3/critica/2026-09-08-sonnet-medicao-f11e-distritos.md",
+    "design/especime-v3/critica/LEITURA-c1-2026-09-28.md",
+    "design/especime-v3/critica/LEITURA-rp1bc-2026-09-26.md",
+    "design/especime-v3/medicoes/b1-2026-09-21/prompts/PROMPT-b1-opus-peca2-correcao.md",
+    "design/especime-v3/medicoes/correcoes-ux-M3-sonnet.md",
+    "design/especime-v3/medicoes/fontes-308-2026-08-26.md",
+    "design/especime-v3/medicoes/p1-2026-09-15/contagens-antes.txt",
+    "design/especime-v3/medicoes/parte3-M1-sonnet.md",
+    "design/especime-v3/medicoes/parte3-M2-sonnet.md",
+    "design/especime-v3/medicoes/rp1-2026-09-26/prompts/PROMPT-rp1c-codex.md",
+    "design/observatorio/evora/BRIEF-E1-evora-2027.md"
+  ],
+  "legados_com_nome": [],
+  "codigo_procura_cabeca": 0,
+  "cabeca": "f99ad385789e293373951ddb77f25ac221181daf",
+  "base": "b84d21a3",
+  "historico_grep_c": 100,
+  "historico_sem_excecoes": 98,
+  "historico_novo": [
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (temporario)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (utilizador)",
+        "RP4N-i: caminho ou identificador local (temporario)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (temporario)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (projetos)",
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "84c926c758b5e76a3f60263a150de5c027e1addd",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (temporario)"
+      ]
+    },
+    {
+      "commit": "9fb3714c0526562343b6bab2fcfb943d9a7f5fcd",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (temporario)"
+      ]
+    },
+    {
+      "commit": "44292c9596f1985f9b0b5da45965923e3fb7f100",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (temporario)"
+      ]
+    },
+    {
+      "commit": "44292c9596f1985f9b0b5da45965923e3fb7f100",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (projetos)",
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ba59387f347621a8ab0e3859c0f9b4be1a371c75",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "d7564f21ffc7664a2bdbd367ec2c7f6be832fae2",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (temporario)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "ec319f31a01a4a62aad3689e3c82eaaf3cafe4b7",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "4020e4a8194ca4b010ebf35530012710cc633ff3",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (projetos)"
+      ]
+    },
+    {
+      "commit": "4020e4a8194ca4b010ebf35530012710cc633ff3",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (projetos)"
+      ]
+    },
+    {
+      "commit": "4020e4a8194ca4b010ebf35530012710cc633ff3",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (projetos)"
+      ]
+    },
+    {
+      "commit": "396d7246fa5ba4249bad9e6a64439a552ae71baf",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "396d7246fa5ba4249bad9e6a64439a552ae71baf",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "396d7246fa5ba4249bad9e6a64439a552ae71baf",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "396d7246fa5ba4249bad9e6a64439a552ae71baf",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "396d7246fa5ba4249bad9e6a64439a552ae71baf",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "396d7246fa5ba4249bad9e6a64439a552ae71baf",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "396d7246fa5ba4249bad9e6a64439a552ae71baf",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "396d7246fa5ba4249bad9e6a64439a552ae71baf",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "396d7246fa5ba4249bad9e6a64439a552ae71baf",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "396d7246fa5ba4249bad9e6a64439a552ae71baf",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "396d7246fa5ba4249bad9e6a64439a552ae71baf",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (worktrees)"
+      ]
+    },
+    {
+      "commit": "841c2d557be5de2c6a0aeb0cad63d2c8d6627258",
+      "mensagens": [
+        "RP4N-i: caminho ou identificador local (utilizador)",
+        "RP4N-i: caminho ou identificador local (temporario)"
+      ]
+    }
+  ],
+  "RP4N-17": {
+    "estado": "aceite",
+    "excecoes": [
+      {
+        "commit": "5e4ccb25ef9134cbc1e6dccf031a28656535b85d",
+        "sha256_linha": "1fc80ee96740572e6023836205049c7f3e0cb60c1d4bb79c9dd97f7e1bc75450"
+      },
+      {
+        "commit": "d430d6dd1e17e4f1f23acc7273321f5e4380beff",
+        "sha256_linha": "3994efec96432c5cc683f15428bd20176e211497d58176c747f51cbfa30bc903"
+      }
+    ],
+    "razao": "Prefixo genérico sem nome de utilizador nem disposição da máquina. Exceção aprovada no mandato RP4-n-i; ramo publicado, sem reescrita. Qualquer ocorrência nova continua proibida."
+  },
+  "diff_grep_c": 0,
+  "cabeca_sem_excecoes_grep_c": 0,
+  "novos": [],
+  "padroes": [
+    "utilizador",
+    "casa",
+    "temporario",
+    "projetos",
+    "worktrees"
+  ],
+  "legados_ficheiros": 16,
+  "RP4N-14": [
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-auditoria-ux-2026-08-25.md",
+      "linha": 61
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-etapa-2.md",
+      "linha": 66
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-mapa-navegacao-M4.md",
+      "linha": 7
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-maquetas.md",
+      "linha": 7
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-maquetas.md",
+      "linha": 120
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/2026-09-04-fable-leitor-no-navegador.md",
+      "linha": 11
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/2026-09-08-sonnet-medicao-f11e-distritos.md",
+      "linha": 20
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/LEITURA-c1-2026-09-28.md",
+      "linha": 129
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/LEITURA-rp1bc-2026-09-26.md",
+      "linha": 40
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-21/prompts/PROMPT-b1-opus-peca2-correcao.md",
+      "linha": 13
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-21/prompts/PROMPT-b1-opus-peca2-correcao.md",
+      "linha": 34
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/correcoes-ux-M3-sonnet.md",
+      "linha": 319
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/fontes-308-2026-08-26.md",
+      "linha": 357
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/p1-2026-09-15/contagens-antes.txt",
+      "linha": 2
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/parte3-M1-sonnet.md",
+      "linha": 6
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/parte3-M2-sonnet.md",
+      "linha": 6
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/prompts/PROMPT-rp1c-codex.md",
+      "linha": 24
+    },
+    {
+      "ficheiro": "design/observatorio/evora/BRIEF-E1-evora-2027.md",
+      "linha": 13
+    }
+  ]
+}

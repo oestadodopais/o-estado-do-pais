@@ -1424,6 +1424,300 @@ RP4N-2 continua com o novo acesso HTTP à cópia das pensões sem confirmação:
 
 A linha «tokens used» não foi exposta por esta execução. Não se estima um total nem se afirma que o custo-alvo foi cumprido. O trabalho adicional às correções incluiu a reescrita e a prova da história, a distinção dos legados decidida na retoma, a releitura das páginas alojadas, os portões obrigatórios por commit do motor e a repetição dos portões de integração após as falhas registadas.
 
+## A passagem RP4-n-i
+
+O Método inglês passa a usar `[to verify]` também nos atributos. A conferência lê todos os atributos de todos os elementos de todas as páginas construídas, além do texto, com estragos em `title`, `aria-label`, `alt`, `data-*` e `content`. A cobertura nova encontrou também a marca portuguesa nas descrições `meta content` do saldo natural inglês; a composição dessas descrições passou a usar a marca da edição. A afirmação excessiva do relato h foi corrigida também no seu gerador.
+
+O recibo de uma linha com `access_date_kind: hosted-copy` e sem verificações próprias conserva a data da cópia alojada e declara a ausência de leitura na fonte. O estado do endereço deixa de ser uma verificação dessa linha, tanto na cabeça do recibo como no bloco das verificações. A pensão que tem uma verificação própria conserva o estado. A ambiguidade pequena do achado foi resolvida no âmbito das cópias alojadas; não se alterou a política das restantes linhas.
+
+O nome na fonte da penalização legal passa a ser a expressão literal do parágrafo da fonte, também na edição inglesa, onde a transcrição conserva a língua original. Os localizadores têm redação própria em cada edição. A frase dos ministérios distingue o total antes da consolidação do total consolidado com as duas etiquetas impressas no MAPA.
+
+### Os achados plantados na leitura h
+
+
+| Repositório | Linha | Data | Tipo |
+|---|---|---|---|
+| sitio | penalizacao-antecipacao-um-ano-neutra | 2026-08-24 | hosted-copy |
+| sitio | penalizacao-legal-um-ano-antecipacao-2026 | 2026-08-24 | hosted-copy |
+| motor | penalizacao-antecipacao-um-ano-neutra | 2026-08-24 | hosted-copy |
+| motor | penalizacao-legal-um-ano-antecipacao-2026 | 2026-08-24 | hosted-copy |
+
+As definições do recibo português dizem: Cópia alojada a 24.08.2026; Cópia alojada a 24.08.2026; Cópia alojada a 24.08.2026; Cópia alojada a 24.08.2026. O localizador legal inglês é Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, paragraph below Figure 8.4; Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, paragraph below Figure 8.4. O relatório h diz 28 páginas com marca, como a sua medição. Os estragos da cópia não estavam no ramo. Prova: `i/plantas-da-direcao.json`.
+### As frases e os campos, lidos do HTML
+
+Método inglês, atributos `title`: rows with at least one field marked [to verify].
+
+**agua-pt**
+
+> É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta. O valor situa-se na faixa «Qualidade do serviço mediana» da ERSAR: acima de vinte e até trinta por cento, incluindo o limite superior.
+
+**agua-en**
+
+> It is the share of water entering the system that is not billed by retail operators in mainland Portugal. The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment. The value falls in ERSAR’s “medium service quality” band: above twenty and up to thirty per cent, including the upper limit.
+
+**pensao-pt**
+
+> É a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.
+
+**pensao-en**
+
+> It is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.
+
+**legal-pt**
+
+> É a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.
+
+**legal-en**
+
+> It is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.
+
+**ministerios-pt**
+
+> É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA».
+
+**ministerios-en**
+
+> It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “DESPESA TOTAL CONSOLIDADA”.
+
+| Recibo | Nome na fonte | O que foi conferido |
+|---|---|---|
+| pensao-pt | dcum x : cumulative reduction | O que foi conferidoCópia alojada a24.08.2026 · Registo da cópiaSem resposta desde01.09.2026 · ao corredorReleitura tentada a01.09.2026, sem valor lido · conferência diária do ficheiro da fonte |
+| pensao-en | dcum x : cumulative reduction | What was checkedCopy hosted on24.08.2026 · Copy recordNo answer since01.09.2026 · to the runnerRe-read attempted on01.09.2026, no value read · daily check of the source file |
+| legal-pt | penalização legal | O que foi conferidoCópia alojada a24.08.2026 · Registo da cópiaLeitura na fonteNão há leitura na fonte registada para esta linha. A regra da releitura → |
+| legal-en | penalização legal | What was checkedCopy hosted on24.08.2026 · Copy recordReading at the sourceNo reading at the source is recorded for this row. The re-reading rule → |
+
+### Fontes para repetir a leitura
+O inventário `i/fontes-por-frase.json`, medido no sítio `f99ad385789e293373951ddb77f25ac221181daf` e no motor `cc75e215caf71d5e8cfa77850f1896f3b418c75f`, lista 49 ficheiros alojados por frase ou decisão, todos conferidos pelos bytes. Inclui o PDF do MAPA, o PDF da pensão, o manifesto atual e a cópia literal do manifesto original recuperado do commit que prova o alojamento. O manifesto atual não foi confundido com a versão original.
+
+| Ficheiro no motor | sha256 |
+|---|---|
+| content/11 Seguranca Social/source/MANIFEST.sha256 | 420695c2803d0b78b4b00e2289710ade3e77b53bd41d6b3396b5686772b0d8f4 |
+| content/13 Dominios/source/bdp/bpstat-pagina-940.html | 36bed0374ac4a38bd8115bd3596a9f332a0c9f318428e3bca1ace1148684fdd5 |
+| content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html | 0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa |
+| content/13 Dominios/source/eurostat/gov_10dd_edpt1.json | 63e91b9e39c42ad8f51d92c43a4278c8cc955572c7911fb7d9d1f29eb94fd9e5 |
+| content/13 Dominios/source/eurostat/statistics-explained-government-finance-statistics.html | f1b107c69c196b756a56239bfac1bf0a2754bad9f0b90a3265ddc2e916b97372 |
+| content/13 Dominios/source/eurostat/tesem060.json | 8a70357f6d32b524d09ad24041a9f38f13de052d2328114e5b6a5620c8c39df2 |
+| content/13 Dominios/source/eurostat/tipsbp10.json | 7fe24c68ccf141c632aeae09633c0effdf2bfbfad814eecf93495c82897006ca |
+| content/13 Dominios/source/eurostat/tipser10.json | 53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691 |
+| content/13 Dominios/source/eurostat/tipsgo10.json | f855d74fb9fd741165b52dae03a853f0acb1442c319cf63ada7d7347f76ae82f |
+| content/13 Dominios/source/eurostat/tipslm60.json | 3cadaa8dcec031d42b6c88a61b411458cc61efc27cfca8216c8ab598c30a64d6 |
+| content/13 Dominios/source/ine/destaque-pde-2026-09-23.html | 880d30d8632f3e50aed26c93a527426dcb48e192097665693df7ed69f05400e5 |
+| content/13 Dominios/source/rp1/010-ine-0013420-dados.json | 8fb5b0971209e2fa9843f94652b69710eee312ef874efb69ff0042b213e01a0a |
+| content/13 Dominios/source/rp1/014-ine-0013420-minfo.html | 570b07a4e928a33ecb7c888ac590804e3737c92ab8186c4aff1cc6efca3276e8 |
+| content/13 Dominios/source/rp3/183-ine-0013420-minfo.html | 2bff16870cf4e8bc4138c32727c8060a6e24f9cf1bbd04afc23533e6d9499e0c |
+| content/13 Dominios/source/rp4n/eurostat-esa2010-KS-02-13-269-EN.pdf | 9569393aefd24d7fed20e55f30e68850148004e45c70dd5af4eda73214349858 |
+| content/13 Dominios/source/rp4n/eurostat-esa2010-KS-02-13-269-EN.pdf.pedido.json | bd78c85a9bb3029e72cf50d4a5ee2403c3a54b6af09455ca15719b7837d87f0a |
+| content/13 Dominios/source/rp4n/evora-contas.pdf | e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f |
+| content/13 Dominios/source/rp4n/evora-contas.pedido.json | 97e8d9528d78ba8faab6068d77e5b0e17bc91e722c7d753ee954de881ff3b0da |
+| content/13 Dominios/source/rp4n/evora-gestao.pdf | be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a |
+| content/13 Dominios/source/rp4n/evora-gestao.pedido.json | 0fbcd0b46f4aec55125159b5a59905647db0bd34ff6f5b416240556e3378307a |
+| content/13 Dominios/source/rp4n/madeira.pdf | c93c48e256d5b6e05522968dc39e0a0289d25899065faa1dc40ba78f7e84c6ae |
+| content/13 Dominios/source/rp4n/madeira.pedido.json | 351f44e7b4c5e87c5b61864d14a7b2d188ad9ecb2f7354bed054b33414df1c74 |
+| content/13 Dominios/source/rp4n/mapa4-g.pdf | 9e8005620a71179fc461f3b9f0472d253677ca35aa829d0b860864625dec5438 |
+| content/13 Dominios/source/rp4n/mapa4-g.pedido.json | 37fa195cfbf496841b1bc6047563e55d7cac54d049c0fc6179b63a479fed7d6f |
+| content/13 Dominios/source/rp4n/pensoes-copia-alojada.pdf | 555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366 |
+| content/13 Dominios/source/rp4n/prr/listagem-de-entidades-prr-20260819.xlsx | 34f6e5b555f5cdbfcdc35535cd3e0e27717c6ad5ef681905d8d7620fffb7fe3b |
+| content/13 Dominios/source/rp4n/prr/listagem-de-projetos-prr-20260819.xlsx | 121122320839671b5e86f114ee24dff5296cc30444327812872510e41b85d6ea |
+| content/13 Dominios/source/rp4n/rasarp2025-volume1.pdf | cd913fa3af3c782154fbf015c74d4b93005c2fc7f65741e33ac27aba6a829a67 |
+| content/13 Dominios/source/rp4n/rasarp2025-volume1.pedido.json | 92a4d4d4c2f4a1bde5a2c44bd58e4fb1b82c322872b41ca6810cd9e5f204586a |
+| content/13 Dominios/source/text/destaque-pde-2026-09-23.txt | 3e8580f92458bba2da44f71d66171bec6cca62c03f5c61dfd3ab069d488f89d4 |
+| content/20 Orcamento do Estado/source/dados-funcao.json | 43bb18f15b663e31b75ce6e09daaf68527aff412b1703319fcdb3e2496ddb8e7 |
+| content/20 Orcamento do Estado/source/dados-funcao.json.pedido.json | 892dfaea8db0f3fe565fd1512c3a5d9d74fea32573781b17bbe520d48a454dbb |
+| content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf | 8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5 |
+| content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json | ff78d7a1f5629129d2c2a21f3dd06faae5623ebc1b5a3f83f92e471e2434d050 |
+| indicators/out/c1c-2026-09-28/bce-competitividade-discurso.html | 4bf850e2ece146ef67a04485cb07085fb2911ce8dbc6fa0f84ccf477e06739eb |
+| indicators/out/c1c-2026-09-28/dgal-limites-canonico.html | f03ce2507f02645dda63c8a366f05ea95e8e5e6e85817dd57c60b6bdf13ed818 |
+| indicators/out/enquadramento-2026-09-28/corpos/53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691.txt | 53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691 |
+| indicators/out/l1-2026-09-24/bdp-bpstat-pagina-940.html | 36bed0374ac4a38bd8115bd3596a9f332a0c9f318428e3bca1ace1148684fdd5 |
+| indicators/out/l1-2026-09-24/ce-swd-2026-222-country-report-portugal.pdf | f249171d3e0e73af63707f051f56cd85eb758465f0389a930f1296462f18c647 |
+| indicators/out/l1-2026-09-24/ce-swd-2026-222-country-report-portugal.txt | 20d07f2d43af23c216c737df41eaea46cd9900925128e237067bbb887c7b8725 |
+| indicators/out/l1-2026-09-24/eurostat-tesem060.json | 8a70357f6d32b524d09ad24041a9f38f13de052d2328114e5b6a5620c8c39df2 |
+| indicators/out/l1-2026-09-24/eurostat-tipsbp10.json | 7fe24c68ccf141c632aeae09633c0effdf2bfbfad814eecf93495c82897006ca |
+| indicators/out/l1-2026-09-24/eurostat-tipser10.json | 53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691 |
+| indicators/out/l1-2026-09-24/eurostat-tipsgo10.json | f855d74fb9fd741165b52dae03a853f0acb1442c319cf63ada7d7347f76ae82f |
+| indicators/out/l1-2026-09-24/eurostat-tipslm60.json | 3cadaa8dcec031d42b6c88a61b411458cc61efc27cfca8216c8ab598c30a64d6 |
+| indicators/out/l1-2026-09-24/eurostat-tipsna40.json | fbf5d6acd61b6dbbda1a6f8d4b6f9c659d10ab97f1dcad522838507797488239 |
+| indicators/out/rp1-2026-09-26/014-ine-0013420-minfo.html | 570b07a4e928a33ecb7c888ac590804e3737c92ab8186c4aff1cc6efca3276e8 |
+| indicators/out/rp1-2026-09-26/038-seguranca-social-rsi-conteudo-rp1c.json | 4fc174f6751fde822749d79161898406758d5aeec3ad456e22ac961429b8a9bc |
+| indicators/out/rp1-2026-09-26/040-ine-idade-ativa-definicao-rp1c.html | 144f956c4f069addd42d9a5b72c000d6149ab7a842d629bea930d4c87f15e127 |
+
+O original de `content/11 Seguranca Social/source/MANIFEST.sha256`, no commit `7c0b24700d76cb3a67442f2495178212169c7586`, está também em `design/especime-v3/medicoes/rp4n-2026-10-06/i/pensoes-manifesto-original.sha256`, SHA-256 `4b9bc26fe06aa5c809ca880e3c74bfb6e0f74068087081518bc2d2087594a0ac`. O pacote deve levar esta versão histórica juntamente com a atual.
+### Cabeças e códigos lidos
+
+| Repositório | Base | Cabeça do código |
+|---|---|---|
+| sitio | c263080105981e81d0c273e3b0cfc53ac399ce4a | f99ad385789e293373951ddb77f25ac221181daf |
+| motor | e2fd95fde167ad54f36a426bc1487bd6c53c9f2a | cc75e215caf71d5e8cfa77850f1896f3b418c75f |
+
+
+| Ficheiro | Código | Cabeça |
+|---|---|---|
+| portoes-i/build.codigo | 0 | f99ad385789e293373951ddb77f25ac221181daf |
+| portoes-i/verify.codigo | 0 | f99ad385789e293373951ddb77f25ac221181daf |
+| portoes-i/typecheck.codigo | 0 | f99ad385789e293373951ddb77f25ac221181daf |
+| portoes-i/motor.codigo | 0 | cc75e215caf71d5e8cfa77850f1896f3b418c75f |
+| i/reconferencia-codigo/series.codigo | 0 | f99ad385789e293373951ddb77f25ac221181daf; motor cc75e215caf71d5e8cfa77850f1896f3b418c75f |
+| i/reconferencia-codigo/cruzamento.codigo | 0 | f99ad385789e293373951ddb77f25ac221181daf; motor cc75e215caf71d5e8cfa77850f1896f3b418c75f |
+
+As árvores do código estavam limpas no início dos portões e as cabeças foram lidas antes e depois. As séries e o cruzamento com `--with-origin` correram depois do último commit que muda os ficheiros que leem. Os commits posteriores conservam apenas provas, capturas e este relato. A cabeça final é comunicada na resposta, sem inventar o hash do commit que contém o próprio relatório.
+As tentativas anteriores foram conservadas: na primeira, o C1 ainda exigia a frase antiga de ausência, e a função nova precisava das declarações de tipos; na segunda, o índice recusou a forma nova do localizador do nome legal. A regra independente, a forma exata do localizador e as plantas foram corrigidas antes da repetição.
+
+| Tentativa | build | verify | typecheck |
+|---|---|---|---|
+| portoes-i-tentativa1 | 1 | 125 | 1 |
+| portoes-i-tentativa2 | 0 | 1 | 0 |
+
+### Privacidade e questões
+A RP4N-17 fecha como aceite, por decisão do mandato, apenas para os pares de commit e resumo de linha declarados em `i/privacidade.json`: 2 ocorrências. A planta recusa a mesma linha noutro commit e uma linha nova num commit aceite. Os códigos da procura real distinguem encontro, ausência e erro; um erro impede a conferência.
+
+| Conferência | Valor |
+|---|---|
+| codigo_procura_cabeca | 0 |
+| historico_grep_c | 100 |
+| historico_sem_excecoes | 98 |
+| diff_grep_c | 0 |
+| cabeca_sem_excecoes_grep_c | 0 |
+| Código em i/privacidade.codigo | 1 |
+
+A RP4N-18 permanece aberta no histórico publicado: a fusão de `main` trouxe outros registos locais, incluindo um caminho temporário com identificador de utilizador no registo das plantas TP1. Os registos foram anonimizados na cabeça; `i/rp4n-18.json` conserva apenas nomes e hashes. A exceção da RP4N-17 não foi alargada. Não houve reescrita nem publicação. Esta entrega não autoriza a aterragem enquanto a direção não resolver a privacidade histórica.
+
+A revisão automática recusou uma tentativa de commit por interpretar o ficheiro de diagnóstico anterior como preservação dos caminhos sensíveis. O comando não correu; o commit seguinte contém apenas os registos anonimizados e os hashes, sem esse ficheiro.
+### Plantas e mensagens reais
+
+| Planta | Mensagem |
+|---|---|
+| reconferência anterior à criação | RP4N-h: reconferência anterior à criação da linha legal |
+| data local sem prova | a data local não tem prova de leitura ou alojamento |
+| data local trocada | a data local não tem prova de leitura ou alojamento |
+| manifesto local sem commit | a data de alojamento não aponta para o manifesto do commit |
+| tipo da data local inventado | a data local não distingue alojamento de leitura |
+| localizador trocado (penalizacao-antecipacao-um-ano-neutra, pt, name_source) | RP4N-h: localizador fora da língua da edição (pt, name_source) |
+| localizador trocado (penalizacao-antecipacao-um-ano-neutra, pt, document.locator) | RP4N-h: localizador fora da língua da edição (pt, document.locator) |
+| alojamento dito leitura (penalizacao-antecipacao-um-ano-neutra, pt) | RP4N-h: o recibo não distingue alojamento de leitura na fonte (pt) |
+| localizador trocado (penalizacao-legal-um-ano-antecipacao-2026, pt, name_source) | RP4N-h: localizador fora da língua da edição (pt, name_source) |
+| localizador trocado (penalizacao-legal-um-ano-antecipacao-2026, pt, document.locator) | RP4N-h: localizador fora da língua da edição (pt, document.locator) |
+| alojamento dito leitura (penalizacao-legal-um-ano-antecipacao-2026, pt) | RP4N-h: o recibo não distingue alojamento de leitura na fonte (pt) |
+| glosa a meio da K2 (pt) | RP4N-h: a glosa interrompe a frase K2 |
+| marca traduzida incorretamente (pt, selo) | RP4N-h: marca fora da língua da edição (pt, texto) |
+| marca traduzida incorretamente (pt, campo) | RP4N-h: marca fora da língua da edição (pt, texto) |
+| marca traduzida incorretamente (pt, frase) | RP4N-h: marca fora da língua da edição (pt, texto fora do componente) |
+| marca traduzida incorretamente (pt, marca de água) | RP4N-h: marca fora da língua da edição (pt, marca de água) |
+| marca traduzida incorretamente (pt, title) | RP4N-i: marca fora da língua da edição (pt, atributo title) |
+| marca traduzida incorretamente (pt, aria-label) | RP4N-i: marca fora da língua da edição (pt, atributo aria-label) |
+| marca traduzida incorretamente (pt, alt) | RP4N-i: marca fora da língua da edição (pt, atributo alt) |
+| marca traduzida incorretamente (pt, data-prova) | RP4N-i: marca fora da língua da edição (pt, atributo data-prova) |
+| marca traduzida incorretamente (pt, content) | RP4N-i: marca fora da língua da edição (pt, atributo content) |
+| localizador trocado (penalizacao-antecipacao-um-ano-neutra, en, name_source) | RP4N-h: localizador fora da língua da edição (en, name_source) |
+| localizador trocado (penalizacao-antecipacao-um-ano-neutra, en, document.locator) | RP4N-h: localizador fora da língua da edição (en, document.locator) |
+| alojamento dito leitura (penalizacao-antecipacao-um-ano-neutra, en) | RP4N-h: o recibo não distingue alojamento de leitura na fonte (en) |
+| localizador trocado (penalizacao-legal-um-ano-antecipacao-2026, en, name_source) | RP4N-h: localizador fora da língua da edição (en, name_source) |
+| localizador trocado (penalizacao-legal-um-ano-antecipacao-2026, en, document.locator) | RP4N-h: localizador fora da língua da edição (en, document.locator) |
+| alojamento dito leitura (penalizacao-legal-um-ano-antecipacao-2026, en) | RP4N-h: o recibo não distingue alojamento de leitura na fonte (en) |
+| glosa a meio da K2 (en) | RP4N-h: a glosa interrompe a frase K2 |
+| marca traduzida incorretamente (en, selo) | RP4N-h: marca fora da língua da edição (en, texto) |
+| marca traduzida incorretamente (en, campo) | RP4N-h: marca fora da língua da edição (en, texto) |
+| marca traduzida incorretamente (en, frase) | RP4N-h: marca fora da língua da edição (en, texto fora do componente) |
+| marca traduzida incorretamente (en, marca de água) | RP4N-h: marca fora da língua da edição (en, marca de água) |
+| marca traduzida incorretamente (en, title) | RP4N-i: marca fora da língua da edição (en, atributo title) |
+| marca traduzida incorretamente (en, aria-label) | RP4N-i: marca fora da língua da edição (en, atributo aria-label) |
+| marca traduzida incorretamente (en, alt) | RP4N-i: marca fora da língua da edição (en, atributo alt) |
+| marca traduzida incorretamente (en, data-prova) | RP4N-i: marca fora da língua da edição (en, atributo data-prova) |
+| marca traduzida incorretamente (en, content) | RP4N-i: marca fora da língua da edição (en, atributo content) |
+| estado do endereço sem verificação da linha (pt) | RP4N-i: a cópia sem verificação própria herdou o estado do endereço (pt) |
+| estado do endereço sem verificação da linha (en) | RP4N-i: a cópia sem verificação própria herdou o estado do endereço (en) |
+| utilizador | RP4N-i: caminho ou identificador local (utilizador) |
+| casa | RP4N-i: caminho ou identificador local (casa) |
+| temporario | RP4N-i: caminho ou identificador local (temporario) |
+| projetos | RP4N-i: caminho ou identificador local (projetos) |
+| worktrees | RP4N-i: caminho ou identificador local (worktrees) |
+| prefixo novo num commit aceite | RP4N-i: ocorrência nova não recebe a exceção histórica |
+| prefixo aceite noutro commit | RP4N-i: outro commit não recebe a exceção histórica |
+| procura real na cabeça | RP4N-i: a procura da cabeça encontrou o conhecido-positivo |
+| procura sem ocorrência | RP4N-i: ausência distinguida do erro |
+| erro real do git grep | RP4N-i: erro na procura da cabeça, código 128 |
+| pt-copia-diz-so-nenhuma | C1: a ausência de segunda leitura não corresponde ao registo; C1d: a ausência de releitura não tem o rótulo correspondente |
+| pt-copia-herda-estado-endereco | C1i: a cópia sem verificação própria herdou o estado do endereço |
+| en-copia-diz-so-nenhuma | C1: a ausência de segunda leitura não corresponde ao registo; C1d: a ausência de releitura não tem o rótulo correspondente |
+| en-copia-herda-estado-endereco | C1i: a cópia sem verificação própria herdou o estado do endereço |
+| Página legal trocada | ledger/claims/penalizacao-legal-um-ano-antecipacao-2026.yml: traz o rótulo "penalização legal" e o localizador "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 272, parágrafo abaixo da Figura 8.4", que não é nenhuma das 14 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · AA08b, Quadro 49 do RASARP, baixa continental e cobertura · p.<n>, linha <n>, campo <n> · página e figura da redução cumulativa da pensão · página e parágrafo da penalização legal · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar. |
+| Figura legal trocada | ledger/claims/penalizacao-legal-um-ano-antecipacao-2026.yml: traz o rótulo "penalização legal" e o localizador "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, parágrafo abaixo da Figura 8.5", que não é nenhuma das 14 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · AA08b, Quadro 49 do RASARP, baixa continental e cobertura · p.<n>, linha <n>, campo <n> · página e figura da redução cumulativa da pensão · página e parágrafo da penalização legal · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar. |
+| nome legal trocado pelo título do relatório | RP4N-i: o nome legal não é a medida no parágrafo da fonte |
+
+### Capturas
+O manifesto `i/capturas-i.json` contém 35 capturas nas larguras 390, 768, 1024, 1280, 1600; construção `f99ad385789e293373951ddb77f25ac221181daf`. Inclui o Método inglês, os recibos da pensão e da penalização legal nas duas edições e a frase alterada dos ministérios nas duas edições. Problemas de carga ou transbordo medidos: 0. A inspeção está em `i/inspecao-visual.json`.
+
+| Ficheiro | sha256 |
+|---|---|
+| design/especime-v3/capturas/rp4n-2026-10-06/i/corte-pt-390.png | 5a83480aba796d6d395ca07d381d8158f5c74c61d6d12f1086a57707af2c14a9 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/corte-pt-768.png | 6d88558ca755d85d67f2984f985820c74f74b5d641422689b4989911f0ece606 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/corte-pt-1024.png | 0e690e1d21f7b132879cb28f20e121e1ebe4b1302d845209c1061b5f56bdfcf1 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/corte-pt-1280.png | fa8e36aaaa5aa11b9198e04e7480fbf6888e5e2aed8cdaa519483c96833fdd2f |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/corte-pt-1600.png | 4ca4f2f7195793c63c28cf9c0256d09fd4990d1a042c79d74e4961a294536e15 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/corte-en-390.png | 4bebc48cfd2ae644e384281b20511c5ed5b1f66cfb8c71434b8f23d8b30c95fa |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/corte-en-768.png | f565475e275b22d8208b1e7ae652f319bac090a27920bb2e681d402ac5bbe581 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/corte-en-1024.png | 612d0d858022a32f072c7ffa04496ee25f41ad5f1b16c8138d670beb2ce2ccde |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/corte-en-1280.png | da29004b046e3ca20bdb01477159d51dc9c016efb23326cd3b66f4ad60a2d41c |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/corte-en-1600.png | 4677451a18493be246d7554306a0a35b2cb0f42323e22d62887abbba36f46063 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/legal-pt-390.png | 6cb068da9da10b15639e4fe5bf866c970ed18ca1c9fd677999268202981bcabf |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/legal-pt-768.png | d8d508505cceb99f1379fc195c35d4d2b605855a208d44f8a4505ec98ec92719 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/legal-pt-1024.png | 778967b65d6290d1450140d4203343f7211da8938be4f535f0ee267ac0d72c25 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/legal-pt-1280.png | 7e5ff935b046ced5f05a8f35d911a38b12a6b991a27175c7af939088623a6b44 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/legal-pt-1600.png | 0926eacd61d9919351291b03da8231854f4437d23bd69bedde9b7d233683aaf3 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/legal-en-390.png | b60039edaf6f6848511fa4438b7cccacf808af2d90ec8cbbe2a310d58bd26a69 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/legal-en-768.png | 4f0fb640ffe191bd52200375d939aa6f24421d4c2da909c47a794231037e0c49 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/legal-en-1024.png | 5d0e18e552e090c3fa8a3d8a735076c50e8637db71f92414925d70f264cd92fd |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/legal-en-1280.png | f85c7da27b96cfea7b18dad69f70b291f9586cf39d7b51db6aaee7802725875c |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/legal-en-1600.png | 5291b66510b54c4fa0e570fb6ab2d415a8fefe7c00f06760807024bed388bceb |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-pt-390.png | 36ca12b395f752bc1173ba67a60e73e8666a9916b32f9d20f9635f0ae11152ed |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-pt-768.png | 9d0f015f608ce39d985bd7270f8b47a53e52d00530bd43b7f78b5082c2088fea |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-pt-1024.png | 23809c4915623d0f7ca261e06ebefb7a8c4de5b36505d0d301e1fe90d3945207 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-pt-1280.png | 17e9d85747f51807b3f65983e73d454777f24718c145b1517b6e3eb2473827c4 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-pt-1600.png | 8e986269e89b46c5cc1e9362370926122f80ffc1e1de7ea27eb9d5c40e5460f3 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-en-390.png | b3d87b29cf431f99cc858949344eda2dc8bd5d7df52f442587c2f9237404c2b2 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-en-768.png | 7e5c4f4ab68fb3733751a4ec4a8686a1a042995392e272c84a35f3262015a524 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-en-1024.png | a060875b389e133988447405445167f5f291fbfe8e7cae29cd1f66d691f4a9b3 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-en-1280.png | 109d903db1a89eb7d4ebf7ce3fa860c715ecdf6d03a42aa2e284d4e4bbc7567b |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-en-1600.png | 077629c488891f69defcca905324e9d5de141c98f58b8b7b7416323f57543cd1 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/metodo-en-390.png | 9f6e3e01da734fb171232194354a83bd10e22de298d15d2c11f815193d5946ff |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/metodo-en-768.png | 34a420318ea05e926ec9514b10091d064c5b60f22107a2c224eda5271cb951a0 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/metodo-en-1024.png | 5e84550563b5d016f50c262393ed5bfb56691a5920369aa96d7a36c21ed5485d |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/metodo-en-1280.png | 876031fbf612b274e678bba9a45d57844cbab7e26af662d096041351d62e64f6 |
+| design/especime-v3/capturas/rp4n-2026-10-06/i/metodo-en-1600.png | ead39995e64d833e924ab1f41d5ebfc9f943bc9aa61537014aeb6368e2dd98b6 |
+
+### Custo e razões do excesso anterior
+A passagem g consumiu 552 340 símbolos contra o alvo de 300 000, excesso de 252 340, segundo a medição da direção transcrita no mandato e lida por `medir-custo-i.py`. Os registos conservam 6 tentativas recusadas pelos portões. Foram repetidas construções e conferências, além das correções: `portoes-g-tentativa1`; `portoes-g-tentativa2`; `portoes-g-tentativa3`; `portoes-g-tentativa4`; `portoes-g-tentativa5`; `portoes-g-tentativa6`. As capturas estão em `g/capturas.json` (12 capturas). A reescrita e a conferência das árvores estão em `g/reescrita.json` (45 pares de commits). Estas são as operações documentadas que alargaram o trabalho; não há medição de símbolos por operação que permita repartir o total ou ordenar o seu custo.
+
+A passagem h consumiu 398 154 símbolos contra o alvo de 200 000, excesso de 198 154, segundo a medição da direção transcrita no mandato e lida por `medir-custo-i.py`. Os registos conservam 2 tentativas recusadas pelos portões. Foram repetidas construções e conferências, além das correções: `portoes-h-tentativa1`; `portoes-h-tentativa2`. As capturas estão em `h/capturas-h.json` (60 capturas). Na h, as tentativas de reescrita recusadas e a correção por commit normal estão em `h/rp4n-17.json` e no relato h. Estas são as operações documentadas que alargaram o trabalho; não há medição de símbolos por operação que permita repartir o total ou ordenar o seu custo.
+
+O custo desta passagem só será atribuído se a linha «tokens used» estiver visível. O identificador do modelo nos trailers reproduz o mandato; o runtime não expõe ao agente o identificador exato nem o nível de raciocínio.
+### Commits
+
+| sitio | Mensagem |
+|---|---|
+| 4d92610b3028c78d6dc2b02e3bf12624ea2e0049 | docs(rp4n-i): registar a leitura h, as plantas e o mandato |
+| 6e27d16949d723cc699b2f0c108625d86e0e5cf3 | fix(rp4n-i): conferir a língua em todos os atributos |
+| 40d0849688eb05e7fd58c2ddf32d30e0270ec6c7 | test(rp4n-i): distinguir falha e ausência na procura da cabeça |
+| bddf20857f3ae54a1072840389e08e6b77228e83 | fix(rp4n-i): fechar RP4N-17 com a exceção histórica exata |
+| bf1e71783aa02ce76b6ca05cfe5b07b26eb07cf8 | fix(rp4n-i): não atribuir à cópia a leitura do endereço |
+| 667863d993d98a914d01b1ad2a3f108ee46c8e36 | fix(rp4n-i): anonimizar os registos recebidos de main na cabeça |
+| 22d8cca115331daeecc0661d716e93dc8b81f18e | docs(rp4n-i): medir o excesso de custo e ligar as operações aos registos |
+| 1e11e36c15824ea2b95765897ff30bdf2d1bd7b1 | fix(rp4n-i): explicar os dois totais e inventariar as fontes das decisões |
+| bef0184c90c1aa7e16ddb4c6c7a4bcb8c71b7cdb | test(rp4n-i): exigir leitura própria também no portão das fontes |
+| 333a885c7121663e5b5f61c10fc80efc1f7ebac9 | test(rp4n-i): preparar as medições e o relato pelos ficheiros |
+| b34871dc4269ad715c2bd48e5da4208d8a717a65 | docs(rp4n-i): conservar a versão original do manifesto da pensão |
+| 20d4fda36f183003f0688ece02e3291daaa09813 | fix(rp4n-i): medir as fontes do bloco contra o main recebido |
+| 3eee2de63448b6e81e732879b9c846ee7b543d71 | fix(rp4n-i): apresentar o nome literal da medida e a sua língua |
+| 2aeec1272abab138ccb82ea529433bbce174c624 | fix(rp4n-i): conferir a ausência de leitura própria no C1 |
+| 1ddec358f67093ecc1b83d6850f5654db85b488d | fix(rp4n-i): usar a marca inglesa também nas descrições da página |
+| f99ad385789e293373951ddb77f25ac221181daf | fix(rp4n-i): reconhecer e provar o localizador do nome legal no índice |
+
+
+| motor | Mensagem |
+|---|---|
+| 0d1d54e7a5fb424a2905e3b527a232b88181f2c0 | fix(rp4n-i): selar o total consolidado e a nota do MAPA 4 |
+| cc75e215caf71d5e8cfa77850f1896f3b418c75f | fix(rp4n-i): usar o nome da medida no parágrafo da penalização legal |
+
+
 ## A passagem RP4-n-h
 
 A RP4N-15 fecha pelo ramo de alojamento autorizado no mandato. Não se recuperou o pedido HTTP original: recuperou-se o registo versionado da cópia com os mesmos bytes. A data é a do commit que introduziu esse registo, e os recibos distinguem alojamento de leitura na fonte.

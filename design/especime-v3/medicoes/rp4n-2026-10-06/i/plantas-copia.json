@@ -1,0 +1,12 @@
+{
+  "plantas": [
+    {
+      "nome": "estado do endereço sem verificação da linha (pt)",
+      "mensagem": "RP4N-i: a cópia sem verificação própria herdou o estado do endereço (pt)"
+    },
+    {
+      "nome": "estado do endereço sem verificação da linha (en)",
+      "mensagem": "RP4N-i: a cópia sem verificação própria herdou o estado do endereço (en)"
+    }
+  ]
+}
