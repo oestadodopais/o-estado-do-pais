@@ -78,6 +78,9 @@ const servidor = http.createServer((req,res)=>{
   try {
     const caminho = new URL(req.url,'http://local.invalid').pathname;
     for (const r of regras) if (r.src && !r.has && new RegExp('^'+r.src+'$').test(caminho)) for (const [k,v] of Object.entries(r.headers??{})) res.setHeader(k,v);
+    // A Vercel envia Access-Control-Allow-Origin: * em todas as respostas de ficheiros estáticos (medido a 12.10.2026;
+    // §1.184, terceiro acrescento): o servidor de ensaio faz o mesmo, e o modo «sem-cors» retira-o aos JSON para a planta morder.
+    res.setHeader('Access-Control-Allow-Origin','*');
     const recusa = recusas.find(r => caminho === `/livro-razao/${r.linha.id}.json`);
     if (recusa) {
       const doc = modoAtual === 'recusado-com-campo-'+recusa.campo ? recusa.estragado : recusa.verdadeiro;
