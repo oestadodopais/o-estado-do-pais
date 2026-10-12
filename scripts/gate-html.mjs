@@ -255,7 +255,7 @@ import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
 import { parse, NodeType } from 'node-html-parser';
 
-import { conferirRetiradas } from './linhas-retiradas.mjs';
+import { conferirRetiradas, conferirPublicacaoRetirada } from './linhas-retiradas.mjs';
 import { t } from '../src/i18n/strings.mjs';
 import { unidadeDaLinha } from '../src/i18n/unidades.mjs';
 import {
@@ -4623,6 +4623,7 @@ const cartoesUsados = new Set();
 }
 
 /* ------------------------------------------------------------------ varrimento */
+for(const {ficheiro,mensagem} of conferirPublicacaoRetirada(DIST,livroInteiro)) erros.push({rel:path.relative(DIST,ficheiro),msg:mensagem});
 
 for (const file of ficheirosHtml(DIST)) {
   ficheiros++;
@@ -4634,7 +4635,7 @@ for (const file of ficheirosHtml(DIST)) {
   });
 
   const err = (msg) => erros.push({ rel, msg });
-  for (const erro of conferirRetiradas(html, livroInteiro)) err(erro);
+
 
   // H2, I190: antes das saídas de documentos alojados, em qualquer página.
   for (const a of root.querySelectorAll('a a')) {
