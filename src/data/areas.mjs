@@ -386,9 +386,10 @@ export const AREAS = [
           },
           {
             estudos: ['which-door-is-yours'],
+            listarEstudo: true,
             id: /^avisos-pt2030-/,
             razao:
-              'Os avisos abertos do Portugal 2030, e quantos deles aceitam pessoas singulares, são a execução de um programa financiado por fundos europeus no âmbito da política de coesão da União Europeia. A fonte destas duas linhas está por confirmar, e com a regra da matéria isso deixa de a impedir de ter área: o assunto não depende de quem o publica.',
+              'Os avisos abertos do Portugal 2030, e quantos deles aceitam pessoas singulares, são a execução de um programa financiado por fundos europeus no âmbito da política de coesão da União Europeia. O estudo mantém esta matéria e a sua listagem mesmo quando as contagens de avisos são retiradas por falta de publicador confirmado.',
           },
         ],
       },
