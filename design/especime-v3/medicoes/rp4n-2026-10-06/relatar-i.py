@@ -8,7 +8,7 @@ m=le('medidas.json');v=le('privacidade.json');c=le('capturas-i.json');fontes=le(
 heads={k:le('commits-'+k+'.json') for k in ['sitio','motor']}
 s='''\n## A passagem RP4-n-i
 
-O Método inglês passa a usar `[to verify]` também nos atributos. A conferência lê todos os atributos de todos os elementos de todas as páginas construídas, além do texto, com estragos em `title`, `aria-label`, `alt` e `data-*`. A afirmação excessiva do relato h foi corrigida também no seu gerador.
+O Método inglês passa a usar `[to verify]` também nos atributos. A conferência lê todos os atributos de todos os elementos de todas as páginas construídas, além do texto, com estragos em `title`, `aria-label`, `alt`, `data-*` e `content`. A cobertura nova encontrou também a marca portuguesa nas descrições `meta content` do saldo natural inglês; a composição dessas descrições passou a usar a marca da edição. A afirmação excessiva do relato h foi corrigida também no seu gerador.
 
 O recibo de uma linha com `access_date_kind: hosted-copy` e sem verificações próprias conserva a data da cópia alojada e declara a ausência de leitura na fonte. O estado do endereço deixa de ser uma verificação dessa linha, tanto na cabeça do recibo como no bloco das verificações. A pensão que tem uma verificação própria conserva o estado. A ambiguidade pequena do achado foi resolvida no âmbito das cópias alojadas; não se alterou a política das restantes linhas.
 
