@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-12T10:50:53+00:00",
+ "copia": "<scratchpad>/rp4n/pacote-leitura-e",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/livro-razao/agua-nao-faturada-portugal-2024/index.html",
+   "descricao": "o excerto da definição da água na página construída portuguesa diz «cobrada» em vez de «faturada», contra a página 106 do RASARP alojado e o registo do motor",
+   "sha256_antes": "6d28918946bd3b7b2b33572d55c82150aa70c8dd2e7e4ceb44949fd1f172bfaa",
+   "sha256_depois": "ac53e8eefe929e8c511cf9b6c11c07a7b0ce2b6ac2642177fe6d82c416bee524",
+   "contexto_antes": "ass=\"def-excerto-texto\" lang=\"pt-PT\" data-verbatim=\"origem-rp4n-agua-nao-faturada-excerto\">O indicador é definido como a percentagem de água entrada\nno sistema que não é faturada (conceito a aplicar a entidades\ngestoras de sistemas em alta e em baixa).</blockquote><p class=\"def-excerto-lido\"><span class=\"def-origem-k\">lido na fonte a</s",
+   "contexto_depois": "ass=\"def-excerto-texto\" lang=\"pt-PT\" data-verbatim=\"origem-rp4n-agua-nao-faturada-excerto\">O indicador é definido como a percentagem de água entrada\nno sistema que não é cobrada (conceito a aplicar a entidades\ngestoras de sistemas em alta e em baixa).</blockquote><p class=\"def-excerto-lido\"><span class=\"def-origem-k\">lido na fonte a</s"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/en/ledger/agua-nao-faturada-portugal-2024/index.html",
+   "descricao": "a página construída inglesa aponta a definição à página 160 do RASARP, e não à 106 que o motor selou",
+   "sha256_antes": "32506af7778407e3035559a1eedd1d317ab14cb562e9d390ca348db01935359d",
+   "sha256_depois": "b4a688be038800a78a745112746d0522820d21f9c9da33a53cf0cd9ede83c99c",
+   "contexto_antes": "arp-2025/rasarp2025-volume1.pdf\" rel=\"noopener noreferrer external\" data-verbatim=\"origem-rp4n-agua-nao-faturada-documento\" lang=\"pt-PT\">RASARP 2025, volume 1, página 106, AA08 Água não faturada</a></p><details class=\"def-excerto\"><summary class=\"def-excerto-abrir\"><span class=\"dobra-seta\" aria-hidden=\"true\"></span><span class=\"",
+   "contexto_depois": "arp-2025/rasarp2025-volume1.pdf\" rel=\"noopener noreferrer external\" data-verbatim=\"origem-rp4n-agua-nao-faturada-documento\" lang=\"pt-PT\">RASARP 2025, volume 1, página 160, AA08 Água não faturada</a></p><details class=\"def-excerto\"><summary class=\"def-excerto-abrir\"><span class=\"dobra-seta\" aria-hidden=\"true\"></span><span class=\""
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a prova da retirada das condutas diz 7950 HTML percorridos no relatório, contra e/retirada.json",
+   "sha256_antes": "94f03d80204e08a87ee3d796becafb90996dd07216ab047c612321765413f27f",
+   "sha256_depois": "21c2b18d82c2eca83f1706b5cee548065da9d928022124bf26303bd348bddc42",
+   "contexto_antes": "aparece fechada nas capturas; a presença e o texto da prova dentro dela são conferidos pela célula e pelas plantas das duas edições.\n\nA prova `e/retirada.json` percorreu 7905 HTML e encontrou 0 referências ao identificador das condutas. A linha bruta continua conservada e retirada; não pertence ao carregador público. A identidade do conj",
+   "contexto_depois": "aparece fechada nas capturas; a presença e o texto da prova dentro dela são conferidos pela célula e pelas plantas das duas edições.\n\nA prova `e/retirada.json` percorreu 7950 HTML e encontrou 0 referências ao identificador das condutas. A linha bruta continua conservada e retirada; não pertence ao carregador público. A identidade do conj"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "src/lib/ledger.mjs",
+   "descricao": "o carregador público deixa de excluir as linhas retiradas (publication: withdrawn), na cópia, contra o diff e a planta da retirada",
+   "sha256_antes": "522cd186774d56f9eb85fb4e9c4572f22c8e476c15820a4514c06c596c6cb655",
+   "sha256_depois": "01a4adea309faeb33da1cc5d9ce59749413300aa1673a9674048b6a3a24ea687",
+   "contexto_antes": "id repetido \"${doc.id}\" (${file} e ${map.get(doc.id)?.__file}).`);\n    }\n    map.set(doc.id, doc);\n  }\n  _cache = map;\n  _publicCache = new Map([...map].filter(([, c]) => c.publication !== 'withdrawn'));\n  return includeWithdrawn ? map : _publicCache;\n}\n\n/**\n * Uma afirmação, pelo id. Lança — em build — se não existir. Este é o portão (a).\n *\n * @param {strin",
+   "contexto_depois": "id repetido \"${doc.id}\" (${file} e ${map.get(doc.id)?.__file}).`);\n    }\n    map.set(doc.id, doc);\n  }\n  _cache = map;\n  _publicCache = new Map([...map].filter(([, c]) => c.publication !== 'retirada'));\n  return includeWithdrawn ? map : _publicCache;\n}\n\n/**\n * Uma afirmação, pelo id. Lança — em build — se não existir. Este é o portão (a).\n *\n * @param {strin"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/en/ledger/avisos-pt2030-pessoas-singulares/index.html",
+   "descricao": "a frase da ausência na página construída inglesa do aviso é uma paráfrase, e não a frase exata do mandato que a K17 confere",
+   "sha256_antes": "23780c00fc2198ae937324ca66d0a14efef310799a0300aff9aea01a8955eb8f",
+   "sha256_depois": "43eb15c3a92002a5ecd9fc45ed52bcbf6b9357ea07dc09fb9246ecbfabe407bd",
+   "contexto_antes": "milia=\"avisos-pt2030-pessoas-singulares\"><p class=\"linha-o-que-e-k\" data-voz>What this number is</p><p class=\"linha-o-que-e-frase\" data-o-que-e-parte=\"o-que-e\">The source publishes this number without defining it in words.</p></div><p class=\"linha-valor\"><span data-claim=\"avisos-pt2030-pessoas-singulares\" class=\"claim-value linha-valor-num\">1</span> <span class=\"campo-valor linha",
+   "contexto_depois": "milia=\"avisos-pt2030-pessoas-singulares\"><p class=\"linha-o-que-e-k\" data-voz>What this number is</p><p class=\"linha-o-que-e-frase\" data-o-que-e-parte=\"o-que-e\">The source does not define this number in words.</p></div><p class=\"linha-valor\"><span data-claim=\"avisos-pt2030-pessoas-singulares\" class=\"claim-value linha-valor-num\">1</span> <span class=\"campo-valor linha"
+  }
+ ]
+}
