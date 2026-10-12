@@ -6,7 +6,7 @@ import { parse } from 'node-html-parser';
 import { dadosDaIncorporacao, codigoDaIncorporacao, podeIncorporar } from '../../src/lib/incorporar.mjs';
 import { allClaims, eDerivada, camposPorVerificar, documentoDaLinha } from '../../src/lib/ledger.mjs';
 import { routePath, matchPath } from '../../src/lib/routes.mjs';
-import { conferirExemploNoMetodo, conferirInventarioIncorporacao, provenienciaConfirmada, conferirCodigo, lerPaginaComCodigo, tirarCodigoConferido, conferirCors, conferirJson } from '../../scripts/incorporar-do-portao.mjs';
+import { conferirExemploNoMetodo, conferirInventarioIncorporacao, provenienciaConfirmada, conferirCodigo, lerPaginaComCodigo, tirarCodigoConferido, conferirCors, conferirJson, codigoEsperado } from '../../scripts/incorporar-do-portao.mjs';
 const dist = process.env.OEDP_DIST || 'dist';
 const linhas = allClaims();
 const resultados = { comando: 'node tests/incorporar/conferir.mjs', recibos: 0, semCodigo: 0, comCodigo: 0, json: 0, plantas: [] };
@@ -23,6 +23,18 @@ for (const c of linhas) {
   resultados.json++;
 }
 const c = linhas.find(c => c.source_url && c.corrections?.some(x => x.kind === 'atualizacao' && x.new_value === c.value));
+const semData = {...linhas.find(c=>!eDerivada(c)&&podeIncorporar(c)),access_date:null};
+const mensagemSemData = 'ER1 livro: uma linha não derivada não tem data de leitura.';
+for (const lang of ['pt','en']) {
+  const caminho = routePath('linha',lang,{slug:semData.id});
+  const root = lerPaginaComCodigo(fs.readFileSync(`${dist}${caminho}/index.html`,'utf8'));
+  const doc = JSON.parse(fs.readFileSync(`${dist}/livro-razao/${semData.id}.json`,'utf8'));
+  assert.deepEqual(conferirCodigo(root,matchPath(caminho),new Map([[semData.id,semData]])),[mensagemSemData]);
+  assert.deepEqual(conferirJson(doc,semData,lang),[mensagemSemData]);
+  for (const compor of [dadosDaIncorporacao,codigoDaIncorporacao,codigoEsperado])
+    assert.throws(()=>compor(semData,lang),{message:mensagemSemData});
+  resultados.plantas.push({nome:'nao-derivada-sem-data-'+lang,mensagem:mensagemSemData,mordeu:true});
+}
 const rota = matchPath(routePath('linha','pt',{slug:c.id}));
 const inteiro = fs.readFileSync(`${dist}${routePath('linha','pt',{slug:c.id})}/index.html`, 'utf8');
 function planta(nome, muda, mensagem, html = inteiro) {

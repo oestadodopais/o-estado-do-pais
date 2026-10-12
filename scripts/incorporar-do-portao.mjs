@@ -1,8 +1,9 @@
 import fs from 'node:fs';
 import { REGRAS } from '../src/data/metodo.mjs';
 import { lugarDaIncorporacao } from '../src/lib/lugar-da-incorporacao.mjs';
-/* Leitura do ER1 pelos portões. Não importa o compositor do código nem o do
-   JSON. Os nomes e as traduções são declarações comuns; os campos, as datas,
+import { leituraDaIncorporacao, conferirDataDaIncorporacao } from '../src/lib/leitura-da-incorporacao.mjs';
+/* Leitura do ER1 pelos portões. Partilha a regra da leitura, mas não o
+   compositor do código nem o do JSON. Os nomes e as traduções são declarações comuns; os campos, as datas,
    os bytes e a escolha da releitura são recontados aqui. */
 import { allClaims, provenienciaIncompleta } from '../src/lib/ledger.mjs';
 import { nomeNoRecibo } from '../src/lib/o-que-e-o-numero.mjs';
@@ -43,7 +44,7 @@ export function dadosEsperados(c, lang) {
     periodo: c.reference_date ? dataDaCasa(c.reference_date, lang) : palavras.periodoEmFalta,
     valor: String(c.value), unidade: un.texto, unidadeLang: un.lingua || t(lang).lang,
     fonte: c.source || palavras.calculado, fonteLang: (c.source && linguaDaFonte(c.source, lang)) || t(lang).lang,
-    data: dia, leitura: dia ? palavras.lido + ' ' + dataDaCasa(dia, lang) : Array.isArray(c.derived_from) && c.derived_from.length ? palavras.calculado : '',
+    data: dia, leitura: leituraDaIncorporacao(c, lang, dia),
     atribuicao: LICENCA ? LICENCA.atribuicao + ', ' + LICENCA.nome : '',
     notas: [c[lang === 'en' ? 'source_flag_note_en' : 'source_flag_note'], c[lang === 'en' ? 'ressalva_en' : 'ressalva']].filter(Boolean).join(' '),
     atualizacao: mudanca ? palavras.atualizado + ' ' + dataDaCasa(mudanca, lang) : '',
@@ -57,10 +58,9 @@ export function provenienciaConfirmada(c) {
 
 export function codigoEsperado(c, lang) {
   const d = dadosEsperados(c, lang);
-  const p = t(lang).incorporar;
   const origem = 'https://' + SITE_HOST_DISPLAY;
   const href = origem + (lang === 'en' ? '/en/ledger/' : '/livro-razao/') + c.id;
-  const lido = c.access_date ? p.lido + ' ' + dataDaCasa(c.access_date, lang) : p.calculado;
+  const lido = leituraDaIncorporacao(c, lang);
   return `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${escape(c.id)}" data-oedp-valor="${escape(c.value)}" data-oedp-lido="${escape(c.access_date)}"><a href="${href}">${escape(d.nome)}, ${escape(d.periodo)}: ${escape(c.value)} <span lang="${d.unidadeLang}">${escape(d.unidade)}</span></a> · <span lang="${d.fonteLang}">${escape(d.fonte)}</span>${d.fonte === lido ? '' : ', ' + escape(lido)} · ${escape(d.atribuicao)}${d.notas ? ` · <span>${escape(d.notas)}</span>` : ''}</p><script async src="${origem}/incorporar.js" referrerpolicy="no-referrer" crossorigin="anonymous"></script>`;
 }
 
@@ -93,6 +93,7 @@ export function conferirCodigo(root, rota, livro = linhas) {
   const campos = root.querySelectorAll('[data-incorporar-codigo]');
   if (campos.length && !leiturasLiterais.has(root)) erros.push('ER1 código: falta a leitura literal do campo.');
   const linha = rota?.key === 'linha' ? livro.get(rota.params.slug) : null;
+  if (linha && conferirDataDaIncorporacao(linha).length) return [...erros, ...conferirDataDaIncorporacao(linha)];
   for (const campo of campos) if (/\[a verificar\]/i.test(campo.textContent))
     erros.push('ER1 código: uma marca por confirmar não se incorpora.');
   if (linha && LICENCA && !provenienciaConfirmada(linha)) {
@@ -133,6 +134,8 @@ export function conferirCodigo(root, rota, livro = linhas) {
 }
 
 export function conferirJson(doc, c, lang) {
+  const errosData = conferirDataDaIncorporacao(c);
+  if (errosData.length) return errosData;
   if (doc?.linha?.id !== c.id || doc?.linha?.value !== c.value)
     return ['ER1 JSON: a apresentação difere da linha.'];
   const presente = Object.hasOwn(doc ?? {}, 'incorporacao');
