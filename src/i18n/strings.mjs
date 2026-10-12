@@ -310,6 +310,7 @@ export const STRINGS = {
          recibo, que é onde ele diz o que diz. */
       definicaoDe: 'Definição de',
       paginaDaDefinicao: 'página',
+      dataOriginalAusente: 'Data do pedido original por confirmar.',
       marcadorDoSelo: '[a verificar]',
       /* A palavra que o selo escreve, à vista (IDENTIDADE.md §5.4). Esteve
          escondida para leitores de ecrã até à v2, e um leitor com vista via só
@@ -3322,6 +3323,7 @@ export const STRINGS = {
       /** Ver a razão na edição portuguesa (achado 2, 15.09.2026). */
       definicaoDe: 'Definition by',
       paginaDaDefinicao: 'page',
+      dataOriginalAusente: 'Original request date to be confirmed.',
       marcadorDoSelo: '[to verify]',
       selo: 'source',
       seloDaCasa: 'row',
