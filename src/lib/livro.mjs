@@ -94,7 +94,7 @@ export function tituloDaLinha(claim, lang) {
 /**
  * A descrição de uma página de linha, composta dos campos da própria linha.
  *
- * Um campo por confirmar entra como está — «[a verificar]». A descrição de uma
+ * Um campo por confirmar entra com a marca da língua da edição. A descrição de uma
  * linha incompleta diz que está incompleta; não se compõe uma frase que pareça
  * completa a partir de campos que não estão.
  *
@@ -118,5 +118,5 @@ export function descricaoDaLinha(claim, lang) {
   if (claim.access_date) partes.push(`${claim.access_date_kind === 'hosted-copy' ? s.prov.copiaAlojada : s.prov.lido} ${claim.access_date}`);
   if (claim.reference_date) partes.push(`${s.prov.referencia} ${claim.reference_date}`);
 
-  return partes.join(' · ') + '.';
+  return partes.join(' · ').replaceAll('[a verificar]', s.prov.marcadorDoSelo) + '.';
 }

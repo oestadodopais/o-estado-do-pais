@@ -86,7 +86,7 @@ for(const lang of ['pt','en']) {
  alvo.insertAdjacentHTML('beforeend','<span class="marcador-definicao">glosa intrusa</span>');
  morde(`glosa a meio da K2 (${lang})`,k2(tema),'a glosa interrompe');
  const errada=lang==='pt'?'[to verify]':'[a verificar]';
- for(const [forma,html] of [['selo',`<a class="src-chip"><span class="marcador">${errada}</span></a>`],['campo',`<a class="marcador" data-linha-campo="excerpt">${errada}</a>`],['frase',`<p>${errada}</p>`],['marca de água',`<span data-marca="${errada}"></span>`],...['title','aria-label','alt','data-prova'].map(a=>[a,`<span ${a}="${errada}"></span>`])]) {
+ for(const [forma,html] of [['selo',`<a class="src-chip"><span class="marcador">${errada}</span></a>`],['campo',`<a class="marcador" data-linha-campo="excerpt">${errada}</a>`],['frase',`<p>${errada}</p>`],['marca de água',`<span data-marca="${errada}"></span>`],...['title','aria-label','alt','data-prova','content'].map(a=>[a,`<span ${a}="${errada}"></span>`])]) {
   morde(`marca traduzida incorretamente (${lang}, ${forma})`,lingua(parse(html),lang),'marca fora');
  }
 }
