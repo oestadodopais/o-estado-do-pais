@@ -1,0 +1,17 @@
+PLANTA nome legal trocado pelo título do relatório: RP4N-i: o nome legal não é a medida no parágrafo da fonte
+PLANTA data escrita no guião em vez do pedido: RP4N-h: a data ou o tipo da pensão difere da prova da cópia
+PLANTA resumo da cópia trocado: RP4N-h: o corpo da pensão difere da prova de alojamento
+PLANTA manifesto do alojamento trocado: RP4N-h: o manifesto do commit não prova estes bytes da pensão
+PLANTA alojamento sem registo: RP4N-h: a pensão não tem pedido nem registo de alojamento; retirar as linhas
+PLANTA alojamento dito leitura HTTP: RP4N-h: a data ou o tipo da pensão difere da prova da cópia
+PLANTA pensão com valor emendado à legenda: RP4N-f: o excerto da pensão não é a legenda contígua da página
+PLANTA segunda fonte com bytes diferentes: segunda fonte sem recibo conferido no motor
+PLANTA excerto emendado por trechos: RO1: um excerto tem de ser uma sequência contígua, sem trechos
+PLANTA água atribuída à APA: RO1: as origens ou os selos diferem da seleção e dos recibos
+PLANTA água com outra página: RO1: o excerto difere da leitura literal do documento
+PLANTA palavra acrescentada: RO1: o excerto difere da leitura literal do documento
+PLANTA resumo de outro documento: RO1: o sha256 da origem difere do documento
+PLANTA cliente inventado: RO1: as origens ou os selos diferem da seleção e dos recibos
+PLANTA origem apagada: RO1: as origens ou os selos diferem da seleção e dos recibos
+PLANTA caminho fora do motor: RO1: o ficheiro da origem não existe dentro do motor
+ORIGENS: PASS, 32 origens, 8 plantas

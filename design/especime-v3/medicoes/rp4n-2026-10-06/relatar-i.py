@@ -62,7 +62,8 @@ s+=f"O manifesto `i/capturas-i.json` contém {len(c['capturas'])} capturas nas l
 s+=tabela(['Ficheiro','sha256'],[(x['ficheiro'],x['sha256']) for x in c['capturas']])
 s+='### Custo e razões do excesso anterior\n'
 for fase,x in custo['passagens'].items():
- s+=f"A passagem {fase} consumiu {x['simbolos']:,} símbolos contra o alvo de {x['alvo']:,}, excesso de {x['excesso']:,}, segundo a medição da direção transcrita no mandato e lida por `medir-custo-i.py`. ".replace(',',' ')
+ numeros={k:format(x[k],',').replace(',',' ') for k in ['simbolos','alvo','excesso']}
+ s+=f"A passagem {fase} consumiu {numeros['simbolos']} símbolos contra o alvo de {numeros['alvo']}, excesso de {numeros['excesso']}, segundo a medição da direção transcrita no mandato e lida por `medir-custo-i.py`. "
  s+=f"Os registos conservam {len(x['tentativas_recusadas'])} tentativas recusadas pelos portões. Foram repetidas construções e conferências, além das correções: "+'; '.join('`'+t['pasta']+'`' for t in x['tentativas_recusadas'])+'. '
  s+='As capturas estão em '+('; '.join('`'+a['ficheiro']+'` ('+str(a['capturas'])+' capturas)' for a in x['capturas']))+'. '
  if x['reescritas']:s+='A reescrita e a conferência das árvores estão em '+('; '.join('`'+a['ficheiro']+'` ('+str(a['pares'])+' pares de commits)' for a in x['reescritas']))+'. '

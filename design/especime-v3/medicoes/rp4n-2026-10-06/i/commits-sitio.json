@@ -1,0 +1,70 @@
+{
+  "base": "c263080105981e81d0c273e3b0cfc53ac399ce4a",
+  "cabeca": "f99ad385789e293373951ddb77f25ac221181daf",
+  "commits": [
+    {
+      "sha": "4d92610b3028c78d6dc2b02e3bf12624ea2e0049",
+      "titulo": "docs(rp4n-i): registar a leitura h, as plantas e o mandato"
+    },
+    {
+      "sha": "6e27d16949d723cc699b2f0c108625d86e0e5cf3",
+      "titulo": "fix(rp4n-i): conferir a língua em todos os atributos"
+    },
+    {
+      "sha": "40d0849688eb05e7fd58c2ddf32d30e0270ec6c7",
+      "titulo": "test(rp4n-i): distinguir falha e ausência na procura da cabeça"
+    },
+    {
+      "sha": "bddf20857f3ae54a1072840389e08e6b77228e83",
+      "titulo": "fix(rp4n-i): fechar RP4N-17 com a exceção histórica exata"
+    },
+    {
+      "sha": "bf1e71783aa02ce76b6ca05cfe5b07b26eb07cf8",
+      "titulo": "fix(rp4n-i): não atribuir à cópia a leitura do endereço"
+    },
+    {
+      "sha": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "titulo": "fix(rp4n-i): anonimizar os registos recebidos de main na cabeça"
+    },
+    {
+      "sha": "22d8cca115331daeecc0661d716e93dc8b81f18e",
+      "titulo": "docs(rp4n-i): medir o excesso de custo e ligar as operações aos registos"
+    },
+    {
+      "sha": "1e11e36c15824ea2b95765897ff30bdf2d1bd7b1",
+      "titulo": "fix(rp4n-i): explicar os dois totais e inventariar as fontes das decisões"
+    },
+    {
+      "sha": "bef0184c90c1aa7e16ddb4c6c7a4bcb8c71b7cdb",
+      "titulo": "test(rp4n-i): exigir leitura própria também no portão das fontes"
+    },
+    {
+      "sha": "333a885c7121663e5b5f61c10fc80efc1f7ebac9",
+      "titulo": "test(rp4n-i): preparar as medições e o relato pelos ficheiros"
+    },
+    {
+      "sha": "b34871dc4269ad715c2bd48e5da4208d8a717a65",
+      "titulo": "docs(rp4n-i): conservar a versão original do manifesto da pensão"
+    },
+    {
+      "sha": "20d4fda36f183003f0688ece02e3291daaa09813",
+      "titulo": "fix(rp4n-i): medir as fontes do bloco contra o main recebido"
+    },
+    {
+      "sha": "3eee2de63448b6e81e732879b9c846ee7b543d71",
+      "titulo": "fix(rp4n-i): apresentar o nome literal da medida e a sua língua"
+    },
+    {
+      "sha": "2aeec1272abab138ccb82ea529433bbce174c624",
+      "titulo": "fix(rp4n-i): conferir a ausência de leitura própria no C1"
+    },
+    {
+      "sha": "1ddec358f67093ecc1b83d6850f5654db85b488d",
+      "titulo": "fix(rp4n-i): usar a marca inglesa também nas descrições da página"
+    },
+    {
+      "sha": "f99ad385789e293373951ddb77f25ac221181daf",
+      "titulo": "fix(rp4n-i): reconhecer e provar o localizador do nome legal no índice"
+    }
+  ]
+}

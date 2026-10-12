@@ -1,0 +1,83 @@
+{
+  "cabeca": "f99ad385789e293373951ddb77f25ac221181daf",
+  "versao": {
+    "commit": "f99ad385789e293373951ddb77f25ac221181daf",
+    "ref": "rp4n-2026-10-07",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-12T17:04:44.072Z"
+  },
+  "vistos": [
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/corte-pt-390.png",
+      "sha256": "5a83480aba796d6d395ca07d381d8158f5c74c61d6d12f1086a57707af2c14a9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/corte-pt-1600.png",
+      "sha256": "4ca4f2f7195793c63c28cf9c0256d09fd4990d1a042c79d74e4961a294536e15"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/corte-en-390.png",
+      "sha256": "4bebc48cfd2ae644e384281b20511c5ed5b1f66cfb8c71434b8f23d8b30c95fa"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/corte-en-1600.png",
+      "sha256": "4677451a18493be246d7554306a0a35b2cb0f42323e22d62887abbba36f46063"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/legal-pt-390.png",
+      "sha256": "6cb068da9da10b15639e4fe5bf866c970ed18ca1c9fd677999268202981bcabf"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/legal-pt-1600.png",
+      "sha256": "0926eacd61d9919351291b03da8231854f4437d23bd69bedde9b7d233683aaf3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/legal-en-390.png",
+      "sha256": "b60039edaf6f6848511fa4438b7cccacf808af2d90ec8cbbe2a310d58bd26a69"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/legal-en-1600.png",
+      "sha256": "5291b66510b54c4fa0e570fb6ab2d415a8fefe7c00f06760807024bed388bceb"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-pt-390.png",
+      "sha256": "36ca12b395f752bc1173ba67a60e73e8666a9916b32f9d20f9635f0ae11152ed"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-pt-1600.png",
+      "sha256": "8e986269e89b46c5cc1e9362370926122f80ffc1e1de7ea27eb9d5c40e5460f3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-en-390.png",
+      "sha256": "b3d87b29cf431f99cc858949344eda2dc8bd5d7df52f442587c2f9237404c2b2"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/ministerios-en-1600.png",
+      "sha256": "077629c488891f69defcca905324e9d5de141c98f58b8b7b7416323f57543cd1"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/metodo-en-390.png",
+      "sha256": "9f6e3e01da734fb171232194354a83bd10e22de298d15d2c11f815193d5946ff"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/metodo-en-768.png",
+      "sha256": "34a420318ea05e926ec9514b10091d064c5b60f22107a2c224eda5271cb951a0"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/metodo-en-1024.png",
+      "sha256": "5e84550563b5d016f50c262393ed5bfb56691a5920369aa96d7a36c21ed5485d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/metodo-en-1280.png",
+      "sha256": "876031fbf612b274e678bba9a45d57844cbab7e26af662d096041351d62e64f6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/i/metodo-en-1600.png",
+      "sha256": "ead39995e64d833e924ab1f41d5ebfc9f943bc9aa61537014aeb6368e2dd98b6"
+    }
+  ],
+  "observacao": "Inspeção visual dos recibos nas duas edições a 390 e 1600, e do Método inglês nas cinco larguras. Texto, prova, nome na fonte e bloco das verificações sem cortes ou sobreposições nesta amostra. As restantes larguras foram medidas automaticamente no manifesto. Os atributos da língua foram conferidos no HTML, pois uma captura sem interação não mostra o title.",
+  "problemas_na_amostra": []
+}
