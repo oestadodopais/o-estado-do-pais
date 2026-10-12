@@ -646,8 +646,13 @@ export function conferirContabilidadeDosRamos(main, e, lang, linhas) {
     if (b.paragrafo) andar(b.paragrafo[lang], `seccoes[${i}].conteudo[${j}].paragrafo`);
   }));
   e.naoDiz.forEach((/** @type {any} */ p, /** @type {number} */ i) => andar(p[lang], `naoDiz[${i}]`));
-  const copia = parse(main.outerHTML);
-  copia.querySelectorAll('.src-chip, .claim-provisorio-chip').forEach((/** @type {any} */ n) => n.remove());
+  // Uma leitura mantém os selos para apanhar ramos escondidos pela classe;
+  // outra tira-os para recompor ramos que atravessam valores com selos legítimos.
+  const completa = parse(main.outerHTML), semSelos = parse(main.outerHTML);
+  semSelos.querySelectorAll('.src-chip, .claim-provisorio-chip').forEach((/** @type {any} */ n) => n.remove());
+  /** @type {string[]} */
+  const erros = [];
+  for (const copia of [completa, semSelos]) {
   let texto = '';
   /** @type {{ inicio: number, fim: number, caminho: string }[]} */
   const intervalos = [];
@@ -659,8 +664,6 @@ export function conferirContabilidadeDosRamos(main, e, lang, linhas) {
     if (caminho) intervalos.push({ inicio, fim: texto.length, caminho });
   };
   ler(copia);
-  /** @type {string[]} */
-  const erros = [];
   for (const [ramo, permitidos] of ramos) {
     const literal = ramo.split(' ').map(p => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('[\\s   ]+');
     for (const m of texto.matchAll(new RegExp(literal, 'g'))) {
@@ -670,7 +673,8 @@ export function conferirContabilidadeDosRamos(main, e, lang, linhas) {
       }
     }
   }
-  return erros;
+  }
+  return [...new Set(erros)];
 }
 
 /**
@@ -824,6 +828,9 @@ export function plantasDaExplicacao(dist) {
       r.querySelector('main').insertAdjacentHTML('beforeend', `<p>${texto.replace('(', '<span>(').replace(')', ')</span>')}</p>`);
     }, /X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu/);
   }
+  naPagina('EX1-e: ramo disfarçado com a classe de um selo', (r) => {
+    r.querySelector('main').insertAdjacentHTML('beforeend', '<p class="src-chip">um saldo nulo (recebeu o mesmo que gastou)</p>');
+  }, /X6 · contabilidade dos ramos: ocorrência sem parágrafo que a escolheu/);
   naPagina('EX1-d: o ramo do ano anterior acrescentado à execução', (r) => {
     const p = saldoExecucao(r);
     p.set_content(p.innerHTML + ' um excedente (recebeu mais do que gastou)');
