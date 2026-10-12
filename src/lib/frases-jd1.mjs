@@ -6,9 +6,14 @@ export const AMORTIZACOES_JD1 = 'amortizacoes-e-anulacoes-de-divida-fundada-2025
 /** @param {string} id @param {'pt'|'en'} lang */
 export function parcelaDoFinanciamento(id, lang) {
   if (id === AMORTIZACOES_JD1) {
-    const quadro = quadroFinanciamentoJd1(loadClaims().get(id).excerpt);
+    const excerto = loadClaims().get(id)?.excerpt;
+    if (typeof excerto !== 'string') throw new Error('JD1: falta o excerto selado das amortizações.');
+    const quadro = quadroFinanciamentoJd1(excerto);
     const parcela = quadro.linhas.find(linha => linha.destaque === 'parcela');
-    const diferenca = parsePtNumber(parcela.celulas[2]) - parsePtNumber(parcela.celulas[1]);
+    if (!parcela) throw new Error('JD1: falta a parcela no quadro.');
+    const atual = parsePtNumber(parcela.celulas[2]), anterior = parsePtNumber(parcela.celulas[1]);
+    if (atual === null || anterior === null) throw new Error('JD1: a parcela não tem dois montantes comparáveis.');
+    const diferenca = atual - anterior;
     const comparacao = lang === 'pt'
       ? diferenca > 0 ? 'Mais do que' : diferenca < 0 ? 'Menos do que' : 'O mesmo montante que'
       : diferenca > 0 ? 'More than' : diferenca < 0 ? 'Less than' : 'The same amount as';
