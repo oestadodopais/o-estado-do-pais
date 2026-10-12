@@ -21,6 +21,9 @@ export function lingua(root,lang) {
  const erros=[];
  for(const e of root.querySelectorAll('.marcador'))if(normal(e.textContent)!==esperado)erros.push('RP4N-h: marca fora da língua da edição ('+lang+', texto)');
  for(const e of root.querySelectorAll('[data-marca]'))if(e.getAttribute('data-marca')!==esperado)erros.push('RP4N-h: marca fora da língua da edição ('+lang+', marca de água)');
+ // RP4-n-i: todos os atributos, mesmo fora dos componentes da marca.
+ for(const e of root.querySelectorAll('*'))for(const [nome,valor] of Object.entries(e.attributes))
+  if(valor.includes(lang==='pt'?'[to verify]':'[a verificar]'))erros.push('RP4N-i: marca fora da língua da edição ('+lang+', atributo '+nome+')');
  const copia=parse(root.toString());
  for(const e of copia.querySelectorAll('script,style,[data-verbatim]'))e.remove();
  if(copia.textContent.includes(lang==='pt'?'[to verify]':'[a verificar]'))erros.push('RP4N-h: marca fora da língua da edição ('+lang+', texto fora do componente)');
@@ -83,10 +86,11 @@ for(const lang of ['pt','en']) {
  alvo.insertAdjacentHTML('beforeend','<span class="marcador-definicao">glosa intrusa</span>');
  morde(`glosa a meio da K2 (${lang})`,k2(tema),'a glosa interrompe');
  const errada=lang==='pt'?'[to verify]':'[a verificar]';
- for(const [forma,html] of [['selo',`<a class="src-chip"><span class="marcador">${errada}</span></a>`],['campo',`<a class="marcador" data-linha-campo="excerpt">${errada}</a>`],['frase',`<p>${errada}</p>`],['marca de água',`<span data-marca="${errada}"></span>`]]) {
+ for(const [forma,html] of [['selo',`<a class="src-chip"><span class="marcador">${errada}</span></a>`],['campo',`<a class="marcador" data-linha-campo="excerpt">${errada}</a>`],['frase',`<p>${errada}</p>`],['marca de água',`<span data-marca="${errada}"></span>`],...['title','aria-label','alt','data-prova'].map(a=>[a,`<span ${a}="${errada}"></span>`])]) {
   morde(`marca traduzida incorretamente (${lang}, ${forma})`,lingua(parse(html),lang),'marca fora');
  }
 }
+if(process.argv.includes('--registo-i'))fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/i/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 if(process.argv.includes('--registo-h'))fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/h/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 for(const p of plantas)console.log(`PLANTA ${p.nome}: ${p.mensagem}`);
 console.log(`RP4N-h: PASS, ${plantas.length} plantas`);
