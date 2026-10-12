@@ -3462,13 +3462,13 @@ export const STRINGS = {
     },
 
     marcador: {
-      metaTitle: 'The [a verificar] marker · O Estado do País',
+      metaTitle: 'The [to verify] marker · O Estado do País',
       metaDescription:
         'What this site’s uncertainty marker means, why it exists, and what happens to a row that carries it.',
       eyebrow: 'The marker',
       h1: 'What this marker means',
       lede:
-        'It is the only uncertainty marker on this site. It appears where a field has not been confirmed against the source. The marker is kept in Portuguese, as in the original; it reads “to verify”.',
+        'It is the only uncertainty marker on this site. It appears where a field has not been confirmed against the source. The marker reads “[to verify]” in the English edition.',
       /* O par inglês da definição (CHAVES-EN.md). O marcador fica em português
          nas duas edições, e a frase que o define é da língua da página. */
       definicao: 'a field not confirmed against the source, not a doubt about what is published',

@@ -9,7 +9,7 @@ function morde(nome,erros,mensagem) {
  plantas.push({nome,mensagem:erro});console.log(`PLANTA ${nome}: ${erro}`);
 }
 function selos(root,lang) {
- return root.querySelectorAll('.src-chip .marcador').flatMap(el=>el.textContent===t(lang).prov.marcadorDoSelo?[]:[`RP4N-g: o selo não está na língua da edição ${lang}`]);
+ return root.querySelectorAll('.marcador').flatMap(el=>el.textContent===t(lang).prov.marcadorDoSelo?[]:[`RP4N-g: o selo não está na língua da edição ${lang}`]);
 }
 for(const lang of ['pt','en']) {
  const root=parse(fs.readFileSync(`dist/${lang==='en'?'en/':''}areas/economia-e-coesao-territorial/index.html`,'utf8'));

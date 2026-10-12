@@ -6838,7 +6838,8 @@ for (const file of ficheirosHtml(DIST)) {
       continue;
     }
 
-    const esperado = campoDaLinha(claim, campo, linguaPagina);
+    const bruto = campoDaLinha(claim, campo, linguaPagina);
+    const esperado = bruto === POR_VERIFICAR && linguaPagina === 'en' ? '[to verify]' : bruto;
     if (esperado === null || esperado === undefined) {
       err(
         `a página renderiza o campo "${campo}" de "${id}", mas a linha não tem esse campo` +
@@ -7406,7 +7407,8 @@ for (const file of ficheirosHtml(DIST)) {
     }
 
     const renderizado = textoTranscrito(el);
-    const esperado = normalizeWhitespace(String(resolvido.texto));
+    const bruto = normalizeWhitespace(String(resolvido.texto));
+    const esperado = bruto === POR_VERIFICAR && linguaPagina === 'en' ? '[to verify]' : bruto;
     /**
      * UM CAMPO QUE É UMA DATA ESCREVE-SE NA FORMA DA CASA (bloco F1.4,
      * 04.09.2026).

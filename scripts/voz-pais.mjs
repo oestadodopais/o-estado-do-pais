@@ -116,7 +116,7 @@ export function verificaVozPais(raiz) {
         ...DOMINIOS.map(d=>d.nome[lang]), ...WORKS.flatMap(w=>w.editions.map(e=>e.title)),
         /* O marcador único do sítio, pela mesma razão do `voz-b1.mjs`: é uma
            cadeia declarada e não prosa da casa. */
-        POR_VERIFICAR,
+        POR_VERIFICAR, '[to verify]',
         '·','→',
         /* A mobília da primeira página nova (bloco PP1): as cadeias declaradas em `strings.mjs`, as
            entradas das declarações do lugar de direção, e as três portas. As três cadeias da pesquisa

@@ -58,6 +58,7 @@ import Claim from './Claim.astro';
 import DataDaLinha from './DataDaLinha.astro';
 import ValorDaProva from './ValorDaProva.astro';
 import DefinicaoDoMarcador from './DefinicaoDoMarcador.astro';
+import { t } from '../i18n/strings.mjs';
 import PontoDaSerie from './serie/PontoDaSerie.astro';
 import { routePath } from '../lib/routes.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
@@ -72,6 +73,8 @@ import { VERBATIM } from '../data/verbatim.mjs';
  * constrói passa `selos`.
  */
 const { partes, lang = 'pt', selos = false } = Astro.props;
+const s = t(lang);
+
 ---
 
 {
@@ -139,10 +142,7 @@ const { partes, lang = 'pt', selos = false } = Astro.props;
         <>
           {/* B5: o marcador leva a porta da sua página, e o texto e a classe
               não mudam (`IDENTIDADE.md` §6). */}
-          <a class="marcador" href={routePath('marcador', lang)} lang="pt-PT">[{parte.marcador}]</a>
-          {lang !== 'pt' && parte.gloss && (
-            <span class="marcador-gloss"> ({parte.gloss})</span>
-          )}
+          <a class="marcador" href={routePath('marcador', lang)} lang={lang === 'pt' ? 'pt-PT' : 'en'}>{s.prov.marcadorDoSelo}</a>
           <DefinicaoDoMarcador lang={lang} />
         </>
       );

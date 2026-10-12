@@ -82,7 +82,7 @@ export function verificaB1(raiz) {
            ao lado de um título que o arquivo declara por confirmar, e é a mesma
            cadeia. Admite-se a cadeia EXACTA, e mais nada: qualquer outra prosa
            continua a fechar a construção. */
-        POR_VERIFICAR,
+        POR_VERIFICAR, '[to verify]',
       ].map(normal));
       const tecnicos = new Set(['textoLinhaK', 'textoValorK', 'textoImpressoK', 'textoOrigemK', 'textoLinhaDoLivro', 'textoRegistoK'].map(k => S[lang].estudos[k]));
       const verificados = '[data-rotulo-ia="topo"], [data-registo-unidade], [data-registo-indice], [data-registo-posicao], [data-registo-linha], [data-claim], .src-chip, [data-prova], [data-verbatim]';
