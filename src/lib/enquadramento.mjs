@@ -31,11 +31,11 @@
  * as duas vias são leituras do livro-razão e não palpites:
  *
  *   · **o agregado da União** é `<slug>-<período>-ue`, que é o nome que o motor
- *     dá à linha que sela (`enquadramento-2026-09-15`). É uma REGRA DE NOME: ou a
- *     linha com aquele nome está no livro-razão, e então é o agregado daquela
- *     medida naquele período por construção do motor, ou não está, e não há
- *     comparação. Cinco medidas não a têm, e a razão é da fonte e não da casa: o
- *     conjunto do Eurostat não traz valor no agregado naquele período;
+ *     dá à linha que sela (`enquadramento-2026-09-15`). Esta regra de nome
+ *     encontra a candidata; desde o JD1, só se mostra quando a unidade e o
+ *     período coincidem com os da linha principal. Um montante em euros não
+ *     se compara com uma percentagem apenas por os identificadores coincidirem.
+ *     Sem linha europeia no livro, não há comparação;
  *   · **o período anterior** PROCURA-SE NO LIVRO-RAZÃO, e não se calcula. A
  *     primeira redação deste ficheiro escrevia `<slug>-<ano - 1>`, e estava
  *     errada: `competencias-digitais-2025` é uma série BIENAL e o período
@@ -82,7 +82,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { hasClaim, getClaim, loadClaims, documentoDaLinha, textoOuNulo } from './ledger.mjs';
+import { hasClaim, getClaim, loadClaims, parsePtDecimal, documentoDaLinha, textoOuNulo } from './ledger.mjs';
 /* O marcador da casa, do módulo que o declara e não de `ledger.mjs`, que o
    reexporta: um campo que o traga é um campo por confirmar, e não um nome. */
 import { POR_VERIFICAR as MARCADOR } from '../data/marcador.mjs';
@@ -434,12 +434,84 @@ export function nomeOficial(id) {
 }
 
 /**
- * A régua de uma medida: só as linhas que existem.
+ * JD1-b: comparações declaradas entre contas nacionais e entre execuções de caixa.
+ * A identidade dos operandos, da fórmula e da edição sustenta os derivados.
+ * A União tem outra fonte/edição: essa diferença é conservada na régua e no recibo.
+ * Não estende estas exceções aos seletores de outras medidas.
+ * @param {string} id @param {Map<string, any>} [linhas]
+ * @returns {{anterior: {id: string, periodo: string}|null, ue: {id: string}|null,
+ * portugal?: {id: string, periodo: string}, edicoesDistintas?: boolean}|null}
+ */
+export function conferirReguaJd1b(id, linhas = loadClaims()) {
+  const pt = 'juros-das-administracoes-publicas-pib-2025';
+  const ue = 'juros-das-administracoes-publicas-2025-ue';
+  const caixa = 'juros-e-outros-encargos-execucao-2026-08';
+  if (![pt, ue, caixa].includes(id)) return null;
+  const exigir = (/** @type {unknown} */ ok, /** @type {string} */ detalhe) => {
+    if (!ok) throw new Error(`JD1-b enquadramento: ${detalhe}`);
+  };
+  const ler = (/** @type {string} */ chave, /** @type {string} */ unidade, /** @type {string} */ periodo) => {
+    const c = linhas.get(chave);
+    exigir(c && c.unit === unidade, `${chave}: linha ausente ou unidade divergente`);
+    exigir(c.reference_date === periodo, `${chave}: período divergente`);
+    return c;
+  };
+  const endereco = (/** @type {any} */ c) => String(c.source_url || '').split('#')[0];
+  const mesmoDocumento = (/** @type {any} */ a, /** @type {any} */ b) => {
+    exigir(a.source && a.source === b.source && endereco(a) && endereco(a) === endereco(b) &&
+      a.document?.title && a.document.title === b.document?.title &&
+      a.document?.edition && a.document.edition === b.document?.edition,
+      'fontes, documentos ou edições divergentes');
+  };
+  if (id === caixa) {
+    const anterior = 'juros-e-outros-encargos-execucao-2025-08';
+    const a = ler(caixa, 'milhões de euros', '2026-08');
+    const b = ler(anterior, 'milhões de euros', '2025-08');
+    mesmoDocumento(a, b);
+    exigir(a.source === 'Entidade Orçamental' && !a.derivation && !b.derivation,
+      'execução de caixa: fonte ou derivação divergente');
+    return { anterior: { id: anterior, periodo: b.reference_date }, ue: null };
+  }
+  const derivada = (/** @type {string} */ ano) => {
+    const chave = `juros-das-administracoes-publicas-pib-${ano}`;
+    const juros = `juros-das-administracoes-publicas-${ano}`;
+    const pib = `pib-nominal-notificacao-setembro-${ano}`;
+    const c = ler(chave, '% do PIB', ano);
+    exigir(Array.isArray(c.derived_from) && c.derived_from.length === 2 &&
+      c.derived_from[0] === juros && c.derived_from[1] === pib && c.derivation &&
+      String(c.check).replace(/\s/g, '') === `round(${juros}/${pib}*100,2)`,
+      `${chave}: derivação divergente`);
+    const a = ler(juros, 'milhões de euros', ano), b = ler(pib, 'milhões de euros', ano);
+    mesmoDocumento(a, b);
+    exigir(a.source === 'Instituto Nacional de Estatística' && !a.derivation && !b.derivation,
+      `${chave}: origem dos operandos divergente`);
+    return a;
+  };
+  const origemAtual = derivada('2025');
+  const origemAnterior = derivada('2024');
+  mesmoDocumento(origemAtual, origemAnterior);
+  const europa = ler(ue, '% do PIB', '2025');
+  exigir(europa.source === 'Eurostat' && europa.document?.edition === 'gov_10a_main' && !europa.derivation,
+    'União: fonte, edição ou derivação divergente');
+  const url = new URL(endereco(europa));
+  exigir(url.hostname === 'ec.europa.eu' && url.pathname.endsWith('/gov_10a_main') &&
+    [['freq', 'A'], ['sector', 'S13'], ['na_item', 'D41PAY'], ['geo', 'EU27_2020'],
+      ['unit', 'PC_GDP'], ['time', '2025']].every(([k, v]) => url.searchParams.get(k) === v),
+    'União: coordenadas da fonte divergentes');
+  return id === pt
+    ? { anterior: { id: 'juros-das-administracoes-publicas-pib-2024', periodo: '2024' }, ue: { id: ue }, edicoesDistintas: true }
+    : { anterior: null, ue: null, portugal: { id: pt, periodo: '2025' }, edicoesDistintas: true };
+}
+
+/**
+ * A régua de uma medida: só as linhas que existem e cumprem as regras de comparação.
  *
  * @param {string} id  o identificador da linha da medida
- * @returns {{ anterior: { id: string, periodo: string|null }|null, ue: { id: string }|null }}
+ * @returns {{ anterior: { id: string, periodo: string|null }|null, ue: { id: string }|null, portugal?: {id: string, periodo: string}, edicoesDistintas?: boolean }}
  */
 export function reguaDaMedida(id) {
+  const jd1b = conferirReguaJd1b(id);
+  if (jd1b) return jd1b;
   const chaves = chavesDoEnquadramento(id);
   const anterior =
     chaves.anterior && hasClaim(chaves.anterior)
@@ -453,7 +525,14 @@ export function reguaDaMedida(id) {
           periodo: valorDoPeriodo(chaves.anterior),
         }
       : null;
-  const ue = chaves.ue && hasClaim(chaves.ue) ? { id: chaves.ue } : null;
+  /* JD1: o sufixo identifica uma candidata, mas não prova que seja comparável.
+     Os juros portugueses em milhões de euros e a percentagem europeia têm
+     os ids previstos no brief; a unidade e o período continuam a decidir. */
+  const principal = hasClaim(id) ? getClaim(id) : null;
+  const candidataUe = chaves.ue && hasClaim(chaves.ue) ? getClaim(chaves.ue) : null;
+  const ue = chaves.ue && principal && candidataUe && textoOuNulo(principal.unit) !== null && principal.unit === candidataUe.unit &&
+    textoOuNulo(principal.reference_date) !== null && principal.reference_date === candidataUe.reference_date
+    ? { id: chaves.ue } : null;
   return { anterior: anterior && mesmaSerie(id, anterior.id) ? anterior : null, ue };
 }
 
@@ -475,7 +554,7 @@ export function reguaDaMedida(id) {
  * confira, e esta função não o inventa.
  *
  * @param {string} id  o identificador da linha da medida
- * @returns {{ anterior: { id: string, periodo: string|null }|null, ue: { id: string }|null }}
+ * @returns {{ anterior: { id: string, periodo: string|null }|null, ue: { id: string }|null, portugal?: {id: string, periodo: string}, edicoesDistintas?: boolean }}
  */
 export function reguaDoCartao(id) {
   return reguaDaMedida(id);
@@ -550,10 +629,10 @@ function valorDoPeriodo(id) {
 /**
  * Verdadeiro quando a régua de uma medida tem alguma coisa para dizer.
  *
- * @param {{ anterior: unknown, ue: unknown }} regua
+ * @param {{ anterior: unknown, ue: unknown, portugal?: unknown }} regua
  */
 export function temRegua(regua) {
-  return Boolean(regua.anterior || regua.ue);
+  return Boolean(regua.anterior || regua.ue || regua.portugal);
 }
 
 /**
@@ -629,4 +708,25 @@ let _deEnquadramento;
  */
 export function eLinhaDeEnquadramento(id) {
   return linhasDeEnquadramento().has(id);
+}
+
+/** JD1-c: a palavra da evolução vem da diferença exata entre as duas linhas.
+ * @param {string} id @param {'pt'|'en'} lang @param {Map<string, any>} [linhas] */
+export function evolucaoJd1(id, lang, linhas = loadClaims()) {
+  if (!['juros-das-administracoes-publicas-2025', 'pib-nominal-notificacao-setembro-2025',
+    'juros-das-administracoes-publicas-pib-2025', 'juros-e-outros-encargos-execucao-2026-08'].includes(id)) return null;
+  const anterior = reguaDaMedida(id).anterior?.id;
+  if (!anterior) throw new Error('JD1-c: evolução sem período anterior');
+  const atual = linhas.get(id), antes = linhas.get(anterior);
+  const a = parsePtDecimal(atual?.value), b = parsePtDecimal(antes?.value);
+  if (!a || !b || atual.unit !== antes.unit) throw new Error('JD1-c: evolução sem valores comparáveis');
+  const exp = Math.min(a.exp, b.exp);
+  const aa = (a.neg ? -a.coef : a.coef) * 10n ** BigInt(a.exp - exp);
+  const bb = (b.neg ? -b.coef : b.coef) * 10n ** BigInt(b.exp - exp);
+  const direcao = aa > bb ? 'subiu' : aa < bb ? 'desceu' : 'igual';
+  const palavra = lang === 'pt' ? { subiu: 'Subiu de ', desceu: 'Desceu de ', igual: 'Manteve-se em ' }[direcao]
+    : { subiu: 'Rose from ', desceu: 'Fell from ', igual: 'Remained at ' }[direcao];
+  return { direcao, anterior, partes: direcao === 'igual'
+    ? [palavra, { claim: id }, '.']
+    : [palavra, { claim: anterior }, lang === 'pt' ? ' para ' : ' to ', { claim: id }, '.'] };
 }

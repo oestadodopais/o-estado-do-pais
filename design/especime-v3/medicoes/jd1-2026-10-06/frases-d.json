@@ -1,0 +1,64 @@
+[
+  {
+    "id": "amortizacoes-e-anulacoes-de-divida-fundada-2025",
+    "lang": "pt",
+    "frase": "É a parcela do financiamento do Estado usada para reembolsar ou extinguir dívida fundada. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+    "parcela": "Das necessidades brutas de financiamento do Estado em 2025, 67 601 milhões de euros, estes 56 976 milhões serviram para reembolsar ou extinguir dívida fundada. Mais do que na coluna de 2024 do mesmo quadro.",
+    "evolucao": "",
+    "excerto": "(milhões de euros) 2024 2025 1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO 9 772 10 625 Défice Orçamental 5 656 7 436 Aquisição líquida de activos financeiros (excepto privatizações) 4 116 3 189 2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada) 47 402 56 976 Certificados de Aforro + Certificados do Tesouro 4 469 4 482 Dívida de curto prazo em euros 32 198 32 976 Dívida de médio e longo prazo em euros 8 324 19 518 Dívida em moedas não euro 2 429 0 Fluxos de capital de swaps (líq.) -18 0 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.) 57 174 67 601",
+    "cabecalho": [
+      "(milhões de euros)",
+      "2024",
+      "2025"
+    ]
+  },
+  {
+    "id": "amortizacoes-e-anulacoes-de-divida-fundada-2025",
+    "lang": "en",
+    "frase": "It is the share of State financing used to repay or extinguish funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period.",
+    "parcela": "Of the State’s gross financing needs in 2025, 67 601 million euros, these 56 976 million were used to repay or extinguish funded debt. More than in the 2024 column of the same table.",
+    "evolucao": "",
+    "excerto": "(milhões de euros) 2024 2025 1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO 9 772 10 625 Défice Orçamental 5 656 7 436 Aquisição líquida de activos financeiros (excepto privatizações) 4 116 3 189 2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada) 47 402 56 976 Certificados de Aforro + Certificados do Tesouro 4 469 4 482 Dívida de curto prazo em euros 32 198 32 976 Dívida de médio e longo prazo em euros 8 324 19 518 Dívida em moedas não euro 2 429 0 Fluxos de capital de swaps (líq.) -18 0 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.) 57 174 67 601",
+    "cabecalho": [
+      "(milhões de euros)",
+      "2024",
+      "2025"
+    ]
+  },
+  {
+    "id": "juros-das-administracoes-publicas-2024",
+    "lang": "pt",
+    "frase": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública. O valor é final, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+    "parcela": "",
+    "evolucao": "",
+    "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+    "cabecalho": []
+  },
+  {
+    "id": "juros-das-administracoes-publicas-2024",
+    "lang": "en",
+    "frase": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance. The value is final, as published in the September two thousand and twenty-six notification.",
+    "parcela": "",
+    "evolucao": "",
+    "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+    "cabecalho": []
+  },
+  {
+    "id": "juros-das-administracoes-publicas-2025",
+    "lang": "pt",
+    "frase": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+    "parcela": "",
+    "evolucao": "Subiu de 5 983,4 para 6 028,2.",
+    "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+    "cabecalho": []
+  },
+  {
+    "id": "juros-das-administracoes-publicas-2025",
+    "lang": "en",
+    "frase": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+    "parcela": "",
+    "evolucao": "Rose from 5 983,4 to 6 028,2.",
+    "excerto": "Juros D.41 5 983,4 6 028,2 0,7",
+    "cabecalho": []
+  }
+]

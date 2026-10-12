@@ -20,6 +20,10 @@
  *   · `{ compara: [a, b], maior, menor, igual }` (desde o EX1-c, 06.10.2026, o achado 9 da leitura a frio) · as
  *     palavras que a comparação dos valores de a e de b escolhe, como na primeira página; um ramo pode trazer
  *     tokens (o valor de b, por exemplo); os três ramos são obrigatórios, e um valor que não se lê fecha a construção;
+ *   · `{ comparaSaldos: [a, b], deficitMaior, deficitMenor, deficitIgual, excedenteMaior, excedenteMenor, excedenteIgual, nulos, diferentesNegativo, diferentesPositivo, diferentesZero }`
+ *     `palavras: { ramo: { contem, naoContem } }` nos tokens de valor declara o vocabulário obrigatório e proibido
+ *     de cada ramo na língua da edição; a X10 confere-o, e o resolvedor não rende estes metadados.
+ *     compara os módulos de saldos com o mesmo sinal; os sinais diferentes e os dois zeros têm ramos próprios.
  *   · `{ se: [condições], partes }` · palavras que só se rendem enquanto as condições forem verdadeiras;
  *     uma condição falsa tira as palavras e deixa um sinal, e nunca fecha a construção (o §5.2 do brief
  *     PP1: uma atualização dos dados não faz falhar a construção);
@@ -55,7 +59,7 @@ import { t } from '../i18n/strings.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
 
 /** Os pedaços calculados que a gramática das explicações conhece, e mais nenhum. */
-export const CHAVES_DA_EXPLICACAO = /** @type {const} */ (['claim', 'periodo', 'nome', 'sinal', 'se', 'maiores', 'compara']);
+export const CHAVES_DA_EXPLICACAO = /** @type {const} */ (['claim', 'periodo', 'nome', 'sinal', 'se', 'maiores', 'compara', 'comparaSaldos']);
 /** O prefixo que separa, no nome do projeto de uma linha, a família do nome da função ou do ministério. */
 export const PREFIXO_DO_NOME = /** @type {const} */ ({ pt: ' que vai para ', en: ' going to ' });
 /**
@@ -281,6 +285,19 @@ function resolver(partes, lang, onde, ctx) {
       if (a === null || b === null) throw defeito(aqui, `os valores de ${o.compara.join(' e ')} não se leem como números.`);
       const ramo = a > b ? 'maior' : a < b ? 'menor' : 'igual';
       o.compara.forEach((/** @type {string} */ id) => ctx.linhas.add(id));
+      out.push(...resolver(o[ramo], lang, `${aqui}.${ramo}`, ctx));
+      return;
+    }
+    if (chave === 'comparaSaldos') {
+      if (!Array.isArray(o.comparaSaldos) || o.comparaSaldos.length !== 2) throw defeito(aqui, '«comparaSaldos» pede duas linhas.');
+      for (const r of ['deficitMaior', 'deficitMenor', 'deficitIgual', 'excedenteMaior', 'excedenteMenor', 'excedenteIgual', 'nulos', 'diferentesNegativo', 'diferentesPositivo', 'diferentesZero']) {
+        if (!(r in o)) throw defeito(aqui, `falta o ramo «${r}».`);
+      }
+      const [a, b] = o.comparaSaldos.map((/** @type {string} */ id) => numero(id));
+      if (a === null || b === null) throw defeito(aqui, `os valores de ${o.comparaSaldos.join(' e ')} não se leem como números.`);
+      const ramo = Math.sign(a) !== Math.sign(b) ? `diferentes${b < 0 ? 'Negativo' : b > 0 ? 'Positivo' : 'Zero'}` : a === 0 ? 'nulos'
+        : `${a < 0 ? 'deficit' : 'excedente'}${Math.abs(a) > Math.abs(b) ? 'Maior' : Math.abs(a) < Math.abs(b) ? 'Menor' : 'Igual'}`;
+      o.comparaSaldos.forEach((/** @type {string} */ id) => ctx.linhas.add(id));
       out.push(...resolver(o[ramo], lang, `${aqui}.${ramo}`, ctx));
       return;
     }

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { homedir as jd1Casa } from 'node:os';
 // Medição cega M4 · o mapa é navegação · medidor: Claude Sonnet
 //
 // Código do zero, sem importar nada do construtor. Lê os dois `dist/` já
@@ -18,7 +19,7 @@ import net from 'node:net';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const REPO = '/Users/UTILIZADOR/Instruments/OEstadoDoPais';
+const REPO = (jd1Casa() + '/Instruments/OEstadoDoPais');
 const SCRATCH = '/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad';
 const DIST_DEPOIS = path.join(SCRATCH, 'dist-mapa-depois');
 const DIST_ANTES = path.join(SCRATCH, 'dist-antes-mapa');

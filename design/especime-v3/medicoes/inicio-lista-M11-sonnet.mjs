@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { homedir as jd1Casa } from 'node:os';
 /**
  * M11 · orquestrador. Ver nucleo.mjs para as funções partilhadas e a nota
  * metodológica sobre isMobile/DPR. Ver BRIEF-M11.md para a ordem de trabalho.
@@ -13,7 +14,7 @@ import {
   colhe, medeQuadradoInscrito, carregaPontos, pontoDaUnidade, novaPagina, vaiA, arrancaServidor,
   pontoDeEcra, medePar,
 } from './nucleo.mjs';
-import { chromium } from '/Users/UTILIZADOR/Instruments/OEstadoDoPais/node_modules/playwright/index.mjs';
+const { chromium } = await import(jd1Casa() + '/Instruments/OEstadoDoPais/node_modules/playwright/index.mjs');
 
 const SECOES = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 const correTudo = SECOES.length === 0;

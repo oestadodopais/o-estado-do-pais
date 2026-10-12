@@ -1,0 +1,29 @@
+[
+  {
+    "original": "alvos.json",
+    "gzip": "alvos.json.gz",
+    "bytes_original": 32546527,
+    "bytes_gzip": 848795,
+    "sha256_original": "d73e6446cab8168f1052424a7a071e36430f2b949d6aae94c3956c07b402bf4f",
+    "sha256_gzip": "039bbcb04e760d576ec744c48f289ecf628f49ea0fd0a7feec07a59c9be5450e",
+    "descompressao_conferida": true
+  },
+  {
+    "original": "tentativas/1e706931/alvos.json",
+    "gzip": "tentativas/1e706931/alvos.json.gz",
+    "bytes_original": 32546527,
+    "bytes_gzip": 848797,
+    "sha256_original": "8650b907c279f35764fdf05a73c7beb20d2ef5b7656468ce3c94299e6ec2862d",
+    "sha256_gzip": "bad19401ea74b594145ffec17d97019282c1820239289bea17ec0dfa9ccbdce3",
+    "descompressao_conferida": true
+  },
+  {
+    "original": "tentativas/da42d05a/alvos.json",
+    "gzip": "tentativas/da42d05a/alvos.json.gz",
+    "bytes_original": 32546527,
+    "bytes_gzip": 848797,
+    "sha256_original": "413955ba2206229e7ba7c032e7f70162d8790cc5867598dfa4b24c5fc94d59fe",
+    "sha256_gzip": "d6b87eab1ea353af1823ae243fd4cdef2f6d2a3ec9604265ec77fadff07c5dac",
+    "descompressao_conferida": true
+  }
+]

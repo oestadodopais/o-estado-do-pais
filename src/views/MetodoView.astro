@@ -92,7 +92,7 @@ const s = t(lang);
 const path = routePath('metodo', lang);
 const p = prova(lang);
 
-const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang));
+const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang, l.params ?? {}));
 ---
 
 <Base lang={lang} path={path} title={s.metodo.metaTitle} description={s.metodo.metaDescription}>

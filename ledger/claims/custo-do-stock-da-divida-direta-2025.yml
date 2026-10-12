@@ -1,0 +1,48 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "custo-do-stock-da-divida-direta-2025"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "2,1"
+unit: "%"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Custo do stock da dívida"
+name_source: "Custo da dívida direta do Estado, Custo do stock da dívida, ponto 2025, p. 3; rótulo na coluna 104 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "IGCP"
+document:
+  title: "Boletim Mensal"
+  edition: "setembro de 2026"
+  locator: "Custo da dívida direta do Estado, Custo do stock da dívida, ponto 2025, p. 3; rótulo na coluna 104 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5"
+  page: 3
+  kind: "pdf"
+  crop:
+    asset: "recortes/custo-do-stock-da-divida-direta-2025.webp"
+    sha256: "cb690bdc3952fd5886cb79cb0e8152e098745b5a06c1379d32edbfad4589b477"
+    page: 3
+source_url: "https://www.igcp.pt/sites/default/files/2026-09/BM_set26.pdf#page=3"
+access_date: "2026-10-06"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "2                   2,6                           2,2                          2,0         2,1         2,1"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: Custo da dívida direta do Estado, Custo do stock da dívida, ponto 2025, p. 3; rótulo na coluna 104 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5. Rótulo selecionado pelo ano e pela cor da série na legenda, assinalado no recorte do gráfico. O custo do stock é anual; o custo da emissão refere-se a 2026, até à data do boletim de setembro, e à dívida emitida no ano correspondente, como a nota 6 a define. Contas nacionais, execução orçamental e dívida direta têm perímetros e critérios distintos; esta linha conserva o do documento citado. · Cruzado de ResearchHub content/20 Orcamento do Estado · custo-do-stock-da-divida-direta-2025."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

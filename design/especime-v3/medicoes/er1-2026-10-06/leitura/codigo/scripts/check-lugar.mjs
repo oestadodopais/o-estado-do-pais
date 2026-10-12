@@ -1,0 +1,2357 @@
+#!/usr/bin/env node
+import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
+/**
+ * A RÉGUA DO BLOCO F1.10 · «uma coisa, um lugar».
+ *
+ * Corre DEPOIS do `astro build`, sobre `dist/`, no `verify`.
+ *
+ * ---------------------------------------------------------------------------
+ * O QUE ELA MEDE, E PORQUE É QUE NENHUMA DAS OUTRAS O MEDE
+ * ---------------------------------------------------------------------------
+ * O `BRIEF-F1.10-uma-coisa-um-lugar.md` fixa uma regra («cada conteúdo tem um
+ * lugar de apresentação inteira; em todo o outro sítio aparece como uma porta ou
+ * não aparece»), um vocabulário fechado e um caminho no cabeçalho. Nenhuma das
+ * outras réguas do sítio sabe nada disto: o portão de HTML confere origens, o da
+ * voz confere que cada frase está declarada, o das formas confere o que um
+ * desenho pode desenhar. Uma repetição de conteúdo é HTML válido, com origem
+ * declarada e frase inventariada, e passa nas três.
+ *
+ * Sem esta régua, o que o bloco arruma fica guardado pela leitura de quem revê o
+ * diff, e volta ao primeiro descuido.
+ *
+ * ---------------------------------------------------------------------------
+ * OS TETOS, E PORQUE É QUE ELES EXISTEM EM VEZ DE UM ZERO
+ * ---------------------------------------------------------------------------
+ * O bloco é longo e entra por itens: cada item baixa um teto, e o teto é o
+ * número MEDIDO no dia em que o item entrou, escrito aqui com a data. Um teto
+ * NUNCA sobe sem uma decisão escrita ao lado, e a régua falha quando a medição
+ * passa dele — que é o que a torna uma régua e não um relatório.
+ *
+ * A régua também falha quando a medição fica ABAIXO de um teto que já devia ter
+ * descido: `TETO_FROUXO` diz quantas unidades de folga um teto pode ter antes de
+ * ser um teto que já não mede nada. Um teto frouxo é uma régua a dormir.
+ *
+ * UM TETO SÓ SOBE POR UMA RAZÃO, E ELA ESCREVE-SE: o sítio ganhou uma página, e
+ * a página nova traz a mesma mobília que todas as outras trazem. Um teto que
+ * suba porque uma página ANTIGA piorou é a régua a ser desligada, e isso não se
+ * faz: corrige-se a página.
+ *
+ * ---------------------------------------------------------------------------
+ * AS EXCEÇÕES, ESCRITAS POR NOME
+ * ---------------------------------------------------------------------------
+ * O §3 do brief põe DUAS FAMÍLIAS DE PÁGINAS inteiras fora do bloco: os
+ * documentos alojados (rota `documento`) e as páginas de leitura (rota `texto`).
+ * São transcrição — o texto de outra pessoa, publicado como ela o escreveu — e a
+ * regra da casa é que o que se copia de uma fonte fica como a fonte o escreveu.
+ * Saem por NOME DE ROTA, e não por um salto silencioso.
+ *
+ * As outras três exceções são CADEIAS, e estão em `EXCECOES_DO_VOCABULARIO`,
+ * cada uma com a razão e com a origem. A régua exige que cada uma seja ENCONTRADA
+ * pelo menos uma vez no `dist/`: uma exceção que já não é precisa é uma porta
+ * aberta esquecida, e fecha a construção como uma violação fecharia.
+ */
+import fs from 'node:fs';
+import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { parse, NodeType } from 'node-html-parser';
+import { SELETOR_DOS_CAMPOS_TRANSCRITOS, desacordosDoSeletor } from './campos-da-serie.mjs';
+
+import { matchPath, routePath, normalizePath, LANGS } from '../src/lib/routes.mjs';
+import { loadClaims } from '../src/lib/ledger.mjs';
+import { t } from '../src/i18n/strings.mjs';
+/* A DECLARAÇÃO DAS DEFINIÇÕES DOS DOIS PAINÉIS (item 8.4). A régua lê-a em vez
+   de guardar uma segunda cópia do texto: os dois lados da comparação deixam de
+   ser a mesma frase escrita duas vezes. */
+import {
+  DEFINICAO_DOS_PAINEIS,
+  DEFINICOES_DAS_MEDIDAS,
+  origensDaDefinicao,
+  textoDaDefinicao,
+} from '../src/data/figuras.mjs';
+/* O REGISTO DOS ESTUDOS E O DAS LEITURAS (Major 13, 09.09.2026): a régua conta
+   quantas superfícies TEM DE haver e compara-as com as que viu, em vez de se
+   contentar com «pelo menos uma». Ver `COLECOES_DOS_ESTUDOS`, mais abaixo. */
+import { WORKS } from '../src/data/studies.mjs';
+/* O REGISTO DAS TRANSCRIÇÕES: o `<head>` de uma página de estudo compõe a
+   descrição pública com a frase de abertura do documento, que é transcrição
+   registada. Ver `textoDaCabeca()`. */
+import { VERBATIM } from '../src/data/verbatim.mjs';
+import { ANCORA_DA_POLITICA } from '../src/data/politica-ia.mjs';
+import { temRegisto } from '../src/lib/registos.mjs';
+import { documentosDoEstudo } from '../src/lib/documentos.mjs';
+import { portasObrigatoriasB2 } from './portas-b2.mjs';
+import { REGIOES } from '../src/data/regioes.mjs';
+
+const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const DIST = path.join(RAIZ, 'dist');
+
+/* ---------------------------------------------------------------------------
+ * AS DUAS FAMÍLIAS DE FORA (§3 do brief)
+ * --------------------------------------------------------------------------- */
+const ROTAS_DE_TRANSCRICAO = new Set(['documento', 'texto']);
+
+/* A página de erro não tem caminho na tabela de rotas e não é uma página do
+   leitor: é o que o servidor devolve quando não há página nenhuma.
+
+   O NOME DO FICHEIRO INGLÊS ESTAVA ERRADO, e ninguém o via (09.09.2026). A lista
+   dizia `en/404.html`, e esse ficheiro não existe: a Astro escreve a página de
+   erro portuguesa em `dist/404.html`, por ser a da raiz, e a inglesa em
+   `dist/en/404/index.html`, como todas as outras. Enquanto NENHUMA página tinha
+   caminho, a exceção que falhava não se notava: a página de erro inglesa contava
+   como mais uma das 7 213. Com o caminho posto, ficou a ser a única, e o nome
+   errado veio à superfície. Conferido no `dist/` antes de se corrigir:
+   `ls dist/404.html dist/en/404*`. */
+const FICHEIROS_SEM_ROTA = new Set(['404.html', 'en/404/index.html']);
+
+/* ---------------------------------------------------------------------------
+ * OS TETOS
+ * ---------------------------------------------------------------------------
+ * Cada linha diz: a medida, o teto, e a data em que o número foi medido. O
+ * número é sempre o que a própria régua imprime, e nunca um palpite.
+ */
+const TETO_FROUXO = 8;
+const TETO_B1 = JSON.parse(fs.readFileSync(path.join(RAIZ, 'scripts/lugar-tetos-b1.json'), 'utf8'));
+const MEDICAO_B1 = JSON.parse(fs.readFileSync(path.join(RAIZ, TETO_B1.medicao), 'utf8'));
+if (!Number.isInteger(TETO_B1.l1_paginas) || TETO_B1.l1_paginas < 0 || MEDICAO_B1.contagens.estudos !== TETO_B1.l1_paginas)
+  throw new Error('B1 L1: o teto tem de ser o número inteiro medido no registo.');
+const TETOS = {
+  /* L1 · páginas com dois destinos iguais fora do cabeçalho e do rodapé.
+     TODOS os tetos desta tabela foram medidos a 08.09.2026 sobre o `dist/` da
+     fusão de `origin/main` (43f4b52a) na cabeça `47d957f6`, com
+     `node scripts/check-lugar.mjs`, e nenhum foi escrito à mão. */
+  /* DESCE DE 6 598 PARA 6 580 a 09.09.2026, e não por se ter medido melhor: as
+     24 páginas de estudo tinham as mesmas portas duas vezes (o bloco «O
+     documento original» em cima e a fila de cada edição em baixo), e o item 8.6
+     fundiu-as numa forma só. Dezoito páginas deixaram de ter dois destinos
+     iguais. */
+  /* DESCE DE 6 580 PARA 2 170 a 09.09.2026, com a correção do padrão maior
+     (Blocking 3 da leitura a frio, e a emenda de 09.09 ao §5 do brief). A porta
+     de uma conferência de linha só se rende quando o que foi lido NÃO é o
+     endereço da própria linha: eram 3 606 das 3 625 conferências do livro-razão,
+     e a família `linha` desceu de 5 832 páginas para 1 422.
+
+     A L1 É UMA CATRACA, com o horizonte a zero. Este teto não é o fim do
+     trabalho: é onde ele está. Só desce, e desce com a data e a razão ao lado,
+     como esta. A composição do que falta mede-se com
+     `design/especime-v3/medicoes/lugar-2026-09-04/l1-composicao.mjs`, e o padrão
+     maior que resta são as 616 páginas de concelho, onde o selo do cartão e o
+     selo do pé da leitura que ele abre apontam os dois para a mesma linha. */
+  /* SOBE DE 2 170 PARA 2 290 a 15.09.2026, e é a primeira vez que este número
+     sobe. A catraca existe para que ele não suba por descuido; sobe aqui por uma
+     razão medida, e a medida está escrita para quem a quiser desfazer.
+
+     **O que aconteceu.** O bloco P2 trouxe 59 linhas novas do livro-razão (o
+     período anterior e o agregado da União de 32 medidas, seladas pelo motor em
+     `enquadramento-2026-09-15`). Cada linha do livro-razão tem página própria, nas
+     duas edições: são 118 páginas novas na família `linha`, e a família passou de
+     1 422 para 1 540. 1 540 menos 1 422 são exactamente 118, e 118 são exactamente
+     59 vezes 2.
+
+     **Nenhuma das 118 tem um par de portas novo.** Medido, e não presumido: das
+     59 páginas novas da edição portuguesa, **0** rendem qualquer um dos três
+     blocos que este bloco acrescentou ao recibo («Próxima conferência», «Nome no
+     INE», «Nome na PORDATA»), porque nenhuma delas tem entrada no calendário nem
+     nome oficial exportado. Os dois pares que elas trazem são os dois padrões que
+     a família `linha` já tinha, cada um com mais 118 ocorrências e nenhuma
+     ocorrência nova: o endereço da fonte rendido na ficha, na atribuição e na
+     linha da série (716 para 834), e a porta da regra da releitura ao lado da
+     porta do Método no rodapé do aparelho (678 para 796).
+
+     **O horizonte continua a zero, e o trabalho continua o mesmo:** os dois
+     padrões da família `linha` e o das 616 páginas de concelho. O que este número
+     mede é quantas páginas os têm, e a resposta muda quando o livro-razão cresce.
+     Medido com `node design/especime-v3/medicoes/lugar-2026-09-04/l1-composicao.mjs dist`
+     sobre a cabeça do bloco P2. */
+  /* DESCE DE 2 290 PARA 2 284 a 16.09.2026, e a catraca volta a fazer o que diz
+     que faz (achado 12 da leitura a frio de 15.09.2026: «The L1 "ratchet",
+     documented as only descending, rose from 2,170 to 2,290; the new rows
+     explain 118 new pages, not the full increase of 120»).
+
+     **AS DUAS PÁGINAS QUE FALTAVAM ERAM DA FAMÍLIA `area`, E ESTÃO MEDIDAS NOS
+     DOIS FICHEIROS.** A composição que o bloco P2 guardou
+     (`design/especime-v3/medicoes/p2-2026-09-15/l1-composicao-2026-09-15.txt`)
+     conta 1 540 páginas da família `linha` (as 118 novas) e **6 da família
+     `area`**, com um par só: a marca da fonte do cartão contra a marca da fonte
+     de um item da régua, que apontam as duas para a mesma linha (42 ocorrências).
+     Não era o livro-razão a crescer: era a régua do cartão a pôr uma segunda
+     porta para a mesma linha dentro do mesmo cartão.
+
+     **A CORREÇÃO DO ACHADO 11 LEVOU O PAR CONSIGO**, e não foi para isso que ela
+     se fez: a régua passou a exigir a mesma edição do documento e a mesma unidade
+     entre a linha do período anterior e a principal, e os itens que traziam a
+     segunda porta eram os das linhas de Évora e das distâncias à UE-27, que não
+     batem. A composição desta cabeça já não tem família `area` nenhuma, e a
+     contagem desce para 2 284.
+
+     Medido com `node design/especime-v3/medicoes/lugar-2026-09-04/l1-composicao.mjs dist`
+     sobre a cabeça desta passagem, e não escrito à mão. O horizonte continua a
+     zero, e o trabalho continua o mesmo: os dois padrões da família `linha` e o
+     das 616 páginas de concelho. */
+  /* SOBE DE 2 284 PARA 2 286 a 16.09.2026, e a razão é medida e inteira: o
+     arquivo ganhou um trabalho com duas edições, e os dois documentos alojados
+     novos trazem o par que a FAIXA DESTE PROJETO já punha em quinze dos
+     dezasseis anteriores. A família `documento` passa de 15 para 17 páginas, e
+     nenhuma outra família mexe: 2 286 menos 2 284 são exactamente 2, e 2 são
+     exactamente as duas edições que entraram.
+
+     **O par não é novo, e não é do documento:** é
+     `a[data-oedp-marca]` contra `a[data-oedp-voltar]`, a marca deste projeto e
+     a porta de voltar, as duas dentro de `div[data-oedp-faixa]` e as duas a
+     abrir a página do estudo (`src/lib/documentos.mjs`). É prosa e mobília
+     deste projeto, não da obra citada, e por isso é dívida que se pode fechar:
+     fechá-la tira as dezassete de uma vez e leva a catraca a 2 269. Fica dito
+     para quem a quiser fechar, que é o que esta tabela existe para permitir.
+
+     Medido com `node design/especime-v3/medicoes/lugar-2026-09-04/l1-composicao.mjs dist`
+     sobre a cabeça deste bloco, e guardado em
+     `design/especime-v3/medicoes/e1-2026-09-16/l1-composicao-2026-09-16.txt`.
+     Não foi escrito à mão. O horizonte continua a zero. */
+  /* SOBE DE 2 271 PARA 2 279 a 23.09.2026 (bloco R1), e a razão é medida e
+     inteira: entraram 8 páginas e não saiu nenhuma, e as 8 vêm de duas coisas
+     que o bloco fez por mandato.
+
+     **Seis são as páginas das três linhas novas do livro-razão** (a segunda
+     notificação do INE ao Procedimento dos Défices Excessivos, I147), nas duas
+     edições, e trazem o par que a família `linha` já tinha: a porta da regra da
+     releitura ao lado da porta do Método no rodapé do aparelho. Nenhum par novo.
+
+     **Duas são as listas dos estudos** (`/estudos` e `/en/studies`), que
+     passaram a ter os estudos de Évora (I144): as sinopses de dois estudos
+     citam a mesma linha (`evora-prazo-medio-de-pagamento-2025`), como já
+     acontece na página de Évora, onde as duas sinopses também estão.
+
+     A porta do rótulo de IA, que subiu ao topo de todas as páginas, não conta:
+     é dispensada pelo destino exato e só dentro do rótulo (a dispensa está na
+     L1, acima), e a planta `r1-porta-da-politica-fora-do-rotulo` prova que uma
+     segunda porta para o Método fora dele continua a contar.
+
+     Medido com `node design/especime-v3/medicoes/r1-2026-09-23/medir-l1-r1.mjs`,
+     que corre esta régua com `AMOSTRA` alta e compara a lista com a da
+     construção da cabeça de partida; a medição fica em `l1-r1.json`, que o
+     registo dos tetos aponta. O horizonte continua a zero. */
+  /* SOBE DE 2 279 PARA 2 291 a 23.09.2026 (bloco B2). A composição
+     independente em `design/especime-v3/medicoes/b2-2026-09-23/l1-b2-trabalho.json`
+     encontra apenas as 12 páginas das seis linhas novas, nas duas edições,
+     com os pares já existentes nos recibos. Não entrou outra página nem se
+     agravou uma página antiga. O horizonte continua a zero.
+
+     As portas obrigatórias do veredicto e da contagem das câmaras só ficam
+     fora da L1 depois de V1 e V2 conferirem valores, nomes, ordem e destinos.
+     `portas-b2.mjs` devolve os nós concretos conferidos. A fonte do limite e
+     qualquer âncora extra continuam no contador, mesmo dentro do cartão.
+     `tests/pais/l1-b2.mjs` planta repetição, destino alterado e portas extras
+     dentro e fora dos blocos, e exige a reposição do HTML e o portão limpo. */
+  /* RP1: a composição em l1-rp1.json acrescenta apenas os recibos das linhas
+     novas, nas duas edições. Compara com a prova congelada do B2 e recusa
+     qualquer entrada fora desses recibos ou agravamento de páginas antigas.
+     O teto é lido dessa medição; a planta de portas extras continua a fechar. */
+  /* PP1 (28.09.2026): SOBE DE 2 341 PARA 2 349, e a razão é medida e inteira. A composição em
+     `design/especime-v3/medicoes/pp1-2026-09-28/l1-pp1.json` corre a régua de cada cabeça sobre a
+     construção dela, com a amostra aberta, e compara: entraram oito páginas e não saiu nenhuma, e as
+     oito são páginas das entradas, que nasceram com o bloco. Cada bloco de «O que se passa» tem a lista
+     «Os números deste bloco», com uma linha por número e a porta do recibo (o §2, ponto 2, do brief), e
+     um número que a frase ou uma peça já cita abre o mesmo recibo duas vezes; nas entradas, a mesma
+     linha pode ainda abrir o recibo no cartão dela. A primeira página já estava na conta e fica com mais
+     destinos repetidos pela mesma razão; nenhuma página que o bloco não refez ganhou um. As plantas de
+     portas extra continuam a fechar. */
+  /* R4 (05.10.2026): SOBE DE 2 714 PARA 2 736, e a razão é medida e inteira. A frase «o que é» do recibo de uma série
+     com linha é a frase da linha (a decisão 1 do brief R4: a frase é uma, e é a do cartão); quando a linha tem cartão
+     nacional, a frase diz o valor da linha, e o valor leva o seu selo, pela regra do portão de HTML («onde aparece um
+     valor, aparece o selo»), que abre o recibo da linha que a lista «As linhas que são pontos desta série», no mesmo
+     recibo, já abria. A medição (`design/especime-v3/medicoes/r4-2026-10-05/medir-l1-r4.mjs`, com o registo da régua
+     corrida na construção da cabeça de partida, 557844fe, numa worktree à parte) acha 22 páginas novas, que são os
+     recibos das onze séries cuja linha tem cartão, nas duas edições, cada uma com um destino repetido, o recibo da
+     linha da frase; nenhuma página antiga ganhou um destino repetido e nenhuma saiu. Fechar a dívida é dar ao selo da
+     frase e à porta da lista uma porta só, e leva o teto a 2 714. O horizonte continua a zero. */
+  /* R4-b (06.10.2026): VOLTA DE 2 736 A 2 714, e a medida passou a contar as vezes. A leitura a frio do Codex Astra (o
+     achado 10) mostrou o que a medida do R4 não via: ela comparava, por página, o número de destinos repetidos e um
+     exemplo, e 896 páginas que já repetiam um destino passaram a repeti-lo mais vezes (894 recibos com mais uma porta
+     para o documento, pelo título na cabeça, e a primeira página nas duas edições, pelo selo da explicação dos preços da
+     habitação). A causa corrigiu-se: o título do documento diz-se uma vez no corpo do recibo; a frase de uma série diz o
+     valor da linha pelo ponto da série; o selo do valor numa explicação conferida pela V1-R4 e o marcador de uma frase
+     por confirmar na fonte são portas obrigatórias, descontadas como as outras (`scripts/portas-b2.mjs` e a regra do
+     marcador, acima). A medição (`design/especime-v3/medicoes/r4-2026-10-05/medir-l1-r4b.mjs`) conta as vezes de cada
+     destino repetido, página a página, com a cópia da regra que recusa escrever sem bater com esta régua, e acha as 2 714
+     páginas da cabeça de partida com os mesmos destinos e as mesmas vezes; o conhecido-positivo da omissão das vezes
+     prova que a medida antiga passaria calada. */
+  /* EX1 (05.10.2026), DEPOIS DA FUSÃO COM O MAIN DE 06.10.2026 (o R4, em 42c7ed7e): SOBE DE 2 714 PARA 2 716, e a
+     razão é medida e inteira, destino a destino e vez a vez como a R4-b mede. A medição
+     (`design/especime-v3/medicoes/ex1-2026-10-05/medir-l1-fusao.mjs`, com a contagem em `fusao/l1-fusao.json`) corre a
+     régua de cada árvore sobre a sua construção, com a amostra aberta, e conta as vezes de cada destino repetido pela
+     cópia da regra da R4-b (`contar-destinos-l1.mjs`), na construção do main, numa worktree à parte, e na da fusão:
+     entraram duas páginas e não saiu nenhuma, e as duas são as da primeira explicação, nas duas edições; as 2 714 páginas
+     do main ficam com os mesmos destinos e as mesmas vezes. Cada página nova repete catorze destinos (as dez funções e
+     os quatro ministérios que o texto cita e que as figuras desenham), e cada um abre-se duas vezes e só duas: o selo
+     do valor no texto e o selo do mesmo valor na legenda do instrumento que o desenha. As duas portas são obrigatórias
+     pela regra do portão de HTML («onde aparece um valor, aparece o selo»): fora de um desenho, o selo vai ao pé do
+     valor; dentro de um `<svg>`, vai na legenda do próprio instrumento. Tirar uma delas era tirar o valor do texto do
+     lugar de direção ou o selo de um valor desenhado. As plantas da omissão das vezes, de uma página a mais, de uma
+     página das explicações em falta, de uma página do main agravada, de um destino que não é um recibo desenhado e
+     citado e de um recibo com três portas continuam a fechar. */
+  l1_paginas: TETO_B1.l1_paginas, // B1: o teto medido está escrito uma só vez no registo.
+  /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
+     concelhos fora de uma lista fechada.
+     DESCE DE 2 PARA 0 a 09.09.2026, por decisão do lugar de direção, e a régua
+     ganhou três conferências em vez de perder uma: as duas páginas eram `/` e
+     `/en`, e os 308 de cada uma são a fila de resultados da busca que o §1 do
+     brief autoriza. A fila só sai da conta se ela chegar fechada do servidor e
+     se a página tiver o formulário que submete para o índice dos concelhos; a
+     razão inteira, e as três condições, estão ao pé do código que as mede. */
+  l2_segundas_listas: 0,
+  /* L2b · rendições da régua inteira da convergência fora de `/regioes`.
+     DESCE DE 18 PARA 0 a 09.09.2026 (§1 e §7.6): a régua saiu das dezoito páginas
+     de região, onde era a lista das nove copiada para dentro de cada uma, e no
+     lugar dela ficou a porta «Comparar as regiões →». `check:regioes` mede o
+     facto do outro lado, linha a linha e desenho a desenho, e exige a porta. */
+  l2_reguas: 0,
+  /* L2c · sinopses de estudo fora de `/estudos`.
+     DESCE DE 10 PARA 0 a 09.09.2026 (§1 e 8.6): a página do concelho listava
+     cinco cartões com o título, a sinopse e uma segunda porta; passa a listar os
+     TÍTULOS, cada um a abrir o seu estudo, com uma porta para o índice filtrado
+     por este concelho. As cinco sinopses (dez, nas duas edições) vivem em
+     `/estudos` e na página de cada estudo. */
+  l2_sinopses: 0,
+  /* L3 · ocorrências do vocabulário fechado no texto da casa, fora das
+     exceções e das duas famílias de transcrição.
+     DESCE DE 51 PARA 30 a 08.09.2026, com o item 8.4: as duas frases de contexto
+     dos painéis saíram (§9.3), e eram elas que rendiam «os indicadores» vinte e
+     duas vezes nas duas edições da página europeia. As definições que entraram no
+     lugar delas usam o vocabulário fechado («medida»). O que fica são as
+     dezoito ocorrências de «município» nas sinopses dos estudos, as duas de
+     «indicador» que são campos da fonte na página do domínio, e as dez de
+     «trabalho» e «trabalhos» que o §3 do brief e a §A.4 do relatório põem fora
+     deste bloco.
+     DESCE DE 30 PARA 26 a 09.09.2026, e não por se ter tocado numa palavra: as
+     sinopses dos estudos saíram da página do concelho (§1 e 8.6), e com elas as
+     quatro ocorrências de «município» que elas rendiam ali. As catorze que ficam
+     são as mesmas de sempre, nas páginas dos estudos, onde a sinopse é a frase de
+     abertura do documento, transcrita.
+     DESCE DE 26 PARA 0 a 09.09.2026, com o Major 5 da leitura a frio e a decisão
+     do lugar de direção: «"concelho" na voz da casa em todo o lado; o que for
+     citação de um título ou de um documento fica como a fonte escreve, marcado
+     como tal». Três coisas ao mesmo tempo, e a soma é zero: `blocosDaCasa()`
+     passou a fazer o mesmo corte da `textoDaCasa()` (o que está debaixo de uma
+     marca de origem é da fonte), duas descrições de estudo passaram a
+     «concelho» e as outras duas ficaram como o documento as escreve (estão
+     registadas em `verbatim.mjs`, e o portão apanhou a troca no mesmo dia), o
+     Método deixou de chamar «trabalhos» aos estudos, e as ocorrências que ficam
+     no texto da casa são as duas exceções escritas abaixo, cada uma com a razão.
+     O teto é zero, e um zero não tem folga. */
+  l3_vocabulario: 0,
+  /* L4 · falhas: uma frase de definição ou de hierarquia que não está a 1 onde
+     o §2 do brief a manda estar. DESCE DE 10 PARA 0 a 08.09.2026: as cinco
+     frases de hierarquia passaram a render-se nos cinco índices, nas duas
+     edições, e a de definição já estava a 1 na primeira página. */
+  l4_falhas: 0,
+  /* L5 · páginas abaixo da primeira sem caminho no cabeçalho.
+     DESCE DE 7 213 PARA 0 a 09.09.2026, com o item 5 do encargo (§2.5 do brief):
+     o `Caminho.astro` entra no `<header>` de todas as páginas, com os degraus da
+     tabela de `src/lib/caminho.mjs` e a folha com a sua marca de origem. As duas
+     famílias de transcrição (`documento` e `texto`) ficam de fora pelo §3 do
+     brief, e a página de erro fica de fora por não ser uma página do leitor: as
+     três exceções estão nomeadas acima, com a razão, e não se saltam em silêncio.
+
+     O NÚMERO DE PARTIDA ESTAVA CERTO E A EXCEÇÃO INGLESA ESTAVA ERRADA: as 7 213
+     incluíam a página de erro inglesa, porque `en/404.html` não é o nome do
+     ficheiro que a Astro escreve. Com o caminho posto, as 7 212 páginas do leitor
+     ficaram a 0 e sobrou ela; a lista das exceções passou a nomear o ficheiro que
+     existe, e a medida fecha em 0. */
+  l5_sem_caminho: 0,
+  /* L6 · selos cuja etiqueta não é o publicador da linha.
+     DESCE DE 26 178 PARA 0 a 09.09.2026, com o item 5 do encargo (§2.4 e §7.2 do
+     brief): a etiqueta do selo deixa de ser o nome do TRABALHO em que a casa leu
+     a linha e passa a ser o nome do PUBLICADOR dela, o campo `source`. Uma linha
+     calculada não tem publicador e a etiqueta di-lo com a palavra que já dizia
+     («calculado»); as cinco linhas cujo publicador é a própria casa levam a
+     palavra «linha» em vez de «fonte», que é o que a §2.4 escreve à letra.
+     `scripts/gate-html.mjs` compõe a mesma cadeia do registo e compara-a
+     carácter a carácter, e o rótulo do campo na página da linha passou a
+     «Publicado por», que é a segunda metade do §7.2.
+
+     O POSITIVO CONHECIDO desta medida está na sua própria história: contou
+     26 168, 26 174 e 26 178 em construções deste ramo, com a amostra impressa
+     («o selo diz "Quadro institucional de indicadores" e o publicador é
+     "Eurostat"»), antes de descer a 0. */
+  l6_selos: 0,
+  /* 8.5 · blocos com «limiar» sem o qualificador nem a frase ao lado.
+     DESCE DE 708 PARA 0 a 08.09.2026, com o item 8.5: cada medida com limiar
+     declara quem o fixou (`limiarFixadoPor`, lista fechada em
+     `src/data/figuras.mjs`), o cartão e a linha do limiar dizem-no em palavras
+     («dentro do limiar da Comissão», «dentro do limite legal», «dentro do limiar
+     do Pacto de Estabilidade e Crescimento», «fora do limiar recomendado pelo
+     Conselho da UE») e a leitura diz numa frase o que o limiar é e quem o fixou,
+     em todos os fixadores menos o `lei`, que já tem a sua frase na página do
+     concelho. Os blocos que a casa já qualificava por outra
+     via — o Método, a agenda das fontes, a manchete e o cabeçalho da página
+     europeia — estão na lista dos qualificadores, escritos por extenso. */
+  d85_limiar_sozinho: 0,
+  /* 8.8 · «livro-razão» nos menus, nos rodapés e nos títulos das páginas.
+     DESCE DE 24 177 PARA 0 a 08.09.2026: o nome visível do índice e da entrada
+     do menu passou a «Números e fontes», e os títulos das páginas do livro-razão
+     e dos seus concelhos foram com ele. */
+  d88_livro_razao: 0,
+  /* 8.17 · o cartão localizador dos 308 pontos na página de um concelho.
+     Conta, nas 616 páginas de concelho, os pontos do mapa de pontos e as páginas
+     sem o mapa de áreas da sua região. Nasce a 0 a 08.09.2026, no commit em que
+     o item entra: o mapa da página de um concelho passa a ser o nível da região
+     do mapa do F1.1d, e não os 308 pontos. */
+  d817_pontos_no_concelho: 0,
+  d817_concelhos_sem_mapa: 0,
+  /* 8.13 · valores selados na secção dos domínios da primeira página. */
+  d813_selos_nos_dominios: 0,
+  /* 8.14 · «Relance» e «Leitura breve» nas páginas do leitor. DESCE DE 1 304
+     PARA 0 a 08.09.2026: o comando de densidade saiu da primeira página e os
+     seis títulos de secção e rótulos de camada que usavam as duas palavras
+     passaram a dizer o que a secção tem. As quatro linhas do inventário da voz
+     passaram a «retirada» com a razão escrita. */
+  d814_densidades: 0,
+  /* 8.11 e §7.3 · leituras de aparelho no cabeçalho, somadas sobre as páginas.
+     DESCE DE 28 892 PARA 0 a 08.09.2026. Eram quatro por página em 7 223 das
+     7 240 (o painel europeu, as fontes, as séries atrasadas e a agenda) e são
+     zero: a data da reconferência foi para «Portugal na União Europeia», dentro
+     do painel que ela cobre, e a leitura das fontes com o seu contador foi para
+     a regra 6 do Método, que é a âncora para onde as portas das três já
+     apontavam. As duas contagens da agenda ficam onde já estavam, nas portas da
+     primeira página e na regra 8 do Método. O «antes» não foi contado de
+     cabeça: correu-se esta régua sobre o `dist/` desta árvore ANTES de se tocar
+     no cabeçalho, e ela imprimiu 28 892 em 7 240 páginas. */
+  d811_leituras_na_cabeca: 0,
+  /* 8.4 · parágrafos `data-contexto-painel` cujo texto não é, carácter a
+     carácter, a definição que `DEFINICAO_DOS_PAINEIS` declara para aquele
+     painel naquela edição. Nasce a 0 a 08.09.2026, no commit em que a
+     comparação entra no `verify`: é a mesma medida da célula A4 de
+     `tests/inicio/porta.mjs`, que abre um navegador e não corre em portão
+     nenhum, feita aqui sobre o HTML construído. */
+  d84_definicoes_fora: 0,
+  /* §7.4 e 8.6 · superfícies de estudo que não apresentam as edições na forma
+     única, e linhas do índice dos estudos sem a porta da leitura.
+     NASCE A 0 a 09.09.2026, no commit em que o item entra. O que ela conta está
+     escrito ao pé da medida, no corpo da régua; os cinco defeitos que ela
+     apanha são os cinco que a sétima sessão do bloco corrigiu, e a planta da L9
+     põe cada um de volta. */
+  /* §7.10 · páginas onde `[a verificar]` aparece e a sua definição não está ao
+     pé da PRIMEIRA ocorrência do documento: sem definição nenhuma, com mais do
+     que uma, ou a seguir a um marcador que não é o primeiro. Entrou a
+     14.09.2026 com o último dos cinco pequenos, e o teto é ZERO desde o primeiro
+     dia: a promessa é «em cada página», e uma promessa dessas não tem folga.
+
+     O QUE ESTA CÉLULA GUARDA DE FACTO. `<DefinicaoDoMarcador>` decide pela ordem
+     por que o Astro rende a árvore, e nada no código do sítio garante que essa
+     ordem seja a do documento. É esta régua que o garante: lê o documento
+     construído, e não a intenção. */
+  d710_definicao_do_marcador: 0,
+  /* §7.10 · páginas de concelho onde um valor está desenhado dentro de um SVG e
+     não está escrito na legenda por baixo. Entrou a 14.09.2026 com o penúltimo
+     dos cinco pequenos («os rótulos dos gráficos a 390 escrevem-se como texto
+     por baixo»), e o teto é zero: a folha troca os dois pela largura, e por isso
+     o documento tem de trazer sempre os dois. A altura de letra com que cada um
+     chega ao leitor mede-se no navegador, com
+     `design/especime-v3/medicoes/lugar-2026-09-04/rotulos-390.mjs`. */
+  d710_rotulos_por_baixo: 0,
+  d86_estudos_forma: 0,
+};
+
+/* Quantos concelhos ligados fora de uma lista fechada fazem uma segunda lista.
+   Um punhado de portas para concelhos vizinhos não é um índice; 30 é. */
+const L2_LIMITE_NOMES = 30;
+
+/* ---------------------------------------------------------------------------
+ * AS PALAVRAS DO VOCABULÁRIO FECHADO (§2.3 do brief; `DECISIONS.md` §1.98)
+ * ---------------------------------------------------------------------------
+ * A palavra visível do território é «concelho»; o trabalho de autor é um
+ * «estudo»; «indicador» e «peça» saem; «Relance» e «Leitura breve» ficam só
+ * como os nomes das duas densidades de um cartão.
+ *
+ * A EDIÇÃO INGLESA NÃO ENTRA NA L3, e a razão está no relatório do bloco:
+ * «municipality» é a tradução de «concelho» e não uma segunda palavra para a
+ * mesma coisa. O defeito que o leitor de primeira vez mediu é do português. As
+ * palavras inglesas que a L3 mede são as que a decisão também fecha em inglês.
+ */
+const VOCABULARIO = [
+  { palavra: 'município', porque: 'o território diz-se «concelho» (§1.98)' },
+  { palavra: 'Município', porque: 'o território diz-se «concelho» (§1.98)' },
+  { palavra: 'municípios', porque: 'o território diz-se «concelhos» (§1.98)' },
+  { palavra: 'Municípios', porque: 'o território diz-se «concelhos» (§1.98)' },
+  { palavra: 'indicador', porque: 'o número interpretado é uma «medida» (§1.98)' },
+  { palavra: 'indicadores', porque: 'o número interpretado é uma «medida» (§1.98)' },
+  { palavra: 'Indicador', porque: 'o número interpretado é uma «medida» (§1.98)' },
+  { palavra: 'Indicadores', porque: 'o número interpretado é uma «medida» (§1.98)' },
+  { palavra: 'peça', porque: '«peça» sai do vocabulário do sítio (§1.98)' },
+  { palavra: 'peças', porque: '«peça» sai do vocabulário do sítio (§1.98)' },
+  { palavra: 'trabalho', porque: 'o trabalho de autor é um «estudo» (§1.98)' },
+  { palavra: 'trabalhos', porque: 'o trabalho de autor é um «estudo» (§1.98)' },
+  { palavra: 'Trabalhos', porque: 'o trabalho de autor é um «estudo» (§1.98)' },
+  /* «ARQUIVO» ENTRA A 09.09.2026, com o §7.4: «um só nome para os estudos,
+     "estudo", nunca "trabalho" nem "arquivo" como nome de coisa». A palavra
+     estava em seis cadeias da casa (a descrição das duas páginas de índice, a
+     porta que devolve a lista inteira, a porta de volta da página de um estudo e
+     as duas glosas das contagens), e cada uma delas era o segundo nome da mesma
+     coisa. A régua passa a contá-la, e a L3 mede-a a 0. */
+  { palavra: 'arquivo', porque: 'os estudos chamam-se «estudos» (§7.4 do F1.10)' },
+  { palavra: 'Arquivo', porque: 'os estudos chamam-se «estudos» (§7.4 do F1.10)' },
+  { palavra: 'arquivos', porque: 'os estudos chamam-se «estudos» (§7.4 do F1.10)' },
+  { palavra: 'Arquivos', porque: 'os estudos chamam-se «estudos» (§7.4 do F1.10)' },
+  /* «SELO» ENTRA A 15.09.2026, com o item 5 do F1.13. O diretor leu a legenda na
+     página de uma área («Os dois estados do selo») e disse o que ela é para quem
+     não trabalha aqui: um selo de correio. A marca passa a chamar-se «a marca da
+     fonte» em toda a prosa que o leitor vê, e a régua passa a contar a palavra
+     antiga a zero.
+
+     AS QUATRO FORMAS, E NÃO A FRASE INTEIRA. O item nomeia «selo» e «estados do
+     selo»; a segunda contém a primeira, e `contaPalavra()` conta palavras
+     inteiras, por isso «selo» a zero põe «estados do selo» a zero por
+     construção. Declarar as duas faria a régua contar duas vezes a mesma
+     ocorrência, e um número que conta duas vezes o mesmo já não é uma medição.
+
+     AS FORMAS INGLESAS ENTRAM, ao contrário de «município» (ver a nota do
+     cabeçalho desta lista): a decisão do item 5 fecha a palavra NAS DUAS
+     EDIÇÕES, e «the source mark» é a cadeia que o brief escreve para a inglesa.
+
+     O MÉTODO FICA DE FORA DA CONTA, e não em silêncio: é ele que carrega a única
+     ocorrência que resta em todo o sítio, a ponte «a marca da fonte, o selo no
+     vocabulário da casa», e essa ocorrência é o POSITIVO CONHECIDO desta medida.
+     A régua conta-a à parte e exige-a. */
+  { palavra: 'selo', porque: 'a marca de proveniência chama-se «a marca da fonte» (F1.13, item 5)' },
+  { palavra: 'Selo', porque: 'a marca de proveniência chama-se «a marca da fonte» (F1.13, item 5)' },
+  { palavra: 'selos', porque: 'a marca de proveniência chama-se «a marca da fonte» (F1.13, item 5)' },
+  { palavra: 'Selos', porque: 'a marca de proveniência chama-se «a marca da fonte» (F1.13, item 5)' },
+  { palavra: 'seal', porque: 'a marca de proveniência chama-se «the source mark» (F1.13, item 5)' },
+  { palavra: 'Seal', porque: 'a marca de proveniência chama-se «the source mark» (F1.13, item 5)' },
+  { palavra: 'seals', porque: 'a marca de proveniência chama-se «the source mark» (F1.13, item 5)' },
+  { palavra: 'Seals', porque: 'a marca de proveniência chama-se «the source mark» (F1.13, item 5)' },
+];
+
+/**
+ * A PALAVRA DA MARCA NO MÉTODO, QUE É O POSITIVO CONHECIDO (F1.13, item 5)
+ * ---------------------------------------------------------------------------
+ * O item 5 escreve que «o Método pode dizer uma vez "a marca da fonte, o selo no
+ * vocabulário da casa"», e a medida P9 conta a palavra a zero nas páginas do
+ * leitor FORA do Método. A régua faz as duas coisas: tira a rota do Método da
+ * conta da L3 e conta ali a palavra à parte.
+ *
+ * E O NÚMERO DO MÉTODO É UM CHÃO E NÃO UM NÚMERO EXACTO, com a razão escrita: a
+ * regra 5 do Método é TEXTO GOVERNADO (`DECISIONS.md` §1.106 carimba o sha de
+ * `src/data/metodo.mjs`, e a `IDENTIDADE.md` §5 cita-a palavra por palavra). A
+ * passagem que lhe troca o nome da marca precisa de uma entrada nova na
+ * `DECISIONS.md` e de uma emenda à constituição, e nenhuma das duas é deste
+ * bloco: o construtor do F1.13 não toca na `DECISIONS.md`. Enquanto essa
+ * passagem não se fizer, o Método diz «selo» seis vezes por edição; o que esta
+ * régua exige é que diga PELO MENOS uma, porque é essa ocorrência que prova que
+ * ela ainda sabe ver a palavra.
+ *
+ * SEM ESTE CHÃO, O ZERO DAS OUTRAS ROTAS TEM DUAS EXPLICAÇÕES (a palavra saiu,
+ * ou a leitura do texto da casa partiu-se), e só uma delas é boa. É a regra 14
+ * da casa: um detetor que nunca viu um positivo é uma contagem de zero sem
+ * valor.
+ */
+const PALAVRA_DA_MARCA_NO_METODO = { pt: 'selo', en: 'seal' };
+/** A razão que marca as palavras da marca na lista de cima, para que a dispensa
+    da rota do Método saia DELA e não de uma segunda lista escrita à mão: uma
+    forma nova ali entra aqui sozinha. */
+const RAZAO_DA_MARCA = /a marca de proveniência chama-se/;
+const PALAVRAS_DA_MARCA = new Set(
+  VOCABULARIO.filter((v) => RAZAO_DA_MARCA.test(v.porque)).map((v) => v.palavra),
+);
+
+/* As duas palavras das densidades, que o item 8.14 tira das páginas do leitor. */
+const DENSIDADES = ['Relance', 'Leitura breve', 'At a glance', 'Brief reading'];
+
+/* ---------------------------------------------------------------------------
+ * AS EXCEÇÕES DO VOCABULÁRIO, POR NOME
+ * ---------------------------------------------------------------------------
+ * Cada uma é um BLOCO DE TEXTO INTEIRO: a régua compara o bloco que leu com esta
+ * lista, e só o dispensa quando ele é um deles por igual. Uma palavra proibida
+ * num bloco parecido não passa por semelhança.
+ */
+const EXCECOES_DO_VOCABULARIO = [
+  {
+    /* A política de IA copia a `POLITICA-DA-AUTONOMIA.md`, que é o documento
+       aprovado pelo diretor, e a regra da casa é que o que se copia de uma fonte
+       fica como a fonte o escreveu. As três frases estão em
+       `src/data/politica-ia.mjs`.
+
+       CRESCE A 16.09.2026, com a QUARTA: o direito de resposta, na página das
+       correções. É a segunda das três proteções da emenda de 15.09.2026 daquele
+       mesmo documento, e o diretor ditou-a palavra por palavra a 16.09.2026 às
+       08:25 UTC: «Quem for nomeado pode responder: a resposta publica-se ao lado
+       da peça, sem edição, pelo mesmo endereço das correções.» A palavra «peça»
+       aqui é a mesma da política («qualquer peça que nomeie uma pessoa»), e é a
+       peça que nomeia alguém, não o nome de um estudo, que é o que a L3 mede. */
+    conta: 'peça',
+    porque: 'a política de IA copia a POLITICA-DA-AUTONOMIA.md e fica como a fonte a escreveu',
+    padrao: /peça a peça|revê cada peça antes de sair|Qualquer peça que nomeie uma pessoa|resposta publica-se ao lado da peça/,
+  },
+  {
+    /* «trabalho» no sentido de EMPREGO não é o nome de um estudo, e a L3 mede
+       «trabalho(s)» como nome de estudo.
+
+       CRESCE A 09.09.2026, com o Major 5 da leitura a frio: a decisão do lugar
+       de direção manda que «"concelho" fique na voz da casa em todo o lado» e
+       que «a régua diga que ocorrências ficam e porquê». As quatro formas novas
+       são as que o `dist/` de 09.09 tem, e nenhuma delas nomeia um estudo:
+       «condições de trabalho» é o nome de uma matéria de uma área de governo,
+       que vem dos dados; «sem trabalho» e «intensidade de trabalho» são a
+       definição do desemprego de longa duração e a do risco de pobreza, tal
+       como o Eurostat as escreve; «trabalho de quem não escreveu a linha» e
+       «dirige o trabalho» são a palavra no sentido de LABOR, no Método e na
+       política de IA.
+
+       CRESCE A 28.09.2026, com o bloco PP1: as entradas da primeira página são perguntas da vida de
+       quem lê, e a do emprego chama-se «O meu trabalho» (o nome da entrada, o título da página dela e a
+       descrição da primeira página, que diz as seis entradas); a secção do custo do trabalho dessa
+       entrada chama-se «O custo do trabalho»; e o bloco do emprego de «O que se passa» abre com «O
+       trabalho:». As três são das declarações do lugar de direção (`src/data/primeira-pagina.mjs`), e
+       nenhuma nomeia um estudo: é o trabalho de quem lê. */
+    conta: 'trabalho',
+    porque: '«trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo',
+    padrao: /procuram trabalho|custo unitário do trabalho|custo nominal do trabalho|Trabalho, Solidariedade e Segurança Social|mercado de trabalho|postos de trabalho|condições de trabalho|sem trabalho|intensidade de trabalho|trabalho de quem não escreveu|dirige o trabalho|[Oo] custo do trabalho|O trabalho: mais emprego/,
+  },
+  {
+    /* «indicador» A NOMEAR O CAMPO DA FONTE, e não a medida da casa (Major 5,
+       09.09.2026). A página do domínio diz, na ausência de um número por
+       concelho, que campo é que o publicador dá em vez dele: «O indicador que o
+       publicador dá por concelho é um coeficiente de variação do ganho, e não a
+       disparidade entre sexos.» A palavra é a do INE, e trocá-la por «medida»
+       faria a frase dizer que a casa tem ali uma medida, que é precisamente o
+       que ela veio dizer que não tem. Fica, e a régua diz porquê. */
+    conta: 'indicador',
+    porque: '«indicador» a nomear o campo que o publicador dá, e não uma medida da casa',
+    padrao: /O indicador que o publicador dá por concelho/,
+  },
+  {
+    /* «indicador» DENTRO DO ENDEREÇO DA API DO INE (passagem RP3-b, 04.10.2026). Desde a RP3-b
+       só os campos transcritos de uma série saem do texto da casa (`scripts/campos-da-serie.mjs`),
+       e o endereço de um pedido ao INE, que o recibo de uma série no tempo mostra como texto, é
+       um valor e fica na conta: `https://www.ine.pt/ine/json_indicador/pindica.jsp?…`. A régua
+       conta a palavra inteira entre letras, e o sublinhado não é letra, por isso «indicador»
+       dentro de `json_indicador` conta. É o nome de um caminho da API da fonte, e não uma palavra
+       da casa a chamar «indicador» a uma medida. H2, I193: só o endereço sai da conta,
+       nunca a prosa que partilha o bloco com ele. */
+    conta: 'indicador',
+    porque: '«indicador» dentro do endereço da API do INE (`json_indicador`), que é um caminho da fonte e não uma palavra da casa',
+    padrao: /(?<![\w/])https?:\/\/www\.ine\.pt\/ine\/json_indicador\/[^\s<>"'«»]+/,
+    soTrecho: true,
+  },
+];
+
+/* ---------------------------------------------------------------------------
+ * A LEITURA DO TEXTO DA CASA
+ * ---------------------------------------------------------------------------
+ * O mesmo corte que `medir-defeitos.mjs` e a medição do bloco fizeram: tudo o
+ * que está debaixo de uma marca de origem declarada é da fonte e não da casa, e
+ * a casa não edita o que transcreve.
+ */
+const ORIGEM_DECLARADA = [
+  '[data-claim]',
+  '[data-linha-claim]',
+  '[data-correcao-claim]',
+  '[data-mudanca-campo]', // B1: texto aprovado, conferido por check:pais e gate:html.
+  '[data-verbatim]',
+  '[data-nonledger]',
+  '[data-agenda]',
+  '[data-registo]',
+  '[data-registo-unidade]',
+  '[data-registo-indice]', // B1: títulos do índice conferidos por L8 na rota do estudo.
+  '[data-registo-linha]',
+  '[data-registo-conta]',
+  '[data-lugar]',
+  '[data-nome]',
+  '[data-medida-nome]',
+  '[data-medida-unidade]',
+  /* O CAMPO TRANSCRITO DE UMA LINHA DE SÉRIE (bloco RP3, 04.10.2026; passagem RP3-b), a
+     marca irmã de `data-linha-claim`: o que a fonte escreve de uma série (o nome, o título
+     do conjunto, o literal, o excerto de um ponto, a etiqueta de uma marca, a razão de
+     uma lacuna) rende-se com `data-serie` e `data-serie-campo`, e o portão de HTML
+     compara-o com o ficheiro da série carácter a carácter. É uma transcrição, e contá-la
+     na 8.5 ou na L3 «seria a régua a exigir que a casa emendasse uma citação»
+     (`blocosDaCasa`, abaixo): o nome do conjunto do Eurostat da linha de pobreza é
+     «At-risk-of-poverty thresholds», e o literal do INE escreve «IndicadorDsg». DESDE A
+     RP3-b (o achado 8 da leitura a frio) a isenção é uma LISTA FECHADA, a mesma do portão
+     de HTML e da régua da voz (`scripts/campos-da-serie.mjs`): a conta em palavras de uma
+     derivada e o motivo de uma correção são prosa deste projeto e ficam no texto da casa,
+     os identificadores e os valores também, e um invólucro `data-serie` sem campo já não
+     isenta nada. O autoteste do fim do ficheiro prova os lados a cada corrida. */
+  SELETOR_DOS_CAMPOS_TRANSCRITOS,
+].join(',');
+
+/**
+ * ---------------------------------------------------------------------------
+ * O RÓTULO VISÍVEL DE UMA MARCA DE ORIGEM É TEXTO DA CASA (15.09.2026, achado 9
+ * da leitura a frio do Codex ao F1.13)
+ * ---------------------------------------------------------------------------
+ * `ORIGEM_DECLARADA` deita fora a sub-árvore inteira de tudo o que leve uma
+ * marca de origem, e isso está certo para o que a marca cobre: um valor do
+ * livro-razão, um excerto transcrito, uma data da fonte. Mas a marca da fonte
+ * (`<a class="src-chip" data-nonledger="proveniencia">`) leva lá dentro uma
+ * PALAVRA DA CASA, que é a que o leitor vê ao lado de cada número. A leitura a
+ * frio escreveu o buraco: «changing their visible label back to "selo" or "seal"
+ * would be skipped», e a régua diria zero com a palavra na página.
+ *
+ * O CORTE PASSA A SER PELA VISTA E NÃO PELA MARCA: dentro de um `data-nonledger`,
+ * o que o leitor vê conta, e o que ele não vê não conta. O que não se vê é o que
+ * a casa já marca como tal: a classe `.vh` (o texto que só um leitor de ecrã
+ * ouve), o atributo `hidden` e `aria-hidden="true"`.
+ *
+ * SÓ `data-nonledger`, E NÃO AS OUTRAS MARCAS. Um `data-claim` cobre um valor
+ * medido; um `data-verbatim` cobre palavras de outra pessoa; um `data-lugar` e um
+ * `data-nome` cobrem nomes de ficheiros de dados, com a sua própria conferência.
+ * Nenhuma dessas leva prosa da casa lá dentro.
+ *
+ * E DENTRO DO `data-nonledger`, SÓ OS MOTIVOS QUE LEVAM UMA PALAVRA DA CASA. O
+ * motivo diz o que a marca cobre, e a construção tem dezoito: `data-da-linha`,
+ * `data-de-referencia`, `numeracao`, `periodo-da-fonte` e as outras datas cobrem
+ * ALGARISMOS; `identificador-tecnico` cobre um código; `titulo-de-estudo` cobre o
+ * título de um trabalho tal como ele foi publicado; `referencia-legal` cobre o
+ * nome de um diploma. Nenhum desses é uma palavra que a casa escolheu, e abrir
+ * todos punha a L3 a contar «indicadores» dentro de «Quadro institucional de
+ * indicadores», que é o título de um estudo do Eurostat e não prosa desta casa
+ * (medido: 32 ocorrências em 32 páginas de linha, na primeira corrida desta
+ * mudança).
+ *
+ * O QUE SE ABRE É `proveniencia`, e é a marca da fonte: o quadrado que abre a
+ * linha, com o rótulo que o leitor lê ao lado de cada número. Essa palavra é
+ * escolhida por decisão da casa («fonte», e «linha» nas cinco linhas cuja origem
+ * é a própria casa), e é ela que o item 5 do F1.13 renomeia. É por isso que a
+ * lista abaixo tem um motivo só: não é uma exceção, é o alcance da medida. Um
+ * motivo novo que passe a levar uma palavra da casa entra aqui, com a razão ao
+ * lado, e é uma linha de código e não um silêncio.
+ *
+ * CADA UM É UM BLOCO SEU, e não um pedaço colado ao texto da página: é assim que
+ * uma exceção do vocabulário pode dispensar o bloco dela, como dispensa os
+ * outros.
+ *
+ * @param {import('node-html-parser').HTMLElement} raiz
+ * @returns {string[]}
+ */
+const MARCAS_COM_PALAVRA_DA_CASA = ['proveniencia'];
+const SELETOR_DAS_MARCAS = MARCAS_COM_PALAVRA_DA_CASA.map((m) => `[data-nonledger="${m}"]`).join(',');
+
+function rotulosVisiveisDasMarcas(raiz) {
+  const corpo = raiz.querySelector('body');
+  if (!corpo) return [];
+  /** @type {string[]} */
+  const out = [];
+  for (const el of corpo.querySelectorAll(SELETOR_DAS_MARCAS)) {
+    /* Uma marca dentro de outra conta uma vez, na de fora. */
+    if (el.closest(SELETOR_DAS_MARCAS) !== el) continue;
+    const escondido = new Set();
+    for (const h of el.querySelectorAll('.vh, [hidden], [aria-hidden="true"]')) {
+      escondido.add(h);
+      for (const d of h.querySelectorAll('*')) escondido.add(d);
+    }
+    /** @type {string[]} */
+    const partes = [];
+    const anda = (n) => {
+      if (!n) return;
+      if (n.nodeType === NodeType.TEXT_NODE) return void partes.push(n.rawText);
+      const tag = String(n.rawTagName ?? '').toLowerCase();
+      if (tag === 'script' || tag === 'style') return;
+      if (escondido.has(n)) return;
+      for (const f of n.childNodes ?? []) anda(f);
+    };
+    for (const f of el.childNodes ?? []) anda(f);
+    const txt = partes.join(' ').replace(/\s+/g, ' ').trim();
+    if (txt) out.push(txt);
+  }
+  return out;
+}
+
+/** @param {import('node-html-parser').HTMLElement} raiz */
+function textoDaCasa(raiz) {
+  const corpo = raiz.querySelector('body');
+  if (!corpo) return '';
+  const marcados = new Set();
+  for (const el of raiz.querySelectorAll(ORIGEM_DECLARADA)) {
+    marcados.add(el);
+    for (const d of el.querySelectorAll('*')) marcados.add(d);
+  }
+  /** @type {string[]} */
+  const partes = [];
+  const anda = (n) => {
+    if (!n) return;
+    if (n.nodeType === NodeType.TEXT_NODE) return void partes.push(n.rawText);
+    const tag = String(n.rawTagName ?? '').toLowerCase();
+    if (tag === 'script' || tag === 'style') return;
+    if (marcados.has(n)) return;
+    for (const f of n.childNodes ?? []) anda(f);
+  };
+  anda(corpo);
+  return partes.join(' ').replace(/\s+/g, ' ');
+}
+
+/**
+ * O `<HEAD>` É SUPERFÍCIE PÚBLICA (Major 6 da leitura a frio, 09.09.2026).
+ *
+ * A L3 começava no `<body>`, e por isso a descrição pública da primeira página
+ * continuava a dizer «indicadores» e a descrever os quadros europeus que o item
+ * 8.16 tinha tirado dali, sem que régua nenhuma a visse. O `<title>` e as duas
+ * descrições (a do motor de busca e a das redes) são escritas pela casa, são
+ * lidas por quem nunca abriu a página, e passam a contar como texto da casa.
+ *
+ * A DESCRIÇÃO DAS REDES É A MESMA CADEIA da `<meta name="description">` em
+ * todas as rotas do sítio, e por isso conta uma vez: contá-la duas faria a L3
+ * dizer o dobro da mesma frase. A régua junta as duas e tira as repetições.
+ *
+ * O CORTE DA ORIGEM DECLARADA FAZ-SE AQUI À MÃO, porque um `<meta>` não tem
+ * filhos onde pôr uma marca. A descrição de uma página de linha é COMPOSTA a
+ * partir dos campos daquela linha (o valor, o publicador, o título do documento
+ * e as datas), e o título de um documento é uma transcrição: «Evolução do
+ * endividamento total, por município» é como a DGAL escreve, e a casa não edita
+ * o que transcreve. A régua vai buscar os campos àquela linha do livro-razão e
+ * tira-os do texto antes de contar; o que sobra é a frase da casa. Sem este
+ * corte a L3 contava 4 411 ocorrências que são todas nomes de documentos e de
+ * organismos, e a medida deixava de medir a voz.
+ *
+ * @param {import('node-html-parser').HTMLElement} raiz
+ * @param {{ key: string, params: Record<string, string> } | null} rota
+ */
+function textoDaCabeca(raiz, rota) {
+  const cabeca = raiz.querySelector('head');
+  if (!cabeca) return '';
+  /** @type {Set<string>} */
+  const partes = new Set();
+  const titulo = cabeca.querySelector('title');
+  if (titulo) partes.add(titulo.text.replace(/\s+/g, ' ').trim());
+  for (const m of cabeca.querySelectorAll('meta[name="description"], meta[property="og:description"]')) {
+    const c = (m.getAttribute('content') ?? '').replace(/\s+/g, ' ').trim();
+    if (c) partes.add(c);
+  }
+  let texto = [...partes].join(' · ');
+  /* AS TRANSCRIÇÕES REGISTADAS SAEM DO TEXTO DA CASA, TAMBÉM NO `<head>`. A
+     descrição pública de uma página de estudo é a frase de abertura do
+     documento, palavra por palavra, e está em `src/data/verbatim.mjs`, onde o
+     portão de HTML a compara carácter a carácter. Duas delas dizem «município
+     de Évora», que é como o documento escreve; a casa não edita o que
+     transcreve, e a L3 não conta o que a casa não escreveu. No `<body>` este
+     corte já se fazia pela marca `data-verbatim`; um `<meta>` não tem onde a
+     pendurar, e por isso faz-se pelo texto. */
+  for (const v of Object.values(VERBATIM)) {
+    if (typeof v?.text !== 'string') continue;
+    const cadeia = v.text.replace(/\s+/g, ' ').trim();
+    if (cadeia.length < 20 || !texto.includes(cadeia)) continue;
+    texto = texto.split(cadeia).join(' ');
+  }
+  /* OS IDENTIFICADORES DO ENDEREÇO NÃO SÃO PALAVRAS. A descrição de uma página
+     de linha abre com o id da linha («custo-unitario-do-trabalho-2025»), e o id
+     é o endereço dela, não uma frase: contar «trabalho» ali seria a régua a
+     medir o `slug`. Saem os parâmetros da rota, que é o que eles são. */
+  for (const valor of Object.values(rota?.params ?? {})) {
+    if (typeof valor === 'string' && valor) texto = texto.split(valor).join(' ');
+  }
+  const linha = rota?.key === 'linha' ? claims.get(rota.params.slug) : null;
+  if (linha) {
+    for (const campo of [
+      linha.document?.title,
+      linha.document?.edition,
+      linha.document?.locator,
+      linha.source,
+      linha.name,
+      linha.unit,
+    ]) {
+      if (typeof campo !== 'string' || !campo) continue;
+      texto = texto.split(campo).join(' ');
+    }
+  }
+  return texto;
+}
+
+/**
+ * O texto da casa, bloco a bloco, para as exceções e para a medida 8.5.
+ * Um bloco é uma unidade de leitura: um parágrafo, um item, uma célula, um
+ * título. É o mesmo corte de `BLOCOS_DA_VOZ` em `medir-defeitos.mjs`.
+ */
+const BLOCOS = 'p,li,dd,dt,h1,h2,h3,h4,figcaption,summary,blockquote,td,th,caption';
+
+/* ---------------------------------------------------------------------------
+ * O QUE QUALIFICA A PALAVRA «LIMIAR» (medida 8.5)
+ * ---------------------------------------------------------------------------
+ * A lista está ESCRITA AQUI, palavra por palavra, e não lida de
+ * `src/i18n/strings.mjs`. É de propósito: uma régua que fosse buscar o seu
+ * critério ao mesmo ficheiro que a página lê teria os dois lados da comparação
+ * do mesmo lado, e passar a dizer «dentro do limiar» outra vez em `strings.mjs`
+ * mudaria a régua e a página ao mesmo tempo, em silêncio. Escrita aqui, a régua
+ * fica vermelha no dia em que a cadeia mudar, e quem a muda tem de vir cá dizer
+ * porquê.
+ *
+ * SÃO OS TRÊS FIXADORES DO LIMIAR (F1.10, item 8.5, e `FIXADORES_DO_LIMIAR` em
+ * `src/data/figuras.mjs`), nas duas edições, mais as duas formas em que a
+ * palavra já se qualificava a si própria: a ausência declarada («sem limiar»)
+ * e a frase que diz o que o limiar é («O limiar é …»).
+ */
+const QUALIFICADORES_DO_LIMIAR = [
+  /* os quatro fixadores do limiar, nas duas edições. Eram três, e o
+     `porRegistar` («limiar publicado») saiu a 08.09.2026 quando se leram os
+     documentos que as suas duas linhas citam: um diz o Pacto de Estabilidade e
+     Crescimento, o outro diz o Conselho da União Europeia. A régua conta a
+     forma que se rende, e por isso a lista muda com eles. */
+  'limiar da comissão',
+  'commission threshold',
+  'limite legal',
+  'legal limit',
+  'limiar do pacto de estabilidade e crescimento',
+  'stability and growth pact threshold',
+  'limiar recomendado pelo conselho da ue',
+  'threshold recommended by the council of the eu',
+  /* A DEFINIÇÃO DO PAINEL DO PROCEDIMENTO (item 8.4, 08.09.2026) diz de quem os
+     limiares são no mesmo bloco: o sujeito da frase é «a Comissão Europeia» e o
+     que ela põe em cada medida é «o seu limiar indicativo», que é a palavra da
+     página da Comissão («indicative thresholds»). Entra por extenso, como os
+     outros blocos que a casa já qualificava por outra via. */
+  'com o seu limiar indicativo',
+  'with its indicative threshold',
+  /* A AUSÊNCIA DECLARADA. «sem limiar» é uma das três palavras do vocabulário
+     fechado do estado, e «não tem limiares» é a frase do Painel Social. */
+  'sem limiar',
+  'no threshold',
+  'não tem limiares',
+  'has no thresholds',
+  /* A FRASE QUE DIZ O QUE O LIMIAR É E QUEM O FIXOU, na leitura de uma medida e
+     nos dois lugares onde a casa já a dizia antes deste bloco (o Método e a
+     agenda das fontes). */
+  'o limiar é',
+  'the threshold is',
+  'limiar fixado',
+  'a fonte publica um limiar',
+  'the source publishes a threshold',
+  'limiar que a própria comissão publica',
+  'threshold the commission itself publishes',
+  /* O QUADRO NOMEADO DENTRO DO BLOCO. Um bloco que nomeia o painel do
+     Procedimento diz de quem é o limiar de que fala, e é a forma em que a
+     manchete da página europeia, o cabeçalho do quadro e a frase de contexto já
+     o diziam antes deste bloco. */
+  'limiar do procedimento',
+  'limiares do procedimento',
+  'threshold of the macroeconomic imbalance procedure',
+  'thresholds of the macroeconomic imbalance procedure',
+  'procedimento relativo aos desequilíbrios macroeconómicos',
+  'procedimento dos desequilíbrios macroeconómicos',
+  'macroeconomic imbalance procedure',
+  "procedure's threshold",
+  'limiar do painel europeu',
+  'european scoreboard threshold',
+];
+
+/**
+ * OS BLOCOS DA CASA, E SÓ OS DA CASA (segunda passagem, 09.09.2026).
+ *
+ * Até 09.09 esta função devolvia TODOS os blocos da página, incluindo os que
+ * estão debaixo de uma marca de origem declarada, e a `textoDaCasa()` ao lado
+ * fazia o corte contrário. As duas leituras discordavam, e a discordância só
+ * não se via porque nenhuma transcrição tinha ainda uma das palavras medidas.
+ * A segunda passagem trouxe uma: os excertos das definições da página europeia
+ * são a Comissão a falar, e três deles dizem «threshold». Contá-los na 8.5
+ * seria a régua a exigir que a casa emendasse uma citação.
+ *
+ * O CORTE É O MESMO DA `textoDaCasa()`: tudo o que está DENTRO de uma marca de
+ * origem declarada, ou que a CONTÉM, é da fonte e não da casa. É a regra que o
+ * cabeçalho de `ORIGEM_DECLARADA` já escrevia, aplicada agora às duas leituras.
+ *
+ * @param {import('node-html-parser').HTMLElement} raiz
+ */
+function blocosDaCasa(raiz) {
+  const corpo = raiz.querySelector('body');
+  if (!corpo) return [];
+  const daFonte = new Set();
+  for (const el of corpo.querySelectorAll(ORIGEM_DECLARADA)) {
+    daFonte.add(el);
+    for (const d of el.querySelectorAll('*')) daFonte.add(d);
+  }
+  /** @type {string[]} */
+  const out = [];
+  for (const el of corpo.querySelectorAll(BLOCOS)) {
+    if (daFonte.has(el)) continue;
+    if (el.querySelector(ORIGEM_DECLARADA)) continue;
+    const txt = el.text.replace(/\s+/g, ' ').trim();
+    if (txt) out.push(txt);
+  }
+  return out;
+}
+
+/** @param {string} dir */
+function paginasDe(dir) {
+  /** @type {string[]} */
+  const out = [];
+  const anda = (d) => {
+    for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+      const f = path.join(d, e.name);
+      if (e.isDirectory()) anda(f);
+      else if (e.name.endsWith('.html')) out.push(f);
+    }
+  };
+  anda(dir);
+  return out.sort();
+}
+
+/** O caminho da rota de um ficheiro de `dist/`. @param {string} ficheiro */
+function rotaDe(ficheiro) {
+  const rel = path.relative(DIST, ficheiro).split(path.sep).join('/');
+  const url = '/' + rel.replace(/index\.html$/, '').replace(/\.html$/, '');
+  return { rel, url: normalizePath(url), rota: matchPath(normalizePath(url)) };
+}
+
+/* ---------------------------------------------------------------------------
+ * A CONTAGEM
+ * --------------------------------------------------------------------------- */
+const falhas = [];
+const medidas = {
+  l1_paginas: 0,
+  l2_segundas_listas: 0,
+  l2_reguas: 0,
+  l2_sinopses: 0,
+  l3_vocabulario: 0,
+  l4_falhas: 0,
+  l5_sem_caminho: 0,
+  l6_selos: 0,
+  d85_limiar_sozinho: 0,
+  d88_livro_razao: 0,
+  d813_selos_nos_dominios: 0,
+  d814_densidades: 0,
+  d817_pontos_no_concelho: 0,
+  d817_concelhos_sem_mapa: 0,
+  d811_leituras_na_cabeca: 0,
+  d84_definicoes_fora: 0,
+  d710_definicao_do_marcador: 0,
+  d710_rotulos_por_baixo: 0,
+  d86_estudos_forma: 0,
+};
+/** Quantas superfícies de estudo a régua viu (regra 14: zero defeitos sobre
+    zero páginas não prova nada). */
+const vistas = { estudo: 0, texto: 0, indice: 0, edicoes: 0, linhas: 0 };
+/** Quantos parágrafos de definição de painel a régua viu (regra 14: uma
+    contagem de zero sobre uma coleção vazia não prova nada). */
+let definicoesVistas = 0;
+/** Quantas origens de definição a régua viu (a mesma regra 14). */
+let origensVistas = 0;
+/** Quantas vezes o Método diz a palavra da marca, POR EDIÇÃO (F1.13, item 5; o
+    chão por edição entra a 15.09.2026 com o achado 9 da leitura a frio). É o
+    positivo conhecido da palavra que a L3 conta a zero em todas as outras rotas.
+    Somar as duas edições deixava uma delas ficar a zero com a outra a pagar o
+    chão das duas, e uma régua cega numa edição é uma régua cega. */
+const ponteDoMetodo = { pt: 0, en: 0 };
+/** As amostras de cada medida, para que um número tenha sempre um sítio. */
+const amostras = Object.fromEntries(Object.keys(medidas).map((k) => [k, []]));
+/** Quantas vezes cada exceção foi usada: uma exceção a zero é uma porta esquecida. */
+const usoDasExcecoes = new Map(EXCECOES_DO_VOCABULARIO.map((e, i) => [i, 0]));
+/** As palavras do vocabulário, contadas uma a uma, para o relatório. */
+const porPalavra = new Map(VOCABULARIO.map((v) => [v.palavra, 0]));
+const porDensidade = new Map(DENSIDADES.map((d) => [d, 0]));
+
+const claims = loadClaims();
+const S = { pt: t('pt'), en: t('en') };
+
+/** O caminho de cada índice em que a frase de hierarquia tem de estar (§2.2). */
+const INDICES_DA_HIERARQUIA = [];
+for (const lang of LANGS) {
+  const s = S[lang];
+  INDICES_DA_HIERARQUIA.push(
+    /* A FRASE DE HIERARQUIA DO TERRITÓRIO SAIU COM OS SEUS ÍNDICES (B1, peça 2,
+       21.09.2026). Dizia «O país lê-se em quatro níveis…», e vivia nos três
+       índices do território; dois passaram a redirecionamentos e a página dos
+       lugares não explica os níveis: mostra-os, em duas listas. A célula
+       continua a exigir a frase onde ela é matéria — o índice dos domínios e o
+       das áreas de governo, onde duas famílias com nomes parecidos precisam de
+       uma linha que as distinga. */
+    /* N1: o índice dos domínios é um redirecionamento, sem prosa própria. */
+    { url: routePath('areas', lang), frase: s.hierarquia?.area, nome: 'areas' },
+  );
+}
+/** B1, peça 3: a definição sai da primeira página por mandato. A célula
+ * passa a exigir a ausência dela; a leitura é conferida por voz-pais. */
+const DEFINICAO = LANGS.map((lang) => ({ url: routePath('home', lang), frase: S[lang].identidade }));
+
+const conta = (texto, agulha) => {
+  let i = 0;
+  let n = 0;
+  while ((i = texto.indexOf(agulha, i)) >= 0) {
+    n++;
+    i += agulha.length;
+  }
+  return n;
+};
+
+const anota = (chave, linha) => {
+  if (amostras[chave].length < (Number(process.env.AMOSTRA) || 6)) amostras[chave].push(linha);
+};
+
+const paginas = paginasDe(DIST);
+/** O que cada índice viu, para as medidas que se conferem uma vez no fim. */
+const vistoNoIndice = new Map();
+
+for (const ficheiro of paginas) {
+  const { rel, url, rota } = rotaDe(ficheiro);
+  if (FICHEIROS_SEM_ROTA.has(rel)) continue;
+  const chaveDaRota = rota?.key ?? null;
+  const lang = rota?.lang ?? (rel.startsWith('en/') ? 'en' : 'pt');
+  /* As duas famílias de transcrição saem por nome, com a razão no cabeçalho. */
+  const transcricao = chaveDaRota !== null && ROTAS_DE_TRANSCRICAO.has(chaveDaRota);
+
+  const cru = fs.readFileSync(ficheiro, 'utf8');
+  const raiz = lerPaginaComCodigo(cru);
+  tirarCodigoConferido(raiz, rota);
+  const corpo = raiz.querySelector('body');
+  if (!corpo) continue;
+
+  const cabecalho = raiz.querySelector('header');
+  const rodape = raiz.querySelector('footer');
+  const daMobilia = new Set();
+  for (const marco of [cabecalho, rodape]) {
+    if (!marco) continue;
+    daMobilia.add(marco);
+    for (const d of marco.querySelectorAll('*')) daMobilia.add(d);
+  }
+
+  /* -------------------------------------------------------------------- L1 */
+  /* B2: as contagens provadas têm portas obrigatórias e cada nome do
+     veredicto abre a medida que nomeia. V1 e V2 conferem primeiro os blocos
+     inteiros, incluindo cada porta e a sua multiplicidade. Só os nós exatos
+     devolvidos depois dessa prova saem da conta; outra âncora dentro ou fora
+     dos blocos continua a ser uma porta de navegação contada pela L1. */
+  const temasB2 = chaveDaRota === 'home'
+    ? documentoDosAssuntos(DIST, lang)
+    : null;
+  const b2 = portasObrigatoriasB2(raiz, chaveDaRota, lang, temasB2);
+  for (const erro of b2.erros) falhas.push(`L1 B2 · ${url}: ${erro}`);
+  /* Dois destinos iguais no MESMO ecrã, fora do cabeçalho e do rodapé. O
+     fragmento não conta: `#m-x` e `#m-y` são dois sítios da mesma página, e
+     `/x#a` e `/x#b` são duas portas para dois sítios da mesma página. */
+  const destinos = new Map();
+  for (const a of corpo.querySelectorAll('a[href]')) {
+    if (daMobilia.has(a) || b2.portas.has(a) || (chaveDaRota === 'estudo' && a.closest('[data-registo-unidade]'))) continue;
+    const href = a.getAttribute('href') ?? '';
+    if (!href || href.startsWith('#') || href.startsWith('mailto:')) continue;
+    /* O marcador de um campo não confirmado é obrigatório em cada cartão.
+       Não é uma segunda porta de navegação. Só se dispensa o destino exato
+       declarado para o marcador, dentro da definição conferida do cartão. */
+    if (a.matches('a.marcador') && a.closest('[data-cartao-definicao]') &&
+        href === routePath('marcador', lang)) continue;
+    /* E A PORTA DO RÓTULO DE IA, pela mesma regra (bloco R1, 23.09.2026). O
+       rótulo subiu ao topo de todas as páginas e é a primeira coisa do
+       `<main>`; a sua porta para a política é obrigatória (a divulgação do
+       artigo 50.º, n.º 4 do Regulamento (UE) 2024/1689), e na maior parte das
+       páginas de linha o recibo também liga ao Método. Contá-la como segunda
+       porta era contar a obrigação como escolha. Só se dispensa o destino EXATO
+       da política, e só dentro do rótulo: uma segunda porta para o Método
+       noutro sítio da página continua a contar. */
+    if (a.closest('[data-rotulo-ia="topo"]') &&
+        href === `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`) continue;
+    /* E O MARCADOR DE UM TÍTULO POR CONFIRMAR, pela mesma regra e com o mesmo
+       mecanismo (B1c, 22.09.2026). O arquivo declara `titleUnverified` em duas
+       edições, e a decisão desse dia é que a marca vai a todas as páginas onde
+       o título se rende. `TituloDeTrabalho` dá-lhe a classe `marcador-de-titulo`
+       e o destino exato do marcador; é obrigatória onde o arquivo a declara, e
+       a A4 do `check:pais` confere que está onde ele a declara e em mais lado
+       nenhum. Contá-la como segunda porta era contar a obrigação como escolha. */
+    if (a.matches('a.marcador.marcador-de-titulo') && href === routePath('marcador', lang)) continue;
+    /* E O MARCADOR DE UMA FRASE POR CONFIRMAR NA FONTE, pela mesma regra e com o mesmo mecanismo (passagem R4-b,
+       06.10.2026). A frase «o que é» de um recibo com uma parte que nem a fonte nem a conta declarada dizem leva o
+       marcador da casa, com a classe `marcador-da-frase`, dentro de `[data-por-confirmar-na-fonte]`; é obrigatório onde
+       a auditoria das frases o declara, e a K17 do `check:cartao` confere que está onde ela o declara e em mais lado
+       nenhum. Contá-lo como segunda porta era contar a obrigação como escolha. Só se dispensa o destino exato do
+       marcador, e só dentro dessa marca. */
+    if (a.matches('a.marcador.marcador-da-frase') && a.closest('[data-por-confirmar-na-fonte]') && href === routePath('marcador', lang)) continue;
+    /* E A PORTA DA ORIGEM DE UMA DEFINIÇÃO QUE É O PRÓPRIO DOCUMENTO DA LINHA, no recibo dessa linha, pela
+       mesma regra (bloco R2, 03.10.2026). Cada origem de uma definição rende o seu documento como porta para o
+       endereço (a decisão do lugar de direção de 09.09.2026, em `src/components/OrigemDaDefinicao.astro`), e o
+       recibo rende o pedido da linha, cujo `href` o portão de HTML confere contra `source_url`. Quando a
+       pergunta de uma medida se apoia no mesmo documento de onde o valor vem (o salário mínimo: o artigo 2.º
+       do decreto-lei diz o território, o artigo 3.º diz o valor), as duas portas são obrigatórias e vão para o
+       mesmo sítio; contá-las como duas portas era contar a obrigação como escolha. Só se dispensa a porta
+       `a.def-origem-doc` dentro de `[data-def-origem]`, só na rota da linha, e só quando o destino é o EXATO
+       do pedido da mesma página: uma terceira porta para o mesmo documento noutro sítio da página continua a
+       contar, e a planta `r2-l1-porta-da-origem-repetida-fora` prova-o. */
+    if (chaveDaRota === 'linha' && a.matches('a.def-origem-doc') && a.closest('[data-def-origem]')) {
+      const pedido = corpo.querySelector('p.linha-pedido a.ligacao-externa')?.getAttribute('href') ?? null;
+      if (pedido && href.split('#')[0].replace(/\/$/, '') === pedido.split('#')[0].replace(/\/$/, '')) continue;
+    }
+    const chave = href.split('#')[0].replace(/\/$/, '') || (href.startsWith('/') ? '/' : '');
+    if (!chave) continue;
+    destinos.set(chave, (destinos.get(chave) ?? 0) + 1);
+  }
+  const repetidos = [...destinos.entries()].filter(([, n]) => n > 1);
+  /* A mobília conserva a sua exclusão da catraca. Porém, duas grafias da mesma
+     porta entre o menu e o corpo não podem esconder-se nessa exclusão. */
+  for (const a of cabecalho?.querySelectorAll('#nav-principal a[href]') ?? []) {
+    const href = a.getAttribute('href');
+    const chave = href.split('#')[0].replace(/\/$/, '') || '/';
+    const gemeas = corpo.querySelectorAll('a[href]').filter(b => !daMobilia.has(b) && !b2.portas.has(b) &&
+      !!b.getAttribute('href') && !b.getAttribute('href').startsWith('#') &&
+      (b.getAttribute('href').split('#')[0].replace(/\/$/, '') || '/') === chave);
+    const outras = gemeas.filter(b => b.getAttribute('href').split('#')[0] !== href.split('#')[0]);
+    if (outras.length) falhas.push(`L1 · ${url}: ${chave} ×${outras.length + 1}, porta repetida com duas grafias entre o menu e o corpo.`);
+  }
+  if (repetidos.length) {
+    medidas.l1_paginas++;
+    anota('l1_paginas', `${url} · ${repetidos.length} destinos repetidos (ex.: ${repetidos[0][0]} ×${repetidos[0][1]})`);
+  }
+
+  /* ------------------------------------------------------------------ §7.10 */
+  /* «[a verificar]» COM A SUA DEFINIÇÃO AO PÉ DA PRIMEIRA OCORRÊNCIA (o último
+     dos cinco pequenos, 14.09.2026). A régua lê a ORDEM DO DOCUMENTO: percorre o
+     corpo uma vez, anota por que ordem aparecem os marcadores e as definições, e
+     exige que a página com marcador tenha uma definição só e que ela venha LOGO
+     A SEGUIR ao primeiro. É esta célula que sustenta a promessa que
+     `src/lib/uma-vez-por-pagina.mjs` faz: a ordem por que o Astro rende a árvore
+     não é um contrato, e o que se mede é o documento construído. */
+  /* AS DUAS FAMÍLIAS DE TRANSCRIÇÃO FICAM DE FORA, pelo §3 do brief e pela mesma
+     razão que tira a definição de lá: numa página de texto transcrito o marcador
+     aparece dentro de uma unidade do registo, e a casa não edita o que
+     transcreve. Quem leva a definição é o primeiro marcador FORA da
+     transcrição, e uma página que só tenha marcadores dentro dela não leva
+     nenhuma. */
+  const ordemDoMarcador = [];
+  const percorreOMarcador = (no) => {
+    for (const filho of no.childNodes ?? []) {
+      if (!filho.tagName || filho.hasAttribute('data-registo-unidade')) continue;
+      const classes = (filho.getAttribute('class') ?? '').split(/\s+/);
+      if (classes.includes('marcador')) ordemDoMarcador.push('m');
+      else if (classes.includes('marcador-definicao')) ordemDoMarcador.push('d');
+      percorreOMarcador(filho);
+    }
+  };
+  if (!transcricao) percorreOMarcador(corpo);
+  const quantasDefinicoes = ordemDoMarcador.filter((x) => x === 'd').length;
+  const temMarcador = ordemDoMarcador.includes('m');
+  const aoPeDoPrimeiro =
+    ordemDoMarcador[0] === 'm' && ordemDoMarcador[1] === 'd' && quantasDefinicoes === 1;
+  if ((temMarcador && !aoPeDoPrimeiro) || (!temMarcador && quantasDefinicoes > 0)) {
+    medidas.d710_definicao_do_marcador++;
+    anota(
+      'd710_definicao_do_marcador',
+      `${url} · ${ordemDoMarcador.filter((x) => x === 'm').length} marcador(es), ` +
+        `${quantasDefinicoes} definição(ões), ordem «${ordemDoMarcador.slice(0, 4).join('')}»`,
+    );
+  }
+
+  /* OS RÓTULOS DOS DESENHOS, TAMBÉM COMO TEXTO POR BAIXO (o penúltimo dos cinco
+     pequenos). O que se conta é o desacordo: um valor desenhado dentro de um
+     `<svg>` desta página sem o seu par escrito na legenda. */
+  if (chaveDaRota === 'municipio') {
+    const desenhados =
+      corpo.querySelectorAll('.mun-barra-rot').length +
+      corpo.querySelectorAll('.mun-tecto-rot').length +
+      corpo.querySelectorAll('.mun-serie-val').length;
+    const naLegenda = corpo.querySelectorAll('.mun-legenda-val').length;
+    if (desenhados !== naLegenda) {
+      medidas.d710_rotulos_por_baixo++;
+      anota(
+        'd710_rotulos_por_baixo',
+        `${url} · ${desenhados} valor(es) desenhado(s) e ${naLegenda} na legenda`,
+      );
+    }
+  }
+
+  /* -------------------------------------------------------------------- L2 */
+  /* B1, peça 2: a página que lista os 308 passou a ser `/lugares`, e é ela que
+     fica isenta. A régua não afrouxa: continua a contar uma segunda lista dos
+     308 em qualquer outra rota, e o que mudou foi o nome da primeira. */
+  if (chaveDaRota !== 'lugares') {
+    /* Os 308 nomes ligados fora da página dos lugares, e fora de uma lista fechada:
+       um `<details>` fechado é a alternativa em texto de um mapa, e o §1 do
+       brief deixa-a lá de propósito. */
+    /* SÓ UM `<details>` FECHADO É UMA ALTERNATIVA EM TEXTO (Major 12 da leitura
+       a frio, 09.09.2026). A régua isentava TODOS os descendentes de TODOS os
+       `<details>`, sem olhar ao atributo `open`: uma lista dos 308 aberta de
+       origem passava verde por estar dentro de uma dobra que nunca fecha. O §1
+       do brief deixa a lista lá como «a lista fechada como alternativa em texto
+       do mapa», e é a palavra «fechada» que a régua passa a exigir. */
+    const dentroDeLista = new Set();
+    for (const d of corpo.querySelectorAll('details')) {
+      if (d.hasAttribute('open')) continue;
+      for (const x of d.querySelectorAll('*')) dentroDeLista.add(x);
+    }
+    /* AS ÁREAS DE UM MAPA NÃO SÃO UMA LISTA (F1.10, item 8.17, 08.09.2026). O §1
+       do brief decide isto para os 29 nomes da primeira página e para as tabelas
+       dos mapas do domínio, com a mesma frase: «uma fonte, duas formas». Um mapa
+       com uma área por concelho é o desenho do território, e cada área é a porta
+       do lugar que ela desenha; contá-las como um índice dos 308 punha a régua a
+       chamar segunda lista ao instrumento que este bloco veio pôr no lugar da
+       lista. O que a régua continua a recusar é uma FILA DE NOMES fora de
+       `/municipios`, que é o que ela mede em todas as outras páginas. */
+    for (const svg of corpo.querySelectorAll('[data-mapa], [data-mapa-concelhos]')) {
+      for (const x of svg.querySelectorAll('*')) dentroDeLista.add(x);
+    }
+    /* -----------------------------------------------------------------------
+       A FILA DE RESULTADOS DA BUSCA NÃO É UMA SEGUNDA LISTA (decisão do lugar de
+       direção, 09.09.2026, sobre a L2a do F1.10)
+       -----------------------------------------------------------------------
+       A régua contava 2: `/` e `/en`, cada uma com «308 concelhos ligados fora
+       de uma lista fechada». Os 308 são a fila de resultados da busca, que o §1
+       do brief autoriza na primeira página («na primeira página, a busca
+       (submete para `/municipios`) e o mapa com os 29 nomes»). A decisão do
+       lugar de direção diz o que ela é: «a busca em repouso não rende uma lista
+       dos 308 no HTML; sem guião, o caminho é o formulário a submeter a consulta
+       ao índice dos concelhos (`/municipios` com a consulta), não uma lista; com
+       guião, as sugestões aparecem só depois de escrever».
+
+       A EXCEÇÃO NÃO É UM SALTO, É UMA MEDIÇÃO, e é isso que a impede de ser a
+       régua a enfraquecer. A fila só sai da conta quando as três coisas que a
+       decisão afirma se confirmam NESTA página, uma a uma:
+
+         1. cada uma das portas contadas está dentro da fila (`[data-resultados]`);
+         2. a fila chega FECHADA do servidor (o atributo `hidden` no `<ul>`), que
+            é o mesmo estado de um `<details>` fechado, e a razão pela qual um já
+            estava fora da conta;
+         3. a página tem uma busca com destino: um `<form role="search">` com
+            `method="get"` e `action` para o índice dos concelhos desta edição.
+
+       Se qualquer uma delas deixar de ser verdade, a fila volta a contar e a L2a
+       sobe. Uma lista de 308 nomes escrita à mão numa página, aberta ou sem
+       formulário, continua a ser o que a régua veio proibir: a planta da L9
+       prova-o. */
+    const filaFechadaDaBusca = new Set();
+    const formaDaBusca = corpo
+      .querySelectorAll('form[role="search"]')
+      .find(
+        (f) =>
+          (f.getAttribute('method') ?? '').toLowerCase() === 'get' &&
+          /* O DESTINO DA BUSCA É A PÁGINA DOS LUGARES (B1, peça 2, correção de
+             21.09.2026): `/municipios` passou a redirecionamento 301, e a
+             página onde os 308 se procuram é `/lugares`. A condição é a mesma,
+             e o que mudou foi o nome da página. */
+          normalizePath(f.getAttribute('action') ?? '') === normalizePath(routePath('lugares', lang)),
+      );
+    if (formaDaBusca) {
+      for (const fila of corpo.querySelectorAll('[data-resultados]')) {
+        if (!fila.hasAttribute('hidden')) continue;
+        for (const x of fila.querySelectorAll('*')) filaFechadaDaBusca.add(x);
+      }
+    }
+    const nomes = new Set();
+    for (const a of corpo.querySelectorAll('a[href]')) {
+      if (daMobilia.has(a) || dentroDeLista.has(a) || filaFechadaDaBusca.has(a)) continue;
+      const href = (a.getAttribute('href') ?? '').split('#')[0];
+      const m = href ? matchPath(href) : null;
+      if (m?.key === 'municipio') nomes.add(href);
+    }
+    if (nomes.size > L2_LIMITE_NOMES) {
+      medidas.l2_segundas_listas++;
+      anota('l2_segundas_listas', `${url} · ${nomes.size} concelhos ligados fora de uma lista fechada`);
+    }
+  }
+  if (chaveDaRota !== 'regioes') {
+    /* A RÉGUA DETETA-SE PELA FORMA, E NÃO SÓ PELO MARCADOR (Major 12,
+       09.09.2026). O marcador `data-instrumento="convergencia"` continua a
+       contar, porque é a declaração da casa; mas uma cópia da régua com outra
+       marca, ou sem marca nenhuma, passava verde, e a planta da L9 que mudava o
+       marcador provava só que a régua sabe ler o marcador que ela própria
+       escreve. A FORMA é a que o §1 do brief nomeia: «a régua inteira», as nove
+       regiões com os seus valores. Um bloco que ligue às nove páginas de região
+       e traga nove ou mais valores selados É a régua, chame-se ele como se
+       chamar. Uma porta para uma região vizinha não é: são nove destinos
+       distintos e nove selos, e nada disso acontece por acaso. */
+    const marcadas = new Set(corpo.querySelectorAll('[data-instrumento="convergencia"]'));
+    const porForma = [];
+    for (const bloco of corpo.querySelectorAll('div,section,figure,table,ul,ol,aside')) {
+      if (marcadas.has(bloco)) continue;
+      const regioes = new Set();
+      for (const a of bloco.querySelectorAll('a[href]')) {
+        const href = (a.getAttribute('href') ?? '').split('#')[0];
+        const m = href ? matchPath(href) : null;
+        if (m?.key === 'regiao') regioes.add(normalizePath(href));
+      }
+      if (regioes.size < 9) continue;
+      /* N1: a lista das regiões ao lado de valores MUNICIPAIS não é a régua
+         regional. As nove portas têm de acompanhar os valores das regiões.
+         O marcador continua a contar sempre, e a planta copia a régua real
+         sem marcador para provar a deteção pela forma. */
+      const valoresRegionais = new Set(REGIOES.filter((r) => !r.referencia).map((r) => r.valor));
+      const rendidos = new Set(bloco.querySelectorAll('[data-claim]').map((n) => n.getAttribute('data-claim')));
+      if ([...valoresRegionais].filter((id) => rendidos.has(id)).length < 9) continue;
+      /* CONTA-SE O BLOCO DE FORA, UMA VEZ: os ascendentes vêm primeiro na ordem
+         do documento, e um deles a casar com a forma torna todos os que estão
+         dentro dele a mesma régua vista de mais perto. Sem isto, uma régua
+         contaria tantas vezes quantos os invólucros que tem. */
+      if (porForma.some((b) => b.querySelectorAll('*').includes(bloco))) continue;
+      porForma.push(bloco);
+    }
+    const reguas = marcadas.size + porForma.length;
+    if (reguas) {
+      medidas.l2_reguas += reguas;
+      anota(
+        'l2_reguas',
+        `${url} · ${reguas} régua(s) da convergência` +
+          (porForma.length ? ` (${porForma.length} pela forma, sem o marcador)` : ''),
+      );
+    }
+  }
+  if (chaveDaRota !== 'estudos') {
+    const sinopses = corpo.querySelectorAll('.mun-estudo-frase').length;
+    if (sinopses) {
+      medidas.l2_sinopses += sinopses;
+      anota('l2_sinopses', `${url} · ${sinopses} sinopse(s) de estudo`);
+    }
+  }
+
+  /* --------------------------------------------------------------- L3, 8.14 */
+  if (!transcricao) {
+    /* O `<head>` entra na L3 como um bloco a mais: é texto da casa, é público,
+       e a régua não o via (Major 6, 09.09.2026). */
+    const cabeca = textoDaCabeca(raiz, rota);
+    /* OS RÓTULOS VISÍVEIS DAS MARCAS DE ORIGEM ENTRAM COMO BLOCOS (15.09.2026,
+       achado 9 da leitura a frio). A razão inteira está ao pé de
+       `rotulosVisiveisDasMarcas()`: a palavra que o leitor vê ao lado de cada
+       número é prosa da casa, e a régua não a via. */
+    const rotulosDasMarcas = rotulosVisiveisDasMarcas(raiz);
+    const blocos = [
+      ...(cabeca ? [cabeca] : []),
+      ...blocosDaCasa(raiz),
+      ...rotulosDasMarcas,
+    ];
+    const texto = `${cabeca} ${textoDaCasa(raiz)} ${rotulosDasMarcas.join(' ')}`;
+    /* A PALAVRA DA MARCA NO MÉTODO, CONTADA ONDE ELA VIVE (F1.13, item 5,
+       15.09.2026). É a rota que o item 5 põe fora da conta, e é a única do sítio
+       onde a palavra fica: contá-la aqui é o que prova que a régua ainda sabe
+       vê-la. A asserção do fim do ficheiro exige o chão, e a razão de ser um
+       chão e não um número exacto está escrita ao pé da constante. */
+    if (chaveDaRota === 'metodo') {
+      ponteDoMetodo[lang] += contaPalavra(texto, PALAVRA_DA_MARCA_NO_METODO[lang]);
+    }
+    for (const { palavra } of VOCABULARIO) {
+      if (!texto.includes(palavra)) continue;
+      /* O MÉTODO SAI DA CONTA DAS PALAVRAS DA MARCA, e só dessas: é a rota que o
+         item 5 nomeia («a zero nas páginas do leitor FORA do Método»). Continua
+         inteiro na conta de «município», de «indicador» e das outras. */
+      if (chaveDaRota === 'metodo' && PALAVRAS_DA_MARCA.has(palavra)) continue;
+      /* Conta por bloco, para que uma exceção possa dispensar o bloco dela. */
+      let n = 0;
+      for (const b of blocos) {
+        n += contaForaDasExcecoes(b, palavra, (i, desconto) =>
+          usoDasExcecoes.set(i, (usoDasExcecoes.get(i) ?? 0) + desconto));
+      }
+      if (!n) continue;
+      medidas.l3_vocabulario += n;
+      porPalavra.set(palavra, (porPalavra.get(palavra) ?? 0) + n);
+      anota('l3_vocabulario', `${url} · «${palavra}» ×${n}`);
+    }
+    for (const d of DENSIDADES) {
+      const n = conta(texto, d);
+      if (!n) continue;
+      medidas.d814_densidades += n;
+      porDensidade.set(d, (porDensidade.get(d) ?? 0) + n);
+      anota('d814_densidades', `${url} · «${d}» ×${n}`);
+    }
+
+    /* --------------------------------------------------------------- 8.5 */
+    /* «limiar» nunca sozinho: o bloco que o diz tem de dizer também de quem ele
+       é, ou ser a frase que o define. */
+    for (const b of blocos) {
+      const temLimiar = /limiar|threshold/i.test(b);
+      if (!temLimiar) continue;
+      const minusculas = b.toLowerCase();
+      const qualificado = QUALIFICADORES_DO_LIMIAR.some((q) => minusculas.includes(q));
+      if (qualificado) continue;
+      medidas.d85_limiar_sozinho++;
+      anota('d85_limiar_sozinho', `${url} · ${b.slice(0, 90)}`);
+    }
+  }
+
+  /* ------------------------------------------------------------------- 8.17 */
+  /* O MAPA DA PÁGINA DE UM CONCELHO É O DA SUA UNIDADE, E NÃO OS 308 PONTOS.
+     Três coisas, e as três nesta página: nenhum ponto do mapa de pontos; um
+     mapa de áreas, e um só; e o concelho DESTA página entre as áreas, com o
+     anel e com a porta de cada área a abrir uma página que existe. Uma delas em
+     falta é a régua a dizer que o cartão dos pontos voltou, ou que o mapa é o de
+     outro sítio.
+
+     A MEDIDA PASSOU DA REGIÃO À UNIDADE, E A MARCA DO ANEL MUDOU COM ELA (item
+     8.17b, 08.09.2026). A primeira passagem media o mapa da REGIÃO, que era o
+     que o mapa daquele dia tinha, e procurava a marca `data-escolhido` que
+     aquele componente escrevia. O F1.1e devolveu o mapa às 29 unidades da Carta
+     e reescreveu o componente: a área escolhida distingue-se pela classe
+     `uni-escolhida` no seu `<path>`, e quem a nomeia é o `data-concelho-porta` da
+     âncora que a embrulha. A régua lê o que o componente escreve hoje; se
+     lesse o que ele escrevia ontem contaria zero anéis em 616 páginas que os
+     têm, que é a régua a mentir ao contrário. */
+  if (chaveDaRota === 'municipio') {
+    const pontos = corpo.querySelectorAll('circle.mun').length;
+    if (pontos) {
+      medidas.d817_pontos_no_concelho += pontos;
+      anota('d817_pontos_no_concelho', `${url} · ${pontos} ponto(s) do mapa dos 308`);
+    }
+    /* ----------------------------------------------------------------------
+       ONDE O CONCELHO FICA, DITO PELA LINHA DO LUGAR (B1, peça 2, 21.09.2026)
+       ----------------------------------------------------------------------
+       O item 8.17b pedia, na página de um concelho, o mapa da unidade dele com o
+       anel no próprio concelho: era o que respondia à pergunta «onde fica». A
+       peça 2 tira o mapa desta página e põe no lugar dele a LINHA DO LUGAR —
+       «Portugal › região › distrito › concelho» —, que responde à mesma pergunta
+       por palavras e com quatro portas em vez de uma.
+
+       A CÉLULA NÃO AFROUXA: passa a exigir a linha, com as quatro partes, a
+       última a ser esta página, e cada destino construído. Um concelho sem linha
+       conta como um concelho que não diz onde fica, que é o que ela protege. O
+       mapa inteiro passou para a página dos lugares. */
+    const linha = corpo.querySelector('[data-lugar-linha]');
+    const partes = linha ? linha.querySelectorAll('a[href]') : [];
+    const aqui = partes.filter((a) => a.getAttribute('aria-current') === 'page');
+    /* A ÚLTIMA PARTE É ESTE CONCELHO, e não outro: a linha declara o slug da
+       página, e a régua compara-o com o da rota. */
+    const meu = rota?.params?.slug ?? '';
+    const oDaLinha = linha?.getAttribute('data-lugar-linha') ?? null;
+    const destinosOk = partes.every((a) => {
+      const href = (a.getAttribute('href') ?? '').split('#')[0];
+      if (!href.startsWith('/')) return false;
+      const alvo = normalizePath(href);
+      return alvo === '/' || fs.existsSync(path.join(DIST, alvo.slice(1), 'index.html'));
+    });
+    if (!linha || partes.length !== 4 || aqui.length !== 1 || !destinosOk || oDaLinha !== meu ||
+        normalizePath(aqui[0]?.getAttribute('href') ?? '') !== normalizePath(url)) {
+      medidas.d817_concelhos_sem_mapa++;
+      anota(
+        'd817_concelhos_sem_mapa',
+        `${url} · ${linha ? partes.length : 0} parte(s) na linha do lugar, ` +
+          `${aqui.length} marcada(s) como esta página${destinosOk ? '' : ', e um destino não está construído'}`,
+      );
+    }
+    const areas = corpo.querySelectorAll('[data-mapa-concelhos] [data-areas] a.uni-porta');
+    for (const a of areas) {
+      const href = (a.getAttribute('href') ?? '').split('#')[0];
+      if (!href.startsWith('/')) continue;
+      if (!fs.existsSync(path.join(DIST, normalizePath(href).slice(1), 'index.html'))) {
+        falhas.push(`8.17 · ${url}: a porta de uma área aponta para "${href}", que não existe em dist/.`);
+      }
+    }
+  }
+
+  /* ------------------------------------------------------------------- 8.4 */
+  /* A DEFINIÇÃO DE CADA PAINEL, CARÁCTER A CARÁCTER, DENTRO DO `verify`.
+
+     A comparação nasceu na célula A4 de `tests/inicio/porta.mjs`, que abre um
+     navegador e não corre nem no `build` nem na CI: a célula foi escrita a
+     08.09 e não foi corrida no dia em que mudou de medida. O lugar de direção
+     decidiu que ela entra no `verify` ou que a razão de não entrar fica escrita
+     na régua, e entra: a comparação não precisa de navegador nenhum, porque é
+     texto contra texto sobre o HTML construído.
+
+     A CÉLULA A4 FICA ONDE ESTÁ, e não é uma segunda cópia desta: ela mede o
+     mesmo em Chromium, com a página composta e as folhas aplicadas, e é isso
+     que uma régua de navegador acrescenta a uma de ficheiro. O que muda é que
+     a conferência deixa de depender de alguém se lembrar de a correr.
+
+     E A COLEÇÃO TEM DE TER ELEMENTOS: uma contagem de zero diferenças sobre
+     zero parágrafos não prova coisa nenhuma. O total dos parágrafos vistos
+     confere-se no fim contra o número que as duas edições têm de render. */
+  /* AS 23, E NÃO AS DUAS (Blocking 1 da leitura a frio, 09.09.2026). A régua
+     comparava os dois parágrafos dos painéis e mais nada: as 21 definições das
+     medidas e a ORIGEM de todas elas não eram medidas por régua nenhuma, e foi
+     nesse silêncio que dez definições viveram meio dia com um excerto que não
+     as continha. A decisão do lugar de direção manda comparar as 23 e conferir,
+     em cada uma, que a origem tem os quatro campos e que o excerto declarado
+     está na página.
+
+     `conferirDefinicao()` faz as duas metades para as duas famílias: o texto
+     contra a declaração, e a origem contra `ORIGENS_DAS_DEFINICOES`. */
+  /* O TEXTO DE UM ELEMENTO SEM AS GLOSAS DO MARCADOR (14.09.2026).
+     `[a verificar]` traz duas coisas coladas a ele que NÃO são da frase em que
+     ele vive: a glosa inglesa (`.marcador-gloss`, «(to verify)») e a definição
+     do marcador, que `uma-vez-por-pagina.mjs` rende ao pé da PRIMEIRA ocorrência
+     de cada página (`.marcador-definicao`). As duas dependem da língua e da
+     ordem do documento, e uma definição que publique o marcador ficaria
+     diferente da sua declaração por causa delas. A comparação lê o texto sem as
+     duas; quem as mede é a célula §7.10, que é delas. */
+  const semGlosasDoMarcador = (no) => {
+    const filhos = no.childNodes ?? [];
+    if (filhos.length === 0) return no.text ?? '';
+    let out = '';
+    for (const f of filhos) {
+      const classe = f.getAttribute?.('class') ?? '';
+      if (/\b(marcador-gloss|marcador-definicao)\b/.test(classe)) continue;
+      out += semGlosasDoMarcador(f);
+    }
+    return out;
+  };
+
+  const conferirDefinicao = (el, nome, partes, definicao) => {
+    definicoesVistas++;
+    /* A DECLARAÇÃO RESOLVE-SE COM A MESMA FUNÇÃO QUE A VISTA USA (achado 28,
+       14.09.2026). A régua tinha aqui uma segunda cópia da resolução dos
+       pedaços, e essa cópia não conhecia o `{ marcador }`: resolvia-o para uma
+       cadeia vazia, e por isso uma definição que publique `[a verificar]` — ou
+       que o deixe de publicar — passava sem se notar. `textoDaDefinicao()` é a
+       única resolução, em `src/data/figuras.mjs`. */
+    const declarada = Array.isArray(partes)
+      ? textoDaDefinicao(partes).replace(/\s+/g, ' ').trim()
+      : null;
+    const rendida = semGlosasDoMarcador(el).replace(/\s+/g, ' ').trim();
+    if (declarada === null) {
+      medidas.d84_definicoes_fora++;
+      anota('d84_definicoes_fora', `${url} · «${nome}» não é uma definição declarada`);
+      return;
+    }
+    if (rendida !== declarada) {
+      medidas.d84_definicoes_fora++;
+      anota(
+        'd84_definicoes_fora',
+        `${url} · «${nome}»: a página diz «${rendida.slice(0, 60)}…» e a declaração diz «${declarada.slice(0, 60)}…»`,
+      );
+    }
+    /* A ORIGEM AO PÉ DA DEFINIÇÃO. Os blocos da origem são irmãos do parágrafo
+       (a definição de um painel) ou vizinhos dele dentro da mesma dobra (a de
+       uma medida): a régua procura-os no PAI, que é o invólucro dos dois. */
+    const involucro = el.parentNode;
+    const rendidas = new Map();
+    for (const o of involucro?.querySelectorAll?.('[data-def-origem]') ?? []) {
+      rendidas.set(o.getAttribute('data-def-origem') ?? '', o);
+    }
+    /* NEM A MENOS NEM A MAIS, E A CONTA SAI DA PÁGINA (achado 8, 14.09.2026).
+       A régua contava as origens DECLARADAS e procurava cada uma; as que a
+       página rendesse a mais ficavam invisíveis, e uma definição sem origem
+       nenhuma declarada dava uma volta de zero iterações e passava calada. As
+       duas contagens comparam-se aqui: a das declaradas e a dos blocos
+       `data-def-origem` que o invólucro rende. */
+    const declaradas = definicao?.origens ?? [];
+    if (declaradas.length === 0) {
+      medidas.d84_definicoes_fora++;
+      anota(
+        'd84_definicoes_fora',
+        `${url} · «${nome}»: a definição não declara origem nenhuma. Uma definição ` +
+          `apresentada como citada sem uma origem é uma paráfrase com aspas`,
+      );
+    }
+    if (rendidas.size !== declaradas.length) {
+      medidas.d84_definicoes_fora++;
+      anota(
+        'd84_definicoes_fora',
+        `${url} · «${nome}»: a página rende ${rendidas.size} bloco(s) de origem e a ` +
+          `declaração diz ${declaradas.length}`,
+      );
+    }
+    for (const o of origensDaDefinicao(definicao, lang)) {
+      origensVistas++;
+      const bloco = rendidas.get(o.chave);
+      if (!bloco) {
+        medidas.d84_definicoes_fora++;
+        anota('d84_definicoes_fora', `${url} · «${nome}»: a origem «${o.chave}» não se rende na página`);
+        continue;
+      }
+      /* UMA PORTA POR ENDEREÇO (passagem R2-b, 04.10.2026). Duas origens de uma definição podem ser dois excertos do
+         mesmo documento: a primeira leva a porta e a seguinte diz o nome do documento sem porta, com a marca da origem
+         que a leva (`data-mesma-porta`). A régua continua a exigir que cada origem chegue ao seu endereço, agora pelo
+         invólucro da definição, e exige uma porta por endereço, nem menos nem mais: um destino repetido volta a ser uma
+         falta aqui. */
+      const portasDoEndereco = (involucro?.querySelectorAll?.('[data-def-origem] a[href]') ?? []).filter(
+        (a) => (a.getAttribute('href') ?? '') === o.url,
+      );
+      const portaNoBloco = bloco.querySelectorAll('a[href]').some((a) => (a.getAttribute('href') ?? '') === o.url);
+      const remete = bloco.querySelector('[data-mesma-porta]')?.getAttribute('data-mesma-porta') ?? null;
+      const portaDaOutra = remete !== null && rendidas.get(remete)?.querySelectorAll('a[href]').some((a) => (a.getAttribute('href') ?? '') === o.url);
+      if (portasDoEndereco.length === 0 || (!portaNoBloco && !portaDaOutra)) {
+        medidas.d84_definicoes_fora++;
+        anota('d84_definicoes_fora', `${url} · «${nome}»: a origem «${o.chave}» não tem porta para «${o.url}»`);
+      } else if (portasDoEndereco.length > 1) {
+        medidas.d84_definicoes_fora++;
+        anota('d84_definicoes_fora', `${url} · «${nome}»: o endereço «${o.url}» tem ${portasDoEndereco.length} portas nas origens da definição, e é uma por endereço`);
+      }
+      /* ---------------------------------------------------------------------
+         CADA CAMPO POR IGUALDADE, NO ELEMENTO DELE (achado 6 da releitura do
+         Codex de 14.09.2026, sobre a cabeça `7b85bb7f`)
+         ---------------------------------------------------------------------
+         Era `texto.includes(valor)` sobre o bloco inteiro, e a releitura mediu
+         as duas frestas que isso deixava: «a changed field can pass if the
+         expected text appears elsewhere, and additional text is allowed». Um
+         publicador trocado passava se o nome esperado estivesse noutro sítio do
+         bloco (e ele está: o documento de uma origem do Eurostat começa por
+         «Statistics Explained»), e um campo com texto colado ao fim continuava a
+         conter o esperado.
+
+         OS TRÊS CAMPOS TÊM MARCA PRÓPRIA, e é ela que se lê: a vista rende-os
+         com `data-verbatim="origem-<chave>-publicador"`, `-documento` e
+         `-excerto` (ou `-excerto-en`, onde a origem publica o mesmo texto nas
+         duas línguas). A régua procura o elemento de cada campo, exige que
+         exista UM, e compara o que ele diz com o que a declaração diz, carácter
+         a carácter. O prefixo compara-se aqui em JavaScript e não num selector,
+         para não depender do que o motor de selectores desta biblioteca aceita.
+
+         O EXCERTO DA EDIÇÃO É O QUE `origensDaDefinicao()` JÁ RESOLVEU para a
+         língua da página: a comparação é com o texto, e não com a chave, e por
+         isso uma página que rendesse o excerto da outra língua cai aqui mesmo
+         que a chave estivesse certa. */
+      const marcados = new Map();
+      for (const el of bloco.querySelectorAll('[data-verbatim]')) {
+        const k = el.getAttribute('data-verbatim') ?? '';
+        if (!marcados.has(k)) marcados.set(k, []);
+        marcados.get(k).push(el);
+      }
+      for (const [campo, sufixo, valor] of [
+        ['o publicador', 'publicador', o.publicador],
+        ['o documento', 'documento', o.documento],
+        ['o excerto', 'excerto', o.excerto],
+      ]) {
+        const raiz = `origem-${o.chave}-${sufixo}`;
+        const els = [...marcados.entries()]
+          .filter(([k]) => k === raiz || k.startsWith(`${raiz}-`))
+          .flatMap(([, v]) => v);
+        if (els.length !== 1) {
+          medidas.d84_definicoes_fora++;
+          anota(
+            'd84_definicoes_fora',
+            `${url} · «${nome}»: a origem «${o.chave}» rende ${els.length} elemento(s) para ${campo}`,
+          );
+          continue;
+        }
+        const rendido = els[0].text.replace(/\s+/g, ' ').trim();
+        const declarado = valor.replace(/\s+/g, ' ').trim();
+        if (rendido === declarado) continue;
+        medidas.d84_definicoes_fora++;
+        anota(
+          'd84_definicoes_fora',
+          `${url} · «${nome}»: a origem «${o.chave}» rende ${campo} «${rendido.slice(0, 60)}…» ` +
+            `e a declaração diz «${declarado.slice(0, 60)}…»`,
+        );
+      }
+      /* A DATA POR IGUALDADE, NO CAMPO DELA (achado 8, 14.09.2026). Era uma
+         subcadeia procurada no bloco inteiro: qualquer data escrita noutro
+         sítio do bloco satisfazia a régua, e uma data trocada por uma que
+         contivesse a esperada passava. Agora o campo tem marca própria
+         (`data-def-lido`, dentro da dobra do excerto desde hoje) e compara-se o
+         que ele diz com o que a declaração diz, carácter a carácter. */
+      const data = `${o.lido.slice(8, 10)}.${o.lido.slice(5, 7)}.${o.lido.slice(0, 4)}`;
+      const campoDaData = bloco.querySelector(`[data-def-lido="${o.chave}"]`);
+      const dataRendida = campoDaData ? campoDaData.text.replace(/\s+/g, ' ').trim() : null;
+      if (dataRendida !== data) {
+        medidas.d84_definicoes_fora++;
+        anota(
+          'd84_definicoes_fora',
+          `${url} · «${nome}»: a origem «${o.chave}» rende a data de leitura ` +
+            `«${dataRendida ?? '(nenhuma)'}» e a declaração diz «${data}»`,
+        );
+      }
+    }
+  };
+
+  for (const el of corpo.querySelectorAll('[data-contexto-painel]')) {
+    const chave = el.getAttribute('data-contexto-painel') ?? '';
+    const painel = DEFINICAO_DOS_PAINEIS[chave];
+    conferirDefinicao(el, chave, painel?.[lang] ?? null, painel ?? { origens: [] });
+  }
+  /* AS MEDIDAS, NOS DOIS SÍTIOS ONDE A DEFINIÇÃO SE RENDE. Na página europeia
+     ela vive dentro da dobra da leitura (`data-leitura`); na página do domínio
+     vive num bloco próprio ao pé do nome (`data-definicao`, decisão 24 de
+     09.09.2026). A conferência é a mesma nas duas. */
+  for (const dobra of corpo.querySelectorAll('[data-leitura], [data-definicao]')) {
+    const id = dobra.getAttribute('data-leitura') ?? dobra.getAttribute('data-definicao') ?? '';
+    const d = DEFINICOES_DAS_MEDIDAS[id];
+    if (!d) continue;
+    const el = dobra.querySelector('.dobra-definicao');
+    if (!el) {
+      medidas.d84_definicoes_fora++;
+      anota('d84_definicoes_fora', `${url} · «${id}»: a leitura não rende a definição`);
+      continue;
+    }
+    conferirDefinicao(el, id, d[lang], d);
+  }
+
+  /* ------------------------------------------------------------------ 8.11 */
+  /* AS LEITURAS DE APARELHO NO CABEÇALHO DE TODAS AS PÁGINAS.
+     O item 8.11 e o §7.3 mandam-nas para a página da medida e para o Método: o
+     que esta medida conta é quantas ficaram no `<header>`, página a página.
+     Conta ELEMENTOS e não páginas, porque eram quatro por página e uma medida
+     por página não distinguiria tirar uma de tirar as quatro. */
+  if (cabecalho) {
+    const leituras = cabecalho.querySelectorAll('.mob-leitura').length;
+    if (leituras) {
+      medidas.d811_leituras_na_cabeca += leituras;
+      anota('d811_leituras_na_cabeca', `${url} · ${leituras} leitura(s) de aparelho no cabeçalho`);
+    }
+  }
+
+  /* ------------------------------------------------------- §7.4 e 8.6 · os estudos */
+  /* B1, decisão de 17.09: sai a frase das portas e a caixa das edições.
+     Ficam o corpo na página do estudo e a porta para a edição fixada correta.
+     A lista cobre o país; a secção do lugar cobre os restantes estudos. */
+  if (chaveDaRota === 'estudo') {
+    vistas.estudo++;
+    const slug = matchPath(url)?.params?.slug;
+    const work = WORKS.find(w => w.slug === slug);
+    const edicao = work?.editions.find(e => e.lang === lang) ?? work?.editions[0];
+    const documento = documentosDoEstudo(slug).find(d => d.lang === edicao?.lang);
+    const portas = corpo.querySelectorAll('.estudo-publicado a[href]');
+    vistas.edicoes += portas.length;
+    if (portas.length !== 1 || portas[0]?.getAttribute('href') !== documento?.rota) {
+      medidas.d86_estudos_forma++;
+      anota('d86_estudos_forma', `${url} · falta a porta da edição fixada correspondente`);
+    }
+    if (temRegisto(slug, lang)) {
+      vistas.texto++;
+      if (corpo.querySelector('[data-registo-edicao]')?.getAttribute('data-registo-edicao') !== `${slug}/${lang}`) {
+        medidas.d86_estudos_forma++;
+        anota('d86_estudos_forma', `${url} · falta o corpo do registo nesta página`);
+      }
+    }
+  }
+  if (chaveDaRota === 'estudos') {
+    vistas.indice++;
+    for (const linha of corpo.querySelectorAll('.arquivo-item')) {
+      vistas.linhas++;
+      /* O TÍTULO É A PORTA, E É A ÚNICA (Major 8, 09.09.2026). O §7.4 manda que
+         «o título da lista vá direto ao texto», e até 09.09 o título abria a
+         capa e a leitura tinha uma porta separada ao lado: o gesto natural
+         continuava a parar onde o item mandou deixar de parar. A régua exige
+         agora as três coisas: uma porta só na linha, ELA É O TÍTULO, e aponta
+         para uma página que existe em `dist/`. */
+      const portas = linha.querySelectorAll('.arquivo-porta');
+      if (portas.length !== 1) {
+        medidas.d86_estudos_forma++;
+        anota('d86_estudos_forma', `${url} · uma linha com ${portas.length} porta(s) da leitura`);
+        continue;
+      }
+      const titulo = linha.querySelector('.arquivo-titulo a');
+      if (!titulo || titulo !== portas[0]) {
+        medidas.d86_estudos_forma++;
+        anota('d86_estudos_forma', `${url} · a porta da linha não é o título`);
+        continue;
+      }
+      const href = (portas[0].getAttribute('href') ?? '').split('#')[0];
+      const alvo = path.join(DIST, normalizePath(href).slice(1), 'index.html');
+      if (!href.startsWith('/') || !fs.existsSync(alvo)) {
+        medidas.d86_estudos_forma++;
+        anota('d86_estudos_forma', `${url} · a porta da leitura aponta para "${href}", que não existe em dist/`);
+        continue;
+      }
+      /* E LEVA AO TEXTO, ONDE O TEXTO EXISTE. Sem esta conferência, um título a
+         apontar outra vez para a capa passava verde: é o defeito que o Major 8
+         encontrou, e é este o sítio onde ele volta a ser vermelho. */
+      const m = matchPath(href);
+      const slug = m?.params?.slug ?? null;
+      const temTexto = slug ? LANGS.some((l) => temRegisto(slug, l)) : false;
+      if (temTexto && m?.key !== 'estudo') {
+        medidas.d86_estudos_forma++;
+        anota(
+          'd86_estudos_forma',
+          `${url} · «${slug}» tem página de leitura e o título abre "${href}"`,
+        );
+      }
+    }
+  }
+
+  /* -------------------------------------------------------------------- L5 */
+  /* O CAMINHO NO CABEÇALHO, E TRÊS COISAS EM VEZ DE UMA (Major 11 da leitura a
+     frio, 09.09.2026). A régua aceitava QUALQUER `<nav>` do corpo com o rótulo
+     certo, em qualquer sítio da página e mesmo vazio, e ignorava em silêncio as
+     ligações que não começassem por `/`. Um caminho no rodapé, um caminho sem
+     migalhas e um caminho com uma ligação relativa partida passavam os três
+     verdes. O §2.5 do brief diz o que ele é: «cada página abaixo da primeira
+     mostra o seu caminho no cabeçalho, como texto com ligações». A régua passa
+     a exigir as três: DENTRO do `<header>`, com pelo menos UMA migalha com
+     ligação, e cada ligação a existir em `dist/`, absoluta ou relativa. */
+  const primeira = chaveDaRota === 'home';
+  /* NUMA PÁGINA DE LUGAR O CAMINHO É A LINHA DO LUGAR (achado D1, 21.09.2026).
+     As duas diziam a mesma coisa uma por baixo da outra, e a linha diz mais: a
+     região e o distrito DESTE concelho, cada um com a sua página. A célula não
+     afrouxa, muda de sítio: o que a 8.17 exige na linha é o que a L5 exigia no
+     caminho, e mais — as quatro partes, a última marcada como esta página, o
+     slug declarado igual ao da rota, e cada destino construído. Uma página de
+     lugar sem linha conta na 8.17, e não aqui. */
+  const oCaminhoEALinha = chaveDaRota === 'municipio';
+  if (!primeira && !transcricao && !oCaminhoEALinha) {
+    const rotulo = S[lang].nav?.rotuloCaminho;
+    const caminho = rotulo
+      ? corpo
+          .querySelectorAll('nav')
+          .find((n) => n.getAttribute('aria-label') === rotulo && daMobilia.has(n))
+      : null;
+    if (!caminho) {
+      medidas.l5_sem_caminho++;
+      anota('l5_sem_caminho', url);
+    } else {
+      const migalhas = caminho.querySelectorAll('a[href]');
+      if (migalhas.length === 0) {
+        medidas.l5_sem_caminho++;
+        anota('l5_sem_caminho', `${url} · o caminho não tem uma migalha com ligação`);
+      }
+      for (const a of migalhas) {
+        const bruto = (a.getAttribute('href') ?? '').split('#')[0];
+        if (!bruto) continue;
+        /* AS LIGAÇÕES RELATIVAS CONTAM. Uma migalha `../concelhos` resolve-se
+           contra a rota desta página, e uma que não resolva é uma porta
+           partida como qualquer outra. */
+        const href = bruto.startsWith('/')
+          ? bruto
+          : normalizePath(new URL(bruto, `https://x${url === '/' ? '/' : `${url}/`}`).pathname);
+        const rel = normalizePath(href);
+        const alvo = rel === '/' ? path.join(DIST, 'index.html') : path.join(DIST, rel.slice(1), 'index.html');
+        if (!fs.existsSync(alvo)) {
+          falhas.push(`L5 · ${url}: o caminho aponta para "${bruto}", que não existe em dist/.`);
+        }
+      }
+    }
+  }
+
+  /* -------------------------------------------------------------------- L6 */
+  /* TODOS OS SELOS, E NÃO SÓ OS QUE JÁ TÊM O ATRIBUTO (Major 11, 09.09.2026).
+     A régua percorria `[data-selo-etiqueta]`: um selo a quem faltasse o atributo
+     não era medido, era invisível, e o mesmo acontecia a um selo com a porta
+     partida ou a uma linha sem publicador — os três saíam por `continue` e a
+     medida ficava a 0 sem ter olhado para eles. A porta que ela existe para
+     guardar é «o selo diz o publicador em 100 % dos selos», e cem por cento
+     conta-se sobre TODOS os selos.
+
+     QUATRO DEFEITOS, E TODOS CONTAM:
+       1. um selo sem `data-selo-etiqueta`;
+       2. um selo cuja porta não é uma página de linha, ou é uma linha que o
+          livro-razão não tem;
+       3. uma linha sem publicador declarado;
+       4. um rótulo que não diz o publicador daquela linha.
+
+     A COMPARAÇÃO É DO RÓTULO INTEIRO. Era `etiqueta.includes(publicador)`, e
+     «INE» está dentro de «INEXISTENTE»: um rótulo errado que contivesse o nome
+     do publicador por acaso passava. O rótulo tem de SER o publicador, ou o
+     publicador com a palavra da casa que o selo já escreve à frente («calculado
+     · INE»), que é a única outra forma que a casa rende. */
+  for (const selo of corpo.querySelectorAll('a.src-chip')) {
+    const etiqueta = selo.getAttribute('data-selo-etiqueta');
+    const href = (selo.getAttribute('href') ?? '').split('#')[0];
+    const m = href ? matchPath(href) : null;
+    const id = m?.key === 'linha' ? m.params.slug : null;
+    const linha = id ? claims.get(id) : null;
+    /* A PORTA DE UM SELO PODE SER UM ESTUDO desta casa (§2.4: «onde a linha vem
+       de um estudo da casa, o selo diz "linha"»). Esses não têm linha do
+       livro-razão para comparar, e a régua di-lo em vez de os saltar. */
+    const paraEstudo = m?.key === 'estudo' || m?.key === 'texto';
+    if (etiqueta === null || etiqueta === undefined) {
+      medidas.l6_selos++;
+      anota('l6_selos', `${url} · um selo para "${href}" sem data-selo-etiqueta`);
+      continue;
+    }
+    if (paraEstudo) continue;
+    if (!linha) {
+      medidas.l6_selos++;
+      anota('l6_selos', `${url} · o selo «${etiqueta}» aponta para "${href}", que não é uma linha`);
+      continue;
+    }
+    const publicador = typeof linha.source === 'string' ? linha.source.trim() : '';
+    const limpo = etiqueta.replace(/\s+/g, ' ').trim();
+    const calculado = [S.pt.prov.calculado, S.en.prov.calculado];
+    /* UMA LINHA CALCULADA NÃO TEM PUBLICADOR, E O SELO DI-LO. A aritmética é
+       desta casa: `source` é `null` de propósito e `derivation` diz a conta. O
+       selo escreve «calculado» sozinho, e é a forma certa; o que a régua exige
+       é que as duas coisas andem juntas. Uma linha sem publicador e sem conta é
+       outra coisa, e essa continua a contar. */
+    if (!publicador) {
+      const derivada = typeof linha.derivation === 'string' && linha.derivation.trim().length > 0;
+      if (derivada && calculado.includes(limpo)) continue;
+      medidas.l6_selos++;
+      anota(
+        'l6_selos',
+        `${url} · ${id}: a linha não declara publicador${derivada ? '' : ' nem derivação'}, e o selo diz «${limpo}»`,
+      );
+      continue;
+    }
+    const eOPublicador =
+      limpo === publicador || calculado.some((c) => limpo === `${c} · ${publicador}`);
+    if (eOPublicador) continue;
+    medidas.l6_selos++;
+    anota('l6_selos', `${url} · ${id}: o selo diz «${limpo}» e o publicador é «${publicador}»`);
+  }
+
+  /* ------------------------------------------------------------------- 8.8 */
+  /* «livro-razão» nos menus, nos rodapés e nos títulos das páginas do leitor.
+     O termo técnico continua a valer no Método, no JSON e nos endereços.
+
+     «LINHA DO LIVRO-RAZÃO» NÃO CONTA, e é a decisão à letra: o item 8.8 escreve
+     que «"linha do livro-razão" continua a ser o nome de uma linha dentro do
+     Método e das páginas de linha», e o mesmo nome aparece na mobília do
+     cabeçalho, no contador das séries atrasadas que o F1.6 lá pôs («278 linhas
+     do livro-razão»). O que a medida conta é o NOME DA PÁGINA, e por isso tira
+     as ocorrências que são o nome de uma LINHA antes de contar. O inglês segue a
+     mesma regra com a sua forma, «ledger row(s)». */
+  if (!transcricao && chaveDaRota !== 'metodo') {
+    const superficies = [];
+    if (cabecalho) superficies.push(cabecalho.text);
+    if (rodape) superficies.push(rodape.text);
+    const titulo = raiz.querySelector('title');
+    if (titulo) superficies.push(titulo.text);
+    for (const h of corpo.querySelectorAll('h1')) superficies.push(h.text);
+    const junto = superficies
+      .join(' ')
+      .replace(/linhas? do livro-razão/gi, ' ')
+      .replace(/ledger rows?/gi, ' ');
+    const n = conta(junto, 'Livro-razão') + conta(junto, 'livro-razão') + conta(junto, 'Ledger');
+    if (n) {
+      medidas.d88_livro_razao += n;
+      anota('d88_livro_razao', `${url} · ×${n}`);
+    }
+  }
+
+  /* ------------------------------------------------------------------ 8.13 */
+  if (primeira) {
+    const seccao = corpo.querySelector('#dominios');
+    const selos = seccao ? seccao.querySelectorAll('[data-claim]').length : 0;
+    if (selos) {
+      medidas.d813_selos_nos_dominios += selos;
+      anota('d813_selos_nos_dominios', `${url} · ${selos} valores selados na secção dos domínios`);
+    }
+    vistoNoIndice.set(`definicao:${url}`, conta(corpo.text, S[lang].identidade));
+  }
+
+  /* -------------------------------------------------------------------- L4 */
+  for (const alvo of INDICES_DA_HIERARQUIA) {
+    if (normalizePath(alvo.url) !== url) continue;
+    vistoNoIndice.set(`hierarquia:${url}`, alvo.frase ? conta(corpo.text, alvo.frase) : 0);
+  }
+}
+
+/**
+ * A palavra que uma exceção cobre. `conta` é a raiz («peça», «trabalho») e a
+ * palavra medida pode ser o plural ou a maiúscula.
+ * @param {string} raizDaExcecao
+ * @param {string} palavra
+ */
+function palavraDaExcecao(raizDaExcecao, palavra) {
+  return palavra.toLowerCase().startsWith(raizDaExcecao.toLowerCase());
+}
+
+/**
+ * Conta uma palavra INTEIRA num texto: «trabalho» não conta dentro de
+ * «trabalhos», e «Município» não conta dentro de «Municípios».
+ * @param {string} texto
+ * @param {string} palavra
+ */
+function contaPalavra(texto, palavra) {
+  const escapada = palavra.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const re = new RegExp(`(?<![\\p{L}])${escapada}(?![\\p{L}])`, 'gu');
+  return (texto.match(re) ?? []).length;
+}
+
+// H2: a mesma conta na célula e nas plantas; uma exceção de endereço só tira o seu trecho.
+function contaForaDasExcecoes(b, palavra, regista = () => {}) {
+  const nb = contaPalavra(b, palavra);
+  if (!nb) return 0;
+  const i = EXCECOES_DO_VOCABULARIO.findIndex(e => palavraDaExcecao(e.conta, palavra) && e.padrao.test(b));
+  if (i < 0) return nb;
+  const e = EXCECOES_DO_VOCABULARIO[i];
+  const desconto = e.soTrecho
+    ? [...b.matchAll(new RegExp(e.padrao.source, e.padrao.flags + 'g'))].reduce((n, m) => n + contaPalavra(m[0], palavra), 0)
+    : nb;
+  regista(i, desconto);
+  return nb - desconto;
+}
+
+{
+  const url = 'https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2';
+  const casos = [[url, 0], [`indicador ${url}`, 1], [`${url} indicador`, 1],
+    [`${url} e ${url} indicador`, 1], [url.replace('www.ine.pt', 'www.ine.pt.exemplo'), 1]];
+  for (const [texto, esperado] of casos) {
+    if (contaForaDasExcecoes(texto, 'indicador') !== esperado)
+      falhas.push('H2 I193: a exceção do endereço descontou prosa ou não descontou o endereço.');
+  }
+  console.log(`  H2 I193: ${casos.length} controlos do endereço e da prosa no mesmo bloco`);
+}
+
+/* -------------------------------------------------------------------- L4 */
+for (const { url, frase } of DEFINICAO) {
+  const visto = vistoNoIndice.get(`definicao:${normalizePath(url)}`) ?? 0;
+  if (visto !== 0) {
+    medidas.l4_falhas++;
+    anota('l4_falhas', `a frase de definição em ${url}: ${visto} (esperado 0, B1)`);
+  }
+}
+for (const alvo of INDICES_DA_HIERARQUIA) {
+  const visto = vistoNoIndice.get(`hierarquia:${normalizePath(alvo.url)}`) ?? 0;
+  if (visto !== 1) {
+    medidas.l4_falhas++;
+    anota('l4_falhas', `a frase de hierarquia em ${alvo.url}: ${visto} (esperado 1)`);
+  }
+}
+
+/* -------------------------------------------------------------------- 8.4 */
+/* A COLEÇÃO TEM DE TER ELEMENTOS. São dois parágrafos por edição da página
+   europeia, e duas edições: quatro. Zero diferenças sobre zero parágrafos é
+   uma régua cega, e a regra 14 da casa fecha a construção em vez de a deixar
+   passar por não ter encontrado nada. */
+/* A PÁGINA DO DOMÍNIO SAI DESTA CONTA A 15.09.2026, E A CONFERÊNCIA NÃO SE
+   PERDE: MUDA DE RÉGUA (achado 2 da leitura a frio).
+   ---------------------------------------------------------------------------
+   A decisão 24 de 09.09.2026 pôs a definição de uma medida na página do
+   domínio, num bloco próprio ao pé do nome, com a origem ao lado. O cartão de
+   uma medida passou a render-se nessa página e trouxe a definição consigo,
+   sem a origem: é o §2.1 da norma («tudo o resto fica atrás de um toque»), e o
+   toque é a marca da fonte, que abre o recibo.
+
+   O QUE ESTA CÉLULA CONTA VOLTA A SER O QUE A SUA PRÓPRIA MENSAGEM SEMPRE DISSE:
+   «os painéis mais as medidas × as edições». As definições da página do domínio
+   deixam de entrar porque já não se rendem na forma que esta célula confere (a
+   definição com a sua origem ao lado).
+
+   **E NÃO FICAM SEM RÉGUA**, que é o que faria disto um enfraquecimento: a
+   célula K6 de `tests/cartao/cartao.mjs` compara a frase de CADA cartão,
+   carácter a carácter, com a declaração de `figuras.mjs`, sobre o `dist/`
+   inteiro e nas duas edições. São 262 cartões conferidos onde aqui eram seis
+   rendições, e a origem de cada definição continua conferida aqui, nos sítios
+   onde ela se rende com a origem. */
+const DEFINICOES_ESPERADAS =
+  (Object.keys(DEFINICAO_DOS_PAINEIS).length + Object.keys(DEFINICOES_DAS_MEDIDAS).length) *
+  LANGS.length;
+const ORIGENS_ESPERADAS =
+  [...Object.values(DEFINICAO_DOS_PAINEIS), ...Object.values(DEFINICOES_DAS_MEDIDAS)].reduce(
+    (n, d) => n + d.origens.length,
+    0,
+  ) * LANGS.length;
+console.log(
+  `  8.4, o que a régua leu: ${definicoesVistas} definições (esperadas ${DEFINICOES_ESPERADAS}) · ` +
+    `${origensVistas} origens (esperadas ${ORIGENS_ESPERADAS})`,
+);
+if (definicoesVistas !== DEFINICOES_ESPERADAS) {
+  falhas.push(
+    `8.4 · a régua viu ${definicoesVistas} definição(ões) em dist/, e esperava ` +
+      `${DEFINICOES_ESPERADAS} (${Object.keys(DEFINICAO_DOS_PAINEIS).length} painéis mais ` +
+      `${Object.keys(DEFINICOES_DAS_MEDIDAS).length} medidas × ${LANGS.length} edições). Uma ` +
+      `comparação sobre uma coleção vazia não prova nada.`,
+  );
+}
+/* O POSITIVO CONHECIDO DAS PALAVRAS DA MARCA, POR EDIÇÃO (F1.13, item 5; o chão
+   passou a ser por edição a 15.09.2026, com o achado 9 da leitura a frio). */
+const MARCA_NO_METODO_MINIMO = 1;
+console.log(
+  `  item 5, o que a régua leu no Método: ` +
+    LANGS.map((l) => `${l} «${PALAVRA_DA_MARCA_NO_METODO[l]}» ×${ponteDoMetodo[l]}`).join(' · ') +
+    ` (chão ${MARCA_NO_METODO_MINIMO} por edição; a rota do Método está fora da conta da L3, pela ` +
+    `medida P9 do brief)`,
+);
+for (const l of LANGS) {
+  if (ponteDoMetodo[l] >= MARCA_NO_METODO_MINIMO) continue;
+  falhas.push(
+    `item 5 · a régua viu ${ponteDoMetodo[l]} ocorrência(s) de «${PALAVRA_DA_MARCA_NO_METODO[l]}» no ` +
+      `Método da edição «${l}», e o chão é ${MARCA_NO_METODO_MINIMO} por edição. É o positivo conhecido ` +
+      `da medida NAQUELA EDIÇÃO: sem ele, o zero das outras rotas dessa edição não prova que a palavra ` +
+      `saiu do sítio, só que esta régua deixou de a saber ver ali.`,
+  );
+}
+
+/* ---------------------------------------------------------------------------
+ * O AUTOTESTE DA L3 SOBRE OS RÓTULOS DAS MARCAS (15.09.2026, achado 9)
+ * ---------------------------------------------------------------------------
+ * O chão do Método prova que a régua vê a palavra em PROSA. Não prova que ela a
+ * vê onde o achado 9 dizia que ela não a via: dentro de uma marca de origem, no
+ * rótulo que o leitor lê ao lado de cada número. E não prova o outro lado, que é
+ * igualmente parte da decisão: o que está lá dentro e NÃO se vê não conta.
+ *
+ * Dois documentos de rascunho, construídos aqui e não lidos de lado nenhum, com
+ * a forma exacta da marca da fonte do sítio:
+ *   · À VISTA · «selo» no `.src-chip-texto` de um `data-nonledger`. Espera-se
+ *     que a régua conte UMA. Se contar zero, o achado 9 voltou.
+ *   · ESCONDIDO · «selo» só dentro do `.vh` da mesma marca, que é o texto que só
+ *     um leitor de ecrã ouve. Espera-se ZERO: o que não se vê não é a prosa que
+ *     esta medida governa.
+ *
+ * Falha em qualquer dos dois sentidos fecha a construção, porque uma medida de
+ * zero feita por uma régua que não sabe ver é indistinguível de uma casa limpa.
+ */
+{
+  const molde = (dentro) =>
+    parse(
+      `<!doctype html><html lang="pt"><head><title>x</title></head><body><p>` +
+        `<a class="src-chip" data-nonledger="proveniencia">${dentro}</a></p></body></html>`,
+    );
+  const aVista = rotulosVisiveisDasMarcas(molde('<span class="src-chip-texto">selo</span>'));
+  const escondido = rotulosVisiveisDasMarcas(
+    molde('<span class="src-chip-texto">fonte</span><span class="vh"> · selo</span>'),
+  );
+  const conta1 = aVista.reduce((n, b) => n + contaPalavra(b, 'selo'), 0);
+  const conta0 = escondido.reduce((n, b) => n + contaPalavra(b, 'selo'), 0);
+  console.log(
+    `  item 5, o autoteste da L3 nos rótulos das marcas: à vista ${conta1} (esperada 1) · ` +
+      `escondido no «.vh» ${conta0} (esperado 0)`,
+  );
+  if (conta1 !== 1) {
+    falhas.push(
+      `item 5 · o autoteste da L3 falhou: «selo» à vista dentro de uma marca «data-nonledger» foi ` +
+        `contado ${conta1} vez(es) e devia ser 1. É o achado 9 da leitura a frio de 15.09.2026 a ` +
+        `voltar: a régua deita fora a sub-árvore da marca e não vê o rótulo que o leitor lê.`,
+    );
+  }
+  if (conta0 !== 0) {
+    falhas.push(
+      `item 5 · o autoteste da L3 falhou do outro lado: «selo» escondido num «.vh» foi contado ` +
+        `${conta0} vez(es) e devia ser 0. O que o leitor não vê não é a prosa que esta medida governa.`,
+    );
+  }
+}
+
+/**
+ * O AUTOTESTE DA MARCA DAS SÉRIES (bloco RP3, 04.10.2026; passagem RP3-b). Documentos de rascunho com a
+ * forma do recibo de uma série: «threshold» e «indicador» dentro de um campo transcrito da série (o nome, o
+ * literal) não contam na 8.5 nem na L3; «limiar» dentro da conta em palavras de uma derivada, dentro do
+ * motivo de uma correção (nas duas línguas) e dentro de um invólucro `data-serie` sem campo conta na 8.5,
+ * porque é prosa deste projeto. E o seletor diz o mesmo que a lista fechada (`desacordosDoSeletor`). Uma
+ * falha em qualquer dos sentidos fecha a construção.
+ */
+{
+  const molde = (/** @type {string} */ atributos, /** @type {string} */ dentro) =>
+    parse(
+      `<!doctype html><html lang="pt"><head><title>x</title></head><body><p>` +
+        `<span class="campo-da-serie" ${atributos}>${dentro}</span></p></body></html>`,
+    );
+  const daFonte = [
+    ...blocosDaCasa(molde('data-serie="serie-x" data-serie-campo="name"', 'At-risk-of-poverty thresholds')),
+    ...blocosDaCasa(molde('data-serie="serie-x" data-serie-campo="excerpt"', 'IndicadorDsg indicador')),
+  ];
+  const daCasa = [
+    ['a conta em palavras', 'data-serie="serie-x" data-serie-campo="derivation"'],
+    ['o motivo de uma correção', 'data-serie="serie-x" data-serie-campo="corrections.0.reason"'],
+    ['o motivo inglês de uma correção', 'data-serie="serie-x" data-serie-campo="corrections.0.reason_en"'],
+    ['um invólucro sem campo', 'data-serie="serie-x"'],
+  ];
+  const naFonte85 = daFonte.filter((b) => /limiar|threshold/i.test(b)).length;
+  const naFonteL3 = daFonte.reduce((n, b) => n + contaPalavra(b, 'indicador'), 0);
+  const naCasa = daCasa.map(([nome, atributos]) => [nome, blocosDaCasa(molde(atributos, 'A conta passa o limiar.')).filter((b) => /limiar/i.test(b)).length]);
+  const desacordos = desacordosDoSeletor(parse);
+  console.log(
+    `  RP3, o autoteste da marca das séries: «threshold» e «indicador» nos campos transcritos ${naFonte85 + naFonteL3} ` +
+      `(esperado 0) · «limiar» na prosa da casa ${naCasa.map(([nome, n]) => `${nome} ${n}`).join(', ')} (esperado 1 em cada) · ` +
+      `o seletor e a lista fechada ${desacordos.length ? 'em desacordo' : 'de acordo'}`,
+  );
+  if (naFonte85 + naFonteL3 !== 0) {
+    falhas.push('RP3 · o autoteste da marca das séries falhou: um campo transcrito de uma série contou como texto da casa.');
+  }
+  for (const [nome, n] of naCasa) {
+    if (n !== 1) falhas.push(`RP3 · o autoteste da marca das séries falhou do outro lado: ${nome} de uma série saiu do texto da casa.`);
+  }
+  for (const d of desacordos) falhas.push(`RP3 · o seletor dos campos transcritos não diz o mesmo que a lista fechada: ${d}.`);
+}
+
+if (origensVistas !== ORIGENS_ESPERADAS) {
+  falhas.push(
+    `8.4 · a régua viu ${origensVistas} origem(ns) de definição em dist/, e esperava ` +
+      `${ORIGENS_ESPERADAS}. Uma definição citada sem a sua origem rendida é o defeito que ` +
+      `a leitura a frio de 09.09.2026 abriu.`,
+  );
+}
+
+/* --------------------------------------------------------------- §7.4 e 8.6 */
+/** B1: cobertura de cada estudo nas duas línguas e dos dez corpos com registo.
+ * Uma edição fixada por página. A lista dos estudos tem-nos todos desde o bloco
+ * R1 (23.09.2026, I144): uma lista só, do mais recente para o mais antigo, com
+ * o lugar e o tema de cada um na entrada, e por isso as «linhas» da lista são
+ * todos os estudos nas duas edições, e não só os do país. Cada estudo de um
+ * lugar continua também na secção dos trabalhos da página desse lugar.
+ */
+const COLECOES_DOS_ESTUDOS = {
+  estudo: WORKS.length * LANGS.length,
+  texto: WORKS.reduce((n, w) => n + LANGS.filter(l => temRegisto(w.slug, l)).length, 0),
+  indice: LANGS.length,
+  edicoes: WORKS.length * LANGS.length,
+  /* E1 (01.10.2026): a lista traz os estudos sem sucessor; um estudo com
+     sucessor continua a ter a sua página (estudo, edições), mas a sua linha da
+     lista passou a ser a do estudo que lhe sucede. */
+  linhas: WORKS.filter(w => !w.sucedidoPor).length * LANGS.length,
+};
+// B1: toda a coleção existe, cada estudo sai da lista, e o de um lugar sai
+// também da página desse lugar.
+for (const lang of LANGS) {
+  for (const w of WORKS) {
+    /* Um estudo com sucessor (bloco E1, 01.10.2026) saiu da lista e da página do
+       lugar: alcança-se da página de cada estudo que lhe sucede, e de lá só. */
+    const rotas = w.sucedidoPor
+      ? w.sucedidoPor.map(s => routePath('estudo', lang, { slug: s.slug }))
+      : [routePath('estudos', lang)];
+    if (w.subject && !w.sucedidoPor) rotas.push(routePath(w.subject === 'evora' ? 'municipio' : 'regiao', lang, { slug: w.subject }));
+    for (const rota of rotas) {
+      const f = path.join(DIST, rota.slice(1), 'index.html');
+      const doc = fs.existsSync(f) ? parse(fs.readFileSync(f, 'utf8')) : null;
+      const destino = routePath('estudo', lang, { slug: w.slug });
+      if (!doc?.querySelectorAll('main a[href]').some(a => a.getAttribute('href') === destino)) {
+        falhas.push(`B1 cobertura: ${w.slug} não é alcançável de ${rota}.`);
+      }
+    }
+  }
+}
+
+console.log(
+  '  §7.4 e 8.6, o que os dados dizem: ' +
+    Object.entries(COLECOES_DOS_ESTUDOS)
+      .map(([k, n]) => `${k} ${n}`)
+      .join(' · '),
+);
+for (const [nome, n] of Object.entries(vistas)) {
+  const esperado = COLECOES_DOS_ESTUDOS[nome];
+  if (n === esperado) continue;
+  falhas.push(
+    `§7.4 e 8.6 · a régua viu ${n} «${nome}» em dist/, e o registo dos estudos diz ` +
+      `${esperado}. Uma coleção mais pequena do que os dados é uma família de páginas ` +
+      `que desapareceu em silêncio; uma maior é uma segunda apresentação da mesma coisa.`,
+  );
+}
+
+/* ---------------------------------------------------------------------------
+ * O RELATÓRIO
+ * --------------------------------------------------------------------------- */
+const NOMES = {
+  l1_paginas: 'L1 · páginas com dois destinos iguais fora da mobília',
+  l2_segundas_listas: 'L2 · segundas listas dos concelhos',
+  l2_reguas: 'L2 · réguas da convergência fora de /regioes',
+  l2_sinopses: 'L2 · sinopses de estudo fora de /estudos',
+  l3_vocabulario: 'L3 · palavras fora do vocabulário fechado',
+  l4_falhas: 'L4 · frases de definição e de hierarquia em falta',
+  l5_sem_caminho: 'L5 · páginas sem caminho no cabeçalho',
+  l6_selos: 'L6 · selos que não dizem o publicador',
+  d85_limiar_sozinho: '8.5 · «limiar» sozinho',
+  d817_pontos_no_concelho: '8.17 · pontos dos 308 na página de um concelho',
+  d817_concelhos_sem_mapa: '8.17 · páginas de concelho sem o mapa da sua unidade',
+  d88_livro_razao: '8.8 · «livro-razão» nos menus e nos títulos',
+  d813_selos_nos_dominios: '8.13 · valores selados na secção dos domínios de /',
+  d814_densidades: '8.14 · «Relance» e «Leitura breve» nas páginas do leitor',
+  d811_leituras_na_cabeca: '8.11 · leituras de aparelho no cabeçalho',
+  d84_definicoes_fora: '8.4 · definições de painel fora da declaração',
+  d710_definicao_do_marcador: '§7.10 · «[a verificar]» sem definição ao pé do primeiro',
+  d710_rotulos_por_baixo: '§7.10 · valores desenhados sem o seu texto na legenda',
+  d86_estudos_forma: '§7.4 e 8.6 · estudos fora da forma única',
+};
+
+console.log(`check:lugar · ${paginas.length} páginas em dist/`);
+for (const [chave, valor] of Object.entries(medidas)) {
+  const teto = TETOS[chave];
+  const estado = valor > teto ? 'ACIMA DO TETO' : valor + TETO_FROUXO < teto ? 'teto frouxo' : 'ok';
+  console.log(`  ${NOMES[chave].padEnd(58)} ${String(valor).padStart(7)}  (teto ${teto}) ${estado}`);
+  for (const a of amostras[chave]) console.log(`      · ${a}`);
+  if (valor > teto) {
+    falhas.push(`${NOMES[chave]}: ${valor}, acima do teto ${teto}.`);
+  } else if (valor + TETO_FROUXO < teto) {
+    falhas.push(
+      `${NOMES[chave]}: ${valor}, e o teto está em ${teto}. Um teto com mais de ` +
+        `${TETO_FROUXO} de folga já não mede nada: baixa-o para ${valor} com a data.`,
+    );
+  }
+}
+
+console.log(
+  '  §7.4 e 8.6, o que a régua leu: ' +
+    Object.entries(vistas)
+      .map(([k, n]) => `${k} ${n}`)
+      .join(' · '),
+);
+
+console.log('  as exceções, e quantas vezes cada uma foi precisa:');
+for (const [i, e] of EXCECOES_DO_VOCABULARIO.entries()) {
+  const n = usoDasExcecoes.get(i) ?? 0;
+  console.log(`      · «${e.conta}» ${String(n).padStart(5)} · ${e.porque}`);
+  if (n === 0) {
+    falhas.push(
+      `A exceção «${e.conta}» (${e.porque}) não foi precisa uma única vez: uma exceção ` +
+        `que já não serve é uma porta aberta esquecida. Tira-a.`,
+    );
+  }
+}
+
+const palavras = [...porPalavra.entries()].filter(([, n]) => n > 0);
+if (palavras.length) {
+  console.log('  a L3, palavra a palavra:');
+  for (const [p, n] of palavras.sort((a, b) => b[1] - a[1])) {
+    console.log(`      · ${p.padEnd(14)} ${String(n).padStart(6)}`);
+  }
+}
+const densidades = [...porDensidade.entries()].filter(([, n]) => n > 0);
+if (densidades.length) {
+  console.log('  a 8.14, palavra a palavra:');
+  for (const [p, n] of densidades.sort((a, b) => b[1] - a[1])) {
+    console.log(`      · ${p.padEnd(14)} ${String(n).padStart(6)}`);
+  }
+}
+
+if (falhas.length) {
+  console.error(`\ncheck:lugar · ${falhas.length} falha(s):`);
+  for (const f of falhas) console.error(`  ✗ ${f}`);
+  process.exit(1);
+}
+console.log('check:lugar · verde.');

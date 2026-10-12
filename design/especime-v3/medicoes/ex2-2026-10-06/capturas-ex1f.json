@@ -1,0 +1,222 @@
+{
+  "comando": "RESEARCHHUB_DIR=<motor> node design/especime-v3/medicoes/ex2-2026-10-06/captar-ex1f.mjs",
+  "cabeca": "eee10a344e181e520862be5213404816264c7458",
+  "versao": {
+    "commit": "eee10a344e181e520862be5213404816264c7458",
+    "ref": "ex1d-2026-10-11",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-12T11:40:39.544Z"
+  },
+  "medidas": [
+    {
+      "id": "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+      "value": "80 464,5",
+      "unit": "milhões de euros, acumulados de janeiro a agosto",
+      "reference_date": "2026-08",
+      "name": "Despesa efetiva",
+      "document": {
+        "title": "Síntese da Execução Orçamental | agosto 2026",
+        "edition": "2026",
+        "locator": "p. 49 do ficheiro, página impressa 45, Despesa efetiva, Execução Acumulada 2026",
+        "page": 49,
+        "kind": "pdf"
+      },
+      "excerpt": "    Despesa efetiva                                      119 047,6     130 971,6     72 877,7     80 464,5            61,4           10,4",
+      "ressalva": "A despesa efetiva consolidada exclui ativos e passivos financeiros e transferências internas entre os serviços considerados.",
+      "note": "[note do motor] Localizador: p. 49 do ficheiro, página impressa 45, Despesa efetiva, Execução Acumulada 2026. Conta consolidada de administracao central seguranca social. Execução acumulada de janeiro a agosto, não apenas do mês de agosto. Saldo global é receita efetiva menos despesa efetiva. Passivos financeiros líquidos são receita de passivos menos amortizações, não a parcela da despesa efetiva financiada por dívida. O financiamento inclui ativos financeiros e variações de tesouraria. Licença aberta não indicada no documento. A página da Entidade Orçamental declara todos os direitos reservados. Publicam-se os números, excertos e referências; o PDF não é alojado no sítio. O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local; os mapas da lei cobrem a administração central e a segurança social, com o perímetro específico indicado nesta linha. Não são grandezas diretamente comparáveis. Cita-se o ficheiro de dados ou o documento oficial, nunca os portais oe.gov.pt ou Mais Transparência, que têm avisos de direitos. · Cruzado de ResearchHub content/20 Orcamento do Estado · execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social."
+    },
+    {
+      "id": "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social",
+      "value": "79 618,7",
+      "unit": "milhões de euros, acumulados de janeiro a agosto",
+      "reference_date": "2026-08",
+      "name": "Receita efetiva",
+      "document": {
+        "title": "Síntese da Execução Orçamental | agosto 2026",
+        "edition": "2026",
+        "locator": "p. 49 do ficheiro, página impressa 45, Receita efetiva, Execução Acumulada 2026",
+        "page": 49,
+        "kind": "pdf"
+      },
+      "excerpt": "    Receita efetiva                                      118 916,3     129 181,8     74 182,1     79 618,7            61,6             7,3",
+      "ressalva": "A receita efetiva exclui os recebimentos de ativos e passivos financeiros.",
+      "note": "[note do motor] Localizador: p. 49 do ficheiro, página impressa 45, Receita efetiva, Execução Acumulada 2026. Conta consolidada de administracao central seguranca social. Execução acumulada de janeiro a agosto, não apenas do mês de agosto. Saldo global é receita efetiva menos despesa efetiva. Passivos financeiros líquidos são receita de passivos menos amortizações, não a parcela da despesa efetiva financiada por dívida. O financiamento inclui ativos financeiros e variações de tesouraria. Licença aberta não indicada no documento. A página da Entidade Orçamental declara todos os direitos reservados. Publicam-se os números, excertos e referências; o PDF não é alojado no sítio. O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local; os mapas da lei cobrem a administração central e a segurança social, com o perímetro específico indicado nesta linha. Não são grandezas diretamente comparáveis. Cita-se o ficheiro de dados ou o documento oficial, nunca os portais oe.gov.pt ou Mais Transparência, que têm avisos de direitos. · Cruzado de ResearchHub content/20 Orcamento do Estado · execucao-2026-08-receita-efetiva-administracao-central-seguranca-social."
+    },
+    {
+      "id": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+      "value": "−845,8",
+      "unit": "milhões de euros, acumulados de janeiro a agosto",
+      "reference_date": "2026-08",
+      "name": "Saldo global",
+      "document": {
+        "title": "Síntese da Execução Orçamental | agosto 2026",
+        "edition": "2026",
+        "locator": "p. 49 do ficheiro, página impressa 45, Saldo global, Execução Acumulada 2026",
+        "page": 49,
+        "kind": "pdf"
+      },
+      "excerpt": "    Saldo global                                            -131,3       -1 789,8     1 304,5          -845,8",
+      "ressalva": "O saldo global é a receita efetiva menos a despesa efetiva; não é o montante de dívida emitida.",
+      "note": "[note do motor] Localizador: p. 49 do ficheiro, página impressa 45, Saldo global, Execução Acumulada 2026. Conta consolidada de administracao central seguranca social. Execução acumulada de janeiro a agosto, não apenas do mês de agosto. Saldo global é receita efetiva menos despesa efetiva. Passivos financeiros líquidos são receita de passivos menos amortizações, não a parcela da despesa efetiva financiada por dívida. O financiamento inclui ativos financeiros e variações de tesouraria. Licença aberta não indicada no documento. A página da Entidade Orçamental declara todos os direitos reservados. Publicam-se os números, excertos e referências; o PDF não é alojado no sítio. O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local; os mapas da lei cobrem a administração central e a segurança social, com o perímetro específico indicado nesta linha. Não são grandezas diretamente comparáveis. Cita-se o ficheiro de dados ou o documento oficial, nunca os portais oe.gov.pt ou Mais Transparência, que têm avisos de direitos. · Cruzado de ResearchHub content/20 Orcamento do Estado · execucao-2026-08-saldo-global-administracao-central-seguranca-social."
+    },
+    {
+      "id": "oe-2026-saldo-global-administracao-central-seguranca-social",
+      "value": "−1 789,8",
+      "unit": "milhões de euros",
+      "reference_date": "2026",
+      "name": "Saldo global",
+      "document": {
+        "title": "Síntese da Execução Orçamental | agosto 2026",
+        "edition": "2026",
+        "locator": "p. 49 do ficheiro, página impressa 45, Saldo global, Orçamento Inicial 2026",
+        "page": 49,
+        "kind": "pdf"
+      },
+      "excerpt": "    Saldo global                                            -131,3       -1 789,8     1 304,5          -845,8",
+      "ressalva": "O saldo global é a receita efetiva menos a despesa efetiva; não é o montante de dívida emitida.",
+      "note": "[note do motor] Localizador: p. 49 do ficheiro, página impressa 45, Saldo global, Orçamento Inicial 2026. Conta consolidada de administracao central seguranca social. Orçamento inicial, tal como reproduzido na síntese; não é um total transcrito dos mapas da lei. Saldo global é receita efetiva menos despesa efetiva. Passivos financeiros líquidos são receita de passivos menos amortizações, não a parcela da despesa efetiva financiada por dívida. O financiamento inclui ativos financeiros e variações de tesouraria. Licença aberta não indicada no documento. A página da Entidade Orçamental declara todos os direitos reservados. Publicam-se os números, excertos e referências; o PDF não é alojado no sítio. O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local; os mapas da lei cobrem a administração central e a segurança social, com o perímetro específico indicado nesta linha. Não são grandezas diretamente comparáveis. Cita-se o ficheiro de dados ou o documento oficial, nunca os portais oe.gov.pt ou Mais Transparência, que têm avisos de direitos. · Cruzado de ResearchHub content/20 Orcamento do Estado · oe-2026-saldo-global-administracao-central-seguranca-social."
+    }
+  ],
+  "saldoConfere": true,
+  "origens": {
+    "erros": [],
+    "contas": {
+      "origens": 2,
+      "lidas_no_motor": 2,
+      "motor": true
+    }
+  },
+  "paginas": [
+    {
+      "lang": "pt",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "frases": [
+        "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de −845,8 milhões de euros, um défice (gastou mais do que recebeu); é um défice menor do que o que o Orçamento previa para o ano inteiro (−1 789,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de 2025 do parágrafo seguinte."
+      ],
+      "ordem": [
+        "abertura[0]",
+        "seccoes[0].conteudo[1].paragrafo",
+        "seccoes[1].conteudo[0].paragrafo",
+        "seccoes[1].conteudo[2].paragrafo",
+        "seccoes[2].conteudo[0].paragrafo",
+        "seccoes[2].conteudo[1].paragrafo",
+        "seccoes[3].conteudo[0].paragrafo",
+        "naoDiz[0]"
+      ],
+      "limite": "O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto é a que esta explicação mostra acima. Estes números não isolam o custo dos juros da dívida. O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque.",
+      "saldoSeguinte": "No fim de 2025, a dívida pública valia 89,7 % do que o país produz num ano, acima dos 81,7 % da média da União Europeia, e as contas públicas fecharam o ano com um saldo de 0,7 % do produto, um excedente (recebeu mais do que gastou)."
+    },
+    {
+      "lang": "en",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "frases": [
+        "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of −845,8 million euros, a deficit (it spent more than it took in); it is a smaller deficit than the one the Budget forecast for the full year (−1 789,8 million euros), and September to December are still to come. It is a different account, not the one of the public accounts of 2025 in the next paragraph."
+      ],
+      "ordem": [
+        "abertura[0]",
+        "seccoes[0].conteudo[1].paragrafo",
+        "seccoes[1].conteudo[0].paragrafo",
+        "seccoes[1].conteudo[2].paragrafo",
+        "seccoes[2].conteudo[0].paragrafo",
+        "seccoes[2].conteudo[1].paragrafo",
+        "seccoes[3].conteudo[0].paragrafo",
+        "naoDiz[0]"
+      ],
+      "limite": "The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is the one this explainer shows above. These figures do not isolate the cost of the interest on the debt. The detail by programme and by ministry, with the source of each figure, is in each one’s receipt, one tap away.",
+      "saldoSeguinte": "At the end of 2025, public debt was worth 89,7 % of what the country produces in a year, above the 81,7 % average of the European Union, and the public accounts closed the year with a balance of 0,7 % of output, a surplus (it took in more than it spent)."
+    }
+  ],
+  "capturas": [
+    {
+      "lang": "pt",
+      "largura": 390,
+      "tipo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1f-pt-390-inteira.png",
+      "sha256": "3037fd35ff36e22b881676ef0130f7d87885f6380010559bf96184e43e34e0ab",
+      "medida": {
+        "largura": 390,
+        "janela": 390
+      }
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "tipo": "correcoes",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1f-pt-390-correcoes.png",
+      "sha256": "e51dc1048153a9467a8f1fa6c297fce8fa24fb729d4a4ace6cbbdf007f01aa16",
+      "medida": {
+        "largura": 390,
+        "janela": 390
+      }
+    },
+    {
+      "lang": "pt",
+      "largura": 1280,
+      "tipo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1f-pt-1280-inteira.png",
+      "sha256": "9f1f4c1b296c36522595274be7c70f64a16c734dced84b0659c52bd38479529e",
+      "medida": {
+        "largura": 1280,
+        "janela": 1280
+      }
+    },
+    {
+      "lang": "pt",
+      "largura": 1280,
+      "tipo": "correcoes",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1f-pt-1280-correcoes.png",
+      "sha256": "46f08faefbd85fd634319d9cea229ecb9933b46a2f3da89610a3526387abae3d",
+      "medida": {
+        "largura": 1280,
+        "janela": 1280
+      }
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "tipo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1f-en-390-inteira.png",
+      "sha256": "4fe9a9517b5bcaad8493d206acdc70effe92ecb37d81b5f08d3b0532961e0ac2",
+      "medida": {
+        "largura": 390,
+        "janela": 390
+      }
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "tipo": "correcoes",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1f-en-390-correcoes.png",
+      "sha256": "02dc25014c3e72267c0101cb2beca03195d24e5bf8a944dbcde7177cb11f938b",
+      "medida": {
+        "largura": 390,
+        "janela": 390
+      }
+    },
+    {
+      "lang": "en",
+      "largura": 1280,
+      "tipo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1f-en-1280-inteira.png",
+      "sha256": "2f7868e635f5b51288ec27ad8bbc8cfe9250d464496ea7ef86cbae8a5ba102fe",
+      "medida": {
+        "largura": 1280,
+        "janela": 1280
+      }
+    },
+    {
+      "lang": "en",
+      "largura": 1280,
+      "tipo": "correcoes",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/ex1f-en-1280-correcoes.png",
+      "sha256": "e8f56c7a06f847eea4f696301cdef3fa5462a59c22a6d1a1d3b94e245652a2db",
+      "medida": {
+        "largura": 1280,
+        "janela": 1280
+      }
+    }
+  ],
+  "erros": []
+}

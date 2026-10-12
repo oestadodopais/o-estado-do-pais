@@ -1,0 +1,360 @@
+{
+  "sitio": "147382c4609c5d4a12677dcaa858abf7ec85638a",
+  "motor": "67b97e47a19bf1e1203f13380dca362c91015894",
+  "plantas": [
+    {
+      "nome": "Nota de estado sem literal",
+      "mensagem": "K17 · juros-das-administracoes-publicas-2024: nota «final» cita «Os dados de 2024 têm agora uma natureza final», que não está no campo «excerto» da origem «jd1-ine-provisorio»",
+      "passou": true
+    },
+    {
+      "nome": "Nota de comparação sem literal",
+      "mensagem": "K17 · juros-das-administracoes-publicas-2025-ue: nota «versoes» cita «\"updated\":\"2026-07-21T11:00:00+0200\"», que não está no campo «excerto» da origem «jd1-eurostat-versao»",
+      "passou": true
+    },
+    {
+      "nome": "Estado trocado juros-das-administracoes-publicas-2024/pt",
+      "mensagem": "JD1-c: linha final de 2024 apresentada como provisória",
+      "passou": true
+    },
+    {
+      "nome": "Comparação sem União juros-das-administracoes-publicas-2024/pt",
+      "mensagem": "JD1-c: frase de comparação sem a linha da União",
+      "passou": true
+    },
+    {
+      "nome": "Estado trocado juros-das-administracoes-publicas-2024/en",
+      "mensagem": "JD1-c: linha final de 2024 apresentada como provisória",
+      "passou": true
+    },
+    {
+      "nome": "Comparação sem União juros-das-administracoes-publicas-2024/en",
+      "mensagem": "JD1-c: frase de comparação sem a linha da União",
+      "passou": true
+    },
+    {
+      "nome": "Estado trocado pib-nominal-notificacao-setembro-2024/pt",
+      "mensagem": "JD1-c: linha final de 2024 apresentada como provisória",
+      "passou": true
+    },
+    {
+      "nome": "Comparação sem União pib-nominal-notificacao-setembro-2024/pt",
+      "mensagem": "JD1-c: frase de comparação sem a linha da União",
+      "passou": true
+    },
+    {
+      "nome": "Estado trocado pib-nominal-notificacao-setembro-2024/en",
+      "mensagem": "JD1-c: linha final de 2024 apresentada como provisória",
+      "passou": true
+    },
+    {
+      "nome": "Comparação sem União pib-nominal-notificacao-setembro-2024/en",
+      "mensagem": "JD1-c: frase de comparação sem a linha da União",
+      "passou": true
+    },
+    {
+      "nome": "Estado trocado juros-das-administracoes-publicas-pib-2024/pt",
+      "mensagem": "JD1-c: linha final de 2024 apresentada como provisória",
+      "passou": true
+    },
+    {
+      "nome": "Comparação sem União juros-das-administracoes-publicas-pib-2024/pt",
+      "mensagem": "JD1-c: frase de comparação sem a linha da União",
+      "passou": true
+    },
+    {
+      "nome": "Estado trocado juros-das-administracoes-publicas-pib-2024/en",
+      "mensagem": "JD1-c: linha final de 2024 apresentada como provisória",
+      "passou": true
+    },
+    {
+      "nome": "Comparação sem União juros-das-administracoes-publicas-pib-2024/en",
+      "mensagem": "JD1-c: frase de comparação sem a linha da União",
+      "passou": true
+    },
+    {
+      "nome": "Parcela literal/pt",
+      "mensagem": "JD1-c: parcela sem os dois montantes por token",
+      "passou": true
+    },
+    {
+      "nome": "Parcela literal/en",
+      "mensagem": "JD1-c: parcela sem os dois montantes por token",
+      "passou": true
+    },
+    {
+      "nome": "Direção trocada juros-das-administracoes-publicas-2025/pt",
+      "mensagem": "JD1-c: direção da evolução trocada",
+      "passou": true
+    },
+    {
+      "nome": "Direção trocada juros-das-administracoes-publicas-2025/en",
+      "mensagem": "JD1-c: direção da evolução trocada",
+      "passou": true
+    },
+    {
+      "nome": "Direção trocada pib-nominal-notificacao-setembro-2025/pt",
+      "mensagem": "JD1-c: direção da evolução trocada",
+      "passou": true
+    },
+    {
+      "nome": "Direção trocada pib-nominal-notificacao-setembro-2025/en",
+      "mensagem": "JD1-c: direção da evolução trocada",
+      "passou": true
+    },
+    {
+      "nome": "Direção trocada juros-das-administracoes-publicas-pib-2025/pt",
+      "mensagem": "JD1-c: direção da evolução trocada",
+      "passou": true
+    },
+    {
+      "nome": "Direção trocada juros-das-administracoes-publicas-pib-2025/en",
+      "mensagem": "JD1-c: direção da evolução trocada",
+      "passou": true
+    },
+    {
+      "nome": "Direção trocada juros-e-outros-encargos-execucao-2026-08/pt",
+      "mensagem": "JD1-c: direção da evolução trocada",
+      "passou": true
+    },
+    {
+      "nome": "Direção trocada juros-e-outros-encargos-execucao-2026-08/en",
+      "mensagem": "JD1-c: direção da evolução trocada",
+      "passou": true
+    },
+    {
+      "nome": "Subsetor apagado/pt",
+      "mensagem": "JD1-c: custo sem o subsetor Estado",
+      "passou": true
+    },
+    {
+      "nome": "Subsetor apagado/en",
+      "mensagem": "JD1-c: custo sem o subsetor Estado",
+      "passou": true
+    },
+    {
+      "nome": "Unidade do INE trocada",
+      "mensagem": "JD1 INE: unidade diferente",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Anos da execução trocados",
+      "mensagem": "JD1 EO: cabeçalho ausente ou ambíguo",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Corpo recebido alterado",
+      "mensagem": "comprimento divergente",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "União substituída por Portugal",
+      "mensagem": "JD1 Eurostat: coordenada diferente geo",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "PIB de outro ano na derivação",
+      "mensagem": "JD1 derivação: unidades ou períodos diferentes",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Série desconhecida na seleção",
+      "mensagem": "seleção de séries vazia ou desconhecida",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Unidade da taxa trocada",
+      "mensagem": "a unidade não é confirmada pela ficha de metadados",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Ano do gráfico ausente",
+      "mensagem": "JD1 IGCP: ano do gráfico ausente ou ambíguo",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Ano do gráfico duplicado",
+      "mensagem": "JD1 IGCP: ano do gráfico ausente ou ambíguo",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Colunas do gráfico trocadas",
+      "mensagem": "JD1 IGCP: coluna do gráfico diferente",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Rótulo adicional na coluna do gráfico",
+      "mensagem": "JD1 IGCP: coluna do gráfico diferente",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Célula do anexo divergente do PDF",
+      "mensagem": "JD1 anexo: célula e PDF divergem",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Último saldo do IGCP trocado",
+      "mensagem": "JD1 IGCP dívida: data extraída diverge da data impressa no quadro",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Coluna adicional em Dívida total / Total debt",
+      "mensagem": "JD1 PDF: última coluna ausente ou adicional",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Coluna adicional em 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.)",
+      "mensagem": "JD1 PDF: última coluna ausente ou adicional",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Coluna adicional em p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada)",
+      "mensagem": "JD1 PDF: última coluna ausente ou adicional",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Bandeira nova do Eurostat não desaparece",
+      "mensagem": "JD1 Eurostat: bandeira por tratar",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Resumo do recorte alterado",
+      "mensagem": "JD1 recorte: resumo ou comprimento divergente",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Mês acrescentado ao ano do gráfico",
+      "mensagem": "JD1 IGCP: período da emissão não é o ano impresso",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Data mutilada no localizador",
+      "mensagem": "JD1 IGCP: data do saldo não conserva a data impressa",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Unidade de gráfico vizinho no excerto do custo",
+      "mensagem": "JD1 IGCP: excerto inclui unidades de gráficos vizinhos",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Segundo título para jd1/ine-pde-setembro-2026.pdf",
+      "mensagem": "JD1: título diferente para o mesmo documento",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Segundo título para jd1/eo-execucao-agosto-2026.pdf",
+      "mensagem": "JD1: título diferente para o mesmo documento",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "Ponto de milhares no valor de trabalho",
+      "mensagem": "JD1 dívida: value contém ponto de milhares",
+      "planta": true,
+      "passou": true
+    },
+    {
+      "nome": "árvore suja recusada antes da tranca e dos portões",
+      "mensagem": "portoes: árvore suja; registe as mudanças antes de conferir a cabeça do código",
+      "passou": true
+    },
+    {
+      "nome": "build vermelho não paga conferências",
+      "mensagem": "verify: não correu; o build não ficou verde e não pode pagar passos da união",
+      "passou": true
+    },
+    {
+      "nome": "escrita da tranca recusada",
+      "mensagem": "portoes: não foi possível tomar a tranca; nenhum portão correu",
+      "passou": true
+    },
+    {
+      "nome": "tranca de outra corrida não é substituída nem solta",
+      "mensagem": "à espera da tranca da máquina: tranca de ensaio",
+      "passou": true
+    },
+    {
+      "nome": "tranca caducada deixa correr",
+      "mensagem": "tranca com mais de quarenta minutos (tranca de ensaio); ignora-se",
+      "passou": true
+    },
+    {
+      "nome": "partes de corrida morta",
+      "mensagem": "portoes: a pasta já tem códigos ou partes .tempos; escolha uma pasta nova",
+      "passou": true
+    },
+    {
+      "nome": "TERM depois de tomar a tranca",
+      "mensagem": "portoes: corrida interrompida; os portões seguintes não correm",
+      "passou": true
+    },
+    {
+      "nome": "motor exercido sob a tranca comum",
+      "mensagem": "Motor e sítio conferidos antes de soltar a tranca.",
+      "passou": true
+    },
+    {
+      "nome": "ramo-estrutura-1-texto",
+      "mensagem": "Fragmento de caminho recusado no registo; conhecido positivo conservado.",
+      "passou": true
+    },
+    {
+      "nome": "ramo-estrutura-1-gzip",
+      "mensagem": "Fragmento de caminho recusado no registo; conhecido positivo conservado.",
+      "passou": true
+    },
+    {
+      "nome": "ramo-estrutura-1-nome",
+      "mensagem": "Fragmento de caminho recusado no registo; conhecido positivo conservado.",
+      "passou": true
+    },
+    {
+      "nome": "ramo-estrutura-2-texto",
+      "mensagem": "Fragmento de caminho recusado no registo; conhecido positivo conservado.",
+      "passou": true
+    },
+    {
+      "nome": "ramo-estrutura-2-gzip",
+      "mensagem": "Fragmento de caminho recusado no registo; conhecido positivo conservado.",
+      "passou": true
+    },
+    {
+      "nome": "ramo-estrutura-2-nome",
+      "mensagem": "Fragmento de caminho recusado no registo; conhecido positivo conservado.",
+      "passou": true
+    },
+    {
+      "nome": "ramo-estrutura-inocua",
+      "mensagem": "Fragmento de caminho recusado no registo; conhecido positivo conservado.",
+      "passou": true
+    },
+    {
+      "nome": "guiao-com-casa-portavel",
+      "mensagem": "Caminho relativo à casa permitido no guião.",
+      "passou": true
+    }
+  ]
+}

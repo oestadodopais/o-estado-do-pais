@@ -71,7 +71,7 @@ import { ANFITRIOES_SEM_RESPOSTA } from '../data/fontes.mjs';
 import { atrasoDaLinha } from '../lib/frescura.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { proximaConferenciaDaLinha, ancoraDoEvento } from '../lib/agenda.mjs';
-import { nomeOficial, reguaDaMedida, temRegua } from '../lib/enquadramento.mjs';
+import { nomeOficial, reguaDaMedida, temRegua, evolucaoJd1 } from '../lib/enquadramento.mjs';
 import { serieDaLinha } from '../lib/series.mjs';
 import { ressalvaDaUniao } from '../data/ressalvas-da-uniao.mjs';
 import { PALAVRAS_DA_FAIXA } from '../data/faixa-da-uniao.mjs';
@@ -79,6 +79,7 @@ import { linhaDePortugalDaLinha } from '../lib/faixa-do-concelho.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import Frase from '../components/Frase.astro';
+import QuadroFinanciamentoJd1 from '../components/QuadroFinanciamentoJd1.astro';
 import OrigemDaDefinicao from '../components/OrigemDaDefinicao.astro';
 import { DEFINICOES_DAS_MEDIDAS, FIGURAS, origensDaDefinicao } from '../data/figuras.mjs';
 import { ressalvaDaLinha } from '../data/dominios.mjs';
@@ -93,10 +94,12 @@ import { t } from '../i18n/strings.mjs';
 import { LICENCA } from '../data/licenca.mjs';
 import { CONJUNTO } from '../lib/conjunto.mjs';
 import { LANGS } from '../lib/routes.mjs';
+import { parcelaDoFinanciamento } from '../lib/frases-jd1.mjs';
 import { familiaDaLinha, oQueEDaLinha, nomeNoRecibo, lugarNoRecibo, nomeDaFonteNoRecibo } from '../lib/o-que-e-o-numero.mjs';
 import Marcador from '../components/Marcador.astro';
 import { partesDaLeitura } from '../lib/leitura-da-medida.mjs';
 import '../styles/linha.css';
+import { codigoDaIncorporacao, podeIncorporar } from '../lib/incorporar.mjs';
 
 const { lang = 'pt', id } = Astro.props;
 const s = t(lang);
@@ -111,6 +114,7 @@ const nomeRecibo = nomeNoRecibo(id, lang);
 const lugarRecibo = lugarNoRecibo(id, lang);
 const nomeDaFonte = nomeDaFonteNoRecibo(id);
 const oQueE = oQueEDaLinha(id, lang);
+const parcelaFinanciamento = parcelaDoFinanciamento(id, lang);
 const comparacaoDoCartao = familiaRecibo.tipo === 'cartao' ? partesDaLeitura(id, lang).comparacao : null;
 /* As perguntas das medidas fora dos painéis europeus têm as origens no
    recibo que o cartão abre. A célula 8.4 confere a pergunta e cada campo das
@@ -147,6 +151,7 @@ const nomes = nomeOficial(id);
    sua porta, para que a proveniência continue a um toque. */
 const enquadramento = reguaDaMedida(id);
 const temEnquadramento = temRegua(enquadramento);
+const evolucao = evolucaoJd1(id, lang);
 /* A SÉRIE DE PAÍSES DESTA LINHA, quando ela é a linha portuguesa de uma (a
    passagem UE1b, 29.09.2026): o enquadramento abre o recibo dela, com as
    palavras da porta da faixa do cartão. */
@@ -312,8 +317,9 @@ const calculado = claim.document?.computed_over ?? null;
  * um título, e «Recorte da linha impressa, página 119 de [a verificar]» seria
  * uma frase com um buraco lida em voz alta a quem não vê a imagem.
  */
+const eCustoJd1 = ['custo-do-stock-da-divida-direta-2025', 'custo-da-divida-emitida-2026-08'].includes(id);
 const recorteAlt = recorte
-  ? `${s.prov.recorteAlt} ${recorte.page}` +
+  ? `${eCustoJd1 ? s.prov.recorteGraficoAlt : s.prov.recorteAlt} ${recorte.page}` +
     (presente(claim.document?.title) ? ` ${s.prov.recorteAltDe} ${claim.document.title}` : '')
   : null;
 
@@ -772,6 +778,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         <p class="linha-o-que-e-frase" data-o-que-e-parte="comparacao"><Frase partes={comparacaoDoCartao.pedacos} lang={lang} selos={false} /></p>
       )}
     </div>
+    {parcelaFinanciamento && <div class="linha-o-que-e"><p class="linha-o-que-e-frase" data-jd1-parcela><Frase partes={parcelaFinanciamento} lang={lang} selos={false} /></p></div>}
     <p class="linha-valor">
       <Claim id={id} lang={lang} as="span" class="linha-valor-num" plano>
       {/* O ESPAÇO ENTRE O VALOR E A UNIDADE É TEXTO DA PÁGINA (bloco R1,
@@ -1272,9 +1279,13 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
             </p>
           ) : (
             <>
-              <blockquote class="linha-excerto">
-                <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} />
-              </blockquote>
+              {['necessidades-brutas-de-financiamento-2025', 'amortizacoes-e-anulacoes-de-divida-fundada-2025'].includes(id) ? (
+                <QuadroFinanciamentoJd1 id={id} excerto={claim.excerpt} />
+              ) : (
+                <blockquote class:list={["linha-excerto", { "linha-excerto-grafico": eCustoJd1 }]} tabindex={eCustoJd1 ? "0" : undefined}>
+                  <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} />
+                </blockquote>
+              )}
               {/* O RECIBO DIZ O QUE O EXCERTO É (achado 5 da leitura a frio de
                   15.09.2026). Noventa e uma linhas declaram na nota que o excerto
                   foi composto a partir das etiquetas da resposta da fonte, e não
@@ -1385,10 +1396,11 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           ------------------------------------------------------------------- */}
       {
         (temEnquadramento || portugalDoConcelho) && (
-          <section class="linha-bloco" id="enquadramento" aria-labelledby="enquadramento-k">
+          <section class="linha-bloco" id="enquadramento" aria-labelledby="enquadramento-k" data-enquadramento-edicoes-distintas={enquadramento.edicoesDistintas ? "true" : undefined}>
             <h2 class="linha-bloco-titulo" id="enquadramento-k">
               {s.livro.linha.enquadramentoK}
             </h2>
+            {evolucao && <p class="linha-o-que-e-frase" data-jd1-evolucao={evolucao.direcao}><Frase partes={evolucao.partes} lang={lang} selos={false} /></p>}
             <dl class="linha-verificacoes">
               {enquadramento?.anterior && (
                 <>
@@ -1414,6 +1426,16 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                   <dt>{s.livro.linha.enquadramentoUe}</dt>
                   <dd>
                     <Claim id={enquadramento.ue.id} lang={lang} as="span" chip={true} />
+                  </dd>
+                </>
+              )}
+              {enquadramento.portugal && (
+                <>
+                  <dt>{s.livro.linha.enquadramentoPortugal}</dt>
+                  <dd data-enquadramento-jd1-portugal={enquadramento.portugal.id}>
+                    <Claim id={enquadramento.portugal.id} lang={lang} as="span" chip={true} />
+                    {' · '}
+                    <CampoDaLinha id={enquadramento.portugal.id} campo="reference_date" valor={enquadramento.portugal.periodo} lang={lang} />
                   </dd>
                 </>
               )}
@@ -1855,6 +1877,20 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           </div>
         )
       }
+
+      {LICENCA && (
+        <div class="aparelho-bloco incorporar-bloco" data-incorporar-bloco>
+          {podeIncorporar(claim) ? <>
+          <label class="linha-campo-k" data-voz for="codigo-incorporar">{s.incorporar.titulo}</label>
+          <textarea id="codigo-incorporar" data-incorporar-codigo={id} readonly spellcheck="false" rows="6">{codigoDaIncorporacao(claim, lang)}</textarea>
+          <button type="button" data-voz hidden data-copiado={s.incorporar.copiado} data-selecionado={s.incorporar.selecionado} aria-live="polite">{s.incorporar.copiar}</button>
+          </> : <>
+            <span class="linha-campo-k" data-voz>{s.incorporar.titulo}</span>
+            <p class="aparelho-nota" data-voz data-incorporar-aviso>{s.incorporar.indisponivel}</p>
+          </>}
+        </div>
+      )}
+      <script is:inline src="/js/copiar-incorporacao.js" defer></script>
 
       {
         /* ESTA LINHA NOUTRO SÍTIO (IDENTIDADE.md §11). A mesma linha na outra

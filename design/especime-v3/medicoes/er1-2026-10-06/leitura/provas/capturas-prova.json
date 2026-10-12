@@ -1,0 +1,1087 @@
+{
+  "transporte": "Apenas o argumento da origem e o src do guião são mapeados ao servidor local; os pedidos entre portas distintas são reais, sem fulfill.",
+  "comando": "node tests/incorporar/navegador.mjs",
+  "linha": "custo-unitario-do-trabalho-2024",
+  "antigo": "17,7",
+  "atual": "17,9",
+  "casos": [
+    {
+      "lang": "pt",
+      "modo": "normal",
+      "valores": [
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": "Este número foi atualizado a 05.10.2026"
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        }
+      ],
+      "textos": [
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · Este número foi atualizado a 05.10.2026",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+      ],
+      "pedidos": [
+        {
+          "caminho": "/incorporar.js",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        }
+      ],
+      "cookies": 0
+    },
+    {
+      "lang": "pt",
+      "modo": "releitura",
+      "valores": [
+        {
+          "valor": "17,9",
+          "lido": "2026-10-06",
+          "aviso": null
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-06",
+          "aviso": "Este número foi atualizado a 05.10.2026"
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        }
+      ],
+      "textos": [
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 06.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 06.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · Este número foi atualizado a 05.10.2026",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+      ],
+      "pedidos": [
+        {
+          "caminho": "/incorporar.js",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        }
+      ],
+      "cookies": 0
+    },
+    {
+      "lang": "pt",
+      "modo": "sem-js",
+      "valores": [
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,7",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        }
+      ],
+      "textos": [
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,7 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+      ],
+      "pedidos": [],
+      "cookies": 0
+    },
+    {
+      "lang": "pt",
+      "modo": "sem-cors",
+      "valores": [
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,7",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        }
+      ],
+      "textos": [
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,7 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+      ],
+      "pedidos": [
+        {
+          "caminho": "/incorporar.js",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        }
+      ],
+      "cookies": 0
+    },
+    {
+      "lang": "pt",
+      "modo": "falha",
+      "valores": [
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,7",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        }
+      ],
+      "textos": [
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,7 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+      ],
+      "pedidos": [
+        {
+          "caminho": "/incorporar.js",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        }
+      ],
+      "cookies": 0
+    },
+    {
+      "lang": "pt",
+      "modo": "json-malformado",
+      "valores": [
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,7",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        }
+      ],
+      "textos": [
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,7 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+      ],
+      "pedidos": [
+        {
+          "caminho": "/incorporar.js",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        }
+      ],
+      "cookies": 0
+    },
+    {
+      "lang": "pt",
+      "modo": "outra-linha",
+      "valores": [
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,7",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        }
+      ],
+      "textos": [
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,7 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+      ],
+      "pedidos": [
+        {
+          "caminho": "/incorporar.js",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        }
+      ],
+      "cookies": 0
+    },
+    {
+      "lang": "pt",
+      "modo": "redirecionamento",
+      "valores": [
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,7",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        }
+      ],
+      "textos": [
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,7 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024: 17,9 variação em três anos, % Eurostat, lido a 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+      ],
+      "pedidos": [
+        {
+          "caminho": "/incorporar.js",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        }
+      ],
+      "cookies": 0
+    },
+    {
+      "lang": "en",
+      "modo": "normal",
+      "valores": [
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": "This number was updated on 05.10.2026"
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        }
+      ],
+      "textos": [
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · This number was updated on 05.10.2026",
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+      ],
+      "pedidos": [
+        {
+          "caminho": "/incorporar.js",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        }
+      ],
+      "cookies": 0
+    },
+    {
+      "lang": "en",
+      "modo": "releitura",
+      "valores": [
+        {
+          "valor": "17,9",
+          "lido": "2026-10-06",
+          "aviso": null
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-06",
+          "aviso": "This number was updated on 05.10.2026"
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        }
+      ],
+      "textos": [
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 06.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 06.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0 · This number was updated on 05.10.2026",
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+      ],
+      "pedidos": [
+        {
+          "caminho": "/incorporar.js",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        }
+      ],
+      "cookies": 0
+    },
+    {
+      "lang": "en",
+      "modo": "sem-js",
+      "valores": [
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,7",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        }
+      ],
+      "textos": [
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Labour cost per unit of output (unit labour cost), 2024: 17,7 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+      ],
+      "pedidos": [],
+      "cookies": 0
+    },
+    {
+      "lang": "en",
+      "modo": "sem-cors",
+      "valores": [
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,7",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        }
+      ],
+      "textos": [
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Labour cost per unit of output (unit labour cost), 2024: 17,7 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+      ],
+      "pedidos": [
+        {
+          "caminho": "/incorporar.js",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        }
+      ],
+      "cookies": 0
+    },
+    {
+      "lang": "en",
+      "modo": "falha",
+      "valores": [
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,7",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        }
+      ],
+      "textos": [
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Labour cost per unit of output (unit labour cost), 2024: 17,7 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+      ],
+      "pedidos": [
+        {
+          "caminho": "/incorporar.js",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        }
+      ],
+      "cookies": 0
+    },
+    {
+      "lang": "en",
+      "modo": "json-malformado",
+      "valores": [
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,7",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        }
+      ],
+      "textos": [
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Labour cost per unit of output (unit labour cost), 2024: 17,7 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+      ],
+      "pedidos": [
+        {
+          "caminho": "/incorporar.js",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        }
+      ],
+      "cookies": 0
+    },
+    {
+      "lang": "en",
+      "modo": "outra-linha",
+      "valores": [
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,7",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        }
+      ],
+      "textos": [
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Labour cost per unit of output (unit labour cost), 2024: 17,7 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+      ],
+      "pedidos": [
+        {
+          "caminho": "/incorporar.js",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        }
+      ],
+      "cookies": 0
+    },
+    {
+      "lang": "en",
+      "modo": "redirecionamento",
+      "valores": [
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,7",
+          "lido": "2026-10-05",
+          "aviso": null
+        },
+        {
+          "valor": "17,9",
+          "lido": "2026-10-05",
+          "aviso": null
+        }
+      ],
+      "textos": [
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Labour cost per unit of output (unit labour cost), 2024: 17,7 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0",
+        "Labour cost per unit of output (unit labour cost), 2024: 17,9 three-year change, % Eurostat, read on 05.10.2026 · O Estado do País, oestadodopaís.pt, CC BY 4.0"
+      ],
+      "pedidos": [
+        {
+          "caminho": "/incorporar.js",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        },
+        {
+          "caminho": "/livro-razao/custo-unitario-do-trabalho-2024-nao-existe.json",
+          "origem": "<servidor do projeto>",
+          "referer": null,
+          "metodo": "GET",
+          "corpo": null
+        }
+      ],
+      "cookies": 0
+    },
+    {
+      "lang": "pt",
+      "modo": "codigo-literal",
+      "comentarioConservado": true,
+      "textoCopiado": "<p><!--planta--></p>"
+    },
+    {
+      "lang": "pt",
+      "modo": "copia",
+      "clipboard": true,
+      "recusadoSeleciona": true,
+      "ausenteSeleciona": true
+    },
+    {
+      "lang": "en",
+      "modo": "copia",
+      "clipboard": true,
+      "recusadoSeleciona": true,
+      "ausenteSeleciona": true
+    }
+  ],
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-normal-pt-390.png",
+      "largura": 390,
+      "sha256": "55ff087ae91dda5c3d3b19eefd2fc19a00fc99196c0591dca92fb9414e679915"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-normal-pt-768.png",
+      "largura": 768,
+      "sha256": "bbc5da5e8dee0d351a5f08f0ba64aba1a3b9b6e5eaf17760f331604c73fc016f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-normal-pt-1024.png",
+      "largura": 1024,
+      "sha256": "10870015ad7647ffda0b357db831080a0a24e5d99e6f3454cef9348ae5f1f098"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-normal-pt-1280.png",
+      "largura": 1280,
+      "sha256": "e5f633b47a04e2dd1aec515cc098768dab25d8db62568fe4b467760c5719fd74"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-normal-pt-1600.png",
+      "largura": 1600,
+      "sha256": "31105c6fe22f47ec7044968d05ce640a9291dfff8ad7058aa892a7f3faf5d35a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-sem-js-pt-390.png",
+      "largura": 390,
+      "sha256": "06229a72613828fdab19bec099849d673faddf09fab9eae69a75280510fe634a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-sem-js-pt-768.png",
+      "largura": 768,
+      "sha256": "2069eb59f0e8334b09946b3b5a18be4efa8825638dca50a71ea947170f267396"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-sem-js-pt-1024.png",
+      "largura": 1024,
+      "sha256": "1471b538232c74bf2d73f1ea2f0c8e2bf4aabf2691399c223089dec86f5fbe00"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-sem-js-pt-1280.png",
+      "largura": 1280,
+      "sha256": "74ad433960c97052001d542426c52fbc94b5e8e0fcc2cfc3528cda1dbf519ffe"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-sem-js-pt-1600.png",
+      "largura": 1600,
+      "sha256": "d77c0c2b30b2605795dd564ac9f2079d2370b6812f4d8957923608394f3d4dac"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-normal-en-390.png",
+      "largura": 390,
+      "sha256": "4b6cfd3728365addda9d17d1f939ca236c75c955cb4b9176c1106b19c5524129"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-normal-en-768.png",
+      "largura": 768,
+      "sha256": "af0d41f5f4b8744393f3b666ec1ee4855203906dcbef5d705c09c0d12018e95f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-normal-en-1024.png",
+      "largura": 1024,
+      "sha256": "883396da120f56f47c76568cbf3866960d92c378c771b7c7a2dd5dce3289021d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-normal-en-1280.png",
+      "largura": 1280,
+      "sha256": "8db95a0318628c5d5dad6205ba65466569ee282c5ef7cccc9f09d16ebe275136"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-normal-en-1600.png",
+      "largura": 1600,
+      "sha256": "7c9b1563009b618866ce82e456dacbd2c89a717f2b4f68ff534545334b8b5bd0"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-sem-js-en-390.png",
+      "largura": 390,
+      "sha256": "49376e59a1d7e06fb53e4be44b86887103a0d129f8b3d22f832294a28dcafd33"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-sem-js-en-768.png",
+      "largura": 768,
+      "sha256": "6ca37449a79c1b576bacf7c28676dc378de69f1193a6847d5fe9ab45ffbcecbe"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-sem-js-en-1024.png",
+      "largura": 1024,
+      "sha256": "b01901d538835cb88ea62cce7172923464102d3405932574da07973d860dc203"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-sem-js-en-1280.png",
+      "largura": 1280,
+      "sha256": "7e27ae3d9a75a39c4ab68ebe2b1aea4760f688b7929db2c8c80d3621ef1ddc28"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/blogue-sem-js-en-1600.png",
+      "largura": 1600,
+      "sha256": "7aa7353629d7557ccc903838cd12ee86581830229254157b2fd6fbe24f6d2640"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/recibo-pt-390.png",
+      "largura": 390,
+      "sha256": "cd4578afa8cc16f244320d23c015c4ce871140a2fe58e1405bf9ce91b8c24f55"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/recibo-pt-768.png",
+      "largura": 768,
+      "sha256": "1a2be044cd2a86b46941fbc37eee7ddb09091bb9f71bfbdc1f531b79042ef6e4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/recibo-pt-1024.png",
+      "largura": 1024,
+      "sha256": "603ae58989974d3d11318abc1035aaeb7d714e983bcf67ad26dabf91d34b9eff"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/recibo-pt-1280.png",
+      "largura": 1280,
+      "sha256": "7b56fe5c9b7bb180b057624abc7dc83dad081ad7abd7abf6eea12490d55786db"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/recibo-pt-1600.png",
+      "largura": 1600,
+      "sha256": "ab3bd80a9bb4dab087affd4bd46fe141bbf534419482fe279abfd3eca9208f86"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/recibo-en-390.png",
+      "largura": 390,
+      "sha256": "4f9d361346d130ba0d216e5f59db3a219781559ebbf096ece239f8468d989cd6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/recibo-en-768.png",
+      "largura": 768,
+      "sha256": "219323e892abc9af91f56dbe7d710f276ac26ad5b8758aa9a785a4bafadcf6e4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/recibo-en-1024.png",
+      "largura": 1024,
+      "sha256": "1c8a0130d753271df3d25d41dd84172500adc99e3ed9e843cd9f2322db246e4e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/recibo-en-1280.png",
+      "largura": 1280,
+      "sha256": "672384189e217fa12f588a6a78c4aa21ee4edfd4327d2f27d475b8474eff2b79"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/recibo-en-1600.png",
+      "largura": 1600,
+      "sha256": "6a53875bc6341fb972624c49c83444932e0ecbc4dc88eb45e8d420fcb10553ac"
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "sem-cors-pt",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "falha-pt",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-malformado-pt",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "outra-linha-pt",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "redirecionamento-pt",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "sem-cors-en",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "falha-en",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-malformado-en",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "outra-linha-en",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "redirecionamento-en",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    }
+  ]
+}

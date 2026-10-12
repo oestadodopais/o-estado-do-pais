@@ -1,0 +1,41 @@
+{
+  "lido_em": "2026-10-06T12:10:39.454533+00:00",
+  "conteudo": "2026-10-06T12:08:55Z <casa>/temporario/oedp-ma-b-antes-limpo pid=23694\n<worktree> (fragmento) pid=24836\n",
+  "observacao": "O ficheiro contém uma linha de outra corrida e o resto de uma linha JD1. O guião verifica a existência antes de escrever; a entrada não é atómica. A worktree JD1 conserva os seus próprios registos e dist.",
+  "guiao": "scripts/leituras/portoes.sh",
+  "guiao_sha256": "f63419fffb3b14244a026df635fc17273af490f8526f1c822ff4397d7031619e",
+  "leituras_durante_a_espera": [
+    {
+      "hora": "2026-10-06T14:03:12.936612+00:00",
+      "conteudo": "2026-10-06T13:49:49Z <worktree> pid=2238\n"
+    },
+    {
+      "hora": "2026-10-06T14:16:34.147131+00:00",
+      "conteudo": "2026-10-06T14:13:42Z <worktree> pid=3047\n"
+    },
+    {
+      "hora": "2026-10-06T14:30:46.495169+00:00",
+      "conteudo": "2026-10-06T14:18:42Z <worktree> pid=51227\n"
+    },
+    {
+      "hora": "2026-10-06T14:46:47.939863+00:00",
+      "conteudo": "2026-10-06T14:42:51Z <worktree> pid=63810\n"
+    },
+    {
+      "hora": "2026-10-06T15:02:55.364495+00:00",
+      "conteudo": "2026-10-06T14:42:51Z <worktree> pid=63810\n"
+    },
+    {
+      "hora": "2026-10-06T15:12:46.622562+00:00",
+      "conteudo": "2026-10-06T15:06:31Z <worktree> pid=47692\n"
+    },
+    {
+      "hora": "2026-10-06T15:43:50.050186+00:00",
+      "conteudo": "2026-10-06T15:41:28Z <worktree> pid=69457\n"
+    },
+    {
+      "hora": "2026-10-06T16:02:41.455634+00:00",
+      "conteudo": "2026-10-06T15:41:28Z <worktree> pid=69457\n"
+    }
+  ]
+}

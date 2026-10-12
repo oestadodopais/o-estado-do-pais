@@ -1,0 +1,24 @@
+/** JD1-b, achado 17: o compositor conserva leituras distintas do mesmo dia. */
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { registarLeitura } from '../../design/especime-v3/medicoes/r4-2026-10-05/registar-leitura.mjs';
+const { leituras } = JSON.parse(fs.readFileSync(new URL('./leituras-provadas.json', import.meta.url), 'utf8'));
+const familias = leituras.find(l => l.quando === '2026-10-05' && l.o_que.startsWith('o bloco R4:'));
+const series = leituras.find(l => l.quando === '2026-10-05' && l.o_que.startsWith('o bloco R4, as séries:'));
+assert(familias && series, 'JD1-b: faltam as duas leituras R4 de 05.10.2026.');
+const entrada = [series];
+assert.deepEqual(registarLeitura(entrada, familias), [series, familias], 'JD1-b: o compositor apagou outra leitura do mesmo dia.');
+assert.deepEqual(entrada, [series], 'JD1-b: o compositor alterou a lista recebida.');
+assert.deepEqual(registarLeitura([series, familias], familias), [series, familias], 'JD1-b: repetir o compositor duplicou ou reordenou o registo.');
+const outroAutor = { ...familias, quem: 'autor de ensaio' };
+assert.deepEqual(registarLeitura([familias], outroAutor), [familias, outroAutor]);
+const filtroAntigo = [...[series].filter(l => !(l.quando === familias.quando && l.o_que.startsWith('o bloco R4'))), familias];
+assert.throws(() => assert.deepEqual(filtroAntigo, [series, familias]), assert.AssertionError);
+console.log('JD1-b registo: duas leituras R4 presentes; mesma data preservada; idempotência; autor distinto; filtro antigo recusado.');
+const refeita = { ...familias, o_que: 'o bloco R4: leitura revista com outro objeto' };
+assert.deepEqual(registarLeitura([series, familias], refeita), [series, refeita], 'JD1-c: a leitura refeita duplicou a entrada do dia.');
+const duplicadas = [familias, series, refeita];
+assert.deepEqual(registarLeitura(duplicadas, refeita), [refeita, series], 'JD1-c: entradas antigas duplicadas não foram substituídas.');
+const generica = { quem: 'autor de ensaio', quando: '2026-10-12', o_que: 'antes' };
+assert.deepEqual(registarLeitura([generica], {...generica, o_que: 'depois'}), [{...generica, o_que: 'depois'}]);
+console.log('JD1-c: leitura do mesmo autor, dia e âmbito substituída; leituras distintas conservadas.');

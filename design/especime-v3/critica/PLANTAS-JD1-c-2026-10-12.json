@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-12T13:29:15+00:00",
+ "copia": "<scratchpad>/jd1/pacote-leitura-c",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/en/ledger/necessidades-brutas-de-financiamento-2025/index.html",
+   "descricao": "a página construída inglesa das necessidades brutas diz que a parcela pagou juros, contra a linha e a frase portuguesa",
+   "sha256_antes": "e0255486f91313085ce41f11a30c3f8f76b59b7b5da6cfd495cedf767ed725d3",
+   "sha256_depois": "45fa708a8fa8ce7a8c7231b775df65f5750ff820388d26b4583f47f7409500dc",
+   "contexto_antes": "\" class=\"claim-value\">67 601</span> million euros, <span data-claim=\"amortizacoes-e-anulacoes-de-divida-fundada-2025\" class=\"claim-value\">56 976</span> million were used to repay or extinguish debt.</p></div><p class=\"linha-valor\"><span data-claim=\"necessidades-brutas-de-financiamento-2025\" class=\"claim-value linha-valor-num\">67 601</span> <span class=\"ca",
+   "contexto_depois": "\" class=\"claim-value\">67 601</span> million euros, <span data-claim=\"amortizacoes-e-anulacoes-de-divida-fundada-2025\" class=\"claim-value\">56 976</span> million were used to pay interest.</p></div><p class=\"linha-valor\"><span data-claim=\"necessidades-brutas-de-financiamento-2025\" class=\"claim-value linha-valor-num\">67 601</span> <span class=\"ca"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "motor/publisher/jd1.py",
+   "descricao": "a data da dívida direta volta a ser um literal na expressão do guião, na cópia, contra o diff e a decisão do achado 10",
+   "sha256_antes": "d295787c77cf3444e44f98380ab8c5455a53f78e7b26d82b66a4bb428138c49d",
+   "sha256_depois": "d46bd4dccc515c57fe8ba1dff724e05b749b1385d6b62660d1cdffa4bd8e41aa",
+   "contexto_antes": "/[a-z ]{3,5}/\\d{2}\"\n    return header_line(text, date + r\"\\s+Issues\\s+Redempt\\.\\s+Others\\s+\" + date +\n                       r\"\\s+Issues\\s+Redempt\\.\\s+Others\\s+(?P<date>\" + date + \")\",\n                       \"JD1 IGCP dívida\", \"saldos e movimentos, data da última coluna\")[\"date\"]\n\n\ndef printed_debt_date(text, source=SOURCE):\n    \"\"\"Confere ",
+   "contexto_depois": "/[a-z ]{3,5}/\\d{2}\"\n    return header_line(text, date + r\"\\s+Issues\\s+Redempt\\.\\s+Others\\s+\" + date +\n                       r\"\\s+Issues\\s+Redempt\\.\\s+Others\\s+(?P<date>31/a go/26)\",\n                       \"JD1 IGCP dívida\", \"saldos e movimentos, data da última coluna\")[\"date\"]\n\n\ndef printed_debt_date(text, source=SOURCE):\n    \"\"\"Confere "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "ledger/claims/amortizacoes-e-anulacoes-de-divida-fundada-2025.yml",
+   "descricao": "o valor da linha nova na cópia diz 56 967, contra a página alojada, a página construída e o diff",
+   "sha256_antes": "a4518c5edbf9e2d96554173122b815acb9ed712bee1e542b8cef3d39c2b8c2b4",
+   "sha256_depois": "f61def01ccb7505e7bf09c84bb032950aaa5c98668a73931d4d8331dd64ff4b1",
+   "contexto_antes": "/check-cruzamento.mjs.\n\nid: \"amortizacoes-e-anulacoes-de-divida-fundada-2025\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"56 976\"\nunit: \"milhões de euros\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.",
+   "contexto_depois": "/check-cruzamento.mjs.\n\nid: \"amortizacoes-e-anulacoes-de-divida-fundada-2025\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"56 967\"\nunit: \"milhões de euros\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão."
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/livro-razao/juros-das-administracoes-publicas-2025/index.html",
+   "descricao": "a página construída portuguesa dos juros de 2025 diz «definitivo» onde a fonte diz provisório",
+   "sha256_antes": "892ef07d9c7c68353416e2542fdfbf215f8c6870dc24e2f5cea96d358afb60b6",
+   "sha256_depois": "9b2d405f3e03842b2b9d9905126dfeaadd358fc15acac7dd4d770292d21d6c6e",
+   "contexto_antes": "icam neste setor, mesmo quando não entram no saldo da contabilidade pública, e exclui as que essas regras deixam de fora. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.</p></div><p class=\"linha-valor\"><span data-claim=\"juros-das-administracoes-publi",
+   "contexto_depois": "icam neste setor, mesmo quando não entram no saldo da contabilidade pública, e exclui as que essas regras deixam de fora. O valor de dois mil e vinte e cinco é definitivo, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.</p></div><p class=\"linha-valor\"><span data-claim=\"juros-das-administracoes-publi"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 46 capturas verificadas onde o manifesto dá 64",
+   "sha256_antes": "94b18807876648dd7d95df7ae5cda4ac1a70d1531b2624c0a02e928c2054413a",
+   "sha256_depois": "c5747dccb5c4cb4dc6b22bc1368e83fc2f4b1f137305ab193359eebfb716d446",
+   "contexto_antes": "---|---:|\n| `build.codigo` | 0 |\n| `verify.codigo` | 0 |\n| `typecheck.codigo` | 0 |\n| `motor.codigo` | 0 |\n| `series.codigo` | 0 |\n| `cruzamento.codigo` | 0 |\n\nCapturas verificadas: 64; problemas reportados: 0. Larguras: 390, 1280 px. O manifesto inclui as frases, medidas de largura, resumos e ensaios de interação. As imagens foram inspecionad",
+   "contexto_depois": "---|---:|\n| `build.codigo` | 0 |\n| `verify.codigo` | 0 |\n| `typecheck.codigo` | 0 |\n| `motor.codigo` | 0 |\n| `series.codigo` | 0 |\n| `cruzamento.codigo` | 0 |\n\nCapturas verificadas: 46; problemas reportados: 0. Larguras: 390, 1280 px. O manifesto inclui as frases, medidas de largura, resumos e ensaios de interação. As imagens foram inspecionad"
+  }
+ ]
+}

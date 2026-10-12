@@ -10,7 +10,7 @@ O que se procura não é o gosto: é o que impede, confunde ou cansa um leitor, 
 
 ## 1 · O sítio, e como o percorrer
 
-O sítio é `https://xn--oestadodopas-2fb.pt` (o domínio acentuado `oestadodopaís.pt`). Percorre-o **no ar**, como um utilizador, com o Playwright que está em `node_modules` do repositório (`/Users/UTILIZADOR/Instruments/OEstadoDoPais`; corre o Node a partir daí para o encontrar). Dois aparelhos:
+O sítio é `https://xn--oestadodopas-2fb.pt` (o domínio acentuado `oestadodopaís.pt`). Percorre-o **no ar**, como um utilizador, com o Playwright que está em `node_modules` do repositório (`<casa>/Instruments/OEstadoDoPais`; corre o Node a partir daí para o encontrar). Dois aparelhos:
 
 * **telemóvel:** `devices["iPhone 13"]` (390 × 664, toque, `deviceScaleFactor` 3; guarda as capturas a escala 2 e em JPEG de qualidade 70, para não pesarem);
 * **computador:** 1280 × 800, rato e teclado.

@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-12T10:35:45+00:00",
+ "copia": "<scratchpad>/er1/pacote-leitura-d",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem «Método por confirmar» da edição portuguesa na tabela da ER1-d passa de 8 a 7, contra contagens-d.json",
+   "sha256_antes": "7dab4102c56c179df165226a48ded21949d9af2ed93631ed41bc8d7f001bebec",
+   "sha256_depois": "475819a91b02eb346db16a2f57c8acdc07deab9a149f740e4103e6c51f79af8d",
+   "contexto_antes": "dida na página do Método.\n\n| Edição | Recibos sem código | Método por confirmar | Com código | Calculados sem data com código |\n| --- | --- | --- | --- | --- |\n| pt | 8 | 8 | 3187 | 365 |\n| en | 8 | 8 | 3187 | 365 |\n\nIgualdade exigida em todas as edições: satisfeita. O conjunto da diferença tem 0 linhas. A divergência descrita na secção históric",
+   "contexto_depois": "dida na página do Método.\n\n| Edição | Recibos sem código | Método por confirmar | Com código | Calculados sem data com código |\n| --- | --- | --- | --- | --- |\n| pt | 8 | 7 | 3187 | 365 |\n| en | 8 | 8 | 3187 | 365 |\n\nIgualdade exigida em todas as edições: satisfeita. O conjunto da diferença tem 0 linhas. A divergência descrita na secção históric"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/livro-razao/evora-prr-aprovado-2026/index.html",
+   "descricao": "a frase da recusa na página construída do recibo recusado pelo excerto passa a uma paráfrase que perde a ausência exata",
+   "sha256_antes": "cb8c4b1fcad04990bea6c37e9a99d04775825755968bbf4af737b005f9b8c4b6",
+   "sha256_depois": "34b07223b8cc05c69f5108b9c52c3fa3effde6972c93d66565b5ac611187689a",
+   "contexto_antes": "corporar-bloco\" data-incorporar-bloco><span class=\"linha-campo-k\" data-voz>Incorporar este número</span><p class=\"aparelho-nota\" data-voz data-incorporar-aviso>Este número ainda não se pode incorporar: um campo da sua proveniência está por confirmar na fonte.</p></div><script src=\"/js/copiar-incorporacao.js\" defer></script><div class=\"aparelho-bloco\"><span class=\"linha-campo-k\">Esta linha noutro sítio</span><p class",
+   "contexto_depois": "corporar-bloco\" data-incorporar-bloco><span class=\"linha-campo-k\" data-voz>Incorporar este número</span><p class=\"aparelho-nota\" data-voz data-incorporar-aviso>Este número ainda não se pode incorporar: a sua proveniência está a confirmar.</p></div><script src=\"/js/copiar-incorporacao.js\" defer></script><div class=\"aparelho-bloco\"><span class=\"linha-campo-k\">Esta linha noutro sítio</span><p class"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/data/metodo.mjs",
+   "descricao": "a frase do Método sobre a incorporação, na cópia, diz «publicado» em vez de «lido», contra o mandato e o carimbo da entrada",
+   "sha256_antes": "742e6b3e0673c5faff8db60af8b0bfe9416d04ff81763ea228e21e06e08ac5e3",
+   "sha256_depois": "711fb35842251116d52386088c852e2db53362f4b1a6c24d365e14b29d2e5d61",
+   "contexto_antes": " sem página: um selo que aponte para o vazio é uma porta que não abre.',\n        \"Cada número deste projeto pode ser incorporado noutra página com a sua fonte, a data em que foi lido e a porta para o recibo: o código está no recibo de cada linha, e um guião pequeno deste projeto mantém o número em dia lendo o JSON da linha. O guião lê só os seus próprios parágrafo",
+   "contexto_depois": " sem página: um selo que aponte para o vazio é uma porta que não abre.',\n        \"Cada número deste projeto pode ser incorporado noutra página com a sua fonte, a data em que foi publicado e a porta para o recibo: o código está no recibo de cada linha, e um guião pequeno deste projeto mantém o número em dia lendo o JSON da linha. O guião lê só os seus próprios parágrafo"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "public/incorporar.js",
+   "descricao": "o separador « · » entre a leitura e a atribuição sai do guião do cliente na cópia, contra o diff",
+   "sha256_antes": "d77161cc346fe47c41c5f7eb6ada9f2cce851d64a5f4dfd2a32e83619d20a1dd",
+   "sha256_depois": "8debb8a8a1b24ed207a768a54690d6957a03595b407b93d4bff9c03d0c0f9ac3",
+   "contexto_antes": "   fonte.textContent = d.fonte;\n      novo.appendChild(fonte);\n      novo.appendChild(document.createTextNode((d.fonte === d.leitura ? '' : ', ' + d.leitura) + ' · ' + d.atribuicao));\n      if (d.notas) {\n        var notas = document.createElement('span');\n        notas.textContent = d.notas;\n        novo.appendChild(document.createTextNo",
+   "contexto_depois": "   fonte.textContent = d.fonte;\n      novo.appendChild(fonte);\n      novo.appendChild(document.createTextNode((d.fonte === d.leitura ? '' : ', ' + d.leitura) + ' ' + d.atribuicao));\n      if (d.notas) {\n        var notas = document.createElement('span');\n        notas.textContent = d.notas;\n        novo.appendChild(document.createTextNo"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "src/lib/incorporar.mjs",
+   "descricao": "o compositor deixa de recusar o código a uma linha com proveniência incompleta, na cópia, contra o diff e a prova do Método",
+   "sha256_antes": "be06f21f628aa8ca57bea248578548a36a8d3d111c18d846bec2c236340161ac",
+   "sha256_depois": "7837d727e3141665e04884c7c4da4f9eabeaf9208a71f381906e3bef26ae0433",
+   "contexto_antes": " '&quot;').replace(/'/g, '&#39;');\n}\n\n/** A recusa usa o mesmo predicado da prova do Método (ER1-d).\n * @param {any} c */\nexport function podeIncorporar(c) {\n  return !!c && !provenienciaIncompleta(c);\n}\n\n/** @param {any} c @param {'pt'|'en'} lang */\nexport function dadosDaIncorporacao(c, lang) {\n  const s = t(lang).incorporar;\n  const nome = nomeNoRecibo(c.i",
+   "contexto_depois": " '&quot;').replace(/'/g, '&#39;');\n}\n\n/** A recusa usa o mesmo predicado da prova do Método (ER1-d).\n * @param {any} c */\nexport function podeIncorporar(c) {\n  return !!c;\n}\n\n/** @param {any} c @param {'pt'|'en'} lang */\nexport function dadosDaIncorporacao(c, lang) {\n  const s = t(lang).incorporar;\n  const nome = nomeNoRecibo(c.i"
+  }
+ ]
+}

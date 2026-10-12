@@ -1,0 +1,47 @@
+{
+  "cabecas_codigo": {
+    "sitio": "d3649355dab5c75a9ced5eaafc08493e9424263b",
+    "motor": "aa4b9e74ee0fe302c351507488335c375d538b60"
+  },
+  "codigos": {
+    "build": 0,
+    "verify": 0,
+    "typecheck": 0,
+    "motor": 0
+  },
+  "horas": {
+    "build": {
+      "inicio": "2026-10-12T14:36:42Z",
+      "fim": "2026-10-12T14:40:01Z"
+    },
+    "verify": {
+      "inicio": "2026-10-12T14:40:01Z",
+      "fim": "2026-10-12T14:44:17Z"
+    },
+    "typecheck": {
+      "inicio": "2026-10-12T14:44:17Z",
+      "fim": "2026-10-12T14:44:17Z"
+    },
+    "motor": {
+      "inicio": "2026-10-12T14:44:17Z",
+      "fim": "2026-10-12T14:52:43Z"
+    }
+  },
+  "capturas": 30,
+  "commits": {
+    "sítio": [
+      "345e40a4 JD1-d: registar a leitura, as plantas e o mandato",
+      "6a6eae98 JD1-d: ligar a parcela ao total e identificar as colunas (achado 6)",
+      "baeb38e7 JD1-d: pôr a planta inócua no âmbito dos registos (achado 9)",
+      "d71b0daa JD1-d: cortar a oração circular do perímetro (achado 10)",
+      "8ffcc7d1 JD1-d: distinguir as horas dos portões anteriores (achado 13)",
+      "29c26f6f JD1-d: recusar células ausentes na comparação (achado 6)",
+      "3fbcd3e1 JD1-d: preparar a recolha das capturas e do fecho",
+      "d3649355 JD1-d: documentar a herança do modo do motor na tentativa interrompida"
+    ],
+    "motor": [
+      "9bf2e6f JD1-d: conservar os anos no excerto das amortizações (achado 6)",
+      "aa4b9e7 JD1-d: descrever a resolução do sítio sem pastas locais (achado 12)"
+    ]
+  }
+}

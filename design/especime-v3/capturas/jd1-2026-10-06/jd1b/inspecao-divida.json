@@ -1,0 +1,15 @@
+{
+  "cabeca_codigo": "466f83871ae13eff45a9cd28dcb73470a45114cc",
+  "ficheiros": [
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/divida-direta-do-estado-2026-08-pt-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/divida-direta-do-estado-2026-08-pt-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/divida-direta-do-estado-2026-08-en-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/divida-direta-do-estado-2026-08-en-1280.png"
+  ],
+  "problemas": [],
+  "observacoes": [
+    "Inspeção visual direta dos quatro PNG refeitos na cabeça final, PT/EN a 390 e 1280 px.",
+    "A frase liga agora o fim de agosto ao saldo ainda por pagar, nas duas línguas. O valor 315 856, a valoração nominal ou descontada, a distinção de perímetro e o localizador literal 31/a go/26 estão legíveis.",
+    "Sem cortes ou sobreposições visíveis; a largura do documento coincide com a largura pedida nos quatro casos. Hashes relidos dos PNG e comparados com o manifesto."
+  ]
+}
