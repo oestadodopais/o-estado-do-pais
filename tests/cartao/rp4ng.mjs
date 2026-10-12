@@ -29,5 +29,15 @@ assert.deepEqual(denominador(loadClaims()),[]);
  const copia=structuredClone(loadClaims());copia.get('evora-prr-execucao-2026').unit='% do valor aprovado';
  morde('quota contratada rotulada como aprovada',denominador(copia),'o rótulo da quota não corresponde');
 }
+function paginas(root,lang) {
+ return root.querySelectorAll('.def-origem-pagina').flatMap(el=>el.textContent.trim().startsWith(', '+t(lang).prov.paginaDaDefinicao+' ')?[]:[`RP4N-g: a coordenada da definição não diz página na língua ${lang}`]);
+}
+for(const lang of ['pt','en'])for(const id of ['agua-nao-faturada-portugal-2024','penalizacao-antecipacao-um-ano-neutra']) {
+ const root=parse(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/${id}/index.html`,'utf8'));
+ assert.deepEqual(paginas(root,lang),[]);
+ const el=root.querySelector('.def-origem-pagina');assert(el);
+ el.set_content(', '+t(lang==='pt'?'en':'pt').prov.paginaDaDefinicao+' '+el.textContent.match(/\d+/)[0]);
+ morde(`página na outra língua (${id}, ${lang})`,paginas(root,lang),'a coordenada da definição');
+}
 if(process.argv.includes('--registo-g'))fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/g/plantas-novas.json',JSON.stringify({plantas},null,2)+'\n');
 console.log(`RP4N-g: PASS, ${plantas.length} plantas`);

@@ -2741,7 +2741,8 @@ export const origensDaDefinicao = (definicao, lang = 'pt') =>
     return {
       chave,
       publicador: o.publicador,
-      documento: o.documento,
+      documento: o.documento.replace(/, página \d+/, ''),
+      pagina: o.documento.match(/, página (\d+)/)?.[1] ?? null,
       url: o.url,
       lingua: campos.lingua ?? (chave === 'bdp-pii' ? 'pt' : 'en'),
       linguaExcerto: lang === 'en' && o.excertoEn ? 'en' : (campos.lingua ?? (chave === 'bdp-pii' ? 'pt' : 'en')),

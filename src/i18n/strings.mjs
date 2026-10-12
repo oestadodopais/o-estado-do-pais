@@ -309,6 +309,7 @@ export const STRINGS = {
          diferentes e passam a ter dois rótulos diferentes; o de recibo fica no
          recibo, que é onde ele diz o que diz. */
       definicaoDe: 'Definição de',
+      paginaDaDefinicao: 'página',
       marcadorDoSelo: '[a verificar]',
       /* A palavra que o selo escreve, à vista (IDENTIDADE.md §5.4). Esteve
          escondida para leitores de ecrã até à v2, e um leitor com vista via só
@@ -3320,6 +3321,7 @@ export const STRINGS = {
       calculado: 'calculated',
       /** Ver a razão na edição portuguesa (achado 2, 15.09.2026). */
       definicaoDe: 'Definition by',
+      paginaDaDefinicao: 'page',
       marcadorDoSelo: '[to verify]',
       selo: 'source',
       seloDaCasa: 'row',
