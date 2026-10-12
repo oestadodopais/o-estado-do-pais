@@ -215,6 +215,7 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
 /** `pt` ou `en`, para cada rótulo distinto do campo `name`. */
 export const LINGUA_DOS_ROTULOS = {
   'dcum x : cumulative reduction': 'en',
+  'penalização legal': 'pt',
   'AA08b – Água não faturada': 'pt',
   /* OE1: línguas conferidas nos documentos e nas células de origem. */
   "ADMINISTRAÇÃO INTERNA": "pt",
