@@ -16133,9 +16133,26 @@
         },
         {
           "caminho": "seccoes[2].conteudo[1].paragrafo[8]",
-          "pt": ". É outra conta, diferente da das administrações públicas de ",
-          "en": ". This is a different account from that of general government in ",
+          "pt": ", e ainda faltam os meses de setembro a dezembro. É outra conta, diferente da das administrações públicas de ",
+          "en": ", and September to December are still to come. This is a different account from that of general government in ",
           "partes": [
+            {
+              "pt": ", e ainda faltam os meses de setembro a dezembro",
+              "en": ", and September to December are still to come",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "acumulados de janeiro a agosto"
+                },
+                {
+                  "linha": "oe-2026-saldo-global-administracao-central-seguranca-social",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            },
             {
               "pt": ". ",
               "en": ". ",

@@ -234,7 +234,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
                 diferentesPositivo: ['o Orçamento previa para o ano inteiro um excedente de ', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }],
                 diferentesZero: ['o Orçamento previa para o ano inteiro um saldo nulo de ', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }],
               },
-              '. É outra conta, diferente da das administrações públicas de ', { periodo: SALDO }, '.',
+              ', e ainda faltam os meses de setembro a dezembro. É outra conta, diferente da das administrações públicas de ', { periodo: SALDO }, '.',
             ],
             en: [
               'By the end of ', { periodo: SALDO_EXECUTADO }, ', the accounts of central government and social security showed a cumulative balance of ',
@@ -265,7 +265,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
                 diferentesPositivo: ['the Budget forecast for the full year a surplus of ', { claim: SALDO_PREVISTO, sufixo: ' million euros' }],
                 diferentesZero: ['the Budget forecast for the full year a nil balance of ', { claim: SALDO_PREVISTO, sufixo: ' million euros' }],
               },
-              '. This is a different account from that of general government in ', { periodo: SALDO }, '.',
+              ', and September to December are still to come. This is a different account from that of general government in ', { periodo: SALDO }, '.',
             ],
           },
         },
