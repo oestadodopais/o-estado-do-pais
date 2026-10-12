@@ -1,0 +1,160 @@
+{
+  "cabeca": "19723a9f3876bff3ad4364d00bb017c63cda56d3",
+  "ficheiros_vistos": [
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/corte-pt-390.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "bd041938dca0d9ea8768f327fe4ab479c64172ecea5497c6dabefe3ec01f75b3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/corte-en-390.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "21358068def1e82f89e2143218f601e3e0a7ed7984a075961cdd8c899b2c107d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/corte-en-1280.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.",
+      "marcadores": 0,
+      "imagens": [
+        {
+          "src": "/recortes/penalizacao-antecipacao-um-ano-neutra.webp",
+          "carregada": true
+        }
+      ],
+      "sha256": "7f45c4a159bdf81cd77dee9aa50b0bf16d881c15b336cdc9220e1e0dd2e2d74a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/legal-en-390.png",
+      "rota": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "9055c8270d9d71c767ed78364513d357585e0a1d186b1c6ed577ea1dc3a740b5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/tema-pt-390.png",
+      "rota": "/salarios-pensoes-e-apoios/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "f9b3fd8368487e41873e567fd07499540b7927cb9527ec63b6c05a647d010049"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/tema-en-390.png",
+      "rota": "/en/pay-pensions-and-benefits/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "d271bbc37124e447f7fc3f617350a2be817920caa307b4220accdc38aa27a118"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/area-pt-390.png",
+      "rota": "/areas/trabalho-solidariedade-e-seguranca-social/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "5e8955bb5b996a2db8db7e9e89963879b1fb3425e1a038d13e41aa190c33a53d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/area-en-1280.png",
+      "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "e9b74bffa4fcdfe707fb561745a8c692dde7e797e89086ad066f240ab688fd92"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-pt-1280.png",
+      "rota": "/estudos/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "ceb2adbd10a2cbb34754be63d5007b11c4c28d08e9f11dc3d5f4041d2a92b145"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-en-390.png",
+      "rota": "/en/studies/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "8d48bae03325ec3b4edf77d81657a02d2156837827a090af3c894b08d3d28f57"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-en-1280.png",
+      "rota": "/en/method/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "7a537942cdf6cf98688f1fe26df604650e45b454fdf807521b457e8ba978ffff"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/legal-pt-390.png",
+      "rota": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+      "marcadores": 0,
+      "imagens": [],
+      "sha256": "87571cedb9c801dfe5cacc672b3d17566caa0dadc5fccdcc0e7dbe271200f767"
+    }
+  ],
+  "observacoes": [
+    "Figura da pensão carregada nas capturas estreitas e largas.",
+    "A data do recibo diz alojamento nas duas edições, com a porta do registo.",
+    "O localizador inglês usa Figure e cumulative reduction label.",
+    "As duas páginas dos temas mostram a sinopse sem glosa intercalada.",
+    "Índices dos estudos e área Trabalho sem a marca das duas linhas da pensão.",
+    "Recibo legal português a 390: selo de cópia alojada, ligação ao registo e ausência da reconferência manual anterior à criação."
+  ],
+  "problemas_novos_observados": [],
+  "reconfirmacao": {
+    "metodo": "Capturas refeitas na cabeça final, com SHA-256 comparado às imagens anteriormente inspecionadas.",
+    "capturas_comparadas": 60,
+    "imagens_diferentes": [],
+    "cabeca_da_inspecao_anterior": "d3d44fb47d445e375d68def515c4ea500569360f"
+  }
+}

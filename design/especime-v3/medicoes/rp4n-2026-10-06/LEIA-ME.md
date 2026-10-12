@@ -1424,6 +1424,274 @@ RP4N-2 continua com o novo acesso HTTP à cópia das pensões sem confirmação:
 
 A linha «tokens used» não foi exposta por esta execução. Não se estima um total nem se afirma que o custo-alvo foi cumprido. O trabalho adicional às correções incluiu a reescrita e a prova da história, a distinção dos legados decidida na retoma, a releitura das páginas alojadas, os portões obrigatórios por commit do motor e a repetição dos portões de integração após as falhas registadas.
 
+## A passagem RP4-n-h
+
+A RP4N-15 fecha pelo ramo de alojamento autorizado no mandato. Não se recuperou o pedido HTTP original: recuperou-se o registo versionado da cópia com os mesmos bytes. A data é a do commit que introduziu esse registo, e os recibos distinguem alojamento de leitura na fonte.
+
+### A prova das pensões
+
+O PDF `content/13 Dominios/source/rp4n/pensoes-copia-alojada.pdf` tem 4521348 bytes e SHA-256 `555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366`. A cópia em `content/11 Seguranca Social/source/` existe na árvore principal, foi lida sem a alterar e coincide byte a byte; está excluída do Git, por isso não veio para a worktree. A worktree conserva o manifesto. O inventário das duas pastas e a procura de pedidos estão em `h/pensao-prova.json`: 0 pedidos com estes bytes. Os campos históricos `fetched_at` do livro não foram promovidos a recibos HTTP.
+
+O commit `7c0b24700d76cb3a67442f2495178212169c7586`, datado `2026-08-24T11:31:53+01:00`, introduziu `content/11 Seguranca Social/source/MANIFEST.sha256`, cujo SHA-256 na introdução é `4b9bc26fe06aa5c809ca880e3c74bfb6e0f74068087081518bc2d2087594a0ac`. A linha com o resumo do PDF já está nesse commit e não está no pai. A mensagem diz: «Os PDFs ficam fora de git, com os resumos em source/MANIFEST.sha256.». As duas linhas ficam com `access_date: 2026-08-24` e `access_date_kind: hosted-copy`; a porta pública da prova é `/provas/pensao-alojamento.json`.
+
+### As marcas e as linhas incompletas
+
+| Medição | Antes | Depois |
+|---|---|---|
+| Páginas com marca | 38 | 28 |
+| Linhas publicadas incompletas | 6 | 4 |
+
+Antes: varredura do `dist/` conservado da cabeça `344081c34eef1f792feef6bfd2d77fd764f7a1b5`, com o ramo em `d430d6dd1e17e4f1f23acc7273321f5e4380beff`. Depois: varredura pela mesma expressão das duas grafias, em `medir-h.mjs`, construção `19723a9f3876bff3ad4364d00bb017c63cda56d3`. O contador lê páginas HTML, incluindo referências legítimas à marca; não confunde páginas com ocorrências. A lista das linhas usa `provenienciaIncompleta`, a mesma regra do livro.
+
+Páginas que deixaram de ter marca:
+
+- `/areas/trabalho-solidariedade-e-seguranca-social/index.html`.
+- `/en/areas/trabalho-solidariedade-e-seguranca-social/index.html`.
+- `/en/ledger/penalizacao-antecipacao-um-ano-neutra/index.html`.
+- `/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/index.html`.
+- `/en/pay-pensions-and-benefits/index.html`.
+- `/en/studies/index.html`.
+- `/estudos/index.html`.
+- `/livro-razao/penalizacao-antecipacao-um-ano-neutra/index.html`.
+- `/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/index.html`.
+- `/salarios-pensoes-e-apoios/index.html`.
+
+Linhas ainda incompletas:
+
+- `evora-prr-aprovado-2026`.
+- `evora-prr-pago-2026`.
+- `evora-prr-vencido-aprovado-2026`.
+- `saldo-natural-portugal-2025`.
+
+A marca inglesa passou a `[to verify]` em todos os componentes: campos, selos, frases, agenda, livro e marcas de água. O Método usa a mesma forma e a página explicativa já não promete manter a grafia portuguesa. Os dados e as transcrições históricas conservam a forma que lhes pertence. A planta percorre todas as páginas construídas e planta as formas de texto e atributo; as páginas dos temas não contêm a glosa dentro da frase K2, com conhecido-positivo que a volta a inserir.
+
+### Os outros achados
+
+Os achados plantados na cópia não estavam no ramo recebido: água com «noventa e três por cento»: `True`; pensão com «one year early»: `True`; data da linha na base: `"[a verificar]"`; divisão pela DESPESA TOTAL: `True`. A prova da reescrita tem 45 pares. As cabeças destas releituras são `66852410165e7f38b0bd42757e848681e0468db1` e `542fe4ee9d67ecf2245892fd98ccd1c442829704`.
+
+A reconferência anterior à criação da linha legal saiu; não foi substituída por outra entrada manual. O localizador inglês do rótulo e o localizador do documento das pensões atravessam agora do motor em campos próprios, conferidos literalmente. A planta da sinopse chama a mesma função que o portão da voz: a mensagem antiga do teste era uma descrição sintética, embora a secção anterior a listasse entre mensagens reais; as mensagens abaixo são as devolvidas pelo portão.
+
+A RP4N-16 regista `publisher/manifest.evora.json` na dívida JD1-9. O ficheiro não foi alterado: `h/rp4n-16.json` compara o blob da base com o atual. O achado relativo à divergência entre prompt e mandato pertence à direção.
+
+A nota define as exclusões da despesa consolidada, não enumera diretamente o que a DESPESA TOTAL inclui. Conserva-se a frase, como manda o achado 13. A página foi também inspecionada visualmente. Excerto integral da nota, preservado como a fonte o escreveu:
+
+> A "DESPESA TOTAL CONSOLIDADA" exclui os fluxos intrasetoriais e intersetoriais de juros, subsídios, transferências correntes e de capital, ativos e passivos no
+>  âmbito da Administração Central, bem como da aquisição de bens e serviços efetuada no âmbito do Programa Saúde da Administração Central.
+
+### As frases e os localizadores lidos do HTML
+
+As definições da água, da pensão e dos ministérios mantêm a redação recebida. As mudanças de língua e de data estão lidas nos campos dos recibos:
+
+| Recibo | Localizadores | Data rotulada nas definições | Verificações |
+|---|---|---|---|
+| pensao-pt | Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, Figura 8.4; p. 273, Figura 8.4, rótulo da redução cumulativa | Cópia alojada a 24.08.2026 | Cópia alojada a24.08.2026 · Registo da cópiaSem resposta desde01.09.2026 · ao corredorReleitura tentada a01.09.2026, sem valor lido · conferência diária do ficheiro da fonte |
+| pensao-en | Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, Figure 8.4; p. 273, Figure 8.4, cumulative reduction label | Copy hosted on 24.08.2026 | Copy hosted on24.08.2026 · Copy recordNo answer since01.09.2026 · to the runnerRe-read attempted on01.09.2026, no value read · daily check of the source file |
+
+**agua-pt**
+
+> É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta. O valor situa-se na faixa «Qualidade do serviço mediana» da ERSAR: acima de vinte e até trinta por cento, incluindo o limite superior.
+
+**agua-en**
+
+> It is the share of water entering the system that is not billed by retail operators in mainland Portugal. The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment. The value falls in ERSAR’s “medium service quality” band: above twenty and up to thirty per cent, including the upper limit.
+
+**pensao-pt**
+
+> É a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.
+
+**pensao-en**
+
+> It is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.
+
+**ministerios-pt**
+
+> É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central.
+
+**ministerios-en**
+
+> It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector.
+
+### Cabeças, portões e repetições
+
+| Repositório | Base | Cabeça do código |
+|---|---|---|
+| sitio | 66852410165e7f38b0bd42757e848681e0468db1 | 19723a9f3876bff3ad4364d00bb017c63cda56d3 |
+| motor | 542fe4ee9d67ecf2245892fd98ccd1c442829704 | e2fd95fde167ad54f36a426bc1487bd6c53c9f2a |
+
+
+| Ficheiro | Código lido | Cabeça |
+|---|---|---|
+| portoes-h/build.codigo | 0 | 19723a9f3876bff3ad4364d00bb017c63cda56d3 |
+| portoes-h/verify.codigo | 0 | 19723a9f3876bff3ad4364d00bb017c63cda56d3 |
+| portoes-h/typecheck.codigo | 0 | 19723a9f3876bff3ad4364d00bb017c63cda56d3 |
+| portoes-h/motor.codigo | 0 | e2fd95fde167ad54f36a426bc1487bd6c53c9f2a |
+| h/reconferencia-codigo/series.codigo | 0 | 19723a9f3876bff3ad4364d00bb017c63cda56d3; motor e2fd95fde167ad54f36a426bc1487bd6c53c9f2a |
+| h/reconferencia-codigo/cruzamento.codigo | 0 | 19723a9f3876bff3ad4364d00bb017c63cda56d3; motor e2fd95fde167ad54f36a426bc1487bd6c53c9f2a |
+
+Os portões correram com as árvores do código limpas, sob a tranca comum. As séries e o cruzamento correram depois do último commit que muda o que leem, com as duas cabeças escritas antes e depois; o cruzamento usou `--with-origin`. O commit posterior contém apenas registos e capturas, que estas duas conferências não leem. A cabeça final é o commit que contém este relatório, identificada na resposta, sem tentar escrever o hash do próprio commit no seu conteúdo.
+
+As tentativas anteriores ficam conservadas, sem serem apresentadas como verdes. A primeira construção completa detetou entradas antigas reativadas a mais no inventário da voz; foram repostas como retiradas antes da repetição. A segunda construção passou; a conferência restante detetou a regra antiga da data local na K16 e a contagem antiga de campos. Ambas foram atualizadas, com plantas para a prova da data, antes da nova corrida.
+
+| Tentativa | build | verify | typecheck |
+|---|---|---|---|
+| portoes-h-tentativa1 | 1 | 125 | 0 |
+| portoes-h-tentativa2 | 0 | 1 | 0 |
+
+### Capturas
+
+O manifesto `h/capturas-h.json` regista 60 capturas, nas larguras 390, 768, 1024, 1280, 1600; construção `19723a9f3876bff3ad4364d00bb017c63cda56d3` e cabeça da captura `19723a9f3876bff3ad4364d00bb017c63cda56d3`. Inclui os dois recibos da pensão, os temas, a área Trabalho, os índices dos estudos e o Método, nas duas edições. Problemas medidos de carga, navegação ou transbordo: 0. A inspeção visual e os ficheiros vistos estão em `h/inspecao-visual.json`.
+
+| Ficheiro | Largura | sha256 |
+|---|---|---|
+| design/especime-v3/capturas/rp4n-2026-10-06/h/corte-pt-390.png | 390 | bd041938dca0d9ea8768f327fe4ab479c64172ecea5497c6dabefe3ec01f75b3 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/corte-pt-768.png | 768 | 9f15e1e971e281cf931b5023024aab89d53f82ef26d43fdae1b8e5a7fc4535d4 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/corte-pt-1024.png | 1024 | 9e3d7ae154fd7d173f38dca93e24093f29b6f0ff893faa3a42e2982b4c2af7e3 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/corte-pt-1280.png | 1280 | 4e102cb7419cefe7fb3742c3932e95c3ef57f1ecf260da8ef973d5daf31e2a46 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/corte-pt-1600.png | 1600 | 606c450759775bb2b7233f4ae566a72c41bfc0e5bbc04c5b9aadff2689e79dbc |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/corte-en-390.png | 390 | 21358068def1e82f89e2143218f601e3e0a7ed7984a075961cdd8c899b2c107d |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/corte-en-768.png | 768 | 7e70835d5822e67f2a88ad98cd6638c9c542356f91d100b1e39c58aed10e9861 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/corte-en-1024.png | 1024 | ff986f53d6c0849336a16ebb434a68401bc7298de44a09fa025558439668922f |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/corte-en-1280.png | 1280 | 7f45c4a159bdf81cd77dee9aa50b0bf16d881c15b336cdc9220e1e0dd2e2d74a |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/corte-en-1600.png | 1600 | b6ed6bf51735c442585f6e58cef9b2c9184790f71f3a67e4553890fce2d8ffad |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/legal-pt-390.png | 390 | 87571cedb9c801dfe5cacc672b3d17566caa0dadc5fccdcc0e7dbe271200f767 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/legal-pt-768.png | 768 | 6cf7b797d7e817937b1369890afaaa1beabc6132de0c23d5d964b25fa26a9d3d |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/legal-pt-1024.png | 1024 | 58e9b59727533fba0b6da93daa551e9fdb1862942d67b7c04e5519568b990931 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/legal-pt-1280.png | 1280 | bf7c170cf8c7f46380a7d061d241915964fe6298d4718ca3791773157fd38cd8 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/legal-pt-1600.png | 1600 | 62d17a9509b97932941e040cb7945bddfa4994afdb8d06ca235f2d3decc06c17 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/legal-en-390.png | 390 | 9055c8270d9d71c767ed78364513d357585e0a1d186b1c6ed577ea1dc3a740b5 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/legal-en-768.png | 768 | 2271cbc4c86b28f19a4b5596631fd7eb5581aab00c7ae452b30662ac8d6de669 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/legal-en-1024.png | 1024 | 0198e0d54722af2b3a356de864dfd11c20c22495c1e8de54de7ec6bc8902a662 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/legal-en-1280.png | 1280 | b734d024347497e174fdcc026e70d4fe0defb453747db1923c8dd38336f5f49a |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/legal-en-1600.png | 1600 | dad1a8f18f181605203f19d0e88e8dc63a67180f3e7fad923633c9180c496067 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/tema-pt-390.png | 390 | f9b3fd8368487e41873e567fd07499540b7927cb9527ec63b6c05a647d010049 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/tema-pt-768.png | 768 | 57dc3cc4fe6d26cc48edc189e05a3aa23d54da0bd8e5b013990c094a488f0357 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/tema-pt-1024.png | 1024 | be86702080311dc30fd5b8ee1f0bda6924d14a7ee3f277c2eb8bf8aafaebe165 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/tema-pt-1280.png | 1280 | c3695254735fa9eb3ab45c30a51c7f42049880cb595dcdac6b652f3b96febf7b |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/tema-pt-1600.png | 1600 | d6a734f18b24d3fe60961869e6387b8713fcc451aa4c5b9ccb008c6bf4540512 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/tema-en-390.png | 390 | d271bbc37124e447f7fc3f617350a2be817920caa307b4220accdc38aa27a118 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/tema-en-768.png | 768 | bd8f2f3308d978bbb580925978f0f2212ccbafb36bf5d1dc0e48ab034879f4d4 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/tema-en-1024.png | 1024 | 93fe5ca2b8c2d1da8894cc3460bcc4d5896f0d1b2f76683bbb3aaefa542cd019 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/tema-en-1280.png | 1280 | 4e4cd75dd659e318d5f52c8da4dfb1217d7a21d280d57aa7ff748c01e6cd5d73 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/tema-en-1600.png | 1600 | 11545b3833da5ff465ad9ecbd9e708cd4960a41d8b22fed0882ba00880f36f2c |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/area-pt-390.png | 390 | 5e8955bb5b996a2db8db7e9e89963879b1fb3425e1a038d13e41aa190c33a53d |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/area-pt-768.png | 768 | 28e120863a70dee2e36035f4b20b43eb0bd0d84ff066e191e0227ae1be8cd6fd |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/area-pt-1024.png | 1024 | 86dadf04f70cc698c2c0b30a391eea873c4e63d95d92c0f56a5df0a200cc1203 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/area-pt-1280.png | 1280 | 4a9eb3daaa6b05b0aaecf054835db0f894f162aecd779456011bcf9c3ee8ffca |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/area-pt-1600.png | 1600 | 48756f9df25a75782f9a9edf3e89f184f6d6a692b3f3d47a9c1fae8372a53ba6 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/area-en-390.png | 390 | 5f1e12383fa325880d2bfae0ecb7f2616ad461b3db15d444b594d039fd3e32c4 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/area-en-768.png | 768 | e2b12eec716a1ef6e920a65193e9e9f16836e6618f1448f74412fb6f09e53af3 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/area-en-1024.png | 1024 | 661fa4d4caaaefdca971b416289ddd5ba995ed96d9d58b57967e75627b90e7e4 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/area-en-1280.png | 1280 | e9b74bffa4fcdfe707fb561745a8c692dde7e797e89086ad066f240ab688fd92 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/area-en-1600.png | 1600 | c69c663be7694b97046e55ce7f2874808f4a2ee7a5e11354e13dac4bbe7ac9b9 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-pt-390.png | 390 | e366f49ea3ac3ee71f588c3ae41a4a877942b93fb97d847f542679a99519c015 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-pt-768.png | 768 | 9278e0fe80d3322cea6f78dce30516965bf09476564f3590643684485bf5431c |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-pt-1024.png | 1024 | 65fc4a70e17a4625f53302087968ba2e199e6fb083712a02ea3bd27251bd93f9 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-pt-1280.png | 1280 | ceb2adbd10a2cbb34754be63d5007b11c4c28d08e9f11dc3d5f4041d2a92b145 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-pt-1600.png | 1600 | b7ed065dfcf40e54e6f39ae4a4648747d09982b33b6fce0f009688a967b66dad |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-en-390.png | 390 | 8d48bae03325ec3b4edf77d81657a02d2156837827a090af3c894b08d3d28f57 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-en-768.png | 768 | e5c6fb2add1be0ebd9837e1e5c106563eccef37b4364be5078be8dfeda11032c |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-en-1024.png | 1024 | ae8d1138187525f092a8ea860306d5685de39599ed98319b5767f83d2f531260 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-en-1280.png | 1280 | d58f6deb4742e2314d25a378868140c3a2f46258d18b63993282bf5ceb904d70 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/estudos-en-1600.png | 1600 | 28402416076933519735242fce4d3d8e4d2db274132f5f3a0081aa044deb4647 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-pt-390.png | 390 | 24cbe16c8519e50dd47946fd025c532210e825c600454ad77f200e0d7735d52f |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-pt-768.png | 768 | 1938d46034f2f0e33086aa17b4859dc7d2c7a3bda2d621fde91ded42e91c11b6 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-pt-1024.png | 1024 | cce601c70c2b1af30426c1ac2a47fc046ce9734b3a30710edebe0638d2c023c9 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-pt-1280.png | 1280 | 981751f087527614af75cd0c094c414a981809019b6fce41fe6cb81030fbcf9c |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-pt-1600.png | 1600 | 82929d2121f4957b3b0829299092fe3ad554be499ad21cf9cb70c402f90186f5 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-en-390.png | 390 | d4eb0eb322e1da9a54ae820ca4c73301a09f1a7dd0a5706341105a57b28598e5 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-en-768.png | 768 | 8342f6ad304858a8c898404f9d6dfd3771a6b2e59a014497968a799d45d6f5b9 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-en-1024.png | 1024 | 070c53d41eb97c84406dd0569c758589b80f16a289e97ac8c2ebb0a99bf4ed98 |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-en-1280.png | 1280 | 7a537942cdf6cf98688f1fe26df604650e45b454fdf807521b457e8ba978ffff |
+| design/especime-v3/capturas/rp4n-2026-10-06/h/metodo-en-1600.png | 1600 | cd70d675e68a2fc6ba765e886ecafe2305145cb3d2bf234f70572a7695753e61 |
+
+### Plantas e mensagens reais
+
+| Planta | Mensagem |
+|---|---|
+| reconferência anterior à criação | RP4N-h: reconferência anterior à criação da linha legal |
+| data local sem prova | a data local não tem prova de leitura ou alojamento |
+| data local trocada | a data local não tem prova de leitura ou alojamento |
+| manifesto local sem commit | a data de alojamento não aponta para o manifesto do commit |
+| tipo da data local inventado | a data local não distingue alojamento de leitura |
+| localizador trocado (penalizacao-antecipacao-um-ano-neutra, pt, name_source) | RP4N-h: localizador fora da língua da edição (pt, name_source) |
+| localizador trocado (penalizacao-antecipacao-um-ano-neutra, pt, document.locator) | RP4N-h: localizador fora da língua da edição (pt, document.locator) |
+| alojamento dito leitura (penalizacao-antecipacao-um-ano-neutra, pt) | RP4N-h: o recibo não distingue alojamento de leitura na fonte (pt) |
+| localizador trocado (penalizacao-legal-um-ano-antecipacao-2026, pt, document.locator) | RP4N-h: localizador fora da língua da edição (pt, document.locator) |
+| alojamento dito leitura (penalizacao-legal-um-ano-antecipacao-2026, pt) | RP4N-h: o recibo não distingue alojamento de leitura na fonte (pt) |
+| glosa a meio da K2 (pt) | RP4N-h: a glosa interrompe a frase K2 |
+| marca traduzida incorretamente (pt, selo) | RP4N-h: marca fora da língua da edição (pt, texto) |
+| marca traduzida incorretamente (pt, campo) | RP4N-h: marca fora da língua da edição (pt, texto) |
+| marca traduzida incorretamente (pt, frase) | RP4N-h: marca fora da língua da edição (pt, texto fora do componente) |
+| marca traduzida incorretamente (pt, marca de água) | RP4N-h: marca fora da língua da edição (pt, marca de água) |
+| localizador trocado (penalizacao-antecipacao-um-ano-neutra, en, name_source) | RP4N-h: localizador fora da língua da edição (en, name_source) |
+| localizador trocado (penalizacao-antecipacao-um-ano-neutra, en, document.locator) | RP4N-h: localizador fora da língua da edição (en, document.locator) |
+| alojamento dito leitura (penalizacao-antecipacao-um-ano-neutra, en) | RP4N-h: o recibo não distingue alojamento de leitura na fonte (en) |
+| localizador trocado (penalizacao-legal-um-ano-antecipacao-2026, en, document.locator) | RP4N-h: localizador fora da língua da edição (en, document.locator) |
+| alojamento dito leitura (penalizacao-legal-um-ano-antecipacao-2026, en) | RP4N-h: o recibo não distingue alojamento de leitura na fonte (en) |
+| glosa a meio da K2 (en) | RP4N-h: a glosa interrompe a frase K2 |
+| marca traduzida incorretamente (en, selo) | RP4N-h: marca fora da língua da edição (en, texto) |
+| marca traduzida incorretamente (en, campo) | RP4N-h: marca fora da língua da edição (en, texto) |
+| marca traduzida incorretamente (en, frase) | RP4N-h: marca fora da língua da edição (en, texto fora do componente) |
+| marca traduzida incorretamente (en, marca de água) | RP4N-h: marca fora da língua da edição (en, marca de água) |
+| utilizador | RP4N-h: caminho ou identificador local (utilizador) |
+| casa | RP4N-h: caminho ou identificador local (casa) |
+| temporario | RP4N-h: caminho ou identificador local (temporario) |
+| projetos | RP4N-h: caminho ou identificador local (projetos) |
+| worktrees | RP4N-h: caminho ou identificador local (worktrees) |
+| glosa alterada na sinopse (pt) | B1 sinopse: evora-contas-da-camara-2010-2025 difere das duas primeiras frases. |
+| glosa alterada na sinopse (en) | B1 sinopse: evora-contas-da-camara-2010-2025 difere das duas primeiras frases. |
+| data escrita no guião em vez do pedido | RP4N-h: a data ou o tipo da pensão difere da prova da cópia |
+| resumo da cópia trocado | RP4N-h: o corpo da pensão difere da prova de alojamento |
+| manifesto do alojamento trocado | RP4N-h: o manifesto do commit não prova estes bytes da pensão |
+| alojamento sem registo | RP4N-h: a pensão não tem pedido nem registo de alojamento; retirar as linhas |
+| alojamento dito leitura HTTP | RP4N-h: a data ou o tipo da pensão difere da prova da cópia |
+
+### Privacidade e commits
+A RP4N-17 regista a ocorrência histórica do prefixo genérico das pastas pessoais na leitura recebida e no diff que a retirou. A cabeça foi anonimizada num commit normal; a revisão automática rejeitou a reescrita dos commits sem autorização explícita. O guião conserva a contagem histórica e o código de recusa, sem a apresentar como verde; não havia nome de utilizador nem caminho pessoal completo nessa ocorrência. A conferência da cabeça e a do diff final estão na tabela abaixo.
+
+| Conferência | Valor |
+|---|---|
+| historico_grep_c | 2 |
+| diff_grep_c | 0 |
+| cabeca_sem_excecoes_grep_c | 0 |
+| legados_ficheiros | 16 |
+
+O guião leu integralmente 16 ficheiros legados na cabeça: 0 contêm o nome do utilizador. A lista está em `h/privacidade.json`; os conhecidos-positivos cobrem separadamente cada pedaço procurado. A prova dos trailers lê as mensagens, incluindo a adjacência dos dois trailers no sítio. A designação do modelo nos trailers reproduz a exigida pelo mandato; o identificador exato e o nível de raciocínio não estão expostos ao agente nesta sessão.
+
+| sitio | Mensagem |
+|---|---|
+| d430d6dd1e17e4f1f23acc7273321f5e4380beff | docs(rp4n-h): registar a leitura, as plantas e o mandato |
+| 4a27f399555bb3e30c9b41b1f7cf507a1499612e | fix(rp4n-h): datar as pensões como cópias alojadas e retirar as marcas |
+| bfe7a6d6f06523641ae67b5041db4f9227c261d8 | fix(rp4n-h): usar a mesma marca inglesa em todas as formas rendidas |
+| 85e88f1108b3925f51058adac83d4eac8a50ec6c | test(rp4n-h): guardar a mensagem real do portão da sinopse |
+| f6ac96e2787c81cf3a94c71abc58242e0b41a4cd | test(rp4n-h): plantar cada identificador local e ler os ficheiros legados |
+| 8b4e849f68c8a70a9a4774c0e6a0e012fcd8eccc | fix(rp4n-h): conservar a prova de alojamento e conferir a marca traduzida |
+| 4e9b60d19e654ac1122eee89c09bf6e35c6295cb | fix(rp4n-h): não atribuir uma reconferência inventada à pensão legal |
+| f6d824ccc013eea74886addcb0447e7cc525359e | fix(rp4n-h): mostrar e conferir os localizadores na língua da edição |
+| 6806e5372550eb7349f6db0f8e2a74387959688d | fix(rp4n-h): abrir o registo da cópia a partir da data do recibo |
+| 28846e8e8f8a2ee5acb739cadf47f7db7f686293 | test(rp4n-h): reconhecer a marca inglesa na conferência dos campos |
+| 55b5412b6fcc146454fc0a208608c722b3bd8f48 | docs(rp4n-h): registar a frase K2 sem a glosa da data ausente |
+| a6e57115d5008e5d3a2301d6ab5add88f4afad7b | test(rp4n-h): medir as marcas, as datas, as capturas e as cabeças lidas |
+| 31050f105e92ae9f0e4e1ef884bc9806d5a97353 | docs(rp4n-h): conservar o retrato anterior e a prova encontrada no motor |
+| b99fd62a0ba6c7ff64344679f221bcc0d98983c5 | fix(rp4n-h): manter retiradas as redações anteriores à explicação dos termos |
+| d3d44fb47d445e375d68def515c4ea500569360f | test(rp4n-h): registar a tentativa e exigir a árvore limpa no motor |
+| 5e4ccb25ef9134cbc1e6dccf031a28656535b85d | docs(rp4n-h): anonimizar o prefixo genérico na leitura recebida |
+| 54e82a758aebe25bab888ab85621509e6b98359d | test(rp4n-h): conferir na K16 a prova de alojamento e os campos novos |
+| 19723a9f3876bff3ad4364d00bb017c63cda56d3 | docs(rp4n-h): conservar as recusas e distinguir a cabeça do histórico |
+
+
+| motor | Mensagem |
+|---|---|
+| 2db37fd69b2e228bfe4af580c13c5d0cb2a1f3c5 | fix(rp4n-h): provar a data de alojamento das pensões no manifesto original |
+| 5669004b2b917584e466d685120a15dacffed920 | fix(rp4n-h): retirar a reconferência anterior à criação da linha legal |
+| e2fd95fde167ad54f36a426bc1487bd6c53c9f2a | fix(rp4n-h): exportar os localizadores ingleses da pensão |
+
+### Custo
+
+O excesso de custo da passagem anterior decorreu da reescrita da história, do tratamento dos achados e das capturas repetidas. Essas operações alargaram o trabalho para além da correção curta prevista, sem a explicação de custo que o relatório devia ter dado.
+
+Nesta passagem não foi observada uma linha «tokens used» no registo disponível. Não se atribui um custo nem se afirma cumprimento do alvo sem essa medição.
+
 ## A passagem RP4-n-g
 
 O achado da data original da pensão permanece aberto como RP4N-15. A cópia alojada está conferida, mas não se encontrou o pedido bem-sucedido que a trouxe. Não se substituiu essa prova por uma data de construção, pela hora do ficheiro ou por um pedido falhado. A entrega corrige a afirmação falsa, mostra a ausência e deixa esta condição de fecho para a direção.

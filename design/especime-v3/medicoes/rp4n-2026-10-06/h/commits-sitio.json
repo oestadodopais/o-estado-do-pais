@@ -1,0 +1,78 @@
+{
+  "base": "66852410165e7f38b0bd42757e848681e0468db1",
+  "cabeca": "19723a9f3876bff3ad4364d00bb017c63cda56d3",
+  "commits": [
+    {
+      "sha": "d430d6dd1e17e4f1f23acc7273321f5e4380beff",
+      "titulo": "docs(rp4n-h): registar a leitura, as plantas e o mandato"
+    },
+    {
+      "sha": "4a27f399555bb3e30c9b41b1f7cf507a1499612e",
+      "titulo": "fix(rp4n-h): datar as pensões como cópias alojadas e retirar as marcas"
+    },
+    {
+      "sha": "bfe7a6d6f06523641ae67b5041db4f9227c261d8",
+      "titulo": "fix(rp4n-h): usar a mesma marca inglesa em todas as formas rendidas"
+    },
+    {
+      "sha": "85e88f1108b3925f51058adac83d4eac8a50ec6c",
+      "titulo": "test(rp4n-h): guardar a mensagem real do portão da sinopse"
+    },
+    {
+      "sha": "f6ac96e2787c81cf3a94c71abc58242e0b41a4cd",
+      "titulo": "test(rp4n-h): plantar cada identificador local e ler os ficheiros legados"
+    },
+    {
+      "sha": "8b4e849f68c8a70a9a4774c0e6a0e012fcd8eccc",
+      "titulo": "fix(rp4n-h): conservar a prova de alojamento e conferir a marca traduzida"
+    },
+    {
+      "sha": "4e9b60d19e654ac1122eee89c09bf6e35c6295cb",
+      "titulo": "fix(rp4n-h): não atribuir uma reconferência inventada à pensão legal"
+    },
+    {
+      "sha": "f6d824ccc013eea74886addcb0447e7cc525359e",
+      "titulo": "fix(rp4n-h): mostrar e conferir os localizadores na língua da edição"
+    },
+    {
+      "sha": "6806e5372550eb7349f6db0f8e2a74387959688d",
+      "titulo": "fix(rp4n-h): abrir o registo da cópia a partir da data do recibo"
+    },
+    {
+      "sha": "28846e8e8f8a2ee5acb739cadf47f7db7f686293",
+      "titulo": "test(rp4n-h): reconhecer a marca inglesa na conferência dos campos"
+    },
+    {
+      "sha": "55b5412b6fcc146454fc0a208608c722b3bd8f48",
+      "titulo": "docs(rp4n-h): registar a frase K2 sem a glosa da data ausente"
+    },
+    {
+      "sha": "a6e57115d5008e5d3a2301d6ab5add88f4afad7b",
+      "titulo": "test(rp4n-h): medir as marcas, as datas, as capturas e as cabeças lidas"
+    },
+    {
+      "sha": "31050f105e92ae9f0e4e1ef884bc9806d5a97353",
+      "titulo": "docs(rp4n-h): conservar o retrato anterior e a prova encontrada no motor"
+    },
+    {
+      "sha": "b99fd62a0ba6c7ff64344679f221bcc0d98983c5",
+      "titulo": "fix(rp4n-h): manter retiradas as redações anteriores à explicação dos termos"
+    },
+    {
+      "sha": "d3d44fb47d445e375d68def515c4ea500569360f",
+      "titulo": "test(rp4n-h): registar a tentativa e exigir a árvore limpa no motor"
+    },
+    {
+      "sha": "5e4ccb25ef9134cbc1e6dccf031a28656535b85d",
+      "titulo": "docs(rp4n-h): anonimizar o prefixo genérico na leitura recebida"
+    },
+    {
+      "sha": "54e82a758aebe25bab888ab85621509e6b98359d",
+      "titulo": "test(rp4n-h): conferir na K16 a prova de alojamento e os campos novos"
+    },
+    {
+      "sha": "19723a9f3876bff3ad4364d00bb017c63cda56d3",
+      "titulo": "docs(rp4n-h): conservar as recusas e distinguir a cabeça do histórico"
+    }
+  ]
+}
