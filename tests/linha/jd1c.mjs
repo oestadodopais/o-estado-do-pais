@@ -45,4 +45,33 @@ for (const lang of ['pt','en']) {
     assert.deepEqual(root.querySelector('[data-jd1-parcela]').querySelectorAll('[data-claim]').map(n => n.getAttribute('data-claim')), [FINANCIAMENTO_JD1, AMORTIZACOES_JD1]);
   }
 }
+const { evolucaoJd1 } = await import('../../src/lib/enquadramento.mjs');
+const { loadClaims, parsePtNumber } = await import('../../src/lib/ledger.mjs');
+const idsEvolucao = ['juros-das-administracoes-publicas-2025', 'pib-nominal-notificacao-setembro-2025', 'juros-das-administracoes-publicas-pib-2025', 'juros-e-outros-encargos-execucao-2026-08'];
+function confereDirecao(id, palavra) {
+  const anterior = reguaDaMedida(id).anterior.id, linhas = loadClaims();
+  const delta = parsePtNumber(linhas.get(id).value) - parsePtNumber(linhas.get(anterior).value);
+  return palavra === (delta > 0 ? 'subiu' : delta < 0 ? 'desceu' : 'igual') ? [] : ['JD1-c: direção da evolução trocada'];
+}
+for (const id of idsEvolucao) for (const lang of ['pt','en']) {
+  const e = evolucaoJd1(id, lang);
+  assert.deepEqual(confereDirecao(id, e.direcao), []);
+  assert.deepEqual(e.partes.filter(p => typeof p !== 'string').map(p => p.claim), [e.anterior, id]);
+  recusa(`Direção trocada ${id}/${lang}`, confereDirecao(id, e.direcao === 'subiu' ? 'desceu' : 'subiu'), 'JD1-c: direção da evolução trocada');
+  const alteradas = structuredClone(loadClaims());
+  alteradas.get(id).value = alteradas.get(e.anterior).value;
+  assert.equal(evolucaoJd1(id, lang, alteradas).direcao, 'igual');
+  if (!process.argv.includes('--declaracoes')) {
+    const root = parse(fs.readFileSync(`dist/${lang === 'pt' ? 'livro-razao' : 'en/ledger'}/${id}/index.html`, 'utf8'));
+    const rendida = root.querySelector('[data-jd1-evolucao]');
+    assert.deepEqual(confereDirecao(id, rendida.getAttribute('data-jd1-evolucao')), []);
+    assert.ok(rendida.textContent.startsWith(e.partes[0]));
+    const trocada = rendida.textContent.replace(e.partes[0], lang === 'pt' ? (e.direcao === 'subiu' ? 'Desceu de ' : 'Subiu de ') : (e.direcao === 'subiu' ? 'Fell from ' : 'Rose from '));
+    assert.ok(!trocada.startsWith(e.partes[0]));
+  }
+}
+for (const lang of ['pt','en']) {
+  const frase = oQueEDaLinha('divida-direta-do-estado-2026-08', lang).pedacos.join('');
+  assert.match(frase, lang === 'pt' ? /não a dívida de todas as administrações públicas na ótica de Maastricht/ : /not the Maastricht debt of all general government bodies/);
+}
 console.log(JSON.stringify({passou: true, plantas}, null, 2));

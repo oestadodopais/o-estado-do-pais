@@ -82,7 +82,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { hasClaim, getClaim, loadClaims, documentoDaLinha, textoOuNulo } from './ledger.mjs';
+import { hasClaim, getClaim, loadClaims, parsePtDecimal, documentoDaLinha, textoOuNulo } from './ledger.mjs';
 /* O marcador da casa, do módulo que o declara e não de `ledger.mjs`, que o
    reexporta: um campo que o traga é um campo por confirmar, e não um nome. */
 import { POR_VERIFICAR as MARCADOR } from '../data/marcador.mjs';
@@ -708,4 +708,25 @@ let _deEnquadramento;
  */
 export function eLinhaDeEnquadramento(id) {
   return linhasDeEnquadramento().has(id);
+}
+
+/** JD1-c: a palavra da evolução vem da diferença exata entre as duas linhas.
+ * @param {string} id @param {'pt'|'en'} lang @param {Map<string, any>} [linhas] */
+export function evolucaoJd1(id, lang, linhas = loadClaims()) {
+  if (!['juros-das-administracoes-publicas-2025', 'pib-nominal-notificacao-setembro-2025',
+    'juros-das-administracoes-publicas-pib-2025', 'juros-e-outros-encargos-execucao-2026-08'].includes(id)) return null;
+  const anterior = reguaDaMedida(id).anterior?.id;
+  if (!anterior) throw new Error('JD1-c: evolução sem período anterior');
+  const atual = linhas.get(id), antes = linhas.get(anterior);
+  const a = parsePtDecimal(atual?.value), b = parsePtDecimal(antes?.value);
+  if (!a || !b || atual.unit !== antes.unit) throw new Error('JD1-c: evolução sem valores comparáveis');
+  const exp = Math.min(a.exp, b.exp);
+  const aa = (a.neg ? -a.coef : a.coef) * 10n ** BigInt(a.exp - exp);
+  const bb = (b.neg ? -b.coef : b.coef) * 10n ** BigInt(b.exp - exp);
+  const direcao = aa > bb ? 'subiu' : aa < bb ? 'desceu' : 'igual';
+  const palavra = lang === 'pt' ? { subiu: 'Subiu de ', desceu: 'Desceu de ', igual: 'Manteve-se em ' }[direcao]
+    : { subiu: 'Rose from ', desceu: 'Fell from ', igual: 'Remained at ' }[direcao];
+  return { direcao, anterior, partes: direcao === 'igual'
+    ? [palavra, { claim: id }, '.']
+    : [palavra, { claim: anterior }, lang === 'pt' ? ' para ' : ' to ', { claim: id }, '.'] };
 }
