@@ -84,7 +84,10 @@ with tempfile.TemporaryDirectory(prefix='oedp-ma-comuns-') as tmp:
     registar('caminhos temporários', 'Pastas temporárias do sistema e TMPDIR retirados.')
     componentes = ['Instruments', '.claude', 'worktrees']
     resto = '<casa>/' + componentes[0] + '/Projeto/' + '/'.join(componentes[1:]) + '/ramo/log'
-    assert limpar.substituir_texto(resto, {}, None) == '<casa>/<projetos>/Projeto/<worktrees>/ramo/log'
+    limpo = limpar.substituir_texto(resto, {}, None)
+    assert limpo == '<pasta-dos-projetos>/Projeto/<pasta-das-worktrees>/ramo/log'
+    assert componentes[0] not in limpo and '/'.join(componentes[1:]) not in limpo
+    assert limpar.substituir_texto(limpo, {}, None) == limpo
     registar('restos de caminhos abreviados', 'As duas estruturas locais também saem dos caminhos já anonimizados.')
 
     (pasta/'palavra.log').write_text('transportoes portoes /pasta/portoes/ficheiro')
