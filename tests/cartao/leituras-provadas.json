@@ -12796,8 +12796,8 @@
       ],
       "folhas": [
         {
-          "pt": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública, e exclui as que essas regras deixam de fora.",
-          "en": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance, and excludes those left outside the sector by those rules.",
+          "pt": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública.",
+          "en": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance.",
           "partes": [
             {
               "pt": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas",
@@ -12839,8 +12839,8 @@
               "classe": "liga"
             },
             {
-              "pt": " Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública, e exclui as que essas regras deixam de fora.",
-              "en": " It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance, and excludes those left outside the sector by those rules.",
+              "pt": " Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública.",
+              "en": " It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance.",
               "classe": "diz",
               "apoios": [
                 {
@@ -12852,11 +12852,6 @@
                   "origem": "jd1-ine-contas",
                   "campo": "excerto",
                   "literal": "por força da aplicação do Sistema Europeu de Contas Nacionais e Regionais (SEC 2010)"
-                },
-                {
-                  "origem": "jd1-ine-contas",
-                  "campo": "excerto",
-                  "literal": "são retiradas entidades que não integram esse setor"
                 }
               ]
             }
