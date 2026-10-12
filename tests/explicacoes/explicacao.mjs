@@ -413,6 +413,7 @@ export function conferirRamosDasExplicacoes({ explicacoes = EXPLICACOES } = {}) 
   /** @type {string[]} */
   const erros = [];
   let tokens = 0;
+  const palavras = [];
   for (const e of explicacoes) {
     /** @param {unknown} x @param {string} c */
     const anda = (x, c) => {
@@ -424,12 +425,36 @@ export function conferirRamosDasExplicacoes({ explicacoes = EXPLICACOES } = {}) 
         tokens++;
         const faltam = ramos.filter((r) => !(r in o));
         if (faltam.length) erros.push(`X10 · ${e.slug}: o token «${'sinal' in o ? 'sinal' : 'compara' in o ? 'compara' : 'comparaSaldos'}» em ${c} não declara o ramo ${faltam.map((r) => `«${r}»`).join(', ')}`);
+        for (const r of ramos) {
+          const regra = o.palavras?.[r];
+          const onde = `${e.slug}: ${c}, ramo «${r}»`;
+          if (!regra || !['contem', 'naoContem'].every(k => Array.isArray(regra[k]) && regra[k].length && regra[k].every((/** @type {any} */ v) => typeof v === 'string' && normal(v)))) {
+            erros.push(`X10 · palavras do ramo: ${onde} não declara as palavras obrigatórias e proibidas`);
+            continue;
+          }
+          // Apenas prosa e sufixos, nunca identificadores nem os próprios metadados.
+          const prosa = (/** @type {any} */ p) => typeof p === 'string' ? p : Array.isArray(p) ? p.map(prosa).join(' ') : p?.sufixo ?? '';
+          if (r in o) erros.push(...conferirPalavrasDoRamo(prosa(o[r]), regra, `X10 · palavras do ramo: ${onde}`));
+          palavras.push({ caminho: c, ramo: r, ...regra });
+        }
       }
-      for (const [k, v] of Object.entries(o)) anda(v, c ? `${c}.${k}` : k);
+      for (const [k, v] of Object.entries(o)) if (k !== 'palavras') anda(v, c ? `${c}.${k}` : k);
     };
     anda(e, '');
   }
-  return { erros, contas: { tokens } };
+  return { erros, contas: { tokens, palavras } };
+}
+
+/** Palavras inteiras, com acentos e expressões de várias palavras. Não confunde «menor» com «menores».
+ * @param {string} texto @param {any} regra @param {string} onde
+ */
+function conferirPalavrasDoRamo(texto, regra, onde) {
+  const palavras = (/** @type {string} */ s) => normal(s).toLocaleLowerCase().match(/[\p{L}\p{N}]+/gu)?.join(' ') ?? '';
+  const tem = (/** @type {string} */ s) => ` ${palavras(texto)} `.includes(` ${palavras(s)} `);
+  return [
+    ...(regra?.contem ?? []).filter((/** @type {string} */ s) => !tem(s)).map((/** @type {string} */ s) => `${onde} falta «${s}»`),
+    ...(regra?.naoContem ?? []).filter(tem).map((/** @type {string} */ s) => `${onde} contém a palavra proibida «${s}»`),
+  ];
 }
 
 /**
@@ -908,6 +933,18 @@ export function plantasDaExplicacao(dist) {
   };
   naDeclaracao('uma linha que não é dos programas no token «maiores»', (d) => { for (const k of tokensMaiores(d)) k.maiores = [...k.maiores, 'oe-2026-despesa-ministerio-saude']; }, /X9 · .* fora da família/);
   naDeclaracao('um programa a menos no token «maiores»', (d) => { for (const k of tokensMaiores(d)) k.maiores = k.maiores.slice(0, -1); }, /X9 · .* não tem a família inteira/);
+  for (const lang of ['pt', 'en']) {
+    for (const [nome, estraga, mensagens] of [
+      ['deficitMenor diz maior', (t) => { t.deficitMenor[0] = t.deficitMenor[0].replace(lang === 'pt' ? 'menor' : 'smaller', lang === 'pt' ? 'maior' : 'larger'); }, [lang === 'pt' ? 'falta «menor»' : 'falta «smaller»', lang === 'pt' ? 'proibida «maior»' : 'proibida «larger»']],
+      ['diferentesPositivo sem a palavra do sinal', (t) => { t.diferentesPositivo[0] = t.diferentesPositivo[0].replace(lang === 'pt' ? 'excedente' : 'surplus', ''); }, [lang === 'pt' ? 'falta «excedente»' : 'falta «surplus»']],
+      ['ramo sem declaração das palavras', (t) => { delete t.palavras.deficitMenor; }, ['não declara as palavras obrigatórias e proibidas']],
+    ]) {
+      const d = structuredClone(e);
+      estraga(d.seccoes[2].conteudo[1].paragrafo[lang].find(t => t.comparaSaldos));
+      const q = conferirRamosDasExplicacoes({ explicacoes: [d] }).erros;
+      out.push({ nome: `EX1-f (${lang}): ${nome}`, mordeu: conferirRamosDasExplicacoes().erros.length === 0 && mensagens.every(m => q.some(x => x.startsWith('X10 · palavras do ramo:') && x.includes(m))), queixa: q.join(' | ') || 'nenhuma' });
+    }
+  }
   {
     /* X10: o ramo «zero» tirado do sinal do saldo. */
     const d = structuredClone(EXPLICACOES[0]);

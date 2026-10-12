@@ -16572,11 +16572,11 @@
         {
           "caminho": "seccoes[3].conteudo[0].paragrafo[9].zero[0]",
           "pt": "um saldo nulo (recebeu o mesmo que gastou)",
-          "en": "a zero balance (it took in as much as it spent)",
+          "en": "a nil balance (it took in as much as it spent)",
           "partes": [
             {
               "pt": "um saldo nulo",
-              "en": "a zero balance",
+              "en": "a nil balance",
               "classe": "conta"
             },
             {

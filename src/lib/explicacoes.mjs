@@ -21,6 +21,8 @@
  *     palavras que a comparação dos valores de a e de b escolhe, como na primeira página; um ramo pode trazer
  *     tokens (o valor de b, por exemplo); os três ramos são obrigatórios, e um valor que não se lê fecha a construção;
  *   · `{ comparaSaldos: [a, b], deficitMaior, deficitMenor, deficitIgual, excedenteMaior, excedenteMenor, excedenteIgual, nulos, diferentesNegativo, diferentesPositivo, diferentesZero }`
+ *     `palavras: { ramo: { contem, naoContem } }` nos tokens de valor declara o vocabulário obrigatório e proibido
+ *     de cada ramo na língua da edição; a X10 confere-o, e o resolvedor não rende estes metadados.
  *     compara os módulos de saldos com o mesmo sinal; os sinais diferentes e os dois zeros têm ramos próprios.
  *   · `{ se: [condições], partes }` · palavras que só se rendem enquanto as condições forem verdadeiras;
  *     uma condição falsa tira as palavras e deixa um sinal, e nunca fecha a construção (o §5.2 do brief
