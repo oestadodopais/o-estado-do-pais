@@ -56,7 +56,6 @@
 export const UNIDADES = {
   '% do valor contratado': '% of contracted amount',
   // RP4-n-e: unidade de contagem traduzida; o singular depende do valor.
-  'avisos': 'notices',
   // OE1: tradução de dicionário da unidade monetária.
   'milhões de euros': 'million euros',
   // OE1-d: factos de dicionário, incluindo o período acumulado da linha.

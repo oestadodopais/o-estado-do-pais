@@ -275,6 +275,7 @@ export function conferirExcertoDaPensao(linha) {
   morde(`separador final solto (${lang})`,conferirCaminhoFinal(parse('<nav class="caminho"><a>Livro</a><span class="caminho-sep">›</span></nav>')),'o caminho termina num separador sem destino');
  }
 }
+if(process.argv.includes('--registo-f')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/f/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 if(process.argv.includes('--registo-e')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/e/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 assert.deepEqual(conferirAuditoriaDasFamilias().erros, []);
 console.log(`RP4N-e: PASS, ${plantas.length} plantas e auditoria íntegra`);
