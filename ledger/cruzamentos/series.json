@@ -17,10 +17,10 @@
     },
     "rotulos-das-series.json": {
       "destino": "src/data",
-      "exported_sha256": "b562b3e0100fc9c953e7496d5064ea7ef5822ef748750e994f4b257753472474",
+      "exported_sha256": "a26a9eac853e70461062bf353284b3d4982c32c9cf94a3a33493625a7f9a7eb0",
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_path": "content/13 Dominios/rotulos-series.json",
-      "origin_sha256": "b562b3e0100fc9c953e7496d5064ea7ef5822ef748750e994f4b257753472474"
+      "origin_sha256": "a26a9eac853e70461062bf353284b3d4982c32c9cf94a3a33493625a7f9a7eb0"
     }
   },
   "origin": "ResearchHub",

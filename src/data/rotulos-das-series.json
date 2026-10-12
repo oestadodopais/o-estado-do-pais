@@ -1444,6 +1444,63 @@
       "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
       "sha256": "82bf5d3a3b5cd5be503a9a168f5926da7f36fd05da8f03e4597d1d2d5fe02f28",
       "motor": "content/13 Dominios/source/rp3/179-eurostat-serie-salario-minimo-mensal.json"
+    },
+    {
+      "serie": "serie-obrigacoes-do-tesouro-10-anos-rendibilidade",
+      "dimensao": "freq",
+      "codigo": "M",
+      "rotulo": "Monthly",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "M"
+      ],
+      "documento": "EMU convergence criterion series - monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/irt_lt_mcby_m?format=JSON&lang=EN&int_rt=MCBY&geo=PT&sinceTimePeriod=1980-01",
+      "lido_em": "2026-10-06T10:46:27Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "e6ba45206d0ab0ad81f99e5e7fc649458df903352658deaeef82327f1e2e4f63",
+      "motor": "content/13 Dominios/source/corredor-series/2026-10-06/019-eurostat-obrigacoes-10-anos.json"
+    },
+    {
+      "serie": "serie-obrigacoes-do-tesouro-10-anos-rendibilidade",
+      "dimensao": "int_rt",
+      "codigo": "MCBY",
+      "rotulo": "EMU convergence criterion bond yields",
+      "caminho": [
+        "dimension",
+        "int_rt",
+        "category",
+        "label",
+        "MCBY"
+      ],
+      "documento": "EMU convergence criterion series - monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/irt_lt_mcby_m?format=JSON&lang=EN&int_rt=MCBY&geo=PT&sinceTimePeriod=1980-01",
+      "lido_em": "2026-10-06T10:46:27Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "e6ba45206d0ab0ad81f99e5e7fc649458df903352658deaeef82327f1e2e4f63",
+      "motor": "content/13 Dominios/source/corredor-series/2026-10-06/019-eurostat-obrigacoes-10-anos.json"
+    },
+    {
+      "serie": "serie-obrigacoes-do-tesouro-10-anos-rendibilidade",
+      "dimensao": "geo",
+      "codigo": "PT",
+      "rotulo": "Portugal",
+      "caminho": [
+        "dimension",
+        "geo",
+        "category",
+        "label",
+        "PT"
+      ],
+      "documento": "EMU convergence criterion series - monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/irt_lt_mcby_m?format=JSON&lang=EN&int_rt=MCBY&geo=PT&sinceTimePeriod=1980-01",
+      "lido_em": "2026-10-06T10:46:27Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "e6ba45206d0ab0ad81f99e5e7fc649458df903352658deaeef82327f1e2e4f63",
+      "motor": "content/13 Dominios/source/corredor-series/2026-10-06/019-eurostat-obrigacoes-10-anos.json"
     }
   ]
 }
