@@ -149,16 +149,14 @@ console.log(`RP4N-d final: plantas exercitadas, ${plantas.length} plantas com me
 
 // RP4-n-e: o excerto da figura conserva o rótulo, o valor e a fonte, sem despejar os eixos.
 export function conferirExcertoDaPensao(linha) {
-  const linhas = linha.excerpt.split('\n');
-  return linhas.length === 4 && linhas[0].startsWith('Figura 8.4: Decrementos por reforma antecipada: caso geral')
-    && linhas[1] === linha.value.replace(',', '.') + '%' && linhas[2].startsWith('Fonte: Cálculos próprios')
-    ? [] : ['RP4N-e: o excerto da pensão deve conter só o rótulo, o valor e a nota da fonte'];
+  return linha.excerpt === 'Figura 8.4: Decrementos por reforma antecipada: caso geral' && linha.document?.crop?.page === 273
+    ? [] : ['RP4N-f: a pensão exige a legenda contígua e o recorte da figura'];
 }
 {
-  const l = structuredClone(loadClaims({ includeWithdrawn: true }).get('penalizacao-antecipacao-um-ano-neutra'));
+  const l = structuredClone(loadClaims({includeWithdrawn:true}).get('penalizacao-antecipacao-um-ano-neutra'));
   assert.deepEqual(conferirExcertoDaPensao(l), []);
-  l.excerpt += '\n91.8%\n84.3%';
-  morde('despejo dos eixos no excerto da pensão', conferirExcertoDaPensao(l), 'só o rótulo, o valor e a nota da fonte');
+  l.excerpt += '\n8.2%';
+  morde('emenda do valor à legenda da pensão', conferirExcertoDaPensao(l), 'legenda contígua e o recorte');
 }
 
 // RP4-n-e: nem uma paráfrase da ausência, nem uma unidade sem concordância.
