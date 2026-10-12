@@ -1,13 +1,13 @@
 /** EX1-e: os dez ramos dos saldos, nas duas edições, com valores sintéticos apenas em memória. */
+import { parse } from 'node-html-parser';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { DINHEIRO_DO_ESTADO_2026 as e } from '../../src/data/explicacoes/dinheiro-do-estado-2026.mjs';
 import { getClaim, loadClaims, parsePtNumber } from '../../src/lib/ledger.mjs';
 import { explicacaoResolvida, textoDosPedacosDaExplicacao } from '../../src/lib/explicacoes.mjs';
-import { explicacaoPelaCelula, conferirRamosDasExplicacoes } from './explicacao.mjs';
 
-export function conferirCenariosDosSaldos() {
+export function conferirCenariosDosSaldos({ explicacaoPelaCelula, conferirRamosDasExplicacoes, conferirContabilidadeDosRamos }) {
   const token = e.seccoes[2].conteudo[1].paragrafo.pt.find(p => p.comparaSaldos);
   const [exec, oe] = token.comparaSaldos;
   const a = getClaim(exec), b = getClaim(oe), antes = [a.value, b.value];
@@ -23,6 +23,16 @@ export function conferirCenariosDosSaldos() {
   ];
   const resultados = [];
   const norm = x => x.replace(/\s+/g, ' ').trim();
+  const coexistencia = [];
+  for (const lang of ['pt', 'en']) {
+    const ps = explicacaoPelaCelula(e, lang, loadClaims()).paragrafos;
+    const root = parse('<main>' + ps.map(p => `<p data-explicacao-paragrafo="${p.caminho}">${p.texto}</p>`).join('') + '</main>');
+    const erros = conferirContabilidadeDosRamos(root, e, lang, loadClaims());
+    assert.deepEqual(erros, [], 'as duas contas corretas têm de coexistir');
+    const contas = ps.filter(p => ['seccoes[2].conteudo[1].paragrafo', 'seccoes[3].conteudo[0].paragrafo'].includes(p.caminho));
+    assert.equal(contas.length, 2);
+    coexistencia.push({ lang, contas, erros });
+  }
   try {
     for (const [x, y, ramo] of cenarios) {
       a.value = String(x).replace('.', ','); b.value = String(y).replace('.', ',');
@@ -52,10 +62,10 @@ export function conferirCenariosDosSaldos() {
       for (const [k, v] of Object.entries(x)) visitar(v, [...caminho, k]);
     };
     visitar(e);
-    return { cenarios: resultados, ramos, erros: [] };
+    return { coexistencia, cenarios: resultados, ramos, erros: [] };
   } finally { [a.value, b.value] = antes; }
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const r = conferirCenariosDosSaldos();
+  const r = conferirCenariosDosSaldos(await import('./explicacao.mjs'));
   console.log(`EX1-e: ${r.cenarios.length} cenários de saldos e ${r.ramos.length} ramos retirados isoladamente, sem erros.`);
 }

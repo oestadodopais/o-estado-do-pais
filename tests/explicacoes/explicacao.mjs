@@ -529,11 +529,10 @@ function ramoDosSaldosAqui(p, linhas) {
 }
 
 /**
- * O TEXTO DE UMA PARTE DECLARADA, pela conta desta célula, com o texto dos ramos não escolhidos e das palavras que
- * uma condição falsa guarda, para se conferir que não estão na página.
- * @param {any} partes @param {'pt'|'en'} lang @param {Map<string, any>} linhas @param {string[]} ausentes
+ * O TEXTO DE UMA PARTE DECLARADA, pela conta desta célula. A contabilidade dos ramos é uma conferência separada.
+ * @param {any} partes @param {'pt'|'en'} lang @param {Map<string, any>} linhas
  */
-function textoAqui(partes, lang, linhas, ausentes) {
+function textoAqui(partes, lang, linhas) {
   const s = t(lang);
   /** O valor de uma linha como o `<Claim>` o escreve, pela regra desta célula. @param {string} id @param {string} sufixo */
   const valor = (id, sufixo) => {
@@ -546,7 +545,7 @@ function textoAqui(partes, lang, linhas, ausentes) {
     if ('claim' in p) return valor(p.claim, p.sufixo ?? '');
     if ('maiores' in p) {
       const r = maioresAqui(p, linhas);
-      if (!r) { ausentes.push(normal(p.frase)); return ''; }
+      if (!r) return '';
       return p.frase + r.map((x, k) => `${k === 0 ? '' : k === r.length - 1 ? p.ultimo : p.entre}${p.antes}${nomeAqui(x.id, lang) ?? ''}${p.abre}${valor(x.id, k === 0 ? p.sufixo : '')}${p.fecha}`).join('');
     }
     if ('periodo' in p) return periodoAqui(String(linhas.get(p.periodo)?.reference_date ?? ''), lang) ?? '';
@@ -556,25 +555,21 @@ function textoAqui(partes, lang, linhas, ausentes) {
     }
     if ('comparaSaldos' in p) {
       const ramo = ramoDosSaldosAqui(p, linhas);
-      for (const r of RAMOS_DOS_SALDOS) if (r !== ramo && r in p) ausentes.push(normal(textoAqui(p[r], lang, linhas, [])));
-      return ramo && ramo in p ? textoAqui(p[ramo], lang, linhas, ausentes) : '';
+      return ramo && ramo in p ? textoAqui(p[ramo], lang, linhas) : '';
     }
     if ('compara' in p) {
       const [a, b] = p.compara.map((/** @type {string} */ id) => numero(linhas.get(id)?.value));
       const ramo = a === null || b === null ? null : a > b ? 'maior' : a < b ? 'menor' : 'igual';
-      for (const r of ['maior', 'menor', 'igual']) if (r !== ramo && r in p) ausentes.push(normal(textoAqui(p[r], lang, linhas, [])));
-      return ramo && ramo in p ? textoAqui(p[ramo], lang, linhas, ausentes) : '';
+      return ramo && ramo in p ? textoAqui(p[ramo], lang, linhas) : '';
     }
     if ('sinal' in p) {
       const v = numero(linhas.get(p.sinal)?.value);
       const ramo = v === null ? null : v > 0 ? 'positivo' : v < 0 ? 'negativo' : 'zero';
-      for (const r of ['positivo', 'negativo', 'zero']) if (r !== ramo && r in p) ausentes.push(normal(textoAqui(p[r], lang, linhas, [])));
-      return ramo && ramo in p ? textoAqui(p[ramo], lang, linhas, ausentes) : '';
+      return ramo && ramo in p ? textoAqui(p[ramo], lang, linhas) : '';
     }
     if ('se' in p) {
-      const texto = textoAqui(p.partes, lang, linhas, ausentes);
+      const texto = textoAqui(p.partes, lang, linhas);
       if (p.se.every((/** @type {any} */ c) => condicaoAqui(c, linhas))) return texto;
-      ausentes.push(normal(texto));
       return '';
     }
     return '';
@@ -587,20 +582,15 @@ function textoAqui(partes, lang, linhas, ausentes) {
  */
 export function explicacaoPelaCelula(e, lang, linhas) {
   /** @type {{ caminho: string, texto: string }[]} */
-  const ausentes = [];
-  /** @type {{ caminho: string, texto: string }[]} */
   const paragrafos = [];
   const junta = (/** @type {any} */ p, /** @type {string} */ caminho) => {
-    /** @type {string[]} */
-    const fora = [];
-    const texto = normal(textoAqui(p[lang], lang, linhas, fora));
-    ausentes.push(...fora.filter(Boolean).map((texto) => ({ caminho, texto })));
+    const texto = normal(textoAqui(p[lang], lang, linhas));
     if (texto) paragrafos.push({ caminho, texto });
   };
   e.abertura.forEach((/** @type {any} */ p, /** @type {number} */ i) => junta(p, `abertura[${i}]`));
   e.seccoes.forEach((/** @type {any} */ s, /** @type {number} */ i) => s.conteudo.forEach((/** @type {any} */ b, /** @type {number} */ j) => { if (b.paragrafo) junta(b.paragrafo, `seccoes[${i}].conteudo[${j}].paragrafo`); }));
   e.naoDiz.forEach((/** @type {any} */ p, /** @type {number} */ i) => junta(p, `naoDiz[${i}]`));
-  return { titulo: normal(textoAqui(e.titulo[lang], lang, linhas, [])), paragrafos, ausentes };
+  return { titulo: normal(textoAqui(e.titulo[lang], lang, linhas)), paragrafos };
 }
 
 /** O texto de um elemento sem os selos. @param {any} el */
@@ -619,7 +609,7 @@ export function conferirContabilidadeDosRamos(main, e, lang, linhas) {
   /** @type {Map<string, Set<string>>} */
   const ramos = new Map();
   const registar = (/** @type {any} */ partes, /** @type {string} */ caminho, /** @type {boolean} */ escolhido) => {
-    const texto = normal(textoAqui(partes, lang, linhas, []));
+    const texto = normal(textoAqui(partes, lang, linhas));
     if (!texto) return;
     if (!ramos.has(texto)) ramos.set(texto, new Set());
     if (escolhido) ramos.get(texto)?.add(caminho);
@@ -738,7 +728,7 @@ export function conferirTituloNumaPorta(el, lang, linhas = loadClaims()) {
   const slug = el.getAttribute('data-explicacao-porta');
   const e = /** @type {any} */ (EXPLICACOES.find((x) => x.slug === slug));
   if (!e) return [`X8 · uma porta para a explicação «${slug}», que não está declarada`];
-  const esperado = normal(textoAqui(e.titulo[lang], lang, linhas, []));
+  const esperado = normal(textoAqui(e.titulo[lang], lang, linhas));
   return normal(el.textContent) === esperado ? [] : [`X8 · a porta de «${slug}» rende «${normal(el.textContent)}» e o título recomposto é «${esperado}»`];
 }
 
@@ -849,6 +839,7 @@ export function plantasDaExplicacao(dist) {
   ]) naPagina(`EX1-e: ${nome}`, (r) => {
     const p = saldoExecucao(r);
     p.set_content(p.innerHTML.replace(de, para));
+    if (nome === 'os dois sinais trocados') p.set_content(p.innerHTML.replace('um défice (gastou mais do que recebeu)', 'um excedente (recebeu mais do que gastou)'));
   }, /X6 · o parágrafo seccoes\[2\]\.conteudo\[1\]\.paragrafo difere da conta/);
   // Não há uma célula autónoma de perímetro: X6 confere o valor da linha declarada.
   // Só o valor visível muda; identificador, href e todo o selo permanecem válidos.
@@ -969,12 +960,12 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     paginas++;
     erros.push(...conferirPaginaDaExplicacao(parse(fs.readFileSync(f, 'utf8')), lang, e.slug).map((x) => `${base}/${e.slug}: ${x}`));
   }
-  const cenariosDosSaldos = (await import('./saldos.mjs')).conferirCenariosDosSaldos();
+  const cenariosDosSaldos = (await import('./saldos.mjs')).conferirCenariosDosSaldos({ explicacaoPelaCelula, conferirRamosDasExplicacoes, conferirContabilidadeDosRamos });
   const plantas = prova ? plantasDaExplicacao(DIST) : [];
   for (const p of plantas) if (!p.mordeu && /** @type {any} */ (p).aplica !== false) erros.push(`X · a planta «${p.nome}» não mordeu: ${p.queixa}`);
   const resumo = { cenariosDosSaldos, auditoria: a.contas, origens: o.contas, maiores: x9.contas, ramos: x10.contas, paginas, plantas: plantas.map((p) => ({ nome: p.nome, mordeu: p.mordeu, aplica: /** @type {any} */ (p).aplica !== false, queixa: p.queixa })), erros };
   if (json) fs.writeFileSync(json, JSON.stringify(resumo, null, 2) + '\n');
-  console.log(`X · a explicação: ${a.contas.explicacoes} explicação(ões), ${a.contas.folhas} folhas e ${a.contas.partes} partes auditadas (${a.contas.diz} diz, ${a.contas.leitura} leitura, ${a.contas.conta} conta, ${a.contas.aponta} aponta, ${a.contas.liga} liga), ${a.contas.origens} origens usadas; ${x9.contas.tokens} token(s) «maiores» conferidos nas duas edições; ${x10.contas.tokens} token(s) de ramos (sinal e compara) com os três ramos; ${o.contas.origens} origens das explicações${o.contas.motor ? `, ${o.contas.lidas_no_motor} lidas no motor` : ', sem o motor ao lado'}; ${paginas} página(s) recontadas${prova ? `; ${plantas.filter((p) => p.mordeu).length} de ${plantas.length} plantas em memória` : ''}.`);
+  console.log(`X · a explicação: ${a.contas.explicacoes} explicação(ões), ${a.contas.folhas} folhas e ${a.contas.partes} partes auditadas (${a.contas.diz} diz, ${a.contas.leitura} leitura, ${a.contas.conta} conta, ${a.contas.aponta} aponta, ${a.contas.liga} liga), ${a.contas.origens} origens usadas; ${x9.contas.tokens} token(s) «maiores» conferidos nas duas edições; ${x10.contas.tokens} token(s) de ramos (sinal, compara e comparaSaldos) com todos os ramos; ${o.contas.origens} origens das explicações${o.contas.motor ? `, ${o.contas.lidas_no_motor} lidas no motor` : ', sem o motor ao lado'}; ${paginas} página(s) recontadas${prova ? `; ${plantas.filter((p) => p.mordeu).length} de ${plantas.length} plantas em memória` : ''}.`);
   if (erros.length) {
     console.error(`\n  CÉLULA DA EXPLICAÇÃO · ${erros.length} problema(s):\n${erros.map((x) => `  · ${x}`).join('\n')}`);
     process.exit(1);
