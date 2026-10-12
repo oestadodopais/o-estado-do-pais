@@ -265,6 +265,7 @@ export const CAMPOS = /** @type {const} */ ([
    */
   'name',
   'name_source',
+  'name_source_en',
   'source',
   'document',
   'source_url',
@@ -387,6 +388,7 @@ export const CAMPOS_DO_DOCUMENTO = /** @type {const} */ ([
   'title',
   'edition',
   'locator',
+  'locator_en',
   'page',
   'kind',
   'url',
@@ -1637,6 +1639,7 @@ export function validateLedger() {
       const temNome = !ausente(c.name);
       const temOnde = !ausente(c.name_source);
       if (c.access_date_kind !== undefined && !['hosted-copy', 'source-read'].includes(c.access_date_kind)) errors.push(`${onde} access_date_kind inválido.`);
+      if (c.name_source_en !== undefined && (typeof c.name_source_en !== 'string' || !c.name_source_en.trim() || !temOnde)) errors.push(`${onde} name_source_en precisa de localizador original e tradução não vazia.`);
       if (temNome) comRotulo++;
       if (c.name !== null && c.name !== undefined && typeof c.name !== 'string') {
         errors.push(
@@ -1907,6 +1910,7 @@ export function validateLedger() {
           );
         }
         const loc = doc.locator;
+        if (doc.locator_en !== undefined && (typeof doc.locator_en !== 'string' || !doc.locator_en.trim() || !loc)) errors.push(`${onde} document.locator_en precisa de localizador original e tradução não vazia.`);
         if (loc !== null && loc !== undefined) {
           if (typeof loc !== 'string' || loc.trim() === '') {
             errors.push(

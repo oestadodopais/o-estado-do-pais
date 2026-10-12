@@ -2786,9 +2786,11 @@ const CAMPOS_DA_LINHA = new Set([
    */
   'name',
   'name_source',
+  'name_source_en',
   'document.title',
   'document.edition',
   'document.locator',
+  'document.locator_en',
   /**
    * A página do documento onde está a frase que o excerto transcreve.
    *
@@ -3011,6 +3013,8 @@ function campoDaLinha(claim, campo, lang) {
       return claim.document?.title ?? null;
     case 'document.edition':
       return claim.document?.edition ?? null;
+    case 'document.locator_en':
+      return claim.document?.locator_en ?? null;
     case 'document.locator':
       return claim.document?.locator ?? null;
     case 'document.page':
