@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { loadClaims, validateLedger } from '../../src/lib/ledger.mjs';
-const linhas = loadClaims();
+const linhas = loadClaims({includeWithdrawn:true});
 const id = 'divida-das-familias-2025-ue';
 const original = linhas.get(id);
 assert.deepEqual(validateLedger().errors, []);

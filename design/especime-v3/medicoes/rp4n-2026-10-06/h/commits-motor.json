@@ -1,0 +1,18 @@
+{
+  "base": "542fe4ee9d67ecf2245892fd98ccd1c442829704",
+  "cabeca": "e2fd95fde167ad54f36a426bc1487bd6c53c9f2a",
+  "commits": [
+    {
+      "sha": "2db37fd69b2e228bfe4af580c13c5d0cb2a1f3c5",
+      "titulo": "fix(rp4n-h): provar a data de alojamento das pensões no manifesto original"
+    },
+    {
+      "sha": "5669004b2b917584e466d685120a15dacffed920",
+      "titulo": "fix(rp4n-h): retirar a reconferência anterior à criação da linha legal"
+    },
+    {
+      "sha": "e2fd95fde167ad54f36a426bc1487bd6c53c9f2a",
+      "titulo": "fix(rp4n-h): exportar os localizadores ingleses da pensão"
+    }
+  ]
+}

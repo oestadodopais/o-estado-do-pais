@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-06T16:55:11+00:00",
+ "copia": "<scratchpad>/rp4n/pacote-leitura",
+ "plantas": [
+  {
+   "id": "p1",
+   "ficheiro": "src/data/origens-rp4n.json",
+   "descricao": "o excerto selado do boletim da Madeira diz «não têm emprego» onde o PDF diz «não têm trabalho»",
+   "sha256_antes": "3ae66a3deefeffa2254b9740c26f75e17aa3dad990a404d2e00df2dd20c079e0",
+   "sha256_depois": "ff95ad6b2d4c05cc350716cf4036fc013ed3a945a7760f30f8eafcab9251c154",
+   "contexto_antes": "cursos/instituto/estatisticas/2025/Conc/12-Bol-Conc-25.pdf\",\n    \"lido\": \"2026-10-06\",\n    \"lingua\": \"pt\",\n    \"excerto\": \"DESEMPREGADOS/DESEMPREGO REGISTADO - Candidatos inscritos que não têm trabalho, procuram um emprego como trabalhador\\npor conta de outrém, estão imediatamente disponíveis e têm capacidade para trabalhar, dos quais:\\n1º emprego: nunca trabalharam,\\nNovo empreg",
+   "contexto_depois": "cursos/instituto/estatisticas/2025/Conc/12-Bol-Conc-25.pdf\",\n    \"lido\": \"2026-10-06\",\n    \"lingua\": \"pt\",\n    \"excerto\": \"DESEMPREGADOS/DESEMPREGO REGISTADO - Candidatos inscritos que não têm emprego, procuram um emprego como trabalhador\\npor conta de outrém, estão imediatamente disponíveis e têm capacidade para trabalhar, dos quais:\\n1º emprego: nunca trabalharam,\\nNovo empreg"
+  },
+  {
+   "id": "p2",
+   "ficheiro": "scripts/sem-marcadores.mjs",
+   "descricao": "a régua das marcas passa a deixar a aceitação vencer a proibição: uma marca dentro de uma afirmação que também pareça um tipo aceite é aceite",
+   "sha256_antes": "90425e9824321ea5cfe31a6708ffc1a381eef62bcb22119a32d3f47e22736235",
+   "sha256_depois": "361c72d6bcb3b2ad80ed39791cafb79365f8b72768f632871d6584bf92442c1f",
+   "contexto_antes": ";\n  for (const {n, folhas} of nos) {\n    const proibido = recusado(n, contexto.rota) ?? folhas.map(f=>recusado(f.parentNode, contexto.rota)).find(Boolean);\n    const tipo = proibido ?? aceite(n, contexto) ?? 'fora-dos-tipos';\n    const aceita = TIPOS_ACEITES.includes(tipo);\n    const campo = perto(n, '[data-linha-campo]')?.getAttribute('data-linha-campo');\n    const superficie = cam",
+   "contexto_depois": ";\n  for (const {n, folhas} of nos) {\n    const proibido = recusado(n, contexto.rota) ?? folhas.map(f=>recusado(f.parentNode, contexto.rota)).find(Boolean);\n    const tipo = aceite(n, contexto) ?? proibido ?? 'fora-dos-tipos';\n    const aceita = TIPOS_ACEITES.includes(tipo);\n    const campo = perto(n, '[data-linha-campo]')?.getAttribute('data-linha-campo');\n    const superficie = cam"
+  },
+  {
+   "id": "p4",
+   "ficheiro": "built/livro-razao/calheta-desemprego-registado-2025-12/index.html",
+   "descricao": "o recibo construído da Calheta diz «no início do mês» onde os dados e a fonte dizem «no fim do mês»",
+   "sha256_antes": "3a32533fc68c89014bc8700ce19e135392b2e7364f17e11320e22d0e20ff61ab",
+   "sha256_depois": "2b57ef7f7051bb97bfd946036724921e15fe0b76f6f5af4a6e90565713013268",
+   "contexto_antes": "ta-o-que-e-familia=\"desempregoRegistado\"><p class=\"linha-o-que-e-k\" data-voz>O que é este número</p><p class=\"linha-o-que-e-frase\" data-o-que-e-parte=\"o-que-e\">Conta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).</p></div><p class=\"linha-valor\"><span data-claim=\"calheta-desemprego-registado-2025-12\" class=\"claim-value linha-valor-num\">261</span> ",
+   "contexto_depois": "ta-o-que-e-familia=\"desempregoRegistado\"><p class=\"linha-o-que-e-k\" data-voz>O que é este número</p><p class=\"linha-o-que-e-frase\" data-o-que-e-parte=\"o-que-e\">Conta as pessoas desempregadas inscritas nos serviços de emprego no início do mês (desemprego registado).</p></div><p class=\"linha-valor\"><span data-claim=\"calheta-desemprego-registado-2025-12\" class=\"claim-value linha-valor-num\">261</span> "
+  },
+  {
+   "id": "p5",
+   "ficheiro": "src/data/origens-rp4n.json",
+   "descricao": "a origem do prazo médio de pagamento de Évora diz página 140 onde o selo e o PDF dizem 141",
+   "sha256_antes": "ff95ad6b2d4c05cc350716cf4036fc013ed3a945a7760f30f8eafcab9251c154",
+   "sha256_depois": "045d9e71ac8d682ff744bfbf08209db00143ffd4d09768fbf88c5e9259bf69ee",
+   "contexto_antes": "2025 com pagamentos em atraso, no valor\\nde 4.976.172,24 €.\",\n    \"recibo\": \"content/13 Dominios/source/rp4n/evora-contas.pedido.json\",\n    \"extracao\": {\n      \"pagina\": 141,\n      \"inicio\": \"O Prazo Médio de Pagamento (PMP) é\",\n      \"fim\": \"4.3.6.\"\n    },\n    \"selo\": {\n      \"tipo\": \"rp4n\",\n      \"motor\": \"content/13 Dominios/sou",
+   "contexto_depois": "2025 com pagamentos em atraso, no valor\\nde 4.976.172,24 €.\",\n    \"recibo\": \"content/13 Dominios/source/rp4n/evora-contas.pedido.json\",\n    \"extracao\": {\n      \"pagina\": 140,\n      \"inicio\": \"O Prazo Médio de Pagamento (PMP) é\",\n      \"fim\": \"4.3.6.\"\n    },\n    \"selo\": {\n      \"tipo\": \"rp4n\",\n      \"motor\": \"content/13 Dominios/sou"
+  },
+  {
+   "id": "p3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório da passagem c diz nove selos de proveniência aceites na página do índice do livro-razão, onde os registos dizem oito",
+   "sha256_antes": "3e12a38574a5fff9971747d750a9e4fbee9874a7db2bb84869b60b6702cf9d28",
+   "sha256_depois": "dea02dacd66773293f190e6e65d643425e498d98fcd1746eac253dc3bfd82c15",
+   "contexto_antes": " excerto: 1 |\n| `dist/livro-razao/evora-prr-pago-2026/index.html` | excerto: 1 |\n| `dist/livro-razao/evora-prr-vencido-aprovado-2026/index.html` | excerto: 1 |\n| `dist/livro-razao/index.html` | data: 5; publicador: 3; referencia-no-livro: 1; selo-proveniencia: 8 |\n| `dist/livro-razao/retribuicao-minima-mensal-garantida-continente-2026/index.html` | nota-alcance: 1 |\n| `dist/livro-razao/saldo-natural-portugal-2025/index.h",
+   "contexto_depois": " excerto: 1 |\n| `dist/livro-razao/evora-prr-pago-2026/index.html` | excerto: 1 |\n| `dist/livro-razao/evora-prr-vencido-aprovado-2026/index.html` | excerto: 1 |\n| `dist/livro-razao/index.html` | data: 5; publicador: 3; referencia-no-livro: 1; selo-proveniencia: 9 |\n| `dist/livro-razao/retribuicao-minima-mensal-garantida-continente-2026/index.html` | nota-alcance: 1 |\n| `dist/livro-razao/saldo-natural-portugal-2025/index.h"
+  }
+ ]
+}

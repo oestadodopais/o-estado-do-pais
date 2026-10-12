@@ -1,0 +1,4 @@
+793d2d7eba2ae075b89cdef47a29c409cced1244
+fix(rp4n-g): declarar a língua do rótulo impresso da pensão
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

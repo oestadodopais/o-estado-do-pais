@@ -30,8 +30,8 @@ reference_date: "2026"
 excerpt: "           01 - ENCARGOS GERAIS DO ESTADO                                                        7 733 610 763"
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
-ressalva: "Não é um ministério. Nesta edição do orçamento, a rubrica dos Encargos Gerais do Estado tem o mesmo valor do programa 001, Órgãos de Soberania. A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma."
-ressalva_en: "This is not a ministry. In this budget edition, General State Charges has the same value as programme 001, Sovereign Bodies. Gross expenditure includes financial transactions and transfers between State services, as added up in the budget map."
+ressalva: "Não é um ministério. Nesta edição do orçamento, a rubrica dos Encargos Gerais do Estado tem o mesmo valor do programa 001, Órgãos de Soberania."
+ressalva_en: "This is not a ministry. In this budget edition, General State Charges has the same value as programme 001, Sovereign Bodies."
 
 # Aritmética da ressalva; o valor continua a ser o publicado pela fonte.
 derivation: "A igualdade referida na ressalva compara os Encargos Gerais do Estado com o programa 001, Órgãos de Soberania: 7733610763 - 7733610763 = 0 euros. A conta não descreve o conteúdo da rubrica."

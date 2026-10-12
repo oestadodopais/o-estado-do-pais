@@ -30,7 +30,7 @@
  * A ausência de uma tradução não torna incerto esse nome. A língua pertence ao texto;
  * não se acrescenta marcador nem porta para a página de incerteza.
  */
-import { linguaDoTitulo } from '../data/studies.mjs';
+import { linguaDoTitulo, edicaoDoTitulo } from '../data/studies.mjs';
 
 const {
   edicao = null,
@@ -47,6 +47,10 @@ if (typeof titulo !== 'string' || !titulo.trim()) {
 }
 const lingua = linguaDoTitulo(titulo, lang);
 const marca = lingua === 'pt-PT' ? 'pt' : lingua;
+const doArquivo = edicao ?? edicaoDoTitulo(titulo, lang);
+if (doArquivo?.titleUnverified === true) {
+  throw new Error(`RP4N: o título de estudo «${titulo}» está declarado por confirmar e não pode ser publicado.`);
+}
 ---
 
 <Tag class={classe} data-nonledger="titulo-de-estudo" lang={marca} {...resto}>{titulo}</Tag>

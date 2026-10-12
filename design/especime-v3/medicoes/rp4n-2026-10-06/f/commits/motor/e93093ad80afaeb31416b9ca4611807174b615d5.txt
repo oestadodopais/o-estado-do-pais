@@ -1,0 +1,3 @@
+e93093ad80afaeb31416b9ca4611807174b615d5
+fix(rp4n-f): conferir a legenda e o recorte da pensão alojada
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>

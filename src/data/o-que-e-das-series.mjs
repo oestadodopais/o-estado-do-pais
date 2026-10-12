@@ -23,30 +23,30 @@ export const FRASES_DAS_SERIES = {
   "serie-ihpc-combustiveis-variacao-homologa": {
     "frase": {
       "pt": [
-        "É quanto mudaram, em Portugal, os preços dos combustíveis face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor)."
+        "É quanto mudaram, em Portugal, os preços dos combustíveis e lubrificantes para transporte pessoal face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor)."
       ],
       "en": [
-        "It is how much, in Portugal, fuel prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices)."
+        "It is how much, in Portugal, fuel and lubricant prices for personal transport changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices)."
       ]
     }
   },
   "serie-ihpc-combustiveis-variacao-homologa-ue": {
     "frase": {
       "pt": [
-        "É quanto mudaram os preços dos combustíveis face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor); o valor da União é uma média dos países, ponderada pelo peso de cada um."
+        "É quanto mudaram os preços dos combustíveis e lubrificantes para transporte pessoal face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor); o valor da União é uma média dos países, ponderada pelo peso de cada um."
       ],
       "en": [
-        "It is how much fuel prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices); the European Union’s value is an average of the countries, weighted by each country’s weight."
+        "It is how much fuel and lubricant prices for personal transport changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices); the European Union’s value is an average of the countries, weighted by each country’s weight."
       ]
     }
   },
   "serie-ihpc-energia-da-casa-variacao-homologa": {
     "frase": {
       "pt": [
-        "É quanto mudaram, em Portugal, os preços da energia usada em casa face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor)."
+        "É quanto mudaram, em Portugal, os preços da eletricidade, do gás e de outros combustíveis face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor)."
       ],
       "en": [
-        "It is how much, in Portugal, the prices of energy used at home changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices)."
+        "It is how much, in Portugal, electricity, gas and other fuel prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices)."
       ]
     }
   },
@@ -113,21 +113,15 @@ export const FRASES_DAS_SERIES = {
   "serie-remuneracao-bruta-mensal-media-real": {
     "frase": {
       "pt": [
-        "É a remuneração média antes de descontos de cada ano contada nos euros do ano que a unidade nomeia, isto é, descontada a subida dos preços desde esse ano (remuneração em termos reais)."
+        "É a remuneração média antes de descontos de cada ano contada nos euros do ano que a unidade nomeia, isto é, descontada a subida dos preços desde esse ano."
       ],
       "en": [
-        "It is each year’s average pay before deductions counted in euros of the year the unit names, that is, net of the rise in prices since that year (pay in real terms)."
+        "It is each year’s average pay before deductions counted in euros of the year the unit names, that is, net of the rise in prices since that year."
       ]
     }
   }
 };
 
-/** As séries cuja frase está por confirmar na fonte (R4-b): o recibo leva o marcador da casa ao pé dela. */
-export const SERIES_POR_CONFIRMAR_NA_FONTE = [
-  "serie-ihpc-combustiveis-variacao-homologa",
-  "serie-ihpc-combustiveis-variacao-homologa-ue",
-  "serie-ihpc-energia-da-casa-variacao-homologa",
-  "serie-ihpc-rendas-variacao-homologa",
-  "serie-precos-da-habitacao-variacao-homologa",
-  "serie-remuneracao-bruta-mensal-media-real"
-];
+/** As séries cuja frase está por confirmar na fonte (R4-b): a K17 e o portão HTML recusam o recibo. */
+/** @type {string[]} */
+export const SERIES_POR_CONFIRMAR_NA_FONTE = [];

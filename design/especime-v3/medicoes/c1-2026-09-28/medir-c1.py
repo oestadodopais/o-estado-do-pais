@@ -14,7 +14,7 @@ AQUI = Path(__file__).resolve().parent
 RAIZ = AQUI.parents[3]
 BASE = '48a5a1c181c1753036d301204884c57119bba8a5'
 MOTOR_BASE = '4eb2867936dd14ad2654751722e390804e68dda3'
-MOTOR = Path.home() / 'Instruments/ResearchHub/.worktrees/c1-2026-09-28'
+MOTOR = Path.home() / '<projetos>/ResearchHub/.worktrees/c1-2026-09-28'
 
 def git(*args, cwd=RAIZ):
     return subprocess.check_output(['git', *args], cwd=cwd).decode().strip()

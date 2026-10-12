@@ -3,7 +3,7 @@
 # Depois do build na cabeça da H4-e: as conferências que a mudança toca (códigos lidos de ficheiro), as provas da passagem
 # (correr-h4e.py), a secção do relatório (relatorio-h4e.py) e o commit das provas. Nada aqui chama os portões inteiros.
 set -u
-H=<sitio>/.claude/worktrees/aterragem-2026-10-06
+H=<sitio>/<worktrees>/aterragem-2026-10-06
 S=<scratchpad>
 D=design/especime-v3/medicoes/h4-2026-10-06
 P=.claude/h4e/conferencias

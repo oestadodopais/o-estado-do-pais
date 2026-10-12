@@ -81,8 +81,8 @@ export const DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO = {
         en: 'In the Azores, regional law adds an increase to it, and the decree is one of the sources of the question below. ',
       },
       porLer: {
-        pt: 'Nos Açores, o valor é fixado por diploma regional próprio, que não é fonte de nenhuma linha deste livro: ',
-        en: 'In the Azores, the value is set by a separate regional decree, which is not a source of any line in this ledger: ',
+        pt: 'Nos Açores, o valor é fixado por diploma regional próprio, que este livro não leu. ',
+        en: 'In the Azores, the value is set by a separate regional decree, which this ledger has not read. ',
       },
     },
     {
@@ -94,8 +94,8 @@ export const DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO = {
         en: 'In Madeira, the regional decree that sets the value is one of the sources of the question below. ',
       },
       porLer: {
-        pt: 'Na Madeira, o valor é fixado por diploma regional próprio, que não é fonte de nenhuma linha deste livro: ',
-        en: 'In Madeira, the value is set by a separate regional decree, which is not a source of any line in this ledger: ',
+        pt: 'Na Madeira, o valor é fixado por diploma regional próprio, que este livro não leu. ',
+        en: 'In Madeira, the value is set by a separate regional decree, which this ledger has not read. ',
       },
     },
   ],
@@ -103,7 +103,7 @@ export const DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO = {
 
 /**
  * A ressalva de alcance da linha do continente, composta da lista: o território, e para cada região a forma «lida» quando
- * a lista lhe dá uma origem e a forma «por ler», com o marcador, quando não dá.
+ * a lista lhe dá uma origem e a ausência exata quando não dá.
  *
  * @param {typeof DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO} [lista]
  */
@@ -113,7 +113,7 @@ export function ressalvaDosDiplomasRegionais(lista = DIPLOMAS_REGIONAIS_DO_SALAR
   for (const r of lista.regioes) {
     for (const l of /** @type {const} */ (['pt', 'en'])) {
       if (r.origem) out[l].push(r.lida[l]);
-      else out[l].push(r.porLer[l], { marcador: 'a verificar', gloss: 'to verify' }, '. ');
+      else out[l].push(r.porLer[l]);
     }
   }
   for (const l of /** @type {const} */ (['pt', 'en'])) {
@@ -482,14 +482,10 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
        domínio e não se escreve à mão. */
     ressalva: {
       pt: [
-        'A meta desta medida é da União Europeia no seu conjunto e não de Portugal; uma meta nacional própria permanece ',
-        { marcador: 'a verificar', gloss: 'to verify' },
-        '.',
+        'A meta desta medida é da União Europeia no seu conjunto e não de Portugal; não se encontrou uma meta nacional própria na fonte lida.',
       ],
       en: [
-        'This measure’s target belongs to the European Union as a whole, not to Portugal; a national target of its own remains ',
-        { marcador: 'a verificar', gloss: 'to verify' },
-        '.',
+        'This measure’s target belongs to the European Union as a whole, not to Portugal; no separate national target was found in the source consulted.',
       ],
     },
   },

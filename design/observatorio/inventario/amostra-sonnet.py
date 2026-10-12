@@ -54,7 +54,7 @@ UA = "OEstadoDoPais/medicao"
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 AMOSTRA_JSON = os.path.join(SCRIPT_DIR, "amostra-linhas.json")
 RELATORIO_MD = os.path.join(SCRIPT_DIR, "amostra-sonnet.md")
-DOWNLOADS = "/tmp/amostra-sonnet-downloads"
+DOWNLOADS = "<temporario>"
 os.makedirs(DOWNLOADS, exist_ok=True)
 
 pedidos_log = []   # (url, hora_utc, status_ou_None)

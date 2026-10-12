@@ -1,6 +1,6 @@
 # BRIEF · As páginas dos 308 concelhos, M5 · a medição cega das linhas e das páginas
 
-*Escrito a 26.08.2026 pelo lugar de direção (Claude Fable 5) para o medidor (Claude Sonnet). Corre depois do P2 (dados), sobre a construção do ramo `concelhos-2026-08-26` congelada no diretório que o lugar de direção indicar, sobre as linhas em `ledger/claims/` do mesmo ramo, e sobre os ficheiros das fontes alojados no motor (`~/Instruments/ResearchHub/content/12 Concelhos/source/`, só leitura). Sem travessões na prosa deste ficheiro.*
+*Escrito a 26.08.2026 pelo lugar de direção (Claude Fable 5) para o medidor (Claude Sonnet). Corre depois do P2 (dados), sobre a construção do ramo `concelhos-2026-08-26` congelada no diretório que o lugar de direção indicar, sobre as linhas em `ledger/claims/` do mesmo ramo, e sobre os ficheiros das fontes alojados no motor (`~/<projetos>/ResearchHub/content/12 Concelhos/source/`, só leitura). Sem travessões na prosa deste ficheiro.*
 
 ## 0 · O que é
 

@@ -1,0 +1,2266 @@
+{
+  "cabeca": "a10b0ee3d3f9d30c9ab8b31edeb4901efb3d2199",
+  "motor": "92933611d162016ae39801a55f372612f9317e8e",
+  "frases": [
+    {
+      "familias": [
+        "disparidade-de-emprego-entre-sexos"
+      ],
+      "linhas": [
+        "disparidade-de-emprego-entre-sexos-2024"
+      ],
+      "ficheiros": [
+        {
+          "motor": "indicators/out/l1-2026-09-24/eurostat-tesem060.json",
+          "sha256": "8a70357f6d32b524d09ad24041a9f38f13de052d2328114e5b6a5620c8c39df2",
+          "porque": "origem eurostat-tesem060-descricao"
+        },
+        {
+          "motor": "content/13 Dominios/source/eurostat/tesem060.json",
+          "sha256": "8a70357f6d32b524d09ad24041a9f38f13de052d2328114e5b6a5620c8c39df2",
+          "porque": "documento da linha disparidade-de-emprego-entre-sexos-2024"
+        },
+        {
+          "motor": "indicators/out/l1-2026-09-24/ce-swd-2026-222-country-report-portugal.pdf",
+          "sha256": "f249171d3e0e73af63707f051f56cd85eb758465f0389a930f1296462f18c647",
+          "porque": "origem ce-swd-2026-222-disparidade-de-emprego"
+        },
+        {
+          "motor": "indicators/out/l1-2026-09-24/ce-swd-2026-222-country-report-portugal.txt",
+          "sha256": "20d07f2d43af23c216c737df41eaea46cd9900925128e237067bbb887c7b8725",
+          "porque": "extração ce-swd-2026-222-disparidade-de-emprego"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "divida-publica"
+      ],
+      "linhas": [
+        "divida-publica-2024"
+      ],
+      "ficheiros": [
+        {
+          "motor": "indicators/out/l1-2026-09-24/eurostat-tipsgo10.json",
+          "sha256": "f855d74fb9fd741165b52dae03a853f0acb1442c319cf63ada7d7347f76ae82f",
+          "porque": "origem eurostat-tipsgo10-descricao"
+        },
+        {
+          "motor": "content/13 Dominios/source/eurostat/tipsgo10.json",
+          "sha256": "f855d74fb9fd741165b52dae03a853f0acb1442c319cf63ada7d7347f76ae82f",
+          "porque": "documento da linha divida-publica-2024"
+        },
+        {
+          "motor": "content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html",
+          "sha256": "0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa",
+          "porque": "origem pdm-divida-publica"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "posicao-de-investimento-internacional"
+      ],
+      "linhas": [
+        "posicao-de-investimento-internacional-2024"
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/13 Dominios/source/bdp/bpstat-pagina-940.html",
+          "sha256": "36bed0374ac4a38bd8115bd3596a9f332a0c9f318428e3bca1ace1148684fdd5",
+          "porque": "origem bdp-pii"
+        },
+        {
+          "motor": "indicators/out/l1-2026-09-24/bdp-bpstat-pagina-940.html",
+          "sha256": "36bed0374ac4a38bd8115bd3596a9f332a0c9f318428e3bca1ace1148684fdd5",
+          "porque": "origem bdp-pii-sinal"
+        },
+        {
+          "motor": "content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html",
+          "sha256": "0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa",
+          "porque": "origem pdm-posicao-de-investimento"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "saldo-da-balanca-corrente"
+      ],
+      "linhas": [
+        "saldo-da-balanca-corrente-2024"
+      ],
+      "ficheiros": [
+        {
+          "motor": "indicators/out/l1-2026-09-24/eurostat-tipsbp10.json",
+          "sha256": "7fe24c68ccf141c632aeae09633c0effdf2bfbfad814eecf93495c82897006ca",
+          "porque": "origem eurostat-tipsbp10-descricao"
+        },
+        {
+          "motor": "content/13 Dominios/source/eurostat/tipsbp10.json",
+          "sha256": "7fe24c68ccf141c632aeae09633c0effdf2bfbfad814eecf93495c82897006ca",
+          "porque": "documento da linha saldo-da-balanca-corrente-2024"
+        },
+        {
+          "motor": "content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html",
+          "sha256": "0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa",
+          "porque": "origem pdm-balanca-corrente"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "saldo-das-administracoes-publicas"
+      ],
+      "linhas": [
+        "saldo-das-administracoes-publicas-2024"
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/13 Dominios/source/eurostat/gov_10dd_edpt1.json",
+          "sha256": "63e91b9e39c42ad8f51d92c43a4278c8cc955572c7911fb7d9d1f29eb94fd9e5",
+          "porque": "documento da linha saldo-das-administracoes-publicas-2024"
+        },
+        {
+          "motor": "content/13 Dominios/source/text/destaque-pde-2026-09-23.txt",
+          "sha256": "3e8580f92458bba2da44f71d66171bec6cca62c03f5c61dfd3ab069d488f89d4",
+          "porque": "segunda fonte de saldo-das-administracoes-publicas-2024"
+        },
+        {
+          "motor": "content/13 Dominios/source/eurostat/statistics-explained-government-finance-statistics.html",
+          "sha256": "f1b107c69c196b756a56239bfac1bf0a2754bad9f0b90a3265ddc2e916b97372",
+          "porque": "origem eurostat-gfs-pacto"
+        },
+        {
+          "motor": "indicators/out/l1-2026-09-24/eurostat-tipsna40.json",
+          "sha256": "fbf5d6acd61b6dbbda1a6f8d4b6f9c659d10ab97f1dcad522838507797488239",
+          "porque": "origem eurostat-tipsna40-descricao"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "taxa-de-actividade"
+      ],
+      "linhas": [
+        "taxa-de-actividade-2024"
+      ],
+      "ficheiros": [
+        {
+          "motor": "indicators/out/l1-2026-09-24/eurostat-tipslm60.json",
+          "sha256": "3cadaa8dcec031d42b6c88a61b411458cc61efc27cfca8216c8ab598c30a64d6",
+          "porque": "origem eurostat-tipslm60-idade"
+        },
+        {
+          "motor": "content/13 Dominios/source/eurostat/tipslm60.json",
+          "sha256": "3cadaa8dcec031d42b6c88a61b411458cc61efc27cfca8216c8ab598c30a64d6",
+          "porque": "documento da linha taxa-de-actividade-2024"
+        },
+        {
+          "motor": "content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html",
+          "sha256": "0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa",
+          "porque": "origem pdm-taxa-de-actividade"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "taxa-de-cambio-efectiva-real"
+      ],
+      "linhas": [
+        "taxa-de-cambio-efectiva-real-2024"
+      ],
+      "ficheiros": [
+        {
+          "motor": "indicators/out/enquadramento-2026-09-28/corpos/53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691.txt",
+          "sha256": "53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691",
+          "porque": "origem c1c-eurostat-sinal-cambio"
+        },
+        {
+          "motor": "indicators/out/l1-2026-09-24/eurostat-tipser10.json",
+          "sha256": "53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691",
+          "porque": "documento da linha taxa-de-cambio-efectiva-real-2024"
+        },
+        {
+          "motor": "content/13 Dominios/source/eurostat/tipser10.json",
+          "sha256": "53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691",
+          "porque": "documento da linha taxa-de-cambio-efectiva-real-2024"
+        },
+        {
+          "motor": "content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html",
+          "sha256": "0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa",
+          "porque": "origem pdm-cambio-efectivo-real"
+        },
+        {
+          "motor": "indicators/out/c1c-2026-09-28/bce-competitividade-discurso.html",
+          "sha256": "4bf850e2ece146ef67a04485cb07085fb2911ce8dbc6fa0f84ccf477e06739eb",
+          "porque": "origem c1c-bce-competitividade"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "beneficiarios-do-rsi-por-mil"
+      ],
+      "linhas": [
+        "beneficiarios-do-rsi-por-mil-2023"
+      ],
+      "ficheiros": [
+        {
+          "motor": "indicators/out/rp1-2026-09-26/014-ine-0013420-minfo.html",
+          "sha256": "570b07a4e928a33ecb7c888ac590804e3737c92ab8186c4aff1cc6efca3276e8",
+          "porque": "origem rp1-rsi"
+        },
+        {
+          "motor": "content/13 Dominios/source/rp1/010-ine-0013420-dados.json",
+          "sha256": "8fb5b0971209e2fa9843f94652b69710eee312ef874efb69ff0042b213e01a0a",
+          "porque": "documento da linha beneficiarios-do-rsi-por-mil-2023"
+        },
+        {
+          "motor": "content/13 Dominios/source/rp1/014-ine-0013420-minfo.html",
+          "sha256": "570b07a4e928a33ecb7c888ac590804e3737c92ab8186c4aff1cc6efca3276e8",
+          "porque": "documento da linha beneficiarios-do-rsi-por-mil-2023"
+        },
+        {
+          "motor": "content/13 Dominios/source/rp3/183-ine-0013420-minfo.html",
+          "sha256": "2bff16870cf4e8bc4138c32727c8060a6e24f9cf1bbd04afc23533e6d9499e0c",
+          "porque": "documento da linha beneficiarios-do-rsi-por-mil-2023"
+        },
+        {
+          "motor": "indicators/out/rp1-2026-09-26/038-seguranca-social-rsi-conteudo-rp1c.json",
+          "sha256": "4fc174f6751fde822749d79161898406758d5aeec3ad456e22ac961429b8a9bc",
+          "porque": "origem rp1-rsi-seguranca-social"
+        },
+        {
+          "motor": "indicators/out/rp1-2026-09-26/040-ine-idade-ativa-definicao-rp1c.html",
+          "sha256": "144f956c4f069addd42d9a5b72c000d6149ab7a842d629bea930d4c87f15e127",
+          "porque": "origem rp1-rsi-idade"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "disparidade-de-emprego-entre-sexos-ue"
+      ],
+      "linhas": [
+        "disparidade-de-emprego-entre-sexos-2025-ue"
+      ],
+      "ficheiros": [
+        {
+          "motor": "indicators/out/l1-2026-09-24/ce-swd-2026-222-country-report-portugal.pdf",
+          "sha256": "f249171d3e0e73af63707f051f56cd85eb758465f0389a930f1296462f18c647",
+          "porque": "origem ce-swd-2026-222-disparidade-de-emprego"
+        },
+        {
+          "motor": "indicators/out/l1-2026-09-24/eurostat-tesem060.json",
+          "sha256": "8a70357f6d32b524d09ad24041a9f38f13de052d2328114e5b6a5620c8c39df2",
+          "porque": "origem eurostat-tesem060-descricao"
+        },
+        {
+          "motor": "indicators/out/l1-2026-09-24/ce-swd-2026-222-country-report-portugal.txt",
+          "sha256": "20d07f2d43af23c216c737df41eaea46cd9900925128e237067bbb887c7b8725",
+          "porque": "extração ce-swd-2026-222-disparidade-de-emprego"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "taxa-de-actividade-ue"
+      ],
+      "linhas": [
+        "taxa-de-actividade-2025-ue"
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html",
+          "sha256": "0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa",
+          "porque": "origem pdm-taxa-de-actividade"
+        },
+        {
+          "motor": "indicators/out/l1-2026-09-24/eurostat-tipslm60.json",
+          "sha256": "3cadaa8dcec031d42b6c88a61b411458cc61efc27cfca8216c8ab598c30a64d6",
+          "porque": "origem eurostat-tipslm60-idade"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "divida-publica-ue"
+      ],
+      "linhas": [
+        "divida-publica-2025-ue"
+      ],
+      "folhas": [
+        {
+          "pt": "É tudo o que as administrações públicas devem, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+          "en": "It is everything general government owes, as a percentage of GDP, the value of everything the economy produces in a year.",
+          "partes": [
+            {
+              "pt": "É tudo o que as administrações públicas devem, ",
+              "en": "It is everything general government owes, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsgo10-descricao",
+                  "campo": "excerto",
+                  "literal": "debt means total gross debt"
+                }
+              ]
+            },
+            {
+              "pt": "em percentagem do PIB",
+              "en": "as a percentage of GDP",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                }
+              ]
+            },
+            {
+              "pt": ", o valor de tudo o que a economia produz",
+              "en": ", the value of everything the economy produces",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsna40-descricao",
+                  "campo": "excerto",
+                  "literal": "GDP measures the value of total final output of goods and services produced by an economy"
+                }
+              ]
+            },
+            {
+              "pt": " num ano",
+              "en": " in a year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsna40-descricao",
+                  "campo": "excerto",
+                  "literal": "within a certain period of time"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "indicators/out/l1-2026-09-24/eurostat-tipsgo10.json",
+          "sha256": "f855d74fb9fd741165b52dae03a853f0acb1442c319cf63ada7d7347f76ae82f",
+          "porque": "origem eurostat-tipsgo10-descricao"
+        },
+        {
+          "motor": "indicators/out/l1-2026-09-24/eurostat-tipsna40.json",
+          "sha256": "fbf5d6acd61b6dbbda1a6f8d4b6f9c659d10ab97f1dcad522838507797488239",
+          "porque": "origem eurostat-tipsna40-descricao"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "taxa-de-cambio-efectiva-real-ue"
+      ],
+      "linhas": [
+        "taxa-de-cambio-efectiva-real-2025-ue"
+      ],
+      "folhas": [
+        {
+          "pt": "Mede a competitividade dos preços face aos principais concorrentes, contando a inflação e as taxas de câmbio, em três anos. Uma subida é uma apreciação: os preços sobem face aos dos parceiros e perde-se competitividade de preços.",
+          "en": "It measures price competitiveness against the main competitors, allowing for inflation and exchange rates, over three years. A rise is an appreciation: prices increase relative to those of the partners and price competitiveness falls.",
+          "partes": [
+            {
+              "pt": "Mede a competitividade dos preços face aos principais concorrentes",
+              "en": "It measures price competitiveness against the main competitors",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipser10-descricao",
+                  "campo": "excerto",
+                  "literal": "price or cost competitiveness relative to its principal competitors"
+                }
+              ]
+            },
+            {
+              "pt": ", contando a inflação e as taxas de câmbio",
+              "en": ", allowing for inflation and exchange rates",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipser10-descricao",
+                  "campo": "excerto",
+                  "literal": "depend not only on exchange rate movements but also on cost and price trends"
+                }
+              ]
+            },
+            {
+              "pt": ", em três anos.",
+              "en": ", over three years.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "variação em três anos"
+                }
+              ]
+            },
+            {
+              "pt": " Uma subida é uma apreciação: os preços sobem face aos dos parceiros e perde-se competitividade de preços.",
+              "en": " A rise is an appreciation: prices increase relative to those of the partners and price competitiveness falls.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "c1c-eurostat-sinal-cambio",
+                  "campo": "excerto",
+                  "literal": "A positive value means real appreciation."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "indicators/out/l1-2026-09-24/eurostat-tipser10.json",
+          "sha256": "53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691",
+          "porque": "origem eurostat-tipser10-descricao"
+        },
+        {
+          "motor": "indicators/out/enquadramento-2026-09-28/corpos/53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691.txt",
+          "sha256": "53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691",
+          "porque": "origem c1c-eurostat-sinal-cambio"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "saldo-das-administracoes-publicas-2025-notificacao-ine"
+      ],
+      "linhas": [
+        "saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09"
+      ],
+      "folhas": [
+        {
+          "pt": "É a diferença entre o que as administrações públicas receberam e o que gastaram num ano, em percentagem do PIB, como o INE a apura na notificação do procedimento dos défices excessivos; positivo quer dizer que receberam mais do que gastaram.",
+          "en": "It is the difference between what general government took in and what it spent in a year, as a percentage of GDP, as the INE calculates it in its notification under the excessive deficit procedure; positive means it took in more than it spent.",
+          "partes": [
+            {
+              "pt": "É a diferença entre o que as administrações públicas receberam e o que gastaram",
+              "en": "It is the difference between what general government took in and what it spent",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-gfs-saldo",
+                  "campo": "excerto",
+                  "literal": "The difference between total revenue and total expenditure"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "as Administrações Públicas (AP) apresentaram um saldo"
+                }
+              ]
+            },
+            {
+              "pt": " num ano",
+              "en": " in a year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            },
+            {
+              "pt": ", em percentagem do PIB",
+              "en": ", as a percentage of GDP",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                }
+              ]
+            },
+            {
+              "pt": ", como o INE a apura na notificação do procedimento dos défices excessivos",
+              "en": ", as the INE calculates it in its notification under the excessive deficit procedure",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Procedimento dos Défices Excessivos"
+                }
+              ]
+            },
+            {
+              "pt": "; positivo quer dizer que receberam mais do que gastaram.",
+              "en": "; positive means it took in more than it spent.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "apresentaram um saldo positivo"
+                },
+                {
+                  "origem": "eurostat-gfs-saldo",
+                  "campo": "excerto",
+                  "literal": "The difference between total revenue and total expenditure"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/13 Dominios/source/eurostat/statistics-explained-government-finance-statistics.html",
+          "sha256": "f1b107c69c196b756a56239bfac1bf0a2754bad9f0b90a3265ddc2e916b97372",
+          "porque": "segunda fonte de saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09"
+        },
+        {
+          "motor": "content/13 Dominios/source/ine/destaque-pde-2026-09-23.html",
+          "sha256": "880d30d8632f3e50aed26c93a527426dcb48e192097665693df7ed69f05400e5",
+          "porque": "documento da linha saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "oe-2026-cem-euros-ministerio-administracao-interna",
+        "oe-2026-cem-euros-ministerio-agricultura-e-mar",
+        "oe-2026-cem-euros-ministerio-ambiente-e-energia",
+        "oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto",
+        "oe-2026-cem-euros-ministerio-defesa-nacional",
+        "oe-2026-cem-euros-ministerio-economia-e-coesao-territorial",
+        "oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao",
+        "oe-2026-cem-euros-ministerio-financas",
+        "oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao",
+        "oe-2026-cem-euros-ministerio-justica",
+        "oe-2026-cem-euros-ministerio-negocios-estrangeiros",
+        "oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros",
+        "oe-2026-cem-euros-ministerio-reforma-do-estado",
+        "oe-2026-cem-euros-ministerio-saude",
+        "oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social"
+      ],
+      "linhas": [
+        "oe-2026-cem-euros-ministerio-administracao-interna",
+        "oe-2026-cem-euros-ministerio-agricultura-e-mar",
+        "oe-2026-cem-euros-ministerio-ambiente-e-energia",
+        "oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto",
+        "oe-2026-cem-euros-ministerio-defesa-nacional",
+        "oe-2026-cem-euros-ministerio-economia-e-coesao-territorial",
+        "oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao",
+        "oe-2026-cem-euros-ministerio-financas",
+        "oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao",
+        "oe-2026-cem-euros-ministerio-justica",
+        "oe-2026-cem-euros-ministerio-negocios-estrangeiros",
+        "oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros",
+        "oe-2026-cem-euros-ministerio-reforma-do-estado",
+        "oe-2026-cem-euros-ministerio-saude",
+        "oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social"
+      ],
+      "folhas": [
+        {
+          "pt": "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê. A definição de despesa bruta por palavras está por confirmar na fonte.",
+          "en": "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget. The definition of gross expenditure in words is to be confirmed at source.",
+          "partes": [
+            {
+              "pt": "É quanto vai para este ministério em cada cem euros, dividindo pela despesa bruta da administração central",
+              "en": "It is the amount for this ministry out of every hundred euros, dividing by central administration’s gross expenditure",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "pela despesa bruta da administração central, multiplicar por cem"
+                }
+              ]
+            },
+            {
+              "pt": " que o Orçamento prevê",
+              "en": " planned in the Budget",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento aprovado"
+                }
+              ]
+            },
+            {
+              "classe": "ausencia-definicao",
+              "pt": ". A definição de despesa bruta por palavras está por confirmar na fonte.",
+              "en": ". The definition of gross expenditure in words is to be confirmed at source."
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+          "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
+          "porque": "origem rp4n-orcamento"
+        },
+        {
+          "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+          "sha256": "ff78d7a1f5629129d2c2a21f3dd06faae5623ebc1b5a3f83f92e471e2434d050",
+          "porque": "recibo rp4n-orcamento"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado"
+      ],
+      "linhas": [
+        "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado"
+      ],
+      "folhas": [
+        {
+          "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros, dividindo pela despesa bruta da administração central que o Orçamento prevê; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania. A definição de despesa bruta por palavras está por confirmar na fonte.",
+          "en": "It is the amount for the general charges of the State out of every hundred euros, dividing by central administration’s gross expenditure planned in the Budget; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies. The definition of gross expenditure in words is to be confirmed at source.",
+          "partes": [
+            {
+              "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros, dividindo pela despesa bruta da administração central",
+              "en": "It is the amount for the general charges of the State out of every hundred euros, dividing by central administration’s gross expenditure",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "Dividir a despesa bruta dos Encargos Gerais do Estado pela despesa bruta da administração central, multiplicar por cem"
+                }
+              ]
+            },
+            {
+              "pt": " que o Orçamento prevê",
+              "en": " planned in the Budget",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento aprovado"
+                }
+              ]
+            },
+            {
+              "pt": "; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania",
+              "en": "; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "A igualdade referida na ressalva compara os Encargos Gerais do Estado com o programa 001, Órgãos de Soberania"
+                }
+              ]
+            },
+            {
+              "classe": "ausencia-definicao",
+              "pt": ". A definição de despesa bruta por palavras está por confirmar na fonte.",
+              "en": ". The definition of gross expenditure in words is to be confirmed at source."
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+          "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
+          "porque": "origem rp4n-orcamento"
+        },
+        {
+          "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+          "sha256": "ff78d7a1f5629129d2c2a21f3dd06faae5623ebc1b5a3f83f92e471e2434d050",
+          "porque": "recibo rp4n-orcamento"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "oe-2026-despesa-efetiva-administracao-central-seguranca-social"
+      ],
+      "linhas": [
+        "oe-2026-despesa-efetiva-administracao-central-seguranca-social"
+      ],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva da administração central e da segurança social, somadas sem as transferências entre os seus serviços: o que gastam sem contar as operações com ativos e passivos financeiros. O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+          "en": "It is the effective expenditure of central administration and social security, added together without the transfers between their services: what they spend without counting transactions in financial assets and liabilities. The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva da administração central e da segurança social, somadas sem as transferências entre os seus serviços",
+              "en": "It is the effective expenditure of central administration and social security, added together without the transfers between their services",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "Despesa efetiva"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "ressalva",
+                  "literal": "transferências internas entre os serviços considerados"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Administração Central e Segurança Social"
+                }
+              ]
+            },
+            {
+              "pt": ": o que gastam sem contar as operações com ativos e passivos financeiros.",
+              "en": ": what they spend without counting transactions in financial assets and liabilities.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-despesa-efetiva",
+                  "campo": "excerto",
+                  "literal": "financeiros"
+                }
+              ]
+            },
+            {
+              "pt": " O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+              "en": " The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento\nInicial"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "2026"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Período: janeiro a agosto"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+          "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
+          "porque": "documento da linha oe-2026-despesa-efetiva-administracao-central-seguranca-social"
+        },
+        {
+          "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+          "sha256": "ff78d7a1f5629129d2c2a21f3dd06faae5623ebc1b5a3f83f92e471e2434d050",
+          "porque": "recibo rp4n-ac-ss-orcamento"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "oe-2026-receita-efetiva-administracao-central-seguranca-social"
+      ],
+      "linhas": [
+        "oe-2026-receita-efetiva-administracao-central-seguranca-social"
+      ],
+      "folhas": [
+        {
+          "pt": "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior. O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+          "en": "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year. The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
+          "partes": [
+            {
+              "pt": "É a receita efetiva da administração central e da segurança social",
+              "en": "It is the effective revenue of central administration and social security",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "Receita efetiva"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Administração Central e Segurança Social"
+                }
+              ]
+            },
+            {
+              "pt": ": o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.",
+              "en": ": what they take in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-receita-efetiva",
+                  "campo": "excerto",
+                  "literal": "financeiros"
+                },
+                {
+                  "origem": "rp4n-receita-efetiva",
+                  "campo": "excerto",
+                  "literal": "saldos de gerência"
+                },
+                {
+                  "origem": "rp4n-saldos-gerencia",
+                  "campo": "excerto",
+                  "literal": "gerência (ano) anterior."
+                }
+              ]
+            },
+            {
+              "pt": " O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+              "en": " The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento\nInicial"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "2026"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Período: janeiro a agosto"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+          "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
+          "porque": "documento da linha oe-2026-receita-efetiva-administracao-central-seguranca-social"
+        },
+        {
+          "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+          "sha256": "ff78d7a1f5629129d2c2a21f3dd06faae5623ebc1b5a3f83f92e471e2434d050",
+          "porque": "recibo rp4n-ac-ss-orcamento"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "oe-2026-saldo-global-administracao-central",
+        "execucao-2026-07-saldo-global-administracao-central",
+        "execucao-2026-08-saldo-global-administracao-central"
+      ],
+      "linhas": [
+        "execucao-2026-07-saldo-global-administracao-central",
+        "execucao-2026-08-saldo-global-administracao-central",
+        "oe-2026-saldo-global-administracao-central"
+      ],
+      "folhas": [
+        {
+          "pt": "É o saldo global da administração central: a diferença entre o que ela recebe e o que gasta, sem contar as operações com ativos e passivos financeiros; negativo quer dizer que gastou mais do que recebeu.",
+          "en": "It is central administration’s overall balance: the difference between what it takes in and what it spends, without counting transactions in financial assets and liabilities; negative means it spent more than it took in.",
+          "partes": [
+            {
+              "pt": "É o saldo global da administração central",
+              "en": "It is central administration’s overall balance",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "ou": [
+                    {
+                      "linha": "propria",
+                      "campo": "name",
+                      "literal": "SALDO GLOBAL"
+                    },
+                    {
+                      "linha": "propria",
+                      "campo": "name",
+                      "literal": "Saldo global"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "pt": ": a diferença entre o que ela recebe e o que gasta, sem contar as operações com ativos e passivos financeiros; negativo quer dizer que gastou mais do que recebeu.",
+              "en": ": the difference between what it takes in and what it spends, without counting transactions in financial assets and liabilities; negative means it spent more than it took in.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-saldo",
+                  "campo": "excerto",
+                  "literal": "Diferença entre a receita efetiva e a despesa"
+                },
+                {
+                  "ou": [
+                    {
+                      "linha": "propria",
+                      "campo": "ressalva",
+                      "literal": "receita e despesa efetivas excluem-nas"
+                    },
+                    {
+                      "origem": "rp4n-saldo",
+                      "campo": "excerto",
+                      "literal": "Diferença entre a receita efetiva e a despesa"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+          "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
+          "porque": "documento da linha execucao-2026-08-saldo-global-administracao-central"
+        },
+        {
+          "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+          "sha256": "ff78d7a1f5629129d2c2a21f3dd06faae5623ebc1b5a3f83f92e471e2434d050",
+          "porque": "recibo rp4n-saldo"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "execucao-2026-07-saldo-global-administracoes-publicas-contabilidade-publica"
+      ],
+      "linhas": [
+        "execucao-2026-07-saldo-global-administracoes-publicas-contabilidade-publica"
+      ],
+      "folhas": [
+        {
+          "pt": "É o saldo global de todas as administrações públicas, contado em contabilidade pública: a diferença entre o que recebem e o que gastam.",
+          "en": "It is the overall balance of all general government, counted in public accounting: the difference between what they take in and what they spend.",
+          "partes": [
+            {
+              "pt": "É o saldo global de todas as administrações públicas, contado em contabilidade pública",
+              "en": "It is the overall balance of all general government, counted in public accounting",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "SALDO GLOBAL DAS AP EM CP"
+                }
+              ]
+            },
+            {
+              "pt": ": a diferença entre o que recebem e o que gastam.",
+              "en": ": the difference between what they take in and what they spend.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-saldo",
+                  "campo": "excerto",
+                  "literal": "Diferença entre a receita efetiva e a despesa"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+          "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
+          "porque": "origem rp4n-saldo"
+        },
+        {
+          "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+          "sha256": "ff78d7a1f5629129d2c2a21f3dd06faae5623ebc1b5a3f83f92e471e2434d050",
+          "porque": "recibo rp4n-saldo"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social"
+      ],
+      "linhas": [
+        "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social"
+      ],
+      "folhas": [
+        {
+          "pt": "É o que a administração central e a segurança social puseram em ativos financeiros, descontados os reembolsos que receberam (a fonte chama-lhes ativos financeiros líquidos de reembolsos). O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+          "en": "It is what central administration and social security put into financial assets, less the repayments they received (the source calls them financial assets net of repayments). The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
+          "partes": [
+            {
+              "pt": "É o que a administração central e a segurança social puseram em ativos financeiros, descontados os reembolsos que receberam",
+              "en": "It is what central administration and social security put into financial assets, less the repayments they received",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "Ativos financeiros líquidos de reembolsos"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Administração Central e Segurança Social"
+                }
+              ]
+            },
+            {
+              "pt": " (a fonte chama-lhes ativos financeiros líquidos de reembolsos).",
+              "en": " (the source calls them financial assets net of repayments).",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "Ativos financeiros líquidos de reembolsos"
+                }
+              ]
+            },
+            {
+              "pt": " O valor vem da coluna do Orçamento Inicial de dois mil e vinte e seis, num quadro que apresenta também a execução acumulada de janeiro a agosto.",
+              "en": " The value comes from the Initial Budget column for twenty twenty-six, in a table that also presents cumulative execution from January to August.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Orçamento\nInicial"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "2026"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
+                  "campo": "excerto",
+                  "literal": "Período: janeiro a agosto"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+          "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
+          "porque": "documento da linha oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social"
+        },
+        {
+          "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+          "sha256": "ff78d7a1f5629129d2c2a21f3dd06faae5623ebc1b5a3f83f92e471e2434d050",
+          "porque": "recibo rp4n-ac-ss-orcamento"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "evora-concentracao-vab4",
+        "portugal-concentracao-vab4"
+      ],
+      "linhas": [
+        "evora-concentracao-vab4-2024",
+        "portugal-concentracao-vab4-2024"
+      ],
+      "folhas": [
+        {
+          "pt": "É a parte do valor acrescentado bruto das empresas que cabe às quatro maiores; o valor acrescentado bruto é o valor do que se produz menos o valor dos bens e serviços consumidos para o produzir.",
+          "en": "It is the share of companies’ gross value added that goes to the four largest; gross value added is the value of what is produced minus the value of the goods and services used up in producing it.",
+          "partes": [
+            {
+              "pt": "É a parte do valor acrescentado bruto das empresas que cabe às quatro maiores",
+              "en": "It is the share of companies’ gross value added that goes to the four largest",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "Indicador de concentração do valor acrescentado bruto das quatro maiores empresas"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "unit",
+                  "literal": "% do VAB empresarial"
+                }
+              ]
+            },
+            {
+              "pt": "; o valor acrescentado bruto é o valor do que se produz menos o valor dos bens e serviços consumidos para o produzir.",
+              "en": "; gross value added is the value of what is produced minus the value of the goods and services used up in producing it.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-vab",
+                  "campo": "excerto",
+                  "literal": "It is\noutput valued at basic prices less intermediate consumption valued at purchasers’ prices."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/13 Dominios/source/rp4n/eurostat-esa2010-KS-02-13-269-EN.pdf",
+          "sha256": "9569393aefd24d7fed20e55f30e68850148004e45c70dd5af4eda73214349858",
+          "porque": "segunda fonte de portugal-concentracao-vab4-2024"
+        },
+        {
+          "motor": "content/13 Dominios/source/rp4n/eurostat-esa2010-KS-02-13-269-EN.pdf.pedido.json",
+          "sha256": "bd78c85a9bb3029e72cf50d4a5ee2403c3a54b6af09455ca15719b7837d87f0a",
+          "porque": "recibo rp4n-vab"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "evora-vab-empresarial"
+      ],
+      "linhas": [
+        "evora-vab-empresarial-2024"
+      ],
+      "folhas": [
+        {
+          "pt": "É o valor acrescentado bruto das empresas do concelho, somado sobre todas as atividades: o valor do que produzem menos o valor dos bens e serviços consumidos para o produzir.",
+          "en": "It is the gross value added of the municipality’s companies, added up over all activities: the value of what they produce minus the value of the goods and services used up in producing it.",
+          "partes": [
+            {
+              "pt": "É o valor acrescentado bruto das empresas do concelho, somado sobre todas as atividades",
+              "en": "It is the gross value added of the municipality’s companies, added up over all activities",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "Valor acrescentado bruto (€) das Empresas por Localização geográfica"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "document.locator",
+                  "literal": "total das divisões CAE"
+                }
+              ]
+            },
+            {
+              "pt": ": o valor do que produzem menos o valor dos bens e serviços consumidos para o produzir.",
+              "en": ": the value of what they produce minus the value of the goods and services used up in producing it.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-vab",
+                  "campo": "excerto",
+                  "literal": "It is\noutput valued at basic prices less intermediate consumption valued at purchasers’ prices."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/13 Dominios/source/rp4n/eurostat-esa2010-KS-02-13-269-EN.pdf",
+          "sha256": "9569393aefd24d7fed20e55f30e68850148004e45c70dd5af4eda73214349858",
+          "porque": "segunda fonte de evora-vab-empresarial-2024"
+        },
+        {
+          "motor": "content/13 Dominios/source/rp4n/eurostat-esa2010-KS-02-13-269-EN.pdf.pedido.json",
+          "sha256": "bd78c85a9bb3029e72cf50d4a5ee2403c3a54b6af09455ca15719b7837d87f0a",
+          "porque": "recibo rp4n-vab"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "evora-divida-total"
+      ],
+      "linhas": [
+        "evora-divida-total-2017",
+        "evora-divida-total-2021",
+        "evora-divida-total-2024",
+        "evora-divida-total-2025"
+      ],
+      "folhas": [
+        {
+          "pt": "É a dívida total de operações orçamentais da câmara no fim do ano, pelas contas da própria câmara.",
+          "en": "It is the council’s total debt from budget operations at year end, from the council’s own accounts.",
+          "partes": [
+            {
+              "pt": "É a dívida total de operações orçamentais da câmara no fim do ano",
+              "en": "It is the council’s total debt from budget operations at year end",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "ou": [
+                    {
+                      "linha": "propria",
+                      "campo": "name",
+                      "literal": "DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS"
+                    },
+                    {
+                      "linha": "propria",
+                      "campo": "excerpt",
+                      "literal": "Dívida Total de Operações Orçamentais"
+                    }
+                  ]
+                },
+                {
+                  "origem": "c1c-dgal-limites",
+                  "campo": "excerto",
+                  "literal": "A dívida total de operações orçamentais do município"
+                }
+              ]
+            },
+            {
+              "pt": ", pelas contas da própria câmara.",
+              "en": ", from the council’s own accounts.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "source",
+                  "literal": "Município de Évora"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "indicators/out/c1c-2026-09-28/dgal-limites-canonico.html",
+          "sha256": "f03ce2507f02645dda63c8a366f05ea95e8e5e6e85817dd57c60b6bdf13ed818",
+          "porque": "segunda fonte de evora-divida-total-2025"
+        },
+        {
+          "motor": "content/13 Dominios/source/rp4n/evora-gestao.pdf",
+          "sha256": "be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a",
+          "porque": "documento da linha evora-divida-total-2021"
+        },
+        {
+          "motor": "content/13 Dominios/source/rp4n/evora-contas.pdf",
+          "sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f",
+          "porque": "documento da linha evora-divida-total-2025"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "evora-excesso-endividamento"
+      ],
+      "linhas": [
+        "evora-excesso-endividamento-2014",
+        "evora-excesso-endividamento-2019"
+      ],
+      "folhas": [
+        {
+          "pt": "É o montante em que a dívida da câmara passava do limite legal, pelas contas da própria câmara.",
+          "en": "It is the amount by which the council’s debt exceeded the legal limit, from the council’s own accounts.",
+          "partes": [
+            {
+              "pt": "É o montante em que a dívida da câmara passava do limite legal",
+              "en": "It is the amount by which the council’s debt exceeded the legal limit",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Montante em Excesso"
+                },
+                {
+                  "origem": "c1c-dgal-limites",
+                  "campo": "excerto",
+                  "literal": "A dívida total de operações orçamentais do município"
+                }
+              ]
+            },
+            {
+              "pt": ", pelas contas da própria câmara.",
+              "en": ", from the council’s own accounts.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "source",
+                  "literal": "Município de Évora"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Relatório de Gestão"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/13 Dominios/source/rp4n/evora-gestao.pdf",
+          "sha256": "be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a",
+          "porque": "documento da linha evora-excesso-endividamento-2019"
+        },
+        {
+          "motor": "indicators/out/c1c-2026-09-28/dgal-limites-canonico.html",
+          "sha256": "f03ce2507f02645dda63c8a366f05ea95e8e5e6e85817dd57c60b6bdf13ed818",
+          "porque": "segunda fonte de evora-excesso-endividamento-2019"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "evora-limite-divida"
+      ],
+      "linhas": [
+        "evora-limite-divida-2025"
+      ],
+      "folhas": [
+        {
+          "pt": "É o máximo de dívida que a lei deixa a câmara ter no fim do ano: uma vez e meia a média da receita corrente líquida dos três anos anteriores, pelas contas da própria câmara.",
+          "en": "It is the most debt the law lets the council have at year end: one and a half times the average net current revenue of the previous three years, from the council’s own accounts.",
+          "partes": [
+            {
+              "pt": "É o máximo de dívida que a lei deixa a câmara ter no fim do ano: uma vez e meia a média da receita corrente líquida dos três anos anteriores",
+              "en": "It is the most debt the law lets the council have at year end: one and a half times the average net current revenue of the previous three years",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "LIMITE = Média dos Últimos 3 Exercícios * 1,5"
+                },
+                {
+                  "origem": "c1c-dgal-limites",
+                  "campo": "excerto",
+                  "literal": "não pode ultrapassar, em 31 de dezembro de cada ano, 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores"
+                }
+              ]
+            },
+            {
+              "pt": ", pelas contas da própria câmara.",
+              "en": ", from the council’s own accounts.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "source",
+                  "literal": "Município de Évora"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/13 Dominios/source/rp4n/evora-contas.pdf",
+          "sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f",
+          "porque": "documento da linha evora-limite-divida-2025"
+        },
+        {
+          "motor": "indicators/out/c1c-2026-09-28/dgal-limites-canonico.html",
+          "sha256": "f03ce2507f02645dda63c8a366f05ea95e8e5e6e85817dd57c60b6bdf13ed818",
+          "porque": "segunda fonte de evora-limite-divida-2025"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "evora-margem-endividamento"
+      ],
+      "linhas": [
+        "evora-margem-endividamento-2025"
+      ],
+      "folhas": [
+        {
+          "pt": "É quanto a câmara ainda podia dever até chegar ao limite legal da dívida, no fim do ano, pela prestação de contas.",
+          "en": "It is how much more the council could still owe before reaching the legal debt limit, at year end, from its annual accounts.",
+          "partes": [
+            {
+              "pt": "É quanto a câmara ainda podia dever até chegar ao limite legal da dívida, no fim do ano",
+              "en": "It is how much more the council could still owe before reaching the legal debt limit, at year end",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "margem de endividamento absoluta"
+                },
+                {
+                  "origem": "c1c-dgal-limites",
+                  "campo": "excerto",
+                  "literal": "não pode ultrapassar, em 31 de dezembro de cada ano"
+                }
+              ]
+            },
+            {
+              "pt": ", pela prestação de contas.",
+              "en": ", from its annual accounts.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "document.title",
+                  "literal": "Prestação de Contas"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/13 Dominios/source/rp4n/evora-contas.pdf",
+          "sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f",
+          "porque": "documento da linha evora-margem-endividamento-2025"
+        },
+        {
+          "motor": "indicators/out/c1c-2026-09-28/dgal-limites-canonico.html",
+          "sha256": "f03ce2507f02645dda63c8a366f05ea95e8e5e6e85817dd57c60b6bdf13ed818",
+          "porque": "segunda fonte de evora-margem-endividamento-2025"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "evora-prr-execucao"
+      ],
+      "linhas": [
+        "evora-prr-execucao-2026"
+      ],
+      "folhas": [
+        {
+          "pt": "É a parte das verbas do Plano de Recuperação e Resiliência contratadas por beneficiários intermediários e diretos com sede no concelho que já foi paga.",
+          "en": "It is the share of Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality that has already been paid.",
+          "partes": [
+            {
+              "pt": "É a parte das verbas do Plano de Recuperação e Resiliência contratadas por beneficiários intermediários e diretos com sede no concelho que já foi paga.",
+              "en": "It is the share of Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality that has already been paid.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "As verbas pagas a beneficiários intermediários e diretos com sede em Évora"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/13 Dominios/source/rp4n/prr/listagem-de-entidades-prr-20260819.xlsx",
+          "sha256": "34f6e5b555f5cdbfcdc35535cd3e0e27717c6ad5ef681905d8d7620fffb7fe3b",
+          "porque": "ficheiro da computação"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "evora-prr-vencido-quota"
+      ],
+      "linhas": [
+        "evora-prr-vencido-quota-2026"
+      ],
+      "folhas": [
+        {
+          "pt": "É a parte das verbas contratadas por beneficiários intermediários e diretos com sede no concelho em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada.",
+          "en": "It is the share of funds contracted by intermediate and direct beneficiaries headquartered in the municipality in projects with a completion deadline before the snapshot and no completion recorded.",
+          "partes": [
+            {
+              "pt": "É a parte das verbas contratadas por beneficiários intermediários e diretos com sede no concelho em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada.",
+              "en": "It is the share of funds contracted by intermediate and direct beneficiaries headquartered in the municipality in projects with a completion deadline before the snapshot and no completion recorded.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "As verbas contratadas por beneficiários intermediários e diretos com sede em Évora em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/13 Dominios/source/rp4n/prr/listagem-de-entidades-prr-20260819.xlsx",
+          "sha256": "34f6e5b555f5cdbfcdc35535cd3e0e27717c6ad5ef681905d8d7620fffb7fe3b",
+          "porque": "ficheiro da computação"
+        },
+        {
+          "motor": "content/13 Dominios/source/rp4n/prr/listagem-de-projetos-prr-20260819.xlsx",
+          "sha256": "121122320839671b5e86f114ee24dff5296cc30444327812872510e41b85d6ea",
+          "porque": "ficheiro da computação"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "avisos-pt2030-abertos"
+      ],
+      "linhas": [
+        "avisos-pt2030-abertos"
+      ],
+      "folhas": [
+        {
+          "pt": "Por confirmar na fonte.",
+          "en": "To be confirmed at source.",
+          "partes": [
+            {
+              "classe": "retirada",
+              "pt": "Por confirmar na fonte.",
+              "en": "To be confirmed at source."
+            }
+          ]
+        }
+      ],
+      "ficheiros": [],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "avisos-pt2030-pessoas-singulares"
+      ],
+      "linhas": [
+        "avisos-pt2030-pessoas-singulares"
+      ],
+      "folhas": [
+        {
+          "pt": "Por confirmar na fonte.",
+          "en": "To be confirmed at source.",
+          "partes": [
+            {
+              "classe": "retirada",
+              "pt": "Por confirmar na fonte.",
+              "en": "To be confirmed at source."
+            }
+          ]
+        }
+      ],
+      "ficheiros": [],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "ciclo-substituicao-condutas"
+      ],
+      "linhas": [
+        "ciclo-substituicao-condutas"
+      ],
+      "folhas": [
+        {
+          "pt": "Por confirmar na fonte.",
+          "en": "To be confirmed at source.",
+          "partes": [
+            {
+              "classe": "retirada",
+              "pt": "Por confirmar na fonte.",
+              "en": "To be confirmed at source."
+            }
+          ]
+        }
+      ],
+      "ficheiros": [],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "agua-nao-faturada-portugal"
+      ],
+      "linhas": [
+        "agua-nao-faturada-portugal-2024"
+      ],
+      "folhas": [
+        {
+          "pt": "É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta.",
+          "en": "It is the share of water entering the system that is not billed by retail operators in mainland Portugal. The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment.",
+          "partes": [
+            {
+              "pt": "É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental.",
+              "en": "It is the share of water entering the system that is not billed by retail operators in mainland Portugal.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-agua-nao-faturada",
+                  "campo": "excerto",
+                  "literal": "percentagem de água entrada\nno sistema que não é faturada"
+                },
+                {
+                  "origem": "rp4n-agua-ambito",
+                  "campo": "excerto",
+                  "literal": "Avaliação em Portugal continental"
+                },
+                {
+                  "origem": "rp4n-agua-ambito",
+                  "campo": "excerto",
+                  "literal": "AA08 baixa"
+                }
+              ]
+            },
+            {
+              "pt": " A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta.",
+              "en": " The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-agua-ambito",
+                  "campo": "excerto",
+                  "literal": "(para 93 % de EG)"
+                },
+                {
+                  "origem": "rp4n-agua-ambito",
+                  "campo": "excerto",
+                  "literal": "AA08 alta"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/13 Dominios/source/rp4n/rasarp2025-volume1.pdf",
+          "sha256": "cd913fa3af3c782154fbf015c74d4b93005c2fc7f65741e33ac27aba6a829a67",
+          "porque": "documento da linha agua-nao-faturada-portugal-2024"
+        },
+        {
+          "motor": "content/13 Dominios/source/rp4n/rasarp2025-volume1.pedido.json",
+          "sha256": "92a4d4d4c2f4a1bde5a2c44bd58e4fb1b82c322872b41ca6810cd9e5f204586a",
+          "porque": "recibo rp4n-agua-ambito"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "penalizacao-antecipacao-um-ano-neutra"
+      ],
+      "linhas": [
+        "penalizacao-antecipacao-um-ano-neutra"
+      ],
+      "folhas": [
+        {
+          "pt": "É a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que mantém igual o valor atual esperado entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação.",
+          "en": "It is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that keeps the expected present value equal between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty.",
+          "partes": [
+            {
+              "pt": "É a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano",
+              "en": "It is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pensao-estimativa",
+                  "campo": "excerto",
+                  "literal": "estimativa preliminar dos factores de ajustamento actuarial neutrais"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Decrementos por reforma antecipada: caso geral"
+                }
+              ]
+            },
+            {
+              "pt": ": a redução que mantém igual o valor atual esperado entre reformar-se já e adiar a reforma um ano",
+              "en": ": the reduction that keeps the expected present value equal between retiring now and postponing retirement by one year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pensao-neutralidade",
+                  "campo": "excerto",
+                  "literal": "financeiramente indiferente, em termos de valor actual esperado"
+                }
+              ]
+            },
+            {
+              "pt": ", contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados.",
+              "en": ", including contributions no longer paid and pension rights no longer accrued.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pensao-direitos",
+                  "campo": "excerto",
+                  "literal": "no esforço contributivo e no"
+                },
+                {
+                  "origem": "pensao-direitos",
+                  "campo": "excerto",
+                  "literal": "acréscimo de direitos sobre o sistema de pensões"
+                }
+              ]
+            },
+            {
+              "pt": " Não é a penalização legal por antecipação.",
+              "en": " It is not the statutory early-retirement penalty.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pensao-legal",
+                  "campo": "excerto",
+                  "literal": "essa penalização isolada tende a ficar abaixo do valor actuarialmente neutral"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/13 Dominios/source/rp4n/pensoes-copia-alojada.pdf",
+          "sha256": "555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366",
+          "porque": "cópia anteriormente alojada da pensão, conferida na extração"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "penalizacao-legal-um-ano-antecipacao"
+      ],
+      "linhas": [
+        "penalizacao-legal-um-ano-antecipacao-2026"
+      ],
+      "folhas": [
+        {
+          "pt": "É a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+          "en": "It is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
+          "partes": [
+            {
+              "pt": "É a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+              "en": "It is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "a penalização legal"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "equivalente a cerca de 6% por ano"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "source",
+                  "literal": "Grupo de Trabalho para a Reforma da Segurança Social"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/13 Dominios/source/rp4n/pensoes-copia-alojada.pdf",
+          "sha256": "555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366",
+          "porque": "documento da linha penalizacao-legal-um-ano-antecipacao-2026"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "indice-de-divida-limite-legal"
+      ],
+      "linhas": [
+        "indice-de-divida-limite-legal"
+      ],
+      "folhas": [
+        {
+          "pt": "É o teto que a lei fixa ao índice de dívida das câmaras: a dívida não pode passar de uma vez e meia a média da receita corrente líquida cobrada nos três anos anteriores.",
+          "en": "It is the ceiling that the law sets on the councils’ debt index: debt may not exceed one and a half times the average net current revenue collected in the previous three years.",
+          "partes": [
+            {
+              "pt": "É o teto que a lei fixa ao índice de dívida das câmaras",
+              "en": "It is the ceiling that the law sets on the councils’ debt index",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Índice de divida total (Índice permitido <= 150%)"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "document.locator",
+                  "literal": "LIMITE À DÍVIDA TOTAL — LEI 73/2013 (ART. 52º)"
+                }
+              ]
+            },
+            {
+              "pt": ": a dívida não pode passar de uma vez e meia a média da receita corrente líquida cobrada nos três anos anteriores.",
+              "en": ": debt may not exceed one and a half times the average net current revenue collected in the previous three years.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "c1c-dgal-limites",
+                  "campo": "excerto",
+                  "literal": "não pode ultrapassar, em 31 de dezembro de cada ano, 1,5 vezes a média da receita corrente líquida cobrada nos três exercícios anteriores"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "indicators/out/c1c-2026-09-28/dgal-limites-canonico.html",
+          "sha256": "f03ce2507f02645dda63c8a366f05ea95e8e5e6e85817dd57c60b6bdf13ed818",
+          "porque": "segunda fonte de indice-de-divida-limite-legal"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    },
+    {
+      "familias": [
+        "concelho:desempregoRegistado"
+      ],
+      "linhas": [
+        "abrantes-desemprego-registado-2025-12",
+        "agueda-desemprego-registado-2025-12",
+        "aguiar-da-beira-desemprego-registado-2025-12",
+        "alandroal-desemprego-registado-2025-12",
+        "albergaria-a-velha-desemprego-registado-2025-12",
+        "albufeira-desemprego-registado-2025-12",
+        "alcacer-do-sal-desemprego-registado-2025-12",
+        "alcanena-desemprego-registado-2025-12",
+        "alcobaca-desemprego-registado-2025-12",
+        "alcochete-desemprego-registado-2025-12",
+        "alcoutim-desemprego-registado-2025-12",
+        "alenquer-desemprego-registado-2025-12",
+        "alfandega-da-fe-desemprego-registado-2025-12",
+        "alijo-desemprego-registado-2025-12",
+        "aljezur-desemprego-registado-2025-12",
+        "aljustrel-desemprego-registado-2025-12",
+        "almada-desemprego-registado-2025-12",
+        "almeida-desemprego-registado-2025-12",
+        "almeirim-desemprego-registado-2025-12",
+        "almodovar-desemprego-registado-2025-12",
+        "alpiarca-desemprego-registado-2025-12",
+        "alter-do-chao-desemprego-registado-2025-12",
+        "alvaiazere-desemprego-registado-2025-12",
+        "alvito-desemprego-registado-2025-12",
+        "amadora-desemprego-registado-2025-12",
+        "amarante-desemprego-registado-2025-12",
+        "amares-desemprego-registado-2025-12",
+        "anadia-desemprego-registado-2025-12",
+        "angra-do-heroismo-desemprego-registado-2025-12",
+        "ansiao-desemprego-registado-2025-12",
+        "arcos-de-valdevez-desemprego-registado-2025-12",
+        "arganil-desemprego-registado-2025-12",
+        "armamar-desemprego-registado-2025-12",
+        "arouca-desemprego-registado-2025-12",
+        "arraiolos-desemprego-registado-2025-12",
+        "arronches-desemprego-registado-2025-12",
+        "arruda-dos-vinhos-desemprego-registado-2025-12",
+        "aveiro-desemprego-registado-2025-12",
+        "avis-desemprego-registado-2025-12",
+        "azambuja-desemprego-registado-2025-12",
+        "baiao-desemprego-registado-2025-12",
+        "barcelos-desemprego-registado-2025-12",
+        "barrancos-desemprego-registado-2025-12",
+        "barreiro-desemprego-registado-2025-12",
+        "batalha-desemprego-registado-2025-12",
+        "beja-desemprego-registado-2025-12",
+        "belmonte-desemprego-registado-2025-12",
+        "benavente-desemprego-registado-2025-12",
+        "bombarral-desemprego-registado-2025-12",
+        "borba-desemprego-registado-2025-12",
+        "boticas-desemprego-registado-2025-12",
+        "braga-desemprego-registado-2025-12",
+        "braganca-desemprego-registado-2025-12",
+        "cabeceiras-de-basto-desemprego-registado-2025-12",
+        "cadaval-desemprego-registado-2025-12",
+        "caldas-da-rainha-desemprego-registado-2025-12",
+        "calheta-de-sao-jorge-desemprego-registado-2025-12",
+        "calheta-desemprego-registado-2025-12",
+        "camara-de-lobos-desemprego-registado-2025-12",
+        "caminha-desemprego-registado-2025-12",
+        "campo-maior-desemprego-registado-2025-12",
+        "cantanhede-desemprego-registado-2025-12",
+        "carrazeda-de-ansiaes-desemprego-registado-2025-12",
+        "carregal-do-sal-desemprego-registado-2025-12",
+        "cartaxo-desemprego-registado-2025-12",
+        "cascais-desemprego-registado-2025-12",
+        "castanheira-de-pera-desemprego-registado-2025-12",
+        "castelo-branco-desemprego-registado-2025-12",
+        "castelo-de-paiva-desemprego-registado-2025-12",
+        "castelo-de-vide-desemprego-registado-2025-12",
+        "castro-daire-desemprego-registado-2025-12",
+        "castro-marim-desemprego-registado-2025-12",
+        "castro-verde-desemprego-registado-2025-12",
+        "celorico-da-beira-desemprego-registado-2025-12",
+        "celorico-de-basto-desemprego-registado-2025-12",
+        "chamusca-desemprego-registado-2025-12",
+        "chaves-desemprego-registado-2025-12",
+        "cinfaes-desemprego-registado-2025-12",
+        "coimbra-desemprego-registado-2025-12",
+        "condeixa-a-nova-desemprego-registado-2025-12",
+        "constancia-desemprego-registado-2025-12",
+        "coruche-desemprego-registado-2025-12",
+        "corvo-desemprego-registado-2025-12",
+        "covilha-desemprego-registado-2025-12",
+        "crato-desemprego-registado-2025-12",
+        "cuba-desemprego-registado-2025-12",
+        "elvas-desemprego-registado-2025-12",
+        "entroncamento-desemprego-registado-2025-12",
+        "espinho-desemprego-registado-2025-12",
+        "esposende-desemprego-registado-2025-12",
+        "estarreja-desemprego-registado-2025-12",
+        "estremoz-desemprego-registado-2025-12",
+        "evora-desemprego-registado-2025-12",
+        "fafe-desemprego-registado-2025-12",
+        "faro-desemprego-registado-2025-12",
+        "felgueiras-desemprego-registado-2025-12",
+        "ferreira-do-alentejo-desemprego-registado-2025-12",
+        "ferreira-do-zezere-desemprego-registado-2025-12",
+        "figueira-da-foz-desemprego-registado-2025-12",
+        "figueira-de-castelo-rodrigo-desemprego-registado-2025-12",
+        "figueiro-dos-vinhos-desemprego-registado-2025-12",
+        "fornos-de-algodres-desemprego-registado-2025-12",
+        "freixo-de-espada-a-cinta-desemprego-registado-2025-12",
+        "fronteira-desemprego-registado-2025-12",
+        "funchal-desemprego-registado-2025-12",
+        "fundao-desemprego-registado-2025-12",
+        "gaviao-desemprego-registado-2025-12",
+        "gois-desemprego-registado-2025-12",
+        "golega-desemprego-registado-2025-12",
+        "gondomar-desemprego-registado-2025-12",
+        "gouveia-desemprego-registado-2025-12",
+        "grandola-desemprego-registado-2025-12",
+        "guarda-desemprego-registado-2025-12",
+        "guimaraes-desemprego-registado-2025-12",
+        "horta-desemprego-registado-2025-12",
+        "idanha-a-nova-desemprego-registado-2025-12",
+        "ilhavo-desemprego-registado-2025-12",
+        "lagoa-faro-desemprego-registado-2025-12",
+        "lagoa-ilha-de-sao-miguel-desemprego-registado-2025-12",
+        "lagos-desemprego-registado-2025-12",
+        "lajes-das-flores-desemprego-registado-2025-12",
+        "lajes-do-pico-desemprego-registado-2025-12",
+        "lamego-desemprego-registado-2025-12",
+        "leiria-desemprego-registado-2025-12",
+        "lisboa-desemprego-registado-2025-12",
+        "loule-desemprego-registado-2025-12",
+        "loures-desemprego-registado-2025-12",
+        "lourinha-desemprego-registado-2025-12",
+        "lousa-desemprego-registado-2025-12",
+        "lousada-desemprego-registado-2025-12",
+        "macao-desemprego-registado-2025-12",
+        "macedo-de-cavaleiros-desemprego-registado-2025-12",
+        "machico-desemprego-registado-2025-12",
+        "madalena-desemprego-registado-2025-12",
+        "mafra-desemprego-registado-2025-12",
+        "maia-desemprego-registado-2025-12",
+        "mangualde-desemprego-registado-2025-12",
+        "manteigas-desemprego-registado-2025-12",
+        "marco-de-canaveses-desemprego-registado-2025-12",
+        "marinha-grande-desemprego-registado-2025-12",
+        "marvao-desemprego-registado-2025-12",
+        "matosinhos-desemprego-registado-2025-12",
+        "mealhada-desemprego-registado-2025-12",
+        "meda-desemprego-registado-2025-12",
+        "melgaco-desemprego-registado-2025-12",
+        "mertola-desemprego-registado-2025-12",
+        "mesao-frio-desemprego-registado-2025-12",
+        "mira-desemprego-registado-2025-12",
+        "miranda-do-corvo-desemprego-registado-2025-12",
+        "miranda-do-douro-desemprego-registado-2025-12",
+        "mirandela-desemprego-registado-2025-12",
+        "mogadouro-desemprego-registado-2025-12",
+        "moimenta-da-beira-desemprego-registado-2025-12",
+        "moita-desemprego-registado-2025-12",
+        "moncao-desemprego-registado-2025-12",
+        "monchique-desemprego-registado-2025-12",
+        "mondim-de-basto-desemprego-registado-2025-12",
+        "monforte-desemprego-registado-2025-12",
+        "montalegre-desemprego-registado-2025-12",
+        "montemor-o-novo-desemprego-registado-2025-12",
+        "montemor-o-velho-desemprego-registado-2025-12",
+        "montijo-desemprego-registado-2025-12",
+        "mora-desemprego-registado-2025-12",
+        "mortagua-desemprego-registado-2025-12",
+        "moura-desemprego-registado-2025-12",
+        "mourao-desemprego-registado-2025-12",
+        "murca-desemprego-registado-2025-12",
+        "murtosa-desemprego-registado-2025-12",
+        "nazare-desemprego-registado-2025-12",
+        "nelas-desemprego-registado-2025-12",
+        "nisa-desemprego-registado-2025-12",
+        "nordeste-desemprego-registado-2025-12",
+        "obidos-desemprego-registado-2025-12",
+        "odemira-desemprego-registado-2025-12",
+        "odivelas-desemprego-registado-2025-12",
+        "oeiras-desemprego-registado-2025-12",
+        "oleiros-desemprego-registado-2025-12",
+        "olhao-desemprego-registado-2025-12",
+        "oliveira-de-azemeis-desemprego-registado-2025-12",
+        "oliveira-de-frades-desemprego-registado-2025-12",
+        "oliveira-do-bairro-desemprego-registado-2025-12",
+        "oliveira-do-hospital-desemprego-registado-2025-12",
+        "ourem-desemprego-registado-2025-12",
+        "ourique-desemprego-registado-2025-12",
+        "ovar-desemprego-registado-2025-12",
+        "pacos-de-ferreira-desemprego-registado-2025-12",
+        "palmela-desemprego-registado-2025-12",
+        "pampilhosa-da-serra-desemprego-registado-2025-12",
+        "paredes-de-coura-desemprego-registado-2025-12",
+        "paredes-desemprego-registado-2025-12",
+        "pedrogao-grande-desemprego-registado-2025-12",
+        "penacova-desemprego-registado-2025-12",
+        "penafiel-desemprego-registado-2025-12",
+        "penalva-do-castelo-desemprego-registado-2025-12",
+        "penamacor-desemprego-registado-2025-12",
+        "penedono-desemprego-registado-2025-12",
+        "penela-desemprego-registado-2025-12",
+        "peniche-desemprego-registado-2025-12",
+        "peso-da-regua-desemprego-registado-2025-12",
+        "pinhel-desemprego-registado-2025-12",
+        "pombal-desemprego-registado-2025-12",
+        "ponta-delgada-desemprego-registado-2025-12",
+        "ponta-do-sol-desemprego-registado-2025-12",
+        "ponte-da-barca-desemprego-registado-2025-12",
+        "ponte-de-lima-desemprego-registado-2025-12",
+        "ponte-de-sor-desemprego-registado-2025-12",
+        "portalegre-desemprego-registado-2025-12",
+        "portel-desemprego-registado-2025-12",
+        "portimao-desemprego-registado-2025-12",
+        "porto-de-mos-desemprego-registado-2025-12",
+        "porto-desemprego-registado-2025-12",
+        "porto-moniz-desemprego-registado-2025-12",
+        "porto-santo-desemprego-registado-2025-12",
+        "povoa-de-lanhoso-desemprego-registado-2025-12",
+        "povoa-de-varzim-desemprego-registado-2025-12",
+        "povoacao-desemprego-registado-2025-12",
+        "praia-da-vitoria-desemprego-registado-2025-12",
+        "proenca-a-nova-desemprego-registado-2025-12",
+        "redondo-desemprego-registado-2025-12",
+        "reguengos-de-monsaraz-desemprego-registado-2025-12",
+        "resende-desemprego-registado-2025-12",
+        "ribeira-brava-desemprego-registado-2025-12",
+        "ribeira-de-pena-desemprego-registado-2025-12",
+        "ribeira-grande-desemprego-registado-2025-12",
+        "rio-maior-desemprego-registado-2025-12",
+        "sabrosa-desemprego-registado-2025-12",
+        "sabugal-desemprego-registado-2025-12",
+        "salvaterra-de-magos-desemprego-registado-2025-12",
+        "santa-comba-dao-desemprego-registado-2025-12",
+        "santa-cruz-da-graciosa-desemprego-registado-2025-12",
+        "santa-cruz-das-flores-desemprego-registado-2025-12",
+        "santa-cruz-desemprego-registado-2025-12",
+        "santa-maria-da-feira-desemprego-registado-2025-12",
+        "santa-marta-de-penaguiao-desemprego-registado-2025-12",
+        "santana-desemprego-registado-2025-12",
+        "santarem-desemprego-registado-2025-12",
+        "santiago-do-cacem-desemprego-registado-2025-12",
+        "santo-tirso-desemprego-registado-2025-12",
+        "sao-bras-de-alportel-desemprego-registado-2025-12",
+        "sao-joao-da-madeira-desemprego-registado-2025-12",
+        "sao-joao-da-pesqueira-desemprego-registado-2025-12",
+        "sao-pedro-do-sul-desemprego-registado-2025-12",
+        "sao-roque-do-pico-desemprego-registado-2025-12",
+        "sao-vicente-desemprego-registado-2025-12",
+        "sardoal-desemprego-registado-2025-12",
+        "satao-desemprego-registado-2025-12",
+        "seia-desemprego-registado-2025-12",
+        "seixal-desemprego-registado-2025-12",
+        "sernancelhe-desemprego-registado-2025-12",
+        "serpa-desemprego-registado-2025-12",
+        "serta-desemprego-registado-2025-12",
+        "sesimbra-desemprego-registado-2025-12",
+        "setubal-desemprego-registado-2025-12",
+        "sever-do-vouga-desemprego-registado-2025-12",
+        "silves-desemprego-registado-2025-12",
+        "sines-desemprego-registado-2025-12",
+        "sintra-desemprego-registado-2025-12",
+        "sobral-de-monte-agraco-desemprego-registado-2025-12",
+        "soure-desemprego-registado-2025-12",
+        "sousel-desemprego-registado-2025-12",
+        "tabua-desemprego-registado-2025-12",
+        "tabuaco-desemprego-registado-2025-12",
+        "tarouca-desemprego-registado-2025-12",
+        "tavira-desemprego-registado-2025-12",
+        "terras-de-bouro-desemprego-registado-2025-12",
+        "tomar-desemprego-registado-2025-12",
+        "tondela-desemprego-registado-2025-12",
+        "torre-de-moncorvo-desemprego-registado-2025-12",
+        "torres-novas-desemprego-registado-2025-12",
+        "torres-vedras-desemprego-registado-2025-12",
+        "trancoso-desemprego-registado-2025-12",
+        "trofa-desemprego-registado-2025-12",
+        "vagos-desemprego-registado-2025-12",
+        "vale-de-cambra-desemprego-registado-2025-12",
+        "valenca-desemprego-registado-2025-12",
+        "valongo-desemprego-registado-2025-12",
+        "valpacos-desemprego-registado-2025-12",
+        "velas-desemprego-registado-2025-12",
+        "vendas-novas-desemprego-registado-2025-12",
+        "viana-do-alentejo-desemprego-registado-2025-12",
+        "viana-do-castelo-desemprego-registado-2025-12",
+        "vidigueira-desemprego-registado-2025-12",
+        "vieira-do-minho-desemprego-registado-2025-12",
+        "vila-de-rei-desemprego-registado-2025-12",
+        "vila-do-bispo-desemprego-registado-2025-12",
+        "vila-do-conde-desemprego-registado-2025-12",
+        "vila-do-porto-desemprego-registado-2025-12",
+        "vila-flor-desemprego-registado-2025-12",
+        "vila-franca-de-xira-desemprego-registado-2025-12",
+        "vila-franca-do-campo-desemprego-registado-2025-12",
+        "vila-nova-da-barquinha-desemprego-registado-2025-12",
+        "vila-nova-de-cerveira-desemprego-registado-2025-12",
+        "vila-nova-de-famalicao-desemprego-registado-2025-12",
+        "vila-nova-de-foz-coa-desemprego-registado-2025-12",
+        "vila-nova-de-gaia-desemprego-registado-2025-12",
+        "vila-nova-de-paiva-desemprego-registado-2025-12",
+        "vila-nova-de-poiares-desemprego-registado-2025-12",
+        "vila-pouca-de-aguiar-desemprego-registado-2025-12",
+        "vila-real-de-santo-antonio-desemprego-registado-2025-12",
+        "vila-real-desemprego-registado-2025-12",
+        "vila-velha-de-rodao-desemprego-registado-2025-12",
+        "vila-verde-desemprego-registado-2025-12",
+        "vila-vicosa-desemprego-registado-2025-12",
+        "vimioso-desemprego-registado-2025-12",
+        "vinhais-desemprego-registado-2025-12",
+        "viseu-desemprego-registado-2025-12",
+        "vizela-desemprego-registado-2025-12",
+        "vouzela-desemprego-registado-2025-12"
+      ],
+      "folhas": [
+        {
+          "pt": "Conta as pessoas desempregadas inscritas nos serviços de emprego no mês de referência (desemprego registado).",
+          "en": "Counts the unemployed people registered with the employment service in the reference month (registered unemployment).",
+          "partes": [
+            {
+              "pt": "Conta as pessoas desempregadas inscritas nos serviços de emprego",
+              "en": "Counts the unemployed people registered with the employment service",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "ou": [
+                    {
+                      "linha": "propria",
+                      "campo": "document.title",
+                      "literal": "Desemprego registado"
+                    },
+                    {
+                      "linha": "propria",
+                      "campo": "name",
+                      "literal": "DESEMPREGO REGISTADO"
+                    },
+                    {
+                      "linha": "propria",
+                      "campo": "source",
+                      "literal": "Instituto de Emprego da Madeira"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "pt": " no mês de referência",
+              "en": " in the reference month",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "document.edition",
+                  "literal": "dezembro de 2025"
+                }
+              ]
+            },
+            {
+              "pt": " (desemprego registado).",
+              "en": " (registered unemployment).",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "ou": [
+                    {
+                      "linha": "propria",
+                      "campo": "document.title",
+                      "literal": "Desemprego registado"
+                    },
+                    {
+                      "linha": "propria",
+                      "campo": "name",
+                      "literal": "DESEMPREGO REGISTADO"
+                    },
+                    {
+                      "origem": "rp4n-madeira",
+                      "campo": "excerto",
+                      "literal": "DESEMPREGADOS/DESEMPREGO REGISTADO"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "ficheiros": [
+        {
+          "motor": "content/13 Dominios/source/rp4n/madeira.pdf",
+          "sha256": "c93c48e256d5b6e05522968dc39e0a0289d25899065faa1dc40ba78f7e84c6ae",
+          "porque": "documento da linha sao-vicente-desemprego-registado-2025-12"
+        },
+        {
+          "motor": "content/13 Dominios/source/rp4n/madeira.pedido.json",
+          "sha256": "351f44e7b4c5e87c5b61864d14a7b2d188ad9ecb2f7354bed054b33414df1c74",
+          "porque": "recibo rp4n-madeira"
+        }
+      ],
+      "estado": "conferida quanto aos bytes"
+    }
+  ]
+}

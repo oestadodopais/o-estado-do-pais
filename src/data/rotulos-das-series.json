@@ -1,0 +1,1506 @@
+{
+  "exportador": "ResearchHub/publisher/export_series.py",
+  "rotulos": [
+    {
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "dimensao": "freq",
+      "codigo": "A",
+      "rotulo": "Annual",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "A"
+      ],
+      "documento": "Long-term unemployment rate by sex",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
+      "lido_em": "2026-09-29T14:11:46Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "894d93f0368f930cf4db9b06673a6b6b6b798335a3e286c6012876e127ea3c62",
+      "motor": "content/13 Dominios/source/ue1/028-eurostat-desemprego-de-longa-duracao-2025-paises.json"
+    },
+    {
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "dimensao": "indic_em",
+      "codigo": "LTU",
+      "rotulo": "Long-term unemployment",
+      "caminho": [
+        "dimension",
+        "indic_em",
+        "category",
+        "label",
+        "LTU"
+      ],
+      "documento": "Long-term unemployment rate by sex",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
+      "lido_em": "2026-09-29T14:11:46Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "894d93f0368f930cf4db9b06673a6b6b6b798335a3e286c6012876e127ea3c62",
+      "motor": "content/13 Dominios/source/ue1/028-eurostat-desemprego-de-longa-duracao-2025-paises.json"
+    },
+    {
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "dimensao": "age",
+      "codigo": "Y15-74",
+      "rotulo": "From 15 to 74 years",
+      "caminho": [
+        "dimension",
+        "age",
+        "category",
+        "label",
+        "Y15-74"
+      ],
+      "documento": "Long-term unemployment rate by sex",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
+      "lido_em": "2026-09-29T14:11:46Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "894d93f0368f930cf4db9b06673a6b6b6b798335a3e286c6012876e127ea3c62",
+      "motor": "content/13 Dominios/source/ue1/028-eurostat-desemprego-de-longa-duracao-2025-paises.json"
+    },
+    {
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "dimensao": "sex",
+      "codigo": "T",
+      "rotulo": "Total",
+      "caminho": [
+        "dimension",
+        "sex",
+        "category",
+        "label",
+        "T"
+      ],
+      "documento": "Long-term unemployment rate by sex",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
+      "lido_em": "2026-09-29T14:11:46Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "894d93f0368f930cf4db9b06673a6b6b6b798335a3e286c6012876e127ea3c62",
+      "motor": "content/13 Dominios/source/ue1/028-eurostat-desemprego-de-longa-duracao-2025-paises.json"
+    },
+    {
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "dimensao": "unit",
+      "codigo": "PC_ACT",
+      "rotulo": "Percentage of population in the labour force",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "PC_ACT"
+      ],
+      "documento": "Long-term unemployment rate by sex",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
+      "lido_em": "2026-09-29T14:11:46Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "894d93f0368f930cf4db9b06673a6b6b6b798335a3e286c6012876e127ea3c62",
+      "motor": "content/13 Dominios/source/ue1/028-eurostat-desemprego-de-longa-duracao-2025-paises.json"
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "dimensao": "freq",
+      "codigo": "A",
+      "rotulo": "Annual",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "A"
+      ],
+      "documento": "General government gross debt (EDP concept), consolidated - annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC_GDP",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "4d8d1f262722183533cb1b2687b75b3860c5894462a95c3eb04c15149923213c",
+      "motor": "content/13 Dominios/source/ue1/029-eurostat-divida-publica-2025-paises.json"
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "dimensao": "na_item",
+      "codigo": "GD",
+      "rotulo": "Government consolidated gross debt",
+      "caminho": [
+        "dimension",
+        "na_item",
+        "category",
+        "label",
+        "GD"
+      ],
+      "documento": "General government gross debt (EDP concept), consolidated - annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC_GDP",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "4d8d1f262722183533cb1b2687b75b3860c5894462a95c3eb04c15149923213c",
+      "motor": "content/13 Dominios/source/ue1/029-eurostat-divida-publica-2025-paises.json"
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "dimensao": "sector",
+      "codigo": "S13",
+      "rotulo": "General government",
+      "caminho": [
+        "dimension",
+        "sector",
+        "category",
+        "label",
+        "S13"
+      ],
+      "documento": "General government gross debt (EDP concept), consolidated - annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC_GDP",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "4d8d1f262722183533cb1b2687b75b3860c5894462a95c3eb04c15149923213c",
+      "motor": "content/13 Dominios/source/ue1/029-eurostat-divida-publica-2025-paises.json"
+    },
+    {
+      "serie": "divida-publica-2025-paises",
+      "dimensao": "unit",
+      "codigo": "PC_GDP",
+      "rotulo": "Percentage of gross domestic product (GDP)",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "PC_GDP"
+      ],
+      "documento": "General government gross debt (EDP concept), consolidated - annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC_GDP",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "4d8d1f262722183533cb1b2687b75b3860c5894462a95c3eb04c15149923213c",
+      "motor": "content/13 Dominios/source/ue1/029-eurostat-divida-publica-2025-paises.json"
+    },
+    {
+      "serie": "ihpc-variacao-homologa-paises",
+      "dimensao": "freq",
+      "codigo": "M",
+      "rotulo": "Monthly",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "M"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&lastTimePeriod=2",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "3b6f92ccf611d2a07b8ad1f04361bc4bbd967673136b2a103e23040595ae38ac",
+      "motor": "content/13 Dominios/source/ue1/030-eurostat-ihpc-variacao-homologa-paises.json"
+    },
+    {
+      "serie": "ihpc-variacao-homologa-paises",
+      "dimensao": "unit",
+      "codigo": "RCH_A",
+      "rotulo": "Annual rate of change",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "RCH_A"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&lastTimePeriod=2",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "3b6f92ccf611d2a07b8ad1f04361bc4bbd967673136b2a103e23040595ae38ac",
+      "motor": "content/13 Dominios/source/ue1/030-eurostat-ihpc-variacao-homologa-paises.json"
+    },
+    {
+      "serie": "ihpc-variacao-homologa-paises",
+      "dimensao": "coicop18",
+      "codigo": "TOTAL",
+      "rotulo": "Total",
+      "caminho": [
+        "dimension",
+        "coicop18",
+        "category",
+        "label",
+        "TOTAL"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&lastTimePeriod=2",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "3b6f92ccf611d2a07b8ad1f04361bc4bbd967673136b2a103e23040595ae38ac",
+      "motor": "content/13 Dominios/source/ue1/030-eurostat-ihpc-variacao-homologa-paises.json"
+    },
+    {
+      "serie": "precos-da-habitacao-2025-paises",
+      "dimensao": "freq",
+      "codigo": "A",
+      "rotulo": "Annual",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "A"
+      ],
+      "documento": "House price index, nominal - annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho20?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=RCH_A_AVG",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "725fe353012ab916ee8e1b665adadc23650d3810b6beb83dd85d1cf575d062c8",
+      "motor": "content/13 Dominios/source/ue1/031-eurostat-precos-da-habitacao-2025-paises.json"
+    },
+    {
+      "serie": "precos-da-habitacao-2025-paises",
+      "dimensao": "unit",
+      "codigo": "RCH_A_AVG",
+      "rotulo": "Annual average rate of change",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "RCH_A_AVG"
+      ],
+      "documento": "House price index, nominal - annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho20?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=RCH_A_AVG",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "725fe353012ab916ee8e1b665adadc23650d3810b6beb83dd85d1cf575d062c8",
+      "motor": "content/13 Dominios/source/ue1/031-eurostat-precos-da-habitacao-2025-paises.json"
+    },
+    {
+      "serie": "racio-s80-s20-2025-paises",
+      "dimensao": "freq",
+      "codigo": "A",
+      "rotulo": "Annual",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "A"
+      ],
+      "documento": "Income quintile share ratio (S80/S20) by sex",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "3d829dff83723da51d9cfda3781c1d5fc291964fef9575e8cb9c2988ff0425dc",
+      "motor": "content/13 Dominios/source/ue1/032-eurostat-racio-s80-s20-2025-paises.json"
+    },
+    {
+      "serie": "racio-s80-s20-2025-paises",
+      "dimensao": "age",
+      "codigo": "TOTAL",
+      "rotulo": "Total",
+      "caminho": [
+        "dimension",
+        "age",
+        "category",
+        "label",
+        "TOTAL"
+      ],
+      "documento": "Income quintile share ratio (S80/S20) by sex",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "3d829dff83723da51d9cfda3781c1d5fc291964fef9575e8cb9c2988ff0425dc",
+      "motor": "content/13 Dominios/source/ue1/032-eurostat-racio-s80-s20-2025-paises.json"
+    },
+    {
+      "serie": "racio-s80-s20-2025-paises",
+      "dimensao": "sex",
+      "codigo": "T",
+      "rotulo": "Total",
+      "caminho": [
+        "dimension",
+        "sex",
+        "category",
+        "label",
+        "T"
+      ],
+      "documento": "Income quintile share ratio (S80/S20) by sex",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "3d829dff83723da51d9cfda3781c1d5fc291964fef9575e8cb9c2988ff0425dc",
+      "motor": "content/13 Dominios/source/ue1/032-eurostat-racio-s80-s20-2025-paises.json"
+    },
+    {
+      "serie": "racio-s80-s20-2025-paises",
+      "dimensao": "unit",
+      "codigo": "RAT",
+      "rotulo": "Ratio",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "RAT"
+      ],
+      "documento": "Income quintile share ratio (S80/S20) by sex",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "3d829dff83723da51d9cfda3781c1d5fc291964fef9575e8cb9c2988ff0425dc",
+      "motor": "content/13 Dominios/source/ue1/032-eurostat-racio-s80-s20-2025-paises.json"
+    },
+    {
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "dimensao": "freq",
+      "codigo": "A",
+      "rotulo": "Annual",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "A"
+      ],
+      "documento": "People at risk of poverty or social exclusion",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslc10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8317a25579e348240e8f0064abf3fa96a7a2ae2ee5432474c1da73552ad7eb3e",
+      "motor": "content/13 Dominios/source/ue1/033-eurostat-risco-de-pobreza-ou-exclusao-2025-paises.json"
+    },
+    {
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "dimensao": "sex",
+      "codigo": "T",
+      "rotulo": "Total",
+      "caminho": [
+        "dimension",
+        "sex",
+        "category",
+        "label",
+        "T"
+      ],
+      "documento": "People at risk of poverty or social exclusion",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslc10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8317a25579e348240e8f0064abf3fa96a7a2ae2ee5432474c1da73552ad7eb3e",
+      "motor": "content/13 Dominios/source/ue1/033-eurostat-risco-de-pobreza-ou-exclusao-2025-paises.json"
+    },
+    {
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "dimensao": "unit",
+      "codigo": "PC",
+      "rotulo": "Percentage",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "PC"
+      ],
+      "documento": "People at risk of poverty or social exclusion",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslc10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8317a25579e348240e8f0064abf3fa96a7a2ae2ee5432474c1da73552ad7eb3e",
+      "motor": "content/13 Dominios/source/ue1/033-eurostat-risco-de-pobreza-ou-exclusao-2025-paises.json"
+    },
+    {
+      "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+      "dimensao": "age",
+      "codigo": "TOTAL",
+      "rotulo": "Total",
+      "caminho": [
+        "dimension",
+        "age",
+        "category",
+        "label",
+        "TOTAL"
+      ],
+      "documento": "People at risk of poverty or social exclusion",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslc10?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=PC",
+      "lido_em": "2026-09-29T14:11:47Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8317a25579e348240e8f0064abf3fa96a7a2ae2ee5432474c1da73552ad7eb3e",
+      "motor": "content/13 Dominios/source/ue1/033-eurostat-risco-de-pobreza-ou-exclusao-2025-paises.json"
+    },
+    {
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "dimensao": "freq",
+      "codigo": "A",
+      "rotulo": "Annual",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "A"
+      ],
+      "documento": "Housing cost overburden rate",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "5848b25b94a6f530caad906c496a9e853690e5f22c3876bff5aa072ae159bfa0",
+      "motor": "content/13 Dominios/source/ue1/034-eurostat-sobrecarga-do-custo-da-habitacao-2025-paises.json"
+    },
+    {
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "dimensao": "unit",
+      "codigo": "PC",
+      "rotulo": "Percentage",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "PC"
+      ],
+      "documento": "Housing cost overburden rate",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "5848b25b94a6f530caad906c496a9e853690e5f22c3876bff5aa072ae159bfa0",
+      "motor": "content/13 Dominios/source/ue1/034-eurostat-sobrecarga-do-custo-da-habitacao-2025-paises.json"
+    },
+    {
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "dimensao": "rskpovth",
+      "codigo": "TOTAL",
+      "rotulo": "Total",
+      "caminho": [
+        "dimension",
+        "rskpovth",
+        "category",
+        "label",
+        "TOTAL"
+      ],
+      "documento": "Housing cost overburden rate",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "5848b25b94a6f530caad906c496a9e853690e5f22c3876bff5aa072ae159bfa0",
+      "motor": "content/13 Dominios/source/ue1/034-eurostat-sobrecarga-do-custo-da-habitacao-2025-paises.json"
+    },
+    {
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "dimensao": "age",
+      "codigo": "TOTAL",
+      "rotulo": "Total",
+      "caminho": [
+        "dimension",
+        "age",
+        "category",
+        "label",
+        "TOTAL"
+      ],
+      "documento": "Housing cost overburden rate",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "5848b25b94a6f530caad906c496a9e853690e5f22c3876bff5aa072ae159bfa0",
+      "motor": "content/13 Dominios/source/ue1/034-eurostat-sobrecarga-do-custo-da-habitacao-2025-paises.json"
+    },
+    {
+      "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+      "dimensao": "sex",
+      "codigo": "T",
+      "rotulo": "Total",
+      "caminho": [
+        "dimension",
+        "sex",
+        "category",
+        "label",
+        "T"
+      ],
+      "documento": "Housing cost overburden rate",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "5848b25b94a6f530caad906c496a9e853690e5f22c3876bff5aa072ae159bfa0",
+      "motor": "content/13 Dominios/source/ue1/034-eurostat-sobrecarga-do-custo-da-habitacao-2025-paises.json"
+    },
+    {
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "dimensao": "freq",
+      "codigo": "A",
+      "rotulo": "Annual",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "A"
+      ],
+      "documento": "Housing cost overburden rate by tenure status - EU-SILC survey",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8e482910fe1af17086a3d409ba8aea884fd8c1d1d0e3ac2da4e0c0facc16fb0b",
+      "motor": "content/13 Dominios/source/ue1/035-eurostat-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json"
+    },
+    {
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "dimensao": "unit",
+      "codigo": "PC",
+      "rotulo": "Percentage",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "PC"
+      ],
+      "documento": "Housing cost overburden rate by tenure status - EU-SILC survey",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8e482910fe1af17086a3d409ba8aea884fd8c1d1d0e3ac2da4e0c0facc16fb0b",
+      "motor": "content/13 Dominios/source/ue1/035-eurostat-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json"
+    },
+    {
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "dimensao": "tenure",
+      "codigo": "RENT_MKT",
+      "rotulo": "Tenant, rent at market price",
+      "caminho": [
+        "dimension",
+        "tenure",
+        "category",
+        "label",
+        "RENT_MKT"
+      ],
+      "documento": "Housing cost overburden rate by tenure status - EU-SILC survey",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi164?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8e482910fe1af17086a3d409ba8aea884fd8c1d1d0e3ac2da4e0c0facc16fb0b",
+      "motor": "content/13 Dominios/source/ue1/035-eurostat-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.json"
+    },
+    {
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "dimensao": "freq",
+      "codigo": "A",
+      "rotulo": "Annual",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "A"
+      ],
+      "documento": "Unemployment rate - annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsun20?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&age=Y15-74",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "9d13cee1e7c5e117399ab87bb57db7de8701a833f018bb575a1e31b16ffff835",
+      "motor": "content/13 Dominios/source/ue1/036-eurostat-taxa-de-desemprego-mip-2025-paises.json"
+    },
+    {
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "dimensao": "sex",
+      "codigo": "T",
+      "rotulo": "Total",
+      "caminho": [
+        "dimension",
+        "sex",
+        "category",
+        "label",
+        "T"
+      ],
+      "documento": "Unemployment rate - annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsun20?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&age=Y15-74",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "9d13cee1e7c5e117399ab87bb57db7de8701a833f018bb575a1e31b16ffff835",
+      "motor": "content/13 Dominios/source/ue1/036-eurostat-taxa-de-desemprego-mip-2025-paises.json"
+    },
+    {
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "dimensao": "age",
+      "codigo": "Y15-74",
+      "rotulo": "From 15 to 74 years",
+      "caminho": [
+        "dimension",
+        "age",
+        "category",
+        "label",
+        "Y15-74"
+      ],
+      "documento": "Unemployment rate - annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsun20?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&age=Y15-74",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "9d13cee1e7c5e117399ab87bb57db7de8701a833f018bb575a1e31b16ffff835",
+      "motor": "content/13 Dominios/source/ue1/036-eurostat-taxa-de-desemprego-mip-2025-paises.json"
+    },
+    {
+      "serie": "taxa-de-desemprego-mip-2025-paises",
+      "dimensao": "unit",
+      "codigo": "PC_ACT",
+      "rotulo": "Percentage of population in the labour force",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "PC_ACT"
+      ],
+      "documento": "Unemployment rate - annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsun20?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&age=Y15-74",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "9d13cee1e7c5e117399ab87bb57db7de8701a833f018bb575a1e31b16ffff835",
+      "motor": "content/13 Dominios/source/ue1/036-eurostat-taxa-de-desemprego-mip-2025-paises.json"
+    },
+    {
+      "serie": "taxa-de-emprego-2025-paises",
+      "dimensao": "freq",
+      "codigo": "A",
+      "rotulo": "Annual",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "A"
+      ],
+      "documento": "Employment and labour force by sex and age - annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfsi_emp_a?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&indic_em=EMP_LFS&sex=T&age=Y20-64&unit=PC_POP",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "e8980462017674c76b20e2fa80ee1f98405886f1ef2446eef57836aa61510115",
+      "motor": "content/13 Dominios/source/ue1/037-eurostat-taxa-de-emprego-2025-paises.json"
+    },
+    {
+      "serie": "taxa-de-emprego-2025-paises",
+      "dimensao": "indic_em",
+      "codigo": "EMP_LFS",
+      "rotulo": "Total employment (resident population concept - LFS)",
+      "caminho": [
+        "dimension",
+        "indic_em",
+        "category",
+        "label",
+        "EMP_LFS"
+      ],
+      "documento": "Employment and labour force by sex and age - annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfsi_emp_a?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&indic_em=EMP_LFS&sex=T&age=Y20-64&unit=PC_POP",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "e8980462017674c76b20e2fa80ee1f98405886f1ef2446eef57836aa61510115",
+      "motor": "content/13 Dominios/source/ue1/037-eurostat-taxa-de-emprego-2025-paises.json"
+    },
+    {
+      "serie": "taxa-de-emprego-2025-paises",
+      "dimensao": "sex",
+      "codigo": "T",
+      "rotulo": "Total",
+      "caminho": [
+        "dimension",
+        "sex",
+        "category",
+        "label",
+        "T"
+      ],
+      "documento": "Employment and labour force by sex and age - annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfsi_emp_a?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&indic_em=EMP_LFS&sex=T&age=Y20-64&unit=PC_POP",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "e8980462017674c76b20e2fa80ee1f98405886f1ef2446eef57836aa61510115",
+      "motor": "content/13 Dominios/source/ue1/037-eurostat-taxa-de-emprego-2025-paises.json"
+    },
+    {
+      "serie": "taxa-de-emprego-2025-paises",
+      "dimensao": "age",
+      "codigo": "Y20-64",
+      "rotulo": "From 20 to 64 years",
+      "caminho": [
+        "dimension",
+        "age",
+        "category",
+        "label",
+        "Y20-64"
+      ],
+      "documento": "Employment and labour force by sex and age - annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfsi_emp_a?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&indic_em=EMP_LFS&sex=T&age=Y20-64&unit=PC_POP",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "e8980462017674c76b20e2fa80ee1f98405886f1ef2446eef57836aa61510115",
+      "motor": "content/13 Dominios/source/ue1/037-eurostat-taxa-de-emprego-2025-paises.json"
+    },
+    {
+      "serie": "taxa-de-emprego-2025-paises",
+      "dimensao": "unit",
+      "codigo": "PC_POP",
+      "rotulo": "Percentage of total population",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "PC_POP"
+      ],
+      "documento": "Employment and labour force by sex and age - annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfsi_emp_a?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&indic_em=EMP_LFS&sex=T&age=Y20-64&unit=PC_POP",
+      "lido_em": "2026-09-29T14:11:48Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "e8980462017674c76b20e2fa80ee1f98405886f1ef2446eef57836aa61510115",
+      "motor": "content/13 Dominios/source/ue1/037-eurostat-taxa-de-emprego-2025-paises.json"
+    },
+    {
+      "serie": "serie-ihpc-variacao-homologa",
+      "dimensao": "freq",
+      "codigo": "M",
+      "rotulo": "Monthly",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "M"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:06Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "f93253fa035a8a71c03f2a26bb4a6085dea6a4307dacfb408ddc20e827a02baa",
+      "motor": "content/13 Dominios/source/rp3/171-eurostat-serie-ihpc-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-ihpc-variacao-homologa",
+      "dimensao": "unit",
+      "codigo": "RCH_A",
+      "rotulo": "Annual rate of change",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "RCH_A"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:06Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "f93253fa035a8a71c03f2a26bb4a6085dea6a4307dacfb408ddc20e827a02baa",
+      "motor": "content/13 Dominios/source/rp3/171-eurostat-serie-ihpc-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-ihpc-variacao-homologa",
+      "dimensao": "coicop18",
+      "codigo": "TOTAL",
+      "rotulo": "Total",
+      "caminho": [
+        "dimension",
+        "coicop18",
+        "category",
+        "label",
+        "TOTAL"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:06Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "f93253fa035a8a71c03f2a26bb4a6085dea6a4307dacfb408ddc20e827a02baa",
+      "motor": "content/13 Dominios/source/rp3/171-eurostat-serie-ihpc-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-ihpc-variacao-homologa",
+      "dimensao": "geo",
+      "codigo": "PT",
+      "rotulo": "Portugal",
+      "caminho": [
+        "dimension",
+        "geo",
+        "category",
+        "label",
+        "PT"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=PT&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:06Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "f93253fa035a8a71c03f2a26bb4a6085dea6a4307dacfb408ddc20e827a02baa",
+      "motor": "content/13 Dominios/source/rp3/171-eurostat-serie-ihpc-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-ihpc-variacao-homologa-ue",
+      "dimensao": "freq",
+      "codigo": "M",
+      "rotulo": "Monthly",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "M"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=EU27_2020&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:06Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "1f4518ffe28849916ab2a08dc807acdee3f60afb5f2e7abb5ef36cfb2c94b554",
+      "motor": "content/13 Dominios/source/rp3/172-eurostat-serie-ihpc-variacao-homologa-ue.json"
+    },
+    {
+      "serie": "serie-ihpc-variacao-homologa-ue",
+      "dimensao": "unit",
+      "codigo": "RCH_A",
+      "rotulo": "Annual rate of change",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "RCH_A"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=EU27_2020&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:06Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "1f4518ffe28849916ab2a08dc807acdee3f60afb5f2e7abb5ef36cfb2c94b554",
+      "motor": "content/13 Dominios/source/rp3/172-eurostat-serie-ihpc-variacao-homologa-ue.json"
+    },
+    {
+      "serie": "serie-ihpc-variacao-homologa-ue",
+      "dimensao": "coicop18",
+      "codigo": "TOTAL",
+      "rotulo": "Total",
+      "caminho": [
+        "dimension",
+        "coicop18",
+        "category",
+        "label",
+        "TOTAL"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=EU27_2020&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:06Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "1f4518ffe28849916ab2a08dc807acdee3f60afb5f2e7abb5ef36cfb2c94b554",
+      "motor": "content/13 Dominios/source/rp3/172-eurostat-serie-ihpc-variacao-homologa-ue.json"
+    },
+    {
+      "serie": "serie-ihpc-variacao-homologa-ue",
+      "dimensao": "geo",
+      "codigo": "EU27_2020",
+      "rotulo": "European Union - 27 countries (from 2020)",
+      "caminho": [
+        "dimension",
+        "geo",
+        "category",
+        "label",
+        "EU27_2020"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=TOTAL&geo=EU27_2020&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:06Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "1f4518ffe28849916ab2a08dc807acdee3f60afb5f2e7abb5ef36cfb2c94b554",
+      "motor": "content/13 Dominios/source/rp3/172-eurostat-serie-ihpc-variacao-homologa-ue.json"
+    },
+    {
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "dimensao": "freq",
+      "codigo": "A",
+      "rotulo": "Annual",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "A"
+      ],
+      "documento": "At-risk-of-poverty thresholds",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_li01?format=JSON&lang=EN&statinfo=MED_EI&hhcomp=A1&rskpovth=B_60&unit=EUR&geo=PT&sinceTimePeriod=1995",
+      "lido_em": "2026-10-04T03:55:09Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "c84eb68df7444802ab49609812c8f096f6799c84411efdcb907fc0544aefccb2",
+      "motor": "content/13 Dominios/source/rp3/173-eurostat-serie-linha-de-risco-de-pobreza.json"
+    },
+    {
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "dimensao": "statinfo",
+      "codigo": "MED_EI",
+      "rotulo": "Median equivalised income",
+      "caminho": [
+        "dimension",
+        "statinfo",
+        "category",
+        "label",
+        "MED_EI"
+      ],
+      "documento": "At-risk-of-poverty thresholds",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_li01?format=JSON&lang=EN&statinfo=MED_EI&hhcomp=A1&rskpovth=B_60&unit=EUR&geo=PT&sinceTimePeriod=1995",
+      "lido_em": "2026-10-04T03:55:09Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "c84eb68df7444802ab49609812c8f096f6799c84411efdcb907fc0544aefccb2",
+      "motor": "content/13 Dominios/source/rp3/173-eurostat-serie-linha-de-risco-de-pobreza.json"
+    },
+    {
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "dimensao": "hhcomp",
+      "codigo": "A1",
+      "rotulo": "One adult",
+      "caminho": [
+        "dimension",
+        "hhcomp",
+        "category",
+        "label",
+        "A1"
+      ],
+      "documento": "At-risk-of-poverty thresholds",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_li01?format=JSON&lang=EN&statinfo=MED_EI&hhcomp=A1&rskpovth=B_60&unit=EUR&geo=PT&sinceTimePeriod=1995",
+      "lido_em": "2026-10-04T03:55:09Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "c84eb68df7444802ab49609812c8f096f6799c84411efdcb907fc0544aefccb2",
+      "motor": "content/13 Dominios/source/rp3/173-eurostat-serie-linha-de-risco-de-pobreza.json"
+    },
+    {
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "dimensao": "rskpovth",
+      "codigo": "B_60",
+      "rotulo": "Below 60%",
+      "caminho": [
+        "dimension",
+        "rskpovth",
+        "category",
+        "label",
+        "B_60"
+      ],
+      "documento": "At-risk-of-poverty thresholds",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_li01?format=JSON&lang=EN&statinfo=MED_EI&hhcomp=A1&rskpovth=B_60&unit=EUR&geo=PT&sinceTimePeriod=1995",
+      "lido_em": "2026-10-04T03:55:09Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "c84eb68df7444802ab49609812c8f096f6799c84411efdcb907fc0544aefccb2",
+      "motor": "content/13 Dominios/source/rp3/173-eurostat-serie-linha-de-risco-de-pobreza.json"
+    },
+    {
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "dimensao": "unit",
+      "codigo": "EUR",
+      "rotulo": "Euro",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "EUR"
+      ],
+      "documento": "At-risk-of-poverty thresholds",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_li01?format=JSON&lang=EN&statinfo=MED_EI&hhcomp=A1&rskpovth=B_60&unit=EUR&geo=PT&sinceTimePeriod=1995",
+      "lido_em": "2026-10-04T03:55:09Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "c84eb68df7444802ab49609812c8f096f6799c84411efdcb907fc0544aefccb2",
+      "motor": "content/13 Dominios/source/rp3/173-eurostat-serie-linha-de-risco-de-pobreza.json"
+    },
+    {
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "dimensao": "geo",
+      "codigo": "PT",
+      "rotulo": "Portugal",
+      "caminho": [
+        "dimension",
+        "geo",
+        "category",
+        "label",
+        "PT"
+      ],
+      "documento": "At-risk-of-poverty thresholds",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_li01?format=JSON&lang=EN&statinfo=MED_EI&hhcomp=A1&rskpovth=B_60&unit=EUR&geo=PT&sinceTimePeriod=1995",
+      "lido_em": "2026-10-04T03:55:09Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "c84eb68df7444802ab49609812c8f096f6799c84411efdcb907fc0544aefccb2",
+      "motor": "content/13 Dominios/source/rp3/173-eurostat-serie-linha-de-risco-de-pobreza.json"
+    },
+    {
+      "serie": "serie-ihpc-combustiveis-variacao-homologa",
+      "dimensao": "freq",
+      "codigo": "M",
+      "rotulo": "Monthly",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "M"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP0722&geo=PT&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:11Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "5535ef96382360a8a8d1f59a993cb83caf181f86459ac98a21ac4444d277b4d1",
+      "motor": "content/13 Dominios/source/rp3/174-eurostat-serie-ihpc-combustiveis-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-ihpc-combustiveis-variacao-homologa",
+      "dimensao": "unit",
+      "codigo": "RCH_A",
+      "rotulo": "Annual rate of change",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "RCH_A"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP0722&geo=PT&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:11Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "5535ef96382360a8a8d1f59a993cb83caf181f86459ac98a21ac4444d277b4d1",
+      "motor": "content/13 Dominios/source/rp3/174-eurostat-serie-ihpc-combustiveis-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-ihpc-combustiveis-variacao-homologa",
+      "dimensao": "coicop18",
+      "codigo": "CP0722",
+      "rotulo": "Fuels and lubricants for personal transport equipment (ND)",
+      "caminho": [
+        "dimension",
+        "coicop18",
+        "category",
+        "label",
+        "CP0722"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP0722&geo=PT&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:11Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "5535ef96382360a8a8d1f59a993cb83caf181f86459ac98a21ac4444d277b4d1",
+      "motor": "content/13 Dominios/source/rp3/174-eurostat-serie-ihpc-combustiveis-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-ihpc-combustiveis-variacao-homologa",
+      "dimensao": "geo",
+      "codigo": "PT",
+      "rotulo": "Portugal",
+      "caminho": [
+        "dimension",
+        "geo",
+        "category",
+        "label",
+        "PT"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP0722&geo=PT&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:11Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "5535ef96382360a8a8d1f59a993cb83caf181f86459ac98a21ac4444d277b4d1",
+      "motor": "content/13 Dominios/source/rp3/174-eurostat-serie-ihpc-combustiveis-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-ihpc-combustiveis-variacao-homologa-ue",
+      "dimensao": "freq",
+      "codigo": "M",
+      "rotulo": "Monthly",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "M"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP0722&geo=EU27_2020&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:13Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "250d402db99b5d53e1a53cbbe67d2d2fbb272ca923e29ea7d616b2f89cc94a87",
+      "motor": "content/13 Dominios/source/rp3/175-eurostat-serie-ihpc-combustiveis-variacao-homologa-ue.json"
+    },
+    {
+      "serie": "serie-ihpc-combustiveis-variacao-homologa-ue",
+      "dimensao": "unit",
+      "codigo": "RCH_A",
+      "rotulo": "Annual rate of change",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "RCH_A"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP0722&geo=EU27_2020&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:13Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "250d402db99b5d53e1a53cbbe67d2d2fbb272ca923e29ea7d616b2f89cc94a87",
+      "motor": "content/13 Dominios/source/rp3/175-eurostat-serie-ihpc-combustiveis-variacao-homologa-ue.json"
+    },
+    {
+      "serie": "serie-ihpc-combustiveis-variacao-homologa-ue",
+      "dimensao": "coicop18",
+      "codigo": "CP0722",
+      "rotulo": "Fuels and lubricants for personal transport equipment (ND)",
+      "caminho": [
+        "dimension",
+        "coicop18",
+        "category",
+        "label",
+        "CP0722"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP0722&geo=EU27_2020&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:13Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "250d402db99b5d53e1a53cbbe67d2d2fbb272ca923e29ea7d616b2f89cc94a87",
+      "motor": "content/13 Dominios/source/rp3/175-eurostat-serie-ihpc-combustiveis-variacao-homologa-ue.json"
+    },
+    {
+      "serie": "serie-ihpc-combustiveis-variacao-homologa-ue",
+      "dimensao": "geo",
+      "codigo": "EU27_2020",
+      "rotulo": "European Union - 27 countries (from 2020)",
+      "caminho": [
+        "dimension",
+        "geo",
+        "category",
+        "label",
+        "EU27_2020"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP0722&geo=EU27_2020&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:13Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "250d402db99b5d53e1a53cbbe67d2d2fbb272ca923e29ea7d616b2f89cc94a87",
+      "motor": "content/13 Dominios/source/rp3/175-eurostat-serie-ihpc-combustiveis-variacao-homologa-ue.json"
+    },
+    {
+      "serie": "serie-ihpc-rendas-variacao-homologa",
+      "dimensao": "freq",
+      "codigo": "M",
+      "rotulo": "Monthly",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "M"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP041&geo=PT&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:15Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "218c3642d68a874acc7e41b5c7dce682a2439776c13cfd5c34b4873b86639b26",
+      "motor": "content/13 Dominios/source/rp3/176-eurostat-serie-ihpc-rendas-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-ihpc-rendas-variacao-homologa",
+      "dimensao": "unit",
+      "codigo": "RCH_A",
+      "rotulo": "Annual rate of change",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "RCH_A"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP041&geo=PT&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:15Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "218c3642d68a874acc7e41b5c7dce682a2439776c13cfd5c34b4873b86639b26",
+      "motor": "content/13 Dominios/source/rp3/176-eurostat-serie-ihpc-rendas-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-ihpc-rendas-variacao-homologa",
+      "dimensao": "coicop18",
+      "codigo": "CP041",
+      "rotulo": "Actual rental payments made for housing",
+      "caminho": [
+        "dimension",
+        "coicop18",
+        "category",
+        "label",
+        "CP041"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP041&geo=PT&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:15Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "218c3642d68a874acc7e41b5c7dce682a2439776c13cfd5c34b4873b86639b26",
+      "motor": "content/13 Dominios/source/rp3/176-eurostat-serie-ihpc-rendas-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-ihpc-rendas-variacao-homologa",
+      "dimensao": "geo",
+      "codigo": "PT",
+      "rotulo": "Portugal",
+      "caminho": [
+        "dimension",
+        "geo",
+        "category",
+        "label",
+        "PT"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP041&geo=PT&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:15Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "218c3642d68a874acc7e41b5c7dce682a2439776c13cfd5c34b4873b86639b26",
+      "motor": "content/13 Dominios/source/rp3/176-eurostat-serie-ihpc-rendas-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-ihpc-energia-da-casa-variacao-homologa",
+      "dimensao": "freq",
+      "codigo": "M",
+      "rotulo": "Monthly",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "M"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP045&geo=PT&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:17Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "11aebb54e809db8494f8171540ba030be142a6a75ad378ece7f4afa132b3be3e",
+      "motor": "content/13 Dominios/source/rp3/177-eurostat-serie-ihpc-energia-da-casa-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-ihpc-energia-da-casa-variacao-homologa",
+      "dimensao": "unit",
+      "codigo": "RCH_A",
+      "rotulo": "Annual rate of change",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "RCH_A"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP045&geo=PT&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:17Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "11aebb54e809db8494f8171540ba030be142a6a75ad378ece7f4afa132b3be3e",
+      "motor": "content/13 Dominios/source/rp3/177-eurostat-serie-ihpc-energia-da-casa-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-ihpc-energia-da-casa-variacao-homologa",
+      "dimensao": "coicop18",
+      "codigo": "CP045",
+      "rotulo": "Electricity, gas and other fuels",
+      "caminho": [
+        "dimension",
+        "coicop18",
+        "category",
+        "label",
+        "CP045"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP045&geo=PT&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:17Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "11aebb54e809db8494f8171540ba030be142a6a75ad378ece7f4afa132b3be3e",
+      "motor": "content/13 Dominios/source/rp3/177-eurostat-serie-ihpc-energia-da-casa-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-ihpc-energia-da-casa-variacao-homologa",
+      "dimensao": "geo",
+      "codigo": "PT",
+      "rotulo": "Portugal",
+      "caminho": [
+        "dimension",
+        "geo",
+        "category",
+        "label",
+        "PT"
+      ],
+      "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP045&geo=PT&sinceTimePeriod=1996-01",
+      "lido_em": "2026-10-04T03:55:17Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "11aebb54e809db8494f8171540ba030be142a6a75ad378ece7f4afa132b3be3e",
+      "motor": "content/13 Dominios/source/rp3/177-eurostat-serie-ihpc-energia-da-casa-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-precos-da-habitacao-variacao-homologa",
+      "dimensao": "freq",
+      "codigo": "Q",
+      "rotulo": "Quarterly",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "Q"
+      ],
+      "documento": "House price index - quarterly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hpi_q?format=JSON&lang=EN&unit=RCH_A&purchase=TOTAL&geo=PT&sinceTimePeriod=2005-Q1",
+      "lido_em": "2026-10-04T03:55:19Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "d43fd07bb52a2bb2f4788bd21cdd2cf441ce2fdb3eac25c85883a5fc7bfe5bd3",
+      "motor": "content/13 Dominios/source/rp3/178-eurostat-serie-precos-da-habitacao-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-precos-da-habitacao-variacao-homologa",
+      "dimensao": "unit",
+      "codigo": "RCH_A",
+      "rotulo": "Annual rate of change",
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "RCH_A"
+      ],
+      "documento": "House price index - quarterly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hpi_q?format=JSON&lang=EN&unit=RCH_A&purchase=TOTAL&geo=PT&sinceTimePeriod=2005-Q1",
+      "lido_em": "2026-10-04T03:55:19Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "d43fd07bb52a2bb2f4788bd21cdd2cf441ce2fdb3eac25c85883a5fc7bfe5bd3",
+      "motor": "content/13 Dominios/source/rp3/178-eurostat-serie-precos-da-habitacao-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-precos-da-habitacao-variacao-homologa",
+      "dimensao": "purchase",
+      "codigo": "TOTAL",
+      "rotulo": "Total",
+      "caminho": [
+        "dimension",
+        "purchase",
+        "category",
+        "label",
+        "TOTAL"
+      ],
+      "documento": "House price index - quarterly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hpi_q?format=JSON&lang=EN&unit=RCH_A&purchase=TOTAL&geo=PT&sinceTimePeriod=2005-Q1",
+      "lido_em": "2026-10-04T03:55:19Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "d43fd07bb52a2bb2f4788bd21cdd2cf441ce2fdb3eac25c85883a5fc7bfe5bd3",
+      "motor": "content/13 Dominios/source/rp3/178-eurostat-serie-precos-da-habitacao-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-precos-da-habitacao-variacao-homologa",
+      "dimensao": "geo",
+      "codigo": "PT",
+      "rotulo": "Portugal",
+      "caminho": [
+        "dimension",
+        "geo",
+        "category",
+        "label",
+        "PT"
+      ],
+      "documento": "House price index - quarterly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hpi_q?format=JSON&lang=EN&unit=RCH_A&purchase=TOTAL&geo=PT&sinceTimePeriod=2005-Q1",
+      "lido_em": "2026-10-04T03:55:19Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "d43fd07bb52a2bb2f4788bd21cdd2cf441ce2fdb3eac25c85883a5fc7bfe5bd3",
+      "motor": "content/13 Dominios/source/rp3/178-eurostat-serie-precos-da-habitacao-variacao-homologa.json"
+    },
+    {
+      "serie": "serie-salario-minimo-mensal",
+      "dimensao": "freq",
+      "codigo": "S",
+      "rotulo": "Half-yearly, semesterly",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "S"
+      ],
+      "documento": "Monthly minimum wages - bi-annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/earn_mw_cur?format=JSON&lang=EN&currency=EUR&geo=PT&sinceTimePeriod=1999-S1",
+      "lido_em": "2026-10-04T03:55:21Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "82bf5d3a3b5cd5be503a9a168f5926da7f36fd05da8f03e4597d1d2d5fe02f28",
+      "motor": "content/13 Dominios/source/rp3/179-eurostat-serie-salario-minimo-mensal.json"
+    },
+    {
+      "serie": "serie-salario-minimo-mensal",
+      "dimensao": "currency",
+      "codigo": "EUR",
+      "rotulo": "Euro",
+      "caminho": [
+        "dimension",
+        "currency",
+        "category",
+        "label",
+        "EUR"
+      ],
+      "documento": "Monthly minimum wages - bi-annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/earn_mw_cur?format=JSON&lang=EN&currency=EUR&geo=PT&sinceTimePeriod=1999-S1",
+      "lido_em": "2026-10-04T03:55:21Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "82bf5d3a3b5cd5be503a9a168f5926da7f36fd05da8f03e4597d1d2d5fe02f28",
+      "motor": "content/13 Dominios/source/rp3/179-eurostat-serie-salario-minimo-mensal.json"
+    },
+    {
+      "serie": "serie-salario-minimo-mensal",
+      "dimensao": "geo",
+      "codigo": "PT",
+      "rotulo": "Portugal",
+      "caminho": [
+        "dimension",
+        "geo",
+        "category",
+        "label",
+        "PT"
+      ],
+      "documento": "Monthly minimum wages - bi-annual data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/earn_mw_cur?format=JSON&lang=EN&currency=EUR&geo=PT&sinceTimePeriod=1999-S1",
+      "lido_em": "2026-10-04T03:55:21Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "82bf5d3a3b5cd5be503a9a168f5926da7f36fd05da8f03e4597d1d2d5fe02f28",
+      "motor": "content/13 Dominios/source/rp3/179-eurostat-serie-salario-minimo-mensal.json"
+    },
+    {
+      "serie": "serie-obrigacoes-do-tesouro-10-anos-rendibilidade",
+      "dimensao": "freq",
+      "codigo": "M",
+      "rotulo": "Monthly",
+      "caminho": [
+        "dimension",
+        "freq",
+        "category",
+        "label",
+        "M"
+      ],
+      "documento": "EMU convergence criterion series - monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/irt_lt_mcby_m?format=JSON&lang=EN&int_rt=MCBY&geo=PT&sinceTimePeriod=1980-01",
+      "lido_em": "2026-10-06T10:46:27Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "e6ba45206d0ab0ad81f99e5e7fc649458df903352658deaeef82327f1e2e4f63",
+      "motor": "content/13 Dominios/source/corredor-series/2026-10-06/019-eurostat-obrigacoes-10-anos.json"
+    },
+    {
+      "serie": "serie-obrigacoes-do-tesouro-10-anos-rendibilidade",
+      "dimensao": "int_rt",
+      "codigo": "MCBY",
+      "rotulo": "EMU convergence criterion bond yields",
+      "caminho": [
+        "dimension",
+        "int_rt",
+        "category",
+        "label",
+        "MCBY"
+      ],
+      "documento": "EMU convergence criterion series - monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/irt_lt_mcby_m?format=JSON&lang=EN&int_rt=MCBY&geo=PT&sinceTimePeriod=1980-01",
+      "lido_em": "2026-10-06T10:46:27Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "e6ba45206d0ab0ad81f99e5e7fc649458df903352658deaeef82327f1e2e4f63",
+      "motor": "content/13 Dominios/source/corredor-series/2026-10-06/019-eurostat-obrigacoes-10-anos.json"
+    },
+    {
+      "serie": "serie-obrigacoes-do-tesouro-10-anos-rendibilidade",
+      "dimensao": "geo",
+      "codigo": "PT",
+      "rotulo": "Portugal",
+      "caminho": [
+        "dimension",
+        "geo",
+        "category",
+        "label",
+        "PT"
+      ],
+      "documento": "EMU convergence criterion series - monthly data",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/irt_lt_mcby_m?format=JSON&lang=EN&int_rt=MCBY&geo=PT&sinceTimePeriod=1980-01",
+      "lido_em": "2026-10-06T10:46:27Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "e6ba45206d0ab0ad81f99e5e7fc649458df903352658deaeef82327f1e2e4f63",
+      "motor": "content/13 Dominios/source/corredor-series/2026-10-06/019-eurostat-obrigacoes-10-anos.json"
+    }
+  ]
+}

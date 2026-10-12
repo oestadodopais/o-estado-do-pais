@@ -52,12 +52,12 @@ const folha = caminho?.folha ?? null;
 {
   caminho && (
     <nav class="caminho" aria-label={s.nav.rotuloCaminho}>
-      {caminho.degraus.map((d) => (
+      {caminho.degraus.map((d, i) => (
         <>
           <a href={d.href}>{d.rotulo}</a>
-          <span class="caminho-sep" aria-hidden="true">
+          {(folha || i < caminho.degraus.length - 1) && <span class="caminho-sep" aria-hidden="true">
             ›
-          </span>
+          </span>}
         </>
       ))}
       {folha && folha.tipo === 'chave' && (

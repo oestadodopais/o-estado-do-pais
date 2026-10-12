@@ -81,7 +81,7 @@
     },
     {
       "conferencia": "porta",
-      "comando": "node tests/inicio/porta.mjs --vermelhos --json /tmp/b1-porta-segunda.json",
+      "comando": "node tests/inicio/porta.mjs --vermelhos --json <temporario>",
       "codigo": 0,
       "saida": "segunda-porta.log"
     },

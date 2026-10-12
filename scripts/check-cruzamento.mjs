@@ -989,7 +989,7 @@ function main(argv) {
   }
 
   const series = confereSeries(regsDeSeries, erros, comOrigem);
-  const rotulos = confereRotulos(regsDeLinhas, erros);
+  const rotulos = confereRotulos(regsDeLinhas, erros, regsDeFicheiros);
   const ficheirosCruzados = confereFicheiros(regsDeFicheiros, erros);
   confereRegistoDaTravessia(regsDeFicheiros, erros);
   const itensDaAgenda = confereInvariantes(erros);
@@ -1095,7 +1095,7 @@ function rotulosSemTravessia(linhas, cruzadas) {
   return linhas.filter((l) => l.temRotulo && !cruzadas.has(l.id)).map((l) => l.id);
 }
 
-function confereRotulos(regsDeLinhas, erros) {
+function confereRotulos(regsDeLinhas, erros, regsDeFicheiros = []) {
   /* A PLANTA, ANTES DE QUALQUER CONTAGEM. Três casos: uma linha com rótulo que
      atravessou (verde), uma com rótulo que não atravessou (vermelho), e uma sem
      rótulo que não atravessou (verde, que é o estado de 1 049 linhas da casa e
@@ -1116,6 +1116,12 @@ function confereRotulos(regsDeLinhas, erros) {
   }
 
   const cruzadas = idsQueAtravessaram(regsDeLinhas);
+  // Um YAML inteiro atravessado e conferido pelos bytes também transporta o rótulo.
+  for(const {dados} of regsDeFicheiros)for(const [nome,e] of Object.entries(dados.files)) {
+    if(e.destino!=='ledger/claims'||!nome.endsWith('.yml'))continue;
+    const p=path.join(DIR_CLAIMS,nome);
+    if(fs.existsSync(p)&&e.origin_sha256===e.exported_sha256&&sha256(fs.readFileSync(p))===e.exported_sha256)cruzadas.add(nome.slice(0,-4));
+  }
   const linhas = [];
   let ficheiros = 0;
   for (const nome of fs.readdirSync(DIR_CLAIMS).sort()) {

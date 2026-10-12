@@ -1,0 +1,4 @@
+a33711176a3eb9781c258ba09a075672e2800955
+fix(rp4n-g): situar a água na faixa mediana selada pela ERSAR
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

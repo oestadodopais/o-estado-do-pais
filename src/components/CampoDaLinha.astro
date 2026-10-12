@@ -62,7 +62,7 @@ const apresentado = /^verifications\.\d+\.found$/.test(campo) ? valorDaReleitura
 const pedacos = quebras ? String(valor).split(/(?<=\/)/) : null;
 const s = t(lang);
 const porVerificar = valor === POR_VERIFICAR;
-const gloss = lang !== 'pt' ? s.livro.marcadorGloss : '';
+
 /**
  * UMA DATA SAI POR OUTRA PORTA (bloco F1.4, 04.09.2026).
  *
@@ -133,13 +133,12 @@ const marcaLeis = leis === true && lang === 'en' && !porVerificar;
       <a
         class="marcador"
         href={routePath('marcador', lang)}
-        lang="pt-PT"
+        lang={lang === 'pt' ? 'pt-PT' : 'en'}
         data-linha-claim={id}
         data-linha-campo={campo}
       >
-        {valor}
+        {s.prov.marcadorDoSelo}
       </a>
-      {gloss && <span class="marcador-gloss"> ({gloss})</span>}
       <DefinicaoDoMarcador lang={lang} />
     </span>
   ) : (

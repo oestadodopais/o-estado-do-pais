@@ -6,7 +6,7 @@
 set -eu
 S=<scratchpad>
 R=<sitio>
-O=$R/.claude/worktrees/aterragem-2026-10-06
+O=$R/<worktrees>/aterragem-2026-10-06
 PAC=${PAC_LEITURA:-$S/h4/pacote-leitura-e}
 BASE=${BASE_LEITURA:-81e3de31}
 CAB=${CAB_LEITURA:-$(git -C "$O" rev-parse --short=8 HEAD)}

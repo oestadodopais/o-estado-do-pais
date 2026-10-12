@@ -20,12 +20,12 @@ reference_date: "2026"
 excerpt: null
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
-ressalva: "As partes foram arredondadas separadamente; a sua soma pode não ser exatamente cem por cento. A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma."
-ressalva_en: "The shares were rounded separately; their sum may not be exactly one hundred per cent. Gross expenditure includes financial transactions and transfers between State services, as added up in the budget map."
+ressalva: "As partes foram arredondadas separadamente; a sua soma pode não ser exatamente cem por cento."
+ressalva_en: "The shares were rounded separately; their sum may not be exactly one hundred per cent."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "Dividir a despesa bruta deste ministério pela despesa bruta da administração central, multiplicar por cem e arredondar a duas casas decimais. Inclui operações financeiras e transferências internas; não mede a repartição da despesa efetiva consolidada."
-derivation_en: "Divide this ministry's gross expenditure by central government's gross expenditure, multiply by one hundred and round to two decimal places. Includes financial transactions and internal transfers; it does not measure the allocation of consolidated effective expenditure."
+derivation: "Dividir a despesa deste ministério pela «DESPESA TOTAL» do MAPA 4, Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, multiplicar por cem e arredondar a duas casas decimais."
+derivation_en: "Divide this ministry's expenditure by ‘DESPESA TOTAL’ in MAPA 4, Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, multiply by one hundred and round to two decimal places."
 derived_from:
   - "oe-2026-despesa-ministerio-infraestruturas-e-habitacao"
   - "oe-2026-despesa-bruta-administracao-central"
@@ -34,7 +34,7 @@ check: "round ( oe-2026-despesa-ministerio-infraestruturas-e-habitacao / oe-2026
 
 study: "oe-2026"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[derivation do motor] Dividir a despesa bruta deste ministério pela despesa bruta da administração central, multiplicar por cem e arredondar a duas casas decimais. Inclui operações financeiras e transferências internas; não mede a repartição da despesa efetiva consolidada. · [note do motor] Euros de cada 100 euros da despesa definida no denominador. Arredondamento a duas casas decimais, metades para fora de zero. O somatório das parcelas arredondadas pode não ser 100. O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local; os mapas da lei cobrem a administração central e a segurança social, com o perímetro específico indicado nesta linha. Não são grandezas diretamente comparáveis. Cita-se o ficheiro de dados ou o documento oficial, nunca os portais oe.gov.pt ou Mais Transparência, que têm avisos de direitos. · Cruzado de ResearchHub content/20 Orcamento do Estado · oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao."
+note: "[derivation do motor] Dividir a despesa deste ministério pela «DESPESA TOTAL» do MAPA 4, Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, multiplicar por cem e arredondar a duas casas decimais. · [note do motor] Euros de cada 100 euros da despesa definida no denominador. Arredondamento a duas casas decimais, metades para fora de zero. O somatório das parcelas arredondadas pode não ser 100. O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local; os mapas da lei cobrem a administração central e a segurança social, com o perímetro específico indicado nesta linha. Não são grandezas diretamente comparáveis. Cita-se o ficheiro de dados ou o documento oficial, nunca os portais oe.gov.pt ou Mais Transparência, que têm avisos de direitos. · Cruzado de ResearchHub content/20 Orcamento do Estado · oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

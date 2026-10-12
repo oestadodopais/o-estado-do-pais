@@ -1,0 +1,15 @@
+{
+  "questao": "RP4N-17",
+  "cabeca_conferida": "19723a9f3876bff3ad4364d00bb017c63cda56d3",
+  "codigo_privacidade": 1,
+  "historico": 2,
+  "diff": 0,
+  "cabeca_sem_excecoes": 0,
+  "ficheiro": "design/especime-v3/critica/LEITURA-RP4N-g-2026-10-12.md",
+  "ocorrencia": "Prefixo genérico das pastas pessoais no registo recebido; sem nome de utilizador nem caminho pessoal completo.",
+  "correcao": "Cabeça anonimizada por commit normal.",
+  "acao_recusada": "Reescrever os commits RP4-n-h desta sessão para retirar a ocorrência do histórico.",
+  "motivo_da_revisao_automatica": "Muda hashes e a referência do ramo; a revisão exigiu autorização explícita para a reescrita e indicou o commit normal como alternativa mais segura.",
+  "autorizacao": "Pedida; sem resposta recebida no momento deste registo.",
+  "decisao": "Não reescrever. Conservar a recusa e os resultados reais."
+}

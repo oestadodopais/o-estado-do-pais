@@ -15,8 +15,6 @@
 const S = (campo, literal) => ({ serie: 'propria', campo, literal });
 /** Um literal de uma origem declarada. @param {string} origem @param {string} literal @param {string} [campo] */
 const O = (origem, literal, campo = 'excerto') => ({ origem, campo, literal });
-/** Um literal do nome que o projeto dá à série (da casa). @param {'pt'|'en'} lingua @param {string} literal */
-const NOME = (lingua, literal) => ({ declaracao: 'nome', lingua, literal });
 /** @param {string} pt @param {string} en @param {...any} apoios */
 const diz = (pt, en, ...apoios) => ({ classe: 'diz', pt, en, apoios });
 /** @param {string} pt @param {string} en */
@@ -38,12 +36,8 @@ const ihpcPortugues = (classe) => [
   liga('.', '.'),
 ];
 
-/* AS CLASSES DO IHPC DIZEM-SE PELO NOME DO PROJETO, e não pelo rótulo da fonte. Os campos destas séries só trazem o
-   código da classe (`coicop18=CP041`); o rótulo com que o Eurostat diz o que o código é leu-se na API a 05.10.2026,
-   mas uma resposta da API só entra como origem com o selo do pedido feito pelo cliente da casa e guardado no motor
-   (a K16), e este bloco não toca no motor. Até a resposta ser selada, a parte diz o que o nome do projeto diz, e o
-   relatório lista as séries como «por confirmar na fonte». */
-const COMBUSTIVEIS = diz(' os preços dos combustíveis', ' fuel prices changed', NOME('pt', 'combustíveis'), NOME('en', 'Fuel prices'));
+/* RP4-n: as classes e a unidade anual vêm dos rótulos literais que o motor exporta dos corpos selados. */
+const COMBUSTIVEIS = diz(' os preços dos combustíveis e lubrificantes para transporte pessoal', ' fuel and lubricant prices for personal transport changed', O('rp4n-combustiveis', 'Fuels and lubricants for personal transport equipment'));
 /** O índice de preços no consumidor do INE, mês a mês ou ano a ano. @param {string} pt @param {string} en @param {string} literal */
 const ipc = (pt, en, literal) => [
   diz(pt, en, S('name', literal)),
@@ -98,7 +92,7 @@ export const SERIES_R4 = [
     serie: 'serie-ihpc-combustiveis-variacao-homologa-ue',
     partes: [
       diz('É quanto mudaram', 'It is how much', VARIACAO_HOMOLOGA),
-      COMBUSTIVEIS,
+      {...COMBUSTIVEIS, apoios: [O('rp4n-combustiveis-ue', 'Fuels and lubricants for personal transport equipment')]},
       diz(' face ao mesmo mês do ano anterior,', ' compared with the same month of the previous year,', MESMO_MES),
       diz(' na medida harmonizada que serve para comparar os países da União Europeia', ' in the harmonised measure used to compare the countries of the European Union', COMPARAVEL),
       diz(' (índice harmonizado de preços no consumidor)', ' (harmonised index of consumer prices)', NOME_DO_IHPC),
@@ -114,18 +108,18 @@ export const SERIES_R4 = [
   { serie: 'serie-ihpc-combustiveis-variacao-homologa', partes: ihpcPortugues(COMBUSTIVEIS) },
   {
     serie: 'serie-ihpc-energia-da-casa-variacao-homologa',
-    partes: ihpcPortugues(diz(' os preços da energia usada em casa', ' the prices of energy used at home changed', NOME('pt', 'energia em casa'), NOME('en', 'Home energy prices'))),
+    partes: ihpcPortugues(diz(' os preços da eletricidade, do gás e de outros combustíveis', ' electricity, gas and other fuel prices changed', O('rp4n-energia', 'Electricity, gas and other fuels'))),
   },
   {
     serie: 'serie-ihpc-rendas-variacao-homologa',
-    partes: ihpcPortugues(diz(' os preços das rendas', ' rent prices changed', NOME('pt', 'rendas'), NOME('en', 'Rent prices'))),
+    partes: ihpcPortugues(diz(' os preços das rendas', ' rent prices changed', O('rp4n-rendas', 'Actual rental payments made for housing'))),
   },
   { serie: 'serie-ipc-indice', partes: ipc('Mede, mês a mês,', 'It measures, month by month,', '; Mensal - INE') },
   { serie: 'serie-ipc-indice-anual', partes: ipc('Mede, ano a ano,', 'It measures, year by year,', '; Anual - INE') },
   {
     serie: 'serie-precos-da-habitacao-variacao-homologa',
     partes: [
-      diz('É quanto mudaram num ano', 'It is the change over a year in', NOME('pt', 'variação num ano'), NOME('en', 'change over a year')),
+      diz('É quanto mudaram num ano', 'It is the change over a year in', O('rp4n-hpi-anual', 'Annual rate of change')),
       diz(' os preços de transação das casas compradas pelas famílias', ' the transaction prices of dwellings purchased by households', O('glossario-hpi', 'measures the changes in the transaction prices of dwellings purchased by households')),
       diz(' em Portugal', ' in Portugal', S('document.edition', 'geo=PT')),
       diz(', novas e usadas,', ', new and existing,', O('eurostat-tipsho20-descricao', 'both new and existing')),
@@ -178,7 +172,6 @@ export const SERIES_R4 = [
         S('derivation', 'isto é, descontada a subida dos preços desde esse ano'),
         S('derivation_en', 'that is, net of the rise in prices since that year'),
       ),
-      diz(' (remuneração em termos reais)', ' (pay in real terms)', NOME('pt', 'em termos reais'), NOME('en', 'in real terms')),
       liga('.', '.'),
     ],
   },

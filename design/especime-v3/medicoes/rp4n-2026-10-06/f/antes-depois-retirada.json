@@ -1,0 +1,78 @@
+[
+  {
+    "fase": "f-antes",
+    "lang": "pt",
+    "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f-antes/recibos/area-pt.html",
+    "referencias": {
+      "avisos-pt2030-abertos": {
+        "cartoes": 1,
+        "ocorrencias_do_id": 6
+      },
+      "avisos-pt2030-pessoas-singulares": {
+        "cartoes": 1,
+        "ocorrencias_do_id": 6
+      },
+      "ciclo-substituicao-condutas": {
+        "cartoes": 0,
+        "ocorrencias_do_id": 0
+      }
+    }
+  },
+  {
+    "fase": "f",
+    "lang": "pt",
+    "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/recibos/area-pt.html",
+    "referencias": {
+      "avisos-pt2030-abertos": {
+        "cartoes": 0,
+        "ocorrencias_do_id": 0
+      },
+      "avisos-pt2030-pessoas-singulares": {
+        "cartoes": 0,
+        "ocorrencias_do_id": 0
+      },
+      "ciclo-substituicao-condutas": {
+        "cartoes": 0,
+        "ocorrencias_do_id": 0
+      }
+    }
+  },
+  {
+    "fase": "f-antes",
+    "lang": "en",
+    "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f-antes/recibos/area-en.html",
+    "referencias": {
+      "avisos-pt2030-abertos": {
+        "cartoes": 1,
+        "ocorrencias_do_id": 6
+      },
+      "avisos-pt2030-pessoas-singulares": {
+        "cartoes": 1,
+        "ocorrencias_do_id": 6
+      },
+      "ciclo-substituicao-condutas": {
+        "cartoes": 0,
+        "ocorrencias_do_id": 0
+      }
+    }
+  },
+  {
+    "fase": "f",
+    "lang": "en",
+    "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/recibos/area-en.html",
+    "referencias": {
+      "avisos-pt2030-abertos": {
+        "cartoes": 0,
+        "ocorrencias_do_id": 0
+      },
+      "avisos-pt2030-pessoas-singulares": {
+        "cartoes": 0,
+        "ocorrencias_do_id": 0
+      },
+      "ciclo-substituicao-condutas": {
+        "cartoes": 0,
+        "ocorrencias_do_id": 0
+      }
+    }
+  }
+]

@@ -1,6 +1,6 @@
 # BRIEF · As ilhas, M6 · a medição cega das 30 linhas
 
-*Escrito a 27.08.2026 pelo lugar de direção (Claude Fable 5) para o medidor (Claude Sonnet), numa cópia do repositório do sítio (um `git worktree` que o lugar de direção indica) e sobre os ficheiros das fontes alojados no motor (`~/Instruments/ResearchHub/content/12 Concelhos/source/`, só leitura). Sem travessões na prosa deste ficheiro.*
+*Escrito a 27.08.2026 pelo lugar de direção (Claude Fable 5) para o medidor (Claude Sonnet), numa cópia do repositório do sítio (um `git worktree` que o lugar de direção indica) e sobre os ficheiros das fontes alojados no motor (`~/<projetos>/ResearchHub/content/12 Concelhos/source/`, só leitura). Sem travessões na prosa deste ficheiro.*
 
 ## 1 · As medições
 

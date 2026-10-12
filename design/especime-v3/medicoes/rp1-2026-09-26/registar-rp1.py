@@ -9,12 +9,12 @@ from pathlib import Path
 
 AQUI=Path(__file__).resolve().parent
 RAIZ=AQUI.parents[3]
-MOTOR=Path(os.environ.get('RP1_MOTOR',str(Path.home()/'Instruments/ResearchHub/.worktrees/rp1-2026-09-26')))
+MOTOR=Path(os.environ.get('RP1_MOTOR',str(Path.home()/'<projetos>/ResearchHub/.worktrees/rp1-2026-09-26')))
 
 def publico(s):
     s=s.replace(str(RAIZ),'<worktree do sítio>')
-    s=s.replace(str(Path.home()/'Instruments/ResearchHub'),'~/Instruments/ResearchHub')
-    s=re.sub(r'/private/tmp/claude-501/[^\s"<>`]+','<scratchpad da sessão>',s)
+    s=s.replace(str(Path.home()/'<projetos>/ResearchHub'),'~/<projetos>/ResearchHub')
+    s=re.sub(r'<temporario>"<>`]+','<scratchpad da sessão>',s)
     prefixo=str(Path.home().parent)+'/'
     s=re.sub(re.escape(prefixo)+r'[^\s"<>`]+','<caminho local omitido>',s)
     return re.sub(re.escape(Path.home().name),'<utilizador local>',s,flags=re.I)

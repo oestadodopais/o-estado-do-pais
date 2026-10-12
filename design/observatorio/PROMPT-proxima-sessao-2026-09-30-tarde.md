@@ -36,15 +36,15 @@
 
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
-### O sítio (`~/Instruments/OEstadoDoPais/.claude/worktrees/registos-2026-09-30c`)
+### O sítio (`~/<projetos>/OEstadoDoPais/<worktrees>/registos-2026-09-30c`)
 - `main`: 88b1cfff · 2026-09-30T16:18:09+01:00 · §1.145: os estudos de Évora passam de seis a quatro (o brief E1 com o §0 medido, as duas leituras de fora do Opus e do Astra, a I18  (`git log -1 main`)
 - `origin/main`: 88b1cfff · 2026-09-30T16:18:09+01:00 · §1.145: os estudos de Évora passam de seis a quatro (o brief E1 com o §0 medido, as duas leituras de fora do Opus e do Astra, a I18  (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
 - ramos locais: `main 88b1cfff`, `registos-2026-09-30c 88b1cfff`  (`git branch`)
 - ramos no remoto: `main`  (`git ls-remote --heads origin`)
-- worktree: `~/Instruments/OEstadoDoPais 88b1cfff [main]`
-- worktree: `~/Instruments/OEstadoDoPais/.claude/worktrees/registos-2026-09-30c 88b1cfff [registos-2026-09-30c]`
+- worktree: `~/<projetos>/OEstadoDoPais 88b1cfff [main]`
+- worktree: `~/<projetos>/OEstadoDoPais/<worktrees>/registos-2026-09-30c 88b1cfff [registos-2026-09-30c]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
 - 36739781601 · `88b1cfff` · main · portão · **completed / success** · criada 2026-09-30T15:50:29Z · atualizada 2026-09-30T16:02:53Z
@@ -59,14 +59,14 @@
 - igual a `origin/main` (`88b1cfff`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
-### O motor (`~/Instruments/ResearchHub`)
+### O motor (`~/<projetos>/ResearchHub`)
 - `master`: 4b46bef · 2026-09-30T01:44:15+01:00 · F2.2e: provar as duas guardas do painel e os números do relatório  (`git log -1 master`)
 - `origin/master`: 4b46bef · 2026-09-30T01:44:15+01:00 · F2.2e: provar as duas guardas do painel e os números do relatório  (`git log -1 origin/master`)
 - `master` está 0 à frente e 0 atrás de `origin/master`  (`git rev-list --left-right --count`)
 - árvore principal: 5 entrada(s) por registar: `M sweeps/state.json`; `?? .maintenance-locks/`; `?? indicators/out/pde-2026-09-23/`; `?? publisher/recortes/manifest.regioes.json`; `?? sweeps/sweep-2026-09-01.md`  (`git status --short`, código 0)
 - ramos locais: `master 4b46bef`  (`git branch`)
 - ramos no remoto: `master`  (`git ls-remote --heads origin`)
-- worktree: `~/Instruments/ResearchHub 4b46bef [master]`
+- worktree: `~/<projetos>/ResearchHub 4b46bef [master]`
 
 ### O uso das duas subscrições (`python3 scripts/leituras/uso.py`)
     Claude (escrito pela linha de estado a 30.09.2026 16:06 UTC):

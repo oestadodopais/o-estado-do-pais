@@ -59,6 +59,9 @@ def substituir_texto(texto, trocas, utilizador):
     # O nome só identifica a máquina quando é um componente de caminho.
     if utilizador:
         novo = re.sub(r'(?<=/)' + re.escape(utilizador) + r'(?=/)', '<utilizador>', novo)
+    # Restos de caminhos locais já abreviados em registos antigos (regra 9).
+    novo = re.sub(r'Instruments[/]', '<projetos>/', novo)
+    novo = re.sub(r'[.]claude[/]worktrees[/]', '<worktrees>/', novo)
     return novo
 
 

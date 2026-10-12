@@ -709,6 +709,14 @@ if (tabelaDosPaises && leitura.series.size) {
   } else {
     errosDasSeries.push(`as séries no tempo do RP3 (${ine}, ${eurostat}, ${derivadaRp3}) não estão em ledger/series/, e as plantas das regras S9 a S14 não têm onde morder.`);
   }
+  const segundaFonte = [...leitura.series.values()].find((s) => s.definition_sources)?.id;
+  if (!segundaFonte) errosDasSeries.push('falta a série com segunda fonte para plantar a regra S9.');
+  else plantas.push(
+    { regra: 'S9', nome: 'segunda fonte sem recibo', espera: 'S9: definition_sources exige',
+      series: copiaDasSeries(segundaFonte, (s) => { delete s.definition_sources[0].receipt; }) },
+    { regra: 'S9', nome: 'lista de segundas fontes vazia', espera: 'S9: definition_sources exige',
+      series: copiaDasSeries(segundaFonte, (s) => { s.definition_sources = []; }) },
+  );
   for (const p of plantas) {
     const r = validateSeries({
       series: p.series ?? leitura.series,

@@ -1,0 +1,4 @@
+1b08a019d0400b7289ffc1639e536c0a69b558b7
+test(rp4n-g): preparar a medição das frases e as capturas finais
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

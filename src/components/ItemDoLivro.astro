@@ -107,7 +107,7 @@ const s = t(lang);
    O dicionário está em `src/i18n/unidades.mjs` e traz a marca de língua com o
    texto: `null` quando traduziu, `pt-PT` quando a unidade ficou em português
    por não haver facto de dicionário para ela. */
-const unidade = unidadeDaLinha(c.unit, lang);
+const unidade = unidadeDaLinha(c.unit, lang, c.value);
 /* O TÍTULO DO DOCUMENTO NÃO SE ESCREVE DUAS VEZES (bloco F1.4, 04.09.2026).
    Quando a escada dos nomes chega ao quarto degrau, o nome DA ENTRADA já É o
    título do documento; repeti-lo por baixo, com o rótulo «documento», era a
@@ -177,7 +177,7 @@ const ressalva = ressalvaDaLinha(c, lang);
       )}
       {c.access_date !== null && c.access_date !== undefined && (
         <span class="livro-item-campo">
-          <span class="livro-item-k">{s.prov.lido}</span>{' '}
+          <span class="livro-item-k">{c.access_date_kind === 'hosted-copy' ? s.prov.copiaAlojada : s.prov.lido}</span>{' '}
           <CampoDaLinha id={c.id} campo="access_date" valor={c.access_date} lang={lang} />
         </span>
       )}

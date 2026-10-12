@@ -1,8 +1,13 @@
 #!/usr/bin/env node
+import {conferirCaminhoFinal} from './caminho-final.mjs';
 import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
 
 import { contarFrasesDasMudancas, errosDoSeloDaDefinicao } from '../tests/explicacoes/o-que-e.mjs';
 import { conferirLugaresIA } from './lugares-ia-do-portao.mjs';
+import { inventariarMarcadores, resumirMarcadores } from './sem-marcadores.mjs';
+const MARCAS_RP4N = [];
+import { plantasDosMarcadores } from '../tests/cartao/rp4nb.mjs';
+const PLANTAS_RP4N = plantasDosMarcadores();
 import { conferirValorUnidade } from './valor-unidade.mjs';
 import { nomeNoRegistoAdmitido } from './nome-no-registo.mjs';
 import { conferirCampoRelido, valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
@@ -253,6 +258,7 @@ import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
 import { parse, NodeType } from 'node-html-parser';
 
+import { conferirPublicacaoRetirada } from './linhas-retiradas.mjs';
 import { t } from '../src/i18n/strings.mjs';
 import { unidadeDaLinha } from '../src/i18n/unidades.mjs';
 import {
@@ -411,6 +417,7 @@ if (!fs.existsSync(DIST)) {
 }
 
 const claims = loadClaims();
+const livroInteiro = loadClaims({includeWithdrawn:true});
 const ER1_RECIBOS = { comCodigo: 0, semCodigo: 0 };
 /* A JANELA DA LEITURA DA SEMANA (bloco EX1, 05.10.2026): o dia do carimbo da construção, contra o qual a página da
    semana declara a sua janela (`scripts/explicacoes-do-portao.mjs`). Lido uma vez, antes de ler uma página. */
@@ -644,10 +651,8 @@ const CADEIAS_HEAD = [
   (a, b) => b.length - a.length,
 );
 
-/* ===========================================================================
- * O SÍTIO NO ECRÃ PRINCIPAL (28.08.2026, `design/marca/BRIEF-app.md`)
- * ===========================================================================
- * O que o portão reconhece na cabeça de cada página, e o que ele confere uma
+/* ==================================================================== * O SÍTIO NO ECRÃ PRINCIPAL (28.08.2026, `design/marca/BRIEF-app.md`)
+ * ==================================================================== * O que o portão reconhece na cabeça de cada página, e o que ele confere uma
  * vez no fim, sobre os dois manifestos construídos.
  * ======================================================================== */
 
@@ -2785,9 +2790,11 @@ const CAMPOS_DA_LINHA = new Set([
    */
   'name',
   'name_source',
+  'name_source_en',
   'document.title',
   'document.edition',
   'document.locator',
+  'document.locator_en',
   /**
    * A página do documento onde está a frase que o excerto transcreve.
    *
@@ -3010,6 +3017,8 @@ function campoDaLinha(claim, campo, lang) {
       return claim.document?.title ?? null;
     case 'document.edition':
       return claim.document?.edition ?? null;
+    case 'document.locator_en':
+      return claim.document?.locator_en ?? null;
     case 'document.locator':
       return claim.document?.locator ?? null;
     case 'document.page':
@@ -3054,7 +3063,7 @@ function campoDaLinha(claim, campo, lang) {
          daquela linha naquela edição, e a tabela de tradução é prosa da casa,
          conferida contra o livro-razão por `scripts/check-lingua.mjs` — que é
          quem obriga toda a unidade do livro-razão a ter entrada ou marca. */
-      return unidadeDaLinha(claim.unit, lang).texto;
+      return unidadeDaLinha(claim.unit, lang, claim.value).texto;
     case 'derivation':
       return derivacaoDaLinha(claim, lang);
     case 'source_flag_note':
@@ -3757,9 +3766,9 @@ function seloDaLinha(id, lang) {
   const calculado = eDerivada(claim) ? `${s.prov.calculado} · ` : '';
   /* Sem espaço antes do marcador: o gabarito põe-no no elemento a seguir e o
      DOM não traz espaço nenhum entre os dois, e é o DOM que o leitor vê. */
-  const marcador = provenienciaIncompleta(claim) ? POR_VERIFICAR : '';
+  const marcador = provenienciaIncompleta(claim) ? s.prov.marcadorDoSelo : '';
   const etiqueta = normalizeWhitespace(
-    conhecido ? `${calculado}${publicador}` : porConfirmar ? POR_VERIFICAR : s.prov.calculado,
+    conhecido ? `${calculado}${publicador}` : porConfirmar ? s.prov.marcadorDoSelo : s.prov.calculado,
   );
   /* E ONDE O PUBLICADOR É A CASA, a palavra do selo é «linha» e não «fonte»: são
      as cinco linhas cujo `source` é o nome deste sítio, e o §2.4 escreve-o à
@@ -4635,6 +4644,7 @@ const cartoesUsados = new Set();
 }
 
 /* ------------------------------------------------------------------ varrimento */
+for(const {ficheiro,mensagem} of conferirPublicacaoRetirada(DIST,livroInteiro)) erros.push({rel:path.relative(DIST,ficheiro),msg:mensagem});
 
 for (const file of ficheirosHtml(DIST)) {
   ficheiros++;
@@ -4646,6 +4656,8 @@ for (const file of ficheirosHtml(DIST)) {
   });
 
   const err = (msg) => erros.push({ rel, msg });
+  for(const erro of conferirCaminhoFinal(root)) err(erro);
+
 
   // H2, I190: antes das saídas de documentos alojados, em qualquer página.
   for (const a of root.querySelectorAll('a a')) {
@@ -4689,6 +4701,10 @@ for (const file of ficheirosHtml(DIST)) {
     normalizaCaminho(caminho),
     new Set(root.querySelectorAll('[id]').map((e) => e.getAttribute('id')).filter(Boolean)),
   );
+
+  const marcasRP4N = inventariarMarcadores(root, {rota, claims, municipios:MUNICIPIOS_COM_PAGINA});
+  MARCAS_RP4N.push({pagina:`dist/${rel}`, ...marcasRP4N});
+  for (const m of marcasRP4N.recusadas) err(`${m.mensagem} (${m.contexto})`);
 
   /* --- 0. documentos de estudo: obra citada, regra própria, e sai daqui --- */
   if (rota?.key === 'documento') {
@@ -6887,7 +6903,8 @@ for (const file of ficheirosHtml(DIST)) {
       continue;
     }
 
-    const esperado = campoDaLinha(claim, campo, linguaPagina);
+    const bruto = campoDaLinha(claim, campo, linguaPagina);
+    const esperado = bruto === POR_VERIFICAR && linguaPagina === 'en' ? '[to verify]' : bruto;
     if (esperado === null || esperado === undefined) {
       err(
         `a página renderiza o campo "${campo}" de "${id}", mas a linha não tem esse campo` +
@@ -7455,7 +7472,8 @@ for (const file of ficheirosHtml(DIST)) {
     }
 
     const renderizado = textoTranscrito(el);
-    const esperado = normalizeWhitespace(String(resolvido.texto));
+    const bruto = normalizeWhitespace(String(resolvido.texto));
+    const esperado = bruto === POR_VERIFICAR && linguaPagina === 'en' ? '[to verify]' : bruto;
     /**
      * UM CAMPO QUE É UMA DATA ESCREVE-SE NA FORMA DA CASA (bloco F1.4,
      * 04.09.2026).
@@ -8840,10 +8858,8 @@ for (const o of ocorrenciasDaLista) {
   }
 }
 
-/* =============================================================================
- * OS CARTÕES DE PARTILHA, REGISTO A REGISTO (etapa 5)
- * =============================================================================
- *
+/* ====================================================================== * OS CARTÕES DE PARTILHA, REGISTO A REGISTO (etapa 5)
+ * ====================================================================== *
  * Acima confere-se que cada PÁGINA nomeia o cartão certo. Aqui confere-se o
  * CARTÃO: que o ficheiro é o que o registo diz, que mede o que diz medir, e que
  * cada número que ele mostra vem de uma linha do livro-razão ou de uma chave da
@@ -8998,7 +9014,7 @@ for (const [nomePng, registo] of REGISTOS_DOS_CARTOES) {
       }
       const desenhado =
         v.campo === 'unit'
-          ? unidadeDaLinha(claim.unit, registo.edicao).texto
+          ? unidadeDaLinha(claim.unit, registo.edicao, claim.value).texto
           : String(doDisco);
       if (formaDoValor(desenhado) !== formaDoValor(String(v.texto))) {
         errC(
@@ -9298,6 +9314,14 @@ if (paginasDoLivro !== LANGS.length) {
   });
 }
 
+console.log(`  RP4N: ${PLANTAS_RP4N.length} plantas com mensagem e contagem afirmadas`);
+for (const [estado, tipos] of Object.entries(resumirMarcadores(MARCAS_RP4N))) {
+  for (const [tipo, dados] of Object.entries(tipos)) {
+    console.log(`  RP4N ${estado} · ${tipo}: ${dados.ocorrencias} ocorrência(s)`);
+    for (const p of dados.paginas) console.log(`    ${p.pagina}: ${p.ocorrencias}`);
+  }
+}
+
 console.log('');
 console.log(
   cinza(
@@ -9343,10 +9367,8 @@ console.log(
   ),
 );
 
-/* =============================================================================
- * UM FACTO POR VERIFICAR LEVA O MARCADOR ONDE ELE SE RENDE (I77, 27.08.2026)
- * =============================================================================
- * A `IDENTIDADE.md` §6 fixa o marcador `[a verificar]` como a única língua
+/* ====================================================================== * UM FACTO POR VERIFICAR LEVA O MARCADOR ONDE ELE SE RENDE (I77, 27.08.2026)
+ * ====================================================================== * A `IDENTIDADE.md` §6 fixa o marcador `[a verificar]` como a única língua
  * pública para «isto não está confirmado», e a Emenda 15 tirou da página do
  * leitor o parágrafo que o explicava. As duas regras juntas só se sustentam se o
  * marcador estiver ONDE o facto se rende: uma incerteza dita num parágrafo à
@@ -9421,10 +9443,8 @@ const ancoraDoMandatoNoPortao = (periodo) =>
   );
 }
 
-/* =============================================================================
- * AS DUAS EDIÇÕES DA MESMA FRASE (bloco «A grelha da voz», 26.08.2026)
- * =============================================================================
- * Até hoje a página do trabalho IMPRIMIA a frase da outra edição por baixo da
+/* ====================================================================== * AS DUAS EDIÇÕES DA MESMA FRASE (bloco «A grelha da voz», 26.08.2026)
+ * ====================================================================== * Até hoje a página do trabalho IMPRIMIA a frase da outra edição por baixo da
  * sua, com o rótulo «A mesma frase na outra edição». Era o sítio a provar ao
  * leitor que as duas edições dizem o mesmo, numa página do leitor, que é a
  * classe que a Emenda 15 tira de lá. A prova não se perde: muda de sítio, de uma
@@ -9663,8 +9683,7 @@ console.log(
 );
 console.log('');
 
-/* =============================================================================
- * LIMITES DESTE VARRIMENTO — ler antes de confiar nele.
+/* ====================================================================== * LIMITES DESTE VARRIMENTO — ler antes de confiar nele.
  *
  * 1. Só vê texto. Números dentro de <script> e <style> não são varridos, com
  *    uma excepção: as ilhas <script data-ledger-json>, essas são conferidas

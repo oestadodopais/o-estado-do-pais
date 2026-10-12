@@ -105,7 +105,7 @@ export const LINGUA_DOS_TITULOS = {
   'População residente (N.º) × sexo × grupo etário': 'pt',
   'Empresas (N.º) × CAE divisão × forma jurídica': 'pt',
   'VAB (€) das empresas × CAE divisão': 'pt',
-  'RASARP — Relatório Anual dos Serviços de Águas e Resíduos em Portugal': 'pt',
+  'RASARP 2025, volume 1': 'pt',
   'Anuário Financeiro dos Municípios Portugueses 2024 — apresentação das conclusões': 'pt',
   /* Os documentos do primeiro domínio da primeira vaga (estudo 13 do motor). */
   'Ganho médio mensal (€) por Localização geográfica (NUTS - 2024); Anual - MTSSS/GEP, Quadros de pessoal':
@@ -218,6 +218,9 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada rótulo distinto do campo `name`. */
 export const LINGUA_DOS_ROTULOS = {
+  'dcum x : cumulative reduction': 'en',
+  'penalização legal': 'pt',
+  'AA08b – Água não faturada': 'pt',
   /* JD1: conserva-se o rótulo impresso, incluindo o paralelo inglês do IGCP. */
   'Custo da dívida emitida': 'pt',
   'Custo do stock da dívida': 'pt',

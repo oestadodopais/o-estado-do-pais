@@ -67,6 +67,7 @@ import {
 } from '../lib/ledger.mjs';
 import { caminhoDaLinha, caminhoDoLivro, tituloDaLinha, descricaoDaLinha } from '../lib/livro.mjs';
 import { estadoDaFonte } from '../lib/prova.mjs';
+import { copiaSemLeitura, estadoDaCopia } from '../lib/estado-da-copia.mjs';
 import { ANFITRIOES_SEM_RESPOSTA } from '../data/fontes.mjs';
 import { atrasoDaLinha } from '../lib/frescura.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
@@ -79,9 +80,10 @@ import { linhaDePortugalDaLinha } from '../lib/faixa-do-concelho.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import Frase from '../components/Frase.astro';
+import TextoDoNome from '../components/TextoDoNome.astro';
 import QuadroFinanciamentoJd1 from '../components/QuadroFinanciamentoJd1.astro';
 import OrigemDaDefinicao from '../components/OrigemDaDefinicao.astro';
-import { DEFINICOES_DAS_MEDIDAS, FIGURAS, origensDaDefinicao } from '../data/figuras.mjs';
+import { DEFINICOES_DAS_MEDIDAS, FIGURAS, ORIGENS_DAS_DEFINICOES, origensDaDefinicao } from '../data/figuras.mjs';
 import { ressalvaDaLinha } from '../data/dominios.mjs';
 import {
   linguaDoTituloDoDocumento,
@@ -94,6 +96,7 @@ import { t } from '../i18n/strings.mjs';
 import { LICENCA } from '../data/licenca.mjs';
 import { CONJUNTO } from '../lib/conjunto.mjs';
 import { LANGS } from '../lib/routes.mjs';
+import { FAMILIAS_DAS_LINHAS } from '../data/o-que-e-das-familias.mjs';
 import { parcelaDoFinanciamento } from '../lib/frases-jd1.mjs';
 import { familiaDaLinha, oQueEDaLinha, nomeNoRecibo, lugarNoRecibo, nomeDaFonteNoRecibo } from '../lib/o-que-e-o-numero.mjs';
 import Marcador from '../components/Marcador.astro';
@@ -114,6 +117,13 @@ const nomeRecibo = nomeNoRecibo(id, lang);
 const lugarRecibo = lugarNoRecibo(id, lang);
 const nomeDaFonte = nomeDaFonteNoRecibo(id);
 const oQueE = oQueEDaLinha(id, lang);
+const fontesSecundariasDaDefinicao = (claim.definition_sources ?? []).map(fonte => Object.entries(ORIGENS_DAS_DEFINICOES)
+  .find(([chave, origem]) => origem.publicador === fonte.publisher && origem.url === fonte.url)?.[0]).filter(Boolean);
+
+// A lista visível explícita, mesmo vazia, decide a apresentação. A declaração
+// de segundas fontes conserva a proveniência e continua sujeita à K17.
+const fontesDaDefinicao = [...new Set(FAMILIAS_DAS_LINHAS[oQueE.chave]?.origens ?? fontesSecundariasDaDefinicao)];
+
 const parcelaFinanciamento = parcelaDoFinanciamento(id, lang);
 const comparacaoDoCartao = familiaRecibo.tipo === 'cartao' ? partesDaLeitura(id, lang).comparacao : null;
 /* As perguntas das medidas fora dos painéis europeus têm as origens no
@@ -392,7 +402,7 @@ function estadoDoAnfitriaoDaLinha(sourceUrl) {
   return estado === null ? null : { ...estado, anfitriao };
 }
 
-const fonteSemResposta = estadoDaFonte(claim.source_url) ?? estadoDoAnfitriaoDaLinha(claim.source_url);
+const fonteSemResposta = estadoDaCopia(claim, estadoDaFonte(claim.source_url) ?? estadoDoAnfitriaoDaLinha(claim.source_url));
 
 /**
  * ---------------------------------------------------------------------------
@@ -535,8 +545,8 @@ const ficha = [
      relatório» de «está nesta página deste relatório». */
   {
     k: s.prov.localizacao,
-    campo: 'document.locator',
-    valor: claim.document?.locator ?? null,
+    campo: lang === 'en' && claim.document?.locator_en ? 'document.locator_en' : 'document.locator',
+    valor: (lang === 'en' && claim.document?.locator_en) || claim.document?.locator || null,
     /**
      * O LOCALIZADOR ESTÁ NA LÍNGUA DO DOCUMENTO QUE ELE LOCALIZA (I91,
      * 29.08.2026), e por isso leva a marca do título.
@@ -550,7 +560,7 @@ const ficha = [
      * um localizador aparecer numa linha de documento inglês — que é o dia em
      * que esta regra deixa de valer e alguém tem de decidir.
      */
-    lingua: linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
+    lingua: lang === 'en' && claim.document?.locator_en ? null : linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
   },
   /* O RÓTULO COM QUE A FONTE PUBLICA ESTA FIGURA, e onde no ficheiro alojado
      ele foi lido (29.08.2026). Vem a seguir ao localizador porque é o par dele
@@ -566,9 +576,9 @@ const ficha = [
   },
   {
     k: s.prov.rotuloOnde,
-    campo: 'name_source',
-    valor: claim.name_source ?? null,
-    lingua: linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
+    campo: lang === 'en' && claim.name_source_en ? 'name_source_en' : 'name_source',
+    valor: (lang === 'en' && claim.name_source_en) || claim.name_source || null,
+    lingua: lang === 'en' && claim.name_source_en ? null : linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
   },
   /* A DATA DE LEITURA NÃO ENTRA NA FICHA (09.09.2026, decisão 17): vive uma vez
      só, no bloco das verificações. O período de referência fica, porque é uma
@@ -593,7 +603,7 @@ const estudo = studyTitle(claim.study, lang).titulo;
  * confere o texto renderizado contra a mesma função, como já fazia com a
  * `derivation` e com a nota de bandeira.
  */
-const unidade = unidadeDaLinha(claim.unit, lang);
+const unidade = unidadeDaLinha(claim.unit, lang, claim.value);
 
 /**
  * A FRASE DE ATRIBUIÇÃO (v2, §11 iii da ordem do recibo).
@@ -731,7 +741,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         data-nome={nomeRecibo.fonte === 'familia' ? (familiaRecibo.tipo === 'concelho' && familiaRecibo.chave !== 'limite' ? 'concelho' : 'familia') : nomeRecibo.fonte}
         data-de-linha={id}
         data-de-familia={nomeRecibo.familia ?? undefined}
-      >{nomeRecibo.texto}</span>{lugarRecibo && (
+      ><TextoDoNome id={id} texto={nomeRecibo.texto} lang={lang} /></span>{lugarRecibo && (
         <>
           <span class="linha-titulo-separador" aria-hidden="true">{' · '}</span>
           <span class="linha-titulo-lugar" data-lugar-da-linha={lugarRecibo.slug}>{lugarRecibo.nome}</span>
@@ -778,6 +788,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         <p class="linha-o-que-e-frase" data-o-que-e-parte="comparacao"><Frase partes={comparacaoDoCartao.pedacos} lang={lang} selos={false} /></p>
       )}
     </div>
+    {fontesDaDefinicao.length > 0 && <OrigemDaDefinicao origens={origensDaDefinicao({origens:fontesDaDefinicao}, lang)} s={s} lang={lang} />}
     {parcelaFinanciamento && <div class="linha-o-que-e"><p class="linha-o-que-e-frase" data-jd1-parcela><Frase partes={parcelaFinanciamento} lang={lang} selos={false} /></p></div>}
     <p class="linha-valor">
       <Claim id={id} lang={lang} as="span" class="linha-valor-num" plano>
@@ -1001,7 +1012,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
       {/* --------------------------------------------------- iii · a prova */}
       <section class="linha-bloco" aria-labelledby="prova-k" id="prova">
         {faltaNoExcerto && (
-        <span class="marca-agua" aria-hidden="true" data-marca={POR_VERIFICAR} />
+        <span class="marca-agua" aria-hidden="true" data-marca={s.prov.marcadorDoSelo} />
         )}
         <h2 class="linha-bloco-titulo" id="prova-k">{s.livro.linha.provaK}</h2>
 
@@ -1350,7 +1361,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         temBlocoDoPedido && (
           <section class="linha-bloco" aria-labelledby="pedido">
             {faltaNoEndereco && (
-        <span class="marca-agua" aria-hidden="true" data-marca={POR_VERIFICAR} />
+        <span class="marca-agua" aria-hidden="true" data-marca={s.prov.marcadorDoSelo} />
             )}
             <h2 class="linha-bloco-titulo" id="pedido">
               {ehSerieDeDados ? s.prov.pedido : s.prov.endereco}
@@ -1520,9 +1531,10 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           )}
           {claim.access_date && (
             <>
-              <dt>{s.prov.lido}</dt>
+              <dt>{claim.access_date_kind === 'hosted-copy' ? s.prov.copiaAlojada : s.prov.lido}</dt>
               <dd>
                 <CampoDaLinha id={id} campo="access_date" valor={claim.access_date} lang={lang} />
+                {claim.access_date_kind === 'hosted-copy' && ['penalizacao-antecipacao-um-ano-neutra','penalizacao-legal-um-ano-antecipacao-2026'].includes(id) && <>{' · '}<a href="/provas/pensao-alojamento.json">{s.prov.registoDaCopia}</a></>}
               </dd>
             </>
           )}
@@ -1580,9 +1592,9 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           {
             verificacoes.length === 0 ? (
               <>
-                <dt>{s.livro.linha.segundaLeituraVaziaK}</dt>
+                <dt>{copiaSemLeitura(claim) ? s.livro.linha.leituraNaFonteK : s.livro.linha.segundaLeituraVaziaK}</dt>
                 <dd>
-                  <span data-sem-segunda-leitura>{derivada && typeof claim.check === 'string' && claim.check.trim() ? s.livro.linha.segundaLeituraCalculada : s.livro.linha.semSegundaLeitura}</span>{' '}
+                  <span data-sem-segunda-leitura>{copiaSemLeitura(claim) ? s.livro.linha.semLeituraDaCopia : derivada && typeof claim.check === 'string' && claim.check.trim() ? s.livro.linha.segundaLeituraCalculada : s.livro.linha.semSegundaLeitura}</span>{' '}
                   <a href={`${routePath('metodo', lang)}#releitura`}>
                     {s.livro.linha.releituraPorta} →
                   </a>
@@ -1692,7 +1704,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
 
       <dl class="aparelho-ficha">
         {faltaNaFicha && (
-        <span class="marca-agua" aria-hidden="true" data-marca={POR_VERIFICAR} />
+        <span class="marca-agua" aria-hidden="true" data-marca={s.prov.marcadorDoSelo} />
         )}
         {
           ficha.map((l) => (

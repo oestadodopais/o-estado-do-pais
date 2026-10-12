@@ -1,0 +1,276 @@
+{
+  "cabeca": "f99ad385789e293373951ddb77f25ac221181daf",
+  "versao": {
+    "commit": "f99ad385789e293373951ddb77f25ac221181daf",
+    "ref": "rp4n-2026-10-07",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-12T17:04:44.072Z"
+  },
+  "linhas_livro": 3196,
+  "linhas_publicadas": 3193,
+  "linhas_sem_publicador": [
+    {
+      "id": "avisos-pt2030-abertos",
+      "publication": "withdrawn"
+    },
+    {
+      "id": "avisos-pt2030-pessoas-singulares",
+      "publication": "withdrawn"
+    },
+    {
+      "id": "ciclo-substituicao-condutas",
+      "publication": "withdrawn"
+    }
+  ],
+  "anuais": [
+    "oe-2026-despesa-efetiva-administracao-central-seguranca-social",
+    "oe-2026-receita-efetiva-administracao-central-seguranca-social",
+    "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social"
+  ],
+  "mensais": [
+    "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+    "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social",
+    "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social"
+  ],
+  "ficheiros_texto": 12881,
+  "por_extensao": {
+    ".html": 7903,
+    ".css": 9,
+    ".json": 4941,
+    ".csv": 7,
+    ".webmanifest": 2,
+    ".svg": 1,
+    ".js": 12,
+    ".txt": 4,
+    ".xml": 2
+  },
+  "referencias": [],
+  "linhas_incompletas": [
+    "evora-prr-aprovado-2026",
+    "evora-prr-pago-2026",
+    "evora-prr-vencido-aprovado-2026",
+    "saldo-natural-portugal-2025"
+  ],
+  "paginas_com_marcas": [
+    "/a-verificar/index.html",
+    "/agenda/index.html",
+    "/areas/economia-e-coesao-territorial/index.html",
+    "/correcoes/index.html",
+    "/en/agenda/index.html",
+    "/en/areas/economia-e-coesao-territorial/index.html",
+    "/en/corrections/index.html",
+    "/en/ledger/evora-prr-aprovado-2026/index.html",
+    "/en/ledger/evora-prr-pago-2026/index.html",
+    "/en/ledger/evora-prr-vencido-aprovado-2026/index.html",
+    "/en/ledger/index.html",
+    "/en/ledger/saldo-natural-portugal-2025/index.html",
+    "/en/method/index.html",
+    "/en/municipalities/evora/index.html",
+    "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html",
+    "/en/studies/evora-prometido-pago-auditado-2026/index.html",
+    "/en/to-verify/index.html",
+    "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html",
+    "/estudos/evora-prometido-pago-auditado-2026/index.html",
+    "/estudos/evora-quem-governou-a-camara-2009-2025/documento/index.html",
+    "/estudos/evora-quem-governou-a-camara-2009-2025/index.html",
+    "/livro-razao/evora-prr-aprovado-2026/index.html",
+    "/livro-razao/evora-prr-pago-2026/index.html",
+    "/livro-razao/evora-prr-vencido-aprovado-2026/index.html",
+    "/livro-razao/index.html",
+    "/livro-razao/saldo-natural-portugal-2025/index.html",
+    "/metodo/index.html",
+    "/municipios/evora/index.html"
+  ],
+  "frases": {
+    "agua-pt": "É a parte da água entrada no sistema que não é faturada, nas entidades gestoras em baixa de Portugal continental. A avaliação global abrange noventa e três por cento das entidades gestoras; a página apresenta também a avaliação em alta. O valor situa-se na faixa «Qualidade do serviço mediana» da ERSAR: acima de vinte e até trinta por cento, incluindo o limite superior.",
+    "agua-en": "It is the share of water entering the system that is not billed by retail operators in mainland Portugal. The overall assessment covers ninety-three per cent of operators; the page also presents the wholesale assessment. The value falls in ERSAR’s “medium service quality” band: above twenty and up to thirty per cent, including the upper limit.",
+    "pensao-pt": "É a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que, nas contas do grupo, deixa a pessoa sem vantagem financeira esperada entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação. A penalização que a lei aplica por um ano de antecipação, sem o fator de sustentabilidade, é de cerca de 6 % e é menor do que a redução atuarialmente neutra de 8,2 %.",
+    "pensao-en": "It is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that, in the group’s calculations, leaves the person with no expected financial advantage between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty. The statutory penalty for retiring one year early, excluding the sustainability factor, is about 6 % and is lower than the actuarially neutral reduction of 8,2 %.",
+    "legal-pt": "É a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+    "legal-en": "It is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
+    "ministerios-pt": "É quanto vai para este ministério em cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação. O mesmo mapa apresenta o total consolidado como «DESPESA TOTAL CONSOLIDADA».",
+    "ministerios-en": "It is the amount for this ministry out of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation. The same map presents the consolidated total as “DESPESA TOTAL CONSOLIDADA”."
+  },
+  "recibos": {
+    "agua-pt": {
+      "id": "agua-nao-faturada-portugal-2024",
+      "bloco_verificacoes": "O que foi conferidoLido na fonte a11.10.2026Segunda leitura:ainda nenhuma A regra da releitura →",
+      "nome_na_fonte": "AA08b – Água não faturada",
+      "datas": [
+        "11.10.2026",
+        "11.10.2026",
+        "11.10.2026"
+      ],
+      "datas_ausentes": [],
+      "localizadores": [
+        "p. 106, Quadro 49, AA08 baixa, avaliação global para 93 % de EG em Portugal continental",
+        "p. 106, Quadro 49, AA08 baixa, avaliação global para 93 % de EG em Portugal continental"
+      ],
+      "datas_rotuladas": [
+        "lido na fonte a 11.10.2026",
+        "lido na fonte a 11.10.2026",
+        "lido na fonte a 11.10.2026"
+      ],
+      "verificacoes": "Lido na fonte a11.10.2026Segunda leitura:ainda nenhuma A regra da releitura →"
+    },
+    "agua-en": {
+      "id": "agua-nao-faturada-portugal-2024",
+      "bloco_verificacoes": "What was checkedRead at the source on11.10.2026Second reading:none yet The re-reading rule →",
+      "nome_na_fonte": "AA08b – Água não faturada",
+      "datas": [
+        "11.10.2026",
+        "11.10.2026",
+        "11.10.2026"
+      ],
+      "datas_ausentes": [],
+      "localizadores": [
+        "p. 106, Quadro 49, AA08 baixa, avaliação global para 93 % de EG em Portugal continental",
+        "p. 106, Quadro 49, AA08 baixa, avaliação global para 93 % de EG em Portugal continental"
+      ],
+      "datas_rotuladas": [
+        "read at the source on 11.10.2026",
+        "read at the source on 11.10.2026",
+        "read at the source on 11.10.2026"
+      ],
+      "verificacoes": "Read at the source on11.10.2026Second reading:none yet The re-reading rule →"
+    },
+    "pensao-pt": {
+      "id": "penalizacao-antecipacao-um-ano-neutra",
+      "bloco_verificacoes": "O que foi conferidoCópia alojada a24.08.2026 · Registo da cópiaSem resposta desde01.09.2026 · ao corredorReleitura tentada a01.09.2026, sem valor lido · conferência diária do ficheiro da fonte",
+      "nome_na_fonte": "dcum x : cumulative reduction",
+      "datas": [
+        "24.08.2026",
+        "24.08.2026",
+        "24.08.2026",
+        "24.08.2026"
+      ],
+      "datas_ausentes": [],
+      "localizadores": [
+        "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, Figura 8.4",
+        "p. 273, Figura 8.4, rótulo da redução cumulativa"
+      ],
+      "datas_rotuladas": [
+        "Cópia alojada a 24.08.2026",
+        "Cópia alojada a 24.08.2026",
+        "Cópia alojada a 24.08.2026",
+        "Cópia alojada a 24.08.2026"
+      ],
+      "verificacoes": "Cópia alojada a24.08.2026 · Registo da cópiaSem resposta desde01.09.2026 · ao corredorReleitura tentada a01.09.2026, sem valor lido · conferência diária do ficheiro da fonte"
+    },
+    "pensao-en": {
+      "id": "penalizacao-antecipacao-um-ano-neutra",
+      "bloco_verificacoes": "What was checkedCopy hosted on24.08.2026 · Copy recordNo answer since01.09.2026 · to the runnerRe-read attempted on01.09.2026, no value read · daily check of the source file",
+      "nome_na_fonte": "dcum x : cumulative reduction",
+      "datas": [
+        "24.08.2026",
+        "24.08.2026",
+        "24.08.2026",
+        "24.08.2026"
+      ],
+      "datas_ausentes": [],
+      "localizadores": [
+        "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, Figure 8.4",
+        "p. 273, Figure 8.4, cumulative reduction label"
+      ],
+      "datas_rotuladas": [
+        "Copy hosted on 24.08.2026",
+        "Copy hosted on 24.08.2026",
+        "Copy hosted on 24.08.2026",
+        "Copy hosted on 24.08.2026"
+      ],
+      "verificacoes": "Copy hosted on24.08.2026 · Copy recordNo answer since01.09.2026 · to the runnerRe-read attempted on01.09.2026, no value read · daily check of the source file"
+    },
+    "legal-pt": {
+      "id": "penalizacao-legal-um-ano-antecipacao-2026",
+      "bloco_verificacoes": "O que foi conferidoCópia alojada a24.08.2026 · Registo da cópiaLeitura na fonteNão há leitura na fonte registada para esta linha. A regra da releitura →",
+      "nome_na_fonte": "penalização legal",
+      "datas": [],
+      "datas_ausentes": [],
+      "localizadores": [
+        "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, parágrafo abaixo da Figura 8.4",
+        "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, parágrafo abaixo da Figura 8.4"
+      ],
+      "datas_rotuladas": [],
+      "verificacoes": "Cópia alojada a24.08.2026 · Registo da cópiaLeitura na fonteNão há leitura na fonte registada para esta linha. A regra da releitura →"
+    },
+    "legal-en": {
+      "id": "penalizacao-legal-um-ano-antecipacao-2026",
+      "bloco_verificacoes": "What was checkedCopy hosted on24.08.2026 · Copy recordReading at the sourceNo reading at the source is recorded for this row. The re-reading rule →",
+      "nome_na_fonte": "penalização legal",
+      "datas": [],
+      "datas_ausentes": [],
+      "localizadores": [
+        "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, paragraph below Figure 8.4",
+        "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, paragraph below Figure 8.4"
+      ],
+      "datas_rotuladas": [],
+      "verificacoes": "Copy hosted on24.08.2026 · Copy recordReading at the sourceNo reading at the source is recorded for this row. The re-reading rule →"
+    },
+    "ministerios-pt": {
+      "id": "oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao",
+      "bloco_verificacoes": "O que foi conferidoSegunda leitura:Recalculada em cada construção a partir das suas origens A regra da releitura →",
+      "nome_na_fonte": "",
+      "datas": [
+        "12.10.2026",
+        "12.10.2026",
+        "12.10.2026"
+      ],
+      "datas_ausentes": [],
+      "localizadores": [],
+      "datas_rotuladas": [
+        "lido na fonte a 12.10.2026",
+        "lido na fonte a 12.10.2026",
+        "lido na fonte a 12.10.2026"
+      ],
+      "verificacoes": "Segunda leitura:Recalculada em cada construção a partir das suas origens A regra da releitura →"
+    },
+    "ministerios-en": {
+      "id": "oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao",
+      "bloco_verificacoes": "What was checkedSecond reading:Recomputed at every build from its sources The re-reading rule →",
+      "nome_na_fonte": "",
+      "datas": [
+        "12.10.2026",
+        "12.10.2026",
+        "12.10.2026"
+      ],
+      "datas_ausentes": [],
+      "localizadores": [],
+      "datas_rotuladas": [
+        "read at the source on 12.10.2026",
+        "read at the source on 12.10.2026",
+        "read at the source on 12.10.2026"
+      ],
+      "verificacoes": "Second reading:Recomputed at every build from its sources The re-reading rule →"
+    }
+  },
+  "estudo": {
+    "pt": {
+      "portas": [
+        {
+          "texto": "Which Door Is Yours — public funding in Portugal, August 2026",
+          "href": "/estudos/which-door-is-yours"
+        }
+      ],
+      "ausencia": "As contagens de avisos abertos e de avisos que admitem pessoas singulares neste estudo estão por confirmar na fonte. A edição arquivada conserva o texto publicado na sua data."
+    },
+    "en": {
+      "portas": [
+        {
+          "texto": "Which Door Is Yours — public funding in Portugal, August 2026",
+          "href": "/en/studies/which-door-is-yours"
+        }
+      ],
+      "ausencia": "The counts of open calls and of calls admitting natural persons in this study are to be confirmed at source. The archived edition preserves the text published on its date."
+    }
+  },
+  "metodo_en": {
+    "titulos": [
+      "rows with at least one field marked [to verify]",
+      "rows with at least one field marked [to verify]",
+      "rows with at least one field marked [to verify]",
+      "rows with at least one field marked [to verify]"
+    ]
+  }
+}

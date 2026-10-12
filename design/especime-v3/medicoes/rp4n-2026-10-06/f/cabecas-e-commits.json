@@ -1,0 +1,144 @@
+{
+  "sitio": {
+    "cabeca": "a10b0ee3d3f9d30c9ab8b31edeb4901efb3d2199",
+    "base": "b1962dfa",
+    "commits": [
+      {
+        "sha": "06b988e09a4f76568eb5342fc9f4632c86ab4c1d",
+        "titulo": "docs(rp4n-f): registar leitura, plantas e mandato sem caminhos locais",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/06b988e09a4f76568eb5342fc9f4632c86ab4c1d.txt"
+      },
+      {
+        "sha": "c5278bef74106b59767d88968ba1f53615604a75",
+        "titulo": "fix(rp4n-f): distinguir a coluna anual no quadro da execução",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/c5278bef74106b59767d88968ba1f53615604a75.txt"
+      },
+      {
+        "sha": "028f8bfd57c5969368f94a360f96ab98e88fb9f7",
+        "titulo": "fix(rp4n-f): provar a pensão pela legenda e pelo recorte da figura",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/028f8bfd57c5969368f94a360f96ab98e88fb9f7.txt"
+      },
+      {
+        "sha": "c5b08875b164ac3cad264445c8108f4aa8d499e8",
+        "titulo": "fix(rp4n-f): separar a estimativa atuarial da penalização legal",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/c5b08875b164ac3cad264445c8108f4aa8d499e8.txt"
+      },
+      {
+        "sha": "46fc3ec5060b6174a6a56c70bbcc68c692722295",
+        "titulo": "fix(rp4n-f): retirar da publicação as linhas sem publicador",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/46fc3ec5060b6174a6a56c70bbcc68c692722295.txt"
+      },
+      {
+        "sha": "b76e370a946db5122eb3816ee8872056c1e54a32",
+        "titulo": "fix(rp4n-f): apoiar a conta dos ministérios na despesa bruta literal",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/b76e370a946db5122eb3816ee8872056c1e54a32.txt"
+      },
+      {
+        "sha": "723b1f732a5af6d8b54cc413e3aca38c120ef7de",
+        "titulo": "fix(rp4n-f): identificar AA08b, cobertura e prova da água",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/723b1f732a5af6d8b54cc413e3aca38c120ef7de.txt"
+      },
+      {
+        "sha": "621e9cb4be383229d80364a204c9690889769ab3",
+        "titulo": "test(rp4n-f): recusar retiradas em todas as exportações de texto",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/621e9cb4be383229d80364a204c9690889769ab3.txt"
+      },
+      {
+        "sha": "ba3df6a4b1870bd19546e83fde418d5f515be78f",
+        "titulo": "test(rp4n-f): preparar provas de cabeça, privacidade e capturas",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/ba3df6a4b1870bd19546e83fde418d5f515be78f.txt"
+      },
+      {
+        "sha": "2d4565d178acb48e0ce3b1ebe2b4a2a6e94e4d49",
+        "titulo": "fix(rp4n-f): uniformizar notices e fechar o caminho sem separador solto",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/2d4565d178acb48e0ce3b1ebe2b4a2a6e94e4d49.txt"
+      },
+      {
+        "sha": "155dbf8117e718b8d1b0742f99204c40bb98aab1",
+        "titulo": "fix(rp4n-f): explicitar a data de referência do prazo PRR vencido",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/155dbf8117e718b8d1b0742f99204c40bb98aab1.txt"
+      },
+      {
+        "sha": "de26e52bf675478ee1af329b62abd45293ae8a6f",
+        "titulo": "test(rp4n-f): medir retiradas e páginas com marcas após a publicação",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/de26e52bf675478ee1af329b62abd45293ae8a6f.txt"
+      },
+      {
+        "sha": "b588abcf7227cf9e343c93f1c8e34955647766f1",
+        "titulo": "test(rp4n-f): registar as reconferências com as cabeças e corrigir a entrada do portão",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/b588abcf7227cf9e343c93f1c8e34955647766f1.txt"
+      },
+      {
+        "sha": "d07806c81c778b3392776bb34d7558493a60ffc5",
+        "titulo": "fix(rp4n-f): alinhar a língua com AA08b e com os avisos retirados",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/d07806c81c778b3392776bb34d7558493a60ffc5.txt"
+      },
+      {
+        "sha": "77b90814ea5c18c05d545e4bbb34278576ee6857",
+        "titulo": "fix(rp4n-f): atualizar o inventário pela contagem publicada",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/77b90814ea5c18c05d545e4bbb34278576ee6857.txt"
+      },
+      {
+        "sha": "91fd9d3aa3bf6727f5c327787055bad0989a8677",
+        "titulo": "fix(rp4n-f): atribuir a penalização legal à segurança social",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/91fd9d3aa3bf6727f5c327787055bad0989a8677.txt"
+      },
+      {
+        "sha": "c0aae32740eff8292ca0679537b90e595352d418",
+        "titulo": "fix(rp4n-f): mostrar e conferir AA08b no cabeçalho do recibo",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/c0aae32740eff8292ca0679537b90e595352d418.txt"
+      },
+      {
+        "sha": "79e98237bc904fed4da1a2b1ed7365641e5844e8",
+        "titulo": "fix(rp4n-f): conferir a cópia local e a unidade legal em todas as células",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/79e98237bc904fed4da1a2b1ed7365641e5844e8.txt"
+      },
+      {
+        "sha": "a73fc55ace8dab236e92d1a42b1e2ad475cf1081",
+        "titulo": "test(rp4n-f): conservar os controlos depois da retirada dos avisos",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/a73fc55ace8dab236e92d1a42b1e2ad475cf1081.txt"
+      },
+      {
+        "sha": "281b3a77e9b625d7e9308b4b19326a9ee4152e0c",
+        "titulo": "test(rp4n-f): guardar a cabeça final em anexo posterior ao commit",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/281b3a77e9b625d7e9308b4b19326a9ee4152e0c.txt"
+      },
+      {
+        "sha": "6f950485dcd4c31f7b035b5216e63a1871ab1cc2",
+        "titulo": "test(rp4n-f): registar os rótulos medidos das pensões e do prazo PRR",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/6f950485dcd4c31f7b035b5216e63a1871ab1cc2.txt"
+      },
+      {
+        "sha": "a10b0ee3d3f9d30c9ab8b31edeb4901efb3d2199",
+        "titulo": "test(rp4n-f): ler a contagem dos formatos na mensagem das plantas",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/sitio/a10b0ee3d3f9d30c9ab8b31edeb4901efb3d2199.txt"
+      }
+    ]
+  },
+  "motor": {
+    "cabeca": "92933611d162016ae39801a55f372612f9317e8e",
+    "base": "cc68172",
+    "commits": [
+      {
+        "sha": "7242ca737e2678d45b308bceea565c61c109e233",
+        "titulo": "fix(rp4n-f): exigir excertos contíguos no cabeçalho anual",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/motor/7242ca737e2678d45b308bceea565c61c109e233.txt"
+      },
+      {
+        "sha": "e93093ad80afaeb31416b9ca4611807174b615d5",
+        "titulo": "fix(rp4n-f): conferir a legenda e o recorte da pensão alojada",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/motor/e93093ad80afaeb31416b9ca4611807174b615d5.txt"
+      },
+      {
+        "sha": "5ad2ca9e509ddef40f576b424b224e6a910d81c9",
+        "titulo": "fix(rp4n-f): separar a estimativa neutra da penalização legal",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/motor/5ad2ca9e509ddef40f576b424b224e6a910d81c9.txt"
+      },
+      {
+        "sha": "92933611d162016ae39801a55f372612f9317e8e",
+        "titulo": "fix(rp4n-f): reler AA08b e a cobertura na página alojada",
+        "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/f/commits/motor/92933611d162016ae39801a55f372612f9317e8e.txt"
+      }
+    ]
+  }
+}

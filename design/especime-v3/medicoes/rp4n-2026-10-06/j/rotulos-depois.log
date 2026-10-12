@@ -1,0 +1,6 @@
+PLANTA rótulo trocado: VR1: o rótulo exportado difere do corpo
+PLANTA resumo trocado: VR1: o sha256 do rótulo difere do corpo
+PLANTA caminho inexistente: VR1: o caminho do rótulo não existe no corpo
+PLANTA categoria retirada: VR1: os rótulos, as coordenadas ou os selos diferem das séries
+PLANTA selo de outro pedido: VR1: os rótulos, as coordenadas ou os selos diferem das séries
+RÓTULOS: PASS, 79 rótulos, 5 plantas

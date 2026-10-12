@@ -1,0 +1,4 @@
+2bea05413c13608e90ee8980e4ad9c7274a33811
+fix(rp4n-g): separar a coordenada do documento e traduzir página
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

@@ -1,0 +1,1127 @@
+npm run check:navegacao
+
+> o-estado-do-pais@0.1.0 check:navegacao
+> node tests/inicio/navegacao.mjs --prova
+
+{
+  "erros": [],
+  "contas": {
+    "paginas": 7935,
+    "blocos_na_primeira": 10,
+    "blocos_fora": 0,
+    "titulos_fora": 0,
+    "frases_fora": 0,
+    "portas_dos_blocos": 10,
+    "ligacoes_antigas": 0,
+    "cartoes_fora_dos_assuntos": 0
+  },
+  "frases_conferidas": [
+    {
+      "id": "precos",
+      "lang": "en",
+      "primeiraFrase": "In August 2026, fuel was 23,78 % more expensive than a year earlier.",
+      "frase_rendida": "In August 2026, fuel was 23,78 % more expensive than a year earlier.",
+      "igual": true
+    },
+    {
+      "id": "casa",
+      "lang": "en",
+      "primeiraFrase": "In Portugal, the share of people spending more than 40 % of their disposable income on housing is smaller than in the Union.",
+      "frase_rendida": "In Portugal, the share of people spending more than 40 % of their disposable income on housing is smaller than in the Union.",
+      "igual": true
+    },
+    {
+      "id": "trabalho",
+      "lang": "en",
+      "primeiraFrase": "In 2025, the share of people aged 20 to 64 in work was larger in Portugal than in the Union, and unemployment was the same.",
+      "frase_rendida": "In 2025, the share of people aged 20 to 64 in work was larger in Portugal than in the Union, and unemployment was the same.",
+      "igual": true
+    },
+    {
+      "id": "estado",
+      "lang": "en",
+      "primeiraFrase": "Public debt fell from 2024 to 2025 and is above the Union average.",
+      "frase_rendida": "Public debt fell from 2024 to 2025 and is above the Union average.",
+      "igual": true
+    },
+    {
+      "id": "pobreza",
+      "lang": "en",
+      "primeiraFrase": "In 2025, the share of people at risk of poverty or social exclusion was smaller in Portugal than in the Union.",
+      "frase_rendida": "In 2025, the share of people at risk of poverty or social exclusion was smaller in Portugal than in the Union.",
+      "igual": true
+    },
+    {
+      "id": "precos",
+      "lang": "pt",
+      "primeiraFrase": "Em agosto de 2026, os combustíveis estavam 23,78 % mais caros do que um ano antes.",
+      "frase_rendida": "Em agosto de 2026, os combustíveis estavam 23,78 % mais caros do que um ano antes.",
+      "igual": true
+    },
+    {
+      "id": "casa",
+      "lang": "pt",
+      "primeiraFrase": "Em Portugal, a parte das pessoas que gastam mais de 40 % do rendimento disponível com a habitação é menor do que na União.",
+      "frase_rendida": "Em Portugal, a parte das pessoas que gastam mais de 40 % do rendimento disponível com a habitação é menor do que na União.",
+      "igual": true
+    },
+    {
+      "id": "trabalho",
+      "lang": "pt",
+      "primeiraFrase": "Em 2025, a parte das pessoas dos 20 aos 64 anos com emprego era maior em Portugal do que na União, e o desemprego era o mesmo.",
+      "frase_rendida": "Em 2025, a parte das pessoas dos 20 aos 64 anos com emprego era maior em Portugal do que na União, e o desemprego era o mesmo.",
+      "igual": true
+    },
+    {
+      "id": "estado",
+      "lang": "pt",
+      "primeiraFrase": "A dívida pública desceu de 2024 para 2025 e está acima da média da União.",
+      "frase_rendida": "A dívida pública desceu de 2024 para 2025 e está acima da média da União.",
+      "igual": true
+    },
+    {
+      "id": "pobreza",
+      "lang": "pt",
+      "primeiraFrase": "Em 2025, a parte das pessoas em risco de pobreza ou exclusão social era menor em Portugal do que na União.",
+      "frase_rendida": "Em 2025, a parte das pessoas em risco de pobreza ou exclusão social era menor em Portugal do que na União.",
+      "igual": true
+    }
+  ],
+  "entradas": {
+    "edicoes": 2,
+    "cartoes_dos_temas": 0,
+    "cartoes_nas_entradas": 94,
+    "fora": 0,
+    "entradas_na_primeira": 16,
+    "entradas_no_indice": 16,
+    "mapas_do_sitio": 1,
+    "enderecos_no_mapa_do_sitio": 7868,
+    "entradas_no_mapa_do_sitio": 16,
+    "redirecionamentos": 13
+  },
+  "concelhos": {
+    "mapas": 4,
+    "tabelas": 4,
+    "linhas": 1232,
+    "barras": 0,
+    "camaras": 2,
+    "contextos": 4,
+    "referencias_portugal": 2
+  },
+  "acertos": [
+    {
+      "lang": "pt",
+      "medida": "salario_irmao",
+      "correto": true,
+      "unidade": "euros por mês",
+      "texto": "Salário mínimo por mês, em base de doze meses: 1 073 euros por mêsfonte · Eurostat O Eurostat ajusta o valor para contar com esses pagamentos quando o salário mínimo é pago por mais de doze meses por ano."
+    },
+    {
+      "lang": "pt",
+      "medida": "portas_da_uniao",
+      "correto": true,
+      "portas": [
+        {
+          "href": "/estado-e-economia/#m-divida-publica-2025",
+          "texto": "Ver em Estado e economia →"
+        },
+        {
+          "href": "/emprego/#m-taxa-de-emprego-2025",
+          "texto": "Ver em Emprego →"
+        },
+        {
+          "href": "/emprego/#m-taxa-de-desemprego-mip-2025",
+          "texto": "Ver em Emprego →"
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "medida": "salario_irmao",
+      "correto": true,
+      "unidade": "euros per month",
+      "texto": "Monthly minimum wage, on a twelve-month basis: 1 073 euros per monthsource · Eurostat Eurostat adjusts the value to take those payments into account when the minimum wage is paid for more than twelve months a year."
+    },
+    {
+      "lang": "en",
+      "medida": "portas_da_uniao",
+      "correto": true,
+      "portas": [
+        {
+          "href": "/en/state-and-economy/#m-divida-publica-2025",
+          "texto": "See in State and economy →"
+        },
+        {
+          "href": "/en/employment/#m-taxa-de-emprego-2025",
+          "texto": "See in Employment →"
+        },
+        {
+          "href": "/en/employment/#m-taxa-de-desemprego-mip-2025",
+          "texto": "See in Employment →"
+        }
+      ]
+    }
+  ],
+  "mapa_primeiro": {
+    "ordens": 2,
+    "gavetas": 4,
+    "nomes_nas_listas": 76,
+    "primeiras_sem_mapa": 2,
+    "sinais": 4
+  },
+  "faixas_dos_concelhos": {
+    "paginas": 616,
+    "faixas": 2464,
+    "cartoes_de_contagem_sem_faixa": 2464,
+    "marcas": 752752,
+    "lugares": 2444,
+    "sem_valor": 20,
+    "comparacoes": {
+      "linha": 616,
+      "base": 616,
+      "nenhuma": 1232
+    },
+    "recibos": 616,
+    "ordinais": 28
+  },
+  "plantas": [
+    {
+      "nome": "bloco copiado para outra página de assunto",
+      "mordeu": true,
+      "queixa": "N1B emprego/index.html: 1 bloco(s) fora da primeira página."
+    },
+    {
+      "nome": "título copiado sem as marcas do bloco",
+      "mordeu": true,
+      "queixa": "N1B emprego/index.html: título de bloco fora da primeira página."
+    },
+    {
+      "nome": "primeira frase rendida com selo (pt)",
+      "mordeu": true,
+      "queixa": "N1B temas/index.html: primeira frase de bloco fora da primeira página.",
+      "primeiraFrase": "Em agosto de 2026, os combustíveis estavam 23,78 % mais caros do que um ano antes.",
+      "frase_rendida": "Em agosto de 2026, os combustíveis estavam 23,78 % mais caros do que um ano antes.",
+      "iguais": true,
+      "com_selo": true
+    },
+    {
+      "nome": "título sem marcas (pt)",
+      "mordeu": true,
+      "queixa": "N1B temas/index.html: título de bloco fora da primeira página."
+    },
+    {
+      "nome": "ligação antiga relativa (pt)",
+      "mordeu": true,
+      "queixa": "N1R temas/index.html: ligação interna para /o-meu-dinheiro."
+    },
+    {
+      "nome": "ligação antiga absoluta (pt)",
+      "mordeu": true,
+      "queixa": "N1R temas/index.html: ligação interna para /o-meu-dinheiro."
+    },
+    {
+      "nome": "primeira frase rendida com selo (en)",
+      "mordeu": true,
+      "queixa": "N1B en/european-union/index.html: primeira frase de bloco fora da primeira página.",
+      "primeiraFrase": "In August 2026, fuel was 23,78 % more expensive than a year earlier.",
+      "frase_rendida": "In August 2026, fuel was 23,78 % more expensive than a year earlier.",
+      "iguais": true,
+      "com_selo": true
+    },
+    {
+      "nome": "título sem marcas (en)",
+      "mordeu": true,
+      "queixa": "N1B en/european-union/index.html: título de bloco fora da primeira página."
+    },
+    {
+      "nome": "ligação antiga relativa (en)",
+      "mordeu": true,
+      "queixa": "N1R en/european-union/index.html: ligação interna para /o-meu-dinheiro."
+    },
+    {
+      "nome": "ligação antiga absoluta (en)",
+      "mordeu": true,
+      "queixa": "N1R en/european-union/index.html: ligação interna para /o-meu-dinheiro."
+    },
+    {
+      "nome": "cartão inteiro repetido noutra página de assunto",
+      "mordeu": true,
+      "queixa": "N1C pt: cartão pensao-media-anual-2025 inteiro em mais de uma página de assunto (salarios-pensoes-e-apoios, emprego)."
+    },
+    {
+      "nome": "cartão autónomo da União indevido",
+      "mordeu": true,
+      "queixa": "E2 pt: cartão ihpc-variacao-homologa-ue fora do catálogo nacional."
+    },
+    {
+      "nome": "cartão fora do catálogo permitido",
+      "mordeu": true,
+      "queixa": "E2 pt: cartão cartao-fora-do-catalogo fora do catálogo nacional."
+    },
+    {
+      "nome": "cartão nacional omitido",
+      "mordeu": true,
+      "queixa": "E1 en: cartão licencas-de-construcao-2025 em falta nas páginas de assunto."
+    },
+    {
+      "nome": "inquilinos depois do total (pt)",
+      "mordeu": true,
+      "queixa": "T10 pt habitacao: a habitação não abre com os inquilinos e o total a seguir."
+    },
+    {
+      "nome": "inquilinos depois do total (en)",
+      "mordeu": true,
+      "queixa": "T10 en habitacao: a habitação não abre com os inquilinos e o total a seguir."
+    },
+    {
+      "nome": "cartão inteiro nos temas",
+      "mordeu": true,
+      "queixa": "N1I pt: o índice dos temas voltou a render cartões inteiros."
+    },
+    {
+      "nome": "porta retirada da primeira página",
+      "mordeu": true,
+      "queixa": "E4 pt: a ordem das portas da primeira difere da declaração."
+    },
+    {
+      "nome": "linha longa indevida no índice",
+      "mordeu": true,
+      "queixa": "E4 en: porta precos da índice difere da declaração."
+    },
+    {
+      "nome": "título dos lugares diferente do índice",
+      "mordeu": true,
+      "queixa": "E7 pt: os títulos dos lugares diferem das secções do índice."
+    },
+    {
+      "nome": "secção retirada do índice",
+      "mordeu": true,
+      "queixa": "E4 pt: as secções de precos não estão no índice pela ordem declarada."
+    },
+    {
+      "nome": "âmbito errado na página de assunto",
+      "mordeu": true,
+      "queixa": "E3 pt: o título ou o âmbito de emprego difere da declaração."
+    },
+    {
+      "nome": "cartão das câmaras retirado dos lugares",
+      "mordeu": true,
+      "queixa": "N1L pt: falta o cartão das câmaras nos lugares."
+    },
+    {
+      "nome": "porta omitida do mapa do sítio",
+      "mordeu": true,
+      "queixa": "E5 en: /en/employment/ não está no mapa do sítio."
+    },
+    {
+      "nome": "mapa nomeado em falta",
+      "mordeu": true,
+      "queixa": "E5: o índice do mapa do sítio nomeia /sitemap-1.xml, que a construção não tem."
+    },
+    {
+      "nome": "redirecionamento inglês para a página errada",
+      "mordeu": true,
+      "queixa": "N1R /en/my-work: redirecionamento incorreto."
+    },
+    {
+      "nome": "país retirado da declaração",
+      "mordeu": true,
+      "queixa": "E6 pt: o âmbito de emprego não nomeia Portugal."
+    },
+    {
+      "nome": "marca do mapa retirada",
+      "mordeu": true,
+      "queixa": "N1M pt indice: falta a marca do mapa."
+    },
+    {
+      "nome": "unidade da tabela retirada",
+      "mordeu": true,
+      "queixa": "N1M pt indice: a unidade do mapa ou da tabela não é a unidade da casa da medida."
+    },
+    {
+      "nome": "a legenda da dívida na forma antiga",
+      "mordeu": true,
+      "queixa": "N1M pt indice: a unidade do mapa ou da tabela não é a unidade da casa da medida."
+    },
+    {
+      "nome": "o teto da tabela escrito à mão",
+      "mordeu": true,
+      "queixa": "N1M pt indice: o teto do mapa ou da tabela não é a linha do limite com o seu valor, a sua unidade e a sua marca."
+    },
+    {
+      "nome": "unidade da legenda retirada",
+      "mordeu": true,
+      "queixa": "N1M pt ganho: a unidade do mapa ou da tabela não vem das linhas."
+    },
+    {
+      "nome": "base do limite retirada",
+      "mordeu": true,
+      "queixa": "N1M pt: falta a base da percentagem do limite."
+    },
+    {
+      "nome": "porta das câmaras para si própria",
+      "mordeu": true,
+      "queixa": "V2 pt: o cartão das câmaras não leva porta para a página onde está."
+    },
+    {
+      "nome": "porta absoluta das câmaras para si própria",
+      "mordeu": true,
+      "queixa": "V2 pt: o cartão das câmaras não leva porta para a página onde está."
+    },
+    {
+      "nome": "ano dos ganhos retirado",
+      "mordeu": true,
+      "queixa": "N1M pt ganho: o contexto perdeu o período das linhas."
+    },
+    {
+      "nome": "ano da dívida trocado",
+      "mordeu": true,
+      "queixa": "N1M pt indice: o contexto perdeu o período das linhas."
+    },
+    {
+      "nome": "definição dos ganhos retirada",
+      "mordeu": true,
+      "queixa": "N1M pt ganho: a definição municipal difere da declaração."
+    },
+    {
+      "nome": "referência de Portugal retirada",
+      "mordeu": true,
+      "queixa": "N1M pt ganho: a referência de Portugal perdeu o valor, a unidade, o período ou o selo."
+    },
+    {
+      "nome": "selo da referência de Portugal retirado",
+      "mordeu": true,
+      "queixa": "N1M pt ganho: a referência de Portugal perdeu o valor, a unidade, o período ou o selo."
+    },
+    {
+      "nome": "mapa retirado dos lugares",
+      "mordeu": true,
+      "queixa": "N1M pt: faltam mapas ou há mapas repetidos."
+    },
+    {
+      "nome": "linha retirada da tabela",
+      "mordeu": true,
+      "queixa": "N1M pt indice: as linhas da tabela diferem dos concelhos declarados."
+    },
+    {
+      "nome": "valor municipal trocado",
+      "mordeu": true,
+      "queixa": "N1M pt indice: valor da linha agueda-indice-de-divida-2024 diferente do livro-razão."
+    },
+    {
+      "nome": "geometria municipal retirada",
+      "mordeu": true,
+      "queixa": "N1M pt indice: a geometria não tem um desenho por concelho."
+    },
+    {
+      "nome": "contagem das câmaras trocada",
+      "mordeu": true,
+      "queixa": "V2 pt: camaras_acima_do_limite: a contagem não coincide com as linhas do índice de dívida."
+    },
+    {
+      "nome": "selo do limite municipal retirado",
+      "mordeu": true,
+      "queixa": "V2 pt: falta a marca da fonte da linha do limite."
+    },
+    {
+      "nome": "salário irmão sem unidade mensal",
+      "mordeu": true,
+      "queixa": "N1c pt: o salário irmão perdeu o nome, a unidade, a base, a explicação ou a sua caixa."
+    },
+    {
+      "nome": "valor irmão retirado",
+      "mordeu": true,
+      "queixa": "N1c pt: o salário irmão perdeu o nome, a unidade, a base, a explicação ou a sua caixa."
+    },
+    {
+      "nome": "explicação da base retirada",
+      "mordeu": true,
+      "queixa": "N1c pt: o salário irmão perdeu o nome, a unidade, a base, a explicação ou a sua caixa."
+    },
+    {
+      "nome": "explicação da base trocada",
+      "mordeu": true,
+      "queixa": "N1c en: o salário irmão perdeu o nome, a unidade, a base, a explicação ou a sua caixa."
+    },
+    {
+      "nome": "atribuição fora da caixa do cartão",
+      "mordeu": true,
+      "queixa": "N1c en: a atribuição de divida-publica-2025 perdeu a sua caixa ou a frase."
+    },
+    {
+      "nome": "idade solta reposta",
+      "mordeu": true,
+      "queixa": "N1c pt: voltou uma faixa etária solta."
+    },
+    {
+      "nome": "nome antigo na porta da União",
+      "mordeu": true,
+      "queixa": "N1c en: as três portas da União não dizem o nome do destino."
+    },
+    {
+      "nome": "o mapa depois das listas em «Lugares»",
+      "mordeu": true,
+      "queixa": "L2A1 pt: a grelha de «Lugares» tem as peças por esta ordem: pesquisa, regioes, distritos, mapa; devia ser pesquisa, mapa, regioes, distritos."
+    },
+    {
+      "nome": "a gaveta das regiões aberta",
+      "mordeu": true,
+      "queixa": "L2A2 en regioes: a gaveta chega aberta; devia chegar fechada."
+    },
+    {
+      "nome": "um distrito a menos na lista",
+      "mordeu": true,
+      "queixa": "L2A2 pt distritos: o <summary> diz 29 e a lista tem 28 nomes."
+    },
+    {
+      "nome": "a contagem das regiões trocada",
+      "mordeu": true,
+      "queixa": "L2A2 pt regioes: o <summary> diz 8 e a lista tem 9 nomes."
+    },
+    {
+      "nome": "a lista dos distritos fora da gaveta",
+      "mordeu": true,
+      "queixa": "L2A2 en distritos: a lista está fora da gaveta."
+    },
+    {
+      "nome": "a porta de um distrito trocada",
+      "mordeu": true,
+      "queixa": "L2A2 pt distritos: o nome 1 da lista não é «Aveiro» com a porta /distritos/aveiro."
+    },
+    {
+      "nome": "o título da secção fora do <summary>",
+      "mordeu": true,
+      "queixa": "L2A2 en regioes: o <summary> não tem o título da secção."
+    },
+    {
+      "nome": "a pesquisa de volta à primeira página",
+      "mordeu": true,
+      "queixa": "L2A3 pt: a primeira página voltou a ter [data-pesquisa-bloco], [data-porta-concelho]; o mapa e a pesquisa vivem em «Lugares» e só lá."
+    },
+    {
+      "nome": "o mapa de volta à primeira página",
+      "mordeu": true,
+      "queixa": "L2A3 en: a primeira página voltou a ter [data-mapa-raiz], [data-mapa-areas]; o mapa e a pesquisa vivem em «Lugares» e só lá."
+    },
+    {
+      "nome": "a porta «Lugares» sem o sinal",
+      "mordeu": true,
+      "queixa": "L2A4 en temas: o índice tem 0 sinal(is) e a porta «Lugares» 0; devia ser um, nela."
+    },
+    {
+      "nome": "um número dentro do sinal",
+      "mordeu": true,
+      "queixa": "L2A4 pt primeira: o sinal leva ligações, texto ou números, e é um contorno sem dados."
+    },
+    {
+      "nome": "o sinal sem texto alternativo",
+      "mordeu": true,
+      "queixa": "L2A4 pt temas: o sinal não é uma imagem com o texto alternativo «Mapa de Portugal»."
+    },
+    {
+      "nome": "a menção da fonte do sinal retirada",
+      "mordeu": true,
+      "queixa": "L2A4 en primeira: a menção da fonte do sinal não está no item da porta, fora da ligação."
+    },
+    {
+      "nome": "o sinal noutra porta",
+      "mordeu": true,
+      "queixa": "L2A4 pt primeira: o índice tem 2 sinal(is) e a porta «Lugares» 1; devia ser um, nela."
+    },
+    {
+      "nome": "l2b-faixa-um-lugar-errado",
+      "celula": "FC4",
+      "mordeu": true,
+      "queixa": "FC4 · /municipios/evora/ · ganho: a frase diz «Évora (1 484,5) está em 36.º lugar entre os 308 concelhos com valor no ganho médio mensal, do mais alto para o mais baixo.» e a recomposição dá «Évora (1 484,5) está em 35.º lugar entre os 308 concelhos com valor no ganho médio mensal, do mais alto para o mais baixo.»"
+    },
+    {
+      "nome": "l2b-faixa-uma-referencia-de-outro-periodo",
+      "celula": "FC5",
+      "mordeu": true,
+      "queixa": "FC5 · /municipios/evora/ · ganho: a comparação rendida é «linha» e a que as linhas dão é «nenhuma»"
+    },
+    {
+      "nome": "l2b-faixa-uma-marca-a-menos",
+      "celula": "FC2",
+      "mordeu": true,
+      "queixa": "FC2 · /municipios/evora/ · ganho: o desenho tem 307 marca(s) e há 308 concelho(s) com valor"
+    },
+    {
+      "nome": "l2b-faixa-a-marca-do-concelho-fora-do-sitio",
+      "celula": "FC3",
+      "mordeu": true,
+      "queixa": "FC3 · /municipios/evora/ · ganho: a marca do concelho não está, uma vez, na posição do valor (30.7713 %)"
+    },
+    {
+      "nome": "l2b-faixa-a-palavra-do-lado-trocada",
+      "celula": "FC5",
+      "mordeu": true,
+      "queixa": "FC5 · /municipios/evora/ · ganho: a comparação diz «Está acima de Portugal, onde o ganho médio é de 1 576,0 euros por mês.» e a recomposição dá «Está abaixo de Portugal, onde o ganho médio é de 1 576,0 euros por mês.»"
+    },
+    {
+      "nome": "l2b-faixa-o-traco-de-portugal-fora-do-sitio",
+      "celula": "FC5",
+      "mordeu": true,
+      "queixa": "FC5 · /municipios/evora/ · ganho: o traço de Portugal não está, uma vez, na posição do valor dele (37.0226 %)"
+    },
+    {
+      "nome": "l2b-faixa-tirada-de-um-cartao",
+      "celula": "FC1",
+      "mordeu": true,
+      "queixa": "FC1 · /municipios/evora/ · ganho: o cartão tem 0 faixa(s) do concelho; tem de ter uma"
+    },
+    {
+      "nome": "l2b-b-faixa-numa-contagem",
+      "celula": "FC1",
+      "mordeu": true,
+      "queixa": "FC1 · /municipios/evora/ · populacao: o cartão de uma contagem tem 1 faixa(s), e uma contagem não se ordena (§1.143, decisão 4)"
+    },
+    {
+      "nome": "l2b-faixa-a-ordem-trocada",
+      "celula": "FC4",
+      "mordeu": true,
+      "queixa": "FC4 · /municipios/evora/ · ganho: a frase diz «Évora (1 484,5) está em 35.º lugar entre os 308 concelhos com valor no ganho médio mensal, do mais baixo para o mais alto.» e a recomposição dá «Évora (1 484,5) está em 35.º lugar entre os 308 concelhos com valor no ganho médio mensal, do mais alto para o mais baixo.»"
+    },
+    {
+      "nome": "l2b-faixa-a-contagem-trocada",
+      "celula": "FC4",
+      "mordeu": true,
+      "queixa": "FC4 · /municipios/evora/ · ganho: a frase diz «Évora (1 484,5) está em 35.º lugar entre os 307 concelhos com valor no ganho médio mensal, do mais alto para o mais baixo.» e a recomposição dá «Évora (1 484,5) está em 35.º lugar entre os 308 concelhos com valor no ganho médio mensal, do mais alto para o mais baixo.»"
+    },
+    {
+      "nome": "l2b-faixa-um-empate-inventado",
+      "celula": "FC4",
+      "mordeu": true,
+      "queixa": "FC4 · /municipios/evora/ · ganho: a frase diz «Évora (1 484,5) está em 35.º lugar entre os 308 concelhos com valor no ganho médio mensal, do mais alto para o mais baixo, a par de outro concelho com o mesmo valor.» e a recomposição dá «Évora (1 484,5) está em 35.º lugar entre os 308 concelhos com valor no ganho médio mensal, do mais alto para o mais baixo.»"
+    },
+    {
+      "nome": "l2b-faixa-o-recibo-sem-portugal",
+      "celula": "FC6",
+      "mordeu": true,
+      "queixa": "FC6 · /municipios/evora/ · ganho: o recibo de «evora-ganho-medio-mensal-2024» não lista a linha de Portugal «ganho-medio-mensal-2024» em «O enquadramento»"
+    },
+    {
+      "nome": "l2b-faixa-um-lugar-a-quem-nao-tem-valor",
+      "celula": "FC3",
+      "mordeu": true,
+      "queixa": "FC3 · /municipios/aljustrel/ · pmp: o concelho não tem valor publicado e a faixa marca-o no desenho"
+    },
+    {
+      "nome": "l2b-faixa-o-empate-tirado-da-frase",
+      "celula": "FC4",
+      "mordeu": true,
+      "queixa": "FC4 · /municipios/agueda/ · pmp: a frase diz «Águeda (15) está em 142.º lugar entre os 299 concelhos com valor no prazo médio de pagamento, do mais baixo para o mais alto, a par de 10 outros concelhos com o mesmo valor.» e a recomposição dá «Águeda (15) está em 142.º lugar entre os 299 concelhos com valor no prazo médio de pagamento, do mais baixo para o mais alto, a par de 9 outros concelhos com o mesmo valor.»"
+    },
+    {
+      "nome": "l2b-c-direcao-trocada-na-tabela-da-vista",
+      "celula": "FC8",
+      "mordeu": true,
+      "queixa": "FC8 · a tabela da vista conta «indice» do-mais-alto e o portão do-mais-baixo (um índice maior é uma dívida mais perto do limite legal, ou acima dele)"
+    },
+    {
+      "nome": "l2b-faixa-o-ordinal-sem-a-excecao-dos-11-a-13",
+      "celula": "FC7",
+      "mordeu": true,
+      "queixa": "FC7 · o lugar 11 diz-se «11st» na edição inglesa e o ordinal é «11th»"
+    },
+    {
+      "nome": "r2-faixa-sem-as-palavras-da-medida",
+      "celula": "FC4",
+      "mordeu": true,
+      "queixa": "FC4 · /municipios/evora/ · indice: a frase diz «Évora (105,5) está em 287.º lugar entre os 307 concelhos com valor, do mais baixo para o mais alto.» e a recomposição dá «Évora (105,5) está em 287.º lugar entre os 307 concelhos com valor no índice de dívida, do mais baixo para o mais alto.»"
+    },
+    {
+      "nome": "r2-comparacao-sem-a-unidade-de-portugal",
+      "celula": "FC5",
+      "mordeu": true,
+      "queixa": "FC5 · /municipios/evora/ · ganho: a comparação diz «Está abaixo de Portugal, onde o ganho médio é de 1 576,0.» e a recomposição dá «Está abaixo de Portugal, onde o ganho médio é de 1 576,0 euros por mês.»"
+    },
+    {
+      "nome": "r2-base-do-indice-trocada",
+      "celula": "FC5",
+      "mordeu": true,
+      "queixa": "FC5 · /municipios/evora/ · poderDeCompra: a comparação diz «Está acima da média de Portugal (101).» e a recomposição dá «Está acima da média de Portugal (100).»"
+    }
+  ]
+}
+npm run check:primeira
+
+> o-estado-do-pais@0.1.0 check:primeira
+> node tests/inicio/primeira-pagina.mjs --prova && node tests/inicio/geometria.mjs --prova && node tests/inicio/lugares-no-navegador.mjs --prova && node tests/inicio/tema-e-menu.mjs --prova
+
+check:primeira · auditoria: 81 folhas, 128 partes (76 diz, 24 conta, 28 liga), 103 apoios, 14 algarismos · 16 páginas, 10 blocos rendidos e recontados · entradas: 0 cartões nos temas, 94 nas entradas, 0 fora por declaração, 16 páginas das entradas no mapa do sítio · 76 de 76 plantas mordidas
+check:primeira · todas as conferências a 0.
+/ a 390 px (light): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.688 px por unidade, faixa de 354.0 px · casa:unica: 4 barras, 6.337 px por unidade, faixa de 240.4 px · trabalho:painel-0: 2 barras, 1.724 px por unidade, faixa de 240.4 px · trabalho:desemprego: 4 barras, 17.237 px por unidade, faixa de 240.4 px · estado:unica: 3 barras, 1.807 px por unidade, faixa de 170.0 px · estado · referência: a linha a 108.4 px da base, os 60 a 108.4 px · pobreza:painel-0: 2 barras, 6.894 px por unidade, faixa de 240.4 px · pobreza:painel-1: 2 barras, 34.471 px por unidade, faixa de 240.4 px
+/ a 1280 px (light): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.129 px por unidade, faixa de 335.5 px · casa:unica: 4 barras, 3.540 px por unidade, faixa de 134.8 px · trabalho:painel-0: 2 barras, 3.114 px por unidade, faixa de 433.5 px · trabalho:desemprego: 4 barras, 31.141 px por unidade, faixa de 433.5 px · estado:unica: 3 barras, 2.342 px por unidade, faixa de 220.0 px · estado · referência: a linha a 140.5 px da base, os 60 a 140.5 px · pobreza:painel-0: 2 barras, 3.852 px por unidade, faixa de 134.8 px · pobreza:painel-1: 2 barras, 19.261 px por unidade, faixa de 134.8 px
+/ a 390 px (dark): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.688 px por unidade, faixa de 354.0 px · casa:unica: 4 barras, 6.337 px por unidade, faixa de 240.4 px · trabalho:painel-0: 2 barras, 1.724 px por unidade, faixa de 240.4 px · trabalho:desemprego: 4 barras, 17.237 px por unidade, faixa de 240.4 px · estado:unica: 3 barras, 1.807 px por unidade, faixa de 170.0 px · estado · referência: a linha a 108.4 px da base, os 60 a 108.4 px · pobreza:painel-0: 2 barras, 6.894 px por unidade, faixa de 240.4 px · pobreza:painel-1: 2 barras, 34.471 px por unidade, faixa de 240.4 px
+/ a 1280 px (dark): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.129 px por unidade, faixa de 335.5 px · casa:unica: 4 barras, 3.540 px por unidade, faixa de 134.8 px · trabalho:painel-0: 2 barras, 3.114 px por unidade, faixa de 433.5 px · trabalho:desemprego: 4 barras, 31.141 px por unidade, faixa de 433.5 px · estado:unica: 3 barras, 2.342 px por unidade, faixa de 220.0 px · estado · referência: a linha a 140.5 px da base, os 60 a 140.5 px · pobreza:painel-0: 2 barras, 3.852 px por unidade, faixa de 134.8 px · pobreza:painel-1: 2 barras, 19.261 px por unidade, faixa de 134.8 px
+/en/ a 390 px (light): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.688 px por unidade, faixa de 354.0 px · casa:unica: 4 barras, 6.337 px por unidade, faixa de 240.4 px · trabalho:painel-0: 2 barras, 1.724 px por unidade, faixa de 240.4 px · trabalho:desemprego: 4 barras, 17.237 px por unidade, faixa de 240.4 px · estado:unica: 3 barras, 1.807 px por unidade, faixa de 170.0 px · estado · referência: a linha a 108.4 px da base, os 60 a 108.4 px · pobreza:painel-0: 2 barras, 6.894 px por unidade, faixa de 240.4 px · pobreza:painel-1: 2 barras, 34.471 px por unidade, faixa de 240.4 px
+/en/ a 1280 px (light): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.129 px por unidade, faixa de 335.5 px · casa:unica: 4 barras, 3.540 px por unidade, faixa de 134.8 px · trabalho:painel-0: 2 barras, 3.114 px por unidade, faixa de 433.5 px · trabalho:desemprego: 4 barras, 31.141 px por unidade, faixa de 433.5 px · estado:unica: 3 barras, 2.342 px por unidade, faixa de 220.0 px · estado · referência: a linha a 140.5 px da base, os 60 a 140.5 px · pobreza:painel-0: 2 barras, 3.852 px por unidade, faixa de 134.8 px · pobreza:painel-1: 2 barras, 19.261 px por unidade, faixa de 134.8 px
+  apanhada · um número solto → PP1 · / (planta) · precos: o bloco escreve um algarismo sem marca de origem: «Os preços no seu conjunto medem-se num cabaz de bens e se…»
+  apanhada · um valor trocado → PP1 · / (planta) · precos: o valor desenhado de ipc-combustiveis-variacao-homologa é «23,87» e a linha diz «23,78»
+  apanhada · o identificador de outra linha → PP1 · / (planta) · precos: o valor desenhado de ipc-alimentacao-variacao-homologa é «5,22» e a linha diz «2,14»
+  apanhada · uma linha retirada → PP1 · / (planta) · pobreza: o desenho não tem a linha racio-s80-s20-2025-ue
+  apanhada · um número das palavras fixas mudado → PP1 · / (planta) · casa: o texto rendido da frase difere do que o resolvedor dá: «Em Portugal, a parte das pessoas que gastam mais de 45 % …» contra «Em Portugal, a parte das pessoas que gastam mais de 40 % …»
+  apanhada · a unidade dentro do elemento do valor → PP1 · / (planta) · precos: o valor desenhado de ipc-combustiveis-variacao-homologa é «23,78 %» e a linha diz «23,78»
+  apanhada · um travessão → PP1 · / (planta) · estado: da frase tem um travessão: «A dívida pública desceu de 2024 para 2025 — e está acima …»
+  apanhada · um painel da habitação com outra escala escrita → [desenho] G1 · na escala «casa:unica», sobrecarga-do-custo-da-habitacao-2025 mede 39.92 px; na escala dos outros mediria 27.73 px
+  apanhada · um painel da habitação mais estreito → [desenho] G1 · na escala «casa:unica», sobrecarga-do-custo-da-habitacao-2025 mede 39.92 px; na escala dos outros mediria 14.24 px
+  apanhada · uma barra fora da origem → [desenho] G3 · as barras de ipc-combustiveis-variacao-homologa, ipc-rendas-variacao-homologa, ipc-alimentacao-variacao-homologa, ipc-energia-em-casa-variacao-homologa, ipc-variacao-homologa não partem da mesma origem
+  apanhada · a linha do limiar nos 50 → [desenho] G4 · a linha de referência está a 90.4 px da base; os 60 da escala estão a 108.4 px
+  apanhada · a linha a entrar no painel da União → [desenho] G4 · a linha do valor de referência entra no painel da União, onde a Comissão não aplica o limiar
+  apanhada · uma cor numa coluna → [cor] G5 · rgb(31, 78, 140) em span.pp-col-barra
+  apanhada · preenchimento preto nas guias da série → [cor] G5 · rgb(0, 0, 0) em line
+  apanhada · preenchimento preto na linha da leitura de um ponto → [cor] G5 · rgb(0, 0, 0) em line
+  apanhada · o âmbar no rótulo → [cor] G5 · âmbar fora da linha de referência, em p.pp-ref-rotulo
+geometria · 6 corridas sem falhas · 16 de 16 plantas apanhadas.
+✓ a porta · pt 390: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /lugares (200)
+✓ a porta · pt 1280: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /lugares (200)
+✓ a porta · en 390: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /en/places (200)
+✓ a porta · en 1280: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /en/places (200)
+✓ a ordem · pt 390 (uma coluna): pesquisa 333 · mapa 455–979 à esquerda 18 · regiões 998 · distritos 1043 · nomes à vista 0
+✓ a ordem · pt 768 (uma coluna): pesquisa 304 · mapa 427–925 à esquerda 31 · regiões 945 · distritos 990 · nomes à vista 0
+✓ a ordem · pt 1024 (duas colunas): pesquisa 336 · mapa 336–962 à esquerda 553 · regiões 475 · distritos 520 · nomes à vista 0
+✓ a ordem · pt 1280 (duas colunas): pesquisa 341 · mapa 341–967 à esquerda 756 · regiões 492 · distritos 537 · nomes à vista 0
+✓ a ordem · pt 1600 (duas colunas): pesquisa 341 · mapa 341–967 à esquerda 916 · regiões 495 · distritos 540 · nomes à vista 0
+✓ a ordem · en 390 (uma coluna): pesquisa 333 · mapa 455–979 à esquerda 18 · regiões 998 · distritos 1043 · nomes à vista 0
+✓ a ordem · en 768 (uma coluna): pesquisa 304 · mapa 427–925 à esquerda 31 · regiões 945 · distritos 990 · nomes à vista 0
+✓ a ordem · en 1024 (duas colunas): pesquisa 336 · mapa 336–962 à esquerda 553 · regiões 475 · distritos 520 · nomes à vista 0
+✓ a ordem · en 1280 (duas colunas): pesquisa 341 · mapa 341–967 à esquerda 756 · regiões 492 · distritos 537 · nomes à vista 0
+✓ a ordem · en 1600 (duas colunas): pesquisa 341 · mapa 341–967 à esquerda 916 · regiões 495 · distritos 540 · nomes à vista 0
+✓ as gavetas · pt sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter 9, depois do segundo Enter 0 · distritos, 29 nomes · à vista antes 0, depois do Enter 29, depois do segundo Enter 0
+✓ as gavetas · en sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter 9, depois do segundo Enter 0 · distritos, 29 nomes · à vista antes 0, depois do Enter 29, depois do segundo Enter 0
+✓ a pesquisa · pt sem guião: a pesquisa não procura: «mourao» + Enter aterra em /lugares?concelho=mourao (200), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de /distritos/evora escondida com a gaveta fechada true, à vista com ela aberta true, abre (200) e nela a porta de Mourão à vista 1×, que abre (200)
+✓ a pesquisa · en sem guião: a pesquisa não procura: «mourao» + Enter aterra em /en/places?concelho=mourao (200), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de /en/districts/evora escondida com a gaveta fechada true, à vista com ela aberta true, abre (200) e nela a porta de Mourão à vista 1×, que abre (200)
+  mordeu · o mapa depois das gavetas em «Lugares», a 390 · pt 390 (uma coluna): pesquisa 333 · mapa 564–1088 à esquerda 18 · regiões 456 · distritos 501 · nomes à vista 0
+  mordeu · a porta «Lugares» da primeira página para uma página que não existe · en 390: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /en/places-that-do-not-exist (404)
+  mordeu · o <summary> das regiões trocado por um bloco qualquer · pt sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter ?, depois do segundo Enter ? · distritos, 29 nomes · à vista antes 0, depois do Enter 29, depois do segundo Enter 0
+  mordeu · o <summary> dos distritos e das ilhas trocado por um bloco qualquer · en sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter 9, depois do segundo Enter 0 · distritos, 29 nomes · à vista antes 0, depois do Enter ?, depois do segundo Enter ?
+  mordeu · a porta do distrito de Mourão tirada da gaveta dos distritos e das ilhas · pt sem guião: a pesquisa não procura: «mourao» + Enter aterra em /lugares?concelho=mourao (200), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de NENHUM distrito escondida com a gaveta fechada ?, à vista com ela aberta ?, abre (?) e nela a porta de Mourão à vista 0×, que abre (?)
+  mordeu · o formulário de «Lugares» sem destino · en sem guião: a pesquisa não procura: «mourao» + Enter aterra em /en/places-that-do-not-exist?concelho=mourao (404), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de /en/districts/evora escondida com a gaveta fechada true, à vista com ela aberta true, abre (200) e nela a porta de Mourão à vista 1×, que abre (200)
+a porta e a página dos lugares · 18 medições no navegador, todas a cumprir · 6 de 6 plantas mordidas.
+tema e menu · TM1 24 corrida(s), TM2 30, TM3 6, TM4 48 · 28 planta(s), 28 a morder
+  mordeu · a paleta escura pela preferência do sistema
+  mordeu · a guarda tirada do <head>
+  mordeu · um manipulador que aplica o claro a todos os cliques
+  mordeu · a guarda no fim do <body>
+  mordeu · o comando tirado do cabeçalho
+  mordeu · um botão do tema com 30 px
+  mordeu · uma oitava porta no menu
+  mordeu · uma porta a menos no menu
+  mordeu · a última porta fora da janela
+  mordeu · o menu apertado a 6 px
+  mordeu · a letra do menu a 13 px
+  mordeu · a regra base apertada
+  mordeu · o menu sem dobrar a 320 px
+  mordeu · quatro linhas a 320 px
+  mordeu · três linhas a 390 px
+  mordeu · três linhas a 430 px
+  mordeu · uma porta sem 44 px de toque
+  mordeu · uma oitava porta no menu
+  mordeu · uma porta a menos no menu
+  mordeu · a última porta fora da janela
+  mordeu · o menu apertado a 6 px
+  mordeu · a letra do menu a 13 px
+  mordeu · a regra base apertada
+  mordeu · o menu sem dobrar a 320 px
+  mordeu · quatro linhas a 320 px
+  mordeu · três linhas a 390 px
+  mordeu · três linhas a 430 px
+  mordeu · uma porta sem 44 px de toque
+tema e menu · todas as células a 0.
+npm run sinais
+
+> o-estado-do-pais@0.1.0 sinais
+> node scripts/sinais-da-primeira-pagina.mjs --prova
+
+sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .sinais/primeira-pagina.json.
+  SINAL · na explicação «dinheiro-do-estado-2026», as palavras em naoDiz[0][1] saíram da página: nenhuma linha casa com /juros|servico-da-divida|encargos-da-divida/ (7 casam)
+sinais · 1 explicação(ões), 1 frase(s) guardada(s) fora da página; o registo está em .sinais/explicacoes.json.
+  mordeu · uma condição falsa numa cópia das declarações (código 0)
+  mordeu · um resolvedor que recusa tudo (código 1)
+  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)
+npm run check:nomes
+
+> o-estado-do-pais@0.1.0 check:nomes
+> node scripts/check-nomes-oficiais.mjs --prova
+
+[90m
+  nomes oficiais · 7935 página(s) lidas, 49 analisadas · 44 nome(s) em recibo (44 esperados, derivados do ficheiro), 0 em título de cartão · confirmados pela marca por fonte: 7 do INE, 15 da PORDATA · recusados: 19[0m
+  [32m✓[0m nenhuma página rende um nome oficial que o motor não confirme como a mesma medida, e as 40 plantas foram recusadas ou aceites como deviam.
+npm run check:palavras
+
+> o-estado-do-pais@0.1.0 check:palavras
+> node tests/voz/palavras-proibidas.mjs --prova
+
+[32m  palavras ✓ [0m[90m23 de 23 plantas vistas (14 palavras, 9 buracos da superfície) · 7935 página(s) medidas em repouso, 0 achados · 59 página(s) com a superfície estreitada por rota declarada[0m
+npm run design:feixe
+
+> o-estado-do-pais@0.1.0 design:feixe
+> node scripts/design-bundle.mjs --prova
+
+  mordeu · feixe · tamanho
+  mordeu · feixe · dependência SVG
+  mordeu · feixe · imagem externa
+  mordeu · feixe · recorte retirado
+{"recorte_livro":{"ficheiro":"13-pagina-livro-razao.html","entradas_na_pagina":441,"entradas_no_recorte":8,"primeiras_preservadas":true,"nota_e_porta_preservadas":true,"pagina_conservada":true,"pagina_sha256":"74f0c09b5d3e44582f232f9df9c7d70b5abdf75dd7595194fdbe238f83ddde99","bytes_cartao":242085,"bytes_sem_recorte":1152325,"teto_bytes":673249,"margem":0.1,"planta":{"nome":"recorte retirado","mordeu":true,"queixa":"1125.3 KiB acima do tecto de 657.4697265625 KiB"}}}
+
+[1m  O feixe de cartões do sistema de desenho[0m
+[90m  design-system/ · de dist/ no commit c1a375f · 20 cartões, 11 ficheiros de letra e um README[0m
+
+[90m  ficheiro                          grupo          bytes  ok[0m
+  01-cor.html                       Fundamentos   380035  [32m✓[0m
+  02-tipo.html                      Fundamentos   376255  [32m✓[0m
+  03-selo-e-marcador.html           Componentes   418142  [32m✓[0m
+  04-regua.html                     Disposições   383681  [32m✓[0m
+  05-mapa.html                      Disposições   444826  [32m✓[0m
+  06-estados.html                   Componentes   375740  [32m✓[0m
+  07-cartoes.html                   Componentes   288520  [32m✓[0m
+  10-pagina-primeira.html           Páginas       572093  [32m✓[0m
+  11-pagina-primeira-escuro.html    Páginas       572964  [32m✓[0m
+  12-pagina-linha-livro-razao.html  Páginas       235091  [32m✓[0m
+  13-pagina-livro-razao.html        Páginas       242085  [32m✓[0m
+  14-pagina-municipio.html          Páginas       301568  [32m✓[0m
+  15-pagina-lugares.html            Páginas       491354  [32m✓[0m
+  16-pagina-metodo.html             Páginas       258426  [32m✓[0m
+  17-pagina-agenda.html             Páginas       293971  [32m✓[0m
+  18-pagina-estudos.html            Páginas       214327  [32m✓[0m
+  19-pagina-sobre.html              Páginas       199855  [32m✓[0m
+  20-pagina-correcoes.html          Páginas       319600  [32m✓[0m
+  21-pagina-404.html                Páginas       198620  [32m✓[0m
+  30-regras.html                    Fundamentos   240640  [32m✓[0m
+
+[90m  6648.2 KiB de cartões · maior cartão 559.5 KiB · tecto 657.4697265625 KiB[0m
+[90m  11 ficheiros de letra ao lado, 421.0 KiB, resumos conferidos contra TIPOS.md · fora do tecto[0m
+[90m  ligações internas absolutas em https://oestadodopaís.pt · 18 ligações para fontes, intactas · 14 endereços escritos no texto das páginas (transcrições, não pedidos)[0m
+[90m  nenhum <script>, nenhum <link>, nenhuma imagem que não seja data:, nenhum endereço fora de um href · 160 pedidos de tipo, todos resolvidos em ficheiros desta corrida[0m
+
+[90m  7935 página(s) de `dist/` varridas à procura das duas ausências que os cartões afirmam (`.movel-selo`, `.banda`): nenhuma das duas rende.[0m
+  [32m✓[0m 20 cartões, 11 ficheiros de letra e um README em design-system/.
+
+npm run check:privacidade
+
+> o-estado-do-pais@0.1.0 check:privacidade
+> PYTHONDONTWRITEBYTECODE=1 python3 scripts/check-privacidade.py --prova
+
+{
+  "ficheiros": 14798,
+  "quantidade": 0,
+  "achados": [],
+  "plantas": [
+    {
+      "id": "nome-do-git-1",
+      "pagina_base": "404.html",
+      "mordeu": true,
+      "falha": "nome pessoal ou caminho local na página construída"
+    },
+    {
+      "id": "nome-do-git-2",
+      "pagina_base": "404.html",
+      "mordeu": true,
+      "falha": "nome pessoal ou caminho local na página construída"
+    },
+    {
+      "id": "nome-da-casa-real",
+      "nome_pessoal": true,
+      "esperado": "detetar",
+      "mordeu": true
+    },
+    {
+      "id": "nome-pessoal-portavel",
+      "mordeu": true
+    },
+    {
+      "id": "ligacao-home-na-conta-generica",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-raiz",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-root",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-runner",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-app",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-code",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-1",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-2",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-3",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-4",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-5",
+      "mordeu": true
+    }
+  ],
+  "api": {
+    "ficheiros": 1,
+    "caminhos_e_nomes": 0,
+    "achados_de_caminhos": [],
+    "segredos": [],
+    "chaves_publicas_vistas": 1,
+    "plantas": [
+      {
+        "id": "segredo-chave-secreta",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-papel-de-servico",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-sal-com-valor",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-sal-entre-aspas",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-chave-com-valor",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-chave-entre-aspas",
+        "mordeu": true
+      },
+      {
+        "id": "sal-lido-do-ambiente-sem-valor",
+        "mordeu": true
+      },
+      {
+        "id": "chave-lida-do-ambiente-sem-valor",
+        "mordeu": true
+      },
+      {
+        "id": "nome-vazio-entre-aspas-sem-valor",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-1",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-2",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-3",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-4",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-5",
+        "mordeu": true
+      },
+      {
+        "id": "api-nome-do-git",
+        "mordeu": true
+      }
+    ],
+    "passou": true
+  },
+  "rastreado": {
+    "ficheiros": 23572,
+    "quantidade": 0,
+    "achados": [],
+    "plantas": [
+      {
+        "id": "ramo-estrutura-1-texto",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-1-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-1-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-2-texto",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-2-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-2-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-inocua",
+        "mordeu": true,
+        "mensagem": "Registo comprimido dentro do âmbito, com marcadores portáveis, lido e aceite."
+      },
+      {
+        "id": "guiao-com-casa-portavel",
+        "mordeu": true,
+        "mensagem": "Caminho relativo à casa permitido no guião."
+      }
+    ],
+    "passou": true
+  },
+  "incorporador": {
+    "erros": [],
+    "plantas": [
+      {
+        "nome": "pedido-de-fora",
+        "mensagem": "ER1 privacidade: endereço fora da origem fixa do projeto.",
+        "mordeu": true
+      },
+      {
+        "nome": "cookie",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "armazenamento",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "pagina-anfitria",
+        "mensagem": "ER1 privacidade: leitura fora dos parágrafos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "postMessage",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "parent",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "top",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "innerText",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "getElementsBy",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "body",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "credenciais",
+        "mensagem": "ER1 privacidade: o pedido perdeu a opção credentials: 'omit'.",
+        "mordeu": true
+      },
+      {
+        "nome": "redirecionamento",
+        "mensagem": "ER1 privacidade: o pedido perdeu a opção redirect: 'error'.",
+        "mordeu": true
+      }
+    ],
+    "passou": true
+  },
+  "passou": true
+}
+npm run check:sugestoes
+
+> o-estado-do-pais@0.1.0 check:sugestoes
+> node tests/sugestoes/funcao.mjs --prova
+
+  ✓ get
+  ✓ armadilha
+  ✓ vazia
+  ✓ boa
+  ✓ boa-en
+  ✓ contacto
+  ✓ limite
+  ✓ cheia
+  ✓ chave-recusada
+  ✓ rede
+  ✓ sem-sal
+  ✓ sem-chave
+  ✓ sem-ip
+  ✓ corte
+  ✓ de-fora
+  ✓ referer-de-outra-origem
+  ✓ marca-de-hora-a-hora
+  ✓ exportacoes
+  ✓ planta controlo-sem-troca ((todos)) · a cópia sem troca passa
+  ✓ planta get-para-outra-pagina (get) · mordeu com a queixa esperada
+  ✓ planta armadilha-invertida (armadilha) · mordeu com a queixa esperada
+  ✓ planta vazia-invertida (vazia) · mordeu com a queixa esperada
+  ✓ planta marca-sem-separador (boa) · mordeu com a queixa esperada
+  ✓ planta marca-do-ultimo-endereco (boa) · mordeu com a queixa esperada
+  ✓ planta campo-em-branco-como-cadeia-vazia (boa) · mordeu com a queixa esperada
+  ✓ planta pagina-sem-o-de-do-referer (boa) · mordeu com a queixa esperada
+  ✓ planta origem-sem-o-esquema-publico (boa) · mordeu com a queixa esperada
+  ✓ planta chave-sem-trim (boa) · mordeu com a queixa esperada
+  ✓ planta corpo-sem-chave (boa) · mordeu com a queixa esperada
+  ✓ planta fuga-do-sal (boa) · mordeu com a queixa esperada
+  ✓ planta fuga-da-chave (boa) · mordeu com a queixa esperada
+  ✓ planta fuga-do-endereco (boa) · mordeu com a queixa esperada
+  ✓ planta contacto-de-volta (contacto) · mordeu com a queixa esperada
+  ✓ planta contacto-escondido-noutro-parametro (contacto) · mordeu com a queixa esperada
+  ✓ planta lingua-sempre-portuguesa (boa-en) · mordeu com a queixa esperada
+  ✓ planta limite-invertido (limite) · mordeu com a queixa esperada
+  ✓ planta cheia-como-limite (cheia) · mordeu com a queixa esperada
+  ✓ planta chave-recusada-como-limite (chave-recusada) · mordeu com a queixa esperada
+  ✓ planta rede-como-obrigado (rede) · mordeu com a queixa esperada
+  ✓ planta sal-invertido (sem-sal) · mordeu com a queixa esperada
+  ✓ planta chave-invertida (sem-chave) · mordeu com a queixa esperada
+  ✓ planta ip-em-falta-invertido (sem-ip) · mordeu com a queixa esperada
+  ✓ planta corte-em-unidades-de-utf16 (corte) · mordeu com a queixa esperada
+  ✓ planta de-de-fora-aceite (de-fora) · mordeu com a queixa esperada
+  ✓ planta referer-de-outra-origem-aceite (referer-de-outra-origem) · mordeu com a queixa esperada
+  ✓ planta marca-sem-a-hora (marca-de-hora-a-hora) · mordeu com a queixa esperada
+  ✓ planta marca-com-o-dia (marca-de-hora-a-hora) · mordeu com a queixa esperada
+  ✓ planta marca-em-base64 (marca-de-hora-a-hora) · mordeu com a queixa esperada
+  ✓ planta exportacao-a-mais (exportacoes) · mordeu com a queixa esperada
+
+  a função das sugestões: 18 casos verdes, 30 plantas que mordem com a queixa esperada e a cópia de controlo verde.
+npm run check:rotulos
+
+> o-estado-do-pais@0.1.0 check:rotulos
+> node scripts/inventario-rotulos.mjs --prova
+
+R2 · rótulos: 7934 página(s) lidas, 706 com cartões, 5292 cartão(ões) (nacional 320, uniao 42, concelho 4928, camaras 2), 378 chave(s); unidades declaradas 782, da linha 4442, em dívida 2; estados 688; frases da faixa 2464+2464 (2464 cartões com a faixa inteira); contra o declarado: 378 chave(s), 1368 campo(s), 1417 forma(s) com a contagem, 26850 ocorrência(s), 0 diferença(s); dobras 138 perguntas, 4928 notas, 12 referências, 42 na União; OE1: unidades em 186+186 recibos, 186+186 entradas do livro; JD1: unidades em 15+15 recibos, 15+15 entradas do livro; 37 de 37 plantas a morder; 0 erro(s).
+npm run check:series
+
+> o-estado-do-pais@0.1.0 check:series
+> node tests/series/series.mjs --prova
+
+  check:series · 25 série(s) no tempo de 8327 ponto(s) · 2 derivada(s) com 152 ponto(s) refeitos · 12 linha(s) presa(s), 12 cartão(ões) no último ponto · 50 recibo(s) lidos · metade do motor da S3: 8175 ponto(s) no seu corpo · 32 de 32 planta(s) morderam
+  ✗ S1 · check:series · serie-obrigacoes-do-tesouro-10-anos-rendibilidade: os campos não são os da forma, pela ordem dela.
+  CHECK:SERIES · 1 erro(s) e 0 planta(s) que não morderam.

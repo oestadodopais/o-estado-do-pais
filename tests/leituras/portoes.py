@@ -24,7 +24,11 @@ with tempfile.TemporaryDirectory(prefix='oedp-portoes-') as tmp:
     comando('git', 'case "$*" in *--git-common-dir*) echo "$COMUM";; *HEAD*) echo cabeca-sintetica;; esac\n')
     comando('npm', 'echo "$PWD é a pasta de ensaio"\necho "$*" >> "$CHAMADAS"\n[ "$2" != build ] || exit 7\n')
     comando('node', 'echo "$*" >> "$CHAMADAS"\n')
-    env = dict(os.environ, PATH=str(binario) + ':' + os.environ['PATH'], COMUM=str(comum), CHAMADAS=str(p / 'chamadas'))
+    # O ensaio só pode executar o motor sintético que cria abaixo. A opção da
+    # corrida exterior não pode levá-lo ao motor real, mesmo com o build falso.
+    ambiente = {k: v for k, v in os.environ.items()
+                if k not in ('OEDP_CONFERIR_MOTOR', 'RESEARCHHUB_DIR')}
+    env = dict(ambiente, PATH=str(binario) + ':' + os.environ['PATH'], COMUM=str(comum), CHAMADAS=str(p / 'chamadas'))
     def correr(nome, **mudancas):
         return subprocess.run(['sh', str(RAIZ / 'scripts/leituras/portoes.sh'), str(p), nome],
                               env={**env, **mudancas}, capture_output=True, text=True)

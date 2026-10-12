@@ -1,0 +1,5 @@
+77b90814ea5c18c05d545e4bbb34278576ee6857
+fix(rp4n-f): atualizar o inventário pela contagem publicada
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

@@ -1,0 +1,102 @@
+{
+  "dist/agenda/index.html": {
+    "data": 11
+  },
+  "dist/en/agenda/index.html": {
+    "data": 11
+  },
+  "dist/en/ledger/index.html": {
+    "data": 1,
+    "selo-proveniencia": 4,
+    "referencia-no-livro": 1
+  },
+  "dist/en/ledger/saldo-natural-portugal-2025/index.html": {
+    "data": 1,
+    "excerto": 2,
+    "endereco": 2,
+    "selo-proveniencia": 1,
+    "titulo-documento": 1,
+    "edicao-documento": 1
+  },
+  "dist/livro-razao/index.html": {
+    "data": 1,
+    "selo-proveniencia": 4,
+    "referencia-no-livro": 1
+  },
+  "dist/livro-razao/saldo-natural-portugal-2025/index.html": {
+    "data": 1,
+    "excerto": 2,
+    "endereco": 2,
+    "selo-proveniencia": 1,
+    "titulo-documento": 1,
+    "edicao-documento": 1
+  },
+  "dist/en/ledger/evora-prr-aprovado-2026/index.html": {
+    "excerto": 2
+  },
+  "dist/en/ledger/evora-prr-pago-2026/index.html": {
+    "excerto": 2
+  },
+  "dist/en/ledger/evora-prr-vencido-aprovado-2026/index.html": {
+    "excerto": 2
+  },
+  "dist/livro-razao/evora-prr-aprovado-2026/index.html": {
+    "excerto": 2
+  },
+  "dist/livro-razao/evora-prr-pago-2026/index.html": {
+    "excerto": 2
+  },
+  "dist/livro-razao/evora-prr-vencido-aprovado-2026/index.html": {
+    "excerto": 2
+  },
+  "dist/en/municipalities/evora/index.html": {
+    "pessoa-I77": 1,
+    "selo-proveniencia": 4
+  },
+  "dist/estudos/evora-quem-governou-a-camara-2009-2025/documento/index.html": {
+    "pessoa-I77": 2
+  },
+  "dist/estudos/evora-quem-governou-a-camara-2009-2025/index.html": {
+    "pessoa-I77": 2
+  },
+  "dist/municipios/evora/index.html": {
+    "pessoa-I77": 1,
+    "selo-proveniencia": 4
+  },
+  "dist/en/method/index.html": {
+    "referencia-metodo": 1
+  },
+  "dist/metodo/index.html": {
+    "referencia-metodo": 1
+  },
+  "dist/areas/economia-e-coesao-territorial/index.html": {
+    "selo-proveniencia": 3
+  },
+  "dist/correcoes/index.html": {
+    "selo-proveniencia": 9
+  },
+  "dist/en/areas/economia-e-coesao-territorial/index.html": {
+    "selo-proveniencia": 3
+  },
+  "dist/en/corrections/index.html": {
+    "selo-proveniencia": 9
+  },
+  "dist/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html": {
+    "selo-proveniencia": 13
+  },
+  "dist/en/studies/evora-prometido-pago-auditado-2026/index.html": {
+    "selo-proveniencia": 8
+  },
+  "dist/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html": {
+    "selo-proveniencia": 13
+  },
+  "dist/estudos/evora-prometido-pago-auditado-2026/index.html": {
+    "selo-proveniencia": 8
+  },
+  "dist/a-verificar/index.html": {
+    "pagina-da-marca": 2
+  },
+  "dist/en/to-verify/index.html": {
+    "pagina-da-marca": 2
+  }
+}

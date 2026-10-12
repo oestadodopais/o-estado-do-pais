@@ -163,7 +163,18 @@ function celulasDoLivro(series, linhas) {
     const quem = `check:series · ${id}`;
     // S1 · a forma
     const chaves = Object.keys(s).filter((k) => k !== '__file');
-    if (chaves.join(' ') !== CAMPOS.join(' ')) erros.S1.push(`${quem}: os campos não são os da forma, pela ordem dela.`);
+    const esperados = CAMPOS.flatMap((k) => k === 'source' && 'definition_sources' in s ? [k, 'definition_sources'] : [k]);
+    if (chaves.join(' ') !== esperados.join(' ')) erros.S1.push(`${quem}: os campos não são os da forma, pela ordem dela.`);
+    const fontes = s.definition_sources;
+    if (fontes !== undefined && (!Array.isArray(fontes) || !fontes.length || fontes.some((f) =>
+      !f || typeof f.publisher !== 'string' || !f.publisher.trim() ||
+      typeof f.url !== 'string' || !/^https:\/\//.test(f.url) ||
+      typeof f.receipt?.motor !== 'string' || !/^(?!\/)(?!.*(?:^|\/)\.\.(?:\/|$)).+/.test(f.receipt.motor) ||
+      typeof f.receipt?.sha256 !== 'string' || !/^[a-f0-9]{64}$/.test(f.receipt.sha256) ||
+      typeof f.receipt?.cliente !== 'string' || !f.receipt.cliente.trim() ||
+      typeof f.receipt?.hora !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(f.receipt.hora)))) {
+      erros.S1.push(`${quem}: definition_sources exige publicador, endereço e recibo completo de cada segunda fonte.`);
+    }
     const pontos = Array.isArray(s.pontos) ? s.pontos : [];
     if (!pontos.length) erros.S1.push(`${quem}: a série não tem pontos.`);
     for (const p of pontos) {
@@ -838,6 +849,19 @@ const copiaDasLinhas = (id, mexer) => {
   return m;
 };
 if (PROVA && noTempo.length) {
+  const comSegundaFonte = noTempo.find((s) => s.definition_sources)?.id;
+  if (!comSegundaFonte) erros.S1.push('check:series: falta uma série com segunda fonte para provar os recibos.');
+  else for (const [nome, mexer] of [
+    ['lista de segundas fontes vazia', (s) => { s.definition_sources = []; }],
+    ['segunda fonte sem publicador', (s) => { delete s.definition_sources[0].publisher; }],
+    ['segunda fonte sem https', (s) => { s.definition_sources[0].url = 'http://exemplo.pt'; }],
+    ['segunda fonte sem recibo', (s) => { delete s.definition_sources[0].receipt; }],
+    ['segunda fonte com resumo inválido', (s) => { s.definition_sources[0].receipt.sha256 = 'x'; }],
+    ['segunda fonte fora do motor', (s) => { s.definition_sources[0].receipt.motor = '../fora.html'; }],
+    ['segunda fonte sem cliente', (s) => { delete s.definition_sources[0].receipt.cliente; }],
+    ['segunda fonte sem hora', (s) => { delete s.definition_sources[0].receipt.hora; }],
+  ]) planta('S1', nome, 'definition_sources exige', () => celulasDoLivro(copiaDasSeries(comSegundaFonte, mexer), linhas).erros);
+
   planta('S1', 'um campo que não pertence à forma', 'os campos não são os da forma', () =>
     celulasDoLivro(copiaDasSeries('serie-ipc-variacao-homologa', (s) => { s.nota = 'x'; }), linhas).erros);
   planta('S1', 'um ponto sem excerto', 'não tem os quatro campos', () =>

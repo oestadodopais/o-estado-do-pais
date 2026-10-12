@@ -3,7 +3,7 @@
 concelhos-M5-sonnet · extrai_fontes.py
 
 Medidor cego (Claude Sonnet), bloco M5. Lê os ficheiros da fonte ALOJADOS
-(~/Instruments/ResearchHub/content/12 Concelhos/source/, só leitura) com
+(~/<projetos>/ResearchHub/content/12 Concelhos/source/, só leitura) com
 código escrito de raiz — sem ver o código do motor — e escreve um JSON
 consolidado para o script Node (concelhos-M5-sonnet.mjs) usar como "verdade
 de origem" na comparação de três colunas (fonte / linha / página).

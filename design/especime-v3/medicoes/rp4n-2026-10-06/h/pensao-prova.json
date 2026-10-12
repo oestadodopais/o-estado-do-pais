@@ -1,0 +1,203 @@
+{
+  "cabeca_motor": "e2fd95fde167ad54f36a426bc1487bd6c53c9f2a",
+  "pdf": "content/13 Dominios/source/rp4n/pensoes-copia-alojada.pdf",
+  "pdf_sha256": "555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366",
+  "bytes": 4521348,
+  "prova": {
+    "data": "2026-08-24",
+    "tipo": "hosted-copy",
+    "registo": {
+      "commit": "7c0b24700d76cb3a67442f2495178212169c7586",
+      "manifesto": "content/11 Seguranca Social/source/MANIFEST.sha256",
+      "manifesto_sha256": "4b9bc26fe06aa5c809ca880e3c74bfb6e0f74068087081518bc2d2087594a0ac",
+      "ficheiro": "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf"
+    }
+  },
+  "manifesto_original": "555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366  Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf\n207705947e7eec5e78758199b432b3af26a232190e2411c93e95d8087c7a12c8  legal/CFP_PO_02_2024_FEFSS.pdf\n4e01bf243ad45cb509f7fe83b3c6eb4748d2f15ceaa6da2a73e72cd9e7801da5  legal/CFP_Rel_04_2026.pdf\n849adbcd7d7d52161024c290cfaf2f2515a8056f43cf12a72d64a9cf074e3de1  legal/Despacho_1452_2025.pdf\n84a4a86b9f921975e8978fba538291988152617e7bdb82ed19c0f925cb957093  legal/TdC_Relatorio_17_2024.pdf\ne32d715b8a4a97361926ec8cb0b66685c21828604eb200bb3cc8af27a4669b6f  legal/cfp04.txt\n8e8ed11210c2fd76e7d9927e7eee84dfbd7e7eca57b6cf30420c3820745189c4  legal/Despacho_3519_2025.txt\n8585efad20490f2eac4d7e3164faf08c23784d9c5e3201e1651fc6b64a2cdcd5  legal/po02.txt\ne6e6698d10c58e633811117e18fa76f13506968ca9b5866f0ed656a11075b6f0  legal/tdc17.txt\n",
+  "nota_do_commit": "Os PDFs ficam fora de git, com os resumos em source/MANIFEST.sha256.",
+  "data_commit": "2026-08-24T11:31:53+01:00",
+  "inventario_source": [
+    {
+      "arvore": "worktree",
+      "ficheiro": "content/11 Seguranca Social/source/MANIFEST.sha256",
+      "bytes": 1741,
+      "sha256": "420695c2803d0b78b4b00e2289710ade3e77b53bd41d6b3396b5686772b0d8f4"
+    },
+    {
+      "arvore": "worktree",
+      "ficheiro": "content/11 Seguranca Social/source/imprensa/cgtp-2026-08-19-posicao.json",
+      "bytes": 63158,
+      "sha256": "97e445665dcffa49bc5e9f83e653ea8a21b9d884657aad7131270b94143bfe60"
+    },
+    {
+      "arvore": "worktree",
+      "ficheiro": "content/11 Seguranca Social/source/imprensa/eco-2026-08-19-ventura.json",
+      "bytes": 342708,
+      "sha256": "e6b234ecda87d0772a212050fccdb028fdd726d7543fb67b876390222db6db63"
+    },
+    {
+      "arvore": "worktree",
+      "ficheiro": "content/11 Seguranca Social/source/imprensa/observador-2026-05-07-custo-chega.json",
+      "bytes": 288362,
+      "sha256": "9b496e9f4374ce5a96301f676318f50507d546fa7551bca5551f32f1a9e2a6e6"
+    },
+    {
+      "arvore": "worktree",
+      "ficheiro": "content/11 Seguranca Social/source/imprensa/observador-2026-08-20-leitao-amaro.json",
+      "bytes": 297096,
+      "sha256": "beb7f1243d989e2ff051e522b06f6212fdae9fd2efbeaec5783a9f716edb28db"
+    },
+    {
+      "arvore": "worktree",
+      "ficheiro": "content/11 Seguranca Social/source/legal/Despacho_1452_2025.txt",
+      "bytes": 13666,
+      "sha256": "2278892e9a3bb41db4039592ea9292ba9ea3873019ae0a89db1e5491b87a8a2a"
+    },
+    {
+      "arvore": "worktree",
+      "ficheiro": "content/11 Seguranca Social/source/legal/Despacho_3519_2025.txt",
+      "bytes": 2317,
+      "sha256": "8e8ed11210c2fd76e7d9927e7eee84dfbd7e7eca57b6cf30420c3820745189c4"
+    },
+    {
+      "arvore": "worktree",
+      "ficheiro": "content/11 Seguranca Social/source/legal/ageing_pt.txt",
+      "bytes": 290847,
+      "sha256": "2d313b08bb0e6d701423c83e08be190c65eb37e928dd688b344050782dfb0f43"
+    },
+    {
+      "arvore": "worktree",
+      "ficheiro": "content/11 Seguranca Social/source/legal/cfp04.txt",
+      "bytes": 187650,
+      "sha256": "e32d715b8a4a97361926ec8cb0b66685c21828604eb200bb3cc8af27a4669b6f"
+    },
+    {
+      "arvore": "worktree",
+      "ficheiro": "content/11 Seguranca Social/source/legal/po02.txt",
+      "bytes": 391708,
+      "sha256": "8585efad20490f2eac4d7e3164faf08c23784d9c5e3201e1651fc6b64a2cdcd5"
+    },
+    {
+      "arvore": "worktree",
+      "ficheiro": "content/11 Seguranca Social/source/legal/tdc17.txt",
+      "bytes": 434637,
+      "sha256": "e6e6698d10c58e633811117e18fa76f13506968ca9b5866f0ed656a11075b6f0"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/MANIFEST.sha256",
+      "bytes": 1741,
+      "sha256": "420695c2803d0b78b4b00e2289710ade3e77b53bd41d6b3396b5686772b0d8f4"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf",
+      "bytes": 4521348,
+      "sha256": "555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/imprensa/cgtp-2026-08-19-posicao.json",
+      "bytes": 63158,
+      "sha256": "97e445665dcffa49bc5e9f83e653ea8a21b9d884657aad7131270b94143bfe60"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/imprensa/eco-2026-08-19-ventura.json",
+      "bytes": 342708,
+      "sha256": "e6b234ecda87d0772a212050fccdb028fdd726d7543fb67b876390222db6db63"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/imprensa/observador-2026-05-07-custo-chega.json",
+      "bytes": 288362,
+      "sha256": "9b496e9f4374ce5a96301f676318f50507d546fa7551bca5551f32f1a9e2a6e6"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/imprensa/observador-2026-08-20-leitao-amaro.json",
+      "bytes": 297096,
+      "sha256": "beb7f1243d989e2ff051e522b06f6212fdae9fd2efbeaec5783a9f716edb28db"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/legal/CFP_PO_02_2024_FEFSS.pdf",
+      "bytes": 2581600,
+      "sha256": "207705947e7eec5e78758199b432b3af26a232190e2411c93e95d8087c7a12c8"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/legal/CFP_Rel_04_2026.pdf",
+      "bytes": 1024146,
+      "sha256": "4e01bf243ad45cb509f7fe83b3c6eb4748d2f15ceaa6da2a73e72cd9e7801da5"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/legal/Despacho_1452_2025.pdf",
+      "bytes": 592558,
+      "sha256": "849adbcd7d7d52161024c290cfaf2f2515a8056f43cf12a72d64a9cf074e3de1"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/legal/Despacho_1452_2025.txt",
+      "bytes": 13666,
+      "sha256": "2278892e9a3bb41db4039592ea9292ba9ea3873019ae0a89db1e5491b87a8a2a"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/legal/Despacho_3519_2025.txt",
+      "bytes": 2317,
+      "sha256": "8e8ed11210c2fd76e7d9927e7eee84dfbd7e7eca57b6cf30420c3820745189c4"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/legal/EC_Ageing_Report_2024_PT_fiche.pdf",
+      "bytes": 2054487,
+      "sha256": "26a77bca8fc88434a8eb032b091b7a5210946fc9b28631361b347fa842ee63f4"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/legal/Livro_Verde_2024.pdf",
+      "bytes": 12316003,
+      "sha256": "7b66f971a77747b0af80b1f2cc5d0d81eb2ff36b21daff07961fe4535f3d3a25"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/legal/TdC_Relatorio_17_2024.pdf",
+      "bytes": 8002888,
+      "sha256": "84a4a86b9f921975e8978fba538291988152617e7bdb82ed19c0f925cb957093"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/legal/ageing_pt.txt",
+      "bytes": 290847,
+      "sha256": "2d313b08bb0e6d701423c83e08be190c65eb37e928dd688b344050782dfb0f43"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/legal/cfp04.txt",
+      "bytes": 187650,
+      "sha256": "e32d715b8a4a97361926ec8cb0b66685c21828604eb200bb3cc8af27a4669b6f"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/legal/po02.txt",
+      "bytes": 391708,
+      "sha256": "8585efad20490f2eac4d7e3164faf08c23784d9c5e3201e1651fc6b64a2cdcd5"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/legal/tdc17.txt",
+      "bytes": 434637,
+      "sha256": "e6e6698d10c58e633811117e18fa76f13506968ca9b5866f0ed656a11075b6f0"
+    },
+    {
+      "arvore": "arvore-principal",
+      "ficheiro": "content/11 Seguranca Social/source/relatorio-full.txt",
+      "bytes": 2502424,
+      "sha256": "bfdcf39a986889dd006eccc975a22fd6f6749942ae60720a7921ff8e538c07aa"
+    }
+  ],
+  "pedidos_com_estes_bytes": [],
+  "pdf_ignorado": "content/11 Seguranca Social/source/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf"
+}

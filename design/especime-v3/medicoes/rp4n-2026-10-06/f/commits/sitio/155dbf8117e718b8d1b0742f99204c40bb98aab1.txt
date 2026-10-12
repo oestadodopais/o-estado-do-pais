@@ -1,0 +1,5 @@
+155dbf8117e718b8d1b0742f99204c40bb98aab1
+fix(rp4n-f): explicitar a data de referência do prazo PRR vencido
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

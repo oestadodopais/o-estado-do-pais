@@ -1,0 +1,72 @@
+{
+  "sitio": {
+    "base": "3ecc7c72bce1bbc06e207aca368c9dcbb579b7ec",
+    "cabeca": "1fb08e30365399bd817175c90ec5f697ff13645a",
+    "arvore": "limpa",
+    "commits": [
+      {
+        "hash": "97c95d2185e1b20b1985654aea0955fd7c500c68",
+        "assunto": "docs(rp4n-j): registar o mandato de integração com o JD1"
+      },
+      {
+        "hash": "546fcd39c1b4fff18a70cc1f7864c2edce758a08",
+        "assunto": "fix(rp4n-j): importar as segundas fontes declaradas pelo motor"
+      },
+      {
+        "hash": "8c4d1ca04cd94a192311d459486e0085871e6ba3",
+        "assunto": "fix(rp4n-j): reler no HTML as contagens após a fusão"
+      },
+      {
+        "hash": "d59887a0ec908c9e08f734abd8a13d36c0f10baf",
+        "assunto": "fix(rp4n-j): completar as declarações e os rótulos vindos do JD1"
+      },
+      {
+        "hash": "d164a38006213cbf84390cb7657ba85096d0110e",
+        "assunto": "fix(rp4n-j): conservar a apresentação e integrar os selos dos briefs"
+      },
+      {
+        "hash": "ac4ca9c0a257891e95344564fee28047952b15ed",
+        "assunto": "test(rp4n-j): comparar todo o HTML e os JSON exportados"
+      },
+      {
+        "hash": "1ca31f13faf9e930cd01dc105006194793a511a3",
+        "assunto": "test(rp4n-j): integrar as marcas de anonimização do JD1"
+      },
+      {
+        "hash": "c1a375f7f5d656f47e5b1d1dd3ad456ed9146e0b",
+        "assunto": "test(rp4n-j): isolar o motor dos ensaios do executor"
+      },
+      {
+        "hash": "9a60fa27c9e987ea64fef8d22822529e5429ee97",
+        "assunto": "test(rp4nj): ligar plantas do índice ao nome do formato"
+      },
+      {
+        "hash": "877e75cef1988316d68019c4e73e42e17247eea6",
+        "assunto": "fix(rp4nj): importar o recibo da definição da série JD1"
+      },
+      {
+        "hash": "1fb08e30365399bd817175c90ec5f697ff13645a",
+        "assunto": "fix(rp4nj): conferir recibos de definições nas séries"
+      }
+    ]
+  },
+  "motor": {
+    "base": "2d32da6f493530aa3158d13690603aa5d6c9c784",
+    "cabeca": "b75f3170e3bb6b5f925f9654e41c7a32f8484236",
+    "arvore": "limpa",
+    "commits": [
+      {
+        "hash": "90f1e406173708e90c6ab5a37746d0a9f40a058a",
+        "assunto": "fix(rp4n-j): integrar os rótulos da série de obrigações do JD1"
+      },
+      {
+        "hash": "bc09b6d5f5a7a6bf5895314074331a8eca4fb710",
+        "assunto": "fix(rp4n-j): declarar as segundas fontes do JD1 com recibos"
+      },
+      {
+        "hash": "b75f3170e3bb6b5f925f9654e41c7a32f8484236",
+        "assunto": "fix(rp4nj): declarar segunda fonte da definição da série JD1"
+      }
+    ]
+  }
+}

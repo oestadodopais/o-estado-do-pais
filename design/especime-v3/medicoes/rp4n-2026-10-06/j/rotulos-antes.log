@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<motor>/publisher/rotulos_series_test.py", line 39, in <module>
+    main()
+    ~~~~^^
+  File "<motor>/publisher/rotulos_series_test.py", line 14, in main
+    E.conferir_rotulos(json.loads(E.ROTULOS_NO_MOTOR.read_text()), series)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<motor>/publisher/export_series.py", line 977, in conferir_rotulos
+    raise Fail("VR1: os rótulos, as coordenadas ou os selos diferem das séries")
+publisher.export_series.Fail: VR1: os rótulos, as coordenadas ou os selos diferem das séries

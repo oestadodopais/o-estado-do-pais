@@ -286,10 +286,10 @@ const p = prova(lang);
                 <CampoDaLinha
                   id={c.id}
                   campo="unit"
-                  valor={unidadeDaLinha(c.unit, lang).texto}
+                  valor={unidadeDaLinha(c.unit, lang, c.value).texto}
                   lang={lang}
                   class="livro-item-unidade"
-                  lingua={unidadeDaLinha(c.unit, lang).lingua}
+                  lingua={unidadeDaLinha(c.unit, lang, c.value).lingua}
                 />
                 {c.reference_date !== null && c.reference_date !== undefined && (
                   <span class="livro-item-campo">
@@ -312,7 +312,7 @@ const p = prova(lang);
                 )}
                 {c.access_date !== null && c.access_date !== undefined && (
                   <span class="livro-item-campo">
-                    <span class="livro-item-k">{s.prov.lido}</span>{' '}
+                    <span class="livro-item-k">{c.access_date_kind === 'hosted-copy' ? s.prov.copiaAlojada : s.prov.lido}</span>{' '}
                     <CampoDaLinha
                       id={c.id}
                       campo="access_date"
@@ -390,9 +390,7 @@ const p = prova(lang);
         <span class="linha-campo-k">{s.livro.marcadorK}</span>
         <p class="aparelho-nota">
           <Marcador lang={lang} />
-          {lang !== 'pt' && s.livro.marcadorGloss && (
-            <span class="marcador-gloss"> ({s.livro.marcadorGloss})</span>
-          )}
+
         </p>
         <p><a href={routePath('marcador', lang)}>{s.livro.linha.marcadorLink} →</a></p>
       </div>

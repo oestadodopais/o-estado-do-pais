@@ -174,9 +174,18 @@ export const UNIDADES_DOS_CARTOES = {
     en: ['% of the pension'],
     apoio: [
       { campo: 'document.title', literal: 'Reformar as Pensões em Portugal' },
-      { campo: 'excerpt', literal: 'efeito da antecipação da idade de reforma' },
+      { origem: 'pensao-direitos', campo: 'excerto', literal: 'efeito da antecipação da idade de reforma' },
     ],
     achado: '9: «%» sozinho não dizia de que é o corte.',
+  },
+  'penalizacao-legal-um-ano-antecipacao-2026': {
+    pt: ['% da pensão'],
+    en: ['% of the pension'],
+    apoio: [
+      { campo: 'excerpt', literal: 'de 0,5% por mês, equivalente a cerca de 6% por ano' },
+      { campo: 'document.title', literal: 'Reformar as Pensões em Portugal' },
+    ],
+    achado: 'RP4-n-f: a linha legal nova mede a redução da pensão, com a aproximação conservada na ressalva.',
   },
   'penalizacao-antecipacao-um-ano-sem-factor-2026': {
     pt: ['% da pensão'],

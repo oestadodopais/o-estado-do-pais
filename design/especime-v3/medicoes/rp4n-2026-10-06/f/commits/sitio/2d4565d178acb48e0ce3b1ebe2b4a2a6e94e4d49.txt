@@ -1,0 +1,5 @@
+2d4565d178acb48e0ce3b1ebe2b4a2a6e94e4d49
+fix(rp4n-f): uniformizar notices e fechar o caminho sem separador solto
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

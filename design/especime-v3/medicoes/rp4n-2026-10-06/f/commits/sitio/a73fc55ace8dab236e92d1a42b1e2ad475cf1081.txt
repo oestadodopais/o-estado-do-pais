@@ -1,0 +1,5 @@
+a73fc55ace8dab236e92d1a42b1e2ad475cf1081
+test(rp4n-f): conservar os controlos depois da retirada dos avisos
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

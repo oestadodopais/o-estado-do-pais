@@ -1,0 +1,4 @@
+ea709d649952f101f262be4006218d0d0e1a2222
+fix(rp4n-g): declarar os tipos da comparação e da coordenada
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

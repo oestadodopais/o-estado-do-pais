@@ -1,0 +1,107 @@
+[
+  {
+    "antiga": "a45cf02837fae63da5d506e7a5d2c59c11cabf1a",
+    "nova": "0775309eb34c6bfc918b6ba9aa7ddb859542fae6",
+    "assunto": "docs(rp4n-e): registar leitura, plantas e mandato"
+  },
+  {
+    "antiga": "2c815466f33a54b6961725b3a526d893fdbc3ae6",
+    "nova": "0279a053db27fa7cbfef2ba447b750747da8b21a",
+    "assunto": "fix(rp4n-e): recortar o excerto da pensão à medida"
+  },
+  {
+    "antiga": "a44d10a64d62784c31fa6d3f574fa9e9a9c8fd88",
+    "nova": "892dfa0ac0604eda61bb92e19bdd296630c6baa8",
+    "assunto": "fix(rp4n-e): uniformizar ausências e concordar avisos"
+  },
+  {
+    "antiga": "24f97316b33530f2b108999a3c153833575d9e49",
+    "nova": "5e8d9b1493ba116bc50207f655a13fca5fe0894b",
+    "assunto": "fix(rp4n-e): receber o recorte anual sem o período mensal"
+  },
+  {
+    "antiga": "5c95a6aba18ab1aa9b7cc02a70bd4a85754ca849",
+    "nova": "ba3c557393647c23e9dc0c621016f5d0f0da05fe",
+    "assunto": "fix(rp4n-e): explicar a quota pelo total do mapa por ministérios"
+  },
+  {
+    "antiga": "629557b3cfab84ec5e79acb984fca2c4bb084285",
+    "nova": "ac383ec624631d25285b41ce07a8969b170cf2ac",
+    "assunto": "fix(rp4n-e): retirar as condutas da publicação conservando o livro"
+  },
+  {
+    "antiga": "cfd28a517f27e2e3fc14264965e91f0e63a1dbd5",
+    "nova": "58192aeb5a5a66c9dbae11bbfb2b2d47825a2496",
+    "assunto": "fix(rp4n-e): auditar também as linhas retiradas sem as publicar"
+  },
+  {
+    "antiga": "0345e2fd7efadac2c60555c112289dcb4acc9c75",
+    "nova": "862c26f0f268c242e9507a09555f80adb22e613d",
+    "assunto": "fix(rp4n-e): concordar também os títulos e a conferência das unidades"
+  },
+  {
+    "antiga": "c46a5ee5987b71216c50aadb92e33e3f777847c5",
+    "nova": "32578d1ddd7a6a686c9ecdbde36ec6a326f8147b",
+    "assunto": "fix(rp4n-e): datar o PRR vencido e alinhar as frases derivadas"
+  },
+  {
+    "antiga": "650029fd89e0e67b98ffc4d3a30bce80a5a6f7a6",
+    "nova": "91c2871c96abf54d6e996492c8fba422c1c800f1",
+    "assunto": "fix(rp4n-e): exigir o publicador da medida ou segunda fonte com recibo"
+  },
+  {
+    "antiga": "2aae0865ec071dd2b90322ca4750752f14042b71",
+    "nova": "6c9a90465ccbd1d2f9021cafa660f4f8d1e09f2b",
+    "assunto": "fix(rp4n-e): provar a retirada em qualquer página e conservar a auditoria do livro"
+  },
+  {
+    "antiga": "050ac3df5e90bf191dfb9328d5e11516d033e591",
+    "nova": "7399a556ca1bfd4b6322f4d43af88d422471de6c",
+    "assunto": "fix(rp4n-e): concordar avisos nos cartões e provar o plural errado"
+  },
+  {
+    "antiga": "fcd54ba7c649441d095a6850f9fb60dcab2c4ee5",
+    "nova": "2a35e83cbc26a6ba7669f61281ae54f3a193eb03",
+    "assunto": "test(rp4n-e): plantar a reintrodução de despesa bruta sem definição"
+  },
+  {
+    "antiga": "f6b6b8455ac9b8ba62df9fcf17ba0d669a562165",
+    "nova": "c62d323fd614a0b6b05578807562b896a81915da",
+    "assunto": "fix(rp4n-e): ligar a data no nome PRR ao campo da computação em todas as vistas"
+  },
+  {
+    "antiga": "4242cc244273445e373b664249d8c80553573ae2",
+    "nova": "44c6ddc15a9b750dd5bbb9535ff138b2daeecb77",
+    "assunto": "docs(rp4n-e): sincronizar a voz e os rótulos com as linhas publicadas"
+  },
+  {
+    "antiga": "ba71725be2038c8e4e2195afb6e9885c3e9fd7dc",
+    "nova": "d57d91bd897edeeaf3ee0781642cf2e239f5a89a",
+    "assunto": "test(rp4n-e): preparar os registos das plantas, fontes e capturas finais"
+  },
+  {
+    "antiga": "2f4383aab0a7889d5208d9aae97ea59afd087113",
+    "nova": "8381f17adaf62cbac4c1c8c9e93bba4881725dca",
+    "assunto": "fix(rp4n-e): apoiar a água na ERSAR com a página junto da definição"
+  },
+  {
+    "antiga": "86fc51735ced3e857e8b92f488aacd85aa971190",
+    "nova": "5a2baef72009bc1b0080100901693b36d0f73277",
+    "assunto": "fix(rp4n-e): alinhar o dicionário com os avisos e a linha retirada"
+  },
+  {
+    "antiga": "60e41eb9ae2824e1f08c450b7480b4e57cdf5be8",
+    "nova": "3f8eb89bd837eccf230c63759c0ef8b5ebe72328",
+    "assunto": "test(rp4n-e): conferir o novo formato e a unidade singular dos avisos"
+  },
+  {
+    "antiga": "5727174ad9a25376242c197f2fe285e58a2510ac",
+    "nova": "bcbfcc713edbe5c6d7fb57de9123c1375c7ab098",
+    "assunto": "fix(rp4n-e): identificar os concelhos na lista de fontes por frase"
+  },
+  {
+    "antiga": "8ed6ed6ae1d60f3a47ccc5c45face2be7fcecd51",
+    "nova": "b1962dfabb5167968a1bdb4ace7574c514798e3f",
+    "assunto": "docs(rp4n-e): fechar o relatório e as provas nas cabeças verificadas"
+  }
+]

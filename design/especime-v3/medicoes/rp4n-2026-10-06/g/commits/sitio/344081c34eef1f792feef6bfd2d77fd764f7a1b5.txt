@@ -1,0 +1,4 @@
+344081c34eef1f792feef6bfd2d77fd764f7a1b5
+test(rp4n-g): esperar pelas imagens antes das capturas integrais
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

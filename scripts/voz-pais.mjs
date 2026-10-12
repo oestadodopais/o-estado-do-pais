@@ -29,6 +29,11 @@ const FONTE_DA_CARTA = (() => {
 const texto = el => {
   const copia = parse(el.outerHTML);
   copia.querySelectorAll('.src-chip, .claim-provisorio').forEach(n=>n.remove());
+  // A glosa do selo pode aparecer pela primeira vez numa sinopse. Só sai a
+  // cadeia exata da tabela; uma alteração continua a fazer falhar a igualdade.
+  for (const n of copia.querySelectorAll('.marcador-definicao')) {
+    if (['pt', 'en'].some(lang => normal(n.textContent) === `· ${t(lang).marcador.definicao}`)) n.remove();
+  }
   return normal(copia.textContent);
 };
 /* A SINOPSE DE UM ESTUDO, CONFERIDA INTEIRA, NUM SÍTIO SÓ (bloco R1, 23.09.2026).
@@ -43,6 +48,11 @@ export function sinopseEsperada(w, lang) {
      como em todos os valores do sítio (`src/lib/estudos-b1.mjs`); esta é a cópia da regra, e compara carácter a carácter. */
   return normal(partes.map(p=>typeof p==='string' ? p : p.claim ? getClaim(p.claim).value+(p.sufixo ?? (getClaim(p.claim).unit === '%' ? ' %' : '')) : p.ref ?? '').join(''));
 }
+export function conferirSinopse(resumo, w, lang) {
+  const esperado = w && sinopseEsperada(w, lang);
+  return !esperado || texto(resumo) !== esperado ? [`B1 sinopse: ${w?.slug} difere das duas primeiras frases.`] : [];
+}
+
 export function verificaVozPais(raiz) {
   const erros = [];
   for (const lang of ['pt','en']) {
@@ -95,8 +105,7 @@ export function verificaVozPais(raiz) {
       if (explicacoesConferidas) for (const v of main.querySelectorAll('[data-veredicto-explica]')) dispensados.add(v);
       for (const resumo of main.querySelectorAll('.estudo-resumo')) {
         const w = WORKS.find(w=>w.slug===resumo.closest('[data-estudo]')?.getAttribute('data-estudo'));
-        const esperado = w && sinopseEsperada(w, lang);
-        if (!esperado || texto(resumo) !== esperado) erros.push(`B1 sinopse: ${w?.slug} difere das duas primeiras frases.`);
+        erros.push(...conferirSinopse(resumo, w, lang));
         dispensados.add(resumo);
       }
       const permitidos = new Set([
@@ -111,7 +120,7 @@ export function verificaVozPais(raiz) {
         ...DOMINIOS.map(d=>d.nome[lang]), ...WORKS.flatMap(w=>w.editions.map(e=>e.title)),
         /* O marcador único do sítio, pela mesma razão do `voz-b1.mjs`: é uma
            cadeia declarada e não prosa da casa. */
-        POR_VERIFICAR,
+        POR_VERIFICAR, '[to verify]',
         '·','→',
         /* A mobília da primeira página nova (bloco PP1): as cadeias declaradas em `strings.mjs`, as
            entradas das declarações do lugar de direção, e as três portas. As três cadeias da pesquisa

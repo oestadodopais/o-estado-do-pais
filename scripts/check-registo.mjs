@@ -163,7 +163,7 @@
  * e a construção, que nunca passa a bandeira, PARA se a variável estiver posta.
  *
  * Uso:  node scripts/check-registo.mjs
- *       OEDP_REGISTO_DIR=/tmp/copia node scripts/check-registo.mjs --prova
+ *       OEDP_REGISTO_DIR=<temporario> node scripts/check-registo.mjs --prova
  */
 
 import fs from 'node:fs';
@@ -224,7 +224,7 @@ function normaliza(n) {
  * 1 · OS FACTOS, MEDIDOS NA FONTE
  * ========================================================================== */
 
-const claims = loadClaims();
+const claims = loadClaims({includeWithdrawn:true});
 
 function contaFicheirosDoLivro() {
   return fs.readdirSync(path.join(RAIZ, 'ledger', 'claims')).filter((f) => f.endsWith('.yml')).length;
@@ -274,7 +274,7 @@ const FACTOS = [
     fonte: 'ledger/claims/*.yml',
     comando: 'ls ledger/claims/*.yml | wc -l',
     valor: contaFicheirosDoLivro(),
-    segunda: { nome: 'loadClaims().size', valor: claims.size },
+    segunda: { nome: 'loadClaims({includeWithdrawn:true}).size', valor: claims.size },
     subconjunto: {
       nome: 'as que o painel semanal reconfere',
       valor: VERIFICACAO.afirmacoes,

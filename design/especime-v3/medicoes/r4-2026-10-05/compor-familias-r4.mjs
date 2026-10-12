@@ -213,7 +213,7 @@ for (const e of FAMILIAS_R4) {
   const r = confereEntrada(e, ids, e.chaves.join(', '), nomes);
   const pt = e.partes.map((p) => texto(p.pt)).join('');
   const en = e.partes.map((p) => texto(p.en)).join('');
-  for (const k of e.chaves) declaracao[k] = { ...(e.nome ? { nome: e.nome } : {}), frase: { pt: [pt], en: [en] } };
+  for (const k of e.chaves) declaracao[k] = { ...(e.nome ? { nome: e.nome } : {}), ...(e.origens !== undefined ? { origens: e.origens } : {}), frase: { pt: [pt], en: [en] } };
   const por = linhasPorConfirmar(e, ids, nomes);
   porConfirmar.push(...por);
   const pc = porConfirmarDaEntrada(ids, por);

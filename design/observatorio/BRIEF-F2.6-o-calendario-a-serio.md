@@ -1,6 +1,6 @@
 # Brief F2.6 · O calendário a sério (04.09.2026)
 
-*Escrito pelo lugar de direção (Claude Fable 5.1) para um construtor Claude Opus 5 no motor (`~/Instruments/ResearchHub`), a partir da linha F2.6 do `PLANO-fiabilidade-2026-09-02.md` §4 («a releitura dos calendários de difusão do INE e do Eurostat a ler datas reais (hoje lê 0); as 19 datas do inventário em `calendar.json`; o cron das 12:10 religado quando o calendário cobrir mais de metade dos 79 endereços») e do que o F0.8 deixou (`indicators/calendario.py`, `indicators/calendar.json` com 3 chaves e 0 eventos úteis, o cron das 12:10 comentado em `.github/workflows/corredor.yml`). Sem travessões na prosa.*
+*Escrito pelo lugar de direção (Claude Fable 5.1) para um construtor Claude Opus 5 no motor (`~/<projetos>/ResearchHub`), a partir da linha F2.6 do `PLANO-fiabilidade-2026-09-02.md` §4 («a releitura dos calendários de difusão do INE e do Eurostat a ler datas reais (hoje lê 0); as 19 datas do inventário em `calendar.json`; o cron das 12:10 religado quando o calendário cobrir mais de metade dos 79 endereços») e do que o F0.8 deixou (`indicators/calendario.py`, `indicators/calendar.json` com 3 chaves e 0 eventos úteis, o cron das 12:10 comentado em `.github/workflows/corredor.yml`). Sem travessões na prosa.*
 
 ## 0 · O que este bloco é
 
@@ -25,7 +25,7 @@ Nenhum pedido ao INE do portátil; nenhuma escrita nos ficheiros do motor que n�
 
 ## 4 · Onde se constrói
 
-No motor: ramo `calendario-2026-09-04` numa worktree própria (`git worktree add ~/Instruments/ResearchHub-worktrees/calendario-2026-09-04 -b calendario-2026-09-04 master`). Ficheiros: `indicators/calendario.py`, `indicators/calendar.json`, `indicators/corredor.py` só onde o calendário entra, `indicators/provas_test.py`, `.github/workflows/corredor.yml` só no comentário do cron, `indicators/RELATORIO-calendario-2026-09-04.md`. Outro construtor corre em paralelo no motor (M1, o exportador): não lhe toques nos ficheiros.
+No motor: ramo `calendario-2026-09-04` numa worktree própria (`git worktree add ~/<projetos>/ResearchHub-worktrees/calendario-2026-09-04 -b calendario-2026-09-04 master`). Ficheiros: `indicators/calendario.py`, `indicators/calendar.json`, `indicators/corredor.py` só onde o calendário entra, `indicators/provas_test.py`, `.github/workflows/corredor.yml` só no comentário do cron, `indicators/RELATORIO-calendario-2026-09-04.md`. Outro construtor corre em paralelo no motor (M1, o exportador): não lhe toques nos ficheiros.
 
 ## 5 · As medidas de aceitação
 

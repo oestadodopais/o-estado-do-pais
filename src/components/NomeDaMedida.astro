@@ -31,6 +31,7 @@
  * nem o identificador promovido outra vez: a linha fica com o valor, a unidade e
  * o identificador no metadado, que é o que ela tem.
  */
+import TextoDoNome from './TextoDoNome.astro';
 import CampoDaLinha from './CampoDaLinha.astro';
 import { nomeNaSemana } from '../lib/leitura-da-semana.mjs';
 import { nomeDaMedida, nomeDoCartao, nomeDoCartaoComAUnidade, eNomeDeMedida } from '../lib/nomes.mjs';
@@ -92,7 +93,7 @@ const lingua =
         lang={lingua ?? undefined}
         data-nonledger={nome.fonte === 'oficial' ? 'nome-oficial-da-medida' : undefined}
       >
-        {nome.texto}
+        <TextoDoNome id={c.id} texto={nome.texto} lang={lang} />
       </span>
     ) : (
       <CampoDaLinha

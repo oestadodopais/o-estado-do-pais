@@ -1,25 +1,25 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": "b72e639db588a6a11baa0edea9459f66b9d5df70",
+ "cabeca": "793d2d7eba2ae075b89cdef47a29c409cced1244",
  "contas": {
-  "paginas": 7882,
-  "paginas_com_cartoes": 688,
-  "cartoes": 5290,
+  "paginas": 7902,
+  "paginas_com_cartoes": 704,
+  "cartoes": 5292,
   "familias": {
-   "nacional": 318,
+   "nacional": 320,
    "uniao": 42,
    "concelho": 4928,
    "camaras": 2
   },
   "nomes": {
-   "projeto": 214,
+   "projeto": 216,
    "medidas": 24,
    "figuras": 66,
    "cartao": 14
   },
   "estados": 688,
   "unidades": {
-   "declaradas": 780,
+   "declaradas": 782,
    "da_linha": 4442,
    "em_divida": 2,
    "na_faixa_dos_paises": 18
@@ -91,7 +91,7 @@
   },
   "concelho|en|concelho:desempregoRegistado": {
    "dobra": {
-    "Counts the unemployed people registered with the employment service at month end (registered unemployment).": 308
+    "Counts the unemployed people registered with the employment service in the reference month (registered unemployment).": 308
    },
    "nome": {
     "Registered unemployment": 308
@@ -120,7 +120,7 @@
   },
   "concelho|en|concelho:empresas": {
    "dobra": {
-    "Counts the non-financial enterprises attributed to the municipality (integrated business accounts system).": 308
+    "Counts the enterprises attributed to the municipality (integrated business accounts system).": 308
    },
    "nome": {
     "Non-financial enterprises": 308
@@ -267,7 +267,7 @@
   },
   "concelho|pt|concelho:desempregoRegistado": {
    "dobra": {
-    "Conta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).": 308
+    "Conta as pessoas desempregadas inscritas nos serviços de emprego no mês de referência (desemprego registado).": 308
    },
    "nome": {
     "Desemprego registado": 308
@@ -296,7 +296,7 @@
   },
   "concelho|pt|concelho:empresas": {
    "dobra": {
-    "Conta as empresas não financeiras atribuídas ao concelho (sistema de contas integradas das empresas).": 308
+    "Conta as empresas atribuídas ao concelho (sistema de contas integradas das empresas).": 308
    },
    "nome": {
     "Empresas não financeiras": 308
@@ -1576,7 +1576,7 @@
   },
   "nacional|en|evora-prr-aprovado-2026": {
    "nome": {
-    "Recovery and Resilience Plan (PRR) funds approved for Évora": 1
+    "Recovery and Resilience Plan (PRR) funds contracted by intermediate and direct beneficiaries headquartered in Évora": 1
    },
    "periodo": {
     "in #": 1
@@ -1598,7 +1598,7 @@
   },
   "nacional|en|evora-prr-pago-2026": {
    "nome": {
-    "Recovery and Resilience Plan (PRR) funds paid in Évora": 1
+    "Recovery and Resilience Plan (PRR) funds paid to intermediate and direct beneficiaries headquartered in Évora": 1
    },
    "periodo": {
     "in #": 1
@@ -1620,7 +1620,7 @@
   },
   "nacional|en|evora-prr-vencido-aprovado-2026": {
    "nome": {
-    "Approved funds in projects past their deadline": 1
+    "Funds contracted by intermediate and direct beneficiaries headquartered in Évora, in projects with a completion deadline before the snapshot date and no completion recorded, in the snapshot of 19.08.2026": 1
    },
    "periodo": {
     "in #": 1
@@ -2022,7 +2022,7 @@
   },
   "nacional|en|penalizacao-antecipacao-um-ano-neutra": {
    "nome": {
-    "Pension cut for one year of early retirement, at no cost to the system": 1
+    "Actuarially neutral pension reduction for one year of early retirement (working group estimate)": 1
    },
    "periodo": {
     "in #": 1
@@ -2034,6 +2034,17 @@
   "nacional|en|penalizacao-antecipacao-um-ano-sem-factor-2026": {
    "nome": {
     "Pension cut for one year of early retirement, without the sustainability factor": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the pension": 1
+   }
+  },
+  "nacional|en|penalizacao-legal-um-ano-antecipacao-2026": {
+   "nome": {
+    "Statutory penalty for one year of early retirement, excluding the sustainability factor (approximately)": 1
    },
    "periodo": {
     "in #": 1
@@ -3349,7 +3360,7 @@
   },
   "nacional|pt|evora-prr-aprovado-2026": {
    "nome": {
-    "Verbas do Plano de Recuperação e Resiliência (PRR) aprovadas para Évora": 1
+    "Verbas do Plano de Recuperação e Resiliência (PRR) contratadas por beneficiários intermediários e diretos com sede em Évora": 1
    },
    "periodo": {
     "em #": 1
@@ -3371,7 +3382,7 @@
   },
   "nacional|pt|evora-prr-pago-2026": {
    "nome": {
-    "Verbas do Plano de Recuperação e Resiliência (PRR) pagas em Évora": 1
+    "Verbas do Plano de Recuperação e Resiliência (PRR) pagas a beneficiários intermediários e diretos com sede em Évora": 1
    },
    "periodo": {
     "em #": 1
@@ -3393,7 +3404,7 @@
   },
   "nacional|pt|evora-prr-vencido-aprovado-2026": {
    "nome": {
-    "Verbas aprovadas em projetos fora de prazo": 1
+    "Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo de conclusão anterior à data do instantâneo e sem conclusão registada, no instantâneo de 19.08.2026": 1
    },
    "periodo": {
     "em #": 1
@@ -3795,7 +3806,7 @@
   },
   "nacional|pt|penalizacao-antecipacao-um-ano-neutra": {
    "nome": {
-    "Corte na pensão por um ano de antecipação, sem custo para o sistema": 1
+    "Redução atuarialmente neutra da pensão por um ano de antecipação (estimativa do grupo de trabalho)": 1
    },
    "periodo": {
     "em #": 1
@@ -3807,6 +3818,17 @@
   "nacional|pt|penalizacao-antecipacao-um-ano-sem-factor-2026": {
    "nome": {
     "Corte na pensão por um ano de antecipação, sem o fator de sustentabilidade": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% da pensão": 1
+   }
+  },
+  "nacional|pt|penalizacao-legal-um-ano-antecipacao-2026": {
+   "nome": {
+    "Penalização legal por um ano de antecipação, sem o fator de sustentabilidade (cerca de)": 1
    },
    "periodo": {
     "em #": 1
@@ -4520,12 +4542,12 @@
   },
   "recibo|en|retribuicao-minima-mensal-garantida-continente-2026": {
    "ressalva": {
-    "This value is for mainland Portugal. In the Azores, regional law adds an increase to it, and the decree is one of the sources of the question below. In Madeira, the value is set by a separate regional decree, which is not a source of any line in this ledger: [a verificar].": 1
+    "This value is for mainland Portugal. In the Azores, regional law adds an increase to it, and the decree is one of the sources of the question below. In Madeira, the value is set by a separate regional decree, which this ledger has not read.": 1
    }
   },
   "recibo|pt|retribuicao-minima-mensal-garantida-continente-2026": {
    "ressalva": {
-    "Este valor é o do território continental. Nos Açores, a lei regional soma-lhe um acréscimo, e o diploma é uma das fontes da pergunta abaixo. Na Madeira, o valor é fixado por diploma regional próprio, que não é fonte de nenhuma linha deste livro: [a verificar].": 1
+    "Este valor é o do território continental. Nos Açores, a lei regional soma-lhe um acréscimo, e o diploma é uma das fontes da pergunta abaixo. Na Madeira, o valor é fixado por diploma regional próprio, que este livro não leu.": 1
    }
   },
   "uniao|en|abandono-escolar-precoce-2025": {

@@ -366,10 +366,10 @@ const rotuloDoCriterio = (tipo) =>
                                   <a
                                     class="marcador"
                                     href={routePath('marcador', lang)}
-                                    lang="pt-PT"
+                                    lang={lang === 'pt' ? 'pt-PT' : 'en'}
                                     data-agenda={`evento:${evento.id}.marcador`}
                                   >
-                                    {evento.marcador}
+                                    {s.prov.marcadorDoSelo}
                                   </a>
                                   {/* O MARCADOR DA AGENDA É O MARCADOR DA CASA
                                       (IDENTIDADE §6: há um só), e por isso leva
@@ -921,10 +921,10 @@ const rotuloDoCriterio = (tipo) =>
                   <a
                     class="marcador"
                     href={routePath('marcador', lang)}
-                    lang="pt-PT"
+                    lang={lang === 'pt' ? 'pt-PT' : 'en'}
                     data-agenda={`evento:${evento.id}.marcador`}
                   >
-                    {evento.marcador}
+                    {s.prov.marcadorDoSelo}
                   </a>
                   <DefinicaoDoMarcador lang={lang} />{' '}
                   {motivoSemData(evento)}

@@ -1,0 +1,725 @@
+{
+  "rp4n-orcamento": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental | agosto 2026",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-04",
+    "lingua": "pt",
+    "excerto": "Orçamento aprovado — Previsão de receitas e fixação de limites\nde despesas, para o ciclo económico de um ano, aprovado pela\nAssembleia da República e divulgado anualmente através da\nLei do Orçamento do Estado.",
+    "recibo": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+    "extracao": {
+      "pagina": 85,
+      "inicio": "Orçamento aprovado —",
+      "fim": "Orçamento retificativo —"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+      "campo": "página física 85",
+      "hora": "2026-10-04T04:11:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+    }
+  },
+  "rp4n-consolidacao": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental | agosto 2026",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-04",
+    "lingua": "pt",
+    "excerto": "Consolidação/Consolidado — Agregados de receita e/ou\ndespesa finais, abatidos de fluxos monetários intermédios\nefetuados entre as entidades do universo em análise. Caso a\ninformação respeite à Ótica da Contabilidade Pública\n(Contabilidade Orçamental) são excluídos, a partir de 2017, os\nfluxos relativos a transferências, juros e rendimentos da\npropriedade, subsídios, ativos financeiros e passivos\nfinanceiros e aquisição e vendas de bens e serviços correntes\nno âmbito do programa Saúde.",
+    "recibo": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+    "extracao": {
+      "pagina": 83,
+      "inicio": "Consolidação/Consolidado —",
+      "fim": "Cupão —"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+      "campo": "página física 83",
+      "hora": "2026-10-04T04:11:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+    }
+  },
+  "rp4n-despesa-efetiva": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental | agosto 2026",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-04",
+    "lingua": "pt",
+    "excerto": "Despesa efetiva — As despesas efetivas são as que alteram\ndefinitivamente o património financeiro líquido, constituído\npelos ativos financeiros detidos, nomeadamente pelas\ndisponibilidades, pelos depósitos, pelos títulos, pelas ações e\npor outros valores mobiliários, subtraídos dos passivos\nfinanceiros. A forma de cálculo para os diversos subsetores das\nAdministrações Públicas é a seguinte:\nTotal da soma dos agrupamentos da classificação económica\nde despesa orçamental, com exclusão dos «ativos financeiros»\ne «passivos financeiros» (vide Classificador Económico das\nreceitas e das despesas públicas — Decreto-Lei n.º 26/2002,\nde 14 de fevereiro).",
+    "recibo": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+    "extracao": {
+      "pagina": 83,
+      "inicio": "Despesa efetiva —",
+      "fim": "Despesa primária —"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+      "campo": "página física 83",
+      "hora": "2026-10-04T04:11:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+    }
+  },
+  "rp4n-despesa-primaria": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental | agosto 2026",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-04",
+    "lingua": "pt",
+    "excerto": "Despesa primária — Despesa efetiva, excluindo a rubrica de\njuros e outros encargos.",
+    "recibo": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+    "extracao": {
+      "pagina": 83,
+      "inicio": "Despesa primária —",
+      "fim": "Despesas com pessoal —"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+      "campo": "página física 83",
+      "hora": "2026-10-04T04:11:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+    }
+  },
+  "rp4n-receita-efetiva": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental | agosto 2026",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-04",
+    "lingua": "pt",
+    "excerto": "Receita efetiva — As receitas efetivas são as que alteram\ndefinitivamente o património financeiro líquido, constituído\npelos ativos financeiros detidos, nomeadamente pelas\ndisponibilidades, pelos depósitos, pelos títulos, pelas ações e\npor outros valores mobiliários, subtraídos dos passivos\nfinanceiros. A forma de cálculo para os diversos subsetores das\nAdministrações Públicas é a seguinte:\nTotal da soma dos capítulos da classificação económica de\nreceita orçamental, com exclusão dos «ativos financeiros»,\n«passivos financeiros» e «saldos de gerência». (Vide\nClassificador Económico das receitas e das despesas públicas\n— Decreto-Lei n.º 26/2002, de 14 de fevereiro).",
+    "recibo": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+    "extracao": {
+      "pagina": 86,
+      "inicio": "Receita efetiva —",
+      "fim": "Receita própria —"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+      "campo": "página física 86",
+      "hora": "2026-10-04T04:11:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+    }
+  },
+  "rp4n-saldo": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental | agosto 2026",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-04",
+    "lingua": "pt",
+    "excerto": "Saldo Global — Diferença entre a receita efetiva e a despesa\nefetiva. Este saldo evidencia a necessidade de recurso ao\nendividamento (défice) ou a capacidade de redução do\nendividamento (excedente).\nSaldo Primário — Diferença entre a receita efetiva e a despesa\nprimária.",
+    "recibo": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+    "extracao": {
+      "pagina": 87,
+      "inicio": "Saldo Global —",
+      "fim": "Saldo Orçamental (saldo de gerência anterior)"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+      "campo": "página física 87",
+      "hora": "2026-10-04T04:11:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+    }
+  },
+  "rp4n-ac-ss": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental | agosto 2026",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-04",
+    "lingua": "pt",
+    "excerto": "Conta consolidada da Administração Central e Segurança Social\nPeríodo: janeiro a agosto (milhões de euros)\nCGE\n\nOrçamento\nInicial\n\n2025\n\n2026\n\n2025\n\n2026",
+    "recibo": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+    "extracao": {
+      "pagina": 49,
+      "inicio": "Conta consolidada da Administração Central e Segurança Social",
+      "fim": "Receita corrente"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+      "campo": "página física 49",
+      "hora": "2026-10-04T04:11:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+    }
+  },
+  "rp4n-funcional": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Orçamento do Estado - Despesa por classificação funcional",
+    "url": "https://dados.gov.pt/api/1/datasets/orcamento-do-estado-despesa-por-classificacao-funcional/",
+    "lido": "2026-10-04",
+    "lingua": "pt",
+    "excerto": "Os dados do Orçamento do Estado (OE) são disponibilizados uma vez por ano após a aprovação do OE na Assembleia da República e respetiva promulgação pelo Presidente da República.\nA fonte dos dados é o Orçamento do Estado aprovado, conforme consta dos sistemas da DGO. \nAs dimensões de análise representam as várias perspetivas sob as quais os dados são apresentados, relevando substancialmente na apreciação dos dados orçamentais. \nA dimensão funcional utiliza um classificador internacional, a Classificação das Funções do Governo, abreviada como COFOG – _Classification of the Functions of Government_. Esta classificação especifica os fins e atividades típicos do Estado (em sentido lato) e evidencia a afetação dos recursos públicos às diversas macrofunções do Estado: soberania, sociais e económicas. \nOs dados são apresentados numa ótica consolidada e de contabilidade pública, isto é, contemplam as despesas a pagar no ano.\nOs dados excluem os fluxos relativos a operações financeiras (ativos e passivos financeiros), bem como operações extraorçamentais. \nOs dados abrangem todas as entidades públicas integradas no perímetro da Administração Central em cada ano.",
+    "recibo": "content/20 Orcamento do Estado/source/dados-funcao.json.pedido.json",
+    "extracao": {
+      "caminho": [
+        "description"
+      ]
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/20 Orcamento do Estado/source/dados-funcao.json",
+      "campo": "description",
+      "hora": "2026-10-04T03:55:05Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "43bb18f15b663e31b75ce6e09daaf68527aff412b1703319fcdb3e2496ddb8e7"
+    }
+  },
+  "rp4n-madeira": {
+    "publicador": "Instituto de Emprego da Madeira",
+    "documento": "BOLETIM MENSAL POR CONCELHOS",
+    "url": "https://www.iem.madeira.gov.pt/wp-content/uploads/recursos/instituto/estatisticas/2025/Conc/12-Bol-Conc-25.pdf",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "DESEMPREGADOS/DESEMPREGO REGISTADO - Candidatos inscritos que não têm trabalho, procuram um emprego como trabalhador\npor conta de outrém, estão imediatamente disponíveis e têm capacidade para trabalhar, dos quais:\n1º emprego: nunca trabalharam,\nNovo emprego: já trabalharam.",
+    "recibo": "content/13 Dominios/source/rp4n/madeira.pedido.json",
+    "extracao": {
+      "pagina": 15,
+      "inicio": "DESEMPREGADOS/DESEMPREGO REGISTADO",
+      "fim": "EMPREGADOS -"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/madeira.pdf",
+      "campo": "página física 15",
+      "hora": "2026-10-06T09:47:37Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "c93c48e256d5b6e05522968dc39e0a0289d25899065faa1dc40ba78f7e84c6ae"
+    }
+  },
+  "rp4n-evora-orcamento": {
+    "publicador": "Município de Évora",
+    "documento": "PRESTAÇÃO DE CONTAS 2025",
+    "url": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "O orçamento inicial é o orçamento inicialmente aprovado para o período contabilístico onde são previstas\ntodas as receitas a cobrar e fixadas as despesas a pagar, no período a que respeita o orçamento.\nO Orçamento do Município (OM) para 2025 previa os fluxos financeiros de entradas e saídas no ano, quer\nresultantes dos compromissos e dívidas do Município transitadas de 2024 e respetivos pagamentos, quer\nde novas ações e investimentos propostos, no total de 104.000.000,00 €, conforme Quadro 4 que resume\nas dotações iniciais.",
+    "recibo": "content/13 Dominios/source/rp4n/evora-contas.pedido.json",
+    "extracao": {
+      "pagina": 108,
+      "inicio": "O orçamento inicial é",
+      "fim": "Sendo que,"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/evora-contas.pdf",
+      "campo": "página física 108",
+      "hora": "2026-10-06T09:47:53Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    }
+  },
+  "rp4n-evora-receita": {
+    "publicador": "Município de Évora",
+    "documento": "PRESTAÇÃO DE CONTAS 2025",
+    "url": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "As receitas cobradas no ano 2025 totalizaram 67.263.297,08€ (mais 753.656,66€ que no ano anterior), o\nque representa uma percentagem de execução de 61% (70% em 2024).",
+    "recibo": "content/13 Dominios/source/rp4n/evora-contas.pedido.json",
+    "extracao": {
+      "pagina": 111,
+      "inicio": "As receitas cobradas no ano",
+      "fim": "O quadro seguinte"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/evora-contas.pdf",
+      "campo": "página física 111",
+      "hora": "2026-10-06T09:47:53Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    }
+  },
+  "rp4n-evora-pmp": {
+    "publicador": "Município de Évora",
+    "documento": "PRESTAÇÃO DE CONTAS 2025",
+    "url": "https://www.cm-evora.pt/wp-content/uploads/2026/05/PRESTACAO_CONTAS_2025.pdf",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "O Prazo Médio de Pagamento (PMP) é um indicador que surgiu com a Resolução do Conselho de Ministros\nn.º 34/2008, de 22 de fevereiro, que criou o Programa Pagar a Tempo e Horas (PPTH), cujo principal objetivo\nera reduzir significativamente os prazos de pagamento a fornecedores de bens e serviços praticados por\nentidades públicas.\nO cálculo do PMP aplicando a fórmula definida na RCM n.º 34/2008, resulta nos valores constantes do\nquadro infra.\nQuadro 33 - Evolução do Prazo Médio de Pagamento\n2022\n\n2023\n\n2024\n\n2025\n\n69\n\n22\n\n104\n\n137\n\nUnidade: Dia\n\nEm 31 de dezembro de 2025, o PMP do Município de Évora é de 137 dias, mais 33 dias que no ano anterior.\nPelo segundo ano consecutivo, o Município de Évora encerrou 2025 com pagamentos em atraso, no valor\nde 4.976.172,24 €.",
+    "recibo": "content/13 Dominios/source/rp4n/evora-contas.pedido.json",
+    "extracao": {
+      "pagina": 141,
+      "inicio": "O Prazo Médio de Pagamento (PMP) é",
+      "fim": "4.3.6."
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/evora-contas.pdf",
+      "campo": "página física 141",
+      "hora": "2026-10-06T09:47:53Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "e63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f"
+    }
+  },
+  "rp4n-evora-pael": {
+    "publicador": "Município de Évora",
+    "documento": "RELATÓRIO DE GESTÃO 2021",
+    "url": "https://www.cm-evora.pt/wp-content/uploads/2022/05/2_Relatorio_Gestao_2021.pdf",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "Os passivos financeiros, em 2021, não registam qualquer valor, visto que, o município não recorreu à contração\nde empréstimos, à semelhança de 2020 e 2018. Em 2019, o valor reflete a operação da contração do\nempréstimo de substituição do PAEL, no valor de 22.747.399,28 €, recebido e utilizado na totalidade para a\namortização antecipada do empréstimo contratado no âmbito do Programa de Apoio à Economia Local;",
+    "recibo": "content/13 Dominios/source/rp4n/evora-gestao.pedido.json",
+    "extracao": {
+      "pagina": 66,
+      "inicio": "Os passivos financeiros, em 2021",
+      "fim": "No total, em 2021"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/evora-gestao.pdf",
+      "campo": "página física 66",
+      "hora": "2026-10-06T09:48:40Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a"
+    }
+  },
+  "rp4n-evora-saneamento": {
+    "publicador": "Município de Évora",
+    "documento": "RELATÓRIO DE GESTÃO 2021",
+    "url": "https://www.cm-evora.pt/wp-content/uploads/2022/05/2_Relatorio_Gestao_2021.pdf",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "O gráfico seguinte mostra a finalidade com que foram contraídos os empréstimos de médio e longo prazo,\nexistentes a 31 de dezembro de 2021, bem como o peso de cada um desses empréstimos no total desta dívida:\n51% do montante dos empréstimos corresponde ao Empréstimo de Saneamento Financeiro 5, contratado em 2016;\n45% desse valor é do empréstimo contratado para Substituição do PAEL, contratado em 2019; 4% corresponde ao\nempréstimo excecionado para financiar projetos de investimento cofinanciados na parte da responsabilidade da\nCâmara Municipal, contratado em 2010.",
+    "recibo": "content/13 Dominios/source/rp4n/evora-gestao.pedido.json",
+    "extracao": {
+      "pagina": 81,
+      "inicio": "O gráfico seguinte mostra a finalidade",
+      "fim": "5 Para mais informação"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/evora-gestao.pdf",
+      "campo": "página física 81",
+      "hora": "2026-10-06T09:48:40Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a"
+    }
+  },
+  "rp4n-programas": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental | agosto 2026",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-04",
+    "lingua": "pt",
+    "excerto": "Os valores de execução orçamental dos Programas Orçamentais encontram-se consolidados de fluxos internos aos mesmos.\nAs diferenças de consolidação correspondem às constantes da despesa da conta consolidada da Administração Central.",
+    "recibo": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+    "extracao": {
+      "pagina": 72,
+      "inicio": "Os valores de execução orçamental dos Programas Orçamentais",
+      "fim": "Fonte: Entidade"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+      "campo": "página física 72",
+      "hora": "2026-10-04T04:11:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+    }
+  },
+  "rp4n-passivos": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental | agosto 2026",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-04",
+    "lingua": "pt",
+    "excerto": "Passivos financeiros líquidos de amortizações — Diferença\nentre valores de passivos financeiros da receita e despesa.\nCorrespondem\naos\ncompromissos\nfinanceiros\nem\ndeterminado ano económico.",
+    "recibo": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+    "extracao": {
+      "pagina": 85,
+      "inicio": "Passivos financeiros líquidos de amortizações —",
+      "fim": "Passivos não financeiros —"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+      "campo": "página física 85",
+      "hora": "2026-10-04T04:11:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+    }
+  },
+  "rp4n-vab": {
+    "publicador": "Eurostat",
+    "documento": "European system of accounts: ESA 2010",
+    "url": "https://ec.europa.eu/eurostat/documents/3859598/5925693/KS-02-13-269-EN.PDF",
+    "lido": "2026-09-26",
+    "lingua": "en",
+    "excerto": "Gross value added is recorded at basic prices. It is\noutput valued at basic prices less intermediate consumption valued at purchasers’ prices.",
+    "recibo": "content/13 Dominios/source/rp4n/eurostat-esa2010-KS-02-13-269-EN.pdf.pedido.json",
+    "extracao": {
+      "pagina": 313,
+      "inicio": "Gross value added is recorded at basic prices.",
+      "fim": "9.32"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/eurostat-esa2010-KS-02-13-269-EN.pdf",
+      "campo": "página física 313",
+      "hora": "2026-09-26T08:30:11Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "9569393aefd24d7fed20e55f30e68850148004e45c70dd5af4eda73214349858"
+    }
+  },
+  "rp4n-evora-divida-inicio": {
+    "publicador": "Município de Évora",
+    "documento": "RELATÓRIO DE GESTÃO 2021",
+    "url": "https://www.cm-evora.pt/wp-content/uploads/2022/05/2_Relatorio_Gestao_2021.pdf",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "Dívida Total no Início do Mandato\niniciado em Outubro/2013\n\n95.082.509,86",
+    "recibo": "content/13 Dominios/source/rp4n/evora-gestao.pedido.json",
+    "extracao": {
+      "pagina": 30,
+      "inicio": "Dívida Total no Início do Mandato",
+      "fim": "A 31/12/2017"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/evora-gestao.pdf",
+      "campo": "página física 30",
+      "hora": "2026-10-06T09:48:40Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a"
+    }
+  },
+  "rp4n-agua-nao-faturada": {
+    "publicador": "ERSAR",
+    "documento": "RASARP 2025, volume 1, página 106, AA08 Água não faturada",
+    "url": "https://ersarwebsitedocsstorage.blob.core.windows.net/documents/docs/anuais-do-RASARP/rasarp-2025/rasarp2025-volume1.pdf",
+    "lido": "2026-10-11",
+    "lingua": "pt",
+    "excerto": "O indicador é definido como a percentagem de água entrada\nno sistema que não é faturada (conceito a aplicar a entidades\ngestoras de sistemas em alta e em baixa).",
+    "recibo": "content/13 Dominios/source/rp4n/rasarp2025-volume1.pedido.json",
+    "extracao": {
+      "pagina": 106,
+      "inicio": "O indicador é definido como a percentagem de água entrada",
+      "fim": "Apresenta-se de seguida os valores de referência"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/rasarp2025-volume1.pdf",
+      "campo": "página física 106",
+      "hora": "2026-10-11T08:13:13Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "cd913fa3af3c782154fbf015c74d4b93005c2fc7f65741e33ac27aba6a829a67"
+    }
+  },
+  "rp4n-diferencas-consolidacao": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental | agosto 2026",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-04",
+    "lingua": "pt",
+    "excerto": "Diferenças de Consolidação — No processo de «consolidação»,\nno caso da Síntese da execução Orçamental, apenas realizada\nnuma ótica de fluxos de tesouraria, podem ser identificadas as\ndiferenças entre os registos de despesa e da correspondente\nreceita relativos a verbas de: transferências e juros/\nrendimentos da propriedade, de subsídios e de aquisição de\nbens e serviços/vendas de bens e serviços correntes no âmbito\ndo Programa Saúde entre entidades, as quais são identificadas\nem linha própria na conta consolidada; bem como verbas de\nativos financeiros e passivos financeiros.\nNo apuramento da conta consolidada é anulada a parte que é\ncomum aos registos de receita e despesa, por forma a evitar\nsobrevalorização dos respetivos valores, evidenciando-se a\nparcela remanescente — à exceção dos ativos financeiros e\npassivos financeiros, cujas diferenças são imputadas à\nrespetiva rúbrica.",
+    "recibo": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+    "extracao": {
+      "pagina": 83,
+      "inicio": "Diferenças de Consolidação —",
+      "fim": "Dotação corrigida —"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+      "campo": "página física 83",
+      "hora": "2026-10-04T04:11:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+    }
+  },
+  "rp4n-saldos-gerencia": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental | agosto 2026",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-04",
+    "lingua": "pt",
+    "excerto": "Saldo Orçamental (saldo de gerência anterior) — Diferença\nentre receita e despesa orçamental total, executados na\ngerência (ano) anterior.\nSaldo Orçamental (saldo de gerência seguinte) — Diferença\nentre receita e despesa orçamental total, executados no final\nda gerência (ano) atual.",
+    "recibo": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+    "extracao": {
+      "pagina": 87,
+      "inicio": "Saldo Orçamental (saldo de gerência anterior) —",
+      "fim": "Serviços e Fundos Autónomos (SFA) —"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+      "campo": "página física 87",
+      "hora": "2026-10-04T04:11:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+    }
+  },
+  "rp4n-ac-ss-orcamento": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental | agosto 2026",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-04",
+    "lingua": "pt",
+    "excerto": "Conta consolidada da Administração Central e Segurança Social\nPeríodo: janeiro a agosto (milhões de euros)\nCGE\n\nOrçamento\nInicial\n\n2025\n\n2026\n\n2025\n\n2026",
+    "recibo": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+    "extracao": {
+      "pagina": 49,
+      "inicio": "Conta consolidada da Administração Central e Segurança Social",
+      "fim": "Receita corrente"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+      "campo": "página física 49",
+      "hora": "2026-10-04T04:11:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+    }
+  },
+  "rp4n-agua-ambito": {
+    "publicador": "ERSAR",
+    "documento": "RASARP 2025, volume 1, página 106, AA08 Água não faturada",
+    "url": "https://ersarwebsitedocsstorage.blob.core.windows.net/documents/docs/anuais-do-RASARP/rasarp-2025/rasarp2025-volume1.pdf",
+    "lido": "2026-10-11",
+    "lingua": "pt",
+    "excerto": "Avaliação em Portugal continental\nQuadro 48. AA08 alta – Avaliação global\n(para 100 % de EG)\n652 687 845 m3/ano\n34 057 068 m3/ano\n5,2 %\n\nÁgua entrada no sistema\nÁgua não faturada\nAA08a – Água não faturada\n\nQuadro 49. AA08 baixa – Avaliação global\n(para 93 % de EG)\n846 741 648 m3/ano\n224 028 933 m3/ano\n26,5 %\n\nÁgua entrada no sistema\nÁgua não faturada\nAA08b – Água não faturada",
+    "recibo": "content/13 Dominios/source/rp4n/rasarp2025-volume1.pedido.json",
+    "extracao": {
+      "pagina": 106,
+      "inicio": "Avaliação em Portugal continental",
+      "fim": "A figura abaixo"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/rasarp2025-volume1.pdf",
+      "campo": "página física 106",
+      "hora": "2026-10-11T08:13:13Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "cd913fa3af3c782154fbf015c74d4b93005c2fc7f65741e33ac27aba6a829a67"
+    }
+  },
+  "rp4n-agua-faixas": {
+    "publicador": "ERSAR",
+    "documento": "RASARP 2025, volume 1, página 106, AA08 Água não faturada",
+    "url": "https://ersarwebsitedocsstorage.blob.core.windows.net/documents/docs/anuais-do-RASARP/rasarp-2025/rasarp2025-volume1.pdf",
+    "lido": "2026-10-11",
+    "lingua": "pt",
+    "excerto": "Quadro 47. AA08 baixa – Valores de referência (%)\nQualidade do serviço boa\nQualidade do serviço mediana\nQualidade do serviço insatisfatória\n\n[0,0; 20,0]\n]20,0; 30,0]\n]30,0; 100,0]",
+    "recibo": "content/13 Dominios/source/rp4n/rasarp2025-volume1.pedido.json",
+    "extracao": {
+      "pagina": 106,
+      "inicio": "Quadro 47. AA08 baixa",
+      "fim": "Avaliação em Portugal continental"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/rasarp2025-volume1.pdf",
+      "campo": "página física 106",
+      "hora": "2026-10-11T08:13:13Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "cd913fa3af3c782154fbf015c74d4b93005c2fc7f65741e33ac27aba6a829a67"
+    }
+  },
+  "rp4n-mapa-ministerios": {
+    "publicador": "Entidade Orçamental",
+    "documento": "MAPA 4, página 6",
+    "url": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2026/OrcamentoEstadoAprovado/MapasContabilisticos/OE2026_doc05_Mapa04.pdf",
+    "lido": "2026-10-12",
+    "lingua": "pt",
+    "excerto": "MAPA 4\nMapa relativo à classificação orgânica das despesas do subsetor da Administração Central",
+    "recibo": "content/13 Dominios/source/rp4n/mapa4-g.pedido.json",
+    "extracao": {
+      "pagina": 6,
+      "inicio": "MAPA 4",
+      "fim": "Página 6"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/mapa4-g.pdf",
+      "campo": "página física 6",
+      "hora": "2026-10-12T13:22:21Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "9e8005620a71179fc461f3b9f0472d253677ca35aa829d0b860864625dec5438"
+    }
+  },
+  "rp4n-total-ministerios": {
+    "publicador": "Entidade Orçamental",
+    "documento": "MAPA 4, página 6",
+    "url": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2026/OrcamentoEstadoAprovado/MapasContabilisticos/OE2026_doc05_Mapa04.pdf",
+    "lido": "2026-10-12",
+    "lingua": "pt",
+    "excerto": "DESPESA TOTAL\n\n352 472 389 960",
+    "recibo": "content/13 Dominios/source/rp4n/mapa4-g.pedido.json",
+    "extracao": {
+      "pagina": 6,
+      "inicio": "DESPESA TOTAL\n",
+      "fim": "DESPESA TOTAL CONSOLIDADA\n"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/mapa4-g.pdf",
+      "campo": "página física 6",
+      "hora": "2026-10-12T13:22:21Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "9e8005620a71179fc461f3b9f0472d253677ca35aa829d0b860864625dec5438"
+    }
+  },
+  "rp4n-consolidada-ministerios": {
+    "publicador": "Entidade Orçamental",
+    "documento": "MAPA 4, página 6",
+    "url": "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2026/OrcamentoEstadoAprovado/MapasContabilisticos/OE2026_doc05_Mapa04.pdf",
+    "lido": "2026-10-12",
+    "lingua": "pt",
+    "excerto": "DESPESA TOTAL CONSOLIDADA\n\n245 121 564 003\n\nFonte: MF/EO\nNota:\nA \"DESPESA TOTAL CONSOLIDADA\" exclui os fluxos intrasetoriais e intersetoriais de juros, subsídios, transferências correntes e de capital, ativos e passivos no\nâmbito da Administração Central, bem como da aquisição de bens e serviços efetuada no âmbito do Programa Saúde da Administração Central.",
+    "recibo": "content/13 Dominios/source/rp4n/mapa4-g.pedido.json",
+    "extracao": {
+      "pagina": 6,
+      "inicio": "DESPESA TOTAL CONSOLIDADA\n"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/mapa4-g.pdf",
+      "campo": "página física 6",
+      "hora": "2026-10-12T13:22:21Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "9e8005620a71179fc461f3b9f0472d253677ca35aa829d0b860864625dec5438"
+    }
+  },
+  "rp4n-combustiveis": {
+    "publicador": "Eurostat",
+    "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP0722&geo=PT&sinceTimePeriod=1996-01",
+    "lido": "2026-10-04",
+    "lingua": "en",
+    "excerto": "Fuels and lubricants for personal transport equipment (ND)",
+    "extracao": {
+      "caminho": [
+        "dimension",
+        "coicop18",
+        "category",
+        "label",
+        "CP0722"
+      ]
+    },
+    "serie": "serie-ihpc-combustiveis-variacao-homologa",
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp3/174-eurostat-serie-ihpc-combustiveis-variacao-homologa.json",
+      "campo": "dimension.coicop18.category.label.CP0722",
+      "hora": "2026-10-04T03:55:11Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "5535ef96382360a8a8d1f59a993cb83caf181f86459ac98a21ac4444d277b4d1"
+    }
+  },
+  "rp4n-combustiveis-ue": {
+    "publicador": "Eurostat",
+    "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP0722&geo=EU27_2020&sinceTimePeriod=1996-01",
+    "lido": "2026-10-04",
+    "lingua": "en",
+    "excerto": "Fuels and lubricants for personal transport equipment (ND)",
+    "extracao": {
+      "caminho": [
+        "dimension",
+        "coicop18",
+        "category",
+        "label",
+        "CP0722"
+      ]
+    },
+    "serie": "serie-ihpc-combustiveis-variacao-homologa-ue",
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp3/175-eurostat-serie-ihpc-combustiveis-variacao-homologa-ue.json",
+      "campo": "dimension.coicop18.category.label.CP0722",
+      "hora": "2026-10-04T03:55:13Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "250d402db99b5d53e1a53cbbe67d2d2fbb272ca923e29ea7d616b2f89cc94a87"
+    }
+  },
+  "rp4n-energia": {
+    "publicador": "Eurostat",
+    "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP045&geo=PT&sinceTimePeriod=1996-01",
+    "lido": "2026-10-04",
+    "lingua": "en",
+    "excerto": "Electricity, gas and other fuels",
+    "extracao": {
+      "caminho": [
+        "dimension",
+        "coicop18",
+        "category",
+        "label",
+        "CP045"
+      ]
+    },
+    "serie": "serie-ihpc-energia-da-casa-variacao-homologa",
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp3/177-eurostat-serie-ihpc-energia-da-casa-variacao-homologa.json",
+      "campo": "dimension.coicop18.category.label.CP045",
+      "hora": "2026-10-04T03:55:17Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "11aebb54e809db8494f8171540ba030be142a6a75ad378ece7f4afa132b3be3e"
+    }
+  },
+  "rp4n-rendas": {
+    "publicador": "Eurostat",
+    "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP041&geo=PT&sinceTimePeriod=1996-01",
+    "lido": "2026-10-04",
+    "lingua": "en",
+    "excerto": "Actual rental payments made for housing",
+    "extracao": {
+      "caminho": [
+        "dimension",
+        "coicop18",
+        "category",
+        "label",
+        "CP041"
+      ]
+    },
+    "serie": "serie-ihpc-rendas-variacao-homologa",
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp3/176-eurostat-serie-ihpc-rendas-variacao-homologa.json",
+      "campo": "dimension.coicop18.category.label.CP041",
+      "hora": "2026-10-04T03:55:15Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "218c3642d68a874acc7e41b5c7dce682a2439776c13cfd5c34b4873b86639b26"
+    }
+  },
+  "rp4n-hpi-anual": {
+    "publicador": "Eurostat",
+    "documento": "House price index - quarterly data",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hpi_q?format=JSON&lang=EN&unit=RCH_A&purchase=TOTAL&geo=PT&sinceTimePeriod=2005-Q1",
+    "lido": "2026-10-04",
+    "lingua": "en",
+    "excerto": "Annual rate of change",
+    "extracao": {
+      "caminho": [
+        "dimension",
+        "unit",
+        "category",
+        "label",
+        "RCH_A"
+      ]
+    },
+    "serie": "serie-precos-da-habitacao-variacao-homologa",
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp3/178-eurostat-serie-precos-da-habitacao-variacao-homologa.json",
+      "campo": "dimension.unit.category.label.RCH_A",
+      "hora": "2026-10-04T03:55:19Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "d43fd07bb52a2bb2f4788bd21cdd2cf441ce2fdb3eac25c85883a5fc7bfe5bd3"
+    }
+  }
+}

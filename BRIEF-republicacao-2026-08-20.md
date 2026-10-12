@@ -2,7 +2,7 @@
 
 *Escrito a 2026-08-20 pelo lugar de direção (Claude Fable 5, a delegar), sob a
 delegação da direção desse dia. É a segunda metade do bloco cuja primeira metade
-correu no motor (`~/Instruments/ResearchHub/content/04 Évora Public Money/BRIEF-reextracao-2026-08-20.md`
+correu no motor (`~/<projetos>/ResearchHub/content/04 Évora Public Money/BRIEF-reextracao-2026-08-20.md`
 e o relatório do seu construtor, que o lugar de direção entrega com este brief).
 Corre num ramo novo do sítio, criado de `main` **depois** da fusão do bloco das
 decisões (`decisoes-2026-08-20`). Grafia: Acordo de 1990. Sem travessões. Nada

@@ -553,8 +553,8 @@ medidas, em `design/especime-v3/medicoes/datas-i11.json`. As duas linhas que a
 escreveram:
 
 ```
-node tests/livro/indice.mjs --navegador --json /tmp/f14b2-indice.json
-node -e "const fs=require('fs'); const j=JSON.parse(fs.readFileSync('/tmp/f14b2-indice.json','utf8')); const c=j.celulas.find((x)=>x.id==='I11'); fs.writeFileSync('design/especime-v3/medicoes/datas-i11.json', JSON.stringify({origem:{...}, celula:c, medida:j.medida.I11}, null, 2)+'\n')"
+node tests/livro/indice.mjs --navegador --json <temporario>
+node -e "const fs=require('fs'); const j=JSON.parse(fs.readFileSync('<temporario>','utf8')); const c=j.celulas.find((x)=>x.id==='I11'); fs.writeFileSync('design/especime-v3/medicoes/datas-i11.json', JSON.stringify({origem:{...}, celula:c, medida:j.medida.I11}, null, 2)+'\n')"
 ```
 
 | rota | contagens | pares medidos | vão mínimo | com o defeito plantado |

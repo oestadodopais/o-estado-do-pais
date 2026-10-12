@@ -61,6 +61,7 @@
  *   selos                   data-nonledger="proveniencia" (posto por <Provenance/>)
  * Não há mais nenhuma, e não há JavaScript nesta página.
  */
+import TextoDoNome from '../components/TextoDoNome.astro';
 import Base from '../layouts/Base.astro';
 import Frase from '../components/Frase.astro';
 import Provenance from '../components/Provenance.astro';
@@ -273,7 +274,7 @@ const jsonld = {
               <p class="lugar-mudou-o-que">
                 {e.nome?.fonte && (
                   <span class="lugar-mudou-nome" data-nome={e.nome.fonte} data-de-linha={e.claim}>
-                    {e.nome.texto}
+                    <TextoDoNome id={e.claim} texto={e.nome.texto} lang={lang} />
                   </span>
                 )}
                 <span class="lugar-mudou-par">

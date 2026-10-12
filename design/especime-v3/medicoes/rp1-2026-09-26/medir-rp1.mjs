@@ -12,7 +12,7 @@ import { textoDaLeitura, leituraDaMedida } from '../../../../src/lib/leitura-da-
 import { auditarPerguntas } from '../../../../tests/cartao/perguntas.mjs';
 import { conferirAuditoriaDasLeituras, conferirLeiturasRendidas } from '../../../../tests/cartao/leituras.mjs';
 const aqui=path.dirname(fileURLToPath(import.meta.url)), raiz=path.resolve(aqui,'../../../..');
-const motor=process.env.RP1_MOTOR??path.join(os.homedir(),'Instruments/ResearchHub/.worktrees/rp1-2026-09-26');
+const motor=process.env.RP1_MOTOR??path.join(os.homedir(),'<projetos>/ResearchHub/.worktrees/rp1-2026-09-26');
 const base='42b3cadf';
 const git=(...args)=>execFileSync('git',args,{cwd:raiz,encoding:'utf8'}).trim();
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
@@ -26,7 +26,7 @@ const deteta=p=>{const s=fs.readFileSync(p).toString('utf8').toLowerCase();retur
 function caminhos(){
  const scratch=fs.mkdtempSync(path.join(os.tmpdir(),'rp1c-caminhos-'));
  let conhecido=false;
- try {const p=path.join(scratch,'ensaio.txt');fs.writeFileSync(p,path.join(os.homedir(),'Instruments/OEstadoDoPais'));conhecido=deteta(p);}
+ try {const p=path.join(scratch,'ensaio.txt');fs.writeFileSync(p,path.join(os.homedir(),'<projetos>/OEstadoDoPais'));conhecido=deteta(p);}
  finally {fs.rmSync(scratch,{recursive:true,force:true});}
  prova(conhecido,'O detetor de caminhos não viu o conhecido-positivo');
  const critica=path.join(raiz,'design/especime-v3/critica');

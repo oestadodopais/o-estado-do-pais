@@ -4546,7 +4546,7 @@
       {
         "nome": "M3 · PDF da fonte truncado (cópia estragada)",
         "viu": true,
-        "detalhe": "pdftotext atirou como esperado: Command failed: /opt/homebrew/bin/pdftotext -layout -f 7 -l 7 /var/folders/st/9ys1198j2qbbhjh282gzntkh0000gn/T/vazios-m8-UouYsT/m3-pdf-estragado/pmp-anual-2025-12.pdf -"
+        "detalhe": "pdftotext atirou como esperado: Command failed: /opt/homebrew/bin/pdftotext -layout -f 7 -l 7 <temporario> -"
       },
       {
         "nome": "M4 · \"NaN\" plantado numa cópia",

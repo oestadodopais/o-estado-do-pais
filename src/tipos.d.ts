@@ -191,14 +191,18 @@ interface CorrecaoDaLinha {
  * É por isso que os campos que o validador ainda não leu são `unknown`.
  */
 interface Linha {
+  publication?: unknown;
+  definition_sources?: unknown;
   id: string;
   value: unknown;
   unit: unknown;
   name?: unknown;
   name_source?: unknown;
+  name_source_en?: string;
   source: unknown;
   document: unknown;
   source_url: unknown;
+  access_date_kind?: 'hosted-copy' | 'source-read';
   access_date: unknown;
   published_at?: unknown;
   reference_date: unknown;

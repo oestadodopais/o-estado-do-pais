@@ -1,0 +1,50 @@
+{
+  "cabeca_da_captura": "a58623ac55fa35a645ec073b50d9278117b704a5",
+  "versao": {
+    "commit": "a10b0ee3d3f9d30c9ab8b31edeb4901efb3d2199",
+    "ref": "rp4n-2026-10-07",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-12T12:34:45.866Z"
+  },
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/g-antes/area-pt-390.png",
+      "rota": "/areas/economia-e-coesao-territorial/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "sha256": "54aa6657f8bbd86a0678ad2912fa3ff862f6d0f0d9da5374f0399acc5f4cb57f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/g-antes/area-pt-1280.png",
+      "rota": "/areas/economia-e-coesao-territorial/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "marcadores": 0,
+      "sha256": "aff5b89b740f387b902d03a3afcb065f6cc2bc192022c49f726e7a9df9bb2e76"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/g-antes/area-en-390.png",
+      "rota": "/en/areas/economia-e-coesao-territorial/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "marcadores": 0,
+      "sha256": "ff7364520d573099ed7128c9ebf64f7379e01c17a461d07c882c350945bb04ff"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/g-antes/area-en-1280.png",
+      "rota": "/en/areas/economia-e-coesao-territorial/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "marcadores": 0,
+      "sha256": "8c0551fddbbe9bb086c968cdc691a20d4ba31bcb887b6c21c8ec808a40002d66"
+    }
+  ],
+  "problemas": []
+}

@@ -1,0 +1,5 @@
+a10b0ee3d3f9d30c9ab8b31edeb4901efb3d2199
+test(rp4n-f): ler a contagem dos formatos na mensagem das plantas
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

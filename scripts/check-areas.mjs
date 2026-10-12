@@ -220,6 +220,17 @@ function pecasDaArea(area, claims) {
       trabalhos.set(w.id, p);
     }
   }
+  // A matéria pode declarar o estudo, independentemente das linhas publicáveis.
+  for (const m of area.materias) for (const r of m.regras) {
+    if (!('listarEstudo' in r) || r.listarEstudo !== true) continue;
+    for (const id of r.estudos ?? []) {
+      const w=WORKS.find(w=>w.id===id);
+      if (!w) throw new Error(`Área: estudo declarado inexistente ${id}`);
+      const p=trabalhos.get(id) ?? {id,slug:w.slug,linhas:[],materias:new Set()};
+      p.materias.add(m.materia);trabalhos.set(id,p);
+    }
+  }
+
   /* Os números da lei em que esta página assenta, e as matérias que rendem
      rótulo de grupo: recontados AQUI a partir das linhas, e não lidos do
      leitor das páginas. */

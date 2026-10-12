@@ -1,0 +1,276 @@
+[
+  {
+    "nome": "Fontes, anexos, contas e travessia regenerados",
+    "passou": true,
+    "planta": false
+  },
+  {
+    "nome": "Recibo da segunda fonte alterado em pib-nominal-notificacao-setembro-2024",
+    "mensagem": "segunda fonte sem recibo conferido no motor",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Recibo da segunda fonte alterado em juros-das-administracoes-publicas-pib-2024",
+    "mensagem": "segunda fonte sem recibo conferido no motor",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Recibo da segunda fonte alterado em pib-nominal-notificacao-setembro-2025",
+    "mensagem": "segunda fonte sem recibo conferido no motor",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Recibo da segunda fonte alterado em juros-das-administracoes-publicas-pib-2025",
+    "mensagem": "segunda fonte sem recibo conferido no motor",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Recibo da segunda fonte alterado em custo-do-stock-da-divida-direta-2025",
+    "mensagem": "segunda fonte sem recibo conferido no motor",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Recibo da segunda fonte alterado em necessidades-brutas-de-financiamento-2025",
+    "mensagem": "segunda fonte sem recibo conferido no motor",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Recibo da segunda fonte alterado em necessidades-brutas-de-financiamento-2025",
+    "mensagem": "segunda fonte sem recibo conferido no motor",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Recibo da segunda fonte alterado em necessidades-brutas-de-financiamento-2025",
+    "mensagem": "segunda fonte sem recibo conferido no motor",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Recibo da segunda fonte alterado em emissoes-de-divida-fundada-2025",
+    "mensagem": "segunda fonte sem recibo conferido no motor",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Recibo da segunda fonte alterado em emissoes-de-divida-fundada-2025",
+    "mensagem": "segunda fonte sem recibo conferido no motor",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Recibo da segunda fonte alterado em emissoes-de-divida-fundada-2025",
+    "mensagem": "segunda fonte sem recibo conferido no motor",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Recibo da segunda fonte alterado em amortizacoes-e-anulacoes-de-divida-fundada-2025",
+    "mensagem": "segunda fonte sem recibo conferido no motor",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Recibo da segunda fonte alterado em amortizacoes-e-anulacoes-de-divida-fundada-2025",
+    "mensagem": "segunda fonte sem recibo conferido no motor",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Recibo da segunda fonte alterado em amortizacoes-e-anulacoes-de-divida-fundada-2025",
+    "mensagem": "segunda fonte sem recibo conferido no motor",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Segundas fontes JD1 atravessam com os recibos conferidos",
+    "passou": true,
+    "planta": false
+  },
+  {
+    "nome": "Unidade do INE trocada",
+    "mensagem": "JD1 INE: unidade diferente",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Anos da execução trocados",
+    "mensagem": "JD1 EO: cabeçalho ausente ou ambíguo",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Corpo recebido alterado",
+    "mensagem": "comprimento divergente",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "União substituída por Portugal",
+    "mensagem": "JD1 Eurostat: coordenada diferente geo",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "PIB de outro ano na derivação",
+    "mensagem": "JD1 derivação: unidades ou períodos diferentes",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Série desconhecida na seleção",
+    "mensagem": "seleção de séries vazia ou desconhecida",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Seleção pede a série escolhida e declara as restantes saltadas",
+    "passou": true,
+    "planta": false
+  },
+  {
+    "nome": "Unidade da taxa trocada",
+    "mensagem": "a unidade não é confirmada pela ficha de metadados",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Cor da legenda distingue stock e emissão, incluindo 2020",
+    "passou": true,
+    "planta": false
+  },
+  {
+    "nome": "Ano do gráfico ausente",
+    "mensagem": "JD1 IGCP: ano do gráfico ausente ou ambíguo",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Ano do gráfico duplicado",
+    "mensagem": "JD1 IGCP: ano do gráfico ausente ou ambíguo",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Colunas do gráfico trocadas",
+    "mensagem": "JD1 IGCP: coluna do gráfico diferente",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Rótulo adicional na coluna do gráfico",
+    "mensagem": "JD1 IGCP: coluna do gráfico diferente",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Célula do anexo divergente do PDF",
+    "mensagem": "JD1 anexo: célula e PDF divergem",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Último saldo do IGCP trocado",
+    "mensagem": "JD1 IGCP dívida: data extraída diverge da data impressa no quadro",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Coluna adicional em Dívida total / Total debt",
+    "mensagem": "JD1 PDF: última coluna ausente ou adicional",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Coluna adicional em 3. NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.)",
+    "mensagem": "JD1 PDF: última coluna ausente ou adicional",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Coluna adicional em p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada)",
+    "mensagem": "JD1 PDF: última coluna ausente ou adicional",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Últimas colunas da dívida e dos dois totais anuais lidas no PDF",
+    "passou": true,
+    "planta": false
+  },
+  {
+    "nome": "Bandeira nova do Eurostat não desaparece",
+    "mensagem": "JD1 Eurostat: bandeira por tratar",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Parcela das amortizações selada como linha com recibo próprio",
+    "passou": true,
+    "planta": false
+  },
+  {
+    "nome": "Excerto mínimo da União e parcela das amortizações no bloco literal",
+    "passou": true,
+    "planta": false
+  },
+  {
+    "nome": "Resumo do recorte alterado",
+    "mensagem": "JD1 recorte: resumo ou comprimento divergente",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Recortes regenerados, selados e atravessados; excertos de uma linha",
+    "passou": true,
+    "planta": false
+  },
+  {
+    "nome": "Mês acrescentado ao ano do gráfico",
+    "mensagem": "JD1 IGCP: período da emissão não é o ano impresso",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Data mutilada no localizador",
+    "mensagem": "JD1 IGCP: data do saldo não conserva a data impressa",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Unidade de gráfico vizinho no excerto do custo",
+    "mensagem": "JD1 IGCP: excerto inclui unidades de gráficos vizinhos",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Segundo título para jd1/ine-pde-setembro-2026.pdf",
+    "mensagem": "JD1: título diferente para o mesmo documento",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Segundo título para jd1/eo-execucao-agosto-2026.pdf",
+    "mensagem": "JD1: título diferente para o mesmo documento",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Ponto de milhares no valor de trabalho",
+    "mensagem": "JD1 dívida: value contém ponto de milhares",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Dívida vale 315856 no leitor numérico e conserva o literal da fonte",
+    "passou": true,
+    "planta": false
+  }
+]
+JD1_TEST: PASS · 47 conferências

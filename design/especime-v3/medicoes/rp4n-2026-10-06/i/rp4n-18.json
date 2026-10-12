@@ -1,0 +1,28 @@
+{
+  "questao": "RP4N-18",
+  "estado": "aberta no histórico publicado",
+  "base_recebida": "c263080105981e81d0c273e3b0cfc53ac399ce4a",
+  "ficheiros_anonimizados": [
+    {
+      "ficheiro": "design/especime-v3/ISSUES.md",
+      "sha256_antes": "4b9d1ebbe371777fdc26fa952589359af1777f064a4a0cb5e2c3b03ddc5d3f0c",
+      "sha256_depois": "eb6ff35c8a5c888e69384a2742b41f85281daa347e902ab37e5d4d2286237a1e"
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/PLANTAS-TP1-2026-10-07.json",
+      "sha256_antes": "578bbfed3f5527cbe47ed02d51e29858529798daa561ce04c43cd1ae9e3e1a76",
+      "sha256_depois": "4c669177a4b0bfb0255adae9ccad5af9a1ddb736a82ee133aab92f5eb60c1f06"
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-10-07.md",
+      "sha256_antes": "9133df13debd73c796068b6be7399bd88493cd6d511a57f38885c11ea05cbb94",
+      "sha256_depois": "fed39e5206a225be8e717de283f53a431cd7d0bcd399cad8b519c1d05c82dfcd"
+    },
+    {
+      "ficheiro": "design/observatorio/REGISTO-DE-MELHORIAS.md",
+      "sha256_antes": "bd52ba7b0444be22ca8002d3d12ca027208e20e764b12477ad2386608d50e8a5",
+      "sha256_depois": "2de977b378dee9d049716c2dced597d51bfc989428bb677540e728ba1586f903"
+    }
+  ],
+  "decisao": "Corrigir os registos na cabeça sem reescrever a história publicada. A exceção da RP4N-17 não abrange estes achados herdados da fusão de main. A conferência integral continua a recusar o histórico; decisão da direção antes da aterragem."
+}

@@ -29,10 +29,6 @@ reference_date: "2026"
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "           10 - ADMINISTRAÇÃO INTERNA                                                             3 310 310 353"
 
-# Ressalva publicada da casa, conferida no motor, nas duas línguas.
-ressalva: "A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma."
-ressalva_en: "Gross expenditure includes financial transactions and transfers between State services, as added up in the budget map."
-
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
 derivation_en: null

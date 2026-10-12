@@ -63,14 +63,14 @@
 - igual a `origin/main` (`bcec17de`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
-### O motor (`~/Instruments/ResearchHub`)
+### O motor (`~/<projetos>/ResearchHub`)
 - `master`: 4b46bef · 2026-09-30T01:44:15+01:00 · F2.2e: provar as duas guardas do painel e os números do relatório  (`git log -1 master`)
 - `origin/master`: 4b46bef · 2026-09-30T01:44:15+01:00 · F2.2e: provar as duas guardas do painel e os números do relatório  (`git log -1 origin/master`)
 - `master` está 0 à frente e 0 atrás de `origin/master`  (`git rev-list --left-right --count`)
 - árvore principal: 5 entrada(s) por registar: `M sweeps/state.json`; `?? .maintenance-locks/`; `?? indicators/out/pde-2026-09-23/`; `?? publisher/recortes/manifest.regioes.json`; `?? sweeps/sweep-2026-09-01.md`  (`git status --short`, código 0)
 - ramos locais: `master 4b46bef`  (`git branch`)
 - ramos no remoto: `master`  (`git ls-remote --heads origin`)
-- worktree: `~/Instruments/ResearchHub 4b46bef [master]`
+- worktree: `~/<projetos>/ResearchHub 4b46bef [master]`
 
 ### O uso das duas subscrições (`python3 scripts/leituras/uso.py`)
     Claude (escrito pela linha de estado a 30.09.2026 06:24 UTC):

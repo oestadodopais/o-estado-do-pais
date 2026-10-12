@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-12T17:28:42+00:00",
+ "copia": "<scratchpad>/rp4n/pacote-leitura-i",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/en/method/index.html",
+   "descricao": "o Método inglês volta a trazer a marca portuguesa num atributo title, na cópia, contra o diff da passagem (a forma inglesa em todos os atributos), a planta da língua e o relatório",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "9e2313a74ba2a2d8a474a746abd1d11fc580143577c05a7fec12ca0b34e7bfd5",
+   "sha256_depois": "c85fe4ab7105574a259f8be87d8386fd2a896f7e2cf71ca395e5c0490d1658cf",
+   "contexto_antes": "field of the ledger rows\">bodies</a><a href=\"/en/ledger\" title=\"rows with an entry in the engine crossing record\">rows crossed</a><a href=\"/en/ledger\" title=\"ledger rows\">rows</a><a href=\"/en/ledger\" title=\"rows with at least one field marked [to verify]\">to confirm</a><a href=\"/en/ledger\" title=\"rows with the arithmetic written as an expression, redone at each build\">arithmetic re-evaluated</a><a href=\"/en/ledg",
+   "contexto_depois": "field of the ledger rows\">bodies</a><a href=\"/en/ledger\" title=\"rows with an entry in the engine crossing record\">rows crossed</a><a href=\"/en/ledger\" title=\"ledger rows\">rows</a><a href=\"/en/ledger\" title=\"rows with at least one field marked [a verificar]\">to confirm</a><a href=\"/en/ledger\" title=\"rows with the arithmetic written as an expression, redone at each build\">arithmetic re-evaluated</a><a href=\"/en/ledg"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório dá um excesso de 152 340 símbolos na passagem g, na cópia, contra a subtração que a mesma frase faz (552 340 menos 300 000)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "1367d14eaab122e9c598232ebdce26c0509f227bb7c530a85b391dd196bb4a5d",
+   "sha256_depois": "58d95c82dd29b9cb3d7ca587e3429d3deffead383c5b99c4e4270a38a8c6a03c",
+   "contexto_antes": "833e924ab1f41d5ebfc9f943bc9aa61537014aeb6368e2dd98b6 |\n\n### Custo e razões do excesso anterior\nA passagem g consumiu 552 340 símbolos contra o alvo de 300 000, excesso de 252 340, segundo a medição da direção transcrita no mandato e lida por `medir-custo-i.py`. Os registos conservam 6 tentativas recusadas pelos portões. Foram repetidas ",
+   "contexto_depois": "833e924ab1f41d5ebfc9f943bc9aa61537014aeb6368e2dd98b6 |\n\n### Custo e razões do excesso anterior\nA passagem g consumiu 552 340 símbolos contra o alvo de 300 000, excesso de 152 340, segundo a medição da direção transcrita no mandato e lida por `medir-custo-i.py`. Os registos conservam 6 tentativas recusadas pelos portões. Foram repetidas "
+  },
+  {
+   "id": "P4",
+   "ficheiro": "design/especime-v3/medicoes/rp4n-2026-10-06/privacidade-i.py",
+   "descricao": "o guião da privacidade afirma que a exceção histórica cobre uma ocorrência nova, na cópia, contra o diff, o comentário do próprio guião e o mandato (qualquer ocorrência nova continua proibida)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "4f0ca8e11055fe74aa492dfa1d7d6a2814972f93c15294a90e1182681eff36a3",
+   "sha256_depois": "a24e9454b924aaf698959b12e7ea4a70fdffa64c3f2495269a3350866b0ebd2e",
+   "contexto_antes": " not conferir_texto(linha):continue\n if excecao(commit,linha):\n  excecoes.append({'commit':commit,'sha256_linha':hashlib.sha256(linha.encode()).hexdigest()})\n  assert not excecao(commit,linha+' nova ocorrência')\n  assert not excecao('0'*40,linha)\n else:restantes.append({'commit':commit,'mensagens':conferir_texto(linha)})\nassert {x['commit'] for x in excecoes}==set(acei",
+   "contexto_depois": " not conferir_texto(linha):continue\n if excecao(commit,linha):\n  excecoes.append({'commit':commit,'sha256_linha':hashlib.sha256(linha.encode()).hexdigest()})\n  assert excecao(commit,linha+' nova ocorrência')\n  assert not excecao('0'*40,linha)\n else:restantes.append({'commit':commit,'mensagens':conferir_texto(linha)})\nassert {x['commit'] for x in excecoes}==set(acei"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "motor/publisher/recortes/penalizacao-legal-um-ano-antecipacao-2026.yml",
+   "descricao": "o nome da medida da linha da penalização legal no motor troca uma palavra, na cópia, contra o diff, o PDF (p. 273) e a linha do sítio",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "6d9c0cf390e73c3e0e68f6effbaf6e01b49b1c8dd03de847c3b40384d8542049",
+   "sha256_depois": "b8c1b982ddc6b109dd67d0da61792976e1a316f05437efb3afa2b4c5c562e5da",
+   "contexto_antes": "id: penalizacao-legal-um-ano-antecipacao-2026\nvalue: '6'\nunit: '%'\nname: penalização legal\nname_source: Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, parágrafo abaixo da Figura 8.4\nname_source_en: Relatorio_Final_GT_Reforma_Seg_Social_J",
+   "contexto_depois": "id: penalizacao-legal-um-ano-antecipacao-2026\nvalue: '6'\nunit: '%'\nname: bonificação legal\nname_source: Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, parágrafo abaixo da Figura 8.4\nname_source_en: Relatorio_Final_GT_Reforma_Seg_Social_J"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "src/data/origens-rp4n.json",
+   "descricao": "o excerto da nota do MAPA 4 nas origens do RP4-n diz «DESPESA TOTAL CONSOLIDADAS», na cópia, contra o PDF alojado do mapa (p. 6), o diff e a frase dos ministérios",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ac5c75cee9a86347f3240206c64c86941f2840ae85da0e1a6d7be5688729fdd6",
+   "sha256_depois": "9695cdc51fa92bf5dae7666b75b8d3bd6a84ceef9e42053291ff2c20683486c5",
+   "contexto_antes": "ingua\": \"pt\",\n    \"excerto\": \"DESPESA TOTAL\\n\\n352 472 389 960\",\n    \"recibo\": \"content/13 Dominios/source/rp4n/mapa4-g.pedido.json\",\n    \"extracao\": {\n      \"pagina\": 6,\n      \"inicio\": \"DESPESA TOTAL\\n\",\n      \"fim\": \"DESPESA TOTAL CONSOLIDADA\\n\"\n    },\n    \"selo\": {\n      \"tipo\": \"rp4n\",\n      \"motor\": \"content/13 Dominios/source/rp4n/mapa4-g.pdf\",\n      \"campo\": \"página física 6\",\n      \"hora\": \"20",
+   "contexto_depois": "ingua\": \"pt\",\n    \"excerto\": \"DESPESA TOTAL\\n\\n352 472 389 960\",\n    \"recibo\": \"content/13 Dominios/source/rp4n/mapa4-g.pedido.json\",\n    \"extracao\": {\n      \"pagina\": 6,\n      \"inicio\": \"DESPESA TOTAL\\n\",\n      \"fim\": \"DESPESA TOTAL CONSOLIDADAS\\n\"\n    },\n    \"selo\": {\n      \"tipo\": \"rp4n\",\n      \"motor\": \"content/13 Dominios/source/rp4n/mapa4-g.pdf\",\n      \"campo\": \"página física 6\",\n      \"hora\": \"20"
+  }
+ ]
+}

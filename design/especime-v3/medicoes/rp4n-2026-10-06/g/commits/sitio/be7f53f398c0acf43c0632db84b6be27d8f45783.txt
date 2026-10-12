@@ -1,0 +1,4 @@
+be7f53f398c0acf43c0632db84b6be27d8f45783
+fix(rp4n-g): alinhar o prazo PRR com a conclusão da computação
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

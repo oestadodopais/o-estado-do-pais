@@ -65,7 +65,7 @@ export function verificaB1(raiz) {
         ...Object.values(ROTULOS_B1[lang]),
         ...Object.values(SUBJECTS).map(s => s[lang]),
         ...DOMINIOS.map(d => d.nome[lang]),
-        ...dados.flatMap(w => [w.description[lang], ...w.editions.map(e => e.title),
+        ...dados.flatMap(w => [w.description[lang], ...(w.ausenciaAtual?.[lang] ? [w.ausenciaAtual[lang]] : []), ...w.editions.map(e => e.title),
           ...primeirasFrases(leituraDe(w.id)?.frase[lang] ?? []).filter(p => typeof p === 'string')]),
         ...sucessores.flatMap(({ s, x }) => [...x.editions.map(e => e.title), s.parte?.[lang]].filter(Boolean)),
         ...(sucessores.length ? ['.', ';'] : []),
@@ -82,7 +82,7 @@ export function verificaB1(raiz) {
            ao lado de um título que o arquivo declara por confirmar, e é a mesma
            cadeia. Admite-se a cadeia EXACTA, e mais nada: qualquer outra prosa
            continua a fechar a construção. */
-        POR_VERIFICAR,
+        POR_VERIFICAR, '[to verify]',
       ].map(normal));
       const tecnicos = new Set(['textoLinhaK', 'textoValorK', 'textoImpressoK', 'textoOrigemK', 'textoLinhaDoLivro', 'textoRegistoK'].map(k => S[lang].estudos[k]));
       const verificados = '[data-rotulo-ia="topo"], [data-registo-unidade], [data-registo-indice], [data-registo-posicao], [data-registo-linha], [data-claim], .src-chip, [data-prova], [data-verbatim]';

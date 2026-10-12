@@ -19,6 +19,9 @@ reference_date: "2025"
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: null
 
+# Fontes secundárias da definição, com os recibos dos ficheiros alojados.
+definition_sources: [{"publisher": "Eurostat", "receipt": {"campo": "texto da entrada nomeada, extraído por HTMLParser", "cliente": "core.http.HttpClient.condicional", "extracao": {"ferramenta": "Python html.parser.HTMLParser", "ficheiro": "indicators/out/jd1b-2026-10-07/005-eurostat-pib-iniciantes.txt", "sha256": "66170c143a9e9e09b297497c79f081c4ab79cf3be82712241568e12ae6c9b523"}, "hora": "2026-10-07T09:49:11Z", "motor": "indicators/out/jd1b-2026-10-07/005-eurostat-pib-iniciantes.html", "sha256": "65e07dfb4d6043e71431b40ad6b709b75a03b2dc4dbbf9e497b23aeb2d8fffec"}, "url": "https://ec.europa.eu/eurostat/web/european-statistics-learning-hub/statistics-for-beginners/gross-domestic-product"}]
+
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "Dividir os juros das administrações públicas pelo produto interno bruto a preços de mercado do mesmo ano, na mesma notificação do INE, e multiplicar por cem. Arredondar a duas casas decimais, com as metades para fora de zero."
 derivation_en: "Divide general government interest expenditure by gross domestic product at market prices for the same year, in the same INE notification, and multiply by one hundred. Round to two decimal places, with halves away from zero."

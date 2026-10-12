@@ -12,7 +12,7 @@
 
 1. **A retoma da ER1-d**, a sessão `01a11637-b05d-7800-b977-56a00c82c90d`, só o sítio, em `high` (o `retomar-codex.sh` fixa `xhigh`, por isso o guião de lançamento repete a linha dele com `high`; o `retomar-codex.sh` não mudou): o prompt `PROMPT-retoma-er1d.md`. O que o lugar de direção leu antes de retomar: em `portoes-d/` os três códigos a 0 na cabeça `8ed75dfd` (`cabeca` e `cabeca.fim` iguais), com `estado.fim` só com as três entradas por registar: a corrida dos portões acabou depois de a sessão parar, e o prompt manda o construtor conferi-la de ficheiro e não a repetir se valer; falta o relatório fechado e o último commit.
 2. **A retoma da RP4-n-e**, a sessão `01a1165f-39a0-7ea3-a7ac-84ccb5bcf547`, as duas worktrees (`--add-dir` para a do motor), em `high`: o prompt `PROMPT-retoma-rp4ne.md`. Em `portoes-e/` havia só `build.inicio`, `build.log` e `cabeca`, sem nenhum `.codigo`: a corrida dos portões de 07.10 não acabou e relança-se do início; os 23 achados estão em commit (`ba71725b` no sítio, `e25d96e` no motor).
-3. **A EX1-d, lançada de novo** (não é retoma), na worktree nova `.claude/worktrees/ex1d-2026-10-11`, ramo `ex1d-2026-10-11` saído de `main` `d7564f21`, com o `npm ci` feito pelo lugar de direção antes (a sandbox do Codex não tem rede), em `high`: o prompt `PROMPT-ex1d-codex.md` manda cumprir o mandato `MANDATO-EX1-d-2026-10-06.md` com duas diferenças ditas (o ramo e o raciocínio). **O trailer `Claude-Session` fica o do mandato** (a sessão de 06.10, que decidiu as três correções), porque esta sessão não tem endereço (o `/remote-control` não estava ligado); é a sessão seguinte que decide se o muda na aterragem.
+3. **A EX1-d, lançada de novo** (não é retoma), na worktree nova `<worktrees>/ex1d-2026-10-11`, ramo `ex1d-2026-10-11` saído de `main` `d7564f21`, com o `npm ci` feito pelo lugar de direção antes (a sandbox do Codex não tem rede), em `high`: o prompt `PROMPT-ex1d-codex.md` manda cumprir o mandato `MANDATO-EX1-d-2026-10-06.md` com duas diferenças ditas (o ramo e o raciocínio). **O trailer `Claude-Session` fica o do mandato** (a sessão de 06.10, que decidiu as três correções), porque esta sessão não tem endereço (o `/remote-control` não estava ligado); é a sessão seguinte que decide se o muda na aterragem.
 4. **A pesquisa de vigilância**, um varrimento à mão do período de 28.09 a 11.10.2026 (o que os políticos e os partidos disseram com números, com a proposta do Orçamento do Estado para 2027 a confirmar na fonte; os estudos de referência do período; as notícias com números nas áreas do sítio), com rede, em `high`, `approval_policy="never"`, na pasta `.claude/sessao-2026-10-11/pesquisa/trabalho` (sem repositório; lê o sítio só em leitura): o prompt `PROMPT-pesquisa-varrimento.md`; o memorando sai em `.claude/sessao-2026-10-11/VARRIMENTO-2026-10-11.md`, com uma ficha por achado, a lista ordenada do que fazer primeiro, as sobreposições com os estudos que o sítio tem e as ausências com o sítio onde se procurou. O primeiro lançamento morreu no mesmo segundo (`error: unexpected argument '--full-auto' found`: a opção que a pesquisa de 07.10 usou deixou de existir no `codex-cli` 0.162.1; o registo ficou em `codex-pesquisa-2026-10-11-falhou-full-auto.log`) e relançou-se sem ela às 08:09:56 UTC, com o registo em `codex-pesquisa-2026-10-11b.log`.
 5. **A retoma do V1**, lançada depois, às 08:17:22 UTC, quando o financiador disse que a semana do Codex tinha reposto (a leitura ao vivo das sessões de hoje: 1 a 3 % usados, a repor a 18.10 às 08:09 UTC; a leitura de 10.10 que o `uso.py` mostrava, 50 % até 14.10, era de antes da reposição; o financiador disse ter ainda uma reposição gratuita por usar, que não foi precisa): a sessão `01a11637-04ca-7523-81c1-7478dbe0678f`, o motor como pasta de lançamento e a worktree do sítio em `--add-dir`, em `high`, com a rede ligada na sandbox (`sandbox_workspace_write.network_access=true`, que a corrida a sério do guião precisa); o guião `lancar-v1.sh`, o registo `codex-v1-2026-10-11.log`, a resposta `resposta-v1.md`. O prompt `PROMPT-retoma-v1.md` diz o que existe (nada em commit; `vigilancia/` com quatro ficheiros no motor; o §0 no sítio; os doze ficheiros antigos alterados são preexistentes e não se comitam nem se revertem) e manda acabar o brief ponto por ponto, com as datas do §3 lidas como o dia da corrida. A razão de o lançar hoje: o custo deixou de pesar, e uma retoma que corra mal retoma-se outra vez amanhã, como esta.
 
@@ -32,7 +32,7 @@ Desde 07.10.2026, «o diretor» e «a direção» nomeiam em todos os registos o
 
 ## Onde está o que esta sessão deixou fora do repositório
 
-- **Os prompts das leituras e das passagens e as respostas finais dos construtores** estão copiados em `.claude/sessao-2026-10-07/` na árvore principal do sítio (a pasta `.claude/` não é seguida pelo Git e não vai para o repositório): treze ficheiros, com o nome da pasta de origem à frente (`er1b-PROMPT-leitura-er1b.md`, `rp4nd-relatorio-rp4nd.md`, `vigilancia-PROMPT-v1-codex.md`, e assim por diante). O original está no bloco de notas da sessão `0e161edd-e0ff-4508-8a9b-3c2ddcb77b38` (a pasta `scratchpad` dessa sessão em `/private/tmp/claude-501/`), que uma reinicialização da máquina pode apagar; as cópias em `.claude/` não.
+- **Os prompts das leituras e das passagens e as respostas finais dos construtores** estão copiados em `.claude/sessao-2026-10-07/` na árvore principal do sítio (a pasta `.claude/` não é seguida pelo Git e não vai para o repositório): treze ficheiros, com o nome da pasta de origem à frente (`er1b-PROMPT-leitura-er1b.md`, `rp4nd-relatorio-rp4nd.md`, `vigilancia-PROMPT-v1-codex.md`, e assim por diante). O original está no bloco de notas da sessão `0e161edd-e0ff-4508-8a9b-3c2ddcb77b38` (a pasta `scratchpad` dessa sessão em `<scratchpad>`), que uma reinicialização da máquina pode apagar; as cópias em `.claude/` não.
 - **Os registos dos lançamentos do Codex** estão em `.claude/codex-<bloco>-2026-10-07.log` (`er1b`, `er1c`, `er1d`, `jd1b`, `rp4nd`, `rp4ne`, `v1`), com a linha INICIO, a linha FIM quando houve, e a linha «tokens used»; as sessões do Codex vivem em `~/.codex/sessions/2026/10/07/` e retomam-se pelo identificador.
 - **As worktrees `vigilancia-2026-10-07` do sítio e do motor têm trabalho do V1 por registar** (12 ficheiros alterados e 8 novos no sítio, o pacote `vigilancia/` novo no motor): não se removem nem se limpam antes da retoma, porque esse trabalho não existe em mais lado nenhum.
 - **As plantas das leituras de 07.10** estão nos ramos, em `design/especime-v3/critica/PLANTAS-*-2026-10-07.json`, e as leituras ao lado.
@@ -107,10 +107,10 @@ O Claude passou de 83 % (09:20 UTC) a 91 % (18:55) nesta sessão, com o lugar de
 - ramos locais: `c2-2026-10-05 461de524`, `diretor-2026-10-07 4020e4a8`, `er1-2026-10-06 8ed75dfd`, `fecho-2026-10-07 8a50c503`, `jd1-2026-10-06 744a80eb`, `main 4020e4a8`, `regras-2026-10-07 caa7bd52`, `rp4n-2026-10-07 ba71725b`, `textos-2026-10-07 63c3841c`, `vigilancia-2026-10-07 01ccb1e5`  (`git branch`)
 - ramos no remoto: `er1-2026-10-06`, `main`, `regras-2026-10-07`  (`git ls-remote --heads origin`)
 - worktree: `<sitio> 4020e4a8 [main]`
-- worktree: `<sitio>/.claude/worktrees/er1-2026-10-06 8ed75dfd [er1-2026-10-06]`
-- worktree: `<sitio>/.claude/worktrees/jd1-2026-10-06 744a80eb [jd1-2026-10-06]`
-- worktree: `<sitio>/.claude/worktrees/rp4n-2026-10-06 ba71725b [rp4n-2026-10-07]`
-- worktree: `<sitio>/.claude/worktrees/vigilancia-2026-10-07 01ccb1e5 [vigilancia-2026-10-07]`
+- worktree: `<sitio>/<worktrees>/er1-2026-10-06 8ed75dfd [er1-2026-10-06]`
+- worktree: `<sitio>/<worktrees>/jd1-2026-10-06 744a80eb [jd1-2026-10-06]`
+- worktree: `<sitio>/<worktrees>/rp4n-2026-10-06 ba71725b [rp4n-2026-10-07]`
+- worktree: `<sitio>/<worktrees>/vigilancia-2026-10-07 01ccb1e5 [vigilancia-2026-10-07]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
 - 37671890917 · `4020e4a8` · main · portão · **in_progress / SEM CONCLUSÃO** · criada 2026-10-07T19:05:51Z · atualizada 2026-10-07T19:05:55Z
@@ -133,9 +133,9 @@ O Claude passou de 83 % (09:20 UTC) a 91 % (18:55) nesta sessão, com o lugar de
 - ramos locais: `jd1-2026-10-06 481e15e`, `master 465d01e`, `rp4n-2026-10-06 e25d96e`, `vigilancia-2026-10-07 465d01e`  (`git branch`)
 - ramos no remoto: `master`  (`git ls-remote --heads origin`)
 - worktree: `<motor> 465d01e [master]`
-- worktree: `<motor>/.claude/worktrees/jd1-2026-10-06 481e15e [jd1-2026-10-06]`
-- worktree: `<motor>/.claude/worktrees/rp4n-2026-10-06 e25d96e [rp4n-2026-10-06]`
-- worktree: `<motor>/.claude/worktrees/vigilancia-2026-10-07 465d01e [vigilancia-2026-10-07]`
+- worktree: `<motor>/<worktrees>/jd1-2026-10-06 481e15e [jd1-2026-10-06]`
+- worktree: `<motor>/<worktrees>/rp4n-2026-10-06 e25d96e [rp4n-2026-10-06]`
+- worktree: `<motor>/<worktrees>/vigilancia-2026-10-07 465d01e [vigilancia-2026-10-07]`
 
 ### O uso das duas subscrições (`python3 scripts/leituras/uso.py`)
     Claude (escrito pela linha de estado a 07.10.2026 19:11 UTC):
@@ -169,16 +169,16 @@ O Claude passou de 83 % (09:20 UTC) a 91 % (18:55) nesta sessão, com o lugar de
     - tokens used 2,681,016
 - `codex-c1h.log`: INICIO 05:42:41 retoma sessão=01a0e83e-ccb1-79a0-bcf3-bab909951eb3 · **FIM exit=0 06:02:13** · 8012 linhas
     - tokens used 2,849,327
-- `codex-er1b-2026-10-07.log`: INICIO 09:37:29 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/.claude/worktrees/er1-2026-10-06] · **FIM exit=0 10:54:52** · 13595 linhas
+- `codex-er1b-2026-10-07.log`: INICIO 09:37:29 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/<worktrees>/er1-2026-10-06] · **FIM exit=0 10:54:52** · 13595 linhas
     - tokens used 514,681
-- `codex-er1c-2026-10-07.log`: INICIO 11:10:42 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/.claude/worktrees/er1-2026-10-06] · **FIM exit=0 11:52:50** · 17590 linhas
+- `codex-er1c-2026-10-07.log`: INICIO 11:10:42 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/<worktrees>/er1-2026-10-06] · **FIM exit=0 11:52:50** · 17590 linhas
     - tokens used 221,745
-- `codex-er1d-2026-10-07.log`: INICIO 11:55:10 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/.claude/worktrees/er1-2026-10-06] · **ainda sem a linha `FIM exit=`** · 12723 linhas
+- `codex-er1d-2026-10-07.log`: INICIO 11:55:10 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/<worktrees>/er1-2026-10-06] · **ainda sem a linha `FIM exit=`** · 12723 linhas
     - processos `codex exec` vivos nesta máquina agora: 0  (`ps -axo`)
 - `codex-f22b-retoma.log`: INICIO 19:46:50 retoma sessão=01a0e959-281a-7bb2-8a92-d1a548840313 · **FIM exit=0 20:17:44** · 18609 linhas
     - tokens used 962,263
 - `codex-f22b.log`: INICIO 18:48:48 modelo=gpt-6-astra raciocínio=xhigh · **FIM exit=0 19:55:29** · 150226 linhas
-- `codex-jd1b-2026-10-07.log`: INICIO 09:37:32 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/.claude/worktrees/jd1-2026-10-06 <motor>/.claude/worktrees/jd1-2026-10-06] · **FIM exit=0 12:37:27** · 45451 linhas
+- `codex-jd1b-2026-10-07.log`: INICIO 09:37:32 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/<worktrees>/jd1-2026-10-06 <motor>/<worktrees>/jd1-2026-10-06] · **FIM exit=0 12:37:27** · 45451 linhas
     - tokens used 927,996
 - `codex-peca3-correcao-2.log`: INICIO 04:37:40 modelo=gpt-6-astra raciocínio=xhigh · **FIM exit=0 05:16:55** · 76855 linhas
     - tokens used 347,577
@@ -192,11 +192,11 @@ O Claude passou de 83 % (09:20 UTC) a 91 % (18:55) nesta sessão, com o lugar de
     - tokens used 493,377
 - `codex-rp1c.log`: INICIO 17:08:33 modelo=gpt-6-astra raciocínio=xhigh · **FIM exit=0 18:04:04** · 31423 linhas
     - tokens used 457,106
-- `codex-rp4nd-2026-10-07.log`: INICIO 09:37:36 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/.claude/worktrees/rp4n-2026-10-06 <motor>/.claude/worktrees/rp4n-2026-10-06] · **FIM exit=0 12:11:43** · 41612 linhas
+- `codex-rp4nd-2026-10-07.log`: INICIO 09:37:36 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/<worktrees>/rp4n-2026-10-06 <motor>/<worktrees>/rp4n-2026-10-06] · **FIM exit=0 12:11:43** · 41612 linhas
     - tokens used 1,193,804
-- `codex-rp4ne-2026-10-07.log`: INICIO 12:38:21 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/.claude/worktrees/rp4n-2026-10-06 <motor>/.claude/worktrees/rp4n-2026-10-06] · **FIM exit=1 13:43:51** · 36492 linhas
+- `codex-rp4ne-2026-10-07.log`: INICIO 12:38:21 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/<worktrees>/rp4n-2026-10-06 <motor>/<worktrees>/rp4n-2026-10-06] · **FIM exit=1 13:43:51** · 36492 linhas
     - tokens used 572,662
-- `codex-v1-2026-10-07.log`: INICIO 11:54:26 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<motor>/.claude/worktrees/vigilancia-2026-10-07 <sitio>/.claude/worktrees/vigilancia-2026-10-07] · **ainda sem a linha `FIM exit=`** · 13190 linhas
+- `codex-v1-2026-10-07.log`: INICIO 11:54:26 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<motor>/<worktrees>/vigilancia-2026-10-07 <sitio>/<worktrees>/vigilancia-2026-10-07] · **ainda sem a linha `FIM exit=`** · 13190 linhas
     - processos `codex exec` vivos nesta máquina agora: 0  (`ps -axo`)
 
 **1 leitura(s) falharam: o que está no ar não é origin/main.** O guião sai com código 1.
@@ -217,11 +217,11 @@ O Claude passou de 83 % (09:20 UTC) a 91 % (18:55) nesta sessão, com o lugar de
 - ramos locais: `c2-2026-10-05 461de524`, `diretor-2026-10-07 4020e4a8`, `er1-2026-10-06 1352d49a`, `ex1d-2026-10-11 f3060fa4`, `fecho-2026-10-07 8a50c503`, `jd1-2026-10-06 744a80eb`, `main d7564f21`, `prompt-2026-10-07 d7564f21`, `rp4n-2026-10-07 8ed6ed6a`, `textos-2026-10-07 63c3841c`, `vigilancia-2026-10-07 241e15d9`  (`git branch`)
 - ramos no remoto: `er1-2026-10-06`, `main`  (`git ls-remote --heads origin`)
 - worktree: `<sitio> d7564f21 [main]`
-- worktree: `<sitio>/.claude/worktrees/er1-2026-10-06 1352d49a [er1-2026-10-06]`
-- worktree: `<sitio>/.claude/worktrees/ex1d-2026-10-11 f3060fa4 [ex1d-2026-10-11]`
-- worktree: `<sitio>/.claude/worktrees/jd1-2026-10-06 744a80eb [jd1-2026-10-06]`
-- worktree: `<sitio>/.claude/worktrees/rp4n-2026-10-06 8ed6ed6a [rp4n-2026-10-07]`
-- worktree: `<sitio>/.claude/worktrees/vigilancia-2026-10-07 241e15d9 [vigilancia-2026-10-07]`
+- worktree: `<sitio>/<worktrees>/er1-2026-10-06 1352d49a [er1-2026-10-06]`
+- worktree: `<sitio>/<worktrees>/ex1d-2026-10-11 f3060fa4 [ex1d-2026-10-11]`
+- worktree: `<sitio>/<worktrees>/jd1-2026-10-06 744a80eb [jd1-2026-10-06]`
+- worktree: `<sitio>/<worktrees>/rp4n-2026-10-06 8ed6ed6a [rp4n-2026-10-07]`
+- worktree: `<sitio>/<worktrees>/vigilancia-2026-10-07 241e15d9 [vigilancia-2026-10-07]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
 - 37677394799 · `d7564f21` · main · portão · **completed / success** · criada 2026-10-07T19:49:28Z · atualizada 2026-10-07T20:13:09Z
@@ -244,9 +244,9 @@ O Claude passou de 83 % (09:20 UTC) a 91 % (18:55) nesta sessão, com o lugar de
 - ramos locais: `jd1-2026-10-06 481e15e`, `master 465d01e`, `rp4n-2026-10-06 cc68172`, `vigilancia-2026-10-07 f8e0784`  (`git branch`)
 - ramos no remoto: `master`  (`git ls-remote --heads origin`)
 - worktree: `<motor> 465d01e [master]`
-- worktree: `<motor>/.claude/worktrees/jd1-2026-10-06 481e15e [jd1-2026-10-06]`
-- worktree: `<motor>/.claude/worktrees/rp4n-2026-10-06 cc68172 [rp4n-2026-10-06]`
-- worktree: `<motor>/.claude/worktrees/vigilancia-2026-10-07 f8e0784 [vigilancia-2026-10-07]`
+- worktree: `<motor>/<worktrees>/jd1-2026-10-06 481e15e [jd1-2026-10-06]`
+- worktree: `<motor>/<worktrees>/rp4n-2026-10-06 cc68172 [rp4n-2026-10-06]`
+- worktree: `<motor>/<worktrees>/vigilancia-2026-10-07 f8e0784 [vigilancia-2026-10-07]`
 
 ### O uso das duas subscrições (`python3 scripts/leituras/uso.py`)
     Claude (escrito pela linha de estado a 11.10.2026 09:23 UTC):
@@ -280,20 +280,20 @@ O Claude passou de 83 % (09:20 UTC) a 91 % (18:55) nesta sessão, com o lugar de
     - tokens used 2,681,016
 - `codex-c1h.log`: INICIO 05:42:41 retoma sessão=01a0e83e-ccb1-79a0-bcf3-bab909951eb3 · **FIM exit=0 06:02:13** · 8012 linhas
     - tokens used 2,849,327
-- `codex-er1b-2026-10-07.log`: INICIO 09:37:29 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/.claude/worktrees/er1-2026-10-06] · **FIM exit=0 10:54:52** · 13595 linhas
+- `codex-er1b-2026-10-07.log`: INICIO 09:37:29 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/<worktrees>/er1-2026-10-06] · **FIM exit=0 10:54:52** · 13595 linhas
     - tokens used 514,681
-- `codex-er1c-2026-10-07.log`: INICIO 11:10:42 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/.claude/worktrees/er1-2026-10-06] · **FIM exit=0 11:52:50** · 17590 linhas
+- `codex-er1c-2026-10-07.log`: INICIO 11:10:42 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/<worktrees>/er1-2026-10-06] · **FIM exit=0 11:52:50** · 17590 linhas
     - tokens used 221,745
-- `codex-er1d-2026-10-07.log`: INICIO 11:55:10 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/.claude/worktrees/er1-2026-10-06] · **ainda sem a linha `FIM exit=`** · 12723 linhas
+- `codex-er1d-2026-10-07.log`: INICIO 11:55:10 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/<worktrees>/er1-2026-10-06] · **ainda sem a linha `FIM exit=`** · 12723 linhas
     - processos `codex exec` vivos nesta máquina agora: 1  (`ps -axo`)
-- `codex-er1d-2026-10-11.log`: INICIO 08:08:57 retoma sessão=01a11637-b05d-7800-b977-56a00c82c90d modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/.claude/worktrees/er1-2026-10-06] · **FIM exit=0 08:11:01** · 669 linhas
+- `codex-er1d-2026-10-11.log`: INICIO 08:08:57 retoma sessão=01a11637-b05d-7800-b977-56a00c82c90d modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/<worktrees>/er1-2026-10-06] · **FIM exit=0 08:11:01** · 669 linhas
     - tokens used 242,347
-- `codex-ex1d-2026-10-11.log`: INICIO 08:08:57 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/.claude/worktrees/ex1d-2026-10-11] · **FIM exit=0 08:26:30** · 20079 linhas
+- `codex-ex1d-2026-10-11.log`: INICIO 08:08:57 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/<worktrees>/ex1d-2026-10-11] · **FIM exit=0 08:26:30** · 20079 linhas
     - tokens used 195,613
 - `codex-f22b-retoma.log`: INICIO 19:46:50 retoma sessão=01a0e959-281a-7bb2-8a92-d1a548840313 · **FIM exit=0 20:17:44** · 18609 linhas
     - tokens used 962,263
 - `codex-f22b.log`: INICIO 18:48:48 modelo=gpt-6-astra raciocínio=xhigh · **FIM exit=0 19:55:29** · 150226 linhas
-- `codex-jd1b-2026-10-07.log`: INICIO 09:37:32 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/.claude/worktrees/jd1-2026-10-06 <motor>/.claude/worktrees/jd1-2026-10-06] · **FIM exit=0 12:37:27** · 45451 linhas
+- `codex-jd1b-2026-10-07.log`: INICIO 09:37:32 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/<worktrees>/jd1-2026-10-06 <motor>/<worktrees>/jd1-2026-10-06] · **FIM exit=0 12:37:27** · 45451 linhas
     - tokens used 927,996
 - `codex-peca3-correcao-2.log`: INICIO 04:37:40 modelo=gpt-6-astra raciocínio=xhigh · **FIM exit=0 05:16:55** · 76855 linhas
     - tokens used 347,577
@@ -310,15 +310,15 @@ O Claude passou de 83 % (09:20 UTC) a 91 % (18:55) nesta sessão, com o lugar de
     - tokens used 493,377
 - `codex-rp1c.log`: INICIO 17:08:33 modelo=gpt-6-astra raciocínio=xhigh · **FIM exit=0 18:04:04** · 31423 linhas
     - tokens used 457,106
-- `codex-rp4nd-2026-10-07.log`: INICIO 09:37:36 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/.claude/worktrees/rp4n-2026-10-06 <motor>/.claude/worktrees/rp4n-2026-10-06] · **FIM exit=0 12:11:43** · 41612 linhas
+- `codex-rp4nd-2026-10-07.log`: INICIO 09:37:36 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/<worktrees>/rp4n-2026-10-06 <motor>/<worktrees>/rp4n-2026-10-06] · **FIM exit=0 12:11:43** · 41612 linhas
     - tokens used 1,193,804
-- `codex-rp4ne-2026-10-07.log`: INICIO 12:38:21 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/.claude/worktrees/rp4n-2026-10-06 <motor>/.claude/worktrees/rp4n-2026-10-06] · **FIM exit=1 13:43:51** · 36492 linhas
+- `codex-rp4ne-2026-10-07.log`: INICIO 12:38:21 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/<worktrees>/rp4n-2026-10-06 <motor>/<worktrees>/rp4n-2026-10-06] · **FIM exit=1 13:43:51** · 36492 linhas
     - tokens used 572,662
-- `codex-rp4ne-2026-10-11.log`: INICIO 08:08:57 retoma sessão=01a1165f-39a0-7ea3-a7ac-84ccb5bcf547 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/.claude/worktrees/rp4n-2026-10-06 <motor>/.claude/worktrees/rp4n-2026-10-06] · **FIM exit=0 09:08:34** · 19574 linhas
+- `codex-rp4ne-2026-10-11.log`: INICIO 08:08:57 retoma sessão=01a1165f-39a0-7ea3-a7ac-84ccb5bcf547 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<sitio>/<worktrees>/rp4n-2026-10-06 <motor>/<worktrees>/rp4n-2026-10-06] · **FIM exit=0 09:08:34** · 19574 linhas
     - tokens used 1,141,789
-- `codex-v1-2026-10-07.log`: INICIO 11:54:26 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<motor>/.claude/worktrees/vigilancia-2026-10-07 <sitio>/.claude/worktrees/vigilancia-2026-10-07] · **ainda sem a linha `FIM exit=`** · 13190 linhas
+- `codex-v1-2026-10-07.log`: INICIO 11:54:26 modelo=gpt-6-astra raciocínio=high pastas_com_escrita=[<motor>/<worktrees>/vigilancia-2026-10-07 <sitio>/<worktrees>/vigilancia-2026-10-07] · **ainda sem a linha `FIM exit=`** · 13190 linhas
     - processos `codex exec` vivos nesta máquina agora: 1  (`ps -axo`)
-- `codex-v1-2026-10-11.log`: INICIO 08:17:22 retoma sessão=01a11637-04ca-7523-81c1-7478dbe0678f modelo=gpt-6-astra raciocínio=high rede=sim pastas_com_escrita=[<motor>/.claude/worktrees/vigilancia-2026-10-07 <sitio>/.claude/worktrees/vigilancia-2026-10-07] · **FIM exit=0 09:22:21** · 70654 linhas
+- `codex-v1-2026-10-11.log`: INICIO 08:17:22 retoma sessão=01a11637-04ca-7523-81c1-7478dbe0678f modelo=gpt-6-astra raciocínio=high rede=sim pastas_com_escrita=[<motor>/<worktrees>/vigilancia-2026-10-07 <sitio>/<worktrees>/vigilancia-2026-10-07] · **FIM exit=0 09:22:21** · 70654 linhas
     - tokens used 858,300
 
 

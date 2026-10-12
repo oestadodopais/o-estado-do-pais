@@ -1,0 +1,5 @@
+de26e52bf675478ee1af329b62abd45293ae8a6f
+test(rp4n-f): medir retiradas e páginas com marcas após a publicação
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

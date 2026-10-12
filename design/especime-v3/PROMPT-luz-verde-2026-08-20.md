@@ -1,4 +1,4 @@
-Green light to build the redesign, phase 1, on the branch `redesenho-v3` of the site repo ~/Instruments/OEstadoDoPais. Site repo only: anything that needs the engine (~/Instruments/ResearchHub) is an ask, not a task. Nothing outward, no deploy, no merge, no publishing to the canvas, without my explicit go. Standing arrangement: Fable manages and reviews, Opus builds, Sonnet does mechanical passes and blind measurements (no sub-agents in blind prompts), Codex reads across families with planted defects; say which model ran which part in every report.
+Green light to build the redesign, phase 1, on the branch `redesenho-v3` of the site repo ~/<projetos>/OEstadoDoPais. Site repo only: anything that needs the engine (~/<projetos>/ResearchHub) is an ask, not a task. Nothing outward, no deploy, no merge, no publishing to the canvas, without my explicit go. Standing arrangement: Fable manages and reviews, Opus builds, Sonnet does mechanical passes and blind measurements (no sub-agents in blind prompts), Codex reads across families with planted defects; say which model ran which part in every report.
 
 READ FIRST, IN THIS ORDER
 

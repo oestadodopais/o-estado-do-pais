@@ -126,7 +126,7 @@ sítio   npm run build                                     exit 0 · 334 página
 sítio   npm run typecheck                                 exit 0
 sítio   node scripts/check-documentos.mjs                 exit 0 · 8 atravessados · D5 correu em 7 e não corre em 1
 sítio   node scripts/check-documentos.mjs --with-origin   exit 0 · 8 registos conferidos contra o motor
-sítio   RESEARCHHUB_DIR=/tmp/nao-existe … --with-origin   exit 0 · «NÃO CORREU, o motor não está em …»
+sítio   RESEARCHHUB_DIR=<temporario> … --with-origin   exit 0 · «NÃO CORREU, o motor não está em …»
 ```
 
 As 334 páginas e as 33 chaves são as mesmas da construção de base: a P1 não

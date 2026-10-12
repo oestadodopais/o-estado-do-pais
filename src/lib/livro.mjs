@@ -74,7 +74,7 @@ export function valorComUnidade(claim, lang = null) {
      unidade em todos os cartões») a forma da casa é o espaço, e o título, a descrição e o cartão de partilha de uma
      página de linha passam a escrevê-la como o cartão («6,1 %», «89,2 % do PIB»). Sem língua, a unidade continua a
      ser a cadeia do livro-razão, como a nota acima diz. */
-  const unidade = lang === null ? String(claim.unit ?? '') : unidadeDaLinha(claim.unit, lang).texto;
+  const unidade = lang === null ? String(claim.unit ?? '') : unidadeDaLinha(claim.unit, lang, claim.value).texto;
   if (!unidade) return String(claim.value);
   return `${claim.value} ${unidade}`;
 }
@@ -94,7 +94,7 @@ export function tituloDaLinha(claim, lang) {
 /**
  * A descrição de uma página de linha, composta dos campos da própria linha.
  *
- * Um campo por confirmar entra como está — «[a verificar]». A descrição de uma
+ * Um campo por confirmar entra com a marca da língua da edição. A descrição de uma
  * linha incompleta diz que está incompleta; não se compõe uma frase que pareça
  * completa a partir de campos que não estão.
  *
@@ -115,8 +115,8 @@ export function descricaoDaLinha(claim, lang) {
   }
   /* «Lido a 2026-08-12», não «Lido a: 2026-08-12» — o rótulo já traz a
      preposição. A fonte leva dois pontos porque o rótulo é um substantivo. */
-  if (claim.access_date) partes.push(`${s.prov.lido} ${claim.access_date}`);
+  if (claim.access_date) partes.push(`${claim.access_date_kind === 'hosted-copy' ? s.prov.copiaAlojada : s.prov.lido} ${claim.access_date}`);
   if (claim.reference_date) partes.push(`${s.prov.referencia} ${claim.reference_date}`);
 
-  return partes.join(' · ') + '.';
+  return partes.join(' · ').replaceAll('[a verificar]', s.prov.marcadorDoSelo) + '.';
 }

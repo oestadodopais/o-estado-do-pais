@@ -1,0 +1,4 @@
+ce1cf8d1816fce004255009cb17f3d288ebc8701
+test(rp4n-g): provar os tokens da comparação e as duas edições
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

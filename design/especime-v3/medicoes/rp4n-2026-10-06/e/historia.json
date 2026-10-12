@@ -1,0 +1,50 @@
+[
+  {
+    "comando": [
+      "git",
+      "for-each-ref",
+      "--format=%(refname) %(objectname)",
+      "refs/heads/rp4n-2026-10-06"
+    ],
+    "codigo": 0,
+    "saida": "",
+    "diagnostico": ""
+  },
+  {
+    "comando": [
+      "git",
+      "show-ref",
+      "--verify",
+      "refs/heads/rp4n-2026-10-06"
+    ],
+    "codigo": 128,
+    "saida": "",
+    "diagnostico": "fatal: 'refs/heads/rp4n-2026-10-06' - not a valid ref\n"
+  },
+  {
+    "comando": [
+      "git",
+      "log",
+      "HEAD",
+      "--format=%h %s",
+      "--",
+      "design/especime-v3/medicoes/rp4n-2026-10-06/leitura-frio"
+    ],
+    "codigo": 0,
+    "saida": "",
+    "diagnostico": ""
+  },
+  {
+    "comando": [
+      "git",
+      "log",
+      "--all",
+      "--format=%h %s",
+      "--",
+      "design/especime-v3/medicoes/rp4n-2026-10-06/leitura-frio"
+    ],
+    "codigo": 0,
+    "saida": "",
+    "diagnostico": ""
+  }
+]

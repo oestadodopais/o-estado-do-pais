@@ -1,0 +1,70 @@
+{
+  "ok": true,
+  "casos": [
+    {
+      "planta": "partes repetidas de Claude",
+      "mensagem": "Uma resposta; entrada da última parte e máximo da saída, marcado como mínimo.",
+      "passou": true
+    },
+    {
+      "planta": "acumulados Codex e corte temporal",
+      "mensagem": "A repetição não duplica os símbolos; o corte subtrai o contador anterior.",
+      "passou": true
+    },
+    {
+      "planta": "contador recuado",
+      "mensagem": "O contador acumulado recuou; não se pode somar esta sessão.",
+      "passou": true
+    },
+    {
+      "planta": "formato sem utilização",
+      "mensagem": "Não há contadores de utilização reconhecidos no intervalo pedido.",
+      "passou": true
+    },
+    {
+      "planta": "linha truncada",
+      "mensagem": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+      "passou": true
+    },
+    {
+      "planta": "contador Codex nulo",
+      "mensagem": "output_tokens conserva null, sem TypeError nem zero fabricado.",
+      "passou": true
+    },
+    {
+      "planta": "contador Codex ausente",
+      "mensagem": "Um campo antes presente e agora ausente fica null.",
+      "passou": true
+    },
+    {
+      "planta": "regressão depois de contador nulo",
+      "mensagem": "O contador acumulado recuou; não se pode somar esta sessão.",
+      "passou": true
+    },
+    {
+      "planta": "limpeza de texto, gzip, binários e ligações",
+      "mensagem": "Caminhos retirados; segunda passagem sem mudanças; binário e alvo da ligação intactos.",
+      "passou": true
+    },
+    {
+      "planta": "caminhos temporários",
+      "mensagem": "Pastas temporárias do sistema e TMPDIR retirados.",
+      "passou": true
+    },
+    {
+      "planta": "restos de caminhos abreviados",
+      "mensagem": "As duas estruturas locais também saem dos caminhos já anonimizados.",
+      "passou": true
+    },
+    {
+      "planta": "utilizador dentro de palavra comum",
+      "mensagem": "transportoes e portoes intactos; só o componente do caminho mudou.",
+      "passou": true
+    },
+    {
+      "planta": "scratchpad e TMPDIR pelo ambiente",
+      "mensagem": "OEDP_SCRATCHPAD e TMPDIR chegaram ao limpador.",
+      "passou": true
+    }
+  ]
+}

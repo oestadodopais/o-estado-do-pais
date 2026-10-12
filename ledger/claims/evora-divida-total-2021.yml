@@ -33,6 +33,9 @@ reference_date: "2021"
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "DÍVIDA TOTAL DE OPERAÇÕES ORÇAMENTAIS = (1) + (2) 57 293 550,23 €"
 
+# Fontes secundárias da definição, com os recibos dos ficheiros alojados.
+definition_sources: [{"publisher": "Direção-Geral das Autarquias Locais (DGAL)", "url": "https://portalautarquico.dgal.gov.pt/pt-PT/financas-locais/endividamento/municipios/limites/", "receipt": {"motor": "indicators/out/c1c-2026-09-28/dgal-limites-canonico.html", "campo": "texto HTML", "hora": "2026-09-28T13:56:04Z", "cliente": "core.http.HttpClient.condicional", "sha256": "f03ce2507f02645dda63c8a366f05ea95e8e5e6e85817dd57c60b6bdf13ed818"}}]
+
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
 derivation_en: null

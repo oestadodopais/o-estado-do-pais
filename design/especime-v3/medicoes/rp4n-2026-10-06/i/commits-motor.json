@@ -1,0 +1,14 @@
+{
+  "base": "e2fd95fde167ad54f36a426bc1487bd6c53c9f2a",
+  "cabeca": "cc75e215caf71d5e8cfa77850f1896f3b418c75f",
+  "commits": [
+    {
+      "sha": "0d1d54e7a5fb424a2905e3b527a232b88181f2c0",
+      "titulo": "fix(rp4n-i): selar o total consolidado e a nota do MAPA 4"
+    },
+    {
+      "sha": "cc75e215caf71d5e8cfa77850f1896f3b418c75f",
+      "titulo": "fix(rp4n-i): usar o nome da medida no parágrafo da penalização legal"
+    }
+  ]
+}

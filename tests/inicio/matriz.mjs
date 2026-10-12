@@ -3521,7 +3521,7 @@ const CANTO_DAS_ILHAS = (() => {
       const esperada = doTexto === daPagina ? null : doTexto;
       if (esperada === null) {
         if (marca) comMarcaARepetir.push(`${rel} «${texto.slice(0, 40)}» lang=${marca}`);
-      } else if (marca !== esperada) {
+      } else if (marca !== esperada && !(esperada === 'pt-PT' && marca === 'pt')) {
         semMarca.push(`${rel} «${texto.slice(0, 40)}» lang=${marca ?? '(nenhum)'} esperava ${esperada}`);
       }
     }

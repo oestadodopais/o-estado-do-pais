@@ -1,6 +1,6 @@
 # BRIEF · As páginas dos 308 concelhos, P2 (estrutura) · o sítio pronto para receber os dados
 
-*Escrito a 26.08.2026 pelo lugar de direção (Claude Fable 5) para o construtor do sítio (Claude Opus 5). Decisão do diretor de 26.08 («let's do it») sobre o `PLANO-CONCELHOS-2026-08-26.md`, com as recomendações D1 a D7 adotadas. Ramo `concelhos-2026-08-26` a partir de `main` (`992a3c9`). Corre em paralelo com o P1 no motor (`~/Instruments/ResearchHub`, que NÃO tocas): os dois repositórios não partilham ficheiros; os dados chegam depois, pelo exportador do motor. Sem travessões na prosa deste ficheiro.*
+*Escrito a 26.08.2026 pelo lugar de direção (Claude Fable 5) para o construtor do sítio (Claude Opus 5). Decisão do diretor de 26.08 («let's do it») sobre o `PLANO-CONCELHOS-2026-08-26.md`, com as recomendações D1 a D7 adotadas. Ramo `concelhos-2026-08-26` a partir de `main` (`992a3c9`). Corre em paralelo com o P1 no motor (`~/<projetos>/ResearchHub`, que NÃO tocas): os dois repositórios não partilham ficheiros; os dados chegam depois, pelo exportador do motor. Sem travessões na prosa deste ficheiro.*
 
 ## 0 · Numa frase
 

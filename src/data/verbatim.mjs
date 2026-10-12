@@ -51,8 +51,9 @@ const ORIGENS_TRANSCRITAS = Object.fromEntries(
     const lingua = declarada ?? (chave === 'bdp-pii' ? 'pt' : 'en');
     return [
       [`origem-${chave}-publicador`, { lang: null, origem: onde, text: o.publicador }],
-      [`origem-${chave}-documento`, { lang: lingua, origem: onde, text: o.documento }],
+      [`origem-${chave}-documento`, { lang: lingua, origem: onde, text: o.documento.replace(/, página \d+/, '') }],
       [`origem-${chave}-excerto`, { lang: lingua, origem: onde, text: o.excerto }],
+      ...(o.documento.match(/, página (\d+)/) ? [[`origem-${chave}-pagina`, {lang:null, origem:onde, text:o.documento.match(/, página (\d+)/)?.[1] ?? ''}]] : []),
       ...(o.excertoEn
         ? [[`origem-${chave}-excerto-en`, { lang: 'en', origem: onde, text: o.excertoEn }]]
         : []),

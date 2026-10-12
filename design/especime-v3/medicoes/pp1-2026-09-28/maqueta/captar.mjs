@@ -13,7 +13,7 @@ import path from 'node:path';
 import fs from 'node:fs/promises';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
-const PLAYWRIGHT = path.join(process.env.HOME, 'Instruments/OEstadoDoPais/.claude/worktrees/c1-2026-09-28/node_modules/playwright/index.mjs');
+const PLAYWRIGHT = path.join(process.env.HOME, '<projetos>/OEstadoDoPais/<worktrees>/c1-2026-09-28/node_modules/playwright/index.mjs');
 const { chromium } = await import(pathToFileURL(PLAYWRIGHT).href);
 
 const pasta = path.dirname(fileURLToPath(import.meta.url));

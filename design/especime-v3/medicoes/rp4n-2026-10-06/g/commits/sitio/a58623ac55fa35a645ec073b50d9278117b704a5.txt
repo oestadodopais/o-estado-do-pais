@@ -1,0 +1,4 @@
+a58623ac55fa35a645ec073b50d9278117b704a5
+fix(rp4n-g): render o selo na língua de cada edição
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

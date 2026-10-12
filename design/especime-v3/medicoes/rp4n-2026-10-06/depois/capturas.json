@@ -1,0 +1,613 @@
+{
+  "versao": {
+    "commit": "579c9dd463f98753c05c4e16ff2bb73a856adf6d",
+    "ref": "rp4n-2026-10-06",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-06T12:29:42.396Z"
+  },
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/orcamento-pt-390.png",
+      "rota": "/livro-razao/oe-2026-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "a4b02d63443e905681e9911559475e9f1b9f9ef5f9ee8c1486ffc355c602ca8d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/orcamento-pt-768.png",
+      "rota": "/livro-razao/oe-2026-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "3a2f982e72ff9ffd90bdae2b8fabf2c0ba560cec8d506b432e06bf9ac3ab9237"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/orcamento-pt-1024.png",
+      "rota": "/livro-razao/oe-2026-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "d462d58b98a0eb4c0bcf8152744241ac30224a181383f2220b3cf83519932f24"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/orcamento-pt-1280.png",
+      "rota": "/livro-razao/oe-2026-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "35ee77e4f29ed3c3634e8a4a782efee0217ef5460914c164966f67e0a8be5a07"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/orcamento-pt-1600.png",
+      "rota": "/livro-razao/oe-2026-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "f807276d4d919086b5224ae7574d5376452c93b5e4bf4ead6b704341a3a7f11e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/orcamento-en-390.png",
+      "rota": "/en/ledger/oe-2026-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is what central administration plans to spend on this function in a year, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "7e7db11308a279d94d5d74798719b24fae74941722353706d4dca8164cb241e8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/orcamento-en-768.png",
+      "rota": "/en/ledger/oe-2026-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is what central administration plans to spend on this function in a year, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "041cc1ba4926f7c3e4f072005cb6a70f5cd829f16cc1bb332cd6cc3c90514869"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/orcamento-en-1024.png",
+      "rota": "/en/ledger/oe-2026-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is what central administration plans to spend on this function in a year, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "5b7c68cb8f0f55ee14e68872d9adfd070323a488708c6a7a83c490c3122fd2d2"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/orcamento-en-1280.png",
+      "rota": "/en/ledger/oe-2026-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is what central administration plans to spend on this function in a year, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "8fbc209d757189b916ec66ac10d42d927f3b0fd88a4aecaf7c579a3412349bff"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/orcamento-en-1600.png",
+      "rota": "/en/ledger/oe-2026-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is what central administration plans to spend on this function in a year, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "e8305db59b34f2f8210b5f3919ea35cd22280e62fdcb7a221e8c1973f5d1f3fb"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/execucao-pt-390.png",
+      "rota": "/livro-razao/execucao-2026-07-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "ab707ceb021e6344dc160f56699c9aa5a0c488251c30df361dd8547763eeb57d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/execucao-pt-768.png",
+      "rota": "/livro-razao/execucao-2026-07-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "082280ba6198fe77dc0c482a06f01e305cd4108bae7616f431d3ec44a5206dec"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/execucao-pt-1024.png",
+      "rota": "/livro-razao/execucao-2026-07-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "5d405bb9a838b94057b76aa4278337f90ce7d8d0ce8f17b67a420b8714ed3e79"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/execucao-pt-1280.png",
+      "rota": "/livro-razao/execucao-2026-07-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "2330ab6b7e661067f07c1dde3931affad086ae370576c61b45736706d2f952d5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/execucao-pt-1600.png",
+      "rota": "/livro-razao/execucao-2026-07-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "de01eeedf32d07570bd524b14406fcc01db1d9a3d3cf7cc6f1c6f2b637eebf50"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/execucao-en-390.png",
+      "rota": "/en/ledger/execucao-2026-07-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is what central administration spent on this function from January to July, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "91b703048c76ec35709f6f94ed017602905a636250f57202898d0ea688959574"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/execucao-en-768.png",
+      "rota": "/en/ledger/execucao-2026-07-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is what central administration spent on this function from January to July, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "0f4c1d5a370b5045de25f1e8ed20b6b5b0ae6c59c81725b58afe0be7e56207cf"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/execucao-en-1024.png",
+      "rota": "/en/ledger/execucao-2026-07-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is what central administration spent on this function from January to July, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "71bd104db6d7f1a46daf70c0c62d4dffd242dc1b95b8cf35478ec6484feb11a4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/execucao-en-1280.png",
+      "rota": "/en/ledger/execucao-2026-07-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is what central administration spent on this function from January to July, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "ae7cbf40a38ab01e7ac768c7a0edb188de43edff19b1197afa23062214b8d9c5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/execucao-en-1600.png",
+      "rota": "/en/ledger/execucao-2026-07-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is what central administration spent on this function from January to July, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "517bba2fa9fc0a088df26f80d3e49bc3d7d8194f451c5d75bd566172ef1ff03d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/evora-pt-390.png",
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ o número de pelouros que a página do executivo da câmara atribui a este membro do executivo.",
+      "marcadores": 0,
+      "sha256": "27d5770638e1a95d7e9714db63a94de773503cc862220c501188094f98fa8a8e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/evora-pt-768.png",
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ o número de pelouros que a página do executivo da câmara atribui a este membro do executivo.",
+      "marcadores": 0,
+      "sha256": "b2122d81d69cc70f63154e8e1246c4df6aab29437335633d5d2692cd36ad63fa"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/evora-pt-1024.png",
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ o número de pelouros que a página do executivo da câmara atribui a este membro do executivo.",
+      "marcadores": 0,
+      "sha256": "60adc731075a74ddaca1be85e13383b6d63fa4eccba21738621ebf2f8aee123e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/evora-pt-1280.png",
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ o número de pelouros que a página do executivo da câmara atribui a este membro do executivo.",
+      "marcadores": 0,
+      "sha256": "c266e888ded0722cb52275651e12995f810b6981bc15f112a8763367d8cb2210"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/evora-pt-1600.png",
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ o número de pelouros que a página do executivo da câmara atribui a este membro do executivo.",
+      "marcadores": 0,
+      "sha256": "854382dd490e8df440d093a9139550bd7b0fc2a8ca0c25bbb79336cfb0492878"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/evora-en-390.png",
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the number of portfolios that the council executive’s page assigns to this member of the executive.",
+      "marcadores": 0,
+      "sha256": "5498b6a9fec525a0f8bb0dee81856235f220f8b3b4e2e243300f9b38ae8c4d28"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/evora-en-768.png",
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is the number of portfolios that the council executive’s page assigns to this member of the executive.",
+      "marcadores": 0,
+      "sha256": "78f40ef77ff914c92f9b49a48f0457693e7a9f49b6042b874ef03db3ce2ce8f9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/evora-en-1024.png",
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is the number of portfolios that the council executive’s page assigns to this member of the executive.",
+      "marcadores": 0,
+      "sha256": "7f66fb1920326578ea0d628d94abbd8f876bd50a4753c774bf633a6f752c5c48"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/evora-en-1280.png",
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the number of portfolios that the council executive’s page assigns to this member of the executive.",
+      "marcadores": 0,
+      "sha256": "6a1ba87d3ab314cb95b80cd599ba0a04f1dbcbecd426a4218b22054ec5012744"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/evora-en-1600.png",
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is the number of portfolios that the council executive’s page assigns to this member of the executive.",
+      "marcadores": 0,
+      "sha256": "60616e2c59709f341fde84582ee7d3d3d17ce3d667b338dd3f2e5c6ffdac100a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/madeira-pt-390.png",
+      "rota": "/livro-razao/funchal-desemprego-registado-2025-12/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroConta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).",
+      "marcadores": 0,
+      "sha256": "ff14095f0f7d15a9bb339fd6581102447f8b70e9b26f4c7862d651c58ed5c1a8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/madeira-pt-768.png",
+      "rota": "/livro-razao/funchal-desemprego-registado-2025-12/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroConta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).",
+      "marcadores": 0,
+      "sha256": "05b42b6fab73121b78aed0ebcd2682d541ded459e6ef0189329dbe3ead235777"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/madeira-pt-1024.png",
+      "rota": "/livro-razao/funchal-desemprego-registado-2025-12/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroConta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).",
+      "marcadores": 0,
+      "sha256": "971d599462c476957103ea3ae9d2db77eade57dc6738278f6399ddf8dc52200a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/madeira-pt-1280.png",
+      "rota": "/livro-razao/funchal-desemprego-registado-2025-12/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroConta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).",
+      "marcadores": 0,
+      "sha256": "9bbb63ef451a301c0164f4899af22e234735a66df84b32d72421aea0838f2ce2"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/madeira-pt-1600.png",
+      "rota": "/livro-razao/funchal-desemprego-registado-2025-12/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroConta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).",
+      "marcadores": 0,
+      "sha256": "a674b6b374d1d0de552cdb7966608ab59632395dd9b0c17b3633a58e27c1d93f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/madeira-en-390.png",
+      "rota": "/en/ledger/funchal-desemprego-registado-2025-12/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isCounts the unemployed people registered with the employment service at month end (registered unemployment).",
+      "marcadores": 0,
+      "sha256": "8164257124d546474c7e130e622b1d0041fc7503ae8a0c63f5f81d2ef5e928be"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/madeira-en-768.png",
+      "rota": "/en/ledger/funchal-desemprego-registado-2025-12/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isCounts the unemployed people registered with the employment service at month end (registered unemployment).",
+      "marcadores": 0,
+      "sha256": "8709624661960e8d6cf143dd6b7d69e0b01acd073b18851910b774e44f125f26"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/madeira-en-1024.png",
+      "rota": "/en/ledger/funchal-desemprego-registado-2025-12/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isCounts the unemployed people registered with the employment service at month end (registered unemployment).",
+      "marcadores": 0,
+      "sha256": "c3e3a705f6dfbc75dfcc638dfdf2e8fd919d0257d67beedebf01cd9080ef69d5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/madeira-en-1280.png",
+      "rota": "/en/ledger/funchal-desemprego-registado-2025-12/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isCounts the unemployed people registered with the employment service at month end (registered unemployment).",
+      "marcadores": 0,
+      "sha256": "061eadf138eb8972b9c8fb4bef6540ccbb3a0fb7a0998d23e01169c0f05a1b2e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/madeira-en-1600.png",
+      "rota": "/en/ledger/funchal-desemprego-registado-2025-12/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isCounts the unemployed people registered with the employment service at month end (registered unemployment).",
+      "marcadores": 0,
+      "sha256": "f230d01b8483a5eab1cdfea48d80975e99492b4615850b2ea949d8c49a4c9da4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/pensao-pt-390.png",
+      "rota": "/livro-razao/factor-sustentabilidade-2026/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica.",
+      "marcadores": 0,
+      "sha256": "e475537e76218fdd0d2ffdf17748e1e67b47f5b8537e5222feb71cc6af691899"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/pensao-pt-768.png",
+      "rota": "/livro-razao/factor-sustentabilidade-2026/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica.",
+      "marcadores": 0,
+      "sha256": "69aee47eac089466ed4dfd0d617438d3d3bb0d7c53bf3ce4f1f140132c35bd21"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/pensao-pt-1024.png",
+      "rota": "/livro-razao/factor-sustentabilidade-2026/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica.",
+      "marcadores": 0,
+      "sha256": "653c8e547f0c3ef10337618efd1f4cf4f64d56f740e83c2446a5b41c191bc796"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/pensao-pt-1280.png",
+      "rota": "/livro-razao/factor-sustentabilidade-2026/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica.",
+      "marcadores": 0,
+      "sha256": "65b64ce3595b5f5dadfc2f486d4acc416167242b16ee85c6be92b61911c49d30"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/pensao-pt-1600.png",
+      "rota": "/livro-razao/factor-sustentabilidade-2026/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica.",
+      "marcadores": 0,
+      "sha256": "d2042ef0022ac4fb62fdaae97b2bd949ebaf6b0baa936af4c050d87010e98fa1"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/pensao-en-390.png",
+      "rota": "/en/ledger/factor-sustentabilidade-2026/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies.",
+      "marcadores": 0,
+      "sha256": "8dc5773dfc23e7ce5ac1df573a4420a5c6d5807b4a43cd0320fe0d5628d12a2a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/pensao-en-768.png",
+      "rota": "/en/ledger/factor-sustentabilidade-2026/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies.",
+      "marcadores": 0,
+      "sha256": "d55d7c98723cef9da01be0654763fef35bf2e76547ebcca0005f2d3b7cee74e5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/pensao-en-1024.png",
+      "rota": "/en/ledger/factor-sustentabilidade-2026/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies.",
+      "marcadores": 0,
+      "sha256": "1d556aec7604de87e2d055bb61fcd8d9e1ccfb24b53833f939d4618dee5c8991"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/pensao-en-1280.png",
+      "rota": "/en/ledger/factor-sustentabilidade-2026/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies.",
+      "marcadores": 0,
+      "sha256": "a2984f09501ee1982a3dc2ce8141e15d8a4425d60bfc77e6f968c830aa3abeac"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/pensao-en-1600.png",
+      "rota": "/en/ledger/factor-sustentabilidade-2026/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies.",
+      "marcadores": 0,
+      "sha256": "c47eaa56b9a23fb2d2de4cbd66ea38758af1e98cdec20e0ba4ffa3465fb90ebe"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/eurostat-pt-390.png",
+      "rota": "/livro-razao/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é esta sérieÉ quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
+      "marcadores": 0,
+      "sha256": "aa4d77f7f5f7c2f63141da34fb8dbf6ba93cf43d71cd8ac6ba0a676b5416d172"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/eurostat-pt-768.png",
+      "rota": "/livro-razao/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é esta sérieÉ quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
+      "marcadores": 0,
+      "sha256": "e51d5581bf99052e29f4e011877f51f480c16214589be97cef56b8b9f08b36a8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/eurostat-pt-1024.png",
+      "rota": "/livro-razao/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é esta sérieÉ quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
+      "marcadores": 0,
+      "sha256": "1c7e3915e1e256466218e7b2e7cce1ce65daf94c0ce74a1b898147a76fb790dd"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/eurostat-pt-1280.png",
+      "rota": "/livro-razao/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é esta sérieÉ quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
+      "marcadores": 0,
+      "sha256": "d2766fa132e41287baf4dc3b7d74b7a0492c6223240a66965052f2ce26adcb42"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/eurostat-pt-1600.png",
+      "rota": "/livro-razao/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é esta sérieÉ quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
+      "marcadores": 0,
+      "sha256": "a206f5d8c37198a300ff6648d5d94a1769c1a7ea2068c5e280fb2fa56b61e4a6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/eurostat-en-390.png",
+      "rota": "/en/ledger/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this series isIt is how much, in Portugal, rent prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
+      "marcadores": 0,
+      "sha256": "8081c273b4648003d8861374fe57ee29fc88a936b1f4ba4f367cc05402b45cf7"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/eurostat-en-768.png",
+      "rota": "/en/ledger/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this series isIt is how much, in Portugal, rent prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
+      "marcadores": 0,
+      "sha256": "01d48638c612f070e3bf810657ceecb13b2ee794830d7b400998b0e8422bdceb"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/eurostat-en-1024.png",
+      "rota": "/en/ledger/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this series isIt is how much, in Portugal, rent prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
+      "marcadores": 0,
+      "sha256": "18e4b41c8fab655cfed60c01af7623fb6e63496a0c3a5ffb1f12322a57857100"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/eurostat-en-1280.png",
+      "rota": "/en/ledger/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this series isIt is how much, in Portugal, rent prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
+      "marcadores": 0,
+      "sha256": "773dd0cad93f7bd297ce8306df8df24ad4d2372b64ac43ed5bc5efd0c24f6018"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/depois/eurostat-en-1600.png",
+      "rota": "/en/ledger/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this series isIt is how much, in Portugal, rent prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
+      "marcadores": 0,
+      "sha256": "d578d495b5d98583496c07f674102b16223687c7cf798f16f6e46b288b7ff9d3"
+    }
+  ],
+  "problemas": []
+}

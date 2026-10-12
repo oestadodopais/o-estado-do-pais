@@ -1,0 +1,34 @@
+{
+  "comando": "node design/especime-v3/medicoes/rp4n-2026-10-06/conferir-titulos-b.mjs",
+  "codigo": 0,
+  "plantas": [
+    {
+      "nome": "marca num título de estudo no registo",
+      "codigo": 1,
+      "mensagens": [
+        "A4: en/corrections/index.html: evora-2027-capital-europeia-da-cultura/en tem uma marca num título de estudo."
+      ]
+    },
+    {
+      "nome": "marca num título de estudo no país",
+      "codigo": 1,
+      "mensagens": [
+        "A4: index.html: evora-2027-capital-europeia-da-cultura/pt tem uma marca num título de estudo."
+      ]
+    },
+    {
+      "nome": "marca num título de estudo no índice inglês",
+      "codigo": 1,
+      "mensagens": [
+        "A4: en/studies/index.html: evora-contas-da-camara-2010-2025/en tem uma marca num título de estudo."
+      ]
+    },
+    {
+      "nome": "título declarado por confirmar mesmo sem marca",
+      "codigo": 1,
+      "mensagens": [
+        "A4: correcoes/index.html: o título de evora-2027-prometido-painel-dinheiro/pt está declarado por confirmar."
+      ]
+    }
+  ]
+}

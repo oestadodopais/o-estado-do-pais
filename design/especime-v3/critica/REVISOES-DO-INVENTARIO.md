@@ -689,3 +689,30 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | er1b | Todas as cadeias do incorporador, nas duas edições | lida (as leituras ER1-b, ER1-c/d, ER1-e e ER1-f pelo Opus, 07 e 12.10.2026, cinco plantas mordidas em cada) | O mandato ER1-b, achados 4 e 10, aprova o aviso, conserva Copiado e Código selecionado, substitui Calculado por calculado por este projeto e retira a data não indicada. Os estados condicionais têm tabela própria conferida pela célula ER1; a recusa tem frases vivas. A leitura curta de outra família fica com o lugar de direção antes da aterragem. |
 
 A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recibo de exemplo» / «See the example receipt». Estas cadeias de navegação entram no texto governado e na tabela própria do inventário, conferidas pela célula ER1 porque a leitura geral da voz já retirou o Método após a sua conferência; a leitura curta do diff inclui-as.
+## RP4-n-c · sincronização do inventário da voz
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| rp4nc | Frases das empresas sincronizadas com o texto publicado | por ler | Codex gpt-6-astra, pela RP4N-6: as declarações antigas passam a retiradas e as frases já publicadas passam a vivas como conteúdo. O texto das páginas, as provas do cartão, os números e as fontes permanecem intactos. O diagnóstico está em `design/especime-v3/medicoes/rp4n-2026-10-06/conferencias-c/voz-antes.json`. A leitura cruzada fica pendente antes da fusão. |
+
+## RP4-n-d · notas de alcance
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| rp4nd | Quatro formas antigas retiradas e quatro notas de alcance declaradas | por ler | Codex gpt-6-astra: achado 8 do mandato. As notas dizem a ausência exata nas duas edições. A conferência independente continua a cargo da direção. |
+
+## RP4-n-e: alcance do desemprego registado
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| rp4ne | Fim do mês substituído por mês de referência | por ler | Codex gpt-6-astra: a origem da Madeira não prova a precisão para os outros publicadores. A frase passa a apoiar-se na edição mensal da linha. A leitura cruzada fica com a direção. |
+
+| rp4ne | Contagens do índice relidas na construção | por ler | As contagens das linhas publicadas acompanham a retirada das condutas. Cadeias copiadas pelo guião do diagnóstico da voz, sem números introduzidos à mão. |
+
+## RP4-n-g: ausências medidas
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| rp4ng | Ausência das contagens do estudo e glosa do selo na sinopse das pensões | por ler | Codex gpt-6-astra: frases copiadas da construção, sem inventar a data original em falta. A leitura cruzada fica com a direção. |
+
+| rp4nj | 2 cadeias novas, 4 retiradas | por ler | Contagens lidas do HTML pelo inventario-j.mjs; a fusão do JD1 e do RP4-n mudou a contagem. |

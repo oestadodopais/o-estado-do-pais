@@ -43,9 +43,7 @@ export { POR_VERIFICAR } from './marcador.mjs';
 /**
  * A EDIÇÃO QUE UM TÍTULO NOMEIA, NA LÍNGUA DE QUEM O RENDE (B1c, 22.09.2026).
  *
- * `TituloDeTrabalho` precisa de saber se a edição que está a render tem o
- * título por confirmar (`titleUnverified`), e nem todos os seus chamadores têm
- * a edição à mão: o campo «estudo» de uma linha do livro-razão, o caminho no
+ * Nem todos os chamadores têm a edição à mão: o campo «estudo» de uma linha do livro-razão, o caminho no
  * cabeçalho e o nome de um estudo numa área rendem uma cadeia. Esta função
  * responde à pergunta que falta — «esta cadeia, nesta página, é o título de que
  * edição?» — e responde-a como o sítio a rende: a edição da língua da página, e
@@ -419,7 +417,7 @@ export const WORKS = [
     subject: null,
     editions: [
       { lang: 'pt', title: 'Onde está a água?', date: null, updated: null },
-      { lang: 'en', title: 'Onde está a água?', date: null, updated: null, titleUnverified: true },
+      { lang: 'en', title: 'Onde está a água?', date: null, updated: null },
     ],
     /* O título não determina o objecto do estudo. Não se escreve uma descrição
        a partir de nada — e a falta diz-se com o MARCADOR ÚNICO do sítio.
@@ -440,7 +438,7 @@ export const WORKS = [
     tema: 'agua',
     editions: [
       { lang: 'pt', title: 'Água Não Faturada', date: null, updated: null },
-      { lang: 'en', title: 'Água Não Faturada', date: null, updated: null, titleUnverified: true },
+      { lang: 'en', title: 'Água Não Faturada', date: null, updated: null },
     ],
     description: {
       pt: 'Água não faturada nos sistemas de abastecimento em Portugal.',
@@ -461,6 +459,10 @@ export const WORKS = [
   },
   {
     id: 'which-door-is-yours',
+    ausenciaAtual: {
+      pt: 'As contagens de avisos abertos e de avisos que admitem pessoas singulares neste estudo estão por confirmar na fonte. A edição arquivada conserva o texto publicado na sua data.',
+      en: 'The counts of open calls and of calls admitting natural persons in this study are to be confirmed at source. The archived edition preserves the text published on its date.',
+    },
     slug: 'which-door-is-yours',
     tema: 'investimento',
     editions: [
@@ -787,7 +789,7 @@ export function linguaDoTitulo(titulo, lang = 'pt') {
    * A língua do TEXTO é o português sempre que a mesma cadeia é o título de uma
    * edição portuguesa: uma cadeia portuguesa não deixa de o ser porque a edição
    * inglesa a manteve por o seu título inglês não ser conhecido
-   * (`titleUnverified`). Marcá-la `en` seria o defeito que esta função existe
+   * (RP4N-1). Marcá-la `en` seria o defeito que esta função existe
    * para corrigir; não marcar nada deixa-o só por dizer.
    */
   const doTexto = linguas.has('pt-PT') ? 'pt-PT' : [...linguas][0];
