@@ -483,6 +483,28 @@
       "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
     }
   },
+  "rp4n-agua-ambito": {
+    "publicador": "ERSAR",
+    "documento": "RASARP 2025, volume 1, página 106, AA08 Água não faturada",
+    "url": "https://ersarwebsitedocsstorage.blob.core.windows.net/documents/docs/anuais-do-RASARP/rasarp-2025/rasarp2025-volume1.pdf",
+    "lido": "2026-10-11",
+    "lingua": "pt",
+    "excerto": "Avaliação em Portugal continental\nQuadro 48. AA08 alta – Avaliação global\n(para 100 % de EG)\n652 687 845 m3/ano\n34 057 068 m3/ano\n5,2 %\n\nÁgua entrada no sistema\nÁgua não faturada\nAA08a – Água não faturada\n\nQuadro 49. AA08 baixa – Avaliação global\n(para 93 % de EG)\n846 741 648 m3/ano\n224 028 933 m3/ano\n26,5 %\n\nÁgua entrada no sistema\nÁgua não faturada\nAA08b – Água não faturada",
+    "recibo": "content/13 Dominios/source/rp4n/rasarp2025-volume1.pedido.json",
+    "extracao": {
+      "pagina": 106,
+      "inicio": "Avaliação em Portugal continental",
+      "fim": "A figura abaixo"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/rasarp2025-volume1.pdf",
+      "campo": "página física 106",
+      "hora": "2026-10-11T08:13:13Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "cd913fa3af3c782154fbf015c74d4b93005c2fc7f65741e33ac27aba6a829a67"
+    }
+  },
   "rp4n-combustiveis": {
     "publicador": "Eurostat",
     "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
