@@ -4,12 +4,6 @@ const O = (origem, literal) => ({ origem, campo: 'excerto', literal });
 const diz = (pt, en, ...apoios) => ({ pt, en, classe: 'diz', apoios });
 const liga = (pt, en) => ({ pt, en, classe: 'liga' });
 const ponto = liga('.', '.');
-// JD1-b, achado 5: a família inclui os dois anos; a ressalva nomeia apenas o provisório.
-const provisorio = diz(' O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.',
-  ' The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.',
-  O('jd1-ine-provisorio', 'os relativos a 2025 são provisórios4.'), O('jd1-ine-ambito', 'Setembro de 2026'));
-
-
 const contas = diz(', segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano',
   ', under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year',
   O('jd1-ine-contas', 'encargos assumidos num determinado período contabilístico, independentemente do seu pagamento ocorrer noutro período'));
@@ -20,11 +14,6 @@ const caixa = diz(' A contabilidade orçamental pública conta os recebimentos e
 const fundada = diz(' Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação.',
   ' Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred.',
   O('jd1-divida-fundada', 'dívida pública contraída para ser totalmente amortizada num exercício orçamental subsequente ao exercício em que foi gerada.'));
-
-// A mesma medida e o mesmo ano não tornam as duas versões das contas simultâneas.
-const versoes = diz(' A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes.',
-  ' The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts.',
-  O('jd1-ine-ambito', 'Setembro de 2026'), O('jd1-eurostat-versao', '"updated":"2026-07-21T11:00:00+0200"'));
 
 export const FAMILIAS_JD1 = [
   {
@@ -40,7 +29,6 @@ export const FAMILIAS_JD1 = [
         ' General government covers central, regional and local government and social security.',
         O('jd1-eo-administracoes', 'Administração Central'), O('jd1-eo-administracoes', 'Administração Regional'),
         O('jd1-eo-administracoes', 'e Local'), O('jd1-eo-administracoes', 'e a Segurança Social.')),
-      provisorio,
     ],
   },
   {
@@ -54,7 +42,7 @@ export const FAMILIAS_JD1 = [
         O('jd1-pib-definicao', 'GDP covers all goods and services produced for final use')),
       diz(', nas contas nacionais enviadas pelo INE ao Eurostat em setembro', ', in the national accounts sent by INE to Eurostat in September',
         O('jd1-ine-ambito', 'Sistema Europeu de Contas Nacionais e Regionais 2010'), O('jd1-ine-ambito', 'enviados ao Eurostat'), O('jd1-ine-ambito', 'Setembro de 2026')),
-      ponto, provisorio,
+      ponto,
     ],
   },
   {
@@ -68,7 +56,7 @@ export const FAMILIAS_JD1 = [
         '. Gross domestic product measures the value of final goods and services produced in the economy',
         O('jd1-pib-definicao', 'It measures the total value of goods and services produced by that economy'), O('jd1-pib-definicao', 'GDP covers all goods and services produced for final use')),
       diz('. A conta usa os montantes da mesma notificação do INE', '. The calculation uses amounts from the same INE notification', L('derivation', 'na mesma notificação do INE')),
-      contas, ponto, provisorio, versoes,
+      contas, ponto,
     ],
   },
   {
@@ -86,7 +74,7 @@ export const FAMILIAS_JD1 = [
       diz(': a despesa pertence ao período em que o encargo é assumido, mesmo que seja pago noutro período',
         ': expenditure belongs to the period in which the cost is incurred, even if it is paid in another period',
         O('jd1-ine-contas', 'encargos assumidos num determinado período contabilístico, independentemente do seu pagamento ocorrer noutro período')),
-      ponto, versoes,
+      ponto,
     ],
   },
   {
