@@ -90,13 +90,14 @@ for(const lang of ['pt','en']) {
   assert(comparaLinhas(comparacao,lang,copia).includes(comparacao[lang][ramo]),`a comparação não acompanha ${ramo}`);
  }
 }
-const {textoSemSelos}=await import('../../scripts/voz-pais.mjs');
+const {conferirSinopse,sinopseEsperada}=await import('../../scripts/voz-pais.mjs');
+const {WORKS}=await import('../../src/data/studies.mjs');
 for(const lang of ['pt','en']) {
- const root=parse(`<p>Sinopse<span class="marcador-definicao"> · ${t(lang).marcador.definicao}</span></p>`);
- assert.equal(textoSemSelos(root),'Sinopse');
+ const w=WORKS.find(w=>sinopseEsperada(w,lang));assert(w);
+ const root=parse(`<p>${sinopseEsperada(w,lang)}<span class="marcador-definicao"> · ${t(lang).marcador.definicao}</span></p>`);
+ assert.deepEqual(conferirSinopse(root,w,lang),[]);
  root.querySelector('.marcador-definicao').set_content('Uma frase intrusa.');
- assert.notEqual(textoSemSelos(root),'Sinopse');
- plantas.push({nome:`glosa alterada na sinopse (${lang})`,mensagem:'RP4N-g: a glosa alterada permanece na comparação da sinopse'});
+ morde(`glosa alterada na sinopse (${lang})`,conferirSinopse(root,w,lang),'B1 sinopse:');
 }
 for(const lang of ['pt','en']) {
  const root=parse(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/penalizacao-antecipacao-um-ano-neutra/index.html`,'utf8'));

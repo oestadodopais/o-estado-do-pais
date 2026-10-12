@@ -48,6 +48,11 @@ export function sinopseEsperada(w, lang) {
      como em todos os valores do sítio (`src/lib/estudos-b1.mjs`); esta é a cópia da regra, e compara carácter a carácter. */
   return normal(partes.map(p=>typeof p==='string' ? p : p.claim ? getClaim(p.claim).value+(p.sufixo ?? (getClaim(p.claim).unit === '%' ? ' %' : '')) : p.ref ?? '').join(''));
 }
+export function conferirSinopse(resumo, w, lang) {
+  const esperado = w && sinopseEsperada(w, lang);
+  return !esperado || texto(resumo) !== esperado ? [`B1 sinopse: ${w?.slug} difere das duas primeiras frases.`] : [];
+}
+
 export function verificaVozPais(raiz) {
   const erros = [];
   for (const lang of ['pt','en']) {
@@ -100,8 +105,7 @@ export function verificaVozPais(raiz) {
       if (explicacoesConferidas) for (const v of main.querySelectorAll('[data-veredicto-explica]')) dispensados.add(v);
       for (const resumo of main.querySelectorAll('.estudo-resumo')) {
         const w = WORKS.find(w=>w.slug===resumo.closest('[data-estudo]')?.getAttribute('data-estudo'));
-        const esperado = w && sinopseEsperada(w, lang);
-        if (!esperado || texto(resumo) !== esperado) erros.push(`B1 sinopse: ${w?.slug} difere das duas primeiras frases.`);
+        erros.push(...conferirSinopse(resumo, w, lang));
         dispensados.add(resumo);
       }
       const permitidos = new Set([
