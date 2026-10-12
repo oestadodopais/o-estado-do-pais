@@ -662,7 +662,7 @@ A entrega inclui as fontes, extrações, recibos e as plantas reproduzíveis par
 
 Os recibos distinguem o estado de cada ano, dizem a parcela do financiamento por valores selados e a direção da evolução. A dívida direta distingue-se expressamente da dívida de Maastricht. Os guiões fora do bloco recuperam o comportamento anterior.
 
-Cabeça do código do sítio: `147382c4609c5d4a12677dcaa858abf7ec85638a`. Cabeça do código do motor: `67b97e47a19bf1e1203f13380dca362c91015894`. Os portões gerais correram sob a mesma tranca, com recusa da árvore suja antes da corrida. `arvore.inicio` diz «limpa»; as diferenças no fim são apenas os registos produzidos pela própria conferência. Os suplementos têm os seus ficheiros de cabeça e de execução.
+Cabeça do código do sítio: `147382c4609c5d4a12677dcaa858abf7ec85638a`. Cabeça do código do motor: `67b97e47a19bf1e1203f13380dca362c91015894`. O portão do motor começou em 2026-10-12T12:43:36Z, sobre a cabeça do código do motor, que não mudou depois; os portões do sítio começaram em 2026-10-12T13:12:02Z. Houve recusa da árvore suja antes de cada corrida. `arvore.inicio` diz «limpa»; as diferenças no fim são apenas os registos produzidos pela própria conferência. Os suplementos têm os seus ficheiros de cabeça e de execução.
 
 A cabeça do último commit de provas não pode estar escrita dentro do próprio commit. Lê-se com `git rev-parse HEAD`; a resposta de entrega identifica-a. Não houve publicação nem envio.
 
@@ -683,7 +683,7 @@ A terceira corrida teve o build verde e o verify recusou os vínculos incompleto
 | 9 | O recibo distingue dívida direta em contabilidade pública de Maastricht; não inventa qual delas é maior. A base contabilística apoia-se no título do quadro do IGCP, e a diferença de perímetro na nota do relatório anual. A evolução lê os valores exatos e rende ambos por token. |
 | 10 | Padrão genérico para as datas do cabeçalho, conferido com a leitura geométrica do PDF. O recibo mostra o texto intacto da última coluna. A planta troca a data extraída. |
 | 11 | Espaços do excerto conservados por apresentação pré-formatada, com deslocação horizontal; o texto alternativo descreve o gráfico e o rótulo. |
-| 12 | Recusa de árvore suja antes dos portões. O motor e o sítio correm sob a tranca comum. A corrida antiga da fusão tinha alterações locais; o seu verde não prova a árvore exata dessa cabeça. |
+| 12 | Recusa de árvore suja antes dos portões. Cada corrida toma a tranca comum; o verde do motor e o verde final do sítio pertencem a corridas distintas, com as horas acima. A corrida antiga da fusão tinha alterações locais; o seu verde não prova a árvore exata dessa cabeça. |
 | 13 | Saíram as duas afirmações históricas sem ficheiro de prova. Dependências e licenças declaradas no README do motor e abaixo. |
 | 14 | Perímetro apoiado na definição do INE, com inclusão e exclusão segundo as regras europeias; o custo conserva o subsetor Estado. |
 | 15 | Repetir a leitura substitui a entrada do mesmo autor, dia e âmbito, preservando os âmbitos distintos das famílias e séries. |
