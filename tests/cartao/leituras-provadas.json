@@ -12793,14 +12793,12 @@
       "origens": [
         "jd1-ine-despesa",
         "jd1-ine-contas",
-        "jd1-eo-administracoes",
-        "jd1-ine-provisorio",
-        "jd1-ine-ambito"
+        "jd1-eo-administracoes"
       ],
       "folhas": [
         {
-          "pt": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. As administrações públicas abrangem a administração central, regional e local e a segurança social. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
-          "en": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. General government covers central, regional and local government and social security. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+          "pt": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. As administrações públicas abrangem a administração central, regional e local e a segurança social.",
+          "en": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. General government covers central, regional and local government and social security.",
           "partes": [
             {
               "pt": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas",
@@ -12867,23 +12865,6 @@
                   "literal": "e a Segurança Social."
                 }
               ]
-            },
-            {
-              "pt": " O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
-              "en": " The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "jd1-ine-provisorio",
-                  "campo": "excerto",
-                  "literal": "os relativos a 2025 são provisórios4."
-                },
-                {
-                  "origem": "jd1-ine-ambito",
-                  "campo": "excerto",
-                  "literal": "Setembro de 2026"
-                }
-              ]
             }
           ]
         }
@@ -12899,13 +12880,12 @@
       },
       "origens": [
         "jd1-ine-ambito",
-        "jd1-pib-definicao",
-        "jd1-ine-provisorio"
+        "jd1-pib-definicao"
       ],
       "folhas": [
         {
-          "pt": "É o valor dos bens e serviços finais produzidos na economia portuguesa durante o ano, o produto interno bruto, a preços de mercado, nas contas nacionais enviadas pelo INE ao Eurostat em setembro. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
-          "en": "It is the value of final goods and services produced in the Portuguese economy during the year, gross domestic product at market prices, in the national accounts sent by INE to Eurostat in September. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+          "pt": "É o valor dos bens e serviços finais produzidos na economia portuguesa durante o ano, o produto interno bruto, a preços de mercado, nas contas nacionais enviadas pelo INE ao Eurostat em setembro.",
+          "en": "It is the value of final goods and services produced in the Portuguese economy during the year, gross domestic product at market prices, in the national accounts sent by INE to Eurostat in September.",
           "partes": [
             {
               "pt": "É o valor dos bens e serviços finais produzidos na economia portuguesa durante o ano, o produto interno bruto, a preços de mercado",
@@ -12960,23 +12940,6 @@
               "pt": ".",
               "en": ".",
               "classe": "liga"
-            },
-            {
-              "pt": " O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
-              "en": " The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "jd1-ine-provisorio",
-                  "campo": "excerto",
-                  "literal": "os relativos a 2025 são provisórios4."
-                },
-                {
-                  "origem": "jd1-ine-ambito",
-                  "campo": "excerto",
-                  "literal": "Setembro de 2026"
-                }
-              ]
             }
           ]
         }
@@ -12992,15 +12955,12 @@
       },
       "origens": [
         "jd1-pib-definicao",
-        "jd1-ine-contas",
-        "jd1-ine-provisorio",
-        "jd1-ine-ambito",
-        "jd1-eurostat-versao"
+        "jd1-ine-contas"
       ],
       "folhas": [
         {
-          "pt": "Compara a despesa em juros das administrações públicas com o produto interno bruto do mesmo ano, em percentagem. O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia. A conta usa os montantes da mesma notificação do INE, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis. A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes.",
-          "en": "It compares general government interest expenditure with gross domestic product for the same year, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. The calculation uses amounts from the same INE notification, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification. The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts.",
+          "pt": "Compara a despesa em juros das administrações públicas com o produto interno bruto do mesmo ano, em percentagem. O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia. A conta usa os montantes da mesma notificação do INE, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano.",
+          "en": "It compares general government interest expenditure with gross domestic product for the same year, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. The calculation uses amounts from the same INE notification, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year.",
           "partes": [
             {
               "pt": "Compara a despesa em juros das administrações públicas com o produto interno bruto do mesmo ano, em percentagem",
@@ -13064,40 +13024,6 @@
               "pt": ".",
               "en": ".",
               "classe": "liga"
-            },
-            {
-              "pt": " O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
-              "en": " The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "jd1-ine-provisorio",
-                  "campo": "excerto",
-                  "literal": "os relativos a 2025 são provisórios4."
-                },
-                {
-                  "origem": "jd1-ine-ambito",
-                  "campo": "excerto",
-                  "literal": "Setembro de 2026"
-                }
-              ]
-            },
-            {
-              "pt": " A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes.",
-              "en": " The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "jd1-ine-ambito",
-                  "campo": "excerto",
-                  "literal": "Setembro de 2026"
-                },
-                {
-                  "origem": "jd1-eurostat-versao",
-                  "campo": "excerto",
-                  "literal": "\"updated\":\"2026-07-21T11:00:00+0200\""
-                }
-              ]
             }
           ]
         }
@@ -13114,14 +13040,12 @@
       "origens": [
         "jd1-eurostat-contas",
         "jd1-pib-definicao",
-        "jd1-ine-contas",
-        "jd1-ine-ambito",
-        "jd1-eurostat-versao"
+        "jd1-ine-contas"
       ],
       "folhas": [
         {
-          "pt": "Compara a despesa em juros das administrações públicas do conjunto da União Europeia com o seu produto interno bruto, em percentagem. O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia. São contas nacionais: a despesa pertence ao período em que o encargo é assumido, mesmo que seja pago noutro período. A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes.",
-          "en": "It compares general government interest expenditure across the European Union with its gross domestic product, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. These are national accounts: expenditure belongs to the period in which the cost is incurred, even if it is paid in another period. The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts.",
+          "pt": "Compara a despesa em juros das administrações públicas do conjunto da União Europeia com o seu produto interno bruto, em percentagem. O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia. São contas nacionais: a despesa pertence ao período em que o encargo é assumido, mesmo que seja pago noutro período.",
+          "en": "It compares general government interest expenditure across the European Union with its gross domestic product, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. These are national accounts: expenditure belongs to the period in which the cost is incurred, even if it is paid in another period.",
           "partes": [
             {
               "pt": "Compara a despesa em juros das administrações públicas do conjunto da União Europeia com o seu produto interno bruto, em percentagem",
@@ -13195,23 +13119,6 @@
               "pt": ".",
               "en": ".",
               "classe": "liga"
-            },
-            {
-              "pt": " A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes.",
-              "en": " The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "jd1-ine-ambito",
-                  "campo": "excerto",
-                  "literal": "Setembro de 2026"
-                },
-                {
-                  "origem": "jd1-eurostat-versao",
-                  "campo": "excerto",
-                  "literal": "\"updated\":\"2026-07-21T11:00:00+0200\""
-                }
-              ]
             }
           ]
         }

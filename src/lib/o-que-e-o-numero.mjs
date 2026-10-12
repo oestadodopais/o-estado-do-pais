@@ -1,3 +1,4 @@
+import { palavrasDaLinhaJd1 } from '../data/notas-jd1.mjs';
 /**
  * ===========================================================================
  * O QUE É CADA NÚMERO · o resolvedor (bloco R4, 05.10.2026, os pontos 1 e 2 do brief
@@ -134,7 +135,7 @@ export function oQueEDaLinha(id, lang) {
   }
   const frase = d.frase?.[lang];
   if (!Array.isArray(frase) || frase.length === 0) throw fecha(`${id} · ${lang}`, `a família «${f.chave}» não declara frase nesta edição.`);
-  return { pedacos: frase, tipo: 'familia', chave: f.chave, cartao: null, sinal: null, porConfirmar };
+  return { pedacos: [...frase, palavrasDaLinhaJd1(id, lang)], tipo: 'familia', chave: f.chave, cartao: null, sinal: null, porConfirmar };
 }
 
 /**
