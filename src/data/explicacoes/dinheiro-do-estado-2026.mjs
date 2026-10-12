@@ -204,7 +204,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
         {
           paragrafo: {
             pt: [
-              'Até ', { periodo: SALDO_EXECUTADO }, ', as contas da administração central e da segurança social fecharam com um saldo de ',
+              'No fim de ', { periodo: SALDO_EXECUTADO }, ', as contas da administração central e da segurança social apresentavam um saldo acumulado de ',
               { claim: SALDO_EXECUTADO, sufixo: ' milhões de euros' }, ', ',
               { sinal: SALDO_EXECUTADO, positivo: ['um excedente (recebeu mais do que gastou)'], negativo: ['um défice (gastou mais do que recebeu)'], zero: ['um saldo nulo (recebeu o mesmo que gastou)'] },
               '; ',
@@ -220,10 +220,10 @@ export const DINHEIRO_DO_ESTADO_2026 = {
                 diferentesPositivo: ['o Orçamento previa para o ano inteiro um excedente de ', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }],
                 diferentesZero: ['o Orçamento previa para o ano inteiro um saldo nulo de ', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }],
               },
-              '.',
+              '. É outra conta, diferente da das administrações públicas de ', { periodo: SALDO }, '.',
             ],
             en: [
-              'By ', { periodo: SALDO_EXECUTADO }, ', the accounts of central government and social security closed with a balance of ',
+              'By the end of ', { periodo: SALDO_EXECUTADO }, ', the accounts of central government and social security showed a cumulative balance of ',
               { claim: SALDO_EXECUTADO, sufixo: ' million euros' }, ', ',
               { sinal: SALDO_EXECUTADO, positivo: ['a surplus (it took in more than it spent)'], negativo: ['a deficit (it spent more than it took in)'], zero: ['a nil balance (it took in the same as it spent)'] },
               '; ',
@@ -239,7 +239,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
                 diferentesPositivo: ['the Budget forecast for the full year a surplus of ', { claim: SALDO_PREVISTO, sufixo: ' million euros' }],
                 diferentesZero: ['the Budget forecast for the full year a nil balance of ', { claim: SALDO_PREVISTO, sufixo: ' million euros' }],
               },
-              '.',
+              '. This is a different account from that of general government in ', { periodo: SALDO }, '.',
             ],
           },
         },
@@ -320,6 +320,7 @@ export const ACERTOS = [
   { id: 'X17', onde: 'o que isto não diz', o_que: '«Os juros da dívida não estão ainda no livro-razão deste projeto como linha própria; quando entrarem, esta explicação diz quanto são.» passa a «Falta aqui o custo dos juros da dívida, que o Orçamento também prevê e que estes números não mostram.»', razao: 'o achado 16 da leitura a frio (EX1-c, 06.10.2026): a frase falava do livro-razão do projeto e prometia uma atualização, e o sítio não se explica a si próprio nas páginas de conteúdo; a frase continua guardada pela condição de nenhuma linha dos juros' },
   { id: 'X18', onde: 'o que isto não diz', o_que: 'os juros não estão isolados, com a alternativa «noutra classificação» e a atualização prevista pelo mandato EX1-d', razao: 'o excerto selado nomeia Public debt transactions, mas não explicita os juros; aplica-se a alternativa autorizada, mantendo a condição da ausência de linhas' },
   { id: 'X19', onde: 'o que isto não diz', o_que: 'a execução até agosto é a que esta explicação mostra acima', razao: 'EX1-d: a referência à posição na página deixa de parecer uma comparação de valores' },
+  { id: 'X23', onde: 'execução', o_que: 'no fim do mês apresentavam um saldo acumulado; distinguir a conta das administrações públicas do outro ano', razao: 'EX1-e, achado 11: não sugerir fecho anual e explicitar a diferença de perímetros, pela nota da linha e com o ano por token' },
   { id: 'X22', onde: 'abertura e o que isto não diz', o_que: 'retirar a inclusão dos juros numa classificação, a previsão não apoiada e a promessa de atualização', razao: 'EX1-e, achados 5 e 10: o selo sustenta as transferências; a ausência dos juros isolados é a condição sem_linhas, sem afirmar onde entram' },
   { id: 'X21', onde: 'execução', o_que: 'comparar a dimensão dos défices ou excedentes pelo token comparaSaldos, com todos os ramos declarados', razao: 'EX1-e, achado 4: os módulos evitam inverter o sentido da comparação de défices; sinais diferentes só apresentam a previsão anual' },
   { id: 'X20', onde: 'execução', o_que: 'o saldo global do mesmo perímetro, o significado pelo sinal e a comparação com o saldo previsto para o ano inteiro', razao: 'EX1-d: as linhas do saldo executado e previsto constam do mesmo quadro dos totais; compara-se o saldo com sinal, sem afirmar cumprimento de uma meta mensal' },

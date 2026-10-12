@@ -76,6 +76,8 @@ export const AUDITORIA = path.join(RAIZ, 'tests', 'cartao', 'leituras-provadas.j
 
 /** Os campos publicados de uma linha que podem apoiar uma parte de uma explicação; `nome` é o nome do projeto. */
 const CAMPOS_DA_LINHA = new Set(['excerpt', 'unit', 'document.title', 'document.locator', 'name', 'ressalva', 'ressalva_en', 'derivation', 'derivation_en', 'nome']);
+const NOTA_DO_PERIMETRO = 'execucao-2026-08-saldo-global-administracao-central-seguranca-social';
+const LITERAIS_DA_NOTA = new Set(['Não são grandezas diretamente comparáveis.', 'O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local']);
 const CAMPOS_DA_ORIGEM = new Set(['excerto', 'excertoEn', 'documento', 'publicador']);
 const LITERAL_MINIMO = 4;
 /* AS PALAVRAS DE LIGAÇÃO, uma lista fechada: preposições, artigos e conjunções, e «contra», que apresenta o segundo
@@ -301,7 +303,8 @@ export function conferirAuditoriaDasExplicacoes({
               usadas.add(ap.origem);
             } else if (ap.linha) {
               if (!permitidas.has(ap.linha)) { falha(`X2 · ${qp} cita a linha «${ap.linha}», que a explicação não nomeia`); continue; }
-              const valor = CAMPOS_DA_LINHA.has(ap.campo) ? campoDaLinha(linhas.get(ap.linha), ap.campo, ap.linha) : undefined;
+              const notaAutorizada = ap.campo === 'note' && ap.linha === NOTA_DO_PERIMETRO && LITERAIS_DA_NOTA.has(literal);
+              const valor = CAMPOS_DA_LINHA.has(ap.campo) || notaAutorizada ? campoDaLinha(linhas.get(ap.linha), ap.campo, ap.linha) : undefined;
               if (typeof valor !== 'string') { falha(`X2 · ${qp} cita o campo «${ap.campo}» da linha «${ap.linha}», que não existe ou não pode apoiar`); continue; }
               if (!valor.includes(literal)) { falha(`X2 · ${qp} cita «${curto(literal)}», que não está no campo «${ap.campo}» da linha «${ap.linha}»`); continue; }
             } else falha(`X2 · ${qp} tem um apoio sem origem nem linha`);

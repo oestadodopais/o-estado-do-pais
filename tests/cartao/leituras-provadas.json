@@ -14322,7 +14322,7 @@
       "slug": "dinheiro-do-estado-2026",
       "quem": "Claude Opus 5.5 (EX1 a EX1-c); Codex gpt-6-astra (EX1-d e EX1-e)",
       "quando": "2026-10-12",
-      "o_que": "a primeira leitura (05.10.2026), a do EX1-b e a do EX1-c (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216, e as correções da leitura a frio), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X17 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam; EX1-d: releitura dos apoios selados, correção dos juros e da referência à posição da execução, e saldo do mesmo perímetro com comparação explícita ao ano inteiro (acertos X18 a X20); EX1-e: comparação dos módulos dos saldos, com sinais diferentes e nulos declarados; os juros não são localizados nem anunciados sem apoio: a frase curta é a ausência calculada pela condição sem_linhas, e as transferências mantêm o literal selado",
+      "o_que": "a primeira leitura (05.10.2026), a do EX1-b e a do EX1-c (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216, e as correções da leitura a frio), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X17 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam; EX1-d: releitura dos apoios selados, correção dos juros e da referência à posição da execução, e saldo do mesmo perímetro com comparação explícita ao ano inteiro (acertos X18 a X20); EX1-e: comparação dos módulos dos saldos, com sinais diferentes e nulos declarados; os juros não são localizados nem anunciados sem apoio: a frase curta é a ausência calculada pela condição sem_linhas, e as transferências mantêm o literal selado; saldo acumulado sem fecho anual e distinção dos perímetros apoiada nos dois literais da nota interna autorizados pelo mandato EX1-e, sem publicar a nota",
       "origens": [
         "dados-gov-oe-despesa-funcional",
         "eurostat-cofog-divisao-01",
@@ -15406,12 +15406,12 @@
         },
         {
           "caminho": "seccoes[2].conteudo[1].paragrafo[0]",
-          "pt": "Até ",
-          "en": "By ",
+          "pt": "No fim de ",
+          "en": "By the end of ",
           "partes": [
             {
-              "pt": "Até ",
-              "en": "By ",
+              "pt": "No fim de ",
+              "en": "By the end of ",
               "classe": "diz",
               "apoios": [
                 {
@@ -15425,12 +15425,12 @@
         },
         {
           "caminho": "seccoes[2].conteudo[1].paragrafo[2]",
-          "pt": ", as contas da administração central e da segurança social fecharam com um saldo de ",
-          "en": ", the accounts of central government and social security closed with a balance of ",
+          "pt": ", as contas da administração central e da segurança social apresentavam um saldo acumulado de ",
+          "en": ", the accounts of central government and social security showed a cumulative balance of ",
           "partes": [
             {
-              "pt": ", as contas da administração central e da segurança social fecharam com um saldo de ",
-              "en": ", the accounts of central government and social security closed with a balance of ",
+              "pt": ", as contas da administração central e da segurança social apresentavam um saldo acumulado de ",
+              "en": ", the accounts of central government and social security showed a cumulative balance of ",
               "classe": "diz",
               "apoios": [
                 {
@@ -16133,6 +16133,45 @@
         },
         {
           "caminho": "seccoes[2].conteudo[1].paragrafo[8]",
+          "pt": ". É outra conta, diferente da das administrações públicas de ",
+          "en": ". This is a different account from that of general government in ",
+          "partes": [
+            {
+              "pt": ". ",
+              "en": ". ",
+              "classe": "liga"
+            },
+            {
+              "pt": "É outra conta, diferente da das administrações públicas de ",
+              "en": "This is a different account from that of general government in ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "note",
+                  "literal": "Não são grandezas diretamente comparáveis."
+                },
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "note",
+                  "literal": "O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local"
+                },
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "document.title",
+                  "literal": "Síntese da Execução Orçamental"
+                },
+                {
+                  "linha": "saldo-das-administracoes-publicas-2025",
+                  "campo": "excerpt",
+                  "literal": "General government"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[10]",
           "pt": ".",
           "en": ".",
           "partes": [
