@@ -27,21 +27,21 @@ with tempfile.TemporaryDirectory(prefix='oedp-jd1-privacidade-') as tmp:
         nome = f'plantada-{i}.log'
         (pasta / nome).write_bytes(marca)
         subprocess.run(['git', '-C', str(pasta), 'add', '--', nome], check=True)
-    (pasta / 'comprimida.json.gz').write_bytes(gzip.compress((projetos + 'OEstadoDoPais/' + arvores + 'ensaio/dist').encode()))
-    subprocess.run(['git', '-C', str(pasta), 'add', '--', 'comprimida.json.gz'], check=True)
+    (pasta / 'comprimida.log.gz').write_bytes(gzip.compress((projetos + 'OEstadoDoPais/' + arvores + 'ensaio/dist').encode()))
+    subprocess.run(['git', '-C', str(pasta), 'add', '--', 'comprimida.log.gz'], check=True)
     r = guarda.medir_rastreados(pasta, True)
     assert not r['passou'] and r['quantidade'] == 3 and all(p['mordeu'] for p in r['plantas']), r
     casos.append('A guarda lê a lista real do Git e recusa ambos os fragmentos, incluindo gzip.')
     (pasta / 'nao-rastreado.log').write_text(projetos)
-    (pasta / 'codigo.py').write_text("pasta = '/tmp/ensaio-portavel'\n")
+    (pasta / 'codigo.py').write_text("pasta = '$HOME/" + projetos + "ResearchHub'\n")
     subprocess.run(['git', '-C', str(pasta), 'add', '--', 'codigo.py'], check=True)
     r = limpar.limpar(pasta, pasta, rastreado=True)
     assert len(r['mudados']) == 3
-    assert (pasta / 'codigo.py').read_text() == "pasta = '/tmp/ensaio-portavel'\n"
+    assert (pasta / 'codigo.py').read_text() == "pasta = '$HOME/" + projetos + "ResearchHub'\n"
     assert (pasta / 'nao-rastreado.log').read_text() == projetos
     assert guarda.medir_rastreados(pasta, True)['passou']
     assert limpar.limpar(pasta, pasta, rastreado=True)['mudados'] == []
-    assert gzip.decompress((pasta / 'comprimida.json.gz').read_bytes()) == b'<worktree>/dist'
+    assert gzip.decompress((pasta / 'comprimida.log.gz').read_bytes()) == b'<worktree>/dist'
     casos.append('A limpeza rastreada só altera a lista do Git; guarda verde, gzip legível e segunda passagem sem mudanças.')
     raiz = pasta / 'sitio'
     arvore = raiz / '.claude' / 'worktrees' / 'ramo'

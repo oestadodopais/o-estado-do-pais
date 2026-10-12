@@ -32,8 +32,9 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-SITIO = Path(__file__).resolve().parents[2]
-MOTOR = Path(os.environ.get('RESEARCHHUB_DIR') or os.environ.get('OEDP_MOTOR') or '<motor>')
+SITIO = Path(__file__).resolve().parents[2] if Path(__file__).resolve().parent.name == "leituras" \
+    else Path(os.path.expanduser("~/Instruments/OEstadoDoPais"))
+MOTOR = Path(os.path.expanduser("~/Instruments/ResearchHub"))
 ANFITRIAO = "xn--oestadodopas-2fb.pt"
 FALHAS: list[str] = []
 

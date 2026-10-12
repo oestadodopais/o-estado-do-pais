@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Confere o âmbito da reexportação e recolhe a prova desta passagem."""
-import os
 import json
 import re
 import subprocess
@@ -8,7 +7,7 @@ from pathlib import Path
 
 B = Path(__file__).resolve().parent
 R = B.parents[3]
-MOTOR = Path(os.environ.get('RESEARCHHUB_DIR', '<motor>'))
+MOTOR = Path.home() / 'Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23'
 BASE = '8eb528f9'
 LINHA = 'ledger/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue.yml'
 

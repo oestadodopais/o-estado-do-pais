@@ -1,0 +1,3394 @@
+{
+  "base": "64d81b21",
+  "antes": "744a80eb",
+  "ficheiros": [
+    {
+      "ficheiro": ".gitignore",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "66cf1a4b6b819c4af93c3b4d85ff4b3b037e6f74169fed73a748bc5c2fe2240c",
+      "sha256_antes": "c4afd4d5709fd947226cfc1f46ca87ffe609e1866b37c1a66484fc361fa0a955",
+      "sha256_depois": "66cf1a4b6b819c4af93c3b4d85ff4b3b037e6f74169fed73a748bc5c2fe2240c",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "BRIEF-decisoes-2026-08-20.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "5515eb0f54f8e21e7a5d44b914b12a6c24e89194a794903e38a9aa407a8f86d9",
+      "sha256_antes": "4d0e7e365357f775d51992fb2497e82033fa4675865cbecd053263e6ef32f276",
+      "sha256_depois": "5515eb0f54f8e21e7a5d44b914b12a6c24e89194a794903e38a9aa407a8f86d9",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "BRIEF-republicacao-2026-08-20.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "a4f419873ec2478f2f78d594977e723015cbdfdd73073cd4e7e47ad2bb003a57",
+      "sha256_antes": "a15e8daeefca98ca17e546a5341662d0a4d050e2dd09a4265b5cbe9253ef8d72",
+      "sha256_depois": "a4f419873ec2478f2f78d594977e723015cbdfdd73073cd4e7e47ad2bb003a57",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "CLAUDE.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "068dc3d5bab1a7b648077406f8de7bc9bf7ee7937b46f83dc823ea35ba00f076",
+      "sha256_antes": "478ea6bbcc61b48feefbf2be43d3512156474a4f883b91fce725f8b93a214eb0",
+      "sha256_depois": "068dc3d5bab1a7b648077406f8de7bc9bf7ee7937b46f83dc823ea35ba00f076",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/BRIEF-construcao-S.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "b9c9eaeeb9095d0c72dd92f63ed60e958c37f2a4a11b72c5e13816abe841b190",
+      "sha256_antes": "795b17c3d79442714be8bb3d8374918bd7c661c77d2acc5d6ec45f337eb92856",
+      "sha256_depois": "b9c9eaeeb9095d0c72dd92f63ed60e958c37f2a4a11b72c5e13816abe841b190",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/direcao-b/CHECK.txt",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "b5b7e006ec0148d06751001fb22de187ee9d8280c0f3cca00463219885532716",
+      "sha256_antes": "5a3e83ab5cae4913fb9cfbd3f9864bbecd6a02104652343d1b0920e3ec9b85a4",
+      "sha256_depois": "1e44842d75c872fd589530599dd199d3fd3e68fb78740185c247cfff4030d40c",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/ESTIMATIVA-PARTE3-2026-08-24.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "8284956fe38553ee44cd990b063c631fb32e0640edab0df95519f9c4e3e03281",
+      "sha256_antes": "b10ea29052e6002d49bbdef456b20f7d006c5cde639395df2f25f8d76fdc58d9",
+      "sha256_depois": "8284956fe38553ee44cd990b063c631fb32e0640edab0df95519f9c4e3e03281",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/ISSUES.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "dda698a2408f281c355a735b8bd20c288be59b7ff8a99ba6201c09bb742a9b78",
+      "sha256_antes": "9b21819ffdd673432a07de848925a02e5a9ac044bb59d08cd6a6d54a18168de1",
+      "sha256_depois": "dda698a2408f281c355a735b8bd20c288be59b7ff8a99ba6201c09bb742a9b78",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/PEDIDOS-AO-MOTOR-2026-08-22.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "47a32f37a5ccfee9a0941847a2c80ed63a5494f3a9309578b0ee162c6848256d",
+      "sha256_antes": "a7020c5077e3bb3693e0c445ca0a3df871f1daa41487a95013ba35d9f32b0872",
+      "sha256_depois": "47a32f37a5ccfee9a0941847a2c80ed63a5494f3a9309578b0ee162c6848256d",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/PROMPT-luz-verde-2026-08-20.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "1d1a71a36ca6e1f098e2afa7e7a3cdffe7a44c938271e22f67487815e24a0bcb",
+      "sha256_antes": "131e88260bb61c6a741b23d1301a1d279437fb245386d443a409614bfe2abd8e",
+      "sha256_depois": "1d1a71a36ca6e1f098e2afa7e7a3cdffe7a44c938271e22f67487815e24a0bcb",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/PROMPT-pos-fusao-2026-08-22.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "5a63e2aad440d56b62caebe31f28562201cf80f2fff6ba30d44fa2f672dc5120",
+      "sha256_antes": "693669b42839041902fa86dc9caf7e9751d62a86422b224b2c30b2a5795c1eea",
+      "sha256_depois": "5a63e2aad440d56b62caebe31f28562201cf80f2fff6ba30d44fa2f672dc5120",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/PROMPT-proxima-sessao-observatorio-2026-08-29.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "b9bf77ef0eeb9a59c291f656c3746d9ae351dff99809db0330d979ae1db24646",
+      "sha256_antes": "6e03169d4a1fe40c728f71f8587d1e6383ad38c95090a5b378a53f200f88f881",
+      "sha256_depois": "b9bf77ef0eeb9a59c291f656c3746d9ae351dff99809db0330d979ae1db24646",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-auditoria-ux-2026-08-25.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "931d6cfe8f1178cb3e0c380f752a752796a58cfa7eaddd1a040cb456f2e30e18",
+      "sha256_antes": "a42c22c9a0fc3c4caeb4bb3272305601bd726b2e7450bccd5a016aada474f6a9",
+      "sha256_depois": "a7e0deddb44b8d03a044df8c4fa541ad7fdef7f8e37cc9b16add06fb617865a2",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-concelhos-M5.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "b1e46187fd87d500e917e68d63e3072ec2d556ac6b5defadf8513f856d827c33",
+      "sha256_antes": "2ff979af39038b0ea999a23e15907f8c317d6c55dc5dd1c500d22e6a245cb2a4",
+      "sha256_depois": "b1e46187fd87d500e917e68d63e3072ec2d556ac6b5defadf8513f856d827c33",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-concelhos-P2-estrutura.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "a3e5884c14c9921ea3cabf4b6f3e187bdc28137898dd0efbe4d45e5151fabbe8",
+      "sha256_antes": "6e7dd61167b5e800e3cc12933d33e540ac80f1d10efb2b9ed659a311d6e2e052",
+      "sha256_depois": "a3e5884c14c9921ea3cabf4b6f3e187bdc28137898dd0efbe4d45e5151fabbe8",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-correcoes-pequenas-3.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "619cf50ad5c13b69b9a6486f2f8c81e723a0db28a7e73ffa604ed53a38306551",
+      "sha256_antes": "c5e55566dd957c545bb5bede202de91c19109f2edf63cb0d5341712479510195",
+      "sha256_depois": "619cf50ad5c13b69b9a6486f2f8c81e723a0db28a7e73ffa604ed53a38306551",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-correcoes-pequenas-6.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "ff0f175a9d125cd2584573583b831334c93de108b61bb9142cd41e46c5ce6325",
+      "sha256_antes": "6c58aed72257b08f1c84fca4c45146adc7495a7047f5425b16e4300f4f46a03c",
+      "sha256_depois": "ff0f175a9d125cd2584573583b831334c93de108b61bb9142cd41e46c5ce6325",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-etapa-2l.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "3bfd4c84f0e66a6014f0f8b39489a19a0b2eb840190653a9a8523bf8534282b1",
+      "sha256_antes": "1a0cfb7baf138fe066419b140881ca76c0b053a547921db8052ffee95b49e61c",
+      "sha256_depois": "6a955cef0a80dc1abb229e9a0f468425a854c13ca766db27bded08a5f4851119",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-ilhas-M6.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "46fa902212a60ca50a5082c4c2f6f9a35ece440eb84e4b8497c18efc2b892647",
+      "sha256_antes": "9f2197d5a22677bbc279aba7bc9867866fa47df1509669becdbe5f9718ec9d4d",
+      "sha256_depois": "46fa902212a60ca50a5082c4c2f6f9a35ece440eb84e4b8497c18efc2b892647",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-inicio-lista-M11.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "d2d41c019ba3695bb4a81c0c5b03c30abad8832515c66809fe622b5904e243cd",
+      "sha256_antes": "7ea45b03c5e55de54e5b888a1a4b6550ed6c7f552f7dd9d100df769cd26a1aa7",
+      "sha256_depois": "30fc89f2c4cd3f2ddee8c1b00ef6a8cacba5e452f0892dfadba2e4d63847ce41",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-mapa-navegacao-M4.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "cea31febceebe5a77c078e470f49ad447ec930c8acc2fddd3aea6901b81cdda1",
+      "sha256_antes": "0585e86f8eb7f9cc17d74e60faf2f81535fe14afa15449b50e78d860111894dd",
+      "sha256_depois": "b085a1826c8e65149fd12d9e03f3cb15e70d56843a52be07c6e6bc3e734b5778",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-parte3-M1.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "7599263207852e2937862aec0e61cd5328615f6e17947b68eb8a4d0962de26bd",
+      "sha256_antes": "912d95cb36874ee011b4572da116a32f3e6d446fdeb9663924682aae2ee42b8a",
+      "sha256_depois": "7b4f5be314ed18edf522977f8a144b787606d97fb12492ccabbbdd5f27f85f14",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-vazios-M8.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "581c8c699fdf76677c92183c9ac2d43a92b819c33e918fdedacb596f5c4eaff4",
+      "sha256_antes": "40d4d48dc9097644d8fb4388c30fe0266c8676f3437bfb1d77b089d94927c2cd",
+      "sha256_depois": "581c8c699fdf76677c92183c9ac2d43a92b819c33e918fdedacb596f5c4eaff4",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/briefs/BRIEF-vazios.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "e74fa8e94e9399792427723c2155e20042151cab2abe413843d3c20dc283c9f6",
+      "sha256_antes": "1d0cf987d3c1d0a47e8cb8c3a6b8ef2d918d76b46989d3301aee52ac93f2c1b0",
+      "sha256_depois": "e74fa8e94e9399792427723c2155e20042151cab2abe413843d3c20dc283c9f6",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-da-divida-emitida-2026-08-en-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-da-divida-emitida-2026-08-en-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-da-divida-emitida-2026-08-pt-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-da-divida-emitida-2026-08-pt-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-do-stock-da-divida-direta-2025-en-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-do-stock-da-divida-direta-2025-en-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-do-stock-da-divida-direta-2025-pt-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-do-stock-da-divida-direta-2025-pt-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/divida-direta-do-estado-2026-08-en-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/divida-direta-do-estado-2026-08-en-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/divida-direta-do-estado-2026-08-pt-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/divida-direta-do-estado-2026-08-pt-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/emissoes-de-divida-fundada-2025-en-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/emissoes-de-divida-fundada-2025-en-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/emissoes-de-divida-fundada-2025-pt-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/emissoes-de-divida-fundada-2025-pt-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/inspecao-divida.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/inspecao-fontes.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/inspecao-guardas.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/inspecao-root.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2024-en-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2024-en-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2024-pt-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2024-pt-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-en-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-en-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-pt-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-pt-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-ue-en-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-ue-en-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-ue-pt-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-ue-pt-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2024-en-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2024-en-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2024-pt-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2024-pt-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2025-en-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2025-en-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2025-pt-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2025-pt-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2025-08-en-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2025-08-en-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2025-08-pt-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2025-08-pt-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2026-08-en-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2026-08-en-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2026-08-pt-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2026-08-pt-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/necessidades-brutas-de-financiamento-2025-en-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/necessidades-brutas-de-financiamento-2025-en-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/necessidades-brutas-de-financiamento-2025-pt-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/necessidades-brutas-de-financiamento-2025-pt-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2024-en-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2024-en-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2024-pt-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2024-pt-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2025-en-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2025-en-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2025-pt-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2025-pt-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/serie-en-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/serie-en-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/serie-pt-1280.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/jd1b/serie-pt-390.png",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/2026-09-01-sonnet-medicao-cabeca.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "f490b9476587eed21676f4d453a4c3f631986527e791a910ed0510a6d5e46993",
+      "sha256_antes": "83f0d7da006704664f4c332dbec79573cb2f130eccfb4104291e7b7c18d754fa",
+      "sha256_depois": "83f0d7da006704664f4c332dbec79573cb2f130eccfb4104291e7b7c18d754fa",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/2026-09-08-sonnet-medicao-f11e-distritos.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "c9f6be214c5f42efafc677654721df031fc521efbb13bc2ea6eebe7ae4c081bb",
+      "sha256_antes": "a5918b2f559062bb8ff9d7021d90a441cd20b02fcf63c22a7582786513462e5f",
+      "sha256_depois": "a5918b2f559062bb8ff9d7021d90a441cd20b02fcf63c22a7582786513462e5f",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/2026-09-15-codex-leitura-p1-p2.plantas.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "1ee2a7ab327861c023ff9c1eda3298bb2382f0a7fa1f88859f04b980ca946e26",
+      "sha256_antes": "e864cb7dfb1a72f586dd72833cc898a7543dc4c4bc2dc979b7bcbbcbc91ae968",
+      "sha256_depois": "e864cb7dfb1a72f586dd72833cc898a7543dc4c4bc2dc979b7bcbbcbc91ae968",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/LEITURA-JD1-2026-10-06.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "15db7c3be66fb110a286c39ab212c703e4c99a16a1e1348b6872e72d95e2a1c9",
+      "sha256_antes": "4898f1713b0b7235d8d5438c11b7088b5de23af82cb78821bf0362af787ad5da",
+      "sha256_depois": "4898f1713b0b7235d8d5438c11b7088b5de23af82cb78821bf0362af787ad5da",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/LEITURA-f22b-2026-09-29.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "4154ba411947b88c3c8065bb07f31baee60631bc8953660eb6accf849fd9f15d",
+      "sha256_antes": "64b54d83638e77649eeb6273e85006632c80c18a65df14170062f897706a7f24",
+      "sha256_depois": "64b54d83638e77649eeb6273e85006632c80c18a65df14170062f897706a7f24",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/LEITURA-f22b-2026-09-29.plantas.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "002080bfc03becdd303820ca3b695c22d31a71daabb80b1ed231f3f7419ad1ee",
+      "sha256_antes": "9926fc20e47f3cd4d53dc7b38bcb1d28bb795ca0e89c029f9e1a1a719a1ba265",
+      "sha256_depois": "9926fc20e47f3cd4d53dc7b38bcb1d28bb795ca0e89c029f9e1a1a719a1ba265",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/medicao-f11e-sonnet/en-paridade.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "4e561c992c4258bfb6705441ea5b5efa8c2aee929f5c98242194285df8d6f864",
+      "sha256_antes": "5b82f2b55520ce595f5e8296bc8c18ea95b1a95d0f1f6078933b4ec8751b58ac",
+      "sha256_depois": "b55655f2fbdd4d959da5c9b5a5e1cf25767c3980cdd878026b78e33264f4bfff",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/medicao-f11e-sonnet/u1-alvo.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "dfac22feabd47230b54d6d1ab134a97e01c4c0ffc804b2253a2e8f143f09524e",
+      "sha256_antes": "ce773d9b5cfef84c731eb71fd87394e8509ad303ca4ea3bb7bfbf78b6c288d9b",
+      "sha256_depois": "0200ca31b51e641a6b00b751ceb9cf9fa681e3bfa7107eccabbf0b00961b5449",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/medicao-f11e-sonnet/u1b-braga-porto.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "79bafa5f7f49dff0819e785f163da299d9f0a567316b8578cbd4b242bb96f60d",
+      "sha256_antes": "4133c36e3fedfc548294f4c9781c3bb37d7d95d2c65ab4b06cfe7ba94f272b77",
+      "sha256_depois": "18a985379cee640022335b7ce8f9ec9dda8fbbb8a145cdaebf364fc2c93c824f",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/medicao-f11e-sonnet/u2-nome-en.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "630fe079332cebda95efcbf467911eabc4c55e0d999c13c8d7ef05a7b5e9bd4f",
+      "sha256_antes": "11d0c308b80aef75ef73a039d0965d33b80a998faef96a4c09766cd4597b1dcf",
+      "sha256_depois": "313e0a883e2c03b6e7cd5a79f3d064168a75feaa465cd81ba8de6f3d108f0386",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/medicao-f11e-sonnet/u2-nome.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "a60b44c09891a3fc536880221fd873bd37985efa6c628a2ef713ca150ee6b9a0",
+      "sha256_antes": "a77a7cb6ed3fb08718ea70e9f74556af2492971bf5fa1025e42c7ae3395f70aa",
+      "sha256_depois": "0a8cb3710def02969669d42766ea0e48cd85878e07c0b16d23c6fa0aedff95f5",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/medicao-f11e-sonnet/u3-toque.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "474a9646760a6fc0ae4d205e9513f8b379285bdd23a8133584ca8b2dc40c5e8d",
+      "sha256_antes": "e6421b598d7db9b3d851b4dc1ac935af861018f766ac2008ea3b9203aa3bbabe",
+      "sha256_depois": "68680889d002efcd9aae50543b53a7af4c689fa4d1519115cbe586cdcc583eef",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/medicao-f11e-sonnet/u3b-rato-concelho.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "70485da59dbe9fe6cd765ea9a2767e21daa3e8026f061c6e8e753b6b926f810d",
+      "sha256_antes": "7e2df2e8fee0ab898b1b1b2fc4e3b0812b454cdcf205777d3977a75d0653de32",
+      "sha256_depois": "c46f91bb8974ed004006d900792aa2f51e3f94002fe0f00112acfe1c16f81cbd",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/medicao-f11e-sonnet/u4-sem-guiao.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "3f3d2f53e425301629880b4b1cdfbe7d7e82d1d0dedc9fa7240ffd6a1cf18f05",
+      "sha256_antes": "50eacd25fd64930700ac03a59970fe07d12b5f49bc1522c53ddfaa620db8d919",
+      "sha256_depois": "78f97aa4f2bd5a8eee8cd779b82ca29fbe88e24c8028fdd6c32a57c8ea34b578",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/maquetas/b1/fazer.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "b6ad8213445408dad68964508fceafaea0a4ca38e8e920d846898852e1fba1f2",
+      "sha256_antes": "6c1975d78a3f3e2c75c4475d5229e5d316e6d18599ed26ba6bad0a9d9d0faa5b",
+      "sha256_depois": "73e42c96279d8c55a51daab872288e52d81b8b817444199fede35565b658cc33",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/2026-08-21-etapa-2m-invariancia.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "ddd2d7443bf8841f57a2a88836b6bad60fc3c38956c640cb51a394ad9d842e4e",
+      "sha256_antes": "c05d7052a5deff541b3c4a353efa92fc44d28d20f9c1e6179d90101dfbce6941",
+      "sha256_depois": "c05d7052a5deff541b3c4a353efa92fc44d28d20f9c1e6179d90101dfbce6941",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-17/astro-implementacao.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "65a5e749af17789149c9f9c7352b7125e27295f55f50b00699dab7e05c8919a9",
+      "sha256_antes": "8efb42202fc01135bbfba5cd9dde0810428227568430119460cae0db60965a49",
+      "sha256_depois": "8efb42202fc01135bbfba5cd9dde0810428227568430119460cae0db60965a49",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-17/build-antes-diagnostico.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "ff65e28e1cff1114bfbd9883bfc871921d7e8f2cde60b98f35f02c364d18bbef",
+      "sha256_antes": "235977a80e090f0e8474aff1c551eea6dd54c86b00499f85871f019e47a12a90",
+      "sha256_depois": "235977a80e090f0e8474aff1c551eea6dd54c86b00499f85871f019e47a12a90",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-17/build-peca1-primeira-corrida.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "f92498915a8c103f7b9b5ce37b5b2d61d78a6df36d5fb052e3652b5d4656804b",
+      "sha256_antes": "09b9b7a4fd70397325fad5888ee4d5499d1fe79bc987438048586cfb7f646923",
+      "sha256_depois": "09b9b7a4fd70397325fad5888ee4d5499d1fe79bc987438048586cfb7f646923",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-17/build-peca1.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "20976aaff60ad65a3f91c7aeae7841d1a6b2bdd688c0f864e568929d5fdf2dc9",
+      "sha256_antes": "00ba216f74d6426910248701e600fd9cac89bb3366727668c98aa790e23adf67",
+      "sha256_depois": "00ba216f74d6426910248701e600fd9cac89bb3366727668c98aa790e23adf67",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-17/build-validacao.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "41b0d48b6c4743701ba5eac1dfd75e5534928b3f2237bc1fa657807e87b62e53",
+      "sha256_antes": "3e449c8bf4ffb37e1192750de725231fcb3a5ebac150d22f576ac7415a08e394",
+      "sha256_depois": "3e449c8bf4ffb37e1192750de725231fcb3a5ebac150d22f576ac7415a08e394",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-17/correcao-planta-lugar-inexistente.txt",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "c66a013b43c16493ebde44227a4a443cdb484293c10d6f6d447628f65bd86c50",
+      "sha256_antes": "b46852f6b087998dcbf9bb5f89a4222ea888af2939511c3a8797b3f49e46ed5c",
+      "sha256_depois": "b46852f6b087998dcbf9bb5f89a4222ea888af2939511c3a8797b3f49e46ed5c",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-17/correcao-planta-lugar-sem-seccao.txt",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "d2c3c83928effd379992b096174c095137436b6bbb2130e9b3ac2b43fc5aeec3",
+      "sha256_antes": "54edda5ae65a3bcb852928f21a7bfa4b59832bfb4ec4f0d9b90684ddedb67201",
+      "sha256_depois": "54edda5ae65a3bcb852928f21a7bfa4b59832bfb4ec4f0d9b90684ddedb67201",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-17/correcao-planta-teto-sem-medicao.txt",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "d7d65d16f1ea5b929646e481a5c93f1ee17ad6f76f64d967a9c2b15c130e42f1",
+      "sha256_antes": "044c9c996d98afdf1f018b2fb979c96ddea273aeb079e910735723c32cc4b97b",
+      "sha256_depois": "044c9c996d98afdf1f018b2fb979c96ddea273aeb079e910735723c32cc4b97b",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-17/verify-antes-diagnostico.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "5ecbb6965e265ca208f0459966ddb95f10d02ddc1cfad61d9744e133dca7b544",
+      "sha256_antes": "14deb3cac88b8d39f89ca205a08d15c98b32c808eea2ff0a81a0f8eb51ea62a1",
+      "sha256_depois": "14deb3cac88b8d39f89ca205a08d15c98b32c808eea2ff0a81a0f8eb51ea62a1",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-17/verify-peca1-primeira-corrida.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "af95ebf54b48770c005eaceab55d080351c9cc11c44352df899699297d04d2e0",
+      "sha256_antes": "d93d91b2ee4754be9d29a089c477e765acb89799d5f512f452301572fca69f13",
+      "sha256_depois": "d93d91b2ee4754be9d29a089c477e765acb89799d5f512f452301572fca69f13",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-17/verify-peca1.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "b460fe7a162922ab6a2f0479eec457bf3ded5baa48e06a30ff956a9a491483a3",
+      "sha256_antes": "9a604f65e8321d5d9aba78dc948d4d368f2d01c164849921a63f9d047938b6b6",
+      "sha256_depois": "9a604f65e8321d5d9aba78dc948d4d368f2d01c164849921a63f9d047938b6b6",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-21/build-peca2.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "42740ed83beef9f9cba745c6880930c39e2efdd8038ad55bd83bf8f8b9d1d7ac",
+      "sha256_antes": "4e6841018b1f8c0f21076ec92dd1c60af45493fe21c33a813ff12977281458d3",
+      "sha256_depois": "4e6841018b1f8c0f21076ec92dd1c60af45493fe21c33a813ff12977281458d3",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-21/prompts/PROMPT-b1-opus-peca2-correcao.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "c047f451696160d6e554d0e6bc9246453e9404bca06b5489365a38bc47fde6ff",
+      "sha256_antes": "9e2b126564c3d3660c35c5eba0287a3a05284378284844ab3533408d1e9a86df",
+      "sha256_depois": "9e2b126564c3d3660c35c5eba0287a3a05284378284844ab3533408d1e9a86df",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-21/prompts/PROMPT-b1-opus-peca2.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "4ef6fee40166328281eb73c449cbe4fbac3f96cc98d20dbb04073e8706c36cdf",
+      "sha256_antes": "fb3e2a286d4df0d40664d943ee0c05c671672e0c6683d150daca8f776341b5f2",
+      "sha256_depois": "fb3e2a286d4df0d40664d943ee0c05c671672e0c6683d150daca8f776341b5f2",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-21/verify-peca2.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "c73a8dff3aa51dcb2dcaa79a009bb65cef8b403831a0e3123cd84846d696fbc0",
+      "sha256_antes": "03c442d6bcc8b0411fb646ef541eb3bea6a96eafa591313afd9a7144fa20bc25",
+      "sha256_depois": "03c442d6bcc8b0411fb646ef541eb3bea6a96eafa591313afd9a7144fa20bc25",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-22/alvos-peca3.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "33ba6d767c97e64ef17febe0a36f3a4c106acd719f60f583347250b457706eea",
+      "sha256_antes": "b1a8674547afc5e3074b6c7983356216205b7f17a87931f61d3b5e8b3337149a",
+      "sha256_depois": "b1a8674547afc5e3074b6c7983356216205b7f17a87931f61d3b5e8b3337149a",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-22/alvos-segunda-correcao.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "26b87c7e68f4ca5589cae1f2ca32dbbc30dbe5f278da64142b3e98e855072614",
+      "sha256_antes": "d8e220690f2b2c15c5b472c26b8f50f2b7347481d8e10c0a711a49ad869d5861",
+      "sha256_depois": "d8e220690f2b2c15c5b472c26b8f50f2b7347481d8e10c0a711a49ad869d5861",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-22/build-peca3.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "c4da11a5b95786eae4b2710faa7364c26ddf9c340f42707df2173c4f9314223e",
+      "sha256_antes": "7e8e0af18a8d6b04c88ff0b2ebbbb7142c6f0ba2d43fb53e232489a3c0e7e053",
+      "sha256_depois": "7e8e0af18a8d6b04c88ff0b2ebbbb7142c6f0ba2d43fb53e232489a3c0e7e053",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-22/indice-final-peca3.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "153761f01c4d1e4b01075ccada1474c2556d1617edb0be733abb15c967334227",
+      "sha256_antes": "e61a49c4e561c7fd32bf48a9713726e63fc698d6843cb9373ce4a1eabafbc2f8",
+      "sha256_depois": "e61a49c4e561c7fd32bf48a9713726e63fc698d6843cb9373ce4a1eabafbc2f8",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-22/indice-peca3.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "00be618d130145e2b6caf0b406ee5513e71ead8af48c1469c7680b620790b25c",
+      "sha256_antes": "33950b05b23f2965fa4e9ad24bb5f43d1401011b94e4a7dc81566572f8108bac",
+      "sha256_depois": "33950b05b23f2965fa4e9ad24bb5f43d1401011b94e4a7dc81566572f8108bac",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-22/prompts/PROMPT-b1-codex-peca3-correcao-2.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "6dd6e5d8b1aca88f20507424baf07955204b878cafe6e17101c09cbb08568a81",
+      "sha256_antes": "d79e201337ad059ca083157d461aad6d34a30e9a4c1fff184b3c3da914a6a692",
+      "sha256_depois": "d79e201337ad059ca083157d461aad6d34a30e9a4c1fff184b3c3da914a6a692",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-22/prompts/PROMPT-b1-codex-peca3-correcao.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "639bd05a35c23f43bb2bb3de0ff8a3ecda945e67f3b2c248d84554b1617a2640",
+      "sha256_antes": "197f82d059f74fc2f616d3b22031edb79c9e88cd5f818aa34dd68ca7444d3c45",
+      "sha256_depois": "197f82d059f74fc2f616d3b22031edb79c9e88cd5f818aa34dd68ca7444d3c45",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-22/prompts/PROMPT-b1-codex-peca3.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "ccc901bc563609bf975e4694ec76bea487a12f93b353e7853c0a6bb5303d4157",
+      "sha256_antes": "c816f04c86e7249171fabb9ee263d7ff236da16cf989440e9933924e439bdefa",
+      "sha256_depois": "c816f04c86e7249171fabb9ee263d7ff236da16cf989440e9933924e439bdefa",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-22/segunda-astro.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "d559ffee6f5f630c06d10641144c2aaa39a9807418a8615cc1fff1cf58f41370",
+      "sha256_antes": "509ab4c049a60c8cb1261a2745829d044fd913f2c3bfb524731787e95cbbfe98",
+      "sha256_depois": "509ab4c049a60c8cb1261a2745829d044fd913f2c3bfb524731787e95cbbfe98",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-22/segunda-paleta-ausente.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "04e223493cf5194fa100d508ec90bfd604b1fd35c80ad68c5fb6ebe87f4e259a",
+      "sha256_antes": "53a92641e4d2e25f0844a19ffa1d31d5c6919abfe0b6ea76bee3c08220f84d82",
+      "sha256_depois": "53a92641e4d2e25f0844a19ffa1d31d5c6919abfe0b6ea76bee3c08220f84d82",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1-2026-09-22/verify-peca3.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "2d0d93605c330e2f7e94a228c335551ebc11fd2bd68bbefd8cc4eb4b1905bac5",
+      "sha256_antes": "08cdd57ccb7082f4c65723487676b4a93fdf8ccda0a9d02c95e7541054df6c0c",
+      "sha256_depois": "08cdd57ccb7082f4c65723487676b4a93fdf8ccda0a9d02c95e7541054df6c0c",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1c-2026-09-22/portoes/build.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "c7d6b8b9e1d882d0483e726e9ac2b1a5b23870c8edce2dd20e5cf80e86317ed5",
+      "sha256_antes": "efd2dae7ada3504df138e4680dcb7f71fa3a2804e4fbd4bf5b231cc7041000e6",
+      "sha256_depois": "efd2dae7ada3504df138e4680dcb7f71fa3a2804e4fbd4bf5b231cc7041000e6",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b1c-2026-09-22/portoes/verify.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "b0b5b131ee27fa824c9f02cd0a7242df3665dca16ff3723f5c3d3afb787a82c8",
+      "sha256_antes": "dd894ad7bb0d18e4077f3b714f970df19a6c442db290f6e64db690bf2adde360",
+      "sha256_depois": "dd894ad7bb0d18e4077f3b714f970df19a6c442db290f6e64db690bf2adde360",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/RESPOSTA-codex-peca1-correcao.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "11a0a6dae3dac310607f0e40032fa17102bede62f9b7c94ba9ff62088b9f993d",
+      "sha256_antes": "5b51abcde9af3ab3d71a2975cab667b0f3314b6b9368b3e3f479bdf61259db6a",
+      "sha256_depois": "5b51abcde9af3ab3d71a2975cab667b0f3314b6b9368b3e3f479bdf61259db6a",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/astro-antes.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "986fd85a24d4cc29832eb1a7be47433532fbaa711b4fff62437fd0879b71e879",
+      "sha256_antes": "f898fd2d7c353eb5df31b90000c000312af8aaeb90fe733d1a5004ee8722c6fb",
+      "sha256_depois": "f898fd2d7c353eb5df31b90000c000312af8aaeb90fe733d1a5004ee8722c6fb",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/astro-trabalho-2.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "eebc9ce7a50759293e9c2d19640b17d86b702ec87d833bcc42f86b5758e06f23",
+      "sha256_antes": "59f8f8c181910c9839d5c92f73cc59f186499a980f98769f49b13ad8c01066c5",
+      "sha256_depois": "59f8f8c181910c9839d5c92f73cc59f186499a980f98769f49b13ad8c01066c5",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/astro-trabalho.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "f764c545188c57b4fa723f6c5eff00b63f5b663e73a3a9fb11a39f1264ac1539",
+      "sha256_antes": "e0bf90881b5f353834311b489db6db08f1a1a54d44cda448a9643781db937865",
+      "sha256_depois": "e0bf90881b5f353834311b489db6db08f1a1a54d44cda448a9643781db937865",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/caso-portao-ue.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "a62b7f2973714750d979ae844f534ab8fdf7b2f9a9404799d8bc84aa7f5160fc",
+      "sha256_antes": "a5f9dcf86ee866e53897eb60ed296ef7ea2d948786592570a17a92ab3cd96a2b",
+      "sha256_depois": "a5f9dcf86ee866e53897eb60ed296ef7ea2d948786592570a17a92ab3cd96a2b",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/correcao-2/conferir-fonte-cfp.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "bcf8456e1980863ae0cedd3ed97151cf91cd6a5bd81a220822817d7897a50247",
+      "sha256_antes": "5700c0ca9a45cf5cad37ef314ae10598b1ce9c8eb37e7a7d69e4250db7674ecb",
+      "sha256_depois": "bcf8456e1980863ae0cedd3ed97151cf91cd6a5bd81a220822817d7897a50247",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/correcao-2/fonte-cfp-planta-grafico.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "e49102fdc5063e256cc59464d41d1f1c75266ac319ecd7fab0ac71d2812e801d",
+      "sha256_antes": "f687db27399c0302c01e5ce57fabde0629b0de4294df164c0b02f0cd55d32fb6",
+      "sha256_depois": "f687db27399c0302c01e5ce57fabde0629b0de4294df164c0b02f0cd55d32fb6",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/correcao-2/fonte-cfp-planta-leitura-antiga.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "e4055a9892e8aee017fd3a9742172a4b82db3db425ee9e6a1cf61079fcd374cb",
+      "sha256_antes": "09eb83578bc00bb2b77a3534138084124e8ed430f9d4dc0b93ce93cc1c5b5077",
+      "sha256_depois": "09eb83578bc00bb2b77a3534138084124e8ed430f9d4dc0b93ce93cc1c5b5077",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/correcao/construcao-trabalho.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "4517c6407d5c86849e022ad0aa737486ce4198e06bd49dc39cb6f5b099caa0e8",
+      "sha256_antes": "865a745e6180d550abadddd36c4014a634f221f020e47976578d1735cc062d65",
+      "sha256_depois": "865a745e6180d550abadddd36c4014a634f221f020e47976578d1735cc062d65",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/correr-portao.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "a1ad9b6c06151740d47341f36df32fed9d6050531b984f08dc3b3eca50e556c1",
+      "sha256_antes": "a0c7f21337889ee3f48753978ef63a6efb967a47fc7e311831580b4d36d554d0",
+      "sha256_depois": "a1ad9b6c06151740d47341f36df32fed9d6050531b984f08dc3b3eca50e556c1",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/medidas.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "42328001ebb18fed6e91593dbf393ad81e5ca0c9f9ff5e91f89c9f979c087651",
+      "sha256_antes": "4217cea5a635b3fd0b201a48789078fa60b4f0484f7fdda66e01a18069cc05e9",
+      "sha256_depois": "4217cea5a635b3fd0b201a48789078fa60b4f0484f7fdda66e01a18069cc05e9",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/medir-correcao.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "577f25eb626704ec7d363442d734fab7a4b97273cb19af1686708e0a874c369f",
+      "sha256_antes": "6ed213b63a8b84a1eaea67d7237af4cf7f05ff4c7a1c5a0da72e4dce1fdc5341",
+      "sha256_depois": "577f25eb626704ec7d363442d734fab7a4b97273cb19af1686708e0a874c369f",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/medir-perguntas.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "0b61d8d87d47c4551a7d273a116e63ea8a84894c5bc56be613c388c696d08f2f",
+      "sha256_antes": "fefd6817520037a1ce18c6afda0b23ccb78bf05e5b1b38f96d37e3e5adc3dee1",
+      "sha256_depois": "0b61d8d87d47c4551a7d273a116e63ea8a84894c5bc56be613c388c696d08f2f",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/motor/export-ensaio.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "4ad7e3487126c3f0b32842f9e2dd38c1c64ed17939dd04a439343183893efca3",
+      "sha256_antes": "83bb803016b1a8f41c33f3145bc3e01e59debfde52b1a0e63a94a2c3cfcd9097",
+      "sha256_depois": "83bb803016b1a8f41c33f3145bc3e01e59debfde52b1a0e63a94a2c3cfcd9097",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/motor/export-write.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "2a0a964ba0ba5c24de0a9adcb11c6c81a137e96adefa9ec418073f348bd977c9",
+      "sha256_antes": "d18db40824c80bf1de8459caaf8fd065603cc429bc4d7ab4dc202260321d50a1",
+      "sha256_depois": "d18db40824c80bf1de8459caaf8fd065603cc429bc4d7ab4dc202260321d50a1",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/motor/passagem-2/exportar.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "807c4846f7d3ca9fed84392114501030e9e298d47d186f1114c593d7651a0238",
+      "sha256_antes": "54baa0cbb7dea79dd4daa6b34b8f1b8d21b96ed568d3ec6f871c01c7456244c1",
+      "sha256_depois": "54baa0cbb7dea79dd4daa6b34b8f1b8d21b96ed568d3ec6f871c01c7456244c1",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/motor/reexportacao.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "985bcd06be14f6711f76598cf49767828edc82eb99ac38f26e38a365470b001f",
+      "sha256_antes": "5538e7f4fcfe7b979f058fff93d9b710284d92952e1db1f6cd3a45fc1b00b728",
+      "sha256_depois": "5538e7f4fcfe7b979f058fff93d9b710284d92952e1db1f6cd3a45fc1b00b728",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/portoes-2415107b/build.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "6f5d6ba8d6bdd96ce41d57df90d2be3a6ba68f83be8cbb87935c856c20d94925",
+      "sha256_antes": "cfa417f5343b3ec1818cfaa39e1c256f0d02a517828b0d450ea79b1e1420d70d",
+      "sha256_depois": "cfa417f5343b3ec1818cfaa39e1c256f0d02a517828b0d450ea79b1e1420d70d",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/portoes-27a8f4c1/build.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "8852773301d0eea217e4a921746bfd7865b5ba192b13f05742e17aef1186ae48",
+      "sha256_antes": "dbd2c451ff7e09883ff2f406781d46e3ae0450bca059bd5e01908e6a4a541c32",
+      "sha256_depois": "dbd2c451ff7e09883ff2f406781d46e3ae0450bca059bd5e01908e6a4a541c32",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/portoes-d75f869e/build.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "f84b6a3fd3aa7461df44d8cf1dd5a6e94036991a83603e6330e06de97fdbf319",
+      "sha256_antes": "3548372a8fce46ee82dbc65e284c48998aac350eaf8b022f81b493080b4386d6",
+      "sha256_depois": "3548372a8fce46ee82dbc65e284c48998aac350eaf8b022f81b493080b4386d6",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/portoes-e774add0/build.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "28313cf943fcac360e24a3443faf4339e8bbfbcaa0cd9fcc4da65c74cea9c6cc",
+      "sha256_antes": "0a3927d6efe7d7b02691a26eb0a4a7c1dfd64571c772a9fd42bc259f56f11396",
+      "sha256_depois": "0a3927d6efe7d7b02691a26eb0a4a7c1dfd64571c772a9fd42bc259f56f11396",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/portoes-e774add0/verify.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "1913f020f4bfc67046076834c5cebde47c72c4dcd9848b49668ed60f4f851477",
+      "sha256_antes": "6eb5c98fb71b23cd20be000824ce5f918dd42ae406a43f0bf9c0920288c7bca2",
+      "sha256_depois": "6eb5c98fb71b23cd20be000824ce5f918dd42ae406a43f0bf9c0920288c7bca2",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/portoes/build.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "6918bbc412b7bfaa1d6f8938933bb4086c0a9fb032e44a831a1e6ca19f2df3b4",
+      "sha256_antes": "a00f9e43062cd073e19669224fc16596ec9d3156b6feed8e6c2ab4185293a405",
+      "sha256_depois": "a00f9e43062cd073e19669224fc16596ec9d3156b6feed8e6c2ab4185293a405",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/portoes/verify.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "d77825566e689cf5eb3fc06a49a743b9fa0db92fde5c897c3f3c1bb60ebe98d8",
+      "sha256_antes": "72ee83b3575fdb52478dfa964ef5a74445fa46e5b684a0025f9dbea95319a7b7",
+      "sha256_depois": "72ee83b3575fdb52478dfa964ef5a74445fa46e5b684a0025f9dbea95319a7b7",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/prompts/PROMPT-b2-codex-peca1-correcao-2.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "ce497477d1e6751f6e8d422927fa86b143e9033c8bbd79c417dfa8a8fc717469",
+      "sha256_antes": "795cfbc13adc904bf4606ea698a1d8150af2ce884b9b6997636a4c8ab63d3c2c",
+      "sha256_depois": "795cfbc13adc904bf4606ea698a1d8150af2ce884b9b6997636a4c8ab63d3c2c",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/prompts/PROMPT-b2-codex-peca1-correcao.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "3b1c81690294403678b0278e6ac51dec81b95ac08f1db90f25b2e2fd4bcd653a",
+      "sha256_antes": "fe9b255681c2db99b3d389c793a64902c10c1079a9dc261ba53854a443dafa70",
+      "sha256_depois": "fe9b255681c2db99b3d389c793a64902c10c1079a9dc261ba53854a443dafa70",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/prompts/PROMPT-b2-codex-peca1.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "79831cc2662d575a9ab6228877823c669771291c36c32df1075d65986479213d",
+      "sha256_antes": "b350965bcf277fe0276bed3317f2b7e60ebb48d340d006ac2e2426686ce01344",
+      "sha256_depois": "b350965bcf277fe0276bed3317f2b7e60ebb48d340d006ac2e2426686ce01344",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/prompts/PROMPT-b2-opus-peca1-correcao-3.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "5320d4da4a8399ccfd68cc72cbdb2ae18acb2eaf75f4660a9d7746b2235fd01f",
+      "sha256_antes": "4cfa4640c25a908e5ffb5ef1f23d17910b9e393f475839b3d40c905daaebdc7a",
+      "sha256_depois": "4cfa4640c25a908e5ffb5ef1f23d17910b9e393f475839b3d40c905daaebdc7a",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/recolher-motor.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "c789c3cc75fe669419304360760a25f418f41dc13a07445972d0ab89f209b648",
+      "sha256_antes": "e6c6b703c0f7cdc216c04386ef453cf0df2a15a57d2db7aa958fe439714db22a",
+      "sha256_depois": "c789c3cc75fe669419304360760a25f418f41dc13a07445972d0ab89f209b648",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/LEIA-ME.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "0691068ae304053a43c05812d83d1225c9f9e6a987470aa11c822cb616ebdd00",
+      "sha256_antes": "a031dd4a3bc57362952c12078f3d05709010a68f13af9bea0e6acdf0806a4774",
+      "sha256_depois": "a031dd4a3bc57362952c12078f3d05709010a68f13af9bea0e6acdf0806a4774",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/medir.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "6e3c5e18eeb1bbc9f540f85c676d7c5d7af4ccb6f0304517f9a8895000b3050a",
+      "sha256_antes": "42b009cf3ba6be54b6d255fa04e4a510ad869c05bba5c459abdc38c66115c223",
+      "sha256_depois": "6e3c5e18eeb1bbc9f540f85c676d7c5d7af4ccb6f0304517f9a8895000b3050a",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/circuito-divida.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "39d2a65274de7106331f6496ad1d8359f1686794308b9f9a8f3d8764c2036aba",
+      "sha256_antes": "5566de949e13f02c469f1fe666a84ddf5502ddebb0e1f9f2e70a2d6e16fec66a",
+      "sha256_depois": "5566de949e13f02c469f1fe666a84ddf5502ddebb0e1f9f2e70a2d6e16fec66a",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medidas.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "9c03c9647d07ffa3046912ad85097635572c352db46c6b40ddc158fd7103dc97",
+      "sha256_antes": "3a6d2954fa04812177e85851b68b1d93e21052ffe24d94bb15d4cad03a6733f1",
+      "sha256_depois": "3a6d2954fa04812177e85851b68b1d93e21052ffe24d94bb15d4cad03a6733f1",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "c7f605a800a0e263e19506c763cbd8094d3939a4205f3be18ab3ce83f473dd66",
+      "sha256_antes": "6cef01c6a5a4a3939a286ca3a6d9f964010025a0919ca2d15cfaccc6cd71b420",
+      "sha256_depois": "c7f605a800a0e263e19506c763cbd8094d3939a4205f3be18ab3ce83f473dd66",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/motor/commit.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "06331d9b00716aa6652b7da83a3163980fd5284f33fb531b79018f541634cf3e",
+      "sha256_antes": "cd50e38905056c14e8f624ef46e18a82cb4576c33c68df172b7fd2967e068a21",
+      "sha256_depois": "cd50e38905056c14e8f624ef46e18a82cb4576c33c68df172b7fd2967e068a21",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/prompts/PROMPT-c1-codex.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "0dc03617b5a7c632181dee7fdb2e552f197c29ff5a1d299689e4a1195e56da57",
+      "sha256_antes": "7df9829db0b5200ba4f779ccca8cf6501dc9ed8e3559eccc4d38a613dfe8caed",
+      "sha256_depois": "7df9829db0b5200ba4f779ccca8cf6501dc9ed8e3559eccc4d38a613dfe8caed",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/prompts/PROMPT-c1c-codex.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "d8fd1e245244382fd466230be1e1adb9a0f161f281d9a3fb5216bb443074e659",
+      "sha256_antes": "62bdf6a12d4e3b2715cfdc6655c8d7e0373574aab568669216361dfd8400cad5",
+      "sha256_depois": "62bdf6a12d4e3b2715cfdc6655c8d7e0373574aab568669216361dfd8400cad5",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/provar-circuito-divida.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "07741e7244c02704810db7587e49a5d51dafd82427d023a40bf708aea204fe2a",
+      "sha256_antes": "43b24198e87b8e848c7d67f4a0fc57f141cff4714bf40f452a0bcbc8d04f0bb9",
+      "sha256_depois": "07741e7244c02704810db7587e49a5d51dafd82427d023a40bf708aea204fe2a",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/registar-c1.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "b1a838338e15139519ae8d6024a63245f10ed8dc33d74ed3bdbd3f6d7e6e2ebd",
+      "sha256_antes": "c3adf1cbb2c4a0027541e814b766563ef65bc3bd60046e8cddcc60dd22b5de03",
+      "sha256_depois": "b1a838338e15139519ae8d6024a63245f10ed8dc33d74ed3bdbd3f6d7e6e2ebd",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/c2-2026-10-05/motor/gate-1.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "1a9d06770668338f6aa1cd3069e69d248fd6b8f2289ccad302f70e136a69b292",
+      "sha256_antes": "390b5edfa3ab0a4bd54ac4d9576d0a4106e41d800edad007eac1d7a223b426ac",
+      "sha256_depois": "390b5edfa3ab0a4bd54ac4d9576d0a4106e41d800edad007eac1d7a223b426ac",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/concelhos-M5-sonnet.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "0e52ea77e6db59a4961c0a17ee5a906a662feb4d0215ceab77a372915fc35252",
+      "sha256_antes": "bda454a5899fa93dec988e3c4ef2515f1c83be997acc80a54e037d1c81c58e00",
+      "sha256_depois": "bda454a5899fa93dec988e3c4ef2515f1c83be997acc80a54e037d1c81c58e00",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/concelhos-M5-sonnet.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "23d75123db94107a17176b18dfad246582905ab39c61ff41d520edeea994010b",
+      "sha256_antes": "0dadd2e1afa8e1583138bbb6453052e37421d894b8d67597167e727b7fc4dccc",
+      "sha256_depois": "b4980dcd62864fdcbb7976cd3abb99f2aabc8831f02fec866a7bf5fcf05f5866",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/e1-2026-09-16/LEIA-ME.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "fc64988cd13096602f0d5d39b60b077bd5b6a7b0bf90b0c4a3d573888cd50213",
+      "sha256_antes": "7d045ce3bb0ef101038769a8415b26eaf9a29fcc4e9d67135e9929766032353a",
+      "sha256_depois": "7d045ce3bb0ef101038769a8415b26eaf9a29fcc4e9d67135e9929766032353a",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/extrai_fontes.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "827123901270753f9fb484af19172b14961fe0f6f62221eb592f85602bb806b9",
+      "sha256_antes": "4742efc26cf040551de316398d464d27891850dc01454a2ec788647e95201d40",
+      "sha256_depois": "827123901270753f9fb484af19172b14961fe0f6f62221eb592f85602bb806b9",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/higiene-construtor.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "193b8d21862f6276b131ac249a06022e5c299f722909ef56815eab0f54c3bca4",
+      "sha256_antes": "1be3fdcc19bb8486046af211ec9e0070ac7e68738be0414f6a87a1adbdafce35",
+      "sha256_depois": "1be3fdcc19bb8486046af211ec9e0070ac7e68738be0414f6a87a1adbdafce35",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/i129-2026-09-22/build.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "531f7545b925d5352168e3dddf1c3d435bf626505037d59b824ae8f98085cc45",
+      "sha256_antes": "17f4be0cdb51ff7585968d71ad22a56acf2955b1e2ceb734df2e4183c8f1592b",
+      "sha256_depois": "17f4be0cdb51ff7585968d71ad22a56acf2955b1e2ceb734df2e4183c8f1592b",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/i129-2026-09-22/verify.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "29ea6c334be02ee21050222fa319a69c24af7fefc1cc1f78d0c5ea0a672e9336",
+      "sha256_antes": "b21e3e3cd9cf0240eb8c810fc465257ae505967f5b3035acdf54c34b110a5268",
+      "sha256_depois": "b21e3e3cd9cf0240eb8c810fc465257ae505967f5b3035acdf54c34b110a5268",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/ilhas-M6-sonnet.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "05df2dbb4c8c9eb0d791912dd989a5f18db2508925f966b830f6296ba1439547",
+      "sha256_antes": "eeb71415faeb58eb219d77560ef28b58d4b65e55856d25a60856c1607a36ace6",
+      "sha256_depois": "eeb71415faeb58eb219d77560ef28b58d4b65e55856d25a60856c1607a36ace6",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/ilhas-M6-sonnet.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "d4af108216ff6875733bd2e73910f0e2ab29e896727d61601438d687481e6ae9",
+      "sha256_antes": "025f4120bb0dbd5883cb4897c4a4672bc1fe05da9e11139b1c21ac8dea18e16c",
+      "sha256_depois": "46fdf75dcee14a4e49b2a4fecbdbfacab64f07a5ea6ebd3d26adae9c137c3af9",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/ilhas-M6-sonnet.resultados.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "fb1494de332b206b69ba692f1b114434eb74321295fdd2d2b1b5a9fd8bd385f1",
+      "sha256_antes": "4dcb86d6d578429cd1bb7d0ff0b2259415f20e6ba73addb0139f6213b14a5f5c",
+      "sha256_depois": "4dcb86d6d578429cd1bb7d0ff0b2259415f20e6ba73addb0139f6213b14a5f5c",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/inicio-lista-M11-nucleo.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "024ebea37a09b7f09e11393d1ca06b7ed49af5a314994ad295d886b820eef14d",
+      "sha256_antes": "7e533a3eb4194ab28c6231d4c2197943ac75052ae895bc19ad7d745157229326",
+      "sha256_depois": "e74c1cc748be0dffa5b5b9f8339cf73bf6bdca55c5966f0a20469aaa1d6f6792",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/inicio-lista-M11-sonnet.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "ef9b4ef9aa05f5d26a58122eaa32de18db7e944262b5906b04bfc12af13a559f",
+      "sha256_antes": "cf8fc040382d4e28dfd58d255aa1e8aefac6b3df43eae8f96c8d2f81112c2187",
+      "sha256_depois": "1839c77e948a8c3e86173f1c32af7ab8054c1937d3132307d0aace8e6df04675",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/inicio-lista-M11b-sonnet.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "4887870f76308db03c70fed6b106a7e3e18fed878fdde1bd66f974b8daff1c74",
+      "sha256_antes": "299807a1fa25fbf19d85ff37b00d208986e3bba76d81b2b427aeca81cb8366c3",
+      "sha256_depois": "e1fc6d2608e01304c6062cfddf3f3a7a9feada3b1a3af74ab43198760b9a86dc",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/LEIA-ME.md",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/captar.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/capturas-b.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/controlos-b.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/correr.py",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/familias.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/mapa-fusao.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/origens-provadas.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/origens.py",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/alvos.json.gz",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/auditoria-fecho.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/briefs-conferencia.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/build.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/build.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/build.inicio",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/build.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/cabeca",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/cabeca.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/cabecas-complementares.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/compressao.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/cruzamento.cabeca",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/cruzamento.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/cruzamento.execucao.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/cruzamento.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/estado.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/export-series.cabeca",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/export-series.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/export-series.execucao.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/export-series.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/limpeza.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/mapa-final.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/motor.cabeca",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/motor.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/motor.execucao.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/motor.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/recuperacao-tranca.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/series-temporais.cabeca",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/series-temporais.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/series-temporais.execucao.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/series-temporais.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/series.cabeca",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/series.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/series.execucao.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/series.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tempos.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/alvos.json.gz",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/build.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/build.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/build.inicio",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/build.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/cabeca",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/cabeca.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/cabecas-complementares.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/compressao.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/cruzamento.cabeca",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/cruzamento.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/cruzamento.execucao.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/cruzamento.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/estado.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/limpeza.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/series.cabeca",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/series.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/series.execucao.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/series.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/tempos.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/typecheck.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/typecheck.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/typecheck.inicio",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/typecheck.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/verify.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/verify.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/verify.inicio",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/verify.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/1e706931/verify.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/build.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/build.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/build.inicio",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/build.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/cabeca",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/cabeca.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/estado.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/limpeza.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/tempos.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/typecheck.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/typecheck.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/typecheck.inicio",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/typecheck.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/verify.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/verify.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/verify.inicio",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/79ed513d/verify.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/alvos.json.gz",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/build.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/build.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/build.inicio",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/build.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/cabeca",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/cabeca.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/estado.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/limpeza.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/tempos.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/typecheck.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/typecheck.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/typecheck.inicio",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/typecheck.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/verify.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/verify.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/verify.inicio",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/verify.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/tentativas/da42d05a/verify.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/typecheck.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/typecheck.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/typecheck.inicio",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/typecheck.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/verify.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/verify.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/verify.inicio",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/verify.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/verify.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/vs1-vs7.cabeca",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/vs1-vs7.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/vs1-vs7.execucao.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-b/vs1-vs7.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/alvos.json.gz",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/build.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/build.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/build.inicio",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/build.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/cabeca",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/cabeca.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/estado.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/limpeza.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/tempos.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/typecheck.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/typecheck.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/typecheck.inicio",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/typecheck.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/verify.codigo",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/verify.fim",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/verify.inicio",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/verify.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-fusao/verify.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-iniciais/sitio.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-l1/sitio.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/portoes-lingua/sitio.log",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/jd1-2026-10-06/tranca.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/l1-2026-09-24/prompts/PROMPT-l1-opus-correcao.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "c73947795f2d497c587e796102ca5ff659a5c9f40a5db9fa1f1de5731e04a631",
+      "sha256_antes": "ef394be4b6b372b8e7df5f74be80b70fb8bdc23844b29eee76cc29f9e214bdf6",
+      "sha256_depois": "ef394be4b6b372b8e7df5f74be80b70fb8bdc23844b29eee76cc29f9e214bdf6",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/l1-2026-09-24/prompts/PROMPT-l1-opus.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "bb406f6d2e66f922ccbd2058045ea16b8854308267e66c3289f9334deb66567b",
+      "sha256_antes": "fb1d5d9e2bb976ac8c8537ad308d1b135860457036ebf7d6fb544e217f234910",
+      "sha256_depois": "fb1d5d9e2bb976ac8c8537ad308d1b135860457036ebf7d6fb544e217f234910",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/leitura-construtor.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "8ab7a0918b8d8e60331e8f01efdac33146614990410a77028d615e087f5b01b6",
+      "sha256_antes": "8248367fb31bc2f70d66fa5aacf7831bf67a73ccaf14bb66398304dcbb7e2d3f",
+      "sha256_depois": "8248367fb31bc2f70d66fa5aacf7831bf67a73ccaf14bb66398304dcbb7e2d3f",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/lugar-2026-09-04/leitura-2026-09-14-tarde.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "d9e7d75efb6811a78388fb62f5913458b3a423f8e4b37458c234c3829c6d5dae",
+      "sha256_antes": "dfda76e767f66a2b2750e001d0784c82bba5fc7356a83591058311e756acb331",
+      "sha256_depois": "dfda76e767f66a2b2750e001d0784c82bba5fc7356a83591058311e756acb331",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/lugar-2026-09-04/leitura-2026-09-14-tarde.txt",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "7719303e6b51e7245ffdc2014ddb7168caafdbb7b436aa932d68ade55d58feef",
+      "sha256_antes": "fab16890197486ea8ac9b0d0d70785338f93d808c02eaee5f633317c0c9ed878",
+      "sha256_depois": "fab16890197486ea8ac9b0d0d70785338f93d808c02eaee5f633317c0c9ed878",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/lugar-2026-09-04/leitura-plantas-2026-09-14-tarde.txt",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "21407e155bc4d2b832c7d6e48670f147ee44adf4cdacc4c05f6180aa1942ea14",
+      "sha256_antes": "30c6bfa62d01a6b546884e0540dc83c32e9b1ab56e8fdb25736d1d02439ddf8f",
+      "sha256_depois": "30c6bfa62d01a6b546884e0540dc83c32e9b1ab56e8fdb25736d1d02439ddf8f",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/lugar-2026-09-04/porta-2026-09-14-tarde.txt",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "2e9c3af746a1c6a14fa320c267fec5c08ba45a38e17eeee2c925e02d66358ec3",
+      "sha256_antes": "453589d7c425bc00de59d2b88053b834514778f9a8ae36d5cc925374f4e51297",
+      "sha256_depois": "453589d7c425bc00de59d2b88053b834514778f9a8ae36d5cc925374f4e51297",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/lugar-2026-09-04/porta-2026-09-14.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "fcb1b6ab35c3baf040f1cd8cdc0d6d3f2d9afd46c9107647af114b1dfed9c2e4",
+      "sha256_antes": "15815fd34dcbc4a85fb2030f91d9ce5ecd79e22a554870f7a76baf4956c67676",
+      "sha256_depois": "15815fd34dcbc4a85fb2030f91d9ce5ecd79e22a554870f7a76baf4956c67676",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/lugar-2026-09-04/porta-2026-09-14.txt",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "6a3c94ef788ec30e9947724d746650282194933cc8bd297cb966177fdf9ffef6",
+      "sha256_antes": "e3829e8dd1467b0a5ea3f55dfb3ebd022a218261ffd44456b54edeec50efc0ff",
+      "sha256_depois": "e3829e8dd1467b0a5ea3f55dfb3ebd022a218261ffd44456b54edeec50efc0ff",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/m3b-2026-09-22/build.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "380bfa511b55766b86b8a9beba68535b68b51e0fbdc1f568fbddc07d236ed93e",
+      "sha256_antes": "889a06e70a5f200ea7ef307c528fda5ad5fef71cf67cb7f3b6f082335599323a",
+      "sha256_depois": "889a06e70a5f200ea7ef307c528fda5ad5fef71cf67cb7f3b6f082335599323a",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/m3b-2026-09-22/verify.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "dabbdcfe52f0875142673173afbaf7271a17000fac48991cefe668563ecc5dc1",
+      "sha256_antes": "818b7173d8501b6ffe0e6bd88ed81e706c256e91f5cf6fa6dcdaf4b8321b39df",
+      "sha256_depois": "818b7173d8501b6ffe0e6bd88ed81e706c256e91f5cf6fa6dcdaf4b8321b39df",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/m5-2026-09-22/build.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "cbfc7c131b4c0fc4f925726ea9ab7f2ea726fcb80dd85c689a5ae6a75089a7a7",
+      "sha256_antes": "c97bdce55f9ab0f57669fe4d13c6e816203c061620565007a830a887b82a115b",
+      "sha256_depois": "c97bdce55f9ab0f57669fe4d13c6e816203c061620565007a830a887b82a115b",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/m5-2026-09-22/verify.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "ccf1799cfc20226b502678011a3704427047bd4b54a15da26ce22634fbb55f8c",
+      "sha256_antes": "eb3ec48cf49963548fc8fd5ab173aed59c9a91ed141d7324bc9ff11a62825b4f",
+      "sha256_depois": "eb3ec48cf49963548fc8fd5ab173aed59c9a91ed141d7324bc9ff11a62825b4f",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/mapa-distritos-M3-sonnet.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "cbf901e4da4c87bf7cab932a0c8b0ce22201c48535c3197ea3de909942ba248a",
+      "sha256_antes": "3b3c4ad5a5c9965539b79ec7ea2e994e5b4a98fce689c122c54fac6952b9813a",
+      "sha256_depois": "3b3c4ad5a5c9965539b79ec7ea2e994e5b4a98fce689c122c54fac6952b9813a",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/mapa-distritos-M3-sonnet.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "1af0ff249463a1763eb9f9d13f9138b5844015e7bc36ee4c3ed618c374202a48",
+      "sha256_antes": "c122528ae343b48353fdaf971dfc6d230e92f977dc13b2644abb1bc90028ab60",
+      "sha256_depois": "e2258b705bcc73387dff2b62a5db316ef1e04621ebdb4f612957777657d166d0",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/mapa-navegacao-M4-sonnet.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "3d531f71f7882754ca8e37b20ebee2837ead3b9cfcf0ec43609fb3cb00a46cba",
+      "sha256_antes": "c85c03282c222d88d7b52da497b2fdd9588fcd37c1b1d831b63c88eddb1128a0",
+      "sha256_depois": "aba2717f0fda155758d8890046411a8829bf8786d337108db2fdaaab7867b1ab",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/nomes-construtor.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "c7a7b52cac30d2450af78f2cb0a7c98fcc6ff9d30caf91b6b7d8334d51915757",
+      "sha256_antes": "aa6e2b2361069a68123c60fc554bfba86641a6bac2dcd81b26ed03f2fff14474",
+      "sha256_depois": "aa6e2b2361069a68123c60fc554bfba86641a6bac2dcd81b26ed03f2fff14474",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/oe1-2026-10-04/corrida-oe1d-lingua-l1.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "bd0681f92eeb3510c89882429b4933c097e4aa05a73ce8715c65665d2408a984",
+      "sha256_antes": "1d9c34614bb257bf692910cf6ceac2c1a35f9ca85a00fcc9a4285aab506545c7",
+      "sha256_depois": "1d9c34614bb257bf692910cf6ceac2c1a35f9ca85a00fcc9a4285aab506545c7",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/p1-2026-09-15/indice.txt",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "5ced641569ca86979ba59207a777abdc6f7581df2c331fd5ee516351c4b06342",
+      "sha256_antes": "786da0372e2ddb6c56d6484092866c46fa835763b0943561b65e8f49234979d4",
+      "sha256_depois": "786da0372e2ddb6c56d6484092866c46fa835763b0943561b65e8f49234979d4",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/p1-2026-09-15/leitura.txt",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "b24a24cb51f322c36eddfe451a1066a7de73c2577352baf2a3e95cf63bf22a9f",
+      "sha256_antes": "adc382fa618de5a6d42c93eb4438e6ce9a215d2020143b02e0b6844df1713126",
+      "sha256_depois": "adc382fa618de5a6d42c93eb4438e6ce9a215d2020143b02e0b6844df1713126",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/p1-2026-09-15/porta.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "f8111fa11974c710726878725edbc52176f19239604bab38ae902577d13f27a8",
+      "sha256_antes": "849816cde3f35a0a961b8f06bb2e5f48e62634cba696b2a11ca2afcdd1d8a64c",
+      "sha256_depois": "849816cde3f35a0a961b8f06bb2e5f48e62634cba696b2a11ca2afcdd1d8a64c",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/p1-2026-09-15/porta.txt",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "53dc73b17b17cb1d8ee67579caf09527bcb81f6c037602c191628bbd46943079",
+      "sha256_antes": "0a74947c6943d8a052df485e45a6fea3268b6673b541baa7e5aa60e6bb7330e0",
+      "sha256_depois": "0a74947c6943d8a052df485e45a6fea3268b6673b541baa7e5aa60e6bb7330e0",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/p2-2026-09-15/LEIA-ME.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "6f26dde8058f0973f99ac8c3ed585e624a785339f8c6f550db307d9e1bcf9d42",
+      "sha256_antes": "bacd85f004aa68538b4b36e88579f59bae3f253e5c09624171b95aa3099e129b",
+      "sha256_depois": "bacd85f004aa68538b4b36e88579f59bae3f253e5c09624171b95aa3099e129b",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/p3-2026-09-16/indice.txt",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "80cd71f7b580d3f44d896ef5e34fca36fe5fefa11ab3238df9caf5504e6b3dee",
+      "sha256_antes": "2851765557fdfbafc6b0843bf1716178d620d5d7758af225b7da733e6b358358",
+      "sha256_depois": "2851765557fdfbafc6b0843bf1716178d620d5d7758af225b7da733e6b358358",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/p3-2026-09-16/porta-plantas.txt",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "84870de52eb949c54d698a2c98a62ea7790b3341063b8197f75752f891137871",
+      "sha256_antes": "505476eb62bbd1d150797d3f22ffa089847a06db5be501d852a641eafd2b91b1",
+      "sha256_depois": "505476eb62bbd1d150797d3f22ffa089847a06db5be501d852a641eafd2b91b1",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/parte3-M1-sonnet.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "7d690007e5ad39d77165b5aa2dd6fa0dfbc3d76aff9abbf45efc5b0e5be2231e",
+      "sha256_antes": "b71f23209d53a8abd188277b44dcadd3793b8cf11acc6047ef2790a83d3ec868",
+      "sha256_depois": "b71f23209d53a8abd188277b44dcadd3793b8cf11acc6047ef2790a83d3ec868",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/parte3-M1-sonnet.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "76b5244dc35d26b971a073b50589327d2df76f86f3be8218ac33e123b2c9da43",
+      "sha256_antes": "8cae5b58fb0bf21d960396125fc2f06d0aadebf35e6f5b4825e6dcda1b334a98",
+      "sha256_depois": "a7cc444341639244045503b2b2ef34fc9b00b150e98d12455d8fd5a5e616a42c",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/parte3-M2-sonnet.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "ee0086cd8decb5fb7237b3e06ff360d4375d2dabf1ab726be0b305d4de52ff1d",
+      "sha256_antes": "3487f420c805c5536e342da1fad2ce1fb2bb9036f8b3f7cf9e921cca3c5abc9b",
+      "sha256_depois": "3487f420c805c5536e342da1fad2ce1fb2bb9036f8b3f7cf9e921cca3c5abc9b",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/parte3-M2-sonnet.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "eef595ef34b313898de6eda831ea004c7fe0e2512b5b5dc2bf7a4c68402738ae",
+      "sha256_antes": "ca3e965d4418bcc3c63fb64aa7319fc46ceafe61a5dbafbd47a6f78f8aef2a8f",
+      "sha256_depois": "826ea31eb0e400069b094522637168428e14eaecdba4910aa9c4b929db4fb73f",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/pequenas-3-construtor.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "a7d47c5fe7419ca1d01c73aa7ef82196bbdc0ca25b154e0b84876fed4b9c4a87",
+      "sha256_antes": "35b94021d9d73a8d9a2013519db7a8d1de71ed71175ff21dae7e6b8ba29df37b",
+      "sha256_depois": "35b94021d9d73a8d9a2013519db7a8d1de71ed71175ff21dae7e6b8ba29df37b",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/pequenas-6-construtor.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "64cb329c8d7a725be9335172b847312659b2ecab0ab7e119f67f9a4b7b71c9b7",
+      "sha256_antes": "f85be1d3027bf0e0d12ea804c718459c1041428b4ee4ae88ac095127e55e1f14",
+      "sha256_depois": "f85be1d3027bf0e0d12ea804c718459c1041428b4ee4ae88ac095127e55e1f14",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/porta-2026-09-15/coluna-do-valor.txt",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "e952031ff7789b9fbae96ee5f3b0b10f5ec2b1d6d04d997f6dbfe43cec256986",
+      "sha256_antes": "fbb4342504fd205cd58ea4c2581fea380e8fef2527a5a3367d6a16f913883f82",
+      "sha256_depois": "fbb4342504fd205cd58ea4c2581fea380e8fef2527a5a3367d6a16f913883f82",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/porta-2026-09-15/leitura.txt",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "9beecc0583e0cfcce95e05117a86071728d35b6c47df52a0cfe8ef7a5b3a64f5",
+      "sha256_antes": "181336c8f18877ad1add144f719abfe159b2b6ad9b05bcdf5d8599303b8411fb",
+      "sha256_depois": "181336c8f18877ad1add144f719abfe159b2b6ad9b05bcdf5d8599303b8411fb",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/porta-2026-09-15/porta.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "d685a275382650f59a01cc4c9642c2d820620ae64bd79b41f93cc02689322a09",
+      "sha256_antes": "7d5f3575a5ac2b982a0de1fa1c2be9a62034b7798ff2a4d956a9aeb804719046",
+      "sha256_depois": "7d5f3575a5ac2b982a0de1fa1c2be9a62034b7798ff2a4d956a9aeb804719046",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/porta-2026-09-15/porta.txt",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "d259ebe93ab5e2eb8c65641ed627178709ee90bfed9171fd404afde73cee93f2",
+      "sha256_antes": "338a7484d4dc6f0f2969b12506ebb51a818133a006990c7440c6521ae2b58aa7",
+      "sha256_depois": "338a7484d4dc6f0f2969b12506ebb51a818133a006990c7440c6521ae2b58aa7",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/porta-medidas-depois.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "8a61a925f441576f7176879e96957043c42b2092d44f5659f6e733ead2dde9e1",
+      "sha256_antes": "14f44a64184e4c0a151f5588544b390ab2dae3ecf40a6eb88abad77b5a96cd77",
+      "sha256_depois": "14f44a64184e4c0a151f5588544b390ab2dae3ecf40a6eb88abad77b5a96cd77",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/porta-numeros-depois.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "b99954a171888777d82efaa55c4d53bc6ed318eff580a94c65684b9589cff806",
+      "sha256_antes": "f59d7fd0b432f927dd66911d26be25380c7a31e4bcbbfe9d3116ff24a2fa3071",
+      "sha256_depois": "f59d7fd0b432f927dd66911d26be25380c7a31e4bcbbfe9d3116ff24a2fa3071",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/portas-medidas-depois.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "a360931224304e87adeb14ddc43d3ea6ffdc2fddc77c33f7d3f653d1e22e31a8",
+      "sha256_antes": "4ce04f9415f56c53f7c047dcc8ab67a7e1ebfa3630fd9acfb167074c6e130b79",
+      "sha256_depois": "4ce04f9415f56c53f7c047dcc8ab67a7e1ebfa3630fd9acfb167074c6e130b79",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/portas-numeros-depois.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "89f520f9b323bbdd1049da940f3f518c4f69d294970b6ce580e67c54dba8b95e",
+      "sha256_antes": "18102e31bc8832221f2c81ae8f4f2ddaf9a3a692c0bd450640406c3e8bff60a1",
+      "sha256_depois": "18102e31bc8832221f2c81ae8f4f2ddaf9a3a692c0bd450640406c3e8bff60a1",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/pp1-2026-09-28/maqueta/PEDIDO.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "1fa72ea89b0bb6a333c33968ef2a2667b29e92b3751a42684ca66a6d3cf5fdcf",
+      "sha256_antes": "34d0fa206449cea9558efdea7be526360563ff6d1e078597d47995b3233356b7",
+      "sha256_depois": "34d0fa206449cea9558efdea7be526360563ff6d1e078597d47995b3233356b7",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/pp1-2026-09-28/maqueta/captar.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "c09ae654dc63dda4b27b5e76cde9a17dcc5bc1ce4df5f8b9e0dc588323a8ee69",
+      "sha256_antes": "305b18f675d884edb5230aaaa7b0b105b575f27daf13d022b5e7906af179814d",
+      "sha256_depois": "c09ae654dc63dda4b27b5e76cde9a17dcc5bc1ce4df5f8b9e0dc588323a8ee69",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/pp1-2026-09-28/maqueta/verificar.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "ead02368d26a601c7c64239a54825664e1a1879e502d2a47393bafd3190e5261",
+      "sha256_antes": "368388625373b90e7a56a982602a7fa8ab3a15e31525e7136b848e1407ccfe95",
+      "sha256_depois": "ead02368d26a601c7c64239a54825664e1a1879e502d2a47393bafd3190e5261",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/r4-2026-10-05/compor-familias-r4.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/r4-2026-10-05/compor-series-r4.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/r4-2026-10-05/registar-leitura.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/r4-2026-10-05/series-r4.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/resolucao-construtor.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "5a1a3092efe322e614aa494dd05680ce4295d92384784bcd3d0da46bb384aaeb",
+      "sha256_antes": "87ebdf6d1674937179d73d5b5b9424d37edbbe5fbb4786a79c07541c077fc5a9",
+      "sha256_depois": "87ebdf6d1674937179d73d5b5b9424d37edbbe5fbb4786a79c07541c077fc5a9",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/medir-rp1.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "6d42a12b56759ad3f4da8a78011af95bc9bab271b8e03bb3d81437ebc35ce849",
+      "sha256_antes": "254214143b3b949f6024ca9bdf4a1606d90ca6af216c4f52c3151a7b5fe3fa16",
+      "sha256_depois": "6d42a12b56759ad3f4da8a78011af95bc9bab271b8e03bb3d81437ebc35ce849",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/origens-rp1.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "c5b9c7926a30a6033e38b67ba26048ef9b1677d63e2bce160a9dcc97b76c27ac",
+      "sha256_antes": "9c819136460c8d3d0f2c477f98c4a13c34f0766a6f47472a082253686446433e",
+      "sha256_depois": "c5b9c7926a30a6033e38b67ba26048ef9b1677d63e2bce160a9dcc97b76c27ac",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/portoes/rp1c/preparacao/exportar-corrigido.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "38326c1920cfb39d2951f4036a244c7171af70dd3abf88f12183e787a53e7dd7",
+      "sha256_antes": "f42c443d0d64f8f3450b865ac114aeeb4eadb260a77064827eaf52350594b3c7",
+      "sha256_depois": "f42c443d0d64f8f3450b865ac114aeeb4eadb260a77064827eaf52350594b3c7",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/prompts/PROMPT-rp1-codex.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "ee66963c1ae594476a80a57c2e954314850a5c7c0313d774a662a165fbfdc888",
+      "sha256_antes": "b08c9da218f30d38ce43ad639987d1a2541fc332840c909d62607703892a7473",
+      "sha256_depois": "b08c9da218f30d38ce43ad639987d1a2541fc332840c909d62607703892a7473",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/prompts/PROMPT-rp1b-codex.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "a405fe77ff211070b406652ee6aacc54ad1b9addb872678213540f90e317cb1b",
+      "sha256_antes": "989c3e56d3e07d9536c10374b8a3e4dbe6d1775c87508a270e3f04e7c970b219",
+      "sha256_depois": "989c3e56d3e07d9536c10374b8a3e4dbe6d1775c87508a270e3f04e7c970b219",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/prompts/PROMPT-rp1c-codex.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "5996286ed27c01c333d60fa19159990ce0939362132e22d6441b27debfeb2bc8",
+      "sha256_antes": "fd86d2582975218e665e94b7122a0a1fee87cc1ab6fec0f5b351756107dce106",
+      "sha256_depois": "fd86d2582975218e665e94b7122a0a1fee87cc1ab6fec0f5b351756107dce106",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/registar-rp1.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "a82ce03d40b391c0e0758986b3fbf6004b54edf4daa9978182846685ff4f9f7c",
+      "sha256_antes": "b7a07c26f41e89b09e7a4b33ebe5c0f4bfab61f59b38defe3f41037528ea3150",
+      "sha256_depois": "a82ce03d40b391c0e0758986b3fbf6004b54edf4daa9978182846685ff4f9f7c",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp3-2026-10-04/motor/export-site-rows-test.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "b737d3a57be229468ec9adb92ea8b454e2296ee4da8f40997788e82ce40b93dd",
+      "sha256_antes": "5016b3d129276060c7d82bbb7cc31fe9801ae92b2aa8fd10351016d18ee67962",
+      "sha256_depois": "5016b3d129276060c7d82bbb7cc31fe9801ae92b2aa8fd10351016d18ee67962",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/export-site-rows-test.log",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "b737d3a57be229468ec9adb92ea8b454e2296ee4da8f40997788e82ce40b93dd",
+      "sha256_antes": "5016b3d129276060c7d82bbb7cc31fe9801ae92b2aa8fd10351016d18ee67962",
+      "sha256_depois": "5016b3d129276060c7d82bbb7cc31fe9801ae92b2aa8fd10351016d18ee67962",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/toque-medidas-depois.json",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "8d0a9744c8203ba97afca933792f98c5ef4b4ef62e4470d8b4e7fa2813ed96e7",
+      "sha256_antes": "69610a699a1d1591787b9f078f120ad1da72556e3785636490c8a2794e303af7",
+      "sha256_depois": "69610a699a1d1591787b9f078f120ad1da72556e3785636490c8a2794e303af7",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/vazios-M8-sonnet.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "15349d62a97b1ae930cadd44314a6f5ca610a63c95241f51e6b07737da5bebc3",
+      "sha256_antes": "43f3566c45d200e8f5aba85f8358622bde037468493db22fee58930609273ee8",
+      "sha256_depois": "43f3566c45d200e8f5aba85f8358622bde037468493db22fee58930609273ee8",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/vazios-construtor.md",
+      "decisao": "conservado",
+      "razao": "Só substituição de caminhos num registo; conferida por igualdade de bytes do texto.",
+      "sha256_base": "283a7125ccfebacb8edc5cb5d04bb3c68924246b0faa3688feef11350a03e18c",
+      "sha256_antes": "7d354fbd21817c0df1421e713ef0ee6a371a17e1453f28630da3b2f683f2823c",
+      "sha256_depois": "7d354fbd21817c0df1421e713ef0ee6a371a17e1453f28630da3b2f683f2823c",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/marca/palavra/folha.mjs",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "c6514c0c62f052bfead49dcc90429494d9f608a7e3c0983d61396b0f24725c0d",
+      "sha256_antes": "dbdd1005d541abd2265615eb4e77395d335591c2ccc3ec13599063d59cf3a5a1",
+      "sha256_depois": "62aa361cb21b92724444c31477f9f2b03fce5cc593e4ac918309478b2053f5bb",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/observatorio/BRAINSTORM-conteudos-2026-09-28-astra.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "50f344be42ce536ad67e461f170a4f579e8690d90f7b82fe3b3f6961d4865cba",
+      "sha256_antes": "985f36519904587bae5926ae764d60a62734a10216a9197d1255e9354228bb97",
+      "sha256_depois": "50f344be42ce536ad67e461f170a4f579e8690d90f7b82fe3b3f6961d4865cba",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/BRAINSTORM-conteudos-2026-09-28-pedido.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "b5c9a2dfd66a84fa218b8c77941ce943e0228f6e4234d1142417eaadd4a8e6be",
+      "sha256_antes": "21ade16bf020deba905f3bc9f4a02e9549ea580556f42164c017e6d0b8acaa3e",
+      "sha256_depois": "b5c9a2dfd66a84fa218b8c77941ce943e0228f6e4234d1142417eaadd4a8e6be",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/BRIEF-B1-as-quatro-paginas.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "8420cf0c63d3df967d70a618d42332c547790f28c73366d9ea7633ea02c75daf",
+      "sha256_antes": "f88a0093c5b1e0f967b21d33c3b7e6a50c788c8cc1f8718e554398b5ce0abcdd",
+      "sha256_depois": "8420cf0c63d3df967d70a618d42332c547790f28c73366d9ea7633ea02c75daf",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/BRIEF-B2-o-veredicto-e-as-paginas-dos-temas.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "675a1f09b219f94a4cfda8438ce508a01c81f99cf4da7dfc7fd671a055ca94e2",
+      "sha256_antes": "7b9b0874fd33004a650e091069a4d22c31651404a5b22462d9a8d09d4321c7e1",
+      "sha256_depois": "675a1f09b219f94a4cfda8438ce508a01c81f99cf4da7dfc7fd671a055ca94e2",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/BRIEF-F1.1-porta-da-frente.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "105b30ceff14fde506fc622a9c9e4f05ea96e206430c6cd7e058e2791f279ec9",
+      "sha256_antes": "64fca49a12d57f4ed086187d0f931d408c8bcda371072021fef062352e6342f2",
+      "sha256_depois": "105b30ceff14fde506fc622a9c9e4f05ea96e206430c6cd7e058e2791f279ec9",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/BRIEF-F1.2-pagina-do-dominio.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "c5052f9910ad53acd3767fba953e2977a5aff61e37ec403c1db8cd75d12e3c98",
+      "sha256_antes": "2a8548c216d5c377df3436ccf93bc104a65eb5ca2ad0165edd5c625758f28727",
+      "sha256_depois": "c5052f9910ad53acd3767fba953e2977a5aff61e37ec403c1db8cd75d12e3c98",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/BRIEF-F1.6-o-atraso-do-iefp-e-as-duas-frases.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "4abe22136d238480d715c9beba75bcb668b74efd9e517881f27b6f6067786cd1",
+      "sha256_antes": "4383ecabbb2316f8bac19acdd578b2b2d111b086eca80be13d608c131c8fceae",
+      "sha256_depois": "4abe22136d238480d715c9beba75bcb668b74efd9e517881f27b6f6067786cd1",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/BRIEF-F2.6-o-calendario-a-serio.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "4007bbcd854b5610e386a775560301733248de0ac6886cf261ba2e1822dbfa4b",
+      "sha256_antes": "06f4d36a3434eae24bf68c2a9061e4649b7465eb8f7a3c3607d4f4e9cc298bcf",
+      "sha256_depois": "4007bbcd854b5610e386a775560301733248de0ac6886cf261ba2e1822dbfa4b",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/BRIEF-I129-o-grupo-etario-dos-jovens-nem.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "384742d47680f834f28c8a435d3a5dbd8632937e3506062d686c3bf50766fe60",
+      "sha256_antes": "f900dc938a6b3ff867c7d356a5843116ec255be98d0e8f26c693f8db76dd8539",
+      "sha256_depois": "384742d47680f834f28c8a435d3a5dbd8632937e3506062d686c3bf50766fe60",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/BRIEF-L1-a-leitura-de-cada-medida.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "1030d355c92583611b42f05a66e455c8b9a7d52d06026988fca8fe101f810fcc",
+      "sha256_antes": "ad3d58eec8b7a58813b5ab8c857ff81cc315ed2e54fb67c0f56b4e769633ad29",
+      "sha256_depois": "1030d355c92583611b42f05a66e455c8b9a7d52d06026988fca8fe101f810fcc",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/BRIEF-M1-o-nome-das-entradas-sem-nome.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "bc040df71a6ec83d40a2efa9601b54c90eb27e616d1879b814f3708e01be55d5",
+      "sha256_antes": "1b886eb3951360a12f71631592b6f844eeb89205ec3a132fdf001cbf12824427",
+      "sha256_depois": "bc040df71a6ec83d40a2efa9601b54c90eb27e616d1879b814f3708e01be55d5",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/BRIEF-M2-o-estudo-14-entra-no-portao-do-motor.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "cb276e41800f33320f96f81c3937d3c60437d43407c9101c43e477305ad45638",
+      "sha256_antes": "cc976765a8eeabbe3af2949815a25a5bf48a62c2ad9bd831816aa0d1fb9342f0",
+      "sha256_depois": "cb276e41800f33320f96f81c3937d3c60437d43407c9101c43e477305ad45638",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/BRIEF-M3-os-nomes-oficiais-conferidos-no-motor.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "2c4781923fe4488950820dd29958efd5454b72e6c251bba9c2dbc8e68eb4e082",
+      "sha256_antes": "0048ea3a652fd09fda1c22273fa529372507bacda8f58d1e09e6747f1ade7cec",
+      "sha256_depois": "2c4781923fe4488950820dd29958efd5454b72e6c251bba9c2dbc8e68eb4e082",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/BRIEF-P2-o-numero-e-o-seu-sentido.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "601863038b3207f150b7c5eccf63ee383a89276a878cdcd0b2910ccf82710ff6",
+      "sha256_antes": "191304235fe4ff559d65ed15e24734cb8162228e88c190e3d611de185204eb7e",
+      "sha256_depois": "51f5a53e46342bc154ce5687c415dd264a999b09b327cabaeec95196949fab2a",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/observatorio/BRIEF-P3-os-nomes-e-a-lingua.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "c32462d965d8b53ddfb2fe99b2fccd74dde38ee33ba7291fa3d868309ab40f2a",
+      "sha256_antes": "2630a9d4d8e364d891d8a9a0cde0d2b333a26f0c9b5386b23fab3acac5657b02",
+      "sha256_depois": "c32462d965d8b53ddfb2fe99b2fccd74dde38ee33ba7291fa3d868309ab40f2a",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/BRIEF-R1-o-lado-do-leitor-depois-da-leitura-de-fora.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "da207f66ca0f043c20ded84a87caf851d90718592f59cc0328263d53b312b577",
+      "sha256_antes": "00f148394c664496c38fa8248a36670ae9a8351096697d705f4c8d09ee74a385",
+      "sha256_depois": "da207f66ca0f043c20ded84a87caf851d90718592f59cc0328263d53b312b577",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/BRIEF-RP1-rendimentos-e-precos-os-cartoes.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "d5800d21a79eb1e0d01f9cb99516d6d49964f6d7fb84a57a072bd59a790340dc",
+      "sha256_antes": "4b862304bb4b0dbde01a1022f1676554aa7b780cce742696d1d612ed876afdf9",
+      "sha256_depois": "d5800d21a79eb1e0d01f9cb99516d6d49964f6d7fb84a57a072bd59a790340dc",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/CARTA-DOS-CONTEUDOS.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "d8864ef1787df3e16beacb75ab88072ee767d6d9596ffb7c848dce0b7137f49e",
+      "sha256_antes": "20ae474d830986a4b73f7001817e4996ace024cc1623171e08fb61c9d64f8994",
+      "sha256_depois": "d8864ef1787df3e16beacb75ab88072ee767d6d9596ffb7c848dce0b7137f49e",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/FRESCURA-E-AUTOMACAO.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "1a6584ea114f98aa3f71037138d84842f23c2f1466736a499c3325c41dd9abeb",
+      "sha256_antes": "1501f3499d25e15a65747b4e7ddb762c2467202b2e3985d3cb914b24b434ed04",
+      "sha256_depois": "1a6584ea114f98aa3f71037138d84842f23c2f1466736a499c3325c41dd9abeb",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "718bfed8e5bd052255629b9e829f838d359a8edf6e037feaea26f2d3759c3842",
+      "sha256_antes": "a3fccdf64e82126f9084ac2f87ca3b7e2c870b6326e114a764b1eca383720d1b",
+      "sha256_depois": "718bfed8e5bd052255629b9e829f838d359a8edf6e037feaea26f2d3759c3842",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/ORDEM-cabeca-2026-09-01.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "228fb1c9d44355bce97f8744206814af87f0ba2ee2dc426d8f8afb5d984cc522",
+      "sha256_antes": "a954f502d9e2191273e257274e21a62609cceed7933fdc30b44041d746c7ac98",
+      "sha256_depois": "2ebb395d580679a404868cba177da8606c9fc4270f6ce6572bb44b36a27327b9",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/observatorio/ORDEM-linhas-dominio-1-2-2026-09-01.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "556bd6713016171501aeff8a5d8e597abc41d23f570c202af151d4a48c4b4e19",
+      "sha256_antes": "750c88b201e85ae835fe616eaf55a87b7e7000576eb9976857bbaf95a2dd40e6",
+      "sha256_depois": "ea7c5b3bf054925a51ca98a5a5c58605ec7a3f09191140707e59d29f4bdb50e6",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/observatorio/ORDEM-piloto-corredor-2026-09-01.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "0aabae71538b115d71f6588f2e6cdead7825fb709b6fdd2501cfb8d7152b73f7",
+      "sha256_antes": "631ed8733ca4f62d116993ec56be9077d6d0c9640d7834a7abc0006dad4f2818",
+      "sha256_depois": "0ece602370e8c54eb11cdb31445c19f7610844ec56569f294c8469e085b178b0",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/observatorio/ORDEM-rotulo-2026-09-01.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "0a6ce5d912e3bca794992e968762340978077c4716fcb93a5f51d34aca4cec75",
+      "sha256_antes": "13f2b7c370871f30d31ed25217a1cd4015789147de2b38a2a03af08625b1ea4b",
+      "sha256_depois": "f324bbd38150a24d49c6c2f26cf7314284c154352043e83e49c020cb238aa0f2",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-01-noite.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "b7402c45c2dcef76fa659d8a2f7241f7758b7f9eb81aa086a4d86ff8fe118809",
+      "sha256_antes": "b20261ff8fbb25089a79dcee8b0515ee967b2647e08658b1ad338f4cda568639",
+      "sha256_depois": "b7402c45c2dcef76fa659d8a2f7241f7758b7f9eb81aa086a4d86ff8fe118809",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-01.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "fd0748047b5737c3d96e9d32464d5b4f67c713699f4eaa18b7472501892c78da",
+      "sha256_antes": "6cf46c873021d96185c6c6f2b9c7680a0f94ef744f2393354e8e1ac237de7ce9",
+      "sha256_depois": "fd0748047b5737c3d96e9d32464d5b4f67c713699f4eaa18b7472501892c78da",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-04.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "9f78fbd7bec10dbb637ba0eab91268306f42323c50f94ed18fa1c401ea7ed9b4",
+      "sha256_antes": "c1fdcd07c212611d82521158166b94f9c7a5d9a078c447ffad96f48324ff5dd7",
+      "sha256_depois": "9f78fbd7bec10dbb637ba0eab91268306f42323c50f94ed18fa1c401ea7ed9b4",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-07.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "7f128dbe0f911c43338166f3b076ead757d37c283005b96377645880646c8b79",
+      "sha256_antes": "1afa22849d51cb4d7bf3442584ff0881285fcc777566f1984dd063ae2c8ae919",
+      "sha256_depois": "7f128dbe0f911c43338166f3b076ead757d37c283005b96377645880646c8b79",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-08.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "6e94f39ab7c2c7e96c09b83e9dbe2e3dc15bf93f16b96cb2ee49dd70df1fbae4",
+      "sha256_antes": "6b8b7c2722c7155207d659417c5b528d1facd0f7223527ce9aca628465be066f",
+      "sha256_depois": "6e94f39ab7c2c7e96c09b83e9dbe2e3dc15bf93f16b96cb2ee49dd70df1fbae4",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-14.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "2b0c0faf58d1d13a24f9668f6499b78f856a5be4fa3ec6960aa7bbaf991512bb",
+      "sha256_antes": "b5df9baee0df75c89d96760ef9a601d5e4b8ef01d94c9872c44b0099b61cd64d",
+      "sha256_depois": "2b0c0faf58d1d13a24f9668f6499b78f856a5be4fa3ec6960aa7bbaf991512bb",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-16.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "9c27d30ee4547dcc63be7da03368e431983808fdea7203acf9ead201d019423b",
+      "sha256_antes": "10e7e7c857d4b4eae0886caf3c0ddc3c78b82820b373e341b4ba36f561bb3e4c",
+      "sha256_depois": "9c27d30ee4547dcc63be7da03368e431983808fdea7203acf9ead201d019423b",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-21.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "e6f39e91ceba569f164d864116b8e7b98a9ae9e36c29c1d8870f55b6c8036564",
+      "sha256_antes": "36ea1a10c94e9a3d69881ad0cea8f80c839c63b05d854bda2bf006d54f6b600f",
+      "sha256_depois": "e6f39e91ceba569f164d864116b8e7b98a9ae9e36c29c1d8870f55b6c8036564",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-22.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "94662bc16a9e9a046a7d5aec342d4f1d9466530c7d61fb90645e7f11980f6971",
+      "sha256_antes": "8cf3908bdca450f31c6106c38056d2022f76efc5fe80ca006f5e0d5016fc185a",
+      "sha256_depois": "599bb6b6a2dc0b3319e09104f3ce1612bb281fb45cc354dba617f27099f29e83",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-23-noite.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "0b72e8f02379834462427d8c90b7d21e5c3788b23fe4ae365045de5edec57db4",
+      "sha256_antes": "34759170428751b3e8f202dc2a0526bfe0e550ff5cbdf68363880ac336388d56",
+      "sha256_depois": "c2d62f0f42d97bfa5b47cf9df0bb458449b2f54eaff4c45d9305c00fdb86586c",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-23.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "8d4a7c442435cf0edf572e973f38fb456cbae0ad40f9949b077e15edc1432a18",
+      "sha256_antes": "98956ec51d87c713de00551cf91b8794dbc8cb73256a05ae57d50121e4c350f5",
+      "sha256_depois": "e3ef9b942d73e824e8fafea2d23b9894d9ca9a725b08c98549086b1ff8fd22e6",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-24.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "sha256_base": "9e82283bb97b8132750130e6625f0bdccc4f3ec4d41e3d906cdfdcbbb4a8f115",
+      "sha256_antes": "f558a70ac44068ee343bee9b5a8b9de9d36bc5b6bb0236290612a5a30fd56812",
+      "sha256_depois": "84281b67644f909efe0a0351070b431a4ff64d75b97d65fd9168e88c8fd2cb93",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-26-noite.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "7838583c6c7fc7bc62e0015c3f9deef0da3b1930dd0050d4e88c28f029ff819e",
+      "sha256_antes": "091cab63b607e2ce447fa1ff28c8af7caf7dee59dc442dabf391638596db3a4a",
+      "sha256_depois": "7838583c6c7fc7bc62e0015c3f9deef0da3b1930dd0050d4e88c28f029ff819e",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-29.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "68f2860d8af093072915226c31679abdcc466fa5fcfd4dc41d285d457de5c728",
+      "sha256_antes": "2b7e6730dc7d67c8dc2e75541c5bfe0df07908640edb73fd86d0f6e89abf9127",
+      "sha256_depois": "68f2860d8af093072915226c31679abdcc466fa5fcfd4dc41d285d457de5c728",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-30-tarde.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "d5e446cb20aa4344023dc62960b3f101620a73023450af97a828b4eb6654602b",
+      "sha256_antes": "68f9c83e1c02411980c554f243bdbd1e7932de476ce54f1311fa503f533c88f7",
+      "sha256_depois": "d5e446cb20aa4344023dc62960b3f101620a73023450af97a828b4eb6654602b",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-30.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "d064cf8e34afd1be21252e85e9a88d0e7bd76b446e3d1639694772c9adcdb20c",
+      "sha256_antes": "6181c1fb25099afded18001fde973550e5f9d0adda09c5e2f39aadff195b555d",
+      "sha256_depois": "d064cf8e34afd1be21252e85e9a88d0e7bd76b446e3d1639694772c9adcdb20c",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-10-01.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "3443a44d30af7750dbee1b59d39cb991d7e9083d1a3ab9eb048b7edf02241196",
+      "sha256_antes": "5695f01a86600bee570835bc0bc94a896f98393414b2e2bf9fa65c1f6192ab07",
+      "sha256_depois": "3443a44d30af7750dbee1b59d39cb991d7e9083d1a3ab9eb048b7edf02241196",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-10-02.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "4131f31b8da8dc9e19125b3a7ca0dbfc1082e92d0603633c09746bed2d51a4b6",
+      "sha256_antes": "8229f1679df879bc84882c7e10d3c51e9c0cdebf73b09744527b2e9f5a926015",
+      "sha256_depois": "4131f31b8da8dc9e19125b3a7ca0dbfc1082e92d0603633c09746bed2d51a4b6",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-10-04.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "ca3e8d5fd28184368b1010c071b80a2bb9cdbd50ab8ef810049352b67b148a39",
+      "sha256_antes": "e1b97dfc0079af0c589ea4d429c4c1a9e37fc0c6c20f5996d42b456f3cf6d5d2",
+      "sha256_depois": "ca3e8d5fd28184368b1010c071b80a2bb9cdbd50ab8ef810049352b67b148a39",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-10-05.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "245284d505c0fbf31fd47ea84d888bc0481e62de5798491bf0c54487d683f69a",
+      "sha256_antes": "cf4eaf97dee93fbe9076553590709a4679ddbf1bed0b42fddf9ec833b6a5041e",
+      "sha256_depois": "245284d505c0fbf31fd47ea84d888bc0481e62de5798491bf0c54487d683f69a",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-10-06.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "e9646e98a13a933b18f4ea5b3b83c8bcb860853d07430d336a35884e6519bb2f",
+      "sha256_antes": "7166e64cdd6aa3adb41f275ed293641a5013b99025f10ce49df674d9b03b55f3",
+      "sha256_depois": "e9646e98a13a933b18f4ea5b3b83c8bcb860853d07430d336a35884e6519bb2f",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/evora/BRIEF-E1-evora-2027-sitio.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "1a78ddf55bfafabfda4da5514c636bf10418efb3692d0ab3abd8961583dbf0f3",
+      "sha256_antes": "f8ca013de509efb80556d4db3fd3250be67dcf9268e9c473b123c3275fb8ac83",
+      "sha256_depois": "1a78ddf55bfafabfda4da5514c636bf10418efb3692d0ab3abd8961583dbf0f3",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/evora/BRIEF-E1-evora-2027.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "f5623c690b3e1abb671248aa3a2dc882552f415644806c81a7da554b5d4bc2a7",
+      "sha256_antes": "6f162b9690bb824210a1e383fcdfff6a4d45bbd6499e724aac0fe522209b9aa7",
+      "sha256_depois": "f5623c690b3e1abb671248aa3a2dc882552f415644806c81a7da554b5d4bc2a7",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/evora/FONTES-evora-mandato.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "b55de6d039529debe188cbef1e46b64fd6312c73d48d79e117bb9dd02c32289a",
+      "sha256_antes": "26e0a888aedeea9a45fbcaca86d81aa740690dd1ad0b094a4b02c0cb7a556692",
+      "sha256_depois": "b55de6d039529debe188cbef1e46b64fd6312c73d48d79e117bb9dd02c32289a",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/inventario/BRIEF-comum.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "4b8c3f434a2aa3b44c63fdd450ee9e23b7c017637fe27a594a6eb2258edf55cc",
+      "sha256_antes": "f1065bb6056c3fabcbf023bd0fc20157bd48701728666b8ced21caf4d93b8f6e",
+      "sha256_depois": "4b8c3f434a2aa3b44c63fdd450ee9e23b7c017637fe27a594a6eb2258edf55cc",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/inventario/BRIEF-sonnet-amostra.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "b40c117b49398ace5098320c1b70b4b34d4823635ba16fb6bd55f82c972483dd",
+      "sha256_antes": "393e2c570f9b7cd84503f23ddd31ce32208045a5c70ecdcf7b537a9fdefa4449",
+      "sha256_depois": "b40c117b49398ace5098320c1b70b4b34d4823635ba16fb6bd55f82c972483dd",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/inventario/lote-1-linhas.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "02dd088b7316b861bb5a0f2e7db26df6cd36a677e7920f2faac9637e7b205720",
+      "sha256_antes": "3b4d8ff4ef3715e7c71b0c2df409a70901c7ee52f47aabaa9e2f6c2aaa5a0f70",
+      "sha256_depois": "02dd088b7316b861bb5a0f2e7db26df6cd36a677e7920f2faac9637e7b205720",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/inventario/lote-2-linhas.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "f53bbda3a734bb5f5f38911b3f967e86c0a4d8bfa0fd214b82f83bead85bd042",
+      "sha256_antes": "653afcfd5b8a729d70ffc32e55aa272c5256dd29e7000c77f2878ba1e6b8545f",
+      "sha256_depois": "f53bbda3a734bb5f5f38911b3f967e86c0a4d8bfa0fd214b82f83bead85bd042",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/inventario/lote-3-linhas.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "90b0d0766a6b285763526d29b83b37822f847855ad6947404ef184d4f6241b1d",
+      "sha256_antes": "2a1c5bbfa44028ee6c14f9efaf641ea291445f68b42c18621a9ab29f7212f397",
+      "sha256_depois": "90b0d0766a6b285763526d29b83b37822f847855ad6947404ef184d4f6241b1d",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/inventario/lote-4-linhas.md",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "7075963baa52b8fce24902bbdeebb06adb94745694fe03264a29a10dc65176e5",
+      "sha256_antes": "a1333eb8927efe7c821755cab1b33f5787000ed66e29fdd20735370bb45fa8b8",
+      "sha256_depois": "7075963baa52b8fce24902bbdeebb06adb94745694fe03264a29a10dc65176e5",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/mandatos/GUIAO-montar-pacote-h4e-2026-10-06.sh.txt",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "e9ebb8f93e3ef52954eeef3265eb517acf0076ac52d7f5ef503dac3d422df7fa",
+      "sha256_antes": "fc7a9b09f42c423bd270207e05b93a06ae0eea0535484e247d5c94d4489535e1",
+      "sha256_depois": "e9ebb8f93e3ef52954eeef3265eb517acf0076ac52d7f5ef503dac3d422df7fa",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/mandatos/GUIAO-provas-h4e-2026-10-06.sh.txt",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "c61b337d33188169616e3d580b69314201cfb24f9a758545d9e175a9a45d9c50",
+      "sha256_antes": "ba193b0abe4ac2556dcf4abb3e86450393a9391f1cc3186ac528ab7149e234f5",
+      "sha256_depois": "c61b337d33188169616e3d580b69314201cfb24f9a758545d9e175a9a45d9c50",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/mandatos/MANDATO-JD1-b-2026-10-06.md",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "design/observatorio/medidas/BRIEF-RP1.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "aa46a47815fcdbda26cd25b9db26188a1600034f539d074cbb27abc2624850b4",
+      "sha256_antes": "5f0d9cd55ec19e5335ac852bc426a7ed60e000547fadac90fbd6dc9e6fb36592",
+      "sha256_depois": "aa46a47815fcdbda26cd25b9db26188a1600034f539d074cbb27abc2624850b4",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "design/observatorio/medidas/isentos.json",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21. O resumo do brief P2 acompanha a retirada da raiz pessoal.",
+      "sha256_base": "9986b21452c5262f42acc20a17514a2d2de7813888de8c3b03b6b640f818d62b",
+      "sha256_antes": "c5c46a3b7571ab32f7c1f7e85fa92bcdf72c2039139f49eefa01eba7c706fc20",
+      "sha256_depois": "7eaaf569e7266d5940b6edf879c825d1841e1956973601b942492230146a6f25",
+      "igual_a_base": false
+    },
+    {
+      "ficheiro": "ledger/claims/custo-da-divida-emitida-2026-08.yml",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "ledger/claims/custo-do-stock-da-divida-direta-2025.yml",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "ledger/claims/divida-direta-do-estado-2026-08.yml",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "ledger/claims/juros-das-administracoes-publicas-2024.yml",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "ledger/claims/juros-das-administracoes-publicas-2025-ue.yml",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "ledger/claims/juros-das-administracoes-publicas-2025.yml",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "ledger/claims/juros-e-outros-encargos-execucao-2025-08.yml",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "ledger/claims/juros-e-outros-encargos-execucao-2026-08.yml",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "ledger/claims/necessidades-brutas-de-financiamento-2025.yml",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "ledger/claims/pib-nominal-notificacao-setembro-2024.yml",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "ledger/claims/pib-nominal-notificacao-setembro-2025.yml",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "ledger/cruzamentos/jd1.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "package.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "public/recortes/custo-da-divida-emitida-2026-08.webp",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "public/recortes/custo-do-stock-da-divida-direta-2025.webp",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "scripts/aterrar.sh",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "87b4cc558fafc9e10f30740015273148c9c2edd666f6240595d9928fa04be23e",
+      "sha256_antes": "8e08795d380dd73a879094ee511005e894ff7b1c40211ac2d518c1b4d3e61ad7",
+      "sha256_depois": "87b4cc558fafc9e10f30740015273148c9c2edd666f6240595d9928fa04be23e",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "scripts/check-lugar.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "scripts/check-privacidade.py",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "scripts/inventario-rotulos.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "scripts/leituras/estado.py",
+      "decisao": "revertido",
+      "razao": "Conteúdo de 64d81b21.",
+      "sha256_base": "a724c8879cb4e4efbb503231e1b525a7a5570cf00b6670da8ed071b2a5689ad1",
+      "sha256_antes": "f0b1aa26ef5e668addb1180e367bc48e28e7999a6823cf9e356caa4a78b64eff",
+      "sha256_depois": "a724c8879cb4e4efbb503231e1b525a7a5570cf00b6670da8ed071b2a5689ad1",
+      "igual_a_base": true
+    },
+    {
+      "ficheiro": "scripts/leituras/limpar-caminhos.py",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "src/components/QuadroFinanciamentoJd1.astro",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "src/data/o-que-e-das-familias.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "src/data/o-que-e-das-series.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "src/data/origens-jd1.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "src/i18n/lingua-dos-titulos.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "src/lib/enquadramento.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "src/lib/quadro-financiamento-jd1.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "src/styles/linha.css",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "src/views/LinhaView.astro",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "tests/cartao/cartao.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "tests/cartao/leituras-provadas.json",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "tests/cartao/registo-leituras.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "tests/leituras/privacidade-jd1.py",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "tests/linha/enquadramento-jd1b.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "tests/linha/jd1b.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "tests/linha/quadro-financiamento-jd1.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    },
+    {
+      "ficheiro": "tests/livro/indice.mjs",
+      "decisao": "conservado",
+      "razao": "Ficheiro tocado de propósito pelo bloco."
+    }
+  ]
+}

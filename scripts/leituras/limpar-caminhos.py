@@ -114,6 +114,12 @@ def limpar(pasta, worktree, motor=None, scratchpad=None, casa=None, utilizador=N
             continue
         # No código rastreado, exemplos portáveis de /tmp e outras constantes ficam intactos.
         # A limpeza da árvore só retira a estrutura dos projetos; a dos registos retira todas as raízes.
+        rel = caminho.relative_to(pasta).as_posix()
+        registo = rel.endswith(('.log', '.log.gz')) or (
+            rel.startswith(('design/especime-v3/medicoes/', 'design/especime-v3/critica/'))
+            and rel.endswith(('.md', '.json', '.txt', '.gz')))
+        if rastreado and not registo:
+            continue
         novo = retirar_estrutura(texto) if rastreado else substituir_texto(texto, trocas, nome)
         if novo == texto:
             continue

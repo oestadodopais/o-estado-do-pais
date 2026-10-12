@@ -6,7 +6,7 @@
     {
       "brief": "design/observatorio/BRIEF-B1-as-quatro-paginas.md",
       "isento_por": "data",
-      "sha256": "f88a0093c5b1e0f967b21d33c3b7e6a50c788c8cc1f8718e554398b5ce0abcdd"
+      "sha256": "8420cf0c63d3df967d70a618d42332c547790f28c73366d9ea7633ea02c75daf"
     },
     {
       "brief": "design/observatorio/BRIEF-B1c-o-que-mudou-no-seu-lugar.md",
@@ -16,7 +16,7 @@
     {
       "brief": "design/observatorio/BRIEF-F1.1-porta-da-frente.md",
       "isento_por": "data",
-      "sha256": "64fca49a12d57f4ed086187d0f931d408c8bcda371072021fef062352e6342f2"
+      "sha256": "105b30ceff14fde506fc622a9c9e4f05ea96e206430c6cd7e058e2791f279ec9"
     },
     {
       "brief": "design/observatorio/BRIEF-F1.10-uma-coisa-um-lugar.md",
@@ -66,7 +66,7 @@
     {
       "brief": "design/observatorio/BRIEF-F1.2-pagina-do-dominio.md",
       "isento_por": "data",
-      "sha256": "2a8548c216d5c377df3436ccf93bc104a65eb5ca2ad0165edd5c625758f28727"
+      "sha256": "c5052f9910ad53acd3767fba953e2977a5aff61e37ec403c1db8cd75d12e3c98"
     },
     {
       "brief": "design/observatorio/BRIEF-F1.2b-cartoes-menu-estudos.md",
@@ -81,7 +81,7 @@
     {
       "brief": "design/observatorio/BRIEF-F1.6-o-atraso-do-iefp-e-as-duas-frases.md",
       "isento_por": "data",
-      "sha256": "4383ecabbb2316f8bac19acdd578b2b2d111b086eca80be13d608c131c8fceae"
+      "sha256": "4abe22136d238480d715c9beba75bcb668b74efd9e517881f27b6f6067786cd1"
     },
     {
       "brief": "design/observatorio/BRIEF-F1.7-acessibilidade-e-alvos.md",
@@ -111,27 +111,27 @@
     {
       "brief": "design/observatorio/BRIEF-F2.6-o-calendario-a-serio.md",
       "isento_por": "data",
-      "sha256": "06f4d36a3434eae24bf68c2a9061e4649b7465eb8f7a3c3607d4f4e9cc298bcf"
+      "sha256": "4007bbcd854b5610e386a775560301733248de0ac6886cf261ba2e1822dbfa4b"
     },
     {
       "brief": "design/observatorio/BRIEF-I129-o-grupo-etario-dos-jovens-nem.md",
       "isento_por": "nomeação",
-      "sha256": "f900dc938a6b3ff867c7d356a5843116ec255be98d0e8f26c693f8db76dd8539"
+      "sha256": "384742d47680f834f28c8a435d3a5dbd8632937e3506062d686c3bf50766fe60"
     },
     {
       "brief": "design/observatorio/BRIEF-M1-o-nome-das-entradas-sem-nome.md",
       "isento_por": "data",
-      "sha256": "1b886eb3951360a12f71631592b6f844eeb89205ec3a132fdf001cbf12824427"
+      "sha256": "bc040df71a6ec83d40a2efa9601b54c90eb27e616d1879b814f3708e01be55d5"
     },
     {
       "brief": "design/observatorio/BRIEF-M2-o-estudo-14-entra-no-portao-do-motor.md",
       "isento_por": "data",
-      "sha256": "cc976765a8eeabbe3af2949815a25a5bf48a62c2ad9bd831816aa0d1fb9342f0"
+      "sha256": "cb276e41800f33320f96f81c3937d3c60437d43407c9101c43e477305ad45638"
     },
     {
       "brief": "design/observatorio/BRIEF-M3-os-nomes-oficiais-conferidos-no-motor.md",
       "isento_por": "data",
-      "sha256": "0048ea3a652fd09fda1c22273fa529372507bacda8f58d1e09e6747f1ade7cec"
+      "sha256": "2c4781923fe4488950820dd29958efd5454b72e6c251bba9c2dbc8e68eb4e082"
     },
     {
       "brief": "design/observatorio/BRIEF-M3b-os-nomes-confirmados-voltam-aos-recibos.md",
@@ -151,12 +151,12 @@
     {
       "brief": "design/observatorio/BRIEF-P2-o-numero-e-o-seu-sentido.md",
       "isento_por": "data",
-      "sha256": "191304235fe4ff559d65ed15e24734cb8162228e88c190e3d611de185204eb7e"
+      "sha256": "51f5a53e46342bc154ce5687c415dd264a999b09b327cabaeec95196949fab2a"
     },
     {
       "brief": "design/observatorio/BRIEF-P3-os-nomes-e-a-lingua.md",
       "isento_por": "data",
-      "sha256": "2630a9d4d8e364d891d8a9a0cde0d2b333a26f0c9b5386b23fab3acac5657b02"
+      "sha256": "c32462d965d8b53ddfb2fe99b2fccd74dde38ee33ba7291fa3d868309ab40f2a"
     },
     {
       "brief": "design/observatorio/BRIEF-divulgacao-via-B.md",
