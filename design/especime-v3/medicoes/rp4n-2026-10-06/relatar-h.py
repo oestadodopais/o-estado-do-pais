@@ -47,7 +47,7 @@ s+='### Cabeças, portões e repetições\n'
 s+=tabela(['Repositório','Base','Cabeça do código'],[(k,x['base'],x['cabeca']) for k,x in heads.items()])
 s+=tabela(['Ficheiro','Código lido','Cabeça'],codigo)
 s+='Os portões correram com as árvores do código limpas, sob a tranca comum. As séries e o cruzamento correram depois do último commit que muda o que leem, com as duas cabeças escritas antes e depois; o cruzamento usou `--with-origin`. O commit posterior contém apenas registos e capturas, que estas duas conferências não leem. A cabeça final é o commit que contém este relatório, identificada na resposta, sem tentar escrever o hash do próprio commit no seu conteúdo.\n\n'
-s+='As tentativas anteriores ficam conservadas, sem serem apresentadas como verdes. A primeira construção completa detetou entradas antigas reativadas a mais no inventário da voz; foram repostas como retiradas antes da repetição.\n'
+s+='As tentativas anteriores ficam conservadas, sem serem apresentadas como verdes. A primeira construção completa detetou entradas antigas reativadas a mais no inventário da voz; foram repostas como retiradas antes da repetição. A segunda construção passou; a conferência restante detetou a regra antiga da data local na K16 e a contagem antiga de campos. Ambas foram atualizadas, com plantas para a prova da data, antes da nova corrida.\n'
 s+=tabela(['Tentativa','build','verify','typecheck'],[(q.name,*[(q/(k+'.codigo')).read_text().strip() for k in ['build','verify','typecheck']]) for q in sorted(b.glob('portoes-h-tentativa*'))])
 s+='### Capturas\n\n'
 s+=f"O manifesto `h/capturas-h.json` regista {len(c['capturas'])} capturas, nas larguras {', '.join(str(x) for x in sorted(set(x['largura'] for x in c['capturas'])))}; construção `{c['versao']['commit']}` e cabeça da captura `{c['cabeca_da_captura']}`. Inclui os dois recibos da pensão, os temas, a área Trabalho, os índices dos estudos e o Método, nas duas edições. Problemas medidos de carga, navegação ou transbordo: {len(c['problemas'])}. A inspeção visual e os ficheiros vistos estão em `h/inspecao-visual.json`.\n"
@@ -62,6 +62,11 @@ for linha in (h/'plantas-motor.log').read_text().splitlines():
   nome,msg=linha.removeprefix('PLANTA ').split(': ',1);plantas.append({'nome':nome,'mensagem':msg})
 s+=tabela(['Planta','Mensagem'],[(x['nome'],x['mensagem']) for x in plantas])
 s+='### Privacidade e commits\n'
+if v['historico_grep_c']:
+ s+='A RP4N-17 regista a ocorrência histórica do prefixo genérico das pastas pessoais na leitura recebida e no diff que a retirou. A cabeça foi anonimizada num commit normal; a revisão automática rejeitou a reescrita dos commits sem autorização explícita. O guião conserva a contagem histórica e o código de recusa, sem a apresentar como verde; não havia nome de utilizador nem caminho pessoal completo nessa ocorrência. A conferência da cabeça e a do diff final estão na tabela abaixo.\n'
+if (h/'reescrita-h.json').exists():
+ rr=le('reescrita-h.json');s+=f"A anonimização da leitura recebida foi propagada aos {len(rr['pares'])} commits desta passagem, com autorização explícita. A base ficou intacta, os restantes ficheiros das árvores ficaram idênticos e o mapa está em `h/reescrita-h.json`.\n"
+
 s+=tabela(['Conferência','Valor'],[(k,v[k]) for k in ['historico_grep_c','diff_grep_c','cabeca_sem_excecoes_grep_c','legados_ficheiros']])
 s+=f"O guião leu integralmente {len(v['legados_lidos'])} ficheiros legados na cabeça: {len(v['legados_com_nome'])} contêm o nome do utilizador. A lista está em `h/privacidade.json`; os conhecidos-positivos cobrem separadamente cada pedaço procurado. A prova dos trailers lê as mensagens, incluindo a adjacência dos dois trailers no sítio. A designação do modelo nos trailers reproduz a exigida pelo mandato; o identificador exato e o nível de raciocínio não estão expostos ao agente nesta sessão.\n"
 for k,x in heads.items():s+=tabela([k,'Mensagem'],[(c['sha'],c['titulo']) for c in x['commits']])
