@@ -28,7 +28,7 @@ from pathlib import Path
 # 0. Caminhos
 # ---------------------------------------------------------------------------
 
-REPO = Path("/Users/UTILIZADOR/Instruments/OEstadoDoPais")
+REPO = (Path.home() / '/Instruments/OEstadoDoPais'.lstrip('/'))
 DEFAULT_DIST = Path(
     "/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/"
     "96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad/dist-p2"

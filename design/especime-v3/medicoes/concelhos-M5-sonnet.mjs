@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { homedir as jd1Casa } from 'node:os';
 // concelhos-M5-sonnet.mjs
 //
 // BRIEF-concelhos-M5 · medição cega (Claude Sonnet) das páginas dos 308
@@ -22,7 +23,7 @@ import { load as yamlLoad } from "js-yaml";
 import { chromium } from "playwright";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const REPO = "/Users/UTILIZADOR/Instruments/OEstadoDoPais";
+const REPO = (jd1Casa() + '/Instruments/OEstadoDoPais');
 const BASE = "http://127.0.0.1:4731";
 const SCRATCH =
   "/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad";

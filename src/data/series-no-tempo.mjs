@@ -29,6 +29,9 @@
  * @type {Record<string, { linha: string } | { nome: { pt: string, en: string } }>}
  */
 export const NOMES_DAS_SERIES = {
+  'serie-obrigacoes-do-tesouro-10-anos-rendibilidade': {
+    nome: { pt: 'Taxa das obrigações do Tesouro a dez anos', en: 'Ten-year Treasury bond yield' },
+  },
   'serie-ipc-variacao-homologa': { linha: 'ipc-variacao-homologa' },
   'serie-ipc-alimentacao-variacao-homologa': { linha: 'ipc-alimentacao-variacao-homologa' },
   'serie-ipc-indice': {

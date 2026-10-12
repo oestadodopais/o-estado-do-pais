@@ -83,6 +83,20 @@
   font-size: 14.5px;
   line-height: 1.62;
 }
+/* JD1: a área de toque mantém o seu tamanho; o endereço não esmaga o rótulo. */
+@media (max-width: 1023px) {
+  .linha-porta-documento > .ligacao-externa,
+  .linha-recorte-legenda > .ligacao-externa {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 100%;
+  }
+  .linha-endereco-abrir,
+  .linha-endereco-bruto {
+    max-width: 100%;
+  }
+}
 .aparelho-ficha dd {
   font-size: 12.5px;
   line-height: 1.5;
@@ -533,3 +547,75 @@
   line-height: 1.55;
   color: var(--ink);
 }
+
+/* JD1-b: as colunas da fonte, sem achatar os anos e os montantes numa frase. */
+.linha-quadro-financiamento {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.linha-quadro-financiamento th,
+.linha-quadro-financiamento td {
+  padding: 10px 6px;
+  border-bottom: 1px solid var(--rule);
+  text-align: right;
+  vertical-align: top;
+}
+.linha-quadro-financiamento th:first-child {
+  width: auto;
+  padding-left: 0;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.linha-quadro-financiamento thead th:not(:first-child) {
+  width: 5.3em;
+}
+.linha-quadro-financiamento thead th {
+  border-bottom: 2px solid var(--rule-strong);
+  font-weight: 600;
+}
+.linha-quadro-financiamento tbody th {
+  font-weight: 400;
+}
+.linha-quadro-financiamento tbody td {
+  white-space: nowrap;
+}
+.linha-quadro-financiamento .quadro-financiamento-grupo th {
+  font-weight: 600;
+}
+.linha-quadro-financiamento [data-quadro-jd1-celula] {
+  background: var(--rule);
+}
+.linha-quadro-financiamento [data-quadro-jd1-celula] strong {
+  font-weight: 700;
+}
+.linha-quadro-financiamento .quadro-financiamento-total > * {
+  border-top: 2px solid var(--rule-strong);
+  border-bottom: 2px solid var(--rule-strong);
+}
+
+/* JD1-c: a coluna citada continua contável no excerto literal do gráfico. */
+.linha-excerto-grafico {
+  white-space: pre;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* O código incorporável cabe na coluna e seleciona-se também sem guião. */
+.incorporar-bloco { min-width: 0; }
+.incorporar-bloco textarea {
+  display: block; width: 100%; max-width: 100%; box-sizing: border-box;
+  margin-block: 10px; padding: 10px; resize: vertical;
+  font: 12px/1.5 ui-monospace, monospace; color: var(--ink); background: var(--paper);
+  border: 1px solid var(--rule); overflow-wrap: anywhere;
+}
+.incorporar-bloco button {
+  min-height: 44px; padding: 8px 14px; font: 14px/1.5 var(--f-instr);
+  color: var(--ink); background: transparent; border: 1px solid var(--rule); cursor: pointer;
+}
+.incorporar-bloco button:hover { border-color: var(--ink); }

@@ -16,6 +16,7 @@
  *   --seco  confere e diz, sem escrever nada.
  */
 import fs from 'node:fs';
+import { registarLeitura } from './registar-leitura.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { FAMILIAS_R4, FAMILIAS_DOS_CONCELHOS_R4 } from './familias-r4.mjs';
@@ -318,7 +319,9 @@ const leitura = {
   quando: '2026-10-05',
   o_que: 'o bloco R4: as frases «o que é» das famílias das linhas sem cartão nacional (as do ano anterior e da União das medidas com cartão leem a frase do cartão contra a própria linha; as outras têm frase própria), e as partes das oito notas das medidas dos concelhos e da frase nova do limite da dívida, cada parte com o literal que a apoia nas linhas da família, numa origem declarada, num termo explicado em TERMOS_DOS_CARTOES ou, onde a fonte não diz o que a medida é, no nome do projeto',
 };
-AUD.leituras = [...AUD.leituras.filter((l) => !(l.quando === leitura.quando && l.o_que.startsWith('o bloco R4'))), leitura];
+AUD.leituras = registarLeitura(AUD.leituras, leitura);
+const jd1 = { quem: 'Codex gpt-6-astra', quando: '2026-10-06', o_que: 'Construção JD1: frases das famílias e da série, relidas contra as fontes seladas desta corrida. A leitura a frio pertence à entrega seguinte.' };
+AUD.leituras = [...AUD.leituras.filter((l) => !l.o_que.startsWith('Construção JD1:')), jd1];
 AUD.familias = auditoria;
 fs.writeFileSync(AUDITORIA, `${JSON.stringify(AUD, null, 2)}\n`);
 console.log(`escrito: ${path.relative(RAIZ, DECLARACAO)} e a chave familias de ${path.relative(RAIZ, AUDITORIA)}`);

@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-06T14:50:38+00:00",
+ "copia": "<scratchpad>/er1/pacote-leitura",
+ "plantas": [
+  {
+   "id": "p1",
+   "ficheiro": "public/incorporar.js",
+   "descricao": "o guião passa a mandar as credenciais (cookies) no pedido do JSON (credentials: include), contra a regra de privacidade do bloco",
+   "sha256_antes": "95d518e41d1e8a87afb689ed0894a4dcd0b8706441cdf8c000103ceaf730149c",
+   "sha256_depois": "8b34a0e7ac246db42c4749a7b59f2ea21a46860651884bd26bf2cccdd39bb4d6",
+   "contexto_antes": "(lang === 'en' ? '/en/ledger/' : '/livro-razao/') + id;\n    if (typeof fetch !== 'function') return;\n    fetch(origem + '/livro-razao/' + id + '.json', {\n      credentials: 'omit', mode: 'cors', redirect: 'error', referrerPolicy: 'no-referrer', cache: 'no-cache'\n    }).then(function (r) {\n      if (!r.ok) throw Error('resposta');\n      return r.json();\n    }).then(function (j) {\n      var c = j.linha;\n      var d = j.i",
+   "contexto_depois": "(lang === 'en' ? '/en/ledger/' : '/livro-razao/') + id;\n    if (typeof fetch !== 'function') return;\n    fetch(origem + '/livro-razao/' + id + '.json', {\n      credentials: 'include', mode: 'cors', redirect: 'error', referrerPolicy: 'no-referrer', cache: 'no-cache'\n    }).then(function (r) {\n      if (!r.ok) throw Error('resposta');\n      return r.json();\n    }).then(function (j) {\n      var c = j.linha;\n      var d = j.i"
+  },
+  {
+   "id": "p2",
+   "ficheiro": "vercel.json",
+   "descricao": "a rota dos cabeçalhos CORS passa a abranger todos os caminhos, incluindo o HTML, e não só os ficheiros do livro-razão e o guião",
+   "sha256_antes": "56af5ca5fdcf1f582781f5b089959e6f13e142b2f543b0edc485173229d7d10e",
+   "sha256_depois": "cb50817c93d6a5f56e46347ad31b7c620d60bcdd2e2b90af1b376f57ea7801f9",
+   "contexto_antes": "port-Security\": \"max-age=15552000\",\n        \"Permissions-Policy\": \"camera=(), microphone=(), geolocation=()\"\n      },\n      \"continue\": true\n    },\n    {\n      \"src\": \"^/(?:livro-razao/(.*)\\\\.json|livro-razao\\\\.json|livro-razao\\\\.csv|incorporar\\\\.js)$\",\n      \"headers\": {\n        \"Access-Control-Allow-Origin\": \"*\"\n      },\n      \"continue\": true\n    },\n    {\n      \"src\": \"/(.*)\",\n      \"has\": [\n        {\n     ",
+   "contexto_depois": "port-Security\": \"max-age=15552000\",\n        \"Permissions-Policy\": \"camera=(), microphone=(), geolocation=()\"\n      },\n      \"continue\": true\n    },\n    {\n      \"src\": \"/(.*)\",\n      \"headers\": {\n        \"Access-Control-Allow-Origin\": \"*\"\n      },\n      \"continue\": true\n    },\n    {\n      \"src\": \"/(.*)\",\n      \"has\": [\n        {\n     "
+  },
+  {
+   "id": "p4",
+   "ficheiro": "scripts/incorporar-do-portao.mjs",
+   "descricao": "a célula do portão deixa de recusar um pedaço de código que difere da linha (o erro fica atrás de um if false)",
+   "sha256_antes": "88e48ab7662072850b600d6c21a14c7602ed3447f077a1e9a3a2c38fbc6c4271",
+   "sha256_depois": "c15e31579de74e6ff5cc1728c5432a8ace2e6bd791c12fa947e364bcae6a942e",
+   "contexto_antes": "1)) {\n      erros.push('ER1 código: marca fora do campo do recibo da própria linha.');\n    } else if (campo.textContent !== codigoEsperado(linha, rota.lang)) {\n      erros.push('ER1 código: o pedaço difere da linha, carácter a carácter.');\n    }\n  }\n  return erros;\n}\n\nexport function conferirJson(doc, c, lang) {\n  const d = doc?.incorporacao?.[lang];\n  const esperado = dadosEsperados(c, lang);\n  ",
+   "contexto_depois": "1)) {\n      erros.push('ER1 código: marca fora do campo do recibo da própria linha.');\n    } else if (campo.textContent !== codigoEsperado(linha, rota.lang)) {\n      if (false) erros.push('ER1 código: o pedaço difere da linha, carácter a carácter.');\n    }\n  }\n  return erros;\n}\n\nexport function conferirJson(doc, c, lang) {\n  const d = doc?.incorporacao?.[lang];\n  const esperado = dadosEsperados(c, lang);\n  "
+  },
+  {
+   "id": "p5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que o valor antigo do ensaio passa ao publicado 17,8, e as provas dizem 17,9",
+   "sha256_antes": "5368170889f18eeef5e4b492cafe86d64f82853ded3dee82a51d291cc635c9ac",
+   "sha256_depois": "1f4dd3495c10d6f470f418ba01b8c1c6193e8282ad27897b874be47bae2c6017",
+   "contexto_antes": "ta 2026-10-06, sem aviso de mudança de valor. |\n\ncapturas-prova.json guarda texto, atributos e todos os pedidos em cada edição. O valor antigo do ensaio (17,7) vem de corrections e passa ao publicado (17,9). A data fictícia do caso releitura é calculada apenas no ensaio, nunca escrita no livro ou nas páginas entregues. Os modos sem JavaScript, sem CORS, resposta i",
+   "contexto_depois": "ta 2026-10-06, sem aviso de mudança de valor. |\n\ncapturas-prova.json guarda texto, atributos e todos os pedidos em cada edição. O valor antigo do ensaio (17,7) vem de corrections e passa ao publicado (17,8). A data fictícia do caso releitura é calculada apenas no ensaio, nunca escrita no livro ou nas páginas entregues. Os modos sem JavaScript, sem CORS, resposta i"
+  },
+  {
+   "id": "p3",
+   "ficheiro": "built/livro-razao/custo-unitario-do-trabalho-2024/index.html",
+   "descricao": "o pedaço de código do recibo português diz 17,8 no data-oedp-valor, e a linha e o recibo dizem 17,9",
+   "sha256_antes": "6ffa445aca152ac54a8b5d42f36acd0fcbc5690c837af4616c73c7a36aeeb9f2",
+   "sha256_depois": "0927e5c2d49355bbdfde8081f91992c4b45be5fa3936e37cfb19a18d455ec558",
+   "contexto_antes": "lho-2024\" readonly spellcheck=\"false\" rows=\"6\">&lt;p class=&quot;oedp-numero&quot; lang=&quot;pt-PT&quot; data-oedp=&quot;custo-unitario-do-trabalho-2024&quot; data-oedp-valor=&quot;17,9&quot; data-oedp-lido=&quot;2026-10-05&quot;&gt;&lt;a href=&quot;https://oestadodopaís.pt/livro-razao/custo-unitario-do-trabalho-2024&quot;&gt;Custo do trabalho por u",
+   "contexto_depois": "lho-2024\" readonly spellcheck=\"false\" rows=\"6\">&lt;p class=&quot;oedp-numero&quot; lang=&quot;pt-PT&quot; data-oedp=&quot;custo-unitario-do-trabalho-2024&quot; data-oedp-valor=&quot;17,8&quot; data-oedp-lido=&quot;2026-10-05&quot;&gt;&lt;a href=&quot;https://oestadodopaís.pt/livro-razao/custo-unitario-do-trabalho-2024&quot;&gt;Custo do trabalho por u"
+  }
+ ]
+}

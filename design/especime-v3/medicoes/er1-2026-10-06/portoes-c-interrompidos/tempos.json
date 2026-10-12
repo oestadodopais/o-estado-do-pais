@@ -1,0 +1,80 @@
+{
+  "cabeca": "c3f0243a1ed8b53c45fa73735e7646a37314c984",
+  "inicio": "2026-10-07T11:17:13.374Z",
+  "fim": "2026-10-07T11:17:49.329Z",
+  "segundos": 35.955,
+  "passos": [
+    {
+      "passo": "cadeia:build",
+      "cadeia": "build",
+      "inicio": "2026-10-07T11:17:13.374+00:00",
+      "fim": "2026-10-07T11:17:49.329+00:00",
+      "segundos": 35.95482945814729,
+      "codigo": 143
+    },
+    {
+      "passo": "npm run mapa:unidades",
+      "cadeia": "build",
+      "inicio": "2026-10-07T11:17:13.374+00:00",
+      "fim": "2026-10-07T11:17:13.512+00:00",
+      "segundos": 0.13785495818592608,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run ledger:check",
+      "cadeia": "build",
+      "inicio": "2026-10-07T11:17:13.512+00:00",
+      "fim": "2026-10-07T11:17:18.020+00:00",
+      "segundos": 4.507733084028587,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:registo",
+      "cadeia": "build",
+      "inicio": "2026-10-07T11:17:18.020+00:00",
+      "fim": "2026-10-07T11:17:18.352+00:00",
+      "segundos": 0.3318898750003427,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:cruzamento",
+      "cadeia": "build",
+      "inicio": "2026-10-07T11:17:18.352+00:00",
+      "fim": "2026-10-07T11:17:18.776+00:00",
+      "segundos": 0.4237855828832835,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:documentos",
+      "cadeia": "build",
+      "inicio": "2026-10-07T11:17:18.776+00:00",
+      "fim": "2026-10-07T11:17:18.935+00:00",
+      "segundos": 0.15886916709132493,
+      "codigo": 0
+    },
+    {
+      "passo": "astro build",
+      "cadeia": "build",
+      "inicio": "2026-10-07T11:17:18.935+00:00",
+      "fim": "2026-10-07T11:17:31.975+00:00",
+      "segundos": 13.039856374962255,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run stamp:version",
+      "cadeia": "build",
+      "inicio": "2026-10-07T11:17:31.975+00:00",
+      "fim": "2026-10-07T11:17:32.111+00:00",
+      "segundos": 0.1360399581026286,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run cartoes",
+      "cadeia": "build",
+      "inicio": "2026-10-07T11:17:32.111+00:00",
+      "fim": "2026-10-07T11:17:49.329+00:00",
+      "segundos": 17.217342999996617,
+      "codigo": 143
+    }
+  ]
+}

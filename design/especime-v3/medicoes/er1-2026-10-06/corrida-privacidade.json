@@ -1,0 +1,7 @@
+{
+  "comando": "python3 scripts/check-privacidade.py --prova --json design/especime-v3/medicoes/er1-2026-10-06/privacidade-prova.json",
+  "inicio": "2026-10-06T11:17:53.381Z",
+  "fim": "2026-10-06T11:18:13.274Z",
+  "codigo": 0,
+  "sinal": null
+}

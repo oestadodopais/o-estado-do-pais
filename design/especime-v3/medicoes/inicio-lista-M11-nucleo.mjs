@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { homedir as jd1Casa } from 'node:os';
 /**
  * =============================================================================
  * M11 · nucleo.mjs — as funções partilhadas da medição cega do bloco «os
@@ -17,7 +18,7 @@
  * commits (confirmado com `diff`).
  * ---------------------------------------------------------------------------
  */
-import { chromium } from '/Users/UTILIZADOR/Instruments/OEstadoDoPais/node_modules/playwright/index.mjs';
+const { chromium } = await import(jd1Casa() + '/Instruments/OEstadoDoPais/node_modules/playwright/index.mjs');
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -262,7 +263,7 @@ let PONTOS_DAS_UNIDADES = null;
 let UNIDADES_META = null;
 function carregaPontos() {
   if (PONTOS_DAS_UNIDADES) return;
-  const dados = JSON.parse(fs.readFileSync('/Users/UTILIZADOR/Instruments/OEstadoDoPais/mapa/pais.json', 'utf8'));
+  const dados = JSON.parse(fs.readFileSync((jd1Casa() + '/Instruments/OEstadoDoPais/mapa/pais.json'), 'utf8'));
   PONTOS_DAS_UNIDADES = Object.fromEntries(dados.unidades.map((u) => [u.slug, u.ponto]));
   UNIDADES_META = Object.fromEntries(dados.unidades.map((u) => [u.slug, { nome: u.nome, parcela: u.parcela }]));
 }

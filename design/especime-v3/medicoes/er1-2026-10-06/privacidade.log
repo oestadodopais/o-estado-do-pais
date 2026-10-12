@@ -1,0 +1,180 @@
+{
+  "ficheiros": 11207,
+  "quantidade": 0,
+  "achados": [],
+  "plantas": [
+    {
+      "id": "nome-do-git-1",
+      "pagina_base": "404.html",
+      "mordeu": true,
+      "falha": "nome pessoal ou caminho local na página construída"
+    },
+    {
+      "id": "nome-do-git-2",
+      "pagina_base": "404.html",
+      "mordeu": true,
+      "falha": "nome pessoal ou caminho local na página construída"
+    },
+    {
+      "id": "nome-da-casa-real",
+      "nome_pessoal": true,
+      "esperado": "detetar",
+      "mordeu": true
+    },
+    {
+      "id": "nome-pessoal-portavel",
+      "mordeu": true
+    },
+    {
+      "id": "ligacao-home-na-conta-generica",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-raiz",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-root",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-runner",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-app",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-code",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-1",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-2",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-3",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-4",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-5",
+      "mordeu": true
+    }
+  ],
+  "api": {
+    "ficheiros": 1,
+    "caminhos_e_nomes": 0,
+    "achados_de_caminhos": [],
+    "segredos": [],
+    "chaves_publicas_vistas": 1,
+    "plantas": [
+      {
+        "id": "segredo-chave-secreta",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-papel-de-servico",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-sal-com-valor",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-sal-entre-aspas",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-chave-com-valor",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-chave-entre-aspas",
+        "mordeu": true
+      },
+      {
+        "id": "sal-lido-do-ambiente-sem-valor",
+        "mordeu": true
+      },
+      {
+        "id": "chave-lida-do-ambiente-sem-valor",
+        "mordeu": true
+      },
+      {
+        "id": "nome-vazio-entre-aspas-sem-valor",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-1",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-2",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-3",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-4",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-5",
+        "mordeu": true
+      },
+      {
+        "id": "api-nome-do-git",
+        "mordeu": true
+      }
+    ],
+    "passou": true
+  },
+  "incorporador": {
+    "erros": [],
+    "plantas": [
+      {
+        "nome": "pedido-de-fora",
+        "mensagem": "ER1 privacidade: endereço fora da origem fixa do projeto.",
+        "mordeu": true
+      },
+      {
+        "nome": "cookie",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "armazenamento",
+        "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "pagina-anfitria",
+        "mensagem": "ER1 privacidade: leitura fora dos parágrafos próprios.",
+        "mordeu": true
+      },
+      {
+        "nome": "credenciais",
+        "mensagem": "ER1 privacidade: o pedido perdeu a opção credentials: 'omit'.",
+        "mordeu": true
+      },
+      {
+        "nome": "redirecionamento",
+        "mensagem": "ER1 privacidade: o pedido perdeu a opção redirect: 'error'.",
+        "mordeu": true
+      }
+    ],
+    "passou": true
+  },
+  "passou": true
+}

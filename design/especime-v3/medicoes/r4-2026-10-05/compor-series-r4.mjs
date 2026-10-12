@@ -14,6 +14,7 @@
  * Uso, a partir da raiz do sítio:  node design/especime-v3/medicoes/r4-2026-10-05/compor-series-r4.mjs [--seco]
  */
 import fs from 'node:fs';
+import { registarLeitura } from './registar-leitura.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SERIES_R4 } from './series-r4.mjs';
@@ -147,7 +148,7 @@ const leitura = {
   quando: '2026-10-05',
   o_que: 'o bloco R4, as séries: as frases «o que é» das dez séries no tempo sem linha do livro-razão, cada parte com o literal que a apoia num campo da própria série, numa origem declarada (com os rótulos das classes do IHPC e da unidade do índice de preços da habitação trimestral, lidos na API do Eurostat a 05.10.2026) ou, onde nenhum dos dois o diz, no nome que o projeto dá à série',
 };
-AUD.leituras = [...AUD.leituras.filter((/** @type {any} */ l) => !(l.quando === leitura.quando && l.o_que.startsWith('o bloco R4, as séries'))), leitura];
+AUD.leituras = registarLeitura(AUD.leituras, leitura);
 AUD.series = auditoria;
 fs.writeFileSync(AUDITORIA, `${JSON.stringify(AUD, null, 2)}\n`);
 console.log(`escrito: ${path.relative(RAIZ, DECLARACAO)} e a chave series de ${path.relative(RAIZ, AUDITORIA)}`);

@@ -1,0 +1,17 @@
+{
+  "comando": "node design/especime-v3/medicoes/jd1-2026-10-06/inventario.mjs --write",
+  "leituras": [
+    {
+      "html": "dist/livro-razao/index.html",
+      "sha256": "cf0a0dafa1daaba840ad7611e7ea538161b787fa63dd893b05e2111ea1df155e",
+      "antes": "| conteudo | 3 209 afirmações · 368 de 3 209 calculadas · 2 767 de 3 209 linhas de concelhos | k2 | viva | JD1: contagem relida no HTML do livro. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |",
+      "depois": "| conteudo | 3 210 afirmações · 368 de 3 210 calculadas · 2 767 de 3 210 linhas de concelhos | k2 | viva | JD1: contagem relida no HTML do livro. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |"
+    },
+    {
+      "html": "dist/en/ledger/index.html",
+      "sha256": "65a84e477c075ec19b2c12d5359ab6efb8138e55e348626b9264304bcd8aa783",
+      "antes": "| conteudo | 3 209 claims · 368 of 3 209 calculated · 2 767 of 3 209 municipality rows | k2 | viva | JD1: contagem relida no HTML do livro. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |",
+      "depois": "| conteudo | 3 210 claims · 368 of 3 210 calculated · 2 767 of 3 210 municipality rows | k2 | viva | JD1: contagem relida no HTML do livro. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |"
+    }
+  ]
+}

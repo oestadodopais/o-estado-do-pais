@@ -1,3 +1,4 @@
+import { homedir as jd1Casa } from 'node:os';
 // U2 — o nome no lugar fixo: rato, teclado (foco) e toque, nas 29 áreas do
 // país e nos 14 concelhos de Évora crescida.
 //
@@ -12,7 +13,7 @@
 import fs from 'node:fs';
 import { abrePagina, BASE, pontosEmEcraNoNavegador } from './lib.mjs';
 
-const RAIZ = '/Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/medicao-distritos';
+const RAIZ = (jd1Casa() + '/Instruments/OEstadoDoPais/.claude/worktrees/medicao-distritos');
 const pais = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/pais.json`, 'utf8'));
 const evora = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/distritos/evora.json`, 'utf8'));
 

@@ -36,6 +36,7 @@
  * As frases são do construtor do bloco (Claude Opus 5.5) e lê-as a frio o leitor da outra família.
  */
 
+import { FAMILIAS_JD1 } from '../jd1-2026-10-06/familias.mjs';
 export const L = (campo, literal) => ({ linha: 'propria', campo, literal });
 export const O = (origem, literal, campo = 'excerto') => ({ origem, campo, literal });
 export const OU = (...alternativas) => ({ ou: alternativas });
@@ -1291,4 +1292,4 @@ const CONCELHOS = [
 ];
 
 export const FAMILIAS_DOS_CONCELHOS_R4 = CONCELHOS;
-export const FAMILIAS_R4 = [...FAMILIAS_PARTE_1, ...FAMILIAS_PARTE_2, ...FAMILIAS_PARTE_3];
+export const FAMILIAS_R4 = [...FAMILIAS_PARTE_1, ...FAMILIAS_PARTE_2, ...FAMILIAS_PARTE_3, ...FAMILIAS_JD1];

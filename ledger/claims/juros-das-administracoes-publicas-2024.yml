@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "juros-das-administracoes-publicas-2024"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "5 983,4"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Juros"
+name_source: "Quadro 9, Juros (D.41), coluna 2024, p. 12"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Instituto Nacional de Estatística"
+document:
+  title: "Procedimento dos Défices Excessivos 2ª Notificação"
+  edition: "Setembro de 2026"
+  locator: "Quadro 9, Juros (D.41), coluna 2024, p. 12"
+  page: 12
+  kind: "pdf"
+source_url: "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=816377733&att_display=n&att_download=y"
+access_date: "2026-10-06"
+reference_date: "2024"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "     Juros                                                                                      D.41             5 983,4          6 028,2            0,7"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: Quadro 9, Juros (D.41), coluna 2024, p. 12. Despesa das administrações públicas em contabilidade nacional (SEC 2010). Contas nacionais, execução orçamental e dívida direta têm perímetros e critérios distintos; esta linha conserva o do documento citado. · Cruzado de ResearchHub content/20 Orcamento do Estado · juros-das-administracoes-publicas-2024."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -1,0 +1,9 @@
+{
+  "juros_pt": "provisório",
+  "financiamento_en": "to repay or extinguish debt",
+  "parcela_base_sha256": "a4518c5edbf9e2d96554173122b815acb9ed712bee1e542b8cef3d39c2b8c2b4",
+  "parcela_atual_sha256": "8e71dd115949c7a2cc5587077c5a0843e790c37df4ceb4d9df3b318f0b65af2f",
+  "data": "padrão genérico, sem data literal",
+  "capturas_c": 64,
+  "passou": true
+}

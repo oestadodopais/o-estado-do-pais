@@ -1,0 +1,68 @@
+{
+  "linhas": 14,
+  "diretas": 12,
+  "derivadas": 2,
+  "familias": 10,
+  "por_confirmar_novas": 0,
+  "pedidos": 19,
+  "http_200": 18,
+  "pedidos_lidos": 18,
+  "extracoes": 6,
+  "serie": {
+    "id": "serie-obrigacoes-do-tesouro-10-anos-rendibilidade",
+    "pontos": 488,
+    "primeiro": "1986-01",
+    "ultimo": {
+      "periodo": "2026-08",
+      "valor": "3,53700",
+      "excerto": "\"2026-08\":559 · \"559\":3.53700",
+      "bandeira": null
+    },
+    "lacunas": 0
+  },
+  "inspecao_visual": 20,
+  "capturas": 50,
+  "interacoes": 10,
+  "problemas_capturas": [],
+  "problemas_enquadramento": [],
+  "plantas": 27,
+  "conferencias": 29,
+  "portoes": {
+    "build": 0,
+    "verify": 0,
+    "typecheck": 0,
+    "motor": 0
+  },
+  "portoes_iniciais": {
+    "build": 1,
+    "verify": 1,
+    "typecheck": 0
+  },
+  "portoes_lingua": {
+    "build": 1,
+    "verify": 1,
+    "typecheck": 0
+  },
+  "portoes_l1": {
+    "build": 0,
+    "verify": 1,
+    "typecheck": 0
+  },
+  "l1": {
+    "estudos": 2744,
+    "anteriores": 2716,
+    "novas": 28,
+    "antigas_alteradas": 0
+  },
+  "conferencias_focadas": {
+    "indice": 0,
+    "rotulos": 0,
+    "tipos_guardas": 0
+  },
+  "preflight": 1,
+  "cabecas_codigo": {
+    "sitio": "e7a433e983ebdc69130d7d0c3b81c0b2539a3b83",
+    "motor": "f503a5b1155657d638068d478d66163de429546a"
+  },
+  "ficheiros_protegidos_alterados": 0
+}

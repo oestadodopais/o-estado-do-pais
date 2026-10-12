@@ -1,0 +1,7 @@
+{
+  "comando": "node design/especime-v3/medicoes/jd1-2026-10-06/captar.mjs",
+  "inicio": "2026-10-06T16:53:06.127825+00:00",
+  "fim": "2026-10-06T16:53:38.981702+00:00",
+  "codigo": 0,
+  "cabeca": "e7a433e983ebdc69130d7d0c3b81c0b2539a3b83"
+}

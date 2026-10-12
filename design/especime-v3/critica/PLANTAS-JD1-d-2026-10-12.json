@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-12T15:04:46+00:00",
+ "copia": "<scratchpad>/jd1/pacote-leitura-d",
+ "plantas": [
+  {
+   "id": "P3",
+   "ficheiro": "ledger/claims/amortizacoes-e-anulacoes-de-divida-fundada-2025.yml",
+   "descricao": "o cabeçalho do excerto da linha das amortizações diz 2023 e 2024 em vez de 2024 e 2025, na cópia, contra o PDF alojado (pdftotext da página), o diff e as páginas",
+   "sha256_antes": "8e71dd115949c7a2cc5587077c5a0843e790c37df4ceb4d9df3b318f0b65af2f",
+   "sha256_depois": "d85ff3e9640049ab1297f4cf4e69c5edccdc8c90d4bc84d27207724dcfd4641c",
+   "contexto_antes": "Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"          (milhões de euros)                                                      2024         2025\\n          1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO                                   9 772       10 625\\n            Défice Orçamental                         ",
+   "contexto_depois": "Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"          (milhões de euros)                                                      2023         2024\\n          1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO                                   9 772       10 625\\n            Défice Orçamental                         "
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 32 capturas verificadas na JD1-d, na cópia, contra o manifesto capturas-d.json (30) e o fecho",
+   "sha256_antes": "3374cc83315bfeee92e25b18171069d9c5846bda974bc27d8397b15b55f8b905",
+   "sha256_depois": "2f45e32b35e0947d536406d110858252fba429fcb4703a8dba66f7330d2758b4",
+   "contexto_antes": "0-12T14:44:17Z |\n| `typecheck.codigo` | 0 | 2026-10-12T14:44:17Z | 2026-10-12T14:44:17Z |\n| `motor.codigo` | 0 | 2026-10-12T14:44:17Z | 2026-10-12T14:52:43Z |\n\nCapturas verificadas: 30; problemas reportados: 0. Larguras: 390, 768, 1024, 1280, 1600 px. Manifesto: `capturas-d.json`. As imagens foram inspecionadas visualmente no fecho.\n\n### Frases lidas dos recibos\n\n**`a",
+   "contexto_depois": "0-12T14:44:17Z |\n| `typecheck.codigo` | 0 | 2026-10-12T14:44:17Z | 2026-10-12T14:44:17Z |\n| `motor.codigo` | 0 | 2026-10-12T14:44:17Z | 2026-10-12T14:52:43Z |\n\nCapturas verificadas: 32; problemas reportados: 0. Larguras: 390, 768, 1024, 1280, 1600 px. Manifesto: `capturas-d.json`. As imagens foram inspecionadas visualmente no fecho.\n\n### Frases lidas dos recibos\n\n**`a"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "motor/publisher/jd1.py",
+   "descricao": "o cabeçalho do quadro do INE no guião do motor passa a dizer «Códigos 2023 2024», na cópia, contra o diff e o PDF da notificação (2024 e 2025)",
+   "sha256_antes": "837236a011669a2bd7839efa98ff39e4a499723401868a3c25e105c75fdf717e",
+   "sha256_depois": "5bde18aaf8672d86164f34c5603db16495b5c609c88ffcf7b1b12079fed5bb81",
+   "contexto_antes": "JD1 INE: página diferente\")\n    require(\"106 EUR\" in text, \"JD1 INE: unidade diferente\")\n    if page == 12:\n        header_line(text, r\"Códigos\\s+2024\\s+2025\", \"JD1 INE\", \"Códigos 2024 2025\")\n        require(\"Quadro 9\" in text and \"Juros\" in text, \"JD1 INE: quadro diferente\")\n    else:\n        header_line(text, r\"Códigos\\s+2022\\s+2023\\s+2024\\s+2025\\",
+   "contexto_depois": "JD1 INE: página diferente\")\n    require(\"106 EUR\" in text, \"JD1 INE: unidade diferente\")\n    if page == 12:\n        header_line(text, r\"Códigos\\s+2024\\s+2025\", \"JD1 INE\", \"Códigos 2023 2024\")\n        require(\"Quadro 9\" in text and \"Juros\" in text, \"JD1 INE: quadro diferente\")\n    else:\n        header_line(text, r\"Códigos\\s+2022\\s+2023\\s+2024\\s+2025\\"
+  },
+  {
+   "id": "P1",
+   "ficheiro": "built/livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025/index.html",
+   "descricao": "o recibo português das amortizações diz «Menos do que na coluna de 2024», na cópia, contra as duas células seladas (47 402 em 2024, 56 976 em 2025), a edição inglesa e o relatório",
+   "sha256_antes": "9111b28c1d1ffbf361c0207f1922f54050df3351ce19149a49747fa80572c2e9",
+   "sha256_depois": "86711ccfa6e56e6c08156c5aa8ac766662c95bf2c45701f5a642c5d780b982f6",
+   "contexto_antes": "an data-claim=\"amortizacoes-e-anulacoes-de-divida-fundada-2025\" class=\"claim-value\">56 976</span> milhões serviram para reembolsar ou extinguir dívida fundada. Mais do que na coluna de <span data-nonledger=\"data-de-referencia\">2024</span> do mesmo quadro.</p></div><p class=\"linha-valor\"><span data-claim=\"amortizacoes-e-anulacoes-de-divida-fundada-2025\" class=\"claim-value linha-valor-num\">56 976</span> <span clas",
+   "contexto_depois": "an data-claim=\"amortizacoes-e-anulacoes-de-divida-fundada-2025\" class=\"claim-value\">56 976</span> milhões serviram para reembolsar ou extinguir dívida fundada. Menos do que na coluna de <span data-nonledger=\"data-de-referencia\">2024</span> do mesmo quadro.</p></div><p class=\"linha-valor\"><span data-claim=\"amortizacoes-e-anulacoes-de-divida-fundada-2025\" class=\"claim-value linha-valor-num\">56 976</span> <span clas"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/en/ledger/amortizacoes-e-anulacoes-de-divida-fundada-2025/index.html",
+   "descricao": "o recibo inglês das amortizações compara com a coluna de 2023, que o quadro não tem, na cópia, contra o excerto, a edição portuguesa e o relatório",
+   "sha256_antes": "9dff145c36fe2bbc5a9f82c6b14c315b95a1b4ae12724163a517d35ce46cf0b4",
+   "sha256_depois": "e23244e9209f9a7143e34f042a5ed9678b264a7e551b65739ecdb1a56f0a8634",
+   "contexto_antes": "hese <span data-claim=\"amortizacoes-e-anulacoes-de-divida-fundada-2025\" class=\"claim-value\">56 976</span> million were used to repay or extinguish funded debt. More than in the <span data-nonledger=\"data-de-referencia\">2024</span> column of the same table.</p></div><p class=\"linha-valor\"><span data-claim=\"amortizacoes-e-anulacoes-de-divida-fundada-2025\" class=\"claim-value linha-valor-num\">56 976</span> <span clas",
+   "contexto_depois": "hese <span data-claim=\"amortizacoes-e-anulacoes-de-divida-fundada-2025\" class=\"claim-value\">56 976</span> million were used to repay or extinguish funded debt. More than in the <span data-nonledger=\"data-de-referencia\">2023</span> column of the same table.</p></div><p class=\"linha-valor\"><span data-claim=\"amortizacoes-e-anulacoes-de-divida-fundada-2025\" class=\"claim-value linha-valor-num\">56 976</span> <span clas"
+  }
+ ]
+}

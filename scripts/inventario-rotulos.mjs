@@ -96,7 +96,13 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const INVENTARIO_DECLARADO = path.join(RAIZ, 'design', 'especime-v3', 'rotulos', 'INVENTARIO.json');
 const LINHAS = loadClaims();
 /** O conjunto fechado OE1, conferido contra as linhas e contra cada edição construída. */
-const LINHAS_OE1_ESPERADAS = 186;
+const LINHAS_ESPERADAS = { oe1: 186, jd1: 15 };
+/** O estudo recebe outros blocos; a pertença vem do cruzamento de cada entrega. */
+const BLOCOS_DO_LIVRO = Object.fromEntries(['oe1', 'jd1'].map((bloco) => {
+  const ids = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(RAIZ, 'ledger', 'cruzamentos', `${bloco}.json`), 'utf8')).rows));
+  return [bloco, { ids, esperado: LINHAS_ESPERADAS[bloco] }];
+}));
+const blocoDaLinha = (id) => Object.keys(BLOCOS_DO_LIVRO).find((b) => BLOCOS_DO_LIVRO[b].ids.has(id));
 
 /* --------------------------------------------------------------------------- os leitores próprios */
 
@@ -165,30 +171,36 @@ function unidadeEsperada(id, lang) {
  */
 export function conferirUnidadesOe1(root, { rota, lang, contas }) {
   const erros = [];
-  contas.oe1 ??= { recibos: { pt: 0, en: 0 }, entradas: { pt: 0, en: 0 }, acumuladas: { pt: 0, en: 0 } };
+  for (const bloco of Object.keys(BLOCOS_DO_LIVRO)) contas[bloco] ??= { recibos: { pt: 0, en: 0 }, entradas: { pt: 0, en: 0 }, acumuladas: { pt: 0, en: 0 } };
   const conferir = (id, elementos, familia) => {
     const linha = LINHAS.get(id);
-    if (linha?.study !== 'oe-2026') return;
+    const bloco = blocoDaLinha(id);
+    if (!bloco) return;
+    const rotulo = bloco.toUpperCase();
+    if (linha?.study !== 'oe-2026') {
+      erros.push(`${rotulo}-unidade · ${rota} · ${id}: a linha do cruzamento não pertence ao estudo esperado`);
+      return;
+    }
     const u = String(linha.unit ?? '');
     const traduzida = lang === 'en' && Object.prototype.hasOwnProperty.call(UNIDADES, u)
       ? /** @type {Record<string, string>} */ (UNIDADES)[u] : u;
     const esperada = norm(comAPalavra(traduzida));
     if (elementos.length !== 1) {
-      erros.push(`OE1-unidade · ${rota} · ${id}: ${familia} tem ${elementos.length} campos de unidade e deve ter um`);
+      erros.push(`${rotulo}-unidade · ${rota} · ${id}: ${familia} tem ${elementos.length} campos de unidade e deve ter um`);
       return;
     }
     const el = elementos[0];
     const vista = visivel(el);
     if (vista !== esperada || el.getAttribute('data-linha-campo') !== 'unit' || el.getAttribute('data-linha-claim') !== id || el.hasAttribute('data-unidade-da-casa')) {
-      erros.push(`OE1-unidade · ${rota} · ${id}: a unidade diz «${vista}» e o campo unit da linha nesta edição diz «${esperada}», com as marcas da própria linha`);
+      erros.push(`${rotulo}-unidade · ${rota} · ${id}: a unidade diz «${vista}» e o campo unit da linha nesta edição diz «${esperada}», com as marcas da própria linha`);
       return;
     }
     if (lang === 'en' && traduzida === u && /acumulados/.test(u)) {
-      erros.push(`OE1-unidade · ${rota} · ${id}: a unidade acumulada não tem a entrada inglesa no dicionário`);
+      erros.push(`${rotulo}-unidade · ${rota} · ${id}: a unidade acumulada não tem a entrada inglesa no dicionário`);
       return;
     }
-    contas.oe1[familia][lang]++;
-    if (/acumulados/.test(u)) contas.oe1.acumuladas[lang]++;
+    contas[bloco][familia][lang]++;
+    if (/acumulados/.test(u)) contas[bloco].acumuladas[lang]++;
   };
   const recibo = /^\/(?:livro-razao|en\/ledger)\/([^/]+)$/.exec(rota);
   if (recibo && LINHAS.get(recibo[1])?.study === 'oe-2026') {
@@ -196,12 +208,15 @@ export function conferirUnidadesOe1(root, { rota, lang, contas }) {
   }
   const itens = root.querySelectorAll('.livro-item[data-linha-id]');
   if (rota === '/livro-razao' || rota === '/en/ledger') {
-    const entradas = itens.filter((item) => LINHAS.get(item.getAttribute('data-linha-id'))?.study === 'oe-2026');
-    if (entradas.length !== LINHAS_OE1_ESPERADAS) {
-      erros.push(`OE1-unidade · ${rota}: o índice tem ${entradas.length} entradas OE1 e deve ter ${LINHAS_OE1_ESPERADAS}`);
+    for (const [bloco, { ids: declarados, esperado }] of Object.entries(BLOCOS_DO_LIVRO)) {
+      const rotulo = bloco.toUpperCase();
+      const entradas = itens.filter((item) => declarados.has(item.getAttribute('data-linha-id')));
+      if (entradas.length !== esperado) {
+        erros.push(`${rotulo}-unidade · ${rota}: o índice tem ${entradas.length} entradas ${rotulo} e deve ter ${esperado}`);
+      }
+      const ids = entradas.map((item) => item.getAttribute('data-linha-id'));
+      if (new Set(ids).size !== ids.length) erros.push(`${rotulo}-unidade · ${rota}: o índice repete uma entrada ${rotulo}`);
     }
-    const ids = entradas.map((item) => item.getAttribute('data-linha-id'));
-    if (new Set(ids).size !== ids.length) erros.push(`OE1-unidade · ${rota}: o índice repete uma entrada OE1`);
   }
   for (const item of itens) {
     conferir(item.getAttribute('data-linha-id') ?? '', item.querySelectorAll('.livro-item-unidade'), 'entradas');
@@ -604,7 +619,7 @@ const contasNovas = () => ({
   paginas: 0, paginas_com_cartoes: 0, cartoes: 0, familias: {}, nomes: {}, estados: 0,
   unidades: { declaradas: 0, da_linha: 0, em_divida: 0 }, faixas: { lugar: 0, comparacao: 0, presentes: 0 },
   dobras: { perguntas: 0, notas: 0, referencias: 0, termos: 0, uniao: 0, paises: 0 },
-  oe1: { recibos: { pt: 0, en: 0 }, entradas: { pt: 0, en: 0 }, acumuladas: { pt: 0, en: 0 } },
+  ...Object.fromEntries(Object.keys(BLOCOS_DO_LIVRO).map((b) => [b, { recibos: { pt: 0, en: 0 }, entradas: { pt: 0, en: 0 }, acumuladas: { pt: 0, en: 0 } }])),
 });
 
 /** @param {string} dist */
@@ -629,12 +644,17 @@ export function conferirConstrucao(dist) {
   /* R2-b: a lista dos diplomas regionais contra as origens da pergunta, e a ressalva vista nas duas edições do recibo. */
   erros.push(...conferirDiplomasRegionais());
   if ((contas.ressalvas ?? 0) !== 2) erros.push(`R2-ressalva · a ressalva do recibo do salário mínimo foi conferida em ${contas.ressalvas ?? 0} página(s), e o recibo tem duas edições`);
-  const linhasOe1 = [...LINHAS.values()].filter((l) => l.study === 'oe-2026').length;
-  if (linhasOe1 !== LINHAS_OE1_ESPERADAS) erros.push(`OE1-unidade · o livro tem ${linhasOe1} linhas OE1 e o conjunto fechado declara ${LINHAS_OE1_ESPERADAS}`);
-  for (const lang of ['pt', 'en']) {
-    if (contas.oe1.recibos[lang] !== LINHAS_OE1_ESPERADAS) erros.push(`OE1-unidade · ${lang}: ${contas.oe1.recibos[lang]} recibos conferidos e o conjunto fechado declara ${LINHAS_OE1_ESPERADAS}`);
-    if (contas.oe1.entradas[lang] !== LINHAS_OE1_ESPERADAS) erros.push(`OE1-unidade · ${lang}: ${contas.oe1.entradas[lang]} entradas do índice conferidas e o conjunto fechado declara ${LINHAS_OE1_ESPERADAS}`);
+  for (const [bloco, { ids, esperado }] of Object.entries(BLOCOS_DO_LIVRO)) {
+    const rotulo = bloco.toUpperCase();
+    const presentes = [...ids].filter((id) => LINHAS.get(id)?.study === 'oe-2026').length;
+    if (!esperado || ids.size !== esperado || presentes !== esperado) erros.push(`${rotulo}-unidade · o livro tem ${presentes} linhas ${rotulo} e o conjunto fechado declara ${esperado}`);
+    for (const lang of ['pt', 'en']) {
+      if (contas[bloco].recibos[lang] !== esperado) erros.push(`${rotulo}-unidade · ${lang}: ${contas[bloco].recibos[lang]} recibos conferidos e o conjunto fechado declara ${esperado}`);
+      if (contas[bloco].entradas[lang] !== esperado) erros.push(`${rotulo}-unidade · ${lang}: ${contas[bloco].entradas[lang]} entradas do índice conferidas e o conjunto fechado declara ${esperado}`);
+    }
   }
+  for (const linha of LINHAS.values()) if (linha.study === 'oe-2026' && !blocoDaLinha(linha.id)) erros.push(`Livro-unidade · ${linha.id}: a linha não pertence a nenhum conjunto conferido`);
+  for (const id of BLOCOS_DO_LIVRO.oe1.ids) if (BLOCOS_DO_LIVRO.jd1.ids.has(id)) erros.push(`Livro-unidade · ${id}: a linha pertence a dois conjuntos`);
   return { erros, contas, inventario };
 }
 
@@ -759,7 +779,7 @@ export function plantas(dist) {
     }
     const erros = corre(rel, root);
     const mordeu = erros.some((e) => mordida.test(e));
-    resultados.push({ nome, campo, mordeu, ...(mordeu ? {} : { queixa: erros.slice(0, 3).join(' | ') || 'nenhuma queixa' }) });
+    resultados.push({ nome, campo, mordeu, queixa: erros.find((e) => mordida.test(e)) ?? (erros.slice(0, 3).join(' | ') || 'nenhuma queixa') });
   };
 
   planta('r2-nome-trocado-num-cartao-nacional', 'nome', 'emprego/index.html', (r) => {
@@ -936,6 +956,40 @@ export function plantas(dist) {
       return true;
     }, new RegExp(`^OE1-unidade · ${rota}: o índice tem 185 entradas OE1 e deve ter 186$`));
   }
+  for (const [lang, rel, rota, unidade] of [['pt', 'livro-razao', '/livro-razao', 'milhões de euros'], ['en', 'en/ledger', '/en/ledger', 'million euros']]) {
+    const id = 'juros-das-administracoes-publicas-2025';
+    planta(`jd1-unidade-trocada-${lang}`, 'unidade', `${rel}/${id}/index.html`, (r) => {
+      const u = r.querySelector('.linha-valor-unidade');
+      if (!u || visivel(u) !== unidade) return false;
+      u.set_content('%');
+      return true;
+    }, new RegExp(`^JD1-unidade · ${rota}/${id} · ${id}: a unidade diz «%» e o campo unit da linha nesta edição diz «${unidade}», com as marcas da própria linha$`));
+    planta(`jd1-entrada-retirada-do-indice-${lang}`, 'contagem', `${rel}/index.html`, (r) => {
+      const item = r.querySelector(`.livro-item[data-linha-id="${id}"]`);
+      if (!item) return false;
+      item.remove();
+      return true;
+    }, new RegExp(`^JD1-unidade · ${rota}: o índice tem ${BLOCOS_DO_LIVRO.jd1.esperado - 1} entradas JD1 e deve ter ${BLOCOS_DO_LIVRO.jd1.esperado}$`));
+  }
+  // JD1-b, achado 16: perder a entrada no cruzamento E no HTML nunca baixa a contagem esperada.
+  {
+    const id = 'juros-das-administracoes-publicas-2025';
+    const rel = 'livro-razao/index.html';
+    const html = ler(rel);
+    if (!html) throw new Error('JD1-b: falta o índice para a planta da contagem.');
+    const root = parse(html);
+    const item = root.querySelector(`.livro-item[data-linha-id="${id}"]`);
+    if (!item || !BLOCOS_DO_LIVRO.jd1.ids.has(id)) throw new Error('JD1-b: falta a linha da planta.');
+    item.remove();
+    BLOCOS_DO_LIVRO.jd1.ids.delete(id);
+    try {
+      const erros = corre(rel, root);
+      const queixa = erros.find(e => e === 'JD1-unidade · /livro-razao: o índice tem 14 entradas JD1 e deve ter 15');
+      resultados.push({ nome: 'jd1b-linha-retirada-do-cruzamento-e-do-indice', campo: 'contagem', mordeu: Boolean(queixa), queixa: queixa ?? 'nenhuma queixa' });
+    } finally {
+      BLOCOS_DO_LIVRO.jd1.ids.add(id);
+    }
+  }
   return { resultados, controlo };
 }
 
@@ -1084,7 +1138,7 @@ if (eDireto) {
         ? `contra o declarado: ${comparacaoComODeclarado.comparadas.chaves} chave(s), ${comparacaoComODeclarado.comparadas.campos} campo(s), ${comparacaoComODeclarado.comparadas.formas} forma(s) com a contagem, ${comparacaoComODeclarado.comparadas.ocorrencias} ocorrência(s), ${comparacaoComODeclarado.diferencas.length} diferença(s); `
         : '') +
       `dobras ${contas.dobras.perguntas} perguntas, ${contas.dobras.notas} notas, ${contas.dobras.referencias} referências, ${contas.dobras.uniao} na União; ` +
-      `OE1: unidades em ${contas.oe1.recibos.pt}+${contas.oe1.recibos.en} recibos, ${contas.oe1.entradas.pt}+${contas.oe1.entradas.en} entradas do livro; ` +
+      Object.keys(BLOCOS_DO_LIVRO).map((b) => `${b.toUpperCase()}: unidades em ${contas[b].recibos.pt}+${contas[b].recibos.en} recibos, ${contas[b].entradas.pt}+${contas[b].entradas.en} entradas do livro; `).join('') +
       `${prova ? `${prov.resultados.filter((p) => p.mordeu).length} de ${prov.resultados.length} plantas a morder; ` : ''}` +
       `${erros.length} erro(s).`,
   );

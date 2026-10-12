@@ -1,10 +1,11 @@
+import { homedir as jd1Casa } from 'node:os';
 // U2 em inglês (/en/) — o brief pede "conta quantas dão o nome certo, nas
 // duas edições": isto completa a varredura completa (29 país + 14 Évora, nos
 // três modos) que u2-nome.mjs já fez em português.
 import fs from 'node:fs';
 import { abrePagina, BASE } from './lib.mjs';
 
-const RAIZ = '/Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/medicao-distritos';
+const RAIZ = (jd1Casa() + '/Instruments/OEstadoDoPais/.claude/worktrees/medicao-distritos');
 const pais = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/pais.json`, 'utf8'));
 const evora = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/distritos/evora.json`, 'utf8'));
 

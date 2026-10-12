@@ -214,6 +214,7 @@
  * Uso:  node tests/cartao/cartao.mjs [--prova] [--json]
  */
 
+import './registo-leituras.mjs';
 import fs from 'node:fs';
 import { documentoDosAssuntos } from '../inicio/paginas-dos-assuntos.mjs';
 import os from 'node:os';
