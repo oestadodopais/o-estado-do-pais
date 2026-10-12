@@ -71,9 +71,9 @@ def provas(motor, codigo):
                            'passou': r.wasSuccessful(), 'registo': limpar(saida.getvalue(), motor)})
     guardar('plantas-d.json', {'codigo': codigo, 'plantas': resultados})
     assert all(r['passou'] for r in resultados)
-    for nome, comando in (('autotestes-c', ['python3', '-m', 'vigilancia.tests']),
-                           ('fluxo-c', ['python3', '-m', 'vigilancia.fluxo']),
-                           ('fluxos-motor-c', ['python3', 'indicators/provar_fluxo.py'])):
+    for nome, comando in (('autotestes-d', ['python3', '-m', 'vigilancia.tests']),
+                           ('fluxo-d', ['python3', '-m', 'vigilancia.fluxo']),
+                           ('fluxos-motor-d', ['python3', 'indicators/provar_fluxo.py'])):
         r = subprocess.run(comando, cwd=motor, capture_output=True, text=True)
         (PASTA / (nome + '.log')).write_text(limpar(r.stdout + r.stderr, motor))
         guardar(nome + '.json', {'codigo': r.returncode, 'cabeca': codigo})
