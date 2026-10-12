@@ -14322,7 +14322,7 @@
       "slug": "dinheiro-do-estado-2026",
       "quem": "Claude Opus 5.5 (EX1 a EX1-c); Codex gpt-6-astra (EX1-d e EX1-e)",
       "quando": "2026-10-12",
-      "o_que": "a primeira leitura (05.10.2026), a do EX1-b e a do EX1-c (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216, e as correções da leitura a frio), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X17 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam; EX1-d: releitura dos apoios selados, correção dos juros e da referência à posição da execução, e saldo do mesmo perímetro com comparação explícita ao ano inteiro (acertos X18 a X20); EX1-e: comparação dos módulos dos saldos, com sinais diferentes e nulos declarados",
+      "o_que": "a primeira leitura (05.10.2026), a do EX1-b e a do EX1-c (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216, e as correções da leitura a frio), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X17 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam; EX1-d: releitura dos apoios selados, correção dos juros e da referência à posição da execução, e saldo do mesmo perímetro com comparação explícita ao ano inteiro (acertos X18 a X20); EX1-e: comparação dos módulos dos saldos, com sinais diferentes e nulos declarados; os juros não são localizados nem anunciados sem apoio: a frase curta é a ausência calculada pela condição sem_linhas, e as transferências mantêm o literal selado",
       "origens": [
         "dados-gov-oe-despesa-funcional",
         "eurostat-cofog-divisao-01",
@@ -14561,8 +14561,8 @@
         },
         {
           "caminho": "abertura[0][19].se[4]",
-          "pt": ", onde a classificação das funções conta os juros da dívida e as transferências entre administrações.",
-          "en": ", where the classification of functions counts the interest on the debt and the transfers between levels of government.",
+          "pt": ", onde a classificação das funções conta as transferências entre administrações.",
+          "en": ", where the classification of functions counts the transfers between levels of government.",
           "partes": [
             {
               "pt": ", onde a classificação das funções",
@@ -14577,20 +14577,8 @@
               ]
             },
             {
-              "pt": " conta os juros da dívida",
-              "en": " counts the interest on the debt",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "eurostat-cofog-divisao-01",
-                  "campo": "excerto",
-                  "literal": "Public debt transactions"
-                }
-              ]
-            },
-            {
-              "pt": " e as transferências entre administrações.",
-              "en": " and the transfers between levels of government.",
+              "pt": " conta as transferências entre administrações.",
+              "en": " counts the transfers between levels of government.",
               "classe": "diz",
               "apoios": [
                 {
@@ -16646,63 +16634,12 @@
         },
         {
           "caminho": "naoDiz[0][1].se[0]",
-          "pt": " Estes números não isolam o custo dos juros da dívida, que o Orçamento também prevê e que entra noutra classificação; quando as linhas dos juros existirem no livro-razão, esta explicação diz quanto são.",
-          "en": " These figures do not isolate the cost of the interest on the debt, which the Budget also forecasts and which falls under another classification; when the interest entries exist in the ledger, this explainer will say how much it is.",
+          "pt": " Estes números não isolam o custo dos juros da dívida.",
+          "en": " These figures do not isolate the cost of the interest on the debt.",
           "partes": [
             {
-              "pt": " Estes números não isolam",
-              "en": " These figures do not isolate",
-              "classe": "conta"
-            },
-            {
-              "pt": " o custo dos juros da dívida",
-              "en": " the cost of the interest on the debt",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "eurostat-cofog-divisao-01",
-                  "campo": "excerto",
-                  "literal": "Public debt transactions"
-                }
-              ]
-            },
-            {
-              "pt": ", que o Orçamento também prevê",
-              "en": ", which the Budget also forecasts",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "dados-gov-oe-despesa-funcional",
-                  "campo": "excerto",
-                  "literal": "contemplam as despesas a pagar no ano"
-                },
-                {
-                  "origem": "eurostat-cofog-divisao-01",
-                  "campo": "excerto",
-                  "literal": "Public debt transactions"
-                }
-              ]
-            },
-            {
-              "pt": " e que entra noutra classificação",
-              "en": " and which falls under another classification",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "dados-gov-oe-despesa-funcional",
-                  "campo": "excerto",
-                  "literal": "Classificação das Funções do Governo"
-                },
-                {
-                  "origem": "eurostat-cofog-divisao-01",
-                  "campo": "excerto",
-                  "literal": "Public debt transactions"
-                }
-              ]
-            },
-            {
-              "pt": "; quando as linhas dos juros existirem no livro-razão, esta explicação diz quanto são.",
-              "en": "; when the interest entries exist in the ledger, this explainer will say how much it is.",
+              "pt": " Estes números não isolam o custo dos juros da dívida.",
+              "en": " These figures do not isolate the cost of the interest on the debt.",
               "classe": "conta"
             }
           ]
