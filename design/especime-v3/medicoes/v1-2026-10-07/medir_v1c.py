@@ -197,7 +197,10 @@ def main():
     verificar.fundamentos(reg, raiz)
     assert len({f.parent.name + f.name[:10] for f in arquivos}) == len(arquivos), 'prefixo de arquivo ambíguo no resumo'
     guardar('integridade-c.json', {'indices': integridade, 'corpos': len(arquivos), 'fundamentos': reg['fundamentos_arquivados']})
-    conta = aritmetica(raiz, finais, reg)
+    bases_aritmetica = [r for r in corridas if r['id'] in finais_ids and not r['falhas']
+        and all(f.get('lida') for f in r['fontes'].values())][-2:]
+    assert bases_aritmetica, 'falta uma corrida completa para medir o cenário ordinário'
+    conta = aritmetica(raiz, bases_aritmetica, reg)
     base_preservacao = json.loads((PASTA / 'confirmacao-c.json').read_text())['sitio_verificado']
     preservacao_hashes = {n: {'entrada': sha(subprocess.check_output(['git', 'show', base_preservacao + ':' + n], cwd=SITIO)),
         'atual': sha((SITIO / n).read_bytes())} for n in json.loads((PASTA / 'alteracoes-preexistentes.json').read_text())}
@@ -248,7 +251,7 @@ def main():
     sem_data = [l for l in finais[-1]['limitacoes'] if l['codigo'] == 'sem_data']
     linhas += ['', f"Registos sem data: `{json.dumps([{k: l[k] for k in ('contagem', 'identificadores')} for l in sem_data], ensure_ascii=False)}`. As provas e razões completas estão nos recibos. O heartbeat separa limitações e falhas.",
         f"Aceitação de entrada datada na janela: `{json.dumps(aceites['entrada_datada_por_fonte'], ensure_ascii=False)}`. A falta de entrada não é alarme.", '',
-        '### A aritmética do achado 7', '', conta['hipotese'], '',
+        '### A aritmética do achado 7', '', 'As bases da conta são as últimas corridas completas observadas com este código, identificadas abaixo. Tentativas com falhas não reduzem artificialmente o custo atribuído a uma leitura completa.', '', conta['hipotese'], '',
         f"Transferência observada: `{conta['transferencia_observada']['pedido']}`, linha {conta['transferencia_observada']['linha']}, {conta['transferencia_observada']['bytes']} bytes, {conta['transferencia_observada']['saltos']} salto(s). Arquivo: `{conta['transferencia_observada']['arquivo']}`.", '',
         '| Base | Bytes comuns / teto | Cumulativo / teto próprio | Total transferido | Pedidos / teto | Cabe |',
         '| --- | ---: | ---: | ---: | ---: | --- |']
