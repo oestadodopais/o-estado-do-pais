@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Executa um portão final e guarda apenas o código desta corrida."""
-import os
 import hashlib
 import json
 import subprocess
@@ -18,7 +17,7 @@ pasta.mkdir(exist_ok=True)
 codigo = pasta / f'{nome}.codigo'
 codigo.unlink(missing_ok=True)
 cabeca = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=RAIZ, text=True).strip()
-motor = Path(os.environ.get('RESEARCHHUB_DIR', '<motor>'))
+motor = Path.home() / 'Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23'
 motor_cabeca = subprocess.check_output(['git', '-C', str(motor), 'rev-parse', 'HEAD'], text=True).strip()
 (pasta / f'{nome}.motor-cabeca').write_text(motor_cabeca + '\n')
 inicio = datetime.now(timezone.utc)

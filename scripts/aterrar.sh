@@ -24,7 +24,7 @@
 #   6. diz o endereço da corrida de main, sem esperar por uma prova repetida.
 #
 # Nenhum caminho desta máquina fica escrito aqui: a árvore principal lê-se do Git,
-# o motor lê-se de OEDP_MOTOR ou de RESEARCHHUB_DIR, e os registos
+# o motor lê-se de OEDP_MOTOR ou de $HOME/Instruments/ResearchHub, e os registos
 # vão para uma pasta temporária nova, que o guião diz no começo.
 #
 # uso: zsh scripts/aterrar.sh [--ensaio] <ramo do sítio> <cabeça curta> [<ramo do motor>|-]
@@ -41,7 +41,7 @@ RAMO="$1"; CAB="$2"; RAMO_MOTOR="${3:--}"
 REPO=oestadodopais/o-estado-do-pais
 AQUI="$(cd "$(dirname "$0")" && pwd)"
 SITIO="$(git -C "$AQUI" worktree list --porcelain | awk '/^worktree /{print substr($0, 10); exit}')"
-MOTOR="${OEDP_MOTOR:-${RESEARCHHUB_DIR:-}}"
+MOTOR="${OEDP_MOTOR:-$HOME/Instruments/ResearchHub}"
 LOGS="$(mktemp -d "${TMPDIR:-/tmp}/oedp-aterragem.XXXXXX")"
 agora() { date -u +%H:%M:%S; }
 para() { echo "PAROU: $2 (código $1) · registos em $LOGS"; exit "$1"; }
@@ -67,7 +67,7 @@ r.sort(key=lambda x: x.get("completed_at") or "")
 print((r[-1].get("conclusion") or "") if r else "")' "$LOGS/portao.json")"
 [ "$PORTAO" = "success" ] || para 18 "a verificação portao da cabeça ${CHEIA:0:8} não está verde (diz «${PORTAO:-nada}»)"
 if [ "$RAMO_MOTOR" != "-" ]; then
-  [ -d "$MOTOR" ] || para 20 "não encontrei o motor (indique OEDP_MOTOR ou RESEARCHHUB_DIR)"
+  [ -d "$MOTOR" ] || para 20 "não encontrei o motor (OEDP_MOTOR ou a pasta de sempre)"
   [ "$(git -C "$MOTOR" branch --show-current)" = "master" ] || para 21 "a árvore do motor não está em master"
   git -C "$MOTOR" fetch origin > "$LOGS/motor-fetch.log" 2>&1 || para 22 "o fetch do motor falhou"
   git -C "$MOTOR" rev-parse --verify --quiet "$RAMO_MOTOR^{commit}" > /dev/null || para 23 "o ramo do motor $RAMO_MOTOR não existe"
