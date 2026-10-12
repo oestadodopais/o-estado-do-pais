@@ -12570,17 +12570,27 @@
       "chaves": [
         "penalizacao-antecipacao-um-ano-neutra"
       ],
-      "origens": [],
+      "origens": [
+        "pensao-estimativa",
+        "pensao-neutralidade",
+        "pensao-direitos",
+        "pensao-legal"
+      ],
       "folhas": [
         {
-          "pt": "É a redução da pensão calculada para a reforma antecipada no caso geral, pelas contas do relatório final sobre a reforma da segurança social.",
-          "en": "It is the pension reduction calculated for early retirement in the general case, from the calculations of the final report on social security reform.",
+          "pt": "É a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que mantém igual o valor atual esperado entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação.",
+          "en": "It is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that keeps the expected present value equal between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty.",
           "partes": [
             {
-              "pt": "É a redução da pensão calculada para a reforma antecipada no caso geral",
-              "en": "It is the pension reduction calculated for early retirement in the general case",
+              "pt": "É a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano",
+              "en": "It is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early",
               "classe": "diz",
               "apoios": [
+                {
+                  "origem": "pensao-estimativa",
+                  "campo": "excerto",
+                  "literal": "estimativa preliminar dos factores de ajustamento actuarial neutrais"
+                },
                 {
                   "linha": "propria",
                   "campo": "excerpt",
@@ -12589,14 +12599,74 @@
               ]
             },
             {
-              "pt": ", pelas contas do relatório final sobre a reforma da segurança social.",
-              "en": ", from the calculations of the final report on social security reform.",
+              "pt": ": a redução que mantém igual o valor atual esperado entre reformar-se já e adiar a reforma um ano",
+              "en": ": the reduction that keeps the expected present value equal between retiring now and postponing retirement by one year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pensao-neutralidade",
+                  "campo": "excerto",
+                  "literal": "financeiramente indiferente, em termos de valor actual esperado"
+                }
+              ]
+            },
+            {
+              "pt": ", contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados.",
+              "en": ", including contributions no longer paid and pension rights no longer accrued.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pensao-direitos",
+                  "campo": "excerto",
+                  "literal": "no esforço contributivo e no"
+                },
+                {
+                  "origem": "pensao-direitos",
+                  "campo": "excerto",
+                  "literal": "acréscimo de direitos sobre o sistema de pensões"
+                }
+              ]
+            },
+            {
+              "pt": " Não é a penalização legal por antecipação.",
+              "en": " It is not the statutory early-retirement penalty.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "pensao-legal",
+                  "campo": "excerto",
+                  "literal": "essa penalização isolada tende a ficar abaixo do valor actuarialmente neutral"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "penalizacao-legal-um-ano-antecipacao"
+      ],
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+          "en": "It is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
+          "partes": [
+            {
+              "pt": "É a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho.",
+              "en": "It is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report.",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
-                  "campo": "document.locator",
-                  "literal": "Relatorio_Final_GT_Reforma_Seg_Social"
+                  "campo": "excerpt",
+                  "literal": "a penalização legal"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "equivalente a cerca de 6% por ano"
                 },
                 {
                   "linha": "propria",

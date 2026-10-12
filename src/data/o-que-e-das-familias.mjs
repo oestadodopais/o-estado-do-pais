@@ -2954,12 +2954,18 @@ export const FAMILIAS_DAS_LINHAS = {
   "penalizacao-antecipacao-um-ano-neutra": {
     "frase": {
       "pt": [
-        "É a redução da pensão calculada para a reforma antecipada no caso geral, pelas contas do relatório final sobre a reforma da segurança social."
+        "É a estimativa preliminar do grupo de trabalho da redução atuarialmente neutra para antecipar a reforma um ano: a redução que mantém igual o valor atual esperado entre reformar-se já e adiar a reforma um ano, contando as contribuições que deixam de ser feitas e os direitos que deixam de ser formados. Não é a penalização legal por antecipação."
       ],
       "en": [
-        "It is the pension reduction calculated for early retirement in the general case, from the calculations of the final report on social security reform."
+        "It is the working group’s preliminary estimate of the actuarially neutral reduction for retiring one year early: the reduction that keeps the expected present value equal between retiring now and postponing retirement by one year, including contributions no longer paid and pension rights no longer accrued. It is not the statutory early-retirement penalty."
       ]
-    }
+    },
+    "origens": [
+      "pensao-estimativa",
+      "pensao-neutralidade",
+      "pensao-direitos",
+      "pensao-legal"
+    ]
   },
   "penalizacao-antecipacao-um-ano-sem-factor": {
     "frase": {
@@ -2968,6 +2974,16 @@ export const FAMILIAS_DAS_LINHAS = {
       ],
       "en": [
         "It is how much the pension falls when retirement is brought forward by one year, only from the cut for each month brought forward, without the sustainability factor, from the calculations of the final report on social security reform."
+      ]
+    }
+  },
+  "penalizacao-legal-um-ano-antecipacao": {
+    "frase": {
+      "pt": [
+        "É a penalização legal por antecipar a reforma um ano, sem o fator de sustentabilidade, apresentada como aproximada pelo relatório do grupo de trabalho."
+      ],
+      "en": [
+        "It is the statutory penalty for retiring one year early, excluding the sustainability factor, presented as approximate by the working group’s report."
       ]
     }
   },

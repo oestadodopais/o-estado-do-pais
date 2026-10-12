@@ -174,7 +174,7 @@ export const UNIDADES_DOS_CARTOES = {
     en: ['% of the pension'],
     apoio: [
       { campo: 'document.title', literal: 'Reformar as Pensões em Portugal' },
-      { campo: 'excerpt', literal: 'efeito da antecipação da idade de reforma' },
+      { origem: 'pensao-direitos', campo: 'excerto', literal: 'efeito da antecipação da idade de reforma' },
     ],
     achado: '9: «%» sozinho não dizia de que é o corte.',
   },
