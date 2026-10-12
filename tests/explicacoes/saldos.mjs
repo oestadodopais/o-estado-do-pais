@@ -51,7 +51,7 @@ export function conferirCenariosDosSaldos({ explicacaoPelaCelula, conferirRamosD
     const visitar = (x, caminho = []) => {
       if (!x || typeof x !== 'object') return;
       const chave = ['sinal', 'compara', 'comparaSaldos'].find(k => k in x);
-      if (chave) for (const ramo of Object.keys(x).filter(k => k !== chave)) {
+      if (chave) for (const ramo of Object.keys(x).filter(k => k !== chave && k !== 'palavras')) {
         const copia = structuredClone(e);
         const alvo = caminho.reduce((v, k) => v[k], copia);
         delete alvo[ramo];

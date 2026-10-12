@@ -23,6 +23,8 @@
  *     gramática da primeira página): as palavras que a comparação dos valores de a e de b escolhe («acima dos …
  *     da média da União Europeia» ou «abaixo»);
  *   · `{ comparaSaldos: [a, b], deficitMaior, deficitMenor, deficitIgual, excedenteMaior, excedenteMenor, excedenteIgual, nulos, diferentesNegativo, diferentesPositivo, diferentesZero }`:
+ *     Cada token decidido por valor declara `palavras: { ramo: { contem, naoContem } }`, na língua do texto.
+ *     A X10 confere as palavras inteiras de cada ramo, incluindo os não escolhidos. Estes metadados não se rendem.
  *     compara os módulos quando os sinais coincidem; com sinais diferentes, declara a previsão sem comparar tamanhos.
  *   · `{ se: [condições], partes }`: palavras que só se rendem enquanto as condições declaradas forem
  *     verdadeiras. É assim que uma frase que compara («a maior fatia», «o maior é o das Finanças») se
@@ -206,9 +208,21 @@ export const DINHEIRO_DO_ESTADO_2026 = {
             pt: [
               'No fim de ', { periodo: SALDO_EXECUTADO }, ', as contas da administração central e da segurança social apresentavam um saldo acumulado de ',
               { claim: SALDO_EXECUTADO, sufixo: ' milhões de euros' }, ', ',
-              { sinal: SALDO_EXECUTADO, positivo: ['um excedente (recebeu mais do que gastou)'], negativo: ['um défice (gastou mais do que recebeu)'], zero: ['um saldo nulo (recebeu o mesmo que gastou)'] },
+              { sinal: SALDO_EXECUTADO, palavras: { positivo: { contem: ['excedente'], naoContem: ['défice', 'nulo'] }, negativo: { contem: ['défice'], naoContem: ['excedente', 'nulo'] }, zero: { contem: ['nulo'], naoContem: ['excedente', 'défice'] } }, positivo: ['um excedente (recebeu mais do que gastou)'], negativo: ['um défice (gastou mais do que recebeu)'], zero: ['um saldo nulo (recebeu o mesmo que gastou)'] },
               '; ',
               { comparaSaldos: [SALDO_EXECUTADO, SALDO_PREVISTO],
+                palavras: {
+                  deficitMaior: { contem: ['défice', 'maior'], naoContem: ['excedente', 'nulo', 'menor', 'igual'] },
+                  deficitMenor: { contem: ['défice', 'menor'], naoContem: ['excedente', 'nulo', 'maior', 'igual'] },
+                  deficitIgual: { contem: ['défice', 'igual'], naoContem: ['excedente', 'nulo', 'maior', 'menor'] },
+                  excedenteMaior: { contem: ['excedente', 'maior'], naoContem: ['défice', 'nulo', 'menor', 'igual'] },
+                  excedenteMenor: { contem: ['excedente', 'menor'], naoContem: ['défice', 'nulo', 'maior', 'igual'] },
+                  excedenteIgual: { contem: ['excedente', 'igual'], naoContem: ['défice', 'nulo', 'maior', 'menor'] },
+                  nulos: { contem: ['nulo'], naoContem: ['excedente', 'défice', 'maior', 'menor', 'igual'] },
+                  diferentesNegativo: { contem: ['défice'], naoContem: ['excedente', 'nulo', 'maior', 'menor', 'igual'] },
+                  diferentesPositivo: { contem: ['excedente'], naoContem: ['défice', 'nulo', 'maior', 'menor', 'igual'] },
+                  diferentesZero: { contem: ['nulo'], naoContem: ['excedente', 'défice', 'maior', 'menor', 'igual'] }
+                },
                 deficitMaior: ['é um défice maior do que o que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],
                 deficitMenor: ['é um défice menor do que o que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],
                 deficitIgual: ['é um défice igual ao que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],
@@ -225,9 +239,21 @@ export const DINHEIRO_DO_ESTADO_2026 = {
             en: [
               'By the end of ', { periodo: SALDO_EXECUTADO }, ', the accounts of central government and social security showed a cumulative balance of ',
               { claim: SALDO_EXECUTADO, sufixo: ' million euros' }, ', ',
-              { sinal: SALDO_EXECUTADO, positivo: ['a surplus (it took in more than it spent)'], negativo: ['a deficit (it spent more than it took in)'], zero: ['a nil balance (it took in the same as it spent)'] },
+              { sinal: SALDO_EXECUTADO, palavras: { positivo: { contem: ['surplus'], naoContem: ['deficit', 'nil'] }, negativo: { contem: ['deficit'], naoContem: ['surplus', 'nil'] }, zero: { contem: ['nil'], naoContem: ['surplus', 'deficit'] } }, positivo: ['a surplus (it took in more than it spent)'], negativo: ['a deficit (it spent more than it took in)'], zero: ['a nil balance (it took in the same as it spent)'] },
               '; ',
               { comparaSaldos: [SALDO_EXECUTADO, SALDO_PREVISTO],
+                palavras: {
+                  deficitMaior: { contem: ['deficit', 'larger'], naoContem: ['surplus', 'nil', 'smaller', 'the same'] },
+                  deficitMenor: { contem: ['deficit', 'smaller'], naoContem: ['surplus', 'nil', 'larger', 'the same'] },
+                  deficitIgual: { contem: ['deficit', 'the same'], naoContem: ['surplus', 'nil', 'larger', 'smaller'] },
+                  excedenteMaior: { contem: ['surplus', 'larger'], naoContem: ['deficit', 'nil', 'smaller', 'the same'] },
+                  excedenteMenor: { contem: ['surplus', 'smaller'], naoContem: ['deficit', 'nil', 'larger', 'the same'] },
+                  excedenteIgual: { contem: ['surplus', 'the same'], naoContem: ['deficit', 'nil', 'larger', 'smaller'] },
+                  nulos: { contem: ['nil'], naoContem: ['surplus', 'deficit', 'larger', 'smaller', 'the same'] },
+                  diferentesNegativo: { contem: ['deficit'], naoContem: ['surplus', 'nil', 'larger', 'smaller', 'the same'] },
+                  diferentesPositivo: { contem: ['surplus'], naoContem: ['deficit', 'nil', 'larger', 'smaller', 'the same'] },
+                  diferentesZero: { contem: ['nil'], naoContem: ['surplus', 'deficit', 'larger', 'smaller', 'the same'] }
+                },
                 deficitMaior: ['it is a larger deficit than the one the Budget forecast for the full year (', { claim: SALDO_PREVISTO, sufixo: ' million euros' }, ')'],
                 deficitMenor: ['it is a smaller deficit than the one the Budget forecast for the full year (', { claim: SALDO_PREVISTO, sufixo: ' million euros' }, ')'],
                 deficitIgual: ['it is the same deficit as the one the Budget forecast for the full year (', { claim: SALDO_PREVISTO, sufixo: ' million euros' }, ')'],
@@ -254,20 +280,22 @@ export const DINHEIRO_DO_ESTADO_2026 = {
             pt: [
               'No fim de ', { periodo: DIVIDA }, ', a dívida pública valia ', { claim: DIVIDA, sufixo: PC }, ' do que o país produz num ano, ',
               { compara: [DIVIDA, DIVIDA_UE],
+                palavras: { maior: { contem: ['acima'], naoContem: ['abaixo', 'igual'] }, menor: { contem: ['abaixo'], naoContem: ['acima', 'igual'] }, igual: { contem: ['igual'], naoContem: ['acima', 'abaixo'] } },
                 maior: ['acima dos ', { claim: DIVIDA_UE, sufixo: PC }, ' da média da União Europeia'],
                 menor: ['abaixo dos ', { claim: DIVIDA_UE, sufixo: PC }, ' da média da União Europeia'],
                 igual: ['igual aos ', { claim: DIVIDA_UE, sufixo: PC }, ' da média da União Europeia'] },
               ', e as contas públicas fecharam o ano com um saldo de ', { claim: SALDO, sufixo: PC }, ' do produto, ',
-              { sinal: SALDO, positivo: ['um excedente (recebeu mais do que gastou)'], negativo: ['um défice (gastou mais do que recebeu)'], zero: ['um saldo nulo (recebeu o mesmo que gastou)'] }, '.',
+              { sinal: SALDO, palavras: { positivo: { contem: ['excedente'], naoContem: ['défice', 'nulo'] }, negativo: { contem: ['défice'], naoContem: ['excedente', 'nulo'] }, zero: { contem: ['nulo'], naoContem: ['excedente', 'défice'] } }, positivo: ['um excedente (recebeu mais do que gastou)'], negativo: ['um défice (gastou mais do que recebeu)'], zero: ['um saldo nulo (recebeu o mesmo que gastou)'] }, '.',
             ],
             en: [
               'At the end of ', { periodo: DIVIDA }, ', public debt was worth ', { claim: DIVIDA, sufixo: PC }, ' of what the country produces in a year, ',
               { compara: [DIVIDA, DIVIDA_UE],
+                palavras: { maior: { contem: ['above'], naoContem: ['below', 'equal'] }, menor: { contem: ['below'], naoContem: ['above', 'equal'] }, igual: { contem: ['equal'], naoContem: ['above', 'below'] } },
                 maior: ['above the ', { claim: DIVIDA_UE, sufixo: PC }, ' average of the European Union'],
                 menor: ['below the ', { claim: DIVIDA_UE, sufixo: PC }, ' average of the European Union'],
                 igual: ['equal to the ', { claim: DIVIDA_UE, sufixo: PC }, ' average of the European Union'] },
               ', and the public accounts closed the year with a balance of ', { claim: SALDO, sufixo: PC }, ' of output, ',
-              { sinal: SALDO, positivo: ['a surplus (it took in more than it spent)'], negativo: ['a deficit (it spent more than it took in)'], zero: ['a zero balance (it took in as much as it spent)'] }, '.',
+              { sinal: SALDO, palavras: { positivo: { contem: ['surplus'], naoContem: ['deficit', 'nil'] }, negativo: { contem: ['deficit'], naoContem: ['surplus', 'nil'] }, zero: { contem: ['nil'], naoContem: ['surplus', 'deficit'] } }, positivo: ['a surplus (it took in more than it spent)'], negativo: ['a deficit (it spent more than it took in)'], zero: ['a nil balance (it took in as much as it spent)'] }, '.',
             ],
           },
         },
