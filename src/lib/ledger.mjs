@@ -269,6 +269,7 @@ export const CAMPOS = /** @type {const} */ ([
   'document',
   'source_url',
   'access_date',
+  'access_date_kind',
   /**
    * A data que o PUBLICADOR carimba no que serve (01.09.2026, o corredor).
    *
@@ -1635,6 +1636,7 @@ export function validateLedger() {
     {
       const temNome = !ausente(c.name);
       const temOnde = !ausente(c.name_source);
+      if (c.access_date_kind !== undefined && !['hosted-copy', 'source-read'].includes(c.access_date_kind)) errors.push(`${onde} access_date_kind inválido.`);
       if (temNome) comRotulo++;
       if (c.name !== null && c.name !== undefined && typeof c.name !== 'string') {
         errors.push(

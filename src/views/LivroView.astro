@@ -312,7 +312,7 @@ const p = prova(lang);
                 )}
                 {c.access_date !== null && c.access_date !== undefined && (
                   <span class="livro-item-campo">
-                    <span class="livro-item-k">{s.prov.lido}</span>{' '}
+                    <span class="livro-item-k">{c.access_date_kind === 'hosted-copy' ? s.prov.copiaAlojada : s.prov.lido}</span>{' '}
                     <CampoDaLinha
                       id={c.id}
                       campo="access_date"

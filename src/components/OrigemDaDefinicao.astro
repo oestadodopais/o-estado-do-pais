@@ -147,7 +147,7 @@ const chaveDaPorta = origens.map((o) => {
         </blockquote>
         <p class="def-excerto-lido">
           {o.lido === '[a verificar]' ? <span data-def-sem-data={o.chave}>{s.prov.dataOriginalAusente}</span> : <>
-          <span class="def-origem-k">{s.dominios.dataLido}</span>{' '}
+          <span class="def-origem-k">{o.alojada?.prova_data?.tipo === 'hosted-copy' ? s.prov.copiaAlojada : s.dominios.dataLido}</span>{' '}
           <span data-nonledger="data-de-leitura-de-uma-definicao" data-def-lido={o.chave}>
             {dataDaCasa(o.lido)}
           </span></>}

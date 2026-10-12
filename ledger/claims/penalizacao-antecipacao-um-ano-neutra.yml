@@ -21,7 +21,8 @@ document:
   kind: "pdf"
   crop: {"asset": "recortes/penalizacao-antecipacao-um-ano-neutra.webp", "sha256": "afa7a9ae82aef193332c18501236ff51511a5b6313d51407520d14afc085b967", "page": 273}
 source_url: "https://www.dgcp.mtsss.gov.pt/documents/10182/331337/Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf/1e42612d-c6c0-4232-89df-810c44af07ef#page=273"
-access_date: "[a verificar]"
+access_date: "2026-08-24"
+access_date_kind: hosted-copy
 reference_date: "2026"
 
 excerpt: "Figura 8.4: Decrementos por reforma antecipada: caso geral"

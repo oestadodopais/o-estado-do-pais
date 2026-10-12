@@ -1506,7 +1506,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           )}
           {claim.access_date && (
             <>
-              <dt>{s.prov.lido}</dt>
+              <dt>{claim.access_date_kind === 'hosted-copy' ? s.prov.copiaAlojada : s.prov.lido}</dt>
               <dd>
                 <CampoDaLinha id={id} campo="access_date" valor={claim.access_date} lang={lang} />
               </dd>

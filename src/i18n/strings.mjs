@@ -340,6 +340,7 @@ export const STRINGS = {
          cartão de partilha e a agenda das fontes. É a mesma cadeia, e por isso
          uma só: um nome por coisa em todo o sítio (§0 do brief). */
       lido: 'Lido na fonte a',
+      copiaAlojada: 'Cópia alojada a',
       /* «PUBLICADO POR» E NÃO «FONTE» (F1.10, §7.2, 09.09.2026). O leitor de
          04.09 contou duas «fonte» em cada bloco de medida e em cada linha: o
          selo, que é a PORTA para a linha, e o rótulo do campo `source`, que é o
@@ -3330,6 +3331,7 @@ export const STRINGS = {
       provisorio: 'provisional',
       dadoProvisorio: 'provisional data',
       lido: 'Read at the source on',
+      copiaAlojada: 'Copy hosted on',
       fonte: 'Published by',
       documento: 'Document',
       edicao: 'Edition',
