@@ -307,6 +307,12 @@ const LOCALIZADORES_CONHECIDOS = [
     confere: (_onde, linha) => linha?.id === 'penalizacao-antecipacao-um-ano-neutra' && linha?.name === 'dcum x : cumulative reduction' && linha?.document?.crop?.page === 273,
   },
   {
+    nome: 'página e parágrafo da penalização legal',
+    forma: /^Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026\.pdf, p\. 273, parágrafo abaixo da Figura 8\.4$/,
+    onde: 'publisher/rp4n_pensao.py: nome literal conferido no parágrafo alojado',
+    confere: (onde, linha) => linha?.id === 'penalizacao-legal-um-ano-antecipacao-2026' && linha?.name === 'penalização legal' && linha?.document?.locator === onde,
+  },
+  {
     nome: '<folha>, linha <n>, coluna <n>',
     forma: /^[^,]+, linha \d+, coluna \d+$/,
     onde: 'a grelha de uma folha ODS',
@@ -1773,6 +1779,8 @@ function provaLocalizadores() {
       ['Página impressa trocada', 5, 'p. 49 do ficheiro, página impressa 46, Despesa efetiva, Execução Acumulada 2026'],
       ['Coluna da síntese desconhecida', 5, 'p. 49 do ficheiro, página impressa 45, Despesa efetiva, Outra coluna 2026'],
       ['Programa da síntese zero', 6, 'p. 72 do ficheiro, página impressa 68, programa 000, Execução Acumulada 2026'],
+      ['Página legal trocada', 12, 'Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 272, parágrafo abaixo da Figura 8.4', 'penalizacao-legal-um-ano-antecipacao-2026'],
+      ['Figura legal trocada', 12, 'Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, p. 273, parágrafo abaixo da Figura 8.5', 'penalizacao-legal-um-ano-antecipacao-2026'],
       ['Localizador livre', 0, 'uma cadeia sem localizador'],
       ['Rótulo de total inventado', 4, 'p. 6, RECEITA INVENTADA, última coluna'],
       ['Coluna do valor orçamental disfarçada de rótulo', 1, 'FUNCIONAL!D2', 'oe-2026-despesa-funcao-01'],
@@ -1781,7 +1789,7 @@ function provaLocalizadores() {
     for (const [nome, grupo, valor, escolhido] of estragos) {
       const formato = LOCALIZADORES_CONHECIDOS[grupo];
       const par = [...LINHAS_DA_REGUA].find(([id, linha]) =>
-        linha.study === 'oe-2026' && (!escolhido || id === escolhido) &&
+        (escolhido ? id === escolhido : linha.study === 'oe-2026') &&
         typeof linha.name === 'string' && linha.name !== linha.document?.title &&
         formato.forma.test(linha.name_source ?? '') && localizadorConhecido(linha.name_source, linha));
       if (!par) {
