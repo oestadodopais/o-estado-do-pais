@@ -8,12 +8,12 @@ import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
 
-// JD1-b: todas as catorze linhas, sem sobrescrever as cinquenta capturas da primeira passagem.
+// JD1-c: todos os recibos e a série, preservando as capturas anteriores.
 const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../../..');
 const dist = path.join(raiz, 'dist');
 const pasta = 'design/especime-v3/medicoes/jd1-2026-10-06';
-const saida = 'design/especime-v3/capturas/jd1-2026-10-06/jd1b';
-const manifesto = `${pasta}/capturas-b.json`;
+const saida = 'design/especime-v3/capturas/jd1-2026-10-06/jd1c';
+const manifesto = `${pasta}/capturas-c.json`;
 const argumentos = process.argv.slice(2);
 assert(argumentos.length === 0 || (argumentos.length === 2 && argumentos[0] === '--code-head'),
   'Uso: node captar.mjs [--code-head <cabeça do código>].');
@@ -25,7 +25,7 @@ const versaoOriginal = await fs.readFile(path.join(dist, 'version.json'), 'utf8'
 const versao = JSON.parse(versaoOriginal);
 assert.equal(versao.commit, cabecaCodigo, 'dist/version.json não é a cabeça do código pedida.');
 // O último commit pode conter apenas provas. Nunca se isentam os compositores, as definições ou outros guiões.
-const prova = p => p === `${pasta}/LEIA-ME.md` || p === manifesto || p.startsWith(`${saida}/`) || p.startsWith(`${pasta}/portoes-b/`);
+const prova = p => /^design\/especime-v3\/medicoes\/jd1-2026-10-06\/(?:frases|plantas|controlos|dependencias|fecho)-c\.json$/.test(p) || p === `${pasta}/LEIA-ME.md` || p === manifesto || p.startsWith(`${saida}/`) || p.startsWith(`${pasta}/portoes-c/`);
 function conferirCodigo() {
   const alterados = git('diff', '--name-only', cabecaCodigo, '--').split('\n').filter(Boolean);
   const novos = git('ls-files', '--others', '--exclude-standard').split('\n').filter(Boolean);
@@ -35,7 +35,7 @@ function conferirCodigo() {
 conferirCodigo();
 const cruzamento = JSON.parse(await fs.readFile(path.join(raiz, 'ledger/cruzamentos/jd1.json'), 'utf8'));
 const linhas = Object.keys(cruzamento.rows).sort();
-assert.equal(linhas.length, 14, 'O cruzamento JD1 tem de conter as catorze linhas esperadas.');
+assert.equal(linhas.length, 15, 'O cruzamento JD1 tem de conter as quinze linhas esperadas.');
 const ids = { ...Object.fromEntries(linhas.map(id => [id, id])), serie: 'series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade' };
 const larguras = [390, 1280];
 function conferirPortas(portas, largura) {
@@ -76,6 +76,9 @@ try {
         titulo: texto('.linha-cabeca h1'),
         frase: texto('[data-o-que-e-parte="o-que-e"]') || texto('[data-o-que-e-da-serie] .linha-o-que-e-frase'),
         ultimo: texto('[data-serie-ultimo]'),
+        parcela: texto('[data-jd1-parcela]'),
+        evolucao: texto('[data-jd1-evolucao]'),
+        excerto_grafico: document.querySelector('.linha-excerto-grafico') ? {whiteSpace: getComputedStyle(document.querySelector('.linha-excerto-grafico')).whiteSpace, largura: document.querySelector('.linha-excerto-grafico').clientWidth, conteudo: document.querySelector('.linha-excerto-grafico').scrollWidth} : null,
         por_confirmar: document.querySelectorAll('[data-por-confirmar-na-fonte]').length,
         portas: [...document.querySelectorAll('.linha-endereco-abrir')].map(e => {
           const rotulo = e.getBoundingClientRect(), endereco = e.parentElement.querySelector('.linha-endereco-bruto').getBoundingClientRect();
@@ -83,6 +86,7 @@ try {
         }) };
     });
     if (medidas.documento > largura) problemas.push(`${url}: largura ${medidas.documento} excede ${largura}`);
+    if (medidas.excerto_grafico && medidas.excerto_grafico.whiteSpace !== 'pre') problemas.push(`${url}: os espaços do excerto foram colapsados`);
     if (!medidas.frase || medidas.por_confirmar) problemas.push(`${url}: frase ausente ou por confirmar`);
     problemas.push(...conferirPortas(medidas.portas, largura).map(e => `${url}: ${e}`));
     const ficheiro = `${saida}/${nome}-${lingua}-${largura}.png`;
@@ -127,8 +131,8 @@ try {
 } finally { await browser.close(); servidor.close(); }
 conferirCodigo();
 assert.equal(await fs.readFile(path.join(dist, 'version.json'), 'utf8'), versaoOriginal, 'A construção mudou durante as capturas.');
-assert.equal(capturas.length, 60, 'Faltam capturas das catorze linhas e da série, nas duas edições e larguras.');
-assert.equal(new Set(capturas.map(c => `${c.url}/${c.largura}`)).size, 60, 'Há capturas repetidas.');
+assert.equal(capturas.length, 64, 'Faltam capturas das quinze linhas e da série, nas duas edições e larguras.');
+assert.equal(new Set(capturas.map(c => `${c.url}/${c.largura}`)).size, 64, 'Há capturas repetidas.');
 assert.equal(interacoes.length, 4, 'Faltam ensaios da série nas duas edições e larguras.');
 const comando = `node ${pasta}/captar.mjs --code-head ${cabecaCodigo}`;
 await fs.writeFile(path.join(raiz, manifesto), JSON.stringify({ comando, cabeca, cabeca_codigo: cabecaCodigo, construcao: versao.commit, linhas, larguras, capturas, interacoes, plantas, problemas }, null, 2) + '\n');

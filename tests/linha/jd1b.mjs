@@ -35,6 +35,7 @@ console.log(`JD1-b: estado provisório nas três linhas INE nas duas edições; 
 // Não fixa a redação inteira: exige o conceito e confere também o recibo servido.
 const conceitos = [
   ['juros-das-administracoes-publicas-2024', 'despesa e pagamento', /encargo é assumido, mesmo que seja pago noutro ano/, /cost is incurred, even if it is paid in another year/],
+  ['juros-das-administracoes-publicas-2025', 'despesa e pagamento', /encargo é assumido, mesmo que seja pago noutro ano/, /cost is incurred, even if it is paid in another year/],
   ['pib-nominal-notificacao-setembro-2025', 'bens e serviços finais', /bens e serviços finais produzidos/, /final goods and services produced/],
   ['juros-das-administracoes-publicas-pib-2025', 'versões das contas', /versões das contas são diferentes/, /different versions of the accounts/],
   ['juros-das-administracoes-publicas-2025-ue', 'versões das contas', /versões das contas são diferentes/, /different versions of the accounts/],
