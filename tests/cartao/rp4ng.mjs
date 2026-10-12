@@ -39,5 +39,15 @@ for(const lang of ['pt','en'])for(const id of ['agua-nao-faturada-portugal-2024'
  el.set_content(', '+t(lang==='pt'?'en':'pt').prov.paginaDaDefinicao+' '+el.textContent.match(/\d+/)[0]);
  morde(`página na outra língua (${id}, ${lang})`,paginas(root,lang),'a coordenada da definição');
 }
+const {NOMES_DO_PROJETO}=await import('../../src/data/nomes-das-medidas.mjs');
+function prazo(nomes,linhas) {
+ const id='evora-prr-vencido-aprovado-2026',q=linhas.get('evora-prr-vencido-quota-2026');
+ return linhas.get(id).document.computed_over.filter.includes('dt_prevista_conclusao') && nomes[id].pt.includes('prazo de conclusão') && nomes[id].en.includes('completion deadline') && q.derivation.includes('prazo de conclusão') && q.derivation_en.includes('completion deadline') ? [] : ['RP4N-g: o nome e a quota não dizem o prazo de conclusão da computação'];
+}
+assert.deepEqual(prazo(NOMES_DO_PROJETO,loadClaims()),[]);
+{
+ const nomes={...NOMES_DO_PROJETO,'evora-prr-vencido-aprovado-2026':{pt:'prazo de execução',en:'execution deadline'}};
+ morde('prazo de execução em vez de conclusão',prazo(nomes,loadClaims()),'o nome e a quota não dizem');
+}
 if(process.argv.includes('--registo-g'))fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/g/plantas-novas.json',JSON.stringify({plantas},null,2)+'\n');
 console.log(`RP4N-g: PASS, ${plantas.length} plantas`);
