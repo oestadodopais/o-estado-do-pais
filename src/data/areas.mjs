@@ -617,9 +617,9 @@ export const AREAS = [
           },
           {
             estudos: ['penalizacoes-por-reforma-antecipada-2026'],
-            id: /^(factor-sustentabilidade-|penalizacao-antecipacao-)/,
+            id: /^(factor-sustentabilidade-|penalizacao-antecipacao-|penalizacao-legal-um-ano-antecipacao-)/,
             razao:
-              'O fator de sustentabilidade e o corte que ele impõe a quem se reforma antes da idade legal são regras de cálculo das pensões. O assunto é a segurança social. O grupo de trabalho que publicou o relatório não é nomeado na lei orgânica, e pela regra antiga estas linhas ficavam sem área.',
+              'O fator de sustentabilidade, a penalização legal e a estimativa de redução atuarialmente neutra dizem respeito às pensões por reforma antecipada. O assunto é a segurança social. O grupo de trabalho que publicou o relatório não é nomeado na lei orgânica, e pela regra antiga estas linhas ficavam sem área.',
           },
         ],
       },
