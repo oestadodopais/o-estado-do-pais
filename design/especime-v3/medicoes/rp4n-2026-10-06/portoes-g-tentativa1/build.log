@@ -1,0 +1,40 @@
+
+> o-estado-do-pais@0.1.0 build
+> npm run mapa:unidades && npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && astro build && npm run stamp:version && npm run cartoes && npm run gate:html && npm run check:datas && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:nomes && npm run check:lingua && npm run check:formato && npm run check:navegacao && npm run sinais
+
+
+> o-estado-do-pais@0.1.0 mapa:unidades
+> node scripts/mapa-unidades.mjs
+
+[32m  ✓ mapa das unidades · [0m29 ficheiros · 308 concelhos · 394 614 B em public/dados/mapa/ · nenhum mudou
+
+> o-estado-do-pais@0.1.0 ledger:check
+> node tests/linha/cadeias-proveniencia.mjs && node scripts/check-ledger.mjs && node tests/linha/historia-da-proveniencia.mjs && node tests/linha/historia-do-valor.mjs
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   '[penalizacao-antecipacao-um-ano-neutra.yml] "name" tem uma quebra de linha. Um rótulo composto de duas linhas do ficheiro é uma terceira cadeia, que o ficheiro não imprime.'
++ ]
+- []
+
+    at file://<worktree>/tests/linha/cadeias-proveniencia.mjs:45:8
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    '[penalizacao-antecipacao-um-ano-neutra.yml] "name" tem uma quebra de linha. Um rótulo composto de duas linhas do ficheiro é uma terceira cadeia, que o ficheiro não imprime.'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v22.23.1

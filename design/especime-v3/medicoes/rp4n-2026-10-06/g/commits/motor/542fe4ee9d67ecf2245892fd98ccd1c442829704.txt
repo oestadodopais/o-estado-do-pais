@@ -1,0 +1,3 @@
+542fe4ee9d67ecf2245892fd98ccd1c442829704
+fix(rp4n-g): registar os resumos da releitura do MAPA 4
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>

@@ -1,0 +1,3 @@
+9d56c0f1785c2e3719d741608895e5cfd015ffd4
+fix(rp4n-g): exigir o pedido para datar a cópia das pensões
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>

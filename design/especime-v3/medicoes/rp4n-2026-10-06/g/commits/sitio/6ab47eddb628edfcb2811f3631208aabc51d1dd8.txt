@@ -1,0 +1,4 @@
+6ab47eddb628edfcb2811f3631208aabc51d1dd8
+test(rp4n-g): conferir o localizador da figura da pensão no índice
+Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
+Claude-Session: https://claude.ai/code/session_01FHYNTtspyh84DJTCarQ444

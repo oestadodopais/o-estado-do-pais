@@ -1,0 +1,22 @@
+{'sitio': '344081c34eef1f792feef6bfd2d77fd764f7a1b5', 'motor': '542fe4ee9d67ecf2245892fd98ccd1c442829704'}
+
+> o-estado-do-pais@0.1.0 check:cruzamento
+> node scripts/check-cruzamento.mjs --with-origin
+
+
+[90m  cruzamentos · 3071 linha(s) de origem externa em 6 registo(s) · 3071 conferida(s) contra o motor · 2155 com reconferência de programa acrescentada (3077 entrada(s)) · 5 planta(s) vista(s)[0m
+[90m  rótulos da fonte · 2048 de 3196 linha(s) com "name", todas vindas do motor · 3 planta(s) vista(s)[0m
+[90m  séries · 34 linha(s) de série em 1 registo(s) · 34 conferida(s) contra o motor · 4 planta(s) vista(s)[0m
+[90m  cruzamentos · 12 ficheiro(s) inteiro(s) em 7 registo(s) · 12 conferido(s) contra o motor · 5 item(ns) da agenda reconferidos[0m
+[90m    agua-nao-faturada: 1[0m
+[90m    avaliacao-economica-regional-de-portugal-2026: 8[0m
+[90m    concelhos-2026: 2767[0m
+[90m    dominios-2026: 40[0m
+[90m    evora-contas-da-camara-2010-2025: 33[0m
+[90m    evora-economia-e-dinheiro-publico-de-fora-da-camara: 17[0m
+[90m    evora-quem-governou-a-camara-2009-2025: 19[0m
+[90m    oe-2026: 186[0m
+
+  [32m✓[0m cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou, e são ainda o que o motor tem.
+
+{'sitio': '344081c34eef1f792feef6bfd2d77fd764f7a1b5', 'motor': '542fe4ee9d67ecf2245892fd98ccd1c442829704'}

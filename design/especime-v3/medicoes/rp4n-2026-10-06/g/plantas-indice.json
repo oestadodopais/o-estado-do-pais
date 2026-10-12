@@ -1,0 +1,12 @@
+{
+  "plantas": [
+    {
+      "nome": "página da pensão trocada",
+      "mensagem": "RP4N-g: o localizador da pensão não corresponde à figura e à linha conferidas"
+    },
+    {
+      "nome": "rótulo da pensão atribuído a outra linha",
+      "mensagem": "RP4N-g: o localizador da pensão não corresponde à figura e à linha conferidas"
+    }
+  ]
+}
