@@ -12573,8 +12573,8 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É a redução da pensão calculada para a reforma antecipada no caso geral, contando o que se deixa de descontar e os direitos que se acrescentam, pelas contas do relatório final sobre a reforma da segurança social.",
-          "en": "It is the pension reduction calculated for early retirement in the general case, counting the contributions no longer paid and the rights that are added, from the calculations of the final report on social security reform.",
+          "pt": "É a redução da pensão calculada para a reforma antecipada no caso geral, pelas contas do relatório final sobre a reforma da segurança social.",
+          "en": "It is the pension reduction calculated for early retirement in the general case, from the calculations of the final report on social security reform.",
           "partes": [
             {
               "pt": "É a redução da pensão calculada para a reforma antecipada no caso geral",
@@ -12585,28 +12585,6 @@
                   "linha": "propria",
                   "campo": "excerpt",
                   "literal": "Decrementos por reforma antecipada: caso geral"
-                }
-              ]
-            },
-            {
-              "pt": ", contando o que se deixa de descontar e os direitos que se acrescentam",
-              "en": ", counting the contributions no longer paid and the rights that are added",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "propria",
-                  "campo": "excerpt",
-                  "literal": "considerando o efeito da antecipação da idade de reforma"
-                },
-                {
-                  "linha": "propria",
-                  "campo": "excerpt",
-                  "literal": "no esforço contributivo e no"
-                },
-                {
-                  "linha": "propria",
-                  "campo": "excerpt",
-                  "literal": "acréscimo de direitos sobre o sistema de pensões"
                 }
               ]
             },
