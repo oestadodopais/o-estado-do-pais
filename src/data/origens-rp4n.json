@@ -505,6 +505,28 @@
       "sha256": "cd913fa3af3c782154fbf015c74d4b93005c2fc7f65741e33ac27aba6a829a67"
     }
   },
+  "rp4n-agua-faixas": {
+    "publicador": "ERSAR",
+    "documento": "RASARP 2025, volume 1, página 106, AA08 Água não faturada",
+    "url": "https://ersarwebsitedocsstorage.blob.core.windows.net/documents/docs/anuais-do-RASARP/rasarp-2025/rasarp2025-volume1.pdf",
+    "lido": "2026-10-11",
+    "lingua": "pt",
+    "excerto": "Quadro 47. AA08 baixa – Valores de referência (%)\nQualidade do serviço boa\nQualidade do serviço mediana\nQualidade do serviço insatisfatória\n\n[0,0; 20,0]\n]20,0; 30,0]\n]30,0; 100,0]",
+    "recibo": "content/13 Dominios/source/rp4n/rasarp2025-volume1.pedido.json",
+    "extracao": {
+      "pagina": 106,
+      "inicio": "Quadro 47. AA08 baixa",
+      "fim": "Avaliação em Portugal continental"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/rasarp2025-volume1.pdf",
+      "campo": "página física 106",
+      "hora": "2026-10-11T08:13:13Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "cd913fa3af3c782154fbf015c74d4b93005c2fc7f65741e33ac27aba6a829a67"
+    }
+  },
   "rp4n-combustiveis": {
     "publicador": "Eurostat",
     "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
