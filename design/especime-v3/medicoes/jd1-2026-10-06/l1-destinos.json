@@ -1,6 +1,6 @@
 {
- "paginas": 2744,
- "regua": 2744,
+ "paginas": 2746,
+ "regua": 2746,
  "repetidos_por_pagina": {
   "/agenda": {
    "/agenda": 4,
@@ -1048,6 +1048,9 @@
    "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012656&lingua=PT": 3
   },
   "/en/ledger/amares-indice-de-divida-2024": {
+   "/en/method": 2
+  },
+  "/en/ledger/amortizacoes-e-anulacoes-de-divida-fundada-2025": {
    "/en/method": 2
   },
   "/en/ledger/anadia-ganho-medio-mensal-2024": {
@@ -6482,6 +6485,9 @@
    "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012656&lingua=PT": 3
   },
   "/livro-razao/amares-indice-de-divida-2024": {
+   "/metodo": 2
+  },
+  "/livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025": {
    "/metodo": 2
   },
   "/livro-razao/anadia-ganho-medio-mensal-2024": {
