@@ -1,0 +1,72 @@
+[
+  {
+    "repositorio": "sitio",
+    "commit": "97c95d2185e1b20b1985654aea0955fd7c500c68",
+    "trailers_adjuntos": true
+  },
+  {
+    "repositorio": "sitio",
+    "commit": "546fcd39c1b4fff18a70cc1f7864c2edce758a08",
+    "trailers_adjuntos": true
+  },
+  {
+    "repositorio": "sitio",
+    "commit": "8c4d1ca04cd94a192311d459486e0085871e6ba3",
+    "trailers_adjuntos": true
+  },
+  {
+    "repositorio": "sitio",
+    "commit": "d59887a0ec908c9e08f734abd8a13d36c0f10baf",
+    "trailers_adjuntos": true
+  },
+  {
+    "repositorio": "sitio",
+    "commit": "d164a38006213cbf84390cb7657ba85096d0110e",
+    "trailers_adjuntos": true
+  },
+  {
+    "repositorio": "sitio",
+    "commit": "ac4ca9c0a257891e95344564fee28047952b15ed",
+    "trailers_adjuntos": true
+  },
+  {
+    "repositorio": "sitio",
+    "commit": "1ca31f13faf9e930cd01dc105006194793a511a3",
+    "trailers_adjuntos": true
+  },
+  {
+    "repositorio": "sitio",
+    "commit": "c1a375f7f5d656f47e5b1d1dd3ad456ed9146e0b",
+    "trailers_adjuntos": true
+  },
+  {
+    "repositorio": "sitio",
+    "commit": "9a60fa27c9e987ea64fef8d22822529e5429ee97",
+    "trailers_adjuntos": true
+  },
+  {
+    "repositorio": "sitio",
+    "commit": "877e75cef1988316d68019c4e73e42e17247eea6",
+    "trailers_adjuntos": true
+  },
+  {
+    "repositorio": "sitio",
+    "commit": "1fb08e30365399bd817175c90ec5f697ff13645a",
+    "trailers_adjuntos": true
+  },
+  {
+    "repositorio": "motor",
+    "commit": "90f1e406173708e90c6ab5a37746d0a9f40a058a",
+    "trailers_adjuntos": true
+  },
+  {
+    "repositorio": "motor",
+    "commit": "bc09b6d5f5a7a6bf5895314074331a8eca4fb710",
+    "trailers_adjuntos": true
+  },
+  {
+    "repositorio": "motor",
+    "commit": "b75f3170e3bb6b5f925f9654e41c7a32f8484236",
+    "trailers_adjuntos": true
+  }
+]

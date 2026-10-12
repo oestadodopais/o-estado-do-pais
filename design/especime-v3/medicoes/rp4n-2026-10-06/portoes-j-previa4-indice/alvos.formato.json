@@ -1,0 +1,6 @@
+{
+  "ficheiro": "alvos.json.gz",
+  "formato": "gzip; conteúdo JSON integral, sem alteração",
+  "bytes_descomprimidos": 31993750,
+  "sha256_descomprimido": "5ccc0b748150e1ab93864d6b88c676c033c819ee4d595b0a4ec12d0f9246ec88"
+}

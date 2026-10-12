@@ -1,0 +1,613 @@
+{
+  "base": "3ecc7c72",
+  "cabecas": {
+    "sitio": "d59887a0ec908c9e08f734abd8a13d36c0f10baf",
+    "motor": "2d32da6f493530aa3158d13690603aa5d6c9c784"
+  },
+  "declaracoes": [
+    {
+      "id": "amortizacoes-e-anulacoes-de-divida-fundada-2025",
+      "fontes": [
+        {
+          "publisher": "Entidade Orçamental",
+          "receipt": {
+            "campo": "pdftotext -layout, folha 83, coluna esquerda",
+            "cliente": "core.http.HttpClient.condicional",
+            "extracao": {
+              "ferramenta": "pdftotext version 26.09.0",
+              "ficheiro": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026-coluna-esquerda-83-w300.txt",
+              "sha256": "88df10e4bba89d498f10f69a8e08f03812cdbc01ecfea00ea613be8596d94173"
+            },
+            "hora": "2026-10-06T10:46:01Z",
+            "motor": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf",
+            "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+          },
+          "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+          "origens": [
+            "jd1-eo-glossario"
+          ]
+        },
+        {
+          "publisher": "Entidade Orçamental",
+          "receipt": {
+            "campo": "pdftotext -layout, folha 82, coluna esquerda",
+            "cliente": "core.http.HttpClient.condicional",
+            "extracao": {
+              "ferramenta": "pdftotext version 26.09.0",
+              "ficheiro": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026-coluna-esquerda-82-w300.txt",
+              "sha256": "3852ac2b0d15b5bfb1bde650519c68e1a90e8fcf84989d8c731d274c6bd36203"
+            },
+            "hora": "2026-10-06T10:46:01Z",
+            "motor": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf",
+            "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+          },
+          "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+          "origens": [
+            "jd1-eo-ativos"
+          ]
+        },
+        {
+          "publisher": "Entidade Orçamental",
+          "receipt": {
+            "campo": "pdftotext -layout, folha 87, coluna esquerda",
+            "cliente": "core.http.HttpClient.condicional",
+            "extracao": {
+              "ferramenta": "pdftotext version 26.09.0",
+              "ficheiro": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026-coluna-esquerda-87-w300.txt",
+              "sha256": "230447d57fac2bc209985c882caee0662bc6d18d77b10cdb31e977e3ccae8472"
+            },
+            "hora": "2026-10-06T10:46:01Z",
+            "motor": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf",
+            "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+          },
+          "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+          "origens": [
+            "jd1-eo-saldo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "custo-do-stock-da-divida-direta-2025",
+      "fontes": [
+        {
+          "publisher": "Instituto Nacional de Estatística",
+          "receipt": {
+            "campo": "pdftotext -layout, folha 4",
+            "cliente": "core.http.HttpClient.condicional",
+            "extracao": {
+              "ferramenta": "pdftotext version 26.09.0",
+              "ficheiro": "indicators/out/jd1-2026-10-06/002-ine-pde-setembro-2026.txt",
+              "sha256": "3e8580f92458bba2da44f71d66171bec6cca62c03f5c61dfd3ab069d488f89d4"
+            },
+            "hora": "2026-10-06T10:45:57Z",
+            "motor": "indicators/out/jd1-2026-10-06/002-ine-pde-setembro-2026.pdf",
+            "sha256": "58696e3c11ed4233c7a06a8fce374043de7ce6ca57898064c52bc7b9faff673d"
+          },
+          "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=816377733&att_display=n&att_download=y",
+          "origens": [
+            "jd1-ine-contas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emissoes-de-divida-fundada-2025",
+      "fontes": [
+        {
+          "publisher": "Entidade Orçamental",
+          "receipt": {
+            "campo": "pdftotext -layout, folha 83, coluna esquerda",
+            "cliente": "core.http.HttpClient.condicional",
+            "extracao": {
+              "ferramenta": "pdftotext version 26.09.0",
+              "ficheiro": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026-coluna-esquerda-83-w300.txt",
+              "sha256": "88df10e4bba89d498f10f69a8e08f03812cdbc01ecfea00ea613be8596d94173"
+            },
+            "hora": "2026-10-06T10:46:01Z",
+            "motor": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf",
+            "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+          },
+          "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+          "origens": [
+            "jd1-eo-glossario"
+          ]
+        },
+        {
+          "publisher": "Entidade Orçamental",
+          "receipt": {
+            "campo": "pdftotext -layout, folha 82, coluna esquerda",
+            "cliente": "core.http.HttpClient.condicional",
+            "extracao": {
+              "ferramenta": "pdftotext version 26.09.0",
+              "ficheiro": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026-coluna-esquerda-82-w300.txt",
+              "sha256": "3852ac2b0d15b5bfb1bde650519c68e1a90e8fcf84989d8c731d274c6bd36203"
+            },
+            "hora": "2026-10-06T10:46:01Z",
+            "motor": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf",
+            "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+          },
+          "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+          "origens": [
+            "jd1-eo-ativos"
+          ]
+        },
+        {
+          "publisher": "Entidade Orçamental",
+          "receipt": {
+            "campo": "pdftotext -layout, folha 87, coluna esquerda",
+            "cliente": "core.http.HttpClient.condicional",
+            "extracao": {
+              "ferramenta": "pdftotext version 26.09.0",
+              "ficheiro": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026-coluna-esquerda-87-w300.txt",
+              "sha256": "230447d57fac2bc209985c882caee0662bc6d18d77b10cdb31e977e3ccae8472"
+            },
+            "hora": "2026-10-06T10:46:01Z",
+            "motor": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf",
+            "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+          },
+          "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+          "origens": [
+            "jd1-eo-saldo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "juros-das-administracoes-publicas-2025-ue",
+      "fontes": [
+        {
+          "publisher": "Instituto Nacional de Estatística",
+          "receipt": {
+            "campo": "pdftotext -layout, folha 4",
+            "cliente": "core.http.HttpClient.condicional",
+            "extracao": {
+              "ferramenta": "pdftotext version 26.09.0",
+              "ficheiro": "indicators/out/jd1-2026-10-06/002-ine-pde-setembro-2026.txt",
+              "sha256": "3e8580f92458bba2da44f71d66171bec6cca62c03f5c61dfd3ab069d488f89d4"
+            },
+            "hora": "2026-10-06T10:45:57Z",
+            "motor": "indicators/out/jd1-2026-10-06/002-ine-pde-setembro-2026.pdf",
+            "sha256": "58696e3c11ed4233c7a06a8fce374043de7ce6ca57898064c52bc7b9faff673d"
+          },
+          "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=816377733&att_display=n&att_download=y",
+          "origens": [
+            "jd1-ine-contas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "juros-das-administracoes-publicas-pib-2024",
+      "fontes": [
+        {
+          "publisher": "Eurostat",
+          "receipt": {
+            "campo": "texto da entrada nomeada, extraído por HTMLParser",
+            "cliente": "core.http.HttpClient.condicional",
+            "extracao": {
+              "ferramenta": "Python html.parser.HTMLParser",
+              "ficheiro": "indicators/out/jd1b-2026-10-07/005-eurostat-pib-iniciantes.txt",
+              "sha256": "66170c143a9e9e09b297497c79f081c4ab79cf3be82712241568e12ae6c9b523"
+            },
+            "hora": "2026-10-07T09:49:11Z",
+            "motor": "indicators/out/jd1b-2026-10-07/005-eurostat-pib-iniciantes.html",
+            "sha256": "65e07dfb4d6043e71431b40ad6b709b75a03b2dc4dbbf9e497b23aeb2d8fffec"
+          },
+          "url": "https://ec.europa.eu/eurostat/web/european-statistics-learning-hub/statistics-for-beginners/gross-domestic-product",
+          "origens": [
+            "jd1-pib-definicao"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "juros-das-administracoes-publicas-pib-2025",
+      "fontes": [
+        {
+          "publisher": "Eurostat",
+          "receipt": {
+            "campo": "texto da entrada nomeada, extraído por HTMLParser",
+            "cliente": "core.http.HttpClient.condicional",
+            "extracao": {
+              "ferramenta": "Python html.parser.HTMLParser",
+              "ficheiro": "indicators/out/jd1b-2026-10-07/005-eurostat-pib-iniciantes.txt",
+              "sha256": "66170c143a9e9e09b297497c79f081c4ab79cf3be82712241568e12ae6c9b523"
+            },
+            "hora": "2026-10-07T09:49:11Z",
+            "motor": "indicators/out/jd1b-2026-10-07/005-eurostat-pib-iniciantes.html",
+            "sha256": "65e07dfb4d6043e71431b40ad6b709b75a03b2dc4dbbf9e497b23aeb2d8fffec"
+          },
+          "url": "https://ec.europa.eu/eurostat/web/european-statistics-learning-hub/statistics-for-beginners/gross-domestic-product",
+          "origens": [
+            "jd1-pib-definicao"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "necessidades-brutas-de-financiamento-2025",
+      "fontes": [
+        {
+          "publisher": "Entidade Orçamental",
+          "receipt": {
+            "campo": "pdftotext -layout, folha 83, coluna esquerda",
+            "cliente": "core.http.HttpClient.condicional",
+            "extracao": {
+              "ferramenta": "pdftotext version 26.09.0",
+              "ficheiro": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026-coluna-esquerda-83-w300.txt",
+              "sha256": "88df10e4bba89d498f10f69a8e08f03812cdbc01ecfea00ea613be8596d94173"
+            },
+            "hora": "2026-10-06T10:46:01Z",
+            "motor": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf",
+            "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+          },
+          "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+          "origens": [
+            "jd1-eo-glossario"
+          ]
+        },
+        {
+          "publisher": "Entidade Orçamental",
+          "receipt": {
+            "campo": "pdftotext -layout, folha 82, coluna esquerda",
+            "cliente": "core.http.HttpClient.condicional",
+            "extracao": {
+              "ferramenta": "pdftotext version 26.09.0",
+              "ficheiro": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026-coluna-esquerda-82-w300.txt",
+              "sha256": "3852ac2b0d15b5bfb1bde650519c68e1a90e8fcf84989d8c731d274c6bd36203"
+            },
+            "hora": "2026-10-06T10:46:01Z",
+            "motor": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf",
+            "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+          },
+          "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+          "origens": [
+            "jd1-eo-ativos"
+          ]
+        },
+        {
+          "publisher": "Entidade Orçamental",
+          "receipt": {
+            "campo": "pdftotext -layout, folha 87, coluna esquerda",
+            "cliente": "core.http.HttpClient.condicional",
+            "extracao": {
+              "ferramenta": "pdftotext version 26.09.0",
+              "ficheiro": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026-coluna-esquerda-87-w300.txt",
+              "sha256": "230447d57fac2bc209985c882caee0662bc6d18d77b10cdb31e977e3ccae8472"
+            },
+            "hora": "2026-10-06T10:46:01Z",
+            "motor": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf",
+            "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+          },
+          "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+          "origens": [
+            "jd1-eo-saldo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pib-nominal-notificacao-setembro-2024",
+      "fontes": [
+        {
+          "publisher": "Eurostat",
+          "receipt": {
+            "campo": "texto da entrada nomeada, extraído por HTMLParser",
+            "cliente": "core.http.HttpClient.condicional",
+            "extracao": {
+              "ferramenta": "Python html.parser.HTMLParser",
+              "ficheiro": "indicators/out/jd1b-2026-10-07/005-eurostat-pib-iniciantes.txt",
+              "sha256": "66170c143a9e9e09b297497c79f081c4ab79cf3be82712241568e12ae6c9b523"
+            },
+            "hora": "2026-10-07T09:49:11Z",
+            "motor": "indicators/out/jd1b-2026-10-07/005-eurostat-pib-iniciantes.html",
+            "sha256": "65e07dfb4d6043e71431b40ad6b709b75a03b2dc4dbbf9e497b23aeb2d8fffec"
+          },
+          "url": "https://ec.europa.eu/eurostat/web/european-statistics-learning-hub/statistics-for-beginners/gross-domestic-product",
+          "origens": [
+            "jd1-pib-definicao"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pib-nominal-notificacao-setembro-2025",
+      "fontes": [
+        {
+          "publisher": "Eurostat",
+          "receipt": {
+            "campo": "texto da entrada nomeada, extraído por HTMLParser",
+            "cliente": "core.http.HttpClient.condicional",
+            "extracao": {
+              "ferramenta": "Python html.parser.HTMLParser",
+              "ficheiro": "indicators/out/jd1b-2026-10-07/005-eurostat-pib-iniciantes.txt",
+              "sha256": "66170c143a9e9e09b297497c79f081c4ab79cf3be82712241568e12ae6c9b523"
+            },
+            "hora": "2026-10-07T09:49:11Z",
+            "motor": "indicators/out/jd1b-2026-10-07/005-eurostat-pib-iniciantes.html",
+            "sha256": "65e07dfb4d6043e71431b40ad6b709b75a03b2dc4dbbf9e497b23aeb2d8fffec"
+          },
+          "url": "https://ec.europa.eu/eurostat/web/european-statistics-learning-hub/statistics-for-beginners/gross-domestic-product",
+          "origens": [
+            "jd1-pib-definicao"
+          ]
+        }
+      ]
+    }
+  ],
+  "recusas_antes": [
+    "K17 · famílias · pib-nominal-notificacao-setembro, parte 1 («É o valor dos bens e serviços finais produzidos na econom…»): jd1-pib-definicao, pib-nominal-notificacao-setembro-2024: a origem tem outro publicador e não está declarada como segunda fonte com recibo",
+    "K17 · famílias · pib-nominal-notificacao-setembro, parte 1 («É o valor dos bens e serviços finais produzidos na econom…»): jd1-pib-definicao, pib-nominal-notificacao-setembro-2024: a origem tem outro publicador e não está declarada como segunda fonte com recibo",
+    "K17 · famílias · juros-das-administracoes-publicas-pib, parte 2 («. O produto interno bruto mede o valor dos bens e serviço…»): jd1-pib-definicao, juros-das-administracoes-publicas-pib-2024: a origem tem outro publicador e não está declarada como segunda fonte com recibo",
+    "K17 · famílias · juros-das-administracoes-publicas-pib, parte 2 («. O produto interno bruto mede o valor dos bens e serviço…»): jd1-pib-definicao, juros-das-administracoes-publicas-pib-2024: a origem tem outro publicador e não está declarada como segunda fonte com recibo",
+    "K17 · famílias · juros-das-administracoes-publicas-ue, parte 4 («: a despesa pertence ao período em que o encargo é assumi…»): jd1-ine-contas, juros-das-administracoes-publicas-2025-ue: a origem tem outro publicador e não está declarada como segunda fonte com recibo",
+    "K17 · famílias · custo-do-stock-da-divida-direta, parte 2 («. Os juros são registados quando o encargo é assumido, me…»): jd1-ine-contas, custo-do-stock-da-divida-direta-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo",
+    "K17 · famílias · necessidades-brutas-de-financiamento, parte 1 («É o financiamento de que o Estado precisou para cobrir o …»): jd1-eo-ativos, necessidades-brutas-de-financiamento-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo",
+    "K17 · famílias · necessidades-brutas-de-financiamento, parte 2 («. O défice é a despesa que excede a receita»): jd1-eo-saldo, necessidades-brutas-de-financiamento-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo",
+    "K17 · famílias · necessidades-brutas-de-financiamento, parte 2 («. O défice é a despesa que excede a receita»): jd1-eo-saldo, necessidades-brutas-de-financiamento-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo",
+    "K17 · famílias · necessidades-brutas-de-financiamento, parte 3 («. Os ativos financeiros incluem títulos, participações e …»): jd1-eo-ativos, necessidades-brutas-de-financiamento-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo",
+    "K17 · famílias · necessidades-brutas-de-financiamento, parte 3 («. Os ativos financeiros incluem títulos, participações e …»): jd1-eo-ativos, necessidades-brutas-de-financiamento-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo",
+    "K17 · famílias · necessidades-brutas-de-financiamento, parte 6 (« A contabilidade orçamental pública conta os recebimentos…»): jd1-eo-glossario, necessidades-brutas-de-financiamento-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo",
+    "K17 · famílias · necessidades-brutas-de-financiamento, parte 6 (« A contabilidade orçamental pública conta os recebimentos…»): jd1-eo-glossario, necessidades-brutas-de-financiamento-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo",
+    "K17 · famílias · amortizacoes-e-anulacoes-de-divida-fundada, parte 4 (« A contabilidade orçamental pública conta os recebimentos…»): jd1-eo-glossario, amortizacoes-e-anulacoes-de-divida-fundada-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo",
+    "K17 · famílias · amortizacoes-e-anulacoes-de-divida-fundada, parte 4 (« A contabilidade orçamental pública conta os recebimentos…»): jd1-eo-glossario, amortizacoes-e-anulacoes-de-divida-fundada-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo",
+    "K17 · famílias · emissoes-de-divida-fundada, parte 4 (« A contabilidade orçamental pública conta os recebimentos…»): jd1-eo-glossario, emissoes-de-divida-fundada-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo",
+    "K17 · famílias · emissoes-de-divida-fundada, parte 4 (« A contabilidade orçamental pública conta os recebimentos…»): jd1-eo-glossario, emissoes-de-divida-fundada-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo"
+  ],
+  "recusas_depois": [],
+  "comparacoes": [
+    {
+      "pagina": "livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025/index.html",
+      "antes": "92b5227de30e2b1947eaadc6920a7074e8872800cf0d0cb7e2246c8378160288",
+      "depois": "6d83c5f305b11bbcef8a896871190991301602a80d5360443f54970048ddfd20",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "en/ledger/amortizacoes-e-anulacoes-de-divida-fundada-2025/index.html",
+      "antes": "fab7ab152237c64b271028342b251bfeccdf512e91238b1605d27463f1057403",
+      "depois": "5d36792849f26776b95e0d80efa145415a48745733d83d851934aaf9dc1f9736",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "livro-razao/custo-da-divida-emitida-2026-08/index.html",
+      "antes": "7f12fe2b13b41b4e31dc4ae94999ff92d3d16d718384cf0886e33c1ff50e442a",
+      "depois": "7f12fe2b13b41b4e31dc4ae94999ff92d3d16d718384cf0886e33c1ff50e442a",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "en/ledger/custo-da-divida-emitida-2026-08/index.html",
+      "antes": "ce3863850a473fe686f162c3573d661c510237899aad4395c3e005d14834334a",
+      "depois": "ce3863850a473fe686f162c3573d661c510237899aad4395c3e005d14834334a",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "livro-razao/custo-do-stock-da-divida-direta-2025/index.html",
+      "antes": "d40d1e170c322fad2ae08285a78f269c2424099cefc811b5d46029a4a2dec0ab",
+      "depois": "68951e41caff6fa8f3f78906e331567f04fff5a56227ba5cfedf767d6c4374bc",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "en/ledger/custo-do-stock-da-divida-direta-2025/index.html",
+      "antes": "2bfc936b430a95edd69461aab4e429267e1bd1f8e4bd38292047ed0580795fb9",
+      "depois": "cb26bbe97a930a764ea0ece1fd0ee73c3c8b3b55b843ef8faf31bb323c17f85b",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "livro-razao/divida-direta-do-estado-2026-08/index.html",
+      "antes": "f82e67973120f031cf33f765ddb165069c2ff556cfdf33de3518472ed20f5af4",
+      "depois": "f82e67973120f031cf33f765ddb165069c2ff556cfdf33de3518472ed20f5af4",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "en/ledger/divida-direta-do-estado-2026-08/index.html",
+      "antes": "f52d4c7040d14b924f4f99a391c0098049034c7f5fec6c48919a4561cb99dab7",
+      "depois": "f52d4c7040d14b924f4f99a391c0098049034c7f5fec6c48919a4561cb99dab7",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "livro-razao/emissoes-de-divida-fundada-2025/index.html",
+      "antes": "4e8081825f9cc3ce46dda243d58ecea86de300013bbaead8199c72580ee45c64",
+      "depois": "f81ba4334f8422cc2d61f4d57184b5f7fd371070796756092920b83c6d02d35b",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "en/ledger/emissoes-de-divida-fundada-2025/index.html",
+      "antes": "ce2fda5460ed794e4f782f51f8a4ac14e3917eb60b393248c659a8743201ad8d",
+      "depois": "189fe651c0cf07db3ca1c8e2d00ca068a3c9aa2f7250829cc79b501c51a81384",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "livro-razao/juros-das-administracoes-publicas-2024/index.html",
+      "antes": "c5dcdbf3d4717dd7bf69382b6e4bbe626cef14663a6edfe36e0fee9cd9967d65",
+      "depois": "c5dcdbf3d4717dd7bf69382b6e4bbe626cef14663a6edfe36e0fee9cd9967d65",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "en/ledger/juros-das-administracoes-publicas-2024/index.html",
+      "antes": "2372c956d905efd53f472a83734158d2baa5f6d076762a682b5683ef8be874a0",
+      "depois": "2372c956d905efd53f472a83734158d2baa5f6d076762a682b5683ef8be874a0",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "livro-razao/juros-das-administracoes-publicas-2025/index.html",
+      "antes": "d17f01705c50c150c216026d92bb70e53a2538deb97dfa35aa98c123ead88440",
+      "depois": "d17f01705c50c150c216026d92bb70e53a2538deb97dfa35aa98c123ead88440",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "en/ledger/juros-das-administracoes-publicas-2025/index.html",
+      "antes": "b265470ae35eeda9b49d39d032190cd5e3d7945d64a04656094ebb752b473db5",
+      "depois": "b265470ae35eeda9b49d39d032190cd5e3d7945d64a04656094ebb752b473db5",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "livro-razao/juros-das-administracoes-publicas-2025-ue/index.html",
+      "antes": "7afef9c1d70a0b7f3614275fcb2d710acc77d349deeeadbe1cf641bb23b6bf47",
+      "depois": "ebf7e3262300b5f1fd3309e306e7c1357be6233e75734af29f5b10248542a9c5",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "en/ledger/juros-das-administracoes-publicas-2025-ue/index.html",
+      "antes": "54c3fadc7be4910f4b258fbdc0284f3b0b434f32419685dc01d0a5d28a4b4ad7",
+      "depois": "25c0c30484200bffd2419196413e1d5f408a43d9a57402866444832fd288fd47",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "livro-razao/juros-das-administracoes-publicas-pib-2024/index.html",
+      "antes": "90aa81eb3bae8746859ebd8c6c81739e7f5b8dabf7fd5eec6eabbdd312e5f96a",
+      "depois": "830f824a7dcef81ebdf6d0fd57ddf184fb0d8a62090ef8f04b2d762b7c1ea0a5",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "en/ledger/juros-das-administracoes-publicas-pib-2024/index.html",
+      "antes": "801b9df2f244aa178305922a99b370c07f9ccc98f2814c51c3fd027fcec86fbe",
+      "depois": "64c799d93d6a21369786dec357e739386de71f66070cd9b578027751eb970fff",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "livro-razao/juros-das-administracoes-publicas-pib-2025/index.html",
+      "antes": "4c782a3631ca778b0e96a167ed6ef1381422d033ec34b3868653176f3cd387b0",
+      "depois": "27be006be53d7811d69c69c608aa9f37ac2c97eb25ef3578d4f56d5f2c59d9d3",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "en/ledger/juros-das-administracoes-publicas-pib-2025/index.html",
+      "antes": "416604eb7cde3370dc9ed83b50a500c9d70f4953ddab70e198816a06d3b69d86",
+      "depois": "f27b7e6dd39d30aeb852562a3a0439933bbffe57661fed55245463b1a68dac8d",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "livro-razao/juros-e-outros-encargos-execucao-2025-08/index.html",
+      "antes": "aa77ca6cbfc023eb55acf81f3cb51d7462075bbf0bc694d364d2c671001c663a",
+      "depois": "aa77ca6cbfc023eb55acf81f3cb51d7462075bbf0bc694d364d2c671001c663a",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "en/ledger/juros-e-outros-encargos-execucao-2025-08/index.html",
+      "antes": "e9aafbb5b98d20cc684e8ead31680139d2950e3f003fa7afb71bcc4a91976017",
+      "depois": "e9aafbb5b98d20cc684e8ead31680139d2950e3f003fa7afb71bcc4a91976017",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "livro-razao/juros-e-outros-encargos-execucao-2026-08/index.html",
+      "antes": "5ed63ff3579ba178e0a84d43605a7548d7ae8bb525567a43e47ac5b6b8384d18",
+      "depois": "5ed63ff3579ba178e0a84d43605a7548d7ae8bb525567a43e47ac5b6b8384d18",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "en/ledger/juros-e-outros-encargos-execucao-2026-08/index.html",
+      "antes": "643ddb2b4401c3bcab12990091efeb0c44c7bcc0b9d75d261305e720a93a9103",
+      "depois": "643ddb2b4401c3bcab12990091efeb0c44c7bcc0b9d75d261305e720a93a9103",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "livro-razao/necessidades-brutas-de-financiamento-2025/index.html",
+      "antes": "847f4a73f4086a4be3f36ad2caaba7d9ec08d9fd379f5dec9addb609c4d8e691",
+      "depois": "bfe33828914fad0bcf9dd305ff2d60367fa433129ff2c3414a65aba140f0bfbf",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "en/ledger/necessidades-brutas-de-financiamento-2025/index.html",
+      "antes": "7bc37f30e4e1dd3bfc6e20fdaae97f990519e5eb5fd2f1959a5dd8d0b9a8f38b",
+      "depois": "866f11ab9eacafd7ead30a9672b870fd83ffe16a1e480f4292aa77289130e6ea",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "livro-razao/pib-nominal-notificacao-setembro-2024/index.html",
+      "antes": "572e4ded3fe897a6603344050fe7c731d55ccbf0accf5445495ecfdfcafddf4e",
+      "depois": "ed1c746a1527fb92df5186e52e3955b3d2b5e5f48990066a462cbaad9f9b11b4",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "en/ledger/pib-nominal-notificacao-setembro-2024/index.html",
+      "antes": "7a47911fcedd73076ebbd04e1c7aa7fc2bcf7e8624af51d02d8422e1d39cd9ed",
+      "depois": "58ffefcccad0dc53da74501b3b566370e379575d9b59b88bde748a80cbfa91db",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "livro-razao/pib-nominal-notificacao-setembro-2025/index.html",
+      "antes": "8c933ba01293602a53fe3fca556de40616d2d52bad9ae2c0f3ca30cb9c15b976",
+      "depois": "7fa9c0f0e4283790c5181653260276f1dbdc3296bb0616abc845b1ce16d10a0e",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "en/ledger/pib-nominal-notificacao-setembro-2025/index.html",
+      "antes": "e28fb14b7912d3729d460661c76f03fb65acbfa440110d9b169fb788f0ffaf30",
+      "depois": "2c57899fd5a56fb76a07802cbb7d5038eec4bada5df704f1beb3019c8d5d1f86",
+      "iguais": false,
+      "iguais_sem_definition_sources": false
+    },
+    {
+      "pagina": "livro-razao/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade/index.html",
+      "antes": "484894763cfbcf8d3b3cbbfecceac686a2f8d62b7623e8f3660dc4cd835a6e7d",
+      "depois": "484894763cfbcf8d3b3cbbfecceac686a2f8d62b7623e8f3660dc4cd835a6e7d",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "en/ledger/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade/index.html",
+      "antes": "2a4f2c300f3f1936366f2fdf909767957127ae321d529884f1d29f82c50beb73",
+      "depois": "2a4f2c300f3f1936366f2fdf909767957127ae321d529884f1d29f82c50beb73",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "index.html",
+      "antes": "4dbdcf962497073b1afecc85c7501b19427c2931515e1f5973633a356b5d9c5f",
+      "depois": "4dbdcf962497073b1afecc85c7501b19427c2931515e1f5973633a356b5d9c5f",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "en/index.html",
+      "antes": "292bfa290bdd116f56031cb33283806d6c20cd4f1eb628aacc3bf538b056ba19",
+      "depois": "292bfa290bdd116f56031cb33283806d6c20cd4f1eb628aacc3bf538b056ba19",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "livro-razao/index.html",
+      "antes": "74f0c09b5d3e44582f232f9df9c7d70b5abdf75dd7595194fdbe238f83ddde99",
+      "depois": "74f0c09b5d3e44582f232f9df9c7d70b5abdf75dd7595194fdbe238f83ddde99",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    },
+    {
+      "pagina": "en/ledger/index.html",
+      "antes": "04da13ef4a3ce932fb2faf4a00aa0798ba85cd873d6dc24b5dae4528547bf89e",
+      "depois": "04da13ef4a3ce932fb2faf4a00aa0798ba85cd873d6dc24b5dae4528547bf89e",
+      "iguais": true,
+      "iguais_sem_definition_sources": true
+    }
+  ]
+}
