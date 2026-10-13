@@ -33,7 +33,9 @@ const r = {
   exemplo: {id:exemplo,referencia:FIGURAS_PDM.find(f=>f.claim===c.id).limiar,razao:'Dívida pública: medida nacional no bloco do Estado da primeira página, com proveniência completa, referência declarada e leitura corrente sobre o que as administrações públicas devem.'},
   metodo: {porConfirmar:prova().divida.valor,comProvenienciaCompleta:prova().indexaveis.valor},
   marcasProveniencia:linhas.filter(recusada).map(c=>({id:c.id,ficheiro:c.__file,campos:camposPorVerificar(c)})),
-  diferencaMetodo:linhas.filter(c=>provenienciaIncompleta(c)&&!recusada(c)).map(c=>({id:c.id,ficheiro:c.__file,campos:camposPorVerificar(c)})),
+  // HIG, ER1-12: a diferença foi retirada. `recusada` é o próprio predicado
+  // `provenienciaIncompleta`, pelo que A && !A seria sempre falso. A prova
+  // efetiva continua abaixo: compara o livro com o código e o Método no HTML.
   edicoes:{},
 };
 assert.equal(r.metodo.porConfirmar,linhas.filter(provenienciaIncompleta).length);
