@@ -1,0 +1,162 @@
+{
+  "versao": {
+    "commit": "b59ce222aeeecfb8d72e6d6e5db5bd91f574f27c",
+    "ref": "higiene-2026-10-13",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-13T18:57:17.497Z"
+  },
+  "resultados": [
+    {
+      "id": "amortizacoes-e-anulacoes-de-divida-fundada-2025",
+      "lang": "pt",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "amortizacoes-e-anulacoes-de-divida-fundada-2025",
+      "lang": "en",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "custo-da-divida-emitida-2026-08",
+      "lang": "pt",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "custo-da-divida-emitida-2026-08",
+      "lang": "en",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "custo-do-stock-da-divida-direta-2025",
+      "lang": "pt",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "custo-do-stock-da-divida-direta-2025",
+      "lang": "en",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "divida-direta-do-estado-2026-08",
+      "lang": "pt",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "divida-direta-do-estado-2026-08",
+      "lang": "en",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "emissoes-de-divida-fundada-2025",
+      "lang": "pt",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "emissoes-de-divida-fundada-2025",
+      "lang": "en",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "juros-das-administracoes-publicas-2024",
+      "lang": "pt",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "juros-das-administracoes-publicas-2024",
+      "lang": "en",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "juros-das-administracoes-publicas-2025",
+      "lang": "pt",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "juros-das-administracoes-publicas-2025",
+      "lang": "en",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "juros-das-administracoes-publicas-2025-ue",
+      "lang": "pt",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "juros-das-administracoes-publicas-2025-ue",
+      "lang": "en",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "juros-das-administracoes-publicas-pib-2024",
+      "lang": "pt",
+      "titulo_na_proveniencia": "medida derivada"
+    },
+    {
+      "id": "juros-das-administracoes-publicas-pib-2024",
+      "lang": "en",
+      "titulo_na_proveniencia": "medida derivada"
+    },
+    {
+      "id": "juros-das-administracoes-publicas-pib-2025",
+      "lang": "pt",
+      "titulo_na_proveniencia": "medida derivada"
+    },
+    {
+      "id": "juros-das-administracoes-publicas-pib-2025",
+      "lang": "en",
+      "titulo_na_proveniencia": "medida derivada"
+    },
+    {
+      "id": "juros-e-outros-encargos-execucao-2025-08",
+      "lang": "pt",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "juros-e-outros-encargos-execucao-2025-08",
+      "lang": "en",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "juros-e-outros-encargos-execucao-2026-08",
+      "lang": "pt",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "juros-e-outros-encargos-execucao-2026-08",
+      "lang": "en",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "necessidades-brutas-de-financiamento-2025",
+      "lang": "pt",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "necessidades-brutas-de-financiamento-2025",
+      "lang": "en",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "pib-nominal-notificacao-setembro-2024",
+      "lang": "pt",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "pib-nominal-notificacao-setembro-2024",
+      "lang": "en",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "pib-nominal-notificacao-setembro-2025",
+      "lang": "pt",
+      "titulo_na_proveniencia": true
+    },
+    {
+      "id": "pib-nominal-notificacao-setembro-2025",
+      "lang": "en",
+      "titulo_na_proveniencia": true
+    }
+  ]
+}
