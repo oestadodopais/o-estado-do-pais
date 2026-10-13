@@ -500,6 +500,7 @@ const ficha = [
   /* O NOME DO ORGANISMO É UM NOME, E DIZ EM QUE LÍNGUA ESTÁ (I97, 29.08.2026):
      a tabela é `src/i18n/lingua-dos-titulos.mjs`, e a regra é a dos títulos. */
   { k: s.prov.fonte, campo: 'source', valor: claim.source, lingua: linguaDaFonte(claim.source, lang) },
+  { k: s.prov.resumoDoCorpo, campo: 'document.source_sha256', valor: claim.document?.source_sha256 ?? null },
   {
     k: claim.afirmacao ? s.prov.tituloDoDocumento : ehSerieDeDados ? s.prov.serie : s.prov.documento,
     campo: 'document.title',

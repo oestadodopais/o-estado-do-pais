@@ -22,6 +22,7 @@ document:
   edition: "2026-10-09"
   locator: "Intervenção na Assembleia da República"
   locator_en: "Speech in the Assembly of the Republic"
+  source_sha256: "e426f05d0446a03b252e2e8dd7bb668790fb752e5c9341fef16da35ba426ef88"
   kind: "html"
 source_url: "https://www.pcp.pt/governo-chega-ps-dancam-bailarico-quem-paga-conta-sao-trabalhadores"
 access_date: "2026-10-13"

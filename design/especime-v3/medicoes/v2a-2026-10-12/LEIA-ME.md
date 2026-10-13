@@ -4,7 +4,7 @@ As células e as palavras foram lidas nos documentos alojados. O memorando servi
 
 ## Cabeças e âmbito da V2-a inicial
 
-Cabeça do código do sítio: `12c66378c648680d05676eac97b3ae62eca2780e`. Cabeça do código do motor: `dfeca64d1d53d7af1c776c159c4e4c2044257cd2`. Os commits posteriores de entrega contêm apenas provas e este relatório; as cabeças finais ficam na resposta da passagem.
+Cabeça do código do sítio: `847dff47db35910a8c47da10b833cf87662f9d61`. Cabeça do código do motor: `dfeca64d1d53d7af1c776c159c4e4c2044257cd2`. Os commits posteriores de entrega contêm apenas provas e este relatório; as cabeças finais ficam na resposta da passagem.
 
 O guião do brief e `medir.py` contam 3211 linhas na partida e 3229 no fim, com 18 novas. A comparação dos objetos Git encontrou 0 linhas anteriores alteradas. As referências ao OE2027 passaram de 0 a 18. Os conhecidos-positivos do guião passaram.
 
@@ -123,24 +123,24 @@ O cruzamento mantém o aviso anterior do resumo global do livro do OE2026; os re
 
 ## Commits do código
 
-- sitio: `fc12a4e21155f93695d553b4fd033ffd976553a9`: V2-a: receber fontes seladas e conferir afirmações literais.
-- sitio: `fd62fb48b38a6bb64f07be44306bac3c57ea3c42`: V2-a: completar o tipo das afirmações e o guião das capturas.
-- sitio: `a0e2d67aa82f2bb6b900fb3e5257f44742502792`: V2-a: declarar Portugal como lugar das fontes do OE2027.
-- sitio: `7e13add1c2f5da1d87e7d3f1004ee449814dd9a4`: V2-a: declarar o âmbito das fontes na cobertura por área.
-- sitio: `e47fed728434cfbe8e1b0d2358cd6c69ba5839af`: V2-a: declarar a língua das fontes e atualizar o inventário das frases.
-- sitio: `6618ddb5570a6642e7a3cc04829ab8aac0d7021a`: V2-a: medir as portas dos recibos e atualizar o registo da L1.
-- sitio: `230b5b4685dd98a958b595455397ac8e6ba9f11c`: O escrivão corre os três portões do sítio fora da sandbox a pedido do construtor (portoes-pelo-escrivao.sh): o navegador das conferências não arranca dentro dela, como a segunda paragem da higiene mostrou; o prompt comum diz o caminho novo; o pontos.py conta uma sessão retomada pelos turnos dentro do intervalo.
-- sitio: `7339203828816e4e9f00ea77e6decc6a4d2df4a9`: O escrivão captura as páginas fora da sandbox a pedido do construtor (capturar-pelo-escrivao.sh, só o captar.mjs do repositório, sobre o dist da worktree): o navegador não arranca dentro dela, como a V2-a e a higiene mostraram.
-- sitio: `12c66378c648680d05676eac97b3ae62eca2780e`: V2-a: conferir localizadores e apresentar a edição datada.
+- sitio: `41ffc59663e62e40a5ebce1cf9346c7449edcc23`: V2-a: receber fontes seladas e conferir afirmações literais.
+- sitio: `8066b1b34dd444425c05cb0d7ef0b9b5b8bfd643`: V2-a: completar o tipo das afirmações e o guião das capturas.
+- sitio: `ee6ce409451f3bef744520e1f339d8b7c780352b`: V2-a: declarar Portugal como lugar das fontes do OE2027.
+- sitio: `51960bcb8899dd61a05da53a65c75b3544ae76b1`: V2-a: declarar o âmbito das fontes na cobertura por área.
+- sitio: `e74abc0af81cac3b0cdb679e66e1195f8e77222e`: V2-a: declarar a língua das fontes e atualizar o inventário das frases.
+- sitio: `d075f6b7a5f121d52946ab1c8029c25c79898cf3`: V2-a: medir as portas dos recibos e atualizar o registo da L1.
+- sitio: `b01db695f03069d9844c53e443a4971253e4fd34`: O escrivão corre os três portões do sítio fora da sandbox a pedido do construtor (portoes-pelo-escrivao.sh): o navegador das conferências não arranca dentro dela, como a segunda paragem da higiene mostrou; o prompt comum diz o caminho novo; o pontos.py conta uma sessão retomada pelos turnos dentro do intervalo.
+- sitio: `47df89d6b261d9c2175ae51884bcbdb3c9cf3d8c`: O escrivão captura as páginas fora da sandbox a pedido do construtor (capturar-pelo-escrivao.sh, só o captar.mjs do repositório, sobre o dist da worktree): o navegador não arranca dentro dela, como a V2-a e a higiene mostraram.
+- sitio: `847dff47db35910a8c47da10b833cf87662f9d61`: V2-a: conferir localizadores e apresentar a edição datada.
 - motor: `dfeca64d1d53d7af1c776c159c4e4c2044257cd2`: V2-a: selar fontes do OE2027 e afirmações públicas.
 
-A primeira entrega das provas ficou no commit `5bebb8a75050c3782143009594354d6ba73f4a8c`. O commit `12c66378c648680d05676eac97b3ae62eca2780e` também guarda as provas da primeira corrida pelo escrivão. A cabeça posterior desta entrega contém apenas o relatório, as medições e as capturas.
+A primeira entrega das provas ficou no commit `367f76135c64fe384a63f76d9106890af290ed1a`. O commit `847dff47db35910a8c47da10b833cf87662f9d61` também guarda as provas da primeira corrida pelo escrivão. A cabeça posterior desta entrega contém apenas o relatório, as medições e as capturas.
 
 ## Regeneração e custo
 
-No motor: `python3 -m publisher.v2a --write`, `python3 -m publisher.v2a_recortes` e `python3 -m publisher.export_site_rows --manifest publisher/manifest.v2a.json --site <worktree> --write`. No sítio: `node scripts/compor-familias-v2a.mjs`. O compositor próprio acrescenta as declarações sem editar os ficheiros de outras corridas; se se regenerar o mapa das famílias pelo compositor antigo, corre-se novamente o compositor V2-a. A K17 recusa a ausência destas declarações.
+No motor: `python3 -m publisher.v2a --write`, `python3 -m publisher.v2a_export`, `python3 -m publisher.v2a_recortes` e `python3 -m publisher.export_site_rows --manifest publisher/manifest.v2a.json --site <worktree> --write`. No sítio: `node scripts/compor-familias-v2a.mjs`. O compositor próprio acrescenta as declarações sem editar os ficheiros de outras corridas; se se regenerar o mapa das famílias pelo compositor antigo, corre-se novamente o compositor V2-a. A K17 recusa a ausência destas declarações.
 
-O lançador mediu 10 pontos na primeira passagem e 6 na retoma, com custo antigo de 551 961 e 246 648 símbolos, respetivamente. A soma é 16 pontos e 798 609 símbolos de custo antigo, acima do alvo de 300 000. Havia outra sessão em cada intervalo, pelo que a diferença de pontos da conta não é uma medida isolada deste bloco. As leituras estão em `custo-v2a.json`. O custo final da V2-a-b só será escrito pelo lançador depois desta resposta; a linha «tokens used» não foi exposta.
+O lançador mediu 10 pontos na primeira passagem e 6 na retoma, com custo antigo de 551 961 e 246 648 símbolos, respetivamente. A soma é 16 pontos e 798 609 símbolos de custo antigo, acima do alvo de 300 000. Havia outra sessão em cada intervalo, pelo que a diferença de pontos da conta não é uma medida isolada deste bloco. As leituras estão em `custo-v2a.json`. A medição da V2-a-b fornecida pela direção é de 232 turnos, 518 020 de custo antigo e 8 pontos da semana, com a higiene em paralelo; a linha «tokens used» não foi exposta.
 
 
 ## A passagem V2-a-b
@@ -163,11 +163,11 @@ Os achados 1 a 5 eram plantas da direção em cópias do pacote e não foram toc
 
 Questões novas:
 
-- V2A-16, corrigida na árvore atual: nenhum corpo integral fica na prova pública. Os objetos dos commits anteriores continuam no histórico Git; não se reescreveu o histórico nem se publicou qualquer alteração remota.
+- V2A-16, corrigida na árvore atual: nenhum corpo integral fica na prova pública. Antes da V2-a-c, a direção reescreveu o ramo ainda não publicado para retirar também os corpos da história. As cabeças citadas neste relatório são as da história atual.
 - V2A-17, ausência confirmada: o texto alojado da RTP não contém «despesa total consolidada». A página explica a queda noticiada e declara que a notícia não especifica total ou efetiva. O quadro do relatório mantém a linha própria; não se atribuiu a expressão à RTP.
 - V2A-18, grafia conferida: o cabeçalho da página 303 imprime «Pograma Legado». A proveniência conserva a grafia; a prosa da casa usa «Programa Legado».
 - V2A-19, decisão de execução: os portões e as capturas desta correção correm pelo escrivão, porque o navegador das conferências não arranca na sandbox. O hook do motor suspendeu novamente o batimento; aguardou-se o resultado do pedido existente antes de continuar, sem o duplicar.
-- V2A-20, custo: os dois registos encerrados do lançador medem os pontos e o custo antigo da V2-a. O custo final desta correção fica pendente do encerramento do lançador; não é estimado nesta entrega.
+- V2A-20, custo: os dois registos encerrados do lançador medem os pontos e o custo antigo da V2-a. O custo V2-a-b foi depois fornecido pela direção: 232 turnos, 518 020 de custo antigo e 8 pontos da semana, com a higiene em paralelo.
 
 - V2A-21, corrigida: a primeira corrida V2-a-b encontrou o inventário de frases ainda com as formulações anteriores. As frases substituídas passaram a retiradas e as novas ganharam entradas conferidas no HTML. A planta das siglas apanhou também uma concatenação sem espaço no guião de inspeção; a correção fez a planta morder.
 - V2A-22, falha de execução: a chamada dirigida a `check:leituras` tentou abrir o navegador na sandbox. O teste foi recusado com `bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.80839: Permission denied (1100)`. Não houve escalada; a suite pertence ao verify pelo escrivão. A falha de língua contra o HTML antigo desapareceu depois da reconstrução.
@@ -176,11 +176,11 @@ A primeira corrida desta correção ficou em `portoes-b-primeira`: build 1, veri
 
 - V2A-23, corrigida: a K8 contava «XXV Governo Constitucional» dentro da conclusão literal do CFP como prosa da casa. A régua mantém uma ocorrência da casa por edição e só retira dessa contagem um `excerpt` cuja marca identifica uma linha existente e cujo texto coincide integralmente com o livro. Cinco plantas mantêm a recusa da citação sem marca, da linha inexistente, do texto alterado e da expressão da casa nas duas línguas. A conclusão do CFP permanece inteira.
 
-- V2A-24, decisão de entrega: o escrivão recusou o pedido único com «mais de quatrocentos ficheiros num pedido; divide-o». As provas foram divididas em dois pedidos, de 270 e 304 ficheiros. O primeiro commit de capturas é `c9d449bfd9c8c2ef5c8d907caeb2562baca2738c`; o segundo fecha o relatório e os restantes comprovativos. Nenhum dos dois altera o código verificado.
+- V2A-24, decisão de entrega: o escrivão recusou o pedido único com «mais de quatrocentos ficheiros num pedido; divide-o». As provas foram divididas em dois pedidos, de 270 e 304 ficheiros. O primeiro commit de capturas é `97e6f3c64716aebfcedca57d7d0bdf7addedf9bd`; o segundo fecha o relatório e os restantes comprovativos. Nenhum dos dois altera o código verificado.
 
 A segunda corrida ficou em `portoes-b-segunda`: build 0, verify 1, typecheck 0 e motor 0, lidos dos ficheiros. A única falha do verify foi a K8, corrigida em V2A-23 e conferida pela suite completa dos cartões com código 0.
 
-Cabeça do código do sítio: `c71ff8aceaef0db5443fe45548a5ce5ba3a36ff0`. Cabeça do código e final do motor: `b95dc75f8cfaca58aa02c5f02564b0ae4d24259f`. Os commits desta correção são `65ace18a` (medidas, provas e direitos), `b705fa78` (inventário e conferências), `c71ff8ac` (K8 e citações literais) e `b95dc75f` no motor. O commit final do sítio acrescenta apenas provas e o relatório; a cabeça final fica na resposta. Nas referências da tabela, `familias.mjs` pertence a esta pasta de medições e `motor/` designa a raiz do motor.
+Cabeça do código do sítio: `9aab322bcc56167511fb6c20b9033814aa27dc4a`. Cabeça do código e final do motor: `b95dc75f8cfaca58aa02c5f02564b0ae4d24259f`. Os commits desta correção são `39b814b1` (medidas, provas e direitos), `468a9de0` (inventário e conferências), `9aab322b` (K8 e citações literais) e `b95dc75f` no motor. O commit final do sítio acrescenta apenas provas e o relatório; a cabeça final fica na resposta. Nas referências da tabela, `familias.mjs` pertence a esta pasta de medições e `motor/` designa a raiz do motor.
 
 | Portão final | Código lido | Ficheiro |
 |---|---:|---|
@@ -221,4 +221,34 @@ Plantas novas e respetivas mensagens, também guardadas em `plantas-b.json`:
 
 Os controlos positivos aceitam outro dia de publicação e o dia bissexto válido; as plantas recusam os dias impossíveis e a edição mensal. A contagem L1 foi refeita e os destinos e multiplicidades coincidem integralmente com a fotografia anterior (`b-conferencias/l1-recontado.json`). A leitura cruzada do inventário corrigido fica por fazer pela direção.
 
-Custo: a V2-a anterior soma 16 pontos da conta e 798 609 símbolos de custo antigo, nas duas leituras do lançador. O custo final V2-a-b fica pendente do encerramento do lançador. A linha «tokens used» não foi exposta.
+Custo: a V2-a anterior soma 16 pontos da conta e 798 609 símbolos de custo antigo, nas duas leituras do lançador. A direção forneceu a medição encerrada da V2-a-b: 232 turnos, 518 020 de custo antigo e 8 pontos da semana, com a higiene em paralelo. A linha «tokens used» não foi exposta.
+
+
+## A passagem V2-a-c
+
+A entrada do sítio foi `96b6aaa9bc133d475929b3e03fb081f2748f5d2c`, com árvore limpa. A entrada do motor foi `b95dc75f8cfaca58aa02c5f02564b0ae4d24259f`, também limpa. A cabeça final V2-a-b na história atual é `5e694b9f4db99f127717f2fda3929db1a2a4e748`; a cabeça do seu código é `9aab322bcc56167511fb6c20b9033814aa27dc4a`. Os recibos históricos mantêm os carimbos originais; este relatório usa as cabeças reescritas. Os achados 1 a 5 eram plantas nas cópias e não foram transportados para o ramo. A direção tratou a história (6) e a inclusão dos corpos no pacote da leitura (parte do 7).
+
+| Achado | Resultado |
+|---|---|
+| 7 e 16 | A âncora de Amaro é o parágrafo que nomeia o ministro; na notícia da queda, a assinatura vem de `itemprop="author"`, sem rótulo de navegação. As plantas trocam a âncora por texto ausente. A grafia «Conta do Pograma Legado» foi relida e vista no quadro; a capa do parecer foi relida e vista. |
+| 8 | As seis páginas dos níveis da Saúde têm declarações próprias por ano: estimativa de 2026 ou orçamento de 2027, medida, exclusão do PRR quando aplicável e nome do quadro. A frase distingue a despesa total da efetiva pela nota da página 145 do relatório. Os anos escrevem-se por extenso no cabeçalho e na frase, mantendo a regra das famílias sem algarismos fixos. Os localizadores conservam os anos e as colunas como impressos. |
+| 9 | A RTP passa a ser identificada pela notícia de 09.10.2026 sobre a queda do orçamento da Saúde para 2027. Saíram «alojada» e «hosted». A notícia não especifica total ou efetiva; essa ausência continua explícita. |
+| 10 | Os nomes e as frases distinguem IHPC de 2026 e crescimento real do PIB de 2027 e dizem «Proposta de Orçamento do Estado para 2027». |
+| 11 | A frase do total das PPP diz o total previsto dos encargos líquidos, o ano, a ótica de caixa e os preços constantes. |
+| 12 | O SHA256 integral do corpo atravessa pelo exportador comum em `document.source_sha256` e aparece no bloco de proveniência. O sítio já mostrava resumos em recibos com `document.hosted`; os recibos JD1 consultados guardavam os selos das fontes de definição nos dados, sem os mostrar. Reutilizou-se a ficha de proveniência existente, com quebra do resumo nas colunas estreitas. |
+| 13 | As cinco conferências V2AB foram transportadas para `tests/linha/v2a.mjs`, chamado por `check:cartao`. Cada uma mantém a sua planta. Acrescentaram-se conferências e plantas para os achados desta passagem. |
+| 14 | Registados os custos fornecidos pela direção e a cabeça final V2-a-b na história atual. O custo final V2-a-c depende da leitura do lançador posterior ao encerramento; não é inventado nem estimado. A cabeça final desta passagem fica na resposta, pois o commit não pode conter o próprio hash. |
+| 15 | Ambos os leitores do PCP reconhecem os doze nomes dos meses em português. Onze trocas de mês recusam outubro como resultado e um dia impossível é recusado em cada lado. |
+
+A página 303 do PDF, 287 impressa, escreve «Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado». A transcrição preserva a gralha. A página 145, 129 impressa, diz «A despesa total efetiva exclui ativos e passivos financeiros» e «A despesa total inclui ativos e passivos financeiros» nas notas do quadro dos projetos. A frase da Saúde usa essa distinção; o quadro 5.37 mostra as rubricas financeiras entre os dois totais.
+
+A capa do CFP foi lida com `pdftotext -f 1 -l 1 -layout "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf" -`, no motor. As linhas da capa são «7 de outubro de 2026», «Parecer n.º» e «05/2026». O comando de extração do quadro é `pdftotext -f 303 -l 303 -layout "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf" -`. Os mesmos dois documentos foram renderizados com `pdftoppm` para inspeção visual. As linhas extraídas, as âncoras e os resumos ficam em `fontes-conferidas-c.json`.
+
+Questões novas:
+
+- V2A-25, história: os hashes do relatório foram reconciliados por assunto dos commits com a história reescrita; os recibos históricos não foram adulterados para lhes mudar os carimbos.
+- V2A-26, definição: a distinção entre total e efetiva vem da nota da página 145 e das rubricas do quadro da Saúde, não de uma definição presumida. A grafia do nome conserva a fonte.
+- V2A-27, âncora: a assinatura estruturada da notícia substitui «RTP / VER MAIS». O parágrafo com o nome do ministro continua a ser a âncora das palavras de Amaro.
+- V2A-28, selo: o resumo do corpo fica na ficha de proveniência e no JSON. Não há nova cópia integral no sítio.
+- V2A-29, conferência: as cinco verificações V2AB passam a correr nos portões, com as respetivas plantas, e os registos distinguem a conferência pública da leitura dos corpos no motor.
+- V2A-30, custo e execução: os portões e as capturas correm pelo escrivão, porque o navegador não arranca na sandbox. A V2-a-b custou 232 turnos, 518 020 de custo antigo e 8 pontos da semana com a higiene em paralelo, segundo a direção. O custo final V2-a-c ainda não está disponível antes do encerramento do lançador.

@@ -358,6 +358,7 @@ export const STRINGS = {
       fonte: 'Publicado por',
       documento: 'Documento',
       tituloDoDocumento: 'Título do documento',
+      resumoDoCorpo: 'SHA256 do documento',
       edicao: 'Edição',
       localizacao: 'Onde no documento',
       /* O RÓTULO COM QUE A FONTE PUBLICA A FIGURA, e onde no ficheiro alojado
@@ -3355,6 +3356,7 @@ export const STRINGS = {
       fonte: 'Published by',
       documento: 'Document',
       tituloDoDocumento: 'Document title',
+      resumoDoCorpo: 'Document SHA256',
       edicao: 'Edition',
       localizacao: 'Where in the document',
       rotuloDaFonte: 'Name at the source',

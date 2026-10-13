@@ -626,3 +626,8 @@
   color: var(--ink); background: transparent; border: 1px solid var(--rule); cursor: pointer;
 }
 .incorporar-bloco button:hover { border-color: var(--ink); }
+
+/* O resumo integral do corpo mantém-se dentro da ficha de proveniência. */
+.aparelho-ficha [data-linha-campo="document.source_sha256"] {
+  overflow-wrap: anywhere;
+}

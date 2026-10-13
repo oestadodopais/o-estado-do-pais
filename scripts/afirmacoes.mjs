@@ -12,6 +12,13 @@ export function textoDoCorpo(raw) {
   tree.querySelectorAll('script,style,head').forEach(e=>e.remove());
   return normal(tree.innerHTML.replace(/<[^>]+>/g,' ').replace(/&(?:#[xX][\da-fA-F]+|#\d+|\w+);/g,e=>parse(e).textContent));
 }
+export const MESES_PT=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+export function dataDoPcp(text) {
+  const m=text.match(new RegExp(`(\\d+) (${MESES_PT.join('|')}) (\\d{4}), Assembleia da República`,'i'));
+  if(!m)return null;
+  const value=`${m[3]}-${String(MESES_PT.indexOf(m[2].toLowerCase())+1).padStart(2,'0')}-${m[1].padStart(2,'0')}`;
+  return !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0,10)===value ? value : null;
+}
 export function conferirAfirmacao(c,p,raw) {
   const errors=[];
   if (!p) return ['V2A selo: falta a prova'];
@@ -19,11 +26,11 @@ export function conferirAfirmacao(c,p,raw) {
   if (raw && sha(raw)!==p.sha256) errors.push('V2A selo: sha256 diferente do corpo alojado');
   const text=raw ? textoDoCorpo(raw) : null;
   if (normal(c.excerpt)!==normal(p.excerpt) || (text !== null && !text.includes(normal(c.excerpt)))) errors.push('V2A excerto: palavras diferentes do corpo alojado');
-  if (JSON.stringify(c.attributed_to)!==JSON.stringify(p.attributed_to) || (text !== null && !text.includes(p.attribution_anchor))) errors.push('V2A atribuição: difere da autoria no documento');
+  const author=raw && p.attribution_scope==='article-author' ? parse(raw.toString('utf8')).querySelectorAll('[itemprop="author"] [itemprop="name"]').map(x=>x.getAttribute('content')) : null;
+  if (JSON.stringify(c.attributed_to)!==JSON.stringify(p.attributed_to) || (text !== null && (author ? author.length!==1 || author[0]!==p.attribution_anchor : !text.includes(p.attribution_anchor)))) errors.push('V2A atribuição: difere da autoria no documento');
   let date=raw ? undefined : p.published_at;
   if (raw && p.file==='pcp-afirmacao.html') {
-    const m=text.match(/(\d+) Outubro (\d{4}), Assembleia da República/);
-    if(m) date=`${m[2]}-10-${m[1].padStart(2,'0')}`;
+    date=dataDoPcp(text);
   } else if (raw) date=raw.toString('utf8').match(/<time[^>]+datetime="(\d{4}-\d{2}-\d{2})T/)?.[1];
   if (!date || c.published_at!==date || c.reference_date!==date || p.published_at!==date) errors.push('V2A data: difere da data do documento');
   if (c.source_url!==p.pedido) errors.push('V2A porta: difere do pedido registado');
@@ -38,7 +45,7 @@ export function conferirPublicacao(nomes) {
 export function conferirAfirmacoes(claims,{plantar=true,motor=process.env.RESEARCHHUB_DIR}={}) {
   const prova=JSON.parse(fs.readFileSync('ledger/provas/v2a/provas.json','utf8'));
   const errors=conferirPublicacao(fs.readdirSync('ledger/provas/v2a')), plantas=[];
-  let checked=0;
+  let checked=0, bodies=0;
   for(const c of claims.values()) {
     if(!c.afirmacao) continue;
     const p=prova.rows[c.id];
@@ -47,6 +54,7 @@ export function conferirAfirmacoes(claims,{plantar=true,motor=process.env.RESEAR
       try {raw=fs.readFileSync(path.join(motor,p.motor_path));}
       catch {errors.push(`${c.id}: V2A selo: corpo indisponível no motor indicado`);}
     }
+    if(raw)bodies++;
     const found=conferirAfirmacao(c,p,raw);
     errors.push(...found.map(e=>`${c.id}: ${e}`));checked++;
     if(plantar && !plantas.length && !found.length) {
@@ -73,6 +81,20 @@ export function conferirAfirmacoes(claims,{plantar=true,motor=process.env.RESEAR
     const mensagem=conferirAfirmacao(c,p).find(e=>e.startsWith('V2A referência:'));
     assert(mensagem);plantas.push({nome:'caminho fora do motor',mensagem});
   }
+  if(plantar) {
+    for(const [i,mes] of MESES_PT.entries()) {
+      const expected=`2026-${String(i+1).padStart(2,'0')}-09`;
+      assert.equal(dataDoPcp(`9 ${mes} 2026, Assembleia da República`),expected);
+      if(mes!=='outubro')plantas.push({nome:'mês PCP '+mes,mensagem:'V2AC data: mês trocado lido como '+expected+', não como outubro'});
+    }
+    assert.equal(dataDoPcp('31 fevereiro 2026, Assembleia da República'),null);
+    plantas.push({nome:'dia impossível no PCP',mensagem:'V2AC data: dia impossível recusado'});
+    const c=[...claims.values()].find(c=>c.afirmacao),p=structuredClone(prova.rows[c.id]);
+    const raw=Buffer.from(`<p>${p.excerpt} ${p.attribution_anchor}</p>`);
+    p.attribution_anchor='Autor ausente do ensaio';
+    const mensagem=conferirAfirmacao(c,p,raw).find(e=>e.startsWith('V2A atribuição:'));
+    assert(mensagem);plantas.push({nome:'âncora trocada por texto ausente',mensagem});
+  }
   for(const [id,p] of Object.entries(prova.rows)) if(p.kind==='html' && !claims.get(id)?.afirmacao) errors.push(`${id}: V2A afirmação selada ausente do livro`);
-  return {errors,checked,plantas};
+  return {errors,checked,bodies,plantas};
 }

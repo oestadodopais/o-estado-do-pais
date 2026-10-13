@@ -22,6 +22,7 @@ document:
   edition: "2026"
   locator: "Quadro 1, IHPC, 2026, p. 9; comentário, p. 19; conclusão, p. 20"
   locator_en: "Table 1, HICP, 2026, p. 9; commentary, p. 19; conclusion, p. 20"
+  source_sha256: "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
   page: 9
   kind: "ficheiro"
   crop:

@@ -9,14 +9,24 @@ for(const [stem,label,en] of [
   ['despesa-efetiva-consolidada-sem-prr','Despesa efetiva consolidada sem PRR','Consolidated effective expenditure excluding the RRP'],
 ]) {
   const fonte=label.replace(' sem PRR','');
-  FAMILIAS_V2A.push(familia(['oe-2027-saude-'+stem],label+' da conta do Programa Legado Saúde',en+' of the Health Legacy Programme Account',
-    'É a '+minusculas(label)+' da conta do Programa Legado Saúde, na estimativa ou no orçamento indicado.',
-    'It is '+minusculas(en)+' of the Health Legacy Programme Account, in the stated estimate or budget.',
-    L('name',fonte),L('document.locator','Saúde (PL15), Conta do Pograma Legado'),L('document.locator',stem.endsWith('sem-prr')?'(Sem PRR)':'Quadro')));
-  FAMILIAS_V2A.push(familia(['oe-2027-saude-'+stem+'-variacao'],'Variação da '+minusculas(label)+' da conta do Programa Legado Saúde',
-    'Change in '+minusculas(en)+' of the Health Legacy Programme Account',
-    'É a variação publicada da '+minusculas(label)+' da conta do Programa Legado Saúde: compara o orçamento com a estimativa do ano anterior, '+(stem.endsWith('sem-prr')?'sem PRR.':'incluindo PRR.'),
-    'It is the published change in '+minusculas(en)+' of the Health Legacy Programme Account: the budget compared with the previous year’s estimate, '+(stem.endsWith('sem-prr')?'excluding the RRP.':'including the RRP.'),
+  for(const [ano,coluna,column,year] of [
+    ['2026','Estimativa','Estimate','two thousand and twenty-six'],
+    ['2027','Orçamento','Budget','two thousand and twenty-seven'],
+  ]) {
+    const anoPt=ano==='2026'?'dois mil e vinte e seis':'dois mil e vinte e sete';
+    FAMILIAS_V2A.push(familia(['oe-2027-saude-'+stem+'-'+ano],
+      coluna+' de '+anoPt+': '+minusculas(label)+', Saúde, Conta do Pograma Legado',
+      column+' for '+year+': '+minusculas(en)+', Health, «Conta do Pograma Legado»',
+      'É a '+minusculas(label)+' na '+minusculas(coluna)+' de '+anoPt+' do quadro da Saúde, «Conta do Pograma Legado». A grafia «Pograma» é a do quadro. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.',
+      'It is '+minusculas(en)+' in the '+minusculas(column)+' for '+year+' in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.',
+      L('name',fonte),L('document.locator',ano+', '+coluna),L('document.locator','Saúde (PL15), Conta do Pograma Legado'),
+      L('excerpt','A despesa total efetiva exclui ativos e passivos financeiros'),L('excerpt','A despesa total inclui ativos e passivos financeiros'),
+      L('document.locator',stem.endsWith('sem-prr')?'(Sem PRR)':'Quadro')));
+  }
+  FAMILIAS_V2A.push(familia(['oe-2027-saude-'+stem+'-variacao'],'Variação da '+minusculas(label)+' do quadro da Saúde, «Conta do Pograma Legado»',
+    'Change in '+minusculas(en)+' in the Health table, «Conta do Pograma Legado»',
+    'É a variação publicada da '+minusculas(label)+' do quadro da Saúde, «Conta do Pograma Legado»: compara o orçamento com a estimativa do ano anterior, '+(stem.endsWith('sem-prr')?'sem PRR.':'incluindo PRR.'),
+    'It is the published change in '+minusculas(en)+' in the Health table, «Conta do Pograma Legado»: the budget compared with the previous year’s estimate, '+(stem.endsWith('sem-prr')?'excluding the RRP.':'including the RRP.'),
     L('name',fonte),L('document.locator','Saúde (PL15), Conta do Pograma Legado'),L('document.locator','Variação'),L('ressalva','Compara o orçamento de 2027 com a estimativa de 2026')));
 }
 for(const [stem,label,en,fonte] of [
@@ -25,19 +35,19 @@ for(const [stem,label,en,fonte] of [
   ['rodoviario-encargos-liquidos','Encargos líquidos do setor rodoviário','Road sector net charges','Rodoviário'],
   ['total-encargos-liquidos','Total dos encargos líquidos das parcerias público-privadas','Total net public-private partnership charges','Total'],
 ]) FAMILIAS_V2A.push(familia(['oe-2027-ppp-'+stem],label,en,
-  'É o valor previsto para '+minusculas(label)+' no quadro das parcerias público-privadas.',
-  'It is the projected value for '+minusculas(en)+' in the public-private partnership table.',
-  L('name',fonte),L('document.locator','Quadro 4.25')));
-FAMILIAS_V2A.push(familia(['oe-2027-cenario-pib-real-crescimento'],'Previsão do Ministério das Finanças para o crescimento real do produto interno bruto, transcrita pelo CFP',
-  'Ministry of Finance forecast for real gross domestic product growth, transcribed by the CFP',
-  'É a previsão do Ministério das Finanças para o crescimento real do produto interno bruto no Orçamento do Estado, como o CFP a transcreve. O parecer considera-a superior à de todas as instituições de referência.',
-  'It is the Ministry of Finance forecast for real gross domestic product growth in the State Budget, as transcribed by the CFP. The opinion considers it higher than those of all reference institutions.',
-  L('document.title','Previsões macroeconómicas'),L('excerpt','crescimento real'),L('excerpt','Fonte: MF'),L('excerpt','superior ao de todas as instituições de referência')));
-FAMILIAS_V2A.push(familia(['oe-2027-cenario-ihpc'],'Previsão do Ministério das Finanças para a inflação medida pelo IHPC, transcrita pelo CFP',
-  'Ministry of Finance forecast for HICP inflation, transcribed by the CFP',
-  'É a previsão do Ministério das Finanças para a inflação medida pelo índice harmonizado de preços no consumidor no Orçamento do Estado, como o CFP a transcreve. O parecer considera-a pouco provável.',
-  'It is the Ministry of Finance forecast for inflation measured by the harmonised index of consumer prices in the State Budget, as transcribed by the CFP. The opinion considers it unlikely.',
-  L('name','IHPC'),L('document.title','Previsões macroeconómicas'),L('excerpt','Fonte: MF'),L('excerpt','pouco provável')));
+  stem==='total-encargos-liquidos'?'É o total previsto dos encargos líquidos das parcerias público-privadas em dois mil e vinte e sete, em valores de caixa a preços constantes desse ano.':'É o valor previsto para '+minusculas(label)+' no quadro das parcerias público-privadas.',
+  stem==='total-encargos-liquidos'?'It is the projected total of net public-private partnership charges in two thousand and twenty-seven, measured as cash flows at constant prices for that year.':'It is the projected value for '+minusculas(en)+' in the public-private partnership table.',
+  L('name',fonte),L('document.locator','Quadro 4.25'),L('excerpt','ótica de fluxo de caixa'),L('excerpt','preços constantes de 2027')));
+FAMILIAS_V2A.push(familia(['oe-2027-cenario-pib-real-crescimento'],'Previsão do Ministério das Finanças para o crescimento real do produto interno bruto em dois mil e vinte e sete, transcrita pelo CFP',
+  'Ministry of Finance forecast for real gross domestic product growth in two thousand and twenty-seven, transcribed by the CFP',
+  'É a previsão do Ministério das Finanças para o crescimento real do produto interno bruto em dois mil e vinte e sete, na Proposta de Orçamento do Estado para dois mil e vinte e sete, como o CFP a transcreve. O parecer considera-a superior à de todas as instituições de referência.',
+  'It is the Ministry of Finance forecast for real gross domestic product growth in two thousand and twenty-seven, in the Draft State Budget for two thousand and twenty-seven, as transcribed by the CFP. The opinion considers it higher than those of all reference institutions.',
+  L('document.title','Proposta de Orçamento do Estado para 2027'),L('excerpt','crescimento real'),L('excerpt','Fonte: MF'),L('excerpt','superior ao de todas as instituições de referência')));
+FAMILIAS_V2A.push(familia(['oe-2027-cenario-ihpc'],'Previsão do Ministério das Finanças para a inflação medida pelo IHPC em dois mil e vinte e seis, transcrita pelo CFP',
+  'Ministry of Finance forecast for HICP inflation in two thousand and twenty-six, transcribed by the CFP',
+  'É a previsão do Ministério das Finanças para a inflação medida pelo índice harmonizado de preços no consumidor em dois mil e vinte e seis, na Proposta de Orçamento do Estado para dois mil e vinte e sete, como o CFP a transcreve. O parecer considera-a pouco provável.',
+  'It is the Ministry of Finance forecast for inflation measured by the harmonised index of consumer prices in two thousand and twenty-six, in the Draft State Budget for two thousand and twenty-seven, as transcribed by the CFP. The opinion considers it unlikely.',
+  L('name','IHPC'),L('document.title','Proposta de Orçamento do Estado para 2027'),L('excerpt','Fonte: MF'),L('excerpt','pouco provável')));
 for(const [id,pt,en,frase,phrase,literal] of [
  ['afirmacao-leitao-amaro-saude-oe2027-2026-10-09','Afirmação de Leitão Amaro sobre o orçamento da Saúde sem PRR','Leitão Amaro’s statement about the Health budget excluding the RRP',
   'É o aumento do orçamento da Saúde retirando a verba excecional do PRR, nas palavras do ministro da Presidência transcritas pela RTP.',
@@ -46,6 +56,6 @@ for(const [id,pt,en,frase,phrase,literal] of [
   'É o montante que o orçamento entrega às parcerias público-privadas rodoviárias, nas palavras da intervenção de Paulo Raimundo publicada pelo PCP.',
   'It is the amount the budget allocates to road public-private partnerships, in Paulo Raimundo’s speech published by the PCP.', 'parcerias público-privadas rodoviárias'],
  ['afirmacao-rtp-saude-queda-oe2027-2026-10-09','Queda do orçamento da Saúde noticiada pela RTP','Health budget decrease reported by RTP',
-  'É a queda do orçamento da Saúde noticiada pela RTP. A notícia alojada não explicita se a despesa é total ou efetiva.',
-  'It is the Health budget decrease reported by RTP. The hosted article does not specify whether the expenditure is total or effective.', 'O orçamento para Saúde sofre um corte'],
+  'É a queda do orçamento da Saúde para dois mil e vinte e sete noticiada pela RTP a nove de outubro de dois mil e vinte e seis. A notícia não especifica se a despesa é total ou efetiva.',
+  'It is the decrease in the Health budget for two thousand and twenty-seven reported by RTP on nine October two thousand and twenty-six. The article does not specify whether the expenditure is total or effective.', 'O orçamento para Saúde sofre um corte'],
 ]) FAMILIAS_V2A.push(familia([id],pt,en,frase,phrase,L('excerpt',literal)));

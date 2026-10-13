@@ -311,6 +311,7 @@
         "António Leitão Amaro, ministro da Presidência"
       ],
       "attribution_anchor": "O ministro da Presidência, António Leitão Amaro",
+      "attribution_scope": "body",
       "excerpt": "Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%",
       "value": "3",
       "unit": "%",
@@ -328,6 +329,7 @@
         "PCP"
       ],
       "attribution_anchor": "Intervenção de Paulo Raimundo na Assembleia de República",
+      "attribution_scope": "body",
       "excerpt": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias",
       "value": "1 700",
       "unit": "milhões de euros",
@@ -343,7 +345,8 @@
       "attributed_to": [
         "RTP"
       ],
-      "attribution_anchor": "RTP / VER MAIS",
+      "attribution_anchor": "RTP",
+      "attribution_scope": "article-author",
       "excerpt": "O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.",
       "value": "1,5",
       "unit": "% de queda",

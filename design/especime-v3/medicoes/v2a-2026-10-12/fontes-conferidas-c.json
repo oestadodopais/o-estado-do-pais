@@ -1,0 +1,43 @@
+{
+  "capa": {
+    "ficheiro": "cfp-parecer.pdf",
+    "pagina": 1,
+    "linhas": [
+      "7 de outubro de 2026",
+      "Parecer n.º",
+      "05/2026"
+    ],
+    "edicao_lida": "2026",
+    "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb"
+  },
+  "quadro": {
+    "ficheiro": "oe-relatorio.pdf",
+    "pagina": 303,
+    "titulo": "Quadro 5.37. Saúde (PL15) — Conta do Pograma Legado",
+    "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
+  },
+  "ancoras": [
+    {
+      "ficheiro": "rtp-amaro.html",
+      "sha256": "095b231ac02894caae1dd10a085b4ce8bc72a33f6e6be5e622e6b86fc1a7679f",
+      "attribution_anchor": "O ministro da Presidência, António Leitão Amaro",
+      "attribution_scope": "body"
+    },
+    {
+      "ficheiro": "pcp-afirmacao.html",
+      "sha256": "e426f05d0446a03b252e2e8dd7bb668790fb752e5c9341fef16da35ba426ef88",
+      "attribution_anchor": "Intervenção de Paulo Raimundo na Assembleia de República",
+      "attribution_scope": "body"
+    },
+    {
+      "ficheiro": "rtp-queda.html",
+      "sha256": "18f342451b5b4b93e15cbcef11b6e45d3f8175844c18093c24004b97165178ca",
+      "attribution_anchor": "RTP",
+      "attribution_scope": "article-author"
+    }
+  ],
+  "definicao": {
+    "pagina": 145,
+    "nota": "A despesa total efetiva exclui ativos e passivos financeiros e transferências do Orçamento do Estado para entidades com autonomia financeira. A despesa total inclui ativos e passivos financeiros e exclui transferências do Orçamento do Estado para entidades com autonomia financeira."
+  }
+}

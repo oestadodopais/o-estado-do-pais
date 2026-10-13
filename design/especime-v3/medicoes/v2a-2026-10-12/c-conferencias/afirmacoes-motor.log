@@ -1,0 +1,22 @@
+PLANTA excerto alterado: V2A excerto: palavras diferentes do corpo alojado
+PLANTA atribuição trocada: V2A atribuição: difere da autoria no documento
+PLANTA data errada: V2A data: difere da data do documento
+PLANTA porta trocada: V2A porta: difere do pedido registado
+PLANTA valor fora do excerto: V2A valor: não aparece no excerto selado
+PLANTA corpo integral pagina.html.gz: V2A direitos: a prova pública só admite excertos e referências em provas.json
+PLANTA corpo integral parecer.pdf: V2A direitos: a prova pública só admite excertos e referências em provas.json
+PLANTA caminho fora do motor: V2A referência: falta o selo, a data ou o caminho relativo no motor
+PLANTA mês PCP janeiro: V2AC data: mês trocado lido como 2026-01-09, não como outubro
+PLANTA mês PCP fevereiro: V2AC data: mês trocado lido como 2026-02-09, não como outubro
+PLANTA mês PCP março: V2AC data: mês trocado lido como 2026-03-09, não como outubro
+PLANTA mês PCP abril: V2AC data: mês trocado lido como 2026-04-09, não como outubro
+PLANTA mês PCP maio: V2AC data: mês trocado lido como 2026-05-09, não como outubro
+PLANTA mês PCP junho: V2AC data: mês trocado lido como 2026-06-09, não como outubro
+PLANTA mês PCP julho: V2AC data: mês trocado lido como 2026-07-09, não como outubro
+PLANTA mês PCP agosto: V2AC data: mês trocado lido como 2026-08-09, não como outubro
+PLANTA mês PCP setembro: V2AC data: mês trocado lido como 2026-09-09, não como outubro
+PLANTA mês PCP novembro: V2AC data: mês trocado lido como 2026-11-09, não como outubro
+PLANTA mês PCP dezembro: V2AC data: mês trocado lido como 2026-12-09, não como outubro
+PLANTA dia impossível no PCP: V2AC data: dia impossível recusado
+PLANTA âncora trocada por texto ausente: V2A atribuição: difere da autoria no documento
+V2A: 3 afirmações conferidas, 3 corpos lidos, 21 plantas, 0 erros.

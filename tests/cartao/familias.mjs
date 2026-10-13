@@ -129,7 +129,7 @@ export function contextoDasFamilias({ linhas = loadClaims({ includeWithdrawn: tr
   /** @param {string} id */
   const familia = (id) => (Object.prototype.hasOwnProperty.call(LEITURAS_DAS_MEDIDAS, id) ? { tipo: 'cartao', chave: id }
     : concelhos.has(id) ? { tipo: 'concelho', chave: /** @type {any} */ (concelhos.get(id)).chave, concelho: /** @type {any} */ (concelhos.get(id)).concelho }
-      : { tipo: 'familia', chave: semPeriodoAqui(id) });
+      : { tipo: 'familia', chave: Object.hasOwn(familias,id) ? id : semPeriodoAqui(id) });
   /** O nome do recibo de uma linha, e o lugar. @param {string} id @param {'pt'|'en'} lang */
   const nomeDoRecibo = (id, lang) => {
     const n = casa.get(id);

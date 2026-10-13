@@ -94,7 +94,7 @@ export function familiaDaLinha(id) {
   if (Object.prototype.hasOwnProperty.call(LEITURAS_DAS_MEDIDAS, id)) return { tipo: 'cartao', chave: id };
   const c = DO_CONCELHO.get(id);
   if (c) return { tipo: 'concelho', chave: c.chave, concelho: { slug: c.slug, nome: c.nome } };
-  return { tipo: 'familia', chave: semPeriodo(id) };
+  return { tipo: 'familia', chave: Object.hasOwn(FAMILIAS_DAS_LINHAS,id) ? id : semPeriodo(id) };
 }
 
 /** @param {string} chave */

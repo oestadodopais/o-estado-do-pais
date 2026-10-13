@@ -724,3 +724,9 @@ A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recib
 |---|---|---|---|
 | v2ab | Frases das previsões, da Saúde e das afirmações corrigidas | por ler | Codex gpt-6-astra: execução dos achados 6, 9, 12 e 16 do mandato V2-a-b. Apoios na auditoria K17 e conferência do HTML nas duas edições. A notícia RTP não explicita despesa total consolidada; a página declara essa ausência. A leitura cruzada do diff desta correção fica com a direção. |
 | higiene-rp4n20 | 4 cadeias já publicadas acrescentadas ao inventário | por ler | Rótulos e ausência de leitura na fonte, copiados de `src/i18n/strings.mjs`; o âmbito das cópias alojadas está explícito. |
+
+## V2-a-c: o ano e a medida da Saúde
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| v2ac | Frases da Saúde, do cenário, do total das PPP e da RTP corrigidas | por ler | Codex gpt-6-astra: apoios na nota do relatório e nas palavras seladas. A leitura cruzada pertence à direção. |

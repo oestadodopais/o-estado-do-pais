@@ -390,6 +390,7 @@ export const CAMPOS_DO_DOCUMENTO = /** @type {const} */ ([
   'edition',
   'locator',
   'locator_en',
+  'source_sha256',
   'page',
   'kind',
   'url',
@@ -1923,6 +1924,7 @@ export function validateLedger() {
           );
         }
         const loc = doc.locator;
+        if (doc.source_sha256 !== undefined && (typeof doc.source_sha256 !== 'string' || !/^[a-f0-9]{64}$/.test(doc.source_sha256))) errors.push(`${onde} document.source_sha256 precisa de um SHA256 completo.`);
         if (doc.locator_en !== undefined && (typeof doc.locator_en !== 'string' || !doc.locator_en.trim() || !loc)) errors.push(`${onde} document.locator_en precisa de localizador original e tradução não vazia.`);
         if (loc !== null && loc !== undefined) {
           if (typeof loc !== 'string' || loc.trim() === '') {

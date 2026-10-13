@@ -2796,6 +2796,7 @@ const CAMPOS_DA_LINHA = new Set([
   'document.edition',
   'document.locator',
   'document.locator_en',
+  'document.source_sha256',
   /**
    * A página do documento onde está a frase que o excerto transcreve.
    *

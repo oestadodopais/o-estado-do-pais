@@ -22,6 +22,7 @@ document:
   edition: "2027"
   locator: "Quadro 4.25, setor rodoviário, encargos brutos, 2027, p. 123 do PDF (107 impressa)"
   locator_en: "Table 4.25, road sector, gross charges, 2027, p. 123 of the PDF (printed 107)"
+  source_sha256: "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
   page: 123
   kind: "ficheiro"
   crop:

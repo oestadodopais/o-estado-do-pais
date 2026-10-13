@@ -20,8 +20,9 @@ source: "Ministério das Finanças"
 document:
   title: "Orçamento do Estado para 2027"
   edition: "2027"
-  locator: "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa efetiva consolidada, Variação (Sem PRR) (%), p. 303 do PDF (287 impressa)"
-  locator_en: "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated effective expenditure, Change (excluding RRP) (%), p. 303 of the PDF (printed 287)"
+  locator: "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa efetiva consolidada, Variação (Sem PRR) (%), p. 303 do PDF (287 impressa); distinção entre total e efetiva, nota, p. 145 do PDF (129 impressa)"
+  locator_en: "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated effective expenditure, Change (excluding RRP) (%), p. 303 of the PDF (printed 287); distinction between total and effective expenditure, note, p. 145 of the PDF (printed 129)"
+  source_sha256: "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
   page: 303
   kind: "ficheiro"
   crop:
@@ -33,7 +34,7 @@ access_date: "2026-10-13"
 reference_date: "2027"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+excerpt: "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)\n\nA despesa total efetiva exclui ativos e passivos financeiros e transferências do Orçamento do Estado para entidades com autonomia financeira. A despesa total inclui ativos e passivos financeiros e exclui transferências do Orçamento do Estado para entidades com autonomia financeira."
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
 ressalva: "Previsão, não execução. Compara o orçamento de 2027 com a estimativa de 2026, sem PRR."
