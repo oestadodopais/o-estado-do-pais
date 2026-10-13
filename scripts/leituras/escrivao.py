@@ -153,7 +153,7 @@ def concluir_portoes(repo, pedido, processo, saida_texto):
     return {'codigo': processo.returncode, 'codigos': codigos, 'saida': saida_texto[-6000:]}
 
 
-def executar(repo, pedido):
+def executar(repo, pedido, bater=None):
     recusa = validar(repo, pedido)
     if recusa:
         return {'codigo': 2, 'recusa': recusa}
@@ -162,9 +162,26 @@ def executar(repo, pedido):
     if adicionar.returncode != 0:
         return {'codigo': adicionar.returncode, 'recusa': 'git add falhou', 'saida': (adicionar.stdout + adicionar.stderr)[-3000:]}
     mensagem = pedido['mensagem'].rstrip('\n') + '\n'
-    commit = git(repo, 'commit', '-q', '-F', '-', entrada=mensagem)
+    # O commit corre em processo próprio e o escrivão continua a bater enquanto os hooks correm (a leitura a frio da
+    # higiene de 13.10, o achado 6: o pre-commit do motor demora cerca de dois minutos e meio, e o batimento parava).
+    commit = subprocess.Popen(['git', '-C', repo, 'commit', '-q', '-F', '-'], stdin=subprocess.PIPE,
+                              stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+    commit.stdin.write(mensagem)
+    commit.stdin.close()
+    inicio = time.time()
+    while commit.poll() is None:
+        if bater:
+            bater()
+        if time.time() - inicio > 1800:
+            commit.kill()
+            commit.wait()
+            break
+    saida = commit.stdout.read() if commit.stdout else ''
     cabeca = git(repo, 'rev-parse', '--short=8', 'HEAD').stdout.strip()
-    return {'codigo': commit.returncode, 'cabeca': cabeca, 'saida': (commit.stdout + commit.stderr)[-6000:]}
+    resultado = {'codigo': commit.returncode, 'cabeca': cabeca, 'saida': saida[-6000:]}
+    if time.time() - inicio > 1800:
+        resultado['recusa'] = 'o commit passou de trinta minutos (os hooks) e foi interrompido'
+    return resultado
 
 
 def escrever_resultado(pedido, resultado):
@@ -235,7 +252,11 @@ def principal(argv):
                         resultado['recusa'] = f'{longo}: passou do teto ({teto // 60} minutos) e foi interrompido'
                     escrever_resultado(pedido, resultado)
                     continue
-                escrever_resultado(pedido, executar(repo, dados))
+                def bater(pastas=pastas):
+                    for outra in pastas.values():
+                        (outra / 'batimento').write_text(agora() + '\n', encoding='utf-8')
+                    time.sleep(1)
+                escrever_resultado(pedido, executar(repo, dados, bater))
         time.sleep(2)
 
 

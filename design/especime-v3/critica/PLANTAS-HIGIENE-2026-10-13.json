@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-13T21:15:47+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/lib/frases-jd1.mjs",
+   "descricao": "a frase da comparação do JD1-15 invertida: diferença positiva a dizer «menor»; o valor e o quadro desmentem",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "7b372a5fdf1c720f83f9667eb8030fc950e6dfa9dd1f609dc9eb7c8a91345854",
+   "sha256_depois": "4c807594a7aa7f00a5a41457637dfcd5975a90f3d21bc17dcb847095f21b5ad3",
+   "contexto_antes": "ll) throw new Error('JD1: a parcela não tem dois montantes comparáveis.');\n    const diferenca = atual - anterior;\n    const comparacao = lang === 'pt'\n      ? diferenca > 0 ? 'A parcela foi maior do que a registada' : diferenca < 0 ? 'A parcela foi menor do que a registada' : 'A parcela foi igual à registada'\n      : diferenca > 0 ? 'The portion was greater than that' : di",
+   "contexto_depois": "ll) throw new Error('JD1: a parcela não tem dois montantes comparáveis.');\n    const diferenca = atual - anterior;\n    const comparacao = lang === 'pt'\n      ? diferenca > 0 ? 'A parcela foi menor do que a registada' : diferenca < 0 ? 'A parcela foi menor do que a registada' : 'A parcela foi igual à registada'\n      : diferenca > 0 ? 'The portion was greater than that' : di"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/explicacoes/explicacao.mjs",
+   "descricao": "a célula X10 do EX1-14 enfraquecida: a expressão deixa de apanhar o ramo inglês («deficit of»)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "a8592f2df8cafbc503689d7429a6a859bf6b1109362cc89dc7374bd1e8bb6cf4",
+   "sha256_depois": "9cda419ab07d7124de2b5175e43747b4de74c9d989e251b6a540917b5b85a854",
+   "contexto_antes": "a um saldo negativo. «Défice de» seguido\n          // do valor com sinal daria um duplo negativo, também em inglês.\n          if (r === 'diferentesNegativo' && /(?:défice de|deficit of)\\s*$/i.test(o[r]?.[0] ?? '')) {\n            erros.push(`X10 · palavras do ramo: ${onde}: défice seguido diretamente de um saldo negativo`);\n          }\n          if (",
+   "contexto_depois": "a um saldo negativo. «Défice de» seguido\n          // do valor com sinal daria um duplo negativo, também em inglês.\n          if (r === 'diferentesNegativo' && /(?:défice de)\\s*$/i.test(o[r]?.[0] ?? '')) {\n            erros.push(`X10 · palavras do ramo: ${onde}: défice seguido diretamente de um saldo negativo`);\n          }\n          if ("
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/data/explicacoes/dinheiro-do-estado-2026.mjs",
+   "descricao": "a frase da EX1-13 a dizer que a conta por ministério organiza por função; a definição desmente-se a si própria",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "393e9ee8f3fc983a4f49da8812dd39bce17a42d6fc3335810326b734521c2821",
+   "sha256_depois": "50f3c3402cfc646819a6fb6275ab3454c2fa3fd9f841ed110dda7891ed79ec1d",
+   "contexto_antes": "/\n        {\n          paragrafo: {\n            pt: ['A conta por função organiza a despesa da administração central por finalidade, como a saúde ou a educação; a conta por ministério organiza-a por ministério.'],\n            en: ['The count by function organises central government expenditure by purpose, such as health or education; the count by ministry organises it ",
+   "contexto_depois": "/\n        {\n          paragrafo: {\n            pt: ['A conta por função organiza a despesa da administração central por finalidade, como a saúde ou a educação; a conta por ministério organiza-a por função.'],\n            en: ['The count by function organises central government expenditure by purpose, such as health or education; the count by ministry organises it "
+  },
+  {
+   "id": "P4",
+   "ficheiro": "design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+   "descricao": "o mapa a dizer que o escrivão aceita pastas; o escrivao.py recusa-as",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "4c83b14aa66d562f4baf4eb7b49ecc4dffd38689d875563d1d939cde40ca8748",
+   "sha256_depois": "7ac1b0e5f145d8b49b6ee3fc00a5ad8d80898710d8c3a12e2dcda0c2765314c7",
+   "contexto_antes": "s, 13.10.2026\n\nO `scripts/leituras/escrivao.py` recebe pedidos apenas nas worktrees autorizadas e executa os commits pedidos por `scripts/leituras/comitar.sh`, com ficheiros explícitos e os hooks do repositório.\nO `scripts/leituras/curto.sh` guarda a saída completa dos comandos e devolve o código, a duração, as falhas e a cauda do registo; o `scripts/leituras/PROMPT-co",
+   "contexto_depois": "s, 13.10.2026\n\nO `scripts/leituras/escrivao.py` recebe pedidos apenas nas worktrees autorizadas e executa os commits pedidos por `scripts/leituras/comitar.sh`, com ficheiros ou pastas explícitos e os hooks do repositório.\nO `scripts/leituras/curto.sh` guarda a saída completa dos comandos e devolve o código, a duração, as falhas e a cauda do registo; o `scripts/leituras/PROMPT-co"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem das capturas de página no relatório trocada (70 para 72); o capturas.json e os ficheiros das capturas desmentem",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "c16eb74975c1ff3ab30ddca6cb6317a85f784edeb5b26597474c8810663eae75",
+   "sha256_depois": "d01be19b1684db6742d2ae9f81147640304eee80aade75b2e8f1d21b2f94c778",
+   "contexto_antes": "ultado e `entrega/capturas.json` tem `ok: true`, sem falhas, com a cabeça completa `996a388918d1d4183d2d00700bdd62157f0b0fa8`, igual à de `dist/version.json`.\n\nForam guardadas 70 capturas de página e 80 recortes: sete páginas, nas edições portuguesa e inglesa, a 390, 768, 1 024, 1 280 e 1 600 px. O pedido enumera os recibos de amortizações, juros de 2024 e 2025, minist",
+   "contexto_depois": "ultado e `entrega/capturas.json` tem `ok: true`, sem falhas, com a cabeça completa `996a388918d1d4183d2d00700bdd62157f0b0fa8`, igual à de `dist/version.json`.\n\nForam guardadas 72 capturas de página e 80 recortes: sete páginas, nas edições portuguesa e inglesa, a 390, 768, 1 024, 1 280 e 1 600 px. O pedido enumera os recibos de amortizações, juros de 2024 e 2025, minist"
+  }
+ ]
+}
