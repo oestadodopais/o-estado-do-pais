@@ -32,7 +32,9 @@ O="$(cd "$O" && pwd)"
 # A tranca vive em /tmp desde 13.10.2026 (M79, §1.190): dentro do Git comum, fora da raiz gravável da
 # worktree, cada corrida do construtor pedia uma escalada à sandbox do Codex, e cada escalada custava uma
 # revisão automática inteira. Continua a ser uma só por máquina: todas as worktrees partilham o mesmo /tmp.
-tranca="/tmp/oedp-construcao.lock"
+# OEDP_TRANCA aponta-a para outro sítio só no ensaio (tests/leituras/portoes.py), que prova a recusa da
+# escrita, a tranca ocupada e a tranca caducada sem tocar na tranca real da máquina.
+tranca="${OEDP_TRANCA:-/tmp/oedp-construcao.lock}"
 idade() {
   python3 -c 'import os,sys,time; print(int(time.time()-os.stat(sys.argv[1]).st_mtime))' "$tranca"
 }
