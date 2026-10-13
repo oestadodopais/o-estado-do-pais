@@ -29,8 +29,14 @@ aceites={
  '5e4ccb25ef9134cbc1e6dccf031a28656535b85d':'1fc80ee96740572e6023836205049c7f3e0cb60c1d4bb79c9dd97f7e1bc75450',
  'd430d6dd1e17e4f1f23acc7273321f5e4380beff':'3994efec96432c5cc683f15428bd20176e211497d58176c747f51cbfa30bc903',
 }
+def conferir_excecao(commit,linha):
+ if commit not in aceites:
+  return ['RP4N-i: outro commit não recebe a exceção histórica']
+ if aceites[commit]!=hashlib.sha256(linha.encode()).hexdigest() or casa not in linha or any(p in linha for p in pedacos if p!=casa):
+  return ['RP4N-i: ocorrência nova não recebe a exceção histórica']
+ return []
 def excecao(commit,linha):
- return aceites.get(commit)==hashlib.sha256(linha.encode()).hexdigest() and casa in linha and not any(p in linha for p in pedacos if p!=casa)
+ return not conferir_excecao(commit,linha)
 log=git('log','-p','--format=RP4NI-COMMIT:%H','b84d21a3..HEAD')
 excecoes=[];restantes=[];commit=None
 for linha in log.splitlines():
@@ -38,14 +44,12 @@ for linha in log.splitlines():
  if not conferir_texto(linha):continue
  if excecao(commit,linha):
   excecoes.append({'commit':commit,'sha256_linha':hashlib.sha256(linha.encode()).hexdigest()})
-  assert not excecao(commit,linha+' nova ocorrência')
-  assert not excecao('0'*40,linha)
+  for nome_planta,c,l in [('prefixo novo num commit aceite',commit,linha+' nova ocorrência'),('prefixo aceite noutro commit','0'*40,linha)]:
+   erros=conferir_excecao(c,l)
+   assert erros and not excecao(c,l)
+   plantas.append({'nome':nome_planta,'mensagem':erros[0]})
  else:restantes.append({'commit':commit,'mensagens':conferir_texto(linha)})
 assert {x['commit'] for x in excecoes}==set(aceites)
-plantas.extend([
- {'nome':'prefixo novo num commit aceite','mensagem':'RP4N-i: ocorrência nova não recebe a exceção histórica'},
- {'nome':'prefixo aceite noutro commit','mensagem':'RP4N-i: outro commit não recebe a exceção histórica'},
-])
 diff=git('diff','b84d21a3','HEAD')
 def procurar(padroes,ref='HEAD'):
  r=subprocess.run(['git','grep','-n','-F',*sum((['-e',x] for x in padroes),[]),ref],capture_output=True,text=True)
