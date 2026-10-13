@@ -703,6 +703,12 @@ export const AREAS = [
  */
 export const SEM_AREA = [
   {
+    estudos: ['oe-2027'],
+    id: /^(?:oe-2027-(?:saude|ppp|cenario)-|afirmacao-(?:leitao-amaro-saude|pcp-ppp-rodoviarias|rtp-saude-queda)-oe2027-)/,
+    assunto: 'Fontes da vigilância do Orçamento do Estado para 2027, bloco V2-a',
+    motivo: 'O V2-a sela células e afirmações para o livro-razão. A página da vigilância e a comparação destas fontes pertencem ao V2-b; este bloco não distribui as afirmações por áreas ministeriais.',
+  },
+  {
     estudos: ['oe-2026'],
     id: /^(?!.*-ue$)(?:juros-das-administracoes-publicas|juros-e-outros-encargos-execucao|pib-nominal-notificacao-setembro|custo-do-stock-da-divida-direta|custo-da-divida-emitida|divida-direta-do-estado|necessidades-brutas-de-financiamento|emissoes-de-divida-fundada|amortizacoes-e-anulacoes-de-divida-fundada)-/,
     assunto: 'Juros, dívida e financiamento do Estado, base do bloco JD1',
