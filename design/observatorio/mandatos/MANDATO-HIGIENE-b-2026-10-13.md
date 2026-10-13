@@ -1,0 +1,21 @@
+# Mandato da passagem de correção da higiene (13.10.2026): o que o lugar de direção decidiu sobre a leitura a frio
+
+*Escrito pelo lugar de direção (Claude Fable 5.1) a 13.10.2026, depois da leitura a frio do bloco de higiene pelo Claude Opus 5.5 (`design/especime-v3/critica/LEITURA-HIGIENE-2026-10-13.md`, cinco plantas em cinco mordidas, dois Major reais, quatro Minor). Os achados 1, 2, 3, 4 e 7 da leitura eram as plantas do lugar de direção nas cópias do pacote: não existem no ramo e não se tocam. O achado 6 era do lugar de direção e está corrigido na cabeça atual (`escrivao.py` bate enquanto um commit corre, provado com um hook de quarenta e cinco segundos). Sem travessões na prosa.*
+
+## As decisões
+
+**Achado 5 (Major): a frase da ausência nos metadados.** A RP4N-13 tirou a marca «[a verificar]» de `description` e `og:description`, como a §1.172 manda, mas deixou os metadados a parecer um recibo completo onde a página mostra campos por confirmar. O mandato dizia «com a frase da ausência onde fizer falta»: quando a linha tem campos de proveniência por confirmar, a `description` e a `og:description` dizem-no numa oração curta, nas duas edições («campos da proveniência por confirmar na fonte» / «provenance fields unconfirmed at the source», ou as palavras que o livro já use para a mesma ausência), e nunca compõem uma descrição que pareça completa; o comentário do código que o proibia volta, com a data. Uma planta no `check:cabeca` ou na célula dos metadados que já existe prova que uma linha com campos por confirmar e uma descrição sem a oração é recusada. A captura de `saldo-natural-portugal-2025` nas duas edições a 390 e 1 280 px mostra o resultado.
+
+**Achado 6 (Major): verificar o escrivão corrigido.** O lugar de direção corrigiu o `escrivao.py` (o batimento continua durante os hooks). Faz um commit no motor por `comitar.sh` nesta passagem (há um, o do achado 10) e regista no relatório o código devolvido e o tempo; se voltar a sair com 3, para e diz a mensagem exata.
+
+**Achado 8 (Minor): a tabela diz a verdade sobre a V1-39.** A V1-39 passa na tabela das questões a «parcial», com a frase do HIG-8: a medida lê as corridas reais, e nas duas corridas reais o DAR não teve novidades nem revisões, por isso a aritmética do achado 7 da V1 fica por provar com uma corrida que as tenha; a secção «A aritmética do achado 7» do relatório da V1-d diz isso em vez de ficar sem aritmética.
+
+**Achado 9 (Minor): a frase da EX1-12 diz por que razão as duas contas diferem.** A frase «a conta por ministério organiza-a por ministério» sai. No seu lugar, uma frase com as palavras seladas do relatório da execução que diz o que entra numa conta e não na outra (a razão pela qual os totais diferem, como a fonte a escreve, por exemplo o lugar das Finanças numa das contas), pela K17; se a fonte não disser a razão, a frase diz a ausência exata e não explica por conta própria.
+
+**Achado 10 (Minor): as instruções do motor voltam a correr.** Em `requirements.lock.txt` do motor, o caminho do intérprete do ambiente virtual deixa de ser o marcador `<temporario>`: fica `python3 -m pip` ou o caminho relativo ao repositório (`.venv/bin/python -m pip`), como o `README` do motor use.
+
+**Achado 11 (Minor): as capturas cobrem todos os recibos do JD1 tocados.** Pelo escrivão (`capturar-pelo-escrivao.sh`), as capturas de `custo-do-stock-da-divida-direta-2025` e `juros-das-administracoes-publicas-pib-2025`, nas duas edições, juntam-se à pasta `design/especime-v3/capturas/higiene-2026-10-13/`, com o `dist/` da cabeça do código final.
+
+## As regras e a entrega
+
+As regras comuns e o mandato de 13.10 valem inteiros: nenhum número de página muda; cada régua que mudar leva a sua planta; os portões pelo escrivão (`portoes-pelo-escrivao.sh … motor`) na cabeça final, as capturas pelo escrivão, os códigos lidos dos ficheiros; commits por `comitar.sh`. O relatório ganha a secção «A passagem de correção» com o que cada achado ganhou (ficheiro e linha), as decisões `HIG-n` novas, os códigos e as cabeças finais, e a correção da contagem das capturas (70) se a tabela a repetir. A resposta final diz as cabeças finais e do código dos dois repositórios, os commits, os códigos dos quatro portões lidos dos ficheiros, e o que cada achado ganhou.
