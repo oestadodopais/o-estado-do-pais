@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-13T21:00:49+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P2",
+   "ficheiro": "ledger/claims/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09.yml",
+   "descricao": "uma palavra do excerto literal da afirmação do PCP trocada (rodoviárias para ferroviárias); a página alojada desmente",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "72cacead4c101e4124beef4acab0287613ae93cf9eb993d82bc179a6783d3886",
+   "sha256_depois": "3b989e08bae7efe43464bb97a12c783fa43e14708277e3871a02d998432a4b5a",
+   "contexto_antes": "reference_date: \"2026-10-09\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calculado.\nderivation: null\nderivation_en: null\nderived_from: []\n# Expressão verificada no ",
+   "contexto_depois": "reference_date: \"2026-10-09\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas ferroviárias\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calculado.\nderivation: null\nderivation_en: null\nderived_from: []\n# Expressão verificada no "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "ledger/claims/afirmacao-leitao-amaro-saude-oe2027-2026-10-09.yml",
+   "descricao": "o cargo na atribuição trocado (ministro da Presidência para ministro das Finanças); a página da RTP alojada desmente",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "357233d67c3ae5a646e7165290f176ef282d61f9b118433031541a2efc928281",
+   "sha256_depois": "5551bf54e731077fdd545d31e9850905e03f68923dc3b6805938f794211dbb26",
+   "contexto_antes": "o verificada no build: tem de dar exactamente o valor acima.\ncheck: null\n\n# A quem o valor é creditado. Lista de entidades, ou campo nenhum.\nattributed_to:\n  - \"António Leitão Amaro, ministro da Presidência\"\n\nstudy: \"oe-2027\"\n# Nota interna. NÃO é publicada: ver DECISIONS §1.24.\nnote: \"[note do motor] Localizador: Título e corpo da notícia.  Afirmação como consta d",
+   "contexto_depois": "o verificada no build: tem de dar exactamente o valor acima.\ncheck: null\n\n# A quem o valor é creditado. Lista de entidades, ou campo nenhum.\nattributed_to:\n  - \"António Leitão Amaro, ministro das Finanças\"\n\nstudy: \"oe-2027\"\n# Nota interna. NÃO é publicada: ver DECISIONS §1.24.\nnote: \"[note do motor] Localizador: Título e corpo da notícia.  Afirmação como consta d"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "motor/content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json",
+   "descricao": "o sha256 do recibo do relatório do OE2027 com os dois últimos caracteres trocados; o ficheiro alojado desmente ao recalcular",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "017db94ca17d2960a7ddb8c15ce00ef8d7a67bf8086222ad01209e43b0f0cb21",
+   "sha256_depois": "763cd0ed84e6bc753ff1843f8b0abbf442f92ae7692c628375d6706b3b220926",
+   "contexto_antes": "{\n  \"estado\": 200,\n  \"ficheiro\": \"oe-relatorio.pdf\",\n  \"bytes\": 25512364,\n  \"sha256\": \"a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12\",\n  \"pedido\": \"https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH",
+   "contexto_depois": "{\n  \"estado\": 200,\n  \"ficheiro\": \"oe-relatorio.pdf\",\n  \"bytes\": 25512364,\n  \"sha256\": \"a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc21\",\n  \"pedido\": \"https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html",
+   "descricao": "o valor dos encargos líquidos rodoviários na página construída trocado (889 para 898); a linha do livro e o quadro 4.25 desmentem",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "97152d938455683c530b1533afce971e230db41e1c771446bfe2fb43c24303bb",
+   "sha256_depois": "689066c352bf1f706dfa9da8f130613daddee46dad5f53b561ee4328495a7499",
+   "contexto_antes": "<!DOCTYPE html><html lang=\"pt-PT\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>889 milhões de euros · Números e fontes · O Estado do País</title><meta name=\"description\" content=\"Linha do livro-razão oe-2027-ppp-rodoviario-encargos-liquidos-2027 · 88",
+   "contexto_depois": "<!DOCTYPE html><html lang=\"pt-PT\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>898 milhões de euros · Números e fontes · O Estado do País</title><meta name=\"description\" content=\"Linha do livro-razão oe-2027-ppp-rodoviario-encargos-liquidos-2027 · 88"
+  },
+  {
+   "id": "P1",
+   "ficheiro": "ledger/claims/oe-2027-saude-despesa-total-consolidada-2027.yml",
+   "descricao": "o valor da despesa total consolidada da Saúde em 2027 trocado (17 858,4 para 17 885,4); o quadro 5.37 alojado desmente",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c93dd13fd3f40929944628e8d7e7bb77c032ceacf62703671a49d5e575acaffc",
+   "sha256_depois": "c6ec42204b2b7f3605e0d3659642a84584a8e0c0de046a2dcf65183b2fa5d2b1",
+   "contexto_antes": "pts/check-cruzamento.mjs.\n\nid: \"oe-2027-saude-despesa-total-consolidada-2027\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"17 858,4\"\nunit: \"milhões de euros\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.",
+   "contexto_depois": "pts/check-cruzamento.mjs.\n\nid: \"oe-2027-saude-despesa-total-consolidada-2027\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"17 885,4\"\nunit: \"milhões de euros\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão."
+  }
+ ]
+}
