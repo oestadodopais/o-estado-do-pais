@@ -1,0 +1,32 @@
+{
+  "versao": {
+    "commit": "996a388918d1d4183d2d00700bdd62157f0b0fa8",
+    "ref": "higiene-2026-10-13",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-13T20:48:54.837Z"
+  },
+  "paginas": 7935,
+  "achados": [
+    {
+      "pagina": "a-verificar/index.html",
+      "metas": [
+        {
+          "property": "og:title",
+          "content": "O marcador [a verificar] · O Estado do País"
+        }
+      ]
+    },
+    {
+      "pagina": "en/to-verify/index.html",
+      "metas": [
+        {
+          "property": "og:title",
+          "content": "The [to verify] marker · O Estado do País"
+        }
+      ]
+    }
+  ],
+  "descricoes_com_marca": 0
+}
