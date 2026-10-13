@@ -39,7 +39,7 @@ Os valores seguintes vêm dos YAML exportados, conferidos contra as células e o
 
 As treze células do relatório do Orçamento confirmam os valores do memorando. O quadro da Saúde está na página 303 do ficheiro, 287 impressa; o das PPP na página 123, 107 impressa. A nota de caixa e preços constantes de 2027 ficou na nota da linha. O texto seguinte ao quadro identifica os encargos rodoviários como líquidos. A ligação do PDF foi extraída da página da iniciativa alojada, com a origem e o seu sha256 no recibo da ligação.
 
-No CFP, 2,1% para o crescimento real do PIB de 2027 e 2,9% para o IHPC de 2026 estão no quadro 1, página 9 do PDF, e voltam a aparecer na prosa da página 19. O memorando apontava para as páginas 19 e 20; só o quadro fica na página 9. A frase sobre o pendor descendente dos riscos está na página 20. Como o livro exige valor numérico, a frase ficou como segundo excerto da linha do PIB, com a página e a atribuição ao CFP na prova. Não foi criado um número para a frase nem uma quarta afirmação independente.
+No CFP, 2,1% para o crescimento real do PIB de 2027 e 2,9% para o IHPC de 2026 estão no quadro 1, página 9 do PDF, e voltam a aparecer na prosa da página 19. O memorando apontava para as páginas 19 e 20; só o quadro fica na página 9. A frase sobre o pendor descendente dos riscos está na página 20. Como o livro exige valor numérico, a conclusão ficou como excerto de apoio. Na V2-a-b, as duas linhas do cenário levam a conclusão inteira, a fonte MF da tabela e o comentário da página 19, com as páginas e a atribuição na prova. Não foi criado um número para a frase nem uma quarta afirmação independente.
 
 A RTP imprime a magnitude «1,5» e a palavra «Cai», sem sinal negativo. A linha da afirmação conserva `1,5` com a unidade `% de queda`, em vez de introduzir `−1,5`. O quadro do Orçamento conserva a sua variação publicada de `−1,5%`. A notícia não explicita a designação «despesa total consolidada»; essa identificação não foi acrescentada às palavras da RTP.
 
@@ -149,17 +149,17 @@ Os achados 1 a 5 eram plantas da direção em cópias do pacote e não foram toc
 
 | Achado | Correção e prova |
 |---|---|
-| 6 | Os nomes, as frases e os recortes incorporáveis identificam a previsão do Ministério das Finanças transcrita pelo CFP. O publicador continua a ser o CFP. O excerto inclui a fonte MF da página 9, o comentário da página 19 e a conclusão completa da página 20, com «endossa as previsões». |
-| 7 | Retiradas as três páginas integrais comprimidas. `ledger/provas/v2a/` só contém `provas.json`: excertos, data, URL, SHA256 e caminho relativo no motor. A travessia não transporta PDFs integrais. O controlo público confere os excertos contra as provas seladas; com `RESEARCHHUB_DIR`, confere também os corpos privados. |
-| 8 | O motor escreve as palavras citadas em `name`; o cabeçalho usa esse campo. A proveniência das afirmações passa a dizer «Título do documento» e «Document title». |
-| 9 | Frases próprias para Amaro, PCP e RTP; comparação entre orçamento e estimativa nas variações; anos, PRR e notas de previsão visíveis em `ressalva` e `ressalva_en`; nas PPP, caixa, IVA e preços constantes. A identificação da notícia RTP como despesa total consolidada não foi confirmada no corpo alojado e não foi inventada; ver V2A-17. |
-| 10 | Corrigida a indicação anterior: as percentagens estão também na prosa da página 19; o quadro está na página 9 e a conclusão na 20. |
-| 11 | A edição de 2026 vem do número e da data da capa, conferidos entre si. |
-| 12 | A transformação de caixa só altera a primeira letra e preserva PRR e RRP. |
-| 13 | As plantas mudam `column` e `row_index` em `table_specs` e reexecutam a extração. A assinatura «RTP / VER MAIS» substitui o rodapé; a planta retira a assinatura mantendo o rodapé. |
-| 14 | A regra geral aceita uma edição com dia ISO completo e válido; não converte um mês nem um dia impossível. Não há exceção para o dia das afirmações. |
-| 15 | Localizadores traduzidos na origem e transportados pelo exportador comum, tanto em `name_source_en` como em `document.locator_en`. |
-| 16 | O localizador transcreve «Saúde (PL15), Conta do Pograma Legado», incluindo a gralha confirmada visualmente no PDF. O nome legível refere a conta do Programa Legado Saúde. A medição do custo anterior consta de `custo-v2a.json` e da secção anterior. |
+| 6 | Os nomes, as frases e os recortes incorporáveis identificam a previsão do Ministério das Finanças transcrita pelo CFP. O publicador continua a ser o CFP. O excerto inclui a fonte MF da página 9, o comentário da página 19 e a conclusão completa da página 20, com «endossa as previsões». Código: `familias.mjs:31` e `motor/publisher/v2a.py:207` e `tests/cartao/cartao.mjs:389`. |
+| 7 | Retiradas as três páginas integrais comprimidas. `ledger/provas/v2a/` só contém `provas.json`: excertos, data, URL, SHA256 e caminho relativo no motor. A travessia não transporta PDFs integrais. O controlo público confere os excertos contra as provas seladas; com `RESEARCHHUB_DIR`, confere também os corpos privados. Código: `scripts/afirmacoes.mjs:34` e `motor/publisher/v2a_export.py:7`. |
+| 8 | O motor escreve as palavras citadas em `name`; o cabeçalho usa esse campo. A proveniência das afirmações passa a dizer «Título do documento» e «Document title». Código: `motor/publisher/v2a.py:76` e `src/views/LinhaView.astro:504`. |
+| 9 | Frases próprias para Amaro, PCP e RTP; comparação entre orçamento e estimativa nas variações; anos, PRR e notas de previsão visíveis em `ressalva` e `ressalva_en`; nas PPP, caixa, IVA e preços constantes. A identificação da notícia RTP como despesa total consolidada não foi confirmada no corpo alojado e não foi inventada; ver V2A-17. Código: `familias.mjs:16`, `familias.mjs:42` e `motor/publisher/v2a.py:185`. |
+| 10 | Corrigida a indicação anterior: as percentagens estão também na prosa da página 19; o quadro está na página 9 e a conclusão na 20. Código: `LEIA-ME.md:42`. |
+| 11 | A edição de 2026 vem do número e da data da capa, conferidos entre si. Código: `motor/publisher/v2a.py:140`. |
+| 12 | A transformação de caixa só altera a primeira letra e preserva PRR e RRP. Código: `familias.mjs:2`. |
+| 13 | As plantas mudam `column` e `row_index` em `table_specs` e reexecutam a extração. A assinatura «RTP / VER MAIS» substitui o rodapé; a planta retira a assinatura mantendo o rodapé. Código: `motor/publisher/v2a.py:115`, `motor/publisher/v2a.py:66` e `motor/publisher/v2a_test.py:55`. |
+| 14 | A regra geral aceita uma edição com dia ISO completo e válido; não converte um mês nem um dia impossível. Não há exceção para o dia das afirmações. Código: `src/lib/datas.mjs:82` e `scripts/check-formas.mjs:359`. |
+| 15 | Localizadores traduzidos na origem e transportados pelo exportador comum, tanto em `name_source_en` como em `document.locator_en`. Código: `motor/publisher/v2a.py:80`, `motor/publisher/v2a.py:180` e `motor/publisher/export_site_rows.py:706`. |
+| 16 | O localizador identifica «Saúde (PL15)» e «Conta do Pograma Legado», incluindo a gralha confirmada visualmente no PDF. O nome legível refere a conta do Programa Legado Saúde. A medição do custo anterior consta de `custo-v2a.json` e da secção anterior. Código: `motor/publisher/v2a.py:159` e `custo-v2a.json:1`. |
 
 Questões novas:
 
@@ -170,10 +170,55 @@ Questões novas:
 - V2A-20, custo: os dois registos encerrados do lançador medem os pontos e o custo antigo da V2-a. O custo final desta correção fica pendente do encerramento do lançador; não é estimado nesta entrega.
 
 - V2A-21, corrigida: a primeira corrida V2-a-b encontrou o inventário de frases ainda com as formulações anteriores. As frases substituídas passaram a retiradas e as novas ganharam entradas conferidas no HTML. A planta das siglas apanhou também uma concatenação sem espaço no guião de inspeção; a correção fez a planta morder.
-- V2A-22, falha de execução: a chamada dirigida a `check:leituras` tentou abrir o navegador na sandbox. O teste foi recusado com `bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer: Permission denied (1100)`. Não houve escalada; a suite pertence ao verify pelo escrivão. A falha de língua contra o HTML antigo desapareceu depois da reconstrução.
+- V2A-22, falha de execução: a chamada dirigida a `check:leituras` tentou abrir o navegador na sandbox. O teste foi recusado com `bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.80839: Permission denied (1100)`. Não houve escalada; a suite pertence ao verify pelo escrivão. A falha de língua contra o HTML antigo desapareceu depois da reconstrução.
 
-A primeira corrida desta correção ficou em `portoes-b-primeira`: build 1, verify 125 (não correu porque o build falhou), typecheck 0 e motor 0, lidos dos quatro ficheiros. A causa foi o inventário de frases desatualizado, corrigido antes da nova corrida. Os códigos finais e as capturas serão acrescentados depois da conferência final.
+A primeira corrida desta correção ficou em `portoes-b-primeira`: build 1, verify 125 (não correu porque o build falhou), typecheck 0 e motor 0, lidos dos quatro ficheiros. A causa foi o inventário de frases desatualizado, corrigido antes da nova corrida. A corrida final é a aceite e fica em `portoes-b/`.
 
 - V2A-23, corrigida: a K8 contava «XXV Governo Constitucional» dentro da conclusão literal do CFP como prosa da casa. A régua mantém uma ocorrência da casa por edição e só retira dessa contagem um `excerpt` cuja marca identifica uma linha existente e cujo texto coincide integralmente com o livro. Cinco plantas mantêm a recusa da citação sem marca, da linha inexistente, do texto alterado e da expressão da casa nas duas línguas. A conclusão do CFP permanece inteira.
 
+- V2A-24, decisão de entrega: o escrivão recusou o pedido único com «mais de quatrocentos ficheiros num pedido; divide-o». As provas foram divididas em dois pedidos, de 270 e 304 ficheiros. O primeiro commit de capturas é `c9d449bfd9c8c2ef5c8d907caeb2562baca2738c`; o segundo fecha o relatório e os restantes comprovativos. Nenhum dos dois altera o código verificado.
+
 A segunda corrida ficou em `portoes-b-segunda`: build 0, verify 1, typecheck 0 e motor 0, lidos dos ficheiros. A única falha do verify foi a K8, corrigida em V2A-23 e conferida pela suite completa dos cartões com código 0.
+
+Cabeça do código do sítio: `c71ff8aceaef0db5443fe45548a5ce5ba3a36ff0`. Cabeça do código e final do motor: `b95dc75f8cfaca58aa02c5f02564b0ae4d24259f`. Os commits desta correção são `65ace18a` (medidas, provas e direitos), `b705fa78` (inventário e conferências), `c71ff8ac` (K8 e citações literais) e `b95dc75f` no motor. O commit final do sítio acrescenta apenas provas e o relatório; a cabeça final fica na resposta. Nas referências da tabela, `familias.mjs` pertence a esta pasta de medições e `motor/` designa a raiz do motor.
+
+| Portão final | Código lido | Ficheiro |
+|---|---:|---|
+| build | 0 | `portoes-b/build.codigo` |
+| verify | 0 | `portoes-b/verify.codigo` |
+| typecheck | 0 | `portoes-b/typecheck.codigo` |
+| motor | 0 | `portoes-b/motor.codigo` |
+
+O HTML conferido contém 36 páginas das 18 linhas, com os valores e unidades preservados. A conferência está em `inspecao-b.json`. As capturas em `design/especime-v3/capturas/v2a-2026-10-12/b/` contêm 180 páginas inteiras e 360 recortes, nas larguras 390, 768, 1024, 1280, 1600 px. Os SHA256 de todas as imagens foram relidos; não houve pedidos externos, erros do navegador, recursos recusados nem transbordo horizontal. A inspeção visual fica em `capturas-inspecao-b.json`.
+
+Plantas novas e respetivas mensagens, também guardadas em `plantas-b.json`:
+
+- `manchete como medida: V2A nome: difere do documento alojado` (`b-conferencias/motor-test.log`).
+- `índice da coluna na extração: V2A coluna: índice diferente da medida` (`b-conferencias/motor-test.log`).
+- `índice da linha na extração: V2A linha: índice diferente da medida` (`b-conferencias/motor-test.log`).
+- `assinatura retirada com rodapé RTP intacto: V2A atribuição: autoria ausente do corpo alojado` (`b-conferencias/motor-test.log`).
+- `ano do parecer trocado na capa: V2A edição: capa sem número e data concordantes` (`b-conferencias/motor-test.log`).
+- `PDF integral na exportação: V2A direitos: só excertos e referências podem atravessar` (`b-conferencias/motor-test.log`).
+- `corpo integral pagina.html.gz: V2A direitos: a prova pública só admite excertos e referências em provas.json` (`b-conferencias/afirmacoes-motor.log`).
+- `corpo integral parecer.pdf: V2A direitos: a prova pública só admite excertos e referências em provas.json` (`b-conferencias/afirmacoes-motor.log`).
+- `caminho fora do motor: V2A referência: falta o selo, a data ou o caminho relativo no motor` (`b-conferencias/afirmacoes-motor.log`).
+- `edição 2026-02-29: V2A data: edição não convertida em data` (`b-conferencias/formas.log`).
+- `edição 2026-04-31: V2A data: edição não convertida em data` (`b-conferencias/formas.log`).
+- `edição 2025-12: V2A data: edição não convertida em data` (`b-conferencias/formas.log`).
+- `V2A edição: ano do orçamento no lugar do ano do parecer` (`b-conferencias/indice.log`).
+- `V2A nome: manchete no lugar das palavras ditas` (`b-conferencias/indice.log`).
+- `V2AB previsão: falta a autoria MF e a transcrição CFP` (`b-conferencias/html.log`).
+- `V2AB nota: ressalva não publicada` (`b-conferencias/html.log`).
+- `V2AB nome: a cabeça não diz as palavras citadas` (`b-conferencias/html.log`).
+- `V2AB localizador: tradução ou origem ausente` (`b-conferencias/html.log`).
+- `V2AB sigla: PRR ou RRP perdeu maiúsculas` (`b-conferencias/html.log`).
+- `vista anterior alterada: V2A vista: mudou mais do que o título do documento das afirmações.` (`b-conferencias/l1.log`).
+- `K8 citação sem marca de origem: K8 · «Governo Constitucional» rende-se em 2 página(s) portuguesa(s) e devia render-se em 1 (o índice das áreas)` (`b-conferencias/cartao-k8.log`).
+- `K8 citação com linha inexistente: K8 · «Governo Constitucional» rende-se em 2 página(s) portuguesa(s) e devia render-se em 1 (o índice das áreas)` (`b-conferencias/cartao-k8.log`).
+- `K8 citação com palavras alteradas: K8 · «Governo Constitucional» rende-se em 2 página(s) portuguesa(s) e devia render-se em 1 (o índice das áreas)` (`b-conferencias/cartao-k8.log`).
+- `K8 expressão da casa em português: K8 · «Governo Constitucional» rende-se em 2 página(s) portuguesa(s) e devia render-se em 1 (o índice das áreas)` (`b-conferencias/cartao-k8.log`).
+- `K8 expressão da casa em inglês: K8 · «Constitutional Government» rende-se em 2 página(s) inglesa(s) e devia render-se em 1 (o índice das áreas)` (`b-conferencias/cartao-k8.log`).
+
+Os controlos positivos aceitam outro dia de publicação e o dia bissexto válido; as plantas recusam os dias impossíveis e a edição mensal. A contagem L1 foi refeita e os destinos e multiplicidades coincidem integralmente com a fotografia anterior (`b-conferencias/l1-recontado.json`). A leitura cruzada do inventário corrigido fica por fazer pela direção.
+
+Custo: a V2-a anterior soma 16 pontos da conta e 798 609 símbolos de custo antigo, nas duas leituras do lançador. O custo final V2-a-b fica pendente do encerramento do lançador. A linha «tokens used» não foi exposta.

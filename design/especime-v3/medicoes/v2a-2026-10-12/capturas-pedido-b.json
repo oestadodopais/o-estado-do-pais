@@ -1,0 +1,275 @@
+{
+  "cabeca": "c71ff8aceaef0db5443fe45548a5ce5ba3a36ff0",
+  "paginas": [
+    {
+      "nome": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "pt": "/livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/",
+      "en": "/en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "pt": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/",
+      "en": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "pt": "/livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09/",
+      "en": "/en/ledger/afirmacao-rtp-saude-queda-oe2027-2026-10-09/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "oe-2027-cenario-ihpc-2026",
+      "pt": "/livro-razao/oe-2027-cenario-ihpc-2026/",
+      "en": "/en/ledger/oe-2027-cenario-ihpc-2026/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "oe-2027-cenario-pib-real-crescimento-2027",
+      "pt": "/livro-razao/oe-2027-cenario-pib-real-crescimento-2027/",
+      "en": "/en/ledger/oe-2027-cenario-pib-real-crescimento-2027/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "pt": "/livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027/",
+      "en": "/en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "pt": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/",
+      "en": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "oe-2027-ppp-rodoviario-receitas-2027",
+      "pt": "/livro-razao/oe-2027-ppp-rodoviario-receitas-2027/",
+      "en": "/en/ledger/oe-2027-ppp-rodoviario-receitas-2027/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "oe-2027-ppp-total-encargos-liquidos-2027",
+      "pt": "/livro-razao/oe-2027-ppp-total-encargos-liquidos-2027/",
+      "en": "/en/ledger/oe-2027-ppp-total-encargos-liquidos-2027/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "pt": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026/",
+      "en": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "pt": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027/",
+      "en": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "pt": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/",
+      "en": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "pt": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/",
+      "en": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "pt": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/",
+      "en": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "pt": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao/",
+      "en": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "oe-2027-saude-despesa-total-consolidada-2026",
+      "pt": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2026/",
+      "en": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2026/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "oe-2027-saude-despesa-total-consolidada-2027",
+      "pt": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027/",
+      "en": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    },
+    {
+      "nome": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "pt": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao/",
+      "en": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
+    }
+  ]
+}

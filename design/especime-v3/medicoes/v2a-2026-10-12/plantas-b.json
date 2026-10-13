@@ -1,0 +1,105 @@
+{
+  "plantas": [
+    {
+      "registo": "b-conferencias/motor-test.log",
+      "mensagem": "manchete como medida: V2A nome: difere do documento alojado"
+    },
+    {
+      "registo": "b-conferencias/motor-test.log",
+      "mensagem": "índice da coluna na extração: V2A coluna: índice diferente da medida"
+    },
+    {
+      "registo": "b-conferencias/motor-test.log",
+      "mensagem": "índice da linha na extração: V2A linha: índice diferente da medida"
+    },
+    {
+      "registo": "b-conferencias/motor-test.log",
+      "mensagem": "assinatura retirada com rodapé RTP intacto: V2A atribuição: autoria ausente do corpo alojado"
+    },
+    {
+      "registo": "b-conferencias/motor-test.log",
+      "mensagem": "ano do parecer trocado na capa: V2A edição: capa sem número e data concordantes"
+    },
+    {
+      "registo": "b-conferencias/motor-test.log",
+      "mensagem": "PDF integral na exportação: V2A direitos: só excertos e referências podem atravessar"
+    },
+    {
+      "registo": "b-conferencias/afirmacoes-motor.log",
+      "mensagem": "corpo integral pagina.html.gz: V2A direitos: a prova pública só admite excertos e referências em provas.json"
+    },
+    {
+      "registo": "b-conferencias/afirmacoes-motor.log",
+      "mensagem": "corpo integral parecer.pdf: V2A direitos: a prova pública só admite excertos e referências em provas.json"
+    },
+    {
+      "registo": "b-conferencias/afirmacoes-motor.log",
+      "mensagem": "caminho fora do motor: V2A referência: falta o selo, a data ou o caminho relativo no motor"
+    },
+    {
+      "registo": "b-conferencias/formas.log",
+      "mensagem": "edição 2026-02-29: V2A data: edição não convertida em data"
+    },
+    {
+      "registo": "b-conferencias/formas.log",
+      "mensagem": "edição 2026-04-31: V2A data: edição não convertida em data"
+    },
+    {
+      "registo": "b-conferencias/formas.log",
+      "mensagem": "edição 2025-12: V2A data: edição não convertida em data"
+    },
+    {
+      "registo": "b-conferencias/indice.log",
+      "mensagem": "V2A edição: ano do orçamento no lugar do ano do parecer"
+    },
+    {
+      "registo": "b-conferencias/indice.log",
+      "mensagem": "V2A nome: manchete no lugar das palavras ditas"
+    },
+    {
+      "registo": "b-conferencias/html.log",
+      "mensagem": "V2AB previsão: falta a autoria MF e a transcrição CFP"
+    },
+    {
+      "registo": "b-conferencias/html.log",
+      "mensagem": "V2AB nota: ressalva não publicada"
+    },
+    {
+      "registo": "b-conferencias/html.log",
+      "mensagem": "V2AB nome: a cabeça não diz as palavras citadas"
+    },
+    {
+      "registo": "b-conferencias/html.log",
+      "mensagem": "V2AB localizador: tradução ou origem ausente"
+    },
+    {
+      "registo": "b-conferencias/html.log",
+      "mensagem": "V2AB sigla: PRR ou RRP perdeu maiúsculas"
+    },
+    {
+      "registo": "b-conferencias/l1.log",
+      "mensagem": "vista anterior alterada: V2A vista: mudou mais do que o título do documento das afirmações."
+    },
+    {
+      "registo": "b-conferencias/cartao-k8.log",
+      "mensagem": "K8 citação sem marca de origem: K8 · «Governo Constitucional» rende-se em 2 página(s) portuguesa(s) e devia render-se em 1 (o índice das áreas)"
+    },
+    {
+      "registo": "b-conferencias/cartao-k8.log",
+      "mensagem": "K8 citação com linha inexistente: K8 · «Governo Constitucional» rende-se em 2 página(s) portuguesa(s) e devia render-se em 1 (o índice das áreas)"
+    },
+    {
+      "registo": "b-conferencias/cartao-k8.log",
+      "mensagem": "K8 citação com palavras alteradas: K8 · «Governo Constitucional» rende-se em 2 página(s) portuguesa(s) e devia render-se em 1 (o índice das áreas)"
+    },
+    {
+      "registo": "b-conferencias/cartao-k8.log",
+      "mensagem": "K8 expressão da casa em português: K8 · «Governo Constitucional» rende-se em 2 página(s) portuguesa(s) e devia render-se em 1 (o índice das áreas)"
+    },
+    {
+      "registo": "b-conferencias/cartao-k8.log",
+      "mensagem": "K8 expressão da casa em inglês: K8 · «Constitutional Government» rende-se em 2 página(s) inglesa(s) e devia render-se em 1 (o índice das áreas)"
+    }
+  ],
+  "controlos": "As edições 2024-02-29 e 2026-10-10 são aceites; as páginas e as fontes intactas passam antes das mutações."
+}
