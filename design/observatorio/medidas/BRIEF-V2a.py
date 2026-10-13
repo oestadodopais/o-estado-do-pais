@@ -8,7 +8,9 @@ antes do bloco: o bloco acrescenta as suas sem tocar nas outras)."""
 import json, os, pathlib, subprocess
 
 SITIO = pathlib.Path(os.environ.get("OEDP_SITIO") or pathlib.Path(__file__).resolve().parents[3])
-CAB = os.environ.get("OEDP_CABECA") or "HEAD"
+# A cabeça presa é a do commit em que os briefs V2 foram escritos (13.10.2026): no GitHub o portão dos briefs
+# reexecuta este guião, e as contagens do livro mudam quando o V2-a aterra; medir HEAD daria outro número.
+CAB = os.environ.get("OEDP_CABECA") or "445451896a74222a4c489b704ea9caf19039a270"
 NAO = "NÃO LIDO"
 BRIEF = "design/observatorio/BRIEF-V2a-as-fontes-da-vigilancia-seladas-no-motor.md"
 medidas = []
