@@ -717,3 +717,9 @@ A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recib
 | rp4ng | Ausência das contagens do estudo e glosa do selo na sinopse das pensões | por ler | Codex gpt-6-astra: frases copiadas da construção, sem inventar a data original em falta. A leitura cruzada fica com a direção. |
 
 | rp4nj | 2 cadeias novas, 4 retiradas | por ler | Contagens lidas do HTML pelo inventario-j.mjs; a fusão do JD1 e do RP4-n mudou a contagem. |
+
+## V2-a-b: autoria e definição das medidas
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| v2ab | Frases das previsões, da Saúde e das afirmações corrigidas | por ler | Codex gpt-6-astra: execução dos achados 6, 9, 12 e 16 do mandato V2-a-b. Apoios na auditoria K17 e conferência do HTML nas duas edições. A notícia RTP não explicita despesa total consolidada; a página declara essa ausência. A leitura cruzada do diff desta correção fica com a direção. |

@@ -4319,18 +4319,18 @@ As frases já publicadas nas páginas dos concelhos, nas duas edições, e confe
 
 | classe | texto | bloco | estado | razão |
 |---|---|---|---|---|
-| conteudo | É a despesa total consolidada do programa Saúde, na estimativa ou no orçamento indicado. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | It is consolidated total expenditure of the Health programme, in the stated estimate or budget. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | É a variação publicada da despesa total consolidada do programa Saúde. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | It is the published change in consolidated total expenditure of the Health programme. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | É a despesa efetiva consolidada do programa Saúde, na estimativa ou no orçamento indicado. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | It is consolidated effective expenditure of the Health programme, in the stated estimate or budget. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | É a variação publicada da despesa efetiva consolidada do programa Saúde. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | It is the published change in consolidated effective expenditure of the Health programme. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | É a despesa efetiva consolidada sem prr do programa Saúde, na estimativa ou no orçamento indicado. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | It is consolidated effective expenditure excluding the rrp of the Health programme, in the stated estimate or budget. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | É a variação publicada da despesa efetiva consolidada sem prr do programa Saúde. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | It is the published change in consolidated effective expenditure excluding the rrp of the Health programme. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | É a despesa total consolidada do programa Saúde, na estimativa ou no orçamento indicado. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
+| conteudo | It is consolidated total expenditure of the Health programme, in the stated estimate or budget. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
+| conteudo | É a variação publicada da despesa total consolidada do programa Saúde. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
+| conteudo | It is the published change in consolidated total expenditure of the Health programme. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
+| conteudo | É a despesa efetiva consolidada do programa Saúde, na estimativa ou no orçamento indicado. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
+| conteudo | It is consolidated effective expenditure of the Health programme, in the stated estimate or budget. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
+| conteudo | É a variação publicada da despesa efetiva consolidada do programa Saúde. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
+| conteudo | It is the published change in consolidated effective expenditure of the Health programme. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
+| conteudo | É a despesa efetiva consolidada sem prr do programa Saúde, na estimativa ou no orçamento indicado. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
+| conteudo | It is consolidated effective expenditure excluding the rrp of the Health programme, in the stated estimate or budget. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
+| conteudo | É a variação publicada da despesa efetiva consolidada sem prr do programa Saúde. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
+| conteudo | It is the published change in consolidated effective expenditure excluding the rrp of the Health programme. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
 | conteudo | É o valor previsto para encargos brutos do setor rodoviário no quadro das parcerias público-privadas. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
 | conteudo | It is the projected value for road sector gross charges in the public-private partnership table. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
 | conteudo | É o valor previsto para receitas do setor rodoviário no quadro das parcerias público-privadas. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
@@ -4339,11 +4339,38 @@ As frases já publicadas nas páginas dos concelhos, nas duas edições, e confe
 | conteudo | It is the projected value for road sector net charges in the public-private partnership table. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
 | conteudo | É o valor previsto para total dos encargos líquidos das parcerias público-privadas no quadro das parcerias público-privadas. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
 | conteudo | It is the projected value for total net public-private partnership charges in the public-private partnership table. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | É a taxa de crescimento real do produto interno bruto no cenário de previsões macroeconómicas. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | It is the real gross domestic product growth rate in the macroeconomic forecast scenario. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | É a taxa do índice harmonizado de preços no consumidor no cenário de previsões macroeconómicas. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | It is the harmonised index of consumer prices rate in the macroeconomic forecast scenario. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | É o valor publicado na afirmação citada, com a atribuição que o documento apresenta. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
-| conteudo | It is the value published in the quoted statement, with the attribution given by the document. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | É a taxa de crescimento real do produto interno bruto no cenário de previsões macroeconómicas. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
+| conteudo | It is the real gross domestic product growth rate in the macroeconomic forecast scenario. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
+| conteudo | É a taxa do índice harmonizado de preços no consumidor no cenário de previsões macroeconómicas. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
+| conteudo | It is the harmonised index of consumer prices rate in the macroeconomic forecast scenario. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
+| conteudo | É o valor publicado na afirmação citada, com a atribuição que o documento apresenta. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
+| conteudo | It is the value published in the quoted statement, with the attribution given by the document. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
 | conteudo | 3 226 claims · 368 of 3 226 calculated · 2 767 of 3 226 municipality rows | v2a | viva | Contagem lida do HTML construído com as fontes do V2-a. |
 | conteudo | 3 226 afirmações · 368 de 3 226 calculadas · 2 767 de 3 226 linhas de concelhos | v2a | viva | Contagem lida do HTML construído com as fontes do V2-a. |
+
+## V2-a-b: frases corrigidas das fontes da vigilância
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | É a despesa total consolidada da conta do Programa Legado Saúde, na estimativa ou no orçamento indicado. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | It is consolidated total expenditure of the Health Legacy Programme Account, in the stated estimate or budget. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | É a variação publicada da despesa total consolidada da conta do Programa Legado Saúde: compara o orçamento com a estimativa do ano anterior, incluindo PRR. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | It is the published change in consolidated total expenditure of the Health Legacy Programme Account: the budget compared with the previous year’s estimate, including the RRP. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | É a despesa efetiva consolidada da conta do Programa Legado Saúde, na estimativa ou no orçamento indicado. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | It is consolidated effective expenditure of the Health Legacy Programme Account, in the stated estimate or budget. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | É a variação publicada da despesa efetiva consolidada da conta do Programa Legado Saúde: compara o orçamento com a estimativa do ano anterior, incluindo PRR. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | It is the published change in consolidated effective expenditure of the Health Legacy Programme Account: the budget compared with the previous year’s estimate, including the RRP. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | É a despesa efetiva consolidada sem PRR da conta do Programa Legado Saúde, na estimativa ou no orçamento indicado. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | It is consolidated effective expenditure excluding the RRP of the Health Legacy Programme Account, in the stated estimate or budget. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | É a variação publicada da despesa efetiva consolidada sem PRR da conta do Programa Legado Saúde: compara o orçamento com a estimativa do ano anterior, sem PRR. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | It is the published change in consolidated effective expenditure excluding the RRP of the Health Legacy Programme Account: the budget compared with the previous year’s estimate, excluding the RRP. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | É a previsão do Ministério das Finanças para o crescimento real do produto interno bruto no Orçamento do Estado, como o CFP a transcreve. O parecer considera-a superior à de todas as instituições de referência. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | It is the Ministry of Finance forecast for real gross domestic product growth in the State Budget, as transcribed by the CFP. The opinion considers it higher than those of all reference institutions. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | É a previsão do Ministério das Finanças para a inflação medida pelo índice harmonizado de preços no consumidor no Orçamento do Estado, como o CFP a transcreve. O parecer considera-a pouco provável. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | It is the Ministry of Finance forecast for inflation measured by the harmonised index of consumer prices in the State Budget, as transcribed by the CFP. The opinion considers it unlikely. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | É o aumento do orçamento da Saúde retirando a verba excecional do PRR, nas palavras do ministro da Presidência transcritas pela RTP. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | It is the increase in the Health budget excluding exceptional RRP funding, in the Minister of the Presidency’s words transcribed by RTP. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | É o montante que o orçamento entrega às parcerias público-privadas rodoviárias, nas palavras da intervenção de Paulo Raimundo publicada pelo PCP. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | It is the amount the budget allocates to road public-private partnerships, in Paulo Raimundo’s speech published by the PCP. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | É a queda do orçamento da Saúde noticiada pela RTP. A notícia alojada não explicita se a despesa é total ou efetiva. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | It is the Health budget decrease reported by RTP. The hosted article does not specify whether the expenditure is total or effective. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |

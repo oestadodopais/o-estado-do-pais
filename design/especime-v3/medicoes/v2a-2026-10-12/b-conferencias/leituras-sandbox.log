@@ -1,0 +1,3 @@
+check:leituras: código 1
+bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.80839: Permission denied (1100)
+O teste de capturas não arrancou na sandbox. A suite completa corre pelo escrivão no verify.

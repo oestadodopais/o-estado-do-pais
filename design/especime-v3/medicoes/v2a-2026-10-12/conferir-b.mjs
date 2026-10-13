@@ -26,7 +26,7 @@ function conferir(c,lang,html) {
     const t=texto(seletor);
     if(!t.includes(lang==='en'?'Ministry of Finance':'Ministério das Finanças') || !t.includes('CFP')) erros.push('V2AB previsão: falta a autoria MF e a transcrição CFP');
   }
-  if(c.id.includes('-sem-prr-') && /\b(prr|rrp)\b/.test(texto('h1')+texto('.linha-o-que-e-frase'))) erros.push('V2AB sigla: PRR ou RRP perdeu maiúsculas');
+  if(c.id.includes('-sem-prr-') && /\b(prr|rrp)\b/.test(texto('h1')+' '+texto('.linha-o-que-e-frase'))) erros.push('V2AB sigla: PRR ou RRP perdeu maiúsculas');
   return erros;
 }
 for(const id of ids) {
