@@ -113,6 +113,8 @@ HIG-10: o cliente do escrivão desistiu durante o hook do motor. Não se duplico
 
 HIG-11: o primeiro hook do motor recusou `publisher.export_site_rows_test` por `KeyError: 'RESEARCHHUB_TRANSCRIPT'`. A variável passou a ser opcional na importação; sem transcrição, o extrator conserva a ausência de endereços resolvidos. A prova está em `motor-hook-tentativa-1.json`.
 
+HIG-12: a primeira tentativa final em `depois/` terminou com construção 1, verificação 125, tipos 0 e motor 0, lidos dos ficheiros. A voz recusou `PALAVRA PROIBIDA «incluído em» em 2 página(s) da superfície.` pela expressão inglesa `included in`. A frase passou a `counted in`, sem alterar o apoio do INE nem os valores; a régua não foi alterada. As conferências isoladas dos cartões e das explicações passaram nesta construção. A repetição final usa uma pasta nova.
+
 ## Caminhos do motor
 
 `motor-caminhos-antes.json` percorre 3 854 ficheiros seguidos e encontra 77 ficheiros. `motor-caminhos-alterados.json` lista cada ficheiro corrigido e a natureza do conteúdo anterior, sem copiar caminhos locais. `motor-execucao-caminhos.json` exercita doze destinos com a variável escolhida ou a raiz do repositório. A validação confirmou os valores numéricos dos dezanove JSON alterados e os treze ficheiros protegidos intactos.
