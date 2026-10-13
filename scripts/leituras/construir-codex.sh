@@ -45,6 +45,16 @@ comum="$aqui/PROMPT-construtor-comum.md"
 [ -f "$comum" ] || { echo "falta o prompt comum dos construtores: $comum" >&2; exit 9; }
 [ -f "$prompt" ] || { echo "falta o prompt da passagem: $prompt" >&2; exit 9; }
 cd "$worktree" || exit 9
+# A REDE E AS DEPENDÊNCIAS (13.10.2026, a primeira passagem com a aprovação a `never`, §1.190). Sem escaladas, a
+# sandbox recusa o que a aprovação automática antes absorvia: o `socket.bind` das suites do motor que abrem
+# servidores locais (`core.http_test` e quatro outras) e a escrita na cache do Vite quando `node_modules` é uma
+# ligação para fora da worktree. Por isso: CODEX_REDE=1 liga a rede da sandbox (obrigatório nas passagens que
+# correm o portão do motor ou alojam fontes), e o guião recusa lançar se `node_modules` não for uma pasta real da
+# própria worktree (o lugar de direção corre `npm ci` nela antes de lançar).
+rede=""
+if [ "${CODEX_REDE:-0}" = 1 ]; then rede="-c sandbox_workspace_write.network_access=true"; fi
+if [ -L "$worktree/node_modules" ]; then echo "node_modules é uma ligação para fora da worktree; corre npm ci dentro dela antes de lançar (a sandbox recusa a escrita na cache do Vite)" >&2; exit 9; fi
+[ -d "$worktree/node_modules" ] || [ ! -f "$worktree/package.json" ] || { echo "falta node_modules na worktree; corre npm ci nela antes de lançar" >&2; exit 9; }
 base="${relatorio%.md}"
 inicio="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 python3 "$aqui/pontos.py" --antes
@@ -55,7 +65,7 @@ sleep 1
 kill -0 "$escrivao" 2>/dev/null || { echo "o escrivão não arrancou: $(tail -3 "$base.escrivao.log")" >&2; exit 9; }
 echo "INICIO $inicio modelo=$modelo raciocínio=$raciocinio pastas_com_escrita=[$worktree$(for p in "$@"; do printf ' %s' "$p"; done)] escrivao=pid $escrivao"
 # shellcheck disable=SC2086
-cat "$comum" "$prompt" | codex exec -m "$modelo" -c "model_reasoning_effort=\"$raciocinio\"" -c 'approval_policy="never"' -s workspace-write -C "$worktree" $extras --skip-git-repo-check --color never -o "$relatorio" -
+cat "$comum" "$prompt" | codex exec -m "$modelo" -c "model_reasoning_effort=\"$raciocinio\"" -c 'approval_policy="never"' -s workspace-write $rede -C "$worktree" $extras --skip-git-repo-check --color never -o "$relatorio" -
 codigo=$?
 fim="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 kill "$escrivao" 2>/dev/null
