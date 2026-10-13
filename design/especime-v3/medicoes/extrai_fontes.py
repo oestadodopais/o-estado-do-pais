@@ -3,7 +3,7 @@
 concelhos-M5-sonnet · extrai_fontes.py
 
 Medidor cego (Claude Sonnet), bloco M5. Lê os ficheiros da fonte ALOJADOS
-(~/<projetos>/ResearchHub/content/12 Concelhos/source/, só leitura) com
+(<motor>/content/12 Concelhos/source/, só leitura) com
 código escrito de raiz — sem ver o código do motor — e escreve um JSON
 consolidado para o script Node (concelhos-M5-sonnet.mjs) usar como "verdade
 de origem" na comparação de três colunas (fonte / linha / página).
@@ -20,6 +20,7 @@ pelo próprio código, para prova antes de confiar num zero.
 """
 
 import argparse
+import os
 import json
 import re
 import sys
@@ -27,7 +28,10 @@ from pathlib import Path
 
 import pdfplumber
 
-SRC = Path.home() / "Instruments" / "ResearchHub" / "content" / "12 Concelhos" / "source"
+# RP4N-12: o motor é escolhido por quem corre a extração, sem presumir a casa.
+if not os.environ.get("RESEARCHHUB_DIR"):
+    raise SystemExit("Defina RESEARCHHUB_DIR com a raiz do motor antes de extrair as fontes.")
+SRC = Path(os.environ["RESEARCHHUB_DIR"]) / "content" / "12 Concelhos" / "source"
 
 # ---------------------------------------------------------------------------
 # 1 · INE — população, poder de compra, empresas (JSON da API pindica.jsp)
