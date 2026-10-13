@@ -51,6 +51,6 @@ if r.get('cabeca'): linha += f" · cabeça {r['cabeca']}"
 if r.get('recusa'): linha += f" · recusado: {r['recusa']}"
 print(linha)
 for l in (r.get('saida') or '').strip().splitlines()[-12:]:
-    print('  ' + l)
+    print('  ' + l[:400])
 sys.exit(r['codigo'])
 PY
