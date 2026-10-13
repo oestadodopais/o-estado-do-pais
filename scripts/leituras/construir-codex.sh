@@ -1,41 +1,67 @@
 #!/bin/sh
-# Lança o Codex como construtor numa worktree, com o modelo e o raciocínio fixados, e regista o fim.
+# Lança o Codex como construtor numa worktree, com o modelo e o raciocínio fixados, com o escrivão dos commits
+# ao lado, e mede a passagem no fim.
 # uso: [CODEX_RACIOCINIO=high] construir-codex.sh <worktree> <prompt.md> <relatorio.md> [<outra pasta com escrita>...]
-# O lugar de direção lança-o desde 23.09.2026 (§1.128), e o diretor pode continuar a lançá-lo:
+# O lugar de direção lança-o desde 23.09.2026 (§1.128), e o financiador pode continuar a lançá-lo:
 # `nohup scripts/leituras/construir-codex.sh <worktree> <prompt> <relatorio> [<outra worktree>] >> <log> 2>&1 &`
 # A regra de paragem do construtor vai no prompt: só um portão que protege um número, uma fonte ou uma
 # pessoa o faz parar; o que encoda mobília muda de forma conservando o que protege, com uma planta.
 #
-# AS OUTRAS PASTAS COM ESCRITA (M43, 30.09.2026). O `--approve-for-me` manda cada pedido de aprovação a um
-# modelo revisor automático («codex-auto-review»), que lê o repositório de cada vez e gasta a mesma quota
-# semanal: na noite de 29 para 30.09 foram 7 sessões desse revisor e 29 % dos símbolos cobrados. Um
-# construtor que escreve em duas worktrees (o motor e o sítio) pedia aprovação a cada escrita fora da sua
-# pasta de arranque. Cada pasta passada depois do relatório entra em `--add-dir`, com escrita, e a
-# aprovação deixa de ser pedida: provado a 30.09 com uma escrita numa pasta de fora, que sem `--add-dir`
-# abriu uma sessão do revisor e com ele não abriu nenhuma. O `--approve-for-me` fica para o resto.
-set -u
-worktree="$1"; prompt="$2"; relatorio="$3"; shift 3
+# AS OUTRAS PASTAS COM ESCRITA (M43, 30.09.2026). Cada pasta passada depois do relatório entra em `--add-dir`,
+# com escrita: um construtor que escreve em duas worktrees (o motor e o sítio) pedia aprovação a cada escrita
+# fora da sua pasta de arranque.
+#
+# O ESCRIVÃO E O FIM DAS REVISÕES AUTOMÁTICAS (M79, M80, M81, 13.10.2026, §1.190). Até 12.10 o guião passava
+# `--approve-for-me`, que mandava cada pedido de escalada a uma sub-sessão de revisão («guardian») que lia a
+# história inteira da sessão: 23 revisões a 12.10.2026, 1,94 milhões de símbolos fora da cache, cerca de doze
+# por cento dos pontos da semana. Os pedidos nasciam dos commits e da tranca dos portões, porque o Codex mantém
+# `.git` só de leitura dentro da sandbox. Agora: a política de aprovação é `never` (nada escala, e o prompt comum
+# diz ao construtor o que fazer quando a sandbox recusa); o construtor comita por `comitar.sh`, que pede ao
+# escrivão (`escrivao.py`, lançado aqui, a correr fora da sandbox só para as pastas permitidas); a tranca de
+# `portoes.sh` vive em /tmp; o prompt comum dos construtores (`PROMPT-construtor-comum.md`) vai à frente do
+# prompt da passagem; e no fim o guião lê os pontos da semana antes e depois da passagem (`pontos.py`), com os
+# turnos e o contexto médio, que é o custo que o quadro da §1.177 regista.
+#
 # A WORKTREE PASSA-SE EM CAMINHO ABSOLUTO (M29, 23.09.2026): o guião entra nela com `cd` e volta a passá-la ao
 # Codex em `-C`, por isso um caminho relativo era procurado dentro de si próprio e o Codex morria no mesmo segundo
 # com «No such file or directory». Recusa-se antes de lançar, com a razão.
+# O MODELO É O MAIS RECENTE QUE A CONTA ACEITA (decisão do diretor de 30.09.2026, §1.142): muda-se aqui, de
+# propósito e registado, depois de `sondar-modelo.sh` dizer que a conta o aceita.
+# O RACIOCÍNIO VAI POR VARIÁVEL (§1.177, M57, 06.10.2026): `high` nas construções e nas passagens mecânicas,
+# `xhigh` só onde o lugar de direção o pedir; por omissão fica xhigh, para uma troca ser sempre deliberada.
+set -u
+worktree="$1"; prompt="$2"; relatorio="$3"; shift 3
 case "$worktree" in /*) ;; *) echo "a worktree passa-se em caminho absoluto (recebi: ${worktree})" >&2; exit 9;; esac
 extras=""
 for pasta in "$@"; do
   case "$pasta" in /*) ;; *) echo "as outras pastas passam-se em caminho absoluto (recebi: ${pasta})" >&2; exit 9;; esac
   extras="$extras --add-dir $pasta"
 done
-# O MODELO É O MAIS RECENTE QUE A CONTA ACEITA (decisão do diretor de 30.09.2026, §1.142): muda-se aqui, de
-# propósito e registado, depois de `sondar-modelo.sh` dizer que a conta o aceita. A 30.09 a conta recusou o
-# `gpt-6.1-sol` («not supported when using Codex with a ChatGPT account»), e o construtor fica no `gpt-6-astra`.
 modelo="${CODEX_CONSTRUTOR:-gpt-6-astra}"
-# O RACIOCÍNIO VAI POR VARIÁVEL (§1.177, M57, 06.10.2026): `high` nas construções e nas passagens mecânicas,
-# `xhigh` só onde o lugar de direção o pedir; por omissão fica xhigh, como até aqui, para uma troca ser sempre
-# deliberada: `CODEX_RACIOCINIO=high construir-codex.sh …`. O guião imprime o nível na linha INICIO, que é o que
-# o registo do bloco cita.
 raciocinio="${CODEX_RACIOCINIO:-xhigh}"
 case "$raciocinio" in low|medium|high|xhigh) ;; *) echo "CODEX_RACIOCINIO tem de ser low, medium, high ou xhigh (recebi: ${raciocinio})" >&2; exit 9;; esac
+aqui="$(cd "$(dirname "$0")" && pwd -P)" || exit 9
+comum="$aqui/PROMPT-construtor-comum.md"
+[ -f "$comum" ] || { echo "falta o prompt comum dos construtores: $comum" >&2; exit 9; }
+[ -f "$prompt" ] || { echo "falta o prompt da passagem: $prompt" >&2; exit 9; }
 cd "$worktree" || exit 9
-echo "INICIO $(date -u +%H:%M:%S) modelo=$modelo raciocínio=$raciocinio pastas_com_escrita=[$worktree$(for p in "$@"; do printf ' %s' "$p"; done)]"
+base="${relatorio%.md}"
+inicio="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+python3 "$aqui/pontos.py" --antes
+python3 "$aqui/escrivao.py" "$worktree" "$@" > "$base.escrivao.log" 2>&1 &
+escrivao=$!
+trap 'kill "$escrivao" 2>/dev/null' EXIT INT TERM
+sleep 1
+kill -0 "$escrivao" 2>/dev/null || { echo "o escrivão não arrancou: $(tail -3 "$base.escrivao.log")" >&2; exit 9; }
+echo "INICIO $inicio modelo=$modelo raciocínio=$raciocinio pastas_com_escrita=[$worktree$(for p in "$@"; do printf ' %s' "$p"; done)] escrivao=pid $escrivao"
 # shellcheck disable=SC2086
-codex exec -m "$modelo" -c "model_reasoning_effort=\"$raciocinio\"" -C "$worktree" $extras --approve-for-me --skip-git-repo-check --color never -o "$relatorio" - < "$prompt"
-echo "FIM exit=$? $(date -u +%H:%M:%S)"
+cat "$comum" "$prompt" | codex exec -m "$modelo" -c "model_reasoning_effort=\"$raciocinio\"" -c 'approval_policy="never"' -s workspace-write -C "$worktree" $extras --skip-git-repo-check --color never -o "$relatorio" -
+codigo=$?
+fim="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+kill "$escrivao" 2>/dev/null
+wait "$escrivao" 2>/dev/null
+trap - EXIT INT TERM
+echo "FIM exit=$codigo $fim"
+sleep 2
+python3 "$aqui/pontos.py" --inicio "$inicio" --fim "$fim" --worktree "$worktree" --json "$base.pontos.json"
+exit "$codigo"

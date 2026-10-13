@@ -150,7 +150,21 @@ def principal():
     if destino.exists() and any(destino.iterdir()):
         raise ValueError('O pacote exige uma pasta nova ou vazia: não conserva registos de uma montagem anterior.')
     destino.mkdir(parents=True, exist_ok=True)
-    texto_numeros = Path(numeros).read_text().replace(repo_dado, '<sitio>').replace(str(repo), '<sitio>').replace(str(Path.home()), '<pasta-local>')
+    # M78 (13.10.2026): o rasto do conferir-relatorio.py trazia o caminho da worktree (apanhado pelo leitor da
+    # V1-d); além do sítio e da casa, anonimizam-se o motor, a pasta do pacote e as pastas temporárias, e o
+    # que sobrar com a forma de um caminho da máquina faz o pacote recusar, em vez de sair no rasto.
+    texto_numeros = Path(numeros).read_text()
+    for caminho, marca in [(repo_dado, '<sitio>'), (str(repo), '<sitio>')] + \
+            ([(motor[0], '<motor>'), (str(Path(motor[0]).resolve()), '<motor>')] if motor else []) + \
+            [(str(destino.resolve()), '<pacote>'), (str(destino), '<pacote>'),
+             (os.environ.get('TMPDIR', '').rstrip('/') or '/nunca', '<temporario>'), ('/private/tmp', '<temporario>'), ('/tmp', '<temporario>'),
+             (str(Path.home()), '<pasta-local>')]:
+        if caminho and caminho != '/':
+            texto_numeros = texto_numeros.replace(caminho, marca)
+    # As marcas compõem-se por partes de propósito, para o próprio guião não trazer a forma de um caminho.
+    sobra = re.search('/Us' + 'ers/|/ho' + 'me/[a-z]|/priv' + 'ate/|[.]cla' + 'ude/work' + 'trees/', texto_numeros)
+    if sobra:
+        raise ValueError(f'O pacote recusa o rasto dos números: ficou um caminho da máquina ({sobra.group(0)}) em numeros-do-relatorio.txt.')
     (destino / 'numeros-do-relatorio.txt').write_text(texto_numeros)
     shutil.copyfile(brief, destino / 'brief.md')
     shutil.copyfile(relatorio, destino / 'relatorio-construtor.md')
