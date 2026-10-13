@@ -20,7 +20,7 @@ Nada pessoal, nenhum segredo, nenhum caminho desta máquina nem o nome do utiliz
 
 ## Quando a sandbox recusa
 
-Se um comando falhar por permissão da sandbox, não pedes escalada (não há quem a aprove): procuras o caminho dentro destas regras (o escrivão para os commits, `/tmp` ou a pasta de saída para ficheiros temporários, a pasta com escrita para o resto) e, se não houver, anotas no relatório o que ficou por fazer e porquê.
+Se um comando falhar por permissão da sandbox, não pedes escalada (não há quem a aprove): procuras o caminho dentro destas regras (o escrivão para os commits, `/tmp` ou a pasta de saída para ficheiros temporários, a pasta com escrita para o resto) e, se não houver, anotas no relatório o que ficou por fazer e porquê. O `node_modules` da worktree do sítio já está instalado dentro dela pelo lugar de direção: não corres `npm ci` nem `npm install`. Quando a passagem toca o motor ou aloja fontes, o lançador liga a rede da sandbox, e as suites do motor que abrem servidores locais correm; se uma suite falhar por permissão mesmo assim, anota a mensagem exata e segue.
 
 ## O relatório
 
