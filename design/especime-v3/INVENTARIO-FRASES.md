@@ -3415,8 +3415,10 @@ DD.MM.AAAA, no value read». A data continua a ser a da entrada. O resultado
 
 Uma linha calculada escreve, sob «Segunda leitura:» / «Second reading:»,
 «Recalculada em cada construção a partir das suas origens» / «Recomputed at
-every build from its sources». As outras linhas sem releitura conservam
-«ainda nenhuma» / «none yet».
+every build from its sources». Nas cópias alojadas sem leitura da fonte, o rótulo é
+«Leitura na fonte» / «Reading at the source» e a ausência escreve
+«Não há leitura na fonte registada para esta linha.» / «No reading at the source is recorded for this row.».
+As restantes linhas sem releitura conservam «ainda nenhuma» / «none yet».
 
 As quatro linhas retiradas que antes continham o nome do diretor são
 protegidas pelo detetor de privacidade sobre as páginas construídas. O nome
