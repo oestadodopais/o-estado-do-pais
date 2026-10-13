@@ -1,0 +1,814 @@
+{
+  "cabeca": "12c66378c648680d05676eac97b3ae62eca2780e",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "saude-total-pt-390.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3460,
+      "sha256": "de329d5d1e6d1f7a5f37f457801cbad9b0bd3bd1b8a1828bb51cad9d78a1016a",
+      "recortes": [
+        {
+          "ficheiro": "saude-total-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "2ad7935bc3102d9fdcb4b850a895244ab0d2d11f533cb75ce65c3778c7455adc"
+        },
+        {
+          "ficheiro": "saude-total-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "35fbc24c44ba218fec8c071a8b78dee160903b5cd6d9c14cf155ff10b482eef2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saude-total-pt-768.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3245,
+      "sha256": "2984ae76a4f988a9f8e4fd6a98f56df1570535b5342b8cf22a0ef06b26315615",
+      "recortes": [
+        {
+          "ficheiro": "saude-total-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "62e7e89f6a6e7fbb493a87e625f4085613f1e421abbb348adf5e2ec162573629"
+        },
+        {
+          "ficheiro": "saude-total-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1f44498ef5e0322fec963b2ae9f7f240178a20988b496e9d191cb7bf8702f3e6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saude-total-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2097,
+      "sha256": "6152577c914c69081846b2c280dc62c5c8199c93ca9782a9662284cc3014da99",
+      "recortes": [
+        {
+          "ficheiro": "saude-total-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "5f6ffef1391041505f675efc95a2be50cf6bff1d2138516d62dfc496d16a8df5"
+        },
+        {
+          "ficheiro": "saude-total-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "602d3a0f585cf9107115c8b169bae685ae0bc40f121c81fbd1ee21b4172ec62f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saude-total-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2146,
+      "sha256": "6f2e8d5f58309f45cce13ddd780d2ef1b6574a75290322c2ffca59921dd0a45e",
+      "recortes": [
+        {
+          "ficheiro": "saude-total-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "b2a450553c97b43f938ca8c673d2f086d2e736871bb7d89c20bbbf0b00193827"
+        },
+        {
+          "ficheiro": "saude-total-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "eb684a5f121c02e1e056b3d701232a047e58bb935f31afcc61fad461f3a5f0fc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saude-total-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2152,
+      "sha256": "d264b49c1e47f520ba3f1c2d7addf82c23ff67d900aac4aa79abc1f3015848b5",
+      "recortes": [
+        {
+          "ficheiro": "saude-total-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "b2a450553c97b43f938ca8c673d2f086d2e736871bb7d89c20bbbf0b00193827"
+        },
+        {
+          "ficheiro": "saude-total-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "ce1f0f15ed84de616ecd60705570f5b5fe9611cc439869a2102afcb0f7d9b58d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saude-total-en-390.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3460,
+      "sha256": "efd39c1b460a3b930acac6f4502e3a73ae2047ae370043e46c22a92d25401d34",
+      "recortes": [
+        {
+          "ficheiro": "saude-total-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "a840872475b5fc443330e91b2f5e3f6c7cf36a7ff77694929b7c64ed8cee1986"
+        },
+        {
+          "ficheiro": "saude-total-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "f439dd7e9b491fd39bd61b663a9fddeee54b01de6b50d578267768107ee4a4d4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saude-total-en-768.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3245,
+      "sha256": "5de744719a35bd69a52a7917b7b93d1cff3197abd7961420a801c091f063795b",
+      "recortes": [
+        {
+          "ficheiro": "saude-total-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "e790dc62406703cb36263fd129a18dc7cf2b4be588c15fc2557ef3c7159dd09d"
+        },
+        {
+          "ficheiro": "saude-total-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "2fbbb4e957b9cb23bf3b2a016afb6a62bafe02c33e342bb7e05cd1a3e57debc7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saude-total-en-1024.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2097,
+      "sha256": "28df959cf18e0b7d7d698bc6136e64791b1024eb73374ac72f9dc38315780a16",
+      "recortes": [
+        {
+          "ficheiro": "saude-total-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "e58dd497c8eb873d0a790863466c7d0621117fa80d01dd9ab49452f971808278"
+        },
+        {
+          "ficheiro": "saude-total-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1486164ee21b222581e53d2230ce8668ff3f3dfeb5a3e4dd5c0b3c7eab0e6e51"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saude-total-en-1280.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2146,
+      "sha256": "3ef5a8c673560bbc5a0fea82704b073360da935e99ae70a2c0d4e904f7420a51",
+      "recortes": [
+        {
+          "ficheiro": "saude-total-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "998e06d49c78e983f3925d4573574aaa25c5a5107f057e9bff7c94791a119cf7"
+        },
+        {
+          "ficheiro": "saude-total-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "447c1755ceb071cfdfb5b1bbc48f407c9f449dcfba3068093453469a828287cd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saude-total-en-1600.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2152,
+      "sha256": "016cdedf0bdfa3a345492452dfb81fb9b9697c8584e5f00b7f55b88b087298f5",
+      "recortes": [
+        {
+          "ficheiro": "saude-total-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "998e06d49c78e983f3925d4573574aaa25c5a5107f057e9bff7c94791a119cf7"
+        },
+        {
+          "ficheiro": "saude-total-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "5cc4f54dada35229d61fd6ea8aadb385497fd415e56de4b2a3c6d06df348c8c4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "ppp-liquidos-pt-390.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3242,
+      "sha256": "658dc5f3adc249877cd5f7193ad948b886cdece26c31dafaa0038ffd4c2eecbc",
+      "recortes": [
+        {
+          "ficheiro": "ppp-liquidos-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "47a55bc166749a0f6af8949c02f67535f997eda079e99af9347c512787d3de70"
+        },
+        {
+          "ficheiro": "ppp-liquidos-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "f1ebae5c3b80104e2b36fe8d0badf9473ccc8aa6ee036173e712b891590d5e55"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "ppp-liquidos-pt-768.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2872,
+      "sha256": "6018eaa6c9dd4c1cc0883dd10aa52070d06a96fffe8c70f0bbd90a5e8031a875",
+      "recortes": [
+        {
+          "ficheiro": "ppp-liquidos-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "afc1aa5c7163dcc889e0b6f076c0b8746b46e59d63c9893d54f7939d8d5764d0"
+        },
+        {
+          "ficheiro": "ppp-liquidos-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "13ed93e1e6cbb96673149d3c21305b01dec6df45609efef8d542ebad4ceaebda"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "ppp-liquidos-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2060,
+      "sha256": "da6301f892cdeff9b2ba97a34b85268d0bde7205152bc5b14c26a4d3f94f7d64",
+      "recortes": [
+        {
+          "ficheiro": "ppp-liquidos-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "7b8f494cd9ee65c20a4e5812ec5331a92b187d5a29a2a5128b609482632ef1f6"
+        },
+        {
+          "ficheiro": "ppp-liquidos-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1a7a6017863bb0a271cc19f651976f0e0b7014bdb33e5f902fd114fd0f6a3002"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "ppp-liquidos-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2095,
+      "sha256": "bd1f19508786c01cfe88d5a3dcddac9a2664ef9819a4bfe8f11578326467f777",
+      "recortes": [
+        {
+          "ficheiro": "ppp-liquidos-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ce45848e43e5b6238e25febbe2ef7a7928ef82c3be809ab157c60abff9833c6d"
+        },
+        {
+          "ficheiro": "ppp-liquidos-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "4b3be0fcfc70a1d185906a6949f8fc28a6af501c3bf4bee5473d2a18afc113bf"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "ppp-liquidos-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2101,
+      "sha256": "5bfd12e07489fb6bc43e2a70ace20b585e9852ca324db2ca0c7259def5f1e184",
+      "recortes": [
+        {
+          "ficheiro": "ppp-liquidos-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ce45848e43e5b6238e25febbe2ef7a7928ef82c3be809ab157c60abff9833c6d"
+        },
+        {
+          "ficheiro": "ppp-liquidos-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "daf762e3e0a6b53f16d58da8ead50554e0068a3bb5520899e1cb244abf7a81c8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "ppp-liquidos-en-390.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3188,
+      "sha256": "48694975439726f4aaab3a8927d6010d6c14b2f65191ac5ceef699d849553aa9",
+      "recortes": [
+        {
+          "ficheiro": "ppp-liquidos-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "3dfb28b3de2f539907debd0adbb411c867e67b2e78e00c91fc968c13a4015429"
+        },
+        {
+          "ficheiro": "ppp-liquidos-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "88c77888544e8d76bcff491629d0b92cf3f73417a80fb4739478ea577f2d4b13"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "ppp-liquidos-en-768.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2872,
+      "sha256": "38e68b9f7653cd673f805fec127e1821da48a1220cb3eb2e4f04d5999ff1a03e",
+      "recortes": [
+        {
+          "ficheiro": "ppp-liquidos-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "97e60a8fabc32a114ce29c41212fd14a09e82a2957447fab377b25a57dded4d8"
+        },
+        {
+          "ficheiro": "ppp-liquidos-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "9d506dff7c08ccea63899b9faefec797451d37833574691f2bbed163c71eccea"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "ppp-liquidos-en-1024.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2016,
+      "sha256": "344c8aa6817c9b6511e40bab9a5d58ec330077b3383e7e02fdedaada0d496ad0",
+      "recortes": [
+        {
+          "ficheiro": "ppp-liquidos-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "9c51b6451aeeaecf524460f49ccded00dc71aa1c0cd6227231a1c746785de382"
+        },
+        {
+          "ficheiro": "ppp-liquidos-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "6401ad3278dbc29a73b6637b409dccd87078a14029f0e370ea012cea741e7e3b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "ppp-liquidos-en-1280.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2051,
+      "sha256": "8d49ea1baf9c2e4c284ddb6fda88660fefdecf8c478f4d85d0b9842fc67fc797",
+      "recortes": [
+        {
+          "ficheiro": "ppp-liquidos-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "cd2792bfd9eaa3ec63414a8942936a863ba764d336e606c30f009e8a122c7632"
+        },
+        {
+          "ficheiro": "ppp-liquidos-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "dbb5ce7712908f9654f9210067572c29ce97f4808a27a8311ded283119347270"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "ppp-liquidos-en-1600.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2057,
+      "sha256": "58438e50af2b2977cf752568ea4f4fce7917a3f82e817a8f8fd0d40689df6eec",
+      "recortes": [
+        {
+          "ficheiro": "ppp-liquidos-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "cd2792bfd9eaa3ec63414a8942936a863ba764d336e606c30f009e8a122c7632"
+        },
+        {
+          "ficheiro": "ppp-liquidos-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "a9bb8b9ca37c4317342aa38b9733f61a5142432242734545fba9f98762e402e4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-pt-390.png",
+      "rota": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3128,
+      "sha256": "df73bd3ecb4c926caa96a0b76e61d31934306648c04dfe6b739567b3c18df962",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "9582bb5a15f7bf4842e1b10e9174ca31c5c1ad14c6832d527cdc3a9e5c82f4a4"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1fd2f4dcddab992162a531aa0c8cc9217b25a9776f517d4ff905cd322a4627b3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-pt-768.png",
+      "rota": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2816,
+      "sha256": "1ff5e0a16c589cbc7cc9f68b46acc874c0ecc38c7c98d5c7f0cb6f2a623e82ef",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "2047299326039c222d1a7539c7fae2dddcdff37dfe2d48fb5f8520fd9487f186"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "76483228d05279ec6785db4dbca69d6fd1ef304b170c100bfa792b0cda6aeaa6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-pt-1024.png",
+      "rota": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2184,
+      "sha256": "1da7bf94929dbb5dc00b7609c5ecbe8d856a3ba49f197f9523cb3c4de4df5848",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "447de45c394bb769cdbc16aa9a191271dfbf0c064562b7755a38eb2ce034cedd"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1eed6f6370537979822d276a1fe1e7e76ba297deb5492a30414ff2fe6bb24e85"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-pt-1280.png",
+      "rota": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2219,
+      "sha256": "27aa99835642c58904abe714d38dc79b0103a8c3376d9726a9af389231c105b6",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "db2197bfc8e3d8cd3b98bf294bf456aa53ea97255a10b418d952013f230e6c33"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "afa693750ca66ba2308e756596b8cd8cdac679bf5831e49775b16ba41faa1fae"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-pt-1600.png",
+      "rota": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2225,
+      "sha256": "081c4bc8dc255204d7d5baf4777f85f8614f45e3a42b454c4f41788e76b4ea1d",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "db2197bfc8e3d8cd3b98bf294bf456aa53ea97255a10b418d952013f230e6c33"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "2375e8511796dc85d24ac6971e5fc476890a4136a1b66a950676164c883a0b37"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-en-390.png",
+      "rota": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3128,
+      "sha256": "53e51f8628731e0644dffc2a1ccbb0a83c20e5c3cda46647c742d9d5f1b3d75a",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "04209b36b805a92988ffc8acf1b934eb40ca9dd2a9f2497d2f23083a13da4a9c"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "064a3d89491157b12d9169494f062fe2de51d792ff8383a6549d8d0f749e5c35"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-en-768.png",
+      "rota": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2816,
+      "sha256": "6b7614f34952478d4527259fff515e0d582c417be6613f2317f12294c09c166a",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "9f357a5be9d258c44c10d5ca0de9242e30ebe38c5dbc6c4fe880ef159819f527"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "327028728fc2e3d48b6c7839a36c58e96f0d9f69353e9509004f631b1f4735a0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-en-1024.png",
+      "rota": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2184,
+      "sha256": "fc153c86bb91d055b2162d280146aa3e9accc30ee6fca9e7298f4de79bb4b424",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "da799279a434870ddbbec55eea9230534d79d63c37561bcf56d23d6077f8ac3e"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "8414a51252eb5afd96c3274ee79eefe7a36dbdebb6666afccf09230a3fb3e3db"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-en-1280.png",
+      "rota": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2219,
+      "sha256": "762b5a181d29efec37750c27aafd5d404467ad6204a2061bb5b860d6859a6d38",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ba449e31d7ca8978a93384025938252d917bbd54cb26b017d8761d7be016badb"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "2183a53965176bdad4ad6f5e76c2e702c339c3310e6a9c65862f2d0befb21c06"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-en-1600.png",
+      "rota": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2225,
+      "sha256": "cc6ea27daf4a68ff93f9b04f67b36038aa45115616c5b6cb26036850b891e290",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ba449e31d7ca8978a93384025938252d917bbd54cb26b017d8761d7be016badb"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "37e7f350942c6f60ddff9860d367721ff4754320c9ba7427d1349b17e614189c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "daba1e44f0c723aef4a00a5bc436facca27ea3c8bd0a5504a6ee7bf1f58a2a65",
+    "livro-razao/oe-2027-saude-despesa-total-consolidada-2027/index.html": "500b477400997aa2fa91a13c0d53680851508b33a61327d12de28c274c4a6260",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.hPEW4RoH.css": "f274081feb3c23a41b42c82b431fdc82ca2c162f791dec18fbb98087803084ff",
+    "_astro/linha.BtwJQvGM.css": "c3a9db4037309046a1b7c3df7412b9a025a0682dbdc756039fdce60b4d0e8520",
+    "recortes/oe-2027-saude-despesa-total-consolidada-2027.webp": "2827f0af5de0ce482e26aba6adbc47b946ceef1e30a4c5e674cf89d50b61c261",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/ledger/oe-2027-saude-despesa-total-consolidada-2027/index.html": "a3a9233d2ecc8305542cc1ac391e323887c0fb5c30dc2b3cfa64d1454cd15e3f",
+    "livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html": "97152d938455683c530b1533afce971e230db41e1c771446bfe2fb43c24303bb",
+    "recortes/oe-2027-ppp-rodoviario-encargos-liquidos-2027.webp": "49e97c6e91b53544dc3d066f0f4065eac3065834e37fc33b46653d13289c87d6",
+    "en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html": "b74dfd2ec5d4f29970613a9d03b39f4227c47989fd9175ac9f21ab4f52962d9b",
+    "livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html": "680100b9056ef1de02e9f2b8fcf432ce2de246226362fd95e3668a9eccad76d7",
+    "en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html": "f7f314e82560c9f40402190f28628654ebf42fac5f8400aa99e8305f81c02d47"
+  },
+  "falhas": [],
+  "ok": true
+}

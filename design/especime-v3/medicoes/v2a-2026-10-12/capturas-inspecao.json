@@ -1,0 +1,85 @@
+{
+  "cabeca": "12c66378c648680d05676eac97b3ae62eca2780e",
+  "ficheiros": [
+    {
+      "ficheiro": "saude-total-pt-390.png",
+      "sha256": "de329d5d1e6d1f7a5f37f457801cbad9b0bd3bd1b8a1828bb51cad9d78a1016a",
+      "largura": 390,
+      "lingua": "pt"
+    },
+    {
+      "ficheiro": "saude-total-pt-1280.png",
+      "sha256": "6f2e8d5f58309f45cce13ddd780d2ef1b6574a75290322c2ffca59921dd0a45e",
+      "largura": 1280,
+      "lingua": "pt"
+    },
+    {
+      "ficheiro": "saude-total-en-390.png",
+      "sha256": "efd39c1b460a3b930acac6f4502e3a73ae2047ae370043e46c22a92d25401d34",
+      "largura": 390,
+      "lingua": "en"
+    },
+    {
+      "ficheiro": "saude-total-en-1280.png",
+      "sha256": "3ef5a8c673560bbc5a0fea82704b073360da935e99ae70a2c0d4e904f7420a51",
+      "largura": 1280,
+      "lingua": "en"
+    },
+    {
+      "ficheiro": "ppp-liquidos-pt-390.png",
+      "sha256": "658dc5f3adc249877cd5f7193ad948b886cdece26c31dafaa0038ffd4c2eecbc",
+      "largura": 390,
+      "lingua": "pt"
+    },
+    {
+      "ficheiro": "ppp-liquidos-pt-1280.png",
+      "sha256": "bd1f19508786c01cfe88d5a3dcddac9a2664ef9819a4bfe8f11578326467f777",
+      "largura": 1280,
+      "lingua": "pt"
+    },
+    {
+      "ficheiro": "ppp-liquidos-en-390.png",
+      "sha256": "48694975439726f4aaab3a8927d6010d6c14b2f65191ac5ceef699d849553aa9",
+      "largura": 390,
+      "lingua": "en"
+    },
+    {
+      "ficheiro": "ppp-liquidos-en-1280.png",
+      "sha256": "8d49ea1baf9c2e4c284ddb6fda88660fefdecf8c478f4d85d0b9842fc67fc797",
+      "largura": 1280,
+      "lingua": "en"
+    },
+    {
+      "ficheiro": "afirmacao-pcp-pt-390.png",
+      "sha256": "df73bd3ecb4c926caa96a0b76e61d31934306648c04dfe6b739567b3c18df962",
+      "largura": 390,
+      "lingua": "pt"
+    },
+    {
+      "ficheiro": "afirmacao-pcp-pt-1280.png",
+      "sha256": "27aa99835642c58904abe714d38dc79b0103a8c3376d9726a9af389231c105b6",
+      "largura": 1280,
+      "lingua": "pt"
+    },
+    {
+      "ficheiro": "afirmacao-pcp-en-390.png",
+      "sha256": "53e51f8628731e0644dffc2a1ccbb0a83c20e5c3cda46647c742d9d5f1b3d75a",
+      "largura": 390,
+      "lingua": "en"
+    },
+    {
+      "ficheiro": "afirmacao-pcp-en-1280.png",
+      "sha256": "762b5a181d29efec37750c27aafd5d404467ad6204a2061bb5b860d6859a6d38",
+      "largura": 1280,
+      "lingua": "en"
+    }
+  ],
+  "metodo": "Inspeção visual das páginas inteiras, lado a lado por língua, sem alterar os PNG de prova.",
+  "observacoes": [
+    "Os títulos, valores, excertos, atribuições e fichas da fonte são legíveis nas duas edições.",
+    "Não se observaram sobreposições ou cortes de conteúdo nas páginas inspecionadas.",
+    "O recibo da Saúde mostra 17 858,4 milhões de euros e o recorte do quadro; o das PPP mostra 889 milhões de euros e a linha rodoviária.",
+    "O recibo da afirmação do PCP mostra 1 700 milhões de euros, a atribuição a Paulo Raimundo e PCP, o excerto literal e a edição 09.10.2026.",
+    "A 390 px a ficha da fonte segue o corpo; a 1 280 px ocupa a coluna lateral."
+  ]
+}

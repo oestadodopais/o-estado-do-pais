@@ -23,6 +23,18 @@
     {
       "sha": "6618ddb5570a6642e7a3cc04829ab8aac0d7021a",
       "mensagem": "V2-a: medir as portas dos recibos e atualizar o registo da L1"
+    },
+    {
+      "sha": "230b5b4685dd98a958b595455397ac8e6ba9f11c",
+      "mensagem": "O escrivão corre os três portões do sítio fora da sandbox a pedido do construtor (portoes-pelo-escrivao.sh): o navegador das conferências não arranca dentro dela, como a segunda paragem da higiene mostrou; o prompt comum diz o caminho novo; o pontos.py conta uma sessão retomada pelos turnos dentro do intervalo"
+    },
+    {
+      "sha": "7339203828816e4e9f00ea77e6decc6a4d2df4a9",
+      "mensagem": "O escrivão captura as páginas fora da sandbox a pedido do construtor (capturar-pelo-escrivao.sh, só o captar.mjs do repositório, sobre o dist da worktree): o navegador não arranca dentro dela, como a V2-a e a higiene mostraram"
+    },
+    {
+      "sha": "12c66378c648680d05676eac97b3ae62eca2780e",
+      "mensagem": "V2-a: conferir localizadores e apresentar a edição datada"
     }
   ],
   "motor": [

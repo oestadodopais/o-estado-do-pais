@@ -3,7 +3,12 @@
     design/especime-v3/INVENTARIO-FRASES.md:2668
     design/especime-v3/INVENTARIO-FRASES.md:2898
     design/especime-v3/INVENTARIO-FRASES.md:320
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:1 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:1 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/escrivao-primeira/build.log:13309 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/final/build.log:13309 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/quarta-corrida/build.log:13309 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/voz-corrigida.log:8 (perto do diff)
     src/lib/ledger.mjs:2495
     src/lib/ledger.mjs:749
 §1.4 · `excerpt` ficou `[a verificar]` em quase todas as linhas semeadas
@@ -14,11 +19,16 @@
     design/especime-v3/INVENTARIO-FRASES.md:2935
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:117
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:119
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:9 (perto do diff)
 §1.5 · A linha de método e a linha de autoria não são traduzidas
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:17 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:4 (perto do diff)
 §1.6 · Formatação portuguesa dos números nas duas edições — por agora
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-motor.log:1 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:19 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-motor.log:1 (perto do diff)
 §1.17 · O motivo de uma correção passou a existir nas duas línguas
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:21 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-iniciais.log:3 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:7 (perto do diff)
     ledger/README.md:775
@@ -26,6 +36,9 @@
     src/lib/ledger.mjs:830
     src/lib/ledger.mjs:855
 §1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-correcao.log:1 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-motor.log:3 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:28 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-iniciais.log:5 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-motor.log:3 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:12 (perto do diff)
@@ -49,13 +62,17 @@
     ledger/claims/oe-2027-saude-despesa-total-consolidada-2026.yml:44 (perto do diff)
     ledger/claims/oe-2027-saude-despesa-total-consolidada-2027.yml:44 (perto do diff)
     ledger/claims/oe-2027-saude-despesa-total-consolidada-variacao.yml:44 (perto do diff)
+    src/components/CampoDaLinha.astro:21
     src/i18n/unidades.mjs:225
     src/i18n/unidades.mjs:255
     src/lib/ledger.mjs:369 (perto do diff)
 §1.28 · A bandeira que a fonte punha e o livro-razão não
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:55 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:16 (perto do diff)
     src/lib/ledger.mjs:1789
 §1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-motor.log:5 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:58 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-iniciais.log:8 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-motor.log:5 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:18 (perto do diff)
@@ -63,20 +80,31 @@
     ledger/README.md:564 (perto do diff)
     ledger/README.md:829
 §1.32 · O tubo: setenta linhas atravessaram, e o sítio confere-as à chegada
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:65 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-iniciais.log:12 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:24 (perto do diff)
     ledger/README.md:829
 §1.36 · Os dez defeitos que a medição da confiança encontrou, e o que se fez a cada um
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:69 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-iniciais.log:14 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:26 (perto do diff)
     ledger/README.md:212
     ledger/README.md:424
     ledger/README.md:932
 §1.38 · A ortografia do sítio passa a ser uma só
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:75 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-iniciais.log:18 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:30 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/escrivao-primeira/build.log:393 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/final/build.log:393 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/ledger-final.log:384 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/portoes/ledger-inicial.log:384 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/primeira-corrida/build.log:393 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/quarta-corrida/build.log:393 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/segunda-corrida/build.log:393 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/terceira-corrida/build.log:393 (perto do diff)
 §1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:79 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-iniciais.log:24 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:36 (perto do diff)
     ledger/README.md:884
@@ -85,16 +113,21 @@
     src/data/studies.mjs:38
     src/lib/ledger.mjs:80
 §1.41 · A revisão cruzada do bloco V, e o que ela mudou
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:87 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-iniciais.log:26 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:39 (perto do diff)
 §1.44 · A revisão cruzada da identidade v2
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:90 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-iniciais.log:28 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:41 (perto do diff)
     ledger/README.md:570 (perto do diff)
 §1.46 · A leitura cruzada do bloco da agenda, e a palavra que faltava ao corte
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:94 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-iniciais.log:30 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:43 (perto do diff)
 §1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-motor.log:7 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:97 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-iniciais.log:32 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-motor.log:7 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:45 (perto do diff)
@@ -111,6 +144,7 @@
     src/lib/ledger.mjs:2004
     src/lib/ledger.mjs:565
 §1.49 · A republicação: o instantâneo de 2026-08-19 atravessa, os documentos são republicados, e a cópia arquivada entra
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:113 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:58 (perto do diff)
     src/data/studies.mjs:201
     src/data/studies.mjs:233
@@ -118,14 +152,45 @@
 §1.52 · A direção lê a pré-visualização n.º 1: cinco emendas, quatro decisões de forma, e o tema deixa de ser uma pergunta
     design/especime-v3/INVENTARIO-FRASES.md:1268
     design/especime-v3/INVENTARIO-FRASES.md:1271
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:118 (perto do diff)
+§1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/escrivao-primeira/build.log:520 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/final/build.log:520 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/primeira-corrida/build.log:520 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/quarta-corrida/build.log:520 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/segunda-corrida/build.log:520 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/terceira-corrida/build.log:520 (perto do diff)
 §1.66 · As correções de UX depois da auditoria de 25.08, bloco A
     design/especime-v3/INVENTARIO-FRASES.md:1133
     design/especime-v3/INVENTARIO-FRASES.md:815
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:121 (perto do diff)
 §1.68 · As páginas dos 308 concelhos
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:124 (perto do diff)
     src/data/studies.mjs:636
     src/data/studies.mjs:710
 §1.85 · A tipografia: a pergunta das famílias livres fecha sem mudança; a Spectral e a Bitter ficam; o Parnaso depende do pacote de teste do diretor
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:49 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:127 (perto do diff)
+§1.90 · As linhas do primeiro domínio da primeira vaga: economia e finanças públicas com trabalho, do inventário ao livro-razão
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/escrivao-primeira/verify.log:2697 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/escrivao-primeira/verify.log:2698 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/escrivao-primeira/verify.log:2699 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/escrivao-primeira/verify.log:2700 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/escrivao-primeira/verify.log:2702 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/final/verify.log:3264 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/final/verify.log:3265 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/final/verify.log:3266 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/final/verify.log:3267 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/final/verify.log:3269 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/quarta-corrida/verify.log:3264 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/quarta-corrida/verify.log:3265 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/quarta-corrida/verify.log:3266 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/quarta-corrida/verify.log:3267 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/quarta-corrida/verify.log:3269 (perto do diff)
+§1.91 · A cabeça nova como contentor: a faixa de cartões, o mapa como navegação, as três camadas com a mesma cabeça
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-correcao.log:3 (perto do diff)
+    src/components/CampoDaLinha.astro:69 (perto do diff)
+    src/lib/datas.mjs:55 (perto do diff)
 §1.98 · A delegação de 04.09: o lugar de direção decide pelas recomendações escritas, e o diretor corrige ao usar o sítio
     design/especime-v3/INVENTARIO-FRASES.md:1254
     design/especime-v3/INVENTARIO-FRASES.md:1298
@@ -171,11 +236,22 @@
     design/especime-v3/INVENTARIO-FRASES.md:970
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:69
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:70
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-correcao.log:16 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-correcao.log:6 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-motor.log:21 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:129 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:333 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-iniciais.log:47 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-motor.log:17 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:60 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:68 (perto do diff)
+    scripts/check-formas.mjs:1361
+    tests/livro/indice.mjs:179
+    tests/livro/indice.mjs:49
+    tests/livro/indice.mjs:78
+    tests/livro/indice.mjs:968
 §1.99 · A fase 1 do plano, o segundo dia: os nomes e as datas, a acessibilidade e os alvos, a leitura breve no cartão, o conserto a quente das datas dos estudos, e o fecho do dia com cinco ramos a meio
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:178 (perto do diff)
     src/data/studies.mjs:16
 §1.101 · A sessão de 07.09: o painel sem rede, a semana de ensaio recomeçada e o leitor dos concelhos, os cinco ramos parados retomados e fundidos, as leituras a frio do F1.4b e do F1.1c, e o limite do Codex
     design/especime-v3/INVENTARIO-FRASES.md:2003
@@ -183,9 +259,11 @@
     design/especime-v3/INVENTARIO-FRASES.md:2005
     design/especime-v3/INVENTARIO-FRASES.md:2006
     design/especime-v3/INVENTARIO-FRASES.md:2565
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:180 (perto do diff)
     scripts/provar-guardas.mjs:663
 §1.102 · A sessão de 08.09: o corredor parado por uma função apagada, as leituras a frio com o plano novo do Codex, a sonda ao INE, o F1.1d medido às cegas, e o F1.10 retomado
     design/especime-v3/INVENTARIO-FRASES.md:2581
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:187 (perto do diff)
 §1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
     design/especime-v3/INVENTARIO-FRASES.md:1293
     design/especime-v3/INVENTARIO-FRASES.md:1294
@@ -241,35 +319,64 @@
     design/especime-v3/INVENTARIO-FRASES.md:308
     design/especime-v3/INVENTARIO-FRASES.md:309
     design/especime-v3/INVENTARIO-FRASES.md:310
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:189 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-motor.log:9 (perto do diff)
 §1.110 · «A casa» sai do Método e do Sobre
     design/especime-v3/INVENTARIO-FRASES.md:2918
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:118
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:245 (perto do diff)
+§1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-motor.log:9 (perto do diff)
+§1.118 · O M3, a segunda metade: a conferência estrutural no motor, e os nomes confirmados de volta aos recibos
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/escrivao-primeira/verify.log:3238 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/final/verify.log:3253 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/quarta-corrida/verify.log:3253 (perto do diff)
+§1.119 · A I129: o grupo etário passa a estar escrito na linha e na definição, e a célula que não deixa uma definição contradizer a sua linha
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/escrivao-primeira/verify.log:3237 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/final/verify.log:3252 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/quarta-corrida/verify.log:3252 (perto do diff)
+§1.120 · «O que mudou» no seu lugar: a página do país curta, o registo inteiro numa página, e dois erros de medição do lugar de direção
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/escrivao-primeira/verify.log:3236 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/final/verify.log:3251 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/quarta-corrida/verify.log:3251 (perto do diff)
 §1.124 · A leitura de fora de 23.09.2026: o que o lugar de direção conferiu, o que decidiu, e a notificação do INE do mesmo dia
     design/especime-v3/INVENTARIO-FRASES.md:3007
     design/especime-v3/INVENTARIO-FRASES.md:3064
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:413
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:248 (perto do diff)
     src/data/areas.mjs:753
     src/data/areas.mjs:766
 §1.126 · O Portal BASE caído no motor e no Método (R1, mandato 10)
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:254 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-motor.log:12 (perto do diff)
 §1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:256 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-iniciais.log:43 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:62 (perto do diff)
     src/i18n/unidades.mjs:251
     src/i18n/unidades.mjs:67 (perto do diff)
 §1.129 · A peça 1 do B2, o veredicto: o Codex constrói e para nos dois pontos certos, o Opus lê a frio, o Codex esgota-se a meio da correção e o Opus acaba, e o diretor fixa a regra do sentido
     design/especime-v3/INVENTARIO-FRASES.md:3187
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:261 (perto do diff)
 §1.133 · O leitor comum primeiro: a decisão do diretor de 28.09.2026 sobre o público, o que se lê à primeira, e quem procura as relações nos dados
     design/especime-v3/INVENTARIO-FRASES.md:3076
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:263 (perto do diff)
 §1.140 · Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
     design/especime-v3/INVENTARIO-FRASES.md:3526
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:502
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:265 (perto do diff)
     design/especime-v3/medicoes/v2a-2026-10-12/decisoes-sitio.log:64 (perto do diff)
     tests/cartao/leituras-provadas.json:23 (perto do diff)
 §1.143 · A primeira leitura por leitores comuns (30.09.2026): as portas dizem o que têm, a primeira página é o único lugar de «O que se passa», e uma coisa, um lugar, também na navegação
     design/especime-v3/INVENTARIO-FRASES.md:3704
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:270 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/escrivao-primeira/build.log:13976 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/final/build.log:13976 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/formato-navegacao-rotulos.log:582 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/portoes/quarta-corrida/build.log:13976 (perto do diff)
 §1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-motor.log:11 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:272 (perto do diff)
     src/data/studies.mjs:190
     src/data/studies.mjs:215
     src/data/studies.mjs:230
@@ -278,12 +385,23 @@
     src/data/studies.mjs:352
     src/data/studies.mjs:831
     src/data/studies.mjs:94
+§1.148 · O E1 construído pelo Opus em cinco passagens e lido a frio três vezes pelo Codex: os quatro estudos de Évora no ar, as regras do lugar de direção nos pontos de paragem, o erro do limiar que era meu, e a aterragem do E0 e dos registos da §1.147
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-correcao.log:12 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:281 (perto do diff)
 §1.149 · A leitura do diretor de 01.10.2026 no telemóvel: o mapa de «Lugares» vem primeiro e as listas de nomes dobram-se; o mapa sai da primeira página, que fica com a porta; e a aterragem da §1.148
     design/especime-v3/INVENTARIO-FRASES.md:3606
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-correcao.log:12 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:281 (perto do diff)
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:283 (perto do diff)
+    tests/livro/indice.mjs:1691
 §1.150 · O L2a construído pelo Opus e lido a frio pelo Sol: o mapa primeiro em «Lugares», as listas dobradas, a primeira página com a porta; as decisões do lugar de direção nos pontos deixados; e a aterragem da §1.149
     design/especime-v3/INVENTARIO-FRASES.md:3647
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:283 (perto do diff)
+§1.151 · O L2b e o K2 construídos pelo Opus e lidos a frio pelo Sol: o concelho entre os 308 só nas taxas e nos rácios, o cartão para o telemóvel, o espaço antes de «%» como forma da casa em todas as superfícies (a §1.43, a §1.44 e a identidade §11 cedem à §1.135), e a aterragem da §1.150
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:285 (perto do diff)
 §1.152 · O UE2 construído pelo Opus e lido a frio pelo Sol: a página da União como a página dos países, as definições em palavras comuns como única forma em todo o sítio, o espaço antes de «%» confirmado pelo diretor, e a aterragem da §1.151
     design/especime-v3/INVENTARIO-FRASES.md:3739
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:285 (perto do diff)
 §1.154 · A caixa das sugestões no ar (o S1, construído pelo Opus, lido a frio pelo Sol, endurecido com a chave que só a Vercel tem, com as três decisões do diretor de 03.10.2026), a quinta recusa do Método reescrita, a leitura de fora do Opus de 03.10 avaliada e o que ela muda no plano
     design/especime-v3/INVENTARIO-FRASES.md:3809
     design/especime-v3/INVENTARIO-FRASES.md:3810
@@ -292,6 +410,7 @@
     design/especime-v3/INVENTARIO-FRASES.md:3838
     design/especime-v3/INVENTARIO-FRASES.md:3853
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:605
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:287 (perto do diff)
 §1.172 · A revisão das regras e da maquinaria (06.10.2026): o que rigor quer dizer, por palavras do diretor; as regras reescritas; o Codex constrói e o Opus lê; a aterragem sem a corrida repetida; a marca «[a verificar]» deixa de publicar; o menu do telefone em duas linhas; os blocos H4, M-A, RP4-n e EX2
     design/especime-v3/INVENTARIO-FRASES.md:1815
     design/especime-v3/INVENTARIO-FRASES.md:1818
@@ -302,6 +421,7 @@
     design/especime-v3/INVENTARIO-FRASES.md:1844
     design/especime-v3/INVENTARIO-FRASES.md:1845
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:678
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:295 (perto do diff)
 §1.173 · O diretor reafirma que o lugar de direção dirige: as ideias dele são contributos, o que não se adota diz-se-lhe com a razão, e a escolha do construtor da maquinaria é do lugar de direção, com a dupla verificação
     design/especime-v3/INVENTARIO-FRASES.md:4212
     design/especime-v3/INVENTARIO-FRASES.md:4232
@@ -314,9 +434,13 @@
     design/especime-v3/INVENTARIO-FRASES.md:4252
     design/especime-v3/INVENTARIO-FRASES.md:4253
     design/especime-v3/INVENTARIO-FRASES.md:4254
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:305 (perto do diff)
+§1.177 · A viabilidade do projeto pelo custo: o que um dia de construção custou e porquê, o que não é viável assim, o plano de eficiência sem perda de exatidão, e o quadro de medição contínua que decide os níveis de raciocínio e os modelos por tarefa
+    scripts/leituras/pontos.py:16
 §1.181 · A direção do diretor de 07.10.2026: o projeto é uma inteligência artificial que vigia o país e age sobre o que encontra, com conclusões, recomendações e a sua opinião profissional; o patamar 3 abre, a regra 5 ganha a forma da afirmação, a carta admite as fontes da vigilância, o recibo é uma funcionalidade de segundo plano e a verificação é o fundo
     design/especime-v3/INVENTARIO-FRASES.md:4262
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:684
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:317 (perto do diff)
     design/observatorio/VARRIMENTO-2026-10-11.md:5 (perto do diff)
     ledger/README.md:572 (perto do diff)
     ledger/README.md:584 (perto do diff)
@@ -328,6 +452,13 @@
     design/especime-v3/INVENTARIO-FRASES.md:1833
     design/especime-v3/INVENTARIO-FRASES.md:4262
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:684
-43 decisão(ões) citada(s) em 54 ficheiro(s) de texto
+    design/especime-v3/medicoes/v2a-2026-10-12/decisoes-finais-sitio.log:324 (perto do diff)
+§1.190 · As alavancas 1, 2 e 4 do plano de eficiência aterram: o construtor comita pelo escrivão e a sandbox não escala, as saídas longas ficam no disco e os comandos longos esperam numa só chamada, e o custo de cada passagem lê-se em pontos da semana antes e depois
+    scripts/leituras/PROMPT-construtor-comum.md:1 (perto do diff)
+    scripts/leituras/capturar-pelo-escrivao.sh:3 (perto do diff)
+    scripts/leituras/escrivao.py:2
+    scripts/leituras/pontos.py:3
+    scripts/leituras/portoes-pelo-escrivao.sh:3 (perto do diff)
+54 decisão(ões) citada(s) em 216 ficheiro(s) de texto
 18 ficheiro(s) binário(s) saltado(s): ledger/provas/v2a/pcp-afirmacao.html.gz, ledger/provas/v2a/rtp-amaro.html.gz, ledger/provas/v2a/rtp-queda.html.gz, …
 conhecido-positivo: a §1.98 lida em scripts/check-lugar.mjs, e o nome que não existe (scripts/leituras/este-ficheiro-nao-existe-p4c.mjs) recusado como ilegível

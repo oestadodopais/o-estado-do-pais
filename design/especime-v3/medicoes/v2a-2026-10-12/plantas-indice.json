@@ -1,0 +1,41 @@
+{
+  "cabeca": "12c66378c648680d05676eac97b3ae62eca2780e",
+  "plantas": [
+    {
+      "nome": "V2A: coluna da Saúde trocada",
+      "id": "oe-2027-saude-despesa-total-consolidada-2027",
+      "localizador": "Quadro 5.37, programa Saúde (PL15), Despesa total consolidada, 2026, Estimativa, p. 303 do PDF (287 impressa)",
+      "mordeu": true,
+      "queixa_I1": "ledger/claims/oe-2027-saude-despesa-total-consolidada-2027.yml: traz o rótulo \"Despesa total consolidada\" e o localizador \"Quadro 5.37, programa Saúde (PL15), Despesa total consolidada, 2026, Estimativa, p. 303 do PDF (287 impressa)\", que não é nenhuma das 22 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · AA08b, Quadro 49 do RASARP, baixa continental e cobertura · p.<n>, linha <n>, campo <n> · página e figura da redução cumulativa da pensão · página e parágrafo da penalização legal · <folha>, linha <n>, coluna <n> · JD1, juros no quadro 9 do INE · JD1, PIB no quadro 1 do INE · JD1, juros no quadro 1 da execução · JD1, custo da dívida no gráfico do IGCP · JD1, saldo da dívida direta do IGCP · JD1, quadro anual do financiamento do IGCP · JD1, coordenada dos juros da União · V2A, rótulo da célula ou da afirmação). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+      "nome_projeto_preservado": false,
+      "queixas_I3": [
+        "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+        "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+      ]
+    },
+    {
+      "nome": "V2A: linha das PPP trocada",
+      "id": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "localizador": "Quadro 4.25, setor rodoviário, receitas, 2027, p. 123 do PDF (107 impressa)",
+      "mordeu": true,
+      "queixa_I1": "ledger/claims/oe-2027-ppp-rodoviario-encargos-liquidos-2027.yml: traz o rótulo \"Rodoviário\" e o localizador \"Quadro 4.25, setor rodoviário, receitas, 2027, p. 123 do PDF (107 impressa)\", que não é nenhuma das 22 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · AA08b, Quadro 49 do RASARP, baixa continental e cobertura · p.<n>, linha <n>, campo <n> · página e figura da redução cumulativa da pensão · página e parágrafo da penalização legal · <folha>, linha <n>, coluna <n> · JD1, juros no quadro 9 do INE · JD1, PIB no quadro 1 do INE · JD1, juros no quadro 1 da execução · JD1, custo da dívida no gráfico do IGCP · JD1, saldo da dívida direta do IGCP · JD1, quadro anual do financiamento do IGCP · JD1, coordenada dos juros da União · V2A, rótulo da célula ou da afirmação). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+      "nome_projeto_preservado": false,
+      "queixas_I3": [
+        "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+        "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+      ]
+    },
+    {
+      "nome": "V2A: página do CFP trocada",
+      "id": "oe-2027-cenario-ihpc-2026",
+      "localizador": "Quadro 1, IHPC, 2026, p. 19",
+      "mordeu": true,
+      "queixa_I1": "ledger/claims/oe-2027-cenario-ihpc-2026.yml: traz o rótulo \"IHPC\" e o localizador \"Quadro 1, IHPC, 2026, p. 19\", que não é nenhuma das 22 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · AA08b, Quadro 49 do RASARP, baixa continental e cobertura · p.<n>, linha <n>, campo <n> · página e figura da redução cumulativa da pensão · página e parágrafo da penalização legal · <folha>, linha <n>, coluna <n> · JD1, juros no quadro 9 do INE · JD1, PIB no quadro 1 do INE · JD1, juros no quadro 1 da execução · JD1, custo da dívida no gráfico do IGCP · JD1, saldo da dívida direta do IGCP · JD1, quadro anual do financiamento do IGCP · JD1, coordenada dos juros da União · V2A, rótulo da célula ou da afirmação). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+      "nome_projeto_preservado": false,
+      "queixas_I3": [
+        "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+        "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+      ]
+    }
+  ]
+}

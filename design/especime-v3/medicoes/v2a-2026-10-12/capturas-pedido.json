@@ -1,20 +1,50 @@
 {
-  "cabeca": "6618ddb5570a6642e7a3cc04829ab8aac0d7021a",
+  "cabeca": "12c66378c648680d05676eac97b3ae62eca2780e",
   "paginas": [
     {
       "nome": "saude-total",
       "pt": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027/",
-      "en": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027/"
+      "en": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
     },
     {
       "nome": "ppp-liquidos",
       "pt": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/",
-      "en": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/"
+      "en": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
     },
     {
       "nome": "afirmacao-pcp",
       "pt": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/",
-      "en": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/"
+      "en": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/",
+      "recortes": [
+        {
+          "nome": "cabeca",
+          "seletor": ".linha-cabeca"
+        },
+        {
+          "nome": "fonte",
+          "seletor": ".aparelho"
+        }
+      ]
     }
   ]
 }

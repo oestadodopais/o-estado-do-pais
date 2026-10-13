@@ -1,10 +1,10 @@
 # V2-a: fontes da vigilância seladas no motor
 
-As células e as palavras foram lidas nos documentos alojados. O memorando serviu de expectativa, não de origem dos valores. A página do painel pertence ao V2-b e não foi criada. A primeira entrega ficou incompleta pelo arranque do Chromium na sandbox. A retoma pelo escrivão permitiu executar o navegador e revelou as falhas do índice descritas em V2A-15; a aceitação depende da corrida posterior à correção.
+As células e as palavras foram lidas nos documentos alojados. O memorando serviu de expectativa, não de origem dos valores. A página do painel pertence ao V2-b e não foi criada. A retoma pelo escrivão concluiu os quatro portões com código 0 e produziu as capturas dos três recibos nas duas edições. A primeira corrida com navegador revelou as falhas I1 e I2, corrigidas em V2A-15 antes da corrida final.
 
 ## Cabeças e âmbito
 
-Cabeça do código do sítio: `6618ddb5570a6642e7a3cc04829ab8aac0d7021a`. Cabeça do código do motor: `dfeca64d1d53d7af1c776c159c4e4c2044257cd2`. Os commits posteriores de entrega contêm apenas provas e este relatório; as cabeças finais ficam na resposta da passagem.
+Cabeça do código do sítio: `12c66378c648680d05676eac97b3ae62eca2780e`. Cabeça do código do motor: `dfeca64d1d53d7af1c776c159c4e4c2044257cd2`. Os commits posteriores de entrega contêm apenas provas e este relatório; as cabeças finais ficam na resposta da passagem.
 
 O guião do brief e `medir.py` contam 3211 linhas na partida e 3229 no fim, com 18 novas. A comparação dos objetos Git encontrou 0 linhas anteriores alteradas. As referências ao OE2027 passaram de 0 a 18. Os conhecidos-positivos do guião passaram.
 
@@ -76,6 +76,8 @@ As cinco plantas das afirmações alteram cópias em memória e exigem a mensage
 | Coluna trocada | Conferida no motor | `V2A coluna: coluna diferente da medida` |
 | Linha trocada | Conferida no motor | `V2A linha: linha diferente da medida` |
 
+As três plantas adicionais do índice também foram recusadas: «V2A: coluna da Saúde trocada», «V2A: linha das PPP trocada» e «V2A: página do CFP trocada». `plantas-indice.json` guarda, para cada uma, o localizador alterado, a queixa exata de I1 e as queixas de I3 nas duas edições.
+
 ## Questões V2A
 
 - V2A-1, aberta: a ligação aos termos da RTP devolveu 404. A licença de redistribuição integral não foi estabelecida. Guardou-se a cópia de conferência no motor e nas provas privadas, sem servir o artigo integral no sítio.
@@ -87,37 +89,35 @@ As cinco plantas das afirmações alteram cópias em memória e exigem a mensage
 - V2A-7, falha do instrumento: durante o hook do motor, o escrivão suspendeu o batimento porque espera pelo commit no mesmo ciclo. Os clientes deram ausência de batimento, mas os pedidos permaneceram na fila e os dois resultados posteriores confirmaram código 0. Não se repetiram esses pedidos nem se contornou o escrivão.
 - V2A-8, corrigida: o primeiro build recusou a nova fonte por faltar a declaração de Portugal no circuito do lugar. A declaração foi acrescentada antes da corrida final.
 - V2A-9, corrigida: o segundo build encontrou as linhas sem declaração de assunto. Foi declarada a base de fontes V2-a em `SEM_AREA`, seguindo o âmbito do brief e o precedente do OE1/JD1.
-- V2A-10, aberta por sandbox: as capturas não se produziram. O Chromium foi recusado por `bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.41425: Permission denied (1100)` e a alternativa de controlo visual devolveu `Browser is not available: iab`, com a lista de navegadores vazia. Não se pediu escalada. O pedido, guião e erro completo estão no pacote.
+- V2A-10, resolvida na retoma: a recusa do Chromium na sandbox permanece documentada em `capturas/capturas.json`, mas as capturas finais correram pelo escrivão, como decidido em V2A-14. O recibo final está em `design/especime-v3/capturas/v2a-2026-10-12/capturas.json`.
 - V2A-11, corrigida: o inventário conservava as contagens anteriores do índice e não tinha entrada de revisão do V2-a. As contagens foram lidas do HTML; o registo novo declara a leitura cruzada como por ler.
 - V2A-12, corrigida: faltavam as declarações de língua dos títulos, rótulos e fontes. Os nomes portugueses foram declarados como tal; o ano e a data da edição ficaram sem língua natural.
 - V2A-13, corrigida por medição: a L1 passa de 2 744 páginas anteriores, já medidas na RP4-n-j, para 2 780 com os 36 recibos V2-a. Cada recibo novo repete apenas a porta do Método, duas vezes. O registo guarda os destinos e quatro plantas adicionais. A prova histórica não guardava os destinos por página; esse limite está declarado em `l1-v2a.json`.
 
 - V2A-14, decisão de execução: os portões passam pelo `portoes-pelo-escrivao.sh`, fora da sandbox, porque o Chromium das conferências não arranca dentro dela. As capturas seguem pelo `capturar-pelo-escrivao.sh`, usando o guião comum e a cabeça do `dist/`. Estes percursos foram fornecidos pelo lugar de direção na retoma; não se pediu escalada nem se dispensou qualquer controlo.
-- V2A-15, correção em conferência: a primeira corrida pelo escrivão revelou que I1 desconhecia os localizadores V2-a e I2 encontrava a edição datada das três afirmações em ISO. A régua independente passa a conferir os localizadores contra a identidade, o rótulo, o período, a coluna e a página; três plantas trocam coluna, linha e página. A edição datada passa pelo formato da casa e pelo controlo da origem em `check:formas`. As linhas e os documentos selados permanecem intactos.
+- V2A-15, corrigida e conferida: a primeira corrida pelo escrivão revelou que I1 desconhecia os localizadores V2-a e I2 encontrava a edição datada das três afirmações em ISO. A régua independente passa a conferir os localizadores contra a identidade, o rótulo, o período, a coluna e a página; três plantas trocam coluna, linha e página. A edição datada passa pelo formato da casa e pelo controlo da origem em `check:formas`. As linhas e os documentos selados permanecem intactos.
 
 ## Portões e capturas
 
-A primeira corrida pelo escrivão está em `portoes/escrivao-primeira`: build 0, verify 1, typecheck 0 e motor 0. O verify recusou apenas `check:indice`, pelas causas de V2A-15.
-
-Os códigos históricos seguintes foram lidos dos ficheiros, depois de os processos terminarem. A cabeça do código do sítio coincide no início e no fim da corrida, com árvore limpa. O motor conserva a sua cabeça na corrida final própria.
+Os códigos seguintes foram lidos dos ficheiros depois de os processos terminarem. A árvore estava limpa no início da corrida. As cabeças do sítio e do motor coincidem no início e no fim; o estado final do sítio lista apenas as provas criadas pela própria corrida. O `verify.json` confirma que os ficheiros da construção e da árvore conferidos não mudaram durante o verify.
 
 | Conferência | Código | Ficheiro |
 |---|---:|---|
 | Motor inicial | 0 | `portoes/inicial.codigo` |
 | Livro inicial | 0 | `portoes/ledger-inicial.codigo` |
-| Motor na cabeça do código | 0 | `portoes/primeira-corrida/motor.codigo` |
-| Build final | 0 | `portoes/final/build.codigo` |
-| Verify final | 1 | `portoes/final/verify.codigo` |
-| Typecheck final | 0 | `portoes/final/typecheck.codigo` |
-| Livro final | 0 | `portoes/ledger-final.codigo` |
-| Cruzamento com a origem | 0 | `portoes/cruzamento-final.codigo` |
-| Capturas | 1 | `portoes/capturas.codigo` |
+| Build final | 0 | `portoes/build.codigo` |
+| Verify final | 0 | `portoes/verify.codigo` |
+| Typecheck final | 0 | `portoes/typecheck.codigo` |
+| Motor final | 0 | `portoes/motor.codigo` |
+| Livro na cabeça do código | 0 | `portoes/ledger-retoma.codigo` |
+| Cruzamento com a origem | 0 | `portoes/cruzamento-retoma.codigo` |
+| Capturas pelo escrivão | 0 | `portoes/capturas-retoma.codigo` |
 
-O verify final tem 8 comandos recusados no arranque do Chromium: `npm run check:moldura`, `npm run check:alvos`, `npm run check:indice`, `npm run check:cabeca`, `npm run check:primeira`, `npm run check:leituras`, `npm run check:frases-compostas`, `npm run check:incorporar`. Todos os erros de arranque estão discriminados em `portoes/final/falhas.json`. O log completo permanece ao lado. Nenhum destes controlos foi dispensado ou enfraquecido.
+Os portões finais correram por `sh scripts/leituras/portoes-pelo-escrivao.sh design/especime-v3/medicoes/v2a-2026-10-12/portoes motor`, depois de aguardar a tranca ocupada por outra worktree. Nenhum controlo foi dispensado ou enfraquecido. A primeira corrida pelo escrivão está em `portoes/escrivao-primeira`, com build 0, verify 1, typecheck 0 e motor 0. O único comando recusado foi `check:indice`, pelas causas de V2A-15.
 
-A tentativa de captura produziu zero imagens, com código 1. `capturas/capturas.json` guarda a falha na cabeça tentada; `capturas-pedido-tentado.json` identifica esse pedido. `capturas-pedido.json` aponta a cabeça final do código para repetir as três páginas, nas duas edições e a 390 e 1 280 px. O navegador da sessão também estava indisponível. Não houve inspeção visual dos recibos nem se apresentam as capturas como concluídas. Os recortes dos PDF de origem foram renderizados e inspecionados durante a leitura das células.
+As capturas finais foram produzidas por `capturar-pelo-escrivao.sh`, com `capturas-pedido.json` e o guião comum `scripts/leituras/captar.mjs`. Estão em `design/especime-v3/capturas/v2a-2026-10-12/`: 30 páginas inteiras e 60 recortes da cabeça e da ficha da fonte. Cobrem Saúde total de 2027, encargos líquidos rodoviários e afirmação do PCP, em português e inglês, a 390, 768, 1 024, 1 280 e 1 600 px. O recibo guarda a cabeça do código, os SHA256 das imagens e dos recursos, sem erros do navegador, recursos em falta ou pedidos externos. Todas as larguras medidas coincidem com a janela, sem transbordo horizontal. A inspeção visual das 12 páginas a 390 e 1 280 px consta de `capturas-inspecao.json`.
 
-As corridas anteriores, com os códigos vermelhos e as causas corrigidas, ficam em `portoes/primeira-corrida`, `segunda-corrida`, `terceira-corrida` e `quarta-corrida`. A primeira também contém o core.gate final do motor. A nova corrida é `portoes/final`.
+A tentativa anterior dentro da sandbox produziu zero imagens e permanece em `capturas/capturas.json`, com o pedido em `capturas-pedido-tentado.json`. As corridas anteriores, com as causas corrigidas e as recusas do Chromium, ficam em `portoes/primeira-corrida`, `segunda-corrida`, `terceira-corrida`, `quarta-corrida` e `final`. A corrida aceite fica diretamente em `portoes/`.
 
 O cruzamento mantém o aviso anterior do resumo global do livro do OE2026; os resumos de todas as linhas coincidem. O livro mantém os avisos anteriores da história de endereços. A leitura cruzada do inventário pelo Opus continua por fazer, como previsto no brief.
 
@@ -129,7 +129,12 @@ O cruzamento mantém o aviso anterior do resumo global do livro do OE2026; os re
 - sitio: `7e13add1c2f5da1d87e7d3f1004ee449814dd9a4`: V2-a: declarar o âmbito das fontes na cobertura por área.
 - sitio: `e47fed728434cfbe8e1b0d2358cd6c69ba5839af`: V2-a: declarar a língua das fontes e atualizar o inventário das frases.
 - sitio: `6618ddb5570a6642e7a3cc04829ab8aac0d7021a`: V2-a: medir as portas dos recibos e atualizar o registo da L1.
+- sitio: `230b5b4685dd98a958b595455397ac8e6ba9f11c`: O escrivão corre os três portões do sítio fora da sandbox a pedido do construtor (portoes-pelo-escrivao.sh): o navegador das conferências não arranca dentro dela, como a segunda paragem da higiene mostrou; o prompt comum diz o caminho novo; o pontos.py conta uma sessão retomada pelos turnos dentro do intervalo.
+- sitio: `7339203828816e4e9f00ea77e6decc6a4d2df4a9`: O escrivão captura as páginas fora da sandbox a pedido do construtor (capturar-pelo-escrivao.sh, só o captar.mjs do repositório, sobre o dist da worktree): o navegador não arranca dentro dela, como a V2-a e a higiene mostraram.
+- sitio: `12c66378c648680d05676eac97b3ae62eca2780e`: V2-a: conferir localizadores e apresentar a edição datada.
 - motor: `dfeca64d1d53d7af1c776c159c4e4c2044257cd2`: V2-a: selar fontes do OE2027 e afirmações públicas.
+
+A primeira entrega das provas ficou no commit `5bebb8a75050c3782143009594354d6ba73f4a8c`. O commit `12c66378c648680d05676eac97b3ae62eca2780e` também guarda as provas da primeira corrida pelo escrivão. A cabeça posterior desta entrega contém apenas o relatório, as medições e as capturas.
 
 ## Regeneração e custo
 
