@@ -1,0 +1,313 @@
+{
+  "seguidos": 3854,
+  "achados": [
+    {
+      "ficheiro": "BRIEF.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "NEXT.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "archive/2026-07-24 Portugal Knowledge Hub INDEX.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/01 Energy Water and Climate/Onde Está a Água — Technical Source/build_onde_payload.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/01 Energy Water and Climate/Onde Está a Água — Technical Source/make_onde.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/01 Energy Water and Climate/Onde Está a Água — Technical Source/make_onde_pt.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/01 Energy Water and Climate/Onde Está a Água — Technical Source/recovery/gap_A_desalination.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/01 Energy Water and Climate/Onde Está a Água — Technical Source/recovery/gap_C_irrigation_efficiency.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/01 Energy Water and Climate/Water Distribution Losses — Technical Source/build_payload.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/01 Energy Water and Climate/Water Distribution Losses — Technical Source/make_pt.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/01 Energy Water and Climate/Water Distribution Losses — Technical Source/reconcile.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/02 AI and Digital Strategy/OPEN PORTUGAL AI PRESENTATION.command",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/02 AI and Digital Strategy/Portugal-AI-Era-Interactive-Presentation/OPEN_PRESENTATION.command",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/02 AI and Digital Strategy/Portugal-AI-Era-Interactive-Presentation/open-presentation.applescript",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/08 Évora Mandates/Technical Source/raw/workforce.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2015.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2016.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2017.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2018.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2019.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2021.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2022.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2023.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2025.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/11 Seguranca Social/LEITURA-CODEX-2026-09-01.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/12 Concelhos/BRIEF-P1-linhas-dos-308.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/12 Concelhos/BRIEF-P2-ilhas-e-releitura.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/13 Dominios/LEITURA-CODEX-2026-09-01.plantas.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/13 Dominios/medicao-sonnet-2026-09-01.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/13 Dominios/plantas-sonnet-2026-09-01.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/14 Évora 2027/Technical Source/fetch.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/14 Évora 2027/Technical Source/leituras-a-frio/2026-09-16-codex-leitura-e1-segunda.plantas.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/14 Évora 2027/Technical Source/leituras-a-frio/2026-09-16-codex-leitura-e1.plantas.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/15 Orcamento do Estado 2027/Technical Source/LEVANTAMENTO-das-fontes-2026-09-21.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "content/README.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "core/sweep.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/PILOTO-CORREDOR-2026-09-01.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/RELATORIO-calendario-2026-09-04.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/RELATORIO-calendario-b-2026-09-08.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/RELATORIO-calendario-comparar-2026-09-08.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/RELATORIO-conferencias-2026-09-03.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/RELATORIO-corredor-2026-09-03.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/RELATORIO-vigia-2026-09-08.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/coverage/register-candidates.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/coverage/work/checks/g3-sistemas-fisicos.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/coverage/work/desks/g3-sistemas-fisicos.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/coverage/work/desks/g4-territorio-pessoas.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/coverage/work/desks/g5-servicos.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/coverage/work/desks/g6-instituicoes-cultura.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/fixtures/monthly-68318e0.sh",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/out/nomes-conferidos-2026-09-21/LEITURA-codex-2026-09-22.plantas.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/out/nomes-conferidos-2026-09-21/PROMPT-passagem-2.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/out/nomes-conferidos-2026-09-21/PROMPT-passagem-3.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/out/nomes-conferidos-2026-09-21/conferencia-cega/chave.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/out/nomes-conferidos-2026-09-21/varrimento.txt",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/out/rp1-2026-09-26/travessia.log",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/provar_fluxo.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "indicators/rotinas_f22c_test.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "publisher/RELATORIO-leitor-2026-09-07.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "publisher/RELATORIO-nomes-2026-09-04.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "publisher/RELATORIO-portao-ci-2026-09-02.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "publisher/dominios_test.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "publisher/estimativa-b2-2026-08-23/blocks.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "publisher/estimativa-b2-2026-08-23/inventario.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "publisher/estimativa-b2-2026-08-23/record.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "publisher/fixtures/ORIGEM.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "publisher/mapa-2026-08-27/BRIEF-mapa-distritos.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "publisher/oe1_run.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "publisher/releitura_concelhos.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "publisher/verificacoes/2026-08-15-releitura-cega-evora/RELATORIO.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "publisher/verificacoes/2026-08-15-releitura-cega-evora/registo.json",
+      "protegido": false
+    },
+    {
+      "ficheiro": "publisher/verificacoes/2026-08-15-releitura-cega-evora/transcrever.py",
+      "protegido": false
+    },
+    {
+      "ficheiro": "publisher/voz-2026-08-24/BRIEF-S2-ferramenta.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "publisher/voz-2026-08-24/inventario-cego-REPORT.md",
+      "protegido": false
+    },
+    {
+      "ficheiro": "requirements.lock.txt",
+      "protegido": false
+    },
+    {
+      "ficheiro": "sweeps/com.<identificador-local>.researchhub-sweep.plist.pre-2026-08-16.bak",
+      "protegido": true
+    },
+    {
+      "ficheiro": "sweeps/monthly.sh",
+      "protegido": true
+    }
+  ]
+}
