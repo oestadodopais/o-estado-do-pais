@@ -77,6 +77,51 @@ def validar(repo, pedido):
     return None
 
 
+def e_motor(repo):
+    return (pathlib.Path(repo) / 'core' / 'gate.py').exists()
+
+
+def iniciar_portoes(repo, pedido, repos):
+    """Os três portões do sítio fora da sandbox, a pedido do construtor (13.10.2026, a primeira passagem com a
+    aprovação a `never`): o navegador das conferências (Playwright) não arranca dentro da sandbox do Codex, e sete
+    conferências do `verify` fecham por isso. O escrivão corre `portoes.sh` na worktree, com a pasta de saída dentro
+    dela ou em /tmp, e com `OEDP_CONFERIR_MOTOR=1` quando o pedido traz `motor`. Devolve o processo, para o ciclo
+    continuar a bater enquanto ele corre, ou um resultado de recusa."""
+    saida = pedido.get('saida')
+    if not isinstance(saida, str) or not saida:
+        return {'codigo': 2, 'recusa': 'pedido de portões sem pasta de saída'}
+    raiz = pathlib.Path(os.path.realpath(repo))
+    destino = pathlib.Path(saida) if os.path.isabs(saida) else raiz / saida
+    pai_real = pathlib.Path(os.path.realpath(destino if destino.exists() else destino.parent))
+    em_tmp = str(pai_real).startswith(('/tmp/', '/private/tmp/')) or pai_real in (pathlib.Path('/tmp'), pathlib.Path('/private/tmp'))
+    if not (pai_real == raiz or raiz in pai_real.parents or em_tmp):
+        return {'codigo': 2, 'recusa': f'a pasta de saída tem de ficar na worktree ou em /tmp: {saida}'}
+    guiao = raiz / 'scripts' / 'leituras' / 'portoes.sh'
+    if not guiao.exists():
+        return {'codigo': 2, 'recusa': 'esta worktree não tem scripts/leituras/portoes.sh; os três portões são do sítio'}
+    ambiente = dict(os.environ)
+    motores = [r for r in repos if e_motor(r)]
+    if motores:
+        ambiente['RESEARCHHUB_DIR'] = motores[0]
+    if pedido.get('motor'):
+        if not motores:
+            return {'codigo': 2, 'recusa': 'pediu o portão do motor e o lançador não deu nenhuma worktree do motor'}
+        ambiente['OEDP_CONFERIR_MOTOR'] = '1'
+    return subprocess.Popen(['sh', str(guiao), str(raiz), str(destino)], cwd=str(raiz), env=ambiente,
+                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+
+
+def concluir_portoes(repo, pedido, processo, saida_texto):
+    raiz = pathlib.Path(os.path.realpath(repo))
+    destino = pathlib.Path(pedido['saida']) if os.path.isabs(pedido['saida']) else raiz / pedido['saida']
+    codigos = {}
+    for g in ('build', 'verify', 'typecheck', 'motor'):
+        f = destino / f'{g}.codigo'
+        if f.exists():
+            codigos[g] = f.read_text(encoding='utf-8').strip()
+    return {'codigo': processo.returncode, 'codigos': codigos, 'saida': saida_texto[-6000:]}
+
+
 def executar(repo, pedido):
     recusa = validar(repo, pedido)
     if recusa:
@@ -132,6 +177,26 @@ def principal(argv):
                     continue
                 if not isinstance(dados, dict):
                     escrever_resultado(pedido, {'codigo': 2, 'recusa': 'o pedido não é um objeto JSON'})
+                    continue
+                if dados.get('tipo') == 'portoes':
+                    processo = iniciar_portoes(repo, dados, list(pastas))
+                    if isinstance(processo, dict):
+                        escrever_resultado(pedido, processo)
+                        continue
+                    print(f"{agora()} {pedido.name}: portões a correr (pid {processo.pid})", flush=True)
+                    inicio = time.time()
+                    while processo.poll() is None:
+                        for outra in pastas.values():
+                            (outra / 'batimento').write_text(agora() + '\n', encoding='utf-8')
+                        if time.time() - inicio > 3000:
+                            processo.kill()
+                            processo.wait()
+                            break
+                    saida_texto = processo.stdout.read() if processo.stdout else ''
+                    resultado = concluir_portoes(repo, dados, processo, saida_texto)
+                    if time.time() - inicio > 3000:
+                        resultado['recusa'] = 'os portões passaram de cinquenta minutos e foram interrompidos'
+                    escrever_resultado(pedido, resultado)
                     continue
                 escrever_resultado(pedido, executar(repo, dados))
         time.sleep(2)

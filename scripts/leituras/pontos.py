@@ -94,9 +94,16 @@ def passagem(inicio, fim, worktree, saida_json):
     leituras_conta = sorted(l for _, _, _, ls in todas for l in ls)
     antes_ = [l for l in leituras_conta if l[0] < inicio]
     depois_ = [l for l in leituras_conta if l[0] <= fim]
-    candidatas = [(c, m, t, ls) for c, m, t, ls in todas
-                  if t and m.get('cwd') and os.path.realpath(m['cwd']) == alvo and not e_guardian(m)
-                  and t[0][0] >= inicio - datetime.timedelta(seconds=120) and t[0][0] <= fim]
+    # A passagem é a sessão lançada nesta worktree com turnos dentro do intervalo; uma sessão retomada
+    # (retomar-codex.sh) começou antes do intervalo, por isso contam-se só os turnos e as leituras dentro dele.
+    margem = datetime.timedelta(seconds=120)
+    candidatas = []
+    for c, m, t, ls in todas:
+        if not (t and m.get('cwd') and os.path.realpath(m['cwd']) == alvo and not e_guardian(m)):
+            continue
+        dentro = [(marca, uso) for marca, uso in t if inicio - margem <= marca <= fim]
+        if dentro:
+            candidatas.append((c, m, dentro, [l for l in ls if inicio - margem <= l[0] <= fim]))
     candidatas.sort(key=lambda x: x[2][0][0])
     resultado = {'inicio': inicio.isoformat(), 'fim': fim.isoformat(), 'worktree_sha1_12': __import__('hashlib').sha1(alvo.encode()).hexdigest()[:12]}
     # «Antes» é a primeira leitura da própria passagem quando a há (o primeiro turno quase não gasta), senão a
