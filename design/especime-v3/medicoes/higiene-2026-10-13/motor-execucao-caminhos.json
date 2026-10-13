@@ -1,0 +1,50 @@
+[
+  {
+    "ficheiro": "content/01 Energy Water and Climate/Onde Está a Água — Technical Source/build_onde_payload.py",
+    "variavel": "SP"
+  },
+  {
+    "ficheiro": "content/01 Energy Water and Climate/Onde Está a Água — Technical Source/make_onde.py",
+    "variavel": "SP"
+  },
+  {
+    "ficheiro": "content/01 Energy Water and Climate/Onde Está a Água — Technical Source/make_onde_pt.py",
+    "variavel": "SP"
+  },
+  {
+    "ficheiro": "content/01 Energy Water and Climate/Water Distribution Losses — Technical Source/build_payload.py",
+    "variavel": "SP"
+  },
+  {
+    "ficheiro": "content/01 Energy Water and Climate/Water Distribution Losses — Technical Source/make_pt.py",
+    "variavel": "SP"
+  },
+  {
+    "ficheiro": "content/01 Energy Water and Climate/Water Distribution Losses — Technical Source/reconcile.py",
+    "variavel": "SP"
+  },
+  {
+    "ficheiro": "content/13 Dominios/medicao-sonnet-2026-09-01.py",
+    "variavel": "PASTA_TMP"
+  },
+  {
+    "ficheiro": "content/14 Évora 2027/Technical Source/fetch.py",
+    "variavel": "ORIGENS_CONHECIDAS"
+  },
+  {
+    "ficheiro": "publisher/estimativa-b2-2026-08-23/blocks.py",
+    "variavel": "ROOT"
+  },
+  {
+    "ficheiro": "publisher/estimativa-b2-2026-08-23/inventario.py",
+    "variavel": "ROOT"
+  },
+  {
+    "ficheiro": "publisher/estimativa-b2-2026-08-23/record.py",
+    "variavel": "ROOT"
+  },
+  {
+    "ficheiro": "publisher/verificacoes/2026-08-15-releitura-cega-evora/transcrever.py",
+    "variavel": "TRANSCRIPT"
+  }
+]

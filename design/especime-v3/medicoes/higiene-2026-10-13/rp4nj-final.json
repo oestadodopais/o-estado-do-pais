@@ -1,0 +1,23 @@
+{
+  "comando": "node design/especime-v3/medicoes/rp4n-2026-10-06/inventario-j.mjs",
+  "versao": {
+    "commit": "996a388918d1d4183d2d00700bdd62157f0b0fa8",
+    "ref": "higiene-2026-10-13",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-13T20:48:54.837Z"
+  },
+  "paginas": [
+    {
+      "ficheiro": "dist/livro-razao/index.html",
+      "sha256": "e3c6b4b9ffa31dc3d62734f7224b208c3f7dab51035da6535c7ffc788e5e9819",
+      "texto": "3 208 afirmações · 368 de 3 208 calculadas · 2 767 de 3 208 linhas de concelhos"
+    },
+    {
+      "ficheiro": "dist/en/ledger/index.html",
+      "sha256": "5176987688aab1914e3dd8b44900007e6078abf1fbac07d69e4e016947e34600",
+      "texto": "3 208 claims · 368 of 3 208 calculated · 2 767 of 3 208 municipality rows"
+    }
+  ]
+}

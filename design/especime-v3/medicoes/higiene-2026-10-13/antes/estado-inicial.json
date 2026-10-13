@@ -1,0 +1,24 @@
+{
+  "sitio": {
+    "cabeca": "445451896a74222a4c489b704ea9caf19039a270",
+    "arvore_inicial": "limpa, observada antes dos portões",
+    "ultimos_commits": [
+      "44545189 Os briefs V2-a e V2-b com os guiões do §0 (BRIEF-V2a.py, BRIEF-V2b.py), o mandato do bloco de higiene de 13.10.2026 e o varrimento de vigilância de 13.10",
+      "d86ed2e0 A tranca dos portões aponta-se por OEDP_TRANCA só no ensaio (tests/leituras/portoes.py procurava-a no Git comum e fechou a corrida 38440931657); a tranca real fica em <temporario>, e a §1.190 regista a corrida vermelha",
+      "4156dd3f As alavancas 1, 2 e 4 do plano de eficiência (§1.190, M78 a M81): o construtor comita pelo escrivão e a sandbox não escala (sem --approve-for-me, aprovação a never, a tranca dos portões em <temporario>), o invólucro curto.sh e o prompt comum dos construtores (saídas no disco, sem sondagem, leitura por grep), o pontos.py nos lançadores (os pontos da semana antes e depois de cada passagem), e o rasto do pacote anonimizado e recusado se sobrar um caminho",
+      "f297b8da O plano de eficiência de 13.10.2026 no prompt da sessão seguinte (o que se mediu nos registos do Codex, as cinco alavancas com a decisão do financiador, a ordem da sessão, o que não muda, mais melhorias por avaliar) e a errata da linha do custo de 12.10: a semana do Codex abriu a 18 %, não a 44 %",
+      "44f0b69e Os tetos do uso ficam suspensos pela palavra do financiador (§1.189): a regra 10 e o passo 2 do CLAUDE.md dizem-no, a linha nos pendentes dele, e o acrescento da manhã de 13.10 ao prompt da sessão seguinte"
+    ]
+  },
+  "motor": {
+    "cabeca": "2d69712b18404d2e45ebfe34e16f486fddd01ea6",
+    "arvore_inicial": "limpa, observada antes dos portões",
+    "ultimos_commits": [
+      "2d69712 Merge branch 'master' into vigilancia-2026-10-07",
+      "51fdc31 V1-d: registar o par operacional aceite e os resumos verificados",
+      "f36540d V1-d, achado 9: explicitar o âmbito das falhas na abertura do resumo",
+      "b75f317 fix(rp4nj): declarar segunda fonte da definição da série JD1",
+      "570f0f3 V1-d, achado 13: mostrar suites e plantas no portão e documentar a passagem"
+    ]
+  }
+}

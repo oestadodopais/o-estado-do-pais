@@ -300,6 +300,7 @@ import { AREAS } from '../src/data/areas.mjs';
 import { CHAVE_DAS_PECAS } from '../src/lib/prova.mjs';
 import { slugDeConcelho } from '../src/lib/inicio.mjs';
 import { tituloDaLinha, descricaoDaLinha } from '../src/lib/livro.mjs';
+import { conferirAusenciaNosMetadados } from '../tests/cartao/metadados.mjs';
 import { matchPath, routePath, HREFLANG, LANGS, PRIMARY_LANG } from '../src/lib/routes.mjs';
 import {
   DIMENSOES as MEDIDAS_DO_CARTAO,
@@ -5092,6 +5093,7 @@ for (const file of ficheirosHtml(DIST)) {
    * livro-razão e exige que sejam iguais aos construídos.
    */
   if (claimDaPagina) {
+    for (const falta of conferirAusenciaNosMetadados(root, claimDaPagina, rota.lang)) err(falta);
     const tituloEsperado = tituloDaLinha(claimDaPagina, rota.lang);
     const descricaoEsperada = descricaoDaLinha(claimDaPagina, rota.lang);
     const conteudoDe = (prop) =>

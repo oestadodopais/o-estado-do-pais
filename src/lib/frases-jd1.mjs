@@ -15,11 +15,11 @@ export function parcelaDoFinanciamento(id, lang) {
     if (atual === null || anterior === null) throw new Error('JD1: a parcela não tem dois montantes comparáveis.');
     const diferenca = atual - anterior;
     const comparacao = lang === 'pt'
-      ? diferenca > 0 ? 'Mais do que' : diferenca < 0 ? 'Menos do que' : 'O mesmo montante que'
-      : diferenca > 0 ? 'More than' : diferenca < 0 ? 'Less than' : 'The same amount as';
+      ? diferenca > 0 ? 'A parcela foi maior do que a registada' : diferenca < 0 ? 'A parcela foi menor do que a registada' : 'A parcela foi igual à registada'
+      : diferenca > 0 ? 'The portion was greater than that' : diferenca < 0 ? 'The portion was smaller than that' : 'The portion was equal to that';
     return lang === 'pt'
-      ? ['Das necessidades brutas de financiamento do Estado em ', { ref: quadro.cabecalho[2] }, ', ', { claim: FINANCIAMENTO_JD1 }, ' milhões de euros, estes ', { claim: id }, ' milhões serviram para reembolsar ou extinguir dívida fundada. ', comparacao, ' na coluna de ', { ref: quadro.cabecalho[1] }, ' do mesmo quadro.']
-      : ['Of the State’s gross financing needs in ', { ref: quadro.cabecalho[2] }, ', ', { claim: FINANCIAMENTO_JD1 }, ' million euros, these ', { claim: id }, ' million were used to repay or extinguish funded debt. ', comparacao, ' in the ', { ref: quadro.cabecalho[1] }, ' column of the same table.'];
+      ? ['Das necessidades brutas de financiamento do Estado em ', { ref: quadro.cabecalho[2] }, ', ', { claim: FINANCIAMENTO_JD1 }, ' milhões de euros, a parcela das amortizações e anulações foi de ', { claim: id }, ' milhões. ', comparacao, ' na coluna de ', { ref: quadro.cabecalho[1] }, ' do mesmo quadro.']
+      : ['Of the State’s gross financing needs in ', { ref: quadro.cabecalho[2] }, ', ', { claim: FINANCIAMENTO_JD1 }, ' million euros, the portion for redemptions and cancellations was ', { claim: id }, ' million. ', comparacao, ' in the ', { ref: quadro.cabecalho[1] }, ' column of the same table.'];
   }
   if (id !== FINANCIAMENTO_JD1) return null;
   return lang === 'pt'

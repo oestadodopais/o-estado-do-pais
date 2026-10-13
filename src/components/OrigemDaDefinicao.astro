@@ -93,6 +93,7 @@ const chaveDaPorta = origens.map((o) => {
   origens.map((o, i) => (
     <div class="def-origem" data-def-origem={o.chave}>
       <p class="def-origem-linha">
+        {o.rotulo && <><span data-verbatim={`origem-${o.chave}-rotulo`} lang={linguaDoDocumento(o)}>{o.rotulo}</span>{' · '}</>}
         <span class="def-origem-k">{s.prov.definicaoDe}</span>{' '}
         <span data-verbatim={`origem-${o.chave}-publicador`}>{o.publicador}</span>
         {' · '}

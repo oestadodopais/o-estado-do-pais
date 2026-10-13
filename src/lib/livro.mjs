@@ -14,7 +14,7 @@
  */
 
 import { routePath } from './routes.mjs';
-import { eDerivada, documentoDaLinha } from './ledger.mjs';
+import { eDerivada, documentoDaLinha, provenienciaIncompleta } from './ledger.mjs';
 import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
@@ -94,9 +94,8 @@ export function tituloDaLinha(claim, lang) {
 /**
  * A descrição de uma página de linha, composta dos campos da própria linha.
  *
- * Um campo por confirmar entra com a marca da língua da edição. A descrição de uma
- * linha incompleta diz que está incompleta; não se compõe uma frase que pareça
- * completa a partir de campos que não estão.
+ * Higiene b, 13.10.2026: não compor uma descrição que pareça completa quando
+ * há campos por confirmar. Omitir a marca exige declarar a ausência nas duas edições.
  *
  * @param {Linha} claim
  * @param {Lingua} lang
@@ -108,15 +107,19 @@ export function descricaoDaLinha(claim, lang) {
   if (eDerivada(claim)) {
     partes.push(s.prov.naoPublicado);
   }
-  if (claim.source) partes.push(`${s.prov.fonte}: ${claim.source}`);
+  const confirmado = (/** @type {unknown} */ v) => typeof v === 'string' && v.trim() && !/\[(?:a verificar|to verify)\]/i.test(v);
+  if (confirmado(claim.source)) partes.push(`${s.prov.fonte}: ${claim.source}`);
   const doc = documentoDaLinha(claim);
-  if (doc?.title) {
-    partes.push(`${doc.title} (${doc.edition})`);
+  if (doc && confirmado(doc.title)) {
+    partes.push(confirmado(doc.edition) ? `${doc.title} (${doc.edition})` : String(doc.title));
   }
   /* «Lido a 2026-08-12», não «Lido a: 2026-08-12» — o rótulo já traz a
      preposição. A fonte leva dois pontos porque o rótulo é um substantivo. */
-  if (claim.access_date) partes.push(`${claim.access_date_kind === 'hosted-copy' ? s.prov.copiaAlojada : s.prov.lido} ${claim.access_date}`);
-  if (claim.reference_date) partes.push(`${s.prov.referencia} ${claim.reference_date}`);
+  if (confirmado(claim.access_date)) partes.push(`${claim.access_date_kind === 'hosted-copy' ? s.prov.copiaAlojada : s.prov.lido} ${claim.access_date}`);
+  if (confirmado(claim.reference_date)) partes.push(`${s.prov.referencia} ${claim.reference_date}`);
+  if (provenienciaIncompleta(claim)) partes.push(lang === 'en'
+    ? 'Provenance fields unconfirmed at the source'
+    : 'Campos da proveniência por confirmar na fonte');
 
   return partes.join(' · ').replaceAll('[a verificar]', s.prov.marcadorDoSelo) + '.';
 }

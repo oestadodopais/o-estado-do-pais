@@ -136,6 +136,38 @@ try {
       await ctx.close();
     }
   }
+  // HIG-RP4N-22: mede a palavra na ligação da prova, nas duas edições.
+  for (const lang of ['pt','en']) for (const largura of LARGURAS) {
+    const rota=`/${lang==='pt'?'livro-razao':'en/ledger'}/penalizacao-legal-um-ano-antecipacao-2026/`;
+    const {ctx,pagina}=await abre(rota,largura);
+    const palavrasPartidas=() => {
+      let partidas=0, palavras=0;
+      for(const el of document.querySelectorAll('.linha-endereco-abrir')) {
+        const andar=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);
+        while(andar.nextNode()) {
+          const n=andar.currentNode;
+          for(const m of (n.textContent ?? '').matchAll(/\S+/gu)) {
+            const r=document.createRange();r.setStart(n,m.index);r.setEnd(n,m.index+m[0].length);
+            const topos=new Set([...r.getClientRects()].filter(r=>r.width>0).map(r=>Math.round(r.top)));
+            if(topos.size>1) partidas++;
+            palavras++;
+          }
+        }
+      }
+      return {partidas,palavras};
+    };
+    const conferirPalavras=m => !m.palavras||m.partidas ? [`FC3 · ${rota} a ${largura}: palavra partida na ligação da prova`] : [];
+    const controlo=await pagina.evaluate(palavrasPartidas);
+    erros.push(...conferirPalavras(controlo));
+    await pagina.evaluate(() => {
+      for(const el of document.querySelectorAll('.linha-endereco-abrir'))
+        el.setAttribute('style','display:block;width:1px;max-width:1px;white-space:normal;overflow-wrap:anywhere;word-break:break-all');
+    });
+    const estrago=await pagina.evaluate(palavrasPartidas);
+    plantas.push({nome:`palavra partida na prova, ${lang}, ${largura}`,mensagem:'FC3 · palavra partida na ligação da prova',
+      queixas:conferirPalavras(estrago),mordeu:conferirPalavras(controlo).length===0&&conferirPalavras(estrago).length>0});
+    await ctx.close();
+  }
   for (const p of plantas) if (!p.mordeu) erros.push(`FC · a planta «${p.nome}» não mordeu`);
   if (!resultados.some((r) => r.pedacos > 0)) erros.push('FC · nenhuma página teve um pedaço marcado: a célula não mediu nada');
   const resumo = { o_que_e: 'FC · as frases compostas da casa dentro de contentores flexíveis e os documentos mais largos do que a janela nas duas larguras, nas páginas onde as frases compostas se rendem.', construcao: versao.commit, construido_em: versao.construido_em, resultados, plantas, erros };

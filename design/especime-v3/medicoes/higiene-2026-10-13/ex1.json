@@ -1,0 +1,478 @@
+{
+  "auditoria": {
+    "erros": [],
+    "contas": {
+      "explicacoes": 1,
+      "folhas": 118,
+      "partes": 164,
+      "diz": 77,
+      "conta": 25,
+      "liga": 60,
+      "aponta": 2,
+      "leitura": 0,
+      "apoios": 113,
+      "origens": 6
+    }
+  },
+  "cenarios": {
+    "coexistencia": [
+      {
+        "lang": "pt",
+        "contas": [
+          {
+            "caminho": "seccoes[2].conteudo[1].paragrafo",
+            "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de −845,8 milhões de euros, um défice (gastou mais do que recebeu); é um défice menor do que o que o Orçamento previa para o ano inteiro (−1 789,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de 2025 incluem também as administrações regional e local."
+          },
+          {
+            "caminho": "seccoes[3].conteudo[0].paragrafo",
+            "texto": "No fim de 2025, a dívida pública valia 89,7 % do que o país produz num ano, acima dos 81,7 % da média da União Europeia, e as contas públicas fecharam o ano com um saldo de 0,7 % do produto, um excedente (recebeu mais do que gastou)."
+          }
+        ],
+        "erros": []
+      },
+      {
+        "lang": "en",
+        "contas": [
+          {
+            "caminho": "seccoes[2].conteudo[1].paragrafo",
+            "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of −845,8 million euros, a deficit (it spent more than it took in); it is a smaller deficit than the one the Budget forecast for the full year (−1 789,8 million euros), and September to December are still to come. These accounts cover central government and social security; the public accounts of 2025 also include regional and local government."
+          },
+          {
+            "caminho": "seccoes[3].conteudo[0].paragrafo",
+            "texto": "At the end of 2025, public debt was worth 89,7 % of what the country produces in a year, above the 81,7 % average of the European Union, and the public accounts closed the year with a balance of 0,7 % of output, a surplus (it took in more than it spent)."
+          }
+        ],
+        "erros": []
+      }
+    ],
+    "cenarios": [
+      {
+        "execucao": "-845,8",
+        "previsao": "-1789,8",
+        "lang": "pt",
+        "ramo": "deficitMenor",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de -845,8 milhões de euros, um défice (gastou mais do que recebeu); é um défice menor do que o que o Orçamento previa para o ano inteiro (-1789,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de 2025 incluem também as administrações regional e local."
+      },
+      {
+        "execucao": "-845,8",
+        "previsao": "-1789,8",
+        "lang": "en",
+        "ramo": "deficitMenor",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of -845,8 million euros, a deficit (it spent more than it took in); it is a smaller deficit than the one the Budget forecast for the full year (-1789,8 million euros), and September to December are still to come. These accounts cover central government and social security; the public accounts of 2025 also include regional and local government."
+      },
+      {
+        "execucao": "-1789,8",
+        "previsao": "-845,8",
+        "lang": "pt",
+        "ramo": "deficitMaior",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de -1789,8 milhões de euros, um défice (gastou mais do que recebeu); é um défice maior do que o que o Orçamento previa para o ano inteiro (-845,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de 2025 incluem também as administrações regional e local."
+      },
+      {
+        "execucao": "-1789,8",
+        "previsao": "-845,8",
+        "lang": "en",
+        "ramo": "deficitMaior",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of -1789,8 million euros, a deficit (it spent more than it took in); it is a larger deficit than the one the Budget forecast for the full year (-845,8 million euros), and September to December are still to come. These accounts cover central government and social security; the public accounts of 2025 also include regional and local government."
+      },
+      {
+        "execucao": "-845,8",
+        "previsao": "-845,8",
+        "lang": "pt",
+        "ramo": "deficitIgual",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de -845,8 milhões de euros, um défice (gastou mais do que recebeu); é um défice igual ao que o Orçamento previa para o ano inteiro (-845,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de 2025 incluem também as administrações regional e local."
+      },
+      {
+        "execucao": "-845,8",
+        "previsao": "-845,8",
+        "lang": "en",
+        "ramo": "deficitIgual",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of -845,8 million euros, a deficit (it spent more than it took in); it is the same deficit as the one the Budget forecast for the full year (-845,8 million euros), and September to December are still to come. These accounts cover central government and social security; the public accounts of 2025 also include regional and local government."
+      },
+      {
+        "execucao": "845,8",
+        "previsao": "1789,8",
+        "lang": "pt",
+        "ramo": "excedenteMenor",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de 845,8 milhões de euros, um excedente (recebeu mais do que gastou); é um excedente menor do que o que o Orçamento previa para o ano inteiro (1789,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de 2025 incluem também as administrações regional e local."
+      },
+      {
+        "execucao": "845,8",
+        "previsao": "1789,8",
+        "lang": "en",
+        "ramo": "excedenteMenor",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of 845,8 million euros, a surplus (it took in more than it spent); it is a smaller surplus than the one the Budget forecast for the full year (1789,8 million euros), and September to December are still to come. These accounts cover central government and social security; the public accounts of 2025 also include regional and local government."
+      },
+      {
+        "execucao": "1789,8",
+        "previsao": "845,8",
+        "lang": "pt",
+        "ramo": "excedenteMaior",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de 1789,8 milhões de euros, um excedente (recebeu mais do que gastou); é um excedente maior do que o que o Orçamento previa para o ano inteiro (845,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de 2025 incluem também as administrações regional e local."
+      },
+      {
+        "execucao": "1789,8",
+        "previsao": "845,8",
+        "lang": "en",
+        "ramo": "excedenteMaior",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of 1789,8 million euros, a surplus (it took in more than it spent); it is a larger surplus than the one the Budget forecast for the full year (845,8 million euros), and September to December are still to come. These accounts cover central government and social security; the public accounts of 2025 also include regional and local government."
+      },
+      {
+        "execucao": "845,8",
+        "previsao": "845,8",
+        "lang": "pt",
+        "ramo": "excedenteIgual",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de 845,8 milhões de euros, um excedente (recebeu mais do que gastou); é um excedente igual ao que o Orçamento previa para o ano inteiro (845,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de 2025 incluem também as administrações regional e local."
+      },
+      {
+        "execucao": "845,8",
+        "previsao": "845,8",
+        "lang": "en",
+        "ramo": "excedenteIgual",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of 845,8 million euros, a surplus (it took in more than it spent); it is the same surplus as the one the Budget forecast for the full year (845,8 million euros), and September to December are still to come. These accounts cover central government and social security; the public accounts of 2025 also include regional and local government."
+      },
+      {
+        "execucao": "0",
+        "previsao": "0",
+        "lang": "pt",
+        "ramo": "nulos",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de 0 milhões de euros, um saldo nulo (recebeu o mesmo que gastou); é um saldo nulo, como o que o Orçamento previa para o ano inteiro (0 milhões de euros), e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de 2025 incluem também as administrações regional e local."
+      },
+      {
+        "execucao": "0",
+        "previsao": "0",
+        "lang": "en",
+        "ramo": "nulos",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of 0 million euros, a nil balance (it took in the same as it spent); it is a nil balance, as the Budget forecast for the full year (0 million euros), and September to December are still to come. These accounts cover central government and social security; the public accounts of 2025 also include regional and local government."
+      },
+      {
+        "execucao": "845,8",
+        "previsao": "-1789,8",
+        "lang": "pt",
+        "ramo": "diferentesNegativo",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de 845,8 milhões de euros, um excedente (recebeu mais do que gastou); o Orçamento previa para o ano inteiro um défice (saldo de -1789,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de 2025 incluem também as administrações regional e local."
+      },
+      {
+        "execucao": "845,8",
+        "previsao": "-1789,8",
+        "lang": "en",
+        "ramo": "diferentesNegativo",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of 845,8 million euros, a surplus (it took in more than it spent); the Budget forecast for the full year a deficit (balance of -1789,8 million euros), and September to December are still to come. These accounts cover central government and social security; the public accounts of 2025 also include regional and local government."
+      },
+      {
+        "execucao": "-845,8",
+        "previsao": "1789,8",
+        "lang": "pt",
+        "ramo": "diferentesPositivo",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de -845,8 milhões de euros, um défice (gastou mais do que recebeu); o Orçamento previa para o ano inteiro um excedente de 1789,8 milhões de euros, e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de 2025 incluem também as administrações regional e local."
+      },
+      {
+        "execucao": "-845,8",
+        "previsao": "1789,8",
+        "lang": "en",
+        "ramo": "diferentesPositivo",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of -845,8 million euros, a deficit (it spent more than it took in); the Budget forecast for the full year a surplus of 1789,8 million euros, and September to December are still to come. These accounts cover central government and social security; the public accounts of 2025 also include regional and local government."
+      },
+      {
+        "execucao": "-845,8",
+        "previsao": "0",
+        "lang": "pt",
+        "ramo": "diferentesZero",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de -845,8 milhões de euros, um défice (gastou mais do que recebeu); o Orçamento previa para o ano inteiro um saldo nulo de 0 milhões de euros, e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de 2025 incluem também as administrações regional e local."
+      },
+      {
+        "execucao": "-845,8",
+        "previsao": "0",
+        "lang": "en",
+        "ramo": "diferentesZero",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of -845,8 million euros, a deficit (it spent more than it took in); the Budget forecast for the full year a nil balance of 0 million euros, and September to December are still to come. These accounts cover central government and social security; the public accounts of 2025 also include regional and local government."
+      },
+      {
+        "execucao": "845,8",
+        "previsao": "0",
+        "lang": "pt",
+        "ramo": "diferentesZero",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de 845,8 milhões de euros, um excedente (recebeu mais do que gastou); o Orçamento previa para o ano inteiro um saldo nulo de 0 milhões de euros, e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de 2025 incluem também as administrações regional e local."
+      },
+      {
+        "execucao": "845,8",
+        "previsao": "0",
+        "lang": "en",
+        "ramo": "diferentesZero",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of 845,8 million euros, a surplus (it took in more than it spent); the Budget forecast for the full year a nil balance of 0 million euros, and September to December are still to come. These accounts cover central government and social security; the public accounts of 2025 also include regional and local government."
+      },
+      {
+        "execucao": "0",
+        "previsao": "-1789,8",
+        "lang": "pt",
+        "ramo": "diferentesNegativo",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de 0 milhões de euros, um saldo nulo (recebeu o mesmo que gastou); o Orçamento previa para o ano inteiro um défice (saldo de -1789,8 milhões de euros), e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de 2025 incluem também as administrações regional e local."
+      },
+      {
+        "execucao": "0",
+        "previsao": "-1789,8",
+        "lang": "en",
+        "ramo": "diferentesNegativo",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of 0 million euros, a nil balance (it took in the same as it spent); the Budget forecast for the full year a deficit (balance of -1789,8 million euros), and September to December are still to come. These accounts cover central government and social security; the public accounts of 2025 also include regional and local government."
+      },
+      {
+        "execucao": "0",
+        "previsao": "1789,8",
+        "lang": "pt",
+        "ramo": "diferentesPositivo",
+        "texto": "No fim de agosto de 2026, as contas da administração central e da segurança social apresentavam um saldo acumulado de 0 milhões de euros, um saldo nulo (recebeu o mesmo que gastou); o Orçamento previa para o ano inteiro um excedente de 1789,8 milhões de euros, e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de 2025 incluem também as administrações regional e local."
+      },
+      {
+        "execucao": "0",
+        "previsao": "1789,8",
+        "lang": "en",
+        "ramo": "diferentesPositivo",
+        "texto": "By the end of August 2026, the accounts of central government and social security showed a cumulative balance of 0 million euros, a nil balance (it took in the same as it spent); the Budget forecast for the full year a surplus of 1789,8 million euros, and September to December are still to come. These accounts cover central government and social security; the public accounts of 2025 also include regional and local government."
+      }
+    ],
+    "ramos": [
+      {
+        "token": "sinal",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.5",
+        "ramo": "positivo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.pt[5] não declara o ramo «positivo»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.5",
+        "ramo": "negativo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.pt[5] não declara o ramo «negativo»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.5",
+        "ramo": "zero",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.pt[5] não declara o ramo «zero»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "deficitMaior",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «deficitMaior»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "deficitMenor",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «deficitMenor»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "deficitIgual",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «deficitIgual»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "excedenteMaior",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «excedenteMaior»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "excedenteMenor",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «excedenteMenor»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "excedenteIgual",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «excedenteIgual»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "nulos",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «nulos»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "diferentesNegativo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «diferentesNegativo»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "diferentesPositivo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «diferentesPositivo»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.pt.7",
+        "ramo": "diferentesZero",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.pt[7] não declara o ramo «diferentesZero»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.5",
+        "ramo": "positivo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.en[5] não declara o ramo «positivo»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.5",
+        "ramo": "negativo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.en[5] não declara o ramo «negativo»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.5",
+        "ramo": "zero",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[2].conteudo[1].paragrafo.en[5] não declara o ramo «zero»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "deficitMaior",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «deficitMaior»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "deficitMenor",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «deficitMenor»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "deficitIgual",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «deficitIgual»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "excedenteMaior",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «excedenteMaior»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "excedenteMenor",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «excedenteMenor»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "excedenteIgual",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «excedenteIgual»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "nulos",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «nulos»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "diferentesNegativo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «diferentesNegativo»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "diferentesPositivo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «diferentesPositivo»"
+      },
+      {
+        "token": "comparaSaldos",
+        "caminho": "seccoes.2.conteudo.1.paragrafo.en.7",
+        "ramo": "diferentesZero",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «comparaSaldos» em seccoes[2].conteudo[1].paragrafo.en[7] não declara o ramo «diferentesZero»"
+      },
+      {
+        "token": "compara",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.pt.5",
+        "ramo": "maior",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «compara» em seccoes[3].conteudo[0].paragrafo.pt[5] não declara o ramo «maior»"
+      },
+      {
+        "token": "compara",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.pt.5",
+        "ramo": "menor",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «compara» em seccoes[3].conteudo[0].paragrafo.pt[5] não declara o ramo «menor»"
+      },
+      {
+        "token": "compara",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.pt.5",
+        "ramo": "igual",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «compara» em seccoes[3].conteudo[0].paragrafo.pt[5] não declara o ramo «igual»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.pt.9",
+        "ramo": "positivo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.pt[9] não declara o ramo «positivo»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.pt.9",
+        "ramo": "negativo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.pt[9] não declara o ramo «negativo»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.pt.9",
+        "ramo": "zero",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.pt[9] não declara o ramo «zero»"
+      },
+      {
+        "token": "compara",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.en.5",
+        "ramo": "maior",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «compara» em seccoes[3].conteudo[0].paragrafo.en[5] não declara o ramo «maior»"
+      },
+      {
+        "token": "compara",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.en.5",
+        "ramo": "menor",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «compara» em seccoes[3].conteudo[0].paragrafo.en[5] não declara o ramo «menor»"
+      },
+      {
+        "token": "compara",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.en.5",
+        "ramo": "igual",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «compara» em seccoes[3].conteudo[0].paragrafo.en[5] não declara o ramo «igual»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.en.9",
+        "ramo": "positivo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.en[9] não declara o ramo «positivo»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.en.9",
+        "ramo": "negativo",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.en[9] não declara o ramo «negativo»"
+      },
+      {
+        "token": "sinal",
+        "caminho": "seccoes.3.conteudo.0.paragrafo.en.9",
+        "ramo": "zero",
+        "mensagem": "X10 · dinheiro-do-estado-2026: o token «sinal» em seccoes[3].conteudo[0].paragrafo.en[9] não declara o ramo «zero»"
+      }
+    ],
+    "erros": []
+  },
+  "plantas": [
+    {
+      "lang": "pt",
+      "erros": [
+        "X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.pt[7], ramo «diferentesNegativo»: défice seguido diretamente de um saldo negativo"
+      ]
+    },
+    {
+      "lang": "en",
+      "erros": [
+        "X10 · palavras do ramo: dinheiro-do-estado-2026: seccoes[2].conteudo[1].paragrafo.en[7], ramo «diferentesNegativo»: défice seguido diretamente de um saldo negativo"
+      ]
+    }
+  ]
+}

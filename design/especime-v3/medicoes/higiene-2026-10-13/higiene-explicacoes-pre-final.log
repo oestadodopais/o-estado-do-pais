@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 check:explicacoes
+> node tests/explicacoes/explicacao.mjs --prova && node tests/explicacoes/semana.mjs --prova
+
+X · a explicação: 1 explicação(ões), 118 folhas e 164 partes auditadas (77 diz, 0 leitura, 25 conta, 2 aponta, 60 liga), 6 origens usadas; 2 token(s) «maiores» conferidos nas duas edições; 8 token(s) de ramos (sinal, compara e comparaSaldos) com todos os ramos; 2 origens das explicações, sem o motor ao lado; 2 página(s) recontadas; 42 de 43 plantas em memória.
+W · a leitura da semana: janela 2026-10-07 a 2026-10-13, 90 relidas, 0 mudadas de valor, 0 só na forma de escrever, 0 de proveniência; W1 5 de 5 plantas na cópia do livro; 4 porta(s) da semana conferidas; 67 de 67 plantas na página (16 não se aplicam: a semana não tem mudanças de valor).

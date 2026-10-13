@@ -3415,8 +3415,10 @@ DD.MM.AAAA, no value read». A data continua a ser a da entrada. O resultado
 
 Uma linha calculada escreve, sob «Segunda leitura:» / «Second reading:»,
 «Recalculada em cada construção a partir das suas origens» / «Recomputed at
-every build from its sources». As outras linhas sem releitura conservam
-«ainda nenhuma» / «none yet».
+every build from its sources». Nas cópias alojadas sem leitura da fonte, o rótulo é
+«Leitura na fonte» / «Reading at the source» e a ausência escreve
+«Não há leitura na fonte registada para esta linha.» / «No reading at the source is recorded for this row.».
+As restantes linhas sem releitura conservam «ainda nenhuma» / «none yet».
 
 As quatro linhas retiradas que antes continham o nome do diretor são
 protegidas pelo detetor de privacidade sobre as páginas construídas. O nome
@@ -4374,3 +4376,14 @@ As frases já publicadas nas páginas dos concelhos, nas duas edições, e confe
 | conteudo | It is the amount the budget allocates to road public-private partnerships, in Paulo Raimundo’s speech published by the PCP. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
 | conteudo | É a queda do orçamento da Saúde noticiada pela RTP. A notícia alojada não explicita se a despesa é total ou efetiva. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
 | conteudo | It is the Health budget decrease reported by RTP. The hosted article does not specify whether the expenditure is total or effective. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
+| conteudo | 3 208 afirmações · 368 de 3 208 calculadas · 2 767 de 3 208 linhas de concelhos | rp4nj | viva | Contagem lida do HTML construído após a fusão do JD1 e do RP4-n. |
+| conteudo | 3 208 claims · 368 of 3 208 calculated · 2 767 of 3 208 municipality rows | rp4nj | viva | Contagem lida do HTML construído após a fusão do JD1 e do RP4-n. |
+
+## Higiene, RP4N-20, 13.10.2026
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | Leitura na fonte | higiene-rp4n20 | viva | Rótulo do recibo, `livro.linha.leituraNaFonteK`. |
+| conteudo | Reading at the source | higiene-rp4n20 | viva | Rótulo inglês do mesmo campo. |
+| conteudo | Não há leitura na fonte registada para esta linha. | higiene-rp4n20 | viva | Ausência nas cópias alojadas sem verificação própria, `livro.linha.semLeituraDaCopia`. |
+| conteudo | No reading at the source is recorded for this row. | higiene-rp4n20 | viva | Ausência inglesa no mesmo caso. |

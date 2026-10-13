@@ -1,0 +1,50 @@
+{
+  "cabeca": "996a388918d1d4183d2d00700bdd62157f0b0fa8",
+  "registo": "depois-2/verify.log",
+  "linhas": [
+    {
+      "linha": 2459,
+      "mensagem": "PLANTA marcador nos metadados name=\"description\" (pt): RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "linha": 2460,
+      "mensagem": "PLANTA marcador nos metadados property=\"og:description\" (pt): RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "linha": 2461,
+      "mensagem": "PLANTA legenda indistinta rp4n-mapa-ministerios (pt): K17 · recibo · pt · oe-2026-cem-euros-ministerio-saude: a legenda não distingue o excerto do mapa dos ministérios"
+    },
+    {
+      "linha": 2462,
+      "mensagem": "PLANTA legenda indistinta rp4n-total-ministerios (pt): K17 · recibo · pt · oe-2026-cem-euros-ministerio-saude: a legenda não distingue o excerto do mapa dos ministérios"
+    },
+    {
+      "linha": 2463,
+      "mensagem": "PLANTA legenda indistinta rp4n-consolidada-ministerios (pt): K17 · recibo · pt · oe-2026-cem-euros-ministerio-saude: a legenda não distingue o excerto do mapa dos ministérios"
+    },
+    {
+      "linha": 2464,
+      "mensagem": "PLANTA marcador nos metadados name=\"description\" (en): RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "linha": 2465,
+      "mensagem": "PLANTA marcador nos metadados property=\"og:description\" (en): RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "linha": 2466,
+      "mensagem": "PLANTA legenda indistinta rp4n-mapa-ministerios (en): K17 · recibo · en · oe-2026-cem-euros-ministerio-saude: a legenda não distingue o excerto do mapa dos ministérios"
+    },
+    {
+      "linha": 2467,
+      "mensagem": "PLANTA legenda indistinta rp4n-total-ministerios (en): K17 · recibo · en · oe-2026-cem-euros-ministerio-saude: a legenda não distingue o excerto do mapa dos ministérios"
+    },
+    {
+      "linha": 2468,
+      "mensagem": "PLANTA legenda indistinta rp4n-consolidada-ministerios (en): K17 · recibo · en · oe-2026-cem-euros-ministerio-saude: a legenda não distingue o excerto do mapa dos ministérios"
+    },
+    {
+      "linha": 4166,
+      "mensagem": "FC · 24 passagem(ns) em 12 páginas, 656 pedaços marcados vistos, 0 dentro de um contentor flexível, 0 documento(s) mais largos do que a janela; 36 de 36 plantas no navegador."
+    }
+  ]
+}

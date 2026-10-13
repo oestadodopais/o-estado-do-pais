@@ -51,8 +51,8 @@ for (const id of [FINANCIAMENTO_JD1, AMORTIZACOES_JD1]) for (const lang of ['pt'
   recusa(`Parcela literal/${lang}`, confereParcela(frase.map(p => p.claim === AMORTIZACOES_JD1 ? '56 976' : p)), 'JD1-c: parcela sem os dois montantes por token');
   if (!process.argv.includes('--declaracoes')) {
     const root = parse(fs.readFileSync(`dist/${lang === 'pt' ? 'livro-razao' : 'en/ledger'}/${id}/index.html`, 'utf8'));
-    assert.match(root.querySelector('[data-jd1-parcela]').textContent, lang === 'pt' ? /serviram para reembolsar ou extinguir dívida/ : /were used to repay or extinguish (?:funded )?debt/);
-    if (id === AMORTIZACOES_JD1) assert.match(root.querySelector('[data-jd1-parcela]').textContent, lang === 'pt' ? /Mais do que na coluna de 2024/ : /More than in the 2024 column/);
+    if (id === FINANCIAMENTO_JD1) assert.match(root.querySelector('[data-jd1-parcela]').textContent, lang === 'pt' ? /serviram para reembolsar ou extinguir dívida/ : /were used to repay or extinguish (?:funded )?debt/);
+    if (id === AMORTIZACOES_JD1) assert.match(root.querySelector('[data-jd1-parcela]').textContent, lang === 'pt' ? /A parcela foi maior do que a registada na coluna de 2024/ : /The portion was greater than that in the 2024 column/);
     assert.equal(root.querySelector('[data-jd1-parcela]').closest('[data-o-que-e]'), null);
     assert.deepEqual(root.querySelector('[data-jd1-parcela]').querySelectorAll('[data-claim]').map(n => n.getAttribute('data-claim')), [FINANCIAMENTO_JD1, AMORTIZACOES_JD1]);
   }
@@ -93,7 +93,7 @@ if (!process.argv.includes('--declaracoes')) for (const id of ['custo-do-stock-d
   assert.match(root.querySelector('.linha-recorte img').getAttribute('alt'), lang === 'pt' ? /Recorte do gráfico com o rótulo assinalado/ : /Crop of the chart with the label marked/);
 }
 const { FAMILIAS_JD1 } = await import('../../design/especime-v3/medicoes/jd1-2026-10-06/familias.mjs');
-const perimetro = FAMILIAS_JD1.find(f => f.chaves.includes('juros-das-administracoes-publicas')).partes.find(p => p.pt.startsWith(' Inclui'));
+const perimetro = FAMILIAS_JD1.find(f => f.chaves.includes('juros-das-administracoes-publicas')).partes.find(p => p.pt.startsWith(' Exclui'));
 assert.ok(perimetro.apoios.every(a => a.origem === 'jd1-ine-contas'));
 for (const lang of ['pt','en']) {
   const frase = oQueEDaLinha('custo-do-stock-da-divida-direta-2025', lang).pedacos.join('');

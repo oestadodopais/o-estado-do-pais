@@ -27,10 +27,9 @@ export const FAMILIAS_JD1 = [
         L('name', 'Juros'), O('jd1-ine-despesa', 'O quadro 9 apresenta a despesa'),
         O('jd1-ine-contas', 'pertencem ao setor institucional das P na ótica das Contas Nacionais')),
       contas, ponto,
-      diz(' Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública.',
-        ' It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance.',
-        O('jd1-ine-contas', 'são consideradas entidades que não estão integradas no saldo em contabilidade pública'),
-        O('jd1-ine-contas', 'por força da aplicação do Sistema Europeu de Contas Nacionais e Regionais (SEC 2010)')),
+      diz(' Exclui entidades que entram no saldo da contabilidade pública mas não pertencem às administrações públicas nas contas nacionais.',
+        ' It excludes bodies counted in the public accounting balance that do not belong to general government in the national accounts.',
+        O('jd1-ine-contas', 'são retiradas entidades que não integram esse setor, mas que estão incluídas no saldo em contabilidade pública')),
     ],
   },
   {

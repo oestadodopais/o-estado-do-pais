@@ -117,6 +117,10 @@ export function inventariarMarcadores(raiz, contexto = {}) {
     while (n && !tocadas.every(f => {for(let p=f.n;p;p=p.parentNode) if(p===n)return true; return false;})) n = n.parentNode;
     nos.push({n, folhas:tocadas.map(f=>f.n)});
   }
+  // HIG-RP4N-13: uma descrição partilhada também é uma afirmação do sítio.
+  for (const n of raiz.querySelectorAll('meta[name="description"], meta[property="og:description"]')) {
+    for (const _ of (n.getAttribute('content') ?? '').matchAll(MARCA)) nos.push({n, folhas:[], atributo:'content'});
+  }
   for (const n of raiz.querySelectorAll('[data-marca]')) {
     for (const _ of n.getAttribute('data-marca').matchAll(MARCA)) nos.push({n, folhas:[], atributo:'data-marca'});
   }

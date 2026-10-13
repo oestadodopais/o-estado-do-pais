@@ -1,0 +1,270 @@
+[
+  {
+    "ficheiro": "BRIEF.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "NEXT.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "archive/2026-07-24 Portugal Knowledge Hub INDEX.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/01 Energy Water and Climate/Onde Está a Água — Technical Source/build_onde_payload.py",
+    "mudanca": "destino de execução por variável de ambiente ou relativo ao repositório"
+  },
+  {
+    "ficheiro": "content/01 Energy Water and Climate/Onde Está a Água — Technical Source/make_onde.py",
+    "mudanca": "destino de execução por variável de ambiente ou relativo ao repositório"
+  },
+  {
+    "ficheiro": "content/01 Energy Water and Climate/Onde Está a Água — Technical Source/make_onde_pt.py",
+    "mudanca": "destino de execução por variável de ambiente ou relativo ao repositório"
+  },
+  {
+    "ficheiro": "content/01 Energy Water and Climate/Onde Está a Água — Technical Source/recovery/gap_A_desalination.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/01 Energy Water and Climate/Onde Está a Água — Technical Source/recovery/gap_C_irrigation_efficiency.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/01 Energy Water and Climate/Water Distribution Losses — Technical Source/build_payload.py",
+    "mudanca": "destino de execução por variável de ambiente ou relativo ao repositório"
+  },
+  {
+    "ficheiro": "content/01 Energy Water and Climate/Water Distribution Losses — Technical Source/make_pt.py",
+    "mudanca": "destino de execução por variável de ambiente ou relativo ao repositório"
+  },
+  {
+    "ficheiro": "content/01 Energy Water and Climate/Water Distribution Losses — Technical Source/reconcile.py",
+    "mudanca": "destino de execução por variável de ambiente ou relativo ao repositório"
+  },
+  {
+    "ficheiro": "content/08 Évora Mandates/Technical Source/raw/workforce.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2015.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2016.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2017.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2018.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2019.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2021.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2022.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2023.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/09 Évora Pelouros/Technical Source/raw/areas_2025.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/11 Seguranca Social/LEITURA-CODEX-2026-09-01.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/12 Concelhos/BRIEF-P1-linhas-dos-308.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/12 Concelhos/BRIEF-P2-ilhas-e-releitura.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/13 Dominios/LEITURA-CODEX-2026-09-01.plantas.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/13 Dominios/medicao-sonnet-2026-09-01.py",
+    "mudanca": "destino de execução por variável de ambiente ou relativo ao repositório"
+  },
+  {
+    "ficheiro": "content/13 Dominios/plantas-sonnet-2026-09-01.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/14 Évora 2027/Technical Source/fetch.py",
+    "mudanca": "destino de execução por variável de ambiente ou relativo ao repositório"
+  },
+  {
+    "ficheiro": "content/14 Évora 2027/Technical Source/leituras-a-frio/2026-09-16-codex-leitura-e1-segunda.plantas.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/14 Évora 2027/Technical Source/leituras-a-frio/2026-09-16-codex-leitura-e1.plantas.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/15 Orcamento do Estado 2027/Technical Source/LEVANTAMENTO-das-fontes-2026-09-21.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "content/README.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "core/sweep.py",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/PILOTO-CORREDOR-2026-09-01.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/RELATORIO-calendario-2026-09-04.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/RELATORIO-calendario-b-2026-09-08.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/RELATORIO-calendario-comparar-2026-09-08.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/RELATORIO-conferencias-2026-09-03.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/RELATORIO-corredor-2026-09-03.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/RELATORIO-vigia-2026-09-08.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/coverage/register-candidates.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/coverage/work/checks/g3-sistemas-fisicos.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/coverage/work/desks/g3-sistemas-fisicos.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/coverage/work/desks/g4-territorio-pessoas.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/coverage/work/desks/g5-servicos.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/coverage/work/desks/g6-instituicoes-cultura.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/out/nomes-conferidos-2026-09-21/LEITURA-codex-2026-09-22.plantas.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/out/nomes-conferidos-2026-09-21/PROMPT-passagem-2.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/out/nomes-conferidos-2026-09-21/PROMPT-passagem-3.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/out/nomes-conferidos-2026-09-21/conferencia-cega/chave.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/out/nomes-conferidos-2026-09-21/varrimento.txt",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "indicators/out/rp1-2026-09-26/travessia.log",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "publisher/RELATORIO-nomes-2026-09-04.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "publisher/RELATORIO-portao-ci-2026-09-02.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "publisher/estimativa-b2-2026-08-23/blocks.py",
+    "mudanca": "destino de execução por variável de ambiente ou relativo ao repositório"
+  },
+  {
+    "ficheiro": "publisher/estimativa-b2-2026-08-23/inventario.py",
+    "mudanca": "destino de execução por variável de ambiente ou relativo ao repositório"
+  },
+  {
+    "ficheiro": "publisher/estimativa-b2-2026-08-23/record.py",
+    "mudanca": "destino de execução por variável de ambiente ou relativo ao repositório"
+  },
+  {
+    "ficheiro": "publisher/fixtures/ORIGEM.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "publisher/mapa-2026-08-27/BRIEF-mapa-distritos.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "publisher/releitura_concelhos.py",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "publisher/verificacoes/2026-08-15-releitura-cega-evora/RELATORIO.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "publisher/verificacoes/2026-08-15-releitura-cega-evora/registo.json",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "publisher/verificacoes/2026-08-15-releitura-cega-evora/transcrever.py",
+    "mudanca": "destino de execução por variável de ambiente ou relativo ao repositório"
+  },
+  {
+    "ficheiro": "publisher/voz-2026-08-24/BRIEF-S2-ferramenta.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "publisher/voz-2026-08-24/inventario-cego-REPORT.md",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "requirements.lock.txt",
+    "mudanca": "caminhos e identificadores locais em comentários ou registos"
+  },
+  {
+    "ficheiro": "publisher/RELATORIO-leitor-2026-09-07.md",
+    "mudanca": "nome do anfitrião num registo antigo"
+  }
+]

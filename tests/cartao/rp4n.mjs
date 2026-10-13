@@ -8,6 +8,7 @@ import {auditarPerguntas} from './perguntas.mjs';
 import {conferirAuditoriaDasLeituras} from './leituras.mjs';
 import {conferirAuditoriaDasFamilias, conferirAuditoriaDasSeries, cabecaDoRecibo, conferirCabecaDoRecibo, contextoDasFamilias, reguasDosCartoes} from './familias.mjs';
 import {conferirSemMarcadores} from '../../scripts/sem-marcadores.mjs';
+import {conferirAusenciaNosMetadados} from './metadados.mjs';
 
 const auditoria = JSON.parse(fs.readFileSync('tests/cartao/leituras-provadas.json', 'utf8'));
 const plantas = [];
@@ -315,5 +316,31 @@ export function conferirExcertoDaPensao(linha) {
 if(process.argv.includes('--registo-g')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/g/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 if(process.argv.includes('--registo-f')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/f/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 if(process.argv.includes('--registo-e')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/e/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
+// HIG: plantas sobre os metadados e as três legendas distintas.
+for (const lang of ['pt', 'en']) {
+ const incompleta=loadClaims().get('saldo-natural-portugal-2025');
+ const recibo=parse(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/saldo-natural-portugal-2025/index.html`,'utf8'));
+ assert.deepEqual(conferirAusenciaNosMetadados(recibo,incompleta,lang),[]);
+ for (const seletor of ['meta[name="description"]','meta[property="og:description"]']) {
+  const copia=parse(recibo.toString());
+  const meta=copia.querySelector(seletor);
+  meta.setAttribute('content',meta.getAttribute('content').replace(/(?:campos da proveniência por confirmar na fonte|provenance fields unconfirmed at the source)/gi,''));
+  morde(`ausência omitida em ${seletor} (${lang})`,conferirAusenciaNosMetadados(copia,incompleta,lang),'omite a oração dos campos da proveniência por confirmar');
+ }
+ const html=fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/posicao-de-investimento-internacional-2025/index.html`,'utf8');
+ assert.equal(conferirSemMarcadores(parse(html)),null);
+ for (const atributo of ['name="description"','property="og:description"']) {
+  const copia=parse(html); copia.querySelector(`meta[${atributo}]`).setAttribute('content','[a verificar]');
+  morde(`marcador nos metadados ${atributo} (${lang})`, [conferirSemMarcadores(copia)].filter(Boolean), 'marca de informação por confirmar');
+ }
+ const id='oe-2026-cem-euros-ministerio-saude',ctx=contextoDasFamilias(),cartoes=reguasDosCartoes('dist');
+ const original=fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/${id}/index.html`,'utf8');
+ for(const chave of ['rp4n-mapa-ministerios','rp4n-total-ministerios','rp4n-consolidada-ministerios']) {
+  const cabeca=cabecaDoRecibo(original);
+  assert.deepEqual(conferirCabecaDoRecibo(cabeca,id,lang,{ctx,cartoes}),[]);
+  cabeca.querySelector(`[data-verbatim="origem-${chave}-rotulo"]`).set_content('MAPA 4, página 6');
+  morde(`legenda indistinta ${chave} (${lang})`,conferirCabecaDoRecibo(cabeca,id,lang,{ctx,cartoes}),'a legenda não distingue o excerto');
+ }
+}
 assert.deepEqual(conferirAuditoriaDasFamilias().erros, []);
 console.log(`RP4N-e: PASS, ${plantas.length} plantas e auditoria íntegra`);

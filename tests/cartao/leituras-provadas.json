@@ -12906,8 +12906,8 @@
       ],
       "folhas": [
         {
-          "pt": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública.",
-          "en": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance.",
+          "pt": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Exclui entidades que entram no saldo da contabilidade pública mas não pertencem às administrações públicas nas contas nacionais.",
+          "en": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It excludes bodies counted in the public accounting balance that do not belong to general government in the national accounts.",
           "partes": [
             {
               "pt": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas",
@@ -12949,19 +12949,14 @@
               "classe": "liga"
             },
             {
-              "pt": " Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública.",
-              "en": " It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance.",
+              "pt": " Exclui entidades que entram no saldo da contabilidade pública mas não pertencem às administrações públicas nas contas nacionais.",
+              "en": " It excludes bodies counted in the public accounting balance that do not belong to general government in the national accounts.",
               "classe": "diz",
               "apoios": [
                 {
                   "origem": "jd1-ine-contas",
                   "campo": "excerto",
-                  "literal": "são consideradas entidades que não estão integradas no saldo em contabilidade pública"
-                },
-                {
-                  "origem": "jd1-ine-contas",
-                  "campo": "excerto",
-                  "literal": "por força da aplicação do Sistema Europeu de Contas Nacionais e Regionais (SEC 2010)"
+                  "literal": "são retiradas entidades que não integram esse setor, mas que estão incluídas no saldo em contabilidade pública"
                 }
               ]
             }
@@ -15996,16 +15991,15 @@
   "explicacoes": [
     {
       "slug": "dinheiro-do-estado-2026",
-      "quem": "Claude Opus 5.5 (EX1 a EX1-c); Codex gpt-6-astra (EX1-d e EX1-e)",
-      "quando": "2026-10-12",
-      "o_que": "a primeira leitura (05.10.2026), a do EX1-b e a do EX1-c (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216, e as correções da leitura a frio), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X17 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam; EX1-d: releitura dos apoios selados, correção dos juros e da referência à posição da execução, e saldo do mesmo perímetro com comparação explícita ao ano inteiro (acertos X18 a X20); EX1-e: comparação dos módulos dos saldos, com sinais diferentes e nulos declarados; os juros não são localizados nem anunciados sem apoio: a frase curta é a ausência calculada pela condição sem_linhas, e as transferências mantêm o literal selado; saldo acumulado sem fecho anual e distinção dos perímetros apoiada nos dois literais da nota interna autorizados pelo mandato EX1-e, sem publicar a nota",
+      "quem": "Claude Opus 5.5 (EX1 a EX1-c); Codex gpt-6-astra (EX1-d e EX1-e); Codex gpt-6-astra (higiene de 13.10.2026)",
+      "quando": "2026-10-13",
+      "o_que": "a primeira leitura (05.10.2026), a do EX1-b e a do EX1-c (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216, e as correções da leitura a frio), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X17 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam; EX1-d: releitura dos apoios selados, correção dos juros e da referência à posição da execução, e saldo do mesmo perímetro com comparação explícita ao ano inteiro (acertos X18 a X20); EX1-e: comparação dos módulos dos saldos, com sinais diferentes e nulos declarados; os juros não são localizados nem anunciados sem apoio: a frase curta é a ausência calculada pela condição sem_linhas, e as transferências mantêm o literal selado; saldo acumulado sem fecho anual e distinção dos perímetros apoiada nos dois literais da nota interna autorizados pelo mandato EX1-e, sem publicar a nota; Higiene: a frase das transferências sai; os perímetros ficam explícitos pelos apoios já autorizados; o valor negativo é apresentado como saldo do défice. Higiene b, achado 9: os excertos selados não reconciliam os totais por função e por ministério; a frase declara essa ausência limitada aos excertos citados.",
       "origens": [
         "dados-gov-oe-despesa-funcional",
         "eurostat-cofog-divisao-01",
         "eurostat-gfs-saldo",
         "eurostat-tipsgo10-descricao",
-        "eurostat-tipsna40-descricao",
-        "rp4n-mapa-ministerios"
+        "eurostat-tipsna40-descricao"
       ],
       "folhas": [
         {
@@ -16693,34 +16687,12 @@
         },
         {
           "caminho": "seccoes[1].conteudo[2].paragrafo[0]",
-          "pt": "As duas contas não batem porque medem coisas diferentes: a conta por função soma o que a administração central gasta com cada fim, como a saúde ou a educação, sem as operações financeiras nem as transferências entre os seus serviços; a conta por ministério é o orçamento de cada ministério.",
-          "en": "The two counts do not match because they measure different things: the count by function adds up what central government spends on each purpose, such as health or education, without financial transactions or transfers between its own services; the count by ministry is each ministry’s budget.",
+          "pt": "A conta por função organiza a despesa da administração central por finalidade, como a saúde ou a educação.",
+          "en": "The count by function organises central government expenditure by purpose, such as health or education.",
           "partes": [
             {
-              "pt": "As duas contas não batem porque medem coisas diferentes",
-              "en": "The two counts do not match because they measure different things",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "rp4n-mapa-ministerios",
-                  "campo": "excerto",
-                  "literal": "Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central"
-                },
-                {
-                  "origem": "dados-gov-oe-despesa-funcional",
-                  "campo": "excerto",
-                  "literal": "Esta classificação especifica os fins e atividades típicos do Estado"
-                }
-              ]
-            },
-            {
-              "pt": ": ",
-              "en": ": ",
-              "classe": "liga"
-            },
-            {
-              "pt": "a conta por função soma o que a administração central gasta com cada fim",
-              "en": "the count by function adds up what central government spends on each purpose",
+              "pt": "A conta por função organiza a despesa da administração central por finalidade",
+              "en": "The count by function organises central government expenditure by purpose",
               "classe": "diz",
               "apoios": [
                 {
@@ -16759,45 +16731,6 @@
                   "linha": "oe-2026-cem-euros-funcao-09",
                   "campo": "nome",
                   "literal": "education"
-                }
-              ]
-            },
-            {
-              "pt": ", sem as operações financeiras nem as transferências entre os seus serviços",
-              "en": ", without financial transactions or transfers between its own services",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "dados-gov-oe-despesa-funcional",
-                  "campo": "excerto",
-                  "literal": "excluem os fluxos relativos a operações financeiras"
-                },
-                {
-                  "linha": "oe-2026-cem-euros-funcao-07",
-                  "campo": "ressalva",
-                  "literal": "exclui ativos e passivos financeiros e transferências internas entre os serviços considerados"
-                }
-              ]
-            },
-            {
-              "pt": "; ",
-              "en": "; ",
-              "classe": "liga"
-            },
-            {
-              "pt": "a conta por ministério é o orçamento de cada ministério",
-              "en": "the count by ministry is each ministry’s budget",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "rp4n-mapa-ministerios",
-                  "campo": "excerto",
-                  "literal": "Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central"
-                },
-                {
-                  "linha": "oe-2026-despesa-ministerio-financas",
-                  "campo": "document.locator",
-                  "literal": "POR MINISTÉRIOS"
                 }
               ]
             },
@@ -17654,8 +17587,8 @@
         },
         {
           "caminho": "seccoes[2].conteudo[1].paragrafo[7].diferentesNegativo[0]",
-          "pt": "o Orçamento previa para o ano inteiro um défice de ",
-          "en": "the Budget forecast for the full year a deficit of ",
+          "pt": "o Orçamento previa para o ano inteiro um défice (saldo de ",
+          "en": "the Budget forecast for the full year a deficit (balance of ",
           "partes": [
             {
               "pt": "o Orçamento previa para o ano inteiro",
@@ -17675,8 +17608,8 @@
               ]
             },
             {
-              "pt": " um défice de ",
-              "en": " a deficit of ",
+              "pt": " um défice (saldo de ",
+              "en": " a deficit (balance of ",
               "classe": "conta"
             }
           ]
@@ -17798,8 +17731,8 @@
         },
         {
           "caminho": "seccoes[2].conteudo[1].paragrafo[8]",
-          "pt": ", e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de ",
-          "en": ", and September to December are still to come. It is a different account, not the one of the public accounts of ",
+          "pt": ", e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de ",
+          "en": ", and September to December are still to come. These accounts cover central government and social security; the public accounts of ",
           "partes": [
             {
               "pt": ", e ainda faltam os meses de setembro a dezembro",
@@ -17824,8 +17757,8 @@
               "classe": "liga"
             },
             {
-              "pt": "É outra conta, e não a das contas públicas de ",
-              "en": "It is a different account, not the one of the public accounts of ",
+              "pt": "Estas contas abrangem a administração central e a segurança social; as contas públicas de ",
+              "en": "These accounts cover central government and social security; the public accounts of ",
               "classe": "diz",
               "apoios": [
                 {
@@ -17854,15 +17787,20 @@
         },
         {
           "caminho": "seccoes[2].conteudo[1].paragrafo[10]",
-          "pt": " do parágrafo seguinte.",
-          "en": " in the next paragraph.",
+          "pt": " incluem também as administrações regional e local.",
+          "en": " also include regional and local government.",
           "partes": [
             {
-              "pt": " do parágrafo seguinte.",
-              "en": " in the next paragraph.",
-              "classe": "aponta",
-              "paragrafo": "seccoes[3].conteudo[0].paragrafo",
-              "posicao": "seguinte"
+              "pt": " incluem também as administrações regional e local.",
+              "en": " also include regional and local government.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+                  "campo": "note",
+                  "literal": "O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local"
+                }
+              ]
             }
           ]
         },
@@ -18394,6 +18332,18 @@
               "en": ", with the source of each figure, is in each one’s receipt, one tap away.",
               "classe": "aponta",
               "alvo": "selos"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].diferentesNegativo[2]",
+          "pt": ")",
+          "en": ")",
+          "partes": [
+            {
+              "pt": ")",
+              "en": ")",
+              "classe": "liga"
             }
           ]
         }

@@ -1,0 +1,68 @@
+[
+  {
+    "ficheiro": "tests/cartao/cartao.mjs",
+    "antes": 274,
+    "depois": 282,
+    "literal": "K14 · AS MEDIDAS CUJA COMPARAÇÃO COM A UNIÃO EXIGE A RESSALVA"
+  },
+  {
+    "ficheiro": "src/lib/enquadramento.mjs",
+    "antes": 470,
+    "depois": 549,
+    "literal": "ATÉ À §1.140 (29.09.2026) calava a média da União"
+  },
+  {
+    "ficheiro": "scripts/check-lugar.mjs",
+    "antes": 1716,
+    "depois": 1738,
+    "literal": "AS MEDIDAS, NOS DOIS SÍTIOS ONDE A DEFINIÇÃO SE RENDE"
+  },
+  {
+    "ficheiro": "scripts/inventario-rotulos.mjs",
+    "antes": 731,
+    "depois": 753,
+    "literal": "export function plantas(dist)"
+  },
+  {
+    "ficheiro": "scripts/inventario-rotulos.mjs",
+    "antes": 652,
+    "depois": 674,
+    "literal": "A CONSTRUÇÃO CONTRA O INVENTÁRIO DECLARADO, COM AS CONTAGENS"
+  },
+  {
+    "ficheiro": "scripts/inventario-rotulos.mjs",
+    "antes": 941,
+    "depois": 62,
+    "literal": "AS PLANTAS DA CONSTRUÇÃO INTEIRA"
+  },
+  {
+    "ficheiro": "scripts/inventario-rotulos.mjs",
+    "antes": 494,
+    "depois": 511,
+    "literal": "A FAIXA DOS 27 DA PÁGINA DA UNIÃO (passagem R2-b"
+  },
+  {
+    "ficheiro": "scripts/inventario-rotulos.mjs",
+    "antes": 567,
+    "depois": 584,
+    "literal": "export function conferirDiplomasRegionais"
+  },
+  {
+    "ficheiro": "scripts/check-lugar.mjs",
+    "antes": 1616,
+    "depois": 1631,
+    "literal": "UMA PORTA POR ENDEREÇO (passagem R2-b"
+  },
+  {
+    "ficheiro": "scripts/check-lugar.mjs",
+    "antes": 659,
+    "depois": 673,
+    "literal": "O CAMPO TRANSCRITO DE UMA LINHA DE SÉRIE (bloco RP3, 04.10.2026; passagem RP3-b), a"
+  },
+  {
+    "ficheiro": "scripts/check-lugar.mjs",
+    "antes": 2161,
+    "depois": 2183,
+    "literal": "O AUTOTESTE DA MARCA DAS SÉRIES (bloco RP3, 04.10.2026; passagem RP3-b)"
+  }
+]
