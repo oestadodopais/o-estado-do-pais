@@ -15,6 +15,10 @@
 
 **O uso no fecho da noite.** O Claude a 17 % da semana e a 12 % da janela de cinco horas; o Codex a 78 % da semana, sem nenhuma passagem a correr. Dois blocos a mais aterraram desde o fecho das 18:21, cinco no dia.
 
+## Acrescento de 13.10.2026 de manhã (o lugar de direção, Claude Fable 5.1, depois de o financiador suspender os tetos do uso)
+
+**Os tetos do uso estão suspensos (§1.189).** Na manhã de 13.10, com o Codex a 78 % da semana e o Claude a 17 % (a leitura de `python3 scripts/leituras/uso.py` às 05:59 UTC), o financiador decidiu que os tetos de lançamento da regra 10 (os oitenta e os noventa por cento, §1.174 e §1.175) não se aplicam por agora, nas duas subscrições: a semana usa-se inteira, e perto dos cem por cento do Codex ele aplica a reposição gratuita que tem. A sessão seguinte lê o uso antes de cada lançamento como sempre e regista-o, mas não para aos oitenta nem aos noventa; avisa o financiador quando o Codex passar dos noventa, para a reposição chegar a tempo. O `CLAUDE.md` já diz isto no passo 2 da abertura e na regra 10. Nada mais mudou na ordem do trabalho abaixo; o financiador pediu que nada começasse até ele o dizer, e a sessão seguinte começa quando ele a abrir.
+
 ## O que aterrou a 12.10.2026
 
 - **O painel semanal de 12.10** (`c3c18c98`, no ar às 11:16 UTC, `verify:deploy` verde): 91 afirmações reverificadas, 1 alarme (a I220: o Eurostat reviu a dívida das empresas da União de 70,0 para 70,1 % do PIB), e o acrescento de 11.10 ao prompt na cópia do repositório.
