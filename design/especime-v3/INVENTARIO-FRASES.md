@@ -4316,3 +4316,12 @@ As frases já publicadas nas páginas dos concelhos, nas duas edições, e confe
 |---|---|---|---|---|
 | conteudo | 3 208 afirmações · 368 de 3 208 calculadas · 2 767 de 3 208 linhas de concelhos | rp4nj | viva | Contagem lida do HTML construído após a fusão do JD1 e do RP4-n. |
 | conteudo | 3 208 claims · 368 of 3 208 calculated · 2 767 of 3 208 municipality rows | rp4nj | viva | Contagem lida do HTML construído após a fusão do JD1 e do RP4-n. |
+
+## Higiene, RP4N-20, 13.10.2026
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | Leitura na fonte | higiene-rp4n20 | viva | Rótulo do recibo, `livro.linha.leituraNaFonteK`. |
+| conteudo | Reading at the source | higiene-rp4n20 | viva | Rótulo inglês do mesmo campo. |
+| conteudo | Não há leitura na fonte registada para esta linha. | higiene-rp4n20 | viva | Ausência nas cópias alojadas sem verificação própria, `livro.linha.semLeituraDaCopia`. |
+| conteudo | No reading at the source is recorded for this row. | higiene-rp4n20 | viva | Ausência inglesa no mesmo caso. |

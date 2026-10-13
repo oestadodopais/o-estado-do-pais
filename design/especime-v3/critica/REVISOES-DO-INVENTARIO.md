@@ -716,3 +716,5 @@ A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recib
 | rp4ng | Ausência das contagens do estudo e glosa do selo na sinopse das pensões | por ler | Codex gpt-6-astra: frases copiadas da construção, sem inventar a data original em falta. A leitura cruzada fica com a direção. |
 
 | rp4nj | 2 cadeias novas, 4 retiradas | por ler | Contagens lidas do HTML pelo inventario-j.mjs; a fusão do JD1 e do RP4-n mudou a contagem. |
+
+| higiene-rp4n20 | 4 cadeias já publicadas acrescentadas ao inventário | por ler | Rótulos e ausência de leitura na fonte, copiados de `src/i18n/strings.mjs`; o âmbito das cópias alojadas está explícito. |
