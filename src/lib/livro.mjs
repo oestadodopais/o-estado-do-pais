@@ -110,7 +110,7 @@ export function descricaoDaLinha(claim, lang) {
   if (confirmado(claim.source)) partes.push(`${s.prov.fonte}: ${claim.source}`);
   const doc = documentoDaLinha(claim);
   if (doc && confirmado(doc.title)) {
-    partes.push(confirmado(doc.edition) ? `${doc.title} (${doc.edition})` : doc.title);
+    partes.push(confirmado(doc.edition) ? `${doc.title} (${doc.edition})` : String(doc.title));
   }
   /* «Lido a 2026-08-12», não «Lido a: 2026-08-12» — o rótulo já traz a
      preposição. A fonte leva dois pontos porque o rótulo é um substantivo. */
