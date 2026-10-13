@@ -13,13 +13,15 @@ unit: "%"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "IHPC"
 name_source: "Quadro 1, IHPC, 2026, p. 9"
+name_source_en: "Table 1, HICP, 2026, p. 9"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Conselho das Finanças Públicas"
 document:
   title: "Previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027"
-  edition: "2027"
-  locator: "Quadro 1, IHPC, 2026, p. 9"
+  edition: "2026"
+  locator: "Quadro 1, IHPC, 2026, p. 9; comentário, p. 19; conclusão, p. 20"
+  locator_en: "Table 1, HICP, 2026, p. 9; commentary, p. 19; conclusion, p. 20"
   page: 9
   kind: "ficheiro"
   crop:
@@ -31,7 +33,11 @@ access_date: "2026-10-13"
 reference_date: "2026"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "IHPC                                                      2,2       2,9      2,3"
+excerpt: "IHPC                                                      2,2       2,9      2,3\n\nFonte: MF – Informação enviada a 30 de setembro de 2026.\n\nO cenário macroeconómico aponta para uma inflação de 2,9% em 2026, o que se afigura pouco provável.\n\nNos termos do número 4do artigo 4.º do Regulamento n.º 473/2013 do Parlamento Europeu e do Conselho de 21 de maio de 2013, em resultado da análise efetuada às previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027 do XXV Governo Constitucional, com base na informação atualmente disponível e ponderando os riscos identificados, tendo em conta que a evolução para o crescimento nominal previsto para 2027 respeita os princípios legais supramencionados, o Conselho das Finanças Públicas endossa as previsões macroeconómicas apresentadas, dando nota que os riscos para o crescimento real apresentam um pendor descendente."
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Previsão, não execução."
+ressalva_en: "Forecast, not outturn."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

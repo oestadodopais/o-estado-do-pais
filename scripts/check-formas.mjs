@@ -137,7 +137,7 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 
 import { loadClaims, getClaim, eValorTextual, parsePtNumber } from '../src/lib/ledger.mjs';
-import { dataDaCasa } from '../src/lib/datas.mjs';
+import { dataDaCasa, eCampoDeData } from '../src/lib/datas.mjs';
 import { matchPath, routePath, LANGS } from '../src/lib/routes.mjs';
 import { slugsDosDominios, medidasDoDominio } from '../src/data/dominios.mjs';
 import { FIGURAS } from '../src/data/figuras.mjs';
@@ -168,6 +168,13 @@ const cinza = (s) => `\x1b[90m${s}\x1b[0m`;
 const erros = [];
 /** @param {string} m */
 const err = (m) => erros.push(m);
+// Plantas da edição datada: outro dia válido passa; meses e dias impossíveis não passam.
+for (const [valor,valido] of [['2024-02-29',true],['2026-10-10',true],['2026-02-29',false],['2026-04-31',false],['2025-12',false]]) {
+  const origem=campoDaData({document:{edition:valor}},'document.edition');
+  if (eCampoDeData('document.edition',valor)!==valido || origem!==(valido?valor:null)) err(`V2A data: edição fora da regra do calendário: ${valor}`);
+  else console.log(`PLANTA edição ${valor}: V2A data: ${valido?'dia completo aceite':'edição não convertida em data'}`);
+}
+
 
 if (!fs.existsSync(DIST)) {
   console.error(vermelho('\n  PORTÃO DAS FORMAS · não existe dist/. Corra o build primeiro.\n'));
@@ -348,8 +355,13 @@ function campoDaData(linha, campo) {
   if (campo === 'reference_date') return typeof linha.reference_date === 'string' ? linha.reference_date : null;
   if (campo === 'access_date') return typeof linha.access_date === 'string' ? linha.access_date : null;
   if (campo === 'published_at') return typeof linha.published_at === 'string' ? linha.published_at : null;
-  // V2-a: a edição datada das afirmações, recomposta a partir do campo de origem.
-  if (campo === 'document.edition' && linha.afirmacao === true && linha.document?.edition === '2026-10-09') return linha.document.edition;
+  // A edição com dia completo é conferida pelo calendário, sem uma lista de datas.
+  if (campo === 'document.edition') {
+    const v=linha.document?.edition;
+    if (typeof v !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(v)) return null;
+    const [ano,mes,dia]=v.split('-').map(Number), d=new Date(v);
+    return d.getUTCFullYear()===ano && d.getUTCMonth()+1===mes && d.getUTCDate()===dia ? v : null;
+  }
   /* AS DUAS DATAS DO ALOJAMENTO (bloco F1.4, 04.09.2026). O instantâneo do
      ficheiro alojado e o de cada ficheiro sobre que a linha foi contada. Entram
      aqui porque passaram a escrever-se na forma da casa como as outras três, e

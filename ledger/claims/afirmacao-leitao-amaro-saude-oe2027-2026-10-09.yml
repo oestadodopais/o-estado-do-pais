@@ -11,8 +11,9 @@ unit: "%"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "Leitão Amaro reitera que os portugueses \"têm mais dinheiro no bolso\" e apela à responsabilidade de PS e Chega"
+name: "Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%"
 name_source: "Título e corpo da notícia"
+name_source_en: "Title and body of the article"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "RTP"
@@ -20,6 +21,7 @@ document:
   title: "Leitão Amaro reitera que os portugueses \"têm mais dinheiro no bolso\" e apela à responsabilidade de PS e Chega"
   edition: "2026-10-09"
   locator: "Título e corpo da notícia"
+  locator_en: "Title and body of the article"
   kind: "html"
 source_url: "https://www.rtp.pt/noticias/politica/leitao-amaro-reitera-que-os-portugueses-tem-mais-dinheiro-no-bolso-e-apela-a-responsabilidade-de-ps-e-chega_n1770773"
 access_date: "2026-10-13"

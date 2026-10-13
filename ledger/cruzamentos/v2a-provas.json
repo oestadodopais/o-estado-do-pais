@@ -5,29 +5,8 @@
     "provas.json": {
       "destino": "ledger/provas/v2a",
       "origin_path": "publisher/recortes/v2a/provas.json",
-      "origin_sha256": "fff209ba6db915da880a800338ebae0b6590d8acc770bdb6a4b703b51937efcc",
-      "exported_sha256": "fff209ba6db915da880a800338ebae0b6590d8acc770bdb6a4b703b51937efcc",
-      "exporter": "publisher/export_site_rows.py"
-    },
-    "rtp-amaro.html.gz": {
-      "destino": "ledger/provas/v2a",
-      "origin_path": "publisher/recortes/v2a/rtp-amaro.html.gz",
-      "origin_sha256": "b07e165de2e28f0447aebfb0ecb1af29fc158bfa0557bf998339485bf82932e0",
-      "exported_sha256": "b07e165de2e28f0447aebfb0ecb1af29fc158bfa0557bf998339485bf82932e0",
-      "exporter": "publisher/export_site_rows.py"
-    },
-    "pcp-afirmacao.html.gz": {
-      "destino": "ledger/provas/v2a",
-      "origin_path": "publisher/recortes/v2a/pcp-afirmacao.html.gz",
-      "origin_sha256": "6468dca1a179c17be62f542f8547dbfc5fa4ace9b36e67bdc9bfb58fe165e861",
-      "exported_sha256": "6468dca1a179c17be62f542f8547dbfc5fa4ace9b36e67bdc9bfb58fe165e861",
-      "exporter": "publisher/export_site_rows.py"
-    },
-    "rtp-queda.html.gz": {
-      "destino": "ledger/provas/v2a",
-      "origin_path": "publisher/recortes/v2a/rtp-queda.html.gz",
-      "origin_sha256": "d531e290b70cb627dec4b856b5da3cd9db384aff46d6fd7d7e852640e019a078",
-      "exported_sha256": "d531e290b70cb627dec4b856b5da3cd9db384aff46d6fd7d7e852640e019a078",
+      "origin_sha256": "f40a01d46999298e1d8ef912f76a845ffb2fe78ea286b2ddb3de4a828de42e1c",
+      "exported_sha256": "f40a01d46999298e1d8ef912f76a845ffb2fe78ea286b2ddb3de4a828de42e1c",
       "exporter": "publisher/export_site_rows.py"
     }
   }

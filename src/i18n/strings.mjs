@@ -357,6 +357,7 @@ export const STRINGS = {
          transcrição muda; muda o rótulo que a casa escreve por cima dele. */
       fonte: 'Publicado por',
       documento: 'Documento',
+      tituloDoDocumento: 'Título do documento',
       edicao: 'Edição',
       localizacao: 'Onde no documento',
       /* O RÓTULO COM QUE A FONTE PUBLICA A FIGURA, e onde no ficheiro alojado
@@ -3353,6 +3354,7 @@ export const STRINGS = {
       registoDaCopia: 'Copy record',
       fonte: 'Published by',
       documento: 'Document',
+      tituloDoDocumento: 'Document title',
       edicao: 'Edition',
       localizacao: 'Where in the document',
       rotuloDaFonte: 'Name at the source',

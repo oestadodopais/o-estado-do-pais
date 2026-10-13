@@ -11,8 +11,9 @@ unit: "% de queda"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "OE2027. Verbas para a saúde com queda de 1,5%"
+name: "O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano."
 name_source: "Título e corpo da notícia"
+name_source_en: "Title and body of the article"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "RTP"
@@ -20,6 +21,7 @@ document:
   title: "OE2027. Verbas para a saúde com queda de 1,5%"
   edition: "2026-10-09"
   locator: "Título e corpo da notícia"
+  locator_en: "Title and body of the article"
   kind: "html"
 source_url: "https://www.rtp.pt/noticias/economia/oe2027-verbas-para-a-saude-com-queda-de-15_v1770667"
 access_date: "2026-10-13"

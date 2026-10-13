@@ -11,8 +11,9 @@ unit: "milhões de euros"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
-name: "Governo, Chega e PS dançam o bailarico. Quem paga a conta são os trabalhadores!"
+name: "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
 name_source: "Intervenção na Assembleia da República"
+name_source_en: "Speech in the Assembly of the Republic"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "PCP"
@@ -20,6 +21,7 @@ document:
   title: "Governo, Chega e PS dançam o bailarico. Quem paga a conta são os trabalhadores!"
   edition: "2026-10-09"
   locator: "Intervenção na Assembleia da República"
+  locator_en: "Speech in the Assembly of the Republic"
   kind: "html"
 source_url: "https://www.pcp.pt/governo-chega-ps-dancam-bailarico-quem-paga-conta-sao-trabalhadores"
 access_date: "2026-10-13"

@@ -1,0 +1,27 @@
+{
+  "leituras_do_lancador": [
+    {
+      "fonte": "resposta-v2a.pontos.json",
+      "inicio": "2026-10-13T18:43:08+00:00",
+      "fim": "2026-10-13T19:53:39+00:00",
+      "pontos_antes": 1.0,
+      "pontos_depois": 11.0,
+      "pontos_diferenca": 10.0,
+      "custo_antigo": 551961,
+      "outras_sessoes_no_intervalo": 1
+    },
+    {
+      "fonte": "resposta-v2a-retoma.pontos.json",
+      "inicio": "2026-10-13T19:56:32+00:00",
+      "fim": "2026-10-13T20:52:44+00:00",
+      "pontos_antes": 11.0,
+      "pontos_depois": 17.0,
+      "pontos_diferenca": 6.0,
+      "custo_antigo": 246648,
+      "outras_sessoes_no_intervalo": 1
+    }
+  ],
+  "total_pontos": 16.0,
+  "total_custo_antigo": 798609,
+  "limite": "Os pontos são da conta inteira, com outra sessão em cada intervalo. O custo final da V2-a-b só será escrito pelo lançador depois desta resposta."
+}

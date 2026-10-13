@@ -28,7 +28,13 @@ const git=(...args)=>execFileSync('git',args,{encoding:'utf8'}).trim();
 const tree=ref=>Object.fromEntries(git('ls-tree','-r',ref,'ledger/claims').split('\n').map(l=>{const [blob,file]=l.split('\t');return [file,blob];}));
 const base=tree('98487940'),atual=tree('HEAD');
 for(const [f,blob] of Object.entries(base)) assert.equal(atual[f],blob,`Linha anterior alterada: ${f}`);
-assert.equal(git('rev-parse','98487940:src/views/LinhaView.astro'),git('rev-parse','HEAD:src/views/LinhaView.astro'));
+const vistaBase=git('show','98487940:src/views/LinhaView.astro');
+const vistaEsperada=vistaBase.replace('k: ehSerieDeDados ? s.prov.serie : s.prov.documento,',
+  'k: claim.afirmacao ? s.prov.tituloDoDocumento : ehSerieDeDados ? s.prov.serie : s.prov.documento,');
+const conferirVista=texto=>assert.equal(texto.trim(),vistaEsperada,'V2A vista: mudou mais do que o título do documento das afirmações.');
+conferirVista(fs.readFileSync('src/views/LinhaView.astro','utf8'));
+assert.throws(()=>conferirVista(vistaEsperada.replace('s.prov.serie','s.prov.documento')),/V2A vista:/);
+console.log('PLANTA vista anterior alterada: V2A vista: mudou mais do que o título do documento das afirmações.');
 const plantas=[];
 for(const [nome,mensagem,altera] of [
   ['multiplicidade anterior',mensagens.antigas,c=>{const u=Object.keys(antigas)[0];c[u][Object.keys(c[u])[0]]++;}],
@@ -43,7 +49,7 @@ for(const [nome,mensagem,altera] of [
 const registo={cabeca:git('rev-parse','HEAD'),construcao:JSON.parse(fs.readFileSync('dist/version.json','utf8')).commit,
   contagens:{estudos:medido.paginas,anteriores,novas:novas.length},contagem:`${pasta}/l1-destinos.json`,
   base:origem,novas:Object.fromEntries(novas.map(u=>[u,destinos[u]])),plantas,
-  razao:'A RP4-n-j mediu as páginas anteriores abaixo do teto herdado do JD1. Entram os recibos V2-a nas duas edições, com duas portas do Método cada. A contagem integral foi refeita pela régua R4 e coincide com a L1. Os objetos Git das linhas anteriores e da vista dos recibos não mudaram.',
+  razao:'A RP4-n-j mediu as páginas anteriores abaixo do teto herdado do JD1. Entram os recibos V2-a nas duas edições, com duas portas do Método cada. A contagem integral foi refeita pela régua R4 e coincide com a L1. Os objetos Git das linhas anteriores não mudaram. A vista só ganhou o título do documento condicionado às afirmações; a comparação integral e a planta recusam qualquer outra mudança.',
   limite:'O registo histórico da RP4-n-j prova o total anterior, não guarda os destinos por página. A comparação de multiplicidades usa a fotografia integral desta construção; não se apresenta como reconstrução do HTML da cabeça de partida.'};
 if(process.argv.includes('--write')) {
   fs.writeFileSync(`${pasta}/l1-v2a.json`,JSON.stringify(registo,null,2)+'\n');

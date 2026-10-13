@@ -224,10 +224,10 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada rótulo distinto do campo `name`. */
 export const LINGUA_DOS_ROTULOS = {
-  // V2-a: línguas lidas nos documentos alojados.
-  "Leitão Amaro reitera que os portugueses \"têm mais dinheiro no bolso\" e apela à responsabilidade de PS e Chega": 'pt',
-  "Governo, Chega e PS dançam o bailarico. Quem paga a conta são os trabalhadores!": 'pt',
-  "OE2027. Verbas para a saúde com queda de 1,5%": 'pt',
+  // V2-a: palavras das afirmações, não títulos dos artigos.
+  "Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%": 'pt',
+  "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias": 'pt',
+  "O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.": 'pt',
   "IHPC": 'pt',
   "PIB": 'pt',
   "encargos brutos": 'pt',

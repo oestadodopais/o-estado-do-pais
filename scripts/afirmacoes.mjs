@@ -2,7 +2,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import {gunzipSync} from 'node:zlib';
 import {parse} from 'node-html-parser';
 import assert from 'node:assert/strict';
 
@@ -15,16 +14,17 @@ export function textoDoCorpo(raw) {
 }
 export function conferirAfirmacao(c,p,raw) {
   const errors=[];
-  if (!p || !raw) return ['V2A selo: falta o corpo alojado ou a prova'];
-  if (sha(raw)!==p.sha256) errors.push('V2A selo: sha256 diferente do corpo alojado');
-  const text=textoDoCorpo(raw);
-  if (normal(c.excerpt)!==normal(p.excerpt) || !text.includes(normal(c.excerpt))) errors.push('V2A excerto: palavras diferentes do corpo alojado');
-  if (JSON.stringify(c.attributed_to)!==JSON.stringify(p.attributed_to) || !text.includes(p.attribution_anchor)) errors.push('V2A atribuição: difere da autoria no documento');
-  let date;
-  if (p.file==='pcp-afirmacao.html') {
+  if (!p) return ['V2A selo: falta a prova'];
+  if (!/^[a-f0-9]{64}$/.test(p.sha256 ?? '') || path.basename(p.file)!==p.file || p.motor_path !== `content/15 Orcamento do Estado 2027/source/v2a/${p.file}` || !/^\d{4}-\d{2}-\d{2}T/.test(p.acedido_em ?? '')) errors.push('V2A referência: falta o selo, a data ou o caminho relativo no motor');
+  if (raw && sha(raw)!==p.sha256) errors.push('V2A selo: sha256 diferente do corpo alojado');
+  const text=raw ? textoDoCorpo(raw) : null;
+  if (normal(c.excerpt)!==normal(p.excerpt) || (text !== null && !text.includes(normal(c.excerpt)))) errors.push('V2A excerto: palavras diferentes do corpo alojado');
+  if (JSON.stringify(c.attributed_to)!==JSON.stringify(p.attributed_to) || (text !== null && !text.includes(p.attribution_anchor))) errors.push('V2A atribuição: difere da autoria no documento');
+  let date=raw ? undefined : p.published_at;
+  if (raw && p.file==='pcp-afirmacao.html') {
     const m=text.match(/(\d+) Outubro (\d{4}), Assembleia da República/);
     if(m) date=`${m[2]}-10-${m[1].padStart(2,'0')}`;
-  } else date=raw.toString('utf8').match(/<time[^>]+datetime="(\d{4}-\d{2}-\d{2})T/)?.[1];
+  } else if (raw) date=raw.toString('utf8').match(/<time[^>]+datetime="(\d{4}-\d{2}-\d{2})T/)?.[1];
   if (!date || c.published_at!==date || c.reference_date!==date || p.published_at!==date) errors.push('V2A data: difere da data do documento');
   if (c.source_url!==p.pedido) errors.push('V2A porta: difere do pedido registado');
   const v=normal(c.value).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
@@ -32,15 +32,21 @@ export function conferirAfirmacao(c,p,raw) {
   if (c.unit!==p.unit || c.document?.kind!==p.kind) errors.push('V2A medida: unidade ou documento diferente');
   return errors;
 }
-export function conferirAfirmacoes(claims,{plantar=true}={}) {
+export function conferirPublicacao(nomes) {
+  return nomes.every(n=>n==='provas.json') ? [] : ['V2A direitos: a prova pública só admite excertos e referências em provas.json'];
+}
+export function conferirAfirmacoes(claims,{plantar=true,motor=process.env.RESEARCHHUB_DIR}={}) {
   const prova=JSON.parse(fs.readFileSync('ledger/provas/v2a/provas.json','utf8'));
-  const errors=[], plantas=[];
+  const errors=conferirPublicacao(fs.readdirSync('ledger/provas/v2a')), plantas=[];
   let checked=0;
   for(const c of claims.values()) {
     if(!c.afirmacao) continue;
     const p=prova.rows[c.id];
     let raw;
-    if(p && path.basename(p.file)===p.file) raw=gunzipSync(fs.readFileSync(path.join('ledger/provas/v2a',p.file+'.gz')));
+    if(motor && p && p.motor_path===`content/15 Orcamento do Estado 2027/source/v2a/${path.basename(p.file)}`) {
+      try {raw=fs.readFileSync(path.join(motor,p.motor_path));}
+      catch {errors.push(`${c.id}: V2A selo: corpo indisponível no motor indicado`);}
+    }
     const found=conferirAfirmacao(c,p,raw);
     errors.push(...found.map(e=>`${c.id}: ${e}`));checked++;
     if(plantar && !plantas.length && !found.length) {
@@ -56,6 +62,16 @@ export function conferirAfirmacoes(claims,{plantar=true}={}) {
         assert(hit,`V2A planta sem a mensagem esperada: ${nome}`);plantas.push({nome,mensagem:hit});
       }
     }
+  }
+  if(plantar) {
+    for(const nome of ['pagina.html.gz','parecer.pdf']) {
+      const mensagem=conferirPublicacao(['provas.json',nome])[0];
+      assert(mensagem?.startsWith('V2A direitos:'));plantas.push({nome:`corpo integral ${nome}`,mensagem});
+    }
+    const c=[...claims.values()].find(c=>c.afirmacao), p=structuredClone(prova.rows[c.id]);
+    p.motor_path='../fora.html';
+    const mensagem=conferirAfirmacao(c,p).find(e=>e.startsWith('V2A referência:'));
+    assert(mensagem);plantas.push({nome:'caminho fora do motor',mensagem});
   }
   for(const [id,p] of Object.entries(prova.rows)) if(p.kind==='html' && !claims.get(id)?.afirmacao) errors.push(`${id}: V2A afirmação selada ausente do livro`);
   return {errors,checked,plantas};

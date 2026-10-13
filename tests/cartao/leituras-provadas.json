@@ -14470,18 +14470,18 @@
         "oe-2027-saude-despesa-total-consolidada"
       ],
       "nome": {
-        "pt": "Despesa total consolidada do programa Saúde",
-        "en": "Consolidated total expenditure of the Health programme"
+        "pt": "Despesa total consolidada da conta do Programa Legado Saúde",
+        "en": "Consolidated total expenditure of the Health Legacy Programme Account"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "É a despesa total consolidada do programa Saúde, na estimativa ou no orçamento indicado.",
-          "en": "It is consolidated total expenditure of the Health programme, in the stated estimate or budget.",
+          "pt": "É a despesa total consolidada da conta do Programa Legado Saúde, na estimativa ou no orçamento indicado.",
+          "en": "It is consolidated total expenditure of the Health Legacy Programme Account, in the stated estimate or budget.",
           "partes": [
             {
-              "pt": "É a despesa total consolidada do programa Saúde, na estimativa ou no orçamento indicado.",
-              "en": "It is consolidated total expenditure of the Health programme, in the stated estimate or budget.",
+              "pt": "É a despesa total consolidada da conta do Programa Legado Saúde, na estimativa ou no orçamento indicado.",
+              "en": "It is consolidated total expenditure of the Health Legacy Programme Account, in the stated estimate or budget.",
               "classe": "diz",
               "apoios": [
                 {
@@ -14492,7 +14492,7 @@
                 {
                   "linha": "propria",
                   "campo": "document.locator",
-                  "literal": "programa Saúde"
+                  "literal": "Saúde (PL15), Conta do Pograma Legado"
                 },
                 {
                   "linha": "propria",
@@ -14510,18 +14510,18 @@
         "oe-2027-saude-despesa-total-consolidada-variacao"
       ],
       "nome": {
-        "pt": "Variação da despesa total consolidada do programa Saúde",
-        "en": "Change in consolidated total expenditure of the Health programme"
+        "pt": "Variação da despesa total consolidada da conta do Programa Legado Saúde",
+        "en": "Change in consolidated total expenditure of the Health Legacy Programme Account"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "É a variação publicada da despesa total consolidada do programa Saúde.",
-          "en": "It is the published change in consolidated total expenditure of the Health programme.",
+          "pt": "É a variação publicada da despesa total consolidada da conta do Programa Legado Saúde: compara o orçamento com a estimativa do ano anterior, incluindo PRR.",
+          "en": "It is the published change in consolidated total expenditure of the Health Legacy Programme Account: the budget compared with the previous year’s estimate, including the RRP.",
           "partes": [
             {
-              "pt": "É a variação publicada da despesa total consolidada do programa Saúde.",
-              "en": "It is the published change in consolidated total expenditure of the Health programme.",
+              "pt": "É a variação publicada da despesa total consolidada da conta do Programa Legado Saúde: compara o orçamento com a estimativa do ano anterior, incluindo PRR.",
+              "en": "It is the published change in consolidated total expenditure of the Health Legacy Programme Account: the budget compared with the previous year’s estimate, including the RRP.",
               "classe": "diz",
               "apoios": [
                 {
@@ -14532,12 +14532,17 @@
                 {
                   "linha": "propria",
                   "campo": "document.locator",
-                  "literal": "programa Saúde"
+                  "literal": "Saúde (PL15), Conta do Pograma Legado"
                 },
                 {
                   "linha": "propria",
                   "campo": "document.locator",
                   "literal": "Variação"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "ressalva",
+                  "literal": "Compara o orçamento de 2027 com a estimativa de 2026"
                 }
               ]
             }
@@ -14550,18 +14555,18 @@
         "oe-2027-saude-despesa-efetiva-consolidada"
       ],
       "nome": {
-        "pt": "Despesa efetiva consolidada do programa Saúde",
-        "en": "Consolidated effective expenditure of the Health programme"
+        "pt": "Despesa efetiva consolidada da conta do Programa Legado Saúde",
+        "en": "Consolidated effective expenditure of the Health Legacy Programme Account"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "É a despesa efetiva consolidada do programa Saúde, na estimativa ou no orçamento indicado.",
-          "en": "It is consolidated effective expenditure of the Health programme, in the stated estimate or budget.",
+          "pt": "É a despesa efetiva consolidada da conta do Programa Legado Saúde, na estimativa ou no orçamento indicado.",
+          "en": "It is consolidated effective expenditure of the Health Legacy Programme Account, in the stated estimate or budget.",
           "partes": [
             {
-              "pt": "É a despesa efetiva consolidada do programa Saúde, na estimativa ou no orçamento indicado.",
-              "en": "It is consolidated effective expenditure of the Health programme, in the stated estimate or budget.",
+              "pt": "É a despesa efetiva consolidada da conta do Programa Legado Saúde, na estimativa ou no orçamento indicado.",
+              "en": "It is consolidated effective expenditure of the Health Legacy Programme Account, in the stated estimate or budget.",
               "classe": "diz",
               "apoios": [
                 {
@@ -14572,7 +14577,7 @@
                 {
                   "linha": "propria",
                   "campo": "document.locator",
-                  "literal": "programa Saúde"
+                  "literal": "Saúde (PL15), Conta do Pograma Legado"
                 },
                 {
                   "linha": "propria",
@@ -14590,18 +14595,18 @@
         "oe-2027-saude-despesa-efetiva-consolidada-variacao"
       ],
       "nome": {
-        "pt": "Variação da despesa efetiva consolidada do programa Saúde",
-        "en": "Change in consolidated effective expenditure of the Health programme"
+        "pt": "Variação da despesa efetiva consolidada da conta do Programa Legado Saúde",
+        "en": "Change in consolidated effective expenditure of the Health Legacy Programme Account"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "É a variação publicada da despesa efetiva consolidada do programa Saúde.",
-          "en": "It is the published change in consolidated effective expenditure of the Health programme.",
+          "pt": "É a variação publicada da despesa efetiva consolidada da conta do Programa Legado Saúde: compara o orçamento com a estimativa do ano anterior, incluindo PRR.",
+          "en": "It is the published change in consolidated effective expenditure of the Health Legacy Programme Account: the budget compared with the previous year’s estimate, including the RRP.",
           "partes": [
             {
-              "pt": "É a variação publicada da despesa efetiva consolidada do programa Saúde.",
-              "en": "It is the published change in consolidated effective expenditure of the Health programme.",
+              "pt": "É a variação publicada da despesa efetiva consolidada da conta do Programa Legado Saúde: compara o orçamento com a estimativa do ano anterior, incluindo PRR.",
+              "en": "It is the published change in consolidated effective expenditure of the Health Legacy Programme Account: the budget compared with the previous year’s estimate, including the RRP.",
               "classe": "diz",
               "apoios": [
                 {
@@ -14612,12 +14617,17 @@
                 {
                   "linha": "propria",
                   "campo": "document.locator",
-                  "literal": "programa Saúde"
+                  "literal": "Saúde (PL15), Conta do Pograma Legado"
                 },
                 {
                   "linha": "propria",
                   "campo": "document.locator",
                   "literal": "Variação"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "ressalva",
+                  "literal": "Compara o orçamento de 2027 com a estimativa de 2026"
                 }
               ]
             }
@@ -14630,18 +14640,18 @@
         "oe-2027-saude-despesa-efetiva-consolidada-sem-prr"
       ],
       "nome": {
-        "pt": "Despesa efetiva consolidada sem PRR do programa Saúde",
-        "en": "Consolidated effective expenditure excluding the RRP of the Health programme"
+        "pt": "Despesa efetiva consolidada sem PRR da conta do Programa Legado Saúde",
+        "en": "Consolidated effective expenditure excluding the RRP of the Health Legacy Programme Account"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "É a despesa efetiva consolidada sem prr do programa Saúde, na estimativa ou no orçamento indicado.",
-          "en": "It is consolidated effective expenditure excluding the rrp of the Health programme, in the stated estimate or budget.",
+          "pt": "É a despesa efetiva consolidada sem PRR da conta do Programa Legado Saúde, na estimativa ou no orçamento indicado.",
+          "en": "It is consolidated effective expenditure excluding the RRP of the Health Legacy Programme Account, in the stated estimate or budget.",
           "partes": [
             {
-              "pt": "É a despesa efetiva consolidada sem prr do programa Saúde, na estimativa ou no orçamento indicado.",
-              "en": "It is consolidated effective expenditure excluding the rrp of the Health programme, in the stated estimate or budget.",
+              "pt": "É a despesa efetiva consolidada sem PRR da conta do Programa Legado Saúde, na estimativa ou no orçamento indicado.",
+              "en": "It is consolidated effective expenditure excluding the RRP of the Health Legacy Programme Account, in the stated estimate or budget.",
               "classe": "diz",
               "apoios": [
                 {
@@ -14652,7 +14662,7 @@
                 {
                   "linha": "propria",
                   "campo": "document.locator",
-                  "literal": "programa Saúde"
+                  "literal": "Saúde (PL15), Conta do Pograma Legado"
                 },
                 {
                   "linha": "propria",
@@ -14670,18 +14680,18 @@
         "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao"
       ],
       "nome": {
-        "pt": "Variação da despesa efetiva consolidada sem prr do programa Saúde",
-        "en": "Change in consolidated effective expenditure excluding the rrp of the Health programme"
+        "pt": "Variação da despesa efetiva consolidada sem PRR da conta do Programa Legado Saúde",
+        "en": "Change in consolidated effective expenditure excluding the RRP of the Health Legacy Programme Account"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "É a variação publicada da despesa efetiva consolidada sem prr do programa Saúde.",
-          "en": "It is the published change in consolidated effective expenditure excluding the rrp of the Health programme.",
+          "pt": "É a variação publicada da despesa efetiva consolidada sem PRR da conta do Programa Legado Saúde: compara o orçamento com a estimativa do ano anterior, sem PRR.",
+          "en": "It is the published change in consolidated effective expenditure excluding the RRP of the Health Legacy Programme Account: the budget compared with the previous year’s estimate, excluding the RRP.",
           "partes": [
             {
-              "pt": "É a variação publicada da despesa efetiva consolidada sem prr do programa Saúde.",
-              "en": "It is the published change in consolidated effective expenditure excluding the rrp of the Health programme.",
+              "pt": "É a variação publicada da despesa efetiva consolidada sem PRR da conta do Programa Legado Saúde: compara o orçamento com a estimativa do ano anterior, sem PRR.",
+              "en": "It is the published change in consolidated effective expenditure excluding the RRP of the Health Legacy Programme Account: the budget compared with the previous year’s estimate, excluding the RRP.",
               "classe": "diz",
               "apoios": [
                 {
@@ -14692,12 +14702,17 @@
                 {
                   "linha": "propria",
                   "campo": "document.locator",
-                  "literal": "programa Saúde"
+                  "literal": "Saúde (PL15), Conta do Pograma Legado"
                 },
                 {
                   "linha": "propria",
                   "campo": "document.locator",
                   "literal": "Variação"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "ressalva",
+                  "literal": "Compara o orçamento de 2027 com a estimativa de 2026"
                 }
               ]
             }
@@ -14850,18 +14865,18 @@
         "oe-2027-cenario-pib-real-crescimento"
       ],
       "nome": {
-        "pt": "Crescimento real do produto interno bruto previsto para Portugal",
-        "en": "Forecast real gross domestic product growth for Portugal"
+        "pt": "Previsão do Ministério das Finanças para o crescimento real do produto interno bruto, transcrita pelo CFP",
+        "en": "Ministry of Finance forecast for real gross domestic product growth, transcribed by the CFP"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "É a taxa de crescimento real do produto interno bruto no cenário de previsões macroeconómicas.",
-          "en": "It is the real gross domestic product growth rate in the macroeconomic forecast scenario.",
+          "pt": "É a previsão do Ministério das Finanças para o crescimento real do produto interno bruto no Orçamento do Estado, como o CFP a transcreve. O parecer considera-a superior à de todas as instituições de referência.",
+          "en": "It is the Ministry of Finance forecast for real gross domestic product growth in the State Budget, as transcribed by the CFP. The opinion considers it higher than those of all reference institutions.",
           "partes": [
             {
-              "pt": "É a taxa de crescimento real do produto interno bruto no cenário de previsões macroeconómicas.",
-              "en": "It is the real gross domestic product growth rate in the macroeconomic forecast scenario.",
+              "pt": "É a previsão do Ministério das Finanças para o crescimento real do produto interno bruto no Orçamento do Estado, como o CFP a transcreve. O parecer considera-a superior à de todas as instituições de referência.",
+              "en": "It is the Ministry of Finance forecast for real gross domestic product growth in the State Budget, as transcribed by the CFP. The opinion considers it higher than those of all reference institutions.",
               "classe": "diz",
               "apoios": [
                 {
@@ -14873,6 +14888,16 @@
                   "linha": "propria",
                   "campo": "excerpt",
                   "literal": "crescimento real"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Fonte: MF"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "superior ao de todas as instituições de referência"
                 }
               ]
             }
@@ -14885,18 +14910,18 @@
         "oe-2027-cenario-ihpc"
       ],
       "nome": {
-        "pt": "Variação do índice harmonizado de preços no consumidor prevista para Portugal",
-        "en": "Forecast change in the harmonised index of consumer prices for Portugal"
+        "pt": "Previsão do Ministério das Finanças para a inflação medida pelo IHPC, transcrita pelo CFP",
+        "en": "Ministry of Finance forecast for HICP inflation, transcribed by the CFP"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "É a taxa do índice harmonizado de preços no consumidor no cenário de previsões macroeconómicas.",
-          "en": "It is the harmonised index of consumer prices rate in the macroeconomic forecast scenario.",
+          "pt": "É a previsão do Ministério das Finanças para a inflação medida pelo índice harmonizado de preços no consumidor no Orçamento do Estado, como o CFP a transcreve. O parecer considera-a pouco provável.",
+          "en": "It is the Ministry of Finance forecast for inflation measured by the harmonised index of consumer prices in the State Budget, as transcribed by the CFP. The opinion considers it unlikely.",
           "partes": [
             {
-              "pt": "É a taxa do índice harmonizado de preços no consumidor no cenário de previsões macroeconómicas.",
-              "en": "It is the harmonised index of consumer prices rate in the macroeconomic forecast scenario.",
+              "pt": "É a previsão do Ministério das Finanças para a inflação medida pelo índice harmonizado de preços no consumidor no Orçamento do Estado, como o CFP a transcreve. O parecer considera-a pouco provável.",
+              "en": "It is the Ministry of Finance forecast for inflation measured by the harmonised index of consumer prices in the State Budget, as transcribed by the CFP. The opinion considers it unlikely.",
               "classe": "diz",
               "apoios": [
                 {
@@ -14908,6 +14933,16 @@
                   "linha": "propria",
                   "campo": "document.title",
                   "literal": "Previsões macroeconómicas"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Fonte: MF"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "pouco provável"
                 }
               ]
             }
@@ -14920,24 +14955,24 @@
         "afirmacao-leitao-amaro-saude-oe2027-2026-10-09"
       ],
       "nome": {
-        "pt": "Afirmação de Leitão Amaro sobre o orçamento da Saúde",
-        "en": "Leitão Amaro’s statement about the Health budget"
+        "pt": "Afirmação de Leitão Amaro sobre o orçamento da Saúde sem PRR",
+        "en": "Leitão Amaro’s statement about the Health budget excluding the RRP"
       },
       "origens": [],
       "folhas": [
         {
-          "pt": "É o valor publicado na afirmação citada, com a atribuição que o documento apresenta.",
-          "en": "It is the value published in the quoted statement, with the attribution given by the document.",
+          "pt": "É o aumento do orçamento da Saúde retirando a verba excecional do PRR, nas palavras do ministro da Presidência transcritas pela RTP.",
+          "en": "It is the increase in the Health budget excluding exceptional RRP funding, in the Minister of the Presidency’s words transcribed by RTP.",
           "partes": [
             {
-              "pt": "É o valor publicado na afirmação citada, com a atribuição que o documento apresenta.",
-              "en": "It is the value published in the quoted statement, with the attribution given by the document.",
+              "pt": "É o aumento do orçamento da Saúde retirando a verba excecional do PRR, nas palavras do ministro da Presidência transcritas pela RTP.",
+              "en": "It is the increase in the Health budget excluding exceptional RRP funding, in the Minister of the Presidency’s words transcribed by RTP.",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "orçamento da Saúde"
+                  "literal": "Se retirarmos isso, o orçamento da Saúde"
                 }
               ]
             }
@@ -14956,12 +14991,12 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É o valor publicado na afirmação citada, com a atribuição que o documento apresenta.",
-          "en": "It is the value published in the quoted statement, with the attribution given by the document.",
+          "pt": "É o montante que o orçamento entrega às parcerias público-privadas rodoviárias, nas palavras da intervenção de Paulo Raimundo publicada pelo PCP.",
+          "en": "It is the amount the budget allocates to road public-private partnerships, in Paulo Raimundo’s speech published by the PCP.",
           "partes": [
             {
-              "pt": "É o valor publicado na afirmação citada, com a atribuição que o documento apresenta.",
-              "en": "It is the value published in the quoted statement, with the attribution given by the document.",
+              "pt": "É o montante que o orçamento entrega às parcerias público-privadas rodoviárias, nas palavras da intervenção de Paulo Raimundo publicada pelo PCP.",
+              "en": "It is the amount the budget allocates to road public-private partnerships, in Paulo Raimundo’s speech published by the PCP.",
               "classe": "diz",
               "apoios": [
                 {
@@ -14986,18 +15021,18 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É o valor publicado na afirmação citada, com a atribuição que o documento apresenta.",
-          "en": "It is the value published in the quoted statement, with the attribution given by the document.",
+          "pt": "É a queda do orçamento da Saúde noticiada pela RTP. A notícia alojada não explicita se a despesa é total ou efetiva.",
+          "en": "It is the Health budget decrease reported by RTP. The hosted article does not specify whether the expenditure is total or effective.",
           "partes": [
             {
-              "pt": "É o valor publicado na afirmação citada, com a atribuição que o documento apresenta.",
-              "en": "It is the value published in the quoted statement, with the attribution given by the document.",
+              "pt": "É a queda do orçamento da Saúde noticiada pela RTP. A notícia alojada não explicita se a despesa é total ou efetiva.",
+              "en": "It is the Health budget decrease reported by RTP. The hosted article does not specify whether the expenditure is total or effective.",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "Cai 1,5 por cento"
+                  "literal": "O orçamento para Saúde sofre um corte"
                 }
               ]
             }

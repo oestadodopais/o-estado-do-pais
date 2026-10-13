@@ -8,7 +8,7 @@ Cabeça do código do sítio: `12c66378c648680d05676eac97b3ae62eca2780e`. Cabeç
 
 O guião do brief e `medir.py` contam 3211 linhas na partida e 3229 no fim, com 18 novas. A comparação dos objetos Git encontrou 0 linhas anteriores alteradas. As referências ao OE2027 passaram de 0 a 18. Os conhecidos-positivos do guião passaram.
 
-`medidas.json` contém as linhas e os documentos medidos; `final.json` é a execução final do guião original do brief. O circuito reutiliza `HttpClient`, os leitores de células do OE1/JD1, os recortes e o exportador comum. As três afirmações levam `afirmacao: true`. As provas comprimidas do sítio ficam fora de `public/` e `dist/` não recebe as páginas integrais.
+`medidas.json` contém as linhas e os documentos medidos; `final.json` é a execução final do guião original do brief. O circuito reutiliza `HttpClient`, os leitores de células do OE1/JD1, os recortes e o exportador comum. As três afirmações levam `afirmacao: true`. Na V2-a-b, os corpos integrais foram retirados da árvore do sítio. As provas públicas guardam apenas excertos e referências seladas aos corpos no motor.
 
 ## Linhas criadas
 
@@ -39,7 +39,7 @@ Os valores seguintes vêm dos YAML exportados, conferidos contra as células e o
 
 As treze células do relatório do Orçamento confirmam os valores do memorando. O quadro da Saúde está na página 303 do ficheiro, 287 impressa; o das PPP na página 123, 107 impressa. A nota de caixa e preços constantes de 2027 ficou na nota da linha. O texto seguinte ao quadro identifica os encargos rodoviários como líquidos. A ligação do PDF foi extraída da página da iniciativa alojada, com a origem e o seu sha256 no recibo da ligação.
 
-No CFP, 2,1% para o crescimento real do PIB de 2027 e 2,9% para o IHPC de 2026 estão no quadro 1, página 9 do PDF, não nas páginas 19 e 20 indicadas pelo memorando. A frase sobre o pendor descendente dos riscos está na página 20. Como o livro exige valor numérico, a frase ficou como segundo excerto da linha do PIB, com a página e a atribuição ao CFP na prova. Não foi criado um número para a frase nem uma quarta afirmação independente.
+No CFP, 2,1% para o crescimento real do PIB de 2027 e 2,9% para o IHPC de 2026 estão no quadro 1, página 9 do PDF, e voltam a aparecer na prosa da página 19. O memorando apontava para as páginas 19 e 20; só o quadro fica na página 9. A frase sobre o pendor descendente dos riscos está na página 20. Como o livro exige valor numérico, a frase ficou como segundo excerto da linha do PIB, com a página e a atribuição ao CFP na prova. Não foi criado um número para a frase nem uma quarta afirmação independente.
 
 A RTP imprime a magnitude «1,5» e a palavra «Cai», sem sinal negativo. A linha da afirmação conserva `1,5` com a unidade `% de queda`, em vez de introduzir `−1,5`. O quadro do Orçamento conserva a sua variação publicada de `−1,5%`. A notícia não explicita a designação «despesa total consolidada»; essa identificação não foi acrescentada às palavras da RTP.
 
@@ -80,7 +80,7 @@ As três plantas adicionais do índice também foram recusadas: «V2A: coluna da
 
 ## Questões V2A
 
-- V2A-1, aberta: a ligação aos termos da RTP devolveu 404. A licença de redistribuição integral não foi estabelecida. Guardou-se a cópia de conferência no motor e nas provas privadas, sem servir o artigo integral no sítio.
+- V2A-1, aberta: a ligação aos termos da RTP devolveu 404. A licença de redistribuição integral não foi estabelecida. A cópia integral de conferência fica só no motor depois da correção V2-a-b; no sítio ficam excertos e referências. A retirada da árvore não apaga os objetos dos commits anteriores.
 - V2A-2, aberta: o DAR da sessão de 9 de outubro não consta do índice alojado. Falta alojá-lo e confrontar as palavras quando estiver acessível.
 - V2A-3, resolvida pela fonte: as células do CFP ficam na página 9; a frase dos riscos fica na página 20.
 - V2A-4, resolvida pela fonte: a afirmação da RTP usa a magnitude positiva e a unidade de queda, preservando a literalidade.
@@ -140,4 +140,33 @@ A primeira entrega das provas ficou no commit `5bebb8a75050c3782143009594354d6ba
 
 No motor: `python3 -m publisher.v2a --write`, `python3 -m publisher.v2a_recortes` e `python3 -m publisher.export_site_rows --manifest publisher/manifest.v2a.json --site <worktree> --write`. No sítio: `node scripts/compor-familias-v2a.mjs`. O compositor próprio acrescenta as declarações sem editar os ficheiros de outras corridas; se se regenerar o mapa das famílias pelo compositor antigo, corre-se novamente o compositor V2-a. A K17 recusa a ausência destas declarações.
 
-A linha «tokens used» não foi exposta nesta passagem. Não se apurou aqui o custo em pontos nem uma contagem de símbolos; cabe ao lançador. Não se declara cumprimento do custo-alvo sem essa medição.
+O lançador mediu 10 pontos na primeira passagem e 6 na retoma, com custo antigo de 551 961 e 246 648 símbolos, respetivamente. A soma é 16 pontos e 798 609 símbolos de custo antigo, acima do alvo de 300 000. Havia outra sessão em cada intervalo, pelo que a diferença de pontos da conta não é uma medida isolada deste bloco. As leituras estão em `custo-v2a.json`. O custo final da V2-a-b só será escrito pelo lançador depois desta resposta; a linha «tokens used» não foi exposta.
+
+
+## A passagem V2-a-b
+
+Os achados 1 a 5 eram plantas da direção em cópias do pacote e não foram tocados. A comparação com a cabeça de entrada confirma os mesmos valores e unidades nas 18 linhas. A passagem começou pelo achado 7.
+
+| Achado | Correção e prova |
+|---|---|
+| 6 | Os nomes, as frases e os recortes incorporáveis identificam a previsão do Ministério das Finanças transcrita pelo CFP. O publicador continua a ser o CFP. O excerto inclui a fonte MF da página 9, o comentário da página 19 e a conclusão completa da página 20, com «endossa as previsões». |
+| 7 | Retiradas as três páginas integrais comprimidas. `ledger/provas/v2a/` só contém `provas.json`: excertos, data, URL, SHA256 e caminho relativo no motor. A travessia não transporta PDFs integrais. O controlo público confere os excertos contra as provas seladas; com `RESEARCHHUB_DIR`, confere também os corpos privados. |
+| 8 | O motor escreve as palavras citadas em `name`; o cabeçalho usa esse campo. A proveniência das afirmações passa a dizer «Título do documento» e «Document title». |
+| 9 | Frases próprias para Amaro, PCP e RTP; comparação entre orçamento e estimativa nas variações; anos, PRR e notas de previsão visíveis em `ressalva` e `ressalva_en`; nas PPP, caixa, IVA e preços constantes. A identificação da notícia RTP como despesa total consolidada não foi confirmada no corpo alojado e não foi inventada; ver V2A-17. |
+| 10 | Corrigida a indicação anterior: as percentagens estão também na prosa da página 19; o quadro está na página 9 e a conclusão na 20. |
+| 11 | A edição de 2026 vem do número e da data da capa, conferidos entre si. |
+| 12 | A transformação de caixa só altera a primeira letra e preserva PRR e RRP. |
+| 13 | As plantas mudam `column` e `row_index` em `table_specs` e reexecutam a extração. A assinatura «RTP / VER MAIS» substitui o rodapé; a planta retira a assinatura mantendo o rodapé. |
+| 14 | A regra geral aceita uma edição com dia ISO completo e válido; não converte um mês nem um dia impossível. Não há exceção para o dia das afirmações. |
+| 15 | Localizadores traduzidos na origem e transportados pelo exportador comum, tanto em `name_source_en` como em `document.locator_en`. |
+| 16 | O localizador transcreve «Saúde (PL15), Conta do Pograma Legado», incluindo a gralha confirmada visualmente no PDF. O nome legível refere a conta do Programa Legado Saúde. A medição do custo anterior consta de `custo-v2a.json` e da secção anterior. |
+
+Questões novas:
+
+- V2A-16, corrigida na árvore atual: nenhum corpo integral fica na prova pública. Os objetos dos commits anteriores continuam no histórico Git; não se reescreveu o histórico nem se publicou qualquer alteração remota.
+- V2A-17, ausência confirmada: o texto alojado da RTP não contém «despesa total consolidada». A página explica a queda noticiada e declara que a notícia não especifica total ou efetiva. O quadro do relatório mantém a linha própria; não se atribuiu a expressão à RTP.
+- V2A-18, grafia conferida: o cabeçalho da página 303 imprime «Pograma Legado». A proveniência conserva a grafia; a prosa da casa usa «Programa Legado».
+- V2A-19, decisão de execução: os portões e as capturas desta correção correm pelo escrivão, porque o navegador das conferências não arranca na sandbox. O hook do motor suspendeu novamente o batimento; aguardou-se o resultado do pedido existente antes de continuar, sem o duplicar.
+- V2A-20, custo: os dois registos encerrados do lançador medem os pontos e o custo antigo da V2-a. O custo final desta correção fica pendente do encerramento do lançador; não é estimado nesta entrega.
+
+Os códigos, as cabeças, as referências de linha e a inspeção das novas capturas serão acrescentados após a conferência final.

@@ -501,7 +501,7 @@ const ficha = [
      a tabela é `src/i18n/lingua-dos-titulos.mjs`, e a regra é a dos títulos. */
   { k: s.prov.fonte, campo: 'source', valor: claim.source, lingua: linguaDaFonte(claim.source, lang) },
   {
-    k: ehSerieDeDados ? s.prov.serie : s.prov.documento,
+    k: claim.afirmacao ? s.prov.tituloDoDocumento : ehSerieDeDados ? s.prov.serie : s.prov.documento,
     campo: 'document.title',
     valor: claim.document?.title ?? null,
     /* O TÍTULO DE UM DOCUMENTO É UM NOME (I91, segunda metade, 29.08.2026): não

@@ -9,8 +9,11 @@
       "period": "2026",
       "unit": "milhões de euros",
       "table": "saude",
+      "row_index": 27,
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "value": "18 125,9",
       "excerpt": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9",
       "kind": "pdf"
@@ -24,8 +27,11 @@
       "period": "2027",
       "unit": "milhões de euros",
       "table": "saude",
+      "row_index": 27,
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "value": "17 858,4",
       "excerpt": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9",
       "kind": "pdf"
@@ -39,8 +45,11 @@
       "period": "2027",
       "unit": "%",
       "table": "saude",
+      "row_index": 27,
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "value": "-1,5",
       "excerpt": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9",
       "kind": "pdf"
@@ -54,8 +63,11 @@
       "period": "2026",
       "unit": "milhões de euros",
       "table": "saude",
+      "row_index": 23,
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "value": "18 062,4",
       "excerpt": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0",
       "kind": "pdf"
@@ -69,8 +81,11 @@
       "period": "2027",
       "unit": "milhões de euros",
       "table": "saude",
+      "row_index": 23,
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "value": "17 803,1",
       "excerpt": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0",
       "kind": "pdf"
@@ -84,8 +99,11 @@
       "period": "2027",
       "unit": "%",
       "table": "saude",
+      "row_index": 23,
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "value": "-1,4",
       "excerpt": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0",
       "kind": "pdf"
@@ -99,8 +117,11 @@
       "period": "2026",
       "unit": "milhões de euros",
       "table": "saude",
+      "row_index": 23,
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "value": "17 291,3",
       "excerpt": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0",
       "kind": "pdf"
@@ -114,8 +135,11 @@
       "period": "2027",
       "unit": "milhões de euros",
       "table": "saude",
+      "row_index": 23,
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "value": "17 803,1",
       "excerpt": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0",
       "kind": "pdf"
@@ -129,8 +153,11 @@
       "period": "2027",
       "unit": "%",
       "table": "saude",
+      "row_index": 23,
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "value": "3,0",
       "excerpt": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0",
       "kind": "pdf"
@@ -144,8 +171,11 @@
       "period": "2027",
       "unit": "milhões de euros",
       "table": "ppp",
+      "row_index": 5,
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "value": "1 152",
       "excerpt": "encargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50",
       "kind": "pdf"
@@ -159,8 +189,11 @@
       "period": "2027",
       "unit": "milhões de euros",
       "table": "ppp",
+      "row_index": 6,
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "value": "263",
       "excerpt": "receitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2",
       "kind": "pdf"
@@ -174,8 +207,11 @@
       "period": "2027",
       "unit": "milhões de euros",
       "table": "ppp",
+      "row_index": 4,
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "value": "889",
       "excerpt": "Rodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49",
       "kind": "pdf"
@@ -189,8 +225,11 @@
       "period": "2027",
       "unit": "milhões de euros",
       "table": "ppp",
+      "row_index": 15,
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "value": "1 438",
       "excerpt": "Total                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220",
       "kind": "pdf"
@@ -204,17 +243,28 @@
       "period": "2027",
       "unit": "%",
       "table": "cenario",
+      "row_index": 10,
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
       "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb",
       "pedido": "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp-parecer-05-2026.pdf",
+      "acedido_em": "2026-10-13T18:47:25.558076+00:00",
       "value": "2,1",
       "excerpt": "PIB                                                       1,9       2,3      2,1",
       "kind": "pdf",
+      "comment": {
+        "page": 19,
+        "excerpt": "No ano de 2027, o crescimento real previsto de 2,1% é superior ao de todas as instituições de referência e encontra-se no limite superior do intervalo de confiança a 30% dessas previsões e projeções."
+      },
       "risk": {
         "page": 20,
-        "excerpt": "os riscos para o crescimento real apresentam um pendor descendente.",
+        "excerpt": "Nos termos do número 4do artigo 4.º do Regulamento n.º 473/2013 do Parlamento Europeu e do Conselho de 21 de maio de 2013, em resultado da análise efetuada às previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027 do XXV Governo Constitucional, com base na informação atualmente disponível e ponderando os riscos identificados, tendo em conta que a evolução para o crescimento nominal previsto para 2027 respeita os princípios legais supramencionados, o Conselho das Finanças Públicas endossa as previsões macroeconómicas apresentadas, dando nota que os riscos para o crescimento real apresentam um pendor descendente.",
         "attributed_to": [
           "Conselho das Finanças Públicas"
         ]
+      },
+      "forecast_source": {
+        "page": 9,
+        "excerpt": "Fonte: MF – Informação enviada a 30 de setembro de 2026."
       }
     },
     "oe-2027-cenario-ihpc-2026": {
@@ -226,16 +276,36 @@
       "period": "2026",
       "unit": "%",
       "table": "cenario",
+      "row_index": 26,
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
       "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb",
       "pedido": "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp-parecer-05-2026.pdf",
+      "acedido_em": "2026-10-13T18:47:25.558076+00:00",
       "value": "2,9",
       "excerpt": "IHPC                                                      2,2       2,9      2,3",
-      "kind": "pdf"
+      "kind": "pdf",
+      "comment": {
+        "page": 19,
+        "excerpt": "O cenário macroeconómico aponta para uma inflação de 2,9% em 2026, o que se afigura pouco provável."
+      },
+      "risk": {
+        "page": 20,
+        "excerpt": "Nos termos do número 4do artigo 4.º do Regulamento n.º 473/2013 do Parlamento Europeu e do Conselho de 21 de maio de 2013, em resultado da análise efetuada às previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027 do XXV Governo Constitucional, com base na informação atualmente disponível e ponderando os riscos identificados, tendo em conta que a evolução para o crescimento nominal previsto para 2027 respeita os princípios legais supramencionados, o Conselho das Finanças Públicas endossa as previsões macroeconómicas apresentadas, dando nota que os riscos para o crescimento real apresentam um pendor descendente.",
+        "attributed_to": [
+          "Conselho das Finanças Públicas"
+        ]
+      },
+      "forecast_source": {
+        "page": 9,
+        "excerpt": "Fonte: MF – Informação enviada a 30 de setembro de 2026."
+      }
     },
     "afirmacao-leitao-amaro-saude-oe2027-2026-10-09": {
       "file": "rtp-amaro.html",
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/rtp-amaro.html",
       "sha256": "095b231ac02894caae1dd10a085b4ce8bc72a33f6e6be5e622e6b86fc1a7679f",
       "pedido": "https://www.rtp.pt/noticias/politica/leitao-amaro-reitera-que-os-portugueses-tem-mais-dinheiro-no-bolso-e-apela-a-responsabilidade-de-ps-e-chega_n1770773",
+      "acedido_em": "2026-10-13T18:47:05.320436+00:00",
       "published_at": "2026-10-09",
       "attributed_to": [
         "António Leitão Amaro, ministro da Presidência"
@@ -248,8 +318,10 @@
     },
     "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09": {
       "file": "pcp-afirmacao.html",
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/pcp-afirmacao.html",
       "sha256": "e426f05d0446a03b252e2e8dd7bb668790fb752e5c9341fef16da35ba426ef88",
       "pedido": "https://www.pcp.pt/governo-chega-ps-dancam-bailarico-quem-paga-conta-sao-trabalhadores",
+      "acedido_em": "2026-10-13T18:47:05.556559+00:00",
       "published_at": "2026-10-09",
       "attributed_to": [
         "Paulo Raimundo",
@@ -263,13 +335,15 @@
     },
     "afirmacao-rtp-saude-queda-oe2027-2026-10-09": {
       "file": "rtp-queda.html",
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/rtp-queda.html",
       "sha256": "18f342451b5b4b93e15cbcef11b6e45d3f8175844c18093c24004b97165178ca",
       "pedido": "https://www.rtp.pt/noticias/economia/oe2027-verbas-para-a-saude-com-queda-de-15_v1770667",
+      "acedido_em": "2026-10-13T18:47:15.290190+00:00",
       "published_at": "2026-10-09",
       "attributed_to": [
         "RTP"
       ],
-      "attribution_anchor": "© RTP, Rádio e Televisão de Portugal",
+      "attribution_anchor": "RTP / VER MAIS",
       "excerpt": "O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.",
       "value": "1,5",
       "unit": "% de queda",

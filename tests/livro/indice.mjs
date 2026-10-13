@@ -335,7 +335,7 @@ const LOCALIZADORES_CONHECIDOS = [
 function localizadorV2aConfere(onde, linha) {
   if (!linha || typeof linha.id !== 'string') return false;
   const id = linha.id, d = linha.document;
-  const esperadoNoDocumento = id === 'oe-2027-cenario-pib-real-crescimento-2027' ? `${onde}; segundo excerto na conclusão, p. 20` : onde;
+  const esperadoNoDocumento = id.startsWith('oe-2027-cenario-') ? `${onde}; comentário, p. 19; conclusão, p. 20` : onde;
   if (!d || d.locator !== esperadoNoDocumento) return false;
   const saude = /^oe-2027-saude-despesa-(total-consolidada|efetiva-consolidada|efetiva-consolidada-sem-prr)-(2026|2027|variacao)$/.exec(id);
   if (saude) {
@@ -345,7 +345,7 @@ function localizadorV2aConfere(onde, linha) {
       `${saude[2]}, ${saude[2] === '2026' ? 'Estimativa' : 'Orçamento'}${semPrr ? ' (Sem PRR)' : ''}`;
     return linha.name === nome && linha.reference_date === (saude[2] === '2026' ? '2026' : '2027') &&
       d.page === 303 && d.edition === '2027' && d.title === 'Orçamento do Estado para 2027' &&
-      onde === `Quadro 5.37, programa Saúde (PL15), ${nome}, ${coluna}, p. 303 do PDF (287 impressa)`;
+      onde === `Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, ${nome}, ${coluna}, p. 303 do PDF (287 impressa)`;
   }
   const ppp = {
     'oe-2027-ppp-rodoviario-encargos-brutos-2027': 'encargos brutos',
@@ -365,7 +365,7 @@ function localizadorV2aConfere(onde, linha) {
   };
   if (id in cfp) {
     const [nome, ano] = cfp[id];
-    return linha.name === nome && linha.reference_date === ano && d.page === 9 && d.edition === '2027' &&
+    return linha.name === nome && linha.reference_date === ano && d.page === 9 && d.edition === '2026' &&
       onde === `Quadro 1, ${nome}, ${ano}, p. 9`;
   }
   const afirmacoes = {
@@ -373,7 +373,7 @@ function localizadorV2aConfere(onde, linha) {
     'afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09': 'Intervenção na Assembleia da República',
     'afirmacao-rtp-saude-queda-oe2027-2026-10-09': 'Título e corpo da notícia',
   };
-  return id in afirmacoes && onde === afirmacoes[id] && linha.name === d.title &&
+  return id in afirmacoes && onde === afirmacoes[id] && linha.name === linha.excerpt && linha.name !== d.title &&
     linha.reference_date === '2026-10-09' && d.edition === '2026-10-09' && d.kind === 'html';
 }
 
@@ -1871,8 +1871,18 @@ function provaLocalizadores() {
       if (!aceite) falhas.push(`O formato anterior ${formato.nome} perdeu o conhecido positivo.`);
       return { formato: formato.nome, id: linha?.id, aceite };
     });
+    for (const [id,campo,valor,mensagem] of [
+      ['oe-2027-cenario-ihpc-2026','edition','2027','V2A edição: ano do orçamento no lugar do ano do parecer'],
+      ['afirmacao-rtp-saude-queda-oe2027-2026-10-09','name',null,'V2A nome: manchete no lugar das palavras ditas'],
+    ]) {
+      const original=LINHAS_DA_REGUA.get(id), copia=structuredClone(original);
+      if (!localizadorV2aConfere(original.name_source,original)) falhas.push(`${mensagem}: controlo positivo falhou`);
+      if(campo==='edition') copia.document.edition=valor; else copia.name=copia.document.title;
+      if(localizadorV2aConfere(copia.name_source,copia)) falhas.push(`${mensagem}: planta não mordida`);
+      else console.log(`PLANTA ${mensagem}`);
+    }
     const estragos = [
-      ['V2A: coluna da Saúde trocada', 'V2A, rótulo da célula ou da afirmação', 'Quadro 5.37, programa Saúde (PL15), Despesa total consolidada, 2026, Estimativa, p. 303 do PDF (287 impressa)', 'oe-2027-saude-despesa-total-consolidada-2027'],
+      ['V2A: coluna da Saúde trocada', 'V2A, rótulo da célula ou da afirmação', 'Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa total consolidada, 2026, Estimativa, p. 303 do PDF (287 impressa)', 'oe-2027-saude-despesa-total-consolidada-2027'],
       ['V2A: linha das PPP trocada', 'V2A, rótulo da célula ou da afirmação', 'Quadro 4.25, setor rodoviário, receitas, 2027, p. 123 do PDF (107 impressa)', 'oe-2027-ppp-rodoviario-encargos-liquidos-2027'],
       ['V2A: página do CFP trocada', 'V2A, rótulo da célula ou da afirmação', 'Quadro 1, IHPC, 2026, p. 19', 'oe-2027-cenario-ihpc-2026'],
       ['Outra dimensão JSON-stat', 'dimension.cofog99.category.label.GFnn', 'dimension.geo.category.label.GF01'],

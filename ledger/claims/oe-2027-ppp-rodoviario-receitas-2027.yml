@@ -13,6 +13,7 @@ unit: "milhões de euros"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "receitas"
 name_source: "Quadro 4.25, setor rodoviário, receitas, 2027, p. 123 do PDF (107 impressa)"
+name_source_en: "Table 4.25, road sector, revenue, 2027, p. 123 of the PDF (printed 107)"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
@@ -20,6 +21,7 @@ document:
   title: "Orçamento do Estado para 2027"
   edition: "2027"
   locator: "Quadro 4.25, setor rodoviário, receitas, 2027, p. 123 do PDF (107 impressa)"
+  locator_en: "Table 4.25, road sector, revenue, 2027, p. 123 of the PDF (printed 107)"
   page: 123
   kind: "ficheiro"
   crop:
@@ -31,7 +33,11 @@ access_date: "2026-10-13"
 reference_date: "2027"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "receitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2"
+excerpt: "receitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Previsão, não execução. Valores de caixa; incluem IVA quando aplicável, à taxa legal em vigor; preços constantes de 2027."
+ressalva_en: "Forecast, not outturn. Cash flow values; including VAT where applicable, at the statutory rate; constant 2027 prices."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

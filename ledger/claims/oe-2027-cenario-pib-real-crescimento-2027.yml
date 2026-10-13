@@ -13,13 +13,15 @@ unit: "%"
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "PIB"
 name_source: "Quadro 1, PIB, 2027, p. 9"
+name_source_en: "Table 1, GDP, 2027, p. 9"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Conselho das Finanças Públicas"
 document:
   title: "Previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027"
-  edition: "2027"
-  locator: "Quadro 1, PIB, 2027, p. 9; segundo excerto na conclusão, p. 20"
+  edition: "2026"
+  locator: "Quadro 1, PIB, 2027, p. 9; comentário, p. 19; conclusão, p. 20"
+  locator_en: "Table 1, GDP, 2027, p. 9; commentary, p. 19; conclusion, p. 20"
   page: 9
   kind: "ficheiro"
   crop:
@@ -31,7 +33,11 @@ access_date: "2026-10-13"
 reference_date: "2027"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "PIB                                                       1,9       2,3      2,1\n\nos riscos para o crescimento real apresentam um pendor descendente."
+excerpt: "PIB                                                       1,9       2,3      2,1\n\nFonte: MF – Informação enviada a 30 de setembro de 2026.\n\nNo ano de 2027, o crescimento real previsto de 2,1% é superior ao de todas as instituições de referência e encontra-se no limite superior do intervalo de confiança a 30% dessas previsões e projeções.\n\nNos termos do número 4do artigo 4.º do Regulamento n.º 473/2013 do Parlamento Europeu e do Conselho de 21 de maio de 2013, em resultado da análise efetuada às previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027 do XXV Governo Constitucional, com base na informação atualmente disponível e ponderando os riscos identificados, tendo em conta que a evolução para o crescimento nominal previsto para 2027 respeita os princípios legais supramencionados, o Conselho das Finanças Públicas endossa as previsões macroeconómicas apresentadas, dando nota que os riscos para o crescimento real apresentam um pendor descendente."
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Previsão, não execução."
+ressalva_en: "Forecast, not outturn."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -42,7 +48,7 @@ check: null
 
 study: "oe-2027"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Localizador: Quadro 1, PIB, 2027, p. 9.  Previsão, não execução. O valor e a variação são os impressos na fonte. Segundo excerto: conclusão do Conselho das Finanças Públicas, p. 20. A frase não publica um valor numérico. · Cruzado de ResearchHub content/15 Orcamento do Estado 2027 · oe-2027-cenario-pib-real-crescimento-2027."
+note: "[note do motor] Localizador: Quadro 1, PIB, 2027, p. 9.  Previsão, não execução. O valor e a variação são os impressos na fonte. · Cruzado de ResearchHub content/15 Orcamento do Estado 2027 · oe-2027-cenario-pib-real-crescimento-2027."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

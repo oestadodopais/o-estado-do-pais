@@ -12,14 +12,16 @@ unit: "milhões de euros"
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Despesa efetiva consolidada"
-name_source: "Quadro 5.37, programa Saúde (PL15), Despesa efetiva consolidada, 2027, Orçamento, p. 303 do PDF (287 impressa)"
+name_source: "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa efetiva consolidada, 2027, Orçamento, p. 303 do PDF (287 impressa)"
+name_source_en: "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated effective expenditure, 2027, Budget, p. 303 of the PDF (printed 287)"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Ministério das Finanças"
 document:
   title: "Orçamento do Estado para 2027"
   edition: "2027"
-  locator: "Quadro 5.37, programa Saúde (PL15), Despesa efetiva consolidada, 2027, Orçamento, p. 303 do PDF (287 impressa)"
+  locator: "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa efetiva consolidada, 2027, Orçamento, p. 303 do PDF (287 impressa)"
+  locator_en: "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated effective expenditure, 2027, Budget, p. 303 of the PDF (printed 287)"
   page: 303
   kind: "ficheiro"
   crop:
@@ -31,7 +33,11 @@ access_date: "2026-10-13"
 reference_date: "2027"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0"
+excerpt: "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Previsão, não execução."
+ressalva_en: "Forecast, not outturn."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -42,7 +48,7 @@ check: null
 
 study: "oe-2027"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Localizador: Quadro 5.37, programa Saúde (PL15), Despesa efetiva consolidada, 2027, Orçamento, p. 303 do PDF (287 impressa).  Previsão, não execução. O valor e a variação são os impressos na fonte. · Cruzado de ResearchHub content/15 Orcamento do Estado 2027 · oe-2027-saude-despesa-efetiva-consolidada-2027."
+note: "[note do motor] Localizador: Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa efetiva consolidada, 2027, Orçamento, p. 303 do PDF (287 impressa).  Previsão, não execução. O valor e a variação são os impressos na fonte. · Cruzado de ResearchHub content/15 Orcamento do Estado 2027 · oe-2027-saude-despesa-efetiva-consolidada-2027."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
