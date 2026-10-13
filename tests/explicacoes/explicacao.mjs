@@ -442,6 +442,11 @@ export function conferirRamosDasExplicacoes({ explicacoes = EXPLICACOES } = {}) 
           }
           // Apenas prosa e sufixos, nunca identificadores nem os próprios metadados.
           const prosa = (/** @type {any} */ p) => typeof p === 'string' ? p : Array.isArray(p) ? p.map(prosa).join(' ') : p?.sufixo ?? '';
+          // EX1-14: este ramo mostra um saldo negativo. «Défice de» seguido
+          // do valor com sinal daria um duplo negativo, também em inglês.
+          if (r === 'diferentesNegativo' && /(?:défice de|deficit of)\s*$/i.test(o[r]?.[0] ?? '')) {
+            erros.push(`X10 · palavras do ramo: ${onde}: défice seguido diretamente de um saldo negativo`);
+          }
           if (r in o) erros.push(...conferirPalavrasDoRamo(prosa(o[r]), regra, `X10 · palavras do ramo: ${onde}`));
           palavras.push({ caminho: c, ramo: r, ...regra });
         }
@@ -995,6 +1000,7 @@ export function plantasDaExplicacao(dist) {
       ['deficitMenor diz maior', (t) => { t.deficitMenor[0] = t.deficitMenor[0].replace(lang === 'pt' ? 'menor' : 'smaller', lang === 'pt' ? 'maior' : 'larger'); }, [lang === 'pt' ? 'falta «menor»' : 'falta «smaller»', lang === 'pt' ? 'proibida «maior»' : 'proibida «larger»']],
       ['diferentesPositivo sem a palavra do sinal', (t) => { t.diferentesPositivo[0] = t.diferentesPositivo[0].replace(lang === 'pt' ? 'excedente' : 'surplus', ''); }, [lang === 'pt' ? 'falta «excedente»' : 'falta «surplus»']],
       ['ramo sem declaração das palavras', (t) => { delete t.palavras.deficitMenor; }, ['não declara as palavras obrigatórias e proibidas']],
+      ['HIG: défice seguido do valor negativo', (t) => { t.diferentesNegativo[0] = lang === 'pt' ? 'o Orçamento previa um défice de ' : 'the Budget forecast a deficit of '; }, ['défice seguido diretamente de um saldo negativo']],
     ]) {
       const d = structuredClone(e);
       estraga(d.seccoes[2].conteudo[1].paragrafo[lang].find(t => t.comparaSaldos));
@@ -1023,7 +1029,8 @@ export function plantasDaExplicacao(dist) {
   };
   const folhaDiz = (/** @type {any} */ a) => a.explicacoes[0].folhas.find((/** @type {any} */ f) => f.partes.some((/** @type {any} */ p) => p.classe === 'diz' && p.apoios?.some((/** @type {any} */ x) => x.literal)));
   naAuditoria('EX1-f: a referência aponta para o parágrafo anterior', (a) => {
-    a.explicacoes[0].folhas.flatMap(f => f.partes).find(p => p.paragrafo).posicao = 'anterior';
+    const f = a.explicacoes[0].folhas.find(f => f.caminho === 'seccoes[2].conteudo[1].paragrafo[10]');
+    f.partes = [{ pt: f.pt, en: f.en, classe: 'aponta', paragrafo: 'seccoes[3].conteudo[0].paragrafo', posicao: 'anterior' }];
   }, /X2 · .* não aponta para o parágrafo anterior declarado/);
   naAuditoria('um literal que não está no campo que cita', (a) => { const p = folhaDiz(a).partes.find((/** @type {any} */ x) => x.classe === 'diz'); p.apoios.find((/** @type {any} */ x) => x.literal).literal = 'uma frase que nenhuma fonte escreveu'; }, /X2 · .* não está no campo/);
   naAuditoria('uma conta fora de um ramo e de uma condição', (a) => { const f = a.explicacoes[0].folhas.find((/** @type {any} */ x) => x.caminho === 'abertura[0][2]'); f.partes[0].classe = 'conta'; delete f.partes[0].apoios; }, /X2 · .* marcada como conta/);

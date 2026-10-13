@@ -175,8 +175,8 @@ export const DINHEIRO_DO_ESTADO_2026 = {
            no dados.gov.pt e as ressalvas e derivações das linhas), e nenhuma parte fica como leitura do projeto. */
         {
           paragrafo: {
-            pt: ['As duas contas não batem porque medem coisas diferentes: a conta por função soma o que a administração central gasta com cada fim, como a saúde ou a educação, sem as operações financeiras nem as transferências entre os seus serviços; a conta por ministério é o orçamento de cada ministério.'],
-            en: ['The two counts do not match because they measure different things: the count by function adds up what central government spends on each purpose, such as health or education, without financial transactions or transfers between its own services; the count by ministry is each ministry’s budget.'],
+            pt: ['A conta por função organiza a despesa da administração central por finalidade, como a saúde ou a educação; a conta por ministério organiza-a por ministério.'],
+            en: ['The count by function organises central government expenditure by purpose, such as health or education; the count by ministry organises it by ministry.'],
           },
         },
       ],
@@ -230,11 +230,11 @@ export const DINHEIRO_DO_ESTADO_2026 = {
                 excedenteMenor: ['é um excedente menor do que o que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],
                 excedenteIgual: ['é um excedente igual ao que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],
                 nulos: ['é um saldo nulo, como o que o Orçamento previa para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],
-                diferentesNegativo: ['o Orçamento previa para o ano inteiro um défice de ', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }],
+                diferentesNegativo: ['o Orçamento previa para o ano inteiro um défice (saldo de ', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ')'],
                 diferentesPositivo: ['o Orçamento previa para o ano inteiro um excedente de ', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }],
                 diferentesZero: ['o Orçamento previa para o ano inteiro um saldo nulo de ', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }],
               },
-              ', e ainda faltam os meses de setembro a dezembro. É outra conta, e não a das contas públicas de ', { periodo: SALDO }, ' do parágrafo seguinte.',
+              ', e ainda faltam os meses de setembro a dezembro. Estas contas abrangem a administração central e a segurança social; as contas públicas de ', { periodo: SALDO }, ' incluem também as administrações regional e local.',
             ],
             en: [
               'By the end of ', { periodo: SALDO_EXECUTADO }, ', the accounts of central government and social security showed a cumulative balance of ',
@@ -261,11 +261,11 @@ export const DINHEIRO_DO_ESTADO_2026 = {
                 excedenteMenor: ['it is a smaller surplus than the one the Budget forecast for the full year (', { claim: SALDO_PREVISTO, sufixo: ' million euros' }, ')'],
                 excedenteIgual: ['it is the same surplus as the one the Budget forecast for the full year (', { claim: SALDO_PREVISTO, sufixo: ' million euros' }, ')'],
                 nulos: ['it is a nil balance, as the Budget forecast for the full year (', { claim: SALDO_PREVISTO, sufixo: ' million euros' }, ')'],
-                diferentesNegativo: ['the Budget forecast for the full year a deficit of ', { claim: SALDO_PREVISTO, sufixo: ' million euros' }],
+                diferentesNegativo: ['the Budget forecast for the full year a deficit (balance of ', { claim: SALDO_PREVISTO, sufixo: ' million euros' }, ')'],
                 diferentesPositivo: ['the Budget forecast for the full year a surplus of ', { claim: SALDO_PREVISTO, sufixo: ' million euros' }],
                 diferentesZero: ['the Budget forecast for the full year a nil balance of ', { claim: SALDO_PREVISTO, sufixo: ' million euros' }],
               },
-              ', and September to December are still to come. It is a different account, not the one of the public accounts of ', { periodo: SALDO }, ' in the next paragraph.',
+              ', and September to December are still to come. These accounts cover central government and social security; the public accounts of ', { periodo: SALDO }, ' also include regional and local government.',
             ],
           },
         },
@@ -329,6 +329,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
  * @type {{ id: string, onde: string, o_que: string, razao: string }[]}
  */
 export const ACERTOS = [
+  { id: 'HIG-EX1', onde: 'contas e execução', o_que: 'retirar a comparação das transferências, explicar os perímetros sem referência à posição e apresentar o défice pelo saldo', razao: 'Higiene de 13.10.2026, EX1-12 a EX1-14; os valores mantêm-se e a auditoria acompanha as palavras' },
   { id: 'X24', onde: 'execução', o_que: 'dizer que ainda faltam os meses de setembro a dezembro', razao: 'EX1-f, achado 7: o saldo é acumulado de janeiro a agosto e a previsão é anual' },
   { id: 'X25', onde: 'execução', o_que: 'apontar para as contas públicas do parágrafo seguinte', razao: 'EX1-f, achado 8: usar as palavras e a posição real do parágrafo de destino' },
   { id: 'X1', onde: 'título, abertura, execução, dívida', o_que: 'os anos «2026», «agosto de 2026» e «2025» entram por `{ periodo }` de uma linha nomeada', razao: 'nenhum algarismo escrito à mão (o mandato, ponto 3); o texto rendido é o mesmo' },
