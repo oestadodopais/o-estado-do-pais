@@ -348,6 +348,8 @@ function campoDaData(linha, campo) {
   if (campo === 'reference_date') return typeof linha.reference_date === 'string' ? linha.reference_date : null;
   if (campo === 'access_date') return typeof linha.access_date === 'string' ? linha.access_date : null;
   if (campo === 'published_at') return typeof linha.published_at === 'string' ? linha.published_at : null;
+  // V2-a: a edição datada das afirmações, recomposta a partir do campo de origem.
+  if (campo === 'document.edition' && linha.afirmacao === true && linha.document?.edition === '2026-10-09') return linha.document.edition;
   /* AS DUAS DATAS DO ALOJAMENTO (bloco F1.4, 04.09.2026). O instantâneo do
      ficheiro alojado e o de cada ficheiro sobre que a linha foi contada. Entram
      aqui porque passaram a escrever-se na forma da casa como as outras três, e

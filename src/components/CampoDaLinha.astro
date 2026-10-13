@@ -82,7 +82,7 @@ const porVerificar = valor === POR_VERIFICAR;
  * O MARCADOR GANHA À DATA. Um campo por confirmar rende `[a verificar]` com a
  * porta da sua página, e é isso que ele é: não há data nenhuma para escrever.
  */
-const eData = !porVerificar && eCampoDeData(campo);
+const eData = !porVerificar && eCampoDeData(campo, valor);
 /* A CLASSE DA COMPOSIÇÃO VAI JUNTA COM A MARCA NOVA. `campo-valor` é o que dá a
    este texto a tinta e a quebra que ele tem hoje dentro das listas do
    livro-razão (`.livro-item-campo .campo-valor`, e o chão de 12px do telemóvel);

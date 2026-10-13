@@ -1,6 +1,6 @@
 # V2-a: fontes da vigilância seladas no motor
 
-As células e as palavras foram lidas nos documentos alojados. O memorando serviu de expectativa, não de origem dos valores. A página do painel pertence ao V2-b e não foi criada. A aceitação do §3 ficou incompleta: o verify e as capturas foram bloqueados pelo arranque do Chromium na sandbox.
+As células e as palavras foram lidas nos documentos alojados. O memorando serviu de expectativa, não de origem dos valores. A página do painel pertence ao V2-b e não foi criada. A primeira entrega ficou incompleta pelo arranque do Chromium na sandbox. A retoma pelo escrivão permitiu executar o navegador e revelou as falhas do índice descritas em V2A-15; a aceitação depende da corrida posterior à correção.
 
 ## Cabeças e âmbito
 
@@ -92,9 +92,14 @@ As cinco plantas das afirmações alteram cópias em memória e exigem a mensage
 - V2A-12, corrigida: faltavam as declarações de língua dos títulos, rótulos e fontes. Os nomes portugueses foram declarados como tal; o ano e a data da edição ficaram sem língua natural.
 - V2A-13, corrigida por medição: a L1 passa de 2 744 páginas anteriores, já medidas na RP4-n-j, para 2 780 com os 36 recibos V2-a. Cada recibo novo repete apenas a porta do Método, duas vezes. O registo guarda os destinos e quatro plantas adicionais. A prova histórica não guardava os destinos por página; esse limite está declarado em `l1-v2a.json`.
 
+- V2A-14, decisão de execução: os portões passam pelo `portoes-pelo-escrivao.sh`, fora da sandbox, porque o Chromium das conferências não arranca dentro dela. As capturas seguem pelo `capturar-pelo-escrivao.sh`, usando o guião comum e a cabeça do `dist/`. Estes percursos foram fornecidos pelo lugar de direção na retoma; não se pediu escalada nem se dispensou qualquer controlo.
+- V2A-15, correção em conferência: a primeira corrida pelo escrivão revelou que I1 desconhecia os localizadores V2-a e I2 encontrava a edição datada das três afirmações em ISO. A régua independente passa a conferir os localizadores contra a identidade, o rótulo, o período, a coluna e a página; três plantas trocam coluna, linha e página. A edição datada passa pelo formato da casa e pelo controlo da origem em `check:formas`. As linhas e os documentos selados permanecem intactos.
+
 ## Portões e capturas
 
-Os códigos seguintes foram lidos dos ficheiros, depois de os processos terminarem. A cabeça do código do sítio coincide no início e no fim da corrida, com árvore limpa. O motor conserva a sua cabeça na corrida final própria.
+A primeira corrida pelo escrivão está em `portoes/escrivao-primeira`: build 0, verify 1, typecheck 0 e motor 0. O verify recusou apenas `check:indice`, pelas causas de V2A-15.
+
+Os códigos históricos seguintes foram lidos dos ficheiros, depois de os processos terminarem. A cabeça do código do sítio coincide no início e no fim da corrida, com árvore limpa. O motor conserva a sua cabeça na corrida final própria.
 
 | Conferência | Código | Ficheiro |
 |---|---:|---|

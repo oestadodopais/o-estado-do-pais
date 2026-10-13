@@ -1,0 +1,16 @@
+§1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    src/components/CampoDaLinha.astro:21
+§1.91 · A cabeça nova como contentor: a faixa de cartões, o mapa como navegação, as três camadas com a mesma cabeça
+    src/components/CampoDaLinha.astro:69
+    src/lib/datas.mjs:55
+§1.98 · A delegação de 04.09: o lugar de direção decide pelas recomendações escritas, e o diretor corrige ao usar o sítio
+    scripts/check-formas.mjs:1359
+    tests/livro/indice.mjs:179
+    tests/livro/indice.mjs:49
+    tests/livro/indice.mjs:78
+    tests/livro/indice.mjs:918
+§1.149 · A leitura do diretor de 01.10.2026 no telemóvel: o mapa de «Lugares» vem primeiro e as listas de nomes dobram-se; o mapa sai da primeira página, que fica com a porta; e a aterragem da §1.148
+    tests/livro/indice.mjs:1641
+4 decisão(ões) citada(s) em 4 ficheiro(s) de texto
+0 ficheiro(s) binário(s) saltado(s)
+conhecido-positivo: a §1.98 lida em scripts/check-lugar.mjs, e o nome que não existe (scripts/leituras/este-ficheiro-nao-existe-p4c.mjs) recusado como ilegível

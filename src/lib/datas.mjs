@@ -71,10 +71,15 @@ export function dataDaCasa(valor, lang = 'pt') {
  * `document.computed_over.files.<n>.snapshot_date`) entram por forma porque o
  * índice é a posição da entrada na lista da própria linha.
  *
+ * V2-a: a edição das três afirmações é a data de publicação, declarada abaixo.
+ * A declaração é fechada; não se infere uma data de qualquer edição parecida.
+ *
  * @param {unknown} campo
+ * @param {unknown} [valor]
  * @returns {boolean}
  */
-export function eCampoDeData(campo) {
+export function eCampoDeData(campo, valor) {
+  if (campo === 'document.edition' && valor === '2026-10-09') return true;
   if (typeof campo !== 'string') return false;
   if (campo === 'access_date' || campo === 'reference_date' || campo === 'published_at') return true;
   if (campo === 'document.hosted.snapshot_date') return true;

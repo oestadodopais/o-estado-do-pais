@@ -325,7 +325,57 @@ const LOCALIZADORES_CONHECIDOS = [
   { nome: 'JD1, saldo da dívida direta do IGCP', forma: /^Movimento da dívida direta do Estado, Dívida total \/ Total debt, saldo em 31\/ago\/26, p\. 2$/, onde: 'publisher/jd1.py: movimento da dívida direta', confere: localizadorJd1Confere },
   { nome: 'JD1, quadro anual do financiamento do IGCP', forma: /^Quadro 9, (?:2\. AMORTIZAÇÕES E ANULAÇÕES \(Dívida Fundada\)|p\.m\. EMISSÕES DE DÍVIDA NO ANO CIVIL \(Dívida Fundada\)|3\. NECESSIDADES BRUTAS DE FINANCIAMENTO \(1\. \+ 2\.\)), coluna 2025, p\. 45$/, onde: 'publisher/jd1.py: quadro anual de financiamento', confere: localizadorJd1Confere },
   { nome: 'JD1, coordenada dos juros da União', forma: /^freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=EU27_2020; time=2025; \$\.value\["0"\]; \$\.updated$/, onde: 'publisher/jd1.py: célula dos juros no Eurostat', confere: localizadorJd1Confere },
+  // V2-a: os localizadores escritos por publisher/v2a.py são conferidos abaixo, sem importar o leitor.
+  { nome: 'V2A, rótulo da célula ou da afirmação', forma: /^(?:Quadro (?:5\.37|4\.25|1), .+|Título e corpo da notícia|Intervenção na Assembleia da República)$/, onde: 'publisher/v2a.py: quadros do OE2027, CFP e afirmações', confere: localizadorV2aConfere },
 ];
+
+/** V2-a: identidade, rótulo, período, página e coluna lidos nas fontes alojadas.
+ * @param {string} onde @param {ContextoDoLocalizador} [linha]
+ */
+function localizadorV2aConfere(onde, linha) {
+  if (!linha || typeof linha.id !== 'string') return false;
+  const id = linha.id, d = linha.document;
+  const esperadoNoDocumento = id === 'oe-2027-cenario-pib-real-crescimento-2027' ? `${onde}; segundo excerto na conclusão, p. 20` : onde;
+  if (!d || d.locator !== esperadoNoDocumento) return false;
+  const saude = /^oe-2027-saude-despesa-(total-consolidada|efetiva-consolidada|efetiva-consolidada-sem-prr)-(2026|2027|variacao)$/.exec(id);
+  if (saude) {
+    const semPrr = saude[1].endsWith('-sem-prr');
+    const nome = saude[1] === 'total-consolidada' ? 'Despesa total consolidada' : 'Despesa efetiva consolidada';
+    const coluna = saude[2] === 'variacao' ? `Variação${semPrr ? ' (Sem PRR)' : ''} (%)` :
+      `${saude[2]}, ${saude[2] === '2026' ? 'Estimativa' : 'Orçamento'}${semPrr ? ' (Sem PRR)' : ''}`;
+    return linha.name === nome && linha.reference_date === (saude[2] === '2026' ? '2026' : '2027') &&
+      d.page === 303 && d.edition === '2027' && d.title === 'Orçamento do Estado para 2027' &&
+      onde === `Quadro 5.37, programa Saúde (PL15), ${nome}, ${coluna}, p. 303 do PDF (287 impressa)`;
+  }
+  const ppp = {
+    'oe-2027-ppp-rodoviario-encargos-brutos-2027': 'encargos brutos',
+    'oe-2027-ppp-rodoviario-receitas-2027': 'receitas',
+    'oe-2027-ppp-rodoviario-encargos-liquidos-2027': 'Rodoviário',
+    'oe-2027-ppp-total-encargos-liquidos-2027': 'Total',
+  };
+  if (id in ppp) {
+    const nome = ppp[id];
+    return linha.name === nome && linha.reference_date === '2027' && d.page === 123 &&
+      d.edition === '2027' && d.title === 'Orçamento do Estado para 2027' &&
+      onde === `Quadro 4.25, ${nome === 'Total' ? '' : 'setor rodoviário, '}${nome}, 2027, p. 123 do PDF (107 impressa)`;
+  }
+  const cfp = {
+    'oe-2027-cenario-pib-real-crescimento-2027': ['PIB', '2027'],
+    'oe-2027-cenario-ihpc-2026': ['IHPC', '2026'],
+  };
+  if (id in cfp) {
+    const [nome, ano] = cfp[id];
+    return linha.name === nome && linha.reference_date === ano && d.page === 9 && d.edition === '2027' &&
+      onde === `Quadro 1, ${nome}, ${ano}, p. 9`;
+  }
+  const afirmacoes = {
+    'afirmacao-leitao-amaro-saude-oe2027-2026-10-09': 'Título e corpo da notícia',
+    'afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09': 'Intervenção na Assembleia da República',
+    'afirmacao-rtp-saude-queda-oe2027-2026-10-09': 'Título e corpo da notícia',
+  };
+  return id in afirmacoes && onde === afirmacoes[id] && linha.name === d.title &&
+    linha.reference_date === '2026-10-09' && d.edition === '2026-10-09' && d.kind === 'html';
+}
 
 /** @param {string} onde @param {ContextoDoLocalizador} [linha] */
 function localizadorJd1Confere(onde, linha) {
@@ -1822,6 +1872,9 @@ function provaLocalizadores() {
       return { formato: formato.nome, id: linha?.id, aceite };
     });
     const estragos = [
+      ['V2A: coluna da Saúde trocada', 'V2A, rótulo da célula ou da afirmação', 'Quadro 5.37, programa Saúde (PL15), Despesa total consolidada, 2026, Estimativa, p. 303 do PDF (287 impressa)', 'oe-2027-saude-despesa-total-consolidada-2027'],
+      ['V2A: linha das PPP trocada', 'V2A, rótulo da célula ou da afirmação', 'Quadro 4.25, setor rodoviário, receitas, 2027, p. 123 do PDF (107 impressa)', 'oe-2027-ppp-rodoviario-encargos-liquidos-2027'],
+      ['V2A: página do CFP trocada', 'V2A, rótulo da célula ou da afirmação', 'Quadro 1, IHPC, 2026, p. 19', 'oe-2027-cenario-ihpc-2026'],
       ['Outra dimensão JSON-stat', 'dimension.cofog99.category.label.GFnn', 'dimension.geo.category.label.GF01'],
       ['Função fora da lista', 'dimension.cofog99.category.label.GFnn', 'dimension.cofog99.category.label.GF11'],
       ['Coluna numérica em vez do rótulo XLS', 'folha OE1 e célula do rótulo', 'FUNCIONAL!E2'],
@@ -1867,7 +1920,7 @@ function provaLocalizadores() {
       const [id, original] = par;
       const copia = structuredClone(original);
       copia.name_source = valor;
-      if (nome.startsWith('JD1:') && copia.document?.locator) copia.document.locator = valor;
+      if ((nome.startsWith('JD1:') || nome.startsWith('V2A:')) && copia.document?.locator) copia.document.locator = valor;
       const antes = { I1: medida.I1, I3: medida.I3 };
       const queixas = { I1: [], I3: [] };
       const nomesAntes = ['pt', 'en'].map((lang) => nomeEsperadoComDegrau(id, lang));
