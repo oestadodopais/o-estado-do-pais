@@ -169,14 +169,12 @@ export const DINHEIRO_DO_ESTADO_2026 = {
           },
         },
         { figura: { forma: 'barras-do-livro', id: 'ministerios', linhas: MINISTERIOS, titulo: { pt: 'Os dezasseis ministérios, de cada cem euros', en: 'The sixteen ministries, of every hundred euros' } } },
-        /* EX1-b (06.10.2026, a decisão do lugar de direção sobre a I215): as duas contas dão à saúde e à educação partes
-           diferentes, e a página diz porquê. EX1-c (06.10.2026, o achado 6 da leitura a frio): a frase diz em palavras
-           correntes o que cada conta inclui e exclui, pelos apoios da auditoria (a descrição da classificação funcional
-           no dados.gov.pt e as ressalvas e derivações das linhas), e nenhuma parte fica como leitura do projeto. */
+        /* Higiene b, 13.10.2026, achado 9: os excertos selados descrevem as classificações,
+           mas não reconciliam os dois totais. Declarar essa ausência, sem inventar uma causa. */
         {
           paragrafo: {
-            pt: ['A conta por função organiza a despesa da administração central por finalidade, como a saúde ou a educação; a conta por ministério organiza-a por ministério.'],
-            en: ['The count by function organises central government expenditure by purpose, such as health or education; the count by ministry organises it by ministry.'],
+            pt: ['A conta por função organiza a despesa da administração central por finalidade, como a saúde ou a educação. Os excertos citados não explicam a diferença entre o total desta conta e o total por ministério.'],
+            en: ['The count by function organises central government expenditure by purpose, such as health or education. The cited excerpts do not explain the difference between this total and the total by ministry.'],
           },
         },
       ],

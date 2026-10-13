@@ -15413,7 +15413,7 @@
       "slug": "dinheiro-do-estado-2026",
       "quem": "Claude Opus 5.5 (EX1 a EX1-c); Codex gpt-6-astra (EX1-d e EX1-e); Codex gpt-6-astra (higiene de 13.10.2026)",
       "quando": "2026-10-13",
-      "o_que": "a primeira leitura (05.10.2026), a do EX1-b e a do EX1-c (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216, e as correções da leitura a frio), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X17 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam; EX1-d: releitura dos apoios selados, correção dos juros e da referência à posição da execução, e saldo do mesmo perímetro com comparação explícita ao ano inteiro (acertos X18 a X20); EX1-e: comparação dos módulos dos saldos, com sinais diferentes e nulos declarados; os juros não são localizados nem anunciados sem apoio: a frase curta é a ausência calculada pela condição sem_linhas, e as transferências mantêm o literal selado; saldo acumulado sem fecho anual e distinção dos perímetros apoiada nos dois literais da nota interna autorizados pelo mandato EX1-e, sem publicar a nota; Higiene: a frase das transferências sai; os perímetros ficam explícitos pelos apoios já autorizados; o valor negativo é apresentado como saldo do défice.",
+      "o_que": "a primeira leitura (05.10.2026), a do EX1-b e a do EX1-c (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216, e as correções da leitura a frio), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X17 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam; EX1-d: releitura dos apoios selados, correção dos juros e da referência à posição da execução, e saldo do mesmo perímetro com comparação explícita ao ano inteiro (acertos X18 a X20); EX1-e: comparação dos módulos dos saldos, com sinais diferentes e nulos declarados; os juros não são localizados nem anunciados sem apoio: a frase curta é a ausência calculada pela condição sem_linhas, e as transferências mantêm o literal selado; saldo acumulado sem fecho anual e distinção dos perímetros apoiada nos dois literais da nota interna autorizados pelo mandato EX1-e, sem publicar a nota; Higiene: a frase das transferências sai; os perímetros ficam explícitos pelos apoios já autorizados; o valor negativo é apresentado como saldo do défice. Higiene b, achado 9: os excertos selados não reconciliam os totais por função e por ministério; a frase declara essa ausência limitada aos excertos citados.",
       "origens": [
         "dados-gov-oe-despesa-funcional",
         "eurostat-cofog-divisao-01",
@@ -16108,8 +16108,8 @@
         },
         {
           "caminho": "seccoes[1].conteudo[2].paragrafo[0]",
-          "pt": "A conta por função organiza a despesa da administração central por finalidade, como a saúde ou a educação; a conta por ministério organiza-a por ministério.",
-          "en": "The count by function organises central government expenditure by purpose, such as health or education; the count by ministry organises it by ministry.",
+          "pt": "A conta por função organiza a despesa da administração central por finalidade, como a saúde ou a educação. Os excertos citados não explicam a diferença entre o total desta conta e o total por ministério.",
+          "en": "The count by function organises central government expenditure by purpose, such as health or education. The cited excerpts do not explain the difference between this total and the total by ministry.",
           "partes": [
             {
               "pt": "A conta por função organiza a despesa da administração central por finalidade",
@@ -16156,24 +16156,25 @@
               ]
             },
             {
-              "pt": "; ",
-              "en": "; ",
+              "pt": ". ",
+              "en": ". ",
               "classe": "liga"
             },
             {
-              "pt": "a conta por ministério organiza-a por ministério",
-              "en": "the count by ministry organises it by ministry",
-              "classe": "diz",
+              "pt": "Os excertos citados não explicam a diferença entre o total desta conta e o total por ministério",
+              "en": "The cited excerpts do not explain the difference between this total and the total by ministry",
+              "classe": "leitura",
+              "sobre": "Os excertos citados da classificação funcional e do mapa por ministérios, que descrevem as contas sem reconciliar os dois totais.",
               "apoios": [
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "As dimensões de análise representam as várias perspetivas sob as quais os dados são apresentados"
+                },
                 {
                   "origem": "rp4n-mapa-ministerios",
                   "campo": "excerto",
                   "literal": "Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central"
-                },
-                {
-                  "linha": "oe-2026-despesa-ministerio-financas",
-                  "campo": "document.locator",
-                  "literal": "POR MINISTÉRIOS"
                 }
               ]
             },
