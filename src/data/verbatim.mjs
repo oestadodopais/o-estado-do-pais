@@ -10,7 +10,7 @@
  * exactamente igual ao texto aqui registado (espaços normalizados). Não é um
  * passe livre para números: é uma verificação de transcrição.
  */
-import { ORIGENS_DAS_DEFINICOES } from './figuras.mjs';
+import { ORIGENS_DAS_DEFINICOES, rotuloDaOrigem } from './figuras.mjs';
 
 /**
  * ---------------------------------------------------------------------------
@@ -53,6 +53,7 @@ const ORIGENS_TRANSCRITAS = Object.fromEntries(
       [`origem-${chave}-publicador`, { lang: null, origem: onde, text: o.publicador }],
       [`origem-${chave}-documento`, { lang: lingua, origem: onde, text: o.documento.replace(/, página \d+/, '') }],
       [`origem-${chave}-excerto`, { lang: lingua, origem: onde, text: o.excerto }],
+      ...(rotuloDaOrigem(chave) ? [[`origem-${chave}-rotulo`, { lang: lingua, origem: onde, text: rotuloDaOrigem(chave) }]] : []),
       ...(o.documento.match(/, página (\d+)/) ? [[`origem-${chave}-pagina`, {lang:null, origem:onde, text:o.documento.match(/, página (\d+)/)?.[1] ?? ''}]] : []),
       ...(o.excertoEn
         ? [[`origem-${chave}-excerto-en`, { lang: 'en', origem: onde, text: o.excertoEn }]]

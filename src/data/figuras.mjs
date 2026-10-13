@@ -2696,6 +2696,14 @@ const comDefinicao = (f) => {
   return { ...f, definicao: d };
 };
 
+// HIG, RP4N-21: cada legenda do mesmo mapa nomeia o seu excerto selado.
+/** @param {string} chave */
+export function rotuloDaOrigem(chave) {
+  const linhas = /** @type {Record<string, number>} */ ({ 'rp4n-mapa-ministerios': 1, 'rp4n-total-ministerios': 0, 'rp4n-consolidada-ministerios': 0 });
+  if (chave !== 'rp4n-mapa-ministerios' && chave !== 'rp4n-total-ministerios' && chave !== 'rp4n-consolidada-ministerios') return null;
+  return ORIGENS_DAS_DEFINICOES[chave].excerto.split('\n')[linhas[chave]].trim();
+}
+
 /**
  * AS ORIGENS DE UMA DEFINIÇÃO, RESOLVIDAS PARA QUEM AS RENDE (09.09.2026).
  *
@@ -2742,6 +2750,7 @@ export const origensDaDefinicao = (definicao, lang = 'pt') =>
     }
     return {
       chave,
+      rotulo: rotuloDaOrigem(chave),
       publicador: o.publicador,
       documento: o.documento.replace(/, página \d+/, ''),
       pagina: o.documento.match(/, página (\d+)/)?.[1] ?? null,

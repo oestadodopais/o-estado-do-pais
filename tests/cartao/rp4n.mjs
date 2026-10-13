@@ -315,5 +315,21 @@ export function conferirExcertoDaPensao(linha) {
 if(process.argv.includes('--registo-g')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/g/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 if(process.argv.includes('--registo-f')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/f/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 if(process.argv.includes('--registo-e')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/e/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
+// HIG: plantas sobre os metadados e as três legendas distintas.
+for (const lang of ['pt', 'en']) {
+ const html=fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/saldo-natural-portugal-2025/index.html`,'utf8');
+ for (const atributo of ['name="description"','property="og:description"']) {
+  const copia=parse(html); copia.querySelector(`meta[${atributo}]`).setAttribute('content','[a verificar]');
+  morde(`marcador nos metadados ${atributo} (${lang})`, [conferirSemMarcadores(copia)].filter(Boolean), 'marca de informação por confirmar');
+ }
+ const id='oe-2026-cem-euros-ministerio-saude',ctx=contextoDasFamilias(),cartoes=reguasDosCartoes('dist');
+ const original=fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/${id}/index.html`,'utf8');
+ for(const chave of ['rp4n-mapa-ministerios','rp4n-total-ministerios','rp4n-consolidada-ministerios']) {
+  const cabeca=cabecaDoRecibo(original);
+  assert.deepEqual(conferirCabecaDoRecibo(cabeca,id,lang,{ctx,cartoes}),[]);
+  cabeca.querySelector(`[data-verbatim="origem-${chave}-rotulo"]`).set_content('MAPA 4, página 6');
+  morde(`legenda indistinta ${chave} (${lang})`,conferirCabecaDoRecibo(cabeca,id,lang,{ctx,cartoes}),'a legenda não distingue o excerto');
+ }
+}
 assert.deepEqual(conferirAuditoriaDasFamilias().erros, []);
 console.log(`RP4N-e: PASS, ${plantas.length} plantas e auditoria íntegra`);
