@@ -28,7 +28,10 @@ with tempfile.TemporaryDirectory(prefix='oedp-portoes-') as tmp:
     # corrida exterior não pode levá-lo ao motor real, mesmo com o build falso.
     ambiente = {k: v for k, v in os.environ.items()
                 if k not in ('OEDP_CONFERIR_MOTOR', 'RESEARCHHUB_DIR')}
-    env = dict(ambiente, PATH=str(binario) + ':' + os.environ['PATH'], COMUM=str(comum), CHAMADAS=str(p / 'chamadas'))
+    # A tranca real vive em /tmp desde 13.10.2026 (M79); o ensaio aponta-a para a sua pasta «comum» para não
+    # tocar na tranca da máquina e para provar a recusa da escrita numa pasta inexistente.
+    env = dict(ambiente, PATH=str(binario) + ':' + os.environ['PATH'], COMUM=str(comum), CHAMADAS=str(p / 'chamadas'),
+               OEDP_TRANCA=str(comum / 'oedp-construcao.lock'))
     def correr(nome, **mudancas):
         return subprocess.run(['sh', str(RAIZ / 'scripts/leituras/portoes.sh'), str(p), nome],
                               env={**env, **mudancas}, capture_output=True, text=True)
@@ -48,7 +51,7 @@ with tempfile.TemporaryDirectory(prefix='oedp-portoes-') as tmp:
     assert str(p) not in (p / 'vermelho/build.log').read_text()
     casos.append({'planta': 'build vermelho não paga conferências', 'codigo': r.returncode,
                   'codigos': codigos, 'mensagem': (p / 'vermelho/verify.log').read_text().strip()})
-    r = correr('sem-tranca', COMUM=str(p / 'pasta-inexistente'))
+    r = correr('sem-tranca', OEDP_TRANCA=str(p / 'pasta-inexistente' / 'oedp-construcao.lock'))
     assert r.returncode == 9 and not (p / 'sem-tranca/build.codigo').exists()
     assert 'nenhum portão correu' in r.stderr
     casos.append({'planta': 'escrita da tranca recusada', 'codigo': r.returncode, 'mensagem': r.stderr.strip()})
