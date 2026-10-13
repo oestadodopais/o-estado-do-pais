@@ -29,7 +29,7 @@ const EXCECOES = {
   'ihpc-variacao-homologa-ue': { pt: 'União Europeia', en: 'European Union' },
 };
 const ESTUDOS_DO_PAIS = new Set([
-  'quadro-institucional', 'dominios-2026', 'oe-2026', 'agua-nao-faturada',
+  'quadro-institucional', 'dominios-2026', 'oe-2026', 'oe-2027', 'agua-nao-faturada',
   'which-door-is-yours', 'penalizacoes-por-reforma-antecipada-2026',
   'evolucao-de-portugal-desde-1981', 'concelhos-2026',
 ]);
