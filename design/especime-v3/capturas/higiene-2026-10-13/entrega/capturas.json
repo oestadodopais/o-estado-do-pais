@@ -1,0 +1,1561 @@
+{
+  "cabeca": "996a388918d1d4183d2d00700bdd62157f0b0fa8",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-pt-390.png",
+      "rota": "/livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3720,
+      "sha256": "56a11455e0f3332479f991a88bbd2ea497adaf01dd28c28a500eb2480cacd52c",
+      "recortes": [
+        {
+          "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-pt-390-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "0818e13e6d232fbf71a6ad113da1856d512e29381bc4bd0091359fe089ded725"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-pt-768.png",
+      "rota": "/livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3237,
+      "sha256": "f46759c7213d58cd12253f2f4e0c11e2777d38f0cd06a499a947e0741d18ef02",
+      "recortes": [
+        {
+          "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-pt-768-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "c841c8e2ddecb4e1d9ebe2f3f3be05968a43094fd1df79d52da061338ee20478"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-pt-1024.png",
+      "rota": "/livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2354,
+      "sha256": "0068772d6bf439602c0906069aad62febd88a74f71734945f2bc07c6d3bde9d2",
+      "recortes": [
+        {
+          "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-pt-1024-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "89c431a7f5eefd8b9133fd3fcc98d55a5d94c4fee3a2776da3fc4c585863e59c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-pt-1280.png",
+      "rota": "/livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2388,
+      "sha256": "ef16ad51defc3d2bc232fc534003e51aecbeca1dc74f50718505e317a1b47540",
+      "recortes": [
+        {
+          "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-pt-1280-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "b03063990f36c12811678fa6997d49e8a3c153d0e4ca40a6adb037e51c3fc77f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-pt-1600.png",
+      "rota": "/livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2395,
+      "sha256": "4a51a60e2702ca4510e8ccc9bef4275183201b1d20c8ea442c83c306c426ee66",
+      "recortes": [
+        {
+          "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-pt-1600-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "81ef7f35e8f03a4372731b9e16eda4b45a2544b06c1a3b44ac608bada83b900a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-en-390.png",
+      "rota": "/en/ledger/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3665,
+      "sha256": "6c75233cd6ad7ea36ed9c2dc9095e53a3e12220d0458fc56f6720aeebc2e9c07",
+      "recortes": [
+        {
+          "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-en-390-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "1c7374215b43d02f3466a20df1eee66dc2397ec5c6a21e37fd277967bb6f4c84"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-en-768.png",
+      "rota": "/en/ledger/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3152,
+      "sha256": "9f19dc7a6f4f1ab807e4894802102ef248925e3b4f210971ac7ea39b781cbe3b",
+      "recortes": [
+        {
+          "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-en-768-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "8906855609c1eb8f8b86552505a44586cbd710c8803f6a8d3bff70e5ef2b3f4d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-en-1024.png",
+      "rota": "/en/ledger/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2260,
+      "sha256": "6f3d57ede39b893381e0aeff473ce1c67f96510fbf0b8af04419605540e6a318",
+      "recortes": [
+        {
+          "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-en-1024-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "fe0399a20696fe0847fe3f0d733ff4e6a0e922b9bb5bceecee6d851a345b8556"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-en-1280.png",
+      "rota": "/en/ledger/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2295,
+      "sha256": "a3179c52bde7fa0298398e5f81ce388d896513351344401a669fd2a598fa2f35",
+      "recortes": [
+        {
+          "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-en-1280-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "81a0bee29619ae134723866b9941f36957b24e2e6563f1a77961aa05d57a4a06"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-en-1600.png",
+      "rota": "/en/ledger/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2301,
+      "sha256": "789a867159fcfeeee42c356d20e493cdad396c4c901639db7675d8ea7de22ff1",
+      "recortes": [
+        {
+          "ficheiro": "amortizacoes-e-anulacoes-de-divida-fundada-2025-en-1600-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "7b22423255efab9014687f189ef216f78032c6bfdbeab198acc25de172ccc8bf"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2024-pt-390.png",
+      "rota": "/livro-razao/juros-das-administracoes-publicas-2024/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3068,
+      "sha256": "1ae34dff2f3bed4f91949ae24a58f2667248122180bc6797721b4df28dcc3b38",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2024-pt-390-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "9f2b61756299bd62f2ee735712178473ea4b8ebbf17c566990bfdd335a5e54c5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2024-pt-768.png",
+      "rota": "/livro-razao/juros-das-administracoes-publicas-2024/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2787,
+      "sha256": "68d79dd4ad56dba0c6406b18c35afaaf3224164168de39534d0c520bef77aef8",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2024-pt-768-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "1f8335bf56ad7e24ca274c8bc5705004f8638f8d5918104c29b73e3390965b2a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2024-pt-1024.png",
+      "rota": "/livro-razao/juros-das-administracoes-publicas-2024/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2146,
+      "sha256": "ea7062253e819a91f00d2c3c70bf45f470aa413eedfb942a9f713bce6d144e29",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2024-pt-1024-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "0fe5aaf9b6cbf87b6190421e049efa7bdc8a089557ee94da3ae9894f17066682"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2024-pt-1280.png",
+      "rota": "/livro-razao/juros-das-administracoes-publicas-2024/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2181,
+      "sha256": "79817bb649bd447522b223a812af59a6429e2be890777cf8e2b8570eac02068d",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2024-pt-1280-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "7aecc03128252868c99fb750edcd1c68a4e5761b0e7979b0fff660ddef540591"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2024-pt-1600.png",
+      "rota": "/livro-razao/juros-das-administracoes-publicas-2024/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2187,
+      "sha256": "4bb0dac3555c39538986269fc816709028a4e19315f6f66a69ca1850cdd6dd3c",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2024-pt-1600-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "cf45eacfa8e55598faa303e013ba19a68a17714c2e85fbdd21df9f08d0ae3147"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2024-en-390.png",
+      "rota": "/en/ledger/juros-das-administracoes-publicas-2024/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3068,
+      "sha256": "2ed9daced3231dd91481b595c1067ab2b099062e0362c3950a93ef2d384161c1",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2024-en-390-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "8bfa0f4ed42e5e08efec3cb6898d7ee6b589bd6a4ded617bbf9efe132f045a9e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2024-en-768.png",
+      "rota": "/en/ledger/juros-das-administracoes-publicas-2024/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2787,
+      "sha256": "21ea35bd364098cdd94dd1cf9f4fb38f9df982e9c15d6741f7a04820042c5b65",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2024-en-768-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "65770b6b56bb2b98986bbcc3485c51c8d64f48ed3e652da0133872cbdc379da8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2024-en-1024.png",
+      "rota": "/en/ledger/juros-das-administracoes-publicas-2024/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2146,
+      "sha256": "a9e07a58edfcc188706dc3231352fc819722896b6bfabc17a578f6f0632635da",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2024-en-1024-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "5a7645837c2562396881edcdab01e7063dd2a73093e69970369ffac4c3f4d9e6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2024-en-1280.png",
+      "rota": "/en/ledger/juros-das-administracoes-publicas-2024/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2181,
+      "sha256": "758ab5c94ec40d01c5bedeab7e92c9c3aaa8a6321ba5ae8853df4a4b08bc8286",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2024-en-1280-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "ce4db986db2e2503cfd8f5a18cc8c33d3e3b4f23a1e4aa0d9b96971edcd20de2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2024-en-1600.png",
+      "rota": "/en/ledger/juros-das-administracoes-publicas-2024/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2187,
+      "sha256": "15e19e3077a83df4a1eb824167f3f34e988c206b82ad5da28a8fb274b0adfe36",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2024-en-1600-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "076ed9914feb504452efa287215d06bc28a4e2359754e12b79c59fc5dfc85e7a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2025-pt-390.png",
+      "rota": "/livro-razao/juros-das-administracoes-publicas-2025/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3250,
+      "sha256": "e6700ce68a1ea7e87e8884614a658ceb9d86a9866d16335879336b0516698811",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2025-pt-390-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "e1cdb7005c3f5c8fecac3adeaf7a5eff9f4494af8469791a68651b50b2a7b674"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2025-pt-768.png",
+      "rota": "/livro-razao/juros-das-administracoes-publicas-2025/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2917,
+      "sha256": "198957a00c36bc0566c70a513673453cebaf0a1d15a6a81014e40398f6dcf551",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2025-pt-768-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "f6f57fd7eaddb7fbc4cfe58081c11bb90298f885a8aad43818413cf3ee16898b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2025-pt-1024.png",
+      "rota": "/livro-razao/juros-das-administracoes-publicas-2025/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2146,
+      "sha256": "a102e8e054ba4f00b426bb1d28826e5a3da3431a38f431d3dc7d59a7e3f282f9",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2025-pt-1024-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "e542e22ca441f4ae4803d19c9320fc557151645030d742e972fe9cfc7cff835e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2025-pt-1280.png",
+      "rota": "/livro-razao/juros-das-administracoes-publicas-2025/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2181,
+      "sha256": "bc127a9e681f286f81c4aadc5d8c1fc7d30078f93cd9bef118df90abe0b0f915",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2025-pt-1280-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "c87c9976db60278198e476152357494a51d9efb8a21a75ebd1aed2a8f1138ff1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2025-pt-1600.png",
+      "rota": "/livro-razao/juros-das-administracoes-publicas-2025/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2187,
+      "sha256": "dd8f9064f6169c2d184f5279d22acf1d83f114766773221758084087e2f6491b",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2025-pt-1600-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "2faae7c5f2f2e6c862812830430f83c200938130d65aa32856e0fcb1e13642ac"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2025-en-390.png",
+      "rota": "/en/ledger/juros-das-administracoes-publicas-2025/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3225,
+      "sha256": "ab52f85fd59fdfd564b93a584e31f5f9b843e5d148fb3afb95dda6b1907df1fe",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2025-en-390-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "4ecdb9058824a75b23cf45c3af21d0d2a94a583ce0b6006aad7bd208807b0585"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2025-en-768.png",
+      "rota": "/en/ledger/juros-das-administracoes-publicas-2025/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2942,
+      "sha256": "bdda051ab9ae5a25488ab972b23fe08e2cb85b4f863404e399c2ff2c57659b44",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2025-en-768-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "ef01bb310e451413c13940f901378c09b26faea5ddfefe33d23c7371af04318a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2025-en-1024.png",
+      "rota": "/en/ledger/juros-das-administracoes-publicas-2025/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2171,
+      "sha256": "72ffcd121644340193953aa017fc7e8421bf8f05d14338906ee8860e849df47c",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2025-en-1024-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "c4191228a1eb24b85ebd6786eedaba80798ad638af3e671d4596ed7946bc4077"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2025-en-1280.png",
+      "rota": "/en/ledger/juros-das-administracoes-publicas-2025/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2206,
+      "sha256": "1d212209921cca3a2d6f7fb799eb09888cb0bc637ad8c1648cb81504d6256482",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2025-en-1280-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "fd3d3436c953d9722ee322dc484d0f3c25fc62dce257d01b792875e1f5ad2653"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "juros-das-administracoes-publicas-2025-en-1600.png",
+      "rota": "/en/ledger/juros-das-administracoes-publicas-2025/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2212,
+      "sha256": "ecfd4b8076da57b863dce108249c6216eef1195fa7f619c6914e8b86adad6630",
+      "recortes": [
+        {
+          "ficheiro": "juros-das-administracoes-publicas-2025-en-1600-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "90c41da5fce90e690e9570215fc20c5f94db301e24353d701d58beeebba03ecf"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2026-cem-euros-ministerio-saude-pt-390.png",
+      "rota": "/livro-razao/oe-2026-cem-euros-ministerio-saude/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3190,
+      "sha256": "5d5698e9618b155482df8ae1584f1a56fc8b68ff589bde9d5ec9dbc8120bdfa0",
+      "recortes": [
+        {
+          "ficheiro": "oe-2026-cem-euros-ministerio-saude-pt-390-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "cf94a6dff1fd1869e02d56565582b25708c038885ddf6dce6547271185c23f86"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2026-cem-euros-ministerio-saude-pt-768.png",
+      "rota": "/livro-razao/oe-2026-cem-euros-ministerio-saude/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2865,
+      "sha256": "ed7d21129a5271ddc2249a0db27906db6fe70ca289c414e587f2fd23405c1296",
+      "recortes": [
+        {
+          "ficheiro": "oe-2026-cem-euros-ministerio-saude-pt-768-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "04ec9042ed9f497c3e99cca0f90b662bc91113992b2a2a090992cb9f317a3e8f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2026-cem-euros-ministerio-saude-pt-1024.png",
+      "rota": "/livro-razao/oe-2026-cem-euros-ministerio-saude/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2151,
+      "sha256": "8a064101a22b1da9a49a900cee3a4885aa9072550ddcf177602b8835b7116c85",
+      "recortes": [
+        {
+          "ficheiro": "oe-2026-cem-euros-ministerio-saude-pt-1024-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "72b53012b346b353d0edda0ef10405e5430de7f002388d77fd4608d917bb2496"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2026-cem-euros-ministerio-saude-pt-1280.png",
+      "rota": "/livro-razao/oe-2026-cem-euros-ministerio-saude/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2185,
+      "sha256": "1109e82787cb4fb792cd4571cdc59a6270d35cec881d207e9e40a4b952f254f2",
+      "recortes": [
+        {
+          "ficheiro": "oe-2026-cem-euros-ministerio-saude-pt-1280-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "f0e07423acd447902168a9e3f4027e2dda41192648b14e8c898ffbc627d29c42"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2026-cem-euros-ministerio-saude-pt-1600.png",
+      "rota": "/livro-razao/oe-2026-cem-euros-ministerio-saude/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2192,
+      "sha256": "cb43fcb8957b542a10fc816326076ad5b729ee448f9baf62810d9785dbe25649",
+      "recortes": [
+        {
+          "ficheiro": "oe-2026-cem-euros-ministerio-saude-pt-1600-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "c5d631773298dd0a2c4ff84d15eb5fac9d0c58720ae0e34fea08910d695b8234"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2026-cem-euros-ministerio-saude-en-390.png",
+      "rota": "/en/ledger/oe-2026-cem-euros-ministerio-saude/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3215,
+      "sha256": "2b86859ba04ec7a72d2352241c57d19443ccef7fb478cd7e3d41a63627353770",
+      "recortes": [
+        {
+          "ficheiro": "oe-2026-cem-euros-ministerio-saude-en-390-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "5aa1de4936d4076729dbce8d87b71e37dbf473a59ac438dc9e96f7bd4e0b1c6f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2026-cem-euros-ministerio-saude-en-768.png",
+      "rota": "/en/ledger/oe-2026-cem-euros-ministerio-saude/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2865,
+      "sha256": "de60224cb22027bb1bfd8ba060b94eb3431e63ed1522801ecd424fc869c3aa8b",
+      "recortes": [
+        {
+          "ficheiro": "oe-2026-cem-euros-ministerio-saude-en-768-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "9da4ced9aed13c66520a784921872e905d73477f2c076e02a19fa9b2c49b575c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2026-cem-euros-ministerio-saude-en-1024.png",
+      "rota": "/en/ledger/oe-2026-cem-euros-ministerio-saude/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2151,
+      "sha256": "69ae5680620a85675cbe6f46551a570fb91b8bc63c36f76494fdf060ba713ffc",
+      "recortes": [
+        {
+          "ficheiro": "oe-2026-cem-euros-ministerio-saude-en-1024-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "06f9e057e7ae2d5b4db901866465df9a1ee7f44e9c76d7504c3165878fe36999"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2026-cem-euros-ministerio-saude-en-1280.png",
+      "rota": "/en/ledger/oe-2026-cem-euros-ministerio-saude/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2185,
+      "sha256": "d6b3182db64f5c45e9255f3faa08e4488cbb63d324f22e229f1a22213085aaf4",
+      "recortes": [
+        {
+          "ficheiro": "oe-2026-cem-euros-ministerio-saude-en-1280-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "9cad896e9166a35c49572993aad8b4b8cd11414cc654952c38ee6ca55a779e02"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2026-cem-euros-ministerio-saude-en-1600.png",
+      "rota": "/en/ledger/oe-2026-cem-euros-ministerio-saude/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2192,
+      "sha256": "1bd774a775d00c1a77d6397140aba791e4cbc9de4ea2bf44740fe4a6d83e69b2",
+      "recortes": [
+        {
+          "ficheiro": "oe-2026-cem-euros-ministerio-saude-en-1600-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "8d44f540f6a7e53d9b9be4252077b7e6f3fff547e57543ab510f1cd22c198850"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-pt-390.png",
+      "rota": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3482,
+      "sha256": "3e78f7b903492f55da9aca41220b099e6df1cf7b2b4ebaf339aa3b5bf47df51d",
+      "recortes": [
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-pt-390-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "80ca5edbca4c33f0c69541927e35c140f385c086f4b41b1df7c88f1bd6bfa17a"
+        },
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-pt-390-abrir-prova.png",
+          "seletor": ".linha-endereco-abrir",
+          "sha256": "f4f14a8adedbd9fd5d06e83d50d1e1d618d276853ac60ddc805648c72263fdb9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-pt-768.png",
+      "rota": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2970,
+      "sha256": "66c297899f827284528f9986568116d4315d35f0fcd78b2540f861457bc442c2",
+      "recortes": [
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-pt-768-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "51773e70a3e95d68acbd2cd4fb95b3a9606a745c52ab7bb47db0d89bcd6b721f"
+        },
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-pt-768-abrir-prova.png",
+          "seletor": ".linha-endereco-abrir",
+          "sha256": "48e8e42c20227049239cf942eed9fed2ea4bfe1ab22b0b313153e4c0c26b0f60"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-pt-1024.png",
+      "rota": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2216,
+      "sha256": "778967b65d6290d1450140d4203343f7211da8938be4f535f0ee267ac0d72c25",
+      "recortes": [
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-pt-1024-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "e1298519c1ba603e794ced9f4fd4a09f013adab05f365a4aefb69de7995d073c"
+        },
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-pt-1024-abrir-prova.png",
+          "seletor": ".linha-endereco-abrir",
+          "sha256": "a4887f53f9acc14e8aad4531ed27843763cd3bbad35772258729ea997ccea33b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-pt-1280.png",
+      "rota": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2250,
+      "sha256": "7e5ff935b046ced5f05a8f35d911a38b12a6b991a27175c7af939088623a6b44",
+      "recortes": [
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-pt-1280-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "c140c86c6dd957263429a250525d479a136a220c65bc2c0b34b16ad0e09fbd6c"
+        },
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-pt-1280-abrir-prova.png",
+          "seletor": ".linha-endereco-abrir",
+          "sha256": "1726e9d7ff63b9ec06a36a30eae78324116b0070ed84025eafed3251010c1279"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-pt-1600.png",
+      "rota": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2257,
+      "sha256": "0926eacd61d9919351291b03da8231854f4437d23bd69bedde9b7d233683aaf3",
+      "recortes": [
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-pt-1600-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "e9b3c6c2018549a01ad1b5e7d97cc92cfc9ab2e9ba67333873beabc85770031e"
+        },
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-pt-1600-abrir-prova.png",
+          "seletor": ".linha-endereco-abrir",
+          "sha256": "1726e9d7ff63b9ec06a36a30eae78324116b0070ed84025eafed3251010c1279"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-en-390.png",
+      "rota": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3493,
+      "sha256": "d44ccc6a8ccc9c929aaffed563ff93bee7681fb602cac011c043cfa0b946dfa1",
+      "recortes": [
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-en-390-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "f03214b17050ad7e8874f0ac3cdec5cb2cc56f966892e48d4fe76f7de3ba75d3"
+        },
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-en-390-abrir-prova.png",
+          "seletor": ".linha-endereco-abrir",
+          "sha256": "baccad76819c11891de340630cca41ffab3d5cfc320a84c43e1dee867be4060b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-en-768.png",
+      "rota": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2988,
+      "sha256": "5e46f049677ece958fcfb43c2d758fff7c44f351d9faf1ea4009c2f515bf1152",
+      "recortes": [
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-en-768-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "82d6729ea8dee52b4004ab772239d3a41106c8687ace1f90c2a609b3872d8170"
+        },
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-en-768-abrir-prova.png",
+          "seletor": ".linha-endereco-abrir",
+          "sha256": "f3d79c69a9445c7c50ec8f03994880a1ebefc887fa0eaf7d2747c84597d89d8f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-en-1024.png",
+      "rota": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2259,
+      "sha256": "5d0e18e552e090c3fa8a3d8a735076c50e8637db71f92414925d70f264cd92fd",
+      "recortes": [
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-en-1024-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "559cf0794d9801d0f0012fc73121c62364b83331eb6d5736a6050bb89987aadb"
+        },
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-en-1024-abrir-prova.png",
+          "seletor": ".linha-endereco-abrir",
+          "sha256": "2467774107f5f3f04ad9d79e37d2aa56816911ab85c1904dc1939f6479a3e983"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-en-1280.png",
+      "rota": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2294,
+      "sha256": "f85c7da27b96cfea7b18dad69f70b291f9586cf39d7b51db6aaee7802725875c",
+      "recortes": [
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-en-1280-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "1979713f4a2ffc192fe7df655b94692cbff079608fa555b7b4cf0191065464ef"
+        },
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-en-1280-abrir-prova.png",
+          "seletor": ".linha-endereco-abrir",
+          "sha256": "abd7b8f90045f573f85c9925f119cbcc0aaf532150e035c0029a5dc5a591e65d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-en-1600.png",
+      "rota": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2300,
+      "sha256": "5291b66510b54c4fa0e570fb6ab2d415a8fefe7c00f06760807024bed388bceb",
+      "recortes": [
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-en-1600-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "26dd9f5367b09bdca3312470dad9f3e0e8d113b780a39e0393fe714d329fd4de"
+        },
+        {
+          "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026-en-1600-abrir-prova.png",
+          "seletor": ".linha-endereco-abrir",
+          "sha256": "abd7b8f90045f573f85c9925f119cbcc0aaf532150e035c0029a5dc5a591e65d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saldo-natural-portugal-2025-pt-390.png",
+      "rota": "/livro-razao/saldo-natural-portugal-2025/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2515,
+      "sha256": "702e0d8023ee82903a52d38bf301ae2b5e696e7230c5ab1cc6977a3b9a9caf63",
+      "recortes": [
+        {
+          "ficheiro": "saldo-natural-portugal-2025-pt-390-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "1d6622289ea0ebb160cac4fa2d2581efdf8d6cfea3d75905f78e79df0186f429"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saldo-natural-portugal-2025-pt-768.png",
+      "rota": "/livro-razao/saldo-natural-portugal-2025/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2232,
+      "sha256": "4239f9b360a9f7837c17d6e14f7175a60a2618bb846e34c715039fc6e44bc508",
+      "recortes": [
+        {
+          "ficheiro": "saldo-natural-portugal-2025-pt-768-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "e274cc2292b20b586c48af4084c1293ee6a4c1476aa162e02f9c886d091d3859"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saldo-natural-portugal-2025-pt-1024.png",
+      "rota": "/livro-razao/saldo-natural-portugal-2025/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1761,
+      "sha256": "0e6fa1a4636547f6e2196b977099710c96078c076ba7f5a0cfcbff673e5c6a8a",
+      "recortes": [
+        {
+          "ficheiro": "saldo-natural-portugal-2025-pt-1024-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "33be5b1a5fedbb84f9f7cdee30520a91d3eb29f5bf4cc55a906af5bbeb7e2b1e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saldo-natural-portugal-2025-pt-1280.png",
+      "rota": "/livro-razao/saldo-natural-portugal-2025/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1796,
+      "sha256": "bf138343f4fc648d634c0616e8908dc4163fc7c0a49430c7079027647a3cb375",
+      "recortes": [
+        {
+          "ficheiro": "saldo-natural-portugal-2025-pt-1280-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "4c326a8d33f4aa6e85c6ee420d8c3254f8a4bbfe57c582b38e2f3ac1b2410214"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saldo-natural-portugal-2025-pt-1600.png",
+      "rota": "/livro-razao/saldo-natural-portugal-2025/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1802,
+      "sha256": "ec3dd2ad07e613c791a87d0cbd0b8d88c0d90bdc30730ebaddb93973ef06870f",
+      "recortes": [
+        {
+          "ficheiro": "saldo-natural-portugal-2025-pt-1600-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "a7d690113736ed312b1ddb90d126ca829b9c5cb615e0b91933c799053562c67a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saldo-natural-portugal-2025-en-390.png",
+      "rota": "/en/ledger/saldo-natural-portugal-2025/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2570,
+      "sha256": "5a04a56ed66267fc6cbd931ef04ffdbeb57936dd7daefb563f7a06dd90267a89",
+      "recortes": [
+        {
+          "ficheiro": "saldo-natural-portugal-2025-en-390-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "1b1bc96c0e84ff30c3ab4fce3ddbcdfd65a73cdb8a3fc4aed83e12f4ac40d44a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saldo-natural-portugal-2025-en-768.png",
+      "rota": "/en/ledger/saldo-natural-portugal-2025/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2237,
+      "sha256": "45af15a0c11501dc08c9bf594ca7d754ebf9e99a9779df4b7d818386e5b2651f",
+      "recortes": [
+        {
+          "ficheiro": "saldo-natural-portugal-2025-en-768-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "9800e514a6d2316dd99b0b75a630746ca8d39ce83f7d902dfa6d2c8c8a6efc38"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saldo-natural-portugal-2025-en-1024.png",
+      "rota": "/en/ledger/saldo-natural-portugal-2025/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1805,
+      "sha256": "5254a474fa8888e51855c25bb64247d9166c221db7f640db201d826a4ddfab30",
+      "recortes": [
+        {
+          "ficheiro": "saldo-natural-portugal-2025-en-1024-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "55cdb0f5de82a879e2b247477d2543e58f715af0de49703f02ec6c0000377e09"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saldo-natural-portugal-2025-en-1280.png",
+      "rota": "/en/ledger/saldo-natural-portugal-2025/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1839,
+      "sha256": "9e332394c8e1173564f9de521003f76db1dd3d7f56ab1ab8f972960a662e9282",
+      "recortes": [
+        {
+          "ficheiro": "saldo-natural-portugal-2025-en-1280-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "65701dbfc96623dbf5b15bd4269619740a3265779143985c4ce71f10dc267200"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "saldo-natural-portugal-2025-en-1600.png",
+      "rota": "/en/ledger/saldo-natural-portugal-2025/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1846,
+      "sha256": "9bea44dc2b90bf5c06b832e0c005248bad3fedc0dfb153a6f4f72f2fd1fa87f2",
+      "recortes": [
+        {
+          "ficheiro": "saldo-natural-portugal-2025-en-1600-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "c92dd581fe1d353e64e6b09bd7cc94958b0e04b4aff50d629cf65e4134334478"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dinheiro-do-estado-2026-pt-390.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4374,
+      "sha256": "1d2bacdf9b2ce2bd0800ff90f9b2da62ee0dfe2311b50726ec8f4caae203be4c",
+      "recortes": [
+        {
+          "ficheiro": "dinheiro-do-estado-2026-pt-390-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "06051c3d8ac00e9e30f9a31c71d3d2e16d6079fd73c1b08075d6abff8a7d5f6e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dinheiro-do-estado-2026-pt-768.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3178,
+      "sha256": "23065c211ae1788b82966eb98a76583367d1e5087b4eee0a9b26f8c43055db4f",
+      "recortes": [
+        {
+          "ficheiro": "dinheiro-do-estado-2026-pt-768-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "13721a760f14c6923fe3b9dd4acc35177d249c36759ea6fa3698b43dcc0c424d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dinheiro-do-estado-2026-pt-1024.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3227,
+      "sha256": "cf9d6e82f67f06d13884869e397618a00fa2c77907f27e476f0be9fb49c30bcb",
+      "recortes": [
+        {
+          "ficheiro": "dinheiro-do-estado-2026-pt-1024-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "120e8f39ba51d632449f7917e05d142e1846220454510f65911914253aa9e327"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dinheiro-do-estado-2026-pt-1280.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3323,
+      "sha256": "6f7d5939ecd5b39a7bb2e9fb27139f4f99a5c1b232907d8b7eb2157a2179df68",
+      "recortes": [
+        {
+          "ficheiro": "dinheiro-do-estado-2026-pt-1280-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "9d223d4081c97cb616b4a9ae080501d4d34fa016fe8b1f8905327583e0eb03c6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dinheiro-do-estado-2026-pt-1600.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3345,
+      "sha256": "bc409613a84462ae420a175fc1040869398d20a144ea8f8cf05f9687cb6e745a",
+      "recortes": [
+        {
+          "ficheiro": "dinheiro-do-estado-2026-pt-1600-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "b0d150bbc966adc87ff19b148c1eb085b15b6cbd9c7ab8da2cf78e2938da0c74"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dinheiro-do-estado-2026-en-390.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4326,
+      "sha256": "e7f9ea72558a3a0ececd6c1cfd1e22c313d4bf3b83052a8c1f365c390bb7e9b1",
+      "recortes": [
+        {
+          "ficheiro": "dinheiro-do-estado-2026-en-390-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "29c45af7aa5f2e718b4a328decfd5c225b82ebcfdcfe661023ffe41d0eb656ce"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dinheiro-do-estado-2026-en-768.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3196,
+      "sha256": "861d815a5839778567dc76e723378b22e852c63978314677f3bd51ac7ead04df",
+      "recortes": [
+        {
+          "ficheiro": "dinheiro-do-estado-2026-en-768-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "ec96ca1e5ca68c08a182c2b5fa57dddb5de736496281c83e744679f33b39c9f9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dinheiro-do-estado-2026-en-1024.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3245,
+      "sha256": "53afc5e3671da82dccf581fb7395c969048a6980459876202fd2c79eb2bcc0cf",
+      "recortes": [
+        {
+          "ficheiro": "dinheiro-do-estado-2026-en-1024-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "35ea9ee10b1031e27419c513995f98dcf7cf605c9df9baab88665cb1b47837f6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dinheiro-do-estado-2026-en-1280.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3341,
+      "sha256": "f33c8a05334f2abc4296360b52005aed0d9b404e72153560c53b3a6582c3af8f",
+      "recortes": [
+        {
+          "ficheiro": "dinheiro-do-estado-2026-en-1280-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "8e2bb6c4aa4f034f65a98624794b292693c1f98ce8d4b774cff54b6822f80ef2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "dinheiro-do-estado-2026-en-1600.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3363,
+      "sha256": "1c1338a6a7873e19f0878e173985156e282b449f5b645095e341af6ab8f2cf47",
+      "recortes": [
+        {
+          "ficheiro": "dinheiro-do-estado-2026-en-1600-conteudo.png",
+          "seletor": "main#conteudo",
+          "sha256": "84b767e119ef595a9d9e0f3e97b1ef62ccb6c8c7737f5a19747863dbd84137f3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "2ca0af25f31691353a8562ce0a77558442dc4742c96b140339e4aeb93dc7f1f4",
+    "livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025/index.html": "012f98b0782c7c12569a10ba4f1e6a32e482a8aa2d694f97563080519dc6c851",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/linha.CrtN9lq-.css": "ec31dca0f21f5f0444825fc30bc257090242e399eaf37bc12e9ff60b3d72f059",
+    "_astro/Base.hPEW4RoH.css": "f274081feb3c23a41b42c82b431fdc82ca2c162f791dec18fbb98087803084ff",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/ledger/amortizacoes-e-anulacoes-de-divida-fundada-2025/index.html": "27d0bd4ac82d4d6c248a01ee62d7a6c722b4dd011a0b7cbeeb4ef18edb778c28",
+    "livro-razao/juros-das-administracoes-publicas-2024/index.html": "aeef729c5300a35490d96d812250f2e84c6e4457426478ce7aa80f16cbd21d1f",
+    "en/ledger/juros-das-administracoes-publicas-2024/index.html": "703e90263cb20107b1fb2ad35621cc403f608873eab299fbd2299b955811d3ff",
+    "livro-razao/juros-das-administracoes-publicas-2025/index.html": "7c32d801e8525eb752b16911d3fcd2c830b17bda7f03db2cd7f83c0a37f7f22e",
+    "en/ledger/juros-das-administracoes-publicas-2025/index.html": "476c4dd512c8990e1fea3e715a044c6b7953546e3cad73696a5af1f0a89c1355",
+    "livro-razao/oe-2026-cem-euros-ministerio-saude/index.html": "9cef851f442b212cc41536b141e3a3123889569aa83affb4b937bab47f9b3103",
+    "en/ledger/oe-2026-cem-euros-ministerio-saude/index.html": "56c2a91bf30ab15e81c7ca4444451226f3a16d8e90a1446a0df72209b3bd02ef",
+    "livro-razao/penalizacao-legal-um-ano-antecipacao-2026/index.html": "a5176c7316bf930a3ecdaecb8d508cbd3e5a2139938c67dfda100783dbfdfaa5",
+    "en/ledger/penalizacao-legal-um-ano-antecipacao-2026/index.html": "4ba49e682392957046eda77625afb63e421c0fd609fbcbe814bf446aea329848",
+    "livro-razao/saldo-natural-portugal-2025/index.html": "75ce0d0b0a997d63f87f0f5171dae5cebb7325c99a02b641d2cc080550dca56d",
+    "en/ledger/saldo-natural-portugal-2025/index.html": "bd817d1e6f493b94016c0d1623a85dab7d49ab85a93bb481d09b9cb4047d078f",
+    "explicacoes/dinheiro-do-estado-2026/index.html": "1b2963e629778ec566b6d71d0ae70389020c25fa614f0992c270435aac29637c",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "en/explainers/dinheiro-do-estado-2026/index.html": "5a7fef77a020a207d09ff1daf9e30971a57505ddd34b1628a355e53746183f2a"
+  },
+  "falhas": [],
+  "ok": true
+}
