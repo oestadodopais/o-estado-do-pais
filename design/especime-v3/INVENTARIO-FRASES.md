@@ -4312,8 +4312,8 @@ As frases já publicadas nas páginas dos concelhos, nas duas edições, e confe
 
 | classe | texto | bloco | estado | razão |
 |---|---|---|---|---|
-| conteudo | 3 208 afirmações · 368 de 3 208 calculadas · 2 767 de 3 208 linhas de concelhos | rp4nj | viva | Contagem lida do HTML construído após a fusão do JD1 e do RP4-n. |
-| conteudo | 3 208 claims · 368 of 3 208 calculated · 2 767 of 3 208 municipality rows | rp4nj | viva | Contagem lida do HTML construído após a fusão do JD1 e do RP4-n. |
+| conteudo | 3 208 afirmações · 368 de 3 208 calculadas · 2 767 de 3 208 linhas de concelhos | rp4nj | retirada | O V2-a acrescentou linhas e mudou a contagem do índice. |
+| conteudo | 3 208 claims · 368 of 3 208 calculated · 2 767 of 3 208 municipality rows | rp4nj | retirada | O V2-a acrescentou linhas e mudou a contagem do índice. |
 
 ## V2-a: frases das fontes da vigilância
 
@@ -4345,3 +4345,5 @@ As frases já publicadas nas páginas dos concelhos, nas duas edições, e confe
 | conteudo | It is the harmonised index of consumer prices rate in the macroeconomic forecast scenario. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
 | conteudo | É o valor publicado na afirmação citada, com a atribuição que o documento apresenta. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
 | conteudo | It is the value published in the quoted statement, with the attribution given by the document. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | 3 226 claims · 368 of 3 226 calculated · 2 767 of 3 226 municipality rows | v2a | viva | Contagem lida do HTML construído com as fontes do V2-a. |
+| conteudo | 3 226 afirmações · 368 de 3 226 calculadas · 2 767 de 3 226 linhas de concelhos | v2a | viva | Contagem lida do HTML construído com as fontes do V2-a. |

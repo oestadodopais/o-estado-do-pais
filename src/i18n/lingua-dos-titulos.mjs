@@ -43,6 +43,12 @@
 
 /** `pt` ou `en`, para cada título distinto do campo `document.title`. */
 export const LINGUA_DOS_TITULOS = {
+  // V2-a: línguas lidas nos documentos alojados.
+  "Leitão Amaro reitera que os portugueses \"têm mais dinheiro no bolso\" e apela à responsabilidade de PS e Chega": 'pt',
+  "Governo, Chega e PS dançam o bailarico. Quem paga a conta são os trabalhadores!": 'pt',
+  "OE2027. Verbas para a saúde com queda de 1,5%": 'pt',
+  "Previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027": 'pt',
+  "Orçamento do Estado para 2027": 'pt',
   /* JD1: títulos lidos nos documentos recebidos nesta corrida. */
   'Boletim Mensal': 'pt',
   'Gestão da Tesouraria do Estado e da Dívida Pública · Relatório Anual 2025': 'pt',
@@ -218,6 +224,17 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada rótulo distinto do campo `name`. */
 export const LINGUA_DOS_ROTULOS = {
+  // V2-a: línguas lidas nos documentos alojados.
+  "Leitão Amaro reitera que os portugueses \"têm mais dinheiro no bolso\" e apela à responsabilidade de PS e Chega": 'pt',
+  "Governo, Chega e PS dançam o bailarico. Quem paga a conta são os trabalhadores!": 'pt',
+  "OE2027. Verbas para a saúde com queda de 1,5%": 'pt',
+  "IHPC": 'pt',
+  "PIB": 'pt',
+  "encargos brutos": 'pt',
+  "Rodoviário": 'pt',
+  "receitas": 'pt',
+  "Despesa efetiva consolidada": 'pt',
+  "Despesa total consolidada": 'pt',
   'dcum x : cumulative reduction': 'en',
   'penalização legal': 'pt',
   'AA08b – Água não faturada': 'pt',
@@ -424,6 +441,10 @@ export function linguaDoRotuloDaFonte(rotulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada valor distinto do campo `source`. */
 export const LINGUA_DAS_FONTES = {
+  // V2-a: línguas lidas nos documentos alojados.
+  "RTP": 'pt',
+  "PCP": 'pt',
+  "Ministério das Finanças": 'pt',
   /* JD1: nomes dos organismos portugueses, conservados nas duas edições. */
   'IGCP': 'pt',
   'Instituto Nacional de Estatística': 'pt',
@@ -513,6 +534,9 @@ export function linguaDaFonte(fonte, lang = 'pt') {
 
 /** `pt`, `en`, ou `null` para uma edição que não está em língua nenhuma. */
 export const LINGUA_DAS_EDICOES = {
+  // V2-a: línguas lidas nos documentos alojados.
+  "2026-10-09": null,
+  "2027": null,
   /* JD1: a prosa tem língua; o identificador do conjunto é um código. */
   'setembro de 2026': 'pt',
   'Setembro de 2026': 'pt',
