@@ -28,7 +28,7 @@ export const FAMILIAS_JD1 = [
         O('jd1-ine-contas', 'pertencem ao setor institucional das P na ótica das Contas Nacionais')),
       contas, ponto,
       diz(' Exclui entidades que entram no saldo da contabilidade pública mas não pertencem às administrações públicas nas contas nacionais.',
-        ' It excludes bodies included in the public accounting balance that do not belong to general government in the national accounts.',
+        ' It excludes bodies counted in the public accounting balance that do not belong to general government in the national accounts.',
         O('jd1-ine-contas', 'são retiradas entidades que não integram esse setor, mas que estão incluídas no saldo em contabilidade pública')),
     ],
   },
