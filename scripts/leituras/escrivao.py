@@ -111,6 +111,37 @@ def iniciar_portoes(repo, pedido, repos):
                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
 
 
+def dentro_da_worktree_ou_tmp(repo, caminho):
+    raiz = pathlib.Path(os.path.realpath(repo))
+    alvo = pathlib.Path(caminho) if os.path.isabs(caminho) else raiz / caminho
+    real = pathlib.Path(os.path.realpath(alvo if alvo.exists() else alvo.parent))
+    em_tmp = str(real).startswith(('/tmp/', '/private/tmp/')) or real in (pathlib.Path('/tmp'), pathlib.Path('/private/tmp'))
+    return real == raiz or raiz in real.parents or em_tmp
+
+
+def iniciar_capturas(repo, pedido):
+    """As capturas das páginas fora da sandbox, a pedido do construtor (13.10.2026): o mesmo navegador que as
+    conferências usam, que não arranca dentro da sandbox. Corre só o `captar.mjs` do próprio repositório, com o
+    pedido JSON e a pasta de saída dentro da worktree ou em /tmp, sobre o `dist/` da worktree; o próprio guião
+    recusa outra cabeça, pedidos externos e rotas em falta."""
+    pedido_json = pedido.get('pedido')
+    saida = pedido.get('saida')
+    if not isinstance(pedido_json, str) or not pedido_json or not isinstance(saida, str) or not saida:
+        return {'codigo': 2, 'recusa': 'pedido de capturas sem o ficheiro do pedido ou sem a pasta de saída'}
+    raiz = pathlib.Path(os.path.realpath(repo))
+    if not dentro_da_worktree_ou_tmp(repo, pedido_json) or not dentro_da_worktree_ou_tmp(repo, saida):
+        return {'codigo': 2, 'recusa': 'o pedido e a pasta de saída das capturas têm de ficar na worktree ou em /tmp'}
+    guiao = raiz / 'scripts' / 'leituras' / 'captar.mjs'
+    if not guiao.exists():
+        return {'codigo': 2, 'recusa': 'esta worktree não tem scripts/leituras/captar.mjs'}
+    if not (raiz / 'dist' / 'version.json').exists():
+        return {'codigo': 2, 'recusa': 'não há dist/version.json na worktree; corre os portões (o build) antes das capturas'}
+    pedido_abs = pedido_json if os.path.isabs(pedido_json) else str(raiz / pedido_json)
+    saida_abs = saida if os.path.isabs(saida) else str(raiz / saida)
+    return subprocess.Popen(['node', str(guiao), pedido_abs, saida_abs, 'dist'], cwd=str(raiz), env=dict(os.environ),
+                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+
+
 def concluir_portoes(repo, pedido, processo, saida_texto):
     raiz = pathlib.Path(os.path.realpath(repo))
     destino = pathlib.Path(pedido['saida']) if os.path.isabs(pedido['saida']) else raiz / pedido['saida']
@@ -178,24 +209,30 @@ def principal(argv):
                 if not isinstance(dados, dict):
                     escrever_resultado(pedido, {'codigo': 2, 'recusa': 'o pedido não é um objeto JSON'})
                     continue
-                if dados.get('tipo') == 'portoes':
-                    processo = iniciar_portoes(repo, dados, list(pastas))
+                if dados.get('tipo') in ('portoes', 'capturas'):
+                    longo = dados['tipo']
+                    teto = 3000 if longo == 'portoes' else 1200
+                    processo = iniciar_portoes(repo, dados, list(pastas)) if longo == 'portoes' else iniciar_capturas(repo, dados)
                     if isinstance(processo, dict):
                         escrever_resultado(pedido, processo)
                         continue
-                    print(f"{agora()} {pedido.name}: portões a correr (pid {processo.pid})", flush=True)
+                    print(f"{agora()} {pedido.name}: {longo} a correr (pid {processo.pid})", flush=True)
                     inicio = time.time()
                     while processo.poll() is None:
                         for outra in pastas.values():
                             (outra / 'batimento').write_text(agora() + '\n', encoding='utf-8')
-                        if time.time() - inicio > 3000:
+                        if time.time() - inicio > teto:
                             processo.kill()
                             processo.wait()
                             break
+                        time.sleep(1)
                     saida_texto = processo.stdout.read() if processo.stdout else ''
-                    resultado = concluir_portoes(repo, dados, processo, saida_texto)
-                    if time.time() - inicio > 3000:
-                        resultado['recusa'] = 'os portões passaram de cinquenta minutos e foram interrompidos'
+                    if longo == 'portoes':
+                        resultado = concluir_portoes(repo, dados, processo, saida_texto)
+                    else:
+                        resultado = {'codigo': processo.returncode, 'saida': saida_texto[-6000:]}
+                    if time.time() - inicio > teto:
+                        resultado['recusa'] = f'{longo}: passou do teto ({teto // 60} minutos) e foi interrompido'
                     escrever_resultado(pedido, resultado)
                     continue
                 escrever_resultado(pedido, executar(repo, dados))
