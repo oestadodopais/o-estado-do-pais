@@ -317,7 +317,8 @@ if(process.argv.includes('--registo-f')) fs.writeFileSync('design/especime-v3/me
 if(process.argv.includes('--registo-e')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/e/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 // HIG: plantas sobre os metadados e as três legendas distintas.
 for (const lang of ['pt', 'en']) {
- const html=fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/saldo-natural-portugal-2025/index.html`,'utf8');
+ const html=fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/posicao-de-investimento-internacional-2025/index.html`,'utf8');
+ assert.equal(conferirSemMarcadores(parse(html)),null);
  for (const atributo of ['name="description"','property="og:description"']) {
   const copia=parse(html); copia.querySelector(`meta[${atributo}]`).setAttribute('content','[a verificar]');
   morde(`marcador nos metadados ${atributo} (${lang})`, [conferirSemMarcadores(copia)].filter(Boolean), 'marca de informação por confirmar');
