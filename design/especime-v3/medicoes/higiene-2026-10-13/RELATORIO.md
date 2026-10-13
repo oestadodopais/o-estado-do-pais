@@ -76,7 +76,7 @@ Os caminhos abreviados `medicoes/` pertencem a `design/especime-v3/`.
 | RP4N-19 | Corrigida | `medicoes/rp4n-2026-10-06/privacidade-i.py` recolhe mensagens do controlo real. `rp4n-19.json`: dois controlos históricos e quatro mutações recusadas. |
 | RP4N-20 | Corrigida | `design/especime-v3/INVENTARIO-FRASES.md`, C1e: rótulo e ausência de leitura na fonte incluídos, com o âmbito das cópias alojadas. |
 | RP4N-21 | Corrigida | `src/data/figuras.mjs`, `OrigemDaDefinicao.astro` e `verbatim.mjs`: legendas distintas, transcritas dos três excertos. A conferência das famílias e as plantas protegem-nas. |
-| RP4N-22 | Corrigida e medida no navegador; captura recusada | `src/styles/linha.css` conserva as palavras do rótulo; `tests/explicacoes/frases-compostas.mjs` mede ambas as línguas e planta uma palavra partida. |
+| RP4N-22 | Corrigida, medida e captada | `src/styles/linha.css` conserva as palavras do rótulo; `tests/explicacoes/frases-compostas.mjs` mede ambas as línguas e planta uma palavra partida; os recortes `entrega/penalizacao-legal-um-ano-antecipacao-2026-{pt,en}-{390,1280}-abrir-prova.png` mostram as palavras inteiras. |
 | RP4N-23 a RP4N-27 | Corrigidas | Acertos datados em `medicoes/rp4n-2026-10-06/LEIA-ME.md`: custos e limites da atribuição, comando, carimbo real do inventário, dezassete ocorrências de recusa com repetições conservadas. |
 | JD1-11 | Corrigida | Onze referências ainda revertidas foram restauradas e localizadas pela linha e pelo contexto do código atual; `jd1-ancoras.json`. Os registos `mapa-antes.log` e `mapa-depois.log` conservam também os avisos de referências antigas fora desta restauração. |
 | JD1-12 | Corrigida | `medicoes/r4-2026-10-05/registar-leitura.mjs` documenta o âmbito único por omissão e a necessidade de declarar âmbitos distintos. |
@@ -125,10 +125,10 @@ HIG-12: a primeira tentativa final em `depois/` terminou com construção 1, ver
 
 | Repositório | Cabeça de código conferida | Entrega |
 |---|---|---|
-| Sítio | `996a388918d1d4183d2d00700bdd62157f0b0fa8` | O commit que contém este relatório; hash confirmado na resposta após o escrivão. |
+| Sítio | `996a388918d1d4183d2d00700bdd62157f0b0fa8` | Capturas: `f88f4f52e465a3371e172b12640ba002e70dd65c`. Fecho: o commit que contém esta atualização do relatório; hash confirmado na resposta após o escrivão. |
 | Motor | `6bd8b70a8ec40909ea5bc415d730c798b8a2ebe3` | `6bd8b70a8ec40909ea5bc415d730c798b8a2ebe3` |
 
-As cabeças de início e fim dos portões são iguais. Os commits posteriores do sítio guardam apenas provas e o relatório; não alteram o produto. A lista dos commits anteriores a este fecho está em `commits.json`, acrescida do commit que guarda esta entrega.
+As cabeças de início e fim dos portões são iguais. Os commits posteriores do sítio alteram guiões, medições, provas e o relatório; não alteram as páginas construídas. A lista anterior ao primeiro fecho está em `commits.json`. A lista abaixo acrescenta os commits da direção e desta retoma; o último commit guarda esta atualização do relatório.
 
 ### Commits do sítio
 
@@ -154,6 +154,11 @@ As cabeças de início e fim dos portões são iguais. Os commits posteriores do
 * `fe8eae1224eae34e384e98a0a7b94ea4248f996a`: Higiene JD1-16: ajustar a redação inglesa à régua da voz.
 * `996a388918d1d4183d2d00700bdd62157f0b0fa8`: Higiene: conservar a primeira tentativa final e a correção da voz.
 
+* `bbd9b1de10f19b19928eda81b0a8b4e01f24ef45`: Higiene: fechar relatório e provas dos portões finais.
+* `a504f9c7cded634c5a10c8aab282c8ef7956bcbf`: O escrivão captura as páginas fora da sandbox a pedido do construtor (capturar-pelo-escrivao.sh, só o captar.mjs do repositório, sobre o dist da worktree): o navegador não arranca dentro dela, como a V2-a e a higiene mostraram.
+* `73ada2e93ceb9a7329f247b64407bbeedf547bf4`: Os guiões do §0 dos briefs V2-a e V2-b medem a cabeça presa (44545189) e não HEAD: no GitHub o portão dos briefs reexecuta-os, e as contagens do livro mudam quando o V2-a aterra.
+* `f88f4f52e465a3371e172b12640ba002e70dd65c`: Higiene: guardar as capturas finais pelo escrivão.
+
 ### Commits do motor
 
 * `759c22a7c532f7ac4d67f74d984c2db090e5b8e0`: Higiene V1-40: rotular as linhas de arrumação do resumo diário.
@@ -172,13 +177,23 @@ Corrida pedida por `sh scripts/leituras/portoes-pelo-escrivao.sh design/especime
 
 `livro-preservado.json` confirma os mesmos bytes dos 3 208 ficheiros do livro. Os portões exercitam as novas plantas; `rp4nj-final.json` liga a conferência do inventário ao carimbo da construção final.
 
-O guião `scripts/leituras/captar.mjs` foi chamado com o pedido ligado à cabeça final, mas o Chromium foi recusado pela sandbox. Não há capturas visuais de entrega. O recibo da tentativa está em `design/especime-v3/capturas/higiene-2026-10-13/capturas.json`; a mensagem exata, com os caminhos anonimizados, inclui:
+Na tentativa anterior, o guião `scripts/leituras/captar.mjs` foi chamado com o pedido ligado à cabeça do código conferido, mas o Chromium foi recusado pela sandbox. Essa tentativa não produziu capturas visuais; a recusa fica conservada como história. O recibo da tentativa está em `design/especime-v3/capturas/higiene-2026-10-13/capturas.json`; a mensagem exata, com os caminhos anonimizados, inclui:
 
 ```text
 [pid=14786][err] [1013/215627.309014:FATAL:base/apple/mach_port_rendezvous_mac.cc:159] Check failed: kr == KERN_SUCCESS. bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.14786: Permission denied (1100)
 ```
 
 HIG-13: não substituir a captura pedida por uma imagem antiga nem contornar a sandbox. A medição da palavra inteira passou no navegador dos portões externos; a captura visual continua em falta e precisa de um caminho autorizado fora da sandbox.
+
+### Retoma das capturas, 2026-10-13T21:12:41Z
+
+HIG-14: usar o novo serviço `capturar-pelo-escrivao.sh`, disponibilizado pela direção, sobre o `dist/` já conferido. Não repetir os portões nem alterar páginas, dados ou código. HIG-13 conserva a decisão da tentativa recusada; a falta de capturas ficou resolvida nesta retoma.
+
+Comando executado: `sh scripts/leituras/capturar-pelo-escrivao.sh design/especime-v3/capturas/higiene-2026-10-13/pedido-entrega.json design/especime-v3/capturas/higiene-2026-10-13/entrega`. O cliente devolveu zero; `entrega/capturas.codigo` guarda esse resultado e `entrega/capturas.json` tem `ok: true`, sem falhas, com a cabeça completa `996a388918d1d4183d2d00700bdd62157f0b0fa8`, igual à de `dist/version.json`.
+
+Foram guardadas 70 capturas de página e 80 recortes: sete páginas, nas edições portuguesa e inglesa, a 390, 768, 1 024, 1 280 e 1 600 px. O pedido enumera os recibos de amortizações, juros de 2024 e 2025, ministério da Saúde, penalização legal e saldo natural, e a explicação do dinheiro do Estado. Cada imagem foi conferida pelo seu resumo criptográfico; todas as páginas responderam sem erros, pedidos externos ou transbordo horizontal. Foram lidos visualmente os quatro recortes da ligação à prova a 390 e 1 280 px, nas duas edições, e uma amostra dos recibos e da explicação. As palavras «Abrir na página 273» e «Open at page 273» aparecem inteiras.
+
+As capturas foram comitadas primeiro, em `f88f4f52e465a3371e172b12640ba002e70dd65c`. Só depois se atualizou este relatório. Os códigos da última corrida foram novamente lidos de `depois-2/build.codigo`, `depois-2/verify.codigo`, `depois-2/typecheck.codigo` e `depois-2/motor.codigo`: todos zero. São os resultados já obtidos sobre as cabeças de código indicadas acima, não uma corrida nova sobre os commits de documentação e guiões.
 
 ## Ficheiros do motor corrigidos pelo §2
 
@@ -284,7 +299,6 @@ HIG-13: não substituir a captura pedida por uma imagem antiga nem contornar a s
 
 * EX1-11: selar e publicar o saldo homólogo exige um número novo, fora do §4 desta passagem.
 * Os dois ficheiros protegidos em `sweeps/`, identificados em `motor-caminhos-depois.json`, ficam para a direção.
-* Capturas finais a 390 e 1 280 px, nas duas edições: falta um caminho autorizado para o Chromium fora da sandbox.
 * O escrivão deixa de atualizar o sinal de vida enquanto executa o hook de um commit; o cliente termina cedo. Os resultados finais foram lidos nos pedidos originais, sem duplicação.
 
 A linha «tokens used» não foi exposta nesta sessão. Os pontos da semana são medidos pelo lançador.
