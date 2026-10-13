@@ -2541,3 +2541,33 @@ O commit final de provas, que contém esta tabela, é identificado na resposta d
 ### Custo
 
 A linha «tokens used» não estava disponível no registo visível da execução ao preparar este relatório. O custo e o cumprimento do alvo não ficam demonstrados; não foi inventada uma contagem.
+
+## Acertos de higiene, 13.10.2026
+
+RP4N-23: a direção mediu 405 094 símbolos na passagem i, contra o alvo de 150 000 (§1.187). Os códigos conservados mostram duas tentativas recusadas, `portoes-i-tentativa1` (construção e tipos) e `portoes-i-tentativa2` (verificação), antes da repetição final; estas correções e repetições alargaram o trabalho. Não existe medição por operação para repartir o excesso.
+
+RP4N-24: o comando que escreve o inventário é `node design/especime-v3/medicoes/rp4n-2026-10-06/inventario-j.mjs --write`; sem `--write`, confere as declarações contra o HTML sem as alterar.
+
+RP4N-25: o carimbo efetivamente conservado em `j/inventario.json` é `{"commit": "3ecc7c72bce1bbc06e207aca368c9dcbb579b7ec", "ref": "rp4n-2026-10-07", "env": "local", "origem": "git", "motivo": null, "construido_em": "2026-10-12T18:12:06.874Z"}`. É a construção de que esse registo leu as contagens. Não é prova de que as tenha lido na cabeça final da integração. A conferência atual será identificada pelo seu próprio carimbo na entrega da higiene.
+
+RP4N-26: a conferência isolada registou 17 recusas, com 10 mensagens distintas. Não se confunde esta lista com uma contagem duplicada de chamadas do portão. As ocorrências, incluindo repetições, são:
+
+1. K17 · famílias · pib-nominal-notificacao-setembro, parte 1 («É o valor dos bens e serviços finais produzidos na econom…»): jd1-pib-definicao, pib-nominal-notificacao-setembro-2024: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+2. K17 · famílias · pib-nominal-notificacao-setembro, parte 1 («É o valor dos bens e serviços finais produzidos na econom…»): jd1-pib-definicao, pib-nominal-notificacao-setembro-2024: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+3. K17 · famílias · juros-das-administracoes-publicas-pib, parte 2 («. O produto interno bruto mede o valor dos bens e serviço…»): jd1-pib-definicao, juros-das-administracoes-publicas-pib-2024: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+4. K17 · famílias · juros-das-administracoes-publicas-pib, parte 2 («. O produto interno bruto mede o valor dos bens e serviço…»): jd1-pib-definicao, juros-das-administracoes-publicas-pib-2024: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+5. K17 · famílias · juros-das-administracoes-publicas-ue, parte 4 («: a despesa pertence ao período em que o encargo é assumi…»): jd1-ine-contas, juros-das-administracoes-publicas-2025-ue: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+6. K17 · famílias · custo-do-stock-da-divida-direta, parte 2 («. Os juros são registados quando o encargo é assumido, me…»): jd1-ine-contas, custo-do-stock-da-divida-direta-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+7. K17 · famílias · necessidades-brutas-de-financiamento, parte 1 («É o financiamento de que o Estado precisou para cobrir o …»): jd1-eo-ativos, necessidades-brutas-de-financiamento-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+8. K17 · famílias · necessidades-brutas-de-financiamento, parte 2 («. O défice é a despesa que excede a receita»): jd1-eo-saldo, necessidades-brutas-de-financiamento-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+9. K17 · famílias · necessidades-brutas-de-financiamento, parte 2 («. O défice é a despesa que excede a receita»): jd1-eo-saldo, necessidades-brutas-de-financiamento-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+10. K17 · famílias · necessidades-brutas-de-financiamento, parte 3 («. Os ativos financeiros incluem títulos, participações e …»): jd1-eo-ativos, necessidades-brutas-de-financiamento-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+11. K17 · famílias · necessidades-brutas-de-financiamento, parte 3 («. Os ativos financeiros incluem títulos, participações e …»): jd1-eo-ativos, necessidades-brutas-de-financiamento-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+12. K17 · famílias · necessidades-brutas-de-financiamento, parte 6 (« A contabilidade orçamental pública conta os recebimentos…»): jd1-eo-glossario, necessidades-brutas-de-financiamento-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+13. K17 · famílias · necessidades-brutas-de-financiamento, parte 6 (« A contabilidade orçamental pública conta os recebimentos…»): jd1-eo-glossario, necessidades-brutas-de-financiamento-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+14. K17 · famílias · amortizacoes-e-anulacoes-de-divida-fundada, parte 4 (« A contabilidade orçamental pública conta os recebimentos…»): jd1-eo-glossario, amortizacoes-e-anulacoes-de-divida-fundada-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+15. K17 · famílias · amortizacoes-e-anulacoes-de-divida-fundada, parte 4 (« A contabilidade orçamental pública conta os recebimentos…»): jd1-eo-glossario, amortizacoes-e-anulacoes-de-divida-fundada-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+16. K17 · famílias · emissoes-de-divida-fundada, parte 4 (« A contabilidade orçamental pública conta os recebimentos…»): jd1-eo-glossario, emissoes-de-divida-fundada-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+17. K17 · famílias · emissoes-de-divida-fundada, parte 4 (« A contabilidade orçamental pública conta os recebimentos…»): jd1-eo-glossario, emissoes-de-divida-fundada-2025: a origem tem outro publicador e não está declarada como segunda fonte com recibo
+
+RP4N-27: a direção mediu 514 745 símbolos na passagem j (§1.187), contra o alvo de 150 000 do mandato. O relato acima documenta a integração das segundas fontes, a interrupção do teste que herdou a opção do motor real, o acerto das plantas do índice e da definição da série, e a repetição do cruzamento com a worktree explícita. As construções e conferências foram repetidas depois dessas correções e dos commits. Não existe medição por operação que permita atribuir parcelas do custo.
