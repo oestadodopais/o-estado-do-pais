@@ -1,0 +1,222 @@
+{
+  "versao": {
+    "commit": "b59ce222aeeecfb8d72e6d6e5db5bd91f574f27c",
+    "ref": "higiene-2026-10-13",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-13T18:57:17.497Z"
+  },
+  "resultados": [
+    {
+      "id": "amortizacoes-e-anulacoes-de-divida-fundada-2025",
+      "lang": "pt",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "amortizacoes-e-anulacoes-de-divida-fundada-2025",
+      "lang": "en",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "custo-da-divida-emitida-2026-08",
+      "lang": "pt",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "custo-da-divida-emitida-2026-08",
+      "lang": "en",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "custo-do-stock-da-divida-direta-2025",
+      "lang": "pt",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "custo-do-stock-da-divida-direta-2025",
+      "lang": "en",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "divida-direta-do-estado-2026-08",
+      "lang": "pt",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "divida-direta-do-estado-2026-08",
+      "lang": "en",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "emissoes-de-divida-fundada-2025",
+      "lang": "pt",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "emissoes-de-divida-fundada-2025",
+      "lang": "en",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "juros-das-administracoes-publicas-2024",
+      "lang": "pt",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "juros-das-administracoes-publicas-2024",
+      "lang": "en",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "juros-das-administracoes-publicas-2025",
+      "lang": "pt",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "juros-das-administracoes-publicas-2025",
+      "lang": "en",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "juros-das-administracoes-publicas-2025-ue",
+      "lang": "pt",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "juros-das-administracoes-publicas-2025-ue",
+      "lang": "en",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "juros-das-administracoes-publicas-pib-2024",
+      "lang": "pt",
+      "derivada": true,
+      "nome_na_fonte": "não se atribui à fonte uma medida calculada pela casa",
+      "erros": []
+    },
+    {
+      "id": "juros-das-administracoes-publicas-pib-2024",
+      "lang": "en",
+      "derivada": true,
+      "nome_na_fonte": "não se atribui à fonte uma medida calculada pela casa",
+      "erros": []
+    },
+    {
+      "id": "juros-das-administracoes-publicas-pib-2025",
+      "lang": "pt",
+      "derivada": true,
+      "nome_na_fonte": "não se atribui à fonte uma medida calculada pela casa",
+      "erros": []
+    },
+    {
+      "id": "juros-das-administracoes-publicas-pib-2025",
+      "lang": "en",
+      "derivada": true,
+      "nome_na_fonte": "não se atribui à fonte uma medida calculada pela casa",
+      "erros": []
+    },
+    {
+      "id": "juros-e-outros-encargos-execucao-2025-08",
+      "lang": "pt",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "juros-e-outros-encargos-execucao-2025-08",
+      "lang": "en",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "juros-e-outros-encargos-execucao-2026-08",
+      "lang": "pt",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "juros-e-outros-encargos-execucao-2026-08",
+      "lang": "en",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "necessidades-brutas-de-financiamento-2025",
+      "lang": "pt",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "necessidades-brutas-de-financiamento-2025",
+      "lang": "en",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "pib-nominal-notificacao-setembro-2024",
+      "lang": "pt",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "pib-nominal-notificacao-setembro-2024",
+      "lang": "en",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "pib-nominal-notificacao-setembro-2025",
+      "lang": "pt",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    },
+    {
+      "id": "pib-nominal-notificacao-setembro-2025",
+      "lang": "en",
+      "derivada": false,
+      "nome_na_fonte": "rótulo da medida",
+      "erros": []
+    }
+  ]
+}

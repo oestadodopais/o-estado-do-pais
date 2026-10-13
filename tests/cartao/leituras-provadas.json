@@ -12901,8 +12901,8 @@
       ],
       "folhas": [
         {
-          "pt": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública.",
-          "en": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance.",
+          "pt": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. Exclui entidades que entram no saldo da contabilidade pública mas não pertencem às administrações públicas nas contas nacionais.",
+          "en": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. It excludes bodies included in the public accounting balance that do not belong to general government in the national accounts.",
           "partes": [
             {
               "pt": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas",
@@ -12944,19 +12944,14 @@
               "classe": "liga"
             },
             {
-              "pt": " Inclui as entidades que as regras europeias classificam neste setor, mesmo quando não entram no saldo da contabilidade pública.",
-              "en": " It includes bodies classified in this sector by European rules, even when they are outside the public accounting balance.",
+              "pt": " Exclui entidades que entram no saldo da contabilidade pública mas não pertencem às administrações públicas nas contas nacionais.",
+              "en": " It excludes bodies included in the public accounting balance that do not belong to general government in the national accounts.",
               "classe": "diz",
               "apoios": [
                 {
                   "origem": "jd1-ine-contas",
                   "campo": "excerto",
-                  "literal": "são consideradas entidades que não estão integradas no saldo em contabilidade pública"
-                },
-                {
-                  "origem": "jd1-ine-contas",
-                  "campo": "excerto",
-                  "literal": "por força da aplicação do Sistema Europeu de Contas Nacionais e Regionais (SEC 2010)"
+                  "literal": "são retiradas entidades que não integram esse setor, mas que estão incluídas no saldo em contabilidade pública"
                 }
               ]
             }
