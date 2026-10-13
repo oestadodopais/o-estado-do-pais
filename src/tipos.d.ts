@@ -191,6 +191,7 @@ interface CorrecaoDaLinha {
  * É por isso que os campos que o validador ainda não leu são `unknown`.
  */
 interface Linha {
+  afirmacao?: unknown;
   publication?: unknown;
   definition_sources?: unknown;
   id: string;
