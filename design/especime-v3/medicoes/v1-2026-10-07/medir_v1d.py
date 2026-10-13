@@ -153,7 +153,7 @@ def escrever_relatorio(resultados, finais, anteriores, aceites, gate, plantas, c
         'A aceitação das iniciativas depende de a fonte publicar o ficheiro com as entradas da janela. Um ficheiro que termina antes da janela não prova ausência de iniciativas no Parlamento.', '',
         f"Aceitação de entrada datada por fonte: `{json.dumps(aceites['entrada_datada_por_fonte'], ensure_ascii=False)}`.", '',
         '### A aritmética do achado 7', '',
-        'A correção desta passagem conserva a novidade do DAR durante todas as corridas do dia. A prova executa duas corridas, confirma a comparação igual na segunda e conserva o grupo e a contagem; um dia posterior sem revisão não o repete.', '', '```json', json.dumps(json.loads((PASTA / 'd/novidade-dar.json').read_text()), ensure_ascii=False, indent=2), '```', '',
+        'A prova lê duas corridas reais nos recibos gravados e transcreve as contagens de cada uma, com o caminho relativo e o resumo criptográfico. Não executa novas corridas nem usa uma simulação como prova do resumo de cada execução.', '', '```json', json.dumps(json.loads((PASTA / 'd/novidade-dar.json').read_text()), ensure_ascii=False, indent=2), '```', '',
         'A conta de transferência exigida na passagem anterior é refeita pelos pedidos e recibos. Bases com falhas são identificadas e não demonstram o custo de concluir fontes que falharam.', '', conta['hipotese'], '',
         f"Transferência observada: `{conta['transferencia_observada']['pedido']}`, linha {conta['transferencia_observada']['linha']}; {conta['transferencia_observada']['bytes']} bytes e {conta['transferencia_observada']['saltos']} salto(s).", '',
         '| Base | Sem falhas | Comuns / teto | Cumulativo / teto | Total | Pedidos / teto | Cabe nos tetos de bytes e pedidos |',
@@ -186,6 +186,28 @@ def escrever_relatorio(resultados, finais, anteriores, aceites, gate, plantas, c
         antigo = antes + '\n## A passagem V1-c\n' + resto.split('\n## A passagem V1-c\n', 1)[1]
     antes, depois = antigo.split('\n## A passagem V1-c\n', 1)
     p.write_text(antes.rstrip() + '\n\n' + '\n'.join(linhas) + '\n## A passagem V1-c\n' + depois)
+
+
+def medir_novidade_real(raiz, ids=None):
+    """Lê os recibos persistidos; não fabrica corridas nem reconstitui resumos."""
+    import hashlib
+    caminhos = ([raiz / 'corridas' / (i + '.json') for i in ids]
+                if ids else sorted((raiz / 'corridas').glob('*.json'))[-2:])
+    if len(caminhos) != 2 or caminhos[0] == caminhos[1]:
+        raise ValueError('V1-39: são necessários dois recibos distintos')
+    corridas = []
+    for caminho in caminhos:
+        corpo = caminho.read_bytes()
+        r = json.loads(corpo)
+        if caminho.stem != r['id']:
+            raise ValueError('V1-39: identificador diferente do nome do recibo')
+        corridas.append({'ficheiro': str(caminho.relative_to(raiz.parent)),
+            'sha256': hashlib.sha256(corpo).hexdigest(), 'id': r['id'],
+            'codigo_cabeca': r['codigo_cabeca'], 'medidas': r['medidas'],
+            'alteradas': r['alteradas'], 'falhas': r['falhas']})
+    return {'prova': 'duas corridas reais, lidas dos recibos gravados',
+        'corridas': corridas,
+        'limite': 'O arquivo guarda um resumo por dia, não um resumo por corrida. Os recibos provam as contagens das execuções; não se apresenta uma simulação do resumo como prova dessas execuções.'}
 
 
 def main():
@@ -303,27 +325,7 @@ def main():
         'commits_motor': git(motor, 'log', '--reverse', '--format=%H %s', '3184e07..HEAD').splitlines(),
         'commits_sitio': git(SITIO, 'log', '--reverse', '--format=%H %s', 'c8303a60..HEAD').splitlines()}
     guardar('cabecas-d.json', cabecas)
-    import copy
-    cenario = copy.deepcopy(json.loads((raiz / 'indice/2026-10-12.json').read_text()))
-    dar = [e for e in diario.entradas_vigentes(cenario['entradas']) if e['origem'] == 'dar']
-    for e in cenario['entradas']:
-        if e['origem'] == 'dar':
-            e.update(estreia=True, revisao=None)
-    primeira = copy.deepcopy(cenario['corridas'][-1])
-    primeira['alteradas'] = [{'origem': 'dar', 'id': e['id']} for e in dar]
-    primeira['medidas'].update(novas=len(dar), revisoes=0, iguais=0)
-    cenario['corridas'] = [primeira]
-    antes = diario.detalhes_resumo(cenario)
-    segunda = copy.deepcopy(primeira)
-    segunda['alteradas'] = []
-    segunda['medidas'].update(novas=0, revisoes=0, iguais=len(dar))
-    cenario['corridas'].append(segunda)
-    depois = diario.detalhes_resumo(cenario)
-    novidade = {'cenario': 'simulação identificada com declarações do arquivo; a prova de duas execuções está na suite',
-        'declaracoes': len(dar), 'primeira_grupos': antes['grupos_dar'], 'segunda_grupos': depois['grupos_dar'],
-        'primeira_contagens': antes['texto'].splitlines()[0], 'segunda_contagens': depois['texto'].splitlines()[0],
-        'segunda_iguais': segunda['medidas']['iguais'], 'grupo_e_contagem_conservados': antes['grupos_dar'] == depois['grupos_dar'] and antes['texto'].splitlines()[0] == depois['texto'].splitlines()[0]}
-    assert novidade['grupo_e_contagem_conservados'] and antes['grupos_dar']
+    novidade = medir_novidade_real(raiz, [r['id'] for r in finais[-2:]])
     guardar('d/novidade-dar.json', novidade)
     escrever_relatorio(resultados, finais, anteriores, aceites, gate, plantas, conta, resumos, codigo, codigo_sitio)
     anteriores_fugas = json.loads((PASTA / 'preservacao-c.json').read_text())['ficheiros']

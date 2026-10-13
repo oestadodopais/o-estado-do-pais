@@ -159,22 +159,146 @@ Aceitação de entrada datada por fonte: `{"dar": {"estado": "por cumprir", "ini
 
 ### A aritmética do achado 7
 
-A correção desta passagem conserva a novidade do DAR durante todas as corridas do dia. A prova executa duas corridas, confirma a comparação igual na segunda e conserva o grupo e a contagem; um dia posterior sem revisão não o repete.
+A prova corrigida a 13.10.2026 lê duas corridas reais nos recibos gravados. O arquivo não conserva um resumo por corrida; não se afirma ter observado dois resumos. As contagens abaixo são as dos recibos, sem valores fixados pelo guião.
 
 ```json
 {
-  "cenario": "simulação identificada com declarações do arquivo; a prova de duas execuções está na suite",
-  "declaracoes": 306,
-  "primeira_grupos": [
-    "dar:2026-09-26:006"
+  "prova": "duas corridas reais, lidas dos recibos gravados",
+  "corridas": [
+    {
+      "ficheiro": "vigilancia/corridas/2026-10-12T194319909143Z.json",
+      "sha256": "e6e6a23deaab2c91884ab5712eeb5870d5e826ca20d60bc8b19b202be0bca7b3",
+      "id": "2026-10-12T194319909143Z",
+      "codigo_cabeca": "f36540de9baecefd1ab857fe9a9d2c1fd17fe655",
+      "medidas": {
+        "novas": 0,
+        "revisoes": 0,
+        "iguais": 6,
+        "alteracoes_por_fonte": {
+          "dar": {
+            "novas": 0,
+            "revisoes": 0,
+            "iguais": 0
+          },
+          "iniciativas": {
+            "novas": 0,
+            "revisoes": 0,
+            "iguais": 0
+          },
+          "dr": {
+            "novas": 0,
+            "revisoes": 0,
+            "iguais": 6
+          }
+        },
+        "pedidos": 12,
+        "bytes": 326606,
+        "bytes_comuns": 326606,
+        "bytes_fora_teto_comum": {
+          "fonte": "iniciativas",
+          "bytes": 0,
+          "razao": "Ficheiro cumulativo imposto pela fonte; teto próprio e uma transferência por dia."
+        },
+        "pedidos_por_fonte": {
+          "dar": 2,
+          "iniciativas": 3,
+          "dr": 1,
+          "politicas": 6
+        },
+        "bytes_por_fonte": {
+          "dar": 164837,
+          "iniciativas": 159069,
+          "dr": 0,
+          "politicas": 2700
+        },
+        "bytes_descomprimidos_lidos": 98245770,
+        "segundos": 31.465,
+        "simbolos_modelo": 0,
+        "entradas_por_fonte": {
+          "dar": 306,
+          "iniciativas": 0,
+          "dr": 10
+        },
+        "entradas_por_tipo": {
+          "declaração": 306,
+          "iniciativa": 0,
+          "ato": 10
+        },
+        "versoes_preservadas": 316,
+        "contagem": "entradas vigentes por identificador",
+        "falhas": 0
+      },
+      "alteradas": [],
+      "falhas": []
+    },
+    {
+      "ficheiro": "vigilancia/corridas/2026-10-12T194352285903Z.json",
+      "sha256": "9b3eb26ef47c2694cb1466d52b8ec42d5086770f02d24ef1f655029928977fc1",
+      "id": "2026-10-12T194352285903Z",
+      "codigo_cabeca": "f36540de9baecefd1ab857fe9a9d2c1fd17fe655",
+      "medidas": {
+        "novas": 0,
+        "revisoes": 0,
+        "iguais": 6,
+        "alteracoes_por_fonte": {
+          "dar": {
+            "novas": 0,
+            "revisoes": 0,
+            "iguais": 0
+          },
+          "iniciativas": {
+            "novas": 0,
+            "revisoes": 0,
+            "iguais": 0
+          },
+          "dr": {
+            "novas": 0,
+            "revisoes": 0,
+            "iguais": 6
+          }
+        },
+        "pedidos": 12,
+        "bytes": 326675,
+        "bytes_comuns": 326675,
+        "bytes_fora_teto_comum": {
+          "fonte": "iniciativas",
+          "bytes": 0,
+          "razao": "Ficheiro cumulativo imposto pela fonte; teto próprio e uma transferência por dia."
+        },
+        "pedidos_por_fonte": {
+          "dar": 2,
+          "iniciativas": 3,
+          "dr": 1,
+          "politicas": 6
+        },
+        "bytes_por_fonte": {
+          "dar": 164930,
+          "iniciativas": 159045,
+          "dr": 0,
+          "politicas": 2700
+        },
+        "bytes_descomprimidos_lidos": 98245736,
+        "segundos": 29.35,
+        "simbolos_modelo": 0,
+        "entradas_por_fonte": {
+          "dar": 306,
+          "iniciativas": 0,
+          "dr": 10
+        },
+        "entradas_por_tipo": {
+          "declaração": 306,
+          "iniciativa": 0,
+          "ato": 10
+        },
+        "versoes_preservadas": 316,
+        "contagem": "entradas vigentes por identificador",
+        "falhas": 0
+      },
+      "alteradas": [],
+      "falhas": []
+    }
   ],
-  "segunda_grupos": [
-    "dar:2026-09-26:006"
-  ],
-  "primeira_contagens": "No dia: atos novos: 6; iniciativas novas: 0; DAR novos ou revistos: 1; nesta corrida: limitações: 9; falhas: 0.",
-  "segunda_contagens": "No dia: atos novos: 6; iniciativas novas: 0; DAR novos ou revistos: 1; nesta corrida: limitações: 9; falhas: 0.",
-  "segunda_iguais": 306,
-  "grupo_e_contagem_conservados": true
+  "limite": "O arquivo guarda um resumo por dia, não um resumo por corrida. Os recibos provam as contagens das execuções; não se apresenta uma simulação do resumo como prova dessas execuções."
 }
 ```
 
