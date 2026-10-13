@@ -78,7 +78,8 @@
  *        (decisão do diretor de 15.09.2026 de manhã), e o cartão é a superfície
  *        deste bloco. Nas duas edições, com «threshold».
  *   K8 · **a legenda da marca e a linha do tipo** · «Governo Constitucional» uma
- *        vez por edição (o índice das áreas), e a legenda da marca fora das
+ *        vez por edição na prosa da casa (o índice das áreas); as citações
+ *        literais são conferidas contra o livro. A legenda da marca fica fora das
  *        páginas de área.
  *   K10 · **uma marca da fonte por cartão, e a porta que ela abre paga as
  *        outras** · decisão do lugar de direção de 15.09.2026 sobre as capturas:
@@ -382,6 +383,26 @@ function textoVisivel(el) {
   return soOQueSeVe(el).text.replace(/\s+/g, ' ').trim();
 }
 
+// K8 conta a prosa da casa. Só retira uma citação depois de a comparar com o livro.
+const linhasK8=loadClaims({includeWithdrawn:true});
+/** @param {import('node-html-parser').HTMLElement} root */
+function textoDaCasaK8(root) {
+  if (!/Governo Constitucional|Constitutional Government/.test(root.text)) return root.text;
+  const copia=parse(root.outerHTML), normal=s=>String(s??'').replace(/\s+/g,' ').trim();
+  for(const el of copia.querySelectorAll('[data-linha-campo="excerpt"][data-linha-claim]')) {
+    const c=linhasK8.get(el.getAttribute('data-linha-claim'));
+    if(c?.source_url && typeof c.excerpt==='string' && normal(el.textContent)===normal(c.excerpt)) el.remove();
+  }
+  return copia.text;
+}
+/** @param {number} pt @param {number} en */
+function errosGovernosK8(pt,en) {
+  const erros=[];
+  if(pt!==1) erros.push(`K8 · «Governo Constitucional» rende-se em ${pt} página(s) portuguesa(s) e devia render-se em 1 (o índice das áreas)`);
+  if(en!==1) erros.push(`K8 · «Constitutional Government» rende-se em ${en} página(s) inglesa(s) e devia render-se em 1 (o índice das áreas)`);
+  return erros;
+}
+
 /**
  * Percorre o `dist/` e mede.
  *
@@ -496,7 +517,7 @@ function corre(dist) {
       }
 
       /* K8 · a linha do tipo e a legenda da marca. */
-      const texto = root.text;
+      const texto = textoDaCasaK8(root);
       if (texto.includes('Governo Constitucional')) contas.governo_constitucional_pt++;
       if (texto.includes('Constitutional Government')) contas.governo_constitucional_en++;
       if (root.querySelector('.marca-legenda')) {
@@ -1974,18 +1995,26 @@ let comNomeOficial = 0;
 for (const f of FIGURAS) if (nomeOficial(f.claim)) comNomeOficial++;
 r.contas.medidas_com_nome_oficial = comNomeOficial;
 
-/* K8 · «Governo Constitucional» uma vez por edição. */
-if (r.contas.governo_constitucional_pt !== 1) {
-  r.erros.push(
-    `K8 · «Governo Constitucional» rende-se em ${r.contas.governo_constitucional_pt} página(s) ` +
-      `portuguesa(s) e devia render-se em 1 (o índice das áreas)`,
-  );
-}
-if (r.contas.governo_constitucional_en !== 1) {
-  r.erros.push(
-    `K8 · «Constitutional Government» rende-se em ${r.contas.governo_constitucional_en} página(s) ` +
-      `inglesa(s) e devia render-se em 1 (o índice das áreas)`,
-  );
+/* K8 mantém uma ocorrência da casa por edição; as citações literais são conferidas acima. */
+r.erros.push(...errosGovernosK8(r.contas.governo_constitucional_pt,r.contas.governo_constitucional_en));
+if(PROVA) {
+  const id='oe-2027-cenario-pib-real-crescimento-2027';
+  const real=parse(fs.readFileSync(path.join(DIST,'livro-razao',id,'index.html'),'utf8'));
+  const trecho=real.querySelector('[data-linha-campo="excerpt"]');
+  if(!trecho || !trecho.text.includes('Governo Constitucional') || textoDaCasaK8(real).includes('Governo Constitucional')) r.erros.push('K8: controlo da citação literal falhou');
+  else for(const [nome,altera,lingua] of [
+    ['citação sem marca de origem',t=>t.querySelector('[data-linha-campo="excerpt"]').removeAttribute('data-linha-campo'),'pt'],
+    ['citação com linha inexistente',t=>t.querySelector('[data-linha-campo="excerpt"]').setAttribute('data-linha-claim','linha-do-ensaio'),'pt'],
+    ['citação com palavras alteradas',t=>{const e=t.querySelector('[data-linha-campo="excerpt"]');e.set_content(e.innerHTML+' Palavra alterada.');},'pt'],
+    ['expressão da casa em português',t=>t.querySelector('body').insertAdjacentHTML('beforeend','<p>Governo Constitucional</p>'),'pt'],
+    ['expressão da casa em inglês',t=>t.querySelector('body').insertAdjacentHTML('beforeend','<p>Constitutional Government</p>'),'en'],
+  ]) {
+    const t=parse(real.outerHTML);altera(t);const texto=textoDaCasaK8(t);
+    const queixas=errosGovernosK8(1+Number(texto.includes('Governo Constitucional')),1+Number(texto.includes('Constitutional Government')));
+    const esperada=errosGovernosK8(lingua==='pt'?2:1,lingua==='en'?2:1)[0];
+    if(!queixas.includes(esperada)) r.erros.push(`K8: planta não mordida: ${nome}`);
+    else console.log(`PLANTA K8 ${nome}: ${esperada}`);
+  }
 }
 
 if (JSON_SAIDA) {
