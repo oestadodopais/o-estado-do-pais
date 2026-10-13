@@ -1,5 +1,7 @@
 # O mapa do repositório, para quem constrói
 
+*Posto em dia a 13.10.2026 pelo construtor da higiene: âncoras restauradas após a reversão JD1 e circuito do escrivão documentado no fim.*
+
 *Escrito a 21.09.2026 por um leitor Claude Opus, a pedido do lugar de direção, a partir do ramo `registos-2026-09-21`, cabeça `d73d84ca`. Para ser lido por cada construtor antes do brief, uma vez, e mantido pelo lugar de direção. Cada afirmação leva a referência `ficheiro:linha` de onde foi lida; onde a leitura não chegou, está `[verify]` com o que falta conferir. Sem travessões na prosa.*
 
 *Posto em dia a 24.09.2026 pelo construtor do bloco L1 (Claude Opus 5.5), pelo item 0 do `BRIEF-L1-a-leitura-de-cada-medida.md`: o `check:cabeca`, as células K13 a K16 do `check:cartao` com a auditoria das perguntas, e os três guiões da peça 1 do B2 (`scripts/pais-veredicto.mjs`, `scripts/pais-camaras.mjs`, `scripts/selo-do-cartao.mjs`), cada um com o que protege. No fim do bloco, o que o L1 acrescentou: a secção da leitura de cada medida, a K17, a leitura na V2 e no `auditaSelo()`, a forma nova da célula 10 do `check:voz` e três armadilhas; e as linhas que tinham andado, corrigidas até o `conferir-mapa.py` não achar citação nenhuma longe da linha citada.*
@@ -754,3 +756,12 @@ As correções da leitura a frio do Codex Astra (`xhigh`), na mesma worktree e n
 - **A F22 das figuras declaradas.** Cada figura que uma explicação declara tem de estar na página (`tests/formas/barras-do-livro.mjs:58`, «export function figurasDeclaradasEmFalta(root, slug) {»; `scripts/check-formas.mjs:699`, «EX1-c (06.10.2026, o achado 15 da leitura a frio)»).
 - **O texto da primeira explicação.** Os acertos X14 a X17 (`src/data/explicacoes/dinheiro-do-estado-2026.mjs:271`, «{ id: 'X14', onde: 'por ministério'»): os nomes dos ministérios por token, o lado da dívida, os ramos do sinal com a explicação e o ramo zero, e a frase dos juros sem prosa sobre a casa; e a frase dos dois totais e a última frase de «O que isto não diz» (os acertos X12 e X8, mudados).
 - **As plantas sobre a construção** correm-se por `tests/pais/portoes.mjs --prefixo ex1c-` (`tests/pais/portoes.mjs:881`, «EX1-c (06.10.2026, a passagem depois da leitura a frio do Codex Astra)»), ou todas as do bloco por `--prefixo ex1`, fora do `verify`.
+
+## O circuito dos construtores, 13.10.2026
+
+O `scripts/leituras/escrivao.py` recebe pedidos apenas nas worktrees autorizadas e executa os commits pedidos por `scripts/leituras/comitar.sh`, com ficheiros explícitos e os hooks do repositório.
+O `scripts/leituras/curto.sh` guarda a saída completa dos comandos e devolve o código, a duração, as falhas e a cauda do registo; o `scripts/leituras/PROMPT-construtor-comum.md` fixa este circuito para cada passagem.
+O `scripts/leituras/pontos.py` lê os limites semanais e o consumo dos registos da sessão, incluindo os turnos da retoma dentro do intervalo, sem atribuir ao construtor uma medição que ele não fez.
+Os lançadores `scripts/leituras/construir-codex.sh` e `scripts/leituras/retomar-codex.sh` iniciam o escrivão e a medição, admitem `CODEX_REDE` e recusam dependências ligadas para fora da worktree.
+O `scripts/leituras/portoes-pelo-escrivao.sh` pede os portões fora da sandbox, onde o navegador pode arrancar, e pode incluir o motor; o `scripts/leituras/portoes.sh` confere as árvores limpas, usa uma tranca temporária e conserva códigos, cabeças e registos anonimizados.
+O `scripts/leituras/pacote.py` exige árvores sem modificações seguidas, confere as citações dos números e recusa um rasto que ainda contenha caminhos locais depois da anonimização.
