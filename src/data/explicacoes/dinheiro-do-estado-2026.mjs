@@ -169,12 +169,13 @@ export const DINHEIRO_DO_ESTADO_2026 = {
           },
         },
         { figura: { forma: 'barras-do-livro', id: 'ministerios', linhas: MINISTERIOS, titulo: { pt: 'Os dezasseis ministérios, de cada cem euros', en: 'The sixteen ministries, of every hundred euros' } } },
-        /* Higiene b, 13.10.2026, achado 9: os excertos selados descrevem as classificações,
-           mas não reconciliam os dois totais. Declarar essa ausência, sem inventar uma causa. */
+        /* Higiene (13.10.2026, EX1-12 e a leitura curta da passagem b): a frase sobre a diferença entre as duas contas
+           sai, porque os excertos selados não a explicam, e uma frase sobre os excertos do projeto não é do leitor; fica
+           só o que os apoios da auditoria sustentam. */
         {
           paragrafo: {
-            pt: ['A conta por função organiza a despesa da administração central por finalidade, como a saúde ou a educação. Os excertos citados não explicam a diferença entre o total desta conta e o total por ministério.'],
-            en: ['The count by function organises central government expenditure by purpose, such as health or education. The cited excerpts do not explain the difference between this total and the total by ministry.'],
+            pt: ['A conta por função organiza a despesa da administração central por finalidade, como a saúde ou a educação.'],
+            en: ['The count by function organises central government expenditure by purpose, such as health or education.'],
           },
         },
       ],

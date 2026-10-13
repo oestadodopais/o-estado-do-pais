@@ -26,6 +26,7 @@ import os
 import pathlib
 import subprocess
 import sys
+import tempfile
 import time
 
 
@@ -81,7 +82,7 @@ def e_motor(repo):
     return (pathlib.Path(repo) / 'core' / 'gate.py').exists()
 
 
-def iniciar_portoes(repo, pedido, repos):
+def iniciar_portoes(repo, pedido, repos, saida_f):
     """Os três portões do sítio fora da sandbox, a pedido do construtor (13.10.2026, a primeira passagem com a
     aprovação a `never`): o navegador das conferências (Playwright) não arranca dentro da sandbox do Codex, e sete
     conferências do `verify` fecham por isso. O escrivão corre `portoes.sh` na worktree, com a pasta de saída dentro
@@ -108,7 +109,7 @@ def iniciar_portoes(repo, pedido, repos):
             return {'codigo': 2, 'recusa': 'pediu o portão do motor e o lançador não deu nenhuma worktree do motor'}
         ambiente['OEDP_CONFERIR_MOTOR'] = '1'
     return subprocess.Popen(['sh', str(guiao), str(raiz), str(destino)], cwd=str(raiz), env=ambiente,
-                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+                            stdout=saida_f, stderr=subprocess.STDOUT, text=True)
 
 
 def dentro_da_worktree_ou_tmp(repo, caminho):
@@ -119,7 +120,7 @@ def dentro_da_worktree_ou_tmp(repo, caminho):
     return real == raiz or raiz in real.parents or em_tmp
 
 
-def iniciar_capturas(repo, pedido):
+def iniciar_capturas(repo, pedido, saida_f):
     """As capturas das páginas fora da sandbox, a pedido do construtor (13.10.2026): o mesmo navegador que as
     conferências usam, que não arranca dentro da sandbox. Corre só o `captar.mjs` do próprio repositório, com o
     pedido JSON e a pasta de saída dentro da worktree ou em /tmp, sobre o `dist/` da worktree; o próprio guião
@@ -139,7 +140,7 @@ def iniciar_capturas(repo, pedido):
     pedido_abs = pedido_json if os.path.isabs(pedido_json) else str(raiz / pedido_json)
     saida_abs = saida if os.path.isabs(saida) else str(raiz / saida)
     return subprocess.Popen(['node', str(guiao), pedido_abs, saida_abs, 'dist'], cwd=str(raiz), env=dict(os.environ),
-                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+                            stdout=saida_f, stderr=subprocess.STDOUT, text=True)
 
 
 def concluir_portoes(repo, pedido, processo, saida_texto):
@@ -164,19 +165,23 @@ def executar(repo, pedido, bater=None):
     mensagem = pedido['mensagem'].rstrip('\n') + '\n'
     # O commit corre em processo próprio e o escrivão continua a bater enquanto os hooks correm (a leitura a frio da
     # higiene de 13.10, o achado 6: o pre-commit do motor demora cerca de dois minutos e meio, e o batimento parava).
-    commit = subprocess.Popen(['git', '-C', repo, 'commit', '-q', '-F', '-'], stdin=subprocess.PIPE,
-                              stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-    commit.stdin.write(mensagem)
-    commit.stdin.close()
-    inicio = time.time()
-    while commit.poll() is None:
-        if bater:
-            bater()
-        if time.time() - inicio > 1800:
-            commit.kill()
-            commit.wait()
-            break
-    saida = commit.stdout.read() if commit.stdout else ''
+    # A saída vai para um ficheiro temporário e não para um tubo: um hook que escreva muito encheria o tubo e
+    # ficaria parado até ao teto (a leitura curta da higiene de 13.10, o achado 8).
+    with tempfile.TemporaryFile(mode='w+', encoding='utf-8', errors='replace') as saida_f:
+        commit = subprocess.Popen(['git', '-C', repo, 'commit', '-q', '-F', '-'], stdin=subprocess.PIPE,
+                                  stdout=saida_f, stderr=subprocess.STDOUT, text=True)
+        commit.stdin.write(mensagem)
+        commit.stdin.close()
+        inicio = time.time()
+        while commit.poll() is None:
+            if bater:
+                bater()
+            if time.time() - inicio > 1800:
+                commit.kill()
+                commit.wait()
+                break
+        saida_f.seek(0)
+        saida = saida_f.read()
     cabeca = git(repo, 'rev-parse', '--short=8', 'HEAD').stdout.strip()
     resultado = {'codigo': commit.returncode, 'cabeca': cabeca, 'saida': saida[-6000:]}
     if time.time() - inicio > 1800:
@@ -229,8 +234,10 @@ def principal(argv):
                 if dados.get('tipo') in ('portoes', 'capturas'):
                     longo = dados['tipo']
                     teto = 3000 if longo == 'portoes' else 1200
-                    processo = iniciar_portoes(repo, dados, list(pastas)) if longo == 'portoes' else iniciar_capturas(repo, dados)
+                    saida_f = tempfile.TemporaryFile(mode='w+', encoding='utf-8', errors='replace')
+                    processo = iniciar_portoes(repo, dados, list(pastas), saida_f) if longo == 'portoes' else iniciar_capturas(repo, dados, saida_f)
                     if isinstance(processo, dict):
+                        saida_f.close()
                         escrever_resultado(pedido, processo)
                         continue
                     print(f"{agora()} {pedido.name}: {longo} a correr (pid {processo.pid})", flush=True)
@@ -243,7 +250,9 @@ def principal(argv):
                             processo.wait()
                             break
                         time.sleep(1)
-                    saida_texto = processo.stdout.read() if processo.stdout else ''
+                    saida_f.seek(0)
+                    saida_texto = saida_f.read()
+                    saida_f.close()
                     if longo == 'portoes':
                         resultado = concluir_portoes(repo, dados, processo, saida_texto)
                     else:

@@ -15419,8 +15419,7 @@
         "eurostat-cofog-divisao-01",
         "eurostat-gfs-saldo",
         "eurostat-tipsgo10-descricao",
-        "eurostat-tipsna40-descricao",
-        "rp4n-mapa-ministerios"
+        "eurostat-tipsna40-descricao"
       ],
       "folhas": [
         {
@@ -16108,8 +16107,8 @@
         },
         {
           "caminho": "seccoes[1].conteudo[2].paragrafo[0]",
-          "pt": "A conta por função organiza a despesa da administração central por finalidade, como a saúde ou a educação. Os excertos citados não explicam a diferença entre o total desta conta e o total por ministério.",
-          "en": "The count by function organises central government expenditure by purpose, such as health or education. The cited excerpts do not explain the difference between this total and the total by ministry.",
+          "pt": "A conta por função organiza a despesa da administração central por finalidade, como a saúde ou a educação.",
+          "en": "The count by function organises central government expenditure by purpose, such as health or education.",
           "partes": [
             {
               "pt": "A conta por função organiza a despesa da administração central por finalidade",
@@ -16152,29 +16151,6 @@
                   "linha": "oe-2026-cem-euros-funcao-09",
                   "campo": "nome",
                   "literal": "education"
-                }
-              ]
-            },
-            {
-              "pt": ". ",
-              "en": ". ",
-              "classe": "liga"
-            },
-            {
-              "pt": "Os excertos citados não explicam a diferença entre o total desta conta e o total por ministério",
-              "en": "The cited excerpts do not explain the difference between this total and the total by ministry",
-              "classe": "leitura",
-              "sobre": "Os excertos citados da classificação funcional e do mapa por ministérios, que descrevem as contas sem reconciliar os dois totais.",
-              "apoios": [
-                {
-                  "origem": "dados-gov-oe-despesa-funcional",
-                  "campo": "excerto",
-                  "literal": "As dimensões de análise representam as várias perspetivas sob as quais os dados são apresentados"
-                },
-                {
-                  "origem": "rp4n-mapa-ministerios",
-                  "campo": "excerto",
-                  "literal": "Mapa relativo à classificação orgânica das despesas do subsetor da Administração Central"
                 }
               ]
             },
