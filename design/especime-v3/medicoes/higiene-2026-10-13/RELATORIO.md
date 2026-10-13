@@ -68,7 +68,7 @@ Os caminhos abreviados `medicoes/` pertencem a `design/especime-v3/`.
 |---|---|---|
 | ER1-12 | Corrigida | `medicoes/er1-2026-10-06/medir-c.mjs`: saiu a diferença vazia por construção; conferência em `er1.json`. |
 | EX1-11 | Pendente pelo §4 | O excerto selado imprime o saldo homólogo de 2025, mas não existe a linha própria. Selar e exportar uma linha nova publicaria um número novo; não se inventou uma ausência na fonte. |
-| EX1-12 | Corrigida | `src/data/explicacoes/dinheiro-do-estado-2026.mjs`: saiu a frase causal que juntava as transferências sem apoio suficiente. |
+| EX1-12 | Corrigida | `src/data/explicacoes/dinheiro-do-estado-2026.mjs`: saiu a frase causal que juntava as transferências sem apoio suficiente; a passagem b declara que os excertos citados não explicam a diferença entre os totais. |
 | EX1-13 | Corrigida | No mesmo ficheiro, saiu a indicação posicional e ficaram explícitos os perímetros das contas. |
 | EX1-14 | Corrigida | No mesmo ficheiro, o ramo negativo diz défice com o saldo entre parênteses; `tests/explicacoes/explicacao.mjs` planta o duplo negativo nas duas línguas; `ex1.json`. |
 | RP4N-12 | Corrigida | Briefs M4 e auditoria UX anonimizados; `medicoes/extrai_fontes.py` exige `RESEARCHHUB_DIR`. |
@@ -115,8 +115,6 @@ HIG-11: o primeiro hook do motor recusou `publisher.export_site_rows_test` por `
 
 HIG-12: a primeira tentativa final em `depois/` terminou com construção 1, verificação 125, tipos 0 e motor 0, lidos dos ficheiros. A voz recusou `PALAVRA PROIBIDA «incluído em» em 2 página(s) da superfície.` pela expressão inglesa `included in`. A frase passou a `counted in`, sem alterar o apoio do INE nem os valores; a régua não foi alterada. As conferências isoladas dos cartões e das explicações passaram nesta construção. A repetição final usa uma pasta nova.
 
-HIG-20: a primeira chamada dos portões da passagem b devolveu 9: `portoes: árvore suja; registe as mudanças antes de conferir a cabeça do código`. O relatório e as provas preparatórias estavam por comitar. Nenhum dos quatro portões correu e nenhum código individual foi escrito em `depois-b/`. Registar essas mudanças e repetir numa pasta nova; `b/portoes-tentativa-1.json` conserva a recusa. A tranca de outra corrida foi observada, mas não prova que este pedido tenha esperado por ela.
-
 ## Caminhos do motor
 
 `motor-caminhos-antes.json` percorre 3 854 ficheiros seguidos e encontra 77 ficheiros. `motor-caminhos-alterados.json` lista cada ficheiro corrigido e a natureza do conteúdo anterior, sem copiar caminhos locais. `motor-execucao-caminhos.json` exercita doze destinos com a variável escolhida ou a raiz do repositório. A validação confirmou os valores numéricos dos dezanove JSON alterados e os treze ficheiros protegidos intactos.
@@ -127,8 +125,8 @@ HIG-20: a primeira chamada dos portões da passagem b devolveu 9: `portoes: árv
 
 | Repositório | Cabeça de código conferida | Entrega |
 |---|---|---|
-| Sítio | `996a388918d1d4183d2d00700bdd62157f0b0fa8` | Capturas: `f88f4f52e465a3371e172b12640ba002e70dd65c`. Fecho: o commit que contém esta atualização do relatório; hash confirmado na resposta após o escrivão. |
-| Motor | `6bd8b70a8ec40909ea5bc415d730c798b8a2ebe3` | `6bd8b70a8ec40909ea5bc415d730c798b8a2ebe3` |
+| Sítio | `f44f380f160867fc3e83fbe64bd33b087e25ee38` | Capturas b: `1978aff82e2eb25ad4cca2b45ccf5ceb6736686a`. Fecho: o commit que contém esta atualização do relatório; hash confirmado na resposta. |
+| Motor | `b44454997a8230c8de7e1a9f481c17371da23773` | `b44454997a8230c8de7e1a9f481c17371da23773` |
 
 As cabeças de início e fim dos portões são iguais. Os commits posteriores do sítio alteram guiões, medições, provas e o relatório; não alteram as páginas construídas. A lista anterior ao primeiro fecho está em `commits.json`. A lista abaixo acrescenta os commits da direção e desta retoma; o último commit guarda esta atualização do relatório.
 
@@ -161,12 +159,20 @@ As cabeças de início e fim dos portões são iguais. Os commits posteriores do
 * `73ada2e93ceb9a7329f247b64407bbeedf547bf4`: Os guiões do §0 dos briefs V2-a e V2-b medem a cabeça presa (44545189) e não HEAD: no GitHub o portão dos briefs reexecuta-os, e as contagens do livro mudam quando o V2-a aterra.
 * `f88f4f52e465a3371e172b12640ba002e70dd65c`: Higiene: guardar as capturas finais pelo escrivão.
 
+* `100f724bc311b52133b79c14d923742ef9b6b5cd`: Higiene: fechar a retoma das capturas no relatório.
+* `0a5c74067435e4e1887b97b4b7cf53fc4c2f2e7d`: Higiene: a leitura a frio pelo Opus (cinco plantas em cinco; dois Major reais: a frase da ausência nos metadados, e o escrivão que deixava de bater durante um commit), o registo das plantas, o mandato da passagem de correção, e o escrivão a bater enquanto os hooks de um commit correm (provado com um hook de quarenta e cinco segundos).
+* `064e9431cd3bb3f0f72eba5abd7eddf9692dc902`: Higiene b: declarar ausências e corrigir o alcance das provas.
+* `f44f380f160867fc3e83fbe64bd33b087e25ee38`: Higiene b: registar as provas preparatórias antes dos portões.
+* `1978aff82e2eb25ad4cca2b45ccf5ceb6736686a`: Higiene b: guardar os portões verdes e as capturas finais.
+
 ### Commits do motor
 
 * `759c22a7c532f7ac4d67f74d984c2db090e5b8e0`: Higiene V1-40: rotular as linhas de arrumação do resumo diário.
 * `6bd8b70a8ec40909ea5bc415d730c798b8a2ebe3`: Higiene: retirar caminhos locais dos guiões e registos antigos do motor.
 
-## Portões finais e capturas
+* `b44454997a8230c8de7e1a9f481c17371da23773`: Higiene b: repor o intérprete nas instruções do ambiente isolado.
+
+## Portões da primeira entrega e capturas
 
 | Portão | Código lido | Ficheiro |
 |---|---:|---|
@@ -296,6 +302,50 @@ As capturas foram comitadas primeiro, em `f88f4f52e465a3371e172b12640ba002e70dd6
 | V1-39 | `design/especime-v3/medicoes/v1-2026-10-07/medir_v1d.py:191` |
 | V1-40 | `motor/vigilancia/diario.py:126` |
 | Mapa, §3 | `design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:760` |
+
+## A passagem de correção
+
+A leitura a frio e o mandato b foram recebidos em `0a5c7406`. Os achados 1, 2, 3, 4 e 7 eram plantas nas cópias do pacote e não foram tratados como defeitos do ramo. A contagem da primeira entrega continua em 70 capturas de página, conferida em `entrega/capturas.json`.
+
+HIG-15, achado 5: os dois metadados dizem «Campos da proveniência por confirmar na fonte» ou «Provenance fields unconfirmed at the source» quando a linha tem esses campos. O comentário datado voltou. O portão de HTML usa uma régua independente do compositor; quatro plantas retiram a oração, uma por campo e língua, e são recusadas. A prova está na conferência final e em `b/metadados.json`; as capturas do saldo natural estão em `entrega-b/`.
+
+HIG-16, achado 8: V1-39 fica parcial na tabela e na secção «A aritmética do achado 7» da V1-d. As duas corridas reais não tiveram novidades nem revisões do DAR. Não se afirma que contagens nulas provam a aritmética de uma corrida com alterações.
+
+HIG-17, achado 9: saiu a frase circular sobre a conta por ministério. A descrição selada da conta funcional e o cabeçalho selado do MAPA 4 não reconciliam os dois totais. O glossário do relatório da execução descreve as classificações funcional e orgânica, mas não explica esta comparação dos totais. A página declara a ausência limitada aos excertos citados, nas duas línguas; a auditoria conserva os literais e identifica essa leitura. Não se inventou uma causa para a parte das Finanças, nem se alterou qualquer número.
+
+HIG-18, achados 6 e 10: as instruções do motor usam `python3 -m venv .venv` e `.venv/bin/python -m pip`. Só os comentários mudaram, não os pinos de versões. O commit `b44454997a8230c8de7e1a9f481c17371da23773` passou pelo `comitar.sh` corrigido: código 0, 569,256 segundos medidos desde a chamada até à resposta do cliente. O cliente aguardou o hook até ao resultado, sem sair com 3; a saída e a duração estão em `b/motor-commit.json`.
+
+HIG-19, achado 11: as capturas finais incluem também `custo-do-stock-da-divida-direta-2025` e `juros-das-administracoes-publicas-pib-2025`. O pedido `pedido-entrega-b.json` enumera nove páginas nas duas edições; o escrivão captou as cinco larguras, incluindo 390 e 1 280 px, sobre a cabeça `f44f380f160867fc3e83fbe64bd33b087e25ee38`. O recibo em `entrega-b/capturas.json` confirma 90 capturas de página e 100 recortes, sem falhas. Foram conferidos os resumos criptográficos dos 190 PNG e a ausência de transbordo horizontal nas páginas. Foram lidos visualmente os recortes dos dois recibos acrescentados, do saldo natural e da explicação, em português a 390 px e em inglês a 1 280 px. As capturas antigas ficam como história da primeira entrega.
+
+HIG-20: a primeira chamada dos portões da passagem b devolveu 9: `portoes: árvore suja; registe as mudanças antes de conferir a cabeça do código`. O relatório e as provas preparatórias estavam por comitar. Nenhum dos quatro portões correu e nenhum código individual foi escrito em `depois-b/`. As mudanças foram registadas e o pedido foi repetido em `depois-b-2/`; `b/portoes-tentativa-1.json` conserva a recusa. A tranca de outra corrida foi observada, mas não prova que este pedido tenha esperado por ela.
+
+### Ficheiros e linhas dos achados
+
+| Achado | Localizador |
+|---|---|
+| 5 | `src/lib/livro.mjs:97` |
+| 5, régua | `tests/cartao/metadados.mjs:4` |
+| 5, plantas | `tests/cartao/rp4n.mjs:321` |
+| 6 | `design/especime-v3/medicoes/higiene-2026-10-13/b/motor-commit.json:2` |
+| 8 | `design/especime-v3/medicoes/v1-2026-10-07/LEIA-ME.md:162` |
+| 9 | `src/data/explicacoes/dinheiro-do-estado-2026.mjs:176` |
+| 9, auditoria | `tests/cartao/leituras-provadas.json:16167` |
+| 10 | `motor/requirements.lock.txt:16` |
+| 11, `custo-do-stock-da-divida-direta-2025` | `design/especime-v3/capturas/higiene-2026-10-13/pedido-entrega-b.json:86` |
+| 11, `juros-das-administracoes-publicas-pib-2025` | `design/especime-v3/capturas/higiene-2026-10-13/pedido-entrega-b.json:97` |
+
+### Portões da passagem b
+
+Comando: `sh scripts/leituras/portoes-pelo-escrivao.sh design/especime-v3/medicoes/higiene-2026-10-13/depois-b-2 motor`. Cabeças de início e fim iguais às de código na tabela de entrega. Os códigos foram lidos dos ficheiros:
+
+| Portão | Código | Prova |
+|---|---:|---|
+| build | 0 | `depois-b-2/build.codigo` |
+| verify | 0 | `depois-b-2/verify.codigo` |
+| typecheck | 0 | `depois-b-2/typecheck.codigo` |
+| motor | 0 | `depois-b-2/motor.codigo` |
+
+`b/livro.json` confirma que não há ficheiros do livro alterados desde a cabeça conferida da primeira entrega. Os testes isolados de tipos e da auditoria constam de `b/`; o resultado completo é o dos portões finais. O commit das capturas precede este fecho do relatório. As cabeças e a lista acima distinguem o código conferido dos commits de provas.
 
 ## Trabalho aberto
 
