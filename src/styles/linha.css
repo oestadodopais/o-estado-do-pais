@@ -84,6 +84,13 @@
   line-height: 1.62;
 }
 /* JD1: a área de toque mantém o seu tamanho; o endereço não esmaga o rótulo. */
+.linha-endereco-abrir {
+  /* HIG, RP4N-22: a porta da página não quebra dentro de uma palavra. */
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
+  flex-shrink: 0;
+}
 @media (max-width: 1023px) {
   .linha-porta-documento > .ligacao-externa,
   .linha-recorte-legenda > .ligacao-externa {
