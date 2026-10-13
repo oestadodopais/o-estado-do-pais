@@ -1,0 +1,33 @@
+{
+  "controlos": 2,
+  "plantas": [
+    {
+      "commit": "5e4ccb25ef9134cbc1e6dccf031a28656535b85d",
+      "planta": "ocorrência nova",
+      "mensagens": [
+        "RP4N-i: ocorrência nova não recebe a exceção histórica"
+      ]
+    },
+    {
+      "commit": "5e4ccb25ef9134cbc1e6dccf031a28656535b85d",
+      "planta": "outro commit",
+      "mensagens": [
+        "RP4N-i: outro commit não recebe a exceção histórica"
+      ]
+    },
+    {
+      "commit": "d430d6dd1e17e4f1f23acc7273321f5e4380beff",
+      "planta": "ocorrência nova",
+      "mensagens": [
+        "RP4N-i: ocorrência nova não recebe a exceção histórica"
+      ]
+    },
+    {
+      "commit": "d430d6dd1e17e4f1f23acc7273321f5e4380beff",
+      "planta": "outro commit",
+      "mensagens": [
+        "RP4N-i: outro commit não recebe a exceção histórica"
+      ]
+    }
+  ]
+}
