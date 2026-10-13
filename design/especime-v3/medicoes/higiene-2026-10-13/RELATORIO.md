@@ -76,13 +76,13 @@ Os caminhos abreviados `medicoes/` pertencem a `design/especime-v3/`.
 | RP4N-19 | Corrigida | `medicoes/rp4n-2026-10-06/privacidade-i.py` recolhe mensagens do controlo real. `rp4n-19.json`: dois controlos históricos e quatro mutações recusadas. |
 | RP4N-20 | Corrigida | `design/especime-v3/INVENTARIO-FRASES.md`, C1e: rótulo e ausência de leitura na fonte incluídos, com o âmbito das cópias alojadas. |
 | RP4N-21 | Corrigida | `src/data/figuras.mjs`, `OrigemDaDefinicao.astro` e `verbatim.mjs`: legendas distintas, transcritas dos três excertos. A conferência das famílias e as plantas protegem-nas. |
-| RP4N-22 | Correção feita, prova visual por concluir | `src/styles/linha.css` conserva as palavras do rótulo; `tests/explicacoes/frases-compostas.mjs` mede ambas as línguas e planta uma palavra partida. |
+| RP4N-22 | Corrigida e medida no navegador; captura recusada | `src/styles/linha.css` conserva as palavras do rótulo; `tests/explicacoes/frases-compostas.mjs` mede ambas as línguas e planta uma palavra partida. |
 | RP4N-23 a RP4N-27 | Corrigidas | Acertos datados em `medicoes/rp4n-2026-10-06/LEIA-ME.md`: custos e limites da atribuição, comando, carimbo real do inventário, dezassete ocorrências de recusa com repetições conservadas. |
 | JD1-11 | Corrigida | Onze referências ainda revertidas foram restauradas e localizadas pela linha e pelo contexto do código atual; `jd1-ancoras.json`. Os registos `mapa-antes.log` e `mapa-depois.log` conservam também os avisos de referências antigas fora desta restauração. |
 | JD1-12 | Corrigida | `medicoes/r4-2026-10-05/registar-leitura.mjs` documenta o âmbito único por omissão e a necessidade de declarar âmbitos distintos. |
 | JD1-15 | Corrigida | `src/lib/frases-jd1.mjs`: a comparação tem verbo e a parcela deixa de repetir a definição. Os valores continuam por tokens. |
 | JD1-16 | Corrigida | Gerador JD1, família publicada e auditoria usam a exclusão literal do INE em `jd1-ine-contas`. |
-| JD1-17 | Já resolvida na cabeça recebida | `jd1-17.json` confere trinta recibos: vinte e seis de medidas publicadas mostram o rótulo da fonte; quatro de medidas derivadas não atribuem à fonte uma medida da casa. |
+| JD1-17 | Já resolvida na cabeça recebida | `jd1-17.json` e `jd1-17-proveniencia.json` conferem o nome e o título documental em trinta recibos: vinte e seis de medidas publicadas mostram o rótulo da fonte; quatro de medidas derivadas não atribuem à fonte uma medida da casa. |
 | V1-39 | Corrigida | `medicoes/v1-2026-10-07/medir_v1d.py` lê os dois recibos gravados e os seus resumos criptográficos. O relatório e `d/novidade-dar.json` já não apresentam simulação como prova real. |
 | V1-40 | Corrigida | `vigilancia/diario.py` rotula as três linhas de arrumação. Suite de vigilância: 66 testes passaram. |
 | V1-41 | Conservada | Fechada pela M78, não tocada. |
@@ -111,7 +111,7 @@ HIG-9: no §2, os destinos executáveis passam a variáveis explícitas ou à ra
 
 HIG-10: o cliente do escrivão desistiu durante o hook do motor. Não se duplicou o pedido nem se alterou o lançador; aguardou-se o resultado já solicitado. A mensagem exata, apenas com a pasta anonimizada, foi `comitar: o escrivão deixou de bater há mais de trinta segundos; o pedido <temporario>/oedp-escrivao-98b11e0677b3/pedido-20261013T193732-47272.json fica sem resultado`. O pedido seguinte do mapa recebeu a mesma mensagem para `<temporario>/oedp-escrivao-917828af1260/pedido-20261013T193733-47313.json`. O código do cliente foi 3; não é o código do hook.
 
-HIG-11: o primeiro hook do motor recusou `publisher.export_site_rows_test` por `KeyError: 'RESEARCHHUB_TRANSCRIPT'`. A variável passou a ser opcional na importação; sem transcrição, o extrator conserva a ausência de endereços resolvidos. A prova está em `motor-hook-tentativa-1.json`.
+HIG-11: o primeiro hook do motor recusou `publisher.export_site_rows_test` por `KeyError: 'RESEARCHHUB_TRANSCRIPT'`. A variável passou a ser opcional na importação; sem transcrição, o extrator conserva a ausência de endereços resolvidos. A prova está em `motor-hook-tentativa-1.json`. A suite afetada passou na cópia versionada e na worktree desta passagem; a repetição do hook aceitou `759c22a7`. O hook da limpeza aceitou `6bd8b70a`. Ambos terminaram em `GATE: PASS`.
 
 HIG-12: a primeira tentativa final em `depois/` terminou com construção 1, verificação 125, tipos 0 e motor 0, lidos dos ficheiros. A voz recusou `PALAVRA PROIBIDA «incluído em» em 2 página(s) da superfície.` pela expressão inglesa `included in`. A frase passou a `counted in`, sem alterar o apoio do INE nem os valores; a régua não foi alterada. As conferências isoladas dos cartões e das explicações passaram nesta construção. A repetição final usa uma pasta nova.
 
@@ -123,10 +123,168 @@ HIG-12: a primeira tentativa final em `depois/` terminou com construção 1, ver
 
 ## Cabeças e entrega
 
-Os commits de código e as provas finais serão registados após a conclusão dos pedidos do escrivão e dos portões finais. A conferência de entrada não é apresentada como conferência das alterações.
+| Repositório | Cabeça de código conferida | Entrega |
+|---|---|---|
+| Sítio | `996a388918d1d4183d2d00700bdd62157f0b0fa8` | O commit que contém este relatório; hash confirmado na resposta após o escrivão. |
+| Motor | `6bd8b70a8ec40909ea5bc415d730c798b8a2ebe3` | `6bd8b70a8ec40909ea5bc415d730c798b8a2ebe3` |
+
+As cabeças de início e fim dos portões são iguais. Os commits posteriores do sítio guardam apenas provas e o relatório; não alteram o produto. A lista dos commits anteriores a este fecho está em `commits.json`, acrescida do commit que guarda esta entrega.
+
+### Commits do sítio
+
+* `fb4c9d0514a54f834e6d610f6e341a16df9c6223`: Higiene ER1-12: retirar a diferença tautológica da medição.
+* `2485aba5d754c3d4319f4d88aba30a35760fa318`: Higiene EX1: esclarecer as contas e corrigir o ramo do défice.
+* `979e82f094c72cd3d0ab14cda799cf834db72cb4`: Higiene RP4N-12: retirar os caminhos locais dos briefs e do extrator.
+* `082a0447fac2e78788121b0601672525f641171f`: Higiene RP4N-19: medir as mensagens das exceções históricas.
+* `afc8e509f81fff5daf1bf33eaf5f0ff72b885226`: Higiene RP4N-20: inventariar a ausência de leitura na fonte.
+* `cceec06270e0f7cb6bdf731b50902b03ba3e6e41`: Higiene RP4N: corrigir metadados e distinguir as legendas seladas.
+* `3b8c22cd7cbb7ccea9b56970f6c581b7c2e2a9a5`: Higiene RP4N-22: conservar inteiro o rótulo da ligação da prova.
+* `6b26d42970d5f3cc5fe6992ad99f7d2899492f9e`: Higiene RP4N: esclarecer a prova e os custos das passagens i e j.
+* `7763f3816583d86cb0466be5e21600bc8b5b9ae3`: Higiene JD1-11: restaurar e localizar as âncoras revertidas.
+* `947e247a939d7463c0296d0e4a8e102ac8661591`: Higiene JD1-12: documentar o âmbito comum das leituras.
+* `5b3dd6b848b4716ee52af35d3ece3bb8f2713122`: Higiene JD1: completar a comparação e explicitar a exclusão do perímetro.
+* `f2327f60e192cba6502145cbbd67f3b25d7f9922`: Higiene V1-39: ler as duas corridas reais nos recibos gravados.
+* `a38b2dc9ba7936ca3cf1e95bbe4f4fbdd84ef8ff`: Higiene: documentar o circuito do escrivão no mapa.
+* `dd2cdf9a5dba9003121a973d413d0a369b05ca2e`: Higiene RP4N-13: conservar o tipo textual da descrição.
+* `737742631ae6be193209d260aa1c1e7a2e314958`: Higiene RP4N-22: medir palavras partidas na ligação da prova.
+* `19afc31c4952b8fab25852f931c4181291a226df`: Higiene RP4N-20: registar as cadeias em entradas do inventário.
+* `674160c575a3d3b59dde06adad4c037e269d6980`: Higiene: guardar a retoma verde e as provas das correções.
+* `b2ed28aa82b14f5a74d5f82acdebf726541ef8a1`: Higiene RP4N-13: exigir o controlo limpo antes das plantas dos metadados.
+* `5d3edf75265d2958000f0a76a9432934079a5aae`: Higiene JD1: apontar as referências ao literal e conferir os títulos documentais.
+* `fe8eae1224eae34e384e98a0a7b94ea4248f996a`: Higiene JD1-16: ajustar a redação inglesa à régua da voz.
+* `996a388918d1d4183d2d00700bdd62157f0b0fa8`: Higiene: conservar a primeira tentativa final e a correção da voz.
+
+### Commits do motor
+
+* `759c22a7c532f7ac4d67f74d984c2db090e5b8e0`: Higiene V1-40: rotular as linhas de arrumação do resumo diário.
+* `6bd8b70a8ec40909ea5bc415d730c798b8a2ebe3`: Higiene: retirar caminhos locais dos guiões e registos antigos do motor.
+
+## Portões finais e capturas
+
+| Portão | Código lido | Ficheiro |
+|---|---:|---|
+| build | 0 | `depois-2/build.codigo` |
+| verify | 0 | `depois-2/verify.codigo` |
+| typecheck | 0 | `depois-2/typecheck.codigo` |
+| motor | 0 | `depois-2/motor.codigo` |
+
+Corrida pedida por `sh scripts/leituras/portoes-pelo-escrivao.sh design/especime-v3/medicoes/higiene-2026-10-13/depois-2 motor`. Na primeira tentativa final, a tranca da worktree `v2a-2026-10-13`, tomada às 19:59:21 UTC, atrasou o início; não foi removida por esta passagem. Na segunda tentativa, a mesma worktree tomou novamente a tranca às 20:30:25 UTC. O escrivão manteve os pedidos em espera.
+
+`livro-preservado.json` confirma os mesmos bytes dos 3 208 ficheiros do livro. Os portões exercitam as novas plantas; `rp4nj-final.json` liga a conferência do inventário ao carimbo da construção final.
+
+O guião `scripts/leituras/captar.mjs` foi chamado com o pedido ligado à cabeça final, mas o Chromium foi recusado pela sandbox. Não há capturas visuais de entrega. O recibo da tentativa está em `design/especime-v3/capturas/higiene-2026-10-13/capturas.json`; a mensagem exata, com os caminhos anonimizados, inclui:
+
+```text
+[pid=14786][err] [1013/215627.309014:FATAL:base/apple/mach_port_rendezvous_mac.cc:159] Check failed: kr == KERN_SUCCESS. bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.14786: Permission denied (1100)
+```
+
+HIG-13: não substituir a captura pedida por uma imagem antiga nem contornar a sandbox. A medição da palavra inteira passou no navegador dos portões externos; a captura visual continua em falta e precisa de um caminho autorizado fora da sandbox.
+
+## Ficheiros do motor corrigidos pelo §2
+
+| Ficheiro | Conteúdo anterior corrigido |
+|---|---|
+| `BRIEF.md` | caminhos e identificadores locais em comentários ou registos |
+| `NEXT.md` | caminhos e identificadores locais em comentários ou registos |
+| `archive/2026-07-24 Portugal Knowledge Hub INDEX.md` | caminhos e identificadores locais em comentários ou registos |
+| `content/01 Energy Water and Climate/Onde Está a Água — Technical Source/build_onde_payload.py` | destino de execução por variável de ambiente ou relativo ao repositório |
+| `content/01 Energy Water and Climate/Onde Está a Água — Technical Source/make_onde.py` | destino de execução por variável de ambiente ou relativo ao repositório |
+| `content/01 Energy Water and Climate/Onde Está a Água — Technical Source/make_onde_pt.py` | destino de execução por variável de ambiente ou relativo ao repositório |
+| `content/01 Energy Water and Climate/Onde Está a Água — Technical Source/recovery/gap_A_desalination.md` | caminhos e identificadores locais em comentários ou registos |
+| `content/01 Energy Water and Climate/Onde Está a Água — Technical Source/recovery/gap_C_irrigation_efficiency.md` | caminhos e identificadores locais em comentários ou registos |
+| `content/01 Energy Water and Climate/Water Distribution Losses — Technical Source/build_payload.py` | destino de execução por variável de ambiente ou relativo ao repositório |
+| `content/01 Energy Water and Climate/Water Distribution Losses — Technical Source/make_pt.py` | destino de execução por variável de ambiente ou relativo ao repositório |
+| `content/01 Energy Water and Climate/Water Distribution Losses — Technical Source/reconcile.py` | destino de execução por variável de ambiente ou relativo ao repositório |
+| `content/08 Évora Mandates/Technical Source/raw/workforce.json` | caminhos e identificadores locais em comentários ou registos |
+| `content/09 Évora Pelouros/Technical Source/raw/areas_2015.json` | caminhos e identificadores locais em comentários ou registos |
+| `content/09 Évora Pelouros/Technical Source/raw/areas_2016.json` | caminhos e identificadores locais em comentários ou registos |
+| `content/09 Évora Pelouros/Technical Source/raw/areas_2017.json` | caminhos e identificadores locais em comentários ou registos |
+| `content/09 Évora Pelouros/Technical Source/raw/areas_2018.json` | caminhos e identificadores locais em comentários ou registos |
+| `content/09 Évora Pelouros/Technical Source/raw/areas_2019.json` | caminhos e identificadores locais em comentários ou registos |
+| `content/09 Évora Pelouros/Technical Source/raw/areas_2021.json` | caminhos e identificadores locais em comentários ou registos |
+| `content/09 Évora Pelouros/Technical Source/raw/areas_2022.json` | caminhos e identificadores locais em comentários ou registos |
+| `content/09 Évora Pelouros/Technical Source/raw/areas_2023.json` | caminhos e identificadores locais em comentários ou registos |
+| `content/09 Évora Pelouros/Technical Source/raw/areas_2025.json` | caminhos e identificadores locais em comentários ou registos |
+| `content/11 Seguranca Social/LEITURA-CODEX-2026-09-01.md` | caminhos e identificadores locais em comentários ou registos |
+| `content/12 Concelhos/BRIEF-P1-linhas-dos-308.md` | caminhos e identificadores locais em comentários ou registos |
+| `content/12 Concelhos/BRIEF-P2-ilhas-e-releitura.md` | caminhos e identificadores locais em comentários ou registos |
+| `content/13 Dominios/LEITURA-CODEX-2026-09-01.plantas.json` | caminhos e identificadores locais em comentários ou registos |
+| `content/13 Dominios/medicao-sonnet-2026-09-01.py` | destino de execução por variável de ambiente ou relativo ao repositório |
+| `content/13 Dominios/plantas-sonnet-2026-09-01.json` | caminhos e identificadores locais em comentários ou registos |
+| `content/14 Évora 2027/Technical Source/fetch.py` | destino de execução por variável de ambiente ou relativo ao repositório |
+| `content/14 Évora 2027/Technical Source/leituras-a-frio/2026-09-16-codex-leitura-e1-segunda.plantas.json` | caminhos e identificadores locais em comentários ou registos |
+| `content/14 Évora 2027/Technical Source/leituras-a-frio/2026-09-16-codex-leitura-e1.plantas.json` | caminhos e identificadores locais em comentários ou registos |
+| `content/15 Orcamento do Estado 2027/Technical Source/LEVANTAMENTO-das-fontes-2026-09-21.md` | caminhos e identificadores locais em comentários ou registos |
+| `content/README.md` | caminhos e identificadores locais em comentários ou registos |
+| `core/sweep.py` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/PILOTO-CORREDOR-2026-09-01.md` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/RELATORIO-calendario-2026-09-04.md` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/RELATORIO-calendario-b-2026-09-08.md` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/RELATORIO-calendario-comparar-2026-09-08.md` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/RELATORIO-conferencias-2026-09-03.md` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/RELATORIO-corredor-2026-09-03.md` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/RELATORIO-vigia-2026-09-08.md` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/coverage/register-candidates.json` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/coverage/work/checks/g3-sistemas-fisicos.json` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/coverage/work/desks/g3-sistemas-fisicos.md` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/coverage/work/desks/g4-territorio-pessoas.md` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/coverage/work/desks/g5-servicos.md` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/coverage/work/desks/g6-instituicoes-cultura.md` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/out/nomes-conferidos-2026-09-21/LEITURA-codex-2026-09-22.plantas.json` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/out/nomes-conferidos-2026-09-21/PROMPT-passagem-2.md` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/out/nomes-conferidos-2026-09-21/PROMPT-passagem-3.md` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/out/nomes-conferidos-2026-09-21/conferencia-cega/chave.json` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/out/nomes-conferidos-2026-09-21/varrimento.txt` | caminhos e identificadores locais em comentários ou registos |
+| `indicators/out/rp1-2026-09-26/travessia.log` | caminhos e identificadores locais em comentários ou registos |
+| `publisher/RELATORIO-nomes-2026-09-04.md` | caminhos e identificadores locais em comentários ou registos |
+| `publisher/RELATORIO-portao-ci-2026-09-02.md` | caminhos e identificadores locais em comentários ou registos |
+| `publisher/estimativa-b2-2026-08-23/blocks.py` | destino de execução por variável de ambiente ou relativo ao repositório |
+| `publisher/estimativa-b2-2026-08-23/inventario.py` | destino de execução por variável de ambiente ou relativo ao repositório |
+| `publisher/estimativa-b2-2026-08-23/record.py` | destino de execução por variável de ambiente ou relativo ao repositório |
+| `publisher/fixtures/ORIGEM.md` | caminhos e identificadores locais em comentários ou registos |
+| `publisher/mapa-2026-08-27/BRIEF-mapa-distritos.md` | caminhos e identificadores locais em comentários ou registos |
+| `publisher/releitura_concelhos.py` | caminhos e identificadores locais em comentários ou registos |
+| `publisher/verificacoes/2026-08-15-releitura-cega-evora/RELATORIO.md` | caminhos e identificadores locais em comentários ou registos |
+| `publisher/verificacoes/2026-08-15-releitura-cega-evora/registo.json` | caminhos e identificadores locais em comentários ou registos |
+| `publisher/verificacoes/2026-08-15-releitura-cega-evora/transcrever.py` | destino de execução por variável de ambiente ou relativo ao repositório |
+| `publisher/voz-2026-08-24/BRIEF-S2-ferramenta.md` | caminhos e identificadores locais em comentários ou registos |
+| `publisher/voz-2026-08-24/inventario-cego-REPORT.md` | caminhos e identificadores locais em comentários ou registos |
+| `requirements.lock.txt` | caminhos e identificadores locais em comentários ou registos |
+| `publisher/RELATORIO-leitor-2026-09-07.md` | nome do anfitrião num registo antigo |
+
+## Localizadores das correções
+
+| Questão | Ficheiro e linha |
+|---|---|
+| ER1-12 | `design/especime-v3/medicoes/er1-2026-10-06/medir-c.mjs:36` |
+| EX1-12 | `src/data/explicacoes/dinheiro-do-estado-2026.mjs:178` |
+| EX1-13 | `src/data/explicacoes/dinheiro-do-estado-2026.mjs:237` |
+| EX1-14 | `src/data/explicacoes/dinheiro-do-estado-2026.mjs:233` |
+| RP4N-12 | `design/especime-v3/medicoes/extrai_fontes.py:32` |
+| RP4N-13 | `src/lib/livro.mjs:109` |
+| RP4N-19 | `design/especime-v3/medicoes/rp4n-2026-10-06/privacidade-i.py:32` |
+| RP4N-20 | `design/especime-v3/INVENTARIO-FRASES.md:4320` |
+| RP4N-21 | `src/data/figuras.mjs:2701` |
+| RP4N-22 | `src/styles/linha.css:88` |
+| RP4N-23 | `design/especime-v3/medicoes/rp4n-2026-10-06/LEIA-ME.md:2547` |
+| RP4N-24 | `design/especime-v3/medicoes/rp4n-2026-10-06/LEIA-ME.md:2549` |
+| RP4N-25 | `design/especime-v3/medicoes/rp4n-2026-10-06/LEIA-ME.md:2551` |
+| RP4N-26 | `design/especime-v3/medicoes/rp4n-2026-10-06/LEIA-ME.md:2553` |
+| RP4N-27 | `design/especime-v3/medicoes/rp4n-2026-10-06/LEIA-ME.md:2573` |
+| JD1-11 | `design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:442` |
+| JD1-12 | `design/especime-v3/medicoes/r4-2026-10-05/registar-leitura.mjs:3` |
+| JD1-15 | `src/lib/frases-jd1.mjs:17` |
+| JD1-16 | `design/especime-v3/medicoes/jd1-2026-10-06/familias.mjs:30` |
+| JD1-17 | `src/lib/o-que-e-o-numero.mjs:215` |
+| V1-39 | `design/especime-v3/medicoes/v1-2026-10-07/medir_v1d.py:191` |
+| V1-40 | `motor/vigilancia/diario.py:126` |
+| Mapa, §3 | `design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:760` |
 
 ## Trabalho aberto
 
-EX1-11 depende da autorização para publicar a linha homóloga. Faltam concluir os portões finais e tentar as capturas pelo guião do projeto. As falhas do lançamento das duas primeiras tentativas ficam conservadas acima; a recusa auxiliar inicial foi `zsh:1: operation not permitted: ps` e não se repetiu esse comando.
+* EX1-11: selar e publicar o saldo homólogo exige um número novo, fora do §4 desta passagem.
+* Os dois ficheiros protegidos em `sweeps/`, identificados em `motor-caminhos-depois.json`, ficam para a direção.
+* Capturas finais a 390 e 1 280 px, nas duas edições: falta um caminho autorizado para o Chromium fora da sandbox.
+* O escrivão deixa de atualizar o sinal de vida enquanto executa o hook de um commit; o cliente termina cedo. Os resultados finais foram lidos nos pedidos originais, sem duplicação.
 
 A linha «tokens used» não foi exposta nesta sessão. Os pontos da semana são medidos pelo lançador.

@@ -1,0 +1,98 @@
+{
+  "sitio": [
+    {
+      "cabeca": "fb4c9d0514a54f834e6d610f6e341a16df9c6223",
+      "mensagem": "Higiene ER1-12: retirar a diferença tautológica da medição"
+    },
+    {
+      "cabeca": "2485aba5d754c3d4319f4d88aba30a35760fa318",
+      "mensagem": "Higiene EX1: esclarecer as contas e corrigir o ramo do défice"
+    },
+    {
+      "cabeca": "979e82f094c72cd3d0ab14cda799cf834db72cb4",
+      "mensagem": "Higiene RP4N-12: retirar os caminhos locais dos briefs e do extrator"
+    },
+    {
+      "cabeca": "082a0447fac2e78788121b0601672525f641171f",
+      "mensagem": "Higiene RP4N-19: medir as mensagens das exceções históricas"
+    },
+    {
+      "cabeca": "afc8e509f81fff5daf1bf33eaf5f0ff72b885226",
+      "mensagem": "Higiene RP4N-20: inventariar a ausência de leitura na fonte"
+    },
+    {
+      "cabeca": "cceec06270e0f7cb6bdf731b50902b03ba3e6e41",
+      "mensagem": "Higiene RP4N: corrigir metadados e distinguir as legendas seladas"
+    },
+    {
+      "cabeca": "3b8c22cd7cbb7ccea9b56970f6c581b7c2e2a9a5",
+      "mensagem": "Higiene RP4N-22: conservar inteiro o rótulo da ligação da prova"
+    },
+    {
+      "cabeca": "6b26d42970d5f3cc5fe6992ad99f7d2899492f9e",
+      "mensagem": "Higiene RP4N: esclarecer a prova e os custos das passagens i e j"
+    },
+    {
+      "cabeca": "7763f3816583d86cb0466be5e21600bc8b5b9ae3",
+      "mensagem": "Higiene JD1-11: restaurar e localizar as âncoras revertidas"
+    },
+    {
+      "cabeca": "947e247a939d7463c0296d0e4a8e102ac8661591",
+      "mensagem": "Higiene JD1-12: documentar o âmbito comum das leituras"
+    },
+    {
+      "cabeca": "5b3dd6b848b4716ee52af35d3ece3bb8f2713122",
+      "mensagem": "Higiene JD1: completar a comparação e explicitar a exclusão do perímetro"
+    },
+    {
+      "cabeca": "f2327f60e192cba6502145cbbd67f3b25d7f9922",
+      "mensagem": "Higiene V1-39: ler as duas corridas reais nos recibos gravados"
+    },
+    {
+      "cabeca": "a38b2dc9ba7936ca3cf1e95bbe4f4fbdd84ef8ff",
+      "mensagem": "Higiene: documentar o circuito do escrivão no mapa"
+    },
+    {
+      "cabeca": "dd2cdf9a5dba9003121a973d413d0a369b05ca2e",
+      "mensagem": "Higiene RP4N-13: conservar o tipo textual da descrição"
+    },
+    {
+      "cabeca": "737742631ae6be193209d260aa1c1e7a2e314958",
+      "mensagem": "Higiene RP4N-22: medir palavras partidas na ligação da prova"
+    },
+    {
+      "cabeca": "19afc31c4952b8fab25852f931c4181291a226df",
+      "mensagem": "Higiene RP4N-20: registar as cadeias em entradas do inventário"
+    },
+    {
+      "cabeca": "674160c575a3d3b59dde06adad4c037e269d6980",
+      "mensagem": "Higiene: guardar a retoma verde e as provas das correções"
+    },
+    {
+      "cabeca": "b2ed28aa82b14f5a74d5f82acdebf726541ef8a1",
+      "mensagem": "Higiene RP4N-13: exigir o controlo limpo antes das plantas dos metadados"
+    },
+    {
+      "cabeca": "5d3edf75265d2958000f0a76a9432934079a5aae",
+      "mensagem": "Higiene JD1: apontar as referências ao literal e conferir os títulos documentais"
+    },
+    {
+      "cabeca": "fe8eae1224eae34e384e98a0a7b94ea4248f996a",
+      "mensagem": "Higiene JD1-16: ajustar a redação inglesa à régua da voz"
+    },
+    {
+      "cabeca": "996a388918d1d4183d2d00700bdd62157f0b0fa8",
+      "mensagem": "Higiene: conservar a primeira tentativa final e a correção da voz"
+    }
+  ],
+  "motor": [
+    {
+      "cabeca": "759c22a7c532f7ac4d67f74d984c2db090e5b8e0",
+      "mensagem": "Higiene V1-40: rotular as linhas de arrumação do resumo diário"
+    },
+    {
+      "cabeca": "6bd8b70a8ec40909ea5bc415d730c798b8a2ebe3",
+      "mensagem": "Higiene: retirar caminhos locais dos guiões e registos antigos do motor"
+    }
+  ]
+}
