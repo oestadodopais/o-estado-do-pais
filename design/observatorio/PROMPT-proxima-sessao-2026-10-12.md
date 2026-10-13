@@ -19,6 +19,35 @@
 
 **Os tetos do uso estão suspensos (§1.189).** Na manhã de 13.10, com o Codex a 78 % da semana e o Claude a 17 % (a leitura de `python3 scripts/leituras/uso.py` às 05:59 UTC), o financiador decidiu que os tetos de lançamento da regra 10 (os oitenta e os noventa por cento, §1.174 e §1.175) não se aplicam por agora, nas duas subscrições: a semana usa-se inteira, e perto dos cem por cento do Codex ele aplica a reposição gratuita que tem. A sessão seguinte lê o uso antes de cada lançamento como sempre e regista-o, mas não para aos oitenta nem aos noventa; avisa o financiador quando o Codex passar dos noventa, para a reposição chegar a tempo. O `CLAUDE.md` já diz isto no passo 2 da abertura e na regra 10. Nada mais mudou na ordem do trabalho abaixo; o financiador pediu que nada começasse até ele o dizer, e a sessão seguinte começa quando ele a abrir.
 
+## Acrescento de 13.10.2026, o plano de eficiência (o lugar de direção, Claude Fable 5.1, a pedido do financiador)
+
+**O que se mediu nos registos das sessões do Codex de 12.10** (`~/.codex/sessions/.../rollout-*.jsonl`, pelos eventos `token_count` e pelas leituras `rate_limits.primary`): o dia gastou 60 pontos da semana (de 18 % às 10:53 UTC a 78 % às 19:59 UTC) em 37 sessões, 14 passagens do construtor e 23 revisões «guardian» que o Codex abriu sozinho; 2 461 turnos do modelo, cerca de 150 a 250 por passagem substantiva; 309 M de símbolos transportados pelos turnos, 302 M deles servidos da cache (98 %); 6,1 M de entrada fora da cache e 1,2 M de saída, 0,52 M dos quais de raciocínio (7 %); o contexto médio por turno, 123 k. Os pontos seguem o volume transportado, incluindo o que vem da cache a uma taxa pequena: contando a cache a um vigésimo, o ajuste explica 96 % do movimento em caixas de meia hora (R² 0,957); a medida que o projeto usava, a entrada fora da cache mais a saída, explica 75 % (R² 0,745). A contabilidade exata não é publicada; a direção do achado é sólida: o custo é o contexto que cada turno volta a ler, vezes o número de turnos.
+
+**As revisões «guardian».** O lançador passa `--approve-for-me`, que encaminha cada pedido de escalada do construtor para uma sub-sessão de revisão que lê a história inteira do agente: 23 revisões a 12.10, 1,94 M de símbolos fora da cache (26 % desse custo, cerca de 12 % dos pontos pelo ajuste). Os pedidos nascem de o Codex manter `.git` só de leitura mesmo em `workspace-write` (a pasta ou o ficheiro `.git` e o alvo do `gitdir:` são caminhos protegidos), por isso cada commit do construtor, cada hook e a tranca dos portões fora da worktree pedem escalada. Não são os culpados: o raciocínio em `high` (7 %), as capturas nas cinco larguras (os turnos a seguir a uma imagem levaram 2 % da entrada fora da cache), o pacote inicial do prompt (16 a 27 k no primeiro turno), as compactações (8, 2 %).
+
+**As alavancas, pela ordem, com a decisão do financiador de 13.10 («do all of them, plus what is already planned», a quinta adiada).**
+
+| alavanca | o que muda | poupança na semana do Codex | risco para a exatidão |
+|---|---|---|---|
+| 1. Sem revisões «guardian» | O lançador comita a passagem com os ficheiros que o relatório do construtor lista; a tranca dos portões passa para dentro da worktree ou para `/tmp`; a opção `--approve-for-me` sai | 12 %, medida | nenhum: a revisão «guardian» é a aprovação de escaladas da OpenAI, não uma conferência do conteúdo |
+| 2. Saídas curtas, sem sondagem | Os portões e os testes correm por um invólucro que imprime o código e as linhas de falha e escreve o registo inteiro no disco; o construtor lê registos com `tail` e `grep`, nunca ficheiros inteiros; os comandos longos correm em primeiro plano com tempo limite, sem os 212 turnos de `sleep` de 12.10 | 20 a 35 %, inferida | nenhum: os registos inteiros ficam no disco e no pacote da leitura; antes de usar, planta-se uma falha e um aviso e mostra-se que os dois passam pelo invólucro |
+| 3. Menos passagens por bloco | O guião de aceitação do brief corre dentro da passagem, para o construtor iterar na mesma sessão em vez de uma passagem nova a frio; a passagem de correção retoma a sessão (`retomar-codex.sh`) em vez de arrancar a frio; ensaio medido nos blocos V2 | 30 a 40 % por bloco, inferida | nenhum: a leitura a frio fica; se a retoma der mais rondas de correção, volta-se ao arranque a frio |
+| 4. O custo lido do limite | O lançador regista a leitura semanal do Codex antes e depois de cada passagem, com os turnos e o contexto médio, e o quadro da §1.177 passa a dizer pontos por passagem | 0, mas o plano deixa de estar errado | nenhum |
+| 5. Modelos por tarefa | Passagens mecânicas num modelo mais barato ou com menos esforço, só depois do ensaio das cinco plantas (M51) | desconhecida até medir | medido antes de entrar; adiada até as alavancas 1 a 3 estarem medidas |
+
+**A ordem da sessão seguinte, por cima da lista abaixo:** as alavancas 1, 2 e 4 primeiro, antes de qualquer passagem do Codex (cerca de duas horas do lugar de direção, com uma entrada em `DECISIONS.md`); o bloco de higiene é a passagem de ensaio das três, com os pontos lidos antes e depois; a alavanca 3 ensaia-se na V2-a e mede-se contra 12.10; o resto do plano como está. O resultado esperado, inferido: um dia como 12.10 passaria de 60 para cerca de 25 a 30 pontos, três a quatro dias assim por semana no plano sem reposição em vez de menos de dois. O que se aceita: o conteúdo começa cerca de duas horas mais tarde, e cada passo vale sozinho, por isso parar depois da higiene ou da V2-a não perde nada.
+
+**O que não muda, e é o que define a qualidade:** cada número resolve numa linha do livro-razão com o recibo; os portões correm inteiros na CI e nada vermelho chega a `main`; cada bloco é lido a frio por outra família com cinco plantas, em `xhigh` quando toca números ou fontes e em `high` nos mecânicos (M60); o lugar de direção confere antes de aterrar; as plantas provam que cada portão continua a morder. O que sobe: a aceitação medida dentro da passagem falha na máquina antes de custar uma leitura.
+
+**Mais melhorias vistas a 13.10, por avaliar e medir (inferidas, salvo indicação):**
+
+- **A corrida `portão` em paralelo.** A corrida de 13.10 de manhã demorou 23 minutos, medidos nos passos: a árvore 1, o Chromium 1, o build 8, o `verify` 12 em série. Três ou quatro trabalhos em paralelo dariam cerca de metade da espera em cada aterragem (13 aterragens a 12.10); custam mais minutos do GitHub, que são do financiador.
+- **Um guião genérico de fecho de passagem** (pacote, plantas por um plano, lançamento da leitura, arquivo da leitura com o cabeçalho) no lugar dos oito `montar-pacote-*.sh` escritos à mão a 12.10: menos tempo do lugar de direção e menos erros seus (a planta fora do alcance na JD1-d, os fragmentos de caminho nas leituras).
+- **A entrada e o commit no mesmo guião**, com a mensagem construída depois de o número da entrada estar confirmado: fecha a porta às duas mensagens prematuras de 12.10.
+- **A lista dos erros recorrentes dos construtores**, extraída dos Major das leituras de 12.10 (a ausência dita como vazio, a revisão pela ligação rotativa, o declarado no lugar do medido, a reutilização sem validadores), no prompt comum: menos rondas de correção por mil símbolos.
+- **As medições do lançador no relatório de cada bloco** (turnos, contexto médio, pontos), para o quadro da §1.177 comparar passagens e modelos sem contas à mão.
+- **A vigilância sem modelo já existe em parte:** o corredor diário do motor confere as fontes e arquiva; armar a V1 (do financiador) completa-a.
+
 ## O que aterrou a 12.10.2026
 
 - **O painel semanal de 12.10** (`c3c18c98`, no ar às 11:16 UTC, `verify:deploy` verde): 91 afirmações reverificadas, 1 alarme (a I220: o Eurostat reviu a dívida das empresas da União de 70,0 para 70,1 % do PIB), e o acrescento de 11.10 ao prompt na cópia do repositório.
@@ -67,7 +96,7 @@ Pelas linhas «tokens used» quando o Codex as mostrou, e pelo total menos os s�
 | V1 (a, b, c) | 858 300 (a, 07.10 e a retoma de 11.10; mais 115 008 na sessão avaliadora), 501 589 (b; mais 45 639), 518 515 (c) | 239 896, 259 622, 248 974 |
 | o varrimento de vigilância de 12.10 | (Opus, pesquisa) 374 987 | |
 
-O lugar de direção (Claude Fable 5.1): a semana a 14 % no fecho (de 8 % à abertura, depois da reposição), a janela de cinco horas a 2 %. O Codex: a semana a 66 % no fecho (de 44 % à abertura), com duas passagens ainda a correr.
+O lugar de direção (Claude Fable 5.1): a semana a 14 % no fecho (de 8 % à abertura, depois da reposição), a janela de cinco horas a 2 %. O Codex: a semana a 66 % no fecho (de 18 % à abertura a 13.10.2026, a leitura das 10:53 UTC nos registos das sessões do Codex; dizia «de 44 % à abertura», uma leitura anterior à reposição da semana a 11.10 às 08:09 UTC), com duas passagens ainda a correr.
 
 ## O estado lido pelo guião
 
