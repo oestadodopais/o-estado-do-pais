@@ -1,0 +1,65 @@
+{
+  "seguidos": 3854,
+  "achados": [
+    {
+      "ficheiro": "content/02 AI and Digital Strategy/OPEN PORTUGAL AI PRESENTATION.command",
+      "protegido": false,
+      "razao": "intérprete ou comando portátil, caminho temporário genérico de teste ou padrão do próprio anonimizador; não identifica esta máquina"
+    },
+    {
+      "ficheiro": "content/02 AI and Digital Strategy/Portugal-AI-Era-Interactive-Presentation/OPEN_PRESENTATION.command",
+      "protegido": false,
+      "razao": "intérprete ou comando portátil, caminho temporário genérico de teste ou padrão do próprio anonimizador; não identifica esta máquina"
+    },
+    {
+      "ficheiro": "content/02 AI and Digital Strategy/Portugal-AI-Era-Interactive-Presentation/open-presentation.applescript",
+      "protegido": false,
+      "razao": "intérprete ou comando portátil, caminho temporário genérico de teste ou padrão do próprio anonimizador; não identifica esta máquina"
+    },
+    {
+      "ficheiro": "indicators/RELATORIO-calendario-comparar-2026-09-08.md",
+      "protegido": false,
+      "razao": "intérprete ou comando portátil, caminho temporário genérico de teste ou padrão do próprio anonimizador; não identifica esta máquina"
+    },
+    {
+      "ficheiro": "indicators/RELATORIO-corredor-2026-09-03.md",
+      "protegido": false,
+      "razao": "intérprete ou comando portátil, caminho temporário genérico de teste ou padrão do próprio anonimizador; não identifica esta máquina"
+    },
+    {
+      "ficheiro": "indicators/fixtures/monthly-68318e0.sh",
+      "protegido": false,
+      "razao": "intérprete ou comando portátil, caminho temporário genérico de teste ou padrão do próprio anonimizador; não identifica esta máquina"
+    },
+    {
+      "ficheiro": "indicators/provar_fluxo.py",
+      "protegido": false,
+      "razao": "intérprete ou comando portátil, caminho temporário genérico de teste ou padrão do próprio anonimizador; não identifica esta máquina"
+    },
+    {
+      "ficheiro": "indicators/rotinas_f22c_test.py",
+      "protegido": false,
+      "razao": "intérprete ou comando portátil, caminho temporário genérico de teste ou padrão do próprio anonimizador; não identifica esta máquina"
+    },
+    {
+      "ficheiro": "publisher/dominios_test.py",
+      "protegido": false,
+      "razao": "intérprete ou comando portátil, caminho temporário genérico de teste ou padrão do próprio anonimizador; não identifica esta máquina"
+    },
+    {
+      "ficheiro": "publisher/oe1_run.py",
+      "protegido": false,
+      "razao": "intérprete ou comando portátil, caminho temporário genérico de teste ou padrão do próprio anonimizador; não identifica esta máquina"
+    },
+    {
+      "ficheiro": "sweeps/com.<identificador-local>.researchhub-sweep.plist.pre-2026-08-16.bak",
+      "protegido": true,
+      "razao": "ficheiro protegido pelo mandato"
+    },
+    {
+      "ficheiro": "sweeps/monthly.sh",
+      "protegido": true,
+      "razao": "ficheiro protegido pelo mandato"
+    }
+  ]
+}
