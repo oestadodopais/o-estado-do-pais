@@ -1,0 +1,21 @@
+{
+  "registo": "depois-b-2/verify.log",
+  "plantas": [
+    {
+      "linha": 2459,
+      "mensagem": "PLANTA ausência omitida em meta[name=\"description\"] (pt): HIG-5: meta[name=\"description\"] omite a oração dos campos da proveniência por confirmar (pt)"
+    },
+    {
+      "linha": 2460,
+      "mensagem": "PLANTA ausência omitida em meta[property=\"og:description\"] (pt): HIG-5: meta[property=\"og:description\"] omite a oração dos campos da proveniência por confirmar (pt)"
+    },
+    {
+      "linha": 2466,
+      "mensagem": "PLANTA ausência omitida em meta[name=\"description\"] (en): HIG-5: meta[name=\"description\"] omite a oração dos campos da proveniência por confirmar (en)"
+    },
+    {
+      "linha": 2467,
+      "mensagem": "PLANTA ausência omitida em meta[property=\"og:description\"] (en): HIG-5: meta[property=\"og:description\"] omite a oração dos campos da proveniência por confirmar (en)"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "cabeca": "f44f380f160867fc3e83fbe64bd33b087e25ee38",
+  "paginas": [
+    {
+      "nome": "amortizacoes-e-anulacoes-de-divida-fundada-2025",
+      "pt": "/livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "en": "/en/ledger/amortizacoes-e-anulacoes-de-divida-fundada-2025/",
+      "recortes": [
+        {
+          "nome": "conteudo",
+          "seletor": "main#conteudo"
+        }
+      ]
+    },
+    {
+      "nome": "juros-das-administracoes-publicas-2024",
+      "pt": "/livro-razao/juros-das-administracoes-publicas-2024/",
+      "en": "/en/ledger/juros-das-administracoes-publicas-2024/",
+      "recortes": [
+        {
+          "nome": "conteudo",
+          "seletor": "main#conteudo"
+        }
+      ]
+    },
+    {
+      "nome": "juros-das-administracoes-publicas-2025",
+      "pt": "/livro-razao/juros-das-administracoes-publicas-2025/",
+      "en": "/en/ledger/juros-das-administracoes-publicas-2025/",
+      "recortes": [
+        {
+          "nome": "conteudo",
+          "seletor": "main#conteudo"
+        }
+      ]
+    },
+    {
+      "nome": "oe-2026-cem-euros-ministerio-saude",
+      "pt": "/livro-razao/oe-2026-cem-euros-ministerio-saude/",
+      "en": "/en/ledger/oe-2026-cem-euros-ministerio-saude/",
+      "recortes": [
+        {
+          "nome": "conteudo",
+          "seletor": "main#conteudo"
+        }
+      ]
+    },
+    {
+      "nome": "penalizacao-legal-um-ano-antecipacao-2026",
+      "pt": "/livro-razao/penalizacao-legal-um-ano-antecipacao-2026/",
+      "en": "/en/ledger/penalizacao-legal-um-ano-antecipacao-2026/",
+      "recortes": [
+        {
+          "nome": "conteudo",
+          "seletor": "main#conteudo"
+        },
+        {
+          "nome": "abrir-prova",
+          "seletor": ".linha-endereco-abrir"
+        }
+      ]
+    },
+    {
+      "nome": "saldo-natural-portugal-2025",
+      "pt": "/livro-razao/saldo-natural-portugal-2025/",
+      "en": "/en/ledger/saldo-natural-portugal-2025/",
+      "recortes": [
+        {
+          "nome": "conteudo",
+          "seletor": "main#conteudo"
+        }
+      ]
+    },
+    {
+      "nome": "dinheiro-do-estado-2026",
+      "pt": "/explicacoes/dinheiro-do-estado-2026",
+      "en": "/en/explainers/dinheiro-do-estado-2026",
+      "recortes": [
+        {
+          "nome": "conteudo",
+          "seletor": "main#conteudo"
+        }
+      ]
+    },
+    {
+      "nome": "custo-do-stock-da-divida-direta-2025",
+      "pt": "/livro-razao/custo-do-stock-da-divida-direta-2025/",
+      "en": "/en/ledger/custo-do-stock-da-divida-direta-2025/",
+      "recortes": [
+        {
+          "nome": "conteudo",
+          "seletor": "main#conteudo"
+        }
+      ]
+    },
+    {
+      "nome": "juros-das-administracoes-publicas-pib-2025",
+      "pt": "/livro-razao/juros-das-administracoes-publicas-pib-2025/",
+      "en": "/en/ledger/juros-das-administracoes-publicas-pib-2025/",
+      "recortes": [
+        {
+          "nome": "conteudo",
+          "seletor": "main#conteudo"
+        }
+      ]
+    }
+  ]
+}
