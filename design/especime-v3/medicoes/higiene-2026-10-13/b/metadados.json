@@ -1,0 +1,29 @@
+{
+  "cabeca": "f44f380f160867fc3e83fbe64bd33b087e25ee38",
+  "linha": "saldo-natural-portugal-2025",
+  "por_confirmar": [
+    "source_url",
+    "access_date",
+    "excerpt",
+    "document.title",
+    "document.edition"
+  ],
+  "edicoes": [
+    {
+      "lang": "pt",
+      "rota": "/livro-razao/saldo-natural-portugal-2025/",
+      "campos": {
+        "meta[name=\"description\"]": "Linha do livro-razão saldo-natural-portugal-2025 · −34 100 pessoas · Publicado por: PORDATA · Dados de 2025 · Campos da proveniência por confirmar na fonte.",
+        "meta[property=\"og:description\"]": "Linha do livro-razão saldo-natural-portugal-2025 · −34 100 pessoas · Publicado por: PORDATA · Dados de 2025 · Campos da proveniência por confirmar na fonte."
+      }
+    },
+    {
+      "lang": "en",
+      "rota": "/en/ledger/saldo-natural-portugal-2025/",
+      "campos": {
+        "meta[name=\"description\"]": "Ledger row saldo-natural-portugal-2025 · −34 100 people · Published by: PORDATA · Data for 2025 · Provenance fields unconfirmed at the source.",
+        "meta[property=\"og:description\"]": "Ledger row saldo-natural-portugal-2025 · −34 100 people · Published by: PORDATA · Data for 2025 · Provenance fields unconfirmed at the source."
+      }
+    }
+  ]
+}
