@@ -4347,8 +4347,8 @@ As frases já publicadas nas páginas dos concelhos, nas duas edições, e confe
 | conteudo | It is the harmonised index of consumer prices rate in the macroeconomic forecast scenario. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
 | conteudo | É o valor publicado na afirmação citada, com a atribuição que o documento apresenta. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
 | conteudo | It is the value published in the quoted statement, with the attribution given by the document. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
-| conteudo | 3 226 claims · 368 of 3 226 calculated · 2 767 of 3 226 municipality rows | v2a | retirada | Contagem lida do HTML construído com as fontes do V2-a. |
-| conteudo | 3 226 afirmações · 368 de 3 226 calculadas · 2 767 de 3 226 linhas de concelhos | v2a | retirada | Contagem lida do HTML construído com as fontes do V2-a. |
+| conteudo | 3 226 claims · 368 of 3 226 calculated · 2 767 of 3 226 municipality rows | v2a | viva | Contagem relida no índice construído na V2-a-c. |
+| conteudo | 3 226 afirmações · 368 de 3 226 calculadas · 2 767 de 3 226 linhas de concelhos | v2a | viva | Contagem relida no índice construído na V2-a-c. |
 
 ## V2-a-b: frases corrigidas das fontes da vigilância
 
@@ -4376,8 +4376,8 @@ As frases já publicadas nas páginas dos concelhos, nas duas edições, e confe
 | conteudo | It is the amount the budget allocates to road public-private partnerships, in Paulo Raimundo’s speech published by the PCP. | v2ab | viva | Frase conferida no HTML e nos apoios da auditoria K17. |
 | conteudo | É a queda do orçamento da Saúde noticiada pela RTP. A notícia alojada não explicita se a despesa é total ou efetiva. | v2ab | retirada | Frase conferida no HTML e nos apoios da auditoria K17. |
 | conteudo | It is the Health budget decrease reported by RTP. The hosted article does not specify whether the expenditure is total or effective. | v2ab | retirada | Frase conferida no HTML e nos apoios da auditoria K17. |
-| conteudo | 3 208 afirmações · 368 de 3 208 calculadas · 2 767 de 3 208 linhas de concelhos | rp4nj | viva | Contagem lida do HTML construído após a fusão do JD1 e do RP4-n. |
-| conteudo | 3 208 claims · 368 of 3 208 calculated · 2 767 of 3 208 municipality rows | rp4nj | viva | Contagem lida do HTML construído após a fusão do JD1 e do RP4-n. |
+| conteudo | 3 208 afirmações · 368 de 3 208 calculadas · 2 767 de 3 208 linhas de concelhos | rp4nj | retirada | O índice construído na V2-a-c inclui as dezoito linhas do bloco. |
+| conteudo | 3 208 claims · 368 of 3 208 calculated · 2 767 of 3 208 municipality rows | rp4nj | retirada | O índice construído na V2-a-c inclui as dezoito linhas do bloco. |
 
 ## Higiene, RP4N-20, 13.10.2026
 

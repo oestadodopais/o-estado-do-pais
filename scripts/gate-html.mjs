@@ -3019,6 +3019,8 @@ function campoDaLinha(claim, campo, lang) {
       return claim.document?.title ?? null;
     case 'document.edition':
       return claim.document?.edition ?? null;
+    case 'document.source_sha256':
+      return claim.document?.source_sha256 ?? null;
     case 'document.locator_en':
       return claim.document?.locator_en ?? null;
     case 'document.locator':

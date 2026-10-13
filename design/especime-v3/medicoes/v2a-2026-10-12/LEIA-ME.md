@@ -252,3 +252,5 @@ Questões novas:
 - V2A-28, selo: o resumo do corpo fica na ficha de proveniência e no JSON. Não há nova cópia integral no sítio.
 - V2A-29, conferência: as cinco verificações V2AB passam a correr nos portões, com as respetivas plantas, e os registos distinguem a conferência pública da leitura dos corpos no motor.
 - V2A-30, custo e execução: os portões e as capturas correm pelo escrivão, porque o navegador não arranca na sandbox. A V2-a-b custou 232 turnos, 518 020 de custo antigo e 8 pontos da semana com a higiene em paralelo, segundo a direção. O custo final V2-a-c ainda não está disponível antes do encerramento do lançador.
+
+- V2A-31, primeira conferência: o build recusou o novo campo por faltar a leitura de `document.source_sha256` no portão HTML e por o rótulo em maiúsculas não corresponder ao termo `sha256` já autorizado. Corrigiu-se o leitor e reutilizou-se o rótulo existente, sem alargar a lista de exceções. A conferência de voz isolada encontrou no inventário as contagens de 3 208 reativadas, apesar de o índice construído ter 3 226; os estados das quatro frases foram reconciliados com o HTML. O verify ficou por correr nessa tentativa, sem capturas.

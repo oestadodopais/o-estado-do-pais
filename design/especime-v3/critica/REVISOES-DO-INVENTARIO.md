@@ -730,3 +730,4 @@ A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recib
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | v2ac | Frases da Saúde, do cenário, do total das PPP e da RTP corrigidas | por ler | Codex gpt-6-astra: apoios na nota do relatório e nas palavras seladas. A leitura cruzada pertence à direção. |
+| v2ac | Contagens dos índices reconciliadas com o HTML construído | por ler | As frases de 3 226 voltam a estar vivas e as de 3 208 ficam retiradas; nenhuma linha do livro foi alterada. |

@@ -54,6 +54,5 @@ const registo={cabeca:git('rev-parse','HEAD'),construcao:JSON.parse(fs.readFileS
   limite:'O registo histórico da RP4-n-j prova o total anterior, não guarda os destinos por página. A comparação de multiplicidades usa a fotografia integral desta construção; não se apresenta como reconstrução do HTML da cabeça de partida.'};
 if(process.argv.includes('--write')) {
   fs.writeFileSync(`${pasta}/l1-v2a-c.json`,JSON.stringify(registo,null,2)+'\n');
-  fs.writeFileSync('scripts/lugar-tetos-b1.json',JSON.stringify({l1_paginas:medido.paginas,medicao:`${pasta}/l1-v2a-c.json`},null,2)+'\n');
 }
 console.log(JSON.stringify({contagens:registo.contagens,plantas}));
