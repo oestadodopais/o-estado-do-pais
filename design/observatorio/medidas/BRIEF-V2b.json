@@ -1,12 +1,12 @@
 {
   "brief": "design/observatorio/BRIEF-V2b-o-que-se-discute-os-tres-primeiros-itens.md",
   "guiao": "design/observatorio/medidas/BRIEF-V2b.py",
-  "cabeca_lida": "HEAD",
+  "cabeca_lida": "445451896a74222a4c489b704ea9caf19039a270",
   "medidas": [
     {
       "nome": "linhas_do_v2a_no_livro",
       "valor": 0,
-      "comando": "git ls-tree -r --name-only HEAD ledger/claims | grep -cE '/(oe-2027-|afirmacao-)[^/]*\\.yml$'",
+      "comando": "git ls-tree -r --name-only 445451896a74222a4c489b704ea9caf19039a270 ledger/claims | grep -cE '/(oe-2027-|afirmacao-)[^/]*\\.yml$'",
       "conhecido_positivo": {
         "o_que": "o brief do V2-a, na mesma cabeça, nomeia a linha oe-2027-saude-despesa-total-consolidada-2027 e uma linha afirmacao-",
         "encontrado": true
@@ -15,7 +15,7 @@
     {
       "nome": "cadeias_na_tabela",
       "valor": 1932,
-      "comando": "git show HEAD:src/i18n/strings.mjs | grep -cE '^[[:space:]]+[A-Za-z_][A-Za-z0-9_]*:[[:space:]]'",
+      "comando": "git show 445451896a74222a4c489b704ea9caf19039a270:src/i18n/strings.mjs | grep -cE '^[[:space:]]+[A-Za-z_][A-Za-z0-9_]*:[[:space:]]'",
       "conhecido_positivo": {
         "o_que": "a chave langNome está entre as linhas contadas",
         "encontrado": true
