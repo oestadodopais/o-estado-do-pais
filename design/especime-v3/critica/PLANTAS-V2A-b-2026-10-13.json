@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-13T22:54:03+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "ledger/claims/oe-2027-cenario-pib-real-crescimento-2027.yml",
+   "descricao": "a página do quadro 1 do parecer trocada no nome na fonte (p. 9 para p. 19); o PDF alojado desmente",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c7cc35724e969c931c7ef74c6789e9b5154f51279ff96bb17ec0bd62def0aa5a",
+   "sha256_depois": "39e1c00149c6937a972b316e011a5524502363f6ef3060b1244e7a41662b3317",
+   "contexto_antes": "1\"\nunit: \"%\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.\nname: \"PIB\"\nname_source: \"Quadro 1, PIB, 2027, p. 9\"\nname_source_en: \"Table 1, GDP, 2027, p. 9\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Conselho das Finanças Púb",
+   "contexto_depois": "1\"\nunit: \"%\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.\nname: \"PIB\"\nname_source: \"Quadro 1, PIB, 2027, p. 19\"\nname_source_en: \"Table 1, GDP, 2027, p. 9\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Conselho das Finanças Púb"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "motor/publisher/v2a.py",
+   "descricao": "a frase esperada da notícia da RTP com o número trocado (267,5 para 276,5); a página alojada desmente; declarada fora dos hunks porque a linha é anterior à passagem b e a referência é a página alojada",
+   "alcance": "fora dos hunks do diff, declarado pelo lugar de direção: a linha é da primeira passagem; a referência é a página alojada rtp-queda.html no pacote",
+   "sha256_antes": "f030fba1b086bd60cddf7eb70ecf14828735432af6b1e94983cc804260d57766",
+   "sha256_depois": "8c4c1ee6e270cd0f6887a984910132b4186cbd53d5407cfa5bc1b07a81db94dd",
+   "contexto_antes": "6-10-09', 'rtp-queda.html', 'RTP', 'rtp',\n     'O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.',\n     r'Cai (\\d+,\\d+) por cento', '% de queda', 'RTP', None),\n]\n\n\ndef statement(spec, source=SOURCE):\n    id, rel, publisher, kind, quote, pattern, unit, auth",
+   "contexto_depois": "6-10-09', 'rtp-queda.html', 'RTP', 'rtp',\n     'O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 276,5 milhões do que este ano.',\n     r'Cai (\\d+,\\d+) por cento', '% de queda', 'RTP', None),\n]\n\n\ndef statement(spec, source=SOURCE):\n    id, rel, publisher, kind, quote, pattern, unit, auth"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/livro-razao/oe-2027-cenario-pib-real-crescimento-2027/index.html",
+   "descricao": "a página do cenário a atribuir a previsão ao Conselho e não ao Governo; a linha e o parecer desmentem",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "ef733ff9e5edf8618a65e37bb82083b5d82ae43c166b3c6ba50a50789e4b2e64",
+   "sha256_depois": "fa4bc7d85fa922aff2aea073102c4d00e1ff2ddfc0d58c4888d30bb8d32cad08",
+   "contexto_antes": "Europeu e do Conselho de 21 de maio de 2013, em resultado da análise efetuada às previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027 do XXV Governo Constitucional, com base na informação atualmente disponível e ponderando os riscos identificados, tendo em conta que a evolução para o crescimento nominal previsto para",
+   "contexto_depois": "Europeu e do Conselho de 21 de maio de 2013, em resultado da análise efetuada às previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027 do XXV Conselho Constitucional, com base na informação atualmente disponível e ponderando os riscos identificados, tendo em conta que a evolução para o crescimento nominal previsto para"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "ledger/claims/afirmacao-leitao-amaro-saude-oe2027-2026-10-09.yml",
+   "descricao": "o nome da afirmação com a grafia corrigida («sobe» em vez de «sobre»), que já não são as palavras como a página as escreve",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ec56ab1d649e15681354d8565398f824933a6ae1f1edde92fcb1f3ce764174a6",
+   "sha256_depois": "2f8fe788b9a4ff997430c08b3a0c4bcb793b488e237f4a6ab9bfafb0f234158b",
+   "contexto_antes": "ro.\nvalue: \"3\"\nunit: \"%\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.\nname: \"Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%\"\nname_source: \"Título e corpo da notícia\"\nname_source_en: \"Title and body of the article\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a d",
+   "contexto_depois": "ro.\nvalue: \"3\"\nunit: \"%\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.\nname: \"Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobe 3%\"\nname_source: \"Título e corpo da notícia\"\nname_source_en: \"Title and body of the article\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a d"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "scripts/afirmacoes.mjs",
+   "descricao": "a condição da âncora da atribuição invertida: a célula passa quando a âncora não está no corpo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "d98f8410569253fdeddaab4415e2b9fc4b516204bd853d7179af0fde2be2a68e",
+   "sha256_depois": "f2496bc84872d18eb0dcd2f02f07a753fee4da38a7ea36edc52fc2fbdbaf81eb",
+   "contexto_antes": "relativo no motor');\n  if (raw && sha(raw)!==p.sha256) errors.push('V2A selo: sha256 diferente do corpo alojado');\n  const text=raw ? textoDoCorpo(raw) : null;\n  if (normal(c.excerpt)!==normal(p.excerpt) || (text !== null && !text.includes(normal(c.excerpt)))) errors.push('V2A excerto: palavras diferentes do corpo alojado');\n  if (JSON.stringify(c.attributed_to)!==JSON.stringify(p.attributed_to) || (text !== null && !text.includes(p.attribution_anchor))) errors.push('V2A atribuição",
+   "contexto_depois": "relativo no motor');\n  if (raw && sha(raw)!==p.sha256) errors.push('V2A selo: sha256 diferente do corpo alojado');\n  const text=raw ? textoDoCorpo(raw) : null;\n  if (normal(c.excerpt)!==normal(p.excerpt) || (text !== null && text.includes(normal(c.excerpt)))) errors.push('V2A excerto: palavras diferentes do corpo alojado');\n  if (JSON.stringify(c.attributed_to)!==JSON.stringify(p.attributed_to) || (text !== null && !text.includes(p.attribution_anchor))) errors.push('V2A atribuição"
+  }
+ ]
+}
