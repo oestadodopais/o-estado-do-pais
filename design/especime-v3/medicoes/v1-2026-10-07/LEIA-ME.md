@@ -159,7 +159,7 @@ Aceitação de entrada datada por fonte: `{"dar": {"estado": "por cumprir", "ini
 
 ### A aritmética do achado 7
 
-A prova corrigida a 13.10.2026 lê duas corridas reais nos recibos gravados. O arquivo não conserva um resumo por corrida; não se afirma ter observado dois resumos. As contagens abaixo são as dos recibos, sem valores fixados pelo guião.
+A prova corrigida a 13.10.2026 lê duas corridas reais nos recibos gravados. O arquivo não conserva um resumo por corrida; não se afirma ter observado dois resumos. As contagens abaixo são as dos recibos, sem valores fixados pelo guião. A V1-39 fica parcial: nas duas corridas reais o DAR não teve novidades nem revisões. A aritmética do achado 7 fica por provar com uma corrida que as tenha; estas contagens nulas não a demonstram.
 
 ```json
 {

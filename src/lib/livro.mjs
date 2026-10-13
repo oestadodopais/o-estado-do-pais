@@ -14,7 +14,7 @@
  */
 
 import { routePath } from './routes.mjs';
-import { eDerivada, documentoDaLinha } from './ledger.mjs';
+import { eDerivada, documentoDaLinha, provenienciaIncompleta } from './ledger.mjs';
 import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
@@ -94,7 +94,8 @@ export function tituloDaLinha(claim, lang) {
 /**
  * A descrição de uma página de linha, composta dos campos da própria linha.
  *
- * Os metadados omitem campos por confirmar. A ausência continua visível no recibo.
+ * Higiene b, 13.10.2026: não compor uma descrição que pareça completa quando
+ * há campos por confirmar. Omitir a marca exige declarar a ausência nas duas edições.
  *
  * @param {Linha} claim
  * @param {Lingua} lang
@@ -116,6 +117,9 @@ export function descricaoDaLinha(claim, lang) {
      preposição. A fonte leva dois pontos porque o rótulo é um substantivo. */
   if (confirmado(claim.access_date)) partes.push(`${claim.access_date_kind === 'hosted-copy' ? s.prov.copiaAlojada : s.prov.lido} ${claim.access_date}`);
   if (confirmado(claim.reference_date)) partes.push(`${s.prov.referencia} ${claim.reference_date}`);
+  if (provenienciaIncompleta(claim)) partes.push(lang === 'en'
+    ? 'Provenance fields unconfirmed at the source'
+    : 'Campos da proveniência por confirmar na fonte');
 
   return partes.join(' · ').replaceAll('[a verificar]', s.prov.marcadorDoSelo) + '.';
 }
