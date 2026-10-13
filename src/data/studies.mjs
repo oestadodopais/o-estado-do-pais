@@ -568,6 +568,11 @@ export const EXCLUIDOS = [
  */
 export const INTERNAL_SOURCES = [
   {
+    // V2-a: fontes para o painel, sem trabalho ou página nova.
+    id: 'oe-2027',
+    label: { pt: 'Orçamento do Estado para 2027', en: 'State Budget for 2027' },
+  },
+  {
     // OE1-b: estas linhas aguardam a página do governo, que é um bloco seguinte.
     // Este registo não cria um trabalho em WORKS, uma página ou uma rota.
     id: 'oe-2026',

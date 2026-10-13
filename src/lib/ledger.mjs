@@ -329,6 +329,7 @@ export const CAMPOS = /** @type {const} */ ([
   'derived_from',
   'check',
   'attributed_to',
+  'afirmacao',
   'study',
   'note',
   'publication',
@@ -1571,12 +1572,24 @@ export function validateLedger() {
 
   for (const [id, c] of claims) {
     const onde = `[${c.__file}]`;
+    const doc = documentoDaLinha(c);
+    // V2-a, §1.181: as palavras atribuídas a quem o documento identifica.
+    if (c.afirmacao !== undefined && c.afirmacao !== true) errors.push(`${onde} afirmacao só aceita true ou a ausência do campo`);
+    if (id.startsWith('afirmacao-') && c.afirmacao !== true) errors.push(`${onde} a família afirmacao exige afirmacao: true`);
+    if (c.afirmacao === true) {
+      if (!Array.isArray(c.attributed_to) || !c.attributed_to.length) errors.push(`${onde} V2A atribuição: falta attributed_to`);
+      if (!['html', 'pdf'].includes(String(doc?.kind))) errors.push(`${onde} V2A documento: exige html ou pdf`);
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(String(c.published_at ?? '')) || c.reference_date !== c.published_at) errors.push(`${onde} V2A data: falta a data do documento`);
+      if (!String(c.excerpt ?? '').trim() || c.excerpt === POR_VERIFICAR) errors.push(`${onde} V2A excerto: faltam as palavras exatas`);
+      /** @param {unknown} v */
+      const normal = v => String(v ?? '').replace(/[\s\u00a0\u202f]+/g, ' ').trim();
+      const valor = normal(c.value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      if (!valor || !new RegExp(`(?<![\\d,.])${valor}(?![\\d,.])`).test(normal(c.excerpt))) errors.push(`${onde} V2A valor: não aparece no excerto`);
+    }
     if (c.definition_sources !== undefined && (!Array.isArray(c.definition_sources) || !c.definition_sources.length || c.definition_sources.some(s => !s.publisher || !/^https:\/\//.test(s.url ?? '') || !s.receipt?.motor || !/^[a-f0-9]{64}$/.test(s.receipt?.sha256 ?? '')))) errors.push(`${onde} definition_sources exige publicador, endereço e recibo de cada segunda fonte`);
     if (c.publication !== undefined && c.publication !== 'withdrawn') errors.push(`${onde} publication só aceita withdrawn ou a ausência do campo`);
     /* O bloco `document`, conferido uma vez: é um mapa, ou é `null`. Os valores
        lá dentro continuam por conferir, e cada conferência abaixo confere o seu. */
-    const doc = documentoDaLinha(c);
-
     // 1 — nome do ficheiro é o id
     const esperado = String(id) + '.yml';
     if (c.__file !== esperado) {

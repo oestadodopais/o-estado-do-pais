@@ -561,13 +561,15 @@ verificação própria.
 É a mesma regra que a direção fixou para a camada de mandatos: *sem viés não é
 o mesmo que sem atribuição*. Este sítio não faz tabelas classificativas por
 partido: territórios que não têm nada em comum não se ordenam, e a regra está
-escrita no Método. **Nenhuma linha credita hoje um partido** (DECISIONS §1.31,
+escrita no Método. **À data da §1.31 nenhuma linha creditava um partido** (DECISIONS §1.31,
 «Nenhum rótulo partidário atravessou»), e o formato não tem campo que marque um
 elemento da lista como partido. Até 18.08.2026 a página da linha escrevia a
 frase ao lado do campo em todas as linhas com atribuição, inclusive nas que só
 creditam um organismo: dizia-o de uma coisa que não estava lá. A nota da página
 passa a dizer só «Como consta do documento.», e a frase do partido volta quando
-o formato souber marcá-lo (DECISIONS §1.44).
+o formato souber marcá-lo (DECISIONS §1.44). Desde 13.10.2026, a família
+`afirmacao` regista quem disse as palavras, incluindo o partido quando publica
+a transcrição, pela §1.181. É registo do documento, sem juízo nem ordenação.
 
 **Como é escrito na página:** os elementos da lista, pela ordem em que estão no
 livro-razão, separados por ` · `. A escolha é de rendição e é deliberadamente
@@ -576,6 +578,20 @@ só pode ser comparada assim se houver uma maneira única de a escrever. O ponto
 médio já é o separador da casa entre partes de uma mesma linha, não introduz
 pontuação nova, e não colide com vírgulas dentro do nome de uma entidade. Um
 nome que contenha `·` é recusado pelo validador, pela mesma razão.
+
+## A afirmação como foi dita (V2-a, 13.10.2026)
+
+Pela §1.181 de `DECISIONS.md`, a família `afirmacao` declara `afirmacao: true`.
+Exige `attributed_to` não vazio, o excerto literal com o valor, documento HTML
+ou PDF e `published_at` igual à data da afirmação em `reference_date`.
+O nome e o cargo conservam a forma do documento. Quando o partido publica
+a transcrição, a atribuição inclui quem falou e o partido. A nota continua
+a ser «Como consta do documento.». Não se fazem tabelas por partido.
+
+O valor é o que as palavras imprimem. Uma «queda de 1,5%» conserva `1,5`,
+com a unidade `% de queda`; não se acrescenta um sinal ausente da citação.
+Uma frase sem número fica como excerto da linha numérica a que pertence,
+com a sua página identificada, sem inventar um valor para passar o validador.
 
 ## A linha da casa
 

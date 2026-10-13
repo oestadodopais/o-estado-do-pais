@@ -1,0 +1,17 @@
+§1.6 · Formatação portuguesa dos números nas duas edições — por agora
+    publisher/export_site_rows.py:423
+§1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    publisher/export_site_rows.py:812
+§1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    publisher/export_site_rows.py:24
+§1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
+    publisher/export_site_rows.py:1052
+§1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
+    core/http.py:84
+    core/http.py:94
+§1.126 · O Portal BASE caído no motor e no Método (R1, mandato 10)
+    core/http.py:86
+    core/http.py:95
+6 decisão(ões) citada(s) em 5 ficheiro(s) de texto
+0 ficheiro(s) binário(s) saltado(s)
+conhecido-positivo: a §1.98 lida em scripts/check-lugar.mjs, e o nome que não existe (scripts/leituras/este-ficheiro-nao-existe-p4c.mjs) recusado como ilegível

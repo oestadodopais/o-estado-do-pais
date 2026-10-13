@@ -96,9 +96,9 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const INVENTARIO_DECLARADO = path.join(RAIZ, 'design', 'especime-v3', 'rotulos', 'INVENTARIO.json');
 const LINHAS = loadClaims();
 /** O conjunto fechado OE1, conferido contra as linhas e contra cada edição construída. */
-const LINHAS_ESPERADAS = { oe1: 186, jd1: 15 };
+const LINHAS_ESPERADAS = { oe1: 186, jd1: 15, v2a: 18 };
 /** O estudo recebe outros blocos; a pertença vem do cruzamento de cada entrega. */
-const BLOCOS_DO_LIVRO = Object.fromEntries(['oe1', 'jd1'].map((bloco) => {
+const BLOCOS_DO_LIVRO = Object.fromEntries(['oe1', 'jd1', 'v2a'].map((bloco) => {
   const ids = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(RAIZ, 'ledger', 'cruzamentos', `${bloco}.json`), 'utf8')).rows));
   return [bloco, { ids, esperado: LINHAS_ESPERADAS[bloco] }];
 }));
@@ -177,7 +177,7 @@ export function conferirUnidadesOe1(root, { rota, lang, contas }) {
     const bloco = blocoDaLinha(id);
     if (!bloco) return;
     const rotulo = bloco.toUpperCase();
-    if (linha?.study !== 'oe-2026') {
+    if (linha?.study !== (bloco === 'v2a' ? 'oe-2027' : 'oe-2026')) {
       erros.push(`${rotulo}-unidade · ${rota} · ${id}: a linha do cruzamento não pertence ao estudo esperado`);
       return;
     }
@@ -203,7 +203,7 @@ export function conferirUnidadesOe1(root, { rota, lang, contas }) {
     if (/acumulados/.test(u)) contas[bloco].acumuladas[lang]++;
   };
   const recibo = /^\/(?:livro-razao|en\/ledger)\/([^/]+)$/.exec(rota);
-  if (recibo && LINHAS.get(recibo[1])?.study === 'oe-2026') {
+  if (recibo && Boolean(blocoDaLinha(recibo[1]))) {
     conferir(recibo[1], root.querySelectorAll('.linha-valor-unidade'), 'recibos');
   }
   const itens = root.querySelectorAll('.livro-item[data-linha-id]');
@@ -635,7 +635,7 @@ export function conferirConstrucao(dist) {
     const rota = rotaDe(dist, p);
     const comCartoes = html.includes('cartao-medida') || html.includes('class="cartao"') || html.includes('data-leitura=');
     const recibo = /^\/(?:livro-razao|en\/ledger)\/([^/]+)$/.exec(rota);
-    const reciboOe1 = Boolean(recibo && LINHAS.get(recibo[1])?.study === 'oe-2026');
+    const reciboOe1 = Boolean(recibo && Boolean(blocoDaLinha(recibo[1])));
     if (!comCartoes && !html.includes('linha-alcance') && !html.includes('livro-item') && !reciboOe1) continue;
     if (comCartoes) contas.paginas_com_cartoes++;
     erros.push(...conferirPagina(parse(html), { rota, lang: linguaDe(rota), inventario, contas }));
@@ -646,14 +646,14 @@ export function conferirConstrucao(dist) {
   if ((contas.ressalvas ?? 0) !== 2) erros.push(`R2-ressalva · a ressalva do recibo do salário mínimo foi conferida em ${contas.ressalvas ?? 0} página(s), e o recibo tem duas edições`);
   for (const [bloco, { ids, esperado }] of Object.entries(BLOCOS_DO_LIVRO)) {
     const rotulo = bloco.toUpperCase();
-    const presentes = [...ids].filter((id) => LINHAS.get(id)?.study === 'oe-2026').length;
+    const presentes = [...ids].filter((id) => LINHAS.get(id)?.study === (bloco === 'v2a' ? 'oe-2027' : 'oe-2026')).length;
     if (!esperado || ids.size !== esperado || presentes !== esperado) erros.push(`${rotulo}-unidade · o livro tem ${presentes} linhas ${rotulo} e o conjunto fechado declara ${esperado}`);
     for (const lang of ['pt', 'en']) {
       if (contas[bloco].recibos[lang] !== esperado) erros.push(`${rotulo}-unidade · ${lang}: ${contas[bloco].recibos[lang]} recibos conferidos e o conjunto fechado declara ${esperado}`);
       if (contas[bloco].entradas[lang] !== esperado) erros.push(`${rotulo}-unidade · ${lang}: ${contas[bloco].entradas[lang]} entradas do índice conferidas e o conjunto fechado declara ${esperado}`);
     }
   }
-  for (const linha of LINHAS.values()) if (linha.study === 'oe-2026' && !blocoDaLinha(linha.id)) erros.push(`Livro-unidade · ${linha.id}: a linha não pertence a nenhum conjunto conferido`);
+  for (const linha of LINHAS.values()) if (['oe-2026','oe-2027'].includes(linha.study) && !blocoDaLinha(linha.id)) erros.push(`Livro-unidade · ${linha.id}: a linha não pertence a nenhum conjunto conferido`);
   for (const id of BLOCOS_DO_LIVRO.oe1.ids) if (BLOCOS_DO_LIVRO.jd1.ids.has(id)) erros.push(`Livro-unidade · ${id}: a linha pertence a dois conjuntos`);
   return { erros, contas, inventario };
 }

@@ -3687,3 +3687,217 @@ export const FAMILIAS_DOS_CONCELHOS = {
  */
 /** @type {string[]} */
 export const LINHAS_POR_CONFIRMAR_NA_FONTE = [];
+
+// V2A: declarações acrescentadas pelo compositor próprio.
+Object.assign(FAMILIAS_DAS_LINHAS, {
+  "afirmacao-leitao-amaro-saude-oe2027-2026-10-09": {
+    "nome": {
+      "pt": "Afirmação de Leitão Amaro sobre o orçamento da Saúde",
+      "en": "Leitão Amaro’s statement about the Health budget"
+    },
+    "frase": {
+      "pt": [
+        "É o valor publicado na afirmação citada, com a atribuição que o documento apresenta."
+      ],
+      "en": [
+        "It is the value published in the quoted statement, with the attribution given by the document."
+      ]
+    }
+  },
+  "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09": {
+    "nome": {
+      "pt": "Afirmação de Paulo Raimundo sobre as parcerias rodoviárias",
+      "en": "Paulo Raimundo’s statement about road partnerships"
+    },
+    "frase": {
+      "pt": [
+        "É o valor publicado na afirmação citada, com a atribuição que o documento apresenta."
+      ],
+      "en": [
+        "It is the value published in the quoted statement, with the attribution given by the document."
+      ]
+    }
+  },
+  "afirmacao-rtp-saude-queda-oe2027-2026-10-09": {
+    "nome": {
+      "pt": "Queda do orçamento da Saúde noticiada pela RTP",
+      "en": "Health budget decrease reported by RTP"
+    },
+    "frase": {
+      "pt": [
+        "É o valor publicado na afirmação citada, com a atribuição que o documento apresenta."
+      ],
+      "en": [
+        "It is the value published in the quoted statement, with the attribution given by the document."
+      ]
+    }
+  },
+  "oe-2027-cenario-ihpc": {
+    "nome": {
+      "pt": "Variação do índice harmonizado de preços no consumidor prevista para Portugal",
+      "en": "Forecast change in the harmonised index of consumer prices for Portugal"
+    },
+    "frase": {
+      "pt": [
+        "É a taxa do índice harmonizado de preços no consumidor no cenário de previsões macroeconómicas."
+      ],
+      "en": [
+        "It is the harmonised index of consumer prices rate in the macroeconomic forecast scenario."
+      ]
+    }
+  },
+  "oe-2027-cenario-pib-real-crescimento": {
+    "nome": {
+      "pt": "Crescimento real do produto interno bruto previsto para Portugal",
+      "en": "Forecast real gross domestic product growth for Portugal"
+    },
+    "frase": {
+      "pt": [
+        "É a taxa de crescimento real do produto interno bruto no cenário de previsões macroeconómicas."
+      ],
+      "en": [
+        "It is the real gross domestic product growth rate in the macroeconomic forecast scenario."
+      ]
+    }
+  },
+  "oe-2027-ppp-rodoviario-encargos-brutos": {
+    "nome": {
+      "pt": "Encargos brutos do setor rodoviário",
+      "en": "Road sector gross charges"
+    },
+    "frase": {
+      "pt": [
+        "É o valor previsto para encargos brutos do setor rodoviário no quadro das parcerias público-privadas."
+      ],
+      "en": [
+        "It is the projected value for road sector gross charges in the public-private partnership table."
+      ]
+    }
+  },
+  "oe-2027-ppp-rodoviario-encargos-liquidos": {
+    "nome": {
+      "pt": "Encargos líquidos do setor rodoviário",
+      "en": "Road sector net charges"
+    },
+    "frase": {
+      "pt": [
+        "É o valor previsto para encargos líquidos do setor rodoviário no quadro das parcerias público-privadas."
+      ],
+      "en": [
+        "It is the projected value for road sector net charges in the public-private partnership table."
+      ]
+    }
+  },
+  "oe-2027-ppp-rodoviario-receitas": {
+    "nome": {
+      "pt": "Receitas do setor rodoviário",
+      "en": "Road sector revenue"
+    },
+    "frase": {
+      "pt": [
+        "É o valor previsto para receitas do setor rodoviário no quadro das parcerias público-privadas."
+      ],
+      "en": [
+        "It is the projected value for road sector revenue in the public-private partnership table."
+      ]
+    }
+  },
+  "oe-2027-ppp-total-encargos-liquidos": {
+    "nome": {
+      "pt": "Total dos encargos líquidos das parcerias público-privadas",
+      "en": "Total net public-private partnership charges"
+    },
+    "frase": {
+      "pt": [
+        "É o valor previsto para total dos encargos líquidos das parcerias público-privadas no quadro das parcerias público-privadas."
+      ],
+      "en": [
+        "It is the projected value for total net public-private partnership charges in the public-private partnership table."
+      ]
+    }
+  },
+  "oe-2027-saude-despesa-efetiva-consolidada": {
+    "nome": {
+      "pt": "Despesa efetiva consolidada do programa Saúde",
+      "en": "Consolidated effective expenditure of the Health programme"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada do programa Saúde, na estimativa ou no orçamento indicado."
+      ],
+      "en": [
+        "It is consolidated effective expenditure of the Health programme, in the stated estimate or budget."
+      ]
+    }
+  },
+  "oe-2027-saude-despesa-efetiva-consolidada-sem-prr": {
+    "nome": {
+      "pt": "Despesa efetiva consolidada sem PRR do programa Saúde",
+      "en": "Consolidated effective expenditure excluding the RRP of the Health programme"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa efetiva consolidada sem prr do programa Saúde, na estimativa ou no orçamento indicado."
+      ],
+      "en": [
+        "It is consolidated effective expenditure excluding the rrp of the Health programme, in the stated estimate or budget."
+      ]
+    }
+  },
+  "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao": {
+    "nome": {
+      "pt": "Variação da despesa efetiva consolidada sem prr do programa Saúde",
+      "en": "Change in consolidated effective expenditure excluding the rrp of the Health programme"
+    },
+    "frase": {
+      "pt": [
+        "É a variação publicada da despesa efetiva consolidada sem prr do programa Saúde."
+      ],
+      "en": [
+        "It is the published change in consolidated effective expenditure excluding the rrp of the Health programme."
+      ]
+    }
+  },
+  "oe-2027-saude-despesa-efetiva-consolidada-variacao": {
+    "nome": {
+      "pt": "Variação da despesa efetiva consolidada do programa Saúde",
+      "en": "Change in consolidated effective expenditure of the Health programme"
+    },
+    "frase": {
+      "pt": [
+        "É a variação publicada da despesa efetiva consolidada do programa Saúde."
+      ],
+      "en": [
+        "It is the published change in consolidated effective expenditure of the Health programme."
+      ]
+    }
+  },
+  "oe-2027-saude-despesa-total-consolidada": {
+    "nome": {
+      "pt": "Despesa total consolidada do programa Saúde",
+      "en": "Consolidated total expenditure of the Health programme"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa total consolidada do programa Saúde, na estimativa ou no orçamento indicado."
+      ],
+      "en": [
+        "It is consolidated total expenditure of the Health programme, in the stated estimate or budget."
+      ]
+    }
+  },
+  "oe-2027-saude-despesa-total-consolidada-variacao": {
+    "nome": {
+      "pt": "Variação da despesa total consolidada do programa Saúde",
+      "en": "Change in consolidated total expenditure of the Health programme"
+    },
+    "frase": {
+      "pt": [
+        "É a variação publicada da despesa total consolidada do programa Saúde."
+      ],
+      "en": [
+        "It is the published change in consolidated total expenditure of the Health programme."
+      ]
+    }
+  }
+});

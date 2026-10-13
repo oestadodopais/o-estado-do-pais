@@ -1,0 +1,48 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "oe-2027-cenario-pib-real-crescimento-2027"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "2,1"
+unit: "%"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "PIB"
+name_source: "Quadro 1, PIB, 2027, p. 9"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Conselho das Finanças Públicas"
+document:
+  title: "Previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027"
+  edition: "2027"
+  locator: "Quadro 1, PIB, 2027, p. 9; segundo excerto na conclusão, p. 20"
+  page: 9
+  kind: "ficheiro"
+  crop:
+    asset: "recortes/oe-2027-cenario-pib-real-crescimento-2027.webp"
+    sha256: "b3a479124eae693a8d94309f5183f6de2ed9d48a2c7b71c48b7ca6f8124cc2df"
+    page: 9
+source_url: "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp-parecer-05-2026.pdf#page=9"
+access_date: "2026-10-13"
+reference_date: "2027"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "PIB                                                       1,9       2,3      2,1\n\nos riscos para o crescimento real apresentam um pendor descendente."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2027"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: Quadro 1, PIB, 2027, p. 9.  Previsão, não execução. O valor e a variação são os impressos na fonte. Segundo excerto: conclusão do Conselho das Finanças Públicas, p. 20. A frase não publica um valor numérico. · Cruzado de ResearchHub content/15 Orcamento do Estado 2027 · oe-2027-cenario-pib-real-crescimento-2027."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -4314,3 +4314,34 @@ As frases já publicadas nas páginas dos concelhos, nas duas edições, e confe
 |---|---|---|---|---|
 | conteudo | 3 208 afirmações · 368 de 3 208 calculadas · 2 767 de 3 208 linhas de concelhos | rp4nj | viva | Contagem lida do HTML construído após a fusão do JD1 e do RP4-n. |
 | conteudo | 3 208 claims · 368 of 3 208 calculated · 2 767 of 3 208 municipality rows | rp4nj | viva | Contagem lida do HTML construído após a fusão do JD1 e do RP4-n. |
+
+## V2-a: frases das fontes da vigilância
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | É a despesa total consolidada do programa Saúde, na estimativa ou no orçamento indicado. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | It is consolidated total expenditure of the Health programme, in the stated estimate or budget. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | É a variação publicada da despesa total consolidada do programa Saúde. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | It is the published change in consolidated total expenditure of the Health programme. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | É a despesa efetiva consolidada do programa Saúde, na estimativa ou no orçamento indicado. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | It is consolidated effective expenditure of the Health programme, in the stated estimate or budget. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | É a variação publicada da despesa efetiva consolidada do programa Saúde. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | It is the published change in consolidated effective expenditure of the Health programme. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | É a despesa efetiva consolidada sem prr do programa Saúde, na estimativa ou no orçamento indicado. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | It is consolidated effective expenditure excluding the rrp of the Health programme, in the stated estimate or budget. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | É a variação publicada da despesa efetiva consolidada sem prr do programa Saúde. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | It is the published change in consolidated effective expenditure excluding the rrp of the Health programme. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | É o valor previsto para encargos brutos do setor rodoviário no quadro das parcerias público-privadas. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | It is the projected value for road sector gross charges in the public-private partnership table. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | É o valor previsto para receitas do setor rodoviário no quadro das parcerias público-privadas. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | It is the projected value for road sector revenue in the public-private partnership table. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | É o valor previsto para encargos líquidos do setor rodoviário no quadro das parcerias público-privadas. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | It is the projected value for road sector net charges in the public-private partnership table. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | É o valor previsto para total dos encargos líquidos das parcerias público-privadas no quadro das parcerias público-privadas. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | It is the projected value for total net public-private partnership charges in the public-private partnership table. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | É a taxa de crescimento real do produto interno bruto no cenário de previsões macroeconómicas. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | It is the real gross domestic product growth rate in the macroeconomic forecast scenario. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | É a taxa do índice harmonizado de preços no consumidor no cenário de previsões macroeconómicas. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | It is the harmonised index of consumer prices rate in the macroeconomic forecast scenario. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | É o valor publicado na afirmação citada, com a atribuição que o documento apresenta. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |
+| conteudo | It is the value published in the quoted statement, with the attribution given by the document. | v2a | viva | Frase das famílias, com os apoios na auditoria K17. |

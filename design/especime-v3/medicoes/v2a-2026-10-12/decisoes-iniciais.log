@@ -1,0 +1,47 @@
+não se leu o ficheiro pedido src/views/ClaimView.astro: git show HEAD:src/views/ClaimView.astro: fatal: path 'src/views/ClaimView.astro' does not exist in 'HEAD'
+1 ficheiro(s) pedido(s) por ler: a lista acima não vale por eles
+§1.17 · O motivo de uma correção passou a existir nas duas línguas
+    ledger/README.md:759
+§1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    ledger/README.md:639
+    ledger/README.md:70
+§1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    ledger/README.md:240
+    ledger/README.md:564
+    ledger/README.md:813
+§1.32 · O tubo: setenta linhas atravessaram, e o sítio confere-as à chegada
+    ledger/README.md:813
+§1.36 · Os dez defeitos que a medição da confiança encontrou, e o que se fez a cada um
+    ledger/README.md:212
+    ledger/README.md:424
+    ledger/README.md:916
+§1.38 · A ortografia do sítio passa a ser uma só
+    scripts/check-ledger.mjs:1045
+    scripts/check-ledger.mjs:1222
+    scripts/check-ledger.mjs:782
+    scripts/check-ledger.mjs:808
+    scripts/check-ledger.mjs:935
+§1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
+    ledger/README.md:868
+§1.41 · A revisão cruzada do bloco V, e o que ela mudou
+    scripts/check-ledger.mjs:806
+§1.44 · A revisão cruzada da identidade v2
+    ledger/README.md:570
+§1.46 · A leitura cruzada do bloco da agenda, e a palavra que faltava ao corte
+    scripts/check-ledger.mjs:1071
+§1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
+    ledger/README.md:1051
+    ledger/README.md:1059
+    ledger/README.md:254
+    ledger/README.md:288
+    ledger/README.md:352
+    ledger/README.md:393
+    ledger/README.md:430
+    ledger/README.md:501
+    ledger/README.md:538
+    ledger/README.md:877
+§1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
+    scripts/check-ledger.mjs:507
+12 decisão(ões) citada(s) em 2 ficheiro(s) de texto
+0 ficheiro(s) binário(s) saltado(s)
+conhecido-positivo: a §1.98 lida em scripts/check-lugar.mjs, e o nome que não existe (scripts/leituras/este-ficheiro-nao-existe-p4c.mjs) recusado como ilegível
