@@ -1,0 +1,42 @@
+[
+  {
+    "comando": "npm run check:moldura",
+    "codigo": 1,
+    "mensagem": "bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.52048: Permission denied (1100)"
+  },
+  {
+    "comando": "npm run check:alvos",
+    "codigo": 1,
+    "mensagem": "bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.52063: Permission denied (1100)"
+  },
+  {
+    "comando": "npm run check:indice",
+    "codigo": 1,
+    "mensagem": "bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.52619: Permission denied (1100)"
+  },
+  {
+    "comando": "npm run check:cabeca",
+    "codigo": 1,
+    "mensagem": "bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.52635: Permission denied (1100)"
+  },
+  {
+    "comando": "npm run check:primeira",
+    "codigo": 1,
+    "mensagem": "bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.53376: Permission denied (1100)"
+  },
+  {
+    "comando": "npm run check:leituras",
+    "codigo": 1,
+    "mensagem": "bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.52949: Permission denied (1100)"
+  },
+  {
+    "comando": "npm run check:frases-compostas",
+    "codigo": 1,
+    "mensagem": "bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.53687: Permission denied (1100)"
+  },
+  {
+    "comando": "npm run check:incorporar",
+    "codigo": 1,
+    "mensagem": "bootstrap_check_in org.chromium.Chromium.MachPortRendezvousServer.53739: Permission denied (1100)"
+  }
+]

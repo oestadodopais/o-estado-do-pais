@@ -1,0 +1,34 @@
+{
+  "sitio": [
+    {
+      "sha": "fc12a4e21155f93695d553b4fd033ffd976553a9",
+      "mensagem": "V2-a: receber fontes seladas e conferir afirmações literais"
+    },
+    {
+      "sha": "fd62fb48b38a6bb64f07be44306bac3c57ea3c42",
+      "mensagem": "V2-a: completar o tipo das afirmações e o guião das capturas"
+    },
+    {
+      "sha": "a0e2d67aa82f2bb6b900fb3e5257f44742502792",
+      "mensagem": "V2-a: declarar Portugal como lugar das fontes do OE2027"
+    },
+    {
+      "sha": "7e13add1c2f5da1d87e7d3f1004ee449814dd9a4",
+      "mensagem": "V2-a: declarar o âmbito das fontes na cobertura por área"
+    },
+    {
+      "sha": "e47fed728434cfbe8e1b0d2358cd6c69ba5839af",
+      "mensagem": "V2-a: declarar a língua das fontes e atualizar o inventário das frases"
+    },
+    {
+      "sha": "6618ddb5570a6642e7a3cc04829ab8aac0d7021a",
+      "mensagem": "V2-a: medir as portas dos recibos e atualizar o registo da L1"
+    }
+  ],
+  "motor": [
+    {
+      "sha": "dfeca64d1d53d7af1c776c159c4e4c2044257cd2",
+      "mensagem": "V2-a: selar fontes do OE2027 e afirmações públicas"
+    }
+  ]
+}

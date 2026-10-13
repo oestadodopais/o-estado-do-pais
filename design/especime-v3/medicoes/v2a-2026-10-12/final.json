@@ -1,0 +1,25 @@
+{
+  "brief": "design/observatorio/BRIEF-V2a-as-fontes-da-vigilancia-seladas-no-motor.md",
+  "guiao": "design/observatorio/medidas/BRIEF-V2a.py",
+  "cabeca_lida": "6618ddb5",
+  "medidas": [
+    {
+      "nome": "linhas_do_livro_na_partida",
+      "valor": 3229,
+      "comando": "git ls-tree -r --name-only 6618ddb5 ledger/claims | grep -c '\\.yml$'",
+      "conhecido_positivo": {
+        "o_que": "a linha agua-nao-faturada-portugal-2024.yml está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_que_citam_o_oe2027_na_partida",
+      "valor": 18,
+      "comando": "git grep -l -i -e oe-2027 -e OE2027 -e 'Orçamento do Estado para 2027' 6618ddb5 -- ledger/claims | wc -l",
+      "conhecido_positivo": {
+        "o_que": "o brief do V2-a, na mesma cabeça, nomeia a linha oe-2027-saude-despesa-total-consolidada-2027 (o detetor vê o padrão onde ele existe)",
+        "encontrado": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+§1.6 · Formatação portuguesa dos números nas duas edições — por agora
+    publisher/export_site_rows.py:423
+§1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    publisher/export_site_rows.py:814
+§1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    publisher/export_site_rows.py:24
+§1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
+    publisher/export_site_rows.py:1054
+§1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
+    core/gate.py:234
+§1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
+    core/gate.py:264
+    core/gate_baselines.json:686
+    core/gate_baselines.json:702
+    core/gate_baselines.json:718
+    core/gate_baselines.json:734
+    core/gate_baselines.json:750
+    core/gate_baselines.json:766
+6 decisão(ões) citada(s) em 56 ficheiro(s) de texto
+20 ficheiro(s) binário(s) saltado(s): content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf, content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf, publisher/recortes/oe-2027-cenario-ihpc-2026.webp, …
+conhecido-positivo: a §1.98 lida em scripts/check-lugar.mjs, e o nome que não existe (scripts/leituras/este-ficheiro-nao-existe-p4c.mjs) recusado como ilegível

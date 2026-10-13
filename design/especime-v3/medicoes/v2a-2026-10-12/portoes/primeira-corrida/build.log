@@ -1,0 +1,1027 @@
+
+> o-estado-do-pais@0.1.0 build
+> npm run mapa:unidades && npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && astro build && npm run stamp:version && npm run cartoes && npm run gate:html && npm run check:datas && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:nomes && npm run check:lingua && npm run check:formato && npm run check:navegacao && npm run sinais
+
+
+> o-estado-do-pais@0.1.0 mapa:unidades
+> node scripts/mapa-unidades.mjs
+
+[32m  ✓ mapa das unidades · [0m29 ficheiros · 308 concelhos · 394 614 B em public/dados/mapa/ · nenhum mudou
+
+> o-estado-do-pais@0.1.0 ledger:check
+> node tests/linha/cadeias-proveniencia.mjs && node scripts/check-ledger.mjs && node tests/linha/historia-da-proveniencia.mjs && node tests/linha/historia-do-valor.mjs && node scripts/check-afirmacoes.mjs
+
+{
+  "controlos": [
+    {
+      "nome": "cadeia de source",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de source_url",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de document.title",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de document.edition",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de document.locator",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de access_date",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de excerpt",
+      "passou": true
+    },
+    {
+      "nome": "instantâneo com as cinco condições",
+      "passou": true
+    },
+    {
+      "nome": "Bandeiras: JSON-stat e formatos anteriores, antes e depois das plantas",
+      "passou": true
+    },
+    {
+      "nome": "Ressalvas e geografias intactas depois das plantas, com bandeiras antigas preservadas",
+      "passou": true
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "source: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "source: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "source: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "source_url: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\": o último \"new_value\" é https://fonte.invalid/b, mas a linha declara https://fonte.invalid/c."
+    },
+    {
+      "nome": "source_url: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-03: cadeia contraditória; \"old_value\" é https://fonte.invalid/a, mas antes vigorava https://fonte.invalid/b."
+    },
+    {
+      "nome": "source_url: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "document.title: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.title\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "document.title: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.title\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "document.title: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.title\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "document.edition: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.edition\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "document.edition: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.edition\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "document.edition: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.edition\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "document.locator: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.locator\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "document.locator: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.locator\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "document.locator: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.locator\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "access_date: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"access_date\": o último \"new_value\" é 2026-08-02, mas a linha declara 2026-08-03."
+    },
+    {
+      "nome": "access_date: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"access_date\" a 2026-08-03: cadeia contraditória; \"old_value\" é 2026-08-01, mas antes vigorava 2026-08-02."
+    },
+    {
+      "nome": "access_date: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"access_date\" a 2026-07-31: o acesso não pode ser posterior à mudança que o declara."
+    },
+    {
+      "nome": "excerpt: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"excerpt\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "excerpt: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"excerpt\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "excerpt: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"excerpt\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "documento sem classe ficheiro",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "documento sem lista de ficheiros",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "endereço novo diferente do vigente",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/outro/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "recurso de outro conjunto",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/outro-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "recurso posterior à entrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-203527-9f913853/listagem-de-entidades-prr-20260819.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "ficheiro sem a data do recurso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "razão portuguesa sem endereço",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "razão inglesa sem endereço",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    }
+  ],
+  "bandeiras": [
+    {
+      "nome": "JSON-stat: bandeira junto de outro valor",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: bandeira no índice de outra célula",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: outro país no corpo",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: outro país no pedido",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: outro período",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: valor ausente",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: duas células",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: bandeira retirada",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: significado da bandeira alterado",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: diferença além da precisão float64",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: dimensão repetida",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: bandeira retirada",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: bandeira junto de outro valor",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: outro país no excerto",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: outro país no pedido",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: bandeira fora do fim",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    }
+  ],
+  "ressalvas": [
+    {
+      "nome": "Ressalva: falta a versão inglesa",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-ministerio-saude.yml] \"ressalva_en\" tem de ser texto não vazio; as duas línguas da ressalva são obrigatórias."
+    },
+    {
+      "nome": "Ressalva: texto vazio",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-ministerio-saude.yml] \"ressalva\" tem de ser texto não vazio; as duas línguas da ressalva são obrigatórias."
+    },
+    {
+      "nome": "Ressalva: número inventado",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-ministerio-saude.yml] \"ressalva\" contém o número \"987654321\" sem esse número completo no excerto ou na derivação."
+    },
+    {
+      "nome": "Conta numa linha transcrita sem ressalva",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-ministerio-saude.yml] uma linha transcrita com \"derivation\" exige a ressalva nas duas línguas; a conta não pode explicar o valor publicado."
+    },
+    {
+      "nome": "Conta da ressalva sem a versão inglesa",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-efetiva-administracao-central.yml] uma linha transcrita com \"derivation\" exige a ressalva nas duas línguas; a conta não pode explicar o valor publicado."
+    }
+  ],
+  "geografias": [
+    {
+      "nome": "JSON-stat: linha portuguesa com pedido e corpo de Espanha",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo."
+    },
+    {
+      "nome": "JSON-stat: etiqueta de Espanha sob o código de Portugal",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo."
+    },
+    {
+      "nome": "JSON-stat: edição de outro país",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo."
+    },
+    {
+      "nome": "JSON-stat: agregado sem bandeira com país trocado",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-ue.yml] JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo."
+    }
+  ],
+  "contagens": {
+    "controlos": 10,
+    "plantas": 29,
+    "bandeiras": 16,
+    "ressalvas": 5,
+    "geografias": 4
+  },
+  "erros_do_livro": [],
+  "avisos_do_livro": [
+    "[evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-pago-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-pago-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço."
+  ]
+}
+
+[90m  aritmética · 77 conferência(s): a especificação partilhada com o motor e os estragos plantados num livro-razão de mentira[0m
+  [32m✓[0m os quatro empates a meio, a divisão exata e as duas derivações que o float64 aceitava.
+
+[90m  livro-razão · 3229 afirmações[0m
+
+[33m  10 aviso(s):[0m
+    [33m·[0m [evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-pago-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-pago-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+
+  [32m✓[0m 3229 afirmações válidas · 368 derivadas · 372 com aritmética reavaliada no build · 2080 com o rótulo da fonte
+
+[90m  casas decimais do excerto · 1367 linha(s) lida(s): 117 pelo literal do valor no fim do excerto e 1250 pela forma que o INE publica (1 com o sinal da fonte declarado); 1464 por ler (sem nenhum dos dois), 380 derivada(s) fora da regra · 19 planta(s), 19 certa(s)[0m
+[90m  casas decimais do excerto · linhas do INE sem a forma publicada: 0[0m
+[90m  casas decimais do excerto · 15 linha(s) do INE com o excerto sem o registo da resposta, pelo caminho geral: alentejo-central-poder-de-compra-2023, divida-publica-2024-notificacao-ine-2026-09, divida-publica-2025-notificacao-ine-2026-09, evora-concentracao-vab4-2024, evora-empresas-2024, evora-poder-de-compra-2023, evora-populacao-2021, evora-populacao-2025, evora-vab-empresarial-2024, juros-das-administracoes-publicas-2024, juros-das-administracoes-publicas-2025, pib-nominal-notificacao-setembro-2024, pib-nominal-notificacao-setembro-2025, portugal-concentracao-vab4-2024, saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09[0m
+  [32m✓[0m nenhuma linha sem derivação escreve menos casas decimais do que o excerto da sua fonte.
+  [32m✓[0m 0 marcador(es) «[a verificar]» em notas não publicadas, todos datados e dentro do prazo · 5 plantas apanhadas pelo detetor
+
+[33m  Dívida de proveniência: 4 afirmação(ões) com campos "[a verificar]"[0m
+[90m    evora-prr-aprovado-2026 → excerpt[0m
+[90m    evora-prr-pago-2026 → excerpt[0m
+[90m    evora-prr-vencido-aprovado-2026 → excerpt[0m
+[90m    saldo-natural-portugal-2025 → source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    Isto não impede o build. Impede que se diga que o livro-razão está fechado.[0m
+
+[90m  séries · 35 série(s) de 8607 ponto(s), 24 com marca da fonte · 25 no tempo · 12 linha(s) presa(s) à sua série · 31 planta(s), uma ou mais por regra, vistas a morder[0m
+  [32m✓[0m cada série de países tem os 27 e a União e as gémeas batem como números; cada série no tempo tem a cadência com as lacunas declaradas, cada valor no seu excerto, a derivada refeita, e cada linha presa é o ponto do seu período.
+
+
+[90m  amarra das decisões · 153 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»[0m
+  [32m✓[0m cada texto no ar tem uma decisão registada que o governa, e cada frase que a constituição lhe cita está lá.
+
+[90m  bytes de controlo · 3 de 3 ficheiro(s) sem nenhum · 3 planta(s) vista(s)[0m
+  [32m✓[0m os ficheiros desta régua leem-se como texto, do primeiro byte ao último.
+
+{"controlos":11,"plantas":9,"controlos_integros":11,"plantas_mordidas":9}
+História do valor: 2 controlos e 4 plantas.
+PLANTA excerto alterado: V2A excerto: palavras diferentes do corpo alojado
+PLANTA atribuição trocada: V2A atribuição: difere da autoria no documento
+PLANTA data errada: V2A data: difere da data do documento
+PLANTA porta trocada: V2A porta: difere do pedido registado
+PLANTA valor fora do excerto: V2A valor: não aparece no excerto selado
+V2A: 3 afirmações conferidas, 5 plantas, 0 erros.
+
+> o-estado-do-pais@0.1.0 check:registo
+> node scripts/check-registo.mjs
+
+
+[90m  registo · os números dos documentos que governam, contra a fonte[0m
+
+[90m  os factos, medidos:[0m
+[90m     3229  linhas do livro-razão                                ledger/claims/*.yml[0m
+[90m           2.ª medição: loadClaims({includeWithdrawn:true}).size · subconjunto: as que o painel semanal reconfere = 91[0m
+[90m      308  concelhos com página                                 src/data/municipios.mjs · MUNICIPIOS_COM_PAGINA[0m
+[90m           2.ª medição: src/data/concelhos.gerado.json · linha `municipios-portugal-caop-2025`[0m
+[90m       17  estudos (trabalhos) no arquivo                       src/data/studies.mjs · WORKS[0m
+[90m           uma só fonte · linha `estudos-publicados`[0m
+[90m       25  edições do arquivo                                   src/data/studies.mjs · EDITIONS[0m
+[90m           uma só fonte · linha `edicoes-publicadas`[0m
+[90m       25  documentos alojados                                  studies-src/<slug>/<lingua>.html, declarados em studies-src/manifest.yml[0m
+[90m           2.ª medição: studies-src/manifest.yml · edicoes[0m
+[90m        7  correções publicadas                                 ledger/claims/*.yml · corrections[].kind == 'correcao'[0m
+[90m           uma só fonte · linha `correcoes-publicadas`[0m
+[90m       24  passos da construção                                 package.json · scripts.build[0m
+[90m           uma só fonte[0m
+[90m       17  páginas de leitura (edições com registo de conteúdo) registos/manifest.json[0m
+[90m           uma só fonte[0m
+
+[90m  hoje é 13.10.2026; uma afirmação datada de hoje confere-se como corrente.[0m
+
+  [32m✓[0m VISAO.md                                          2 corrente(s) ·  5 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 7 avaliada(s), chão 4
+[90m      VISAO.md:23 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
+[90m      VISAO.md:23 «2 602 linhas» saltada pela forma (iii-a)[0m
+[90m      VISAO.md:35 «2 975 linhas» saltada pela forma (i) · 22.09.2026[0m
+[90m      VISAO.md:38 «treze estudos» saltada pela forma (i) · 22.09.2026[0m
+[90m      VISAO.md:38 «doze estudos» saltada pela forma (iii-a)[0m
+[90m      VISAO.md:23 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+  [32m✓[0m README.md                                         5 corrente(s) · 10 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 15 avaliada(s), chão 15
+[90m      README.md:30 «quinze passos encadeados» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:42 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:42 «132 linhas» saltada pela forma (iii-a)[0m
+[90m      README.md:246 «oito edições com registo» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:263 «vinte e cinco documentos» saltada pela forma (i) · 01.10.2026[0m
+[90m      README.md:266 «dezoito documentos» saltada pela forma (iii-a)[0m
+[90m      README.md:267 «dezoito edições do arquivo» saltada pela forma (iii-a)[0m
+[90m      README.md:267 «treze trabalhos» saltada pela forma (iii-a)[0m
+[90m      README.md:344 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:344 «132 linhas» saltada pela forma (iii-a)[0m
+[90m      README.md:195 «…ebe `lang` e mais nada; as rotas PT e EN são duas linhas cada. Os dados são partilhados; só as palavr…» distributiva (é por unidade, não é um total): não conferida[0m
+[90m      README.md:61 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:89 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:93 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:97 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:157 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:162 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:194 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:248 «oito edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:327 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:352 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+  [32m✓[0m design/especime-v3/PENDENTES-DO-DIRETOR.md        2 corrente(s) ·  1 datada(s) ·  0 subconjunto(s) ·  1 valor(es) do sítio · 4 avaliada(s), chão 3
+[90m      design/especime-v3/PENDENTES-DO-DIRETOR.md:11 «oito páginas de leitura» saltada pela forma (i) · 24.08.2026[0m
+[90m      design/especime-v3/PENDENTES-DO-DIRETOR.md:23 «uma edição» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      design/especime-v3/PENDENTES-DO-DIRETOR.md:28 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+  [32m✓[0m CLAUDE.md                                         0 corrente(s) ·  0 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 0 avaliada(s), chão 0
+[90m      CLAUDE.md:42 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+  [32m✓[0m design/observatorio/PLANO-fiabilidade-2026-09-02.md  0 corrente(s) ·  1 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 1 avaliada(s), chão 1
+[90m      design/observatorio/PLANO-fiabilidade-2026-09-02.md:11 «32 linhas» saltada pela forma (ii) · 02.09.2026[0m
+
+  [32m✓[0m 8 facto(s) medidos na fonte (3 com segunda medição, 4 reconciliados com a linha que os publica) · 9 afirmação(ões) corrente(s) conferida(s) · 17 datada(s) saltada(s) · 0 subconjunto(s) · 1 valor(es) do sítio com o id ao lado
+[90m        5 documento(s) lidos · 43 unidade(s) no vocabulário do livro-razão · chão total 23 · prosa não se lê: «hoje só `evora`» e «o arquivo vazio» são do check:prosa (F3.1).[0m
+
+
+> o-estado-do-pais@0.1.0 check:cruzamento
+> node scripts/check-cruzamento.mjs
+
+
+[90m  cruzamentos · 3104 linha(s) de origem externa em 8 registo(s) · 2155 com reconferência de programa acrescentada (3077 entrada(s)) · 5 planta(s) vista(s)[0m
+[90m  rótulos da fonte · 2080 de 3229 linha(s) com "name", todas vindas do motor · 3 planta(s) vista(s)[0m
+[90m  séries · 35 linha(s) de série em 1 registo(s) · 4 planta(s) vista(s)[0m
+[90m  cruzamentos · 16 ficheiro(s) inteiro(s) em 8 registo(s) · 5 item(ns) da agenda reconferidos[0m
+[90m    agua-nao-faturada: 1[0m
+[90m    avaliacao-economica-regional-de-portugal-2026: 8[0m
+[90m    concelhos-2026: 2767[0m
+[90m    dominios-2026: 40[0m
+[90m    evora-contas-da-camara-2010-2025: 33[0m
+[90m    evora-economia-e-dinheiro-publico-de-fora-da-camara: 17[0m
+[90m    evora-quem-governou-a-camara-2009-2025: 19[0m
+[90m    oe-2026: 201[0m
+[90m    oe-2027: 18[0m
+
+  [32m✓[0m cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou.
+
+
+> o-estado-do-pais@0.1.0 check:documentos
+> node scripts/check-documentos.mjs
+
+
+[90m  portão dos documentos · 25 edição(ões) no manifesto · 25 em disco[0m
+[90m    · "evora-quinze-anos-cinco-mandatos/pt" não é artefacto: veio de «researchhub» — content/08 Évora Mandates/Évora — Quinze Anos, Cinco Mandatos (pt-PT).html @ afb8bfbcdb200c6547d3f614c3a3c84d35736019[0m
+[90m    · "evora-economia-investidores-portas-abertas-2026/pt" não é artefacto: veio de «researchhub» — content/06 Évora Economy/Évora — Economia, Investidores, Portas Abertas 2026 (pt-PT).html @ 5faeb63f2c581178ff12d4a042df6d9cf09c96b5[0m
+[90m    · "evora-orcamentado-pago-devido-2025/pt" não é artefacto: veio de «researchhub» — content/07 Évora Municipal Accounts/Évora — Orçamentado, Pago, Devido 2025 (pt-PT).html @ addeb8483e97a126f37be2f21ec29b1a0ac21303[0m
+[90m    · "evora-orcamentado-pago-devido-2025/en" não é artefacto: veio de «researchhub» — content/07 Évora Municipal Accounts/Évora — Budgeted, Paid, Owed 2025.html @ addeb8483e97a126f37be2f21ec29b1a0ac21303[0m
+[90m    · "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt" não é artefacto: veio de «researchhub» — content/09 Évora Pelouros/Évora — Os Pelouros, Quem Os Teve, O Que Fizeram (pt-PT).html @ 42578647d01979df0b15af1b4de64f31ffe81022[0m
+[90m    · "evora-prometido-pago-auditado-2026/pt" não é artefacto: veio de «researchhub» — content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ 530e380f8db07eda5b611cee0dc573b0ed908d84[0m
+[90m    · "evora-prometido-pago-auditado-2026/en" não é artefacto: veio de «researchhub» — content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ 530e380f8db07eda5b611cee0dc573b0ed908d84[0m
+[90m    · "penalizacoes-por-reforma-antecipada-2026/pt" não é artefacto: veio de «researchhub» — content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html @ e53a3f2d77b65d72a994b8a8976645c5b9885df2[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/pt" não é artefacto: veio de «researchhub» — content/14 Évora 2027/Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/en" não é artefacto: veio de «researchhub» — content/14 Évora 2027/Évora 2027 — Promised, Panel, Money.html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b[0m
+[90m    · "evora-contas-da-camara-2010-2025/pt" não é artefacto: veio de «researchhub» — content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html @ a8febe004599c0ebcf62d62d6c45487ccf0542d4[0m
+[90m    · "evora-contas-da-camara-2010-2025/en" não é artefacto: veio de «researchhub» — content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.html @ a8febe004599c0ebcf62d62d6c45487ccf0542d4[0m
+[90m    · "evora-quem-governou-a-camara-2009-2025/pt" não é artefacto: veio de «researchhub» — content/17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).html @ 1f1fe1ba4f0d61b9a279f3c6018fcab4abcd1087[0m
+[90m    · "evora-economia-e-dinheiro-publico-de-fora-da-camara/pt" não é artefacto: veio de «researchhub» — content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).html @ 1f1fe1ba4f0d61b9a279f3c6018fcab4abcd1087[0m
+[90m    · "evora-economia-e-dinheiro-publico-de-fora-da-camara/en" não é artefacto: veio de «researchhub» — content/18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.html @ 1f1fe1ba4f0d61b9a279f3c6018fcab4abcd1087[0m
+[90m    · "evora-2027-capital-europeia-da-cultura/pt" não é artefacto: veio de «researchhub» — content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html @ a8febe004599c0ebcf62d62d6c45487ccf0542d4[0m
+[90m    · "evora-2027-capital-europeia-da-cultura/en" não é artefacto: veio de «researchhub» — content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html @ a8febe004599c0ebcf62d62d6c45487ccf0542d4[0m
+[90m  registos de conteúdo · 17 atravessado(s) · D5 correu em 16 e não corre em 1[0m
+[90m    · "avaliacao-economica-regional-de-portugal-2026/pt" · 53 bloco(s) · 411 referência(s) · o D5 não corre: os bytes alojados são um artefacto do claude.ai e a edição que o motor prova é «Technical Source/artifact_pt.html», que o sítio não aloja (DECISIONS §1.64)[0m
+[90m    · "evora-2027-capital-europeia-da-cultura/en" · 134 bloco(s) · 176 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-2027-capital-europeia-da-cultura/pt" · 134 bloco(s) · 176 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/en" · 130 bloco(s) · 190 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/pt" · 130 bloco(s) · 190 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-contas-da-camara-2010-2025/en" · 171 bloco(s) · 486 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-contas-da-camara-2010-2025/pt" · 172 bloco(s) · 486 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-economia-e-dinheiro-publico-de-fora-da-camara/en" · 161 bloco(s) · 530 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-economia-e-dinheiro-publico-de-fora-da-camara/pt" · 161 bloco(s) · 530 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-economia-investidores-portas-abertas-2026/pt" · 49 bloco(s) · 171 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-orcamentado-pago-devido-2025/en" · 87 bloco(s) · 194 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-orcamentado-pago-devido-2025/pt" · 88 bloco(s) · 194 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt" · 138 bloco(s) · 296 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-prometido-pago-auditado-2026/en" · 95 bloco(s) · 324 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-prometido-pago-auditado-2026/pt" · 95 bloco(s) · 324 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-quem-governou-a-camara-2009-2025/pt" · 211 bloco(s) · 484 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-quinze-anos-cinco-mandatos/pt" · 173 bloco(s) · 682 referência(s) · o D5 correu e bate[0m
+
+  [32m✓[0m cada documento alojado e cada registo de conteúdo são, byte a byte, o que o seu manifesto declara.
+
+20:15:18 [types] Generated 61ms
+20:15:18 [build] output: "static"
+20:15:18 [build] mode: "static"
+20:15:18 [build] directory: <worktree>/dist/
+20:15:18 [build] Collecting build info...
+20:15:18 [build] ✓ Completed in 81ms.
+20:15:18 [build] Building static entrypoints...
+20:15:19 [vite] ✓ built in 493ms
+20:15:19 [vite] ✓ built in 24ms
+20:15:19 [build] Rearranging server assets...
+
+ generating static routes 
+20:15:19   ├─ /404.html (+14ms) 
+20:15:19   ├─ /a-verificar/index.html (+2ms) 
+20:15:19   ├─ /agenda/index.html (+42ms) 
+20:15:19   ├─ /areas/financas/index.html (+10ms) 
+20:15:19   ├─ /areas/economia-e-coesao-territorial/index.html (+25ms) 
+20:15:19   ├─ /areas/infraestruturas-e-habitacao/index.html (+7ms) 
+20:15:19   ├─ /areas/justica/index.html (+7ms) 
+20:15:19   ├─ /areas/administracao-interna/index.html (+8ms) 
+20:15:19   ├─ /areas/educacao-ciencia-e-inovacao/index.html (+8ms) 
+20:15:19   ├─ /areas/saude/index.html (+6ms) 
+20:15:19   ├─ /areas/trabalho-solidariedade-e-seguranca-social/index.html (+13ms) 
+20:15:19   ├─ /areas/ambiente-e-energia/index.html (+6ms) 
+20:15:19   ├─ /areas/index.html (+19ms) 
+20:15:19   ├─ /correcoes/index.html (+20ms) 
+20:15:20   ├─ /dados/convergencia.csv (+1ms) 
+20:15:20   ├─ /dados/indicadores-dos-concelhos.csv (+6ms) 
+20:15:20   ├─ /dados/livro-indice.en.json (+6ms) 
+20:15:20   ├─ /dados/livro-indice.pt.json (+4ms) 
+20:15:20   ├─ /dados/municipios-308.csv (+1ms) 
+20:15:20   ├─ /distritos/aveiro/index.html (+2ms) 
+20:15:20   ├─ /distritos/beja/index.html (+1ms) 
+20:15:20   ├─ /distritos/braga/index.html (+1ms) 
+20:15:20   ├─ /distritos/braganca/index.html (+1ms) 
+20:15:20   ├─ /distritos/castelo-branco/index.html (+1ms) 
+20:15:20   ├─ /distritos/coimbra/index.html (+1ms) 
+20:15:20   ├─ /distritos/evora/index.html (+1ms) 
+20:15:20   ├─ /distritos/faro/index.html (+1ms) 
+20:15:20   ├─ /distritos/guarda/index.html (+1ms) 
+20:15:20   ├─ /distritos/ilha-da-graciosa/index.html (+1ms) 
+20:15:20   ├─ /distritos/ilha-da-madeira/index.html (+1ms) 
+20:15:20   ├─ /distritos/ilha-das-flores/index.html (+1ms) 
+20:15:20   ├─ /distritos/ilha-de-porto-santo/index.html (+0ms) 
+20:15:20   ├─ /distritos/ilha-de-santa-maria/index.html (+0ms) 
+20:15:20   ├─ /distritos/ilha-de-sao-jorge/index.html (+1ms) 
+20:15:20   ├─ /distritos/ilha-de-sao-miguel/index.html (+1ms) 
+20:15:20   ├─ /distritos/ilha-do-corvo/index.html (+0ms) 
+20:15:20   ├─ /distritos/ilha-do-faial/index.html (+1ms) 
+20:15:20   ├─ /distritos/ilha-do-pico/index.html (+1ms) 
+20:15:20   ├─ /distritos/ilha-terceira/index.html (+0ms) 
+20:15:20   ├─ /distritos/leiria/index.html (+0ms) 
+20:15:20   ├─ /distritos/lisboa/index.html (+1ms) 
+20:15:20   ├─ /distritos/portalegre/index.html (+0ms) 
+20:15:20   ├─ /distritos/porto/index.html (+1ms) 
+20:15:20   ├─ /distritos/santarem/index.html (+1ms) 
+20:15:20   ├─ /distritos/setubal/index.html (+1ms) 
+20:15:20   ├─ /distritos/viana-do-castelo/index.html (+1ms) 
+20:15:20   ├─ /distritos/vila-real/index.html (+0ms) 
+20:15:20   ├─ /distritos/viseu/index.html (+0ms) 
+20:15:20   ├─ /educacao-e-saude/index.html (+4ms) 
+20:15:20   ├─ /emprego/index.html (+6ms) 
+20:15:20   ├─ /en/404/index.html (+1ms) 
+20:15:20   ├─ /en/about/index.html (+1ms) 
+20:15:20   ├─ /en/agenda/index.html (+16ms) 
+20:15:20   ├─ /en/areas/financas/index.html (+6ms) 
+20:15:20   ├─ /en/areas/economia-e-coesao-territorial/index.html (+20ms) 
+20:15:20   ├─ /en/areas/infraestruturas-e-habitacao/index.html (+7ms) 
+20:15:20   ├─ /en/areas/justica/index.html (+6ms) 
+20:15:20   ├─ /en/areas/administracao-interna/index.html (+6ms) 
+20:15:20   ├─ /en/areas/educacao-ciencia-e-inovacao/index.html (+6ms) 
+20:15:20   ├─ /en/areas/saude/index.html (+5ms) 
+20:15:20   ├─ /en/areas/trabalho-solidariedade-e-seguranca-social/index.html (+10ms) 
+20:15:20   ├─ /en/areas/ambiente-e-energia/index.html (+6ms) 
+20:15:20   ├─ /en/areas/index.html (+16ms) 
+20:15:20   ├─ /en/corrections/index.html (+15ms) 
+20:15:20   ├─ /en/districts/aveiro/index.html (+1ms) 
+20:15:20   ├─ /en/districts/beja/index.html (+0ms) 
+20:15:20   ├─ /en/districts/braga/index.html (+0ms) 
+20:15:20   ├─ /en/districts/braganca/index.html (+0ms) 
+20:15:20   ├─ /en/districts/castelo-branco/index.html (+0ms) 
+20:15:20   ├─ /en/districts/coimbra/index.html (+0ms) 
+20:15:20   ├─ /en/districts/evora/index.html (+0ms) 
+20:15:20   ├─ /en/districts/faro/index.html (+0ms) 
+20:15:20   ├─ /en/districts/guarda/index.html (+0ms) 
+20:15:20   ├─ /en/districts/ilha-da-graciosa/index.html (+0ms) 
+20:15:20   ├─ /en/districts/ilha-da-madeira/index.html (+1ms) 
+20:15:20   ├─ /en/districts/ilha-das-flores/index.html (+0ms) 
+20:15:20   ├─ /en/districts/ilha-de-porto-santo/index.html (+0ms) 
+20:15:20   ├─ /en/districts/ilha-de-santa-maria/index.html (+0ms) 
+20:15:20   ├─ /en/districts/ilha-de-sao-jorge/index.html (+1ms) 
+20:15:20   ├─ /en/districts/ilha-de-sao-miguel/index.html (+0ms) 
+20:15:20   ├─ /en/districts/ilha-do-corvo/index.html (+1ms) 
+20:15:20   ├─ /en/districts/ilha-do-faial/index.html (+0ms) 
+20:15:20   ├─ /en/districts/ilha-do-pico/index.html (+0ms) 
+20:15:20   ├─ /en/districts/ilha-terceira/index.html (+0ms) 
+20:15:20   ├─ /en/districts/leiria/index.html (+0ms) 
+20:15:20   ├─ /en/districts/lisboa/index.html (+0ms) 
+20:15:20   ├─ /en/districts/portalegre/index.html (+0ms) 
+20:15:20   ├─ /en/districts/porto/index.html (+0ms) 
+20:15:20   ├─ /en/districts/santarem/index.html (+0ms) 
+20:15:20   ├─ /en/districts/setubal/index.html (+0ms) 
+20:15:20   ├─ /en/districts/viana-do-castelo/index.html (+0ms) 
+20:15:20   ├─ /en/districts/vila-real/index.html (+0ms) 
+20:15:20   ├─ /en/districts/viseu/index.html (+0ms) 
+20:15:20   ├─ /en/education-and-health/index.html (+3ms) 
+20:15:20   ├─ /en/employment/index.html (+5ms) 
+20:15:20   ├─ /en/european-union/index.html (+28ms) 
+20:15:20   ├─ /en/explainers/weekly-reading/index.html (+4ms) 
+20:15:20   ├─ /en/explainers/dinheiro-do-estado-2026/index.html (+6ms) 
+20:15:20   ├─ /en/explainers/index.html (+4ms) 
+20:15:20   ├─ /en/housing/index.html (+7ms) 
+20:15:20   ├─ /en/index/index.html (+32ms) 
+20:15:20   ├─ /en/ledger/municipalities/evora/index.html (+3ms) 
+20:15:20   ├─ /en/ledger/municipalities/agueda/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/albergaria-a-velha/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/anadia/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/arouca/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/aveiro/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/castelo-de-paiva/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/espinho/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/estarreja/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/santa-maria-da-feira/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/ilhavo/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/mealhada/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/murtosa/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/oliveira-de-azemeis/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/oliveira-do-bairro/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/ovar/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/sao-joao-da-madeira/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/sever-do-vouga/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vagos/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/vale-de-cambra/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/aljustrel/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/almodovar/index.html (+3ms) 
+20:15:20   ├─ /en/ledger/municipalities/alvito/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/barrancos/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/beja/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/castro-verde/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/cuba/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/ferreira-do-alentejo/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/mertola/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/moura/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/odemira/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/ourique/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/serpa/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vidigueira/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/amares/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/barcelos/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/braga/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/cabeceiras-de-basto/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/celorico-de-basto/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/esposende/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/fafe/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/guimaraes/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/povoa-de-lanhoso/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/terras-de-bouro/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/vieira-do-minho/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-nova-de-famalicao/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-verde/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vizela/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/alfandega-da-fe/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/braganca/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/carrazeda-de-ansiaes/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/freixo-de-espada-a-cinta/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/macedo-de-cavaleiros/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/miranda-do-douro/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/mirandela/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/mogadouro/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/torre-de-moncorvo/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-flor/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/vimioso/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/vinhais/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/belmonte/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/castelo-branco/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/covilha/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/fundao/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/idanha-a-nova/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/oleiros/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/penamacor/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/proenca-a-nova/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/serta/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-de-rei/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-velha-de-rodao/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/arganil/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/cantanhede/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/coimbra/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/condeixa-a-nova/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/figueira-da-foz/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/gois/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/lousa/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/mira/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/miranda-do-corvo/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/montemor-o-velho/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/oliveira-do-hospital/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/pampilhosa-da-serra/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/penacova/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/penela/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/soure/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/tabua/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-nova-de-poiares/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/alandroal/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/arraiolos/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/borba/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/estremoz/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/montemor-o-novo/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/mora/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/mourao/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/portel/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/redondo/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/reguengos-de-monsaraz/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vendas-novas/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/viana-do-alentejo/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-vicosa/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/albufeira/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/alcoutim/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/aljezur/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/castro-marim/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/faro/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/lagoa-faro/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/lagos/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/loule/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/monchique/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/olhao/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/portimao/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/sao-bras-de-alportel/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/silves/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/tavira/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-do-bispo/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-real-de-santo-antonio/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/aguiar-da-beira/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/almeida/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/celorico-da-beira/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/figueira-de-castelo-rodrigo/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/fornos-de-algodres/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/gouveia/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/guarda/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/manteigas/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/meda/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/pinhel/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/sabugal/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/seia/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/trancoso/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-nova-de-foz-coa/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/alcobaca/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/alvaiazere/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/ansiao/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/batalha/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/bombarral/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/caldas-da-rainha/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/castanheira-de-pera/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/figueiro-dos-vinhos/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/leiria/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/marinha-grande/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/nazare/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/obidos/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/pedrogao-grande/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/peniche/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/pombal/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/porto-de-mos/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/alenquer/index.html (+3ms) 
+20:15:20   ├─ /en/ledger/municipalities/arruda-dos-vinhos/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/azambuja/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/cadaval/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/cascais/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/lisboa/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/loures/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/lourinha/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/mafra/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/oeiras/index.html (+3ms) 
+20:15:20   ├─ /en/ledger/municipalities/sintra/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/sobral-de-monte-agraco/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/torres-vedras/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-franca-de-xira/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/amadora/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/odivelas/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/alter-do-chao/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/arronches/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/avis/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/campo-maior/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/castelo-de-vide/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/crato/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/elvas/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/fronteira/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/gaviao/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/marvao/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/monforte/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/nisa/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/ponte-de-sor/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/portalegre/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/sousel/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/amarante/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/baiao/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/felgueiras/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/gondomar/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/lousada/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/maia/index.html (+3ms) 
+20:15:20   ├─ /en/ledger/municipalities/marco-de-canaveses/index.html (+16ms) 
+20:15:20   ├─ /en/ledger/municipalities/matosinhos/index.html (+3ms) 
+20:15:20   ├─ /en/ledger/municipalities/pacos-de-ferreira/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/paredes/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/penafiel/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/porto/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/povoa-de-varzim/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/santo-tirso/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/valongo/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-do-conde/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-nova-de-gaia/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/trofa/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/abrantes/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/alcanena/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/almeirim/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/alpiarca/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/benavente/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/cartaxo/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/chamusca/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/constancia/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/coruche/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/entroncamento/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/ferreira-do-zezere/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/golega/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/macao/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/rio-maior/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/salvaterra-de-magos/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/santarem/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/sardoal/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/tomar/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/torres-novas/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-nova-da-barquinha/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/ourem/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/alcacer-do-sal/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/alcochete/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/almada/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/barreiro/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/grandola/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/moita/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/montijo/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/palmela/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/santiago-do-cacem/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/seixal/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/sesimbra/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/setubal/index.html (+3ms) 
+20:15:20   ├─ /en/ledger/municipalities/sines/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/arcos-de-valdevez/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/caminha/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/melgaco/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/moncao/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/paredes-de-coura/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/ponte-da-barca/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/ponte-de-lima/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/valenca/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/viana-do-castelo/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-nova-de-cerveira/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/alijo/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/boticas/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/chaves/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/mesao-frio/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/mondim-de-basto/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/montalegre/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/murca/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/peso-da-regua/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/ribeira-de-pena/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/sabrosa/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/santa-marta-de-penaguiao/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/valpacos/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-pouca-de-aguiar/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-real/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/armamar/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/carregal-do-sal/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/castro-daire/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/cinfaes/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/lamego/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/mangualde/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/moimenta-da-beira/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/mortagua/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/nelas/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/oliveira-de-frades/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/penalva-do-castelo/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/penedono/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/resende/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/santa-comba-dao/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/sao-joao-da-pesqueira/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/sao-pedro-do-sul/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/satao/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/sernancelhe/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/tabuaco/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/tarouca/index.html (+3ms) 
+20:15:20   ├─ /en/ledger/municipalities/tondela/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-nova-de-paiva/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/viseu/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vouzela/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/calheta/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/camara-de-lobos/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/funchal/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/machico/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/ponta-do-sol/index.html (+3ms) 
+20:15:20   ├─ /en/ledger/municipalities/porto-moniz/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/ribeira-brava/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/santa-cruz/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/santana/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/sao-vicente/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/porto-santo/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-do-porto/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/lagoa-ilha-de-sao-miguel/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/nordeste/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/ponta-delgada/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/povoacao/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/ribeira-grande/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/vila-franca-do-campo/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/angra-do-heroismo/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/praia-da-vitoria/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/santa-cruz-da-graciosa/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/calheta-de-sao-jorge/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/velas/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/lajes-do-pico/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/madalena/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/sao-roque-do-pico/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/municipalities/horta/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/lajes-das-flores/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/santa-cruz-das-flores/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/corvo/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/municipalities/index.html (+22ms) 
+20:15:20   ├─ /en/ledger/series/desemprego-de-longa-duracao-2025-paises/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/series/divida-publica-2025-paises/index.html (+8ms) 
+20:15:20   ├─ /en/ledger/series/ihpc-variacao-homologa-paises/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/series/precos-da-habitacao-2025-paises/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/series/racio-s80-s20-2025-paises/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/series/risco-de-pobreza-ou-exclusao-2025-paises/index.html (+50ms) 
+20:15:20   ├─ /en/ledger/series/sobrecarga-do-custo-da-habitacao-2025-paises/index.html (+8ms) 
+20:15:20   ├─ /en/ledger/series/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises/index.html (+2ms) 
+20:15:20   ├─ /en/ledger/series/taxa-de-desemprego-mip-2025-paises/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/series/taxa-de-emprego-2025-paises/index.html (+1ms) 
+20:15:20   ├─ /en/ledger/series/serie-beneficiarios-do-rsi-por-mil/index.html (+3ms) 
+20:15:20   ├─ /en/ledger/series/serie-cem-euros-de-2015-01/index.html (+5ms) 
+20:15:20   ├─ /en/ledger/series/serie-ihpc-combustiveis-variacao-homologa-ue/index.html (+11ms) 
+20:15:20   ├─ /en/ledger/series/serie-ihpc-combustiveis-variacao-homologa/index.html (+12ms) 
+20:15:20   ├─ /en/ledger/series/serie-ihpc-energia-da-casa-variacao-homologa/index.html (+12ms) 
+20:15:20   ├─ /en/ledger/series/serie-ihpc-rendas-variacao-homologa/index.html (+11ms) 
+20:15:20   ├─ /en/ledger/series/serie-ihpc-variacao-homologa-ue/index.html (+10ms) 
+20:15:20   ├─ /en/ledger/series/serie-ihpc-variacao-homologa/index.html (+10ms) 
+20:15:20   ├─ /en/ledger/series/serie-ipc-alimentacao-variacao-homologa/index.html (+13ms) 
+20:15:20   ├─ /en/ledger/series/serie-ipc-combustiveis-variacao-homologa/index.html (+31ms) 
+20:15:20   ├─ /en/ledger/series/serie-ipc-energia-em-casa-variacao-homologa/index.html (+30ms) 
+20:15:21   ├─ /en/ledger/series/serie-ipc-indice-anual/index.html (+3ms) 
+20:15:21   ├─ /en/ledger/series/serie-ipc-indice/index.html (+30ms) 
+20:15:21   ├─ /en/ledger/series/serie-ipc-rendas-variacao-homologa/index.html (+30ms) 
+20:15:21   ├─ /en/ledger/series/serie-ipc-sem-habitacao-variacao-media-12-meses/index.html (+12ms) 
+20:15:21   ├─ /en/ledger/series/serie-ipc-variacao-homologa/index.html (+14ms) 
+20:15:21   ├─ /en/ledger/series/serie-ipc-variacao-media-12-meses/index.html (+12ms) 
+20:15:21   ├─ /en/ledger/series/serie-linha-de-risco-de-pobreza/index.html (+3ms) 
+20:15:21   ├─ /en/ledger/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade/index.html (+14ms) 
+20:15:21   ├─ /en/ledger/series/serie-pensao-media-anual/index.html (+2ms) 
+20:15:21   ├─ /en/ledger/series/serie-precos-da-habitacao-variacao-homologa/index.html (+3ms) 
+20:15:21   ├─ /en/ledger/series/serie-remuneracao-bruta-mensal-media-anual/index.html (+2ms) 
+20:15:21   ├─ /en/ledger/series/serie-remuneracao-bruta-mensal-media-real/index.html (+1ms) 
+20:15:21   ├─ /en/ledger/series/serie-remuneracao-bruta-mensal-media/index.html (+1ms) 
+20:15:21   ├─ /en/ledger/series/serie-salario-minimo-mensal/index.html (+2ms) 
+20:15:21   ├─ /en/ledger/abandono-escolar-precoce-2024/index.html (+10ms) 
+20:15:21   ├─ /en/ledger/abandono-escolar-precoce-2025/index.html (+2ms) 
+20:15:21   ├─ /en/ledger/abandono-escolar-precoce-2025-ue/index.html (+1ms) 
+20:15:21   ├─ /en/ledger/abrantes-desemprego-registado-2025-12/index.html (+1ms) 
+20:15:21   ├─ /en/ledger/abrantes-divida-dgal-2024/index.html (+1ms) 
+20:15:21   ├─ /en/ledger/abrantes-empresas-2024/index.html (+1ms) 
+20:15:21   ├─ /en/ledger/abrantes-ganho-medio-mensal-2024/index.html (+1ms) 
+20:15:21   ├─ /en/ledger/abrantes-indice-de-divida-2024/index.html (+1ms) 
+20:15:21   ├─ /en/ledger/abrantes-limite-divida-dgal-2024/index.html (+1ms) 
+20:15:21   ├─ /en/ledger/abrantes-poder-de-compra-2023/index.html (+2ms) 
+20:15:21   ├─ /en/ledger/abrantes-populacao-2025/index.html (+1ms) 
+20:15:21   ├─ /en/ledger/abrantes-prazo-medio-de-pagamento-2025-12/index.html (+1ms) 
+20:15:21   ├─ /en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html20:15:21 [ERROR] Error: ER1 lugar: a linha afirmacao-leitao-amaro-saude-oe2027-2026-10-09 não tem lugar declarado.
+    at lugarDaIncorporacao (file://<worktree>/dist/.prerender/chunks/conjunto_B_SVeD7K.mjs:163:8)
+    at dadosDaIncorporacao (file://<worktree>/dist/.prerender/chunks/conjunto_B_SVeD7K.mjs:195:16)
+    at codigoDaIncorporacao (file://<worktree>/dist/.prerender/chunks/conjunto_B_SVeD7K.mjs:219:12)
+    at default (file://<worktree>/dist/.prerender/chunks/LinhaView_CPPId9mI.mjs:642:1485)
+    at renderFragmentComponent (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:2347:28)
+    at renderComponent (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:2376:45)
+    at Object.default (file://<worktree>/dist/.prerender/chunks/LinhaView_CPPId9mI.mjs:642:1182)
+    at new AstroComponentInstance (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:1694:27)
+    at createAstroComponentInstance (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:1731:19)
+    at renderAstroComponent (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:2367:19)
+20:15:21 [ERROR] [build] Caught error rendering /en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09: Error: ER1 lugar: a linha afirmacao-leitao-amaro-saude-oe2027-2026-10-09 não tem lugar declarado.
+ER1 lugar: a linha afirmacao-leitao-amaro-saude-oe2027-2026-10-09 não tem lugar declarado.
+  Stack trace:
+    at lugarDaIncorporacao (file://<worktree>/dist/.prerender/chunks/conjunto_B_SVeD7K.mjs:163:8)
+    at codigoDaIncorporacao (file://<worktree>/dist/.prerender/chunks/conjunto_B_SVeD7K.mjs:219:12)
+    at renderFragmentComponent (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:2347:28)
+    at Object.default (file://<worktree>/dist/.prerender/chunks/LinhaView_CPPId9mI.mjs:642:1182)
+    at createAstroComponentInstance (file://<worktree>/dist/.prerender/chunks/server_DTCS7PMV.mjs:1731:19)

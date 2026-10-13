@@ -1,0 +1,20 @@
+{
+  "cabeca": "6618ddb5570a6642e7a3cc04829ab8aac0d7021a",
+  "paginas": [
+    {
+      "nome": "saude-total",
+      "pt": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027/",
+      "en": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027/"
+    },
+    {
+      "nome": "ppp-liquidos",
+      "pt": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/",
+      "en": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/"
+    },
+    {
+      "nome": "afirmacao-pcp",
+      "pt": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/",
+      "en": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/"
+    }
+  ]
+}
