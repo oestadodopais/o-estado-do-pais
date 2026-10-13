@@ -72,7 +72,7 @@ Os caminhos abreviados `medicoes/` pertencem a `design/especime-v3/`.
 | EX1-13 | Corrigida | No mesmo ficheiro, saiu a indicação posicional e ficaram explícitos os perímetros das contas. |
 | EX1-14 | Corrigida | No mesmo ficheiro, o ramo negativo diz défice com o saldo entre parênteses; `tests/explicacoes/explicacao.mjs` planta o duplo negativo nas duas línguas; `ex1.json`. |
 | RP4N-12 | Corrigida | Briefs M4 e auditoria UX anonimizados; `medicoes/extrai_fontes.py` exige `RESEARCHHUB_DIR`. |
-| RP4N-13 | Corrigida | `src/lib/livro.mjs` omite campos por confirmar na descrição; `scripts/sem-marcadores.mjs` protege os dois metadados, com plantas. A referência ao marcador no título da página que o explica mantém-se. |
+| RP4N-13 | Corrigida | `src/lib/livro.mjs` omite as marcas e declara os campos da proveniência por confirmar na descrição; `scripts/sem-marcadores.mjs` protege os dois metadados, com plantas. A referência ao marcador no título da página que o explica mantém-se. |
 | RP4N-19 | Corrigida | `medicoes/rp4n-2026-10-06/privacidade-i.py` recolhe mensagens do controlo real. `rp4n-19.json`: dois controlos históricos e quatro mutações recusadas. |
 | RP4N-20 | Corrigida | `design/especime-v3/INVENTARIO-FRASES.md`, C1e: rótulo e ausência de leitura na fonte incluídos, com o âmbito das cópias alojadas. |
 | RP4N-21 | Corrigida | `src/data/figuras.mjs`, `OrigemDaDefinicao.astro` e `verbatim.mjs`: legendas distintas, transcritas dos três excertos. A conferência das famílias e as plantas protegem-nas. |
@@ -83,7 +83,7 @@ Os caminhos abreviados `medicoes/` pertencem a `design/especime-v3/`.
 | JD1-15 | Corrigida | `src/lib/frases-jd1.mjs`: a comparação tem verbo e a parcela deixa de repetir a definição. Os valores continuam por tokens. |
 | JD1-16 | Corrigida | Gerador JD1, família publicada e auditoria usam a exclusão literal do INE em `jd1-ine-contas`. |
 | JD1-17 | Já resolvida na cabeça recebida | `jd1-17.json` e `jd1-17-proveniencia.json` conferem o nome e o título documental em trinta recibos: vinte e seis de medidas publicadas mostram o rótulo da fonte; quatro de medidas derivadas não atribuem à fonte uma medida da casa. |
-| V1-39 | Corrigida | `medicoes/v1-2026-10-07/medir_v1d.py` lê os dois recibos gravados e os seus resumos criptográficos. O relatório e `d/novidade-dar.json` já não apresentam simulação como prova real. |
+| V1-39 | Parcial | `medicoes/v1-2026-10-07/medir_v1d.py` lê os dois recibos gravados e os seus resumos criptográficos. O relatório e `d/novidade-dar.json` já não apresentam simulação como prova real. Nas duas corridas reais o DAR não teve novidades nem revisões; a aritmética do achado 7 fica por provar com uma corrida que as tenha. |
 | V1-40 | Corrigida | `vigilancia/diario.py` rotula as três linhas de arrumação. Suite de vigilância: 66 testes passaram. |
 | V1-41 | Conservada | Fechada pela M78, não tocada. |
 | JD1-9, RP4N-16, §2 | Correções feitas; exclusões identificadas | Inventário de todos os ficheiros seguidos, alterações e ocorrências remanescentes nos JSON `motor-caminhos-*.json`. |
@@ -114,6 +114,8 @@ HIG-10: o cliente do escrivão desistiu durante o hook do motor. Não se duplico
 HIG-11: o primeiro hook do motor recusou `publisher.export_site_rows_test` por `KeyError: 'RESEARCHHUB_TRANSCRIPT'`. A variável passou a ser opcional na importação; sem transcrição, o extrator conserva a ausência de endereços resolvidos. A prova está em `motor-hook-tentativa-1.json`. A suite afetada passou na cópia versionada e na worktree desta passagem; a repetição do hook aceitou `759c22a7`. O hook da limpeza aceitou `6bd8b70a`. Ambos terminaram em `GATE: PASS`.
 
 HIG-12: a primeira tentativa final em `depois/` terminou com construção 1, verificação 125, tipos 0 e motor 0, lidos dos ficheiros. A voz recusou `PALAVRA PROIBIDA «incluído em» em 2 página(s) da superfície.` pela expressão inglesa `included in`. A frase passou a `counted in`, sem alterar o apoio do INE nem os valores; a régua não foi alterada. As conferências isoladas dos cartões e das explicações passaram nesta construção. A repetição final usa uma pasta nova.
+
+HIG-20: a primeira chamada dos portões da passagem b devolveu 9: `portoes: árvore suja; registe as mudanças antes de conferir a cabeça do código`. O relatório e as provas preparatórias estavam por comitar. Nenhum dos quatro portões correu e nenhum código individual foi escrito em `depois-b/`. Registar essas mudanças e repetir numa pasta nova; `b/portoes-tentativa-1.json` conserva a recusa. A tranca de outra corrida foi observada, mas não prova que este pedido tenha esperado por ela.
 
 ## Caminhos do motor
 
@@ -299,6 +301,6 @@ As capturas foram comitadas primeiro, em `f88f4f52e465a3371e172b12640ba002e70dd6
 
 * EX1-11: selar e publicar o saldo homólogo exige um número novo, fora do §4 desta passagem.
 * Os dois ficheiros protegidos em `sweeps/`, identificados em `motor-caminhos-depois.json`, ficam para a direção.
-* O escrivão deixa de atualizar o sinal de vida enquanto executa o hook de um commit; o cliente termina cedo. Os resultados finais foram lidos nos pedidos originais, sem duplicação.
+* A aritmética do achado 7 da V1 precisa de uma corrida com novidades ou revisões do DAR. A V1-39 fica parcial.
 
 A linha «tokens used» não foi exposta nesta sessão. Os pontos da semana são medidos pelo lançador.
