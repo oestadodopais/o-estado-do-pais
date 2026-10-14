@@ -363,8 +363,8 @@
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
       "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "cliente": "core.http.HttpClient.condicional",
-      "documento": "Orçamento do Estado para 2027, p. 302 do PDF (286 impressa)",
-      "documento_en": "Budget report for 2027, PDF p. 302 (printed 286)",
+      "documento": "Orçamento do Estado para 2027",
+      "documento_en": "Budget report for 2027",
       "publicador_en": "Ministry of Finance"
     },
     "v2a-prr-ciclo": {
@@ -376,23 +376,50 @@
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
       "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "cliente": "core.http.HttpClient.condicional",
-      "documento": "Orçamento do Estado para 2027, p. 31 do PDF (15 impressa)",
-      "documento_en": "Budget report for 2027, PDF p. 31 (printed 15)",
+      "documento": "Orçamento do Estado para 2027",
+      "documento_en": "Budget report for 2027",
       "publicador_en": "Ministry of Finance"
     },
     "v2a-ppp-conta": {
       "pagina_pdf": 124,
       "pagina_impressa": 108,
-      "excerto": "No setor rodoviário, os encargos líquidos plurianuais apresentados foram estimados com base no quadro remuneratório aplicável. Para esse efeito, foram considerados os respetivos fluxos financeiros, designadamente os encargos e as receitas, cujas principais componentes são as seguintes.",
+      "excerto": "No setor rodoviário, os encargos líquidos plurianuais apresentados foram estimados com base no quadro remuneratório aplicável. Para esse efeito, foram considerados os respetivos fluxos financeiros, designadamente os encargos e as receitas, cujas principais componentes são as seguintes. • Pagamentos pela disponibilidade das vias, ajustados em função de eventuais deduções e penalidades previstas contratualmente; • Pagamentos por serviço, cuja remuneração se encontra indexada ao volume de tráfego registado; • Gastos associados ao serviço de cobrança de taxas de portagem; • Encargos suportados pelo parceiro público com a realização de grandes reparações de pavimentos, conforme o modelo de financiamento contratualmente previsto; • Outros gastos, designadamente os decorrentes de compensações a pagar a parceiros privados no âmbito de processos de reposição do equilíbrio financeiro e de decisões judiciais, quando aplicável. • Receitas oriundas da cobrança de taxas de portagem nas parcerias com vias portajadas, com exceção das parcerias em que a titularidade destas receitas pertence ao respetivo parceiro privado; • Outras receitas, designadamente as decorrentes de mecanismos de partilha de benefícios ou de receitas contratualmente previstas, bem como dos pagamentos fixos efetuados pelas subconcessionárias ao parceiro público, quando aplicável.",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
       "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "cliente": "core.http.HttpClient.condicional",
-      "documento": "Orçamento do Estado para 2027, p. 124 do PDF (108 impressa)",
-      "documento_en": "Budget report for 2027, PDF p. 124 (printed 108)",
+      "documento": "Orçamento do Estado para 2027",
+      "documento_en": "Budget report for 2027",
+      "publicador_en": "Ministry of Finance"
+    },
+    "v2a-total-efetiva": {
+      "pagina_pdf": 145,
+      "pagina_impressa": 129,
+      "excerto": "A despesa total efetiva exclui ativos e passivos financeiros e transferências do Orçamento do Estado para entidades com autonomia financeira. A despesa total inclui ativos e passivos financeiros e exclui transferências do Orçamento do Estado para entidades com autonomia financeira.",
+      "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+      "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+      "cliente": "core.http.HttpClient.condicional",
+      "documento": "Orçamento do Estado para 2027",
+      "documento_en": "Budget report for 2027",
       "publicador_en": "Ministry of Finance",
-      "quadro": "4.25"
+      "quadro": "4.38"
+    },
+    "v2a-saude-consolidada": {
+      "pagina_pdf": 303,
+      "pagina_impressa": 287,
+      "excerto": "Nota: O presente quadro exclui, nas rubricas de vendas e aquisição de bens e serviços, juros, transferências, subsídios, ativos e passivos financeiros provenientes e destinados a entidades do Pograma Legado.",
+      "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+      "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+      "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "acedido_em": "2026-10-13T18:47:56.980564+00:00",
+      "cliente": "core.http.HttpClient.condicional",
+      "documento": "Orçamento do Estado para 2027",
+      "documento_en": "Budget report for 2027",
+      "publicador_en": "Ministry of Finance",
+      "quadro": "5.37"
     },
     "v2a-ppp-setores": {
       "pagina_pdf": 123,
@@ -403,8 +430,8 @@
       "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
       "acedido_em": "2026-10-13T18:47:56.980564+00:00",
       "cliente": "core.http.HttpClient.condicional",
-      "documento": "Orçamento do Estado para 2027, p. 123 do PDF (107 impressa)",
-      "documento_en": "Budget report for 2027, PDF p. 123 (printed 107)",
+      "documento": "Orçamento do Estado para 2027",
+      "documento_en": "Budget report for 2027",
       "publicador_en": "Ministry of Finance",
       "quadro": "4.25"
     }

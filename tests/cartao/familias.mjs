@@ -1,3 +1,4 @@
+import {conferirPalavrasSaude} from './v2ah-palavras.mjs';
 import { conferirPublicador } from './publicador-da-definicao.mjs';
 import { conferirComputacaoPRR, conferirLiteralPRR } from './computacoes-rp4n.mjs';
 import { NOTAS_JD1 } from '../../src/data/notas-jd1.mjs';
@@ -362,7 +363,7 @@ export function conferirAuditoriaDasFamilias({
       if(typeof p==='string') {if(/\d/.test(p))falha(`${quem}: complemento com algarismo fixo`);continue;}
       if(p?.apoio) {
         const {origem,campo}=p.apoio;
-        if(Object.keys(p).length!==1||Object.keys(p.apoio).length!==2||!['quadro','documento','documento_en'].includes(campo)||typeof origens[origem]?.[campo]!=='string'||!e.origens?.includes(origem))falha(`${quem}: complemento com campo de apoio sem origem`);
+        if(Object.keys(p).length!==1||Object.keys(p.apoio).length!==2||!['quadro','documento','documento_en','pagina_pdf'].includes(campo)||typeof origens[origem]?.[campo]!=='string'||!e.origens?.includes(origem))falha(`${quem}: complemento com campo de apoio sem origem`);
         continue;
       }
       const tipo=Object.keys(p??{})[0],c=linhas.get(p?.[tipo]);
@@ -499,6 +500,7 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
   /** @type {string[]} */
   const erros = [];
   const falha = (/** @type {string} */ m) => erros.push(`K17 · recibo · ${lang} · ${id}: ${m}`);
+  for(const m of conferirPalavrasSaude(cabeca,id,lang))falha(m);
   if (ctx.linhas.get(id)?.name && ctx.linhas.get(id)?.name_source) {
     const rotulo = cabeca.querySelector('.linha-nome-da-fonte [data-linha-campo="name"]');
     if (!rotulo || normal(rotulo.textContent) !== normal(ctx.linhas.get(id)?.name)) falha('o nome na fonte não é o rótulo da medida conferido');

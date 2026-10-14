@@ -36,6 +36,7 @@ const auditoria=JSON.parse(fs.readFileSync('tests/cartao/leituras-provadas.json'
 assert.deepEqual(conferirAuditoriaDasFamilias().erros,[]);
 for(const [nome,partes,mensagem] of [
  ['apoio inexistente',[{apoio:{origem:'ausente',campo:'quadro'}}],'V2AG complemento: campo do apoio ausente ou não permitido'],
+ ['página sem origem',[{apoio:{origem:'ausente',campo:'pagina_pdf'}}],'V2AG complemento: campo do apoio ausente ou não permitido'],
  ['algarismo fixo',['Ano 2027'],'V2AE complemento: algarismo fixo'],
  ['linha inexistente',[{periodo:'linha-do-ensaio'}],'a afirmação'],
  ['citação sem afirmação',[{excerto:'oe-2027-saude-despesa-total-consolidada-2027'}],'V2AE complemento: citação sem afirmação'],
@@ -70,6 +71,8 @@ for(const [nome,altera,mensagem] of [
  ['selo retirado',o=>delete o.selo,'V2AE origem: selo documental ausente'],
  ['SHA trocado',o=>o.selo.sha256='a'.repeat(64),'V2AE origem: selo diferente do recibo exportado'],
  ['hora trocada',o=>o.selo.hora='2026-10-14T00:00:00Z','V2AE origem: selo diferente do recibo exportado'],
+ ['página da marca trocada',o=>o.pagina_pdf='124','V2AE origem: excerto ou localizador diferente da prova'],
+ ['localizador inglês trocado',o=>o.localizador_en='PDF p. 124','V2AE origem: excerto ou localizador diferente da prova'],
  ['página trocada',o=>o.extracao.pagina++,'V2AE origem: excerto ou localizador diferente da prova'],
  ['excerto trocado',o=>o.excerto='Texto do ensaio','V2AE origem: excerto ou localizador diferente da prova'],
  ['porta trocada',o=>o.url='https://example.invalid/ensaio','V2AE origem: excerto ou localizador diferente da prova'],

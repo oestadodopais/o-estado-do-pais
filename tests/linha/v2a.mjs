@@ -1,3 +1,4 @@
+import {conferirPalavrasSaude} from '../cartao/v2ah-palavras.mjs';
 /** V2-a-b: conferir no HTML as medidas, as notas e os localizadores das duas edições. */
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
@@ -10,8 +11,13 @@ const provas=JSON.parse(fs.readFileSync('ledger/provas/v2a/provas.json','utf8'))
 const normal=s=>String(s??'').replace(/\s+/g,' ').trim();
 const ids=Object.keys(JSON.parse(fs.readFileSync('ledger/cruzamentos/v2a.json','utf8')).rows);
 const claims=loadClaims(), resultados=[];
+export function conferirComparacaoPcp(c,linhas) {
+ const numero=v=>Number(String(v).replace(/\s/g,'').replace(',','.'));
+ const outros=['oe-2027-ppp-rodoviario-encargos-brutos-2027','oe-2027-ppp-rodoviario-encargos-liquidos-2027'].map(id=>linhas.get(id));
+ return outros.every(x=>x&&x.unit===c.unit&&Number.isFinite(numero(x.value))&&numero(c.value)>numero(x.value))?[]:['V2AH PCP: montante afirmado não é superior aos dois valores do livro'];
+}
 export function conferir(c,lang,html) {
-  const tree=parse(html), erros=[];
+  const tree=parse(html), erros=conferirPalavrasSaude(parse(html),c.id,lang);
   const texto=seletor=>normal(tree.querySelector(seletor)?.textContent);
   for(const [campo,valor] of [[lang==='en'?'name_source_en':'name_source',c[lang==='en'?'name_source_en':'name_source']],
     [lang==='en'?'document.locator_en':'document.locator',c.document[lang==='en'?'locator_en':'locator']]]) {
@@ -47,8 +53,8 @@ export function conferir(c,lang,html) {
     if(!frase.startsWith(inicio+medidaNaFrase+' '))erros.push('V2AE Saúde: medida diferente na frase');
     const token=tree.querySelector('[data-o-que-e] [data-nonledger="data-da-linha"]');
     if(!token||token.getAttribute('data-de-campo')!=='reference_date'||token.getAttribute('data-de-linha')!==(variacao?c.id.replace('variacao','2026'):c.id))erros.push('V2AE frase: período sem token da linha');
-    if(!variacao && !frase.includes(lang==='pt'?'a efetiva exclui essas operações':'effective expenditure excludes those transactions'))erros.push('V2AC Saúde: falta a distinção entre total e efetiva');
-    if(!c.document.locator.includes('nota ao quadro 4.38') || c.excerpt.includes('A despesa total efetiva exclui') || (!variacao && !texto('[data-def-origem="v2a-total-efetiva"]').includes(lang==='pt'?'nota ao quadro 4.38':'note to Table 4.38')))erros.push('V2AD apoio: definição confundida com o excerto da Saúde');
+
+    if(!c.document.locator.includes('nota ao quadro 4.38') || c.excerpt.includes('A despesa total efetiva exclui') || (!texto('[data-def-origem="v2a-total-efetiva"]').includes(lang==='pt'?'nota ao quadro 4.38':'note to Table 4.38')))erros.push('V2AD apoio: definição confundida com o excerto da Saúde');
   }
   const comparaPrr=c.id.includes('-sem-prr-')||c.id==='oe-2027-saude-despesa-efetiva-consolidada-variacao'||c.id.startsWith('afirmacao-leitao-');
   const totalPrr=c.id==='oe-2027-saude-despesa-total-consolidada-variacao'||c.id.startsWith('afirmacao-rtp-');
@@ -62,9 +68,15 @@ export function conferir(c,lang,html) {
     if(!frase.includes(lang==='pt'?'inclui a despesa relativa ao Plano de Recuperação e Resiliência (PRR)':'includes spending under the Recovery and Resilience Plan (RRP; «PRR» in the table)')||!frase.includes(lang==='pt'?'expurgada do efeito do PRR':'excluding the RRP effect')||!tree.querySelector('[data-def-origem="v2a-prr-saude"]'))erros.push('V2AF total: falta o qualificador PRR ou o apoio');
     if(c.id.startsWith('oe-')&&!texto('#ressalva').includes(lang==='pt'?'Incluindo PRR.':'Including RRP.'))erros.push('V2AF total: ressalva sem PRR');
   }
-  for(const apoio of tree.querySelectorAll('[data-def-origem]'))if(['v2a-prr-saude','v2a-prr-ciclo','v2a-ppp-conta','v2a-ppp-setores'].includes(apoio.getAttribute('data-def-origem'))&&normal(apoio.querySelector('.def-origem-k')?.textContent)!==(lang==='pt'?'Passagem de':'Passage from'))erros.push('V2AF apoio: passagem rotulada como definição');
+  for(const apoio of tree.querySelectorAll('[data-def-origem]'))if(['v2a-prr-saude','v2a-prr-ciclo','v2a-ppp-conta','v2a-ppp-setores','v2a-saude-consolidada'].includes(apoio.getAttribute('data-def-origem'))&&normal(apoio.querySelector('.def-origem-k')?.textContent)!==(lang==='pt'?'Passagem de:':'Passage from:'))erros.push('V2AF apoio: passagem rotulada como definição');
   if(c.id.startsWith('oe-2027-saude-') && lang==='pt' && /\bna orçamento\b/.test(frase)) erros.push('V2AC Saúde: preposição incompatível com orçamento');
-  if(c.id.includes('-cenario-') && (!frase.split(lang==='pt'?', na Proposta':', in the Draft')[0].includes(anos[c.reference_date]) || !frase.includes(lang==='pt'?'Proposta de Orçamento do Estado para dois mil e vinte e sete':'Draft State Budget for two thousand and twenty-seven'))) erros.push('V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento');
+  if(c.id.includes('-cenario-')) {
+    for(const sel of ['h1','[data-o-que-e]']) {
+      const token=tree.querySelector(sel+' [data-nonledger="data-da-linha"]');
+      if(!token||token.getAttribute('data-de-linha')!==c.id||token.getAttribute('data-de-campo')!=='reference_date'||normal(token.textContent)!==c.reference_date)erros.push('V2AH cenário: período sem token da previsão');
+    }
+    if(!frase.includes(lang==='pt'?'Proposta de Orçamento do Estado':'Draft State Budget')||frase.includes(anos[c.reference_date]))erros.push('V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento');
+  }
   if(c.id.startsWith('afirmacao-rtp-') && (/alojada|hosted/.test(frase) || !frase.includes('09.10.2026'))) erros.push('V2AC RTP: a frase não identifica a notícia pela data');
   if(c.id==='oe-2027-ppp-total-encargos-liquidos-2027' && !frase.includes(lang==='pt'?'É quanto o Estado prevê pagar ao conjunto das parcerias público-privadas':'It is what the State expects to pay to all public-private partnerships')) erros.push('V2AC PPP: o total não está definido por uma frase própria');
   if(c.id.startsWith('afirmacao-rtp-') && !frase.includes(lang==='pt'?'identificam a despesa total consolidada do programa Saúde':'identify consolidated total expenditure for the Health programme'))erros.push('V2AD RTP: a notícia perdeu a medida identificada pelos montantes');
@@ -95,7 +107,7 @@ export function conferir(c,lang,html) {
   }
   if(c.id==='oe-2027-ppp-total-encargos-liquidos-2027'&&(/soma|sums/.test(frase)||!texto('#ressalva').includes(lang==='pt'?'as linhas setoriais do quadro não somam exatamente o total impresso'.replace(/^a/,'A'):'The sector rows in the table do not add up exactly to the printed total')||!texto('#ressalva').includes(lang==='pt'?'o quadro não explica a diferença':'the table does not explain the difference')))erros.push('V2AF PPP: soma atribuída ao total ou diferença omitida');
   if(c.id.startsWith('afirmacao-pcp-')) {
-    if(!frase.includes(lang==='pt'?'No relatório «Orçamento do Estado para':'In the report «Budget report for')||(lang==='en'&&!frase.includes('Paulo Raimundo states that the budget allocates')))erros.push('V2AF PCP: falta o relatório ou a afirmação em inglês');
+    if(!frase.includes(lang==='pt'?'No relatório «Orçamento do Estado para':'In the Budget report for')||(lang==='en'&&!frase.includes('Paulo Raimundo states that the budget allocates')))erros.push('V2AF PCP: falta o relatório ou a afirmação em inglês');
     const quote=tree.querySelector('[data-o-que-e] [data-linha-campo="excerpt"]');
     if(normal(quote?.textContent)!==normal(c.excerpt)||quote?.getAttribute('data-linha-claim')!==c.id||!frase.includes('Paulo Raimundo'))erros.push('V2AE PCP: afirmação sem citação ou atribuição');
     const ids=tree.querySelectorAll('[data-o-que-e] [data-claim]').map(x=>x.getAttribute('data-claim'));
@@ -103,26 +115,31 @@ export function conferir(c,lang,html) {
   }
   const pcp=c.id.startsWith('afirmacao-pcp-'),totalPpp=c.id==='oe-2027-ppp-total-encargos-liquidos-2027',road=c.id.startsWith('oe-2027-ppp-rodoviario-');
   if(pcp||totalPpp) {
-    const key=pcp?'v2a-ppp-conta':'v2a-ppp-setores',mark=tree.querySelector(`[data-o-que-e] [data-verbatim="origem-${key}-quadro"]`);
+    const key='v2a-ppp-setores',mark=tree.querySelector(`[data-o-que-e] [data-verbatim="origem-${key}-quadro"]`);
     if(!mark||normal(mark.textContent)!==origens[key].quadro||!frase.includes((lang==='pt'?'quadro ':'Table ')+origens[key].quadro))erros.push('V2AG quadro: número diferente do campo do apoio');
   }
   if(pcp||c.id.startsWith('afirmacao-leitao-')) {
-    const key=pcp?'v2a-ppp-conta':'v2a-prr-ciclo',field=lang==='pt'?'documento':'documento_en';
+    const key=pcp?'v2a-ppp-setores':'v2a-prr-ciclo',field=lang==='pt'?'documento':'documento_en';
     if(texto(`[data-o-que-e] [data-verbatim="origem-${key}-${field}"]`)!==normal(origens[key][field]))erros.push('V2AG documento: título sem marca do apoio');
+    if(texto(`[data-o-que-e] [data-verbatim="origem-${key}-pagina_pdf"]`)!==origens[key].pagina_pdf||!frase.includes(lang==='pt'?'» (p. '+origens[key].pagina_pdf+' do PDF)':'Budget report for 2027 (PDF p. '+origens[key].pagina_pdf+')'))erros.push('V2AH documento: página sem marca separada do título');
   }
   for(const el of tree.querySelectorAll('[data-def-origem]')) {
     const key=el.getAttribute('data-def-origem'),o=origens[key];if(!o)continue;
     const field=lang==='en'?'documento_en':'documento';
     if(normal(el.querySelector(`[data-verbatim="origem-${key}-${field}"]`)?.textContent)!==normal(o[field]))erros.push('V2AG edição: documento do apoio na língua errada');
+    const publisher=lang==='en'?'publicador_en':'publicador';
+    if(normal(el.querySelector(`[data-verbatim="origem-${key}-${publisher}"]`)?.textContent)!==normal(o[publisher]))erros.push('V2AH edição: publicador do apoio na língua errada');
   }
   if(road) {
     const t=texto('[data-v2a-conta]');
-    if(!(lang==='pt'?['Os encargos brutos são o que o Estado paga às parcerias rodoviárias nesse ano','as receitas são o que recebe delas','os encargos líquidos são o que paga depois de descontar essas receitas']:['Gross charges are what the State pays to road partnerships that year','revenue is what it receives from them','net charges are what it pays after deducting that revenue']).every(x=>t.includes(x)))erros.push('V2AD conta: faltam palavras simples para pagamentos e recebimentos');
+    if(!(lang==='pt'?['Os encargos brutos são o que o Estado paga às parcerias rodoviárias nesse ano','as receitas vêm sobretudo das portagens cobradas nessas estradas, além das partilhas de benefícios e dos pagamentos fixos das subconcessionárias','os encargos líquidos são o que paga depois de descontar essas receitas']:['Gross charges are what the State pays to road partnerships that year','revenue comes mainly from tolls collected on those roads, together with benefit-sharing and fixed payments by subconcessionaires','net charges are what it pays after deducting that revenue']).every(x=>t.includes(x)))erros.push('V2AD conta: faltam palavras simples para pagamentos e recebimentos');
   }
-  if(totalPpp&&!frase.includes(lang==='pt'?'depois de descontar o que recebe delas':'after deducting what it receives from them'))erros.push('V2AG total: encargos líquidos sem palavras simples');
+  if((totalPpp||pcp)&&!(lang==='pt'?['portagens cobradas nessas estradas','partilhas de benefícios','pagamentos fixos das subconcessionárias']:['tolls collected on those roads','benefit-sharing','fixed payments by subconcessionaires']).every(x=>frase.includes(x)))erros.push('V2AH receitas: faltam portagens, partilhas ou pagamentos fixos');
+  if(totalPpp&&!frase.includes(lang==='pt'?'depois de descontar as receitas dessas parcerias':'after deducting revenue from those partnerships'))erros.push('V2AG total: encargos líquidos sem palavras simples');
   if(totalPpp&&!frase.includes(lang==='pt'?'em euros desse ano':'in euros of that year'))erros.push('V2AG total: preços sem palavras simples');
   if(pcp) {
-    if(!(lang==='pt'?['o que o Estado paga às parcerias rodoviárias nesse ano','o que paga depois de descontar o que recebe delas','O montante afirmado é superior tanto aos encargos brutos como aos líquidos']:['what the State pays to road partnerships that year','what it pays after deducting what it receives from them','The stated amount is higher than both the gross and net charges']).every(x=>frase.includes(x)))erros.push('V2AG PCP: faltam palavras simples ou a comparação');
+    erros.push(...conferirComparacaoPcp(c,claims));
+    if(!(lang==='pt'?['o que o Estado paga às parcerias rodoviárias nesse ano','o que paga depois de descontar as receitas rodoviárias','O montante afirmado é superior tanto aos encargos brutos como aos líquidos']:['what the State pays to road partnerships that year','what it pays after deducting road revenue','The stated amount is higher than both the gross and net charges']).every(x=>frase.includes(x)))erros.push('V2AG PCP: faltam palavras simples ou a comparação');
     const periods=tree.querySelectorAll('[data-o-que-e] [data-de-campo="reference_date"]').map(x=>x.getAttribute('data-de-linha'));
     if(JSON.stringify(periods)!==JSON.stringify(['oe-2027-ppp-rodoviario-encargos-brutos-2027','oe-2027-ppp-rodoviario-encargos-liquidos-2027']))erros.push('V2AG PCP: período sem linhas das parcerias');
   }
@@ -140,15 +157,24 @@ for(const id of ids) {
 const plantas=[];
 const total='oe-2027-saude-despesa-total-consolidada-2027',efetiva='oe-2027-saude-despesa-efetiva-consolidada-2027',variacao='oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao',rtp='afirmacao-rtp-saude-queda-oe2027-2026-10-09',ppp='oe-2027-ppp-rodoviario-receitas-2027',pcp='afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09';
 const troca=(t,sel,a,b)=>{const el=t.querySelector(sel);assert(el);const antes=el.innerHTML;let mudou=false;el.set_content(antes.split(/(<[^>]*>)/g).map(x=>{if(!mudou&&!x.startsWith('<')&&x.includes(a)){mudou=true;return x.replace(a,b);}return x;}).join(''));assert.notEqual(el.innerHTML,antes,'planta sem alteração');};
+for(const id of [pcp,'oe-2027-ppp-rodoviario-encargos-brutos-2027','oe-2027-ppp-rodoviario-encargos-liquidos-2027']) {
+ const altered=new Map(claims),c={...claims.get(id),value:id===pcp?'800':'1800'};altered.set(id,c);
+ const mensagem=conferirComparacaoPcp(altered.get(pcp),altered)[0];assert(mensagem);
+ plantas.push({id,lang:'dados',mensagem});console.log(`PLANTA ${id}: ${mensagem}`);
+}
 for(const lang of ['pt','en']) {
  const pt=lang==='pt',frase='.linha-o-que-e-frase';
  for(const [id,altera,mensagem] of [
+  [pcp,t=>t.querySelector('[data-o-que-e] [data-verbatim="origem-v2a-ppp-setores-quadro"]').setAttribute('data-verbatim','origem-v2a-ppp-conta-quadro'),'V2AG quadro: número diferente do campo do apoio'],
+  ...[pcp,'afirmacao-leitao-amaro-saude-oe2027-2026-10-09'].map(id=>[id,t=>t.querySelector('[data-o-que-e] [data-verbatim$="-pagina_pdf"]').removeAttribute('data-verbatim'),'V2AH documento: página sem marca separada do título']),
+  [pcp,t=>t.querySelector(`[data-def-origem="v2a-ppp-setores"] [data-verbatim="origem-v2a-ppp-setores-${pt?'publicador':'publicador_en'}"]`).set_content(pt?'Ministry of Finance':'Ministério das Finanças'),'V2AH edição: publicador do apoio na língua errada'],
+  ...[pcp,'oe-2027-ppp-total-encargos-liquidos-2027'].map(id=>[id,t=>troca(t,frase,pt?'portagens cobradas nessas estradas':'tolls collected on those roads',''),'V2AH receitas: faltam portagens, partilhas ou pagamentos fixos']),
   [variacao,t=>troca(t,frase,pt?'como o quadro o escreve':'as written in the table','nota retirada'),'V2AD grafia: falta a nota sobre o nome do programa'],
   [total,t=>t.querySelector('[data-def-origem="v2a-total-efetiva"]').remove(),'V2AD apoio: definição confundida com o excerto da Saúde'],
-  ...['oe-2027-ppp-total-encargos-liquidos-2027',pcp].map(id=>[id,t=>t.querySelector(`[data-o-que-e] [data-verbatim="origem-${id===pcp?'v2a-ppp-conta':'v2a-ppp-setores'}-quadro"]`).set_content('4.26'),'V2AG quadro: número diferente do campo do apoio']),
-  ...[pcp,'afirmacao-leitao-amaro-saude-oe2027-2026-10-09'].map(id=>[id,t=>t.querySelector(`[data-o-que-e] [data-verbatim="origem-${id===pcp?'v2a-ppp-conta':'v2a-prr-ciclo'}-${pt?'documento':'documento_en'}"]`).removeAttribute('data-verbatim'),'V2AG documento: título sem marca do apoio']),
-  [ppp,t=>troca(t,'[data-v2a-conta]',pt?'as receitas são o que recebe delas':'revenue is what it receives from them',''),'V2AD conta: faltam palavras simples para pagamentos e recebimentos'],
-  ['oe-2027-ppp-total-encargos-liquidos-2027',t=>troca(t,frase,pt?'depois de descontar o que recebe delas':'after deducting what it receives from them',''),'V2AG total: encargos líquidos sem palavras simples'],
+  ...['oe-2027-ppp-total-encargos-liquidos-2027',pcp].map(id=>[id,t=>t.querySelector(`[data-o-que-e] [data-verbatim="origem-${id===pcp?'v2a-ppp-setores':'v2a-ppp-setores'}-quadro"]`).set_content('4.26'),'V2AG quadro: número diferente do campo do apoio']),
+  ...[pcp,'afirmacao-leitao-amaro-saude-oe2027-2026-10-09'].map(id=>[id,t=>t.querySelector(`[data-o-que-e] [data-verbatim="origem-${id===pcp?'v2a-ppp-setores':'v2a-prr-ciclo'}-${pt?'documento':'documento_en'}"]`).removeAttribute('data-verbatim'),'V2AG documento: título sem marca do apoio']),
+  [ppp,t=>troca(t,'[data-v2a-conta]',pt?'as receitas vêm sobretudo das portagens cobradas nessas estradas, além das partilhas de benefícios e dos pagamentos fixos das subconcessionárias':'revenue comes mainly from tolls collected on those roads, together with benefit-sharing and fixed payments by subconcessionaires',''),'V2AD conta: faltam palavras simples para pagamentos e recebimentos'],
+  ['oe-2027-ppp-total-encargos-liquidos-2027',t=>troca(t,frase,pt?'depois de descontar as receitas dessas parcerias':'after deducting revenue from those partnerships',''),'V2AG total: encargos líquidos sem palavras simples'],
   ['oe-2027-ppp-total-encargos-liquidos-2027',t=>troca(t,frase,pt?'em euros desse ano':'in euros of that year',''),'V2AG total: preços sem palavras simples'],
   [pcp,t=>troca(t,frase,pt?'O montante afirmado é superior':'The stated amount is higher',''),'V2AG PCP: faltam palavras simples ou a comparação'],
   [pcp,t=>t.querySelector('[data-o-que-e] [data-de-campo="reference_date"]').setAttribute('data-de-linha',total),'V2AG PCP: período sem linhas das parcerias'],
@@ -158,7 +184,7 @@ for(const lang of ['pt','en']) {
   [total,t=>troca(t,'h1',pt?'Saúde':'Health','Education'),'V2AD Saúde: cabeçalho com medida, programa ou período diferente'],
   [total,t=>t.querySelector('h1 [data-nonledger]').removeAttribute('data-nonledger'),'V2AD período: ano sem token da linha'],
   [total,t=>t.querySelector('[data-o-que-e] [data-nonledger]').removeAttribute('data-nonledger'),'V2AE frase: período sem token da linha'],
-  ['oe-2027-cenario-pib-real-crescimento-2027',t=>troca(t,frase,pt?'dois mil e vinte e sete':'two thousand and twenty-seven',pt?'dois mil e vinte e seis':'two thousand and twenty-six'),'V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento'],
+  ['oe-2027-cenario-pib-real-crescimento-2027',t=>t.querySelector('[data-o-que-e] [data-de-campo="reference_date"]').set_content('2026'),'V2AH cenário: período sem token da previsão'],
   [rtp,t=>troca(t,'.aparelho',pt?'Título do documento':'Document title','Source'),'V2AB título: a proveniência não distingue o documento'],
   [rtp,t=>troca(t,frase,pt?'despesa total':'total expenditure',pt?'despesa efetiva':'effective expenditure'),'V2AD RTP: a notícia perdeu a medida identificada pelos montantes'],
   [rtp,t=>t.querySelector('[data-v2a-conta] [data-claim]').remove(),'V2AD conta: faltam os valores pelas linhas da medida'],
@@ -172,7 +198,7 @@ for(const lang of ['pt','en']) {
   [rtp,t=>t.querySelector('.linha-cabeca [data-linha-campo="name"]').set_content('Manchete'),'V2AB nome: a cabeça não diz as palavras citadas'],
   [rtp,t=>t.querySelector('[data-linha-campo="document.locator'+(pt?'':'_en')+'"]').set_content('Quadro'),'V2AB localizador: tradução ou origem ausente'],
   [variacao,t=>t.querySelector('h1').set_content('sem prr'),'V2AB sigla: PRR ou RRP perdeu maiúsculas'],
-  [total,t=>troca(t,frase,pt?'a efetiva exclui essas operações':'effective expenditure excludes those transactions','definição retirada'),'V2AC Saúde: falta a distinção entre total e efetiva'],
+  [total,t=>troca(t,frase,pt?'para o mesmo euro não contar duas vezes':'so the same euro is not counted twice',''),'V2AH Saúde: faltam palavras simples, ordem ou apoio da consolidação e da despesa efetiva'],
   [rtp,t=>t.querySelector(frase).set_content('Notícia alojada.'),'V2AC RTP: a frase não identifica a notícia pela data'],
   ['oe-2027-ppp-total-encargos-liquidos-2027',t=>troca(t,frase,'Oceanário','Setor'),'V2AE PPP: total sem setores próprios ou com conta rodoviária'],
   [total,t=>t.querySelector('[data-linha-campo="document.source_sha256"]').set_content('a'.repeat(64)),'V2AC selo: SHA256 do corpo ausente ou diferente'],
@@ -212,6 +238,16 @@ for(const lang of ['pt','en'])for(const selector of ['.def-origem-doc','.def-exc
  const rota=routePath('linha',lang,{slug:pcp}),root=parse(fs.readFileSync(`dist${rota.replace(/\/$/,'')}/index.html`,'utf8'));
  const el=root.querySelector('[data-def-origem="v2a-ppp-conta"] '+selector);el.setAttribute('lang',el.getAttribute('lang')==='en'?'pt-PT':'en');
  const mensagem=conferirLinguaDasOrigens(root,lang).find(x=>x.includes('L10')&&x.includes(selector));assert(mensagem);plantas.push({id:pcp,lang,mensagem});console.log(`PLANTA V2AG ${lang}: ${mensagem}`);
+}
+// A régua da família recusa a falta, repetição e inversão das duas explicações.
+for(const lang of ['pt','en'])for(const modo of ['retirada','repetida','invertida']) {
+ const id='afirmacao-leitao-amaro-saude-oe2027-2026-10-09',rota=routePath('linha',lang,{slug:id}),root=cabecaDoRecibo(fs.readFileSync(`dist${rota.replace(/\/$/,'')}/index.html`,'utf8'));
+ const el=root.querySelector('.linha-o-que-e-frase');
+ const a=lang==='pt'?'«Consolidada» é a despesa do programa depois de retirados os pagamentos entre as suas próprias entidades, para o mesmo euro não contar duas vezes.':'“Consolidated” means programme expenditure after removing payments between its own entities, so the same euro is not counted twice.';
+ const b=lang==='pt'?'«Efetiva» é a despesa que sai de facto, sem operações financeiras; a despesa total inclui essas operações.':'“Effective” means money actually spent, excluding financial transactions; total expenditure includes those transactions.';
+ const before=el.innerHTML,after=before.replace(a+' '+b,modo==='retirada'?a:modo==='repetida'?a+' '+b+' '+b:b+' '+a);assert.notEqual(before,after);el.set_content(after);
+ const mensagem=conferirCabecaDoRecibo(root,id,lang,{ctx:contextoDasFamilias(),cartoes:new Map()}).find(x=>x.includes('V2AH Saúde'));assert(mensagem);
+ plantas.push({id,lang,modo,mensagem});console.log(`PLANTA K17 ${modo} ${lang}: ${mensagem}`);
 }
 export const resultado={cabeca:JSON.parse(fs.readFileSync('dist/version.json','utf8')).commit,linhas:ids.length,paginas:resultados.length,resultados,plantas};
 console.log(`V2AB/V2AC: ${resultados.length} páginas conferidas; ${plantas.length} plantas.`);

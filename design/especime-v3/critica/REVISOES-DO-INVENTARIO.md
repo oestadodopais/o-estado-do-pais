@@ -744,3 +744,5 @@ A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recib
 | v2af | 30 entradas; 30 entradas E substituídas | por ler | Codex gpt-6-astra, 14.10.2026: mandato F aplicado, palavras conferidas na construção. Leitura a frio pela direção antes da fusão. |
 
 | v2ag | 30 entradas; 30 entradas F substituídas | por ler | Codex gpt-6-astra, 14.10.2026: mandato G aplicado, palavras conferidas na construção. Leitura a frio pela direção antes da fusão. |
+
+| v2ah | 34 entradas; 30 entradas G substituídas | por ler | Codex gpt-6-astra, 14.10.2026: mandato H aplicado, palavras conferidas na construção. Leitura a frio pela direção antes da fusão. |

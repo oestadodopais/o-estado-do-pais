@@ -554,9 +554,9 @@ O motor passou 40 conferências específicas. O HTML passou 36 páginas e 114 pl
 
 ### Custo
 
-V2-a-f, conforme o mandato e o lançador: 97 turnos, 291 192 de custo antigo, 4 pontos da semana com outra sessão em paralelo (RH1-c e RH1-d), contexto médio de 131 737. O custo V2-a-g cabe ao lançador. Não foi exposta uma linha «tokens used».
+V2-a-f, conforme o mandato e o lançador: 97 turnos, 291 192 de custo antigo, 4 pontos da semana com outra sessão em paralelo (RH1-c e RH1-d), contexto médio de 131 737. O custo V2-a-g consta da secção H, conforme o mandato seguinte. Não foi exposta uma linha «tokens used».
 
-**V2A-74:** a primeira corrida completa, na cabeça `67093eba559db52595b7e1ac134d176eca3f4bba`, terminou com build 1, verify 125 (não correu por dependência), typecheck 0 e motor 0. Os estados finais estavam vazios e as cabeças não mudaram durante a corrida. Os registos ficam em `portoes-g-preparacao/`. A L10 ainda exigia português no título inglês: `scripts/lingua-das-origens.mjs:12` passou a distinguir `documento_en` da língua do excerto. Quatro plantas conferem título e excerto nas duas edições. A correção só foi escrita depois de o escrivão terminar os quatro portões.
+**V2A-74:** a primeira corrida completa, na cabeça `67093eba559db52595b7e1ac134d176eca3f4bba`, terminou com build 1, verify 125 (não correu por dependência), typecheck 0 e motor 0. Os estados finais estavam vazios e as cabeças não mudaram durante a corrida. Os registos ficam em `portoes-g-preparacao/`. A L10 ainda exigia português no título inglês: `scripts/lingua-das-origens.mjs:12` passou a distinguir `documento_en` da língua do excerto. Quatro plantas conferem título e excerto nas duas edições. O ficheiro `portoes-g-preparacao/motor.fim` regista `2026-10-14T18:11:23Z`; `portoes-g/build.inicio` regista `2026-10-14T18:12:15Z`, 52 segundos depois. Estes registos datam o fim do motor da primeira corrida e o início do build da segunda; não datam a escrita da correção da L10 e não permitem concluir a sua ordem relativamente ao fim da primeira corrida.
 
 
 ### O fecho da passagem G
@@ -579,3 +579,32 @@ As cabeças de início e fim coincidem nos dois repositórios. `estado.fim` e `m
 As capturas em `design/especime-v3/capturas/v2a-2026-10-12/g/` cobrem 16 páginas, duas edições e cinco larguras: 160 casos, 480 PNG. Os 480 resumos e dimensões foram conferidos, sem transbordos, pedidos externos ou erros registados. A inspeção visual cobriu 44 cabeças: 32 a 390 px e 12 a 1280 px. A lista dos ficheiros e a observação estão em `capturas-inspecao-g.json`; não foram observadas sobreposições.
 
 **V2A-75:** a L1 conserva as 2 780 páginas com destino repetido e a mesma multiplicidade de cada destino da passagem F. `l1-comparacao-g.json` regista igualdade integral entre os dois inventários. As alterações posteriores ao código conferido estão limitadas às capturas e medições desta entrega.
+
+
+## A passagem V2-a-h
+
+Entrada do sítio em `c1e2b934`, motor em `dd5f1d5f`, ambos limpos. Os achados 1 a 4 e 7 eram plantas nas cópias do pacote. Esta passagem trata os achados reais 5, 6 e 8 a 11. Os 18 valores e unidades foram comparados com a entrada; não mudaram.
+
+| Achado | O que ganhou | Ficheiros |
+| --- | --- | --- |
+| 5 | O quadro das parcerias pertence apenas à página física 123. O texto da página 124 não recebe número de quadro. O PCP cita o quadro pelo apoio dos setores e usa a passagem seguinte para explicar pagamentos e receitas. | `<motor>/publisher/v2a.py`, `src/data/origens-v2a.json`, `familias.mjs`, `tests/linha/v2a.mjs` |
+| 6 | As nove medidas da Saúde, Amaro e RTP explicam primeiro consolidação, depois despesa efetiva, uma vez cada. A nota do quadro 5.37 e a nota financeira do quadro 4.38 ficam seladas no pacote do motor. A régua das famílias recusa falta, repetição e inversão. | `<motor>/publisher/v2a.py`, `familias.mjs`, `tests/cartao/v2ah-palavras.mjs` |
+| 8 | As cinco páginas das parcerias explicam as receitas rodoviárias por portagens, partilhas de benefícios e pagamentos fixos das subconcessionárias. O apoio contém agora as componentes descritas na página 124. | `<motor>/publisher/v2a.py`, `familias.mjs`, `src/lib/v2a-palavras.mjs` |
+| 9 | A comparação do PCP usa os valores das três linhas e exige a mesma unidade. Uma planta altera cada valor e desfaz a desigualdade. A página inglesa confere o publicador traduzido; a planta imprime o português. | `tests/linha/v2a.mjs` |
+| 10 | V2A-74 regista as duas horas conservadas e distingue os acontecimentos que datam da escrita da correção, que não datam. | Este relatório, V2A-74 |
+| 11 | Título e página têm marcas separadas, o título traduzido não leva aspas angulares, os publicadores e títulos dos apoios têm inglês, o rótulo leva dois-pontos e os cenários rendem o ano pelo período da linha. | `src/components/OrigemDaDefinicao.astro`, `src/data/figuras.mjs`, `src/data/verbatim.mjs`, `src/i18n/strings.mjs`, `src/lib/o-que-e-o-numero.mjs`, `src/lib/v2a-palavras.mjs`, `familias.mjs` |
+
+- **V2A-76:** a correção do quadro desfaz o erro do mandato G. `v2a-ppp-setores` declara a página física 123, impressa 107, e o quadro 4.25; `v2a-ppp-conta` declara a página física 124, impressa 108, sem campo `quadro`. A planta no motor atribui-lhe 4.25 e é recusada. A planta no HTML tenta trocar a origem do número do quadro para o apoio do texto corrido e também é recusada.
+- **V2A-77:** a nota do quadro 5.37, página física 303, impressa 287, descreve a exclusão das rubricas provenientes e destinadas a entidades do próprio programa. Foi conferida no PDF e selada como `v2a-saude-consolidada`. É uma explicação operacional da consolidação; a frase da casa traduz a consequência em palavras simples. Não encontrei uma secção identificada como glossário na extração pesquisada. Conserva-se a grafia «Pograma» no excerto.
+- **V2A-78:** o apoio financeiro já existente no sítio não tinha selo para sustentar uma segunda fonte de Amaro e RTP. A mesma nota da página física 145 passa pelo publicador e pelo pacote de provas como `v2a-total-efetiva`, com recibo do corpo. As fontes secundárias dessas afirmações nomeiam as páginas 303 e 145. Nenhum corpo integral foi acrescentado ao sítio.
+- **V2A-79:** a desigualdade do PCP é conferida pelos valores das linhas, depois de lida a notação numérica e comparadas as unidades. As três plantas alteram separadamente afirmação, encargos brutos e encargos líquidos. A conferência literal da frase continua a garantir que a comparação comprovada é a que se imprime.
+- **V2A-80:** a V2A-74 deixa de apresentar a ordem da escrita como provada pelos registos. O fim do primeiro motor e o início do segundo build estão separados por 52 segundos; não há nesses ficheiros uma hora da escrita da correção.
+- **V2A-81:** o título do apoio não inclui o localizador. A página é um campo marcado separado; os cenários usam `reference_date`, sem confundir o ano da previsão com a edição do parecer. Nas páginas inglesas, os excertos documentais continuam em português e os títulos de identificação e publicadores dos apoios usam os campos ingleses.
+- **V2A-82:** os portões e as capturas serão pedidos ao escrivão, pois o navegador das conferências não arranca na sandbox. A corrida final será feita depois do último commit de provas, sem escrita durante os quatro portões. Os resultados e as cabeças serão lidos dos ficheiros no fecho.
+- **V2A-83:** a preparação recusou a explicação das receitas ainda não aplicada ao PCP, a segunda fonte financeira sem selo e o apoio dos setores sem ligação à auditoria da frase. Foram corrigidos. A planta antiga da nota financeira foi atualizada para a mensagem da recusa que agora ocorre ao construir o apoio selado, antes das células.
+
+### Preparação e custo
+
+As conferências específicas do motor passaram 44 casos. A régua do HTML passou as 36 páginas e 135 plantas. Passaram também as conferências dos dados, famílias e cartões, língua, índice e tipos. Os registos da preparação estão em `h-conferencias/`; a lista de mensagens, os códigos finais, as cabeças e as capturas serão acrescentados no fecho.
+
+V2-a-g, conforme o mandato H e o lançador: 97 turnos, 267 149 de custo antigo, 4 pontos da semana com outra sessão em paralelo, contexto médio de 131 547. O custo V2-a-h cabe ao lançador. Não foi exposta uma linha «tokens used».

@@ -134,7 +134,7 @@ export function resolverComplemento(partes) {
     if(p?.apoio) {
       const {origem,campo}=p.apoio;
       const o=/** @type {any} */ (ORIGENS_DAS_DEFINICOES)[origem];
-      if(Object.keys(p).length!==1||Object.keys(p.apoio).length!==2||!['quadro','documento','documento_en'].includes(campo)||typeof o?.[campo]!=='string')throw new Error('V2AG complemento: campo do apoio ausente ou não permitido');
+      if(Object.keys(p).length!==1||Object.keys(p.apoio).length!==2||!['quadro','documento','documento_en','pagina_pdf'].includes(campo)||typeof o?.[campo]!=='string')throw new Error('V2AG complemento: campo do apoio ausente ou não permitido');
       return {verbatim:`origem-${origem}-${campo}`};
     }
     const tipo=Object.keys(p??{})[0],id=p?.[tipo],c=getClaim(id);

@@ -2757,6 +2757,8 @@ export const origensDaDefinicao = (definicao, lang = 'pt') =>
       excertoAberto: 'excertoAberto' in o && o.excertoAberto === true,
       publicador: lang === 'en' && campos.publicador_en ? campos.publicador_en : o.publicador,
       campoPublicador: lang === 'en' && campos.publicador_en ? 'publicador_en' : 'publicador',
+      localizador: lang === 'en' ? campos.localizador_en : campos.localizador,
+      campoLocalizador: lang === 'en' ? 'localizador_en' : 'localizador',
       campoDocumento: lang === 'en' && campos.documento_en ? 'documento_en' : 'documento',
       documento: (lang === 'en' && campos.documento_en ? campos.documento_en : o.documento).replace(/, página \d+/, ''),
       pagina: o.documento.match(/, página (\d+)/)?.[1] ?? null,

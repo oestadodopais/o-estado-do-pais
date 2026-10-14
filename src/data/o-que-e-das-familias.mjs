@@ -3712,7 +3712,15 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
             "campo": "documento"
           }
         },
-        "» descreve o fim do ciclo extraordinário de financiamento do PRR.",
+        "» (p. ",
+        {
+          "apoio": {
+            "origem": "v2a-prr-ciclo",
+            "campo": "pagina_pdf"
+          }
+        },
+        " do PDF) descreve o fim do ciclo extraordinário de financiamento do PRR.",
+        " «Consolidada» é a despesa do programa depois de retirados os pagamentos entre as suas próprias entidades, para o mesmo euro não contar duas vezes. «Efetiva» é a despesa que sai de facto, sem operações financeiras; a despesa total inclui essas operações.",
         " Com o PRR, a despesa efetiva consolidada passa de ",
         {
           "claim": "oe-2027-saude-despesa-efetiva-consolidada-2026"
@@ -3740,14 +3748,22 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         " milhões. A diferença entre a despesa com e sem PRR é a parcela do PRR. A redução dessa parcela faz com que a despesa com PRR desça, apesar de a despesa sem PRR subir."
       ],
       "en": [
-        " The report «",
+        " The ",
         {
           "apoio": {
             "origem": "v2a-prr-ciclo",
             "campo": "documento_en"
           }
         },
-        "» describes the end of the RRP’s exceptional funding cycle.",
+        " (PDF p. ",
+        {
+          "apoio": {
+            "origem": "v2a-prr-ciclo",
+            "campo": "pagina_pdf"
+          }
+        },
+        ") describes the end of the RRP’s exceptional funding cycle.",
+        " “Consolidated” means programme expenditure after removing payments between its own entities, so the same euro is not counted twice. “Effective” means money actually spent, excluding financial transactions; total expenditure includes those transactions.",
         " With the RRP, consolidated effective expenditure goes from ",
         {
           "claim": "oe-2027-saude-despesa-efetiva-consolidada-2026"
@@ -3777,7 +3793,9 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "origens": [
       "v2a-prr-saude",
-      "v2a-prr-ciclo"
+      "v2a-prr-ciclo",
+      "v2a-saude-consolidada",
+      "v2a-total-efetiva"
     ]
   },
   "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09": {
@@ -3802,14 +3820,21 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         "». No relatório «",
         {
           "apoio": {
-            "origem": "v2a-ppp-conta",
+            "origem": "v2a-ppp-setores",
             "campo": "documento"
           }
         },
-        "», o quadro ",
+        "» (p. ",
         {
           "apoio": {
-            "origem": "v2a-ppp-conta",
+            "origem": "v2a-ppp-setores",
+            "campo": "pagina_pdf"
+          }
+        },
+        " do PDF), o quadro ",
+        {
+          "apoio": {
+            "origem": "v2a-ppp-setores",
             "campo": "quadro"
           }
         },
@@ -3825,7 +3850,9 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         {
           "claim": "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
         },
-        " milhões: o que paga depois de descontar o que recebe delas. O montante afirmado é superior tanto aos encargos brutos como aos líquidos que o quadro imprime para ",
+        " milhões: o que paga depois de descontar as receitas rodoviárias.",
+        " As receitas rodoviárias vêm sobretudo das portagens cobradas nessas estradas, além das partilhas de benefícios e dos pagamentos fixos das subconcessionárias.",
+        " O montante afirmado é superior tanto aos encargos brutos como aos líquidos que o quadro imprime para ",
         {
           "periodo": "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
         },
@@ -3840,17 +3867,24 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         {
           "excerto": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09"
         },
-        "». In the report «",
+        "». In the ",
         {
           "apoio": {
-            "origem": "v2a-ppp-conta",
+            "origem": "v2a-ppp-setores",
             "campo": "documento_en"
           }
         },
-        "», Table ",
+        " (PDF p. ",
         {
           "apoio": {
-            "origem": "v2a-ppp-conta",
+            "origem": "v2a-ppp-setores",
+            "campo": "pagina_pdf"
+          }
+        },
+        "), Table ",
+        {
+          "apoio": {
+            "origem": "v2a-ppp-setores",
             "campo": "quadro"
           }
         },
@@ -3866,7 +3900,9 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         {
           "claim": "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
         },
-        " million: what it pays after deducting what it receives from them. The stated amount is higher than both the gross and net charges printed in the table for ",
+        " million: what it pays after deducting road revenue.",
+        " Road revenue comes mainly from tolls collected on those roads, together with benefit-sharing and fixed payments by subconcessionaires.",
+        " The stated amount is higher than both the gross and net charges printed in the table for ",
         {
           "periodo": "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
         },
@@ -3874,6 +3910,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
+      "v2a-ppp-setores",
       "v2a-ppp-conta"
     ]
   },
@@ -3901,6 +3938,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-total-consolidada-2027"
         },
         ".",
+        " «Consolidada» é a despesa do programa depois de retirados os pagamentos entre as suas próprias entidades, para o mesmo euro não contar duas vezes. «Efetiva» é a despesa que sai de facto, sem operações financeiras; a despesa total inclui essas operações.",
         " A variação da despesa total consolidada inclui a despesa relativa ao Plano de Recuperação e Resiliência (PRR). Na parte da Saúde, o relatório do Orçamento do Estado para ",
         {
           "periodo": "oe-2027-saude-despesa-total-consolidada-2027"
@@ -3921,6 +3959,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-total-consolidada-2027"
         },
         ".",
+        " “Consolidated” means programme expenditure after removing payments between its own entities, so the same euro is not counted twice. “Effective” means money actually spent, excluding financial transactions; total expenditure includes those transactions.",
         " The change in consolidated total expenditure includes spending under the Recovery and Resilience Plan (RRP; «PRR» in the table). In its Health section, the State Budget report for ",
         {
           "periodo": "oe-2027-saude-despesa-total-consolidada-2027"
@@ -3933,34 +3972,68 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
-      "v2a-prr-saude"
+      "v2a-prr-saude",
+      "v2a-saude-consolidada",
+      "v2a-total-efetiva"
     ]
   },
   "oe-2027-cenario-ihpc": {
     "nome": {
-      "pt": "Previsão do Ministério das Finanças para a inflação medida pelo IHPC em dois mil e vinte e seis, transcrita pelo CFP",
-      "en": "Ministry of Finance forecast for HICP inflation in two thousand and twenty-six, transcribed by the CFP"
+      "pt": "Previsão do Ministério das Finanças para a inflação medida pelo IHPC, transcrita pelo CFP",
+      "en": "Ministry of Finance forecast for HICP inflation, transcribed by the CFP"
     },
     "frase": {
       "pt": [
-        "É a previsão do Ministério das Finanças para a inflação medida pelo índice harmonizado de preços no consumidor em dois mil e vinte e seis, na Proposta de Orçamento do Estado para dois mil e vinte e sete, como o CFP a transcreve. O parecer considera-a pouco provável."
+        "É a previsão do Ministério das Finanças para a inflação medida pelo índice harmonizado de preços no consumidor na Proposta de Orçamento do Estado analisada pelo CFP, como o CFP a transcreve. O parecer considera-a pouco provável."
       ],
       "en": [
-        "It is the Ministry of Finance forecast for inflation measured by the harmonised index of consumer prices in two thousand and twenty-six, in the Draft State Budget for two thousand and twenty-seven, as transcribed by the CFP. The opinion considers it unlikely."
+        "It is the Ministry of Finance forecast for inflation measured by the harmonised index of consumer prices in the Draft State Budget assessed by the CFP, as transcribed by the CFP. The opinion considers it unlikely."
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " A previsão refere-se a ",
+        {
+          "periodo": "oe-2027-cenario-ihpc-2026"
+        },
+        "."
+      ],
+      "en": [
+        " The forecast refers to ",
+        {
+          "periodo": "oe-2027-cenario-ihpc-2026"
+        },
+        "."
       ]
     }
   },
   "oe-2027-cenario-pib-real-crescimento": {
     "nome": {
-      "pt": "Previsão do Ministério das Finanças para o crescimento real do produto interno bruto em dois mil e vinte e sete, transcrita pelo CFP",
-      "en": "Ministry of Finance forecast for real gross domestic product growth in two thousand and twenty-seven, transcribed by the CFP"
+      "pt": "Previsão do Ministério das Finanças para o crescimento real do produto interno bruto, transcrita pelo CFP",
+      "en": "Ministry of Finance forecast for real gross domestic product growth, transcribed by the CFP"
     },
     "frase": {
       "pt": [
-        "É a previsão do Ministério das Finanças para o crescimento real do produto interno bruto em dois mil e vinte e sete, na Proposta de Orçamento do Estado para dois mil e vinte e sete, como o CFP a transcreve. O parecer considera-a superior à de todas as instituições de referência."
+        "É a previsão do Ministério das Finanças para o crescimento real do produto interno bruto na Proposta de Orçamento do Estado analisada pelo CFP, como o CFP a transcreve. O parecer considera-a superior à de todas as instituições de referência."
       ],
       "en": [
-        "It is the Ministry of Finance forecast for real gross domestic product growth in two thousand and twenty-seven, in the Draft State Budget for two thousand and twenty-seven, as transcribed by the CFP. The opinion considers it higher than those of all reference institutions."
+        "It is the Ministry of Finance forecast for real gross domestic product growth in the Draft State Budget assessed by the CFP, as transcribed by the CFP. The opinion considers it higher than those of all reference institutions."
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " A previsão refere-se a ",
+        {
+          "periodo": "oe-2027-cenario-pib-real-crescimento-2027"
+        },
+        "."
+      ],
+      "en": [
+        " The forecast refers to ",
+        {
+          "periodo": "oe-2027-cenario-pib-real-crescimento-2027"
+        },
+        "."
       ]
     }
   },
@@ -4022,10 +4095,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É quanto o Estado prevê pagar ao conjunto das parcerias público-privadas, depois de descontar o que recebe delas."
+        "É quanto o Estado prevê pagar ao conjunto das parcerias público-privadas, depois de descontar as receitas dessas parcerias."
       ],
       "en": [
-        "It is what the State expects to pay to all public-private partnerships, after deducting what it receives from them."
+        "It is what the State expects to pay to all public-private partnerships, after deducting revenue from those partnerships."
       ]
     },
     "complemento": {
@@ -4041,7 +4114,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
             "campo": "quadro"
           }
         },
-        ". O quadro lista os setores «Rodoviário» (estradas), «Ferroviário» (ferrovia), «Saúde» (hospitais), «Aeroportuário» (aeroportos) e «Oceanário»."
+        ". O quadro lista os setores «Rodoviário» (estradas), «Ferroviário» (ferrovia), «Saúde» (hospitais), «Aeroportuário» (aeroportos) e «Oceanário».",
+        " As receitas rodoviárias vêm sobretudo das portagens cobradas nessas estradas, além das partilhas de benefícios e dos pagamentos fixos das subconcessionárias."
       ],
       "en": [
         " It refers to ",
@@ -4055,11 +4129,13 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
             "campo": "quadro"
           }
         },
-        ". The table lists the sectors «Rodoviário» (roads), «Ferroviário» (railways), «Saúde» (hospitals), «Aeroportuário» (airports) and «Oceanário» (the oceanarium)."
+        ". The table lists the sectors «Rodoviário» (roads), «Ferroviário» (railways), «Saúde» (hospitals), «Aeroportuário» (airports) and «Oceanário» (the oceanarium).",
+        " Road revenue comes mainly from tolls collected on those roads, together with benefit-sharing and fixed payments by subconcessionaires."
       ]
     },
     "origens": [
-      "v2a-ppp-setores"
+      "v2a-ppp-setores",
+      "v2a-ppp-conta"
     ]
   },
   "oe-2027-saude-despesa-efetiva-consolidada-2026": {
@@ -4082,7 +4158,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
         },
         ".",
-        " A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        " «Consolidada» é a despesa do programa depois de retirados os pagamentos entre as suas próprias entidades, para o mesmo euro não contar duas vezes. «Efetiva» é a despesa que sai de facto, sem operações financeiras; a despesa total inclui essas operações."
       ],
       "en": [
         " It refers to the estimate for ",
@@ -4090,10 +4166,11 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
         },
         ".",
-        " Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
+        " “Consolidated” means programme expenditure after removing payments between its own entities, so the same euro is not counted twice. “Effective” means money actually spent, excluding financial transactions; total expenditure includes those transactions."
       ]
     },
     "origens": [
+      "v2a-saude-consolidada",
       "v2a-total-efetiva"
     ]
   },
@@ -4117,7 +4194,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2027"
         },
         ".",
-        " A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        " «Consolidada» é a despesa do programa depois de retirados os pagamentos entre as suas próprias entidades, para o mesmo euro não contar duas vezes. «Efetiva» é a despesa que sai de facto, sem operações financeiras; a despesa total inclui essas operações."
       ],
       "en": [
         " It refers to the budget for ",
@@ -4125,10 +4202,11 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2027"
         },
         ".",
-        " Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
+        " “Consolidated” means programme expenditure after removing payments between its own entities, so the same euro is not counted twice. “Effective” means money actually spent, excluding financial transactions; total expenditure includes those transactions."
       ]
     },
     "origens": [
+      "v2a-saude-consolidada",
       "v2a-total-efetiva"
     ]
   },
@@ -4152,7 +4230,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
         },
         ".",
-        " A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.",
+        " «Consolidada» é a despesa do programa depois de retirados os pagamentos entre as suas próprias entidades, para o mesmo euro não contar duas vezes. «Efetiva» é a despesa que sai de facto, sem operações financeiras; a despesa total inclui essas operações.",
         " PRR é o Plano de Recuperação e Resiliência. O relatório descreve o fim do seu ciclo extraordinário de financiamento.",
         " Com o PRR, a despesa efetiva consolidada passa de ",
         {
@@ -4186,7 +4264,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
         },
         ".",
-        " Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.",
+        " “Consolidated” means programme expenditure after removing payments between its own entities, so the same euro is not counted twice. “Effective” means money actually spent, excluding financial transactions; total expenditure includes those transactions.",
         " The report describes the end of the plan’s exceptional funding cycle.",
         " With the RRP, consolidated effective expenditure goes from ",
         {
@@ -4216,6 +4294,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
+      "v2a-saude-consolidada",
       "v2a-total-efetiva",
       "v2a-prr-saude",
       "v2a-prr-ciclo"
@@ -4241,7 +4320,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
         },
         ".",
-        " A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.",
+        " «Consolidada» é a despesa do programa depois de retirados os pagamentos entre as suas próprias entidades, para o mesmo euro não contar duas vezes. «Efetiva» é a despesa que sai de facto, sem operações financeiras; a despesa total inclui essas operações.",
         " PRR é o Plano de Recuperação e Resiliência. O relatório descreve o fim do seu ciclo extraordinário de financiamento.",
         " Com o PRR, a despesa efetiva consolidada passa de ",
         {
@@ -4275,7 +4354,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
         },
         ".",
-        " Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.",
+        " “Consolidated” means programme expenditure after removing payments between its own entities, so the same euro is not counted twice. “Effective” means money actually spent, excluding financial transactions; total expenditure includes those transactions.",
         " The report describes the end of the plan’s exceptional funding cycle.",
         " With the RRP, consolidated effective expenditure goes from ",
         {
@@ -4305,6 +4384,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
+      "v2a-saude-consolidada",
       "v2a-total-efetiva",
       "v2a-prr-saude",
       "v2a-prr-ciclo"
@@ -4334,6 +4414,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao"
         },
         ".",
+        " «Consolidada» é a despesa do programa depois de retirados os pagamentos entre as suas próprias entidades, para o mesmo euro não contar duas vezes. «Efetiva» é a despesa que sai de facto, sem operações financeiras; a despesa total inclui essas operações.",
         " PRR é o Plano de Recuperação e Resiliência. O relatório descreve o fim do seu ciclo extraordinário de financiamento.",
         " Com o PRR, a despesa efetiva consolidada passa de ",
         {
@@ -4371,6 +4452,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao"
         },
         ".",
+        " “Consolidated” means programme expenditure after removing payments between its own entities, so the same euro is not counted twice. “Effective” means money actually spent, excluding financial transactions; total expenditure includes those transactions.",
         " The report describes the end of the plan’s exceptional funding cycle.",
         " With the RRP, consolidated effective expenditure goes from ",
         {
@@ -4400,6 +4482,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
+      "v2a-saude-consolidada",
+      "v2a-total-efetiva",
       "v2a-prr-saude",
       "v2a-prr-ciclo"
     ]
@@ -4428,6 +4512,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-efetiva-consolidada-variacao"
         },
         ".",
+        " «Consolidada» é a despesa do programa depois de retirados os pagamentos entre as suas próprias entidades, para o mesmo euro não contar duas vezes. «Efetiva» é a despesa que sai de facto, sem operações financeiras; a despesa total inclui essas operações.",
         " PRR é o Plano de Recuperação e Resiliência. O relatório descreve o fim do seu ciclo extraordinário de financiamento.",
         " Com o PRR, a despesa efetiva consolidada passa de ",
         {
@@ -4465,6 +4550,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-efetiva-consolidada-variacao"
         },
         ".",
+        " “Consolidated” means programme expenditure after removing payments between its own entities, so the same euro is not counted twice. “Effective” means money actually spent, excluding financial transactions; total expenditure includes those transactions.",
         " The report describes the end of the exceptional funding cycle of the Recovery and Resilience Plan (RRP; «PRR» in the table).",
         " With the RRP, consolidated effective expenditure goes from ",
         {
@@ -4494,6 +4580,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
+      "v2a-saude-consolidada",
+      "v2a-total-efetiva",
       "v2a-prr-saude",
       "v2a-prr-ciclo"
     ]
@@ -4518,7 +4606,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-total-consolidada-2026"
         },
         ".",
-        " A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        " «Consolidada» é a despesa do programa depois de retirados os pagamentos entre as suas próprias entidades, para o mesmo euro não contar duas vezes. «Efetiva» é a despesa que sai de facto, sem operações financeiras; a despesa total inclui essas operações."
       ],
       "en": [
         " It refers to the estimate for ",
@@ -4526,10 +4614,11 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-total-consolidada-2026"
         },
         ".",
-        " Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
+        " “Consolidated” means programme expenditure after removing payments between its own entities, so the same euro is not counted twice. “Effective” means money actually spent, excluding financial transactions; total expenditure includes those transactions."
       ]
     },
     "origens": [
+      "v2a-saude-consolidada",
       "v2a-total-efetiva"
     ]
   },
@@ -4553,7 +4642,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-total-consolidada-2027"
         },
         ".",
-        " A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        " «Consolidada» é a despesa do programa depois de retirados os pagamentos entre as suas próprias entidades, para o mesmo euro não contar duas vezes. «Efetiva» é a despesa que sai de facto, sem operações financeiras; a despesa total inclui essas operações."
       ],
       "en": [
         " It refers to the budget for ",
@@ -4561,10 +4650,11 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-total-consolidada-2027"
         },
         ".",
-        " Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
+        " “Consolidated” means programme expenditure after removing payments between its own entities, so the same euro is not counted twice. “Effective” means money actually spent, excluding financial transactions; total expenditure includes those transactions."
       ]
     },
     "origens": [
+      "v2a-saude-consolidada",
       "v2a-total-efetiva"
     ]
   },
@@ -4592,6 +4682,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-total-consolidada-variacao"
         },
         ".",
+        " «Consolidada» é a despesa do programa depois de retirados os pagamentos entre as suas próprias entidades, para o mesmo euro não contar duas vezes. «Efetiva» é a despesa que sai de facto, sem operações financeiras; a despesa total inclui essas operações.",
         " A variação da despesa total consolidada inclui a despesa relativa ao Plano de Recuperação e Resiliência (PRR). Na parte da Saúde, o relatório do Orçamento do Estado para ",
         {
           "periodo": "oe-2027-saude-despesa-total-consolidada-2027"
@@ -4612,6 +4703,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
           "periodo": "oe-2027-saude-despesa-total-consolidada-variacao"
         },
         ".",
+        " “Consolidated” means programme expenditure after removing payments between its own entities, so the same euro is not counted twice. “Effective” means money actually spent, excluding financial transactions; total expenditure includes those transactions.",
         " The change in consolidated total expenditure includes spending under the Recovery and Resilience Plan (RRP; «PRR» in the table). In its Health section, the State Budget report for ",
         {
           "periodo": "oe-2027-saude-despesa-total-consolidada-2027"
@@ -4624,6 +4716,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       ]
     },
     "origens": [
+      "v2a-saude-consolidada",
+      "v2a-total-efetiva",
       "v2a-prr-saude"
     ]
   }

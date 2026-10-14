@@ -6,6 +6,14 @@ export const FAMILIAS_V2A=[];
 const A=(origem,campo)=>({apoio:{origem,campo}});
 const O=(origem,literal)=>({origem,campo:'excerto',literal});
 const totalEfetiva=[O('v2a-total-efetiva','A despesa total efetiva exclui ativos e passivos financeiros'),O('v2a-total-efetiva','A despesa total inclui ativos e passivos financeiros')];
+const definicoesSaude={
+ pt:' «Consolidada» é a despesa do programa depois de retirados os pagamentos entre as suas próprias entidades, para o mesmo euro não contar duas vezes. «Efetiva» é a despesa que sai de facto, sem operações financeiras; a despesa total inclui essas operações.',
+ en:' “Consolidated” means programme expenditure after removing payments between its own entities, so the same euro is not counted twice. “Effective” means money actually spent, excluding financial transactions; total expenditure includes those transactions.',
+};
+const receitas={
+ pt:' As receitas rodoviárias vêm sobretudo das portagens cobradas nessas estradas, além das partilhas de benefícios e dos pagamentos fixos das subconcessionárias.',
+ en:' Road revenue comes mainly from tolls collected on those roads, together with benefit-sharing and fixed payments by subconcessionaires.',
+};
 const saude='oe-2027-saude-despesa-efetiva-consolidada-';
 const prrPt=' PRR é o Plano de Recuperação e Resiliência. O relatório descreve o fim do seu ciclo extraordinário de financiamento.';
 const prrEn=' The report describes the end of the exceptional funding cycle of the Recovery and Resilience Plan (RRP; «PRR» in the table).';
@@ -28,10 +36,10 @@ for(const [stem,label,en] of [
  const f=familia([id],'Saúde, '+medida+(variacao?', variação publicada':''),'Health, '+minusculas(en)+(variacao?', published change':''),
   (variacao?'É a variação publicada da ':'É a ')+medida+' do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve.',
   (variacao?'It is the published change in ':'It is ')+measure+' in the Health table, «Conta do Pograma Legado», as written in the table.',
-  L('name',label.replace(' sem PRR','')),L('document.locator','Saúde (PL15), Conta do Pograma Legado'),...(variacao?[]:totalEfetiva),...(totalPrr?[apoioPrr[0]]:explica?apoioPrr:[]));
- f.origens=[...(!variacao?['v2a-total-efetiva']:[]),...(totalPrr?['v2a-prr-saude']:explica?['v2a-prr-saude','v2a-prr-ciclo']:[])];
+  L('name',label.replace(' sem PRR','')),L('document.locator','Saúde (PL15), Conta do Pograma Legado'),...totalEfetiva,O('v2a-saude-consolidada','provenientes e destinados a entidades do Pograma Legado'),...(totalPrr?[apoioPrr[0]]:explica?apoioPrr:[]));
+ f.origens=['v2a-saude-consolidada','v2a-total-efetiva',...(totalPrr?['v2a-prr-saude']:explica?['v2a-prr-saude','v2a-prr-ciclo']:[])];
  f.complemento={pt:variacao?[' Compara a estimativa de ',{periodo:id.replace('variacao','2026')},' com o orçamento para ',{periodo:id},'.']:[' Refere-se '+(ano==='2026'?'à estimativa de ':'ao orçamento para '),{periodo:id},'.'],en:variacao?[' It compares the estimate for ',{periodo:id.replace('variacao','2026')},' with the budget for ',{periodo:id},'.']:[' It refers to the '+(ano==='2026'?'estimate':'budget')+' for ',{periodo:id},'.']};
- if(!variacao) {f.complemento.pt.push(' A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.');f.complemento.en.push(' Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.');}
+ for(const lang of ['pt','en'])f.complemento[lang].push(definicoesSaude[lang]);
  if(totalPrr)for(const lang of ['pt','en'])f.complemento[lang].push(...totalComPrr[lang]);
  else if(explica) {f.complemento.pt.push(prrPt,...comparacaoPrr.pt);f.complemento.en.push(sem?' The report describes the end of the plan’s exceptional funding cycle.':prrEn,...comparacaoPrr.en);}
  FAMILIAS_V2A.push(f);
@@ -44,25 +52,31 @@ for(const [stem,label,en,fonte] of [
 ]) {
  const total=stem==='total-encargos-liquidos';
  const f=familia(['oe-2027-ppp-'+stem],(total?'Parcerias público-privadas, total dos encargos líquidos':'Parcerias público-privadas rodoviárias, '+(stem.endsWith('brutos')?'encargos brutos':stem.endsWith('receitas')?'receitas':'encargos líquidos')),(total?'Public-private partnerships, total net charges':'Road public-private partnerships, '+(stem.endsWith('brutos')?'gross charges':stem.endsWith('receitas')?'revenue':'net charges')),
-  total?'É quanto o Estado prevê pagar ao conjunto das parcerias público-privadas, depois de descontar o que recebe delas.':'É o valor previsto para '+minusculas(label)+' no quadro das parcerias público-privadas.',
-  total?'It is what the State expects to pay to all public-private partnerships, after deducting what it receives from them.':'It is the projected value for '+minusculas(en)+' in the public-private partnership table.',
+  total?'É quanto o Estado prevê pagar ao conjunto das parcerias público-privadas, depois de descontar as receitas dessas parcerias.':'É o valor previsto para '+minusculas(label)+' no quadro das parcerias público-privadas.',
+  total?'It is what the State expects to pay to all public-private partnerships, after deducting revenue from those partnerships.':'It is the projected value for '+minusculas(en)+' in the public-private partnership table.',
   L('name',fonte),L('document.locator','Quadro 4.25'),L('excerpt','ótica de fluxo de caixa'),L('excerpt','preços constantes de 2027'),...(total?[O('v2a-ppp-setores','Oceanário')]:[O('v2a-ppp-conta','designadamente os encargos e as receitas')]));
- f.origens=[total?'v2a-ppp-setores':'v2a-ppp-conta'];
+ f.origens=[...(total?['v2a-ppp-setores']:[]),'v2a-ppp-conta'];
+ if(total)f.partes[0].apoios.push(O('v2a-ppp-conta','Receitas oriundas da cobrança de taxas de portagem'));
  if(total)f.complemento={
   pt:[' Refere-se a ',{periodo:'oe-2027-ppp-total-encargos-liquidos-2027'},', em euros desse ano: são encargos líquidos, valores de caixa a preços constantes. É o valor da linha «Total» do quadro ',A('v2a-ppp-setores','quadro'),'. O quadro lista os setores «Rodoviário» (estradas), «Ferroviário» (ferrovia), «Saúde» (hospitais), «Aeroportuário» (aeroportos) e «Oceanário».'],
   en:[' It refers to ',{periodo:'oe-2027-ppp-total-encargos-liquidos-2027'},', in euros of that year: these are net charges, cash flows at constant prices. It is the value in the «Total» row of Table ',A('v2a-ppp-setores','quadro'),'. The table lists the sectors «Rodoviário» (roads), «Ferroviário» (railways), «Saúde» (hospitals), «Aeroportuário» (airports) and «Oceanário» (the oceanarium).']};
+ if(total)for(const lang of ['pt','en'])f.complemento[lang].push(receitas[lang]);
  FAMILIAS_V2A.push(f);
 }
-FAMILIAS_V2A.push(familia(['oe-2027-cenario-pib-real-crescimento'],'Previsão do Ministério das Finanças para o crescimento real do produto interno bruto em dois mil e vinte e sete, transcrita pelo CFP',
-  'Ministry of Finance forecast for real gross domestic product growth in two thousand and twenty-seven, transcribed by the CFP',
-  'É a previsão do Ministério das Finanças para o crescimento real do produto interno bruto em dois mil e vinte e sete, na Proposta de Orçamento do Estado para dois mil e vinte e sete, como o CFP a transcreve. O parecer considera-a superior à de todas as instituições de referência.',
-  'It is the Ministry of Finance forecast for real gross domestic product growth in two thousand and twenty-seven, in the Draft State Budget for two thousand and twenty-seven, as transcribed by the CFP. The opinion considers it higher than those of all reference institutions.',
+FAMILIAS_V2A.push(familia(['oe-2027-cenario-pib-real-crescimento'],'Previsão do Ministério das Finanças para o crescimento real do produto interno bruto, transcrita pelo CFP',
+  'Ministry of Finance forecast for real gross domestic product growth, transcribed by the CFP',
+  'É a previsão do Ministério das Finanças para o crescimento real do produto interno bruto na Proposta de Orçamento do Estado analisada pelo CFP, como o CFP a transcreve. O parecer considera-a superior à de todas as instituições de referência.',
+  'It is the Ministry of Finance forecast for real gross domestic product growth in the Draft State Budget assessed by the CFP, as transcribed by the CFP. The opinion considers it higher than those of all reference institutions.',
   L('document.title','Proposta de Orçamento do Estado para 2027'),L('excerpt','crescimento real'),L('excerpt','Fonte: MF'),L('excerpt','superior ao de todas as instituições de referência')));
-FAMILIAS_V2A.push(familia(['oe-2027-cenario-ihpc'],'Previsão do Ministério das Finanças para a inflação medida pelo IHPC em dois mil e vinte e seis, transcrita pelo CFP',
-  'Ministry of Finance forecast for HICP inflation in two thousand and twenty-six, transcribed by the CFP',
-  'É a previsão do Ministério das Finanças para a inflação medida pelo índice harmonizado de preços no consumidor em dois mil e vinte e seis, na Proposta de Orçamento do Estado para dois mil e vinte e sete, como o CFP a transcreve. O parecer considera-a pouco provável.',
-  'It is the Ministry of Finance forecast for inflation measured by the harmonised index of consumer prices in two thousand and twenty-six, in the Draft State Budget for two thousand and twenty-seven, as transcribed by the CFP. The opinion considers it unlikely.',
+FAMILIAS_V2A.push(familia(['oe-2027-cenario-ihpc'],'Previsão do Ministério das Finanças para a inflação medida pelo IHPC, transcrita pelo CFP',
+  'Ministry of Finance forecast for HICP inflation, transcribed by the CFP',
+  'É a previsão do Ministério das Finanças para a inflação medida pelo índice harmonizado de preços no consumidor na Proposta de Orçamento do Estado analisada pelo CFP, como o CFP a transcreve. O parecer considera-a pouco provável.',
+  'It is the Ministry of Finance forecast for inflation measured by the harmonised index of consumer prices in the Draft State Budget assessed by the CFP, as transcribed by the CFP. The opinion considers it unlikely.',
   L('name','IHPC'),L('document.title','Proposta de Orçamento do Estado para 2027'),L('excerpt','Fonte: MF'),L('excerpt','pouco provável')));
+for(const f of FAMILIAS_V2A.filter(f=>f.chaves[0].includes('-cenario-'))) {
+ const id=f.chaves[0]+(f.chaves[0].endsWith('ihpc')?'-2026':'-2027');
+ f.complemento={pt:[' A previsão refere-se a ',{periodo:id},'.'],en:[' The forecast refers to ',{periodo:id},'.']};
+}
 for(const [id,pt,en,frase,phrase,literal] of [
  ['afirmacao-leitao-amaro-saude-oe2027-2026-10-09','Afirmação de Leitão Amaro sobre o orçamento da Saúde sem PRR','Leitão Amaro’s statement about the Health budget excluding the RRP',
   'É o aumento do orçamento da Saúde retirando a verba excecional do PRR, nas palavras do ministro da Presidência transcritas pela RTP.',
@@ -78,21 +92,24 @@ for(const [id,pt,en,frase,phrase,literal] of [
 const amaro=FAMILIAS_V2A.find(f=>f.chaves[0].startsWith('afirmacao-leitao-'));
 amaro.partes[0].pt+=' PRR é o Plano de Recuperação e Resiliência.';
 amaro.partes[0].en=amaro.partes[0].en.replace('exceptional RRP funding','exceptional Recovery and Resilience Plan (RRP; PRR in Portuguese) funding');
-amaro.partes[0].apoios.push(...apoioPrr);amaro.origens=['v2a-prr-saude','v2a-prr-ciclo'];
-amaro.complemento={pt:[' O relatório «',A('v2a-prr-ciclo','documento'),'» descreve o fim do ciclo extraordinário de financiamento do PRR.',...comparacaoPrr.pt],en:[' The report «',A('v2a-prr-ciclo','documento_en'),'» describes the end of the RRP’s exceptional funding cycle.',...comparacaoPrr.en]};
+amaro.partes[0].apoios.push(...apoioPrr);amaro.origens=['v2a-prr-saude','v2a-prr-ciclo','v2a-saude-consolidada','v2a-total-efetiva'];
+amaro.partes[0].apoios.push(...totalEfetiva,O('v2a-saude-consolidada','provenientes e destinados a entidades do Pograma Legado'));
+amaro.complemento={pt:[' O relatório «',A('v2a-prr-ciclo','documento'),'» (p. ',A('v2a-prr-ciclo','pagina_pdf'),' do PDF) descreve o fim do ciclo extraordinário de financiamento do PRR.',definicoesSaude.pt,...comparacaoPrr.pt],en:[' The ',A('v2a-prr-ciclo','documento_en'),' (PDF p. ',A('v2a-prr-ciclo','pagina_pdf'),') describes the end of the RRP’s exceptional funding cycle.',definicoesSaude.en,...comparacaoPrr.en]};
 const pcp=FAMILIAS_V2A.find(f=>f.chaves[0].startsWith('afirmacao-pcp-'));
 pcp.partes[0].pt='Na intervenção publicada pelo PCP, Paulo Raimundo afirma: ';
 pcp.partes[0].en='In the speech published by the PCP, Paulo Raimundo states ';
-pcp.origens=['v2a-ppp-conta'];pcp.partes[0].apoios.push(O('v2a-ppp-conta','designadamente os encargos e as receitas'));
+pcp.origens=['v2a-ppp-setores','v2a-ppp-conta'];pcp.partes[0].apoios.push(O('v2a-ppp-setores','encargos brutos'),O('v2a-ppp-conta','designadamente os encargos e as receitas'));
 const bruto='oe-2027-ppp-rodoviario-encargos-brutos-2027',liquido='oe-2027-ppp-rodoviario-encargos-liquidos-2027';
 pcp.complemento={
- pt:['«',{excerto:pcp.chaves[0]},'». No relatório «',A('v2a-ppp-conta','documento'),'», o quadro ',A('v2a-ppp-conta','quadro'),' prevê para ',{periodo:bruto},' encargos brutos rodoviários de ',{claim:bruto},' milhões de euros: o que o Estado paga às parcerias rodoviárias nesse ano. Os encargos líquidos são ',{claim:liquido},' milhões: o que paga depois de descontar o que recebe delas. O montante afirmado é superior tanto aos encargos brutos como aos líquidos que o quadro imprime para ',{periodo:liquido},'.'],
- en:['that the budget allocates ',{claim:pcp.chaves[0]},' million euros to road public-private partnerships, in these words: «',{excerto:pcp.chaves[0]},'». In the report «',A('v2a-ppp-conta','documento_en'),'», Table ',A('v2a-ppp-conta','quadro'),' forecasts gross road charges of ',{claim:bruto},' million euros for ',{periodo:bruto},': what the State pays to road partnerships that year. Net charges are ',{claim:liquido},' million: what it pays after deducting what it receives from them. The stated amount is higher than both the gross and net charges printed in the table for ',{periodo:liquido},'.']};
+ pt:['«',{excerto:pcp.chaves[0]},'». No relatório «',A('v2a-ppp-setores','documento'),'» (p. ',A('v2a-ppp-setores','pagina_pdf'),' do PDF), o quadro ',A('v2a-ppp-setores','quadro'),' prevê para ',{periodo:bruto},' encargos brutos rodoviários de ',{claim:bruto},' milhões de euros: o que o Estado paga às parcerias rodoviárias nesse ano. Os encargos líquidos são ',{claim:liquido},' milhões: o que paga depois de descontar as receitas rodoviárias.',receitas.pt,' O montante afirmado é superior tanto aos encargos brutos como aos líquidos que o quadro imprime para ',{periodo:liquido},'.'],
+ en:['that the budget allocates ',{claim:pcp.chaves[0]},' million euros to road public-private partnerships, in these words: «',{excerto:pcp.chaves[0]},'». In the ',A('v2a-ppp-setores','documento_en'),' (PDF p. ',A('v2a-ppp-setores','pagina_pdf'),'), Table ',A('v2a-ppp-setores','quadro'),' forecasts gross road charges of ',{claim:bruto},' million euros for ',{periodo:bruto},': what the State pays to road partnerships that year. Net charges are ',{claim:liquido},' million: what it pays after deducting road revenue.',receitas.en,' The stated amount is higher than both the gross and net charges printed in the table for ',{periodo:liquido},'.']};
 const rtp=FAMILIAS_V2A.find(f=>f.chaves[0].startsWith('afirmacao-rtp-'));
 rtp.partes[0].pt='É a queda do orçamento da Saúde noticiada pela RTP. Os montantes da notícia identificam a despesa total consolidada do programa Saúde.';
 rtp.partes[0].en='It is the Health budget decrease reported by RTP. The article’s amounts identify consolidated total expenditure for the Health programme.';
 
 rtp.complemento={pt:[' A notícia é de ',{periodo:rtp.chaves[0]},' e refere-se ao orçamento para ',{periodo:'oe-2027-saude-despesa-total-consolidada-2027'},'.'],en:[' The article is dated ',{periodo:rtp.chaves[0]},' and concerns the budget for ',{periodo:'oe-2027-saude-despesa-total-consolidada-2027'},'.']};
 
-rtp.partes[0].apoios.push(apoioPrr[0]);rtp.origens=['v2a-prr-saude'];
+rtp.partes[0].apoios.push(apoioPrr[0]);rtp.origens=['v2a-prr-saude','v2a-saude-consolidada','v2a-total-efetiva'];
+rtp.partes[0].apoios.push(...totalEfetiva,O('v2a-saude-consolidada','provenientes e destinados a entidades do Pograma Legado'));
+for(const lang of ['pt','en'])rtp.complemento[lang].push(definicoesSaude[lang]);
 for(const lang of ['pt','en'])rtp.complemento[lang].push(...totalComPrr[lang]);
