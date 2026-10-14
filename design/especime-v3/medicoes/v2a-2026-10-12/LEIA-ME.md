@@ -538,7 +538,7 @@ Mandato: `design/observatorio/mandatos/MANDATO-V2A-g-2026-10-14.md`. Entrada do 
 | 8 | O quadro aparece como 4.25, pelo campo `quadro` do apoio. A nota da definição financeira declara 4.38; as passagens corridas não recebem número de quadro. | `origens-g.py:10`; `<motor>/publisher/v2a.py:284`; `src/lib/o-que-e-o-numero.mjs:134` |
 | 9 | Os documentos e publicadores dos apoios têm inglês; Amaro diz «RRP; PRR in Portuguese». Os excertos continuam na língua da fonte. | `src/data/figuras.mjs:2758`; `src/data/verbatim.mjs:55`; `familias.mjs:80` |
 | 10 | PCP e Amaro citam o campo do documento do apoio, com marca de origem; o ano do relatório deixou de vir do período de uma linha. | `familias.mjs:82`, `familias.mjs:88`; `tests/linha/v2a.mjs:111` |
-| 11 | A régua compara o número visível do quadro com o campo do apoio no PCP e no total; uma planta troca-o em cada página e edição. | `tests/linha/v2a.mjs:107`, `tests/linha/v2a.mjs:146` |
+| 11 | A régua compara o número visível do quadro com o campo do apoio no PCP e no total; uma planta troca-o em cada página e edição. | `tests/linha/v2a.mjs:107`, `tests/linha/v2a.mjs:148` |
 | 7 | As duas contagens F dizem 165, como `plantas-f.json`; saiu a declaração de custo E por medir; custo F registado abaixo. | Este relatório, secções E, F e G |
 
 - **V2A-68:** pagamentos, recebimentos e saldo ficam explícitos nas cinco páginas das parcerias. As palavras simples antecedem o jargão no total e explicam os termos nas contas rodoviárias e no PCP. Não se atribui causa à diferença entre setores e total.
@@ -546,14 +546,36 @@ Mandato: `design/observatorio/mandatos/MANDATO-V2A-g-2026-10-14.md`. Entrada do 
 - **V2A-70:** o documento inglês é tradução de identificação; o excerto conserva o português. Amaro diz que PRR é a sigla portuguesa, sem remeter para um quadro inexistente na página.
 - **V2A-71:** a página do PCP ganhou a segunda fonte MF com recibo do relatório, na página física 124. O motor continua a guardar os corpos; o sítio recebe excertos e referências.
 - **V2A-72:** a preparação detetou um tipo incompleto no registo das marcas e uma expectativa portuguesa na conferência inglesa da definição financeira; ambos foram corrigidos. A planta experimental de `check:lugar` não mordeu porque aquela régua lê os painéis, não estes recibos. A alteração e a planta saíram do código; o ensaio fica em `g-conferencias/`. A K17 e a régua V2AG conferem estes apoios com plantas próprias. O ensaio repôs o HTML; a prova regista os resumos antes e depois.
-- **V2A-73:** os portões finais correm pelo escrivão porque o navegador das conferências não arranca na sandbox. A corrida só começa depois do commit de provas e não há escrita durante os quatro portões. Os códigos, cabeças de início e fim e estados serão lidos dos ficheiros antes do fecho.
+- **V2A-73:** os portões finais correm pelo escrivão porque o navegador das conferências não arranca na sandbox. A corrida começou depois do commit de provas e não houve escrita durante os quatro portões. Os códigos, cabeças de início e fim e estados foram lidos dos ficheiros no fecho.
 
 ### Plantas e preparação
 
-O motor passou 40 conferências específicas. O HTML passou 36 páginas e 114 plantas, incluindo as novas recusas de palavras simples retiradas, comparação retirada, período de outra medida, número de quadro trocado, documento sem marca e tradução errada. A K17 recusa o token de apoio sem origem e a marca retirada; a K16 recusa campos diferentes da prova exportada. Os registos estão em `g-conferencias/`; a lista final com mensagem, ficheiro e linha será selada depois dos portões.
+O motor passou 40 conferências específicas. O HTML passou 36 páginas e 114 plantas, incluindo as novas recusas de palavras simples retiradas, comparação retirada, período de outra medida, número de quadro trocado, documento sem marca e tradução errada. A K17 recusa o token de apoio sem origem e a marca retirada; a K16 recusa campos diferentes da prova exportada. Os registos estão em `g-conferencias/`; a lista final, `plantas-g.json`, tem 194 mensagens distintas, cada uma conferida no ficheiro e linha indicados.
 
 ### Custo
 
 V2-a-f, conforme o mandato e o lançador: 97 turnos, 291 192 de custo antigo, 4 pontos da semana com outra sessão em paralelo (RH1-c e RH1-d), contexto médio de 131 737. O custo V2-a-g cabe ao lançador. Não foi exposta uma linha «tokens used».
 
 **V2A-74:** a primeira corrida completa, na cabeça `67093eba559db52595b7e1ac134d176eca3f4bba`, terminou com build 1, verify 125 (não correu por dependência), typecheck 0 e motor 0. Os estados finais estavam vazios e as cabeças não mudaram durante a corrida. Os registos ficam em `portoes-g-preparacao/`. A L10 ainda exigia português no título inglês: `scripts/lingua-das-origens.mjs:12` passou a distinguir `documento_en` da língua do excerto. Quatro plantas conferem título e excerto nas duas edições. A correção só foi escrita depois de o escrivão terminar os quatro portões.
+
+
+### O fecho da passagem G
+
+O último commit de código e provas antes dos portões é `16d59c01c513806e80fd3bb01f1ffec320f3d8a1` no sítio; o motor é `dd5f1d5f1eb060de8803e6594e130023fc8baa00`. O sítio entrou na passagem em `9a98f179`; o motor em `c239badf`. Os commits de implementação são `67093eba` (frases, apoios e réguas), `16d59c01` (língua do título e do excerto) e `dd5f1d5f` no motor (campos dos apoios e segunda fonte). As primeiras 300 imagens foram comitadas em `44cb71e709362e568a883457c70a4aaf2872c995`. O commit que contém este fecho guarda as restantes capturas e os registos finais; não altera código. A sua cabeça final é lida de Git na resposta de entrega.
+
+| Portão | Código lido | Ficheiro |
+| --- | --- | --- |
+| build | 0 | `portoes-g/build.codigo` |
+| verify | 0 | `portoes-g/verify.codigo` |
+| typecheck | 0 | `portoes-g/typecheck.codigo` |
+| motor | 0 | `portoes-g/motor.codigo` |
+
+As cabeças de início e fim coincidem nos dois repositórios. `estado.fim` e `motor.estado.fim` têm zero bytes. O `dist/version.json` e o recibo das capturas nomeiam a cabeça de código acima. Os registos só foram acrescentados depois de terminada a corrida pelo escrivão. Nenhum ramo principal foi fundido e não houve `push`.
+
+`inspecao-g.json` confere os 18 valores e unidades contra a entrada e guarda as frases efetivamente rendidas. `medidas-g.json` confere 3 211 linhas anteriores intactas, 3 229 linhas finais e os oito corpos distintos por SHA256. `frases-g.md` transcreve integralmente as frases do PCP e do total das parcerias, nas duas edições, da construção conferida.
+
+`plantas-g.json` conserva 194 mensagens distintas: 35 do ensaio específico do motor, 157 do `verify` final e duas da prova direta de HTML. A régua das páginas passou 114 plantas nas 36 páginas. Entre as novas recusas estão o quadro trocado no PCP e no total, o título sem marca, a tradução alterada, as palavras simples retiradas, a comparação retirada, o período de outra linha, o campo de apoio sem origem e as línguas erradas do título e do excerto. Cada mensagem foi reconferida pela linha do registo indicada no catálogo.
+
+As capturas em `design/especime-v3/capturas/v2a-2026-10-12/g/` cobrem 16 páginas, duas edições e cinco larguras: 160 casos, 480 PNG. Os 480 resumos e dimensões foram conferidos, sem transbordos, pedidos externos ou erros registados. A inspeção visual cobriu 44 cabeças: 32 a 390 px e 12 a 1280 px. A lista dos ficheiros e a observação estão em `capturas-inspecao-g.json`; não foram observadas sobreposições.
+
+**V2A-75:** a L1 conserva as 2 780 páginas com destino repetido e a mesma multiplicidade de cada destino da passagem F. `l1-comparacao-g.json` regista igualdade integral entre os dois inventários. As alterações posteriores ao código conferido estão limitadas às capturas e medições desta entrega.
