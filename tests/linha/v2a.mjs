@@ -202,7 +202,7 @@ for(const lang of ['pt','en']) {
   [rtp,t=>t.querySelector('.linha-cabeca [data-linha-campo="name"]').set_content('Manchete'),'V2AB nome: a cabeça não diz as palavras citadas'],
   [rtp,t=>t.querySelector('[data-linha-campo="document.locator'+(pt?'':'_en')+'"]').set_content('Quadro'),'V2AB localizador: tradução ou origem ausente'],
   [variacao,t=>t.querySelector('h1').set_content('sem prr'),'V2AB sigla: PRR ou RRP perdeu maiúsculas'],
-  [total,t=>troca(t,frase,pt?'para o mesmo euro não contar duas vezes':'so that the same euro is not counted twice',''),'V2AH Saúde: frase diferente do mandato I ou apoio indevido'],
+  [total,t=>troca(t,frase,pt?'para o mesmo euro não contar duas vezes':'so that the same euro is not counted twice',''),'V2AH Saúde: frase diferente do mandato I emendado pelo J ou apoio indevido'],
   [rtp,t=>t.querySelector(frase).set_content('Notícia alojada.'),'V2AC RTP: a frase não identifica a notícia pela data'],
   ['oe-2027-ppp-total-encargos-liquidos-2027',t=>troca(t,frase,'Oceanário','Setor'),'V2AE PPP: total sem setores próprios ou com conta rodoviária'],
   [total,t=>t.querySelector('[data-linha-campo="document.source_sha256"]').set_content('a'.repeat(64)),'V2AC selo: SHA256 do corpo ausente ou diferente'],

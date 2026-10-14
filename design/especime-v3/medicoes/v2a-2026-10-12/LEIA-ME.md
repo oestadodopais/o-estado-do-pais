@@ -684,3 +684,12 @@ As cabeças de início e fim coincidem nos dois repositórios. Os ficheiros `est
 O pedido `capturas-pedido-i.json` cobre as dezasseis páginas alteradas, nas duas línguas e nas larguras 390, 768, 1024, 1280 e 1600. O recibo `design/especime-v3/capturas/v2a-2026-10-12/i/capturas.json` regista 160 casos e 480 imagens. Todos os SHA256 foram conferidos; as dimensões das páginas inteiras coincidem com o recibo. Não houve transbordos, pedidos externos nem erros do navegador. A inspeção visual registada em `capturas-i-inspecao.json` abrange 51 imagens: 32 cabeças móveis, 18 cabeças largas e a página inteira inglesa dos encargos líquidos rodoviários, incluindo a atribuição do publicador. Não foram observados cortes ou sobreposições nessas imagens.
 
 **V2A-94:** os cinco achados reais do mandato I estão tratados. Os quatro portões finais passaram pelo escrivão, depois do commit de provas; as capturas foram produzidas pelo mesmo circuito. A leitura a frio pertence ao lugar de direção. Não houve fusão de `main` ou `master`, nem `push`. O custo da V2-a-i cabe ao lançador; não foi exposta uma linha «tokens used».
+
+
+## A passagem V2-a-j
+
+O mandato J emenda duas omissões da redação anterior: a frase do PCP passa a ter as unidades junto dos valores e a citação entre aspas angulares nas duas línguas (`familias.mjs:88` e `:92`); a conta das três páginas rodoviárias passa a dizer «em milhões de euros» ou «in millions of euros» (`src/lib/v2a-palavras.mjs:19`). As expectativas literais em `tests/cartao/v2ai-frases.json` incorporam as emendas. Foram substituídas apenas as quatro frases afetadas no inventário. Os dezoito valores e unidades permanecem iguais à entrada `4fc74676`; o motor não foi alterado.
+
+**V2A-95:** as frases seguem literalmente o mandato J. As 192 plantas existentes passaram na conferência de 36 páginas, incluindo a troca de uma palavra por página e língua. Os portões e as capturas são pedidos pelo escrivão, porque o navegador não arranca na sandbox; os códigos e cabeças finais ficam no fecho abaixo.
+
+Custo da V2-a-i, conforme o mandato J e o lançador: 107 turnos, 290 637 de custo antigo, 3 pontos da semana sem outra sessão em paralelo, contexto médio de 128 541. O custo da V2-a-j cabe ao lançador. Não foi exposta uma linha «tokens used».

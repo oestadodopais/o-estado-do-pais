@@ -3804,7 +3804,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "Na intervenção publicada pelo PCP, Paulo Raimundo afirma: "
+        "Na intervenção publicada pelo PCP, Paulo Raimundo afirma: «"
       ],
       "en": [
         "In the speech published by the PCP, Paulo Raimundo states that the budget allocates "
@@ -3815,7 +3815,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         {
           "excerto": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09"
         },
-        ". No relatório «",
+        "». No relatório «",
         {
           "apoio": {
             "origem": "v2a-ppp-setores",
@@ -3844,11 +3844,11 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         {
           "claim": "oe-2027-ppp-rodoviario-encargos-brutos-2027"
         },
-        ": o que o Estado paga às parcerias rodoviárias nesse ano, com os pagamentos pela disponibilidade das vias e pelo serviço, os gastos com a cobrança das portagens, as grandes reparações e as compensações aos parceiros privados. Os encargos líquidos são ",
+        " milhões de euros: o que o Estado paga às parcerias rodoviárias nesse ano, com os pagamentos pela disponibilidade das vias e pelo serviço, os gastos com a cobrança das portagens, as grandes reparações e as compensações aos parceiros privados. Os encargos líquidos são ",
         {
           "claim": "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
         },
-        ": o que paga depois de descontar as receitas, que são as portagens cobradas nas vias portajadas (exceto onde pertencem ao parceiro privado), a partilha de benefícios ou de receitas prevista nos contratos e os pagamentos fixos das subconcessionárias, como o relatório as lista na p. ",
+        " milhões: o que paga depois de descontar as receitas, que são as portagens cobradas nas vias portajadas (exceto onde pertencem ao parceiro privado), a partilha de benefícios ou de receitas prevista nos contratos e os pagamentos fixos das subconcessionárias, como o relatório as lista na p. ",
         {
           "apoio": {
             "origem": "v2a-ppp-conta",
@@ -3865,11 +3865,11 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         {
           "claim": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09"
         },
-        " to road public-private partnerships, in these words: ",
+        " million euros to road public-private partnerships, in these words: «",
         {
           "excerto": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09"
         },
-        ". In the ",
+        "». In the ",
         {
           "apoio": {
             "origem": "v2a-ppp-setores",
@@ -3894,7 +3894,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         {
           "claim": "oe-2027-ppp-rodoviario-encargos-brutos-2027"
         },
-        " for ",
+        " million euros for ",
         {
           "periodo": "oe-2027-ppp-rodoviario-encargos-brutos-2027"
         },
@@ -3902,7 +3902,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
         {
           "claim": "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
         },
-        ": what it pays after deducting revenue, which is the tolls collected on tolled roads (except where they belong to the private partner), the benefit or revenue sharing provided for in the contracts and the fixed payments by subconcessionaires, as the report lists them on p. ",
+        " million: what it pays after deducting revenue, which is the tolls collected on tolled roads (except where they belong to the private partner), the benefit or revenue sharing provided for in the contracts and the fixed payments by subconcessionaires, as the report lists them on p. ",
         {
           "apoio": {
             "origem": "v2a-ppp-conta",

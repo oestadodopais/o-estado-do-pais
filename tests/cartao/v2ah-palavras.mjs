@@ -1,4 +1,4 @@
-/** V2AH: redação literal decidida no mandato I, independente do compositor. */
+/** V2AH: redação literal decidida no mandato I emendado pelo J, independente do compositor. */
 import fs from 'node:fs';
 import {getClaim} from '../../src/lib/ledger.mjs';
 const frases=JSON.parse(fs.readFileSync(new URL('./v2ai-frases.json',import.meta.url),'utf8'));
@@ -16,7 +16,7 @@ export function conferirPalavrasSaude(root,id,lang) {
  const texto=normal(bloco?.textContent),erros=[];
  const partesSaude=esperado.split(lang==='pt'?' \"Efetiva\"':' \"Effective\"');
  const repetida=saude&&(texto.split(partesSaude[0]).length!==2||texto.split(partesSaude[1]).length!==2);
- if(saude?(texto.split(esperado).length!==2||repetida||root.querySelector('[data-def-origem="v2a-total-efetiva"]')||!root.querySelector('[data-def-origem="v2a-saude-consolidada"]')):texto!==esperado)erros.push('V2AH '+(saude?'Saúde':'parcerias')+': frase diferente do mandato I ou apoio indevido');
+ if(saude?(texto.split(esperado).length!==2||repetida||root.querySelector('[data-def-origem="v2a-total-efetiva"]')||!root.querySelector('[data-def-origem="v2a-saude-consolidada"]')):texto!==esperado)erros.push('V2AH '+(saude?'Saúde':'parcerias')+': frase diferente do mandato I emendado pelo J ou apoio indevido');
  if(!saude&&(!bloco?.querySelector('[data-verbatim="origem-v2a-ppp-conta-pagina_pdf"]')||normal(bloco.querySelector('[data-verbatim="origem-v2a-ppp-conta-pagina_pdf"]').textContent)!==origens['v2a-ppp-conta'].pagina_pdf))erros.push('V2AI página: localizador rodoviário sem marca do apoio');
  return erros;
 }
