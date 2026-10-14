@@ -1,0 +1,121 @@
+{
+  "passou": true,
+  "casos": [
+    {
+      "id": "transferida-nome-inteiro",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-documento-alojado-for-abreviado",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-documento-alojado-en",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-atributo",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-json-ld",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-rotulo",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-regra-do-metodo",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-m5-pagina-com-comentario",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-m5-vista",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-fonte-publica",
+      "mordeu": true
+    },
+    {
+      "id": "transferida-controlo-publico",
+      "mordeu": true
+    },
+    {
+      "id": "detetor-cego-recusa-as-plantas",
+      "mordeu": true
+    },
+    {
+      "id": "repositorio-limpo",
+      "mordeu": true
+    },
+    {
+      "id": "corrida-dist/estudos/ensaio/documento/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "json-sem-cadeias-dist/estudos/ensaio/documento/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "corrida-dist/en/studies/ensaio/document/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "json-sem-cadeias-dist/en/studies/ensaio/document/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "corrida-dist/sobre/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "json-sem-cadeias-dist/sobre/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "corrida-dist/metodo/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "json-sem-cadeias-dist/metodo/index.html",
+      "mordeu": true
+    },
+    {
+      "id": "corrida-src/views/Ensaio.astro",
+      "mordeu": true
+    },
+    {
+      "id": "json-sem-cadeias-src/views/Ensaio.astro",
+      "mordeu": true
+    },
+    {
+      "id": "reposicao-limpa",
+      "mordeu": true
+    },
+    {
+      "id": "forma-abreviada-do-git",
+      "mordeu": true
+    },
+    {
+      "id": "saida-recusa-forma-abreviada",
+      "mordeu": true
+    },
+    {
+      "id": "oraculo-sem-campos-pessoais",
+      "mordeu": true
+    },
+    {
+      "id": "alvos-ignorados",
+      "mordeu": true
+    },
+    {
+      "id": "regra-dos-alvos-limitada-as-medicoes",
+      "mordeu": true
+    }
+  ]
+}
