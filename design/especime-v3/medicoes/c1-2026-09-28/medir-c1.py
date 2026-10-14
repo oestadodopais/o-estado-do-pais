@@ -55,11 +55,13 @@ def em_ci():
 def _ler_proibidos(valor, ci):
     cadeias = []
     identidades = {n.casefold() for n in IDENTIDADES_DO_PROJETO}
-    # Só LF separa entradas. Dentro de cada entrada, os espaços que split()
-    # reconhece colapsam antes da validação; os restantes controlos recusam.
+    # Só LF separa entradas. Retiram-se os extremos, incluindo CR de CRLF,
+    # mas um separador interior tem de ser recusado antes de colapsar espaços.
     for linha, texto in enumerate((valor or '').split('\n'), 1):
         texto = re.sub(r'^[\s\ufeff]+|[\s\ufeff]+$', '', texto)
-        texto = ' '.join(texto.split())
+        if any(unicodedata.category(c) in {'Cc', 'Cf', 'Zl', 'Zp'} and c != '\t' for c in texto):
+            raise ValueError(f'PRIVACIDADE_PROIBIDOS: linha {linha} inválida (separador ou controlo interior).')
+        texto = re.sub(r' +', ' ', ''.join(' ' if c == '\t' or unicodedata.category(c) == 'Zs' else c for c in texto))
         texto = unicodedata.normalize('NFC', texto)
         if not texto:
             continue
@@ -102,39 +104,62 @@ def formas_dos_nomes(cadeias):
     return tuple(dict.fromkeys(formas))
 
 
+@lru_cache(maxsize=1)
+def equivalencias_unicode():
+    """Índices inversos de HTML5 e casefold, calculados apenas para as cadeias."""
+    entidades, dobradas = {}, {}
+    for nome, valor in html.entities.html5.items():
+        entidades.setdefault(valor, set()).add(nome.rstrip(';'))
+    for numero in range(0x110000):
+        c = chr(numero)
+        if c.casefold() != c.lower():
+            chave = unicodedata.normalize('NFC', c.casefold())
+            dobradas.setdefault(chave, set()).add(c)
+    return entidades, dobradas
+
+
 @lru_cache(maxsize=64)
 def formas_comparaveis(cadeias):
     """Compila as formas uma vez; nenhum corpo de ficheiro é descodificado."""
+    entidades, dobradas = equivalencias_unicode()
+
     def alternativa(partes):
         partes = sorted(set(partes), key=lambda p: (-len(p), p))
         return partes[0] if len(partes) == 1 else b'(?:' + b'|'.join(partes) + b')'
 
     @lru_cache(maxsize=None)
-    def representacoes(caracter, codificacao):
+    def basicas(caracter, codificacao):
         def literal(texto):
             return re.escape(texto.encode(codificacao).lower())
 
         formas = []
-        valores = espacos_unicode() if caracter == ' ' else {caracter, caracter.lower(), caracter.upper(), caracter.casefold()}
+        try:
+            formas.append(literal(caracter))
+        except UnicodeEncodeError:
+            pass
+        for nome in entidades.get(caracter, ()):
+            formas.append(literal('&' + nome) + b'(?:' + literal(';') + b')?')
+        numero = ord(caracter)
+        for prefixo, digitos in [('&#', str(numero)), ('&#x', format(numero, 'x'))]:
+            formas.append(literal(prefixo) + b'(?:' + literal('0') + b')*' + literal(digitos) + b'(?:' + literal(';') + b')?')
+        if numero <= 0xffff:
+            formas.append(literal('\\u' + format(numero, '04x')))
+        else:
+            par = caracter.encode('utf-16-be')
+            formas.append(literal(''.join('\\u' + format(int.from_bytes(par[i:i+2], 'big'), '04x') for i in (0, 2))))
+        return tuple(formas)
+
+    @lru_cache(maxsize=None)
+    def representacoes(caracter, codificacao):
+        valores = set(espacos_unicode()) if caracter == ' ' else {caracter} | dobradas.get(caracter, set())
+        valores = {forma for c in valores for forma in (c, c.lower(), c.upper(), c.casefold())}
+        valores |= {unicodedata.normalize(n, v) for v in valores for n in ('NFC', 'NFD')}
+        formas = []
         for valor in valores:
-            try:
-                formas.append(literal(valor))
-            except UnicodeEncodeError:
-                pass
-            # Também conserva entidades e escapes de letras ASCII e formas
-            # misturadas dentro de uma palavra, sem transformar o ficheiro.
-            if len(valor) == 1:
-                numero = ord(valor)
-                nome = html.entities.codepoint2name.get(numero)
-                if nome:
-                    formas.append(literal('&' + nome + ';'))
-                for prefixo, digitos in [('&#', str(numero)), ('&#x', format(numero, 'x'))]:
-                    formas.append(literal(prefixo) + b'(?:' + literal('0') + b')*' + literal(digitos) + b'(?:' + literal(';') + b')?')
-                if numero <= 0xffff:
-                    formas.append(literal('\\u' + format(numero, '04x')))
-                else:
-                    par = valor.encode('utf-16-be')
-                    formas.append(literal(''.join('\\u' + format(int.from_bytes(par[i:i+2], 'big'), '04x') for i in (0, 2))))
+            # Cada carácter pode escolher NFC, NFD, entidade ou escape sem
+            # impor a mesma escolha aos outros caracteres do nome.
+            resto = b''.join(alternativa(basicas(c, codificacao)) for c in valor[1:])
+            formas.extend(primeira + resto for primeira in basicas(valor[0], codificacao))
         return tuple(formas)
 
     @lru_cache(maxsize=None)
@@ -142,29 +167,40 @@ def formas_comparaveis(cadeias):
         padrao = alternativa(representacoes(caracter, codificacao))
         return b'(?:' + padrao + b')+' if caracter == ' ' else padrao
 
+    def opcoes(texto, i):
+        yield texto[i], i + 1
+        # As expansões de casefold incluem ss e as ligaturas fi, fl, ff,
+        # ffi, ffl e st. O índice inverso conserva também a direção contrária.
+        for tamanho in (2, 3):
+            trecho = texto[i:i + tamanho]
+            if len(trecho) == tamanho:
+                for c in sorted(dobradas.get(trecho, ())):
+                    yield c, i + tamanho
+
+    def inserir(ramo, texto, i, codificacao):
+        if i == len(texto):
+            ramo[None] = {}
+        else:
+            for c, seguinte in opcoes(texto, i):
+                inserir(ramo.setdefault(atomo(c, codificacao), {}), texto, seguinte, codificacao)
+
     arvore = {}
     for cadeia in cadeias:
-        texto = ' '.join(cadeia.decode('utf-8').split())
+        texto = unicodedata.normalize('NFC', ' '.join(cadeia.decode('utf-8').split()).casefold())
         if not texto:
             continue
-        for normalizacao in ('NFC', 'NFD'):
-            normal = unicodedata.normalize(normalizacao, texto)
-            for forma in {normal.lower(), normal.casefold()}:
-                for codificacao in ('utf-8', 'utf-16-le', 'utf-16-be', 'latin-1'):
-                    for primeira in representacoes(forma[0], codificacao):
-                        # Cada ramo começa por um byte literal. Assim o motor
-                        # da expressão pode saltar os bytes que não iniciam nomes.
-                        tamanho = 2 if primeira.startswith(b'\\') else 1
-                        ramo = arvore.setdefault(primeira[:tamanho], {})
-                        if primeira[tamanho:]:
-                            ramo = ramo.setdefault(primeira[tamanho:], {})
-                        for c in forma[1:]:
-                            ramo = ramo.setdefault(atomo(c, codificacao), {})
-                        ramo[None] = {}
+        for codificacao in ('utf-8', 'utf-16-le', 'utf-16-be', 'latin-1'):
+            for c, seguinte in opcoes(texto, 0):
+                for primeira in representacoes(c, codificacao):
+                    # O primeiro byte literal permite saltar os bytes que não
+                    # iniciam nomes, mesmo nas representações de vários bytes.
+                    tamanho = 2 if primeira.startswith(b'\\') else 1
+                    ramo = arvore.setdefault(primeira[:tamanho], {})
+                    if primeira[tamanho:]:
+                        ramo = ramo.setdefault(primeira[tamanho:], {})
+                    inserir(ramo, texto, seguinte, codificacao)
 
     def compilar(ramo):
-        # Partilha os prefixos das formas e das cadeias, para não voltar a
-        # procurar o mesmo início em cada alternativa da expressão regular.
         partes = [atomo + compilar(filhos) for atomo, filhos in ramo.items() if atomo is not None]
         if None in ramo:
             partes.append(b'')

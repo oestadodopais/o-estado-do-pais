@@ -254,7 +254,7 @@ def plantas_pessoais():
                   ('decisao-inocua', 'registo.log', b'<worktree>/dist', False)])
     plantas = [{'id': 'ramo-pessoal-' + caso, 'mordeu': recusar_rastreado(nome, dados, (cadeia,)) == esperado}
                for caso, nome, dados, esperado in casos]
-    return plantas + plantas_identidades() + plantas_normalizacao() + plantas_formas_d()
+    return plantas + plantas_identidades() + plantas_normalizacao() + plantas_formas_d() + plantas_formas_e()
 
 
 def plantas_formas_d():
@@ -285,6 +285,65 @@ def plantas_formas_d():
                                 'mordeu': recusar_rastreado('ensaio.bin', corpo, (dobravel.encode(),))})
     plantas.append({'id': 'espacos-controlo-inocuo',
                     'mordeu': not recusar_rastreado('ensaio.txt', b'Uma pagina publica.', (inteiro.encode(),))})
+    return plantas
+
+
+def plantas_formas_e():
+    """RH1-e: seis regressões independentes, equivalências e separadores."""
+    casos = [
+        ('nfc-nfd-mistos', 'Pessoa Ártica Sintética', 'Pessoa A\u0301rtica Sintética'),
+        ('entidade-sem-ponto-virgula', 'Pessoa Sintética', 'Pessoa Sint&eacute' + 'tica'),
+        ('entidade-apos', "Pessoa D'Exemplo", 'Pessoa D&apos;Exemplo'),
+        ('entidade-ccaron', 'Pessoa Čartica', 'Pessoa &Ccaron;artica'),
+        ('ss-para-eszett', 'Pessoa Strasse', 'Pessoa Straße'),
+        ('ligatura-fi', 'Pessoa Fictícia', 'Pessoa ﬁctícia'),
+    ]
+    for letras, ligatura in [('fi', 'ﬁ'), ('fl', 'ﬂ'), ('ff', 'ﬀ'), ('ffi', 'ﬃ'),
+                              ('ffl', 'ﬄ'), ('st', 'ﬅ'), ('st', 'ﬆ')]:
+        casos.append(('ligatura-' + str(ord(ligatura)), 'Pessoa ' + letras + 'artica', 'Pessoa ' + ligatura + 'artica'))
+        casos.append(('ligatura-inversa-' + str(ord(ligatura)), 'Pessoa ' + ligatura + 'artica', 'Pessoa ' + letras + 'artica'))
+    casos.extend([
+        ('eszett-para-ss', 'Pessoa Straße', 'Pessoa Strasse'),
+        ('casefold-por-caracter', 'Pessoa Straße Straße', 'Pessoa Strasse Straße'),
+        ('sigma-final', 'Pessoa Σίσυφος', 'Pessoa σίσυφοσ'),
+        ('s-longo', 'Pessoa Sintética', 'Peſſoa Sintética'),
+        ('apos-sem-ponto-virgula', "Pessoa D'Exemplo", 'Pessoa D&aposExemplo'),
+        ('ccaron-sem-ponto-virgula', 'Pessoa čartica', 'Pessoa &ccaronartica'),
+    ])
+    plantas = []
+    for caso, segredo, texto in casos:
+        for codificacao in ('utf-8', 'utf-16-le', 'utf-16-be', 'latin-1'):
+            forma = ''
+            try:
+                corpo = texto.encode(codificacao)
+            except UnicodeEncodeError:
+                # Latin-1 não contém marcas combinantes nem ligaturas. Prova
+                # a representação numérica dessas posições nessa codificação.
+                corpo = texto.encode(codificacao, errors='xmlcharrefreplace')
+                forma = '-entidades-numericas'
+            plantas.append({'id': 'e-' + caso + '-' + codificacao + forma,
+                            'mordeu': recusar_rastreado('ensaio.bin', corpo, (segredo.encode(),))})
+    for caso, marca in [('cr', '\r'), ('linha', '\u2028'), ('paragrafo', '\u2029'),
+                         ('nel', '\x85'), ('vt', '\v'), ('ff', '\f'), ('rs', '\x1e')]:
+        try:
+            detetor._ler_proibidos('Pessoa Sintética Um\nPessoa' + marca + ' Sintética Dois', True)
+        except ValueError as erro:
+            mordeu = 'linha 2' in str(erro) and 'Pessoa' not in str(erro)
+        else:
+            mordeu = False
+        plantas.append({'id': 'e-separador-interior-' + caso, 'mordeu': mordeu})
+    try:
+        detetor._ler_proibidos('Pessoa Sintética Um\rPessoa Sintética Dois', True)
+    except ValueError as erro:
+        mordeu = 'linha 1' in str(erro) and 'Pessoa' not in str(erro)
+    else:
+        mordeu = False
+    plantas.append({'id': 'e-duas-entradas-com-cr-recusadas', 'mordeu': mordeu})
+    plantas.append({'id': 'e-crlf-aceite', 'mordeu': detetor._ler_proibidos(
+        'Pessoa Sintética Um\r\nPessoa Sintética Dois\r\n', True) ==
+        ('Pessoa Sintética Um'.encode(), 'Pessoa Sintética Dois'.encode())})
+    plantas.append({'id': 'e-controlo-inocuo', 'mordeu': not recusar_rastreado(
+        'ensaio.txt', b'Uma pagina publica.', ('Pessoa Sintética'.encode(),))})
     return plantas
 
 

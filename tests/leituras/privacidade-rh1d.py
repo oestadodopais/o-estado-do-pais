@@ -26,9 +26,17 @@ def ensaiar():
     for i, espaco in enumerate(d.espacos_unicode()):
         if espaco == '\n':
             continue  # LF continua a delimitar entradas do segredo.
-        lidas = d._ler_proibidos(inteiro.replace(' ', espaco), True)
-        provar('espaco-unicode-' + str(i), lidas == (inteiro.encode(),)
-               and d.contem_cadeias(inteiro.replace(' ', espaco).encode(), lidas))
+        if espaco == '\t' or d.unicodedata.category(espaco) == 'Zs':
+            lidas = d._ler_proibidos(inteiro.replace(' ', espaco), True)
+            provar('espaco-unicode-' + str(i), lidas == (inteiro.encode(),))
+        else:
+            try:
+                d._ler_proibidos(inteiro.replace(' ', espaco), True)
+            except ValueError:
+                provar('separador-recusado-' + str(i), True)
+            else:
+                provar('separador-recusado-' + str(i), False)
+        provar('espaco-na-pagina-' + str(i), d.contem_cadeias(inteiro.replace(' ', espaco).encode(), (inteiro.encode(),)))
     for caso, texto in [
         ('entidade-nome', inteiro.replace('é', '&eacute;')),
         ('entidade-decimal', inteiro.replace('é', '&#233;')),
