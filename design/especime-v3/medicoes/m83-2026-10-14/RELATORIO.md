@@ -54,6 +54,10 @@ A leitura curta da terceira correção, com a pasta das medições no pacote, mo
 - **Achado 3 (as chaves repetidas no YAML):** o carregador recusa uma chave repetida num mapa, em vez de ficar com a última em silêncio (`SemDuplicados` em `sha_declarado`); um caso novo no ensaio, planta.
 - **Achado 8 (os registos à frente das leituras):** a linha da M83 no registo das melhorias deixa de contar as leituras antes de acabarem, e este relatório diz «cinco pontos» onde listava cinco.
 
+## A quinta leitura (`LEITURA-M83-e-2026-10-14.md`)
+
+Mordeu as cinco plantas e deixou dois Minor de registo: a linha da M83 e o cabeçalho da leitura anterior contavam esta leitura antes de ela existir, e `COMANDOS.md` enumerava sete cadeias onde o inventário mede oito. Corrigidos nos registos, sem nova leitura, porque não tocam código nem portão.
+
 ## O que ficou aberto
 
 - A tradução dos guiões `montar-pacote-*.sh` das sessões para o novo comportamento faz-se na sessão seguinte, quando a leitura da V2-a-e se montar; o bloco não os muda porque vivem fora do repositório.

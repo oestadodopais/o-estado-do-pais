@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T09:54:54+00:00",
+ "copia": "<scratchpad>/pacote-leitura-e",
+ "plantas": [
+  {
+   "id": "U1",
+   "ficheiro": "scripts/leituras/pacote.py",
+   "descricao": "a chave duplicada deixa de recusar: só regista a primeira",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "7ee1d0e431ae63128d32916157a9956b7332b3918717bd6a61972a9b227635d7",
+   "sha256_depois": "a9b572ec36dfcfe0371e97b01e6ab464a151ae97a778ae3867fa30b562d0ec6d",
+   "contexto_antes": "lf, node, deep=False):\n            vistas = set()\n            for chave_no, _ in node.value:\n                chave = self.construct_object(chave_no, deep=deep)\n                if chave in vistas:\n                    raise ValueError(f'chave duplicada «{chave}»')\n                vistas.add(chave)\n            return super().construct_mapping(node, deep)\n    try:\n        dados = yaml.load(texto, Loader=SemDuplicados)\n    ",
+   "contexto_depois": "lf, node, deep=False):\n            vistas = set()\n            for chave_no, _ in node.value:\n                chave = self.construct_object(chave_no, deep=deep)\n                if chave in vistas:\n                    continue\n                vistas.add(chave)\n            return super().construct_mapping(node, deep)\n    try:\n        dados = yaml.load(texto, Loader=SemDuplicados)\n    "
+  },
+  {
+   "id": "U2",
+   "ficheiro": "tests/leituras/pacote.py",
+   "descricao": "o caso da chave repetida aceita qualquer recusa",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c6f7a4a88494dfd8498e8406f1a756944f354124f94bb5a2c8723242c1e5df35",
+   "sha256_depois": "90976ef097f9ededebada5a4ec37c5f6f4a2673e50b92d1f0b88d5a703aa6560",
+   "contexto_antes": "orpos, capture_output=True, text=True)\n    exige('planta: uma chave source_sha256 repetida recusa a linha, em vez de ficar com a última em silêncio',\n          r.returncode != 0 and not dup.exists() and 'chave duplicada' in r.stderr and 'linha-duplicada' in r.stderr)\n    casos[-1].update(codigo=r.returncode, queixa=next(l for l in r.stderr.splitlines() if l.startswith('ValueError: O pacote recusa')))\n    escrever(sitio, 'le",
+   "contexto_depois": "orpos, capture_output=True, text=True)\n    exige('planta: uma chave source_sha256 repetida recusa a linha, em vez de ficar com a última em silêncio',\n          r.returncode != 0 and not dup.exists() and 'O pacote recusa' in r.stderr)\n    casos[-1].update(codigo=r.returncode, queixa=next(l for l in r.stderr.splitlines() if l.startswith('ValueError: O pacote recusa')))\n    escrever(sitio, 'le"
+  },
+  {
+   "id": "U3",
+   "ficheiro": "design/especime-v3/PENDENTES-DO-DIRETOR.md",
+   "descricao": "o nome da conta do GitHub volta à pendente, por uma grafia parecida e sintética",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "e7b271ef9bfc0e97810e2a13e40789a03438f8c894e3593cad16cf2fbb6f09ed",
+   "sha256_depois": "c506322ad2235b38546513bd8aec50bf724fe5b8d01f33e4e8525d799d2cb5c8",
+   "contexto_antes": "rio `CORREDOR_ARMADO=sim` no motor, que só o diretor arma (com registo em `DECISIONS.md`); desarmado, o corredor agendado é dormente e verde** |\n| 01.09.2026 | **Confirmar que a conta dele do GitHub tem a autenticação de dois fatores ligada** (o nome da conta saiu desta linha a 14.10.2026, §1.192: é um identificador pessoal, e ficou aqui desde 01.09) (Settings → Password and authentication); depois ",
+   "contexto_depois": "rio `CORREDOR_ARMADO=sim` no motor, que só o diretor arma (com registo em `DECISIONS.md`); desarmado, o corredor agendado é dormente e verde** |\n| 01.09.2026 | **Confirmar que a conta GitHub `nunpd-exemplo` tem a autenticação de dois fatores ligada** (o nome da conta saiu desta linha a 14.10.2026, §1.192: é um identificador pessoal, e ficou aqui desde 01.09) (Settings → Password and authentication); depois "
+  },
+  {
+   "id": "U4",
+   "ficheiro": "DECISIONS.md",
+   "descricao": "o segredo do detetor perde a conta do GitHub",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "547b9e46e4fbad1a4a34c8980e477e4cfa9d9ef495f31c4c2f278f03d1e10bdd",
+   "sha256_depois": "937d63bf6a7926d14155a889c4d8eb4197133b5af0afec841771efa9d365476e",
+   "contexto_antes": "direção: (1) o detetor da privacidade deixa de depender dos nomes de autor e passa a ler as cadeias proibidas de um segredo do GitHub (`PRIVACIDADE_PROIBIDOS`, criado pelo financiador, com o nome da conta da máquina, o nome da conta do GitHub, o nome completo, o nome próprio com o apelido e o correio; a cidade não, porque só aparece em conteúdos de terceiros) e do nome da pasta pessoal na máquina, exclui as identidades do próprio projeto («O Estado do País»,",
+   "contexto_depois": "direção: (1) o detetor da privacidade deixa de depender dos nomes de autor e passa a ler as cadeias proibidas de um segredo do GitHub (`PRIVACIDADE_PROIBIDOS`, criado pelo financiador, com o nome da conta da máquina, o nome completo, o nome próprio com o apelido e o correio; a cidade não, porque só aparece em conteúdos de terceiros) e do nome da pasta pessoal na máquina, exclui as identidades do próprio projeto («O Estado do País»,"
+  },
+  {
+   "id": "U5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem dos ficheiros da cabeça com a conta do GitHub trocada",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "9a7d9be452771e6bb6d09b84ff95931ec0717d1d277dcb32448f6347c171af38",
+   "sha256_depois": "7f56f0d6d31b2f272e864cb7c56d470e2100db5cc2db4d835f7c7d761be48f56",
+   "contexto_antes": "da máquina nos diffs, 2 com o nome completo, 5 com o nome próprio e o apelido, 2 com o correio dentro de ficheiros, 4 mensagens com o nome da conta da máquina, e 2 ficheiros da cabeça de `main` com o nome da conta dele do GitHub (2 commits trazem-no nos diffs; este bloco tira-o dos dois ficheiros), nenhum ficheiro da cabeça com as outras cadeias; no motor, 662 commits, 657 com a identi",
+   "contexto_depois": "da máquina nos diffs, 2 com o nome completo, 5 com o nome próprio e o apelido, 2 com o correio dentro de ficheiros, 4 mensagens com o nome da conta da máquina, e 1 ficheiros da cabeça de `main` com o nome da conta dele do GitHub (2 commits trazem-no nos diffs; este bloco tira-o dos dois ficheiros), nenhum ficheiro da cabeça com as outras cadeias; no motor, 662 commits, 657 com a identi"
+  }
+ ]
+}
