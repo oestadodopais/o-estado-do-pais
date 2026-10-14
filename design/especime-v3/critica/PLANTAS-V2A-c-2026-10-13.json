@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T00:48:16+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "ledger/provas/v2a/provas.json",
+   "descricao": "a âncora da atribuição do Leitão Amaro com o cargo trocado (das Finanças); a página alojada da RTP não a contém",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "88ff33a7cf9740257ed3c6f5395404069fc6b366c859042ab73d4f7938c9c8dd",
+   "sha256_depois": "35be12a5e4e106623063f5871655052bad171684cdc78cb27c40c522b418c6be",
+   "contexto_antes": "-13T18:47:05.320436+00:00\",\n      \"published_at\": \"2026-10-09\",\n      \"attributed_to\": [\n        \"António Leitão Amaro, ministro da Presidência\"\n      ],\n      \"attribution_anchor\": \"O ministro da Presidência, António Leitão Amaro\",\n      \"attribution_scope\": \"body\",\n      \"excerpt\": \"Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%\",\n      \"value\":",
+   "contexto_depois": "-13T18:47:05.320436+00:00\",\n      \"published_at\": \"2026-10-09\",\n      \"attributed_to\": [\n        \"António Leitão Amaro, ministro da Presidência\"\n      ],\n      \"attribution_anchor\": \"O ministro das Finanças, António Leitão Amaro\",\n      \"attribution_scope\": \"body\",\n      \"excerpt\": \"Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%\",\n      \"value\":"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "scripts/afirmacoes.mjs",
+   "descricao": "a lista dos meses do leitor da data do PCP com outubro e novembro trocados: 9 de outubro passaria a 9 de novembro",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "bd95fdfa8317a805f435f83404add1b5cdc855b70f21a74117746ecb4c1079c2",
+   "sha256_depois": "e0ad52826e75ce54b8a54882b3b7b82d69c3b1d80f3b75a278bccaebd7b3ade2",
+   "contexto_antes": "ce(/&(?:#[xX][\\da-fA-F]+|#\\d+|\\w+);/g,e=>parse(e).textContent));\n}\nexport const MESES_PT=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];\nexport function dataDoPcp(text) {\n  const m=text.match(new RegExp(`(\\\\d+) (${MESES_PT.join('|')}) (\\\\d{4}), Assembleia da República`,'i'));\n  if(!m)return null",
+   "contexto_depois": "ce(/&(?:#[xX][\\da-fA-F]+|#\\d+|\\w+);/g,e=>parse(e).textContent));\n}\nexport const MESES_PT=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','novembro','outubro','dezembro'];\nexport function dataDoPcp(text) {\n  const m=text.match(new RegExp(`(\\\\d+) (${MESES_PT.join('|')}) (\\\\d{4}), Assembleia da República`,'i'));\n  if(!m)return null"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "motor/publisher/v2a.py",
+   "descricao": "a lista dos meses do leitor da data do PCP no motor com outubro e novembro trocados",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "11190a1b7bfcb4f39143e92b521dc30d8c8f6913f3aa3d9c783e06b365b86e58",
+   "sha256_depois": "cd16a1506e9f8819f1bd2807375f04ffb11f9a6460fb15a3de1f91dfd1685774",
+   "contexto_antes": ".sub(r'<!--.*?-->', '', s, flags=re.S)\n    return norm(html.unescape(re.sub(r'<[^>]+>', ' ', s)))\n\n\nMONTHS_PT = {name: str(i).zfill(2) for i,name in enumerate(\n    ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'],1)}\n\n\nclass ArticleAuthor(HTMLParser):\n    def __init__(self):\n        super().__init__(); self.depth=0; self.author_depth=None; self.names=[]\n    def handle_start",
+   "contexto_depois": ".sub(r'<!--.*?-->', '', s, flags=re.S)\n    return norm(html.unescape(re.sub(r'<[^>]+>', ' ', s)))\n\n\nMONTHS_PT = {name: str(i).zfill(2) for i,name in enumerate(\n    ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','novembro','outubro','dezembro'],1)}\n\n\nclass ArticleAuthor(HTMLParser):\n    def __init__(self):\n        super().__init__(); self.depth=0; self.author_depth=None; self.names=[]\n    def handle_start"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "src/data/o-que-e-das-familias.mjs",
+   "descricao": "o cabeçalho da despesa efetiva consolidada de 2026 a dizer «dois mil e vinte e sete»; a linha é de 2026",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "fa250ec1815b1081f9a5e2bc68e0fbee7358e013c8131c69ceb36cc225bec6e5",
+   "sha256_depois": "6b0ea5849774ff1a67d033b7d92c1b1095df449cbd606d5093a0b761cef4cc4c",
+   "contexto_antes": " twenty-seven, measured as cash flows at constant prices for that year.\"\n      ]\n    }\n  },\n  \"oe-2027-saude-despesa-efetiva-consolidada-2026\": {\n    \"nome\": {\n      \"pt\": \"Estimativa de dois mil e vinte e seis: despesa efetiva consolidada, Saúde, Conta do Pograma Legado\",\n      \"en\": \"Estimate for two thousand and twenty-six: consolidated effective expenditure, Health, «Conta do Pograma Legado»\"\n    },\n    \"frase\": {\n      \"pt\":",
+   "contexto_depois": " twenty-seven, measured as cash flows at constant prices for that year.\"\n      ]\n    }\n  },\n  \"oe-2027-saude-despesa-efetiva-consolidada-2026\": {\n    \"nome\": {\n      \"pt\": \"Estimativa de dois mil e vinte e sete: despesa efetiva consolidada, Saúde, Conta do Pograma Legado\",\n      \"en\": \"Estimate for two thousand and twenty-six: consolidated effective expenditure, Health, «Conta do Pograma Legado»\"\n    },\n    \"frase\": {\n      \"pt\":"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/en/ledger/oe-2027-saude-despesa-total-consolidada-2027/index.html",
+   "descricao": "o cabeçalho da página inglesa da despesa total consolidada da Saúde em 2027 a dizer «Education»; a linha é do programa Saúde",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "93b5b716bfce13244c4a703d2febcb59758c00b4b419801d7653c47977f04e08",
+   "sha256_depois": "33ea7ec19fafd706d633b243020d86630b21392c05e7155f03f75d764ebd39b2",
+   "contexto_antes": " <span class=\"rotulo-ia-final\"><a href=\"/en/method#politica-de-ia\">Method</a>.</span></p></div><div class=\"linha-cabeca\"><span class=\"eyebrow\">Ledger row</span><h1 class=\"linha-titulo\"><span class=\"linha-titulo-nome\" data-nome=\"familia\" data-de-linha=\"oe-2027-saude-despesa-total-consolidada-2027\" data-de-familia=\"oe-2027-saude-despesa-total-consolidada-2027\">Budget for two thousand and twenty-seven: consolidated total expenditure, Health, «Conta do Pograma Legado»</span></h1><p class=\"linha-nome-da-fonte\"><span class=\"linha-campo-k\">The name at the source</span> «<span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"oe-2027-saude",
+   "contexto_depois": " <span class=\"rotulo-ia-final\"><a href=\"/en/method#politica-de-ia\">Method</a>.</span></p></div><div class=\"linha-cabeca\"><span class=\"eyebrow\">Ledger row</span><h1 class=\"linha-titulo\"><span class=\"linha-titulo-nome\" data-nome=\"familia\" data-de-linha=\"oe-2027-saude-despesa-total-consolidada-2027\" data-de-familia=\"oe-2027-saude-despesa-total-consolidada-2027\">Budget for two thousand and twenty-seven: consolidated total expenditure, Education, «Conta do Pograma Legado»</span></h1><p class=\"linha-nome-da-fonte\"><span class=\"linha-campo-k\">The name at the source</span> «<span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"oe-2027-saude"
+  }
+ ]
+}
