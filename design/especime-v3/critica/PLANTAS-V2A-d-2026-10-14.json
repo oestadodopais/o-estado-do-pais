@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T02:42:35+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P2",
+   "ficheiro": "scripts/afirmacoes.mjs",
+   "descricao": "a data esperada fixa da planta dos meses trocada (2026-10-09 para 2026-11-09): a planta deixaria de afirmar a data certa",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9f11fa957e61ed8eed3713e5cc0659a42eb1a8d77c867b7bb3ce520ea3a3ca7f",
+   "sha256_depois": "48e1e03e05704226f835f8e4a13ad8de98c14cfeca8bbaca0c4cf33f01059c8d",
+   "contexto_antes": "onferirAfirmacao(c,p).find(e=>e.startsWith('V2A referência:'));\n    assert(mensagem);plantas.push({nome:'caminho fora do motor',mensagem});\n  }\n  if(plantar) {\n    const datas=[['janeiro','2026-01-09'],['fevereiro','2026-02-09'],['março','2026-03-09'],['abril','2026-04-09'],['maio','2026-05-09'],['junho','2026-06-09'],['julho','2026-07-09'],['agosto','2026-08-09'],['setembro','2026-09-09'],['outubro','2026-10-09'],['novembro','2026-11-09'],['dezembro','2026-12-09']];\n    const pcp=[...claims.values()].find(c=>c.id.startsWith('afirmacao-pcp-'));\n    const provaPcp=prova.rows[pcp.id];\n    for(const [mes,expected] of datas) {\n",
+   "contexto_depois": "onferirAfirmacao(c,p).find(e=>e.startsWith('V2A referência:'));\n    assert(mensagem);plantas.push({nome:'caminho fora do motor',mensagem});\n  }\n  if(plantar) {\n    const datas=[['janeiro','2026-01-09'],['fevereiro','2026-02-09'],['março','2026-03-09'],['abril','2026-04-09'],['maio','2026-05-09'],['junho','2026-06-09'],['julho','2026-07-09'],['agosto','2026-08-09'],['setembro','2026-09-09'],['outubro','2026-11-09'],['novembro','2026-11-09'],['dezembro','2026-12-09']];\n    const pcp=[...claims.values()].find(c=>c.id.startsWith('afirmacao-pcp-'));\n    const provaPcp=prova.rows[pcp.id];\n    for(const [mes,expected] of datas) {\n"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "motor/publisher/v2a.py",
+   "descricao": "o localizador da definição de total e efetiva a apontar para o quadro 4.37; a nota é ao quadro 4.38",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "35305e48674c0cec91239b23d5236d53511436a96d35244a85ecbeccb8b7ee99",
+   "sha256_depois": "4e31823ba338f13b07f1a91c00539e96e6dc64d2d089a58881aeab8b4aca06b1",
+   "contexto_antes": "nceiros' in definitions,'V2A definição: nota do relatório ausente')\n        row['source_excerpt']=excerpt.strip()+'\\n\\n'+norm('\\n'.join(text.splitlines()[:9]))\n        row['document']['locator']+='; apoio à distinção entre total e efetiva: nota ao quadro 4.38, p. 145 do PDF (129 impressa)'\n        row['document']['locator_en']+='; supporting definition of total and effective expenditure: note to Table 4.38, p. 145 of the PDF (printed 129)'\n      ",
+   "contexto_depois": "nceiros' in definitions,'V2A definição: nota do relatório ausente')\n        row['source_excerpt']=excerpt.strip()+'\\n\\n'+norm('\\n'.join(text.splitlines()[:9]))\n        row['document']['locator']+='; apoio à distinção entre total e efetiva: nota ao quadro 4.37, p. 145 do PDF (129 impressa)'\n        row['document']['locator_en']+='; supporting definition of total and effective expenditure: note to Table 4.38, p. 145 of the PDF (printed 129)'\n      "
+  },
+  {
+   "id": "P4",
+   "ficheiro": "ledger/claims/oe-2027-ppp-rodoviario-encargos-liquidos-2027.yml",
+   "descricao": "o primeiro ano do cabeçalho do excerto do quadro 4.25 trocado (2027 para 2028); o PDF alojado desmente",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "df1286fef92ebe40b4dde7329b71465df5a3c26b887063cef0792e745e774ac9",
+   "sha256_depois": "eeb4d05d46a366ad7e49e9b6407fcb07b20a6f7e745b917f3d206efc81083667",
+   "contexto_antes": "4d0e-a884-df3cde4db960.pdf&Inline=true\"\naccess_date: \"2026-10-13\"\nreference_date: \"2027\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\\n\\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027.\"\n\n# Ressalva publicada da casa, conferida no motor, nas duas línguas.\nressalva: \"Previsão, não execução. Valores de caixa; incluem IVA quando aplicável, à taxa ",
+   "contexto_depois": "4d0e-a884-df3cde4db960.pdf&Inline=true\"\naccess_date: \"2026-10-13\"\nreference_date: \"2027\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"Setores       2026    2028    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\\n\\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027.\"\n\n# Ressalva publicada da casa, conferida no motor, nas duas línguas.\nressalva: \"Previsão, não execução. Valores de caixa; incluem IVA quando aplicável, à taxa "
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09/index.html",
+   "descricao": "a página da notícia da RTP a identificar a medida como despesa efetiva consolidada; os números da notícia são os da despesa total consolidada",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "cdb39083f563a1f5910f154876a493684f211ce02ecff2b31c96951c2407a4cf",
+   "sha256_depois": "9d0acd808c78b9f02d016f604b9229ca6b48c148b77c7562c92b0df06bedcfc3",
+   "contexto_antes": "ue-e\">É a queda do orçamento da Saúde para dois mil e vinte e sete noticiada pela RTP a nove de outubro de dois mil e vinte e seis. Os montantes da notícia identificam a despesa total consolidada do programa Saúde. A queda é a diferença entre a estimativa do ano anterior e o orçamento.</p></div><div class=\"linha-o-que-e\" data-v2a-conta><p class=\"linha-o-que-e-fra",
+   "contexto_depois": "ue-e\">É a queda do orçamento da Saúde para dois mil e vinte e sete noticiada pela RTP a nove de outubro de dois mil e vinte e seis. Os montantes da notícia identificam a despesa efetiva consolidada do programa Saúde. A queda é a diferença entre a estimativa do ano anterior e o orçamento.</p></div><div class=\"linha-o-que-e\" data-v2a-conta><p class=\"linha-o-que-e-fra"
+  },
+  {
+   "id": "P1",
+   "ficheiro": "src/data/o-que-e-das-familias.mjs",
+   "descricao": "o cabeçalho português da despesa efetiva consolidada (orçamento para 2027) a dizer «total»; a linha e a tabela do mandato dizem «efetiva»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "f5746f67b195b291a98346bfaac2957b5d43dc7308f1634807190015f55f4ae6",
+   "sha256_depois": "a1043eb611f06971907693b029c50b8d7b206f4c30a37793d2d459b90f10b377",
+   "contexto_antes": " {\n    \"nome\": {\n      \"pt\": \"Saúde, despesa efetiva consolidada\",\n      \"en\": \"Health, consolidated effective expenditure\"\n    },\n    \"frase\": {\n      \"pt\": [\n        \"É a despesa efetiva consolidada no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.\"\n      ],\n      \"en\": [\n        \"It is consolidated effective expenditure in the budget for two thousand and twenty-seven in the Health table, «Conta do Pograma",
+   "contexto_depois": " {\n    \"nome\": {\n      \"pt\": \"Saúde, despesa efetiva consolidada\",\n      \"en\": \"Health, consolidated effective expenditure\"\n    },\n    \"frase\": {\n      \"pt\": [\n        \"É a despesa total consolidada no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.\"\n      ],\n      \"en\": [\n        \"It is consolidated effective expenditure in the budget for two thousand and twenty-seven in the Health table, «Conta do Pograma"
+  }
+ ]
+}
