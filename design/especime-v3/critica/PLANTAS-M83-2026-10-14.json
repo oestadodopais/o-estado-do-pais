@@ -1,0 +1,56 @@
+{
+  "registado_em": "2026-10-14T08:27:43+00:00",
+  "copia": "<scratchpad>/pacote-leitura",
+  "plantas": [
+    {
+      "id": "P1",
+      "ficheiro": "scripts/leituras/pacote.py",
+      "descricao": "a recusa invertida: só recusa quando há razão declarada",
+      "alcance": "na linha de um hunk do diff",
+      "sha256_antes": "1ba8c47ab6bf7e72091566548752b894b810bcf848d2c97b0d53c2fbc18084d9",
+      "sha256_depois": "4750f6164442949f827805b2f1c7f59bfcda8f043cd75f3942003a38bfd791ce",
+      "contexto_antes": "o'})\n        else:\n            em_falta.append((ident, sha))\n            registo.append({'linha': ident, 'sha256': sha, 'caminho': None, 'estado': 'EM FALTA'})\n    if em_falta and not razao_sem_corpos:\n        faltas = ', '.join(f'{i} ({s[:12]})' for i, s in em_falta)\n        if not motor:\n            raise ValueError(f'O pacote recusa: o bloco toca {len(em_f",
+      "contexto_depois": "o'})\n        else:\n            em_falta.append((ident, sha))\n            registo.append({'linha': ident, 'sha256': sha, 'caminho': None, 'estado': 'EM FALTA'})\n    if em_falta and razao_sem_corpos:\n        faltas = ', '.join(f'{i} ({s[:12]})' for i, s in em_falta)\n        if not motor:\n            raise ValueError(f'O pacote recusa: o bloco toca {len(em_f"
+    },
+    {
+      "id": "P2",
+      "ficheiro": "scripts/leituras/pacote.py",
+      "descricao": "a conferência da cópia pelo sha256 passa a tautologia",
+      "alcance": "na linha de um hunk do diff",
+      "sha256_antes": "4750f6164442949f827805b2f1c7f59bfcda8f043cd75f3942003a38bfd791ce",
+      "sha256_depois": "5deedf3fcb57f2d1df88b1f82af4b5b8eded17fdfc81810f378a2ef1b6c49dd4",
+      "contexto_antes": "r[2], r['caminho'], pasta):\n            raise ValueError(f'O pacote recusa: o corpo alojado {r[\"caminho\"]} desapareceu da cabeça do motor durante a montagem.')\n        if sha256_de((pasta / r['caminho']).read_bytes()) != r['sha256']:\n            raise ValueError(f'O pacote recusa: a cópia de {r[\"caminho\"]} não tem o sha256 que a linha {r[\"linha\"]} declara.')\n        n += 1\n        pedido = ",
+      "contexto_depois": "r[2], r['caminho'], pasta):\n            raise ValueError(f'O pacote recusa: o corpo alojado {r[\"caminho\"]} desapareceu da cabeça do motor durante a montagem.')\n        if sha256_de((pasta / r['caminho']).read_bytes()) != sha256_de((pasta / r['caminho']).read_bytes()):\n            raise ValueError(f'O pacote recusa: a cópia de {r[\"caminho\"]} não tem o sha256 que a linha {r[\"linha\"]} declara.')\n        n += 1\n        pedido = "
+    },
+    {
+      "id": "P3",
+      "ficheiro": "tests/leituras/pacote.py",
+      "descricao": "a planta do sha256 diferente passa a aceitar qualquer recusa",
+      "alcance": "na linha de um hunk do diff",
+      "sha256_antes": "a2247f11ad27954780c9ed431a8d5b2197339ef9a446a86c078e4140f0defc7a",
+      "sha256_depois": "47c8b32787ac5aa61a7566a817ed70707f47251c3836368db5a2dc177e7160b4",
+      "contexto_antes": "lterado, capture_output=True, text=True)\n    exige('planta: o corpo com outro sha256 na cabeça do motor recusa, e diz a linha e o estudo percorrido',\n          r.returncode != 0 and not alterado.exists() and 'corpo alojado não encontrado na cabeça do motor' in r.stderr\n          and 'linha-sintetica' in r.stderr and 'content/Estudo sintético' in r.stderr)\n    casos[-1].update(codigo=r.returncode, queixa=next(l for l in r.stde",
+      "contexto_depois": "lterado, capture_output=True, text=True)\n    exige('planta: o corpo com outro sha256 na cabeça do motor recusa, e diz a linha e o estudo percorrido',\n          r.returncode != 0 and not alterado.exists() and 'O pacote' in r.stderr\n          and 'linha-sintetica' in r.stderr and 'content/Estudo sintético' in r.stderr)\n    casos[-1].update(codigo=r.returncode, queixa=next(l for l in r.stde"
+    },
+    {
+      "id": "P4",
+      "ficheiro": "scripts/leituras/PROMPT-comum.md",
+      "descricao": "o corpo em falta desce de Blocking a Minor no prompt do leitor",
+      "alcance": "na linha de um hunk do diff",
+      "sha256_antes": "f26463e069921ad2f407f890da52d1e72751d1034d7b68d966eade4211fd2090",
+      "sha256_depois": "a5f20d1d80eeac8c3628d1decbb00f5da871b77eb785e591acaaa78b24e8a5a2",
+      "contexto_antes": " in `diff.patch`: a changed row whose hosted document is not in the package, or a `SEM-CORPOS-ALOJADOS.md` at the package root (the seat's declared exception), is a Blocking finding in the first line of your report, and you do not check that row's words against anything else; a listed document whose sha256 does not match the row's `source_sha256` is Blocking too. Then check every sentence, name and excerpt of those rows against the",
+      "contexto_depois": " in `diff.patch`: a changed row whose hosted document is not in the package, or a `SEM-CORPOS-ALOJADOS.md` at the package root (the seat's declared exception), is a Minor finding at the end of your report, and you check that row's words against its own excerpt; a listed document whose sha256 does not match the row's `source_sha256` is Blocking too. Then check every sentence, name and excerpt of those rows against the"
+    },
+    {
+      "id": "P5",
+      "ficheiro": "CLAUDE.md",
+      "descricao": "a regra 3 passa a dizer que o pacote se monta sem os corpos, com aviso",
+      "alcance": "na linha de um hunk do diff",
+      "sha256_antes": "da47fd4b25737257176c20dc76a2f1ff83ae02a170f852c3629fe0d83343981c",
+      "sha256_depois": "809aa457e36c3eb864486479c3399c27224f4da9937968e13a09917fd544ab45",
+      "contexto_antes": "mentos alojados das linhas que o bloco toca, copiados da cabeça do motor e conferidos pelo sha256 que cada linha declara, com os recibos e os direitos ao lado, e recusa o pacote sem eles (M83, §1.192); o leitor começa por esse manifesto, e um corpo em falta é Blocking.\n4. **Um portão que protege um número, uma fonte ou uma pessoa nunca se enfraquece.** Se mu",
+      "contexto_depois": "mentos alojados das linhas que o bloco toca, copiados da cabeça do motor e conferidos pelo sha256 que cada linha declara, com os recibos e os direitos ao lado, e avisa e monta o pacote sem eles (M83, §1.192); o leitor começa por esse manifesto, e um corpo em falta é Blocking.\n4. **Um portão que protege um número, uma fonte ou uma pessoa nunca se enfraquece.** Se mu"
+    }
+  ]
+}

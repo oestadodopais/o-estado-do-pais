@@ -143,7 +143,7 @@ with tempfile.TemporaryDirectory(prefix='oedp-pacote-h2-') as tmp:
     exige('o corpo que nenhuma linha cita não vem', not (com_corpos/'motor'/pasta_corpo/'outro.txt').exists())
     manifesto = (com_corpos/'motor/CORPOS-ALOJADOS.md').read_text()
     exige('o manifesto diz a linha, o sha256 e o caminho, e a linha derivada sem documento',
-          f'| `linha-sintetica` | {sha[:12]} | `{pasta_corpo}corpo-alojado.txt` | copiado |' in manifesto and '| `linha-derivada` |  |  | sem documento alojado' in manifesto)
+          f'| `linha-sintetica` | {sha[:12]} | `{pasta_corpo}corpo-alojado.txt` | fontes do estudo (content/Estudo sintético) | copiado |' in manifesto and '| `linha-derivada` |  |  |  | sem documento alojado' in manifesto)
     exige('a página construída da linha mudada entra sozinha de dist/, e a que falta fica dita',
           (com_corpos/'built/livro-razao/linha-sintetica/index.html').read_text() == '<p>página sintética</p>\n'
           and 'en/ledger/linha-sintetica/index.html' in json.loads((com_corpos/'motor/corpos-alojados.json').read_text())['paginas_em_falta']
@@ -171,13 +171,53 @@ with tempfile.TemporaryDirectory(prefix='oedp-pacote-h2-') as tmp:
     declarado = montar(tmp/'sem-corpos-declarado', dict(env_alterado, PACOTE_SEM_CORPOS=razao))
     exige('conhecido-positivo: com a razão declarada o pacote monta-se e diz a falta ao leitor',
           razao in (declarado/'SEM-CORPOS-ALOJADOS.md').read_text() and 'linha-sintetica' in (declarado/'SEM-CORPOS-ALOJADOS.md').read_text()
-          and '| `linha-sintetica` | ' + sha[:12] + ' |  | EM FALTA |' in (declarado/'motor/CORPOS-ALOJADOS.md').read_text()
+          and '| `linha-sintetica` | ' + sha[:12] + ' |  |  | EM FALTA |' in (declarado/'motor/CORPOS-ALOJADOS.md').read_text()
           and (declarado/'motor'/pasta_corpo/'corpo-alojado.txt').read_text() != corpo)
     escrever(sitio, 'ledger/claims/linha-derivada.yml', 'id: "linha-derivada"\nvalue: "3"\nderived_from: ["linha-sintetica"]\n')
     cabeca_derivada = commit(sitio, ['ledger/claims/linha-derivada.yml'])
     r = subprocess.run([*cmd[:-2], cabeca_corpos, cabeca_derivada, str(tmp/'so-derivada'), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md')], env=env_sem_motor, capture_output=True, text=True)
     exige('controlo: só uma linha derivada mudada não exige o motor, e o manifesto diz que não tem documento',
           r.returncode == 0 and 'sem documento alojado' in (tmp/'so-derivada/motor/CORPOS-ALOJADOS.md').read_text())
+    # A passagem de correção depois da leitura do Codex (achados 4, 6 e 10): as formas do sha256, os anexos em falta ditos, as páginas pedidas contadas.
+    escrever(sitio, 'ledger/claims/linha-aspas-simples.yml', "id: \"linha-aspas-simples\"\nvalue: \"1\"\ndocument:\n  source_sha256: '" + sha + "'\nnote: \"Cruzado de ResearchHub content/Estudo sintético · linha-aspas-simples.\"\n")
+    escrever(sitio, 'ledger/claims/linha-sem-aspas.yml', 'id: "linha-sem-aspas"\nvalue: "1"\ndocument:\n  source_sha256: ' + sha + '\nnote: "Cruzado de ResearchHub content/Estudo sintético · linha-sem-aspas."\n')
+    escrever(sitio, 'ledger/claims/linha-nula.yml', 'id: "linha-nula"\nvalue: "1"\ndocument:\n  source_sha256: null\n')
+    cabeca_formas = commit(sitio, ['ledger/claims/linha-aspas-simples.yml', 'ledger/claims/linha-sem-aspas.yml', 'ledger/claims/linha-nula.yml'])
+    cmd[-1] = cabeca_formas
+    formas = montar(tmp/'formas', env_corpos)
+    mf = json.loads((formas/'motor/corpos-alojados.json').read_text())
+    estado = {l['linha']: l['estado'] for l in mf['linhas']}
+    exige('o sha256 com aspas simples e sem aspas resolve, e null é «sem documento»',
+          estado['linha-aspas-simples'] == 'copiado' and estado['linha-sem-aspas'] == 'copiado' and estado['linha-nula'].startswith('sem documento alojado'))
+    exige('o manifesto diz por onde cada linha se resolveu e que estudos percorreu',
+          all(l['origem'] and l['origem'].startswith('fontes do estudo') for l in mf['linhas'] if l['estado'] == 'copiado') and mf['estudos_declarados'] == ['content/Estudo sintético'] and mf['estudos_extra'] == [])
+    escrever(sitio, 'ledger/claims/linha-ilegivel.yml', 'id: "linha-ilegivel"\nvalue: "1"\ndocument:\n  source_sha256: "abc"\n')
+    cabeca_ilegivel = commit(sitio, ['ledger/claims/linha-ilegivel.yml'])
+    ilegivel = tmp/'ilegivel'
+    r = subprocess.run([*cmd[:-1], cabeca_ilegivel, str(ilegivel), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md')], env=env_corpos, capture_output=True, text=True)
+    exige('planta: uma declaração de sha256 que o guião não lê recusa, em vez de passar por «sem documento»',
+          r.returncode != 0 and not ilegivel.exists() and 'declara source_sha256 numa forma que o guião não lê' in r.stderr and 'linha-ilegivel' in r.stderr)
+    casos[-1].update(codigo=r.returncode, queixa=next(l for l in r.stderr.splitlines() if l.startswith('ValueError: O pacote recusa')))
+    corpo_nu = 'corpo sem recibo nem direitos ao lado\n'
+    escrever(motor, pasta_corpo + 'corpo-alojado.txt', corpo)  # repõe o corpo selado, alterado no ensaio anterior
+    escrever(motor, 'content/Estudo sintético/source/y/nu.txt', corpo_nu)
+    cabeca_motor5 = commit(motor)
+    escrever(sitio, 'ledger/claims/linha-nua.yml', 'id: "linha-nua"\nvalue: "1"\ndocument:\n  source_sha256: "' + hashlib.sha256(corpo_nu.encode()).hexdigest() + '"\nnote: "Cruzado de ResearchHub content/Estudo sintético · linha-nua."\n')
+    escrever(sitio, 'ledger/claims/linha-ilegivel.yml', 'id: "linha-ilegivel"\nvalue: "1"\ndocument:\n  source_sha256: null\n')
+    cabeca_nua = commit(sitio, ['ledger/claims/linha-nua.yml', 'ledger/claims/linha-ilegivel.yml'])
+    env_nua = dict(env, PACOTE_MOTOR=f'"{motor}" {cabeca_motor2} {cabeca_motor5} fontes/*')
+    nua = tmp/'nua'
+    r = subprocess.run([*cmd[:-1], cabeca_nua, str(nua), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md'), 'livro-razao/linha-sintetica/index.html'], env=env_nua, capture_output=True, text=True)
+    mn = json.loads((nua/'motor/corpos-alojados.json').read_text()); ln = {l['linha']: l for l in mn['linhas']}
+    exige('um corpo sem recibo do pedido nem direitos ao lado chega, mas o estado di-lo, linha a linha, e a montagem avisa',
+          r.returncode == 0 and ln['linha-nua']['estado'] == 'copiado · sem recibo do pedido ao lado · sem pasta direitos/ ao lado'
+          and ln['linha-nua']['recibo_do_pedido'] is False and ln['linha-nua']['direitos'] == 0
+          and ln['linha-sintetica']['estado'] == 'copiado' and ln['linha-sintetica']['recibo_do_pedido'] is True and ln['linha-sintetica']['direitos'] == 1
+          and 'corpo alojado copiado mas incompleto ao lado: linha-nua' in r.stdout
+          and '| copiado · sem recibo do pedido ao lado · sem pasta direitos/ ao lado |' in (nua/'motor/CORPOS-ALOJADOS.md').read_text())
+    exige('uma página pedida à mão conta nas páginas das linhas e não nas acrescentadas',
+          'livro-razao/linha-sintetica/index.html' in mn['paginas_das_linhas'] and 'livro-razao/linha-sintetica/index.html' not in mn['paginas_acrescentadas_de_dist']
+          and (nua/'built/livro-razao/linha-sintetica/index.html').is_file())
 saida={'ok':all(c['passou'] for c in casos),'casos':casos}
 if '--json' in sys.argv: Path(sys.argv[sys.argv.index('--json')+1]).write_text(json.dumps(saida,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(saida,ensure_ascii=False,indent=2))
