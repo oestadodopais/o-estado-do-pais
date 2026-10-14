@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T19:57:11+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/data/origens-v2a.json",
+   "descricao": "o número do quadro da Saúde trocado no apoio (5.37 para 5.73): a marca imprimiria um quadro que não existe",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "b20ae579ef43f59ff01b572b61c1f8cc70f788bb99019e3b57ea4de5c7be0800",
+   "sha256_depois": "ca90e2abd5ec6edf81628159ac8b6cbd9be22b3910c06879c435b3c68887da7c",
+   "contexto_antes": "ttpClient.condicional\"\n    },\n    \"pagina_pdf\": \"303\",\n    \"localizador\": \"p. 303 do PDF (287 impressa)\",\n    \"localizador_en\": \"PDF p. 303 (printed 287)\",\n    \"quadro\": \"5.37\"\n  }\n}\n",
+   "contexto_depois": "ttpClient.condicional\"\n    },\n    \"pagina_pdf\": \"303\",\n    \"localizador\": \"p. 303 do PDF (287 impressa)\",\n    \"localizador_en\": \"PDF p. 303 (printed 287)\",\n    \"quadro\": \"5.73\"\n  }\n}\n"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/linha/v2a.mjs",
+   "descricao": "a comparação do PCP enfraquecida (maior para maior ou igual): um montante igual aos encargos passaria por superior",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "a548c9d1a336d92f56d0e017ae9131ad72c780c7d6e8c8806ebe92257ae3191f",
+   "sha256_depois": "fce0b1df50334e92deb31693048311d4203a2852abb0f3f0dd920d9905c6474a",
+   "contexto_antes": "s-2027','oe-2027-ppp-rodoviario-encargos-liquidos-2027'].map(id=>linhas.get(id));\n return outros.every(x=>x&&x.unit===c.unit&&Number.isFinite(numero(x.value))&&numero(c.value)>numero(x.value))?[]:['V2AH PCP: montante afirmado não é superior aos dois valores do livro'];\n}\nexport function conferir(c,lang,html) {\n  const tree=parse(html), erros=conferirPal",
+   "contexto_depois": "s-2027','oe-2027-ppp-rodoviario-encargos-liquidos-2027'].map(id=>linhas.get(id));\n return outros.every(x=>x&&x.unit===c.unit&&Number.isFinite(numero(x.value))&&numero(c.value)>=numero(x.value))?[]:['V2AH PCP: montante afirmado não é superior aos dois valores do livro'];\n}\nexport function conferir(c,lang,html) {\n  const tree=parse(html), erros=conferirPal"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "motor/publisher/v2a.py",
+   "descricao": "a conferência do número do quadro no publicador deixa de cobrir a p. 303: um quadro errado no apoio da Saúde passaria",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "2e7ed451a5aa5f29e161d5b23871b74ce29a564618fe4d6b0b6d86882f0082b9",
+   "sha256_depois": "1bc91077363e017d92c0ace8a47c66fdf47591edb878c0576bc45d92a14604ae",
+   "contexto_antes": "LE and apoio.get('documento_en')=='Budget report for 2027' and apoio.get('publicador_en')=='Ministry of Finance','V2AG apoio: documento ou tradução diferente')\n    if page in (123,145,303):\n        table={123:'4.25',145:'4.38',303:'5.37'}[page]\n        require(apoio.get('quadro')==table and f'Quadro {table}.' in pages(OE,source)[page-1],'V2AG apoi",
+   "contexto_depois": "LE and apoio.get('documento_en')=='Budget report for 2027' and apoio.get('publicador_en')=='Ministry of Finance','V2AG apoio: documento ou tradução diferente')\n    if page in (123,145):\n        table={123:'4.25',145:'4.38',303:'5.37'}[page]\n        require(apoio.get('quadro')==table and f'Quadro {table}.' in pages(OE,source)[page-1],'V2AG apoi"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html",
+   "descricao": "a explicação de «consolidada» invertida na página de Leitão Amaro (retirados para somados): o contrário do que a palavra quer dizer",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "e47221eee2045b55bf0b8a87188fe180dbe4001f0c6f7ae9789d88859cc764ff",
+   "sha256_depois": "8ea562cd82934f9350ea595f07231dfdca766bf824950452b1446b69d279cfcb",
+   "contexto_antes": "batim=\"origem-v2a-prr-ciclo-pagina_pdf\">31</span> do PDF) descreve o fim do ciclo extraordinário de financiamento do PRR. «Consolidada» é a despesa do programa depois de retirados os pagamentos entre as suas próprias entidades, para o mesmo euro não contar duas vezes. «Efetiva» é a despesa que sai de facto, sem operações financeiras; a despesa total inclui essas operações. Com o PRR,",
+   "contexto_depois": "batim=\"origem-v2a-prr-ciclo-pagina_pdf\">31</span> do PDF) descreve o fim do ciclo extraordinário de financiamento do PRR. «Consolidada» é a despesa do programa depois de somados os pagamentos entre as suas próprias entidades, para o mesmo euro não contar duas vezes. «Efetiva» é a despesa que sai de facto, sem operações financeiras; a despesa total inclui essas operações. Com o PRR,"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem das plantas do HTML trocada no relatório (135 para 136)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "588e2d92c8cb014a89caad08df04110852aea46294c1e4d04401021b85f90f30",
+   "sha256_depois": "c965d2ad47e6a6b37a5fad01c69067647088a63692881cf874b1ee1a00a652b1",
+   "contexto_antes": "gem da recusa que agora ocorre ao construir o apoio selado, antes das células.\n\n### Preparação e custo\n\nAs conferências específicas do motor passaram 44 casos. A régua do HTML passou as 36 páginas e 135 plantas. Passaram também as conferências dos dados, famílias e cartões, língua, índice e tipos. Os registos da preparação estão em `h-conferencias/`; a lista final `pl",
+   "contexto_depois": "gem da recusa que agora ocorre ao construir o apoio selado, antes das células.\n\n### Preparação e custo\n\nAs conferências específicas do motor passaram 44 casos. A régua do HTML passou as 36 páginas e 136 plantas. Passaram também as conferências dos dados, famílias e cartões, língua, índice e tipos. Os registos da preparação estão em `h-conferencias/`; a lista final `pl"
+  }
+ ]
+}
