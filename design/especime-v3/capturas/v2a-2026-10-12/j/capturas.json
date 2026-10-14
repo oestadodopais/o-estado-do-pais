@@ -1,0 +1,1077 @@
+{
+  "cabeca": "d4aa1f19b163435c8ca808f8c5588b299ba88cb9",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-390.png",
+      "rota": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3906,
+      "sha256": "4cf35fe5207856ee8c0d9800f53b02ce7d4c4bc88a799158c78d76106b74cbbe",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "b01e5769eba3bab7dbfcb64219784ee6fb3fba79b4ffb9162ecfd0c3eda1e485"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "658d3f72936bce491c879f74ed1ff40a2e2de75870deedfbaa3b5089914930c5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-768.png",
+      "rota": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3435,
+      "sha256": "ac37a409c97276904eb06821606dd67fd2ef68a0ccc0c9007dcacd7f28534a42",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "25839c5880017f7ffce4206493e9a3cd2e4cef344b27ec7e967b45a160abc916"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "c0ca16b3700517dc531f0bff0c1c71458caf750c37fa8766123a2742c55368c0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1024.png",
+      "rota": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2797,
+      "sha256": "be6a50a3ca15f7822a31bc053314eec4fe0556333ea8d8404c25c29e3e97a630",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "818ba51c5a3b70bb78ee2526739205e83b5ff677820fb19c9e29571c9f7389b0"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "5ebdb8ae36cb73cdb3111d9b9aa9f23f06945340139b7d07b2b8b172d8281c1a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1280.png",
+      "rota": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2832,
+      "sha256": "8542dec017e0063499ed73c62158cc043e4f721fbebcaa87ac4bd2b924e6c34a",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "487bcb755edec4414ff644f4f7d3b6602d71bcb40c87faed70eb5a6f9da552aa"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "57607abe747c70598a093256543f94cf54c903c4f323d6df4440b33e841ff84f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1600.png",
+      "rota": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2838,
+      "sha256": "c8bd7ec13d9887fc3f58ec13c5f2996db0331a145dc9bde1337476a864e92df1",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "348a9e1e50f817c9a5253b4e50015f8307554f265237c3711e784638b02944c2"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1fb6aa13bfbc39e813b916c2aa5f0cec80438690899fa25e8a5375bfaa05a368"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-390.png",
+      "rota": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3881,
+      "sha256": "defdd04b4a7183231d8844d077124142acc5cf0ca928aada4d6551c3966bed5e",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "853de3e901938ac9df1ab95b4f7be879323415499d3f517de8fb3cd01925e419"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "3b7c86163d47a445ba11ceb77149ca31795cf022eb745ead6794419882a28860"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-768.png",
+      "rota": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3410,
+      "sha256": "c3b4a22711d3f895d4c272fb13bdd0435f41596e144b3aaf8f149d8f15816217",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "8db0ddc9e6e860ac028bc194ddde7897e19a30d9a0945eb0258e89d698afacc5"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "aa1726fd2c00f84153d8d854b181de397f7e84f7ff7b1d428b401ad716df57a1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1024.png",
+      "rota": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2773,
+      "sha256": "4df36c47a60ec6063c0d578bc1abf843742d3662d5de73ae954e12ebb01c7b0c",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "231846eb8a3a26855b097111dc27414f15d82eeb757ad9eb0532c3e11a6aeb3c"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "eb2b9084532020c7dd14d7b74ced9841befb5494d3381279aa06bffb60374480"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1280.png",
+      "rota": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2807,
+      "sha256": "d17267ca7de995ad3e08e1b7e59dc513ef31bcfcd0347f095d94a59f9d95474e",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "5b3ebcfe360fa12d9129814fc91d993db6dcb5595541f9b6ee560ae4364b5a32"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "231d521df23e631bf097a6068bc5ba178b7531b8035f5e0608448bc045913be9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1600.png",
+      "rota": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2814,
+      "sha256": "677db2d1f09498211fde75c3d8cda437be21106e50278bbecdf5c479d4229681",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "a79459af46baf40d94072ff22efe2eb84c76e30581eb403173ab8e3c1b4e766a"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "6327442b664fb8f43551fe5498d2c5b3d17b76a6903233e55c9732892b0de371"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-390.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4184,
+      "sha256": "73dd6b5081b3f55f542f3eb70fdd7b61311574a40413a451ab06e8dcda840d6b",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "fb2148b5b114abc2cece80ec4af7e73c7ee1dc4f13f6edf9c22b3e2a1334ce53"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "508384c0389997ad6571cd40ed4229efff4510547f8f4499a0493bfea8284100"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-768.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3626,
+      "sha256": "38a1a2254d232cf6e2a7438e626d5531cbbc15d2ceb731405c0babc39a15e03f",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "4b0673f425a9a9111e448a024271eaf0684b22d55cc6a92f6f8e5655e61af115"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "9d1be54ad2a48ade43b6d90f0d9615669db419a5a9e251bf4536a799307562cb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2715,
+      "sha256": "ebcef7c44fbb2dd8d47789ffe8ee4397ce9dd3fd4444be8523f84ea8682d2cf2",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "42977386cd73097266c9fa63c48cb1978ff95ea80dc1dfda15ee69b8edde6259"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "9a456005197afad33e850a48b3b1c743f6d3c54725740e4c5ccde30f7d448fbd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2750,
+      "sha256": "9ce875695269c20ff8cf8398c9c893978f62e1dbcbb7fbaaf86cca7eb7980bd1",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "1a0dd9b1ef2dc3219ff2dd591383e50ec1d96ad8f368a6c9d2fcdb9df1f83265"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "414195ddedc34104168f24d43f329b13a818a7ea744255d6f57962c3daef51ba"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2756,
+      "sha256": "4afdb5ed47b514779b7dfa85d62ec635c30080ccea012fa99164a7613c17a038",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "71258ed8ad105cf0706e4e6b1870e45be5fb2cec4dc7f6c6f8b40efba41c7c0c"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "403fa86b11815eb675dab8b22747bdc6e9666f7f72af9070a977a8cf91bb22a7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-390.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4154,
+      "sha256": "db794743f6e404ebdf08b91b2cea37b392c8ef750082e671364bacd70ddeb524",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "4160299493b9936bd131f4719d521fbfbb0b45a3e42d94ad476e640750b041b8"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "e45836646c0be4a79938592c34682da3d31099934ba1066b20a25569d69af10e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-768.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3618,
+      "sha256": "69c1cc7f7c77d5d3ea5553ea487117babbf5f1e278cb018875cd0c73689549e2",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "363eb3e8c84918d6fe6d28e01435c71d2e5cbec0f6cf77c3185fda1f90abf859"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "42df4b1c65f4faaa74035a2415fa765d3a5be7076b5b7c0ab9399e20938633e4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1024.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2672,
+      "sha256": "4de021c492a779f207a73ec45a666a9636461e0928a8cd401ae038769e9b1f8b",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "b27898799b819f2d906837ff4c01279a1ae576cee957a25b08dd32c397313a3b"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "c105f74c472cfb5946f41040c563ae5862a39bb7dfaecd8197d463a5d01e04a9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1280.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2706,
+      "sha256": "dc0b801efe7a8768f5efee1a09c9a462ca41ca1c25e035a36f017c4b7250d508",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "6004274a6bb30a8f87f43d32b0f5ad731cf168ba098f3d539211244de0848f5c"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "e7f6181646b30495e3807245f4adbb345da33323ae8e491338e37d70ba6b674b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1600.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2713,
+      "sha256": "9f00f33478a6c0732a72bd1cadc1cf96cbfa69595a18dce4d08bde8731e50520",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "8736b8b67f6ccf9393d0ac76ee6106b9e3fa6840fd9ccb837f995bdaa565dad7"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "60d82e8c0e0b3a1205fb464f17da1f8e3100662674ffe70fc56aaea08e5b2891"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-390.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4177,
+      "sha256": "bfee52494ac33a632e0546ec1e8a398644a53a3b63871dff769329c55361a03e",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "b89cfb6cd2d7c4d91f0320a221f814be103810a7af0ce398e56d76c13c042d20"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "d5d84d77ae9d68c94878957f4ebf6f21c93cd606c8446367df90aa50f59869fc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-768.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3611,
+      "sha256": "89a02a23bd76048197cdf6e208fea8f89dd0c2d1c71aae82e2d988e88970867b",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "15de74113f97cf5ead7b2b6c48ab734818dcead5e12ea0b28fd8192dc13dade9"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "915dd1ce47fd6bef2bb0e90ebc10dcc116e581a43be549815e8ef3ed1bd40bf2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2697,
+      "sha256": "64b3eb4f7c80f9ad238e2bc002c6a8c598d683fde87c1b87398393ca8011c9d3",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "3aaf206c52d279d9067543bf01ed8cf9ccf0183a92614f1e2871137bdd134de2"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "4f4ea0f3459a8b6511e73d8a8b11a2ecd0f0043fdcad81f9fdeeaa0689de2f0c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2731,
+      "sha256": "bebe2abfe612efece0d5329506f8fe14ac942ad1fc2047539b2bd9d1be5ecdd2",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "fb56f2a3f2d715e471f82749f8748414361f53b09cbf1f37777b47497c086ea9"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "49222aa2b625cbe66bf8a777501b65f177e8c332c58957d9166b1e336af01bd7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2738,
+      "sha256": "585651904ac707b2c0838fd2d29d91eaca6c38489c9a3953f4039d417f9d1ee1",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "c1e21df8a127d1bdca699321c158210ec5bb956dcf49887a044775019e769b6f"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "dabc294e17b99c3566602b40396b8842161a50b6d5a6b041bb53547648f1bfa6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-390.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4117,
+      "sha256": "658f4ee6bd15d1ec82317a68648af59becd66d174c632991e42b02b945a85f68",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ca5498a025db2351274aab7ca88d9ef5b599713b9010f35d5abee938adba3d64"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "5f247be9225ba28845d65c426b8d0323044f0beb31cba5f05500e12babc5d3d6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-768.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3603,
+      "sha256": "2316c63043dcfd08c9b60aff1fa943cffff0d43e2fb924712b62e85c0b8fb333",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "888efe165dca72a52b20fe4838c0351355fcfe8407e01f765b5d0a53fa2d3d91"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "8a76b76eb7b51b83ceb242b96426ef9c8bb4ed29f0b15936c06718fd3bf90b8b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1024.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2628,
+      "sha256": "b59bfa989408d45f3bd83e42d61949da2fbf93a50b26591f90dc5400fd0fc73e",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "f618192a30460370e6f95bc89890cb38a514ce25cddc38ad4a80b54a55367069"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "d0c263175727b869d1315955f22bf0dc617536d3abefb1e36cf40e93f9bbcb53"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1280.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2663,
+      "sha256": "65f86bbb57b0d16ffdbdfb336b5bb61dc1e06b9ba6f6c3de7f82968cc24bb3d5",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "6943cce66ec9ed225e9cb88028859733a8131c6ea20cd242ea52c2f68942d4e7"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "ea2d0be77958acabd00d606c44823f9c519c4c869a3029c30eb49c0f4f44ec5c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1600.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2669,
+      "sha256": "698132097a2903bb1e3cd5f7ef8448c7cdcf6f48d92201d008d14c904bbbbb88",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "4c23c0e2d07d589e584805aadef1e21d74507a7e4ae2f23ddc17098a78a82550"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "664aa324ac1cad9e0bb0fc1d987a58a1c35afb8bce05743d6f6d5e1fad8b47d0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-390.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4143,
+      "sha256": "a61446b09f335694601951af00db6f3a6c69bfd97312f925ad022c8892223482",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "323c1f094ae4e8a7fb99a522f81fbacced2e091778e3bce912894830b39150a0"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "c135fba0957cd065b5938c3afea8d37c1a6ef698cd969a41475712628f403edd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-768.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3618,
+      "sha256": "55371daffa7affe934fc7b9bd94a13fffb4d184ba9bb27171a9498c5df79e6d3",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "56979b810e7a7c37b2f63bdd307460a30dad0d4065965f64a0b74ccc2bc64cf7"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "c7e67f6cb4c9276ef3a5dcac06d4c6ec66fe7497e805b6b0a6e98cae28dd6440"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2653,
+      "sha256": "08d1f2bbe0f29affed5730a491449746755a2b1b50a5adfe9a26eccf294f520a",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "a4cb31bbe21bafcc893502d77faa52dd4536e2fc56c0f2915bdf17dd653e832b"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "15e2e89be01842f55f68c4d0f274fbe6af3004fd9896693d901e2701d5753cf4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2688,
+      "sha256": "3ddfbf273b881bc8209cdd1ae2c03b0e035c362c8baed8400a4f56f989737238",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "8040d22added9bf85b432fea91330ca492480c435fccaf08f082887b8bccccd1"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "4672074f9922d00979ac2557917d1e58ff4c57443512f73c8f2538d11894d63b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2694,
+      "sha256": "39dc1bdafad11ab7bd16e79a3f109e37984bdb88b96e7e0ac1b56f810f0ecd72",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "cc8f3c96a87e2a349a91d4ccf99cc637979a372c20bd40048a16a25df87d5c25"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "81daedc376459b81aa28efe7d2240b513e6fe287c29eb3232d5bd53003e7f5d9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-390.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4113,
+      "sha256": "ed222baf97cf9bbef7f084e966b2656779a495e1c546c1b04c3761d765152b73",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "5cb65dfcebec43fe15e734ccab31416b66943e8d2b0a780b75a4ad19ddb933a0"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "3c2a8ec545e425ea4b26eb0dc14db6ff84206467e83771739e0f771f6873e00d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-768.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3610,
+      "sha256": "695ed611894238bdb490b8101aa7ab1a3c4e60197776cd1cb26af00664f309b7",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "86d3faacec9f508ac67180333e7abf208fa45f849c2ea3611d6bf8ccb3d6c528"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "254d5ee8e3e489d0d2f4146e5a0732666fe0c7f09537480b607c2efbee304e0b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1024.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2628,
+      "sha256": "003bb6516e647b451128da0dab8af332ff154bd046c8b5741296a47534820f65",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "cafb05a96514af38dba1a303220b089960a5349f5c25c898e31e06033677cdfb"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "0dbc6303a08ca410c2df307a3d4cf336d483fc04890664da792f2efb39693350"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1280.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2663,
+      "sha256": "09d4e5edbc9f88488261465642c63c275d17985b8148eb9d105551d6dfc0c137",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "d1387687a12e0b1308f0a61cbc28ff41829be48726062dcf7fca1ebe71303192"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "d37db4b70b7188cd3d4651f41cfe027d9112461bdd92809538c59914145f05bc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1600.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2669,
+      "sha256": "c27dedff35950cb7f609124e495e53318344f4003ed820f21626cdd55e9a440f",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "c5519afea56f4b2953a7c9e42e6aa8eaf461b31b92191d868e048ebeba50a2b1"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "5d5bfa0199e672e0edfcce9779e785e757e80354ab8b44951a9dd3bb1e149ee6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "3b917ed463c9e33718ff57a9932fd082c9d239f477c30aee289cd021ef91676a",
+    "livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html": "d5a6f51f49f9ba0122fd3e46375a081bb93c9ff69c34c83cc856a890053f2080",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.hPEW4RoH.css": "f274081feb3c23a41b42c82b431fdc82ca2c162f791dec18fbb98087803084ff",
+    "_astro/linha.3Gzj_PkP.css": "c02b8967ab663930fd1ad0a2904b7beef1b14bc2d3c91aec382ee180e3f2d645",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html": "667dc4de67e177dae02eb584659e7c20ce7af5de0f3222f75d33b4d66dd42472",
+    "livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html": "cf6108857e5f6f921fbef4f4918b0a79a28873399b4aa6e3a06b17a1808c1865",
+    "recortes/oe-2027-ppp-rodoviario-encargos-brutos-2027.webp": "07a1cde4211b4b236d6cefbe73855203a185937ac42740cfd0f5bdbb83e6db84",
+    "en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html": "a0c8f237fcbd0366c7c713bf00b03881a1f47222266a41f23a26b7c2e49d0a6b",
+    "livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html": "b63b8e7bc68ca933e1e8d4e726746057d64d6624ddf2d699b74b00673c19351d",
+    "recortes/oe-2027-ppp-rodoviario-encargos-liquidos-2027.webp": "49e97c6e91b53544dc3d066f0f4065eac3065834e37fc33b46653d13289c87d6",
+    "en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html": "9f72a9d43a1efa75762983f745dd1ef45de01309ab1ff8cf63e4c8fcbcefdb96",
+    "livro-razao/oe-2027-ppp-rodoviario-receitas-2027/index.html": "d111e78d7ac610f230be10c93c25fe6c89eca765905b4149cadf9234406fd3d2",
+    "recortes/oe-2027-ppp-rodoviario-receitas-2027.webp": "fe85f456d2d299541f952b0c913db41020f2b9d2aee85758b607f1265fa4dc70",
+    "en/ledger/oe-2027-ppp-rodoviario-receitas-2027/index.html": "90b78a34c99d10c6fb6760633c279350f7e6a2642b35f89cf33a93d875faf4aa"
+  },
+  "falhas": [],
+  "ok": true
+}

@@ -693,3 +693,16 @@ O mandato J emenda duas omissões da redação anterior: a frase do PCP passa a 
 **V2A-95:** as frases seguem literalmente o mandato J. As 192 plantas existentes passaram na conferência de 36 páginas, incluindo a troca de uma palavra por página e língua. Os portões e as capturas são pedidos pelo escrivão, porque o navegador não arranca na sandbox; os códigos e cabeças finais ficam no fecho abaixo.
 
 Custo da V2-a-i, conforme o mandato J e o lançador: 107 turnos, 290 637 de custo antigo, 3 pontos da semana sem outra sessão em paralelo, contexto médio de 128 541. O custo da V2-a-j cabe ao lançador. Não foi exposta uma linha «tokens used».
+
+Fecho J: o commit de código e provas é `d4aa1f19b163435c8ca808f8c5588b299ba88cb9` (`V2-a-j: repor unidades e aspas nas frases do mandato`). No motor, a cabeça final e a do código conferido continuam em `9e370c6dcdd3049df69b7cb5cb9f02fb88a42a72`, sem commit nesta passagem. O commit final do sítio conserva apenas estes registos e capturas; a sua cabeça é comunicada na entrega, depois de o escrivão a devolver.
+
+| Código lido em `portoes-j/` | Resultado |
+| --- | --- |
+| `build.codigo` | 0 |
+| `verify.codigo` | 0 |
+| `typecheck.codigo` | 0 |
+| `motor.codigo` | 0 |
+
+Os quatro portões correram depois do último commit de provas. `estado.fim` e `motor.estado.fim` estão vazios, as cabeças de início e fim coincidem e a conferência D confirma ausência de escrita durante as conferências. L1 mantém 2780 contra o teto 2780 (`portoes-j/verify.log:34`). A inspeção final `inspecao-j.json` confirma os 18 valores e unidades inalterados e as 3211 linhas anteriores intactas. As frases completas do PCP, lidas no HTML conferido, ficam em `frases-j.md`.
+
+As capturas do escrivão em `../../capturas/v2a-2026-10-12/j/` cobrem as quatro páginas alteradas nas duas edições e nas cinco larguras 390, 768, 1024, 1280 e 1600: 40 casos e 120 PNG com sha256 conferido, sem transbordamentos, erros, recursos externos ou pedidos recusados. Os 16 cabeçalhos a 390 e 1280 foram vistos, com unidades e aspas legíveis e sem corte de texto; a lista está em `capturas-j-inspecao.json`. Não houve nova alteração de código depois dos portões.
