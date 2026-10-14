@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T21:41:03+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/data/origens-v2a.json",
+   "descricao": "a página impressa do apoio da nota ao quadro 5.37 trocada (287 para 278): o localizador deixa de bater com o PDF",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "debc541eb7177c722043725df6b710589eb842de9702e7495af183d50631c347",
+   "sha256_depois": "bfcec50b4e4afa6328afa78098b035ccc2c735459ed0d483ffd2609657608270",
+   "contexto_antes": "d8b61d78db2274ebc12\",\n      \"hora\": \"2026-10-13T18:47:56.980564+00:00\",\n      \"cliente\": \"core.http.HttpClient.condicional\"\n    },\n    \"pagina_pdf\": \"303\",\n    \"localizador\": \"p. 303 do PDF (287 impressa)\",\n    \"localizador_en\": \"PDF p. 303 (printed 287)\",\n    \"quadro\": \"5.37\"\n  },\n  \"v2a-ppp-setores\": {\n    \"tipo\": \"passagem\",\n    \"excertoAberto\": false,\n    \"pub",
+   "contexto_depois": "d8b61d78db2274ebc12\",\n      \"hora\": \"2026-10-13T18:47:56.980564+00:00\",\n      \"cliente\": \"core.http.HttpClient.condicional\"\n    },\n    \"pagina_pdf\": \"303\",\n    \"localizador\": \"p. 303 do PDF (278 impressa)\",\n    \"localizador_en\": \"PDF p. 303 (printed 287)\",\n    \"quadro\": \"5.37\"\n  },\n  \"v2a-ppp-setores\": {\n    \"tipo\": \"passagem\",\n    \"excertoAberto\": false,\n    \"pub"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/linha/v2a.mjs",
+   "descricao": "a conferência das palavras simples dos preços tornada vazia (em euros de para em): passaria sempre",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "96c0c094b40771f1da410176b2e11b11b505760e93c402483941bfd9a171bf6f",
+   "sha256_depois": "f32c73423688cf7e2d601552c92a28a2d2cf179d7506d1d08d0275f352fc3b03",
+   "contexto_antes": "=='pt'?'depois de descontar o que recebe delas':'after deducting what it receives from them'))erros.push('V2AG total: encargos líquidos sem palavras simples');\n  if(totalPpp&&!frase.includes(lang==='pt'?'em euros de':'in 2027 euros'))erros.push('V2AG total: preços sem palavras simples');\n  if(pcp) {\n    erros.push(...conferirComparacaoPcp(c,claims));\n    if(!(lang==='pt'?['o que o Estado paga às parcerias rodoviárias nesse ano','o que paga depo",
+   "contexto_depois": "=='pt'?'depois de descontar o que recebe delas':'after deducting what it receives from them'))erros.push('V2AG total: encargos líquidos sem palavras simples');\n  if(totalPpp&&!frase.includes(lang==='pt'?'em':'in'))erros.push('V2AG total: preços sem palavras simples');\n  if(pcp) {\n    erros.push(...conferirComparacaoPcp(c,claims));\n    if(!(lang==='pt'?['o que o Estado paga às parcerias rodoviárias nesse ano','o que paga depo"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "motor/publisher/v2a.py",
+   "descricao": "a conferência do número do quadro no publicador deixa de cobrir a p. 303",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "74cc45c69d76af0f0a132e042162504269dc5f6ef560af92d2486c2e228c15c4",
+   "sha256_depois": "24b6296885eecc4782b4518a19d6ef4c569f71d9043dbd7c80c9c928a5cf99ff",
+   "contexto_antes": "LE and apoio.get('documento_en')=='Budget report for 2027' and apoio.get('publicador_en')=='Ministry of Finance','V2AG apoio: documento ou tradução diferente')\n    if page in (123,303):\n        table={123:'4.25',303:'5.37'}[page]\n        require(apoio.get('quadro')==table and f'Quadro {table}.' in pages(OE,source)[page-1],'V2AG apoio: número d",
+   "contexto_depois": "LE and apoio.get('documento_en')=='Budget report for 2027' and apoio.get('publicador_en')=='Ministry of Finance','V2AG apoio: documento ou tradução diferente')\n    if page in (123,):\n        table={123:'4.25',303:'5.37'}[page]\n        require(apoio.get('quadro')==table and f'Quadro {table}.' in pages(OE,source)[page-1],'V2AG apoio: número d"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/livro-razao/oe-2027-ppp-total-encargos-liquidos-2027/index.html",
+   "descricao": "a página portuguesa do total a dizer «antes de descontar» em vez de «depois de descontar»: o contrário do que é um encargo líquido",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "cdc38bb487572bed42a31399b5c1b42d09786974fab9b2f4501fb3dd56c792cd",
+   "sha256_depois": "4c2be6dc92b864ba26d12146c774514e7c7ccae57721e147b737fe945905d097",
+   "contexto_antes": "\"data-da-linha\" data-de-linha=\"oe-2027-ppp-total-encargos-liquidos-2027\" data-de-campo=\"reference_date\">2027</span> ao conjunto das parcerias público-privadas, depois de descontar o que recebe delas: a linha «Total» do quadro <span data-verbatim=\"origem-v2a-ppp-setores-quadro\">4.25</span> do relatório, em dinheiro que sai e que entra no ano, em euros de <s",
+   "contexto_depois": "\"data-da-linha\" data-de-linha=\"oe-2027-ppp-total-encargos-liquidos-2027\" data-de-campo=\"reference_date\">2027</span> ao conjunto das parcerias público-privadas, antes de descontar o que recebe delas: a linha «Total» do quadro <span data-verbatim=\"origem-v2a-ppp-setores-quadro\">4.25</span> do relatório, em dinheiro que sai e que entra no ano, em euros de <s"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem das plantas do HTML trocada no relatório (192 para 193)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "ef977519855e86627bcbff55f55dc158cff53bda171d5f1ed24110ac25114a6a",
+   "sha256_depois": "9cbaeffc1b50dcbcec3571833dc801c123b89533481675d1e7f2010064daaa30",
+   "contexto_antes": "de, com plantas que acrescentam o apoio de outra medida e trocam a página. A conferência passou depois dessa correção.\n\n### Conferências de preparação e custo\n\nA régua do HTML conferiu 36 páginas e 192 plantas, incluindo a troca de uma palavra em cada uma das dezasseis páginas alteradas, nas duas línguas. A comparação numérica do PCP conserva a desigualdade estrita e",
+   "contexto_depois": "de, com plantas que acrescentam o apoio de outra medida e trocam a página. A conferência passou depois dessa correção.\n\n### Conferências de preparação e custo\n\nA régua do HTML conferiu 36 páginas e 193 plantas, incluindo a troca de uma palavra em cada uma das dezasseis páginas alteradas, nas duas línguas. A comparação numérica do PCP conserva a desigualdade estrita e"
+  }
+ ]
+}
