@@ -301,10 +301,10 @@ O mandato foi lido integralmente com a leitura V2-a-c. Os achados de um a cinco 
 | 9 | Doze datas esperadas fixas; a troca dos meses é recusada sem motor e com ele, com a mensagem real da célula. | `scripts/afirmacoes.mjs:85` |
 | 10 | A conferência exige o cabeçalho completo da Saúde; plantas trocam efetiva por total e Saúde por Educação. | `tests/linha/v2a.mjs:37` |
 | 11 | A definição sai do excerto da Saúde e é citada como apoio: nota ao quadro 4.38, p. 145 do PDF. | `src/data/origens-v2a.json:4` |
-| 12 | O ano da previsão é conferido antes do título da Proposta; plantas para PIB e título do documento. | `tests/linha/v2a.mjs:46` |
+| 12 | O ano da previsão é conferido antes do título da Proposta; plantas para PIB e título do documento. | `tests/linha/v2a.mjs:47` |
 | 13 | A capa do CFP lê os meses portugueses e valida o dia; uma data impossível é recusada. | `<motor>/publisher/v2a.py:175` |
 | 14 | Custo anterior registado; o custo desta passagem será acrescentado pela direção a partir do lançador. | `design/observatorio/mandatos/MANDATO-V2A-d-2026-10-14.md:26` |
-| 15 | Os portões finais serão pedidos depois deste commit de provas, sem escritas durante a corrida. | `scripts/leituras/portoes-pelo-escrivao.sh:10` |
+| 15 | Os portões finais correram depois do último commit de código e provas, sem escritas durante a corrida; os dois estados finais ficaram vazios. | `scripts/leituras/portoes-pelo-escrivao.sh:10` |
 
 ### Decisões e questões
 
@@ -316,7 +316,7 @@ O mandato foi lido integralmente com a leitura V2-a-c. Os achados de um a cinco 
 - **V2A-40:** a conferência do cenário separa o ano da previsão do título da Proposta; a planta do PIB conserva o título certo e troca o ano da previsão. O título do documento ganha planta própria.
 - **V2A-41:** a capa do CFP aceita os nomes dos meses portugueses e recusa um dia impossível. O número e o ano do parecer continuam concordantes com a data.
 - **V2A-42:** a direção forneceu para V2-a-c 250 turnos, 511 796 de custo antigo, 5 pontos da semana sem outra sessão em paralelo e contexto médio de 132 275. O custo V2-a-d não está disponível nesta sessão; o lançador mede-o e a direção acrescenta-o. A linha «tokens used» não foi exposta.
-- **V2A-43:** os portões usam o escrivão porque o navegador das conferências não arranca na sandbox. A corrida de preparação teve códigos build 0, verify 1 e typecheck 0: a planta do localizador ainda usava o texto antigo e a conta estava dentro do âmbito da K17. Ambas foram corrigidas. As provas são comitadas antes dos portões finais e nada será escrito durante a corrida.
+- **V2A-43:** os portões usam o escrivão porque o navegador das conferências não arranca na sandbox. A corrida de preparação teve códigos build 0, verify 1 e typecheck 0: a planta do localizador ainda usava o texto antigo e a conta estava dentro do âmbito da K17. Ambas foram corrigidas. As provas foram comitadas antes dos portões finais e nada foi escrito durante a corrida.
 
 ### Conferências e entrega
 
@@ -324,8 +324,62 @@ A preparação está em `portoes-d-preparacao/`; as mensagens dirigidas em `d-co
 
 A primeira corrida completa, em `portoes-d-primeira/`, passou com códigos 0/0/0/0 na cabeça `3fb70eb74a28cc56fa58136e033953e53d82adee`, com o motor `80268af4f3ff23f6b144257bc2922a21b789daff`. O `estado.fim` contém apenas a pasta criada pelo próprio guião.
 
-**V2A-44:** para satisfazer o ficheiro vazio pedido no achado 15, a pasta da corrida seguinte é preparada com um `.gitignore` comitado que exclui só os registos gerados dentro dela. A exclusão será retirada depois da corrida, para comitar os registos. A primeira prova é conservada integralmente; não se editam os seus estados nem se alteram réguas. Nada será escrito durante os portões.
+**V2A-44:** para satisfazer o ficheiro vazio pedido no achado 15, a pasta da corrida seguinte é preparada com um `.gitignore` comitado que exclui só os registos gerados dentro dela. A exclusão foi retirada depois da corrida, para comitar os registos. A primeira prova é conservada integralmente; não se editam os seus estados nem se alteram réguas. Nada foi escrito durante os portões.
 
-Estado da entrega: a corrida com o estado vazio, as capturas e as cabeças finais serão registadas depois da conferência.
+Estado da entrega: correções conferidas, portões verdes, estados finais vazios e capturas finais inspecionadas. O fecho medido consta abaixo.
 
-**V2A-45:** a inspeção visual da segunda corrida, verde com os dois estados finais vazios, encontrou nas três variações a falta da nota explícita sobre a grafia. As seis frases das duas edições passam a atribuí-la ao quadro, com planta própria. A captura do defeito fica em `d-conferencias/variacao-sem-nota.png`; os portões dessa cabeça estão em `portoes-d-segunda/`. O código corrigido será conferido e capturado novamente.
+**V2A-45:** a inspeção visual da segunda corrida, verde com os dois estados finais vazios, encontrou nas três variações a falta da nota explícita sobre a grafia. As seis frases das duas edições passam a atribuí-la ao quadro, com planta própria. A captura do defeito fica em `d-conferencias/variacao-sem-nota.png`; os portões dessa cabeça estão em `portoes-d-segunda/`. O código corrigido foi conferido e capturado novamente; a planta da nota retirada mordeu.
+
+### Fecho medido
+
+Código conferido do sítio: `b9497c1cd687cc890f852ca4c81b05c4b45273c6`. Cabeça final e código do motor: `80268af4f3ff23f6b144257bc2922a21b789daff`. Os commits posteriores do sítio guardam apenas capturas, medições e este relatório; a cabeça de entrega é indicada na resposta final.
+
+Commits de implementação e provas: `d49b1aad`, `9c35c959`, `3fb70eb7`, `505d654e`, `b9497c1c`; primeira parte das capturas: `f3161ea9`. Motor: `80268af4`.
+
+| Ficheiro lido | Código |
+|---|---|
+| `portoes-d/build.codigo` | 0 |
+| `portoes-d/verify.codigo` | 0 |
+| `portoes-d/typecheck.codigo` | 0 |
+| `portoes-d/motor.codigo` | 0 |
+
+`portoes-d/estado.fim` e `portoes-d/motor.estado.fim`: zero bytes. As cabeças de início e fim coincidem. A última corrida foi posterior ao commit de provas e não houve escritas durante os portões.
+
+Os nove cabeçalhos, lidos do HTML construído nas duas edições:
+
+| Linha | Português | Inglês |
+|---|---|---|
+| `despesa-efetiva-consolidada-2026` | Saúde, despesa efetiva consolidada, estimativa de 2026 | Health, consolidated effective expenditure, 2026 estimate |
+| `despesa-efetiva-consolidada-2027` | Saúde, despesa efetiva consolidada, orçamento para 2027 | Health, consolidated effective expenditure, budget for 2027 |
+| `despesa-efetiva-consolidada-sem-prr-2026` | Saúde, despesa efetiva consolidada sem PRR, estimativa de 2026 | Health, consolidated effective expenditure excluding the RRP, 2026 estimate |
+| `despesa-efetiva-consolidada-sem-prr-2027` | Saúde, despesa efetiva consolidada sem PRR, orçamento para 2027 | Health, consolidated effective expenditure excluding the RRP, budget for 2027 |
+| `despesa-efetiva-consolidada-sem-prr-variacao` | Saúde, despesa efetiva consolidada sem PRR, variação publicada entre a estimativa de 2026 e o orçamento para 2027 | Health, consolidated effective expenditure excluding the RRP, published change between the estimate for 2026 and the budget for 2027 |
+| `despesa-efetiva-consolidada-variacao` | Saúde, despesa efetiva consolidada, variação publicada entre a estimativa de 2026 e o orçamento para 2027 | Health, consolidated effective expenditure, published change between the estimate for 2026 and the budget for 2027 |
+| `despesa-total-consolidada-2026` | Saúde, despesa total consolidada, estimativa de 2026 | Health, consolidated total expenditure, 2026 estimate |
+| `despesa-total-consolidada-2027` | Saúde, despesa total consolidada, orçamento para 2027 | Health, consolidated total expenditure, budget for 2027 |
+| `despesa-total-consolidada-variacao` | Saúde, despesa total consolidada, variação publicada entre a estimativa de 2026 e o orçamento para 2027 | Health, consolidated total expenditure, published change between the estimate for 2026 and the budget for 2027 |
+
+Capturas: 150 casos de página e largura, 450 imagens e 40 imagens inspecionadas visualmente. As dimensões, os pedidos e todos os sha256 passaram. O recibo é `design/especime-v3/capturas/v2a-2026-10-12/d/capturas.json`; o método e as imagens vistas estão em `capturas-inspecao-d.json`.
+
+`medidas-d.json` confirma os oito corpos selados e as linhas anteriores sem alterações. `inspecao-d.json` confirma os dezoito valores e unidades contra a cabeça de entrada. `origem-d.json` compara literalmente a definição publicada com a página física do PDF selado. `l1-v2a-d.json` confirma as mesmas multiplicidades da passagem anterior e a vista alterada apenas nos pontos declarados.
+
+`plantas-d.json` conserva 79 mensagens efetivamente emitidas, com o ficheiro e a linha do registo. Inclui as plantas mantidas das passagens anteriores. As novas ou reforçadas desta passagem dizem:
+
+- `V2AD Saúde: cabeçalho com medida, programa ou período diferente`
+- `V2AD período: ano sem token da linha`
+- `V2AD grafia: falta a nota sobre o nome do programa`
+- `V2AD RTP: a notícia perdeu a medida identificada pelos montantes`
+- `V2AD conta: faltam os valores pelas linhas da medida`
+- `V2AD PPP: a conta não diz brutos menos receitas`
+- `V2AD PPP: falta o ano ou o cabeçalho do excerto`
+- `V2AD apoio: definição confundida com o excerto da Saúde`
+- `V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento`
+- `V2AB título: a proveniência não distingue o documento`
+- `V2A data: difere da data do documento`
+- `V2A edição: dia impossível na capa`
+- `V2AD L1: destinos ou multiplicidades diferentes da passagem anterior`
+- `V2AD vista: alteração fora dos períodos e das contas declaradas`
+
+A mutação da lista de meses também produz a comparação independente entre `2026-11-09` e `2026-10-09`, sem motor e com ele; a mensagem completa está no catálogo. A correção do localizador conserva as duas plantas de retirada da nota e troca da página. A nota explícita da grafia é conferida em `tests/linha/v2a.mjs:39`, com planta em `tests/linha/v2a.mjs:75`.
+
+Custo V2-a-c: 250 turnos, 511 796 de custo antigo, 5 pontos da semana sem outra sessão em paralelo, contexto médio de 132 275, conforme o mandato. Custo V2-a-d: por acrescentar pela direção a partir do lançador; não foi exposto nesta sessão. A linha «tokens used» não foi exposta.

@@ -1,0 +1,27 @@
+PLANTA V2AD grafia: falta a nota sobre o nome do programa
+PLANTA V2AD apoio: definição confundida com o excerto da Saúde
+PLANTA V2AD Saúde: cabeçalho com medida, programa ou período diferente
+PLANTA V2AD Saúde: cabeçalho com medida, programa ou período diferente
+PLANTA V2AD período: ano sem token da linha
+PLANTA V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento
+PLANTA V2AB título: a proveniência não distingue o documento
+PLANTA V2AD RTP: a notícia perdeu a medida identificada pelos montantes
+PLANTA V2AD conta: faltam os valores pelas linhas da medida
+PLANTA V2AD PPP: a conta não diz brutos menos receitas
+PLANTA V2AD PPP: falta o ano ou o cabeçalho do excerto
+PLANTA V2AB previsão: falta a autoria MF e a transcrição CFP
+PLANTA V2AB nota: ressalva não publicada
+PLANTA V2AB nome: a cabeça não diz as palavras citadas
+PLANTA V2AB localizador: tradução ou origem ausente
+PLANTA V2AB sigla: PRR ou RRP perdeu maiúsculas
+PLANTA V2AD Saúde: cabeçalho com medida, programa ou período diferente
+PLANTA V2AC Saúde: falta o ano, a coluna ou a grafia do programa
+PLANTA V2AC Saúde: falta a distinção entre total e efetiva
+PLANTA V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento
+PLANTA V2AC RTP: a frase não identifica a notícia pela data
+PLANTA V2AC PPP: o total não está definido por uma frase própria
+PLANTA V2AC Saúde: preposição incompatível com orçamento
+PLANTA V2AC selo: SHA256 do corpo ausente ou diferente
+V2AB/V2AC: 36 páginas conferidas; 24 plantas.
+PLANTA V2AC selo no livro: [afirmacao-leitao-amaro-saude-oe2027-2026-10-09.yml] document.source_sha256 precisa de um SHA256 completo.
+V2AD: os 18 valores e unidades coincidem com a cabeça de entrada.

@@ -1,5 +1,5 @@
 {
-  "cabeca": "505d654e89d296f71742b53812d6420f7d6bfc1e",
+  "cabeca": "b9497c1cd687cc890f852ca4c81b05c4b45273c6",
   "linhas": [
     {
       "id": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
@@ -174,12 +174,12 @@
       "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
       "pt": {
         "cabecalho": "Saúde, despesa efetiva consolidada sem PRR, variação publicada entre a estimativa de 2026 e o orçamento para 2027",
-        "frase": "É a variação publicada da despesa efetiva consolidada sem PRR do quadro da Saúde, «Conta do Pograma Legado»: compara o orçamento com a estimativa do ano anterior, sem PRR.",
+        "frase": "É a variação publicada da despesa efetiva consolidada sem PRR do quadro da Saúde. O quadro escreve «Conta do Pograma Legado». Compara o orçamento com a estimativa do ano anterior, sem PRR.",
         "conta": null
       },
       "en": {
         "cabecalho": "Health, consolidated effective expenditure excluding the RRP, published change between the estimate for 2026 and the budget for 2027",
-        "frase": "It is the published change in consolidated effective expenditure excluding the RRP in the Health table, «Conta do Pograma Legado»: the budget compared with the previous year’s estimate, excluding the RRP.",
+        "frase": "It is the published change in consolidated effective expenditure excluding the RRP in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. It compares the budget with the previous year’s estimate, excluding the RRP.",
         "conta": null
       }
     },
@@ -187,12 +187,12 @@
       "id": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
       "pt": {
         "cabecalho": "Saúde, despesa efetiva consolidada, variação publicada entre a estimativa de 2026 e o orçamento para 2027",
-        "frase": "É a variação publicada da despesa efetiva consolidada do quadro da Saúde, «Conta do Pograma Legado»: compara o orçamento com a estimativa do ano anterior, incluindo PRR.",
+        "frase": "É a variação publicada da despesa efetiva consolidada do quadro da Saúde. O quadro escreve «Conta do Pograma Legado». Compara o orçamento com a estimativa do ano anterior, incluindo PRR.",
         "conta": null
       },
       "en": {
         "cabecalho": "Health, consolidated effective expenditure, published change between the estimate for 2026 and the budget for 2027",
-        "frase": "It is the published change in consolidated effective expenditure in the Health table, «Conta do Pograma Legado»: the budget compared with the previous year’s estimate, including the RRP.",
+        "frase": "It is the published change in consolidated effective expenditure in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. It compares the budget with the previous year’s estimate, including the RRP.",
         "conta": null
       }
     },
@@ -226,12 +226,12 @@
       "id": "oe-2027-saude-despesa-total-consolidada-variacao",
       "pt": {
         "cabecalho": "Saúde, despesa total consolidada, variação publicada entre a estimativa de 2026 e o orçamento para 2027",
-        "frase": "É a variação publicada da despesa total consolidada do quadro da Saúde, «Conta do Pograma Legado»: compara o orçamento com a estimativa do ano anterior, incluindo PRR.",
+        "frase": "É a variação publicada da despesa total consolidada do quadro da Saúde. O quadro escreve «Conta do Pograma Legado». Compara o orçamento com a estimativa do ano anterior, incluindo PRR.",
         "conta": null
       },
       "en": {
         "cabecalho": "Health, consolidated total expenditure, published change between the estimate for 2026 and the budget for 2027",
-        "frase": "It is the published change in consolidated total expenditure in the Health table, «Conta do Pograma Legado»: the budget compared with the previous year’s estimate, including the RRP.",
+        "frase": "It is the published change in consolidated total expenditure in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. It compares the budget with the previous year’s estimate, including the RRP.",
         "conta": null
       }
     }

@@ -1,6 +1,6 @@
 {
   "base": "972c1f07",
-  "cabeca": "505d654e89d296f71742b53812d6420f7d6bfc1e",
+  "cabeca": "b9497c1cd687cc890f852ca4c81b05c4b45273c6",
   "linhas": 18,
   "paginas": 36,
   "resultados": [
@@ -294,6 +294,10 @@
     }
   ],
   "plantas": [
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "mensagem": "V2AD grafia: falta a nota sobre o nome do programa"
+    },
     {
       "id": "oe-2027-saude-despesa-total-consolidada-2027",
       "mensagem": "V2AD apoio: definição confundida com o excerto da Saúde"

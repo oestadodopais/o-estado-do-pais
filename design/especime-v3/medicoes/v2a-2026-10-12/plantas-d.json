@@ -1,0 +1,480 @@
+{
+  "cabeca": "b9497c1cd687cc890f852ca4c81b05c4b45273c6",
+  "plantas": [
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 1,
+      "mensagem": "excerto alterado: V2A excerto: difere do documento alojado"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 2,
+      "mensagem": "atribuição trocada: V2A atribuição: difere do documento alojado"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 3,
+      "mensagem": "data errada: V2A data: difere do documento alojado"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 4,
+      "mensagem": "porta trocada: V2A porta: difere do documento alojado"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 5,
+      "mensagem": "valor fora do excerto: V2A valor: difere do documento alojado"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 6,
+      "mensagem": "manchete como medida: V2A nome: difere do documento alojado"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 7,
+      "mensagem": "índice da coluna na extração: V2A coluna: índice diferente da medida"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 8,
+      "mensagem": "índice da linha na extração: V2A linha: índice diferente da medida"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 9,
+      "mensagem": "âncora trocada rtp-amaro.html: V2A atribuição: autoria ausente do corpo alojado"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 10,
+      "mensagem": "âncora trocada rtp-queda.html: V2A atribuição: autoria ausente do corpo alojado"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 11,
+      "mensagem": "mês PCP janeiro: V2AC data: mês trocado lido como 2026-01-09, não como outubro"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 12,
+      "mensagem": "mês PCP fevereiro: V2AC data: mês trocado lido como 2026-02-09, não como outubro"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 13,
+      "mensagem": "mês PCP março: V2AC data: mês trocado lido como 2026-03-09, não como outubro"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 14,
+      "mensagem": "mês PCP abril: V2AC data: mês trocado lido como 2026-04-09, não como outubro"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 15,
+      "mensagem": "mês PCP maio: V2AC data: mês trocado lido como 2026-05-09, não como outubro"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 16,
+      "mensagem": "mês PCP junho: V2AC data: mês trocado lido como 2026-06-09, não como outubro"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 17,
+      "mensagem": "mês PCP julho: V2AC data: mês trocado lido como 2026-07-09, não como outubro"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 18,
+      "mensagem": "mês PCP agosto: V2AC data: mês trocado lido como 2026-08-09, não como outubro"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 19,
+      "mensagem": "mês PCP setembro: V2AC data: mês trocado lido como 2026-09-09, não como outubro"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 20,
+      "mensagem": "mês PCP novembro: V2AC data: mês trocado lido como 2026-11-09, não como outubro"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 21,
+      "mensagem": "mês PCP dezembro: V2AC data: mês trocado lido como 2026-12-09, não como outubro"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 22,
+      "mensagem": "dia impossível no PCP: V2A data: dia impossível na intervenção"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 23,
+      "mensagem": "definição financeira retirada: V2A definição: nota do relatório ausente"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 24,
+      "mensagem": "ano do parecer trocado na capa: V2A edição: capa sem número e data concordantes"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 25,
+      "mensagem": "grafia do programa corrigida na fonte: V2A quadro Saúde: título ou grafia diferente"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 26,
+      "mensagem": "dia impossível na capa: V2A edição: dia impossível na capa"
+    },
+    {
+      "origem": "motor",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log",
+      "linha": 27,
+      "mensagem": "PDF integral na exportação: V2A direitos: só excertos e referências podem atravessar"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 1,
+      "mensagem": "excerto alterado: V2A excerto: palavras diferentes do corpo alojado"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 2,
+      "mensagem": "atribuição trocada: V2A atribuição: difere da autoria no documento"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 3,
+      "mensagem": "data errada: V2A data: difere da data do documento"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 4,
+      "mensagem": "porta trocada: V2A porta: difere do pedido registado"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 5,
+      "mensagem": "valor fora do excerto: V2A valor: não aparece no excerto selado"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 6,
+      "mensagem": "corpo integral pagina.html.gz: V2A direitos: a prova pública só admite excertos e referências em provas.json"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 7,
+      "mensagem": "corpo integral parecer.pdf: V2A direitos: a prova pública só admite excertos e referências em provas.json"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 8,
+      "mensagem": "caminho fora do motor: V2A referência: falta o selo, a data ou o caminho relativo no motor"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 9,
+      "mensagem": "mês PCP janeiro: V2A data: difere da data do documento"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 10,
+      "mensagem": "mês PCP fevereiro: V2A data: difere da data do documento"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 11,
+      "mensagem": "mês PCP março: V2A data: difere da data do documento"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 12,
+      "mensagem": "mês PCP abril: V2A data: difere da data do documento"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 13,
+      "mensagem": "mês PCP maio: V2A data: difere da data do documento"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 14,
+      "mensagem": "mês PCP junho: V2A data: difere da data do documento"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 15,
+      "mensagem": "mês PCP julho: V2A data: difere da data do documento"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 16,
+      "mensagem": "mês PCP agosto: V2A data: difere da data do documento"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 17,
+      "mensagem": "mês PCP setembro: V2A data: difere da data do documento"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 18,
+      "mensagem": "mês PCP novembro: V2A data: difere da data do documento"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 19,
+      "mensagem": "mês PCP dezembro: V2A data: difere da data do documento"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 20,
+      "mensagem": "dia impossível no PCP: V2A data: difere da data do documento"
+    },
+    {
+      "origem": "afirmacoes",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/afirmacoes.log",
+      "linha": 21,
+      "mensagem": "âncora trocada por texto ausente: V2A atribuição: difere da autoria no documento"
+    },
+    {
+      "origem": "meses",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/meses.log",
+      "linha": 1,
+      "mensagem": "meses trocados sem motor: Expected values to be strictly equal: + actual - expected  + '2026-11-09' - '2026-10-09'          ^ "
+    },
+    {
+      "origem": "meses",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/meses.log",
+      "linha": 2,
+      "mensagem": "meses trocados com motor: Expected values to be strictly equal: + actual - expected  + '2026-11-09' - '2026-10-09'          ^ "
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 1,
+      "mensagem": "V2AD grafia: falta a nota sobre o nome do programa"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 2,
+      "mensagem": "V2AD apoio: definição confundida com o excerto da Saúde"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 3,
+      "mensagem": "V2AD Saúde: cabeçalho com medida, programa ou período diferente"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 4,
+      "mensagem": "V2AD Saúde: cabeçalho com medida, programa ou período diferente"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 5,
+      "mensagem": "V2AD período: ano sem token da linha"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 6,
+      "mensagem": "V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 7,
+      "mensagem": "V2AB título: a proveniência não distingue o documento"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 8,
+      "mensagem": "V2AD RTP: a notícia perdeu a medida identificada pelos montantes"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 9,
+      "mensagem": "V2AD conta: faltam os valores pelas linhas da medida"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 10,
+      "mensagem": "V2AD PPP: a conta não diz brutos menos receitas"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 11,
+      "mensagem": "V2AD PPP: falta o ano ou o cabeçalho do excerto"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 12,
+      "mensagem": "V2AB previsão: falta a autoria MF e a transcrição CFP"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 13,
+      "mensagem": "V2AB nota: ressalva não publicada"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 14,
+      "mensagem": "V2AB nome: a cabeça não diz as palavras citadas"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 15,
+      "mensagem": "V2AB localizador: tradução ou origem ausente"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 16,
+      "mensagem": "V2AB sigla: PRR ou RRP perdeu maiúsculas"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 17,
+      "mensagem": "V2AD Saúde: cabeçalho com medida, programa ou período diferente"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 18,
+      "mensagem": "V2AC Saúde: falta o ano, a coluna ou a grafia do programa"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 19,
+      "mensagem": "V2AC Saúde: falta a distinção entre total e efetiva"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 20,
+      "mensagem": "V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 21,
+      "mensagem": "V2AC RTP: a frase não identifica a notícia pela data"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 22,
+      "mensagem": "V2AC PPP: o total não está definido por uma frase própria"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 23,
+      "mensagem": "V2AC Saúde: preposição incompatível com orçamento"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 24,
+      "mensagem": "V2AC selo: SHA256 do corpo ausente ou diferente"
+    },
+    {
+      "origem": "html-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/html-final.log",
+      "linha": 26,
+      "mensagem": "V2AC selo no livro: [afirmacao-leitao-amaro-saude-oe2027-2026-10-09.yml] document.source_sha256 precisa de um SHA256 completo."
+    },
+    {
+      "origem": "indice",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/indice.log",
+      "linha": 5,
+      "mensagem": "V2AC localizador da Saúde: nota da definição retirada"
+    },
+    {
+      "origem": "indice",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/indice.log",
+      "linha": 6,
+      "mensagem": "V2AC localizador da Saúde: página da definição trocada"
+    },
+    {
+      "origem": "l1-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/l1-final.log",
+      "linha": 1,
+      "mensagem": "V2AD L1: destinos ou multiplicidades diferentes da passagem anterior"
+    },
+    {
+      "origem": "l1-final",
+      "ficheiro": "design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/l1-final.log",
+      "linha": 2,
+      "mensagem": "V2AD vista: alteração fora dos períodos e das contas declaradas"
+    }
+  ],
+  "total": 79
+}
