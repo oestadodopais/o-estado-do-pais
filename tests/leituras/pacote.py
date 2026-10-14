@@ -114,6 +114,70 @@ with tempfile.TemporaryDirectory(prefix='oedp-pacote-h2-') as tmp:
           and 'modificações em ficheiros seguidos' not in r.stderr
           and git(sitio,'status','--porcelain','--untracked-files=no')=='')
     casos[-1].update(codigo=r.returncode, queixa=next(l for l in r.stdout.splitlines() if l.startswith('conferir-relatorio.py: não existe o relatório')).replace(str(tmp), '<ensaio>'))
+    # M83 (14.10.2026): os corpos alojados das linhas mudadas vão no pacote pelo guião; a falta recusa; a exceção é declarada.
+    # O corpo entra no motor ANTES da base do diff do motor, como numa passagem de correção: só a M83 o traz.
+    corpo = 'corpo alojado sintético, palavra por palavra\n'
+    sha = hashlib.sha256(corpo.encode()).hexdigest()
+    escrever(sitio, 'ledger/claims/linha-sintetica.yml',
+             'id: "linha-sintetica"\nvalue: "1"\ndocument:\n  title: "Documento sintético"\n  source_sha256: "' + sha + '"\n'
+             'note: "[note do motor] Localizador: p. 1. · Cruzado de ResearchHub content/Estudo sintético · linha-sintetica."\n')
+    escrever(sitio, 'ledger/claims/linha-derivada.yml', 'id: "linha-derivada"\nvalue: "2"\nderived_from: ["linha-sintetica"]\n')
+    escrever(sitio, 'dist/livro-razao/linha-sintetica/index.html', '<p>página sintética</p>\n')
+    escrever(sitio, 'dist/version.json', '{"versao": "ensaio"}\n')
+    cabeca_corpos = commit(sitio, ['ledger/claims/linha-sintetica.yml', 'ledger/claims/linha-derivada.yml'])
+    pasta_corpo = 'content/Estudo sintético/source/x/'
+    escrever(motor, pasta_corpo + 'corpo-alojado.txt', corpo)
+    escrever(motor, pasta_corpo + 'corpo-alojado.txt.pedido.json', '{"url": "https://exemplo.invalid/doc"}\n')
+    escrever(motor, pasta_corpo + 'direitos/dono.txt', 'direitos sintéticos\n')
+    escrever(motor, pasta_corpo + 'outro.txt', 'outro corpo que nenhuma linha cita\n')
+    cabeca_motor2 = commit(motor)
+    escrever(motor, 'publisher/nota.txt', 'passagem de correção posterior ao corpo\n')
+    cabeca_motor3 = commit(motor)
+    cmd[-1] = cabeca_corpos
+    env_corpos = dict(env, PACOTE_MOTOR=f'"{motor}" {cabeca_motor2} {cabeca_motor3} fontes/*')
+    com_corpos = montar(tmp/'com-corpos', env_corpos)
+    exige('o corpo alojado da linha mudada chega ao pacote, byte a byte, sem estar no diff do motor',
+          (com_corpos/'motor'/pasta_corpo/'corpo-alojado.txt').read_text() == corpo and 'corpo-alojado' not in (com_corpos/'motor/diff.patch').read_text())
+    exige('o recibo do pedido e os direitos vêm ao lado do corpo',
+          (com_corpos/'motor'/pasta_corpo/'corpo-alojado.txt.pedido.json').is_file() and (com_corpos/'motor'/pasta_corpo/'direitos/dono.txt').is_file())
+    exige('o corpo que nenhuma linha cita não vem', not (com_corpos/'motor'/pasta_corpo/'outro.txt').exists())
+    manifesto = (com_corpos/'motor/CORPOS-ALOJADOS.md').read_text()
+    exige('o manifesto diz a linha, o sha256 e o caminho, e a linha derivada sem documento',
+          f'| `linha-sintetica` | {sha[:12]} | `{pasta_corpo}corpo-alojado.txt` | copiado |' in manifesto and '| `linha-derivada` |  |  | sem documento alojado' in manifesto)
+    exige('a página construída da linha mudada entra sozinha de dist/, e a que falta fica dita',
+          (com_corpos/'built/livro-razao/linha-sintetica/index.html').read_text() == '<p>página sintética</p>\n'
+          and 'en/ledger/linha-sintetica/index.html' in json.loads((com_corpos/'motor/corpos-alojados.json').read_text())['paginas_em_falta']
+          and json.loads((com_corpos/'motor/corpos-alojados.json').read_text())['dist_version'] == {'versao': 'ensaio'})
+    exige('o manifesto não guarda caminhos da máquina', all(str(tmp).encode() not in p.read_bytes() for p in (com_corpos/'motor').rglob('*') if p.is_file()))
+    env_sem_motor = {k: v for k, v in env.items() if k != 'PACOTE_MOTOR'}
+    sem_motor = tmp/'sem-motor'
+    r = subprocess.run([*cmd, str(sem_motor), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md')], env=env_sem_motor, capture_output=True, text=True)
+    exige('planta: linha com documento alojado e sem PACOTE_MOTOR recusa antes de criar a pasta',
+          r.returncode != 0 and not sem_motor.exists() and 'PACOTE_MOTOR não foi dado' in r.stderr and 'linha-sintetica' in r.stderr)
+    casos[-1].update(codigo=r.returncode, queixa=next(l for l in r.stderr.splitlines() if l.startswith('ValueError: O pacote recusa')))
+    escrever(motor, pasta_corpo + 'corpo-alojado.txt', 'corpo alterado depois de selado\n')
+    cabeca_motor4 = commit(motor)
+    env_alterado = dict(env, PACOTE_MOTOR=f'"{motor}" {cabeca_motor2} {cabeca_motor4} fontes/*')
+    alterado = tmp/'corpo-alterado'
+    r = subprocess.run([*cmd, str(alterado), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md')], env=env_alterado, capture_output=True, text=True)
+    exige('planta: o corpo com outro sha256 na cabeça do motor recusa, e diz a linha e o estudo percorrido',
+          r.returncode != 0 and not alterado.exists() and 'corpo alojado não encontrado na cabeça do motor' in r.stderr
+          and 'linha-sintetica' in r.stderr and 'content/Estudo sintético' in r.stderr)
+    casos[-1].update(codigo=r.returncode, queixa=next(l for l in r.stderr.splitlines() if l.startswith('ValueError: O pacote recusa')))
+    curta = tmp/'razao-curta'
+    r = subprocess.run([*cmd, str(curta), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md')], env=dict(env_alterado, PACOTE_SEM_CORPOS='curta'), capture_output=True, text=True)
+    exige('planta: uma razão curta não abre a exceção', r.returncode != 0 and not curta.exists() and 'exige uma razão escrita' in r.stderr)
+    razao = 'Ensaio da exceção declarada: o corpo foi alterado no motor de propósito para medir a M83.'
+    declarado = montar(tmp/'sem-corpos-declarado', dict(env_alterado, PACOTE_SEM_CORPOS=razao))
+    exige('conhecido-positivo: com a razão declarada o pacote monta-se e diz a falta ao leitor',
+          razao in (declarado/'SEM-CORPOS-ALOJADOS.md').read_text() and 'linha-sintetica' in (declarado/'SEM-CORPOS-ALOJADOS.md').read_text()
+          and '| `linha-sintetica` | ' + sha[:12] + ' |  | EM FALTA |' in (declarado/'motor/CORPOS-ALOJADOS.md').read_text()
+          and (declarado/'motor'/pasta_corpo/'corpo-alojado.txt').read_text() != corpo)
+    escrever(sitio, 'ledger/claims/linha-derivada.yml', 'id: "linha-derivada"\nvalue: "3"\nderived_from: ["linha-sintetica"]\n')
+    cabeca_derivada = commit(sitio, ['ledger/claims/linha-derivada.yml'])
+    r = subprocess.run([*cmd[:-2], cabeca_corpos, cabeca_derivada, str(tmp/'so-derivada'), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md')], env=env_sem_motor, capture_output=True, text=True)
+    exige('controlo: só uma linha derivada mudada não exige o motor, e o manifesto diz que não tem documento',
+          r.returncode == 0 and 'sem documento alojado' in (tmp/'so-derivada/motor/CORPOS-ALOJADOS.md').read_text())
 saida={'ok':all(c['passou'] for c in casos),'casos':casos}
 if '--json' in sys.argv: Path(sys.argv[sys.argv.index('--json')+1]).write_text(json.dumps(saida,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(saida,ensure_ascii=False,indent=2))
