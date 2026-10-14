@@ -20,8 +20,8 @@ source: "Ministério das Finanças"
 document:
   title: "Orçamento do Estado para 2027"
   edition: "2027"
-  locator: "Quadro 4.25, setor rodoviário, Rodoviário, 2027, p. 123 do PDF (107 impressa)"
-  locator_en: "Table 4.25, road sector, Road sector, 2027, p. 123 of the PDF (printed 107)"
+  locator: "Quadro 4.25, setor rodoviário, Rodoviário, 2027, p. 123 do PDF (107 impressa); apoio aos encargos e receitas: texto da p. 124 do PDF (108 impressa)"
+  locator_en: "Table 4.25, road sector, Road sector, 2027, p. 123 of the PDF (printed 107); supporting text on charges and revenue: p. 124 of the PDF (printed 108)"
   source_sha256: "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
   page: 123
   kind: "ficheiro"
@@ -49,7 +49,7 @@ check: null
 
 study: "oe-2027"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Localizador: Quadro 4.25, setor rodoviário, Rodoviário, 2027, p. 123 do PDF (107 impressa).  Previsão, não execução. O valor e a variação são os impressos na fonte. 1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027. · Cruzado de ResearchHub content/15 Orcamento do Estado 2027 · oe-2027-ppp-rodoviario-encargos-liquidos-2027."
+note: "[note do motor] Localizador: Quadro 4.25, setor rodoviário, Rodoviário, 2027, p. 123 do PDF (107 impressa).  Previsão, não execução. O valor e a variação são os impressos na fonte. 1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027. Apoio aos encargos e receitas: No setor rodoviário, os encargos líquidos plurianuais apresentados foram estimados com base no quadro remuneratório aplicável. Para esse efeito, foram considerados os respetivos fluxos financeiros, designadamente os encargos e as receitas, cujas principais componentes são as seguintes. · Cruzado de ResearchHub content/15 Orcamento do Estado 2027 · oe-2027-ppp-rodoviario-encargos-liquidos-2027."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

@@ -24,12 +24,12 @@ for(const e of FAMILIAS_V2A) {
     }
   }
   const frase={pt:[e.partes.map(p=>p.pt).join('')],en:[e.partes.map(p=>p.en).join('')]};
-  for(const k of e.chaves) declared[k]={nome:e.nome,frase,...(e.origens.length?{origens:e.origens}:{})};
+  for(const k of e.chaves) declared[k]={nome:e.nome,frase,...(e.complemento?{complemento:e.complemento}:{}),...(e.origens.length?{origens:e.origens}:{})};
 }
 const newMap=JSON.stringify(Object.fromEntries([...keys].sort().map(k=>[k,declared[k]])),null,2);
 fs.writeFileSync(file,original+'\n// V2A: declarações acrescentadas pelo compositor próprio.\nObject.assign(FAMILIAS_DAS_LINHAS, '+newMap+');\n');
 aud.familias=aud.familias.filter(e=>!e.chaves?.some(k=>keys.has(k)||k.startsWith('oe-2027-saude-')));
-for(const e of FAMILIAS_V2A) aud.familias.push({chaves:e.chaves,nome:e.nome,origens:e.origens,folhas:[{pt:e.partes.map(p=>p.pt).join(''),en:e.partes.map(p=>p.en).join(''),partes:e.partes}]});
+for(const e of FAMILIAS_V2A) aud.familias.push({chaves:e.chaves,nome:e.nome,origens:e.origens,...(e.complemento?{complemento:e.complemento}:{}),folhas:[{pt:e.partes.map(p=>p.pt).join(''),en:e.partes.map(p=>p.en).join(''),partes:e.partes}]});
 aud.leituras=aud.leituras.filter(l=>!l.o_que.startsWith('Construção V2-a:'));
 aud.leituras.push({quem:'Codex gpt-6-astra',quando:'2026-10-14',o_que:'Construção V2-a: frases conferidas nas linhas e documentos selados. A leitura a frio pertence à entrega seguinte.'});
 fs.writeFileSync(audFile,JSON.stringify(aud,null,2)+'\n');

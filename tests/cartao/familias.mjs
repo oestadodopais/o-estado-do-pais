@@ -357,6 +357,12 @@ export function conferirAuditoriaDasFamilias({
       falha(`${quem}: as partes juntas não dão a frase declarada, nas duas edições (uma frase mudada precisa de nova leitura das origens)`);
       continue;
     }
+    if(JSON.stringify(e.complemento)!==JSON.stringify(familias[chaves[0]]?.complemento))falha(`${quem}: complemento diferente da auditoria`);
+    for(const lang of ['pt','en'])for(const p of e.complemento?.[lang]??[]) {
+      if(typeof p==='string') {if(/\d/.test(p))falha(`${quem}: complemento com algarismo fixo`);continue;}
+      const tipo=Object.keys(p??{})[0],c=linhas.get(p?.[tipo]);
+      if(Object.keys(p??{}).length!==1||!['claim','periodo','excerto'].includes(tipo)||!c||(tipo==='excerto'&&!c.afirmacao))falha(`${quem}: complemento com token sem origem`);
+    }
     if(JSON.stringify(e.compara)!==JSON.stringify(familias[chaves[0]]?.compara)) falha(`${quem}: a comparação não corresponde à auditoria`);
     if(e.compara) {
       for(const a of e.compara.apoios??[]) { const erro=verifica(a,ids);if(erro)falha(`${quem}: ${erro}`); }
@@ -564,6 +570,16 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
       }
     } else {
       esperado = normal(textoDaFrase(d?.frase?.[lang]) + notasJd1Aqui(id, lang));
+      if(d?.complemento) {
+        const partes=d.complemento[lang],tokens=[];
+        esperado=normal(textoDaFrase(d.frase[lang])+partes.map(p=>{
+          if(typeof p==='string')return p;
+          const tipo=Object.keys(p)[0],c=ctx.linhas.get(p[tipo]);tokens.push([tipo,p[tipo]]);
+          return tipo==='periodo'?String(c.reference_date).split('-').reverse().join('.'):tipo==='excerto'?c.excerpt:c.value;
+        }).join(''));
+        const rendidos=oQueE.querySelectorAll('[data-claim], [data-nonledger="data-da-linha"], [data-linha-campo="excerpt"]').map(x=>x.hasAttribute('data-claim')?['claim',x.getAttribute('data-claim')]:x.hasAttribute('data-linha-campo')?['excerto',x.getAttribute('data-linha-claim')]:[x.getAttribute('data-de-campo')==='reference_date'?'periodo':'campo-errado',x.getAttribute('data-de-linha')]);
+        if(JSON.stringify(rendidos)!==JSON.stringify(tokens))falha('o complemento não cita os campos pelos tokens auditados');
+      }
       if(d?.compara) {
         const c=d.compara,a=ctx.linhas.get(c.a),b=ctx.linhas.get(c.b);
         const n=x=>Number(String(x).replace(/[\s\u202f\u00a0]/g,'').replace(',','.'));
@@ -589,13 +605,13 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
   const anda = (/** @type {any} */ n) => {
     if (n.nodeType === NodeType.TEXT_NODE) {
       if (/\d/.test(n.text)) {
-        let marcado = false, tokenComparado = false;
+        let marcado = false, tokenComparado = false, tokenDoComplemento = false;
         for (let p = n.parentNode; p && p !== el.parentNode; p = p.parentNode) {
           const a = p.attributes ?? {};
-          if ('data-claim' in a || 'data-nonledger' in a) { marcado = true; const c=ctx.familias[f.chave]?.compara; tokenComparado=Boolean(c && [c.a,c.b].includes(a['data-claim'])); break; }
+          if ('data-claim' in a || 'data-nonledger' in a || 'data-linha-campo' in a) { marcado = true; const c=ctx.familias[f.chave]?.compara; tokenComparado=Boolean(c && [c.a,c.b].includes(a['data-claim'])); tokenDoComplemento=(ctx.familias[f.chave]?.complemento?.[lang]??[]).some(t=>typeof t==='object'&&((t.claim&&t.claim===a['data-claim'])||(t.periodo&&t.periodo===a['data-de-linha']&&a['data-de-campo']==='reference_date')||(t.excerto&&t.excerto===a['data-linha-claim']&&a['data-linha-campo']==='excerpt'))); break; }
         }
         const dataDoInstantaneo = ctx.familias[f.chave]?.instantaneo && n.parentNode?.matches?.('[data-nonledger="data-da-linha"][data-de-campo="document.computed_over.files.0.snapshot_date"]') && n.parentNode.getAttribute('data-de-linha') === id;
-        if (!marcado || f.tipo === 'concelho' || (f.tipo === 'familia' && !ctx.familias[f.chave]?.cartao && !dataDoInstantaneo && !tokenComparado)) falha(`a frase escreve um algarismo${marcado ? ' numa frase de família' : ' sem marca de origem'}: «${curto(normal(n.text))}»`);
+        if (!marcado || f.tipo === 'concelho' || (f.tipo === 'familia' && !ctx.familias[f.chave]?.cartao && !dataDoInstantaneo && !tokenComparado && !tokenDoComplemento)) falha(`a frase escreve um algarismo${marcado ? ' numa frase de família' : ' sem marca de origem'}: «${curto(normal(n.text))}»`);
       }
       return;
     }

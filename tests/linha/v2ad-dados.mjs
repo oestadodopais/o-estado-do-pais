@@ -27,3 +27,35 @@ const numero=id=>Number(claims.get(id).value.replace(/\s/g,'').replace(',','.'))
 assert.equal(Math.round((numero('oe-2027-saude-despesa-total-consolidada-2026')-numero('oe-2027-saude-despesa-total-consolidada-2027'))*10),2675);
 assert.equal(numero('oe-2027-ppp-rodoviario-encargos-brutos-2027')-numero('oe-2027-ppp-rodoviario-receitas-2027'),numero('oe-2027-ppp-rodoviario-encargos-liquidos-2027'));
 console.log('V2AD: tokens e contas conferidos nas linhas; meses com expectativas independentes.');
+
+// V2-a-e: a extensão das famílias exige auditoria e conserva os campos de origem.
+const {resolverComplemento}=await import('../../src/lib/o-que-e-o-numero.mjs');
+const {conferirAuditoriaDasFamilias}=await import('../cartao/familias.mjs');
+const {FAMILIAS_DAS_LINHAS}=await import('../../src/data/o-que-e-das-familias.mjs');
+const auditoria=JSON.parse(fs.readFileSync('tests/cartao/leituras-provadas.json'));
+assert.deepEqual(conferirAuditoriaDasFamilias().erros,[]);
+for(const [nome,partes,mensagem] of [
+ ['algarismo fixo',['Ano 2027'],'V2AE complemento: algarismo fixo'],
+ ['linha inexistente',[{periodo:'linha-do-ensaio'}],'a afirmação'],
+ ['citação sem afirmação',[{excerto:'oe-2027-saude-despesa-total-consolidada-2027'}],'V2AE complemento: citação sem afirmação'],
+]) {
+ assert.throws(()=>resolverComplemento(partes),e=>{console.log(`PLANTA V2AE resolvedor ${nome}: ${e.message.replace(/\n/g,' ')}`);return e.message.includes(mensagem);});
+}
+for(const lang of ['pt','en'])for(const [nome,altera,mensagem] of [
+ ['auditoria diferente',f=>f.complemento[lang].push(' Outra frase.'),'complemento diferente da auditoria'],
+]) {
+ const familias=structuredClone(FAMILIAS_DAS_LINHAS),id='oe-2027-saude-despesa-total-consolidada-2027';altera(familias[id]);
+ const erro=conferirAuditoriaDasFamilias({familias}).erros.find(x=>x.includes(mensagem));assert(erro);console.log(`PLANTA ${lang} K17 ${nome}: ${erro}`);
+}
+for(const [nome,parte,mensagem] of [['algarismo','Ano 2027','complemento com algarismo fixo'],['token sem origem',{periodo:'linha-do-ensaio'},'complemento com token sem origem']]) {
+ const a=structuredClone(auditoria),familias=structuredClone(FAMILIAS_DAS_LINHAS),id='oe-2027-saude-despesa-total-consolidada-2027';
+ a.familias.find(f=>f.chaves?.includes(id)).complemento.pt.push(parte);familias[id].complemento.pt.push(parte);
+ const erro=conferirAuditoriaDasFamilias({auditoria:a,familias}).erros.find(x=>x.includes(mensagem));assert(erro);console.log(`PLANTA K17 ${nome}: ${erro}`);
+}
+const apoios=JSON.parse(fs.readFileSync('ledger/provas/v2a/provas.json')).apoios;
+const origens=JSON.parse(fs.readFileSync('src/data/origens-v2a.json'));
+for(const [key,a] of Object.entries(apoios)) {
+ assert.equal(origens[key].excerto,a.excerto);assert.equal(origens[key].selo.sha256,a.sha256);assert(origens[key].url.endsWith('#page='+a.pagina_pdf));
+}
+for(const id of ['oe-2027-ppp-total-encargos-liquidos-2027'])for(const lang of ['pt','en'])assert.deepEqual(contaV2a(id,lang),[]);
+console.log('V2AE: complementos auditados, origens seladas e total sem conta rodoviária.');

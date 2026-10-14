@@ -55,6 +55,8 @@
  *                                   na origem; na edição inglesa leva glosa.
  */
 import Claim from './Claim.astro';
+import CampoDaLinha from './CampoDaLinha.astro';
+import {getClaim} from '../lib/ledger.mjs';
 import DataDaLinha from './DataDaLinha.astro';
 import ValorDaProva from './ValorDaProva.astro';
 import DefinicaoDoMarcador from './DefinicaoDoMarcador.astro';
@@ -80,6 +82,7 @@ const s = t(lang);
 {
   partes.map((parte) => {
     if (typeof parte === 'string') return <Fragment set:text={parte} />;
+    if (parte.excerto) return <CampoDaLinha id={parte.excerto} campo="excerpt" valor={getClaim(parte.excerto).excerpt} lang={lang} lingua="pt-PT" />;
     if (parte.claim)
       return <Claim id={parte.claim} lang={lang} chip={selos} sufixo={parte.sufixo ?? ''} />;
     if (parte.ponto)

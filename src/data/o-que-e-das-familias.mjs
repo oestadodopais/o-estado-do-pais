@@ -3697,12 +3697,72 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o aumento do orçamento da Saúde retirando a verba excecional do PRR, nas palavras do ministro da Presidência transcritas pela RTP."
+        "É o aumento do orçamento da Saúde retirando a verba excecional do PRR, nas palavras do ministro da Presidência transcritas pela RTP. PRR é o Plano de Recuperação e Resiliência. O relatório descreve o fim do seu ciclo extraordinário de financiamento."
       ],
       "en": [
-        "It is the increase in the Health budget excluding exceptional RRP funding, in the Minister of the Presidency’s words transcribed by RTP."
+        "It is the increase in the Health budget excluding exceptional Recovery and Resilience Plan (PRR) funding, in the Minister of the Presidency’s words transcribed by RTP. The report describes the end of the plan’s exceptional funding cycle."
       ]
-    }
+    },
+    "complemento": {
+      "pt": [
+        " Com o PRR, a despesa efetiva consolidada passa de ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " milhões de euros na estimativa de ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " para ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        " milhões no orçamento para ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        "; sem o PRR, passa de ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+        },
+        " para ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+        },
+        " milhões. A diferença entre as colunas com e sem PRR é a parcela do PRR; a sua redução explica a descida com PRR e a subida sem ele."
+      ],
+      "en": [
+        " With the PRR, consolidated effective expenditure goes from ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " million euros in the estimate for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " to ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        " million in the budget for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        "; excluding the PRR, it goes from ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+        },
+        " to ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+        },
+        " million. The difference between the columns with and without PRR is the PRR component; its reduction explains the fall with PRR and the rise without it."
+      ]
+    },
+    "origens": [
+      "v2a-prr-saude",
+      "v2a-prr-ciclo"
+    ]
   },
   "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09": {
     "nome": {
@@ -3711,10 +3771,50 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o montante que o orçamento entrega às parcerias público-privadas rodoviárias, nas palavras da intervenção de Paulo Raimundo publicada pelo PCP."
+        "Na intervenção publicada pelo PCP, Paulo Raimundo afirma: "
       ],
       "en": [
-        "It is the amount the budget allocates to road public-private partnerships, in Paulo Raimundo’s speech published by the PCP."
+        "In the speech published by the PCP, Paulo Raimundo states: "
+      ]
+    },
+    "complemento": {
+      "pt": [
+        "«",
+        {
+          "excerto": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09"
+        },
+        "». No quadro das parcerias público-privadas, para ",
+        {
+          "periodo": "oe-2027-ppp-rodoviario-encargos-brutos-2027"
+        },
+        ", os encargos brutos rodoviários são ",
+        {
+          "claim": "oe-2027-ppp-rodoviario-encargos-brutos-2027"
+        },
+        " milhões de euros e os líquidos são ",
+        {
+          "claim": "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
+        },
+        " milhões."
+      ],
+      "en": [
+        "«",
+        {
+          "excerto": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09"
+        },
+        "». In the public-private partnership table, for ",
+        {
+          "periodo": "oe-2027-ppp-rodoviario-encargos-brutos-2027"
+        },
+        ", gross road charges are ",
+        {
+          "claim": "oe-2027-ppp-rodoviario-encargos-brutos-2027"
+        },
+        " million euros and net charges are ",
+        {
+          "claim": "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
+        },
+        " million."
       ]
     }
   },
@@ -3725,10 +3825,34 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a queda do orçamento da Saúde para dois mil e vinte e sete noticiada pela RTP a nove de outubro de dois mil e vinte e seis. Os montantes da notícia identificam a despesa total consolidada do programa Saúde. A queda é a diferença entre a estimativa do ano anterior e o orçamento."
+        "É a queda do orçamento da Saúde noticiada pela RTP. Os montantes da notícia identificam a despesa total consolidada do programa Saúde."
       ],
       "en": [
-        "It is the decrease in the Health budget for two thousand and twenty-seven reported by RTP on nine October two thousand and twenty-six. The article’s amounts identify consolidated total expenditure for the Health programme. The decrease is the difference between the previous year’s estimate and the budget."
+        "It is the Health budget decrease reported by RTP. The article’s amounts identify consolidated total expenditure for the Health programme."
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " A notícia é de ",
+        {
+          "periodo": "afirmacao-rtp-saude-queda-oe2027-2026-10-09"
+        },
+        " e refere-se ao orçamento para ",
+        {
+          "periodo": "oe-2027-saude-despesa-total-consolidada-2027"
+        },
+        "."
+      ],
+      "en": [
+        " The article is dated ",
+        {
+          "periodo": "afirmacao-rtp-saude-queda-oe2027-2026-10-09"
+        },
+        " and concerns the budget for ",
+        {
+          "periodo": "oe-2027-saude-despesa-total-consolidada-2027"
+        },
+        "."
       ]
     }
   },
@@ -3772,7 +3896,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       "en": [
         "It is the projected value for road sector gross charges in the public-private partnership table."
       ]
-    }
+    },
+    "origens": [
+      "v2a-ppp-conta"
+    ]
   },
   "oe-2027-ppp-rodoviario-encargos-liquidos": {
     "nome": {
@@ -3786,7 +3913,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       "en": [
         "It is the projected value for road sector net charges in the public-private partnership table."
       ]
-    }
+    },
+    "origens": [
+      "v2a-ppp-conta"
+    ]
   },
   "oe-2027-ppp-rodoviario-receitas": {
     "nome": {
@@ -3800,7 +3930,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
       "en": [
         "It is the projected value for road sector revenue in the public-private partnership table."
       ]
-    }
+    },
+    "origens": [
+      "v2a-ppp-conta"
+    ]
   },
   "oe-2027-ppp-total-encargos-liquidos": {
     "nome": {
@@ -3809,12 +3942,31 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É o total previsto dos encargos líquidos das parcerias público-privadas em dois mil e vinte e sete, em valores de caixa a preços constantes desse ano."
+        "É o total previsto dos encargos líquidos das parcerias público-privadas: soma os setores «Rodoviário», «Ferroviário», «Saúde», «Aeroportuário» e «Oceanário», como o quadro os escreve."
       ],
       "en": [
-        "It is the projected total of net public-private partnership charges in two thousand and twenty-seven, measured as cash flows at constant prices for that year."
+        "It is the projected total of net public-private partnership charges: it sums the sectors «Rodoviário», «Ferroviário», «Saúde», «Aeroportuário» and «Oceanário», as written in the table."
       ]
-    }
+    },
+    "complemento": {
+      "pt": [
+        " São valores de caixa a preços constantes de ",
+        {
+          "periodo": "oe-2027-ppp-total-encargos-liquidos-2027"
+        },
+        "."
+      ],
+      "en": [
+        " These are cash flows at constant prices for ",
+        {
+          "periodo": "oe-2027-ppp-total-encargos-liquidos-2027"
+        },
+        "."
+      ]
+    },
+    "origens": [
+      "v2a-ppp-setores"
+    ]
   },
   "oe-2027-saude-despesa-efetiva-consolidada-2026": {
     "nome": {
@@ -3823,10 +3975,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a despesa efetiva consolidada na estimativa de dois mil e vinte e seis do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        "É a despesa efetiva consolidada do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
       ],
       "en": [
-        "It is consolidated effective expenditure in the estimate for two thousand and twenty-six in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
+        "It is consolidated effective expenditure in the Health table, «Conta do Pograma Legado», as written in the table. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " Refere-se à estimativa de ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        "."
+      ],
+      "en": [
+        " It refers to the estimate for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        "."
       ]
     },
     "origens": [
@@ -3840,10 +4008,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a despesa efetiva consolidada no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        "É a despesa efetiva consolidada do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
       ],
       "en": [
-        "It is consolidated effective expenditure in the budget for two thousand and twenty-seven in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
+        "It is consolidated effective expenditure in the Health table, «Conta do Pograma Legado», as written in the table. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " Refere-se ao orçamento para ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        "."
+      ],
+      "en": [
+        " It refers to the budget for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        "."
       ]
     },
     "origens": [
@@ -3857,14 +4041,82 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a despesa efetiva consolidada sem PRR na estimativa de dois mil e vinte e seis do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        "É a despesa efetiva consolidada sem PRR do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações. PRR é o Plano de Recuperação e Resiliência. O relatório descreve o fim do seu ciclo extraordinário de financiamento."
       ],
       "en": [
-        "It is consolidated effective expenditure excluding the RRP in the estimate for two thousand and twenty-six in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
+        "It is consolidated effective expenditure excluding the Recovery and Resilience Plan (PRR) in the Health table, «Conta do Pograma Legado», as written in the table. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions. The report describes the end of the plan’s exceptional funding cycle."
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " Refere-se à estimativa de ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+        },
+        ".",
+        " Com o PRR, a despesa efetiva consolidada passa de ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " milhões de euros na estimativa de ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " para ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        " milhões no orçamento para ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        "; sem o PRR, passa de ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+        },
+        " para ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+        },
+        " milhões. A diferença entre as colunas com e sem PRR é a parcela do PRR; a sua redução explica a descida com PRR e a subida sem ele."
+      ],
+      "en": [
+        " It refers to the estimate for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+        },
+        ".",
+        " With the PRR, consolidated effective expenditure goes from ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " million euros in the estimate for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " to ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        " million in the budget for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        "; excluding the PRR, it goes from ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+        },
+        " to ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+        },
+        " million. The difference between the columns with and without PRR is the PRR component; its reduction explains the fall with PRR and the rise without it."
       ]
     },
     "origens": [
-      "v2a-total-efetiva"
+      "v2a-total-efetiva",
+      "v2a-prr-saude",
+      "v2a-prr-ciclo"
     ]
   },
   "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027": {
@@ -3874,14 +4126,82 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a despesa efetiva consolidada sem PRR no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        "É a despesa efetiva consolidada sem PRR do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações. PRR é o Plano de Recuperação e Resiliência. O relatório descreve o fim do seu ciclo extraordinário de financiamento."
       ],
       "en": [
-        "It is consolidated effective expenditure excluding the RRP in the budget for two thousand and twenty-seven in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
+        "It is consolidated effective expenditure excluding the Recovery and Resilience Plan (PRR) in the Health table, «Conta do Pograma Legado», as written in the table. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions. The report describes the end of the plan’s exceptional funding cycle."
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " Refere-se ao orçamento para ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+        },
+        ".",
+        " Com o PRR, a despesa efetiva consolidada passa de ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " milhões de euros na estimativa de ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " para ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        " milhões no orçamento para ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        "; sem o PRR, passa de ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+        },
+        " para ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+        },
+        " milhões. A diferença entre as colunas com e sem PRR é a parcela do PRR; a sua redução explica a descida com PRR e a subida sem ele."
+      ],
+      "en": [
+        " It refers to the budget for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+        },
+        ".",
+        " With the PRR, consolidated effective expenditure goes from ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " million euros in the estimate for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " to ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        " million in the budget for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        "; excluding the PRR, it goes from ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+        },
+        " to ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+        },
+        " million. The difference between the columns with and without PRR is the PRR component; its reduction explains the fall with PRR and the rise without it."
       ]
     },
     "origens": [
-      "v2a-total-efetiva"
+      "v2a-total-efetiva",
+      "v2a-prr-saude",
+      "v2a-prr-ciclo"
     ]
   },
   "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao": {
@@ -3891,12 +4211,90 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a variação publicada da despesa efetiva consolidada sem PRR do quadro da Saúde. O quadro escreve «Conta do Pograma Legado». Compara o orçamento com a estimativa do ano anterior, sem PRR."
+        "É a variação publicada da despesa efetiva consolidada sem PRR do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. PRR é o Plano de Recuperação e Resiliência. O relatório descreve o fim do seu ciclo extraordinário de financiamento."
       ],
       "en": [
-        "It is the published change in consolidated effective expenditure excluding the RRP in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. It compares the budget with the previous year’s estimate, excluding the RRP."
+        "It is the published change in consolidated effective expenditure excluding the Recovery and Resilience Plan (PRR) in the Health table, «Conta do Pograma Legado», as written in the table. The report describes the end of the plan’s exceptional funding cycle."
       ]
-    }
+    },
+    "complemento": {
+      "pt": [
+        " Compara a estimativa de ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+        },
+        " com o orçamento para ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao"
+        },
+        ".",
+        " Com o PRR, a despesa efetiva consolidada passa de ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " milhões de euros na estimativa de ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " para ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        " milhões no orçamento para ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        "; sem o PRR, passa de ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+        },
+        " para ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+        },
+        " milhões. A diferença entre as colunas com e sem PRR é a parcela do PRR; a sua redução explica a descida com PRR e a subida sem ele."
+      ],
+      "en": [
+        " It compares the estimate for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+        },
+        " with the budget for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao"
+        },
+        ".",
+        " With the PRR, consolidated effective expenditure goes from ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " million euros in the estimate for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " to ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        " million in the budget for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        "; excluding the PRR, it goes from ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+        },
+        " to ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+        },
+        " million. The difference between the columns with and without PRR is the PRR component; its reduction explains the fall with PRR and the rise without it."
+      ]
+    },
+    "origens": [
+      "v2a-prr-saude",
+      "v2a-prr-ciclo"
+    ]
   },
   "oe-2027-saude-despesa-efetiva-consolidada-variacao": {
     "nome": {
@@ -3905,12 +4303,90 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a variação publicada da despesa efetiva consolidada do quadro da Saúde. O quadro escreve «Conta do Pograma Legado». Compara o orçamento com a estimativa do ano anterior, incluindo PRR."
+        "É a variação publicada da despesa efetiva consolidada do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. PRR é o Plano de Recuperação e Resiliência. O relatório descreve o fim do seu ciclo extraordinário de financiamento."
       ],
       "en": [
-        "It is the published change in consolidated effective expenditure in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. It compares the budget with the previous year’s estimate, including the RRP."
+        "It is the published change in consolidated effective expenditure in the Health table, «Conta do Pograma Legado», as written in the table. Recovery and Resilience Plan (PRR) is the plan’s full name. The report describes the end of its exceptional funding cycle."
       ]
-    }
+    },
+    "complemento": {
+      "pt": [
+        " Compara a estimativa de ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " com o orçamento para ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-variacao"
+        },
+        ".",
+        " Com o PRR, a despesa efetiva consolidada passa de ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " milhões de euros na estimativa de ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " para ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        " milhões no orçamento para ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        "; sem o PRR, passa de ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+        },
+        " para ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+        },
+        " milhões. A diferença entre as colunas com e sem PRR é a parcela do PRR; a sua redução explica a descida com PRR e a subida sem ele."
+      ],
+      "en": [
+        " It compares the estimate for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " with the budget for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-variacao"
+        },
+        ".",
+        " With the PRR, consolidated effective expenditure goes from ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " million euros in the estimate for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2026"
+        },
+        " to ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        " million in the budget for ",
+        {
+          "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+        },
+        "; excluding the PRR, it goes from ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+        },
+        " to ",
+        {
+          "claim": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+        },
+        " million. The difference between the columns with and without PRR is the PRR component; its reduction explains the fall with PRR and the rise without it."
+      ]
+    },
+    "origens": [
+      "v2a-prr-saude",
+      "v2a-prr-ciclo"
+    ]
   },
   "oe-2027-saude-despesa-total-consolidada-2026": {
     "nome": {
@@ -3919,10 +4395,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a despesa total consolidada na estimativa de dois mil e vinte e seis do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        "É a despesa total consolidada do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
       ],
       "en": [
-        "It is consolidated total expenditure in the estimate for two thousand and twenty-six in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
+        "It is consolidated total expenditure in the Health table, «Conta do Pograma Legado», as written in the table. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " Refere-se à estimativa de ",
+        {
+          "periodo": "oe-2027-saude-despesa-total-consolidada-2026"
+        },
+        "."
+      ],
+      "en": [
+        " It refers to the estimate for ",
+        {
+          "periodo": "oe-2027-saude-despesa-total-consolidada-2026"
+        },
+        "."
       ]
     },
     "origens": [
@@ -3936,10 +4428,26 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a despesa total consolidada no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        "É a despesa total consolidada do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
       ],
       "en": [
-        "It is consolidated total expenditure in the budget for two thousand and twenty-seven in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
+        "It is consolidated total expenditure in the Health table, «Conta do Pograma Legado», as written in the table. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " Refere-se ao orçamento para ",
+        {
+          "periodo": "oe-2027-saude-despesa-total-consolidada-2027"
+        },
+        "."
+      ],
+      "en": [
+        " It refers to the budget for ",
+        {
+          "periodo": "oe-2027-saude-despesa-total-consolidada-2027"
+        },
+        "."
       ]
     },
     "origens": [
@@ -3953,10 +4461,34 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a variação publicada da despesa total consolidada do quadro da Saúde. O quadro escreve «Conta do Pograma Legado». Compara o orçamento com a estimativa do ano anterior, incluindo PRR."
+        "É a variação publicada da despesa total consolidada do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve."
       ],
       "en": [
-        "It is the published change in consolidated total expenditure in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. It compares the budget with the previous year’s estimate, including the RRP."
+        "It is the published change in consolidated total expenditure in the Health table, «Conta do Pograma Legado», as written in the table."
+      ]
+    },
+    "complemento": {
+      "pt": [
+        " Compara a estimativa de ",
+        {
+          "periodo": "oe-2027-saude-despesa-total-consolidada-2026"
+        },
+        " com o orçamento para ",
+        {
+          "periodo": "oe-2027-saude-despesa-total-consolidada-variacao"
+        },
+        "."
+      ],
+      "en": [
+        " It compares the estimate for ",
+        {
+          "periodo": "oe-2027-saude-despesa-total-consolidada-2026"
+        },
+        " with the budget for ",
+        {
+          "periodo": "oe-2027-saude-despesa-total-consolidada-variacao"
+        },
+        "."
       ]
     }
   }

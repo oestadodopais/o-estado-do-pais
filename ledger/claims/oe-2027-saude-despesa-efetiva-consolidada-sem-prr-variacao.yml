@@ -37,8 +37,8 @@ reference_date: "2027"
 excerpt: "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
-ressalva: "Previsão, não execução. Compara o orçamento de 2027 com a estimativa de 2026, sem PRR."
-ressalva_en: "Forecast, not outturn. Compares the 2027 budget with the 2026 estimate, excluding the RRP."
+ressalva: "Previsão, não execução."
+ressalva_en: "Forecast, not outturn."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

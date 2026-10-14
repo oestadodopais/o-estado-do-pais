@@ -1,0 +1,96 @@
+{
+  "base": "c4b22a56",
+  "linhas_anteriores_intactas": 3211,
+  "linhas": [
+    {
+      "id": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "valor": "3",
+      "unidade": "%"
+    },
+    {
+      "id": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "valor": "1 700",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "valor": "1,5",
+      "unidade": "% de queda"
+    },
+    {
+      "id": "oe-2027-cenario-ihpc-2026",
+      "valor": "2,9",
+      "unidade": "%"
+    },
+    {
+      "id": "oe-2027-cenario-pib-real-crescimento-2027",
+      "valor": "2,1",
+      "unidade": "%"
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "valor": "1 152",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "valor": "889",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-receitas-2027",
+      "valor": "263",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-ppp-total-encargos-liquidos-2027",
+      "valor": "1 438",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "valor": "18 062,4",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "valor": "17 803,1",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "valor": "17 291,3",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "valor": "17 803,1",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "valor": "3,0",
+      "unidade": "%"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "valor": "−1,4",
+      "unidade": "%"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2026",
+      "valor": "18 125,9",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2027",
+      "valor": "17 858,4",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "valor": "−1,5",
+      "unidade": "%"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+PLANTA excerto alterado: V2A excerto: difere do documento alojado
+PLANTA atribuição trocada: V2A atribuição: difere do documento alojado
+PLANTA data errada: V2A data: difere do documento alojado
+PLANTA porta trocada: V2A porta: difere do documento alojado
+PLANTA valor fora do excerto: V2A valor: difere do documento alojado
+PLANTA manchete como medida: V2A nome: difere do documento alojado
+PLANTA índice da coluna na extração: V2A coluna: índice diferente da medida
+PLANTA índice da linha na extração: V2A linha: índice diferente da medida
+PLANTA âncora trocada rtp-amaro.html: V2A atribuição: autoria ausente do corpo alojado
+PLANTA âncora trocada rtp-queda.html: V2A atribuição: autoria ausente do corpo alojado
+PLANTA mês PCP janeiro: V2AC data: mês trocado lido como 2026-01-09, não como outubro
+PLANTA mês PCP fevereiro: V2AC data: mês trocado lido como 2026-02-09, não como outubro
+PLANTA mês PCP março: V2AC data: mês trocado lido como 2026-03-09, não como outubro
+PLANTA mês PCP abril: V2AC data: mês trocado lido como 2026-04-09, não como outubro
+PLANTA mês PCP maio: V2AC data: mês trocado lido como 2026-05-09, não como outubro
+PLANTA mês PCP junho: V2AC data: mês trocado lido como 2026-06-09, não como outubro
+PLANTA mês PCP julho: V2AC data: mês trocado lido como 2026-07-09, não como outubro
+PLANTA mês PCP agosto: V2AC data: mês trocado lido como 2026-08-09, não como outubro
+PLANTA mês PCP setembro: V2AC data: mês trocado lido como 2026-09-09, não como outubro
+PLANTA mês PCP novembro: V2AC data: mês trocado lido como 2026-11-09, não como outubro
+PLANTA mês PCP dezembro: V2AC data: mês trocado lido como 2026-12-09, não como outubro
+PLANTA dia impossível no PCP: V2A data: dia impossível na intervenção
+PLANTA definição financeira retirada: V2A definição: nota do relatório ausente
+PLANTA ano do parecer trocado na capa: V2A edição: capa sem número e data concordantes
+PLANTA grafia do programa corrigida na fonte: V2A quadro Saúde: título ou grafia diferente
+PLANTA dia impossível na capa: V2A edição: dia impossível na capa
+PLANTA apoio PRR retirado: V2AE apoio: excerto ausente v2a-prr-saude
+PLANTA ciclo PRR retirado: V2AE apoio: excerto ausente v2a-prr-ciclo
+PLANTA apoio da conta retirado: V2AE apoio: excerto ausente v2a-ppp-conta
+PLANTA setor do total retirado: V2AE apoio: setores do total incompletos
+PLANTA PDF integral na exportação: V2A direitos: só excertos e referências podem atravessar
+PASS · 36 conferências V2-a

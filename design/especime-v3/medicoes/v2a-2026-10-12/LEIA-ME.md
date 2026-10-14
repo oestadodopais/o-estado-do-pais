@@ -304,7 +304,7 @@ O mandato foi lido integralmente com a leitura V2-a-c. Os achados de um a cinco 
 | 12 | O ano da previsão é conferido antes do título da Proposta; plantas para PIB e título do documento. | `tests/linha/v2a.mjs:47` |
 | 13 | A capa do CFP lê os meses portugueses e valida o dia; uma data impossível é recusada. | `<motor>/publisher/v2a.py:175` |
 | 14 | Custo anterior registado; o custo desta passagem será acrescentado pela direção a partir do lançador. | `design/observatorio/mandatos/MANDATO-V2A-d-2026-10-14.md:26` |
-| 15 | Os portões finais correram depois do último commit de código e provas, sem escritas durante a corrida; os dois estados finais ficaram vazios. | `scripts/leituras/portoes-pelo-escrivao.sh:10` |
+| 15 | Os portões finais conferiram o código de `b9497c1c`, sem escritas durante a corrida; os commits seguintes guardaram capturas, medições e o relatório, sem alterar o código. Os dois estados finais ficaram vazios. | `scripts/leituras/portoes-pelo-escrivao.sh:10` |
 
 ### Decisões e questões
 
@@ -383,3 +383,26 @@ Capturas: 150 casos de página e largura, 450 imagens e 40 imagens inspecionadas
 A mutação da lista de meses também produz a comparação independente entre `2026-11-09` e `2026-10-09`, sem motor e com ele; a mensagem completa está no catálogo. A correção do localizador conserva as duas plantas de retirada da nota e troca da página. A nota explícita da grafia é conferida em `tests/linha/v2a.mjs:39`, com planta em `tests/linha/v2a.mjs:75`.
 
 Custo V2-a-c: 250 turnos, 511 796 de custo antigo, 5 pontos da semana sem outra sessão em paralelo, contexto médio de 132 275, conforme o mandato. Custo V2-a-d: por acrescentar pela direção a partir do lançador; não foi exposto nesta sessão. A linha «tokens used» não foi exposta.
+
+## A passagem V2-a-e
+
+Entrada do sítio: `c4b22a56`; entrada do motor: `80268af4`. As duas árvores estavam limpas. Não foram fundidos os ramos principais. Os achados 1 a 5 eram plantas no pacote, ausentes das worktrees.
+
+### Decisões e questões
+
+- **V2A-46:** o apoio aos encargos e receitas rodoviários é o texto da p. 124 do PDF (108 impressa), separado da nota do quadro 4.25. O texto enumera os fluxos financeiros; a subtração é conferida nas três linhas do quadro. Não se atribui à nota uma frase que ela não contém. O localizador das três linhas cita o apoio e a origem visível mostra o excerto selado.
+- **V2A-47:** o mandato nomeia três páginas sem PRR e duas variações da despesa efetiva. A variação sem PRR pertence aos dois grupos: são quatro páginas distintas. Estas quatro recebem o nome por extenso, o apoio e as duas comparações; a afirmação de Leitão Amaro recebe também a explicação e a segunda fonte declarada com recibo. São as cinco páginas PRR conferidas nesta passagem.
+- **V2A-48:** o quadro 5.37 não imprime a parcela do PRR separadamente. As frases mostram as duas comparações pelos quatro valores das linhas e identificam a diferença entre colunas como parcela do PRR, sem a cifrar. Os apoios são o parágrafo da Saúde na p. 302 (286 impressa) e a descrição do fim do ciclo extraordinário de financiamento na p. 31 (15 impressa).
+- **V2A-49:** os complementos das frases são declarados na auditoria da K17. Só admitem palavras sem algarismos, valores do livro, períodos do campo `reference_date` e excertos de linhas de afirmação. A K17 recompõe o texto e confere os tokens no HTML; as plantas retiram cada tipo de marca nas duas edições.
+- **V2A-50:** a conta rodoviária pertence apenas às três linhas rodoviárias. O total nomeia os cinco setores do quadro, com os nomes originais e apoio selado, sem lhe atribuir a conta de um só setor.
+- **V2A-51:** a afirmação do PCP entra pelo token do excerto, atribuída a Paulo Raimundo; ao lado ficam os encargos brutos e líquidos rodoviários por tokens. A transcrição conserva o português também na edição inglesa, com a língua marcada. Não se tira uma conclusão sobre a afirmação.
+- **V2A-52:** o código da passagem D conferido pelos portões finais é `b9497c1c`; os commits posteriores só guardaram capturas, medições e relatório. Foi corrigida a descrição da ordem na tabela da passagem D. O caminho do guião é `scripts/leituras/portoes-pelo-escrivao.sh`.
+- **V2A-53:** os portões desta passagem correm pelo escrivão porque o navegador não arranca na sandbox. A pasta própria tem a exclusão temporária dos registos preparada antes do commit de provas. Não há escritas durante a corrida; os registos e as capturas serão comitados depois, sem tocar no código conferido.
+
+### Custo
+
+A direção forneceu para V2-a-d: 216 turnos, 358 882 de custo antigo, 5 pontos da semana sem outra sessão em paralelo e contexto médio de 157 686. O custo de V2-a-e pertence à medição do lançador e ainda não foi exposto. A linha «tokens used» não foi exposta.
+
+### Conferências
+
+Os valores e as unidades das dezoito linhas coincidem com a entrada; as 3 211 linhas anteriores conservam os objetos Git. A prova está em `inspecao-e.json`. As conferências dirigidas estão em `e-conferencias/`. Os códigos finais, as cabeças e as capturas serão registados depois da corrida.

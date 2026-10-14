@@ -336,7 +336,7 @@ function localizadorV2aConfere(onde, linha) {
   if (!linha || typeof linha.id !== 'string') return false;
   const id = linha.id, d = linha.document;
   const esperadoNoDocumento = id.startsWith('oe-2027-cenario-') ? `${onde}; comentário, p. 19; conclusão, p. 20`
-    : id.startsWith('oe-2027-saude-') ? `${onde}; apoio à distinção entre total e efetiva: nota ao quadro 4.38, p. 145 do PDF (129 impressa)` : onde;
+    : id.startsWith('oe-2027-saude-') ? `${onde}; apoio à distinção entre total e efetiva: nota ao quadro 4.38, p. 145 do PDF (129 impressa)` : id.startsWith('oe-2027-ppp-rodoviario-') ? `${onde}; apoio aos encargos e receitas: texto da p. 124 do PDF (108 impressa)` : onde;
   if (!d || d.locator !== esperadoNoDocumento) return false;
   const saude = /^oe-2027-saude-despesa-(total-consolidada|efetiva-consolidada|efetiva-consolidada-sem-prr)-(2026|2027|variacao)$/.exec(id);
   if (saude) {
@@ -1892,6 +1892,13 @@ function provaLocalizadores() {
       copia.document.locator=altera(copia.document.locator);
       if (localizadorV2aConfere(copia.name_source,copia)) falhas.push(`${mensagem}: planta não mordida`);
       else console.log(`PLANTA ${mensagem}`);
+    }
+    {
+      const original=LINHAS_DA_REGUA.get('oe-2027-ppp-rodoviario-encargos-liquidos-2027'),copia=structuredClone(original);
+      const mensagem='V2AE localizador PPP: apoio textual trocado pela nota';
+      if(!localizadorV2aConfere(original.name_source,original))falhas.push(`${mensagem}: controlo positivo falhou`);
+      copia.document.locator=copia.document.locator.replace('texto da p. 124 do PDF (108 impressa)','nota ao quadro 4.25');
+      if(localizadorV2aConfere(copia.name_source,copia))falhas.push(`${mensagem}: planta não mordida`);else console.log(`PLANTA ${mensagem}`);
     }
     const estragos = [
       ['V2A: coluna da Saúde trocada', 'V2A, rótulo da célula ou da afirmação', 'Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa total consolidada, 2026, Estimativa, p. 303 do PDF (287 impressa)', 'oe-2027-saude-despesa-total-consolidada-2027'],

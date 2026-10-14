@@ -124,6 +124,20 @@ export function comparaLinhas(c,lang,linhas=loadClaims()) {
  return [c[lang].antes,{claim:a.id,sufixo:' '+a.unit},c[lang][ramo],{claim:b.id,sufixo:' '+b.unit},c[lang].depois];
 }
 
+/** Complemento auditado: as palavras não têm algarismos; os valores e períodos vêm das linhas.
+ * @param {any[]} partes
+ */
+export function resolverComplemento(partes) {
+  return partes.map(p=>{
+    if(typeof p==='string') {if(/\d/.test(p))throw new Error('V2AE complemento: algarismo fixo');return p;}
+    const tipo=Object.keys(p??{})[0],id=p?.[tipo],c=getClaim(id);
+    if(Object.keys(p).length!==1||!c||!['claim','periodo','excerto'].includes(tipo))throw new Error('V2AE complemento: token sem linha ou tipo permitido');
+    if(tipo==='periodo')return {data:{id,campo:'reference_date',valor:c.reference_date}};
+    if(tipo==='excerto') {if(!c.afirmacao)throw new Error('V2AE complemento: citação sem afirmação');return {excerto:id};}
+    return p;
+  });
+}
+
 /** @param {string} id @param {'pt'|'en'} lang */
 export function oQueEDaLinha(id, lang) {
   const f = familiaDaLinha(id);
@@ -155,6 +169,7 @@ export function oQueEDaLinha(id, lang) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(data ?? '') || !Array.isArray(ficheiros) || !ficheiros.every(x => x.snapshot_date === data)) throw fecha(id, 'o instantâneo não tem uma data única nos ficheiros da computação.');
     pedacos = [...frase.slice(0,-1), frase.at(-1).replace(/\.$/, ''), lang === 'pt' ? ', no instantâneo de ' : ', in the snapshot of ', {data:{id,campo:'document.computed_over.files.0.snapshot_date',valor:data}}, '.'];
   }
+  if (d.complemento) pedacos = [...pedacos,...resolverComplemento(d.complemento[lang])];
   if (d.compara) pedacos = [...pedacos,...comparaLinhas(d.compara,lang)];
   return { pedacos: [...pedacos, palavrasDaLinhaJd1(id, lang)], tipo: 'familia', chave: f.chave, cartao: null, sinal: null, porConfirmar };
 }
