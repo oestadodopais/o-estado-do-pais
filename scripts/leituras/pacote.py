@@ -184,19 +184,39 @@ def sha256_de(dados):
     return hashlib.sha256(dados).hexdigest()
 
 
-def linhas_com_corpos(repo, cabeca, mudados):
-    """As linhas do livro-razão mudadas no intervalo e presentes na cabeça: {id: (sha256 do documento ou None, estudo da nota ou None)}.
+PAGINA_DE_LINHA = re.compile(r'^(?:livro-razao|en/ledger)/([^/]+)/index\.html$')
+
+
+def linhas_com_corpos(repo, cabeca, mudados, pedidas=()):
+    """As linhas do livro-razão que o pacote leva: {id: (sha256 do documento ou None, estudo da nota ou None, porquê)}.
+    Entram as linhas mudadas no intervalo e presentes na cabeça e, pela M83-b (14.10.2026, a leitura da V2-a-e, achado 1), as linhas
+    cujas páginas construídas o lugar de direção pediu ao pacote (livro-razao/<id>/index.html ou en/ledger/<id>/index.html), porque a
+    frase de uma página muda pelos dados da família sem a linha mudar, e a leitura só confere as palavras com o corpo ao lado.
     O resumo lê-se do YAML da linha, em document.source_sha256; null ou a ausência é «sem documento»; qualquer outra forma
     recusa, em vez de passar por «sem documento» (as leituras a frio da M83 pelo Codex: o achado 4 das duas primeiras e o 3 da terceira)."""
     linhas = {}
+
+    def ler(f):
+        texto = git(repo, 'show', f'{cabeca}:{f}').decode('utf-8', 'replace')
+        sha, estudo = sha_declarado(texto, Path(f).stem), ESTUDO_DA_NOTA.search(texto)
+        return sha, (estudo.group(1).strip() if estudo else None)
+
+    def existe(f):
+        return subprocess.run(['git', '-C', str(repo), 'cat-file', '-e', f'{cabeca}:{f}'], stderr=subprocess.DEVNULL).returncode == 0
+
     for f in mudados:
         if not (f.startswith('ledger/claims/') and f.endswith('.yml')):
             continue
-        if subprocess.run(['git', '-C', str(repo), 'cat-file', '-e', f'{cabeca}:{f}'], stderr=subprocess.DEVNULL).returncode:
+        if not existe(f):
             continue  # uma eliminação não tem corpo a levar
-        texto = git(repo, 'show', f'{cabeca}:{f}').decode('utf-8', 'replace')
-        sha, estudo = sha_declarado(texto, Path(f).stem), ESTUDO_DA_NOTA.search(texto)
-        linhas[Path(f).stem] = (sha, estudo.group(1).strip() if estudo else None)
+        linhas[Path(f).stem] = (*ler(f), 'linha mudada')
+    for ident in sorted({m.group(1) for m in map(PAGINA_DE_LINHA.match, pedidas) if m}):
+        if ident in linhas:
+            linhas[ident] = (*linhas[ident][:2], 'linha mudada e página pedida')
+            continue
+        f = f'ledger/claims/{ident}.yml'
+        if existe(f):
+            linhas[ident] = (*ler(f), 'página pedida')
     return linhas
 
 
@@ -237,18 +257,18 @@ def indice_dos_corpos(repo, cabeca, motor, cabeca_motor, estudos, precisos):
 
 def levar_corpos(repo, cabeca, motor, linhas, estudos_extra, razao_sem_corpos):
     """Decide, antes de criar a pasta, que corpos alojados o pacote leva e quais faltam; a falta sem razão recusa."""
-    precisos = {sha for sha, _ in linhas.values() if sha}
-    estudos = {estudo for sha, estudo in linhas.values() if sha} | set(estudos_extra)
+    precisos = {sha for sha, *_ in linhas.values() if sha}
+    estudos = {estudo for sha, estudo, *_ in linhas.values() if sha} | set(estudos_extra)
     indice = indice_dos_corpos(repo, cabeca, Path(motor[0]).resolve(), motor[2], estudos, precisos) if (motor and precisos) else {}
     registo, em_falta = [], []
-    for ident, (sha, estudo) in sorted(linhas.items()):
+    for ident, (sha, estudo, motivo) in sorted(linhas.items()):
         if not sha:
-            registo.append({'linha': ident, 'sha256': None, 'caminho': None, 'origem': None, 'estado': 'sem documento alojado (linha derivada ou sem source_sha256)'})
+            registo.append({'linha': ident, 'motivo': motivo, 'sha256': None, 'caminho': None, 'origem': None, 'estado': 'sem documento alojado (linha derivada ou sem source_sha256)'})
         elif sha in indice:
-            registo.append({'linha': ident, 'sha256': sha, 'caminho': indice[sha][0], 'origem': indice[sha][1], 'estado': 'copiado'})
+            registo.append({'linha': ident, 'motivo': motivo, 'sha256': sha, 'caminho': indice[sha][0], 'origem': indice[sha][1], 'estado': 'copiado'})
         else:
             em_falta.append((ident, sha))
-            registo.append({'linha': ident, 'sha256': sha, 'caminho': None, 'origem': None, 'estado': 'EM FALTA'})
+            registo.append({'linha': ident, 'motivo': motivo, 'sha256': sha, 'caminho': None, 'origem': None, 'estado': 'EM FALTA'})
     if em_falta and not razao_sem_corpos:
         faltas = ', '.join(f'{i} ({s[:12]})' for i, s in em_falta)
         if not motor:
@@ -293,9 +313,11 @@ def escrever_corpos(destino, motor, registo, em_falta, razao_sem_corpos, paginas
                      f'Copiados da cabeça `{motor[2] if motor else "(sem PACOTE_MOTOR)"}` do motor para `motor/<caminho>` pelo guião do pacote, cada um conferido '
                      'pelo sha256 que a linha declara (`document.source_sha256`); ao lado, quando o motor os tem, o recibo do pedido (`<caminho>.pedido.json`) e a pasta '
                      '`direitos/` da mesma fonte, e a coluna «estado» diz, linha a linha, o que não veio. Uma linha «EM FALTA» só chega ao pacote com a razão declarada em `SEM-CORPOS-ALOJADOS.md`, '
-                     'e é Blocking na leitura. As páginas construídas das linhas entram de `dist/` quando lá estão; as que faltam estão listadas abaixo.', '',
-                     '| linha | sha256 (12) | caminho no motor | resolvido por | estado |', '|---|---|---|---|---|']
-        linhas_md += [f'| `{r["linha"]}` | {(r["sha256"] or "")[:12]} | {("`" + r["caminho"] + "`") if r["caminho"] else ""} | {r["origem"] or ""} | {r["estado"]} |' for r in registo]
+                     'e é Blocking na leitura. As páginas construídas das linhas entram de `dist/` quando lá estão; as que faltam estão listadas abaixo. '
+                     'A coluna «porquê» diz se a linha entra por ter mudado no intervalo ou por o lugar de direção ter pedido a sua página construída ao pacote '
+                     '(M83-b, 14.10.2026: a frase de uma página muda pelos dados da família sem a linha mudar).', '',
+                     '| linha | sha256 (12) | caminho no motor | resolvido por | estado | porquê |', '|---|---|---|---|---|---|']
+        linhas_md += [f'| `{r["linha"]}` | {(r["sha256"] or "")[:12]} | {("`" + r["caminho"] + "`") if r["caminho"] else ""} | {r["origem"] or ""} | {r["estado"]} | {r["motivo"]} |' for r in registo]
         if anexos:
             linhas_md += ['', 'Ao lado dos corpos: ' + ', '.join(f'`{a}`' for a in sorted(set(anexos))) + '.']
         linhas_md += ['', f'Estudos percorridos pela nota das linhas: {", ".join(f"`{e}`" for e in estudos) or "nenhum"}; por `PACOTE_ESTUDOS`: {", ".join(f"`{e}`" for e in estudos_extra) or "nenhum"}.',
@@ -344,7 +366,7 @@ def principal():
     registos, filtrados, indice = linhas_dos_portoes(repo, cabeca, rel_relatorio,
                                                   Path(relatorio).read_text(), arvore)
     # M83: os corpos alojados das linhas mudadas decidem-se aqui, antes de existir a pasta; a falta sem razão recusa.
-    linhas = linhas_com_corpos(repo, cabeca, mudados)
+    linhas = linhas_com_corpos(repo, cabeca, mudados, construidos)  # as páginas pedidas trazem as suas linhas (M83-b)
     registo_corpos, em_falta, estudos_declarados = levar_corpos(repo, cabeca, motor, linhas, estudos_extra, razao_sem_corpos)
     paginas, paginas_das_linhas, paginas_em_falta = [], [], []
     for ident in sorted(linhas):
