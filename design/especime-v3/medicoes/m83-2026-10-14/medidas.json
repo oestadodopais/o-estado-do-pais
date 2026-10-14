@@ -28,9 +28,9 @@
   "intervalo_correcao_paginas_em_falta": 0,
   "intervalo_correcao_estudos_extra": 0,
   "inventario_cadeias": 7,
-  "inventario_sitio_commits": 2816,
+  "inventario_sitio_commits": 2817,
   "inventario_motor_commits": 666,
-  "inventario_sitio_identidades_pessoais": 2808,
+  "inventario_sitio_identidades_pessoais": 2809,
   "inventario_motor_identidades_pessoais": 661,
   "inventario_sitio_commits_com_nome_da_conta_no_diff": 140,
   "inventario_motor_commits_com_nome_da_conta_no_diff": 36,
@@ -45,5 +45,9 @@
   "inventario_motor_ficheiros_na_cabeca_com_nome_da_conta": 1,
   "inventario_motor_ficheiros_na_cabeca_com_cidade": 3,
   "dominios_sem_titular_visivel": 2,
-  "organizacao_membros_publicos": 0
+  "organizacao_membros_publicos": 0,
+  "organizacao_membros": 1,
+  "repositorio_publico_forks": 0,
+  "repositorio_publico_estrelas": 0,
+  "repositorio_publico_pull_requests": 0
 }

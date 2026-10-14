@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T08:49:18+00:00",
+ "copia": "<scratchpad>/pacote-leitura-b",
+ "plantas": [
+  {
+   "id": "Q1",
+   "ficheiro": "scripts/leituras/pacote.py",
+   "descricao": "a recusa da declaração ilegível invertida: recusa null e aceita o lixo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "2034ec950a0d30e26ed7f2a28388cf31a45845443c43a54ceda9f0a1b4430841",
+   "sha256_depois": "774e1b61d3296db328f82e737c145e96d5a4de3b0239320259b9a21499c3e796",
+   "contexto_antes": "ow', f'{cabeca}:{f}').decode('utf-8', 'replace')\n        sha, campo, estudo = SHA_DA_LINHA.search(texto), CAMPO_SHA.search(texto), ESTUDO_DA_NOTA.search(texto)\n        if campo and not sha and campo.group(1).split('#', 1)[0].strip() not in SEM_SHA:\n            raise ValueError(f'O pacote recusa: a linha {Path(f).stem} declara source_sha256 numa forma que o guião não lê ({campo.group(1)[:48]!r}); esperam-s",
+   "contexto_depois": "ow', f'{cabeca}:{f}').decode('utf-8', 'replace')\n        sha, campo, estudo = SHA_DA_LINHA.search(texto), CAMPO_SHA.search(texto), ESTUDO_DA_NOTA.search(texto)\n        if campo and not sha and campo.group(1).split('#', 1)[0].strip() in SEM_SHA:\n            raise ValueError(f'O pacote recusa: a linha {Path(f).stem} declara source_sha256 numa forma que o guião não lê ({campo.group(1)[:48]!r}); esperam-s"
+  },
+  {
+   "id": "Q2",
+   "ficheiro": "scripts/leituras/pacote.py",
+   "descricao": "o recibo do pedido dado como presente sem o copiar",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "774e1b61d3296db328f82e737c145e96d5a4de3b0239320259b9a21499c3e796",
+   "sha256_depois": "2ff88b6a820f6b3ccefd82ffb50aaf62c3730fcee2d7ad6a7a4f967a4a38e9c6",
+   "contexto_antes": "f'O pacote recusa: a cópia de {r[\"caminho\"]} não tem o sha256 que a linha {r[\"linha\"]} declara.')\n        n += 1\n        pedido = r['caminho'] + '.pedido.json'\n        r['recibo_do_pedido'] = bool(copiar(motor[0], motor[2], pedido, pasta))\n        if r['recibo_do_pedido']:\n            anexos.append(pedido)\n        direitos = str(PurePosixPath(r['caminho']).parent / 'direitos')\n        r['direitos",
+   "contexto_depois": "f'O pacote recusa: a cópia de {r[\"caminho\"]} não tem o sha256 que a linha {r[\"linha\"]} declara.')\n        n += 1\n        pedido = r['caminho'] + '.pedido.json'\n        r['recibo_do_pedido'] = True\n        if r['recibo_do_pedido']:\n            anexos.append(pedido)\n        direitos = str(PurePosixPath(r['caminho']).parent / 'direitos')\n        r['direitos"
+  },
+  {
+   "id": "Q3",
+   "ficheiro": "tests/leituras/pacote.py",
+   "descricao": "o caso do corpo sem recibo deixa de exigir o aviso da montagem",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "bbcebf5e7d473bac86fddb3d5d71119f3b9170778ab0f30b3a8d5cda6730ef8a",
+   "sha256_depois": "97c1694b27d97804e32ec9c3ff1dc2c89d10cd4a15f3b508a23a4ee254ff209c",
+   "contexto_antes": "= 0\n          and ln['linha-sintetica']['estado'] == 'copiado' and ln['linha-sintetica']['recibo_do_pedido'] is True and ln['linha-sintetica']['direitos'] == 1\n          and 'corpo alojado copiado mas incompleto ao lado: linha-nua' in r.stdout\n          and '| copiado · sem recibo do pedido ao lado · sem pasta direitos/ ao lado |' in (nua/'motor/CORPOS-ALOJADOS.md').read_text())\n    exige('uma página",
+   "contexto_depois": "= 0\n          and ln['linha-sintetica']['estado'] == 'copiado' and ln['linha-sintetica']['recibo_do_pedido'] is True and ln['linha-sintetica']['direitos'] == 1\n          and 'Pacote' in r.stdout\n          and '| copiado · sem recibo do pedido ao lado · sem pasta direitos/ ao lado |' in (nua/'motor/CORPOS-ALOJADOS.md').read_text())\n    exige('uma página"
+  },
+  {
+   "id": "Q4",
+   "ficheiro": "DECISIONS.md",
+   "descricao": "a conferência da reescrita passa a tolerar ocorrências",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9431f9bff1199f84af32a26c4890eaa10db95eddc6555e65900ecef3dbb2c0da",
+   "sha256_depois": "a0516cb423e2f7dd7a0f070c473b656a83bebe0a04cebcfcd604bd4338d03caf",
+   "contexto_antes": " como a qualquer outro blob), e só neles. (3) Um guião de conferência percorre todos os blobs, nomes de ficheiro, mensagens e identidades do espelho reescrito, cabeça incluída, e exige zero ocorrências, com um conhecido-positivo plantado num blob de um espelho de ensaio para provar que apanha; o resultado fica no relatório do bloco, sem as cadeias. (4) O mapa ",
+   "contexto_depois": " como a qualquer outro blob), e só neles. (3) Um guião de conferência percorre todos os blobs, nomes de ficheiro, mensagens e identidades do espelho reescrito, cabeça incluída, e tolera até dez ocorrências, com um conhecido-positivo plantado num blob de um espelho de ensaio para provar que apanha; o resultado fica no relatório do bloco, sem as cadeias. (4) O mapa "
+  },
+  {
+   "id": "Q5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "um número do relatório que não está em medidas.json",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "ef03982aca951f674773aca72abdfe7c6bc94f8f1f0d3c63430d5fbadcc71b09",
+   "sha256_depois": "f933523e54ac979741633f3ad8bcf0339b396792fc9fe7526fde13d34748a669",
+   "contexto_antes": "acote.json`).\n- O ensaio sobre o bloco V2-a inteiro (o sítio de `ef0dc7dd` à cabeça estacionada, o motor de `dfeca64d` à sua, sem `content/*` no diff do motor) resolveu 18 linhas, 18 copiadas e 0 em falta, todas pelos recibos do sítio (18) e nenhuma pelas fontes do estudo (0), em 5 documentos distintos, com 32 ficheiros ao lado (18 linhas com recibo",
+   "contexto_depois": "acote.json`).\n- O ensaio sobre o bloco V2-a inteiro (o sítio de `ef0dc7dd` à cabeça estacionada, o motor de `dfeca64d` à sua, sem `content/*` no diff do motor) resolveu 17 linhas, 17 copiadas e 0 em falta, todas pelos recibos do sítio (18) e nenhuma pelas fontes do estudo (0), em 5 documentos distintos, com 32 ficheiros ao lado (18 linhas com recibo"
+  }
+ ]
+}
