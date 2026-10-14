@@ -1,0 +1,9 @@
+{
+  "passou": true,
+  "casos": [
+    "A guarda lê a lista real do Git e recusa ambos os fragmentos, incluindo gzip.",
+    "A limpeza rastreada só altera a lista do Git; guarda verde, gzip legível e segunda passagem sem mudanças.",
+    "A worktree e a pasta principal do sítio têm marcas distintas, sem raiz local.",
+    "As raízes históricas, também mascaradas, desaparecem sem perder caminhos dentro do repositório."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "comando": "python3 design/especime-v3/medicoes/rh1-2026-10-14/medir-d.py --conferir-versao 9157e23e",
+  "versao_conferencia": "9157e23e",
+  "cabeca": "5f3a684670a943e1b06b134804a4f6c974ba1def",
+  "versao_dist": {
+    "commit": "68711cddb0aaa9cfc18ee7840064a1cde6608540",
+    "ref": "rh1-2026-10-14",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-14T17:34:53.329Z"
+  },
+  "segundos": 54.78263654204784,
+  "codigo": 0,
+  "passou": true,
+  "ficheiros_dist": 14798,
+  "ficheiros_seguidos": 24619
+}
