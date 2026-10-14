@@ -1,0 +1,216 @@
+PLANTA afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09: V2AH PCP: montante afirmado não é superior aos dois valores do livro
+PLANTA oe-2027-ppp-rodoviario-encargos-brutos-2027: V2AH PCP: montante afirmado não é superior aos dois valores do livro
+PLANTA oe-2027-ppp-rodoviario-encargos-liquidos-2027: V2AH PCP: montante afirmado não é superior aos dois valores do livro
+PLANTA pt: V2AG quadro: número diferente do campo do apoio
+PLANTA pt: V2AH documento: página sem marca separada do título
+PLANTA pt: V2AH documento: página sem marca separada do título
+PLANTA pt: V2AH edição: publicador do apoio na língua errada
+PLANTA pt: V2AH receitas: faltam portagens, partilhas ou pagamentos fixos
+PLANTA pt: V2AH receitas: faltam portagens, partilhas ou pagamentos fixos
+PLANTA pt: V2AD grafia: falta a nota sobre o nome do programa
+PLANTA pt: V2AD apoio: definição confundida com o excerto da Saúde
+PLANTA pt: V2AG quadro: número diferente do campo do apoio
+PLANTA pt: V2AG quadro: número diferente do campo do apoio
+PLANTA pt: V2AG documento: título sem marca do apoio
+PLANTA pt: V2AG documento: título sem marca do apoio
+PLANTA pt: V2AD conta: faltam palavras simples para pagamentos e recebimentos
+PLANTA pt: V2AG total: encargos líquidos sem palavras simples
+PLANTA pt: V2AG total: preços sem palavras simples
+PLANTA pt: V2AG PCP: faltam palavras simples ou a comparação
+PLANTA pt: V2AG PCP: período sem linhas das parcerias
+PLANTA pt: V2AG edição: documento do apoio na língua errada
+PLANTA pt: V2AD Saúde: cabeçalho com medida, programa ou período diferente
+PLANTA pt: V2AE Saúde: medida diferente na frase
+PLANTA pt: V2AD Saúde: cabeçalho com medida, programa ou período diferente
+PLANTA pt: V2AD período: ano sem token da linha
+PLANTA pt: V2AE frase: período sem token da linha
+PLANTA pt: V2AH cenário: período sem token da previsão
+PLANTA pt: V2AB título: a proveniência não distingue o documento
+PLANTA pt: V2AD RTP: a notícia perdeu a medida identificada pelos montantes
+PLANTA pt: V2AD conta: faltam os valores pelas linhas da medida
+PLANTA pt: V2AE RTP: montante diferente da linha
+PLANTA pt: V2AE RTP: subtração diferente
+PLANTA pt: V2AD PPP: a conta não diz brutos menos receitas
+PLANTA pt: V2AE PPP: ano sem token do período
+PLANTA pt: V2AD PPP: falta o ano ou o cabeçalho do excerto
+PLANTA pt: V2AB previsão: falta a autoria MF e a transcrição CFP
+PLANTA pt: V2AB nota: ressalva não publicada
+PLANTA pt: V2AB nome: a cabeça não diz as palavras citadas
+PLANTA pt: V2AB localizador: tradução ou origem ausente
+PLANTA pt: V2AB sigla: PRR ou RRP perdeu maiúsculas
+PLANTA pt: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA pt: V2AC RTP: a frase não identifica a notícia pela data
+PLANTA pt: V2AE PPP: total sem setores próprios ou com conta rodoviária
+PLANTA pt: V2AC selo: SHA256 do corpo ausente ou diferente
+PLANTA pt: V2AE PRR: falta o nome, a explicação ou o apoio
+PLANTA pt: V2AE PRR: comparação sem os quatro tokens
+PLANTA pt: V2AE PCP: afirmação sem citação ou atribuição
+PLANTA pt: V2AE PCP: faltam os dois valores do quadro
+PLANTA pt: V2AF total: falta o qualificador PRR ou o apoio
+PLANTA pt: V2AF total: falta o qualificador PRR ou o apoio
+PLANTA pt: V2AF total: ressalva sem PRR
+PLANTA pt: V2AE PRR: falta o nome, a explicação ou o apoio
+PLANTA pt: V2AE PRR: falta o nome, a explicação ou o apoio
+PLANTA pt: V2AE PRR: falta o nome, a explicação ou o apoio
+PLANTA pt: V2AF total: excerto da Saúde fechado
+PLANTA pt: V2AF apoio: passagem rotulada como definição
+PLANTA pt: V2AF PPP: soma atribuída ao total ou diferença omitida
+PLANTA pt: V2AF PPP: soma atribuída ao total ou diferença omitida
+PLANTA pt: V2AF PCP: falta o relatório ou a afirmação em inglês
+PLANTA en: V2AG quadro: número diferente do campo do apoio
+PLANTA en: V2AH documento: página sem marca separada do título
+PLANTA en: V2AH documento: página sem marca separada do título
+PLANTA en: V2AH edição: publicador do apoio na língua errada
+PLANTA en: V2AH receitas: faltam portagens, partilhas ou pagamentos fixos
+PLANTA en: V2AH receitas: faltam portagens, partilhas ou pagamentos fixos
+PLANTA en: V2AD grafia: falta a nota sobre o nome do programa
+PLANTA en: V2AD apoio: definição confundida com o excerto da Saúde
+PLANTA en: V2AG quadro: número diferente do campo do apoio
+PLANTA en: V2AG quadro: número diferente do campo do apoio
+PLANTA en: V2AG documento: título sem marca do apoio
+PLANTA en: V2AG documento: título sem marca do apoio
+PLANTA en: V2AD conta: faltam palavras simples para pagamentos e recebimentos
+PLANTA en: V2AG total: encargos líquidos sem palavras simples
+PLANTA en: V2AG total: preços sem palavras simples
+PLANTA en: V2AG PCP: faltam palavras simples ou a comparação
+PLANTA en: V2AG PCP: período sem linhas das parcerias
+PLANTA en: V2AG edição: documento do apoio na língua errada
+PLANTA en: V2AD Saúde: cabeçalho com medida, programa ou período diferente
+PLANTA en: V2AE Saúde: medida diferente na frase
+PLANTA en: V2AD Saúde: cabeçalho com medida, programa ou período diferente
+PLANTA en: V2AD período: ano sem token da linha
+PLANTA en: V2AE frase: período sem token da linha
+PLANTA en: V2AH cenário: período sem token da previsão
+PLANTA en: V2AB título: a proveniência não distingue o documento
+PLANTA en: V2AD RTP: a notícia perdeu a medida identificada pelos montantes
+PLANTA en: V2AD conta: faltam os valores pelas linhas da medida
+PLANTA en: V2AE RTP: montante diferente da linha
+PLANTA en: V2AE RTP: subtração diferente
+PLANTA en: V2AD PPP: a conta não diz brutos menos receitas
+PLANTA en: V2AE PPP: ano sem token do período
+PLANTA en: V2AD PPP: falta o ano ou o cabeçalho do excerto
+PLANTA en: V2AB previsão: falta a autoria MF e a transcrição CFP
+PLANTA en: V2AB nota: ressalva não publicada
+PLANTA en: V2AB nome: a cabeça não diz as palavras citadas
+PLANTA en: V2AB localizador: tradução ou origem ausente
+PLANTA en: V2AB sigla: PRR ou RRP perdeu maiúsculas
+PLANTA en: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA en: V2AC RTP: a frase não identifica a notícia pela data
+PLANTA en: V2AE PPP: total sem setores próprios ou com conta rodoviária
+PLANTA en: V2AC selo: SHA256 do corpo ausente ou diferente
+PLANTA en: V2AE PRR: falta o nome, a explicação ou o apoio
+PLANTA en: V2AE PRR: comparação sem os quatro tokens
+PLANTA en: V2AE PCP: afirmação sem citação ou atribuição
+PLANTA en: V2AE PCP: faltam os dois valores do quadro
+PLANTA en: V2AF total: falta o qualificador PRR ou o apoio
+PLANTA en: V2AF total: falta o qualificador PRR ou o apoio
+PLANTA en: V2AF total: ressalva sem PRR
+PLANTA en: V2AE PRR: falta o nome, a explicação ou o apoio
+PLANTA en: V2AE PRR: falta o nome, a explicação ou o apoio
+PLANTA en: V2AE PRR: falta o nome, a explicação ou o apoio
+PLANTA en: V2AF total: excerto da Saúde fechado
+PLANTA en: V2AF apoio: passagem rotulada como definição
+PLANTA en: V2AF PPP: soma atribuída ao total ou diferença omitida
+PLANTA en: V2AF PPP: soma atribuída ao total ou diferença omitida
+PLANTA en: V2AF PCP: falta o relatório ou a afirmação em inglês
+PLANTA pt: K17 · recibo · pt · oe-2027-saude-despesa-total-consolidada-2027: o complemento não cita os campos pelos tokens auditados
+PLANTA pt: K17 · recibo · pt · oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao: o complemento não cita os campos pelos tokens auditados
+PLANTA pt: K17 · recibo · pt · afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09: o complemento não cita os campos pelos tokens auditados
+PLANTA pt: K17 · recibo · pt · afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09: o complemento não cita os campos pelos tokens auditados
+PLANTA en: K17 · recibo · en · oe-2027-saude-despesa-total-consolidada-2027: o complemento não cita os campos pelos tokens auditados
+PLANTA en: K17 · recibo · en · oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao: o complemento não cita os campos pelos tokens auditados
+PLANTA en: K17 · recibo · en · afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09: o complemento não cita os campos pelos tokens auditados
+PLANTA en: K17 · recibo · en · afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09: o complemento não cita os campos pelos tokens auditados
+PLANTA pt: K17 · recibo · pt · afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09: a origem visível da definição perdeu o documento ou o excerto
+PLANTA en: K17 · recibo · en · afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09: a origem visível da definição perdeu o documento ou o excerto
+PLANTA V2AG pt: L10 · v2a-ppp-conta: .def-origem-doc sem a língua declarada pt-PT
+PLANTA V2AG pt: L10 · v2a-ppp-conta: .def-excerto-texto sem a língua declarada pt-PT
+PLANTA V2AG en: L10 · v2a-ppp-conta: .def-origem-doc sem a língua declarada en
+PLANTA V2AG en: L10 · v2a-ppp-conta: .def-excerto-texto sem a língua declarada pt-PT
+PLANTA K17 retirada pt: K17 · recibo · pt · afirmacao-leitao-amaro-saude-oe2027-2026-10-09: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA K17 repetida pt: K17 · recibo · pt · afirmacao-leitao-amaro-saude-oe2027-2026-10-09: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA K17 invertida pt: K17 · recibo · pt · afirmacao-leitao-amaro-saude-oe2027-2026-10-09: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA K17 retirada en: K17 · recibo · en · afirmacao-leitao-amaro-saude-oe2027-2026-10-09: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA K17 repetida en: K17 · recibo · en · afirmacao-leitao-amaro-saude-oe2027-2026-10-09: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA K17 invertida en: K17 · recibo · en · afirmacao-leitao-amaro-saude-oe2027-2026-10-09: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA palavra afirmacao-leitao-amaro-saude-oe2027-2026-10-09 pt: K17 · recibo · pt · afirmacao-leitao-amaro-saude-oe2027-2026-10-09: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA palavra afirmacao-leitao-amaro-saude-oe2027-2026-10-09 en: K17 · recibo · en · afirmacao-leitao-amaro-saude-oe2027-2026-10-09: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA palavra afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09 pt: K17 · recibo · pt · afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09: V2AH parcerias: frase diferente do mandato K ou apoio indevido
+PLANTA página: V2AI página: localizador rodoviário sem marca do apoio
+PLANTA palavra afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09 en: K17 · recibo · en · afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09: V2AH parcerias: frase diferente do mandato K ou apoio indevido
+PLANTA página: V2AI página: localizador rodoviário sem marca do apoio
+PLANTA palavra afirmacao-rtp-saude-queda-oe2027-2026-10-09 pt: K17 · recibo · pt · afirmacao-rtp-saude-queda-oe2027-2026-10-09: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA palavra afirmacao-rtp-saude-queda-oe2027-2026-10-09 en: K17 · recibo · en · afirmacao-rtp-saude-queda-oe2027-2026-10-09: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA palavra oe-2027-ppp-rodoviario-encargos-brutos-2027 pt: K17 · recibo · pt · oe-2027-ppp-rodoviario-encargos-brutos-2027: V2AH parcerias: frase diferente do mandato K ou apoio indevido
+PLANTA página: V2AI página: localizador rodoviário sem marca do apoio
+PLANTA palavra oe-2027-ppp-rodoviario-encargos-brutos-2027 en: K17 · recibo · en · oe-2027-ppp-rodoviario-encargos-brutos-2027: V2AH parcerias: frase diferente do mandato K ou apoio indevido
+PLANTA página: V2AI página: localizador rodoviário sem marca do apoio
+PLANTA publicação: V2AI publicação: editor ou título inglês sem palavras e marcas do mandato
+PLANTA palavra oe-2027-ppp-rodoviario-encargos-liquidos-2027 pt: K17 · recibo · pt · oe-2027-ppp-rodoviario-encargos-liquidos-2027: V2AH parcerias: frase diferente do mandato K ou apoio indevido
+PLANTA página: V2AI página: localizador rodoviário sem marca do apoio
+PLANTA palavra oe-2027-ppp-rodoviario-encargos-liquidos-2027 en: K17 · recibo · en · oe-2027-ppp-rodoviario-encargos-liquidos-2027: V2AH parcerias: frase diferente do mandato K ou apoio indevido
+PLANTA página: V2AI página: localizador rodoviário sem marca do apoio
+PLANTA publicação: V2AI publicação: editor ou título inglês sem palavras e marcas do mandato
+PLANTA palavra oe-2027-ppp-rodoviario-receitas-2027 pt: K17 · recibo · pt · oe-2027-ppp-rodoviario-receitas-2027: V2AH parcerias: frase diferente do mandato K ou apoio indevido
+PLANTA página: V2AI página: localizador rodoviário sem marca do apoio
+PLANTA palavra oe-2027-ppp-rodoviario-receitas-2027 en: K17 · recibo · en · oe-2027-ppp-rodoviario-receitas-2027: V2AH parcerias: frase diferente do mandato K ou apoio indevido
+PLANTA página: V2AI página: localizador rodoviário sem marca do apoio
+PLANTA publicação: V2AI publicação: editor ou título inglês sem palavras e marcas do mandato
+PLANTA palavra oe-2027-ppp-total-encargos-liquidos-2027 pt: K17 · recibo · pt · oe-2027-ppp-total-encargos-liquidos-2027: V2AH parcerias: frase diferente do mandato K ou apoio indevido
+PLANTA página: V2AI página: localizador rodoviário sem marca do apoio
+PLANTA palavra oe-2027-ppp-total-encargos-liquidos-2027 en: K17 · recibo · en · oe-2027-ppp-total-encargos-liquidos-2027: V2AH parcerias: frase diferente do mandato K ou apoio indevido
+PLANTA página: V2AI página: localizador rodoviário sem marca do apoio
+PLANTA publicação: V2AI publicação: editor ou título inglês sem palavras e marcas do mandato
+PLANTA palavra oe-2027-saude-despesa-efetiva-consolidada-2026 pt: K17 · recibo · pt · oe-2027-saude-despesa-efetiva-consolidada-2026: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA palavra oe-2027-saude-despesa-efetiva-consolidada-2026 en: K17 · recibo · en · oe-2027-saude-despesa-efetiva-consolidada-2026: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA publicação: V2AI publicação: editor ou título inglês sem palavras e marcas do mandato
+PLANTA palavra oe-2027-saude-despesa-efetiva-consolidada-2027 pt: K17 · recibo · pt · oe-2027-saude-despesa-efetiva-consolidada-2027: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA palavra oe-2027-saude-despesa-efetiva-consolidada-2027 en: K17 · recibo · en · oe-2027-saude-despesa-efetiva-consolidada-2027: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA publicação: V2AI publicação: editor ou título inglês sem palavras e marcas do mandato
+PLANTA palavra oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026 pt: K17 · recibo · pt · oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA palavra oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026 en: K17 · recibo · en · oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA publicação: V2AI publicação: editor ou título inglês sem palavras e marcas do mandato
+PLANTA palavra oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027 pt: K17 · recibo · pt · oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA palavra oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027 en: K17 · recibo · en · oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA publicação: V2AI publicação: editor ou título inglês sem palavras e marcas do mandato
+PLANTA palavra oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao pt: K17 · recibo · pt · oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA palavra oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao en: K17 · recibo · en · oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA publicação: V2AI publicação: editor ou título inglês sem palavras e marcas do mandato
+PLANTA palavra oe-2027-saude-despesa-efetiva-consolidada-variacao pt: K17 · recibo · pt · oe-2027-saude-despesa-efetiva-consolidada-variacao: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA palavra oe-2027-saude-despesa-efetiva-consolidada-variacao en: K17 · recibo · en · oe-2027-saude-despesa-efetiva-consolidada-variacao: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA publicação: V2AI publicação: editor ou título inglês sem palavras e marcas do mandato
+PLANTA palavra oe-2027-saude-despesa-total-consolidada-2026 pt: K17 · recibo · pt · oe-2027-saude-despesa-total-consolidada-2026: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA palavra oe-2027-saude-despesa-total-consolidada-2026 en: K17 · recibo · en · oe-2027-saude-despesa-total-consolidada-2026: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA publicação: V2AI publicação: editor ou título inglês sem palavras e marcas do mandato
+PLANTA palavra oe-2027-saude-despesa-total-consolidada-2027 pt: K17 · recibo · pt · oe-2027-saude-despesa-total-consolidada-2027: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA palavra oe-2027-saude-despesa-total-consolidada-2027 en: K17 · recibo · en · oe-2027-saude-despesa-total-consolidada-2027: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA publicação: V2AI publicação: editor ou título inglês sem palavras e marcas do mandato
+PLANTA palavra oe-2027-saude-despesa-total-consolidada-variacao pt: K17 · recibo · pt · oe-2027-saude-despesa-total-consolidada-variacao: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA palavra oe-2027-saude-despesa-total-consolidada-variacao en: K17 · recibo · en · oe-2027-saude-despesa-total-consolidada-variacao: V2AH Saúde: frase diferente do mandato K ou apoio indevido
+PLANTA quadro: V2AK quadro: Saúde sem marca do apoio
+PLANTA publicação: V2AI publicação: editor ou título inglês sem palavras e marcas do mandato
+PLANTA igualdade: V2AH PCP: montante afirmado não é superior aos dois valores do livro
+PLANTA igualdade: V2AH PCP: montante afirmado não é superior aos dois valores do livro
+V2AB/V2AC: 36 páginas conferidas; 214 plantas.
+PLANTA V2AC selo no livro: [afirmacao-leitao-amaro-saude-oe2027-2026-10-09.yml] document.source_sha256 precisa de um SHA256 completo.

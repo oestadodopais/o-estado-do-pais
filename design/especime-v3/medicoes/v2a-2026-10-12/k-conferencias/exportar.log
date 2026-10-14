@@ -1,0 +1,39 @@
+
+  sítio: <worktree>
+
+  manifesto v2a · 18 linhas · 2 grupos excluídos
+
+    oe-2027-saude-despesa-total-consolidada-2026 engine value          18 125,9
+    oe-2027-saude-despesa-total-consolidada-2027 engine value          17 858,4
+    oe-2027-saude-despesa-total-consolidada-variacao engine value          −1,5
+    oe-2027-saude-despesa-efetiva-consolidada-2026 engine value          18 062,4
+    oe-2027-saude-despesa-efetiva-consolidada-2027 engine value          17 803,1
+    oe-2027-saude-despesa-efetiva-consolidada-variacao engine value          −1,4
+    oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026 engine value          17 291,3
+    oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027 engine value          17 803,1
+    oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao engine value          3,0
+    oe-2027-ppp-rodoviario-encargos-brutos-2027  engine value          1 152
+    oe-2027-ppp-rodoviario-receitas-2027         engine value          263
+    oe-2027-ppp-rodoviario-encargos-liquidos-2027 engine value          889
+    oe-2027-ppp-total-encargos-liquidos-2027     engine value          1 438
+    oe-2027-cenario-pib-real-crescimento-2027    engine value          2,1
+      ↳ #page=9 from the declared document.page
+    oe-2027-cenario-ihpc-2026                    engine value          2,9
+      ↳ #page=9 from the declared document.page
+    afirmacao-leitao-amaro-saude-oe2027-2026-10-09 engine value          3
+    afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09 engine value          1 700
+    afirmacao-rtp-saude-queda-oe2027-2026-10-09  engine value          1,5
+
+  recortes: 15 de 15 linha(s) com página · 304,436 bytes
+
+  0 nova(s) · 4 alterada(s) · 14 inalterada(s) · registo a escrever
+  dívida de proveniência que atravessa: 0 linha(s) com excerto "[a verificar]" — nenhuma
+  rótulo da fonte: 18 de 18 linha(s), 11 rótulo(s) distinto(s): Despesa efetiva consolidada · Despesa total consolidada · IHPC · O orçamento para Saúde sofre um corte em 2027… · Ora, esta verba do PRR foi excecional. Se ret… · PIB · Rodoviário · Total · Vem com um orçamento que entrega 1 700 milhõe… · encargos brutos · receitas
+  sem rótulo impresso: 0 de 18 linha(s), a que a página chama pelo título do documento
+  pending_page: 0 linha(s) sem sítio desenhado onde ser impressa
+
+  Escritas 18 linhas em <worktree>/ledger/claims
+  Registo em <worktree>/ledger/cruzamentos/v2a.json
+  Recortes: 0 ficheiro(s) escrito(s) de 15 em <worktree>/public/recortes
+  Manifesto dos recortes em <motor>/publisher/recortes/manifest.v2a.json
+

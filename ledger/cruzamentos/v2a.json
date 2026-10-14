@@ -16,7 +16,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1153cf1fc0a1e6820ae568b0ef2ee711e6ae3e0810acbc4ab8a4beeadb78f134",
       "rh_id": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -27,7 +27,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ff93d4464a96b89d4145d00a4e34edd516a43a36f218680df46db796d6eb4779",
       "rh_id": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -38,7 +38,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "6552ba43556fa2538efb40fa861580aa56f91fce4de447e763e362aad4d7a23b",
       "rh_id": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -50,7 +50,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a61ef53fc25e90b3cd1e5517ddd21d27d97a250dba1ed29daaddc9337b0af450",
       "rh_id": "oe-2027-cenario-ihpc-2026",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -62,7 +62,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "04adcba0c1c393342a9eaaf752940dc525d65dc2f975b4334218dad24c7725f1",
       "rh_id": "oe-2027-cenario-pib-real-crescimento-2027",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -70,11 +70,11 @@
       "corrections_at_export": 0,
       "crop_sha256": "07a1cde4211b4b236d6cefbe73855203a185937ac42740cfd0f5bdbb83e6db84",
       "exported_at": "2026-10-14",
-      "exported_row_sha256": "7d3b5a1f16ff57cb3267792267d3f2d9f784a17400e4692adc2d351903e1a816",
+      "exported_row_sha256": "a29cebc256e7418c49f8b3e9fbd61bfbfa72f5cc19067ded8452df4eeb2b044a",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "a8acd9e2a6c6a4873c90f4656d5ce916888e8cbc3fcdc1d6d435cbf0f2bff1af",
+      "origin_row_sha256": "f9a4a8ae4d0bfdc27bd48f6694143c0ea28c11557ce934741dcee129f8ade21e",
       "rh_id": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -82,11 +82,11 @@
       "corrections_at_export": 0,
       "crop_sha256": "49e97c6e91b53544dc3d066f0f4065eac3065834e37fc33b46653d13289c87d6",
       "exported_at": "2026-10-14",
-      "exported_row_sha256": "956699a98bd2c2a8d40758ff8b99e07f78283c8fc921fad7a90181f8cf47f147",
+      "exported_row_sha256": "5e15dddd24a8d19d9612a084448928d8a7530304accdd77a78eb67ea8586f772",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "8984699e993ccca5139a23f0b85e1c4e5e371b15161af119a4abe393c36f998c",
+      "origin_row_sha256": "ba7ce469571fcf612dcc85c2a390bc274e610448abc54a3e30600372bd6f45ca",
       "rh_id": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -94,11 +94,11 @@
       "corrections_at_export": 0,
       "crop_sha256": "fe85f456d2d299541f952b0c913db41020f2b9d2aee85758b607f1265fa4dc70",
       "exported_at": "2026-10-14",
-      "exported_row_sha256": "7c56411a770e663bc6a5ed6225920d0636328b239756e2f38159037db86571f8",
+      "exported_row_sha256": "db97e343f3bbf4a9f341977ea8241c4ca0dcd2247cbe70f5d93cc283af8f7722",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "bb67bca7a282c1b202d494449e6005488e13e24e745e36161236b5bde966d9c6",
+      "origin_row_sha256": "47a4b95e7b8a9bf2368a3423b843c50398d8e5c2b56d665d10d0ec049ca203b0",
       "rh_id": "oe-2027-ppp-rodoviario-receitas-2027",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -106,11 +106,11 @@
       "corrections_at_export": 0,
       "crop_sha256": "08617d163b9aa177cc00874aa7986904e2c502b95a5dd6c04106374bd8b3ec0f",
       "exported_at": "2026-10-14",
-      "exported_row_sha256": "15c772cfff5822c6da28f0d7e688f7513c85952b27bd93f4a744b9574c55e2e2",
+      "exported_row_sha256": "c0d5abf6b79df99cabac40701da98b2e3d794b5cc545dbd0763f2bbd962398a4",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "0104cd9e1ccca0e588706680e3c1a54af21dd69246a071119ac78312e7bc4134",
+      "origin_row_sha256": "c7d40d831cc4280efdad0c2a7139b240a77b58e4676cbbca0a00728f87268414",
       "rh_id": "oe-2027-ppp-total-encargos-liquidos-2027",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -122,7 +122,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "43a3708b251200bf3ecd735553ed15a5aa80cfe3d0c292c7d9f12ff69f6bd220",
       "rh_id": "oe-2027-saude-despesa-efetiva-consolidada-2026",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -134,7 +134,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "11cae1545bfdf0492bcfd85ef263302acbfa6162bc3134993c7b4442f231eeb2",
       "rh_id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -146,7 +146,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "5af8de797428a82368c1a6766b8c1b3701d4e0056a52db0a82e6134456a6be09",
       "rh_id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -158,7 +158,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "caab155116f08f6c5430905e0d8b664dc37f7dfea4dbaff8cd16bb200f3aa456",
       "rh_id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -170,7 +170,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cc3638692fc68bf08946fd4feae801cf41f759f861e7fcf4eba9a67631de70f0",
       "rh_id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -182,7 +182,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ae06cb30afe02473b86dba4ac57cc09fc4567919e4ea27c400ce3b479f8419dd",
       "rh_id": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -194,7 +194,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e941107c9de86c399b6d0cc244ff8cc71c7f269cf34f51ac6f3bf391181e4439",
       "rh_id": "oe-2027-saude-despesa-total-consolidada-2026",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -206,7 +206,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "eebcbc5361c070c3c0ca6d473cbf8e5f64fb8ded499c30853efb5a49e8f05349",
       "rh_id": "oe-2027-saude-despesa-total-consolidada-2027",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     },
@@ -218,7 +218,7 @@
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "295d67754b6b948249e42e312b0decc09cf81140dcea0bc413b0c308e271944c",
       "rh_id": "oe-2027-saude-despesa-total-consolidada-variacao",
-      "rh_ledger_sha256": "15e7f1570a6836bdd96f89321240ff315f825d6c65be98598867c7042e5da967",
+      "rh_ledger_sha256": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
       "rh_study": "15 Orcamento do Estado 2027",
       "verifications_at_export": 0
     }
