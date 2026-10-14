@@ -15483,24 +15483,38 @@
           {
             "periodo": "oe-2027-ppp-total-encargos-liquidos-2027"
           },
-          ". São valores de caixa a preços constantes desse ano."
+          ", em euros desse ano: são encargos líquidos, valores de caixa a preços constantes. É o valor da linha «Total» do quadro ",
+          {
+            "apoio": {
+              "origem": "v2a-ppp-setores",
+              "campo": "quadro"
+            }
+          },
+          ". O quadro lista os setores «Rodoviário» (estradas), «Ferroviário» (ferrovia), «Saúde» (hospitais), «Aeroportuário» (aeroportos) e «Oceanário»."
         ],
         "en": [
           " It refers to ",
           {
             "periodo": "oe-2027-ppp-total-encargos-liquidos-2027"
           },
-          ". These are cash flows at constant prices for that year."
+          ", in euros of that year: these are net charges, cash flows at constant prices. It is the value in the «Total» row of Table ",
+          {
+            "apoio": {
+              "origem": "v2a-ppp-setores",
+              "campo": "quadro"
+            }
+          },
+          ". The table lists the sectors «Rodoviário» (roads), «Ferroviário» (railways), «Saúde» (hospitals), «Aeroportuário» (airports) and «Oceanário» (the oceanarium)."
         ]
       },
       "folhas": [
         {
-          "pt": "É o valor da linha «Total» dos encargos líquidos das parcerias público-privadas no quadro quatro ponto vinte e cinco, como o quadro o imprime. O quadro lista os setores «Rodoviário», «Ferroviário», «Saúde», «Aeroportuário» e «Oceanário», como o quadro os escreve.",
-          "en": "It is the value in the «Total» row of net public-private partnership charges in Table four point twenty-five, as printed in the table. The table lists the sectors «Rodoviário», «Ferroviário», «Saúde», «Aeroportuário» and «Oceanário», as written in the table.",
+          "pt": "É quanto o Estado prevê pagar ao conjunto das parcerias público-privadas, depois de descontar o que recebe delas.",
+          "en": "It is what the State expects to pay to all public-private partnerships, after deducting what it receives from them.",
           "partes": [
             {
-              "pt": "É o valor da linha «Total» dos encargos líquidos das parcerias público-privadas no quadro quatro ponto vinte e cinco, como o quadro o imprime. O quadro lista os setores «Rodoviário», «Ferroviário», «Saúde», «Aeroportuário» e «Oceanário», como o quadro os escreve.",
-              "en": "It is the value in the «Total» row of net public-private partnership charges in Table four point twenty-five, as printed in the table. The table lists the sectors «Rodoviário», «Ferroviário», «Saúde», «Aeroportuário» and «Oceanário», as written in the table.",
+              "pt": "É quanto o Estado prevê pagar ao conjunto das parcerias público-privadas, depois de descontar o que recebe delas.",
+              "en": "It is what the State expects to pay to all public-private partnerships, after deducting what it receives from them.",
               "classe": "diz",
               "apoios": [
                 {
@@ -15638,11 +15652,14 @@
       ],
       "complemento": {
         "pt": [
-          " O relatório do Orçamento do Estado para ",
+          " O relatório «",
           {
-            "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+            "apoio": {
+              "origem": "v2a-prr-ciclo",
+              "campo": "documento"
+            }
           },
-          " descreve o fim do ciclo extraordinário de financiamento do PRR.",
+          "» descreve o fim do ciclo extraordinário de financiamento do PRR.",
           " Com o PRR, a despesa efetiva consolidada passa de ",
           {
             "claim": "oe-2027-saude-despesa-efetiva-consolidada-2026"
@@ -15670,11 +15687,14 @@
           " milhões. A diferença entre a despesa com e sem PRR é a parcela do PRR. A redução dessa parcela faz com que a despesa com PRR desça, apesar de a despesa sem PRR subir."
         ],
         "en": [
-          " The State Budget report for ",
+          " The report «",
           {
-            "periodo": "oe-2027-saude-despesa-efetiva-consolidada-2027"
+            "apoio": {
+              "origem": "v2a-prr-ciclo",
+              "campo": "documento_en"
+            }
           },
-          " describes the end of the RRP’s exceptional funding cycle.",
+          "» describes the end of the RRP’s exceptional funding cycle.",
           " With the RRP, consolidated effective expenditure goes from ",
           {
             "claim": "oe-2027-saude-despesa-efetiva-consolidada-2026"
@@ -15705,11 +15725,11 @@
       "folhas": [
         {
           "pt": "É o aumento do orçamento da Saúde retirando a verba excecional do PRR, nas palavras do ministro da Presidência transcritas pela RTP. PRR é o Plano de Recuperação e Resiliência.",
-          "en": "It is the increase in the Health budget excluding exceptional Recovery and Resilience Plan (RRP; «PRR» in the table) funding, in the Minister of the Presidency’s words transcribed by RTP.",
+          "en": "It is the increase in the Health budget excluding exceptional Recovery and Resilience Plan (RRP; PRR in Portuguese) funding, in the Minister of the Presidency’s words transcribed by RTP.",
           "partes": [
             {
               "pt": "É o aumento do orçamento da Saúde retirando a verba excecional do PRR, nas palavras do ministro da Presidência transcritas pela RTP. PRR é o Plano de Recuperação e Resiliência.",
-              "en": "It is the increase in the Health budget excluding exceptional Recovery and Resilience Plan (RRP; «PRR» in the table) funding, in the Minister of the Presidency’s words transcribed by RTP.",
+              "en": "It is the increase in the Health budget excluding exceptional Recovery and Resilience Plan (RRP; PRR in Portuguese) funding, in the Minister of the Presidency’s words transcribed by RTP.",
               "classe": "diz",
               "apoios": [
                 {
@@ -15741,26 +15761,46 @@
         "pt": "Afirmação de Paulo Raimundo sobre as parcerias rodoviárias",
         "en": "Paulo Raimundo’s statement about road partnerships"
       },
-      "origens": [],
+      "origens": [
+        "v2a-ppp-conta"
+      ],
       "complemento": {
         "pt": [
           "«",
           {
             "excerto": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09"
           },
-          "». No quadro quatro ponto vinte e cinco do relatório do Orçamento do Estado para ",
+          "». No relatório «",
+          {
+            "apoio": {
+              "origem": "v2a-ppp-conta",
+              "campo": "documento"
+            }
+          },
+          "», o quadro ",
+          {
+            "apoio": {
+              "origem": "v2a-ppp-conta",
+              "campo": "quadro"
+            }
+          },
+          " prevê para ",
           {
             "periodo": "oe-2027-ppp-rodoviario-encargos-brutos-2027"
           },
-          ", os encargos brutos rodoviários são ",
+          " encargos brutos rodoviários de ",
           {
             "claim": "oe-2027-ppp-rodoviario-encargos-brutos-2027"
           },
-          " milhões de euros e os líquidos são ",
+          " milhões de euros: o que o Estado paga às parcerias rodoviárias nesse ano. Os encargos líquidos são ",
           {
             "claim": "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
           },
-          " milhões."
+          " milhões: o que paga depois de descontar o que recebe delas. O montante afirmado é superior tanto aos encargos brutos como aos líquidos que o quadro imprime para ",
+          {
+            "periodo": "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
+          },
+          "."
         ],
         "en": [
           "that the budget allocates ",
@@ -15771,19 +15811,37 @@
           {
             "excerto": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09"
           },
-          "». In Table four point twenty-five of the State Budget report for ",
+          "». In the report «",
           {
-            "periodo": "oe-2027-ppp-rodoviario-encargos-brutos-2027"
+            "apoio": {
+              "origem": "v2a-ppp-conta",
+              "campo": "documento_en"
+            }
           },
-          ", gross road charges are ",
+          "», Table ",
+          {
+            "apoio": {
+              "origem": "v2a-ppp-conta",
+              "campo": "quadro"
+            }
+          },
+          " forecasts gross road charges of ",
           {
             "claim": "oe-2027-ppp-rodoviario-encargos-brutos-2027"
           },
-          " million euros and net charges are ",
+          " million euros for ",
+          {
+            "periodo": "oe-2027-ppp-rodoviario-encargos-brutos-2027"
+          },
+          ": what the State pays to road partnerships that year. Net charges are ",
           {
             "claim": "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
           },
-          " million."
+          " million: what it pays after deducting what it receives from them. The stated amount is higher than both the gross and net charges printed in the table for ",
+          {
+            "periodo": "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
+          },
+          "."
         ]
       },
       "folhas": [
@@ -15800,6 +15858,11 @@
                   "linha": "propria",
                   "campo": "excerpt",
                   "literal": "parcerias público-privadas rodoviárias"
+                },
+                {
+                  "origem": "v2a-ppp-conta",
+                  "campo": "excerto",
+                  "literal": "designadamente os encargos e as receitas"
                 }
               ]
             }

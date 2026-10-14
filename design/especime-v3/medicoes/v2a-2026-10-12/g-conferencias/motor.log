@@ -1,0 +1,56 @@
+oe-2027-saude-despesa-total-consolidada-2026: 18 125,9 milhões de euros
+oe-2027-saude-despesa-total-consolidada-2027: 17 858,4 milhões de euros
+oe-2027-saude-despesa-total-consolidada-variacao: -1,5 %
+oe-2027-saude-despesa-efetiva-consolidada-2026: 18 062,4 milhões de euros
+oe-2027-saude-despesa-efetiva-consolidada-2027: 17 803,1 milhões de euros
+oe-2027-saude-despesa-efetiva-consolidada-variacao: -1,4 %
+oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026: 17 291,3 milhões de euros
+oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027: 17 803,1 milhões de euros
+oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao: 3,0 %
+oe-2027-ppp-rodoviario-encargos-brutos-2027: 1 152 milhões de euros
+oe-2027-ppp-rodoviario-receitas-2027: 263 milhões de euros
+oe-2027-ppp-rodoviario-encargos-liquidos-2027: 889 milhões de euros
+oe-2027-ppp-total-encargos-liquidos-2027: 1 438 milhões de euros
+oe-2027-cenario-pib-real-crescimento-2027: 2,1 %
+oe-2027-cenario-ihpc-2026: 2,9 %
+afirmacao-leitao-amaro-saude-oe2027-2026-10-09: 3 %
+afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09: 1 700 milhões de euros
+afirmacao-rtp-saude-queda-oe2027-2026-10-09: 1,5 % de queda
+Provas V2-a preparadas para o exportador comum.
+Recortes V2-a: 15
+PLANTA excerto alterado: V2A excerto: difere do documento alojado
+PLANTA atribuição trocada: V2A atribuição: difere do documento alojado
+PLANTA data errada: V2A data: difere do documento alojado
+PLANTA porta trocada: V2A porta: difere do documento alojado
+PLANTA valor fora do excerto: V2A valor: difere do documento alojado
+PLANTA manchete como medida: V2A nome: difere do documento alojado
+PLANTA índice da coluna na extração: V2A coluna: índice diferente da medida
+PLANTA índice da linha na extração: V2A linha: índice diferente da medida
+PLANTA âncora trocada rtp-amaro.html: V2A atribuição: autoria ausente do corpo alojado
+PLANTA âncora trocada rtp-queda.html: V2A atribuição: autoria ausente do corpo alojado
+PLANTA mês PCP janeiro: V2AC data: mês trocado lido como 2026-01-09, não como outubro
+PLANTA mês PCP fevereiro: V2AC data: mês trocado lido como 2026-02-09, não como outubro
+PLANTA mês PCP março: V2AC data: mês trocado lido como 2026-03-09, não como outubro
+PLANTA mês PCP abril: V2AC data: mês trocado lido como 2026-04-09, não como outubro
+PLANTA mês PCP maio: V2AC data: mês trocado lido como 2026-05-09, não como outubro
+PLANTA mês PCP junho: V2AC data: mês trocado lido como 2026-06-09, não como outubro
+PLANTA mês PCP julho: V2AC data: mês trocado lido como 2026-07-09, não como outubro
+PLANTA mês PCP agosto: V2AC data: mês trocado lido como 2026-08-09, não como outubro
+PLANTA mês PCP setembro: V2AC data: mês trocado lido como 2026-09-09, não como outubro
+PLANTA mês PCP novembro: V2AC data: mês trocado lido como 2026-11-09, não como outubro
+PLANTA mês PCP dezembro: V2AC data: mês trocado lido como 2026-12-09, não como outubro
+PLANTA dia impossível no PCP: V2A data: dia impossível na intervenção
+PLANTA definição financeira retirada: V2A definição: nota do relatório ausente
+PLANTA ano do parecer trocado na capa: V2A edição: capa sem número e data concordantes
+PLANTA grafia do programa corrigida na fonte: V2A quadro Saúde: título ou grafia diferente
+PLANTA dia impossível na capa: V2A edição: dia impossível na capa
+PLANTA campo do apoio trocado: V2AG apoio: número do quadro diferente
+PLANTA campo do apoio trocado: V2AG apoio: documento ou tradução diferente
+PLANTA campo do apoio trocado: V2AG apoio: quadro atribuído a uma passagem
+PLANTA corte não assinalado no apoio: V2AF apoio: excerto não contíguo
+PLANTA apoio PRR retirado: V2AE apoio: excerto ausente v2a-prr-saude
+PLANTA ciclo PRR retirado: V2AE apoio: excerto ausente v2a-prr-ciclo
+PLANTA apoio da conta retirado: V2AE apoio: excerto ausente v2a-ppp-conta
+PLANTA setor do total retirado: V2AE apoio: setores do total incompletos
+PLANTA PDF integral na exportação: V2A direitos: só excertos e referências podem atravessar
+PASS · 40 conferências V2-a

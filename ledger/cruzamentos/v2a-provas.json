@@ -5,8 +5,8 @@
     "provas.json": {
       "destino": "ledger/provas/v2a",
       "origin_path": "publisher/recortes/v2a/provas.json",
-      "origin_sha256": "49e418b285f46b8fe7e612f1d81f8d8920e84641d6081595c61fc43853a19acb",
-      "exported_sha256": "49e418b285f46b8fe7e612f1d81f8d8920e84641d6081595c61fc43853a19acb",
+      "origin_sha256": "ae26c0a11c32f02ae39ed70b03b1cabb96b7bfb4afe427bf3743343cd9c5e7d5",
+      "exported_sha256": "ae26c0a11c32f02ae39ed70b03b1cabb96b7bfb4afe427bf3743343cd9c5e7d5",
       "exporter": "publisher/export_site_rows.py"
     }
   }

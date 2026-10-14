@@ -1,3 +1,4 @@
+import { ORIGENS_DAS_DEFINICOES } from '../data/figuras.mjs';
 import { palavrasDaLinhaJd1 } from '../data/notas-jd1.mjs';
 /**
  * ===========================================================================
@@ -130,6 +131,12 @@ export function comparaLinhas(c,lang,linhas=loadClaims()) {
 export function resolverComplemento(partes) {
   return partes.map(p=>{
     if(typeof p==='string') {if(/\d/.test(p))throw new Error('V2AE complemento: algarismo fixo');return p;}
+    if(p?.apoio) {
+      const {origem,campo}=p.apoio;
+      const o=/** @type {any} */ (ORIGENS_DAS_DEFINICOES)[origem];
+      if(Object.keys(p).length!==1||Object.keys(p.apoio).length!==2||!['quadro','documento','documento_en'].includes(campo)||typeof o?.[campo]!=='string')throw new Error('V2AG complemento: campo do apoio ausente ou não permitido');
+      return {verbatim:`origem-${origem}-${campo}`};
+    }
     const tipo=Object.keys(p??{})[0],id=p?.[tipo],c=getClaim(id);
     if(Object.keys(p).length!==1||!c||!['claim','periodo','excerto'].includes(tipo))throw new Error('V2AE complemento: token sem linha ou tipo permitido');
     if(tipo==='periodo')return {data:{id,campo:'reference_date',valor:c.reference_date}};

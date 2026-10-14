@@ -1,0 +1,13 @@
+FALHA v2ag-lugar-documento-na-lingua-errada: código 0
+file://<worktree>/tests/pais/portoes.mjs:51
+ if(!passou)throw Error(`${nome}: a planta não teve todas as mordidas previstas. Ver o registo.`);
+                  ^
+
+Error: v2ag-lugar-documento-na-lingua-errada: a planta não teve todas as mordidas previstas. Ver o registo.
+    at planta (file://<worktree>/tests/pais/portoes.mjs:51:19)
+    at file://<worktree>/tests/pais/portoes.mjs:375:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

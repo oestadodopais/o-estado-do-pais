@@ -1,0 +1,20 @@
+[
+  {
+    "nome": "v2ag-lugar-documento-na-lingua-errada",
+    "cabeca": "9a98f1798e4e51d9ad23bf03dde768e3343afe57",
+    "estado": " M design/especime-v3/INVENTARIO-FRASES.md\n M design/especime-v3/critica/REVISOES-DO-INVENTARIO.md\n M design/especime-v3/medicoes/v2a-2026-10-12/LEIA-ME.md\n M design/especime-v3/medicoes/v2a-2026-10-12/familias.mjs\n M ledger/claims/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09.yml\n M ledger/cruzamentos/v2a-provas.json\n M ledger/cruzamentos/v2a.json\n M ledger/provas/v2a/provas.json\n M scripts/check-lugar.mjs\n M src/components/OrigemDaDefinicao.astro\n M src/data/figuras.mjs\n M src/data/o-que-e-das-familias.mjs\n M src/data/origens-v2a.json\n M src/data/verbatim.mjs\n M src/lib/o-que-e-o-numero.mjs\n M src/lib/v2a-palavras.mjs\n M tests/cartao/familias.mjs\n M tests/cartao/leituras-provadas.json\n M tests/cartao/origens-v2a.mjs\n M tests/linha/v2a.mjs\n M tests/linha/v2ad-dados.mjs\n M tests/pais/portoes.mjs\n",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 0,
+    "mordidas": [
+      "8\\.4 · definições de painel fora da declaração: \\d+, acima do teto 0"
+    ],
+    "passou": false,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html",
+        "antes": "cf83bd3e7cca82c4668005b8f55bc2d52f9b4f466047ef229b55c1b02a9f25a7",
+        "reposto": "cf83bd3e7cca82c4668005b8f55bc2d52f9b4f466047ef229b55c1b02a9f25a7"
+      }
+    ]
+  }
+]

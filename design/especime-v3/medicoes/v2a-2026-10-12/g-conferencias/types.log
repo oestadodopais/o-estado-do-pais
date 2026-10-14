@@ -1,0 +1,8 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/data/verbatim.mjs(55,73): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ publicador: string; documento: string; excerto: string; excertoEn?: string | undefined; documento_en?: string | undefined; publicador_en?: string | undefined; quadro?: string | undefined; }'.
+  No index signature with a parameter of type 'string' was found on type '{ publicador: string; documento: string; excerto: string; excertoEn?: string | undefined; documento_en?: string | undefined; publicador_en?: string | undefined; quadro?: string | undefined; }'.
+src/data/verbatim.mjs(55,188): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ publicador: string; documento: string; excerto: string; excertoEn?: string | undefined; documento_en?: string | undefined; publicador_en?: string | undefined; quadro?: string | undefined; }'.
+  No index signature with a parameter of type 'string' was found on type '{ publicador: string; documento: string; excerto: string; excertoEn?: string | undefined; documento_en?: string | undefined; publicador_en?: string | undefined; quadro?: string | undefined; }'.

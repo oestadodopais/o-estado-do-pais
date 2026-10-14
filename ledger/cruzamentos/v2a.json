@@ -22,8 +22,8 @@
     },
     "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-13",
-      "exported_row_sha256": "932d66e3abf87b27ee2f4cd22422ca11fed1ce1de599facfe2e8d9abea0151c3",
+      "exported_at": "2026-10-14",
+      "exported_row_sha256": "d10cdfe4b3c2fc3d3e1d01a711a63720b1cc6c9b238b54706056b6b9534d1933",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ff93d4464a96b89d4145d00a4e34edd516a43a36f218680df46db796d6eb4779",
       "rh_id": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",

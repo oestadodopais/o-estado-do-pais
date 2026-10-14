@@ -35,6 +35,7 @@ const {FAMILIAS_DAS_LINHAS}=await import('../../src/data/o-que-e-das-familias.mj
 const auditoria=JSON.parse(fs.readFileSync('tests/cartao/leituras-provadas.json'));
 assert.deepEqual(conferirAuditoriaDasFamilias().erros,[]);
 for(const [nome,partes,mensagem] of [
+ ['apoio inexistente',[{apoio:{origem:'ausente',campo:'quadro'}}],'V2AG complemento: campo do apoio ausente ou não permitido'],
  ['algarismo fixo',['Ano 2027'],'V2AE complemento: algarismo fixo'],
  ['linha inexistente',[{periodo:'linha-do-ensaio'}],'a afirmação'],
  ['citação sem afirmação',[{excerto:'oe-2027-saude-despesa-total-consolidada-2027'}],'V2AE complemento: citação sem afirmação'],
@@ -47,7 +48,7 @@ for(const lang of ['pt','en'])for(const [nome,altera,mensagem] of [
  const familias=structuredClone(FAMILIAS_DAS_LINHAS),id='oe-2027-saude-despesa-total-consolidada-2027';altera(familias[id]);
  const erro=conferirAuditoriaDasFamilias({familias}).erros.find(x=>x.includes(mensagem));assert(erro);console.log(`PLANTA ${lang} K17 ${nome}: ${erro}`);
 }
-for(const [nome,parte,mensagem] of [['algarismo','Ano 2027','complemento com algarismo fixo'],['token sem origem',{periodo:'linha-do-ensaio'},'complemento com token sem origem']]) {
+for(const [nome,parte,mensagem] of [['algarismo','Ano 2027','complemento com algarismo fixo'],['token sem origem',{periodo:'linha-do-ensaio'},'complemento com token sem origem'],['apoio sem origem',{apoio:{origem:'ausente',campo:'quadro'}},'complemento com campo de apoio sem origem']]) {
  const a=structuredClone(auditoria),familias=structuredClone(FAMILIAS_DAS_LINHAS),id='oe-2027-saude-despesa-total-consolidada-2027';
  a.familias.find(f=>f.chaves?.includes(id)).complemento.pt.push(parte);familias[id].complemento.pt.push(parte);
  const erro=conferirAuditoriaDasFamilias({auditoria:a,familias}).erros.find(x=>x.includes(mensagem));assert(erro);console.log(`PLANTA K17 ${nome}: ${erro}`);
@@ -62,6 +63,8 @@ console.log('V2AE: complementos auditados, origens seladas e total sem conta rod
 const {conferirOrigemV2A}=await import('../cartao/origens-v2a.mjs');
 for(const key of Object.keys(apoios))assert.equal(conferirOrigemV2A(key,origens[key]),null);
 for(const [nome,altera,mensagem] of [
+ ['tradução trocada',o=>o.documento_en='Wrong title','V2AG origem: campo do apoio diferente da prova'],
+ ['quadro indevido',o=>o.quadro='5.37','V2AG origem: campo do apoio diferente da prova'],
  ['excerto fechado',o=>o.excertoAberto=false,'V2AF origem: passagem da Saúde fechada'],
  ['tipo retirado',o=>delete o.tipo,'V2AF origem: apoio sem tipo de passagem'],
  ['selo retirado',o=>delete o.selo,'V2AE origem: selo documental ausente'],

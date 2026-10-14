@@ -41,7 +41,7 @@ import { ORIGENS_DAS_DEFINICOES, rotuloDaOrigem } from './figuras.mjs';
 /** @type {Record<string, { lang: string|null, origem: string, text: string }>} */
 const ORIGENS_TRANSCRITAS = Object.fromEntries(
   Object.entries(ORIGENS_DAS_DEFINICOES).flatMap(([chave, origem]) => {
-    const o = /** @type {{ publicador: string, documento: string, excerto: string, excertoEn?: string }} */ (
+    const o = /** @type {{ publicador: string, documento: string, excerto: string, excertoEn?: string, documento_en?: string, publicador_en?: string, quadro?: string }} */ (
       /** @type {unknown} */ (origem)
     );
     const onde = `\`ORIGENS_DAS_DEFINICOES['${chave}']\`, em src/data/figuras.mjs.`;
@@ -52,6 +52,7 @@ const ORIGENS_TRANSCRITAS = Object.fromEntries(
     return [
       [`origem-${chave}-publicador`, { lang: null, origem: onde, text: o.publicador }],
       [`origem-${chave}-documento`, { lang: lingua, origem: onde, text: o.documento.replace(/, página \d+/, '') }],
+      ...Object.entries(o).filter(([campo,valor])=>['documento_en','publicador_en','quadro'].includes(campo)&&typeof valor==='string').map(([campo,valor])=>[`origem-${chave}-${campo}`,{lang:campo.endsWith('_en')?'en':null,origem:onde,text:valor}]),
       [`origem-${chave}-excerto`, { lang: lingua, origem: onde, text: o.excerto }],
       ...(rotuloDaOrigem(chave) ? [[`origem-${chave}-rotulo`, { lang: lingua, origem: onde, text: rotuloDaOrigem(chave) }]] : []),
       ...(o.documento.match(/, página (\d+)/) ? [[`origem-${chave}-pagina`, {lang:null, origem:onde, text:o.documento.match(/, página (\d+)/)?.[1] ?? ''}]] : []),

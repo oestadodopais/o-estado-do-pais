@@ -11,6 +11,7 @@ export function conferirOrigemV2A(chave,origem) {
  if(chave==='v2a-prr-saude'&&origem?.excertoAberto!==true)return 'V2AF origem: passagem da Saúde fechada';
  if(origem?.tipo!=='passagem')return 'V2AF origem: apoio sem tipo de passagem';
  const a=JSON.parse(bytes).apoios[chave],s=origem?.selo;
+ if(['documento_en','publicador_en','quadro'].some(k=>origem?.[k]!==a?.[k]))return 'V2AG origem: campo do apoio diferente da prova';
  if(!a||!s||s.tipo!=='v2a')return 'V2AE origem: selo documental ausente';
  if(s.sha256!==a.sha256||s.motor!==a.motor_path||s.hora!==a.acedido_em||s.cliente!==a.cliente||s.campo!=='página física '+a.pagina_pdf)return 'V2AE origem: selo diferente do recibo exportado';
  if(origem.excerto!==a.excerto||origem.extracao?.pagina!==a.pagina_pdf||origem.lido!==a.acedido_em.slice(0,10)||origem.url!==a.pedido+'#page='+a.pagina_pdf||origem.publicador!=='Ministério das Finanças'||origem.documento!==`Orçamento do Estado para 2027, p. ${a.pagina_pdf} do PDF (${a.pagina_impressa} impressa)`)return 'V2AE origem: excerto ou localizador diferente da prova';

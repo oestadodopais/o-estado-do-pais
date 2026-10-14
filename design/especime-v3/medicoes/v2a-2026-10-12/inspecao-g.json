@@ -1,0 +1,333 @@
+{
+  "base": "9a98f179",
+  "linhas_anteriores_intactas": 3211,
+  "linhas": [
+    {
+      "id": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "valor": "3",
+      "unidade": "%"
+    },
+    {
+      "id": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "valor": "1 700",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "valor": "1,5",
+      "unidade": "% de queda"
+    },
+    {
+      "id": "oe-2027-cenario-ihpc-2026",
+      "valor": "2,9",
+      "unidade": "%"
+    },
+    {
+      "id": "oe-2027-cenario-pib-real-crescimento-2027",
+      "valor": "2,1",
+      "unidade": "%"
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "valor": "1 152",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "valor": "889",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-receitas-2027",
+      "valor": "263",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-ppp-total-encargos-liquidos-2027",
+      "valor": "1 438",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "valor": "18 062,4",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "valor": "17 803,1",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "valor": "17 291,3",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "valor": "17 803,1",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "valor": "3,0",
+      "unidade": "%"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "valor": "−1,4",
+      "unidade": "%"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2026",
+      "valor": "18 125,9",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2027",
+      "valor": "17 858,4",
+      "unidade": "milhões de euros"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "valor": "−1,5",
+      "unidade": "%"
+    }
+  ],
+  "cabeca": "9a98f1798e4e51d9ad23bf03dde768e3343afe57",
+  "frases": [
+    {
+      "id": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "pt": {
+        "cabecalho": "Afirmação de Leitão Amaro sobre o orçamento da Saúde sem PRR",
+        "frase": "É o aumento do orçamento da Saúde retirando a verba excecional do PRR, nas palavras do ministro da Presidência transcritas pela RTP. PRR é o Plano de Recuperação e Resiliência. O relatório «Orçamento do Estado para 2027, p. 31 do PDF (15 impressa)» descreve o fim do ciclo extraordinário de financiamento do PRR. Com o PRR, a despesa efetiva consolidada passa de 18 062,4 milhões de euros na estimativa de 2026 para 17 803,1 milhões no orçamento para 2027; sem o PRR, passa de 17 291,3 para 17 803,1 milhões. A diferença entre a despesa com e sem PRR é a parcela do PRR. A redução dessa parcela faz com que a despesa com PRR desça, apesar de a despesa sem PRR subir.",
+        "conta": ""
+      },
+      "en": {
+        "cabecalho": "Leitão Amaro’s statement about the Health budget excluding the RRP",
+        "frase": "It is the increase in the Health budget excluding exceptional Recovery and Resilience Plan (RRP; PRR in Portuguese) funding, in the Minister of the Presidency’s words transcribed by RTP. The report «Budget report for 2027, PDF p. 31 (printed 15)» describes the end of the RRP’s exceptional funding cycle. With the RRP, consolidated effective expenditure goes from 18 062,4 million euros in the estimate for 2026 to 17 803,1 million in the budget for 2027; excluding the RRP, it goes from 17 291,3 to 17 803,1 million. The difference between expenditure with and without the RRP is the RRP component. The reduction in that component makes expenditure with the RRP fall, even though expenditure without the RRP rises.",
+        "conta": ""
+      }
+    },
+    {
+      "id": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "pt": {
+        "cabecalho": "Afirmação de Paulo Raimundo sobre as parcerias rodoviárias",
+        "frase": "Na intervenção publicada pelo PCP, Paulo Raimundo afirma: «Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias». No relatório «Orçamento do Estado para 2027, p. 124 do PDF (108 impressa)», o quadro 4.25 prevê para 2027 encargos brutos rodoviários de 1 152 milhões de euros: o que o Estado paga às parcerias rodoviárias nesse ano. Os encargos líquidos são 889 milhões: o que paga depois de descontar o que recebe delas. O montante afirmado é superior tanto aos encargos brutos como aos líquidos que o quadro imprime para 2027.",
+        "conta": ""
+      },
+      "en": {
+        "cabecalho": "Paulo Raimundo’s statement about road partnerships",
+        "frase": "In the speech published by the PCP, Paulo Raimundo states that the budget allocates 1 700 million euros to road public-private partnerships, in these words: «Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias». In the report «Budget report for 2027, PDF p. 124 (printed 108)», Table 4.25 forecasts gross road charges of 1 152 million euros for 2027: what the State pays to road partnerships that year. Net charges are 889 million: what it pays after deducting what it receives from them. The stated amount is higher than both the gross and net charges printed in the table for 2027.",
+        "conta": ""
+      }
+    },
+    {
+      "id": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "pt": {
+        "cabecalho": "Queda do orçamento da Saúde noticiada pela RTP",
+        "frase": "É a queda do orçamento da Saúde noticiada pela RTP. Os montantes da notícia identificam a despesa total consolidada do programa Saúde. A notícia é de 09.10.2026 e refere-se ao orçamento para 2027. A variação da despesa total consolidada inclui a despesa relativa ao Plano de Recuperação e Resiliência (PRR). Na parte da Saúde, o relatório do Orçamento do Estado para 2027 diz que a dotação desse ano é superior à estimativa de 2026 expurgada do efeito do PRR.",
+        "conta": "A despesa total consolidada passa de 18 125,9 milhões de euros na estimativa de 2026 para 17 858,4 milhões no orçamento para 2027. A diferença obtém-se subtraindo o orçamento à estimativa."
+      },
+      "en": {
+        "cabecalho": "Health budget decrease reported by RTP",
+        "frase": "It is the Health budget decrease reported by RTP. The article’s amounts identify consolidated total expenditure for the Health programme. The article is dated 09.10.2026 and concerns the budget for 2027. The change in consolidated total expenditure includes spending under the Recovery and Resilience Plan (RRP; «PRR» in the table). In its Health section, the State Budget report for 2027 says that the allocation for that year is higher than the estimate for 2026 excluding the RRP effect.",
+        "conta": "Consolidated total expenditure goes from 18 125,9 million euros in the estimate for 2026 to 17 858,4 million in the budget for 2027. The decrease is calculated by subtracting the budget from the estimate."
+      }
+    },
+    {
+      "id": "oe-2027-cenario-ihpc-2026",
+      "pt": {
+        "cabecalho": "Previsão do Ministério das Finanças para a inflação medida pelo IHPC em dois mil e vinte e seis, transcrita pelo CFP",
+        "frase": "É a previsão do Ministério das Finanças para a inflação medida pelo índice harmonizado de preços no consumidor em dois mil e vinte e seis, na Proposta de Orçamento do Estado para dois mil e vinte e sete, como o CFP a transcreve. O parecer considera-a pouco provável.",
+        "conta": ""
+      },
+      "en": {
+        "cabecalho": "Ministry of Finance forecast for HICP inflation in two thousand and twenty-six, transcribed by the CFP",
+        "frase": "It is the Ministry of Finance forecast for inflation measured by the harmonised index of consumer prices in two thousand and twenty-six, in the Draft State Budget for two thousand and twenty-seven, as transcribed by the CFP. The opinion considers it unlikely.",
+        "conta": ""
+      }
+    },
+    {
+      "id": "oe-2027-cenario-pib-real-crescimento-2027",
+      "pt": {
+        "cabecalho": "Previsão do Ministério das Finanças para o crescimento real do produto interno bruto em dois mil e vinte e sete, transcrita pelo CFP",
+        "frase": "É a previsão do Ministério das Finanças para o crescimento real do produto interno bruto em dois mil e vinte e sete, na Proposta de Orçamento do Estado para dois mil e vinte e sete, como o CFP a transcreve. O parecer considera-a superior à de todas as instituições de referência.",
+        "conta": ""
+      },
+      "en": {
+        "cabecalho": "Ministry of Finance forecast for real gross domestic product growth in two thousand and twenty-seven, transcribed by the CFP",
+        "frase": "It is the Ministry of Finance forecast for real gross domestic product growth in two thousand and twenty-seven, in the Draft State Budget for two thousand and twenty-seven, as transcribed by the CFP. The opinion considers it higher than those of all reference institutions.",
+        "conta": ""
+      }
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "pt": {
+        "cabecalho": "Parcerias público-privadas rodoviárias, encargos brutos, 2027",
+        "frase": "É o valor previsto para encargos brutos do setor rodoviário no quadro das parcerias público-privadas.",
+        "conta": "Na coluna de 2027, os encargos líquidos rodoviários são os encargos brutos menos as receitas: 1 152 menos 263 dá 889 milhões de euros. Os encargos brutos são o que o Estado paga às parcerias rodoviárias nesse ano; as receitas são o que recebe delas; os encargos líquidos são o que paga depois de descontar essas receitas. Os montantes estão em euros desse ano. A nota do quadro indica valores de caixa a preços constantes desse ano."
+      },
+      "en": {
+        "cabecalho": "Road public-private partnerships, gross charges, 2027",
+        "frase": "It is the projected value for road sector gross charges in the public-private partnership table.",
+        "conta": "In the column for 2027, net road charges are gross charges minus revenue: 1 152 minus 263 equals 889 million euros. Gross charges are what the State pays to road partnerships that year; revenue is what it receives from them; net charges are what it pays after deducting that revenue. The amounts are in euros of that year. The table note specifies cash flows at constant prices for that year."
+      }
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "pt": {
+        "cabecalho": "Parcerias público-privadas rodoviárias, encargos líquidos, 2027",
+        "frase": "É o valor previsto para encargos líquidos do setor rodoviário no quadro das parcerias público-privadas.",
+        "conta": "Na coluna de 2027, os encargos líquidos rodoviários são os encargos brutos menos as receitas: 1 152 menos 263 dá 889 milhões de euros. Os encargos brutos são o que o Estado paga às parcerias rodoviárias nesse ano; as receitas são o que recebe delas; os encargos líquidos são o que paga depois de descontar essas receitas. Os montantes estão em euros desse ano. A nota do quadro indica valores de caixa a preços constantes desse ano."
+      },
+      "en": {
+        "cabecalho": "Road public-private partnerships, net charges, 2027",
+        "frase": "It is the projected value for road sector net charges in the public-private partnership table.",
+        "conta": "In the column for 2027, net road charges are gross charges minus revenue: 1 152 minus 263 equals 889 million euros. Gross charges are what the State pays to road partnerships that year; revenue is what it receives from them; net charges are what it pays after deducting that revenue. The amounts are in euros of that year. The table note specifies cash flows at constant prices for that year."
+      }
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-receitas-2027",
+      "pt": {
+        "cabecalho": "Parcerias público-privadas rodoviárias, receitas, 2027",
+        "frase": "É o valor previsto para receitas do setor rodoviário no quadro das parcerias público-privadas.",
+        "conta": "Na coluna de 2027, os encargos líquidos rodoviários são os encargos brutos menos as receitas: 1 152 menos 263 dá 889 milhões de euros. Os encargos brutos são o que o Estado paga às parcerias rodoviárias nesse ano; as receitas são o que recebe delas; os encargos líquidos são o que paga depois de descontar essas receitas. Os montantes estão em euros desse ano. A nota do quadro indica valores de caixa a preços constantes desse ano."
+      },
+      "en": {
+        "cabecalho": "Road public-private partnerships, revenue, 2027",
+        "frase": "It is the projected value for road sector revenue in the public-private partnership table.",
+        "conta": "In the column for 2027, net road charges are gross charges minus revenue: 1 152 minus 263 equals 889 million euros. Gross charges are what the State pays to road partnerships that year; revenue is what it receives from them; net charges are what it pays after deducting that revenue. The amounts are in euros of that year. The table note specifies cash flows at constant prices for that year."
+      }
+    },
+    {
+      "id": "oe-2027-ppp-total-encargos-liquidos-2027",
+      "pt": {
+        "cabecalho": "Parcerias público-privadas, total dos encargos líquidos, 2027",
+        "frase": "É quanto o Estado prevê pagar ao conjunto das parcerias público-privadas, depois de descontar o que recebe delas. Refere-se a 2027, em euros desse ano: são encargos líquidos, valores de caixa a preços constantes. É o valor da linha «Total» do quadro 4.25. O quadro lista os setores «Rodoviário» (estradas), «Ferroviário» (ferrovia), «Saúde» (hospitais), «Aeroportuário» (aeroportos) e «Oceanário».",
+        "conta": ""
+      },
+      "en": {
+        "cabecalho": "Public-private partnerships, total net charges, 2027",
+        "frase": "It is what the State expects to pay to all public-private partnerships, after deducting what it receives from them. It refers to 2027, in euros of that year: these are net charges, cash flows at constant prices. It is the value in the «Total» row of Table 4.25. The table lists the sectors «Rodoviário» (roads), «Ferroviário» (railways), «Saúde» (hospitals), «Aeroportuário» (airports) and «Oceanário» (the oceanarium).",
+        "conta": ""
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "pt": {
+        "cabecalho": "Saúde, despesa efetiva consolidada, estimativa de 2026",
+        "frase": "É a despesa efetiva consolidada do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. Refere-se à estimativa de 2026. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.",
+        "conta": ""
+      },
+      "en": {
+        "cabecalho": "Health, consolidated effective expenditure, 2026 estimate",
+        "frase": "It is consolidated effective expenditure in the Health table, «Conta do Pograma Legado», as written in the table. It refers to the estimate for 2026. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.",
+        "conta": ""
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "pt": {
+        "cabecalho": "Saúde, despesa efetiva consolidada, orçamento para 2027",
+        "frase": "É a despesa efetiva consolidada do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. Refere-se ao orçamento para 2027. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.",
+        "conta": ""
+      },
+      "en": {
+        "cabecalho": "Health, consolidated effective expenditure, budget for 2027",
+        "frase": "It is consolidated effective expenditure in the Health table, «Conta do Pograma Legado», as written in the table. It refers to the budget for 2027. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.",
+        "conta": ""
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "pt": {
+        "cabecalho": "Saúde, despesa efetiva consolidada sem PRR, estimativa de 2026",
+        "frase": "É a despesa efetiva consolidada sem PRR do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. Refere-se à estimativa de 2026. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações. PRR é o Plano de Recuperação e Resiliência. O relatório descreve o fim do seu ciclo extraordinário de financiamento. Com o PRR, a despesa efetiva consolidada passa de 18 062,4 milhões de euros na estimativa de 2026 para 17 803,1 milhões no orçamento para 2027; sem o PRR, passa de 17 291,3 para 17 803,1 milhões. A diferença entre a despesa com e sem PRR é a parcela do PRR. A redução dessa parcela faz com que a despesa com PRR desça, apesar de a despesa sem PRR subir.",
+        "conta": ""
+      },
+      "en": {
+        "cabecalho": "Health, consolidated effective expenditure excluding the RRP, 2026 estimate",
+        "frase": "It is consolidated effective expenditure excluding the Recovery and Resilience Plan (RRP; «PRR» in the table) in the Health table, «Conta do Pograma Legado», as written in the table. It refers to the estimate for 2026. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions. The report describes the end of the plan’s exceptional funding cycle. With the RRP, consolidated effective expenditure goes from 18 062,4 million euros in the estimate for 2026 to 17 803,1 million in the budget for 2027; excluding the RRP, it goes from 17 291,3 to 17 803,1 million. The difference between expenditure with and without the RRP is the RRP component. The reduction in that component makes expenditure with the RRP fall, even though expenditure without the RRP rises.",
+        "conta": ""
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "pt": {
+        "cabecalho": "Saúde, despesa efetiva consolidada sem PRR, orçamento para 2027",
+        "frase": "É a despesa efetiva consolidada sem PRR do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. Refere-se ao orçamento para 2027. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações. PRR é o Plano de Recuperação e Resiliência. O relatório descreve o fim do seu ciclo extraordinário de financiamento. Com o PRR, a despesa efetiva consolidada passa de 18 062,4 milhões de euros na estimativa de 2026 para 17 803,1 milhões no orçamento para 2027; sem o PRR, passa de 17 291,3 para 17 803,1 milhões. A diferença entre a despesa com e sem PRR é a parcela do PRR. A redução dessa parcela faz com que a despesa com PRR desça, apesar de a despesa sem PRR subir.",
+        "conta": ""
+      },
+      "en": {
+        "cabecalho": "Health, consolidated effective expenditure excluding the RRP, budget for 2027",
+        "frase": "It is consolidated effective expenditure excluding the Recovery and Resilience Plan (RRP; «PRR» in the table) in the Health table, «Conta do Pograma Legado», as written in the table. It refers to the budget for 2027. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions. The report describes the end of the plan’s exceptional funding cycle. With the RRP, consolidated effective expenditure goes from 18 062,4 million euros in the estimate for 2026 to 17 803,1 million in the budget for 2027; excluding the RRP, it goes from 17 291,3 to 17 803,1 million. The difference between expenditure with and without the RRP is the RRP component. The reduction in that component makes expenditure with the RRP fall, even though expenditure without the RRP rises.",
+        "conta": ""
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "pt": {
+        "cabecalho": "Saúde, despesa efetiva consolidada sem PRR, variação publicada entre a estimativa de 2026 e o orçamento para 2027",
+        "frase": "É a variação publicada da despesa efetiva consolidada sem PRR do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. Compara a estimativa de 2026 com o orçamento para 2027. PRR é o Plano de Recuperação e Resiliência. O relatório descreve o fim do seu ciclo extraordinário de financiamento. Com o PRR, a despesa efetiva consolidada passa de 18 062,4 milhões de euros na estimativa de 2026 para 17 803,1 milhões no orçamento para 2027; sem o PRR, passa de 17 291,3 para 17 803,1 milhões. A diferença entre a despesa com e sem PRR é a parcela do PRR. A redução dessa parcela faz com que a despesa com PRR desça, apesar de a despesa sem PRR subir.",
+        "conta": ""
+      },
+      "en": {
+        "cabecalho": "Health, consolidated effective expenditure excluding the RRP, published change between the estimate for 2026 and the budget for 2027",
+        "frase": "It is the published change in consolidated effective expenditure excluding the Recovery and Resilience Plan (RRP; «PRR» in the table) in the Health table, «Conta do Pograma Legado», as written in the table. It compares the estimate for 2026 with the budget for 2027. The report describes the end of the plan’s exceptional funding cycle. With the RRP, consolidated effective expenditure goes from 18 062,4 million euros in the estimate for 2026 to 17 803,1 million in the budget for 2027; excluding the RRP, it goes from 17 291,3 to 17 803,1 million. The difference between expenditure with and without the RRP is the RRP component. The reduction in that component makes expenditure with the RRP fall, even though expenditure without the RRP rises.",
+        "conta": ""
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "pt": {
+        "cabecalho": "Saúde, despesa efetiva consolidada, variação publicada entre a estimativa de 2026 e o orçamento para 2027",
+        "frase": "É a variação publicada da despesa efetiva consolidada do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. Compara a estimativa de 2026 com o orçamento para 2027. PRR é o Plano de Recuperação e Resiliência. O relatório descreve o fim do seu ciclo extraordinário de financiamento. Com o PRR, a despesa efetiva consolidada passa de 18 062,4 milhões de euros na estimativa de 2026 para 17 803,1 milhões no orçamento para 2027; sem o PRR, passa de 17 291,3 para 17 803,1 milhões. A diferença entre a despesa com e sem PRR é a parcela do PRR. A redução dessa parcela faz com que a despesa com PRR desça, apesar de a despesa sem PRR subir.",
+        "conta": ""
+      },
+      "en": {
+        "cabecalho": "Health, consolidated effective expenditure, published change between the estimate for 2026 and the budget for 2027",
+        "frase": "It is the published change in consolidated effective expenditure in the Health table, «Conta do Pograma Legado», as written in the table. It compares the estimate for 2026 with the budget for 2027. The report describes the end of the exceptional funding cycle of the Recovery and Resilience Plan (RRP; «PRR» in the table). With the RRP, consolidated effective expenditure goes from 18 062,4 million euros in the estimate for 2026 to 17 803,1 million in the budget for 2027; excluding the RRP, it goes from 17 291,3 to 17 803,1 million. The difference between expenditure with and without the RRP is the RRP component. The reduction in that component makes expenditure with the RRP fall, even though expenditure without the RRP rises.",
+        "conta": ""
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2026",
+      "pt": {
+        "cabecalho": "Saúde, despesa total consolidada, estimativa de 2026",
+        "frase": "É a despesa total consolidada do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. Refere-se à estimativa de 2026. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.",
+        "conta": ""
+      },
+      "en": {
+        "cabecalho": "Health, consolidated total expenditure, 2026 estimate",
+        "frase": "It is consolidated total expenditure in the Health table, «Conta do Pograma Legado», as written in the table. It refers to the estimate for 2026. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.",
+        "conta": ""
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2027",
+      "pt": {
+        "cabecalho": "Saúde, despesa total consolidada, orçamento para 2027",
+        "frase": "É a despesa total consolidada do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. Refere-se ao orçamento para 2027. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.",
+        "conta": ""
+      },
+      "en": {
+        "cabecalho": "Health, consolidated total expenditure, budget for 2027",
+        "frase": "It is consolidated total expenditure in the Health table, «Conta do Pograma Legado», as written in the table. It refers to the budget for 2027. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.",
+        "conta": ""
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "pt": {
+        "cabecalho": "Saúde, despesa total consolidada, variação publicada entre a estimativa de 2026 e o orçamento para 2027",
+        "frase": "É a variação publicada da despesa total consolidada do quadro da Saúde, «Conta do Pograma Legado», como o quadro o escreve. Compara a estimativa de 2026 com o orçamento para 2027. A variação da despesa total consolidada inclui a despesa relativa ao Plano de Recuperação e Resiliência (PRR). Na parte da Saúde, o relatório do Orçamento do Estado para 2027 diz que a dotação desse ano é superior à estimativa de 2026 expurgada do efeito do PRR.",
+        "conta": ""
+      },
+      "en": {
+        "cabecalho": "Health, consolidated total expenditure, published change between the estimate for 2026 and the budget for 2027",
+        "frase": "It is the published change in consolidated total expenditure in the Health table, «Conta do Pograma Legado», as written in the table. It compares the estimate for 2026 with the budget for 2027. The change in consolidated total expenditure includes spending under the Recovery and Resilience Plan (RRP; «PRR» in the table). In its Health section, the State Budget report for 2027 says that the allocation for that year is higher than the estimate for 2026 excluding the RRP effect.",
+        "conta": ""
+      }
+    }
+  ]
+}

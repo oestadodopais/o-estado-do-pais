@@ -448,7 +448,7 @@ O catálogo `plantas-e.json` conserva 110 mensagens distintas com o registo e a 
 
 Capturas: `design/especime-v3/capturas/v2a-2026-10-12/e/capturas.json`, 16 páginas, duas edições, cinco larguras, 160 casos e 480 PNG. Todos os resumos e dimensões foram conferidos; zero transbordos, pedidos externos e erros. Foram inspecionadas visualmente as 32 cabeças a 390 px e oito a 1 280 px, enumeradas em `capturas-inspecao-e.json`.
 
-As cinco frases do PRR, nas duas edições, foram lidas do HTML e estão integralmente em `frases-prr-e.md`; a fotografia das frases das 18 linhas está em `inspecao-e.json`. O custo desta passagem continua por medir pelo lançador; não foi exposta uma linha «tokens used».
+As cinco frases do PRR, nas duas edições, foram lidas do HTML e estão integralmente em `frases-prr-e.md`; a fotografia das frases das 18 linhas está em `inspecao-e.json`. O custo desta passagem está registado na secção F; não foi exposta uma linha «tokens used».
 
 
 ## A passagem V2-a-f
@@ -484,13 +484,13 @@ Os caminhos `familias.mjs` da tabela são relativos a esta pasta de medições; 
 
 ### Custo
 
-V2-a-e, conforme o mandato: 137 turnos, 571 271 de custo antigo, 6 pontos da semana com outra sessão em paralelo (RH1), contexto médio de 160 334. O custo de V2-a-f pertence ao lançador e não foi exposto. A linha «tokens used» não foi exposta.
+V2-a-e, conforme o mandato: 137 turnos, 571 271 de custo antigo, 6 pontos da semana com outra sessão em paralelo (RH1), contexto médio de 160 334. O custo de V2-a-f está registado na secção G. A linha «tokens used» não foi exposta.
 
 ### Conferências e fecho
 
 A preparação confirmou os dezoito valores e unidades inalterados e os objetos Git das 3 211 linhas anteriores. As provas do motor passaram, incluindo o corte não assinalado. As provas do HTML passaram nas duas edições. Os resultados finais, as cabeças e a inspeção das capturas estão registados abaixo.
 
-O commit do motor `c239badfd9152633345133e5ab05dee560bd732e` passou o seu `core.gate`. A preparação do sítio passou a voz, os cartões, o índice estático, os tipos e as provas do HTML. Foram registadas 164 mensagens distintas de plantas em `plantas-f.json`, com ficheiro e linha; os portões finais confirmarão o conjunto na cabeça comitada.
+O commit do motor `c239badfd9152633345133e5ab05dee560bd732e` passou o seu `core.gate`. A preparação do sítio passou a voz, os cartões, o índice estático, os tipos e as provas do HTML. Foram registadas 165 mensagens distintas de plantas em `plantas-f.json`, com ficheiro e linha; os portões finais confirmarão o conjunto na cabeça comitada.
 
 
 ### Fecho medido da passagem F
@@ -524,3 +524,34 @@ As capturas estão em `design/especime-v3/capturas/v2a-2026-10-12/f/`: dezasseis
 A passagem F fica entregue para a leitura a frio da direção. Não houve fusão de `main` ou `master`, nem publicação ou `git push`.
 
 Commits desta passagem: código e provas do sítio em `a0440b56`; primeira parte das capturas em `0d311c37`; motor em `c239badf`. O commit final do sítio guarda as restantes capturas, os códigos e o relatório, sem mudar o código conferido.
+
+
+## A passagem V2-a-g
+
+Mandato: `design/observatorio/mandatos/MANDATO-V2A-g-2026-10-14.md`. Entrada do sítio `9a98f179`, motor `c239badf`, ambos limpos. Os achados 1 a 4 e 6 eram plantas no pacote; esta passagem trata o Major 5 e os Minor 7 a 11. As 18 linhas conservam os valores e unidades da entrada, conferidos por `conferir-g.mjs`; as 3 211 linhas anteriores conservam os objetos Git.
+
+### Os achados e as decisões
+
+| Achado | O que ganhou | Ficheiro e linha |
+| --- | --- | --- |
+| 5 | PCP: os encargos brutos são pagamentos do Estado, os líquidos descontam recebimentos; o período vem das duas linhas das parcerias; a afirmação é superior aos dois valores. Total: pagamentos previstos depois dos recebimentos, setores explicados, euros do ano. As três contas rodoviárias explicam pagamentos, receitas e saldo. | `familias.mjs:51`, `familias.mjs:88`; `src/lib/v2a-palavras.mjs:21`; `tests/linha/v2a.mjs:122` |
+| 8 | O quadro aparece como 4.25, pelo campo `quadro` do apoio. A nota da definição financeira declara 4.38; as passagens corridas não recebem número de quadro. | `origens-g.py:10`; `<motor>/publisher/v2a.py:284`; `src/lib/o-que-e-o-numero.mjs:134` |
+| 9 | Os documentos e publicadores dos apoios têm inglês; Amaro diz «RRP; PRR in Portuguese». Os excertos continuam na língua da fonte. | `src/data/figuras.mjs:2758`; `src/data/verbatim.mjs:55`; `familias.mjs:80` |
+| 10 | PCP e Amaro citam o campo do documento do apoio, com marca de origem; o ano do relatório deixou de vir do período de uma linha. | `familias.mjs:82`, `familias.mjs:88`; `tests/linha/v2a.mjs:111` |
+| 11 | A régua compara o número visível do quadro com o campo do apoio no PCP e no total; uma planta troca-o em cada página e edição. | `tests/linha/v2a.mjs:107`, `tests/linha/v2a.mjs:146` |
+| 7 | As duas contagens F dizem 165, como `plantas-f.json`; saiu a declaração de custo E por medir; custo F registado abaixo. | Este relatório, secções E, F e G |
+
+- **V2A-68:** pagamentos, recebimentos e saldo ficam explícitos nas cinco páginas das parcerias. As palavras simples antecedem o jargão no total e explicam os termos nas contas rodoviárias e no PCP. Não se atribui causa à diferença entre setores e total.
+- **V2A-69:** os números dos quadros e os títulos dos documentos são campos dos apoios. O complemento só aceita `quadro`, `documento` e `documento_en` de uma origem declarada; a K17 confere a marca e o texto. Não se abriu uma dispensa para algarismos fixos.
+- **V2A-70:** o documento inglês é tradução de identificação; o excerto conserva o português. Amaro diz que PRR é a sigla portuguesa, sem remeter para um quadro inexistente na página.
+- **V2A-71:** a página do PCP ganhou a segunda fonte MF com recibo do relatório, na página física 124. O motor continua a guardar os corpos; o sítio recebe excertos e referências.
+- **V2A-72:** a preparação detetou um tipo incompleto no registo das marcas e uma expectativa portuguesa na conferência inglesa da definição financeira; ambos foram corrigidos. A planta experimental de `check:lugar` não mordeu porque aquela régua lê os painéis, não estes recibos. A alteração e a planta saíram do código; o ensaio fica em `g-conferencias/`. A K17 e a régua V2AG conferem estes apoios com plantas próprias. O ensaio repôs o HTML; a prova regista os resumos antes e depois.
+- **V2A-73:** os portões finais correm pelo escrivão porque o navegador das conferências não arranca na sandbox. A corrida só começa depois do commit de provas e não há escrita durante os quatro portões. Os códigos, cabeças de início e fim e estados serão lidos dos ficheiros antes do fecho.
+
+### Plantas e preparação
+
+O motor passou 40 conferências específicas. O HTML passou 36 páginas e 110 plantas, incluindo as novas recusas de palavras simples retiradas, comparação retirada, período de outra medida, número de quadro trocado, documento sem marca e tradução errada. A K17 recusa o token de apoio sem origem e a marca retirada; a K16 recusa campos diferentes da prova exportada. Os registos estão em `g-conferencias/`; a lista final com mensagem, ficheiro e linha será selada depois dos portões.
+
+### Custo
+
+V2-a-f, conforme o mandato e o lançador: 97 turnos, 291 192 de custo antigo, 4 pontos da semana com outra sessão em paralelo (RH1-c e RH1-d), contexto médio de 131 737. O custo V2-a-g cabe ao lançador. Não foi exposta uma linha «tokens used».

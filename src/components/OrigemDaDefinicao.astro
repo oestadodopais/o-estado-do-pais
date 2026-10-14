@@ -95,14 +95,14 @@ const chaveDaPorta = origens.map((o) => {
       <p class="def-origem-linha">
         {o.rotulo && <><span data-verbatim={`origem-${o.chave}-rotulo`} lang={linguaDoDocumento(o)}>{o.rotulo}</span>{' · '}</>}
         <span class="def-origem-k">{o.tipo === 'passagem' ? s.prov.passagemDe : s.prov.definicaoDe}</span>{' '}
-        <span data-verbatim={`origem-${o.chave}-publicador`}>{o.publicador}</span>
+        <span data-verbatim={`origem-${o.chave}-${o.campoPublicador ?? 'publicador'}`}>{o.publicador}</span>
         {' · '}
         {chaveDaPorta[i] === o.chave ? (
           <a
             class="lig def-origem-doc"
             href={o.url}
             rel="noopener noreferrer external"
-            data-verbatim={`origem-${o.chave}-documento`}
+            data-verbatim={`origem-${o.chave}-${o.campoDocumento ?? 'documento'}`}
             lang={linguaDoDocumento(o)}
           >
             {o.documento}
@@ -110,7 +110,7 @@ const chaveDaPorta = origens.map((o) => {
         ) : (
           <span
             class="def-origem-doc def-origem-doc-mesmo"
-            data-verbatim={`origem-${o.chave}-documento`}
+            data-verbatim={`origem-${o.chave}-${o.campoDocumento ?? 'documento'}`}
             data-mesma-porta={chaveDaPorta[i]}
             lang={linguaDoDocumento(o)}
           >

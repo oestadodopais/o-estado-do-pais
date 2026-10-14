@@ -3,6 +3,7 @@ const minusculas=s=>s.charAt(0).toLowerCase()+s.slice(1);
 const L=(campo,literal)=>({linha:'propria',campo,literal});
 const familia=(chaves,pt,en,frase,phrase,...apoios)=>({chaves,nome:{pt,en},origens:[],partes:[{pt:frase,en:phrase,classe:'diz',apoios}]});
 export const FAMILIAS_V2A=[];
+const A=(origem,campo)=>({apoio:{origem,campo}});
 const O=(origem,literal)=>({origem,campo:'excerto',literal});
 const totalEfetiva=[O('v2a-total-efetiva','A despesa total efetiva exclui ativos e passivos financeiros'),O('v2a-total-efetiva','A despesa total inclui ativos e passivos financeiros')];
 const saude='oe-2027-saude-despesa-efetiva-consolidada-';
@@ -43,11 +44,13 @@ for(const [stem,label,en,fonte] of [
 ]) {
  const total=stem==='total-encargos-liquidos';
  const f=familia(['oe-2027-ppp-'+stem],(total?'Parcerias público-privadas, total dos encargos líquidos':'Parcerias público-privadas rodoviárias, '+(stem.endsWith('brutos')?'encargos brutos':stem.endsWith('receitas')?'receitas':'encargos líquidos')),(total?'Public-private partnerships, total net charges':'Road public-private partnerships, '+(stem.endsWith('brutos')?'gross charges':stem.endsWith('receitas')?'revenue':'net charges')),
-  total?'É o valor da linha «Total» dos encargos líquidos das parcerias público-privadas no quadro quatro ponto vinte e cinco, como o quadro o imprime. O quadro lista os setores «Rodoviário», «Ferroviário», «Saúde», «Aeroportuário» e «Oceanário», como o quadro os escreve.':'É o valor previsto para '+minusculas(label)+' no quadro das parcerias público-privadas.',
-  total?'It is the value in the «Total» row of net public-private partnership charges in Table four point twenty-five, as printed in the table. The table lists the sectors «Rodoviário», «Ferroviário», «Saúde», «Aeroportuário» and «Oceanário», as written in the table.':'It is the projected value for '+minusculas(en)+' in the public-private partnership table.',
+  total?'É quanto o Estado prevê pagar ao conjunto das parcerias público-privadas, depois de descontar o que recebe delas.':'É o valor previsto para '+minusculas(label)+' no quadro das parcerias público-privadas.',
+  total?'It is what the State expects to pay to all public-private partnerships, after deducting what it receives from them.':'It is the projected value for '+minusculas(en)+' in the public-private partnership table.',
   L('name',fonte),L('document.locator','Quadro 4.25'),L('excerpt','ótica de fluxo de caixa'),L('excerpt','preços constantes de 2027'),...(total?[O('v2a-ppp-setores','Oceanário')]:[O('v2a-ppp-conta','designadamente os encargos e as receitas')]));
  f.origens=[total?'v2a-ppp-setores':'v2a-ppp-conta'];
- if(total)f.complemento={pt:[' Refere-se a ',{periodo:'oe-2027-ppp-total-encargos-liquidos-2027'},'. São valores de caixa a preços constantes desse ano.'],en:[' It refers to ',{periodo:'oe-2027-ppp-total-encargos-liquidos-2027'},'. These are cash flows at constant prices for that year.']};
+ if(total)f.complemento={
+  pt:[' Refere-se a ',{periodo:'oe-2027-ppp-total-encargos-liquidos-2027'},', em euros desse ano: são encargos líquidos, valores de caixa a preços constantes. É o valor da linha «Total» do quadro ',A('v2a-ppp-setores','quadro'),'. O quadro lista os setores «Rodoviário» (estradas), «Ferroviário» (ferrovia), «Saúde» (hospitais), «Aeroportuário» (aeroportos) e «Oceanário».'],
+  en:[' It refers to ',{periodo:'oe-2027-ppp-total-encargos-liquidos-2027'},', in euros of that year: these are net charges, cash flows at constant prices. It is the value in the «Total» row of Table ',A('v2a-ppp-setores','quadro'),'. The table lists the sectors «Rodoviário» (roads), «Ferroviário» (railways), «Saúde» (hospitals), «Aeroportuário» (airports) and «Oceanário» (the oceanarium).']};
  FAMILIAS_V2A.push(f);
 }
 FAMILIAS_V2A.push(familia(['oe-2027-cenario-pib-real-crescimento'],'Previsão do Ministério das Finanças para o crescimento real do produto interno bruto em dois mil e vinte e sete, transcrita pelo CFP',
@@ -74,13 +77,17 @@ for(const [id,pt,en,frase,phrase,literal] of [
 
 const amaro=FAMILIAS_V2A.find(f=>f.chaves[0].startsWith('afirmacao-leitao-'));
 amaro.partes[0].pt+=' PRR é o Plano de Recuperação e Resiliência.';
-amaro.partes[0].en=amaro.partes[0].en.replace('exceptional RRP funding','exceptional Recovery and Resilience Plan (RRP; «PRR» in the table) funding');
+amaro.partes[0].en=amaro.partes[0].en.replace('exceptional RRP funding','exceptional Recovery and Resilience Plan (RRP; PRR in Portuguese) funding');
 amaro.partes[0].apoios.push(...apoioPrr);amaro.origens=['v2a-prr-saude','v2a-prr-ciclo'];
-amaro.complemento={pt:[' O relatório do Orçamento do Estado para ',{periodo:saude+'2027'},' descreve o fim do ciclo extraordinário de financiamento do PRR.',...comparacaoPrr.pt],en:[' The State Budget report for ',{periodo:saude+'2027'},' describes the end of the RRP’s exceptional funding cycle.',...comparacaoPrr.en]};
+amaro.complemento={pt:[' O relatório «',A('v2a-prr-ciclo','documento'),'» descreve o fim do ciclo extraordinário de financiamento do PRR.',...comparacaoPrr.pt],en:[' The report «',A('v2a-prr-ciclo','documento_en'),'» describes the end of the RRP’s exceptional funding cycle.',...comparacaoPrr.en]};
 const pcp=FAMILIAS_V2A.find(f=>f.chaves[0].startsWith('afirmacao-pcp-'));
 pcp.partes[0].pt='Na intervenção publicada pelo PCP, Paulo Raimundo afirma: ';
 pcp.partes[0].en='In the speech published by the PCP, Paulo Raimundo states ';
-pcp.complemento={pt:['«',{excerto:pcp.chaves[0]},'». No quadro quatro ponto vinte e cinco do relatório do Orçamento do Estado para ',{periodo:'oe-2027-ppp-rodoviario-encargos-brutos-2027'},', os encargos brutos rodoviários são ',{claim:'oe-2027-ppp-rodoviario-encargos-brutos-2027'},' milhões de euros e os líquidos são ',{claim:'oe-2027-ppp-rodoviario-encargos-liquidos-2027'},' milhões.'],en:['that the budget allocates ',{claim:pcp.chaves[0]},' million euros to road public-private partnerships, in these words: «',{excerto:pcp.chaves[0]},'». In Table four point twenty-five of the State Budget report for ',{periodo:'oe-2027-ppp-rodoviario-encargos-brutos-2027'},', gross road charges are ',{claim:'oe-2027-ppp-rodoviario-encargos-brutos-2027'},' million euros and net charges are ',{claim:'oe-2027-ppp-rodoviario-encargos-liquidos-2027'},' million.']};
+pcp.origens=['v2a-ppp-conta'];pcp.partes[0].apoios.push(O('v2a-ppp-conta','designadamente os encargos e as receitas'));
+const bruto='oe-2027-ppp-rodoviario-encargos-brutos-2027',liquido='oe-2027-ppp-rodoviario-encargos-liquidos-2027';
+pcp.complemento={
+ pt:['«',{excerto:pcp.chaves[0]},'». No relatório «',A('v2a-ppp-conta','documento'),'», o quadro ',A('v2a-ppp-conta','quadro'),' prevê para ',{periodo:bruto},' encargos brutos rodoviários de ',{claim:bruto},' milhões de euros: o que o Estado paga às parcerias rodoviárias nesse ano. Os encargos líquidos são ',{claim:liquido},' milhões: o que paga depois de descontar o que recebe delas. O montante afirmado é superior tanto aos encargos brutos como aos líquidos que o quadro imprime para ',{periodo:liquido},'.'],
+ en:['that the budget allocates ',{claim:pcp.chaves[0]},' million euros to road public-private partnerships, in these words: «',{excerto:pcp.chaves[0]},'». In the report «',A('v2a-ppp-conta','documento_en'),'», Table ',A('v2a-ppp-conta','quadro'),' forecasts gross road charges of ',{claim:bruto},' million euros for ',{periodo:bruto},': what the State pays to road partnerships that year. Net charges are ',{claim:liquido},' million: what it pays after deducting what it receives from them. The stated amount is higher than both the gross and net charges printed in the table for ',{periodo:liquido},'.']};
 const rtp=FAMILIAS_V2A.find(f=>f.chaves[0].startsWith('afirmacao-rtp-'));
 rtp.partes[0].pt='É a queda do orçamento da Saúde noticiada pela RTP. Os montantes da notícia identificam a despesa total consolidada do programa Saúde.';
 rtp.partes[0].en='It is the Health budget decrease reported by RTP. The article’s amounts identify consolidated total expenditure for the Health programme.';

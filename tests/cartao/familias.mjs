@@ -360,6 +360,11 @@ export function conferirAuditoriaDasFamilias({
     if(JSON.stringify(e.complemento)!==JSON.stringify(familias[chaves[0]]?.complemento))falha(`${quem}: complemento diferente da auditoria`);
     for(const lang of ['pt','en'])for(const p of e.complemento?.[lang]??[]) {
       if(typeof p==='string') {if(/\d/.test(p))falha(`${quem}: complemento com algarismo fixo`);continue;}
+      if(p?.apoio) {
+        const {origem,campo}=p.apoio;
+        if(Object.keys(p).length!==1||Object.keys(p.apoio).length!==2||!['quadro','documento','documento_en'].includes(campo)||typeof origens[origem]?.[campo]!=='string'||!e.origens?.includes(origem))falha(`${quem}: complemento com campo de apoio sem origem`);
+        continue;
+      }
       const tipo=Object.keys(p??{})[0],c=linhas.get(p?.[tipo]);
       if(Object.keys(p??{}).length!==1||!['claim','periodo','excerto'].includes(tipo)||!c||(tipo==='excerto'&&!c.afirmacao))falha(`${quem}: complemento com token sem origem`);
     }
@@ -559,7 +564,7 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
       const fonte = ORIGENS_DAS_DEFINICOES[origem];
       const etiqueta = origem === 'rp4n-mapa-ministerios' ? fonte.excerto.split('\n')[1] : ['rp4n-total-ministerios', 'rp4n-consolidada-ministerios'].includes(origem) ? fonte.excerto.split('\n')[0] : null;
       if (etiqueta && normal(bloco?.querySelector(`[data-verbatim="origem-${origem}-rotulo"]`)?.textContent ?? '') !== normal(etiqueta)) falha('a legenda não distingue o excerto do mapa dos ministérios');
-      if (!bloco || normal(bloco.querySelector(`[data-verbatim="origem-${origem}-excerto"]`)?.textContent ?? '') !== normal(fonte.excerto) || normal(bloco.querySelector(`[data-verbatim="origem-${origem}-documento"]`)?.textContent ?? '') !== normal(fonte.documento.replace(/, página \d+/, ''))) falha('a origem visível da definição perdeu o documento ou o excerto');
+      if (!bloco || normal(bloco.querySelector(`[data-verbatim="origem-${origem}-excerto"]`)?.textContent ?? '') !== normal(fonte.excerto) || normal(bloco.querySelector(`[data-verbatim="origem-${origem}-${lang==='en'&&fonte.documento_en?'documento_en':'documento'}"]`)?.textContent ?? '') !== normal((lang==='en'&&fonte.documento_en?fonte.documento_en:fonte.documento).replace(/, página \d+/, ''))) falha('a origem visível da definição perdeu o documento ou o excerto');
     }
     if (d?.cartao) {
       const decl = /** @type {any} */ (LEITURAS_DAS_MEDIDAS)[d.cartao][lang];
@@ -574,10 +579,11 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
         const partes=d.complemento[lang],tokens=[];
         esperado=normal(textoDaFrase(d.frase[lang])+partes.map(p=>{
           if(typeof p==='string')return p;
+          if(p.apoio) {const {origem,campo}=p.apoio;tokens.push(['apoio',`origem-${origem}-${campo}`]);return ORIGENS_DAS_DEFINICOES[origem][campo];}
           const tipo=Object.keys(p)[0],c=ctx.linhas.get(p[tipo]);tokens.push([tipo,p[tipo]]);
           return tipo==='periodo'?String(c.reference_date).split('-').reverse().join('.'):tipo==='excerto'?c.excerpt:c.value;
         }).join(''));
-        const rendidos=oQueE.querySelectorAll('[data-claim], [data-nonledger="data-da-linha"], [data-linha-campo="excerpt"]').map(x=>x.hasAttribute('data-claim')?['claim',x.getAttribute('data-claim')]:x.hasAttribute('data-linha-campo')?['excerto',x.getAttribute('data-linha-claim')]:[x.getAttribute('data-de-campo')==='reference_date'?'periodo':'campo-errado',x.getAttribute('data-de-linha')]);
+        const rendidos=oQueE.querySelectorAll('[data-claim], [data-nonledger="data-da-linha"], [data-linha-campo="excerpt"], [data-verbatim]').map(x=>x.hasAttribute('data-verbatim')?['apoio',x.getAttribute('data-verbatim')]:x.hasAttribute('data-claim')?['claim',x.getAttribute('data-claim')]:x.hasAttribute('data-linha-campo')?['excerto',x.getAttribute('data-linha-claim')]:[x.getAttribute('data-de-campo')==='reference_date'?'periodo':'campo-errado',x.getAttribute('data-de-linha')]);
         if(JSON.stringify(rendidos)!==JSON.stringify(tokens))falha('o complemento não cita os campos pelos tokens auditados');
       }
       if(d?.compara) {
@@ -608,7 +614,7 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
         let marcado = false, tokenComparado = false, tokenDoComplemento = false;
         for (let p = n.parentNode; p && p !== el.parentNode; p = p.parentNode) {
           const a = p.attributes ?? {};
-          if ('data-claim' in a || 'data-nonledger' in a || 'data-linha-campo' in a) { marcado = true; const c=ctx.familias[f.chave]?.compara; tokenComparado=Boolean(c && [c.a,c.b].includes(a['data-claim'])); tokenDoComplemento=(ctx.familias[f.chave]?.complemento?.[lang]??[]).some(t=>typeof t==='object'&&((t.claim&&t.claim===a['data-claim'])||(t.periodo&&t.periodo===a['data-de-linha']&&a['data-de-campo']==='reference_date')||(t.excerto&&t.excerto===a['data-linha-claim']&&a['data-linha-campo']==='excerpt'))); break; }
+          if ('data-claim' in a || 'data-nonledger' in a || 'data-linha-campo' in a || 'data-verbatim' in a) { marcado = true; const c=ctx.familias[f.chave]?.compara; tokenComparado=Boolean(c && [c.a,c.b].includes(a['data-claim'])); tokenDoComplemento=(ctx.familias[f.chave]?.complemento?.[lang]??[]).some(t=>typeof t==='object'&&((t.apoio&&`origem-${t.apoio.origem}-${t.apoio.campo}`===a['data-verbatim'])||(t.claim&&t.claim===a['data-claim'])||(t.periodo&&t.periodo===a['data-de-linha']&&a['data-de-campo']==='reference_date')||(t.excerto&&t.excerto===a['data-linha-claim']&&a['data-linha-campo']==='excerpt'))); break; }
         }
         const dataDoInstantaneo = ctx.familias[f.chave]?.instantaneo && n.parentNode?.matches?.('[data-nonledger="data-da-linha"][data-de-campo="document.computed_over.files.0.snapshot_date"]') && n.parentNode.getAttribute('data-de-linha') === id;
         if (!marcado || f.tipo === 'concelho' || (f.tipo === 'familia' && !ctx.familias[f.chave]?.cartao && !dataDoInstantaneo && !tokenComparado && !tokenDoComplemento)) falha(`a frase escreve um algarismo${marcado ? ' numa frase de família' : ' sem marca de origem'}: «${curto(normal(n.text))}»`);
