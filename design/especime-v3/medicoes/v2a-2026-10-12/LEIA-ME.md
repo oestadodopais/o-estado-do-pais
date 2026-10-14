@@ -406,3 +406,7 @@ A direção forneceu para V2-a-d: 216 turnos, 358 882 de custo antigo, 5 pontos 
 ### Conferências
 
 Os valores e as unidades das dezoito linhas coincidem com a entrada; as 3 211 linhas anteriores conservam os objetos Git. A prova está em `inspecao-e.json`. As conferências dirigidas estão em `e-conferencias/`. Os códigos finais, as cabeças e as capturas serão registados depois da corrida.
+
+**V2A-54:** a preparação em `portoes-e-preparacao/` terminou em `a10230b4` com build 1, verify 125 (não executado), typecheck 0 e motor 0. O inventário ainda tinha 26 frases antigas; saíram e entraram as 30 cadeias atuais. A conferência dirigida da voz passou. Corrigiu-se também a planta que trocava primeiro um atributo, em vez do texto visível. As 64 plantas de HTML passaram nas duas edições. A K16 passou a conferir os apoios documentais contra o pacote selado e o cruzamento, com plantas de selo, SHA, hora, página, excerto e porta. Nenhuma regra antiga foi dispensada.
+
+**V2A-55:** a tentativa isolada de `npm run check:indice` invocou o navegador por uma opção do comando e foi recusada na sandbox: `browserType.launch: Target page, context or browser has been closed`; o registo inclui `Error: kill EPERM`. A tentativa não foi repetida na sandbox; a conferência completa pertence aos portões pelo escrivão. O excerto do erro está em `e-conferencias/indice-sandbox.txt`.

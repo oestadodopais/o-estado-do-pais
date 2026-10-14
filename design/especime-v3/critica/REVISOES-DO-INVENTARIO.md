@@ -738,3 +738,5 @@ A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recib
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | v2ad | Saúde, medida da RTP e conta das parcerias | por ler | Cabeçalhos pelo mandato; períodos e contas pelos tokens das linhas. A nota financeira é citada como apoio separado. |
+
+| v2ae | PRR, citação do PCP, períodos e setores das parcerias | por ler | Codex gpt-6-astra: palavras confrontadas com os excertos selados e o HTML. Saem as entradas antigas sem correspondência; a leitura cruzada pertence à direção. |

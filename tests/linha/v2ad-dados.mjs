@@ -59,3 +59,15 @@ for(const [key,a] of Object.entries(apoios)) {
 }
 for(const id of ['oe-2027-ppp-total-encargos-liquidos-2027'])for(const lang of ['pt','en'])assert.deepEqual(contaV2a(id,lang),[]);
 console.log('V2AE: complementos auditados, origens seladas e total sem conta rodoviária.');
+const {conferirOrigemV2A}=await import('../cartao/origens-v2a.mjs');
+for(const key of Object.keys(apoios))assert.equal(conferirOrigemV2A(key,origens[key]),null);
+for(const [nome,altera,mensagem] of [
+ ['selo retirado',o=>delete o.selo,'V2AE origem: selo documental ausente'],
+ ['SHA trocado',o=>o.selo.sha256='a'.repeat(64),'V2AE origem: selo diferente do recibo exportado'],
+ ['hora trocada',o=>o.selo.hora='2026-10-14T00:00:00Z','V2AE origem: selo diferente do recibo exportado'],
+ ['página trocada',o=>o.extracao.pagina++,'V2AE origem: excerto ou localizador diferente da prova'],
+ ['excerto trocado',o=>o.excerto='Texto do ensaio','V2AE origem: excerto ou localizador diferente da prova'],
+ ['porta trocada',o=>o.url='https://example.invalid/ensaio','V2AE origem: excerto ou localizador diferente da prova'],
+]) {
+ const o=structuredClone(origens['v2a-prr-saude']);altera(o);assert.equal(conferirOrigemV2A('v2a-prr-saude',o),mensagem);console.log(`PLANTA K16 ${nome}: ${mensagem}`);
+}

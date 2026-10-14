@@ -101,7 +101,7 @@ for(const id of ids) {
 }
 const plantas=[];
 const total='oe-2027-saude-despesa-total-consolidada-2027',efetiva='oe-2027-saude-despesa-efetiva-consolidada-2027',variacao='oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao',rtp='afirmacao-rtp-saude-queda-oe2027-2026-10-09',ppp='oe-2027-ppp-rodoviario-receitas-2027',pcp='afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09';
-const troca=(t,sel,a,b)=>{const el=t.querySelector(sel);assert(el);const antes=el.innerHTML;el.set_content(antes.replace(a,b));assert.notEqual(el.innerHTML,antes,'planta sem alteração');};
+const troca=(t,sel,a,b)=>{const el=t.querySelector(sel);assert(el);const antes=el.innerHTML;let mudou=false;el.set_content(antes.split(/(<[^>]*>)/g).map(x=>{if(!mudou&&!x.startsWith('<')&&x.includes(a)){mudou=true;return x.replace(a,b);}return x;}).join(''));assert.notEqual(el.innerHTML,antes,'planta sem alteração');};
 for(const lang of ['pt','en']) {
  const pt=lang==='pt',frase='.linha-o-que-e-frase';
  for(const [id,altera,mensagem] of [

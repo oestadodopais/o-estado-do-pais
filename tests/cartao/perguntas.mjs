@@ -1,3 +1,4 @@
+import {eOrigemV2A,conferirOrigemV2A} from './origens-v2a.mjs';
 import {conferirOrigemLocal,chavesLocais} from './origens-locais-rp4n.mjs';
 /**
  * =============================================================================
@@ -291,6 +292,7 @@ export function auditarPerguntas({
   /* O SELO DE CADA RESPOSTA DA API. */
   for (const [chave, o] of Object.entries(origens)) {
     const daApi = API_DO_EUROSTAT.test(o?.url ?? '');
+    if(eOrigemV2A(chave)){const erro=conferirOrigemV2A(chave,o);if(erro)erros.push(`K16 · origem «${chave}»: ${erro}`);contas.origens_seladas++;continue;}
     /* A forma documental conserva o cliente literal do recibo, incluindo os
        pedidos do OE1 que registam a identidade HTTP. Só a exportação conferida
        no motor admite esta forma. O selo antigo conserva todas as exigências. */
