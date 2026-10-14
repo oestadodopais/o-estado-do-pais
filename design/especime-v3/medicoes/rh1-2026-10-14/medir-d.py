@@ -7,6 +7,7 @@ import re
 import subprocess
 import sys
 import time
+from types import ModuleType
 
 sys.dont_write_bytecode = True
 AQUI = Path(__file__).resolve().parent
@@ -20,14 +21,35 @@ def modulo(nome, caminho):
     return m
 
 
-def medir_tempo():
+def conferir_versao(referencia):
+    """Executa código histórico em memória sobre a árvore e o dist atuais."""
+    referencia = subprocess.check_output(['git', 'rev-parse', '--verify', referencia + '^{commit}'], cwd=RAIZ).decode().strip()
+    modulos = []
+    for caminho in ('design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py', 'scripts/check-privacidade.py'):
+        m = ModuleType('medicao_historica_' + str(len(modulos)))
+        m.__file__ = str(RAIZ / caminho)
+        fonte = subprocess.check_output(['git', 'show', referencia + ':' + caminho], cwd=RAIZ)
+        exec(compile(fonte, '<conferencia-historica>', 'exec'), vars(m))
+        modulos.append(m)
+    detetor, guarda = modulos
+    guarda.detetor = detetor
+    detetor.carregar_proibidos_locais()
+    resultado = guarda.medir(RAIZ / 'dist', True)
+    print(guarda.json_seguro(resultado))
+    return int(not resultado['passou'])
+
+
+def medir_tempo(referencia=None):
+    comando = ['python3', 'scripts/check-privacidade.py', '--prova']
+    if referencia:
+        comando = ['python3', Path(__file__).relative_to(RAIZ).as_posix(), '--conferir-versao', referencia]
     inicio = time.perf_counter()
-    r = subprocess.run(['python3', 'scripts/check-privacidade.py', '--prova'], cwd=RAIZ, capture_output=True)
+    r = subprocess.run(comando, cwd=RAIZ, capture_output=True)
     segundos = time.perf_counter() - inicio
     if r.returncode:
         raise RuntimeError('Conferência recusada.')
     dados = json.loads(r.stdout)
-    return {'comando': 'python3 scripts/check-privacidade.py --prova',
+    return {'comando': ' '.join(comando), 'versao_conferencia': referencia or 'arvore_atual',
             'cabeca': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=RAIZ).decode().strip(),
             'versao_dist': json.loads((RAIZ / 'dist/version.json').read_text()),
             'segundos': segundos, 'codigo': r.returncode, 'passou': dados['passou'],
@@ -35,9 +57,15 @@ def medir_tempo():
 
 
 def main():
+    if '--conferir-versao' in sys.argv:
+        return conferir_versao(sys.argv[sys.argv.index('--conferir-versao') + 1])
     guarda = modulo('guarda_medida_d', 'scripts/check-privacidade.py')
     guarda.detetor.carregar_proibidos_locais()
-    if '--tempo' in sys.argv:
+    if '--tempo-versao' in sys.argv:
+        referencia = sys.argv[sys.argv.index('--tempo-versao') + 1]
+        resultado = medir_tempo(referencia)
+        destino = AQUI / 'tempo-versao-d.json'
+    elif '--tempo' in sys.argv:
         fase = sys.argv[sys.argv.index('--tempo') + 1]
         assert fase in ('antes', 'depois'), 'Fase de medição inválida.'
         resultado = medir_tempo()
