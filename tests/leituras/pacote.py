@@ -185,29 +185,42 @@ with tempfile.TemporaryDirectory(prefix='oedp-pacote-h2-') as tmp:
     # A segunda leitura (achado 4): a chave em fluxo e a chave entre aspas também contam.
     escrever(sitio, 'ledger/claims/linha-fluxo.yml', 'id: "linha-fluxo"\nvalue: "1"\ndocument: {title: "Documento sintético", source_sha256: "' + sha + '", page: 1}\nnote: "Cruzado de ResearchHub content/Estudo sintético · linha-fluxo."\n')
     escrever(sitio, 'ledger/claims/linha-chave-com-aspas.yml', 'id: "linha-chave-com-aspas"\nvalue: "1"\ndocument:\n  "source_sha256": "' + sha + '"\nnote: "Cruzado de ResearchHub content/Estudo sintético · linha-chave-com-aspas."\n')
-    cabeca_formas = commit(sitio, ['ledger/claims/linha-aspas-simples.yml', 'ledger/claims/linha-sem-aspas.yml', 'ledger/claims/linha-nula.yml', 'ledger/claims/linha-fluxo.yml', 'ledger/claims/linha-chave-com-aspas.yml'])
+    # A terceira leitura (achado 3): o âmbito é document; uma chave parecida ou um sha256 dentro de crop não contam.
+    escrever(sitio, 'ledger/claims/linha-fora-do-ambito.yml', 'id: "linha-fora-do-ambito"\nvalue: "1"\nother_source_sha256: "' + sha + '"\ndocument:\n  title: "Sem resumo"\n  crop:\n    source_sha256: "' + sha + '"\n')
+    cabeca_formas = commit(sitio, ['ledger/claims/linha-aspas-simples.yml', 'ledger/claims/linha-sem-aspas.yml', 'ledger/claims/linha-nula.yml', 'ledger/claims/linha-fluxo.yml', 'ledger/claims/linha-chave-com-aspas.yml', 'ledger/claims/linha-fora-do-ambito.yml'])
     cmd[-1] = cabeca_formas
     formas = montar(tmp/'formas', env_corpos)
     mf = json.loads((formas/'motor/corpos-alojados.json').read_text())
     estado = {l['linha']: l['estado'] for l in mf['linhas']}
     exige('o sha256 com aspas simples, sem aspas, em fluxo e com a chave entre aspas resolve, e null é «sem documento»',
           estado['linha-aspas-simples'] == 'copiado' and estado['linha-sem-aspas'] == 'copiado' and estado['linha-fluxo'] == 'copiado' and estado['linha-chave-com-aspas'] == 'copiado' and estado['linha-nula'].startswith('sem documento alojado'))
+    exige('uma chave parecida fora de document e um sha256 dentro de crop não contam como documento', estado['linha-fora-do-ambito'].startswith('sem documento alojado'))
     exige('o manifesto diz por onde cada linha se resolveu e que estudos percorreu',
           all(l['origem'] and l['origem'].startswith('fontes do estudo') for l in mf['linhas'] if l['estado'] == 'copiado') and mf['estudos_declarados'] == ['content/Estudo sintético'] and mf['estudos_extra'] == [])
     escrever(sitio, 'ledger/claims/linha-ilegivel.yml', 'id: "linha-ilegivel"\nvalue: "1"\ndocument:\n  source_sha256: "abc"\n')
     cabeca_ilegivel = commit(sitio, ['ledger/claims/linha-ilegivel.yml'])
+    # A terceira leitura (achado 3): 64 hexadecimais com lixo atrás, entre aspas, também recusam (a linha ilegível passa a null antes, para a recusa ser desta).
+    escrever(sitio, 'ledger/claims/linha-ilegivel.yml', 'id: "linha-ilegivel"\nvalue: "1"\ndocument:\n  source_sha256: null\n')
+    escrever(sitio, 'ledger/claims/linha-lixo-atras.yml', 'id: "linha-lixo-atras"\nvalue: "1"\ndocument:\n  source_sha256: "' + sha + '#XYZ"\n')
+    cabeca_lixo = commit(sitio, ['ledger/claims/linha-ilegivel.yml', 'ledger/claims/linha-lixo-atras.yml'])
+    lixo = tmp/'lixo-atras'
+    r = subprocess.run([*cmd[:-1], cabeca_lixo, str(lixo), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md')], env=env_corpos, capture_output=True, text=True)
+    exige('planta: 64 hexadecimais com lixo atrás recusam, em vez de passarem truncados',
+          r.returncode != 0 and not lixo.exists() and 'numa forma que o guião não aceita' in r.stderr and 'linha-lixo-atras' in r.stderr)
+    casos[-1].update(codigo=r.returncode, queixa=next(l for l in r.stderr.splitlines() if l.startswith('ValueError: O pacote recusa')))
+    escrever(sitio, 'ledger/claims/linha-lixo-atras.yml', 'id: "linha-lixo-atras"\nvalue: "1"\ndocument:\n  source_sha256: null\n')
+    commit(sitio, ['ledger/claims/linha-lixo-atras.yml'])
     ilegivel = tmp/'ilegivel'
     r = subprocess.run([*cmd[:-1], cabeca_ilegivel, str(ilegivel), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md')], env=env_corpos, capture_output=True, text=True)
     exige('planta: uma declaração de sha256 que o guião não lê recusa, em vez de passar por «sem documento»',
-          r.returncode != 0 and not ilegivel.exists() and 'declara source_sha256 numa forma que o guião não lê' in r.stderr and 'linha-ilegivel' in r.stderr)
+          r.returncode != 0 and not ilegivel.exists() and 'numa forma que o guião não aceita' in r.stderr and 'linha-ilegivel' in r.stderr)
     casos[-1].update(codigo=r.returncode, queixa=next(l for l in r.stderr.splitlines() if l.startswith('ValueError: O pacote recusa')))
     corpo_nu = 'corpo sem recibo nem direitos ao lado\n'
     escrever(motor, pasta_corpo + 'corpo-alojado.txt', corpo)  # repõe o corpo selado, alterado no ensaio anterior
     escrever(motor, 'content/Estudo sintético/source/y/nu.txt', corpo_nu)
     cabeca_motor5 = commit(motor)
     escrever(sitio, 'ledger/claims/linha-nua.yml', 'id: "linha-nua"\nvalue: "1"\ndocument:\n  source_sha256: "' + hashlib.sha256(corpo_nu.encode()).hexdigest() + '"\nnote: "Cruzado de ResearchHub content/Estudo sintético · linha-nua."\n')
-    escrever(sitio, 'ledger/claims/linha-ilegivel.yml', 'id: "linha-ilegivel"\nvalue: "1"\ndocument:\n  source_sha256: null\n')
-    cabeca_nua = commit(sitio, ['ledger/claims/linha-nua.yml', 'ledger/claims/linha-ilegivel.yml'])
+    cabeca_nua = commit(sitio, ['ledger/claims/linha-nua.yml'])
     env_nua = dict(env, PACOTE_MOTOR=f'"{motor}" {cabeca_motor2} {cabeca_motor5} fontes/*')
     nua = tmp/'nua'
     r = subprocess.run([*cmd[:-1], cabeca_nua, str(nua), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md'), 'livro-razao/linha-sintetica/index.html'], env=env_nua, capture_output=True, text=True)

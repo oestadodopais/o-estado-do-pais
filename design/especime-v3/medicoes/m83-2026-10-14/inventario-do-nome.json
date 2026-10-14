@@ -1,112 +1,116 @@
 {
-  "medido_em": "2026-10-14T09:01+00:00",
+  "medido_em": "2026-10-14T09:15+00:00",
   "cadeias_medidas": 7,
   "repositorios": {
     "sitio": {
-      "commits_em_todas_as_referencias": 2817,
+      "referencia": "main",
+      "cabeca": "490c989a",
+      "commits_na_historia_da_referencia": 2640,
       "por_cadeia": {
         "nome_da_conta_da_maquina": {
-          "commits_cujo_diff_a_traz": 140,
+          "commits_cujo_diff_a_traz": 133,
           "nomes_de_ficheiro": 0,
           "mensagens_de_commit": 4,
           "identidades_de_commit": 0,
-          "ficheiros_na_cabeca_atual": 0
+          "ficheiros_na_cabeca": 0
         },
         "parte_local_do_correio_pessoal": {
           "commits_cujo_diff_a_traz": 2,
           "nomes_de_ficheiro": 0,
           "mensagens_de_commit": 0,
-          "identidades_de_commit": 2809,
-          "ficheiros_na_cabeca_atual": 0
+          "identidades_de_commit": 2632,
+          "ficheiros_na_cabeca": 0
         },
         "nome_completo": {
           "commits_cujo_diff_a_traz": 2,
           "nomes_de_ficheiro": 0,
           "mensagens_de_commit": 0,
           "identidades_de_commit": 0,
-          "ficheiros_na_cabeca_atual": 0
+          "ficheiros_na_cabeca": 0
         },
         "nome_proprio_e_apelido": {
           "commits_cujo_diff_a_traz": 5,
           "nomes_de_ficheiro": 0,
           "mensagens_de_commit": 0,
           "identidades_de_commit": 0,
-          "ficheiros_na_cabeca_atual": 0
+          "ficheiros_na_cabeca": 0
         },
         "nome_proprio_e_segundo_nome": {
           "commits_cujo_diff_a_traz": 2,
           "nomes_de_ficheiro": 0,
           "mensagens_de_commit": 0,
           "identidades_de_commit": 0,
-          "ficheiros_na_cabeca_atual": 0
+          "ficheiros_na_cabeca": 0
         },
         "cidade_de_residencia": {
           "commits_cujo_diff_a_traz": 0,
           "nomes_de_ficheiro": 0,
           "mensagens_de_commit": 0,
           "identidades_de_commit": 0,
-          "ficheiros_na_cabeca_atual": 0
+          "ficheiros_na_cabeca": 0
         },
         "codigo_postal": {
           "commits_cujo_diff_a_traz": 0,
           "nomes_de_ficheiro": 0,
           "mensagens_de_commit": 0,
           "identidades_de_commit": 0,
-          "ficheiros_na_cabeca_atual": 0
+          "ficheiros_na_cabeca": 0
         }
       }
     },
     "motor": {
-      "commits_em_todas_as_referencias": 666,
+      "referencia": "master",
+      "cabeca": "b4445499",
+      "commits_na_historia_da_referencia": 662,
       "por_cadeia": {
         "nome_da_conta_da_maquina": {
           "commits_cujo_diff_a_traz": 36,
           "nomes_de_ficheiro": 1,
           "mensagens_de_commit": 2,
           "identidades_de_commit": 0,
-          "ficheiros_na_cabeca_atual": 1
+          "ficheiros_na_cabeca": 1
         },
         "parte_local_do_correio_pessoal": {
           "commits_cujo_diff_a_traz": 3,
           "nomes_de_ficheiro": 0,
           "mensagens_de_commit": 0,
-          "identidades_de_commit": 661,
-          "ficheiros_na_cabeca_atual": 0
+          "identidades_de_commit": 657,
+          "ficheiros_na_cabeca": 0
         },
         "nome_completo": {
           "commits_cujo_diff_a_traz": 0,
           "nomes_de_ficheiro": 0,
           "mensagens_de_commit": 0,
           "identidades_de_commit": 0,
-          "ficheiros_na_cabeca_atual": 0
+          "ficheiros_na_cabeca": 0
         },
         "nome_proprio_e_apelido": {
           "commits_cujo_diff_a_traz": 1,
           "nomes_de_ficheiro": 0,
           "mensagens_de_commit": 0,
           "identidades_de_commit": 0,
-          "ficheiros_na_cabeca_atual": 3
+          "ficheiros_na_cabeca": 3
         },
         "nome_proprio_e_segundo_nome": {
           "commits_cujo_diff_a_traz": 0,
           "nomes_de_ficheiro": 0,
           "mensagens_de_commit": 0,
           "identidades_de_commit": 0,
-          "ficheiros_na_cabeca_atual": 0
+          "ficheiros_na_cabeca": 0
         },
         "cidade_de_residencia": {
           "commits_cujo_diff_a_traz": 2,
           "nomes_de_ficheiro": 0,
           "mensagens_de_commit": 0,
           "identidades_de_commit": 0,
-          "ficheiros_na_cabeca_atual": 3
+          "ficheiros_na_cabeca": 3
         },
         "codigo_postal": {
           "commits_cujo_diff_a_traz": 0,
           "nomes_de_ficheiro": 0,
           "mensagens_de_commit": 0,
           "identidades_de_commit": 0,
-          "ficheiros_na_cabeca_atual": 0
+          "ficheiros_na_cabeca": 0
         }
       }
     }

@@ -152,14 +152,24 @@
       "passou": true
     },
     {
+      "nome": "uma chave parecida fora de document e um sha256 dentro de crop não contam como documento",
+      "passou": true
+    },
+    {
       "nome": "o manifesto diz por onde cada linha se resolveu e que estudos percorreu",
       "passou": true
+    },
+    {
+      "nome": "planta: 64 hexadecimais com lixo atrás recusam, em vez de passarem truncados",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: a linha linha-lixo-atras declara document.source_sha256 numa forma que o guião não aceita ('0c7cf42484ddc9ed5436d47e1207815920f77365a87ade98'); esperam-se 64 hexadecimais entre aspas, ou null."
     },
     {
       "nome": "planta: uma declaração de sha256 que o guião não lê recusa, em vez de passar por «sem documento»",
       "passou": true,
       "codigo": 1,
-      "queixa": "ValueError: O pacote recusa: a linha linha-ilegivel declara source_sha256 numa forma que o guião não lê ('abc'); esperam-se 64 hexadecimais, com ou sem aspas, ou null."
+      "queixa": "ValueError: O pacote recusa: a linha linha-ilegivel declara document.source_sha256 numa forma que o guião não aceita ('abc'); esperam-se 64 hexadecimais entre aspas, ou null."
     },
     {
       "nome": "um corpo sem recibo do pedido nem direitos ao lado chega, mas o estado di-lo, linha a linha, e a montagem avisa",
