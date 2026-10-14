@@ -1,6 +1,7 @@
 /** Acrescenta só as famílias V2-a, preservando as declarações das outras corridas. */
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
+import {ORIGENS_DAS_DEFINICOES} from '../src/data/figuras.mjs';
 import {loadClaims} from '../src/lib/ledger.mjs';
 import {FAMILIAS_V2A} from '../design/especime-v3/medicoes/v2a-2026-10-12/familias.mjs';
 const claims=loadClaims({includeWithdrawn:true});
@@ -17,12 +18,13 @@ for(const e of FAMILIAS_V2A) {
   for(const part of e.partes) {
     assert(!/\d/.test(part.pt+part.en),'frase com algarismos');
     for(const a of part.apoios) for(const c of rows) {
+      if(a.origem) { assert(ORIGENS_DAS_DEFINICOES[a.origem]?.[a.campo]?.includes(a.literal),'origem sem literal'); continue; }
       const value=a.campo.split('.').reduce((o,k)=>o?.[k],c);
       assert(a.literal.trim().length>=4 && typeof value==='string' && value.includes(a.literal),`${c.id}: apoio ausente ${a.campo} ${a.literal}`);
     }
   }
   const frase={pt:[e.partes.map(p=>p.pt).join('')],en:[e.partes.map(p=>p.en).join('')]};
-  for(const k of e.chaves) declared[k]={nome:e.nome,frase};
+  for(const k of e.chaves) declared[k]={nome:e.nome,frase,...(e.origens.length?{origens:e.origens}:{})};
 }
 const newMap=JSON.stringify(Object.fromEntries([...keys].sort().map(k=>[k,declared[k]])),null,2);
 fs.writeFileSync(file,original+'\n// V2A: declarações acrescentadas pelo compositor próprio.\nObject.assign(FAMILIAS_DAS_LINHAS, '+newMap+');\n');

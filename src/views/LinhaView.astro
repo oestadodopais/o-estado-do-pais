@@ -48,6 +48,7 @@ import CampoDaLinha from '../components/CampoDaLinha.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import HistoricoDaLinha from '../components/HistoricoDaLinha.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
+import {continuacaoDoNomeV2a, contaV2a, resolverPeriodosV2a} from '../lib/v2a-palavras.mjs';
 import {
   getClaim,
   parsePtNumber,
@@ -742,7 +743,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         data-nome={nomeRecibo.fonte === 'familia' ? (familiaRecibo.tipo === 'concelho' && familiaRecibo.chave !== 'limite' ? 'concelho' : 'familia') : nomeRecibo.fonte}
         data-de-linha={id}
         data-de-familia={nomeRecibo.familia ?? undefined}
-      ><TextoDoNome id={id} texto={nomeRecibo.texto} lang={lang} /></span>{lugarRecibo && (
+      ><TextoDoNome id={id} texto={nomeRecibo.texto} lang={lang} /></span><Frase partes={resolverPeriodosV2a(continuacaoDoNomeV2a(id,lang))} lang={lang} />{lugarRecibo && (
         <>
           <span class="linha-titulo-separador" aria-hidden="true">{' · '}</span>
           <span class="linha-titulo-lugar" data-lugar-da-linha={lugarRecibo.slug}>{lugarRecibo.nome}</span>
@@ -782,6 +783,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           sinal vive na metade que compara (a posição de investimento internacional do ano anterior). E O MARCADOR,
           acima, quando uma parte da frase está por confirmar na fonte: o marcador da casa, com a classe que diz à L1
           que é um marcador obrigatório (`marcador-da-frase`), e que a K17 confere onde a auditoria o declara. */}
+      {contaV2a(id,lang).length > 0 && <p class="linha-o-que-e-frase linha-o-que-e-conta" data-v2a-conta><Frase partes={resolverPeriodosV2a(contaV2a(id,lang))} lang={lang} selos={false} /></p>}
       {oQueE.sinal && (
         <p class="linha-o-que-e-frase" data-o-que-e-parte="sinal">{oQueE.sinal.join('')}</p>
       )}

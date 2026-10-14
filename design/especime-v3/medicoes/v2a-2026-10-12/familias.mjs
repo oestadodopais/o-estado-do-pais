@@ -15,16 +15,16 @@ for(const [stem,label,en] of [
   ]) {
     const anoPt=ano==='2026'?'dois mil e vinte e seis':'dois mil e vinte e sete';
     FAMILIAS_V2A.push(familia(['oe-2027-saude-'+stem+'-'+ano],
-      coluna+' de '+anoPt+': '+minusculas(label)+', Saúde, Conta do Pograma Legado',
-      column+' for '+year+': '+minusculas(en)+', Health, «Conta do Pograma Legado»',
-      'É a '+minusculas(label)+' '+(ano==='2026'?'na':'no')+' '+minusculas(coluna)+' de '+anoPt+' do quadro da Saúde, «Conta do Pograma Legado». A grafia «Pograma» é a do quadro. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.',
+      'Saúde, '+minusculas(label)+', '+(ano==='2026'?'estimativa de':'orçamento para'),
+      'Health, '+minusculas(en)+(ano==='2026'?',':', budget for'),
+      'É a '+minusculas(label)+' '+(ano==='2026'?'na':'no')+' '+minusculas(coluna)+' de '+anoPt+' do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.',
       'It is '+minusculas(en)+' in the '+minusculas(column)+' for '+year+' in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.',
       L('name',fonte),L('document.locator',ano+', '+coluna),L('document.locator','Saúde (PL15), Conta do Pograma Legado'),
-      L('excerpt','A despesa total efetiva exclui ativos e passivos financeiros'),L('excerpt','A despesa total inclui ativos e passivos financeiros'),
+      {origem:'v2a-total-efetiva',campo:'excerto',literal:'A despesa total efetiva exclui ativos e passivos financeiros'},{origem:'v2a-total-efetiva',campo:'excerto',literal:'A despesa total inclui ativos e passivos financeiros'},
       L('document.locator',stem.endsWith('sem-prr')?'(Sem PRR)':'Quadro')));
   }
-  FAMILIAS_V2A.push(familia(['oe-2027-saude-'+stem+'-variacao'],'Variação da '+minusculas(label)+' do quadro da Saúde, «Conta do Pograma Legado»',
-    'Change in '+minusculas(en)+' in the Health table, «Conta do Pograma Legado»',
+  FAMILIAS_V2A.push(familia(['oe-2027-saude-'+stem+'-variacao'],'Saúde, '+minusculas(label)+', variação publicada entre a estimativa de',
+    'Health, '+minusculas(en)+', published change between the estimate for',
     'É a variação publicada da '+minusculas(label)+' do quadro da Saúde, «Conta do Pograma Legado»: compara o orçamento com a estimativa do ano anterior, '+(stem.endsWith('sem-prr')?'sem PRR.':'incluindo PRR.'),
     'It is the published change in '+minusculas(en)+' in the Health table, «Conta do Pograma Legado»: the budget compared with the previous year’s estimate, '+(stem.endsWith('sem-prr')?'excluding the RRP.':'including the RRP.'),
     L('name',fonte),L('document.locator','Saúde (PL15), Conta do Pograma Legado'),L('document.locator','Variação'),L('ressalva','Compara o orçamento de 2027 com a estimativa de 2026')));
@@ -34,7 +34,7 @@ for(const [stem,label,en,fonte] of [
   ['rodoviario-receitas','Receitas do setor rodoviário','Road sector revenue','receitas'],
   ['rodoviario-encargos-liquidos','Encargos líquidos do setor rodoviário','Road sector net charges','Rodoviário'],
   ['total-encargos-liquidos','Total dos encargos líquidos das parcerias público-privadas','Total net public-private partnership charges','Total'],
-]) FAMILIAS_V2A.push(familia(['oe-2027-ppp-'+stem],label,en,
+]) FAMILIAS_V2A.push(familia(['oe-2027-ppp-'+stem],(stem==='total-encargos-liquidos'?'Parcerias público-privadas, total dos encargos líquidos,':'Parcerias público-privadas rodoviárias, '+(stem.endsWith('brutos')?'encargos brutos':stem.endsWith('receitas')?'receitas':'encargos líquidos')+','),(stem==='total-encargos-liquidos'?'Public-private partnerships, total net charges,':'Road public-private partnerships, '+(stem.endsWith('brutos')?'gross charges':stem.endsWith('receitas')?'revenue':'net charges')+','),
   stem==='total-encargos-liquidos'?'É o total previsto dos encargos líquidos das parcerias público-privadas em dois mil e vinte e sete, em valores de caixa a preços constantes desse ano.':'É o valor previsto para '+minusculas(label)+' no quadro das parcerias público-privadas.',
   stem==='total-encargos-liquidos'?'It is the projected total of net public-private partnership charges in two thousand and twenty-seven, measured as cash flows at constant prices for that year.':'It is the projected value for '+minusculas(en)+' in the public-private partnership table.',
   L('name',fonte),L('document.locator','Quadro 4.25'),L('excerpt','ótica de fluxo de caixa'),L('excerpt','preços constantes de 2027')));
@@ -56,6 +56,8 @@ for(const [id,pt,en,frase,phrase,literal] of [
   'É o montante que o orçamento entrega às parcerias público-privadas rodoviárias, nas palavras da intervenção de Paulo Raimundo publicada pelo PCP.',
   'It is the amount the budget allocates to road public-private partnerships, in Paulo Raimundo’s speech published by the PCP.', 'parcerias público-privadas rodoviárias'],
  ['afirmacao-rtp-saude-queda-oe2027-2026-10-09','Queda do orçamento da Saúde noticiada pela RTP','Health budget decrease reported by RTP',
-  'É a queda do orçamento da Saúde para dois mil e vinte e sete noticiada pela RTP a nove de outubro de dois mil e vinte e seis. A notícia não especifica se a despesa é total ou efetiva.',
-  'It is the decrease in the Health budget for two thousand and twenty-seven reported by RTP on nine October two thousand and twenty-six. The article does not specify whether the expenditure is total or effective.', 'O orçamento para Saúde sofre um corte'],
+  'É a queda do orçamento da Saúde para dois mil e vinte e sete noticiada pela RTP a nove de outubro de dois mil e vinte e seis. Os montantes da notícia identificam a despesa total consolidada do programa Saúde. A queda é a diferença entre a estimativa do ano anterior e o orçamento.',
+  'It is the decrease in the Health budget for two thousand and twenty-seven reported by RTP on nine October two thousand and twenty-six. The article’s amounts identify consolidated total expenditure for the Health programme. The decrease is the difference between the previous year’s estimate and the budget.', 'O orçamento para Saúde sofre um corte'],
 ]) FAMILIAS_V2A.push(familia([id],pt,en,frase,phrase,L('excerpt',literal)));
+
+for(const f of FAMILIAS_V2A) if(f.chaves[0].startsWith('oe-2027-saude-')&&!f.chaves[0].endsWith('-variacao'))f.origens=['v2a-total-efetiva'];

@@ -3725,10 +3725,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a queda do orçamento da Saúde para dois mil e vinte e sete noticiada pela RTP a nove de outubro de dois mil e vinte e seis. A notícia não especifica se a despesa é total ou efetiva."
+        "É a queda do orçamento da Saúde para dois mil e vinte e sete noticiada pela RTP a nove de outubro de dois mil e vinte e seis. Os montantes da notícia identificam a despesa total consolidada do programa Saúde. A queda é a diferença entre a estimativa do ano anterior e o orçamento."
       ],
       "en": [
-        "It is the decrease in the Health budget for two thousand and twenty-seven reported by RTP on nine October two thousand and twenty-six. The article does not specify whether the expenditure is total or effective."
+        "It is the decrease in the Health budget for two thousand and twenty-seven reported by RTP on nine October two thousand and twenty-six. The article’s amounts identify consolidated total expenditure for the Health programme. The decrease is the difference between the previous year’s estimate and the budget."
       ]
     }
   },
@@ -3762,8 +3762,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-ppp-rodoviario-encargos-brutos": {
     "nome": {
-      "pt": "Encargos brutos do setor rodoviário",
-      "en": "Road sector gross charges"
+      "pt": "Parcerias público-privadas rodoviárias, encargos brutos,",
+      "en": "Road public-private partnerships, gross charges,"
     },
     "frase": {
       "pt": [
@@ -3776,8 +3776,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-ppp-rodoviario-encargos-liquidos": {
     "nome": {
-      "pt": "Encargos líquidos do setor rodoviário",
-      "en": "Road sector net charges"
+      "pt": "Parcerias público-privadas rodoviárias, encargos líquidos,",
+      "en": "Road public-private partnerships, net charges,"
     },
     "frase": {
       "pt": [
@@ -3790,8 +3790,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-ppp-rodoviario-receitas": {
     "nome": {
-      "pt": "Receitas do setor rodoviário",
-      "en": "Road sector revenue"
+      "pt": "Parcerias público-privadas rodoviárias, receitas,",
+      "en": "Road public-private partnerships, revenue,"
     },
     "frase": {
       "pt": [
@@ -3804,8 +3804,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-ppp-total-encargos-liquidos": {
     "nome": {
-      "pt": "Total dos encargos líquidos das parcerias público-privadas",
-      "en": "Total net public-private partnership charges"
+      "pt": "Parcerias público-privadas, total dos encargos líquidos,",
+      "en": "Public-private partnerships, total net charges,"
     },
     "frase": {
       "pt": [
@@ -3818,64 +3818,76 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-saude-despesa-efetiva-consolidada-2026": {
     "nome": {
-      "pt": "Estimativa de dois mil e vinte e seis: despesa efetiva consolidada, Saúde, Conta do Pograma Legado",
-      "en": "Estimate for two thousand and twenty-six: consolidated effective expenditure, Health, «Conta do Pograma Legado»"
+      "pt": "Saúde, despesa efetiva consolidada, estimativa de",
+      "en": "Health, consolidated effective expenditure,"
     },
     "frase": {
       "pt": [
-        "É a despesa efetiva consolidada na estimativa de dois mil e vinte e seis do quadro da Saúde, «Conta do Pograma Legado». A grafia «Pograma» é a do quadro. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        "É a despesa efetiva consolidada na estimativa de dois mil e vinte e seis do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
       ],
       "en": [
         "It is consolidated effective expenditure in the estimate for two thousand and twenty-six in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
       ]
-    }
+    },
+    "origens": [
+      "v2a-total-efetiva"
+    ]
   },
   "oe-2027-saude-despesa-efetiva-consolidada-2027": {
     "nome": {
-      "pt": "Orçamento de dois mil e vinte e sete: despesa efetiva consolidada, Saúde, Conta do Pograma Legado",
-      "en": "Budget for two thousand and twenty-seven: consolidated effective expenditure, Health, «Conta do Pograma Legado»"
+      "pt": "Saúde, despesa efetiva consolidada, orçamento para",
+      "en": "Health, consolidated effective expenditure, budget for"
     },
     "frase": {
       "pt": [
-        "É a despesa efetiva consolidada no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». A grafia «Pograma» é a do quadro. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        "É a despesa efetiva consolidada no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
       ],
       "en": [
         "It is consolidated effective expenditure in the budget for two thousand and twenty-seven in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
       ]
-    }
+    },
+    "origens": [
+      "v2a-total-efetiva"
+    ]
   },
   "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026": {
     "nome": {
-      "pt": "Estimativa de dois mil e vinte e seis: despesa efetiva consolidada sem PRR, Saúde, Conta do Pograma Legado",
-      "en": "Estimate for two thousand and twenty-six: consolidated effective expenditure excluding the RRP, Health, «Conta do Pograma Legado»"
+      "pt": "Saúde, despesa efetiva consolidada sem PRR, estimativa de",
+      "en": "Health, consolidated effective expenditure excluding the RRP,"
     },
     "frase": {
       "pt": [
-        "É a despesa efetiva consolidada sem PRR na estimativa de dois mil e vinte e seis do quadro da Saúde, «Conta do Pograma Legado». A grafia «Pograma» é a do quadro. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        "É a despesa efetiva consolidada sem PRR na estimativa de dois mil e vinte e seis do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
       ],
       "en": [
         "It is consolidated effective expenditure excluding the RRP in the estimate for two thousand and twenty-six in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
       ]
-    }
+    },
+    "origens": [
+      "v2a-total-efetiva"
+    ]
   },
   "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027": {
     "nome": {
-      "pt": "Orçamento de dois mil e vinte e sete: despesa efetiva consolidada sem PRR, Saúde, Conta do Pograma Legado",
-      "en": "Budget for two thousand and twenty-seven: consolidated effective expenditure excluding the RRP, Health, «Conta do Pograma Legado»"
+      "pt": "Saúde, despesa efetiva consolidada sem PRR, orçamento para",
+      "en": "Health, consolidated effective expenditure excluding the RRP, budget for"
     },
     "frase": {
       "pt": [
-        "É a despesa efetiva consolidada sem PRR no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». A grafia «Pograma» é a do quadro. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        "É a despesa efetiva consolidada sem PRR no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
       ],
       "en": [
         "It is consolidated effective expenditure excluding the RRP in the budget for two thousand and twenty-seven in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
       ]
-    }
+    },
+    "origens": [
+      "v2a-total-efetiva"
+    ]
   },
   "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao": {
     "nome": {
-      "pt": "Variação da despesa efetiva consolidada sem PRR do quadro da Saúde, «Conta do Pograma Legado»",
-      "en": "Change in consolidated effective expenditure excluding the RRP in the Health table, «Conta do Pograma Legado»"
+      "pt": "Saúde, despesa efetiva consolidada sem PRR, variação publicada entre a estimativa de",
+      "en": "Health, consolidated effective expenditure excluding the RRP, published change between the estimate for"
     },
     "frase": {
       "pt": [
@@ -3888,8 +3900,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-saude-despesa-efetiva-consolidada-variacao": {
     "nome": {
-      "pt": "Variação da despesa efetiva consolidada do quadro da Saúde, «Conta do Pograma Legado»",
-      "en": "Change in consolidated effective expenditure in the Health table, «Conta do Pograma Legado»"
+      "pt": "Saúde, despesa efetiva consolidada, variação publicada entre a estimativa de",
+      "en": "Health, consolidated effective expenditure, published change between the estimate for"
     },
     "frase": {
       "pt": [
@@ -3902,36 +3914,42 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-saude-despesa-total-consolidada-2026": {
     "nome": {
-      "pt": "Estimativa de dois mil e vinte e seis: despesa total consolidada, Saúde, Conta do Pograma Legado",
-      "en": "Estimate for two thousand and twenty-six: consolidated total expenditure, Health, «Conta do Pograma Legado»"
+      "pt": "Saúde, despesa total consolidada, estimativa de",
+      "en": "Health, consolidated total expenditure,"
     },
     "frase": {
       "pt": [
-        "É a despesa total consolidada na estimativa de dois mil e vinte e seis do quadro da Saúde, «Conta do Pograma Legado». A grafia «Pograma» é a do quadro. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        "É a despesa total consolidada na estimativa de dois mil e vinte e seis do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
       ],
       "en": [
         "It is consolidated total expenditure in the estimate for two thousand and twenty-six in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
       ]
-    }
+    },
+    "origens": [
+      "v2a-total-efetiva"
+    ]
   },
   "oe-2027-saude-despesa-total-consolidada-2027": {
     "nome": {
-      "pt": "Orçamento de dois mil e vinte e sete: despesa total consolidada, Saúde, Conta do Pograma Legado",
-      "en": "Budget for two thousand and twenty-seven: consolidated total expenditure, Health, «Conta do Pograma Legado»"
+      "pt": "Saúde, despesa total consolidada, orçamento para",
+      "en": "Health, consolidated total expenditure, budget for"
     },
     "frase": {
       "pt": [
-        "É a despesa total consolidada no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». A grafia «Pograma» é a do quadro. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        "É a despesa total consolidada no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
       ],
       "en": [
         "It is consolidated total expenditure in the budget for two thousand and twenty-seven in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
       ]
-    }
+    },
+    "origens": [
+      "v2a-total-efetiva"
+    ]
   },
   "oe-2027-saude-despesa-total-consolidada-variacao": {
     "nome": {
-      "pt": "Variação da despesa total consolidada do quadro da Saúde, «Conta do Pograma Legado»",
-      "en": "Change in consolidated total expenditure in the Health table, «Conta do Pograma Legado»"
+      "pt": "Saúde, despesa total consolidada, variação publicada entre a estimativa de",
+      "en": "Health, consolidated total expenditure, published change between the estimate for"
     },
     "frase": {
       "pt": [

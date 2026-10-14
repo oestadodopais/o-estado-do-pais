@@ -82,13 +82,19 @@ export function conferirAfirmacoes(claims,{plantar=true,motor=process.env.RESEAR
     assert(mensagem);plantas.push({nome:'caminho fora do motor',mensagem});
   }
   if(plantar) {
-    for(const [i,mes] of MESES_PT.entries()) {
-      const expected=`2026-${String(i+1).padStart(2,'0')}-09`;
+    const datas=[['janeiro','2026-01-09'],['fevereiro','2026-02-09'],['março','2026-03-09'],['abril','2026-04-09'],['maio','2026-05-09'],['junho','2026-06-09'],['julho','2026-07-09'],['agosto','2026-08-09'],['setembro','2026-09-09'],['outubro','2026-10-09'],['novembro','2026-11-09'],['dezembro','2026-12-09']];
+    const pcp=[...claims.values()].find(c=>c.id.startsWith('afirmacao-pcp-'));
+    const provaPcp=prova.rows[pcp.id];
+    for(const [mes,expected] of datas) {
       assert.equal(dataDoPcp(`9 ${mes} 2026, Assembleia da República`),expected);
-      if(mes!=='outubro')plantas.push({nome:'mês PCP '+mes,mensagem:'V2AC data: mês trocado lido como '+expected+', não como outubro'});
+      if(mes==='outubro')continue;
+      const raw=Buffer.from(`<p>9 ${mes} 2026, Assembleia da República</p><p>${provaPcp.excerpt} ${provaPcp.attribution_anchor}</p>`);
+      const mensagem=conferirAfirmacao(pcp,provaPcp,raw).find(e=>e.startsWith('V2A data:'));
+      assert(mensagem,`mês ${mes} não recusado pela célula`);plantas.push({nome:'mês PCP '+mes,mensagem});
     }
-    assert.equal(dataDoPcp('31 fevereiro 2026, Assembleia da República'),null);
-    plantas.push({nome:'dia impossível no PCP',mensagem:'V2AC data: dia impossível recusado'});
+    const impossivel=Buffer.from('<p>31 fevereiro 2026, Assembleia da República</p>');
+    const recusada=conferirAfirmacao(pcp,provaPcp,impossivel).find(e=>e.startsWith('V2A data:'));
+    assert(recusada);plantas.push({nome:'dia impossível no PCP',mensagem:recusada});
     const c=[...claims.values()].find(c=>c.afirmacao),p=structuredClone(prova.rows[c.id]);
     const raw=Buffer.from(`<p>${p.excerpt} ${p.attribution_anchor}</p>`);
     p.attribution_anchor='Autor ausente do ensaio';

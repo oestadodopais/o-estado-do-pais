@@ -1,0 +1,3 @@
+PLANTA meses trocados sem motor: Expected values to be strictly equal: + actual - expected  + '2026-11-09' - '2026-10-09'          ^ 
+PLANTA meses trocados com motor: Expected values to be strictly equal: + actual - expected  + '2026-11-09' - '2026-10-09'          ^ 
+V2AD: tokens e contas conferidos nas linhas; meses com expectativas independentes.

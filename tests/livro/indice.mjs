@@ -336,7 +336,7 @@ function localizadorV2aConfere(onde, linha) {
   if (!linha || typeof linha.id !== 'string') return false;
   const id = linha.id, d = linha.document;
   const esperadoNoDocumento = id.startsWith('oe-2027-cenario-') ? `${onde}; comentário, p. 19; conclusão, p. 20`
-    : id.startsWith('oe-2027-saude-') ? `${onde}; distinção entre total e efetiva, nota, p. 145 do PDF (129 impressa)` : onde;
+    : id.startsWith('oe-2027-saude-') ? `${onde}; apoio à distinção entre total e efetiva: nota ao quadro 4.38, p. 145 do PDF (129 impressa)` : onde;
   if (!d || d.locator !== esperadoNoDocumento) return false;
   const saude = /^oe-2027-saude-despesa-(total-consolidada|efetiva-consolidada|efetiva-consolidada-sem-prr)-(2026|2027|variacao)$/.exec(id);
   if (saude) {

@@ -1,3 +1,4 @@
+import ORIGENS_V2A from './origens-v2a.json' with {type: 'json'};
 import ORIGENS_PENSAO from './pensao-rp4n.json' with {type: 'json'};
 import ORIGENS_RP4N from './origens-rp4n.json' with {type: 'json'};
 import { ORIGENS_C1C } from './origens-c1c.mjs';
@@ -1966,6 +1967,7 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
   },
   ...ORIGENS_RP1,
   ...ORIGENS_RP4N,
+  ...ORIGENS_V2A,
   ...ORIGENS_JD1,
 });
 

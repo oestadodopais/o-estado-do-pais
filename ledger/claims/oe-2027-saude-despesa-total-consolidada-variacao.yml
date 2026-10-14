@@ -20,8 +20,8 @@ source: "Ministério das Finanças"
 document:
   title: "Orçamento do Estado para 2027"
   edition: "2027"
-  locator: "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa total consolidada, Variação (%), p. 303 do PDF (287 impressa); distinção entre total e efetiva, nota, p. 145 do PDF (129 impressa)"
-  locator_en: "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated total expenditure, Change (%), p. 303 of the PDF (printed 287); distinction between total and effective expenditure, note, p. 145 of the PDF (printed 129)"
+  locator: "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa total consolidada, Variação (%), p. 303 do PDF (287 impressa); apoio à distinção entre total e efetiva: nota ao quadro 4.38, p. 145 do PDF (129 impressa)"
+  locator_en: "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated total expenditure, Change (%), p. 303 of the PDF (printed 287); supporting definition of total and effective expenditure: note to Table 4.38, p. 145 of the PDF (printed 129)"
   source_sha256: "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
   page: 303
   kind: "ficheiro"
@@ -34,7 +34,7 @@ access_date: "2026-10-13"
 reference_date: "2027"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)\n\nA despesa total efetiva exclui ativos e passivos financeiros e transferências do Orçamento do Estado para entidades com autonomia financeira. A despesa total inclui ativos e passivos financeiros e exclui transferências do Orçamento do Estado para entidades com autonomia financeira."
+excerpt: "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
 ressalva: "Previsão, não execução. Compara o orçamento de 2027 com a estimativa de 2026, incluindo PRR."
@@ -49,7 +49,7 @@ check: null
 
 study: "oe-2027"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Localizador: Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa total consolidada, Variação (%), p. 303 do PDF (287 impressa).  Previsão, não execução. O valor e a variação são os impressos na fonte. · Cruzado de ResearchHub content/15 Orcamento do Estado 2027 · oe-2027-saude-despesa-total-consolidada-variacao."
+note: "[note do motor] Localizador: Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa total consolidada, Variação (%), p. 303 do PDF (287 impressa).  Previsão, não execução. O valor e a variação são os impressos na fonte. Apoio à definição, nota ao quadro 4.38: A despesa total efetiva exclui ativos e passivos financeiros e transferências do Orçamento do Estado para entidades com autonomia financeira. A despesa total inclui ativos e passivos financeiros e exclui transferências do Orçamento do Estado para entidades com autonomia financeira. · Cruzado de ResearchHub content/15 Orcamento do Estado 2027 · oe-2027-saude-despesa-total-consolidada-variacao."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

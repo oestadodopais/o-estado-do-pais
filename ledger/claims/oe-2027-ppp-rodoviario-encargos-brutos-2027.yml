@@ -34,7 +34,7 @@ access_date: "2026-10-13"
 reference_date: "2027"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "encargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+excerpt: "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
 ressalva: "Previsão, não execução. Valores de caixa; incluem IVA quando aplicável, à taxa legal em vigor; preços constantes de 2027."

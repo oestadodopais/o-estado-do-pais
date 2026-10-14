@@ -732,3 +732,9 @@ A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recib
 | v2ac | Frases da Saúde, do cenário, do total das PPP e da RTP corrigidas | por ler | Codex gpt-6-astra: apoios na nota do relatório e nas palavras seladas. A leitura cruzada pertence à direção. |
 | v2ac | Contagens dos índices reconciliadas com o HTML construído | por ler | As frases de 3 226 voltam a estar vivas e as de 3 208 ficam retiradas; nenhuma linha do livro foi alterada. |
 | v2ac | Concordância da preposição nas três frases orçamentais da Saúde | por ler | A inspeção visual detetou «na orçamento»; a composição passou a distinguir «na estimativa» e «no orçamento», com planta própria. |
+
+## V2-a-d: cabeçalhos fixados e contas explícitas
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| v2ad | Saúde, medida da RTP e conta das parcerias | por ler | Cabeçalhos pelo mandato; períodos e contas pelos tokens das linhas. A nota financeira é citada como apoio separado. |
