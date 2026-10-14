@@ -19,6 +19,15 @@
 #   registo reduzido ou omitido é dito com o tamanho original e o conservado.
 #   O caminho parte da pasta do relatório. A falta da linha fecha a montagem;
 #   linhas-dos-portoes.json dá os números das linhas e o sha256 da origem.
+#   M83 (14.10.2026, §1.192): cada linha mudada em ledger/claims/ com `document.source_sha256` traz o seu
+#   documento alojado da cabeça do motor (PACOTE_MOTOR), copiado para motor/<caminho> e conferido pelo sha256,
+#   com o recibo do pedido e a pasta direitos/ ao lado, listado em motor/CORPOS-ALOJADOS.md; sem o corpo a
+#   montagem recusa. PACOTE_ESTUDOS="<content/estudo> ..." acrescenta pastas a percorrer quando a nota da linha
+#   não declara o estudo; PACOTE_SEM_CORPOS="<a razão, vinte caracteres ou mais>" é a única exceção, e fica
+#   escrita em SEM-CORPOS-ALOJADOS.md para o leitor a ler como Blocking. As páginas construídas das linhas
+#   mudadas entram sozinhas de dist/ quando lá estão. M83-b (14.10.2026, a leitura da V2-a-e): as linhas cujas páginas
+#   construídas se pedem ao pacote (livro-razao/<id>/index.html, en/ledger/<id>/index.html) trazem também o seu corpo,
+#   porque a frase de uma página muda pelos dados da família sem a linha mudar; o manifesto diz porquê cada linha entra.
 set -eu
 repo="$1"; base="$2"; cabeca="$3"; pacote="$4"; brief="$5"; relatorio="$6"; shift 6
 

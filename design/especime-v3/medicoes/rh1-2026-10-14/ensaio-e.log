@@ -1,0 +1,517 @@
+{
+  "passou": true,
+  "casos": [
+    {
+      "id": "e-nfc-nfd-mistos-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-nfc-nfd-mistos-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-sem-ponto-virgula-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-apos-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-entidade-ccaron-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ss-para-eszett-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-fi-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64257-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64257-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64258-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64258-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64256-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64256-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64259-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64259-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64260-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64260-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64261-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64261-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-64262-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ligatura-inversa-64262-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-eszett-para-ss-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-casefold-por-caracter-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-sigma-final-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-s-longo-latin-1-entidades-numericas",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-apos-sem-ponto-virgula-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-utf-8",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-utf-16-le",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-utf-16-be",
+      "mordeu": true
+    },
+    {
+      "id": "e-ccaron-sem-ponto-virgula-latin-1",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-cr",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-linha",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-paragrafo",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-nel",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-vt",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-ff",
+      "mordeu": true
+    },
+    {
+      "id": "e-separador-interior-rs",
+      "mordeu": true
+    },
+    {
+      "id": "e-duas-entradas-com-cr-recusadas",
+      "mordeu": true
+    },
+    {
+      "id": "e-crlf-aceite",
+      "mordeu": true
+    },
+    {
+      "id": "e-controlo-inocuo",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-nfc-nfd",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-sem-ponto-virgula",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-apos",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-ccaron",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-eszett",
+      "mordeu": true
+    },
+    {
+      "id": "regressao-e-ligatura",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-nfc-nfd",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-sem-ponto-virgula",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-apos",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-ccaron",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-eszett",
+      "mordeu": true
+    },
+    {
+      "id": "bytes-sem-descodificacao-ligatura",
+      "mordeu": true
+    },
+    {
+      "id": "detetor-cego-recusa-seis-regressoes",
+      "mordeu": true
+    },
+    {
+      "id": "colapso-prematuro-recusa-oito-plantas",
+      "mordeu": true
+    }
+  ]
+}

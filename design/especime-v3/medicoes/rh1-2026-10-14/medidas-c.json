@@ -1,0 +1,403 @@
+{
+  "cabeca": "a1f6094e0f5625b71f32f9bf2a8c488930ecd49a",
+  "pdf_seguidos": 0,
+  "plantas": {
+    "passou": true,
+    "casos": [
+      {
+        "id": "ramo-pessoal-texto",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-outra-caixa",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-binario",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-entidade-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-entidade-decimal",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-entidade-hexadecimal",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-escape-unicode",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-decisao-estrutura",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-decisao-inocua",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-1-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-1-autor",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-2-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-2-autor",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-3-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-3-autor",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-4-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-4-autor",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-5-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-5-autor",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-6-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-6-autor",
+        "mordeu": true
+      },
+      {
+        "id": "normalizacao-bom-pagina",
+        "mordeu": true
+      },
+      {
+        "id": "normalizacao-abreviada-limpa",
+        "mordeu": true
+      },
+      {
+        "id": "normalizacao-nfd-pagina",
+        "mordeu": true
+      },
+      {
+        "id": "normalizacao-formato-recusado",
+        "mordeu": true
+      },
+      {
+        "id": "interior-1",
+        "mordeu": true
+      },
+      {
+        "id": "interior-2-recusa-corrida",
+        "mordeu": true
+      },
+      {
+        "id": "interior-3-recusa-corrida",
+        "mordeu": true
+      },
+      {
+        "id": "interior-4-recusa-corrida",
+        "mordeu": true
+      },
+      {
+        "id": "interior-5-recusa-corrida",
+        "mordeu": true
+      },
+      {
+        "id": "interior-6-recusa-corrida",
+        "mordeu": true
+      },
+      {
+        "id": "linhas-crlf",
+        "mordeu": true
+      },
+      {
+        "id": "minimo-depois-de-nfc",
+        "mordeu": true
+      },
+      {
+        "id": "controlo-inocuo",
+        "mordeu": true
+      },
+      {
+        "id": "sem-entidades-nao-descodifica",
+        "mordeu": true
+      },
+      {
+        "id": "mutacao-or-and-recusa-no-portao",
+        "mordeu": true
+      },
+      {
+        "id": "mutacao-isola-cadeia",
+        "mordeu": true
+      },
+      {
+        "id": "mutacao-isola-estrutura",
+        "mordeu": true
+      },
+      {
+        "id": "mutacao-identidades-no-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "mutacao-identidades-nos-autores",
+        "mordeu": true
+      }
+    ]
+  },
+  "reproducao_b": {
+    "auditorias": [
+      {
+        "cabeca": "6c107622f6ef09510fb5ba83d31a3ae95a719019",
+        "registo_excluido": "auditoria-entrega.json",
+        "ficheiro_local_acrescentado": null,
+        "ficheiros_conferidos_antes_deste_registo": 26,
+        "confere": true
+      },
+      {
+        "cabeca": "24f4298cc42fae56ce91538f5d1f4a1e9431d529",
+        "registo_excluido": "auditoria-entrega-b.json",
+        "ficheiro_local_acrescentado": "portoes-b/alvos.json",
+        "ficheiros_conferidos_antes_deste_registo": 51,
+        "confere": true
+      }
+    ],
+    "marca_depois": {
+      "dist": {
+        "paginas_lidas": 7935,
+        "ocorrencias_literais": 0,
+        "atributos_rendidos": 0
+      },
+      "src": {
+        "ficheiros_lidos": 362,
+        "ocorrencias_literais": 1,
+        "atributos_em_tags": 0,
+        "ficheiros_com_marca": [
+          {
+            "ficheiro": "src/components/RotuloDeIA.astro",
+            "ocorrencias": 1
+          }
+        ]
+      },
+      "versao_dist": {
+        "commit": "3ad344e339841a369fdebd3771eab96e0a10e2b1",
+        "ref": "rh1-2026-10-14",
+        "env": "local",
+        "origem": "git",
+        "motivo": null,
+        "construido_em": "2026-10-14T15:59:06.074Z"
+      }
+    },
+    "alvos": {
+      "existe_na_maquina": true,
+      "bytes": 31993754,
+      "ignorado": true,
+      "seguido": false
+    },
+    "passou": true
+  },
+  "rastreado": {
+    "ficheiros": 24551,
+    "quantidade": 0,
+    "achados": [],
+    "plantas": [
+      {
+        "id": "ramo-estrutura-1-texto",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-1-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-1-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-2-texto",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-2-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-2-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-inocua",
+        "mordeu": true,
+        "mensagem": "Registo comprimido dentro do âmbito, com marcadores portáveis, lido e aceite."
+      },
+      {
+        "id": "ramo-pessoal-texto",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-outra-caixa",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-binario",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-utf-16-le",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-utf-16-be",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-latin-1",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-entidade-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-entidade-decimal",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-entidade-hexadecimal",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-escape-unicode",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-decisao-estrutura",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-decisao-inocua",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-1-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-1-autor",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-2-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-2-autor",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-3-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-3-autor",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-4-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-4-autor",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-5-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-5-autor",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-6-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-6-autor",
+        "mordeu": true
+      },
+      {
+        "id": "normalizacao-bom-pagina",
+        "mordeu": true
+      },
+      {
+        "id": "normalizacao-abreviada-limpa",
+        "mordeu": true
+      },
+      {
+        "id": "normalizacao-nfd-pagina",
+        "mordeu": true
+      },
+      {
+        "id": "normalizacao-formato-recusado",
+        "mordeu": true
+      },
+      {
+        "id": "guiao-com-casa-portavel",
+        "mordeu": true,
+        "mensagem": "Caminho relativo à casa permitido no guião."
+      }
+    ],
+    "passou": true
+  },
+  "passou": true
+}

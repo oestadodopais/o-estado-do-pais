@@ -1,0 +1,33 @@
+{
+  "tempos_inclusivos": {
+    "conferir": {
+      "chamadas": 25,
+      "segundos": 21.103603377065156
+    },
+    "medir_api": {
+      "chamadas": 1,
+      "segundos": 0.0038110840250737965
+    },
+    "medir_rastreados": {
+      "chamadas": 1,
+      "segundos": 35.211322624993045
+    },
+    "plantas_pessoais": {
+      "chamadas": 1,
+      "segundos": 2.129419083998073
+    },
+    "plantas_formas_e": {
+      "chamadas": 1,
+      "segundos": 1.7083997500012629
+    },
+    "contem_cadeias": {
+      "chamadas": 89026,
+      "segundos": 30.450624813849572
+    },
+    "formas_comparaveis": {
+      "chamadas": 89026,
+      "segundos": 2.763927745865658
+    }
+  },
+  "passou": true
+}

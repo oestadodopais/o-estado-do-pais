@@ -1,0 +1,30 @@
+{
+  "cabeca": "fbb4c19b256065a6698e5532c1f03ef78f58f300",
+  "marca": {
+    "dist": {
+      "paginas_lidas": 7935,
+      "ocorrencias_literais": 0,
+      "atributos_rendidos": 0
+    },
+    "src": {
+      "ficheiros_lidos": 362,
+      "ocorrencias_literais": 1,
+      "atributos_em_tags": 0,
+      "ficheiros_com_marca": [
+        {
+          "ficheiro": "src/components/RotuloDeIA.astro",
+          "ocorrencias": 1
+        }
+      ]
+    },
+    "versao_dist": {
+      "commit": "f694c58cb4228465d48dafa22905832c5c1ceded",
+      "ref": "rh1-2026-10-14",
+      "env": "local",
+      "origem": "git",
+      "motivo": null,
+      "construido_em": "2026-10-14T15:31:06.581Z"
+    }
+  },
+  "alvos_bytes_antes": 31993754
+}

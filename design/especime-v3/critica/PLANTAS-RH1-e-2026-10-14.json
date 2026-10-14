@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T18:45:00+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
+   "descricao": "os separadores de linha e parágrafo (Zl, Zp) deixam de recusar dentro de uma entrada: duas entradas separadas por U+2028 fundir-se-iam",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "62d2648ecc96739092752375330a0601411c73e5a7c1dcbbf7c9965e08046519",
+   "sha256_depois": "a008993c77072bc921dd58982aace3b30a9a23d1bb7edc9a4f7ab71de2d15cad",
+   "contexto_antes": "ado antes de colapsar espaços.\n    for linha, texto in enumerate((valor or '').split('\\n'), 1):\n        texto = re.sub(r'^[\\s\\ufeff]+|[\\s\\ufeff]+$', '', texto)\n        if any(unicodedata.category(c) in {'Cc', 'Cf', 'Zl', 'Zp'} and c != '\\t' for c in texto):\n            raise ValueError(f'PRIVACIDADE_PROIBIDOS: linha {linha} inválida (separador ou controlo interior).')\n        texto = re.sub(r' +', ' ', ''.join(' '",
+   "contexto_depois": "ado antes de colapsar espaços.\n    for linha, texto in enumerate((valor or '').split('\\n'), 1):\n        texto = re.sub(r'^[\\s\\ufeff]+|[\\s\\ufeff]+$', '', texto)\n        if any(unicodedata.category(c) in {'Cc', 'Cf'} and c != '\\t' for c in texto):\n            raise ValueError(f'PRIVACIDADE_PROIBIDOS: linha {linha} inválida (separador ou controlo interior).')\n        texto = re.sub(r' +', ' ', ''.join(' '"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
+   "descricao": "a entidade HTML passa a exigir o ponto e vírgula: «&eacute» sem ele deixaria de morder",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "a008993c77072bc921dd58982aace3b30a9a23d1bb7edc9a4f7ab71de2d15cad",
+   "sha256_depois": "a274b8eaf2d6e9308272da98d072dd2636093ac3d01699589a9aa75b8baacfe8",
+   "contexto_antes": "\n        try:\n            formas.append(literal(caracter))\n        except UnicodeEncodeError:\n            pass\n        for nome in entidades.get(caracter, ()):\n            formas.append(literal('&' + nome) + b'(?:' + literal(';') + b')?')\n        numero = ord(caracter)\n        for prefixo, digitos in [('&#', str(numero)), ('&#x', format(numero, 'x'))]:\n            formas.append(literal(prefixo) ",
+   "contexto_depois": "\n        try:\n            formas.append(literal(caracter))\n        except UnicodeEncodeError:\n            pass\n        for nome in entidades.get(caracter, ()):\n            formas.append(literal('&' + nome) + literal(';'))\n        numero = ord(caracter)\n        for prefixo, digitos in [('&#', str(numero)), ('&#x', format(numero, 'x'))]:\n            formas.append(literal(prefixo) "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
+   "descricao": "as equivalências de dois caracteres (ss, fi, fl) deixam de ser consideradas: só as de três",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "a274b8eaf2d6e9308272da98d072dd2636093ac3d01699589a9aa75b8baacfe8",
+   "sha256_depois": "3d61b64c058c856359f273e9d4405f9cd0279163c8b768c1c1bafcbc6713f61a",
+   "contexto_antes": ", i + 1\n        # As expansões de casefold incluem ss e as ligaturas fi, fl, ff,\n        # ffi, ffl e st. O índice inverso conserva também a direção contrária.\n        for tamanho in (2, 3):\n            trecho = texto[i:i + tamanho]\n            if len(trecho) == tamanho:\n                for c in sorted(dobradas.get(trecho, ())):\n                   ",
+   "contexto_depois": ", i + 1\n        # As expansões de casefold incluem ss e as ligaturas fi, fl, ff,\n        # ffi, ffl e st. O índice inverso conserva também a direção contrária.\n        for tamanho in (3,):\n            trecho = texto[i:i + tamanho]\n            if len(trecho) == tamanho:\n                for c in sorted(dobradas.get(trecho, ())):\n                   "
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o tempo de antes da RH1-e trocado no relatório (55,2 para 52,5): deixa de bater com o ficheiro da medição",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "21c2b06017f64c4d6bb61c57fb2334bcdb351fe86891766f9563361571da5288",
+   "sha256_depois": "24bece601d661009e54bb24c9a47d8e6ef969a19b31c05860c423d035ee2e008",
+   "contexto_antes": " corridas intermédias são conservadas, e não se atribui a diferença entre tempos a uma causa que não foi isolada.\n\n| Corrida | Segundos | Fonte |\n|---|---|---|\n| Antes da RH1-e | 55,2 | `tempo-antes-e.json` |\n| Versão intermédia da RH1-e | 67,6 | `tempo-intermedio-e.json` |\n| Primeira corrida depois de partilhar sufixos | 70,5 | `tempo-primeir",
+   "contexto_depois": " corridas intermédias são conservadas, e não se atribui a diferença entre tempos a uma causa que não foi isolada.\n\n| Corrida | Segundos | Fonte |\n|---|---|---|\n| Antes da RH1-e | 52,5 | `tempo-antes-e.json` |\n| Versão intermédia da RH1-e | 67,6 | `tempo-intermedio-e.json` |\n| Primeira corrida depois de partilhar sufixos | 70,5 | `tempo-primeir"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "scripts/check-privacidade.py",
+   "descricao": "a planta das duas entradas separadas por CR passa sempre: deixa de provar a recusa",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "20723e75630501220271e1c5edc8feece7181cfcecc6dd10791e9f46f44541f7",
+   "sha256_depois": "d036bdd16524959c25b03b8574670ed4132583f722a7ddec4525771d2afda858",
+   "contexto_antes": "oa Sintética Dois', True)\n    except ValueError as erro:\n        mordeu = 'linha 1' in str(erro) and 'Pessoa' not in str(erro)\n    else:\n        mordeu = False\n    plantas.append({'id': 'e-duas-entradas-com-cr-recusadas', 'mordeu': mordeu})\n    plantas.append({'id': 'e-crlf-aceite', 'mordeu': detetor._ler_proibidos(\n        'Pessoa Sintética Um\\r\\nPessoa Sintética Dois\\r\\n', True) ==\n        ('Pes",
+   "contexto_depois": "oa Sintética Dois', True)\n    except ValueError as erro:\n        mordeu = 'linha 1' in str(erro) and 'Pessoa' not in str(erro)\n    else:\n        mordeu = False\n    plantas.append({'id': 'e-duas-entradas-com-cr-recusadas', 'mordeu': True})\n    plantas.append({'id': 'e-crlf-aceite', 'mordeu': detetor._ler_proibidos(\n        'Pessoa Sintética Um\\r\\nPessoa Sintética Dois\\r\\n', True) ==\n        ('Pes"
+  }
+ ]
+}

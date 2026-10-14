@@ -1,0 +1,17 @@
+{
+  "comando": "python3 scripts/check-privacidade.py --prova",
+  "cabeca": "110f54b3193740bf8ca7d3215b2375de1926c545",
+  "versao_dist": {
+    "commit": "68711cddb0aaa9cfc18ee7840064a1cde6608540",
+    "ref": "rh1-2026-10-14",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-14T17:34:53.329Z"
+  },
+  "segundos": 67.62812424998265,
+  "codigo": 0,
+  "passou": true,
+  "ficheiros_dist": 14798,
+  "ficheiros_seguidos": 24619
+}

@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T16:35:55+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "scripts/leituras/pacote.py",
+   "descricao": "a expressão das páginas de linha perde as páginas inglesas: uma página en/ledger pedida deixaria de trazer o corpo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "74c5287aa5ec452509109a5dfe2c71043b57d185042e42b8291993abe29de297",
+   "sha256_depois": "88c5295a9781affe7a39f95d92a7ed81ebab7344cf05652a50332a47336192b2",
+   "contexto_antes": "null.')\n\n\nESTUDO_DA_NOTA = re.compile(r'Cruzado de ResearchHub (content/[^·\"\\n]+?)\\s*·')\n\n\ndef sha256_de(dados):\n    return hashlib.sha256(dados).hexdigest()\n\n\nPAGINA_DE_LINHA = re.compile(r'^(?:livro-razao|en/ledger)/([^/]+)/index\\.html$')\n\n\ndef linhas_com_corpos(repo, cabeca, mudados, pedidas=()):\n    \"\"\"As linhas do livro-razão que o pacote leva: {id: (sha256 do documento ou None, estudo da not",
+   "contexto_depois": "null.')\n\n\nESTUDO_DA_NOTA = re.compile(r'Cruzado de ResearchHub (content/[^·\"\\n]+?)\\s*·')\n\n\ndef sha256_de(dados):\n    return hashlib.sha256(dados).hexdigest()\n\n\nPAGINA_DE_LINHA = re.compile(r'^(?:livro-razao)/([^/]+)/index\\.html$')\n\n\ndef linhas_com_corpos(repo, cabeca, mudados, pedidas=()):\n    \"\"\"As linhas do livro-razão que o pacote leva: {id: (sha256 do documento ou None, estudo da not"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "scripts/leituras/pacote.py",
+   "descricao": "o motivo de uma página pedida rotulado como linha mudada: o manifesto mentiria sobre porquê a linha entra",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "88c5295a9781affe7a39f95d92a7ed81ebab7344cf05652a50332a47336192b2",
+   "sha256_depois": "654c9573eaf5f2443f7c4f429a721d06486bb35ab7a03af40e6e96d47d9fccd6",
+   "contexto_antes": "       linhas[ident] = (*linhas[ident][:2], 'linha mudada e página pedida')\n            continue\n        f = f'ledger/claims/{ident}.yml'\n        if existe(f):\n            linhas[ident] = (*ler(f), 'página pedida')\n    return linhas\n\n\ndef indice_dos_corpos(repo, cabeca, motor, cabeca_motor, estudos, precisos):\n    \"\"\"sha256 -> (caminho no motor, origem da resolução), para",
+   "contexto_depois": "       linhas[ident] = (*linhas[ident][:2], 'linha mudada e página pedida')\n            continue\n        f = f'ledger/claims/{ident}.yml'\n        if existe(f):\n            linhas[ident] = (*ler(f), 'linha mudada')\n    return linhas\n\n\ndef indice_dos_corpos(repo, cabeca, motor, cabeca_motor, estudos, precisos):\n    \"\"\"sha256 -> (caminho no motor, origem da resolução), para"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "tests/leituras/pacote.py",
+   "descricao": "a afirmação do caso novo enfraquecida (a lista exata passa a pertença): outras linhas a mais no manifesto passariam",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "1540f266e289ef5d607144d631edeeeafe5df455190156060696d2a5a81abe1e",
+   "sha256_depois": "ae635078b710fb106ed8c5159b3879caa807d9996ca0a4258686b53b3c4e4fff",
+   "contexto_antes": "r l in mp['linhas']}\n    exige('M83-b: a página pedida de uma linha que não mudou traz o corpo dela, byte a byte, e o manifesto diz «página pedida»',\n          r.returncode == 0 and list(lp) == ['linha-sintetica'] and lp['linha-sintetica']['estado'] == 'copiado' and lp['linha-sintetica']['motivo'] == 'página pedida'\n          and (so_frase/'motor'/pasta_corpo/'corpo-alojado.txt').read_text() == corpo\n          and '| c",
+   "contexto_depois": "r l in mp['linhas']}\n    exige('M83-b: a página pedida de uma linha que não mudou traz o corpo dela, byte a byte, e o manifesto diz «página pedida»',\n          r.returncode == 0 and 'linha-sintetica' in lp and lp['linha-sintetica']['estado'] == 'copiado' and lp['linha-sintetica']['motivo'] == 'página pedida'\n          and (so_frase/'motor'/pasta_corpo/'corpo-alojado.txt').read_text() == corpo\n          and '| c"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "scripts/leituras/PROMPT-comum.md",
+   "descricao": "o prompt do leitor diz que a página pedida só traz o corpo se a linha também mudou, ao contrário do guião",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "0627403dd0802d2b3bcdfe7fab242e91a6d10e243bd7ec24cf98b05b439e1aa4",
+   "sha256_depois": "14b5bea3a9159b8866b98af79f74fcb43fa8bcf32df6007c929807bc166761d9",
+   "contexto_antes": "e package script copies, for every ledger row the block changes that declares a `document.source_sha256`, and for every row whose built page the editorial seat asked the package to carry (a page's sentence can change through the family data without the row changing), the hosted document the row cites, from the engine's head into `motor/<path>`, verified byte for byte agains",
+   "contexto_depois": "e package script copies, for every ledger row the block changes that declares a `document.source_sha256`, and for every row whose built page the editorial seat asked the package to carry, when that row also changed in the interval (a page's sentence can change through the family data without the row changing), the hosted document the row cites, from the engine's head into `motor/<path>`, verified byte for byte agains"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem dos casos do ensaio trocada na nota (46 para 45): a nota deixa de bater com o JSON do ensaio",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "30df737f4d8971cad2da021bf5023955b30afee1405b67f049b612240ca2c6e5",
+   "sha256_depois": "7f7a791881382e07f397ee9f1e03619e08fc3146aa341ea9c43fa14340c1adf7",
+   "contexto_antes": "6` ilegível ou repetido continuam a recusar antes de criar a pasta.\n\n**A medida.** O ensaio do guião (`tests/leituras/pacote.py`, corrido por `check:leituras`) ganha quatro casos e passa a 46, nenhum falhado (`design/especime-v3/medicoes/m83-2026-10-14/teste-pacote-b.json`, escrito por `python3 tests/leituras/pacote.py --json <pasta>/teste-pacote-b.json`): o manife",
+   "contexto_depois": "6` ilegível ou repetido continuam a recusar antes de criar a pasta.\n\n**A medida.** O ensaio do guião (`tests/leituras/pacote.py`, corrido por `check:leituras`) ganha quatro casos e passa a 45, nenhum falhado (`design/especime-v3/medicoes/m83-2026-10-14/teste-pacote-b.json`, escrito por `python3 tests/leituras/pacote.py --json <pasta>/teste-pacote-b.json`): o manife"
+  }
+ ]
+}

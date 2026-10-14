@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T17:05:41+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
+   "descricao": "a marca de ordem de bytes deixa de ser tirada do início da linha do segredo: o caso que o Major 6 descreveu",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "8aab57be61818bc1fd73a7fb7c05d94d1ef2fa3b1a01174d8bfe5aae5931777e",
+   "sha256_depois": "4dc35cc327ee98633a36e5acb11613f614bf6c7939663c6a5ce7e795a0c6160b",
+   "contexto_antes": " Outros separadores\n    # interiores têm de ser recusados, sem criarem novas entradas válidas.\n    for linha, texto in enumerate((valor or '').split('\\n'), 1):\n        texto = re.sub(r'^[\\s\\ufeff]+|[\\s\\ufeff]+$', '', texto)\n        texto = unicodedata.normalize('NFC', texto)\n        if not texto:\n            continue\n        if (len(texto) < 4 or texto.casefold() in identidades or",
+   "contexto_depois": " Outros separadores\n    # interiores têm de ser recusados, sem criarem novas entradas válidas.\n    for linha, texto in enumerate((valor or '').split('\\n'), 1):\n        texto = re.sub(r'^[\\s]+|[\\s\\ufeff]+$', '', texto)\n        texto = unicodedata.normalize('NFC', texto)\n        if not texto:\n            continue\n        if (len(texto) < 4 or texto.casefold() in identidades or"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
+   "descricao": "só a primeira forma binária é comparada: as formas UTF-16 e Latin-1 deixariam de morder",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "4dc35cc327ee98633a36e5acb11613f614bf6c7939663c6a5ce7e795a0c6160b",
+   "sha256_depois": "6b58875ae13dd6ef128d56679e055544e58e0fc5a39313a98cb4b753ff930e31",
+   "contexto_antes": "def contem_cadeias(corpo, cadeias):\n    textos, binarios = formas_comparaveis(tuple(cadeias))\n    if not textos:\n        return False\n    baixo = corpo.lower()\n    if any(c in baixo for c in binarios):\n        return True\n    texto = corpo.decode('utf-8', errors='replace')\n    if '&' in texto:\n        texto = html.unescape(texto)\n    if '\\\\u' in texto:\n      ",
+   "contexto_depois": "def contem_cadeias(corpo, cadeias):\n    textos, binarios = formas_comparaveis(tuple(cadeias))\n    if not textos:\n        return False\n    baixo = corpo.lower()\n    if any(c in baixo for c in binarios[:1]):\n        return True\n    texto = corpo.decode('utf-8', errors='replace')\n    if '&' in texto:\n        texto = html.unescape(texto)\n    if '\\\\u' in texto:\n      "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "scripts/check-privacidade.py",
+   "descricao": "a planta da exclusão das identidades nos autores passa sempre: deixa de provar a exclusão",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "4159d5af42f66750cf4d9038a0ad2f780b7bba77f7dc9eaf440828fc63878732",
+   "sha256_depois": "09433d5fa7233d4b3443a26b691c47cf887b87a3aa11f0f3469ce1748435555a",
+   "contexto_antes": "t', return_value=identidade):\n            # Percorre a função real sem usar nem alterar a cache dos autores.\n            autores = detetor._nomes_dos_autores()\n        plantas.append({'id': f'identidade-{i}-autor', 'mordeu': not autores})\n    return plantas\n\n\ndef plantas_normalizacao():\n    from unittest.mock import patch\n    import unicodedata\n    inteiro = 'Pessoa ' + 'Sintética ' + 'Exemplo'\n",
+   "contexto_depois": "t', return_value=identidade):\n            # Percorre a função real sem usar nem alterar a cache dos autores.\n            autores = detetor._nomes_dos_autores()\n        plantas.append({'id': f'identidade-{i}-autor', 'mordeu': True})\n    return plantas\n\n\ndef plantas_normalizacao():\n    from unittest.mock import patch\n    import unicodedata\n    inteiro = 'Pessoa ' + 'Sintética ' + 'Exemplo'\n"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "tests/leituras/privacidade-rh1c.py",
+   "descricao": "a prova da mutação or/and tornada vazia: o teste deixaria de provar que a mutação se vê no portão",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ff9e423535cc39f4b14e51d0b9724d9909868a1b684bd01e2b6827af00fbe4da",
+   "sha256_depois": "69317dae7a5b413dc2cae049bddb2e4c687eafec223a8991f228cb661ffce590",
+   "contexto_antes": " '), '<mutacao-sintetica>', 'exec'), espaco)\n    with patch.object(g, 'recusar_rastreado', espaco['recusar_rastreado']):\n        plantas = g.plantas_pessoais()\n        provar('mutacao-or-and-recusa-no-portao', not all(p['mordeu'] for p in plantas))\n        provar('mutacao-isola-cadeia', not next(p['mordeu'] for p in plantas if p['id'] == 'ramo-pessoal-texto'))\n        provar('mutacao-isola-estrutura', not",
+   "contexto_depois": " '), '<mutacao-sintetica>', 'exec'), espaco)\n    with patch.object(g, 'recusar_rastreado', espaco['recusar_rastreado']):\n        plantas = g.plantas_pessoais()\n        provar('mutacao-or-and-recusa-no-portao', True)\n        provar('mutacao-isola-cadeia', not next(p['mordeu'] for p in plantas if p['id'] == 'ramo-pessoal-texto'))\n        provar('mutacao-isola-estrutura', not"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem das plantas do ensaio RH1-c trocada no relatório (45 para 44): o relatório deixa de bater com medidas-c.json",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "2e261e707a44eda04d258838e3ca48d4f2ee1e2e20b58a83060fcecc0c5141d0",
+   "sha256_depois": "2e2744b7c6dfcd43921c6e738c3cc0788226c28e06b9842a6323ebfa1b393007",
+   "contexto_antes": " financiador. Esta passagem não criou nem confirmou esse segredo de produção, e não atribui proteção antecipada a uma cadeia que ainda não esteja configurada.\n\nAs 45 plantas do ensaio RH1-c passaram. Incluem as plantas em memória do portão, a recusa da corrida por caracteres interiores inválidos, CRLF, o mínimo depois de NFC, a ausência de descodificação d",
+   "contexto_depois": " financiador. Esta passagem não criou nem confirmou esse segredo de produção, e não atribui proteção antecipada a uma cadeia que ainda não esteja configurada.\n\nAs 44 plantas do ensaio RH1-c passaram. Incluem as plantas em memória do portão, a recusa da corrida por caracteres interiores inválidos, CRLF, o mínimo depois de NFC, a ausência de descodificação d"
+  }
+ ]
+}

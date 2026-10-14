@@ -2,12 +2,14 @@
 """Mede a entrega C1 a partir dos ficheiros e do Git, sem inventar resultados."""
 import datetime as dt
 import hashlib
+import html
 import json
 import os
 import re
 from pathlib import Path
 import subprocess
 import tempfile
+import unicodedata
 from functools import lru_cache
 
 AQUI = Path(__file__).resolve().parent
@@ -30,6 +32,216 @@ CONTAS_GENERICAS = frozenset({'runner'})
 # A raiz e os diretórios comuns de contas não identificam uma pessoa.
 PASTAS_GENERICAS = frozenset(Path('/') / n for n in ('', 'Users', 'home'))
 
+# RH1: identidades públicas, mesmo depois de reescritos os autores do Git.
+IDENTIDADES_DO_PROJETO = frozenset({
+    'O Estado do País', 'Corredor diário', 'o financiador',
+    'correcoes@oestadodopais.pt', 'corredor@oestadodopais.pt', 'oestadodopais',
+})
+
+
+def carregar_proibidos_locais():
+    """Só os pontos de entrada locais leem o ficheiro; importar não o lê."""
+    if 'PRIVACIDADE_PROIBIDOS' not in os.environ and not em_ci():
+        ficheiro = Path.home() / '.config/oestadodopais/proibidos.txt'
+        if ficheiro.is_file():
+            os.environ['PRIVACIDADE_PROIBIDOS'] = ficheiro.read_text(encoding='utf-8')
+
+
+def em_ci():
+    return 'GITHUB_ACTIONS' in os.environ or 'CI' in os.environ
+
+
+@lru_cache(maxsize=16)
+def _ler_proibidos(valor, ci):
+    cadeias = []
+    identidades = {n.casefold() for n in IDENTIDADES_DO_PROJETO}
+    # Só LF separa entradas. Retiram-se os extremos, incluindo CR de CRLF,
+    # mas um separador interior tem de ser recusado antes de colapsar espaços.
+    for linha, texto in enumerate((valor or '').split('\n'), 1):
+        texto = re.sub(r'^[\s\ufeff]+|[\s\ufeff]+$', '', texto)
+        if any(unicodedata.category(c) in {'Cc', 'Cf', 'Zl', 'Zp'} and c != '\t' for c in texto):
+            raise ValueError(f'PRIVACIDADE_PROIBIDOS: linha {linha} inválida (separador ou controlo interior).')
+        texto = re.sub(r' +', ' ', ''.join(' ' if c == '\t' or unicodedata.category(c) == 'Zs' else c for c in texto))
+        texto = unicodedata.normalize('NFC', texto)
+        if not texto:
+            continue
+        if (len(texto) < 4 or texto.casefold() in identidades or
+                any(unicodedata.category(c) in {'Cc', 'Cf', 'Zl', 'Zp'} for c in texto)):
+            raise ValueError(f'PRIVACIDADE_PROIBIDOS: linha {linha} inválida (formato, curta ou identidade do projeto).')
+        try:
+            cadeias.append(texto.encode('utf-8'))
+        except UnicodeEncodeError:
+            raise ValueError(f'PRIVACIDADE_PROIBIDOS: linha {linha} inválida (UTF-8).') from None
+    if ci and not cadeias:
+        raise ValueError('O segredo PRIVACIDADE_PROIBIDOS tem de existir no repositório (§1.192) e não pode estar vazio.')
+    return tuple(cadeias)
+
+
+def ler_proibidos():
+    return _ler_proibidos(os.environ.get('PRIVACIDADE_PROIBIDOS'), em_ci())
+
+
+def nome_da_casa():
+    nome = Path.home().name
+    excluidos = CONTAS_GENERICAS | {n.casefold() for n in IDENTIDADES_DO_PROJETO}
+    return nome.encode() if len(nome) >= 6 and nome.casefold() not in excluidos else b''
+
+
+def cadeias_pessoais():
+    return tuple(dict.fromkeys(formas_dos_nomes(ler_proibidos() + nomes_dos_autores()) +
+                              ((nome_da_casa(),) if nome_da_casa() else ())))
+
+
+def formas_dos_nomes(cadeias):
+    """RH1-b: conserva a forma inteira e a abreviada da guarda da §1.138."""
+    formas = list(cadeias)
+    for cadeia in cadeias:
+        partes = cadeia.decode('utf-8').split()
+        if len(partes) > 2:
+            curta = partes[0] + ' ' + partes[-1]
+            if len(curta) >= 4 and curta.casefold() not in {n.casefold() for n in IDENTIDADES_DO_PROJETO}:
+                formas.append(curta.encode('utf-8'))
+    return tuple(dict.fromkeys(formas))
+
+
+@lru_cache(maxsize=1)
+def equivalencias_unicode():
+    """Índices inversos de HTML5 e casefold, calculados apenas para as cadeias."""
+    entidades, dobradas = {}, {}
+    for nome, valor in html.entities.html5.items():
+        entidades.setdefault(valor, set()).add(nome.rstrip(';'))
+    for numero in range(0x110000):
+        c = chr(numero)
+        if c.casefold() != c.lower():
+            chave = unicodedata.normalize('NFC', c.casefold())
+            dobradas.setdefault(chave, set()).add(c)
+    return entidades, dobradas
+
+
+@lru_cache(maxsize=64)
+def formas_comparaveis(cadeias):
+    """Compila as formas uma vez; nenhum corpo de ficheiro é descodificado."""
+    entidades, dobradas = equivalencias_unicode()
+
+    def alternativa(partes):
+        partes = sorted(set(partes), key=lambda p: (-len(p), p))
+        return partes[0] if len(partes) == 1 else b'(?:' + b'|'.join(partes) + b')'
+
+    @lru_cache(maxsize=None)
+    def basicas(caracter, codificacao):
+        def literal(texto):
+            return re.escape(texto.encode(codificacao).lower())
+
+        formas = []
+        try:
+            formas.append(literal(caracter))
+        except UnicodeEncodeError:
+            pass
+        for nome in entidades.get(caracter, ()):
+            formas.append(literal('&' + nome) + b'(?:' + literal(';') + b')?')
+        numero = ord(caracter)
+        for prefixo, digitos in [('&#', str(numero)), ('&#x', format(numero, 'x'))]:
+            formas.append(literal(prefixo) + b'(?:' + literal('0') + b')*' + literal(digitos) + b'(?:' + literal(';') + b')?')
+        if numero <= 0xffff:
+            formas.append(literal('\\u' + format(numero, '04x')))
+        else:
+            par = caracter.encode('utf-16-be')
+            formas.append(literal(''.join('\\u' + format(int.from_bytes(par[i:i+2], 'big'), '04x') for i in (0, 2))))
+        return tuple(formas)
+
+    @lru_cache(maxsize=None)
+    def representacoes(caracter, codificacao):
+        valores = set(espacos_unicode()) if caracter == ' ' else {caracter} | dobradas.get(caracter, set())
+        valores = {forma for c in valores for forma in (c, c.lower(), c.upper(), c.casefold())}
+        valores |= {unicodedata.normalize(n, v) for v in valores for n in ('NFC', 'NFD')}
+        formas = []
+        for valor in valores:
+            # Cada carácter pode escolher NFC, NFD, entidade ou escape sem
+            # impor a mesma escolha aos outros caracteres do nome.
+            resto = b''.join(alternativa(basicas(c, codificacao)) for c in valor[1:])
+            formas.extend(primeira + resto for primeira in basicas(valor[0], codificacao))
+        return tuple(formas)
+
+    @lru_cache(maxsize=None)
+    def atomo(caracter, codificacao):
+        padrao = alternativa(representacoes(caracter, codificacao))
+        return b'(?:' + padrao + b')+' if caracter == ' ' else padrao
+
+    def opcoes(texto, i):
+        yield texto[i], i + 1
+        # As expansões de casefold incluem ss e as ligaturas fi, fl, ff,
+        # ffi, ffl e st. O índice inverso conserva também a direção contrária.
+        for tamanho in (2, 3):
+            trecho = texto[i:i + tamanho]
+            if len(trecho) == tamanho:
+                for c in sorted(dobradas.get(trecho, ())):
+                    yield c, i + tamanho
+
+    def inserir(ramo, texto, i, codificacao):
+        if i == len(texto):
+            ramo[None] = {}
+        else:
+            for c, seguinte in opcoes(texto, i):
+                inserir(ramo.setdefault(atomo(c, codificacao), {}), texto, seguinte, codificacao)
+
+    arvore = {}
+    for cadeia in cadeias:
+        texto = unicodedata.normalize('NFC', ' '.join(cadeia.decode('utf-8').split()).casefold())
+        if not texto:
+            continue
+        for codificacao in ('utf-8', 'utf-16-le', 'utf-16-be', 'latin-1'):
+            for c, seguinte in opcoes(texto, 0):
+                for primeira in representacoes(c, codificacao):
+                    # O primeiro byte literal permite saltar os bytes que não
+                    # iniciam nomes, mesmo nas representações de vários bytes.
+                    tamanho = 2 if primeira.startswith(b'\\') else 1
+                    ramo = arvore.setdefault(primeira[:tamanho], {})
+                    if primeira[tamanho:]:
+                        ramo = ramo.setdefault(primeira[tamanho:], {})
+                    inserir(ramo, texto, seguinte, codificacao)
+
+    def compilar(ramo):
+        caminhos = [(atomo,) + compilar(filhos) for atomo, filhos in ramo.items() if atomo is not None]
+        if None in ramo:
+            caminhos.append(())
+        if len(caminhos) == 1:
+            return caminhos[0]
+        # Duas grafias que convergem na mesma posição partilham o sufixo.
+        # Sem esta fatorização, cada ss ou ligatura repetiria o resto do nome
+        # e multiplicaria o trabalho do compilador da expressão regular.
+        comuns = 0
+        for i in range(1, min(map(len, caminhos)) + 1):
+            if any(c[-i] != caminhos[0][-i] for c in caminhos[1:]):
+                break
+            comuns = i
+        sufixo = caminhos[0][-comuns:] if comuns else ()
+        prefixos = [b''.join(c[:-comuns] if comuns else c) for c in caminhos]
+        return (alternativa(prefixos),) + sufixo
+
+    return re.compile(b''.join(compilar(arvore)) if arvore else rb'(?!)')
+
+
+
+@lru_cache(maxsize=1)
+def espacos_unicode():
+    return tuple(chr(n) for n in range(0x110000) if chr(n).isspace())
+
+
+def contem_cadeias(corpo, cadeias):
+    if not cadeias:
+        return False
+    # Uma pesquisa com todas as alternativas, sobre uma única cópia em bytes
+    # minúsculos. As maiúsculas não ASCII estão nas alternativas compiladas.
+    return formas_comparaveis(tuple(cadeias)).search(corpo.lower()) is not None
+
+
+def positivos_de_nome():
+    nomes = nomes_dos_autores()
+    if nomes:
+        return nomes
+    segredo = ler_proibidos()
+    return segredo[:1] or ((nome_da_casa(),) if nome_da_casa() else ())
+
 def proibidos(pasta=None):
     pasta = Path.home() if pasta is None else Path(pasta)
     caminhos = []
@@ -38,7 +250,7 @@ def proibidos(pasta=None):
     if pasta.parent not in PASTAS_GENERICAS:
         caminhos.append((str(pasta.parent).rstrip('/') + '/').encode())
     nome = pasta.name.lower()
-    if len(nome) >= 6 and nome not in CONTAS_GENERICAS:
+    if len(nome) >= 6 and nome not in CONTAS_GENERICAS and nome.casefold() not in {n.casefold() for n in IDENTIDADES_DO_PROJETO}:
         caminhos.append(nome.encode())
     return caminhos + [
         (('/private' + '/' + 'var/folders') + '/').encode(),
@@ -47,16 +259,23 @@ def proibidos(pasta=None):
 # Caminhos absolutos do sistema, também fora da pasta pessoal e do repositório.
 ABSOLUTO = re.compile(rb'(?<![A-Za-z0-9:/])/(?:opt|usr|Library|Applications|System|Volumes|var|private|etc|bin|sbin|home|root|Users|tmp)/[^\s"<>`\x1b]+')
 
-@lru_cache(maxsize=1)
-def nomes_dos_autores():
-    nomes = git('log', '--format=%an', f'{BASE}..HEAD').splitlines()
+def _nomes_dos_autores():
+    base_existe = subprocess.run(['git', 'cat-file', '-e', BASE], cwd=RAIZ,
+                                capture_output=True).returncode == 0
+    nomes = git('log', '--format=%an', f'{BASE}..HEAD' if base_existe else 'HEAD').splitlines()
     # Os nomes retirados do inventário vêm do Git, nunca de uma lista pessoal.
-    inventario = git('show', f'{BASE}:design/especime-v3/INVENTARIO-FRASES.md')
+    inventario = git('show', f'{BASE}:design/especime-v3/INVENTARIO-FRASES.md') if base_existe else ''
     nomes.extend(re.findall(r'(?:responsável editorial:|editorial responsibility:|Diretor:|Director:) ([^|·\n]+)', inventario))
     return tuple(sorted({n.strip().encode() for n in nomes if n.strip() and
+                         n.strip().casefold() not in {x.casefold() for x in IDENTIDADES_DO_PROJETO} and
                          not any(x in n.lower() for x in ('codex', 'claude', 'bot', 'openai'))}))
 
+
+nomes_dos_autores = lru_cache(maxsize=1)(_nomes_dos_autores)
+
+
 def tem_caminho(b):
+    pessoais = contem_cadeias(b, cadeias_pessoais())
     # Estes dois nomes de intérpretes são portáveis, não caminhos desta máquina.
     b = b.replace(('/' + 'usr/bin/env').encode(), b'<interprete portavel>').replace(('/' + 'bin/sh').encode(), b'<interprete portavel>')
     # São ligações relativas da navegação do BCE nos corpos alojados. A
@@ -66,7 +285,7 @@ def tem_caminho(b):
     anfitriao = re.search(rb'\b[a-z0-9_-]*(?:macbook|imac|mac-mini|macmini)[a-z0-9_.-]*\.local\b', b, re.I)
     return (bool(anfitriao or ABSOLUTO.search(sem_navegacao))
             or any(x.lower() in (sem_navegacao if x.startswith(b'/') else b).lower() for x in proibidos())
-            or any(x.lower() in b.lower() for x in nomes_dos_autores()))
+            or pessoais)
 
 def medir_caminhos():
     erros, total, historia = [], 0, 0
@@ -137,6 +356,8 @@ def commits(repo, base):
     return [{'hash': l.split(' ', 1)[0], 'assunto': l.split(' ', 1)[1]} for l in git('log', '--reverse', '--format=%H %s', f'{base}..HEAD', cwd=repo).splitlines()]
 
 def main():
+    carregar_proibidos_locais()
+    ler_proibidos()
     portoes = {}
     for nome in ['build', 'verify', 'typecheck']:
         p = AQUI / 'portoes' / nome

@@ -1,0 +1,217 @@
+{
+  "cabeca": "e94cda066090def21ff7b5f36326a24bb1ac659e",
+  "marca": {
+    "dist": {
+      "paginas_lidas": 7935,
+      "ocorrencias_literais": 0,
+      "atributos_rendidos": 0
+    },
+    "src": {
+      "ficheiros_lidos": 362,
+      "ocorrencias_literais": 1,
+      "atributos_em_tags": 0,
+      "ficheiros_com_marca": [
+        {
+          "ficheiro": "src/components/RotuloDeIA.astro",
+          "ocorrencias": 1
+        }
+      ]
+    },
+    "versao_dist": {
+      "commit": "f694c58cb4228465d48dafa22905832c5c1ceded",
+      "ref": "rh1-2026-10-14",
+      "env": "local",
+      "origem": "git",
+      "motivo": null,
+      "construido_em": "2026-10-14T15:31:06.581Z"
+    }
+  },
+  "plantas": {
+    "passou": true,
+    "casos": [
+      {
+        "id": "transferida-nome-inteiro",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-documento-alojado-for-abreviado",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-documento-alojado-en",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-atributo",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-json-ld",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-rotulo",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-regra-do-metodo",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-m5-pagina-com-comentario",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-m5-vista",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-fonte-publica",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-controlo-publico",
+        "mordeu": true
+      },
+      {
+        "id": "detetor-cego-recusa-as-plantas",
+        "mordeu": true
+      },
+      {
+        "id": "repositorio-limpo",
+        "mordeu": true
+      },
+      {
+        "id": "corrida-dist/estudos/ensaio/documento/index.html",
+        "mordeu": true
+      },
+      {
+        "id": "json-sem-cadeias-dist/estudos/ensaio/documento/index.html",
+        "mordeu": true
+      },
+      {
+        "id": "corrida-dist/en/studies/ensaio/document/index.html",
+        "mordeu": true
+      },
+      {
+        "id": "json-sem-cadeias-dist/en/studies/ensaio/document/index.html",
+        "mordeu": true
+      },
+      {
+        "id": "corrida-dist/sobre/index.html",
+        "mordeu": true
+      },
+      {
+        "id": "json-sem-cadeias-dist/sobre/index.html",
+        "mordeu": true
+      },
+      {
+        "id": "corrida-dist/metodo/index.html",
+        "mordeu": true
+      },
+      {
+        "id": "json-sem-cadeias-dist/metodo/index.html",
+        "mordeu": true
+      },
+      {
+        "id": "corrida-src/views/Ensaio.astro",
+        "mordeu": true
+      },
+      {
+        "id": "json-sem-cadeias-src/views/Ensaio.astro",
+        "mordeu": true
+      },
+      {
+        "id": "reposicao-limpa",
+        "mordeu": true
+      },
+      {
+        "id": "forma-abreviada-do-git",
+        "mordeu": true
+      },
+      {
+        "id": "saida-recusa-forma-abreviada",
+        "mordeu": true
+      },
+      {
+        "id": "oraculo-sem-campos-pessoais",
+        "mordeu": true
+      },
+      {
+        "id": "alvos-ignorados",
+        "mordeu": true
+      },
+      {
+        "id": "regra-dos-alvos-limitada-as-medicoes",
+        "mordeu": true
+      }
+    ]
+  },
+  "rastreado": {
+    "ficheiros": 24522,
+    "quantidade": 0,
+    "achados": [],
+    "plantas": [
+      {
+        "id": "ramo-estrutura-1-texto",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-1-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-1-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-2-texto",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-2-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-2-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-inocua",
+        "mordeu": true,
+        "mensagem": "Registo comprimido dentro do âmbito, com marcadores portáveis, lido e aceite."
+      },
+      {
+        "id": "ramo-pessoal-texto",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-outra-caixa",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-binario",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-identidades-do-projeto",
+        "mordeu": true
+      },
+      {
+        "id": "guiao-com-casa-portavel",
+        "mordeu": true,
+        "mensagem": "Caminho relativo à casa permitido no guião."
+      }
+    ],
+    "passou": true
+  },
+  "passou": true
+}

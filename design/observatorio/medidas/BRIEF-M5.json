@@ -59,18 +59,18 @@
     {
       "nome": "ocorrencias_do_nome_de_quem_responde_em_src_e_public",
       "valor": 0,
-      "comando": "grep -rohF \"$(python3 -c \"import json;print(json.load(open('scripts/textos-aprovados.json'))['responsavel'])\")\" src/ public/ | wc -l",
+      "comando": "python3 design/observatorio/medidas/BRIEF-M5.py · conta as fontes privadas em src/ e public/",
       "conhecido_positivo": {
-        "o_que": "o MESMO contador encontra uma ocorrência numa linha construída no momento com o nome lido do oráculo",
+        "o_que": "o MESMO contador encontra uma ocorrência numa linha construída no momento com um nome sintético",
         "encontrado": true
       }
     },
     {
       "nome": "exportacoes_de_politica_ia_com_o_nome_de_quem_responde",
       "valor": 0,
-      "comando": "python3 -c \"import json,re;n=json.load(open('scripts/textos-aprovados.json'))['responsavel'];print(sum(1 for _,v in re.findall(r'^export const (\\\\w+)\\\\s*=\\\\s*(.*)$', open('src/data/politica-ia.mjs').read(), re.M) if n in v))\"",
+      "comando": "python3 design/observatorio/medidas/BRIEF-M5.py · conta exportações com cadeias privadas",
       "conhecido_positivo": {
-        "o_que": "o MESMO predicado, sobre uma linha `export const …` construída no momento com o nome lido do oráculo, conta uma exportação",
+        "o_que": "o MESMO predicado, sobre uma linha `export const …` construída no momento com um nome sintético, conta uma exportação",
         "encontrado": true
       }
     }

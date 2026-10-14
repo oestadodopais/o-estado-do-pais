@@ -1,0 +1,1 @@
+[{"fase": "d", "compilar": 0.1860095000010915, "procurar": 0.09697162499651313, "tamanho_padrao": 375080, "limpo": true}, {"fase": "e-intermedio", "compilar": 0.2981718329829164, "procurar": 0.09598425001604483, "tamanho_padrao": 441286, "limpo": true}, {"fase": "e-atual", "compilar": 0.2316262079984881, "procurar": 0.0982440419611521, "tamanho_padrao": 328762, "limpo": true}]

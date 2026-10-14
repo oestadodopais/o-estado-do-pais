@@ -1,0 +1,21 @@
+plantas_formas_e chamadas 1 proprio 0.0002 acumulado 31.2803
+recusar_rastreado chamadas 105 proprio 0.0001 acumulado 31.2795
+tem_cadeia_pessoal chamadas 105 proprio 0.0002 acumulado 31.2793
+<genexpr> chamadas 212 proprio 0.0001 acumulado 31.279
+contem_cadeias chamadas 211 proprio 0.0033 acumulado 31.279
+formas_comparaveis chamadas 23 proprio 0.0019 acumulado 31.2749
+_compile chamadas 51 proprio 0.2055 acumulado 30.3694
+compile chamadas 23 proprio 0.0 acumulado 30.3692
+compile chamadas 16 proprio 0.0001 acumulado 30.1637
+parse chamadas 16 proprio 0.0001 acumulado 20.9614
+_parse_sub chamadas 1127324 proprio 1.4574 acumulado 20.961
+_parse chamadas 1969901 proprio 9.5408 acumulado 20.961
+_code chamadas 16 proprio 0.0001 acumulado 9.1647
+_compile chamadas 1969905 proprio 3.6375 acumulado 7.0305
+__getitem__ chamadas 26895218 proprio 2.9378 acumulado 4.17
+_compile_info chamadas 16 proprio 0.0001 acumulado 2.1342
+getwidth chamadas 1969905 proprio 1.8911 acumulado 2.1337
+get chamadas 11359047 proprio 1.3105 acumulado 2.0456
+<method 'append' of 'list' objects> chamadas 36494651 proprio 1.6902 acumulado 1.6902
+append chamadas 9372936 proprio 1.0215 acumulado 1.5307
+passou True
