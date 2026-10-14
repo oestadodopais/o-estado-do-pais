@@ -30,11 +30,12 @@ seguinte e obrigava a reescrever o §0 de um brief antigo, que é o que a regra 
 do M5 proíbe. Por isso as contagens de briefs são ancoradas na data do brief
 («até 22.09.2026») e as outras são invariantes que um portão já protege.
 
-O NOME DE QUEM RESPONDE não se escreve aqui: lê-se do oráculo do portão,
-`scripts/textos-aprovados.json`, que é o único sítio do repositório onde ele
-mora desde 22.09.2026 (M5).
+RH1-b, 14.10.2026: os nomes vêm das fontes privadas do detetor da
+privacidade. Nenhum nome pessoal fica no oráculo público nem na saída.
 """
 import json
+import importlib.util
+from pathlib import Path
 import os
 import re
 import sys
@@ -61,8 +62,11 @@ ISENTOS_POR_NOMEACAO = (
 
 BINARIOS = re.compile(r'\.(woff2?|ttf|otf|eot|png|jpe?g|webp|avif|gif|ico|pdf|zip|mp4|webm)$', re.I)
 
-LER_O_NOME = ('python3 -c "import json;print(json.load(open(\'scripts/textos-aprovados.json\'))'
-              '[\'responsavel\'])"')
+sys.dont_write_bytecode = True
+spec = importlib.util.spec_from_file_location('detetor_m5',
+    Path(RAIZ) / 'design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py')
+detetor = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(detetor)
 
 
 def briefs():
@@ -148,11 +152,14 @@ def main():
     caminho_deste = os.path.join(OBSERVATORIO, este)
     velho = 'BRIEF-F1.1-porta-da-frente.md'
 
-    nome = json.load(open(os.path.join(RAIZ, 'scripts', 'textos-aprovados.json'),
-                          encoding='utf-8'))['responsavel']
+    detetor.carregar_proibidos_locais()
+    nomes = tuple(c.decode() for c in detetor.cadeias_pessoais())
+    if not nomes:
+        raise ValueError('M5: sem conhecido-positivo de nome; medição recusada.')
+    nome = 'Pessoa Sintética M5'
     fontes = ficheiros_de_fonte()
-    ocorrencias = sum(conta_o_nome(open(f, encoding='utf-8', errors='replace').read(), nome)
-                      for f in fontes)
+    ocorrencias = sum(conta_o_nome(open(f, encoding='utf-8', errors='replace').read(), n)
+                      for f in fontes for n in nomes)
 
     politica = open(os.path.join(RAIZ, 'src', 'data', 'politica-ia.mjs'), encoding='utf-8').read()
 
@@ -221,23 +228,20 @@ def main():
         {
             'nome': 'ocorrencias_do_nome_de_quem_responde_em_src_e_public',
             'valor': ocorrencias,
-            'comando': f'grep -rohF "$({LER_O_NOME})" src/ public/ | wc -l',
+            'comando': 'python3 design/observatorio/medidas/BRIEF-M5.py · conta as fontes privadas em src/ e public/',
             'conhecido_positivo': {
                 'o_que': ('o MESMO contador encontra uma ocorrência numa linha construída no '
-                          'momento com o nome lido do oráculo'),
+                          'momento com um nome sintético'),
                 'encontrado': conta_o_nome(f'<p>{nome}</p>', nome) == 1,
             },
         },
         {
             'nome': 'exportacoes_de_politica_ia_com_o_nome_de_quem_responde',
-            'valor': exportacoes_com_o_nome(politica, nome),
-            'comando': ('python3 -c "import json,re;n=json.load(open(\'scripts/textos-aprovados.json\'))'
-                        '[\'responsavel\'];print(sum(1 for _,v in re.findall(r\'^export const '
-                        '(\\\\w+)\\\\s*=\\\\s*(.*)$\', open(\'src/data/politica-ia.mjs\').read(), re.M) '
-                        'if n in v))"'),
+            'valor': sum(exportacoes_com_o_nome(politica, n) for n in nomes),
+            'comando': 'python3 design/observatorio/medidas/BRIEF-M5.py · conta exportações com cadeias privadas',
             'conhecido_positivo': {
                 'o_que': ('o MESMO predicado, sobre uma linha `export const …` construída no '
-                          'momento com o nome lido do oráculo, conta uma exportação'),
+                          'momento com um nome sintético, conta uma exportação'),
                 'encontrado': exportacoes_com_o_nome(
                     f"export const QUEM_RESPONDE = '{nome}';\n", nome) == 1,
             },

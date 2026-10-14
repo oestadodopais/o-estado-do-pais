@@ -330,14 +330,13 @@ import {
 /* OS ANFITRIÕES DO PRÓPRIO SÍTIO (bloco H3): um endereço absoluto para um destes não é «outra origem» na célula dos
    cookies; a canónica e as alternativas de língua de cada página escrevem-se assim. */
 const ANFITRIOES_PROPRIOS = new Set([SITE_HOST, SITE_HOST_UNACCENTED]);
-import { ENDERECO_CORRECOES, REGRAS as REGRAS_DO_METODO } from '../src/data/metodo.mjs';
+import { ENDERECO_CORRECOES } from '../src/data/metodo.mjs';
 // 05.10.2026 (§1.163): a importação de SOBRE saiu com a conferência do data-sobre-nomes, que era o seu único uso.
 import {
   ANCORA_DA_POLITICA,
   O_PROJETO,
   FICHA_DA_PRIMEIRA_PAGINA,
   FRASE as FRASE_DA_POLITICA,
-  LINGUA_DO_RESPONSAVEL,
   ROTULO as ROTULO_DA_CASA,
   textoDoRotulo,
   textoDoContacto,
@@ -372,27 +371,7 @@ const TEXTOS_APROVADOS = JSON.parse(
   fs.readFileSync(path.join(ROOT, 'scripts', 'textos-aprovados.json'), 'utf8'),
 );
 
-/**
- * O nome de quem responde pelo sítio, lido do oráculo e de mais lado nenhum
- * (M5, 22.09.2026). Saiu de `src/data/politica-ia.mjs` porque nenhuma página o
- * rende desde 15.09.2026 e um nome de pessoa não fica no código de um
- * repositório público sem uma página que o peça. O portão continua a precisar
- * dele para poder exigir que ele não apareça: `veONome()` é o detetor, e o
- * `nomeVisto` conta as páginas onde ele aparece, para que um zero seja um zero
- * medido e não um zero de um detetor calado.
- */
-const NOME_DE_QUEM_RESPONDE = TEXTOS_APROVADOS.responsavel;
-/* AS FORMAS DO NOME (29.09.2026, §1.138). O detetor procurava só a forma inteira
-   do oráculo, e um documento alojado que dizia «for» seguido do primeiro e do
-   último nome passou pelas duas exigências e esteve no ar desde agosto. Procuram-se
-   agora as duas formas, a inteira e a do primeiro e do último nome, e cada uma
-   passa pelo conhecido-positivo antes de o detetor contar. */
-const PARTES_DO_NOME = String(NOME_DE_QUEM_RESPONDE).split(/\s+/).filter(Boolean);
-const FORMAS_DO_NOME = [
-  ...new Set([NOME_DE_QUEM_RESPONDE, `${PARTES_DO_NOME[0]} ${PARTES_DO_NOME[PARTES_DO_NOME.length - 1]}`]),
-];
-const veONome = (texto) => typeof texto === 'string' && FORMAS_DO_NOME.some((forma) => texto.includes(forma));
-let paginasComONome = 0;
+// RH1-b, 14.10.2026, §1.192: os nomes pessoais são conferidos por check:privacidade.
 /** S1 (02.10.2026): as contas da caixa das sugestões, para a saída do portão. */
 const SUGESTOES_NO_PORTAO = { paginas: 0, portas: 0, paginasDaCaixa: 0, enderecosNoMapa: 0, plantas: 0, migracoes: 0 };
 /* A PÁGINA «PRIVACIDADE» E A FRASE DOS COOKIES (bloco H3, 05.10.2026): as portas do rodapé contadas, as páginas da
@@ -4436,144 +4415,11 @@ const registoDoCartao = (nomePng) => REGISTOS_DOS_CARTOES.get(nomePng) ?? null;
 /** Os cartões que alguma página nomeou. Um cartão que ninguém nomeia é um aviso. */
 const cartoesUsados = new Set();
 
-/**
- * ---------------------------------------------------------------------------
- * UMA PESSOA, UM NOME, E UM ORÁCULO (01.09.2026; alargado na segunda passagem)
- * ---------------------------------------------------------------------------
- * O rótulo de todas as páginas nomeia quem detém a responsabilidade editorial, e
- * a regra 9 do Método já nomeava quem dirige. São a mesma pessoa, e por isso têm
- * de ser a mesma cadeia: duas grafias do nome são duas pessoas para quem lê, e a
- * divulgação do artigo 50.º deixa de identificar ninguém.
- *
- * A CONFERÊNCIA É SOBRE OS FICHEIROS e não sobre as páginas, e corre uma vez. O
- * oráculo é `scripts/textos-aprovados.json`, e é contra ele que os textos
- * governados se medem: o nome tem de estar, carácter a carácter, num pedaço
- * `{ forte: … }` das dez regras de `src/data/metodo.mjs` sempre que o rótulo o
- * imprimir, e em nenhum se o rótulo não o imprimir.
- *
- * E OS TEXTOS TAMBÉM SE MEDEM AQUI, não só na página: o rótulo composto de
- * `politica-ia.mjs` tem de ser o do oráculo, e a frase da política também. A
- * comparação da página apanha o mesmo defeito, e esta apanha-o com o nome do
- * ficheiro em vez de com o nome de seis mil páginas.
- *
- * DESDE 15.09.2026 O SÍTIO NÃO DIZ NOME NENHUM (§1.108, as emendas de 15.09 à
- * tarde, e §1.109): o rótulo deixou de nomear quem responde, e a regra 9 do
- * Método deixou de o nomear também, por decisão do diretor. A invariante passa
- * a ter dois estados e não um: ou o rótulo do oráculo contém o nome e então a
- * regra 9 tem de o imprimir (o estado de 01.09), ou o rótulo não o contém e
- * então nenhuma regra do Método o pode imprimir (o estado de hoje).
- *
- * ---------------------------------------------------------------------------
- * A CÉLULA MUDOU DE FORMA A 22.09.2026 (M5), CONSERVANDO O QUE PROTEGIA
- * ---------------------------------------------------------------------------
- * Havia aqui uma terceira comparação: o nome de `src/data/politica-ia.mjs`
- * contra o do oráculo. O que ela protegia era que o nome de quem responde fosse
- * uma cadeia só no dia em que uma página o rendia, porque duas grafias são duas
- * pessoas para quem lê. Desde 15.09.2026 nenhuma página o rende, e a 22.09.2026
- * mediu-se em todas as páginas construídas: zero. A constante saiu de `src/`,
- * que é código de um repositório público, e a comparação foi substituída por
- * duas exigências que protegem a mesma coisa pelo outro lado, e mais:
- *
- *   · o nome do oráculo não se rende em página nenhuma de `dist/` (contado no
- *     varrimento, página a página);
- *   · o nome do oráculo não existe em ficheiro nenhum de `src/` e de `public/`.
- *
- * E O DETETOR PROVA PRIMEIRO QUE VÊ (M18, §1.120). As duas exigências dizem
- * «zero», e um zero de um detetor que não deteta nada não é um zero: antes de
- * contar, o mesmo `veONome()` passa por uma linha escrita para o efeito, e se
- * não a apanhar a construção fecha ali. O mesmo para a leitura de `src/` e de
- * `public/`: uma varredura que não leia ficheiro nenhum é um erro, não um zero.
+/** RH1-b, 14.10.2026: as comparações de textos aprovados continuam aqui.
+ * A ausência de nomes pessoais, também nas regras do Método e nos documentos
+ * alojados, passa para check:privacidade sobre todo o dist/ e os seguidos.
  */
 {
-  const fortes = [];
-  const anda = (v) => {
-    if (Array.isArray(v)) return void v.forEach(anda);
-    if (v && typeof v === 'object') {
-      if (typeof v.forte === 'string') fortes.push(v.forte);
-      return void Object.values(v).forEach(anda);
-    }
-  };
-  anda(REGRAS_DO_METODO);
-  const nome = TEXTOS_APROVADOS.responsavel;
-  const rotuloNomeia = Object.values(TEXTOS_APROVADOS.rotulo ?? {}).some(
-    (r) => typeof r === 'string' && r.includes(nome),
-  );
-  if (rotuloNomeia && !fortes.includes(nome)) {
-    erros.push({
-      rel: 'scripts/textos-aprovados.json',
-      msg:
-        `o responsável editorial é ${JSON.stringify(nome)} e nenhuma das dez regras do Método ` +
-        `imprime esse nome (imprime ${fortes.length ? fortes.map((f) => JSON.stringify(f)).join(', ') : 'nenhum'}).\n` +
-        `      O rótulo de todas as páginas e a regra 9 nomeiam a mesma pessoa: ou é a mesma ` +
-        `cadeia nos dois ficheiros, ou o sítio diz dois nomes.`,
-    });
-  }
-  if (!rotuloNomeia && fortes.includes(nome)) {
-    erros.push({
-      rel: 'src/data/metodo.mjs',
-      msg:
-        `o rótulo já não nomeia ninguém (§1.108 e §1.109, 15.09.2026) e uma regra do Método ` +
-        `ainda imprime ${JSON.stringify(nome)}: o sítio não diz nome nenhum, ou diz o mesmo nos dois lugares.`,
-    });
-  }
-  /* O conhecido-positivo do detetor, corrido antes de ele dizer zero, uma vez por forma do nome. */
-  for (const forma of FORMAS_DO_NOME) {
-    if (!veONome(`<p data-prova>${forma}</p>`)) {
-      erros.push({
-        rel: 'scripts/gate-html.mjs',
-        msg:
-          `o detetor do nome de quem responde não encontrou uma das formas do nome numa linha ` +
-          `escrita com ela: enquanto não vir, os zeros que ele conta não valem nada.`,
-      });
-    }
-  }
-
-  /* O nome não existe em ficheiro nenhum de `src/` e de `public/`. */
-  const ficheirosDeFonte = (dir) => {
-    const out = [];
-    if (!fs.existsSync(dir)) return out;
-    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-      const full = path.join(dir, entry.name);
-      if (entry.isDirectory()) out.push(...ficheirosDeFonte(full));
-      else if (!/\.(woff2?|ttf|otf|eot|png|jpe?g|webp|avif|gif|ico|pdf|zip|mp4|webm)$/i.test(entry.name))
-        out.push(full);
-    }
-    return out;
-  };
-  const fontes = [...ficheirosDeFonte(path.join(ROOT, 'src')), ...ficheirosDeFonte(path.join(ROOT, 'public'))];
-  if (fontes.length === 0) {
-    erros.push({
-      rel: 'scripts/gate-html.mjs',
-      msg: 'a varredura de `src/` e de `public/` não leu ficheiro nenhum: um zero assim não é uma conferência.',
-    });
-  }
-  let fontesComONome = 0;
-  for (const f of fontes) {
-    if (!veONome(fs.readFileSync(f, 'utf8'))) continue;
-    fontesComONome++;
-    erros.push({
-      rel: path.relative(ROOT, f),
-      msg:
-        `este ficheiro escreve o nome de quem responde, e nenhum ficheiro de \`src/\` ou de ` +
-        `\`public/\` o pode escrever (M5, 22.09.2026). O nome mora no oráculo, ` +
-        `\`scripts/textos-aprovados.json\`, e é de lá que os portões o leem; um comentário diz ` +
-        `«o diretor» ou «o responsável editorial».`,
-    });
-  }
-  console.log(
-    cinza(
-      `  o nome de quem responde · ${fontesComONome} ficheiro(s) com o nome em ` +
-      `${fontes.length} lido(s) de src/ e public/`,
-    ),
-  );
-  if (LINGUA_DO_RESPONSAVEL !== TEXTOS_APROVADOS.lingua_do_responsavel) {
-    erros.push({
-      rel: 'src/data/politica-ia.mjs',
-      msg:
-        `a língua do responsável é ${JSON.stringify(LINGUA_DO_RESPONSAVEL)} e o oráculo diz ` +
-        `${JSON.stringify(TEXTOS_APROVADOS.lingua_do_responsavel)}.`,
-    });
-  }
   if (ANCORA_DA_POLITICA !== TEXTOS_APROVADOS.ancora_da_politica) {
     erros.push({
       rel: 'src/data/politica-ia.mjs',
@@ -4663,20 +4509,6 @@ for (const file of ficheirosHtml(DIST)) {
   // H2, I190: antes das saídas de documentos alojados, em qualquer página.
   for (const a of root.querySelectorAll('a a')) {
     err(`H2 ligação dentro de outra: ${a.getAttribute('href') ?? '(sem href)'}`);
-  }
-
-  /* O nome de quem responde não se rende em página nenhuma (M5, 22.09.2026).
-     Corre antes de tudo o resto e antes de qualquer saída antecipada, para
-     apanhar também os documentos alojados: nenhuma página é exceção. Lê-se o
-     HTML cru, e não só o texto, porque um nome num atributo, num JSON-LD ou num
-     cartão é o mesmo nome. A contagem vai à saída no fim do varrimento. */
-  if (veONome(html)) {
-    paginasComONome++;
-    err(
-      `esta página rende o nome de quem responde, e desde 15.09.2026 (§1.108, §1.109) ` +
-      `nenhuma página do sítio o diz. Se o nome tiver de voltar, volta por decisão escrita em ` +
-      `\`DECISIONS.md\`, e esta célula muda com ela.`,
-    );
   }
 
   /* A FRASE DOS COOKIES, PÁGINA A PÁGINA (bloco H3, 05.10.2026): o que esta página tem contra «Este sítio não usa
@@ -9337,7 +9169,6 @@ console.log(
       (paginasDeTexto
         ? ` · ${paginasDeTexto} página(s) de leitura, conferidas contra o seu registo de conteúdo`
         : '') +
-      ` · ${paginasComONome} página(s) com o nome de quem responde` +
       ` · séries: ${seriesConstruidas.size} página(s), ${ORIGENS_DAS_SERIES.pontos} ponto(s), ` +
       `${ORIGENS_DAS_SERIES.paises} nome(s) de país, ${ORIGENS_DAS_SERIES.campos} campo(s), ` +
       `${ORIGENS_DAS_SERIES.contas + ORIGENS_DAS_SERIES.lugares} recontagem(ns) conferidos` +

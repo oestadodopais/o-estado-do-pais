@@ -133,26 +133,12 @@ import {
   LINGUA_DAS_EDICOES,
 } from '../src/i18n/lingua-dos-titulos.mjs';
 import { WORKS, linguaDoTitulo } from '../src/data/studies.mjs';
-import { LINGUA_DO_RESPONSAVEL } from '../src/data/politica-ia.mjs';
 import { matchPath } from '../src/lib/routes.mjs';
 import { conferirLinguaDasOrigens } from './lingua-das-origens.mjs';
 import { feitioDeLei } from '../src/i18n/nomes-de-lei.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
-
-/**
- * O nome de quem responde, lido do oráculo do portão e não de `src/` (M5,
- * 22.09.2026). A constante `RESPONSAVEL_EDITORIAL` saiu de
- * `src/data/politica-ia.mjs` porque nenhuma página rende o nome desde
- * 15.09.2026 e um nome de pessoa não fica no código de um repositório público
- * sem uma página que o peça. A L9 não perde nada: o que ela compara é o texto
- * de um `[data-rotulo-nome]` rendido contra o nome decidido, e o nome decidido
- * está no oráculo, que é onde o `gate:html` sempre o foi buscar.
- */
-const RESPONSAVEL_EDITORIAL = JSON.parse(
-  fs.readFileSync(path.join(RAIZ, 'scripts', 'textos-aprovados.json'), 'utf8'),
-).responsavel;
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
@@ -620,12 +606,7 @@ const contas = {
   estudos_pt_ocultos_sem_marca: 0,
   elementos_com_atributo_repetido: 0,
   repetidos_em_documento_alojado: 0,
-  /* L9 · o rótulo de IA: o nome de quem responde, e a linha que o embrulha. */
-  nomes_do_rotulo: 0,
-  nomes_do_rotulo_em_pt: 0,
-  nomes_do_rotulo_em_en: 0,
-  nomes_do_rotulo_certos: 0,
-  nomes_do_rotulo_errados: 0,
+  /* L9: a língua da frase do rótulo, sem nome pessoal. */
   linhas_do_rotulo: 0,
   linhas_do_rotulo_erradas: 0,
 };
@@ -821,47 +802,9 @@ for (const ficheiro of paginasDe(DIST)) {
     }
   }
 
-  /**
-   * --- L9 · o rótulo de IA: o nome é um nome, a frase é da página -----------
-   *
-   * O rótulo de todas as páginas acaba no nome de quem detém a
-   * responsabilidade editorial, e esse nome é português nas duas edições. Vale
-   * aqui a regra da §1.82, aplicada a um nome de pessoa em vez de a um título
-   * de documento: **um nome não se traduz, e diz em que língua está**. Sem
-   * marca, uma página inglesa manda um leitor de ecrã ler com fonética inglesa
-   * o nome de quem responde pela publicação.
-   *
-   * NOS DOIS SENTIDOS, como L4d e L4e: a marca que falta e a marca a mais são o
-   * mesmo defeito visto de dois lados. Numa página portuguesa o nome está na
-   * língua da página e não leva marca própria nenhuma; numa página inglesa leva
-   * a sua. É `efetivaEsperada()` que o diz, e é a mesma função das outras.
-   *
-   * E A LINHA LEVA A LÍNGUA DA PÁGINA. O nome é a única coisa deste bloco que
-   * está noutra língua: se um ancestral impuser uma língua à linha inteira, a
-   * frase aprovada passa a ser lida na língua errada de uma ponta à outra.
-   */
-  for (const el of root.querySelectorAll('[data-rotulo-nome]')) {
-    const texto = norm(el.text);
-    contas.nomes_do_rotulo++;
-    contas[lang === 'pt' ? 'nomes_do_rotulo_em_pt' : 'nomes_do_rotulo_em_en']++;
-    if (texto !== RESPONSAVEL_EDITORIAL) {
-      contas.nomes_do_rotulo_errados++;
-      anota(achados.rotulo, `o nome marcado é «${texto.slice(0, 60)}»`, rel);
-      continue;
-    }
-    const declarada = LINGUA_DO_RESPONSAVEL === 'pt-PT' ? 'pt' : 'en';
-    const efetiva = efetivaEsperada(declarada, lingua);
-    if (langDe(el) === efetiva) {
-      contas.nomes_do_rotulo_certos++;
-      continue;
-    }
-    contas.nomes_do_rotulo_errados++;
-    anota(
-      achados.rotulo,
-      `${motivo(langDe(el), efetiva, declarada, lang)} · «${texto}» (o nome de quem responde)`,
-      rel,
-    );
-  }
+  /* RH1-b, 14.10.2026: zero marcas de nome medidas em dist/ e só uma menção
+     em comentário de src/. Sai a comparação com o nome decidido. A privacidade
+     recusa nomes em todo o dist/; a L9 conserva a língua da frase. */
   for (const el of root.querySelectorAll('.rotulo-ia-linha')) {
     contas.linhas_do_rotulo++;
     if (langDe(el) === lingua) continue;
@@ -1088,28 +1031,9 @@ for (const pos of positivos) {
   erros.push(`a varredura não viu um único ${pos.o}.\n      ${pos.porque}`);
 }
 
-/* --- L9 · o que a varredura do rótulo achou, e o seu mínimo positivo -------
- *
- * O rótulo é de TODAS as páginas construídas fora dos documentos alojados, e
- * por isso o mínimo positivo é o mais forte que esta régua tem: se a varredura
- * não viu nomes nas duas edições, não está a olhar para o sítio, e o zero de
- * defeitos não prova nada. */
+/* L9: a frase continua a ter conhecido-positivo e a língua da página. */
 for (const [chave, x] of achados.rotulo) {
   erros.push(`o rótulo de IA: ${chave}\n      primeira ocorrência em ${x.onde} (${x.n} no total).`);
-}
-/* O NOME SAIU DO RÓTULO A 15.09.2026 (P1, itens 1 e 2), e com ele saiu o
-   mínimo positivo que esta régua exigia dele. O que ficou é a metade que
-   continua a ter matéria: um `data-rotulo-nome` que VOLTE a aparecer tem de ter
-   o nome certo e a marca certa (o laço acima continua a medi-lo), e a linha do
-   rótulo continua a ter de estar na língua da página. O positivo conhecido
-   desta régua passa a ser a linha, que se rende em todas as páginas, e é a
-   conferência de baixo. */
-if (contas.nomes_do_rotulo !== 0) {
-  erros.push(
-    `a varredura viu ${contas.nomes_do_rotulo} «data-rotulo-nome» e devia ver zero: o nome de ` +
-      `quem responde saiu do rótulo e da ficha da primeira página a 15.09.2026, por decisão do ` +
-      `diretor. Se voltou, voltou sem decisão.`,
-  );
 }
 if (contas.linhas_do_rotulo === 0) {
   erros.push(
@@ -1178,8 +1102,7 @@ console.log(
       `${contas.leis_en_em_transcricao} dentro de transcrição do motor · ` +
       `títulos de estudo portugueses em «en»: ${contas.estudos_pt_en} à vista e ` +
       `${contas.estudos_pt_ocultos} no oculto, todos com marca · ` +
-      `rótulo de IA: ${contas.nomes_do_rotulo} nome(s) de quem responde (o nome saiu do ` +
-      `rótulo a 15.09.2026) e ${contas.linhas_do_rotulo} linha(s) na língua da página · ` +
+      `rótulo de IA: ${contas.linhas_do_rotulo} linha(s) na língua da página · ` +
       `atributos repetidos: nenhum`,
   ),
 );

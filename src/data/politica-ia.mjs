@@ -64,40 +64,10 @@
  * `ledger/allowlist.yml` para versões e identificadores de máquina.
  */
 
-/**
- * O NOME DE QUEM RESPONDE PELO SÍTIO, E PORQUE NÃO ESTÁ AQUI (M5, 22.09.2026).
- *
- * Havia aqui uma constante exportada com o nome do diretor, escrita a
- * 01.09.2026 quando o rótulo de todas as páginas o imprimia. Desde 15.09.2026
- * (§1.108, as emendas da tarde, e §1.109) nem o rótulo nem a regra 9 do Método
- * o imprimem: o sítio não diz nome nenhum, medido em todas as páginas
- * construídas. O que ficava era um nome de pessoa no código de um repositório
- * público, sem uma página que o rendesse, e por isso saiu.
- *
- * O NOME NÃO DESAPARECEU DO PORTÃO, MUDOU DE CASA. Mora no oráculo,
- * `scripts/textos-aprovados.json`, que nenhum ficheiro de `src/` e de `public/`
- * lê e que existe para ser independente do que confere. É de lá que o
- * `gate:html` e o `check:lingua` o leem.
- *
- * O QUE O PORTÃO PROTEGIA CONTINUA PROTEGIDO, E POR MAIS LADOS. A célula
- * comparava esta constante com o oráculo, para que o nome de quem responde
- * fosse uma cadeia só no dia em que uma página o rendia. Hoje exige duas coisas
- * que valem enquanto o sítio não disser nome nenhum: que o nome do oráculo não
- * se renda em página nenhuma de `dist/`, e que não exista em ficheiro nenhum de
- * `src/` e de `public/`, com o detetor a provar primeiro que vê. Quem responde
- * está no registo deste repositório e na ficha que a lei vier a exigir, se a
- * exigir (a pergunta 2 da `DILIGENCIA-LEGAL.md`).
+/** RH1-b, 14.10.2026, §1.192: o nome pessoal e a sua língua deixam de
+ * ter um oráculo público. check:privacidade lê as fontes privadas e protege
+ * dist/, documentos alojados e ficheiros seguidos, com conhecido-positivo.
  */
-
-/**
- * A língua em que o nome de quem responde está escrito, na forma que o `lang`
- * do HTML usa.
- *
- * Fica declarada porque continua a ser verdade e porque o oráculo a confere;
- * nenhuma página a escreve num atributo desde que o nome saiu do rótulo. Não é
- * um nome: é uma etiqueta de língua, e por isso fica aqui.
- */
-export const LINGUA_DO_RESPONSAVEL = 'pt-PT';
 
 /** A âncora da secção da política, dentro do Método. */
 export const ANCORA_DA_POLITICA = 'politica-de-ia';

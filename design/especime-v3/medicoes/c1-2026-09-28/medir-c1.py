@@ -79,8 +79,20 @@ def nome_da_casa():
 
 
 def cadeias_pessoais():
-    return tuple(dict.fromkeys(ler_proibidos() + nomes_dos_autores() +
+    return tuple(dict.fromkeys(formas_dos_nomes(ler_proibidos() + nomes_dos_autores()) +
                               ((nome_da_casa(),) if nome_da_casa() else ())))
+
+
+def formas_dos_nomes(cadeias):
+    """RH1-b: conserva a forma inteira e a abreviada da guarda da §1.138."""
+    formas = list(cadeias)
+    for cadeia in cadeias:
+        partes = cadeia.decode('utf-8').split()
+        if len(partes) > 2:
+            curta = partes[0] + ' ' + partes[-1]
+            if len(curta) >= 4 and curta.casefold() not in {n.casefold() for n in IDENTIDADES_DO_PROJETO}:
+                formas.append(curta.encode('utf-8'))
+    return tuple(dict.fromkeys(formas))
 
 
 def contem_cadeias(corpo, cadeias):
