@@ -140,26 +140,32 @@ def conferir_citacoes(destino, repo, cabeca, relatorio, inteiros=False):
             raise ValueError(f'O pacote recusa a entrega: faltam as linhas citadas de {f}.')
 
 
-# A chave source_sha256 lê-se onde estiver (bloco ou fluxo, com ou sem aspas na chave e no valor), e cada ocorrência
-# ou é 64 hexadecimais, ou null, ou recusa (a segunda leitura da M83, achado 4: as formas que o guião não lia passavam por «sem documento»).
-CAMPO_SHA = re.compile(r'["\']?source_sha256["\']?\s*:\s*([^,}\n#]*)')
+# O resumo do documento lê-se do YAML inteiro da linha (document.source_sha256), com o PyYAML, e não por expressão
+# regular: a terceira leitura da M83 pelo Codex (achado 3) mostrou que uma expressão truncava valores com lixo atrás,
+# apanhava chaves parecidas (other_source_sha256) e ignorava o âmbito de document. Sem o PyYAML o guião recusa, em vez de
+# ler menos: a corrida «portão» instala-o quando falta.
 SHA_HEX = re.compile(r'[0-9a-f]{64}')
-SEM_SHA = {'', 'null', 'Null', 'NULL', '~'}
 
 
 def sha_declarado(texto, ident):
-    """O sha256 que a linha declara em source_sha256, None se não declara ou declara null; recusa qualquer outra forma ou dois valores distintos."""
-    valores = set()
-    for m in CAMPO_SHA.finditer(texto):
-        bruto = m.group(1).strip().strip('"\'').strip()
-        if bruto in SEM_SHA:
-            continue
-        if not SHA_HEX.fullmatch(bruto):
-            raise ValueError(f'O pacote recusa: a linha {ident} declara source_sha256 numa forma que o guião não lê ({bruto[:48]!r}); esperam-se 64 hexadecimais, com ou sem aspas, ou null.')
-        valores.add(bruto)
-    if len(valores) > 1:
-        raise ValueError(f'O pacote recusa: a linha {ident} declara dois source_sha256 distintos ({", ".join(v[:12] for v in sorted(valores))}).')
-    return valores.pop() if valores else None
+    """O sha256 que a linha declara em document.source_sha256: None se não declara ou declara null; recusa qualquer outra forma."""
+    try:
+        import yaml
+    except ImportError:
+        raise ValueError('O pacote recusa: o PyYAML não está instalado e o guião precisa dele para ler document.source_sha256 das linhas (M83).')
+    try:
+        dados = yaml.safe_load(texto)
+    except yaml.YAMLError as e:
+        raise ValueError(f'O pacote recusa: a linha {ident} não é YAML legível ({type(e).__name__}).')
+    documento = dados.get('document') if isinstance(dados, dict) else None
+    if not isinstance(documento, dict) or documento.get('source_sha256') is None:
+        return None
+    valor = documento['source_sha256']
+    if isinstance(valor, str) and SHA_HEX.fullmatch(valor):
+        return valor
+    raise ValueError(f'O pacote recusa: a linha {ident} declara document.source_sha256 numa forma que o guião não aceita ({str(valor)[:48]!r}); esperam-se 64 hexadecimais entre aspas, ou null.')
+
+
 ESTUDO_DA_NOTA = re.compile(r'Cruzado de ResearchHub (content/[^·"\n]+?)\s*·')
 
 
@@ -169,8 +175,8 @@ def sha256_de(dados):
 
 def linhas_com_corpos(repo, cabeca, mudados):
     """As linhas do livro-razão mudadas no intervalo e presentes na cabeça: {id: (sha256 do documento ou None, estudo da nota ou None)}.
-    O resumo lê-se onde a chave estiver, em bloco ou em fluxo, com ou sem aspas; null é «sem documento»; qualquer outra forma
-    recusa, em vez de passar por «sem documento» (as duas leituras a frio da M83 pelo Codex, achado 4 de cada)."""
+    O resumo lê-se do YAML da linha, em document.source_sha256; null ou a ausência é «sem documento»; qualquer outra forma
+    recusa, em vez de passar por «sem documento» (as leituras a frio da M83 pelo Codex: o achado 4 das duas primeiras e o 3 da terceira)."""
     linhas = {}
     for f in mudados:
         if not (f.startswith('ledger/claims/') and f.endswith('.yml')):

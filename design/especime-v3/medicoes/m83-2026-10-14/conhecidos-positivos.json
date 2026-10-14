@@ -1,0 +1,21 @@
+{
+  "recusa_por_fuga_com_O": {
+    "codigo": 1,
+    "ficheiro_escrito": false,
+    "mensagem": "medir-inventario: 1 cadeia(s) ia(m) sair no ficheiro; o inventário não se escreve, e esta mensagem não diz quais.",
+    "passou": true
+  },
+  "recusa_por_git_falhado": {
+    "codigo": 1,
+    "ficheiro_escrito": false,
+    "mensagem": "medir-inventario: git log falhou em /nao/existe (código 128); o inventário não se escreve.",
+    "passou": true
+  },
+  "controlo_sem_fuga_escreve": {
+    "codigo": 0,
+    "ficheiro_escrito": true,
+    "mensagem": "",
+    "passou": true
+  },
+  "passou": true
+}

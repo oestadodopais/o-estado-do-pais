@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T09:04:30+00:00",
+ "copia": "<scratchpad>/pacote-leitura-c",
+ "plantas": [
+  {
+   "id": "R1",
+   "ficheiro": "scripts/leituras/pacote.py",
+   "descricao": "fullmatch passa a match: 64 hexadecimais seguidos de lixo passam",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "171d16a4d1e81d1eb7f593d04286cb496a3e5fa52c52dafa2761508d9d4eb37a",
+   "sha256_depois": "893038d4933483a29683eb813eb925b430c25d3516a7d99d5b2b20258a1f39dd",
+   "contexto_antes": "lores = set()\n    for m in CAMPO_SHA.finditer(texto):\n        bruto = m.group(1).strip().strip('\"\\'').strip()\n        if bruto in SEM_SHA:\n            continue\n        if not SHA_HEX.fullmatch(bruto):\n            raise ValueError(f'O pacote recusa: a linha {ident} declara source_sha256 numa forma que o guião não lê ({bruto[:48]!r}); esperam-se 64 hexadecimai",
+   "contexto_depois": "lores = set()\n    for m in CAMPO_SHA.finditer(texto):\n        bruto = m.group(1).strip().strip('\"\\'').strip()\n        if bruto in SEM_SHA:\n            continue\n        if not SHA_HEX.match(bruto):\n            raise ValueError(f'O pacote recusa: a linha {ident} declara source_sha256 numa forma que o guião não lê ({bruto[:48]!r}); esperam-se 64 hexadecimai"
+  },
+  {
+   "id": "R2",
+   "ficheiro": "design/especime-v3/medicoes/m83-2026-10-14/medir-inventario.py",
+   "descricao": "um git falhado só para o guião acima de 128",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "054f455c463c4dd560ae2d1bf930bdebacd97cda149f999c365e9969a5393b69",
+   "sha256_depois": "c5c8e3e0b4df8c9c450edcb50b12673003656fc23af6f5324d25830a198e06cb",
+   "contexto_antes": " pathlib, subprocess, sys, datetime\n\ndef git(repo, *args):\n    r = subprocess.run(['git', '-C', repo, *args], capture_output=True, text=True, errors='replace')\n    if r.returncode != 0:\n        raise SystemExit(f'medir-inventario: git {args[0]} falhou em {repo} (código {r.returncode}); o inventário não se escreve.')\n    return r.stdout\n\ndef grep_cabeca(repo, cadeia):\n    r = subprocess.run(['git', '-C', repo",
+   "contexto_depois": " pathlib, subprocess, sys, datetime\n\ndef git(repo, *args):\n    r = subprocess.run(['git', '-C', repo, *args], capture_output=True, text=True, errors='replace')\n    if r.returncode > 128:\n        raise SystemExit(f'medir-inventario: git {args[0]} falhou em {repo} (código {r.returncode}); o inventário não se escreve.')\n    return r.stdout\n\ndef grep_cabeca(repo, cadeia):\n    r = subprocess.run(['git', '-C', repo"
+  },
+  {
+   "id": "R3",
+   "ficheiro": "design/especime-v3/medicoes/m83-2026-10-14/medir-inventario.py",
+   "descricao": "a conferência das fugas passa a distinguir maiúsculas",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c5c8e3e0b4df8c9c450edcb50b12673003656fc23af6f5324d25830a198e06cb",
+   "sha256_depois": "076e4ac147b11f82c80eefd8376211e55e2af3d4ea4c54307b7af7ab2a4c52cf",
+   "contexto_antes": "ests': int(prs) if prs and prs.isdigit() else None, 'erros': [e for e in (e1, e2) if e]}\n    texto = json.dumps(resultado, ensure_ascii=False, indent=2) + '\\n'\n    fugas = [c['rotulo'] for c in cadeias if c['cadeia'].lower() in texto.lower()]\n    if fugas:\n        raise SystemExit(f'medir-inventario: uma cadeia ia sair no ficheiro (rótulos: {\", \".join(fugas)}); o inventário não se escreve.')\n    sai",
+   "contexto_depois": "ests': int(prs) if prs and prs.isdigit() else None, 'erros': [e for e in (e1, e2) if e]}\n    texto = json.dumps(resultado, ensure_ascii=False, indent=2) + '\\n'\n    fugas = [c['rotulo'] for c in cadeias if c['cadeia'] in texto]\n    if fugas:\n        raise SystemExit(f'medir-inventario: uma cadeia ia sair no ficheiro (rótulos: {\", \".join(fugas)}); o inventário não se escreve.')\n    sai"
+  },
+  {
+   "id": "R4",
+   "ficheiro": "DECISIONS.md",
+   "descricao": "a cidade volta a ser trocada em todos os ficheiros, contra o inventário",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "888a24c7e5f2d9cb993c086d998f93290f22fc20fddef61dad731db9f7a1fd25",
+   "sha256_depois": "2578ab0121806c96fdce3a8788a29d8f31a5e55ec3a0d00984534ef1a1426985",
+   "contexto_antes": "todos os commits o nome do utilizador por `UTILIZADOR`, o nome completo e o nome próprio com apelido por «o financiador» e o correio pessoal pelo das correções (a cidade não se troca, porque só aparece em conteúdos de terceiros, cujos bytes selados não se alteram), `--replace-message` para as mensagens, e `--path-rename` (ou uma função de nome de ficheiro) para o único nome de ficheiro do motor que leva o nome do utiliza",
+   "contexto_depois": "todos os commits o nome do utilizador por `UTILIZADOR`, o nome completo e o nome próprio com apelido por «o financiador» e o correio pessoal pelo das correções (a cidade troca-se também, em todos os ficheiros onde apareça), `--replace-message` para as mensagens, e `--path-rename` (ou uma função de nome de ficheiro) para o único nome de ficheiro do motor que leva o nome do utiliza"
+  },
+  {
+   "id": "R5",
+   "ficheiro": "tests/leituras/pacote.py",
+   "descricao": "a conferência da chave entre aspas passa a vácuo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "d7ef94109fc70004775127a71c3bad1c11aaf8a54a42a3ce9e97fc9419630300",
+   "sha256_depois": "c45ec6fd053fb4c2fd99a9e203037c27d4f34eccb8a44140a31231a19cc720bf",
+   "contexto_antes": "null é «sem documento»',\n          estado['linha-aspas-simples'] == 'copiado' and estado['linha-sem-aspas'] == 'copiado' and estado['linha-fluxo'] == 'copiado' and estado['linha-chave-com-aspas'] == 'copiado' and estado['linha-nula'].startswith('sem documento alojado'))\n    exige('o manifesto diz por onde cada linha se resolveu e que estudos percorreu',\n          all(l['origem'] and l['orig",
+   "contexto_depois": "null é «sem documento»',\n          estado['linha-aspas-simples'] == 'copiado' and estado['linha-sem-aspas'] == 'copiado' and estado['linha-fluxo'] == 'copiado' and estado['linha-chave-com-aspas'] is not None and estado['linha-nula'].startswith('sem documento alojado'))\n    exige('o manifesto diz por onde cada linha se resolveu e que estudos percorreu',\n          all(l['origem'] and l['orig"
+  }
+ ]
+}
