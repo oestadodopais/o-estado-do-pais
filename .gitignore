@@ -54,3 +54,6 @@ __pycache__/
 # direção os reescrever. É o estado da construção, e não do repositório: fica fora do
 # Git e fora de `dist/`.
 .sinais/
+
+# RH1-b: os alvos ficam na máquina, sem cópias nos registos comitados.
+design/especime-v3/medicoes/**/alvos.json

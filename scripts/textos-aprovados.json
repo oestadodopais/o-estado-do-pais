@@ -35,11 +35,12 @@
     "«uma pessoa com nome define as regras e as recusas, e responde» e diz onde estão as regras e as",
     "recusas; a `o_projeto` diz, nas palavras do diretor, o que o projeto é; e entra o `contacto`, a",
     "terceira frase do Sobre, com o endereço das correções dentro (o único endereço deste projeto por",
-    "agora). O `responsavel` fica: é o que os portões usam para provar que o nome não se rende em",
-    "página nenhuma, e continua a ser verdade. O rótulo e a ficha não mudam."
+    "agora). O rótulo e a ficha não mudam.",
+    "",
+    "RH1-b, 14.10.2026, §1.192: saem responsavel e lingua_do_responsavel. Nenhum nome pessoal",
+    "fica no oráculo público. A conferência da privacidade lê as fontes privadas e protege",
+    "todo o dist/, os documentos alojados e os ficheiros seguidos, com plantas sintéticas."
   ],
-  "responsavel": "Nuno dos Santos",
-  "lingua_do_responsavel": "pt-PT",
   "ancora_da_politica": "politica-de-ia",
   "rotulo": {
     "pt": "Texto gerado por inteligência artificial, segundo o Método.",

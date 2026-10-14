@@ -201,6 +201,36 @@ def plantas_pessoais():
             for caso, nome, dados, esperado in casos]
 
 
+def plantas_transferidas():
+    """RH1-b: equivalentes em memória das guardas pessoais do HTML e do M5."""
+    from unittest.mock import patch
+    inteiro = 'Pessoa ' + 'Sintética ' + 'Exemplo'
+    curto = inteiro.split()[0] + ' ' + inteiro.split()[-1]
+    casos = [
+        ('nome-inteiro', 'index.html', '<p>' + inteiro + '</p>'),
+        ('documento-alojado-for-abreviado', 'estudos/ensaio/documento/index.html', '<p>for ' + curto + '</p>'),
+        ('documento-alojado-en', 'en/studies/ensaio/document/index.html', '<p>for ' + curto.upper() + '</p>'),
+        ('atributo', 'index.html', '<p title="' + inteiro + '"></p>'),
+        ('json-ld', 'index.html', '<script type="application/ld+json">{"author":"' + curto + '"}</script>'),
+        ('rotulo', 'index.html', '<span class="rotulo-ia-linha">' + inteiro + '</span>'),
+        ('regra-do-metodo', 'metodo/index.html', '<strong>' + curto + '</strong>'),
+        ('m5-pagina-com-comentario', 'sobre/index.html', '<!-- ' + inteiro + ' -->'),
+    ]
+    plantas = []
+    with patch.dict(os.environ, {'PRIVACIDADE_PROIBIDOS': inteiro}), \
+            patch.object(detetor, 'nomes_dos_autores', return_value=()), \
+            patch.object(detetor.Path, 'home', return_value=Path('/') / 'home' / 'runner'):
+        for caso, nome, corpo in casos:
+            plantas.append({'id': 'transferida-' + caso,
+                            'mordeu': conferir([(nome, corpo.encode())])['quantidade'] == 1})
+        for nome, caso in [('src/views/Ensaio.astro', 'm5-vista'), ('public/ensaio.txt', 'fonte-publica')]:
+            plantas.append({'id': 'transferida-' + caso,
+                            'mordeu': tem_cadeia_pessoal(nome, ('const nome = "' + curto + '";').encode(), detetor.cadeias_pessoais())})
+        plantas.append({'id': 'transferida-controlo-publico',
+                        'mordeu': not conferir([('index.html', '\n'.join(sorted(detetor.IDENTIDADES_DO_PROJETO)).encode())])['quantidade']})
+    return plantas
+
+
 def medir_rastreados(raiz, prova):
     cadeias = detetor.cadeias_pessoais()
     nomes = subprocess.check_output(['git', '-C', str(raiz), 'ls-files', '-z']).decode().split('\0')
@@ -239,6 +269,7 @@ def medir(dist, prova):
     r['conhecido_positivo_de_nome'] = bool(nomes)
     r['aviso'] = '' if nomes else 'Correu sem conhecido-positivo de nome; corrida recusada.'
     if prova:
+        r['plantas'].extend(plantas_transferidas())
         pagina = next((p for p in ficheiros if p.suffix == '.html'), None)
         if pagina is None: raise ValueError('Falta uma página construída para plantar o nome.')
         corpo = pagina.read_bytes()
