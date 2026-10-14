@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T22:40:53+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html",
+   "descricao": "a página construída PT dos encargos líquidos diz «o Estado paga» onde o mandato k e a expectativa dizem «o parceiro público (o Estado) paga» (o Minor 7 da leitura j reposto numa página só)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "3218bf64648955bcbac29eacc2627d40273d93ad432e63368f62ddf3713f278d",
+   "sha256_depois": "b8aa39606f1b82a69afee7fdf9ed91e549e480c3434d8c36443d10e47e229eb5",
+   "contexto_antes": "viário no quadro das parcerias público-privadas.</p></div><div class=\"linha-o-que-e\" data-v2a-conta><p class=\"linha-o-que-e-frase\">Os encargos brutos são o que o parceiro público (o Estado) paga às parcerias rodoviárias nesse ano: os pagamentos pela disponibilidade das vias, os pagamentos por serviço indexados ao tráfego, os gastos com a cobrança das portagens, as grandes reparações de pavimentos a cargo do parceiro públi",
+   "contexto_depois": "viário no quadro das parcerias público-privadas.</p></div><div class=\"linha-o-que-e\" data-v2a-conta><p class=\"linha-o-que-e-frase\">Os encargos brutos são o que o Estado paga às parcerias rodoviárias nesse ano: os pagamentos pela disponibilidade das vias, os pagamentos por serviço indexados ao tráfego, os gastos com a cobrança das portagens, as grandes reparações de pavimentos a cargo do parceiro públi"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/cartao/v2ai-frases.json",
+   "descricao": "a expectativa inglesa das páginas rodoviárias perde «private» na explicação das subconcessionárias; a cópia discorda do diff, do mandato e do HTML, e a régua não podia ter passado com ela",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "498af59a410a08c3b0f12c26ea49ed0bd4349fc199198a42ed30755580ca882d",
+   "sha256_depois": "fd632183f02fbe3753c343d90466b2adaedd09ae5bad5f03e87f6b911158e5ef",
+   "contexto_antes": "where the tolls belong to the private partner), the benefit or revenue sharing provided for in the contracts, and the fixed payments made by subconcessionaires (the private companies that operate the roads) to the public partner. Net charges are gross charges minus revenue: {encargos-brutos-2027} minus {receitas-2027} gives {encargos-liquidos-2027}, in millions of euros. These are cash",
+   "contexto_depois": "where the tolls belong to the private partner), the benefit or revenue sharing provided for in the contracts, and the fixed payments made by subconcessionaires (the companies that operate the roads) to the public partner. Net charges are gross charges minus revenue: {encargos-brutos-2027} minus {receitas-2027} gives {encargos-liquidos-2027}, in millions of euros. These are cash"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "motor/content/15 Orcamento do Estado 2027/ledger.json",
+   "descricao": "a ressalva inglesa do total no livro do motor diz que as linhas setoriais somam exatamente o total impresso; o diff do motor, o manifesto e a linha do sítio dizem o contrário",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "3b2362cb4cbf7bf94122d68d503a05e80a0daf14088ec86893094929814db390",
+   "sha256_depois": "1f3ab28d7b1da9975072f3ff7d54ce7034162fc2f09d04178f45f30594092fef",
+   "contexto_antes": "execução. As linhas setoriais do quadro não somam exatamente o total impresso; o quadro não explica a diferença.\",\n      \"ressalva_en\": \"Forecast, not outturn. The sector rows in the table do not add up exactly to the printed total; the table does not explain the difference.\",\n      \"source_excerpt\": \"Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034  ",
+   "contexto_depois": "execução. As linhas setoriais do quadro não somam exatamente o total impresso; o quadro não explica a diferença.\",\n      \"ressalva_en\": \"Forecast, not outturn. The sector rows in the table add up exactly to the printed total; the table does not explain the difference.\",\n      \"source_excerpt\": \"Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034  "
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027/index.html",
+   "descricao": "a página construída EN da despesa efetiva 2027 diz «with financial operations» onde o mandato k e o quadro 5.37 dizem «without»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4a2f62373a5b86c78f76dbb74cc5181e0fc5ee7857185a7e2a5b776e1e0d9e14",
+   "sha256_depois": "1237e3f4b432f5b39b245f92efba2f3527e0feef9a43d4940066f1635cfd7d27",
+   "contexto_antes": "tities (sales, interest, transfers, subsidies and financial operations between them, as the table&#39;s note says), so that the same euro is not counted twice. «Effective» is expenditure without financial operations, the financial assets and liabilities lines the table prints next; total expenditure includes them.</p></div><div class=\"def-origem\" data-def-origem=\"v2a-saude",
+   "contexto_depois": "tities (sales, interest, transfers, subsidies and financial operations between them, as the table&#39;s note says), so that the same euro is not counted twice. «Effective» is expenditure with financial operations, the financial assets and liabilities lines the table prints next; total expenditure includes them.</p></div><div class=\"def-origem\" data-def-origem=\"v2a-saude"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório da raiz diz 470 PNG na passagem k onde o recibo das capturas k e o LEIA-ME dizem 480 (160 casos vezes três não dá 470)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "196a7efd325a44a43225cdf7fbf9deb1a10341e43b7cfa075296e891c4c001d6",
+   "sha256_depois": "ea945a171d09ccadeed134132f20ce046502580349ac37ba8098ffa97823837e",
+   "contexto_antes": "dos encargos líquidos rodoviários, nas duas edições, foram lidas do HTML conferido e guardadas em `frases-k.md`.\n\nAs capturas em `../../capturas/v2a-2026-10-12/k/` cobrem as 16 páginas tocadas, nas duas edições e nas larguras 390, 768, 1024, 1280 e 1600: 160 casos, 480 PNG com sha256 conferido e dimensões das páginas inteiras iguais ao recibo. Sem falhas, transbordamentos, recursos externos, erros ou pedidos recusados. Foram vist",
+   "contexto_depois": "dos encargos líquidos rodoviários, nas duas edições, foram lidas do HTML conferido e guardadas em `frases-k.md`.\n\nAs capturas em `../../capturas/v2a-2026-10-12/k/` cobrem as 16 páginas tocadas, nas duas edições e nas larguras 390, 768, 1024, 1280 e 1600: 160 casos, 470 PNG com sha256 conferido e dimensões das páginas inteiras iguais ao recibo. Sem falhas, transbordamentos, recursos externos, erros ou pedidos recusados. Foram vist"
+  }
+ ]
+}
