@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T17:26:59+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "ledger/claims/oe-2027-saude-despesa-total-consolidada-variacao.yml",
+   "descricao": "a ressalva inglesa da variação total invertida (Including para Excluding): a página inglesa diria o contrário da portuguesa e do quadro",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "4e7de32b8984697fb60938b1472752ae3049638b8fc229548b222078d9cd652c",
+   "sha256_depois": "82337d31e834b90118afd2fde7abe1003873917eb4e757e61a9c8a781a65621e",
+   "contexto_antes": " Orçamento (%) (%) (Sem PRR) (Sem PRR)\"\n\n# Ressalva publicada da casa, conferida no motor, nas duas línguas.\nressalva: \"Previsão, não execução. Incluindo PRR.\"\nressalva_en: \"Forecast, not outturn. Including RRP.\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calculado.\nderivation: null\nderivation_en: null\nderived_from: []\n# Expressão verificada no ",
+   "contexto_depois": " Orçamento (%) (%) (Sem PRR) (Sem PRR)\"\n\n# Ressalva publicada da casa, conferida no motor, nas duas línguas.\nressalva: \"Previsão, não execução. Incluindo PRR.\"\nressalva_en: \"Forecast, not outturn. Excluding RRP.\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calculado.\nderivation: null\nderivation_en: null\nderived_from: []\n# Expressão verificada no "
+  },
+  {
+   "id": "P2",
+   "ficheiro": "motor/publisher/v2a.py",
+   "descricao": "a ressalva do total das parcerias sem o «não»: o publicador afirmaria que as linhas somam exatamente o total",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c1fb91cfff589ab91969160518b5f242acd9f64d4dce525da2d129fce5237bb4",
+   "sha256_depois": "d323cb3bb386f92f05dec20997c4fd9f38d332ff3bd9b848a45837fd8c74ea56",
+   "contexto_antes": "ariacao':\n        row['ressalva']+=' Incluindo PRR.'; row['ressalva_en']+=' Including RRP.'\n    if s['id']=='oe-2027-ppp-total-encargos-liquidos-2027':\n        row['ressalva']+=' As linhas setoriais do quadro não somam exatamente o total impresso; o quadro não explica a diferença.'\n        row['ressalva_en']+=' The sector rows in the table do not add up exactly to the printed total; the table does not explain the difference.'\n    if s['ta",
+   "contexto_depois": "ariacao':\n        row['ressalva']+=' Incluindo PRR.'; row['ressalva_en']+=' Including RRP.'\n    if s['id']=='oe-2027-ppp-total-encargos-liquidos-2027':\n        row['ressalva']+=' As linhas setoriais do quadro somam exatamente o total impresso; o quadro não explica a diferença.'\n        row['ressalva_en']+=' The sector rows in the table do not add up exactly to the printed total; the table does not explain the difference.'\n    if s['ta"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "tests/linha/v2a.mjs",
+   "descricao": "a régua do qualificador do PRR deixa de cobrir a página da RTP",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "70d0f64dcb878ef4e12fb4c609c7ff4313672374f0754bc04568179fa468b459",
+   "sha256_depois": "6dd4fad8bf300f2550e96b86bf99c6eac1304ffcc3de7e3fe8b92a29870db1cc",
+   "contexto_antes": " Saúde');\n  }\n  const comparaPrr=c.id.includes('-sem-prr-')||c.id==='oe-2027-saude-despesa-efetiva-consolidada-variacao'||c.id.startsWith('afirmacao-leitao-');\n  const totalPrr=c.id==='oe-2027-saude-despesa-total-consolidada-variacao'||c.id.startsWith('afirmacao-rtp-');\n  if(comparaPrr) {\n    if(!frase.includes(lang==='pt'?'Plano de Recuperação e Resiliência':'Recovery and Resilience Plan (RRP; «PRR» in the table)')||!frase.in",
+   "contexto_depois": " Saúde');\n  }\n  const comparaPrr=c.id.includes('-sem-prr-')||c.id==='oe-2027-saude-despesa-efetiva-consolidada-variacao'||c.id.startsWith('afirmacao-leitao-');\n  const totalPrr=c.id==='oe-2027-saude-despesa-total-consolidada-variacao';\n  if(comparaPrr) {\n    if(!frase.includes(lang==='pt'?'Plano de Recuperação e Resiliência':'Recovery and Resilience Plan (RRP; «PRR» in the table)')||!frase.in"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09/index.html",
+   "descricao": "a página portuguesa da RTP a dizer que a variação exclui a despesa do PRR (inclui para exclui): o contrário dos dados",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "03209498edbc3f6ee460b593cdaea571dffe6d213a968ebc2c301a7152dac3d9",
+   "sha256_depois": "2455f94bf18ed85008d8b033b1d3013460da9e734850bb8e383a3470d8bf6e6b",
+   "contexto_antes": "data-da-linha\" data-de-linha=\"oe-2027-saude-despesa-total-consolidada-2027\" data-de-campo=\"reference_date\">2027</span>. A variação da despesa total consolidada inclui a despesa relativa ao Plano de Recuperação e Resiliência (PRR). Na parte da Saúde, o relatório do Orçamento do Estado para <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"oe-2027-saude-despesa-tot",
+   "contexto_depois": "data-da-linha\" data-de-linha=\"oe-2027-saude-despesa-total-consolidada-2027\" data-de-campo=\"reference_date\">2027</span>. A variação da despesa total consolidada exclui a despesa relativa ao Plano de Recuperação e Resiliência (PRR). Na parte da Saúde, o relatório do Orçamento do Estado para <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"oe-2027-saude-despesa-tot"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório a dizer que a página do PCP nomeia o quadro quatro ponto vinte e seis: a página diz vinte e cinco",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "930a104f07a625585df618b691b37ef7ed4e130d3842a548c06c66e7fe7431cf",
+   "sha256_depois": "b7f9dec00d1ea86c6fd4f11d4d839ded79cd88ca6fa2846f441c40590421c973",
+   "contexto_antes": " não assinalado. O tipo e a abertura do excerto da Saúde estão declarados em `origens-v2a.json` e conferidos pela K16.\n- **V2A-63, achado 12:** a página do PCP nomeia o relatório do Orçamento do Estado e o quadro quatro ponto vinte e cinco. O ano vem do token do período. A edição inglesa traduz a afirmação com atribuição a Paulo Raimundo, usando o valor da própria linha, e mantém a transcrição po",
+   "contexto_depois": " não assinalado. O tipo e a abertura do excerto da Saúde estão declarados em `origens-v2a.json` e conferidos pela K16.\n- **V2A-63, achado 12:** a página do PCP nomeia o relatório do Orçamento do Estado e o quadro quatro ponto vinte e seis. O ano vem do token do período. A edição inglesa traduz a afirmação com atribuição a Paulo Raimundo, usando o valor da própria linha, e mantém a transcrição po"
+  }
+ ]
+}
