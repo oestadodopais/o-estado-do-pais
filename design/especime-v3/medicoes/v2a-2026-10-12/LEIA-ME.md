@@ -410,3 +410,42 @@ Os valores e as unidades das dezoito linhas coincidem com a entrada; as 3 211 li
 **V2A-54:** a preparação em `portoes-e-preparacao/` terminou em `a10230b4` com build 1, verify 125 (não executado), typecheck 0 e motor 0. O inventário ainda tinha 26 frases antigas; saíram e entraram as 30 cadeias atuais. A conferência dirigida da voz passou. Corrigiu-se também a planta que trocava primeiro um atributo, em vez do texto visível. As 64 plantas de HTML passaram nas duas edições. A K16 passou a conferir os apoios documentais contra o pacote selado e o cruzamento, com plantas de selo, SHA, hora, página, excerto e porta. Nenhuma regra antiga foi dispensada.
 
 **V2A-55:** a tentativa isolada de `npm run check:indice` invocou o navegador por uma opção do comando e foi recusada na sandbox: `browserType.launch: Target page, context or browser has been closed`; o registo inclui `Error: kill EPERM`. A tentativa não foi repetida na sandbox; a conferência completa pertence aos portões pelo escrivão. O excerto do erro está em `e-conferencias/indice-sandbox.txt`.
+
+### O que cada achado ganhou
+
+| Achado | Resultado | Ficheiro e linha |
+|---|---|---|
+| 6 | Nome do PRR por extenso, fim do ciclo de financiamento com apoio selado e duas comparações pelos quatro valores. Sem valor calculado para a parcela. | `design/especime-v3/medicoes/v2a-2026-10-12/familias.mjs:9`; `<motor>/publisher/v2a.py:256` |
+| 7 | Medida conferida na frase da Saúde; período das PPP exigido como token; montantes e subtração da RTP conferidos contra as linhas; plantas nas duas edições. | `tests/linha/v2a.mjs:45`, `:68`, `:83`, `:102` |
+| 8 | A ordem da entrega D foi corrigida: código nos portões, provas da entrega nos commits seguintes. O guião é citado pelo caminho do repositório. | `design/especime-v3/medicoes/v2a-2026-10-12/LEIA-ME.md:307` |
+| 9 | Uma ocorrência do nome do programa por frase, com atribuição da grafia ao quadro; períodos por tokens; ressalvas das variações sem repetir a comparação. | `design/especime-v3/medicoes/v2a-2026-10-12/familias.mjs:24`; `<motor>/publisher/v2a.py:223` |
+| 10 | O total enumera os cinco setores do quadro e deixa de mostrar a conta rodoviária. | `design/especime-v3/medicoes/v2a-2026-10-12/familias.mjs:38`; `src/lib/v2a-palavras.mjs:19` |
+| 11 | Localizador das três linhas rodoviárias cita p. 124 do PDF, 108 impressa, com o excerto textual separado e selado. | `<motor>/publisher/v2a.py:245`; questão V2A-46 |
+| 12 | Afirmação literal do PCP por token do excerto, com atribuição e valores brutos e líquidos do quadro ao lado, sem conclusão da casa. | `design/especime-v3/medicoes/v2a-2026-10-12/familias.mjs:72`; `tests/linha/v2a.mjs:88` |
+
+**V2A-56:** a leitura das cinco células setoriais da coluna de 2027 do quadro 4.25 dá 889, 312, 254, −13 e −3, cuja soma é 1 439. A linha «Total» publica 1 438, que se mantém. O excerto não explica a diferença; não se atribuiu uma causa. A medição está em `ppp-total-e.json`. A frase da página descreve os setores abrangidos pelo total publicado; não apresenta uma nova conta dos valores setoriais.
+
+**V2A-57:** a L1 continua a contar 2 780 páginas com destino repetido. A comparação das multiplicidades só muda nas duas edições da afirmação de Leitão Amaro: o relatório do OE passa a figurar como destino repetido duas vezes, nos dois apoios citados. Todas as outras páginas conservam os destinos e multiplicidades anteriores. Prova: `l1-comparacao-e.json`.
+
+### Fecho medido da passagem E
+
+Cabeça do código do sítio, dos portões e das capturas: `9ec288fc09a23e65baf94faa6e9e2cda9d14a681`. Cabeça final e do código do motor: `d8410f793fe2f456a8897101670c09796a05fabb`. Os commits seguintes do sítio guardam capturas, medições e relatório; a cabeça final da entrega é indicada na resposta. Nenhuma página, célula dos portões ou linha do livro foi alterada depois da corrida final. No guião que extrai as frases para o relatório foi corrigida a junção da rota com `index.html`, e a extração foi executada com sucesso.
+
+Commits de código e provas do sítio: `a10230b4`, `9ec288fc`. Primeira parte das capturas: `74dead0e`. Motor: `d8410f79`. Os portões correram por `scripts/leituras/portoes-pelo-escrivao.sh`, depois do commit `9ec288fc`, sem escritas do construtor durante a corrida.
+
+| Ficheiro lido | Código |
+|---|---|
+| `portoes-e/build.codigo` | 0 |
+| `portoes-e/verify.codigo` | 0 |
+| `portoes-e/typecheck.codigo` | 0 |
+| `portoes-e/motor.codigo` | 0 |
+
+Os ficheiros `portoes-e/estado.fim` e `portoes-e/motor.estado.fim` têm zero bytes. As cabeças de início e fim coincidem. A primeira corrida fica preservada em `portoes-e-preparacao/`, com os códigos 1/125/0/0.
+
+As 18 linhas mantêm os valores e unidades da entrada. Os 3 211 objetos Git das linhas anteriores permanecem iguais; o total é de 3 229 ficheiros de linhas. Os oito documentos mantêm os SHA256, conferidos por `medir.py`; os valores, selos e caminhos relativos estão em `medidas-e.json`. Os quatro novos apoios são excertos do mesmo relatório selado, não novos documentos alojados.
+
+O catálogo `plantas-e.json` conserva 110 mensagens distintas com o registo e a linha de cada uma. As 64 plantas de HTML cobrem ambas as edições. A K17 recusa tokens retirados, complemento diferente da auditoria, algarismos fixos e tokens sem origem; a K16 recusa selo retirado e mudanças no SHA, hora, página, excerto e porta. As plantas do motor retiram os dois apoios do PRR, o apoio rodoviário e um setor do total. O catálogo inclui ainda as plantas preservadas.
+
+Capturas: `design/especime-v3/capturas/v2a-2026-10-12/e/capturas.json`, 16 páginas, duas edições, cinco larguras, 160 casos e 480 PNG. Todos os resumos e dimensões foram conferidos; zero transbordos, pedidos externos e erros. Foram inspecionadas visualmente as 32 cabeças a 390 px e oito a 1 280 px, enumeradas em `capturas-inspecao-e.json`.
+
+As cinco frases do PRR, nas duas edições, foram lidas do HTML e estão integralmente em `frases-prr-e.md`; a fotografia das frases das 18 linhas está em `inspecao-e.json`. O custo desta passagem continua por medir pelo lançador; não foi exposta uma linha «tokens used».

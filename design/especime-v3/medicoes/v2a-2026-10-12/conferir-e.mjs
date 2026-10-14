@@ -15,6 +15,6 @@ for(const x of antigas)assert(atuais.has(x));
 const out={base,linhas_anteriores_intactas:antigas.length,linhas:rows};
 if(process.argv.includes('--html')) {
  out.cabeca=JSON.parse(fs.readFileSync('dist/version.json')).commit;
- out.frases=ids.map(id=>({id,...Object.fromEntries(['pt','en'].map(lang=>{const route=routePath('linha',lang,{slug:id}),html=parse(fs.readFileSync('dist'+route+'index.html','utf8'));return [lang,{cabecalho:html.querySelector('h1').textContent,frase:html.querySelector('[data-o-que-e-parte="o-que-e"]').textContent,conta:html.querySelector('[data-v2a-conta]')?.textContent??''}];}))}));
+ out.frases=ids.map(id=>({id,...Object.fromEntries(['pt','en'].map(lang=>{const route=routePath('linha',lang,{slug:id}),html=parse(fs.readFileSync('dist'+route.replace(/\/$/,'')+'/index.html','utf8'));return [lang,{cabecalho:html.querySelector('h1').textContent,frase:html.querySelector('[data-o-que-e-parte="o-que-e"]').textContent,conta:html.querySelector('[data-v2a-conta]')?.textContent??''}];}))}));
 }
 fs.writeFileSync(pasta+'/inspecao-e.json',JSON.stringify(out,null,2)+'\n');console.log(`${rows.length} valores e unidades inalterados; ${antigas.length} linhas anteriores intactas.`);

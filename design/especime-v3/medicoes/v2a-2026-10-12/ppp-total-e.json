@@ -1,0 +1,31 @@
+{
+  "apoio": "v2a-ppp-setores",
+  "pagina_pdf": 123,
+  "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+  "periodo": "2027",
+  "celulas": [
+    {
+      "setor": "Rodoviário",
+      "valor": 889
+    },
+    {
+      "setor": "Ferroviário",
+      "valor": 312
+    },
+    {
+      "setor": "Saúde",
+      "valor": 254
+    },
+    {
+      "setor": "Aeroportuário",
+      "valor": -13
+    },
+    {
+      "setor": "Oceanário",
+      "valor": -3
+    }
+  ],
+  "soma": 1439,
+  "total_publicado": 1438,
+  "explicacao_no_excerto": null
+}
