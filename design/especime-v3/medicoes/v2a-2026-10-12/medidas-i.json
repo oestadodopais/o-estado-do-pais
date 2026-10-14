@@ -1,0 +1,516 @@
+{
+  "base": "98487940",
+  "cabeca_sitio": "b8dd37a2711f2713b2beb77202d345aa826e3a13",
+  "cabeca_motor": "9e370c6dcdd3049df69b7cb5cb9f02fb88a42a72",
+  "linhas_anteriores": 3211,
+  "linhas_finais": 3229,
+  "acrescentadas": 18,
+  "anteriores_alteradas": [],
+  "linhas": [
+    {
+      "id": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "value": "3",
+      "unit": "%",
+      "name": "Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%",
+      "source": "RTP",
+      "attributed_to": [
+        "António Leitão Amaro, ministro da Presidência"
+      ],
+      "published_at": "2026-10-09",
+      "reference_date": "2026-10-09",
+      "document": {
+        "title": "Leitão Amaro reitera que os portugueses \"têm mais dinheiro no bolso\" e apela à responsabilidade de PS e Chega",
+        "edition": "2026-10-09",
+        "locator": "Título e corpo da notícia",
+        "locator_en": "Title and body of the article",
+        "source_sha256": "095b231ac02894caae1dd10a085b4ce8bc72a33f6e6be5e622e6b86fc1a7679f",
+        "kind": "html"
+      },
+      "excerpt": "Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%"
+    },
+    {
+      "id": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "value": "1 700",
+      "unit": "milhões de euros",
+      "name": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias",
+      "source": "PCP",
+      "attributed_to": [
+        "Paulo Raimundo",
+        "PCP"
+      ],
+      "published_at": "2026-10-09",
+      "reference_date": "2026-10-09",
+      "document": {
+        "title": "Governo, Chega e PS dançam o bailarico. Quem paga a conta são os trabalhadores!",
+        "edition": "2026-10-09",
+        "locator": "Intervenção na Assembleia da República",
+        "locator_en": "Speech in the Assembly of the Republic",
+        "source_sha256": "e426f05d0446a03b252e2e8dd7bb668790fb752e5c9341fef16da35ba426ef88",
+        "kind": "html"
+      },
+      "excerpt": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+    },
+    {
+      "id": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "value": "1,5",
+      "unit": "% de queda",
+      "name": "O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.",
+      "source": "RTP",
+      "attributed_to": [
+        "RTP"
+      ],
+      "published_at": "2026-10-09",
+      "reference_date": "2026-10-09",
+      "document": {
+        "title": "OE2027. Verbas para a saúde com queda de 1,5%",
+        "edition": "2026-10-09",
+        "locator": "Título e corpo da notícia",
+        "locator_en": "Title and body of the article",
+        "source_sha256": "18f342451b5b4b93e15cbcef11b6e45d3f8175844c18093c24004b97165178ca",
+        "kind": "html"
+      },
+      "excerpt": "O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano."
+    },
+    {
+      "id": "oe-2027-cenario-ihpc-2026",
+      "value": "2,9",
+      "unit": "%",
+      "name": "IHPC",
+      "source": "Conselho das Finanças Públicas",
+      "attributed_to": null,
+      "published_at": null,
+      "reference_date": "2026",
+      "document": {
+        "title": "Previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027",
+        "edition": "2026",
+        "locator": "Quadro 1, IHPC, 2026, p. 9; comentário, p. 19; conclusão, p. 20",
+        "locator_en": "Table 1, HICP, 2026, p. 9; commentary, p. 19; conclusion, p. 20",
+        "source_sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb",
+        "page": 9,
+        "kind": "ficheiro",
+        "crop": {
+          "asset": "recortes/oe-2027-cenario-ihpc-2026.webp",
+          "sha256": "e6d673f972bbaf2bf2acfc0ad107f55255301bc7f7c849e2109e906033e8c6c9",
+          "page": 9
+        }
+      },
+      "excerpt": "IHPC                                                      2,2       2,9      2,3\n\nFonte: MF – Informação enviada a 30 de setembro de 2026.\n\nO cenário macroeconómico aponta para uma inflação de 2,9% em 2026, o que se afigura pouco provável.\n\nNos termos do número 4do artigo 4.º do Regulamento n.º 473/2013 do Parlamento Europeu e do Conselho de 21 de maio de 2013, em resultado da análise efetuada às previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027 do XXV Governo Constitucional, com base na informação atualmente disponível e ponderando os riscos identificados, tendo em conta que a evolução para o crescimento nominal previsto para 2027 respeita os princípios legais supramencionados, o Conselho das Finanças Públicas endossa as previsões macroeconómicas apresentadas, dando nota que os riscos para o crescimento real apresentam um pendor descendente."
+    },
+    {
+      "id": "oe-2027-cenario-pib-real-crescimento-2027",
+      "value": "2,1",
+      "unit": "%",
+      "name": "PIB",
+      "source": "Conselho das Finanças Públicas",
+      "attributed_to": null,
+      "published_at": null,
+      "reference_date": "2027",
+      "document": {
+        "title": "Previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027",
+        "edition": "2026",
+        "locator": "Quadro 1, PIB, 2027, p. 9; comentário, p. 19; conclusão, p. 20",
+        "locator_en": "Table 1, GDP, 2027, p. 9; commentary, p. 19; conclusion, p. 20",
+        "source_sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb",
+        "page": 9,
+        "kind": "ficheiro",
+        "crop": {
+          "asset": "recortes/oe-2027-cenario-pib-real-crescimento-2027.webp",
+          "sha256": "b3a479124eae693a8d94309f5183f6de2ed9d48a2c7b71c48b7ca6f8124cc2df",
+          "page": 9
+        }
+      },
+      "excerpt": "PIB                                                       1,9       2,3      2,1\n\nFonte: MF – Informação enviada a 30 de setembro de 2026.\n\nNo ano de 2027, o crescimento real previsto de 2,1% é superior ao de todas as instituições de referência e encontra-se no limite superior do intervalo de confiança a 30% dessas previsões e projeções.\n\nNos termos do número 4do artigo 4.º do Regulamento n.º 473/2013 do Parlamento Europeu e do Conselho de 21 de maio de 2013, em resultado da análise efetuada às previsões macroeconómicas subjacentes à Proposta de Orçamento do Estado para 2027 do XXV Governo Constitucional, com base na informação atualmente disponível e ponderando os riscos identificados, tendo em conta que a evolução para o crescimento nominal previsto para 2027 respeita os princípios legais supramencionados, o Conselho das Finanças Públicas endossa as previsões macroeconómicas apresentadas, dando nota que os riscos para o crescimento real apresentam um pendor descendente."
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "value": "1 152",
+      "unit": "milhões de euros",
+      "name": "encargos brutos",
+      "source": "Ministério das Finanças",
+      "attributed_to": null,
+      "published_at": null,
+      "reference_date": "2027",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "edition": "2027",
+        "locator": "Quadro 4.25, setor rodoviário, encargos brutos, 2027, p. 123 do PDF (107 impressa); apoio aos encargos e receitas: texto da p. 124 do PDF (108 impressa)",
+        "locator_en": "Table 4.25, road sector, gross charges, 2027, p. 123 of the PDF (printed 107); supporting text on charges and revenue: p. 124 of the PDF (printed 108)",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "page": 123,
+        "kind": "ficheiro",
+        "crop": {
+          "asset": "recortes/oe-2027-ppp-rodoviario-encargos-brutos-2027.webp",
+          "sha256": "07a1cde4211b4b236d6cefbe73855203a185937ac42740cfd0f5bdbb83e6db84",
+          "page": 123
+        }
+      },
+      "excerpt": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "value": "889",
+      "unit": "milhões de euros",
+      "name": "Rodoviário",
+      "source": "Ministério das Finanças",
+      "attributed_to": null,
+      "published_at": null,
+      "reference_date": "2027",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "edition": "2027",
+        "locator": "Quadro 4.25, setor rodoviário, Rodoviário, 2027, p. 123 do PDF (107 impressa); apoio aos encargos e receitas: texto da p. 124 do PDF (108 impressa)",
+        "locator_en": "Table 4.25, road sector, Road sector, 2027, p. 123 of the PDF (printed 107); supporting text on charges and revenue: p. 124 of the PDF (printed 108)",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "page": 123,
+        "kind": "ficheiro",
+        "crop": {
+          "asset": "recortes/oe-2027-ppp-rodoviario-encargos-liquidos-2027.webp",
+          "sha256": "49e97c6e91b53544dc3d066f0f4065eac3065834e37fc33b46653d13289c87d6",
+          "page": 123
+        }
+      },
+      "excerpt": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-receitas-2027",
+      "value": "263",
+      "unit": "milhões de euros",
+      "name": "receitas",
+      "source": "Ministério das Finanças",
+      "attributed_to": null,
+      "published_at": null,
+      "reference_date": "2027",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "edition": "2027",
+        "locator": "Quadro 4.25, setor rodoviário, receitas, 2027, p. 123 do PDF (107 impressa); apoio aos encargos e receitas: texto da p. 124 do PDF (108 impressa)",
+        "locator_en": "Table 4.25, road sector, revenue, 2027, p. 123 of the PDF (printed 107); supporting text on charges and revenue: p. 124 of the PDF (printed 108)",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "page": 123,
+        "kind": "ficheiro",
+        "crop": {
+          "asset": "recortes/oe-2027-ppp-rodoviario-receitas-2027.webp",
+          "sha256": "fe85f456d2d299541f952b0c913db41020f2b9d2aee85758b607f1265fa4dc70",
+          "page": 123
+        }
+      },
+      "excerpt": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+    },
+    {
+      "id": "oe-2027-ppp-total-encargos-liquidos-2027",
+      "value": "1 438",
+      "unit": "milhões de euros",
+      "name": "Total",
+      "source": "Ministério das Finanças",
+      "attributed_to": null,
+      "published_at": null,
+      "reference_date": "2027",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "edition": "2027",
+        "locator": "Quadro 4.25, Total, 2027, p. 123 do PDF (107 impressa)",
+        "locator_en": "Table 4.25, Total, 2027, p. 123 of the PDF (printed 107)",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "page": 123,
+        "kind": "ficheiro",
+        "crop": {
+          "asset": "recortes/oe-2027-ppp-total-encargos-liquidos-2027.webp",
+          "sha256": "08617d163b9aa177cc00874aa7986904e2c502b95a5dd6c04106374bd8b3ec0f",
+          "page": 123
+        }
+      },
+      "excerpt": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "value": "18 062,4",
+      "unit": "milhões de euros",
+      "name": "Despesa efetiva consolidada",
+      "source": "Ministério das Finanças",
+      "attributed_to": null,
+      "published_at": null,
+      "reference_date": "2026",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "edition": "2027",
+        "locator": "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa efetiva consolidada, 2026, Estimativa, p. 303 do PDF (287 impressa)",
+        "locator_en": "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated effective expenditure, 2026, Estimate, p. 303 of the PDF (printed 287)",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "page": 303,
+        "kind": "ficheiro",
+        "crop": {
+          "asset": "recortes/oe-2027-saude-despesa-efetiva-consolidada-2026.webp",
+          "sha256": "93b62eb47227b9ead9edf2fcfbbfdbf658ab4e6151ff95aa092d9837a2fc424a",
+          "page": 303
+        }
+      },
+      "excerpt": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "value": "17 803,1",
+      "unit": "milhões de euros",
+      "name": "Despesa efetiva consolidada",
+      "source": "Ministério das Finanças",
+      "attributed_to": null,
+      "published_at": null,
+      "reference_date": "2027",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "edition": "2027",
+        "locator": "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa efetiva consolidada, 2027, Orçamento, p. 303 do PDF (287 impressa)",
+        "locator_en": "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated effective expenditure, 2027, Budget, p. 303 of the PDF (printed 287)",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "page": 303,
+        "kind": "ficheiro",
+        "crop": {
+          "asset": "recortes/oe-2027-saude-despesa-efetiva-consolidada-2027.webp",
+          "sha256": "93b62eb47227b9ead9edf2fcfbbfdbf658ab4e6151ff95aa092d9837a2fc424a",
+          "page": 303
+        }
+      },
+      "excerpt": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "value": "17 291,3",
+      "unit": "milhões de euros",
+      "name": "Despesa efetiva consolidada",
+      "source": "Ministério das Finanças",
+      "attributed_to": null,
+      "published_at": null,
+      "reference_date": "2026",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "edition": "2027",
+        "locator": "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa efetiva consolidada, 2026, Estimativa (Sem PRR), p. 303 do PDF (287 impressa)",
+        "locator_en": "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated effective expenditure, 2026, Estimate (excluding RRP), p. 303 of the PDF (printed 287)",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "page": 303,
+        "kind": "ficheiro",
+        "crop": {
+          "asset": "recortes/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026.webp",
+          "sha256": "93b62eb47227b9ead9edf2fcfbbfdbf658ab4e6151ff95aa092d9837a2fc424a",
+          "page": 303
+        }
+      },
+      "excerpt": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "value": "17 803,1",
+      "unit": "milhões de euros",
+      "name": "Despesa efetiva consolidada",
+      "source": "Ministério das Finanças",
+      "attributed_to": null,
+      "published_at": null,
+      "reference_date": "2027",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "edition": "2027",
+        "locator": "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa efetiva consolidada, 2027, Orçamento (Sem PRR), p. 303 do PDF (287 impressa)",
+        "locator_en": "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated effective expenditure, 2027, Budget (excluding RRP), p. 303 of the PDF (printed 287)",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "page": 303,
+        "kind": "ficheiro",
+        "crop": {
+          "asset": "recortes/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027.webp",
+          "sha256": "93b62eb47227b9ead9edf2fcfbbfdbf658ab4e6151ff95aa092d9837a2fc424a",
+          "page": 303
+        }
+      },
+      "excerpt": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "value": "3,0",
+      "unit": "%",
+      "name": "Despesa efetiva consolidada",
+      "source": "Ministério das Finanças",
+      "attributed_to": null,
+      "published_at": null,
+      "reference_date": "2027",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "edition": "2027",
+        "locator": "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa efetiva consolidada, Variação (Sem PRR) (%), p. 303 do PDF (287 impressa)",
+        "locator_en": "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated effective expenditure, Change (excluding RRP) (%), p. 303 of the PDF (printed 287)",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "page": 303,
+        "kind": "ficheiro",
+        "crop": {
+          "asset": "recortes/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao.webp",
+          "sha256": "93b62eb47227b9ead9edf2fcfbbfdbf658ab4e6151ff95aa092d9837a2fc424a",
+          "page": 303
+        }
+      },
+      "excerpt": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "value": "−1,4",
+      "unit": "%",
+      "name": "Despesa efetiva consolidada",
+      "source": "Ministério das Finanças",
+      "attributed_to": null,
+      "published_at": null,
+      "reference_date": "2027",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "edition": "2027",
+        "locator": "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa efetiva consolidada, Variação (%), p. 303 do PDF (287 impressa)",
+        "locator_en": "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated effective expenditure, Change (%), p. 303 of the PDF (printed 287)",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "page": 303,
+        "kind": "ficheiro",
+        "crop": {
+          "asset": "recortes/oe-2027-saude-despesa-efetiva-consolidada-variacao.webp",
+          "sha256": "93b62eb47227b9ead9edf2fcfbbfdbf658ab4e6151ff95aa092d9837a2fc424a",
+          "page": 303
+        }
+      },
+      "excerpt": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2026",
+      "value": "18 125,9",
+      "unit": "milhões de euros",
+      "name": "Despesa total consolidada",
+      "source": "Ministério das Finanças",
+      "attributed_to": null,
+      "published_at": null,
+      "reference_date": "2026",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "edition": "2027",
+        "locator": "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa total consolidada, 2026, Estimativa, p. 303 do PDF (287 impressa)",
+        "locator_en": "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated total expenditure, 2026, Estimate, p. 303 of the PDF (printed 287)",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "page": 303,
+        "kind": "ficheiro",
+        "crop": {
+          "asset": "recortes/oe-2027-saude-despesa-total-consolidada-2026.webp",
+          "sha256": "2827f0af5de0ce482e26aba6adbc47b946ceef1e30a4c5e674cf89d50b61c261",
+          "page": 303
+        }
+      },
+      "excerpt": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2027",
+      "value": "17 858,4",
+      "unit": "milhões de euros",
+      "name": "Despesa total consolidada",
+      "source": "Ministério das Finanças",
+      "attributed_to": null,
+      "published_at": null,
+      "reference_date": "2027",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "edition": "2027",
+        "locator": "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa total consolidada, 2027, Orçamento, p. 303 do PDF (287 impressa)",
+        "locator_en": "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated total expenditure, 2027, Budget, p. 303 of the PDF (printed 287)",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "page": 303,
+        "kind": "ficheiro",
+        "crop": {
+          "asset": "recortes/oe-2027-saude-despesa-total-consolidada-2027.webp",
+          "sha256": "2827f0af5de0ce482e26aba6adbc47b946ceef1e30a4c5e674cf89d50b61c261",
+          "page": 303
+        }
+      },
+      "excerpt": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "value": "−1,5",
+      "unit": "%",
+      "name": "Despesa total consolidada",
+      "source": "Ministério das Finanças",
+      "attributed_to": null,
+      "published_at": null,
+      "reference_date": "2027",
+      "document": {
+        "title": "Orçamento do Estado para 2027",
+        "edition": "2027",
+        "locator": "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa total consolidada, Variação (%), p. 303 do PDF (287 impressa)",
+        "locator_en": "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated total expenditure, Change (%), p. 303 of the PDF (printed 287)",
+        "source_sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+        "page": 303,
+        "kind": "ficheiro",
+        "crop": {
+          "asset": "recortes/oe-2027-saude-despesa-total-consolidada-variacao.webp",
+          "sha256": "2827f0af5de0ce482e26aba6adbc47b946ceef1e30a4c5e674cf89d50b61c261",
+          "page": 303
+        }
+      },
+      "excerpt": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+    }
+  ],
+  "documentos": [
+    {
+      "ficheiro": "cfp-pagina.html",
+      "bytes": 28071,
+      "sha256": "65591ee5aa7a87982e5d9818c6821207e4825252adbac2f6a3c34864bf2cd3bb",
+      "estado": 200,
+      "pedido": "https://www.cfp.pt/pt/publicacoes/orcamento-do-estado/previsoes-macroeconomicas-subjacentes-a-proposta-de-orcamento-do-estado-para-2027",
+      "acedido_em": "2026-10-13T18:47:15.797507+00:00"
+    },
+    {
+      "ficheiro": "cfp-parecer.pdf",
+      "bytes": 387556,
+      "sha256": "b4ec1e5dbac4157d5ef0d111fefa135e693ee4158cf851e9623ec0314636c2cb",
+      "estado": 200,
+      "pedido": "https://www.cfp.pt/uploads/publicacoes_ficheiros/cfp-parecer-05-2026.pdf",
+      "acedido_em": "2026-10-13T18:47:25.558076+00:00"
+    },
+    {
+      "ficheiro": "dar-indice.html",
+      "bytes": 369179,
+      "sha256": "db60716c96db133747b37ae33f52e86eccf13ba15628a39730c02eb4039b8fae",
+      "estado": 200,
+      "pedido": "https://www.parlamento.pt/DAR/Paginas/DAR1Serie.aspx",
+      "acedido_em": "2026-10-13T18:46:50.572834+00:00"
+    },
+    {
+      "ficheiro": "iniciativa.html",
+      "bytes": 456564,
+      "sha256": "244dd0fea23f77e3ef15c971f3df78b9b265f841dcb537b365de9b589068bf4e",
+      "estado": 200,
+      "pedido": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=377352",
+      "acedido_em": "2026-10-13T18:46:48.786210+00:00"
+    },
+    {
+      "ficheiro": "oe-relatorio.pdf",
+      "bytes": 25512364,
+      "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+      "estado": 200,
+      "pedido": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true",
+      "acedido_em": "2026-10-13T18:47:56.980564+00:00"
+    },
+    {
+      "ficheiro": "pcp-afirmacao.html",
+      "bytes": 149216,
+      "sha256": "e426f05d0446a03b252e2e8dd7bb668790fb752e5c9341fef16da35ba426ef88",
+      "estado": 200,
+      "pedido": "https://www.pcp.pt/governo-chega-ps-dancam-bailarico-quem-paga-conta-sao-trabalhadores",
+      "acedido_em": "2026-10-13T18:47:05.556559+00:00"
+    },
+    {
+      "ficheiro": "rtp-amaro.html",
+      "bytes": 88034,
+      "sha256": "095b231ac02894caae1dd10a085b4ce8bc72a33f6e6be5e622e6b86fc1a7679f",
+      "estado": 200,
+      "pedido": "https://www.rtp.pt/noticias/politica/leitao-amaro-reitera-que-os-portugueses-tem-mais-dinheiro-no-bolso-e-apela-a-responsabilidade-de-ps-e-chega_n1770773",
+      "acedido_em": "2026-10-13T18:47:05.320436+00:00"
+    },
+    {
+      "ficheiro": "rtp-queda.html",
+      "bytes": 74651,
+      "sha256": "18f342451b5b4b93e15cbcef11b6e45d3f8175844c18093c24004b97165178ca",
+      "estado": 200,
+      "pedido": "https://www.rtp.pt/noticias/economia/oe2027-verbas-para-a-saude-com-queda-de-15_v1770667",
+      "acedido_em": "2026-10-13T18:47:15.290190+00:00"
+    }
+  ]
+}

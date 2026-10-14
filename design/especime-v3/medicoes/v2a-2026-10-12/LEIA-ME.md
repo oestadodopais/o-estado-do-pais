@@ -534,7 +534,7 @@ Mandato: `design/observatorio/mandatos/MANDATO-V2A-g-2026-10-14.md`. Entrada do 
 
 | Achado | O que ganhou | Ficheiro e linha |
 | --- | --- | --- |
-| 5 | PCP: os encargos brutos são pagamentos do Estado, os líquidos descontam recebimentos; o período vem das duas linhas das parcerias; a afirmação é superior aos dois valores. Total: pagamentos previstos depois dos recebimentos, setores explicados, euros do ano. As três contas rodoviárias explicam pagamentos, receitas e saldo. | `familias.mjs:51`, `familias.mjs:88`; `src/lib/v2a-palavras.mjs:20`; `tests/linha/v2a.mjs:122` |
+| 5 | PCP: os encargos brutos são pagamentos do Estado, os líquidos descontam recebimentos; o período vem das duas linhas das parcerias; a afirmação é superior aos dois valores. Total: pagamentos previstos depois dos recebimentos, setores explicados, euros do ano. As três contas rodoviárias explicam pagamentos, receitas e saldo. | `familias.mjs:51`, `familias.mjs:88`; `src/lib/v2a-palavras.mjs:19`; `tests/linha/v2a.mjs:122` |
 | 8 | O quadro aparece como 4.25, pelo campo `quadro` do apoio. A nota da definição financeira declara 4.38; as passagens corridas não recebem número de quadro. | `origens-g.py:10`; `<motor>/publisher/v2a.py:284`; `src/lib/o-que-e-o-numero.mjs:134` |
 | 9 | Os documentos e publicadores dos apoios têm inglês; Amaro diz «RRP; PRR in Portuguese». Os excertos continuam na língua da fonte. | `src/data/figuras.mjs:2758`; `src/data/verbatim.mjs:55`; `familias.mjs:80` |
 | 10 | PCP e Amaro citam o campo do documento do apoio, com marca de origem; o ano do relatório deixou de vir do período de uma linha. | `familias.mjs:82`, `familias.mjs:88`; `tests/linha/v2a.mjs:111` |
@@ -589,7 +589,7 @@ Entrada do sítio em `c1e2b934`, motor em `dd5f1d5f`, ambos limpos. Os achados 1
 | --- | --- | --- |
 | 5 | O quadro das parcerias pertence apenas à página física 123. O texto da página 124 não recebe número de quadro. O PCP cita o quadro pelo apoio dos setores e usa a passagem seguinte para explicar pagamentos e receitas. | `familias.mjs:103`, `tests/linha/v2a.mjs:118`, `<motor>/publisher/v2a.py:290` |
 | 6 | As nove medidas da Saúde, Amaro e RTP explicam primeiro consolidação, depois despesa efetiva, uma vez cada. A nota do quadro 5.37 e a nota financeira do quadro 4.38 ficam seladas no pacote do motor. A régua das famílias recusa falta, repetição e inversão. | `familias.mjs:9`, `tests/cartao/v2ah-palavras.mjs:2`, `<motor>/publisher/v2a.py:268` |
-| 8 | As cinco páginas das parcerias explicam as receitas rodoviárias por portagens, partilhas de benefícios e pagamentos fixos das subconcessionárias. O apoio contém agora as componentes descritas na página 124. | `familias.mjs:13`, `src/lib/v2a-palavras.mjs:20` |
+| 8 | As cinco páginas das parcerias explicam as receitas rodoviárias por portagens, partilhas de benefícios e pagamentos fixos das subconcessionárias. O apoio contém agora as componentes descritas na página 124. | `familias.mjs:13`, `src/lib/v2a-palavras.mjs:19` |
 | 9 | A comparação do PCP usa os valores das três linhas e exige a mesma unidade. Uma planta altera cada valor e desfaz a desigualdade. A página inglesa confere o publicador traduzido; a planta imprime o português. | `tests/linha/v2a.mjs:14`, `tests/linha/v2a.mjs:131` |
 | 10 | V2A-74 regista as duas horas conservadas sem inferir a hora da escrita da correção. | `LEIA-ME.md:559` |
 | 11 | Título e página têm marcas separadas, o título traduzido não leva aspas angulares, os publicadores e títulos dos apoios têm inglês, o rótulo leva dois-pontos e os cenários rendem o ano pelo período da linha. | `familias.mjs:97`, `src/components/OrigemDaDefinicao.astro:120`, `src/lib/v2a-palavras.mjs:11`, `tests/linha/v2a.mjs:124` |
@@ -638,10 +638,10 @@ O mandato I fixa a redação literal. Os achados 1 a 4 e 7 pertencem às plantas
 
 | Achado real | O que ganhou | Ficheiro e linha |
 | --- | --- | --- |
-| 5, Major | As receitas deixam de ter uma hierarquia não documentada. A enumeração inclui a exceção das portagens dos parceiros privados, a partilha de benefícios ou de receitas e os pagamentos fixos, nas frases exatas do mandato. | `src/lib/v2a-palavras.mjs:20`; `familias.mjs:52` e `familias.mjs:92` |
-| 6, Major | Os pagamentos rodoviários são enumerados por espécie; a conta e a explicação dos valores de caixa e do ano usam os tokens. Saúde, Amaro e RTP explicam consolidação e operações financeiras com as duas frases prescritas. | `src/lib/v2a-palavras.mjs:20`; `familias.mjs:8` |
+| 5, Major | As receitas deixam de ter uma hierarquia não documentada. A enumeração inclui a exceção das portagens dos parceiros privados, a partilha de benefícios ou de receitas e os pagamentos fixos, nas frases exatas do mandato. | `src/lib/v2a-palavras.mjs:19`; `familias.mjs:52` e `familias.mjs:92` |
+| 6, Major | Os pagamentos rodoviários são enumerados por espécie; a conta e a explicação dos valores de caixa e do ano usam os tokens. Saúde, Amaro e RTP explicam consolidação e operações financeiras com as duas frases prescritas. | `src/lib/v2a-palavras.mjs:19`; `familias.mjs:8` |
 | 8, Minor | A atribuição inglesa usa o campo inglês do publicador, conserva o título português entre aspas angulares e acrescenta o título inglês marcado. As duas ocorrências de «State Budget report» passam a «Budget report». | `src/views/LinhaView.astro:629` e `:928`; `familias.mjs:19` |
-| 9, Minor | O apoio financeiro do quadro de projetos sai das famílias, fontes secundárias, localizadores e pacote de provas. A nota do quadro da Saúde permanece selada, com página e quadro próprios. | `<motor>/publisher/v2a.py:237` e `:256`; `<motor>/publisher/definition_sources.json`; `origens-i.py:5` |
+| 9, Minor | O apoio financeiro do quadro de projetos sai das famílias, fontes secundárias, localizadores e pacote de provas. A nota do quadro da Saúde permanece selada, com página e quadro próprios. | `<motor>/publisher/v2a.py:237` e `:262`; `<motor>/publisher/definition_sources.json`; `origens-i.py:5` |
 | 10, Minor | A V2A-84 regista apenas as duas horas dos ficheiros e o intervalo entre elas; deixa de afirmar a ordem da escrita. | `LEIA-ME.md:612`; `portoes-h-preparacao/motor.fim:1`; `portoes-h/build.inicio:1` |
 
 ### Decisões e questões
@@ -651,7 +651,7 @@ O mandato I fixa a redação literal. Os achados 1 a 4 e 7 pertencem às plantas
 - **V2A-88:** não se usa a nota financeira do quadro de projetos para definir a medida da Saúde. O apoio `v2a-total-efetiva` deixa a exportação; as fontes secundárias de Amaro e RTP deixam essa página. Os corpos integrais continuam só no motor.
 - **V2A-89:** a enumeração do ramo encontrou treze páginas do Ministério das Finanças, nove da Saúde e quatro das parcerias. A correção da atribuição inglesa abrange as treze, embora o mandato refira doze. Cada uma tem planta que troca o publicador inglês pelo português.
 - **V2A-90:** os ficheiros da corrida H registam o fim do motor em `2026-10-14T19:28:02Z` e o início do build seguinte em `2026-10-14T19:29:26Z`. O intervalo medido é de 84 segundos. Não registam a hora da escrita da correção.
-- **V2A-91:** os portões e as capturas são pedidos ao escrivão porque o navegador das conferências não arranca na sandbox. A corrida final será pedida depois do commit de código e provas; os resultados e as cabeças ficam no fecho abaixo.
+- **V2A-91:** os portões e as capturas são pedidos ao escrivão porque o navegador das conferências não arranca na sandbox. A corrida final foi pedida na cabeça do último commit de código e provas; os resultados e as cabeças ficam no fecho abaixo.
 - **V2A-92:** a preparação encontrou na régua do índice uma exigência antiga da nota financeira retirada. A régua passa a exigir o localizador próprio da Saúde, com plantas que acrescentam o apoio de outra medida e trocam a página. A conferência passou depois dessa correção.
 
 ### Conferências de preparação e custo
@@ -661,4 +661,26 @@ A régua do HTML conferiu 36 páginas e 192 plantas, incluindo a troca de uma pa
 Custo da V2-a-h, conforme o mandato I e o lançador: 111 turnos, 318 546 de custo antigo, 3 pontos da semana sem outra sessão em paralelo, contexto médio de 131 544. O custo da V2-a-i cabe ao lançador. Não foi exposta uma linha «tokens used».
 
 
-**V2A-93:** a primeira corrida I terminou em build 0, verify 1, typecheck 0 e motor 0, códigos lidos dos quatro ficheiros. A régua `check:mortos` recusou a constante `ppp` sem uso em `src/lib/v2a-palavras.mjs`. A declaração foi retirada depois de terminar a chamada completa. A corrida está em `portoes-i-preparacao/`, na cabeça `9caad0b5ba35c3447c415bb9c91c05062c5cebee` do sítio e `9e370c6dcdd3049df69b7cb5cb9f02fb88a42a72` do motor. As cabeças de início e fim coincidem e os dois estados finais estão vazios. A correção conserva as frases e os valores já conferidos; os quatro portões são repetidos após novo commit de provas.
+**V2A-93:** a primeira corrida I terminou em build 0, verify 1, typecheck 0 e motor 0, códigos lidos dos quatro ficheiros. A régua `check:mortos` recusou a constante `ppp` sem uso em `src/lib/v2a-palavras.mjs`. A correção retira essa declaração. A corrida está em `portoes-i-preparacao/`, na cabeça `9caad0b5ba35c3447c415bb9c91c05062c5cebee` do sítio e `9e370c6dcdd3049df69b7cb5cb9f02fb88a42a72` do motor. As cabeças de início e fim coincidem e os dois estados finais estão vazios. A correção conserva as frases e os valores já conferidos; os quatro portões são repetidos após novo commit de provas.
+
+
+### O fecho da passagem I
+
+O código conferido é `b8dd37a2711f2713b2beb77202d345aa826e3a13` no sítio e `9e370c6dcdd3049df69b7cb5cb9f02fb88a42a72` no motor. Os commits de implementação são `9caad0b5` (redação, apoios, publicação e réguas), `b8dd37a2` (constante sem uso e registos da primeira corrida) e `9e370c6d` no motor (retirada do apoio de outra medida). As primeiras 300 imagens estão em `123bff9908c9c3e81b8605235db6775cb8609309`. O commit que contém este fecho guarda as restantes capturas, os códigos e o relatório. As cabeças finais são lidas de Git na resposta; os commits de capturas e relatório não alteram o código conferido.
+
+| Portão | Código lido | Ficheiro |
+| --- | --- | --- |
+| build | 0 | `portoes-i/build.codigo` |
+| verify | 0 | `portoes-i/verify.codigo` |
+| typecheck | 0 | `portoes-i/typecheck.codigo` |
+| motor | 0 | `portoes-i/motor.codigo` |
+
+As cabeças de início e fim coincidem nos dois repositórios. Os ficheiros `estado.fim` e `motor.estado.fim` têm zero bytes. O verify confirma ausência de escrita durante as conferências. A L1 permanece em 2 780, no teto existente. O `dist/version.json`, o recibo das capturas e `inspecao-i.json` identificam a mesma cabeça de código.
+
+`inspecao-i.json` compara os 18 valores e unidades com a entrada e transcreve as frases do HTML. `frases-i.md` contém as frases das três páginas rodoviárias, incluindo a conta comum, do total e do PCP, nas duas edições. `medidas-i.json` confirma 3211 linhas anteriores intactas, 3229 linhas finais e oito corpos documentais distintos por SHA256. O pacote de apoios passa a ter cinco passagens seladas; os corpos integrais permanecem no motor.
+
+`plantas-i.json` contém 247 mensagens distintas, cada uma com o ficheiro e a linha conferidos no registo. A régua do HTML passou 192 plantas; entre elas estão 32 trocas de palavra, uma por página alterada e por língua, 13 trocas do publicador e os dois casos de igualdade na comparação do PCP. As plantas da página marcada e do localizador da Saúde cobrem as outras réguas alteradas. A planta do apoio financeiro retirado deixou de fazer sentido e saiu com esse apoio; a planta da nota da Saúde permanece.
+
+O pedido `capturas-pedido-i.json` cobre as dezasseis páginas alteradas, nas duas línguas e nas larguras 390, 768, 1024, 1280 e 1600. O recibo `design/especime-v3/capturas/v2a-2026-10-12/i/capturas.json` regista 160 casos e 480 imagens. Todos os SHA256 foram conferidos; as dimensões das páginas inteiras coincidem com o recibo. Não houve transbordos, pedidos externos nem erros do navegador. A inspeção visual registada em `capturas-i-inspecao.json` abrange 51 imagens: 32 cabeças móveis, 18 cabeças largas e a página inteira inglesa dos encargos líquidos rodoviários, incluindo a atribuição do publicador. Não foram observados cortes ou sobreposições nessas imagens.
+
+**V2A-94:** os cinco achados reais do mandato I estão tratados. Os quatro portões finais passaram pelo escrivão, depois do commit de provas; as capturas foram produzidas pelo mesmo circuito. A leitura a frio pertence ao lugar de direção. Não houve fusão de `main` ou `master`, nem `push`. O custo da V2-a-i cabe ao lançador; não foi exposta uma linha «tokens used».
