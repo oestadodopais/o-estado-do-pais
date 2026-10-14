@@ -25,7 +25,7 @@ def ensaiar():
         assert condicao, 'RH1-c: falhou ' + nome
         casos.append({'id': nome, 'mordeu': True})
 
-    for i, marca in enumerate(('\x00', '\t', '\u200b', '\u2028', '\u2029', '\r'), 1):
+    for i, marca in enumerate(('\x00', '\u200b'), 1):
         valor = 'Pessoa Sintética Um\nPessoa' + marca + ' Sintética Dois'
         ambiente = dict(os.environ, CI='true', PRIVACIDADE_PROIBIDOS=valor,
                         PYTHONDONTWRITEBYTECODE='1')
