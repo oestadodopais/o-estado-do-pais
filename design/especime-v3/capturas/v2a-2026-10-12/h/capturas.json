@@ -1,0 +1,4757 @@
+{
+  "cabeca": "659f9d27d801cfef740486c73b2a491600642f29",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-pt-390.png",
+      "rota": "/livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4381,
+      "sha256": "e8174a6eecdc29ebec48033a6570cc02c08034d6b422200ba91c81cd003fc3d3",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "553a30e1d1102747b6f2d0d10ff37c99284c52071009de8fc25b2ff5d493fce3"
+        },
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "71f9a69f8ebc1faf8d9b3ecd92b4da93927cd61b2709362b207682ec9126ae86"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-pt-768.png",
+      "rota": "/livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3796,
+      "sha256": "0a0d037ec69070ee4d9821f69186bcc5a03546dd658b1c9aba51dc9385ef9fbc",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "23215f95ae74efd73937d61b3fd6863d74538514d23ef865738440d13d329f4d"
+        },
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "77802b8c97b799eae3db6f0b3a1aac34b5638549b9e3a6b6884a5e3f4c946325"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-pt-1024.png",
+      "rota": "/livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3167,
+      "sha256": "e55e0627675be3f17fc8acb0ef1d5bcdcf995dff1dfb4ead110772a9c5fef3d7",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "7a460b1076f23b96fb19c9171dc374149ffa75fef20e96042e5db70c54f87c51"
+        },
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "74fb41592fbd88b747869f7de69368558e54661103a0ce089a8e31579f882142"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-pt-1280.png",
+      "rota": "/livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3202,
+      "sha256": "9a8f9c8038676dd89cac5282f5230c233177b6834f17dfeae37c7d53919ec295",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "1ce670e805dc72e3783283c8191fd9b870709b0bbf02d49e57d9f4718f08b4fa"
+        },
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "477cf28775b9946a5f95e9db19673075d626e09f25b3f9f2263ce00fb5d9dcbf"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-pt-1600.png",
+      "rota": "/livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3208,
+      "sha256": "e85b721dbeab1c655f6d2c3c6458fef53922d83dddb67035e55d764761b77d0d",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "94744c32a271f8b25b9673c06f5b2be22b9c27abd42a3c662075a9da2c751e09"
+        },
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "6798ba29ef1148d9774e01a5e268fc1999440f00f2a02bcee846791e92cfb215"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-390.png",
+      "rota": "/en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4406,
+      "sha256": "67d980dc28d832d082d995cbaa611016f2902b0b1eaf15be1d01cd8c5583d8b6",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "e81918c75c34f43b1a7ac837a274e5e4d60899016636ba57c2efb9ec9211ff87"
+        },
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "9e51c67a8344cb227c76d5cd2f23a7a85ba0e64293fe5756fc0befab8dbcf08e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-768.png",
+      "rota": "/en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3821,
+      "sha256": "4451cbc27353f780fb8058d2fd8163b600d6fc1866e98b972317b93f8afa6d13",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "52b70718f07dbc3a1ea4ef9e0a5efbfa13955118826fe6acd9a6af9f18ccf1e8"
+        },
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "bb11376c4b5f02c660b1f3e020e96bc8507421bbd2b946768f49cdbcc4a5b048"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-1024.png",
+      "rota": "/en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3192,
+      "sha256": "c7ce07cd0f13db7c9fd74cf0f307bc9c4db5727088db4b831095b7ef988f14a5",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "d5380a68af7509bd13f6d28eaf5b06de3581953cf258d719b2bf6f748520584f"
+        },
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "c91a9f65a9370580d0938a20d98fa78a0daa7155424d9506d4d6cfb1df686963"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-1280.png",
+      "rota": "/en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3227,
+      "sha256": "353a6e85550ddc24107cd16e0909aa15ef864a83039a77e274b82373162d07a2",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "dabf349dafa5c5493ab28a3a2b50525f8ad3238b899ed5fd6640b57c4b801d6b"
+        },
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "36fca457c216be08390a88bdfb8bede2cce690269ab93449887f188f48106ef8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-1600.png",
+      "rota": "/en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3233,
+      "sha256": "412304fc91df6392b102e27eec9471defa0537c1c48ba476cb67eb16911ab8b6",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "7d0b41f4d644738ab18daf4ef6defa33ab474cdb59a985fb5afe4181d67b64ab"
+        },
+        {
+          "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1c8b3135e701f5f61725298f9a2b65f83411291e0c8624370f1a39cd68ee65df"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-390.png",
+      "rota": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3757,
+      "sha256": "0b884c7a8e9ae2d6b0695e9ec7f68023ed90baffb69b1261c6de2415201a5537",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "8803f963dfce7c93c79b56ef2de5bcf8bbfe0cac8bbd339759c22098f4ae09d8"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "84fc35bca72a3eb9c6c1a8b8b05cb3c0aac54f669a3519b17144209e85f41a14"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-768.png",
+      "rota": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3336,
+      "sha256": "3eec7e1be0fb5a2b6b45f4e75f38754680a6ca5c525f954fb85e8b60ad20b275",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "c71d20a1d473e74cfdf0ad49fef328634cc57c60314cfcbce480f36d0da7699c"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "7489eae14db39fb5d7dda8b4cc9d90dd076a904d01005796d7d5381f894eef9f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1024.png",
+      "rota": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2698,
+      "sha256": "e2f18acb8d50901bd0fb47024d712c09edb7ca496bef329650734e5f183bbdfb",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "8bf9d36ac14015eadb770baddae59b211976f9ff841d1bb91d846e40448bc727"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "e89e587930231596281377ebcd6dfa43401097bb180d13c20bb81ae177b3b852"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1280.png",
+      "rota": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2733,
+      "sha256": "f3055f1610b1d85ce8ecf579fce09057f0f6e05106204691a3140af75fe0ee52",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "768c09ad09e83d7d549b72cb87c894f9ba8bdcb7c6289b7867e18110277af3aa"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "9d42e4856548c509967046444d6e3be83c5c3de306c5649e374129c823e5de8a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1600.png",
+      "rota": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2739,
+      "sha256": "4e66819a9ff6f8909eba9e91dd6c1879d9803f8f57d93280015c84d511f1dd1d",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "8d8135cd501c98e06b11712c4729a5af2cc9709ba338b19ff6e56d1a786e1e92"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "2a63f314bb0feabb1aae1e2234d262eb1e6de1f109a240d14300ecd936e57135"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-390.png",
+      "rota": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3782,
+      "sha256": "d41065261de36924b2d962b4604c047d3dcffb5d1271637949b1479f9c6f360e",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "972d2a4a7e756fe0a76479667c729620790397b9de316138df61e7908f988412"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "3d5ac3ed25a556715de5b887ba454873d3bb0d3a150988aeb9f1f594fb7c180e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-768.png",
+      "rota": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3336,
+      "sha256": "cc7189f48b3c6425274b1146bef4b918503c41595d442a7cef142182dbc65831",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "95819366e601291bfe08d721cf101c95e6e5eb5365f2cfa947557b2c993149dd"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "47fc589c78acf0e38861933f602f18cd95fff4bc815329b49c45a45a76ef0f9b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1024.png",
+      "rota": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2698,
+      "sha256": "053dac3b947753ea47fbdc76ebc6f0853ffe33dfee6cad0192756aa944a682ac",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "4d384413686050e9a271bd4f0c80dd5b5faa0a38bee8ef3bd6e44f87c801f695"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "d9f6d0be006145bf89f090c0bf0514677dab32dc1f3f19d701893c26c81ed91c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1280.png",
+      "rota": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2733,
+      "sha256": "c4ad3390e6bad6af990f3dbc02f9dd8d967869dd40a4fedba84cb61422bebbd4",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "b6bdafcb89e35eec5d3039fd56ad4e780877218536793c755c34f6b2c597555a"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "fac10a047518d183aa57d9a6fc6e37bb360011d6b65984408c58c3cbc9907457"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1600.png",
+      "rota": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2739,
+      "sha256": "17fce7c0b3c54971857efdc52475d066cd5c64226c5a1eb5d6532a0c8e6629c4",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "c23b022206e6d396b323705c9355507edc39e92dac82dda54756cfab0ede73b4"
+        },
+        {
+          "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "6d610b56a245361ff41b7a9d98c8a6f65eca9af3a8f889807c99feed692146ec"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-pt-390.png",
+      "rota": "/livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4246,
+      "sha256": "1a128aa326de8efbd963999f0e6f5d1f06e4ce6476e582c5d58cd6a51cbd132f",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "3de677d9e168837913a7b9ca2df2aeed4b28bcac272b21bf86914053f7974fbc"
+        },
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "a1a595e2675453c77011df5c10909fdc995522566995ef3a0b1eb6aae90724db"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-pt-768.png",
+      "rota": "/livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3762,
+      "sha256": "b5bf8eda6c34300f0dcbf31a8c2b8d715afa89c67cb5e48db7e0181bf1de1b42",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "30f736fc29b973e2656d740be2ebb8b671aaddb520f735c8dd864b5d639b3730"
+        },
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "83baee71445455654a75e42b1fa97852dc4fa8ef1b3a3864375b5187d482c060"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-pt-1024.png",
+      "rota": "/livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3070,
+      "sha256": "183147beff18aea374c54ec95d6613ec1918848fe42282f37df40f42a0a74076",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "c76c6f2df822645277e8bcd7d1ebc641e7ec1d548807f53eafa50babd88b425d"
+        },
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "02f2fd16ce189b1bd7298fbaf2c4a55ab72095181e7ed8362bb0e7599837f21a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-pt-1280.png",
+      "rota": "/livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3087,
+      "sha256": "904148c55db5ede63e154831f3ce7bf436a57d1c8fbb34c7d602db7eb9211d2b",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "454a88aa78f3caee5ee91c777a47eeb843f977f8be564ac87dd8ec6557b73127"
+        },
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "439fa352555e10eaa9284c70740c16a468ac5b997d12ec5dc527de50a85b4b7d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-pt-1600.png",
+      "rota": "/livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3094,
+      "sha256": "1c20a67064364e6021c09b60fbdddeba1b82fecdca18e200d1d130641e0a4005",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "05f9836650100b7d6b2045a931de8db5f4f60061ce54be16e87ba0341ab7f362"
+        },
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "324a294d5ea3f4e8c89daaff22ef7165446fea7469ed03dc807f1e906a28c5f5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-390.png",
+      "rota": "/en/ledger/afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4271,
+      "sha256": "d94a94d87d46ff1956902b788196a3b672c898df6f3dcde5ae377d2277824d48",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "e68f54f1e7ccda97f527ca380e90e7c87d3b6f60cf479801a27fea6a6c547736"
+        },
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "ffc38eec4a03d80a793400b53be7c00d012b58a247adc3e8b1715d9550b2dc0c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-768.png",
+      "rota": "/en/ledger/afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3786,
+      "sha256": "53b18219dc15496a057ca04b348850dd9fa035a808fc78ea395871f3ba0e5869",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "1e02abc14823f1f5f6e6739bc79dcb1f7584471146b74fdbd8471a287b8994fb"
+        },
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "2f4ea9917bf28b02ee29dc0091faed0430d003ee1897bfb9cc99a90b61bcbf62"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-1024.png",
+      "rota": "/en/ledger/afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3095,
+      "sha256": "9da2b4c5ea1bbb418b60df7fe83fbfd24df9a6e8243824a3f1efba4511dd252a",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "71fb1ff601648f916d375a218450195eb8c34b7c16f9706c96acfded32e4d454"
+        },
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "a295d76eb6b019bf2c3b4d6704c64ca978b07dee6b8f4fbdf737c5cf8e68e3a3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-1280.png",
+      "rota": "/en/ledger/afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3112,
+      "sha256": "dcbb7b131cd3aa7fbc4b919b36dc10988a5848d8d87c843e4ba1864475d68aa6",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "43043c8dbe9395d710a8b5a9f2791285ccb1ae305317cfcf1492cabccb824080"
+        },
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "3e20e25dbf7e9f42e5c029a7866626c0d45d0a7424abd2c4c70f218f3406b4f7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-1600.png",
+      "rota": "/en/ledger/afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3118,
+      "sha256": "1cd94d6112fd524f2c5b9f2d5c91fa1f293f442ddcb7ba8720d519e92067f7f3",
+      "recortes": [
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "5d18c5a9412f86b6030fbc760041a8d1d95bfc3b46b8396715d151b40e6a2c5d"
+        },
+        {
+          "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1f11eb6908ca646fa17f2448b625779831e2f566a93f1f78f78516f6a24c96fa"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-ihpc-2026-pt-390.png",
+      "rota": "/livro-razao/oe-2027-cenario-ihpc-2026",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3730,
+      "sha256": "fba7814fae5d809afffad214b75b8b143f4eb6f0ca677edd12f084a3787cc38f",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "a8f03cf7cd9cedd7e4633abc0b764a4f4412641d6dabaf98988f374e83c66491"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "e9bb32c56e1a5d529b00d60b545d74d3459cde0e6334a840dfe2f2365537ff67"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-ihpc-2026-pt-768.png",
+      "rota": "/livro-razao/oe-2027-cenario-ihpc-2026",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3449,
+      "sha256": "54efa053b01d80bb42014ae3e45c1a28c976a76656a8d2d47617d81ec1b12ebd",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "162264e2da2635d93711ed16dc4afcbd0f5fd2e14e031470b055cdd7a62652fd"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "294d25e29378517b03cb3313ce7b5e0c4c01e01efb1448772d940ad50b0e34dc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-ihpc-2026-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-cenario-ihpc-2026",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2309,
+      "sha256": "b684e3c47cd1c0bf4cd00420b75fd235db0f6417311afbff8dbc98c13f72b932",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "c038fd6117c835ea404971417e29d33e1c2dd8da0b84a4a9d20c0f2ec329ccd2"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "d5e51dd7bf9174a90f18189995b8953f144539fa4acc32903e5558f098396f43"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-ihpc-2026-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-cenario-ihpc-2026",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2344,
+      "sha256": "ba8c1bddf63f2d0ccffdfb712163d8feb01c0049a05e6a2293859833c248cdfa",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "aca79fa11e3778bfed4e19203f4ef24c2974a0c2ccbdcbdf2a2bcf88a1f6bb93"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "694ca593a8c25109499694d055216a022627578423e6b72615068485db108912"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-ihpc-2026-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-cenario-ihpc-2026",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2350,
+      "sha256": "c6207ddc2b629e4131101083fef14fe07c7cf9d42218f17773393ac784e09c8c",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "aca79fa11e3778bfed4e19203f4ef24c2974a0c2ccbdcbdf2a2bcf88a1f6bb93"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "8b1d0f4d09be188288efc2ec78dafd9697e809a51ad89cb1ee7b871df579999e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-ihpc-2026-en-390.png",
+      "rota": "/en/ledger/oe-2027-cenario-ihpc-2026",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3676,
+      "sha256": "dce81ef6721d071db952566914530267fdd02fd77c0d25543cca91e45b3b0fc8",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "7b5558c9cfe38d8e4c8f03b22ba8c397fad07fb85a96af1076aee588cc9e4ca7"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "5327bfb38336533a4be760bc59d8a7346a0c6cbbb5fc5e276d82ff78bff41f27"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-ihpc-2026-en-768.png",
+      "rota": "/en/ledger/oe-2027-cenario-ihpc-2026",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3414,
+      "sha256": "daf110e0cf4bd152a3b35e7596104fe2154118f98441f16533cb191a4ca32e0d",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "72628b85d25a0fcfefa6959d1f6b5b46fe7f5c051632d9a32533e838d1ba3a00"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "3de8f124c3ed6cbc2dc22017544300e9b509540b529fc352e307b9c600c52e66"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-ihpc-2026-en-1024.png",
+      "rota": "/en/ledger/oe-2027-cenario-ihpc-2026",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2265,
+      "sha256": "30d906e93cf0628dd4ff7cbe7f6efd29cb4b6c06aa3e16019181fe19f076dbbc",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "0f96295150055d3567fdc270a60f2e4ef8195c1552289acbaacfa5bdbfe9cceb"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "c481c4c7e2655d315fc7e4dae40592c4b5e9fc59cf6c2b5c07fe57e6fb7821be"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-ihpc-2026-en-1280.png",
+      "rota": "/en/ledger/oe-2027-cenario-ihpc-2026",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2300,
+      "sha256": "1ae08e4b40e8d273bc5ae81a7b906a78d9b21d2d8785177976849d1de9ae51b5",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "d4836f0a682c32ed8b01858ba621a70462d15cd897590ced7fd8b06c9e266b27"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "c177fc18539de3c2cebb00d15b7db72cbad073cb3d4f2f7d7ad347f3cb9fecff"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-ihpc-2026-en-1600.png",
+      "rota": "/en/ledger/oe-2027-cenario-ihpc-2026",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2306,
+      "sha256": "3c74d5cb575b94bd1eb008d2ad64d0a4253cc8820a919a612b88c9b78555427a",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "d4836f0a682c32ed8b01858ba621a70462d15cd897590ced7fd8b06c9e266b27"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-ihpc-2026-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "bdeac191b3368e0b5062193f4d25764a3703279d5e9050a3040d687a63e5f476"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-pt-390.png",
+      "rota": "/livro-razao/oe-2027-cenario-pib-real-crescimento-2027",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3630,
+      "sha256": "0babc1733085176ff27dd5b2fe8016e1d8640666d52b8f19c62ea8cae0bf27a3",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "c7380c10e537ad513b3e8d0acfab0e98492cf6307d9d3b9df6b270fd04bf3192"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "76a748dd629cc74f9b4d65918c0ca581f5c06eca35ecb895709064c4202c6804"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-pt-768.png",
+      "rota": "/livro-razao/oe-2027-cenario-pib-real-crescimento-2027",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3187,
+      "sha256": "0eb436b293bd4e00eff19b7ac96733a105c0c36ac505834e4dd4329f054060cf",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "0a5def2e1d4cf8f1c9a3beeae15970cbdc62d85bd85342cfdd3dcf98ca3e4681"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "bdaaef4073c2a7dd351c663eb5d8f8ee687d8d865a860f0f7a41dc2a62bd25fc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-cenario-pib-real-crescimento-2027",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2353,
+      "sha256": "e21223d960ddbe2b5be45f7befc54e15d5a8a8af2a469a81862e07e342b3626f",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "0c6f0a0fa1e61e7c383a669f18b96f89f8530df1b2efeec48089a536470f1bc8"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "5bc61589b5b3a0dab02dc4c4400d9a3febe8f2a226b6ed46cdc5fbdf509dd4c7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-cenario-pib-real-crescimento-2027",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2387,
+      "sha256": "8a9d325b050b4750d7e363595102cb2977ce688f15cdb6b3a95ea5eb7561c542",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "7a29145c8008c8da0e33e29a346cdf88b33dad98edac8a47c5dcd50ca64220fd"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "21e39daf5f8f0276f4a6c65859c396f07a06682c6c7fd7d36a7fe7c18ccb6118"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-cenario-pib-real-crescimento-2027",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2394,
+      "sha256": "b5857f4169efecef79acbc00b6711159072e0466a612edda3496275648bea238",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "7a29145c8008c8da0e33e29a346cdf88b33dad98edac8a47c5dcd50ca64220fd"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1fd28b0d58b662bb91face91d703ca2b09e5d7a0905ecc326577ef37101c75e8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-en-390.png",
+      "rota": "/en/ledger/oe-2027-cenario-pib-real-crescimento-2027",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3581,
+      "sha256": "af7f29530770ab05a0b8bdf5ac74ba264ac9f9fbb545887c56fda9204b5b529e",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "7808d7fe2da5e298affd70664a98d4d6c44c9c5a1aa1917f18d8a77838e6348b"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "71a14e5260cd2834d74e86fb6d9fd3633f09cba6dcf71e730a240f24206b2aff"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-en-768.png",
+      "rota": "/en/ledger/oe-2027-cenario-pib-real-crescimento-2027",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3187,
+      "sha256": "7164a0d35a9867591a9f681145975e975c30e34a82171bb0ccfe2a5b7d633187",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "6414dda5fb8982add8e8469263b6584f722fb52cafb6cc2a0cdc5c5db231f0bd"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "ec54d032293b0c750eda1a2b1914ad8e330fba9bb89806a30cc30ad6cb14d770"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-en-1024.png",
+      "rota": "/en/ledger/oe-2027-cenario-pib-real-crescimento-2027",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2309,
+      "sha256": "3dd2924963f288070aff81738fec080d86fe9b8a6b1ef82351f54c9e594e7b3b",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "7bc6520e93e4e504cf97a07abcc6256636c8c0ff9a197e97433d1f5555fd037e"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "5ece2d1d7b3aa3c1b185a2fb919a1a6db6e639455c9235d77155fe58382c1766"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-en-1280.png",
+      "rota": "/en/ledger/oe-2027-cenario-pib-real-crescimento-2027",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2344,
+      "sha256": "545be8e1f504bd11fde76bb1b35726afd19bff4464e8dfa6174a35629a13fe1b",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "deebe81c69590bfdb201a1151ea3865c343aba66f152b14e8188a57707639285"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "712314486e4cd5b1de245d617e783059f4d5de416f88fd27b07e7892395ea471"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-en-1600.png",
+      "rota": "/en/ledger/oe-2027-cenario-pib-real-crescimento-2027",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2350,
+      "sha256": "5e652235ea00da0fbac0fb3bfa1f6f9bdf2cd3da547fa4f95d7ff4ab98b9478e",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "deebe81c69590bfdb201a1151ea3865c343aba66f152b14e8188a57707639285"
+        },
+        {
+          "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "682d8059212925658dac811ed544e04156659f7ac7f5c959ade014362d69af85"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-390.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4036,
+      "sha256": "b827aea68c666874ebfd31459e502a86013ed38aca844da96c01db3cb458e744",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "b4899b8bfb33225d878bdbc5f9d05b6dd4b84d8e4c57d0c253f514a8f894205b"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "3d3c8325a5668995697bf1124e764757597a7296f1011ce583312f4324bfdd58"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-768.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3502,
+      "sha256": "d4175de6cc51a1cc79c20a225e7f06552bc9f065930dd21e7790cc27318ba710",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "1dc9e2cc5cc07a57b3e3564dc33c2ea57a6b886379e4362fc27f7a664f0c1586"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "f19af127279bfe30bd71073b7452311f78b30f1e0e3f7d11aa29fc15e3977d26"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2591,
+      "sha256": "2a4de8c95d2054c6622d9899bb0d0cfba68e42e24e43176368fd5b610fa573f4",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "17f84cd725f5a1635cfefcada5a7e972a8c6d48f83f1b2186a1f249cf4378f09"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "e5cadd708c6c7ce34b93b1b669ac16597e607d5dcaf172c45253253965170cf6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2626,
+      "sha256": "bed09de8539638e300e8de07ad615d90df9be64be407419946835209fcc8386e",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "2950cf7f138c5ed4cb3534dd97b5be7e56124ce4e104312c23dc28cc3b8aeff4"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "414195ddedc34104168f24d43f329b13a818a7ea744255d6f57962c3daef51ba"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2632,
+      "sha256": "2fc45357f405fa08b72a6e8d204bcb89407c0e2be5a08581682d81b9fc528ecd",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ceb6ef1c09aec49dda4f828e6066e35f95e7e9509574336a72de9d8d803df469"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "403fa86b11815eb675dab8b22747bdc6e9666f7f72af9070a977a8cf91bb22a7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-390.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3961,
+      "sha256": "043c79fb655b56f1d94cde39e7eeb2acd0a881a447d3b10cc74b5899454dff34",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "12fb089e40c89046b3b870954123f076e8acc0f9910fe4e5c24531a3e123af90"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "a7d77a8606a8d4425fc4e2dc4ae4fcfacde68007e05a77c6de510211e573029d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-768.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3502,
+      "sha256": "15e1b9ceb90c1002263261a389693c5901e47630208efbd20dc3c3bc27cdf549",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "a201dd030a8e274fa1c2f034cdc1714a799875c3a863678e540d14c9ef75d5ae"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "7bce16cacd17349b865187760f6f549ed000cc70c82987d82578e902d40a5a75"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1024.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2573,
+      "sha256": "b8d42a06cd987f6a95fb093dbf295746c1d97937a0961a6512308417315f7c2c",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "da0d7dd738b0b249d9ee181e328309b3d2a7ce4e336be703e04350a98653ab2b"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "ce72693b68299979cfcb1e5b2c282a70aaaa69075ebcf01092582a13b55d6fad"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1280.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2607,
+      "sha256": "03e4aff956ac7ac947599ba7fde37f2e1612e864bc8c33c4722c2b48010b866c",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "c6672cd567f8e780434eeb03faef5100a5eb7eca989b9aafed0eec0e7d70cef8"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "fb0e280c8aaa5329afcbda56b54f73fb7fc2a3a5f866c83e01ab9dabb427e358"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1600.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2614,
+      "sha256": "b2f796328bc08346a386fea49a3626dbe237bdf51a22d4490e5b3b04236f58a4",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "69ac876303f1a3c103e98d0f84a1c1f3897ebc898a138445dab2cf7ea17e9692"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "f8e1cd6e3ed9c02b95f03f0d464d8741cda042f2c9a036473e0477425f48ac0e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-390.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4028,
+      "sha256": "2af9c17108f996bd76af516936fd1cc13088c0714eeff4a7f0964c346c93db93",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "d20e51c0048a469a87f2e1498ca9b6df5db11b65a498c4882d41209d1454abd4"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "05e6d39157140c5066d32d0fbe45b9ab151ea16455e8fae17ba8241c51754123"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-768.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3487,
+      "sha256": "800a96360a7011fa2cf5d60985530aba0c0e97c07149cf09d5a1f2f79e29bbdd",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "21007ec7f94908e974e10154044fcac0aae62eabba5e4b1b040e3810d56f2776"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "915dd1ce47fd6bef2bb0e90ebc10dcc116e581a43be549815e8ef3ed1bd40bf2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2573,
+      "sha256": "073388e15c42a8f4b4c0414ae04364670bb1ddb16e3d6c37e5b482a7524f3a6a",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "f5a3aeda2d8f11134fed6f46d528f94abae774b335062312fd3b027917c7fe36"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "6c7b1f22217ecd66551a39f1edcf89dacb6a36002208ea0a41d7264745727644"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2607,
+      "sha256": "7be8d3656b64a020b2c1a5a5d60577ac538cdfe3ead85d89609554da1ce3a7b4",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "0201338dbd611409cad350b26ead20c5c8e03093eb17a889b437308bdb759403"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "513bdc7dce515be64c7ac44abda84aeb41b53c2f51d2eb75a3a39ea9ecae3fdf"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2614,
+      "sha256": "60f6ca7311397597d114429aea9f1cda26c90a92937f744c19bb4ccd3f46c398",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "451d6e6f3c7a893d0e00cd8c5d3e06898c5f137b304635a4f43e1bf9452409c2"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "a9dc1236f475d7e7cf0c2c19057be06971b8bb216c1a54b9945a102b42043132"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-390.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3924,
+      "sha256": "ba43e2637497e5b79733b833d7416f37f4321d0eb04c88d6118ff2957b95e198",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "e9417bd3c3a6df4e712e3eaed05059b0503f645ab22d19b218b4033f09adcb0d"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "e9141dcab45aadf842897c3a3f45d99b595f2b31f915cf3ec100e85946564c47"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-768.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3487,
+      "sha256": "6c71c30161ca4bdb8074b2335e9fc9417305c413061465f509cf4d30b35b50b3",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "de871ac1b05e247bfd3235eae460f8c7cdd5ea46ad7a1256f29b081941f7a37f"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "0cff230528a5cd7f4ec791de120c142dd30bde60984d7156c71726a79ed0c9f3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1024.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2529,
+      "sha256": "d7b913d376b780a8c8bbb4da17020306465e943f392347f7d1ccf18611b9d298",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "94e9e5bd010a560d870469be0eca532190dd74388d4bb7793988d92feea3ed01"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "5598c055f3ab16d39641b2d524b004018905d041b617442e222b12f7b289252e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1280.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2564,
+      "sha256": "43f6c74429bfeaf73c06d829bd90e188266aa6a5c2a32d3291ebac85352965f5",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ef0603870c89c15b169e311b0e032bd7dfb6d9837a4f95337355114c501e206a"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "68a89a8c01f0af01d1275f7ec31d757302df604143f9c5a81366be1a79d611fe"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1600.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2570,
+      "sha256": "9b5a772a986a33bdc6720188c373a146f5e5eb96504265451abbab24749202a0",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "70df9b3338532939af0b55be7c595e068df950c4c3ce9ede01d2a105341a3c90"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "7a460537ba8ffdd6402f39ca07be534c03cc552522ab9c21372300de3311db8c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-390.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3994,
+      "sha256": "5bdbc78102ae7bec8e4df1ad393eadcad789f666595762ac628b035e7f18ad05",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "a4ffdf717ea0097231c7eefa49724db94b62889c3f9323e23709294ccf6e1acd"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "03076a15f3deb0c7a93370191441b517758723ef0e68d0daf411c0eb66a9c0f0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-768.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3494,
+      "sha256": "620b13fc3e5f56398886b21f6526cdc690d3b7f0d13664352c0ab7d1425387bb",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "c3146681c48cdc5f7ca8f06a6d30c6ac22b12f7277343db576a6fb75331b1e45"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "2a81c01dc6487902289ef1cddeb872f8da52af2a52eebb6e85cd16600ef3d989"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2529,
+      "sha256": "73f86bc469b71b1534823a1e0035ddf0b4d4139e94bf5d50d2abdc5f8de369bd",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ab9d1da2c6cd43ed6a667cacb01c1b049101acdef67a5c993ae9d7418483bb3b"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "2f80384ee063f21659cd780b6b552472ddb7e9f3a15924d7818b2ab9bdf2e8d1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2564,
+      "sha256": "529af08358c20a833441b6765f434a70d7a4a2dfedf9bb9b20b249a123676e2c",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "c4f4c2bb92d0fe2f2ac3a01f3e5a43801cca52cd2c9fa325a1e0ed0367e9dbb7"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "7608433f674b36d584c5f18232b0dd92964902efc117b76e0cacf3a0630d0431"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2570,
+      "sha256": "0833041ff364e233a558011fe2f4481ba9dff3d810bf14711b6ecb1fbee176d9",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "8e33e912518c73d9e3c6badcd5fa8dc0831d6e4231c6b1fd89bc8fcdf0bfe8c3"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "9424c2fa3331e7ed1ef28d1e61bcee34a988cfe85e5b2fae27f2b10494e34ff9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-390.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3920,
+      "sha256": "6f57813a71311a6ef40aace4e2ef09cdff99fba243fcf7fc265032d82c9d7542",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "17edb3c5bdc99a92a022b5466bda4ec087d70823669783330709bf31b49afc5a"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "8f5a4c6879ea88fe9a6c4dc6374690a54b0882fa5eae443bd7b63666cd122c35"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-768.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3494,
+      "sha256": "70b80ae402b61de0c770119017131c380781fe5da235a942cec4d14c45b21dac",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "949ecff83099b00c1cd9735a5bc4e4d356cec8c01aaface641e6a01b1dbc5bad"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "f03d9e4dedfa8d5de07121e280cd44ada4267845e5e59cd903fc2e90c8b90555"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1024.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2529,
+      "sha256": "ebd74ddac46301645d08c5f88fb83eb74a42bb5969a11dd3b035fba47ff8e84d",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "7956f147785465ea2c30d87de481ee54bdaa2600ffc18313dd105aa56af4cbb6"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "6227a93f65b5c09b311561e1dfc824a12a64c4879c5006bad40440b773277698"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1280.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2564,
+      "sha256": "af1c076f7a079f21523bf7afedacba40767cbb87bcfbe655f7d7ad5677b59a72",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "579ac3b9de6faacf6c2b4b54590378cc3a92b55ef9395a683f41bd824301ae60"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "ea58186ce3bf4e2afb402401cc76a5d590d00dc5f1d0bf3bec49d2511802ac9c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1600.png",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-receitas-2027",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2570,
+      "sha256": "f8cc95ae28158a29420611fe09c763d1c891265893652061899c185231abdb5e",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "3c81898a95cf8bfac3e5df864d8a9c69838a37a289f740f0e85ba706db37f8db"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "712d5e839e4bdf73d77562c6fa31c21e33875e91edba4f0e77e39a04cbe2a2f6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-390.png",
+      "rota": "/livro-razao/oe-2027-ppp-total-encargos-liquidos-2027",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4127,
+      "sha256": "c4bf522b7172ae5fff09e7280760a216f08589c1a2f1a837a7a841a770398921",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "0e3d907dabacef281b974cab222b1fe7d536ad667b0b6b91be97ca68212afd38"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "7c2c79901511bc296c9452793a2b09920e9bed172a8aee940721b1ff625c1552"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-768.png",
+      "rota": "/livro-razao/oe-2027-ppp-total-encargos-liquidos-2027",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3757,
+      "sha256": "efa16c208c75fbad586b115f4554f3e68fa6b04ab18ebbd59247cd5cd22a0389",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "3c3430a2503160777c6573c62355822fe2920e1e5def0e9d6f76bf859873da54"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "0c18fa4d90298d53a3c9ab88983b3001c975c2bc50d6916798c54f7318d96897"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-ppp-total-encargos-liquidos-2027",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2618,
+      "sha256": "0edc49f9600905d8566bc4a6d66849aaeb78805ef492f6f18bda5e066dd9cb6b",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "fe4992197a884f193d8c6035f763559cae7c3afaab2c6a7d2bd16e938ed6a6d8"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "92d42735428b58c68d3f0c480179125f1f027544d4845fd79a9669748b7c5082"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-ppp-total-encargos-liquidos-2027",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2653,
+      "sha256": "79d03b10af8bb86fd719db348d78301e1cc7a0d9297cb2b7be0311d995fd9f69",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "6648051f7cdfe8d4172eb06e9fc584fac3b878aff6518b1275f1e8aefcc11ed8"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "f73a10ba829e4764430b0175e7a2277c5055298080a951277447a949972368d8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-ppp-total-encargos-liquidos-2027",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2659,
+      "sha256": "ca6af71dd2fe1ba12d207be4e7c1c04517c68ad73bd161b85d883c775f027b72",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "1f8a031f9205847a4d9f3edf6b875ede68d8d5cb6cbd8592c9fe9388d14be440"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "347599b3033d6b2939369ff4aaf12c2d6fd491127e28d596664b4bed328f0199"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-en-390.png",
+      "rota": "/en/ledger/oe-2027-ppp-total-encargos-liquidos-2027",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4078,
+      "sha256": "f5ded695f2bf2641a062f3c054b1002c8a28e748a2a8422894c61932dd1c276e",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "25dd5707160f977042fb69f8ca66535662f3c5eca66a05bb7ccf864968e19a65"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "54d0cd90e3eeb1a5903d3228cacc8e169dba9227d7929cb99aecd8592e842c20"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-en-768.png",
+      "rota": "/en/ledger/oe-2027-ppp-total-encargos-liquidos-2027",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3757,
+      "sha256": "0142b4ac0beb5681a01adebafb9fc61996a44d67ba792c57b023526833f324ac",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "8d8dc7aa93bd407b3503b5972abca7e24ede047b886417de4df80aed71ccf0a3"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "b106c31b2ed6dd51f3eecc2ce17690ec306b1d2b38af7e4c64e7135a12e8cb12"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-en-1024.png",
+      "rota": "/en/ledger/oe-2027-ppp-total-encargos-liquidos-2027",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2618,
+      "sha256": "8238c6f61a1900c5176b4b34611bf4482ba7a10b2de3f87abecf990b88a2bdfa",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "2198d729a183242ed06d2bc16283407e5033a4e98fd7bc80188a3562ae4609fc"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1bf916f0d0c3e1eb4e9568a9cba94d20c55cf955274e19aafa554c9b39d35b25"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-en-1280.png",
+      "rota": "/en/ledger/oe-2027-ppp-total-encargos-liquidos-2027",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2653,
+      "sha256": "242d6f6afa647b0571586469217eb4ccb2273eda375d0ca2467328a147895de6",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "a8e92204ca22cb7fe01091dac3179da2b5701e4bbdcc75c029a8d1f7a8506a61"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "5d328ac5ecb041552577b8c7800a1b013643856a7007d65e8665daa84a2e819e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-en-1600.png",
+      "rota": "/en/ledger/oe-2027-ppp-total-encargos-liquidos-2027",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2659,
+      "sha256": "e50575ab37bf6471ba4864ea18d1f13842b44fad8c206abc54837cc8d3b97557",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "abfd3c992bb72bb1d007acd33b9b62d0f0b0e3e75372981783c9aa08d3634dc2"
+        },
+        {
+          "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "cddc4e22b7fe5ccf1f97cfbc1c5e1cd5d5b67c3f23065826ab8b8cb0d4894a9d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-390.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4025,
+      "sha256": "f41bbc1282eb968b5bcbaa670f96a53d9f170a7bac4b265af75a091b971b7e5a",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "6cc62b2e87cb6ab27dd4aeeea94f645e6a49939cafc581f4372ada5495aa95a6"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "8086839b0b7cdbf74491b23d6b554d48edf9ccc9db0bf99060095df9a6c27e30"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-768.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3634,
+      "sha256": "cf207a2aefd618499cb29c5757df5e893873acf0ed9c569e9d16a0be74a70a29",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "3de4d4c309ba9b28818466153c91b6328bc29d6adfea51edc051a05841d0a437"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "14ece2f0319b3958eeff583080562981f9028c84a04083e2b5b32de29d4a2b9b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2556,
+      "sha256": "3856a811a2231f78f3a86c73c4f0692b74e4e0d2dd35e993627caacefeb12c55",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "a17a5b2e1b50dce6e19df45f9d03a8c0346a32bc2c3b407dd8136692685fc953"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "999656dd94a037bd9d9df39a709c68719d355400e7c5371294a3d51ee892bf86"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2591,
+      "sha256": "4c4a7394fe6de789cd416f3feefce8dca9942d263c6a08fc27ba1984def88526",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ba92a9511c1be9716b62cc226323ca84e3c1747c16b81c916f78700bc714e1e2"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "fba059a08764a8dfbe433b3d1f7b8b6516bb289982331f92f3a4fe1ed7a5776d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2597,
+      "sha256": "e190d4e57a13137487cc0343aecdcddbda0ae8a919b4084b2d2d01d7aab97d42",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "3ee634658860a6a4f748b04f50af8c08d55831259fda3e74fa594772696b0b4a"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1ff00364742f3248042c2dbccf0f8165f2f69f2405045447527b6ef58637e155"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-en-390.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4013,
+      "sha256": "5b08ee64fd61979e556b94dd2f39ed966914f1b84fde94867b3be39add154064",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "93a8ce79d758a24d7298f630f70dd01505493db7739f59ee7ef1e663d4a48708"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "fac7fa7c98b0a652d73de134fe60d44d702c387f2234e6c5b81920e809ed0ecf"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-en-768.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3653,
+      "sha256": "29ac604b7f43c882da8a47658c44e405500b7696396d91487a73f78ac16b6b7f",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "449a063839104934755bc9370e24ba0fececa06d565e40aa6d232d4b49d83c18"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "fcc4ae4c1a7656dd6e1a45c86062a49470a2592a6626440f18be113c8a18a60d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-en-1024.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2575,
+      "sha256": "be61b9d7f81eff8fac0297024d65c426abf8cbd68dfdd27d89495f8f3a945b14",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "95538afc1b6c84dc9e28784c7e6d37c8321aa459175795ce031e2919e9bc1313"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "ada77a541acb1ed888b6128b4efec87b0c7d81767dd551217106b79e976efd3a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-en-1280.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2609,
+      "sha256": "ea30f06fe5f0488fe9fee4f108c35127a055a0c2ac3f8a27234d7fa812f0f801",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "93dfc1653e975965aae9cb46cebc2c925963de7fc1e8c266dfa9cc86764408ed"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "e84009f69e4a6f6c105b917ae4e99a9dfe3c312dd6823fc07742de70ce57a9f5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-en-1600.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2616,
+      "sha256": "732194e4fd09233e5cf9486171a6832de7b3ee9bcf41f4401a83fc93850a16f9",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "e7a2dfdf4ed78bc12949bfbcd920e37be158110eae492cbbbecc70a7b1774d4a"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "bf41a4bce3896f44d311613eb4fefc4c4413e594ef7160ff7b6b34b1770218ea"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-390.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4145,
+      "sha256": "7fb9c7741ba8bd75fcc80689804e08a373a73e57f7c322c48853d73fbcfb6bfd",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "e1a9a8b6e914ea67ecbdf1303b29990a3dc587f558da230c3ffbf69156996218"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "2bb476ea4f89829df50ee5451b7e25ba2351f651600036f23f0a73761c061836"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-768.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3727,
+      "sha256": "693c8237c51220633119f23d7229f60b9a08e7038f6e5433a4b900d85cf4b8f5",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "e4f9c479798b71404bc40fb3eecb52ee823c447b778e0da4ea1630e68cddd600"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "8cbb59d37bb68f1cb5202456d41ff05e1d7f24a63296bd87a58a1976b864f3d4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2600,
+      "sha256": "735c845cf1d210739792494ffe69d5c6f109e07f149256013ff453201c412f14",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "3fa378ab6c3a14b10dbe76b16857da24f6b42484dc4c06ff7de4cff0eb7aee78"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "b745247f4bef7588ec51f2a8c196e9d9873c4dc7a3cab7c53a07f6738e68d332"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2634,
+      "sha256": "fb977d83f5a260ca6ab2d42ce10486f781ee74ec550ed6b1b56b7f4b0f74bbe4",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "516a99b5bac67be43e52297281890179846f97acdb65cf9d33973c0a74086bde"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "511aff7b5286ce81fca95bc8966b518472b09f41db5f172355e04e3dc1105a44"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2641,
+      "sha256": "aac3de0ae546be6858fe97c44212efa0d08751d054578acd3594c6d89ecebc6b",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "6615ed27cdb69bf53df5954b1055fdb91a28a46659a06912f55d899a5a524ee3"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "96ea21edaff3e35f1ba7103a52728f9d4404b0d02ce4bac38b7e2a7bc55345e6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-en-390.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4115,
+      "sha256": "49fc0b5064e329afe4733a335f90218ff6b0dfbe0bc4eec2d08af77ecda845fc",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "5e4463df5e7d5fafe6c0e7f6b02757a214642d0cb78e0eb39190ae9160ac9d28"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "5e08a4e427c2bc220f464742829f2c4f2ace7559090380a74e2c7f745f5737ea"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-en-768.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3727,
+      "sha256": "2f6eb26358d1bc10a01b97efb025044ad44ef719d68f0b7a44324925a35ca6b4",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "f6084df926f96d4ab8ef1b6be047eb3dfd559fb6bb4c738c404d96d4fa5a03a3"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "e11241eb0fcf10e4b9e699a19d6c0a2d56e463fd669dfebdbf8538a8aa6967b1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-en-1024.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2556,
+      "sha256": "1f2177a6e6f7ac66d3d313e416df369345c2f3812f7863f1f17a05a17be98f7d",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "41ce8302519a1d3e9c160d3da194cfa93c1f174b6d480ea9f26cc068f6e57605"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "2941eda279817798bc27e57be0353f4b0a65562e33254d51f220942e509fa164"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-en-1280.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2591,
+      "sha256": "a9cca4196af8cc6e0f6947308fdc6ef9bffa52ebabbfed63abe9b496e38f6a43",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "4e058ed0390e4f2b6d9ae48cbcdc741f93b8821951e1feb0658cf18bbb988653"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "6dbcefc4be431a2050c76e481fc524e387b37a3f3df9e947b5ac550a8c112214"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-en-1600.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2597,
+      "sha256": "dbc0997c6f4234200e5c4064b041900233e237a62bd16672bd709b4aa961deb2",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "04ae651e059e529ea96d6ea5eba0aaedd5842553bed8fe99210dfa92bd296d54"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "9e9e3ce4e479044f823e100b0ed5f7eb700230d797dafbf2527e1ac475427688"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-pt-390.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4680,
+      "sha256": "1d0b1ce7949ea8d777167c3fd3dd87ce06981f28919f334f9fc951037ea8e1d1",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "818e02fd9aa9cbdcfcda8d596b82bcdccbb974aac2cdb573ff29c7e22b577832"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "8a0184470349ef0c69feea805c1074973d39abdc43e925c47e0e13ecc7cea981"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-pt-768.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4189,
+      "sha256": "d8045cc24f487c4f1c0e052ada5e44f9018cddfafc065e1c16f6042e92c95675",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ab9d1ef7051e82f54e45c29ab0ce15987f8b8f39fe745ddf24673100268f584d"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1b211148d124f6b4c6edd0feaa15c469189e321ddb964deb0d58bf489f7171c4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3130,
+      "sha256": "21bff05d51e98b9c6fd19c1cee6d798ee9feeafbf287b07eb6b301429189ed7f",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "8845c6286efd5ac0f739525c7ee9d2992ca1d1e6a8bafb1704ce8fa7bf0d1140"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "47edd22f31c5a37fd38ef1c38fb4e1e2ffdccc9582e2d6ee9b6847f234d750e6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3165,
+      "sha256": "f99686ca279789e5c6719a4f747eec982b4d23e5cb074f1804b4acca6d053e53",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "0274ff2057819e8b022c1a967a53a00c1924b211665117c323f6977abb5e5205"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "c9e45b0743b1994a6dcba98e8ab28b3566c8dd65489e038c2e5b30797c982606"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3171,
+      "sha256": "6ff3b42dc14237b776c6d0841c4e31846caef862c7997d8ff7a2fd8dea8f171e",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ddf15b0ee62f5dc281746efe79389c3664488eabfa22a48cc807786ee23664a5"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "c08a9d9725adf0915b3a844540854edeb09166db63f2887eaf6761eee5d91818"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-en-390.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4748,
+      "sha256": "b19c660ae4d12ca20415261e700dcb8196a64f7f2e0c1db455bc702351ced3db",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "0e184fec729effb5f8b6d96c6117fa30a62f80a1482a454229b693e1dde4e373"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "12dfa873c71ddc480c59d4ac0def0313a0a3d272dfc6d3ed7fb178b6da0c1ebd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-en-768.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4268,
+      "sha256": "e803932365af958079d3a3bdf7457a5275b2ab2b521ba361992b6119a4ebfa45",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "aae609d1855e2b09bc0da0da04cdb4c0fb36da998120b2d01d7788664e9ed5a9"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "fd9524483920d4b4ff6743b6a41bec7dae57911040317ef83faa9db428fd8791"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-en-1024.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3193,
+      "sha256": "ab68c100ecead0717f8fd734bbc04f2ceadfb3ed6093873ea6893924feeb8d50",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "9bc4f4b914d5c1c252b9a9236b27c7a855de9eeea549dcba1c5ce186831c5b8e"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "45e2684e7f05a7cb77b3c0dbb738f314edd4cf046faa455ca62d0f1ad6bf7ea5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-en-1280.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3227,
+      "sha256": "d7fa422ef8182cd0cedd91dae08669ab6d715c80efb593390df9d049899f83f8",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "d59255f4fb9e286824825fb85c3a4668ab8cf2b8780b18f8fea27718d9d432c4"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "d688779de3809f1de73a4e646b48411251911197d24d41736c77bac7b4d0333b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-en-1600.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3234,
+      "sha256": "903605dd25665dcaee2e8062707fee599e810fac6f63f4dec3a17a4fc57b956f",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "8c9ea900e00526dc1c6ffcee43af93b3095320c21345718e7b196e90b98e8051"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "b8b138606bccec9d8ee2d2c47d6cfe5ffdcca0df5976c80632fb6367bd4d5284"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-pt-390.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4800,
+      "sha256": "2074982299bec7a29196ff1dc03cd623673c1e206f58e86bcf7de570bd58f729",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "d041bdae47371e86cbbfcfc0ee843bc3241e8b1073706f0416876651d913134f"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "30e17fa8819dc2f4966045e3cd2cc2e97f664dba0e42e631dc04e0ec63b5a406"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-pt-768.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4282,
+      "sha256": "624ab184fe5449f9b6d12d6805682940f58ea8882c00b43b00fa1d5adf693c94",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "471d3a5cc89e4378871acce54433997357ba60380738df4d973702c17d5c0b1e"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "c84607b8306d87bd831c7179f0643f9bbdb703c28252158e62ff9eb56f6c5642"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3149,
+      "sha256": "68603962474d878b8770850f0d63e98a75e3fe62ade6c36956b1d9446e964056",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "21f7abbd28b0713910082419e40de6a3af45919bd503ce3482ca17cf683cfaaf"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "46691af09ff01c0b6be4f8f02e1b3372fa32b327f7b47f7cf415e30568e75d07"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3184,
+      "sha256": "1088fafe100e49c679b55b9afc5b57dd9dbaccde44721645eca7d62b9c36a76d",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "1f7e8cf98128e164d9d3c3372f0d00343ecc96fdaaee8bca5bf61e92c803e5dd"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "4569ffb72b5252a28e9d70de6f86dade9617dc6400e333fbebba95315f7749b7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3190,
+      "sha256": "9a997c41c95e8431ccb9332bd187e65abd39356415fa1b70dfaf69340fbed761",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "1800779b2513629c0aeec56a60041a926f9700bce68f6b5a1e76b6d0b3e93a3b"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "7f8161c00e2f1517ce0949f77eaece2d89f4c8b3c5d088023f5fdd087cadcc44"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-en-390.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4868,
+      "sha256": "dff834cf270915795cf6f8625ef030348761498b2cc58c83c26a3c3123b4ed7c",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "2dbcce9df6b98199d1dec2010263dad56accb9c949245f4882e21a0e9ba8a634"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "b159536c834202739331e07095dffeb727f633f3c0e9f32836e63c8a7afc7b9d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-en-768.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4361,
+      "sha256": "01f38b0ef10073ee8ef23a65ae45ca7198bc046b130b13ef0c4f2178f137eb53",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "44649e1d9cf547c7a07def5f4c15dfb22da98e283b9484c0ff7614f88310a244"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "b5d84496f0265793798e69ecc5fd76942509fa3d41a0c8c1d04c0faed70a883c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-en-1024.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3193,
+      "sha256": "ab75de68ab3451559e4ad1e03b28964056aadbbde794783963fec5df8d487162",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "95519d4eca874da517ba0c8be65b3036a738310e25c32c48344637c49499a462"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "10a785dad50918d611a48e54581f3877e8ade34c7adb6b5682e24f0776b74e9b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-en-1280.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3227,
+      "sha256": "2b08d3f692ef0d15ee014a3a9f570ed80177dfb3ad01a83b558567cac88ea8d1",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "71626c11244b4d52c79e143921321410130cf5e1cb9af13bebc5ca182659ef98"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1b040aa4f94a87e68562f510b3c67bfa8c5b28737505143bcc30816b7a94a46e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-en-1600.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3234,
+      "sha256": "4bb03ed79d937426f90afd6230a7d6cfaeb1d9df5374258423df4a8403db4c63",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "654ea9e538eb447ccaa4a61a09c101684bcead40542b4982a7cd65d3c6356b5c"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "855d6a35e581185a00767bee7291bb07a4323aa306fb5fe9ac8c5648c877d2b3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-pt-390.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4734,
+      "sha256": "28bad3580aa8ef243ce88b5442e0714077c11659e3d62e0beaa871a9861c5388",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "75170f9a6cdff8a4db25993bfca07ff277e005d93deb08e0e0e24556bf4c7656"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "efe02231c219bc132c4fca37f95facf07ee746dec7302ee5c5e81f9fb7d96e58"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-pt-768.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4285,
+      "sha256": "994d945576b8ed665555dfba2e5019a60a99885a5e776b1b81e727247dcd9108",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "3bf597fe7b77788da13cf2345890b2d6b31dbf35bbea21a12c124ac360d7d905"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "fad526995fabac45f6b2591a0171ba0909ce7cbed32084b3f78fd14868fe785b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3199,
+      "sha256": "b156388062f647851fb9e664bb9daf29f1b1ac5f00c41c5f08effcc2a6460291",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "e2369721f4ae4907861b294e2ca206367370bac7afceef3558dac280ccae28bf"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1465f902ec29bfeae17c9f327e200c35f875694309d990201f0ff74d41a90bdc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3234,
+      "sha256": "a33fc860f6a8b0e5f3172715657a0d3c01696ad89dcd6934efa20e9d2d1dbbb9",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "b70b5c265fca299e3aa49a7ce46481a43b654f87f201a721188d3ac2ee12fc39"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "a65e905bb7c668c80d3046d8cdf7e93d5c8723a13a368ab9535f2a20f2cd87d3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3240,
+      "sha256": "94e5b20c3d77bfa0feb63642b1e2273f2b6cd82b13d3c65a6c40c12f6a3b17bc",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "495eab1c3fe3db4401069b19908a716ea7553ea313ed3e12ef0b9df2edea56ff"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "4202a29c66d9c6dfb91e6f8354f10d19cd031b1c30739bfb4b2979f516a79977"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-en-390.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4832,
+      "sha256": "bb6d134baf970c7adff1af6ba70886fd25df04b76dfc08a2d9b969662f204a4b",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "1c75abb33cb9428b5727fbb76d2d469ef320df718c57e9fe23054cbc65d639c2"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "934178f5b97c0c91afeccfcfb3a48253d11f492324b5cc77b9578786af079baa"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-en-768.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4328,
+      "sha256": "068be97fd39c18e303fcfa83b26a5c0b93a1a2c5f7f124d279d6b2cc5471dd86",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "82eac9cf201bef8de178cf0c3c0990fae54df4ed2e85749121573d890ef95bfb"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "a2a419722b4f89f7a97f12de49a7b0044b91750b8093ee50ef614509678628e2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-en-1024.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3305,
+      "sha256": "216f684ee62328f8051384c995d0f2f4bb7547950812311328635f77a849a882",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "09c176532dd01e8f21a0813db3a33388bbe208c187749808c64477c30db8aff1"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "80957dee6c11a1e91cfc209caff599dd149358a03363304d23846abb8a4aea08"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-en-1280.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3340,
+      "sha256": "410f1f0bbc9a17254a7eb142f4478ca57d9fe5e58e75ecb6a1001122e1a02b8d",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "57bc6b0f567b0e8fdb5842c127046dc6bee4d134d194796a2fe350e6aff76485"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "b3f2a08e8c9b9be588a342e3522b3c0e1b35a8b9f354c1c6fa902c6742aae1dc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-en-1600.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3346,
+      "sha256": "db9888c4502147084ab8ed01aca713b36e77f5e2207ebbe029da0f2ad3bc59b1",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "6e37b2f7fffed94f60c0860eaf0596eee39f0fb90e19e0425dbd265dd2b9f0ce"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "a013f7ed14cea4a1463a8725d2a1302bd972390e0e0d4d82574b529f97c467c4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-pt-390.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4715,
+      "sha256": "de87f7461d9e851c0497621bb45292827b2a81465e280c6052aa156d9ddc3bc1",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "685d81f9e897b32b6e833e0464ad5ab7e28e5adf78157c0384ebd378a867a8cb"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "d6d37364fec6560d9865b24c434a18448b21da237f17a4a93d2771f8d3b21943"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-pt-768.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4249,
+      "sha256": "66310bfc4eb45cda4f16f3b40ba0c363fa173ab3a94a8cadaf44c2066a0e291c",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "b503f7ec2b21f1c6f8fa7b3c5969d03edca76dfb73f54cda3758669d987fdd19"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "c8bf4a2dfd8b03f48c36f955a13c8b3a93309db4076bbdf8c60bfeed57e43dca"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3199,
+      "sha256": "085ae00351aab979b25f7e396fdb76862f9049cea986fd04f1b9a4c8f0d45dfd",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "45e7355e890c8d2d0536a882b6204171d62cf64723e2bb27b8310dca325f8abd"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "edd62f203e9f3b5f3ca01230bf2d811fc1a4a2226c28dbb192f973b28350975d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3234,
+      "sha256": "51f19e8c180ee811c7f5e47ebe853b4a6683bb8de6bc1a09fe36c540a8739e56",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "6c1757d1979d5048622501e3391717d41fa56d53eee512e5387618d123b6ecd8"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "8950c1dfa42902afa418e7d0e01cea8bd6872f277aaa7fbf941f0cd9ea504119"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3240,
+      "sha256": "71dd0aa0363a7e89f90b89a87f8112647ba7a995f4355e42f344308845fccce0",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "d942a254bbc12ee370a63febec7b803b5ad505659649dc71b307c7b44f81d4ca"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "ae7bcd107d9141d748252b2df87dadc270b62e9a173dc951707d4212653222b2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-en-390.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4784,
+      "sha256": "efda8daf20f95321ec569e8ecef1a36c7b2becd61303baecf54f1f1d8f33bcbc",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "f60df89c04d847e0d6b19c05416dde2666f87dedc415eb87280f29e43a7f30ac"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "f6386d730c3046ac15233d738dfeee8267c4cb9d44e5e236390d26b66730e65a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-en-768.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4285,
+      "sha256": "eacb0bda650ca5ef2636fdc56c0b4708474bdf33c60c7b64acbb6a4b19af3431",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "7b43f051ba24a6a1784f8ed4900de8aebe6495bf9b8a3cc3231b81a0b5e285af"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "67733ddd514ed2b577d225186e0a8ee29c566345f9149f8cd3d807afb41ed487"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-en-1024.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3218,
+      "sha256": "afdc5b32cd1489fba6d615b6678378920db98f98b861a9e67c7ffa4ba39b35bb",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "978207cfed6c3a7280bc46f2e88ea64e3618345981c6d2fdead2b9de694c1c44"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "01e24815ab342d9877e38c7c530e6747f3170d857740ae8acf21da6dd3c6039a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-en-1280.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3252,
+      "sha256": "91159b67f26318b206a16ea3a702119f2a2743494d9cfc8ec442d73c410633f4",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ea44f43c2cea35051c8387c9ee1ebc0759ec7310eea9a12ec2b6750f57697f54"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "72994323fb2ce9f43d083201a62021f252436aa177268681d368a4db81581b42"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-en-1600.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3259,
+      "sha256": "556f31ba4933b7e45d39cbcddeeed21fb38b2f499178e6fe716ea722c10bbb6e",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "927aaf31676e756f87e9983086e5607e4829e0aea8ab2a039ff6816727635db9"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "92802e536f204539b4626a56ea971667fdbd78709dc572a3268a94eee9d69cfe"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-pt-390.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2026",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4050,
+      "sha256": "d66528ec4f2a676a7257fea04f169f6d91411ed4005652485f7ede3f47dcab29",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "b1c6a0bb4cee4c183e867c5455aff575c7d67bc009759b12ba00b4a6299e0bb1"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "33d35dceb08e31daf6ee1a4eca6da8ccc5aee54d772b596494b0a023fca170b3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-pt-768.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2026",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3686,
+      "sha256": "200c740e45366eda8f6bf16fa0016d819e6522d892aa6360c6ea17775ae93fe4",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "6ead358e8fd1cb1bbf0dcd165cc435c7b03427479ead3b4e7cce739f43b5cc7d"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "a84d012f3fc74590096d365abf72a618707fd20cc03a43965ba5875f00a25781"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2026",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2556,
+      "sha256": "a3c93c4db00021d2766ea11ce0fc2b34f209ffa3e0558852ebe3e9591474fdc8",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "3663c74d340d2439fb2c799dd0bb93bcd78aabba024f4117438259bbc9bfd53b"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "f7d773825d484bd5fe770f1838289d0ed6d88e893e8498d3d207ee930b9e1567"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2026",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2591,
+      "sha256": "67b84167d15c7e55b7c24e6d8a48eb6ef64fbee5c84d4cd574996e5435ed15f4",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "62cef47aa4b31581e96a90f1b29e646286f18c8d487cd95aae04f8f24a57e378"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "e20b585d6d94586408db968ab4ddabc89385955984dfc7fa3e1d83d8df413ffb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2026",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2597,
+      "sha256": "e994015173d8c595f0bb50051a729637e309fb5809cf8a3157f240a304db2645",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "810ea9ec989adda45f32291623c47945974cae988b9ce449c4210e472af90271"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "5432de86dd13509a7b3234fdef7ab0da948aa34617cd903c6f139786b438faf2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-en-390.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2026",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4020,
+      "sha256": "ba92cf9626dcc55dfe331356763960efa59c16268134dc4394e30114f1e2aed6",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "d0af623227502d6e83393f6eff638904e49cb435fb35888bd3e71f5c36ba2581"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "7eadcde95fba5da0c67c4bde1f21b4ca2092112b8d4740eefcae7f35ee21f261"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-en-768.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2026",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3686,
+      "sha256": "c89bc7b7697373b8392e9318ea08c8752d8f16579cfed6939518f4ec6c79410f",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "a1db980d353b98349317b45d20cf9501f5aecee439724a0da241fdc55439e996"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "167d877fe7fbd2b956490ce58579aa91a4d2ef355a5f2c66dfed88eb53d6015b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-en-1024.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2026",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2575,
+      "sha256": "61a55cee7c3cde43f9bd023333e523f74d975852f975abc1af4eb1388fb57630",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "003e852fb331c6eb60ef9f78461bab1bb58c81943cf985d4bffa76958a6317ef"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "cd5436d22c1bc9d0ff47ba2617f5c5ba3c187050a08ddf7e63e0ac1db6eee5ac"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-en-1280.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2026",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2609,
+      "sha256": "3ec51197ca322ec25971f22d7d2cde1b8e791b16bcb6c95c04c08cd2bc50221a",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "5d7b480abdc9f3dd3a13860f9855de4b2841f9740f60b1d082ebc1f2c7b5105c"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "2b06fc86494eec0296e8b6406d47835c5ed3110718d72bd491be032832b024cc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-en-1600.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2026",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2616,
+      "sha256": "697702b6abf85c7d16cb77f522f7ae6c751c86a6a60d91db79a5d85e5edaa8af",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "3e89736ca8f02d51e7ef6dcc5c658b25a2a19275dfd6467942f07b2ccb66bac7"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "b8442524b4987b73971ced2de652d772f6beea1fb08d4227b72024cc02ac832c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-pt-390.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4171,
+      "sha256": "5ed88f423528ab8ac917e0ed2deff9b92a132d28134954e2904bda13c6529aa5",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "75cf4fbda08225b002285cf4c400b21ffaa9e1a59e488318815dcf5559ea7aa3"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1085ffd722bdaf038fbb096e4e0149b98210d27ad2d86d9e797423eb0eab86d5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-pt-768.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3779,
+      "sha256": "71b11068dd385846ca761236e311f15c92a2505a1b484e96a30f6cc197f3f9db",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "a5ffb224801eadea4f2a8d01914aa633cc446fe361a5a12772f3424662100544"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "32f670b9097d133a7fd0bdf566cbdcdfdee9d1966a1a5139dfa3cd5c408a5b71"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2600,
+      "sha256": "dd690236120e7f6212cdf57fd169d28e0af174a54f5840cc8726708327e15a08",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "277f0a9fc37299f51084a31efdaea832c8d5744e77cb5558669e1532370e51e2"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "e3e44c19f8a41038643cdf6ff553e71365e66a095322378b84df1d918bf72fe1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2634,
+      "sha256": "027fdc80ccbb343a88f862ddcc5cb2f74b5230aa500940ec695cb5f7d46373b5",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "81d49444f6fd3b79be09c777e01b6270aa8607c84c741e3ec04d6b374b9b1350"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1fe95d95b569b189288276a849f7b35be007f4a2ff199dafa4d7e1a516a19125"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2641,
+      "sha256": "46f99cf8ec40fcd0d776e58c3918d703f92c8abe2e1d4106686afaafdbeba441",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "b330efa7c3202c1dda2bbdc2a0177627aaee24f69bda3e57e6f915d80aebffc9"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1d76814f2f88787332569754e9e55b538e99d9027e63baef0466fc427eea4827"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-en-390.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4141,
+      "sha256": "dbc365abfcd63d959ba424df0240152c82eec5f40685a45a91acbab978a0797a",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "aadcdef96ffd779f41078963ae5c4609c1ae17737db0df8dadd3e5007d84fb06"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "9059bfd40e7565333ff94feb4e569ba96ead8597f42199bed9ee87243dc72ae0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-en-768.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3779,
+      "sha256": "83b370b7e9d58649eebcc07b0cbd96f1e11bb965b733edb557f03c66c8bad901",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ffd3efed4102b807ab2fd351cf918633f8db3ae6d0975b897110577cb47556b1"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "239f539894bfa0f80638102e0daeb44ef386dabfee890f984095a496bf044af9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-en-1024.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2556,
+      "sha256": "46fcae7c7fdc3807f6ba88959677c5890f2b643cddb3411b80b00d008059dcf2",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "c4c1c7875f7eeb028e9cdb6d4ada2b3089d12095c0fe728d6f7aeab152d790ae"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "de63ed32f98238e3ab369a88cb4d24b747fb6cc510f809f37492cecffc400b31"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-en-1280.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2591,
+      "sha256": "c52239d5bdd576bbd18b6d7615d4bdb47e175677d823514de45e0cebcd50bce0",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "2a883e2ac8d32287f8b3b7533ce0df691eae19e12a622a1bc070ee200c5950df"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "6cad8e725154925fe3b26a8e785f1f7fb30e3b45456458c3413b299ea6b317a1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-en-1600.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2597,
+      "sha256": "37647f417a8359587de5bb533404eb74e9c239fb62bf5a7b46f8a82b4dd5e707",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "2495341bb188983c334290cebe9a9f61105071a641ccae35e864af3f3cfe3ed2"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "61b75c14be87bc2ce34f5b14e958876c0870c9d17f20be9419ff2af2024838cd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-pt-390.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4504,
+      "sha256": "14b60a8ee5dd13b6bd3ddc5a748e48c68f440eef8a315abb70ad4626f2e5b3ad",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "aef7361cda3966d6ee7e06a133a9a855c47110a200c43fb0ae064505964d00b5"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-pt-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "01c32624aee6e9eec1652ac868b2e032b7ea470ee1e68cccfce7ee2c33dfed06"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-pt-768.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4085,
+      "sha256": "c9e586a15c39c675fe12f832ad117e78cb7663e4bdebb6fe35c0bf4fef34228c",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "bfe17b3d22f24185976e90d1f4ff0bbdf2d2ce73c4ad333ea795dd5848bd0e39"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-pt-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "eb59eff4713210c6587bc96bb43999cae1d27b6bb563ff18f7a0ac78f825aed7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-pt-1024.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2995,
+      "sha256": "396d042034fc8c37c5130bf20054a8d8197141351af04abfb565710a29478ba4",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "13e3fb00ce619b6bddb996fd10f8ff08f1e4f48cfcd110a134f2226370efda5c"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-pt-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "3bfe21274f7c624b78a5c78e4dd326a3e34d6085c395be38506cfb050f639bce"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-pt-1280.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3030,
+      "sha256": "9fae6ee77475899cb5566bd9743a0e2f2667a3cccb470b9ca9e566b8e3c4c6ba",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "16a753d1db225b244fb228dd8609dae7f8110ebede102721fdf140f213e17a39"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-pt-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "69d1de61f6972544c3939dbb47e82e12fe3f1e0db913cb8f9934d276dda0b831"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-pt-1600.png",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3036,
+      "sha256": "71eb882c5c62dd57432b43642159e265059d65776b89c40765b9a895427fe230",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "c6b46c404d3f30215648a9bf313003caddc790267eacf25ceb563006f1d6c4ef"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-pt-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "81fd3d233a6cfe7e1420ad6432bf9ccfc19bfaa26fbfafa5051a32baa011f5ec"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-en-390.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4548,
+      "sha256": "576b4fb250480864982ed637c4dc7e76f9ca06d21297276c43d1bbb4fb622fd4",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "411f500f0ee2167bdce320b95d57a6b92cdf308290167f96e76434e515d16c3e"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-en-390-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "1f909ed3faea1cac206e947bba337c0741ef3660070813999f83af4aab11d1e0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-en-768.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4110,
+      "sha256": "24f2483e8d0e6b200f076b69b7385573cf01559388142f27ba3543acaa7a5457",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "562ef0e19b0d0506d366090632b142018b6b89620a9c058446a801a561a29518"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-en-768-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "32e388b5253f4df393a9fb6912a332155e8053db73847d02cc7b0e228e28f11b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-en-1024.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3020,
+      "sha256": "f7a23eb9673b43f6997beb3df952cd35f041b03627afe67fff0cee1ba32f9ae9",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "1dc24c3d63eee4812bb963e3c78ec9dd8190dce70ba1bccc712291c948cfd330"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-en-1024-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "9d7f672a3fe2608de50570c58806b354a6b55d80a0ba1480922d21e954f7723b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-en-1280.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3054,
+      "sha256": "8da6f1b5cdf3fd3d31cbd9e8f4bf80463bd3b3cd904780cdfde1ffb4f709745e",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "2f75843c5239d841640e5b8047ec9fd9aadc03713cacb3cb2391cbcebb798965"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-en-1280-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "5d997102b2324c8bb735ab65535c0c49d133dd9ee6e969b517960c34699c5cb5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-en-1600.png",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3061,
+      "sha256": "a36d60d6b6939f7970e98439ba3659e79c657fa9e7c088f92b5777af8f1506c6",
+      "recortes": [
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "28646b57e7d3e354d8ae3e946634e0f96d65c65892274603f7ce803b515e9662"
+        },
+        {
+          "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-en-1600-fonte.png",
+          "seletor": ".aparelho",
+          "sha256": "bc1a1e8311c336f66b96c5d273eae204b25b2ac6256ddb545759e0baa51cec3c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "e4d1b528a4d47f4c06669302f04e47adf0ca09035338a0e3f7e69aa12bd7a8b5",
+    "livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html": "e47221eee2045b55bf0b8a87188fe180dbe4001f0c6f7ae9789d88859cc764ff",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.hPEW4RoH.css": "f274081feb3c23a41b42c82b431fdc82ca2c162f791dec18fbb98087803084ff",
+    "_astro/linha.3Gzj_PkP.css": "c02b8967ab663930fd1ad0a2904b7beef1b14bc2d3c91aec382ee180e3f2d645",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html": "bd2d03e020930bddf598c8a2ab511fdbef0e4c562efe69e8bc6327cca19cb6b1",
+    "livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html": "e94c237f11c2223f5dc204cba37a39f3c3059e02c524d4314f44e20722a3a812",
+    "en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html": "fe0425296e3090657730a9ae3785f4f526e8925f98574bb5d5a045f07408188c",
+    "livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09/index.html": "124190c6a38adfbfa4798947e0296ce050746a8d9396d595c13cc177dfaab55c",
+    "en/ledger/afirmacao-rtp-saude-queda-oe2027-2026-10-09/index.html": "ef1f9d464c8188c377216ec670ae4cbf4bb3ffa220d02c36dbb3cade10fad6cf",
+    "livro-razao/oe-2027-cenario-ihpc-2026/index.html": "007cd16fb29d1864622f69c410988587a90b433999987e888c8abc4c1411e2a1",
+    "recortes/oe-2027-cenario-ihpc-2026.webp": "e6d673f972bbaf2bf2acfc0ad107f55255301bc7f7c849e2109e906033e8c6c9",
+    "en/ledger/oe-2027-cenario-ihpc-2026/index.html": "87606a78269689c571f0751298ed84f6c9bf41d884eb04ca8f9c30162d748325",
+    "livro-razao/oe-2027-cenario-pib-real-crescimento-2027/index.html": "7f4a0cb743b6418000fa3c7ca649281ecd828a87a17b20298518dcf701db24b2",
+    "recortes/oe-2027-cenario-pib-real-crescimento-2027.webp": "b3a479124eae693a8d94309f5183f6de2ed9d48a2c7b71c48b7ca6f8124cc2df",
+    "en/ledger/oe-2027-cenario-pib-real-crescimento-2027/index.html": "01edccd0c51c87beacaccbb768103eb08905b153bdc24d03847a1edd29defb7f",
+    "livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html": "31b5d75691d43a0e0d8201af5e4e6bb6672e39a30299088a8a4d96bce2f87c1b",
+    "recortes/oe-2027-ppp-rodoviario-encargos-brutos-2027.webp": "07a1cde4211b4b236d6cefbe73855203a185937ac42740cfd0f5bdbb83e6db84",
+    "en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html": "d0faf1f75cb10ebd49b75f50ee570328fb8caf8ffff8985a078d52aaa192fb7f",
+    "livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html": "b745538e0d9d05f7125c7f8b7550364b3d8edec0bde1b4e9c1f24de6f9f8a3d8",
+    "recortes/oe-2027-ppp-rodoviario-encargos-liquidos-2027.webp": "49e97c6e91b53544dc3d066f0f4065eac3065834e37fc33b46653d13289c87d6",
+    "en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html": "ef3076e541d20c5017159f0a6d8652c06769c7be997cb2c7124396a374482879",
+    "livro-razao/oe-2027-ppp-rodoviario-receitas-2027/index.html": "f5d40401cb65ad65bf4e699bed525ecc4171cde0a3dfee7ee00835c8db27874e",
+    "recortes/oe-2027-ppp-rodoviario-receitas-2027.webp": "fe85f456d2d299541f952b0c913db41020f2b9d2aee85758b607f1265fa4dc70",
+    "en/ledger/oe-2027-ppp-rodoviario-receitas-2027/index.html": "300aaff41d7709643641b9c51a6aa54b5ce62b543903a5a08eaca088e224db8a",
+    "livro-razao/oe-2027-ppp-total-encargos-liquidos-2027/index.html": "6363fb3412d3bb7fc19ba0a7e464b41cad20588511cf1defc180e40d18d7b6bc",
+    "recortes/oe-2027-ppp-total-encargos-liquidos-2027.webp": "08617d163b9aa177cc00874aa7986904e2c502b95a5dd6c04106374bd8b3ec0f",
+    "en/ledger/oe-2027-ppp-total-encargos-liquidos-2027/index.html": "5460c91561e677c4aa985f898da1c31e89b72916fdc21b3db86d826cc3096047",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026/index.html": "f086d59085cd5dd5dd082ae4469345a65a84a820bdde2ba7d2f903556e8a5740",
+    "recortes/oe-2027-saude-despesa-efetiva-consolidada-2026.webp": "93b62eb47227b9ead9edf2fcfbbfdbf658ab4e6151ff95aa092d9837a2fc424a",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026/index.html": "b9d34d4e8a7fc2801f8019d422810f44f080f5a2ad29cd66106abe8dd2e90c86",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027/index.html": "38883d3823f02d9d51f00454ffd441235f56e3f55df37c05f3f9f7fa73da2388",
+    "recortes/oe-2027-saude-despesa-efetiva-consolidada-2027.webp": "93b62eb47227b9ead9edf2fcfbbfdbf658ab4e6151ff95aa092d9837a2fc424a",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027/index.html": "cf2e8cf68f3faf866665e393603dbacb93db529efcc4e1d6bfaf925d7575464e",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html": "cdf64a56736ff5c9c295aa9bb3c1a107c0c5e0d6aaa9b704ac650fa449cd1d4f",
+    "recortes/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026.webp": "93b62eb47227b9ead9edf2fcfbbfdbf658ab4e6151ff95aa092d9837a2fc424a",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html": "0a9ecd11e9474b3fac22fec3e353db0597b901c1b9f433205ea63108f8f8c32b",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html": "f15be0c96b6e6a5294e004b6a5ba09e7ab61857757f7f2e6befdf13d5e446ce8",
+    "recortes/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027.webp": "93b62eb47227b9ead9edf2fcfbbfdbf658ab4e6151ff95aa092d9837a2fc424a",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html": "3d351838d44289ee052469f55aafb9a91f097b69ada9d141691b98c6a45afb8a",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html": "55e263c921334b12cb1c76e704a60958dd1de5926597201b29c642d5368316d0",
+    "recortes/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao.webp": "93b62eb47227b9ead9edf2fcfbbfdbf658ab4e6151ff95aa092d9837a2fc424a",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html": "582d796412cd2ad586fe161c414e6b78e5a7c83b1df28c25b45dabc714a54fdc",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html": "909bb574c731c9cc9b434ea4b9a32c03fc354c710767d96dad306e779207905c",
+    "recortes/oe-2027-saude-despesa-efetiva-consolidada-variacao.webp": "93b62eb47227b9ead9edf2fcfbbfdbf658ab4e6151ff95aa092d9837a2fc424a",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html": "566067cf3af9650ec48670562e207ef0daeb8b7fa335acc8c44a151f2dbfe582",
+    "livro-razao/oe-2027-saude-despesa-total-consolidada-2026/index.html": "55128d2c68b06d0b5a9f4334da9ccefca210e815824d30cc4c84c24fee96efff",
+    "recortes/oe-2027-saude-despesa-total-consolidada-2026.webp": "2827f0af5de0ce482e26aba6adbc47b946ceef1e30a4c5e674cf89d50b61c261",
+    "en/ledger/oe-2027-saude-despesa-total-consolidada-2026/index.html": "c34483c7ee38184fec05506fa79310f24fab73564c09195fb8357dd76c7b59d9",
+    "livro-razao/oe-2027-saude-despesa-total-consolidada-2027/index.html": "e3ce08ff4c9f01da524e137d344a249ca2d272ae62f76f5ac5786eb5e5fb713e",
+    "recortes/oe-2027-saude-despesa-total-consolidada-2027.webp": "2827f0af5de0ce482e26aba6adbc47b946ceef1e30a4c5e674cf89d50b61c261",
+    "en/ledger/oe-2027-saude-despesa-total-consolidada-2027/index.html": "f70e7f8c92e04ea16ba597bf927019c1da49f7a5a902a474c47c741241527601",
+    "livro-razao/oe-2027-saude-despesa-total-consolidada-variacao/index.html": "d44c2b4b2b282d34a64da33f1133deefb201aab28d0c659483071abcb20621a4",
+    "recortes/oe-2027-saude-despesa-total-consolidada-variacao.webp": "2827f0af5de0ce482e26aba6adbc47b946ceef1e30a4c5e674cf89d50b61c261",
+    "en/ledger/oe-2027-saude-despesa-total-consolidada-variacao/index.html": "d0950b76279348e6593e6a5f44841169ba77a177e4843099a25a05117a6db0b9"
+  },
+  "falhas": [],
+  "ok": true
+}

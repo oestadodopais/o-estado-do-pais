@@ -1,0 +1,1067 @@
+[
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 1,
+    "mensagem": "PLANTA excerto alterado: V2A excerto: difere do documento alojado"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 2,
+    "mensagem": "PLANTA atribuição trocada: V2A atribuição: difere do documento alojado"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 3,
+    "mensagem": "PLANTA data errada: V2A data: difere do documento alojado"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 4,
+    "mensagem": "PLANTA porta trocada: V2A porta: difere do documento alojado"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 5,
+    "mensagem": "PLANTA valor fora do excerto: V2A valor: difere do documento alojado"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 6,
+    "mensagem": "PLANTA manchete como medida: V2A nome: difere do documento alojado"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 7,
+    "mensagem": "PLANTA índice da coluna na extração: V2A coluna: índice diferente da medida"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 8,
+    "mensagem": "PLANTA índice da linha na extração: V2A linha: índice diferente da medida"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 9,
+    "mensagem": "PLANTA âncora trocada rtp-amaro.html: V2A atribuição: autoria ausente do corpo alojado"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 10,
+    "mensagem": "PLANTA âncora trocada rtp-queda.html: V2A atribuição: autoria ausente do corpo alojado"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 11,
+    "mensagem": "PLANTA mês PCP janeiro: V2AC data: mês trocado lido como 2026-01-09, não como outubro"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 12,
+    "mensagem": "PLANTA mês PCP fevereiro: V2AC data: mês trocado lido como 2026-02-09, não como outubro"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 13,
+    "mensagem": "PLANTA mês PCP março: V2AC data: mês trocado lido como 2026-03-09, não como outubro"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 14,
+    "mensagem": "PLANTA mês PCP abril: V2AC data: mês trocado lido como 2026-04-09, não como outubro"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 15,
+    "mensagem": "PLANTA mês PCP maio: V2AC data: mês trocado lido como 2026-05-09, não como outubro"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 16,
+    "mensagem": "PLANTA mês PCP junho: V2AC data: mês trocado lido como 2026-06-09, não como outubro"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 17,
+    "mensagem": "PLANTA mês PCP julho: V2AC data: mês trocado lido como 2026-07-09, não como outubro"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 18,
+    "mensagem": "PLANTA mês PCP agosto: V2AC data: mês trocado lido como 2026-08-09, não como outubro"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 19,
+    "mensagem": "PLANTA mês PCP setembro: V2AC data: mês trocado lido como 2026-09-09, não como outubro"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 20,
+    "mensagem": "PLANTA mês PCP novembro: V2AC data: mês trocado lido como 2026-11-09, não como outubro"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 21,
+    "mensagem": "PLANTA mês PCP dezembro: V2AC data: mês trocado lido como 2026-12-09, não como outubro"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 22,
+    "mensagem": "PLANTA dia impossível no PCP: V2A data: dia impossível na intervenção"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 23,
+    "mensagem": "PLANTA definição financeira retirada: V2AE apoio: excerto ausente v2a-total-efetiva"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 24,
+    "mensagem": "PLANTA ano do parecer trocado na capa: V2A edição: capa sem número e data concordantes"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 25,
+    "mensagem": "PLANTA grafia do programa corrigida na fonte: V2A quadro Saúde: título ou grafia diferente"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 26,
+    "mensagem": "PLANTA dia impossível na capa: V2A edição: dia impossível na capa"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 31,
+    "mensagem": "PLANTA campo do apoio trocado: V2AG apoio: número do quadro diferente"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 28,
+    "mensagem": "PLANTA campo do apoio trocado: V2AG apoio: documento ou tradução diferente"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 32,
+    "mensagem": "PLANTA campo do apoio trocado: V2AG apoio: quadro atribuído a uma passagem"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 33,
+    "mensagem": "PLANTA corte não assinalado no apoio: V2AF apoio: excerto não contíguo"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 34,
+    "mensagem": "PLANTA apoio PRR retirado: V2AE apoio: excerto ausente v2a-prr-saude"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 35,
+    "mensagem": "PLANTA ciclo PRR retirado: V2AE apoio: excerto ausente v2a-prr-ciclo"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 36,
+    "mensagem": "PLANTA apoio da conta retirado: V2AE apoio: excerto ausente v2a-ppp-conta"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 37,
+    "mensagem": "PLANTA setor do total retirado: V2AE apoio: setores do total incompletos"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 38,
+    "mensagem": "PLANTA consolidação retirada: V2AE apoio: excerto ausente v2a-saude-consolidada"
+  },
+  {
+    "ficheiro": "h-conferencias/motor.log",
+    "linha": 39,
+    "mensagem": "PLANTA PDF integral na exportação: V2A direitos: só excertos e referências podem atravessar"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2737,
+    "mensagem": "PLANTA afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09: V2AH PCP: montante afirmado não é superior aos dois valores do livro"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2738,
+    "mensagem": "PLANTA oe-2027-ppp-rodoviario-encargos-brutos-2027: V2AH PCP: montante afirmado não é superior aos dois valores do livro"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2739,
+    "mensagem": "PLANTA oe-2027-ppp-rodoviario-encargos-liquidos-2027: V2AH PCP: montante afirmado não é superior aos dois valores do livro"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2749,
+    "mensagem": "PLANTA pt: V2AG quadro: número diferente do campo do apoio"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2742,
+    "mensagem": "PLANTA pt: V2AH documento: página sem marca separada do título"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2743,
+    "mensagem": "PLANTA pt: V2AH edição: publicador do apoio na língua errada"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2745,
+    "mensagem": "PLANTA pt: V2AH receitas: faltam portagens, partilhas ou pagamentos fixos"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2746,
+    "mensagem": "PLANTA pt: V2AD grafia: falta a nota sobre o nome do programa"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2747,
+    "mensagem": "PLANTA pt: V2AD apoio: definição confundida com o excerto da Saúde"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2751,
+    "mensagem": "PLANTA pt: V2AG documento: título sem marca do apoio"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2752,
+    "mensagem": "PLANTA pt: V2AD conta: faltam palavras simples para pagamentos e recebimentos"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2753,
+    "mensagem": "PLANTA pt: V2AG total: encargos líquidos sem palavras simples"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2754,
+    "mensagem": "PLANTA pt: V2AG total: preços sem palavras simples"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2755,
+    "mensagem": "PLANTA pt: V2AG PCP: faltam palavras simples ou a comparação"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2756,
+    "mensagem": "PLANTA pt: V2AG PCP: período sem linhas das parcerias"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2757,
+    "mensagem": "PLANTA pt: V2AG edição: documento do apoio na língua errada"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2760,
+    "mensagem": "PLANTA pt: V2AD Saúde: cabeçalho com medida, programa ou período diferente"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2759,
+    "mensagem": "PLANTA pt: V2AE Saúde: medida diferente na frase"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2761,
+    "mensagem": "PLANTA pt: V2AD período: ano sem token da linha"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2762,
+    "mensagem": "PLANTA pt: V2AE frase: período sem token da linha"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2763,
+    "mensagem": "PLANTA pt: V2AH cenário: período sem token da previsão"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2764,
+    "mensagem": "PLANTA pt: V2AB título: a proveniência não distingue o documento"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2765,
+    "mensagem": "PLANTA pt: V2AD RTP: a notícia perdeu a medida identificada pelos montantes"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2766,
+    "mensagem": "PLANTA pt: V2AD conta: faltam os valores pelas linhas da medida"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2767,
+    "mensagem": "PLANTA pt: V2AE RTP: montante diferente da linha"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2768,
+    "mensagem": "PLANTA pt: V2AE RTP: subtração diferente"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2769,
+    "mensagem": "PLANTA pt: V2AD PPP: a conta não diz brutos menos receitas"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2770,
+    "mensagem": "PLANTA pt: V2AE PPP: ano sem token do período"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2771,
+    "mensagem": "PLANTA pt: V2AD PPP: falta o ano ou o cabeçalho do excerto"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2772,
+    "mensagem": "PLANTA pt: V2AB previsão: falta a autoria MF e a transcrição CFP"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2773,
+    "mensagem": "PLANTA pt: V2AB nota: ressalva não publicada"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2774,
+    "mensagem": "PLANTA pt: V2AB nome: a cabeça não diz as palavras citadas"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2775,
+    "mensagem": "PLANTA pt: V2AB localizador: tradução ou origem ausente"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2776,
+    "mensagem": "PLANTA pt: V2AB sigla: PRR ou RRP perdeu maiúsculas"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2777,
+    "mensagem": "PLANTA pt: V2AH Saúde: faltam palavras simples, ordem ou apoio da consolidação e da despesa efetiva"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2778,
+    "mensagem": "PLANTA pt: V2AC RTP: a frase não identifica a notícia pela data"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2779,
+    "mensagem": "PLANTA pt: V2AE PPP: total sem setores próprios ou com conta rodoviária"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2780,
+    "mensagem": "PLANTA pt: V2AC selo: SHA256 do corpo ausente ou diferente"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2790,
+    "mensagem": "PLANTA pt: V2AE PRR: falta o nome, a explicação ou o apoio"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2782,
+    "mensagem": "PLANTA pt: V2AE PRR: comparação sem os quatro tokens"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2783,
+    "mensagem": "PLANTA pt: V2AE PCP: afirmação sem citação ou atribuição"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2784,
+    "mensagem": "PLANTA pt: V2AE PCP: faltam os dois valores do quadro"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2786,
+    "mensagem": "PLANTA pt: V2AF total: falta o qualificador PRR ou o apoio"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2787,
+    "mensagem": "PLANTA pt: V2AF total: ressalva sem PRR"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2791,
+    "mensagem": "PLANTA pt: V2AF total: excerto da Saúde fechado"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2792,
+    "mensagem": "PLANTA pt: V2AF apoio: passagem rotulada como definição"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2794,
+    "mensagem": "PLANTA pt: V2AF PPP: soma atribuída ao total ou diferença omitida"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2795,
+    "mensagem": "PLANTA pt: V2AF PCP: falta o relatório ou a afirmação em inglês"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2805,
+    "mensagem": "PLANTA en: V2AG quadro: número diferente do campo do apoio"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2798,
+    "mensagem": "PLANTA en: V2AH documento: página sem marca separada do título"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2799,
+    "mensagem": "PLANTA en: V2AH edição: publicador do apoio na língua errada"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2801,
+    "mensagem": "PLANTA en: V2AH receitas: faltam portagens, partilhas ou pagamentos fixos"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2802,
+    "mensagem": "PLANTA en: V2AD grafia: falta a nota sobre o nome do programa"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2803,
+    "mensagem": "PLANTA en: V2AD apoio: definição confundida com o excerto da Saúde"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2807,
+    "mensagem": "PLANTA en: V2AG documento: título sem marca do apoio"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2808,
+    "mensagem": "PLANTA en: V2AD conta: faltam palavras simples para pagamentos e recebimentos"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2809,
+    "mensagem": "PLANTA en: V2AG total: encargos líquidos sem palavras simples"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2810,
+    "mensagem": "PLANTA en: V2AG total: preços sem palavras simples"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2811,
+    "mensagem": "PLANTA en: V2AG PCP: faltam palavras simples ou a comparação"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2812,
+    "mensagem": "PLANTA en: V2AG PCP: período sem linhas das parcerias"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2813,
+    "mensagem": "PLANTA en: V2AG edição: documento do apoio na língua errada"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2816,
+    "mensagem": "PLANTA en: V2AD Saúde: cabeçalho com medida, programa ou período diferente"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2815,
+    "mensagem": "PLANTA en: V2AE Saúde: medida diferente na frase"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2817,
+    "mensagem": "PLANTA en: V2AD período: ano sem token da linha"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2818,
+    "mensagem": "PLANTA en: V2AE frase: período sem token da linha"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2819,
+    "mensagem": "PLANTA en: V2AH cenário: período sem token da previsão"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2820,
+    "mensagem": "PLANTA en: V2AB título: a proveniência não distingue o documento"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2821,
+    "mensagem": "PLANTA en: V2AD RTP: a notícia perdeu a medida identificada pelos montantes"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2822,
+    "mensagem": "PLANTA en: V2AD conta: faltam os valores pelas linhas da medida"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2823,
+    "mensagem": "PLANTA en: V2AE RTP: montante diferente da linha"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2824,
+    "mensagem": "PLANTA en: V2AE RTP: subtração diferente"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2825,
+    "mensagem": "PLANTA en: V2AD PPP: a conta não diz brutos menos receitas"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2826,
+    "mensagem": "PLANTA en: V2AE PPP: ano sem token do período"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2827,
+    "mensagem": "PLANTA en: V2AD PPP: falta o ano ou o cabeçalho do excerto"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2828,
+    "mensagem": "PLANTA en: V2AB previsão: falta a autoria MF e a transcrição CFP"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2829,
+    "mensagem": "PLANTA en: V2AB nota: ressalva não publicada"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2830,
+    "mensagem": "PLANTA en: V2AB nome: a cabeça não diz as palavras citadas"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2831,
+    "mensagem": "PLANTA en: V2AB localizador: tradução ou origem ausente"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2832,
+    "mensagem": "PLANTA en: V2AB sigla: PRR ou RRP perdeu maiúsculas"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2833,
+    "mensagem": "PLANTA en: V2AH Saúde: faltam palavras simples, ordem ou apoio da consolidação e da despesa efetiva"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2834,
+    "mensagem": "PLANTA en: V2AC RTP: a frase não identifica a notícia pela data"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2835,
+    "mensagem": "PLANTA en: V2AE PPP: total sem setores próprios ou com conta rodoviária"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2836,
+    "mensagem": "PLANTA en: V2AC selo: SHA256 do corpo ausente ou diferente"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2846,
+    "mensagem": "PLANTA en: V2AE PRR: falta o nome, a explicação ou o apoio"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2838,
+    "mensagem": "PLANTA en: V2AE PRR: comparação sem os quatro tokens"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2839,
+    "mensagem": "PLANTA en: V2AE PCP: afirmação sem citação ou atribuição"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2840,
+    "mensagem": "PLANTA en: V2AE PCP: faltam os dois valores do quadro"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2842,
+    "mensagem": "PLANTA en: V2AF total: falta o qualificador PRR ou o apoio"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2843,
+    "mensagem": "PLANTA en: V2AF total: ressalva sem PRR"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2847,
+    "mensagem": "PLANTA en: V2AF total: excerto da Saúde fechado"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2848,
+    "mensagem": "PLANTA en: V2AF apoio: passagem rotulada como definição"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2850,
+    "mensagem": "PLANTA en: V2AF PPP: soma atribuída ao total ou diferença omitida"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2851,
+    "mensagem": "PLANTA en: V2AF PCP: falta o relatório ou a afirmação em inglês"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2852,
+    "mensagem": "PLANTA pt: K17 · recibo · pt · oe-2027-saude-despesa-total-consolidada-2027: o complemento não cita os campos pelos tokens auditados"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2853,
+    "mensagem": "PLANTA pt: K17 · recibo · pt · oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao: o complemento não cita os campos pelos tokens auditados"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2855,
+    "mensagem": "PLANTA pt: K17 · recibo · pt · afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09: o complemento não cita os campos pelos tokens auditados"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2856,
+    "mensagem": "PLANTA en: K17 · recibo · en · oe-2027-saude-despesa-total-consolidada-2027: o complemento não cita os campos pelos tokens auditados"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2857,
+    "mensagem": "PLANTA en: K17 · recibo · en · oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao: o complemento não cita os campos pelos tokens auditados"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2859,
+    "mensagem": "PLANTA en: K17 · recibo · en · afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09: o complemento não cita os campos pelos tokens auditados"
+  },
+  {
+    "ficheiro": "h-conferencias/html.log",
+    "linha": 124,
+    "mensagem": "PLANTA pt: K17 · recibo · pt · afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09: a origem visível da definição perdeu o documento ou o excerto"
+  },
+  {
+    "ficheiro": "h-conferencias/html.log",
+    "linha": 125,
+    "mensagem": "PLANTA en: K17 · recibo · en · afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09: a origem visível da definição perdeu o documento ou o excerto"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2862,
+    "mensagem": "PLANTA V2AG pt: L10 · v2a-ppp-conta: .def-origem-doc sem a língua declarada pt-PT"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2863,
+    "mensagem": "PLANTA V2AG pt: L10 · v2a-ppp-conta: .def-excerto-texto sem a língua declarada pt-PT"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2864,
+    "mensagem": "PLANTA V2AG en: L10 · v2a-ppp-conta: .def-origem-doc sem a língua declarada en"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2865,
+    "mensagem": "PLANTA V2AG en: L10 · v2a-ppp-conta: .def-excerto-texto sem a língua declarada pt-PT"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2866,
+    "mensagem": "PLANTA K17 retirada pt: K17 · recibo · pt · afirmacao-leitao-amaro-saude-oe2027-2026-10-09: V2AH Saúde: faltam palavras simples, ordem ou apoio da consolidação e da despesa efetiva"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2867,
+    "mensagem": "PLANTA K17 repetida pt: K17 · recibo · pt · afirmacao-leitao-amaro-saude-oe2027-2026-10-09: V2AH Saúde: faltam palavras simples, ordem ou apoio da consolidação e da despesa efetiva"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2868,
+    "mensagem": "PLANTA K17 invertida pt: K17 · recibo · pt · afirmacao-leitao-amaro-saude-oe2027-2026-10-09: V2AH Saúde: faltam palavras simples, ordem ou apoio da consolidação e da despesa efetiva"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2869,
+    "mensagem": "PLANTA K17 retirada en: K17 · recibo · en · afirmacao-leitao-amaro-saude-oe2027-2026-10-09: V2AH Saúde: faltam palavras simples, ordem ou apoio da consolidação e da despesa efetiva"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2870,
+    "mensagem": "PLANTA K17 repetida en: K17 · recibo · en · afirmacao-leitao-amaro-saude-oe2027-2026-10-09: V2AH Saúde: faltam palavras simples, ordem ou apoio da consolidação e da despesa efetiva"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2871,
+    "mensagem": "PLANTA K17 invertida en: K17 · recibo · en · afirmacao-leitao-amaro-saude-oe2027-2026-10-09: V2AH Saúde: faltam palavras simples, ordem ou apoio da consolidação e da despesa efetiva"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2873,
+    "mensagem": "PLANTA V2AC selo no livro: [afirmacao-leitao-amaro-saude-oe2027-2026-10-09.yml] document.source_sha256 precisa de um SHA256 completo."
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2874,
+    "mensagem": "PLANTA meses trocados sem motor: Expected values to be strictly equal: + actual - expected  + '2026-11-09' - '2026-10-09'          ^"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2877,
+    "mensagem": "PLANTA V2AE resolvedor apoio inexistente: V2AG complemento: campo do apoio ausente ou não permitido"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2878,
+    "mensagem": "PLANTA V2AE resolvedor página sem origem: V2AG complemento: campo do apoio ausente ou não permitido"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2879,
+    "mensagem": "PLANTA V2AE resolvedor algarismo fixo: V2AE complemento: algarismo fixo"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2880,
+    "mensagem": "PLANTA V2AE resolvedor linha inexistente: livro-razão: a afirmação \"linha-do-ensaio\" não existe.   Nenhuma página pode citar um número que não esteja no livro-razão.   Crie ledger/claims/linha-do-ensaio.yml ou corrija o id.   Ids parecidos: linha-de-risco-de-pobreza-2024, linha-de-risco-de-pobreza-2025"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2881,
+    "mensagem": "PLANTA V2AE resolvedor citação sem afirmação: V2AE complemento: citação sem afirmação"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2882,
+    "mensagem": "PLANTA pt K17 auditoria diferente: K17 · famílias · oe-2027-saude-despesa-total-consolidada-2027: complemento diferente da auditoria"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2883,
+    "mensagem": "PLANTA en K17 auditoria diferente: K17 · famílias · oe-2027-saude-despesa-total-consolidada-2027: complemento diferente da auditoria"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2884,
+    "mensagem": "PLANTA K17 algarismo: K17 · famílias · oe-2027-saude-despesa-total-consolidada-2027: complemento com algarismo fixo"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2885,
+    "mensagem": "PLANTA K17 token sem origem: K17 · famílias · oe-2027-saude-despesa-total-consolidada-2027: complemento com token sem origem"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2886,
+    "mensagem": "PLANTA K17 apoio sem origem: K17 · famílias · oe-2027-saude-despesa-total-consolidada-2027: complemento com campo de apoio sem origem"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2888,
+    "mensagem": "PLANTA K16 tradução trocada: V2AG origem: campo do apoio diferente da prova"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2889,
+    "mensagem": "PLANTA K16 quadro indevido: V2AG origem: campo do apoio diferente da prova"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2890,
+    "mensagem": "PLANTA K16 excerto fechado: V2AF origem: passagem da Saúde fechada"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2891,
+    "mensagem": "PLANTA K16 tipo retirado: V2AF origem: apoio sem tipo de passagem"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2892,
+    "mensagem": "PLANTA K16 selo retirado: V2AE origem: selo documental ausente"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2893,
+    "mensagem": "PLANTA K16 SHA trocado: V2AE origem: selo diferente do recibo exportado"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2894,
+    "mensagem": "PLANTA K16 hora trocada: V2AE origem: selo diferente do recibo exportado"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2895,
+    "mensagem": "PLANTA K16 página da marca trocada: V2AE origem: excerto ou localizador diferente da prova"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2896,
+    "mensagem": "PLANTA K16 localizador inglês trocado: V2AE origem: excerto ou localizador diferente da prova"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2897,
+    "mensagem": "PLANTA K16 página trocada: V2AE origem: excerto ou localizador diferente da prova"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2898,
+    "mensagem": "PLANTA K16 excerto trocado: V2AE origem: excerto ou localizador diferente da prova"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2899,
+    "mensagem": "PLANTA K16 porta trocada: V2AE origem: excerto ou localizador diferente da prova"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 76,
+    "mensagem": "PLANTA V2A edição: ano do orçamento no lugar do ano do parecer"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 77,
+    "mensagem": "PLANTA V2A nome: manchete no lugar das palavras ditas"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 78,
+    "mensagem": "PLANTA V2AC localizador da Saúde: nota da definição retirada"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 79,
+    "mensagem": "PLANTA V2AC localizador da Saúde: página da definição trocada"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 80,
+    "mensagem": "PLANTA V2AE localizador PPP: apoio textual trocado pela nota"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 81,
+    "mensagem": "PLANTA V2AF localizador locator: afirmacao-leitao-amaro-saude-oe2027-2026-10-09"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 82,
+    "mensagem": "PLANTA V2AF localizador locator_en: afirmacao-leitao-amaro-saude-oe2027-2026-10-09"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 83,
+    "mensagem": "PLANTA V2AF localizador locator: afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 84,
+    "mensagem": "PLANTA V2AF localizador locator_en: afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 85,
+    "mensagem": "PLANTA V2AF localizador locator: afirmacao-rtp-saude-queda-oe2027-2026-10-09"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 86,
+    "mensagem": "PLANTA V2AF localizador locator_en: afirmacao-rtp-saude-queda-oe2027-2026-10-09"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 87,
+    "mensagem": "PLANTA V2AF localizador locator: oe-2027-cenario-ihpc-2026"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 88,
+    "mensagem": "PLANTA V2AF localizador locator_en: oe-2027-cenario-ihpc-2026"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 89,
+    "mensagem": "PLANTA V2AF localizador locator: oe-2027-cenario-pib-real-crescimento-2027"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 90,
+    "mensagem": "PLANTA V2AF localizador locator_en: oe-2027-cenario-pib-real-crescimento-2027"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 91,
+    "mensagem": "PLANTA V2AF localizador locator: oe-2027-ppp-rodoviario-encargos-brutos-2027"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 92,
+    "mensagem": "PLANTA V2AF localizador locator_en: oe-2027-ppp-rodoviario-encargos-brutos-2027"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 93,
+    "mensagem": "PLANTA V2AF localizador locator: oe-2027-ppp-rodoviario-encargos-liquidos-2027"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 94,
+    "mensagem": "PLANTA V2AF localizador locator_en: oe-2027-ppp-rodoviario-encargos-liquidos-2027"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 95,
+    "mensagem": "PLANTA V2AF localizador locator: oe-2027-ppp-rodoviario-receitas-2027"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 96,
+    "mensagem": "PLANTA V2AF localizador locator_en: oe-2027-ppp-rodoviario-receitas-2027"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 97,
+    "mensagem": "PLANTA V2AF localizador locator: oe-2027-ppp-total-encargos-liquidos-2027"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 98,
+    "mensagem": "PLANTA V2AF localizador locator_en: oe-2027-ppp-total-encargos-liquidos-2027"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 99,
+    "mensagem": "PLANTA V2AF localizador locator: oe-2027-saude-despesa-efetiva-consolidada-2026"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 100,
+    "mensagem": "PLANTA V2AF localizador locator_en: oe-2027-saude-despesa-efetiva-consolidada-2026"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 101,
+    "mensagem": "PLANTA V2AF localizador locator: oe-2027-saude-despesa-efetiva-consolidada-2027"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 102,
+    "mensagem": "PLANTA V2AF localizador locator_en: oe-2027-saude-despesa-efetiva-consolidada-2027"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 103,
+    "mensagem": "PLANTA V2AF localizador locator: oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 104,
+    "mensagem": "PLANTA V2AF localizador locator_en: oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 105,
+    "mensagem": "PLANTA V2AF localizador locator: oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 106,
+    "mensagem": "PLANTA V2AF localizador locator_en: oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 107,
+    "mensagem": "PLANTA V2AF localizador locator: oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 108,
+    "mensagem": "PLANTA V2AF localizador locator_en: oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 109,
+    "mensagem": "PLANTA V2AF localizador locator: oe-2027-saude-despesa-efetiva-consolidada-variacao"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 110,
+    "mensagem": "PLANTA V2AF localizador locator_en: oe-2027-saude-despesa-efetiva-consolidada-variacao"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 111,
+    "mensagem": "PLANTA V2AF localizador locator: oe-2027-saude-despesa-total-consolidada-2026"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 112,
+    "mensagem": "PLANTA V2AF localizador locator_en: oe-2027-saude-despesa-total-consolidada-2026"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 113,
+    "mensagem": "PLANTA V2AF localizador locator: oe-2027-saude-despesa-total-consolidada-2027"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 114,
+    "mensagem": "PLANTA V2AF localizador locator_en: oe-2027-saude-despesa-total-consolidada-2027"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 115,
+    "mensagem": "PLANTA V2AF localizador locator: oe-2027-saude-despesa-total-consolidada-variacao"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 116,
+    "mensagem": "PLANTA V2AF localizador locator_en: oe-2027-saude-despesa-total-consolidada-variacao"
+  },
+  {
+    "ficheiro": "portoes-h/verify.log",
+    "linha": 2875,
+    "mensagem": "PLANTA meses trocados com motor: Expected values to be strictly equal: + actual - expected  + '2026-11-09' - '2026-10-09'          ^"
+  }
+]

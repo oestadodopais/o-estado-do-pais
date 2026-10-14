@@ -585,28 +585,48 @@ As capturas em `design/especime-v3/capturas/v2a-2026-10-12/g/` cobrem 16 página
 
 Entrada do sítio em `c1e2b934`, motor em `dd5f1d5f`, ambos limpos. Os achados 1 a 4 e 7 eram plantas nas cópias do pacote. Esta passagem trata os achados reais 5, 6 e 8 a 11. Os 18 valores e unidades foram comparados com a entrada; não mudaram.
 
-| Achado | O que ganhou | Ficheiros |
+| Achado | O que ganhou | Ficheiro e linha |
 | --- | --- | --- |
-| 5 | O quadro das parcerias pertence apenas à página física 123. O texto da página 124 não recebe número de quadro. O PCP cita o quadro pelo apoio dos setores e usa a passagem seguinte para explicar pagamentos e receitas. | `<motor>/publisher/v2a.py`, `src/data/origens-v2a.json`, `familias.mjs`, `tests/linha/v2a.mjs` |
-| 6 | As nove medidas da Saúde, Amaro e RTP explicam primeiro consolidação, depois despesa efetiva, uma vez cada. A nota do quadro 5.37 e a nota financeira do quadro 4.38 ficam seladas no pacote do motor. A régua das famílias recusa falta, repetição e inversão. | `<motor>/publisher/v2a.py`, `familias.mjs`, `tests/cartao/v2ah-palavras.mjs` |
-| 8 | As cinco páginas das parcerias explicam as receitas rodoviárias por portagens, partilhas de benefícios e pagamentos fixos das subconcessionárias. O apoio contém agora as componentes descritas na página 124. | `<motor>/publisher/v2a.py`, `familias.mjs`, `src/lib/v2a-palavras.mjs` |
-| 9 | A comparação do PCP usa os valores das três linhas e exige a mesma unidade. Uma planta altera cada valor e desfaz a desigualdade. A página inglesa confere o publicador traduzido; a planta imprime o português. | `tests/linha/v2a.mjs` |
-| 10 | V2A-74 regista as duas horas conservadas e distingue os acontecimentos que datam da escrita da correção, que não datam. | Este relatório, V2A-74 |
-| 11 | Título e página têm marcas separadas, o título traduzido não leva aspas angulares, os publicadores e títulos dos apoios têm inglês, o rótulo leva dois-pontos e os cenários rendem o ano pelo período da linha. | `src/components/OrigemDaDefinicao.astro`, `src/data/figuras.mjs`, `src/data/verbatim.mjs`, `src/i18n/strings.mjs`, `src/lib/o-que-e-o-numero.mjs`, `src/lib/v2a-palavras.mjs`, `familias.mjs` |
+| 5 | O quadro das parcerias pertence apenas à página física 123. O texto da página 124 não recebe número de quadro. O PCP cita o quadro pelo apoio dos setores e usa a passagem seguinte para explicar pagamentos e receitas. | `familias.mjs:103`, `tests/linha/v2a.mjs:118`, `<motor>/publisher/v2a.py:290` |
+| 6 | As nove medidas da Saúde, Amaro e RTP explicam primeiro consolidação, depois despesa efetiva, uma vez cada. A nota do quadro 5.37 e a nota financeira do quadro 4.38 ficam seladas no pacote do motor. A régua das famílias recusa falta, repetição e inversão. | `familias.mjs:9`, `tests/cartao/v2ah-palavras.mjs:2`, `<motor>/publisher/v2a.py:268` |
+| 8 | As cinco páginas das parcerias explicam as receitas rodoviárias por portagens, partilhas de benefícios e pagamentos fixos das subconcessionárias. O apoio contém agora as componentes descritas na página 124. | `familias.mjs:13`, `src/lib/v2a-palavras.mjs:21` |
+| 9 | A comparação do PCP usa os valores das três linhas e exige a mesma unidade. Uma planta altera cada valor e desfaz a desigualdade. A página inglesa confere o publicador traduzido; a planta imprime o português. | `tests/linha/v2a.mjs:14`, `tests/linha/v2a.mjs:131` |
+| 10 | V2A-74 regista as duas horas conservadas sem inferir a hora da escrita da correção. | `LEIA-ME.md:559` |
+| 11 | Título e página têm marcas separadas, o título traduzido não leva aspas angulares, os publicadores e títulos dos apoios têm inglês, o rótulo leva dois-pontos e os cenários rendem o ano pelo período da linha. | `familias.mjs:97`, `src/components/OrigemDaDefinicao.astro:120`, `src/lib/v2a-palavras.mjs:11`, `tests/linha/v2a.mjs:124` |
 
 - **V2A-76:** a correção do quadro desfaz o erro do mandato G. `v2a-ppp-setores` declara a página física 123, impressa 107, e o quadro 4.25; `v2a-ppp-conta` declara a página física 124, impressa 108, sem campo `quadro`. A planta no motor atribui-lhe 4.25 e é recusada. A planta no HTML tenta trocar a origem do número do quadro para o apoio do texto corrido e também é recusada.
 - **V2A-77:** a nota do quadro 5.37, página física 303, impressa 287, descreve a exclusão das rubricas provenientes e destinadas a entidades do próprio programa. Foi conferida no PDF e selada como `v2a-saude-consolidada`. É uma explicação operacional da consolidação; a frase da casa traduz a consequência em palavras simples. Não encontrei uma secção identificada como glossário na extração pesquisada. Conserva-se a grafia «Pograma» no excerto.
 - **V2A-78:** o apoio financeiro já existente no sítio não tinha selo para sustentar uma segunda fonte de Amaro e RTP. A mesma nota da página física 145 passa pelo publicador e pelo pacote de provas como `v2a-total-efetiva`, com recibo do corpo. As fontes secundárias dessas afirmações nomeiam as páginas 303 e 145. Nenhum corpo integral foi acrescentado ao sítio.
 - **V2A-79:** a desigualdade do PCP é conferida pelos valores das linhas, depois de lida a notação numérica e comparadas as unidades. As três plantas alteram separadamente afirmação, encargos brutos e encargos líquidos. A conferência literal da frase continua a garantir que a comparação comprovada é a que se imprime.
 - **V2A-80:** a V2A-74 deixa de apresentar a ordem da escrita como provada pelos registos. O fim do primeiro motor e o início do segundo build estão separados por 52 segundos; não há nesses ficheiros uma hora da escrita da correção.
-- **V2A-81:** o título do apoio não inclui o localizador. A página é um campo marcado separado; os cenários usam `reference_date`, sem confundir o ano da previsão com a edição do parecer. Nas páginas inglesas, os excertos documentais continuam em português e os títulos de identificação e publicadores dos apoios usam os campos ingleses.
-- **V2A-82:** os portões e as capturas serão pedidos ao escrivão, pois o navegador das conferências não arranca na sandbox. A corrida final será feita depois do último commit de provas, sem escrita durante os quatro portões. Os resultados e as cabeças serão lidos dos ficheiros no fecho.
+- **V2A-81:** o título do apoio não inclui o localizador. A página é um campo marcado separado; os cenários usam `reference_date`, sem confundir o ano da previsão com a edição do parecer. Nas páginas inglesas, os excertos documentais continuam em português e os títulos de identificação e publicadores dos apoios usam os campos ingleses. A frase de Amaro cita a página 31, onde está a passagem do ciclo do PRR; a página 123 pertence ao quadro das parcerias citado pelo PCP.
+- **V2A-82:** os portões e as capturas correram pelo escrivão, pois o navegador das conferências não arranca na sandbox. A corrida final começou depois do último commit de provas. Os quatro códigos foram lidos dos ficheiros: todos zero. As cabeças de início e fim coincidem e os estados finais estão vazios. O verify também conferiu a ausência de escrita durante as suas conferências.
 - **V2A-83:** a preparação recusou a explicação das receitas ainda não aplicada ao PCP, a segunda fonte financeira sem selo e o apoio dos setores sem ligação à auditoria da frase. Foram corrigidos. A planta antiga da nota financeira foi atualizada para a mensagem da recusa que agora ocorre ao construir o apoio selado, antes das células.
 
 ### Preparação e custo
 
-As conferências específicas do motor passaram 44 casos. A régua do HTML passou as 36 páginas e 135 plantas. Passaram também as conferências dos dados, famílias e cartões, língua, índice e tipos. Os registos da preparação estão em `h-conferencias/`; a lista de mensagens, os códigos finais, as cabeças e as capturas serão acrescentados no fecho.
+As conferências específicas do motor passaram 44 casos. A régua do HTML passou as 36 páginas e 135 plantas. Passaram também as conferências dos dados, famílias e cartões, língua, índice e tipos. Os registos da preparação estão em `h-conferencias/`; a lista final `plantas-h.json` contém 213 mensagens distintas, com o ficheiro e a linha de cada uma.
 
 V2-a-g, conforme o mandato H e o lançador: 97 turnos, 267 149 de custo antigo, 4 pontos da semana com outra sessão em paralelo, contexto médio de 131 547. O custo V2-a-h cabe ao lançador. Não foi exposta uma linha «tokens used».
 
 **V2A-84:** a primeira corrida H terminou em build 1, verify 125 (não executado por dependência), typecheck 0 e motor 0. O build encontrou quatro entradas vivas da passagem C para as antigas frases dos cenários. As novas frases já estavam inventariadas; as quatro anteriores passam a retiradas, com motivo. `inventario-h.mjs` conserva essa retirada nas recomposições. A corrida fica em `portoes-h-preparacao/`, na cabeça `9f865f732c2c8e5bdff875beaf4e1498ccdc100f`; o motor manteve `83b63a88ee0292c55bf26e96c17680ab747b07d6`. As cabeças de início e fim coincidem e os dois estados finais têm zero bytes. A correção foi iniciada depois de a chamada ao escrivão devolver o resultado completo.
+
+
+### O fecho da passagem H
+
+O último commit de código e provas antes dos portões é `659f9d27d801cfef740486c73b2a491600642f29` no sítio; o motor tem `83b63a88ee0292c55bf26e96c17680ab747b07d6`. Os commits de implementação são `9f865f73` (frases, apoios e réguas), `659f9d27` (retirada das entradas antigas e primeira corrida conservada) e `83b63a88` no motor (apoios selados e fontes secundárias). As primeiras 300 imagens foram comitadas em `74d988f08a486e1419e9b6ed17c82c01c20406a5`. O commit que contém este fecho guarda as restantes capturas, as medições e o relatório. Estes commits posteriores não alteram código; a cabeça final é lida de Git na resposta de entrega.
+
+| Portão | Código lido | Ficheiro |
+| --- | --- | --- |
+| build | 0 | `portoes-h/build.codigo` |
+| verify | 0 | `portoes-h/verify.codigo` |
+| typecheck | 0 | `portoes-h/typecheck.codigo` |
+| motor | 0 | `portoes-h/motor.codigo` |
+
+As cabeças de início e fim coincidem nos dois repositórios. `estado.fim` e `motor.estado.fim` têm zero bytes. O `dist/version.json` e o recibo das capturas nomeiam a cabeça de código acima. Nenhum ramo principal foi fundido e não houve `push`.
+
+`inspecao-h.json` confere os 18 valores e unidades contra a entrada e transcreve as frases do HTML. `frases-h.md` guarda integralmente as frases do PCP e de Leitão Amaro nas duas edições. `medidas-h.json` confere 3211 linhas anteriores intactas, 3229 linhas finais e 8 corpos distintos por SHA256. As cópias integrais continuam apenas no motor.
+
+O pedido `capturas-pedido-h.json` cobre as 18 páginas nas duas edições e nas cinco larguras. O recibo em `design/especime-v3/capturas/v2a-2026-10-12/h/capturas.json` regista 180 casos e 540 imagens. Todos os SHA256 e dimensões foram conferidos; não houve transbordos, pedidos externos nem erros do navegador. A inspeção visual registada em `capturas-h-inspecao.json` abrange 52 cabeças de página, incluindo todas as versões móveis e as versões largas do PCP, Amaro, RTP, total das parcerias, variações com PRR e cenários. Não foram observados cortes de texto nem sobreposições nesses recortes.
+
+**V2A-85:** a L1 final continua em 2 780, no teto já existente, conforme `portoes-h/verify.log`. Os seis achados reais foram tratados; a leitura a frio pertence ao lugar de direção. O custo desta passagem cabe ao lançador; não foi exposta uma linha «tokens used».
