@@ -1,7 +1,6 @@
 /** V2-a-d: períodos e contas lidos das linhas, sem algarismos na prosa. */
 import {resolverComplemento} from './o-que-e-o-numero.mjs';
 const saude='oe-2027-saude-despesa-total-consolidada-';
-const ppp='oe-2027-ppp-rodoviario-';
 /** @param {string} id @param {'pt'|'en'} lang */
 export function continuacaoDoNomeV2a(id,lang) {
   if(id.startsWith('oe-2027-saude-')) {
