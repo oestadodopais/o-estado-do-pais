@@ -9,7 +9,8 @@ PLANTA V2AC Saúde: falta a distinção entre total e efetiva
 PLANTA V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento
 PLANTA V2AC RTP: a frase não identifica a notícia pela data
 PLANTA V2AC PPP: o total não está definido por uma frase própria
+PLANTA V2AC Saúde: preposição incompatível com orçamento
 PLANTA V2AC selo: SHA256 do corpo ausente ou diferente
-V2AB/V2AC: 36 páginas conferidas; 12 plantas.
+V2AB/V2AC: 36 páginas conferidas; 13 plantas.
 PLANTA V2AC selo no livro: [afirmacao-leitao-amaro-saude-oe2027-2026-10-09.yml] document.source_sha256 precisa de um SHA256 completo.
 V2AC: os 18 valores e unidades coincidem com a cabeça de entrada.

@@ -260,3 +260,31 @@ Questões novas:
 - V2A-33, localizador da definição: o segundo build passou, mas o verify recusou o índice porque a sua régua ainda exigia que o localizador da Saúde acabasse na página do quadro. A régua passou a exigir também a referência exata à nota da página 145, que as linhas ganharam nesta passagem. Duas plantas retiram a nota e trocam a sua página; a régua continua a recusar localizadores diferentes. Não se mudou nenhum nome nem valor para satisfazer o teste.
 
 - V2A-34, leitura visual: a primeira série de capturas da V2-a-c revelou «na orçamento» nas três frases dos níveis de 2027. A composição passou a distinguir «na estimativa» e «no orçamento», e uma planta troca a preposição na frase publicada. Os quatro portões dessa construção tinham passado; a correção exige nova construção e novas capturas. Conserva-se a amostra que revelou a falha em `c-conferencias/captura-concordancia.png`; a entrega usa as capturas posteriores.
+
+### Referências da correção e provas finais
+
+| Achado | Ficheiro e linha |
+|---|---|
+| 7 e 16 | `scripts/afirmacoes.mjs:29`; `<motor>/publisher/v2a.py:52` e `:187`; `fontes-conferidas-c.json` guarda a capa e os selos. |
+| 8 | `design/especime-v3/medicoes/v2a-2026-10-12/familias.mjs:16`; `src/lib/o-que-e-o-numero.mjs:93`; `<motor>/publisher/v2a.py:234`. |
+| 9 | `design/especime-v3/medicoes/v2a-2026-10-12/familias.mjs:59` |
+| 10 | `design/especime-v3/medicoes/v2a-2026-10-12/familias.mjs:43` |
+| 11 | `design/especime-v3/medicoes/v2a-2026-10-12/familias.mjs:38` |
+| 12 | `src/views/LinhaView.astro:503`; `src/lib/ledger.mjs:1927`; `<motor>/publisher/export_site_rows.py:720`. |
+| 13 | `package.json:52`; `tests/linha/v2a.mjs:11` |
+| 14 | `design/especime-v3/medicoes/v2a-2026-10-12/LEIA-ME.md:254`; `custo-b.json`; cabeças e códigos abaixo. |
+| 15 | `scripts/afirmacoes.mjs:16`; `<motor>/publisher/v2a.py:67`; plantas nos dois leitores. |
+
+Cabeça do código conferido do sítio: `d0f5241ae869e592acc26e50960785c302c4d32f`. Cabeça do código e final do motor: `559eac976f84f6b2b9cedb624565b115ed457933`. Os commits de código do sítio são `237b4a88`, `45434201`, `6b8baa7e` e `d0f5241a`; o do motor é `559eac97`. O commit `a9ff9b47` guardou as primeiras provas; o commit `6b8baa7e` completou a régua do índice e guardou a segunda tentativa. O commit `d0f5241a` corrigiu a concordância encontrada nas capturas. A resposta final regista a cabeça posterior dos comprovativos.
+
+Os quatro códigos foram lidos dos ficheiros de `portoes-c/`: `build.codigo = 0`, `verify.codigo = 0`, `typecheck.codigo = 0`, `motor.codigo = 0`. A primeira tentativa, preservada em `portoes-c-primeira/`, foi build 1, verify 125, typecheck 0 e motor 0. A segunda tentativa, em `portoes-c-segunda/`, foi build 0, verify 1, typecheck 0 e motor 0; a recusa do índice motivou a V2A-33. A terceira tentativa, em `portoes-c-terceira/`, teve os quatro códigos a zero, mas a leitura das capturas encontrou a concordância corrigida na V2A-34. A conferência de voz isolada também conserva a recusa e a repetição verde em `c-conferencias/`.
+
+`inspecao-c.json` confere 36 páginas e compara os 18 valores e unidades com a entrada desta passagem, sem diferença. `medidas-c.json` reconfirma 3211 linhas anteriores intactas e os resumos de 8 documentos no motor. Os oito documentos mantêm os selos da passagem V2-a-b; a história atual não contém commits com `ledger/provas/v2a/*.html.gz`, conforme a conferência com `git rev-list`. Os valores e as diferenças contra o memorando continuam na tabela inicial deste relatório. `l1-v2a-c.json` mede 2780 páginas, das quais 36 são os recibos do V2-a; o teto existente não foi alterado.
+
+`plantas-c.json` transcreve as 63 mensagens das plantas do motor, do leitor das afirmações, do HTML e do índice desta passagem, com registo e linha. Inclui as cinco plantas V2AB agora integradas em `check:cartao`, as trocas de ano, a definição retirada, a grafia alterada, os selos corrompidos, as âncoras ausentes, os meses, a página da nota trocada e a concordância da preposição nas frases orçamentais. As quatro plantas de destinos e a planta da vista ficam em `l1-v2a-c.json` e `c-conferencias/l1.log`. As contagens das conferências não são confundidas com as contagens das plantas.
+
+As capturas em `../../capturas/v2a-2026-10-12/c/` pertencem à mesma cabeça do código: 180 combinações de página, língua e largura, com 540 imagens conferidas pelos resumos e dimensões. Foram vistas 45 imagens, incluindo os 36 cabeçalhos móveis. Não se observaram falhas na amostra final. O recibo `capturas.json` e `capturas-inspecao-c.json` registam as dimensões, os resumos, a ausência de pedidos externos e de erros e a amostra visual efetivamente vista. A leitura cruzada das novas frases permanece marcada como «por ler» para a direção; as conferências automáticas e esta inspeção não a substituem.
+
+Custo: a direção mediu a V2-a-b em 232 turnos, 518 020 de custo antigo e 8 pontos da semana, com a higiene em paralelo. O custo final V2-a-c ainda não foi fornecido: só o lançador o mede depois do encerramento desta passagem. Não foi exposta uma linha «tokens used».
+
+O commit `44345599ff185beab6a1966fbf22462e9536bc3d` guarda as primeiras 270 imagens. As restantes imagens, os recibos e este relatório seguem no commit final, cuja cabeça é indicada na resposta. A divisão respeita o limite de 400 ficheiros por pedido do escrivão.

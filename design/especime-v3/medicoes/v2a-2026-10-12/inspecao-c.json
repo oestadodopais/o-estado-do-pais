@@ -1,6 +1,6 @@
 {
   "base": "96b6aaa9",
-  "cabeca": "6b8baa7e5e0f51eb548780a7dc7f458ce03de564",
+  "cabeca": "d0f5241ae869e592acc26e50960785c302c4d32f",
   "linhas": 18,
   "paginas": 36,
   "resultados": [
@@ -337,6 +337,10 @@
     {
       "id": "oe-2027-ppp-total-encargos-liquidos-2027",
       "mensagem": "V2AC PPP: o total não está definido por uma frase própria"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "mensagem": "V2AC Saúde: preposição incompatível com orçamento"
     },
     {
       "id": "oe-2027-cenario-ihpc-2026",

@@ -1,0 +1,197 @@
+{
+  "cabeca": "d0f5241ae869e592acc26e50960785c302c4d32f",
+  "conferido_em": "2026-10-14T00:42:38.236357+00:00",
+  "recibo": "design/especime-v3/capturas/v2a-2026-10-12/c/capturas.json",
+  "metodo": "Inspeção visual dos 36 cabeçalhos móveis, em seis folhas sem redimensionar os recortes, e das páginas e proveniências enumeradas. Dimensões, pedidos, erros e SHA256 conferidos em todas as imagens.",
+  "paginas_e_larguras": 180,
+  "imagens_conferidas": 540,
+  "imagens_vistas": [
+    {
+      "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-pt-390-cabeca.png",
+      "sha256": "b2e578665b56d7ddd999719e78b3648b163b72cad478c193994c8d50c557b685"
+    },
+    {
+      "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-390-cabeca.png",
+      "sha256": "90da727b6a65b830d6e553c93c015bfb3fb2da87746a5275e920e21e4de9e887"
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-390-cabeca.png",
+      "sha256": "e530c730417a51c405edf2ddbb99353f51247c23160a6661f10867d7b823f6fd"
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-en-390-cabeca.png",
+      "sha256": "cb84dfd00bebfb607ecba840bc21f7568d1e7f1d4f8545e43abf1f715431bf4a"
+    },
+    {
+      "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-pt-390-cabeca.png",
+      "sha256": "c94ff5ba9297054919a683a9dcb4b818b3763935636fca0fb66fff615c670c6f"
+    },
+    {
+      "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-390-cabeca.png",
+      "sha256": "bc4cbc18a4d5833296ed2f34d7acf2b37ffcad76da7fdd55ce4e7ca842c9c662"
+    },
+    {
+      "ficheiro": "oe-2027-cenario-ihpc-2026-pt-390-cabeca.png",
+      "sha256": "7f7b758f82bd85adfd7830dfa8698470e9a77618807962c7e272cb720f1ef4ca"
+    },
+    {
+      "ficheiro": "oe-2027-cenario-ihpc-2026-en-390-cabeca.png",
+      "sha256": "384db6202137c9fecb45852a961539aa4fe622f6001cc380351e4b9d8cc0e6a4"
+    },
+    {
+      "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-pt-390-cabeca.png",
+      "sha256": "2193768c6429df33a73a4a0c1b23f176e75252696482d76c59aa5279fc7c7363"
+    },
+    {
+      "ficheiro": "oe-2027-cenario-pib-real-crescimento-2027-en-390-cabeca.png",
+      "sha256": "f1714617fe590371f17c807eb8add8022ce5183d2de192d40e89a1a27ca65b99"
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-pt-390-cabeca.png",
+      "sha256": "9c7cc8dd4b99f581aae1ba0e5987c47fe3d4ddba5497958183102991677b00df"
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-brutos-2027-en-390-cabeca.png",
+      "sha256": "05f00fc16b922543b028c66bd79dfa925c8a13bf0e2214be731c29eaf3c5d686"
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-pt-390-cabeca.png",
+      "sha256": "19f66ad6ad9ab80793d2526c3802a6e9a1585cd94b1f337988986cce97c0a34d"
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-encargos-liquidos-2027-en-390-cabeca.png",
+      "sha256": "a7eeb843d3d7e69ff102df8c2f7283eb9670a9743f7f3974ce2232639247bb13"
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-pt-390-cabeca.png",
+      "sha256": "d6ac44221a5966b71c3bbd481dd2efdf610db3e82c18be068ba410296e463157"
+    },
+    {
+      "ficheiro": "oe-2027-ppp-rodoviario-receitas-2027-en-390-cabeca.png",
+      "sha256": "ad29ef699548e004d188ec191cd05bdb33dc39dccb6e84fa4ae89de2a1594267"
+    },
+    {
+      "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-390-cabeca.png",
+      "sha256": "148dfb45bdfdbb6083fadd14a1d8fa17f81396b32a713a91b3a5ea8eced10752"
+    },
+    {
+      "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-en-390-cabeca.png",
+      "sha256": "e940163467072395966d50c696bb8751ec98dc5958ec708a18abb99172a46af0"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-390-cabeca.png",
+      "sha256": "6aa66d5455d195a9f53d310ae0ee548aeedb271463e0a3cb138a0a6acee8d081"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-en-390-cabeca.png",
+      "sha256": "2c6ccc0455f205a0f48d647a075c565696cbb0cf2f1221a4c80c34db3598f63c"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-390-cabeca.png",
+      "sha256": "f59dc90e720611290727f28e63ba054a35e41d8cad7f918b096d4c508679234b"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-en-390-cabeca.png",
+      "sha256": "e78aef9d379fb14af3992bc8b038c23caafc14b7e83796ecec7e1e83f021eb5c"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-pt-390-cabeca.png",
+      "sha256": "621dcb224fed83a12b4827993bca82e3bbef7ade75d9412e47ea6d6278f93257"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026-en-390-cabeca.png",
+      "sha256": "7340c8e8af296f307c86ede9ee4acaece88d35d951e580a901ceedc0664f3f78"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-pt-390-cabeca.png",
+      "sha256": "42fd566e84c8f947b03c25a7e2f127a7ae3a7934a5159b427ddd8f211311999d"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027-en-390-cabeca.png",
+      "sha256": "a8e069bc2e30a214fd8a8138f04d81133df496f90cfda16fd347a5bf29699bbc"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-pt-390-cabeca.png",
+      "sha256": "912f92cefdc14a424809cede18473711a28000e9bb22e26fec682082952ef46a"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao-en-390-cabeca.png",
+      "sha256": "ec8ee62b18f28602a7471d8e56bf5fc7b31c6c71407b174a8a0a4687d7719cad"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-pt-390-cabeca.png",
+      "sha256": "111b0c92a1035cd1f771229c044716d1c77e04dc9b2a950b7b18f43191aab453"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-variacao-en-390-cabeca.png",
+      "sha256": "31122621da1f13dc1042ee32627d21280a08cd6eb27904dfa1ddeca66dbfb453"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-pt-390-cabeca.png",
+      "sha256": "5006aa93567a89931479eff5425bf81612cc18a9ca191d2e8201dbb441d98bb4"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2026-en-390-cabeca.png",
+      "sha256": "5433f458693c8d19683fe57de9df5fb55140285c42814be69b347af8b6d378d8"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-pt-390-cabeca.png",
+      "sha256": "f8fbe95439488b6bef05aaf6b32c43cda3d7209860e13dcf39bd38763e9d646c"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-2027-en-390-cabeca.png",
+      "sha256": "4d14f5282ccb615a0e4d96bdf65f699538720ddec45d9835e7ff43f664ec806d"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-pt-390-cabeca.png",
+      "sha256": "79a2e65e9b9f217ffbb47a946d2c973fc065907e88de0ba3b81d51e19800e82f"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-total-consolidada-variacao-en-390-cabeca.png",
+      "sha256": "56afb884e467afbb7825baeb8d95620314659b1271d07a8a4546b237de505a66"
+    },
+    {
+      "ficheiro": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09-en-1280-fonte.png",
+      "sha256": "93b1e3578d325933ae11665572fcb9cd9a347adb1e022b2ba7325feaa2839317"
+    },
+    {
+      "ficheiro": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09-pt-390-fonte.png",
+      "sha256": "6a63fdfe120cbce45a281aefdcac5c3cfcc0c22c767782f0cba2a3bb74f512ff"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2026-pt-1280.png",
+      "sha256": "d3fdc9fb42ac8ebd7046739c473739794053d99edb10f959d449f400e5b3b55a"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-1280.png",
+      "sha256": "f8f7d2c86babf565691a9b0b9b3b44c2521789b20b51c98e521c44a3f7dff8cb"
+    },
+    {
+      "ficheiro": "oe-2027-cenario-ihpc-2026-en-1280.png",
+      "sha256": "9855a14f2a26af3c2ad4f95d0fc271e8724993185a01247eeb472d8759fc951f"
+    },
+    {
+      "ficheiro": "afirmacao-rtp-saude-queda-oe2027-2026-10-09-en-1280.png",
+      "sha256": "f87978a34f58a14a977242e6411859f6cafec7b1363dee5d62a27a2e8041365b"
+    },
+    {
+      "ficheiro": "oe-2027-ppp-total-encargos-liquidos-2027-pt-1280.png",
+      "sha256": "4ba1fa144c4897620f0facfe2560d78f524dd0040f1291a0ca2d9c1ec2ca27f7"
+    },
+    {
+      "ficheiro": "oe-2027-saude-despesa-efetiva-consolidada-2027-pt-390-fonte.png",
+      "sha256": "5651d3b9b5352a4bc1904c0ca2e1e0b3a9705b42d5689b252b6a70538edada0f"
+    },
+    {
+      "ficheiro": "oe-2027-cenario-ihpc-2026-en-390-fonte.png",
+      "sha256": "41f5d61bf03adc3c66c2d6d484003b6196147372c5137c05d011ad7757c6460f"
+    }
+  ],
+  "falhas_observadas": [],
+  "observacoes": [
+    "Os seis níveis da Saúde distinguem o ano, a coluna e a medida no cabeçalho e na frase. A explicação separa as operações financeiras da despesa efetiva.",
+    "As previsões mostram o ano e a Proposta de Orçamento; a notícia RTP é identificada pela data e conserva a ausência de definição da medida.",
+    "O total das PPP tem frase própria. As citações públicas continuam separadas do título do documento.",
+    "Os selos completos cabem na proveniência, incluindo nas amostras de largura estreita, sem sobreposição ou transbordo observado."
+  ]
+}

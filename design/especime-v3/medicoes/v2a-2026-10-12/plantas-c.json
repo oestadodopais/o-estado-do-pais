@@ -267,7 +267,7 @@
     },
     {
       "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
-      "linha": 6,
+      "linha": 7,
       "mensagem": "V2AC Saúde: falta o ano, a coluna ou a grafia do programa"
     },
     {
@@ -293,11 +293,16 @@
     {
       "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
       "linha": 12,
+      "mensagem": "V2AC Saúde: preposição incompatível com orçamento"
+    },
+    {
+      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
+      "linha": 13,
       "mensagem": "V2AC selo: SHA256 do corpo ausente ou diferente"
     },
     {
       "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
-      "linha": 14,
+      "linha": 15,
       "mensagem": "V2AC selo no livro: [afirmacao-leitao-amaro-saude-oe2027-2026-10-09.yml] document.source_sha256 precisa de um SHA256 completo."
     },
     {
