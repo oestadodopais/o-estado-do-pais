@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T16:13:37+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
+   "descricao": "a deteção do GitHub enfraquecida (or para and): com só uma das variáveis presente a corrida deixaria de exigir o segredo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "dcd225384ad76ad3aee9168c54a3afda9b7147c7da5774564069b590900206d1",
+   "sha256_depois": "cce9103aa7efd588cbdc1eb622ef30bd1f714e965284d960ad99bc676f5387c4",
+   "contexto_antes": "odopais/proibidos.txt'\n        if ficheiro.is_file():\n            os.environ['PRIVACIDADE_PROIBIDOS'] = ficheiro.read_text(encoding='utf-8')\n\n\ndef em_ci():\n    return 'GITHUB_ACTIONS' in os.environ or 'CI' in os.environ\n\n\n@lru_cache(maxsize=16)\ndef _ler_proibidos(valor, ci):\n    cadeias = []\n    identidades = {n.casefold() for n in IDENTIDADES_DO_PROJETO}\n    for linha, texto ",
+   "contexto_depois": "odopais/proibidos.txt'\n        if ficheiro.is_file():\n            os.environ['PRIVACIDADE_PROIBIDOS'] = ficheiro.read_text(encoding='utf-8')\n\n\ndef em_ci():\n    return 'GITHUB_ACTIONS' in os.environ and 'CI' in os.environ\n\n\n@lru_cache(maxsize=16)\ndef _ler_proibidos(valor, ci):\n    cadeias = []\n    identidades = {n.casefold() for n in IDENTIDADES_DO_PROJETO}\n    for linha, texto "
+  },
+  {
+   "id": "P2",
+   "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
+   "descricao": "a forma abreviada do nome só derivada de nomes com mais de três palavras (> 2 para > 3): um nome de três palavras perderia a guarda do primeiro e do último nome",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "cce9103aa7efd588cbdc1eb622ef30bd1f714e965284d960ad99bc676f5387c4",
+   "sha256_depois": "c09fc83fbb11bafd665fec2c424d09f6b6605d3182633e9bfbf6ec0df28af342",
+   "contexto_antes": "rva a forma inteira e a abreviada da guarda da §1.138.\"\"\"\n    formas = list(cadeias)\n    for cadeia in cadeias:\n        partes = cadeia.decode('utf-8').split()\n        if len(partes) > 2:\n            curta = partes[0] + ' ' + partes[-1]\n            if len(curta) >= 4 and curta.casefold() not in {n.casefold() for n in IDENTIDADES_DO_PROJETO}:\n   ",
+   "contexto_depois": "rva a forma inteira e a abreviada da guarda da §1.138.\"\"\"\n    formas = list(cadeias)\n    for cadeia in cadeias:\n        partes = cadeia.decode('utf-8').split()\n        if len(partes) > 3:\n            curta = partes[0] + ' ' + partes[-1]\n            if len(curta) >= 4 and curta.casefold() not in {n.casefold() for n in IDENTIDADES_DO_PROJETO}:\n   "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "scripts/check-privacidade.py",
+   "descricao": "a conferência dos ficheiros seguidos a exigir as duas condições (or para and): uma cadeia pessoal num ficheiro sem estrutura local passaria",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "a527ea117a44a5203bf7b2fef6c24d795d52bc0d9d4d1f4edbb73a29c626a50d",
+   "sha256_depois": "83b72f0b207fc7a7b2c0ed5fec21697ba8a6d65b6d74c15f72c456c9e1d71c4c",
+   "contexto_antes": "# Uma remoção da worktree não publica o ficheiro removido.\n        ficheiros += 1\n        dados = os.readlink(p).encode() if p.is_symlink() else p.read_bytes()\n        if tem_estrutura_local(nome, dados) or tem_cadeia_pessoal(nome, dados, cadeias):\n            achados.append(nome)\n    plantas = []\n    if prova:\n        for i, marca in enumerate(ESTRUTURA_LOCAL, 1):\n            for nome, dados, caso in [('",
+   "contexto_depois": "# Uma remoção da worktree não publica o ficheiro removido.\n        ficheiros += 1\n        dados = os.readlink(p).encode() if p.is_symlink() else p.read_bytes()\n        if tem_estrutura_local(nome, dados) and tem_cadeia_pessoal(nome, dados, cadeias):\n            achados.append(nome)\n    plantas = []\n    if prova:\n        for i, marca in enumerate(ESTRUTURA_LOCAL, 1):\n            for nome, dados, caso in [('"
+  },
+  {
+   "id": "P4",
+   "ficheiro": ".github/workflows/portao.yml",
+   "descricao": "o nome da variável de ambiente trocado no fluxo (PROIBIDAS): o detetor nunca receberia o segredo no GitHub",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "e3628bb0d432976689f25cfbeb76c02947c82aca464c06d887f7f596ca608f04",
+   "sha256_depois": "839e1999b4fdede7dd8a237fcabe32a9ceecd76e044e21cac408345888ec4306",
+   "contexto_antes": "  # RH1: os nomes privados vêm do segredo, mesmo após a reescrita do Git.\n    # Sem o segredo ou com a lista vazia, a conferência fica vermelha.\n    env:\n      PRIVACIDADE_PROIBIDOS: ${{ secrets.PRIVACIDADE_PROIBIDOS }}\n    # O anfitrião está preso ao maior, e não a `ubuntu-latest`, de propósito: a\n    # 02.09.2026 o `ubuntu-latest` resolvia para esta mesma imagem\n    # (`Imag",
+   "contexto_depois": "  # RH1: os nomes privados vêm do segredo, mesmo após a reescrita do Git.\n    # Sem o segredo ou com a lista vazia, a conferência fica vermelha.\n    env:\n      PRIVACIDADE_PROIBIDAS: ${{ secrets.PRIVACIDADE_PROIBIDOS }}\n    # O anfitrião está preso ao maior, e não a `ubuntu-latest`, de propósito: a\n    # 02.09.2026 o `ubuntu-latest` resolvia para esta mesma imagem\n    # (`Imag"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem das plantas do ensaio RH1-b trocada no relatório (29 para 28): o relatório deixa de bater com medidas-b.json",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "31f346400d4459dcd3cb14a46efc5d28ed5d0bff92197f38cb190825b85d1fef",
+   "sha256_depois": "0856315dc5b160a9babecb1b5c70a4dc621fa4e5f87ee47b0795a0f4a19398e2",
+   "contexto_antes": "odo`; corrida completa na página do Método |\n| Aceitação de texto público inócuo | `transferida-controlo-publico` e reposição do repositório sintético limpo |\n\nAs 29 plantas do ensaio RH1-b morderam; entre elas estão as 11 plantas transferidas que também correram na conferência de privacidade dos portões. A regressão RH1 e JD1 passou. A medição da cabeça d",
+   "contexto_depois": "odo`; corrida completa na página do Método |\n| Aceitação de texto público inócuo | `transferida-controlo-publico` e reposição do repositório sintético limpo |\n\nAs 28 plantas do ensaio RH1-b morderam; entre elas estão as 11 plantas transferidas que também correram na conferência de privacidade dos portões. A regressão RH1 e JD1 passou. A medição da cabeça d"
+  }
+ ]
+}
