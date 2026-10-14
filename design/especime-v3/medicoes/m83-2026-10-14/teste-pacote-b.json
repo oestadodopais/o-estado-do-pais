@@ -1,0 +1,205 @@
+{
+  "ok": true,
+  "casos": [
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "controlo sem variáveis conserva o diff gerado",
+      "passou": true
+    },
+    {
+      "nome": "controlo limpo: a cópia conserva os bytes esperados",
+      "passou": true
+    },
+    {
+      "nome": "a página construída chega",
+      "passou": true
+    },
+    {
+      "nome": "planta do argumento ponto: a montagem conserva a pontuação",
+      "passou": true
+    },
+    {
+      "nome": "planta: bytes do sítio diferentes da cabeça são recusados antes da cópia",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa a árvore do repositório: há modificações em ficheiros seguidos por comitar."
+    },
+    {
+      "nome": "planta: bytes do motor diferentes da cabeça são recusados antes da cópia",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa a árvore do motor: há modificações em ficheiros seguidos por comitar."
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "os dois lados e as exclusões conferem",
+      "passou": true
+    },
+    {
+      "nome": "a tabela nomeia o caminho e as linhas retiradas",
+      "passou": true
+    },
+    {
+      "nome": "o diff do motor declara as exclusões na primeira linha",
+      "passou": true
+    },
+    {
+      "nome": "a conferência dos números chega ao pacote",
+      "passou": true
+    },
+    {
+      "nome": "PACOTE_EXTRA conserva os bytes",
+      "passou": true
+    },
+    {
+      "nome": "planta: uma secção excluída que volte ao diff morde",
+      "passou": true
+    },
+    {
+      "nome": "planta: ficheiro do motor alterado morde",
+      "passou": true
+    },
+    {
+      "nome": "reposição dos dois lados",
+      "passou": true
+    },
+    {
+      "nome": "nenhum caminho temporário foi guardado",
+      "passou": true
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "um relatório não conferido chega com o código de aviso",
+      "passou": true
+    },
+    {
+      "nome": "planta: relatório inexistente recusa pela conferência do relatório",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "conferir-relatorio.py: não existe o relatório <ensaio>/sitio/medicoes/relatorio-ausente.md"
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "o corpo alojado da linha mudada chega ao pacote, byte a byte, sem estar no diff do motor",
+      "passou": true
+    },
+    {
+      "nome": "o recibo do pedido e os direitos vêm ao lado do corpo",
+      "passou": true
+    },
+    {
+      "nome": "o corpo que nenhuma linha cita não vem",
+      "passou": true
+    },
+    {
+      "nome": "o manifesto diz a linha, o sha256 e o caminho, e a linha derivada sem documento",
+      "passou": true
+    },
+    {
+      "nome": "a página construída da linha mudada entra sozinha de dist/, e a que falta fica dita",
+      "passou": true
+    },
+    {
+      "nome": "o manifesto não guarda caminhos da máquina",
+      "passou": true
+    },
+    {
+      "nome": "planta: linha com documento alojado e sem PACOTE_MOTOR recusa antes de criar a pasta",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: o bloco toca 1 linha(s) com documento alojado e PACOTE_MOTOR não foi dado; os corpos alojados têm de vir da cabeça do motor (M83): linha-sintetica (0c7cf42484dd)."
+    },
+    {
+      "nome": "planta: o corpo com outro sha256 na cabeça do motor recusa, e diz a linha e o estudo percorrido",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: corpo alojado não encontrado na cabeça do motor para 1 linha(s) (M83): linha-sintetica (0c7cf42484dd); estudos percorridos: content/Estudo sintético."
+    },
+    {
+      "nome": "planta: uma razão curta não abre a exceção",
+      "passou": true
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "conhecido-positivo: com a razão declarada o pacote monta-se e diz a falta ao leitor",
+      "passou": true
+    },
+    {
+      "nome": "controlo: só uma linha derivada mudada não exige o motor, e o manifesto diz que não tem documento",
+      "passou": true
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "o sha256 com aspas simples, sem aspas, em fluxo e com a chave entre aspas resolve, e null é «sem documento»",
+      "passou": true
+    },
+    {
+      "nome": "uma chave parecida fora de document e um sha256 dentro de crop não contam como documento",
+      "passou": true
+    },
+    {
+      "nome": "o manifesto diz por onde cada linha se resolveu e que estudos percorreu",
+      "passou": true
+    },
+    {
+      "nome": "planta: 64 hexadecimais com lixo atrás recusam, em vez de passarem truncados",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: a linha linha-lixo-atras declara document.source_sha256 numa forma que o guião não aceita ('0c7cf42484ddc9ed5436d47e1207815920f77365a87ade98'); esperam-se 64 hexadecimais entre aspas, ou null."
+    },
+    {
+      "nome": "planta: uma chave source_sha256 repetida recusa a linha, em vez de ficar com a última em silêncio",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: a linha linha-duplicada não é YAML que o guião aceite (ValueError: chave duplicada «source_sha256»)."
+    },
+    {
+      "nome": "planta: uma declaração de sha256 que o guião não lê recusa, em vez de passar por «sem documento»",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: a linha linha-ilegivel declara document.source_sha256 numa forma que o guião não aceita ('abc'); esperam-se 64 hexadecimais entre aspas, ou null."
+    },
+    {
+      "nome": "um corpo sem recibo do pedido nem direitos ao lado chega, mas o estado di-lo, linha a linha, e a montagem avisa",
+      "passou": true
+    },
+    {
+      "nome": "uma página pedida à mão conta nas páginas das linhas e não nas acrescentadas",
+      "passou": true
+    },
+    {
+      "nome": "o manifesto diz porquê cada linha entra: a mudada, e a mudada cuja página também se pediu",
+      "passou": true
+    },
+    {
+      "nome": "M83-b: a página pedida de uma linha que não mudou traz o corpo dela, byte a byte, e o manifesto diz «página pedida»",
+      "passou": true
+    },
+    {
+      "nome": "controlo: sem página pedida e sem linha mudada, nenhum corpo vem e não há manifesto",
+      "passou": true
+    },
+    {
+      "nome": "controlo: uma página pedida que não é de uma linha do livro não traz corpo nenhum",
+      "passou": true
+    }
+  ]
+}
