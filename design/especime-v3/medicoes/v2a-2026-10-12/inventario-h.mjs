@@ -5,7 +5,8 @@ import {routePath} from '../../../../src/lib/routes.mjs';
 const ids=Object.keys(JSON.parse(fs.readFileSync('ledger/cruzamentos/v2a.json')).rows);
 const file='design/especime-v3/INVENTARIO-FRASES.md',orig=fs.readFileSync(file,'utf8').split('\n');
 const removed=orig.filter(l=>l.includes('| v2ag |')).length;
-const keep=orig.filter(l=>!l.includes('| v2ag |')&&!l.includes('| v2ah |'));
+const antigas=orig.map(l=>l.includes('| v2ac | viva |')&&(l.includes('É a previsão do Ministério das Finanças')||l.includes('It is the Ministry of Finance forecast'))?l.replace('| viva |','| retirada |').replace('Frase conferida nas fontes seladas e na auditoria K17.','Substituída na passagem H: o ano da previsão passa a vir do token do período.'):l);
+const keep=antigas.filter(l=>!l.includes('| v2ag |')&&!l.includes('| v2ah |'));
 const found=new Set(keep.filter(l=>l.startsWith('|')).map(l=>l.split('|')[2]?.trim()));
 const phrases=new Set();
 for(const id of ids)for(const lang of ['pt','en']) {
