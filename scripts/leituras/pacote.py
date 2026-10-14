@@ -9,6 +9,20 @@ Qualquer build.log, verify.log ou typecheck.log com um .codigo ao lado é um
 registo de portão. Por omissão só chegam as linhas citadas no relatório,
 com os códigos e tempos; cada redução é dita com os tamanhos. PACOTE_LOGS=inteiros
 conserva os registos completos. A entrega relê as citações independentemente.
+
+M83 (14.10.2026, §1.192): OS CORPOS ALOJADOS VÃO NO PACOTE PELO GUIÃO, NUNCA DE MEMÓRIA. A leitura
+curta da V2-a-b (13.10.2026) não pôde conferir as palavras das frases contra as fontes porque o pacote
+não trazia os documentos do motor; a regra existia desde 12.10 (M65) mas vivia nos guiões de cada sessão.
+Agora cada linha mudada em ledger/claims/ que declare `document.source_sha256` exige, na cabeça do motor
+dada por PACOTE_MOTOR, o documento com esse resumo: resolve-se pelos recibos do sítio
+(ledger/provas/*/provas.json) e pelas fontes do estudo que a nota da linha declara (content/<estudo>/source/,
+mais PACOTE_ESTUDOS="<pasta> <pasta>" para estudos sem nota), copia-se para motor/<caminho> com o recibo do
+pedido (<caminho>.pedido.json) e a pasta direitos/ ao lado, confere-se byte a byte pelo sha256 depois de
+escrito, e escreve-se motor/CORPOS-ALOJADOS.md e motor/corpos-alojados.json. Sem um corpo, a montagem recusa
+antes de criar a pasta; só PACOTE_SEM_CORPOS="<a razão, vinte caracteres ou mais>" a deixa passar, e a razão
+fica escrita em SEM-CORPOS-ALOJADOS.md, que o leitor lê como Blocking. As páginas construídas das linhas
+mudadas (livro-razao/<id>/ e en/ledger/<id>/) entram sozinhas quando dist/ as tiver; as que faltarem ficam
+ditas no manifesto, com a versão que dist/version.json declara.
 """
 import fnmatch
 import hashlib
@@ -123,6 +137,131 @@ def conferir_citacoes(destino, repo, cabeca, relatorio, inteiros=False):
             raise ValueError(f'O pacote recusa a entrega: faltam as linhas citadas de {f}.')
 
 
+SHA_DA_LINHA = re.compile(r'^\s*source_sha256:\s*"([0-9a-f]{64})"', re.M)
+ESTUDO_DA_NOTA = re.compile(r'Cruzado de ResearchHub (content/[^·"\n]+?)\s*·')
+
+
+def sha256_de(dados):
+    return hashlib.sha256(dados).hexdigest()
+
+
+def linhas_com_corpos(repo, cabeca, mudados):
+    """As linhas do livro-razão mudadas no intervalo e presentes na cabeça: {id: (sha256 do documento ou None, estudo da nota ou None)}."""
+    linhas = {}
+    for f in mudados:
+        if not (f.startswith('ledger/claims/') and f.endswith('.yml')):
+            continue
+        if subprocess.run(['git', '-C', str(repo), 'cat-file', '-e', f'{cabeca}:{f}'], stderr=subprocess.DEVNULL).returncode:
+            continue  # uma eliminação não tem corpo a levar
+        texto = git(repo, 'show', f'{cabeca}:{f}').decode('utf-8', 'replace')
+        sha, estudo = SHA_DA_LINHA.search(texto), ESTUDO_DA_NOTA.search(texto)
+        linhas[Path(f).stem] = (sha.group(1) if sha else None, estudo.group(1).strip() if estudo else None)
+    return linhas
+
+
+def indice_dos_corpos(repo, cabeca, motor, cabeca_motor, estudos, precisos):
+    """sha256 -> caminho no motor, para os resumos precisos: primeiro pelos recibos do sítio, depois pelas fontes dos
+    estudos (content/<estudo>/source/**), cada candidato conferido pelo sha256 dos bytes na cabeça do motor."""
+    indice, precisos = {}, set(precisos)
+
+    def confirmar(caminho):
+        r = subprocess.run(['git', '-C', str(motor), '-c', 'core.quotepath=off', 'show', f'{cabeca_motor}:{caminho}'], capture_output=True)
+        if r.returncode == 0:
+            s = sha256_de(r.stdout)
+            if s in precisos and s not in indice:
+                indice[s] = caminho
+
+    def arvore(repositorio, cab, pasta):
+        return [os.fsdecode(p) for p in git(repositorio, 'ls-tree', '-r', '--name-only', '-z', cab, '--', pasta).split(b'\0') if p]
+
+    for f in arvore(repo, cabeca, 'ledger/provas'):
+        if not f.endswith('provas.json'):
+            continue
+        try:
+            provas = json.loads(git(repo, 'show', f'{cabeca}:{f}'))
+        except ValueError:
+            continue
+        for linha in (provas.get('rows') or {}).values():
+            if isinstance(linha, dict) and linha.get('sha256') in precisos and linha['sha256'] not in indice and linha.get('motor_path'):
+                confirmar(linha['motor_path'])
+    for estudo in sorted(e for e in estudos if e):
+        for nome in arvore(motor, cabeca_motor, f'{estudo}/source'):
+            if precisos <= set(indice):
+                break
+            if nome.endswith('.pedido.json') or '/direitos/' in nome:
+                continue
+            confirmar(nome)
+    return indice
+
+
+def levar_corpos(repo, cabeca, motor, linhas, estudos_extra, razao_sem_corpos):
+    """Decide, antes de criar a pasta, que corpos alojados o pacote leva e quais faltam; a falta sem razão recusa."""
+    precisos = {sha for sha, _ in linhas.values() if sha}
+    estudos = {estudo for sha, estudo in linhas.values() if sha} | set(estudos_extra)
+    indice = indice_dos_corpos(repo, cabeca, Path(motor[0]).resolve(), motor[2], estudos, precisos) if (motor and precisos) else {}
+    registo, em_falta = [], []
+    for ident, (sha, estudo) in sorted(linhas.items()):
+        if not sha:
+            registo.append({'linha': ident, 'sha256': None, 'caminho': None, 'estado': 'sem documento alojado (linha derivada ou sem source_sha256)'})
+        elif sha in indice:
+            registo.append({'linha': ident, 'sha256': sha, 'caminho': indice[sha], 'estado': 'copiado'})
+        else:
+            em_falta.append((ident, sha))
+            registo.append({'linha': ident, 'sha256': sha, 'caminho': None, 'estado': 'EM FALTA'})
+    if em_falta and not razao_sem_corpos:
+        faltas = ', '.join(f'{i} ({s[:12]})' for i, s in em_falta)
+        if not motor:
+            raise ValueError(f'O pacote recusa: o bloco toca {len(em_falta)} linha(s) com documento alojado e PACOTE_MOTOR não foi dado; os corpos alojados têm de vir da cabeça do motor (M83): {faltas}.')
+        percorridos = ', '.join(sorted(e for e in estudos if e)) or 'nenhum declarado na nota das linhas nem em PACOTE_ESTUDOS'
+        raise ValueError(f'O pacote recusa: corpo alojado não encontrado na cabeça do motor para {len(em_falta)} linha(s) (M83): {faltas}; estudos percorridos: {percorridos}.')
+    return registo, em_falta
+
+
+def escrever_corpos(destino, motor, registo, em_falta, razao_sem_corpos, paginas, paginas_em_falta, versao_dist):
+    """Copia os corpos decididos, confere cada cópia pelo sha256 da linha, junta o recibo do pedido e os direitos, e escreve o manifesto."""
+    pasta = destino / 'motor'
+    anexos, n = [], 0
+    for r in registo:
+        if r['estado'] != 'copiado':
+            continue
+        if not copiar(motor[0], motor[2], r['caminho'], pasta):
+            raise ValueError(f'O pacote recusa: o corpo alojado {r["caminho"]} desapareceu da cabeça do motor durante a montagem.')
+        if sha256_de((pasta / r['caminho']).read_bytes()) != r['sha256']:
+            raise ValueError(f'O pacote recusa: a cópia de {r["caminho"]} não tem o sha256 que a linha {r["linha"]} declara.')
+        n += 1
+        pedido = r['caminho'] + '.pedido.json'
+        if copiar(motor[0], motor[2], pedido, pasta):
+            anexos.append(pedido)
+        direitos = str(PurePosixPath(r['caminho']).parent / 'direitos')
+        for p in git(motor[0], 'ls-tree', '-r', '--name-only', '-z', motor[2], '--', direitos).split(b'\0'):
+            if p and copiar(motor[0], motor[2], os.fsdecode(p), pasta):
+                anexos.append(os.fsdecode(p))
+    if registo:
+        pasta.mkdir(parents=True, exist_ok=True)
+        linhas_md = ['# Os corpos alojados das linhas que o bloco toca (M83)', '',
+                     f'Copiados da cabeça `{motor[2] if motor else "(sem PACOTE_MOTOR)"}` do motor para `motor/<caminho>` pelo guião do pacote, cada um conferido '
+                     'pelo sha256 que a linha declara (`document.source_sha256`); ao lado, o recibo do pedido (`<caminho>.pedido.json`) e a pasta '
+                     '`direitos/` da mesma fonte, quando existem. Uma linha «EM FALTA» só chega ao pacote com a razão declarada em `SEM-CORPOS-ALOJADOS.md`, '
+                     'e é Blocking na leitura. As páginas construídas das linhas entram de `dist/` quando lá estão; as que faltam estão listadas abaixo.', '',
+                     '| linha | sha256 (12) | caminho no motor | estado |', '|---|---|---|---|']
+        linhas_md += [f'| `{r["linha"]}` | {(r["sha256"] or "")[:12]} | {("`" + r["caminho"] + "`") if r["caminho"] else ""} | {r["estado"]} |' for r in registo]
+        if anexos:
+            linhas_md += ['', 'Ao lado dos corpos: ' + ', '.join(f'`{a}`' for a in sorted(set(anexos))) + '.']
+        linhas_md += ['', f'Páginas construídas das linhas no pacote: {len(paginas)}; em falta em `dist/`: ' + (', '.join(f'`{p}`' for p in paginas_em_falta) if paginas_em_falta else 'nenhuma') + '.',
+                      f'A versão que `dist/version.json` declara: {versao_dist or "(sem ficheiro)"}.']
+        (pasta / 'CORPOS-ALOJADOS.md').write_text('\n'.join(linhas_md) + '\n', encoding='utf-8')
+        (pasta / 'corpos-alojados.json').write_text(json.dumps({'cabeca_do_motor': motor[2] if motor else None, 'linhas': registo, 'anexos': sorted(set(anexos)),
+                                                                'paginas_construidas': paginas, 'paginas_em_falta': paginas_em_falta, 'dist_version': versao_dist,
+                                                                'sem_corpos_razao': razao_sem_corpos or None}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    if em_falta:
+        (destino / 'SEM-CORPOS-ALOJADOS.md').write_text('# Corpos alojados em falta neste pacote, com a razão declarada pelo lugar de direção\n\n'
+                                                        f'Razão (PACOTE_SEM_CORPOS): {razao_sem_corpos}\n\n' +
+                                                        '\n'.join(f'- `{i}` ({s[:12]}): as palavras desta linha não podem ser conferidas contra a fonte neste pacote.' for i, s in em_falta) +
+                                                        '\n\nPara o leitor: cada uma destas linhas é um achado Blocking na primeira linha da leitura.\n', encoding='utf-8')
+        print(f'Pacote: {len(em_falta)} corpo(s) alojado(s) EM FALTA com razão declarada; SEM-CORPOS-ALOJADOS.md escrito.')
+    return n
+
+
 def principal():
     repo, base, cabeca, destino, brief, relatorio, numeros, *construidos = sys.argv[1:]
     # Nunca substituir o argumento literal: «.» apagava todos os pontos do texto.
@@ -132,6 +271,10 @@ def principal():
     motor = shlex.split(os.environ.get('PACOTE_MOTOR', ''))
     extra = shlex.split(os.environ.get('PACOTE_EXTRA', ''))
     modo_logs = os.environ.get('PACOTE_LOGS', '')
+    razao_sem_corpos = os.environ.get('PACOTE_SEM_CORPOS', '').strip()
+    if razao_sem_corpos and len(razao_sem_corpos) < 20:
+        raise ValueError('PACOTE_SEM_CORPOS exige uma razão escrita (pelo menos vinte caracteres), que fica no pacote.')
+    estudos_extra = shlex.split(os.environ.get('PACOTE_ESTUDOS', ''))
     if modo_logs not in ('', 'inteiros'):
         raise ValueError('PACOTE_LOGS só aceita inteiros, ou fica por definir.')
     inteiros = modo_logs == 'inteiros'
@@ -147,6 +290,24 @@ def principal():
     arvore = {os.fsdecode(f) for f in git(repo, 'ls-tree', '-r', '--name-only', '-z', cabeca).split(b'\0') if f}
     registos, filtrados, indice = linhas_dos_portoes(repo, cabeca, rel_relatorio,
                                                   Path(relatorio).read_text(), arvore)
+    # M83: os corpos alojados das linhas mudadas decidem-se aqui, antes de existir a pasta; a falta sem razão recusa.
+    linhas = linhas_com_corpos(repo, cabeca, mudados)
+    registo_corpos, em_falta = levar_corpos(repo, cabeca, motor, linhas, estudos_extra, razao_sem_corpos)
+    paginas, paginas_em_falta = [], []
+    for ident in sorted(linhas):
+        for pagina in (f'livro-razao/{ident}/index.html', f'en/ledger/{ident}/index.html'):
+            if (repo / 'dist' / pagina).is_file():
+                if pagina not in construidos:
+                    paginas.append(pagina)
+            else:
+                paginas_em_falta.append(pagina)
+    construidos = list(construidos) + paginas
+    versao_dist = None
+    if (repo / 'dist' / 'version.json').is_file():
+        try:
+            versao_dist = json.loads((repo / 'dist' / 'version.json').read_text(encoding='utf-8'))
+        except ValueError:
+            versao_dist = '(ilegível)'
     if destino.exists() and any(destino.iterdir()):
         raise ValueError('O pacote exige uma pasta nova ou vazia: não conserva registos de uma montagem anterior.')
     destino.mkdir(parents=True, exist_ok=True)
@@ -232,12 +393,14 @@ def principal():
             partes_motor.append(diferenca(motor[0], motor[1], motor[2], f))
             n_motor += copiar(motor[0], motor[2], f, pasta)
         (pasta / 'diff.patch').write_bytes(b''.join(partes_motor))
+    n_corpos = escrever_corpos(destino, motor, registo_corpos, em_falta, razao_sem_corpos, paginas, paginas_em_falta, versao_dist)
     for f in construidos:
         alvo = destino / 'built' / relativo(f)
         alvo.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(repo / 'dist' / f, alvo)
     conferir_citacoes(destino, repo, cabeca, rel_relatorio, inteiros)
-    print(f'Pacote: {copiados} ficheiros mudados, {n_extra} extra, {len(retirados)} secções retiradas, {n_motor} ficheiros do motor, {len(construidos)} páginas construídas.')
+    print(f'Pacote: {copiados} ficheiros mudados, {n_extra} extra, {len(retirados)} secções retiradas, {n_motor} ficheiros do motor, '
+          f'{n_corpos} corpos alojados ({len(em_falta)} em falta), {len(construidos)} páginas construídas ({len(paginas)} das linhas mudadas, de dist/).')
 
 
 if __name__ == '__main__':
