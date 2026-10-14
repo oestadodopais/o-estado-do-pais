@@ -25,7 +25,9 @@
 #   montagem recusa. PACOTE_ESTUDOS="<content/estudo> ..." acrescenta pastas a percorrer quando a nota da linha
 #   não declara o estudo; PACOTE_SEM_CORPOS="<a razão, vinte caracteres ou mais>" é a única exceção, e fica
 #   escrita em SEM-CORPOS-ALOJADOS.md para o leitor a ler como Blocking. As páginas construídas das linhas
-#   mudadas entram sozinhas de dist/ quando lá estão.
+#   mudadas entram sozinhas de dist/ quando lá estão. M83-b (14.10.2026, a leitura da V2-a-e): as linhas cujas páginas
+#   construídas se pedem ao pacote (livro-razao/<id>/index.html, en/ledger/<id>/index.html) trazem também o seu corpo,
+#   porque a frase de uma página muda pelos dados da família sem a linha mudar; o manifesto diz porquê cada linha entra.
 set -eu
 repo="$1"; base="$2"; cabeca="$3"; pacote="$4"; brief="$5"; relatorio="$6"; shift 6
 

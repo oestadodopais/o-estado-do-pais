@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T16:41:11+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "tests/leituras/pacote.py",
+   "descricao": "a afirmação do caso inglês enfraquecida (lista exata para pertença)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "87bdfd73c9faeb8e181ca13890c48da8354242a9f5002fcad19a36d54d0569ec",
+   "sha256_depois": "f901c098c586eab33f3c548dbf22c0c404b65d83982a288dd6ddafeabc86555a",
+   "contexto_antes": ": l for l in me['linhas']}\n    exige('M83-b: a página inglesa pedida de uma linha que não mudou traz o corpo dela, com «página pedida» no manifesto',\n          r.returncode == 0 and list(le) == ['linha-sintetica'] and le['linha-sintetica']['estado'] == 'copiado' and le['linha-sintetica']['motivo'] == 'página pedida'\n          and (so_en/'motor'/pasta_corpo/'corpo-alojado.txt').read_text() == corpo and (so_en/'built/en/",
+   "contexto_depois": ": l for l in me['linhas']}\n    exige('M83-b: a página inglesa pedida de uma linha que não mudou traz o corpo dela, com «página pedida» no manifesto',\n          r.returncode == 0 and 'linha-sintetica' in le and le['linha-sintetica']['estado'] == 'copiado' and le['linha-sintetica']['motivo'] == 'página pedida'\n          and (so_en/'motor'/pasta_corpo/'corpo-alojado.txt').read_text() == corpo and (so_en/'built/en/"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/leituras/pacote.py",
+   "descricao": "o caso inglês a pedir a página portuguesa: deixaria de provar a via inglesa",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "f901c098c586eab33f3c548dbf22c0c404b65d83982a288dd6ddafeabc86555a",
+   "sha256_depois": "24bf68c6845ed3e8b55767266b087b32869e1eb1f425a14d31dddc8bb0736217",
+   "contexto_antes": "l', '<p>synthetic page</p>\\n')\n    so_en = tmp/'so-frase-en'\n    r = subprocess.run([*cmd[:-2], cabeca_nua, cabeca_so_frase, str(so_en), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md'), 'en/ledger/linha-sintetica/index.html'], env=env_nua, capture_output=True, text=True)\n    me = json.loads((so_en/'motor/corpos-alojados.json').read_text()) if (so_en/'motor/corpos-alojados.json').is_file() else {",
+   "contexto_depois": "l', '<p>synthetic page</p>\\n')\n    so_en = tmp/'so-frase-en'\n    r = subprocess.run([*cmd[:-2], cabeca_nua, cabeca_so_frase, str(so_en), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md'), 'livro-razao/linha-sintetica/index.html'], env=env_nua, capture_output=True, text=True)\n    me = json.loads((so_en/'motor/corpos-alojados.json').read_text()) if (so_en/'motor/corpos-alojados.json').is_file() else {"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "design/observatorio/REGISTO-DE-MELHORIAS.md",
+   "descricao": "a contagem dos casos no registo das melhorias trocada (47 para 46)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "81a45a846fc1f44c82f6f2b6300fb60b9328c278fad0053e337e1dd639b0c8d3",
+   "sha256_depois": "f6cfa846611b270f6ca4dda2fd50964818d0aaf3082f70045868f182ec4d84f2",
+   "contexto_antes": " o pacote não trazia esses corpos; as páginas construídas pedidas ao pacote passam a trazer os corpos das suas linhas, o manifesto diz porquê cada linha entra, e o ensaio passa a 47 casos (`teste-pacote-b.json`); lida a frio pelo Codex em `LEITURA-M83-b-2026-10-14.md` |\n",
+   "contexto_depois": " o pacote não trazia esses corpos; as páginas construídas pedidas ao pacote passam a trazer os corpos das suas linhas, o manifesto diz porquê cada linha entra, e o ensaio passa a 46 casos (`teste-pacote-b.json`); lida a frio pelo Codex em `LEITURA-M83-b-2026-10-14.md` |\n"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem dos casos na nota trocada (47 para 46)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "53392221f63b02333eae9b02868b727813afac3a94fee0784c159c6be1a54221",
+   "sha256_depois": "7bca18d1c18e93cc9b1be22efa24715f2ad409d69f8e0d096a6b42adb9626b62",
+   "contexto_antes": "6` ilegível ou repetido continuam a recusar antes de criar a pasta.\n\n**A medida.** O ensaio do guião (`tests/leituras/pacote.py`, corrido por `check:leituras`) ganha cinco casos e passa a 47, nenhum falhado (`design/especime-v3/medicoes/m83-2026-10-14/teste-pacote-b.json`, escrito por `python3 tests/leituras/pacote.py --json <pasta>/teste-pacote-b.json`): o manife",
+   "contexto_depois": "6` ilegível ou repetido continuam a recusar antes de criar a pasta.\n\n**A medida.** O ensaio do guião (`tests/leituras/pacote.py`, corrido por `check:leituras`) ganha cinco casos e passa a 46, nenhum falhado (`design/especime-v3/medicoes/m83-2026-10-14/teste-pacote-b.json`, escrito por `python3 tests/leituras/pacote.py --json <pasta>/teste-pacote-b.json`): o manife"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a nota a dizer o contrário do caso inglês",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "7bca18d1c18e93cc9b1be22efa24715f2ad409d69f8e0d096a6b42adb9626b62",
+   "sha256_depois": "b936d17bd85f6d5e43f5914b2dcf5a6c7f935a7212ead0f742d3a53ecda296f7",
+   "contexto_antes": "pedida» no manifesto; sem página pedida e sem linha mudada não vem corpo nenhum nem manifesto; uma página pedida que não é de uma linha do livro não traz nada; a página inglesa pedida traz o corpo como a portuguesa (o achado 4 da leitura curta do Codex, 14.10). A leitura seguinte do V2-a (a V2-a-f) monta-se pedindo ao pacote as páginas das dezoito linhas nas duas edições,",
+   "contexto_depois": "pedida» no manifesto; sem página pedida e sem linha mudada não vem corpo nenhum nem manifesto; uma página pedida que não é de uma linha do livro não traz nada; a página inglesa pedida não traz corpo, só a portuguesa (o achado 4 da leitura curta do Codex, 14.10). A leitura seguinte do V2-a (a V2-a-f) monta-se pedindo ao pacote as páginas das dezoito linhas nas duas edições,"
+  }
+ ]
+}
