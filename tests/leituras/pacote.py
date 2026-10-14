@@ -244,6 +244,27 @@ with tempfile.TemporaryDirectory(prefix='oedp-pacote-h2-') as tmp:
     exige('uma página pedida à mão conta nas páginas das linhas e não nas acrescentadas',
           'livro-razao/linha-sintetica/index.html' in mn['paginas_das_linhas'] and 'livro-razao/linha-sintetica/index.html' not in mn['paginas_acrescentadas_de_dist']
           and (nua/'built/livro-razao/linha-sintetica/index.html').is_file())
+    # M83-b (14.10.2026, a leitura da V2-a-e, achado 1): uma página pedida traz o corpo da sua linha mesmo sem a linha mudar no intervalo.
+    exige('o manifesto diz porquê cada linha entra: a mudada, e a mudada cuja página também se pediu',
+          ln['linha-nua']['motivo'] == 'linha mudada' and ln['linha-sintetica']['motivo'] == 'linha mudada e página pedida')
+    escrever(sitio, 'fonte.mjs', 'export const texto = "frase da família mudada sem tocar na linha";\n')
+    cabeca_so_frase = commit(sitio, ['fonte.mjs'])
+    so_frase = tmp/'so-frase'
+    r = subprocess.run([*cmd[:-2], cabeca_nua, cabeca_so_frase, str(so_frase), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md'), 'livro-razao/linha-sintetica/index.html'], env=env_nua, capture_output=True, text=True)
+    mp = json.loads((so_frase/'motor/corpos-alojados.json').read_text()) if (so_frase/'motor/corpos-alojados.json').is_file() else {'linhas': []}
+    lp = {l['linha']: l for l in mp['linhas']}
+    exige('M83-b: a página pedida de uma linha que não mudou traz o corpo dela, byte a byte, e o manifesto diz «página pedida»',
+          r.returncode == 0 and list(lp) == ['linha-sintetica'] and lp['linha-sintetica']['estado'] == 'copiado' and lp['linha-sintetica']['motivo'] == 'página pedida'
+          and (so_frase/'motor'/pasta_corpo/'corpo-alojado.txt').read_text() == corpo
+          and '| copiado | página pedida |' in (so_frase/'motor/CORPOS-ALOJADOS.md').read_text())
+    sem_pagina = tmp/'so-frase-sem-pagina'
+    r = subprocess.run([*cmd[:-2], cabeca_nua, cabeca_so_frase, str(sem_pagina), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md')], env=env_nua, capture_output=True, text=True)
+    exige('controlo: sem página pedida e sem linha mudada, nenhum corpo vem e não há manifesto',
+          r.returncode == 0 and not (sem_pagina/'motor/CORPOS-ALOJADOS.md').exists() and not (sem_pagina/'motor'/pasta_corpo/'corpo-alojado.txt').exists())
+    pagina_sem_linha = tmp/'pagina-sem-linha'
+    r = subprocess.run([*cmd[:-2], cabeca_nua, cabeca_so_frase, str(pagina_sem_linha), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md'), 'index.html'], env=env_nua, capture_output=True, text=True)
+    exige('controlo: uma página pedida que não é de uma linha do livro não traz corpo nenhum',
+          r.returncode == 0 and not (pagina_sem_linha/'motor/CORPOS-ALOJADOS.md').exists())
 saida={'ok':all(c['passou'] for c in casos),'casos':casos}
 if '--json' in sys.argv: Path(sys.argv[sys.argv.index('--json')+1]).write_text(json.dumps(saida,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(saida,ensure_ascii=False,indent=2))
