@@ -1,0 +1,127 @@
+{
+  "medido_em": "2026-10-14T08:39+00:00",
+  "cadeias_medidas": 7,
+  "repositorios": {
+    "sitio": {
+      "commits_em_todas_as_referencias": 2816,
+      "por_cadeia": {
+        "nome_da_conta_da_maquina": {
+          "commits_cujo_diff_a_traz": 140,
+          "nomes_de_ficheiro": 0,
+          "mensagens_de_commit": 4,
+          "identidades_de_commit": 0,
+          "ficheiros_na_cabeca_atual": 0
+        },
+        "parte_local_do_correio_pessoal": {
+          "commits_cujo_diff_a_traz": 2,
+          "nomes_de_ficheiro": 0,
+          "mensagens_de_commit": 0,
+          "identidades_de_commit": 2808,
+          "ficheiros_na_cabeca_atual": 0
+        },
+        "nome_completo": {
+          "commits_cujo_diff_a_traz": 2,
+          "nomes_de_ficheiro": 0,
+          "mensagens_de_commit": 0,
+          "identidades_de_commit": 0,
+          "ficheiros_na_cabeca_atual": 0
+        },
+        "nome_proprio_e_apelido": {
+          "commits_cujo_diff_a_traz": 5,
+          "nomes_de_ficheiro": 0,
+          "mensagens_de_commit": 0,
+          "identidades_de_commit": 0,
+          "ficheiros_na_cabeca_atual": 0
+        },
+        "nome_proprio_e_segundo_nome": {
+          "commits_cujo_diff_a_traz": 2,
+          "nomes_de_ficheiro": 0,
+          "mensagens_de_commit": 0,
+          "identidades_de_commit": 0,
+          "ficheiros_na_cabeca_atual": 0
+        },
+        "cidade_de_residencia": {
+          "commits_cujo_diff_a_traz": 0,
+          "nomes_de_ficheiro": 0,
+          "mensagens_de_commit": 0,
+          "identidades_de_commit": 0,
+          "ficheiros_na_cabeca_atual": 0
+        },
+        "codigo_postal": {
+          "commits_cujo_diff_a_traz": 0,
+          "nomes_de_ficheiro": 0,
+          "mensagens_de_commit": 0,
+          "identidades_de_commit": 0,
+          "ficheiros_na_cabeca_atual": 0
+        }
+      }
+    },
+    "motor": {
+      "commits_em_todas_as_referencias": 666,
+      "por_cadeia": {
+        "nome_da_conta_da_maquina": {
+          "commits_cujo_diff_a_traz": 36,
+          "nomes_de_ficheiro": 1,
+          "mensagens_de_commit": 2,
+          "identidades_de_commit": 0,
+          "ficheiros_na_cabeca_atual": 1
+        },
+        "parte_local_do_correio_pessoal": {
+          "commits_cujo_diff_a_traz": 3,
+          "nomes_de_ficheiro": 0,
+          "mensagens_de_commit": 0,
+          "identidades_de_commit": 661,
+          "ficheiros_na_cabeca_atual": 0
+        },
+        "nome_completo": {
+          "commits_cujo_diff_a_traz": 0,
+          "nomes_de_ficheiro": 0,
+          "mensagens_de_commit": 0,
+          "identidades_de_commit": 0,
+          "ficheiros_na_cabeca_atual": 0
+        },
+        "nome_proprio_e_apelido": {
+          "commits_cujo_diff_a_traz": 1,
+          "nomes_de_ficheiro": 0,
+          "mensagens_de_commit": 0,
+          "identidades_de_commit": 0,
+          "ficheiros_na_cabeca_atual": 3
+        },
+        "nome_proprio_e_segundo_nome": {
+          "commits_cujo_diff_a_traz": 0,
+          "nomes_de_ficheiro": 0,
+          "mensagens_de_commit": 0,
+          "identidades_de_commit": 0,
+          "ficheiros_na_cabeca_atual": 0
+        },
+        "cidade_de_residencia": {
+          "commits_cujo_diff_a_traz": 2,
+          "nomes_de_ficheiro": 0,
+          "mensagens_de_commit": 0,
+          "identidades_de_commit": 0,
+          "ficheiros_na_cabeca_atual": 3
+        },
+        "codigo_postal": {
+          "commits_cujo_diff_a_traz": 0,
+          "nomes_de_ficheiro": 0,
+          "mensagens_de_commit": 0,
+          "identidades_de_commit": 0,
+          "ficheiros_na_cabeca_atual": 0
+        }
+      }
+    }
+  },
+  "dominios": {
+    "oestadodopais.pt": {
+      "linhas_owner_name": 1,
+      "owner_name_vazio": true
+    },
+    "xn--oestadodopas-2fb.pt": {
+      "linhas_owner_name": 1,
+      "owner_name_vazio": true
+    }
+  },
+  "organizacao": {
+    "membros_publicos": 0
+  }
+}

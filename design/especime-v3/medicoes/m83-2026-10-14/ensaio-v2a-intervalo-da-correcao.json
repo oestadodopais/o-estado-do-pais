@@ -5,79 +5,118 @@
       "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "caminho": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-      "estado": "copiado"
+      "origem": "recibos do sítio (ledger/provas/v2a/provas.json)",
+      "estado": "copiado",
+      "recibo_do_pedido": true,
+      "direitos": 27
     },
     {
       "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "caminho": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-      "estado": "copiado"
+      "origem": "recibos do sítio (ledger/provas/v2a/provas.json)",
+      "estado": "copiado",
+      "recibo_do_pedido": true,
+      "direitos": 27
     },
     {
       "linha": "oe-2027-ppp-rodoviario-receitas-2027",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "caminho": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-      "estado": "copiado"
+      "origem": "recibos do sítio (ledger/provas/v2a/provas.json)",
+      "estado": "copiado",
+      "recibo_do_pedido": true,
+      "direitos": 27
     },
     {
       "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "caminho": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-      "estado": "copiado"
+      "origem": "recibos do sítio (ledger/provas/v2a/provas.json)",
+      "estado": "copiado",
+      "recibo_do_pedido": true,
+      "direitos": 27
     },
     {
       "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "caminho": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-      "estado": "copiado"
+      "origem": "recibos do sítio (ledger/provas/v2a/provas.json)",
+      "estado": "copiado",
+      "recibo_do_pedido": true,
+      "direitos": 27
     },
     {
       "linha": "oe-2027-saude-despesa-efetiva-consolidada-2027",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "caminho": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-      "estado": "copiado"
+      "origem": "recibos do sítio (ledger/provas/v2a/provas.json)",
+      "estado": "copiado",
+      "recibo_do_pedido": true,
+      "direitos": 27
     },
     {
       "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "caminho": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-      "estado": "copiado"
+      "origem": "recibos do sítio (ledger/provas/v2a/provas.json)",
+      "estado": "copiado",
+      "recibo_do_pedido": true,
+      "direitos": 27
     },
     {
       "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "caminho": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-      "estado": "copiado"
+      "origem": "recibos do sítio (ledger/provas/v2a/provas.json)",
+      "estado": "copiado",
+      "recibo_do_pedido": true,
+      "direitos": 27
     },
     {
       "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "caminho": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-      "estado": "copiado"
+      "origem": "recibos do sítio (ledger/provas/v2a/provas.json)",
+      "estado": "copiado",
+      "recibo_do_pedido": true,
+      "direitos": 27
     },
     {
       "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "caminho": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-      "estado": "copiado"
+      "origem": "recibos do sítio (ledger/provas/v2a/provas.json)",
+      "estado": "copiado",
+      "recibo_do_pedido": true,
+      "direitos": 27
     },
     {
       "linha": "oe-2027-saude-despesa-total-consolidada-2026",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "caminho": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-      "estado": "copiado"
+      "origem": "recibos do sítio (ledger/provas/v2a/provas.json)",
+      "estado": "copiado",
+      "recibo_do_pedido": true,
+      "direitos": 27
     },
     {
       "linha": "oe-2027-saude-despesa-total-consolidada-2027",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "caminho": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-      "estado": "copiado"
+      "origem": "recibos do sítio (ledger/provas/v2a/provas.json)",
+      "estado": "copiado",
+      "recibo_do_pedido": true,
+      "direitos": 27
     },
     {
       "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
       "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
       "caminho": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-      "estado": "copiado"
+      "origem": "recibos do sítio (ledger/provas/v2a/provas.json)",
+      "estado": "copiado",
+      "recibo_do_pedido": true,
+      "direitos": 27
     }
   ],
   "anexos": [
@@ -110,7 +149,39 @@
     "content/15 Orcamento do Estado 2027/source/v2a/direitos/www.rtp.pt.txt",
     "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf.pedido.json"
   ],
-  "paginas_construidas": [
+  "estudos_declarados": [
+    "content/15 Orcamento do Estado 2027"
+  ],
+  "estudos_extra": [],
+  "paginas_das_linhas": [
+    "livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html",
+    "en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html",
+    "livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html",
+    "en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html",
+    "livro-razao/oe-2027-ppp-rodoviario-receitas-2027/index.html",
+    "en/ledger/oe-2027-ppp-rodoviario-receitas-2027/index.html",
+    "livro-razao/oe-2027-ppp-total-encargos-liquidos-2027/index.html",
+    "en/ledger/oe-2027-ppp-total-encargos-liquidos-2027/index.html",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026/index.html",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026/index.html",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027/index.html",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027/index.html",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html",
+    "livro-razao/oe-2027-saude-despesa-total-consolidada-2026/index.html",
+    "en/ledger/oe-2027-saude-despesa-total-consolidada-2026/index.html",
+    "livro-razao/oe-2027-saude-despesa-total-consolidada-2027/index.html",
+    "en/ledger/oe-2027-saude-despesa-total-consolidada-2027/index.html",
+    "livro-razao/oe-2027-saude-despesa-total-consolidada-variacao/index.html",
+    "en/ledger/oe-2027-saude-despesa-total-consolidada-variacao/index.html"
+  ],
+  "paginas_acrescentadas_de_dist": [
     "livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html",
     "en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html",
     "livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html",
