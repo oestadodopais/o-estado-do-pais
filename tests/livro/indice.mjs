@@ -335,7 +335,8 @@ const LOCALIZADORES_CONHECIDOS = [
 function localizadorV2aConfere(onde, linha) {
   if (!linha || typeof linha.id !== 'string') return false;
   const id = linha.id, d = linha.document;
-  const esperadoNoDocumento = id.startsWith('oe-2027-cenario-') ? `${onde}; comentário, p. 19; conclusão, p. 20` : onde;
+  const esperadoNoDocumento = id.startsWith('oe-2027-cenario-') ? `${onde}; comentário, p. 19; conclusão, p. 20`
+    : id.startsWith('oe-2027-saude-') ? `${onde}; distinção entre total e efetiva, nota, p. 145 do PDF (129 impressa)` : onde;
   if (!d || d.locator !== esperadoNoDocumento) return false;
   const saude = /^oe-2027-saude-despesa-(total-consolidada|efetiva-consolidada|efetiva-consolidada-sem-prr)-(2026|2027|variacao)$/.exec(id);
   if (saude) {
@@ -1879,6 +1880,17 @@ function provaLocalizadores() {
       if (!localizadorV2aConfere(original.name_source,original)) falhas.push(`${mensagem}: controlo positivo falhou`);
       if(campo==='edition') copia.document.edition=valor; else copia.name=copia.document.title;
       if(localizadorV2aConfere(copia.name_source,copia)) falhas.push(`${mensagem}: planta não mordida`);
+      else console.log(`PLANTA ${mensagem}`);
+    }
+    for (const [nome,altera] of [
+      ['nota da definição retirada', s=>s.split('; distinção')[0]],
+      ['página da definição trocada', s=>s.replace('p. 145 do PDF','p. 146 do PDF')],
+    ]) {
+      const original=LINHAS_DA_REGUA.get('oe-2027-saude-despesa-total-consolidada-2027'), copia=structuredClone(original);
+      const mensagem=`V2AC localizador da Saúde: ${nome}`;
+      if (!localizadorV2aConfere(original.name_source,original)) falhas.push(`${mensagem}: controlo positivo falhou`);
+      copia.document.locator=altera(copia.document.locator);
+      if (localizadorV2aConfere(copia.name_source,copia)) falhas.push(`${mensagem}: planta não mordida`);
       else console.log(`PLANTA ${mensagem}`);
     }
     const estragos = [

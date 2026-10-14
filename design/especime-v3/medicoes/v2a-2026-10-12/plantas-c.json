@@ -299,6 +299,16 @@
       "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html.log",
       "linha": 14,
       "mensagem": "V2AC selo no livro: [afirmacao-leitao-amaro-saude-oe2027-2026-10-09.yml] document.source_sha256 precisa de um SHA256 completo."
+    },
+    {
+      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/indice.log",
+      "linha": 5,
+      "mensagem": "V2AC localizador da Saúde: nota da definição retirada"
+    },
+    {
+      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/indice.log",
+      "linha": 6,
+      "mensagem": "V2AC localizador da Saúde: página da definição trocada"
     }
   ]
 }
