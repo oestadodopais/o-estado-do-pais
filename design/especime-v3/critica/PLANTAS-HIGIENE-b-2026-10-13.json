@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-13T22:18:05+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/lib/livro.mjs",
+   "descricao": "a oração da ausência nos metadados invertida: «confirmados» em vez de «por confirmar»; a página e o mandato desmentem",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "b2ec5fe643d362117b50f5c8600ec23599cab431d45c4293db34da44b01370e2",
+   "sha256_depois": "6dea3469372d5a8d65b4650db35b11cfb69876a62ae608dedc6fcf15f69db027",
+   "contexto_antes": "referencia} ${claim.reference_date}`);\n  if (provenienciaIncompleta(claim)) partes.push(lang === 'en'\n    ? 'Provenance fields unconfirmed at the source'\n    : 'Campos da proveniência por confirmar na fonte');\n\n  return partes.join(' · ').replaceAll('[a verificar]', s.prov.marcadorDoSelo) + '.';\n}\n",
+   "contexto_depois": "referencia} ${claim.reference_date}`);\n  if (provenienciaIncompleta(claim)) partes.push(lang === 'en'\n    ? 'Provenance fields unconfirmed at the source'\n    : 'Campos da proveniência confirmados na fonte');\n\n  return partes.join(' · ').replaceAll('[a verificar]', s.prov.marcadorDoSelo) + '.';\n}\n"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "tests/cartao/metadados.mjs",
+   "descricao": "a guarda da célula dos metadados invertida: a conferência salta as linhas com proveniência incompleta, que são as que devia conferir",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "0e9ca4051477a2605c22e961e3a90cc9b047f8b5c7f532e6baacca60bf6a1274",
+   "sha256_depois": "339d51d1cce54eae152e37e853ec86224ff7cb4bf387227405fe26124738dff9",
+   "contexto_antes": "s';\n\n/** Higiene b, 13.10.2026: confere a ausência sem chamar o compositor da descrição. */\nexport function conferirAusenciaNosMetadados(raiz, linha, lang) {\n  if (!provenienciaIncompleta(linha)) return [];\n  const oracao = lang === 'en'\n    ? 'provenance fields unconfirmed at the source'\n    : 'campos da proveniência por confirmar na fonte';\n  const erros = [];\n ",
+   "contexto_depois": "s';\n\n/** Higiene b, 13.10.2026: confere a ausência sem chamar o compositor da descrição. */\nexport function conferirAusenciaNosMetadados(raiz, linha, lang) {\n  if (provenienciaIncompleta(linha)) return [];\n  const oracao = lang === 'en'\n    ? 'provenance fields unconfirmed at the source'\n    : 'campos da proveniência por confirmar na fonte';\n  const erros = [];\n "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/data/explicacoes/dinheiro-do-estado-2026.mjs",
+   "descricao": "a frase da EX1-12 a afirmar que os excertos explicam a diferença; os excertos selados não a explicam",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "8f36345718b1664dcce381d99a381f0dc221a1b37fa00b08f86808d17aa8b2d7",
+   "sha256_depois": "9b918f28c8fb1af06087e3088cb76bafd51b5298dd87780c24a56664f07957fa",
+   "contexto_antes": "/\n        {\n          paragrafo: {\n            pt: ['A conta por função organiza a despesa da administração central por finalidade, como a saúde ou a educação. Os excertos citados não explicam a diferença entre o total desta conta e o total por ministério.'],\n            en: ['The count by function organises central government expenditure by purpose, such as health or education. The cited ex",
+   "contexto_depois": "/\n        {\n          paragrafo: {\n            pt: ['A conta por função organiza a despesa da administração central por finalidade, como a saúde ou a educação. Os excertos citados explicam a diferença entre o total desta conta e o total por ministério.'],\n            en: ['The count by function organises central government expenditure by purpose, such as health or education. The cited ex"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "motor/requirements.lock.txt",
+   "descricao": "a instrução do motor a instalar um ficheiro de requisitos que não existe (requirements-dev.txt)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "66c4e8746ee2736df2ea0e32b62515797a545249c144ca824844a66bb4f6ce04",
+   "sha256_depois": "6b36132d9c94c312b3f546abda491382a9173963d9ef0f097105ee846f55e24f",
+   "contexto_antes": "MPO, e não nesta máquina, que tem\n# 158 pacotes globais que ninguém declarou:\n#\n#     python3 -m venv .venv\n#     .venv/bin/python -m pip install --upgrade pip\n#     .venv/bin/python -m pip install -r requirements.txt\n#     .venv/bin/python -m pip freeze > requirements.lock.txt\n#\n# São 41 pacotes: os dez declarados e as 31 dependências que eles arrastam.\n# Estas últimas não ",
+   "contexto_depois": "MPO, e não nesta máquina, que tem\n# 158 pacotes globais que ninguém declarou:\n#\n#     python3 -m venv .venv\n#     .venv/bin/python -m pip install --upgrade pip\n#     .venv/bin/python -m pip install -r requirements-dev.txt\n#     .venv/bin/python -m pip freeze > requirements.lock.txt\n#\n# São 41 pacotes: os dez declarados e as 31 dependências que eles arrastam.\n# Estas últimas não "
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem das capturas de página no relatório trocada (90 para 92); o capturas.json desmente",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f74da3e2fc517dfda090cb771f37465655e87e3054eb1fa95b64f5a1cb784562",
+   "sha256_depois": "d5c327113b9ce4c12a4d87e874412a9989d151a670f1aab40ef86908739dfb4a",
+   "contexto_antes": "o captou as cinco larguras, incluindo 390 e 1 280 px, sobre a cabeça `f44f380f160867fc3e83fbe64bd33b087e25ee38`. O recibo em `entrega-b/capturas.json` confirma 90 capturas de página e 100 recortes, sem falhas. Foram conferidos os resumos criptográficos dos 190 PNG e a ausência de transbordo horizontal nas páginas. Foram lidos visualmente o",
+   "contexto_depois": "o captou as cinco larguras, incluindo 390 e 1 280 px, sobre a cabeça `f44f380f160867fc3e83fbe64bd33b087e25ee38`. O recibo em `entrega-b/capturas.json` confirma 92 capturas de página e 100 recortes, sem falhas. Foram conferidos os resumos criptográficos dos 190 PNG e a ausência de transbordo horizontal nas páginas. Foram lidos visualmente o"
+  }
+ ]
+}
