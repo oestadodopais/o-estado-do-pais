@@ -371,7 +371,8 @@ const TEXTOS_APROVADOS = JSON.parse(
   fs.readFileSync(path.join(ROOT, 'scripts', 'textos-aprovados.json'), 'utf8'),
 );
 
-// RH1-b, 14.10.2026, §1.192: os nomes pessoais são conferidos por check:privacidade.
+// RH1-c, 14.10.2026, §1.192: os nomes pessoais são conferidos por check:privacidade
+// no verify. Esta guarda saiu do gate:html do build; ambos os portões são obrigatórios.
 /** S1 (02.10.2026): as contas da caixa das sugestões, para a saída do portão. */
 const SUGESTOES_NO_PORTAO = { paginas: 0, portas: 0, paginasDaCaixa: 0, enderecosNoMapa: 0, plantas: 0, migracoes: 0 };
 /* A PÁGINA «PRIVACIDADE» E A FRASE DOS COOKIES (bloco H3, 05.10.2026): as portas do rodapé contadas, as páginas da

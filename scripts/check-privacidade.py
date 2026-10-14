@@ -186,6 +186,54 @@ def tem_cadeia_pessoal(nome, dados, cadeias):
     return any(detetor.contem_cadeias(b, cadeias) for b in (os.fsencode(nome), dados, corpo))
 
 
+def recusar_rastreado(nome, dados, cadeias):
+    """A conferência e as plantas percorrem a mesma decisão."""
+    return tem_estrutura_local(nome, dados) or tem_cadeia_pessoal(nome, dados, cadeias)
+
+
+def plantas_identidades():
+    from unittest.mock import patch, Mock
+    plantas = []
+    for i, identidade in enumerate(sorted(detetor.IDENTIDADES_DO_PROJETO), 1):
+        recusada = False
+        try:
+            detetor._ler_proibidos(identidade, True)
+        except ValueError:
+            recusada = True
+        plantas.append({'id': f'identidade-{i}-segredo', 'mordeu': recusada})
+        with patch.object(detetor.subprocess, 'run', return_value=Mock(returncode=1)), \
+                patch.object(detetor, 'git', return_value=identidade):
+            # Percorre a função real sem usar nem alterar a cache dos autores.
+            autores = detetor._nomes_dos_autores()
+        plantas.append({'id': f'identidade-{i}-autor', 'mordeu': not autores})
+    return plantas
+
+
+def plantas_normalizacao():
+    from unittest.mock import patch
+    import unicodedata
+    inteiro = 'Pessoa ' + 'Sintética ' + 'Exemplo'
+    curto = 'Pessoa Exemplo'
+    entrada = '\ufeff\u2003' + unicodedata.normalize('NFD', inteiro) + '\u00a0\ufeff'
+    with patch.dict(os.environ, {'PRIVACIDADE_PROIBIDOS': entrada}), \
+            patch.object(detetor, 'nomes_dos_autores', return_value=()), \
+            patch.object(detetor.Path, 'home', return_value=Path('/') / 'home' / 'runner'):
+        cadeias = detetor.cadeias_pessoais()
+        plantas = [
+            {'id': 'normalizacao-bom-pagina', 'mordeu': bool(conferir([('index.html', inteiro.encode())])['quantidade'])},
+            {'id': 'normalizacao-abreviada-limpa', 'mordeu': cadeias == (inteiro.encode(), curto.encode())},
+            {'id': 'normalizacao-nfd-pagina', 'mordeu': detetor.tem_caminho(unicodedata.normalize('NFD', inteiro.upper()).encode())},
+        ]
+        with patch.dict(os.environ, {'PRIVACIDADE_PROIBIDOS': 'Pessoa\u200b ' + 'Sintética ' + 'Exemplo'}):
+            recusada = False
+            try:
+                detetor.ler_proibidos()
+            except ValueError:
+                recusada = True
+            plantas.append({'id': 'normalizacao-formato-recusado', 'mordeu': recusada})
+    return plantas
+
+
 def plantas_pessoais():
     # Só em memória. Os rótulos da prova nunca incluem a cadeia plantada.
     cadeia = 'Pessoa-Sintética-RH1'.encode()
@@ -195,10 +243,18 @@ def plantas_pessoais():
         ('nome', cadeia.decode() + '.txt', b'inocuo', True),
         ('outra-caixa', 'ensaio.txt', cadeia.decode().upper().encode(), True),
         ('binario', 'ensaio.pdf', b'%PDF\x00\xff' + cadeia + b'\x00', True),
-        ('identidades-do-projeto', 'ensaio.txt', '\n'.join(sorted(detetor.IDENTIDADES_DO_PROJETO)).encode(), False),
     ]
-    return [{'id': 'ramo-pessoal-' + caso, 'mordeu': tem_cadeia_pessoal(nome, dados, (cadeia,)) == esperado}
-            for caso, nome, dados, esperado in casos]
+    for codificacao in ('utf-16-le', 'utf-16-be', 'latin-1'):
+        casos.append((codificacao, 'ensaio.bin', cadeia.decode().encode(codificacao), True))
+    for caso, entidade in [('entidade-nome', '&eacute;'), ('entidade-decimal', '&#233;'),
+                           ('entidade-hexadecimal', '&#xE9;'), ('escape-unicode', r'\u00e9')]:
+        casos.append((caso, 'ensaio.txt', cadeia.decode().replace('é', entidade).encode(), True))
+    # Estes casos isolam cada lado do OR, além de provarem a ausência de alarme.
+    casos.extend([('decisao-estrutura', 'registo.log', ESTRUTURA_LOCAL[0], True),
+                  ('decisao-inocua', 'registo.log', b'<worktree>/dist', False)])
+    plantas = [{'id': 'ramo-pessoal-' + caso, 'mordeu': recusar_rastreado(nome, dados, (cadeia,)) == esperado}
+               for caso, nome, dados, esperado in casos]
+    return plantas + plantas_identidades() + plantas_normalizacao()
 
 
 def plantas_transferidas():
@@ -241,7 +297,7 @@ def medir_rastreados(raiz, prova):
             continue  # Uma remoção da worktree não publica o ficheiro removido.
         ficheiros += 1
         dados = os.readlink(p).encode() if p.is_symlink() else p.read_bytes()
-        if tem_estrutura_local(nome, dados) or tem_cadeia_pessoal(nome, dados, cadeias):
+        if recusar_rastreado(nome, dados, cadeias):
             achados.append(nome)
     plantas = []
     if prova:

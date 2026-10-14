@@ -2,12 +2,14 @@
 """Mede a entrega C1 a partir dos ficheiros e do Git, sem inventar resultados."""
 import datetime as dt
 import hashlib
+import html
 import json
 import os
 import re
 from pathlib import Path
 import subprocess
 import tempfile
+import unicodedata
 from functools import lru_cache
 
 AQUI = Path(__file__).resolve().parent
@@ -53,12 +55,16 @@ def em_ci():
 def _ler_proibidos(valor, ci):
     cadeias = []
     identidades = {n.casefold() for n in IDENTIDADES_DO_PROJETO}
-    for linha, texto in enumerate((valor or '').splitlines(), 1):
-        texto = texto.strip()
+    # Só LF separa entradas; CRLF é aceite pelas pontas. Outros separadores
+    # interiores têm de ser recusados, sem criarem novas entradas válidas.
+    for linha, texto in enumerate((valor or '').split('\n'), 1):
+        texto = re.sub(r'^[\s\ufeff]+|[\s\ufeff]+$', '', texto)
+        texto = unicodedata.normalize('NFC', texto)
         if not texto:
             continue
-        if len(texto) < 4 or texto.casefold() in identidades:
-            raise ValueError(f'PRIVACIDADE_PROIBIDOS: linha {linha} inválida (curta ou identidade do projeto).')
+        if (len(texto) < 4 or texto.casefold() in identidades or
+                any(unicodedata.category(c) in {'Cc', 'Cf', 'Zl', 'Zp'} for c in texto)):
+            raise ValueError(f'PRIVACIDADE_PROIBIDOS: linha {linha} inválida (formato, curta ou identidade do projeto).')
         try:
             cadeias.append(texto.encode('utf-8'))
         except UnicodeEncodeError:
@@ -95,11 +101,35 @@ def formas_dos_nomes(cadeias):
     return tuple(dict.fromkeys(formas))
 
 
+@lru_cache(maxsize=64)
+def formas_comparaveis(cadeias):
+    textos, binarios = [], []
+    for cadeia in cadeias:
+        texto = unicodedata.normalize('NFC', cadeia.decode('utf-8'))
+        textos.append(texto.casefold())
+        for codificacao in ('utf-8', 'utf-16-le', 'utf-16-be', 'latin-1'):
+            for forma in (texto, texto.upper(), texto.casefold()):
+                try:
+                    binarios.append(forma.encode(codificacao).lower())
+                except UnicodeEncodeError:
+                    continue  # Nem todas as cadeias têm representação Latin-1.
+    return tuple(dict.fromkeys(textos)), tuple(dict.fromkeys(binarios))
+
+
 def contem_cadeias(corpo, cadeias):
-    # A leitura em bytes cobre binários; casefold cobre também maiúsculas UTF-8.
+    textos, binarios = formas_comparaveis(tuple(cadeias))
+    if not textos:
+        return False
     baixo = corpo.lower()
-    texto = corpo.decode('utf-8', errors='replace').casefold()
-    return any(c.lower() in baixo or c.decode('utf-8').casefold() in texto for c in cadeias)
+    if any(c in baixo for c in binarios):
+        return True
+    texto = corpo.decode('utf-8', errors='replace')
+    if '&' in texto:
+        texto = html.unescape(texto)
+    if '\\u' in texto:
+        texto = re.sub(r'\\u([0-9a-fA-F]{4})', lambda m: chr(int(m[1], 16)), texto)
+    texto = unicodedata.normalize('NFC', texto).casefold()
+    return any(c in texto for c in textos)
 
 
 def positivos_de_nome():
@@ -126,8 +156,7 @@ def proibidos(pasta=None):
 # Caminhos absolutos do sistema, também fora da pasta pessoal e do repositório.
 ABSOLUTO = re.compile(rb'(?<![A-Za-z0-9:/])/(?:opt|usr|Library|Applications|System|Volumes|var|private|etc|bin|sbin|home|root|Users|tmp)/[^\s"<>`\x1b]+')
 
-@lru_cache(maxsize=1)
-def nomes_dos_autores():
+def _nomes_dos_autores():
     base_existe = subprocess.run(['git', 'cat-file', '-e', BASE], cwd=RAIZ,
                                 capture_output=True).returncode == 0
     nomes = git('log', '--format=%an', f'{BASE}..HEAD' if base_existe else 'HEAD').splitlines()
@@ -137,6 +166,10 @@ def nomes_dos_autores():
     return tuple(sorted({n.strip().encode() for n in nomes if n.strip() and
                          n.strip().casefold() not in {x.casefold() for x in IDENTIDADES_DO_PROJETO} and
                          not any(x in n.lower() for x in ('codex', 'claude', 'bot', 'openai'))}))
+
+
+nomes_dos_autores = lru_cache(maxsize=1)(_nomes_dos_autores)
+
 
 def tem_caminho(b):
     pessoais = contem_cadeias(b, cadeias_pessoais())

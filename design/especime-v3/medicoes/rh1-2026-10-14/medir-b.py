@@ -54,8 +54,41 @@ def contar():
             'versao_dist': json.loads((RAIZ / 'dist/version.json').read_text())}
 
 
+def reproduzir_entrega():
+    """Conta o âmbito histórico de cada auditoria, antes do próprio registo."""
+    prefixo = AQUI.relative_to(RAIZ).as_posix() + '/'
+    auditorias = []
+    for revisao, registo, local in [('6c107622', 'auditoria-entrega.json', None),
+                                   ('24f4298c', 'auditoria-entrega-b.json', 'portoes-b/alvos.json')]:
+        cabeca = subprocess.check_output(['git', 'rev-parse', revisao], cwd=RAIZ).decode().strip()
+        seguidos = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', '-z',
+                                            cabeca, '--', prefixo], cwd=RAIZ).decode().split('\0')
+        quantidade = sum(bool(n) and n != prefixo + registo for n in seguidos)
+        if local:
+            assert prefixo + local not in seguidos and (AQUI / local).is_file(), 'Falta o alvo local da auditoria.'
+            quantidade += 1
+        esperado = json.loads(subprocess.check_output(['git', 'show', cabeca + ':' + prefixo + registo], cwd=RAIZ))
+        auditorias.append({'cabeca': cabeca, 'registo_excluido': registo,
+                           'ficheiro_local_acrescentado': local,
+                           'ficheiros_conferidos_antes_deste_registo': quantidade,
+                           'confere': quantidade == esperado['ficheiros_conferidos_antes_deste_registo']})
+    alvo = AQUI / 'portoes-b/alvos.json'
+    relativo = alvo.relative_to(RAIZ).as_posix()
+    ignorado = subprocess.run(['git', 'check-ignore', '-q', relativo], cwd=RAIZ, capture_output=True)
+    seguido = subprocess.run(['git', 'ls-files', '--error-unmatch', '--', relativo], cwd=RAIZ, capture_output=True)
+    assert ignorado.returncode in (0, 1) and seguido.returncode in (0, 1), 'Consulta dos alvos recusada.'
+    return {'auditorias': auditorias, 'marca_depois': contar(),
+            'alvos': {'existe_na_maquina': alvo.is_file(), 'bytes': alvo.stat().st_size,
+                      'ignorado': ignorado.returncode == 0, 'seguido': seguido.returncode == 0},
+            'passou': all(a['confere'] for a in auditorias)}
+
+
 def main():
     guarda = modulo('guarda_rh1b_medida', 'scripts/check-privacidade.py')
+    if '--reproduzir-b' in sys.argv:
+        resultado = reproduzir_entrega()
+        print(guarda.json_seguro(resultado))
+        return int(not resultado['passou'])
     resultado = {'cabeca': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=RAIZ).decode().strip(),
                  'marca': contar()}
     antes = '--antes' in sys.argv
