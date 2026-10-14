@@ -1,0 +1,119 @@
+{
+  "cabeca_dos_portoes": "f694c58cb4228465d48dafa22905832c5c1ceded",
+  "codigos": {
+    "build": 0,
+    "verify": 1,
+    "typecheck": 0
+  },
+  "motor_codigo": null,
+  "motor_motivo": "Fora do âmbito do mandato; motor.codigo não existe.",
+  "conferencias_vermelhas": [
+    {
+      "passo": "npm run check:privacidade",
+      "fase": "grupo",
+      "codigo": 1,
+      "segundos": 115.691,
+      "inicio_s": 135.901,
+      "fim_s": 251.592
+    }
+  ],
+  "leituras": {
+    "passo": "npm run check:leituras",
+    "fase": "grupo",
+    "codigo": 0,
+    "segundos": 27.734,
+    "inicio_s": 102.196,
+    "fim_s": 129.93
+  },
+  "imutabilidade": {
+    "ok": true,
+    "falhas": [],
+    "diferencas": 0,
+    "ficheiros": 14798,
+    "ficheiros_da_arvore": 24496
+  },
+  "coerencia_da_cabeca": {
+    "ok": true,
+    "falhas": [],
+    "cabeca": "f694c58cb4228465d48dafa22905832c5c1ceded",
+    "carimbo": "2026-10-14T15:31:06.581Z",
+    "escritos": {
+      "prova.json": "2026-10-14T15:32:11.829Z",
+      "cadeia.json": "2026-10-14T15:32:14.496Z"
+    }
+  },
+  "privacidade": {
+    "ficheiros_dist": 14798,
+    "ocorrencias_dist": 0,
+    "api_passou": true,
+    "incorporador_passou": true,
+    "rastreado": {
+      "ficheiros": 24496,
+      "quantidade": 1,
+      "achados": [
+        "scripts/textos-aprovados.json"
+      ],
+      "plantas": [
+        {
+          "id": "ramo-estrutura-1-texto",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-estrutura-1-gzip",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-estrutura-1-nome",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-estrutura-2-texto",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-estrutura-2-gzip",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-estrutura-2-nome",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-estrutura-inocua",
+          "mordeu": true,
+          "mensagem": "Registo comprimido dentro do âmbito, com marcadores portáveis, lido e aceite."
+        },
+        {
+          "id": "ramo-pessoal-texto",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-pessoal-gzip",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-pessoal-nome",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-pessoal-outra-caixa",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-pessoal-binario",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-pessoal-identidades-do-projeto",
+          "mordeu": true
+        },
+        {
+          "id": "guiao-com-casa-portavel",
+          "mordeu": true,
+          "mensagem": "Caminho relativo à casa permitido no guião."
+        }
+      ],
+      "passou": false
+    }
+  }
+}
