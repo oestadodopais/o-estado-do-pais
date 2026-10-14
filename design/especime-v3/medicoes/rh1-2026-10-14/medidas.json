@@ -1,0 +1,236 @@
+{
+  "cabeca_medida": "a56b0fd7a4912241152b24bb1309d9fb8062836b",
+  "ficheiros_seguidos_conferidos": 24494,
+  "rastreado": {
+    "ficheiros": 24494,
+    "quantidade": 1,
+    "achados": [
+      "scripts/textos-aprovados.json"
+    ],
+    "plantas": [
+      {
+        "id": "ramo-estrutura-1-texto",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-1-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-1-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-2-texto",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-2-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-2-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-estrutura-inocua",
+        "mordeu": true,
+        "mensagem": "Registo comprimido dentro do âmbito, com marcadores portáveis, lido e aceite."
+      },
+      {
+        "id": "ramo-pessoal-texto",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-nome",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-outra-caixa",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-binario",
+        "mordeu": true
+      },
+      {
+        "id": "ramo-pessoal-identidades-do-projeto",
+        "mordeu": true
+      },
+      {
+        "id": "guiao-com-casa-portavel",
+        "mordeu": true,
+        "mensagem": "Caminho relativo à casa permitido no guião."
+      }
+    ],
+    "passou": false
+  },
+  "ensaio": {
+    "passou": true,
+    "cadeias_sinteticas_lidas": 2,
+    "ficheiros_sinteticos_conferidos": 7,
+    "plantas": [
+      {
+        "id": "GITHUB_ACTIONS-ausente",
+        "mordeu": true
+      },
+      {
+        "id": "GITHUB_ACTIONS-vazio",
+        "mordeu": true
+      },
+      {
+        "id": "CI-ausente",
+        "mordeu": true
+      },
+      {
+        "id": "CI-vazio",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-invalido-0",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-invalido-1",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-invalido-2",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-invalido-3",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-invalido-4",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-invalido-5",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-invalido-6",
+        "mordeu": true
+      },
+      {
+        "id": "repositorio-limpo-e-json",
+        "mordeu": true
+      },
+      {
+        "id": "plantas-dist-api-rastreado",
+        "mordeu": true
+      },
+      {
+        "id": "linhas-limpas",
+        "mordeu": true
+      },
+      {
+        "id": "git-reescrito-sem-base",
+        "mordeu": true
+      },
+      {
+        "id": "autores-do-projeto-excluidos",
+        "mordeu": true
+      },
+      {
+        "id": "positivo-do-segredo",
+        "mordeu": true
+      },
+      {
+        "id": "positivo-do-autor-conservado",
+        "mordeu": true
+      },
+      {
+        "id": "rastreado-texto",
+        "mordeu": true
+      },
+      {
+        "id": "saida-texto",
+        "mordeu": true
+      },
+      {
+        "id": "rastreado-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "saida-gzip",
+        "mordeu": true
+      },
+      {
+        "id": "rastreado-nome",
+        "mordeu": true
+      },
+      {
+        "id": "saida-nome",
+        "mordeu": true
+      },
+      {
+        "id": "json-recusado-antes-da-escrita",
+        "mordeu": true
+      },
+      {
+        "id": "rastreado-caixa",
+        "mordeu": true
+      },
+      {
+        "id": "saida-caixa",
+        "mordeu": true
+      },
+      {
+        "id": "rastreado-binario",
+        "mordeu": true
+      },
+      {
+        "id": "saida-binario",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-em-dist",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-em-api",
+        "mordeu": true
+      },
+      {
+        "id": "identidades-publicas-passam",
+        "mordeu": true
+      },
+      {
+        "id": "sem-fontes-recusa-dist-api",
+        "mordeu": true
+      },
+      {
+        "id": "positivo-da-casa",
+        "mordeu": true
+      },
+      {
+        "id": "identidade-publica-na-casa",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-antes-das-excecoes-de-caminhos",
+        "mordeu": true
+      },
+      {
+        "id": "carregamento-local",
+        "mordeu": true
+      },
+      {
+        "id": "ambiente-prevalece",
+        "mordeu": true
+      },
+      {
+        "id": "ci-nao-le-casa",
+        "mordeu": true
+      }
+    ]
+  },
+  "passou": false
+}
