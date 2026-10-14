@@ -550,8 +550,10 @@ Mandato: `design/observatorio/mandatos/MANDATO-V2A-g-2026-10-14.md`. Entrada do 
 
 ### Plantas e preparação
 
-O motor passou 40 conferências específicas. O HTML passou 36 páginas e 110 plantas, incluindo as novas recusas de palavras simples retiradas, comparação retirada, período de outra medida, número de quadro trocado, documento sem marca e tradução errada. A K17 recusa o token de apoio sem origem e a marca retirada; a K16 recusa campos diferentes da prova exportada. Os registos estão em `g-conferencias/`; a lista final com mensagem, ficheiro e linha será selada depois dos portões.
+O motor passou 40 conferências específicas. O HTML passou 36 páginas e 114 plantas, incluindo as novas recusas de palavras simples retiradas, comparação retirada, período de outra medida, número de quadro trocado, documento sem marca e tradução errada. A K17 recusa o token de apoio sem origem e a marca retirada; a K16 recusa campos diferentes da prova exportada. Os registos estão em `g-conferencias/`; a lista final com mensagem, ficheiro e linha será selada depois dos portões.
 
 ### Custo
 
 V2-a-f, conforme o mandato e o lançador: 97 turnos, 291 192 de custo antigo, 4 pontos da semana com outra sessão em paralelo (RH1-c e RH1-d), contexto médio de 131 737. O custo V2-a-g cabe ao lançador. Não foi exposta uma linha «tokens used».
+
+**V2A-74:** a primeira corrida completa, na cabeça `67093eba559db52595b7e1ac134d176eca3f4bba`, terminou com build 1, verify 125 (não correu por dependência), typecheck 0 e motor 0. Os estados finais estavam vazios e as cabeças não mudaram durante a corrida. Os registos ficam em `portoes-g-preparacao/`. A L10 ainda exigia português no título inglês: `scripts/lingua-das-origens.mjs:12` passou a distinguir `documento_en` da língua do excerto. Quatro plantas conferem título e excerto nas duas edições. A correção só foi escrita depois de o escrivão terminar os quatro portões.

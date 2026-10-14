@@ -5,6 +5,7 @@ import {parse} from 'node-html-parser';
 import {loadClaims,validateLedger} from '../../src/lib/ledger.mjs';
 import {routePath} from '../../src/lib/routes.mjs';
 const origens=JSON.parse(fs.readFileSync('src/data/origens-v2a.json','utf8'));
+const {conferirLinguaDasOrigens}=await import('../../scripts/lingua-das-origens.mjs');
 const provas=JSON.parse(fs.readFileSync('ledger/provas/v2a/provas.json','utf8')).rows;
 const normal=s=>String(s??'').replace(/\s+/g,' ').trim();
 const ids=Object.keys(JSON.parse(fs.readFileSync('ledger/cruzamentos/v2a.json','utf8')).rows);
@@ -125,6 +126,7 @@ export function conferir(c,lang,html) {
     const periods=tree.querySelectorAll('[data-o-que-e] [data-de-campo="reference_date"]').map(x=>x.getAttribute('data-de-linha'));
     if(JSON.stringify(periods)!==JSON.stringify(['oe-2027-ppp-rodoviario-encargos-brutos-2027','oe-2027-ppp-rodoviario-encargos-liquidos-2027']))erros.push('V2AG PCP: período sem linhas das parcerias');
   }
+  erros.push(...conferirLinguaDasOrigens(tree,lang));
   return erros;
 }
 for(const id of ids) {
@@ -205,6 +207,11 @@ for(const lang of ['pt','en']) {
  root.querySelector(`[data-def-origem="v2a-ppp-conta"] [data-verbatim="origem-v2a-ppp-conta-${lang==='en'?'documento_en':'documento'}"]`).set_content('Título trocado');
  const mensagem=conferirCabecaDoRecibo(root,pcp,lang,{ctx:contextoDasFamilias(),cartoes:new Map()}).find(x=>x.includes('a origem visível da definição perdeu o documento ou o excerto'));
  assert(mensagem);plantas.push({id:pcp,lang,mensagem});console.log(`PLANTA ${lang}: ${mensagem}`);
+}
+for(const lang of ['pt','en'])for(const selector of ['.def-origem-doc','.def-excerto-texto']) {
+ const rota=routePath('linha',lang,{slug:pcp}),root=parse(fs.readFileSync(`dist${rota.replace(/\/$/,'')}/index.html`,'utf8'));
+ const el=root.querySelector('[data-def-origem="v2a-ppp-conta"] '+selector);el.setAttribute('lang',el.getAttribute('lang')==='en'?'pt-PT':'en');
+ const mensagem=conferirLinguaDasOrigens(root,lang).find(x=>x.includes('L10')&&x.includes(selector));assert(mensagem);plantas.push({id:pcp,lang,mensagem});console.log(`PLANTA V2AG ${lang}: ${mensagem}`);
 }
 export const resultado={cabeca:JSON.parse(fs.readFileSync('dist/version.json','utf8')).commit,linhas:ids.length,paginas:resultados.length,resultados,plantas};
 console.log(`V2AB/V2AC: ${resultados.length} páginas conferidas; ${plantas.length} plantas.`);

@@ -9,7 +9,7 @@ export function conferirLinguaDasOrigens(root, lang) {
     if (!origem) { erros.push(`L10 · origem desconhecida: ${chave}`); continue; }
     const declarada = origem.lingua ?? (chave === 'bdp-pii' ? 'pt' : 'en');
     for (const [seletor, lingua] of [
-      ['.def-origem-doc', declarada],
+      ['.def-origem-doc', lang === 'en' && origem.documento_en ? 'en' : declarada],
       ['.def-excerto-texto', lang === 'en' && origem.excertoEn ? 'en' : declarada],
     ]) {
       const esperado = lingua === 'pt' ? 'pt-PT' : lingua;
