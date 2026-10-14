@@ -201,12 +201,25 @@ def formas_comparaveis(cadeias):
                     inserir(ramo, texto, seguinte, codificacao)
 
     def compilar(ramo):
-        partes = [atomo + compilar(filhos) for atomo, filhos in ramo.items() if atomo is not None]
+        caminhos = [(atomo,) + compilar(filhos) for atomo, filhos in ramo.items() if atomo is not None]
         if None in ramo:
-            partes.append(b'')
-        return alternativa(partes)
+            caminhos.append(())
+        if len(caminhos) == 1:
+            return caminhos[0]
+        # Duas grafias que convergem na mesma posição partilham o sufixo.
+        # Sem esta fatorização, cada ss ou ligatura repetiria o resto do nome
+        # e multiplicaria o trabalho do compilador da expressão regular.
+        comuns = 0
+        for i in range(1, min(map(len, caminhos)) + 1):
+            if any(c[-i] != caminhos[0][-i] for c in caminhos[1:]):
+                break
+            comuns = i
+        sufixo = caminhos[0][-comuns:] if comuns else ()
+        prefixos = [b''.join(c[:-comuns] if comuns else c) for c in caminhos]
+        return (alternativa(prefixos),) + sufixo
 
-    return re.compile(compilar(arvore) if arvore else rb'(?!)')
+    return re.compile(b''.join(compilar(arvore)) if arvore else rb'(?!)')
+
 
 
 @lru_cache(maxsize=1)
