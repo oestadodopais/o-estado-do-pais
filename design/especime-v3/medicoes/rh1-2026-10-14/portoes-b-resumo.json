@@ -1,0 +1,416 @@
+{
+  "cabeca": "3ad344e339841a369fdebd3771eab96e0a10e2b1",
+  "codigos": {
+    "build": 0,
+    "verify": 0,
+    "typecheck": 0
+  },
+  "celulas": {
+    "U": {
+      "ok": true,
+      "falhas": [],
+      "passos_do_verify": 47,
+      "cobertos_pelo_build": 20,
+      "corridos_aqui": 27
+    },
+    "D": {
+      "ok": true,
+      "falhas": [],
+      "diferencas": 0,
+      "ficheiros": 14798,
+      "ficheiros_da_arvore": 24524
+    },
+    "C": {
+      "ok": true,
+      "falhas": [],
+      "cabeca": "3ad344e339841a369fdebd3771eab96e0a10e2b1",
+      "carimbo": "2026-10-14T15:59:06.074Z",
+      "escritos": {
+        "prova.json": "2026-10-14T16:00:07.797Z",
+        "cadeia.json": "2026-10-14T16:00:09.491Z"
+      }
+    }
+  },
+  "conferencias": [
+    {
+      "passo": "npm run check:briefs",
+      "fase": "grupo",
+      "codigo": 0,
+      "segundos": 0.41,
+      "inicio_s": 102.261,
+      "fim_s": 102.671
+    },
+    {
+      "passo": "npm run check:leituras",
+      "fase": "grupo",
+      "codigo": 0,
+      "segundos": 28.161,
+      "inicio_s": 102.672,
+      "fim_s": 130.833
+    },
+    {
+      "passo": "npm run check:privacidade",
+      "fase": "grupo",
+      "codigo": 0,
+      "segundos": 119.873,
+      "inicio_s": 136.04,
+      "fim_s": 255.913
+    }
+  ],
+  "privacidade": {
+    "ficheiros": 14798,
+    "quantidade": 0,
+    "achados": [],
+    "plantas": [
+      {
+        "id": "transferida-nome-inteiro",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-documento-alojado-for-abreviado",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-documento-alojado-en",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-atributo",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-json-ld",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-rotulo",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-regra-do-metodo",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-m5-pagina-com-comentario",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-m5-vista",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-fonte-publica",
+        "mordeu": true
+      },
+      {
+        "id": "transferida-controlo-publico",
+        "mordeu": true
+      },
+      {
+        "id": "nome-pessoal-1",
+        "pagina_base": "404.html",
+        "mordeu": true,
+        "falha": "nome pessoal ou caminho local na página construída"
+      },
+      {
+        "id": "nome-pessoal-2",
+        "pagina_base": "404.html",
+        "mordeu": true,
+        "falha": "nome pessoal ou caminho local na página construída"
+      },
+      {
+        "id": "nome-da-casa-real",
+        "nome_pessoal": true,
+        "esperado": "detetar",
+        "mordeu": true
+      },
+      {
+        "id": "nome-pessoal-portavel",
+        "mordeu": true
+      },
+      {
+        "id": "ligacao-home-na-conta-generica",
+        "mordeu": true
+      },
+      {
+        "id": "pasta-generica-raiz",
+        "mordeu": true
+      },
+      {
+        "id": "pasta-generica-root",
+        "mordeu": true
+      },
+      {
+        "id": "pasta-generica-runner",
+        "mordeu": true
+      },
+      {
+        "id": "pasta-generica-app",
+        "mordeu": true
+      },
+      {
+        "id": "pasta-generica-code",
+        "mordeu": true
+      },
+      {
+        "id": "caminho-1",
+        "mordeu": true
+      },
+      {
+        "id": "caminho-2",
+        "mordeu": true
+      },
+      {
+        "id": "caminho-3",
+        "mordeu": true
+      },
+      {
+        "id": "caminho-4",
+        "mordeu": true
+      },
+      {
+        "id": "caminho-5",
+        "mordeu": true
+      }
+    ],
+    "conhecido_positivo_de_nome": true,
+    "aviso": "",
+    "api": {
+      "ficheiros": 1,
+      "conhecido_positivo_de_nome": true,
+      "aviso": "",
+      "caminhos_e_nomes": 0,
+      "achados_de_caminhos": [],
+      "segredos": [],
+      "chaves_publicas_vistas": 1,
+      "plantas": [
+        {
+          "id": "segredo-chave-secreta",
+          "mordeu": true
+        },
+        {
+          "id": "segredo-papel-de-servico",
+          "mordeu": true
+        },
+        {
+          "id": "segredo-sal-com-valor",
+          "mordeu": true
+        },
+        {
+          "id": "segredo-sal-entre-aspas",
+          "mordeu": true
+        },
+        {
+          "id": "segredo-chave-com-valor",
+          "mordeu": true
+        },
+        {
+          "id": "segredo-chave-entre-aspas",
+          "mordeu": true
+        },
+        {
+          "id": "sal-lido-do-ambiente-sem-valor",
+          "mordeu": true
+        },
+        {
+          "id": "chave-lida-do-ambiente-sem-valor",
+          "mordeu": true
+        },
+        {
+          "id": "nome-vazio-entre-aspas-sem-valor",
+          "mordeu": true
+        },
+        {
+          "id": "api-caminho-1",
+          "mordeu": true
+        },
+        {
+          "id": "api-caminho-2",
+          "mordeu": true
+        },
+        {
+          "id": "api-caminho-3",
+          "mordeu": true
+        },
+        {
+          "id": "api-caminho-4",
+          "mordeu": true
+        },
+        {
+          "id": "api-caminho-5",
+          "mordeu": true
+        },
+        {
+          "id": "api-nome-pessoal",
+          "mordeu": true
+        }
+      ],
+      "passou": true
+    },
+    "rastreado": {
+      "ficheiros": 24524,
+      "quantidade": 0,
+      "achados": [],
+      "plantas": [
+        {
+          "id": "ramo-estrutura-1-texto",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-estrutura-1-gzip",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-estrutura-1-nome",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-estrutura-2-texto",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-estrutura-2-gzip",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-estrutura-2-nome",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-estrutura-inocua",
+          "mordeu": true,
+          "mensagem": "Registo comprimido dentro do âmbito, com marcadores portáveis, lido e aceite."
+        },
+        {
+          "id": "ramo-pessoal-texto",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-pessoal-gzip",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-pessoal-nome",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-pessoal-outra-caixa",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-pessoal-binario",
+          "mordeu": true
+        },
+        {
+          "id": "ramo-pessoal-identidades-do-projeto",
+          "mordeu": true
+        },
+        {
+          "id": "guiao-com-casa-portavel",
+          "mordeu": true,
+          "mensagem": "Caminho relativo à casa permitido no guião."
+        }
+      ],
+      "passou": true
+    },
+    "incorporador": {
+      "erros": [],
+      "plantas": [
+        {
+          "nome": "pedido-de-fora",
+          "mensagem": "ER1 privacidade: endereço fora da origem fixa do projeto.",
+          "mordeu": true
+        },
+        {
+          "nome": "cookie",
+          "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+          "mordeu": true
+        },
+        {
+          "nome": "armazenamento",
+          "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+          "mordeu": true
+        },
+        {
+          "nome": "pagina-anfitria",
+          "mensagem": "ER1 privacidade: leitura fora dos parágrafos próprios.",
+          "mordeu": true
+        },
+        {
+          "nome": "postMessage",
+          "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+          "mordeu": true
+        },
+        {
+          "nome": "parent",
+          "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+          "mordeu": true
+        },
+        {
+          "nome": "top",
+          "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+          "mordeu": true
+        },
+        {
+          "nome": "innerText",
+          "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+          "mordeu": true
+        },
+        {
+          "nome": "getElementsBy",
+          "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+          "mordeu": true
+        },
+        {
+          "nome": "body",
+          "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+          "mordeu": true
+        },
+        {
+          "nome": "credenciais",
+          "mensagem": "ER1 privacidade: o pedido perdeu a opção credentials: 'omit'.",
+          "mordeu": true
+        },
+        {
+          "nome": "redirecionamento",
+          "mensagem": "ER1 privacidade: o pedido perdeu a opção redirect: 'error'.",
+          "mordeu": true
+        }
+      ],
+      "passou": true
+    },
+    "passou": true
+  },
+  "marca_depois": {
+    "dist": {
+      "paginas_lidas": 7935,
+      "ocorrencias_literais": 0,
+      "atributos_rendidos": 0
+    },
+    "src": {
+      "ficheiros_lidos": 362,
+      "ocorrencias_literais": 1,
+      "atributos_em_tags": 0,
+      "ficheiros_com_marca": [
+        {
+          "ficheiro": "src/components/RotuloDeIA.astro",
+          "ocorrencias": 1
+        }
+      ]
+    },
+    "versao_dist": {
+      "commit": "3ad344e339841a369fdebd3771eab96e0a10e2b1",
+      "ref": "rh1-2026-10-14",
+      "env": "local",
+      "origem": "git",
+      "motivo": null,
+      "construido_em": "2026-10-14T15:59:06.074Z"
+    }
+  },
+  "alvos": {
+    "existe_na_maquina": true,
+    "bytes": 31993754,
+    "ignorado": true,
+    "seguido": false
+  }
+}
