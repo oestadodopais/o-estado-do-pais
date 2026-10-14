@@ -252,7 +252,7 @@ def medir(dist, prova):
         from unittest.mock import patch
         # O nome real é lido e plantado só em memória, nunca no resultado.
         nome_real = Path.home().name
-        pessoal = len(nome_real) >= 6 and nome_real.lower() not in detetor.CONTAS_GENERICAS
+        pessoal = bool(detetor.nome_da_casa())
         r['plantas'].append({'id': 'nome-da-casa-real', 'nome_pessoal': pessoal,
                             'esperado': 'detetar' if pessoal else 'conta genérica ou curta',
                             'mordeu': detetor.tem_caminho(b'<p>'+nome_real.encode()+b'</p>') == pessoal})

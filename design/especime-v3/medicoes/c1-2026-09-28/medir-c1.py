@@ -59,7 +59,10 @@ def _ler_proibidos(valor, ci):
             continue
         if len(texto) < 4 or texto.casefold() in identidades:
             raise ValueError(f'PRIVACIDADE_PROIBIDOS: linha {linha} inválida (curta ou identidade do projeto).')
-        cadeias.append(texto.encode('utf-8'))
+        try:
+            cadeias.append(texto.encode('utf-8'))
+        except UnicodeEncodeError:
+            raise ValueError(f'PRIVACIDADE_PROIBIDOS: linha {linha} inválida (UTF-8).') from None
     if ci and not cadeias:
         raise ValueError('O segredo PRIVACIDADE_PROIBIDOS tem de existir no repositório (§1.192) e não pode estar vazio.')
     return tuple(cadeias)
@@ -71,7 +74,8 @@ def ler_proibidos():
 
 def nome_da_casa():
     nome = Path.home().name
-    return nome.encode() if len(nome) >= 6 and nome.casefold() not in CONTAS_GENERICAS else b''
+    excluidos = CONTAS_GENERICAS | {n.casefold() for n in IDENTIDADES_DO_PROJETO}
+    return nome.encode() if len(nome) >= 6 and nome.casefold() not in excluidos else b''
 
 
 def cadeias_pessoais():
@@ -101,7 +105,7 @@ def proibidos(pasta=None):
     if pasta.parent not in PASTAS_GENERICAS:
         caminhos.append((str(pasta.parent).rstrip('/') + '/').encode())
     nome = pasta.name.lower()
-    if len(nome) >= 6 and nome not in CONTAS_GENERICAS:
+    if len(nome) >= 6 and nome not in CONTAS_GENERICAS and nome.casefold() not in {n.casefold() for n in IDENTIDADES_DO_PROJETO}:
         caminhos.append(nome.encode())
     return caminhos + [
         (('/private' + '/' + 'var/folders') + '/').encode(),

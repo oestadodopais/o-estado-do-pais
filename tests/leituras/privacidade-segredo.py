@@ -134,6 +134,8 @@ def ensaiar():
             with patch.object(d.Path, 'home', return_value=Path('/') / 'home' / 'conta-sintetica'):
                 provar('positivo-da-casa', d.positivos_de_nome() == (b'conta-sintetica',)
                        and guarda.tem_cadeia_pessoal('ensaio.txt', b'CONTA-SINTETICA', d.cadeias_pessoais()))
+            with patch.object(d.Path, 'home', return_value=Path('/') / 'home' / 'oestadodopais'):
+                provar('identidade-publica-na-casa', not d.nome_da_casa() and not d.tem_caminho(b'oestadodopais'))
         with patch.dict(os.environ, {'PRIVACIDADE_PROIBIDOS': 'usr/bin/env'}, clear=True):
             provar('segredo-antes-das-excecoes-de-caminhos', d.tem_caminho(b'#!/usr/bin/env python3'))
         # O carregador é ensaiado por substituição das leituras, sem abrir $HOME.
