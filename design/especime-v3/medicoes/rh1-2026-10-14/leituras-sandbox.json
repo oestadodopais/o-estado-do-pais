@@ -1,0 +1,47 @@
+{
+  "ambiente": "sandbox",
+  "guioes": [
+    {
+      "guiao": "tests/leituras/aterrar.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/briefs-presos.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/comparar-alvos.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/ferramentas.py",
+      "codigo": 1
+    },
+    {
+      "guiao": "tests/leituras/pacote-portoes.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/pacote.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/portoes.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/privacidade-jd1.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/privacidade-segredo.py",
+      "codigo": 0
+    },
+    {
+      "guiao": "tests/leituras/tempos.py",
+      "codigo": 0
+    }
+  ],
+  "falha_do_servidor_local": "Error: listen EPERM: operation not permitted 127.0.0.1",
+  "nota": "Ensaio preliminar; as plantas RH1 da cabeça do código são medidas de novo em medidas.json. A suite completa volta a correr nos portões pelo escrivão."
+}
