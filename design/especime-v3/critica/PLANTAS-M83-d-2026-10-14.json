@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T09:41:48+00:00",
+ "copia": "<scratchpad>/pacote-leitura-d",
+ "plantas": [
+  {
+   "id": "T1",
+   "ficheiro": "scripts/leituras/pacote.py",
+   "descricao": "o âmbito de document deixa de contar: o sha256 lê-se da raiz da linha também",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "d04cf695774d28f43c966df689996670919cfd40f8e89f84792f1d875e25e388",
+   "sha256_depois": "738f75c67c2a4843881ad83e2f89fa39565d2ee210b7cb4ab468f4b81e8b19ec",
+   "contexto_antes": " = yaml.safe_load(texto)\n    except yaml.YAMLError as e:\n        raise ValueError(f'O pacote recusa: a linha {ident} não é YAML legível ({type(e).__name__}).')\n    documento = dados.get('document') if isinstance(dados, dict) else None\n    if not isinstance(documento, dict) or documento.get('source_sha256') is None:\n        return None\n    valor = documento['source_sha256']\n    if isinstance(valor, str) and SHA_HEX.fullmatch(valor):\n        return valor\n    raise ValueError(f'O pacote recusa:",
+   "contexto_depois": " = yaml.safe_load(texto)\n    except yaml.YAMLError as e:\n        raise ValueError(f'O pacote recusa: a linha {ident} não é YAML legível ({type(e).__name__}).')\n    documento = dados.get('document') if isinstance(dados, dict) else None\n    if not isinstance(documento, dict) or documento.get('source_sha256') is None:\n        documento = dados if isinstance(dados, dict) and dados.get('source_sha256') else None\n    if documento is None:\n        return None\n    valor = documento['source_sha256']\n    if isinstance(valor, str) and SHA_HEX.fullmatch(valor):\n        return valor\n    raise ValueError(f'O pacote recusa:"
+  },
+  {
+   "id": "T2",
+   "ficheiro": "scripts/leituras/pacote.py",
+   "descricao": "sem o PyYAML o guião lê menos em vez de recusar",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "738f75c67c2a4843881ad83e2f89fa39565d2ee210b7cb4ab468f4b81e8b19ec",
+   "sha256_depois": "8e4e7943f6eb3c38544083cf3e6b14feb22f9994d14f5a63127fcd4602085725",
+   "contexto_antes": "ha declara em document.source_sha256: None se não declara ou declara null; recusa qualquer outra forma.\"\"\"\n    try:\n        import yaml\n    except ImportError:\n        raise ValueError('O pacote recusa: o PyYAML não está instalado e o guião precisa dele para ler document.source_sha256 das linhas (M83).')\n    try:\n        dados = yaml.safe_load(texto)\n    except yaml.YAMLError as e:\n        raise ValueError(f'O pacote recusa: a linha {ident} não é YAML legível (",
+   "contexto_depois": "ha declara em document.source_sha256: None se não declara ou declara null; recusa qualquer outra forma.\"\"\"\n    try:\n        import yaml\n    except ImportError:\n        return None\n    try:\n        dados = yaml.safe_load(texto)\n    except yaml.YAMLError as e:\n        raise ValueError(f'O pacote recusa: a linha {ident} não é YAML legível ("
+  },
+  {
+   "id": "T3",
+   "ficheiro": "design/especime-v3/medicoes/m83-2026-10-14/medir-inventario.py",
+   "descricao": "a referência medida volta a ser todas, contra o que o cabeçalho e a §1.192 dizem",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "8a2490f5922a745d5568c95a0e28f46ac927698c2f4358f8f649c5e69121736a",
+   "sha256_depois": "8d258b443c6a598fa8a8e8105fa154606f8ba628ed79988f8aa0300525c23100",
+   "contexto_antes": "e == 0 else (None, f'código {r.returncode}')\n\ndef principal():\n    saida = pathlib.Path(sys.argv[1])\n    cadeias = json.loads(os.environ['INVENTARIO_CADEIAS'])\n    repos = {'sitio': (os.environ['INVENTARIO_SITIO'], os.environ.get('INVENTARIO_REF_SITIO', 'main')), 'motor': (os.environ['INVENTARIO_MOTOR'], os.environ.get('INVENTARIO_REF_MOTOR', 'master'))}\n    resultado = {'medido_em': datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='minutes'), 'cadeias_medidas': len(cadeias), 'repositorios': {}}\n",
+   "contexto_depois": "e == 0 else (None, f'código {r.returncode}')\n\ndef principal():\n    saida = pathlib.Path(sys.argv[1])\n    cadeias = json.loads(os.environ['INVENTARIO_CADEIAS'])\n    repos = {'sitio': (os.environ['INVENTARIO_SITIO'], os.environ.get('INVENTARIO_REF_SITIO', '--all')), 'motor': (os.environ['INVENTARIO_MOTOR'], os.environ.get('INVENTARIO_REF_MOTOR', '--all'))}\n    resultado = {'medido_em': datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='minutes'), 'cadeias_medidas': len(cadeias), 'repositorios': {}}\n"
+  },
+  {
+   "id": "T4",
+   "ficheiro": ".github/workflows/portao.yml",
+   "descricao": "o passo do PyYAML deixa de instalar: só confere",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "4eab35b8db7d8c19785a23d1d99d659842316683ef8bb942a5ffc3655ee15b5e",
+   "sha256_depois": "f74ce44a351ab969ebd8dd1a60178f8efaa31d0361bc60daf60224065a1583e5",
+   "contexto_antes": "ras/pacote.py` do `check:leituras` exercita-o. Quando a imagem do runner já o traz, este passo não faz nada.\n      - name: O PyYAML, para o pacote das leituras\n        run: python3 -c \"import yaml\" 2>/dev/null || sudo apt-get install -y -qq python3-yaml\n\n      # Os três portões, um passo cada um, para o registo dizer qual caiu sem\n      # ninguém ter de ler as 11 577 linhas de saída de uma corrida verde\n      ",
+   "contexto_depois": "ras/pacote.py` do `check:leituras` exercita-o. Quando a imagem do runner já o traz, este passo não faz nada.\n      - name: O PyYAML, para o pacote das leituras\n        run: python3 -c \"import yaml\" 2>/dev/null || true\n\n      # Os três portões, um passo cada um, para o registo dizer qual caiu sem\n      # ninguém ter de ler as 11 577 linhas de saída de uma corrida verde\n      "
+  },
+  {
+   "id": "T5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "uma contagem do inventário trocada no relatório",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "026464a751c2c486c135702436ca979af72a536ae5d5b24a2f13f351fc26584f",
+   "sha256_depois": "ce15ea1ce8c298dacfc24b791f03c82c82d8c9255076e685f8afbdd781c1619c",
+   "contexto_antes": "` com as 7 cadeias passadas pelo ambiente, medido na história de `main` do sítio e de `master` do motor: no sítio, 2640 commits, 2632 com a identidade pessoal, 133 com o nome da conta nos diffs, 2 com o nome completo, 5 com o nome próprio e o apelido, 2 com o correio dentro de ficheiros, 4 mensagens com o nome da conta, 0 ficheiros da cabeça; no motor",
+   "contexto_depois": "` com as 7 cadeias passadas pelo ambiente, medido na história de `main` do sítio e de `master` do motor: no sítio, 2640 commits, 2632 com a identidade pessoal, 123 com o nome da conta nos diffs, 2 com o nome completo, 5 com o nome próprio e o apelido, 2 com o correio dentro de ficheiros, 4 mensagens com o nome da conta, 0 ficheiros da cabeça; no motor"
+  }
+ ]
+}
