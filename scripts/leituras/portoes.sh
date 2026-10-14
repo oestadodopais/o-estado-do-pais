@@ -13,6 +13,11 @@
 # No fim, mesmo vermelho, agrega os tempos, retira as partes temporárias e
 # limpa caminhos locais. Só depois solta a tranca. Uma falha da limpeza sai a 9.
 set -u
+# RH1: a máquina recebe a mesma lista privada do CI; nunca a imprime.
+if [ "${PRIVACIDADE_PROIBIDOS+x}" != x ] && [ "${GITHUB_ACTIONS+x}" != x ] && [ "${CI+x}" != x ] && [ -f "$HOME/.config/oestadodopais/proibidos.txt" ]; then
+  PRIVACIDADE_PROIBIDOS=$(cat "$HOME/.config/oestadodopais/proibidos.txt") || exit 9
+  export PRIVACIDADE_PROIBIDOS
+fi
 W="$1"; O="$2"
 case "$W" in /*) ;; *) echo 'portoes: a worktree tem de ser absoluta' >&2; exit 9;; esac
 cd "$W" || exit 9
