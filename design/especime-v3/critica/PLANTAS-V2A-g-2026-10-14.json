@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T18:39:46+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/data/origens-v2a.json",
+   "descricao": "a página impressa do título inglês do apoio dos setores trocada (printed 107 para 117): o título inglês deixa de bater com o português e com o PDF",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "f39d3e86b785e3f415e3ba5ddde2520ee4d83c4320db47bf9250309064cc4209",
+   "sha256_depois": "7e643e4e0a256abed196d80b2c66e71ff50873008fafc870cd3b98dab6bfbf9c",
+   "contexto_antes": "\",\n    \"excertoAberto\": false,\n    \"publicador\": \"Ministério das Finanças\",\n    \"documento\": \"Orçamento do Estado para 2027, p. 123 do PDF (107 impressa)\",\n    \"documento_en\": \"Budget report for 2027, PDF p. 123 (printed 107)\",\n    \"publicador_en\": \"Ministry of Finance\",\n    \"url\": \"https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2d",
+   "contexto_depois": "\",\n    \"excertoAberto\": false,\n    \"publicador\": \"Ministério das Finanças\",\n    \"documento\": \"Orçamento do Estado para 2027, p. 123 do PDF (107 impressa)\",\n    \"documento_en\": \"Budget report for 2027, PDF p. 123 (printed 117)\",\n    \"publicador_en\": \"Ministry of Finance\",\n    \"url\": \"https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2d"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "motor/publisher/v2a.py",
+   "descricao": "a conferência do número do quadro no publicador deixa de cobrir o apoio da p. 124: um quadro errado nesse apoio passaria",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "63f63385bc8e59e6bf9757639e7fff308cd389ff86b8ff12b3caa9907f542a8b",
+   "sha256_depois": "c4eacb33006307b683cf9684f438554c0d7002833b9f7614c4abafe7464ec956",
+   "contexto_antes": "Budget report for 2027, PDF p. {page} (printed {printed})' and apoio.get('publicador_en')=='Ministry of Finance','V2AG apoio: documento ou tradução diferente')\n    if page in (123,124):\n        require(apoio.get('quadro')=='4.25' and 'Quadro 4.25.' in pages(OE,source)[122],'V2AG apoio: número do quadro diferente')\n    else: require('quadro' no",
+   "contexto_depois": "Budget report for 2027, PDF p. {page} (printed {printed})' and apoio.get('publicador_en')=='Ministry of Finance','V2AG apoio: documento ou tradução diferente')\n    if page in (123,):\n        require(apoio.get('quadro')=='4.25' and 'Quadro 4.25.' in pages(OE,source)[122],'V2AG apoio: número do quadro diferente')\n    else: require('quadro' no"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "tests/linha/v2a.mjs",
+   "descricao": "a régua do número do quadro deixa de exigir a palavra «quadro»/«Table» antes do número: os algarismos em qualquer lugar da frase passariam",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "d50024fe4d0cc303186aa253cdd36001a4d055528bfdc0f1fa2b3715eb81f6a2",
+   "sha256_depois": "6551b4424365d27ec236fd1a8a6c180e5a0efca404ce4139bffa21a823e69bb6",
+   "contexto_antes": "'v2a-ppp-setores',mark=tree.querySelector(`[data-o-que-e] [data-verbatim=\"origem-${key}-quadro\"]`);\n    if(!mark||normal(mark.textContent)!==origens[key].quadro||!frase.includes((lang==='pt'?'quadro ':'Table ')+origens[key].quadro))erros.push('V2AG quadro: número diferente do campo do apoio');\n  }\n  if(pcp||c.id.startsWith('afirmacao-leitao-')) {\n    const key=pcp?'v2a-ppp-conta':'v2a-prr-ciclo',field=lang==='pt'?'documento':'documento_en';\n    if(te",
+   "contexto_depois": "'v2a-ppp-setores',mark=tree.querySelector(`[data-o-que-e] [data-verbatim=\"origem-${key}-quadro\"]`);\n    if(!mark||normal(mark.textContent)!==origens[key].quadro||!frase.includes(origens[key].quadro))erros.push('V2AG quadro: número diferente do campo do apoio');\n  }\n  if(pcp||c.id.startsWith('afirmacao-leitao-')) {\n    const key=pcp?'v2a-ppp-conta':'v2a-prr-ciclo',field=lang==='pt'?'documento':'documento_en';\n    if(te"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html",
+   "descricao": "a comparação da página do PCP invertida (superior para inferior): a página diria o contrário dos números",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "8a4825291a19db92e342bd07dfa790b3f8c0ca06135c972af86e2294593fd6bb",
+   "sha256_depois": "dae763baab7d9c7c67a1b3eed8695b3743df1574aeb467dd6a1233a3fe476268",
+   "contexto_antes": "são <span data-claim=\"oe-2027-ppp-rodoviario-encargos-liquidos-2027\" class=\"claim-value\">889</span> milhões: o que paga depois de descontar o que recebe delas. O montante afirmado é superior tanto aos encargos brutos como aos líquidos que o quadro imprime para <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"oe-2027-ppp-rodoviario-encargos-liquidos-2027\" data-de-camp",
+   "contexto_depois": "são <span data-claim=\"oe-2027-ppp-rodoviario-encargos-liquidos-2027\" class=\"claim-value\">889</span> milhões: o que paga depois de descontar o que recebe delas. O montante afirmado é inferior tanto aos encargos brutos como aos líquidos que o quadro imprime para <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"oe-2027-ppp-rodoviario-encargos-liquidos-2027\" data-de-camp"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem das plantas do HTML trocada no relatório (114 para 141): o relatório deixa de bater com o registo",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "11894d23c493a2d3a0f0de4d0e27cd3238cd8b0ea5be3e02f5885040bc0fbc17",
+   "sha256_depois": "d8379cd951f92ec1679661c9d0219027a5fe04de5d89b55db99ef129fc871b9d",
+   "contexto_antes": "rtões. Os códigos, cabeças de início e fim e estados foram lidos dos ficheiros no fecho.\n\n### Plantas e preparação\n\nO motor passou 40 conferências específicas. O HTML passou 36 páginas e 114 plantas, incluindo as novas recusas de palavras simples retiradas, comparação retirada, período de outra medida, número de quadro trocado, documento sem marca e traduç",
+   "contexto_depois": "rtões. Os códigos, cabeças de início e fim e estados foram lidos dos ficheiros no fecho.\n\n### Plantas e preparação\n\nO motor passou 40 conferências específicas. O HTML passou 36 páginas e 141 plantas, incluindo as novas recusas de palavras simples retiradas, comparação retirada, período de outra medida, número de quadro trocado, documento sem marca e traduç"
+  }
+ ]
+}
