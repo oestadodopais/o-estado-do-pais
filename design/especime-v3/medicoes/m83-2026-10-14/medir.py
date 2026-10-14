@@ -22,5 +22,6 @@ m = {'medido_em': '2026-10-14', 'ensaio_casos': len(t['casos']), 'ensaio_passara
      'inventario_sitio_ficheiros_na_cabeca': sum(v['ficheiros_na_cabeca_atual'] for v in s['por_cadeia'].values()),
      'inventario_motor_ficheiros_na_cabeca_com_nome_e_apelido': mo['por_cadeia']['nome_proprio_e_apelido']['ficheiros_na_cabeca_atual'], 'inventario_motor_ficheiros_na_cabeca_com_nome_da_conta': mo['por_cadeia']['nome_da_conta_da_maquina']['ficheiros_na_cabeca_atual'],
      'inventario_motor_ficheiros_na_cabeca_com_cidade': mo['por_cadeia']['cidade_de_residencia']['ficheiros_na_cabeca_atual'],
-     'dominios_sem_titular_visivel': sum(1 for d in inv.get('dominios', {}).values() if d.get('owner_name_vazio')), 'organizacao_membros_publicos': inv.get('organizacao', {}).get('membros_publicos')}
+     'dominios_sem_titular_visivel': sum(1 for d in inv.get('dominios', {}).values() if d.get('owner_name_vazio')), 'organizacao_membros_publicos': inv.get('organizacao', {}).get('membros_publicos'),
+     'organizacao_membros': inv.get('organizacao', {}).get('membros'), 'repositorio_publico_forks': inv.get('repositorio_publico', {}).get('forks'), 'repositorio_publico_estrelas': inv.get('repositorio_publico', {}).get('estrelas'), 'repositorio_publico_pull_requests': inv.get('repositorio_publico', {}).get('pull_requests')}
 (D/'medidas.json').write_text(json.dumps(m, ensure_ascii=False, indent=2) + '\n'); print(json.dumps(m, ensure_ascii=False))

@@ -182,13 +182,16 @@ with tempfile.TemporaryDirectory(prefix='oedp-pacote-h2-') as tmp:
     escrever(sitio, 'ledger/claims/linha-aspas-simples.yml', "id: \"linha-aspas-simples\"\nvalue: \"1\"\ndocument:\n  source_sha256: '" + sha + "'\nnote: \"Cruzado de ResearchHub content/Estudo sintético · linha-aspas-simples.\"\n")
     escrever(sitio, 'ledger/claims/linha-sem-aspas.yml', 'id: "linha-sem-aspas"\nvalue: "1"\ndocument:\n  source_sha256: ' + sha + '\nnote: "Cruzado de ResearchHub content/Estudo sintético · linha-sem-aspas."\n')
     escrever(sitio, 'ledger/claims/linha-nula.yml', 'id: "linha-nula"\nvalue: "1"\ndocument:\n  source_sha256: null\n')
-    cabeca_formas = commit(sitio, ['ledger/claims/linha-aspas-simples.yml', 'ledger/claims/linha-sem-aspas.yml', 'ledger/claims/linha-nula.yml'])
+    # A segunda leitura (achado 4): a chave em fluxo e a chave entre aspas também contam.
+    escrever(sitio, 'ledger/claims/linha-fluxo.yml', 'id: "linha-fluxo"\nvalue: "1"\ndocument: {title: "Documento sintético", source_sha256: "' + sha + '", page: 1}\nnote: "Cruzado de ResearchHub content/Estudo sintético · linha-fluxo."\n')
+    escrever(sitio, 'ledger/claims/linha-chave-com-aspas.yml', 'id: "linha-chave-com-aspas"\nvalue: "1"\ndocument:\n  "source_sha256": "' + sha + '"\nnote: "Cruzado de ResearchHub content/Estudo sintético · linha-chave-com-aspas."\n')
+    cabeca_formas = commit(sitio, ['ledger/claims/linha-aspas-simples.yml', 'ledger/claims/linha-sem-aspas.yml', 'ledger/claims/linha-nula.yml', 'ledger/claims/linha-fluxo.yml', 'ledger/claims/linha-chave-com-aspas.yml'])
     cmd[-1] = cabeca_formas
     formas = montar(tmp/'formas', env_corpos)
     mf = json.loads((formas/'motor/corpos-alojados.json').read_text())
     estado = {l['linha']: l['estado'] for l in mf['linhas']}
-    exige('o sha256 com aspas simples e sem aspas resolve, e null é «sem documento»',
-          estado['linha-aspas-simples'] == 'copiado' and estado['linha-sem-aspas'] == 'copiado' and estado['linha-nula'].startswith('sem documento alojado'))
+    exige('o sha256 com aspas simples, sem aspas, em fluxo e com a chave entre aspas resolve, e null é «sem documento»',
+          estado['linha-aspas-simples'] == 'copiado' and estado['linha-sem-aspas'] == 'copiado' and estado['linha-fluxo'] == 'copiado' and estado['linha-chave-com-aspas'] == 'copiado' and estado['linha-nula'].startswith('sem documento alojado'))
     exige('o manifesto diz por onde cada linha se resolveu e que estudos percorreu',
           all(l['origem'] and l['origem'].startswith('fontes do estudo') for l in mf['linhas'] if l['estado'] == 'copiado') and mf['estudos_declarados'] == ['content/Estudo sintético'] and mf['estudos_extra'] == [])
     escrever(sitio, 'ledger/claims/linha-ilegivel.yml', 'id: "linha-ilegivel"\nvalue: "1"\ndocument:\n  source_sha256: "abc"\n')

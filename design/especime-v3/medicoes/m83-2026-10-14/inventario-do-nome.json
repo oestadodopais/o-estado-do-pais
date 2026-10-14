@@ -1,9 +1,9 @@
 {
-  "medido_em": "2026-10-14T08:39+00:00",
+  "medido_em": "2026-10-14T09:01+00:00",
   "cadeias_medidas": 7,
   "repositorios": {
     "sitio": {
-      "commits_em_todas_as_referencias": 2816,
+      "commits_em_todas_as_referencias": 2817,
       "por_cadeia": {
         "nome_da_conta_da_maquina": {
           "commits_cujo_diff_a_traz": 140,
@@ -16,7 +16,7 @@
           "commits_cujo_diff_a_traz": 2,
           "nomes_de_ficheiro": 0,
           "mensagens_de_commit": 0,
-          "identidades_de_commit": 2808,
+          "identidades_de_commit": 2809,
           "ficheiros_na_cabeca_atual": 0
         },
         "nome_completo": {
@@ -122,6 +122,14 @@
     }
   },
   "organizacao": {
-    "membros_publicos": 0
+    "membros_publicos": 0,
+    "membros": 1,
+    "erros": []
+  },
+  "repositorio_publico": {
+    "estrelas": 0,
+    "forks": 0,
+    "pull_requests": 0,
+    "erros": []
   }
 }

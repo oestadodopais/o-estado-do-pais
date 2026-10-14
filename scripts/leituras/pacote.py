@@ -140,9 +140,26 @@ def conferir_citacoes(destino, repo, cabeca, relatorio, inteiros=False):
             raise ValueError(f'O pacote recusa a entrega: faltam as linhas citadas de {f}.')
 
 
-SHA_DA_LINHA = re.compile(r'^\s*source_sha256:[ \t]*["\']?([0-9a-f]{64})["\']?[ \t]*(?:#.*)?$', re.M)
-CAMPO_SHA = re.compile(r'^\s*source_sha256:[ \t]*(.*?)[ \t]*$', re.M)
-SEM_SHA = {'', 'null', 'Null', 'NULL', '~', '""', "''"}
+# A chave source_sha256 lê-se onde estiver (bloco ou fluxo, com ou sem aspas na chave e no valor), e cada ocorrência
+# ou é 64 hexadecimais, ou null, ou recusa (a segunda leitura da M83, achado 4: as formas que o guião não lia passavam por «sem documento»).
+CAMPO_SHA = re.compile(r'["\']?source_sha256["\']?\s*:\s*([^,}\n#]*)')
+SHA_HEX = re.compile(r'[0-9a-f]{64}')
+SEM_SHA = {'', 'null', 'Null', 'NULL', '~'}
+
+
+def sha_declarado(texto, ident):
+    """O sha256 que a linha declara em source_sha256, None se não declara ou declara null; recusa qualquer outra forma ou dois valores distintos."""
+    valores = set()
+    for m in CAMPO_SHA.finditer(texto):
+        bruto = m.group(1).strip().strip('"\'').strip()
+        if bruto in SEM_SHA:
+            continue
+        if not SHA_HEX.fullmatch(bruto):
+            raise ValueError(f'O pacote recusa: a linha {ident} declara source_sha256 numa forma que o guião não lê ({bruto[:48]!r}); esperam-se 64 hexadecimais, com ou sem aspas, ou null.')
+        valores.add(bruto)
+    if len(valores) > 1:
+        raise ValueError(f'O pacote recusa: a linha {ident} declara dois source_sha256 distintos ({", ".join(v[:12] for v in sorted(valores))}).')
+    return valores.pop() if valores else None
 ESTUDO_DA_NOTA = re.compile(r'Cruzado de ResearchHub (content/[^·"\n]+?)\s*·')
 
 
@@ -152,8 +169,8 @@ def sha256_de(dados):
 
 def linhas_com_corpos(repo, cabeca, mudados):
     """As linhas do livro-razão mudadas no intervalo e presentes na cabeça: {id: (sha256 do documento ou None, estudo da nota ou None)}.
-    O resumo lê-se com aspas duplas, simples ou sem aspas; null é «sem documento»; qualquer outra forma recusa, em vez de passar
-    por «sem documento» (a leitura a frio da M83 pelo Codex, achado 4)."""
+    O resumo lê-se onde a chave estiver, em bloco ou em fluxo, com ou sem aspas; null é «sem documento»; qualquer outra forma
+    recusa, em vez de passar por «sem documento» (as duas leituras a frio da M83 pelo Codex, achado 4 de cada)."""
     linhas = {}
     for f in mudados:
         if not (f.startswith('ledger/claims/') and f.endswith('.yml')):
@@ -161,10 +178,8 @@ def linhas_com_corpos(repo, cabeca, mudados):
         if subprocess.run(['git', '-C', str(repo), 'cat-file', '-e', f'{cabeca}:{f}'], stderr=subprocess.DEVNULL).returncode:
             continue  # uma eliminação não tem corpo a levar
         texto = git(repo, 'show', f'{cabeca}:{f}').decode('utf-8', 'replace')
-        sha, campo, estudo = SHA_DA_LINHA.search(texto), CAMPO_SHA.search(texto), ESTUDO_DA_NOTA.search(texto)
-        if campo and not sha and campo.group(1).split('#', 1)[0].strip() not in SEM_SHA:
-            raise ValueError(f'O pacote recusa: a linha {Path(f).stem} declara source_sha256 numa forma que o guião não lê ({campo.group(1)[:48]!r}); esperam-se 64 hexadecimais, com ou sem aspas, ou null.')
-        linhas[Path(f).stem] = (sha.group(1) if sha else None, estudo.group(1).strip() if estudo else None)
+        sha, estudo = sha_declarado(texto, Path(f).stem), ESTUDO_DA_NOTA.search(texto)
+        linhas[Path(f).stem] = (sha, estudo.group(1).strip() if estudo else None)
     return linhas
 
 
