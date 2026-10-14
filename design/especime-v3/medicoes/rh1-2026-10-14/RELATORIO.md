@@ -1,4 +1,6 @@
-**RH1: implementação entregue com o portão de privacidade vermelho.**
+**RH1: a primeira entrega ficou vermelha; a passagem RH1-b, abaixo, fecha os três portões a zero.**
+
+O texto até à secção «A passagem RH1-b» conserva o registo histórico da primeira entrega.
 
 O novo varrimento encontrou uma ocorrência pessoal preexistente em `scripts/textos-aprovados.json`, no campo `responsavel` (linha 41). O relatório identifica o ficheiro e o campo, nunca o conteúdo. Esse campo alimenta guardas de HTML e de língua; não foi apagado, substituído por uma identidade pública nem dispensado do varrimento. A questão RH1-3 fica aberta antes da aterragem.
 
@@ -40,3 +42,51 @@ Questões e decisões:
 - **RH1-5, decidida:** uma pasta cujo nome seja a identidade pública do projeto não torna essa identidade pessoal. Mantém-se a recusa do caminho local completo, mas exclui-se o nome público isolado. Há planta própria.
 
 O segredo de produção e o ficheiro privado ficam a cargo do lugar de direção. A sua configuração não foi criada nem validada por esta passagem. A auditoria dos artefactos RH1 não encontrou cadeias pessoais das fontes disponíveis nem estrutura local proibida.
+
+## A passagem RH1-b
+
+A RH1-3 ficou resolvida. `responsavel` e `lingua_do_responsavel` saíram do oráculo; o comentário regista a decisão de 14.10.2026 e a §1.192 (`scripts/textos-aprovados.json:40`). A comparação dos campos do oráculo antes e depois encontrou apenas essas duas remoções e a mudança do comentário `_`. Nenhum texto aprovado foi alterado.
+
+A proteção pessoal passou para `check:privacidade`. Saíram do portão de HTML a leitura do nome, as formas, o detetor, os contadores e a conferência cruzada do rótulo com o Método (`scripts/gate-html.mjs:374`, `:4418`). Essa conferência cruzada era redundante: o detetor da privacidade lê todo o HTML construído, incluindo os documentos alojados, e os ficheiros seguidos, incluindo as declarações das regras e do rótulo. Conservam-se no portão de HTML as comparações exatas dos textos aprovados.
+
+A forma abreviada não desapareceu com o oráculo: o detetor conserva a forma inteira e acrescenta primeiro e último elementos dos nomes com mais de duas partes, respeitando o mínimo de quatro caracteres e a exclusão das identidades públicas (`design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py:86`). As formas vêm das fontes privadas e dos autores pessoais, nunca de uma identidade escrita no oráculo. A guarda do JSON abrange também as formas derivadas (`scripts/check-privacidade.py:312`).
+
+A decisão sobre a L9 foi tomada depois da medição `rotulo-nome-antes-b.json`, pelo guião `medir-b.py:32`. Antes de alterar código, foram lidas 7 935 páginas HTML de `dist/`: zero ocorrências literais e zero atributos rendidos `data-rotulo-nome`. Em 362 ficheiros de `src/`, encontrou-se uma menção literal, no comentário de `src/components/RotuloDeIA.astro`, e zero atributos em tags. Depois dos portões, a mesma medição deu os mesmos resultados (`portoes-b-resumo.json`).
+
+Saiu, por isso, a parte da L9 que comparava o nome e a sua língua. Ficaram a conferência da língua da frase do rótulo e o seu conhecido-positivo (`scripts/check-lingua.mjs:805`). O portão de HTML conserva ainda a recusa de marcas de nome no rótulo (`scripts/gate-html.mjs:5628`). A constante de língua sem consumidores saiu de `src/data/politica-ia.mjs`; os comentários desse ficheiro e do componente foram atualizados. Nenhum valor rendido em página mudou.
+
+A leitura das dependências encontrou um consumidor ativo adicional do campo removido: `design/observatorio/medidas/BRIEF-M5.py`. Passou a ler as fontes privadas do mesmo detetor (`:156`), conservou os dois predicados e passou a provar ambos com cadeias sintéticas em memória. O JSON das suas medições foi regenerado, com os mesmos valores e comandos atualizados. `check:briefs` passou a zero na conferência local e nos portões. Os guiões históricos do M5 continuam como registo da passagem antiga; as plantas pessoais que serviam vivem agora na conferência corrente e na suite das leituras.
+
+As plantas transferidas estão em `scripts/check-privacidade.py:204`. Correm com `--prova` na conferência normal. O ensaio `tests/leituras/privacidade-rh1b.py:17`, descoberto pelo `check:leituras`, acrescenta um repositório temporário, corridas completas, reposições e a prova de que um detetor cego faz as plantas falharem.
+
+| Planta ou proteção antiga | Equivalente atual, pelo identificador da planta |
+|---|---|
+| Conhecido-positivo da forma inteira de `FORMAS_DO_NOME` | `transferida-nome-inteiro` |
+| Documento alojado com «for» seguido da forma abreviada, §1.138 | `transferida-documento-alojado-for-abreviado` e `transferida-documento-alojado-en`; corridas completas em ambas as rotas no teste RH1-b |
+| Nome em HTML cru, também fora do texto visível | `transferida-atributo`, `transferida-json-ld` e `transferida-m5-pagina-com-comentario` |
+| M5, planta do nome numa cadeia de uma vista | `transferida-m5-vista`; corrida completa com um ficheiro seguido em `src/views/Ensaio.astro` |
+| M5, planta do nome numa página construída | `transferida-m5-pagina-com-comentario`; corrida completa em `dist/sobre/index.html` |
+| Ausência de nome nas fontes de `public/` | `transferida-fonte-publica`, pelo mesmo leitor dos ficheiros seguidos |
+| Ausência de nome no rótulo e nas regras do Método | `transferida-rotulo` e `transferida-regra-do-metodo`; corrida completa na página do Método |
+| Aceitação de texto público inócuo | `transferida-controlo-publico` e reposição do repositório sintético limpo |
+
+As 29 plantas do ensaio RH1-b morderam; entre elas estão as 11 plantas transferidas que também correram na conferência de privacidade dos portões. A regressão RH1 e JD1 passou. A medição da cabeça do código conferiu 24 522 ficheiros seguidos, sem ocorrências; os portões conferiram 24 524, também sem ocorrências, incluindo os dois ficheiros de provas acrescentados entre ambas as corridas. Fontes: `medidas-b.json`, `portoes-b-resumo.json` e `portoes-b/verify.log`.
+
+A decisão dos alvos ficou limitada ao que foi mandado: `.gitignore:59` ignora `design/especime-v3/medicoes/**/alvos.json`; a cópia de `portoes/alvos.json` desta entrega foi removida. Tinha 31 993 754 bytes, medidos antes da remoção em `rotulo-nome-antes-b.json`. O guião dos alvos e os lançadores dos portões não foram alterados. Na nova corrida, `portoes-b/alvos.json` foi criado, tem 31 993 754 bytes, está ignorado e não está seguido. O teste confirma ainda que a regra não ignora `public/alvos.json`. As cópias antigas não foram tocadas.
+
+| Portão RH1-b | Código lido | Ficheiro |
+|---|---|---|
+| build | 0 | `portoes-b/build.codigo` |
+| verify | 0 | `portoes-b/verify.codigo` |
+| typecheck | 0 | `portoes-b/typecheck.codigo` |
+
+As células de união, imutabilidade e coerência da cabeça passaram. A corrida começou com a árvore limpa, e não houve escrita do construtor durante os portões. `check:privacidade`, `check:briefs` e `check:leituras` passaram a zero, incluindo o ensaio RH1-b. O motor não foi tocado e nada foi publicado.
+
+A passagem começou em `fbb4c19b`, o mandato acrescentado pelo lugar de direção. A cabeça do código é `e94cda066090def21ff7b5f36326a24bb1ac659e`. O último commit de provas antes dos portões é `3ad344e339841a369fdebd3771eab96e0a10e2b1`, confirmado em `portoes-b/cabeca` e `portoes-b/cabeca.fim`. O commit posterior de entrega acrescenta apenas os registos, o resumo, a auditoria e esta secção do relatório.
+
+- **RH1-6, decidida:** conservar também a forma abreviada, tanto pelo segredo como pelos autores pessoais. A planta do documento alojado, a da forma vinda do Git e a da guarda de saída provam as três utilizações.
+- **RH1-7, decidida:** retirar a conferência cruzada pessoal do rótulo e do Método, redundante com a leitura integral do `dist/` e dos ficheiros seguidos. As plantas de ambas as superfícies ficaram na privacidade; as comparações dos textos aprovados continuam no HTML.
+- **RH1-8, decidida após medir:** retirar a parte da L9 dedicada ao nome, porque nenhuma marca é rendida. Conservar a língua da frase e a recusa da marca no rótulo pelo portão de HTML.
+- **RH1-9, decidida:** migrar também a dependência ativa do M5. Apagar o campo deixando essa leitura quebrada teria fechado o verify por uma falha de execução, sem preservar a sua medição.
+
+Não ficou nenhuma questão desta correção por resolver. A reescrita da história e a configuração dos segredos de produção continuam fora desta passagem.
