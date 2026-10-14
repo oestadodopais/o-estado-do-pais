@@ -265,6 +265,15 @@ with tempfile.TemporaryDirectory(prefix='oedp-pacote-h2-') as tmp:
     r = subprocess.run([*cmd[:-2], cabeca_nua, cabeca_so_frase, str(pagina_sem_linha), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md'), 'index.html'], env=env_nua, capture_output=True, text=True)
     exige('controlo: uma página pedida que não é de uma linha do livro não traz corpo nenhum',
           r.returncode == 0 and not (pagina_sem_linha/'motor/CORPOS-ALOJADOS.md').exists())
+    # A leitura curta do Codex da M83-b (achado 4): a via inglesa também traz o corpo.
+    escrever(sitio, 'dist/en/ledger/linha-sintetica/index.html', '<p>synthetic page</p>\n')
+    so_en = tmp/'so-frase-en'
+    r = subprocess.run([*cmd[:-2], cabeca_nua, cabeca_so_frase, str(so_en), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md'), 'en/ledger/linha-sintetica/index.html'], env=env_nua, capture_output=True, text=True)
+    me = json.loads((so_en/'motor/corpos-alojados.json').read_text()) if (so_en/'motor/corpos-alojados.json').is_file() else {'linhas': []}
+    le = {l['linha']: l for l in me['linhas']}
+    exige('M83-b: a página inglesa pedida de uma linha que não mudou traz o corpo dela, com «página pedida» no manifesto',
+          r.returncode == 0 and list(le) == ['linha-sintetica'] and le['linha-sintetica']['estado'] == 'copiado' and le['linha-sintetica']['motivo'] == 'página pedida'
+          and (so_en/'motor'/pasta_corpo/'corpo-alojado.txt').read_text() == corpo and (so_en/'built/en/ledger/linha-sintetica/index.html').is_file())
 saida={'ok':all(c['passou'] for c in casos),'casos':casos}
 if '--json' in sys.argv: Path(sys.argv[sys.argv.index('--json')+1]).write_text(json.dumps(saida,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(saida,ensure_ascii=False,indent=2))

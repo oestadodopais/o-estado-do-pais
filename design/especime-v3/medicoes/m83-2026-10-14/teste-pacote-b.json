@@ -200,6 +200,10 @@
     {
       "nome": "controlo: uma página pedida que não é de uma linha do livro não traz corpo nenhum",
       "passou": true
+    },
+    {
+      "nome": "M83-b: a página inglesa pedida de uma linha que não mudou traz o corpo dela, com «página pedida» no manifesto",
+      "passou": true
     }
   ]
 }
