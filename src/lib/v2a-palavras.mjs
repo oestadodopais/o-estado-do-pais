@@ -5,10 +5,10 @@ const ppp='oe-2027-ppp-rodoviario-';
 /** @param {string} id @param {'pt'|'en'} lang */
 export function continuacaoDoNomeV2a(id,lang) {
   if(id.startsWith('oe-2027-saude-')) {
-    if(id.endsWith('-variacao'))return [' ',{periodo:id.replace(/variacao$/,'2026')},lang==='pt'?' e o orçamento para ':' and the budget for ',{periodo:id}];
-    return [' ',{periodo:id},...(lang==='en'&&id.endsWith('-2026')?[' estimate']:[])];
+    if(id.endsWith('-variacao'))return [lang==='pt'?' entre a estimativa de ':' between the estimate for ',{periodo:id.replace(/variacao$/,'2026')},lang==='pt'?' e o orçamento para ':' and the budget for ',{periodo:id}];
+    return [lang==='pt'?(id.endsWith('-2026')?', estimativa de ':', orçamento para '):(id.endsWith('-2026')?', ':', budget for '),{periodo:id},...(lang==='en'&&id.endsWith('-2026')?[' estimate']:[])];
   }
-  if(id.startsWith('oe-2027-ppp-'))return [' ',{periodo:id}];
+  if(id.startsWith('oe-2027-ppp-'))return [', ',{periodo:id}];
   return [];
 }
 /** @param {string} id @param {'pt'|'en'} lang */

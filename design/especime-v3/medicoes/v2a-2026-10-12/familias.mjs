@@ -15,16 +15,16 @@ for(const [stem,label,en] of [
   ]) {
     const anoPt=ano==='2026'?'dois mil e vinte e seis':'dois mil e vinte e sete';
     FAMILIAS_V2A.push(familia(['oe-2027-saude-'+stem+'-'+ano],
-      'Saúde, '+minusculas(label)+', '+(ano==='2026'?'estimativa de':'orçamento para'),
-      'Health, '+minusculas(en)+(ano==='2026'?',':', budget for'),
+      'Saúde, '+minusculas(label),
+      'Health, '+minusculas(en),
       'É a '+minusculas(label)+' '+(ano==='2026'?'na':'no')+' '+minusculas(coluna)+' de '+anoPt+' do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.',
       'It is '+minusculas(en)+' in the '+minusculas(column)+' for '+year+' in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.',
       L('name',fonte),L('document.locator',ano+', '+coluna),L('document.locator','Saúde (PL15), Conta do Pograma Legado'),
       {origem:'v2a-total-efetiva',campo:'excerto',literal:'A despesa total efetiva exclui ativos e passivos financeiros'},{origem:'v2a-total-efetiva',campo:'excerto',literal:'A despesa total inclui ativos e passivos financeiros'},
       L('document.locator',stem.endsWith('sem-prr')?'(Sem PRR)':'Quadro')));
   }
-  FAMILIAS_V2A.push(familia(['oe-2027-saude-'+stem+'-variacao'],'Saúde, '+minusculas(label)+', variação publicada entre a estimativa de',
-    'Health, '+minusculas(en)+', published change between the estimate for',
+  FAMILIAS_V2A.push(familia(['oe-2027-saude-'+stem+'-variacao'],'Saúde, '+minusculas(label)+', variação publicada',
+    'Health, '+minusculas(en)+', published change',
     'É a variação publicada da '+minusculas(label)+' do quadro da Saúde, «Conta do Pograma Legado»: compara o orçamento com a estimativa do ano anterior, '+(stem.endsWith('sem-prr')?'sem PRR.':'incluindo PRR.'),
     'It is the published change in '+minusculas(en)+' in the Health table, «Conta do Pograma Legado»: the budget compared with the previous year’s estimate, '+(stem.endsWith('sem-prr')?'excluding the RRP.':'including the RRP.'),
     L('name',fonte),L('document.locator','Saúde (PL15), Conta do Pograma Legado'),L('document.locator','Variação'),L('ressalva','Compara o orçamento de 2027 com a estimativa de 2026')));
@@ -34,7 +34,7 @@ for(const [stem,label,en,fonte] of [
   ['rodoviario-receitas','Receitas do setor rodoviário','Road sector revenue','receitas'],
   ['rodoviario-encargos-liquidos','Encargos líquidos do setor rodoviário','Road sector net charges','Rodoviário'],
   ['total-encargos-liquidos','Total dos encargos líquidos das parcerias público-privadas','Total net public-private partnership charges','Total'],
-]) FAMILIAS_V2A.push(familia(['oe-2027-ppp-'+stem],(stem==='total-encargos-liquidos'?'Parcerias público-privadas, total dos encargos líquidos,':'Parcerias público-privadas rodoviárias, '+(stem.endsWith('brutos')?'encargos brutos':stem.endsWith('receitas')?'receitas':'encargos líquidos')+','),(stem==='total-encargos-liquidos'?'Public-private partnerships, total net charges,':'Road public-private partnerships, '+(stem.endsWith('brutos')?'gross charges':stem.endsWith('receitas')?'revenue':'net charges')+','),
+]) FAMILIAS_V2A.push(familia(['oe-2027-ppp-'+stem],(stem==='total-encargos-liquidos'?'Parcerias público-privadas, total dos encargos líquidos':'Parcerias público-privadas rodoviárias, '+(stem.endsWith('brutos')?'encargos brutos':stem.endsWith('receitas')?'receitas':'encargos líquidos')),(stem==='total-encargos-liquidos'?'Public-private partnerships, total net charges':'Road public-private partnerships, '+(stem.endsWith('brutos')?'gross charges':stem.endsWith('receitas')?'revenue':'net charges')),
   stem==='total-encargos-liquidos'?'É o total previsto dos encargos líquidos das parcerias público-privadas em dois mil e vinte e sete, em valores de caixa a preços constantes desse ano.':'É o valor previsto para '+minusculas(label)+' no quadro das parcerias público-privadas.',
   stem==='total-encargos-liquidos'?'It is the projected total of net public-private partnership charges in two thousand and twenty-seven, measured as cash flows at constant prices for that year.':'It is the projected value for '+minusculas(en)+' in the public-private partnership table.',
   L('name',fonte),L('document.locator','Quadro 4.25'),L('excerpt','ótica de fluxo de caixa'),L('excerpt','preços constantes de 2027')));

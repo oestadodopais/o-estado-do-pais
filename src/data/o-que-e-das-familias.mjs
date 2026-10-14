@@ -3762,8 +3762,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-ppp-rodoviario-encargos-brutos": {
     "nome": {
-      "pt": "Parcerias público-privadas rodoviárias, encargos brutos,",
-      "en": "Road public-private partnerships, gross charges,"
+      "pt": "Parcerias público-privadas rodoviárias, encargos brutos",
+      "en": "Road public-private partnerships, gross charges"
     },
     "frase": {
       "pt": [
@@ -3776,8 +3776,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-ppp-rodoviario-encargos-liquidos": {
     "nome": {
-      "pt": "Parcerias público-privadas rodoviárias, encargos líquidos,",
-      "en": "Road public-private partnerships, net charges,"
+      "pt": "Parcerias público-privadas rodoviárias, encargos líquidos",
+      "en": "Road public-private partnerships, net charges"
     },
     "frase": {
       "pt": [
@@ -3790,8 +3790,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-ppp-rodoviario-receitas": {
     "nome": {
-      "pt": "Parcerias público-privadas rodoviárias, receitas,",
-      "en": "Road public-private partnerships, revenue,"
+      "pt": "Parcerias público-privadas rodoviárias, receitas",
+      "en": "Road public-private partnerships, revenue"
     },
     "frase": {
       "pt": [
@@ -3804,8 +3804,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-ppp-total-encargos-liquidos": {
     "nome": {
-      "pt": "Parcerias público-privadas, total dos encargos líquidos,",
-      "en": "Public-private partnerships, total net charges,"
+      "pt": "Parcerias público-privadas, total dos encargos líquidos",
+      "en": "Public-private partnerships, total net charges"
     },
     "frase": {
       "pt": [
@@ -3818,8 +3818,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-saude-despesa-efetiva-consolidada-2026": {
     "nome": {
-      "pt": "Saúde, despesa efetiva consolidada, estimativa de",
-      "en": "Health, consolidated effective expenditure,"
+      "pt": "Saúde, despesa efetiva consolidada",
+      "en": "Health, consolidated effective expenditure"
     },
     "frase": {
       "pt": [
@@ -3835,8 +3835,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-saude-despesa-efetiva-consolidada-2027": {
     "nome": {
-      "pt": "Saúde, despesa efetiva consolidada, orçamento para",
-      "en": "Health, consolidated effective expenditure, budget for"
+      "pt": "Saúde, despesa efetiva consolidada",
+      "en": "Health, consolidated effective expenditure"
     },
     "frase": {
       "pt": [
@@ -3852,8 +3852,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026": {
     "nome": {
-      "pt": "Saúde, despesa efetiva consolidada sem PRR, estimativa de",
-      "en": "Health, consolidated effective expenditure excluding the RRP,"
+      "pt": "Saúde, despesa efetiva consolidada sem PRR",
+      "en": "Health, consolidated effective expenditure excluding the RRP"
     },
     "frase": {
       "pt": [
@@ -3869,8 +3869,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027": {
     "nome": {
-      "pt": "Saúde, despesa efetiva consolidada sem PRR, orçamento para",
-      "en": "Health, consolidated effective expenditure excluding the RRP, budget for"
+      "pt": "Saúde, despesa efetiva consolidada sem PRR",
+      "en": "Health, consolidated effective expenditure excluding the RRP"
     },
     "frase": {
       "pt": [
@@ -3886,8 +3886,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao": {
     "nome": {
-      "pt": "Saúde, despesa efetiva consolidada sem PRR, variação publicada entre a estimativa de",
-      "en": "Health, consolidated effective expenditure excluding the RRP, published change between the estimate for"
+      "pt": "Saúde, despesa efetiva consolidada sem PRR, variação publicada",
+      "en": "Health, consolidated effective expenditure excluding the RRP, published change"
     },
     "frase": {
       "pt": [
@@ -3900,8 +3900,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-saude-despesa-efetiva-consolidada-variacao": {
     "nome": {
-      "pt": "Saúde, despesa efetiva consolidada, variação publicada entre a estimativa de",
-      "en": "Health, consolidated effective expenditure, published change between the estimate for"
+      "pt": "Saúde, despesa efetiva consolidada, variação publicada",
+      "en": "Health, consolidated effective expenditure, published change"
     },
     "frase": {
       "pt": [
@@ -3914,8 +3914,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-saude-despesa-total-consolidada-2026": {
     "nome": {
-      "pt": "Saúde, despesa total consolidada, estimativa de",
-      "en": "Health, consolidated total expenditure,"
+      "pt": "Saúde, despesa total consolidada",
+      "en": "Health, consolidated total expenditure"
     },
     "frase": {
       "pt": [
@@ -3931,8 +3931,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-saude-despesa-total-consolidada-2027": {
     "nome": {
-      "pt": "Saúde, despesa total consolidada, orçamento para",
-      "en": "Health, consolidated total expenditure, budget for"
+      "pt": "Saúde, despesa total consolidada",
+      "en": "Health, consolidated total expenditure"
     },
     "frase": {
       "pt": [
@@ -3948,8 +3948,8 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
   },
   "oe-2027-saude-despesa-total-consolidada-variacao": {
     "nome": {
-      "pt": "Saúde, despesa total consolidada, variação publicada entre a estimativa de",
-      "en": "Health, consolidated total expenditure, published change between the estimate for"
+      "pt": "Saúde, despesa total consolidada, variação publicada",
+      "en": "Health, consolidated total expenditure, published change"
     },
     "frase": {
       "pt": [
