@@ -120,6 +120,8 @@ def medir_incorporador(dist, prova):
 
 def medir_api(raiz, prova):
     """S1: os caminhos e os nomes em `api/`, e a célula dos segredos, com as plantas."""
+    detetor.ler_proibidos()
+    positivos = detetor.positivos_de_nome()
     ficheiros = ficheiros_da_api(raiz)
     caminhos = conferir((str(p.relative_to(raiz)), p.read_bytes()) for p in ficheiros)
     achados = [{'ficheiro': str(p.relative_to(raiz)), 'segredos': s}
@@ -150,14 +152,13 @@ def medir_api(raiz, prova):
         for i, caminho in enumerate(detetor.proibidos()):
             plantas.append({'id': f'api-caminho-{i + 1}',
                             'mordeu': conferir([('api-plantado.js', corpo + b'\n// ' + caminho + b'\n')])['quantidade'] == 1})
-        nomes = detetor.nomes_dos_autores()
-        if not nomes:
-            raise ValueError('O Git não forneceu nomes para o conhecido-positivo de api/.')
-        plantas.append({'id': 'api-nome-do-git',
-                        'mordeu': conferir([('api-plantado.js', corpo + b'\n// ' + nomes[0] + b'\n')])['quantidade'] == 1})
-    passou = (bool(ficheiros) and caminhos['quantidade'] == 0 and not achados and publicas > 0
+        plantas.append({'id': 'api-nome-pessoal',
+                        'mordeu': bool(positivos) and conferir([('api-plantado.js', corpo + b'\n// ' + positivos[0] + b'\n')])['quantidade'] == 1})
+    passou = (bool(positivos) and bool(ficheiros) and caminhos['quantidade'] == 0 and not achados and publicas > 0
               and all(p['mordeu'] for p in plantas))
-    return {'ficheiros': len(ficheiros), 'caminhos_e_nomes': caminhos['quantidade'],
+    return {'ficheiros': len(ficheiros), 'conhecido_positivo_de_nome': bool(positivos),
+            'aviso': '' if positivos else 'Correu sem conhecido-positivo de nome; corrida recusada.',
+            'caminhos_e_nomes': caminhos['quantidade'],
             'achados_de_caminhos': caminhos['achados'], 'segredos': achados,
             'chaves_publicas_vistas': publicas, 'plantas': plantas, 'passou': passou}
 
@@ -180,7 +181,28 @@ def tem_estrutura_local(nome, dados):
     return any(m in nome.encode() or m in dados or m in corpo for m in ESTRUTURA_LOCAL)
 
 
+def tem_cadeia_pessoal(nome, dados, cadeias):
+    corpo = gzip.decompress(dados) if nome.endswith('.gz') else dados
+    return any(detetor.contem_cadeias(b, cadeias) for b in (os.fsencode(nome), dados, corpo))
+
+
+def plantas_pessoais():
+    # Só em memória. Os rótulos da prova nunca incluem a cadeia plantada.
+    cadeia = 'Pessoa-Sintética-RH1'.encode()
+    casos = [
+        ('texto', 'ensaio.txt', cadeia, True),
+        ('gzip', 'registo.log.gz', gzip.compress(cadeia), True),
+        ('nome', cadeia.decode() + '.txt', b'inocuo', True),
+        ('outra-caixa', 'ensaio.txt', cadeia.decode().upper().encode(), True),
+        ('binario', 'ensaio.pdf', b'%PDF\x00\xff' + cadeia + b'\x00', True),
+        ('identidades-do-projeto', 'ensaio.txt', '\n'.join(sorted(detetor.IDENTIDADES_DO_PROJETO)).encode(), False),
+    ]
+    return [{'id': 'ramo-pessoal-' + caso, 'mordeu': tem_cadeia_pessoal(nome, dados, (cadeia,)) == esperado}
+            for caso, nome, dados, esperado in casos]
+
+
 def medir_rastreados(raiz, prova):
+    cadeias = detetor.cadeias_pessoais()
     nomes = subprocess.check_output(['git', '-C', str(raiz), 'ls-files', '-z']).decode().split('\0')
     ficheiros, achados = 0, []
     for nome in filter(None, nomes):
@@ -189,7 +211,7 @@ def medir_rastreados(raiz, prova):
             continue  # Uma remoção da worktree não publica o ficheiro removido.
         ficheiros += 1
         dados = os.readlink(p).encode() if p.is_symlink() else p.read_bytes()
-        if tem_estrutura_local(nome, dados):
+        if tem_estrutura_local(nome, dados) or tem_cadeia_pessoal(nome, dados, cadeias):
             achados.append(nome)
     plantas = []
     if prova:
@@ -202,27 +224,30 @@ def medir_rastreados(raiz, prova):
         assert e_registo(nome), 'A planta inócua tem de entrar no detetor dos registos.'
         plantas.append({'id': 'ramo-estrutura-inocua', 'mordeu': not tem_estrutura_local(nome, gzip.compress(b'<worktree>/dist <sitio>/src <motor>/content')), 'mensagem': 'Registo comprimido dentro do âmbito, com marcadores portáveis, lido e aceite.'})
     if prova:
+        plantas.extend(plantas_pessoais())
         plantas.append({'id': 'guiao-com-casa-portavel', 'mordeu': not tem_estrutura_local('scripts/ensaio.sh', b'$HOME/' + ESTRUTURA_LOCAL[0] + b'ResearchHub'), 'mensagem': 'Caminho relativo à casa permitido no guião.'})
     return {'ficheiros': ficheiros, 'quantidade': len(achados), 'achados': achados, 'plantas': plantas,
             'passou': ficheiros > 0 and not achados and all(p['mordeu'] for p in plantas)}
 
 
 def medir(dist, prova):
+    detetor.ler_proibidos()
+    nomes = detetor.positivos_de_nome()
     ficheiros = sorted(p for p in dist.rglob('*') if p.is_file())
     r = conferir((str(p.relative_to(dist)), p.read_bytes()) for p in ficheiros)
     r['plantas'] = []
+    r['conhecido_positivo_de_nome'] = bool(nomes)
+    r['aviso'] = '' if nomes else 'Correu sem conhecido-positivo de nome; corrida recusada.'
     if prova:
         pagina = next((p for p in ficheiros if p.suffix == '.html'), None)
         if pagina is None: raise ValueError('Falta uma página construída para plantar o nome.')
         corpo = pagina.read_bytes()
-        nomes = detetor.nomes_dos_autores()
-        if not nomes: raise ValueError('O Git não forneceu nomes para o conhecido-positivo.')
         # As cópias são só em memória. Nenhum nome vai para a prova escrita.
         for i, nome in enumerate(nomes):
             copia = corpo.replace(b'</body>', b'<p>'+nome+b'</p></body>')
             if copia == corpo: raise ValueError('A planta não encontrou o corpo da página.')
             plantada = conferir([('pagina-construida.html', copia)])
-            r['plantas'].append({'id':f'nome-do-git-{i+1}', 'pagina_base':str(pagina.relative_to(dist)),
+            r['plantas'].append({'id':f'nome-pessoal-{i+1}', 'pagina_base':str(pagina.relative_to(dist)),
                                 'mordeu':plantada['quantidade']==1, 'falha':'nome pessoal ou caminho local na página construída'})
         from unittest.mock import patch
         # O nome real é lido e plantado só em memória, nunca no resultado.
@@ -249,12 +274,33 @@ def medir(dist, prova):
     r['api'] = medir_api(RAIZ, prova)
     r['rastreado'] = medir_rastreados(RAIZ, prova)
     r['incorporador'] = medir_incorporador(dist, prova)
-    r['passou'] = bool(ficheiros) and r['quantidade']==0 and all(p['mordeu'] for p in r['plantas']) and r['api']['passou'] and r['rastreado']['passou'] and r['incorporador']['passou']
+    r['passou'] = bool(nomes) and bool(ficheiros) and r['quantidade']==0 and all(p['mordeu'] for p in r['plantas']) and r['api']['passou'] and r['rastreado']['passou'] and r['incorporador']['passou']
     return r
+
+
+def json_seguro(resultado):
+    texto = json.dumps(resultado, ensure_ascii=False, indent=2) + '\n'
+    fugas = sum(detetor.contem_cadeias(texto.encode(), (c,)) for c in detetor.cadeias_pessoais())
+    if fugas:
+        raise ValueError(f'Privacidade: {fugas} cadeia(s) ia(m) sair; o JSON não se imprime nem se escreve.')
+    return texto
+
 
 if __name__ == '__main__':
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--dist',type=Path,default=RAIZ/'dist');ap.add_argument('--prova',action='store_true');ap.add_argument('--json',type=Path)
-    args=ap.parse_args();r=medir(args.dist,args.prova)
-    if args.json: args.json.write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n')
-    print(json.dumps(r,ensure_ascii=False,indent=2));raise SystemExit(not r['passou'])
+    args = ap.parse_args()
+    try:
+        detetor.carregar_proibidos_locais()
+        r = medir(args.dist, args.prova)
+        texto = json_seguro(r)
+        if args.json:
+            args.json.write_text(texto, encoding='utf-8')
+    except ValueError as erro:
+        print(str(erro), file=sys.stderr)
+        raise SystemExit(1)
+    except (OSError, subprocess.SubprocessError):
+        print('Privacidade: não foi possível ler uma fonte; corrida recusada.', file=sys.stderr)
+        raise SystemExit(1)
+    print(texto, end='')
+    raise SystemExit(not r['passou'])

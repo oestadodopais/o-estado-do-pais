@@ -67,6 +67,10 @@ concurrency:
 
 jobs:
   portao:
+    # RH1: os nomes privados vêm do segredo, mesmo após a reescrita do Git.
+    # Sem o segredo ou com a lista vazia, a conferência fica vermelha.
+    env:
+      PRIVACIDADE_PROIBIDOS: ${{ secrets.PRIVACIDADE_PROIBIDOS }}
     # O anfitrião está preso ao maior, e não a `ubuntu-latest`, de propósito: a
     # 02.09.2026 o `ubuntu-latest` resolvia para esta mesma imagem
     # (`Image: ubuntu-24.04`, lido no passo «Set up job» da corrida 33593721414),

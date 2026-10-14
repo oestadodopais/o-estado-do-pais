@@ -30,6 +30,69 @@ CONTAS_GENERICAS = frozenset({'runner'})
 # A raiz e os diretórios comuns de contas não identificam uma pessoa.
 PASTAS_GENERICAS = frozenset(Path('/') / n for n in ('', 'Users', 'home'))
 
+# RH1: identidades públicas, mesmo depois de reescritos os autores do Git.
+IDENTIDADES_DO_PROJETO = frozenset({
+    'O Estado do País', 'Corredor diário', 'o financiador',
+    'correcoes@oestadodopais.pt', 'corredor@oestadodopais.pt', 'oestadodopais',
+})
+
+
+def carregar_proibidos_locais():
+    """Só os pontos de entrada locais leem o ficheiro; importar não o lê."""
+    if 'PRIVACIDADE_PROIBIDOS' not in os.environ and not em_ci():
+        ficheiro = Path.home() / '.config/oestadodopais/proibidos.txt'
+        if ficheiro.is_file():
+            os.environ['PRIVACIDADE_PROIBIDOS'] = ficheiro.read_text(encoding='utf-8')
+
+
+def em_ci():
+    return 'GITHUB_ACTIONS' in os.environ or 'CI' in os.environ
+
+
+@lru_cache(maxsize=16)
+def _ler_proibidos(valor, ci):
+    cadeias = []
+    identidades = {n.casefold() for n in IDENTIDADES_DO_PROJETO}
+    for linha, texto in enumerate((valor or '').splitlines(), 1):
+        texto = texto.strip()
+        if not texto:
+            continue
+        if len(texto) < 4 or texto.casefold() in identidades:
+            raise ValueError(f'PRIVACIDADE_PROIBIDOS: linha {linha} inválida (curta ou identidade do projeto).')
+        cadeias.append(texto.encode('utf-8'))
+    if ci and not cadeias:
+        raise ValueError('O segredo PRIVACIDADE_PROIBIDOS tem de existir no repositório (§1.192) e não pode estar vazio.')
+    return tuple(cadeias)
+
+
+def ler_proibidos():
+    return _ler_proibidos(os.environ.get('PRIVACIDADE_PROIBIDOS'), em_ci())
+
+
+def nome_da_casa():
+    nome = Path.home().name
+    return nome.encode() if len(nome) >= 6 and nome.casefold() not in CONTAS_GENERICAS else b''
+
+
+def cadeias_pessoais():
+    return tuple(dict.fromkeys(ler_proibidos() + nomes_dos_autores() +
+                              ((nome_da_casa(),) if nome_da_casa() else ())))
+
+
+def contem_cadeias(corpo, cadeias):
+    # A leitura em bytes cobre binários; casefold cobre também maiúsculas UTF-8.
+    baixo = corpo.lower()
+    texto = corpo.decode('utf-8', errors='replace').casefold()
+    return any(c.lower() in baixo or c.decode('utf-8').casefold() in texto for c in cadeias)
+
+
+def positivos_de_nome():
+    nomes = nomes_dos_autores()
+    if nomes:
+        return nomes
+    segredo = ler_proibidos()
+    return segredo[:1] or ((nome_da_casa(),) if nome_da_casa() else ())
+
 def proibidos(pasta=None):
     pasta = Path.home() if pasta is None else Path(pasta)
     caminhos = []
@@ -49,14 +112,18 @@ ABSOLUTO = re.compile(rb'(?<![A-Za-z0-9:/])/(?:opt|usr|Library|Applications|Syst
 
 @lru_cache(maxsize=1)
 def nomes_dos_autores():
-    nomes = git('log', '--format=%an', f'{BASE}..HEAD').splitlines()
+    base_existe = subprocess.run(['git', 'cat-file', '-e', BASE], cwd=RAIZ,
+                                capture_output=True).returncode == 0
+    nomes = git('log', '--format=%an', f'{BASE}..HEAD' if base_existe else 'HEAD').splitlines()
     # Os nomes retirados do inventário vêm do Git, nunca de uma lista pessoal.
-    inventario = git('show', f'{BASE}:design/especime-v3/INVENTARIO-FRASES.md')
+    inventario = git('show', f'{BASE}:design/especime-v3/INVENTARIO-FRASES.md') if base_existe else ''
     nomes.extend(re.findall(r'(?:responsável editorial:|editorial responsibility:|Diretor:|Director:) ([^|·\n]+)', inventario))
     return tuple(sorted({n.strip().encode() for n in nomes if n.strip() and
+                         n.strip().casefold() not in {x.casefold() for x in IDENTIDADES_DO_PROJETO} and
                          not any(x in n.lower() for x in ('codex', 'claude', 'bot', 'openai'))}))
 
 def tem_caminho(b):
+    pessoais = contem_cadeias(b, cadeias_pessoais())
     # Estes dois nomes de intérpretes são portáveis, não caminhos desta máquina.
     b = b.replace(('/' + 'usr/bin/env').encode(), b'<interprete portavel>').replace(('/' + 'bin/sh').encode(), b'<interprete portavel>')
     # São ligações relativas da navegação do BCE nos corpos alojados. A
@@ -66,7 +133,7 @@ def tem_caminho(b):
     anfitriao = re.search(rb'\b[a-z0-9_-]*(?:macbook|imac|mac-mini|macmini)[a-z0-9_.-]*\.local\b', b, re.I)
     return (bool(anfitriao or ABSOLUTO.search(sem_navegacao))
             or any(x.lower() in (sem_navegacao if x.startswith(b'/') else b).lower() for x in proibidos())
-            or any(x.lower() in b.lower() for x in nomes_dos_autores()))
+            or pessoais)
 
 def medir_caminhos():
     erros, total, historia = [], 0, 0
@@ -137,6 +204,8 @@ def commits(repo, base):
     return [{'hash': l.split(' ', 1)[0], 'assunto': l.split(' ', 1)[1]} for l in git('log', '--reverse', '--format=%H %s', f'{base}..HEAD', cwd=repo).splitlines()]
 
 def main():
+    carregar_proibidos_locais()
+    ler_proibidos()
     portoes = {}
     for nome in ['build', 'verify', 'typecheck']:
         p = AQUI / 'portoes' / nome
