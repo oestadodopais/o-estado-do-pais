@@ -465,7 +465,7 @@ Entrada do sítio: `58ae1d64`; entrada do motor: `d8410f79`. As duas árvores es
 - **V2A-63, achado 12:** a página do PCP nomeia o relatório do Orçamento do Estado e o quadro quatro ponto vinte e cinco. O ano vem do token do período. A edição inglesa traduz a afirmação com atribuição a Paulo Raimundo, usando o valor da própria linha, e mantém a transcrição portuguesa pelo token do excerto. Nenhum valor novo foi criado.
 - **V2A-64, achado 13:** a conferência das comparações do PRR inclui Leitão Amaro. As plantas invertem a direção da explicação nessa página e na variação sem PRR, em ambas as edições. A conferência independente do índice lê os dois localizadores de todas as linhas V2-a, com alteração plantada em cada campo.
 - **V2A-65, achado 14:** saiu a linha que deixava o custo D por acrescentar. O custo D permanece uma vez na secção E. O custo E comunicado pela direção está abaixo.
-- **V2A-66:** os portões finais correm pelo escrivão porque o navegador das conferências não arranca na sandbox. A exclusão temporária da pasta dos registos é preparada antes do commit de provas. Não haverá escritas do construtor durante a corrida. Na preparação, a primeira conferência estática do índice começou enquanto a construção ainda substituía o `dist/` e encontrou os índices ausentes; foi repetida apenas depois de a construção terminar e passou. Os dois registos ficam conservados.
+- **V2A-66:** os portões finais correm pelo escrivão porque o navegador das conferências não arranca na sandbox. A exclusão temporária da pasta dos registos é preparada antes do commit de provas. Não houve escritas do construtor durante a corrida. O pedido aguardou a tranca comum, ocupada por outra worktree, e os portões correram depois de ela ser libertada. Na preparação, a primeira conferência estática do índice começou enquanto a construção ainda substituía o `dist/` e encontrou os índices ausentes; foi repetida apenas depois de a construção terminar e passou. Os dois registos ficam conservados.
 
 ### O que cada achado ganhou
 
@@ -488,6 +488,39 @@ V2-a-e, conforme o mandato: 137 turnos, 571 271 de custo antigo, 6 pontos da sem
 
 ### Conferências e fecho
 
-A preparação confirmou os dezoito valores e unidades inalterados e os objetos Git das 3 211 linhas anteriores. As provas do motor passaram, incluindo o corte não assinalado. As provas do HTML passaram nas duas edições. O fecho acrescentará os códigos lidos dos quatro ficheiros, as cabeças, o catálogo de mensagens das plantas e a inspeção das capturas.
+A preparação confirmou os dezoito valores e unidades inalterados e os objetos Git das 3 211 linhas anteriores. As provas do motor passaram, incluindo o corte não assinalado. As provas do HTML passaram nas duas edições. Os resultados finais, as cabeças e a inspeção das capturas estão registados abaixo.
 
 O commit do motor `c239badfd9152633345133e5ab05dee560bd732e` passou o seu `core.gate`. A preparação do sítio passou a voz, os cartões, o índice estático, os tipos e as provas do HTML. Foram registadas 164 mensagens distintas de plantas em `plantas-f.json`, com ficheiro e linha; os portões finais confirmarão o conjunto na cabeça comitada.
+
+
+### Fecho medido da passagem F
+
+Cabeça do código do sítio, dos quatro portões e do `dist/` capturado: `a0440b562734d23344c2c6c431de826f287a6456`. Cabeça final e do código do motor: `c239badfd9152633345133e5ab05dee560bd732e`. As cabeças iniciais e finais dos portões coincidem; `estado.fim` e `motor.estado.fim` têm zero bytes. Os commits seguintes do sítio guardam apenas as provas da entrega. A cabeça final do sítio consta da resposta de entrega.
+
+| Ficheiro lido | Código |
+|---|---|
+| `portoes-f/build.codigo` | 0 |
+| `portoes-f/verify.codigo` | 0 |
+| `portoes-f/typecheck.codigo` | 0 |
+| `portoes-f/motor.codigo` | 0 |
+
+As 86 plantas do HTML passaram nas 36 páginas. O catálogo `plantas-f.json` conserva 165 mensagens distintas do circuito V2-a, cada uma com o ficheiro e a linha onde foi emitida; usa a ocorrência final dos portões quando ela existe. As provas novas incluem:
+
+- Retirar o qualificador do PRR na variação total e na RTP, nas duas edições: `V2AF total: falta o qualificador PRR ou o apoio`.
+- Retirar a ressalva ou fechar o excerto: `V2AF total: ressalva sem PRR` e `V2AF total: excerto da Saúde fechado`.
+- Inverter a explicação na variação sem PRR e em Leitão Amaro: `V2AE PRR: falta o nome, a explicação ou o apoio`. As mutações estão em `tests/linha/v2a.mjs:149`, nas duas edições; conservam-se também as plantas que retiram os apoios.
+- Trocar o rótulo de passagem por definição: `V2AF apoio: passagem rotulada como definição`. Na declaração, retirar o tipo ou fechar a passagem da Saúde produz `V2AF origem: apoio sem tipo de passagem` ou `V2AF origem: passagem da Saúde fechada`.
+- Voltar a atribuir a soma ao total ou omitir a ausência de explicação: `V2AF PPP: soma atribuída ao total ou diferença omitida`.
+- Retirar o nome do relatório da página do PCP: `V2AF PCP: falta o relatório ou a afirmação em inglês`.
+- Alterar `locator` e `locator_en` de cada uma das dezoito linhas: `V2AF localizador`, seguido do campo e do identificador, com 36 mensagens distintas.
+- Cortar uma linha intermédia do excerto dos setores no motor: `V2AF apoio: excerto não contíguo`.
+
+`inspecao-f.json` confirma os dezoito valores e unidades inalterados e as 3 211 linhas anteriores intactas. `medidas-f.json` confirma os oito documentos pelo SHA256. `frases-f.md` transcreve do HTML as frases «o que é» da variação total, da RTP e do total das parcerias nas duas edições, na cabeça conferida.
+
+As capturas estão em `design/especime-v3/capturas/v2a-2026-10-12/f/`: dezasseis páginas, duas edições, cinco larguras, 160 casos e 480 PNG. Todos os SHA256 e dimensões foram conferidos; não houve transbordos, pedidos externos ou erros. Foram inspecionadas visualmente as 32 cabeças móveis e as 12 cabeças largas das páginas de Leitão Amaro, PCP, RTP, total das parcerias, variação sem PRR e variação total. `capturas-inspecao-f.json` lista os 44 ficheiros observados. Não foram observados cortes, sobreposição ou perda de palavras.
+
+**V2A-67:** a L1 mantém as 2 780 páginas com destino repetido e não muda nenhuma multiplicidade contra a passagem E. A comparação integral está em `l1-comparacao-f.json`.
+
+A passagem F fica entregue para a leitura a frio da direção. Não houve fusão de `main` ou `master`, nem publicação ou `git push`.
+
+Commits desta passagem: código e provas do sítio em `a0440b56`; primeira parte das capturas em `0d311c37`; motor em `c239badf`. O commit final do sítio guarda as restantes capturas, os códigos e o relatório, sem mudar o código conferido.

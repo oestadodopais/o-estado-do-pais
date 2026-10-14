@@ -1,0 +1,448 @@
+{
+  "cabeca": "a0440b562734d23344c2c6c431de826f287a6456",
+  "inicio": "2026-10-14T16:58:37.854Z",
+  "fim": "2026-10-14T17:06:24.910Z",
+  "segundos": 467.056,
+  "passos": [
+    {
+      "passo": "cadeia:build",
+      "cadeia": "build",
+      "inicio": "2026-10-14T16:58:37.854+00:00",
+      "fim": "2026-10-14T17:02:03.294+00:00",
+      "segundos": 205.44044495897833,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run mapa:unidades",
+      "cadeia": "build",
+      "inicio": "2026-10-14T16:58:37.854+00:00",
+      "fim": "2026-10-14T16:58:37.982+00:00",
+      "segundos": 0.12771412503207102,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run ledger:check",
+      "cadeia": "build",
+      "inicio": "2026-10-14T16:58:37.982+00:00",
+      "fim": "2026-10-14T16:58:42.900+00:00",
+      "segundos": 4.917647792026401,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:registo",
+      "cadeia": "build",
+      "inicio": "2026-10-14T16:58:42.900+00:00",
+      "fim": "2026-10-14T16:58:43.215+00:00",
+      "segundos": 0.31535833299858496,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:cruzamento",
+      "cadeia": "build",
+      "inicio": "2026-10-14T16:58:43.215+00:00",
+      "fim": "2026-10-14T16:58:43.653+00:00",
+      "segundos": 0.43787500000325963,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:documentos",
+      "cadeia": "build",
+      "inicio": "2026-10-14T16:58:43.653+00:00",
+      "fim": "2026-10-14T16:58:43.809+00:00",
+      "segundos": 0.15593137498944998,
+      "codigo": 0
+    },
+    {
+      "passo": "astro build",
+      "cadeia": "build",
+      "inicio": "2026-10-14T16:58:43.809+00:00",
+      "fim": "2026-10-14T16:58:55.275+00:00",
+      "segundos": 11.46527145896107,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run stamp:version",
+      "cadeia": "build",
+      "inicio": "2026-10-14T16:58:55.275+00:00",
+      "fim": "2026-10-14T16:58:55.402+00:00",
+      "segundos": 0.12701104203006253,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run cartoes",
+      "cadeia": "build",
+      "inicio": "2026-10-14T16:58:55.402+00:00",
+      "fim": "2026-10-14T16:59:24.294+00:00",
+      "segundos": 28.8926540419925,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run gate:html",
+      "cadeia": "build",
+      "inicio": "2026-10-14T16:59:24.295+00:00",
+      "fim": "2026-10-14T16:59:58.394+00:00",
+      "segundos": 34.09980895899935,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:datas",
+      "cadeia": "build",
+      "inicio": "2026-10-14T16:59:58.394+00:00",
+      "fim": "2026-10-14T16:59:59.810+00:00",
+      "segundos": 1.4154799170210026,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:cadeia",
+      "cadeia": "build",
+      "inicio": "2026-10-14T16:59:59.810+00:00",
+      "fim": "2026-10-14T17:00:00.037+00:00",
+      "segundos": 0.2275094169890508,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:dados",
+      "cadeia": "build",
+      "inicio": "2026-10-14T17:00:00.038+00:00",
+      "fim": "2026-10-14T17:00:01.526+00:00",
+      "segundos": 1.4887252500047907,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:mapa",
+      "cadeia": "build",
+      "inicio": "2026-10-14T17:00:01.526+00:00",
+      "fim": "2026-10-14T17:00:01.916+00:00",
+      "segundos": 0.38940279197413474,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:regioes",
+      "cadeia": "build",
+      "inicio": "2026-10-14T17:00:01.916+00:00",
+      "fim": "2026-10-14T17:00:02.201+00:00",
+      "segundos": 0.2851710410322994,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:areas",
+      "cadeia": "build",
+      "inicio": "2026-10-14T17:00:02.201+00:00",
+      "fim": "2026-10-14T17:00:02.625+00:00",
+      "segundos": 0.42377045803004876,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:formas",
+      "cadeia": "build",
+      "inicio": "2026-10-14T17:00:02.625+00:00",
+      "fim": "2026-10-14T17:00:10.507+00:00",
+      "segundos": 7.881336582999211,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:lugares",
+      "cadeia": "build",
+      "inicio": "2026-10-14T17:00:10.507+00:00",
+      "fim": "2026-10-14T17:00:11.914+00:00",
+      "segundos": 1.4075160829816014,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:pais",
+      "cadeia": "build",
+      "inicio": "2026-10-14T17:00:11.914+00:00",
+      "fim": "2026-10-14T17:01:04.674+00:00",
+      "segundos": 52.76010770798894,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:voz",
+      "cadeia": "build",
+      "inicio": "2026-10-14T17:01:04.674+00:00",
+      "fim": "2026-10-14T17:01:41.317+00:00",
+      "segundos": 36.64308579202043,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:nomes",
+      "cadeia": "build",
+      "inicio": "2026-10-14T17:01:41.318+00:00",
+      "fim": "2026-10-14T17:01:44.143+00:00",
+      "segundos": 2.8258472089655697,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:lingua",
+      "cadeia": "build",
+      "inicio": "2026-10-14T17:01:44.144+00:00",
+      "fim": "2026-10-14T17:01:50.465+00:00",
+      "segundos": 6.321596334048081,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:formato",
+      "cadeia": "build",
+      "inicio": "2026-10-14T17:01:50.465+00:00",
+      "fim": "2026-10-14T17:01:51.267+00:00",
+      "segundos": 0.8017481249989942,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:navegacao",
+      "cadeia": "build",
+      "inicio": "2026-10-14T17:01:51.267+00:00",
+      "fim": "2026-10-14T17:02:02.143+00:00",
+      "segundos": 10.875617249985225,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run sinais",
+      "cadeia": "build",
+      "inicio": "2026-10-14T17:02:02.143+00:00",
+      "fim": "2026-10-14T17:02:03.293+00:00",
+      "segundos": 1.1505127499694936,
+      "codigo": 0
+    },
+    {
+      "passo": "cadeia:verify",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:02:04.218Z",
+      "fim": "2026-10-14T17:06:24.570Z",
+      "segundos": 260.353335709,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:alvos",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:02:04.883Z",
+      "fim": "2026-10-14T17:05:05.322Z",
+      "segundos": 180.43978395800002,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:palavras",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:02:04.884Z",
+      "fim": "2026-10-14T17:04:59.679Z",
+      "segundos": 174.795835541,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:moldura",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:02:04.884Z",
+      "fim": "2026-10-14T17:04:21.228Z",
+      "segundos": 136.34407745900003,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:lugar",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:02:04.885Z",
+      "fim": "2026-10-14T17:02:45.962Z",
+      "segundos": 41.076974,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:indice",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:02:45.962Z",
+      "fim": "2026-10-14T17:03:05.665Z",
+      "segundos": 19.702894582999996,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:cartao",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:03:05.666Z",
+      "fim": "2026-10-14T17:03:32.967Z",
+      "segundos": 27.300689458000008,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:cabeca",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:03:32.967Z",
+      "fim": "2026-10-14T17:03:38.715Z",
+      "segundos": 5.747456874999989,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:css",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:03:38.715Z",
+      "fim": "2026-10-14T17:03:44.828Z",
+      "segundos": 6.1132955420000075,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:alcance",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:03:44.829Z",
+      "fim": "2026-10-14T17:03:49.939Z",
+      "segundos": 5.110751250000001,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:briefs",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:03:49.940Z",
+      "fim": "2026-10-14T17:03:50.190Z",
+      "segundos": 0.2508666249999951,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:leituras",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:03:50.191Z",
+      "fim": "2026-10-14T17:04:12.544Z",
+      "segundos": 22.352873208000005,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:fontes",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:04:12.544Z",
+      "fim": "2026-10-14T17:04:13.792Z",
+      "segundos": 1.2480053340000012,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run mapa:unidades -- --verifica",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:04:13.792Z",
+      "fim": "2026-10-14T17:04:13.951Z",
+      "segundos": 0.15903795899999387,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:pais:auto-teste",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:04:13.951Z",
+      "fim": "2026-10-14T17:04:15.356Z",
+      "segundos": 1.405042499999996,
+      "codigo": 0
+    },
+    {
+      "passo": "auto-teste:pais",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:04:14.090Z",
+      "fim": "2026-10-14T17:04:15.347Z",
+      "segundos": 1.255081583,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run provar:eyetext",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:04:15.357Z",
+      "fim": "2026-10-14T17:04:15.776Z",
+      "segundos": 0.41920520899997793,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run provar:guardas",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:04:15.776Z",
+      "fim": "2026-10-14T17:04:15.943Z",
+      "segundos": 0.1663954589999921,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:mortos",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:04:15.943Z",
+      "fim": "2026-10-14T17:04:17.908Z",
+      "segundos": 1.9651736249999958,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:primeira",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:04:17.908Z",
+      "fim": "2026-10-14T17:06:21.581Z",
+      "segundos": 123.67340766599999,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:privacidade",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:04:21.228Z",
+      "fim": "2026-10-14T17:04:53.090Z",
+      "segundos": 31.86160400000002,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:sugestoes",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:04:53.090Z",
+      "fim": "2026-10-14T17:04:53.345Z",
+      "segundos": 0.25460129200000664,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:rotulos",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:04:53.345Z",
+      "fim": "2026-10-14T17:04:56.918Z",
+      "segundos": 3.5729741249999787,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:series",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:04:56.918Z",
+      "fim": "2026-10-14T17:05:00.566Z",
+      "segundos": 3.6477412079999922,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:indice-do-sitio",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:04:59.679Z",
+      "fim": "2026-10-14T17:05:17.078Z",
+      "segundos": 17.39940312499998,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:explicacoes",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:05:00.566Z",
+      "fim": "2026-10-14T17:05:05.913Z",
+      "segundos": 5.346792459000018,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:frases-compostas",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:05:05.322Z",
+      "fim": "2026-10-14T17:05:39.582Z",
+      "segundos": 34.260019583000016,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run check:incorporar",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:05:05.913Z",
+      "fim": "2026-10-14T17:05:26.660Z",
+      "segundos": 20.746461625000027,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run design:feixe",
+      "cadeia": "verify",
+      "inicio": "2026-10-14T17:06:21.581Z",
+      "fim": "2026-10-14T17:06:23.498Z",
+      "segundos": 1.916898125000007,
+      "codigo": 0
+    },
+    {
+      "passo": "npm run typecheck",
+      "cadeia": "typecheck",
+      "inicio": "2026-10-14T17:06:24.713+00:00",
+      "fim": "2026-10-14T17:06:24.910+00:00",
+      "segundos": 0.19666179199703038,
+      "codigo": 0
+    }
+  ]
+}
