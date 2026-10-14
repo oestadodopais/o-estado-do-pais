@@ -1,4 +1,4 @@
-**RH1: a primeira entrega ficou vermelha; a passagem RH1-b, abaixo, fecha os três portões a zero.**
+**RH1: a primeira entrega ficou vermelha; as passagens RH1-b e RH1-c, abaixo, fecham os três portões a zero.**
 
 O texto até à secção «A passagem RH1-b» conserva o registo histórico da primeira entrega.
 
@@ -90,3 +90,46 @@ A passagem começou em `fbb4c19b`, o mandato acrescentado pelo lugar de direçã
 - **RH1-9, decidida:** migrar também a dependência ativa do M5. Apagar o campo deixando essa leitura quebrada teria fechado o verify por uma falha de execução, sem preservar a sua medição.
 
 Não ficou nenhuma questão desta correção por resolver. A reescrita da história e a configuração dos segredos de produção continuam fora desta passagem.
+
+## A passagem RH1-c
+
+A passagem começou limpa em `5c48da4c`, com o mandato e a leitura a frio acrescentados pelo lugar de direção. Foram tratados o achado 6, os achados 8 a 11 e a observação sobre as plantas dentro do achado 1. Os defeitos numerados 1, 3, 4, 5 e 7 eram plantas nas cópias do pacote e não existiam no ramo. O achado 2 pertence à reescrita posterior da história; nenhuma cadeia pessoal foi reproduzida nesta entrega.
+
+| Achado real | Correção e referência na cabeça do código |
+|---|---|
+| 6, normalização | `_ler_proibidos` retira BOM e espaços das pontas, normaliza em NFC e recusa controlos, caracteres de formato, separadores interiores e valores curtos, indicando só a posição da linha. `contem_cadeias` compara o texto em NFC com `casefold`. `design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py:55`, `:119`. As plantas do BOM, da forma abreviada limpa, da página em NFD e do formato recusado vivem em `scripts/check-privacidade.py:212`. |
+| 8, representações | A comparação dos bytes inclui UTF-16 nas duas ordens e Latin-1; a comparação do texto desfaz entidades HTML e escapes Unicode quando os encontra. `design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py:105`, `:119`. Há uma planta em memória por codificação e por forma de entidade ou escape em `scripts/check-privacidade.py:237`. Flate fica explicitamente fora, na RH1-10 abaixo. |
+| 9, identidades públicas | Cada identidade é ensaiada como segredo que tem de ser recusado e como autor do Git que tem de ser excluído. As leituras do Git são simuladas em memória, sem usar nem alterar a cache dos autores reais. `scripts/check-privacidade.py:194`; `design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py:159`, `:171`. |
+| 1, observação sobre a decisão | `recusar_rastreado` contém a união por `or` e é chamada pelo varrimento real e pelas plantas. Estas isolam uma cadeia pessoal sem estrutura local, uma estrutura sem cadeia e um controlo inócuo. `scripts/check-privacidade.py:189`, `:237`, `:290`. O ensaio troca essa união por `and` em memória e confirma que as plantas do próprio portão ficam vermelhas. `tests/leituras/privacidade-rh1c.py:16`. |
+| 10, localização da guarda | O comentário em `scripts/gate-html.mjs:374` aponta para `check:privacidade` no `verify`, e esta secção explicita a obrigação de ambos os portões. |
+| 11, reprodução | `design/especime-v3/medicoes/rh1-2026-10-14/medir-b.py:57`, com `--reproduzir-b`, reproduz as contagens das auditorias e mede `marca_depois` e `alvos`. O resultado desta passagem está em `medidas-c.json`, no campo `reproducao_b`. A condição relativa ao segredo da conta está explicitada abaixo. |
+
+A conferência pessoal saiu do `gate:html`, que corre no `build`, e vive em `check:privacidade`, que corre no `verify`; ambos são obrigatórios no portão do GitHub e nos portões locais, e uma construção sozinha nunca foi condição de aterragem. A recusa de `data-rotulo-nome` dentro do rótulo permanece no HTML; a decisão sobre a antiga contagem global continua fundamentada na medição anterior da RH1-b.
+
+O nome da conta do GitHub é detetado quando essa cadeia estiver no segredo `PRIVACIDADE_PROIBIDOS`, que o lugar de direção cria com o financiador. Esta passagem não criou nem confirmou esse segredo de produção, e não atribui proteção antecipada a uma cadeia que ainda não esteja configurada.
+
+As 45 plantas do ensaio RH1-c passaram. Incluem as plantas em memória do portão, a recusa da corrida por caracteres interiores inválidos, CRLF, o mínimo depois de NFC, a ausência de descodificação de entidades num texto sem entidades e as mutações da união e das exclusões públicas. As plantas de UTF-16, Latin-1, entidade nomeada, entidade decimal, entidade hexadecimal e escape Unicode são individuais. O `check:leituras` descobriu o novo guião e passou a zero, assim como RH1, RH1-b e JD1. `check:briefs` também passou. Fontes: `medidas-c.json` e `portoes-c/verify.log`.
+
+A medição da cabeça do código conferiu 24 551 ficheiros seguidos, sem ocorrências, e as 38 plantas do varrimento passaram. Nos portões foram lidos 24 553 ficheiros seguidos e 14 798 ficheiros de `dist/`, sem ocorrências. A diferença nos seguidos corresponde aos dois ficheiros de provas comitados antes da corrida. As 38 plantas dos seguidos e as 26 plantas de `dist/` passaram. Não se somam estes conjuntos ao ensaio RH1-c, porque há plantas comuns. Fontes: `medidas-c.json` e `portoes-c-resumo.json`.
+
+Os comandos de reprodução, a partir da raiz da worktree, são:
+
+```sh
+sh scripts/leituras/curto.sh design/especime-v3/medicoes/rh1-2026-10-14/reproduzir-b-local.log python3 design/especime-v3/medicoes/rh1-2026-10-14/medir-b.py --reproduzir-b
+sh scripts/leituras/curto.sh design/especime-v3/medicoes/rh1-2026-10-14/medicao-c.log python3 design/especime-v3/medicoes/rh1-2026-10-14/medir-c.py
+sh scripts/leituras/curto.sh design/especime-v3/medicoes/rh1-2026-10-14/resumo-portoes-c.log python3 design/especime-v3/medicoes/rh1-2026-10-14/medir-c.py --portoes
+```
+
+A reprodução das auditorias conta os ficheiros nas cabeças históricas `6c107622` e `24f4298c`, excluindo o próprio registo de cada auditoria. Na segunda acrescenta o `portoes-b/alvos.json` local, cuja presença é exigida, pois estava ignorado. Reproduziu 26 e 51 ficheiros. Não conta retroativamente os ficheiros acrescentados na RH1-c. A medição de `marca_depois` lê o `dist/` e o `src/` presentes e publica `versao_dist`, para identificar a construção realmente lida; `alvos` mede o ficheiro local e consulta o Git quanto à exclusão e ao seguimento. O resultado guardado em `medidas-c.json` foi obtido antes dos novos portões, sobre a construção da RH1-b.
+
+| Portão RH1-c | Código lido | Ficheiro |
+|---|---|---|
+| build | 0 | `portoes-c/build.codigo` |
+| verify | 0 | `portoes-c/verify.codigo` |
+| typecheck | 0 | `portoes-c/typecheck.codigo` |
+
+As células de união, imutabilidade e coerência da cabeça passaram. A cabeça do código é `a1f6094e0f5625b71f32f9bf2a8c488930ecd49a`. O último commit de provas é `34129b6f2566a8e43f110b52fa74ab50cdf29576`, igual à cabeça de início e de fim dos portões. A árvore estava limpa ao arrancar e não houve escrita do construtor durante a corrida. A entrega posterior acrescenta apenas o relatório e os artefactos dos resultados. O motor não foi tocado e nada foi publicado.
+
+- **RH1-10, aberta e fora deste bloco:** o detetor não descomprime fluxos Flate dos PDF. A contagem pelo `git ls-files -z`, filtrada pela extensão em `medir-c.py:34`, encontrou zero PDF seguidos no repositório do sítio. Os corpos alojados vivem no motor, que não foi conferido nesta passagem. A ausência de PDF seguidos aqui não demonstra proteção de fluxos comprimidos.
+- **RH1-11, decidida:** só LF separa entradas do segredo; CRLF é aceite pelas pontas. Um separador Unicode interior é recusado, em vez de dividir silenciosamente a linha em duas cadeias aceites. As linhas vazias continuam ignoradas, e uma lista vazia em CI continua recusada.
+- **RH1-12, decidida:** reproduzir o âmbito histórico das auditorias pelas cabeças registadas, em vez de apresentar a contagem atual de uma pasta que entretanto cresceu como se fosse a contagem anterior. A cópia local ignorada dos alvos permanece uma condição explícita da segunda reprodução.
