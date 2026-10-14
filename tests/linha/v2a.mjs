@@ -34,6 +34,7 @@ export function conferir(c,lang,html) {
     if(!c.document.locator.includes(ano+', '+(ano==='2026'?'Estimativa':'Orçamento')) || [cabeca,frase].some(x=>!x.toLowerCase().includes(coluna)||!x.includes(anos[ano])||!x.includes('Conta do Pograma Legado'))) erros.push('V2AC Saúde: falta o ano, a coluna ou a grafia do programa');
     if(!frase.includes(lang==='pt'?'a efetiva exclui essas operações':'effective expenditure excludes those transactions')) erros.push('V2AC Saúde: falta a distinção entre total e efetiva');
   }
+  if(c.id.startsWith('oe-2027-saude-') && lang==='pt' && /\bna orçamento\b/.test(frase)) erros.push('V2AC Saúde: preposição incompatível com orçamento');
   if(c.id.includes('-cenario-') && (!frase.includes(anos[c.reference_date]) || !frase.includes(lang==='pt'?'Proposta de Orçamento do Estado para dois mil e vinte e sete':'Draft State Budget for two thousand and twenty-seven'))) erros.push('V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento');
   if(c.id.startsWith('afirmacao-rtp-') && (/alojada|hosted/.test(frase) || !frase.includes(lang==='pt'?'nove de outubro de dois mil e vinte e seis':'nine October two thousand and twenty-six'))) erros.push('V2AC RTP: a frase não identifica a notícia pela data');
   if(c.id==='oe-2027-ppp-total-encargos-liquidos-2027' && !frase.includes(lang==='pt'?'total previsto dos encargos líquidos':'projected total of net public-private partnership charges')) erros.push('V2AC PPP: o total não está definido por uma frase própria');
@@ -48,7 +49,7 @@ for(const id of ids) {
   }
 }
 const plantas=[];
-for(const [id,altera,mensagem] of [
+for(const [id,altera,mensagem,lang='en'] of [
   ['oe-2027-cenario-ihpc-2026',t=>t.querySelector('h1').set_content('Previsão do CFP'),'V2AB previsão: falta a autoria MF e a transcrição CFP'],
   ['oe-2027-ppp-rodoviario-encargos-brutos-2027',t=>t.querySelector('#ressalva').remove(),'V2AB nota: ressalva não publicada'],
   ['afirmacao-rtp-saude-queda-oe2027-2026-10-09',t=>t.querySelector('.linha-cabeca [data-linha-campo="name"]').set_content('Manchete do ensaio'),'V2AB nome: a cabeça não diz as palavras citadas'],
@@ -60,9 +61,10 @@ for(const [id,altera,mensagem] of [
   ['oe-2027-cenario-ihpc-2026',t=>t.querySelector('.linha-o-que-e-frase').set_content(t.querySelector('.linha-o-que-e-frase').textContent.replace('two thousand and twenty-six','two thousand and twenty-seven')),'V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento'],
   ['afirmacao-rtp-saude-queda-oe2027-2026-10-09',t=>t.querySelector('.linha-o-que-e-frase').set_content('The hosted article reports a decrease.'),'V2AC RTP: a frase não identifica a notícia pela data'],
   ['oe-2027-ppp-total-encargos-liquidos-2027',t=>t.querySelector('.linha-o-que-e-frase').set_content('It is the value in the table.'),'V2AC PPP: o total não está definido por uma frase própria'],
+  ['oe-2027-saude-despesa-efetiva-consolidada-2027',t=>t.querySelector('.linha-o-que-e-frase').set_content(t.querySelector('.linha-o-que-e-frase').textContent.replace('no orçamento','na orçamento')),'V2AC Saúde: preposição incompatível com orçamento','pt'],
   ['oe-2027-cenario-ihpc-2026',t=>t.querySelector('[data-linha-campo="document.source_sha256"]').set_content('a'.repeat(64)),'V2AC selo: SHA256 do corpo ausente ou diferente'],
 ]) {
-  const c=claims.get(id),lang='en',rota=routePath('linha',lang,{slug:id});
+  const c=claims.get(id),rota=routePath('linha',lang,{slug:id});
   const tree=parse(fs.readFileSync(`dist${rota.replace(/\/$/,'')}/index.html`,'utf8'));altera(tree);
   assert(conferir(c,lang,tree.toString()).includes(mensagem));plantas.push({id,mensagem});
   console.log(`PLANTA ${mensagem}`);

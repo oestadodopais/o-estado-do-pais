@@ -17,7 +17,7 @@ for(const [stem,label,en] of [
     FAMILIAS_V2A.push(familia(['oe-2027-saude-'+stem+'-'+ano],
       coluna+' de '+anoPt+': '+minusculas(label)+', Saúde, Conta do Pograma Legado',
       column+' for '+year+': '+minusculas(en)+', Health, «Conta do Pograma Legado»',
-      'É a '+minusculas(label)+' na '+minusculas(coluna)+' de '+anoPt+' do quadro da Saúde, «Conta do Pograma Legado». A grafia «Pograma» é a do quadro. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.',
+      'É a '+minusculas(label)+' '+(ano==='2026'?'na':'no')+' '+minusculas(coluna)+' de '+anoPt+' do quadro da Saúde, «Conta do Pograma Legado». A grafia «Pograma» é a do quadro. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.',
       'It is '+minusculas(en)+' in the '+minusculas(column)+' for '+year+' in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.',
       L('name',fonte),L('document.locator',ano+', '+coluna),L('document.locator','Saúde (PL15), Conta do Pograma Legado'),
       L('excerpt','A despesa total efetiva exclui ativos e passivos financeiros'),L('excerpt','A despesa total inclui ativos e passivos financeiros'),

@@ -1,0 +1,145 @@
+{
+  "cabeca": "6b8baa7e5e0f51eb548780a7dc7f458ce03de564",
+  "construcao": "6b8baa7e5e0f51eb548780a7dc7f458ce03de564",
+  "contagens": {
+    "estudos": 2780,
+    "anteriores": 2744,
+    "novas": 36
+  },
+  "contagem": "design/especime-v3/medicoes/v2a-2026-10-12/l1-destinos-c.json",
+  "base": "design/especime-v3/medicoes/rp4n-2026-10-06/portoes-j/verify.log",
+  "novas": {
+    "/en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09": {
+      "/en/method": 2
+    },
+    "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09": {
+      "/en/method": 2
+    },
+    "/en/ledger/afirmacao-rtp-saude-queda-oe2027-2026-10-09": {
+      "/en/method": 2
+    },
+    "/en/ledger/oe-2027-cenario-ihpc-2026": {
+      "/en/method": 2
+    },
+    "/en/ledger/oe-2027-cenario-pib-real-crescimento-2027": {
+      "/en/method": 2
+    },
+    "/en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027": {
+      "/en/method": 2
+    },
+    "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027": {
+      "/en/method": 2
+    },
+    "/en/ledger/oe-2027-ppp-rodoviario-receitas-2027": {
+      "/en/method": 2
+    },
+    "/en/ledger/oe-2027-ppp-total-encargos-liquidos-2027": {
+      "/en/method": 2
+    },
+    "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026": {
+      "/en/method": 2
+    },
+    "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027": {
+      "/en/method": 2
+    },
+    "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026": {
+      "/en/method": 2
+    },
+    "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027": {
+      "/en/method": 2
+    },
+    "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao": {
+      "/en/method": 2
+    },
+    "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao": {
+      "/en/method": 2
+    },
+    "/en/ledger/oe-2027-saude-despesa-total-consolidada-2026": {
+      "/en/method": 2
+    },
+    "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027": {
+      "/en/method": 2
+    },
+    "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao": {
+      "/en/method": 2
+    },
+    "/livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09": {
+      "/metodo": 2
+    },
+    "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09": {
+      "/metodo": 2
+    },
+    "/livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09": {
+      "/metodo": 2
+    },
+    "/livro-razao/oe-2027-cenario-ihpc-2026": {
+      "/metodo": 2
+    },
+    "/livro-razao/oe-2027-cenario-pib-real-crescimento-2027": {
+      "/metodo": 2
+    },
+    "/livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027": {
+      "/metodo": 2
+    },
+    "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027": {
+      "/metodo": 2
+    },
+    "/livro-razao/oe-2027-ppp-rodoviario-receitas-2027": {
+      "/metodo": 2
+    },
+    "/livro-razao/oe-2027-ppp-total-encargos-liquidos-2027": {
+      "/metodo": 2
+    },
+    "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026": {
+      "/metodo": 2
+    },
+    "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027": {
+      "/metodo": 2
+    },
+    "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026": {
+      "/metodo": 2
+    },
+    "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027": {
+      "/metodo": 2
+    },
+    "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao": {
+      "/metodo": 2
+    },
+    "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao": {
+      "/metodo": 2
+    },
+    "/livro-razao/oe-2027-saude-despesa-total-consolidada-2026": {
+      "/metodo": 2
+    },
+    "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027": {
+      "/metodo": 2
+    },
+    "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao": {
+      "/metodo": 2
+    }
+  },
+  "plantas": [
+    {
+      "nome": "multiplicidade anterior",
+      "mensagem": "V2A L1: uma página anterior mudou de destinos ou multiplicidade.",
+      "mordeu": true
+    },
+    {
+      "nome": "porta nova extra",
+      "mensagem": "V2A L1: um recibo novo não tem apenas as duas portas do Método.",
+      "mordeu": true
+    },
+    {
+      "nome": "página alheia",
+      "mensagem": "V2A L1: as páginas novas não são os recibos declarados.",
+      "mordeu": true
+    },
+    {
+      "nome": "recibo ausente",
+      "mensagem": "V2A L1: as páginas novas não são os recibos declarados.",
+      "mordeu": true
+    }
+  ],
+  "razao": "A RP4-n-j mediu as páginas anteriores abaixo do teto herdado do JD1. Entram os recibos V2-a nas duas edições, com duas portas do Método cada. A contagem integral foi refeita pela régua R4 e coincide com a L1. Os objetos Git das linhas anteriores não mudaram. A vista só ganhou o título do documento condicionado às afirmações e o resumo do corpo na ficha; a comparação integral e a planta recusam qualquer outra mudança.",
+  "limite": "O registo histórico da RP4-n-j prova o total anterior, não guarda os destinos por página. A comparação de multiplicidades usa a fotografia integral desta construção; não se apresenta como reconstrução do HTML da cabeça de partida."
+}

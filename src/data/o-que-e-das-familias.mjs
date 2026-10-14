@@ -3837,7 +3837,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a despesa efetiva consolidada na orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». A grafia «Pograma» é a do quadro. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        "É a despesa efetiva consolidada no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». A grafia «Pograma» é a do quadro. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
       ],
       "en": [
         "It is consolidated effective expenditure in the budget for two thousand and twenty-seven in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
@@ -3865,7 +3865,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a despesa efetiva consolidada sem PRR na orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». A grafia «Pograma» é a do quadro. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        "É a despesa efetiva consolidada sem PRR no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». A grafia «Pograma» é a do quadro. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
       ],
       "en": [
         "It is consolidated effective expenditure excluding the RRP in the budget for two thousand and twenty-seven in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."
@@ -3921,7 +3921,7 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a despesa total consolidada na orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». A grafia «Pograma» é a do quadro. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
+        "É a despesa total consolidada no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». A grafia «Pograma» é a do quadro. A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações."
       ],
       "en": [
         "It is consolidated total expenditure in the budget for two thousand and twenty-seven in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions."

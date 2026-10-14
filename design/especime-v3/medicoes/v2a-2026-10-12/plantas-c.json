@@ -236,67 +236,67 @@
       "mensagem": "âncora trocada por texto ausente: V2A atribuição: difere da autoria no documento"
     },
     {
-      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html.log",
+      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
       "linha": 1,
       "mensagem": "V2AB previsão: falta a autoria MF e a transcrição CFP"
     },
     {
-      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html.log",
+      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
       "linha": 2,
       "mensagem": "V2AB nota: ressalva não publicada"
     },
     {
-      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html.log",
+      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
       "linha": 3,
       "mensagem": "V2AB nome: a cabeça não diz as palavras citadas"
     },
     {
-      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html.log",
+      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
       "linha": 4,
       "mensagem": "V2AB localizador: tradução ou origem ausente"
     },
     {
-      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html.log",
+      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
       "linha": 5,
       "mensagem": "V2AB sigla: PRR ou RRP perdeu maiúsculas"
     },
     {
-      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html.log",
+      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
       "linha": 6,
       "mensagem": "V2AC Saúde: falta o ano, a coluna ou a grafia do programa"
     },
     {
-      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html.log",
-      "linha": 7,
+      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
+      "linha": 6,
       "mensagem": "V2AC Saúde: falta o ano, a coluna ou a grafia do programa"
     },
     {
-      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html.log",
+      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
       "linha": 8,
       "mensagem": "V2AC Saúde: falta a distinção entre total e efetiva"
     },
     {
-      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html.log",
+      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
       "linha": 9,
       "mensagem": "V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento"
     },
     {
-      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html.log",
+      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
       "linha": 10,
       "mensagem": "V2AC RTP: a frase não identifica a notícia pela data"
     },
     {
-      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html.log",
+      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
       "linha": 11,
       "mensagem": "V2AC PPP: o total não está definido por uma frase própria"
     },
     {
-      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html.log",
+      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
       "linha": 12,
       "mensagem": "V2AC selo: SHA256 do corpo ausente ou diferente"
     },
     {
-      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html.log",
+      "registo": "design/especime-v3/medicoes/v2a-2026-10-12/c-conferencias/html-final.log",
       "linha": 14,
       "mensagem": "V2AC selo no livro: [afirmacao-leitao-amaro-saude-oe2027-2026-10-09.yml] document.source_sha256 precisa de um SHA256 completo."
     },

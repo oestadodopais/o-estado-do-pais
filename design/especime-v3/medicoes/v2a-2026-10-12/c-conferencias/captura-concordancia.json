@@ -1,0 +1,7 @@
+{
+  "cabeca": "6b8baa7e5e0f51eb548780a7dc7f458ce03de564",
+  "ficheiro": "captura-concordancia.png",
+  "sha256": "ae9865e67cc1bc97723b3c2416dfd94541163ff573b854d7f59f8e351f3cb312",
+  "falha_observada": "A frase portuguesa de 2027 diz «na orçamento», em vez de «no orçamento».",
+  "decisao": "Corrigir a composição, plantar a preposição errada e repetir os portões e as capturas."
+}
