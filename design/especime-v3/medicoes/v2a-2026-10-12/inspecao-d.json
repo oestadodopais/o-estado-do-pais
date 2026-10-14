@@ -1,0 +1,390 @@
+{
+  "base": "972c1f07",
+  "cabeca": "9c35c95910d0b2612dc00f6652ec11573ef41a66",
+  "linhas": 18,
+  "paginas": 36,
+  "resultados": [
+    {
+      "id": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "lang": "pt",
+      "rota": "/livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "valor": "3",
+      "unidade": "%",
+      "erros": []
+    },
+    {
+      "id": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "lang": "en",
+      "rota": "/en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "valor": "3",
+      "unidade": "%",
+      "erros": []
+    },
+    {
+      "id": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lang": "pt",
+      "rota": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "valor": "1 700",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "lang": "en",
+      "rota": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "valor": "1 700",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "lang": "pt",
+      "rota": "/livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "valor": "1,5",
+      "unidade": "% de queda",
+      "erros": []
+    },
+    {
+      "id": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "lang": "en",
+      "rota": "/en/ledger/afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "valor": "1,5",
+      "unidade": "% de queda",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-cenario-ihpc-2026",
+      "lang": "pt",
+      "rota": "/livro-razao/oe-2027-cenario-ihpc-2026",
+      "valor": "2,9",
+      "unidade": "%",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-cenario-ihpc-2026",
+      "lang": "en",
+      "rota": "/en/ledger/oe-2027-cenario-ihpc-2026",
+      "valor": "2,9",
+      "unidade": "%",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-cenario-pib-real-crescimento-2027",
+      "lang": "pt",
+      "rota": "/livro-razao/oe-2027-cenario-pib-real-crescimento-2027",
+      "valor": "2,1",
+      "unidade": "%",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-cenario-pib-real-crescimento-2027",
+      "lang": "en",
+      "rota": "/en/ledger/oe-2027-cenario-pib-real-crescimento-2027",
+      "valor": "2,1",
+      "unidade": "%",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lang": "pt",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "valor": "1 152",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "lang": "en",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "valor": "1 152",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lang": "pt",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "valor": "889",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "lang": "en",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "valor": "889",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-receitas-2027",
+      "lang": "pt",
+      "rota": "/livro-razao/oe-2027-ppp-rodoviario-receitas-2027",
+      "valor": "263",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-receitas-2027",
+      "lang": "en",
+      "rota": "/en/ledger/oe-2027-ppp-rodoviario-receitas-2027",
+      "valor": "263",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-ppp-total-encargos-liquidos-2027",
+      "lang": "pt",
+      "rota": "/livro-razao/oe-2027-ppp-total-encargos-liquidos-2027",
+      "valor": "1 438",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-ppp-total-encargos-liquidos-2027",
+      "lang": "en",
+      "rota": "/en/ledger/oe-2027-ppp-total-encargos-liquidos-2027",
+      "valor": "1 438",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "lang": "pt",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "valor": "18 062,4",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "lang": "en",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "valor": "18 062,4",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "lang": "pt",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "valor": "17 803,1",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "lang": "en",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "valor": "17 803,1",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "lang": "pt",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "valor": "17 291,3",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "lang": "en",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "valor": "17 291,3",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "lang": "pt",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "valor": "17 803,1",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "lang": "en",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "valor": "17 803,1",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "lang": "pt",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "valor": "3,0",
+      "unidade": "%",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "lang": "en",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "valor": "3,0",
+      "unidade": "%",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "lang": "pt",
+      "rota": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "valor": "−1,4",
+      "unidade": "%",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "lang": "en",
+      "rota": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "valor": "−1,4",
+      "unidade": "%",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2026",
+      "lang": "pt",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2026",
+      "valor": "18 125,9",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2026",
+      "lang": "en",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2026",
+      "valor": "18 125,9",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2027",
+      "lang": "pt",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027",
+      "valor": "17 858,4",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2027",
+      "lang": "en",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027",
+      "valor": "17 858,4",
+      "unidade": "milhões de euros",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "lang": "pt",
+      "rota": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+      "valor": "−1,5",
+      "unidade": "%",
+      "erros": []
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "lang": "en",
+      "rota": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+      "valor": "−1,5",
+      "unidade": "%",
+      "erros": []
+    }
+  ],
+  "plantas": [
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2027",
+      "mensagem": "V2AD apoio: definição confundida com o excerto da Saúde"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "mensagem": "V2AD Saúde: cabeçalho com medida, programa ou período diferente"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2027",
+      "mensagem": "V2AD Saúde: cabeçalho com medida, programa ou período diferente"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2027",
+      "mensagem": "V2AD período: ano sem token da linha"
+    },
+    {
+      "id": "oe-2027-cenario-pib-real-crescimento-2027",
+      "mensagem": "V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento"
+    },
+    {
+      "id": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "mensagem": "V2AB título: a proveniência não distingue o documento"
+    },
+    {
+      "id": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "mensagem": "V2AD RTP: a notícia perdeu a medida identificada pelos montantes"
+    },
+    {
+      "id": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "mensagem": "V2AD conta: faltam os valores pelas linhas da medida"
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-receitas-2027",
+      "mensagem": "V2AD PPP: a conta não diz brutos menos receitas"
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-receitas-2027",
+      "mensagem": "V2AD PPP: falta o ano ou o cabeçalho do excerto"
+    },
+    {
+      "id": "oe-2027-cenario-ihpc-2026",
+      "mensagem": "V2AB previsão: falta a autoria MF e a transcrição CFP"
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "mensagem": "V2AB nota: ressalva não publicada"
+    },
+    {
+      "id": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "mensagem": "V2AB nome: a cabeça não diz as palavras citadas"
+    },
+    {
+      "id": "oe-2027-cenario-ihpc-2026",
+      "mensagem": "V2AB localizador: tradução ou origem ausente"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "mensagem": "V2AB sigla: PRR ou RRP perdeu maiúsculas"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "mensagem": "V2AD Saúde: cabeçalho com medida, programa ou período diferente"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "mensagem": "V2AC Saúde: falta o ano, a coluna ou a grafia do programa"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2027",
+      "mensagem": "V2AC Saúde: falta a distinção entre total e efetiva"
+    },
+    {
+      "id": "oe-2027-cenario-ihpc-2026",
+      "mensagem": "V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento"
+    },
+    {
+      "id": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "mensagem": "V2AC RTP: a frase não identifica a notícia pela data"
+    },
+    {
+      "id": "oe-2027-ppp-total-encargos-liquidos-2027",
+      "mensagem": "V2AC PPP: o total não está definido por uma frase própria"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "mensagem": "V2AC Saúde: preposição incompatível com orçamento"
+    },
+    {
+      "id": "oe-2027-cenario-ihpc-2026",
+      "mensagem": "V2AC selo: SHA256 do corpo ausente ou diferente"
+    }
+  ]
+}

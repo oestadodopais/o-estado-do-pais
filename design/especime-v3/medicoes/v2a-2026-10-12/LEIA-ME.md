@@ -288,3 +288,38 @@ As capturas em `../../capturas/v2a-2026-10-12/c/` pertencem à mesma cabeça do 
 Custo: a direção mediu a V2-a-b em 232 turnos, 518 020 de custo antigo e 8 pontos da semana, com a higiene em paralelo. O custo final V2-a-c ainda não foi fornecido: só o lançador o mede depois do encerramento desta passagem. Não foi exposta uma linha «tokens used».
 
 O commit `44345599ff185beab6a1966fbf22462e9536bc3d` guarda as primeiras 270 imagens. As restantes imagens, os recibos e este relatório seguem no commit final, cuja cabeça é indicada na resposta. A divisão respeita o limite de 400 ficheiros por pedido do escrivão.
+
+## A passagem V2-a-d
+
+O mandato foi lido integralmente com a leitura V2-a-c. Os achados de um a cinco pertencem às cópias plantadas e não foram reproduzidos no ramo. As correções preservam os dezoito valores e unidades; a medição confere os oito documentos pelos seus sha256 e as três mil duzentas e onze linhas anteriores pelos objetos Git.
+
+| Achado | O que ganhou | Ficheiro e linha |
+|---|---|---|
+| 6 e 16 | Cabeçalhos do mandato, anos por tokens e grafia do programa entre aspas na frase. | `src/lib/v2a-palavras.mjs:6` |
+| 7 | A RTP passa a identificar a despesa total consolidada da Saúde; os montantes vêm das duas linhas e a subtração é explicada por palavras. | `src/lib/v2a-palavras.mjs:15` |
+| 8 | As quatro páginas das PPP têm ano no cabeçalho; a conta rodoviária usa três tokens. Os excertos incluem os anos. | `src/lib/v2a-palavras.mjs:19` |
+| 9 | Doze datas esperadas fixas; a troca dos meses é recusada sem motor e com ele, com a mensagem real da célula. | `scripts/afirmacoes.mjs:85` |
+| 10 | A conferência exige o cabeçalho completo da Saúde; plantas trocam efetiva por total e Saúde por Educação. | `tests/linha/v2a.mjs:37` |
+| 11 | A definição sai do excerto da Saúde e é citada como apoio: nota ao quadro 4.38, p. 145 do PDF. | `src/data/origens-v2a.json:4` |
+| 12 | O ano da previsão é conferido antes do título da Proposta; plantas para PIB e título do documento. | `tests/linha/v2a.mjs:46` |
+| 13 | A capa do CFP lê os meses portugueses e valida o dia; uma data impossível é recusada. | `tests/linha/v2ad-dados.mjs:7` |
+| 14 | Custo anterior registado; o custo desta passagem será acrescentado pela direção a partir do lançador. | `design/observatorio/mandatos/MANDATO-V2A-d-2026-10-14.md:26` |
+| 15 | Os portões finais serão pedidos depois deste commit de provas, sem escritas durante a corrida. | `scripts/leituras/portoes-pelo-escrivao.sh:10` |
+
+### Decisões e questões
+
+- **V2A-35:** os cabeçalhos da Saúde seguem o mandato. O nome fixo continua completo nos índices; a continuação do cabeçalho usa `{ periodo: id }`, resolvido para o campo `reference_date`. A K17 não foi alterada.
+- **V2A-36:** os montantes da notícia da RTP identificam a despesa total consolidada. A queda é a estimativa menos o orçamento, com os dois valores por tokens; a conta medida dá 267,5 milhões de euros.
+- **V2A-37:** a conta rodoviária mostra 1 152 menos 263 igual a 889 milhões, pelos tokens das três linhas. O cabeçalho dos anos acompanha as quatro linhas de excerto das PPP. As contas vivem num parágrafo complementar de «O que é este número», conferido pela célula V2AD; a frase de família continua conferida pela K17.
+- **V2A-38:** as datas esperadas dos meses foram escritas individualmente. As mensagens das plantas vêm da célula, e a mutação da lista de meses é detetada mesmo sem os corpos do motor.
+- **V2A-39:** a nota financeira pertence ao quadro 4.38. Foi retirada do excerto do quadro 5.37 e publicada como apoio separado, com documento, página, data de acesso e excerto literal.
+- **V2A-40:** a conferência do cenário separa o ano da previsão do título da Proposta; a planta do PIB conserva o título certo e troca o ano da previsão. O título do documento ganha planta própria.
+- **V2A-41:** a capa do CFP aceita os nomes dos meses portugueses e recusa um dia impossível. O número e o ano do parecer continuam concordantes com a data.
+- **V2A-42:** a direção forneceu para V2-a-c 250 turnos, 511 796 de custo antigo, 5 pontos da semana sem outra sessão em paralelo e contexto médio de 132 275. O custo V2-a-d não está disponível nesta sessão; o lançador mede-o e a direção acrescenta-o. A linha «tokens used» não foi exposta.
+- **V2A-43:** os portões usam o escrivão porque o navegador das conferências não arranca na sandbox. A corrida de preparação teve códigos build 0, verify 1 e typecheck 0: a planta do localizador ainda usava o texto antigo e a conta estava dentro do âmbito da K17. Ambas foram corrigidas. As provas são comitadas antes dos portões finais e nada será escrito durante a corrida.
+
+### Conferências e entrega
+
+A preparação está em `portoes-d-preparacao/`; as mensagens dirigidas em `d-conferencias/`. Os destinos e as multiplicidades da L1 coincidem com a fotografia V2-a-c: 2 780 páginas. A vista foi comparada integralmente com a entrada da passagem, admitindo apenas a importação, a continuação dos cabeçalhos e o bloco das contas; a planta recusa uma alteração alheia.
+
+Estado da entrega: portões finais, capturas e cabeças finais por registar depois da conferência. Esta frase será substituída pelo resultado medido.

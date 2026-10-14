@@ -46,12 +46,18 @@ export function conferir(c,lang,html) {
   if(c.id.includes('-cenario-') && (!frase.split(lang==='pt'?', na Proposta':', in the Draft')[0].includes(anos[c.reference_date]) || !frase.includes(lang==='pt'?'Proposta de Orçamento do Estado para dois mil e vinte e sete':'Draft State Budget for two thousand and twenty-seven'))) erros.push('V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento');
   if(c.id.startsWith('afirmacao-rtp-') && (/alojada|hosted/.test(frase) || !frase.includes(lang==='pt'?'nove de outubro de dois mil e vinte e seis':'nine October two thousand and twenty-six'))) erros.push('V2AC RTP: a frase não identifica a notícia pela data');
   if(c.id==='oe-2027-ppp-total-encargos-liquidos-2027' && !frase.includes(lang==='pt'?'total previsto dos encargos líquidos':'projected total of net public-private partnership charges')) erros.push('V2AC PPP: o total não está definido por uma frase própria');
+  if(c.id.startsWith('afirmacao-rtp-') && !frase.includes(lang==='pt'?'identificam a despesa total consolidada do programa Saúde':'identify consolidated total expenditure for the Health programme'))erros.push('V2AD RTP: a notícia perdeu a medida identificada pelos montantes');
   if(c.id.startsWith('oe-2027-ppp-') || c.id.startsWith('afirmacao-rtp-')) {
     const conta=tree.querySelector('[data-v2a-conta]');
     const esperadas=c.id.startsWith('oe-2027-ppp-')?['oe-2027-ppp-rodoviario-encargos-brutos-2027','oe-2027-ppp-rodoviario-receitas-2027','oe-2027-ppp-rodoviario-encargos-liquidos-2027']:['oe-2027-saude-despesa-total-consolidada-2026','oe-2027-saude-despesa-total-consolidada-2027'];
     const citadas=conta?.querySelectorAll('[data-claim]').map(x=>x.getAttribute('data-claim'))??[];
     if(JSON.stringify(citadas)!==JSON.stringify(esperadas))erros.push('V2AD conta: faltam os valores pelas linhas da medida');
-    if(c.id.startsWith('oe-2027-ppp-') && (!cabeca.endsWith('2027')||!c.excerpt.includes('Setores')))erros.push('V2AD PPP: falta o ano ou o cabeçalho do excerto');
+    if(c.id.startsWith('oe-2027-ppp-')) {
+      const total=c.id.includes('-total-'),brutos=c.id.includes('-brutos-'),receitas=c.id.includes('-receitas-');
+      const esperado=lang==='pt'?(total?'Parcerias público-privadas, total dos encargos líquidos, 2027':'Parcerias público-privadas rodoviárias, '+(brutos?'encargos brutos':receitas?'receitas':'encargos líquidos')+', 2027'):(total?'Public-private partnerships, total net charges, 2027':'Road public-private partnerships, '+(brutos?'gross charges':receitas?'revenue':'net charges')+', 2027');
+      if(cabeca!==esperado || !/^Setores\s+2026\s+2027\s+2028/.test(c.excerpt))erros.push('V2AD PPP: falta o ano ou o cabeçalho do excerto');
+      if(!texto('[data-v2a-conta]').includes(lang==='pt'?'os encargos líquidos rodoviários são os encargos brutos menos as receitas':'net road charges are gross charges minus revenue'))erros.push('V2AD PPP: a conta não diz brutos menos receitas');
+    }
   }
   return erros;
 }
@@ -71,7 +77,9 @@ for(const [id,altera,mensagem,lang='en'] of [
   ['oe-2027-saude-despesa-total-consolidada-2027',t=>t.querySelector('h1 [data-nonledger]').removeAttribute('data-nonledger'),'V2AD período: ano sem token da linha'],
   ['oe-2027-cenario-pib-real-crescimento-2027',t=>t.querySelector('.linha-o-que-e-frase').set_content(t.querySelector('.linha-o-que-e-frase').textContent.replace('two thousand and twenty-seven','two thousand and twenty-six')),'V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento'],
   ['afirmacao-rtp-saude-queda-oe2027-2026-10-09',t=>t.querySelector('.aparelho').set_content(t.querySelector('.aparelho').innerHTML.replace('Document title','Source')),'V2AB título: a proveniência não distingue o documento'],
+  ['afirmacao-rtp-saude-queda-oe2027-2026-10-09',t=>t.querySelector('.linha-o-que-e-frase').set_content(t.querySelector('.linha-o-que-e-frase').textContent.replace('total expenditure','effective expenditure')),'V2AD RTP: a notícia perdeu a medida identificada pelos montantes'],
   ['afirmacao-rtp-saude-queda-oe2027-2026-10-09',t=>t.querySelector('[data-v2a-conta] [data-claim]').remove(),'V2AD conta: faltam os valores pelas linhas da medida'],
+  ['oe-2027-ppp-rodoviario-receitas-2027',t=>t.querySelector('[data-v2a-conta]').set_content(t.querySelector('[data-v2a-conta]').innerHTML.replace('minus revenue','plus revenue')),'V2AD PPP: a conta não diz brutos menos receitas'],
   ['oe-2027-ppp-rodoviario-receitas-2027',t=>t.querySelector('h1').set_content('Road public-private partnerships, revenue'),'V2AD PPP: falta o ano ou o cabeçalho do excerto'],
   ['oe-2027-cenario-ihpc-2026',t=>t.querySelector('h1').set_content('Previsão do CFP'),'V2AB previsão: falta a autoria MF e a transcrição CFP'],
   ['oe-2027-ppp-rodoviario-encargos-brutos-2027',t=>t.querySelector('#ressalva').remove(),'V2AB nota: ressalva não publicada'],

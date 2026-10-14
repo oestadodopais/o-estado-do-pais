@@ -1883,7 +1883,7 @@ function provaLocalizadores() {
       else console.log(`PLANTA ${mensagem}`);
     }
     for (const [nome,altera] of [
-      ['nota da definição retirada', s=>s.split('; distinção')[0]],
+      ['nota da definição retirada', s=>s.split('; apoio à distinção')[0]],
       ['página da definição trocada', s=>s.replace('p. 145 do PDF','p. 146 do PDF')],
     ]) {
       const original=LINHAS_DA_REGUA.get('oe-2027-saude-despesa-total-consolidada-2027'), copia=structuredClone(original);
