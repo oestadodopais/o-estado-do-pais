@@ -302,7 +302,7 @@ O mandato foi lido integralmente com a leitura V2-a-c. Os achados de um a cinco 
 | 10 | A conferência exige o cabeçalho completo da Saúde; plantas trocam efetiva por total e Saúde por Educação. | `tests/linha/v2a.mjs:37` |
 | 11 | A definição sai do excerto da Saúde e é citada como apoio: nota ao quadro 4.38, p. 145 do PDF. | `src/data/origens-v2a.json:4` |
 | 12 | O ano da previsão é conferido antes do título da Proposta; plantas para PIB e título do documento. | `tests/linha/v2a.mjs:46` |
-| 13 | A capa do CFP lê os meses portugueses e valida o dia; uma data impossível é recusada. | `tests/linha/v2ad-dados.mjs:7` |
+| 13 | A capa do CFP lê os meses portugueses e valida o dia; uma data impossível é recusada. | `<motor>/publisher/v2a.py:175` |
 | 14 | Custo anterior registado; o custo desta passagem será acrescentado pela direção a partir do lançador. | `design/observatorio/mandatos/MANDATO-V2A-d-2026-10-14.md:26` |
 | 15 | Os portões finais serão pedidos depois deste commit de provas, sem escritas durante a corrida. | `scripts/leituras/portoes-pelo-escrivao.sh:10` |
 
@@ -322,4 +322,8 @@ O mandato foi lido integralmente com a leitura V2-a-c. Os achados de um a cinco 
 
 A preparação está em `portoes-d-preparacao/`; as mensagens dirigidas em `d-conferencias/`. Os destinos e as multiplicidades da L1 coincidem com a fotografia V2-a-c: 2 780 páginas. A vista foi comparada integralmente com a entrada da passagem, admitindo apenas a importação, a continuação dos cabeçalhos e o bloco das contas; a planta recusa uma alteração alheia.
 
-Estado da entrega: portões finais, capturas e cabeças finais por registar depois da conferência. Esta frase será substituída pelo resultado medido.
+A primeira corrida completa, em `portoes-d-primeira/`, passou com códigos 0/0/0/0 na cabeça `3fb70eb74a28cc56fa58136e033953e53d82adee`, com o motor `80268af4f3ff23f6b144257bc2922a21b789daff`. O `estado.fim` contém apenas a pasta criada pelo próprio guião.
+
+**V2A-44:** para satisfazer o ficheiro vazio pedido no achado 15, a pasta da corrida seguinte é preparada com um `.gitignore` comitado que exclui só os registos gerados dentro dela. A exclusão será retirada depois da corrida, para comitar os registos. A primeira prova é conservada integralmente; não se editam os seus estados nem se alteram réguas. Nada será escrito durante os portões.
+
+Estado da entrega: a corrida com o estado vazio, as capturas e as cabeças finais serão registadas depois da conferência.
