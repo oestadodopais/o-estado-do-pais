@@ -718,3 +718,18 @@ No motor, `publisher/v2a.py:232` deixa de acrescentar a frase dos valores de cai
 Custo da V2-a-j, comunicado pelo lugar de direção no mandato K: 49 turnos, 143 158 de custo antigo, 1 ponto da semana sem outra sessão em paralelo, contexto médio de 108 113. O custo desta passagem é medido pelo lançador; não foi exposta uma linha «tokens used».
 
 O commit do motor `66c9d0f37cbc6aaa8e2e1c2c844ef25372828495` passou o hook `core.gate`. As conferências preparatórias de cartões, prosa e declarações sem uso passaram. Os portões finais e as capturas serão registados no fecho abaixo.
+
+Fecho K: os portões conferiram `17e6d819c0cb8dc77dda9cd2072d70d27cf9b83e` no sítio e `66c9d0f37cbc6aaa8e2e1c2c844ef25372828495` no motor. Esta é também a cabeça final do motor. O commit do sítio contém as emendas e as provas; os commits seguintes guardam apenas capturas e registos. As cabeças finais são lidas do Git na entrega.
+
+| Código lido em `portoes-k/` | Resultado |
+| --- | --- |
+| `build.codigo` | 0 |
+| `verify.codigo` | 0 |
+| `typecheck.codigo` | 0 |
+| `motor.codigo` | 0 |
+
+Os portões correram pelo escrivão, porque o navegador das conferências não arranca na sandbox. As cabeças de início e fim coincidem, `estado.fim` e `motor.estado.fim` estão vazios e a conferência D confirma ausência de escritas durante a corrida (`portoes-k/verify.log:8297`). L1 conserva 2780 contra o teto 2780 (`:34`). A inspeção final confirma os 18 valores e unidades inalterados e as 3211 linhas anteriores intactas (`inspecao-k.json`). A frase do PCP e a conta dos encargos líquidos rodoviários, nas duas edições, foram lidas do HTML conferido e guardadas em `frases-k.md`.
+
+As capturas em `../../capturas/v2a-2026-10-12/k/` cobrem as 16 páginas tocadas, nas duas edições e nas larguras 390, 768, 1024, 1280 e 1600: 160 casos, 480 PNG com sha256 conferido e dimensões das páginas inteiras iguais ao recibo. Sem falhas, transbordamentos, recursos externos, erros ou pedidos recusados. Foram vistos os 32 cabeçalhos móveis e 12 cabeçalhos a 1280, sem cortes ou sobreposições; `capturas-k-inspecao.json` identifica os 44 ficheiros observados. Não houve alteração de código depois dos portões.
+
+As capturas portuguesas ficam no commit `3ca9a8e8c12f96435bf354f4154f2cf2d25e9775`; as inglesas, o recibo e os registos finais seguem no commit de fecho. A divisão respeita o limite de ficheiros por pedido ao escrivão.
