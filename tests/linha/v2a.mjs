@@ -40,23 +40,31 @@ export function conferir(c,lang,html) {
     const periodos=tree.querySelectorAll('h1 [data-nonledger="data-da-linha"]');
     if(periodos.length!==(variacao?2:1)||periodos.some(x=>x.getAttribute('data-de-campo')!=='reference_date'))erros.push('V2AD período: ano sem token da linha');
     if(!frase.includes(ano)||!frase.includes('Conta do Pograma Legado'))erros.push('V2AC Saúde: falta o ano, a coluna ou a grafia do programa');
-    const medidaNaFrase=medida+(c.id.includes('-sem-prr-')?(lang==='pt'?' sem PRR':' excluding the Recovery and Resilience Plan (PRR)'):'');
+    const medidaNaFrase=medida+(c.id.includes('-sem-prr-')?(lang==='pt'?' sem PRR':' excluding the Recovery and Resilience Plan (RRP; «PRR» in the table)'):'');
     const inicio=lang==='pt'?(variacao?'É a variação publicada da ':'É a '):(variacao?'It is the published change in ':'It is ');
     if(!frase.startsWith(inicio+medidaNaFrase+' '))erros.push('V2AE Saúde: medida diferente na frase');
     const token=tree.querySelector('[data-o-que-e] [data-nonledger="data-da-linha"]');
     if(!token||token.getAttribute('data-de-campo')!=='reference_date'||token.getAttribute('data-de-linha')!==(variacao?c.id.replace('variacao','2026'):c.id))erros.push('V2AE frase: período sem token da linha');
-    if(c.id.includes('-sem-prr-')||c.id==='oe-2027-saude-despesa-efetiva-consolidada-variacao') {
-      if(!frase.includes(lang==='pt'?'Plano de Recuperação e Resiliência':'Recovery and Resilience Plan (PRR)')||!frase.includes(lang==='pt'?'a sua redução explica a descida com PRR e a subida sem ele':'its reduction explains the fall with PRR and the rise without it')||!tree.querySelector('[data-def-origem="v2a-prr-saude"]')||!tree.querySelector('[data-def-origem="v2a-prr-ciclo"]'))erros.push('V2AE PRR: falta o nome, a explicação ou o apoio');
-      const citadas=tree.querySelectorAll('[data-o-que-e] [data-claim]').map(x=>x.getAttribute('data-claim'));
-      if(JSON.stringify(citadas)!==JSON.stringify(['2026','2027','sem-prr-2026','sem-prr-2027'].map(x=>'oe-2027-saude-despesa-efetiva-consolidada-'+x)))erros.push('V2AE PRR: comparação sem os quatro tokens');
-    }
     if(!variacao && !frase.includes(lang==='pt'?'a efetiva exclui essas operações':'effective expenditure excludes those transactions'))erros.push('V2AC Saúde: falta a distinção entre total e efetiva');
     if(!c.document.locator.includes('nota ao quadro 4.38') || c.excerpt.includes('A despesa total efetiva exclui') || (!variacao && !texto('[data-def-origem="v2a-total-efetiva"]').includes('nota ao quadro 4.38')))erros.push('V2AD apoio: definição confundida com o excerto da Saúde');
   }
+  const comparaPrr=c.id.includes('-sem-prr-')||c.id==='oe-2027-saude-despesa-efetiva-consolidada-variacao'||c.id.startsWith('afirmacao-leitao-');
+  const totalPrr=c.id==='oe-2027-saude-despesa-total-consolidada-variacao'||c.id.startsWith('afirmacao-rtp-');
+  if(comparaPrr) {
+    if(!frase.includes(lang==='pt'?'Plano de Recuperação e Resiliência':'Recovery and Resilience Plan (RRP; «PRR» in the table)')||!frase.includes(lang==='pt'?'A redução dessa parcela faz com que a despesa com PRR desça, apesar de a despesa sem PRR subir.':'The reduction in that component makes expenditure with the RRP fall, even though expenditure without the RRP rises.')||!tree.querySelector('[data-def-origem="v2a-prr-saude"]')||!tree.querySelector('[data-def-origem="v2a-prr-ciclo"]'))erros.push('V2AE PRR: falta o nome, a explicação ou o apoio');
+    const citadas=tree.querySelectorAll('[data-o-que-e] [data-claim]').map(x=>x.getAttribute('data-claim'));
+    if(JSON.stringify(citadas)!==JSON.stringify(['2026','2027','sem-prr-2026','sem-prr-2027'].map(x=>'oe-2027-saude-despesa-efetiva-consolidada-'+x)))erros.push('V2AE PRR: comparação sem os quatro tokens');
+  }
+  if(totalPrr) {
+    if(!tree.querySelector('[data-def-origem="v2a-prr-saude"] details[open]'))erros.push('V2AF total: excerto da Saúde fechado');
+    if(!frase.includes(lang==='pt'?'inclui a despesa relativa ao Plano de Recuperação e Resiliência (PRR)':'includes spending under the Recovery and Resilience Plan (RRP; «PRR» in the table)')||!frase.includes(lang==='pt'?'expurgada do efeito do PRR':'excluding the RRP effect')||!tree.querySelector('[data-def-origem="v2a-prr-saude"]'))erros.push('V2AF total: falta o qualificador PRR ou o apoio');
+    if(c.id.startsWith('oe-')&&!texto('#ressalva').includes(lang==='pt'?'Incluindo PRR.':'Including RRP.'))erros.push('V2AF total: ressalva sem PRR');
+  }
+  for(const apoio of tree.querySelectorAll('[data-def-origem]'))if(['v2a-prr-saude','v2a-prr-ciclo','v2a-ppp-conta','v2a-ppp-setores'].includes(apoio.getAttribute('data-def-origem'))&&normal(apoio.querySelector('.def-origem-k')?.textContent)!==(lang==='pt'?'Passagem de':'Passage from'))erros.push('V2AF apoio: passagem rotulada como definição');
   if(c.id.startsWith('oe-2027-saude-') && lang==='pt' && /\bna orçamento\b/.test(frase)) erros.push('V2AC Saúde: preposição incompatível com orçamento');
   if(c.id.includes('-cenario-') && (!frase.split(lang==='pt'?', na Proposta':', in the Draft')[0].includes(anos[c.reference_date]) || !frase.includes(lang==='pt'?'Proposta de Orçamento do Estado para dois mil e vinte e sete':'Draft State Budget for two thousand and twenty-seven'))) erros.push('V2AC cenário: falta o ano da previsão ou a Proposta de Orçamento');
   if(c.id.startsWith('afirmacao-rtp-') && (/alojada|hosted/.test(frase) || !frase.includes('09.10.2026'))) erros.push('V2AC RTP: a frase não identifica a notícia pela data');
-  if(c.id==='oe-2027-ppp-total-encargos-liquidos-2027' && !frase.includes(lang==='pt'?'total previsto dos encargos líquidos':'projected total of net public-private partnership charges')) erros.push('V2AC PPP: o total não está definido por uma frase própria');
+  if(c.id==='oe-2027-ppp-total-encargos-liquidos-2027' && !frase.includes(lang==='pt'?'valor da linha «Total» dos encargos líquidos':'value in the «Total» row of net public-private partnership charges')) erros.push('V2AC PPP: o total não está definido por uma frase própria');
   if(c.id.startsWith('afirmacao-rtp-') && !frase.includes(lang==='pt'?'identificam a despesa total consolidada do programa Saúde':'identify consolidated total expenditure for the Health programme'))erros.push('V2AD RTP: a notícia perdeu a medida identificada pelos montantes');
   if(c.id.startsWith('oe-2027-ppp-rodoviario-') || c.id.startsWith('afirmacao-rtp-')) {
     const conta=tree.querySelector('[data-v2a-conta]');
@@ -83,11 +91,13 @@ export function conferir(c,lang,html) {
     if(tokens.length!==1||tokens[0].getAttribute('data-de-linha')!==c.id||tokens[0].getAttribute('data-de-campo')!=='reference_date'||normal(tokens[0].textContent)!==c.reference_date)erros.push('V2AE PPP: ano sem token do período');
     if(c.id.includes('-total-')&&(tree.querySelector('[data-v2a-conta]')||!['Rodoviário','Ferroviário','Saúde','Aeroportuário','Oceanário'].every(x=>frase.includes('«'+x+'»'))))erros.push('V2AE PPP: total sem setores próprios ou com conta rodoviária');
   }
+  if(c.id==='oe-2027-ppp-total-encargos-liquidos-2027'&&(/soma|sums/.test(frase)||!texto('#ressalva').includes(lang==='pt'?'as linhas setoriais do quadro não somam exatamente o total impresso'.replace(/^a/,'A'):'The sector rows in the table do not add up exactly to the printed total')||!texto('#ressalva').includes(lang==='pt'?'o quadro não explica a diferença':'the table does not explain the difference')))erros.push('V2AF PPP: soma atribuída ao total ou diferença omitida');
   if(c.id.startsWith('afirmacao-pcp-')) {
+    if(!frase.includes(lang==='pt'?'quadro quatro ponto vinte e cinco do relatório do Orçamento do Estado para':'Table four point twenty-five of the State Budget report for')||(lang==='en'&&!frase.includes('Paulo Raimundo states that the budget allocates')))erros.push('V2AF PCP: falta o relatório ou a afirmação em inglês');
     const quote=tree.querySelector('[data-o-que-e] [data-linha-campo="excerpt"]');
     if(normal(quote?.textContent)!==normal(c.excerpt)||quote?.getAttribute('data-linha-claim')!==c.id||!frase.includes('Paulo Raimundo'))erros.push('V2AE PCP: afirmação sem citação ou atribuição');
     const ids=tree.querySelectorAll('[data-o-que-e] [data-claim]').map(x=>x.getAttribute('data-claim'));
-    if(JSON.stringify(ids)!==JSON.stringify(['oe-2027-ppp-rodoviario-encargos-brutos-2027','oe-2027-ppp-rodoviario-encargos-liquidos-2027']))erros.push('V2AE PCP: faltam os dois valores do quadro');
+    if(JSON.stringify(ids)!==JSON.stringify([...(lang==='en'?[c.id]:[]),'oe-2027-ppp-rodoviario-encargos-brutos-2027','oe-2027-ppp-rodoviario-encargos-liquidos-2027']))erros.push('V2AE PCP: faltam os dois valores do quadro');
   }
   return erros;
 }
@@ -134,6 +144,15 @@ for(const lang of ['pt','en']) {
   [variacao,t=>t.querySelector('[data-o-que-e] [data-claim]').remove(),'V2AE PRR: comparação sem os quatro tokens'],
   [pcp,t=>t.querySelector('[data-o-que-e] [data-linha-campo="excerpt"]').removeAttribute('data-linha-campo'),'V2AE PCP: afirmação sem citação ou atribuição'],
   [pcp,t=>t.querySelector('[data-o-que-e] [data-claim]').remove(),'V2AE PCP: faltam os dois valores do quadro'],
+  ...['oe-2027-saude-despesa-total-consolidada-variacao',rtp].map(id=>[id,t=>troca(t,frase,pt?'inclui a despesa relativa ao Plano':'includes spending under the Recovery','qualificador retirado'),'V2AF total: falta o qualificador PRR ou o apoio']),
+  ['oe-2027-saude-despesa-total-consolidada-variacao',t=>troca(t,'#ressalva',pt?'Incluindo PRR.':'Including RRP.',''),'V2AF total: ressalva sem PRR'],
+  ...[variacao,'afirmacao-leitao-amaro-saude-oe2027-2026-10-09'].map(id=>[id,t=>troca(t,frase,pt?'desça, apesar de a despesa sem PRR subir':'fall, even though expenditure without the RRP rises',pt?'suba, apesar de a despesa sem PRR descer':'rise, even though expenditure without the RRP falls'),'V2AE PRR: falta o nome, a explicação ou o apoio']),
+  ['afirmacao-leitao-amaro-saude-oe2027-2026-10-09',t=>t.querySelector('[data-def-origem="v2a-prr-saude"]').remove(),'V2AE PRR: falta o nome, a explicação ou o apoio'],
+  [rtp,t=>t.querySelector('[data-def-origem="v2a-prr-saude"] details').removeAttribute('open'),'V2AF total: excerto da Saúde fechado'],
+  [variacao,t=>troca(t,'[data-def-origem="v2a-prr-saude"] .def-origem-k',pt?'Passagem de':'Passage from',pt?'Definição de':'Definition by'),'V2AF apoio: passagem rotulada como definição'],
+  ['oe-2027-ppp-total-encargos-liquidos-2027',t=>troca(t,frase,pt?'O quadro lista':'The table lists',pt?'O quadro soma':'The table sums'),'V2AF PPP: soma atribuída ao total ou diferença omitida'],
+  ['oe-2027-ppp-total-encargos-liquidos-2027',t=>troca(t,'#ressalva',pt?'o quadro não explica a diferença':'the table does not explain the difference',''),'V2AF PPP: soma atribuída ao total ou diferença omitida'],
+  [pcp,t=>troca(t,frase,pt?'relatório do Orçamento do Estado':'State Budget report','documento'),'V2AF PCP: falta o relatório ou a afirmação em inglês'],
  ]) {
   const c=claims.get(id),rota=routePath('linha',lang,{slug:id}),tree=parse(fs.readFileSync(`dist${rota.replace(/\/$/,'')}/index.html`,'utf8'));altera(tree);
   assert(conferir(c,lang,tree.toString()).includes(mensagem),lang+' '+mensagem);plantas.push({id,lang,mensagem});console.log(`PLANTA ${lang}: ${mensagem}`);

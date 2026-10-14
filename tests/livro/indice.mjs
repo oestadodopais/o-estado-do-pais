@@ -245,7 +245,7 @@ const LINHAS_DA_REGUA = loadClaims();
  * coordenadas de página, 278 `Quadro_I, linha 4, coluna 13`, 7 `label`). Uma
  * forma nova entra aqui à mão, com o leitor que a escreve nomeado ao lado.
  *
- * @typedef {{id?: unknown, name?: unknown, reference_date?: unknown, document?: {locator?: unknown, page?: unknown, title?: unknown, edition?: unknown, kind?: unknown, crop?: {page?: unknown}}|null}} ContextoDoLocalizador
+ * @typedef {{id?: unknown, name?: unknown, name_source_en?: unknown, reference_date?: unknown, document?: {locator?: unknown, locator_en?: unknown, page?: unknown, title?: unknown, edition?: unknown, kind?: unknown, crop?: {page?: unknown}}|null}} ContextoDoLocalizador
  * @type {{ nome: string, forma: RegExp, onde: string, confere?: (onde: string, linha?: ContextoDoLocalizador) => boolean }[]}
  */
 const LOCALIZADORES_CONHECIDOS = [
@@ -338,12 +338,16 @@ function localizadorV2aConfere(onde, linha) {
   const esperadoNoDocumento = id.startsWith('oe-2027-cenario-') ? `${onde}; comentário, p. 19; conclusão, p. 20`
     : id.startsWith('oe-2027-saude-') ? `${onde}; apoio à distinção entre total e efetiva: nota ao quadro 4.38, p. 145 do PDF (129 impressa)` : id.startsWith('oe-2027-ppp-rodoviario-') ? `${onde}; apoio aos encargos e receitas: texto da p. 124 do PDF (108 impressa)` : onde;
   if (!d || d.locator !== esperadoNoDocumento) return false;
+  const confereEn=(base,apoio='')=>linha.name_source_en===base&&d.locator_en===base+apoio;
   const saude = /^oe-2027-saude-despesa-(total-consolidada|efetiva-consolidada|efetiva-consolidada-sem-prr)-(2026|2027|variacao)$/.exec(id);
   if (saude) {
     const semPrr = saude[1].endsWith('-sem-prr');
     const nome = saude[1] === 'total-consolidada' ? 'Despesa total consolidada' : 'Despesa efetiva consolidada';
     const coluna = saude[2] === 'variacao' ? `Variação${semPrr ? ' (Sem PRR)' : ''} (%)` :
       `${saude[2]}, ${saude[2] === '2026' ? 'Estimativa' : 'Orçamento'}${semPrr ? ' (Sem PRR)' : ''}`;
+    const nomeEn=saude[1]==='total-consolidada'?'Consolidated total expenditure':'Consolidated effective expenditure';
+    const colEn=saude[2]==='variacao'?`Change${semPrr?' (excluding RRP)':''} (%)`:`${saude[2]}, ${saude[2]==='2026'?'Estimate':'Budget'}${semPrr?' (excluding RRP)':''}`;
+    if(!confereEn(`Table 5.37, Health (PL15), Legacy Programme Account, ${nomeEn}, ${colEn}, p. 303 of the PDF (printed 287)`,'; supporting definition of total and effective expenditure: note to Table 4.38, p. 145 of the PDF (printed 129)'))return false;
     return linha.name === nome && linha.reference_date === (saude[2] === '2026' ? '2026' : '2027') &&
       d.page === 303 && d.edition === '2027' && d.title === 'Orçamento do Estado para 2027' &&
       onde === `Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, ${nome}, ${coluna}, p. 303 do PDF (287 impressa)`;
@@ -356,6 +360,8 @@ function localizadorV2aConfere(onde, linha) {
   };
   if (id in ppp) {
     const nome = ppp[id];
+    const nomeEn={'encargos brutos':'gross charges','receitas':'revenue','Rodoviário':'Road sector','Total':'Total'}[nome];
+    if(!confereEn(`Table 4.25, ${nome==='Total'?'':'road sector, '}${nomeEn}, 2027, p. 123 of the PDF (printed 107)`,nome==='Total'?'':'; supporting text on charges and revenue: p. 124 of the PDF (printed 108)'))return false;
     return linha.name === nome && linha.reference_date === '2027' && d.page === 123 &&
       d.edition === '2027' && d.title === 'Orçamento do Estado para 2027' &&
       onde === `Quadro 4.25, ${nome === 'Total' ? '' : 'setor rodoviário, '}${nome}, 2027, p. 123 do PDF (107 impressa)`;
@@ -366,6 +372,7 @@ function localizadorV2aConfere(onde, linha) {
   };
   if (id in cfp) {
     const [nome, ano] = cfp[id];
+    if(!confereEn(`Table 1, ${nome==='PIB'?'GDP':'HICP'}, ${ano}, p. 9`,'; commentary, p. 19; conclusion, p. 20'))return false;
     return linha.name === nome && linha.reference_date === ano && d.page === 9 && d.edition === '2026' &&
       onde === `Quadro 1, ${nome}, ${ano}, p. 9`;
   }
@@ -374,6 +381,7 @@ function localizadorV2aConfere(onde, linha) {
     'afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09': 'Intervenção na Assembleia da República',
     'afirmacao-rtp-saude-queda-oe2027-2026-10-09': 'Título e corpo da notícia',
   };
+  if(!confereEn(id.includes('-pcp-')?'Speech in the Assembly of the Republic':'Title and body of the article'))return false;
   return id in afirmacoes && onde === afirmacoes[id] && linha.name === linha.excerpt && linha.name !== d.title &&
     linha.reference_date === '2026-10-09' && d.edition === '2026-10-09' && d.kind === 'html';
 }
@@ -1898,6 +1906,13 @@ function provaLocalizadores() {
       const mensagem='V2AE localizador PPP: apoio textual trocado pela nota';
       if(!localizadorV2aConfere(original.name_source,original))falhas.push(`${mensagem}: controlo positivo falhou`);
       copia.document.locator=copia.document.locator.replace('texto da p. 124 do PDF (108 impressa)','nota ao quadro 4.25');
+      if(localizadorV2aConfere(copia.name_source,copia))falhas.push(`${mensagem}: planta não mordida`);else console.log(`PLANTA ${mensagem}`);
+    }
+    for(const id of [...LINHAS_DA_REGUA.keys()].filter(id=>id.startsWith('oe-2027-')||/^afirmacao-.*oe2027/.test(id)))for(const campo of ['locator','locator_en']) {
+      const original=LINHAS_DA_REGUA.get(id),copia=structuredClone(original);
+      const mensagem=`V2AF localizador ${campo}: ${id}`;
+      if(!localizadorV2aConfere(original.name_source,original))falhas.push(`${mensagem}: controlo positivo falhou`);
+      copia.document[campo]+=' localizador alterado';
       if(localizadorV2aConfere(copia.name_source,copia))falhas.push(`${mensagem}: planta não mordida`);else console.log(`PLANTA ${mensagem}`);
     }
     const estragos = [

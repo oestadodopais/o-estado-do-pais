@@ -382,7 +382,7 @@ Capturas: 150 casos de página e largura, 450 imagens e 40 imagens inspecionadas
 
 A mutação da lista de meses também produz a comparação independente entre `2026-11-09` e `2026-10-09`, sem motor e com ele; a mensagem completa está no catálogo. A correção do localizador conserva as duas plantas de retirada da nota e troca da página. A nota explícita da grafia é conferida em `tests/linha/v2a.mjs:39`, com planta em `tests/linha/v2a.mjs:75`.
 
-Custo V2-a-c: 250 turnos, 511 796 de custo antigo, 5 pontos da semana sem outra sessão em paralelo, contexto médio de 132 275, conforme o mandato. Custo V2-a-d: por acrescentar pela direção a partir do lançador; não foi exposto nesta sessão. A linha «tokens used» não foi exposta.
+Custo V2-a-c: 250 turnos, 511 796 de custo antigo, 5 pontos da semana sem outra sessão em paralelo, contexto médio de 132 275, conforme o mandato. A linha «tokens used» não foi exposta.
 
 ## A passagem V2-a-e
 
@@ -401,7 +401,7 @@ Entrada do sítio: `c4b22a56`; entrada do motor: `80268af4`. As duas árvores es
 
 ### Custo
 
-A direção forneceu para V2-a-d: 216 turnos, 358 882 de custo antigo, 5 pontos da semana sem outra sessão em paralelo e contexto médio de 157 686. O custo de V2-a-e pertence à medição do lançador e ainda não foi exposto. A linha «tokens used» não foi exposta.
+A direção forneceu para V2-a-d: 216 turnos, 358 882 de custo antigo, 5 pontos da semana sem outra sessão em paralelo e contexto médio de 157 686. O custo de V2-a-e foi comunicado depois desta entrega e está registado na secção da passagem F. A linha «tokens used» não foi exposta.
 
 ### Conferências
 
@@ -423,7 +423,7 @@ Os valores e as unidades das dezoito linhas coincidem com a entrada; as 3 211 li
 | 11 | Localizador das três linhas rodoviárias cita p. 124 do PDF, 108 impressa, com o excerto textual separado e selado. | `<motor>/publisher/v2a.py:245`; questão V2A-46 |
 | 12 | Afirmação literal do PCP por token do excerto, com atribuição e valores brutos e líquidos do quadro ao lado, sem conclusão da casa. | `design/especime-v3/medicoes/v2a-2026-10-12/familias.mjs:72`; `tests/linha/v2a.mjs:88` |
 
-**V2A-56:** a leitura das cinco células setoriais da coluna de 2027 do quadro 4.25 dá 889, 312, 254, −13 e −3, cuja soma é 1 439. A linha «Total» publica 1 438, que se mantém. O excerto não explica a diferença; não se atribuiu uma causa. A medição está em `ppp-total-e.json`. A frase da página descreve os setores abrangidos pelo total publicado; não apresenta uma nova conta dos valores setoriais.
+**V2A-56:** a conferência da coluna de 2027 do quadro 4.25 encontrou uma diferença entre as linhas setoriais e o total impresso. Decisão corrigida pelo mandato F: a página identifica a linha «Total», sem dizer que soma os setores; a ressalva declara a diferença e a ausência de explicação no quadro. O valor publicado mantém-se. A conta de conferência fica em `ppp-total-e.json`, sem passar para a frase da casa.
 
 **V2A-57:** a L1 continua a contar 2 780 páginas com destino repetido. A comparação das multiplicidades só muda nas duas edições da afirmação de Leitão Amaro: o relatório do OE passa a figurar como destino repetido duas vezes, nos dois apoios citados. Todas as outras páginas conservam os destinos e multiplicidades anteriores. Prova: `l1-comparacao-e.json`.
 
@@ -449,3 +449,45 @@ O catálogo `plantas-e.json` conserva 110 mensagens distintas com o registo e a 
 Capturas: `design/especime-v3/capturas/v2a-2026-10-12/e/capturas.json`, 16 páginas, duas edições, cinco larguras, 160 casos e 480 PNG. Todos os resumos e dimensões foram conferidos; zero transbordos, pedidos externos e erros. Foram inspecionadas visualmente as 32 cabeças a 390 px e oito a 1 280 px, enumeradas em `capturas-inspecao-e.json`.
 
 As cinco frases do PRR, nas duas edições, foram lidas do HTML e estão integralmente em `frases-prr-e.md`; a fotografia das frases das 18 linhas está em `inspecao-e.json`. O custo desta passagem continua por medir pelo lançador; não foi exposta uma linha «tokens used».
+
+
+## A passagem V2-a-f
+
+Entrada do sítio: `58ae1d64`; entrada do motor: `d8410f79`. As duas árvores estavam limpas. O achado 1 pertence ao guião do pacote, sob responsabilidade da direção. Os achados 2 a 6 eram plantas nas cópias, ausentes do ramo. Não foram fundidos os ramos principais.
+
+### Decisões e questões
+
+- **V2A-58, achado 7:** a variação da despesa total consolidada e a afirmação da RTP dizem que incluem a despesa do PRR. Citam a passagem da Saúde que compara a dotação com a estimativa expurgada desse efeito. O excerto selado abre à vista; a percentagem do relatório fica só dentro dele. A ressalva da variação volta a dizer «Incluindo PRR», uma vez.
+- **V2A-59, achado 8:** a frase das parcerias identifica a linha «Total» tal como impressa. Lista os setores, sem declarar uma soma. A ressalva indica a divergência e que o quadro não a explica. A decisão V2A-56 foi corrigida, sem mudar qualquer valor.
+- **V2A-60, achado 9:** a primeira ocorrência inglesa usa «Recovery and Resilience Plan (RRP; «PRR» in the table)». Sai a frase que dizia ser o nome completo sem antecedente. Os cabeçalhos mantêm-se.
+- **V2A-61, achado 10:** o período segue imediatamente a frase da medida. A redução da parcela do PRR explica a descida da despesa com PRR apesar da subida da despesa sem PRR, sem atribuir esta subida à redução. A parcela não é cifrada e a frase não fala de colunas. Na página de Leitão Amaro, o relatório fica identificado pelo título e pelo ano da linha.
+- **V2A-62, achado 11:** os quatro apoios novos são passagens, com «Passagem de» e «Passage from». A definição financeira conserva o rótulo próprio. O apoio dos setores é agora um excerto contínuo da página, com as linhas intermédias; a prova do motor recusa um corte não assinalado. O tipo e a abertura do excerto da Saúde estão declarados em `origens-v2a.json` e conferidos pela K16.
+- **V2A-63, achado 12:** a página do PCP nomeia o relatório do Orçamento do Estado e o quadro quatro ponto vinte e cinco. O ano vem do token do período. A edição inglesa traduz a afirmação com atribuição a Paulo Raimundo, usando o valor da própria linha, e mantém a transcrição portuguesa pelo token do excerto. Nenhum valor novo foi criado.
+- **V2A-64, achado 13:** a conferência das comparações do PRR inclui Leitão Amaro. As plantas invertem a direção da explicação nessa página e na variação sem PRR, em ambas as edições. A conferência independente do índice lê os dois localizadores de todas as linhas V2-a, com alteração plantada em cada campo.
+- **V2A-65, achado 14:** saiu a linha que deixava o custo D por acrescentar. O custo D permanece uma vez na secção E. O custo E comunicado pela direção está abaixo.
+- **V2A-66:** os portões finais correm pelo escrivão porque o navegador das conferências não arranca na sandbox. A exclusão temporária da pasta dos registos é preparada antes do commit de provas. Não haverá escritas do construtor durante a corrida. Na preparação, a primeira conferência estática do índice começou enquanto a construção ainda substituía o `dist/` e encontrou os índices ausentes; foi repetida apenas depois de a construção terminar e passou. Os dois registos ficam conservados.
+
+### O que cada achado ganhou
+
+| Achado | Ficheiro e linha | Resultado |
+|---|---|---|
+| 7 | `familias.mjs:16`; `tests/linha/v2a.mjs:58`; `<motor>/publisher/v2a.py:225` | Qualificador PRR nas duas páginas, ressalva e excerto aberto, com plantas. |
+| 8 | `familias.mjs:45`; `<motor>/publisher/v2a.py:227`; `tests/linha/v2a.mjs:94` | Linha «Total» e diferença declarada; retirada da soma e planta da omissão. |
+| 9 | `familias.mjs:10`, `:26`, `:77` | Nome inglês e relação entre as siglas nas duas línguas. |
+| 10 | `familias.mjs:12`, `:32`, `:79` | Comparações reescritas, período antes da explicação e relatório nomeado. |
+| 11 | `src/components/OrigemDaDefinicao.astro:97`; `tests/cartao/origens-v2a.mjs:11`; `<motor>/publisher/v2a.py:279` | Rótulo de passagem, declaração do tipo e excerto contínuo conferido. |
+| 12 | `familias.mjs:83`; `tests/linha/v2a.mjs:96` | Relatório e quadro identificados; tradução atribuída e citação pelo token. |
+| 13 | `tests/linha/v2a.mjs:50`, `:149`; `tests/livro/indice.mjs:340`, `:1911` | Amaro incluído; inversão plantada; ambos os localizadores conferidos. |
+| 14 | Secções de custo das passagens D, E e F deste relatório | Custo D sem contradição e custo E comunicado pelo lançador. |
+
+Os caminhos `familias.mjs` da tabela são relativos a esta pasta de medições; os restantes são relativos à raiz do sítio, salvo `<motor>`.
+
+### Custo
+
+V2-a-e, conforme o mandato: 137 turnos, 571 271 de custo antigo, 6 pontos da semana com outra sessão em paralelo (RH1), contexto médio de 160 334. O custo de V2-a-f pertence ao lançador e não foi exposto. A linha «tokens used» não foi exposta.
+
+### Conferências e fecho
+
+A preparação confirmou os dezoito valores e unidades inalterados e os objetos Git das 3 211 linhas anteriores. As provas do motor passaram, incluindo o corte não assinalado. As provas do HTML passaram nas duas edições. O fecho acrescentará os códigos lidos dos quatro ficheiros, as cabeças, o catálogo de mensagens das plantas e a inspeção das capturas.
+
+O commit do motor `c239badfd9152633345133e5ab05dee560bd732e` passou o seu `core.gate`. A preparação do sítio passou a voz, os cartões, o índice estático, os tipos e as provas do HTML. Foram registadas 164 mensagens distintas de plantas em `plantas-f.json`, com ficheiro e linha; os portões finais confirmarão o conjunto na cabeça comitada.

@@ -316,6 +316,7 @@ export const STRINGS = {
          diferentes e passam a ter dois rótulos diferentes; o de recibo fica no
          recibo, que é onde ele diz o que diz. */
       definicaoDe: 'Definição de',
+      passagemDe: 'Passagem de',
       paginaDaDefinicao: 'página',
       dataOriginalAusente: 'Data do pedido original por confirmar.',
       marcadorDoSelo: '[a verificar]',
@@ -3343,6 +3344,7 @@ export const STRINGS = {
       calculado: 'calculated',
       /** Ver a razão na edição portuguesa (achado 2, 15.09.2026). */
       definicaoDe: 'Definition by',
+      passagemDe: 'Passage from',
       paginaDaDefinicao: 'page',
       dataOriginalAusente: 'Original request date to be confirmed.',
       marcadorDoSelo: '[to verify]',

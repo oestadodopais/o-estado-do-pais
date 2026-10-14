@@ -2753,6 +2753,8 @@ export const origensDaDefinicao = (definicao, lang = 'pt') =>
     return {
       chave,
       rotulo: rotuloDaOrigem(chave),
+      tipo: campos.tipo,
+      excertoAberto: 'excertoAberto' in o && o.excertoAberto === true,
       publicador: o.publicador,
       documento: o.documento.replace(/, página \d+/, ''),
       pagina: o.documento.match(/, página (\d+)/)?.[1] ?? null,

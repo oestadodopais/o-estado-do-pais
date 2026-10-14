@@ -8,6 +8,8 @@ export function conferirOrigemV2A(chave,origem) {
  const bytes=fs.readFileSync(path),r=JSON.parse(fs.readFileSync('ledger/cruzamentos/v2a-provas.json')).files['provas.json'];
  const hash=createHash('sha256').update(bytes).digest('hex');
  if(r.exported_sha256!==hash||r.origin_sha256!==hash||r.origin_path!=='publisher/recortes/v2a/provas.json')return 'V2AE origem: pacote diferente do cruzamento';
+ if(chave==='v2a-prr-saude'&&origem?.excertoAberto!==true)return 'V2AF origem: passagem da Saúde fechada';
+ if(origem?.tipo!=='passagem')return 'V2AF origem: apoio sem tipo de passagem';
  const a=JSON.parse(bytes).apoios[chave],s=origem?.selo;
  if(!a||!s||s.tipo!=='v2a')return 'V2AE origem: selo documental ausente';
  if(s.sha256!==a.sha256||s.motor!==a.motor_path||s.hora!==a.acedido_em||s.cliente!==a.cliente||s.campo!=='página física '+a.pagina_pdf)return 'V2AE origem: selo diferente do recibo exportado';

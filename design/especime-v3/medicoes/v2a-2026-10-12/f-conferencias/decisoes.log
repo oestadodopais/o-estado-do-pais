@@ -1,0 +1,30 @@
+§1.06 · sem título em DECISIONS.md
+    src/data/figuras.mjs:1961
+§1.44 · A revisão cruzada da identidade v2
+    src/data/figuras.mjs:117
+§1.98 · A delegação de 04.09: o lugar de direção decide pelas recomendações escritas, e o diretor corrige ao usar o sítio
+    src/data/figuras.mjs:2855
+    src/data/figuras.mjs:3125
+    tests/livro/indice.mjs:179
+    tests/livro/indice.mjs:49
+    tests/livro/indice.mjs:78
+    tests/livro/indice.mjs:969
+§1.101 · A sessão de 07.09: o painel sem rede, a semana de ensaio recomeçada e o leitor dos concelhos, os cinco ramos parados retomados e fundidos, as leituras a frio do F1.4b e do F1.1c, e o limite do Codex
+    src/data/figuras.mjs:2854
+§1.102 · A sessão de 08.09: o corredor parado por uma função apagada, as leituras a frio com o plano novo do Codex, a sonda ao INE, o F1.1d medido às cegas, e o F1.10 retomado
+    src/data/figuras.mjs:2937
+§1.124 · A leitura de fora de 23.09.2026: o que o lugar de direção conferiu, o que decidiu, e a notificação do INE do mesmo dia
+    src/data/figuras.mjs:584
+§1.140 · Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
+    src/data/figuras.mjs:583
+§1.143 · A primeira leitura por leitores comuns (30.09.2026): as portas dizem o que têm, a primeira página é o único lugar de «O que se passa», e uma coisa, um lugar, também na navegação
+    src/data/figuras.mjs:2044
+§1.149 · A leitura do diretor de 01.10.2026 no telemóvel: o mapa de «Lugares» vem primeiro e as listas de nomes dobram-se; o mapa sai da primeira página, que fica com a porta; e a aterragem da §1.148
+    tests/livro/indice.mjs:1692
+§1.152 · O UE2 construído pelo Opus e lido a frio pelo Sol: a página da União como a página dos países, as definições em palavras comuns como única forma em todo o sítio, o espaço antes de «%» confirmado pelo diretor, e a aterragem da §1.151
+    src/data/figuras.mjs:2410
+    src/data/figuras.mjs:2478
+    src/data/figuras.mjs:2499
+10 decisão(ões) citada(s) em 4 ficheiro(s) de texto
+0 ficheiro(s) binário(s) saltado(s)
+conhecido-positivo: a §1.98 lida em scripts/check-lugar.mjs, e o nome que não existe (scripts/leituras/este-ficheiro-nao-existe-p4c.mjs) recusado como ilegível

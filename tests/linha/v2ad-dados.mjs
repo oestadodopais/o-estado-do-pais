@@ -62,6 +62,8 @@ console.log('V2AE: complementos auditados, origens seladas e total sem conta rod
 const {conferirOrigemV2A}=await import('../cartao/origens-v2a.mjs');
 for(const key of Object.keys(apoios))assert.equal(conferirOrigemV2A(key,origens[key]),null);
 for(const [nome,altera,mensagem] of [
+ ['excerto fechado',o=>o.excertoAberto=false,'V2AF origem: passagem da Saúde fechada'],
+ ['tipo retirado',o=>delete o.tipo,'V2AF origem: apoio sem tipo de passagem'],
  ['selo retirado',o=>delete o.selo,'V2AE origem: selo documental ausente'],
  ['SHA trocado',o=>o.selo.sha256='a'.repeat(64),'V2AE origem: selo diferente do recibo exportado'],
  ['hora trocada',o=>o.selo.hora='2026-10-14T00:00:00Z','V2AE origem: selo diferente do recibo exportado'],
