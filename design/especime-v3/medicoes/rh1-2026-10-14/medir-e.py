@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+import time
 from types import ModuleType
 from unittest.mock import patch
 
@@ -120,10 +121,33 @@ def auditar_e(guarda):
             'achados': achados, 'passou': not achados}
 
 
+def perfil(guarda):
+    tempos = {}
+    def envolver(objeto, nome):
+        original = getattr(objeto, nome)
+        tempos[nome] = {'chamadas': 0, 'segundos': 0.0}
+        def medido(*args, **kwargs):
+            inicio = time.perf_counter()
+            try:
+                return original(*args, **kwargs)
+            finally:
+                tempos[nome]['chamadas'] += 1
+                tempos[nome]['segundos'] += time.perf_counter() - inicio
+        setattr(objeto, nome, medido)
+    for nome in ('conferir', 'medir_api', 'medir_rastreados', 'plantas_pessoais', 'plantas_formas_e'):
+        envolver(guarda, nome)
+    for nome in ('contem_cadeias', 'formas_comparaveis'):
+        envolver(guarda.detetor, nome)
+    resultado = guarda.medir(RAIZ / 'dist', True)
+    return {'tempos_inclusivos': tempos, 'passou': resultado['passou']}
+
+
 def main():
     guarda = modulo('guarda_e_medida', GUARDA)
     guarda.detetor.carregar_proibidos_locais()
-    if '--tempo' in sys.argv:
+    if '--perfil' in sys.argv:
+        resultado, nome = perfil(guarda), 'perfil-conferencia-e.json'
+    elif '--tempo' in sys.argv:
         fase = sys.argv[sys.argv.index('--tempo') + 1]
         assert fase in ('antes', 'depois')
         resultado = modulo('tempo_e', PREFIXO + 'medir-d.py').medir_tempo()
@@ -143,6 +167,9 @@ def main():
         nome = 'portoes-e-resumo.json'
         custo = {'isolada': {f: round(json.loads((AQUI / ('tempo-' + f + '-e.json')).read_text())['segundos'], 1)
                              for f in ('antes', 'depois')}, 'portao': resultado['privacidade_segundos']}
+        custo['intermedia'] = round(json.loads((AQUI / 'tempo-intermedio-e.json').read_text())['segundos'], 1)
+        custo['primeira_depois'] = round(json.loads((AQUI / 'tempo-primeira-depois-e.json').read_text())['segundos'], 1)
+        custo['versao_d_no_corpus_atual'] = round(json.loads((AQUI / 'tempo-versao-d.json').read_text())['segundos'], 1)
         (AQUI / 'custo-e.json').write_text(guarda.json_seguro(custo))
     else:
         resultado, nome = provas(guarda), 'medidas-e.json'
