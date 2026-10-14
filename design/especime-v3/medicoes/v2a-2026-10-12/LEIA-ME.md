@@ -609,7 +609,7 @@ As conferências específicas do motor passaram 44 casos. A régua do HTML passo
 
 V2-a-g, conforme o mandato H e o lançador: 97 turnos, 267 149 de custo antigo, 4 pontos da semana com outra sessão em paralelo, contexto médio de 131 547. O custo V2-a-h cabe ao lançador. Não foi exposta uma linha «tokens used».
 
-**V2A-84:** a primeira corrida H terminou em build 1, verify 125 (não executado por dependência), typecheck 0 e motor 0. O build encontrou quatro entradas vivas da passagem C para as antigas frases dos cenários. As novas frases já estavam inventariadas; as quatro anteriores passam a retiradas, com motivo. `inventario-h.mjs` conserva essa retirada nas recomposições. A corrida fica em `portoes-h-preparacao/`, na cabeça `9f865f732c2c8e5bdff875beaf4e1498ccdc100f`; o motor manteve `83b63a88ee0292c55bf26e96c17680ab747b07d6`. As cabeças de início e fim coincidem e os dois estados finais têm zero bytes. A correção foi iniciada depois de a chamada ao escrivão devolver o resultado completo.
+**V2A-84:** a primeira corrida H terminou em build 1, verify 125 (não executado por dependência), typecheck 0 e motor 0. O build encontrou quatro entradas vivas da passagem C para as antigas frases dos cenários. As novas frases já estavam inventariadas; as quatro anteriores passam a retiradas, com motivo. `inventario-h.mjs` conserva essa retirada nas recomposições. A corrida fica em `portoes-h-preparacao/`, na cabeça `9f865f732c2c8e5bdff875beaf4e1498ccdc100f`; o motor manteve `83b63a88ee0292c55bf26e96c17680ab747b07d6`. As cabeças de início e fim coincidem e os dois estados finais têm zero bytes. Os ficheiros registam o fim do motor dessa corrida em `2026-10-14T19:28:02Z` e o início do build seguinte em `2026-10-14T19:29:26Z`, separados por 84 segundos. Não registam a hora da escrita da correção.
 
 
 ### O fecho da passagem H
@@ -630,3 +630,32 @@ As cabeças de início e fim coincidem nos dois repositórios. `estado.fim` e `m
 O pedido `capturas-pedido-h.json` cobre as 18 páginas nas duas edições e nas cinco larguras. O recibo em `design/especime-v3/capturas/v2a-2026-10-12/h/capturas.json` regista 180 casos e 540 imagens. Todos os SHA256 e dimensões foram conferidos; não houve transbordos, pedidos externos nem erros do navegador. A inspeção visual registada em `capturas-h-inspecao.json` abrange 52 cabeças de página, incluindo todas as versões móveis e as versões largas do PCP, Amaro, RTP, total das parcerias, variações com PRR e cenários. Não foram observados cortes de texto nem sobreposições nesses recortes.
 
 **V2A-85:** a L1 final continua em 2 780, no teto já existente, conforme `portoes-h/verify.log`. Os seis achados reais foram tratados; a leitura a frio pertence ao lugar de direção. O custo desta passagem cabe ao lançador; não foi exposta uma linha «tokens used».
+
+
+## A passagem V2-a-i
+
+O mandato I fixa a redação literal. Os achados 1 a 4 e 7 pertencem às plantas do pacote da direção; não foram introduzidos no ramo. Os valores e unidades das dezoito linhas foram comparados com a cabeça de entrada `4b19a3a1`, sem diferenças.
+
+| Achado real | O que ganhou | Ficheiro e linha |
+| --- | --- | --- |
+| 5, Major | As receitas deixam de ter uma hierarquia não documentada. A enumeração inclui a exceção das portagens dos parceiros privados, a partilha de benefícios ou de receitas e os pagamentos fixos, nas frases exatas do mandato. | `src/lib/v2a-palavras.mjs:21`; `familias.mjs:52` e `familias.mjs:92` |
+| 6, Major | Os pagamentos rodoviários são enumerados por espécie; a conta e a explicação dos valores de caixa e do ano usam os tokens. Saúde, Amaro e RTP explicam consolidação e operações financeiras com as duas frases prescritas. | `src/lib/v2a-palavras.mjs:21`; `familias.mjs:8` |
+| 8, Minor | A atribuição inglesa usa o campo inglês do publicador, conserva o título português entre aspas angulares e acrescenta o título inglês marcado. As duas ocorrências de «State Budget report» passam a «Budget report». | `src/views/LinhaView.astro:629` e `:928`; `familias.mjs:19` |
+| 9, Minor | O apoio financeiro do quadro de projetos sai das famílias, fontes secundárias, localizadores e pacote de provas. A nota do quadro da Saúde permanece selada, com página e quadro próprios. | `<motor>/publisher/v2a.py:237` e `:256`; `<motor>/publisher/definition_sources.json`; `origens-i.py:5` |
+| 10, Minor | A V2A-84 regista apenas as duas horas dos ficheiros e o intervalo entre elas; deixa de afirmar a ordem da escrita. | `LEIA-ME.md:612`; `portoes-h-preparacao/motor.fim:1`; `portoes-h/build.inicio:1` |
+
+### Decisões e questões
+
+- **V2A-86:** as frases são as do mandato, sem acrescentar nem retirar palavras. `tests/cartao/v2ai-frases.json` conserva os textos esperados separadamente do compositor; a V2AH compara-os com o HTML nas duas línguas. As três contas rodoviárias, o total e o PCP são comparados por inteiro. Na Saúde, as duas frases têm de aparecer juntas, por ordem e uma única vez.
+- **V2A-87:** a página da lista rodoviária é uma marca do campo `pagina_pdf` de `v2a-ppp-conta`; quadro, título, valores e períodos continuam com as respetivas marcas. A ressalva sobre a diferença entre os setores e o total permanece sem explicação inventada.
+- **V2A-88:** não se usa a nota financeira do quadro de projetos para definir a medida da Saúde. O apoio `v2a-total-efetiva` deixa a exportação; as fontes secundárias de Amaro e RTP deixam essa página. Os corpos integrais continuam só no motor.
+- **V2A-89:** a enumeração do ramo encontrou treze páginas do Ministério das Finanças, nove da Saúde e quatro das parcerias. A correção da atribuição inglesa abrange as treze, embora o mandato refira doze. Cada uma tem planta que troca o publicador inglês pelo português.
+- **V2A-90:** os ficheiros da corrida H registam o fim do motor em `2026-10-14T19:28:02Z` e o início do build seguinte em `2026-10-14T19:29:26Z`. O intervalo medido é de 84 segundos. Não registam a hora da escrita da correção.
+- **V2A-91:** os portões e as capturas são pedidos ao escrivão porque o navegador das conferências não arranca na sandbox. A corrida final será pedida depois do commit de código e provas; os resultados e as cabeças ficam no fecho abaixo.
+- **V2A-92:** a preparação encontrou na régua do índice uma exigência antiga da nota financeira retirada. A régua passa a exigir o localizador próprio da Saúde, com plantas que acrescentam o apoio de outra medida e trocam a página. A conferência passou depois dessa correção.
+
+### Conferências de preparação e custo
+
+A régua do HTML conferiu 36 páginas e 192 plantas, incluindo a troca de uma palavra em cada uma das dezasseis páginas alteradas, nas duas línguas. A comparação numérica do PCP conserva a desigualdade estrita e recusa também os dois casos de igualdade. O motor passou 42 conferências. Passaram dados, famílias e cartões, língua, voz, índice e tipos. Os registos estão em `i-conferencias/`; o catálogo final das mensagens e os resultados dos portões ficam no fecho.
+
+Custo da V2-a-h, conforme o mandato I e o lançador: 111 turnos, 318 546 de custo antigo, 3 pontos da semana sem outra sessão em paralelo, contexto médio de 131 544. O custo da V2-a-i cabe ao lançador. Não foi exposta uma linha «tokens used».

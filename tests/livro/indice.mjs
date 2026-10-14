@@ -336,7 +336,7 @@ function localizadorV2aConfere(onde, linha) {
   if (!linha || typeof linha.id !== 'string') return false;
   const id = linha.id, d = linha.document;
   const esperadoNoDocumento = id.startsWith('oe-2027-cenario-') ? `${onde}; comentário, p. 19; conclusão, p. 20`
-    : id.startsWith('oe-2027-saude-') ? `${onde}; apoio à distinção entre total e efetiva: nota ao quadro 4.38, p. 145 do PDF (129 impressa)` : id.startsWith('oe-2027-ppp-rodoviario-') ? `${onde}; apoio aos encargos e receitas: texto da p. 124 do PDF (108 impressa)` : onde;
+    : id.startsWith('oe-2027-ppp-rodoviario-') ? `${onde}; apoio aos encargos e receitas: texto da p. 124 do PDF (108 impressa)` : onde;
   if (!d || d.locator !== esperadoNoDocumento) return false;
   const confereEn=(base,apoio='')=>linha.name_source_en===base&&d.locator_en===base+apoio;
   const saude = /^oe-2027-saude-despesa-(total-consolidada|efetiva-consolidada|efetiva-consolidada-sem-prr)-(2026|2027|variacao)$/.exec(id);
@@ -347,7 +347,7 @@ function localizadorV2aConfere(onde, linha) {
       `${saude[2]}, ${saude[2] === '2026' ? 'Estimativa' : 'Orçamento'}${semPrr ? ' (Sem PRR)' : ''}`;
     const nomeEn=saude[1]==='total-consolidada'?'Consolidated total expenditure':'Consolidated effective expenditure';
     const colEn=saude[2]==='variacao'?`Change${semPrr?' (excluding RRP)':''} (%)`:`${saude[2]}, ${saude[2]==='2026'?'Estimate':'Budget'}${semPrr?' (excluding RRP)':''}`;
-    if(!confereEn(`Table 5.37, Health (PL15), Legacy Programme Account, ${nomeEn}, ${colEn}, p. 303 of the PDF (printed 287)`,'; supporting definition of total and effective expenditure: note to Table 4.38, p. 145 of the PDF (printed 129)'))return false;
+    if(!confereEn(`Table 5.37, Health (PL15), Legacy Programme Account, ${nomeEn}, ${colEn}, p. 303 of the PDF (printed 287)`))return false;
     return linha.name === nome && linha.reference_date === (saude[2] === '2026' ? '2026' : '2027') &&
       d.page === 303 && d.edition === '2027' && d.title === 'Orçamento do Estado para 2027' &&
       onde === `Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, ${nome}, ${coluna}, p. 303 do PDF (287 impressa)`;
@@ -1891,8 +1891,8 @@ function provaLocalizadores() {
       else console.log(`PLANTA ${mensagem}`);
     }
     for (const [nome,altera] of [
-      ['nota da definição retirada', s=>s.split('; apoio à distinção')[0]],
-      ['página da definição trocada', s=>s.replace('p. 145 do PDF','p. 146 do PDF')],
+      ['apoio de outra medida acrescentado', s=>s+'; apoio à distinção entre total e efetiva: nota ao quadro 4.38, p. 145 do PDF (129 impressa)'],
+      ['página da Saúde trocada', s=>s.replace('p. 303 do PDF','p. 145 do PDF')],
     ]) {
       const original=LINHAS_DA_REGUA.get('oe-2027-saude-despesa-total-consolidada-2027'), copia=structuredClone(original);
       const mensagem=`V2AC localizador da Saúde: ${nome}`;

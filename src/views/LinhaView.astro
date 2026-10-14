@@ -626,6 +626,8 @@ const unidade = unidadeDaLinha(claim.unit, lang, claim.value);
  * legível. Cada peça que sobra é um `CampoDaLinha`, e por isso é conferida
  * contra o livro-razão carácter a carácter.
  */
+const publicacaoV2aEn = lang === 'en' && id.startsWith('oe-2027-') && claim.source === 'Ministério das Finanças';
+const apoioPublicacaoV2a = id.startsWith('oe-2027-saude-') ? 'v2a-saude-consolidada' : 'v2a-ppp-setores';
 const atribuicaoPecas = [
   presente(claim.source)
     ? {
@@ -923,7 +925,11 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
       {
         temFraseDeAtribuicao && (
           <p class="linha-atribuicao">
-            {atribuicaoPecas.map((peca, i) => (
+            {publicacaoV2aEn ? <>
+              {'Published by the '}<Frase partes={[{verbatim:`origem-${apoioPublicacaoV2a}-publicador_en`}]} lang={lang} />{', in «'}
+              <a class="ligacao-externa" href={claim.document.url} rel="noopener noreferrer external"><CampoDaLinha id={id} campo="document.title" valor={claim.document.title} lang={lang} lingua="pt-PT" /></a>
+              {'» (the '}<Frase partes={[{verbatim:`origem-${apoioPublicacaoV2a}-documento_en`}]} lang={lang} />{')'}
+            </> : atribuicaoPecas.map((peca, i) => (
               <>
                 {i > 0 && (peca.apos ? ' · ' : peca.entreParenteses ? ' ' : ', ')}
                 {peca.k && `${peca.k} `}

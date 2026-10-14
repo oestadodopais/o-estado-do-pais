@@ -1,31 +1,4 @@
 {
-  "v2a-total-efetiva": {
-    "tipo": "passagem",
-    "excertoAberto": false,
-    "publicador": "Ministério das Finanças",
-    "documento": "Orçamento do Estado para 2027",
-    "documento_en": "Budget report for 2027",
-    "publicador_en": "Ministry of Finance",
-    "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true#page=145",
-    "lido": "2026-10-13",
-    "lingua": "pt",
-    "excerto": "A despesa total efetiva exclui ativos e passivos financeiros e transferências do Orçamento do Estado para entidades com autonomia financeira. A despesa total inclui ativos e passivos financeiros e exclui transferências do Orçamento do Estado para entidades com autonomia financeira.",
-    "extracao": {
-      "pagina": 145
-    },
-    "selo": {
-      "tipo": "v2a",
-      "campo": "página física 145",
-      "motor": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-      "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-      "hora": "2026-10-13T18:47:56.980564+00:00",
-      "cliente": "core.http.HttpClient.condicional"
-    },
-    "pagina_pdf": "145",
-    "localizador": "nota ao quadro 4.38, p. 145 do PDF",
-    "localizador_en": "note to Table 4.38, PDF p. 145",
-    "quadro": "4.38"
-  },
   "v2a-prr-saude": {
     "tipo": "passagem",
     "excertoAberto": true,
@@ -104,33 +77,6 @@
     "localizador": "p. 124 do PDF (108 impressa)",
     "localizador_en": "PDF p. 124 (printed 108)"
   },
-  "v2a-ppp-setores": {
-    "tipo": "passagem",
-    "excertoAberto": false,
-    "publicador": "Ministério das Finanças",
-    "documento": "Orçamento do Estado para 2027",
-    "documento_en": "Budget report for 2027",
-    "publicador_en": "Ministry of Finance",
-    "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true#page=123",
-    "lido": "2026-10-13",
-    "lingua": "pt",
-    "excerto": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n Rodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n encargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n     receitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n Ferroviário            190     312     228      41     133     209      206     194        190     187     184     181     178      175\n Saúde                  231     254     266     265     268     106       69      65         63      64      64      65      61       53\n Aeroportuário          (14)    (13)    (26)    (26)    (26)    (26)     (26)    (40)       (40)    (40)    (40)    (40)    (54)     (54)\n encargos brutos           -       -      -       -       -       -        -       -          -       -       -       -       -        -\n     receitas            14      13      26      26      26      26       26      40         40      40      40      40      54       54\n Oceanário               (3)     (3)     (3)     (3)     (3)     (3)      (3)     (3)        (3)     (3)     (3)     (3)     (3)      (3)",
-    "extracao": {
-      "pagina": 123
-    },
-    "selo": {
-      "tipo": "v2a",
-      "campo": "página física 123",
-      "motor": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
-      "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
-      "hora": "2026-10-13T18:47:56.980564+00:00",
-      "cliente": "core.http.HttpClient.condicional"
-    },
-    "pagina_pdf": "123",
-    "localizador": "p. 123 do PDF (107 impressa)",
-    "localizador_en": "PDF p. 123 (printed 107)",
-    "quadro": "4.25"
-  },
   "v2a-saude-consolidada": {
     "tipo": "passagem",
     "excertoAberto": false,
@@ -157,5 +103,32 @@
     "localizador": "p. 303 do PDF (287 impressa)",
     "localizador_en": "PDF p. 303 (printed 287)",
     "quadro": "5.37"
+  },
+  "v2a-ppp-setores": {
+    "tipo": "passagem",
+    "excertoAberto": false,
+    "publicador": "Ministério das Finanças",
+    "documento": "Orçamento do Estado para 2027",
+    "documento_en": "Budget report for 2027",
+    "publicador_en": "Ministry of Finance",
+    "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true#page=123",
+    "lido": "2026-10-13",
+    "lingua": "pt",
+    "excerto": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\n Rodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n encargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n     receitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n Ferroviário            190     312     228      41     133     209      206     194        190     187     184     181     178      175\n Saúde                  231     254     266     265     268     106       69      65         63      64      64      65      61       53\n Aeroportuário          (14)    (13)    (26)    (26)    (26)    (26)     (26)    (40)       (40)    (40)    (40)    (40)    (54)     (54)\n encargos brutos           -       -      -       -       -       -        -       -          -       -       -       -       -        -\n     receitas            14      13      26      26      26      26       26      40         40      40      40      40      54       54\n Oceanário               (3)     (3)     (3)     (3)     (3)     (3)      (3)     (3)        (3)     (3)     (3)     (3)     (3)      (3)",
+    "extracao": {
+      "pagina": 123
+    },
+    "selo": {
+      "tipo": "v2a",
+      "campo": "página física 123",
+      "motor": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+      "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+      "hora": "2026-10-13T18:47:56.980564+00:00",
+      "cliente": "core.http.HttpClient.condicional"
+    },
+    "pagina_pdf": "123",
+    "localizador": "p. 123 do PDF (107 impressa)",
+    "localizador_en": "PDF p. 123 (printed 107)",
+    "quadro": "4.25"
   }
 }

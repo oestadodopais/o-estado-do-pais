@@ -20,8 +20,8 @@ source: "Ministério das Finanças"
 document:
   title: "Orçamento do Estado para 2027"
   edition: "2027"
-  locator: "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa efetiva consolidada, Variação (Sem PRR) (%), p. 303 do PDF (287 impressa); apoio à distinção entre total e efetiva: nota ao quadro 4.38, p. 145 do PDF (129 impressa)"
-  locator_en: "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated effective expenditure, Change (excluding RRP) (%), p. 303 of the PDF (printed 287); supporting definition of total and effective expenditure: note to Table 4.38, p. 145 of the PDF (printed 129)"
+  locator: "Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa efetiva consolidada, Variação (Sem PRR) (%), p. 303 do PDF (287 impressa)"
+  locator_en: "Table 5.37, Health (PL15), Legacy Programme Account, Consolidated effective expenditure, Change (excluding RRP) (%), p. 303 of the PDF (printed 287)"
   source_sha256: "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12"
   page: 303
   kind: "ficheiro"
@@ -49,7 +49,7 @@ check: null
 
 study: "oe-2027"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Localizador: Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa efetiva consolidada, Variação (Sem PRR) (%), p. 303 do PDF (287 impressa).  Previsão, não execução. O valor e a variação são os impressos na fonte. Apoio à definição, nota ao quadro 4.38: A despesa total efetiva exclui ativos e passivos financeiros e transferências do Orçamento do Estado para entidades com autonomia financeira. A despesa total inclui ativos e passivos financeiros e exclui transferências do Orçamento do Estado para entidades com autonomia financeira. · Cruzado de ResearchHub content/15 Orcamento do Estado 2027 · oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao."
+note: "[note do motor] Localizador: Quadro 5.37, Saúde (PL15), Conta do Pograma Legado, Despesa efetiva consolidada, Variação (Sem PRR) (%), p. 303 do PDF (287 impressa).  Previsão, não execução. O valor e a variação são os impressos na fonte. · Cruzado de ResearchHub content/15 Orcamento do Estado 2027 · oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
