@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T16:09:11+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/data/origens-v2a.json",
+   "descricao": "a página física do apoio da conta das parcerias trocada (124 para 142) no campo extracao, com o campo documento a dizer p. 124: o apoio deixa de bater com a página do PDF",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9c89f0eb97dc1a4661adbe2681a4cf2ea59640661647a434ab18e37595cd75fb",
+   "sha256_depois": "85ff463b5e697a180d3a6029916940a01deea0b6f85c51f94fc20d935d04842b",
+   "contexto_antes": "nsiderados os respetivos fluxos financeiros, designadamente os encargos e as receitas, cujas principais componentes são as seguintes.\",\n    \"extracao\": {\n      \"pagina\": 124\n    },\n    \"selo\": {\n      \"tipo\": \"v2a\",\n      \"campo\": \"página física 124\",\n      \"motor\": \"content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf\",",
+   "contexto_depois": "nsiderados os respetivos fluxos financeiros, designadamente os encargos e as receitas, cujas principais componentes são as seguintes.\",\n    \"extracao\": {\n      \"pagina\": 142\n    },\n    \"selo\": {\n      \"tipo\": \"v2a\",\n      \"campo\": \"página física 124\",\n      \"motor\": \"content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf\","
+  },
+  {
+   "id": "P2",
+   "ficheiro": "ledger/claims/oe-2027-ppp-rodoviario-encargos-liquidos-2027.yml",
+   "descricao": "a página impressa do localizador inglês do apoio trocada (printed 108 para printed 118): o localizador inglês deixa de bater com o português e com o PDF",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "3dad5e307db818547c5425e1d49d77faa3311bbd145def8adf7f2161bf0063b1",
+   "sha256_depois": "babe98c74f9fff36d3f922735179680c41b34aca24b32a01441196f0824da106",
+   "contexto_antes": " 124 do PDF (108 impressa)\"\n  locator_en: \"Table 4.25, road sector, Road sector, 2027, p. 123 of the PDF (printed 107); supporting text on charges and revenue: p. 124 of the PDF (printed 108)\"\n  source_sha256: \"a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12\"\n  page: 123\n  kind: \"ficheiro\"\n  crop:\n    asset: \"recortes/oe-2027-ppp-ro",
+   "contexto_depois": " 124 do PDF (108 impressa)\"\n  locator_en: \"Table 4.25, road sector, Road sector, 2027, p. 123 of the PDF (printed 107); supporting text on charges and revenue: p. 124 of the PDF (printed 118)\"\n  source_sha256: \"a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12\"\n  page: 123\n  kind: \"ficheiro\"\n  crop:\n    asset: \"recortes/oe-2027-ppp-ro"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "motor/publisher/v2a.py",
+   "descricao": "a página do excerto de apoio do ciclo do PRR trocada no publicador (31 para 13): o excerto selado deixaria de existir nessa página",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "5d2bb73f75c117f81ba8e982b735eb64e51aa1bd74cde6e6ca6c1b3b54b10a4e",
+   "sha256_depois": "42a0591b783ce1fe7653c6669c097d32a20ba49de4d526507dad0698a44f59a1",
+   "contexto_antes": "); _,receipt=source_file(OE,source)\n    specs={\n        'v2a-prr-saude': (302, 'O Programa Legado da Saúde evidencia,', 'A receita total consolidada'),\n        'v2a-prr-ciclo': (31, 'O Orçamento do Estado para 2027 assinala', 'Contudo, este ajustamento'),\n        'v2a-ppp-conta': (124, 'No setor rodoviário, os encargos líquidos', 'Pagament",
+   "contexto_depois": "); _,receipt=source_file(OE,source)\n    specs={\n        'v2a-prr-saude': (302, 'O Programa Legado da Saúde evidencia,', 'A receita total consolidada'),\n        'v2a-prr-ciclo': (13, 'O Orçamento do Estado para 2027 assinala', 'Contudo, este ajustamento'),\n        'v2a-ppp-conta': (124, 'No setor rodoviário, os encargos líquidos', 'Pagament"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/en/ledger/oe-2027-ppp-total-encargos-liquidos-2027/index.html",
+   "descricao": "o valor do total das parcerias na página inglesa construída trocado (1 438 para 1 348): a página deixa de bater com a linha",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "aa4a0f6c7959428569f2738a0bfc65888103d5e9697b196b8596030d9d472a99",
+   "sha256_depois": "60eb2461526a6c7516f0f9e6b8168e399558b321425878ecd80957d0a779722b",
+   "contexto_antes": "\">Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ",
+   "contexto_depois": "\">Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 348   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa "
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html",
+   "descricao": "a explicação da comparação invertida na página inglesa construída da variação sem PRR (fall/rise trocados): a página passa a dizer o contrário dos dados",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5f8a0108c830c33b8973427c10431ffbe656cd56000f03af17a3a6aad4c5f451",
+   "sha256_depois": "0c426813dbccf44cfb0dbc696e332a5d918dda66ae5e43aa4e2c2a9e8834c9d2",
+   "contexto_antes": "sa-efetiva-consolidada-sem-prr-2027\" class=\"claim-value\">17 803,1</span> million. The difference between the columns with and without PRR is the PRR component; its reduction explains the fall with PRR and the rise without it.</p></div><div class=\"def-origem\" data-def-origem=\"v2a-prr-saude\"><p class=\"def-origem-linha\"><span class=\"def-origem-k\">Definition by</span> <span data-verbat",
+   "contexto_depois": "sa-efetiva-consolidada-sem-prr-2027\" class=\"claim-value\">17 803,1</span> million. The difference between the columns with and without PRR is the PRR component; its reduction explains the rise with PRR and the fall without it.</p></div><div class=\"def-origem\" data-def-origem=\"v2a-prr-saude\"><p class=\"def-origem-linha\"><span class=\"def-origem-k\">Definition by</span> <span data-verbat"
+  }
+ ]
+}
