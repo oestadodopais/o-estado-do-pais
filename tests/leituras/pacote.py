@@ -210,6 +210,16 @@ with tempfile.TemporaryDirectory(prefix='oedp-pacote-h2-') as tmp:
     casos[-1].update(codigo=r.returncode, queixa=next(l for l in r.stderr.splitlines() if l.startswith('ValueError: O pacote recusa')))
     escrever(sitio, 'ledger/claims/linha-lixo-atras.yml', 'id: "linha-lixo-atras"\nvalue: "1"\ndocument:\n  source_sha256: null\n')
     commit(sitio, ['ledger/claims/linha-lixo-atras.yml'])
+    # A quarta leitura (achado 3): um source_sha256 válido seguido de uma chave igual a null recusa, em vez de ficar «sem documento».
+    escrever(sitio, 'ledger/claims/linha-duplicada.yml', 'id: "linha-duplicada"\nvalue: "1"\ndocument:\n  source_sha256: "' + sha + '"\n  source_sha256: null\n')
+    cabeca_dup = commit(sitio, ['ledger/claims/linha-duplicada.yml'])
+    dup = tmp/'duplicada'
+    r = subprocess.run([*cmd[:-1], cabeca_dup, str(dup), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md')], env=env_corpos, capture_output=True, text=True)
+    exige('planta: uma chave source_sha256 repetida recusa a linha, em vez de ficar com a última em silêncio',
+          r.returncode != 0 and not dup.exists() and 'chave duplicada' in r.stderr and 'linha-duplicada' in r.stderr)
+    casos[-1].update(codigo=r.returncode, queixa=next(l for l in r.stderr.splitlines() if l.startswith('ValueError: O pacote recusa')))
+    escrever(sitio, 'ledger/claims/linha-duplicada.yml', 'id: "linha-duplicada"\nvalue: "1"\ndocument:\n  source_sha256: null\n')
+    commit(sitio, ['ledger/claims/linha-duplicada.yml'])
     ilegivel = tmp/'ilegivel'
     r = subprocess.run([*cmd[:-1], cabeca_ilegivel, str(ilegivel), str(sitio/'brief.md'), str(sitio/'medicoes/relatorio.md')], env=env_corpos, capture_output=True, text=True)
     exige('planta: uma declaração de sha256 que o guião não lê recusa, em vez de passar por «sem documento»',

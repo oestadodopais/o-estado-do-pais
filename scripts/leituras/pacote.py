@@ -153,10 +153,21 @@ def sha_declarado(texto, ident):
         import yaml
     except ImportError:
         raise ValueError('O pacote recusa: o PyYAML não está instalado e o guião precisa dele para ler document.source_sha256 das linhas (M83).')
+    class SemDuplicados(yaml.SafeLoader):
+        # O carregador normal fica com a última de duas chaves iguais em silêncio, e um source_sha256 válido seguido de um
+        # null passava por «sem documento» (a quarta leitura da M83, achado 3). Uma chave repetida recusa a linha.
+        def construct_mapping(self, node, deep=False):
+            vistas = set()
+            for chave_no, _ in node.value:
+                chave = self.construct_object(chave_no, deep=deep)
+                if chave in vistas:
+                    raise ValueError(f'chave duplicada «{chave}»')
+                vistas.add(chave)
+            return super().construct_mapping(node, deep)
     try:
-        dados = yaml.safe_load(texto)
-    except yaml.YAMLError as e:
-        raise ValueError(f'O pacote recusa: a linha {ident} não é YAML legível ({type(e).__name__}).')
+        dados = yaml.load(texto, Loader=SemDuplicados)
+    except (yaml.YAMLError, ValueError) as e:
+        raise ValueError(f'O pacote recusa: a linha {ident} não é YAML que o guião aceite ({type(e).__name__}: {str(e).splitlines()[0][:80]}).')
     documento = dados.get('document') if isinstance(dados, dict) else None
     if not isinstance(documento, dict) or documento.get('source_sha256') is None:
         return None

@@ -166,6 +166,12 @@
       "queixa": "ValueError: O pacote recusa: a linha linha-lixo-atras declara document.source_sha256 numa forma que o guião não aceita ('0c7cf42484ddc9ed5436d47e1207815920f77365a87ade98'); esperam-se 64 hexadecimais entre aspas, ou null."
     },
     {
+      "nome": "planta: uma chave source_sha256 repetida recusa a linha, em vez de ficar com a última em silêncio",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa: a linha linha-duplicada não é YAML que o guião aceite (ValueError: chave duplicada «source_sha256»)."
+    },
+    {
       "nome": "planta: uma declaração de sha256 que o guião não lê recusa, em vez de passar por «sem documento»",
       "passou": true,
       "codigo": 1,

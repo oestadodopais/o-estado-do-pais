@@ -1,6 +1,6 @@
 {
-  "medido_em": "2026-10-14T09:15+00:00",
-  "cadeias_medidas": 7,
+  "medido_em": "2026-10-14T09:51+00:00",
+  "cadeias_medidas": 8,
   "repositorios": {
     "sitio": {
       "referencia": "main",
@@ -20,6 +20,13 @@
           "mensagens_de_commit": 0,
           "identidades_de_commit": 2632,
           "ficheiros_na_cabeca": 0
+        },
+        "nome_da_conta_do_github": {
+          "commits_cujo_diff_a_traz": 2,
+          "nomes_de_ficheiro": 0,
+          "mensagens_de_commit": 0,
+          "identidades_de_commit": 0,
+          "ficheiros_na_cabeca": 2
         },
         "nome_completo": {
           "commits_cujo_diff_a_traz": 2,
@@ -75,6 +82,13 @@
           "nomes_de_ficheiro": 0,
           "mensagens_de_commit": 0,
           "identidades_de_commit": 657,
+          "ficheiros_na_cabeca": 0
+        },
+        "nome_da_conta_do_github": {
+          "commits_cujo_diff_a_traz": 0,
+          "nomes_de_ficheiro": 0,
+          "mensagens_de_commit": 0,
+          "identidades_de_commit": 0,
           "ficheiros_na_cabeca": 0
         },
         "nome_completo": {
