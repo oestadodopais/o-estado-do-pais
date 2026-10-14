@@ -254,7 +254,38 @@ def plantas_pessoais():
                   ('decisao-inocua', 'registo.log', b'<worktree>/dist', False)])
     plantas = [{'id': 'ramo-pessoal-' + caso, 'mordeu': recusar_rastreado(nome, dados, (cadeia,)) == esperado}
                for caso, nome, dados, esperado in casos]
-    return plantas + plantas_identidades() + plantas_normalizacao()
+    return plantas + plantas_identidades() + plantas_normalizacao() + plantas_formas_d()
+
+
+def plantas_formas_d():
+    """RH1-d: cada representação e cada variante de espaço, só em memória."""
+    import unicodedata
+    inteiro = 'Pessoa ' + 'Sintética ' + 'Exemplo'
+    plantas = []
+    for caso, espaco in [('duplo', '  '), ('inseparavel', '\u00a0'), ('tabulador', '\t')]:
+        lidas = detetor._ler_proibidos(inteiro.replace(' ', espaco), True)
+        plantas.append({'id': 'espaco-segredo-' + caso,
+                        'mordeu': lidas == (inteiro.encode(),) and detetor.contem_cadeias(inteiro.encode(), lidas)})
+    for caso, espaco in [('duplo', '  '), ('inseparavel', '\u00a0'), ('quebra', '\n'),
+                         ('entidade', '&nbsp;'), ('decimal', '&#160;'), ('hexadecimal', '&#xA0;')]:
+        for codificacao in ('utf-8', 'utf-16-le', 'utf-16-be', 'latin-1'):
+            corpo = inteiro.replace(' ', espaco).encode(codificacao)
+            plantas.append({'id': 'espaco-pagina-' + caso + '-' + codificacao,
+                            'mordeu': recusar_rastreado('ensaio.bin', corpo, (inteiro.encode(),))})
+    dobravel = 'Pessoa ' + 'Sintética ' + 'Straße'
+    for normalizacao in ('NFC', 'NFD'):
+        for caixa, texto in [('minusculas', dobravel.lower()), ('casefold', dobravel.casefold()),
+                             ('maiusculas', dobravel.upper())]:
+            for codificacao in ('utf-8', 'utf-16-le', 'utf-16-be', 'latin-1'):
+                try:
+                    corpo = unicodedata.normalize(normalizacao, texto).encode(codificacao)
+                except UnicodeEncodeError:
+                    continue  # NFD com marcas combinantes não cabe em Latin-1.
+                plantas.append({'id': 'forma-' + normalizacao + '-' + caixa + '-' + codificacao,
+                                'mordeu': recusar_rastreado('ensaio.bin', corpo, (dobravel.encode(),))})
+    plantas.append({'id': 'espacos-controlo-inocuo',
+                    'mordeu': not recusar_rastreado('ensaio.txt', b'Uma pagina publica.', (inteiro.encode(),))})
+    return plantas
 
 
 def plantas_transferidas():

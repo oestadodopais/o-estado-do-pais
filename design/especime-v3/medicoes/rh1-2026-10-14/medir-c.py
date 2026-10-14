@@ -18,8 +18,8 @@ def modulo(nome, caminho):
     return m
 
 
-def medir_portoes():
-    pasta = AQUI / 'portoes-c'
+def medir_portoes(fase='c'):
+    pasta = AQUI / ('portoes-' + fase)
     codigos = {n: int((pasta / (n + '.codigo')).read_text()) for n in ('build', 'verify', 'typecheck')}
     texto = (pasta / 'verify.log').read_text()
     inicio = texto.index('    {', texto.index('✓ npm run check:privacidade ·'))
@@ -54,8 +54,43 @@ def main():
     return int(not resultado['passou'])
 
 
+def auditar_entrega(fase):
+    """RH1-c usa o âmbito histórico; RH1-d audita a pasta atual, sem o registo."""
+    if fase not in ('c', 'd'):
+        raise ValueError('Passagem de auditoria inválida.')
+    guarda = modulo('guarda_auditoria', 'scripts/check-privacidade.py')
+    guarda.detetor.carregar_proibidos_locais()
+    destino = AQUI / ('auditoria-entrega-' + fase + '.json')
+    prefixo = AQUI.relative_to(RAIZ).as_posix() + '/'
+    if fase == 'c':
+        nomes = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', '-z',
+                                         '5dc59f27', '--', prefixo], cwd=RAIZ).decode().split('\0')
+        nomes = [n for n in nomes if n and n != destino.relative_to(RAIZ).as_posix()]
+        ficheiros = [(n, subprocess.check_output(['git', 'show', '5dc59f27:' + n], cwd=RAIZ)) for n in nomes]
+        for local in ('portoes-b/alvos.json', 'portoes-c/alvos.json'):
+            assert prefixo + local not in nomes, 'Alvo histórico inesperadamente seguido.'
+            ficheiros.append((prefixo + local, (AQUI / local).read_bytes()))
+    else:
+        ficheiros = [(p.relative_to(RAIZ).as_posix(), p.read_bytes())
+                     for p in sorted(AQUI.rglob('*')) if p.is_file() and p != destino]
+    cadeias = guarda.detetor.cadeias_pessoais()
+    achados = [n for n, corpo in ficheiros if guarda.recusar_rastreado(n, corpo, cadeias)]
+    locais = [n for n, _ in ficheiros if n.endswith('/alvos.json') and (RAIZ / n).is_file()]
+    ignorados = [n for n in locais if subprocess.run(['git', 'check-ignore', '-q', n],
+                                                    cwd=RAIZ, capture_output=True).returncode == 0]
+    resultado = {'ficheiros_conferidos_antes_deste_registo': len(ficheiros),
+                 'inclui_alvos_locais_ignorados': bool(ignorados), 'achados': achados, 'passou': not achados}
+    destino.write_text(guarda.json_seguro(resultado), encoding='utf-8')
+    return resultado
+
+
 if __name__ == '__main__':
     try:
+        if '--auditar' in sys.argv:
+            resultado = auditar_entrega(sys.argv[sys.argv.index('--auditar') + 1])
+            print(json.dumps({'passou': resultado['passou'],
+                              'ficheiros': resultado['ficheiros_conferidos_antes_deste_registo']}))
+            raise SystemExit(int(not resultado['passou']))
         raise SystemExit(main())
     except Exception:
         print('RH1-c: medição recusada sem publicar dados privados.', file=sys.stderr)

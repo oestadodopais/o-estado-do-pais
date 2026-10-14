@@ -55,10 +55,11 @@ def em_ci():
 def _ler_proibidos(valor, ci):
     cadeias = []
     identidades = {n.casefold() for n in IDENTIDADES_DO_PROJETO}
-    # Só LF separa entradas; CRLF é aceite pelas pontas. Outros separadores
-    # interiores têm de ser recusados, sem criarem novas entradas válidas.
+    # Só LF separa entradas. Dentro de cada entrada, os espaços que split()
+    # reconhece colapsam antes da validação; os restantes controlos recusam.
     for linha, texto in enumerate((valor or '').split('\n'), 1):
         texto = re.sub(r'^[\s\ufeff]+|[\s\ufeff]+$', '', texto)
+        texto = ' '.join(texto.split())
         texto = unicodedata.normalize('NFC', texto)
         if not texto:
             continue
@@ -103,33 +104,86 @@ def formas_dos_nomes(cadeias):
 
 @lru_cache(maxsize=64)
 def formas_comparaveis(cadeias):
-    textos, binarios = [], []
+    """Compila as formas uma vez; nenhum corpo de ficheiro é descodificado."""
+    def alternativa(partes):
+        partes = sorted(set(partes), key=lambda p: (-len(p), p))
+        return partes[0] if len(partes) == 1 else b'(?:' + b'|'.join(partes) + b')'
+
+    @lru_cache(maxsize=None)
+    def representacoes(caracter, codificacao):
+        def literal(texto):
+            return re.escape(texto.encode(codificacao).lower())
+
+        formas = []
+        valores = espacos_unicode() if caracter == ' ' else {caracter, caracter.lower(), caracter.upper(), caracter.casefold()}
+        for valor in valores:
+            try:
+                formas.append(literal(valor))
+            except UnicodeEncodeError:
+                pass
+            # Também conserva entidades e escapes de letras ASCII e formas
+            # misturadas dentro de uma palavra, sem transformar o ficheiro.
+            if len(valor) == 1:
+                numero = ord(valor)
+                nome = html.entities.codepoint2name.get(numero)
+                if nome:
+                    formas.append(literal('&' + nome + ';'))
+                for prefixo, digitos in [('&#', str(numero)), ('&#x', format(numero, 'x'))]:
+                    formas.append(literal(prefixo) + b'(?:' + literal('0') + b')*' + literal(digitos) + b'(?:' + literal(';') + b')?')
+                if numero <= 0xffff:
+                    formas.append(literal('\\u' + format(numero, '04x')))
+                else:
+                    par = valor.encode('utf-16-be')
+                    formas.append(literal(''.join('\\u' + format(int.from_bytes(par[i:i+2], 'big'), '04x') for i in (0, 2))))
+        return tuple(formas)
+
+    @lru_cache(maxsize=None)
+    def atomo(caracter, codificacao):
+        padrao = alternativa(representacoes(caracter, codificacao))
+        return b'(?:' + padrao + b')+' if caracter == ' ' else padrao
+
+    arvore = {}
     for cadeia in cadeias:
-        texto = unicodedata.normalize('NFC', cadeia.decode('utf-8'))
-        textos.append(texto.casefold())
-        for codificacao in ('utf-8', 'utf-16-le', 'utf-16-be', 'latin-1'):
-            for forma in (texto, texto.upper(), texto.casefold()):
-                try:
-                    binarios.append(forma.encode(codificacao).lower())
-                except UnicodeEncodeError:
-                    continue  # Nem todas as cadeias têm representação Latin-1.
-    return tuple(dict.fromkeys(textos)), tuple(dict.fromkeys(binarios))
+        texto = ' '.join(cadeia.decode('utf-8').split())
+        if not texto:
+            continue
+        for normalizacao in ('NFC', 'NFD'):
+            normal = unicodedata.normalize(normalizacao, texto)
+            for forma in {normal.lower(), normal.casefold()}:
+                for codificacao in ('utf-8', 'utf-16-le', 'utf-16-be', 'latin-1'):
+                    for primeira in representacoes(forma[0], codificacao):
+                        # Cada ramo começa por um byte literal. Assim o motor
+                        # da expressão pode saltar os bytes que não iniciam nomes.
+                        tamanho = 2 if primeira.startswith(b'\\') else 1
+                        ramo = arvore.setdefault(primeira[:tamanho], {})
+                        if primeira[tamanho:]:
+                            ramo = ramo.setdefault(primeira[tamanho:], {})
+                        for c in forma[1:]:
+                            ramo = ramo.setdefault(atomo(c, codificacao), {})
+                        ramo[None] = {}
+
+    def compilar(ramo):
+        # Partilha os prefixos das formas e das cadeias, para não voltar a
+        # procurar o mesmo início em cada alternativa da expressão regular.
+        partes = [atomo + compilar(filhos) for atomo, filhos in ramo.items() if atomo is not None]
+        if None in ramo:
+            partes.append(b'')
+        return alternativa(partes)
+
+    return re.compile(compilar(arvore) if arvore else rb'(?!)')
+
+
+@lru_cache(maxsize=1)
+def espacos_unicode():
+    return tuple(chr(n) for n in range(0x110000) if chr(n).isspace())
 
 
 def contem_cadeias(corpo, cadeias):
-    textos, binarios = formas_comparaveis(tuple(cadeias))
-    if not textos:
+    if not cadeias:
         return False
-    baixo = corpo.lower()
-    if any(c in baixo for c in binarios):
-        return True
-    texto = corpo.decode('utf-8', errors='replace')
-    if '&' in texto:
-        texto = html.unescape(texto)
-    if '\\u' in texto:
-        texto = re.sub(r'\\u([0-9a-fA-F]{4})', lambda m: chr(int(m[1], 16)), texto)
-    texto = unicodedata.normalize('NFC', texto).casefold()
-    return any(c in texto for c in textos)
+    # Uma pesquisa com todas as alternativas, sobre uma única cópia em bytes
+    # minúsculos. As maiúsculas não ASCII estão nas alternativas compiladas.
+    return formas_comparaveis(tuple(cadeias)).search(corpo.lower()) is not None
 
 
 def positivos_de_nome():
