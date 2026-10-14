@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-14T17:49:48+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
+   "descricao": "os espaços do segredo só colapsam se forem espaços ASCII simples (split(' ')): um espaço inseparável ou um tabulador no segredo ficaria",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "45b3673fd09af1deae60c5f123b60f777ce709895d3f1d37519660cba12e8868",
+   "sha256_depois": "a3ca0999426845a62e3b8fa2c6f8d777352a401b8cdc5e9ff5da215811bf73da",
+   "contexto_antes": "s restantes controlos recusam.\n    for linha, texto in enumerate((valor or '').split('\\n'), 1):\n        texto = re.sub(r'^[\\s\\ufeff]+|[\\s\\ufeff]+$', '', texto)\n        texto = ' '.join(texto.split())\n        texto = unicodedata.normalize('NFC', texto)\n        if not texto:\n            continue\n        if (len(texto) < 4 or texto.casefold() in identidades or",
+   "contexto_depois": "s restantes controlos recusam.\n    for linha, texto in enumerate((valor or '').split('\\n'), 1):\n        texto = re.sub(r'^[\\s\\ufeff]+|[\\s\\ufeff]+$', '', texto)\n        texto = ' '.join(texto.split(' '))\n        texto = unicodedata.normalize('NFC', texto)\n        if not texto:\n            continue\n        if (len(texto) < 4 or texto.casefold() in identidades or"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
+   "descricao": "as formas comparáveis perdem o UTF-16: uma página em UTF-16 com o nome passaria",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "a3ca0999426845a62e3b8fa2c6f8d777352a401b8cdc5e9ff5da215811bf73da",
+   "sha256_depois": "edc42543ec6e84f859fe5e78d20afb9212f54fe9bdc3481d077b412e2e018110",
+   "contexto_antes": "r normalizacao in ('NFC', 'NFD'):\n            normal = unicodedata.normalize(normalizacao, texto)\n            for forma in {normal.lower(), normal.casefold()}:\n                for codificacao in ('utf-8', 'utf-16-le', 'utf-16-be', 'latin-1'):\n                    for primeira in representacoes(forma[0], codificacao):\n                        # Cada ramo começa por um byte literal. Assim o motor\n      ",
+   "contexto_depois": "r normalizacao in ('NFC', 'NFD'):\n            normal = unicodedata.normalize(normalizacao, texto)\n            for forma in {normal.lower(), normal.casefold()}:\n                for codificacao in ('utf-8', 'latin-1'):\n                    for primeira in representacoes(forma[0], codificacao):\n                        # Cada ramo começa por um byte literal. Assim o motor\n      "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
+   "descricao": "a procura deixa de pôr o ficheiro em minúsculas: um nome em maiúsculas ASCII passaria",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "edc42543ec6e84f859fe5e78d20afb9212f54fe9bdc3481d077b412e2e018110",
+   "sha256_depois": "453f558e44d989ff303cf275e0260139e33a32a8cde0ea9b0c26cb05d28dcdd7",
+   "contexto_antes": "False\n    # Uma pesquisa com todas as alternativas, sobre uma única cópia em bytes\n    # minúsculos. As maiúsculas não ASCII estão nas alternativas compiladas.\n    return formas_comparaveis(tuple(cadeias)).search(corpo.lower()) is not None\n\n\ndef positivos_de_nome():\n    nomes = nomes_dos_autores()\n    if nomes:\n        return nomes\n    segredo = ler_proibidos()\n    return segredo[:1] or ((nome_da",
+   "contexto_depois": "False\n    # Uma pesquisa com todas as alternativas, sobre uma única cópia em bytes\n    # minúsculos. As maiúsculas não ASCII estão nas alternativas compiladas.\n    return formas_comparaveis(tuple(cadeias)).search(corpo) is not None\n\n\ndef positivos_de_nome():\n    nomes = nomes_dos_autores()\n    if nomes:\n        return nomes\n    segredo = ler_proibidos()\n    return segredo[:1] or ((nome_da"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "scripts/check-privacidade.py",
+   "descricao": "o controlo inócuo das plantas dos espaços passa sempre: deixa de provar a ausência de alarme",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "d9d66f9b44b984bb17a5a582541d46a12ea52bae3545a884d612d0364d048688",
+   "sha256_depois": "b8b3a7948a56c08fea343245fab3c82bab07a756a0cbe27e54f96c9f34cd0256",
+   "contexto_antes": ",\n                                'mordeu': recusar_rastreado('ensaio.bin', corpo, (dobravel.encode(),))})\n    plantas.append({'id': 'espacos-controlo-inocuo',\n                    'mordeu': not recusar_rastreado('ensaio.txt', b'Uma pagina publica.', (inteiro.encode(),))})\n    return plantas\n\n\ndef plantas_transferidas():\n    \"\"\"RH1-b: equivalentes em memória das guardas pessoais do HTML e do M5.\"\"\"\n    from unittest.mock import p",
+   "contexto_depois": ",\n                                'mordeu': recusar_rastreado('ensaio.bin', corpo, (dobravel.encode(),))})\n    plantas.append({'id': 'espacos-controlo-inocuo',\n                    'mordeu': True})\n    return plantas\n\n\ndef plantas_transferidas():\n    \"\"\"RH1-b: equivalentes em memória das guardas pessoais do HTML e do M5.\"\"\"\n    from unittest.mock import p"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o tempo depois da RH1-d trocado no relatório (54,6 para 45,6): deixa de bater com os ficheiros da medição",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "758e9a6328bdec97fdd96c240056ef5cccd389c696bf26ab61bf15f827f2eb7e",
+   "sha256_depois": "ce4c663156ba5668a28b46beb2c1445f70d2583cffdc720757d5447b529894ba",
+   "contexto_antes": "| Corrida | Tempo da privacidade, em segundos | Fonte |\n|---|---|---|\n| Isolada, antes da RH1-d | 367,6 | `tempo-antes-d.json`, arredondado em `custo-d.json` |\n| Isolada, depois da RH1-d | 54,6 | `tempo-depois-d.json`, arredondado em `custo-d.json` |\n| Portões RH1-b | 119,9 | `portoes-b/verify.log` |\n| Portões RH1-c | 371,6 | `portoes-c/verify.log` |\n| ",
+   "contexto_depois": "| Corrida | Tempo da privacidade, em segundos | Fonte |\n|---|---|---|\n| Isolada, antes da RH1-d | 367,6 | `tempo-antes-d.json`, arredondado em `custo-d.json` |\n| Isolada, depois da RH1-d | 45,6 | `tempo-depois-d.json`, arredondado em `custo-d.json` |\n| Portões RH1-b | 119,9 | `portoes-b/verify.log` |\n| Portões RH1-c | 371,6 | `portoes-c/verify.log` |\n| "
+  }
+ ]
+}
