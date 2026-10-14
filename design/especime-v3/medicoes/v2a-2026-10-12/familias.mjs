@@ -25,8 +25,8 @@ for(const [stem,label,en] of [
   }
   FAMILIAS_V2A.push(familia(['oe-2027-saude-'+stem+'-variacao'],'Saúde, '+minusculas(label)+', variação publicada',
     'Health, '+minusculas(en)+', published change',
-    'É a variação publicada da '+minusculas(label)+' do quadro da Saúde, «Conta do Pograma Legado»: compara o orçamento com a estimativa do ano anterior, '+(stem.endsWith('sem-prr')?'sem PRR.':'incluindo PRR.'),
-    'It is the published change in '+minusculas(en)+' in the Health table, «Conta do Pograma Legado»: the budget compared with the previous year’s estimate, '+(stem.endsWith('sem-prr')?'excluding the RRP.':'including the RRP.'),
+    'É a variação publicada da '+minusculas(label)+' do quadro da Saúde. O quadro escreve «Conta do Pograma Legado». Compara o orçamento com a estimativa do ano anterior, '+(stem.endsWith('sem-prr')?'sem PRR.':'incluindo PRR.'),
+    'It is the published change in '+minusculas(en)+' in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. It compares the budget with the previous year’s estimate, '+(stem.endsWith('sem-prr')?'excluding the RRP.':'including the RRP.'),
     L('name',fonte),L('document.locator','Saúde (PL15), Conta do Pograma Legado'),L('document.locator','Variação'),L('ressalva','Compara o orçamento de 2027 com a estimativa de 2026')));
 }
 for(const [stem,label,en,fonte] of [

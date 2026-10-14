@@ -3891,10 +3891,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a variação publicada da despesa efetiva consolidada sem PRR do quadro da Saúde, «Conta do Pograma Legado»: compara o orçamento com a estimativa do ano anterior, sem PRR."
+        "É a variação publicada da despesa efetiva consolidada sem PRR do quadro da Saúde. O quadro escreve «Conta do Pograma Legado». Compara o orçamento com a estimativa do ano anterior, sem PRR."
       ],
       "en": [
-        "It is the published change in consolidated effective expenditure excluding the RRP in the Health table, «Conta do Pograma Legado»: the budget compared with the previous year’s estimate, excluding the RRP."
+        "It is the published change in consolidated effective expenditure excluding the RRP in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. It compares the budget with the previous year’s estimate, excluding the RRP."
       ]
     }
   },
@@ -3905,10 +3905,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a variação publicada da despesa efetiva consolidada do quadro da Saúde, «Conta do Pograma Legado»: compara o orçamento com a estimativa do ano anterior, incluindo PRR."
+        "É a variação publicada da despesa efetiva consolidada do quadro da Saúde. O quadro escreve «Conta do Pograma Legado». Compara o orçamento com a estimativa do ano anterior, incluindo PRR."
       ],
       "en": [
-        "It is the published change in consolidated effective expenditure in the Health table, «Conta do Pograma Legado»: the budget compared with the previous year’s estimate, including the RRP."
+        "It is the published change in consolidated effective expenditure in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. It compares the budget with the previous year’s estimate, including the RRP."
       ]
     }
   },
@@ -3953,10 +3953,10 @@ Object.assign(FAMILIAS_DAS_LINHAS, {
     },
     "frase": {
       "pt": [
-        "É a variação publicada da despesa total consolidada do quadro da Saúde, «Conta do Pograma Legado»: compara o orçamento com a estimativa do ano anterior, incluindo PRR."
+        "É a variação publicada da despesa total consolidada do quadro da Saúde. O quadro escreve «Conta do Pograma Legado». Compara o orçamento com a estimativa do ano anterior, incluindo PRR."
       ],
       "en": [
-        "It is the published change in consolidated total expenditure in the Health table, «Conta do Pograma Legado»: the budget compared with the previous year’s estimate, including the RRP."
+        "It is the published change in consolidated total expenditure in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. It compares the budget with the previous year’s estimate, including the RRP."
       ]
     }
   }

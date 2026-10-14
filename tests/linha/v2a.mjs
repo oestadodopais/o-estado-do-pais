@@ -36,6 +36,7 @@ export function conferir(c,lang,html) {
     const fim=variacao?(lang==='pt'?', variação publicada entre a estimativa de 2026 e o orçamento para 2027':', published change between the estimate for 2026 and the budget for 2027'):(lang==='pt'?(ano==='2026'?', estimativa de 2026':', orçamento para 2027'):(ano==='2026'?', 2026 estimate':', budget for 2027'));
     const esperado=(lang==='pt'?'Saúde, ':'Health, ')+medida+sem+fim;
     if(cabeca!==esperado)erros.push('V2AD Saúde: cabeçalho com medida, programa ou período diferente');
+    if(!frase.includes(lang==='pt'?'O quadro escreve «Conta do Pograma Legado»':'The spelling «Pograma» is the table’s own'))erros.push('V2AD grafia: falta a nota sobre o nome do programa');
     const periodos=tree.querySelectorAll('h1 [data-nonledger="data-da-linha"]');
     if(periodos.length!==(variacao?2:1)||periodos.some(x=>x.getAttribute('data-de-campo')!=='reference_date'))erros.push('V2AD período: ano sem token da linha');
     if(!variacao && (!frase.includes(anos[ano])||!frase.includes('Conta do Pograma Legado')))erros.push('V2AC Saúde: falta o ano, a coluna ou a grafia do programa');
@@ -71,6 +72,7 @@ for(const id of ids) {
 }
 const plantas=[];
 for(const [id,altera,mensagem,lang='en'] of [
+  ['oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao',t=>t.querySelector('.linha-o-que-e-frase').set_content(t.querySelector('.linha-o-que-e-frase').textContent.replace('The spelling «Pograma» is the table’s own.','')),'V2AD grafia: falta a nota sobre o nome do programa'],
   ['oe-2027-saude-despesa-total-consolidada-2027',t=>t.querySelector('[data-def-origem="v2a-total-efetiva"]').remove(),'V2AD apoio: definição confundida com o excerto da Saúde'],
   ['oe-2027-saude-despesa-efetiva-consolidada-2027',t=>t.querySelector('h1').set_content(t.querySelector('h1').textContent.replace('effective','total')),'V2AD Saúde: cabeçalho com medida, programa ou período diferente'],
   ['oe-2027-saude-despesa-total-consolidada-2027',t=>t.querySelector('h1').set_content(t.querySelector('h1').textContent.replace('Health','Education')),'V2AD Saúde: cabeçalho com medida, programa ou período diferente'],

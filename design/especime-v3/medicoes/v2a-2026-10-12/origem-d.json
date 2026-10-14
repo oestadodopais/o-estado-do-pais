@@ -1,0 +1,9 @@
+{
+  "origem": "v2a-total-efetiva",
+  "documento": "Orçamento do Estado para 2027, nota ao quadro 4.38, p. 145 do PDF",
+  "pagina_pdf": 145,
+  "excerto": "A despesa total efetiva exclui ativos e passivos financeiros e transferências do Orçamento do Estado para entidades com autonomia financeira. A despesa total inclui ativos e passivos financeiros e exclui transferências do Orçamento do Estado para entidades com autonomia financeira.",
+  "sha256": "a338bd0084cc5fe2a2fcb392f56617f19abe87f0a57bad8b61d78db2274ebc12",
+  "motor_path": "content/15 Orcamento do Estado 2027/source/v2a/oe-relatorio.pdf",
+  "coincide_com_pdf": true
+}

@@ -1,0 +1,239 @@
+{
+  "cabeca": "505d654e89d296f71742b53812d6420f7d6bfc1e",
+  "linhas": [
+    {
+      "id": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "pt": {
+        "cabecalho": "Afirmação de Leitão Amaro sobre o orçamento da Saúde sem PRR",
+        "frase": "É o aumento do orçamento da Saúde retirando a verba excecional do PRR, nas palavras do ministro da Presidência transcritas pela RTP.",
+        "conta": null
+      },
+      "en": {
+        "cabecalho": "Leitão Amaro’s statement about the Health budget excluding the RRP",
+        "frase": "It is the increase in the Health budget excluding exceptional RRP funding, in the Minister of the Presidency’s words transcribed by RTP.",
+        "conta": null
+      }
+    },
+    {
+      "id": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "pt": {
+        "cabecalho": "Afirmação de Paulo Raimundo sobre as parcerias rodoviárias",
+        "frase": "É o montante que o orçamento entrega às parcerias público-privadas rodoviárias, nas palavras da intervenção de Paulo Raimundo publicada pelo PCP.",
+        "conta": null
+      },
+      "en": {
+        "cabecalho": "Paulo Raimundo’s statement about road partnerships",
+        "frase": "It is the amount the budget allocates to road public-private partnerships, in Paulo Raimundo’s speech published by the PCP.",
+        "conta": null
+      }
+    },
+    {
+      "id": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "pt": {
+        "cabecalho": "Queda do orçamento da Saúde noticiada pela RTP",
+        "frase": "É a queda do orçamento da Saúde para dois mil e vinte e sete noticiada pela RTP a nove de outubro de dois mil e vinte e seis. Os montantes da notícia identificam a despesa total consolidada do programa Saúde. A queda é a diferença entre a estimativa do ano anterior e o orçamento.",
+        "conta": "A despesa total consolidada passa de 18 125,9 milhões de euros na estimativa de 2026 para 17 858,4 milhões no orçamento para 2027. A diferença obtém-se subtraindo o orçamento à estimativa."
+      },
+      "en": {
+        "cabecalho": "Health budget decrease reported by RTP",
+        "frase": "It is the decrease in the Health budget for two thousand and twenty-seven reported by RTP on nine October two thousand and twenty-six. The article’s amounts identify consolidated total expenditure for the Health programme. The decrease is the difference between the previous year’s estimate and the budget.",
+        "conta": "Consolidated total expenditure goes from 18 125,9 million euros in the estimate for 2026 to 17 858,4 million in the budget for 2027. The decrease is calculated by subtracting the budget from the estimate."
+      }
+    },
+    {
+      "id": "oe-2027-cenario-ihpc-2026",
+      "pt": {
+        "cabecalho": "Previsão do Ministério das Finanças para a inflação medida pelo IHPC em dois mil e vinte e seis, transcrita pelo CFP",
+        "frase": "É a previsão do Ministério das Finanças para a inflação medida pelo índice harmonizado de preços no consumidor em dois mil e vinte e seis, na Proposta de Orçamento do Estado para dois mil e vinte e sete, como o CFP a transcreve. O parecer considera-a pouco provável.",
+        "conta": null
+      },
+      "en": {
+        "cabecalho": "Ministry of Finance forecast for HICP inflation in two thousand and twenty-six, transcribed by the CFP",
+        "frase": "It is the Ministry of Finance forecast for inflation measured by the harmonised index of consumer prices in two thousand and twenty-six, in the Draft State Budget for two thousand and twenty-seven, as transcribed by the CFP. The opinion considers it unlikely.",
+        "conta": null
+      }
+    },
+    {
+      "id": "oe-2027-cenario-pib-real-crescimento-2027",
+      "pt": {
+        "cabecalho": "Previsão do Ministério das Finanças para o crescimento real do produto interno bruto em dois mil e vinte e sete, transcrita pelo CFP",
+        "frase": "É a previsão do Ministério das Finanças para o crescimento real do produto interno bruto em dois mil e vinte e sete, na Proposta de Orçamento do Estado para dois mil e vinte e sete, como o CFP a transcreve. O parecer considera-a superior à de todas as instituições de referência.",
+        "conta": null
+      },
+      "en": {
+        "cabecalho": "Ministry of Finance forecast for real gross domestic product growth in two thousand and twenty-seven, transcribed by the CFP",
+        "frase": "It is the Ministry of Finance forecast for real gross domestic product growth in two thousand and twenty-seven, in the Draft State Budget for two thousand and twenty-seven, as transcribed by the CFP. The opinion considers it higher than those of all reference institutions.",
+        "conta": null
+      }
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+      "pt": {
+        "cabecalho": "Parcerias público-privadas rodoviárias, encargos brutos, 2027",
+        "frase": "É o valor previsto para encargos brutos do setor rodoviário no quadro das parcerias público-privadas.",
+        "conta": "Na coluna de 2027, os encargos líquidos rodoviários são os encargos brutos menos as receitas: 1 152 menos 263 dá 889 milhões de euros. A nota do quadro indica valores de caixa a preços constantes desse ano."
+      },
+      "en": {
+        "cabecalho": "Road public-private partnerships, gross charges, 2027",
+        "frase": "It is the projected value for road sector gross charges in the public-private partnership table.",
+        "conta": "In the column for 2027, net road charges are gross charges minus revenue: 1 152 minus 263 equals 889 million euros. The table note specifies cash flows at constant prices for that year."
+      }
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+      "pt": {
+        "cabecalho": "Parcerias público-privadas rodoviárias, encargos líquidos, 2027",
+        "frase": "É o valor previsto para encargos líquidos do setor rodoviário no quadro das parcerias público-privadas.",
+        "conta": "Na coluna de 2027, os encargos líquidos rodoviários são os encargos brutos menos as receitas: 1 152 menos 263 dá 889 milhões de euros. A nota do quadro indica valores de caixa a preços constantes desse ano."
+      },
+      "en": {
+        "cabecalho": "Road public-private partnerships, net charges, 2027",
+        "frase": "It is the projected value for road sector net charges in the public-private partnership table.",
+        "conta": "In the column for 2027, net road charges are gross charges minus revenue: 1 152 minus 263 equals 889 million euros. The table note specifies cash flows at constant prices for that year."
+      }
+    },
+    {
+      "id": "oe-2027-ppp-rodoviario-receitas-2027",
+      "pt": {
+        "cabecalho": "Parcerias público-privadas rodoviárias, receitas, 2027",
+        "frase": "É o valor previsto para receitas do setor rodoviário no quadro das parcerias público-privadas.",
+        "conta": "Na coluna de 2027, os encargos líquidos rodoviários são os encargos brutos menos as receitas: 1 152 menos 263 dá 889 milhões de euros. A nota do quadro indica valores de caixa a preços constantes desse ano."
+      },
+      "en": {
+        "cabecalho": "Road public-private partnerships, revenue, 2027",
+        "frase": "It is the projected value for road sector revenue in the public-private partnership table.",
+        "conta": "In the column for 2027, net road charges are gross charges minus revenue: 1 152 minus 263 equals 889 million euros. The table note specifies cash flows at constant prices for that year."
+      }
+    },
+    {
+      "id": "oe-2027-ppp-total-encargos-liquidos-2027",
+      "pt": {
+        "cabecalho": "Parcerias público-privadas, total dos encargos líquidos, 2027",
+        "frase": "É o total previsto dos encargos líquidos das parcerias público-privadas em dois mil e vinte e sete, em valores de caixa a preços constantes desse ano.",
+        "conta": "Na coluna de 2027, os encargos líquidos rodoviários são os encargos brutos menos as receitas: 1 152 menos 263 dá 889 milhões de euros. A nota do quadro indica valores de caixa a preços constantes desse ano."
+      },
+      "en": {
+        "cabecalho": "Public-private partnerships, total net charges, 2027",
+        "frase": "It is the projected total of net public-private partnership charges in two thousand and twenty-seven, measured as cash flows at constant prices for that year.",
+        "conta": "In the column for 2027, net road charges are gross charges minus revenue: 1 152 minus 263 equals 889 million euros. The table note specifies cash flows at constant prices for that year."
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "pt": {
+        "cabecalho": "Saúde, despesa efetiva consolidada, estimativa de 2026",
+        "frase": "É a despesa efetiva consolidada na estimativa de dois mil e vinte e seis do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.",
+        "conta": null
+      },
+      "en": {
+        "cabecalho": "Health, consolidated effective expenditure, 2026 estimate",
+        "frase": "It is consolidated effective expenditure in the estimate for two thousand and twenty-six in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.",
+        "conta": null
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "pt": {
+        "cabecalho": "Saúde, despesa efetiva consolidada, orçamento para 2027",
+        "frase": "É a despesa efetiva consolidada no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.",
+        "conta": null
+      },
+      "en": {
+        "cabecalho": "Health, consolidated effective expenditure, budget for 2027",
+        "frase": "It is consolidated effective expenditure in the budget for two thousand and twenty-seven in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.",
+        "conta": null
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+      "pt": {
+        "cabecalho": "Saúde, despesa efetiva consolidada sem PRR, estimativa de 2026",
+        "frase": "É a despesa efetiva consolidada sem PRR na estimativa de dois mil e vinte e seis do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.",
+        "conta": null
+      },
+      "en": {
+        "cabecalho": "Health, consolidated effective expenditure excluding the RRP, 2026 estimate",
+        "frase": "It is consolidated effective expenditure excluding the RRP in the estimate for two thousand and twenty-six in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.",
+        "conta": null
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "pt": {
+        "cabecalho": "Saúde, despesa efetiva consolidada sem PRR, orçamento para 2027",
+        "frase": "É a despesa efetiva consolidada sem PRR no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.",
+        "conta": null
+      },
+      "en": {
+        "cabecalho": "Health, consolidated effective expenditure excluding the RRP, budget for 2027",
+        "frase": "It is consolidated effective expenditure excluding the RRP in the budget for two thousand and twenty-seven in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.",
+        "conta": null
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "pt": {
+        "cabecalho": "Saúde, despesa efetiva consolidada sem PRR, variação publicada entre a estimativa de 2026 e o orçamento para 2027",
+        "frase": "É a variação publicada da despesa efetiva consolidada sem PRR do quadro da Saúde, «Conta do Pograma Legado»: compara o orçamento com a estimativa do ano anterior, sem PRR.",
+        "conta": null
+      },
+      "en": {
+        "cabecalho": "Health, consolidated effective expenditure excluding the RRP, published change between the estimate for 2026 and the budget for 2027",
+        "frase": "It is the published change in consolidated effective expenditure excluding the RRP in the Health table, «Conta do Pograma Legado»: the budget compared with the previous year’s estimate, excluding the RRP.",
+        "conta": null
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+      "pt": {
+        "cabecalho": "Saúde, despesa efetiva consolidada, variação publicada entre a estimativa de 2026 e o orçamento para 2027",
+        "frase": "É a variação publicada da despesa efetiva consolidada do quadro da Saúde, «Conta do Pograma Legado»: compara o orçamento com a estimativa do ano anterior, incluindo PRR.",
+        "conta": null
+      },
+      "en": {
+        "cabecalho": "Health, consolidated effective expenditure, published change between the estimate for 2026 and the budget for 2027",
+        "frase": "It is the published change in consolidated effective expenditure in the Health table, «Conta do Pograma Legado»: the budget compared with the previous year’s estimate, including the RRP.",
+        "conta": null
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2026",
+      "pt": {
+        "cabecalho": "Saúde, despesa total consolidada, estimativa de 2026",
+        "frase": "É a despesa total consolidada na estimativa de dois mil e vinte e seis do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.",
+        "conta": null
+      },
+      "en": {
+        "cabecalho": "Health, consolidated total expenditure, 2026 estimate",
+        "frase": "It is consolidated total expenditure in the estimate for two thousand and twenty-six in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.",
+        "conta": null
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2027",
+      "pt": {
+        "cabecalho": "Saúde, despesa total consolidada, orçamento para 2027",
+        "frase": "É a despesa total consolidada no orçamento de dois mil e vinte e sete do quadro da Saúde, «Conta do Pograma Legado». O quadro escreve «Conta do Pograma Legado». A despesa total inclui operações com ativos e passivos financeiros; a efetiva exclui essas operações.",
+        "conta": null
+      },
+      "en": {
+        "cabecalho": "Health, consolidated total expenditure, budget for 2027",
+        "frase": "It is consolidated total expenditure in the budget for two thousand and twenty-seven in the Health table, «Conta do Pograma Legado». The spelling «Pograma» is the table’s own. Total expenditure includes financial asset and liability transactions; effective expenditure excludes those transactions.",
+        "conta": null
+      }
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "pt": {
+        "cabecalho": "Saúde, despesa total consolidada, variação publicada entre a estimativa de 2026 e o orçamento para 2027",
+        "frase": "É a variação publicada da despesa total consolidada do quadro da Saúde, «Conta do Pograma Legado»: compara o orçamento com a estimativa do ano anterior, incluindo PRR.",
+        "conta": null
+      },
+      "en": {
+        "cabecalho": "Health, consolidated total expenditure, published change between the estimate for 2026 and the budget for 2027",
+        "frase": "It is the published change in consolidated total expenditure in the Health table, «Conta do Pograma Legado»: the budget compared with the previous year’s estimate, including the RRP.",
+        "conta": null
+      }
+    }
+  ]
+}

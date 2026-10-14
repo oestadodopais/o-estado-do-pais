@@ -327,3 +327,5 @@ A primeira corrida completa, em `portoes-d-primeira/`, passou com códigos 0/0/0
 **V2A-44:** para satisfazer o ficheiro vazio pedido no achado 15, a pasta da corrida seguinte é preparada com um `.gitignore` comitado que exclui só os registos gerados dentro dela. A exclusão será retirada depois da corrida, para comitar os registos. A primeira prova é conservada integralmente; não se editam os seus estados nem se alteram réguas. Nada será escrito durante os portões.
 
 Estado da entrega: a corrida com o estado vazio, as capturas e as cabeças finais serão registadas depois da conferência.
+
+**V2A-45:** a inspeção visual da segunda corrida, verde com os dois estados finais vazios, encontrou nas três variações a falta da nota explícita sobre a grafia. As seis frases das duas edições passam a atribuí-la ao quadro, com planta própria. A captura do defeito fica em `d-conferencias/variacao-sem-nota.png`; os portões dessa cabeça estão em `portoes-d-segunda/`. O código corrigido será conferido e capturado novamente.
