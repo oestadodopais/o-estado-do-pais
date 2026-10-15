@@ -1,0 +1,29 @@
+{
+  "rows": {
+    "nato-defesa-portugal-pib-2025": {
+      "motor_path": "content/13 Dominios/source/ex3/def-exp-2026-en.xlsx",
+      "sha256": "11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988",
+      "celula": "M27"
+    },
+    "nato-defesa-portugal-pib-2026": {
+      "motor_path": "content/13 Dominios/source/ex3/def-exp-2026-en.xlsx",
+      "sha256": "11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988",
+      "celula": "N27"
+    },
+    "nato-defesa-portugal-eur-2026": {
+      "motor_path": "content/13 Dominios/source/ex3/def-exp-2026-en.xlsx",
+      "sha256": "11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988",
+      "celula": "N27"
+    }
+  },
+  "apoios": {
+    "definicao.html": {
+      "motor_path": "content/13 Dominios/source/ex3/definicao.html",
+      "sha256": "d42b32910ffc936925c25cb7a34b1e48b88078d578c5bc3760160e2908f5287c"
+    },
+    "def-exp-2026-en.pdf": {
+      "motor_path": "content/13 Dominios/source/ex3/def-exp-2026-en.pdf",
+      "sha256": "efd05e4a7e715b361617390016356df04af83ea6febecb9475ce173bf2cffb75"
+    }
+  }
+}
