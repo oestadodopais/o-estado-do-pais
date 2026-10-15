@@ -1,12 +1,12 @@
 {
   "brief": "design/observatorio/BRIEF-R4-as-palavras-correntes-em-cada-numero.md",
   "guiao": "design/observatorio/medidas/BRIEF-R4.py",
-  "cabeca_lida": "557844fe",
+  "cabeca_lida": "de337112",
   "medidas": [
     {
       "nome": "linhas_do_livro_razao",
       "valor": 3195,
-      "comando": "git ls-tree 557844fe:ledger/claims · os ficheiros .yml",
+      "comando": "git ls-tree de337112:ledger/claims · os ficheiros .yml",
       "conhecido_positivo": {
         "o_que": "a linha pib-real-per-capita-2024 está na lista",
         "encontrado": true
@@ -15,7 +15,7 @@
     {
       "nome": "linhas_com_leitura_provada_num_cartao",
       "valor": 48,
-      "comando": "git show 557844fe:tests/cartao/leituras-provadas.json · as entradas de «medidas» cujo id é uma linha do livro",
+      "comando": "git show de337112:tests/cartao/leituras-provadas.json · as entradas de «medidas» cujo id é uma linha do livro",
       "conhecido_positivo": {
         "o_que": "pib-real-per-capita-2025 tem leitura provada",
         "encontrado": true
@@ -24,7 +24,7 @@
     {
       "nome": "linhas_com_nome_do_projeto",
       "valor": 121,
-      "comando": "git show 557844fe:src/data/nomes-das-medidas.mjs · as chaves das tabelas dos nomes que são linhas do livro",
+      "comando": "git show de337112:src/data/nomes-das-medidas.mjs · as chaves das tabelas dos nomes que são linhas do livro",
       "conhecido_positivo": {
         "o_que": "a tabela dos nomes tem pelo menos uma linha do livro como chave",
         "encontrado": true
@@ -69,7 +69,7 @@
     {
       "nome": "series_no_tempo",
       "valor": 24,
-      "comando": "git ls-tree 557844fe:ledger/series · os ficheiros serie-*.yml",
+      "comando": "git ls-tree de337112:ledger/series · os ficheiros serie-*.yml",
       "conhecido_positivo": {
         "o_que": "serie-ipc-variacao-homologa está na lista",
         "encontrado": true
@@ -96,7 +96,7 @@
     {
       "nome": "ficheiro_da_primeira_pagina_lido",
       "valor": "sim",
-      "comando": "git show 557844fe:src/views/HomeView.astro",
+      "comando": "git show de337112:src/views/HomeView.astro",
       "conhecido_positivo": {
         "o_que": "a vista fala dos valores de referência",
         "encontrado": true

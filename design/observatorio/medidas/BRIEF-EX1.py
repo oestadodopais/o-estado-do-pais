@@ -6,7 +6,7 @@ conhecido-positivo; o que não conseguir ler fica «NÃO LIDO»."""
 import json, os, pathlib, re, subprocess
 
 SITIO = pathlib.Path(os.environ.get("OEDP_SITIO") or pathlib.Path(__file__).resolve().parents[3])
-CAB = os.environ.get("OEDP_CABECA") or "3664b90d"
+CAB = os.environ.get("OEDP_CABECA") or "98415c84"
 NAO = "NÃO LIDO"
 medidas = []
 

@@ -7,7 +7,7 @@ medição leva o comando e um conhecido-positivo; o que não conseguir ler fica 
 import json, os, pathlib, re, subprocess, collections
 
 SITIO = pathlib.Path(os.environ.get("OEDP_SITIO") or pathlib.Path(__file__).resolve().parents[3])
-CAB = os.environ.get("OEDP_CABECA") or "557844fe"
+CAB = os.environ.get("OEDP_CABECA") or "de337112"
 NAO = "NÃO LIDO"
 medidas = []
 
