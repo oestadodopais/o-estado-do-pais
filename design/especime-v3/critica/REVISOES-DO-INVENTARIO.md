@@ -752,3 +752,10 @@ A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recib
 | v2aj | 4 entradas; 4 entradas I substituídas | por ler | Codex gpt-6-astra, 14.10.2026: mandato J aplicado, palavras conferidas na construção. Leitura a frio pela direção antes da fusão. |
 
 | v2ak | 28 entradas; 28 entradas I e J substituídas | por ler | Codex gpt-6-astra, 14.10.2026: mandato K aplicado, palavras conferidas na construção. Leitura a frio pela direção antes da fusão. |
+
+
+## EX3: denominadores e comparação da defesa
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| ex3 | Contagens dos índices reconciliadas com o HTML construído | por ler | As duas contagens anteriores ficam retiradas. As novas incluem as três linhas da NATO. As frases da explicação são conferidas pelas X1, X2 e X6; as duas exceções de contexto da voz conservam o P1 e o P2 literais do mandato, com plantas fora desses contextos. A leitura cruzada pertence à direção. |

@@ -4,6 +4,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {parse} from 'node-html-parser';
+import {leMarcadores,analisa} from '../../scripts/voz.mjs';
+import {conferirFormatoDaPagina} from '../inicio/formato-dos-numeros.mjs';
+import {LINGUA_DOS_LOCALIZADORES} from '../../src/i18n/lingua-dos-titulos.mjs';
 import {DINHEIRO_DO_ESTADO_2026 as e} from '../../src/data/explicacoes/dinheiro-do-estado-2026.mjs';
 import {ORIGENS_DAS_DEFINICOES} from '../../src/data/figuras.mjs';
 import {loadClaims} from '../../src/lib/ledger.mjs';
@@ -11,6 +14,23 @@ import {explicacaoResolvida} from '../../src/lib/explicacoes.mjs';
 import {valorNaLingua} from '../../src/lib/valor-na-lingua.mjs';
 import {conferirAuditoriaDasExplicacoes,conferirPaginaDaExplicacao} from './explicacao.mjs';
 const linhas=loadClaims(),dist=process.env.OEDP_DIST??'dist';
+const voz=leMarcadores(process.cwd());assert.deepEqual(voz.erros,[]);
+for(const texto of ['de cada cem euros desta página são a função «Defesa»','of every hundred euros on this page are the «Defence» function','Their coverage and accounting basis also differ.']){
+ assert.deepEqual(analisa(texto,'/explicacoes/dinheiro-do-estado-2026',voz,'explicacao'),[]);
+ assert(analisa(texto,'/outra-rota',voz,'home').length>0);
+}
+for(const texto of ['a cobertura desta página','this page is reliable','our coverage is complete'])assert(analisa(texto,'/explicacoes/dinheiro-do-estado-2026',voz,'explicacao').length>0);
+console.log('PLANTAS: marcadores da voz fora dos contextos e da rota continuam a morder.');
+
+const formato=(id,valor,rel)=>conferirFormatoDaPagina(`<span data-claim="${id}">${valor}</span>`,rel);
+for(const [id,valor] of [['nato-defesa-portugal-pib-2025','2.01'],['nato-defesa-portugal-pib-2026','2.10']]){
+ assert.equal(formato(id,valor,'en/teste/index.html').desvios.length,0);
+ assert(formato(id,valor,'teste/index.html').desvios.some(x=>x.regra==='F2'));
+ assert(formato('outra-linha',valor,'en/teste/index.html').desvios.some(x=>x.regra==='F2'));
+ assert(formato(id,valor.slice(0,-1),'en/teste/index.html').desvios.some(x=>x.regra==='F2'));
+}
+for(const id of ['nato-defesa-portugal-pib-2025','nato-defesa-portugal-pib-2026','nato-defesa-portugal-eur-2026'])assert.equal(LINGUA_DOS_LOCALIZADORES[linhas.get(id).document.locator],'en');
+console.log('PLANTAS: ponto decimal só nas duas linhas e na edição inglesa, com duas casas.');
 const auditoria=JSON.parse(fs.readFileSync('tests/cartao/leituras-provadas.json'));
 assert.deepEqual(conferirAuditoriaDasExplicacoes({auditoria}).erros,[]);
 const bad=structuredClone(auditoria);

@@ -80,11 +80,10 @@ import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao
  *        deita o segundo fora, e uma marca de língua duplicada por um gabarito
  *        que a acrescenta duas vezes passava despercebida. Vale para qualquer
  *        nome de atributo, e não só para `lang`: é mais barato e apanha mais;
- *   L7 · nenhum localizador de documento numa linha cujo documento seja inglês.
- *        O localizador está na língua do documento que localiza, e é dele que
- *        recebe a marca: no dia em que houver um localizador dentro de um
- *        documento inglês, a regra deixa de valer e a construção fecha, em vez
- *        de marcar inglês como português.
+ *   L7 · os localizadores de documentos portugueses herdam a língua do título.
+ *        Os localizadores ingleses da NATO, EX3, são declarados por inteiro na
+ *        tabela de línguas e conferidos nas duas edições. Um localizador de
+ *        outro documento inglês sem declaração continua a fechar a construção.
  *
  * As tabelas não podem engordar sozinhas: uma entrada do dicionário ou da
  * declaração que nenhuma linha do livro-razão usa fecha a construção também. É
@@ -126,6 +125,7 @@ import { lerSeriesDoPortao } from './series-do-portao.mjs';
 import { UNIDADES, UNIDADES_EM_PORTUGUES, unidadeDaLinha } from '../src/i18n/unidades.mjs';
 import {
   LINGUA_DOS_TITULOS,
+  LINGUA_DOS_LOCALIZADORES,
   linguaDoTituloDoDocumento,
   LINGUA_DOS_ROTULOS,
   linguaDoRotuloDaFonte,
@@ -370,7 +370,7 @@ for (const c of claims) {
     titulo === null || String(titulo) === POR_VERIFICAR
       ? null
       : (LINGUA_DOS_TITULOS[String(titulo)] ?? null);
-  if (declarada !== 'pt') {
+  if (declarada !== 'pt' && !Object.hasOwn(LINGUA_DOS_LOCALIZADORES, String(loc))) {
     erros.push(
       `a linha "${c.id}" tem "document.locator" e o seu documento não está declarado português ` +
         `(${declarada === null ? 'sem declaração' : `«${declarada}»`}).\n` +
@@ -794,6 +794,13 @@ for (const ficheiro of paginasDe(DIST)) {
     const texto = norm(el.text);
     if (texto === POR_VERIFICAR || texto === '[to verify]') continue;
     contas.localizadores++;
+    // EX3: a primeira fonte com localizadores ingleses tem as cadeias declaradas.
+    // A língua efetiva é conferida nas duas edições, incluindo a herança do HTML.
+    if (Object.hasOwn(LINGUA_DOS_LOCALIZADORES, texto)) {
+      const esperada=LINGUA_DOS_LOCALIZADORES[texto];
+      if (langDe(el)!==esperada) erros.push(`localizador declarado ${esperada} sem essa língua: «${texto}» (${rel}).`);
+      continue;
+    }
     if (lang !== 'en') continue;
     if (langDe(el) === 'pt-PT') contas.localizadores_en_com_marca++;
     else {
