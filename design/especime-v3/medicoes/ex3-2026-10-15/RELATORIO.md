@@ -160,6 +160,24 @@ As duas fusões pedidas foram tentadas e recusadas pela sandbox: `git merge mast
 
 No motor, `publisher/rp4n_pensao.py` e os três registos traduzidos foram copiados dos objetos Git de `master`, sem consulta do mapa em tempo de execução. O `RELATORIO-P4.md` já coincide com `master`. Conservam-se o teste EX3, a reposição inteira da configuração dos recortes e o livro declarado no portão. Os testes dirigidos EX3 e das origens passaram; a declaração EX3 do sítio passou.
 
-Verificação integral, capturas e cabeças desta correção: por executar. O `RELATORIO.pontos.json` fica fora dos commits.
+A reposição dos registos históricos exigiu reexportar a pensão para o sítio por `python3 -m publisher.rp4n_pensao <worktree>`. O primeiro `check:cruzamento --with-origin` deu código 1 pelos resumos antigos de dois ficheiros; depois da reexportação deu 0. Mudaram apenas as referências ao commit traduzido e os seus resumos, sem alteração de valores. O aviso anterior sobre o `built_at` do livro do Orçamento mantém-se, sem divergência de linhas.
+
+Cabeça de conteúdo conferida do sítio: `aa7ecdb502d89f456af4e091077c9b16c8f2cb85`. Cabeça do motor: `b262f0c7` (commit aceite com `GATE: PASS`). O relatório é comitado depois desta conferência; a corrida na cabeça desse commit fica em `<temporario>/ex3-correcao-portoes-final/`, com o identificador em `cabeca` e `cabeca.fim`.
+
+| Conferência da correção | Código lido |
+| --- | --- |
+| build | 0 |
+| verify | 0 |
+| typecheck | 0 |
+| core.gate no pre-commit do motor | 0 |
+| check:series com esta worktree do motor | 0 |
+| check:cruzamento --with-origin depois da reexportação | 0 |
+| EX3 sobre o HTML construído, com plantas | 0 |
+
+Os três códigos e as duas cabeças coincidentes foram lidos de `<temporario>/ex3-correcao-portoes-1/`. O código do pre-commit veio do resultado do pedido ao escrivão e ficou em `<temporario>/ex3-correcao/motor.codigo`. Os restantes foram lidos de `ex3-correcao-series.codigo`, `ex3-correcao-cruzamento-2.codigo` e `ex3-correcao-html.codigo`, na pasta temporária. O HTML construído confirma «2,01 % (estimativa da NATO) do PIB em 2025» e «2,10 % (estimativa da NATO) em 2026»; em inglês, «2,01 % (NATO estimate) of GDP in 2025» e «2,10 % (NATO estimate) in 2026». As dez marcas de provisório do Eurostat mantêm-se nas duas edições.
+
+As capturas em `<temporario>/ex3-correcao-capturas-1/`, com `capturas.json`, deram 40 páginas e 0 falhas nas duas edições e nas cinco larguras. Os resumos dos 180 PNG foram conferidos. Inspecionaram-se P1 e os valores dos três recibos a 390 e 1280 px nas duas edições: legendas e vírgulas corretas, sem corte nos recortes. As capturas depois do commit do relatório ficam em `<temporario>/ex3-correcao-capturas-final/`, com a cabeça no manifesto.
+
+O `RELATORIO.pontos.json` e o registo do escrivão foram preservados em `<temporario>/ex3-correcao-lancador/`, fora dos commits e da worktree durante os portões. Nenhum PNG entrou no Git. Nenhum push. As fusões recusadas continuam pendentes; a leitura a frio e a aterragem ficam a cargo da direção.
 
 tokens used: não disponível
