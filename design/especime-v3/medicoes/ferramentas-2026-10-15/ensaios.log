@@ -7,6 +7,7 @@ test_main_e_motor_sujo_recusados (ferramenta_aterrar.Aterrar.test_main_e_motor_s
 test_main_por_fundir (ferramenta_aterrar.Aterrar.test_main_por_fundir) ... ok
 test_main_recusado (ferramenta_aterrar.Aterrar.test_main_recusado) ... ok
 test_motor_ausente (ferramenta_aterrar.Aterrar.test_motor_ausente) ... ok
+test_respostas_do_github_com_estrutura_invalida (ferramenta_aterrar.Aterrar.test_respostas_do_github_com_estrutura_invalida) ... ok
 test_tranca_caducada (ferramenta_aterrar.Aterrar.test_tranca_caducada) ... ok
 test_tranca_ocupada_para_antes_de_publicar (ferramenta_aterrar.Aterrar.test_tranca_ocupada_para_antes_de_publicar) ... ok
 test_verde_ordem_codigos_e_limpeza (ferramenta_aterrar.Aterrar.test_verde_ordem_codigos_e_limpeza) ... ok
@@ -24,6 +25,6 @@ test_suja_tranca_e_ficheiros_do_lancador (ferramenta_pre_voo.PreVoo.test_suja_tr
 test_verde_e_nao_seguidos_permitidos (ferramenta_pre_voo.PreVoo.test_verde_e_nao_seguidos_permitidos) ... ok
 
 ----------------------------------------------------------------------
-Ran 24 tests in 23.725s
+Ran 25 tests in 25.368s
 
 OK

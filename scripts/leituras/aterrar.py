@@ -152,9 +152,11 @@ class Aterragem:
                 '--branch', self.ramo, '--commit', self.cabeca, '--event', 'push', '--limit', '1',
                 '--json', 'databaseId,headSha,headBranch,status,conclusion,url,workflowName'], teto=120)
             corridas = json.loads(texto)
+            self.exigir(isinstance(corridas, list), 'a lista de corridas do GitHub não é uma lista')
             if not corridas:
                 continue
             corrida = corridas[0]
+            self.exigir(isinstance(corrida, dict), 'a corrida do GitHub não é um objeto')
             self.exigir(corrida.get('headSha') == self.cabeca and corrida.get('headBranch') == self.ramo
                         and corrida.get('workflowName') == 'portão', 'a corrida recebida não é o portão desta cabeça e ramo')
             self.exigir(isinstance(corrida.get('databaseId'), int) and bool(corrida.get('url')), 'a corrida não tem identificador ou endereço')
@@ -168,6 +170,7 @@ class Aterragem:
                 raise
             confirmada = json.loads(self.correr('github-conclusao', ['gh', 'run', 'view', str(corrida['databaseId']),
                 '--json', 'headSha,status,conclusion,url'], teto=120))
+            self.exigir(isinstance(confirmada, dict), 'a conclusão do GitHub não é um objeto')
             passou = confirmada.get('headSha') == self.cabeca and confirmada.get('status') == 'completed' and confirmada.get('conclusion') == 'success'
             self.escrever('github.codigo', '0\n' if passou else '1\n')
             self.registar('github', 0 if passou else 1, endereco=corrida['url'])

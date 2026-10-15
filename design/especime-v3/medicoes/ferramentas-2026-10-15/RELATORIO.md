@@ -14,17 +14,19 @@ Todos os comandos com saída longa correram por `sh scripts/leituras/curto.sh <t
 
 | Comando | Código | Resultado medido |
 |---|---|---|
-| `python3 -m unittest discover -s tests/leituras -p 'ferramenta_*.py' -v` | 0 | 24 ensaios, 23.725 segundos, em `ensaios.log` |
+| `python3 -m unittest discover -s tests/leituras -p 'ferramenta_*.py' -v` | 0 | 25 ensaios, 25.368 segundos, em `ensaios.log` |
 | `python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md` | 0 | Três linhas novas e três citações novas reconhecidas; ver `mapa-antes.log` e `mapa-depois.log` |
 | `sh -n scripts/leituras/aterrar.sh scripts/leituras/fundir.sh scripts/leituras/pre-voo.sh scripts/leituras/construir-codex.sh` | 0 | Sintaxe dos guiões conferida |
 | `git diff --check` | 0 | Sem erros de espaços |
 | `sh scripts/leituras/pre-voo.sh <worktree> <motor>` antes do commit | 9 | Recusa real pelas modificações seguidas desta implementação; restantes condições passaram, incluindo as oito caches listadas |
 
-As plantas obrigatórias passaram: ficheiro por registar e corrida vermelha impedem a fusão; a procura da bandeira de publicação forçada no código não a encontra; o conflito repõe a cabeça e todos os bytes da árvore, incluindo um ficheiro não seguido; dependências ausentes e master por fundir impedem o arranque. Os restantes ensaios conferem falhas das duas conferências do motor, publicação de main, Vercel e verificação do lançamento sem apagar ramos; cabeça errada do GitHub; tranca ocupada e caducada; fusão por avanço rápido e por commit de fusão; caches em falta e registos dentro do relatório; cliente, batimento e arranque completo do lançador com Codex simulado.
+As plantas obrigatórias passaram: ficheiro por registar e corrida vermelha impedem a fusão; a procura da bandeira de publicação forçada no código não a encontra; o conflito repõe a cabeça e todos os bytes da árvore, incluindo um ficheiro não seguido; dependências ausentes e master por fundir impedem o arranque. Os restantes ensaios conferem falhas das duas conferências do motor, publicação de main, Vercel e verificação do lançamento sem apagar ramos; cabeça errada e estruturas JSON inválidas do GitHub; tranca ocupada e caducada; fusão por avanço rápido e por commit de fusão; caches em falta e registos dentro do relatório; cliente, batimento e arranque completo do lançador com Codex simulado.
 
 ## Portões e cabeça
 
-Os três portões serão pedidos ao escrivão depois do commit por `sh scripts/leituras/portoes-pelo-escrivao.sh <temporario>/portoes`. Os códigos ainda não foram medidos nesta versão do relatório. O registo aberto do lançador antigo foi preservado fora da worktree por mudança de nome, conservando o descritor aberto. As provas dos portões ficam fora da worktree durante a corrida.
+A corrida `sh scripts/leituras/portoes-pelo-escrivao.sh <temporario>/portoes` terminou com código 0 na cabeça `6818d0c609380eeafd827576d538e8bba810bc94`. Os ficheiros foram relidos: build 0, verify 0 e typecheck 0. O recibo `portoes-primeira.json` guarda as duas cabeças iguais, as horas e as durações medidas: build 210 segundos, verify 338 segundos e typecheck 0 segundos à resolução dos marcadores de segundo. Nenhum portão existente foi alterado.
+
+Depois desta corrida acrescentou-se a recusa explícita das estruturas JSON inválidas do GitHub, provada pela suite atualizada. A cabeça final, com essa recusa e este relatório, será novamente conferida pelos mesmos três portões depois do commit; os códigos dessa corrida final são devolvidos na resposta da passagem, sem um novo commit que voltasse a mudar a cabeça. O pré-voo nas duas worktrees reais, depois do primeiro commit, devolveu 0; a saída está em `pre-voo-real.log`. O registo aberto do lançador antigo foi preservado fora da worktree por mudança de nome, conservando o descritor aberto. As provas dos portões ficam fora da worktree durante a corrida. O processo do lançador que já estava em execução poderá ainda escrever o ficheiro de pontos no destino antigo ao terminar; a alteração do destino aplica-se aos lançamentos seguintes, e o pré-voo deteta esse ficheiro se ficar junto do relatório.
 
 ## Limites e decisões de implementação
 
@@ -40,4 +42,4 @@ A sintaxe das consultas foi conferida na ajuda instalada da Vercel e na document
 
 ## Custo
 
-A última suite de ensaios mediu 23.725 segundos. O custo semanal em pontos é medido pelo lançador antes e depois da passagem. A linha `tokens used` não está disponível durante a escrita deste relatório; não se atribui uma contagem inferida. A duração dos portões será lida dos recibos.
+A última suite de ensaios mediu 25.368 segundos. O custo semanal em pontos é medido pelo lançador antes e depois da passagem. A linha `tokens used` não está disponível durante a escrita deste relatório; não se atribui uma contagem inferida. A primeira corrida dos portões mediu 548 segundos na soma das três fases, pelos marcadores guardados em `portoes-primeira.json`. A corrida final terá o seu recibo externo, depois do commit deste relatório.

@@ -41,11 +41,14 @@ os.execv(os.environ['GIT_REAL'], ['git',*a])
 ''')
         comando(self.bin, 'gh', comum + '''
 if a[:2]==['run','list']:
+    if modo=='lista-invalida': print('{}'); sys.exit(0)
+    if modo=='corrida-invalida': print('[null]'); sys.exit(0)
     print(json.dumps([{'databaseId':123,'headSha':os.environ['CABECA'] if modo!='outra-cabeca' else 'b'*40,
         'headBranch':'ensaio','status':'completed','conclusion':'failure' if modo=='vermelho' else 'success',
         'url':'https://example.invalid/corrida/123','workflowName':'portão'}]))
 elif a[:2]==['run','watch']: sys.exit(1 if modo=='vermelho' else 0)
 elif a[:2]==['run','view']:
+    if modo=='conclusao-invalida': print('null'); sys.exit(0)
     print(json.dumps({'headSha':os.environ['CABECA'],'status':'completed','conclusion':'failure' if modo=='conclusao-vermelha' else 'success'}))
 else: sys.exit(88)
 ''')
@@ -118,6 +121,15 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
                 self.saida = self.p / modo
                 r, _, chamadas = self.correr(modo)
                 self.assertEqual(r.returncode, codigo)
+                self.assertFalse(any(c[1:2] == ['merge'] for c in chamadas))
+
+    def test_respostas_do_github_com_estrutura_invalida(self):
+        for modo in ('lista-invalida', 'corrida-invalida', 'conclusao-invalida'):
+            with self.subTest(modo=modo):
+                self.saida = self.p / modo
+                r, _, chamadas = self.correr(modo)
+                self.assertEqual(r.returncode, 9)
+                self.assertNotIn('Traceback', r.stderr)
                 self.assertFalse(any(c[1:2] == ['merge'] for c in chamadas))
 
     def test_conferencias_e_publicacao_falhadas_nao_apagam(self):
