@@ -118,10 +118,9 @@ export function conferirFormatoDaPagina(html, rel) {
     if (!eNumero(numero)) { contas.nao_numericos++; continue; }
     if (deValor) {
       contas.valores++;
-      const natoEn = rel.startsWith('en/') && marca === 'claim' && /^nato-defesa-portugal-pib-202[56]$/.test(chave) && /^\d+\.\d{2}$/.test(numero);
       if (/^-/.test(numero)) desvios.push({ regra: 'F3', rel, valor: texto, contexto });
-      else if (!natoEn && /\d\.\d/.test(numero) && !/^\d{1,3}(\.\d{3})+$/.test(numero)) desvios.push({ regra: 'F2', rel, valor: texto, contexto });
-      else if (!daCasa(natoEn ? numero.replace('.', ',') : numero)) desvios.push({ regra: 'F1', rel, valor: texto, contexto });
+      else if (/\d\.\d/.test(numero) && !/^\d{1,3}(\.\d{3})+$/.test(numero)) desvios.push({ regra: 'F2', rel, valor: texto, contexto });
+      else if (!daCasa(numero)) desvios.push({ regra: 'F1', rel, valor: texto, contexto });
     }
     /* F4: o primeiro carácter visível depois do elemento, saltando a etiqueta do sufixo do `Claim` e as do fecho. */
     contas.simbolos++;

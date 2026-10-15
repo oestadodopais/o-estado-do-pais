@@ -31,8 +31,8 @@ excerpt: "Table 1: Core defence expenditure; Million national currency units; Cu
 
 # A bandeira tal como a fonte a escreve, e o que ela quer dizer.
 source_flag: "e"
-source_flag_note: "Estimativa da NATO."
-source_flag_note_en: "NATO estimate."
+source_flag_note: "estimativa da NATO"
+source_flag_note_en: "NATO estimate"
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
 ressalva: "Estimativa da NATO. Pagamentos feitos por um governo nacional aliado, excluindo as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Milhões de euros, a preços correntes."

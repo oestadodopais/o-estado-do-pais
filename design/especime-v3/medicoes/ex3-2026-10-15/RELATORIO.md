@@ -1,6 +1,6 @@
 # EX3: relatório da retoma, 15.10.2026
 
-Estado: em verificação; bloco ainda não concluído.
+Estado da primeira retoma: concluído no âmbito do construtor. A passagem de correção e a limitação das fusões estão em EX3-11.
 
 ## EX3-1: a retoma
 
@@ -23,12 +23,12 @@ O HTML da definição tem um resumo diferente do indicado no mandato (`884a966ce
 
 ## EX3-3: as células e a definição
 
-- `nato-defesa-portugal-eur-2026`: 6 748 milhões de euros; Table 1!N27; Excel 6748, formato `General`; PDF p. 5, «6,748». Marca `e`, «Estimativa da NATO.» / «NATO estimate.».
-  Excerto: Table 1: Table 1: Core defence expenditure; Million national currency units; Current prices. Table 1!N27; Portugal (Euros); 2026e: 6748 (Excel; number_format: General). PDF, página 5: 6,748. Figures for 2025 and 2026 are estimates. Forma de apresentação portuguesa, com a marca da coluna: 6 748 e
-- `nato-defesa-portugal-pib-2025`: 2,01 % do PIB; Table 3!M27; Excel 2.01, formato `0.00`; PDF p. 7, «2.01». Marca `e`, «Estimativa da NATO.» / «NATO estimate.».
-  Excerto: Table 3: Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!M27; Portugal; 2025e: 2.01 (Excel; number_format: 0.00). PDF, página 7: 2.01. Figures for 2025 and 2026 are estimates. Forma de apresentação portuguesa, com a marca da coluna: 2,01 e
-- `nato-defesa-portugal-pib-2026`: 2,10 % do PIB; Table 3!N27; Excel 2.1, formato `0.00`; PDF p. 7, «2.10». Marca `e`, «Estimativa da NATO.» / «NATO estimate.».
-  Excerto: Table 3: Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!N27; Portugal; 2026e: 2.1 (Excel; number_format: 0.00). PDF, página 7: 2.10. Figures for 2025 and 2026 are estimates. Forma de apresentação portuguesa, com a marca da coluna: 2,10 e
+- `nato-defesa-portugal-eur-2026`: 6 748 milhões de euros; Table 1!N27; Excel 6748, formato `General`; PDF p. 5, «6,748». Marca `e`, «estimativa da NATO» / «NATO estimate».
+  Excerto: Table 1: Core defence expenditure; Million national currency units; Current prices. Table 1!N27; Portugal (Euros); 2026e: 6748 (Excel; number_format: General). PDF, página 5: 6,748. Figures for 2025 and 2026 are estimates. Forma de apresentação portuguesa, com a marca da coluna: 6 748 e
+- `nato-defesa-portugal-pib-2025`: 2,01 % do PIB; Table 3!M27; Excel 2.01, formato `0.00`; PDF p. 7, «2.01». Marca `e`, «estimativa da NATO» / «NATO estimate».
+  Excerto: Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!M27; Portugal; 2025e: 2.01 (Excel; number_format: 0.00). PDF, página 7: 2.01. Figures for 2025 and 2026 are estimates. Forma de apresentação portuguesa, com a marca da coluna: 2,01 e
+- `nato-defesa-portugal-pib-2026`: 2,10 % do PIB; Table 3!N27; Excel 2.1, formato `0.00`; PDF p. 7, «2.10». Marca `e`, «estimativa da NATO» / «NATO estimate».
+  Excerto: Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!N27; Portugal; 2026e: 2.1 (Excel; number_format: 0.00). PDF, página 7: 2.10. Figures for 2025 and 2026 are estimates. Forma de apresentação portuguesa, com a marca da coluna: 2,10 e
 
 A origem `nato-definicao-despesa-defesa`, exportada em `src/data/origens-ex3.json`, contém em `excertoEn` as três frases literais do mandato. A primeira apoia a definição em P1; a segunda liga as despesas essenciais das tabelas à definição. A terceira conserva a inclusão das pensões, sem acrescentar uma comparação não pedida à página. A auditoria usa o mecanismo existente de origens das definições, com o corpo, data, cliente e sha256 em `alojada`, sem campos novos. As ressalvas das linhas distinguem o governo nacional aliado das administrações regionais, locais e municipais, e os preços constantes das percentagens dos preços correntes dos milhões. Não equiparam este perímetro ao S13.
 
@@ -69,7 +69,7 @@ Título antes: Os dezasseis ministérios, de cada cem euros
 
 Título depois: Os dezasseis ministérios, de cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação
 
-Parágrafo novo: Os 3,25 de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central, em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações regionais e locais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Para Portugal, a NATO publica, na tabela a preços constantes, estimativas de 2,01 % (Estimativa da NATO.) do PIB em 2025 e 2,10 % (Estimativa da NATO.) em 2026. Na tabela a preços correntes, publica 6 748 (Estimativa da NATO.) milhões de euros em 2026, também como estimativa. Estas percentagens têm denominadores diferentes: a despesa efetiva consolidada da administração central e o PIB. Não são diretamente comparáveis.
+Parágrafo novo: Os 3,25 de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central, em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações regionais e locais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Para Portugal, a NATO publica, na tabela a preços constantes, estimativas de 2,01 % (estimativa da NATO) do PIB em 2025 e 2,10 % (estimativa da NATO) em 2026. Na tabela a preços correntes, publica 6 748 (estimativa da NATO) milhões de euros em 2026, também como estimativa. Estas percentagens têm denominadores diferentes: a despesa efetiva consolidada da administração central e o PIB. Não são diretamente comparáveis.
 
 Parágrafo novo: Noutra conta, a de todas as administrações públicas, com as regionais e as locais, em percentagem do PIB e em contabilidade nacional, o Eurostat publica para 2024: serviços gerais das administrações públicas 5,8 % (dado provisório), defesa 0,9 % (dado provisório), segurança e ordem pública 1,6 % (dado provisório), assuntos económicos 3,6 % (dado provisório), proteção do ambiente 0,7 % (dado provisório), habitação e infraestruturas coletivas 0,6 % (dado provisório), saúde 6,8 % (dado provisório), desporto, recreação, cultura e religião 0,8 % (dado provisório), educação 4,3 % (dado provisório) e proteção social 17,1 % (dado provisório) do PIB. Estas percentagens do Eurostat referem-se a 2024 e usam o PIB como denominador. As fatias por função do Orçamento referem-se a 2026 e usam a despesa efetiva consolidada da administração central. Também diferem o perímetro e a contabilidade.
 
@@ -91,7 +91,7 @@ Título antes: The sixteen ministries, of every hundred euros
 
 Título depois: The sixteen ministries, of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation
 
-Parágrafo novo: The 3,25 of every hundred euros on this page are the «Defence» function of central administration's consolidated effective expenditure, in public accounting. Defence spending as a share of GDP, as NATO publishes it, is another measure, under NATO's own definition: payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. For Portugal, NATO publishes, in the table at constant prices, estimates of 2.01 % (NATO estimate.) of GDP in 2025 and 2.10 % (NATO estimate.) in 2026. In the table at current prices, it publishes 6 748 (NATO estimate.) million euros in 2026, also as an estimate. These percentages have different denominators: central administration's consolidated effective expenditure and GDP. They are not directly comparable.
+Parágrafo novo: The 3,25 of every hundred euros on this page are the «Defence» function of central administration's consolidated effective expenditure, in public accounting. Defence spending as a share of GDP, as NATO publishes it, is another measure, under NATO's own definition: payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. For Portugal, NATO publishes, in the table at constant prices, estimates of 2,01 % (NATO estimate) of GDP in 2025 and 2,10 % (NATO estimate) in 2026. In the table at current prices, it publishes 6 748 (NATO estimate) million euros in 2026, also as an estimate. These percentages have different denominators: central administration's consolidated effective expenditure and GDP. They are not directly comparable.
 
 Parágrafo novo: In another count, that of all public administrations, with the regional and local ones, as a share of GDP and in national accounts, Eurostat publishes for 2024: general public services 5,8 % (provisional data), defence 0,9 % (provisional data), public order and safety 1,6 % (provisional data), economic affairs 3,6 % (provisional data), environmental protection 0,7 % (provisional data), housing and community amenities 0,6 % (provisional data), health 6,8 % (provisional data), recreation, culture and religion 0,8 % (provisional data), education 4,3 % (provisional data) and social protection 17,1 % (provisional data) of GDP. These Eurostat percentages refer to 2024 and use GDP as their denominator. The Budget shares by function refer to 2026 and use central administration's consolidated effective expenditure. Their coverage and accounting basis also differ.
 
@@ -101,7 +101,7 @@ O denominador dos ministérios foi lido em `src/data/o-que-e-das-familias.mjs`: 
 
 A auditoria das palavras foi recomposta em `compor.mjs`; as duas famílias novas têm especificação em `familias.mjs`. O compositor R4 histórico falha em famílias anteriores já retiradas e nas famílias posteriores do V2-a, por isso ficou intacto e a composição EX3 acrescenta apenas as entradas deste bloco.
 
-A X6 foi atualizada para ler a marca `e`, já suportada pelo componente, e as duas casas decimais em inglês. A adaptação do portão HTML conserva os mesmos algarismos, precisão e comparação exata da escrita, só trocando a vírgula pelo ponto nas duas percentagens novas da NATO na edição inglesa. Os valores e a apresentação das linhas anteriores ficaram intactos. As frases declaradas continuam cobertas pelo inventário dinâmico e pela célula das frases compostas.
+A X6 lê a marca `e`, já suportada pelo componente, e conserva as duas casas decimais. A exceção de ponto decimal introduzida na primeira passagem foi retirada em EX3-11: as duas edições usam a vírgula decimal. Os valores e a apresentação das linhas anteriores ficaram intactos. As frases declaradas continuam cobertas pelo inventário dinâmico e pela célula das frases compostas.
 
 As plantas em `tests/explicacoes/ex3.mjs` retiram o apoio da definição, acrescentam um token sobre uma linha inexistente, trocam o valor da NATO e retiram uma casa decimal. O teste do motor regenera as células e a definição, confere recibos e travessia e recusa quatro alterações: valor, bandeira, período e excerto.
 
@@ -113,17 +113,53 @@ Cada comando de pedidos à NATO correu com `RESEARCHHUB_LOCK_DIR=<motor>/.http-l
 
 ## EX3-8: verificação e cabeças
 
-Cabeça de conteúdo do sítio: `aaac76b912455ee92accfdb754f9224070c56e7b`. Cabeça do motor: `3d024fa093a23473565eab01f2d30fe92102daa0`.
+Cabeça de conteúdo conferida do sítio: `e20b9d6298424d6459e2774e65084f0a077a9288`. Cabeça do motor: `e558cd93b3a8cdcbab169bd694c391bcdcdeeffb`.
 
 | Conferência | Código |
 | --- | --- |
-| build | não executado |
-| verify | não executado |
-| typecheck | não executado |
-| motor | não executado |
-| series | não executado |
-| cruzamento | não executado |
+| build | 0 |
+| verify | 0 |
+| typecheck | 0 |
+| motor, core.gate no pre-commit | 0 |
+| series | 0 |
+| cruzamento | 0 |
 
-Capturas: por executar. Leitura a frio pelo Opus e aterragem: a cargo do lugar de direção, não executadas nesta passagem. Nenhum push.
+Os códigos do sítio foram lidos de `<temporario>/ex3-portoes-5/build.codigo`, `verify.codigo` e `typecheck.codigo`; a cabeça dessa pasta coincide com a cabeça final do sítio. O código do motor e o resultado `GATE: PASS` foram lidos do pedido de commit aceite; a prova resumida fica em `<temporario>/ex3-motor-portao.json`. O `check:series` foi corrido depois da construção. O `check:cruzamento --with-origin` usou esta worktree do motor: passou, com o aviso anterior sobre o `built_at` do livro do Orçamento, sem divergência em nenhuma linha.
+
+O primeiro commit do motor foi recusado. Faltava declarar o livro novo entre os livros sem entregável narrativo; passou a ser protegido por `publisher.ex3_test`. Três falhas anteriores também impediam o portão: a planta de ausência de recortes perdia as raízes de reserva ao repor a configuração; a prova da pensão consultava um identificador anterior à reescrita; dois identificadores Git numéricos no relatório P4 eram contados como valores. A configuração passou a ser reposta por inteiro; a primeira retoma fez a consulta histórica pelo mapa de commits; em EX3-11 essa adaptação foi retirada e os três registos traduzidos foram repostos de `master`, mantendo o resumo, a introdução no manifesto e a data conferidos; os dois identificadores passaram a ligações para os mesmos commits. A contagem do P4 voltou de 39 a 37, sem aumentar nenhum limite e sem alterar linhas existentes. Os testes dirigidos passaram antes do novo pedido de commit.
+
+O primeiro build do sítio parou na A7: faltava a cobertura das três linhas novas. Foram declaradas em `SEM_AREA`, como a comparação EX3, sem atribuição do agregado da NATO a ministérios. A conferência das áreas passou, e os portões foram repetidos. As plantas sobre o HTML construído passaram nas duas edições; o `check:series` passou com 40 de 40 plantas a detetar os estragos.
+
+## EX3-9: pacote e capturas
+
+`ledger/provas/ex3/provas.json`, exportado com registo de travessia, liga cada linha ao Excel alojado pelo caminho e sha256. Declara também o PDF e o HTML da definição. O resolvedor M83 foi exercitado contra as cabeças: encontrou o Excel pelos recibos, e os resumos do PDF e do HTML foram conferidos nos objetos Git do motor. Os documentos, recibos e direitos integram os ficheiros novos do motor para o pacote M83. Nenhum PNG foi acrescentado ao Git.
+
+O portão da voz pediu a reconciliação dos dois contadores do índice e a declaração de dois contextos das frases prescritas: a identificação do número «desta página» em P1 e o perímetro «coverage» em P2. A X2 já aceitava os apoios. As exceções são as cadeias exatas, só na rota da explicação; as plantas provam que os marcadores continuam a morder noutras frases e noutras rotas. O inventário e o registo de revisão acompanham os contadores lidos no HTML.
+
+Foram declaradas as línguas do título, dos dois rótulos, do organismo e dos três localizadores ingleses da NATO. A L7 continua a recusar localizadores de documentos ingleses sem declaração, e a L4b confere a língua efetiva dos novos localizadores nas duas edições. A F2 foi reposta ao estado de `main` em EX3-11 e recusa o ponto decimal também nas duas percentagens da NATO na edição inglesa; a X6 recusa ainda a precisão reduzida. A adaptação não muda o livro-razão nem o seu esquema.
+
+O primeiro verify completo detetou ainda três integrações em falta. A régua do índice passou a reconhecer os cabeçalhos A1 da NATO, conferindo folha, coluna, ano e rótulo, com plantas de troca. A régua das unidades ganhou o conjunto EX3 fechado em três linhas, lido do cruzamento, com as unidades e as entradas do índice conferidas nas duas edições e quatro plantas novas. Os seis recibos novos tinham duas portas para o Método: a da regra da releitura e a saída genérica do aparelho. A segunda deixou de se render nestes recibos enquanto a primeira está presente. Conservou-se o teto da L1, sem o aumentar.
+
+A inspeção visual encontrou uma legenda incorreta nos três recibos: o excerto reúne células e cabeçalhos do Excel, a forma impressa do PDF e a nota de apresentação, mas a página dizia que era uma transcrição palavra por palavra. A nota das linhas passou a declarar «Excerto composto a partir», pelo mecanismo existente, sem campo novo. O prefixo duplicado do cabeçalho foi retirado. A travessia foi refeita; os valores, períodos, estimativas e documentos mantiveram-se. O teste EX3 confere a legenda de excerto composto nas seis páginas e recusa a legenda de transcrição literal. Os portões e as capturas foram repetidos depois desta correção.
+
+Auditoria das palavras: {"explicacoes":1,"folhas":152,"partes":197,"diz":102,"conta":25,"liga":63,"aponta":2,"leitura":5,"apoios":199,"origens":9}.
+
+Capturas em `<temporario>/ex3-capturas-2/`, com `capturas.json`: 40 páginas, nas duas edições, às larguras 390, 768, 1024, 1280, 1600 px; 0 falhas; cabeça `e20b9d6298424d6459e2774e65084f0a077a9288`. A abertura, os dois parágrafos, as figuras e os três recibos foram inspecionados a 390 e 1280 px nas duas edições, com a conferência das capturas repetida na cabeça final. Leitura a frio pelo Opus e aterragem: a cargo do lugar de direção, não executadas nesta passagem. Nenhum push.
+
+As capturas finais incluem 180 PNG. Conferiram-se os resumos de todos os ficheiros; os 80 recortes comuns às capturas anteriores são idênticos. Nenhuma das 40 páginas excede a largura da janela. Os excertos e as legendas corrigidas dos três recibos foram inspecionados nas duas edições a 390 e 1280 px.
+
+## EX3-10: entrega
+
+A entrega da primeira retoma ficou nas cabeças acima. O relatório final dessa retoma estava por comitar e é incluído na passagem EX3-11. As medições históricas em `medicoes.json` correspondem à primeira retoma.
+
+## EX3-11: correção antes da leitura a frio
+
+As três legendas `e` passaram a «estimativa da NATO» / «NATO estimate», sem ponto final, no gerador, no livro e no manifesto do motor, e foram reexportadas. As duas percentagens usam «2,01» e «2,10» nas duas edições. Os valores e excertos das linhas não mudaram. A régua `tests/inicio/formato-dos-numeros.mjs` foi reposta byte a byte de `main`; as exceções inglesas foram retiradas do formatador, da X6 e do portão HTML. As plantas recusam o ponto decimal nas duas edições, a alteração do valor e a perda de precisão.
+
+As duas fusões pedidas foram tentadas e recusadas pela sandbox: `git merge master` no motor e `git merge main` no sítio deram código 128, com `fatal: update_ref failed for ref 'ORIG_HEAD': cannot lock ref 'ORIG_HEAD'` e `Operation not permitted` ao criar `ORIG_HEAD.lock`. Não foi pedida escalada. O escrivão desta sessão não dispõe de operação de fusão. A integração da história de `master` e de `main`, incluindo o ME1, fica por fazer pelo lançador; esta passagem não declara o bloco concluído.
+
+No motor, `publisher/rp4n_pensao.py` e os três registos traduzidos foram copiados dos objetos Git de `master`, sem consulta do mapa em tempo de execução. O `RELATORIO-P4.md` já coincide com `master`. Conservam-se o teste EX3, a reposição inteira da configuração dos recortes e o livro declarado no portão. Os testes dirigidos EX3 e das origens passaram; a declaração EX3 do sítio passou.
+
+Verificação integral, capturas e cabeças desta correção: por executar. O `RELATORIO.pontos.json` fica fora dos commits.
 
 tokens used: não disponível

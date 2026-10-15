@@ -606,7 +606,7 @@ function textoAqui(partes, lang, linhas) {
   const valor = (id, sufixo) => {
     const l = linhas.get(id);
     const provisorio = l?.source_flag === 'p' || (l?.source_flag === '&' && l?.source_flag_note === 'Dado provisório');
-    const n = lang === 'en' && /^nato-defesa-portugal-pib-202[56]$/.test(id) ? String(l?.value).replace(',', '.') : l?.value;
+    const n = l?.value;
     const nota = l?.source_flag === 'e' ? (lang === 'en' ? l.source_flag_note_en : l.source_flag_note) : provisorio ? s.prov.dadoProvisorio : '';
     return `${n}${sufixo}${nota ? ` (${nota})` : ''}`;
   };
