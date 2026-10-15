@@ -1,0 +1,29 @@
+test_bandeira_de_forcar_ausente (ferramenta_aterrar.Aterrar.test_bandeira_de_forcar_ausente) ... ok
+test_conclusao_vermelha_e_cabeca_errada (ferramenta_aterrar.Aterrar.test_conclusao_vermelha_e_cabeca_errada) ... ok
+test_conferencias_e_publicacao_falhadas_nao_apagam (ferramenta_aterrar.Aterrar.test_conferencias_e_publicacao_falhadas_nao_apagam) ... ok
+test_corrida_vermelha (ferramenta_aterrar.Aterrar.test_corrida_vermelha) ... ok
+test_ficheiro_por_registar (ferramenta_aterrar.Aterrar.test_ficheiro_por_registar) ... ok
+test_main_e_motor_sujo_recusados (ferramenta_aterrar.Aterrar.test_main_e_motor_sujo_recusados) ... ok
+test_main_por_fundir (ferramenta_aterrar.Aterrar.test_main_por_fundir) ... ok
+test_main_recusado (ferramenta_aterrar.Aterrar.test_main_recusado) ... ok
+test_motor_ausente (ferramenta_aterrar.Aterrar.test_motor_ausente) ... ok
+test_tranca_caducada (ferramenta_aterrar.Aterrar.test_tranca_caducada) ... ok
+test_tranca_ocupada_para_antes_de_publicar (ferramenta_aterrar.Aterrar.test_tranca_ocupada_para_antes_de_publicar) ... ok
+test_verde_ordem_codigos_e_limpeza (ferramenta_aterrar.Aterrar.test_verde_ordem_codigos_e_limpeza) ... ok
+test_conflito_aborta_e_repoe_bytes (ferramenta_fundir.Fundir.test_conflito_aborta_e_repoe_bytes) ... ok
+test_fusao_sem_avanco_rapido (ferramenta_fundir.Fundir.test_fusao_sem_avanco_rapido) ... ok
+test_master_tambem_funde (ferramenta_fundir.Fundir.test_master_tambem_funde) ... ok
+test_protocolo_cliente_e_batimento (ferramenta_fundir.Fundir.test_protocolo_cliente_e_batimento) ... ok
+test_suja_e_ramo_arbitrario_recusados (ferramenta_fundir.Fundir.test_suja_e_ramo_arbitrario_recusados) ... ok
+test_cache_em_falta_e_lista (ferramenta_pre_voo.PreVoo.test_cache_em_falta_e_lista) ... ok
+test_lancador_recusa_antes_do_codex (ferramenta_pre_voo.PreVoo.test_lancador_recusa_antes_do_codex) ... ok
+test_lancador_verde_guarda_registos_fora_e_define_trancas (ferramenta_pre_voo.PreVoo.test_lancador_verde_guarda_registos_fora_e_define_trancas) ... ok
+test_master_por_fundir (ferramenta_pre_voo.PreVoo.test_master_por_fundir) ... ok
+test_node_modules_ausente_e_ligado (ferramenta_pre_voo.PreVoo.test_node_modules_ausente_e_ligado) ... ok
+test_suja_tranca_e_ficheiros_do_lancador (ferramenta_pre_voo.PreVoo.test_suja_tranca_e_ficheiros_do_lancador) ... ok
+test_verde_e_nao_seguidos_permitidos (ferramenta_pre_voo.PreVoo.test_verde_e_nao_seguidos_permitidos) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 23.725s
+
+OK

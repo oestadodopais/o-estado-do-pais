@@ -24,6 +24,7 @@ import hashlib
 import json
 import os
 import pathlib
+import signal
 import subprocess
 import sys
 import tempfile
@@ -155,6 +156,10 @@ def concluir_portoes(repo, pedido, processo, saida_texto):
 
 
 def executar(repo, pedido, bater=None):
+    if pedido.get('tipo') == 'fundir':
+        return fundir(repo, pedido, bater)
+    if pedido.get('tipo') not in (None, 'commit'):
+        return {'codigo': 2, 'recusa': 'operação desconhecida'}
     recusa = validar(repo, pedido)
     if recusa:
         return {'codigo': 2, 'recusa': recusa}
@@ -186,6 +191,65 @@ def executar(repo, pedido, bater=None):
     resultado = {'codigo': commit.returncode, 'cabeca': cabeca, 'saida': saida[-6000:]}
     if time.time() - inicio > 1800:
         resultado['recusa'] = 'o commit passou de trinta minutos (os hooks) e foi interrompido'
+    return resultado
+
+
+def fundir(repo, pedido, bater=None):
+    """Funde main ou master e aborta um conflito sem escolher um lado."""
+    ramo = pedido.get('ramo')
+    if ramo not in ('main', 'master'):
+        return {'codigo': 2, 'recusa': 'fundir só aceita main ou master'}
+    estado = git(repo, 'status', '--porcelain', '--untracked-files=no')
+    if estado.returncode or estado.stdout.strip():
+        return {'codigo': 9, 'recusa': 'a árvore tem modificações seguidas ou não se conseguiu ler'}
+    for marcador in ('MERGE_HEAD', 'CHERRY_PICK_HEAD', 'REVERT_HEAD', 'rebase-merge', 'rebase-apply'):
+        caminho = git(repo, 'rev-parse', '--git-path', marcador)
+        if caminho.returncode:
+            return {'codigo': 9, 'recusa': 'não se conseguiu conferir uma operação em curso'}
+        alvo = pathlib.Path(caminho.stdout.strip())
+        if not alvo.is_absolute():
+            alvo = pathlib.Path(repo) / alvo
+        if alvo.exists():
+            return {'codigo': 9, 'recusa': 'há uma operação Git em curso'}
+    antes = git(repo, 'rev-parse', 'HEAD').stdout.strip()
+    with tempfile.TemporaryFile(mode='w+', encoding='utf-8', errors='replace') as saida_f:
+        processo = subprocess.Popen(['git', '-C', repo, '-c', 'rerere.enabled=false', 'merge', '--no-edit', 'refs/heads/' + ramo],
+                                    stdout=saida_f, stderr=subprocess.STDOUT, text=True, start_new_session=True)
+        inicio = time.monotonic()
+        excedeu = False
+        while processo.poll() is None:
+            if bater:
+                bater()
+            else:
+                time.sleep(0.1)
+            if time.monotonic() - inicio > 1800:
+                os.killpg(processo.pid, signal.SIGTERM)
+                try:
+                    processo.wait(timeout=10)
+                except subprocess.TimeoutExpired:
+                    os.killpg(processo.pid, signal.SIGKILL)
+                    processo.wait()
+                excedeu = True
+                break
+        saida_f.seek(0)
+        saida = saida_f.read()
+    conflitos = git(repo, 'diff', '--name-only', '--diff-filter=U', '-z').stdout.rstrip('\0').split('\0')
+    conflitos = [f for f in conflitos if f]
+    aborto = None
+    if processo.returncode:
+        # Só aborta a fusão que este pedido abriu; uma recusa anterior não abre MERGE_HEAD.
+        if git(repo, 'rev-parse', '--verify', 'MERGE_HEAD').returncode == 0:
+            aborto = git(repo, 'merge', '--abort')
+            saida += aborto.stdout + aborto.stderr
+    depois = git(repo, 'rev-parse', 'HEAD').stdout.strip()
+    resultado = {'codigo': 1 if conflitos else processo.returncode, 'cabeca': depois,
+                 'cabeca_antes': antes, 'conflitos': conflitos, 'saida': saida[-6000:]}
+    if aborto is not None:
+        resultado['aborto_codigo'] = aborto.returncode
+        if aborto.returncode or depois != antes or git(repo, 'status', '--porcelain', '--untracked-files=no').stdout.strip():
+            resultado.update(codigo=1, recusa='a reposição depois da fusão falhada não ficou confirmada')
+    if excedeu:
+        resultado.update(codigo=1, recusa='a fusão passou de trinta minutos')
     return resultado
 
 
