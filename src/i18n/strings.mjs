@@ -1608,15 +1608,10 @@ export const STRINGS = {
          onde a porta do Trabalho abre; o que sai é a frase. Fica `retirada` no
          inventário. */
       estadoSem: 'ainda sem medidas conferidas',
-      /* «VAGA» SAI DA VOZ DO LEITOR (§7.8 do brief, e decisão 21 da releitura
-         do leitor de primeira vez, 09.09.2026). O §7.8 mandou-a sair do índice
-         dos domínios e ela foi para o Método com as dezasseis linhas; sair do
-         índice não é sair da voz. O que estas três palavras dizem é a ORDEM em
-         que os domínios entram, e é isso que elas passam a dizer, sem uma
-         palavra que o leitor tenha de aprender. */
-      vagaPrimeira: 'primeiro',
-      vagaSegunda: 'segundo',
-      vagaTerceira: 'terceiro',
+      /* AS TRÊS PALAVRAS DA ORDEM DOS DOMÍNIOS SAÍRAM COM A LISTA (bloco ME1, 15.10.2026). Diziam em que
+         ordem entravam os domínios sem medidas, na lista «O que se mede a seguir» do Método, a única página
+         que as rendia; a lista saiu do Método (a agenda é a lista pública do que se mede a seguir), e as
+         chaves `vagaPrimeira`, `vagaSegunda` e `vagaTerceira` saíram com ela, nas duas edições. */
       metaCauda: 'domínio · O Estado do País',
       metaDescricaoA: 'As medidas de ',
       /* «AS DATAS» E NÃO «A DATA» (§9.9 do brief do F1.10, 08.09.2026): a gémea
@@ -1980,54 +1975,13 @@ export const STRINGS = {
     },
 
     metodo: {
-      /* O QUE SE MEDE A SEGUIR (bloco F1.10, §7.8 e §9.1, 08.09.2026). As
-         dezasseis linhas «ainda sem medidas conferidas · vaga» saem do índice
-         dos domínios, que é uma página do leitor, e vêm para o Método, que é a
-         casa do método e onde a Emenda 15 deixa a casa falar de si. O índice
-         passa a listar os domínios com página; o calendário do que falta é
-         aqui. */
-      proximosK: 'O que se mede a seguir',
-      proximosLede:
-        'Os domínios da carta dos conteúdos que ainda não têm medidas conferidas, pela ordem por que entram.',
-
+      /* ME1 (15.10.2026): a descrição diz o que a página é, pelas palavras do mandato do bloco; o resto do texto
+         da página vive em `src/data/metodo.mjs` e em `src/data/politica-ia.mjs`. As chaves do desenho do
+         mecanismo, das linhas rotuladas das regras e da lista do que se mede a seguir saíram com elas. */
       metaTitle: 'Método · O Estado do País',
       metaDescription:
-        'As dez regras deste observatório, o mecanismo que impõe cada uma e os números que o provam nesta construção.',
+        'Como as páginas de O Estado do País são feitas, conferidas e corrigidas: as fontes, o recibo de cada número, as verificações, as correções e o que o projeto não faz.',
       h1: 'Método',
-      mecanismoK: 'Mecanismo',
-      provaK: 'Prova',
-      limiteK: 'O que isto não apanha',
-
-      /** O instrumento: a cadeia desenhada, com os números de hoje. */
-      instrumento: {
-        svgTitulo: 'O mecanismo, das fontes ao leitor',
-        svgDescricao:
-          'Uma cadeia de seis passos, da esquerda para a direita: fontes, motor de investigação, livro-razão, construção do sítio, página e leitor. Três retornos entram na cadeia: a agenda alimenta o motor, a releitura alimenta o livro-razão, e a correção escrita pelo leitor volta ao livro-razão. Cada passo mostra os números desta construção.',
-        fontes: 'FONTES',
-        motor: 'MOTOR',
-        livro: 'LIVRO-RAZÃO',
-        construcao: 'CONSTRUÇÃO',
-        pagina: 'PÁGINA',
-        leitor: 'LEITOR',
-        agenda: 'AGENDA',
-        releitura: 'RELEITURA',
-        correcoes: 'CORREÇÕES',
-        capOrganismos: 'organismos',
-        capAtravessadas: 'linhas atravessadas',
-        capLinhas: 'linhas',
-        capPorConfirmar: 'por confirmar',
-        capContas: 'contas refeitas',
-        capNoMapa: 'linhas no mapa do sítio',
-        capItens: 'itens',
-        capRegistadas: 'registadas',
-        /* A MESMA PALAVRA DA TERCEIRA DATA (F1.10, §7.3): ver `livro.linha.reconferidoK`. */
-      capReconferido: 'verificado a',
-        capEmAtraso: 'em atraso desde',
-        capPublicadas: 'publicadas',
-        capSemContagem: 'não é contado',
-        semRegisto: 'sem registo',
-        legendaK: 'Portas',
-      },
     },
 
     /** A casa única da política das correções, e do registo. */
@@ -3820,10 +3774,6 @@ export const STRINGS = {
       estadoNoAr: 'live',
       /* `estadoDentroDe` saiu da superfície; ver a razão na edição portuguesa. */
       estadoSem: 'no verified measures yet',
-      /* Ver a razão na edição portuguesa. */
-      vagaPrimeira: 'first',
-      vagaSegunda: 'second',
-      vagaTerceira: 'third',
       metaCauda: 'domain · O Estado do País',
       metaDescricaoA: 'The measures of ',
       metaDescricaoB: ', with the source, the period and the dates of each one.',
@@ -4025,46 +3975,10 @@ export const STRINGS = {
 
     metodo: {
       /* Ver a razão na edição portuguesa. */
-      proximosK: 'What gets measured next',
-      proximosLede:
-        'The domains of the content charter that do not have verified measures yet, in the order they enter.',
-
       metaTitle: 'Method · O Estado do País',
       metaDescription:
-        'The ten rules of this observatory, the mechanism that enforces each one and the figures that prove it in this build.',
+        'How the pages of O Estado do País are made, checked and corrected: the sources, the receipt for each number, the checks, the corrections and what the project does not do.',
       h1: 'Method',
-      mecanismoK: 'Mechanism',
-      provaK: 'Proof',
-      limiteK: 'What this does not catch',
-
-      instrumento: {
-        svgTitulo: 'The mechanism, from the sources to the reader',
-        svgDescricao:
-          'A chain of six steps, left to right: sources, research engine, ledger, site build, page and reader. Three returns feed into the chain: the agenda feeds the engine, the re-reading feeds the ledger, and the correction written by the reader goes back into the ledger. Each step shows the figures for this build.',
-        fontes: 'SOURCES',
-        motor: 'ENGINE',
-        livro: 'LEDGER',
-        construcao: 'BUILD',
-        pagina: 'PAGE',
-        leitor: 'READER',
-        agenda: 'AGENDA',
-        releitura: 'RE-READING',
-        correcoes: 'CORRECTIONS',
-        capOrganismos: 'bodies',
-        capAtravessadas: 'rows crossed',
-        capLinhas: 'rows',
-        capPorConfirmar: 'to confirm',
-        capContas: 'arithmetic re-evaluated',
-        capNoMapa: 'rows in the sitemap',
-        capItens: 'items',
-        capRegistadas: 'on record',
-        capReconferido: 'verified on',
-        capEmAtraso: 'overdue since',
-        capPublicadas: 'published',
-        capSemContagem: 'not counted',
-        semRegisto: 'no record',
-        legendaK: 'Doors',
-      },
     },
 
     correcoes: {

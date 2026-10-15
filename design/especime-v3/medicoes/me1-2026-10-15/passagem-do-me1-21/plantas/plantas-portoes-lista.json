@@ -1,0 +1,39 @@
+[
+  {
+    "nome": "r1-porta-da-politica-fora-do-rotulo",
+    "cabeca": "c15b203058a7f87e7f874c6a5777f86e22883d44",
+    "estado": "",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L1 .*ACIMA DO TETO"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "bd26332f96d59685380908195dd221b25d0d6f7af29266183328a84537998ccd",
+        "reposto": "bd26332f96d59685380908195dd221b25d0d6f7af29266183328a84537998ccd"
+      }
+    ]
+  },
+  {
+    "nome": "s1c-voz-recusa-do-metodo-mudada",
+    "cabeca": "c15b203058a7f87e7f874c6a5777f86e22883d44",
+    "estado": "",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "linha «viva» que não se rende em rota nenhuma",
+      "Este projeto só guarda dados pessoais de quem usa a caixa das sugestões"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/metodo/index.html",
+        "antes": "b83b57cefa13e07d059c3267e133480d253a7e887b0f5c245be7eff7a40920a3",
+        "reposto": "b83b57cefa13e07d059c3267e133480d253a7e887b0f5c245be7eff7a40920a3"
+      }
+    ]
+  }
+]

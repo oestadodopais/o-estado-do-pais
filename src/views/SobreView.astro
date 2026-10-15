@@ -56,7 +56,7 @@
  */
 import Base from '../layouts/Base.astro';
 import { SOBRE } from '../data/sobre.mjs';
-import { ANCORA_DA_POLITICA, CONTACTO, O_PROJETO, POLITICA } from '../data/politica-ia.mjs';
+import { CONTACTO, O_PROJETO, POLITICA, portaDaPolitica } from '../data/politica-ia.mjs';
 import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
 import { ROTAS_SOBRE, ETIQUETA_NAV } from '../lib/navegacao.mjs';
 import { routePath, otherLanguagePath } from '../lib/routes.mjs';
@@ -65,7 +65,8 @@ import { t } from '../i18n/strings.mjs';
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 const path = routePath('sobre', lang);
-const politica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
+/* ME1 (15.10.2026): a porta abre o Método pelo princípio, onde está a secção que ela nomeia. */
+const politica = portaDaPolitica(lang);
 ---
 
 <Base lang={lang} path={path} title={s.sobre.metaTitle} description={s.sobre.metaDescription}>

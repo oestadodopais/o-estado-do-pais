@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-15T08:42:26+00:00",
+ "copia": "<scratchpad>/pacote-leitura-curta-me1-escala",
+ "plantas": [
+  {
+   "id": "me1e-p1",
+   "ficheiro": "built/metodo/index.html",
+   "descricao": "uma palavra trocada na frase nova da escala (§3.9): «por este projeto» passa a «pela fonte»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "23f23852029ada3f1d23b96f56600e833a747762f54155b3e1b75cb85b3fc2c3",
+   "sha256_depois": "508f9d7ad68df3e5cb931be6cc22f33fe2c49f3a132cf2ad8bfa80c6818c708e",
+   "contexto_antes": "><div class=\"regra-linha\" id=\"a-escala\"><span class=\"regra-k\">A escala</span><div class=\"regra-v\"><p class=\"metodo-p\">Nos mapas, os valores onde a cor muda são números redondos escolhidos por este projeto, e não um limite oficial.</p></div></div><div class=\"regra-linha\" id=\"a-letra\"><span class=\"regra-k\">A letra</span><div class=\"regra-v\"><p class=\"metodo-p\">Os ",
+   "contexto_depois": "><div class=\"regra-linha\" id=\"a-escala\"><span class=\"regra-k\">A escala</span><div class=\"regra-v\"><p class=\"metodo-p\">Nos mapas, os valores onde a cor muda são números redondos escolhidos pela fonte, e não um limite oficial.</p></div></div><div class=\"regra-linha\" id=\"a-letra\"><span class=\"regra-k\">A letra</span><div class=\"regra-v\"><p class=\"metodo-p\">Os "
+  },
+  {
+   "id": "me1e-p2",
+   "ficheiro": "DECISIONS.md",
+   "descricao": "o resumo do Método na §1.196 trocado num carácter",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "b431be76c0ec2413cc9db07176deebe8678099c9bd1f12de69036c0a4440955e",
+   "sha256_depois": "c4ec3a60bf73f2e85d5cd14d60b52690f6fbee30b53e8bc16755ca687d0d1085",
+   "contexto_antes": " leva ao princípio dela, e os nomes de modelos e de fornecedores saem da página para o documento público da política\n\n**Afecta:** metodo · politica\n\n**Texto:** metodo 1db645c40fa5 · politica 62e42b67cf86\n\n**Data:** 15.10.2026 (o mandato `MANDATO-ME1-2026-10-15.md`, pela leitura do financiador de 14.10.2026 à noite; o construtor, o Claude Opus 5.5; a leitura a f",
+   "contexto_depois": " leva ao princípio dela, e os nomes de modelos e de fornecedores saem da página para o documento público da política\n\n**Afecta:** metodo · politica\n\n**Texto:** metodo 1db645c40fa6 · politica 62e42b67cf86\n\n**Data:** 15.10.2026 (o mandato `MANDATO-ME1-2026-10-15.md`, pela leitura do financiador de 14.10.2026 à noite; o construtor, o Claude Opus 5.5; a leitura a f"
+  },
+  {
+   "id": "me1e-p3",
+   "ficheiro": "design/especime-v3/medicoes/me1-2026-10-15/conferir-frases.mjs",
+   "descricao": "a régua das frases deixa de recolher o texto dos parágrafos das portas (o seletor passa a p.regra-portas-nunca): a conferência nova descrita no relatório passaria sem ler nada",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "36e8689e195a46c3b10583dac1ccc8dc01fd9a6df76c5cb5098f4e5372bf4a8d",
+   "sha256_depois": "7d1d97665d58d1a03bc2070dfbc62d463a5b11127115ce1db90e91cde19b5f7e",
+   "contexto_antes": " corpo?.querySelectorAll('ul.politica-recusas > li') ?? []) seccao.lista.push(textoDe(li));\n    seccao.linhaDasPortas = s.getAttribute('id') === 'a-forma' ? []\n      : s.querySelectorAll('p.regra-portas').filter((n) => visivel(n)).map(textoDe);\n    for (const a of corpo?.querySelectorAll(':scope > p.regra-portas > a') ?? []) seccao.portas.push({ texto: textoDe(a), destino: a.getAttribute('href') });\n ",
+   "contexto_depois": " corpo?.querySelectorAll('ul.politica-recusas > li') ?? []) seccao.lista.push(textoDe(li));\n    seccao.linhaDasPortas = s.getAttribute('id') === 'a-forma' ? []\n      : s.querySelectorAll('p.regra-portas-nunca').filter((n) => visivel(n)).map(textoDe);\n    for (const a of corpo?.querySelectorAll(':scope > p.regra-portas > a') ?? []) seccao.portas.push({ texto: textoDe(a), destino: a.getAttribute('href') });\n "
+  },
+  {
+   "id": "me1e-p4",
+   "ficheiro": "built/en/method/index.html",
+   "descricao": "a frase inglesa da escala atribui a escolha ao Eurostat",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4db7069cc04177feff1e091cd59855cc0c44a349b1ea565205cf3f7a0b9c5a2b",
+   "sha256_depois": "b698ddbd8e0251f2dd250318821088c82cf3283274cc690c309cfb4236b781bd",
+   "contexto_antes": "\"regra-linha\" id=\"a-escala\"><span class=\"regra-k\">The scale</span><div class=\"regra-v\"><p class=\"metodo-p\">On the maps, the values where the colour changes are round numbers chosen by this project, not an official limit.</p></div></div><div class=\"regra-linha\" id=\"a-letra\"><span class=\"regra-k\">The type</span><div class=\"regra-v\"><p class=\"metodo-p\">This",
+   "contexto_depois": "\"regra-linha\" id=\"a-escala\"><span class=\"regra-k\">The scale</span><div class=\"regra-v\"><p class=\"metodo-p\">On the maps, the values where the colour changes are round numbers chosen by Eurostat, not an official limit.</p></div></div><div class=\"regra-linha\" id=\"a-letra\"><span class=\"regra-k\">The type</span><div class=\"regra-v\"><p class=\"metodo-p\">This"
+  },
+  {
+   "id": "me1e-p5",
+   "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+   "descricao": "a linha nova da escala no inventário marcada como retirada em vez de viva",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "88f6815252f4e40580e2ab55d108d1bb46063017e653838bbff8cac61b704da2",
+   "sha256_depois": "a23f6a47081a789ffb10672279c0f0c8b5b6e6eee986a0d6d4fb35b05ba8f6be",
+   "contexto_antes": "E1 e sem portão que a prendesse (a questão ME1-21); entra viva pela decisão do lugar de direção de 15.10.2026, com a amarra das decisões a carimbar o módulo. |\n| autorreferencia | Nos mapas, os valores onde a cor muda são números redondos escolhidos por este projeto, e não um limite oficial. | me1 | viva | A frase da escala do fecho do Método, em palavras correntes (a leitura a frio do Codex, 15.10.2026, o achado 11, e a leitura curta da passagem de correção, o a",
+   "contexto_depois": "E1 e sem portão que a prendesse (a questão ME1-21); entra viva pela decisão do lugar de direção de 15.10.2026, com a amarra das decisões a carimbar o módulo. |\n| autorreferencia | Nos mapas, os valores onde a cor muda são números redondos escolhidos por este projeto, e não um limite oficial. | me1 | retirada | A frase da escala do fecho do Método, em palavras correntes (a leitura a frio do Codex, 15.10.2026, o achado 11, e a leitura curta da passagem de correção, o a"
+  }
+ ]
+}

@@ -58,19 +58,57 @@
  * decidido, e `scripts/gate-html.mjs` compara-o com o que a página rende,
  * carácter a carácter, em todas as páginas construídas.
  *
- * NENHUM ALGARISMO NESTE FICHEIRO SEM ORIGEM DECLARADA. As três cadeias que
- * trazem algarismos são nomes de modelos, e vão à página dentro de
- * `data-nonledger="identificador-tecnico"`, que é o motivo já escrito em
- * `ledger/allowlist.yml` para versões e identificadores de máquina.
+ * NENHUMA CADEIA QUE A PÁGINA RENDE TRAZ ALGARISMOS. A primeira passagem de
+ * 01.09.2026 escrevia aqui os nomes dos modelos com a versão; a segunda tirou as
+ * versões, e o bloco ME1 (15.10.2026) tirou os nomes: a página diz os papéis e a
+ * regra das famílias, e os sistemas de cada papel leem-se no documento público
+ * da política, para onde a primeira secção do Método liga.
  */
+
+import { routePath } from '../lib/routes.mjs';
 
 /** RH1-b, 14.10.2026, §1.192: o nome pessoal e a sua língua deixam de
  * ter um oráculo público. check:privacidade lê as fontes privadas e protege
  * dist/, documentos alojados e ficheiros seguidos, com conhecido-positivo.
  */
 
-/** A âncora da secção da política, dentro do Método. */
-export const ANCORA_DA_POLITICA = 'politica-de-ia';
+/**
+ * A PORTA DA POLÍTICA (bloco ME1, 15.10.2026).
+ *
+ * O rótulo de todas as páginas, a faixa dos documentos alojados e o Sobre abrem
+ * o Método pelo princípio, onde a secção de quem escreve estas páginas passou a
+ * ser a primeira: a âncora fica vazia, e a porta compõe-se numa função só,
+ * `portaDaPolitica()`, que é a rota do Método e mais nada enquanto a âncora for
+ * vazia. O oráculo do portão (`scripts/textos-aprovados.json`) guarda a mesma
+ * âncora, e o `gate:html` compõe o destino por conta própria com a mesma regra.
+ */
+export const ANCORA_DA_POLITICA = '';
+
+/**
+ * O `id` da primeira secção do Método, que fica para as ligações antigas: o
+ * rótulo levou o leitor a `/metodo#politica-de-ia` de 01.09 a 15.10.2026, e um
+ * endereço que esteve no ar continua a abrir a mesma secção.
+ */
+export const ID_DA_SECCAO_DA_POLITICA = 'politica-de-ia';
+
+/**
+ * O documento público da política deste projeto, onde os sistemas de cada papel
+ * e as suas trocas ficam escritos com a data. É a única ligação para fora do
+ * Método, e a mesma nas duas edições (o documento é um só).
+ */
+export const DOCUMENTO_DA_POLITICA =
+  'https://github.com/oestadodopais/o-estado-do-pais/blob/main/design/observatorio/POLITICA-DA-AUTONOMIA.md';
+
+/**
+ * A porta da política na língua de uma edição: a rota do Método, e `#` com a
+ * âncora só quando a âncora não for vazia.
+ * @param {string} lang
+ */
+export function portaDaPolitica(lang) {
+  const rota = routePath('metodo', /** @type {'pt'|'en'} */ (lang));
+  return ANCORA_DA_POLITICA ? `${rota}#${ANCORA_DA_POLITICA}` : rota;
+}
+
 
 /**
  * ---------------------------------------------------------------------------
@@ -275,175 +313,46 @@ export function textoDoContacto(lang, endereco) {
 
 /**
  * ---------------------------------------------------------------------------
- * A SECÇÃO DA POLÍTICA, EM `/metodo`
+ * A PRIMEIRA SECÇÃO DO MÉTODO · quem escreve estas páginas (bloco ME1, 15.10.2026)
  * ---------------------------------------------------------------------------
- * A via, os três papéis, o que se publica só pelas verificações automáticas e as
- * recusas: é a `POLITICA-DA-AUTONOMIA.md` §2, §5, §4 e §6 dita ao leitor, com a
- * emenda de 07.10.2026 (§1.181). A regra da voz
- * vale aqui como em todo o lado (Emenda 18): a página diz o que a coisa é, e
- * nunca porque se deve confiar nela. Por isso nenhuma destas frases é sobre o
- * cuidado da casa; são todas sobre o que a casa faz e o que não faz.
+ * Até 15.10.2026 era a secção «Como a inteligência artificial escreve este sítio»,
+ * a dois terços do Método, com a via, a lista dos três papéis, os dois casos do que
+ * se publica e as recusas, e uma frase com os nomes das famílias de modelos e das
+ * empresas. O mandato do bloco ME1 passa-a para o princípio da página e reescreve-a
+ * em quatro parágrafos: a frase da política (`FRASE`, que o oráculo guarda), os
+ * papéis, a regra das famílias com a porta para o documento público da política,
+ * e o que se publica só pelas verificações automáticas. Os nomes dos modelos e das
+ * empresas saem da página: ficam na `POLITICA-DA-AUTONOMIA.md` §5 e no
+ * `DECISIONS.md`. As frases são as do mandato, palavra por palavra, e a cópia do
+ * lado do portão (`scripts/lugares-ia-do-portao.mjs`) confere os papéis e as
+ * famílias contra a redação decidida; as duas mudam no mesmo commit.
  *
- * As cinco recusas são as da política, ditas com as palavras dela: o que se
- * copia de uma fonte fica como a fonte o escreveu, e aqui a fonte é a própria
- * política do diretor.
- *
- * A tradução inglesa é da casa, fiel, sem acrescentos e sem omissões, como a do
- * Sobre. É lida pelo lugar de direção antes da fusão.
+ * As cinco recusas são as da política, ditas com as palavras dela, e rendem-se
+ * na secção do que este projeto não faz.
  */
 export const POLITICA = {
-  /* O TÍTULO MUDOU A 15.09.2026 (P1, item 1, com a emenda do diretor das 16:35
-     UTC): «A política da casa» era o decalque de *house policy*, e «regras da
-     casa» trocava um decalque por outro problema, porque casa em português é a
-     habitação. O título passa a dizer o que a secção faz, em palavras
-     correntes, e a porta do rótulo abre-a pelo nome da página. */
-  titulo: {
-    pt: 'Como a inteligência artificial escreve este sítio',
-    en: 'How artificial intelligence writes this site',
+  titulo: { pt: 'Quem escreve estas páginas', en: 'Who writes these pages' },
+
+  /** Os três papéis, e o que cada um faz. */
+  papeis: {
+    pt: 'O trabalho divide-se em três papéis, todos de sistemas de inteligência artificial. A direção decide o que se faz, encomenda cada mudança, revê-a antes de se publicar e escreve os textos sobre este projeto, como este. A construção faz as páginas e o programa que lê as fontes; cada número que publica traz a sua fonte e a data em que foi lido, ou diz o que está por confirmar. A leitura é feita por sistemas que não participaram na construção e conferem o trabalho entregue antes de se publicar.',
+    en: 'The work is divided into three roles, all held by artificial intelligence systems. Direction decides what is done, commissions each change, reviews it before it is published and writes the texts about this project, such as this one. Building makes the pages and the program that reads the sources; every number it publishes carries its source and the date it was read, or says what is still to be confirmed. Reading is done by systems that took no part in the building and check the delivered work before it is published.',
   },
 
-  /** A via escolhida, e o que ela obriga. */
-  via: {
-    pt: [
-      'Tudo o que este projeto publica leva o rótulo de texto gerado por inteligência ' +
-        'artificial, em cada página, no momento em que a página é vista. A revisão é feita por verificações automáticas e por ' +
-        'amostra, e não peça a peça. As verificações automáticas são as conferências que correm em cada construção das ' +
-        'páginas e a param à primeira diferença.',
-    ],
-    en: [
-      'Everything this project publishes carries the label saying the text was generated ' +
-        'by artificial intelligence, on every page, at the moment the page is seen. Review is done by automated checks and by sample, not ' +
-        'piece by piece. The automated checks are the checks that run on every build of the pages and stop the build at the first ' +
-        'difference.',
-    ],
+  /** A regra das famílias, com a porta para o documento público da política. */
+  familias: {
+    pt: { antes: 'A construção e a leitura são sempre de famílias diferentes de sistemas: o que construiu uma mudança nunca é o que a lê. Um sistema novo só entra num papel depois de passar as mesmas provas que o anterior passou, e cada troca de sistema fica escrita com a data ', ligacao: 'no documento público da política deste projeto', depois: '.' },
+    en: { antes: 'Building and reading are always done by different families of systems: the one that built a change is never the one that reads it. A new system takes a role only after passing the same tests the previous one passed, and every replacement of a system is recorded with its date ', ligacao: "in this project's public policy document", depois: '.' },
   },
 
-  /**
-   * O QUE SE PUBLICA SÓ PELAS VERIFICAÇÕES AUTOMÁTICAS (07.10.2026, §1.181, o acrescento (e) e (f)).
-   *
-   * Até 07.10.2026 eram três casos sob o título «O que se publica sem uma pessoa ler», e o
-   * terceiro era «Nunca sem uma pessoa» (uma peça que nomeie alguém, o correio a terceiros, a
-   * identidade, o dinheiro). Por decisão do diretor, o «nunca sem uma pessoa» deixou de ser
-   * regra e portão (nada espera por uma pessoa; o diretor é avisado do que sai) e o sítio não
-   * diz quem responde por ele; o caso saiu, e os dois que ficam deixam de falar de uma pessoa:
-   * o que entra por rotina entra pelas verificações automáticas, e o que pára espera a
-   * decisão da direção, que a secção dos papéis acima define. O que pára é o que a política
-   * sempre disse (a §1.172, o ponto 3), e não muda.
-   *
-   * «Portões verdes» e «portão vermelho» saíram do texto do leitor, a pedido do editor na
-   * leitura do Codex de 06.10.2026 (a leitura H4-e-d): a página dizia-os sem os explicar. A
-   * explicação do que uma verificação automática é está no parágrafo da via, onde o leitor
-   * encontra o termo pela primeira vez (a leitura do Codex de 07.10.2026, o achado 8). E «a
-   * leitura já não reconhece» passou a «o motor já não reconhece», porque nesta página «a
-   * leitura» é um dos três papéis e aqui era o programa que lê os ficheiros das fontes.
-   */
-  casos: {
-    titulo: {
-      pt: 'O que se publica só pelas verificações automáticas',
-      en: 'What is published by the automated checks alone',
-    },
-    itens: [
-      {
-        rotulo: { pt: 'Publica-se', en: 'Published' },
-        texto: {
-          pt:
-            'Um valor novo da mesma medida, no mesmo formato, da mesma fonte, quando passa em ' +
-            'todas as verificações automáticas.',
-          en:
-            'A new value of the same measure, in the same format, from the same source, when it ' +
-            'passes every automated check.',
-        },
-      },
-      {
-        rotulo: { pt: 'Não se publica, e a direção decide', en: 'Not published, and direction decides' },
-        texto: {
-          pt:
-            'Uma medida nova; uma definição mudada; um ficheiro que o motor já não reconhece; ' +
-            'uma revisão da fonte; uma verificação automática que falha; uma fonte que deixou ' +
-            'de responder.',
-          en:
-            'A new measure; a changed definition; a file the engine no longer recognises; ' +
-            'a revision at the source; an automated check that fails; a source that has ' +
-            'stopped answering.',
-        },
-      },
-    ],
-  },
-
-  /**
-   * OS LUGARES, SEM UM ÚNICO ALGARISMO (segunda passagem, 01.09.2026).
-   *
-   * A primeira passagem escreveu os nomes dos modelos com a versão («Claude
-   * Opus 5», «gpt-5.6-sol») e marcou os algarismos `identificador-tecnico`. A
-   * leitura a frio recusou-o por duas razões que valem as duas: um número de
-   * versão de um produto de terceiros envelhece sozinho na página, e a marca
-   * punha algarismos novos no sítio para dizer uma coisa que não precisa deles.
-   * A página passa a nomear as FAMÍLIAS e os lugares, que é o que o leitor
-   * precisa de saber para ler a regra que se segue: quem verifica não é quem
-   * construiu.
-   *
-   * E A VOZ MUDOU COM ELES. «Claude Fable 5 decide, escreve as regras» dizia
-   * uma coisa falsa: as regras são do diretor, e a primeira frase desta secção
-   * di-lo. «Mede às cegas» e «lê a frio» são o jargão da casa, e a página do
-   * leitor diz o que a coisa é: mede sem ver a construção, lê sem contexto
-   * prévio.
-   */
-  /* H4, 06.10.2026: redação decidida pelo lugar de direção (§1.173) e reescrita na
-     passagem H4-e pela leitura curta do diff: a secção diz os três papéis em palavras
-     correntes, sem «peça» (que o §1.98 fecha) nem «lugares» (que no sítio são os
-     concelhos), diz uma vez só que a construção e a leitura são de famílias
-     diferentes, e distingue o que a construção faz com cada número (a fonte e a
-     data) do que a leitura faz com o que foi construído. */
-  lugares: {
-    titulo: { pt: 'Os três papéis', en: 'The three roles' },
-    intro: {
-      pt: ['São três papéis, todos de modelos: a direção, a construção e a leitura.'],
-      en: ['There are three roles, all held by models: direction, building and reading.'],
-    },
-    itens: [
-      {
-        rotulo: { pt: 'A direção', en: 'Direction' },
-        texto: {
-          pt: 'decide o que se faz, encomenda cada mudança e revê-a antes de se publicar, e escreve as explicações e os textos sobre este projeto, que a outra família de modelos lê antes de se publicarem; os números novos que as fontes publicam entram pelas verificações automáticas, sem a direção os ler um a um.',
-          en: 'decides what is done, commissions each change and reviews it before it is published, and writes the explanations and the texts about this project, which the other family of models reads before they are published; new figures from the sources enter through the automated checks, without direction reading them one by one.',
-        },
-      },
-      {
-        rotulo: { pt: 'A construção', en: 'Building' },
-        texto: {
-          pt: 'faz as páginas e o motor que lê as fontes; cada número que publica traz a sua fonte e a data em que foi lido, ou diz o que ainda está por confirmar.',
-          en: 'makes the pages and the engine that reads the sources; every number it publishes carries its source and the date it was read, or says what is still to be confirmed.',
-        },
-      },
-      {
-        rotulo: { pt: 'A leitura', en: 'Reading' },
-        texto: {
-          pt: 'confere o que a construção entregou, sem contexto prévio e com erros plantados de propósito, para provar que os encontra, antes de se publicar.',
-          en: 'checks what building delivered, with no prior context and with errors planted on purpose, to prove it finds them, before it is published.',
-        },
-      },
-    ],
-    fecho: {
-      pt: [
-        'A construção e a leitura são sempre de famílias de modelos diferentes: o modelo que construiu uma mudança nunca é o que a lê. ' +
-          'Os modelos Claude da Anthropic estão na direção; na construção e na leitura estão os modelos Claude ' +
-          'e o Codex da OpenAI. Um modelo novo só ocupa um papel ' +
-          'depois de passar os mesmos testes que o titular passou, e a troca fica escrita ' +
-          'com a data.',
-      ],
-      en: [
-        'Building and reading are always done by different families of models: the model that built a change never reads it. ' +
-          'The Claude models from Anthropic hold the direction; building and reading are held by the Claude models ' +
-          'and by Codex from OpenAI. A new model takes ' +
-          'a role only after passing the same tests the incumbent passed, and the replacement ' +
-          'is written down with its date.',
-      ],
-    },
+  /** O que se publica só pelas verificações automáticas, e o que espera a decisão da direção. */
+  publicacao: {
+    pt: 'Um valor novo da mesma medida, no mesmo formato e da mesma fonte publica-se quando passa em todas as verificações automáticas, sem uma leitura individual. Tudo o resto espera a decisão da direção: uma medida nova, uma definição mudada, um ficheiro que o programa já não reconhece, uma revisão da fonte, uma verificação que falha, uma fonte que deixou de responder.',
+    en: "A new value of the same measure, in the same format and from the same source, is published when it passes every automated check, without an individual review. Everything else waits for direction's decision: a new measure, a changed definition, a file the program no longer recognises, a revision at the source, a check that fails, a source that has stopped answering.",
   },
 
   /** As cinco recusas, escritas antes de precisarem delas. */
   recusas: {
-    titulo: { pt: 'As recusas', en: 'The refusals' },
     itens: [
       {
         pt: 'Este projeto não aceita dinheiro de nenhuma entidade que mede.',

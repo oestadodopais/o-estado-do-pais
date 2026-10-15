@@ -1,0 +1,336 @@
+{
+  "cabeca": "c8825d0954052282da2aa66c4273d8b090936188",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "metodo-pt-390.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8630,
+      "sha256": "7e5016a8ee0e9a80c549e99199b636590ed9bff1a2ccd130b058b93ae987dc45",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-390-quem-escreve.png",
+          "seletor": "section#politica-de-ia",
+          "sha256": "15f57703e8323c0e72af55881d2b9f9b39e5f37d3e038da8e6f655abe0e6a7fb"
+        },
+        {
+          "ficheiro": "metodo-pt-390-como-se-confere.png",
+          "seletor": "section#releitura",
+          "sha256": "28f38af1fbc38e902f046f0ccf8ada72e681901d1a9dd263641af42ba359e51d"
+        },
+        {
+          "ficheiro": "metodo-pt-390-a-forma.png",
+          "seletor": "section#a-forma",
+          "sha256": "8e67d8ed233ebc094f733de066bd9806cda847996823fbb4fe0ef69a0c34e12b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-768.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 6445,
+      "sha256": "c384d2997ec4083836d5b7d2170401ae71b246ea5c231e7472cd3f9b573d6139",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-768-quem-escreve.png",
+          "seletor": "section#politica-de-ia",
+          "sha256": "b16286c14fbe22704629bd239c4005956db35e8efef59df36063f02906ff1211"
+        },
+        {
+          "ficheiro": "metodo-pt-768-como-se-confere.png",
+          "seletor": "section#releitura",
+          "sha256": "d9efbd1a391e680148d95175eb3f6b8c09ba2294bf99a4f1d0bf16a105978853"
+        },
+        {
+          "ficheiro": "metodo-pt-768-a-forma.png",
+          "seletor": "section#a-forma",
+          "sha256": "8fbe1d6d50c2ca46ebb85950899d7d384fdebca1da3bcff74c3d5bef0a21d560"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-1024.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 6191,
+      "sha256": "020249e9c1af4f1b30684e3af05faafe318b5f8c01d4e60c73cb0f8a3704aaf7",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-1024-quem-escreve.png",
+          "seletor": "section#politica-de-ia",
+          "sha256": "02649dcf5fb44c8955525f03447070487f13c36369205c3c1e55eb61ebb0c248"
+        },
+        {
+          "ficheiro": "metodo-pt-1024-como-se-confere.png",
+          "seletor": "section#releitura",
+          "sha256": "eccb47cbfba1b68a342d43733d24223f38a5aa4914a69cb4f7cd9a576a65f004"
+        },
+        {
+          "ficheiro": "metodo-pt-1024-a-forma.png",
+          "seletor": "section#a-forma",
+          "sha256": "de09fe9316b3ffecd12354bdbb3987a1762fb23182820fdd401f54731a69dd7d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-1280.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 6255,
+      "sha256": "765e64915d9f54b2dac23dc78d58aac69c2be774433e39e8e2d5e1cbc571ee5c",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-1280-quem-escreve.png",
+          "seletor": "section#politica-de-ia",
+          "sha256": "b2a39d81bc3a1272aceae3b19b36c2e7aa19cb2d30896eb6d374fee3e2f492f0"
+        },
+        {
+          "ficheiro": "metodo-pt-1280-como-se-confere.png",
+          "seletor": "section#releitura",
+          "sha256": "0645671c6c0e4100bc92cb0f2b7c5760e713656e12fc3b657275c9fa40f499b5"
+        },
+        {
+          "ficheiro": "metodo-pt-1280-a-forma.png",
+          "seletor": "section#a-forma",
+          "sha256": "c50837b22122c0b5e5065d720de0a938e7767750c530b9519051cbdb2f972752"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-pt-1600.png",
+      "rota": "/metodo/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 6261,
+      "sha256": "19896d1c019012b3abf4fb24459389d5a42452ccf5fddbeb48f77c052b7bdcb4",
+      "recortes": [
+        {
+          "ficheiro": "metodo-pt-1600-quem-escreve.png",
+          "seletor": "section#politica-de-ia",
+          "sha256": "b2a39d81bc3a1272aceae3b19b36c2e7aa19cb2d30896eb6d374fee3e2f492f0"
+        },
+        {
+          "ficheiro": "metodo-pt-1600-como-se-confere.png",
+          "seletor": "section#releitura",
+          "sha256": "0645671c6c0e4100bc92cb0f2b7c5760e713656e12fc3b657275c9fa40f499b5"
+        },
+        {
+          "ficheiro": "metodo-pt-1600-a-forma.png",
+          "seletor": "section#a-forma",
+          "sha256": "c50837b22122c0b5e5065d720de0a938e7767750c530b9519051cbdb2f972752"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-390.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8504,
+      "sha256": "bac93662a2cd30f984070528c6528c55577924f32ea46de3c1e91c7383a30155",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-390-quem-escreve.png",
+          "seletor": "section#politica-de-ia",
+          "sha256": "adea31c596356b8794f55efc30515cc5f7ecd78a1c7f3439818745803373a2a9"
+        },
+        {
+          "ficheiro": "metodo-en-390-como-se-confere.png",
+          "seletor": "section#releitura",
+          "sha256": "4ecb08004cb16a9402fdddfea4afddc29ee893474adb753c007cfd860798a256"
+        },
+        {
+          "ficheiro": "metodo-en-390-a-forma.png",
+          "seletor": "section#a-forma",
+          "sha256": "9a563ad0f899b6e17f5a0cc15cf218eac816cf3db3bcb23bb0c6549d330f19d8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-768.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 6367,
+      "sha256": "2ed319b6a697bc23adf3bba4bb23a9ca51e6dc8fde730178fa5c87f0d062f1a0",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-768-quem-escreve.png",
+          "seletor": "section#politica-de-ia",
+          "sha256": "0fbe5192510574bc3ef4c0eb5ab5b500b0dc816573af769b6d5bb8860cd67788"
+        },
+        {
+          "ficheiro": "metodo-en-768-como-se-confere.png",
+          "seletor": "section#releitura",
+          "sha256": "61f0738ed57a8a71432ad3f57cf869d9167e60ded5eaed0db431566b00d20b0b"
+        },
+        {
+          "ficheiro": "metodo-en-768-a-forma.png",
+          "seletor": "section#a-forma",
+          "sha256": "556eafa9946cd8429428b43d59776024a4629aefb6389c9072e64e0fe02e0f00"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-1024.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 6113,
+      "sha256": "7663ae44b63d2df9d55b70a93818f34a441d8f921dc81362d2dcebfd90a66849",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-1024-quem-escreve.png",
+          "seletor": "section#politica-de-ia",
+          "sha256": "7f57920a5e5fb6a6bd1ecd5b9987c482d0e0dac979ddc203cb82e8f9c050a536"
+        },
+        {
+          "ficheiro": "metodo-en-1024-como-se-confere.png",
+          "seletor": "section#releitura",
+          "sha256": "56af20d22d383d6ac5ebd88ec86c388f65fad545ae6c03cf6b1f53cfc2ce2247"
+        },
+        {
+          "ficheiro": "metodo-en-1024-a-forma.png",
+          "seletor": "section#a-forma",
+          "sha256": "0dce9698e6d60401361ca0bb2c1a3341e345f6453626935209698db9e7e02e03"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-1280.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 6177,
+      "sha256": "21e24bad0fad448359973f2a3aa0e8ecd5efdbaa8b2ca02e52f00c6334a757f8",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-1280-quem-escreve.png",
+          "seletor": "section#politica-de-ia",
+          "sha256": "65b622cf94181133c1a0e4f52c7b9c95ca473ae01652c4d5e63954bd2684ee75"
+        },
+        {
+          "ficheiro": "metodo-en-1280-como-se-confere.png",
+          "seletor": "section#releitura",
+          "sha256": "0db7536d6894baa7dd32274bc1083d10c1c83929b0c6291a9bcc4e4fd12128e6"
+        },
+        {
+          "ficheiro": "metodo-en-1280-a-forma.png",
+          "seletor": "section#a-forma",
+          "sha256": "25468b1bb5f7d383ac278ca973362c7aaa5a64d07398861f2f7d4b8ad584e4a4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "metodo-en-1600.png",
+      "rota": "/en/method/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 6183,
+      "sha256": "c072f03398e14d45f995d13809bcad8740f576ae1667a2b6b15c501dcfddbeba",
+      "recortes": [
+        {
+          "ficheiro": "metodo-en-1600-quem-escreve.png",
+          "seletor": "section#politica-de-ia",
+          "sha256": "65b622cf94181133c1a0e4f52c7b9c95ca473ae01652c4d5e63954bd2684ee75"
+        },
+        {
+          "ficheiro": "metodo-en-1600-como-se-confere.png",
+          "seletor": "section#releitura",
+          "sha256": "0db7536d6894baa7dd32274bc1083d10c1c83929b0c6291a9bcc4e4fd12128e6"
+        },
+        {
+          "ficheiro": "metodo-en-1600-a-forma.png",
+          "seletor": "section#a-forma",
+          "sha256": "25468b1bb5f7d383ac278ca973362c7aaa5a64d07398861f2f7d4b8ad584e4a4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "dbdd2620497ac3ad556331ea0064df937d59db01250a09ea8b7daeecd1d30818",
+    "metodo/index.html": "7eca8237d50bec2c0c3548950428b6362b2cfd8062b3819fea7cfffbac7caf5d",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.iWxVxik0.css": "b028d1f789d6ec2ee10ea6fd6a1162acc7bf3ae2aae322f9cfe11bc33e563531",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "en/method/index.html": "d1e94b8762b83949a7d2a6053bd71779e3097a5052afdb30fc476481c688ad22"
+  },
+  "falhas": [],
+  "ok": true
+}

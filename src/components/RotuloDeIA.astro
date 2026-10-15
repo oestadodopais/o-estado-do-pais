@@ -62,13 +62,14 @@
  * maneira que o cabeçalho a faz para a frase de identidade (`Masthead.astro`,
  * `naHome`): o caminho desta página contra o da rota `home` da sua edição.
  */
-import { ANCORA_DA_POLITICA, ROTULO } from '../data/politica-ia.mjs';
-import { routePath } from '../lib/routes.mjs';
+import { ROTULO, portaDaPolitica } from '../data/politica-ia.mjs';
 
 const { lang = 'pt', onde = 'topo' } = Astro.props;
 
 const r = ROTULO[lang];
-const politica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
+/* A PORTA ABRE O MÉTODO PELO PRINCÍPIO (bloco ME1, 15.10.2026): compõe-se numa função só, a mesma do Sobre e
+   dos documentos alojados, e a secção de quem escreve estas páginas é a primeira da página. */
+const politica = portaDaPolitica(lang);
 ---
 
 <div class:list={['rotulo-ia', `rotulo-ia-${onde}`]} data-rotulo-ia={onde}>

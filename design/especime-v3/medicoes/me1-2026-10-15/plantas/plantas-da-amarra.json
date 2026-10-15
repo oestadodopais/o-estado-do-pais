@@ -1,0 +1,57 @@
+[
+ {
+  "nome": "me1-citacao-do-selo-mudada",
+  "ficheiro": "IDENTIDADE.md",
+  "comando": "node scripts/check-ledger.mjs",
+  "codigo": 1,
+  "mordida": "IDENTIDADE\\.md cita, como sendo do \"metodo\"",
+  "passou": true,
+  "antes": "c57da4f17141c023a1e674a712bdf578282e2f7d43a66ab2a04b1ef5e66e8ad4",
+  "reposto": "c57da4f17141c023a1e674a712bdf578282e2f7d43a66ab2a04b1ef5e66e8ad4",
+  "queixa": "✗ IDENTIDADE.md cita, como sendo do \"metodo\":"
+ },
+ {
+  "nome": "me1-citacao-sem-marca",
+  "ficheiro": "IDENTIDADE.md",
+  "comando": "node scripts/check-ledger.mjs",
+  "codigo": 1,
+  "mordida": "que é uma frase de \"metodo\", e não a marca",
+  "passou": true,
+  "antes": "c57da4f17141c023a1e674a712bdf578282e2f7d43a66ab2a04b1ef5e66e8ad4",
+  "reposto": "c57da4f17141c023a1e674a712bdf578282e2f7d43a66ab2a04b1ef5e66e8ad4",
+  "queixa": "✗ IDENTIDADE.md cita «Cada valor é lido no documento onde a fonte o publicou, e não em quem …», que é uma frase de \"metodo\", e não a marca como tal."
+ },
+ {
+  "nome": "me1-texto-governado-sem-entrada",
+  "ficheiro": "src/data/metodo.mjs",
+  "comando": "node scripts/check-ledger.mjs",
+  "codigo": 1,
+  "mordida": "\"metodo\": o texto mudou depois da última decisão que o governa",
+  "passou": true,
+  "antes": "fcb1354596d4457c22d20459fdde7ae8e31604b03d6797e34ac93f28c8d151ed",
+  "reposto": "fcb1354596d4457c22d20459fdde7ae8e31604b03d6797e34ac93f28c8d151ed",
+  "queixa": "✗ \"metodo\": o texto mudou depois da última decisão que o governa, ou a decisão foi registada contra outro texto."
+ },
+ {
+  "nome": "me1-recusa-mudada-sem-entrada",
+  "ficheiro": "src/data/politica-ia.mjs",
+  "comando": "node scripts/check-ledger.mjs",
+  "codigo": 1,
+  "mordida": "\"politica\": o texto mudou depois da última decisão que o governa",
+  "passou": true,
+  "antes": "62e42b67cf86eda8760ec594fd0df2b9cc287942b37c12561284c31347bfb261",
+  "reposto": "62e42b67cf86eda8760ec594fd0df2b9cc287942b37c12561284c31347bfb261",
+  "queixa": "✗ \"politica\": o texto mudou depois da última decisão que o governa, ou a decisão foi registada contra outro texto."
+ },
+ {
+  "nome": "me1-resumo-da-politica-desatualizado",
+  "ficheiro": "DECISIONS.md",
+  "comando": "node scripts/check-ledger.mjs",
+  "codigo": 1,
+  "mordida": "§1\\.196 carimba 3d2edb435f1b",
+  "passou": true,
+  "antes": "77f434d4df16922cd9d2875a26be46973370e73e044fa37a7f37bd400fbf7bf4",
+  "reposto": "77f434d4df16922cd9d2875a26be46973370e73e044fa37a7f37bd400fbf7bf4",
+  "queixa": "§1.196 carimba 3d2edb435f1b"
+ }
+]

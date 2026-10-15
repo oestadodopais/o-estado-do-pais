@@ -1,0 +1,266 @@
+{
+ "mandato": "design/observatorio/mandatos/MANDATO-ME1-2026-10-15.md",
+ "abertura": {
+  "pt": "Como estas páginas são feitas, conferidas e corrigidas, para quem quer saber se pode confiar num número e o que fazer se encontrar um errado.",
+  "en": "How these pages are made, checked and corrected, for anyone who wants to know whether a number can be trusted and what to do on finding a wrong one."
+ },
+ "seccoes": [
+  {
+   "n": 1,
+   "titulo": {
+    "pt": "Quem escreve estas páginas",
+    "en": "Who writes these pages"
+   },
+   "paragrafos": [
+    {
+     "n": 2,
+     "id": null,
+     "pt": "O trabalho divide-se em três papéis, todos de sistemas de inteligência artificial. A direção decide o que se faz, encomenda cada mudança, revê-a antes de se publicar e escreve os textos sobre este projeto, como este. A construção faz as páginas e o programa que lê as fontes; cada número que publica traz a sua fonte e a data em que foi lido, ou diz o que está por confirmar. A leitura é feita por sistemas que não participaram na construção e conferem o trabalho entregue antes de se publicar.",
+     "en": "The work is divided into three roles, all held by artificial intelligence systems. Direction decides what is done, commissions each change, reviews it before it is published and writes the texts about this project, such as this one. Building makes the pages and the program that reads the sources; every number it publishes carries its source and the date it was read, or says what is still to be confirmed. Reading is done by systems that took no part in the building and check the delivered work before it is published."
+    },
+    {
+     "n": 3,
+     "id": null,
+     "pt": "A construção e a leitura são sempre de famílias diferentes de sistemas: o que construiu uma mudança nunca é o que a lê. Um sistema novo só entra num papel depois de passar as mesmas provas que o anterior passou, e cada troca de sistema fica escrita com a data [no documento público da política deste projeto]{politica}.",
+     "en": "Building and reading are always done by different families of systems: the one that built a change is never the one that reads it. A new system takes a role only after passing the same tests the previous one passed, and every replacement of a system is recorded with its date [in this project's public policy document]{politica}."
+    },
+    {
+     "n": 4,
+     "id": null,
+     "pt": "Um valor novo da mesma medida, no mesmo formato e da mesma fonte publica-se quando passa em todas as verificações automáticas, sem uma leitura individual. Tudo o resto espera a decisão da direção: uma medida nova, uma definição mudada, um ficheiro que o programa já não reconhece, uma revisão da fonte, uma verificação que falha, uma fonte que deixou de responder.",
+     "en": "A new value of the same measure, in the same format and from the same source, is published when it passes every automated check, without an individual review. Everything else waits for direction's decision: a new measure, a changed definition, a file the program no longer recognises, a revision at the source, a check that fails, a source that has stopped answering."
+    }
+   ],
+   "portas": [],
+   "linha": 68
+  },
+  {
+   "n": 2,
+   "titulo": {
+    "pt": "De onde vêm os números",
+    "en": "Where the numbers come from"
+   },
+   "paragrafos": [
+    {
+     "n": 1,
+     "id": null,
+     "pt": "Os números destas páginas vêm de fontes oficiais e de autoridades reconhecidas: os institutos de estatística, os reguladores, os tribunais, os ministérios, as câmaras municipais, as universidades e os institutos independentes de interesse público. Cada valor é lido no documento onde a fonte o publicou, e não em quem o cita; as entradas em que isso ainda não aconteceu contam-se abaixo, entre as que estão por confirmar. Quando este projeto calcula um número, o recibo mostra a conta e os valores de onde ele vem.",
+     "en": "The numbers on these pages come from official sources and recognised authorities: the statistics institutes, regulators, courts, ministries, municipal councils, universities and independent public-interest institutes. Each value is read in the document where the source published it, not in whoever quotes it; the entries where that has not yet happened are counted below, among those still to be confirmed. When this project calculates a number, the receipt shows the arithmetic and the values it comes from."
+    },
+    {
+     "n": 2,
+     "id": null,
+     "pt": "A imprensa não é fonte de nenhum número, e um observatório que compila dados oficiais é onde um número se encontra, não onde se cita. O que uma pessoa ou um partido afirmou em público entra de outra maneira: como foi dito, no documento onde foi dito, com quem o disse, ao lado do que as fontes oficiais mostram sobre a mesma medida, no mesmo período e para a mesma população.",
+     "en": "The press is not a source for any number, and an observatory that compiles official data is where a number is found, not where it is quoted from. What a person or a party stated in public enters in another way: as it was said, in the document where it was said, with who said it, beside what the official sources show for the same measure, in the same period and for the same population."
+    }
+   ],
+   "portas": [
+    {
+     "pt": "Ver o livro-razão",
+     "en": "See the ledger"
+    }
+   ],
+   "linha": 84
+  },
+  {
+   "n": 3,
+   "titulo": {
+    "pt": "O recibo de cada número",
+    "en": "The receipt for each number"
+   },
+   "paragrafos": [
+    {
+     "n": 1,
+     "id": null,
+     "pt": "Todos os números publicados estão numa só lista, a que este projeto chama livro-razão: uma entrada por medição, com o organismo que a publicou, o documento, a página, o excerto exato, a data em que foi lida e, quando o número é calculado, a conta e os números de onde vem. A lista é pública, entrada a entrada, nas duas edições.",
+     "en": "Every published number is in a single list, which this project calls the ledger: one entry per measurement, with the body that published it, the document, the page, the exact excerpt, the date it was read and, when the number is calculated, the arithmetic and the numbers it comes from. The list is public, entry by entry, in both editions."
+    },
+    {
+     "n": 2,
+     "id": "selo",
+     "pt": "Ao lado de cada medição há um selo que abre a sua entrada, o recibo do número: cheio quando a origem está completa, a tracejado quando falta um campo.",
+     "en": "Beside every measurement there is a seal that opens its entry, the number's receipt: filled when the origin is complete, dashed when a field is missing."
+    },
+    {
+     "n": 3,
+     "id": null,
+     "pt": "Hoje a lista tem {afirmacoes} entradas; {indexaveis} têm a origem completa e {divida} esperam a confirmação de um campo na fonte.",
+     "en": "Today the list has {afirmacoes} entries; {indexaveis} have their origin complete and {divida} await the confirmation of a field at the source."
+    },
+    {
+     "n": 4,
+     "id": null,
+     "pt": "O recibo inclui um código para mostrar o número noutra página, com a fonte, a data em que foi lido e a ligação para o recibo; esse código acompanha as atualizações do número neste projeto. Este projeto não guarda nenhum registo de quem incorpora um número. A licença é a do conjunto de dados, Creative Commons de atribuição.",
+     "en": "The receipt includes code to show the number on another page, with its source, the date it was read and the link to the receipt; that code follows the updates of the number in this project. This project keeps no record of who embeds a number. The licence is the dataset's, Creative Commons attribution."
+    }
+   ],
+   "portas": [
+    {
+     "pt": "Ver o livro-razão",
+     "en": "See the ledger"
+    },
+    {
+     "pt": "Ver um recibo de exemplo",
+     "en": "See an example receipt"
+    }
+   ],
+   "linha": 94
+  },
+  {
+   "n": 4,
+   "titulo": {
+    "pt": "Como se confere",
+    "en": "How it is checked"
+   },
+   "paragrafos": [
+    {
+     "n": 1,
+     "id": "construcao",
+     "pt": "Estas páginas são geradas a partir dessa lista. De cada vez que são construídas, um programa lê o texto de todas elas: cada algarismo tem de ter uma origem declarada, uma entrada da lista ou uma das razões escritas numa lista fechada, como um número de ordem ou a data da própria página; um algarismo sem origem trava a publicação, e um valor diferente do da sua entrada, também. O que esse programa não vê: um número escrito por extenso, um número no código que a página carrega, ou um número guardado fora do texto que se lê, passam. A revisão junta estas verificações a leituras por amostra; nenhuma página é lida uma a uma antes de sair.",
+     "en": "These pages are generated from that list. Every time they are built, a program reads the text of all of them: every digit must have a declared origin, an entry in the list or one of the reasons written on a closed list, such as an ordinal or the page's own date; a digit without an origin stops publication, and so does a value that differs from its entry. What that program does not see: a number written out in words, a number in the code the page loads, or a number stored outside the text one reads, all pass. Review combines these checks with sample readings; no page is read one by one before it goes out."
+    },
+    {
+     "n": 2,
+     "id": null,
+     "pt": "Antes de uma mudança chegar a estas páginas, as mesmas verificações recusam, entre outras coisas, uma frase copiada de uma fonte que não seja igual à da fonte, um nome ou uma definição que a fonte não dá a essa medida, e qualquer dado pessoal, segredo ou caminho de uma máquina. As frases que este projeto escreve sobre si e sobre os números estão num inventário, e nas páginas que ele cobre, que são quase todas, uma frase nova que não esteja lá trava a publicação; o texto desta página e o da página «Sobre» só mudam com uma decisão registada que carimbe a versão nova. E cada trabalho novo, uma página, uma regra, um texto, é lido antes de se publicar por um sistema de outra família, com cinco erros plantados de propósito que tem de encontrar todos; o que ele encontra que mude um número ou uma frase corrige-se antes de publicar, e os reparos pequenos juntam-se numa passagem semanal.",
+     "en": "Before a change reaches these pages, the same checks refuse, among other things, a sentence copied from a source that is not identical to the source's, a name or a definition the source does not give to that measure, and any personal data, secret or machine path. The sentences this project writes about itself and about the numbers are kept in an inventory, and on the pages it covers, which are nearly all of them, a new sentence that is not in it stops publication; the text of this page and of the «About» page changes only with a recorded decision that stamps the new version. And every new piece of work, a page, a rule, a text, is read before publication by a system from another family, with five errors planted on purpose that it must find, all of them; whatever it finds that changes a number or a sentence is corrected before publishing, and the small repairs are gathered into a weekly pass."
+    },
+    {
+     "n": 3,
+     "id": null,
+     "pt": "Estas verificações provam que o que a página mostra é o que a lista guarda; a releitura na fonte prova que a lista diz o que a fonte imprimiu; nenhuma prova que a fonte esteja certa, nem que as conclusões deste projeto o estejam. Cada recibo diz se o seu número já foi relido na fonte por um caminho diferente e por um sistema que não o publicou, em que data e com que resultado. O painel europeu, na página «Portugal na União Europeia», é reconferido contra a fonte todas as semanas, e essa página diz quando foi a última vez.",
+     "en": "These checks prove that what the page shows is what the list holds; the re-reading at the source proves that the list says what the source printed; neither proves that the source is right, nor that this project's conclusions are. Each receipt says whether its number has been read again at the source by a different route and by a system that did not publish it, on what date and with what result. The European panel, on the page «Portugal in the European Union», is re-checked against the source every week, and that page says when the last time was."
+    },
+    {
+     "n": 4,
+     "id": null,
+     "pt": "Hoje {linhas_reconferidas} entradas têm pelo menos uma reconferência escrita, em {releituras_registadas} reconferências; em {releituras_divergentes} a fonte dizia outra coisa. Quando a fonte diz outra coisa, o valor novo não entra sozinho: espera a decisão da direção e, quando entra, fica no registo das correções com o valor anterior à vista. A última reconferência do painel europeu foi a {painel_reconferido_em}.",
+     "en": "Today {linhas_reconferidas} entries have at least one re-check written, in {releituras_registadas} re-checks; in {releituras_divergentes} the source said something else. When the source says something else, the new value does not enter on its own: it waits for direction's decision and, when it enters, it goes into the corrections register with the previous value in plain sight. The European panel was last re-checked on {painel_reconferido_em}."
+    }
+   ],
+   "portas": [
+    {
+     "pt": "Os resultados das verificações desta construção",
+     "en": "The results of this build's checks"
+    },
+    {
+     "pt": "Portugal na União Europeia",
+     "en": "Portugal in the European Union"
+    }
+   ],
+   "linha": 113
+  },
+  {
+   "n": 5,
+   "titulo": {
+    "pt": "O que está por confirmar",
+    "en": "What is still to be confirmed"
+   },
+   "paragrafos": [
+    {
+     "n": 1,
+     "id": null,
+     "pt": "Quando um campo da origem de um número não pôde ser confirmado na fonte, o recibo diz o que falta e marca esse campo com {marcador}; a página do número não o esconde, e a entrada fica fora dos motores de busca até estar completa. Quando a fonte marca um valor como provisório, a página di-lo por palavras. Quando a fonte já publicou um período mais recente do que o que estas páginas mostram, a página do número di-lo também.",
+     "en": "When a field in a number's origin could not be confirmed at the source, the receipt says what is missing and marks that field with {marcador}; the number's page does not hide it, and the entry stays out of search engines until it is complete. When the source marks a value as provisional, the page says so in words. When the source has already published a more recent period than the one these pages show, the number's page says so too."
+    }
+   ],
+   "portas": [
+    {
+     "pt": "O que quer dizer este marcador",
+     "en": "What this marker means"
+    }
+   ],
+   "linha": 129
+  },
+  {
+   "n": 6,
+   "titulo": {
+    "pt": "As correções",
+    "en": "Corrections"
+   },
+   "paragrafos": [
+    {
+     "n": 1,
+     "id": null,
+     "pt": "O registo público das correções distingue três tipos de alteração: a correção, quando um valor estava errado; a atualização, quando um valor estava certo e ficou desatualizado; a revisão de proveniência, quando o valor se mantém e muda a documentação da sua origem. Cada alteração é datada e permanente, com o valor anterior à vista. Até hoje: {correcoes} correções, {atualizacoes} atualizações e {revisoes_de_proveniencia} revisões de proveniência.",
+     "en": "The public register of corrections distinguishes three types of change: a correction, when a value was wrong; an update, when a value was right and became outdated; a provenance revision, when the value stays the same and the documentation of its origin changes. Each change is dated and permanent, with the previous value in plain sight. So far: {correcoes} corrections, {atualizacoes} updates and {revisoes_de_proveniencia} provenance revisions."
+    },
+    {
+     "n": 2,
+     "id": null,
+     "pt": "Quem encontrar um erro escreve para {email}; há em todas as páginas uma ligação para o fazer. Quem for nomeado numa página pode responder para o mesmo endereço, e a resposta publica-se ao lado do texto em causa, sem edição.",
+     "en": "Anyone who finds an error writes to {email}; every page has a link for doing so. Anyone named on a page may reply to the same address, and the reply is published alongside the text in question, unedited."
+    }
+   ],
+   "portas": [
+    {
+     "pt": "O registo inteiro",
+     "en": "The whole register"
+    }
+   ],
+   "linha": 136
+  },
+  {
+   "n": 7,
+   "titulo": {
+    "pt": "O que se mede, e quem decide",
+    "en": "What gets measured, and who decides"
+   },
+   "paragrafos": [
+    {
+     "n": 1,
+     "id": null,
+     "pt": "O que se mede a seguir decide-se por critérios declarados: os problemas que as instituições identificam ao avaliar Portugal, o que as fontes oficiais vão publicar, o que os leitores perguntam ou corrigem. A direção decide, e a agenda mostra, item a item, o critério, quem propôs, quem decidiu e cada mudança de estado com a sua data. A pergunta de um estudo fixa-se e guarda-se antes de se recolherem os dados.",
+     "en": "What gets measured next is decided by declared criteria: the problems institutions identify when assessing Portugal, what the official sources will publish, what readers ask about or correct. Direction decides, and the agenda shows, item by item, the criterion, who proposed, who decided and every change of state with its date. The question of a study is fixed and stored before the data are collected."
+    },
+    {
+     "n": 2,
+     "id": null,
+     "pt": "Os estudos de Évora abrem com a pergunta a que respondem e com a leitura deste projeto: o que os números mostram, o que este projeto conclui e o que podia funcionar melhor. Os estudos mais antigos têm o texto e as fontes, sem essa abertura.",
+     "en": "The Évora studies open with the question they answer and with this project's reading: what the numbers show, what this project concludes and what could work better; one of them has that opening in the Portuguese edition only. The older studies have the text and the sources, without that opening."
+    }
+   ],
+   "portas": [
+    {
+     "pt": "A agenda",
+     "en": "The agenda"
+    },
+    {
+     "pt": "Os estudos",
+     "en": "The studies"
+    }
+   ],
+   "linha": 146
+  },
+  {
+   "n": 8,
+   "titulo": {
+    "pt": "O que este projeto não faz",
+    "en": "What this project does not do"
+   },
+   "paragrafos": [
+    {
+     "n": 1,
+     "id": null,
+     "pt": "Não classifica partidos nem faz médias por partido: regista quem decidiu o quê e o que aconteceu, com o nome tal como consta do documento e o rótulo partidário como facto de registo. Não corrige em silêncio. É financiado em privado, sem publicidade nem dinheiro de instituições.",
+     "en": "It does not rank or classify parties and does not average by party: it records who decided what and what happened, with the name as the document gives it and the party label as a fact of record. It does not correct in silence. It is privately funded, with no advertising and no money from institutions."
+    }
+   ],
+   "portas": [
+    {
+     "pt": "Privacidade",
+     "en": "Privacy"
+    }
+   ],
+   "linha": 156
+  }
+ ],
+ "meta_description": {
+  "pt": "Como as páginas de O Estado do País são feitas, conferidas e corrigidas: as fontes, o recibo de cada número, as verificações, as correções e o que o projeto não faz.",
+  "en": "How the pages of O Estado do País are made, checked and corrected: the sources, the receipt for each number, the checks, the corrections and what the project does not do."
+ },
+ "fecho_escala": {
+  "pt": "Nos mapas, os valores onde a cor muda são números redondos escolhidos por este projeto, e não um limite oficial.",
+  "en": "On the maps, the values where the colour changes are round numbers chosen by this project, not an official limit."
+ }
+}

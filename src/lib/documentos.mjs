@@ -85,7 +85,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { WORKS, workById } from '../data/studies.mjs';
-import { ANCORA_DA_POLITICA, ROTULO } from '../data/politica-ia.mjs';
+import { ROTULO, portaDaPolitica } from '../data/politica-ia.mjs';
 import { routePath, LANGS } from './routes.mjs';
 import { temRegisto } from './registos.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
@@ -656,7 +656,8 @@ export function faixa(slug, lang) {
    * documento do varrimento, e o rótulo não a toca.
    */
   const r = ROTULO[lang];
-  const politica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
+  /* ME1 (15.10.2026): a porta da política é a do rótulo de todas as páginas, composta numa função só. */
+  const politica = portaDaPolitica(lang);
 
   return [
     `<div data-oedp-faixa lang="${atributo(s.lang)}" aria-label="${atributo(rotulo)}">`,

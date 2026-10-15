@@ -1,0 +1,27 @@
+{
+ "cabeca": "99b572ec961e13dfa7357f8f9684926431c620ad",
+ "paginas": [
+  {
+   "nome": "primeira",
+   "pt": "/",
+   "en": "/en/",
+   "recortes": [
+    {
+     "nome": "rotulo",
+     "seletor": "[data-rotulo-ia=\"topo\"]"
+    }
+   ]
+  },
+  {
+   "nome": "sobre",
+   "pt": "/sobre/",
+   "en": "/en/about/",
+   "recortes": [
+    {
+     "nome": "porta",
+     "seletor": "p.sobre-porta"
+    }
+   ]
+  }
+ ]
+}

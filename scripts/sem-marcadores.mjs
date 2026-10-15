@@ -22,9 +22,13 @@ const PESSOA_I77 = new Set([
   '66fcaa654d160d125ca91a72345eee2c317e4fe41189b640a15df9c71a7d8421',
   'bbc69f40487437b8b111dffbcc1edef1116084ef5513cf905a62aadeda14619e',
 ]);
+// ME1 (15.10.2026): o parágrafo que cita a marca é o da secção «O que está por confirmar», nas duas edições, e
+// não o da regra 5, que saiu; os resumos mudaram com o texto (e outra vez com a frase da passagem de correção), pela
+// mesma conta, e o guião
+// `design/especime-v3/medicoes/me1-2026-10-15/resumos-do-marcador.mjs` reproduz primeiro os dois antigos.
 const REFERENCIAS_METODO = new Set([
-  '2c0adb43dabc8b688009f7fdaf06d925d6bf1afe1f5d031365d8416a927c57d9',
-  '9db1e65032c9e887071fae2df91c472656f1d300435daee34fd91f9568e90429',
+  '25d0c6233aa836b0222c1af58df28bc1eaf6344802d31eef2458a55f56929d87',
+  '92b1978e63c8cbc927e1454f1931d895a3841e7935badf21197472780bddc199',
 ]);
 const resumo = n => createHash('sha256').update(texto(n).replace(/\s+/g,' ').trim()).digest('hex');
 const GENERICA = 'RP4N: uma página de leitor contém uma marca de informação por confirmar';

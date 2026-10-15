@@ -1,0 +1,27 @@
+{
+ "antes": {
+  "cabeca": "93a884f695280974aa2c5ba5ae714f613f78032d",
+  "ficheiros": 15010,
+  "resumo_do_manifesto": "037450e6bf46d0ff700b9c58013aa4a48345c5870826a28615d912c446e53d85"
+ },
+ "agora": {
+  "cabeca": "c15b203058a7f87e7f874c6a5777f86e22883d44",
+  "ficheiros": 15010,
+  "resumo_do_manifesto": "5da929f9caac9f72d222cfd104eb44e0e0e430d5d2451b49752a75cf215a1676"
+ },
+ "iguais": 15008,
+ "diferentes": [
+  "prova.json",
+  "version.json"
+ ],
+ "so_antes": [],
+ "so_agora": [],
+ "paginas_html_diferentes": [],
+ "comando": "python3 design/especime-v3/medicoes/me1-2026-10-15/comparar-dist.py <manifesto do dist de antes> <cabeça de antes> dist <saída>",
+ "conhecido_positivo": {
+  "o_que": "o version.json, que diz a cabeça, difere; e o manifesto de antes com o sha256 da página do Método estragado é apanhado nessa página",
+  "version_json_difere": true,
+  "estrago_apanhado": true,
+  "encontrado": true
+ }
+}

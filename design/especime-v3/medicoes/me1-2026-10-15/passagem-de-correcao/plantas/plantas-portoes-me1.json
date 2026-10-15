@@ -1,0 +1,147 @@
+[
+  {
+    "nome": "me1-nome-de-modelo-no-metodo",
+    "cabeca": "93a884f695280974aa2c5ba5ae714f613f78032d",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "ME1 nomes: o Método diz \\d+ nome\\(s\\) de modelo ou de fornecedor \\(Opus\\)"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/metodo/index.html",
+        "antes": "b83b57cefa13e07d059c3267e133480d253a7e887b0f5c245be7eff7a40920a3",
+        "reposto": "b83b57cefa13e07d059c3267e133480d253a7e887b0f5c245be7eff7a40920a3"
+      }
+    ]
+  },
+  {
+    "nome": "me1-papeis-mudados",
+    "cabeca": "93a884f695280974aa2c5ba5ae714f613f78032d",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "ME1 IA: os papéis não são os da redação decidida"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/method/index.html",
+        "antes": "ff2defd71f1281110f10c7bf8e767352e09e71765d600620a9c537c82933f574",
+        "reposto": "ff2defd71f1281110f10c7bf8e767352e09e71765d600620a9c537c82933f574"
+      }
+    ]
+  },
+  {
+    "nome": "me1-familias-com-a-porta-trocada",
+    "cabeca": "93a884f695280974aa2c5ba5ae714f613f78032d",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "ME1 IA: a porta para o documento público da política não é a decidida"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/metodo/index.html",
+        "antes": "b83b57cefa13e07d059c3267e133480d253a7e887b0f5c245be7eff7a40920a3",
+        "reposto": "b83b57cefa13e07d059c3267e133480d253a7e887b0f5c245be7eff7a40920a3"
+      }
+    ]
+  },
+  {
+    "nome": "me1-porta-do-rotulo-com-a-ancora-antiga",
+    "cabeca": "93a884f695280974aa2c5ba5ae714f613f78032d",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "tem 0 porta\\(s\\) para a política \\(\"\\/metodo\"\\)"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/precos/index.html",
+        "antes": "01fd8016dc38d6d2761d4b8beeaa65811845ef11a1c245d8d788ff4a01e63886",
+        "reposto": "01fd8016dc38d6d2761d4b8beeaa65811845ef11a1c245d8d788ff4a01e63886"
+      }
+    ]
+  },
+  {
+    "nome": "me1-faixa-do-documento-com-a-ancora-antiga",
+    "cabeca": "93a884f695280974aa2c5ba5ae714f613f78032d",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a porta da política abre \"\\/metodo#politica-de-ia\" e devia abrir \"\\/metodo\""
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/estudos/agua-nao-faturada/documento/index.html",
+        "antes": "f45ccb30ce6ef88bed6dcf8d94c5a3c4c6b549679cd9866fdd0ca9baeccb9d76",
+        "reposto": "f45ccb30ce6ef88bed6dcf8d94c5a3c4c6b549679cd9866fdd0ca9baeccb9d76"
+      }
+    ]
+  },
+  {
+    "nome": "me1-marcador-num-paragrafo-mudado",
+    "cabeca": "93a884f695280974aa2c5ba5ae714f613f78032d",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/metodo/index.html",
+        "antes": "b83b57cefa13e07d059c3267e133480d253a7e887b0f5c245be7eff7a40920a3",
+        "reposto": "b83b57cefa13e07d059c3267e133480d253a7e887b0f5c245be7eff7a40920a3"
+      }
+    ]
+  },
+  {
+    "nome": "me1-trabalho-fora-da-excecao",
+    "cabeca": "93a884f695280974aa2c5ba5ae714f613f78032d",
+    "estado": "",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L3 .*ACIMA DO TETO"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/metodo/index.html",
+        "antes": "b83b57cefa13e07d059c3267e133480d253a7e887b0f5c245be7eff7a40920a3",
+        "reposto": "b83b57cefa13e07d059c3267e133480d253a7e887b0f5c245be7eff7a40920a3"
+      }
+    ]
+  },
+  {
+    "nome": "me1-linha-do-inventario-mudada",
+    "cabeca": "93a884f695280974aa2c5ba5ae714f613f78032d",
+    "estado": "",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "linha «viva» que não se rende em rota nenhuma",
+      "Os números destas páginas vêm de fontes oficiais"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/metodo/index.html",
+        "antes": "b83b57cefa13e07d059c3267e133480d253a7e887b0f5c245be7eff7a40920a3",
+        "reposto": "b83b57cefa13e07d059c3267e133480d253a7e887b0f5c245be7eff7a40920a3"
+      }
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+{
+ "diretor_medido_em": "2026-10-15T02:52:27Z",
+ "construtor_medido_em": "2026-10-15T03:20:28Z",
+ "medidas_comparadas": 26,
+ "divergentes": [],
+ "conhecido_positivo": {
+  "o_que": "uma cópia com linhas_do_livro mais um diverge só nessa medida",
+  "encontrado": true
+ },
+ "comando": "python3 design/especime-v3/medicoes/me1-2026-10-15/partida/comparar-o-par.py"
+}

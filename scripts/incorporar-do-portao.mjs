@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import { REGRAS } from '../src/data/metodo.mjs';
+import { SECOES } from '../src/data/metodo.mjs';
 import { lugarDaIncorporacao } from '../src/lib/lugar-da-incorporacao.mjs';
 import { leituraDaIncorporacao, conferirDataDaIncorporacao } from '../src/lib/leitura-da-incorporacao.mjs';
 /* Leitura do ER1 pelos portões. Partilha a regra da leitura, mas não o
@@ -70,7 +70,8 @@ export function conferirInventarioIncorporacao(texto) {
   const erros = [];
   const cadeias = Object.entries(t('pt').incorporar).map(([chave, pt]) =>
     ['incorporar.'+chave, pt, t('en').incorporar[chave]]);
-  const exemplo = REGRAS.find(r => r.id === 'livro-razao').ligacoes.find(l => l.rota === 'linha');
+  // ME1 (15.10.2026): a porta do recibo de exemplo vive na secção do recibo de cada número.
+  const exemplo = SECOES.find(r => r.id === 'livro-razao').ligacoes.find(l => l.rota === 'linha');
   cadeias.push(['metodo.exemplo', exemplo.rotulo.pt, exemplo.rotulo.en]);
   for (const [chave, pt, en] of cadeias) {
     const linha = '| `' + chave + '` | ' + pt + ' | ' + en + ' |';
@@ -83,7 +84,8 @@ const errosDoInventario = conferirInventarioIncorporacao(fs.readFileSync(new URL
 
 export function conferirExemploNoMetodo(root, lang) {
   const href = (lang === 'en' ? '/en/ledger/' : '/livro-razao/') + 'divida-publica-2025';
-  const texto = lang === 'en' ? 'See the example receipt' : 'Ver o recibo de exemplo';
+  // ME1 (15.10.2026): as palavras da porta são as do mandato do bloco, escritas aqui e não importadas.
+  const texto = lang === 'en' ? 'See an example receipt' : 'Ver um recibo de exemplo';
   return root.querySelectorAll('#livro-razao a').some(a => a.getAttribute('href') === href && a.textContent.trim() === texto + ' →')
     ? [] : ['ER1 Método: falta a porta para o recibo de exemplo da edição.'];
 }

@@ -1012,20 +1012,22 @@ export function prova(lang = 'pt') {
       ancora(routePath('uniaoEuropeia', lang), 'painel'),
       { vencida: verificacao.vencida, dias: verificacao.dias },
     ),
-    /* AS DUAS CONTAGENS DO ATRASO, e a porta das duas é a regra da releitura no
-       Método. Não é o livro-razão: o que estas contagens dizem não é quantas
+    /* AS DUAS CONTAGENS DO ATRASO, e a porta das duas é a secção do Método que as
+       explica. Não é o livro-razão: o que estas contagens dizem não é quantas
        linhas existem, é que a fonte já publicou um período mais recente do que
-       o que elas medem, e a regra que governa isso é a 6 («A releitura»), que é
-       para onde a leitura das fontes ao lado já abre no mesmo cabeçalho. */
+       o que elas medem. Até 15.10.2026 era a regra 6 («A releitura»); desde o
+       bloco ME1 é a secção «O que está por confirmar», que diz a série atrasada
+       por palavras (o mandato, §2: «cada chave da prova que outra página renda
+       com porta para o Método passa a apontar para a secção nova que a explica»). */
     series_atrasadas: k(
       'series_atrasadas',
       atraso.series,
-      ancora(routePath('metodo', lang), 'releitura'),
+      ancora(routePath('metodo', lang), 'por-confirmar'),
     ),
     linhas_atrasadas: k(
       'linhas_atrasadas',
       atraso.linhas,
-      ancora(routePath('metodo', lang), 'releitura'),
+      ancora(routePath('metodo', lang), 'por-confirmar'),
     ),
 
     /* ---- o registo ---- */

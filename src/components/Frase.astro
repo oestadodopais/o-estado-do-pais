@@ -28,7 +28,11 @@
  *   { prova: 'chave', item, semPorta } · um número que o sítio diz sobre si
  *                                   próprio, pela `ValorDaProva` (a leitura do
  *                                   cartão das câmaras, bloco L1); o portão de
- *                                   HTML reconta a chave por conta própria
+ *                                   HTML reconta a chave por conta própria.
+ *                                   Sem `item`, o número lê-se da prova que a
+ *                                   página passa em `provas` (o texto corrido do
+ *                                   Método, bloco ME1, 15.10.2026), e uma chave
+ *                                   que a prova não tenha fecha a construção
  *   { voz: 'palavras' }           — texto corrido que a régua da voz tem de
  *                                   recolher onde quer que ele esteja. É a marca
  *                                   `data-voz` (ver `scripts/medir-defeitos.mjs`):
@@ -74,8 +78,17 @@ import { VERBATIM } from '../data/verbatim.mjs';
  * 15.08.2026 não o fazem e não se reescrevem aqui; tudo o que este bloco
  * constrói passa `selos`.
  */
-const { partes, lang = 'pt', selos = false } = Astro.props;
+const { partes, lang = 'pt', selos = false, provas = null } = Astro.props;
 const s = t(lang);
+/* O ITEM DE UMA CHAVE DA PROVA DENTRO DE TEXTO CORRIDO (bloco ME1, 15.10.2026). O texto governado
+   do Método escreve só a chave, porque `src/data/metodo.mjs` não pode importar a prova (a prova
+   importa de lá o endereço das correções); a página calcula a prova uma vez e passa-a aqui. */
+const itemDaProva = (parte) => {
+  if (parte.item) return parte.item;
+  const item = provas?.[parte.prova];
+  if (!item) throw new Error(`Frase: a chave da prova "${parte.prova}" não está na prova desta página.`);
+  return item;
+};
 
 ---
 
@@ -109,7 +122,7 @@ const s = t(lang);
         que o cartão já rende, com a mesma porta comum: o portão de HTML reconta
         o número e a V2 confere a porta. */}
     if (parte.prova)
-      return <ValorDaProva chave={parte.prova} item={parte.item} lang={lang} semPorta={parte.semPorta ?? false} />;
+      return <ValorDaProva chave={parte.prova} item={itemDaProva(parte)} lang={lang} semPorta={parte.semPorta ?? false} />;
     if (parte.serie)
       return (
         <span data-nonledger="periodo-da-fonte" data-de-serie={parte.serie}>

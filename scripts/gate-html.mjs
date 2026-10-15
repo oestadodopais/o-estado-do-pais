@@ -3,7 +3,7 @@ import {conferirCaminhoFinal} from './caminho-final.mjs';
 import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
 
 import { contarFrasesDasMudancas, errosDoSeloDaDefinicao } from '../tests/explicacoes/o-que-e.mjs';
-import { conferirLugaresIA } from './lugares-ia-do-portao.mjs';
+import { conferirLugaresIA, PLANTAS_DO_METODO } from './lugares-ia-do-portao.mjs';
 import { inventariarMarcadores, resumirMarcadores } from './sem-marcadores.mjs';
 const MARCAS_RP4N = [];
 import { plantasDosMarcadores } from '../tests/cartao/rp4nb.mjs';
@@ -340,6 +340,7 @@ import {
   ROTULO as ROTULO_DA_CASA,
   textoDoRotulo,
   textoDoContacto,
+  portaDaPolitica,
 } from '../src/data/politica-ia.mjs';
 import { VERIFICACAO } from '../src/data/verificacao.mjs';
 import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
@@ -370,6 +371,21 @@ const ALLOWLIST = path.join(ROOT, 'ledger', 'allowlist.yml');
 const TEXTOS_APROVADOS = JSON.parse(
   fs.readFileSync(path.join(ROOT, 'scripts', 'textos-aprovados.json'), 'utf8'),
 );
+
+/**
+ * A PORTA DA POLÍTICA, COMPOSTA DO ORÁCULO (bloco ME1, 15.10.2026).
+ *
+ * A rota do Método, e `#` com a âncora só quando a âncora não é vazia: a regra de
+ * `portaDaPolitica()` em `src/data/politica-ia.mjs`, escrita aqui outra vez de
+ * propósito, para que o destino que o portão exige ao rótulo das páginas e à faixa
+ * dos documentos venha do oráculo e não do ficheiro que os rende. Desde o ME1 a
+ * âncora é vazia e o rótulo abre o Método pelo princípio.
+ * @param {string} lang
+ */
+function portaDaPoliticaDoOraculo(lang) {
+  const rota = routePath('metodo', lang);
+  return TEXTOS_APROVADOS.ancora_da_politica ? `${rota}#${TEXTOS_APROVADOS.ancora_da_politica}` : rota;
+}
 
 // RH1-c, 14.10.2026, §1.192: os nomes pessoais são conferidos por check:privacidade
 // no verify. Esta guarda saiu do gate:html do build; ambos os portões são obrigatórios.
@@ -1803,15 +1819,15 @@ function verificaDocumento({ rota, rel, caminho, html, root, err }) {
       );
     }
 
-    const portaDaPolitica = `${routePath('metodo', lang)}#${TEXTOS_APROVADOS.ancora_da_politica}`;
+    const destinoDaPorta = portaDaPoliticaDoOraculo(lang);
     const aDaPolitica = rotuloIA.querySelector('a[href]');
     if (!aDaPolitica) {
       err(`o rótulo de IA da faixa não tem a porta para a política da casa.`);
     } else {
-      if (decodeEntities(aDaPolitica.getAttribute('href') ?? '') !== portaDaPolitica) {
+      if (decodeEntities(aDaPolitica.getAttribute('href') ?? '') !== destinoDaPorta) {
         err(
           `a porta da política abre "${aDaPolitica.getAttribute('href')}" e devia abrir ` +
-            `"${portaDaPolitica}".`,
+            `"${destinoDaPorta}".`,
         );
       }
       const palavras = textoDe(aDaPolitica, { semEstilo: true, separador: '' });
@@ -4433,6 +4449,15 @@ const cartoesUsados = new Set();
     });
   }
   for (const l of ['pt', 'en']) {
+    /* ME1 (15.10.2026): a porta que a página compõe é a que o oráculo compõe, nas duas edições. */
+    if (portaDaPolitica(l) !== portaDaPoliticaDoOraculo(l)) {
+      erros.push({
+        rel: 'src/data/politica-ia.mjs',
+        msg:
+          `a porta da política da edição "${l}" é ${JSON.stringify(portaDaPolitica(l))} e o oráculo ` +
+          `compõe ${JSON.stringify(portaDaPoliticaDoOraculo(l))}.`,
+      });
+    }
     if (textoDoRotulo(l) !== TEXTOS_APROVADOS.rotulo[l]) {
       erros.push({
         rel: 'src/data/politica-ia.mjs',
@@ -5599,7 +5624,7 @@ for (const file of ficheirosHtml(DIST)) {
         }
 
         /* 2 · a porta abre a política, e as palavras ligadas são as aprovadas. */
-        const destinoDaPolitica = `${routePath('metodo', linguaPagina)}#${TEXTOS_APROVADOS.ancora_da_politica}`;
+        const destinoDaPolitica = portaDaPoliticaDoOraculo(linguaPagina);
         const portas = linha
           .querySelectorAll('a[href]')
           .filter((a) => decodeEntities(a.getAttribute('href') ?? '') === destinoDaPolitica);
@@ -5749,8 +5774,11 @@ for (const file of ficheirosHtml(DIST)) {
      * uma frase inglesa numa página portuguesa passava por estar declarada
      * inglesa. O atributo é do gabarito e não é prova de nada.
      */
-    /* H4: os lugares conferem-se nas duas edições do Método, além do rótulo legal. */
-    if (rota?.key === 'metodo') for (const e of conferirLugaresIA(root, linguaPagina)) err(e);
+    /* H4: os lugares conferem-se nas duas edições do Método, além do rótulo legal. Desde o ME1 (15.10.2026)
+       são os papéis e as famílias em parágrafos, e o texto visível da página sem nomes de modelos. */
+    /* A régua dos nomes recebe também o HTML da página (a leitura a frio do Codex, 15.10.2026, o achado 9): a árvore
+       deste varrimento deita fora o conteúdo de `noscript`, que quem lê sem JavaScript vê. */
+    if (rota?.key === 'metodo') for (const e of conferirLugaresIA(root, linguaPagina, html)) err(e);
     const frases = root.querySelectorAll('[data-frase-da-politica]');
     ROTULO_DE_IA.frase += frases.length;
     /* A FRASE DA POLÍTICA FICOU SÓ NO MÉTODO (P1, item 3, 15.09.2026). Era do
@@ -9153,6 +9181,7 @@ if (paginasDoLivro !== LANGS.length) {
 }
 
 console.log(`  RP4N: ${PLANTAS_RP4N.length} plantas com mensagem e contagem afirmadas`);
+console.log(`  ME1: ${PLANTAS_DO_METODO.length} plantas do Método (os papéis, as famílias, a porta e os nomes de modelos), cada uma com a queixa esperada`);
 for (const [estado, tipos] of Object.entries(resumirMarcadores(MARCAS_RP4N))) {
   for (const [tipo, dados] of Object.entries(tipos)) {
     console.log(`  RP4N ${estado} · ${tipo}: ${dados.ocorrencias} ocorrência(s)`);

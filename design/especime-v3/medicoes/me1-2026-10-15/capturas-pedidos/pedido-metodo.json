@@ -1,0 +1,24 @@
+{
+ "cabeca": "9d8a0034c091585a1cd70eff5f3b46e500478bc7",
+ "paginas": [
+  {
+   "nome": "metodo",
+   "pt": "/metodo/",
+   "en": "/en/method/",
+   "recortes": [
+    {
+     "nome": "quem-escreve",
+     "seletor": "section#politica-de-ia"
+    },
+    {
+     "nome": "como-se-confere",
+     "seletor": "section#releitura"
+    },
+    {
+     "nome": "a-forma",
+     "seletor": "section#a-forma"
+    }
+   ]
+  }
+ ]
+}

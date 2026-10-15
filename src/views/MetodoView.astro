@@ -1,98 +1,64 @@
 ---
 /**
- * Método — dez regras, cada uma com o seu mecanismo e a sua prova de hoje.
- *
- * DISPOSIÇÃO A (IDENTIDADE §3), a mesma que esta página sempre teve: coluna de
- * rótulo com o número e o nome da regra, corpo a 68ch. O instrumento entra
- * dentro da página, a toda a largura, como os dois instrumentos entram na
- * primeira página e o mapa de mandatos entra na página do município. Não há
- * quarta disposição.
- *
- * NENHUM NÚMERO ESCRITO À MÃO. O texto das regras não pode trazer algarismos —
- * é o portão que o obriga — e todos os números vêm de `src/lib/prova.mjs`,
- * marcados `data-prova` e embrulhados na sua porta.
- *
- * O REGISTO DE CORREÇÕES NÃO ESTÁ AQUI. Mudou para `/correcoes`, que é a casa
- * única da política. A âncora `#correcoes` fica: era um endereço público, e as
- * páginas que estiveram no ar ganham reencaminhamento e não apagamento
- * (§1.29). Quem lá aterre encontra a regra 7 e a porta para o registo.
+ * Método: nove secções em palavras correntes (bloco ME1, 15.10.2026).
  *
  * ---------------------------------------------------------------------------
- * V2 (`design/DECISAO.md`, direção S; IDENTIDADE.md §11)
+ * A ORDEM DA PÁGINA
  * ---------------------------------------------------------------------------
- * A direção S manda para esta página o que ela já tinha: disposição A, o
- * mecanismo a toda a largura entre a abertura e as dez regras, e a prova de
- * cada regra numa linha monoespaçada com as suas portas. Nada disto mudou de
- * lugar, e o texto governado das dez regras (`src/data/metodo.mjs`) não foi
- * tocado: mexer-lhe obrigaria a §1.43 a nomear `metodo` com um resumo novo, e
- * não há rótulo de prova que precise de mudar.
+ * O título, a linha de abertura, o sumário «Nesta página» e as nove secções do
+ * mandato `design/observatorio/mandatos/MANDATO-ME1-2026-10-15.md` (§2): quem
+ * escreve estas páginas, de onde vêm os números, o recibo de cada número, como se
+ * confere, o que está por confirmar, as correções, o que se mede e quem decide, o
+ * que este projeto não faz, e a forma. A primeira secção é a da política, e é a
+ * que o rótulo de todas as páginas promete: o rótulo abre o Método pelo
+ * princípio, e a secção leva o `id` antigo (`politica-de-ia`) para as ligações
+ * que estiveram no ar.
  *
- * O que mudou é de leitura, e está na folha: o ponto médio entre duas provas e
- * o fio que faz de porta debaixo de cada número do sítio estavam em
- * `--rule-strong`, que mede 1,83:1 sobre papel. Uma porta que se não vê é uma
- * porta que não existe, e é a mesma correção que a v2 fez ao selo.
+ * DISPOSIÇÃO A (IDENTIDADE §3), a mesma que a página sempre teve: o título de cada
+ * secção na coluna de rótulo, o corpo a 68ch. Sem dobras, sem o número da regra,
+ * sem as linhas «Mecanismo», «O que isto não apanha» e «Prova», e sem o desenho do
+ * mecanismo: o que a página diz, diz-se em parágrafos, e as portas de cada secção
+ * ficam no fim dela, com a seta.
  *
- * ---------------------------------------------------------------------------
- * V3, SUBETAPA 4b: O SUMÁRIO, AS DOBRAS, E A ENTRADA DE FECHO
- * ---------------------------------------------------------------------------
- * A disposição não muda: continua a A, e o instrumento continua a entrar dentro
- * da página, a toda a largura. O que muda é como se chega a uma regra.
+ * ESTA VISTA COMPÕE E NÃO ESCREVE. O texto das secções 2 a 8 e o da forma vêm de
+ * `src/data/metodo.mjs`, que é o texto governado pela amarra das decisões; o da
+ * primeira secção e as cinco recusas vêm de `src/data/politica-ia.mjs`, que é o
+ * texto da política. A frase da política leva a marca `data-frase-da-politica`,
+ * que o portão compara carácter a carácter com o oráculo; os papéis e as famílias
+ * levam `data-papeis` e `data-familias`, que a cópia do lado do portão
+ * (`scripts/lugares-ia-do-portao.mjs`) compara com a redação decidida.
  *
- * O SUMÁRIO, no cimo, com os dez nomes e a entrada de fecho, cada um a âncora da
- * sua secção. Dez regras com mecanismo, limite e prova fazem uma página que se
- * percorre e não uma que se consulta; o sumário é o índice dela, e as âncoras já
- * existiam — o que faltava era a lista.
+ * NENHUM NÚMERO ESCRITO À MÃO. Os números deste projeto sobre si próprio entram na
+ * prosa pelos tokens da prova, que o `Frase` rende pelo `ValorDaProva`, marcados
+ * `data-prova` e dentro da sua porta, e o portão reconta cada um.
  *
- * AS DOBRAS, e é a regra de «abre no sítio» (`IDENTIDADE.md` §4): a
- * profundidade abre-se nesta página e nunca noutra. Cada regra é um `<details>`
- * com o seu nome no `<summary>`; a primeira vem aberta, as restantes fechadas.
- * Não há JavaScript nenhum: `<details>` é do navegador, o estado é anunciado
- * nativamente, e uma âncora do sumário para dentro de uma dobra fechada abre-a
- * (`:target` na folha, e o comportamento nativo dos navegadores que já o fazem).
- *
- * A ENTRADA DE FECHO, depois das dez regras, com as duas linhas rotuladas que o
- * diretor aprovou a 20.08.2026 (decisões g e h). Vêm de `src/data/metodo.mjs`
- * como dados, não como cadeias desta vista: é texto governado, e a amarra das
- * decisões carimba o ficheiro onde ele vive.
+ * O REGISTO DE CORREÇÕES NÃO ESTÁ AQUI. Vive em `/correcoes`; a âncora
+ * `#correcoes` fica nesta página, na secção das correções, com a porta para lá.
  */
 import Base from '../layouts/Base.astro';
 import Frase from '../components/Frase.astro';
-import ValorDaProva from '../components/ValorDaProva.astro';
-import SinalDasFontes from '../components/SinalDasFontes.astro';
-import InstrumentoMecanismo from '../components/InstrumentoMecanismo.astro';
-import { REGRAS, ABERTURA, FECHO } from '../data/metodo.mjs';
-import { ANCORA_DA_POLITICA, FRASE, POLITICA } from '../data/politica-ia.mjs';
+import { SECOES, ABERTURA, FECHO } from '../data/metodo.mjs';
+import { DOCUMENTO_DA_POLITICA, FRASE, ID_DA_SECCAO_DA_POLITICA, POLITICA } from '../data/politica-ia.mjs';
 import { prova, CAMINHO_DA_PROVA } from '../lib/prova.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
-import { DOMINIOS, dominiosComPagina } from '../data/dominios.mjs';
 import '../styles/leitura.css';
 
 const { lang = 'pt' } = Astro.props;
-
-/* ---------------------------------------------------------------------------
- * O QUE SE MEDE A SEGUIR (bloco F1.10, §7.8 e §9.1, 08.09.2026)
- * ---------------------------------------------------------------------------
- * As dezasseis linhas «ainda sem medidas conferidas · vaga» saíram do índice
- * dos domínios: são a casa a falar da sua própria cobertura, e a Emenda 15 tira
- * isso das páginas do leitor. Vêm para aqui, que é a casa do método e onde a
- * Emenda deixa a casa falar de si.
- *
- * A LISTA É A MESMA DE `src/data/dominios.mjs`, e a condição é a que o índice
- * usava: um domínio sem página e sem medidas noutro domínio. Uma segunda lista
- * escrita aqui divergia da primeira ao primeiro domínio que entrasse.
- *
- * SEM CONTAGEM E SEM ALGARISMO: os nomes vão marcados `data-nome="dominios"`,
- * que a régua da voz confere contra o ficheiro de dados, e a vaga é a palavra
- * que o próprio domínio declara.
- */
-const comPaginaNoMetodo = new Set(dominiosComPagina().map((d) => d.slug));
-const porVir = DOMINIOS.filter((d) => d.estado === 'sem' && !comPaginaNoMetodo.has(d.slug));
 const s = t(lang);
 const path = routePath('metodo', lang);
+/* A prova calcula-se uma vez por página, e cada token da prosa lê a sua chave daqui. */
 const p = prova(lang);
 
 const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang, l.params ?? {}));
+/* O sumário diz as nove secções pela ordem da página, sem números: a primeira é a da política,
+   as sete seguintes são as de `SECOES`, e a última é a forma. */
+const sumario = [
+  { id: ID_DA_SECCAO_DA_POLITICA, titulo: POLITICA.titulo },
+  ...SECOES.map((x) => ({ id: x.id, titulo: x.titulo })),
+  { id: FECHO.id, titulo: FECHO.titulo },
+];
+const familias = POLITICA.familias[lang];
 ---
 
 <Base lang={lang} path={path} title={s.metodo.metaTitle} description={s.metodo.metaDescription}>
@@ -103,222 +69,71 @@ const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang, l.p
 
   {/* ===================================== o sumário: o índice desta página */}
   <nav class="metodo-sumario" aria-labelledby="sumario" style="margin-top:clamp(22px,3vw,32px)">
-    {/* O TÍTULO DO SUMÁRIO ESTAVA VAZIO, E ERA UMA CHAVE QUE MUDOU DE CASA
-        (bloco F1.7, 04.09.2026; a auditoria de 02.09 mediu-o como «um título
-        vazio no Método»). A cadeia nasceu aqui como `metodo.sumarioK` e desceu
-        para `leitura.sumarioK` quando a Agenda passou a precisar das mesmas duas
-        palavras (o comentário está em `src/i18n/strings.mjs`); esta linha ficou
-        a pedir a chave antiga, que já não existe, e rendia a cadeia vazia. O
-        resultado: um `<h2>` sem texto, e um `<nav aria-labelledby="sumario">`
-        cujo nome acessível era o nada.
-
-        Nenhuma palavra nova: é a MESMA cadeia que a Agenda e a página de leitura
-        já imprimem para o mesmo sumário. */}
+    {/* A MESMA CADEIA que a Agenda e a página de leitura imprimem para o mesmo sumário. */}
     <h2 class="metodo-sumario-k" id="sumario">{s.leitura.sumarioK}</h2>
     <ol class="metodo-sumario-lista">
-      {
-        REGRAS.map((r) => (
-          <li>
-            <span class="metodo-sumario-n" data-nonledger="numeracao">{r.n}</span>
-            <a href={`#${r.id}`}>{r.titulo[lang]}</a>
-          </li>
-        ))
-      }
-      {/* A secção da política entra no sumário entre as dez regras e a entrada
-          de fecho, que é onde ela vive na página. Não leva número: as dez
-          regras são numeradas porque são uma lista fechada da direção, e esta
-          não é uma décima primeira regra. */}
-      <li class="metodo-sumario-fecho">
-        <a href={`#${ANCORA_DA_POLITICA}`}>{POLITICA.titulo[lang]}</a>
-      </li>
-      <li class="metodo-sumario-fecho">
-        <a href={`#${FECHO.id}`}>{FECHO.titulo[lang]}</a>
-      </li>
+      {sumario.map((x) => (
+        <li>
+          <a href={`#${x.id}`}>{x.titulo[lang]}</a>
+        </li>
+      ))}
     </ol>
   </nav>
 
-  <!-- ===================================== o mecanismo, desenhado -->
-  <div style="margin-top:clamp(26px,3.4vw,40px)">
-    <InstrumentoMecanismo lang={lang} />
-  </div>
-
-  <!-- ===================================== as dez regras -->
   <div style="margin-top:clamp(24px,3vw,36px)">
+    {/* ===================================== 1 · quem escreve estas páginas
+        A secção que a divulgação obriga (o artigo 50.º, n.º 4 do Regulamento (UE)
+        2024/1689): o rótulo de todas as páginas diz o que o texto é e liga para aqui.
+        Não tem portas; a ligação ao documento público da política vive dentro da
+        frase das famílias, e é a única ligação para fora desta página. */}
+    <section class="metodo-secao" id={ID_DA_SECCAO_DA_POLITICA}>
+      <div class="regra-cabeca">
+        <h2>{POLITICA.titulo[lang]}</h2>
+      </div>
+      <div class="metodo-corpo">
+        <p class="metodo-p" data-frase-da-politica={lang}>{FRASE[lang]}</p>
+        <p class="metodo-p" data-papeis={lang}>{POLITICA.papeis[lang]}</p>
+        <p class="metodo-p" data-familias={lang}>{familias.antes}<a href={DOCUMENTO_DA_POLITICA}>{familias.ligacao}</a>{familias.depois}</p>
+        <p class="metodo-p">{POLITICA.publicacao[lang]}</p>
+      </div>
+    </section>
+
+    {/* ===================================== 2 a 8 · as secções do texto governado */}
     {
-      REGRAS.map((r, i) => (
-        <section class="metodo-secao regra" id={r.id}>
-          {/* A DOBRA. O nome da regra é o rótulo do comando, e a coluna de
-              rótulo da disposição A leva o número. A primeira abre por defeito;
-              as outras abrem quando se lhes toca, ou quando a âncora do sumário
-              as escolhe. */}
-          <details class="regra-dobra" open={i === 0}>
-            <summary class="regra-cabeca">
-              <span class="regra-n" data-nonledger="numeracao">
-                {r.n}
-              </span>
-              {/* O nível de cabeçalho não se perde por a regra passar a dobrar:
-                  um `<h2>` é conteúdo válido de um `<summary>`, e é ele que
-                  mantém o sumário de cabeçalhos da página. */}
-              <h2 class="regra-titulo">{r.titulo[lang]}</h2>
-            </summary>
-
-            <div class="metodo-corpo">
-              <p class="metodo-p">
-                <Frase partes={r.regra[lang]} lang={lang} />
+      SECOES.map((sec) => (
+        <section class="metodo-secao" id={sec.id}>
+          <div class="regra-cabeca">
+            <h2>{sec.titulo[lang]}</h2>
+          </div>
+          <div class="metodo-corpo">
+            {sec.paragrafos.map((par) => (
+              <p class="metodo-p" id={par.id}>
+                <Frase partes={par[lang]} lang={lang} provas={p} />
               </p>
-
-              <div class="regra-linha">
-                <span class="regra-k">{s.metodo.mecanismoK}</span>
-                <p class="regra-v">
-                  <Frase partes={r.mecanismo[lang]} lang={lang} />
-                </p>
-              </div>
-
-              {r.limite && (
-                <div class="regra-linha">
-                  <span class="regra-k">{s.metodo.limiteK}</span>
-                  <p class="regra-v">
-                    <Frase partes={r.limite[lang]} lang={lang} />
-                  </p>
-                </div>
-              )}
-
-              <div class="regra-linha regra-linha-prova">
-                <span class="regra-k">{s.metodo.provaK}</span>
-                <p class="regra-v regra-prova">
-                  {r.prova.map((v, i2) => (
-                    <span class="regra-prova-item">
-                      {i2 > 0 && <span class="regra-sep" aria-hidden="true"> · </span>}
-                      {v.rotulo[lang]}:{' '}
-                      <ValorDaProva chave={v.chave} item={p[v.chave]} vazio={v.vazio} lang={lang} />
-                    </span>
-                  ))}
-                  {r.provaNota && <span class="regra-prova-nota">{r.provaNota[lang]}</span>}
-                </p>
-              </div>
-
-              {/* --------------------------------------------------------------
-                  A LEITURA DAS FONTES VEIO PARA AQUI (F1.10, item 8.11 e §7.3,
-                  08.09.2026).
-
-                  Vivia no cabeçalho de 7 224 páginas: «Fontes · <carimbo>» e o
-                  contador das séries atrasadas. O item manda-a para «a página da
-                  medida e o Método», e esta é a regra que ela cobre: a porta das
-                  três chaves já era `/metodo#releitura`, escrita em
-                  `src/lib/prova.mjs` no dia em que o F1.6 as pôs. A leitura
-                  passa a viver onde a sua porta sempre apontou.
-
-                  O COMPONENTE É O MESMO, e é por isso que ele existe num
-                  ficheiro seu: «uma leitura que vive num ficheiro seu tira-se e
-                  põe-se com uma linha». As cadeias, as marcas e as chaves da
-                  prova não mudaram um carácter; mudou a página.
-                  -------------------------------------------------------------- */}
-              {r.id === 'releitura' && (
-                <div class="leituras-de-estado" data-leitura-de-estado="fontes">
-                  <SinalDasFontes s={s} lang={lang} porta={`${path}#releitura`} />
-                </div>
-              )}
-
-              {r.ligacoes.length > 0 && (
-                <p class="regra-portas">
-                  {r.ligacoes.map((l) => (
-                    <a href={destino(l)}>{l.rotulo[lang]} →</a>
-                  ))}
-                </p>
-              )}
-            </div>
-          </details>
+            ))}
+            {sec.depois === 'recusas' && (
+              <ul class="politica-recusas">
+                {POLITICA.recusas.itens.map((r) => <li>{r[lang]}</li>)}
+              </ul>
+            )}
+            {sec.ligacoes.length > 0 && (
+              <p class="regra-portas">
+                {sec.ligacoes.map((l) => (
+                  <a href={destino(l)}>{l.rotulo[lang]} →</a>
+                ))}
+              </p>
+            )}
+          </div>
         </section>
       ))
     }
   </div>
 
-  {/* ===================================== a política da casa sobre a IA
-      ----------------------------------------------------------------------
-      A SECÇÃO QUE A DIVULGAÇÃO OBRIGA (01.09.2026)
-      ----------------------------------------------------------------------
-      O rótulo de todas as páginas diz o que o texto é e onde estão as regras,
-      e liga para aqui. Esta é a página onde a política se lê por extenso: a
-      via, os três papéis, o que se publica só pelas verificações automáticas
-      e as recusas (a ordem desde 07.10.2026, §1.182: os papéis antes dos casos,
-      porque os casos nomeiam a direção). É a
-      `design/observatorio/POLITICA-DA-AUTONOMIA.md` §2, §4, §5 e §6 dita ao
-      leitor, e o texto vem de `src/data/politica-ia.mjs`, como o das dez regras
-      vem de `src/data/metodo.mjs`: esta vista compõe, não escreve.
-
-      NÃO É UMA DÉCIMA PRIMEIRA REGRA, e por isso não leva número nem dobra. As
-      dez regras são a lista fechada da direção; esta secção é a política de
-      autonomia, que muda por decisão do diretor com data. A regra 9 («A
-      intervenção humana») continua a ser a regra, e esta é o que ela remete.
-
-      A FRASE DA POLÍTICA É A MESMA DO SOBRE, e vai marcada nos dois sítios:
-      `data-frase-da-politica` é a marca que o portão compara, carácter a
-      carácter, com o texto aprovado. Não é uma dispensa, é uma comparação, como
-      `data-sobre`.
-      ---------------------------------------------------------------------- */}
-  <section class="metodo-secao" id={ANCORA_DA_POLITICA}>
-    <div class="regra-cabeca">
-      <h2>{POLITICA.titulo[lang]}</h2>
-    </div>
-    <div class="metodo-corpo">
-      <p class="metodo-p" data-frase-da-politica={lang}>{FRASE[lang]}</p>
-
-      {POLITICA.via[lang].map((paragrafo) => <p class="metodo-p">{paragrafo}</p>)}
-
-      <div class="regra-linha">
-        <span class="regra-k">{POLITICA.lugares.titulo[lang]}</span>
-        <div class="regra-v">
-          {POLITICA.lugares.intro[lang].map((p2) => <p class="metodo-p">{p2}</p>)}
-          {/* Os lugares, pelo nome do lugar e não pelo nome do modelo
-              com a sua versão (segunda passagem): a página não ganha um
-              algarismo, e não envelhece no dia em que um modelo mudar de
-              número. As famílias dizem-se na frase de fecho, e é lá que a
-              palavra «Claude» e a palavra «Codex» aparecem uma vez cada. */}
-          <ul class="politica-lugares">
-            {
-              POLITICA.lugares.itens.map((item) => (
-                <li>
-                  <strong>{item.rotulo[lang]}</strong>{' '}
-                  <Fragment set:text={item.texto[lang]} />
-                </li>
-              ))
-            }
-          </ul>
-          {POLITICA.lugares.fecho[lang].map((p2) => <p class="metodo-p">{p2}</p>)}
-        </div>
-      </div>
-
-      <div class="regra-linha">
-        <span class="regra-k">{POLITICA.casos.titulo[lang]}</span>
-        <div class="regra-v">
-          {
-            POLITICA.casos.itens.map((caso) => (
-              <p class="metodo-p politica-caso">
-                <strong>{caso.rotulo[lang]}</strong>
-                <Fragment set:text={` · ${caso.texto[lang]}`} />
-              </p>
-            ))
-          }
-        </div>
-      </div>
-
-      <div class="regra-linha">
-        <span class="regra-k">{POLITICA.recusas.titulo[lang]}</span>
-        <div class="regra-v">
-          <ul class="politica-recusas">
-            {POLITICA.recusas.itens.map((r) => <li>{r[lang]}</li>)}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  {/* ===================================== a entrada de fecho
-      As duas linhas rotuladas que o diretor aprovou a 20.08.2026 (decisões g e
-      h). O texto vem de `src/data/metodo.mjs`, que é o texto governado: esta
-      vista compõe-o e não o escreve. Não leva dobra — são duas frases, e uma
-      dobra por cima de uma frase é mobília a esconder o que a página fecha a
-      dizer. */}
+  {/* ===================================== 9 · a forma
+      As linhas rotuladas que o diretor aprovou a 20.08.2026 (decisões g e h), e a da
+      escala, que veio com o F1.10. O texto vem de `src/data/metodo.mjs` e a forma é a de
+      antes do bloco ME1, sem mudar um carácter: é texto governado, e o feixe do desenho
+      tira daqui `#a-cor` e `#a-letra`. */}
   <section class="metodo-secao metodo-fecho" id={FECHO.id}>
     <div class="regra-cabeca">
       <h2>{FECHO.titulo[lang]}</h2>
@@ -345,49 +160,4 @@ const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang, l.p
       }
     </div>
   </section>
-
-  {/* ===================================== o que se mede a seguir
-      §7.8 e §9.1 do brief F1.10. O índice dos domínios é uma página do leitor e
-      lista os domínios com página; o calendário do que ainda não tem medidas
-      conferidas é do método, e vive aqui.
-
-      OS NOMES VÃO MARCADOS `data-nome="dominios"`, que é a marca que a régua da
-      voz confere contra `src/data/dominios.mjs`: sem ela, dezasseis nomes
-      custavam trinta e duas linhas ao inventário das frases, que é a carta dos
-      conteúdos escrita outra vez. */}
-  {porVir.length > 0 && (
-    <section class="metodo-secao" id="a-seguir">
-      <div class="regra-cabeca">
-        <h2>{s.metodo.proximosK}</h2>
-      </div>
-      <div class="metodo-corpo">
-        <p class="metodo-p">{s.metodo.proximosLede}</p>
-        {/* O ESPAÇO ENTRE O NOME E A VAGA É UM NÓ DE TEXTO, pela mesma razão
-            que o pôs no índice dos domínios a 15.09.2026: sem ele o HTML diz
-            «Populaçãoprimeiro», e nesta lista não há `gap` de flex nenhum a
-            separá-los, porque `.metodo-proximos` não tem regra em folha nenhuma.
-
-            QUEM APANHOU ISTO FOI A CÉLULA C1 e não a C2, e fica escrito porque é
-            uma limitação medida e não um acaso: C1 viu que `.dominios-vaga`
-            tinha regra numa folha que esta página não liga (a regra mudou-se
-            para `leitura.css`, que é a desta página). C2 não viu a colagem,
-            porque sobe à procura de um `gap` até à raiz e `.metodo-secao`, lá
-            acima, é uma grelha com goma. Está no relatório da fatia. */}
-        <ul class="metodo-proximos">
-          {
-            porVir.map((d) => (
-              <li>
-                <span data-nome="dominios">{d.nome[lang] ?? d.nome.pt}</span>{' '}
-                <span class="dominios-vaga" data-dominio-vaga-rot>
-                  {d.vaga === 'primeira' && s.dominios.vagaPrimeira}
-                  {d.vaga === 'segunda' && s.dominios.vagaSegunda}
-                  {d.vaga === 'terceira' && s.dominios.vagaTerceira}
-                </span>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-    </section>
-  )}
 </Base>

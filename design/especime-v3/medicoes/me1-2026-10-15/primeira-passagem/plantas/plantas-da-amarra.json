@@ -1,0 +1,35 @@
+[
+ {
+  "nome": "me1-citacao-do-selo-mudada",
+  "ficheiro": "IDENTIDADE.md",
+  "comando": "node scripts/check-ledger.mjs",
+  "codigo": 1,
+  "mordida": "IDENTIDADE\\.md cita, como sendo do \"metodo\"",
+  "passou": true,
+  "antes": "74624befbf417e5d6d0f103d3b101b0dfb59075170b403304410058bbcdd5c32",
+  "reposto": "74624befbf417e5d6d0f103d3b101b0dfb59075170b403304410058bbcdd5c32",
+  "queixa": "✗ IDENTIDADE.md cita, como sendo do \"metodo\":"
+ },
+ {
+  "nome": "me1-citacao-sem-marca",
+  "ficheiro": "IDENTIDADE.md",
+  "comando": "node scripts/check-ledger.mjs",
+  "codigo": 1,
+  "mordida": "que é uma frase de \"metodo\", e não a marca",
+  "passou": true,
+  "antes": "74624befbf417e5d6d0f103d3b101b0dfb59075170b403304410058bbcdd5c32",
+  "reposto": "74624befbf417e5d6d0f103d3b101b0dfb59075170b403304410058bbcdd5c32",
+  "queixa": "✗ IDENTIDADE.md cita «Cada valor é lido no documento onde a fonte o publicou, e não em quem …», que é uma frase de \"metodo\", e não a marca como tal."
+ },
+ {
+  "nome": "me1-texto-governado-sem-entrada",
+  "ficheiro": "src/data/metodo.mjs",
+  "comando": "node scripts/check-ledger.mjs",
+  "codigo": 1,
+  "mordida": "\"metodo\": o texto mudou depois da última decisão que o governa",
+  "passou": true,
+  "antes": "bdd975b1cb9b620635ee9fe0df84b495c53ccf9099dff15e94d4706e46ddad1f",
+  "reposto": "bdd975b1cb9b620635ee9fe0df84b495c53ccf9099dff15e94d4706e46ddad1f",
+  "queixa": "✗ \"metodo\": o texto mudou depois da última decisão que o governa, ou a decisão foi registada contra outro texto."
+ }
+]
