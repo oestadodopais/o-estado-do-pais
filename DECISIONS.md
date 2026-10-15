@@ -14037,6 +14037,8 @@ Tudo aterrou dormente, sem nenhum interruptor.
 
 **O que fica aberto.** O pedido ao apoio do GitHub (a limpeza dos commits antigos e das referências dos PRs), do financiador; a procura semanal das cadeias do segredo em toda a organização do GitHub, um trabalho pequeno com o segredo; os `bundle` da história antiga na máquina, a apagar quando o financiador quiser; a conta de máquina para os pushes (a pendente de 14.10).
 
+**Acrescento de 15.10.2026, às 19:30 UTC (o portão do motor).** O commit da tradução do motor (3d024fa0) foi feito num clone, onde o pre-commit do motor não corre, e o `master` traduzido foi publicado vermelho sem ninguém o ver: numa árvore limpa dessa cabeça, o `core.gate` falha em `publisher.rp4n_origens_test` (um commit da história antiga citado em três registos `.json` e `.yml`, que a tradução da M85 não cobriu) e na catraca do `concelhos-p4` (39 órfãos contra 37, por dois hashes de commit só de algarismos que a tradução escreveu no `RELATORIO-P4.md`). O primeiro está corrigido no conserto `fix-origens-2026-10-15`; o segundo espera a decisão do financiador (I231, M88). A lição: um commit feito fora da árvore principal do motor corre `python3 -m core.gate` à mão, numa árvore limpa dessa cabeça, antes de se publicar; e um registo que um portão lê pelo Git traduz-se seja qual for o tipo do ficheiro.
+
 ### 1.196 O ME1 aterra: o Método passa a falar ao leitor, a secção de quem escreve as páginas passa a ser a primeira e o rótulo de todas as páginas leva ao princípio dela, e os nomes de modelos e de fornecedores saem da página para o documento público da política
 
 **Afecta:** metodo · politica
