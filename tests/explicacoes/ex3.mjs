@@ -9,7 +9,7 @@ import {conferirFormatoDaPagina} from '../inicio/formato-dos-numeros.mjs';
 import {LINGUA_DOS_LOCALIZADORES} from '../../src/i18n/lingua-dos-titulos.mjs';
 import {DINHEIRO_DO_ESTADO_2026 as e} from '../../src/data/explicacoes/dinheiro-do-estado-2026.mjs';
 import {ORIGENS_DAS_DEFINICOES} from '../../src/data/figuras.mjs';
-import {loadClaims} from '../../src/lib/ledger.mjs';
+import {loadClaims,excertoComposto} from '../../src/lib/ledger.mjs';
 import {explicacaoResolvida} from '../../src/lib/explicacoes.mjs';
 import {valorNaLingua} from '../../src/lib/valor-na-lingua.mjs';
 import {conferirAuditoriaDasExplicacoes,conferirPaginaDaExplicacao} from './explicacao.mjs';
@@ -29,7 +29,7 @@ for(const [id,valor] of [['nato-defesa-portugal-pib-2025','2.01'],['nato-defesa-
  assert(formato('outra-linha',valor,'en/teste/index.html').desvios.some(x=>x.regra==='F2'));
  assert(formato(id,valor.slice(0,-1),'en/teste/index.html').desvios.some(x=>x.regra==='F2'));
 }
-for(const id of ['nato-defesa-portugal-pib-2025','nato-defesa-portugal-pib-2026','nato-defesa-portugal-eur-2026'])assert.equal(LINGUA_DOS_LOCALIZADORES[linhas.get(id).document.locator],'en');
+for(const id of ['nato-defesa-portugal-pib-2025','nato-defesa-portugal-pib-2026','nato-defesa-portugal-eur-2026']){assert.equal(LINGUA_DOS_LOCALIZADORES[linhas.get(id).document.locator],'en');assert(excertoComposto(linhas.get(id)));}
 console.log('PLANTAS: ponto decimal só nas duas linhas e na edição inglesa, com duas casas.');
 const auditoria=JSON.parse(fs.readFileSync('tests/cartao/leituras-provadas.json'));
 assert.deepEqual(conferirAuditoriaDasExplicacoes({auditoria}).erros,[]);
@@ -66,6 +66,9 @@ if(!process.argv.includes('--declaracao')){
  }
  for(const lang of ['pt','en'])for(const id of ['nato-defesa-portugal-pib-2025','nato-defesa-portugal-pib-2026','nato-defesa-portugal-eur-2026']){
   const root=parse(fs.readFileSync(path.join(dist,lang==='pt'?'livro-razao':'en/ledger',id,'index.html'),'utf8'));
+  const notas=root.querySelectorAll('.linha-nota').map(n=>n.textContent.trim());
+  assert(notas.includes(lang==='pt'?'Excerto composto a partir da resposta da fonte.':"Excerpt composed from the source's response."));
+  assert(!notas.includes(lang==='pt'?'Transcrito da fonte, palavra por palavra.':'Transcribed from the source, word for word.'));
   const portas=()=>root.querySelectorAll('main a[href]').filter(a=>!a.closest('[data-rotulo-ia]')&&a.getAttribute('href').split('#')[0]===(lang==='pt'?'/metodo':'/en/method'));
   assert.equal(portas().length,1,'EX3: uma porta para o Método por recibo');
  }

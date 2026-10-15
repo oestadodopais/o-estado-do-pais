@@ -1,7 +1,5 @@
 {
   "base": "aaac76b91",
-  "cabeca": "aaac76b912455ee92accfdb754f9224070c56e7b",
-  "motor": "3d024fa093a23473565eab01f2d30fe92102daa0",
   "documentos": [
     {
       "pedido": "https://www.nato.int/robots.txt",
@@ -370,7 +368,7 @@
       "source_url": "https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2026-en.xlsx",
       "access_date": "2026-10-15",
       "reference_date": "2026",
-      "excerpt": "Table 1: Table 1: Core defence expenditure; Million national currency units; Current prices. Table 1!N27; Portugal (Euros); 2026e: 6748 (Excel; number_format: General). PDF, página 5: 6,748. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 6 748 e",
+      "excerpt": "Table 1: Core defence expenditure; Million national currency units; Current prices. Table 1!N27; Portugal (Euros); 2026e: 6748 (Excel; number_format: General). PDF, página 5: 6,748. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 6 748 e",
       "source_flag": "e",
       "source_flag_note": "Estimativa da NATO.",
       "source_flag_note_en": "NATO estimate.",
@@ -381,7 +379,7 @@
       "derived_from": [],
       "check": null,
       "study": "oe-2026",
-      "note": "[note do motor] Localizador: Table 1!N27; Portugal (Euros); 2026e. A célula do Excel e a forma impressa do PDF foram conferidas. A marca e vem do cabeçalho do ano. Estimativa da NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-defesa-portugal-eur-2026.",
+      "note": "[note do motor] Localizador: Table 1!N27; Portugal (Euros); 2026e. Excerto composto a partir dos cabeçalhos e células do Excel e da forma impressa do PDF. A marca e vem do cabeçalho do ano. Estimativa da NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-defesa-portugal-eur-2026.",
       "corrections": [],
       "__file": "nato-defesa-portugal-eur-2026.yml"
     },
@@ -402,7 +400,7 @@
       "source_url": "https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2026-en.xlsx",
       "access_date": "2026-10-15",
       "reference_date": "2025",
-      "excerpt": "Table 3: Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!M27; Portugal; 2025e: 2.01 (Excel; number_format: 0.00). PDF, página 7: 2.01. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 2,01 e",
+      "excerpt": "Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!M27; Portugal; 2025e: 2.01 (Excel; number_format: 0.00). PDF, página 7: 2.01. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 2,01 e",
       "source_flag": "e",
       "source_flag_note": "Estimativa da NATO.",
       "source_flag_note_en": "NATO estimate.",
@@ -413,7 +411,7 @@
       "derived_from": [],
       "check": null,
       "study": "oe-2026",
-      "note": "[note do motor] Localizador: Table 3!M27; Portugal; 2025e. A célula do Excel e a forma impressa do PDF foram conferidas. A marca e vem do cabeçalho do ano. Estimativa da NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-defesa-portugal-pib-2025.",
+      "note": "[note do motor] Localizador: Table 3!M27; Portugal; 2025e. Excerto composto a partir dos cabeçalhos e células do Excel e da forma impressa do PDF. A marca e vem do cabeçalho do ano. Estimativa da NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-defesa-portugal-pib-2025.",
       "corrections": [],
       "__file": "nato-defesa-portugal-pib-2025.yml"
     },
@@ -434,7 +432,7 @@
       "source_url": "https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2026-en.xlsx",
       "access_date": "2026-10-15",
       "reference_date": "2026",
-      "excerpt": "Table 3: Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!N27; Portugal; 2026e: 2.1 (Excel; number_format: 0.00). PDF, página 7: 2.10. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 2,10 e",
+      "excerpt": "Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!N27; Portugal; 2026e: 2.1 (Excel; number_format: 0.00). PDF, página 7: 2.10. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 2,10 e",
       "source_flag": "e",
       "source_flag_note": "Estimativa da NATO.",
       "source_flag_note_en": "NATO estimate.",
@@ -445,7 +443,7 @@
       "derived_from": [],
       "check": null,
       "study": "oe-2026",
-      "note": "[note do motor] Localizador: Table 3!N27; Portugal; 2026e. A célula do Excel e a forma impressa do PDF foram conferidas. A marca e vem do cabeçalho do ano. Estimativa da NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-defesa-portugal-pib-2026.",
+      "note": "[note do motor] Localizador: Table 3!N27; Portugal; 2026e. Excerto composto a partir dos cabeçalhos e células do Excel e da forma impressa do PDF. A marca e vem do cabeçalho do ano. Estimativa da NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-defesa-portugal-pib-2026.",
       "corrections": [],
       "__file": "nato-defesa-portugal-pib-2026.yml"
     }
@@ -461,13 +459,5 @@
     "leitura": 5,
     "apoios": 199,
     "origens": 9
-  },
-  "codigos": {
-    "build": "não executado",
-    "verify": "não executado",
-    "typecheck": "não executado",
-    "motor": "não executado",
-    "series": "não executado",
-    "cruzamento": "não executado"
   }
 }

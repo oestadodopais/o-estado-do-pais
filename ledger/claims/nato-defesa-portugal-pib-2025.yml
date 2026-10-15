@@ -27,7 +27,7 @@ access_date: "2026-10-15"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Table 3: Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!M27; Portugal; 2025e: 2.01 (Excel; number_format: 0.00). PDF, página 7: 2.01. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 2,01 e"
+excerpt: "Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!M27; Portugal; 2025e: 2.01 (Excel; number_format: 0.00). PDF, página 7: 2.01. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 2,01 e"
 
 # A bandeira tal como a fonte a escreve, e o que ela quer dizer.
 source_flag: "e"
@@ -47,7 +47,7 @@ check: null
 
 study: "oe-2026"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Localizador: Table 3!M27; Portugal; 2025e. A célula do Excel e a forma impressa do PDF foram conferidas. A marca e vem do cabeçalho do ano. Estimativa da NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-defesa-portugal-pib-2025."
+note: "[note do motor] Localizador: Table 3!M27; Portugal; 2025e. Excerto composto a partir dos cabeçalhos e células do Excel e da forma impressa do PDF. A marca e vem do cabeçalho do ano. Estimativa da NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-defesa-portugal-pib-2025."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
