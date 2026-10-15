@@ -15,7 +15,7 @@
 //
 // Por omissão, espera as duas construções lado a lado:
 //   ../../../../dist                         (a cópia medida, app-2026-08-28)
-//   ../../../wt-before-162df96/dist          (o "antes", main @ 162df96)
+//   ../../../wt-before-49f7399/dist          (o "antes", main @ 49f7399)
 // Os caminhos dão-se por variáveis de ambiente, para não presumir onde este
 // ficheiro vive quando outra pessoa o correr: MEDICOES_DIST_DEPOIS,
 // MEDICOES_DIST_ANTES, MEDICOES_REPO_ROOT, MEDICOES_TOKENS_CSS.

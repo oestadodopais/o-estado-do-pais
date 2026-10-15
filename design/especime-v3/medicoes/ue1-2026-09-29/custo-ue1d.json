@@ -3,7 +3,7 @@
   "medidas": {
     "inicio_da_passagem": {
       "valor": "2026-09-29T20:58:38Z",
-      "comando": "git show -s --format=%cI 42a368a3 (o commit das provas da UE1c)",
+      "comando": "git show -s --format=%cI 9b4b4f2a (o commit das provas da UE1c)",
       "o_que": "a hora leu-se",
       "encontrado": true
     },

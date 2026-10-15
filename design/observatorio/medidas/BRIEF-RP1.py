@@ -9,10 +9,10 @@ mesmo JSON. Cada medição traz o nome por que o §0 a cita, o valor, o comando 
 conhecido-positivo do MESMO predicado (M5, §1.122).
 
 CADA MEDIÇÃO É ESTÁVEL DE PROPÓSITO. As fontes leem-se na cabeça que estava no ar
-a 26.09.2026 ao meio-dia, `334cc740` (o L1 e os registos de 26.09 aterrados), por
+a 26.09.2026 ao meio-dia, `eaffd3c8` (o L1 e os registos de 26.09 aterrados), por
 `git show`; as páginas construídas leem-se das cópias congeladas do L1,
 `design/especime-v3/medicoes/l1-2026-09-24/paginas-depois/`, construídas da cabeça
-`c1e155f0`, e o guião mede que entre essa cabeça e `334cc740` nenhum ficheiro que
+`fb363a11`, e o guião mede que entre essa cabeça e `eaffd3c8` nenhum ficheiro que
 a construção leia mudou. O motor lê-se na cabeça `1d10b3f` de `master`, pelo
 `git show` do repositório do motor quando ele está nesta máquina; quando não está
 (a CI do sítio), essas duas medições dizem «NÃO LIDO» com a razão e o conhecido-
@@ -26,8 +26,8 @@ import subprocess
 import sys
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-CABECA = '334cc740'
-CABECA_ANTERIOR = 'f672bd38'
+CABECA = 'eaffd3c8'
+CABECA_ANTERIOR = '5ea9627e'
 PASTA_DAS_COPIAS = 'design/especime-v3/medicoes/l1-2026-09-24/paginas-depois'
 COPIAS = os.path.join(RAIZ, PASTA_DAS_COPIAS)
 FICHEIRO_DA_CABECA_DAS_COPIAS = os.path.join(RAIZ, 'design/especime-v3/medicoes/l1-2026-09-24/portoes/build.cabeca')

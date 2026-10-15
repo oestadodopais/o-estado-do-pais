@@ -1,13 +1,13 @@
 {
   "brief": "design/observatorio/BRIEF-R1-o-lado-do-leitor-depois-da-leitura-de-fora.md",
   "guiao": "design/observatorio/medidas/BRIEF-R1.py",
-  "cabeca_lida": "d3481ba9",
+  "cabeca_lida": "3a483ffd",
   "copias": "design/especime-v3/medicoes/r1-2026-09-23/paginas/",
   "medidas": [
     {
       "nome": "pesquisa_enter_recarrega",
       "valor": 0,
-      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · preventDefault( no ramo da fila de municipios.js@d3481ba9",
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · preventDefault( no ramo da fila de municipios.js@3a483ffd",
       "conhecido_positivo": {
         "o_que": "o mesmo contador encontra o preventDefault( do ramo da lista agrupada, acima da marca",
         "encontrado": true
@@ -16,7 +16,7 @@
     {
       "nome": "pesquisa_lista_nunca_se_mostra",
       "valor": 0,
-      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «<lista>.hidden = false» no ramo da fila de municipios.js@d3481ba9",
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «<lista>.hidden = false» no ramo da fila de municipios.js@3a483ffd",
       "conhecido_positivo": {
         "o_que": "o mesmo contador encontra a linha «lista.hidden = false;» numa amostra de mentira",
         "encontrado": true
@@ -25,7 +25,7 @@
     {
       "nome": "pesquisa_lista_nasce_escondida",
       "valor": 1,
-      "comando": "git grep -c -E '<ul class=\"pesquisa-res\"[^>]* hidden' d3481ba9 -- src",
+      "comando": "git grep -c -E '<ul class=\"pesquisa-res\"[^>]* hidden' 3a483ffd -- src",
       "conhecido_positivo": {
         "o_que": "o mesmo grep encontra a lista escondida numa vista ou componente de src/",
         "encontrado": true
@@ -106,7 +106,7 @@
     {
       "nome": "ficheiros_com_a_ressalva_fora_da_agenda",
       "valor": 0,
-      "comando": "git grep -l -E \"regime de propriedade|regime de ocupação|tenure\" d3481ba9 -- src, sem agenda.json",
+      "comando": "git grep -l -E \"regime de propriedade|regime de ocupação|tenure\" 3a483ffd -- src, sem agenda.json",
       "conhecido_positivo": {
         "o_que": "o mesmo grep encontra a ressalva em src/data/agenda.json",
         "encontrado": true
@@ -115,7 +115,7 @@
     {
       "nome": "agenda_diz_que_a_primeira_pagina_ja_diz",
       "valor": 1,
-      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «a primeira página já diz» em agenda.json@d3481ba9",
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «a primeira página já diz» em agenda.json@3a483ffd",
       "conhecido_positivo": {
         "o_que": "o mesmo contador encontra a frase",
         "encontrado": true
@@ -124,7 +124,7 @@
     {
       "nome": "agenda_diz_que_nao_publica_a_media",
       "valor": 1,
-      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «não publica hoje a média europeia» em agenda.json@d3481ba9",
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «não publica hoje a média europeia» em agenda.json@3a483ffd",
       "conhecido_positivo": {
         "o_que": "o mesmo contador encontra a frase",
         "encontrado": true
@@ -142,7 +142,7 @@
     {
       "nome": "mudancas_declaradas",
       "valor": 2,
-      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · entradas «pt:» em mudancas-do-projeto.mjs@d3481ba9",
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · entradas «pt:» em mudancas-do-projeto.mjs@3a483ffd",
       "conhecido_positivo": {
         "o_que": "o mesmo leitor conta pelo menos uma entrada",
         "encontrado": true
@@ -160,7 +160,7 @@
     {
       "nome": "estudos_seccao_por_lugar",
       "valor": 1,
-      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · id=\"por-lugar\" em EstudosView.astro@d3481ba9",
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · id=\"por-lugar\" em EstudosView.astro@3a483ffd",
       "conhecido_positivo": {
         "o_que": "o mesmo contador encontra a secção",
         "encontrado": true
@@ -169,7 +169,7 @@
     {
       "nome": "definicoes_com_sigla_por_verificar",
       "valor": 2,
-      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «por extenso da sigla permanece » em figuras.mjs@d3481ba9",
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «por extenso da sigla permanece » em figuras.mjs@3a483ffd",
       "conhecido_positivo": {
         "o_que": "o mesmo contador encontra a frase",
         "encontrado": true
@@ -178,7 +178,7 @@
     {
       "nome": "vistas_com_o_rotulo_no_topo",
       "valor": 1,
-      "comando": "git grep -l onde=\"topo\" d3481ba9 -- src",
+      "comando": "git grep -l onde=\"topo\" 3a483ffd -- src",
       "conhecido_positivo": {
         "o_que": "o mesmo grep encontra EstudoView.astro",
         "encontrado": true
@@ -214,7 +214,7 @@
     {
       "nome": "metodo_frase_da_cor",
       "valor": 1,
-      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «âmbar quando o valor está fora dele» em metodo.mjs@d3481ba9",
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «âmbar quando o valor está fora dele» em metodo.mjs@3a483ffd",
       "conhecido_positivo": {
         "o_que": "o mesmo contador encontra a frase",
         "encontrado": true
@@ -223,7 +223,7 @@
     {
       "nome": "metodo_frase_do_base",
       "valor": 1,
-      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «Uma fonte, o Portal BASE» em metodo.mjs@d3481ba9",
+      "comando": "python3 design/observatorio/medidas/BRIEF-R1.py · «Uma fonte, o Portal BASE» em metodo.mjs@3a483ffd",
       "conhecido_positivo": {
         "o_que": "o mesmo contador encontra a frase",
         "encontrado": true

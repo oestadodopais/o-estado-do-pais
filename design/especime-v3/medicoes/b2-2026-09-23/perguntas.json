@@ -1,7 +1,7 @@
 {
   "comando": "python3 design/especime-v3/medicoes/b2-2026-09-23/medir-perguntas.py",
-  "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
-  "dist_construido_de": "7110ca608ef6addba6771a50b5c47685e4e18026",
+  "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
+  "dist_construido_de": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
   "motor_cabeca": "0f081711750492991306ff87d056ab4f52dae306",
   "k16": {
     "comando": "node tests/cartao/cartao.mjs --json",
@@ -78,7 +78,7 @@
     }
   },
   "copia_anterior": {
-    "commit": "ed44e493",
+    "commit": "912c280b",
     "dist_construido_de": "2415107b6ab38a00bba557dc4da9e101b8b83ea1"
   },
   "perguntas_com_texto_mudado": [

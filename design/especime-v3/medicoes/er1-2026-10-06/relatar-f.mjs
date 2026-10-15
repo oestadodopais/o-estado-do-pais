@@ -49,7 +49,7 @@ for (const {lang,campo,nome} of esperadas) {
 }
 assert.deepEqual(navegador.capturas,[]);
 // A nova entrada em memória não muda os bytes publicados para nenhum id real.
-const fonteAnterior = execFileSync('git',['show','9f240c59:src/lib/conjunto.mjs'],{encoding:'utf8'})
+const fonteAnterior = execFileSync('git',['show','f22354f0:src/lib/conjunto.mjs'],{encoding:'utf8'})
   .replace(/from '([^']+)'/g,(_,caminho) => `from '${new URL(caminho,new URL('../../../../src/lib/conjunto.mjs',import.meta.url)).href}'`);
 const anterior = await import('data:text/javascript;base64,'+Buffer.from(fonteAnterior).toString('base64'));
 const linhas = allClaims();
@@ -60,9 +60,9 @@ for (const linha of linhas) {
   assert.equal(atual,fs.readFileSync(`dist/livro-razao/${linha.id}.json`,'utf8'),linha.id);
 }
 const prova = {cabecaCodigo:codigo,gates,plantas,recusas:navegador.recusas,casosNavegador:navegador.casos.length,
-  jsonComparados:linhas.length,base:'9f240c59',sha256LogVerify:createHash('sha256').update(log).digest('hex')};
+  jsonComparados:linhas.length,base:'f22354f0',sha256LogVerify:createHash('sha256').update(log).digest('hex')};
 fs.writeFileSync(`${pasta}/provas-f.json`,JSON.stringify(prova,null,2)+'\n');
-const commits = execFileSync('git',['log','--reverse','--format=%h %s','9f240c59..'+codigo],{encoding:'utf8'}).trim().split('\n');
+const commits = execFileSync('git',['log','--reverse','--format=%h %s','f22354f0..'+codigo],{encoding:'utf8'}).trim().split('\n');
 const tabela = (titulos,linhas) => '| '+titulos.join(' | ')+' |\n| '+titulos.map(() => '---').join(' | ')+' |\n'+linhas.map(l => '| '+l.map(v => String(v).replaceAll('|','\\|')).join(' | ')+' |').join('\n');
 const texto = `
 

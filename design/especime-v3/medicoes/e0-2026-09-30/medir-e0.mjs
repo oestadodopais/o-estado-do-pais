@@ -12,7 +12,7 @@ import { provarDetetoresE0c } from './provar-detetores-e0c.mjs';
 import { loadClaims } from '../../../../src/lib/ledger.mjs';
 const pasta = 'design/especime-v3/medicoes/e0-2026-09-30';
 const passagem = process.argv.includes('--e0c') ? 'e0c' : 'e0b';
-const base = '07549ee1e9ec2b39186f9e9f13eeac4914bf5e76';
+const base = '7a82c1477b1710292d23f7efdca7a367f407e134';
 const git = (...a) => execFileSync('git', a, { encoding: 'utf8' }).trim();
 const json = p => JSON.parse(fs.readFileSync(p, 'utf8'));
 const sha = b => createHash('sha256').update(b).digest('hex');

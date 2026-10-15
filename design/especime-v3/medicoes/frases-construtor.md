@@ -1,6 +1,6 @@
 # F0.9 · as sete frases de 18.08 · relatório do construtor
 
-*Ramo `frases-2026-09-03`, tirado de `main` em `2ab66578`. Construtor Claude Opus 5,
+*Ramo `frases-2026-09-03`, tirado de `main` em `21c4b14e`. Construtor Claude Opus 5,
 03.09.2026. O bloco é o F0.9 do `design/observatorio/PLANO-fiabilidade-2026-09-02.md`,
 §2: cada frase da primeira página que afirma uma tendência, uma comparação ou uma
 atribuição sem linha ganha a linha que a prova, ou sai. A origem da lista é a
@@ -404,12 +404,12 @@ mais do que uma afirmação na mesma frase, e três têm:
 Sete das dez saíram na primeira passagem e três na segunda, e as três estão
 nomeadas na §11.
 
-**O diff, medido contra `main` (`2ab66578`) e não contra o commit anterior**, para
+**O diff, medido contra `main` (`21c4b14e`) e não contra o commit anterior**, para
 que o número não mude de significado entre passagens. Os cinco ficheiros que
 mudam o sítio, a régua e o portão, sem este relatório:
 
 ```
-git diff --stat 2ab66578 a1af1c65 -- src/data/figuras.mjs scripts/check-voz.mjs \
+git diff --stat 21c4b14e 7edaba9a -- src/data/figuras.mjs scripts/check-voz.mjs \
   scripts/medir-defeitos.mjs design/especime-v3/INVENTARIO-FRASES.md \
   design/especime-v3/critica/REVISOES-DO-INVENTARIO.md
  design/especime-v3/INVENTARIO-FRASES.md              |  32 +++-
@@ -429,7 +429,7 @@ escreveu «422 linhas» a partir da contagem de inserções de um ficheiro novo 
 contagem de inserções não é uma contagem de linhas, e o número certo é o do
 `wc -l`, com o comando ao lado.
 
-**A referência é `2ab66578..a1af1c65` e não `HEAD`**, porque `HEAD` passou a
+**A referência é `21c4b14e..7edaba9a` e não `HEAD`**, porque `HEAD` passou a
 incluir a fusão com o `main` descrita na §12, e um `git diff` contra o ponto de
 partida traria também o trabalho de outro ramo. O intervalo acima é só o deste
 bloco.
@@ -669,7 +669,7 @@ rendidas, e **78 retiradas**, nenhuma rendida.
 ## 12 · A fusão com o `main` que andou por baixo (03.09.2026)
 
 O `main` avançou durante o bloco, com a fusão do ramo das conferências
-(`df20ce65`): 935 linhas do livro-razão ganharam entradas de reconferência,
+(`028907fe`): 935 linhas do livro-razão ganharam entradas de reconferência,
 `src/data/fontes.mjs` mudou de formato, `src/views/LinhaView.astro` passou a
 render os estados de ausência de uma fonte, e um portão novo, `check:fontes`
 (`tests/linha/sem-resposta.mjs`), entrou no `verify`.
@@ -682,7 +682,7 @@ de ficheiros não se tocam**: o `main` mexeu em `package.json`, `src/data/fontes
 linhas do livro-razão; este bloco mexeu em `src/data/figuras.mjs`,
 `scripts/check-voz.mjs`, `scripts/medir-defeitos.mjs`, no inventário, no registo
 das revisões e neste relatório. O `package.json` não precisou de resolução porque
-este bloco nunca lhe tocou: `git diff --name-only 2ab66578 HEAD` não o nomeia, e o
+este bloco nunca lhe tocou: `git diff --name-only 21c4b14e HEAD` não o nomeia, e o
 `check:fontes` do `main` entra no `verify` sem uma linha deste lado.
 
 **O que foi remedido depois da fusão, e não copiado de antes:**
@@ -706,7 +706,7 @@ por isso não cruza com a mudança da régua da voz feita neste bloco.
 
 ## 13 · A segunda fusão: o `typecheck` a valer por baixo do bloco (03.09.2026)
 
-O `main` voltou a andar, agora com o F0.4 (`16e70350`): o `typecheck` deixou de
+O `main` voltou a andar, agora com o F0.4 (`dedd848f`): o `typecheck` deixou de
 conferir um ficheiro e passou a ser um programa a sério, com `checkJs` estrito
 sobre `src/lib`, `src/data` e `src/i18n`, mais `src/tipos.d.ts` com 629 linhas de
 tipos e as guardas de execução de `scripts/provar-guardas.mjs`, que entraram no

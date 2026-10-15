@@ -12,7 +12,7 @@ import yaml
 AQUI = Path(__file__).resolve().parent
 BLOCO = AQUI.parent
 SITIO = AQUI.parents[4]
-BASE = '40f7684c21eb4742a6597eb0405a8f3516effec0'
+BASE = '58543abdbd24433d2e78be469611842593e45f5c'
 
 def git(*args, repo=SITIO):
     return subprocess.check_output(['git', *args], cwd=repo, text=True).strip()
@@ -83,7 +83,7 @@ def medir():
     motor = Path.home()/'<projetos>/ResearchHub/.worktrees/c1-2026-09-28'
     motor_estado = {'cabeca':git('rev-parse','HEAD',repo=motor), 'limpa':not git('status','--porcelain',repo=motor)}
     exige(motor_estado == {'cabeca':'68318e0da2036cc29e4704fa1bb8a96dee246095','limpa':True}, 'O motor não está no estado recebido.')
-    commits = [dict(zip(('hash','assunto'),l.split(' ',1))) for l in git('log','--reverse','--format=%H %s','48a5a1c181c1753036d301204884c57119bba8a5..HEAD').splitlines()]
+    commits = [dict(zip(('hash','assunto'),l.split(' ',1))) for l in git('log','--reverse','--format=%H %s','7028e733f8bb4de7bf65f1bb76546304ba1e6db4..HEAD').splitlines()]
     return {'registado_em':datetime.now(timezone.utc).isoformat(), 'base':BASE, 'cabeca_codigo':cabeca, 'motor':motor_estado,
         'commits':commits, 'linhas_alteradas':ids, 'valores_alterados':[], 'razoes_afinadas':razoes,
         'portoes':portoes, 'capturas':{'recibos_do_universo':len(universo), 'recibos_captados':len(recibos), 'recibos_nao_captados':len(universo)-len(recibos), 'imagens_dos_recibos':110, 'imagens_da_faixa':10, 'imagens':len(capturas['resultados']), 'copias':len(indice['copias']), 'cabeca':capturas['dist_construido_de'], 'aceitacao':capturas['aceitacao']},

@@ -52,7 +52,7 @@ def segundos(pasta, nome):
 
 
 # ------------------------------------------------------------------ os portões
-# A ENTREGA DO EX1 (05.10.2026): os registos dos portões da cabeça 1d64052a mudaram-se de `portoes/` para `entrega/portoes/`
+# A ENTREGA DO EX1 (05.10.2026): os registos dos portões da cabeça 56ce75fa mudaram-se de `portoes/` para `entrega/portoes/`
 # na fusão com o main de 06.10.2026, para que a corrida da fusão escreva em `portoes/`, como o mandato a pede.
 E = "entrega/portoes"
 CMD_PORTOES = "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na entrega do EX1, guardada em entrega/portoes desde a fusão)"
@@ -102,16 +102,16 @@ for passo in ("brief", "acertos", "explicacao", "semana", "sinais", "menu", "cap
 # ------------------------------------------------------------------ o §0 do brief, reproduzido
 rep = js("brief-reproduzido.json") or {"medidas": []}
 # O ficheiro do brief como estava na passagem EX1 (a I210 mudou-o na passagem EX1-b).
-br = json.loads(git_show("629d065f", "design/observatorio/medidas/BRIEF-EX1.json"))
+br = json.loads(git_show("a3fc111f", "design/observatorio/medidas/BRIEF-EX1.json"))
 pares = {x["nome"]: x["valor"] for x in br["medidas"]}
 iguais = [x["nome"] for x in rep["medidas"] if pares.get(x["nome"]) == x["valor"]]
 medida("brief.medidas", len(rep["medidas"]), "OEDP_MEDIDAS_JSON=<pasta>/brief-reproduzido.json python3 design/observatorio/medidas/BRIEF-EX1.py", "a cabeça lida é a do brief e cada medida tem o seu conhecido-positivo encontrado", rep.get("cabeca_lida") == br.get("cabeca_lida") and all(x["conhecido_positivo"]["encontrado"] for x in rep["medidas"]))
-medida("brief.medidas_iguais_as_do_brief", len(iguais), "a comparação de brief-reproduzido.json com git show 629d065f:design/observatorio/medidas/BRIEF-EX1.json", "as duas listas têm as mesmas medidas", set(pares) == {x["nome"] for x in rep["medidas"]})
+medida("brief.medidas_iguais_as_do_brief", len(iguais), "a comparação de brief-reproduzido.json com git show a3fc111f:design/observatorio/medidas/BRIEF-EX1.json", "as duas listas têm as mesmas medidas", set(pares) == {x["nome"] for x in rep["medidas"]})
 antes = js("brief-reproduzido-antes-de-mexer.json") or {"medidas": []}
 medida("brief.antes_de_mexer.medidas_iguais", sum(1 for x, y in zip(antes["medidas"], br["medidas"]) if x == y), "OEDP_MEDIDAS_JSON=<pasta temporária>/brief-ex1-reproduzido.json python3 design/observatorio/medidas/BRIEF-EX1.py, antes do primeiro commit do bloco (copiado para brief-reproduzido-antes-de-mexer.json)", "a reprodução leu a cabeça do brief e tem as mesmas medidas", antes.get("cabeca_lida") == br.get("cabeca_lida") and len(antes["medidas"]) == len(br["medidas"]))
 menu = js("menu-a-390.json") or {"medidas": []}
 pub = [x for x in menu["medidas"] if x["forma"] == "publicada"]
-medida("brief.portas_do_menu", pares.get("portas_do_menu"), "git show 629d065f:design/observatorio/medidas/BRIEF-EX1.json (o ficheiro do brief na passagem EX1)", "a medida está no ficheiro do brief", "portas_do_menu" in pares)
+medida("brief.portas_do_menu", pares.get("portas_do_menu"), "git show a3fc111f:design/observatorio/medidas/BRIEF-EX1.json (o ficheiro do brief na passagem EX1)", "a medida está no ficheiro do brief", "portas_do_menu" in pares)
 medida("menu.portas_publicadas", sorted({x["portas"] for x in pub}), "node design/especime-v3/medicoes/ex1-2026-10-05/menu-a-390.mjs (menu-a-390.json, a forma «publicada»)", "as duas edições foram medidas", len(pub) == 2)
 for x in menu["medidas"]:
     chave = f"menu.{x['lang']}.{'publicada' if x['forma'] == 'publicada' else 'com_a_setima'}"
@@ -176,7 +176,7 @@ medida("frases_em_flex.erros", len(ff.get("erros", [""])) if ff else None, "node
 medida("frases_em_flex.passagens", len(ff.get("resultados", [])), "idem", "cada passagem viu pedaços marcados", ff and all(r["pedacos"] > 0 or r["rota"] in ("/explicacoes/leitura-da-semana/", "/en/explainers/weekly-reading/") for r in ff.get("resultados", [])))
 medida("frases_em_flex.pedacos", sum(r["pedacos"] for r in ff.get("resultados", [])), "idem", "a contagem é a soma das passagens", bool(ff.get("resultados")))
 
-# ------------------------------------------------------------------ a primeira corrida (48254647), que as capturas apanharam
+# ------------------------------------------------------------------ a primeira corrida (71f83c4a), que as capturas apanharam
 P1 = "primeira-corrida"
 c1 = ler(f"{P1}/portoes/cabeca").strip()
 medida("primeira.portoes.cabeca", c1, CMD_PORTOES + " (na primeira corrida, guardada em primeira-corrida/portoes)", "a cabeça é a de antes e a de depois dessa corrida", c1 and c1 == ler(f"{P1}/portoes/cabeca-antes-da-corrida").strip() == ler(f"{P1}/portoes/cabeca.fim").strip())
@@ -223,12 +223,12 @@ m = re.search(r"(\d+) referência\(s\) postas em dia", lm)
 medida("mapa.referencias_postas_em_dia_pela_conta", int(m.group(1)) if m else None, "python3 design/especime-v3/medicoes/ex1-2026-10-05/linhas-do-mapa.py 3664b90d --escrever (linhas-do-mapa.log)", "o número é o das linhas da lista", m and int(m.group(1)) == len(re.findall(r"^mapa l\.\d+ ", lm, re.M)))
 
 mm = js("mapa-a-mao.json") or {}
-medida("mapa.corrigidas_a_mao", mm.get("corrigidas_a_mao"), "python3 design/especime-v3/medicoes/ex1-2026-10-05/mapa-a-mao.py 3664b90d c885cb4c --json <pasta>/mapa-a-mao.json", "a comparação leu as referências das linhas que já existiam", (mm.get("referencias_comparadas") or 0) > 0 and len(mm.get("lista", [])) == mm.get("corrigidas_a_mao"))
+medida("mapa.corrigidas_a_mao", mm.get("corrigidas_a_mao"), "python3 design/especime-v3/medicoes/ex1-2026-10-05/mapa-a-mao.py 3664b90d 90e5c62b --json <pasta>/mapa-a-mao.json", "a comparação leu as referências das linhas que já existiam", (mm.get("referencias_comparadas") or 0) > 0 and len(mm.get("lista", [])) == mm.get("corrigidas_a_mao"))
 medida("mapa.referencias_comparadas", mm.get("referencias_comparadas"), "idem", "a lista das corrigidas tem a forma escrita", isinstance(mm.get("lista"), list))
-ch = git_show("629d065f", "design/especime-v3/CHAVES-EN.md")
+ch = git_show("a3fc111f", "design/especime-v3/CHAVES-EN.md")
 sec = ch.split("## EX1 · as explicações e a leitura da semana, 05.10.2026", 1)
 linhas_ch = [l for l in sec[1].split("\n## ", 1)[0].splitlines() if l.startswith("| `")] if len(sec) == 2 else []
-medida("chaves_en.ex1", len(linhas_ch), "a contagem das linhas da tabela da secção do EX1 em git show 629d065f:design/especime-v3/CHAVES-EN.md (as chaves da passagem EX1)", "a secção existe e a primeira linha é a de nav.explicacoes", bool(linhas_ch) and linhas_ch[0].startswith("| `nav.explicacoes`"))
+medida("chaves_en.ex1", len(linhas_ch), "a contagem das linhas da tabela da secção do EX1 em git show a3fc111f:design/especime-v3/CHAVES-EN.md (as chaves da passagem EX1)", "a secção existe e a primeira linha é a de nav.explicacoes", bool(linhas_ch) and linhas_ch[0].startswith("| `nav.explicacoes`"))
 
 # ------------------------------------------------------------------ o custo e a limpeza
 cu = js("custo.json") or {}
@@ -274,13 +274,13 @@ for passo in ("brief", "briefs", "acertos", "explicacao", "semana", "sinais", "f
     medida(f"ex1b.provas.{passo}.codigo", int(c) if c.isdigit() else None, CMD_PROVAS_B + f" ({B}/provas/{passo}.codigo)", f"o registo {B}/provas/{passo}.log começa pela cabeça", ler(f"{B}/provas/{passo}.log").startswith("cabeça: "))
 # I210
 rb = js(f"{B}/brief-reproduzido.json") or {"medidas": []}
-br2 = json.loads(git_show("723a451f", "design/observatorio/medidas/BRIEF-EX1.json"))
+br2 = json.loads(git_show("f3f0415f", "design/observatorio/medidas/BRIEF-EX1.json"))
 pm = next((x for x in rb["medidas"] if x["nome"] == "portas_do_menu"), None)
 medida("ex1b.brief.portas_do_menu", pm["valor"] if pm else None, "OEDP_MEDIDAS_JSON=<pasta>/ex1b/brief-reproduzido.json python3 design/observatorio/medidas/BRIEF-EX1.py", "o conhecido-positivo da medida foi encontrado (o cabeçalho percorre ROTAS_NAV e a porta da União está nela)", pm and pm["conhecido_positivo"]["encontrado"])
-medida("ex1b.brief.medidas_iguais_as_do_brief", sum(1 for x in rb["medidas"] if {y["nome"]: y["valor"] for y in br2["medidas"]}.get(x["nome"]) == x["valor"]), "a comparação de ex1b/brief-reproduzido.json com git show 723a451f:design/observatorio/medidas/BRIEF-EX1.json", "as duas listas têm as mesmas medidas", {x["nome"] for x in rb["medidas"]} == {y["nome"] for y in br2["medidas"]})
-brief_md = git_show("723a451f", "design/observatorio/BRIEF-EX1-o-espaco-das-explicacoes-e-a-leitura-semanal.md")
+medida("ex1b.brief.medidas_iguais_as_do_brief", sum(1 for x in rb["medidas"] if {y["nome"]: y["valor"] for y in br2["medidas"]}.get(x["nome"]) == x["valor"]), "a comparação de ex1b/brief-reproduzido.json com git show f3f0415f:design/observatorio/medidas/BRIEF-EX1.json", "as duas listas têm as mesmas medidas", {x["nome"] for x in rb["medidas"]} == {y["nome"] for y in br2["medidas"]})
+brief_md = git_show("f3f0415f", "design/observatorio/BRIEF-EX1-o-espaco-das-explicacoes-e-a-leitura-semanal.md")
 m = re.search(r"e (\d+) portas no menu \(`portas_do_menu`\)", brief_md)
-medida("ex1b.brief.paragrafo_0_portas_do_menu", int(m.group(1)) if m else None, "a frase do §0 do brief com `portas_do_menu` (git show 723a451f, o brief da passagem EX1-b)", "a frase está no brief", m)
+medida("ex1b.brief.paragrafo_0_portas_do_menu", int(m.group(1)) if m else None, "a frase do §0 do brief com `portas_do_menu` (git show f3f0415f, o brief da passagem EX1-b)", "a frase está no brief", m)
 m = re.search(r"✓ (\d+) número\(s\) do §0 ligado\(s\) à sua medição", ler(f"{B}/provas/briefs.log"))
 medida("ex1b.check_briefs.numeros_ligados", int(m.group(1)) if m else None, "python3 scripts/check-briefs.py (ex1b/provas/briefs.log)", "o brief do EX1 foi conferido", "conferido: BRIEF-EX1-o-espaco-das-explicacoes-e-a-leitura-semanal.md" in ler(f"{B}/provas/briefs.log"))
 # I211
@@ -306,10 +306,10 @@ medida("ex1b.explicacao.auditoria", {k: aub.get(k) for k in ("folhas", "partes",
 medida("ex1b.explicacao.maiores", (exb.get("maiores") or {}).get("tokens"), "idem (X9)", "a célula correu sem erros", exb and not exb.get("erros"))
 medida("ex1b.explicacao.plantas", [sum(1 for q in exb.get("plantas", []) if q["mordeu"]), sum(1 for q in exb.get("plantas", []) if q.get("aplica", True))], "idem", "todas as que se aplicam morderam", exb.get("plantas") and all(q["mordeu"] for q in exb["plantas"] if q.get("aplica", True)))
 medida("ex1b.explicacao.plantas_novas", [q["nome"] for q in exb.get("plantas", []) if re.search(r"programas|«maiores»|porta|selo|leitura", q["nome"])], "idem", "as plantas do token, das portas, dos selos e da leitura estão na lista", any("«maiores»" in q["nome"] for q in exb.get("plantas", [])))
-aud = json.loads(git_show("723a451f", "tests/cartao/leituras-provadas.json"))
+aud = json.loads(git_show("f3f0415f", "tests/cartao/leituras-provadas.json"))
 ent = next((x for x in aud.get("explicacoes", []) if x.get("slug") == "dinheiro-do-estado-2026"), {})
 leituras = [{"pt": q["pt"], "sobre": q["sobre"]} for f in ent.get("folhas", []) for q in f["partes"] if q.get("classe") == "leitura"]
-medida("ex1b.auditoria.partes_de_leitura", leituras, "as partes da classe «leitura» na secção «explicacoes» de git show 723a451f:tests/cartao/leituras-provadas.json (a auditoria da passagem EX1-b)", "cada uma traz «sobre»", bool(leituras) and all(q["sobre"] for q in leituras))
+medida("ex1b.auditoria.partes_de_leitura", leituras, "as partes da classe «leitura» na secção «explicacoes» de git show f3f0415f:tests/cartao/leituras-provadas.json (a auditoria da passagem EX1-b)", "cada uma traz «sobre»", bool(leituras) and all(q["sobre"] for q in leituras))
 sib = js(f"{B}/sinais-explicacoes.json") or {}
 medida("ex1b.sinais.frases_guardadas_fora", sum(len(x.get("sinais", [])) for x in sib.get("explicacoes", [])), "node scripts/sinais-da-primeira-pagina.mjs; cp .sinais/explicacoes.json <pasta>/ex1b/sinais-explicacoes.json", "o ficheiro dos sinais tem a explicação", bool(sib.get("explicacoes")))
 # o programa de maior despesa e os seguintes, lidos do livro (I213)
@@ -343,9 +343,9 @@ for nome, f in (("ex1b.mapa.antes_da_conta", f"{B}/mapa-antes-da-conta.log"), ("
     medida(nome, v, f"python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md ({f})", "as três linhas da contagem estão no registo", v is not None)
 lmb = ler(f"{B}/linhas-do-mapa.log")
 m = re.search(r"(\d+) referência\(s\) postas em dia", lmb)
-medida("ex1b.mapa.referencias_postas_em_dia_pela_conta", int(m.group(1)) if m else None, "python3 design/especime-v3/medicoes/ex1-2026-10-05/linhas-do-mapa.py 1d64052a --escrever (ex1b/linhas-do-mapa.log)", "o número é o das linhas da lista", m and int(m.group(1)) == len(re.findall(r"^mapa l\.\d+ ", lmb, re.M)))
+medida("ex1b.mapa.referencias_postas_em_dia_pela_conta", int(m.group(1)) if m else None, "python3 design/especime-v3/medicoes/ex1-2026-10-05/linhas-do-mapa.py 56ce75fa --escrever (ex1b/linhas-do-mapa.log)", "o número é o das linhas da lista", m and int(m.group(1)) == len(re.findall(r"^mapa l\.\d+ ", lmb, re.M)))
 mmb = js(f"{B}/mapa-a-mao.json") or {}
-medida("ex1b.mapa.corrigidas_a_mao", mmb.get("corrigidas_a_mao"), "python3 design/especime-v3/medicoes/ex1-2026-10-05/mapa-a-mao.py 1d64052a 37b3daf9 --json <pasta>/ex1b/mapa-a-mao.json", "a comparação leu as referências das linhas que já existiam", (mmb.get("referencias_comparadas") or 0) > 0)
+medida("ex1b.mapa.corrigidas_a_mao", mmb.get("corrigidas_a_mao"), "python3 design/especime-v3/medicoes/ex1-2026-10-05/mapa-a-mao.py 56ce75fa a9963abf --json <pasta>/ex1b/mapa-a-mao.json", "a comparação leu as referências das linhas que já existiam", (mmb.get("referencias_comparadas") or 0) > 0)
 medida("ex1b.mapa.referencias_comparadas", mmb.get("referencias_comparadas"), "idem", "a lista tem a forma escrita", isinstance(mmb.get("lista"), list))
 cub = js(f"{B}/custo.json") or {}
 medida("ex1b.custo", {k: cub.get(k) for k in ("respostas_do_modelo", "modelos", "simbolos_de_entrada", "simbolos_de_saida_minimo", "respostas_com_a_saida_de_um_momento_do_fluxo", "segundos", "primeira_entrada", "desde", "lido_em")}, "python3 design/especime-v3/medicoes/ex1-2026-10-05/custo.py <registo da sessão do construtor> ex1b/custo.json --desde <a primeira entrada da passagem>", "o registo foi lido (o sha256 está escrito)", bool(cub.get("registo_sha256")))
@@ -420,7 +420,7 @@ for nome, f in (("ex1c.mapa.antes_da_conta", f"{C}/mapa-antes-da-conta.log"), ("
     medida(nome, v, f"python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md ({f})", "as três linhas da contagem estão no registo", v is not None)
 lmc = ler(f"{C}/linhas-do-mapa.log")
 m = re.search(r"(\d+) referência\(s\) postas em dia", lmc)
-medida("ex1c.mapa.referencias_postas_em_dia_pela_conta", int(m.group(1)) if m else None, "python3 design/especime-v3/medicoes/ex1-2026-10-05/linhas-do-mapa.py c24db3b2 --escrever (ex1c/linhas-do-mapa.log)", "o número é o das linhas da lista", m and int(m.group(1)) == len(re.findall(r"^mapa l\.\d+ ", lmc, re.M)))
+medida("ex1c.mapa.referencias_postas_em_dia_pela_conta", int(m.group(1)) if m else None, "python3 design/especime-v3/medicoes/ex1-2026-10-05/linhas-do-mapa.py 275c0e28 --escrever (ex1c/linhas-do-mapa.log)", "o número é o das linhas da lista", m and int(m.group(1)) == len(re.findall(r"^mapa l\.\d+ ", lmc, re.M)))
 chc = (SITIO / "design/especime-v3/CHAVES-EN.md").read_text(encoding="utf-8")
 novas_c = [k for k in ("umDeForma", "variosDeForma", "formasK", "passouAEscrever", "ondeEscrevia") if f"| `semana.{k}` |" in chc]
 medida("ex1c.chaves_en.novas", len(novas_c), "as linhas das chaves novas da semana em design/especime-v3/CHAVES-EN.md", "cada uma é uma chave de src/i18n/strings.mjs", all(f"{k}: " in (SITIO / "src/i18n/strings.mjs").read_text(encoding="utf-8") for k in novas_c) and bool(novas_c))

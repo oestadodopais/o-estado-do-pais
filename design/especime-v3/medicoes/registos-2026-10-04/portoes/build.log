@@ -10941,7 +10941,7 @@ História do valor: 2 controlos e 4 plantas.
 > node scripts/stamp-version.mjs
 
 
-[90m  versão · 9caa328 (registos-2026-10-04, git)[0m
+[90m  versão · ea90bce (registos-2026-10-04, git)[0m
 
 > o-estado-do-pais@0.1.0 cartoes
 > node scripts/cartoes.mjs

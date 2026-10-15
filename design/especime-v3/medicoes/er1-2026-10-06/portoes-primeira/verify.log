@@ -1657,7 +1657,7 @@ História do valor: 2 controlos e 4 plantas.
 > o-estado-do-pais@0.1.0 check:cabeca
 > node tests/inicio/hierarquia-b2.mjs
 
-check:cabeca C1; construção 0c63b7a496dab5a93b238625821897db3455cfbf; 140 cabeças; 4 mordidas; 10 reposições
+check:cabeca C1; construção dc176f67e9c4662d3191beb59a27eda29cd2a90f; 140 cabeças; 4 mordidas; 10 reposições
 check:cabeca: PASS
 
 > o-estado-do-pais@0.1.0 check:fontes

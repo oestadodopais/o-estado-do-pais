@@ -23,20 +23,20 @@ for i,nome_planta in enumerate(['utilizador','casa','temporario','projetos','wor
  mensagem='RP4N-h: caminho ou identificador local ('+nome_planta+')'
  assert mensagem in erros
  plantas.append({'nome':nome_planta,'mensagem':mensagem})
-log=git('log' ,'-p','b84d21a3..HEAD')
-diff=git('diff','b84d21a3','HEAD')
+log=git('log' ,'-p','c0e1b3f4..HEAD')
+diff=git('diff','c0e1b3f4','HEAD')
 head=subprocess.run(['git','grep','-n','-F',*args,'HEAD'],capture_output=True,text=True)
 lista=[];novos=[]
 for linha in head.stdout.splitlines():
  _,ficheiro,numero,conteudo=linha.split(':',3)
- anterior=subprocess.run(['git','show','b84d21a3:'+ficheiro],capture_output=True,text=True)
+ anterior=subprocess.run(['git','show','c0e1b3f4:'+ficheiro],capture_output=True,text=True)
  if tmp in conteudo and conteudo in anterior.stdout.splitlines() and not any(x in conteudo for x in pedacos if x!=tmp):
   lista.append({'ficheiro':ficheiro,'linha':int(numero)})
  else:novos.append({'ficheiro':ficheiro,'linha':int(numero),'mensagens':conferir_texto(conteudo)})
 legados=sorted(set(x['ficheiro'] for x in lista))
 legados_com_nome=[f for f in legados if nome in git('show','HEAD:'+f)]
 assert not legados_com_nome
-resultado={'plantas':plantas,'legados_lidos':legados,'legados_com_nome':legados_com_nome,'cabeca':git('rev-parse','HEAD').strip(),'base':'b84d21a3','historico_grep_c':contar(log,pedacos),'diff_grep_c':contar(diff,pedacos),'cabeca_sem_excecoes_grep_c':len(novos),'novos':novos,'padroes':['utilizador','casa','temporario','projetos','worktrees'],'legados_ficheiros':len(set(x['ficheiro'] for x in lista)),'RP4N-14':lista}
+resultado={'plantas':plantas,'legados_lidos':legados,'legados_com_nome':legados_com_nome,'cabeca':git('rev-parse','HEAD').strip(),'base':'c0e1b3f4','historico_grep_c':contar(log,pedacos),'diff_grep_c':contar(diff,pedacos),'cabeca_sem_excecoes_grep_c':len(novos),'novos':novos,'padroes':['utilizador','casa','temporario','projetos','worktrees'],'legados_ficheiros':len(set(x['ficheiro'] for x in lista)),'RP4N-14':lista}
 (BASE/'privacidade.json').write_text(json.dumps(resultado,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(resultado,ensure_ascii=False,indent=2))
 if any(resultado[k] for k in ['historico_grep_c','diff_grep_c','cabeca_sem_excecoes_grep_c']):sys.exit(1)

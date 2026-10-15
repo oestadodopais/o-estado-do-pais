@@ -1,9 +1,9 @@
 {
   "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/RESPOSTA-construtor-f22d.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-detalhe.json",
   "ambiente_declarado": {},
-  "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+  "cabeca": "985c977dee92f5dfcabb6823d8ced49ea8753318",
   "codigo_executado": {
-    "cabeca_base": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+    "cabeca_base": "985c977dee92f5dfcabb6823d8ced49ea8753318",
     "arvore": "767396d6497b46d0e5dcea823fdc2f81ed3b764c",
     "tipo": "arvore_de_trabalho",
     "alterados": [

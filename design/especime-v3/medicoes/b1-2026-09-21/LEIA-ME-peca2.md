@@ -1,6 +1,6 @@
 # B1, segunda peça: os lugares
 
-Ramo: `b1-peca2-2026-09-21`, sobre `0cfd9832`. Doze commits, sem push. **Os três
+Ramo: `b1-peca2-2026-09-21`, sobre `082d6bb7`. Doze commits, sem push. **Os três
 portões correram na cabeça do código, `992fcd1d`, que é o décimo primeiro
 commit; o décimo segundo é este relatório com as capturas e as medições, e não
 toca em `src/`, em `scripts/`, em `tests/`, em `ledger/` nem em `vercel.json`.**
@@ -19,7 +19,7 @@ escrito à mão.
 | 5 | O inventário das frases destas famílias | 65 linhas retiradas com a razão, 14 apagadas por não se renderem em lado nenhum, 10 novas; `check:voz` a 0 com a lista fechada |
 
 **As capturas «antes»** foram tiradas pelo lugar de direção, de `main`
-(`97d2cbc`), e estão na mesma pasta com o seu guião e as suas medidas
+(`7899668`), e estão na mesma pasta com o seu guião e as suas medidas
 (`captar-antes-peca2.mjs`, `capturas-antes-peca2.json`): Évora, `/municipios`, a
 região do Alentejo e o distrito de Évora, a 390 e a 1 280, em português.
 
@@ -314,7 +314,7 @@ trailers.*
 
 ## O rebase sobre `main`
 
-`main` avançou para `97d2cbc6` (a correção dos nomes oficiais, `DECISIONS.md`
+`main` avançou para `7899668d` (a correção dos nomes oficiais, `DECISIONS.md`
 §1.115) enquanto a peça se construía. `git rebase main` aplicou onze dos doze
 commits sem conflito; o décimo primeiro parou num só ficheiro.
 
@@ -373,8 +373,8 @@ recibo na página do estudo, a um toque do título por cima.
 ## Os portões na cabeça final do código
 
 ```text
-Cabeça do código: 31fe90c421f9e1e0a47590b709b8ebd677ac56b0
-Ramo: b1-peca2-2026-09-21, sobre main 97d2cbc6
+Cabeça do código: 31278d9ea38cde4eb1c1c75294593003cbcff31b
+Ramo: b1-peca2-2026-09-21, sobre main 7899668d
 
 npm run build       Código: 0   16:22:28Z → 16:27:21Z   (4 m 53 s)
 npm run verify      Código: 0   16:37:40Z → 16:45:39Z   (7 m 59 s)
@@ -383,7 +383,7 @@ npm run typecheck   Código: 0   16:45:39Z → 16:45:39Z   (menos de 1 s)
 
 ## As capturas e as plantas
 
-As oito «antes», de `main` (`97d2cbc`), com o guião e as medidas do lugar de
+As oito «antes», de `main` (`7899668`), com o guião e as medidas do lugar de
 direção. As 56 «depois» refeitas nesta cabeça, mais as 32 de janela: **0 com
 deslocamento lateral, 0 valores partidos, 0 selos partidos, 0 separadores
 quebráveis, 0 selos sem `nowrap`**, 49 com valores selados.

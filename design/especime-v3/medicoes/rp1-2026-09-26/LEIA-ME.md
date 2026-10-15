@@ -93,7 +93,7 @@ A catraca de portas repetidas passou de 2291 páginas (`catraca_l1.contagens.ant
 
 ## Capturas e cópias congeladas
 
-O antes é da cabeça `38d3627894416097de26c52346c595c45a7b2884` (`capturas.antes.cabeca`), já com o commit do brief acima da base indicada no mandato. O depois é de `cb9571eaf7d043f8c91d9486aad34f97dee00e5d` (`capturas.depois.cabeca`).
+O antes é da cabeça `2a4ff50987b7c84735d44d82610d4fadfa28f985` (`capturas.antes.cabeca`), já com o commit do brief acima da base indicada no mandato. O depois é de `cb667aac9ff4fd8091088ab835384c6e942c9da0` (`capturas.depois.cabeca`).
 
 Foram guardadas 20 capturas de página antes (`capturas.antes.paginas`) e 20 depois (`capturas.depois.paginas`), nas larguras 390, 768, 1 024, 1 280, 1 600 px (`capturas.depois.larguras`), nas duas edições e nas páginas do país e dos temas. O depois tem ainda 32 recortes de cartões (`capturas.depois.recortes`).
 
@@ -104,20 +104,20 @@ As 4 páginas HTML congeladas (`paginas.depois.html`) e as 2 folhas de estilo (`
 Para o pacote de leitura a frio, incluir as cópias congeladas do bloco:
 
 ```sh
-PACOTE_EXTRA="design/especime-v3/medicoes/rp1-2026-09-26/capturas design/especime-v3/medicoes/rp1-2026-09-26/paginas-antes design/especime-v3/medicoes/rp1-2026-09-26/paginas-depois design/especime-v3/medicoes/l1-2026-09-24/paginas-depois design/especime-v3/medicoes/l1-2026-09-24/portoes/build.cabeca" bash scripts/leituras/pacote.sh . 334cc740 HEAD <temporario> design/observatorio/BRIEF-RP1-rendimentos-e-precos-os-cartoes.md design/especime-v3/medicoes/rp1-2026-09-26/LEIA-ME.md index.html temas/index.html en/index.html en/themes/index.html
+PACOTE_EXTRA="design/especime-v3/medicoes/rp1-2026-09-26/capturas design/especime-v3/medicoes/rp1-2026-09-26/paginas-antes design/especime-v3/medicoes/rp1-2026-09-26/paginas-depois design/especime-v3/medicoes/l1-2026-09-24/paginas-depois design/especime-v3/medicoes/l1-2026-09-24/portoes/build.cabeca" bash scripts/leituras/pacote.sh . eaffd3c8 HEAD <temporario> design/observatorio/BRIEF-RP1-rendimentos-e-precos-os-cartoes.md design/especime-v3/medicoes/rp1-2026-09-26/LEIA-ME.md index.html temas/index.html en/index.html en/themes/index.html
 ```
 
 A subpasta `motor/` do pacote conserva também o diff e os ficheiros mudados do motor, copiados da cabeça indicada no seu `INDICE.json`, com resumos dos corpos. O pacote é local e não é uma publicação.
 
 ## Commits, cabeça e portões
 
-Cabeça do código do sítio: `cb9571eaf7d043f8c91d9486aad34f97dee00e5d` (`cabeca_do_codigo`). Cabeça do motor: `6508b05849b1ea041d91e67339370a860a57f65b` (`cabeca_motor`). O commit final de entrega acrescenta as provas desta cabeça; não altera o código que os portões mediram.
+Cabeça do código do sítio: `cb667aac9ff4fd8091088ab835384c6e942c9da0` (`cabeca_do_codigo`). Cabeça do motor: `6508b05849b1ea041d91e67339370a860a57f65b` (`cabeca_motor`). O commit final de entrega acrescenta as provas desta cabeça; não altera o código que os portões mediram.
 
 A primeira corrida completa de `build`, na cabeça anterior, parou porque o portão de HTML ainda exigia réguas anuais. O portão foi estendido com recomposição independente e uma planta que conserva a proteção. Essa tentativa e o `typecheck` dessa cabeça estão em `portoes/preparacao-3b3dac48/`; os códigos abaixo pertencem à cabeça corrigida.
 
 - Sítio: `3b3dac4853565782996bc3e99f519404e3b17ea6 RP1: acrescentar os cartões confirmados pelas APIs`.
 - Sítio: `83fb702cff2ff297ea2c9024f8a854d2b56f287e RP1: completar as declarações e conservar as proteções dos portões`.
-- Sítio: `cb9571eaf7d043f8c91d9486aad34f97dee00e5d RP1: mostrar as origens das perguntas nos recibos`.
+- Sítio: `cb667aac9ff4fd8091088ab835384c6e942c9da0 RP1: mostrar as origens das perguntas nos recibos`.
 
 - Motor: `c42dab902afa3f7f693980745e3cecd7f8cb8a2e RP1: selar observações nacionais de rendimentos e preços`.
 - Motor: `372cbe1d9b57a9cde19fdb4f1843deeadd41704e RP1: conservar literal o excerto com bandeira do INE`.
@@ -129,9 +129,9 @@ Os commits do motor passaram pelo pre-commit instalado, que executa `python3 -m 
 
 | Portão | Código lido do ficheiro | Cabeça medida |
 |---|---|---|
-| `build` | 0 (`portoes.build.codigo`, lido de `portoes/build.codigo`) | `cb9571eaf7d043f8c91d9486aad34f97dee00e5d` |
-| `verify` | 0 (`portoes.verify.codigo`, lido de `portoes/verify.codigo`) | `cb9571eaf7d043f8c91d9486aad34f97dee00e5d` |
-| `typecheck` | 0 (`portoes.typecheck.codigo`, lido de `portoes/typecheck.codigo`) | `cb9571eaf7d043f8c91d9486aad34f97dee00e5d` |
+| `build` | 0 (`portoes.build.codigo`, lido de `portoes/build.codigo`) | `cb667aac9ff4fd8091088ab835384c6e942c9da0` |
+| `verify` | 0 (`portoes.verify.codigo`, lido de `portoes/verify.codigo`) | `cb667aac9ff4fd8091088ab835384c6e942c9da0` |
+| `typecheck` | 0 (`portoes.typecheck.codigo`, lido de `portoes/typecheck.codigo`) | `cb667aac9ff4fd8091088ab835384c6e942c9da0` |
 
 Cada comando correu separadamente; os ficheiros de código anteriores foram apagados antes da corrida final. As construções de preparação, destinadas às conferências tocadas pela mudança e às capturas iniciais, estão identificadas nos seus próprios registos.
 
@@ -216,23 +216,23 @@ Na I153, o navegador mediu 20 ressalvas nos recortes da remuneração. O espaço
 
 As capturas têm prefixo `rp1b-` e cobrem as larguras 390, 768, 1 024, 1 280, 1 600 px, nas duas edições, no país e nos temas. Os recortes cobrem cada medida nova e a remuneração em todas essas larguras. `capturas-rp1b-depois.json` contém as dimensões, o texto e os resumos; `inspecao-visual-rp1b.json` identifica as imagens abertas para inspeção.
 
-As cópias congeladas incluem 4 páginas HTML e 2 folhas de estilo (`rp1b.congeladas`), presas por sha256 em `paginas-depois/INDICE.json`. Cabeça do código e das capturas: `1819395a994791fdc77bed14a17ab3df844f4d6b`. Cabeça do motor: `d3f7a619bc46184847775b93c1b1a953e2777d3f`. O último commit entrega as provas sem mudar o código medido.
+As cópias congeladas incluem 4 páginas HTML e 2 folhas de estilo (`rp1b.congeladas`), presas por sha256 em `paginas-depois/INDICE.json`. Cabeça do código e das capturas: `f4e864c30de3ee931926c3d7a940ab8b2e6d3ff3`. Cabeça do motor: `d3f7a619bc46184847775b93c1b1a953e2777d3f`. O último commit entrega as provas sem mudar o código medido.
 
-- Projeto: `dfe368c27fbb869ab4cdfb4d9534055f8fad1414 RP1b: acrescentar quatro cartões e separar a bandeira provisória`.
-- Projeto: `0a6f3d19422f6d52c10a7c4f397fc7e2c08b1527 RP1b: conferir ressalvas nos temas e nas áreas`.
-- Projeto: `7d580742f511234ef6b80675c446966b3cfe36ab RP1b: preparar a medição e a entrega das provas`.
-- Projeto: `1819395a994791fdc77bed14a17ab3df844f4d6b RP1b: declarar a língua dos rótulos das fontes`.
+- Projeto: `38c12f6fade487f796bf181466591a8893b4ec4d RP1b: acrescentar quatro cartões e separar a bandeira provisória`.
+- Projeto: `ff1a307d791da4c88e07d8e1954c140da4f22cd5 RP1b: conferir ressalvas nos temas e nas áreas`.
+- Projeto: `7c80e3c17c31141b29c8dfc398826ace41f86ec5 RP1b: preparar a medição e a entrega das provas`.
+- Projeto: `f4e864c30de3ee931926c3d7a940ab8b2e6d3ff3 RP1b: declarar a língua dos rótulos das fontes`.
 - Motor: `d3f7a619bc46184847775b93c1b1a953e2777d3f RP1b: selar as classes do IPC e a comparação europeia do IHPC`.
 
 | Portão | Código lido do ficheiro | Cabeça medida |
 |---|---|---|
-| `build` | 0, de `portoes/rp1b/build.codigo` | `1819395a994791fdc77bed14a17ab3df844f4d6b` |
-| `verify` | 0, de `portoes/rp1b/verify.codigo` | `1819395a994791fdc77bed14a17ab3df844f4d6b` |
-| `typecheck` | 0, de `portoes/rp1b/typecheck.codigo` | `1819395a994791fdc77bed14a17ab3df844f4d6b` |
+| `build` | 0, de `portoes/rp1b/build.codigo` | `f4e864c30de3ee931926c3d7a940ab8b2e6d3ff3` |
+| `verify` | 0, de `portoes/rp1b/verify.codigo` | `f4e864c30de3ee931926c3d7a940ab8b2e6d3ff3` |
+| `typecheck` | 0, de `portoes/rp1b/typecheck.codigo` | `f4e864c30de3ee931926c3d7a940ab8b2e6d3ff3` |
 
 Os comandos completos correram separadamente, uma vez nesta cabeça. As conferências de preparação estão em `portoes/rp1b/preparacao/`. Os portões da primeira entrega ficaram intactos.
 
-A construção anterior terminou a 1 na cabeça `7d580742f511234ef6b80675c446966b3cfe36ab` (`rp1b.tentativa_build`), porque faltava declarar a língua dos dois rótulos publicados pelas fontes, embora a dos títulos já estivesse declarada. As línguas foram declaradas em `LINGUA_DOS_ROTULOS`, sem mudar os rótulos nem os valores. A saída recusada ficou em `portoes/rp1b/tentativa-1/`.
+A construção anterior terminou a 1 na cabeça `7c80e3c17c31141b29c8dfc398826ace41f86ec5` (`rp1b.tentativa_build`), porque faltava declarar a língua dos dois rótulos publicados pelas fontes, embora a dos títulos já estivesse declarada. As línguas foram declaradas em `LINGUA_DOS_ROTULOS`, sem mudar os rótulos nem os valores. A saída recusada ficou em `portoes/rp1b/tentativa-1/`.
 
 ### Custo e trabalho pendente
 
@@ -311,26 +311,26 @@ A referência da composição das portas é `design/especime-v3/medicoes/b2-2026
 
 Foram guardadas 20 capturas de página e 50 recortes, nas duas edições e nas larguras 390, 768, 1 024, 1 280, 1 600 px, com 0 falhas. Os recortes com prefixo `rp1c-` cobrem remuneração, pensão, RSI, alimentos e inflação. `capturas-rp1c-depois.json` guarda as medidas e os resumos; `inspecao-visual-rp1c.json` identifica as imagens abertas.
 
-Cabeça medida do projeto: `68215ae9a73910f59eb103c16961be52bd901fae`. Cabeça do motor: `4eb2867936dd14ad2654751722e390804e68dda3`. O `INDICE.json` das páginas congeladas aponta para a mesma cabeça dos portões.
+Cabeça medida do projeto: `a8a325258ca5c094e10d8640a6b10887b5339d74`. Cabeça do motor: `4eb2867936dd14ad2654751722e390804e68dda3`. O `INDICE.json` das páginas congeladas aponta para a mesma cabeça dos portões.
 
-- Projeto: `38d3627894416097de26c52346c595c45a7b2884 O brief do RP1, a primeira peça do tracker dos rendimentos e dos preços: treze cartões nacionais das APIs do INE e do Eurostat, com o §0 medido por guião sobre a cabeça 334cc740 e as cópias congeladas do L1, as leituras do lugar de direção na gramática do L1 ensaiadas a seco, e o guião do construtor do Codex`.
+- Projeto: `2a4ff50987b7c84735d44d82610d4fadfa28f985 O brief do RP1, a primeira peça do tracker dos rendimentos e dos preços: treze cartões nacionais das APIs do INE e do Eurostat, com o §0 medido por guião sobre a cabeça eaffd3c8 e as cópias congeladas do L1, as leituras do lugar de direção na gramática do L1 ensaiadas a seco, e o guião do construtor do Codex`.
 - Projeto: `3b3dac4853565782996bc3e99f519404e3b17ea6 RP1: acrescentar os cartões confirmados pelas APIs`.
 - Projeto: `83fb702cff2ff297ea2c9024f8a854d2b56f287e RP1: completar as declarações e conservar as proteções dos portões`.
-- Projeto: `cb9571eaf7d043f8c91d9486aad34f97dee00e5d RP1: mostrar as origens das perguntas nos recibos`.
-- Projeto: `9a8b14b49166f6519f5d9be5399831fb7e9b9b44 RP1: entregar as medições, capturas e provas das oito medidas seladas`.
-- Projeto: `92c7cf66ab1c7f69d0b6db73d4b5c27b1770136a RP1: concluir a entrega com as tabelas do relatório conferidas`.
-- Projeto: `ed5371ffc6881d7daafe2b164c8d0714b2138b6e RP1: a resposta do construtor do Codex à entrega das oito medidas seladas e das cinco paradas`.
-- Projeto: `5c92e5ea3fc9acb40c917dc55d9cc0480ead569f RP1b: a correção do brief (os códigos certos das quatro medidas paradas, conferidos nas APIs do INE e do Eurostat, e a variação real retirada), a segunda redação das leituras com os acertos aceites e duas emendas do lugar de direção, e o guião do construtor do Codex`.
-- Projeto: `dfe368c27fbb869ab4cdfb4d9534055f8fad1414 RP1b: acrescentar quatro cartões e separar a bandeira provisória`.
-- Projeto: `0a6f3d19422f6d52c10a7c4f397fc7e2c08b1527 RP1b: conferir ressalvas nos temas e nas áreas`.
-- Projeto: `7d580742f511234ef6b80675c446966b3cfe36ab RP1b: preparar a medição e a entrega das provas`.
-- Projeto: `1819395a994791fdc77bed14a17ab3df844f4d6b RP1b: declarar a língua dos rótulos das fontes`.
-- Projeto: `70f8ca74113b2ff0adbb55fc424f15686eed5a3b RP1b: entregar capturas, medições e relatório`.
-- Projeto: `42b3cadfb9806abd84ddf8235fdb50e5fdf621c2 RP1c: a leitura a frio do RP1 pelo Claude Opus 5.5 (cinco plantas em cinco, dezoito achados triados) com o registo das plantas, a terceira redação das leituras (o RSI e as pensões depois da leitura, o acerto dos lubrificantes fundido), o guião da passagem de correção para o Codex, e a resposta do construtor à peça RP1b`.
-- Projeto: `22bacd0cc4c97f60cf33cd26ecaa924adeb3dba1 RP1c: retirar caminhos da máquina dos registos do bloco`.
-- Projeto: `e222101650a85cf2ca756dc8232ce89d5a96d35c RP1c: provar a terceira redação e conservar os excertos das linhas`.
-- Projeto: `0f17a9c792271b288465fa0020f0fb2799299d4b RP1c: corrigir a ressalva, os nomes e a língua dos recibos`.
-- Projeto: `68215ae9a73910f59eb103c16961be52bd901fae RP1c: medir o expurgo e conferir a história completa da entrega`.
+- Projeto: `cb667aac9ff4fd8091088ab835384c6e942c9da0 RP1: mostrar as origens das perguntas nos recibos`.
+- Projeto: `cca425f6b85e818664a7024b4809bbfdf4099042 RP1: entregar as medições, capturas e provas das oito medidas seladas`.
+- Projeto: `d385dac74ba05a0680ac9a0d24254df28a0d7d90 RP1: concluir a entrega com as tabelas do relatório conferidas`.
+- Projeto: `f18703acbceb8955a4edbaef958c4d1a5b8ade69 RP1: a resposta do construtor do Codex à entrega das oito medidas seladas e das cinco paradas`.
+- Projeto: `6a57a2f066a585cb3e7c7985ee9c1d2241f24737 RP1b: a correção do brief (os códigos certos das quatro medidas paradas, conferidos nas APIs do INE e do Eurostat, e a variação real retirada), a segunda redação das leituras com os acertos aceites e duas emendas do lugar de direção, e o guião do construtor do Codex`.
+- Projeto: `38c12f6fade487f796bf181466591a8893b4ec4d RP1b: acrescentar quatro cartões e separar a bandeira provisória`.
+- Projeto: `ff1a307d791da4c88e07d8e1954c140da4f22cd5 RP1b: conferir ressalvas nos temas e nas áreas`.
+- Projeto: `7c80e3c17c31141b29c8dfc398826ace41f86ec5 RP1b: preparar a medição e a entrega das provas`.
+- Projeto: `f4e864c30de3ee931926c3d7a940ab8b2e6d3ff3 RP1b: declarar a língua dos rótulos das fontes`.
+- Projeto: `1a20a5098731842633eae8b2f82bedeb8ad3ee78 RP1b: entregar capturas, medições e relatório`.
+- Projeto: `d2de831b2257eafc2f058194a00fb5f17fe0c2ec RP1c: a leitura a frio do RP1 pelo Claude Opus 5.5 (cinco plantas em cinco, dezoito achados triados) com o registo das plantas, a terceira redação das leituras (o RSI e as pensões depois da leitura, o acerto dos lubrificantes fundido), o guião da passagem de correção para o Codex, e a resposta do construtor à peça RP1b`.
+- Projeto: `9fd1f5b62f2f01bfe187e2b63305d6cff2820cd5 RP1c: retirar caminhos da máquina dos registos do bloco`.
+- Projeto: `f929436246583edd436f2ba66aeab3f9d9405c54 RP1c: provar a terceira redação e conservar os excertos das linhas`.
+- Projeto: `03417a2349a2d3ba43e234c2c45f728f427b6106 RP1c: corrigir a ressalva, os nomes e a língua dos recibos`.
+- Projeto: `a8a325258ca5c094e10d8640a6b10887b5339d74 RP1c: medir o expurgo e conferir a história completa da entrega`.
 - Projeto: `HEAD RP1c: entregar as provas da passagem de correção`. Este é o commit que contém as provas; o pai é a cabeça medida acima.
 - Motor: `c42dab902afa3f7f693980745e3cecd7f8cb8a2e RP1: selar observações nacionais de rendimentos e preços`.
 - Motor: `372cbe1d9b57a9cde19fdb4f1843deeadd41704e RP1: conservar literal o excerto com bandeira do INE`.
@@ -340,9 +340,9 @@ Cabeça medida do projeto: `68215ae9a73910f59eb103c16961be52bd901fae`. Cabeça d
 
 | Portão | Código lido do ficheiro | Cabeça medida |
 |---|---|---|
-| `build` | 0, de `portoes/rp1c/build.codigo` | `68215ae9a73910f59eb103c16961be52bd901fae` |
-| `verify` | 0, de `portoes/rp1c/verify.codigo` | `68215ae9a73910f59eb103c16961be52bd901fae` |
-| `typecheck` | 0, de `portoes/rp1c/typecheck.codigo` | `68215ae9a73910f59eb103c16961be52bd901fae` |
+| `build` | 0, de `portoes/rp1c/build.codigo` | `a8a325258ca5c094e10d8640a6b10887b5339d74` |
+| `verify` | 0, de `portoes/rp1c/verify.codigo` | `a8a325258ca5c094e10d8640a6b10887b5339d74` |
+| `typecheck` | 0, de `portoes/rp1c/typecheck.codigo` | `a8a325258ca5c094e10d8640a6b10887b5339d74` |
 
 Cada portão completo correu no seu comando, uma vez nesta cabeça, com o código escrito de novo. As conferências de preparação estão na subpasta `preparacao/`. O último commit só entrega provas; `relatorio-rp1.py --verifica` confere a lista inteira contra o Git e recusa um commit de código posterior aos portões.
 

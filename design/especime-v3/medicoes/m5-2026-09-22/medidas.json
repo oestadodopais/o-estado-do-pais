@@ -1,5 +1,5 @@
 {
-  "cabeca": "d90e6d10c663ca42480e0f94b689ba6a086af00f",
+  "cabeca": "5eeac5d0132a17f3230f603cb22a204e40d3441b",
   "nome_de_quem_responde": {
     "onde_mora": "scripts/textos-aprovados.json",
     "sha256_do_oraculo": "2646f242c13deb68ee9e7cf54f16fc762d24a8505ab6d574f4bcacbd437bf9ca",
@@ -95,7 +95,7 @@
       "codigo": "0",
       "inicio": "2026-09-22T16:16:20Z",
       "fim": "2026-09-22T16:21:01Z",
-      "cabeca": "d90e6d10c663ca42480e0f94b689ba6a086af00f",
+      "cabeca": "5eeac5d0132a17f3230f603cb22a204e40d3441b",
       "segundos": 281,
       "minutos": 4,
       "segundos_restantes": 41
@@ -104,7 +104,7 @@
       "codigo": "0",
       "inicio": "2026-09-22T16:21:01Z",
       "fim": "2026-09-22T16:28:44Z",
-      "cabeca": "d90e6d10c663ca42480e0f94b689ba6a086af00f",
+      "cabeca": "5eeac5d0132a17f3230f603cb22a204e40d3441b",
       "segundos": 463,
       "minutos": 7,
       "segundos_restantes": 43
@@ -113,7 +113,7 @@
       "codigo": "0",
       "inicio": "2026-09-22T16:28:44Z",
       "fim": "2026-09-22T16:28:44Z",
-      "cabeca": "d90e6d10c663ca42480e0f94b689ba6a086af00f",
+      "cabeca": "5eeac5d0132a17f3230f603cb22a204e40d3441b",
       "segundos": 0,
       "minutos": 0,
       "segundos_restantes": 0

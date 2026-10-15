@@ -1,7 +1,7 @@
 {
   "comando": "node design/especime-v3/medicoes/jd1-2026-10-06/medir-l1.mjs --write",
-  "cabeca": "d547393594f948aacec960aadc4a4d4ce3775c90",
-  "construcao": "d547393594f948aacec960aadc4a4d4ce3775c90",
+  "cabeca": "acacca9729be3e7f774a08669c71545ede265c30",
+  "construcao": "acacca9729be3e7f774a08669c71545ede265c30",
   "base": "design/especime-v3/medicoes/ex1-2026-10-05/fusao/l1-destinos-e0ad595d.json",
   "contagem": "design/especime-v3/medicoes/jd1-2026-10-06/l1-destinos.json",
   "contagens": {

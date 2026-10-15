@@ -1,8 +1,8 @@
 A passagem **N1b**: retomas a mesma sessão para fechar o N1. As regras são as de sempre: caminhos explícitos; nenhum `push`; uma construção de cada vez na máquina; os trailers `Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>` e `Claude-Session: https://claude.ai/code/session_019Dr4reeqSo5uscMFC16k9g`; nenhum caminho da máquina nem o nome do utilizador em ficheiro nenhum.
 
-Duas coisas mudaram no ramo desde a tua última mensagem: o lugar de direção juntou uma nota ao §5 do brief (a secção dos preços tem seis medidas, e são as seis, como as puseste: `c0cbc79b`), e os teus registos dos portões da cabeça `70ebf9b6`, o relatório, o `medidas.json` e o `custo.json` ficaram por registar na árvore de trabalho. Faz, por esta ordem:
+Duas coisas mudaram no ramo desde a tua última mensagem: o lugar de direção juntou uma nota ao §5 do brief (a secção dos preços tem seis medidas, e são as seis, como as puseste: `940e8b0e`), e os teus registos dos portões da cabeça `6af7d581`, o relatório, o `medidas.json` e o `custo.json` ficaram por registar na árvore de trabalho. Faz, por esta ordem:
 
-**1 · Regista o que ficou por registar**, tal como está, num commit próprio: são os portões da cabeça `70ebf9b6` e o relatório dessa altura.
+**1 · Regista o que ficou por registar**, tal como está, num commit próprio: são os portões da cabeça `6af7d581` e o relatório dessa altura.
 
 **2 · O ponto 5, com a decisão do lugar de direção.** Paraste bem: o contador das correções publicadas é outro número, e não se muda por conta própria. A decisão: as duas linhas do desemprego de Portugal levam uma correção (`kind: correcao`), com a razão que já escreveste (repõe-se a casa decimal que o excerto da fonte escreve, sem mudar a quantidade nem alegar uma revisão da fonte), e a correção publica-se na página das correções como as outras três; a linha derivada `correcoes-publicadas` passa de três para cinco, porque é calculada a partir das correções e o seu recibo di-lo, e a sua história selada regista a passagem. Se o mecanismo da linha derivada exigir mais alguma coisa que o brief não previu, dizes o quê e paras nesse ponto.
 

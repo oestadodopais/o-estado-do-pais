@@ -1103,7 +1103,7 @@ check-datas · 25 edição(ões) datadas, 88 data(s) impressa(s) em 44 página(s
 > o-estado-do-pais@0.1.0 check:cabeca
 > node tests/inicio/hierarquia-b2.mjs
 
-check:cabeca C1; construção 335e0ef048e078eb5e3d0eea502d026f0c5d9a29; 110 cabeças; 4 mordidas; 10 reposições
+check:cabeca C1; construção 50b2eeec7ff7510a25b3c3a4c1fe93141ad0a60e; 110 cabeças; 4 mordidas; 10 reposições
 check:cabeca: PASS
 
 > o-estado-do-pais@0.1.0 check:fontes

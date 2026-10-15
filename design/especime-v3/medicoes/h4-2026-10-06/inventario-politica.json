@@ -1,6 +1,6 @@
 {
   "comando": "node design/especime-v3/medicoes/h4-2026-10-06/inventario-politica.mjs",
-  "base": "207d7134",
+  "base": "4970eab9",
   "retiradas": [
     "São quatro lugares, e a verificação é sempre de outra família de modelos:",
     "A construção constrói o sítio, e verifica lotes na fonte.",

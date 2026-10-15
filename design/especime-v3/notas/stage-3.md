@@ -1,6 +1,6 @@
 # Nota da etapa 3 · a família do livro-razão e a página do concelho
 
-*Construtor C (Claude Opus). Ramo `redesenho-v3`, a partir de `df76a5f`. Brief:
+*Construtor C (Claude Opus). Ramo `redesenho-v3`, a partir de `175e83b`. Brief:
 `../briefs/BRIEF-etapa-3.md`, com as doze decisões da direção de 21.08.2026 na
 sua §2b. Escrita a cada checkpoint, antes da auditoria, para que um corte de
 sessão custe uma subetapa. Sem travessões, por escolha deste documento.*
@@ -131,7 +131,7 @@ detecta uma moldura de quatro lados como «`border` nos quatro lados» **ou**
 sombra: «rgb(217, 221, 216) 1px 0px 0px 0px, rgb(217, 221, 216) 0px 1px 0px 0px, rgb(217, 221, 216) 1px 1px 0px 0px»
 ```
 
-**Controlo positivo do detector**, sobre a construção de referência `df76a5f`,
+**Controlo positivo do detector**, sobre a construção de referência `175e83b`,
 onde o anel existe: `34 com anel` a 768, 1024 e 1280, `0` a 320 e 390 (onde a
 peça já era uma fila com fio de baixo). O detector encontra o que existe.
 
@@ -256,7 +256,7 @@ Revertido; `git diff --stat src/views/LivroView.astro` vazio.
 
 ### 1.7 · As réguas do commit 3-0
 
-| régua | antes (`df76a5f`) | depois (3-0) |
+| régua | antes (`175e83b`) | depois (3-0) |
 |---|---|---|
 | páginas construídas | 307 | 307 |
 | porta de correções | 307/307 | 307/307 |
@@ -275,7 +275,7 @@ As frases de moldura não mexeram, e é o esperado: a linha das parcelas leva
 rótulos de menos de 30 carácteres, e a frase que saiu de Évora aparecia numa
 página só.
 
-**A régua da invariância**, contra a construção de referência de `df76a5f`
+**A régua da invariância**, contra a construção de referência de `175e83b`
 (`git worktree add --detach`, `node_modules` por ligação simbólica, `npm run
 build` verde):
 
@@ -493,7 +493,7 @@ aparelho (`CSV`, `JSON`, «Esta linha noutro sítio», «Esta linha na edição 
 
 ```
 node tests/linha/recibo.mjs   →  9 de 9 células passam
-node scripts/medir-invariancia.mjs <ref df76a5f> dist
+node scripts/medir-invariancia.mjs <ref 175e83b> dist
    322 rotas · 54 idênticas · 268 com diferenças
      264 páginas de linha        +4 −0 em todas
        2 índices dos concelhos   +21 −0   (do commit 3-0)
@@ -615,7 +615,7 @@ português e **21px** em inglês, contra **0** na referência. Fechado com
 
 ```
 node tests/linha/recibo.mjs   →  13 de 13 células passam
-node scripts/medir-invariancia.mjs <ref df76a5f> dist
+node scripts/medir-invariancia.mjs <ref 175e83b> dist
    322 rotas · 52 idênticas · 270 com diferenças
      264 páginas de linha        +4 −0 em todas
        2 índices do livro-razão  +460 −3 (pt) · +467 −3 (en)
@@ -848,7 +848,7 @@ npm run build / npm run verify       →  cinco portões verdes
 
 ## 6. As réguas da etapa, e a invariância
 
-| régua | base (`df76a5f`) | depois da 3d |
+| régua | base (`175e83b`) | depois da 3d |
 |---|---|---|
 | páginas construídas | 307 | 307 |
 | porta de correções | 307/307 | 307/307 |
@@ -874,7 +874,7 @@ acréscimo **não foi feita**, e vai dito em vez de suposto.
 não da página: a medida 8 passou a excluir `[data-cobertura]` na 3c (ISSUES I43).
 A autorreferência continua em 0, que é o alvo.
 
-**A invariância**, contra a construção de referência de `df76a5f` (`git worktree
+**A invariância**, contra a construção de referência de `175e83b` (`git worktree
 add --detach`, `node_modules` por ligação simbólica, `npm run build` verde):
 
 ```
@@ -945,5 +945,5 @@ esta nota. Duas leituras de apoio correram em subagentes (Explore) sobre a
 `DECISIONS.md` §1.47 a §1.49 e §4, e sobre as notas das etapas 1 e 2 com os
 componentes que esta etapa consome; nenhum deles escreveu um byte do repositório.
 
-Cinco commits: `f816e04` (3-0), `0790ba7` (3a), `c6f4d46` (3b), `e02e2fe` (3c) e
+Cinco commits: `8c6d06c` (3-0), `c96ccd4` (3a), `8b171c4` (3b), `b21a125` (3c) e
 o desta subetapa. A conta de tokens está no relatório da sessão.

@@ -1,8 +1,8 @@
 {
   "comando": "node design/especime-v3/medicoes/ex2-2026-10-06/captar-ex2.mjs",
-  "cabeca": "0b456c3c7aaa0b4aa6ee753950d38e9caad6860f",
+  "cabeca": "26ef6256f97e185c42f5ba127660af88b0f471cb",
   "versao": {
-    "commit": "0b456c3c7aaa0b4aa6ee753950d38e9caad6860f",
+    "commit": "26ef6256f97e185c42f5ba127660af88b0f471cb",
     "ref": "ex2-2026-10-06",
     "env": "local",
     "origem": "git",

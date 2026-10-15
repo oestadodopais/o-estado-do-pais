@@ -536,7 +536,7 @@
     {
       "nome": "entradas_da_tabela_dos_lugares_na_base",
       "valor": 5,
-      "comando": "git show 3a253f73:src/data/lugar-das-linhas.mjs · as chaves",
+      "comando": "git show 520a02d6:src/data/lugar-das-linhas.mjs · as chaves",
       "conhecido_positivo": {
         "o_que": "a dívida das famílias da União já lá estava",
         "encontrado": true
@@ -608,7 +608,7 @@
     {
       "nome": "das_nove_com_cadeia_do_excerto_na_base",
       "valor": 6,
-      "comando": "git show 3a253f73:ledger/claims/<as nove>.yml · uma entrada proveniencia sobre excerpt",
+      "comando": "git show 520a02d6:ledger/claims/<as nove>.yml · uma entrada proveniencia sobre excerpt",
       "conhecido_positivo": {
         "o_que": "o custo unitário do trabalho de 2024 tinha-a",
         "encontrado": true
@@ -671,7 +671,7 @@
     {
       "nome": "revisoes_de_proveniencia_no_livro_na_base",
       "valor": 54,
-      "comando": "git show 3a253f73:ledger/claims/<linha>.yml · as entradas de corrections com kind proveniencia",
+      "comando": "git show 520a02d6:ledger/claims/<linha>.yml · as entradas de corrections com kind proveniencia",
       "conhecido_positivo": {
         "o_que": "a dívida das famílias da União tem uma na base",
         "encontrado": true

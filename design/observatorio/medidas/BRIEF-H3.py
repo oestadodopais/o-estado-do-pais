@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """O §0 do brief H3 (a passagem de higiene de 05.10.2026: a caixa das sugestões pelo padrão dos sítios oficiais, a porta
-«Europa» do menu, os países sobrepostos nas faixas), medido sobre a cabeça presa do sítio (40f0cb58). Lê só o repositório,
+«Europa» do menu, os países sobrepostos nas faixas), medido sobre a cabeça presa do sítio (5c3c4af8). Lê só o repositório,
 pela cabeça presa (`git show`), nunca a árvore de trabalho (§1.153). Escreve design/observatorio/medidas/BRIEF-H3.json
 (ou o caminho em OEDP_MEDIDAS_JSON). Cada medição leva o comando e um conhecido-positivo; o que não conseguir ler fica «NÃO LIDO»."""
 import json, os, pathlib, re, subprocess, collections
 
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "40f0cb58"
+CAB = "5c3c4af8"
 NAO = "NÃO LIDO"
 medidas = []
 

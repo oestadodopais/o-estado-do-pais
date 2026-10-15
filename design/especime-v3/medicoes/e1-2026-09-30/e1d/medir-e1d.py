@@ -30,7 +30,7 @@ if not os.environ.get("OEDP_MOTOR"):
 MOTOR = Path(os.environ["OEDP_MOTOR"]).resolve()
 DIST = Path(os.environ["OEDP_DIST"]).resolve() if os.environ.get("OEDP_DIST") else SITIO / "dist"
 ALVO = Path(os.environ["OEDP_MEDIDAS_JSON"]) if os.environ.get("OEDP_MEDIDAS_JSON") else PASTA / "medidas.json"
-CABECA_E1C_SITIO = "e986468d"
+CABECA_E1C_SITIO = "10fc47e8"
 CABECA_E1C_MOTOR = "932eaee"
 MEDIDAS = []
 
@@ -143,7 +143,7 @@ def medir_regiao():
     certo = all(v["sai_motor_agora"] == 0 and v["sai_documento_agora"] == 0 and v["entra_motor"] == 1 and v["entra_documento"] == 1 for v in r.values())
     medida("regiao_e1d", {"edicoes": r, "certo": certo},
            "git show <cabeça>:<edição .md> no motor (na cabeça e na da E1c, 932eaee) e o texto visível do documento alojado no sítio "
-           "(na árvore e na cabeça da E1c, e986468d), contadas a frase que sai e a que entra",
+           "(na árvore e na cabeça da E1c, 10fc47e8), contadas a frase que sai e a que entra",
            {"descricao": "a frase que sai estava no motor e no documento alojado na E1c (o mesmo detetor vê-a lá)", "mordeu": antes_ok})
 
 

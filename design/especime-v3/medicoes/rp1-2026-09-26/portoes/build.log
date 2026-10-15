@@ -10588,7 +10588,7 @@
 > node scripts/stamp-version.mjs
 
 
-[90m  versão · cb9571e (rp1-2026-09-26, git)[0m
+[90m  versão · cb667aa (rp1-2026-09-26, git)[0m
 
 > o-estado-do-pais@0.1.0 cartoes
 > node scripts/cartoes.mjs

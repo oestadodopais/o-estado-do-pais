@@ -2,7 +2,7 @@
   "comando": "python3 <medicoes>/medir_entrega.py --motor <motor> --provas",
   "motor_cabeca": "f8e07849f57270bd4d3256ccfffde185196f7823",
   "motor_codigo": "f8e07849f57270bd4d3256ccfffde185196f7823",
-  "sitio_codigo": "142adfa9ec91d8624259d088bc1eff121dff87c0",
+  "sitio_codigo": "6ada3b6beadc30305c8877db4cc1b7df34d1caef",
   "entradas_por_fonte": {
     "dar": 306,
     "iniciativas": 0,

@@ -14,7 +14,7 @@ import yaml
 AQUI=Path(__file__).resolve().parent
 BLOCO=AQUI.parent
 SITIO=AQUI.parents[4]
-BASE='5c862efb38055965618a9d29f26ac12a25ac99eb'
+BASE='938b500d1d0de522b62d68e294ffe01c2993b56a'
 BASE_MOTOR='1af04566898ddfc2c5244c55c7f229b1c287fee2'
 def git(*args,repo=SITIO):return subprocess.check_output(['git',*args],cwd=repo,text=True).strip()
 def ler(p):return json.loads(p.read_text())
@@ -26,7 +26,7 @@ def medir(motor,final):
     spec=importlib.util.spec_from_file_location('detetor_c1',BLOCO/'medir-c1.py')
     detetor=importlib.util.module_from_spec(spec);spec.loader.exec_module(detetor)
     achados=[];total=0
-    for rot,repo,base in [('sítio',SITIO,'48a5a1c181c1753036d301204884c57119bba8a5'),('motor',motor,'4eb2867936dd14ad2654751722e390804e68dda3')]:
+    for rot,repo,base in [('sítio',SITIO,'7028e733f8bb4de7bf65f1bb76546304ba1e6db4'),('motor',motor,'4eb2867936dd14ad2654751722e390804e68dda3')]:
         nomes=set(git('diff','--name-only',base,repo=repo).splitlines())|set(git('ls-files','--others','--exclude-standard',repo=repo).splitlines())
         if rot=='sítio':
             nomes={n for n in nomes if n.startswith(('src/','scripts/','tests/','ledger/',str(BLOCO.relative_to(SITIO))+'/')) or n in ('design/especime-v3/INVENTARIO-FRASES.md','design/especime-v3/ISSUES.md','design/especime-v3/critica/REVISOES-DO-INVENTARIO.md')}
@@ -91,7 +91,7 @@ def medir(motor,final):
             cabeça=portoes['build']['cabeca']
             exige(dist!=cabeça,'A construção bloqueada foi contornada.')
             exige(all(f.startswith(str(BLOCO.relative_to(SITIO))+'/') for f in git('diff','--name-only',cabeça,'HEAD').splitlines()),'Mudou código depois dos portões.')
-    commits={rot:[dict(zip(('hash','assunto'),x.split(' ',1))) for x in git('log','--reverse','--format=%H %s',base+'..HEAD',repo=repo).splitlines()] for rot,repo,base in [('sitio',SITIO,'48a5a1c181c1753036d301204884c57119bba8a5'),('motor',motor,'4eb2867936dd14ad2654751722e390804e68dda3')]}
+    commits={rot:[dict(zip(('hash','assunto'),x.split(' ',1))) for x in git('log','--reverse','--format=%H %s',base+'..HEAD',repo=repo).splitlines()] for rot,repo,base in [('sitio',SITIO,'7028e733f8bb4de7bf65f1bb76546304ba1e6db4'),('motor',motor,'4eb2867936dd14ad2654751722e390804e68dda3')]}
     return {'base':BASE,'base_motor':BASE_MOTOR,'cabeca_sitio':git('rev-parse','HEAD'),'cabeca_motor':git('rev-parse','HEAD',repo=motor),'commits':commits,'linhas_conferidas':n,'linhas_alteradas':mudancas,'valores_alterados':0,'protegidos_motor_alterados':protegidos,'portoes':portoes,'motor':motor_gate,'caminhos':caminhos,'provas':provas,'capturas':{'estado':'por fazer, construção parada pela história do PRR','dist_anterior':dist,'recibos_a_captar':recibos,'quantidade_de_recibos':len(recibos),'edicoes':['pt','en'],'larguras':[390,768,1024,1280,1600],'evora':'o traço do início desconhecido precisa de captura nas duas edições'},'aceitacao_integral':False,'paragem':'16 entradas de proveniência anteriores ao acesso em vigor nas cinco linhas do PRR','erros_da_medicao':erros}
 if __name__=='__main__':
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--motor',required=True,type=Path);ap.add_argument('--final',action='store_true');ap.add_argument('--verifica',action='store_true');args=ap.parse_args()

@@ -6,7 +6,7 @@
 
 O que está no brief §1, com a emenda de hoje: `indicators/refresh.py` a receber os caminhos por parâmetro, a cobrir as linhas dos concelhos, a pedir com validadores (`If-None-Match`, `If-Modified-Since`) e a tratar o `304` como conferência sem descarga, a aceitar `--so-devidas` (o calendário decide que fontes se pedem) e `--so-conferir` (o piloto não publica valores novos), a reler os calendários do INE e do Eurostat uma vez por semana, e a escrever o arquivo (`indice.jsonl` e os ficheiros por sha256); os dois fluxos (`corredor.yml` com as duas horas e o `workflow_dispatch`; `vigia.yml` com o homem morto); o vintage zero do arquivo; e, no sítio, a frase do cabeçalho com a conferência real, as três datas no recibo de cada linha e o estado da fonte no selo. O que fica de fora está no brief §2 e não se discute aqui.
 
-O livro-razão do sítio tem hoje 2 916 linhas (as 314 do primeiro domínio entraram a 01.09, `787b474`); o corredor cobre todas as que têm endereço de máquina, e o relatório diz quantas são e quantas não têm.
+O livro-razão do sítio tem hoje 2 916 linhas (as 314 do primeiro domínio entraram a 01.09, `1c1d847`); o corredor cobre todas as que têm endereço de máquina, e o relatório diz quantas são e quantas não têm.
 
 ## 2 · Onde
 

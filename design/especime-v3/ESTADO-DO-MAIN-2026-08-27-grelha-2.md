@@ -1,6 +1,6 @@
 # O estado de `main` depois da segunda passagem da grelha (27.08.2026, noite)
 
-*Escrito pelo lugar de direção (Claude Fable 5). O ramo `grelha-2-2026-08-27` saiu de `main` `3d65716` e está verde: construção com `check:voz` e `check:mapa`, `verify`, `typecheck`, a matriz (88 de 88), `mapa-distritos` (43 células). Lido de olhos frescos pelo Codex sobre o diff do inventário e as primeiras páginas, com três plantas. A §1.73 do `DECISIONS.md` é o registo.*
+*Escrito pelo lugar de direção (Claude Fable 5). O ramo `grelha-2-2026-08-27` saiu de `main` `45e9b3a` e está verde: construção com `check:voz` e `check:mapa`, `verify`, `typecheck`, a matriz (88 de 88), `mapa-distritos` (43 células). Lido de olhos frescos pelo Codex sobre o diff do inventário e as primeiras páginas, com três plantas. A §1.73 do `DECISIONS.md` é o registo.*
 
 ## O que muda no ar
 

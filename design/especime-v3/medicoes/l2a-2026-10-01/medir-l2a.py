@@ -47,7 +47,7 @@ medicao("pecas_de_lugares_antes_do_mapa", ordem.index("mapa") if "mapa" in ordem
 
 b = json.loads(ler(SITIO / "design/observatorio/medidas/BRIEF-L2a.json") or "{}")
 antes = next((x["valor"] for x in b.get("medidas", []) if x["nome"] == "pecas_de_lugares_antes_do_mapa"), NAO)
-medicao("pecas_de_lugares_antes_do_mapa_no_brief", antes, "design/observatorio/medidas/BRIEF-L2a.json, a medida pecas_de_lugares_antes_do_mapa (o §0 do brief, na cabeça 1395c9de)",
+medicao("pecas_de_lugares_antes_do_mapa_no_brief", antes, "design/observatorio/medidas/BRIEF-L2a.json, a medida pecas_de_lugares_antes_do_mapa (o §0 do brief, na cabeça f744d46c)",
         "o ficheiro do brief nomeia a cabeça que leu", bool(b.get("cabeca_lida")))
 r = subprocess.run(["node", "-e", "import('./src/data/carta-dos-lugares.mjs').then(m=>{const L=m.lugaresDaCarta();console.log(JSON.stringify({n:L.length,evora:L.some(x=>x.nome==='Évora')}))})"],
                    cwd=str(SITIO), capture_output=True, text=True)
@@ -223,7 +223,7 @@ medicao("l2a_b_plantas_do_check_mapa_mordidas", vb.count("vermelho ✓"), "desig
         "o registo traz a planta que move a legenda", "movida para o fim do <main>" in vb)
 va = ler(PASTA / "l2a-b/r6-antiga-com-a-planta-nova.txt") or ""
 medicao("l2a_b_r6_antiga_nao_apanha_a_legenda_movida", va.count("NÃO APANHOU ✗  R6 (a menção longe do mapa)"),
-        "design/especime-v3/medicoes/l2a-2026-10-01/l2a-b/r6-antiga-com-a-planta-nova.txt (a R6 de 219dbefb com a planta nova)",
+        "design/especime-v3/medicoes/l2a-2026-10-01/l2a-b/r6-antiga-com-a-planta-nova.txt (a R6 de de17b143 com a planta nova)",
         "o registo traz a linha das outras plantas da R6", "R6 (a menção)" in va)
 cb = (ler(PASTA / "portoes/l2a-b/cabeca") or "").strip()
 for g in ["build", "verify", "typecheck"]:

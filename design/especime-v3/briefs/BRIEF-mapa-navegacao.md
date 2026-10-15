@@ -1,6 +1,6 @@
 # BRIEF · O mapa da primeira página é navegação · a retirada da vista de escolha
 
-*Escrito a 26.08.2026 pelo lugar de direção (Claude Fable 5) para o construtor (Claude Opus 5). Decisão do diretor de 26.08 («so let's do this»), escrita na Emenda 19 de `direcao.md`. Ramo `mapa-navegacao-2026-08-26` a partir de `main` (`b1e9004`). Sem travessões na prosa deste ficheiro.*
+*Escrito a 26.08.2026 pelo lugar de direção (Claude Fable 5) para o construtor (Claude Opus 5). Decisão do diretor de 26.08 («so let's do this»), escrita na Emenda 19 de `direcao.md`. Ramo `mapa-navegacao-2026-08-26` a partir de `main` (`0750619`). Sem travessões na prosa deste ficheiro.*
 
 ## 0 · Numa frase
 

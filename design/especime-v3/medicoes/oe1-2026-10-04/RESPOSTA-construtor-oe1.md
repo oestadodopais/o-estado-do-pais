@@ -2,15 +2,15 @@
 
 As correções estão construídas e verificadas. O OE1 integral mantém as lacunas de fonte.
 
-Motor `38457b2723c47ea126984be6c5c1f778967e6847`, sobre master `47f12e15c927bf238522ac680b1f54c9de29f55d`. Sítio, código `f5549dc8be22f4e936d62fbdfe4eac94b538db97`, sobre main `f27aa38a0939d11908863afe6ee117da03404f5f`, ramo oe1-2026-10-04-b. O commit que contém esta resposta é o último commit só de provas; o seu pai é a cabeça de código ensaiada. Nenhum push.
+Motor `38457b2723c47ea126984be6c5c1f778967e6847`, sobre master `47f12e15c927bf238522ac680b1f54c9de29f55d`. Sítio, código `9dae3dd81bc2a95640727c40ed0b85b5e340b209`, sobre main `fbc95422116917dea6acf43557d03cf99926e866`, ramo oe1-2026-10-04-b. O commit que contém esta resposta é o último commit só de provas; o seu pai é a cabeça de código ensaiada. Nenhum push.
 
 | Portão | Código lido | Cabeça da corrida |
 |---|---|---|
 | motor | [0](portoes/motor.codigo) | `38457b2723c47ea126984be6c5c1f778967e6847` |
-| ledger | [0](portoes/ledger.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
-| build | [0](portoes/build.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
-| verify | [0](portoes/verify.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
-| typecheck | [0](portoes/typecheck.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
+| ledger | [0](portoes/ledger.codigo) | `9dae3dd81bc2a95640727c40ed0b85b5e340b209` |
+| build | [0](portoes/build.codigo) | `9dae3dd81bc2a95640727c40ed0b85b5e340b209` |
+| verify | [0](portoes/verify.codigo) | `9dae3dd81bc2a95640727c40ed0b85b5e340b209` |
+| typecheck | [0](portoes/typecheck.codigo) | `9dae3dd81bc2a95640727c40ed0b85b5e340b209` |
 
 | Família | Linhas | Com ressalva | Sem ressalva | Razão |
 |---|---:|---:|---:|---|

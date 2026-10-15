@@ -12,7 +12,7 @@ provas=[]
 for b in json.loads((AQUI.parent/'c1c/bandeiras.json').read_text())['linhas']:
  if b['id']=='divida-das-familias-2025-ue': continue
  p=RAIZ/'ledger/claims'/f'{b["id"]}.yml'; texto=p.read_text(); d=yaml.safe_load(texto)
- antigo=yaml.safe_load(subprocess.check_output(['git','show',f'b7f352ce:ledger/claims/{b["id"]}.yml'],cwd=RAIZ,text=True))
+ antigo=yaml.safe_load(subprocess.check_output(['git','show',f'472d1a43:ledger/claims/{b["id"]}.yml'],cwd=RAIZ,text=True))
  entrada={'date':'2026-09-28','kind':'proveniencia','field':'excerpt','old_value':antigo['excerpt'],'new_value':d['excerpt'],'reason':MOTIVO,'reason_en':MOTIVO_EN}
  assert antigo['value']==d['value'] and antigo['access_date']==d['access_date']
  assert antigo['excerpt']!=d['excerpt'] and d['source_flag']==b['flag']

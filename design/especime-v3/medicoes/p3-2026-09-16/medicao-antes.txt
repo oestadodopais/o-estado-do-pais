@@ -1,4 +1,4 @@
-# A medição do dist/ de 796c9032, antes do bloco (16.09.2026)
+# A medição do dist/ de fab09477, antes do bloco (16.09.2026)
 #
 # AVISO, e é preciso: as duas últimas famílias de linhas («a casa» e as palavras
 # proibidas) foram contadas AQUI por subcadeia sobre o texto do corpo, sem tirar

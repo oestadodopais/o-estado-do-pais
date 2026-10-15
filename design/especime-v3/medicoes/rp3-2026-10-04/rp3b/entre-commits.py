@@ -24,7 +24,7 @@ CORRIDAS = [
     ("check:mortos", "node scripts/check-mortos.mjs --prova", "rp3b-mortos-1.codigo", "a147d48f"),
     ("check:series com o motor ao lado", "RESEARCHHUB_DIR=<motor> node tests/series/series.mjs --prova", "rp3b-series-4.codigo", "23fc9c5e"),
     ("check:series sem o motor", "node tests/series/series.mjs --prova", "rp3b-series-4b.codigo", "23fc9c5e"),
-    ("ledger:check no ramo rebaseado", "npm run ledger:check", None, "b3e9e0ac"),
+    ("ledger:check no ramo rebaseado", "npm run ledger:check", None, "dbaab37d"),
 ]
 saida = []
 for nome, comando, ficheiro, antes_de in CORRIDAS:

@@ -10,7 +10,7 @@ caracteres que têm.*
 ## P1 · a travessia dos registos de conteúdo
 
 *Construtor: Claude Opus 5 (`claude-opus-5[1m]`). Sítio: ramo
-`parte3-2026-08-24`, a partir de `8d724f2`. Motor: `master`, a partir de
+`parte3-2026-08-24`, a partir de `a316ca3`. Motor: `master`, a partir de
 `cbaf7ca`. Brief: `../briefs/BRIEF-parte3-P1.md`, com a §1 da
 `../ESTIMATIVA-PARTE3-2026-08-24.md` como contrato e as onze decisões de
 `../ESTADO-DO-MAIN-2026-08-24.md` fechadas.*
@@ -20,10 +20,10 @@ caracteres que têm.*
 | repositório | commit | o quê |
 |---|---|---|
 | motor | `d64a4d2` | `publisher/export_records_site.py`, os oito conhecidos-positivos, o registo em `core/gate.py` e a secção nova do `publisher/REGISTOS.md` |
-| sítio | `15063b2` | `registos/`: os oito registos, os oito ficheiros de operações, o `manifest.json` e o `README.md` |
-| sítio | `4e8981b` | as seis conferências D1 a D6 e o modo `--with-origin` no `scripts/check-documentos.mjs` |
-| sítio | `23385a1` | `src/lib/registos.mjs`, o leitor, para a P2 usar |
-| sítio | `b61fa96` | o registo: `DECISIONS.md` §1.64, o `README.md`, esta nota e a `ISSUES.md` |
+| sítio | `dd05d96` | `registos/`: os oito registos, os oito ficheiros de operações, o `manifest.json` e o `README.md` |
+| sítio | `34ab03f` | as seis conferências D1 a D6 e o modo `--with-origin` no `scripts/check-documentos.mjs` |
+| sítio | `82b2f04` | `src/lib/registos.mjs`, o leitor, para a P2 usar |
+| sítio | `758ea4e` | o registo: `DECISIONS.md` §1.64, o `README.md`, esta nota e a `ISSUES.md` |
 | sítio | (este) | o relatório do portão passa a nomear os oito registos, um por linha, com o veredicto do D5 na cauda; as seis plantas repetidas sobre o portão mudado |
 
 ### O que atravessou, medido
@@ -160,10 +160,10 @@ a nona origem é a `DECISIONS.md` §2.2 item 9.*
 
 | repositório | commit | o quê |
 |---|---|---|
-| sítio | `581d9dd` | `src/lib/eyetext.mjs`, a leitura do olho portada, e `scripts/provar-eyetext.mjs`, as suas duas provas |
-| sítio | `056a797` | a rota `texto`: o renderizador, a vista, as duas páginas, a folha, as sete conferências no portão, a régua e o inventário |
-| sítio | `95c65c4` | o registo: a nona origem na §2.2, a subsecção P2 na §1.64, as duas frases da `IDENTIDADE.md`, as chaves, esta nota, o `README.md` e as duas ISSUES |
-| sítio | `d1f3a1b` | o relatório do portão passa a nomear as oito páginas de leitura conferidas |
+| sítio | `d807725` | `src/lib/eyetext.mjs`, a leitura do olho portada, e `scripts/provar-eyetext.mjs`, as suas duas provas |
+| sítio | `4eda1c4` | a rota `texto`: o renderizador, a vista, as duas páginas, a folha, as sete conferências no portão, a régua e o inventário |
+| sítio | `7519778` | o registo: a nona origem na §2.2, a subsecção P2 na §1.64, as duas frases da `IDENTIDADE.md`, as chaves, esta nota, o `README.md` e as duas ISSUES |
+| sítio | `9fd1568` | o relatório do portão passa a nomear as oito páginas de leitura conferidas |
 | sítio | (este) | a lista dos commits nesta nota |
 
 O motor não foi tocado nesta etapa: está em leitura, e o que dele se usa são os
@@ -359,7 +359,7 @@ não mudaram: as chaves novas são da P3.
 ## P3 · o `check:cadeia` e as oito chaves na prova
 
 *Construída a 24.08.2026 pelo construtor (Claude Opus 5, `claude-opus-5[1m]`) no
-ramo `parte3-2026-08-24`, sobre a P2, a partir de `7626a2a`. O brief é
+ramo `parte3-2026-08-24`, sobre a P2, a partir de `690bb70`. O brief é
 `briefs/BRIEF-parte3-P3.md`; o plano é a `ESTIMATIVA-PARTE3-2026-08-24.md` §4 e
 §0.3; as onze decisões do diretor estão em `ESTADO-DO-MAIN-2026-08-24.md` e
 nenhuma se reabriu. O registo da etapa é a `DECISIONS.md` §1.64, subsecção P3.
@@ -370,8 +370,8 @@ manifesto de travessia declara `excluded`.*
 
 | repositório | commit | o quê |
 |---|---|---|
-| sítio | `a79fb93` | `scripts/check-cadeia.mjs`, as oito chaves em `src/lib/prova.mjs`, as oito recontagens e a vista `registos` no `scripts/gate-html.mjs`, o passo no `package.json` |
-| sítio | `1b32984` | a marca sai da lista quando é figura e uma figura sem linha do motor não pára a travessia; o `OEDP_REGISTOS_DIR` no `scripts/check-documentos.mjs` |
+| sítio | `ebd98d1` | `scripts/check-cadeia.mjs`, as oito chaves em `src/lib/prova.mjs`, as oito recontagens e a vista `registos` no `scripts/gate-html.mjs`, o passo no `package.json` |
+| sítio | `3364434` | a marca sai da lista quando é figura e uma figura sem linha do motor não pára a travessia; o `OEDP_REGISTOS_DIR` no `scripts/check-documentos.mjs` |
 | sítio | (este) | o registo: a subsecção P3 na `DECISIONS.md` §1.64, a contagem das vistas na §2.2, o `README.md` e esta nota |
 
 ### O guião, corrido inteiro
@@ -462,7 +462,7 @@ registos 4 · modulo 3**.
 
 ### O encontro com a primeira leitura cruzada
 
-A leitura cruzada do Codex (`5039858`, sobre a construção `7626a2a`) correu
+A leitura cruzada do Codex (`a0b80de`, sobre a construção `690bb70`) correu
 enquanto esta etapa se construía, e a sua High 3 é a mesma coisa que a escolha
 da vista destas duas chaves: **as figuras dentro de uma ligação do documento não
 têm porta própria.** Duas medições independentes, uma sobre o `dist/` a contar
@@ -496,7 +496,7 @@ exigi-la, e `registos_resolvidos` e `registos_por_resolver` podem passar à vist
 ## Correções 1 · a porta a seguir à ligação, depois da M1 e da primeira leitura cruzada
 
 *Construída a 24.08.2026 pelo construtor (Claude Opus 5, `claude-opus-5[1m]`) no
-ramo `parte3-2026-08-24`, sobre a P3, a partir de `8f9ca95`. O brief é
+ramo `parte3-2026-08-24`, sobre a P3, a partir de `6e085dc`. O brief é
 `briefs/BRIEF-parte3-correcoes-1.md`, escrito pelo lugar de direção depois da
 medição cega M1 (`medicoes/parte3-M1-sonnet.md`) e da primeira leitura cruzada
 (`critica/2026-08-24-codex-leitura-parte3-1.md`). O registo é a `DECISIONS.md`
@@ -507,9 +507,9 @@ foi tocado.*
 
 | repositório | commit | o quê |
 |---|---|---|
-| sítio | `60f8cd8` | a porta a seguir à ligação: `registo-html.mjs`, `TextoView.astro`, `texto.css`, a chave `estudos.textoPortaDaLinha`, o L6 do portão, o C6 do `check:cadeia`, as duas chaves na vista `dist`, e as duas contagens da prosa nos dois comentários do código |
-| sítio | `bda37e8` | o registo: a subsecção na `DECISIONS.md` §1.64, as duas contagens da prosa na §1.64 e na §2.2 item 9, a tabela de vistas da §2.2 item 7, a `CHAVES-EN.md`, esta nota e a `ISSUES.md` (I67 e I68) |
-| sítio | `ca39135` | as onze frases desta ronda que levavam travessão passam a parênteses, dois pontos ou vírgula, sem uma palavra mudada |
+| sítio | `85af358` | a porta a seguir à ligação: `registo-html.mjs`, `TextoView.astro`, `texto.css`, a chave `estudos.textoPortaDaLinha`, o L6 do portão, o C6 do `check:cadeia`, as duas chaves na vista `dist`, e as duas contagens da prosa nos dois comentários do código |
+| sítio | `242fba5` | o registo: a subsecção na `DECISIONS.md` §1.64, as duas contagens da prosa na §1.64 e na §2.2 item 9, a tabela de vistas da §2.2 item 7, a `CHAVES-EN.md`, esta nota e a `ISSUES.md` (I67 e I68) |
+| sítio | `d0f1666` | as onze frases desta ronda que levavam travessão passam a parênteses, dois pontos ou vírgula, sem uma palavra mudada |
 | sítio | (este) | esta tabela, com os três commits acima |
 
 ### O achado, medido antes e depois
@@ -626,7 +626,7 @@ repartição por vista, de **dist 16 · ledger 18 · registos 4 · modulo 3** pa
 ## P4 · as oito edições, lidas uma a uma
 
 *Construída a 24.08.2026 pelo construtor (Claude Opus 5, `claude-opus-5[1m]`) no
-ramo `parte3-2026-08-24`, sobre a ronda de correções 1, a partir de `dbdedc2`. O
+ramo `parte3-2026-08-24`, sobre a ronda de correções 1, a partir de `ba5e1f5`. O
 brief é `briefs/BRIEF-parte3-P4.md`. O registo é a `DECISIONS.md` §1.64,
 subsecção «P4 · as oito edições». O motor não foi tocado. Nenhum código do sítio
 foi escrito: a única mudança de ficheiros versionados fora do registo é a régua
@@ -636,9 +636,9 @@ da forma, que o brief §2.7 manda estender de três edições para as oito.*
 
 | repositório | commit | o quê |
 |---|---|---|
-| sítio | `f77f123` | a régua `tests/texto/leitura.mjs` passa a medir o transbordo nas oito, com a lista a sair do registo de travessia |
-| sítio | `e7922ab` | o registo: a subsecção P4 na `DECISIONS.md` §1.64, esta nota e a `ISSUES.md` (a I65 recontada e a I66 recontada) |
-| sítio | `5f8fe32` | a I65 são seis por omissão de contagem e não por diferença de método: a segunda medição, pelos ficheiros de operações, dá a mesma lista |
+| sítio | `87a7b40` | a régua `tests/texto/leitura.mjs` passa a medir o transbordo nas oito, com a lista a sair do registo de travessia |
+| sítio | `7af1971` | o registo: a subsecção P4 na `DECISIONS.md` §1.64, esta nota e a `ISSUES.md` (a I65 recontada e a I66 recontada) |
+| sítio | `3bc9fa6` | a I65 são seis por omissão de contagem e não por diferença de método: a segunda medição, pelos ficheiros de operações, dá a mesma lista |
 | sítio | (este) | esta tabela, com os três commits acima |
 
 ### A tabela das oito, com as quatro fontes de cada contagem
@@ -1038,7 +1038,7 @@ acrescenta página nenhuma nem chave nenhuma, e não devia.
 
 *Construída a 24.08.2026 pelo construtor (Claude Opus 5, `claude-opus-5[1m]`) no
 ramo `parte3-2026-08-24`, sobre a P4 e a ronda de correções 1, a partir de
-`5fb1911`. O brief é `briefs/BRIEF-parte3-correcoes-2.md`, escrito pelo lugar de
+`67bbca8`. O brief é `briefs/BRIEF-parte3-correcoes-2.md`, escrito pelo lugar de
 direção depois da segunda leitura cruzada
 (`critica/2026-08-24-codex-leitura-parte3-2.md`, Medium 6). O registo é a
 `DECISIONS.md` §1.64, subsecção «A medição cega M2 e a segunda leitura cruzada».
@@ -1048,7 +1048,7 @@ O motor não foi tocado, e nenhum texto governado.*
 
 | repositório | commit | o quê |
 |---|---|---|
-| sítio | `38f594b` | as três contagens da faixa abrem `#documento`: `TextoView.astro` e o L5 do portão em `scripts/gate-html.mjs` |
+| sítio | `2eafe6a` | as três contagens da faixa abrem `#documento`: `TextoView.astro` e o L5 do portão em `scripts/gate-html.mjs` |
 | sítio | (este) | o registo: a subsecção da `DECISIONS.md` §1.64 e esta secção |
 
 ### O achado, medido nas oito

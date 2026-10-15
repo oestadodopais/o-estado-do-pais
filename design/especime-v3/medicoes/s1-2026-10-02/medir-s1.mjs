@@ -23,7 +23,7 @@ import { pathToFileURL } from 'node:url';
 const RAIZ = process.cwd();
 const PASTA = path.join(RAIZ, 'design/especime-v3/medicoes/s1-2026-10-02');
 const NAO = 'NÃO LIDO';
-const BASE_DO_BLOCO = '62ed13c6';
+const BASE_DO_BLOCO = 'ad62f09e';
 const medidas = [];
 const medicao = (nome, valor, comando, o_que, encontrado) =>
   medidas.push({ nome, valor, comando, conhecido_positivo: { o_que, encontrado: Boolean(encontrado) } });

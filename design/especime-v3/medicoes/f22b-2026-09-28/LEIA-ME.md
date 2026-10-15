@@ -11,11 +11,11 @@ externos nulos são declarações do construtor, não medições pela API. Não 
 O teste operacional com chaves continua fora desta construção.
 
 Autoria: Codex gpt-6-astra. Este relatório recupera a estrutura e o âmbito do
-texto de `77d9e407`, com os comportamentos corrigidos. As afirmações sem prova
+texto de `89fa6c60`, com os comportamentos corrigidos. As afirmações sem prova
 sobre reparações de `core.bare`, opções locais do Git e outras intervenções
 históricas não voltam. As correções posteriores estão nas secções F2.2c e F2.2d.
 As bases do bloco são motor `1af04566898ddfc2c5244c55c7f229b1c287fee2` e sítio
-`24e7c8752f5bf80b263f13530f618278ba474992`.
+`f0d72ac0acb7adae833f56d3336ba3e90d2a6230`.
 
 ## O mandato do brief e a medida, no estado corrigido
 
@@ -90,13 +90,13 @@ Os commits do bloco, incluindo as junções e as leituras que o dirigiram, são:
 | Motor | `f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1` | Junção de `master` na F2.2c. |
 | Motor | `e7dbae267919aa6e9eb0345d25a085f50e4c5a72` | Correções e plantas da F2.2c. |
 | Motor | `1a67dea9a4e479c00f4fe4c8d645364a3a943446` | Documentação e registo da execução da F2.2c. |
-| Sítio | `01362b78a810795ee6870b8a6f439c39b9fe25e0` | Frescura, plano e registo do F2.2b. |
-| Sítio | `77d9e4076eb8098a45e6ca0cd3c27964d54a9301` | Provas e resposta do F2.2b. |
-| Sítio | `22510cd9119ae01a9bca8a75c4382654cbf7e0b2` | Junção de `main`, M41 e §2 da frescura. |
-| Sítio | `fb1dd0dd442684221a5e4aceae3b8ac5491d5546` | Leitura, triagem e mandato da F2.2c. |
-| Sítio | `934af43bfb1f8205ad81bafa27b32c0d0fc8aadc` | Ordem da publicação e natureza das medidas. |
-| Sítio | `cb1600b6e147f2bdc05f73396404f344b3495c2b` | Provas, relatório e resposta da F2.2c. |
-| Sítio | `df1c262242dc94f5b6aef8d8e01f9e554209baf2` | Releitura, triagem e mandato da F2.2d. |
+| Sítio | `c758c51e12471958561069329aa1b86a90abf3c8` | Frescura, plano e registo do F2.2b. |
+| Sítio | `89fa6c6030cd1f07878f34021e00716f21003c93` | Provas e resposta do F2.2b. |
+| Sítio | `d4428336ecd0fb6d798329b70d3ca3b8606662e5` | Junção de `main`, M41 e §2 da frescura. |
+| Sítio | `b057626bd2e3bba554f0ceb7269a9f5b6373abea` | Leitura, triagem e mandato da F2.2c. |
+| Sítio | `9ecc5c8bbbfc0f460a62569a711cd6601334bee9` | Ordem da publicação e natureza das medidas. |
+| Sítio | `0b6446d4920171b9b692328ed36127c28794a2a1` | Provas, relatório e resposta da F2.2c. |
+| Sítio | `d32e2558f18f68120325449f10bbe4ed7979cf7e` | Releitura, triagem e mandato da F2.2d. |
 
 Os commits já registados da F2.2d são:
 
@@ -105,8 +105,8 @@ Os commits já registados da F2.2d são:
 | Motor | `f8a20fb2d20f89bec387acff2271c4b1672be034` | Limiar, compatibilidade do portátil, plantas e proveniência das execuções. |
 | Motor | `7fddf67fa1a9c9851f712c118a7d049b8ddc0ea8` | Provador do clone raso sem `master` local. |
 | Motor | `7c43b0746f8c43d9ace5cfdcb4d71a79927a6813` | Referência fixa expurgada, proveniência, SHA-256 e plantas independentes de `master`. |
-| Sítio | `f97d7d60d3611f011cbaef26fc05cff92c9ac7a1` | Relatório do bloco, prompt reposto e proveniência das provas. |
-| Sítio | `ad4722fa92bafcacf7b99d3da56363f3b58dcbed` | Provas e resposta da entrega parcial, com a paragem na referência pessoal. |
+| Sítio | `985c977dee92f5dfcabb6823d8ced49ea8753318` | Relatório do bloco, prompt reposto e proveniência das provas. |
+| Sítio | `6b2b2f38e30003611983ed76747fe55cf456c548` | Provas e resposta da entrega parcial, com a paragem na referência pessoal. |
 
 A entrada do UE1 e os commits da F2.2e são:
 
@@ -118,14 +118,14 @@ A entrada do UE1 e os commits da F2.2e são:
 | Motor | `e394307d818f54477351846b9c97e5e81a590949` | Cabeça recebida de `master`, com o cliente comum dos pedidos. |
 | Motor | `06e126d154cc20141c55801b807dbf9c9173a8fd` | Junção de `master`, conservando as plantas do UE1 e das rotinas. |
 | Motor | `4b46befbac8decf1566f73b5959fd175e5458d66` | Plantas das guardas do painel e guiões reproduzíveis das provas. |
-| Sítio | `c1559d893fdc90eb83377ee92ee7daf99cdd78af` | Terceira leitura, triagem e decisão sobre a referência fixa. |
-| Sítio | `e97d7da8d81189691df84691ae7f538a032580d0` | Junção de `main` depois do UE1, recebida antes desta passagem. |
-| Sítio | `2ea04eef166359723bcafc05a68630456e9816e4` | Mandato da F2.2e, recebido antes desta passagem. |
+| Sítio | `07220bd0212f25d84434166c8c1696ace13f764c` | Terceira leitura, triagem e decisão sobre a referência fixa. |
+| Sítio | `15916222e988b4a8c223b93ab0fe7eac6c78a5dd` | Junção de `main` depois do UE1, recebida antes desta passagem. |
+| Sítio | `ea8b7a5360a2e178de241daac1ba867a32acf36f` | Mandato da F2.2e, recebido antes desta passagem. |
 
 O inventário completo, incluindo os antepassados recebidos pela junção de
 `main`, fica em `medidas.json`. O último commit do sítio contém as provas de
 fecho da F2.2e e `RESPOSTA-construtor-f22e.md`; o seu SHA é comunicado fora do ramo.
-O fecho da F2.2d está em `e15037869c95a937e00c9ae60948d39d29463344`.
+O fecho da F2.2d está em `44688734de482865030ecb644728399f50ebaebc`.
 O SHA do último commit das provas resolve-se pelo histórico da resposta da sua
 passagem e é comunicado fora do ramo: um commit não contém o seu próprio SHA.
 
@@ -146,9 +146,9 @@ F2.2d são os de fecho desta passagem; os anteriores não os substituem.
 | F2.2c | `npm run typecheck` | 0 | 0,828 | `portoes/f22c/typecheck.codigo` |
 
 O motor do F2.2b foi testado em `5335e129b3167c93d1822c8af7cecbb909922877`,
-o sítio em `01362b78a810795ee6870b8a6f439c39b9fe25e0`. Na F2.2c, o motor
+o sítio em `c758c51e12471958561069329aa1b86a90abf3c8`. Na F2.2c, o motor
 foi testado em `1a67dea9a4e479c00f4fe4c8d645364a3a943446`, o sítio em
-`934af43bfb1f8205ad81bafa27b32c0d0fc8aadc`. Os ficheiros `.cabeca` dos portões
+`9ecc5c8bbbfc0f460a62569a711cd6601334bee9`. Os ficheiros `.cabeca` dos portões
 do sítio ficam ao lado dos códigos. A F2.2c tem um `.exclusao.json` por portão,
 com o último `pgrep` sem outra construção antes de iniciar. Não se atribui essa
 prova às corridas históricas que não a guardaram. Os portões da F2.2d conservam
@@ -243,7 +243,7 @@ Esta passagem mantém o âmbito do mandato e não altera páginas do sítio.
 | `4` | A regra da I116 fica dita no código. As plantas oferecem recusa de ligação e TLS às linhas e ao limiar, e distinguem deliberadamente o portátil do runner. |
 | `5` | O silêncio do limiar tem campo próprio; uma linha no mesmo anfitrião continua a carimbar. A retoma retira o aviso de silêncio e conserva os alarmes de revisão. As mensagens do portátil e o comentário da I115 foram repostos a partir de `68318e0`. |
 | `6` | A quinta reconferência sem poda é recusada. A célula `13` foi executada pelo `corredor.py --provar`, com código 0 em `provas/f22d/corredor.codigo`. A API tem leituras atribuídas separadamente. Os novos registos identificam a árvore, e os antigos explicitam o que não registaram. |
-| `7` | O prompt F2.2c foi reposto byte a byte de `fb1dd0dd`. O detetor exclui apenas o exemplo `<pasta-pessoal>/...`, que não é um caminho, e continua a recusar caminhos reais e continuações desse exemplo. Os prompts da direção não voltam a ser editados. |
+| `7` | O prompt F2.2c foi reposto byte a byte de `b057626b`. O detetor exclui apenas o exemplo `<pasta-pessoal>/...`, que não é um caminho, e continua a recusar caminhos reais e continuações desse exemplo. Os prompts da direção não voltam a ser editados. |
 
 Nesta passagem passaram 47 plantas das rotinas, 26 adicionais e 94
 conferências dos fluxos: `provas/f22d/plantas`, `plantas-f22c` e `fluxo`, com
@@ -264,7 +264,7 @@ a hora e o excerto estão em `provas/f22d/api-versoes.json`; o cabeçalho manté
 
 Os códigos foram lidos depois de os processos acabarem. O motor foi testado na
 cabeça `7c43b0746f8c43d9ace5cfdcb4d71a79927a6813`; o sítio em
-`f97d7d60d3611f011cbaef26fc05cff92c9ac7a1`, antes do commit final das provas.
+`985c977dee92f5dfcabb6823d8ced49ea8753318`, antes do commit final das provas.
 Os registos da árvore distinguem o commit limpo do motor das árvores do sítio,
 que continham os ficheiros de prova em construção. O medidor não atribui o
 commit futuro das provas aos comandos já executados.

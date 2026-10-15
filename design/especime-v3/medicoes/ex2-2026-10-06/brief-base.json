@@ -1,12 +1,12 @@
 {
   "brief": "design/observatorio/BRIEF-EX2-a-leitura-da-semana-com-o-que-cada-numero-e.md",
   "guiao": "design/observatorio/medidas/BRIEF-EX2.py",
-  "cabeca_lida": "4b29f707",
+  "cabeca_lida": "8efbd4db",
   "medidas": [
     {
       "nome": "linhas_do_livro",
       "valor": 3195,
-      "comando": "git ls-tree 4b29f707:ledger/claims · os .yml, lidos por git cat-file --batch",
+      "comando": "git ls-tree 8efbd4db:ledger/claims · os .yml, lidos por git cat-file --batch",
       "conhecido_positivo": {
         "o_que": "a linha custo-unitario-do-trabalho-2024 lê-se com a sua unidade",
         "encontrado": true
@@ -15,7 +15,7 @@
     {
       "nome": "linhas_no_ambito_da_leitura_da_semana",
       "valor": 3184,
-      "comando": "git cat-file --batch 4b29f707:ledger/claims/*.yml · as linhas cujo study não é o-estado-do-pais e que não estão em MEDIDA_REUNIDA (git show 4b29f707:src/lib/pais.mjs)",
+      "comando": "git cat-file --batch 8efbd4db:ledger/claims/*.yml · as linhas cujo study não é o-estado-do-pais e que não estão em MEDIDA_REUNIDA (git show 8efbd4db:src/lib/pais.mjs)",
       "conhecido_positivo": {
         "o_que": "a linha custo-unitario-do-trabalho-2024 está no âmbito",
         "encontrado": true
@@ -51,7 +51,7 @@
     {
       "nome": "familias_com_frase_provada",
       "valor": 181,
-      "comando": "git show 4b29f707:tests/cartao/leituras-provadas.json · as chaves de «familias»",
+      "comando": "git show 8efbd4db:tests/cartao/leituras-provadas.json · as chaves de «familias»",
       "conhecido_positivo": {
         "o_que": "a auditoria tem a secção «explicacoes»",
         "encontrado": true
@@ -60,7 +60,7 @@
     {
       "nome": "funcao_da_frase_o_que_e_no_recibo",
       "valor": 1,
-      "comando": "git show 4b29f707:src/lib/o-que-e-o-numero.mjs · a função oQueEDaLinha, contada uma vez",
+      "comando": "git show 8efbd4db:src/lib/o-que-e-o-numero.mjs · a função oQueEDaLinha, contada uma vez",
       "conhecido_positivo": {
         "o_que": "a função devolve porConfirmar",
         "encontrado": true
@@ -69,7 +69,7 @@
     {
       "nome": "vezes_que_a_unidade_entra_na_frase_da_semana",
       "valor": 1,
-      "comando": "git show 4b29f707:src/views/LeituraDaSemanaView.astro · os CampoDaLinha com campo=\"unit\"",
+      "comando": "git show 8efbd4db:src/views/LeituraDaSemanaView.astro · os CampoDaLinha com campo=\"unit\"",
       "conhecido_positivo": {
         "o_que": "a frase escreve o valor de antes e o de agora",
         "encontrado": true
@@ -78,7 +78,7 @@
     {
       "nome": "paginas_lidas_pela_celula_das_frases_compostas",
       "valor": 8,
-      "comando": "git show 4b29f707:tests/explicacoes/frases-compostas.mjs · as chamadas routePath na declaração de ROTAS, vezes as duas edições",
+      "comando": "git show 8efbd4db:tests/explicacoes/frases-compostas.mjs · as chamadas routePath na declaração de ROTAS, vezes as duas edições",
       "conhecido_positivo": {
         "o_que": "a célula lê a rota das explicações",
         "encontrado": true

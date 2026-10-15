@@ -12,7 +12,7 @@ const {loadClaims} = await import(local('src/lib/ledger.mjs'));
 const {conferirAuditoriaDasFamilias,conferirAuditoriaDasSeries} = await import(local('tests/cartao/familias.mjs'));
 const {loadSeries} = await import(local('src/lib/series.mjs'));
 const {ORIGENS_JD1} = await import(local('src/data/origens-jd1.mjs'));
-const base = '3ecc7c72';
+const base = 'd0c3d52e';
 const motor = process.env.RESEARCHHUB_DIR;
 assert.ok(motor);
 const out = process.argv[2];

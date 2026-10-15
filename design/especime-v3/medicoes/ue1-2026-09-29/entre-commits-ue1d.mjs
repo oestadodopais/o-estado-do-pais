@@ -47,30 +47,30 @@ const contasDoMapa = (f) => {
 };
 const MAPA = 'python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md';
 const commits = [
-  { commit: '530d5edc', o_que: 'a média da União de volta ao cartão da sobrecarga do custo da habitação no total, com a ressalva da Comissão de uma fonte única no cartão e nos recibos, a K14 na forma nova e a K17 a contar as origens da auditoria da primeira página (o estado sem a definição declarada nos recibos das séries, construído à parte)',
+  { commit: 'cbe6866d', o_que: 'a média da União de volta ao cartão da sobrecarga do custo da habitação no total, com a ressalva da Comissão de uma fonte única no cartão e nos recibos, a K14 na forma nova e a K17 a contar as origens da auditoria da primeira página (o estado sem a definição declarada nos recibos das séries, construído à parte)',
     corridas: [['npm run build', 'build-G'], ['npm run check:cartao', 'check-cartao-G'], ['npm run check:primeira', 'check-primeira-G'], ['npm run check:alvos', 'check-alvos-G'], ['npm run check:lugar', 'check-lugar-G'], ['npm run typecheck', 'typecheck-G']] },
-  { commit: '165650cf', o_que: 'a definição declarada da medida nos recibos das dez séries, conferida pelo portão de HTML, sem a regra do corte',
+  { commit: '13b24aac', o_que: 'a definição declarada da medida nos recibos das dez séries, conferida pelo portão de HTML, sem a regra do corte',
     corridas: [['npm run build', 'build-H'], ['npm run typecheck', 'tipos-H'], ['npm run check:lugar', 'lugar-H']] },
 ];
-commits.push({ commit: '99b9f73a', o_que: 'o construtor da prova do check:cartao lê a ressalva declarada sem rebentar quando a declaração não a tem (a planta da declaração, que fechava a construção com um TypeError)',
+commits.push({ commit: 'ac39025e', o_que: 'o construtor da prova do check:cartao lê a ressalva declarada sem rebentar quando a declaração não a tem (a planta da declaração, que fechava a construção com um TypeError)',
   corridas: [['npm run check:cartao', 'check-cartao-I']] });
 const saida = commits.map((c) => ({ commit: c.commit, o_que: c.o_que, corridas: c.corridas.map(([comando, f]) => ({ comando, codigo: le(f) })) }));
-/* As duas plantas da declaração corridas antes do commit 99b9f73a, à mão, cada uma reposta pelo sha256: têm de
+/* As duas plantas da declaração corridas antes do commit ac39025e, à mão, cada uma reposta pelo sha256: têm de
    sair com 1 e com a queixa da K14. */
 const plantasDoCommit = [
-  { commit: '99b9f73a', planta: 'a medida tirada da declaração das ressalvas, com --prova', comando: 'node tests/cartao/cartao.mjs --prova', codigo: le('planta-decl-I'),
+  { commit: 'ac39025e', planta: 'a medida tirada da declaração das ressalvas, com --prova', comando: 'node tests/cartao/cartao.mjs --prova', codigo: le('planta-decl-I'),
     queixa: /o controlo da K14 deu \d+ vermelho\(s\): K14 · \S+ · sobrecarga-do-custo-da-habitacao-2025: o (cartão|recibo) mostra a União e a declaração não tem o texto da ressalva desta medida/.test((registo('planta-decl-I') ?? '').replace(/\x1b\[[0-9;]*m/g, '')) },
-  { commit: '99b9f73a', planta: 'a medida tirada da declaração das ressalvas, sem --prova', comando: 'node tests/cartao/cartao.mjs', codigo: le('planta-decl-sem-prova'),
+  { commit: 'ac39025e', planta: 'a medida tirada da declaração das ressalvas, sem --prova', comando: 'node tests/cartao/cartao.mjs', codigo: le('planta-decl-sem-prova'),
     queixa: /K14 · a medida «sobrecarga-do-custo-da-habitacao-2025» exige a ressalva e a declaração não a tem/.test((registo('planta-decl-sem-prova') ?? '').replace(/\x1b\[[0-9;]*m/g, '')) },
 ];
-const mapaI = { commit: '99b9f73a', comando: MAPA, codigo: le('mapa-I'), contas: contasDoMapa('mapa-I') };
+const mapaI = { commit: 'ac39025e', comando: MAPA, codigo: le('mapa-I'), contas: contasDoMapa('mapa-I') };
 const mapa = {
   commit: 'de17f63e', o_que: 'o mapa do repositório',
   corrida: { comando: MAPA, codigo: le('mapa-d2'), contas: contasDoMapa('mapa-d2') },
   antes_da_emenda: { comando: MAPA, codigo: le('mapa-d1'), contas: contasDoMapa('mapa-d1') },
   nota: 'o guião sai sempre com 0; a prova são as contas',
 };
-const ue1cMapa = { o_que: 'a corrida do mapa antes do commit 982d6446 da UE1c, lida agora do registo', contas: contasDoMapa('mapa-c3') };
+const ue1cMapa = { o_que: 'a corrida do mapa antes do commit c0eec2a6 da UE1c, lida agora do registo', contas: contasDoMapa('mapa-c3') };
 const completo = {
   o_que: 'o estado completo da passagem, antes de o partir nos dois commits',
   corridas: [
@@ -84,7 +84,7 @@ const completo = {
 const todas = saida.flatMap((c) => c.corridas);
 const mapaLimpo = mapa.corrida.contas && mapa.corrida.contas.no_ficheiro_mas_longe === 0 && mapa.corrida.contas.nao_encontradas === 0 && mapa.corrida.contas.para_la_do_fim === 0;
 const resumo = {
-  bloco: 'UE1d', commits: saida, plantas_antes_do_commit: plantasDoCommit, mapa, mapa_do_commit_99b9f73a: mapaI, ue1c_mapa: ue1cMapa, estado_completo: completo,
+  bloco: 'UE1d', commits: saida, plantas_antes_do_commit: plantasDoCommit, mapa, mapa_do_commit_ac39025e: mapaI, ue1c_mapa: ue1cMapa, estado_completo: completo,
   corridas: todas.length, corridas_a_zero: todas.filter((c) => c.codigo === 0).length,
   mapa_sem_citacoes_perdidas: mapaLimpo,
   conhecido_positivo: {
@@ -96,7 +96,7 @@ const resumo = {
 fs.writeFileSync(path.join(PASTA, 'entre-commits-ue1d.json'), JSON.stringify(resumo, null, 2) + '\n');
 console.log(`UE1d entre commits: ${resumo.corridas_a_zero} de ${resumo.corridas} corridas a zero; o mapa ${JSON.stringify(mapa.corrida.contas)} (antes da emenda ${JSON.stringify(mapa.antes_da_emenda.contas)})`);
 const mapaIlimpo = mapaI.contas && mapaI.contas.no_ficheiro_mas_longe === 0 && mapaI.contas.nao_encontradas === 0 && mapaI.contas.para_la_do_fim === 0;
-resumo.mapa_do_commit_99b9f73a_sem_citacoes_perdidas = mapaIlimpo;
+resumo.mapa_do_commit_ac39025e_sem_citacoes_perdidas = mapaIlimpo;
 resumo.plantas_antes_do_commit_que_morderam = plantasDoCommit.filter((x) => x.codigo !== 0 && x.codigo !== null && x.queixa).length;
 fs.writeFileSync(path.join(PASTA, 'entre-commits-ue1d.json'), JSON.stringify(resumo, null, 2) + '\n');
 const ok = resumo.corridas_a_zero === resumo.corridas && mapaLimpo && mapaIlimpo && resumo.plantas_antes_do_commit_que_morderam === plantasDoCommit.length && resumo.conhecido_positivo.codigo_inexistente_nulo && resumo.conhecido_positivo.mapa_antes_com_perdidas;

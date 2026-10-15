@@ -26,9 +26,9 @@ assert.equal(medido.paginas,anteriores+novas.length);
 // O livro anterior e a vista que rende os recibos mantêm os mesmos objetos Git.
 const git=(...args)=>execFileSync('git',args,{encoding:'utf8'}).trim();
 const tree=ref=>Object.fromEntries(git('ls-tree','-r',ref,'ledger/claims').split('\n').map(l=>{const [blob,file]=l.split('\t');return [file,blob];}));
-const base=tree('98487940'),atual=tree('HEAD');
+const base=tree('20322174'),atual=tree('HEAD');
 for(const [f,blob] of Object.entries(base)) assert.equal(atual[f],blob,`Linha anterior alterada: ${f}`);
-const vistaBase=git('show','98487940:src/views/LinhaView.astro');
+const vistaBase=git('show','20322174:src/views/LinhaView.astro');
 const vistaEsperada=vistaBase.replace('k: ehSerieDeDados ? s.prov.serie : s.prov.documento,',
   'k: claim.afirmacao ? s.prov.tituloDoDocumento : ehSerieDeDados ? s.prov.serie : s.prov.documento,');
 const conferirVista=texto=>assert.equal(texto.trim(),vistaEsperada,'V2A vista: mudou mais do que o título do documento das afirmações.');

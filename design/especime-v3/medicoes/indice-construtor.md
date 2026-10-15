@@ -1,6 +1,6 @@
 # F1.9a · o índice das páginas de leitura · relatório do construtor
 
-*Ramo `indice-2026-09-03`, tirado de `origin/main` em `d447286f`. Construtor Claude Opus 5, 03.09.2026, numa worktree própria. O bloco é o F1.9a de `design/observatorio/BRIEF-F1.9a-indice-das-paginas-de-leitura.md`, que sai da linha F1.9 do plano de fiabilidade e do achado D1 da auditoria de UX de 25.08. Todos os números deste ficheiro foram medidos hoje, com a mesma sonda antes e depois, e a sonda está descrita na §1. Sem travessões na prosa.*
+*Ramo `indice-2026-09-03`, tirado de `origin/main` em `a9574346`. Construtor Claude Opus 5, 03.09.2026, numa worktree própria. O bloco é o F1.9a de `design/observatorio/BRIEF-F1.9a-indice-das-paginas-de-leitura.md`, que sai da linha F1.9 do plano de fiabilidade e do achado D1 da auditoria de UX de 25.08. Todos os números deste ficheiro foram medidos hoje, com a mesma sonda antes e depois, e a sonda está descrita na §1. Sem travessões na prosa.*
 
 ## 0 · O resultado, em seis linhas
 
@@ -14,7 +14,7 @@ A altura sobe **44 px** nas seis páginas portuguesas e **0 px** nas duas ingles
 
 **Dois aparelhos.** Telemóvel: WebKit com `devices['iPhone 13']` (390 × 664) e apontador grosso. Computador: Chromium a 1280 × 800. As duas famílias contam.
 
-**Antes e depois com a mesma sonda.** O «antes» não é uma memória: é uma construção de `d447286f` numa worktree separada (`antes-d447286f`, criada e removida hoje), medida com o mesmo ficheiro de sonda. Sem isso, metade dos números deste relatório seriam uma comparação entre duas réguas diferentes.
+**Antes e depois com a mesma sonda.** O «antes» não é uma memória: é uma construção de `a9574346` numa worktree separada (`antes-a9574346`, criada e removida hoje), medida com o mesmo ficheiro de sonda. Sem isso, metade dos números deste relatório seriam uma comparação entre duas réguas diferentes.
 
 **A área de um alvo mede-se por duas vias, e as duas contam.** Ou a caixa do elemento mede 44 px nos dois eixos, que é como a folha da casa escreve a regra; ou o acerto (`elementFromPoint`) alcança 43,8 px nos dois eixos a partir do meio da primeira caixa de linha, que é a única maneira de ver a área que um `::after` posicionado acrescenta sem mudar a composição (é assim que o selo da casa tem alvo sem mudar a entrelinha). A folga de 0,2 px é do próprio acerto: o ponto que cai na aresta pertence já à caixa seguinte, e uma caixa de 44 × 44 mede 42 × 43,8 por acerto. Medido, não suposto.
 
@@ -24,7 +24,7 @@ A altura sobe **44 px** nas seis páginas portuguesas e **0 px** nas duas ingles
 
 ## 2 · D1 a D8, antes e depois
 
-| # | medida | antes (`d447286f`) | depois | cumpre |
+| # | medida | antes (`a9574346`) | depois | cumpre |
 |---|---|---|---|---|
 | D1 | um índice rendido nas 8 páginas, uma entrada por título de nível 2 e 3 do registo (o nível 4 fica de fora, contado e dito na §3), cada ligação a um `id` que existe | 8 páginas com índice, **79 entradas**, só de nível 2 | 8 páginas, **136 entradas**, nível 2 e 3, todas com destino na página | sim |
 | D2 | a indicação de progresso presente sem guião nas 8 | **não existe** (0 contadores, 0 barras) | **79 contadores** «n/N» (um por título de nível 2) e 1 barra por página, medidos com o guião desligado | sim |
@@ -133,7 +133,7 @@ As outras réguas da pasta: `leitura` 51 de 51, `correcoes-b` 19 de 19 (a célul
 
 ## 9 · O que se encontrou pelo caminho e não é deste bloco
 
-**A célula C1 de `tests/texto/correcoes-c.mjs` já estava vermelha em `d447286f`.** Ela exige que o `<h1>` do documento comece antes de 45 % do ecrã a 390 (298,8 px de 664). Medido na construção de `d447286f`, antes de este bloco lhe tocar: o `<h1>` começa a **389,8 px, 58,7 %**. Depois deste bloco: **389,8 px**, o mesmo número. O que está por cima do índice nessa página, medido: o cabeçalho do sítio 190,1 px, o antetítulo 20,8 px e **o rótulo de IA do topo 64,9 px**, que entrou a 01.09.2026 com a via B da política. A régua não corre na construção, e por isso ninguém viu. **Não se corrigiu aqui** porque a peça é de outro bloco e a decisão de onde vive o rótulo de IA numa página longa é do artigo 50.º e da direção, não desta folha.
+**A célula C1 de `tests/texto/correcoes-c.mjs` já estava vermelha em `a9574346`.** Ela exige que o `<h1>` do documento comece antes de 45 % do ecrã a 390 (298,8 px de 664). Medido na construção de `a9574346`, antes de este bloco lhe tocar: o `<h1>` começa a **389,8 px, 58,7 %**. Depois deste bloco: **389,8 px**, o mesmo número. O que está por cima do índice nessa página, medido: o cabeçalho do sítio 190,1 px, o antetítulo 20,8 px e **o rótulo de IA do topo 64,9 px**, que entrou a 01.09.2026 com a via B da política. A régua não corre na construção, e por isso ninguém viu. **Não se corrigiu aqui** porque a peça é de outro bloco e a decisão de onde vive o rótulo de IA numa página longa é do artigo 50.º e da direção, não desta folha.
 
 **A distância entre as duas contagens de alvos.** A auditoria de 25.08 escreveu 343 e 698 nas duas páginas maiores; a sonda deste bloco mede 349 e 691 nas mesmas páginas antes de lhes tocar. As duas medidas não são a mesma coisa, e a §1 diz porquê. Quem comparar as duas colunas sem ler a §1 vai concluir uma coisa que os números não dizem.
 
@@ -191,7 +191,7 @@ A régua da primeira passagem já tinha medido o problema e tinha-o impresso com
 
 Todos os comentários de `src/styles/texto.css` que descrevem estas duas correções foram reescritos com os números desta passagem (não os da simulação anterior à `::after`, que continuam lá mas identificados como simulação): ver `texto.css:170-193` (ligação), `221-245` (figura), `271-296` (selo), `587-660` (subida e porta em fluxo), `661-698` (posição acessível). Onde um número vem de uma simulação geométrica e não do acerto real do navegador, o comentário di-lo por extenso, para que ninguém o leia como a mesma prova que a I9 faz.
 
-**Os registos de medição** ficam em `design/especime-v3/medicoes/indice-sonnet-antes.json` (a régua da primeira passagem, corrida contra `cc7e6bd2` antes de esta passagem tocar em nada) e `design/especime-v3/medicoes/indice-sonnet-depois.json` (a mesma régua, depois de todas as correções, 17 de 17 células verdes).
+**Os registos de medição** ficam em `design/especime-v3/medicoes/indice-sonnet-antes.json` (a régua da primeira passagem, corrida contra `e81f80ed` antes de esta passagem tocar em nada) e `design/especime-v3/medicoes/indice-sonnet-depois.json` (a mesma régua, depois de todas as correções, 17 de 17 células verdes).
 
 ### 4 · Major 7 — a voz, e o que a régua automática não pode confirmar
 
@@ -223,7 +223,7 @@ Três buracos que a leitura a frio apanhou, e os três fechados:
 
 ### D1 a D8, remedidos depois desta passagem
 
-| # | medida | antes desta passagem (`cc7e6bd2`) | depois desta passagem | cumpre |
+| # | medida | antes desta passagem (`e81f80ed`) | depois desta passagem | cumpre |
 |---|---|---|---|---|
 | D1 | índice, uma entrada por título de nível 2 e 3, destino que existe | 8 páginas, 136 entradas | igual, 136 entradas, **e agora com cada id da página confirmado único (I1b)** | sim |
 | D2 | progresso sem guião | «n/N» visual, sem nome acessível | «n/N» visual **e** «Secção n de N» no nome acessível, medido com `ariaSnapshot()` nos dois motores | sim |

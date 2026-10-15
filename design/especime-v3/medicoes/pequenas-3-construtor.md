@@ -2,17 +2,17 @@
 
 *Escrito pelo construtor (Claude Opus 5) a 28.08.2026, contra
 `briefs/BRIEF-correcoes-pequenas-3.md`. Ramo `pequenas-3-2026-08-28`, saído de
-`main` em `3be579a`. Três commits, cada um com `npm run build` (a cadeia inteira
+`main` em `8139e38`. Três commits, cada um com `npm run build` (a cadeia inteira
 das réguas), `npm run verify` e `npm run typecheck` verdes antes de ser escrito.
 Sem fusão e sem envio: o ramo fica para o lugar de direção.*
 
 | commit | o quê |
 | --- | --- |
-| `a5d15b6` | I83 · a porta de uma figura diz o que abre, e a chave fica no `href` |
-| `9ddef92` | I84 · a colação portuguesa no artefacto, no índice dos concelhos e numa régua |
-| `68d1409` | I88 · o índice é da casa, e os dados é que são da Direção-Geral |
-| `9c7fce5` | as fichas de `ISSUES.md` e a primeira forma deste relatório |
-| `df4a2a6` | I84, segunda volta · os concelhos dentro de cada grupo, e a R7 a medir as listas construídas |
+| `1c01291` | I83 · a porta de uma figura diz o que abre, e a chave fica no `href` |
+| `7977ca3` | I84 · a colação portuguesa no artefacto, no índice dos concelhos e numa régua |
+| `cb3615b` | I88 · o índice é da casa, e os dados é que são da Direção-Geral |
+| `c2ff1ab` | as fichas de `ISSUES.md` e a primeira forma deste relatório |
+| `56482d5` | I84, segunda volta · os concelhos dentro de cada grupo, e a R7 a medir as listas construídas |
 
 Os três primeiros fecham as fichas, o quarto traz este relatório, e o quinto é a
 segunda volta da I84, depois da leitura do Codex: ver a §2.4 e a §2-A.
@@ -44,7 +44,7 @@ inventário como bloco **por classificar**, que é o portão que a apanha.
 
 Medidas sobre `dist/` construído, com `command grep -roh` sobre a árvore inteira.
 
-| | antes (`3be579a`) | depois (`a5d15b6`) |
+| | antes (`8139e38`) | depois (`1c01291`) |
 | --- | --- | --- |
 | `aria-label` distintos com «linha do motor: …» | 17 | 0 |
 | `aria-label` distintos com «engine row: …» | 17 | 0 |

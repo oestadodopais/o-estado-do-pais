@@ -8,7 +8,7 @@ proveniência ao lado. O clone raso sem `master` local passou com código 0.
 
 Motor: `7c43b0746f8c43d9ace5cfdcb4d71a79927a6813`. Commits F2.2d:
 `f8a20fb2`, `7fddf67f` e `7c43b074`.
-Sítio: `f97d7d60` e `ad4722fa`, seguidos do último commit desta passagem,
+Sítio: `985c977d` e `6b2b2f38`, seguidos do último commit desta passagem,
 que contém esta resposta, o relatório atualizado e as provas. O SHA final do
 sítio é comunicado fora do ramo. O relatório `LEIA-ME.md` cobre o bloco inteiro.
 
@@ -23,7 +23,7 @@ sítio é comunicado fora do ramo. O relatório `LEIA-ME.md` cobre o bloco intei
 Os ficheiros são `provas/f22d/core-final.codigo`, `provas/f22d/clone.codigo`
 e os três `.codigo` em `portoes/f22d/`, com cabeças e árvores ao lado.
 O motor e o clone correspondem à cabeça final acima. Os portões do sítio são
-os de `f97d7d60`, conservados conforme o mandato final: desde essa cabeça só
+os de `985c977d`, conservados conforme o mandato final: desde essa cabeça só
 mudou o pacote de provas. Passaram 47 plantas das rotinas, 26 adicionais com
 os estados reais, 25 no clone raso e 94 conferências dos fluxos.
 

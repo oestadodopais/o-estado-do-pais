@@ -1,8 +1,8 @@
 {
-  "comando": "node design/especime-v3/medicoes/jd1-2026-10-06/captar.mjs --code-head 466f83871ae13eff45a9cd28dcb73470a45114cc",
-  "cabeca": "466f83871ae13eff45a9cd28dcb73470a45114cc",
-  "cabeca_codigo": "466f83871ae13eff45a9cd28dcb73470a45114cc",
-  "construcao": "466f83871ae13eff45a9cd28dcb73470a45114cc",
+  "comando": "node design/especime-v3/medicoes/jd1-2026-10-06/captar.mjs --code-head 0b8b9963562e72be42273cea7734b40efcb8d938",
+  "cabeca": "0b8b9963562e72be42273cea7734b40efcb8d938",
+  "cabeca_codigo": "0b8b9963562e72be42273cea7734b40efcb8d938",
+  "construcao": "0b8b9963562e72be42273cea7734b40efcb8d938",
   "linhas": [
     "custo-da-divida-emitida-2026-08",
     "custo-do-stock-da-divida-direta-2025",

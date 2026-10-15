@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""O §0 do brief E1 (os estudos de Évora, um conjunto coerente), medido sobre a cabeça presa do sítio (24ba5b17).
+"""O §0 do brief E1 (os estudos de Évora, um conjunto coerente), medido sobre a cabeça presa do sítio (341c5ee0).
 Não lê a rede: lê os documentos alojados dos estudos (studies-src/<estudo>/pt.html), os seus registos e o livro-razão
 na cabeça. Escreve design/observatorio/medidas/BRIEF-E1.json (ou o caminho em OEDP_MEDIDAS_JSON). Cada medição leva
 o comando e um conhecido-positivo; o que não conseguir ler fica «NÃO LIDO»."""
@@ -7,7 +7,7 @@ import html, json, os, pathlib, re, subprocess
 import yaml
 
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "24ba5b17"
+CAB = "341c5ee0"
 NAO = "NÃO LIDO"
 medidas = []
 

@@ -1,8 +1,8 @@
 {
-  "cabecaCodigo": "abe02094947a2f3c4d600891b89380c7b175ebe5",
+  "cabecaCodigo": "07388654cfd9f5b0a6326371c310c2f9461e43b5",
   "fusao": {
     "pasta": "portoes-fusao",
-    "cabeca": "721443ce8afea9946d7e25c4cb5e410fc268fa1f",
+    "cabeca": "9fed89afa4eb24c638278985099758bdd9ff980c",
     "portoes": [
       {
         "nome": "build",
@@ -26,7 +26,7 @@
   },
   "primeira": {
     "pasta": "portoes-b-primeira",
-    "cabeca": "fc969cc2d3bf5faf40d6df705f93fe7671605144",
+    "cabeca": "393e162b6157edad0c29d40c698cb00060c42e57",
     "portoes": [
       {
         "nome": "build",
@@ -50,7 +50,7 @@
   },
   "segunda": {
     "pasta": "portoes-b-segunda",
-    "cabeca": "c25aee7f41e5931909f3cc05e7779f6d22922ae8",
+    "cabeca": "732cec7b85f40167f628f03ea882da44da199c82",
     "portoes": [
       {
         "nome": "build",
@@ -74,7 +74,7 @@
   },
   "terceira": {
     "pasta": "portoes-b-terceira",
-    "cabeca": "4dfb9690fb1a95d3bb2973ae32e8702988fd25d3",
+    "cabeca": "31789e34cd290b96316d38eec716d4dd3919bec0",
     "portoes": [
       {
         "nome": "build",
@@ -98,7 +98,7 @@
   },
   "final": {
     "pasta": "portoes-b",
-    "cabeca": "abe02094947a2f3c4d600891b89380c7b175ebe5",
+    "cabeca": "07388654cfd9f5b0a6326371c310c2f9461e43b5",
     "portoes": [
       {
         "nome": "build",
@@ -120,60 +120,60 @@
       }
     ]
   },
-  "base": "56a582dd6822f5f6c73256e063c1c8421280fb5f",
-  "mainFundido": "f3aaa3e7292799f58db4158db30dd631c9d2d652",
+  "base": "682510068b5c773229e15b614dae999a150ebf6e",
+  "mainFundido": "7952dc2591b32b6777e32e9f5f18984c35a635d4",
   "commitsMain": 109,
   "commits": [
     {
-      "sha": "721443ce8afea9946d7e25c4cb5e410fc268fa1f",
+      "sha": "9fed89afa4eb24c638278985099758bdd9ff980c",
       "mensagem": "Funde main de 07.10.2026 no ER1, com M-A, EX2, H4 e direção atualizada"
     },
     {
-      "sha": "ff6caca31bfa878b763e519bab163e169915f329",
+      "sha": "3514bdddb707ef1808f08484ae561eebf603d275",
       "mensagem": "ER1-b 4: recusa incorporar proveniência por confirmar"
     },
     {
-      "sha": "637a969e69d0e3d83cb334e0852343645bd6bbf9",
+      "sha": "b03d8e8479cdc3e0cdaa70af1e0e85277d37da35",
       "mensagem": "ER1-b 7 e 13: regista o texto aprovado do Método"
     },
     {
-      "sha": "28f3055b2429e4d6f9b98091291a65b86acd0d85",
+      "sha": "5c6463e9df7bda3ada740c3753df0663b884d84f",
       "mensagem": "ER1-b 8: faz viajar o lugar antes do período"
     },
     {
-      "sha": "ff73542397dbaf00a2b3b5e92d1acc51e4ce207f",
+      "sha": "5877605534a4893428c430db031945261a87485d",
       "mensagem": "ER1-b 10: inventaria as cadeias aprovadas nas duas edições"
     },
     {
-      "sha": "860020a90b99c23c045aa083e889bd09215eacce",
+      "sha": "9ba87560c6e8c6446035f837a23d07ab48f4fc40",
       "mensagem": "ER1-b 11: separa a unidade da fonte no código e na atualização"
     },
     {
-      "sha": "71b42c12eaf5a8fc2578c832ff7e1b4680434888",
+      "sha": "fbac4267cd5013dbafd8b5aede21a3f88c467c4a",
       "mensagem": "ER1-b 12: planta as seis leituras indevidas na privacidade"
     },
     {
-      "sha": "cf1b89c0ccb7d4a644ddedbd67663596f92b5f79",
+      "sha": "e7660ba400987de3cbd392679945d7c8d98bffbf",
       "mensagem": "ER1-b 14: exerce as notas reais no navegador e planta a sua retirada"
     },
     {
-      "sha": "388bd84e850c3b3ea58671e12ec4d81d45167673",
+      "sha": "904a83fc081c436305cac0917cc41eb7db76a992",
       "mensagem": "ER1-b 15: retira o controlo das plantas da leitura a frio"
     },
     {
-      "sha": "fc969cc2d3bf5faf40d6df705f93fe7671605144",
+      "sha": "393e162b6157edad0c29d40c698cb00060c42e57",
       "mensagem": "ER1-b: alinha o mapa pelas âncoras depois das correções"
     },
     {
-      "sha": "c25aee7f41e5931909f3cc05e7779f6d22922ae8",
+      "sha": "732cec7b85f40167f628f03ea882da44da199c82",
       "mensagem": "ER1-b 8: fecha a ausência de uma região na resolução do lugar"
     },
     {
-      "sha": "4dfb9690fb1a95d3bb2973ae32e8702988fd25d3",
+      "sha": "31789e34cd290b96316d38eec716d4dd3919bec0",
       "mensagem": "ER1-b 7: fecha a porta de exemplo pedida no brief do Método"
     },
     {
-      "sha": "abe02094947a2f3c4d600891b89380c7b175ebe5",
+      "sha": "07388654cfd9f5b0a6326371c310c2f9461e43b5",
       "mensagem": "ER1-b 10: confere a porta governada na tabela própria do inventário"
     }
   ],

@@ -25,7 +25,7 @@ from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent
 RAIZ = AQUI.parents[3]
-CABECA_R1 = 'bc68892b'
+CABECA_R1 = 'dcaa43b2'
 MEDIR = AQUI / 'medir.py'
 
 original = subprocess.run(['git', 'show', f'{CABECA_R1}:src/data/figuras.mjs'], cwd=RAIZ,

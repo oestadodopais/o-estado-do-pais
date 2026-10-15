@@ -28,6 +28,6 @@ as torna legíveis num diff.
 
 **Os dois guiões de medição entram com as suas saídas**, e não só as saídas: um número tem o comando ao lado, e o comando tem o código que o produziu. Os outros ficheiros saem de réguas que já viviam no repositório.
 
-**O «antes» é a construção de `bb0b4c39`**, a cabeça de que este ramo saiu, e não
+**O «antes» é a construção de `6a56efbd`**, a cabeça de que este ramo saiu, e não
 uma memória: onde há um antes e um depois, os dois lados foram medidos pela mesma
 régua sobre as duas construções, e o comando está na linha do ficheiro.

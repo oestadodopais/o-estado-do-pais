@@ -1,6 +1,6 @@
 {
   "comando": "node design/especime-v3/medicoes/er1-2026-10-06/fechar.mjs",
-  "cabeca": "645ecde7ea61c044d7c0648b020c6392a48674ce",
+  "cabeca": "6488636195b0b3a66c467ab47f88cce9a37ceab7",
   "manifesto": [
     {
       "ficheiro": "design/especime-v3/medicoes/er1-2026-10-06/leitura/codigo/design/especime-v3/INVENTARIO-FRASES.md",

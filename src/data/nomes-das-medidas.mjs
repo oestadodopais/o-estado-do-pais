@@ -12,7 +12,7 @@ import { NOMES_OE1 } from './medidas-oe1.mjs';
  * O que faltava era o do meio.
  *
  * O QUE ISTO CORRIGE, MEDIDO E NÃO SUPOSTO. A 16.09.2026, sobre o `dist/` da
- * cabeça `796c9032`, 164 cartões de 236 (82 por edição, de 81 linhas distintas)
+ * cabeça `fab09477`, 164 cartões de 236 (82 por edição, de 81 linhas distintas)
  * encabeçavam-se com o título do documento de onde a linha foi lida ou com o
  * rótulo que a fonte imprime por cima da figura. O leitor da página da área da
  * habitação lia «Residential building permits - annual data»; o da economia lia

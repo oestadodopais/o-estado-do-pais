@@ -1,6 +1,6 @@
 # L2a · o mapa primeiro: relatório do construtor
 
-*Bloco L2a, 01.10.2026, pelo brief `design/observatorio/BRIEF-L2a-o-mapa-primeiro.md` e pela §1.149. Construtor: Claude Opus 5.5 (a definição `construtor`), na worktree do ramo `l2a-2026-10-01`, sobre `main` em `d0416b3c`. Cada número deste relatório está num ficheiro desta pasta, quase todos em `medidas.json`, escrito por `medir-l2a.py`. Sem travessões.*
+*Bloco L2a, 01.10.2026, pelo brief `design/observatorio/BRIEF-L2a-o-mapa-primeiro.md` e pela §1.149. Construtor: Claude Opus 5.5 (a definição `construtor`), na worktree do ramo `l2a-2026-10-01`, sobre `main` em `4513e260`. Cada número deste relatório está num ficheiro desta pasta, quase todos em `medidas.json`, escrito por `medir-l2a.py`. Sem travessões.*
 
 ## O teste de aceitação, e onde se mede
 
@@ -15,7 +15,7 @@ O do §2 do brief, à letra, ponto por ponto:
 | a porta «Lugares» de «Por onde começar» com um mapa pequeno como sinal | a L2A4, «a porta» no navegador e a R6 do `check:mapa` | 1 sinal na primeira página e 1 nos temas, só na porta «Lugares», com o texto alternativo da edição; o toque na porta abre «Lugares» da mesma edição |
 | os dois mapas de «As medidas dos concelhos» e as suas tabelas ficam como estão | a célula N1M do `check:navegacao` (`tests/inicio/concelhos-nos-lugares.mjs`), que não mudou | verde |
 | as células que protegem a pesquisa, o mapa e as listas mudam de forma com uma planta cada | a tabela das réguas, abaixo | 14 plantas da célula nova, 4 da célula no navegador, 23 do `check:mapa` (quatro delas novas), 2 da voz e 1 do feixe, todas a morder |
-| os três portões a 0 | `portoes/`, na cabeça `a66ab832`, e `portoes-intermedio/`, na cabeça `86635e62` | 0, 0 e 0 nas duas corridas |
+| os três portões a 0 | `portoes/`, na cabeça `b62ccc7e`, e `portoes-intermedio/`, na cabeça `aca346f9` | 0, 0 e 0 nas duas corridas |
 | as capturas de «Lugares» e da primeira página nas cinco larguras e nas duas edições | `capturas-l2a.json` | 22 capturas e 0 problemas, em `design/especime-v3/capturas/l2a-2026-10-01/` |
 
 ## O mandato, ponto por ponto
@@ -64,30 +64,30 @@ O contorno é a fronteira da união das 29 unidades, lida pelas arestas: das 553
 
 ## Os commits
 
-- `ec3d7671` o mapa primeiro em «Lugares», as listas dobradas e a primeira página com a porta e o sinal
-- `c35686ec` o esqueleto do relatório
-- `79703683` a voz das páginas do país sem o mapa e a pesquisa, e as seis cadeias novas no inventário
-- `274baf31` a célula do mapa primeiro no `check:navegacao`
-- `757bec23` a célula da pesquisa da primeira página muda de forma, no navegador
-- `86635e62` a I11 segue o mapa, e dois seletores e uma planta deixam a porta que saiu
-- `488f62c4` as duas gavetas sem o ar de secção entre elas
-- `1be6d6cc` as capturas, as plantas e as medidas
-- `a66ab832` o relatório do construtor, a resposta curta e as medidas com o custo e a corrida intermédia dos portões
+- `07e1d216` o mapa primeiro em «Lugares», as listas dobradas e a primeira página com a porta e o sinal
+- `be2b3e35` o esqueleto do relatório
+- `96d9728f` a voz das páginas do país sem o mapa e a pesquisa, e as seis cadeias novas no inventário
+- `b8e9e7d8` a célula do mapa primeiro no `check:navegacao`
+- `8eec476b` a célula da pesquisa da primeira página muda de forma, no navegador
+- `aca346f9` a I11 segue o mapa, e dois seletores e uma planta deixam a porta que saiu
+- `04afdcf6` as duas gavetas sem o ar de secção entre elas
+- `4fa9fa14` as capturas, as plantas e as medidas
+- `b62ccc7e` o relatório do construtor, a resposta curta e as medidas com o custo e a corrida intermédia dos portões
 - o commit seguinte: os códigos e os registos da corrida final dos portões, e este relatório com eles
 
 ## Os portões
 
-Corrida final, por `scripts/leituras/portoes.sh` (a tranca da máquina), na cabeça `a66ab832`, a do commit do relatório e da resposta curta (`portoes/cabeca`, e a mesma em `portoes/cabeca.fim`, com a árvore limpa no fim em `portoes/estado.fim`): `build` 0 em 120 s, `verify` 0 em 719 s, `typecheck` 0 em 0 s, cada código lido do seu ficheiro. Os registos estão ao lado, com os caminhos da máquina tornados relativos. O commit que os traz só acrescenta ficheiros desta pasta.
+Corrida final, por `scripts/leituras/portoes.sh` (a tranca da máquina), na cabeça `b62ccc7e`, a do commit do relatório e da resposta curta (`portoes/cabeca`, e a mesma em `portoes/cabeca.fim`, com a árvore limpa no fim em `portoes/estado.fim`): `build` 0 em 120 s, `verify` 0 em 719 s, `typecheck` 0 em 0 s, cada código lido do seu ficheiro. Os registos estão ao lado, com os caminhos da máquina tornados relativos. O commit que os traz só acrescenta ficheiros desta pasta.
 
-Corrida intermédia, pelo mesmo guião, na cabeça `86635e62` (`portoes-intermedio/`): `build` 0 em 115 s, `verify` 0 em 702 s, `typecheck` 0 em 1 s.
+Corrida intermédia, pelo mesmo guião, na cabeça `aca346f9` (`portoes-intermedio/`): `build` 0 em 115 s, `verify` 0 em 702 s, `typecheck` 0 em 1 s.
 
 ## As capturas
 
-Em `design/especime-v3/capturas/l2a-2026-10-01/`, sobre a construção da cabeça `488f62c4`: `lugares-<pt|en>-<largura>.png` e `primeira-<pt|en>-<largura>.png` nas cinco larguras, e `lugares-regioes-abertas-<pt|en>-390.png` com a gaveta das regiões aberta. O manifesto `capturas-l2a.json` guarda o resumo sha256 de cada imagem e as medidas de cada página: nenhum transbordo, nenhum pedido para fora, 0 nomes das listas à vista com as gavetas fechadas e 9 com a das regiões aberta.
+Em `design/especime-v3/capturas/l2a-2026-10-01/`, sobre a construção da cabeça `04afdcf6`: `lugares-<pt|en>-<largura>.png` e `primeira-<pt|en>-<largura>.png` nas cinco larguras, e `lugares-regioes-abertas-<pt|en>-390.png` com a gaveta das regiões aberta. O manifesto `capturas-l2a.json` guarda o resumo sha256 de cada imagem e as medidas de cada página: nenhum transbordo, nenhum pedido para fora, 0 nomes das listas à vista com as gavetas fechadas e 9 com a das regiões aberta.
 
 ## As decisões em vigor nos ficheiros tocados
 
-`decisoes-em-vigor.txt`, de `python3 scripts/leituras/decisoes-em-vigor.py --intervalo d0416b3c..488f62c4`. As citadas perto do que mudou, e o que lhes acontece: a §1.84 (a legenda do mapa ao pé dele) fica, e a legenda foi com o mapa; a §1.124 (o que é interativo prova-se a interagir) fica, na célula no navegador; a §1.133 (o leitor comum primeiro) fica; a §1.143 (uma coisa, um lugar) fica, e ganha a L2A3 e a metade nova da R4; a §1.149 é a deste bloco; a §1.39 e a §1.140 aparecem por vizinhança de linhas e não são tocadas. O achado D7 de 21.09.2026 fica: a grelha de duas colunas conserva-se a partir de 1 024 px. A medida do D7 pedia que o primeiro ecrã de um portátil mostrasse a busca, as nove regiões e o mapa; com as listas dobradas pela §1.149, mostra a busca, as duas gavetas e o topo do mapa (as caixas medidas a 1280 estão em `navegador.json`).
+`decisoes-em-vigor.txt`, de `python3 scripts/leituras/decisoes-em-vigor.py --intervalo 4513e260..04afdcf6`. As citadas perto do que mudou, e o que lhes acontece: a §1.84 (a legenda do mapa ao pé dele) fica, e a legenda foi com o mapa; a §1.124 (o que é interativo prova-se a interagir) fica, na célula no navegador; a §1.133 (o leitor comum primeiro) fica; a §1.143 (uma coisa, um lugar) fica, e ganha a L2A3 e a metade nova da R4; a §1.149 é a deste bloco; a §1.39 e a §1.140 aparecem por vizinhança de linhas e não são tocadas. O achado D7 de 21.09.2026 fica: a grelha de duas colunas conserva-se a partir de 1 024 px. A medida do D7 pedia que o primeiro ecrã de um portátil mostrasse a busca, as nove regiões e o mapa; com as listas dobradas pela §1.149, mostra a busca, as duas gavetas e o topo do mapa (as caixas medidas a 1280 estão em `navegador.json`).
 
 ## O custo
 
@@ -110,8 +110,8 @@ Símbolos: 653000 até à corrida final dos portões, a diferença entre o conta
 - **`13` · o conhecido-positivo do contorno.** Só conta com as três contagens lidas; corrido com o módulo do contorno trocado por um que não existe, os cinco ficam por encontrar (`l2a-b/prova-do-conhecido-positivo-do-contorno.txt`).
 - **`14` · a igualdade do sinal.** Compara o atributo `d` inteiro, carácter a carácter, e o conhecido-positivo é a mesma comparação a recusar uma cópia com um algarismo trocado e o mesmo comprimento. Resultado: igual («sim» em `medidas.json`, com o sha256 do desenho ao lado).
 
-**Os commits da passagem:** `dd57abb1` (os achados `13` e `14`), `be4fe4e0` (o `5`), `7a0f963c` (o `4` e o `6`), `401d0576` (esta secção, a resposta curta e as medidas), e o seguinte, com os códigos dos portões.
+**Os commits da passagem:** `26d3698c` (os achados `13` e `14`), `2183efe6` (o `5`), `518b34df` (o `4` e o `6`), `cbad2733` (esta secção, a resposta curta e as medidas), e o seguinte, com os códigos dos portões.
 
-**Os portões:** por `scripts/leituras/portoes.sh` (a tranca da máquina), na cabeça `401d0576`, a mesma no fim, com a árvore limpa (`portoes/l2a-b/cabeca`, `cabeca.fim` e `estado.fim`): `build` 0 em 115 s, `verify` 0 em 706 s, `typecheck` 0 em 1 s, cada código lido do seu ficheiro, com os registos ao lado e os caminhos da máquina tornados relativos. O commit que os traz só acrescenta ficheiros desta pasta.
+**Os portões:** por `scripts/leituras/portoes.sh` (a tranca da máquina), na cabeça `cbad2733`, a mesma no fim, com a árvore limpa (`portoes/l2a-b/cabeca`, `cabeca.fim` e `estado.fim`): `build` 0 em 115 s, `verify` 0 em 706 s, `typecheck` 0 em 1 s, cada código lido do seu ficheiro, com os registos ao lado e os caminhos da máquina tornados relativos. O commit que os traz só acrescenta ficheiros desta pasta.
 
 **O custo:** 36677 símbolos nesta passagem até ao relatório, a diferença entre as duas leituras do contador de símbolos restantes guardadas em `custo-l2a-b.json` (a primeira à chegada da mensagem do lugar de direção, a segunda ao escrever esta secção); os segundos dos portões estão acima. Modelo: Claude Opus 5.5, sem subagentes.

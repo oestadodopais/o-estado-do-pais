@@ -2,11 +2,11 @@
   "instante": "2026-09-29T21:49:46.992408+00:00",
   "comandos": [
     "git -C <motor> diff --name-only 5335e12 HEAD",
-    "git -C <sitio> diff --name-only fb1dd0dd HEAD",
+    "git -C <sitio> diff --name-only b057626b HEAD",
     "git -C <motor> status --porcelain"
   ],
   "motor_cabeca": "1a67dea9a4e479c00f4fe4c8d645364a3a943446",
-  "sitio_cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+  "sitio_cabeca": "9ecc5c8bbbfc0f460a62569a711cd6601334bee9",
   "motor_mudancas": [
     ".github/README.md",
     ".github/actions/corredor-retomar/action.yml",

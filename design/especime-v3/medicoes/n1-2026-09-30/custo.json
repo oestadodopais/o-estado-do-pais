@@ -8,7 +8,7 @@
   "amostras": [
     {
       "passagem": "N1",
-      "origem_git": "dfc86083:design/especime-v3/medicoes/n1-2026-09-30/custo.json",
+      "origem_git": "00911eb3:design/especime-v3/medicoes/n1-2026-09-30/custo.json",
       "amostra": {
         "medido_em": "2026-09-30T10:30:21.825568+00:00",
         "segundos_decorridos": 5142.386568,
@@ -114,7 +114,7 @@
     },
     {
       "passagem": "N1b",
-      "origem_git": "ae010fbb:design/especime-v3/medicoes/n1-2026-09-30/custo.json",
+      "origem_git": "39a50b21:design/especime-v3/medicoes/n1-2026-09-30/custo.json",
       "amostra": {
         "medido_em": "2026-09-30T10:57:26.259678+00:00",
         "segundos_decorridos": 6766.820678,

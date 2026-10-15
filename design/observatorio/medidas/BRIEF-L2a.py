@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """O §0 do brief L2a (o mapa de «Lugares» primeiro, as listas dobradas, o mapa fora da primeira página), medido
-sobre a cabeça presa do sítio (1395c9de). Não lê a rede: lê as vistas, a carta dos lugares e as capturas do N1 a
+sobre a cabeça presa do sítio (f744d46c). Não lê a rede: lê as vistas, a carta dos lugares e as capturas do N1 a
 390 px na cabeça. Escreve design/observatorio/medidas/BRIEF-L2a.json (ou o caminho em OEDP_MEDIDAS_JSON). Cada
 medição leva o comando e um conhecido-positivo; o que não conseguir ler fica «NÃO LIDO»."""
 import json, os, pathlib, re, struct, subprocess
 
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "1395c9de"
+CAB = "f744d46c"
 NAO = "NÃO LIDO"
 medidas = []
 

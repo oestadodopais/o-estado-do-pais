@@ -8,7 +8,7 @@ AQUI=Path(__file__).resolve().parent
 RAIZ=AQUI.parents[4]
 ID='indice-de-divida-limite-legal'
 def git(p):
-    return subprocess.check_output(['git','show',f'a677770f:{p}'],cwd=RAIZ,text=True)
+    return subprocess.check_output(['git','show',f'04438bb9:{p}'],cwd=RAIZ,text=True)
 p=RAIZ/f'ledger/claims/{ID}.yml'
 antes=yaml.safe_load(git(p.relative_to(RAIZ)))
 atual=yaml.safe_load(p.read_text())
@@ -28,13 +28,13 @@ if errado['exported_row_sha256']!=hashlib.sha256(p.read_bytes()).hexdigest():
         if k not in ('corrections_at_export','exported_row_sha256','site_corrections'):
             assert errado[k]==v
     assert errado['verifications_at_export']==len(antes['verifications'])
-    (AQUI/'travessia-repetida.json').write_text(json.dumps({'origem':'a677770f','razao':'A aceitação anterior selou uma linha cuja lista tinha encolhido. Repete-se a revisão de proveniência sobre a lista completa, por decisão da retoma. A contagem de reconferências não muda.','aceitacao_anterior_errada':errado,'antes_da_proveniencia':original},ensure_ascii=False,indent=2)+'\n')
+    (AQUI/'travessia-repetida.json').write_text(json.dumps({'origem':'04438bb9','razao':'A aceitação anterior selou uma linha cuja lista tinha encolhido. Repete-se a revisão de proveniência sobre a lista completa, por decisão da retoma. A contagem de reconferências não muda.','aceitacao_anterior_errada':errado,'antes_da_proveniencia':original},ensure_ascii=False,indent=2)+'\n')
     r['rows'][ID]=original
     reg.write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n')
     subprocess.run(['node','scripts/check-cruzamento.mjs','--accept-correction',ID],cwd=RAIZ,check=True)
 prova=json.loads((AQUI/'dgal-proveniencia.json').read_text())
 prova['depois']=yaml.safe_load(p.read_text())
-prova['reconferencia_reposta_de']='a677770f'
+prova['reconferencia_reposta_de']='04438bb9'
 prova['depois_sha256']=hashlib.sha256(p.read_bytes()).hexdigest()
 (AQUI/'dgal-proveniencia.json').write_text(json.dumps(prova,ensure_ascii=False,indent=2)+'\n')
 print('Reconferência reposta; revisão de proveniência aceite sobre a história completa.')

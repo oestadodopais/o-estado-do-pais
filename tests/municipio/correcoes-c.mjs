@@ -115,7 +115,7 @@ const medidas = {};
 const conta = (nome, passa, prova) => reguas.push({ nome, passa: !!passa, prova: String(prova) });
 
 /**
- * AS CONTAGENS DE ANTES DO BLOCO B, medidas na construção de `main` (`cb133d5`)
+ * AS CONTAGENS DE ANTES DO BLOCO B, medidas na construção de `main` (`c156148`)
  * com este mesmo aparelho, e escritas aqui porque é contra elas que o item C2 se
  * julga: «volta a caber dez entradas onde cabiam dez».
  *

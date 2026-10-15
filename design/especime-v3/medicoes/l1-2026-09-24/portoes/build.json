@@ -1,7 +1,7 @@
 {
   "comando": "npm run build",
   "codigo": 0,
-  "cabeca": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+  "cabeca": "fb363a11137d7ce29282f80ecdf7bc8b0f7ea65c",
   "motor_cabeca": "1d10b3fe413340c843babafd03700bcea8fcb08b",
   "inicio": "2026-09-26T09:07:57.346272+00:00",
   "fim": "2026-09-26T09:13:01.038118+00:00",

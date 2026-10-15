@@ -1,8 +1,8 @@
 {
   "bloco": "UE2-b",
-  "cabeca": "d79df84030fce85e7d414de625709d8f9316c572",
-  "construcao_final": "d79df84030fce85e7d414de625709d8f9316c572",
-  "construcao_de_base": "da6d2d91b706a4201a4fd98bcdfccbbba1d9f3c9",
+  "cabeca": "82dcbf3f1936aa40d6a06ee5cf22f174855ccd44",
+  "construcao_final": "82dcbf3f1936aa40d6a06ee5cf22f174855ccd44",
+  "construcao_de_base": "fa1a5b63d518f16210364a25ee7c12ae191000b1",
   "guiao": "design/especime-v3/medicoes/ue2-2026-10-02/medir-ue2-b.mjs",
   "medidas": [
     {
@@ -20,7 +20,7 @@
           "taxa-de-cambio-efectiva-real-2025"
         ]
       },
-      "comando": "as entradas de DEFINICOES_DAS_MEDIDAS com a chave «uniao», no módulo da cabeça e no de da6d2d91 (git show)",
+      "comando": "as entradas de DEFINICOES_DAS_MEDIDAS com a chave «uniao», no módulo da cabeça e no de fa1a5b63 (git show)",
       "conhecido_positivo": {
         "o_que": "o mesmo detetor acha as formas do UE2 na declaração de base, entre elas a do custo unitário do trabalho",
         "encontrado": true
@@ -859,7 +859,7 @@
       "valor": {
         "capturas": 22,
         "problemas": 0,
-        "cabeca_da_construcao": "33c30fd9bca48d4a93a348d17d1bc02c2818a7ec",
+        "cabeca_da_construcao": "f06d2a3ea4ddbd40a181dc8509403c2752696055",
         "alturas": [
           {
             "rota": "/uniao-europeia/",
@@ -932,8 +932,8 @@
     {
       "nome": "portoes_a_zero",
       "valor": {
-        "cabeca": "d79df84030fce85e7d414de625709d8f9316c572",
-        "cabeca_fim": "d79df84030fce85e7d414de625709d8f9316c572",
+        "cabeca": "82dcbf3f1936aa40d6a06ee5cf22f174855ccd44",
+        "cabeca_fim": "82dcbf3f1936aa40d6a06ee5cf22f174855ccd44",
         "cabeca_igual_no_fim": true,
         "build": 0,
         "verify": 0,

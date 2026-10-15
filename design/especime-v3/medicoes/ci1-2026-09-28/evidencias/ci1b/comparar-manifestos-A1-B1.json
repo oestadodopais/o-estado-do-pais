@@ -31,8 +31,8 @@
   {
    "ficheiro": "prova.json",
    "campo": "commit",
-   "antes": "1c1952c949d53907ac8bf879f47f00d48131ec76",
-   "depois": "27b13b92199b7917ce5bba6d01dfcf471dd70cbb"
+   "antes": "8ee1b2c4953c1ae17206b0795c4c0ef9e0e5771f",
+   "depois": "4d21997041ea5867c079d508f15455303a569851"
   },
   {
    "ficheiro": "prova.json",
@@ -43,8 +43,8 @@
   {
    "ficheiro": "version.json",
    "campo": "commit",
-   "antes": "1c1952c949d53907ac8bf879f47f00d48131ec76",
-   "depois": "27b13b92199b7917ce5bba6d01dfcf471dd70cbb"
+   "antes": "8ee1b2c4953c1ae17206b0795c4c0ef9e0e5771f",
+   "depois": "4d21997041ea5867c079d508f15455303a569851"
   },
   {
    "ficheiro": "version.json",

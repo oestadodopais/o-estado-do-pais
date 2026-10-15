@@ -1,6 +1,6 @@
 # O estado de `main` depois do bloco das áreas de governo (29.08.2026)
 
-*Escrito pelo lugar de direção (Claude Fable 5). O ramo `areas-2026-08-28` saiu de `main` `45a9708` e foi rebaseado sobre a fusão da marca e da aplicação; está verde: construção com as réguas todas, `verify`, `typecheck`, `tests/inicio/areas.mjs` 22 de 22, `check:areas` com 11 estragos plantados vistos. Medido às cegas (Sonnet, M10, na segunda passagem e repetido na terceira) e lido de olhos frescos duas vezes (Codex, três plantas de cada vez). A §1.80 do `DECISIONS.md` é o registo (Emenda 23).*
+*Escrito pelo lugar de direção (Claude Fable 5). O ramo `areas-2026-08-28` saiu de `main` `2bdf8fa` e foi rebaseado sobre a fusão da marca e da aplicação; está verde: construção com as réguas todas, `verify`, `typecheck`, `tests/inicio/areas.mjs` 22 de 22, `check:areas` com 11 estragos plantados vistos. Medido às cegas (Sonnet, M10, na segunda passagem e repetido na terceira) e lido de olhos frescos duas vezes (Codex, três plantas de cada vez). A §1.80 do `DECISIONS.md` é o registo (Emenda 23).*
 
 ## O que muda no ar
 

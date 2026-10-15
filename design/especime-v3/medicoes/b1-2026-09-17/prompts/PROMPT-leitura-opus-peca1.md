@@ -25,7 +25,7 @@ The first piece of block B1, the rebuild of the site's reader-facing surface (th
 
 - `brief.md`, `02-ESTRUTURA.md`, the three builder prompts.
 - `relatorio-construtor.md`: the builder's report (unproven until reproduced), with its planted-fault files linked under `design/especime-v3/medicoes/b1-2026-09-17/`.
-- `diff.patch`: the diff between the base `2bf8b238` and the head `3da02ca5` (without the PNG captures).
+- `diff.patch`: the diff between the base `0820794d` and the head `3da02ca5` (without the PNG captures).
 - The changed files at their repository paths, including `src/data/studies.mjs`, the views and components, `scripts/gate-html.mjs`, `scripts/check-lugar.mjs`, `scripts/check-datas.mjs`, `scripts/check-cadeia.mjs`, `scripts/check-voz.mjs`, the tests under `tests/`, `design/especime-v3/INVENTARIO-FRASES.md` and `critica/REVISOES-DO-INVENTARIO.md`.
 - `built/`: the studies list (both editions), the Évora 2027 study page (both editions), one more study page, and the old `/texto` route as built, from the head.
 

@@ -1,6 +1,6 @@
 {
   "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/er1-2026-10-06/portoes",
-  "cabeca": "8252915ed97cc4a96eacc20881722201e470c17d",
+  "cabeca": "013e54907d21fe556ccdcab06eff1d663781fd73",
   "portoes": [
     {
       "nome": "build",

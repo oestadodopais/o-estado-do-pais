@@ -148,10 +148,10 @@ medida("linhas_do_ponto_7_sem_serie_no_s3", sem_serie, "a edição de cada linha
 medida("linhas_do_ponto_7_sem_serie_no_s3_contagem", sum(1 for x in sem_serie if not x["codigo_tem_serie_no_tempo"] and not x["tem_o_campo_serie"]),
        "as linhas acima sem série com o seu código e sem o campo", "são cinco nomes na lista", len(SEM_SERIE) == 5)
 # O que mudou nas linhas escalares: só o campo serie, nas linhas presas (git diff --numstat da base à cabeça do código).
-r = subprocess.run(["git", "diff", "--numstat", "1c4dde2f", cab_codigo := (ler(f"{PASTA}/portoes/cabeca").strip() if existe(f"{PASTA}/portoes/cabeca") else "HEAD"), "--", "ledger/claims/"],
+r = subprocess.run(["git", "diff", "--numstat", "2c510494", cab_codigo := (ler(f"{PASTA}/portoes/cabeca").strip() if existe(f"{PASTA}/portoes/cabeca") else "HEAD"), "--", "ledger/claims/"],
                    capture_output=True, text=True)
 numstat = [l.split("\t") for l in r.stdout.splitlines() if l]
-medida("linhas_escalares_mudadas", len(numstat), f"git diff --numstat 1c4dde2f {cab_codigo[:8]} -- ledger/claims/",
+medida("linhas_escalares_mudadas", len(numstat), f"git diff --numstat 2c510494 {cab_codigo[:8]} -- ledger/claims/",
        "são as linhas presas", sorted(os.path.basename(x[2])[:-4] for x in numstat) == sorted(l for l, _ in presas))
 medida("linhas_escalares_linhas_acrescentadas_e_tiradas", {"acrescentadas": sum(int(x[0]) for x in numstat), "tiradas": sum(int(x[1]) for x in numstat)},
        "a soma das colunas do numstat acima", "cada linha presa ganhou o campo e o seu comentário (3 linhas)", all(x[0] == "3" and x[1] == "0" for x in numstat))
@@ -236,7 +236,7 @@ def portoes(pasta):
 
 cab = portoes(f"{PASTA}/portoes")
 # O ANTES: a última corrida inteira dos portões numa cabeça com o mesmo código da base deste ramo. É a corrida
-# final do S1 (portoes-d, na cabeça 6ef944d6); entre ela e a base 1c4dde2f só mudaram documentos (o CLAUDE.md, o
+# final do S1 (portoes-d, na cabeça 38f43d49); entre ela e a base 2c510494 só mudaram documentos (o CLAUDE.md, o
 # DECISIONS.md e ficheiros de design/), e nenhum ficheiro do código, do livro, dos guiões ou das dependências.
 ANTES = "design/especime-v3/medicoes/s1-2026-10-02/portoes-d"
 base = portoes(ANTES)
@@ -245,10 +245,10 @@ CODIGO = ["src", "scripts", "tests", "ledger", "public", "api", "supabase", "map
 def mudados(a, b):
     r = subprocess.run(["git", "diff", "--name-only", a, b, "--", *CODIGO], capture_output=True, text=True)
     return [l for l in r.stdout.splitlines() if l] if r.returncode == 0 else None
-entre = mudados(base["cabeca"], "1c4dde2f")
+entre = mudados(base["cabeca"], "2c510494")
 positivo = mudados(base["cabeca"], cab["cabeca"])
 medida("ficheiros_do_codigo_mudados_entre_o_antes_e_a_base", len(entre) if entre is not None else NAO,
-       f"git diff --name-only {base['cabeca'][:8]} 1c4dde2f -- " + " ".join(CODIGO),
+       f"git diff --name-only {base['cabeca'][:8]} 2c510494 -- " + " ".join(CODIGO),
        "o mesmo comando até à cabeça do código vê os ficheiros do bloco", bool(positivo))
 for g in ("build", "verify", "typecheck"):
     medida(f"portao_{g}_codigo", cab[g]["codigo"] if cab[g] else NAO, f"cat {PASTA}/portoes/{g}.codigo",
@@ -264,7 +264,7 @@ if base:
                "o ficheiro existe e é um inteiro", base[g] is not None)
         medida(f"base_{g}_segundos", base[g]["segundos"] if base[g] else NAO, f"{ANTES}/{g}.fim menos {g}.inicio",
                "as duas horas leram-se", base[g] is not None)
-    medida("base_cabeca", base["cabeca"], f"cat {ANTES}/cabeca", "é a cabeça do código do S1, 6ef944d6", (base["cabeca"] or "").startswith("6ef944d6"))
+    medida("base_cabeca", base["cabeca"], f"cat {ANTES}/cabeca", "é a cabeça do código do S1, 38f43d49", (base["cabeca"] or "").startswith("38f43d49"))
     medida("base_paginas_construidas", base["paginas_construidas"], f"«N page(s) built» em {ANTES}/build.log",
            "o registo traz a linha do Astro", base["paginas_construidas"] is not None)
     if base["build"] and cab["build"]:
@@ -281,10 +281,10 @@ fonte_ledger = ler("scripts/check-ledger.mjs")
 regras_rp3 = re.findall(r"regra: 'S(9|1[0-4])'", fonte_ledger)
 medida("plantas_do_ledger_check_rp3_por_regra", {f"S{r}": regras_rp3.count(r) for r in ("9", "10", "11", "12", "13", "14")},
        "as plantas com «regra: 'S9'» a «'S14'» em scripts/check-ledger.mjs, por regra", "a soma é a contagem total", len(regras_rp3) == 14)
-guardas_antes = subprocess.run(["git", "show", "1c4dde2f:scripts/provar-guardas.mjs"], capture_output=True, text=True).stdout
+guardas_antes = subprocess.run(["git", "show", "2c510494:scripts/provar-guardas.mjs"], capture_output=True, text=True).stdout
 m_ga = re.search(r"CAMPOS\.length === (\d+)", guardas_antes)
 m_gc = re.search(r"CAMPOS\.length === (\d+)", ler("scripts/provar-guardas.mjs"))
-medida("guarda_dos_campos_antes", int(m_ga.group(1)) if m_ga else NAO, "git show 1c4dde2f:scripts/provar-guardas.mjs · «CAMPOS.length === N»",
+medida("guarda_dos_campos_antes", int(m_ga.group(1)) if m_ga else NAO, "git show 2c510494:scripts/provar-guardas.mjs · «CAMPOS.length === N»",
        "a corrida com a igualdade velha recusou o caso", "CAMPOS/tamanho: esperava ACEITE e foi RECUSADO" in ler(f"{PASTA}/plantas/guardas-com-a-igualdade-velha.log"))
 medida("guarda_dos_campos_agora", int(m_gc.group(1)) if m_gc else NAO, "scripts/provar-guardas.mjs · «CAMPOS.length === N»",
        "é um a mais do que antes", m_ga is not None and m_gc is not None and int(m_gc.group(1)) == int(m_ga.group(1)) + 1)
@@ -329,7 +329,7 @@ if existe(f"{PASTA}/paginas-rp3.json"):
               "outros_ficheiros_que_mudaram_por_outra_razao", "outros_ficheiros_comuns_iguais"):
         v = pg[k]
         medida(k, len(v) if isinstance(v, list) else v, f"{PASTA}/paginas-rp3.json · {k} (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
-               "as duas construções são da base e da cabeça do código", pg["construcao_da_base"].startswith("1c4dde2f") and pg["construcao_da_cabeca"] == cab["cabeca"])
+               "as duas construções são da base e da cabeça do código", pg["construcao_da_base"].startswith("2c510494") and pg["construcao_da_cabeca"] == cab["cabeca"])
 if existe(f"{PASTA}/paginas-rp3-fb8dcca4.json"):
     pa = ler_json(f"{PASTA}/paginas-rp3-fb8dcca4.json")
     medida("antes_da_folha_a_parte_paginas_que_mudaram", pa["paginas_que_mudaram"], f"{PASTA}/paginas-rp3-fb8dcca4.json (a mesma comparação na cabeça fb8dcca4, antes da folha à parte)",
@@ -449,7 +449,7 @@ rep = ler_json(f"{PASTA}/brief-rp3-reproduzido.json")
 orig = ler_json("design/observatorio/medidas/BRIEF-RP3.json")
 iguais = sum(1 for a, b in zip(rep["medidas"], orig["medidas"]) if (a["nome"], a["valor"]) == (b["nome"], b["valor"]))
 medida("brief_s0_reproduzido_iguais", iguais, "python3 design/observatorio/medidas/BRIEF-RP3.py contra design/observatorio/medidas/BRIEF-RP3.json, medida a medida",
-       "o §0 tem as linhas do livro de 334cc740", any(x["nome"] == "linhas_do_livro" and x["valor"] == 2984 for x in rep["medidas"]))
+       "o §0 tem as linhas do livro de eaffd3c8", any(x["nome"] == "linhas_do_livro" and x["valor"] == 2984 for x in rep["medidas"]))
 mapa = ler(f"{PASTA}/conferir-mapa.txt")
 mb = ler(f"{PASTA}/conferir-mapa-base.txt")
 num = lambda t, rx: int(re.search(rx, t).group(1)) if re.search(rx, t) else NAO
@@ -500,7 +500,7 @@ if existe(f"{PASTA}/fusao-de-ensaio.json"):
     medida("fusao_de_ensaio_fundidos_lista", fu["fundidos_sem_conflito"], f"{PASTA}/fusao-de-ensaio.json · fundidos_sem_conflito", "a lista leu-se", isinstance(fu["fundidos_sem_conflito"], list))
 cabeca_codigo = cab["cabeca"]
 saida = {"bloco": "RP3", "guiao": f"{PASTA}/medir-rp3.py", "cabeca_do_codigo": cabeca_codigo,
-         "cabeca_do_motor": motor["cabeca_do_motor"], "base": "1c4dde2f", "medidas_escritas": len(medidas), "medidas": medidas}
+         "cabeca_do_motor": motor["cabeca_do_motor"], "base": "2c510494", "medidas_escritas": len(medidas), "medidas": medidas}
 with open(f"{PASTA}/medidas.json", "w", encoding="utf-8") as f:
     f.write(json.dumps(saida, ensure_ascii=False, indent=2) + "\n")
 falhas = [x["nome"] for x in medidas if not x["conhecido_positivo"]["encontrado"] or x["valor"] == NAO]

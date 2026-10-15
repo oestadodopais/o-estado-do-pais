@@ -1,6 +1,6 @@
 # Frases do PCP na passagem V2-a-j
 
-Lidas no HTML da cabeça `d4aa1f19b163435c8ca808f8c5588b299ba88cb9`.
+Lidas no HTML da cabeça `e7ddb83e354a9e9477988df8d468bfd031ee066a`.
 
 ## PT
 

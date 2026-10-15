@@ -1,69 +1,69 @@
 {
-  "base": "c263080105981e81d0c273e3b0cfc53ac399ce4a",
-  "cabeca": "f99ad385789e293373951ddb77f25ac221181daf",
+  "base": "56248a5fde56dfeec9e83ec15a60733cbc914b0d",
+  "cabeca": "e5f114a89fd868e22cde3a69b3db2f4169ee0a96",
   "commits": [
     {
-      "sha": "4d92610b3028c78d6dc2b02e3bf12624ea2e0049",
+      "sha": "5e478bd8eb11625c35d20286b8c6c18f1c7a2831",
       "titulo": "docs(rp4n-i): registar a leitura h, as plantas e o mandato"
     },
     {
-      "sha": "6e27d16949d723cc699b2f0c108625d86e0e5cf3",
+      "sha": "9097e57a92ead75cb1310c7853cf746f91207b66",
       "titulo": "fix(rp4n-i): conferir a língua em todos os atributos"
     },
     {
-      "sha": "40d0849688eb05e7fd58c2ddf32d30e0270ec6c7",
+      "sha": "8cfdf13206704200c9d2e844bcba2bfdde2f6022",
       "titulo": "test(rp4n-i): distinguir falha e ausência na procura da cabeça"
     },
     {
-      "sha": "bddf20857f3ae54a1072840389e08e6b77228e83",
+      "sha": "c4af4f3eb688ff02f79c5c73cf8fed94d5a4d227",
       "titulo": "fix(rp4n-i): fechar RP4N-17 com a exceção histórica exata"
     },
     {
-      "sha": "bf1e71783aa02ce76b6ca05cfe5b07b26eb07cf8",
+      "sha": "7681ee17683b5278272b0d9aa425d514b6832505",
       "titulo": "fix(rp4n-i): não atribuir à cópia a leitura do endereço"
     },
     {
-      "sha": "667863d993d98a914d01b1ad2a3f108ee46c8e36",
+      "sha": "ca08fb63178509d308025543b05463949ac6d407",
       "titulo": "fix(rp4n-i): anonimizar os registos recebidos de main na cabeça"
     },
     {
-      "sha": "22d8cca115331daeecc0661d716e93dc8b81f18e",
+      "sha": "a3ea3b56c696d5060eac0091c25fe6b0fbda97d7",
       "titulo": "docs(rp4n-i): medir o excesso de custo e ligar as operações aos registos"
     },
     {
-      "sha": "1e11e36c15824ea2b95765897ff30bdf2d1bd7b1",
+      "sha": "ca9655c5b26508f6735a07c9506660b1c3613e39",
       "titulo": "fix(rp4n-i): explicar os dois totais e inventariar as fontes das decisões"
     },
     {
-      "sha": "bef0184c90c1aa7e16ddb4c6c7a4bcb8c71b7cdb",
+      "sha": "9566d3fe5b7fe36be50d9b577816543c17065983",
       "titulo": "test(rp4n-i): exigir leitura própria também no portão das fontes"
     },
     {
-      "sha": "333a885c7121663e5b5f61c10fc80efc1f7ebac9",
+      "sha": "e470604a8f1646fb94b0ff5843d35f2f97156a86",
       "titulo": "test(rp4n-i): preparar as medições e o relato pelos ficheiros"
     },
     {
-      "sha": "b34871dc4269ad715c2bd48e5da4208d8a717a65",
+      "sha": "168d172d56632a21291693b201d3ead34561594d",
       "titulo": "docs(rp4n-i): conservar a versão original do manifesto da pensão"
     },
     {
-      "sha": "20d4fda36f183003f0688ece02e3291daaa09813",
+      "sha": "1286eb50c0ddfcfc09315d31f98167e3f5b17439",
       "titulo": "fix(rp4n-i): medir as fontes do bloco contra o main recebido"
     },
     {
-      "sha": "3eee2de63448b6e81e732879b9c846ee7b543d71",
+      "sha": "b666c4fe4a357738bbe9af66c9881b239bb15d49",
       "titulo": "fix(rp4n-i): apresentar o nome literal da medida e a sua língua"
     },
     {
-      "sha": "2aeec1272abab138ccb82ea529433bbce174c624",
+      "sha": "0326f2e7ed9d8d8cea640c6f29b312650a5c83c5",
       "titulo": "fix(rp4n-i): conferir a ausência de leitura própria no C1"
     },
     {
-      "sha": "1ddec358f67093ecc1b83d6850f5654db85b488d",
+      "sha": "c1c25bdfc4c38cb79690c1940fa1ccb62d1c11f9",
       "titulo": "fix(rp4n-i): usar a marca inglesa também nas descrições da página"
     },
     {
-      "sha": "f99ad385789e293373951ddb77f25ac221181daf",
+      "sha": "e5f114a89fd868e22cde3a69b3db2f4169ee0a96",
       "titulo": "fix(rp4n-i): reconhecer e provar o localizador do nome legal no índice"
     }
   ]

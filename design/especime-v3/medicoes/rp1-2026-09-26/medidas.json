@@ -1,11 +1,11 @@
 {
-  "base": "38d3627894416097de26c52346c595c45a7b2884",
-  "cabeca_do_codigo": "cb9571eaf7d043f8c91d9486aad34f97dee00e5d",
+  "base": "2a4ff50987b7c84735d44d82610d4fadfa28f985",
+  "cabeca_do_codigo": "cb667aac9ff4fd8091088ab835384c6e942c9da0",
   "cabeca_motor": "6508b05849b1ea041d91e67339370a860a57f65b",
   "commits_sitio": [
     "3b3dac4853565782996bc3e99f519404e3b17ea6 RP1: acrescentar os cartões confirmados pelas APIs",
     "83fb702cff2ff297ea2c9024f8a854d2b56f287e RP1: completar as declarações e conservar as proteções dos portões",
-    "cb9571eaf7d043f8c91d9486aad34f97dee00e5d RP1: mostrar as origens das perguntas nos recibos"
+    "cb667aac9ff4fd8091088ab835384c6e942c9da0 RP1: mostrar as origens das perguntas nos recibos"
   ],
   "commits_motor": [
     "c42dab902afa3f7f693980745e3cecd7f8cb8a2e RP1: selar observações nacionais de rendimentos e preços",
@@ -220,7 +220,7 @@
   ],
   "capturas": {
     "antes": {
-      "cabeca": "38d3627894416097de26c52346c595c45a7b2884",
+      "cabeca": "2a4ff50987b7c84735d44d82610d4fadfa28f985",
       "paginas": 20,
       "recortes": 0,
       "larguras": [
@@ -233,7 +233,7 @@
       "falhas": 0
     },
     "depois": {
-      "cabeca": "cb9571eaf7d043f8c91d9486aad34f97dee00e5d",
+      "cabeca": "cb667aac9ff4fd8091088ab835384c6e942c9da0",
       "paginas": 20,
       "recortes": 32,
       "larguras": [
@@ -248,14 +248,14 @@
   },
   "paginas": {
     "antes": {
-      "cabeca": "38d3627894416097de26c52346c595c45a7b2884",
+      "cabeca": "2a4ff50987b7c84735d44d82610d4fadfa28f985",
       "html": 4,
       "css": 2,
       "pais_cartoes": 20,
       "temas_cartoes": 36
     },
     "depois": {
-      "cabeca": "cb9571eaf7d043f8c91d9486aad34f97dee00e5d",
+      "cabeca": "cb667aac9ff4fd8091088ab835384c6e942c9da0",
       "html": 4,
       "css": 2,
       "pais_cartoes": 23,
@@ -265,19 +265,19 @@
   "portoes": {
     "build": {
       "codigo": 0,
-      "cabeca": "cb9571eaf7d043f8c91d9486aad34f97dee00e5d",
+      "cabeca": "cb667aac9ff4fd8091088ab835384c6e942c9da0",
       "fim": "2026-09-26T15:18:35.051973+00:00",
       "log_sha256": "14d775040b9999b9e31e3c3733cc7ea9aa59a6bbbfe3e2ec5e101a5fdfcced0b"
     },
     "verify": {
       "codigo": 0,
-      "cabeca": "cb9571eaf7d043f8c91d9486aad34f97dee00e5d",
+      "cabeca": "cb667aac9ff4fd8091088ab835384c6e942c9da0",
       "fim": "2026-09-26T15:28:39.336600+00:00",
       "log_sha256": "5995144931ae540940640eb906e92759f929e86c7a52aa0032174d3843f20714"
     },
     "typecheck": {
       "codigo": 0,
-      "cabeca": "cb9571eaf7d043f8c91d9486aad34f97dee00e5d",
+      "cabeca": "cb667aac9ff4fd8091088ab835384c6e942c9da0",
       "fim": "2026-09-26T15:29:29.514392+00:00",
       "log_sha256": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
     }
@@ -460,8 +460,8 @@
   ],
   "catraca_l1": {
     "referencia": "design/especime-v3/medicoes/b2-2026-09-23/l1-depois.json",
-    "referencia_cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
-    "dist_construido_de": "cb9571eaf7d043f8c91d9486aad34f97dee00e5d",
+    "referencia_cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
+    "dist_construido_de": "cb667aac9ff4fd8091088ab835384c6e942c9da0",
     "contagens": {
       "estudos": 2323,
       "antes": 2291,
@@ -2141,14 +2141,14 @@
     "limite": "Tempo entre o primeiro pedido registado e o último portão. Tokens lidos do registo da sessão; preço não exposto."
   },
   "rp1b": {
-    "base": "5c92e5ea3fc9acb40c917dc55d9cc0480ead569f",
-    "cabeca_do_codigo": "1819395a994791fdc77bed14a17ab3df844f4d6b",
+    "base": "6a57a2f066a585cb3e7c7985ee9c1d2241f24737",
+    "cabeca_do_codigo": "f4e864c30de3ee931926c3d7a940ab8b2e6d3ff3",
     "cabeca_motor": "d3f7a619bc46184847775b93c1b1a953e2777d3f",
     "commits_sitio": [
-      "dfe368c27fbb869ab4cdfb4d9534055f8fad1414 RP1b: acrescentar quatro cartões e separar a bandeira provisória",
-      "0a6f3d19422f6d52c10a7c4f397fc7e2c08b1527 RP1b: conferir ressalvas nos temas e nas áreas",
-      "7d580742f511234ef6b80675c446966b3cfe36ab RP1b: preparar a medição e a entrega das provas",
-      "1819395a994791fdc77bed14a17ab3df844f4d6b RP1b: declarar a língua dos rótulos das fontes"
+      "38c12f6fade487f796bf181466591a8893b4ec4d RP1b: acrescentar quatro cartões e separar a bandeira provisória",
+      "ff1a307d791da4c88e07d8e1954c140da4f22cd5 RP1b: conferir ressalvas nos temas e nas áreas",
+      "7c80e3c17c31141b29c8dfc398826ace41f86ec5 RP1b: preparar a medição e a entrega das provas",
+      "f4e864c30de3ee931926c3d7a940ab8b2e6d3ff3 RP1b: declarar a língua dos rótulos das fontes"
     ],
     "commits_motor": [
       "d3f7a619bc46184847775b93c1b1a953e2777d3f RP1b: selar as classes do IPC e a comparação europeia do IHPC"
@@ -2607,8 +2607,8 @@
     },
     "catraca_l1": {
       "referencia": "design/especime-v3/medicoes/b2-2026-09-23/l1-depois.json",
-      "referencia_cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
-      "dist_construido_de": "1819395a994791fdc77bed14a17ab3df844f4d6b",
+      "referencia_cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
+      "dist_construido_de": "f4e864c30de3ee931926c3d7a940ab8b2e6d3ff3",
       "contagens": {
         "estudos": 2341,
         "antes": 2291,
@@ -5152,21 +5152,21 @@
     "portoes": {
       "build": {
         "codigo": 0,
-        "cabeca": "1819395a994791fdc77bed14a17ab3df844f4d6b",
+        "cabeca": "f4e864c30de3ee931926c3d7a940ab8b2e6d3ff3",
         "inicio": "2026-09-26T16:43:20.881002+00:00",
         "fim": "2026-09-26T16:48:21.419840+00:00",
         "log_sha256": "b75abe398ab9da27b02d31a0fb7221cb9dbe465682001fdf990455600815e9fc"
       },
       "verify": {
         "codigo": 0,
-        "cabeca": "1819395a994791fdc77bed14a17ab3df844f4d6b",
+        "cabeca": "f4e864c30de3ee931926c3d7a940ab8b2e6d3ff3",
         "inicio": "2026-09-26T16:48:57.319777+00:00",
         "fim": "2026-09-26T16:57:09.358006+00:00",
         "log_sha256": "c38bc441a5d11bf62b3859b9f8aaf4db6b36cfc56d4804df09ac5e7ccbe2b4f1"
       },
       "typecheck": {
         "codigo": 0,
-        "cabeca": "1819395a994791fdc77bed14a17ab3df844f4d6b",
+        "cabeca": "f4e864c30de3ee931926c3d7a940ab8b2e6d3ff3",
         "inicio": "2026-09-26T16:57:52.818490+00:00",
         "fim": "2026-09-26T16:57:53.026598+00:00",
         "log_sha256": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
@@ -5174,11 +5174,11 @@
     },
     "tentativa_build": {
       "codigo": 1,
-      "cabeca": "7d580742f511234ef6b80675c446966b3cfe36ab",
+      "cabeca": "7c80e3c17c31141b29c8dfc398826ace41f86ec5",
       "log_sha256": "6013487a698e350c3e0c339d81e78964c9cbb800d72c715f356c87ce2eb46df3"
     },
     "capturas": {
-      "cabeca": "1819395a994791fdc77bed14a17ab3df844f4d6b",
+      "cabeca": "f4e864c30de3ee931926c3d7a940ab8b2e6d3ff3",
       "paginas": 20,
       "recortes": 50,
       "larguras": [
@@ -5229,7 +5229,7 @@
     "congeladas": {
       "html": 4,
       "css": 2,
-      "cabeca": "1819395a994791fdc77bed14a17ab3df844f4d6b"
+      "cabeca": "f4e864c30de3ee931926c3d7a940ab8b2e6d3ff3"
     },
     "custo": {
       "inicio": "2026-09-26T16:03:37Z",
@@ -5257,28 +5257,28 @@
     }
   },
   "rp1c": {
-    "base": "42b3cadfb9806abd84ddf8235fdb50e5fdf621c2",
-    "cabeca_do_codigo": "68215ae9a73910f59eb103c16961be52bd901fae",
+    "base": "d2de831b2257eafc2f058194a00fb5f17fe0c2ec",
+    "cabeca_do_codigo": "a8a325258ca5c094e10d8640a6b10887b5339d74",
     "cabeca_motor": "4eb2867936dd14ad2654751722e390804e68dda3",
     "commits_sitio": [
-      "38d3627894416097de26c52346c595c45a7b2884 O brief do RP1, a primeira peça do tracker dos rendimentos e dos preços: treze cartões nacionais das APIs do INE e do Eurostat, com o §0 medido por guião sobre a cabeça 334cc740 e as cópias congeladas do L1, as leituras do lugar de direção na gramática do L1 ensaiadas a seco, e o guião do construtor do Codex",
+      "2a4ff50987b7c84735d44d82610d4fadfa28f985 O brief do RP1, a primeira peça do tracker dos rendimentos e dos preços: treze cartões nacionais das APIs do INE e do Eurostat, com o §0 medido por guião sobre a cabeça eaffd3c8 e as cópias congeladas do L1, as leituras do lugar de direção na gramática do L1 ensaiadas a seco, e o guião do construtor do Codex",
       "3b3dac4853565782996bc3e99f519404e3b17ea6 RP1: acrescentar os cartões confirmados pelas APIs",
       "83fb702cff2ff297ea2c9024f8a854d2b56f287e RP1: completar as declarações e conservar as proteções dos portões",
-      "cb9571eaf7d043f8c91d9486aad34f97dee00e5d RP1: mostrar as origens das perguntas nos recibos",
-      "9a8b14b49166f6519f5d9be5399831fb7e9b9b44 RP1: entregar as medições, capturas e provas das oito medidas seladas",
-      "92c7cf66ab1c7f69d0b6db73d4b5c27b1770136a RP1: concluir a entrega com as tabelas do relatório conferidas",
-      "ed5371ffc6881d7daafe2b164c8d0714b2138b6e RP1: a resposta do construtor do Codex à entrega das oito medidas seladas e das cinco paradas",
-      "5c92e5ea3fc9acb40c917dc55d9cc0480ead569f RP1b: a correção do brief (os códigos certos das quatro medidas paradas, conferidos nas APIs do INE e do Eurostat, e a variação real retirada), a segunda redação das leituras com os acertos aceites e duas emendas do lugar de direção, e o guião do construtor do Codex",
-      "dfe368c27fbb869ab4cdfb4d9534055f8fad1414 RP1b: acrescentar quatro cartões e separar a bandeira provisória",
-      "0a6f3d19422f6d52c10a7c4f397fc7e2c08b1527 RP1b: conferir ressalvas nos temas e nas áreas",
-      "7d580742f511234ef6b80675c446966b3cfe36ab RP1b: preparar a medição e a entrega das provas",
-      "1819395a994791fdc77bed14a17ab3df844f4d6b RP1b: declarar a língua dos rótulos das fontes",
-      "70f8ca74113b2ff0adbb55fc424f15686eed5a3b RP1b: entregar capturas, medições e relatório",
-      "42b3cadfb9806abd84ddf8235fdb50e5fdf621c2 RP1c: a leitura a frio do RP1 pelo Claude Opus 5.5 (cinco plantas em cinco, dezoito achados triados) com o registo das plantas, a terceira redação das leituras (o RSI e as pensões depois da leitura, o acerto dos lubrificantes fundido), o guião da passagem de correção para o Codex, e a resposta do construtor à peça RP1b",
-      "22bacd0cc4c97f60cf33cd26ecaa924adeb3dba1 RP1c: retirar caminhos da máquina dos registos do bloco",
-      "e222101650a85cf2ca756dc8232ce89d5a96d35c RP1c: provar a terceira redação e conservar os excertos das linhas",
-      "0f17a9c792271b288465fa0020f0fb2799299d4b RP1c: corrigir a ressalva, os nomes e a língua dos recibos",
-      "68215ae9a73910f59eb103c16961be52bd901fae RP1c: medir o expurgo e conferir a história completa da entrega"
+      "cb667aac9ff4fd8091088ab835384c6e942c9da0 RP1: mostrar as origens das perguntas nos recibos",
+      "cca425f6b85e818664a7024b4809bbfdf4099042 RP1: entregar as medições, capturas e provas das oito medidas seladas",
+      "d385dac74ba05a0680ac9a0d24254df28a0d7d90 RP1: concluir a entrega com as tabelas do relatório conferidas",
+      "f18703acbceb8955a4edbaef958c4d1a5b8ade69 RP1: a resposta do construtor do Codex à entrega das oito medidas seladas e das cinco paradas",
+      "6a57a2f066a585cb3e7c7985ee9c1d2241f24737 RP1b: a correção do brief (os códigos certos das quatro medidas paradas, conferidos nas APIs do INE e do Eurostat, e a variação real retirada), a segunda redação das leituras com os acertos aceites e duas emendas do lugar de direção, e o guião do construtor do Codex",
+      "38c12f6fade487f796bf181466591a8893b4ec4d RP1b: acrescentar quatro cartões e separar a bandeira provisória",
+      "ff1a307d791da4c88e07d8e1954c140da4f22cd5 RP1b: conferir ressalvas nos temas e nas áreas",
+      "7c80e3c17c31141b29c8dfc398826ace41f86ec5 RP1b: preparar a medição e a entrega das provas",
+      "f4e864c30de3ee931926c3d7a940ab8b2e6d3ff3 RP1b: declarar a língua dos rótulos das fontes",
+      "1a20a5098731842633eae8b2f82bedeb8ad3ee78 RP1b: entregar capturas, medições e relatório",
+      "d2de831b2257eafc2f058194a00fb5f17fe0c2ec RP1c: a leitura a frio do RP1 pelo Claude Opus 5.5 (cinco plantas em cinco, dezoito achados triados) com o registo das plantas, a terceira redação das leituras (o RSI e as pensões depois da leitura, o acerto dos lubrificantes fundido), o guião da passagem de correção para o Codex, e a resposta do construtor à peça RP1b",
+      "9fd1f5b62f2f01bfe187e2b63305d6cff2820cd5 RP1c: retirar caminhos da máquina dos registos do bloco",
+      "f929436246583edd436f2ba66aeab3f9d9405c54 RP1c: provar a terceira redação e conservar os excertos das linhas",
+      "03417a2349a2d3ba43e234c2c45f728f427b6106 RP1c: corrigir a ressalva, os nomes e a língua dos recibos",
+      "a8a325258ca5c094e10d8640a6b10887b5339d74 RP1c: medir o expurgo e conferir a história completa da entrega"
     ],
     "commits_motor": [
       "c42dab902afa3f7f693980745e3cecd7f8cb8a2e RP1: selar observações nacionais de rendimentos e preços",
@@ -5290,7 +5290,7 @@
     "entrega": {
       "referencia": "HEAD",
       "titulo": "RP1c: entregar as provas da passagem de correção",
-      "pai": "68215ae9a73910f59eb103c16961be52bd901fae"
+      "pai": "a8a325258ca5c094e10d8640a6b10887b5339d74"
     },
     "achados": [
       1,
@@ -5997,8 +5997,8 @@
     },
     "catraca_l1": {
       "referencia": "design/especime-v3/medicoes/b2-2026-09-23/l1-depois.json",
-      "referencia_cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
-      "dist_construido_de": "68215ae9a73910f59eb103c16961be52bd901fae",
+      "referencia_cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
+      "dist_construido_de": "a8a325258ca5c094e10d8640a6b10887b5339d74",
       "contagens": {
         "estudos": 2341,
         "antes": 2291,
@@ -8542,21 +8542,21 @@
     "portoes": {
       "build": {
         "codigo": 0,
-        "cabeca": "68215ae9a73910f59eb103c16961be52bd901fae",
+        "cabeca": "a8a325258ca5c094e10d8640a6b10887b5339d74",
         "inicio": "2026-09-26T17:44:06.192716+00:00",
         "fim": "2026-09-26T17:49:10.107504+00:00",
         "log_sha256": "cf1badb626f11a950cb0516ca52a0e81a7842a96ef1fb95cf44add2c12fdcb77"
       },
       "verify": {
         "codigo": 0,
-        "cabeca": "68215ae9a73910f59eb103c16961be52bd901fae",
+        "cabeca": "a8a325258ca5c094e10d8640a6b10887b5339d74",
         "inicio": "2026-09-26T17:50:09.863901+00:00",
         "fim": "2026-09-26T17:58:22.521944+00:00",
         "log_sha256": "5ba48458a4af0c6fbf2230853dc4fa1e3a171fb8821a33a930bdf55e5c76b2c8"
       },
       "typecheck": {
         "codigo": 0,
-        "cabeca": "68215ae9a73910f59eb103c16961be52bd901fae",
+        "cabeca": "a8a325258ca5c094e10d8640a6b10887b5339d74",
         "inicio": "2026-09-26T17:58:35.254669+00:00",
         "fim": "2026-09-26T17:58:35.468295+00:00",
         "log_sha256": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
@@ -8567,7 +8567,7 @@
       "log_sha256": "095d638c88d93a4c28d41aa4153764a8a2f2444d12dbfa50fad220a1472cf87b"
     },
     "capturas": {
-      "cabeca": "68215ae9a73910f59eb103c16961be52bd901fae",
+      "cabeca": "a8a325258ca5c094e10d8640a6b10887b5339d74",
       "paginas": 20,
       "recortes": 50,
       "larguras": [
@@ -8581,7 +8581,7 @@
       "inspecionadas": 20
     },
     "congeladas": {
-      "cabeca": "68215ae9a73910f59eb103c16961be52bd901fae",
+      "cabeca": "a8a325258ca5c094e10d8640a6b10887b5339d74",
       "ficheiros": 6
     },
     "custo": {

@@ -16,7 +16,7 @@ Depois das emendas H2-c, a implementação e as provas locais estão verdes na c
 
 ## A reprodução antes de mexer
 
-Foram lidos o `CLAUDE.md`, o mapa inteiro e o brief. Antes da primeira alteração, o guião do brief produziu `brief-reproduzido.json`: as {v['medicoes_do_brief_reproduzidas']} medidas, os comandos e os conhecidos-positivos são integralmente iguais a `design/observatorio/medidas/BRIEF-H2.json`. Portanto, o §0 bate. Essa referência lê a cabeça presa `905105b7`; a base efetiva desta worktree era `{m['base']}`. Não se confundem as duas cabeças.
+Foram lidos o `CLAUDE.md`, o mapa inteiro e o brief. Antes da primeira alteração, o guião do brief produziu `brief-reproduzido.json`: as {v['medicoes_do_brief_reproduzidas']} medidas, os comandos e os conhecidos-positivos são integralmente iguais a `design/observatorio/medidas/BRIEF-H2.json`. Portanto, o §0 bate. Essa referência lê a cabeça presa `4d91d3b2`; a base efetiva desta worktree era `{m['base']}`. Não se confundem as duas cabeças.
 
 ```sh
 OEDP_MEDIDAS_JSON=design/especime-v3/medicoes/h2-2026-10-04/brief-reproduzido.json python3 design/observatorio/medidas/BRIEF-H2.py
@@ -122,7 +122,7 @@ A passagem parte de `{m['base_h2b']}`. Os achados plantados nas cópias do pacot
 
 | Achado | Emenda e prova |
 |---|---|
-| 6 · I194 | A linha da questão fecha pela planta determinística e pela corrida de ensaio `37238803296`, no `ubuntu-24.04`, na cabeça `f7048ce0`. A aceitação do brief, o portão verde no ramo e em `main`, confirma-se na aterragem e é registada em `DECISIONS.md` §1.158 pelo lugar de direção. A célula D não foi alterada. |
+| 6 · I194 | A linha da questão fecha pela planta determinística e pela corrida de ensaio `37238803296`, no `ubuntu-24.04`, na cabeça `76a70ba7`. A aceitação do brief, o portão verde no ramo e em `main`, confirma-se na aterragem e é registada em `DECISIONS.md` §1.158 pelo lugar de direção. A célula D não foi alterada. |
 | 7 · cabeça das provas | {v['plantas_h2_na_cabeca_limpa']} plantas H2 e {v['registos_de_trabalho_limpos']} registos de trabalho correram em `{m['cabeca_h2b']}` com `estado` vazio. O coletor recusa um registo de outra cabeça ou com diferenças seguidas. Os resultados ficaram fora da árvore enquanto corriam, para a escrita das provas não sujar a corrida seguinte. |
 | 8 · argumento relativo | O repositório passa a caminho absoluto real antes da troca por marcas. A planta com `.` confirma que `relatorio.md` e `conferir-relatorio.py` conservam os pontos e que a conferência chega intacta ao pacote. |
 | 9 · árvore suja | O pacote recusa modificações em ficheiros seguidos, com a razão escrita, antes de criar a pasta. Há plantas de alteração no sítio e no motor sintéticos; o controlo limpo inclui um `node_modules` ligado e não seguido. Nenhum ficheiro do motor real foi escrito. |

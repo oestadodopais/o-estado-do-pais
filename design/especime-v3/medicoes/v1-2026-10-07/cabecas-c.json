@@ -1,8 +1,8 @@
 {
   "motor": "1b990527231e57ee6cde272b2a8fdf1562bacba6",
   "motor_codigo": "253cfc3658c603b6c89b86cc6cb6605500e4484d",
-  "sitio_antes_fecho": "e00d0c1ad299e80262f328b0602d0140315bd4f2",
-  "sitio_codigo": "e00d0c1ad299e80262f328b0602d0140315bd4f2",
+  "sitio_antes_fecho": "8af969b8fcbf5cb8abf6d04e5537a0e59a588b57",
+  "sitio_codigo": "8af969b8fcbf5cb8abf6d04e5537a0e59a588b57",
   "commits_motor": [
     "81fe39510b3c23e7cd40dac0da52f7d51d9c17b5 V1-c, achado 6: separar limitações, falhas e aceitação da janela",
     "12c4ed6fb18e00d6292d075ccf52a298114df8c7 V1-c, achado 7: orçamento cumulativo e reconferência semanal",
@@ -21,16 +21,16 @@
     "1b990527231e57ee6cde272b2a8fdf1562bacba6 V1-c: registar corridas reais e o impedimento de rede no fecho"
   ],
   "commits_sitio": [
-    "53a3a1ccae19aa27d4f26017ce1d507f97aa7da7 V1-c: registar a leitura, as plantas e o mandato",
-    "19eae39e254f5b1ebbacc80c56a2197da0cd7894 V1-c: medir recibos, aritmética, plantas e procura integral de fugas",
-    "27e0f5d73066d5615ba8523b99c546128225470f V1-c: fechar a medição dos cenários e do atalho HEAD",
-    "127154f4e32ca6b9384c7a26cb685295e3cd4395 V1-c: medir o arquivo efetivo e explicitar a cadência observada",
-    "338b03fefe4d9601de0ab3c7c7519cee518685b7 V1-c: fixar as bases da confirmação e a prova da agenda semanal",
-    "efb58b83ffc8cb74a6f34a73661b98e1259aa9c1 V1-c: conservar a tentativa de rede anterior ao par final",
-    "0a858a64f00df7c9923d858f4e98b9005d312ecd V1-c: declarar a aceitação pendente quando a fonte falha",
-    "d8291c1d2d6503f1cd1378634f33eddd2d6d61a0 V1-c: conferir a preservação contra a cabeça de entrada",
-    "c776fcff46d141b783b43e0911afaaf9c7573c79 V1-c: usar a última prova disponível quando o HEAD falha",
-    "1ddc0b25fc6a34e9408749e3303616d4d8c1ff83 V1-c: basear o custo ordinário apenas em leituras completas",
-    "e00d0c1ad299e80262f328b0602d0140315bd4f2 V1-c: distinguir fonte falhada de limitação ausente no relatório"
+    "aed77b69dc66059a4b6f086338bc56c9d6414b81 V1-c: registar a leitura, as plantas e o mandato",
+    "d61426f828e6c8f48ddccd18b8020afe9d096802 V1-c: medir recibos, aritmética, plantas e procura integral de fugas",
+    "befa148cc7b4d34456829a2ed5c1130a31851314 V1-c: fechar a medição dos cenários e do atalho HEAD",
+    "c44abd4a2c47a2711830688a7c8c5da34dc67be9 V1-c: medir o arquivo efetivo e explicitar a cadência observada",
+    "cec253b10d265acdb9c15678e883d95c192641b2 V1-c: fixar as bases da confirmação e a prova da agenda semanal",
+    "f648cd92ff4be2ef0d0685fc9ae15d177d62911d V1-c: conservar a tentativa de rede anterior ao par final",
+    "2e34e0b627c6d86f753b23718a7eeefc7c0437d7 V1-c: declarar a aceitação pendente quando a fonte falha",
+    "4a65a9b2af6e2effe7628d6a5dc6821f1f281d92 V1-c: conferir a preservação contra a cabeça de entrada",
+    "4a9bcf8e586f972ad8fe7e43a60c648062749516 V1-c: usar a última prova disponível quando o HEAD falha",
+    "7b8a9824bca32fd2957629614b1316412d4929a6 V1-c: basear o custo ordinário apenas em leituras completas",
+    "8af969b8fcbf5cb8abf6d04e5537a0e59a588b57 V1-c: distinguir fonte falhada de limitação ausente no relatório"
   ]
 }

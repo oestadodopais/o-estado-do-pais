@@ -816,7 +816,7 @@ História do valor: 2 controlos e 4 plantas.
 > o-estado-do-pais@0.1.0 check:cabeca
 > node tests/inicio/hierarquia-b2.mjs
 
-check:cabeca C1; construção 6bbe1cee5f7167ba7bb317733ceef7e4b71ab413; 110 cabeças; 4 mordidas; 10 reposições
+check:cabeca C1; construção ef700579cf26d6ebab1939c1a90853935d17b1fa; 110 cabeças; 4 mordidas; 10 reposições
 check:cabeca: PASS
 
 > o-estado-do-pais@0.1.0 check:fontes
@@ -3055,7 +3055,7 @@ RP1: PASS · {"reguas":9,"plantas":[{"nome":"régua de outra medida","mordeu":tr
 
 
 [1m  O feixe de cartões do sistema de desenho[0m
-[90m  design-system/ · de dist/ no commit 6bbe1ce · 20 cartões, 11 ficheiros de letra e um README[0m
+[90m  design-system/ · de dist/ no commit ef70057 · 20 cartões, 11 ficheiros de letra e um README[0m
 
 [90m  ficheiro                          grupo          bytes  ok[0m
   01-cor.html                       Fundamentos   375759  [32m✓[0m

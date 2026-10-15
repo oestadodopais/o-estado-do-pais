@@ -1,6 +1,6 @@
 # A leitura a frio da passagem JD1-c pelo Claude Opus 5.5 (`xhigh`), 12.10.2026
 
-*Lançada pelo lugar de direção às 13:30 UTC sobre o pacote do sítio de `744a80eb` (a cabeça da JD1-b) a `bb4e7d48` e do motor de `481e15e` a `67b97e4` (a passagem JD1-c do Codex `gpt-6-astra` em `high`), com cinco estragos plantados nas cópias (`PLANTAS-JD1-c-2026-10-12.json`), os registos inteiros, as sessenta e quatro capturas, as páginas construídas do bloco e os documentos alojados copiados do motor com o manifesto; o total reportado pela ferramenta para o agente: 298 268 símbolos, em 98 chamadas e quinze minutos. Os achados 1 a 5 são os cinco estragos plantados, todos apanhados; o achado 6 é o real desta passagem, e os Minor 7 a 13 vão para o mandato da JD1-d ou para a higiene. O texto do leitor segue como foi entregue, em inglês, só com os caminhos da cópia anonimizados.*
+*Lançada pelo lugar de direção às 13:30 UTC sobre o pacote do sítio de `cad8dd95` (a cabeça da JD1-b) a `670034d8` e do motor de `481e15e` a `67b97e4` (a passagem JD1-c do Codex `gpt-6-astra` em `high`), com cinco estragos plantados nas cópias (`PLANTAS-JD1-c-2026-10-12.json`), os registos inteiros, as sessenta e quatro capturas, as páginas construídas do bloco e os documentos alojados copiados do motor com o manifesto; o total reportado pela ferramenta para o agente: 298 268 símbolos, em 98 chamadas e quinze minutos. Os achados 1 a 5 são os cinco estragos plantados, todos apanhados; o achado 6 é o real desta passagem, e os Minor 7 a 13 vão para o mandato da JD1-d ou para a higiene. O texto do leitor segue como foi entregue, em inglês, só com os caminhos da cópia anonimizados.*
 
 # Cold read · JD1-c correction pass (Claude Opus 5.5, 12.10.2026)
 
@@ -26,13 +26,13 @@
 
 ## Minor
 
-7. **Reverting the repository map to `64d81b21` also threw away JD1-b's updates to its anchors for code this block keeps.** Two examples:
+7. **Reverting the repository map to `d3defd90` also threw away JD1-b's updates to its anchors for code this block keeps.** Two examples:
    - The map says `enquadramento.mjs:470`; the quoted line is at 549.
    - The map says `inventario-rotulos.mjs:731` for `plantas(dist)`; it is at 753.
 
    I checked 33 map anchors that point into files in this package: 24 now land on the wrong line. The report shows no run of the map check. Refs: `design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:439`, `design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:535`, `src/lib/enquadramento.mjs:549`, `scripts/inventario-rotulos.mjs:753`, `design/especime-v3/medicoes/jd1-2026-10-06/reversoes-c.json:2840`
 
-8. **34 files outside the block are not back to `64d81b21`: the reverter rewrites absolute home paths into `homedir()` and `expanduser` code.** This is code that the mandate did not ask for. Examples: an added `node:os` import, and static `chromium` imports turned into `await import(...)`. On the same home folder the behaviour is unchanged. The change is declared and follows rule 9, so the seat should rule on it explicitly. Refs: `design/especime-v3/medicoes/jd1-2026-10-06/reverter-c.py:33`, `design/especime-v3/medicoes/jd1-2026-10-06/reverter-c.py:61`, `design/especime-v3/critica/medicao-f11e-sonnet/u1-alvo.mjs:10`, `design/especime-v3/maquetas/b1/fazer.py:31`, `relatorio-construtor.md:697`
+8. **34 files outside the block are not back to `d3defd90`: the reverter rewrites absolute home paths into `homedir()` and `expanduser` code.** This is code that the mandate did not ask for. Examples: an added `node:os` import, and static `chromium` imports turned into `await import(...)`. On the same home folder the behaviour is unchanged. The change is declared and follows rule 9, so the seat should rule on it explicitly. Refs: `design/especime-v3/medicoes/jd1-2026-10-06/reverter-c.py:33`, `design/especime-v3/medicoes/jd1-2026-10-06/reverter-c.py:61`, `design/especime-v3/critica/medicao-f11e-sonnet/u1-alvo.mjs:10`, `design/especime-v3/maquetas/b1/fazer.py:31`, `relatorio-construtor.md:697`
 
 9. **The privacy plant `ramo-estrutura-inocua` is now vacuous.** Its file name `registo.json.gz` is outside the new record scope, so `tem_estrutura_local` returns False before it reads the content. The plant would pass even if the detector flagged the placeholders. Refs: `scripts/check-privacidade.py:137`, `scripts/check-privacidade.py:106`
 
@@ -49,7 +49,7 @@
 - The reversion list is reproducible: 488 files, 118 reverted and 370 kept, with the report's table identical to `reversoes-c.json`. All 118 reverted files hash to `sha256_depois`. Ref: `design/especime-v3/medicoes/jd1-2026-10-06/reversoes-c.json:1`
 - `aterrar.sh` and `estado.py` hash to the recorded `sha256_base`. Refs: `scripts/aterrar.sh:44`, `scripts/leituras/estado.py:37`
 - No added line in either diff contains the home-folder prefix or the user name; I tested the search on a planted positive first. Ref: `diff.patch:1`
-- The privacy scope covers records only, and its two plants (the record bites, the `$HOME` script passes) are green at 147382c4. Ref: `design/especime-v3/medicoes/jd1-2026-10-06/portoes-c/verify.log:3734`
+- The privacy scope covers records only, and its two plants (the record bites, the `$HOME` script passes) are green at d9e2a972. Ref: `design/especime-v3/medicoes/jd1-2026-10-06/portoes-c/verify.log:3734`
 - The other 14 rows hash to their crossing records, with values, units and periods unchanged. Ref: `ledger/cruzamentos/jd1.json:15`
 - The series: all 488 points equal the Eurostat body and both pages. Ref: `ledger/series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade.yml:1`
 - The new row's excerpt is byte-identical to the `pdftotext` line on p. 45, and 10 625 + 56 976 = 67 601. Ref: `ledger/claims/necessidades-brutas-de-financiamento-2025.yml:30`

@@ -1,6 +1,6 @@
 # Nota · as páginas dos 308 concelhos · 26.08.2026
 
-*Construtor do sítio (Claude Opus 5, `claude-opus-5[1m]`). Ramo `concelhos-2026-08-26`, a partir de `main` em `992a3c9`. Contrato: `../briefs/BRIEF-concelhos-P2-estrutura.md`, com o `PLANO-CONCELHOS-2026-08-26.md` e as Emendas 14, 15, 18 e 19 de `direcao.md` por trás. Sem travessões nesta prosa; o ponto médio é o separador. **Todos os números desta nota vêm de um comando que está escrito ao lado deles.***
+*Construtor do sítio (Claude Opus 5, `claude-opus-5[1m]`). Ramo `concelhos-2026-08-26`, a partir de `main` em `4e374e6`. Contrato: `../briefs/BRIEF-concelhos-P2-estrutura.md`, com o `PLANO-CONCELHOS-2026-08-26.md` e as Emendas 14, 15, 18 e 19 de `direcao.md` por trás. Sem travessões nesta prosa; o ponto médio é o separador. **Todos os números desta nota vêm de um comando que está escrito ao lado deles.***
 
 ---
 
@@ -394,11 +394,11 @@ os comete é o lugar de direção.
 
 ## A correção dos cartões · 27.08.2026
 
-*Ramo `cartoes-2026-08-27`, a partir de `main` em `cfa288b`. A decisão, os factos e as duas curvas de memória estão em `DECISIONS.md` §1.68, «A correção dos cartões».*
+*Ramo `cartoes-2026-08-27`, a partir de `main` em `6f2410c`. A decisão, os factos e as duas curvas de memória estão em `DECISIONS.md` §1.68, «A correção dos cartões».*
 
 ### 21 · O passo dos cartões matou a construção da Vercel, e não foi pelo número de ficheiros
 
-A construção de produção sobre `main` em `cfa288b` saiu com **137**, que é falta de memória, no passo `cartoes`, **dezanove minutos** dentro da rasterização dos 10 212 PNG. O `astro build` tinha fechado nessa máquina em 5m 41s. O item 10 desta nota escreveu, a 26.08, que «224 MB e 102,6 s são o custo medido da regra, e não um problema»: o custo estava certo e a conclusão estava errada, porque o que foi pesado nesse dia foram os limites de FICHEIROS da Vercel, e o limite que existia era o da memória.
+A construção de produção sobre `main` em `6f2410c` saiu com **137**, que é falta de memória, no passo `cartoes`, **dezanove minutos** dentro da rasterização dos 10 212 PNG. O `astro build` tinha fechado nessa máquina em 5m 41s. O item 10 desta nota escreveu, a 26.08, que «224 MB e 102,6 s são o custo medido da regra, e não um problema»: o custo estava certo e a conclusão estava errada, porque o que foi pesado nesse dia foram os limites de FICHEIROS da Vercel, e o limite que existia era o da memória.
 
 **A decisão do lugar de direção:** as páginas de linha de um estudo de dados não levam cartão próprio. Cada uma nomeia o cartão do seu estudo, um por edição e por medida, na folha da casa, com o título do estudo por texto e sem número nenhum. Um estudo declara-se de dados escrevendo `conjunto` na sua entrada de `src/data/studies.mjs`, com a chave da rota da sua página de conjunto; hoje é um, o `concelhos-2026`, com `livroConcelhos`. A página de conjunto continua a levar o cartão da primeira página.
 

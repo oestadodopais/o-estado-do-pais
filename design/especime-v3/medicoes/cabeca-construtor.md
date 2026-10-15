@@ -2,7 +2,7 @@
 
 *Segunda passagem, 01.09.2026, sobre os oito pontos que o lugar de direção devolveu depois da medição cega (Sonnet, 4 de 4 estragos vistos) e da leitura a frio (Codex, 3 de 3 plantas). O que mudou nesta passagem está na §10, e os números do relatório inteiro são os dela.*
 
-*Bloco `cabeca-2026-09-01`, saído de `main` `307796f` (que é `cfa5045`, o commit que a ordem nomeia, mais o commit da própria ordem), num worktree. Construtor: Claude Opus 5. Ordem: `design/observatorio/ORDEM-cabeca-2026-09-01.md`. Especificação: `design/observatorio/BRIEF-forma-dos-dominios.md`. Todas as medições correram em Chromium sem cabeça sobre o `dist/` construído, nas duas edições, e cada número desta página saiu de uma corrida que se diz ao lado dele. Sem travessões na prosa.*
+*Bloco `cabeca-2026-09-01`, saído de `main` `4c19c4b` (que é `f3746cc`, o commit que a ordem nomeia, mais o commit da própria ordem), num worktree. Construtor: Claude Opus 5. Ordem: `design/observatorio/ORDEM-cabeca-2026-09-01.md`. Especificação: `design/observatorio/BRIEF-forma-dos-dominios.md`. Todas as medições correram em Chromium sem cabeça sobre o `dist/` construído, nas duas edições, e cada número desta página saiu de uma corrida que se diz ao lado dele. Sem travessões na prosa.*
 
 **Modelo: Claude Opus 5.**
 
@@ -40,7 +40,7 @@ A 390 px, o primeiro número selado de uma medida estava a **1 766,9 px** da man
 
 ## 2 · As medições, antes e depois
 
-O «antes» é a construção de `307796f`, medida nesta worktree antes da primeira alteração (`medicoes/cabeca-antes.json`); o «depois» é a construção final (`medicoes/cabeca-depois.json`). O programa é `medicoes/cabeca-medidas.mjs`, e diz ao lado de cada medida como a mede.
+O «antes» é a construção de `4c19c4b`, medida nesta worktree antes da primeira alteração (`medicoes/cabeca-antes.json`); o «depois» é a construção final (`medicoes/cabeca-depois.json`). O programa é `medicoes/cabeca-medidas.mjs`, e diz ao lado de cada medida como a mede.
 
 ### 2.1 · O primeiro ecrã a 390 × 844 (pt)
 
@@ -62,9 +62,9 @@ O «antes» é a construção de `307796f`, medida nesta worktree antes da prime
 
 Do fundo da manchete ao topo do primeiro `[data-claim]` que tem o seu selo no invólucro, que é a mesma relação que `auditaSelo()` confere no portão. A manchete é a da VISTA (`main h1`) e não o `<h1 class="wordmark">` do cabeçalho.
 
-**O «antes» desta tabela foi medido outra vez, e o primeiro estava errado.** A primeira redação deste programa media `document.querySelector('h1')`, que devolve o `<h1>` do cabeçalho, ou seja o nome do sítio: a distância saía do nome do sítio e não da afirmação com números, e o número publicado na primeira passagem (2 071,9 px, 2,45 ecrãs) media outra coisa. O seletor foi corrigido, mas o «antes» nunca tinha sido corrido com ele: a construção de partida já não existia. Nesta passagem o commit de partida (`307796f`) foi extraído para uma pasta de ensaio fora do repositório (`git archive`, sem tocar em nada), construído e medido com o programa corrigido. Os números abaixo são desse ensaio.
+**O «antes» desta tabela foi medido outra vez, e o primeiro estava errado.** A primeira redação deste programa media `document.querySelector('h1')`, que devolve o `<h1>` do cabeçalho, ou seja o nome do sítio: a distância saía do nome do sítio e não da afirmação com números, e o número publicado na primeira passagem (2 071,9 px, 2,45 ecrãs) media outra coisa. O seletor foi corrigido, mas o «antes» nunca tinha sido corrido com ele: a construção de partida já não existia. Nesta passagem o commit de partida (`4c19c4b`) foi extraído para uma pasta de ensaio fora do repositório (`git archive`, sem tocar em nada), construído e medido com o programa corrigido. Os números abaixo são desse ensaio.
 
-| | antes (`307796f`, medido de novo) | depois |
+| | antes (`4c19c4b`, medido de novo) | depois |
 |---|---:|---:|
 | 390 pt · a primeira MEDIDA | 1 766,9 px · **2,09 ecrãs** | **138,2 px · 0,16 ecrãs** |
 | 390 en · a primeira medida | 1 749,7 px · 2,07 ecrãs | 138,2 px · 0,16 ecrãs |
@@ -337,7 +337,7 @@ A data do sinal de tempo do cabeçalho passou de `2026-08-31` para `31.08.2026`,
 
 **3 · O «antes» da manchete.** Estava medido com o seletor errado e nunca fora corrido de novo. O commit de partida foi extraído para uma pasta de ensaio fora do repositório, construído e medido: **1 766,9 px, 2,09 ecrãs** em português e 1 749,7 px, 2,07 em inglês. A §2.2, o §0 e a §1 estão corrigidos, e a §2.2 diz de onde vem o número e porque é que o outro estava errado.
 
-**4 · O transbordo horizontal em `/en/`.** **Era real, e é anterior a este bloco.** Medido nas duas construções, a de partida (`307796f`) e esta: `/en/` rolava de lado **33 px a 320** e **16 px a 390**, e `/` não rolava a nenhuma largura. O culpado é a linha de comando: «Country · Region · Municipality · Areas» pede 334,7 px e a coluna dá 284 a 320. E a causa exacta não era a fila: era `.cmd { flex-wrap: wrap }` a valer numa direção de coluna, o que faz a LINHA ter a largura do item mais largo em vez da do contentor. Medido: `.cmd` media 284 px e `.cmd-grupo` media 334,7. Três linhas consertam-no: `flex-wrap: nowrap` na coluna, `overflow-x: auto` na fila, e cada posição com a sua largura em vez de repartirem uma que não chega. **Está a zero nas duas edições e às sete larguras**, e passa a ter régua própria (`F13`). As capturas foram refeitas.
+**4 · O transbordo horizontal em `/en/`.** **Era real, e é anterior a este bloco.** Medido nas duas construções, a de partida (`4c19c4b`) e esta: `/en/` rolava de lado **33 px a 320** e **16 px a 390**, e `/` não rolava a nenhuma largura. O culpado é a linha de comando: «Country · Region · Municipality · Areas» pede 334,7 px e a coluna dá 284 a 320. E a causa exacta não era a fila: era `.cmd { flex-wrap: wrap }` a valer numa direção de coluna, o que faz a LINHA ter a largura do item mais largo em vez da do contentor. Medido: `.cmd` media 284 px e `.cmd-grupo` media 334,7. Três linhas consertam-no: `flex-wrap: nowrap` na coluna, `overflow-x: auto` na fila, e cada posição com a sua largura em vez de repartirem uma que não chega. **Está a zero nas duas edições e às sete larguras**, e passa a ter régua própria (`F13`). As capturas foram refeitas.
 
 **5 · Os `<summary>` entram na régua da voz.** `frasesDaCasa()` saltava todos os `<summary>` sem condição, debaixo de um comentário que falava de outra coisa. O salto sai, e a regra que fica vale para eles como para qualquer bloco: o que se recolhe é o texto de fora das âncoras. Apareceram cinco frases distintas por edição, e só duas são novas no sítio: o «Menu» do cabeçalho (que estava declarado pelo `aria-label` e não pelo texto), o «abrir/fechar» da densidade de cada peça, a porta das linhas de um documento, e os nomes das duas gavetas. Nove linhas novas no inventário, classe `navegacao`, bloco `cabeca`; `check:voz` a 0. A dúvida 5 da primeira passagem fecha-se aqui.
 

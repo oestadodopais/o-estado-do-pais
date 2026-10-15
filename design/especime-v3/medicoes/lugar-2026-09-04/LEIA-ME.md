@@ -26,7 +26,7 @@ o que foi medido e com que número.
 **Estes guiões não são a régua do bloco.** A régua é o `check:lugar`, que corre
 no `verify` desde 08.09.2026 com as L1 a L6, as medidas do §8 e as plantas da L9;
 os quatro primeiros guiões desta tabela são as medições de partida sobre o
-`dist/` de `306e4c68`, e servem para a comparar com o depois.
+`dist/` de `2144f822`, e servem para a comparar com o depois.
 
 **O `primeiro-ecra.mjs` é de outra família:** não é uma medição de partida, é a
 régua da medida do item 8.11, e corre-se antes e depois do item. O «antes» está

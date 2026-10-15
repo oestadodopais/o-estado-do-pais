@@ -1,6 +1,6 @@
 {
   "o_que_e": "EX1-c: as capturas da lista, da explicação e da leitura da semana, nas cinco larguras e nas duas edições, com as medidas no ecrã e as plantas no navegador.",
-  "construcao": "090dd5dc401b736c105b7f21972515060959ee2a",
+  "construcao": "477c3103e22d1efb5e59fc3b7037585fea023bcd",
   "construido_em": "2026-10-06T05:34:46.924Z",
   "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/captar-ex1c.mjs --json ex1c/capturas.json",
   "capturas": [

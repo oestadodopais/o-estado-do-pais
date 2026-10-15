@@ -8,7 +8,7 @@ Nas duas edições, o Sobre diz o que o projeto é nas palavras do diretor (um p
 
 ## Onde parou
 
-A cabeça do código é `67358e76e7405034084fee2681570531895d0b5e`, com 0 entrada(s) por registar na árvore quando as conferências correram (2026-10-07T10:53:29Z). O último commit do ramo leva só este relatório, as capturas e os códigos. A corrida `portão` do GitHub corre na cabeça que aterra; na máquina correram as conferências que a mudança toca, abaixo.
+A cabeça do código é `4c51b911899f82376b398493258c611a5a7b1d96`, com 0 entrada(s) por registar na árvore quando as conferências correram (2026-10-07T10:53:29Z). O último commit do ramo leva só este relatório, as capturas e os códigos. A corrida `portão` do GitHub corre na cabeça que aterra; na máquina correram as conferências que a mudança toca, abaixo.
 
 ## O que ficou aberto
 
@@ -43,11 +43,11 @@ Corridas por `conferencias/conferir-tp1.sh`, cada uma com o código em `conferen
 
 ## Os três portões inteiros, pela tranca da máquina
 
-Corridos por `scripts/leituras/portoes.sh` na cabeça `b1eba84eca2b94c0f2d613a267d45ced1349b6ce` (o ficheiro `portoes/cabeca`), com os códigos em `portoes/<portão>.codigo` e os tempos em `portoes/tempos.json`: `build` 0, `typecheck` 0, `verify` 0.
+Corridos por `scripts/leituras/portoes.sh` na cabeça `06227059ea479b6799eba91de1900610ddca0a91` (o ficheiro `portoes/cabeca`), com os códigos em `portoes/<portão>.codigo` e os tempos em `portoes/tempos.json`: `build` 0, `typecheck` 0, `verify` 0.
 
 ## As capturas
 
-O registo `design/especime-v3/capturas/tp1-2026-10-07/capturas.json` diz a cabeça `67358e76e7405034084fee2681570531895d0b5e`, as larguras 390, 768, 1024, 1280, 1600 px, 20 resultados com o sha256 de cada captura, 0 falhas e `ok` a true; a pasta tem 20 ficheiros PNG (as duas páginas, as duas edições, as cinco larguras).
+O registo `design/especime-v3/capturas/tp1-2026-10-07/capturas.json` diz a cabeça `4c51b911899f82376b398493258c611a5a7b1d96`, as larguras 390, 768, 1024, 1280, 1600 px, 20 resultados com o sha256 de cada captura, 0 falhas e `ok` a true; a pasta tem 20 ficheiros PNG (as duas páginas, as duas edições, as cinco larguras).
 
 ## O custo
 

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""O §0 do brief N1 (uma porta por assunto), medido sobre a cabeça presa do sítio (1d9e5b2e).
+"""O §0 do brief N1 (uma porta por assunto), medido sobre a cabeça presa do sítio (eac316d0).
 Não lê a rede: lê os módulos de dados do sítio na cabeça, pelo Node, e conta o que o brief afirma.
 Escreve design/observatorio/medidas/BRIEF-N1.json (ou o caminho em OEDP_MEDIDAS_JSON). Cada medição leva o
 comando e um conhecido-positivo; o que não conseguir ler fica «NÃO LIDO»."""
 import json, os, pathlib, subprocess, sys, tempfile
 
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "1d9e5b2e"
+CAB = "eac316d0"
 NAO = "NÃO LIDO"
 medidas = []
 

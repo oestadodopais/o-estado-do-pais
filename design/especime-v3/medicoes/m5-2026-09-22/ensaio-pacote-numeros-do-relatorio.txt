@@ -1,5 +1,5 @@
 # O ensaio do pacote.sh deste bloco, sobre o relatório do B1c (M5, 22.09.2026).
-# comando: sh scripts/leituras/pacote.sh . b03a6efc HEAD <pacote> design/observatorio/BRIEF-M5-as-medicoes-provam-que-veem.md design/especime-v3/medicoes/b1c-2026-09-22/LEIA-ME.md index.html
+# comando: sh scripts/leituras/pacote.sh . 590448cb HEAD <pacote> design/observatorio/BRIEF-M5-as-medicoes-provam-que-veem.md design/especime-v3/medicoes/b1c-2026-09-22/LEIA-ME.md index.html
 # a linha de saída do pacote.sh, com o caminho do pacote encurtado:
 pacote em <pacote de ensaio>/pacote-ensaio: diff 15459 linhas, 45 ficheiros mudados copiados da cabeça HEAD, 1 páginas construídas, números do relatório conferidos (código 1, em numeros-do-relatorio.txt)
 

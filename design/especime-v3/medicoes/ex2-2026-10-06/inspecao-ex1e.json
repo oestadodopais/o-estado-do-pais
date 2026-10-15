@@ -1,5 +1,5 @@
 {
-  "cabeca": "95f2a857e418f60af2125b65aba23c735c0df1b7",
+  "cabeca": "5256a36b7a344b594fac891399e1679a3f2a3041",
   "metodo": "Inspeção visual das oito imagens, páginas inteiras e recortes, nas duas línguas e larguras. Após corrigir os trailers, as novas capturas foram comparadas por SHA-256 com as imagens inspecionadas.",
   "resultado": "Sem cortes nem transbordo nas frases, nos valores ou nos selos.",
   "capturas": [

@@ -27,8 +27,8 @@ O custo desta passagem até `2026-09-30T00:51:55.842Z` é
 4240124 símbolos em 1008,533 segundos; o bloco soma
 68867797 símbolos. Incluem cache; a fotografia antecede o último commit.
 
-O sítio partiu de `2ea04eef166359723bcafc05a68630456e9816e4`, depois da junção
-`e97d7da8`. Só mudaram as provas e o relatório. O último commit contém esta
+O sítio partiu de `ea8b7a5360a2e178de241daac1ba867a32acf36f`, depois da junção
+`15916222`. Só mudaram as provas e o relatório. O último commit contém esta
 resposta; o seu SHA é dado fora do ramo. O relatório do bloco é `LEIA-ME.md`.
 
 Não corri os portões do sítio: o lugar de direção corre-os na cabeça que aterra.

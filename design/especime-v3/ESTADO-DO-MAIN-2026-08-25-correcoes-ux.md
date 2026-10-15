@@ -1,6 +1,6 @@
 # O estado de `main` depois do bloco das correções de UX (noite de 25.08.2026)
 
-*Escrito pelo lugar de direção (Claude Fable 5). O ramo saiu de `main` `cb133d5` e está verde: construção (342 páginas, 41 chaves da prova), `verify`, `typecheck`, a leitura do olho (157), a cadeia (196 e 2 405), a régua do inventário (34 rotas a zero), e as réguas dos três passos (A 32/32, B 19/19 e 32/32, C 9/9 e 12/12, a matriz 92/92, a leitura 51/51). **Fundido em `main` `90f458a` pela palavra do diretor a 25.08, empurrado, `verify:deploy` ✓, lido no ar.***
+*Escrito pelo lugar de direção (Claude Fable 5). O ramo saiu de `main` `c156148` e está verde: construção (342 páginas, 41 chaves da prova), `verify`, `typecheck`, a leitura do olho (157), a cadeia (196 e 2 405), a régua do inventário (34 rotas a zero), e as réguas dos três passos (A 32/32, B 19/19 e 32/32, C 9/9 e 12/12, a matriz 92/92, a leitura 51/51). **Fundido em `main` `06f97d6` pela palavra do diretor a 25.08, empurrado, `verify:deploy` ✓, lido no ar.***
 
 ## O que muda no ar quando fundir
 

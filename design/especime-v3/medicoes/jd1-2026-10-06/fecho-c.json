@@ -1,5 +1,5 @@
 {
-  "cabeca_codigo_sitio": "147382c4609c5d4a12677dcaa858abf7ec85638a",
+  "cabeca_codigo_sitio": "d9e2a972756d5bab75dce9e2d94c8cf797bd9352",
   "cabeca_codigo_motor": "67b97e47a19bf1e1203f13380dca362c91015894",
   "codigos": {
     "build": 0,
@@ -14,22 +14,22 @@
   "linhas": 15,
   "commits": {
     "sítio": [
-      "4685343d JD1-c: registar a leitura, as plantas e o mandato",
-      "9c7a2674 JD1-c: repor o comportamento fora do bloco (achado 8)",
-      "b6d633d4 JD1-c: ligar o estado e a comparação à linha (achado 6)",
-      "9f409f85 JD1-c: dizer a parcela do financiamento por tokens (achado 7)",
-      "0633f4a1 JD1-c: explicar a dívida direta e a direção da evolução (achado 9)",
-      "05bb3baf JD1-c: conservar as colunas e descrever os gráficos (achado 11)",
-      "75fac858 JD1-c: recusar árvores sujas e conferir sob a tranca (achado 12)",
-      "43e7450e JD1-c: apoiar o perímetro no INE e conservar o subsetor (achado 14)",
-      "7eaf6406 JD1-c: substituir a leitura refeita do mesmo dia (achado 15)",
-      "d37d553a JD1-c: mostrar a data intacta do cabeçalho (achado 10)",
-      "7557db3b fixup! JD1-c: explicar a dívida direta e a direção da evolução (achado 9)",
-      "d5473935 JD1-c: preparar provas reproduzíveis e capturas da passagem",
-      "9b1617c2 JD1-c: medir os recibos novos antes dos portões",
-      "defea1b0 JD1-c: declarar a matéria da nova linha (achado 7)",
-      "8a137354 JD1-c: integrar a linha no inventário e na língua (achado 7)",
-      "147382c4 JD1-c: completar os vínculos das novas frases"
+      "c1557e8a JD1-c: registar a leitura, as plantas e o mandato",
+      "449ce248 JD1-c: repor o comportamento fora do bloco (achado 8)",
+      "c0e9d544 JD1-c: ligar o estado e a comparação à linha (achado 6)",
+      "9d74fea7 JD1-c: dizer a parcela do financiamento por tokens (achado 7)",
+      "e8261eb7 JD1-c: explicar a dívida direta e a direção da evolução (achado 9)",
+      "107dca29 JD1-c: conservar as colunas e descrever os gráficos (achado 11)",
+      "bb103314 JD1-c: recusar árvores sujas e conferir sob a tranca (achado 12)",
+      "0c2a3f21 JD1-c: apoiar o perímetro no INE e conservar o subsetor (achado 14)",
+      "d247ca94 JD1-c: substituir a leitura refeita do mesmo dia (achado 15)",
+      "244d0fa0 JD1-c: mostrar a data intacta do cabeçalho (achado 10)",
+      "2df4b696 fixup! JD1-c: explicar a dívida direta e a direção da evolução (achado 9)",
+      "acacca97 JD1-c: preparar provas reproduzíveis e capturas da passagem",
+      "50978230 JD1-c: medir os recibos novos antes dos portões",
+      "526b45f7 JD1-c: declarar a matéria da nova linha (achado 7)",
+      "598d4712 JD1-c: integrar a linha no inventário e na língua (achado 7)",
+      "d9e2a972 JD1-c: completar os vínculos das novas frases"
     ],
     "motor": [
       "68c2a13 JD1-c: selar a parcela das amortizações (achado 7)",

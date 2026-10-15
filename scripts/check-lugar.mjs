@@ -118,7 +118,7 @@ if (!Number.isInteger(TETO_B1.l1_paginas) || TETO_B1.l1_paginas < 0 || MEDICAO_B
 const TETOS = {
   /* L1 · páginas com dois destinos iguais fora do cabeçalho e do rodapé.
      TODOS os tetos desta tabela foram medidos a 08.09.2026 sobre o `dist/` da
-     fusão de `origin/main` (43f4b52a) na cabeça `47d957f6`, com
+     fusão de `origin/main` (70097881) na cabeça `a0a40208`, com
      `node scripts/check-lugar.mjs`, e nenhum foi escrito à mão. */
   /* DESCE DE 6 598 PARA 6 580 a 09.09.2026, e não por se ter medido melhor: as
      24 páginas de estudo tinham as mesmas portas duas vezes (o bloco «O
@@ -1648,7 +1648,7 @@ for (const ficheiro of paginas) {
       }
       /* ---------------------------------------------------------------------
          CADA CAMPO POR IGUALDADE, NO ELEMENTO DELE (achado 6 da releitura do
-         Codex de 14.09.2026, sobre a cabeça `7b85bb7f`)
+         Codex de 14.09.2026, sobre a cabeça `9d1f0460`)
          ---------------------------------------------------------------------
          Era `texto.includes(valor)` sobre o bloco inteiro, e a releitura mediu
          as duas frestas que isso deixava: «a changed field can pass if the

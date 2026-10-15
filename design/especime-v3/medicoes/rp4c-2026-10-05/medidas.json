@@ -24,7 +24,7 @@
     {
       "nome": "paragrafo_0.pixeis_minimos_de_uma_marca_intermedia_do_tempo_as_pontas",
       "valor": 64,
-      "comando": "git show 5b004ada:src/lib/formas/serie-do-pais.mjs · a regra «posicao - campo.esquerda >= N && campo.direita - posicao >= N» das marcas intermédias do tempo",
+      "comando": "git show 22dd918c:src/lib/formas/serie-do-pais.mjs · a regra «posicao - campo.esquerda >= N && campo.direita - posicao >= N» das marcas intermédias do tempo",
       "conhecido_positivo": {
         "o_que": "o módulo constrói marcasX a partir dos anos",
         "encontrado": true
@@ -33,7 +33,7 @@
     {
       "nome": "paragrafo_0.marcas_do_eixo_vertical_com_o_simbolo_da_unidade",
       "valor": 0,
-      "comando": "git show 5b004ada:src/lib/formas/serie-do-pais.mjs · as marcas do eixo vertical escritas com o símbolo «%»",
+      "comando": "git show 22dd918c:src/lib/formas/serie-do-pais.mjs · as marcas do eixo vertical escritas com o símbolo «%»",
       "conhecido_positivo": {
         "o_que": "as marcas do eixo vertical existem (marcasY)",
         "encontrado": true
@@ -42,7 +42,7 @@
     {
       "nome": "paragrafo_0.linhas_de_referencia_no_modulo_da_forma",
       "valor": 0,
-      "comando": "git show 5b004ada:src/lib/formas/serie-do-pais.mjs · as ocorrências de «referencia»",
+      "comando": "git show 22dd918c:src/lib/formas/serie-do-pais.mjs · as ocorrências de «referencia»",
       "conhecido_positivo": {
         "o_que": "o bloco das barras da primeira página desenha uma referência (a dívida a 60 %)",
         "encontrado": true
@@ -51,7 +51,7 @@
     {
       "nome": "paragrafo_0.regras_de_passagem_ou_foco_na_folha_do_desenho",
       "valor": 2,
-      "comando": "git show 5b004ada:src/styles/serie-do-pais.css · as regras com :hover ou :focus",
+      "comando": "git show 22dd918c:src/styles/serie-do-pais.css · as regras com :hover ou :focus",
       "conhecido_positivo": {
         "o_que": "a folha existe e estiliza a linha",
         "encontrado": true
@@ -60,7 +60,7 @@
     {
       "nome": "paragrafo_0.etiquetas_de_valor_por_ponto_no_componente",
       "valor": 0,
-      "comando": "git show 5b004ada:src/components/formas/SerieDoPais.astro · os elementos com data-ponto (o valor de um ponto, como nos recibos)",
+      "comando": "git show 22dd918c:src/components/formas/SerieDoPais.astro · os elementos com data-ponto (o valor de um ponto, como nos recibos)",
       "conhecido_positivo": {
         "o_que": "o componente desenha as polylines",
         "encontrado": true
@@ -69,7 +69,7 @@
     {
       "nome": "paragrafo_0.linhas_do_livro_com_derivation_nao_nula",
       "valor": 378,
-      "comando": "git ls-tree 5b004ada ledger/claims/ e git show de cada linha · as linhas cujo campo derivation não é null",
+      "comando": "git ls-tree 22dd918c ledger/claims/ e git show de cada linha · as linhas cujo campo derivation não é null",
       "conhecido_positivo": {
         "o_que": "os cem euros da função 01 do OE1 são uma linha derivada",
         "encontrado": true
@@ -78,7 +78,7 @@
     {
       "nome": "paragrafo_0.pontos_da_serie_da_inflacao",
       "valor": 416,
-      "comando": "git show 5b004ada:ledger/series/serie-ipc-variacao-homologa.yml · as linhas «  - periodo:» da lista pontos:",
+      "comando": "git show 22dd918c:ledger/series/serie-ipc-variacao-homologa.yml · as linhas «  - periodo:» da lista pontos:",
       "conhecido_positivo": {
         "o_que": "a série começa em 1992-01",
         "encontrado": true
@@ -87,7 +87,7 @@
     {
       "nome": "paragrafo_0.mencoes_ao_banco_central_europeu_nas_leituras",
       "valor": 2,
-      "comando": "git show 5b004ada:src/data/leituras-rp1.mjs e leituras-das-medidas.mjs · as ocorrências de «Banco Central Europeu»",
+      "comando": "git show 22dd918c:src/data/leituras-rp1.mjs e leituras-das-medidas.mjs · as ocorrências de «Banco Central Europeu»",
       "conhecido_positivo": {
         "o_que": "a leitura da comparação europeia diz que o Banco Central Europeu procura uma inflação",
         "encontrado": true
@@ -2118,7 +2118,7 @@
       "nome": "portoes.plantas_rp4c_cabeca_e_estado",
       "valor": [
         [
-          "9277c7f9",
+          "212d47f5",
           ""
         ]
       ],
@@ -2148,7 +2148,7 @@
     },
     {
       "nome": "conferencias.cabeca",
-      "valor": "6e0c94f2",
+      "valor": "0bac80b0",
       "comando": "idem",
       "conhecido_positivo": {
         "o_que": "o estado da árvore seguida foi escrito",
@@ -2220,7 +2220,7 @@
     },
     {
       "nome": "portoes.cabeca",
-      "valor": "9277c7f9",
+      "valor": "212d47f5",
       "comando": "portoes/cabeca",
       "conhecido_positivo": {
         "o_que": "portoes/cabeca.fim existe",
@@ -2265,7 +2265,7 @@
     },
     {
       "nome": "provas.cabeca",
-      "valor": "9277c7f9",
+      "valor": "212d47f5",
       "comando": "provas/cabeca e provas/cabeca.fim",
       "conhecido_positivo": {
         "o_que": "a cabeça do fim é a do princípio",
@@ -2274,7 +2274,7 @@
     },
     {
       "nome": "provas.construcao",
-      "valor": "9277c7f9",
+      "valor": "212d47f5",
       "comando": "provas/version.json (a cópia do dist/version.json da construção medida)",
       "conhecido_positivo": {
         "o_que": "o commit da construção é a cabeça da corrida",
@@ -2329,7 +2329,7 @@
     {
       "nome": "registos.linhas_mudadas_nas_cadeias_no_inventario_e_nas_chaves",
       "valor": 0,
-      "comando": "git diff --numstat 983b4585 HEAD -- src/i18n/strings.mjs design/especime-v3/INVENTARIO-FRASES.md design/especime-v3/CHAVES-EN.md",
+      "comando": "git diff --numstat de4bcfc6 HEAD -- src/i18n/strings.mjs design/especime-v3/INVENTARIO-FRASES.md design/especime-v3/CHAVES-EN.md",
       "conhecido_positivo": {
         "o_que": "o mesmo comando vê as linhas que o bloco mudou no módulo do desenho",
         "encontrado": true
@@ -2394,7 +2394,7 @@
     {
       "nome": "rp4c.medidas_na_entrega",
       "valor": 262,
-      "comando": "git show 46e675d6:design/especime-v3/medicoes/rp4c-2026-10-05/medidas.json · as medidas",
+      "comando": "git show a617f532:design/especime-v3/medicoes/rp4c-2026-10-05/medidas.json · as medidas",
       "conhecido_positivo": {
         "o_que": "o ficheiro da entrega tem a reprodução do §0",
         "encontrado": true
@@ -3515,7 +3515,7 @@
       "nome": "rp4cb.portoes.cabeca_e_estado",
       "valor": [
         [
-          "dd2e347c",
+          "8ed6734e",
           ""
         ]
       ],
@@ -3545,7 +3545,7 @@
     },
     {
       "nome": "rp4cb.conferencias.cabeca",
-      "valor": "dd2e347c",
+      "valor": "8ed6734e",
       "comando": "rp4cb/conferencias/cabeca",
       "conhecido_positivo": {
         "o_que": "idem",
@@ -3590,7 +3590,7 @@
     },
     {
       "nome": "rp4cb.provas.cabeca",
-      "valor": "dd2e347c",
+      "valor": "8ed6734e",
       "comando": "rp4cb/provas/cabeca",
       "conhecido_positivo": {
         "o_que": "idem",
@@ -3617,7 +3617,7 @@
     },
     {
       "nome": "rp4cb.provas.construcao",
-      "valor": "dd2e347c",
+      "valor": "8ed6734e",
       "comando": "rp4cb/provas/version.json",
       "conhecido_positivo": {
         "o_que": "o commit da construção é a cabeça das provas",

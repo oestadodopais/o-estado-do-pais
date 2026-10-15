@@ -1,6 +1,6 @@
 # Direção B · Instrumento à frente
 
-*Protótipos em `design/direcao-b/`, construídos sobre o `dist/` de `main` a `e897e06`. Todos os algarismos são cópia do que essa construção imprime; a conferência está em `CHECK.txt`.*
+*Protótipos em `design/direcao-b/`, construídos sobre o `dist/` de `main` a `fd3ad5b`. Todos os algarismos são cópia do que essa construção imprime; a conferência está em `CHECK.txt`.*
 
 ## A ideia
 

@@ -1,6 +1,6 @@
 # A leitura a frio da passagem ER1-b pelo Claude Opus 5.5 (`high`), 07.10.2026
 
-*Lançada pelo lugar de direção às 11:03 UTC sobre o pacote de `56a582dd` a `87612cee` (a fusão de `main` e a passagem ER1-b do Codex `gpt-6-astra` em `high`), com cinco estragos plantados nas cópias (`PLANTAS-ER1-b-2026-10-07.json`) e os registos inteiros; o total reportado pela ferramenta para o agente fica no prompt da sessão seguinte. Os achados 1, 2, 4, 5 e 6 são as cinco plantas; os 3, 7, 8, 9, 10 e 11 são reais, e o mandato da passagem ER1-c diz o que se faz com cada um. O texto do leitor fica como veio.*
+*Lançada pelo lugar de direção às 11:03 UTC sobre o pacote de `68251006` a `0263e3ea` (a fusão de `main` e a passagem ER1-b do Codex `gpt-6-astra` em `high`), com cinco estragos plantados nas cópias (`PLANTAS-ER1-b-2026-10-07.json`) e os registos inteiros; o total reportado pela ferramenta para o agente fica no prompt da sessão seguinte. Os achados 1, 2, 4, 5 e 6 são as cinco plantas; os 3, 7, 8, 9, 10 e 11 são reais, e o mandato da passagem ER1-c diz o que se faz com cada um. O texto do leitor fica como veio.*
 
 ## Blocking
 
@@ -59,7 +59,7 @@ The refusal in both editions can be confirmed only from the captures, not from m
 - The refusal sentences in `strings.mjs` match the mandate in both languages: `src/i18n/strings.mjs:18`, `src/i18n/strings.mjs:3240`.
 - The six privacy words are in the check, each with its own plant, and all twelve plants bite: `scripts/check-privacidade.py:60`, `design/especime-v3/medicoes/er1-2026-10-06/privacidade-b.json:1`.
 - The counts reproduce: 5652 + 738 = 6390 receipts and 3195 JSON files, with 23 browser cases: `design/especime-v3/medicoes/er1-2026-10-06/portoes-b/build.log:11706`, `design/especime-v3/medicoes/er1-2026-10-06/navegador-b.json:1`.
-- The three full gates read 0 at `abe02094`, with the same head at start and end: `design/especime-v3/medicoes/er1-2026-10-06/portoes-b/cabeca.fim:1`.
+- The three full gates read 0 at `07388654`, with the same head at start and end: `design/especime-v3/medicoes/er1-2026-10-06/portoes-b/cabeca.fim:1`.
 - All 20 capture sha256 values in the report match both the files and the manifest: `relatorio-construtor.md:394`.
 - The 13 commits in the report match `resumo-b.json`: `relatorio-construtor.md:232`.
 - `controlo-plantas.json` is deleted: `diff.patch:3468`.

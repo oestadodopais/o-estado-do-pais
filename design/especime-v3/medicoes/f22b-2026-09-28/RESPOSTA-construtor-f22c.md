@@ -6,7 +6,7 @@ rotinas, 25 adicionais e 94 conferências dos fluxos. O relatório é `LEIA-ME.m
 A cabeça final do motor é `1a67dea9a4e479c00f4fe4c8d645364a3a943446`.
 Os commits desta passagem são `f9dc0df2c1474b44a47cdd6781ea2cf64885cfe1`,
 `e7dbae267919aa6e9eb0345d25a085f50e4c5a72` e essa cabeça.
-No sítio, os portões correram em `934af43bfb1f8205ad81bafa27b32c0d0fc8aadc`.
+No sítio, os portões correram em `9ecc5c8bbbfc0f460a62569a711cd6601334bee9`.
 O commit final das provas é o que contém este ficheiro; o SHA final será dado
 na resposta fora do ramo. A comparação da cabeça dos portões com a final cabe
 à direção na aterragem.

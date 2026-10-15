@@ -796,7 +796,7 @@
 2026-09-28T21:25:44.620Z +315.153s   > o-estado-do-pais@0.1.0 check:cabeca
 2026-09-28T21:25:44.620Z +315.153s   > node tests/inicio/hierarquia-b2.mjs
 2026-09-28T21:25:44.620Z +315.153s   
-2026-09-28T21:25:47.997Z +318.530s   check:cabeca C1; construção b485ae52490920f9a46630a967177f546cd21f5c; 110 cabeças; 4 mordidas; 10 reposições
+2026-09-28T21:25:47.997Z +318.530s   check:cabeca C1; construção e520a402b7949d6f26fde4edff949c99aadf6d74; 110 cabeças; 4 mordidas; 10 reposições
 2026-09-28T21:25:47.997Z +318.530s   check:cabeca: PASS
 2026-09-28T21:25:48.095Z +318.628s   
 2026-09-28T21:25:48.095Z +318.628s   > o-estado-do-pais@0.1.0 check:fontes
@@ -1141,7 +1141,7 @@
 2026-09-28T21:28:19.643Z +470.176s   
 2026-09-28T21:28:20.899Z +471.432s   
 2026-09-28T21:28:20.899Z +471.432s     O feixe de cartões do sistema de desenho
-2026-09-28T21:28:20.899Z +471.432s     design-system/ · de dist/ no commit b485ae5 · 20 cartões, 11 ficheiros de letra e um README
+2026-09-28T21:28:20.899Z +471.432s     design-system/ · de dist/ no commit e520a40 · 20 cartões, 11 ficheiros de letra e um README
 2026-09-28T21:28:20.899Z +471.432s   
 2026-09-28T21:28:20.899Z +471.432s     ficheiro                          grupo          bytes  ok
 2026-09-28T21:28:20.899Z +471.432s     01-cor.html                       Fundamentos   375679  ✓

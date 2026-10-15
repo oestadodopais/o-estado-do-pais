@@ -40,25 +40,25 @@ As leituras a frio de 23.09 em `design/especime-v3/critica/` (`LEITURA-DE-FORA-2
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
 ### O sítio (`<casa>/Instruments/OEstadoDoPais`)
-- `main`: 4b99dea3 · 2026-09-23T15:09:22+01:00 · Os registos do R1: a §1.126 completa, as questões I137 a I147 fechadas, as melhorias M25 a M27, a leitura a frio, o construtor que   (`git log -1 main`)
-- `origin/main`: 4b99dea3 · 2026-09-23T15:09:22+01:00 · Os registos do R1: a §1.126 completa, as questões I137 a I147 fechadas, as melhorias M25 a M27, a leitura a frio, o construtor que   (`git log -1 origin/main`)
+- `main`: a783468f · 2026-09-23T15:09:22+01:00 · Os registos do R1: a §1.126 completa, as questões I137 a I147 fechadas, as melhorias M25 a M27, a leitura a frio, o construtor que   (`git log -1 main`)
+- `origin/main`: a783468f · 2026-09-23T15:09:22+01:00 · Os registos do R1: a §1.126 completa, as questões I137 a I147 fechadas, as melhorias M25 a M27, a leitura a frio, o construtor que   (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
-- ramos locais: `main 4b99dea3`  (`git branch`)
+- ramos locais: `main a783468f`  (`git branch`)
 - ramos no remoto: `main`  (`git ls-remote --heads origin`)
-- worktree: `<casa>/Instruments/OEstadoDoPais 4b99dea3 [main]`
+- worktree: `<casa>/Instruments/OEstadoDoPais a783468f [main]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
-- 35876038798 · `4b99dea3` · main · portão · **in_progress / SEM CONCLUSÃO** · criada 2026-09-23T14:41:30Z · atualizada 2026-09-23T14:41:52Z
-- 35873743467 · `4b99dea3` · r1-2026-09-23 · portão · **completed / success** · criada 2026-09-23T14:22:51Z · atualizada 2026-09-23T14:40:36Z
-- 35846908091 · `d4d4dcae` · main · portão · **completed / success** · criada 2026-09-23T10:06:54Z · atualizada 2026-09-23T10:26:55Z
-- 35844311390 · `d4d4dcae` · i136-2026-09-23 · portão · **completed / success** · criada 2026-09-23T09:40:22Z · atualizada 2026-09-23T10:05:41Z
-- 35759367080 · `d3481ba9` · main · portão · **completed / success** · criada 2026-09-22T17:14:20Z · atualizada 2026-09-22T17:33:54Z
-- 35756471230 · `d3481ba9` · medidas-2026-09-22 · portão · **completed / success** · criada 2026-09-22T16:47:47Z · atualizada 2026-09-22T17:13:10Z
+- 35876038798 · `a783468f` · main · portão · **in_progress / SEM CONCLUSÃO** · criada 2026-09-23T14:41:30Z · atualizada 2026-09-23T14:41:52Z
+- 35873743467 · `a783468f` · r1-2026-09-23 · portão · **completed / success** · criada 2026-09-23T14:22:51Z · atualizada 2026-09-23T14:40:36Z
+- 35846908091 · `642930a1` · main · portão · **completed / success** · criada 2026-09-23T10:06:54Z · atualizada 2026-09-23T10:26:55Z
+- 35844311390 · `642930a1` · i136-2026-09-23 · portão · **completed / success** · criada 2026-09-23T09:40:22Z · atualizada 2026-09-23T10:05:41Z
+- 35759367080 · `3a483ffd` · main · portão · **completed / success** · criada 2026-09-22T17:14:20Z · atualizada 2026-09-22T17:33:54Z
+- 35756471230 · `3a483ffd` · medidas-2026-09-22 · portão · **completed / success** · criada 2026-09-22T16:47:47Z · atualizada 2026-09-22T17:13:10Z
 
 ### O que está no ar (`/version.json` do sítio publicado)
-- commit no ar: `4b99dea3` · construído em 2026-09-23T14:53:00.197Z · ref `main` · production
-- igual a `origin/main` (`4b99dea3`): **sim**
+- commit no ar: `a783468f` · construído em 2026-09-23T14:53:00.197Z · ref `main` · production
+- igual a `origin/main` (`a783468f`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
 ### O motor (`<casa>/Instruments/ResearchHub`)
@@ -89,7 +89,7 @@ As leituras a frio de 23.09 em `design/especime-v3/critica/` (`LEITURA-DE-FORA-2
 
 ## 5 · As horas e os símbolos das aterragens de 23.09 (lidos dos registos, não de memória)
 
-- **A I136, o sítio.** O ramo `i136-2026-09-23` (dois commits do lugar de direção), cabeça `d4d4dcae`. Os três portões a 0 nessa cabeça, cada um no seu comando com o código lido de ficheiro: `build` 09:25:40 a 09:30:26 UTC, `verify` 09:31:44 a 09:39:35 UTC (a primeira corrida parou aos 43 segundos por a worktree não ter os pacotes instalados; `npm ci` e a corrida inteira), `typecheck` 09:39:48 UTC (68 ficheiros, no mesmo segundo, como ontem). A corrida `portão` do ramo (35844311390) verde às 10:05:41 UTC; `git merge --ff-only` e `git push origin main` às 10:06:52 UTC; a corrida de `main` (35846908091) verde às 10:26:55 UTC; o lançamento da Vercel construído às 10:16:53 UTC e visto «Ready» com um pedido só, aos quinze minutos; `npm run verify:deploy` a 0 às 10:22 UTC. A worktree e o ramo apagados, no local e no remoto.
+- **A I136, o sítio.** O ramo `i136-2026-09-23` (dois commits do lugar de direção), cabeça `642930a1`. Os três portões a 0 nessa cabeça, cada um no seu comando com o código lido de ficheiro: `build` 09:25:40 a 09:30:26 UTC, `verify` 09:31:44 a 09:39:35 UTC (a primeira corrida parou aos 43 segundos por a worktree não ter os pacotes instalados; `npm ci` e a corrida inteira), `typecheck` 09:39:48 UTC (68 ficheiros, no mesmo segundo, como ontem). A corrida `portão` do ramo (35844311390) verde às 10:05:41 UTC; `git merge --ff-only` e `git push origin main` às 10:06:52 UTC; a corrida de `main` (35846908091) verde às 10:26:55 UTC; o lançamento da Vercel construído às 10:16:53 UTC e visto «Ready» com um pedido só, aos quinze minutos; `npm run verify:deploy` a 0 às 10:22 UTC. A worktree e o ramo apagados, no local e no remoto.
 - **O motor, três aterragens.** A I136 e o comentário das reconferências (`1253605`, commit 09:15:51 UTC, `core.gate` a 0 no pre-commit à segunda tentativa: a primeira recusou o commit por três suítes, entre elas a que exige que um livro gerado seja o que o construtor produz, e a correção foi ir ao construtor). O M4b rebaseado sobre `1253605` e fundido por avanço rápido como `e53a3f2` (13:11 UTC), com o `core.gate` a 0 e o `core.gate_test` a 0 (18 conferências) na cabeça rebaseada, publicado às 13:14 UTC. O R1 do motor rebaseado e fundido como `1031258` (13:17 UTC, publicado a seguir), e a passagem de correção do R1 fundida como `b66c0fd` (13:59 UTC, publicada às 14:00 UTC). As três worktrees e os três ramos apagados.
-- **O R1, o sítio.** O ramo `r1-2026-09-23` (dezasseis commits do construtor na construção, quatro na passagem de correção, e quatro do lugar de direção: o brief, a agenda e as ferramentas, o M4b no sítio, os registos), cabeça `4b99dea3`. Os três portões a 0 nessa cabeça: `build` 14:09:22 a 14:14:05 UTC, `verify` 14:14:17 a 14:22:20 UTC, `typecheck` 14:22:33 UTC. A corrida `portão` do ramo (35873743467) verde às 14:40:36 UTC; `git merge --ff-only` e `git push origin main` às 14:41:28 UTC; a corrida de `main` (35876038798) criada às 14:41:30 UTC, com a conclusão lida ao fechar no §4; o lançamento da Vercel e o `verify:deploy` no §4. A worktree e o ramo apagados, no local e no remoto.
+- **O R1, o sítio.** O ramo `r1-2026-09-23` (dezasseis commits do construtor na construção, quatro na passagem de correção, e quatro do lugar de direção: o brief, a agenda e as ferramentas, o M4b no sítio, os registos), cabeça `a783468f`. Os três portões a 0 nessa cabeça: `build` 14:09:22 a 14:14:05 UTC, `verify` 14:14:17 a 14:22:20 UTC, `typecheck` 14:22:33 UTC. A corrida `portão` do ramo (35873743467) verde às 14:40:36 UTC; `git merge --ff-only` e `git push origin main` às 14:41:28 UTC; a corrida de `main` (35876038798) criada às 14:41:30 UTC, com a conclusão lida ao fechar no §4; o lançamento da Vercel e o `verify:deploy` no §4. A worktree e o ramo apagados, no local e no remoto.
 - **Os símbolos.** M4b: Claude Opus 5.5, 659 925 cumulativos (a construção 403 010, a passagem de correção e a tradução por cima), 3 h 46 m de parede; a leitura a frio do Codex 257 602 (11:34:31 a 12:00:06 UTC). R1: Claude Opus 5.5, 789 603 cumulativos (a construção 641 615, a passagem de correção 147 988), 2 h 40 m mais 43 m; a leitura a frio do Codex 453 518 (12:57:14 a 13:21:34 UTC). A leitura da voz, Codex, 184 538 (11:04:39 a 11:23:48 UTC). Os totais dos construtores são os que o harness reportou ao lugar de direção no fim de cada agente; os das leituras são a linha «tokens used» de cada `.eventos.log`. O lugar de direção (Fable) não se mede daqui: o §4 diz o uso da semana lido pela linha de estado.

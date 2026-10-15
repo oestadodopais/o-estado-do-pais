@@ -10,7 +10,7 @@ import subprocess
 AQUI = Path(__file__).resolve().parent
 COMANDO = 'python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4c.py'
 BRIEF = 'design/observatorio/BRIEF-H4-o-menu-do-telefone-em-duas-linhas.md'
-PARTIDA = 'c86015929c91280c07be98a07fae1ad66fc1dde6'
+PARTIDA = 'c9866595efc2c249b72bf1c28512aa14b713e229'
 
 
 def ler(nome):

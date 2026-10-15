@@ -4,9 +4,9 @@
 
 ## 1 · O que está no ar
 
-- **O RP4 no ar desde as 09:18 UTC de 05.10 (`main` em `6fb0d773`)**: o gráfico das séries (`serie-do-pais`) nos sete cartões presos, nos recibos das séries no tempo (a tabela dobrada por anos) e na primeira página (a inflação, com a unidade em palavras); a linha da União no cartão da comparação europeia; o portão F21 que recompõe cada desenho; as I196 e I197 fechadas; a §1.161 (o leitor é o Astra `xhigh`, a M51, a M52), o `ler.sh` novo e as quatro leituras do ensaio em `critica/`. A §1.162 (a aterragem) fica para a próxima aterragem de registos. **O Método sem «diretor» no ar desde as 08:27 UTC (`79a0d05c`)**, com a §1.159 e a §1.160 (o Opus constrói sempre, o Codex só verifica, a paragem aos noventa e sete por cento). A secção abaixo descreve o estado anterior a estas duas aterragens.
+- **O RP4 no ar desde as 09:18 UTC de 05.10 (`main` em `9b8061c4`)**: o gráfico das séries (`serie-do-pais`) nos sete cartões presos, nos recibos das séries no tempo (a tabela dobrada por anos) e na primeira página (a inflação, com a unidade em palavras); a linha da União no cartão da comparação europeia; o portão F21 que recompõe cada desenho; as I196 e I197 fechadas; a §1.161 (o leitor é o Astra `xhigh`, a M51, a M52), o `ler.sh` novo e as quatro leituras do ensaio em `critica/`. A §1.162 (a aterragem) fica para a próxima aterragem de registos. **O Método sem «diretor» no ar desde as 08:27 UTC (`683680e4`)**, com a §1.159 e a §1.160 (o Opus constrói sempre, o Codex só verifica, a paragem aos noventa e sete por cento). A secção abaixo descreve o estado anterior a estas duas aterragens.
 
-- `main` em `aa45c598` (o H2, a passagem de higiene de 04.10, no ar às 01:23 UTC de 05.10: o estudo de Évora 2027 à cabeça dos estudos recentes da primeira página por regra declarada na ficha (`emCurso`, com a razão e a data), com a marca «em curso até 2027» / «ongoing until 2027» lida da ficha, e uma data de acompanhamento passada a fechar a construção; as cinco questões I190 a I194 fechadas (a I194 pela corrida de ensaio 37238803296 no `ubuntu-24.04` e confirmada pelas corridas do ramo e de `main` desta aterragem); a M49 no `pacote.sh` e no `pacote.py` novo (`PACOTE_RETIRA`, `PACOTE_MOTOR`, o caminho absoluto, a recusa da árvore suja); construído pelo Codex `gpt-6-astra` como construtor de recurso, lido duas vezes pelo Opus (`LEITURA-H2-2026-10-04.md`, `LEITURA-H2-b-2026-10-05.md`), as passagens H2-b e H2-c; os registos do dia, a §1.158, aterram por cima desta cabeça), por cima de `905105b7` (os registos de 04.10, a §1.157) e dos três blocos de 04.10 (o RP3, o R3, o OE1: a §1.156 e a §1.157 dizem o que são).
+- `main` em `c86c4e8e` (o H2, a passagem de higiene de 04.10, no ar às 01:23 UTC de 05.10: o estudo de Évora 2027 à cabeça dos estudos recentes da primeira página por regra declarada na ficha (`emCurso`, com a razão e a data), com a marca «em curso até 2027» / «ongoing until 2027» lida da ficha, e uma data de acompanhamento passada a fechar a construção; as cinco questões I190 a I194 fechadas (a I194 pela corrida de ensaio 37238803296 no `ubuntu-24.04` e confirmada pelas corridas do ramo e de `main` desta aterragem); a M49 no `pacote.sh` e no `pacote.py` novo (`PACOTE_RETIRA`, `PACOTE_MOTOR`, o caminho absoluto, a recusa da árvore suja); construído pelo Codex `gpt-6-astra` como construtor de recurso, lido duas vezes pelo Opus (`LEITURA-H2-2026-10-04.md`, `LEITURA-H2-b-2026-10-05.md`), as passagens H2-b e H2-c; os registos do dia, a §1.158, aterram por cima desta cabeça), por cima de `4d91d3b2` (os registos de 04.10, a §1.157) e dos três blocos de 04.10 (o RP3, o R3, o OE1: a §1.156 e a §1.157 dizem o que são).
 
 ## 2 · O que está a meio
 
@@ -49,27 +49,27 @@
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
 ### O sítio (`<sítio>`)
-- `main`: 6fb0d773 · 2026-10-05T09:42:26+01:00 · RP4: os códigos da corrida dos portões na cabeça d1b01862 (build 0, verify 0, typecheck 0), pela tranca, depois da fusão com main e  (`git log -1 main`)
-- `origin/main`: 6fb0d773 · 2026-10-05T09:42:26+01:00 · RP4: os códigos da corrida dos portões na cabeça d1b01862 (build 0, verify 0, typecheck 0), pela tranca, depois da fusão com main e  (`git log -1 origin/main`)
+- `main`: 9b8061c4 · 2026-10-05T09:42:26+01:00 · RP4: os códigos da corrida dos portões na cabeça f04cf39a (build 0, verify 0, typecheck 0), pela tranca, depois da fusão com main e  (`git log -1 main`)
+- `origin/main`: 9b8061c4 · 2026-10-05T09:42:26+01:00 · RP4: os códigos da corrida dos portões na cabeça f04cf39a (build 0, verify 0, typecheck 0), pela tranca, depois da fusão com main e  (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
-- ramos locais: `main 6fb0d773`, `registos-2026-10-05-b 6fb0d773`, `rp4m-2026-10-05 119c6cf1`  (`git branch`)
+- ramos locais: `main 9b8061c4`, `registos-2026-10-05-b 9b8061c4`, `rp4m-2026-10-05 5b302a8c`  (`git branch`)
 - ramos no remoto: `main`  (`git ls-remote --heads origin`)
-- worktree: `<sítio> 6fb0d773 [main]`
-- worktree: `<sítio>/<worktrees>/registos-2026-10-05-b 6fb0d773 [registos-2026-10-05-b]`
-- worktree: `<sítio>/<worktrees>/rp4m-2026-10-05 119c6cf1 [rp4m-2026-10-05]`
+- worktree: `<sítio> 9b8061c4 [main]`
+- worktree: `<sítio>/<worktrees>/registos-2026-10-05-b 9b8061c4 [registos-2026-10-05-b]`
+- worktree: `<sítio>/<worktrees>/rp4m-2026-10-05 5b302a8c [rp4m-2026-10-05]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
-- 37287681847 · `6fb0d773` · main · portão · **completed / success** · criada 2026-10-05T09:04:53Z · atualizada 2026-10-05T09:17:54Z
-- 37285344496 · `6fb0d773` · rp4-2026-10-04 · portão · **completed / success** · criada 2026-10-05T08:42:54Z · atualizada 2026-10-05T09:02:03Z
-- 37282151810 · `79a0d05c` · main · portão · **completed / success** · criada 2026-10-05T08:12:03Z · atualizada 2026-10-05T08:33:10Z
-- 37280142519 · `79a0d05c` · metodo-2026-10-05 · portão · **completed / success** · criada 2026-10-05T07:51:58Z · atualizada 2026-10-05T08:11:32Z
-- 37254268928 · `fb364fe4` · main · portão · **completed / success** · criada 2026-10-05T02:09:30Z · atualizada 2026-10-05T02:29:01Z
-- 37253259654 · `fb364fe4` · registos-2026-10-05 · portão · **completed / success** · criada 2026-10-05T01:54:27Z · atualizada 2026-10-05T02:09:03Z
+- 37287681847 · `9b8061c4` · main · portão · **completed / success** · criada 2026-10-05T09:04:53Z · atualizada 2026-10-05T09:17:54Z
+- 37285344496 · `9b8061c4` · rp4-2026-10-04 · portão · **completed / success** · criada 2026-10-05T08:42:54Z · atualizada 2026-10-05T09:02:03Z
+- 37282151810 · `683680e4` · main · portão · **completed / success** · criada 2026-10-05T08:12:03Z · atualizada 2026-10-05T08:33:10Z
+- 37280142519 · `683680e4` · metodo-2026-10-05 · portão · **completed / success** · criada 2026-10-05T07:51:58Z · atualizada 2026-10-05T08:11:32Z
+- 37254268928 · `a2bd1177` · main · portão · **completed / success** · criada 2026-10-05T02:09:30Z · atualizada 2026-10-05T02:29:01Z
+- 37253259654 · `a2bd1177` · registos-2026-10-05 · portão · **completed / success** · criada 2026-10-05T01:54:27Z · atualizada 2026-10-05T02:09:03Z
 
 ### O que está no ar (`/version.json` do sítio publicado)
-- commit no ar: `6fb0d773` · construído em 2026-10-05T09:07:12.306Z · ref `main` · production
-- igual a `origin/main` (`6fb0d773`): **sim**
+- commit no ar: `9b8061c4` · construído em 2026-10-05T09:07:12.306Z · ref `main` · production
+- igual a `origin/main` (`9b8061c4`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
 ### O motor (`<motor>`)

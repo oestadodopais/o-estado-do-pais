@@ -2,11 +2,11 @@
 
 *Claude Opus 5.5 (a definição `construtor`), 30.09.2026. O relatório está em `design/especime-v3/medicoes/ue1-2026-09-29/LEIA-ME.md`, na secção «UE1e · a definição do índice harmonizado no recibo da série, sem «em Portugal»».*
 
-**As cabeças.** O sítio: o ramo `ue1-2026-09-29`, por cima do commit do lugar de direção `aba0a48b`. A cabeça do código da passagem, onde os portões correram, é `9d696d3c`; a cabeça final é o commit que traz esta resposta, e só acrescenta provas nesta pasta e na das capturas e emenda o relatório. O motor: o ramo `ue1-2026-09-29`, cabeça `e394307`, que a passagem não mudou (0 commits). Nada foi publicado.
+**As cabeças.** O sítio: o ramo `ue1-2026-09-29`, por cima do commit do lugar de direção `6ff9e8c1`. A cabeça do código da passagem, onde os portões correram, é `0dd05dd6`; a cabeça final é o commit que traz esta resposta, e só acrescenta provas nesta pasta e na das capturas e emenda o relatório. O motor: o ramo `ue1-2026-09-29`, cabeça `e394307`, que a passagem não mudou (0 commits). Nada foi publicado.
 
-**Os portões, lidos dos ficheiros** (`portoes/ue1e/*.codigo`, todos da cabeça `9d696d3c`): `npm run build` 0, `npm run verify` 0, `npm run typecheck` 0.
+**Os portões, lidos dos ficheiros** (`portoes/ue1e/*.codigo`, todos da cabeça `0dd05dd6`): `npm run build` 0, `npm run verify` 0, `npm run typecheck` 0.
 
-**Os commits da passagem.** `a4c202be` (a forma do recibo da série, o recibo a usá-la e as 2 regras do portão de HTML), `9d696d3c` (o mapa do repositório) e o das provas. Antes de cada um correram as conferências que ele tocou: 4, todas a 0, e o mapa sem citações perdidas.
+**Os commits da passagem.** `4ad0dd4a` (a forma do recibo da série, o recibo a usá-la e as 2 regras do portão de HTML), `0dd05dd6` (o mapa do repositório) e o das provas. Antes de cada um correram as conferências que ele tocou: 4, todas a 0, e o mapa sem citações perdidas.
 
 **O que se fez.** A entrada do índice harmonizado tem uma forma para o recibo da série, a pergunta do cartão sem «em Portugal» («in Portugal»), igual carácter a carácter ao texto do pedido, com as mesmas origens e o comentário com a §1.140. O recibo da série usa-a, e os outros usam a do cartão: 20 recibos com a definição da forma que devem usar, e 0 que nomeiem Portugal. O portão de HTML confere cada recibo contra a sua forma, que a forma é a pergunta do cartão sem o lugar, e que a definição de nenhum recibo de série nomeia Portugal, em português e em inglês. O cartão continua a dizer «em Portugal».
 

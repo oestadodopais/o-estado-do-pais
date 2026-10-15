@@ -27,9 +27,9 @@ On the front page, 21 measure cards sit in a band; the previous block (F1.1b) pu
 
 - `brief.md`: the mandate and the acceptance measures.
 - `relatorio-construtor.md`: the builder's report (unproven until reproduced).
-- `diff.patch`: the diff between the base commit `69ba3abf` and the block's code commit `b7afb882`.
+- `diff.patch`: the diff between the base commit `fd19e801` and the block's code commit `b2a2fe66`.
 - The changed files at their repository paths, as at the block's head: `src/views/HomeView.astro`, `public/js/inicio.js`, `src/styles/inicio.css`, `src/i18n/strings.mjs`, `tests/inicio/leitura.mjs`, `tests/inicio/matriz.mjs`, `design/especime-v3/INVENTARIO-FRASES.md`, `design/especime-v3/critica/REVISOES-DO-INVENTARIO.md`.
 - `built/index.html` and `built/en/index.html`: the front page built from the block's head, both editions.
-- `antes/index.html` and `antes/en/index.html`: the front page built from the head of `main` before this block (commit `cc79128e`, which is the base `69ba3abf` plus an unrelated hot fix to the counts markup in the doors section, F1.4b); use them for what the block changed in the reading area, not for the doors.
+- `antes/index.html` and `antes/en/index.html`: the front page built from the head of `main` before this block (commit `15cc78ec`, which is the base `fd19e801` plus an unrelated hot fix to the counts markup in the doors section, F1.4b); use them for what the block changed in the reading area, not for the doors.
 
 Pay particular attention to: what the page does without JavaScript, in both editions (the `hidden` attribute on the empty-state line, the 21 `<details>` and their ids); whether the script's order of operations (opening the fragment's reading, then setting `data-toque`, then scrolling) does what the report says; whether the `hashchange` handling really returns the area to the density state on back navigation; whether the J13 and J14 cells and the two new plants in `tests/inicio/leitura.mjs` would go red for the defects they describe, in both editions and both engines; whether the three rewritten cells in `tests/inicio/matriz.mjs` still measure what they measured; whether the heights and counts in the report are internally consistent (the tables, the A2 and J6 figures); and whether any new visible string is missing from the strings file or the inventory.

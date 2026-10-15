@@ -1,8 +1,8 @@
 # Relatório do construtor: a marca do diretor nos seis ficheiros do telemóvel
 
-*Claude Opus 5, 29.08.2026, ramo `marca-k-aplicada-2026-08-29`, três commits (`5408528`, `9938f36`, `45c5c59`). O texto abaixo é o relatório da segunda passagem tal como chegou ao lugar de direção; a primeira passagem tinha deixado as celas ao `scale(0.62)` do ficheiro da cela, com 9,5 % de mancha, e o lugar de direção pediu o enquadramento do favicon.*
+*Claude Opus 5, 29.08.2026, ramo `marca-k-aplicada-2026-08-29`, três commits (`6765749`, `e657290`, `e1fb44f`). O texto abaixo é o relatório da segunda passagem tal como chegou ao lugar de direção; a primeira passagem tinha deixado as celas ao `scale(0.62)` do ficheiro da cela, com 9,5 % de mancha, e o lugar de direção pediu o enquadramento do favicon.*
 
-Reframing feito. O worktree está limpo, o repositório principal continua intacto em `61bde7b`.
+Reframing feito. O worktree está limpo, o repositório principal continua intacto em `b485df9`.
 
 ## O que mudou
 
@@ -40,7 +40,7 @@ Cabeçalho e manifestos ficaram como estavam.
 
 ## Os commits
 
-`45c5c59` **As celas passam ao enquadramento do favicon: a mancha do 180 sobe de 9,5 para 24,9 %**, com caminhos explícitos (`design/marca/exportar.mjs`, `tests/inicio/app.mjs` e os quatro PNG) e os dois trailers. O ramo tem três commits: `5408528` (os ficheiros do diretor), `9938f36` (a ronda `app` com marca por parâmetro e os seis ficheiros de `public/`), `45c5c59`.
+`e1fb44f` **As celas passam ao enquadramento do favicon: a mancha do 180 sobe de 9,5 para 24,9 %**, com caminhos explícitos (`design/marca/exportar.mjs`, `tests/inicio/app.mjs` e os quatro PNG) e os dois trailers. O ramo tem três commits: `6765749` (os ficheiros do diretor), `e657290` (a ronda `app` com marca por parâmetro e os seis ficheiros de `public/`), `e1fb44f`.
 
 ## Custo
 

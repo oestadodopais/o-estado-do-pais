@@ -14,7 +14,7 @@ from functools import lru_cache
 
 AQUI = Path(__file__).resolve().parent
 RAIZ = AQUI.parents[3]
-BASE = '48a5a1c181c1753036d301204884c57119bba8a5'
+BASE = '7028e733f8bb4de7bf65f1bb76546304ba1e6db4'
 MOTOR_BASE = '4eb2867936dd14ad2654751722e390804e68dda3'
 MOTOR = Path.home() / '<projetos>/ResearchHub/.worktrees/c1-2026-09-28'
 

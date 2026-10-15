@@ -1,7 +1,7 @@
 {
   "comando": "node design/especime-v3/medicoes/rp4n-2026-10-06/inventario-j.mjs",
   "versao": {
-    "commit": "996a388918d1d4183d2d00700bdd62157f0b0fa8",
+    "commit": "621e8accd61221e0c706a351283b181c33770d4e",
     "ref": "higiene-2026-10-13",
     "env": "local",
     "origem": "git",

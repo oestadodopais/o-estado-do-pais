@@ -34,8 +34,8 @@ CORRIDA = os.environ.get("OEDP_E1B_CORRIDA", "portoes/e1b-intermedias/3")
 # As referências fixas da passagem, lidas do git e escritas aqui pelo que são.
 BASE_DO_SITIO = "main"
 CABECA_ANTES_DO_REBASE = "3741a05b"     # o primeiro commit desta passagem, antes do rebase
-BASE_ANTIGA = "07549ee1"                # a base do ramo antes do rebase
-ANTES_DOS_CONTADORES = "90b1ba0a"       # a cabeça do rebase, antes das datas e dos contadores
+BASE_ANTIGA = "7a82c147"                # a base do ramo antes do rebase
+ANTES_DOS_CONTADORES = "c3c0c813"       # a cabeça do rebase, antes das datas e dos contadores
 COMMIT_DOS_DOCUMENTOS_ANTIGO = "8e2fe1d604f84a4c386f1e34f90b676b76bb26a9"
 BASE_DO_MOTOR = "6ed528b"               # a cabeça do motor que o construtor anterior deixou
 MASTER_DO_MOTOR = "master"
@@ -157,7 +157,7 @@ def medir_datas():
                                    "com_o_commit_antigo": sum(1 for e in dados["edicoes"] if e["commit"] == COMMIT_DOS_DOCUMENTOS_ANTIGO),
                                    "datas": sorted({x["data"] for x in agora}), "edicoes": agora},
            "src/data/datas-de-publicacao.json contra git log --diff-filter=A --format='%ad %H' --date=short -- <ficheiro>",
-           {"descricao": "o mesmo ficheiro antes da passagem (90b1ba0a) aponta para o commit de antes do rebase, e o detetor dá-o por não bater",
+           {"descricao": "o mesmo ficheiro antes da passagem (c3c0c813) aponta para o commit de antes do rebase, e o detetor dá-o por não bater",
             "mordeu": sum(x["bate"] for x in velho) == 0 and len(velho) == 7})
 
 
@@ -180,7 +180,7 @@ def medir_contadores():
     mordeu = all(str(d["counts"][chk]) != antes[i] for i, chk in cheques.items())
     medida("contadores_do_arquivo", valor,
            "as duas linhas em ledger/claims, COUNTS de src/data/studies.mjs, ledger/historias-valores.json e LUGAR_DECLARADO_DAS_LINHAS, lidos pelos próprios módulos",
-           {"descricao": "as mesmas linhas antes da passagem (90b1ba0a) diziam 13 e 18 contra a conta de hoje do arquivo, e o detetor vê a diferença",
+           {"descricao": "as mesmas linhas antes da passagem (c3c0c813) diziam 13 e 18 contra a conta de hoje do arquivo, e o detetor vê a diferença",
             "mordeu": mordeu, "antes": antes})
 
 

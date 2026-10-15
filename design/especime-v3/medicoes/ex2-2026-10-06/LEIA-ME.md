@@ -2,7 +2,7 @@
 
 A leitura da semana abre com os números que mudaram de valor. O índice usa a mesma gramática: nome da medida, período, unidade antes dos dois pontos, os dois valores, a revisão da fonte e a data. A definição aparece uma vez no fim de cada grupo de linhas consecutivas da mesma medida, seguida pelos sinais que os seus recibos tenham. Nenhuma definição nem sinal foi escrito nesta passagem: vêm de `oQueEDaLinha`, e a W4 compara-os com os recibos construídos da mesma edição. A ausência por confirmar continua explícita.
 
-A cabeça do código é `8c3a08b9dcfb48595be70d6d47385b0427cc3b62`. A base da primeira construção é `d1becbf8f167643ca8d53a4479f8f6bbee0f7183`. Construtor: Codex, identificação pedida no mandato e nos trailers. Não foi observada uma linha «tokens used» nesta sessão; o custo fica por apurar no registo do lançador. A leitura a frio recebida está em [LEITURA-EX2](../../critica/LEITURA-EX2-2026-10-06.md). Falta a leitura curta do diff e a conferência da direção antes de aterrar. Não houve publicação.
+A cabeça do código é `140f9458d0556248987d002652336d9d1a56891f`. A base da primeira construção é `83e7a1158ba065153db7c419b01d4222d26bdc56`. Construtor: Codex, identificação pedida no mandato e nos trailers. Não foi observada uma linha «tokens used» nesta sessão; o custo fica por apurar no registo do lançador. A leitura a frio recebida está em [LEITURA-EX2](../../critica/LEITURA-EX2-2026-10-06.md). Falta a leitura curta do diff e a conferência da direção antes de aterrar. Não houve publicação.
 
 ## Medidas e decisão da unidade
 
@@ -34,7 +34,7 @@ As decisões e a ligação entre cada achado e as plantas estão em [passagem-b.
 
 A medição antes da mudança, `node design/especime-v3/medicoes/ex2-2026-10-06/medir-titulos-b.mjs`, está em [titulos-antes-b.json](titulos-antes-b.json). O componente lia `titleUnverified` nas edições inglesas dos estudos da água e acrescentava o marcador. As edições portuguesas não tinham essa declaração. A língua do texto já era reconhecida como portuguesa. A falta de tradução não é incerteza sobre o nome publicado.
 
-A cadeia de nenhuma mudança na primeira página já existia desde o EX1: `c6558836f045b3fbb723ff694639f738ca886adc EX1: as explicações e a leitura da semana (as três rotas, a primeira explicação com o texto do §5 do brief, a leitura gerada do registo das correções, o bloco «Para perceber» da primeira página e a secção do índice)`. O texto efetivamente mostrado nas duas edições consta de [passagem-b.json](passagem-b.json).
+A cadeia de nenhuma mudança na primeira página já existia desde o EX1: `753e7ff0b750855630e0d3633f21b8d2687899be EX1: as explicações e a leitura da semana (as três rotas, a primeira explicação com o texto do §5 do brief, a leitura gerada do registo das correções, o bloco «Para perceber» da primeira página e a secção do índice)`. O texto efetivamente mostrado nas duas edições consta de [passagem-b.json](passagem-b.json).
 
 As células do selo da definição e dos pedaços marcados são vazias nesta construção: 0 definições com algarismos e 0 pedaços marcados, entre 22 definições. As plantas sintéticas dos auxiliares não provam `auditaSelo` numa definição real com valor. Este limite fica declarado, sem aumentar a prova que existe.
 
@@ -189,7 +189,7 @@ Os ensaios iniciais estão em [ensaios-b/](ensaios-b/). A prova dos títulos enc
 
 ## Portões na cabeça do código
 
-Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/ex2-2026-10-06/portoes-b`, com o caminho absoluto da worktree na execução. A tranca foi respeitada. As variáveis `OEDP_SEMANA_JSON` e `OEDP_FRASES_JSON` guardaram as saídas estruturadas da corrida. Cabeça de início: `8c3a08b9dcfb48595be70d6d47385b0427cc3b62`; cabeça de fim: `8c3a08b9dcfb48595be70d6d47385b0427cc3b62`.
+Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/ex2-2026-10-06/portoes-b`, com o caminho absoluto da worktree na execução. A tranca foi respeitada. As variáveis `OEDP_SEMANA_JSON` e `OEDP_FRASES_JSON` guardaram as saídas estruturadas da corrida. Cabeça de início: `140f9458d0556248987d002652336d9d1a56891f`; cabeça de fim: `140f9458d0556248987d002652336d9d1a56891f`.
 
 | Portão | Código lido de ficheiro | Ficheiro |
 |---|---:|---|
@@ -207,12 +207,12 @@ A entrega foi medida por `node design/especime-v3/medicoes/ex2-2026-10-06/medir-
 
 ## Commits desta passagem anteriores às provas finais
 
-- `e4d604147894941036937041c55fc6edcae9cd04 EX2-b: unificar as revisões e conferir as definições por grupo`
-- `7ec04a82836dd7693a00d18114c22fc12c7b3fd7 EX2-b: conservar os títulos publicados sem marca de tradução`
-- `e762dd43a25c3ad9b9e45c8b7218415ce0e50550 EX2-b: gerar o relatório inteiro e retirar o manifesto do construtor`
-- `421d0513befe6dcc517a46532bf8ab5adf83bf3b EX2-b: conservar e conferir as provas das plantas e das capturas`
+- `57df5897035084d55858184c3e1ddce144b62b74 EX2-b: unificar as revisões e conferir as definições por grupo`
+- `8bf196d3ea2f53d2b629e16fb729eccbd7bbc914 EX2-b: conservar os títulos publicados sem marca de tradução`
+- `20e47db33869beeb17865d9ce2c3e5092e80a52a EX2-b: gerar o relatório inteiro e retirar o manifesto do construtor`
+- `134b015428412afc38d23984ccf0c1ea90750b7a EX2-b: conservar e conferir as provas das plantas e das capturas`
 - `92e31db8a378499fd98f805c99914bb9840895dd EX2-b: conferir os valores da frase sem exigir o risco antigo`
-- `8c3a08b9dcfb48595be70d6d47385b0427cc3b62 EX2-b: retirar a importação sem uso da página da semana`
+- `140f9458d0556248987d002652336d9d1a56891f EX2-b: retirar a importação sem uso da página da semana`
 
 ## Páginas construídas, lidas do HTML
 
@@ -348,7 +348,7 @@ A entrega foi medida por `node design/especime-v3/medicoes/ex2-2026-10-06/medir-
 
 A explicação deixa de dizer que os juros faltam aos agregados: diz que estes números não os isolam. A referência à execução «acima» passa a indicar a posição na página. O saldo da execução passa a dizer se houve défice ou excedente, pelo sinal da linha, e a comparar o saldo acumulado com o saldo previsto para o ano inteiro, pelo token `compara`.
 
-A base foi `d7564f21`, no ramo `ex1d-2026-10-11`. A cabeça do código é `7355de78920d6efaf5484e73667dea067e0a9f9b`. Construção pelo Codex, com a identificação `gpt-6-astra` e o raciocínio `high` pedidos no lançamento, que prevalece sobre o `xhigh` do mandato. O último commit contém apenas este relatório, as capturas e os registos de verificação. Não houve publicação nem mudança de ramo. A leitura a frio pelo Claude Opus 5.5 e a conferência do lugar de direção continuam por fazer antes de aterrar.
+A base foi `acc8cb3a`, no ramo `ex1d-2026-10-11`. A cabeça do código é `4a18402fb1f0b5904ceb015b9a3b256e22ab8981`. Construção pelo Codex, com a identificação `gpt-6-astra` e o raciocínio `high` pedidos no lançamento, que prevalece sobre o `xhigh` do mandato. O último commit contém apenas este relatório, as capturas e os registos de verificação. Não houve publicação nem mudança de ramo. A leitura a frio pelo Claude Opus 5.5 e a conferência do lugar de direção continuam por fazer antes de aterrar.
 
 ### As linhas e o perímetro
 
@@ -417,9 +417,9 @@ O resultado detalhado do portão de alvos fica em `portoes-d/alvos.json.gz`, com
 
 ### Commits e custo
 
-- `e33ea4fadc4699653377d3911622110d6ebf405c EX1-d: esclarecer os juros e o saldo da execução`
-- `77dab7c2a659c7227c647fe728d7062021bae231 EX1-d: preparar a medição e as capturas da entrega`
-- `7355de78920d6efaf5484e73667dea067e0a9f9b EX1-d: conferir os recibos e o recorte da página inteira`
+- `97a56b7a927c635d70d040aa10a2ba671a672574 EX1-d: esclarecer os juros e o saldo da execução`
+- `01b7fe84767ae4db0ad4fe6cf41104c96874257a EX1-d: preparar a medição e as capturas da entrega`
+- `4a18402fb1f0b5904ceb015b9a3b256e22ab8981 EX1-d: conferir os recibos e o recorte da página inteira`
 
 Custo-alvo: trezentos mil símbolos. Não foi observada uma linha «tokens used» desta construção; custo efetivo e confronto com o alvo: [verify], a apurar no registo do lançador. Não se inventa uma contagem nem se afirma que o alvo foi cumprido.
 
@@ -427,7 +427,7 @@ Custo-alvo: trezentos mil símbolos. Não foi observada uma linha «tokens used�
 
 A comparação com sinal da EX1-d podia levar o leitor a entender que o défice era maior. Agora compara a dimensão dos défices ou excedentes. As afirmações sem apoio sobre a classificação dos juros e a promessa de atualização saíram. A contabilidade dos ramos voltou a abranger todo o texto de main, com uma mensagem própria e plantas que a exercem.
 
-Base: `f3060fa4`, ramo `ex1d-2026-10-11`. Cabeça do código: `95f2a857e418f60af2125b65aba23c735c0df1b7`. O commit final contém apenas este relatório, as capturas e os registos das conferências. As capturas são da construção desta cabeça do código; o commit de entrega não muda o código nem o HTML. Sem mudança de ramo, sem publicação e sem push. A identificação de autoria nos trailers é a pedida no mandato.
+Base: `e8deccc1`, ramo `ex1d-2026-10-11`. Cabeça do código: `5256a36b7a344b594fac891399e1679a3f2a3041`. O commit final contém apenas este relatório, as capturas e os registos das conferências. As capturas são da construção desta cabeça do código; o commit de entrega não muda o código nem o HTML. Sem mudança de ramo, sem publicação e sem push. A identificação de autoria nos trailers é a pedida no mandato.
 
 ### Decisões por achado e questões
 
@@ -548,14 +548,14 @@ O registo grande de alvos fica em [alvos.json.gz](portoes-e/alvos.json.gz). A de
 
 ### Commits, trabalho reservado e custo
 
-- `9862924a EX1-e: registar a leitura, as plantas e o mandato`
-- `d54661f2 EX1-e: comparar a dimensão dos défices e excedentes`
-- `7dff1862 EX1-e: retirar as afirmações sem apoio sobre os juros`
-- `f71dd65b EX1-e: contar os ramos em toda a página`
-- `72b45a0e EX1-e: provar o valor de outro perímetro com o selo intacto`
-- `c5811c8b EX1-e: distinguir o saldo acumulado e as duas contas`
-- `df839ae6 EX1-e: preparar as provas e os artefactos da entrega`
-- `95f2a857 EX1-e: recusar ramos disfarçados com a classe dos selos`
+- `b52575ce EX1-e: registar a leitura, as plantas e o mandato`
+- `804a8e98 EX1-e: comparar a dimensão dos défices e excedentes`
+- `6bc09e3b EX1-e: retirar as afirmações sem apoio sobre os juros`
+- `f6f3a11c EX1-e: contar os ramos em toda a página`
+- `4fa31f08 EX1-e: provar o valor de outro perímetro com o selo intacto`
+- `9e044ee0 EX1-e: distinguir o saldo acumulado e as duas contas`
+- `9b6d66be EX1-e: preparar as provas e os artefactos da entrega`
+- `5256a36b EX1-e: recusar ramos disfarçados com a classe dos selos`
 
 Uma corrida inicial dos portões foi interrompida antes dos três códigos, quando uma planta adicional encontrou texto indevido disfarçado com a classe de um selo. A lacuna foi corrigida; essa tentativa não serve de prova. Uma segunda corrida foi interrompida para juntar os dois trailers num único bloco final das mensagens: o Git só reconhecia o último enquanto estavam separados por uma linha vazia. Foram reescritas apenas as mensagens dos oito commits locais, verificando que cada árvore de ficheiros ficou idêntica e que os dois trailers eram reconhecidos. A corrida final de portoes-e começou de novo na cabeça corrigida.
 
@@ -569,7 +569,7 @@ Custo-alvo: cento e cinquenta mil símbolos. Não foi observada uma linha «toke
 
 A X10 exigia todos os ramos mas não prendia as palavras ao caso que os escolhe. Agora cada token de valor declara, na própria edição, palavras obrigatórias e proibidas para cada ramo. A X10 confere todos, mesmo os não escolhidos, com a mensagem própria «X10 · palavras do ramo». A X6 confere também as palavras do trecho rendido de cada token que consegue isolar pelo prefixo e pelo sufixo do parágrafo. Alterações nesses limites continuam cobertas pela igualdade X6; não se apresenta esta conferência de palavras como um analisador semântico geral.
 
-Base: `6f5264b9`, ramo `ex1d-2026-10-11`. Cabeça do código: `eee10a344e181e520862be5213404816264c7458`. As capturas são da construção desta cabeça, a última que muda código; o commit final só acrescenta este relatório, capturas e registos das conferências. Nenhuma mudança de ramo ou publicação. Os trailers seguem o mandato.
+Base: `97cec12d`, ramo `ex1d-2026-10-11`. Cabeça do código: `46d75e775252a4f1c213ee295db5368d1acd1f32`. As capturas são da construção desta cabeça, a última que muda código; o commit final só acrescenta este relatório, capturas e registos das conferências. Nenhuma mudança de ramo ou publicação. Os trailers seguem o mandato.
 
 ### Decisões por achado e questões reservadas
 
@@ -716,12 +716,12 @@ O [manifesto](capturas-ex1f.json) guarda a cabeça, as frases, a ordem dos pará
 
 ### Commits e custo
 
-- `abdb2f4a EX1-f: registar a leitura, as plantas e o mandato`
-- `6ac3e465 EX1-f: prender as palavras ao ramo que os valores escolhem`
-- `f8770ba9 EX1-f: dizer que ainda faltam setembro a dezembro`
-- `3db5ecd1 EX1-f: apontar para as contas públicas do parágrafo seguinte`
-- `9962c656 EX1-f: render o ramo real na planta do sinal da previsão`
-- `eee10a34 EX1-f: preparar os acertos e as provas da entrega`
+- `012f7231 EX1-f: registar a leitura, as plantas e o mandato`
+- `5d74e100 EX1-f: prender as palavras ao ramo que os valores escolhem`
+- `85c4d331 EX1-f: dizer que ainda faltam setembro a dezembro`
+- `bf2659ff EX1-f: apontar para as contas públicas do parágrafo seguinte`
+- `15520b75 EX1-f: render o ramo real na planta do sinal da previsão`
+- `46d75e77 EX1-f: preparar os acertos e as provas da entrega`
 
 O último commit acrescenta apenas os artefactos da entrega. Permanecem reservadas as questões EX1-11 e EX1-12 acima, além das linhas dos juros e do arredondamento de EX1-5 para JD1. A leitura a frio e a integração pertencem ao lugar de direção. Nenhum portão foi dispensado.
 

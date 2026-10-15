@@ -2,13 +2,13 @@
 
 > **A direção do diretor de 07.10.2026 está registada na §1.181, na emenda de 07.10.2026 da política da autonomia, na secção 8 da carta dos conteúdos e no `CLAUDE.md`: o projeto é uma inteligência artificial que vigia o país e age sobre o que encontra com a camada que o assunto merece, com conclusões, recomendações e a sua opinião profissional; o patamar 3 abriu; a regra 5 tem a forma da afirmação; o recibo é uma funcionalidade de segundo plano e a verificação é o fundo. Depois das três passagens de correção, a primeira coisa nova é o primeiro varrimento de vigilância e os primeiros itens do painel. As entradas rascunhadas do RP4-n e do JD1 passaram a §1.182 e §1.183.**
 
-> **Atualização das 19:50 UTC de 06.10 (esta versão, de 07.10 de manhã, já tem a direção do diretor e os seus acrescentos em cima e na §1.181).** O diretor mandou gastar o último ponto do Codex na leitura do diff inteiro da H4-e (18:51 UTC, 136 613 símbolos, cinco plantas mordidas, nada errado nos papéis nem nas regras 8 e 9); os três blocos (M-A, EX2, H4) **aterraram: `main` em `3948eb89`, no ar às 19:29 UTC, `verify:deploy` verde, a corrida de `main` verde às 19:48**. O passo 1 abaixo está feito, e o passo 2 também (os ramos fundidos e as worktrees apagados; o estado no fim di-lo). A primeira passagem de segunda-feira ganha um ponto pequeno, pedido pelo editor na leitura do Codex: a secção «O que se publica sem uma pessoa ler» do Método ainda diz «portões verdes» e «portão vermelho» sem os explicar, e passa a dizer as verificações automáticas a passar ou a falhar, com a sua leitura pela outra família antes de aterrar.
+> **Atualização das 19:50 UTC de 06.10 (esta versão, de 07.10 de manhã, já tem a direção do diretor e os seus acrescentos em cima e na §1.181).** O diretor mandou gastar o último ponto do Codex na leitura do diff inteiro da H4-e (18:51 UTC, 136 613 símbolos, cinco plantas mordidas, nada errado nos papéis nem nas regras 8 e 9); os três blocos (M-A, EX2, H4) **aterraram: `main` em `56628d97`, no ar às 19:29 UTC, `verify:deploy` verde, a corrida de `main` verde às 19:48**. O passo 1 abaixo está feito, e o passo 2 também (os ramos fundidos e as worktrees apagados; o estado no fim di-lo). A primeira passagem de segunda-feira ganha um ponto pequeno, pedido pelo editor na leitura do Codex: a secção «O que se publica sem uma pessoa ler» do Método ainda diz «portões verdes» e «portão vermelho» sem os explicar, e passa a dizer as verificações automáticas a passar ou a falhar, com a sua leitura pela outra família antes de aterrar.
 
 *Escrito pelo lugar de direção (Claude Fable 5.1) no fecho da sessão de 06.10.2026. O estado lê-se pelo guião e vai no bloco do fim; o que está aqui em cima é o que a sessão seguinte faz, por ordem, e porquê.*
 
 ## O que aterrou e o que falta
 
-Aterrou tudo o que estava pronto: os três blocos (M-A, EX2, H4) a 06.10 às 19:29 UTC (`main` `3948eb89`), o prompt da noite (`7cb42061`) e a direção do diretor de 07.10.2026 com os seus acrescentos (§1.181, `7cc415ed` e o commit seguinte). Falta aterrar o que precisa de uma passagem de correção pelo Codex, que só repõe a 12.10.2026 às 07:38 UTC: o recibo incorporável (ER1), o RP4-n e o JD1, cada um com a leitura a frio arquivada e o mandato escrito no seu ramo.
+Aterrou tudo o que estava pronto: os três blocos (M-A, EX2, H4) a 06.10 às 19:29 UTC (`main` `56628d97`), o prompt da noite (`4cfc6eef`) e a direção do diretor de 07.10.2026 com os seus acrescentos (§1.181, `c0946cc2` e o commit seguinte). Falta aterrar o que precisa de uma passagem de correção pelo Codex, que só repõe a 12.10.2026 às 07:38 UTC: o recibo incorporável (ER1), o RP4-n e o JD1, cada um com a leitura a frio arquivada e o mandato escrito no seu ramo.
 
 ## O que a sessão seguinte faz, por esta ordem
 
@@ -57,29 +57,29 @@ As leituras do Opus de hoje: EX2 350 369 e 306 644; M-A 325 236 e 286 282; H4 35
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
 ### O sítio (`<sitio>`)
-- `main`: 3948eb89 · 2026-10-06T20:00:30+01:00 · A §1.180 fechada: a leitura do Codex do diff inteiro da H4-e (18:51 UTC, o último ponto da semana por decisão do diretor), o pedido  (`git log -1 main`)
-- `origin/main`: 3948eb89 · 2026-10-06T20:00:30+01:00 · A §1.180 fechada: a leitura do Codex do diff inteiro da H4-e (18:51 UTC, o último ponto da semana por decisão do diretor), o pedido  (`git log -1 origin/main`)
+- `main`: 56628d97 · 2026-10-06T20:00:30+01:00 · A §1.180 fechada: a leitura do Codex do diff inteiro da H4-e (18:51 UTC, o último ponto da semana por decisão do diretor), o pedido  (`git log -1 main`)
+- `origin/main`: 56628d97 · 2026-10-06T20:00:30+01:00 · A §1.180 fechada: a leitura do Codex do diff inteiro da H4-e (18:51 UTC, o último ponto da semana por decisão do diretor), o pedido  (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
-- ramos locais: `c2-2026-10-05 461de524`, `er1-2026-10-06 56a582dd`, `jd1-2026-10-06 d1755ff4`, `main 3948eb89`, `registos-2026-10-06-noite 3948eb89`, `rp4n-2026-10-06 be23d525`  (`git branch`)
+- ramos locais: `c2-2026-10-05 461de524`, `er1-2026-10-06 68251006`, `jd1-2026-10-06 fc3773bb`, `main 56628d97`, `registos-2026-10-06-noite 56628d97`, `rp4n-2026-10-06 be23d525`  (`git branch`)
 - ramos no remoto: `er1-2026-10-06`, `main`  (`git ls-remote --heads origin`)
-- worktree: `<sitio> 3948eb89 [main]`
-- worktree: `<sitio>/<worktrees>/er1-2026-10-06 56a582dd [er1-2026-10-06]`
-- worktree: `<sitio>/<worktrees>/jd1-2026-10-06 d1755ff4 [jd1-2026-10-06]`
-- worktree: `<sitio>/<worktrees>/registos-noite 3948eb89 [registos-2026-10-06-noite]`
+- worktree: `<sitio> 56628d97 [main]`
+- worktree: `<sitio>/<worktrees>/er1-2026-10-06 68251006 [er1-2026-10-06]`
+- worktree: `<sitio>/<worktrees>/jd1-2026-10-06 fc3773bb [jd1-2026-10-06]`
+- worktree: `<sitio>/<worktrees>/registos-noite 56628d97 [registos-2026-10-06-noite]`
 - worktree: `<sitio>/<worktrees>/rp4n-2026-10-06 be23d525 [rp4n-2026-10-06]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
-- 37517593624 · `3948eb89` · main · portão · **completed / success** · criada 2026-10-06T19:15:28Z · atualizada 2026-10-06T19:48:12Z
-- 37515715838 · `3948eb89` · aterragem-2026-10-06-tarde · portão · **completed / success** · criada 2026-10-06T19:00:45Z · atualizada 2026-10-06T19:14:57Z
-- 37515294302 · `0b2af142` · aterragem-2026-10-06-tarde · portão · **completed / cancelled** · criada 2026-10-06T18:57:29Z · atualizada 2026-10-06T19:01:35Z
-- 37511112636 · `f19b242a` · aterragem-2026-10-06-tarde · portão · **completed / success** · criada 2026-10-06T18:24:50Z · atualizada 2026-10-06T18:41:44Z
-- 37508344147 · `0b738cc8` · aterragem-2026-10-06-tarde · portão · **completed / success** · criada 2026-10-06T18:03:28Z · atualizada 2026-10-06T18:23:14Z
-- 37506930359 · `48834fde` · aterragem-2026-10-06-tarde · portão · **completed / cancelled** · criada 2026-10-06T17:52:39Z · atualizada 2026-10-06T18:03:47Z
+- 37517593624 · `56628d97` · main · portão · **completed / success** · criada 2026-10-06T19:15:28Z · atualizada 2026-10-06T19:48:12Z
+- 37515715838 · `56628d97` · aterragem-2026-10-06-tarde · portão · **completed / success** · criada 2026-10-06T19:00:45Z · atualizada 2026-10-06T19:14:57Z
+- 37515294302 · `ece59187` · aterragem-2026-10-06-tarde · portão · **completed / cancelled** · criada 2026-10-06T18:57:29Z · atualizada 2026-10-06T19:01:35Z
+- 37511112636 · `836ff5c3` · aterragem-2026-10-06-tarde · portão · **completed / success** · criada 2026-10-06T18:24:50Z · atualizada 2026-10-06T18:41:44Z
+- 37508344147 · `a7724a03` · aterragem-2026-10-06-tarde · portão · **completed / success** · criada 2026-10-06T18:03:28Z · atualizada 2026-10-06T18:23:14Z
+- 37506930359 · `06a31102` · aterragem-2026-10-06-tarde · portão · **completed / cancelled** · criada 2026-10-06T17:52:39Z · atualizada 2026-10-06T18:03:47Z
 
 ### O que está no ar (`/version.json` do sítio publicado)
-- commit no ar: `3948eb89` · construído em 2026-10-06T19:18:24.538Z · ref `main` · production
-- igual a `origin/main` (`3948eb89`): **sim**
+- commit no ar: `56628d97` · construído em 2026-10-06T19:18:24.538Z · ref `main` · production
+- igual a `origin/main` (`56628d97`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
 ### O motor (`<motor>`)

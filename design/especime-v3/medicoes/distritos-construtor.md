@@ -1,10 +1,10 @@
 # F1.1e · os distritos e as ilhas voltam ao mapa, e cada um cresce para os seus concelhos
 
 *Construtor Claude Opus 5, 08.09.2026, ramo `distritos-2026-09-08` (tirado de
-`fe6478aa`, a cabeça de `main`). Brief:
+`816c97b1`, a cabeça de `main`). Brief:
 `design/observatorio/BRIEF-F1.1e-os-distritos-voltam-ao-mapa.md`, com a **Emenda
 de 08.09 (segunda passagem)** na §5 dele. **Duas passagens**: a primeira fechou
-em `635e6d7f`, e a segunda corre depois da leitura a frio do Codex e da medição
+em `4bce4486`, e a segunda corre depois da leitura a frio do Codex e da medição
 às cegas do Sonnet sobre essa cabeça. A tabela das medidas e todos os números
 deste relatório são os da SEGUNDA passagem; o que a primeira dizia e a segunda
 corrigiu está na secção «Segunda passagem (08.09)», no fim. Sem travessões na
@@ -24,7 +24,7 @@ passagem)**, e o depois de todas é o da segunda passagem.*
 | U2 | o nome da área apontada num lugar fixo, pelos três gestos e nas duas edições | 9 de 9 regiões e 30 de 30 concelhos | **29 de 29** unidades e **30 de 30** concelhos, pelo rato, pelo teclado e pelo dedo, nas duas edições, e **16 de 16** concelhos de Lisboa numa página de distrito | `node tests/inicio/mapa-unidades.mjs` (U2a a U2d) |
 | U3 | o primeiro toque nunca navega; o segundo, ou a porta, abre | o toque numa região crescia-a | o toque numa **unidade** cresce-a, nos dois motores (Évora, 14 concelhos, `/#unidade=evora`); o primeiro toque num concelho diz o nome e o segundo abre; a página da unidade abre-se **pela porta** do lugar do nome (emenda de 08.09); um ficheiro que responde 404 devolve a ligação do servidor; e **duas respostas atrasadas com a ordem trocada** deixam o desenho e o histórico no último gesto, e o fragmento limpo a meio descarta o pedido | `node tests/inicio/mapa-unidades.mjs` (U3a a U3g) |
 | U4 | sem guião, o mapa continua a ser navegação | 9 ligações para as páginas de região; a gaveta fechada com 9 regiões e 29 unidades | **29 ligações** para as 29 páginas de unidade, **29 de 29 respondem 200**, a gaveta **fechada** com as **29** unidades e mais nada, **0 regiões** desenhadas ou listadas, o segundo nível com **0 nós**, `#unidade=` ignorado sem erro | `node tests/inicio/mapa-unidades.mjs` (U4) |
-| U5 | a altura de `/` a 390, com guião, em repouso | **3 263 px** (a medida da P5 do F1.1d, cabeça `c9823939`) | **3 263 px**, na mesma largura e no mesmo motor: **igual**, que é o que o brief pede («igual ou menor») | `node tests/inicio/mapa-unidades.mjs` (U5) |
+| U5 | a altura de `/` a 390, com guião, em repouso | **3 263 px** (a medida da P5 do F1.1d, cabeça `d55c39c5`) | **3 263 px**, na mesma largura e no mesmo motor: **igual**, que é o que o brief pede («igual ou menor») | `node tests/inicio/mapa-unidades.mjs` (U5) |
 | U6 | o portão da geometria | **10 regras**, 24 estragos (a R8, a R9 e a R10 provavam a geometria calculada das nove regiões) | **9 regras**, **21 estragos e 21 apanhados**: as R8, R9 e R10 saem com o cálculo; entra uma **R8 nova** que compara os 29 ficheiros servidos com os artefactos, byte a byte, dos três lados; e entra a **R9** da emenda de 08.09, que afirma as **680 páginas** que o mapa promete (58 de unidade e 616 de concelho, nas duas edições) em vez de as imprimir | `node scripts/check-mapa.mjs` e `node scripts/check-mapa.mjs --vermelhos` |
 | U7 | a página do concelho com o nível da unidade | não existia: o cartão da página do concelho era o mapa de **308 pontos** de 7,35 px | o componente ganha o nível como parâmetro, e a régua mede-o sobre uma **página de prova** que ela própria constrói: **14 áreas** para os 14 concelhos de Évora, **0 pontos**, o concelho da página com o **anel** (traço 3 contra 1), a porta a abrir o vizinho apontado. A página real do concelho fará a troca de uma linha, e mede-se na aterragem do F1.10, por decisão do lugar de direção de 08.09 sobre de quem é aquele ficheiro nesse dia | `node tests/inicio/mapa-unidades.mjs` (U7) |
 | U8 | as réguas e os três portões | a régua do bloco com 27 células; `lista` 94 de 94; `mapa-distritos` 20 de 20 (M1 e M2 retiradas) | a régua do bloco com **34 células**, todas verdes; `lista` **94 de 94**; `mapa-distritos` **43 de 43** (M1 e M2 de volta); `mapa-navegacao` **9 de 9** (a prova da lente da N2 reescrita, com a razão e o conhecido-positivo); `build`, `verify` e `typecheck` a **0** | `node design/especime-v3/medicoes/resumo-das-reguas.mjs`, e `npm run build`, `npm run verify`, `npm run typecheck` |
@@ -299,7 +299,7 @@ primeira página sem erro nenhum.
 `node tests/inicio/mapa-unidades.mjs` (U5). O **antes** é a página como o F1.1d a
 deixou, e o número não se mede outra vez: lê-se do artefacto que a régua desse
 bloco gravou, `design/especime-v3/medicoes/mapa-medidas.json`, chave
-`medidas.altura.depois`, cabeça `c9823939`, medido a 390 × 664 em Chromium:
+`medidas.altura.depois`, cabeça `d55c39c5`, medido a 390 × 664 em Chromium:
 **3 263 px**. O **depois** é esta árvore: **3 263 px**, na mesma largura e no
 mesmo motor. O brief pede «igual ou menor», e o resultado é **igual ao píxel**: a
 gaveta dos nomes tem menos nove nomes e continua fechada, e o desenho tem a
@@ -791,7 +791,7 @@ dois motores; o fragmento a não poder escolher um caminho arbitrário; a cópia
 byte a byte do copiador; e a aritmética dos ficheiros servidos (394 614 B, 308
 slugs, o máximo de Viseu com 24 245 B e o mínimo de São Jorge com 3 691 B).
 
-**A medição às cegas do Sonnet** sobre a cabeça da primeira passagem (`635e6d7f`)
+**A medição às cegas do Sonnet** sobre a cabeça da primeira passagem (`4bce4486`)
 está em `critica/2026-09-08-sonnet-medicao-f11e-distritos.md`, que o lugar de
 direção guarda na árvore principal e não neste ramo. Bate certo com este
 relatório na U2 (29 de 29 e 14 de 14 nos três gestos, nas duas edições), na U3,
@@ -814,7 +814,7 @@ artefacto, que é a mesma lição que a célula M6 tem escrita desde 26.08).
 ## Segunda passagem (08.09)
 
 *A leitura a frio do Codex (`gpt-5.6-sol`, xhigh) sobre a cabeça da primeira
-passagem, `635e6d7f`, deu 25 pontos: três Blocking, nove Major, seis Minor e
+passagem, `4bce4486`, deu 25 pontos: três Blocking, nove Major, seis Minor e
 sete confirmações. **Cinco deles eram estragos plantados pelo lugar de direção no
 pacote e não achados**, e o construtor conferiu no ramo que cada um tem o
 contrário do que o pacote mostrava: o Blocking 2 (o `aria-label` trocado entre os

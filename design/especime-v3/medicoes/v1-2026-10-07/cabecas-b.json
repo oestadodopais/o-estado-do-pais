@@ -1,8 +1,8 @@
 {
   "motor": "e3608ab8886486dad7bef51261907b700cf6c810",
   "motor_codigo": "9dd3a96142b2692c17c97de3a73fb1cd3c620a22",
-  "sitio_antes_fecho": "497d1342bbb0bc40a94a1ff7538ab2db437f40d7",
-  "sitio_codigo": "497d1342bbb0bc40a94a1ff7538ab2db437f40d7",
+  "sitio_antes_fecho": "a1a7ad2ea4476fc48ded71cd999a9d6581736bca",
+  "sitio_codigo": "a1a7ad2ea4476fc48ded71cd999a9d6581736bca",
   "commits_motor": [
     "f0ba6a63927ab9f8b7d7c396d6fabcb29cfc6db4 V1-b, achado 6: não apresentar ligações rotativas como revisões",
     "5741b627ad57b999230a213682d1e933ab6bbfc3 V1-b, achado 7: reutilizar corpos por validadores e tamanho antes da transferência",
@@ -18,9 +18,9 @@
     "e3608ab8886486dad7bef51261907b700cf6c810 V1-b: registar a recontagem e as duas corridas finais de 12.10"
   ],
   "commits_sitio": [
-    "0ab81e2068e1a7f1faa715767ea81c09ffbc0476 V1-b: registar a leitura, as plantas e o mandato",
-    "60ce22a220791202367ca4ecee148ae069bcf45b V1-b: tornar as medidas de leitura e de código verificáveis",
-    "ae6d85d4296869064ff7ad0d6eed0d4b9c2d8ecc V1-b: conferir também fragmentos de caminhos locais nas provas",
-    "497d1342bbb0bc40a94a1ff7538ab2db437f40d7 V1-b: derivar as conclusões das fontes observadas no fecho"
+    "bbe6c71f1a54745d057ad5d19374bd2b749639d0 V1-b: registar a leitura, as plantas e o mandato",
+    "ea760457aa564cc4065dbe117ea15c50cd8de346 V1-b: tornar as medidas de leitura e de código verificáveis",
+    "6530c0286512d1caa0af605ee9ea57e3ce317aec V1-b: conferir também fragmentos de caminhos locais nas provas",
+    "a1a7ad2ea4476fc48ded71cd999a9d6581736bca V1-b: derivar as conclusões das fontes observadas no fecho"
   ]
 }

@@ -22,7 +22,7 @@ const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '..', '..', '..', '..');
 const DIST = path.join(RAIZ, 'dist');
 const PASTA = 'design/especime-v3/medicoes/pp1-2026-09-28';
-const PARTIDA = process.argv[2] ?? '1cbdb8c4';
+const PARTIDA = process.argv[2] ?? '3b85f13d';
 const git = (...a) => execFileSync('git', a, { cwd: RAIZ, encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 }).trim();
 const ler = (/** @type {string} */ f) => fs.readFileSync(path.join(RAIZ, f), 'utf8');
 const json = (/** @type {string} */ f) => JSON.parse(ler(f));
@@ -124,13 +124,13 @@ medida('capturas_depois', capDepois.resultados.length, `${PASTA}/capturas-depois
 /* PP1b (a leitura a frio, achado 10): as capturas e as páginas congeladas são da construção da cabeça que
    os portões medem. As duas cabeças leem-se dos ficheiros, e o conhecido-positivo é a de antes, que não é. */
 const cabecaDosPortoes = ler(`${PASTA}/portoes/pp1b/build.cabeca`).trim();
-/* O que as capturas refeitas mudaram contra as do PP1 (as do commit 12dc8fbf): as imagens e as páginas congeladas, pelo sha256. */
-const capPP1 = JSON.parse(git('show', `12dc8fbf:${PASTA}/capturas-depois.json`));
+/* O que as capturas refeitas mudaram contra as do PP1 (as do commit 31ec7c37): as imagens e as páginas congeladas, pelo sha256. */
+const capPP1 = JSON.parse(git('show', `31ec7c37:${PASTA}/capturas-depois.json`));
 const shaDe = (/** @type {any} */ c) => new Map(c.resultados.map((/** @type {any} */ r) => [r.ficheiro, r.sha256]));
 const imagensAntes = shaDe(capPP1), imagensAgora = shaDe(capDepois);
-medida('capturas_refeitas_com_outros_bytes', [...imagensAgora].filter(([f, h]) => imagensAntes.get(f) !== h).length, `${PASTA}/capturas-depois.json contra o do commit 12dc8fbf · resultados[].sha256`, 'as duas listas têm as mesmas capturas', imagensAntes.size === imagensAgora.size && [...imagensAgora.keys()].every((f) => imagensAntes.has(f)));
+medida('capturas_refeitas_com_outros_bytes', [...imagensAgora].filter(([f, h]) => imagensAntes.get(f) !== h).length, `${PASTA}/capturas-depois.json contra o do commit 31ec7c37 · resultados[].sha256`, 'as duas listas têm as mesmas capturas', imagensAntes.size === imagensAgora.size && [...imagensAgora.keys()].every((f) => imagensAntes.has(f)));
 const paginasMudadas = Object.entries(capDepois.copias).filter(([n, c]) => /** @type {any} */ (c).rota && capPP1.copias[n]?.sha256 !== /** @type {any} */ (c).sha256).map(([n]) => n);
-medida('paginas_congeladas_com_outros_bytes', paginasMudadas, `${PASTA}/capturas-depois.json contra o do commit 12dc8fbf · copias[].sha256 das páginas`, 'o manifesto antigo tem as mesmas páginas', Object.keys(capDepois.copias).filter((n) => /** @type {any} */ (capDepois.copias[n]).rota).every((n) => n in capPP1.copias));
+medida('paginas_congeladas_com_outros_bytes', paginasMudadas, `${PASTA}/capturas-depois.json contra o do commit 31ec7c37 · copias[].sha256 das páginas`, 'o manifesto antigo tem as mesmas páginas', Object.keys(capDepois.copias).filter((n) => /** @type {any} */ (capDepois.copias[n]).rota).every((n) => n in capPP1.copias));
 medida('capturas_depois_construidas_de', capDepois.dist_construido_de, `${PASTA}/capturas-depois.json · dist_construido_de`, 'as capturas de antes são de outra cabeça', capAntes.dist_construido_de !== capDepois.dist_construido_de);
 medida('portoes_pp1b_cabeca', cabecaDosPortoes, `${PASTA}/portoes/pp1b/build.cabeca`, 'a cabeça dos portões é a das capturas', cabecaDosPortoes === capDepois.dist_construido_de);
 for (const g of ['build', 'verify', 'typecheck']) {

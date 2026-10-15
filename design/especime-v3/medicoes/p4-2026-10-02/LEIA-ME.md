@@ -94,14 +94,14 @@ Todos com `Co-Authored-By: Claude Opus 5.5` e `Claude-Session`; nenhum `push`.
 - **A primeira página a 390 px tem alvos abaixo de 44 px** (a A10): o resumo «Os números deste bloco» mede 40 px de altura e as ligações «Ver os números …» 24,4 px, com pares de áreas de toque sobrepostas (11 alvos abaixo de 44 na edição portuguesa, de 71).
 - **Bandas vazias acima de 48 px dentro do `<main>`** (a A8): 64 px na primeira página a 390 px, 99 px a 1280 px, e 113 px na página do concelho a 1280 px, nas duas edições.
 - **A primeira página transborda a 320 px**: 2 px na edição portuguesa e 15 na inglesa (a matriz, «largura 320» e a I20). O que passa a margem é a frase do salário médio com o seu selo, no corpo, e nada do cabeçalho (`transbordo-320.log`). A largura de 320 px não é uma das cinco.
-- **Os endereços antigos `?ambito=regiao:` já não levam à página da região** (a matriz, a 2i·1). O código que os levava vive em `public/js/inicio.js`, e a primeira página deixou de carregar esse guião no B1 (`1b44de26`, 21.09.2026). Verificado no diff desse commit e na primeira página construída, que só carrega `/js/tema.js`.
+- **Os endereços antigos `?ambito=regiao:` já não levam à página da região** (a matriz, a 2i·1). O código que os levava vive em `public/js/inicio.js`, e a primeira página deixou de carregar esse guião no B1 (`1ca900f9`, 21.09.2026). Verificado no diff desse commit e na primeira página construída, que só carrega `/js/tema.js`.
 - **A porta mais estreita do menu a 390 px** mede 39,6 px de largura na edição portuguesa e 43,7 na inglesa, por 44 de altura; a `check:alvos` passa, porque mede pelo toque com o espaço à volta. Fica dito para quem decidir o alvo do menu.
 
 Que estes achados são de antes do P4 é inferido: as classes e as folhas que os desenham não estão no diff do bloco (`src/styles/primeira-pagina.css` não mudou, e nenhuma linha mudada das folhas toca nelas), e as duas réguas rebentavam antes de chegar a estas células na construção de base, por isso não há medida delas antes do bloco.
 
 ## As decisões em vigor nos ficheiros tocados
 
-`decisoes-em-vigor-depois.txt`, sobre o intervalo `afc4fb20..HEAD`: 70 decisões citadas em 177 ficheiros de texto, 37 binários saltados (as capturas), 0 citações a sair no diff. As que o bloco toca: a §1.52 (a Emenda 12, de volta pelo brief), a §1.117 (o escuro pela preferência do sistema, que o brief inverteu), a §1.136 e a §1.149 com a §1.150 (a primeira página do PP1 e o mapa em «Lugares», que as réguas passaram a ler), a §1.151 (a K2-c, que a regra das casas decimais alarga), a §1.84 e a §1.98 (citadas nas notas das células que saíram). A §1.152 aparece «sem título», porque vive em `main` depois da base deste ramo (`62ed13c6`, que só muda `DECISIONS.md` e o prompt da sessão seguinte, nenhum ficheiro deste bloco).
+`decisoes-em-vigor-depois.txt`, sobre o intervalo `afc4fb20..HEAD`: 70 decisões citadas em 177 ficheiros de texto, 37 binários saltados (as capturas), 0 citações a sair no diff. As que o bloco toca: a §1.52 (a Emenda 12, de volta pelo brief), a §1.117 (o escuro pela preferência do sistema, que o brief inverteu), a §1.136 e a §1.149 com a §1.150 (a primeira página do PP1 e o mapa em «Lugares», que as réguas passaram a ler), a §1.151 (a K2-c, que a regra das casas decimais alarga), a §1.84 e a §1.98 (citadas nas notas das células que saíram). A §1.152 aparece «sem título», porque vive em `main` depois da base deste ramo (`ad62f09e`, que só muda `DECISIONS.md` e o prompt da sessão seguinte, nenhum ficheiro deste bloco).
 
 ## O custo
 
@@ -113,17 +113,17 @@ A corrida final correu pela tranca (`sh scripts/leituras/portoes.sh`) na cabeça
 
 ## Os portões, a segunda corrida (o lugar de direção, 02.10.2026)
 
-A corrida final do construtor, na cabeça `716af503`, deu `build` 0, `verify` 1 e `typecheck` 0 (`portoes/`): o `verify` fechou no portão dos briefs, porque a medição 5 de `design/observatorio/medidas/BRIEF-P4.py` corria o guião das decisões da árvore de trabalho, que o item 6 corrigiu, e lia 0 onde o §0 mediu 1. A correção é do lugar de direção e não do construtor (o commit `f5458f71`, P4-b): a medição passa a correr o guião tal como estava em `642e9d56`. A segunda corrida, pela tranca, na cabeça `f5458f71`: `build` 0, `verify` 0, `typecheck` 0, com os códigos lidos de ficheiro em `portoes-b/` e a cabeça ao lado.
+A corrida final do construtor, na cabeça `716af503`, deu `build` 0, `verify` 1 e `typecheck` 0 (`portoes/`): o `verify` fechou no portão dos briefs, porque a medição 5 de `design/observatorio/medidas/BRIEF-P4.py` corria o guião das decisões da árvore de trabalho, que o item 6 corrigiu, e lia 0 onde o §0 mediu 1. A correção é do lugar de direção e não do construtor (o commit `f5458f71`, P4-b): a medição passa a correr o guião tal como estava em `40588dd5`. A segunda corrida, pela tranca, na cabeça `f5458f71`: `build` 0, `verify` 0, `typecheck` 0, com os códigos lidos de ficheiro em `portoes-b/` e a cabeça ao lado.
 
 ## Os portões, a corrida da aterragem (o lugar de direção, 03.10.2026)
 
-O ramo foi rebaseado sobre `main` (`62ed13c6`, os registos da §1.152, sem ficheiros em comum) e publicado como `p4-2026-10-03`, pela regra da casa de uma cabeça rebaseada ir num ramo novo. A corrida dos três portões pela tranca na cabeça rebaseada `49bd3051`: `build` 0, `verify` 0, `typecheck` 0, com os códigos lidos de ficheiro em `portoes-e/` e a cabeça ao lado.
+O ramo foi rebaseado sobre `main` (`ad62f09e`, os registos da §1.152, sem ficheiros em comum) e publicado como `p4-2026-10-03`, pela regra da casa de uma cabeça rebaseada ir num ramo novo. A corrida dos três portões pela tranca na cabeça rebaseada `3eae93b1`: `build` 0, `verify` 0, `typecheck` 0, com os códigos lidos de ficheiro em `portoes-e/` e a cabeça ao lado.
 
 ## O que ficou por fazer, e porquê
 
 - **As duas réguas a 1.** A régua das correções de UX do bloco A (10 células) e a matriz (3) ficam vermelhas pelos achados acima. Fechá-las pede mudar a forma da primeira página e da página do concelho, ou levar os endereços antigos de volta à região, e isso é um bloco que o lugar de direção decide; as células não se afrouxaram.
 - **A leitura a frio do bloco**, que é de outra família.
-- **O rebase sobre `main`**, que tem `62ed13c6` por cima da base deste ramo, sem ficheiros em comum.
+- **O rebase sobre `main`**, que tem `ad62f09e` por cima da base deste ramo, sem ficheiros em comum.
 - **A emenda à decisão do menu de cinco** (a peça 3 do B1), que o brief diz que o lugar de direção faz ao aterrar.
 
 ## P4-c · a passagem de correção depois da leitura a frio, e o achado do diretor

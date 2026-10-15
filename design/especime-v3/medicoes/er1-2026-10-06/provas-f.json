@@ -1,5 +1,5 @@
 {
-  "cabecaCodigo": "3af705984751b699a068b31c151f411bd6719a53",
+  "cabecaCodigo": "bb9d664771f9bfd8b55c7397051321dcdda45485",
   "gates": [
     {
       "nome": "build",
@@ -147,6 +147,6 @@
   ],
   "casosNavegador": 31,
   "jsonComparados": 3195,
-  "base": "9f240c59",
+  "base": "f22354f0",
   "sha256LogVerify": "65fb60587081858632b3ba1968e13af21da6bdc924e9fc2ccb39dfdbdec4d740"
 }

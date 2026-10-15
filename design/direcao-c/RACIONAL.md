@@ -1,7 +1,7 @@
 # Direção C · Editorial generoso
 
 Exploração de desenho, fase 2. Não está em uso no sítio. Cinco páginas reais,
-redesenhadas com o texto e os números do sítio construído em `e897e06`.
+redesenhadas com o texto e os números do sítio construído em `fd3ad5b`.
 
 ## A ideia
 

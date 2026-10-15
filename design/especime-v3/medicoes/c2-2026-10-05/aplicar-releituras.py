@@ -55,7 +55,7 @@ import yaml
 
 AQUI = Path(__file__).resolve().parent
 SITIO = AQUI.parents[3]
-CABECA = "3a253f73"  # a cabeça presa do brief (o livro é o mesmo em 006685ae, que só acrescenta o brief)
+CABECA = "520a02d6"  # a cabeça presa do brief (o livro é o mesmo em 006685ae, que só acrescenta o brief)
 RELEITURA = "indicators/out/c2-2026-10-05/releitura"
 SAIDA = AQUI / "aplicacao.json"
 SAIDA_DO_PUBLISHED_AT = AQUI / "aplicacao-published-at.json"

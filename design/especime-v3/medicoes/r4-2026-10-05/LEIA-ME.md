@@ -133,7 +133,7 @@ Corridas por `conferencias-r4b.sh` na cabeça do código da R4-b, com a árvore 
 
 ### Os commits da passagem
 
-Os commits de código primeiro (o código e as conferências; a L1 com a medição; os registos), depois um commit com os guiões das provas e, por último, um commit só com as provas que eles escreveram. A lista está na história do ramo, por cima de `6ce6b927`.
+Os commits de código primeiro (o código e as conferências; a L1 com a medição; os registos), depois um commit com os guiões das provas e, por último, um commit só com as provas que eles escreveram. A lista está na história do ramo, por cima de `c28406c1`.
 
 ### O que ficou por fazer
 

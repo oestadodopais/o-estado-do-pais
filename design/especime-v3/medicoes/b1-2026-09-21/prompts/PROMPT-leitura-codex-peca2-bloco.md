@@ -9,7 +9,7 @@ House rules that bind the builder: no number typed by hand, every figure on a pa
 
 ## What the package contains
 
-`brief.md` (the block brief with its 21.09 amendment, section 6, which prevails), `relatorio-construtor.md` (the builder's report), `diff.patch` (base `0cfd9832` to the builder's head), the changed files at their paths, `built/` with built pages from the builder's head (the place pages of Évora, Vila Real de Santo António, Penedono, Espinho and Corvo in Portuguese and Évora and Espinho in English; `/lugares/` in both editions; one region page and one district page), `antes/` with the same Évora page and the old municipalities index from the base, the three CAOP extracts (`public/dados/`), the ledger rows those five municipalities use (`ledger/claims/`), and the gate exit-code files and logs the report cites.
+`brief.md` (the block brief with its 21.09 amendment, section 6, which prevails), `relatorio-construtor.md` (the builder's report), `diff.patch` (base `082d6bb7` to the builder's head), the changed files at their paths, `built/` with built pages from the builder's head (the place pages of Évora, Vila Real de Santo António, Penedono, Espinho and Corvo in Portuguese and Évora and Espinho in English; `/lugares/` in both editions; one region page and one district page), `antes/` with the same Évora page and the old municipalities index from the base, the three CAOP extracts (`public/dados/`), the ledger rows those five municipalities use (`ledger/claims/`), and the gate exit-code files and logs the report cites.
 
 ## Pay particular attention to
 

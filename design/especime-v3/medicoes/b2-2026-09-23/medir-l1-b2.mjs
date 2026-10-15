@@ -118,7 +118,7 @@ function conferir(composicao, oficial) {
 }
 if (acao === 'preparar') {
   const dist = path.resolve(process.argv[3] ?? '<temporario>');
-  const cabeca = git('rev-parse', process.argv[4] ?? '7f658299');
+  const cabeca = git('rev-parse', process.argv[4] ?? '73c5c3fb');
   const versao = json(path.join(dist, 'version.json'));
   if (versao.commit !== cabeca) throw new Error('O dist do antes não é da cabeça pedida.');
   const pasta = fs.mkdtempSync(path.join(os.tmpdir(), 'oedp-b2-l1-antes-'));

@@ -5,7 +5,7 @@
       "registo": "brief-reproduzido.json",
       "cabeca": "006685ae",
       "arvore": "limpa no que o git segue",
-      "prova": "o guião lê só a cabeça presa 3a253f73 pelo git (git show), e não a árvore"
+      "prova": "o guião lê só a cabeça presa 520a02d6 pelo git (git show), e não a árvore"
     },
     {
       "registo": "capturas-antes.json",
@@ -22,7 +22,7 @@
     {
       "registo": "aplicacao.json e aplicar-releituras.log",
       "cabeca": "006685ae",
-      "arvore": "as linhas lidas pela cabeça presa 3a253f73 (git show), e escritas na árvore",
+      "arvore": "as linhas lidas pela cabeça presa 520a02d6 (git show), e escritas na árvore",
       "prova": "o resumo de cada linha composta é o dos bytes do commit 8dbdcac2 em 9 de 9 linhas",
       "linhas_iguais_ao_commit": 9
     },
@@ -111,7 +111,7 @@
   "linhas_compostas_iguais_ao_commit_8dbdcac2": 9,
   "linhas_com_o_published_at_iguais_ao_commit_82406f85": 9,
   "conhecido_positivo": {
-    "o_que": "a mesma comparação, contra os bytes da cabeça presa 3a253f73, dá diferente nas nove",
+    "o_que": "a mesma comparação, contra os bytes da cabeça presa 520a02d6, dá diferente nas nove",
     "encontrado": true
   }
 }

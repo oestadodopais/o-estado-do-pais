@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""O §0 do brief F2.2b (as corridas prontas a armar), medido sobre a cabeça presa do sítio (a677770f).
+"""O §0 do brief F2.2b (as corridas prontas a armar), medido sobre a cabeça presa do sítio (04438bb9).
 Não lê o motor: o portão dos briefs corre numa máquina sem ele (a M34); o que é do motor, o brief
 di-lo em palavras. Escreve design/observatorio/medidas/BRIEF-F22b.json (ou o caminho em
 OEDP_MEDIDAS_JSON, que é como o scripts/check-briefs.py o corre). Cada medição leva o comando e um
 conhecido-positivo; o que não conseguir ler fica «NÃO LIDO»."""
 import json, re, subprocess, pathlib, os
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "a677770f"
-PAINEL = "17758ec7"
+CAB = "04438bb9"
+PAINEL = "c1e834fb"
 NAO = "NÃO LIDO"
 medidas = []
 def medicao(nome, valor, comando, o_que, encontrado):

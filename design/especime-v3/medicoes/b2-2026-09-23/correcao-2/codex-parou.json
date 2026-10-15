@@ -12,15 +12,15 @@
   "comandos_registados": 41,
   "commits_registados": [
     {
-      "commit": "6151dec5",
+      "commit": "016cd961",
       "assunto": "B2: integrar a hierarquia das cabeças no verify"
     },
     {
-      "commit": "a4cc0e17",
+      "commit": "805c796e",
       "assunto": "B2: provar o período das câmaras e usar uma porta comum"
     },
     {
-      "commit": "8f7b2c27",
+      "commit": "332e6f0d",
       "assunto": "B2: datar o veredicto e nomear o dono das referências"
     }
   ],

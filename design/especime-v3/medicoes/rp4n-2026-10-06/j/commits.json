@@ -1,51 +1,51 @@
 {
   "sitio": {
-    "base": "3ecc7c72bce1bbc06e207aca368c9dcbb579b7ec",
-    "cabeca": "1fb08e30365399bd817175c90ec5f697ff13645a",
+    "base": "d0c3d52e2249c2ba1b3ac64d1cdca0f8820c8c9b",
+    "cabeca": "bdf277d10afa2fca99c105c901742fd919469d41",
     "arvore": "limpa",
     "commits": [
       {
-        "hash": "97c95d2185e1b20b1985654aea0955fd7c500c68",
+        "hash": "33abf45ea7d5ef3a34529ec4cc919efd55e1cf03",
         "assunto": "docs(rp4n-j): registar o mandato de integração com o JD1"
       },
       {
-        "hash": "546fcd39c1b4fff18a70cc1f7864c2edce758a08",
+        "hash": "f2ddfe027adcbd53604ef951377922127a61d13d",
         "assunto": "fix(rp4n-j): importar as segundas fontes declaradas pelo motor"
       },
       {
-        "hash": "8c4d1ca04cd94a192311d459486e0085871e6ba3",
+        "hash": "4428d3b16603be7b8fac6be3767665c1451266d2",
         "assunto": "fix(rp4n-j): reler no HTML as contagens após a fusão"
       },
       {
-        "hash": "d59887a0ec908c9e08f734abd8a13d36c0f10baf",
+        "hash": "a1ed32db85ee9e19306e7b57eeaabcb496a40d07",
         "assunto": "fix(rp4n-j): completar as declarações e os rótulos vindos do JD1"
       },
       {
-        "hash": "d164a38006213cbf84390cb7657ba85096d0110e",
+        "hash": "b26726627c0cbbac2d645e0f17452566929d5e48",
         "assunto": "fix(rp4n-j): conservar a apresentação e integrar os selos dos briefs"
       },
       {
-        "hash": "ac4ca9c0a257891e95344564fee28047952b15ed",
+        "hash": "15fd9b85920679c0fd4fbd87c63fb374d4a3976d",
         "assunto": "test(rp4n-j): comparar todo o HTML e os JSON exportados"
       },
       {
-        "hash": "1ca31f13faf9e930cd01dc105006194793a511a3",
+        "hash": "00680ca339f4cfc31b1d4976fe81ebb3429a697f",
         "assunto": "test(rp4n-j): integrar as marcas de anonimização do JD1"
       },
       {
-        "hash": "c1a375f7f5d656f47e5b1d1dd3ad456ed9146e0b",
+        "hash": "f544c137e97dffaab82f0beb556d2adbe03d4a69",
         "assunto": "test(rp4n-j): isolar o motor dos ensaios do executor"
       },
       {
-        "hash": "9a60fa27c9e987ea64fef8d22822529e5429ee97",
+        "hash": "154367ebe1dce8752d6bbdd63ac0965824e107dc",
         "assunto": "test(rp4nj): ligar plantas do índice ao nome do formato"
       },
       {
-        "hash": "877e75cef1988316d68019c4e73e42e17247eea6",
+        "hash": "f174e32cdc903a3586a4376513d072c7e6f36eb0",
         "assunto": "fix(rp4nj): importar o recibo da definição da série JD1"
       },
       {
-        "hash": "1fb08e30365399bd817175c90ec5f697ff13645a",
+        "hash": "bdf277d10afa2fca99c105c901742fd919469d41",
         "assunto": "fix(rp4nj): conferir recibos de definições nas séries"
       }
     ]

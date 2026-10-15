@@ -1,9 +1,9 @@
 {
   "bloco": "K2",
   "fase": "antes",
-  "cabeca": "1722244db19b66e523a7eaf9f0b27e770060bab8",
+  "cabeca": "ad529db74e14c6525a4d8bd7e3c06e2e0f440ca0",
   "construcao": {
-    "commit": "1722244db19b66e523a7eaf9f0b27e770060bab8",
+    "commit": "ad529db74e14c6525a4d8bd7e3c06e2e0f440ca0",
     "ref": "k2-2026-10-02",
     "construido_em": "2026-10-02T01:52:03.105Z"
   },

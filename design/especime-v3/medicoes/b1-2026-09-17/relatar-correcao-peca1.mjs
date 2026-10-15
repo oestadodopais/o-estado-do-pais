@@ -9,7 +9,7 @@ const {nomeDaMedida}=await import(path.resolve('src/lib/nomes.mjs'));
 const pasta='design/especime-v3/medicoes/b1-2026-09-17';const imgs='design/especime-v3/capturas/b1-2026-09-17';
 const ler=n=>JSON.parse(fs.readFileSync(`${pasta}/${n}`,'utf8'));
 const git=(...args)=>execFileSync('git',args,{encoding:'utf8'}).trim();const sha=b=>createHash('sha256').update(b).digest('hex');
-const head=git('rev-parse','HEAD');const base='2bf8b238b912fcb89da74096281305c75f0a3b3c';
+const head=git('rev-parse','HEAD');const base='0820794dfb2b7fefa20c22beebf0eaa2b7455856';
 const log=git('log',"--format=%h %s%n%(trailers)",`${base}..HEAD`);
 const temasMaqueta=JSON.parse(execFileSync('python3',['-c',`import ast,json\nt=ast.parse(open('design/especime-v3/maquetas/b1/fazer.py').read())\nprint(json.dumps(next(ast.literal_eval(n.value) for n in t.body if isinstance(n,ast.Assign) and any(isinstance(x,ast.Name) and x.id=='TEMA_DO_ESTUDO' for x in n.targets))))`],{encoding:'utf8'}));
 const tabelaTemas=Object.entries(temasMaqueta).map(([slug,tema])=>{const aplicado=WORKS.find(w=>w.slug===slug)?.tema;assert.equal(aplicado,tema);return `| ${slug} | ${tema} | ${aplicado} | sim |`;}).join('\n');

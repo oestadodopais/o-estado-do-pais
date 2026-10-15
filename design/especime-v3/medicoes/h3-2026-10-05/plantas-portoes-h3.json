@@ -1,7 +1,7 @@
 [
   {
     "nome": "h3-formulario-sem-a-porta-da-privacidade",
-    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "cabeca": "69dfb859eedefb15f7aae931a79d03a888a37841",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -19,7 +19,7 @@
   },
   {
     "nome": "h3-rodape-sem-a-porta-da-privacidade",
-    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "cabeca": "69dfb859eedefb15f7aae931a79d03a888a37841",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -37,7 +37,7 @@
   },
   {
     "nome": "h3-rodape-privacidade-da-outra-edicao",
-    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "cabeca": "69dfb859eedefb15f7aae931a79d03a888a37841",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -55,7 +55,7 @@
   },
   {
     "nome": "h3-privacidade-texto-mudado",
-    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "cabeca": "69dfb859eedefb15f7aae931a79d03a888a37841",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -73,7 +73,7 @@
   },
   {
     "nome": "h3-cookies-guiao-de-seguimento",
-    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "cabeca": "69dfb859eedefb15f7aae931a79d03a888a37841",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -91,7 +91,7 @@
   },
   {
     "nome": "h3-cookies-guiao-que-escreve",
-    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "cabeca": "69dfb859eedefb15f7aae931a79d03a888a37841",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -109,7 +109,7 @@
   },
   {
     "nome": "h3-faixa-title-sem-um-pais",
-    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "cabeca": "69dfb859eedefb15f7aae931a79d03a888a37841",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -127,7 +127,7 @@
   },
   {
     "nome": "h3-faixa-title-com-outro-valor",
-    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "cabeca": "69dfb859eedefb15f7aae931a79d03a888a37841",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -145,7 +145,7 @@
   },
   {
     "nome": "h3-faixa-cartao-pontos-iguais-no-mesmo-sitio",
-    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "cabeca": "69dfb859eedefb15f7aae931a79d03a888a37841",
     "estado": "",
     "comando": "node scripts/check-formas.mjs",
     "codigo": 1,
@@ -163,7 +163,7 @@
   },
   {
     "nome": "h3-faixa-uniao-pontos-iguais-no-mesmo-sitio",
-    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "cabeca": "69dfb859eedefb15f7aae931a79d03a888a37841",
     "estado": "",
     "comando": "node scripts/check-formas.mjs",
     "codigo": 1,
@@ -181,7 +181,7 @@
   },
   {
     "nome": "h3-faixa-uniao-etiqueta-sem-um-pais",
-    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "cabeca": "69dfb859eedefb15f7aae931a79d03a888a37841",
     "estado": "",
     "comando": "node scripts/check-formas.mjs",
     "codigo": 1,
@@ -199,7 +199,7 @@
   },
   {
     "nome": "h3-indice-sem-a-privacidade",
-    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "cabeca": "69dfb859eedefb15f7aae931a79d03a888a37841",
     "estado": "",
     "comando": "node tests/indice/indice.mjs",
     "codigo": 1,
@@ -217,7 +217,7 @@
   },
   {
     "nome": "h3-voz-este-sitio-noutra-frase-da-privacidade",
-    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "cabeca": "69dfb859eedefb15f7aae931a79d03a888a37841",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,

@@ -34,25 +34,25 @@ A peça 1: `design/especime-v3/medicoes/b2-2026-09-23/` (o relatório `LEIA-ME-p
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
 ### O sítio (`<casa>/Instruments/OEstadoDoPais`)
-- `main`: f672bd38 · 2026-09-23T23:49:10+01:00 · Os registos da peça 1 do B2: a §1.129 (o Codex constrói e para nos dois pontos certos, o Opus lê a frio, o Codex esgota-se a meio d  (`git log -1 main`)
-- `origin/main`: f672bd38 · 2026-09-23T23:49:10+01:00 · Os registos da peça 1 do B2: a §1.129 (o Codex constrói e para nos dois pontos certos, o Opus lê a frio, o Codex esgota-se a meio d  (`git log -1 origin/main`)
+- `main`: 5ea9627e · 2026-09-23T23:49:10+01:00 · Os registos da peça 1 do B2: a §1.129 (o Codex constrói e para nos dois pontos certos, o Opus lê a frio, o Codex esgota-se a meio d  (`git log -1 main`)
+- `origin/main`: 5ea9627e · 2026-09-23T23:49:10+01:00 · Os registos da peça 1 do B2: a §1.129 (o Codex constrói e para nos dois pontos certos, o Opus lê a frio, o Codex esgota-se a meio d  (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
-- ramos locais: `main f672bd38`  (`git branch`)
+- ramos locais: `main 5ea9627e`  (`git branch`)
 - ramos no remoto: `main`  (`git ls-remote --heads origin`)
-- worktree: `<casa>/Instruments/OEstadoDoPais f672bd38 [main]`
+- worktree: `<casa>/Instruments/OEstadoDoPais 5ea9627e [main]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
-- 35934023469 · `f672bd38` · main · portão · **in_progress / SEM CONCLUSÃO** · criada 2026-09-23T23:31:29Z · atualizada 2026-09-23T23:31:33Z
-- 35931602874 · `f672bd38` · b2-peca1-2026-09-23 · portão · **completed / success** · criada 2026-09-23T23:03:11Z · atualizada 2026-09-23T23:30:21Z
-- 35917796199 · `97e84232` · main · portão · **completed / success** · criada 2026-09-23T20:42:53Z · atualizada 2026-09-23T20:59:39Z
-- 35911493873 · `97e84232` · registos-2026-09-23b · portão · **completed / success** · criada 2026-09-23T19:45:58Z · atualizada 2026-09-23T20:08:59Z
-- 35899684729 · `13da4dc2` · registos-2026-09-23b · portão · **completed / success** · criada 2026-09-23T18:02:06Z · atualizada 2026-09-23T18:29:01Z
-- 35899569727 · `1be30174` · registos-2026-09-23b · portão · **completed / cancelled** · criada 2026-09-23T18:01:06Z · atualizada 2026-09-23T18:02:44Z
+- 35934023469 · `5ea9627e` · main · portão · **in_progress / SEM CONCLUSÃO** · criada 2026-09-23T23:31:29Z · atualizada 2026-09-23T23:31:33Z
+- 35931602874 · `5ea9627e` · b2-peca1-2026-09-23 · portão · **completed / success** · criada 2026-09-23T23:03:11Z · atualizada 2026-09-23T23:30:21Z
+- 35917796199 · `401743d2` · main · portão · **completed / success** · criada 2026-09-23T20:42:53Z · atualizada 2026-09-23T20:59:39Z
+- 35911493873 · `401743d2` · registos-2026-09-23b · portão · **completed / success** · criada 2026-09-23T19:45:58Z · atualizada 2026-09-23T20:08:59Z
+- 35899684729 · `eb890d55` · registos-2026-09-23b · portão · **completed / success** · criada 2026-09-23T18:02:06Z · atualizada 2026-09-23T18:29:01Z
+- 35899569727 · `038f273c` · registos-2026-09-23b · portão · **completed / cancelled** · criada 2026-09-23T18:01:06Z · atualizada 2026-09-23T18:02:44Z
 
 ### O que está no ar (`/version.json` do sítio publicado)
-- commit no ar: `f672bd38` · construído em 2026-09-23T23:46:20.142Z · ref `main` · production
-- igual a `origin/main` (`f672bd38`): **sim**
+- commit no ar: `5ea9627e` · construído em 2026-09-23T23:46:20.142Z · ref `main` · production
+- igual a `origin/main` (`5ea9627e`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
 ### O motor (`<casa>/Instruments/ResearchHub`)
@@ -85,11 +85,11 @@ A peça 1: `design/especime-v3/medicoes/b2-2026-09-23/` (o relatório `LEIA-ME-p
 - `codex-peca3.log`: INICIO 19:38:29 modelo=gpt-6-astra raciocínio=xhigh · **FIM exit=0 21:13:27** · 54396 linhas
     - tokens used 955,117
 
-*Acrescentado à mão por baixo do bloco: o `npm run verify:deploy` correu a 0 às 23:53:43 UTC contra o lançamento `7wsyjpxct` (o `version.json` no ar diz `f672bd38`, construído às 23:46:20 UTC). A corrida `portão` de `main` (35934023469) estava em curso quando o bloco se leu e acabou verde às 23:58:23 UTC (lida com `gh run list` ao fechar); a corrida do ramo na mesma cabeça (35931602874) fora verde às 23:30:21 UTC. O uso do Codex é agora lido dos registos das corridas de hoje: 100 por cento da semana, reposto a 28.09 às 12:44 UTC. A semana do Claude passou de 57 por cento (15:16 UTC) a 67 por cento (23:54 UTC) nesta sessão, com a leitura a frio e a passagem final do Opus 5.5 dentro.*
+*Acrescentado à mão por baixo do bloco: o `npm run verify:deploy` correu a 0 às 23:53:43 UTC contra o lançamento `7wsyjpxct` (o `version.json` no ar diz `5ea9627e`, construído às 23:46:20 UTC). A corrida `portão` de `main` (35934023469) estava em curso quando o bloco se leu e acabou verde às 23:58:23 UTC (lida com `gh run list` ao fechar); a corrida do ramo na mesma cabeça (35931602874) fora verde às 23:30:21 UTC. O uso do Codex é agora lido dos registos das corridas de hoje: 100 por cento da semana, reposto a 28.09 às 12:44 UTC. A semana do Claude passou de 57 por cento (15:16 UTC) a 67 por cento (23:54 UTC) nesta sessão, com a leitura a frio e a passagem final do Opus 5.5 dentro.*
 
 ## 5 · As horas e os símbolos das aterragens de 23.09 à tarde e à noite (lidos dos registos, não de memória)
 
-- **A aterragem da tarde** (o ramo `nomes-2026-09-23`, seis commits do lugar de direção, cabeça `7f658299`): os três portões a 0 (`build` 16:02:37 a 16:07:21 UTC, `verify` 16:07:21 a 16:15:21, `typecheck` 16:15:21); o `push` do ramo às 16:15:40; a corrida do ramo (35887512092) verde às 16:54:31; a fusão às 16:55:04 e o `push` de `main` às 16:55:16; a corrida de `main` (35892076928) verde às 17:15:52; a Vercel (`nolepyqjk`) «Ready» às 17:18:18 (23 pedidos desde as 16:55:44); `verify:deploy` a 0 às 17:18:49. No motor, `6f22de0` (15:29:41, publicado 15:33:51) e `aa35e2e` (15:54:27, publicado 15:57).
-- **A aterragem dos registos** (o ramo `registos-2026-09-23b`, três commits do lugar de direção, cabeça `97e84232`): a fusão às 20:29 UTC e os três portões a 0 na árvore principal (`build` 20:29:11 a 20:34:06, `verify` 20:34:06 a 20:42:09, `typecheck` 20:42:09); a corrida do ramo (35911493873) verde às 20:08:59; o `push` de `main` às 20:42:51; a corrida de `main` (35917796199) verde às 20:59:39; a Vercel (`lc7fb16sb`) «Ready» às 20:57:33 (15 pedidos); `verify:deploy` a 0 às 20:57:54.
-- **A peça 1 do B2** (o ramo `b2-peca1-2026-09-23`, 23 commits do Codex e 9 do Opus 5.5 no sítio, mais o de registos do lugar de direção; cabeça `f672bd38`): o Codex das 17:58:00 às 19:41:33 UTC (890 275 símbolos), a primeira correção das 19:45:15 às 20:23:21 (269 330), a leitura a frio do Opus das 20:28 às 21:04 (539 114, 147 chamadas a ferramentas), a segunda correção do Codex das 21:07:38 às 21:17:31 (143 421, parada pelo limite), o Opus das 21:19 às 22:45 (727 158, 251 chamadas); os três portões a 0 na cabeça final (`build` 22:49:10 a 22:54:07 UTC, `verify` 22:54:07 a 23:02:11, `typecheck` 23:02:11); o `push` do ramo às 23:03:08; a corrida do ramo (35931602874) verde às 23:30:21; a fusão às 23:31:15 e o `push` de `main` às 23:31:27; a corrida de `main` (35934023469) criada às 23:31:29; a Vercel (`7wsyjpxct`) «Ready» às 23:53:20 (22 pedidos); `verify:deploy` a 0 às 23:53:43. No motor, `master` por avanço rápido para `0f08171` (o `core.gate` a 0 das 23:03:08 às 23:06:08, publicado às 23:06:28). As worktrees e os ramos apagados nos dois repositórios.
+- **A aterragem da tarde** (o ramo `nomes-2026-09-23`, seis commits do lugar de direção, cabeça `73c5c3fb`): os três portões a 0 (`build` 16:02:37 a 16:07:21 UTC, `verify` 16:07:21 a 16:15:21, `typecheck` 16:15:21); o `push` do ramo às 16:15:40; a corrida do ramo (35887512092) verde às 16:54:31; a fusão às 16:55:04 e o `push` de `main` às 16:55:16; a corrida de `main` (35892076928) verde às 17:15:52; a Vercel (`nolepyqjk`) «Ready» às 17:18:18 (23 pedidos desde as 16:55:44); `verify:deploy` a 0 às 17:18:49. No motor, `6f22de0` (15:29:41, publicado 15:33:51) e `aa35e2e` (15:54:27, publicado 15:57).
+- **A aterragem dos registos** (o ramo `registos-2026-09-23b`, três commits do lugar de direção, cabeça `401743d2`): a fusão às 20:29 UTC e os três portões a 0 na árvore principal (`build` 20:29:11 a 20:34:06, `verify` 20:34:06 a 20:42:09, `typecheck` 20:42:09); a corrida do ramo (35911493873) verde às 20:08:59; o `push` de `main` às 20:42:51; a corrida de `main` (35917796199) verde às 20:59:39; a Vercel (`lc7fb16sb`) «Ready» às 20:57:33 (15 pedidos); `verify:deploy` a 0 às 20:57:54.
+- **A peça 1 do B2** (o ramo `b2-peca1-2026-09-23`, 23 commits do Codex e 9 do Opus 5.5 no sítio, mais o de registos do lugar de direção; cabeça `5ea9627e`): o Codex das 17:58:00 às 19:41:33 UTC (890 275 símbolos), a primeira correção das 19:45:15 às 20:23:21 (269 330), a leitura a frio do Opus das 20:28 às 21:04 (539 114, 147 chamadas a ferramentas), a segunda correção do Codex das 21:07:38 às 21:17:31 (143 421, parada pelo limite), o Opus das 21:19 às 22:45 (727 158, 251 chamadas); os três portões a 0 na cabeça final (`build` 22:49:10 a 22:54:07 UTC, `verify` 22:54:07 a 23:02:11, `typecheck` 23:02:11); o `push` do ramo às 23:03:08; a corrida do ramo (35931602874) verde às 23:30:21; a fusão às 23:31:15 e o `push` de `main` às 23:31:27; a corrida de `main` (35934023469) criada às 23:31:29; a Vercel (`7wsyjpxct`) «Ready» às 23:53:20 (22 pedidos); `verify:deploy` a 0 às 23:53:43. No motor, `master` por avanço rápido para `0f08171` (o `core.gate` a 0 das 23:03:08 às 23:06:08, publicado às 23:06:28). As worktrees e os ramos apagados nos dois repositórios.
 - **Os símbolos.** Codex: 1 303 026 nas três corridas (o plano esgotado até 28.09). Claude Opus 5.5: 1 266 272 (a leitura a frio e o fim da correção). O lugar de direção (Fable) não se mede daqui. As correções do Opus não foram lidas por outra família, porque não havia nenhuma disponível, e o lugar de direção reviu-as no diff; está dito na §1.129.

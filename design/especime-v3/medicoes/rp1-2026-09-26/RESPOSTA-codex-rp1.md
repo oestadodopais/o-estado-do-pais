@@ -4,4 +4,4 @@ Os três portões passaram a **0**. Nenhuma linha anterior mudou. Capturas, cóp
 
 [Relatório completo](<worktree do sítio>/design/especime-v3/medicoes/rp1-2026-09-26/LEIA-ME.md) · [Pacote de leitura a frio](<temporario>
 
-Commit final: `92c7cf66`. Worktrees limpas, sem push.
+Commit final: `d385dac7`. Worktrees limpas, sem push.

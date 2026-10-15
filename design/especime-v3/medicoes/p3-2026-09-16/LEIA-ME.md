@@ -1,6 +1,6 @@
 # O bloco P3, medido · «Os nomes das medidas, e a revisão de língua de tudo»
 
-*16.09.2026, ramo `p3-2026-09-16`, sobre `796c9032` e rebaseado sobre `54170951`. Construtor e editor de língua: **Claude Opus 5**. É a cópia do relatório do bloco, no formato do §3 do brief (`design/observatorio/BRIEF-P3-os-nomes-e-a-lingua.md`). As tabelas das cadeias e dos nomes estão ao lado, em `cadeias-antes-depois.md`; as capturas em `design/especime-v3/capturas/p3-2026-09-16/`.*
+*16.09.2026, ramo `p3-2026-09-16`, sobre `fab09477` e rebaseado sobre `6d9a293e`. Construtor e editor de língua: **Claude Opus 5**. É a cópia do relatório do bloco, no formato do §3 do brief (`design/observatorio/BRIEF-P3-os-nomes-e-a-lingua.md`). As tabelas das cadeias e dos nomes estão ao lado, em `cadeias-antes-depois.md`; as capturas em `design/especime-v3/capturas/p3-2026-09-16/`.*
 
 *O relatório tem duas camadas, e a segunda está no §7: o lote da manhã, e a **passagem de correção do fim do dia**, feita depois da leitura a frio do Codex (`2026-09-16-codex-leitura-p3.md`) e pela triagem do lugar de direção. Onde uma linha mudou com a passagem, a linha diz o texto de hoje e o §7 diz o que mudou e porquê.*
 
@@ -21,37 +21,37 @@
 
 ## 2 · Os commits, a cabeça e os três portões
 
-São **vinte e cinco commits** sobre `54170951` (a base depois do rebase; o ramo foi escrito sobre `796c9032` e rebaseado pelo lugar de direção), todos com os dois trailers, todos por caminhos explícitos: **treze do lote da manhã** e **doze da passagem de correção do fim do dia** (§7). A primeira redação deste parágrafo dizia «onze» e a tabela listava doze linhas mais a do próprio relatório, que é a contradição que a leitura a frio apanhou (achado 15); a conta refaz-se agora do `git log` e não de cabeça, e as cabeças são as de depois do rebase.
+São **vinte e cinco commits** sobre `6d9a293e` (a base depois do rebase; o ramo foi escrito sobre `fab09477` e rebaseado pelo lugar de direção), todos com os dois trailers, todos por caminhos explícitos: **treze do lote da manhã** e **doze da passagem de correção do fim do dia** (§7). A primeira redação deste parágrafo dizia «onze» e a tabela listava doze linhas mais a do próprio relatório, que é a contradição que a leitura a frio apanhou (achado 15); a conta refaz-se agora do `git log` e não de cabeça, e as cabeças são as de depois do rebase.
 
 | cabeça | o que |
 | --- | --- |
-| `6f1a5787` | Os oitenta e um nomes das medidas, e os vinte e quatro das linhas derivadas |
-| `78ffca88` | As três datas saem da dobra da leitura breve e vivem no recibo da linha |
-| `97cdc287` | «A casa» sai do Método e da política, e «limiar» com ela na entrada de fecho |
-| `5dca6892` | A revisão de língua das cadeias do leitor, e o inventário atrás dela |
-| `ffe5880a` | O portão das palavras proibidas, com a planta que o derruba |
-| `d1517559` | As duas frases da regra dos nomes, e a §1.110 com os dois carimbos |
-| `cd79298e` | A dívida das réguas: as três plantas que não mordiam, e a N3 da busca |
-| `dd017ecd` | A quarta «peça» declarada na L3, e o tipo da fonte do nome com o degrau novo |
-| `1a662820` | As três importações que ficaram sem uso quando as datas saíram das dobras |
-| `b70c9f93` | A régua do índice lê a terceira lista dos nomes do projeto |
-| `5e244891` | «Toque num» volta a morder: a fronteira da palavra estava no sítio errado |
-| `8d0c6e61` | As cem capturas, as três tabelas e o relatório do bloco |
-| `d8f86bb2` | O relatório com a cabeça final, os códigos dos portões e o custo |
-| `b0912a48` | A razão da correção diz «deste projeto», e o portão deixa de tapar a prosa das correções |
-| `544d3a2d` | As sete frases que um jornal não imprimiria, e os dois carimbos novos |
-| `d8396ed3` | A regra dos nomes emenda-se, e quarenta e seis nomes mudam com ela |
-| `61bd9f98` | O portão das palavras lê os atributos, as dobras abertas e o que é deste projeto nos estudos |
-| `b961c05d` | A reconta dos nomes oficiais, por código, e a aritmética do relatório corrigida |
-| `a664988a` | O F5 lê os alvos do dist/ e exige a última verificação, e a planta tira só essa |
-| `18982a07` | Os literais das vistas e dos componentes entram no pacote das cadeias |
-| `17c0ae46` | As 44 células vermelhas: o que mede mobília que saiu sai, e o resto acerta-se |
-| `19a6ebf5` | A leitura a frio do P3 aterra no repositório, e a entrada do inventário aponta para ela |
-| `db9611df` | A marca do F5 muda de nome: `data-leitura` já era um contrato de outra régua |
-| `f9f49406` | As capturas «depois» refeitas e as medições da cabeça da correção |
+| `b01aa697` | Os oitenta e um nomes das medidas, e os vinte e quatro das linhas derivadas |
+| `bc291187` | As três datas saem da dobra da leitura breve e vivem no recibo da linha |
+| `3f011d53` | «A casa» sai do Método e da política, e «limiar» com ela na entrada de fecho |
+| `de60deb4` | A revisão de língua das cadeias do leitor, e o inventário atrás dela |
+| `b19f6865` | O portão das palavras proibidas, com a planta que o derruba |
+| `8d2619bf` | As duas frases da regra dos nomes, e a §1.110 com os dois carimbos |
+| `27481e2c` | A dívida das réguas: as três plantas que não mordiam, e a N3 da busca |
+| `ebf3ec2f` | A quarta «peça» declarada na L3, e o tipo da fonte do nome com o degrau novo |
+| `d203b2b6` | As três importações que ficaram sem uso quando as datas saíram das dobras |
+| `283f8ea9` | A régua do índice lê a terceira lista dos nomes do projeto |
+| `08d0e68c` | «Toque num» volta a morder: a fronteira da palavra estava no sítio errado |
+| `de47e803` | As cem capturas, as três tabelas e o relatório do bloco |
+| `ae067ea2` | O relatório com a cabeça final, os códigos dos portões e o custo |
+| `518bcdad` | A razão da correção diz «deste projeto», e o portão deixa de tapar a prosa das correções |
+| `ecf3773a` | As sete frases que um jornal não imprimiria, e os dois carimbos novos |
+| `960b9fd2` | A regra dos nomes emenda-se, e quarenta e seis nomes mudam com ela |
+| `82fb71fa` | O portão das palavras lê os atributos, as dobras abertas e o que é deste projeto nos estudos |
+| `f014ceb9` | A reconta dos nomes oficiais, por código, e a aritmética do relatório corrigida |
+| `6d52e90a` | O F5 lê os alvos do dist/ e exige a última verificação, e a planta tira só essa |
+| `de7de10a` | Os literais das vistas e dos componentes entram no pacote das cadeias |
+| `f01a521f` | As 44 células vermelhas: o que mede mobília que saiu sai, e o resto acerta-se |
+| `8ef9b1ff` | A leitura a frio do P3 aterra no repositório, e a entrada do inventário aponta para ela |
+| `60b3bb4f` | A marca do F5 muda de nome: `data-leitura` já era um contrato de outra régua |
+| `e5dbd155` | As capturas «depois» refeitas e as medições da cabeça da correção |
 | (o commit deste ficheiro) | O relatório com a cabeça final, os códigos dos portões e o custo. **É a cabeça final**, e não traz o seu próprio resumo porque um commit não se pode nomear a si próprio: o resumo dele está na mensagem que o lugar de direção recebe e no `git log` do ramo |
 
-**Os três portões, cada comando no seu, com o código lido de um ficheiro. A corrida que vale é a da passagem de correção, sobre `f9f49406`, que é a cabeça com o código, as capturas e as tabelas:**
+**Os três portões, cada comando no seu, com o código lido de um ficheiro. A corrida que vale é a da passagem de correção, sobre `e5dbd155`, que é a cabeça com o código, as capturas e as tabelas:**
 
 ```
 npm run build     → 0   (o carimbo do dist/ é deste)

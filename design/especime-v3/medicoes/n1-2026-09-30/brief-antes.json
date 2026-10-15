@@ -1,7 +1,7 @@
 {
   "brief": "design/observatorio/BRIEF-N1-uma-porta-por-assunto.md",
   "guiao": "design/observatorio/medidas/BRIEF-N1.py",
-  "cabeca_lida": "1d9e5b2e",
+  "cabeca_lida": "eac316d0",
   "medidas": [
     {
       "nome": "entradas_com_pagina",
@@ -132,7 +132,7 @@
     {
       "nome": "linhas_do_desemprego_com_6_onde_a_fonte_escreve_6_0",
       "valor": 2,
-      "comando": "git show 1d9e5b2e:ledger/claims/<id>.yml · value «6» e excerpt a acabar em «6.0»",
+      "comando": "git show eac316d0:ledger/claims/<id>.yml · value «6» e excerpt a acabar em «6.0»",
       "conhecido_positivo": {
         "o_que": "a linha da União escreve «6,0»",
         "encontrado": true

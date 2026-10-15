@@ -1,7 +1,7 @@
 {
   "comando": "node design/especime-v3/medicoes/er1-2026-10-06/conferir-entrega.mjs",
-  "cabecaMedida": "645ecde7ea61c044d7c0648b020c6392a48674ce",
-  "cabecaCodigo": "645ecde7ea61c044d7c0648b020c6392a48674ce",
+  "cabecaMedida": "6488636195b0b3a66c467ab47f88cce9a37ceab7",
+  "cabecaCodigo": "6488636195b0b3a66c467ab47f88cce9a37ceab7",
   "portoes": [
     {
       "nome": "build",
@@ -21,11 +21,11 @@
   "capturas": 30,
   "ficheirosLidosSemCaminhosPrivados": 188,
   "commitsConferidos": [
-    "16ddc66c22876784284c7240ca1d9a5699ea4a08",
-    "0c63b7a496dab5a93b238625821897db3455cfbf",
-    "8252915ed97cc4a96eacc20881722201e470c17d",
-    "eeb282d97baa9dad851a8ba7e0df700a570bbc34",
-    "645ecde7ea61c044d7c0648b020c6392a48674ce"
+    "3a913e7a13e4e291a25d5185db76e632f27e6d89",
+    "dc176f67e9c4662d3191beb59a27eda29cd2a90f",
+    "013e54907d21fe556ccdcab06eff1d663781fd73",
+    "f2fe67272f3cb8b199c4edbfbe82b638e123ae5e",
+    "6488636195b0b3a66c467ab47f88cce9a37ceab7"
   ],
   "alteracoesDepoisDoCodigo": [],
   "falhasSemAlteracao": [

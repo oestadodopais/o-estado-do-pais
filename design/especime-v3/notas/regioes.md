@@ -1,7 +1,7 @@
 # As regiões · a nota do construtor do sítio (R2)
 
 *Escrita a 27.08.2026 por Claude Opus 5, no ramo `regioes-2026-08-27`, a partir
-de `main` em `e41a557`, e continuada a 28.08.2026 com as quatro regiões que o
+de `main` em `1d24a5e`, e continuada a 28.08.2026 com as quatro regiões que o
 motor trouxe (§3b) e com as correcções da leitura cruzada do Codex. O brief é `design/especime-v3/briefs/BRIEF-regioes.md`
 §2 (R2), §3 e §4; a emenda que ele aplica é a 21 de `direcao.md`; os factos de
 partida estão em `medicoes/regioes-reconhecimento-2026-08-27.md`. Sem travessões

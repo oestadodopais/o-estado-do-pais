@@ -4,7 +4,7 @@
   "medidas": [
     {
       "nome": "portoes.cabeca",
-      "valor": "1d64052a5bbe45e92608a997bebe17742bbcb0aa",
+      "valor": "56ce75fa48f9bb57f8f8ed81960918b104b65015",
       "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na entrega do EX1, guardada em entrega/portoes desde a fusão)",
       "conhecido_positivo": {
         "o_que": "a cabeça dos portões é a de antes e a de depois da corrida",
@@ -229,7 +229,7 @@
     },
     {
       "nome": "provas.cabeca",
-      "valor": "1d64052a5bbe45e92608a997bebe17742bbcb0aa",
+      "valor": "56ce75fa48f9bb57f8f8ed81960918b104b65015",
       "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1.sh",
       "conhecido_positivo": {
         "o_que": "a cabeça das provas é a dos portões e a do fim das provas",
@@ -247,7 +247,7 @@
     },
     {
       "nome": "provas.construcao",
-      "valor": "1d64052a5bbe45e92608a997bebe17742bbcb0aa",
+      "valor": "56ce75fa48f9bb57f8f8ed81960918b104b65015",
       "comando": "cp dist/version.json provas/version.json",
       "conhecido_positivo": {
         "o_que": "a construção medida é a da cabeça dos portões",
@@ -365,7 +365,7 @@
     {
       "nome": "brief.medidas_iguais_as_do_brief",
       "valor": 16,
-      "comando": "a comparação de brief-reproduzido.json com git show 629d065f:design/observatorio/medidas/BRIEF-EX1.json",
+      "comando": "a comparação de brief-reproduzido.json com git show a3fc111f:design/observatorio/medidas/BRIEF-EX1.json",
       "conhecido_positivo": {
         "o_que": "as duas listas têm as mesmas medidas",
         "encontrado": true
@@ -383,7 +383,7 @@
     {
       "nome": "brief.portas_do_menu",
       "valor": 5,
-      "comando": "git show 629d065f:design/observatorio/medidas/BRIEF-EX1.json (o ficheiro do brief na passagem EX1)",
+      "comando": "git show a3fc111f:design/observatorio/medidas/BRIEF-EX1.json (o ficheiro do brief na passagem EX1)",
       "conhecido_positivo": {
         "o_que": "a medida está no ficheiro do brief",
         "encontrado": true
@@ -992,7 +992,7 @@
     },
     {
       "nome": "primeira.portoes.cabeca",
-      "valor": "482546471b44046b9ec4d5b7093b9ac78c2d35f1",
+      "valor": "71f83c4a525271efd9f5d1c78e3ff6a7722970ac",
       "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na entrega do EX1, guardada em entrega/portoes desde a fusão) (na primeira corrida, guardada em primeira-corrida/portoes)",
       "conhecido_positivo": {
         "o_que": "a cabeça é a de antes e a de depois dessa corrida",
@@ -1165,7 +1165,7 @@
     },
     {
       "nome": "l1.cabeca_da_medicao",
-      "valor": "2405f8a84f0006726312ced5b0729a422d5170a1",
+      "valor": "f8fdd06bc3f5172dc852d167532adfd4d9ff0ec9",
       "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/medir-l1.mjs",
       "conhecido_positivo": {
         "o_que": "a cabeça está escrita",
@@ -1223,7 +1223,7 @@
     {
       "nome": "mapa.corrigidas_a_mao",
       "valor": 3,
-      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/mapa-a-mao.py 3664b90d c885cb4c --json <pasta>/mapa-a-mao.json",
+      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/mapa-a-mao.py 3664b90d 90e5c62b --json <pasta>/mapa-a-mao.json",
       "conhecido_positivo": {
         "o_que": "a comparação leu as referências das linhas que já existiam",
         "encontrado": true
@@ -1241,7 +1241,7 @@
     {
       "nome": "chaves_en.ex1",
       "valor": 35,
-      "comando": "a contagem das linhas da tabela da secção do EX1 em git show 629d065f:design/especime-v3/CHAVES-EN.md (as chaves da passagem EX1)",
+      "comando": "a contagem das linhas da tabela da secção do EX1 em git show a3fc111f:design/especime-v3/CHAVES-EN.md (as chaves da passagem EX1)",
       "conhecido_positivo": {
         "o_que": "a secção existe e a primeira linha é a de nav.explicacoes",
         "encontrado": true
@@ -1288,7 +1288,7 @@
     },
     {
       "nome": "ex1b.portoes.cabeca",
-      "valor": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+      "valor": "f3f0415f4b2f5f36cc0eca7a09a095a9655d5ad8",
       "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/ex1b/portoes",
       "conhecido_positivo": {
         "o_que": "a cabeça dos portões é a de antes e a de depois da corrida",
@@ -1453,7 +1453,7 @@
     },
     {
       "nome": "ex1b.provas.cabeca",
-      "valor": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+      "valor": "f3f0415f4b2f5f36cc0eca7a09a095a9655d5ad8",
       "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1b.sh",
       "conhecido_positivo": {
         "o_que": "a cabeça das provas é a dos portões e a do fim das provas",
@@ -1471,7 +1471,7 @@
     },
     {
       "nome": "ex1b.provas.construcao",
-      "valor": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+      "valor": "f3f0415f4b2f5f36cc0eca7a09a095a9655d5ad8",
       "comando": "cp dist/version.json ex1b/provas/version.json",
       "conhecido_positivo": {
         "o_que": "a construção medida é a da cabeça dos portões",
@@ -1607,7 +1607,7 @@
     {
       "nome": "ex1b.brief.medidas_iguais_as_do_brief",
       "valor": 16,
-      "comando": "a comparação de ex1b/brief-reproduzido.json com git show 723a451f:design/observatorio/medidas/BRIEF-EX1.json",
+      "comando": "a comparação de ex1b/brief-reproduzido.json com git show f3f0415f:design/observatorio/medidas/BRIEF-EX1.json",
       "conhecido_positivo": {
         "o_que": "as duas listas têm as mesmas medidas",
         "encontrado": true
@@ -1616,7 +1616,7 @@
     {
       "nome": "ex1b.brief.paragrafo_0_portas_do_menu",
       "valor": 6,
-      "comando": "a frase do §0 do brief com `portas_do_menu` (git show 723a451f, o brief da passagem EX1-b)",
+      "comando": "a frase do §0 do brief com `portas_do_menu` (git show f3f0415f, o brief da passagem EX1-b)",
       "conhecido_positivo": {
         "o_que": "a frase está no brief",
         "encontrado": true
@@ -1785,7 +1785,7 @@
           "sobre": "a definição das duas classificações: a orgânica soma a despesa de cada ministério, com as operações financeiras e as transferências, e não a reparte pelos fins"
         }
       ],
-      "comando": "as partes da classe «leitura» na secção «explicacoes» de git show 723a451f:tests/cartao/leituras-provadas.json (a auditoria da passagem EX1-b)",
+      "comando": "as partes da classe «leitura» na secção «explicacoes» de git show f3f0415f:tests/cartao/leituras-provadas.json (a auditoria da passagem EX1-b)",
       "conhecido_positivo": {
         "o_que": "cada uma traz «sobre»",
         "encontrado": true
@@ -1991,7 +1991,7 @@
     {
       "nome": "ex1b.mapa.referencias_postas_em_dia_pela_conta",
       "valor": 38,
-      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/linhas-do-mapa.py 1d64052a --escrever (ex1b/linhas-do-mapa.log)",
+      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/linhas-do-mapa.py 56ce75fa --escrever (ex1b/linhas-do-mapa.log)",
       "conhecido_positivo": {
         "o_que": "o número é o das linhas da lista",
         "encontrado": true
@@ -2000,7 +2000,7 @@
     {
       "nome": "ex1b.mapa.corrigidas_a_mao",
       "valor": 0,
-      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/mapa-a-mao.py 1d64052a 37b3daf9 --json <pasta>/ex1b/mapa-a-mao.json",
+      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/mapa-a-mao.py 56ce75fa a9963abf --json <pasta>/ex1b/mapa-a-mao.json",
       "conhecido_positivo": {
         "o_que": "a comparação leu as referências das linhas que já existiam",
         "encontrado": true
@@ -2038,7 +2038,7 @@
     },
     {
       "nome": "ex1c.provas.cabeca",
-      "valor": "090dd5dc401b736c105b7f21972515060959ee2a",
+      "valor": "477c3103e22d1efb5e59fc3b7037585fea023bcd",
       "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1c.sh",
       "conhecido_positivo": {
         "o_que": "a cabeça das provas é a do fim delas",
@@ -2056,7 +2056,7 @@
     },
     {
       "nome": "ex1c.provas.construcao",
-      "valor": "090dd5dc401b736c105b7f21972515060959ee2a",
+      "valor": "477c3103e22d1efb5e59fc3b7037585fea023bcd",
       "comando": "cp dist/version.json ex1c/provas/version.json",
       "conhecido_positivo": {
         "o_que": "a construção medida é a da cabeça das provas",
@@ -2727,7 +2727,7 @@
     {
       "nome": "ex1c.mapa.referencias_postas_em_dia_pela_conta",
       "valor": 20,
-      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/linhas-do-mapa.py c24db3b2 --escrever (ex1c/linhas-do-mapa.log)",
+      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/linhas-do-mapa.py 275c0e28 --escrever (ex1c/linhas-do-mapa.log)",
       "conhecido_positivo": {
         "o_que": "o número é o das linhas da lista",
         "encontrado": true
@@ -2765,7 +2765,7 @@
     },
     {
       "nome": "fusao.portoes.cabeca",
-      "valor": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+      "valor": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
       "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes",
       "conhecido_positivo": {
         "o_que": "a cabeça dos portões é a de antes e a de depois da corrida",
@@ -2977,7 +2977,7 @@
     },
     {
       "nome": "fusao.provas.cabeca",
-      "valor": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+      "valor": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
       "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída>",
       "conhecido_positivo": {
         "o_que": "a cabeça das provas é a do fim delas e a dos portões",
@@ -2995,7 +2995,7 @@
     },
     {
       "nome": "fusao.provas.construcao",
-      "valor": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+      "valor": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
       "comando": "cp dist/version.json fusao/provas/version.json",
       "conhecido_positivo": {
         "o_que": "a construção medida é a da cabeça das provas",

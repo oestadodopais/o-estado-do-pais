@@ -1,7 +1,7 @@
 {
   "brief": "design/observatorio/BRIEF-E0-as-linhas-da-casa-no-registo-das-mudancas.md",
   "guiao": "design/observatorio/medidas/BRIEF-E0.py",
-  "cabeca_lida": "2273d725",
+  "cabeca_lida": "38f3f9d5",
   "linhas_do_desemprego": [
     "taxa-de-desemprego-2025",
     "taxa-de-desemprego-mip-2025"
@@ -13,7 +13,7 @@
     {
       "nome": "linhas_do_desemprego_com_o_inteiro_onde_a_fonte_escreve_o_decimal",
       "valor": 2,
-      "comando": "git show 2273d725:ledger/claims/taxa-de-desemprego*.yml · value «6» e excerpt a acabar em «2025: 6.0»",
+      "comando": "git show 38f3f9d5:ledger/claims/taxa-de-desemprego*.yml · value «6» e excerpt a acabar em «2025: 6.0»",
       "conhecido_positivo": {
         "o_que": "«taxa-de-desemprego-2025» é uma delas",
         "encontrado": true
@@ -31,7 +31,7 @@
     {
       "nome": "valor_do_contador_das_correcoes",
       "valor": "3",
-      "comando": "git show 2273d725:ledger/claims/correcoes-publicadas.yml · value",
+      "comando": "git show 38f3f9d5:ledger/claims/correcoes-publicadas.yml · value",
       "conhecido_positivo": {
         "o_que": "a linha é derivada e tem check",
         "encontrado": true
@@ -40,7 +40,7 @@
     {
       "nome": "linhas_com_historia_selada",
       "valor": 9,
-      "comando": "git show 2273d725:ledger/historias-valores.json · as chaves",
+      "comando": "git show 38f3f9d5:ledger/historias-valores.json · as chaves",
       "conhecido_positivo": {
         "o_que": "«estudos-evora-publicados» tem história",
         "encontrado": true
@@ -58,7 +58,7 @@
     {
       "nome": "linhas_com_lugar_declarado_a_mao",
       "valor": 2,
-      "comando": "git show 2273d725:src/data/lugar-das-linhas.mjs · as entradas de LUGAR_DECLARADO_DAS_LINHAS",
+      "comando": "git show 38f3f9d5:src/data/lugar-das-linhas.mjs · as entradas de LUGAR_DECLARADO_DAS_LINHAS",
       "conhecido_positivo": {
         "o_que": "«estudos-evora-publicados» está declarada a Évora",
         "encontrado": true
@@ -67,7 +67,7 @@
     {
       "nome": "lugares_fora_do_pais_que_o_registo_aceita",
       "valor": 1,
-      "comando": "git show 2273d725:src/lib/mudancas.mjs · as chaves comparadas literalmente (chave === '…')",
+      "comando": "git show 38f3f9d5:src/lib/mudancas.mjs · as chaves comparadas literalmente (chave === '…')",
       "conhecido_positivo": {
         "o_que": "«uniao-europeia» é um deles",
         "encontrado": true

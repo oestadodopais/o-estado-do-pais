@@ -113,7 +113,7 @@
     {
       "nome": "P5 · a altura de `/` a 390 depois deste bloco é menor do que a que o F1.1c deixou",
       "passa": true,
-      "prova": "antes 3700 px (design/especime-v3/medicoes/toque-medidas-depois.json, «chromium.pt.com-guiao.repouso», cabeça 9c34bbb0, a fusão de origin/main no ramo toque-2026-09-04) · depois 3263 px, na mesma largura e no mesmo motor (437 px a menos) · na mesma construção, a gaveta dos nomes aberta dá 3953 px e sem guião 4048 px"
+      "prova": "antes 3700 px (design/especime-v3/medicoes/toque-medidas-depois.json, «chromium.pt.com-guiao.repouso», cabeça 9912127f, a fusão de origin/main no ramo toque-2026-09-04) · depois 3263 px, na mesma largura e no mesmo motor (437 px a menos) · na mesma construção, a gaveta dos nomes aberta dá 3953 px e sem guião 4048 px"
     },
     {
       "nome": "P7a · o lugar do nome com contraste de 4,5:1 no tema claro",
@@ -713,7 +713,7 @@
       "antesDe": {
         "ficheiro": "design/especime-v3/medicoes/toque-medidas-depois.json",
         "chave": "chromium.pt.com-guiao.repouso",
-        "cabeca": "9c34bbb0, a fusão de origin/main no ramo toque-2026-09-04"
+        "cabeca": "9912127f, a fusão de origin/main no ramo toque-2026-09-04"
       },
       "depois": 3263,
       "comAGavetaAberta": 3953,

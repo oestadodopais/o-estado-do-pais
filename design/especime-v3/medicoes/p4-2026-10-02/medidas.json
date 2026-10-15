@@ -472,7 +472,7 @@
     {
       "nome": "codigo_do_decisoes_em_vigor_num_intervalo_com_png",
       "valor": 0,
-      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo 74ce7657..642e9d56 (o UE2)",
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo f5788ac3..40588dd5 (o UE2)",
       "conhecido_positivo": {
         "o_que": "o guião antigo, no mesmo intervalo, saiu com 1 e «0x89» (decisoes-em-vigor-intervalo-ue2-antes.txt)",
         "encontrado": true

@@ -42,7 +42,7 @@ A tabela seguinte é a de TEMA_DO_ESTUDO, em design/especime-v3/maquetas/b1/faze
 | `evolucao-de-portugal-desde-1981` | `populacao` | sim |
 | `penalizacoes-por-reforma-antecipada-2026` | `seguranca-social-e-pensoes` | sim |
 
-Commits novos: 0. Cabeça inicial e final: `2bf8b238b912fcb89da74096281305c75f0a3b3c`, ramo `b1-2026-09-17`. Main de referência: `ca4a130709fcc77ee5828f98dc4d39ecf8f7f223`. Não houve commit de implementação, push ou mudança de ramo. O relatório e as medições ficam por confirmar em Git, na worktree pedida.
+Commits novos: 0. Cabeça inicial e final: `0820794dfb2b7fefa20c22beebf0eaa2b7455856`, ramo `b1-2026-09-17`. Main de referência: `8e6756795f88c58fe2364923cd4c962d849aeb15`. Não houve commit de implementação, push ou mudança de ramo. O relatório e as medições ficam por confirmar em Git, na worktree pedida.
 
 O «antes» foi construído nesta worktree: as fontes, os dados e a configuração de construção são iguais aos de main na referência indicada; as diferenças entre as cabeças são documentos e maquetas. O carimbo do dist identifica a cabeça da worktree. [Comparação guardada](referencia-peca1.json).
 

@@ -1,8 +1,8 @@
 # F1.4 · os nomes humanos, as datas, o índice do livro-razão · relatório do construtor
 
-*Ramo `nomes-2026-09-04`, tirado de `origin/main` em `86632082` e fundido com
-`8b2bbafc` (o F1.2b) antes de qualquer alteração; `1dbd1cef` (registo),
-`741e4915` (o `engines.node` e a regra do Vercel) e `4624db04` (a §1.98, que
+*Ramo `nomes-2026-09-04`, tirado de `origin/main` em `7a83334d` e fundido com
+`74502a14` (o F1.2b) antes de qualquer alteração; `d16403f3` (registo),
+`6776cae1` (o `engines.node` e a regra do Vercel) e `93be1ec0` (a §1.98, que
 fecha o vocabulário e muda o item 5 deste bloco) fundidos antes do empurrão. Construtor Claude Opus 5, 04.09.2026. O bloco
 é o F1.4 de `design/observatorio/BRIEF-F1.4-nomes-datas-indice.md`, e a origem é
 a auditoria de 02.09 (`AUDITORIA-2026-09-02.md`, linhas 66, 67, 68 e 72). Sem
@@ -265,7 +265,7 @@ publicação de nove trabalhos é uma decisão dele.
 ## 3 · G1 a G12, antes e depois
 
 **Como se mediu.** As duas colunas saem da MESMA régua, corrida sobre duas
-construções: a de `origin/main` em `8b2bbafc`, construída numa worktree à parte
+construções: a de `origin/main` em `74502a14`, construída numa worktree à parte
 (`<pasta-das-worktrees>/base-nomes-antes`), e a deste ramo. As duas leram 7 238
 páginas. A medição inteira de cada uma está no JSON da régua, e o «depois»
 correu com `--contra` sobre o «antes», que é o que fecha o G10.
@@ -298,7 +298,7 @@ entradas ainda contadas depois de escrever «divida». A correção é uma linha
 
 **O G6 estava verde antes deste bloco, e o relatório di-lo em vez de o
 reivindicar.** A auditoria escreveu «um marcador `[a verificar]` com destinos
-diferentes», e a medição sobre a construção de `8b2bbafc` mostra o contrário:
+diferentes», e a medição sobre a construção de `74502a14` mostra o contrário:
 todas as LIGAÇÕES do marcador de uma edição já apontavam para a mesma página. O
 que existia era uma segunda FORMA do marcador escrita à mão no gabarito do
 arquivo, que hoje não se rende (os doze trabalhos têm uma data só ou nenhuma) e
@@ -405,8 +405,8 @@ sair no mesmo ramo, e a razão não está no código: está na decisão.
 
 ## 7 · A cabeça e a corrida
 
-**`56cf933f`, verde na corrida `portao` n.º 33825298246.** É a cabeça deste ramo
-depois de fundir `0b51016d`, e os três comandos correram sobre a árvore dela
+**`8ec66cc2`, verde na corrida `portao` n.º 33825298246.** É a cabeça deste ramo
+depois de fundir `06bd7905`, e os três comandos correram sobre a árvore dela
 antes do empurrão, com os códigos lidos dos registos:
 
 | comando | código |
@@ -415,12 +415,12 @@ antes do empurrão, com os códigos lidos dos registos:
 | `npm run verify` | **0** (inclui a `check:indice`, a régua deste bloco) |
 | `npm run typecheck` | **0** |
 
-Uma corrida anterior, a 33824217134 sobre `e0c367ed`, foi CANCELADA pela regra de
+Uma corrida anterior, a 33824217134 sobre `a14d118f`, foi CANCELADA pela regra de
 concorrência do próprio portão quando o empurrão da fusão chegou: não caiu, foi
 substituída pela corrida da cabeça que se vai fundir, que é a que conta.
 
 *Esta secção é ela própria um commit, e por isso a cabeça que ele faz não é a que
-está escrita acima: é a mesma disciplina que o bloco F1.8 seguiu em `86632082`.
+está escrita acima: é a mesma disciplina que o bloco F1.8 seguiu em `7a83334d`.
 Os três comandos correram outra vez sobre a árvore deste commit antes do
 empurrão, e a corrida dele fica no registo do ramo.*
 
@@ -576,9 +576,9 @@ antigo), e o bloco `nomes` tem agora dezasseis. A régua da voz passou de 802 pa
 
 ### 10.6 · A cabeça e a corrida da segunda passagem
 
-**`cad7dc29`, verde na corrida `portao` n.º 33833716703**, das 03:34:46 às
+**`4f04bc47`, verde na corrida `portao` n.º 33833716703**, das 03:34:46 às
 03:55:16 UTC de 04.09.2026. Não houve fusão a fazer: `origin/main` continua em
-`0b51016d`, que já entrou neste ramo na primeira passagem (`56cf933f`).
+`06bd7905`, que já entrou neste ramo na primeira passagem (`8ec66cc2`).
 
 | comando | código |
 | --- | --- |

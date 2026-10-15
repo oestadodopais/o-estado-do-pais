@@ -42,7 +42,7 @@
     {
       "nome": "rotas_declaradas_antes",
       "valor": 35,
-      "comando": "git show 62ed13c6:src/lib/routes.mjs · as chaves de ROUTES",
+      "comando": "git show ad62f09e:src/lib/routes.mjs · as chaves de ROUTES",
       "conhecido_positivo": {
         "o_que": "a das correções é uma delas",
         "encontrado": true

@@ -5,7 +5,7 @@ import { execFileSync } from 'node:child_process';
 import { loadClaims } from '../../../../src/lib/ledger.mjs';
 import { recontarCorrecoes, conferirPrefixosDaHistoria } from './detetores-e0b.mjs';
 const pasta = 'design/especime-v3/medicoes/e0-2026-09-30';
-const base = '07549ee1e9ec2b39186f9e9f13eeac4914bf5e76';
+const base = '7a82c1477b1710292d23f7efdca7a367f407e134';
 export function provarDetetoresE0c() {
   const livros = loadClaims();
   const antes = recontarCorrecoes(livros);

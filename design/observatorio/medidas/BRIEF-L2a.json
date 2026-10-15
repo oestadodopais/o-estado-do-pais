@@ -1,7 +1,7 @@
 {
   "brief": "design/observatorio/BRIEF-L2a-o-mapa-primeiro.md",
   "guiao": "design/observatorio/medidas/BRIEF-L2a.py",
-  "cabeca_lida": "1395c9de",
+  "cabeca_lida": "f744d46c",
   "ordem_em_lugares": [
     "pesquisa",
     "regioes",
@@ -19,7 +19,7 @@
     {
       "nome": "pecas_de_lugares_antes_do_mapa",
       "valor": 3,
-      "comando": "git show 1395c9de:src/views/LugaresView.astro · a ordem de <Pesquisa, das duas listas e de <MapaRespira no documento",
+      "comando": "git show f744d46c:src/views/LugaresView.astro · a ordem de <Pesquisa, das duas listas e de <MapaRespira no documento",
       "conhecido_positivo": {
         "o_que": "a pesquisa vem antes do mapa",
         "encontrado": true
@@ -46,7 +46,7 @@
     {
       "nome": "seccoes_da_primeira_pagina_antes_dos_lugares",
       "valor": 2,
-      "comando": "git show 1395c9de:src/views/HomeView.astro · as <section class=…> por ordem até pp-lugares",
+      "comando": "git show f744d46c:src/views/HomeView.astro · as <section class=…> por ordem até pp-lugares",
       "conhecido_positivo": {
         "o_que": "a secção «O que se passa» vem primeiro",
         "encontrado": true

@@ -15,7 +15,7 @@ def cel(v):return str(v).replace('|','\\|').replace('\n',' ')
 m=json.loads((AQUI/'medidas.json').read_text())['rp1c']
 a=json.loads((AQUI/'acertos-rp1.json').read_text())
 cabeca=m['cabeca_do_codigo']
-commits=git('log','--reverse','--format=%H %s','334cc740..'+cabeca).splitlines()
+commits=git('log','--reverse','--format=%H %s','eaffd3c8..'+cabeca).splitlines()
 assert commits==m['commits_sitio'],'A lista do projeto não cobre os commits até à cabeça medida'
 motor_commits=subprocess.check_output(['git','log','--reverse','--format=%H %s','1d10b3f..HEAD'],cwd=registar.MOTOR,text=True).strip().splitlines()
 assert motor_commits==m['commits_motor'],'A lista do motor não cobre o ramo completo'
@@ -24,7 +24,7 @@ if head!=cabeca:
  assert git('rev-parse','HEAD^')==cabeca and git('show','-s','--format=%s','HEAD')==m['entrega']['titulo'],'Há commits depois dos portões que o relatório não lista'
  mudados=git('diff','--name-only',cabeca,'HEAD').splitlines()
  assert all(p.startswith('design/especime-v3/medicoes/rp1-2026-09-26/') for p in mudados),'O commit de entrega alterou código medido'
-antigo=registar.publico(subprocess.check_output(['git','show','42b3cadf:design/especime-v3/medicoes/rp1-2026-09-26/LEIA-ME.md'],cwd=RAIZ,text=True))
+antigo=registar.publico(subprocess.check_output(['git','show','d2de831b:design/especime-v3/medicoes/rp1-2026-09-26/LEIA-ME.md'],cwd=RAIZ,text=True))
 antigo=antigo.replace('`enquadramento-b2.json` guarda também os casos de `tests/pais/enquadramento-b2.mjs`.','`enquadramento-b2.json` guardava então apenas os casos do B2. A cobertura das réguas declaradas do RP1 foi acrescentada na peça RP1c; esta prova antiga não a cobria.')
 resultados=[
 ('1, 2, 3, 4, 12','São as cinco plantas do pacote, todas achadas; não se transportou nenhum desses estragos para o ramo. Registo: `design/especime-v3/critica/LEITURA-rp1-2026-09-26.plantas.json`.'),

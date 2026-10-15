@@ -1,5 +1,5 @@
 {
-  "cabeca_codigo": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
+  "cabeca_codigo": "d1affee7a57c73e316f663270ad778eb88afb321",
   "capturas": {
     "recibos_do_universo": 337,
     "recibos_captados": 11,
@@ -8,7 +8,7 @@
     "imagens_da_faixa": 10,
     "imagens": 120,
     "copias": 27,
-    "cabeca": "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f",
+    "cabeca": "d1affee7a57c73e316f663270ad778eb88afb321",
     "aceitacao": {
       "passou": true,
       "falhas": []

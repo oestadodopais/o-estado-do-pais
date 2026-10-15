@@ -102,7 +102,7 @@ const imagens = capturas?.resultados.map((r) => ({ ficheiro: r.ficheiro, confere
 medida('capturas', { total: imagens.length, resumos_conferidos: imagens.filter((r) => r.confere).length, problemas: capturas?.problemas ?? ['capturas por fazer'] }, imagens.some((r) => r.confere), 'O resumo de cada PNG é recalculado; o manifesto mede largura e transbordo.');
 const documentos = ['design/observatorio/ESTRUTURA-e-vocabulario-2026-09-17.md', 'design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md'];
 medida('documentos_atualizados', documentos.map((p) => ({ ficheiro: p, n1: fs.readFileSync(p, 'utf8').includes('N1') })), documentos.every((p) => fs.existsSync(p)), 'Dois documentos existentes, lidos em disco.');
-const ficheiros = [...new Set([...git('diff', '--name-only', '2cbc5cc46327697469347b98a2445494027861f4').split('\n'), ...git('ls-files', '--others', '--exclude-standard').split('\n')])].filter((p) => p && fs.existsSync(p) && fs.statSync(p).isFile());
+const ficheiros = [...new Set([...git('diff', '--name-only', 'a5139c5535ac4232bd9025fac4c1f8acb10050f8').split('\n'), ...git('ls-files', '--others', '--exclude-standard').split('\n')])].filter((p) => p && fs.existsSync(p) && fs.statSync(p).isFile());
 const fugas = ficheirosComDadosLocais(ficheiros);
 const privacidade = plantaDaPrivacidade();
 plantas.push(privacidade);

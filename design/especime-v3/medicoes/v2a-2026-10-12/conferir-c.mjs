@@ -5,7 +5,7 @@ import {execFileSync} from 'node:child_process';
 import {load} from 'js-yaml';
 import {loadClaims} from '../../../../src/lib/ledger.mjs';
 import {resultado} from '../../../../tests/linha/v2a.mjs';
-const base='96b6aaa9',claims=loadClaims();
+const base='8e92f6b9',claims=loadClaims();
 for(const id of new Set(resultado.resultados.map(r=>r.id))) {
   const old=load(execFileSync('git',['show',`${base}:ledger/claims/${id}.yml`],{encoding:'utf8'})),now=claims.get(id);
   assert.deepEqual([now.value,now.unit],[old.value,old.unit],`V2AC valor alterado: ${id}`);

@@ -1,8 +1,8 @@
 {
   "comando": "node design/especime-v3/medicoes/ex2-2026-10-06/medir-entrega.mjs",
-  "cabeca_lida": "8c3a08b9dcfb48595be70d6d47385b0427cc3b62",
-  "cabeca_codigo": "8c3a08b9dcfb48595be70d6d47385b0427cc3b62",
-  "base": "d1becbf8f167643ca8d53a4479f8f6bbee0f7183",
+  "cabeca_lida": "140f9458d0556248987d002652336d9d1a56891f",
+  "cabeca_codigo": "140f9458d0556248987d002652336d9d1a56891f",
+  "base": "83e7a1158ba065153db7c419b01d4222d26bdc56",
   "janela": {
     "inicio": "2026-09-30",
     "fim": "2026-10-06"
@@ -12,8 +12,8 @@
     "verify": 0,
     "typecheck": 0
   },
-  "cabeca_portoes": "8c3a08b9dcfb48595be70d6d47385b0427cc3b62",
-  "cabeca_fim": "8c3a08b9dcfb48595be70d6d47385b0427cc3b62",
+  "cabeca_portoes": "140f9458d0556248987d002652336d9d1a56891f",
+  "cabeca_fim": "140f9458d0556248987d002652336d9d1a56891f",
   "paginas": [
     {
       "lang": "pt",
@@ -449,11 +449,11 @@
   ],
   "ficheiros_protegidos_alterados": [],
   "commits": [
-    "e4d604147894941036937041c55fc6edcae9cd04 EX2-b: unificar as revisões e conferir as definições por grupo",
-    "7ec04a82836dd7693a00d18114c22fc12c7b3fd7 EX2-b: conservar os títulos publicados sem marca de tradução",
-    "e762dd43a25c3ad9b9e45c8b7218415ce0e50550 EX2-b: gerar o relatório inteiro e retirar o manifesto do construtor",
-    "421d0513befe6dcc517a46532bf8ab5adf83bf3b EX2-b: conservar e conferir as provas das plantas e das capturas",
+    "57df5897035084d55858184c3e1ddce144b62b74 EX2-b: unificar as revisões e conferir as definições por grupo",
+    "8bf196d3ea2f53d2b629e16fb729eccbd7bbc914 EX2-b: conservar os títulos publicados sem marca de tradução",
+    "20e47db33869beeb17865d9ce2c3e5092e80a52a EX2-b: gerar o relatório inteiro e retirar o manifesto do construtor",
+    "134b015428412afc38d23984ccf0c1ea90750b7a EX2-b: conservar e conferir as provas das plantas e das capturas",
     "92e31db8a378499fd98f805c99914bb9840895dd EX2-b: conferir os valores da frase sem exigir o risco antigo",
-    "8c3a08b9dcfb48595be70d6d47385b0427cc3b62 EX2-b: retirar a importação sem uso da página da semana"
+    "140f9458d0556248987d002652336d9d1a56891f EX2-b: retirar a importação sem uso da página da semana"
   ]
 }

@@ -37,26 +37,26 @@
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
 ### O sítio (`~/<projetos>/OEstadoDoPais/<worktrees>/registos-2026-09-30c`)
-- `main`: 88b1cfff · 2026-09-30T16:18:09+01:00 · §1.145: os estudos de Évora passam de seis a quatro (o brief E1 com o §0 medido, as duas leituras de fora do Opus e do Astra, a I18  (`git log -1 main`)
-- `origin/main`: 88b1cfff · 2026-09-30T16:18:09+01:00 · §1.145: os estudos de Évora passam de seis a quatro (o brief E1 com o §0 medido, as duas leituras de fora do Opus e do Astra, a I18  (`git log -1 origin/main`)
+- `main`: 68b6e4fb · 2026-09-30T16:18:09+01:00 · §1.145: os estudos de Évora passam de seis a quatro (o brief E1 com o §0 medido, as duas leituras de fora do Opus e do Astra, a I18  (`git log -1 main`)
+- `origin/main`: 68b6e4fb · 2026-09-30T16:18:09+01:00 · §1.145: os estudos de Évora passam de seis a quatro (o brief E1 com o §0 medido, as duas leituras de fora do Opus e do Astra, a I18  (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
-- ramos locais: `main 88b1cfff`, `registos-2026-09-30c 88b1cfff`  (`git branch`)
+- ramos locais: `main 68b6e4fb`, `registos-2026-09-30c 68b6e4fb`  (`git branch`)
 - ramos no remoto: `main`  (`git ls-remote --heads origin`)
-- worktree: `~/<projetos>/OEstadoDoPais 88b1cfff [main]`
-- worktree: `~/<projetos>/OEstadoDoPais/<worktrees>/registos-2026-09-30c 88b1cfff [registos-2026-09-30c]`
+- worktree: `~/<projetos>/OEstadoDoPais 68b6e4fb [main]`
+- worktree: `~/<projetos>/OEstadoDoPais/<worktrees>/registos-2026-09-30c 68b6e4fb [registos-2026-09-30c]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
-- 36739781601 · `88b1cfff` · main · portão · **completed / success** · criada 2026-09-30T15:50:29Z · atualizada 2026-09-30T16:02:53Z
-- 36737539998 · `88b1cfff` · registos-2026-09-30b · portão · **completed / success** · criada 2026-09-30T15:32:40Z · atualizada 2026-09-30T15:49:13Z
-- 36727884681 · `24ba5b17` · main · portão · **completed / success** · criada 2026-09-30T14:16:36Z · atualizada 2026-09-30T14:36:17Z
-- 36726101948 · `24ba5b17` · n1-2026-09-30 · portão · **completed / success** · criada 2026-09-30T14:02:34Z · atualizada 2026-09-30T14:15:04Z
-- 36680314716 · `1d9e5b2e` · main · portão · **completed / success** · criada 2026-09-30T06:50:00Z · atualizada 2026-09-30T07:00:33Z
-- 36679270199 · `1d9e5b2e` · registos-2026-09-30 · portão · **completed / success** · criada 2026-09-30T06:38:22Z · atualizada 2026-09-30T06:48:57Z
+- 36739781601 · `68b6e4fb` · main · portão · **completed / success** · criada 2026-09-30T15:50:29Z · atualizada 2026-09-30T16:02:53Z
+- 36737539998 · `68b6e4fb` · registos-2026-09-30b · portão · **completed / success** · criada 2026-09-30T15:32:40Z · atualizada 2026-09-30T15:49:13Z
+- 36727884681 · `341c5ee0` · main · portão · **completed / success** · criada 2026-09-30T14:16:36Z · atualizada 2026-09-30T14:36:17Z
+- 36726101948 · `341c5ee0` · n1-2026-09-30 · portão · **completed / success** · criada 2026-09-30T14:02:34Z · atualizada 2026-09-30T14:15:04Z
+- 36680314716 · `eac316d0` · main · portão · **completed / success** · criada 2026-09-30T06:50:00Z · atualizada 2026-09-30T07:00:33Z
+- 36679270199 · `eac316d0` · registos-2026-09-30 · portão · **completed / success** · criada 2026-09-30T06:38:22Z · atualizada 2026-09-30T06:48:57Z
 
 ### O que está no ar (`/version.json` do sítio publicado)
-- commit no ar: `88b1cfff` · construído em 2026-09-30T15:52:09.334Z · ref `main` · production
-- igual a `origin/main` (`88b1cfff`): **sim**
+- commit no ar: `68b6e4fb` · construído em 2026-09-30T15:52:09.334Z · ref `main` · production
+- igual a `origin/main` (`68b6e4fb`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
 ### O motor (`~/<projetos>/ResearchHub`)
@@ -84,4 +84,4 @@
 ## 5 · As horas da tarde de 30.09 (UTC)
 
 - **O N1.** O Codex gpt-6-astra das 09:04 às 10:31; a N1b até às 10:59; a N1c até às 12:26; a N1d até às 13:27 (a sessão acabou em 1 654 766 símbolos). As três leituras do Opus: a primeira lançada às 11:03, a segunda às 12:29, a terceira às 13:29. A aterragem: `main` às 14:16, a Vercel «Ready» às 14:23, a corrida de `main` verde às 14:36, o guião declarou às 14:37.
-- **O E1, o registo.** As duas leituras de fora lançadas às 14:37: o Codex gpt-6-astra acabou às 14:44 (129 013 símbolos); o Claude Opus 5.5 às 15:00 (340 386). O guião do §0 às 15:02; os portões da primeira cabeça das 15:17 (o `ledger:check` recusou o campo Afecta) e da segunda das 15:18 às 15:32; a corrida do ramo verde às 15:49; `main` às 15:50, a Vercel «Ready» com `88b1cfff` no ar às 15:56, `verify:deploy` a 0 logo a seguir, a corrida de `main` verde às 16:02, o guião declarou às 16:03.
+- **O E1, o registo.** As duas leituras de fora lançadas às 14:37: o Codex gpt-6-astra acabou às 14:44 (129 013 símbolos); o Claude Opus 5.5 às 15:00 (340 386). O guião do §0 às 15:02; os portões da primeira cabeça das 15:17 (o `ledger:check` recusou o campo Afecta) e da segunda das 15:18 às 15:32; a corrida do ramo verde às 15:49; `main` às 15:50, a Vercel «Ready» com `68b6e4fb` no ar às 15:56, `verify:deploy` a 0 logo a seguir, a corrida de `main` verde às 16:02, o guião declarou às 16:03.

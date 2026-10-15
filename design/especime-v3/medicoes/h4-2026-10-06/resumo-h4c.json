@@ -1,22 +1,22 @@
 {
   "comando": "python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4c.py",
-  "cabeca_codigo": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
-  "partida": "c86015929c91280c07be98a07fae1ad66fc1dde6",
+  "cabeca_codigo": "8b30451fef33009019af39dbcdb3eb3bfcb0768c",
+  "partida": "c9866595efc2c249b72bf1c28512aa14b713e229",
   "commits": [
     {
-      "cabeca": "79f66ed4ce43a4d8fb35f32e636c88359edc01e9",
+      "cabeca": "7d92a097582c34cdcefd3c4c70d6a1e6dcd8454d",
       "assunto": "H4-c: regista no brief os limites decididos pela H4-5."
     },
     {
-      "cabeca": "b0eea25d6309e1b74668e3cf1ba9585eeb59b241",
+      "cabeca": "9456eb0ade390375bb912e7d1f80c50eff9b261e",
       "assunto": "H4-c: protege os limites por largura e prova a quarta linha."
     },
     {
-      "cabeca": "54a71206d35e2d3f84df76a4a030d2acd05e797e",
+      "cabeca": "c553b18b704f9de560c7f90b1edd4160d042691d",
       "assunto": "H4-c: prepara as medidas por largura e o fecho das provas."
     },
     {
-      "cabeca": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
+      "cabeca": "8b30451fef33009019af39dbcdb3eb3bfcb0768c",
       "assunto": "H4-c: distingue a janela da coluna nos registos da TM4."
     }
   ],
@@ -25,8 +25,8 @@
     "verify": 0,
     "typecheck": 0
   },
-  "comando_dos_commits": "git log --reverse --format='%H %s' c86015929c91280c07be98a07fae1ad66fc1dde6..45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
-  "comando_das_fontes": "git diff --name-only c86015929c91280c07be98a07fae1ad66fc1dde6 45c5a6cd000b9dbdaebe3aee310b6122c25aa512 -- src",
+  "comando_dos_commits": "git log --reverse --format='%H %s' c9866595efc2c249b72bf1c28512aa14b713e229..8b30451fef33009019af39dbcdb3eb3bfcb0768c",
+  "comando_das_fontes": "git diff --name-only c9866595efc2c249b72bf1c28512aa14b713e229 8b30451fef33009019af39dbcdb3eb3bfcb0768c -- src",
   "fontes_alteradas": [],
   "limites_linhas_telefone": {
     "320": 3,

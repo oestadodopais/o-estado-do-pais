@@ -166,7 +166,7 @@ def main():
     cabecas = {'motor': git(motor, 'rev-parse', 'HEAD'), 'motor_codigo': codigo,
         'sitio_antes_fecho': git(SITIO, 'rev-parse', 'HEAD'), 'sitio_codigo': sitio_codigo,
         'commits_motor': git(motor, 'log', '--reverse', '--format=%H %s', 'f8e0784..HEAD').splitlines(),
-        'commits_sitio': git(SITIO, 'log', '--reverse', '--format=%H %s', '241e15d9..HEAD').splitlines()}
+        'commits_sitio': git(SITIO, 'log', '--reverse', '--format=%H %s', '256806ac..HEAD').splitlines()}
     guardar('cabecas-b.json', cabecas)
     guardar('aceitacao-b.json', {'criterios': aceites, 'corridas_finais': medidas_finais,
         'por_fonte': {k: sum(e['origem'] == k for e in atuais) for k in reg['entradas']}, 'por_tipo': {f['tipo']: sum(e['tipo'] == f['tipo'] for e in atuais) for f in reg['entradas'].values()},

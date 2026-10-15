@@ -3,7 +3,7 @@
   "medidas": {
     "inicio_da_passagem": {
       "valor": "2026-09-29T20:07:33Z",
-      "comando": "git show -s --format=%cI 96a6035e (o commit da leitura a frio)",
+      "comando": "git show -s --format=%cI 831968b1 (o commit da leitura a frio)",
       "o_que": "a hora leu-se",
       "encontrado": true
     },

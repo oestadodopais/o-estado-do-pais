@@ -1,13 +1,13 @@
 {
   "sitio": {
-    "cabeca": "718ce94b463c9063faff35980888541edd1c0180",
+    "cabeca": "3c8867b087a92736d40a10f73fb184fa78a1f479",
     "estado": "",
     "ultimos_commits": [
-      "718ce94b Os lançadores ligam a rede da sandbox por CODEX_REDE=1 e recusam lançar com um node_modules ligado para fora da worktree; o prompt comum diz que o node_modules já está instalado e que a rede vem ligada quando a passagem toca o motor (a primeira passagem com a aprovação a never parou no §0 por isto)",
-      "5e3776c2 Higiene: registar a paragem obrigatória nos portões iniciais",
-      "44545189 Os briefs V2-a e V2-b com os guiões do §0 (BRIEF-V2a.py, BRIEF-V2b.py), o mandato do bloco de higiene de 13.10.2026 e o varrimento de vigilância de 13.10",
-      "d86ed2e0 A tranca dos portões aponta-se por OEDP_TRANCA só no ensaio (tests/leituras/portoes.py procurava-a no Git comum e fechou a corrida 38440931657); a tranca real fica em <temporario>, e a §1.190 regista a corrida vermelha",
-      "4156dd3f As alavancas 1, 2 e 4 do plano de eficiência (§1.190, M78 a M81): o construtor comita pelo escrivão e a sandbox não escala (sem --approve-for-me, aprovação a never, a tranca dos portões em <temporario>), o invólucro curto.sh e o prompt comum dos construtores (saídas no disco, sem sondagem, leitura por grep), o pontos.py nos lançadores (os pontos da semana antes e depois de cada passagem), e o rasto do pacote anonimizado e recusado se sobrar um caminho"
+      "3c8867b0 Os lançadores ligam a rede da sandbox por CODEX_REDE=1 e recusam lançar com um node_modules ligado para fora da worktree; o prompt comum diz que o node_modules já está instalado e que a rede vem ligada quando a passagem toca o motor (a primeira passagem com a aprovação a never parou no §0 por isto)",
+      "87cc869b Higiene: registar a paragem obrigatória nos portões iniciais",
+      "869d8690 Os briefs V2-a e V2-b com os guiões do §0 (BRIEF-V2a.py, BRIEF-V2b.py), o mandato do bloco de higiene de 13.10.2026 e o varrimento de vigilância de 13.10",
+      "c0dfc960 A tranca dos portões aponta-se por OEDP_TRANCA só no ensaio (tests/leituras/portoes.py procurava-a no Git comum e fechou a corrida 38440931657); a tranca real fica em <temporario>, e a §1.190 regista a corrida vermelha",
+      "4736b3da As alavancas 1, 2 e 4 do plano de eficiência (§1.190, M78 a M81): o construtor comita pelo escrivão e a sandbox não escala (sem --approve-for-me, aprovação a never, a tranca dos portões em <temporario>), o invólucro curto.sh e o prompt comum dos construtores (saídas no disco, sem sondagem, leitura por grep), o pontos.py nos lançadores (os pontos da semana antes e depois de cada passagem), e o rasto do pacote anonimizado e recusado se sobrar um caminho"
     ]
   },
   "motor": {

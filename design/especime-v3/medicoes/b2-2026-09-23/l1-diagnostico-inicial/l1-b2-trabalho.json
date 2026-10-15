@@ -3,7 +3,7 @@
   "trabalho": true,
   "estatuto": "árvore de trabalho, sem atribuir a construção a um commit",
   "dist_construido_de": null,
-  "antes_cabeca": "7f65829935e838c29129be0187072c5c8d87c39f",
+  "antes_cabeca": "73c5c3fb1da61b0ab5ea3e33e02dc0ae8c1b3e9c",
   "regua": "check:lugar original de cada árvore, AMOSTRA=100000, com composição independente conferida",
   "codigos": {
     "antes": 0,

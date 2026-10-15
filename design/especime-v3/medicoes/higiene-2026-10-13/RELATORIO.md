@@ -35,7 +35,7 @@ O invólucro `curto.sh` conservou o registo inteiro e devolveu o código do proc
 
 ## Retoma de 13.10.2026
 
-A retoma parte da cabeça do sítio `718ce94b463c9063faff35980888541edd1c0180` e do motor `2d69712b18404d2e45ebfe34e16f486fddd01ea6`, ambas com a árvore limpa. O estado está em `antes-retoma/estado-inicial.json`. Os mesmos invólucros correram em pastas novas temporárias; os registos e códigos ficam em `antes-retoma/sitio/` e `antes-retoma/motor/`.
+A retoma parte da cabeça do sítio `3c8867b087a92736d40a10f73fb184fa78a1f479` e do motor `2d69712b18404d2e45ebfe34e16f486fddd01ea6`, ambas com a árvore limpa. O estado está em `antes-retoma/estado-inicial.json`. Os mesmos invólucros correram em pastas novas temporárias; os registos e códigos ficam em `antes-retoma/sitio/` e `antes-retoma/motor/`.
 
 Os quatro códigos foram lidos dos ficheiros escritos após a saída dos processos:
 
@@ -58,7 +58,7 @@ A chamada também regista `browserType.launch: Target page, context or browser h
 
 ## Segunda retoma, 13.10.2026
 
-O novo circuito foi `sh scripts/leituras/portoes-pelo-escrivao.sh design/especime-v3/medicoes/higiene-2026-10-13/antes-retoma-2 motor`. Os quatro ficheiros `build.codigo`, `verify.codigo`, `typecheck.codigo` e `motor.codigo` dessa pasta foram lidos e contêm zero. A cabeça do sítio era `b59ce222aeeecfb8d72e6d6e5db5bd91f574f27c`; a do motor era `2d69712b18404d2e45ebfe34e16f486fddd01ea6`. Só depois destes resultados começaram as correções.
+O novo circuito foi `sh scripts/leituras/portoes-pelo-escrivao.sh design/especime-v3/medicoes/higiene-2026-10-13/antes-retoma-2 motor`. Os quatro ficheiros `build.codigo`, `verify.codigo`, `typecheck.codigo` e `motor.codigo` dessa pasta foram lidos e contêm zero. A cabeça do sítio era `2c40ea10e32bab1ba9a4f7fb98cad6b7797a7211`; a do motor era `2d69712b18404d2e45ebfe34e16f486fddd01ea6`. Só depois destes resultados começaram as correções.
 
 ## Questões
 
@@ -125,45 +125,45 @@ HIG-12: a primeira tentativa final em `depois/` terminou com construção 1, ver
 
 | Repositório | Cabeça de código conferida | Entrega |
 |---|---|---|
-| Sítio | `f44f380f160867fc3e83fbe64bd33b087e25ee38` | Capturas b: `1978aff82e2eb25ad4cca2b45ccf5ceb6736686a`. Fecho: o commit que contém esta atualização do relatório; hash confirmado na resposta. |
+| Sítio | `8797c798c33c9e86c55501cbcbf1b57e54cad49f` | Capturas b: `9113490aa029ce37840392cb355ce651715916a1`. Fecho: o commit que contém esta atualização do relatório; hash confirmado na resposta. |
 | Motor | `b44454997a8230c8de7e1a9f481c17371da23773` | `b44454997a8230c8de7e1a9f481c17371da23773` |
 
 As cabeças de início e fim dos portões são iguais. Os commits posteriores do sítio alteram guiões, medições, provas e o relatório; não alteram as páginas construídas. A lista anterior ao primeiro fecho está em `commits.json`. A lista abaixo acrescenta os commits da direção e desta retoma; o último commit guarda esta atualização do relatório.
 
 ### Commits do sítio
 
-* `fb4c9d0514a54f834e6d610f6e341a16df9c6223`: Higiene ER1-12: retirar a diferença tautológica da medição.
-* `2485aba5d754c3d4319f4d88aba30a35760fa318`: Higiene EX1: esclarecer as contas e corrigir o ramo do défice.
-* `979e82f094c72cd3d0ab14cda799cf834db72cb4`: Higiene RP4N-12: retirar os caminhos locais dos briefs e do extrator.
-* `082a0447fac2e78788121b0601672525f641171f`: Higiene RP4N-19: medir as mensagens das exceções históricas.
-* `afc8e509f81fff5daf1bf33eaf5f0ff72b885226`: Higiene RP4N-20: inventariar a ausência de leitura na fonte.
-* `cceec06270e0f7cb6bdf731b50902b03ba3e6e41`: Higiene RP4N: corrigir metadados e distinguir as legendas seladas.
-* `3b8c22cd7cbb7ccea9b56970f6c581b7c2e2a9a5`: Higiene RP4N-22: conservar inteiro o rótulo da ligação da prova.
-* `6b26d42970d5f3cc5fe6992ad99f7d2899492f9e`: Higiene RP4N: esclarecer a prova e os custos das passagens i e j.
-* `7763f3816583d86cb0466be5e21600bc8b5b9ae3`: Higiene JD1-11: restaurar e localizar as âncoras revertidas.
-* `947e247a939d7463c0296d0e4a8e102ac8661591`: Higiene JD1-12: documentar o âmbito comum das leituras.
-* `5b3dd6b848b4716ee52af35d3ece3bb8f2713122`: Higiene JD1: completar a comparação e explicitar a exclusão do perímetro.
-* `f2327f60e192cba6502145cbbd67f3b25d7f9922`: Higiene V1-39: ler as duas corridas reais nos recibos gravados.
-* `a38b2dc9ba7936ca3cf1e95bbe4f4fbdd84ef8ff`: Higiene: documentar o circuito do escrivão no mapa.
-* `dd2cdf9a5dba9003121a973d413d0a369b05ca2e`: Higiene RP4N-13: conservar o tipo textual da descrição.
-* `737742631ae6be193209d260aa1c1e7a2e314958`: Higiene RP4N-22: medir palavras partidas na ligação da prova.
-* `19afc31c4952b8fab25852f931c4181291a226df`: Higiene RP4N-20: registar as cadeias em entradas do inventário.
-* `674160c575a3d3b59dde06adad4c037e269d6980`: Higiene: guardar a retoma verde e as provas das correções.
-* `b2ed28aa82b14f5a74d5f82acdebf726541ef8a1`: Higiene RP4N-13: exigir o controlo limpo antes das plantas dos metadados.
-* `5d3edf75265d2958000f0a76a9432934079a5aae`: Higiene JD1: apontar as referências ao literal e conferir os títulos documentais.
-* `fe8eae1224eae34e384e98a0a7b94ea4248f996a`: Higiene JD1-16: ajustar a redação inglesa à régua da voz.
-* `996a388918d1d4183d2d00700bdd62157f0b0fa8`: Higiene: conservar a primeira tentativa final e a correção da voz.
+* `f2bb289e4563fd570fb0cbcef818c8f67c9cc54d`: Higiene ER1-12: retirar a diferença tautológica da medição.
+* `7b17e59746f9ec17877656585386670e68d3bf85`: Higiene EX1: esclarecer as contas e corrigir o ramo do défice.
+* `7d004ee895d1fed79b65c9fc09ca9f65c4a9fd06`: Higiene RP4N-12: retirar os caminhos locais dos briefs e do extrator.
+* `34fa8cb81ecd0a3a693c0c3ad0218b3f2104ca09`: Higiene RP4N-19: medir as mensagens das exceções históricas.
+* `04241e476526d77410f318fe1407bf360673bf7d`: Higiene RP4N-20: inventariar a ausência de leitura na fonte.
+* `46bd27d3e661fb599460ca2a9c3d1c37119c1e46`: Higiene RP4N: corrigir metadados e distinguir as legendas seladas.
+* `8b27c76a2974bb0ab4d6f300cd925e1e4068879b`: Higiene RP4N-22: conservar inteiro o rótulo da ligação da prova.
+* `344cedae22235378f981c4cb7cc30a91865705a9`: Higiene RP4N: esclarecer a prova e os custos das passagens i e j.
+* `4ed01654fe1c45812af061e0e61eb051e4cb754c`: Higiene JD1-11: restaurar e localizar as âncoras revertidas.
+* `6ea12e913650dbba2e589692053350ad57f6c7cc`: Higiene JD1-12: documentar o âmbito comum das leituras.
+* `3097d8b1621e6ef859c5407ce6b45ca3b047162c`: Higiene JD1: completar a comparação e explicitar a exclusão do perímetro.
+* `a0ac17ca298f98fc8069a157d45ea04b39c8c8ae`: Higiene V1-39: ler as duas corridas reais nos recibos gravados.
+* `060651485999eabe5692b0f212a9a0a57d4d2708`: Higiene: documentar o circuito do escrivão no mapa.
+* `70b7106ef11aed033e1dfa72a700831838259378`: Higiene RP4N-13: conservar o tipo textual da descrição.
+* `1e66663d51bb60c0fe022133a4cedfdd899d456d`: Higiene RP4N-22: medir palavras partidas na ligação da prova.
+* `29c78ef3c6dd9e6097e893a5dc0307c67a5590bb`: Higiene RP4N-20: registar as cadeias em entradas do inventário.
+* `04728a554e603ea843a93c113e2394806e7bdcdb`: Higiene: guardar a retoma verde e as provas das correções.
+* `4fa9773756f2427a06b43e0c77e5c9271f040c0b`: Higiene RP4N-13: exigir o controlo limpo antes das plantas dos metadados.
+* `ae368a7b8536143b0b20691488180c314d5888e3`: Higiene JD1: apontar as referências ao literal e conferir os títulos documentais.
+* `c6f5954a7810eba771cb9446f447e4b223a76643`: Higiene JD1-16: ajustar a redação inglesa à régua da voz.
+* `621e8accd61221e0c706a351283b181c33770d4e`: Higiene: conservar a primeira tentativa final e a correção da voz.
 
-* `bbd9b1de10f19b19928eda81b0a8b4e01f24ef45`: Higiene: fechar relatório e provas dos portões finais.
-* `a504f9c7cded634c5a10c8aab282c8ef7956bcbf`: O escrivão captura as páginas fora da sandbox a pedido do construtor (capturar-pelo-escrivao.sh, só o captar.mjs do repositório, sobre o dist da worktree): o navegador não arranca dentro dela, como a V2-a e a higiene mostraram.
-* `73ada2e93ceb9a7329f247b64407bbeedf547bf4`: Os guiões do §0 dos briefs V2-a e V2-b medem a cabeça presa (44545189) e não HEAD: no GitHub o portão dos briefs reexecuta-os, e as contagens do livro mudam quando o V2-a aterra.
-* `f88f4f52e465a3371e172b12640ba002e70dd65c`: Higiene: guardar as capturas finais pelo escrivão.
+* `65d8a75ebc943a28b9fdc41cb557737818dd02fa`: Higiene: fechar relatório e provas dos portões finais.
+* `ca0f790e29b108de3a853ae53586b03b7394a5cf`: O escrivão captura as páginas fora da sandbox a pedido do construtor (capturar-pelo-escrivao.sh, só o captar.mjs do repositório, sobre o dist da worktree): o navegador não arranca dentro dela, como a V2-a e a higiene mostraram.
+* `c37c96f52ced18a828af251925573b91034363cb`: Os guiões do §0 dos briefs V2-a e V2-b medem a cabeça presa (869d8690) e não HEAD: no GitHub o portão dos briefs reexecuta-os, e as contagens do livro mudam quando o V2-a aterra.
+* `a0bf2a9f99d349645292b61e3a60d10250d7ca53`: Higiene: guardar as capturas finais pelo escrivão.
 
-* `100f724bc311b52133b79c14d923742ef9b6b5cd`: Higiene: fechar a retoma das capturas no relatório.
-* `0a5c74067435e4e1887b97b4b7cf53fc4c2f2e7d`: Higiene: a leitura a frio pelo Opus (cinco plantas em cinco; dois Major reais: a frase da ausência nos metadados, e o escrivão que deixava de bater durante um commit), o registo das plantas, o mandato da passagem de correção, e o escrivão a bater enquanto os hooks de um commit correm (provado com um hook de quarenta e cinco segundos).
-* `064e9431cd3bb3f0f72eba5abd7eddf9692dc902`: Higiene b: declarar ausências e corrigir o alcance das provas.
-* `f44f380f160867fc3e83fbe64bd33b087e25ee38`: Higiene b: registar as provas preparatórias antes dos portões.
-* `1978aff82e2eb25ad4cca2b45ccf5ceb6736686a`: Higiene b: guardar os portões verdes e as capturas finais.
+* `80af5c2a17b421dae7e40f376efcd0a587fc96c4`: Higiene: fechar a retoma das capturas no relatório.
+* `1d091fcb3bc4a3c0975c3eadafa1958b7860780d`: Higiene: a leitura a frio pelo Opus (cinco plantas em cinco; dois Major reais: a frase da ausência nos metadados, e o escrivão que deixava de bater durante um commit), o registo das plantas, o mandato da passagem de correção, e o escrivão a bater enquanto os hooks de um commit correm (provado com um hook de quarenta e cinco segundos).
+* `792bdc78e641c94d76fabd1821a003dbb6ea1789`: Higiene b: declarar ausências e corrigir o alcance das provas.
+* `8797c798c33c9e86c55501cbcbf1b57e54cad49f`: Higiene b: registar as provas preparatórias antes dos portões.
+* `9113490aa029ce37840392cb355ce651715916a1`: Higiene b: guardar os portões verdes e as capturas finais.
 
 ### Commits do motor
 
@@ -197,11 +197,11 @@ HIG-13: não substituir a captura pedida por uma imagem antiga nem contornar a s
 
 HIG-14: usar o novo serviço `capturar-pelo-escrivao.sh`, disponibilizado pela direção, sobre o `dist/` já conferido. Não repetir os portões nem alterar páginas, dados ou código. HIG-13 conserva a decisão da tentativa recusada; a falta de capturas ficou resolvida nesta retoma.
 
-Comando executado: `sh scripts/leituras/capturar-pelo-escrivao.sh design/especime-v3/capturas/higiene-2026-10-13/pedido-entrega.json design/especime-v3/capturas/higiene-2026-10-13/entrega`. O cliente devolveu zero; `entrega/capturas.codigo` guarda esse resultado e `entrega/capturas.json` tem `ok: true`, sem falhas, com a cabeça completa `996a388918d1d4183d2d00700bdd62157f0b0fa8`, igual à de `dist/version.json`.
+Comando executado: `sh scripts/leituras/capturar-pelo-escrivao.sh design/especime-v3/capturas/higiene-2026-10-13/pedido-entrega.json design/especime-v3/capturas/higiene-2026-10-13/entrega`. O cliente devolveu zero; `entrega/capturas.codigo` guarda esse resultado e `entrega/capturas.json` tem `ok: true`, sem falhas, com a cabeça completa `621e8accd61221e0c706a351283b181c33770d4e`, igual à de `dist/version.json`.
 
 Foram guardadas 70 capturas de página e 80 recortes: sete páginas, nas edições portuguesa e inglesa, a 390, 768, 1 024, 1 280 e 1 600 px. O pedido enumera os recibos de amortizações, juros de 2024 e 2025, ministério da Saúde, penalização legal e saldo natural, e a explicação do dinheiro do Estado. Cada imagem foi conferida pelo seu resumo criptográfico; todas as páginas responderam sem erros, pedidos externos ou transbordo horizontal. Foram lidos visualmente os quatro recortes da ligação à prova a 390 e 1 280 px, nas duas edições, e uma amostra dos recibos e da explicação. As palavras «Abrir na página 273» e «Open at page 273» aparecem inteiras.
 
-As capturas foram comitadas primeiro, em `f88f4f52e465a3371e172b12640ba002e70dd65c`. Só depois se atualizou este relatório. Os códigos da última corrida foram novamente lidos de `depois-2/build.codigo`, `depois-2/verify.codigo`, `depois-2/typecheck.codigo` e `depois-2/motor.codigo`: todos zero. São os resultados já obtidos sobre as cabeças de código indicadas acima, não uma corrida nova sobre os commits de documentação e guiões.
+As capturas foram comitadas primeiro, em `a0bf2a9f99d349645292b61e3a60d10250d7ca53`. Só depois se atualizou este relatório. Os códigos da última corrida foram novamente lidos de `depois-2/build.codigo`, `depois-2/verify.codigo`, `depois-2/typecheck.codigo` e `depois-2/motor.codigo`: todos zero. São os resultados já obtidos sobre as cabeças de código indicadas acima, não uma corrida nova sobre os commits de documentação e guiões.
 
 ## Ficheiros do motor corrigidos pelo §2
 
@@ -305,7 +305,7 @@ As capturas foram comitadas primeiro, em `f88f4f52e465a3371e172b12640ba002e70dd6
 
 ## A passagem de correção
 
-A leitura a frio e o mandato b foram recebidos em `0a5c7406`. Os achados 1, 2, 3, 4 e 7 eram plantas nas cópias do pacote e não foram tratados como defeitos do ramo. A contagem da primeira entrega continua em 70 capturas de página, conferida em `entrega/capturas.json`.
+A leitura a frio e o mandato b foram recebidos em `1d091fcb`. Os achados 1, 2, 3, 4 e 7 eram plantas nas cópias do pacote e não foram tratados como defeitos do ramo. A contagem da primeira entrega continua em 70 capturas de página, conferida em `entrega/capturas.json`.
 
 HIG-15, achado 5: os dois metadados dizem «Campos da proveniência por confirmar na fonte» ou «Provenance fields unconfirmed at the source» quando a linha tem esses campos. O comentário datado voltou. O portão de HTML usa uma régua independente do compositor; quatro plantas retiram a oração, uma por campo e língua, e são recusadas. A prova está na conferência final e em `b/metadados.json`; as capturas do saldo natural estão em `entrega-b/`.
 
@@ -315,7 +315,7 @@ HIG-17, achado 9: saiu a frase circular sobre a conta por ministério. A descri�
 
 HIG-18, achados 6 e 10: as instruções do motor usam `python3 -m venv .venv` e `.venv/bin/python -m pip`. Só os comentários mudaram, não os pinos de versões. O commit `b44454997a8230c8de7e1a9f481c17371da23773` passou pelo `comitar.sh` corrigido: código 0, 569,256 segundos medidos desde a chamada até à resposta do cliente. O cliente aguardou o hook até ao resultado, sem sair com 3; a saída e a duração estão em `b/motor-commit.json`.
 
-HIG-19, achado 11: as capturas finais incluem também `custo-do-stock-da-divida-direta-2025` e `juros-das-administracoes-publicas-pib-2025`. O pedido `pedido-entrega-b.json` enumera nove páginas nas duas edições; o escrivão captou as cinco larguras, incluindo 390 e 1 280 px, sobre a cabeça `f44f380f160867fc3e83fbe64bd33b087e25ee38`. O recibo em `entrega-b/capturas.json` confirma 90 capturas de página e 100 recortes, sem falhas. Foram conferidos os resumos criptográficos dos 190 PNG e a ausência de transbordo horizontal nas páginas. Foram lidos visualmente os recortes dos dois recibos acrescentados, do saldo natural e da explicação, em português a 390 px e em inglês a 1 280 px. As capturas antigas ficam como história da primeira entrega.
+HIG-19, achado 11: as capturas finais incluem também `custo-do-stock-da-divida-direta-2025` e `juros-das-administracoes-publicas-pib-2025`. O pedido `pedido-entrega-b.json` enumera nove páginas nas duas edições; o escrivão captou as cinco larguras, incluindo 390 e 1 280 px, sobre a cabeça `8797c798c33c9e86c55501cbcbf1b57e54cad49f`. O recibo em `entrega-b/capturas.json` confirma 90 capturas de página e 100 recortes, sem falhas. Foram conferidos os resumos criptográficos dos 190 PNG e a ausência de transbordo horizontal nas páginas. Foram lidos visualmente os recortes dos dois recibos acrescentados, do saldo natural e da explicação, em português a 390 px e em inglês a 1 280 px. As capturas antigas ficam como história da primeira entrega.
 
 HIG-20: a primeira chamada dos portões da passagem b devolveu 9: `portoes: árvore suja; registe as mudanças antes de conferir a cabeça do código`. O relatório e as provas preparatórias estavam por comitar. Nenhum dos quatro portões correu e nenhum código individual foi escrito em `depois-b/`. As mudanças foram registadas e o pedido foi repetido em `depois-b-2/`; `b/portoes-tentativa-1.json` conserva a recusa. A tranca de outra corrida foi observada, mas não prova que este pedido tenha esperado por ela.
 

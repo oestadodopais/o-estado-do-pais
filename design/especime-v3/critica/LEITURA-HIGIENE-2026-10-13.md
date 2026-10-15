@@ -1,6 +1,6 @@
 # Leitura a frio do bloco de higiene de 13.10.2026
 
-*Lançada pelo lugar de direção às 21:16 UTC sobre o pacote do sítio de `44545189` a `100f724b` (a passagem de higiene do Codex `gpt-6-astra` em `high`, as suas três retomas na mesma sessão, e os commits do lugar de direção com os guiões do lançamento) e do motor de `2d69712` a `6bd8b70a`. O leitor: o Claude Opus 5.5 (a definição `leitor`, M26), em `high` porque o bloco é mecânico, 208 603 símbolos pelo total que a ferramenta reporta, 52 chamadas de ferramentas, sete minutos. As cinco plantas do lugar de direção (`PLANTAS-HIGIENE-2026-10-13.json`, registadas por sha256, quatro dentro dos hunks do diff e uma no relatório, pela M76) foram as cinco mordidas: os achados 1, 2, 3, 4 e 7. Os achados 5 e 6 (Major) e 8 a 11 (Minor) são reais; o 6 é do lugar de direção (o escrivão deixava de bater durante um commit) e foi corrigido pelo lugar de direção antes da passagem de correção; os outros estão decididos no mandato `MANDATO-HIGIENE-b-2026-10-13.md`. O texto do leitor segue como foi entregue, em inglês.*
+*Lançada pelo lugar de direção às 21:16 UTC sobre o pacote do sítio de `869d8690` a `80af5c2a` (a passagem de higiene do Codex `gpt-6-astra` em `high`, as suas três retomas na mesma sessão, e os commits do lugar de direção com os guiões do lançamento) e do motor de `2d69712` a `6bd8b70a`. O leitor: o Claude Opus 5.5 (a definição `leitor`, M26), em `high` porque o bloco é mecânico, 208 603 símbolos pelo total que a ferramenta reporta, 52 chamadas de ferramentas, sete minutos. As cinco plantas do lugar de direção (`PLANTAS-HIGIENE-2026-10-13.json`, registadas por sha256, quatro dentro dos hunks do diff e uma no relatório, pela M76) foram as cinco mordidas: os achados 1, 2, 3, 4 e 7. Os achados 5 e 6 (Major) e 8 a 11 (Minor) são reais; o 6 é do lugar de direção (o escrivão deixava de bater durante um commit) e foi corrigido pelo lugar de direção antes da passagem de correção; os outros estão decididos no mandato `MANDATO-HIGIENE-b-2026-10-13.md`. O texto do leitor segue como foi entregue, em inglês.*
 
 ## Blocking
 
@@ -32,7 +32,7 @@
 
 ## «What is fine»
 
-- Final gates are all 0 at heads `996a3889` and `6bd8b70a`, with the start and end heads equal. Reference: design/especime-v3/medicoes/higiene-2026-10-13/depois-2/build.codigo.
+- Final gates are all 0 at heads `621e8acc` and `6bd8b70a`, with the start and end heads equal. Reference: design/especime-v3/medicoes/higiene-2026-10-13/depois-2/build.codigo.
 - The plants bite in the log: metadata ×4, labels ×6, FC 36/36, and the explanation at 42/43 (the one non-biting plant is marked as not applicable). Reference: depois-2/verify.log:2459-2469.
 - The three ministry labels are distinct and are the source's own words, in both editions. Reference: built/livro-razao/oe-2026-cem-euros-ministerio-administracao-interna/index.html.
 - JD1-17's «O nome na fonte» shows the source's own header «2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada)». Reference: built/livro-razao/amortizacoes-e-anulacoes-de-divida-fundada-2025/index.html.

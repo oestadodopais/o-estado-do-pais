@@ -1,6 +1,6 @@
 # UE2 · a página da União como a página dos países: relatório do construtor
 
-*Bloco UE2, 02.10.2026, pelo brief `design/observatorio/BRIEF-UE2-a-pagina-dos-paises.md`, pela §1.143 (o UE2 na ordem dos blocos) e pela leitura a frio do K2 (o achado 6, os termos técnicos dos cartões da União). Construtor: Claude Opus 5.5 (a definição `construtor`), na worktree do ramo `ue2-2026-10-02`, sobre a cabeça de partida `ec1a00db`, sem subagentes. Cada número deste relatório está num ficheiro desta pasta, quase todos em `medidas.json`, escrito por `medir-ue2.mjs`, com o comando e um conhecido-positivo em cada medida. As medidas do `dist/` em `medidas.json` são da construção da corrida final dos portões, a da cabeça `da6d2d91`, o commit deste relatório (`construcoes_medidas`); as capturas, a prova do toque e as plantas do portão de HTML são da construção da `8abc7bd1`, cujo código só difere da final num comentário de `src/components/inicio/Faixa.astro` (um travessão que saiu). A construção de base é a da cabeça de partida, guardada fora do repositório, e o manifesto só lhe guarda o commit. Sem travessões.*
+*Bloco UE2, 02.10.2026, pelo brief `design/observatorio/BRIEF-UE2-a-pagina-dos-paises.md`, pela §1.143 (o UE2 na ordem dos blocos) e pela leitura a frio do K2 (o achado 6, os termos técnicos dos cartões da União). Construtor: Claude Opus 5.5 (a definição `construtor`), na worktree do ramo `ue2-2026-10-02`, sobre a cabeça de partida `13689390`, sem subagentes. Cada número deste relatório está num ficheiro desta pasta, quase todos em `medidas.json`, escrito por `medir-ue2.mjs`, com o comando e um conhecido-positivo em cada medida. As medidas do `dist/` em `medidas.json` são da construção da corrida final dos portões, a da cabeça `fa1a5b63`, o commit deste relatório (`construcoes_medidas`); as capturas, a prova do toque e as plantas do portão de HTML são da construção da `9c22d05f`, cujo código só difere da final num comentário de `src/components/inicio/Faixa.astro` (um travessão que saiu). A construção de base é a da cabeça de partida, guardada fora do repositório, e o manifesto só lhe guarda o commit. Sem travessões.*
 
 ## O teste de aceitação, e onde se mede
 
@@ -15,7 +15,7 @@ O do §2 do brief, frase a frase:
 | as definições dobradas de cada um dizem em palavras comuns o que o número é: 0 ocorrências dos 4 termos sem a explicação ao lado, nas duas línguas, sem mudar nenhum valor nem nenhuma etiqueta de fonte | `termos_tecnicos_nas_definicoes_da_pagina`, `definicoes_na_forma_da_uniao_rendidas`, `k16_com_as_formas` | nas 21 definições de cada edição, 7 ocorrências dos 4 termos, todas fora de parênteses antes e 0 fora de parênteses depois; 7 definições na forma em palavras comuns por edição; a K16 a 0 com 42 perguntas, 124 pedaços e 169 apoios, e as 4 plantas das formas a morder; nenhum valor nem etiqueta de fonte mudou (o portão de HTML a 0) |
 | cada nome de país vem da tabela de autoridade, cada valor de um ponto da série, cada lugar recontado pelo portão como hoje | o portão de HTML (`data-pais`, `data-ponto`, `data-ponto-conta`, `data-ponto-lugar` e, nova, a contagem da tabela no título); `plantas_do_portao_de_html` | o portão a 0; 4 plantas a morder, entre elas um valor trocado numa etiqueta do toque escondida e um nome escrito à mão na lista |
 | a página a 390 px lê-se de cima a baixo sem fila horizontal | `fila_dos_cartoes_a_390`, `altura_da_pagina_a_390` | antes, a fila corria de lado (uma `flex` que se desloca); depois, uma grelha de 1 coluna que não se desloca; a página passa de 1205 para 8541 px de altura em português (1198 para 8538 em inglês) |
-| os três portões a 0 | `portoes/`, a corrida final; `portoes_a_zero` | `build` 0, `verify` 0 e `typecheck` 0 na cabeça `da6d2d91`, o commit deste relatório (a secção «Os portões», abaixo) |
+| os três portões a 0 | `portoes/`, a corrida final; `portoes_a_zero` | `build` 0, `verify` 0 e `typecheck` 0 na cabeça `fa1a5b63`, o commit deste relatório (a secção «Os portões», abaixo) |
 | as capturas da página nas cinco larguras e nas duas edições | `capturas-antes.json`, `capturas-depois.json`, `capturas` | 10 antes e 20 depois (as 10 páginas, 4 listas abertas, 4 toques e 2 definições abertas), 0 problemas, 0 pedidos para fora, 0 páginas com transbordo horizontal |
 | o relatório com o `medidas.json` | esta pasta | completos |
 
@@ -73,19 +73,19 @@ O do §2 do brief, frase a frase:
 ## Os commits
 
 ```
-3db55605 UE2: a secção «Os 27 países» na página da União, a fila dos cartões em pilha e o toque numa marca
-c2f3baaa UE2: a F20, a secção dos países refeita dos pontos pela função da faixa do cartão
-f066ebfb UE2: as definições dos cartões da União em palavras comuns, com o termo da fonte entre parênteses
-f47c37b7 UE2: o inventário das frases, a revisão do bloco e a exceção da palavra da fonte
-c2d2abc6 UE2: a etiqueta do toque de uma marca empatada diz o grupo inteiro
-3bd7020b UE2: as plantas do portão de HTML, a prova do toque, a primeira leitura do contador e as decisões em vigor
-bf58887c UE2: o captor e o medidor do bloco, e as capturas de antes nas cinco larguras
-443671c5 UE2: o título da fila dos 21 cartões, e só a seta da própria dobra roda
-8abc7bd1 UE2: o mapa do repositório com a secção do bloco, e a captura de uma definição aberta
-04b5a2f2 UE2: as capturas de depois, a prova do toque, as plantas, as medidas e as decisões em vigor
+4b67e859 UE2: a secção «Os 27 países» na página da União, a fila dos cartões em pilha e o toque numa marca
+fff34251 UE2: a F20, a secção dos países refeita dos pontos pela função da faixa do cartão
+9575fd76 UE2: as definições dos cartões da União em palavras comuns, com o termo da fonte entre parênteses
+59a8b785 UE2: o inventário das frases, a revisão do bloco e a exceção da palavra da fonte
+e3b0fbb4 UE2: a etiqueta do toque de uma marca empatada diz o grupo inteiro
+e0ca2f35 UE2: as plantas do portão de HTML, a prova do toque, a primeira leitura do contador e as decisões em vigor
+54007ffe UE2: o captor e o medidor do bloco, e as capturas de antes nas cinco larguras
+1a956d88 UE2: o título da fila dos 21 cartões, e só a seta da própria dobra roda
+9c22d05f UE2: o mapa do repositório com a secção do bloco, e a captura de uma definição aberta
+ce47bfe8 UE2: as capturas de depois, a prova do toque, as plantas, as medidas e as decisões em vigor
 ```
 
-e o commit deste relatório, com a resposta curta (`da6d2d91`); e o commit seguinte, com os códigos da corrida final dos portões, os registos dela sem o caminho da máquina, as medidas da construção dela e esta secção a dizê-los.
+e o commit deste relatório, com a resposta curta (`fa1a5b63`); e o commit seguinte, com os códigos da corrida final dos portões, os registos dela sem o caminho da máquina, as medidas da construção dela e esta secção a dizê-los.
 
 ## As capturas
 
@@ -101,7 +101,7 @@ Duas leituras do contador de símbolos restantes que a ferramenta mostra ao agen
 
 ## Os portões
 
-A corrida final correu por `sh scripts/leituras/portoes.sh`, com a tranca da máquina, na cabeça `da6d2d91`, o commit deste relatório: `build` 0 em 126 segundos, `verify` 0 em 744 segundos e `typecheck` 0, cada código lido de `portoes/<portão>.codigo`, escrito depois de o processo acabar (`medidas.json`, `portoes_a_zero`). A cabeça no fim da corrida é a mesma do princípio (`portoes/cabeca` e `portoes/cabeca.fim`), e a árvore só tinha por seguir a pasta da própria corrida (`portoes/estado.fim`). Os registos dizem `<worktree>` onde estava o caminho da máquina. Na construção, a F19 reconta 20 faixas dos cartões com 20 plantas a morder, e a F20 20 faixas da secção dos países, 560 etiquetas e 20 listas com 560 itens, com 27 plantas a morder; no `verify`, a K16 audita 42 perguntas e a K19 lê 5248 cartões (`celulas_na_corrida_final`).
+A corrida final correu por `sh scripts/leituras/portoes.sh`, com a tranca da máquina, na cabeça `fa1a5b63`, o commit deste relatório: `build` 0 em 126 segundos, `verify` 0 em 744 segundos e `typecheck` 0, cada código lido de `portoes/<portão>.codigo`, escrito depois de o processo acabar (`medidas.json`, `portoes_a_zero`). A cabeça no fim da corrida é a mesma do princípio (`portoes/cabeca` e `portoes/cabeca.fim`), e a árvore só tinha por seguir a pasta da própria corrida (`portoes/estado.fim`). Os registos dizem `<worktree>` onde estava o caminho da máquina. Na construção, a F19 reconta 20 faixas dos cartões com 20 plantas a morder, e a F20 20 faixas da secção dos países, 560 etiquetas e 20 listas com 560 itens, com 27 plantas a morder; no `verify`, a K16 audita 42 perguntas e a K19 lê 5248 cartões (`celulas_na_corrida_final`).
 
 ## O que ficou por fazer, e porquê
 
@@ -116,7 +116,7 @@ A corrida final correu por `sh scripts/leituras/portoes.sh`, com a tranca da má
 
 ## UE2-b · as palavras comuns como forma única, e as faixas que dizem o que contam
 
-*Passagem UE2-b, 02.10.2026, pela mensagem do lugar de direção que triou a leitura a frio do UE2 pelo Codex gpt-6.1-sol (`design/especime-v3/critica/LEITURA-ue2-2026-10-02.md`). Construtor: Claude Opus 5.5 (a definição `construtor`), na mesma worktree, sobre a cabeça `471c7f99`, sem subagentes. Cada número desta secção está num ficheiro desta pasta, quase todos em `medidas-ue2-b.json`, escrito por `medir-ue2-b.mjs`, com o comando e um conhecido-positivo em cada medida. A construção de base é a da cabeça do UE2 (`da6d2d91`, guardada fora do repositório; o código do sítio é o da `471c7f99`, que só acrescentou a leitura a frio), e a declaração de base lê-se dessa cabeça pelo Git. Os achados 1, 2, 3, a primeira parte do 4 e o 8 da leitura são as plantas do pacote, e não se tocaram; o 9 é do pacote. Sem travessões.*
+*Passagem UE2-b, 02.10.2026, pela mensagem do lugar de direção que triou a leitura a frio do UE2 pelo Codex gpt-6.1-sol (`design/especime-v3/critica/LEITURA-ue2-2026-10-02.md`). Construtor: Claude Opus 5.5 (a definição `construtor`), na mesma worktree, sobre a cabeça `922bb587`, sem subagentes. Cada número desta secção está num ficheiro desta pasta, quase todos em `medidas-ue2-b.json`, escrito por `medir-ue2-b.mjs`, com o comando e um conhecido-positivo em cada medida. A construção de base é a da cabeça do UE2 (`fa1a5b63`, guardada fora do repositório; o código do sítio é o da `922bb587`, que só acrescentou a leitura a frio), e a declaração de base lê-se dessa cabeça pelo Git. Os achados 1, 2, 3, a primeira parte do 4 e o 8 da leitura são as plantas do pacote, e não se tocaram; o 9 é do pacote. Sem travessões.*
 
 ### Os pontos da mensagem
 
@@ -161,19 +161,19 @@ A corrida final correu por `sh scripts/leituras/portoes.sh`, com a tranca da má
 ### Os commits
 
 ```
-0a3cd8a0 UE2-b: a forma em palavras comuns como única forma das definições, com os termos da leitura a frio explicados
-1ec478e5 UE2-b: cada faixa dos países diz o que a medida conta, e a planta da tabela troca uma entrada por outra posição real
-78d523db UE2-b: a descrição da página da União diz também os países
-9a870ab9 UE2-b: o inventário das frases depois da passagem, escrito a partir das declarações, com a revisão por ler
-ffbccd25 UE2-b: as plantas dos portões da forma única, e o mapa do repositório
-33c30fd9 UE2-b: o captor e o medidor da passagem, a primeira leitura do contador e as decisões em vigor antes de mexer
+f158df5c UE2-b: a forma em palavras comuns como única forma das definições, com os termos da leitura a frio explicados
+fed21ab0 UE2-b: cada faixa dos países diz o que a medida conta, e a planta da tabela troca uma entrada por outra posição real
+9f2e18d5 UE2-b: a descrição da página da União diz também os países
+689dcd11 UE2-b: o inventário das frases depois da passagem, escrito a partir das declarações, com a revisão por ler
+1c616e94 UE2-b: as plantas dos portões da forma única, e o mapa do repositório
+f06d2a3e UE2-b: o captor e o medidor da passagem, a primeira leitura do contador e as decisões em vigor antes de mexer
 ```
 
 e o commit desta secção, com as capturas, as medidas e a resposta curta; e o commit seguinte, com os códigos da corrida final dos portões, os registos dela sem o caminho da máquina, as medidas da construção dela e a secção «Os portões da passagem» a dizê-los.
 
 ### As capturas
 
-Em `design/especime-v3/capturas/ue2-2026-10-02/`, da construção da `33c30fd9`, cujo código do sítio é o da cabeça final (depois dela só mudaram ficheiros desta pasta): `ue2-b-uniao-<língua>-<390|1280>.png` e `ue2-b-emprego-<língua>-<390|1280>.png`, as páginas inteiras; `ue2-b-faixa-<sobrecarga-…-inquilinos-mercado|ihpc-variacao-homologa>-<língua>-<390|1280>.png`, duas faixas com a definição por baixo do nome; `ue2-b-definicao-uniao-<língua>-390.png`, a definição do saldo da balança corrente aberta pela porta do seu cartão; `ue2-b-definicao-emprego-<língua>-<390|1280>.png`, a dobra do cartão da taxa de atividade aberta na página do emprego. 22 capturas, 0 problemas, 0 pedidos para fora, sem transbordo horizontal (`capturas-ue2-b.json`, `capturas`).
+Em `design/especime-v3/capturas/ue2-2026-10-02/`, da construção da `f06d2a3e`, cujo código do sítio é o da cabeça final (depois dela só mudaram ficheiros desta pasta): `ue2-b-uniao-<língua>-<390|1280>.png` e `ue2-b-emprego-<língua>-<390|1280>.png`, as páginas inteiras; `ue2-b-faixa-<sobrecarga-…-inquilinos-mercado|ihpc-variacao-homologa>-<língua>-<390|1280>.png`, duas faixas com a definição por baixo do nome; `ue2-b-definicao-uniao-<língua>-390.png`, a definição do saldo da balança corrente aberta pela porta do seu cartão; `ue2-b-definicao-emprego-<língua>-<390|1280>.png`, a dobra do cartão da taxa de atividade aberta na página do emprego. 22 capturas, 0 problemas, 0 pedidos para fora, sem transbordo horizontal (`capturas-ue2-b.json`, `capturas`).
 
 ### As decisões em vigor nos ficheiros tocados
 
@@ -185,7 +185,7 @@ Duas leituras do contador de símbolos restantes que a ferramenta mostra ao agen
 
 ### Os portões da passagem
 
-A corrida final correu por `sh scripts/leituras/portoes.sh`, com a tranca da máquina, na cabeça `d79df840`, o commit da secção «UE2-b» e da resposta curta: `build` 0 em 130 segundos, `verify` 0 em 749 segundos e `typecheck` 0, cada código lido de `portoes/ue2-b/<portão>.codigo`, escrito depois de o processo acabar (`medidas-ue2-b.json`, `portoes_a_zero`). A cabeça no fim da corrida é a mesma do princípio (`portoes/ue2-b/cabeca` e `portoes/ue2-b/cabeca.fim`), e a árvore só tinha por seguir a pasta da própria corrida (`portoes/ue2-b/estado.fim`). Os registos dizem `<worktree>` onde estava o caminho da máquina. Na construção, a F20 conta 20 faixas com 20 definições declaradas e 35 plantas a morder; no `verify`, a K16 audita 35 perguntas, 125 pedaços e 188 apoios, com 12 plantas a morder, a 8.4 lê 74 definições e 162 origens, as esperadas, e o inventário das frases tem 768 linhas vivas, todas rendidas, e 729 retiradas, nenhuma rendida (`celulas_na_corrida_final`). As medidas do `dist/` em `medidas-ue2-b.json` são da construção desta corrida.
+A corrida final correu por `sh scripts/leituras/portoes.sh`, com a tranca da máquina, na cabeça `82dcbf3f`, o commit da secção «UE2-b» e da resposta curta: `build` 0 em 130 segundos, `verify` 0 em 749 segundos e `typecheck` 0, cada código lido de `portoes/ue2-b/<portão>.codigo`, escrito depois de o processo acabar (`medidas-ue2-b.json`, `portoes_a_zero`). A cabeça no fim da corrida é a mesma do princípio (`portoes/ue2-b/cabeca` e `portoes/ue2-b/cabeca.fim`), e a árvore só tinha por seguir a pasta da própria corrida (`portoes/ue2-b/estado.fim`). Os registos dizem `<worktree>` onde estava o caminho da máquina. Na construção, a F20 conta 20 faixas com 20 definições declaradas e 35 plantas a morder; no `verify`, a K16 audita 35 perguntas, 125 pedaços e 188 apoios, com 12 plantas a morder, a 8.4 lê 74 definições e 162 origens, as esperadas, e o inventário das frases tem 768 linhas vivas, todas rendidas, e 729 retiradas, nenhuma rendida (`celulas_na_corrida_final`). As medidas do `dist/` em `medidas-ue2-b.json` são da construção desta corrida.
 
 ### O que ficou por fazer, e porquê
 

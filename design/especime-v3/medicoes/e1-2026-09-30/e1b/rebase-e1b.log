@@ -16,7 +16,7 @@ hint: Disable this message with "git config set advice.mergeConflict false"
 Could not apply 822b93b3... # E1: a linha dos estudos publicados sobre Évora passa de 6 a 4 pelo mecanismo das linhas derivadas
 
 # a resolução: as duas chaves de src/i18n/lingua-dos-titulos.mjs, a de main (30.09.2026) e a do E1 (01.10.2026), pela ordem das datas; depois git rebase --continue, código 0:
-[detached HEAD 43d9f3eb] E1: a linha dos estudos publicados sobre Évora passa de 6 a 4 pelo mecanismo das linhas derivadas
+[detached HEAD 25b7796e] E1: a linha dos estudos publicados sobre Évora passa de 6 a 4 pelo mecanismo das linhas derivadas
  3 files changed, 22 insertions(+), 7 deletions(-)
 Rebasing (6/11)
 Rebasing (7/11)

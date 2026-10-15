@@ -1,7 +1,7 @@
 {
-  "base": "ce325a3cd772b4317436345cec720cd739c2279d",
-  "base_h2b": "acc928f23f5954d1cfc51a11fa86e94d4f6da56e",
-  "cabeca_codigo": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+  "base": "fab9afa8cf1a62899ddad58d80df9e7aa35b363f",
+  "base_h2b": "c392fac7e8a01377ee084114bcf2ff8283f0eecf",
+  "cabeca_codigo": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
   "modelo": "gpt-6-astra",
   "medidas": [
     {
@@ -424,7 +424,7 @@
   "plantas": [
     {
       "nome": "h2-em-curso-retirado",
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "comando": "node scripts/check-pais.mjs",
       "codigo": 1,
@@ -442,7 +442,7 @@
     },
     {
       "nome": "h2-em-curso-fora-da-cabeca",
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "comando": "node scripts/check-pais.mjs",
       "codigo": 1,
@@ -460,7 +460,7 @@
     },
     {
       "nome": "h2-em-curso-sem-marca",
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "comando": "node scripts/check-pais.mjs",
       "codigo": 1,
@@ -478,7 +478,7 @@
     },
     {
       "nome": "h2-ligacao-dentro-de-outra",
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "comando": "node scripts/gate-html.mjs",
       "codigo": 1,
@@ -496,7 +496,7 @@
     },
     {
       "nome": "h2-porta-so-com-html-irmao",
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "comando": "node scripts/gate-html.mjs",
       "codigo": 1,
@@ -514,7 +514,7 @@
     },
     {
       "nome": "h2-indicador-fora-do-endereco",
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "comando": "node scripts/check-lugar.mjs",
       "codigo": 1,
@@ -532,7 +532,7 @@
     },
     {
       "nome": "h2-area-porta-antiga",
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "comando": "node scripts/check-areas.mjs",
       "codigo": 1,
@@ -550,7 +550,7 @@
     },
     {
       "nome": "h2-voz-estado-trocado",
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "comando": "node scripts/check-voz.mjs",
       "codigo": 1,
@@ -570,7 +570,7 @@
   "plantas_h2b": [
     {
       "nome": "h2b-horizonte-trocado",
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "comando": "node scripts/gate-html.mjs",
       "codigo": 1,
@@ -594,7 +594,7 @@
       "codigo": 0,
       "inicio": "2026-10-04T23:25:43.301007+00:00",
       "segundos": 37.727,
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "estado_fim": ""
     },
@@ -604,7 +604,7 @@
       "codigo": 0,
       "inicio": "2026-10-04T23:25:20.400722+00:00",
       "segundos": 22.856,
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "estado_fim": ""
     },
@@ -614,7 +614,7 @@
       "codigo": 0,
       "inicio": "2026-10-04T23:26:21.072072+00:00",
       "segundos": 24.923,
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "estado_fim": ""
     },
@@ -624,7 +624,7 @@
       "codigo": 0,
       "inicio": "2026-10-04T23:27:17.101721+00:00",
       "segundos": 0.103,
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "estado_fim": ""
     },
@@ -634,7 +634,7 @@
       "codigo": 0,
       "inicio": "2026-10-04T23:26:46.039271+00:00",
       "segundos": 0.425,
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "estado_fim": ""
     },
@@ -644,7 +644,7 @@
       "codigo": 0,
       "inicio": "2026-10-04T23:26:46.508714+00:00",
       "segundos": 30.433,
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "estado_fim": ""
     },
@@ -654,7 +654,7 @@
       "codigo": 0,
       "inicio": "2026-10-04T23:27:16.986820+00:00",
       "segundos": 0.071,
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "estado_fim": ""
     },
@@ -664,7 +664,7 @@
       "codigo": 0,
       "inicio": "2026-10-04T23:27:17.248066+00:00",
       "segundos": 0.939,
-      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
       "estado": "",
       "estado_fim": ""
     }
@@ -705,7 +705,7 @@
   "github": {
     "conclusion": "success",
     "databaseId": 37238803296,
-    "headSha": "f7048ce08956d89fbefc54ebd40ea8b75b830d47",
+    "headSha": "76a70ba7e6e5ded9274e894735ea69b6e83a1501",
     "jobs": [
       {
         "completedAt": "2026-10-04T22:22:53Z",
@@ -828,7 +828,7 @@
   },
   "i194_remota": {
     "corrida": 37238803296,
-    "cabeca": "f7048ce08956d89fbefc54ebd40ea8b75b830d47",
+    "cabeca": "76a70ba7e6e5ded9274e894735ea69b6e83a1501",
     "imagem": "ubuntu-24.04",
     "casos": [
       {
@@ -930,14 +930,14 @@
     }
   },
   "commits": [
-    "5f7cf57d0ab6a24af520d14db3b288654365e4e1 H2: executar a substituição da planta I194 num passo indivisível",
-    "ea5a0ed8c5903a1aedfea2ba06e177e6ec534025 H2: montar pacotes com exclusões declaradas e ficheiros do motor",
-    "bfa81e08843bfc8a8bd4cee25069d14601ff1b22 H2: declarar estudos em curso e fechar as falhas de ligações e vocabulário",
-    "f7048ce08956d89fbefc54ebd40ea8b75b830d47 H2: fechar questões e registar as regras e as plantas",
-    "bc76aa9f7267c6f3cde81c5bb912fa74c0f8c893 H2: guardar a prova verde e as capturas da cabeça do código",
-    "1bf209d7d77e4ead4419203fb11f0ed774bc1367 H2-b: decidir prazos vencidos e corrigir a montagem e as provas"
+    "6d6914f0c9ef40099b6daa24b09aa101060b4886 H2: executar a substituição da planta I194 num passo indivisível",
+    "b6f0fb817974f1cf9cb787d85b4e0f89626866dc H2: montar pacotes com exclusões declaradas e ficheiros do motor",
+    "775c633246b115220394bc2543690fa7ac23455c H2: declarar estudos em curso e fechar as falhas de ligações e vocabulário",
+    "76a70ba7e6e5ded9274e894735ea69b6e83a1501 H2: fechar questões e registar as regras e as plantas",
+    "b22ee8081887fb5ebc8e7d996b77e13ac568e80b H2: guardar a prova verde e as capturas da cabeça do código",
+    "f2852826d7967362c4fe1ba60264bc1bdf2aef23 H2-b: decidir prazos vencidos e corrigir a montagem e as provas"
   ],
   "commits_h2b": [
-    "1bf209d7d77e4ead4419203fb11f0ed774bc1367 H2-b: decidir prazos vencidos e corrigir a montagem e as provas"
+    "f2852826d7967362c4fe1ba60264bc1bdf2aef23 H2-b: decidir prazos vencidos e corrigir a montagem e as provas"
   ]
 }

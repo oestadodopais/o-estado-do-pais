@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""O §0 do brief UE1 (onde Portugal fica entre os 27), medido sobre a cabeça presa do sítio (8e66b601).
+"""O §0 do brief UE1 (onde Portugal fica entre os 27), medido sobre a cabeça presa do sítio (8cb6f7a8).
 Não lê a rede: o portão dos briefs corre sem ela. Os valores dos 27 países estão no §1 do brief, lidos
 pelo lugar de direção na API do Eurostat e guardados em
 design/observatorio/medidas/BRIEF-UE1-eurostat-2026-09-29.json. Escreve
@@ -10,7 +10,7 @@ from urllib.parse import urlsplit
 import yaml
 
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "8e66b601"
+CAB = "8cb6f7a8"
 NAO = "NÃO LIDO"
 medidas = []
 

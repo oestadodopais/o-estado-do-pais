@@ -1,7 +1,7 @@
 {
   "brief": "design/observatorio/BRIEF-B2-o-veredicto-e-as-paginas-dos-temas.md",
   "guiao": "design/observatorio/medidas/BRIEF-B2.py",
-  "cabeca_lida": "4b99dea3",
+  "cabeca_lida": "a783468f",
   "copias": "design/especime-v3/medicoes/b2-2026-09-23/paginas/",
   "medidas": [
     {
@@ -88,7 +88,7 @@
     {
       "nome": "temas_da_carta",
       "valor": 18,
-      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · linhas «| n |» da tabela do §2 de CARTA-DOS-CONTEUDOS.md@4b99dea3",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · linhas «| n |» da tabela do §2 de CARTA-DOS-CONTEUDOS.md@a783468f",
       "conhecido_positivo": {
         "o_que": "o mesmo padrão apanha a primeira linha da tabela («| 1 | Economia e finanças públicas»)",
         "encontrado": true
@@ -214,7 +214,7 @@
     {
       "nome": "limite_legal",
       "valor": "150",
-      "comando": "git show 4b99dea3:ledger/claims/indice-de-divida-limite-legal.yml · value",
+      "comando": "git show a783468f:ledger/claims/indice-de-divida-limite-legal.yml · value",
       "conhecido_positivo": {
         "o_que": "o valor lê-se como número",
         "encontrado": true
@@ -223,7 +223,7 @@
     {
       "nome": "concelhos_no_ficheiro",
       "valor": 308,
-      "comando": "git show 4b99dea3:src/data/concelhos.gerado.json · entradas",
+      "comando": "git show a783468f:src/data/concelhos.gerado.json · entradas",
       "conhecido_positivo": {
         "o_que": "a lista traz Évora",
         "encontrado": true
@@ -232,7 +232,7 @@
     {
       "nome": "camaras_acima_do_limite",
       "valor": 10,
-      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · índice de dívida de 2024 de cada concelho (git grep ^value: 4b99dea3 -- ledger/claims/*-indice-de-divida-2024.yml) acima do limite legal",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · índice de dívida de 2024 de cada concelho (git grep ^value: a783468f -- ledger/claims/*-indice-de-divida-2024.yml) acima do limite legal",
       "conhecido_positivo": {
         "o_que": "o mesmo predicado apanha Vila Real de Santo António (419,5)",
         "encontrado": true
@@ -349,7 +349,7 @@
     {
       "nome": "nome_do_projeto_a_390",
       "valor": 34,
-      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · .wordmark font-size clamp() em site.css@4b99dea3, a 390 px",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · .wordmark font-size clamp() em site.css@a783468f, a 390 px",
       "conhecido_positivo": {
         "o_que": "o leitor de clamp() lê a regra do .wordmark",
         "encontrado": true
@@ -367,7 +367,7 @@
     {
       "nome": "titulo_a_390",
       "valor": 30,
-      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · h1 font-size clamp() em site.css@4b99dea3, a 390 px",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · h1 font-size clamp() em site.css@a783468f, a 390 px",
       "conhecido_positivo": {
         "o_que": "o leitor de clamp() lê a regra do h1",
         "encontrado": true
@@ -412,7 +412,7 @@
     {
       "nome": "ficheiros_que_dependem_das_rotas",
       "valor": 17,
-      "comando": "git grep -l -E \"routePath\\('dominio|…|/en/areas\" 4b99dea3 -- src scripts tests",
+      "comando": "git grep -l -E \"routePath\\('dominio|…|/en/areas\" a783468f -- src scripts tests",
       "conhecido_positivo": {
         "o_que": "a lista traz src/lib/routes.mjs",
         "encontrado": true
@@ -421,7 +421,7 @@
     {
       "nome": "sobrecarga_pt_2025",
       "valor": "6,3",
-      "comando": "git show 4b99dea3:ledger/claims/sobrecarga-do-custo-da-habitacao-2025.yml · value",
+      "comando": "git show a783468f:ledger/claims/sobrecarga-do-custo-da-habitacao-2025.yml · value",
       "conhecido_positivo": {
         "o_que": "o valor lê-se como número",
         "encontrado": true
@@ -430,7 +430,7 @@
     {
       "nome": "sobrecarga_ue_2025",
       "valor": "7,7",
-      "comando": "git show 4b99dea3:ledger/claims/sobrecarga-do-custo-da-habitacao-2025-ue.yml · value",
+      "comando": "git show a783468f:ledger/claims/sobrecarga-do-custo-da-habitacao-2025-ue.yml · value",
       "conhecido_positivo": {
         "o_que": "o valor lê-se como número",
         "encontrado": true
@@ -439,7 +439,7 @@
     {
       "nome": "sobrecarga_pt_2024",
       "valor": "6,9",
-      "comando": "git show 4b99dea3:ledger/claims/sobrecarga-do-custo-da-habitacao-2024.yml · value",
+      "comando": "git show a783468f:ledger/claims/sobrecarga-do-custo-da-habitacao-2024.yml · value",
       "conhecido_positivo": {
         "o_que": "o valor lê-se como número",
         "encontrado": true
@@ -448,7 +448,7 @@
     {
       "nome": "sobrecarga_sem_media_europeia_declarada",
       "valor": 1,
-      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · «semMediaEuropeia» em figuras.mjs@4b99dea3",
+      "comando": "python3 design/observatorio/medidas/BRIEF-B2.py · «semMediaEuropeia» em figuras.mjs@a783468f",
       "conhecido_positivo": {
         "o_que": "a declaração existe",
         "encontrado": true

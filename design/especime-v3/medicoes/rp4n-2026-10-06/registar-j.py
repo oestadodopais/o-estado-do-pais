@@ -4,7 +4,7 @@ import os,json,subprocess,hashlib
 site=Path.cwd();motor=Path(os.environ['RESEARCHHUB_DIR']);out=Path(os.environ['RP4NJ_SAIDA']);out.mkdir(parents=True,exist_ok=True)
 def git(repo,*args):return subprocess.check_output(['git',*args],cwd=repo,text=True).strip()
 resultado={};trailers=[]
-for nome,repo,base in [('sitio',site,'3ecc7c72'),('motor',motor,'2d32da6')]:
+for nome,repo,base in [('sitio',site,'d0c3d52e'),('motor',motor,'2d32da6')]:
  assert not git(repo,'status','--porcelain'),'Árvore suja no registo final'
  commits=[]
  for h in git(repo,'rev-list','--reverse',base+'..HEAD').splitlines():
@@ -15,7 +15,7 @@ for nome,repo,base in [('sitio',site,'3ecc7c72'),('motor',motor,'2d32da6')]:
   commits.append({'hash':h,'assunto':git(repo,'show','-s','--format=%s',h)})
   trailers.append({'repositorio':nome,'commit':h,'trailers_adjuntos':True})
  resultado[nome]={'base':git(repo,'rev-parse',base),'cabeca':git(repo,'rev-parse','HEAD'),'arvore':'limpa','commits':commits}
-regra='tests/cartao/publicador-da-definicao.mjs';original=subprocess.check_output(['git','show','3ecc7c72:'+regra],cwd=site)
+regra='tests/cartao/publicador-da-definicao.mjs';original=subprocess.check_output(['git','show','d0c3d52e:'+regra],cwd=site)
 assert (site/regra).read_bytes()==original
 changed=git(motor,'diff','--name-only','2d32da6','HEAD').splitlines()
 proibidos=[p for p in changed if (p.startswith('indicators/') and p.count('/')==1 and p.endswith('.json')) or p.startswith(('.maintenance-locks/','sweeps/')) or p=='publisher/recortes/manifest.regioes.json']

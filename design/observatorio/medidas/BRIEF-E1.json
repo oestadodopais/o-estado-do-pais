@@ -1,7 +1,7 @@
 {
   "brief": "design/observatorio/BRIEF-E1-os-estudos-de-evora-um-conjunto-coerente.md",
   "guiao": "design/observatorio/medidas/BRIEF-E1.py",
-  "cabeca_lida": "24ba5b17",
+  "cabeca_lida": "341c5ee0",
   "por_estudo": {
     "evora-2027-prometido-painel-dinheiro": {
       "palavras": 7273,
@@ -38,7 +38,7 @@
     {
       "nome": "estudos_de_evora_alojados",
       "valor": 6,
-      "comando": "git ls-tree 24ba5b17:studies-src · as pastas que começam por evora-",
+      "comando": "git ls-tree 341c5ee0:studies-src · as pastas que começam por evora-",
       "conhecido_positivo": {
         "o_que": "«evora-quinze-anos-cinco-mandatos» é uma delas",
         "encontrado": true
@@ -74,7 +74,7 @@
     {
       "nome": "estudos_de_evora_com_linhas_no_livro",
       "valor": 5,
-      "comando": "git show 24ba5b17:ledger/claims/<id>.yml · o campo study que começa por evora-",
+      "comando": "git show 341c5ee0:ledger/claims/<id>.yml · o campo study que começa por evora-",
       "conhecido_positivo": {
         "o_que": "«evora-orcamentado-pago-devido-2025» tem linhas",
         "encontrado": true
@@ -101,7 +101,7 @@
     {
       "nome": "contador_dos_estudos_de_evora_publicados",
       "valor": "6",
-      "comando": "git show 24ba5b17:ledger/claims/estudos-evora-publicados.yml · value",
+      "comando": "git show 341c5ee0:ledger/claims/estudos-evora-publicados.yml · value",
       "conhecido_positivo": {
         "o_que": "a linha é derivada e tem check",
         "encontrado": true

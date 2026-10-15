@@ -1,47 +1,47 @@
 [
   {
     "antiga": "a45cf02837fae63da5d506e7a5d2c59c11cabf1a",
-    "nova": "0775309eb34c6bfc918b6ba9aa7ddb859542fae6",
+    "nova": "5e21b596dc9fcf8acbadeb4a99026535ca1b7519",
     "assunto": "docs(rp4n-e): registar leitura, plantas e mandato"
   },
   {
     "antiga": "2c815466f33a54b6961725b3a526d893fdbc3ae6",
-    "nova": "0279a053db27fa7cbfef2ba447b750747da8b21a",
+    "nova": "d7ab4c89214bb901a33f5a81bcb0db6bc02f7bec",
     "assunto": "fix(rp4n-e): recortar o excerto da pensão à medida"
   },
   {
     "antiga": "a44d10a64d62784c31fa6d3f574fa9e9a9c8fd88",
-    "nova": "892dfa0ac0604eda61bb92e19bdd296630c6baa8",
+    "nova": "7f05d75dd713907b2dbe912494c6ca1cc3f9eb9d",
     "assunto": "fix(rp4n-e): uniformizar ausências e concordar avisos"
   },
   {
     "antiga": "24f97316b33530f2b108999a3c153833575d9e49",
-    "nova": "5e8d9b1493ba116bc50207f655a13fca5fe0894b",
+    "nova": "b85bad03d0fc9a0f90132f2c5f47b3ccba61c49a",
     "assunto": "fix(rp4n-e): receber o recorte anual sem o período mensal"
   },
   {
     "antiga": "5c95a6aba18ab1aa9b7cc02a70bd4a85754ca849",
-    "nova": "ba3c557393647c23e9dc0c621016f5d0f0da05fe",
+    "nova": "803995f814c7b6909731b35074b785801d4af3f2",
     "assunto": "fix(rp4n-e): explicar a quota pelo total do mapa por ministérios"
   },
   {
     "antiga": "629557b3cfab84ec5e79acb984fca2c4bb084285",
-    "nova": "ac383ec624631d25285b41ce07a8969b170cf2ac",
+    "nova": "3fbc79b1fb0cabf711b23310b054a4bcb829e1d7",
     "assunto": "fix(rp4n-e): retirar as condutas da publicação conservando o livro"
   },
   {
     "antiga": "cfd28a517f27e2e3fc14264965e91f0e63a1dbd5",
-    "nova": "58192aeb5a5a66c9dbae11bbfb2b2d47825a2496",
+    "nova": "23d8ec119c435e96c6e0947ce9ac18692df9815f",
     "assunto": "fix(rp4n-e): auditar também as linhas retiradas sem as publicar"
   },
   {
     "antiga": "0345e2fd7efadac2c60555c112289dcb4acc9c75",
-    "nova": "862c26f0f268c242e9507a09555f80adb22e613d",
+    "nova": "70c3d9cd87e44ad59d4ecd6d4c24e4ee495c8685",
     "assunto": "fix(rp4n-e): concordar também os títulos e a conferência das unidades"
   },
   {
     "antiga": "c46a5ee5987b71216c50aadb92e33e3f777847c5",
-    "nova": "32578d1ddd7a6a686c9ecdbde36ec6a326f8147b",
+    "nova": "6e894c7c66e0070f6fe5fb92de073a5c2969630e",
     "assunto": "fix(rp4n-e): datar o PRR vencido e alinhar as frases derivadas"
   },
   {

@@ -1073,7 +1073,7 @@ check-datas · 18 edição(ões) datadas, 76 data(s) impressa(s) em 36 página(s
 > o-estado-do-pais@0.1.0 check:cabeca
 > node tests/inicio/hierarquia-b2.mjs
 
-check:cabeca C1; construção c22c21e881696897294e292c0ed63ab5b78cf6b6; 110 cabeças; 4 mordidas; 10 reposições
+check:cabeca C1; construção f2f876928b229a6be56f3c52c6d1ab7b9f87dfd5; 110 cabeças; 4 mordidas; 10 reposições
 check:cabeca: PASS
 
 > o-estado-do-pais@0.1.0 check:fontes
@@ -3729,7 +3729,7 @@ sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .si
 
 
   O feixe de cartões do sistema de desenho
-  design-system/ · de dist/ no commit c22c21e · 20 cartões, 11 ficheiros de letra e um README
+  design-system/ · de dist/ no commit f2f8769 · 20 cartões, 11 ficheiros de letra e um README
 
   ficheiro                          grupo          bytes  ok
   01-cor.html                       Fundamentos   376376  ✓

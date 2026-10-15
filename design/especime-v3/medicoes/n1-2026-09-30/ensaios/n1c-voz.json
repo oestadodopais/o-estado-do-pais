@@ -1,6 +1,6 @@
 {
   "comando": "node scripts/check-voz.mjs",
-  "cabeca": "530a04f2ed4003705c00fcfbe167ca9516b78145",
+  "cabeca": "40a7357c2ab4e786065fdfc6182ca1034e0cb818",
   "inicio": "2026-09-30T11:51:06.115Z",
   "fim": "2026-09-30T11:51:30.620Z",
   "segundos": 24.502401749999997,

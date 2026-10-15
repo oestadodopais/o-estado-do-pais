@@ -1,6 +1,6 @@
 {
   "comando": "node design/especime-v3/medicoes/er1-2026-10-06/medir-c.mjs --json design/especime-v3/medicoes/higiene-2026-10-13/er1.json",
-  "cabecaCodigo": "b59ce222aeeecfb8d72e6d6e5db5bd91f574f27c",
+  "cabecaCodigo": "2c40ea10e32bab1ba9a4f7fb98cad6b7797a7211",
   "livro": "ledger/claims/*.yml, pelo loadClaims() que src/lib/prova.mjs também lê",
   "exemplo": {
     "id": "divida-publica-2025",

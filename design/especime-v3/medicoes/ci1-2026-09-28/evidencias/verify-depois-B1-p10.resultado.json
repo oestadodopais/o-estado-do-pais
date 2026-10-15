@@ -1,5 +1,5 @@
 {
- "cabeca": "27b13b92199b7917ce5bba6d01dfcf471dd70cbb",
+ "cabeca": "4d21997041ea5867c079d508f15455303a569851",
  "paralelo": 10,
  "segundos": 205.443,
  "ok": true,
@@ -132,7 +132,7 @@
   "C": {
    "ok": true,
    "falhas": [],
-   "cabeca": "27b13b92199b7917ce5bba6d01dfcf471dd70cbb"
+   "cabeca": "4d21997041ea5867c079d508f15455303a569851"
   }
  }
 }

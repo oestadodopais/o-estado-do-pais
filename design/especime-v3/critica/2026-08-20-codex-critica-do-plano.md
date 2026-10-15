@@ -122,7 +122,7 @@ The plan’s main safety mechanism is itself unsafe: it introduces a release-blo
 
 - **Plan:** It protects only `ledger/`, `studies-src/`, `sobre.mjs`, and `metodo.mjs`, using `git diff main...redesenho-v3` ([plan L94](leitura/docs/PLANO-redesenho-v3.txt:94)).
 - **Evidence:** Content also lives in `strings.mjs`, `figuras.mjs`, `studies.mjs`, `municipios.mjs`, agenda/calendar records, verbatim data, and other modules. The decision record itself notes that strings, titles, and descriptions are not covered by the decision tether ([DECISIONS L8681](leitura/repo/DECISIONS.md:8681)). The dump does not cover metadata, attributes, script data, or nonrendered records.
-- **Why it matters:** Content can change outside both protections. Triple-dot compares against the merge base, not necessarily the explicitly claimed `71b4c65`; if `main` advances during the estimated two or three sessions, the baseline and promised fast-forward cease to match.
+- **Why it matters:** Content can change outside both protections. Triple-dot compares against the merge base, not necessarily the explicitly claimed `70ebb83`; if `main` advances during the estimated two or three sessions, the baseline and promised fast-forward cease to match.
 - **Change:** Pin the exact base SHA and compare `<base>..<branch>`. Protect a reviewed manifest of every content-bearing source and public data asset. Define whether `main` is frozen; otherwise add a rebase, rebaseline, and renewed approval procedure.
 
 ### 12. Core amended visual rules have no credible acceptance tests
@@ -177,7 +177,7 @@ The plan’s main safety mechanism is itself unsafe: it introduces a release-blo
 **Class:** Repository-claim evidence gap.
 
 - **Plan:** It claims a precise deployed SHA, local green build, saved ruler outputs, upstream font/licence facts, and repository ancestry ([plan L13](leitura/docs/PLANO-redesenho-v3.txt:13)).
-- **Evidence:** The supplied `repo/` contains no `.git`, `node_modules`, or `dist`, so those claims cannot be reproduced here. The repository’s own state note names `9b9f477`, not `71b4c65`, as main at its recorded time ([state note L9](leitura/repo/design/especime-v3/ESTADO-DO-MAIN-2026-08-20.md:9)); main could have advanced later, so this is divergence, not proof that the plan is false. The font-ground-truth paragraph supplies no Bitter source, although R1 requires it ([plan L22](leitura/docs/PLANO-redesenho-v3.txt:22), [L122](leitura/docs/PLANO-redesenho-v3.txt:122)).
+- **Evidence:** The supplied `repo/` contains no `.git`, `node_modules`, or `dist`, so those claims cannot be reproduced here. The repository’s own state note names `97eeaca`, not `70ebb83`, as main at its recorded time ([state note L9](leitura/repo/design/especime-v3/ESTADO-DO-MAIN-2026-08-20.md:9)); main could have advanced later, so this is divergence, not proof that the plan is false. The font-ground-truth paragraph supplies no Bitter source, although R1 requires it ([plan L22](leitura/docs/PLANO-redesenho-v3.txt:22), [L122](leitura/docs/PLANO-redesenho-v3.txt:122)).
 - **Why it matters:** These facts may be true, but this evidence package cannot establish them, and the user explicitly prohibited network verification.
 - **Change:** Mark them `[verify]` in the reviewed plan unless the revised package includes Git metadata, build/ruler records with digests, and pinned local licence/source records for all three font families, including Bitter.
 

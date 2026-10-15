@@ -6,15 +6,15 @@ A entrega permite copiar cada número com a sua fonte, período, data, atribuiç
 
 Relatório gerado por `node design/especime-v3/medicoes/er1-2026-10-06/fechar.mjs`, a partir dos ficheiros desta pasta. Construtor indicado no lançamento: Codex gpt-6-astra, raciocínio xhigh.
 
-Base: `f5fb384e5c7a6664a137ada57667700ed5eace96`. Cabeça do código: `645ecde7ea61c044d7c0648b020c6392a48674ce`. A cabeça final da entrega é o commit que contém este relatório e as provas; lê-se com `git rev-parse HEAD` e consta da resposta da sessão. Não se grava aqui um resumo autorreferente.
+Base: `6b5cdbf15596c2b753a407d43200fbaab5210ea1`. Cabeça do código: `6488636195b0b3a66c467ab47f88cce9a37ceab7`. A cabeça final da entrega é o commit que contém este relatório e as provas; lê-se com `git rev-parse HEAD` e consta da resposta da sessão. Não se grava aqui um resumo autorreferente.
 
 | Commit de código |
 |---|
-| 16ddc66c22876784284c7240ca1d9a5699ea4a08 ER1: incorporar cada número com fonte e atualização pelo JSON |
-| 0c63b7a496dab5a93b238625821897db3455cfbf ER1: guardar o blogue de ensaio e exercer a releitura no navegador |
-| 8252915ed97cc4a96eacc20881722201e470c17d ER1: conferir o código antes de ler a prosa no portão do índice |
-| eeb282d97baa9dad851a8ba7e0df700a570bbc34 ER1: comparar o texto literal que o navegador copia |
-| 645ecde7ea61c044d7c0648b020c6392a48674ce ER1: conferir o campo usado pelo botão de cópia |
+| 3a913e7a13e4e291a25d5185db76e632f27e6d89 ER1: incorporar cada número com fonte e atualização pelo JSON |
+| dc176f67e9c4662d3191beb59a27eda29cd2a90f ER1: guardar o blogue de ensaio e exercer a releitura no navegador |
+| 013e54907d21fe556ccdcab06eff1d663781fd73 ER1: conferir o código antes de ler a prosa no portão do índice |
+| f2fe67272f3cb8b199c4edbfbe82b638e123ae5e ER1: comparar o texto literal que o navegador copia |
+| 6488636195b0b3a66c467ab47f88cce9a37ceab7 ER1: conferir o campo usado pelo botão de cópia |
 
 ## O que se mediu antes de construir
 
@@ -193,7 +193,7 @@ leitura/ contém os ficheiros de código alterados, o diff, o brief, a linha JSO
 
 ## Portões inteiros
 
-Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/er1-2026-10-06/portoes`. O guião esperou pelas construções que ocupavam a tranca; tranca-observada.json regista a passagem da espera para outro bloco, com renovação recente. O ER1 não interveio na tranca alheia. Os códigos seguintes foram lidos de ficheiros depois de o guião acabar. Cabeça no início e no fim: `645ecde7ea61c044d7c0648b020c6392a48674ce`; dist/version.json confirma a mesma cabeça.
+Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/er1-2026-10-06/portoes`. O guião esperou pelas construções que ocupavam a tranca; tranca-observada.json regista a passagem da espera para outro bloco, com renovação recente. O ER1 não interveio na tranca alheia. Os códigos seguintes foram lidos de ficheiros depois de o guião acabar. Cabeça no início e no fim: `6488636195b0b3a66c467ab47f88cce9a37ceab7`; dist/version.json confirma a mesma cabeça.
 
 | Portão | Código lido | Início UTC | Fim UTC |
 |---|---|---|---|
@@ -201,7 +201,7 @@ Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/
 | verify | 0 | 2026-10-06T14:22:36Z | 2026-10-06T14:42:50Z |
 | typecheck | 0 | 2026-10-06T14:42:50Z | 2026-10-06T14:42:50Z |
 
-A primeira corrida ficou guardada em portoes-primeira/. O verify terminou com código 1: ✗ I2 · as datas ISO à vista; ✗ I6 · o marcador com um destino só. As datas de atributos e os marcadores dentro do código foram tomados por prosa. O portão do índice passou a usar a mesma comparação integral antes da retirada do campo, com plantas pela sua própria leitura. A corrida seguinte ficou guardada em portoes-segunda/, na cabeça `8252915ed97cc4a96eacc20881722201e470c17d`, com os códigos 0, 0, 0. Depois dessa corrida, as sondagens parser-antes.json e campo-copia-antes.json demonstraram que a comparação genérica perdia comentários literais e que o campo marcado podia estar fora do bloco de cópia. Foram fechadas ambas as falhas, com plantas que afirmam as mensagens de rejeição e uma comparação com inputValue no navegador. As sondagens guardam a cabeça e o resumo do comparador anterior; não são ensaios para repetir contra o comparador corrigido. A corrida inteira em portoes/, na cabeça corrigida, é a que vale para a entrega.
+A primeira corrida ficou guardada em portoes-primeira/. O verify terminou com código 1: ✗ I2 · as datas ISO à vista; ✗ I6 · o marcador com um destino só. As datas de atributos e os marcadores dentro do código foram tomados por prosa. O portão do índice passou a usar a mesma comparação integral antes da retirada do campo, com plantas pela sua própria leitura. A corrida seguinte ficou guardada em portoes-segunda/, na cabeça `013e54907d21fe556ccdcab06eff1d663781fd73`, com os códigos 0, 0, 0. Depois dessa corrida, as sondagens parser-antes.json e campo-copia-antes.json demonstraram que a comparação genérica perdia comentários literais e que o campo marcado podia estar fora do bloco de cópia. Foram fechadas ambas as falhas, com plantas que afirmam as mensagens de rejeição e uma comparação com inputValue no navegador. As sondagens guardam a cabeça e o resumo do comparador anterior; não são ensaios para repetir contra o comparador corrigido. A corrida inteira em portoes/, na cabeça corrigida, é a que vale para a entrega.
 
 Os logs em portoes/ só foram limpos de caminhos locais e nomes da conta. O motor não existe nesta worktree; check:series correu no modo sem motor admitido no lançamento.
 
@@ -221,29 +221,29 @@ O código incorporável passa a dizer o lugar e a separar a unidade da fonte. As
 
 Passagem lançada a 07.10.2026, com a antecipação de data autorizada no lançamento. Modelo e esforço indicados no lançamento: Codex gpt-6-astra, high. O mandato e a leitura a frio são as referências desta passagem. Os números abaixo foram lidos dos ficheiros dos portões, do Git e dos manifestos, e agregados em resumo-b.json.
 
-Cabeça do código: `abe02094947a2f3c4d600891b89380c7b175ebe5`. A cabeça final é o commit que contém este relatório e as provas; lê-se no Git e na resposta final, sem gravar um resumo autorreferente.
+Cabeça do código: `07388654cfd9f5b0a6326371c310c2f9461e43b5`. A cabeça final é o commit que contém este relatório e as provas; lê-se no Git e na resposta final, sem gravar um resumo autorreferente.
 
 ### Fusão e ponto de partida
 
-Fundido `main` em `f3aaa3e7292799f58db4158db30dd631c9d2d652`, com 109 commits por entrar desde `56a582dd6822f5f6c73256e063c1c8421280fb5f`. A fusão é `721443ce8afea9946d7e25c4cb5e410fc268fa1f`. Nos conflitos, ficaram as duas secções do inventário com os seus cabeçalhos, a união dos guiões de package.json e as duas células do portão de HTML. Conservaram-se M-A, EX2, H4, a direção de 07.10.2026 e as proteções ER1. Nenhum lado foi descartado inteiro.
+Fundido `main` em `7952dc2591b32b6777e32e9f5f18984c35a635d4`, com 109 commits por entrar desde `682510068b5c773229e15b614dae999a150ebf6e`. A fusão é `9fed89afa4eb24c638278985099758bdd9ff980c`. Nos conflitos, ficaram as duas secções do inventário com os seus cabeçalhos, a união dos guiões de package.json e as duas células do portão de HTML. Conservaram-se M-A, EX2, H4, a direção de 07.10.2026 e as proteções ER1. Nenhum lado foi descartado inteiro.
 
 package-lock.json não mudou na fusão, pelo que npm ci não era necessário. O seu sha256 é `f0e5c9f6fe45a01b01339c01b0f7fa6ef42dfecfa99a1b79046cc87435e1e076`. O mapa foi alinhado por âncoras após a fusão e após as correções. A conferência final está em mapa-b.txt, com zero longe e zero por encontrar. Os três portões da fusão terminaram verdes antes de tocar no mandato; não houve vermelho da fusão por corrigir.
 
 | Commit, por ordem | Mensagem |
 | --- | --- |
-| 721443ce8afea9946d7e25c4cb5e410fc268fa1f | Funde main de 07.10.2026 no ER1, com M-A, EX2, H4 e direção atualizada |
-| ff6caca31bfa878b763e519bab163e169915f329 | ER1-b 4: recusa incorporar proveniência por confirmar |
-| 637a969e69d0e3d83cb334e0852343645bd6bbf9 | ER1-b 7 e 13: regista o texto aprovado do Método |
-| 28f3055b2429e4d6f9b98091291a65b86acd0d85 | ER1-b 8: faz viajar o lugar antes do período |
-| ff73542397dbaf00a2b3b5e92d1acc51e4ce207f | ER1-b 10: inventaria as cadeias aprovadas nas duas edições |
-| 860020a90b99c23c045aa083e889bd09215eacce | ER1-b 11: separa a unidade da fonte no código e na atualização |
-| 71b42c12eaf5a8fc2578c832ff7e1b4680434888 | ER1-b 12: planta as seis leituras indevidas na privacidade |
-| cf1b89c0ccb7d4a644ddedbd67663596f92b5f79 | ER1-b 14: exerce as notas reais no navegador e planta a sua retirada |
-| 388bd84e850c3b3ea58671e12ec4d81d45167673 | ER1-b 15: retira o controlo das plantas da leitura a frio |
-| fc969cc2d3bf5faf40d6df705f93fe7671605144 | ER1-b: alinha o mapa pelas âncoras depois das correções |
-| c25aee7f41e5931909f3cc05e7779f6d22922ae8 | ER1-b 8: fecha a ausência de uma região na resolução do lugar |
-| 4dfb9690fb1a95d3bb2973ae32e8702988fd25d3 | ER1-b 7: fecha a porta de exemplo pedida no brief do Método |
-| abe02094947a2f3c4d600891b89380c7b175ebe5 | ER1-b 10: confere a porta governada na tabela própria do inventário |
+| 9fed89afa4eb24c638278985099758bdd9ff980c | Funde main de 07.10.2026 no ER1, com M-A, EX2, H4 e direção atualizada |
+| 3514bdddb707ef1808f08484ae561eebf603d275 | ER1-b 4: recusa incorporar proveniência por confirmar |
+| b03d8e8479cdc3e0cdaa70af1e0e85277d37da35 | ER1-b 7 e 13: regista o texto aprovado do Método |
+| 5c6463e9df7bda3ada740c3753df0663b884d84f | ER1-b 8: faz viajar o lugar antes do período |
+| 5877605534a4893428c430db031945261a87485d | ER1-b 10: inventaria as cadeias aprovadas nas duas edições |
+| 9ba87560c6e8c6446035f837a23d07ab48f4fc40 | ER1-b 11: separa a unidade da fonte no código e na atualização |
+| fbac4267cd5013dbafd8b5aede21a3f88c467c4a | ER1-b 12: planta as seis leituras indevidas na privacidade |
+| e7660ba400987de3cbd392679945d7c8d98bffbf | ER1-b 14: exerce as notas reais no navegador e planta a sua retirada |
+| 904a83fc081c436305cac0917cc41eb7db76a992 | ER1-b 15: retira o controlo das plantas da leitura a frio |
+| 393e162b6157edad0c29d40c698cb00060c42e57 | ER1-b: alinha o mapa pelas âncoras depois das correções |
+| 732cec7b85f40167f628f03ea882da44da199c82 | ER1-b 8: fecha a ausência de uma região na resolução do lugar |
+| 31789e34cd290b96316d38eec716d4dd3919bec0 | ER1-b 7: fecha a porta de exemplo pedida no brief do Método |
+| 07388654cfd9f5b0a6326371c310c2f9461e43b5 | ER1-b 10: confere a porta governada na tabela própria do inventário |
 
 ### Decisões e correções por achado
 
@@ -286,7 +286,7 @@ Comando: `sh scripts/leituras/portoes.sh <worktree absoluta> design/especime-v3/
 | ER1-b, final | verify | 0 | 2026-10-07T10:47:28Z | 2026-10-07T10:52:09Z |
 | ER1-b, final | typecheck | 0 | 2026-10-07T10:52:09Z | 2026-10-07T10:52:09Z |
 
-A primeira corrida ER1-b, em `fc969cc2d3bf5faf40d6df705f93fe7671605144`, ficou em portoes-b-primeira/. O typecheck recusou o acesso ao nome de uma região que poderia não existir e o índice da língua sem tipo fechado. A correção passou a recusar explicitamente a região ausente e a tipar as duas línguas; o typecheck isolado passou e os três portões foram repetidos na cabeça corrigida. A segunda corrida, em `c25aee7f41e5931909f3cc05e7779f6d22922ae8`, passou os três portões. Na conferência final do brief encontrou-se a porta de exemplo ainda em falta no Método; foi acrescentada com planta nas duas edições, mantendo a frase aprovada, e o carimbo foi atualizado. A terceira corrida, em `4dfb9690fb1a95d3bb2973ae32e8702988fd25d3`, recusou as palavras dessa porta como frases vivas na voz: o Método já fora retirado dessa leitura depois de conferido como texto governado. A porta passou à tabela própria do inventário, com comparação e plantas nas duas edições; check:voz e a célula ER1 passaram isoladamente antes da corrida completa final. A régua geral da voz não foi alterada. O verify da terceira corrida não correu porque o build falhou; o seu código de não execução está na tabela. As capturas das tentativas ficaram em er1-b-primeira/ e er1-b-segunda/; as que valem para a entrega estão em er1-b/.
+A primeira corrida ER1-b, em `393e162b6157edad0c29d40c698cb00060c42e57`, ficou em portoes-b-primeira/. O typecheck recusou o acesso ao nome de uma região que poderia não existir e o índice da língua sem tipo fechado. A correção passou a recusar explicitamente a região ausente e a tipar as duas línguas; o typecheck isolado passou e os três portões foram repetidos na cabeça corrigida. A segunda corrida, em `732cec7b85f40167f628f03ea882da44da199c82`, passou os três portões. Na conferência final do brief encontrou-se a porta de exemplo ainda em falta no Método; foi acrescentada com planta nas duas edições, mantendo a frase aprovada, e o carimbo foi atualizado. A terceira corrida, em `31789e34cd290b96316d38eec716d4dd3919bec0`, recusou as palavras dessa porta como frases vivas na voz: o Método já fora retirado dessa leitura depois de conferido como texto governado. A porta passou à tabela própria do inventário, com comparação e plantas nas duas edições; check:voz e a célula ER1 passaram isoladamente antes da corrida completa final. A régua geral da voz não foi alterada. O verify da terceira corrida não correu porque o build falhou; o seu código de não execução está na tabela. As capturas das tentativas ficaram em er1-b-primeira/ e er1-b-segunda/; as que valem para a entrega estão em er1-b/.
 
 As provas específicas foram extraídas de portoes-b/verify.log para celula-b.json, navegador-b.json e privacidade-b.json. O navegador exerceu 23 casos. As mensagens das plantas abaixo foram afirmadas pelas células, não inferidas de um código de saída.
 
@@ -425,22 +425,22 @@ A recusa foi limitada às marcas na fonte ou na data de acesso. As linhas calcul
 
 Há uma condição do mandato que não se pode declarar satisfeita: o Método conta 8 linhas com algum campo por confirmar, mas só 4 têm marca na fonte ou na data de acesso. ER1-7 regista esta divergência. A recusa expressamente pedida aplica-se; não se alterou a contagem do Método nem se alargou a recusa para forçar igualdade.
 
-Relatório gerado por `node design/especime-v3/medicoes/er1-2026-10-06/relatar-c.mjs`. Cabeça do código: `9d65ba384daf1b87a2f2d33b5d789359a94e64a0`. A cabeça final é o commit que acrescenta este relatório, as capturas e as provas; lê-se na resposta final. O último commit não muda código e as capturas são dos mesmos bytes da aplicação que essa cabeça final contém. O carimbo da construção identifica a cabeça do código, sem fingir uma construção posterior.
+Relatório gerado por `node design/especime-v3/medicoes/er1-2026-10-06/relatar-c.mjs`. Cabeça do código: `1a483bb6bebe77eb77acf22d0a252bc32f199e56`. A cabeça final é o commit que acrescenta este relatório, as capturas e as provas; lê-se na resposta final. O último commit não muda código e as capturas são dos mesmos bytes da aplicação que essa cabeça final contém. O carimbo da construção identifica a cabeça do código, sem fingir uma construção posterior.
 
 ### Os commits, com os registos primeiro
 
 | Commit |
 | --- |
-| b2aeec25 docs(er1-c): registar o mandato e a leitura a frio |
-| 3fcbc28f fix(er1-c): dar código às linhas calculadas sem data própria |
-| 68d2ea26 fix(er1-c): separar a licença das notas nos dois compositores |
-| 14f4d8da docs(er1-c): registar o lugar das contagens internas como ER1-6 |
-| 238d64f0 test(er1-c): isolar as marcas e proteger a linha calculada |
-| b26bf430 fix(er1-c): abrir no Método o recibo da dívida pública |
-| c3f0243a test(er1-c): medir os recibos e nomear as rotas para a leitura |
-| b29cd9e8 test(er1-c): corrigir a seleção derivada e preparar o relatório medido |
-| ee7e6835 fix(er1-c): dizer uma vez que o número foi calculado |
-| 9d65ba38 fix(er1-c): reservar a indicação de cálculo às linhas derivadas |
+| 936cda85 docs(er1-c): registar o mandato e a leitura a frio |
+| a8afa5c3 fix(er1-c): dar código às linhas calculadas sem data própria |
+| 490ebab0 fix(er1-c): separar a licença das notas nos dois compositores |
+| 5871c91c docs(er1-c): registar o lugar das contagens internas como ER1-6 |
+| 5962d628 test(er1-c): isolar as marcas e proteger a linha calculada |
+| bfa9b8d4 fix(er1-c): abrir no Método o recibo da dívida pública |
+| bef1b50c test(er1-c): medir os recibos e nomear as rotas para a leitura |
+| d7db05d3 test(er1-c): corrigir a seleção derivada e preparar o relatório medido |
+| 2922ab5d fix(er1-c): dizer uma vez que o número foi calculado |
+| 1a483bb6 fix(er1-c): reservar a indicação de cálculo às linhas derivadas |
 
 O primeiro commit contém o mandato, a leitura inteira e o registo das plantas. O campo `copia` desse registo foi anonimizado para cumprir a proibição de caminhos locais. Os achados plantados nas cópias não foram aplicados ao código.
 
@@ -498,7 +498,7 @@ Exemplo escolhido: `divida-publica-2025`. Dívida pública: medida nacional no b
 
 ### Portões, ensaios e capturas
 
-Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/er1-2026-10-06/portoes-c`. Cabeça no início e no fim: `9d65ba384daf1b87a2f2d33b5d789359a94e64a0`. Códigos lidos dos ficheiros depois do fim da corrida:
+Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/er1-2026-10-06/portoes-c`. Cabeça no início e no fim: `1a483bb6bebe77eb77acf22d0a252bc32f199e56`. Códigos lidos dos ficheiros depois do fim da corrida:
 
 | Portão | Código | Ficheiro |
 | --- | --- | --- |
@@ -556,14 +556,14 @@ ER1-7 fechada pela decisão do lugar de direção no mandato desta passagem. A r
 
 A definição partilhada lê os campos de proveniência, incluindo o excerto, o endereço da fonte e o documento. Conserva também o período de referência que já fazia parte do predicado do Método. As linhas calculadas sem marca continuam a receber código. A recusa mantém as cadeias aprovadas nas duas línguas, que descrevem um campo da proveniência por confirmar na fonte.
 
-Relatório gerado por `node design/especime-v3/medicoes/er1-2026-10-06/relatar-d.mjs`. Cabeça do código: `8ed75dfd1fdb00d57d977eee3beae009675b0ff0`. O último commit acrescenta apenas o relatório com os seus anexos medidos, as capturas e os códigos dos portões. A cabeça final lê-se na resposta da entrega. As capturas mostram os mesmos bytes da aplicação dessa cabeça final; o carimbo identifica honestamente a cabeça do código.
+Relatório gerado por `node design/especime-v3/medicoes/er1-2026-10-06/relatar-d.mjs`. Cabeça do código: `e22677f7ed76e65bc8e2526d69e10887954385ec`. O último commit acrescenta apenas o relatório com os seus anexos medidos, as capturas e os códigos dos portões. A cabeça final lê-se na resposta da entrega. As capturas mostram os mesmos bytes da aplicação dessa cabeça final; o carimbo identifica honestamente a cabeça do código.
 
 | Commit |
 | --- |
-| af9d09ff docs(er1-d): registar o mandato e a decisão ER1-7 |
-| be34d0c6 fix(er1-d): partilhar a recusa com a prova do Método |
-| 577d8a8a test(er1-d): plantar marcas isoladas no excerto e no endereço |
-| 8ed75dfd docs(er1-d): fechar ER1-7 no relatório medido e preparar capturas |
+| 1686ec4b docs(er1-d): registar o mandato e a decisão ER1-7 |
+| a2f340e1 fix(er1-d): partilhar a recusa com a prova do Método |
+| 36c5a4e9 test(er1-d): plantar marcas isoladas no excerto e no endereço |
+| e22677f7 docs(er1-d): fechar ER1-7 no relatório medido e preparar capturas |
 
 ### As contagens lado a lado
 
@@ -609,7 +609,7 @@ As saídas integrais dos ensaios foram extraídas do `verify.log` da tranca para
 
 ### Os portões e as capturas
 
-Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/er1-2026-10-06/portoes-d`. Cabeça no início e no fim: `8ed75dfd1fdb00d57d977eee3beae009675b0ff0`. Os códigos foram lidos dos ficheiros depois de terminada a corrida. O verify executou a união conferida com o build pela tranca existente.
+Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/er1-2026-10-06/portoes-d`. Cabeça no início e no fim: `e22677f7ed76e65bc8e2526d69e10887954385ec`. Os códigos foram lidos dos ficheiros depois de terminada a corrida. O verify executou a união conferida com o build pela tranca existente.
 
 | Portão | Código | Ficheiro |
 | --- | --- | --- |
@@ -650,15 +650,15 @@ O achado nove fica fechado: `leituraDaIncorporacao` escreve uma vez a regra usad
 
 Os achados um a cinco eram estragos nas cópias da leitura, identificados no registo de plantas da direção, e não originaram correções. O achado sete fica registado como **ER1-12**, para o bloco de higiene: o conjunto da diferença de `medir-c.mjs` é vazio por construção e não constitui prova independente. Esse guião histórico não foi corrigido aqui. O achado dez, marcas nos recibos recusados, permanece no bloco dos recibos conforme a decisão anterior. Não se introduzem questões novas.
 
-Relatório gerado por `node design/especime-v3/medicoes/er1-2026-10-06/relatar-e.mjs`. Cabeça do código: `ac4022106fbca310da2fbb2f31739e2a41e486d5`. A cabeça final é a do último commit, que contém apenas este relatório, os anexos medidos e os códigos com os seus registos; consta da resposta da entrega.
+Relatório gerado por `node design/especime-v3/medicoes/er1-2026-10-06/relatar-e.mjs`. Cabeça do código: `d4ad6e3662862f87c6b3e924c7ab96158f97a269`. A cabeça final é a do último commit, que contém apenas este relatório, os anexos medidos e os códigos com os seus registos; consta da resposta da entrega.
 
 | Commit |
 | --- |
-| 511066bc docs(er1-e): registar leitura, plantas e mandato |
-| 17cb0e8c fix(er1-e): fazer do JSON a única porta da incorporação |
-| ff6b03d4 test(er1-e): afirmar a leitura e o separador no navegador |
-| 961357c9 fix(er1-e): partilhar a leitura e recusar linhas sem data de origem |
-| ac402210 docs(er1-e): preparar contagens e relatório extraídos das provas |
+| b2b20e7a docs(er1-e): registar leitura, plantas e mandato |
+| b1acb553 fix(er1-e): fazer do JSON a única porta da incorporação |
+| 2cff74fa test(er1-e): afirmar a leitura e o separador no navegador |
+| a21ecbe9 fix(er1-e): partilhar a leitura e recusar linhas sem data de origem |
+| d4ad6e36 docs(er1-e): preparar contagens e relatório extraídos das provas |
 
 ### As contagens lado a lado
 
@@ -698,7 +698,7 @@ A célula conferiu 6390 recibos e 3195 JSON. O navegador registou 27 casos. As s
 
 ### Portões e aparência
 
-Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/er1-2026-10-06/portoes-e`. Cabeça inicial e final da corrida: `ac4022106fbca310da2fbb2f31739e2a41e486d5`. Os códigos seguintes foram lidos dos ficheiros depois do fim. O verify executou a união conferida com o build pela tranca existente. Nenhum portão de proteção de números, fontes ou pessoas foi enfraquecido.
+Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/er1-2026-10-06/portoes-e`. Cabeça inicial e final da corrida: `d4ad6e3662862f87c6b3e924c7ab96158f97a269`. Os códigos seguintes foram lidos dos ficheiros depois do fim. O verify executou a união conferida com o build pela tranca existente. Nenhum portão de proteção de números, fontes ou pessoas foi enfraquecido.
 
 | Portão | Código lido | Ficheiro |
 | --- | --- | --- |
@@ -706,7 +706,7 @@ Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/
 | verify | 0 | portoes-e/verify.codigo |
 | typecheck | 0 | portoes-e/typecheck.codigo |
 
-Não são necessárias capturas novas: as páginas conservam o aspeto. O guião comparou com `1352d49a` os 6390 resultados do compositor estático, incluindo recusas, e as 6374 apresentações elegíveis, nas duas edições. Diferenças: 0. Não foram alterados componentes, vistas ou folhas de estilo. A mudança visível no comportamento é a conservação do parágrafo colado quando a proveniência é recusada; a célula do navegador guarda esse texto e os atributos.
+Não são necessárias capturas novas: as páginas conservam o aspeto. O guião comparou com `8dbe1481` os 6390 resultados do compositor estático, incluindo recusas, e as 6374 apresentações elegíveis, nas duas edições. Diferenças: 0. Não foram alterados componentes, vistas ou folhas de estilo. A mudança visível no comportamento é a conservação do parágrafo colado quando a proveniência é recusada; a célula do navegador guarda esse texto e os atributos.
 
 Sem push nem publicação. A aterragem pertence ao lugar de direção.
 
@@ -719,16 +719,16 @@ O achado seis da leitura ER1-e era um defeito da prova: a igualdade que passava 
 
 A recusa por excerto usa a linha real `evora-prr-aprovado-2026`; o JSON produzido é também comparado com o construído. Para o endereço, a pequena escolha de ensaio é copiar em memória uma linha real, dar-lhe um identificador próprio e marcar apenas `source_url`. A mesma cópia passa a `jsonDaLinha` e a `codigoDaIncorporacao`. O produtor aceita a linha diretamente ou o identificador usado pelas páginas. Na cópia estragada do endereço, a apresentação vem da linha real de origem. Não se altera o livro.
 
-Os achados um a cinco eram plantas nas cópias do pacote; não originaram correções. As marcas nos recibos recusados continuam atribuídas ao bloco dos recibos. Não surgiram questões novas. Sem capturas, porque as páginas não mudam: os 3195 JSON reais são idênticos aos da base `9f240c59`, tanto por identificador como por linha em memória, e coincidem com os ficheiros construídos. Compositor, cliente, componentes e estilos não foram alterados.
+Os achados um a cinco eram plantas nas cópias do pacote; não originaram correções. As marcas nos recibos recusados continuam atribuídas ao bloco dos recibos. Não surgiram questões novas. Sem capturas, porque as páginas não mudam: os 3195 JSON reais são idênticos aos da base `f22354f0`, tanto por identificador como por linha em memória, e coincidem com os ficheiros construídos. Compositor, cliente, componentes e estilos não foram alterados.
 
-Relatório gerado por `node design/especime-v3/medicoes/er1-2026-10-06/relatar-f.mjs`. Cabeça do código: `3af705984751b699a068b31c151f411bd6719a53`.
+Relatório gerado por `node design/especime-v3/medicoes/er1-2026-10-06/relatar-f.mjs`. Cabeça do código: `bb9d664771f9bfd8b55c7397051321dcdda45485`.
 
 A cabeça final pertence ao último commit, que só contém o relatório, o anexo de prova e os códigos com os seus registos; não cabe dentro de si própria e consta da resposta da entrega.
 
 | Commit |
 | --- |
-| 3425fd6d docs(er1-f): registar leitura, plantas e mandato |
-| 3af70598 test(er1-f): provar as recusas com JSON estragado no navegador |
+| fb72dd92 docs(er1-f): registar leitura, plantas e mandato |
+| bb9d6647 test(er1-f): provar as recusas com JSON estragado no navegador |
 
 ### As plantas do navegador
 

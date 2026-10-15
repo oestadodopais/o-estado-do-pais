@@ -1,7 +1,7 @@
 {
   "o_que_e": "As medidas do bloco L1, a leitura de cada medida. Cada uma com o comando e o conhecido-positivo.",
   "comando": "python3 design/especime-v3/medicoes/l1-2026-09-24/medir-l1.py",
-  "cabeca_da_corrida": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+  "cabeca_da_corrida": "fb363a11137d7ce29282f80ecdf7bc8b0f7ea65c",
   "falhas": [],
   "medidas": [
     {
@@ -512,12 +512,12 @@
     },
     {
       "nome": "paginas_depois_construidas_de",
-      "valor": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+      "valor": "fb363a11137d7ce29282f80ecdf7bc8b0f7ea65c",
       "comando": "paginas-depois/INDICE.json",
       "conhecido_positivo": {
         "planta": "nenhuma",
-        "esperado": "c1e155f021864214a2d05625afe6ad4dea60e24f",
-        "visto": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+        "esperado": "fb363a11137d7ce29282f80ecdf7bc8b0f7ea65c",
+        "visto": "fb363a11137d7ce29282f80ecdf7bc8b0f7ea65c",
         "mordeu": true
       }
     },
@@ -901,12 +901,12 @@
     },
     {
       "nome": "capturas_depois_de",
-      "valor": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+      "valor": "fb363a11137d7ce29282f80ecdf7bc8b0f7ea65c",
       "comando": "node design/especime-v3/medicoes/l1-2026-09-24/captar-l1.mjs <estado>, lido de capturas-<estado>.json",
       "conhecido_positivo": {
         "planta": "nenhuma",
-        "esperado": "c1e155f021864214a2d05625afe6ad4dea60e24f",
-        "visto": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+        "esperado": "fb363a11137d7ce29282f80ecdf7bc8b0f7ea65c",
+        "visto": "fb363a11137d7ce29282f80ecdf7bc8b0f7ea65c",
         "mordeu": true
       }
     },
@@ -2002,7 +2002,7 @@
       "nome": "portao_build",
       "valor": {
         "codigo": 0,
-        "cabeca": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+        "cabeca": "fb363a11137d7ce29282f80ecdf7bc8b0f7ea65c",
         "segundos": 303.7,
         "inicio": "2026-09-26T09:07:57.346272+00:00",
         "fim": "2026-09-26T09:13:01.038118+00:00",
@@ -2020,7 +2020,7 @@
       "nome": "portao_verify",
       "valor": {
         "codigo": 0,
-        "cabeca": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+        "cabeca": "fb363a11137d7ce29282f80ecdf7bc8b0f7ea65c",
         "segundos": 486.9,
         "inicio": "2026-09-26T09:13:11.377400+00:00",
         "fim": "2026-09-26T09:21:18.271789+00:00",
@@ -2038,7 +2038,7 @@
       "nome": "portao_typecheck",
       "valor": {
         "codigo": 0,
-        "cabeca": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+        "cabeca": "fb363a11137d7ce29282f80ecdf7bc8b0f7ea65c",
         "segundos": 0.2,
         "inicio": "2026-09-26T09:21:29.332489+00:00",
         "fim": "2026-09-26T09:21:29.556839+00:00",
@@ -2089,22 +2089,22 @@
     {
       "nome": "commits_do_sitio",
       "valor": [
-        "c1e155f0 L1, correção: os guiões das provas medem a passagem de correção, e o mapa do repositório diz a forma nova da K9",
-        "839eda2f L1, correção: as palavras correntes dos termos que a leitura a frio achou por explicar, cada uma com o seu literal, a idade da taxa de atividade, e as duas leituras reescritas pelo lugar de direção",
-        "28bcdd00 L1, correção: a discordância sobre os dois valores de referência declarada e datada ao pé de cada um, e a K9 a exigi-la",
-        "6584df72 L1: a leitura a frio do Codex (gpt-5.6-sol, 598 189 símbolos, cinco plantas em cinco, 28 achados) com as plantas e o prompt, e duas leituras reescritas pelo lugar de direção (a disparidade salarial fecha a oração com o valor, para que «provisório» feche com ele; as câmaras concordam com «o número», seja qual for a contagem)",
-        "5c63129d L1: o ensaio a seco das leituras entra no repositório (M31), com caminhos relativos, e corre a 0 sobre o ficheiro do lugar de direção e sobre o do sítio com os dezassete acertos",
-        "aa1e4881 L1: as provas do bloco, medidas na cabeça d831b453",
-        "02b56181 L1: a planta da declaração retirada, que prova que o resolvedor recusa carregar sem uma leitura obrigatória",
-        "463b9067 L1: a sonda das origens que não se acharam, o porquê exato do A5 e os guiões das origens sem o caminho da máquina",
-        "9519e56a L1: o mapa do repositório com o que o L1 acrescentou, e as linhas que tinham andado",
-        "8043ef6c L1: o arame da classe tira as leituras dos cartões só depois de a K17 as conferir, e as plantas das formas novas",
-        "64648c65 L1: as palavras fixas no inventário das frases, os acertos A16 e A17 que o portão da voz pediu e o guião que confere os dezassete acertos",
-        "2780b589 L1: as origens das leituras seladas no motor, a auditoria folha a folha e a K17 do check:cartao",
-        "37e73017 L1: o portão de HTML, a V2 e a K1 e K10 do cartão aceitam a leitura pela regra da régua",
-        "c0dcc05f L1: a leitura por baixo do número nos 36 cartões nacionais, a 14 px e na tinta",
-        "6b1297c3 L1: as leituras das medidas declaradas em src/data e o resolvedor que as achata",
-        "074cc698 L1: o mapa do repositório com o que a peça 1 do B2 acrescentou"
+        "fb363a11 L1, correção: os guiões das provas medem a passagem de correção, e o mapa do repositório diz a forma nova da K9",
+        "85e95895 L1, correção: as palavras correntes dos termos que a leitura a frio achou por explicar, cada uma com o seu literal, a idade da taxa de atividade, e as duas leituras reescritas pelo lugar de direção",
+        "2904e8f6 L1, correção: a discordância sobre os dois valores de referência declarada e datada ao pé de cada um, e a K9 a exigi-la",
+        "2e1d84d4 L1: a leitura a frio do Codex (gpt-5.6-sol, 598 189 símbolos, cinco plantas em cinco, 28 achados) com as plantas e o prompt, e duas leituras reescritas pelo lugar de direção (a disparidade salarial fecha a oração com o valor, para que «provisório» feche com ele; as câmaras concordam com «o número», seja qual for a contagem)",
+        "8ed0f5af L1: o ensaio a seco das leituras entra no repositório (M31), com caminhos relativos, e corre a 0 sobre o ficheiro do lugar de direção e sobre o do sítio com os dezassete acertos",
+        "6c277f9a L1: as provas do bloco, medidas na cabeça d831b453",
+        "f5aea25b L1: a planta da declaração retirada, que prova que o resolvedor recusa carregar sem uma leitura obrigatória",
+        "9ce35e1e L1: a sonda das origens que não se acharam, o porquê exato do A5 e os guiões das origens sem o caminho da máquina",
+        "ed1c7e63 L1: o mapa do repositório com o que o L1 acrescentou, e as linhas que tinham andado",
+        "f4efa69d L1: o arame da classe tira as leituras dos cartões só depois de a K17 as conferir, e as plantas das formas novas",
+        "2752a6fa L1: as palavras fixas no inventário das frases, os acertos A16 e A17 que o portão da voz pediu e o guião que confere os dezassete acertos",
+        "c09b2546 L1: as origens das leituras seladas no motor, a auditoria folha a folha e a K17 do check:cartao",
+        "7d98c8e2 L1: o portão de HTML, a V2 e a K1 e K10 do cartão aceitam a leitura pela regra da régua",
+        "3fe1488e L1: a leitura por baixo do número nos 36 cartões nacionais, a 14 px e na tinta",
+        "e1479fc4 L1: as leituras das medidas declaradas em src/data e o resolvedor que as achata",
+        "2346ce65 L1: o mapa do repositório com o que a peça 1 do B2 acrescentou"
       ],
       "comando": "git log --format=\"%h %s\" <o brief>..HEAD",
       "conhecido_positivo": {
@@ -2117,11 +2117,11 @@
     {
       "nome": "commits_da_correcao",
       "valor": [
-        "c1e155f0 L1, correção: os guiões das provas medem a passagem de correção, e o mapa do repositório diz a forma nova da K9",
-        "839eda2f L1, correção: as palavras correntes dos termos que a leitura a frio achou por explicar, cada uma com o seu literal, a idade da taxa de atividade, e as duas leituras reescritas pelo lugar de direção",
-        "28bcdd00 L1, correção: a discordância sobre os dois valores de referência declarada e datada ao pé de cada um, e a K9 a exigi-la"
+        "fb363a11 L1, correção: os guiões das provas medem a passagem de correção, e o mapa do repositório diz a forma nova da K9",
+        "85e95895 L1, correção: as palavras correntes dos termos que a leitura a frio achou por explicar, cada uma com o seu literal, a idade da taxa de atividade, e as duas leituras reescritas pelo lugar de direção",
+        "2904e8f6 L1, correção: a discordância sobre os dois valores de referência declarada e datada ao pé de cada um, e a K9 a exigi-la"
       ],
-      "comando": "git log --format=\"%h %s\" 6584df72..HEAD",
+      "comando": "git log --format=\"%h %s\" 2e1d84d4..HEAD",
       "conhecido_positivo": {
         "planta": "nenhuma",
         "esperado": true,
@@ -2132,7 +2132,7 @@
     {
       "nome": "commits_da_correcao_contados",
       "valor": 3,
-      "comando": "git log 6584df72..HEAD",
+      "comando": "git log 2e1d84d4..HEAD",
       "conhecido_positivo": {
         "planta": "nenhuma",
         "esperado": 3,
@@ -2143,7 +2143,7 @@
     },
     {
       "nome": "brief_depois_do_rebase",
-      "valor": "61155218d3acabc6a3c10489b56764791cdf792b",
+      "valor": "61475a63d74e1c200c0c71e851596e75d1d8ef99",
       "comando": "git log --grep «^O brief do L1» main..HEAD",
       "conhecido_positivo": {
         "planta": "nenhuma",
@@ -2154,7 +2154,7 @@
     },
     {
       "nome": "cabeca_medida",
-      "valor": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+      "valor": "fb363a11137d7ce29282f80ecdf7bc8b0f7ea65c",
       "comando": "git rev-parse HEAD",
       "conhecido_positivo": {
         "planta": "nenhuma",
@@ -2177,7 +2177,7 @@
     {
       "nome": "tempo_de_parede_segundos",
       "valor": 10766,
-      "comando": "git show 6584df72:design/especime-v3/medicoes/l1-2026-09-24/medidas.json (a medição de 24.09.2026)",
+      "comando": "git show 2e1d84d4:design/especime-v3/medicoes/l1-2026-09-24/medidas.json (a medição de 24.09.2026)",
       "conhecido_positivo": {
         "planta": "nenhuma: é a medição de 24.09.2026, relida",
         "esperado": 10766,
@@ -2256,7 +2256,7 @@
           "ramo_com_a_troca_e_o_depois": true
         }
       ],
-      "comando": "git show 6584df72:<o ficheiro do ramo>, contra design/especime-v3/critica/LEITURA-l1-2026-09-26.plantas.json",
+      "comando": "git show 2e1d84d4:<o ficheiro do ramo>, contra design/especime-v3/critica/LEITURA-l1-2026-09-26.plantas.json",
       "conhecido_positivo": {
         "planta": "a troca registada de cada planta, aplicada aos bytes do ramo, dá o sha256_depois",
         "esperado": 5,
@@ -2267,7 +2267,7 @@
     {
       "nome": "plantas_da_leitura_confirmadas",
       "valor": 5,
-      "comando": "git show 6584df72:<o ficheiro do ramo>, contra design/especime-v3/critica/LEITURA-l1-2026-09-26.plantas.json",
+      "comando": "git show 2e1d84d4:<o ficheiro do ramo>, contra design/especime-v3/critica/LEITURA-l1-2026-09-26.plantas.json",
       "conhecido_positivo": {
         "planta": "o primeiro ficheiro com um byte a mais",
         "esperado": 4,
@@ -2278,7 +2278,7 @@
     {
       "nome": "plantas_da_leitura",
       "valor": 5,
-      "comando": "git show 6584df72:<o ficheiro do ramo>, contra design/especime-v3/critica/LEITURA-l1-2026-09-26.plantas.json",
+      "comando": "git show 2e1d84d4:<o ficheiro do ramo>, contra design/especime-v3/critica/LEITURA-l1-2026-09-26.plantas.json",
       "conhecido_positivo": {
         "planta": "nenhuma",
         "esperado": 5,
@@ -2289,7 +2289,7 @@
     {
       "nome": "plantas_da_leitura_reproduzidas",
       "valor": 5,
-      "comando": "git show 6584df72:<o ficheiro do ramo>, contra design/especime-v3/critica/LEITURA-l1-2026-09-26.plantas.json (a troca registada aplicada aos bytes do ramo)",
+      "comando": "git show 2e1d84d4:<o ficheiro do ramo>, contra design/especime-v3/critica/LEITURA-l1-2026-09-26.plantas.json (a troca registada aplicada aos bytes do ramo)",
       "conhecido_positivo": {
         "planta": "a troca da primeira planta aplicada a um byte a mais",
         "esperado": 4,
@@ -2969,7 +2969,7 @@
     {
       "nome": "achado6_ficheiros_json_na_pasta",
       "valor": 15,
-      "comando": "git archive 6584df72 da pasta do bloco, os *.json",
+      "comando": "git archive 2e1d84d4 da pasta do bloco, os *.json",
       "conhecido_positivo": {
         "planta": "nenhuma",
         "esperado": 15,
@@ -2983,7 +2983,7 @@
         "lidos": 15,
         "conhecido_positivo": 987654322
       },
-      "comando": "conferir-relatorio.py sobre a pasta de 6584df72, sem --json (como o pacote.sh a corre)",
+      "comando": "conferir-relatorio.py sobre a pasta de 2e1d84d4, sem --json (como o pacote.sh a corre)",
       "conhecido_positivo": {
         "planta": "a mesma corrida sem o conferencia-relatorio.json na cópia",
         "esperado": {
@@ -3003,7 +3003,7 @@
         "lidos": 14,
         "conhecido_positivo": 987654321
       },
-      "comando": "conferir-relatorio.py sobre a pasta de 6584df72, com --json para o conferencia-relatorio.json da própria pasta (como o construtor o correu)",
+      "comando": "conferir-relatorio.py sobre a pasta de 2e1d84d4, com --json para o conferencia-relatorio.json da própria pasta (como o construtor o correu)",
       "conhecido_positivo": {
         "planta": "a corrida exclui o ficheiro para onde escreve: lê um JSON a menos e não acha 987654321 em nenhum",
         "esperado": {

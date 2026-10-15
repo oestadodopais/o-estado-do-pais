@@ -238,7 +238,7 @@ const EM_LINHA = new Set([
  * PORQUE É QUE ESTA PERGUNTA EXISTE, E É A MEDIÇÃO QUE A FEZ
  * ---------------------------------------------------------------------------
  * A primeira redação desta célula era a que o defeito pedia à letra: duas peças
- * vizinhas sem espaço entre elas. Corrida sobre `dist/` na cabeça 44f0d838, deu
+ * vizinhas sem espaço entre elas. Corrida sobre `dist/` na cabeça a863f417, deu
  * 60 526 vermelhos, 31 407 deles entre duas peças de texto, em 60 padrões. Não
  * eram 31 407 defeitos: era o RETRATO DA COMPOSIÇÃO DESTA CASA. O selo da fonte
  * encostado ao seu número (`.claim-value` + `.src-chip`, umas onze mil vezes), o
@@ -266,7 +266,7 @@ const EM_LINHA = new Set([
  * ser um defeito: a régua não mede QUANTO espaço a folha põe, mede se a folha
  * diz alguma coisa sobre ele.
  *
- * Com esta pergunta, os mesmos 60 526 dão QUATRO vermelhos na cabeça 44f0d838, e
+ * Com esta pergunta, os mesmos 60 526 dão QUATRO vermelhos na cabeça a863f417, e
  * são a linha do domínio «Trabalho» e a de cima, nas duas edições: exactamente o
  * que o diretor leu. As outras 31 403 fronteiras entre peças de texto são
  * separadas pela folha da própria página.
@@ -390,7 +390,7 @@ const COLAGENS_ACEITES = [
  *
  * Não são exceções: são O MESMO DEFEITO que a fez nascer, medido noutras
  * páginas, e ficam aqui escritas com o número para que ninguém precise de as
- * procurar outra vez. Corrida sobre `dist/` na cabeça 44f0d838, C1 deu 5 112
+ * procurar outra vez. Corrida sobre `dist/` na cabeça a863f417, C1 deu 5 112
  * vermelhos, e depois de a lista dos domínios ficar arrumada sobram 5 104, em
  * três sítios:
  *

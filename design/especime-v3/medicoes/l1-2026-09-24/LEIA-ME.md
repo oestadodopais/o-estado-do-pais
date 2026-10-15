@@ -1,10 +1,10 @@
 # L1 · a leitura de cada medida · o relatório do construtor
 
-*Claude Opus 5.5 (a definição `construtor`), 24.09.2026, com a passagem de correção de 26.09.2026 depois da leitura a frio do Codex. Ramo `l1-2026-09-24` do sítio, rebaseado a 26.09.2026 sobre `main` em `1415e0c3` (o brief passou de `f0779f37` a `61155218`, `brief_depois_do_rebase`); ramo `l1-2026-09-24` do motor, sobre `0f08171`. Os portões inteiros (`npm run build`, `npm run verify` e `npm run typecheck`) correram na cabeça `c1e155f0` (`cabeca_medida`), e o commit que entrega estas provas vem a seguir a ela e só acrescenta ficheiros desta pasta. As capturas do antes são da cabeça `f0779f37` (`paginas_antes_construidas_de`), a de partida, construída antes do rebase, e as do depois são da cabeça dos portões (`capturas_depois_de`). Cada número deste relatório sai de `medidas.json`, escrito por `medir-l1.py`, e o nome da medição vai ao lado dele; `conferir-relatorio.py` confere-os.*
+*Claude Opus 5.5 (a definição `construtor`), 24.09.2026, com a passagem de correção de 26.09.2026 depois da leitura a frio do Codex. Ramo `l1-2026-09-24` do sítio, rebaseado a 26.09.2026 sobre `main` em `89e9dba8` (o brief passou de `f0779f37` a `61475a63`, `brief_depois_do_rebase`); ramo `l1-2026-09-24` do motor, sobre `0f08171`. Os portões inteiros (`npm run build`, `npm run verify` e `npm run typecheck`) correram na cabeça `fb363a11` (`cabeca_medida`), e o commit que entrega estas provas vem a seguir a ela e só acrescenta ficheiros desta pasta. As capturas do antes são da cabeça `f0779f37` (`paginas_antes_construidas_de`), a de partida, construída antes do rebase, e as do depois são da cabeça dos portões (`capturas_depois_de`). Cada número deste relatório sai de `medidas.json`, escrito por `medir-l1.py`, e o nome da medição vai ao lado dele; `conferir-relatorio.py` confere-os.*
 
 ## A passagem de correção (26.09.2026)
 
-A leitura a frio do Codex (`gpt-5.6-sol`, `design/especime-v3/critica/LEITURA-l1-2026-09-26.md`) deu 28 (`achados_da_leitura`) achados numerados e apanhou as cinco plantas. Esta passagem segue o mandato do lugar de direção (`prompts/PROMPT-l1-opus-correcao.md`) achado a achado, sobre a cabeça que a leitura recebeu (`5a5185e0`, que o rebase reescreveu para `6584df72` com os mesmos ficheiros).
+A leitura a frio do Codex (`gpt-5.6-sol`, `design/especime-v3/critica/LEITURA-l1-2026-09-26.md`) deu 28 (`achados_da_leitura`) achados numerados e apanhou as cinco plantas. Esta passagem segue o mandato do lugar de direção (`prompts/PROMPT-l1-opus-correcao.md`) achado a achado, sobre a cabeça que a leitura recebeu (`5a5185e0`, que o rebase reescreveu para `2e1d84d4` com os mesmos ficheiros).
 
 ### O que era planta, confirmado no ramo (achados 1, 2, 5 e 6)
 
@@ -67,9 +67,9 @@ O ensaio a seco (`design/observatorio/leituras/ensaio-a-seco.mjs`), que rende as
 
 No sítio: `src/data/figuras.mjs` (as sete origens novas e as duas testemunhas), `src/data/referencias-das-medidas.mjs` (a testemunha vai com a referência), `src/data/leituras-das-medidas.mjs`, `tests/cartao/referencias.mjs` e `tests/cartao/cartao.mjs` (a K9), `tests/cartao/leituras-provadas.json` (a auditoria, reescrita por `escrever-auditoria-l1.mjs`), `design/especime-v3/INVENTARIO-FRASES.md` e `design/especime-v3/critica/REVISOES-DO-INVENTARIO.md`, e nesta pasta `origens-l1.py`, `acertos-l1.py` e o seu registo, `escrever-auditoria-l1.mjs`, `captar-l1.mjs`, `medir-l1.py` e este guião. No motor: `indicators/out/l1-2026-09-26/` e o estudo 13 (`motor_commit_da_correcao`). A célula que mudou de forma é a K9 (P: protege um número e a sua fonte), com as suas cinco plantas; a K17 não mudou de código, e as suas 12 (`k17_plantas`) plantas continuam a morder. Os commits desta passagem até à cabeça medida são 3 (`commits_da_correcao_contados`) (`commits_da_correcao`):
 
-- `c1e155f0 L1, correção: os guiões das provas medem a passagem de correção, e o mapa do repositório diz a forma nova da K9`
-- `839eda2f L1, correção: as palavras correntes dos termos que a leitura a frio achou por explicar, cada uma com o seu literal, a idade da taxa de atividade, e as duas leituras reescritas pelo lugar de direção`
-- `28bcdd00 L1, correção: a discordância sobre os dois valores de referência declarada e datada ao pé de cada um, e a K9 a exigi-la`
+- `fb363a11 L1, correção: os guiões das provas medem a passagem de correção, e o mapa do repositório diz a forma nova da K9`
+- `85e95895 L1, correção: as palavras correntes dos termos que a leitura a frio achou por explicar, cada uma com o seu literal, a idade da taxa de atividade, e as duas leituras reescritas pelo lugar de direção`
+- `2904e8f6 L1, correção: a discordância sobre os dois valores de referência declarada e datada ao pé de cada um, e a K9 a exigi-la`
 
 ## O que ficou feito
 
@@ -346,22 +346,22 @@ A leitura acrescenta altura às páginas (`alturas_das_paginas_px`, em px): a do
 
 ## Os commits
 
-- `c1e155f0 L1, correção: os guiões das provas medem a passagem de correção, e o mapa do repositório diz a forma nova da K9`
-- `839eda2f L1, correção: as palavras correntes dos termos que a leitura a frio achou por explicar, cada uma com o seu literal, a idade da taxa de atividade, e as duas leituras reescritas pelo lugar de direção`
-- `28bcdd00 L1, correção: a discordância sobre os dois valores de referência declarada e datada ao pé de cada um, e a K9 a exigi-la`
-- `6584df72 L1: a leitura a frio do Codex (gpt-5.6-sol, 598 189 símbolos, cinco plantas em cinco, 28 achados) com as plantas e o prompt, e duas leituras reescritas pelo lugar de direção (a disparidade salarial fecha a oração com o valor, para que «provisório» feche com ele; as câmaras concordam com «o número», seja qual for a contagem)`
-- `5c63129d L1: o ensaio a seco das leituras entra no repositório (M31), com caminhos relativos, e corre a 0 sobre o ficheiro do lugar de direção e sobre o do sítio com os dezassete acertos`
-- `aa1e4881 L1: as provas do bloco, medidas na cabeça d831b453`
-- `02b56181 L1: a planta da declaração retirada, que prova que o resolvedor recusa carregar sem uma leitura obrigatória`
-- `463b9067 L1: a sonda das origens que não se acharam, o porquê exato do A5 e os guiões das origens sem o caminho da máquina`
-- `9519e56a L1: o mapa do repositório com o que o L1 acrescentou, e as linhas que tinham andado`
-- `8043ef6c L1: o arame da classe tira as leituras dos cartões só depois de a K17 as conferir, e as plantas das formas novas`
-- `64648c65 L1: as palavras fixas no inventário das frases, os acertos A16 e A17 que o portão da voz pediu e o guião que confere os dezassete acertos`
-- `2780b589 L1: as origens das leituras seladas no motor, a auditoria folha a folha e a K17 do check:cartao`
-- `37e73017 L1: o portão de HTML, a V2 e a K1 e K10 do cartão aceitam a leitura pela regra da régua`
-- `c0dcc05f L1: a leitura por baixo do número nos 36 cartões nacionais, a 14 px e na tinta`
-- `6b1297c3 L1: as leituras das medidas declaradas em src/data e o resolvedor que as achata`
-- `074cc698 L1: o mapa do repositório com o que a peça 1 do B2 acrescentou`
+- `fb363a11 L1, correção: os guiões das provas medem a passagem de correção, e o mapa do repositório diz a forma nova da K9`
+- `85e95895 L1, correção: as palavras correntes dos termos que a leitura a frio achou por explicar, cada uma com o seu literal, a idade da taxa de atividade, e as duas leituras reescritas pelo lugar de direção`
+- `2904e8f6 L1, correção: a discordância sobre os dois valores de referência declarada e datada ao pé de cada um, e a K9 a exigi-la`
+- `2e1d84d4 L1: a leitura a frio do Codex (gpt-5.6-sol, 598 189 símbolos, cinco plantas em cinco, 28 achados) com as plantas e o prompt, e duas leituras reescritas pelo lugar de direção (a disparidade salarial fecha a oração com o valor, para que «provisório» feche com ele; as câmaras concordam com «o número», seja qual for a contagem)`
+- `8ed0f5af L1: o ensaio a seco das leituras entra no repositório (M31), com caminhos relativos, e corre a 0 sobre o ficheiro do lugar de direção e sobre o do sítio com os dezassete acertos`
+- `6c277f9a L1: as provas do bloco, medidas na cabeça d831b453`
+- `f5aea25b L1: a planta da declaração retirada, que prova que o resolvedor recusa carregar sem uma leitura obrigatória`
+- `9ce35e1e L1: a sonda das origens que não se acharam, o porquê exato do A5 e os guiões das origens sem o caminho da máquina`
+- `ed1c7e63 L1: o mapa do repositório com o que o L1 acrescentou, e as linhas que tinham andado`
+- `f4efa69d L1: o arame da classe tira as leituras dos cartões só depois de a K17 as conferir, e as plantas das formas novas`
+- `2752a6fa L1: as palavras fixas no inventário das frases, os acertos A16 e A17 que o portão da voz pediu e o guião que confere os dezassete acertos`
+- `c09b2546 L1: as origens das leituras seladas no motor, a auditoria folha a folha e a K17 do check:cartao`
+- `7d98c8e2 L1: o portão de HTML, a V2 e a K1 e K10 do cartão aceitam a leitura pela regra da régua`
+- `3fe1488e L1: a leitura por baixo do número nos 36 cartões nacionais, a 14 px e na tinta`
+- `e1479fc4 L1: as leituras das medidas declaradas em src/data e o resolvedor que as achata`
+- `2346ce65 L1: o mapa do repositório com o que a peça 1 do B2 acrescentou`
 
 No motor, `1d10b3f` (`motor_cabeca`). Os commits do sítio depois do brief até à cabeça medida são 16 (`commits_do_sitio_no_bloco`), com os dois do lugar de direção (o ensaio a seco e a leitura a frio) e os desta passagem; o commit que entrega estas provas vem a seguir e só acrescenta ficheiros desta pasta.
 

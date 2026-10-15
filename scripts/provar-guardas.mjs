@@ -740,7 +740,7 @@ const EDICAO_BOA = {
   slug: 'onde-esta-a-agua',
   lang: 'pt',
   data: '2026-08-12',
-  commit: 'b4f45d3f2d02e941dc393bfbc06868c223e35887',
+  commit: 'eff504f5400fa572e55bd0c5b3dae7fd8a4188da',
   ficheiro: 'studies-src/onde-esta-a-agua/pt.html',
 };
 
@@ -754,7 +754,7 @@ caso(
 caso(
   'eDataDeEdicao/commit-curto',
   false,
-  eDataDeEdicao({ ...EDICAO_BOA, commit: 'b4f45d3f' }),
+  eDataDeEdicao({ ...EDICAO_BOA, commit: 'eff504f5' }),
   'o resumo vai inteiro: é com ele que alguém refaz a leitura, e um resumo curto pode passar a ser ambíguo.',
 );
 caso(

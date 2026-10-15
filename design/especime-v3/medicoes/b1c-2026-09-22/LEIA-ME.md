@@ -1,12 +1,12 @@
 # B1c · «O que mudou» no seu lugar
 
-Construtor: Claude Opus 5, 22.09.2026, na worktree `oquemudou-2026-09-22`, sobre `main` em `83e9df2d`.\
+Construtor: Claude Opus 5, 22.09.2026, na worktree `oquemudou-2026-09-22`, sobre `main` em `8c50b144`.\
 Brief: `design/observatorio/BRIEF-B1c-o-que-mudou-no-seu-lugar.md`.\
 Duas passagens: a construção, e a passagem curta da tarde, depois da leitura do lugar de direção. As contagens e as capturas deste ficheiro são as da segunda; o que a primeira mediu e o que mudou entre as duas está na última secção.
 
 ## O que se mediu antes, e duas coisas que o brief diz e a medição desmente
 
-A medição de partida foi feita sobre `main` em `83e9df2d`, com `npm run build` a 0.
+A medição de partida foi feita sobre `main` em `8c50b144`, com `npm run build` a 0.
 
 | O que | Medido em `dist/`, por edição |
 | --- | ---: |
@@ -105,7 +105,7 @@ Oito, em [capturas/b1c-2026-09-22](../../capturas/b1c-2026-09-22/): a primeira p
 | `depois-registo-en-390` | 10 170 px | 0 | 31 | 31 |
 | `depois-registo-en-1280` | 9 432 px | 0 | 31 | 31 |
 
-Zero deslocamentos laterais, nenhum valor ou selo partido, nenhum selo sem `nowrap`, a porta «Todas as mudanças» uma vez em cada página do país, e uma definição do marcador em cada página que tem marcador. As oito foram refeitas na cabeça rebaseada, `59c27b5b`, e é essa que o manifesto nomeia.
+Zero deslocamentos laterais, nenhum valor ou selo partido, nenhum selo sem `nowrap`, a porta «Todas as mudanças» uma vez em cada página do país, e uma definição do marcador em cada página que tem marcador. As oito foram refeitas na cabeça rebaseada, `cd744c1b`, e é essa que o manifesto nomeia.
 
 ## Os commits
 
@@ -187,7 +187,7 @@ A **A3** passa a conferir, linha a linha do registo, o lugar escrito e a porta d
 
 ### O rebase
 
-`git rebase main`, sobre `95655124` (o bloco I129). **Um conflito**, em `design/especime-v3/critica/REVISOES-DO-INVENTARIO.md`: os dois lados acrescentam uma secção no fim do ficheiro. Resolvido ficando com os dois, por ordem de data, com a I129 primeiro por ter aterrado primeiro. O `INVENTARIO-FRASES.md` e o `MAPA-DO-REPOSITORIO-para-construtores.md` fundiram-se sozinhos.
+`git rebase main`, sobre `2e4853c9` (o bloco I129). **Um conflito**, em `design/especime-v3/critica/REVISOES-DO-INVENTARIO.md`: os dois lados acrescentam uma secção no fim do ficheiro. Resolvido ficando com os dois, por ordem de data, com a I129 primeiro por ter aterrado primeiro. O `INVENTARIO-FRASES.md` e o `MAPA-DO-REPOSITORIO-para-construtores.md` fundiram-se sozinhos.
 
 **As contagens novas**, medidas em `dist/` nas duas edições: a página do país passa de 1 para **2** linhas, que são as duas mudanças declaradas do projeto (os nomes do INE, de 21.09, e o grupo etário dos jovens NEM, de 22.09); Évora fica nas mesmas **8**; o registo passa de 30 para **31**. A altura da página do país a 1 280 px passa de 4 791 para 4 955 px (en: de 4 880 para 5 023).
 

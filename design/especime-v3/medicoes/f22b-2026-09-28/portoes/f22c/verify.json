@@ -1,7 +1,7 @@
 {
   "comando": "npm run verify",
   "ambiente_declarado": {},
-  "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+  "cabeca": "9ecc5c8bbbfc0f460a62569a711cd6601334bee9",
   "inicio": "2026-09-29T21:43:32.177392+00:00",
   "fim": "2026-09-29T21:57:41.914627+00:00",
   "segundos": 849.736,

@@ -11,7 +11,7 @@ from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent
 RAIZ = Path.cwd()
-PARTIDA = '81e3de312659a57e5c90310a1dd8a84913c6318e'
+PARTIDA = 'd88596f417c0200220345ca7dd78ce5189102c01'
 COMANDO = 'python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4e.py'
 REL = AQUI.relative_to(RAIZ)
 
@@ -48,7 +48,7 @@ for f in sorted((AQUI / 'conferencias-e').glob('*.codigo')):
     conferencias[f.stem] = int(f.read_text().strip())
     assert (AQUI / 'conferencias-e' / f'{f.stem}.cabeca').read_text().strip() == cabeca, f.stem
 assert conferencias and not any(conferencias.values()), conferencias
-COMMITS_DO_CODIGO = ['25499b79', 'd81471b7', 'c92532ea']  # os commits do código da H4-e, por ordem; o da quarta volta lê-se do ramo
+COMMITS_DO_CODIGO = ['0733b37b', '8dd49d42', 'f6c4fae8']  # os commits do código da H4-e, por ordem; o da quarta volta lê-se do ramo
 COMMITS_DO_CODIGO.append(subprocess.check_output(['git', 'log', '-1', '--format=%H', '--', 'src/data/politica-ia.mjs'], text=True).strip())
 commits = [subprocess.check_output(['git', 'log', '-1', '--format=%H\t%s', c], text=True).strip() for c in COMMITS_DO_CODIGO]
 

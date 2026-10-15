@@ -5,11 +5,11 @@
   {
    "id": "P1",
    "ficheiro": "ledger/claims/evora-prr-aprovado-2026.yml",
-   "descricao": "a primeira entrada reconstituída do acesso diz que o acesso antigo era 2026-08-03, e o Git (8371e097) mostra 2026-08-04",
+   "descricao": "a primeira entrada reconstituída do acesso diz que o acesso antigo era 2026-08-03, e o Git (632b14f4) mostra 2026-08-04",
    "sha256_antes": "21b01fd9ff52f61c4cf62c58b6f2f6aecc9f5300a91e33cbe10bdbc9e08e9cf5",
    "sha256_depois": "39579ffd00a217525887d7b341ce467b84fd2f04a02f57e03a87480c4ab20a58",
-   "contexto_antes": "it was published: it measured a different snapshot, and that one is no longer served.\"\n  - date: \"2026-08-18\"\n    kind: \"proveniencia\"\n    field: \"access_date\"\n    old_value: \"2026-08-04\"\n    new_value: \"2026-08-18\"\n    reason: \"O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (8371e097) a mudança",
-   "contexto_depois": "it was published: it measured a different snapshot, and that one is no longer served.\"\n  - date: \"2026-08-18\"\n    kind: \"proveniencia\"\n    field: \"access_date\"\n    old_value: \"2026-08-03\"\n    new_value: \"2026-08-18\"\n    reason: \"O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (8371e097) a mudança"
+   "contexto_antes": "it was published: it measured a different snapshot, and that one is no longer served.\"\n  - date: \"2026-08-18\"\n    kind: \"proveniencia\"\n    field: \"access_date\"\n    old_value: \"2026-08-04\"\n    new_value: \"2026-08-18\"\n    reason: \"O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (632b14f4) a mudança",
+   "contexto_depois": "it was published: it measured a different snapshot, and that one is no longer served.\"\n  - date: \"2026-08-18\"\n    kind: \"proveniencia\"\n    field: \"access_date\"\n    old_value: \"2026-08-03\"\n    new_value: \"2026-08-18\"\n    reason: \"O acesso passou de 2026-08-04 a 2026-08-18 com o instantâneo do PRR de 2026-08-17; a entrada reconstitui pela história do Git (632b14f4) a mudança"
   },
   {
    "id": "P2",
@@ -44,8 +44,8 @@
    "descricao": "o relatório diz doze entradas novas, duas por linha, nas cinco linhas do PRR",
    "sha256_antes": "7f182c98bb4598ad397b4fecbf7b2658aed974da36072cc37747e4699bdffbfa",
    "sha256_depois": "9e39c83a19df93fc3c1e25e159000d4f93975cc713da920d67b5b6f6cb382079",
-   "contexto_antes": "` | 04.08.2026, em `180f136d` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |\n\nHá dez entradas novas, duas por linha. A criação do ficheiro mostra o primeiro\nacesso, não uma mudança, e por isso não recebeu uma entrada inventada.\nAs listas antigas conservam todas as entradas, a",
-   "contexto_depois": "` | 04.08.2026, em `180f136d` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |\n\nHá doze entradas novas, duas por linha. A criação do ficheiro mostra o primeiro\nacesso, não uma mudança, e por isso não recebeu uma entrada inventada.\nAs listas antigas conservam todas as entradas, a"
+   "contexto_antes": "` | 04.08.2026, em `4db18908` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |\n\nHá dez entradas novas, duas por linha. A criação do ficheiro mostra o primeiro\nacesso, não uma mudança, e por isso não recebeu uma entrada inventada.\nAs listas antigas conservam todas as entradas, a",
+   "contexto_depois": "` | 04.08.2026, em `4db18908` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |\n\nHá doze entradas novas, duas por linha. A criação do ficheiro mostra o primeiro\nacesso, não uma mudança, e por isso não recebeu uma entrada inventada.\nAs listas antigas conservam todas as entradas, a"
   }
  ]
 }

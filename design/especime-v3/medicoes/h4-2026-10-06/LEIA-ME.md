@@ -12,7 +12,7 @@ O menu, as suas etiquetas e a TM4 ficaram por alterar. A medição confirmou a v
 
 ## O menu medido antes de construir
 
-Construção de partida: `207d71346ea034943058fffcbbb926ddafa79e90`. Comando: `node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs antes`. Medidas completas, caixas de cada porta, última porta e resumos das capturas em [menu-a-390.json](menu-a-390.json).
+Construção de partida: `4970eab9eb634867e060239ee9c857b9b9498e9a`. Comando: `node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs antes`. Medidas completas, caixas de cada porta, última porta e resumos das capturas em [menu-a-390.json](menu-a-390.json).
 
 | Edição | Janela, px | Forma | Portas | Coluna, px | Largura natural, px | Linhas | Espaço, px | Letra | Sem transbordo |
 | --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
@@ -39,7 +39,7 @@ A proposta usa o `clamp` do brief. A forma `proposta-espaco-768` ensaia o mesmo 
 
 ## O menu que ficou servido
 
-Cabeça da construção: `cb9a22296d17bed881a0f091b8f5864dcd72a571`. Comando: `node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs depois`. [Medidas e resumos das capturas finais](menu-depois-antes.json). O rótulo curto continua no código, porque a questão do espaço ainda está aberta.
+Cabeça da construção: `55ede05386ab026d7c7987762e1e9c17ccec7851`. Comando: `node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs depois`. [Medidas e resumos das capturas finais](menu-depois-antes.json). O rótulo curto continua no código, porque a questão do espaço ainda está aberta.
 
 | Edição | Janela, px | Portas | Coluna, px | Largura natural, px | Linhas | Espaço, px | Sem transbordo |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
@@ -52,7 +52,7 @@ Cabeça da construção: `cb9a22296d17bed881a0f091b8f5864dcd72a571`. Comando: `n
 
 ## Capturas e páginas construídas
 
-Comando: `node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs --politica`. Cabeça da construção: `cb9a22296d17bed881a0f091b8f5864dcd72a571`. [Manifesto com os resumos SHA-256](capturas.json).
+Comando: `node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs --politica`. Cabeça da construção: `55ede05386ab026d7c7987762e1e9c17ccec7851`. [Manifesto com os resumos SHA-256](capturas.json).
 
 | Página | Edição | Janela, px | Captura | Recorte |
 | --- | --- | ---: | --- | --- |
@@ -106,7 +106,7 @@ Comando e resultados em [plantas-politica.json](plantas-politica.json).
 
 ## Os portões
 
-Cabeça do código medida: `cb9a22296d17bed881a0f091b8f5864dcd72a571`.
+Cabeça do código medida: `55ede05386ab026d7c7987762e1e9c17ccec7851`.
 
 Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/h4-2026-10-06/portoes`.
 
@@ -129,9 +129,9 @@ O `check:series` corre só sobre a parte do sítio, sem motor, conforme o mandat
 
 Commits lidos do Git no momento de gerar este relatório:
 
-- `36748dcf8af970322c040317c1be775e85be8eed`: H4: mede as portas antes de mudar o menu.
-- `e49f0ccc75832d4f2e6a51d24ec2c660716909a0`: H4: prepara as capturas e regista os pontos parados.
-- `cb9a22296d17bed881a0f091b8f5864dcd72a571`: H4: diz os três lugares da IA pela redação provisória.
+- `87051dd01fe8a5583b164ea5fb4976fcecfd1625`: H4: mede as portas antes de mudar o menu.
+- `f539ed34039ed0870cc0ab0d3f7e53e06da5bdac`: H4: prepara as capturas e regista os pontos parados.
+- `55ede05386ab026d7c7987762e1e9c17ccec7851`: H4: diz os três lugares da IA pela redação provisória.
 
 A cabeça final é a do commit que guarda este relatório e os códigos. A cabeça do código está no ficheiro `portoes/cabeca`; não se atribui a corrida ao commit posterior das provas.
 
@@ -143,11 +143,11 @@ O bloco continua por fechar: há uma célula ou um portão vermelho. As mensagen
 
 O cabeçalho ganha a porta das explicações e o nome inteiro da União. A regra que apertava o menu no telefone saiu: todas as larguras usam o espaço e a letra da regra base. A fila dobra onde precisa. O texto da política de IA da primeira passagem ficou intacto e está confirmado como final pela direção. (Histórico: a redação mudou na H4-d e na H4-e.)
 
-Cabeça do código: `9c44ad9e31972cfbfd9d7138e29b52b9027bb63d`. Esta secção é gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4b.py`, a partir dos ficheiros abaixo; o resumo legível por máquina está em [resumo-h4b.json](resumo-h4b.json).
+Cabeça do código: `c4d6af8ef7447055651e4c32c1d127288084eb15`. Esta secção é gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4b.py`, a partir dos ficheiros abaixo; o resumo legível por máquina está em [resumo-h4b.json](resumo-h4b.json).
 
 ### O menu antes e depois
 
-Antes: `node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs depois`, na construção `cb9a22296d17bed881a0f091b8f5864dcd72a571`. Depois: `node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs depois`, na cabeça do código. As caixas de cada porta, a posição da última, as capturas e os SHA-256 estão em [menu-a-390.json](menu-a-390.json), incluindo a fase `depois`; a medida servida da primeira passagem está em [menu-depois-antes.json](menu-depois-antes.json).
+Antes: `node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs depois`, na construção `55ede05386ab026d7c7987762e1e9c17ccec7851`. Depois: `node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs depois`, na cabeça do código. As caixas de cada porta, a posição da última, as capturas e os SHA-256 estão em [menu-a-390.json](menu-a-390.json), incluindo a fase `depois`; a medida servida da primeira passagem está em [menu-depois-antes.json](menu-depois-antes.json).
 
 | Edição | Janela, px | Fase | Portas | Coluna, px | Largura natural, px | Linhas | Espaço, px | Letra | Menor alvo, px | Sem transbordo |
 | --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | --- | ---: | --- |
@@ -246,17 +246,17 @@ A sequência do `verify` que ficou depois da TM4 foi executada separadamente, na
 
 Commits lidos do Git e guardados no resumo:
 
-- `e55b1f50cc0f7309fdb234e4954411d60c558188`: H4-b: corrige o espaço e o endereço no brief.
+- `9d4629c48f2ffb8e8fd02e49d73c17fe399d0c67`: H4-b: corrige o espaço e o endereço no brief.
 
-- `cebf1a97dd1027208e4afb8f410cbb177662f77a`: H4-b: dá espaço às sete portas e repõe o nome da União.
+- `393cbf36e805b606a81d8526cce382e977c127ae`: H4-b: dá espaço às sete portas e repõe o nome da União.
 
-- `a1160dab5e763edde0fe6679fcd351ef3158db28`: H4-b: protege as sete portas, o espaço e os alvos de toque.
+- `0391b732d4d9ed7d068d1404b2a0ac8a86655004`: H4-b: protege as sete portas, o espaço e os alvos de toque.
 
-- `00d92fed9f70fec22f30d72a1018776629f37d10`: H4-b: prepara a medição e a conferência das provas.
+- `b60217d65355594b9262bd11356d02754656e3bd`: H4-b: prepara a medição e a conferência das provas.
 
-- `9c44ad9e31972cfbfd9d7138e29b52b9027bb63d`: H4-b: guarda a prova da corrida inteira e distingue integridade de aceitação.
+- `c4d6af8ef7447055651e4c32c1d127288084eb15`: H4-b: guarda a prova da corrida inteira e distingue integridade de aceitação.
 
-Cabeça do código nos ficheiros `portoes-b/cabeca` e `portoes-b/cabeca.fim`: `9c44ad9e31972cfbfd9d7138e29b52b9027bb63d`. O commit seguinte guarda só o relatório e as provas.
+Cabeça do código nos ficheiros `portoes-b/cabeca` e `portoes-b/cabeca.fim`: `c4d6af8ef7447055651e4c32c1d127288084eb15`. O commit seguinte guarda só o relatório e as provas.
 
 Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/h4-2026-10-06/portoes-b`.
 
@@ -272,7 +272,7 @@ Os registos da corrida ficam em `portoes-b/`, limpos de caminhos locais antes de
 
 A H4-5 está fechada. A construção cumpre a decisão e os portões inteiros terminaram sem falhas. A alteração é da regra de aceitação e da sua prova; o menu servido conserva a dobra natural, as portas e o nome inteiro da União da passagem anterior.
 
-Cabeça do código: `45c5a6cd000b9dbdaebe3aee310b6122c25aa512`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4c.py`, a partir dos ficheiros de medição e dos códigos. [Resumo e comandos](resumo-h4c.json).
+Cabeça do código: `8b30451fef33009019af39dbcdb3eb3bfcb0768c`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4c.py`, a partir dos ficheiros de medição e dos códigos. [Resumo e comandos](resumo-h4c.json).
 
 ### A decisão
 
@@ -344,15 +344,15 @@ A construção pedida nesta passagem está concluída e a H4-5 fechada. A leitur
 
 Commits lidos do Git, guardados no resumo:
 
-- `79f66ed4ce43a4d8fb35f32e636c88359edc01e9`: H4-c: regista no brief os limites decididos pela H4-5.
+- `7d92a097582c34cdcefd3c4c70d6a1e6dcd8454d`: H4-c: regista no brief os limites decididos pela H4-5.
 
-- `b0eea25d6309e1b74668e3cf1ba9585eeb59b241`: H4-c: protege os limites por largura e prova a quarta linha.
+- `9456eb0ade390375bb912e7d1f80c50eff9b261e`: H4-c: protege os limites por largura e prova a quarta linha.
 
-- `54a71206d35e2d3f84df76a4a030d2acd05e797e`: H4-c: prepara as medidas por largura e o fecho das provas.
+- `c553b18b704f9de560c7f90b1edd4160d042691d`: H4-c: prepara as medidas por largura e o fecho das provas.
 
-- `45c5a6cd000b9dbdaebe3aee310b6122c25aa512`: H4-c: distingue a janela da coluna nos registos da TM4.
+- `8b30451fef33009019af39dbcdb3eb3bfcb0768c`: H4-c: distingue a janela da coluna nos registos da TM4.
 
-Cabeça do código, lida de `portoes-c/cabeca` e `portoes-c/cabeca.fim`: `45c5a6cd000b9dbdaebe3aee310b6122c25aa512`. O commit seguinte contém só o relatório e as provas.
+Cabeça do código, lida de `portoes-c/cabeca` e `portoes-c/cabeca.fim`: `8b30451fef33009019af39dbcdb3eb3bfcb0768c`. O commit seguinte contém só o relatório e as provas.
 
 Comando pela tranca: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/h4-2026-10-06/portoes-c`. A variável `OEDP_TEMA_MENU_JSON` guarda a prova da TM4 durante o próprio `verify`.
 
@@ -368,7 +368,7 @@ Os registos completos, os códigos e as datas estão em `portoes-c/`. Os caminho
 
 A política do Método diz os lugares como são e explica o trabalho em palavras correntes, nas duas edições. A TM4 deixa de usar a folha fiscalizada como referência e passa a provar cada proteção em falta. As decisões do lugar de direção foram cumpridas; esta passagem fecha a construção do bloco.
 
-Cabeça do código: `f958bf80eb9ffe366b5e40629b2c395ef71adcb9`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4d.py` a partir dos resultados guardados. [Resumo e conferências](resumo-h4d.json).
+Cabeça do código: `4fe4ab86a2182acce525bddda0996a7b439f5cfa`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4d.py` a partir dos resultados guardados. [Resumo e conferências](resumo-h4d.json).
 
 ### O tratamento de cada achado
 
@@ -479,7 +479,7 @@ Foram refeitas 10 capturas de página inteira, cada uma com o recorte dos lugare
 
 ### Os commits e os portões inteiros
 
-Comando pela tranca: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/h4-2026-10-06/portoes-d`. A cabeça inicial e final dos portões é `f958bf80eb9ffe366b5e40629b2c395ef71adcb9`. Os códigos abaixo foram lidos dos ficheiros; os registos completos estão em `portoes-d/`.
+Comando pela tranca: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/h4-2026-10-06/portoes-d`. A cabeça inicial e final dos portões é `4fe4ab86a2182acce525bddda0996a7b439f5cfa`. Os códigos abaixo foram lidos dos ficheiros; os registos completos estão em `portoes-d/`.
 
 | Portão | Código lido |
 | --- | --- |
@@ -489,13 +489,13 @@ Comando pela tranca: `sh scripts/leituras/portoes.sh <worktree> design/especime-
 
 | Commit do código | Mudança |
 | --- | --- |
-| `f00766e3008a88c0176e7b640550716602c96747` | H4-d: provar as proteções em falta da TM4 (achado 6) |
-| `efe38f9919de985a59b9a3d90c85080f463dd860` | H4-d: retirar o provisório e atualizar a TM4 no mapa (achado 12) |
-| `aeec3c17ec62ec03bb31a40b2e8a54dfe32df52c` | H4-d: explicar a exceção do nome da União no menu (achado 13) |
-| `35efa677c73bac12e91e5ea99618d1e975ddb1c6` | H4-d: dar cabeçalho à tabela do inventário (achado 14) |
-| `fcadc7f797e1212e34ff2cf7938728e95ed65d62` | H4-d: dizer os lugares como são e em palavras correntes (achados 15 e 16) |
-| `fd9659a08301e0c940a2c156a84d9e7ff10a7f0e` | H4-d: prender as provas e capturas à cabeça limpa (achado 11) |
-| `f958bf80eb9ffe366b5e40629b2c395ef71adcb9` | H4-d: distinguir peça na política do nome de um estudo (H4-6) |
+| `2001cd2b4256a7bde8399f2a44f58a5c830f00d0` | H4-d: provar as proteções em falta da TM4 (achado 6) |
+| `ee21a55d61ec10854d840f5ab9e5ed6f097f6bd5` | H4-d: retirar o provisório e atualizar a TM4 no mapa (achado 12) |
+| `ab2fd1ac92d8b907ffd57d2249afdeff3fbf3ace` | H4-d: explicar a exceção do nome da União no menu (achado 13) |
+| `15f4e257531329afde7075b6321c4bd5e4cb5617` | H4-d: dar cabeçalho à tabela do inventário (achado 14) |
+| `1a3e394e6de8270cb25a0564ac1334db364e4325` | H4-d: dizer os lugares como são e em palavras correntes (achados 15 e 16) |
+| `6096238186f079e76641a2c5751e1ed68501f22d` | H4-d: prender as provas e capturas à cabeça limpa (achado 11) |
+| `4fe4ab86a2182acce525bddda0996a7b439f5cfa` | H4-d: distinguir peça na política do nome de um estudo (H4-6) |
 
 O commit seguinte guarda apenas o relatório, as capturas e os registos das provas. A cabeça final é a desse commit; a cabeça do código é a conferida acima. Os caminhos locais foram substituídos antes de guardar os registos.
 
@@ -507,7 +507,7 @@ Os achados do EX1 ficam com o lugar de direção, por decisão expressa. A leitu
 
 A redação dos três papéis é do lugar de direção, reescrita depois da leitura curta do diff da H4-d (`design/especime-v3/critica/LEITURA-H4-d-2026-10-06.md`, o achado 3 e o 7): sem «peça» nem «lugares», a regra das famílias dita uma vez só, e o que a construção faz com cada número (a fonte e a data) distinguido do que a leitura faz com o que foi construído. A exceção H4-6 da L3 e as suas quatro plantas saíram com a palavra. Como a redação é de um modelo Claude, lê-a a outra família: a primeira leitura, do Codex (`design/especime-v3/critica/LEITURA-H4-e-codex-2026-10-06.md`), mordeu as cinco plantas e achou que a regra 9 do Método («A intervenção humana») ainda dizia que a direção é de uma pessoa que escolhe o que se publica; a regra passou a dizer que a direção é de um modelo, que decide o que se publica dentro das regras e das recusas que uma pessoa com nome define, e que é essa pessoa que responde. O Codex chegou então ao teto da semana, e as leituras seguintes foram do Opus, da família do lugar de direção, com o registo a dizê-lo: a segunda (`LEITURA-H4-e-b-2026-10-06.md`) achou a regra 8 em inglês ainda com «the director decides», o papel da direção contra a revisão por amostra e uma frase inglesa sem o sentido; a terceira (`LEITURA-H4-e-c-2026-10-06.md`) achou que a página prometia uma regra das famílias que o próprio texto não tinha cumprido, e quatro coisas de editor (a palavra «portões» sem definição, duas tautologias, «the change» por «a troca», a regra 8 a pôr a inteligência artificial a propor e a direção a decidir como se a direção não fosse um modelo, e «cada número traz a fonte e a data» absoluto numa página que conta linhas com um campo por confirmar). A quarta volta diz o que a direção escreve e quem o lê, troca os portões pelas verificações automáticas, diz que a construção faz e a leitura confere, e que cada número traz a fonte e a data ou diz o que está por confirmar; a regra 8 diz que a construção propõe e a direção decide; o título dos papéis passou a ser conferido pela célula. O bloco só aterra depois de o Codex ler o diff inteiro da H4-e, na segunda-feira, para que a página cumpra o que promete no dia em que sai. As provas abaixo são as da cabeça da quarta volta.
 
-Cabeça do código: `89c54f3480d9503d0fd85281ad5247d9137971c8`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4e.py` a partir dos resultados guardados. Os portões inteiros desta cabeça correm na corrida portão do GitHub, e não na máquina; aqui correram as conferências que a mudança toca, cada uma no seu comando com o código lido de um ficheiro.
+Cabeça do código: `2c5212b7eb75b0161a9e89af0e86d8324e81af3e`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4e.py` a partir dos resultados guardados. Os portões inteiros desta cabeça correm na corrida portão do GitHub, e não na máquina; aqui correram as conferências que a mudança toca, cada uma no seu comando com o código lido de um ficheiro.
 
 ### As conferências que a mudança toca
 
@@ -570,13 +570,13 @@ Foram refeitas 10 capturas de página inteira, cada uma com o recorte dos papéi
 
 ### Os commits da passagem
 
-Os commits do código da H4-e (as quatro voltas da redação); as provas desta secção correram na cabeça `89c54f34` do ramo de integração, que funde o H4 com o M-A e o EX2.
+Os commits do código da H4-e (as quatro voltas da redação); as provas desta secção correram na cabeça `2c5212b7` do ramo de integração, que funde o H4 com o M-A e o EX2.
 
 | Commit | Mudança |
 | --- | --- |
-| `25499b79fc803f1723e6ed92e9927e1a36dbb8b1` | H4-e: a redação dos três papéis reescrita pelo lugar de direção depois da leitura curta do diff da H4-d (o achado 3: dizia que quem constrói nunca verifica e a seguir que a construção confere o que publica, e usava «peça» em dois sentidos; o 7: a regra das famílias dita três vezes, o decalque, «em série» contra «in batches», «Os lugares» numa página cujo menu leva aos concelhos): sem «peça» nem «lugares», a regra das famílias uma vez só, a fonte e a data de cada número distinguidas da leitura; a exceção H4-6 da L3 e as suas quatro plantas saem com a palavra; o comentário do nome da União no menu diz o que foi medido (achado 9); o inventário com as dez frases novas vivas e as da H4-d retiradas; o mapa e as notas históricas do relatório (achado 11); os guiões das provas da passagem |
-| `d81471b7ac6a8ee22d6acf4b68970d1f2b1af339` | H4-e: a leitura do Codex gpt-6-astra sobre a redação do lugar de direção (cinco plantas mordidas; o achado 4: a regra 9 do Método ainda dizia que a direção é de uma pessoa que escolhe o que se publica, contra a secção dos papéis e a §1.112) com o registo das plantas; a regra 9 reescrita nas duas edições (a direção é de um modelo, que decide o que se publica dentro das regras e das recusas que uma pessoa com nome define, e é essa pessoa que responde; nem ela nem o modelo escrevem números); os guiões das provas registam os seus próprios nomes (achado 8); o gerador da secção diz a leitura e a regra |
-| `c92532eade0fc403a9e9ca64bbfad2eaa8e33a58` | H4-e, segunda volta, depois da segunda leitura (o Opus, porque o Codex chegou ao teto da semana): a regra 8 do Método em inglês diz «direction» e não «director», como a portuguesa (achado 4); o papel da direção diz o que ela revê e o que os portões publicam sozinhos, para não contradizer a revisão por amostra do parágrafo de cima (achado 5); os erros plantados dizem para que servem, e o modelo que construiu uma mudança nunca a lê, nas duas línguas (achado 14); o inventário com as frases novas vivas e as anteriores retiradas; a linha 3 do relatório (achado 11) |
-| `89c54f3480d9503d0fd85281ad5247d9137971c8` | H4-e, quarta volta, depois da terceira leitura (o Opus): o papel da direção diz o que ela escreve e que a outra família o lê antes de se publicar; as verificações automáticas no lugar dos portões; a construção faz e a leitura confere; cada número traz a sua fonte e a data ou diz o que está por confirmar; «the replacement»; a regra 8 do Método diz que a construção propõe e a direção decide; a célula dos papéis confere o título, com a sua planta; a conferência do inventário exige que só as dez frases atuais estejam vivas; o gerador da secção conta a história inteira e os commits do código; a §1.180 diz quem leu o quê e leva o carimbo novo do Método; a terceira leitura arquivada com as plantas |
+| `0733b37b3e85cc0286089bc528251d118162257b` | H4-e: a redação dos três papéis reescrita pelo lugar de direção depois da leitura curta do diff da H4-d (o achado 3: dizia que quem constrói nunca verifica e a seguir que a construção confere o que publica, e usava «peça» em dois sentidos; o 7: a regra das famílias dita três vezes, o decalque, «em série» contra «in batches», «Os lugares» numa página cujo menu leva aos concelhos): sem «peça» nem «lugares», a regra das famílias uma vez só, a fonte e a data de cada número distinguidas da leitura; a exceção H4-6 da L3 e as suas quatro plantas saem com a palavra; o comentário do nome da União no menu diz o que foi medido (achado 9); o inventário com as dez frases novas vivas e as da H4-d retiradas; o mapa e as notas históricas do relatório (achado 11); os guiões das provas da passagem |
+| `8dd49d42244565ea2f26809acef9804576d35857` | H4-e: a leitura do Codex gpt-6-astra sobre a redação do lugar de direção (cinco plantas mordidas; o achado 4: a regra 9 do Método ainda dizia que a direção é de uma pessoa que escolhe o que se publica, contra a secção dos papéis e a §1.112) com o registo das plantas; a regra 9 reescrita nas duas edições (a direção é de um modelo, que decide o que se publica dentro das regras e das recusas que uma pessoa com nome define, e é essa pessoa que responde; nem ela nem o modelo escrevem números); os guiões das provas registam os seus próprios nomes (achado 8); o gerador da secção diz a leitura e a regra |
+| `f6c4fae8eef9d09cbf554483d7d1cb99e47a86a9` | H4-e, segunda volta, depois da segunda leitura (o Opus, porque o Codex chegou ao teto da semana): a regra 8 do Método em inglês diz «direction» e não «director», como a portuguesa (achado 4); o papel da direção diz o que ela revê e o que os portões publicam sozinhos, para não contradizer a revisão por amostra do parágrafo de cima (achado 5); os erros plantados dizem para que servem, e o modelo que construiu uma mudança nunca a lê, nas duas línguas (achado 14); o inventário com as frases novas vivas e as anteriores retiradas; a linha 3 do relatório (achado 11) |
+| `2c5212b7eb75b0161a9e89af0e86d8324e81af3e` | H4-e, quarta volta, depois da terceira leitura (o Opus): o papel da direção diz o que ela escreve e que a outra família o lê antes de se publicar; as verificações automáticas no lugar dos portões; a construção faz e a leitura confere; cada número traz a sua fonte e a data ou diz o que está por confirmar; «the replacement»; a regra 8 do Método diz que a construção propõe e a direção decide; a célula dos papéis confere o título, com a sua planta; a conferência do inventário exige que só as dez frases atuais estejam vivas; o gerador da secção conta a história inteira e os commits do código; a §1.180 diz quem leu o quê e leva o carimbo novo do Método; a terceira leitura arquivada com as plantas |
 
 O commit seguinte guarda apenas esta secção, as capturas e os registos das provas; a cabeça do código é a conferida acima.

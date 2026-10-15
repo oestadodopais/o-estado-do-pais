@@ -383,7 +383,7 @@ Plantas e controlos: 32 de 32, em `plantas-d.json`.
 
 Portão do motor: `0`, lido de `portoes-d/motor.codigo`, na cabeça `f36540de9baecefd1ab857fe9a9d2c1fd17fe655`. O registo lista a suite de vigilância e as plantas executadas. Provas dos fluxos em `fluxo-d.json` e `fluxos-motor-d.json`.
 
-Código do motor: `f36540de9baecefd1ab857fe9a9d2c1fd17fe655`. Código dos guiões do sítio: `7c59af21f6788da58b096e80911d33d2aa021580`. Cabeças medidas e commits em `cabecas-d.json`; o commit de fecho é posterior à medição. Hashes de todas as corridas em `d/hashes-todas-corridas.json`.
+Código do motor: `f36540de9baecefd1ab857fe9a9d2c1fd17fe655`. Código dos guiões do sítio: `981be4153fe07c0fb9691e20a55421d3cd0095c8`. Cabeças medidas e commits em `cabecas-d.json`; o commit de fecho é posterior à medição. Hashes de todas as corridas em `d/hashes-todas-corridas.json`.
 
 A procura de fugas cobre as listas dos ficheiros tocados nos dois repositórios e os corpos descodificados. O conhecido-positivo cria uma cópia temporária, planta um ficheiro e chama o mesmo detetor; resultado em `d/fugas-positivo.json`. Listas completas e caminhos protegidos em `preservacao-d.json`.
 
@@ -516,9 +516,9 @@ Plantas e controlos: 25 de 25; provas em `plantas-c.json`.
 
 Portão do motor: `0`, lido de `portoes-c/motor.codigo`, na cabeça `253cfc3658c603b6c89b86cc6cb6605500e4484d`. Os hashes do código estão em `portoes-c/motor.json`. Autotestes e validadores dos fluxos: `autotestes-c.json`, `fluxo-c.json`, `fluxos-motor-c.json`.
 
-Código do motor: `253cfc3658c603b6c89b86cc6cb6605500e4484d`. Código dos guiões do sítio: `e00d0c1ad299e80262f328b0602d0140315bd4f2`. Cabeças medidas e commits em `cabecas-c.json`; o commit do relatório é posterior a essa medição. Todas as corridas, sem filtragem prévia, constam de `hashes-todas-corridas.json`.
+Código do motor: `253cfc3658c603b6c89b86cc6cb6605500e4484d`. Código dos guiões do sítio: `8af969b8fcbf5cb8abf6d04e5537a0e59a588b57`. Cabeças medidas e commits em `cabecas-c.json`; o commit do relatório é posterior a essa medição. Todas as corridas, sem filtragem prévia, constam de `hashes-todas-corridas.json`.
 
-Preservação: 12 de 12 ficheiros preexistentes, comparados com a cabeça de entrada `7cb8760d36370904919521453072755a31e3baba`; o registo histórico `alteracoes-preexistentes.json` não foi reescrito. Caminhos protegidos sem alterações. A procura de fugas usa as listas completas do diff desde as bases dos dois repositórios, mais os ficheiros por registar; listas e resultado em `preservacao-c.json`. As confirmações das cinco plantas da leitura estão em `confirmacao-c.json`.
+Preservação: 12 de 12 ficheiros preexistentes, comparados com a cabeça de entrada `14709d6f81eb5d9b2a67aa5c654f902115571941`; o registo histórico `alteracoes-preexistentes.json` não foi reescrito. Caminhos protegidos sem alterações. A procura de fugas usa as listas completas do diff desde as bases dos dois repositórios, mais os ficheiros por registar; listas e resultado em `preservacao-c.json`. As confirmações das cinco plantas da leitura estão em `confirmacao-c.json`.
 
 ### Questões e escolhas desta passagem
 
@@ -613,7 +613,7 @@ Portão: `0`, lido de `portoes-b/motor.codigo`; cabeça: `9dd3a96142b2692c17c97d
 | README e proposta de melhoria | True; proposta abaixo |
 | Medidas por guião e custo | Guião e recibos alojados; linha tokens used não observada |
 
-Código do motor: `9dd3a96142b2692c17c97de3a73fb1cd3c620a22`. Motor na medição: `e3608ab8886486dad7bef51261907b700cf6c810`. Código dos guiões do sítio: `497d1342bbb0bc40a94a1ff7538ab2db437f40d7`. As cabeças e os commits anteriores ao fecho estão em `cabecas-b.json`; a cabeça final do sítio será posterior ao relatório que ela contém.
+Código do motor: `9dd3a96142b2692c17c97de3a73fb1cd3c620a22`. Motor na medição: `e3608ab8886486dad7bef51261907b700cf6c810`. Código dos guiões do sítio: `a1a7ad2ea4476fc48ded71cd999a9d6581736bca`. As cabeças e os commits anteriores ao fecho estão em `cabecas-b.json`; a cabeça final do sítio será posterior ao relatório que ela contém.
 
 A comparação `hashes-b.json` inclui todas as corridas, sem as filtrar por igualdade antes de as medir. As corridas antigas com código diferente estão identificadas individualmente. Os recibos finais são selecionados pela igualdade do código e do registo, não pelo nome do ramo.
 

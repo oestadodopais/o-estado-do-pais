@@ -1,6 +1,6 @@
 # Nota do construtor · A grelha, segunda passagem (27.08.2026)
 
-*Ramo `grelha-2-2026-08-27`, a partir de `main` em `3d65716`. Construtor: Claude
+*Ramo `grelha-2-2026-08-27`, a partir de `main` em `45e9b3a`. Construtor: Claude
 Opus 5. Decisão do diretor a 27.08, «go, follow your recommendation on all of
 them», sobre quatro entradas de `ISSUES.md`: I81 e I82 (o mapa), I74 (as
 declarações mortas do inventário) e I79 (as dicas fora da varredura).*
@@ -105,14 +105,14 @@ As 39 sentinelas, por família e com o bloco que tirou a frase:
 
 | n.º | família | bloco que a tirou |
 |---|---|---|
-| 6 | a régua da convergência (o rótulo, a lede e a definição do índice, nas duas edições) | saiu da primeira página até haver a página das regiões (Emenda 18; bloco A da auditoria de UI e UX, `696b51a`) |
+| 6 | a régua da convergência (o rótulo, a lede e a definição do índice, nas duas edições) | saiu da primeira página até haver a página das regiões (Emenda 18; bloco A da auditoria de UI e UX, `0a6d526`) |
 | 2 | a leitura em voz alta do mapa | saiu com os pontos da primeira página (Emenda 20a e 20c) |
-| 4 | a legenda dos dois estados do selo de proveniência | `46608f4` e a decisão do diretor de 27.08 (`ef8a78e`) |
-| 8 | «o regulador» como nome da Direção-Geral das Autarquias Locais | item E11 do bloco dos 308 (`8b55bd3`) e o G5 da grelha da voz (`e470212`) |
-| 13 | as ressalvas e os rótulos da página do concelho e das páginas de leitura | G6 da grelha da voz (`14a339d`) |
-| 2 | o rótulo de cobertura «Com página» | bloco dos 308 (`44ef280`) |
-| 2 | o grupo «Linhas sem concelho declarado» | bloco dos 308 (`44ef280`) |
-| 2 | a forma longa da ausência, «Sem linhas ainda.» | item E4 do bloco dos 308 (`8b2a260`) |
+| 4 | a legenda dos dois estados do selo de proveniência | `fe62ea6` e a decisão do diretor de 27.08 (`3b1f05d`) |
+| 8 | «o regulador» como nome da Direção-Geral das Autarquias Locais | item E11 do bloco dos 308 (`1434d2a`) e o G5 da grelha da voz (`b1370f5`) |
+| 13 | as ressalvas e os rótulos da página do concelho e das páginas de leitura | G6 da grelha da voz (`e156693`) |
+| 2 | o rótulo de cobertura «Com página» | bloco dos 308 (`080aaea`) |
+| 2 | o grupo «Linhas sem concelho declarado» | bloco dos 308 (`080aaea`) |
+| 2 | a forma longa da ausência, «Sem linhas ainda.» | item E4 do bloco dos 308 (`04f8a98`) |
 
 **Uma frase `retirada` sai do mapa das classes.** Não está declarada: está
 proibida. Se voltar, a régua vê-a como bloco **por classificar** e o portão diz

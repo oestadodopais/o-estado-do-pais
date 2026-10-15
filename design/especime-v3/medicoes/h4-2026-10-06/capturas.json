@@ -1,8 +1,8 @@
 {
   "comando": "node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs --politica",
-  "cabeca": "cb9a22296d17bed881a0f091b8f5864dcd72a571",
+  "cabeca": "55ede05386ab026d7c7987762e1e9c17ccec7851",
   "construcao": {
-    "commit": "cb9a22296d17bed881a0f091b8f5864dcd72a571",
+    "commit": "55ede05386ab026d7c7987762e1e9c17ccec7851",
     "ref": "h4-2026-10-06",
     "env": "local",
     "origem": "git",

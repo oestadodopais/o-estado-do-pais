@@ -1,7 +1,7 @@
 [
   {
     "nome": "h2b-horizonte-trocado",
-    "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+    "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,

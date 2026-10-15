@@ -11,7 +11,7 @@ destinos(agora);
 const copia=structuredClone(agora),u=Object.keys(copia.repetidos_por_pagina)[0];copia.repetidos_por_pagina[u][Object.keys(copia.repetidos_por_pagina[u])[0]]++;
 assert.throws(()=>destinos(copia),/V2AD L1:/);
 const git=(...args)=>execFileSync('git',args,{encoding:'utf8'}).trim();
-const base='972c1f07';
+const base='62165d25';
 const vista=git('show',`${base}:src/views/LinhaView.astro`);
 const esperada=vista.replace("import DataDaLinha from '../components/DataDaLinha.astro';","import DataDaLinha from '../components/DataDaLinha.astro';\nimport {continuacaoDoNomeV2a, contaV2a, resolverPeriodosV2a} from '../lib/v2a-palavras.mjs';")
 .replace('</span>{lugarRecibo && (','</span><Frase partes={resolverPeriodosV2a(continuacaoDoNomeV2a(id,lang))} lang={lang} />{lugarRecibo && (')
@@ -19,7 +19,7 @@ const esperada=vista.replace("import DataDaLinha from '../components/DataDaLinha
 const conferirVista=s=>assert.equal(s.trim(),esperada,'V2AD vista: alteração fora dos períodos e das contas declaradas');
 conferirVista(fs.readFileSync('src/views/LinhaView.astro','utf8'));
 assert.throws(()=>conferirVista(esperada.replace('s.prov.serie','s.prov.documento')),/V2AD vista:/);
-const antigas=git('ls-tree','-r','98487940','ledger/claims').split('\n');
+const antigas=git('ls-tree','-r','20322174','ledger/claims').split('\n');
 const atuais=new Set(git('ls-tree','-r','HEAD','ledger/claims').split('\n'));
 for(const row of antigas){assert(atuais.has(row));const id=row.split('\t')[1].split('/').at(-1).replace('.yml','');for(const lang of ['pt','en']){assert.deepEqual(continuacaoDoNomeV2a(id,lang),[]);assert.deepEqual(contaV2a(id,lang),[]);}}
 const plantas=['V2AD L1: destinos ou multiplicidades diferentes da passagem anterior','V2AD vista: alteração fora dos períodos e das contas declaradas'];

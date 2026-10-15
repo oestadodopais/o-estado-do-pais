@@ -2,7 +2,7 @@
 
 ## Primeiro: o rebase e o relatório
 
-1. `main` avançou (`97e84232`: os registos do dia, a guarda do lançador, o brief com o §7); faz `git rebase main` na worktree do sítio antes de tocar em mais nada, e resolve o que houver ficando com todos os portões dos dois lados. O motor não mudou.
+1. `main` avançou (`401743d2`: os registos do dia, a guarda do lançador, o brief com o §7); faz `git rebase main` na worktree do sítio antes de tocar em mais nada, e resolve o que houver ficando com todos os portões dos dois lados. O motor não mudou.
 2. O `LEIA-ME-peca1.md` no disco é o teu (a mensagem final foi para outro ficheiro); mantém-no e reescreve-o no fim.
 
 ## Os achados, com a decisão do lugar de direção

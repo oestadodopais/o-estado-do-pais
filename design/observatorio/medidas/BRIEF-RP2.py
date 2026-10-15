@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """O §0 do brief RP2 (os rendimentos e os preços fora das APIs já em uso: documentos, portais e
-mais três APIs), medido sobre a cabeça presa do sítio (334cc740) e o memorando
+mais três APIs), medido sobre a cabeça presa do sítio (eaffd3c8) e o memorando
 das fontes de 26.09.2026 tal como está no repositório. Escreve design/observatorio/medidas/BRIEF-RP2.json
 (ou o caminho em OEDP_MEDIDAS_JSON, que é como o scripts/check-briefs.py o corre). Cada medição leva
 o comando e um conhecido-positivo; o que não conseguir ler fica «NÃO LIDO»."""
 import json, re, subprocess, pathlib, os
 SITIO = pathlib.Path(__file__).resolve().parents[3]
 MOTOR = pathlib.Path.home() / "Instruments" / "ResearchHub"
-CAB_SITIO, CAB_MOTOR = "334cc740", "1d10b3f"
+CAB_SITIO, CAB_MOTOR = "eaffd3c8", "1d10b3f"
 MEMO = "design/observatorio/MEMO-fontes-rp2-2026-09-26.md"
 NAO = "NÃO LIDO"
 medidas = []

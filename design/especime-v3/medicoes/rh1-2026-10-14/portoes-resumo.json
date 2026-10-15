@@ -1,5 +1,5 @@
 {
-  "cabeca_dos_portoes": "f694c58cb4228465d48dafa22905832c5c1ceded",
+  "cabeca_dos_portoes": "f23e4e9c3405f879d594ab35fe7cb1568ea1d8ff",
   "codigos": {
     "build": 0,
     "verify": 1,
@@ -35,7 +35,7 @@
   "coerencia_da_cabeca": {
     "ok": true,
     "falhas": [],
-    "cabeca": "f694c58cb4228465d48dafa22905832c5c1ceded",
+    "cabeca": "f23e4e9c3405f879d594ab35fe7cb1568ea1d8ff",
     "carimbo": "2026-10-14T15:31:06.581Z",
     "escritos": {
       "prova.json": "2026-10-14T15:32:11.829Z",

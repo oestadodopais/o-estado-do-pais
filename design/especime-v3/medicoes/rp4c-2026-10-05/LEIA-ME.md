@@ -4,7 +4,7 @@ Construído pelo Claude Opus 5.5 (a definição `construtor`) a 05.10.2026, na w
 
 ## O ponto de partida
 
-A worktree partiu da cabeça `983b4585`, com o `main` em `5b004ada` já fundido. O §0 do brief, reproduzido pelo seu guião antes de mexer em qualquer ficheiro, é igual ao ficheiro selado, medida a medida (`paragrafo_0_reproduzido_igual`): as 8 medidas, entre elas os 64 píxeis da regra das marcas intermédias do tempo, as 378 linhas com uma conta escrita e os 416 pontos da série da inflação. A construção de antes fez-se numa worktree destacada na mesma cabeça, para medir o peso, as marcas e a letra dos eixos sem misturar a árvore de trabalho.
+A worktree partiu da cabeça `de4bcfc6`, com o `main` em `22dd918c` já fundido. O §0 do brief, reproduzido pelo seu guião antes de mexer em qualquer ficheiro, é igual ao ficheiro selado, medida a medida (`paragrafo_0_reproduzido_igual`): as 8 medidas, entre elas os 64 píxeis da regra das marcas intermédias do tempo, as 378 linhas com uma conta escrita e os 416 pontos da série da inflação. A construção de antes fez-se numa worktree destacada na mesma cabeça, para medir o peso, as marcas e a letra dos eixos sem misturar a árvore de trabalho.
 
 ## O mandato, ponto a ponto
 
@@ -14,7 +14,7 @@ A worktree partiu da cabeça `983b4585`, com o `main` em `5b004ada` já fundido.
 | 2 · as décadas no eixo do tempo | **Feito.** Numa série que cobre 20 anos ou mais, o eixo marca as décadas que cabem pela regra dos 64 píxeis, mais a primeira e a última marca; as séries curtas ficam com a regra de hoje. A regra conta-se da ponta de fora da etiqueta vizinha (ver «O que o brief não previa»), com a largura de um ano escrito medida no Chromium. | A primeira página e o recibo da inflação passam de «1992, 2000, 2010, 2026» a «1992, 2000, 2010, 2020, 2026»; o cartão da inflação, a 240, fica «1992, 2010, 2026», como estava. A largura de um ano é 30,25 nas 50 etiquetas de ano medidas antes (e nas 54 de depois), e uma de oito algarismos mede 60,484. As etiquetas do tempo passam de 270 a 292; o menor espaço entre duas etiquetas do tempo, em unidades do desenho, passa de 22,635 a 20,757, e no ecrã é 20,436 píxeis. A célula do módulo prova a série da inflação a 360 e a 240, com a planta de uma década fora do sítio e a de uma década que cabe e não está marcada. |
 | 3 · a média como linha do livro | **Parado, pela regra de paragem.** As duas linhas (a média da inflação desde janeiro de 1992 e o objetivo do Banco Central Europeu) nascem no motor por uma travessia, e o mandato não deixava tocar no motor. O módulo não ganhou `referencias`: sem a linha, não há `Claim` que o desenho possa traçar. O que cada linha precisa está na secção seguinte, e a I207 regista-o. | O livro tem 3 195 linhas e nenhuma (0) com um `derived_from` que aponte para uma série; a regra do `ledger/README.md` recusa um `derived_from` que não seja uma afirmação. Nenhuma linha da média nem do objetivo (0). A origem do objetivo está selada (`c1c-bce-estrategia`), e o excerto e a leitura da casa dizem que ele se mede no índice harmonizado. |
 | 4 · a leitura de cada ponto, sem guião | **Feito, com duas decisões escritas.** Num desenho de uma série no modo da unidade, cada ponto tem a sua zona (a faixa entre os meios dos pontos vizinhos) e, escondidos até o rato passar, a linha vertical cinzenta clara, o ponto marcado e a etiqueta com o valor (`data-ponto`) e o período (`data-ponto-periodo`, nas palavras da casa). A folha acende-os só dentro de `(hover: hover) and (pointer: fine)`. O portão de HTML admite `data-ponto-periodo` como origem, a F2 admite as duas marcas num desenho só comparadas, e a F21 recompõe as zonas, as etiquetas e a legenda. As duas decisões: a figura indexada fica sem zonas, e o caminho 2 do toque não se abre agora (as duas secções abaixo). | 26 164 zonas em 80 desenhos, e 0 nos 2 desenhos indexados; a primeira página leva 416. A F2 comparou 52 328 valores e períodos de pontos com os seus pontos, com 6 de 6 plantas; a F21 recompôs 82 desenhos, com 21 de 21 plantas e 14 de 14 plantas da leitura e da legenda, e as provas do módulo são 15. O peso está medido antes e depois (secção própria). Com o rato, 3 de 3 provas: em cada uma acende-se exatamente uma leitura, a da zona debaixo do rato; no toque, 2 de 2 provas sem nada aceso. |
-| 5 · os registos | **Feito.** O mapa do repositório tem a secção do RP4-c, e as citações antigas que andaram com as linhas acrescentadas foram postas no sítio pela conta do diff; o `ISSUES.md` tem as três questões do bloco (I206 a I208); o inventário das frases e o `CHAVES-EN.md` não mudam, porque o bloco não acrescenta cadeia nenhuma (os textos novos são valores, períodos e unidades transcritas, cada um na sua marca). | O conferidor do mapa: 431 citações na linha citada, 0 longe e 0 por encontrar. As linhas mudadas em `src/i18n/strings.mjs`, no inventário das frases e no `CHAVES-EN.md`: 0. As capturas pedidas são 30 (as 3 rotas, as duas edições e as 5 larguras), mais as 3 leituras com o rato e os 2 recortes da legenda da unidade. O `medidas.json` da entrega do RP4-c (o commit `46e675d6`) tinha 262 medidas. |
+| 5 · os registos | **Feito.** O mapa do repositório tem a secção do RP4-c, e as citações antigas que andaram com as linhas acrescentadas foram postas no sítio pela conta do diff; o `ISSUES.md` tem as três questões do bloco (I206 a I208); o inventário das frases e o `CHAVES-EN.md` não mudam, porque o bloco não acrescenta cadeia nenhuma (os textos novos são valores, períodos e unidades transcritas, cada um na sua marca). | O conferidor do mapa: 431 citações na linha citada, 0 longe e 0 por encontrar. As linhas mudadas em `src/i18n/strings.mjs`, no inventário das frases e no `CHAVES-EN.md`: 0. As capturas pedidas são 30 (as 3 rotas, as duas edições e as 5 larguras), mais as 3 leituras com o rato e os 2 recortes da legenda da unidade. O `medidas.json` da entrega do RP4-c (o commit `a617f532`) tinha 262 medidas. |
 
 ## O ponto 3: o que cada linha precisa
 
@@ -73,9 +73,9 @@ As plantas sobre o `dist/` são 11, correm fora do `verify` (`tests/pais/portoes
 
 ## Os portões, as conferências e os commits
 
-**As conferências entre commits**, na cabeça do commit do código (`6e0c94f2`), pela tranca, com a árvore seguida limpa (`conferencias/`): 20 passos, 20 com o código 0, da construção ao `typecheck`, com a `check:alvos`, o feixe do desenho e as conferências que leem os desenhos.
+**As conferências entre commits**, na cabeça do commit do código (`0bac80b0`), pela tranca, com a árvore seguida limpa (`conferencias/`): 20 passos, 20 com o código 0, da construção ao `typecheck`, com a `check:alvos`, o feixe do desenho e as conferências que leem os desenhos.
 
-**Os três portões inteiros**, pela tranca da máquina, com `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/rp4c-2026-10-05/portoes`, na cabeça do código `9277c7f9` (a mesma no princípio e no fim, e a árvore seguida limpa antes e depois). Os códigos foram lidos dos ficheiros, depois de cada processo acabar:
+**Os três portões inteiros**, pela tranca da máquina, com `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/rp4c-2026-10-05/portoes`, na cabeça do código `212d47f5` (a mesma no princípio e no fim, e a árvore seguida limpa antes e depois). Os códigos foram lidos dos ficheiros, depois de cada processo acabar:
 
 | Portão | Código lido | Segundos |
 |---|---|---|
@@ -87,8 +87,8 @@ As plantas sobre o `dist/` são 11, correm fora do `verify` (`tests/pais/portoes
 
 Commits, no ramo `rp4c-2026-10-05`:
 
-- `6e0c94f2` · os pontos 1, 2 e 4: o módulo, o componente, a folha e o `PontoDaSerie`, com as conferências que mudaram de forma e as plantas
-- `9277c7f9` · os registos: a secção do RP4-c no mapa, com as citações postas em dia, e as I206 a I208
+- `0bac80b0` · os pontos 1, 2 e 4: o módulo, o componente, a folha e o `PontoDaSerie`, com as conferências que mudaram de forma e as plantas
+- `212d47f5` · os registos: a secção do RP4-c no mapa, com as citações postas em dia, e as I206 a I208
 - o commit seguinte guarda só esta pasta e a das capturas; a sua cabeça vai na resposta de entrega
 
 ## As capturas
@@ -136,7 +136,7 @@ As zonas só onde a leitura vive: a primeira página e os recibos pedem-nas (`co
 | o recibo da inflação | 20 646 | 35 258 | 31 078 | 220 507 | 383 416 | 333 991 |
 | o recibo do índice | 37 791 | 69 572 | 48 947 | 449 120 | 795 696 | 556 043 |
 
-«Antes» é a construção da cabeça de partida (`983b4585`), «RP4-c» a dos portões do bloco (`9277c7f9`) e «RP4-c-b» a desta passagem (`dd2e347c`). Em brotli, as 58 páginas passam de 602 396 (antes) e 1 143 317 (RP4-c) a 835 750. A página dos preços volta quase ao peso de antes: o que tem a mais é o símbolo «%» nas marcas dos valores e as regras da leitura na folha embutida da página (não tem legenda da unidade, porque todas as suas séries são em «%»).
+«Antes» é a construção da cabeça de partida (`de4bcfc6`), «RP4-c» a dos portões do bloco (`212d47f5`) e «RP4-c-b» a desta passagem (`8ed6734e`). Em brotli, as 58 páginas passam de 602 396 (antes) e 1 143 317 (RP4-c) a 835 750. A página dos preços volta quase ao peso de antes: o que tem a mais é o símbolo «%» nas marcas dos valores e as regras da leitura na folha embutida da página (não tem legenda da unidade, porque todas as suas séries são em «%»).
 
 ### As zonas
 
@@ -160,16 +160,16 @@ As plantas sobre o `dist/` são 13 (as 11 do RP4-c e as 2 da regra do sítio), f
 
 ### As conferências, os commits e o que fica
 
-As conferências que a mudança toca, na cabeça `dd2e347c`, pela tranca, cada uma com o código lido do seu ficheiro em `rp4cb/conferencias/` e a árvore seguida limpa antes e depois: a construção do Astro, o carimbo, os cartões, o portão de HTML, a `check:formas` (a F2 e a F21), a `check:formato`, a `check:series`, a `check:primeira`, a `check:cartao` e o `typecheck`, 10 passos com o código 0. As provas sobre a mesma construção (`rp4cb/provas/`): 8 passos com o código 0 (as marcas, o peso, a F21 e a F2 com o seu registo, a `check:series`, a `check:primeira` com as suas plantas, as capturas, as plantas dos portões e o mapa, com 435 citações na linha citada, 0 longe e 0 por encontrar). Os três portões inteiros corre-os o lugar de direção depois de fundir o `main`.
+As conferências que a mudança toca, na cabeça `8ed6734e`, pela tranca, cada uma com o código lido do seu ficheiro em `rp4cb/conferencias/` e a árvore seguida limpa antes e depois: a construção do Astro, o carimbo, os cartões, o portão de HTML, a `check:formas` (a F2 e a F21), a `check:formato`, a `check:series`, a `check:primeira`, a `check:cartao` e o `typecheck`, 10 passos com o código 0. As provas sobre a mesma construção (`rp4cb/provas/`): 8 passos com o código 0 (as marcas, o peso, a F21 e a F2 com o seu registo, a `check:series`, a `check:primeira` com as suas plantas, as capturas, as plantas dos portões e o mapa, com 435 citações na linha citada, 0 longe e 0 por encontrar). Os três portões inteiros corre-os o lugar de direção depois de fundir o `main`.
 
 Commits, no ramo `rp4c-2026-10-05`:
 
-- `23709946` · as zonas só onde a leitura vive e uma por coluna de píxel, com a F21 e as plantas
-- `ff943d15` · os registos: as três decisões no `ISSUES.md` e a secção do RP4-c no mapa
-- `fe1d2ce4` · as quatro plantas dos portões leem a primeira etiqueta da construção
-- `3313107c` · os registos: uma citação do mapa na linha da âncora
-- `3cf88ae5` · as colunas das pontas leem os pontos das pontas
-- `dd2e347c` · os registos: as citações do mapa que andaram com as pontas
+- `ee7a0a2c` · as zonas só onde a leitura vive e uma por coluna de píxel, com a F21 e as plantas
+- `8c6f5794` · os registos: as três decisões no `ISSUES.md` e a secção do RP4-c no mapa
+- `aead7712` · as quatro plantas dos portões leem a primeira etiqueta da construção
+- `a850e223` · os registos: uma citação do mapa na linha da âncora
+- `62521511` · as colunas das pontas leem os pontos das pontas
+- `8ed6734e` · os registos: as citações do mapa que andaram com as pontas
 - o commit seguinte guarda só a pasta das medições e a das capturas; a sua cabeça vai na resposta de entrega
 
 As capturas desta passagem estão na pasta das capturas com o prefixo `rp4cb-`: as 30 nas 5 larguras e nas 2 edições, as 3 leituras com o rato e os 2 recortes da legenda.

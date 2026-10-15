@@ -11782,7 +11782,7 @@ V2A: 3 afirmações conferidas, 3 corpos lidos, 21 plantas, 0 erros.
 > node scripts/stamp-version.mjs
 
 
-[90m  versão · d4aa1f1 (v2a-2026-10-13, git)[0m
+[90m  versão · e7ddb83 (v2a-2026-10-13, git)[0m
 
 > o-estado-do-pais@0.1.0 cartoes
 > node scripts/cartoes.mjs

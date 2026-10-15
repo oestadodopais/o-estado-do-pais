@@ -1,10 +1,10 @@
 {
   "bloco": "E1b",
-  "cabeca": "64ff4b4a14e839d47484c6caef109a3261409bdd",
+  "cabeca": "b789096d60a7670905f4079139ca208e73948121",
   "arvore_limpa": true,
   "estado": "cabeca-limpa",
   "construcao": {
-    "commit": "64ff4b4a14e839d47484c6caef109a3261409bdd",
+    "commit": "b789096d60a7670905f4079139ca208e73948121",
     "ref": "e1-2026-09-30",
     "env": "local",
     "origem": "git",

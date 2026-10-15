@@ -13,7 +13,7 @@
   I194 {"planta":"uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D","antes":{"escrito":"1791811684180999000","inode":"245286290","tamanho":"19","resumo":"adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"},"depois":{"escrito":"1791811684180999000","inode":"245286297","tamanho":"19","resumo":"adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"},"passos_da_troca":1,"codigo_da_troca":0,"falhas":["D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"],"mordeu":true}
   as 12 plantas morderam em 0.9 s
 
-  4 processo(s) lado a lado · cabeça 3fbcd3e127b85dfed4ac34af654585a306ef9199
+  4 processo(s) lado a lado · cabeça ddf1245dcc842fdd0516257e42e026c3b74606b9
 
 ▶ npm run check:alvos · começou aos 0.0 s
 ▶ npm run check:palavras · começou aos 0.0 s
@@ -2496,7 +2496,7 @@
     > o-estado-do-pais@0.1.0 check:cabeca
     > node tests/inicio/hierarquia-b2.mjs
     
-    check:cabeca C1; construção 3fbcd3e127b85dfed4ac34af654585a306ef9199; 140 cabeças; 4 mordidas; 10 reposições
+    check:cabeca C1; construção ddf1245dcc842fdd0516257e42e026c3b74606b9; 140 cabeças; 4 mordidas; 10 reposições
     check:cabeca: PASS
     
 ▶ npm run check:css · começou aos 75.7 s

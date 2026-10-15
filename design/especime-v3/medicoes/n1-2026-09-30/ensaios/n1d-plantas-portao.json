@@ -1,6 +1,6 @@
 {
   "comando": "node design/especime-v3/medicoes/n1-2026-09-30/plantas-n1c-portao.mjs --n1d",
-  "cabeca": "926e625bf5b704a9eac9c294d8e3491a528142d3",
+  "cabeca": "7a80f3e8ecb62c9c44700d945c50ef9baed4fabe",
   "estado_da_arvore": "árvore por registar",
   "arvore_por_registar": true,
   "codigo_por_registar": false,

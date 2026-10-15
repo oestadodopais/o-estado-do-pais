@@ -1,7 +1,7 @@
 {
   "bloco": "RP3",
-  "construcao_da_base": "7af9073132b92ed7aca7fec0c906f1a08626d446",
-  "construcao_da_cabeca": "b3e9e0ac337a960f80fcc641efb001b669bc107c",
+  "construcao_da_base": "91294c419a9d9dbe7b2f4cd80651af4e66a80ae0",
+  "construcao_da_cabeca": "dbaab37d74dea8853c8fa1a89e2929970e658d5c",
   "como": "astro build de uma exportação de cada commit (git archive), com as mesmas dependências",
   "ficheiros_na_base": 10588,
   "ficheiros_na_cabeca": 10620,

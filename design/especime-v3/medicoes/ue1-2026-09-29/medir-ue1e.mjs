@@ -25,7 +25,7 @@ const RAIZ = process.cwd();
 const PASTA = 'design/especime-v3/medicoes/ue1-2026-09-29';
 const aqui = (f) => path.join(RAIZ, PASTA, f);
 const git = (...a) => execFileSync('git', a, { cwd: RAIZ, encoding: 'utf8' }).trim();
-const BASE = 'aba0a48b';
+const BASE = '6ff9e8c1';
 const CABECA = fs.readFileSync(aqui('portoes/ue1e/build.cabeca'), 'utf8').trim();
 const ID = 'ihpc-variacao-homologa';
 const SERIE = 'ihpc-variacao-homologa-paises';

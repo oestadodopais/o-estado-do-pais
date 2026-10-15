@@ -1,6 +1,6 @@
 # Os vazios · relatório do construtor (Claude Opus)
 
-*Ramo `vazios-2026-08-28`, saído de `main` `35313eb`. Contra
+*Ramo `vazios-2026-08-28`, saído de `main` `f174be8`. Contra
 `design/especime-v3/briefs/BRIEF-vazios.md`, escrito pelo lugar de direção a
 28.08.2026. Nada aqui foi fundido nem empurrado: o ramo fica para o lugar de
 direção.*
@@ -11,7 +11,7 @@ Contadas na construção, com `grep -ro` sobre `dist/` inteiro (não sobre uma
 amostra, e não sobre as páginas de concelho só): cada ocorrência da cadeia em
 qualquer ficheiro `.html`.
 
-| o que se conta | antes (`35313eb`) | sete medidas | regra 3 | onze linhas | com o índice |
+| o que se conta | antes (`f174be8`) | sete medidas | regra 3 | onze linhas | com o índice |
 | --- | --- | --- | --- | --- | --- |
 | «sem linha ainda» em `dist/` | 320 | 12 | 11 | 1 | **0** |
 | «no row yet» em `dist/` | 320 | 12 | 11 | 1 | **0** |
@@ -205,11 +205,11 @@ memória e o que a página agora rende.
 
 | commit | o que faz | o que ficou verde |
 | --- | --- | --- |
-| `9ab6ec8` | **as sete medidas**: `execucaoDaReceita` sai de `MEDIDAS_DO_CONCELHO`, e os onze ficheiros que assumiam oito passam a sete | `npm run build` inteiro, `verify`, `typecheck` |
-| `782d759` | **a marca como valor**: a lista fechada, a propagação na receita, os dois sentidos da conferência 8, a peça sem estado, a distância que exige números, o campo «Decidiu» sem valores nem nota, o inventário e a régua nova | `build`, `verify`, `typecheck`; `vazios` 6 de 7, `concelhos` 12 de 12, `matriz` 87 de 87 |
-| `220bb46` | **o relatório**, na primeira redação | (documento) |
-| `7ac6dd4` | **as onze linhas do motor**, o id do prazo médio de Évora, as quatro contagens declaradas em `bloco vazios`, a linha do registo das revisões, e a célula B3 corrigida pelo que mediu | `build`, `verify`, `typecheck`; `vazios` 7 de 8, `concelhos` 12 de 12 |
-| `0977666` | **o relatório com as contagens medidas**, e seis travessões fora da prosa nova | (documento) |
+| `8312d01` | **as sete medidas**: `execucaoDaReceita` sai de `MEDIDAS_DO_CONCELHO`, e os onze ficheiros que assumiam oito passam a sete | `npm run build` inteiro, `verify`, `typecheck` |
+| `1771097` | **a marca como valor**: a lista fechada, a propagação na receita, os dois sentidos da conferência 8, a peça sem estado, a distância que exige números, o campo «Decidiu» sem valores nem nota, o inventário e a régua nova | `build`, `verify`, `typecheck`; `vazios` 6 de 7, `concelhos` 12 de 12, `matriz` 87 de 87 |
+| `6d44480` | **o relatório**, na primeira redação | (documento) |
+| `a0a522b` | **as onze linhas do motor**, o id do prazo médio de Évora, as quatro contagens declaradas em `bloco vazios`, a linha do registo das revisões, e a célula B3 corrigida pelo que mediu | `build`, `verify`, `typecheck`; `vazios` 7 de 8, `concelhos` 12 de 12 |
+| `810bdb9` | **o relatório com as contagens medidas**, e seis travessões fora da prosa nova | (documento) |
 | *(este)* | **a linha do índice de Penedono**, escrita pelo motor `011c5ec`, as quatro contagens outra vez, e o fecho do relatório | `build`, `verify`, `typecheck`; `vazios` 8 de 8, `concelhos` 12 de 12, `matriz` 87 de 87 |
 
 Cada commit foi feito com caminhos explícitos, nunca `git add -A` nem
@@ -304,7 +304,7 @@ cerca de 30 mil.
 
 O que se pode contar é o trabalho: ler a casa antes de lhe tocar, **seis
 construções inteiras** (`npm run build`, cerca de 2m20 cada, 6 546 páginas: a de
-base em `35313eb` para fixar as contagens de partida, a das sete medidas, a da
+base em `f174be8` para fixar as contagens de partida, a das sete medidas, a da
 regra 2, a das onze linhas, a das correções, e a do índice de Penedono), cinco
 corridas de `verify` e cinco de `typecheck`, as réguas de navegador três vezes
 (`concelhos` 12 de 12 em todas, `matriz` 87 de 87) e a régua nova seis vezes.

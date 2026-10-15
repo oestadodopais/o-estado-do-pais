@@ -6,7 +6,7 @@
  * =============================================================================
  *
  * PORQUE EXISTE. O brief K2 manda que todos os valores do sítio sigam um só formato, o da casa: os milhares separados,
- * a vírgula decimal, e o espaço antes de «%» e do símbolo. A construção de base do bloco (a cabeça `1722244d`) tinha
+ * a vírgula decimal, e o espaço antes de «%» e do símbolo. A construção de base do bloco (a cabeça `ad529db7`) tinha
  * 42 contagens da prova sem separador de milhares e o «%» colado ao valor em 701 sítios (a leitura de cada concelho,
  * as frases dos estudos onde quer que apareçam, os valores de referência da página da União, a mudança do projeto no
  * registo inglês das correções), ao lado do espaço que os cartões e as leituras já escreviam desde o C1. Nenhuma

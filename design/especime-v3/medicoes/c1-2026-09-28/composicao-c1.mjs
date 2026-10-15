@@ -27,7 +27,7 @@ for (const a of registo.acertos) {
   }
 }
 assert.deepEqual(atual, esperado);
-const antigoTexto = execFileSync('git', ['show', '48a5a1c1:src/data/leituras-das-medidas.mjs'], { encoding: 'utf8' });
+const antigoTexto = execFileSync('git', ['show', '7028e733:src/data/leituras-das-medidas.mjs'], { encoding: 'utf8' });
 // A importação do RP1 só junta as entradas que a igualdade acima já confere.
 const semImportacao = antigoTexto.replace(/^import .*leituras-rp1.*;$/m, '').replace(/\.\.\.LEITURAS_RP1,?/, '');
 const { LEITURAS_DAS_MEDIDAS: antigas } = await import('data:text/javascript;base64,' + Buffer.from(semImportacao).toString('base64'));

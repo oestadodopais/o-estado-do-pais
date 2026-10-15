@@ -2,7 +2,7 @@
 
 *Claude Opus 5.5, construtor do bloco PP1, a 28.09.2026. Worktree `<worktree do sítio>`, ramo `pp1-2026-09-28`. Sem travessões.*
 
-**Os três portões da passagem** correram na cabeça `56c7ed7b`, cada um no seu comando, com o código lido do ficheiro que acabou de escrever em `portoes/pp1b/`:
+**Os três portões da passagem** correram na cabeça `adfd3893`, cada um no seu comando, com o código lido do ficheiro que acabou de escrever em `portoes/pp1b/`:
 
 | Portão | Código | Cabeça | Início e fim (UTC) |
 | --- | --- | --- | --- |
@@ -17,7 +17,7 @@ Os registos levam o caminho da árvore trocado por `<worktree do sítio>` (`port
 1. **O mínimo de três blocos na construção de produção (achado 6):** `npm run sinais` no fim da cadeia do `build`, a escrever o ficheiro dos sinais em qualquer construção; a terceira planta corre o passo como a cadeia o corre, com um resolvedor que recusa tudo, e o passo sai com 1.
 2. **A pesquisa da primeira página provada a interagir (achado 7):** `tests/inicio/pesquisa-da-primeira.mjs`, no `check:primeira`, com os cinco passos da H15 nas duas edições e duas larguras, o caminho sem guião medido até à porta de Mourão, e duas plantas (a ligação do campo partida, o formulário sem destino).
 3. **As dez entradas no mapa do sítio (achado 8):** a E5 da célula das entradas, com as plantas de uma rota em falta e de um mapa nomeado que a construção não tem.
-4. **As capturas e as páginas congeladas (achado 10):** as 84 capturas e as páginas congeladas refeitas na construção de `56c7ed7b`, a cabeça que os portões mediram; a planta do valor revisto também correu nessa cabeça.
+4. **As capturas e as páginas congeladas (achado 10):** as 84 capturas e as páginas congeladas refeitas na construção de `adfd3893`, a cabeça que os portões mediram; a planta do valor revisto também correu nessa cabeça.
 
 **O que ficou por fazer:**
 

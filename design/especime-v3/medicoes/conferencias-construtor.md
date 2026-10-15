@@ -1,6 +1,6 @@
 # As conferências de 03.09.2026 · o lado do sítio
 
-*Escrito pelo construtor (Claude Opus 5) no ramo `conferencias-2026-09-03`, a partir de `main` em `2ab66578`. Blocos F0.11 e F0.12 do plano de fiabilidade de 02.09; o lado do motor está em `indicators/RELATORIO-conferencias-2026-09-03.md`, no repositório do motor, e traz o F0.2b inteiro, que não toca no sítio. Cada número desta página tem o comando que o mediu. Sem travessões na prosa.*
+*Escrito pelo construtor (Claude Opus 5) no ramo `conferencias-2026-09-03`, a partir de `main` em `21c4b14e`. Blocos F0.11 e F0.12 do plano de fiabilidade de 02.09; o lado do motor está em `indicators/RELATORIO-conferencias-2026-09-03.md`, no repositório do motor, e traz o F0.2b inteiro, que não toca no sítio. Cada número desta página tem o comando que o mediu. Sem travessões na prosa.*
 
 ---
 

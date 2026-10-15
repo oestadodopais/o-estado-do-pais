@@ -3,7 +3,7 @@
   "guiao": "design/especime-v3/medicoes/rp3-2026-10-04/medir-rp3.py",
   "cabeca_do_codigo": "39f15b8eb38ea7bfd727da2b4ee0d2e6601df947",
   "cabeca_do_motor": "f97e66e5ca59215d7b004eb0ad61773f3676d0c8",
-  "base": "1c4dde2f",
+  "base": "2c510494",
   "medidas_escritas": 156,
   "medidas": [
     {
@@ -657,7 +657,7 @@
     {
       "nome": "linhas_escalares_mudadas",
       "valor": 7,
-      "comando": "git diff --numstat 1c4dde2f 39f15b8e -- ledger/claims/",
+      "comando": "git diff --numstat 2c510494 39f15b8e -- ledger/claims/",
       "conhecido_positivo": {
         "o_que": "são as linhas presas",
         "encontrado": true
@@ -941,7 +941,7 @@
     {
       "nome": "ficheiros_do_codigo_mudados_entre_o_antes_e_a_base",
       "valor": 0,
-      "comando": "git diff --name-only 6ef944d6 1c4dde2f -- src scripts tests ledger public api supabase mapa package.json package-lock.json astro.config.mjs site.config.mjs tsconfig.json tsconfig.check.json vercel.json",
+      "comando": "git diff --name-only 38f43d49 2c510494 -- src scripts tests ledger public api supabase mapa package.json package-lock.json astro.config.mjs site.config.mjs tsconfig.json tsconfig.check.json vercel.json",
       "conhecido_positivo": {
         "o_que": "o mesmo comando até à cabeça do código vê os ficheiros do bloco",
         "encontrado": true
@@ -1075,10 +1075,10 @@
     },
     {
       "nome": "base_cabeca",
-      "valor": "6ef944d67b9605c77426b85e687d5cafdaa820a9",
+      "valor": "38f43d49b6ff0534577c8b0197def98d1619ce68",
       "comando": "cat design/especime-v3/medicoes/s1-2026-10-02/portoes-d/cabeca",
       "conhecido_positivo": {
-        "o_que": "é a cabeça do código do S1, 6ef944d6",
+        "o_que": "é a cabeça do código do S1, 38f43d49",
         "encontrado": true
       }
     },
@@ -1137,7 +1137,7 @@
     {
       "nome": "guarda_dos_campos_antes",
       "valor": 24,
-      "comando": "git show 1c4dde2f:scripts/provar-guardas.mjs · «CAMPOS.length === N»",
+      "comando": "git show 2c510494:scripts/provar-guardas.mjs · «CAMPOS.length === N»",
       "conhecido_positivo": {
         "o_que": "a corrida com a igualdade velha recusou o caso",
         "encontrado": true
@@ -1861,7 +1861,7 @@
       "valor": 7,
       "comando": "python3 design/observatorio/medidas/BRIEF-RP3.py contra design/observatorio/medidas/BRIEF-RP3.json, medida a medida",
       "conhecido_positivo": {
-        "o_que": "o §0 tem as linhas do livro de 334cc740",
+        "o_que": "o §0 tem as linhas do livro de eaffd3c8",
         "encontrado": true
       }
     },
@@ -1980,7 +1980,7 @@
     },
     {
       "nome": "decisoes_intervalo_sitio",
-      "valor": "1c4dde2f..39f15b8e",
+      "valor": "2c510494..39f15b8e",
       "comando": "design/especime-v3/medicoes/rp3-2026-10-04/decisoes-em-vigor-sitio.comando",
       "conhecido_positivo": {
         "o_que": "o comando escreveu-se ao lado",
@@ -2098,7 +2098,7 @@
     },
     {
       "nome": "fusao_de_ensaio_main",
-      "valor": "7af9073132b92ed7aca7fec0c906f1a08626d446",
+      "valor": "91294c419a9d9dbe7b2f4cd80651af4e66a80ae0",
       "comando": "design/especime-v3/medicoes/rp3-2026-10-04/fusao-de-ensaio.json · main (git rev-parse main)",
       "conhecido_positivo": {
         "o_que": "é um resumo de commit",

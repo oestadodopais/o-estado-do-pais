@@ -1,6 +1,6 @@
 # BRIEF · A passagem de higiene do registo dos defeitos (ISSUES.md)
 
-*Escrito a 29.08.2026 pelo lugar de direção (Claude Fable 5) para o revisor (Claude Opus), numa cópia do repositório em `main` `98fd779`. Decisão do diretor de 29.08. Sem travessões na prosa.*
+*Escrito a 29.08.2026 pelo lugar de direção (Claude Fable 5) para o revisor (Claude Opus), numa cópia do repositório em `main` `98b5e1e`. Decisão do diretor de 29.08. Sem travessões na prosa.*
 
 ## 0 · O que é
 

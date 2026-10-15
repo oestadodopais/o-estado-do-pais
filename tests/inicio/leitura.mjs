@@ -55,7 +55,7 @@
  * da cabeça, e é essa metade que recusa a forma de cinco cartões que o §1, item 5
  * do brief escolhia: três das cinco são medidas desta página.
  *
- * O «HOJE» MEDIDO, e não o que o brief supunha: na árvore de partida (`1dbd1cef`)
+ * O «HOJE» MEDIDO, e não o que o brief supunha: na árvore de partida (`d16403f3`)
  * cada nome aparecia DUAS vezes, não três — no cartão e na peça do painel (ou na
  * linha da lista social). O brief escreve «antes: cartão, painel e leitura,
  * três», e isso está errado por uma: a peça e a leitura eram a mesma coisa. O
@@ -120,7 +120,7 @@
  *
  * J6 · A ALTURA DE `/` A 390 MENOR DO QUE A DA ÁRVORE DE PARTIDA. O «hoje» está
  * escrito aqui, medido com `tests/inicio/porta.mjs` (célula A2) sobre a
- * construção de `1dbd1cef`, que é o ponto de partida deste ramo:
+ * construção de `d16403f3`, que é o ponto de partida deste ramo:
  *
  *     A2.pt → 6959 px · A2.en → 6911 px
  *
@@ -320,7 +320,7 @@ const ALTURA_PEQUENA = 664;
 /* ---------------------------------------------------------------------------
  * O «HOJE», MEDIDO NA ÁRVORE DE PARTIDA E ESCRITO AQUI
  * ---------------------------------------------------------------------------
- * `1dbd1cef` é o commit de que este ramo parte. Os dois números saíram de
+ * `d16403f3` é o commit de que este ramo parte. Os dois números saíram de
  *
  *     node tests/inicio/porta.mjs      (células A2.pt e A2.en)
  *
@@ -372,10 +372,10 @@ const ABRE_O_ALVO_SEM_GUIAO = { chromium: false, webkit: false };
  * primeira página e deu-lhes página própria: «a faixa passa a levar as medidas
  * de cabeça dos domínios à medida que ficam vivos, e os dois painéis europeus
  * passam a uma página própria, "Portugal na União Europeia"». A mudança entrou
- * no commit `3139099f`, a 08.09.2026, e a §1.102 registou-a.
+ * no commit `889f3006`, a 08.09.2026, e a §1.102 registou-a.
  *
  * ESTA RÉGUA FICOU A MEDIR A PÁGINA ERRADA desde esse dia, e ficou vermelha sem
- * que ninguém a corresse: a 14.09.2026, sobre a cabeça `42065f0d`, saía a 4 de
+ * que ninguém a corresse: a 14.09.2026, sobre a cabeça `fc39fe07`, saía a 4 de
  * 26 células, com as 22 que procuram leituras a dizer «0 leitura(s) de 21». Uma
  * régua vermelha por medir o passado não mede nada, e a decisão do lugar de
  * direção é esta: ela passa a medir as leituras ONDE ELAS VIVEM.

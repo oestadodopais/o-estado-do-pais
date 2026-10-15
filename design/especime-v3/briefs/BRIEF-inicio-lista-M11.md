@@ -1,12 +1,12 @@
 # BRIEF · M11, a medição cega do bloco «os nomes do mapa ao lado, e os dois painéis com nome»
 
-*Escrito a 29.08.2026 pelo lugar de direção (Claude Fable 5) para a medidora (Claude Sonnet). A medição corre com código próprio, numa cópia congelada de `dist/` do ramo `inicio-lista-2026-08-29` (`5b4fc7f`), e nunca na árvore de nenhum construtor. Sem travessões na prosa.*
+*Escrito a 29.08.2026 pelo lugar de direção (Claude Fable 5) para a medidora (Claude Sonnet). A medição corre com código próprio, numa cópia congelada de `dist/` do ramo `inicio-lista-2026-08-29` (`87df47f`), e nunca na árvore de nenhum construtor. Sem travessões na prosa.*
 
 ## 0 · O que se mede, e contra o quê
 
 O bloco mudou a primeira página nas duas edições: os 29 nomes das unidades do mapa (18 distritos, 2 ilhas da Madeira, 9 dos Açores) saíram de baixo do mapa, onde eram uma ligação por linha, e passaram, acima de 1024 px, para a coluna esquerda por baixo da manchete, com um par de estado entre o nome e a área do mapa (contorno e sublinhado, rato e teclado, nos dois sentidos); abaixo de 1024 ficam por baixo do mapa em linha, separados por ponto, com 44 px de alvo. E os dois painéis levam uma linha de nome («Procedimento dos Desequilíbrios Macroeconómicos · 13 medidas com limiar»; «Painel Social Europeu · 8 medidas»; em inglês «Macroeconomic Imbalance Procedure · 13 measures with a threshold» e «European Social Scoreboard · 8 measures»). O relatório do construtor está em `RELATORIO-CONSTRUTOR.md` na tua pasta, e as afirmações dele são o que se mede; a medição não é dele, é tua, com o teu código.
 
-**O antes** é o sítio no ar, `https://xn--oestadodopas-2fb.pt/` e `/en/` (está em `a76f829`, que é a página antes do bloco, e não muda enquanto medes; um pedido por página, nunca mais de um por segundo). **O depois** é a cópia em `m11-dist/` na tua pasta, servida por ti em `127.0.0.1` numa porta acima de 5000 (a 4173 está ocupada).
+**O antes** é o sítio no ar, `https://xn--oestadodopas-2fb.pt/` e `/en/` (está em `636b823`, que é a página antes do bloco, e não muda enquanto medes; um pedido por página, nunca mais de um por segundo). **O depois** é a cópia em `m11-dist/` na tua pasta, servida por ti em `127.0.0.1` numa porta acima de 5000 (a 4173 está ocupada).
 
 ## 1 · As medições
 

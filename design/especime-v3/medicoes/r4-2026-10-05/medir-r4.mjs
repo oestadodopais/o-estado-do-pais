@@ -224,9 +224,9 @@ try {
 /* 7e · OS SEGUNDOS: do commit do brief à cabeça medida, pelos tempos dos commits. */
 {
   const t = (/** @type {string} */ ref) => Number(execFileSync('git', ['show', '-s', '--format=%ct', ref], { cwd: RAIZ, encoding: 'utf8' }).trim());
-  const s0 = t('9424e9e7');
+  const s0 = t('e45c8012');
   const s1 = t('HEAD');
-  medicao('segundos_do_commit_do_brief_a_cabeca_medida', s1 - s0, 'git show -s --format=%ct 9424e9e7 e HEAD', 'a cabeça medida é posterior ao brief', s1 > s0);
+  medicao('segundos_do_commit_do_brief_a_cabeca_medida', s1 - s0, 'git show -s --format=%ct e45c8012 e HEAD', 'a cabeça medida é posterior ao brief', s1 > s0);
 }
 
 /* 7f · OS TRÊS PORTÕES INTEIROS, lidos dos ficheiros que `scripts/leituras/portoes.sh` escreveu na pasta `portoes/`. */

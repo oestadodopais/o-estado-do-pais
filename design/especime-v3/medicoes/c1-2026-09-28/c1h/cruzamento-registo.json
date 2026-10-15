@@ -1,6 +1,6 @@
 {
   "ficheiro": "ledger/cruzamentos/evora.json",
-  "cabeca_da_corrida": "ed5093914109ed20a968e0303fbf26a6fd81c5c1",
+  "cabeca_da_corrida": "c0693ffc9ad51691a3fb733a2fd524bd1cc0f8bd",
   "sha256_comprometido": "69a70ff9351bff1d1170dbbb2eb9f6f41b4b6ee16d56bd07c181a41012d4cc46",
   "sha256_atual": "69a70ff9351bff1d1170dbbb2eb9f6f41b4b6ee16d56bd07c181a41012d4cc46",
   "sem_edicao_na_arvore_da_corrida": true,

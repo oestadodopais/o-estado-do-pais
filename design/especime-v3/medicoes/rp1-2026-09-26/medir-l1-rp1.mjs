@@ -75,7 +75,7 @@ function composicao(dist, b2 = false) {
 const referencia='design/especime-v3/medicoes/b2-2026-09-23/l1-depois.json';
 const base=json(referencia), antes=base.composicao, depois=composicao('dist',true);
 if(depois.falhas.length)throw Error(depois.falhas.join('\n'));
-const novas=execFileSync('git',['diff','--name-only','--diff-filter=A','38d3627894416097de26c52346c595c45a7b2884','--','ledger/claims'],{encoding:'utf8'}).trim().split('\n').map(p=>path.basename(p,'.yml'));
+const novas=execFileSync('git',['diff','--name-only','--diff-filter=A','2a4ff50987b7c84735d44d82610d4fadfa28f985','--','ledger/claims'],{encoding:'utf8'}).trim().split('\n').map(p=>path.basename(p,'.yml'));
 const permitidas=new Set(novas.flatMap(id=>['/livro-razao/'+id,'/en/ledger/'+id]));
 const entraram=Object.keys(depois.paginas).filter(p=>!antes.paginas[p]);
 const sairam=Object.keys(antes.paginas).filter(p=>!depois.paginas[p]);

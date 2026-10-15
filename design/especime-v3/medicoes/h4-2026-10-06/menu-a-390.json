@@ -1,14 +1,14 @@
 {
   "comando": "node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs antes",
   "construcao": {
-    "commit": "207d71346ea034943058fffcbbb926ddafa79e90",
+    "commit": "4970eab9eb634867e060239ee9c857b9b9498e9a",
     "ref": "h4-2026-10-06",
     "env": "local",
     "origem": "git",
     "motivo": null,
     "construido_em": "2026-10-06T09:22:31.947Z"
   },
-  "cabeca": "207d71346ea034943058fffcbbb926ddafa79e90",
+  "cabeca": "4970eab9eb634867e060239ee9c857b9b9498e9a",
   "fase": "antes",
   "medidas": [
     {
@@ -1851,14 +1851,14 @@
   "depois": {
     "comando": "node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs depois --passagem-c",
     "construcao": {
-      "commit": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
+      "commit": "8b30451fef33009019af39dbcdb3eb3bfcb0768c",
       "ref": "h4-2026-10-06",
       "env": "local",
       "origem": "git",
       "motivo": null,
       "construido_em": "2026-10-06T11:45:30.652Z"
     },
-    "cabeca": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
+    "cabeca": "8b30451fef33009019af39dbcdb3eb3bfcb0768c",
     "fase": "depois",
     "medidas": [
       {
@@ -2922,14 +2922,14 @@
   "depois_h4b": {
     "comando": "node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs depois",
     "construcao": {
-      "commit": "9c44ad9e31972cfbfd9d7138e29b52b9027bb63d",
+      "commit": "c4d6af8ef7447055651e4c32c1d127288084eb15",
       "ref": "h4-2026-10-06",
       "env": "local",
       "origem": "git",
       "motivo": null,
       "construido_em": "2026-10-06T11:04:26.464Z"
     },
-    "cabeca": "9c44ad9e31972cfbfd9d7138e29b52b9027bb63d",
+    "cabeca": "c4d6af8ef7447055651e4c32c1d127288084eb15",
     "fase": "depois",
     "medidas": [
       {

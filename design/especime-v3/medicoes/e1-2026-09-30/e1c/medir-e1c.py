@@ -46,9 +46,9 @@ m1.DIST = DIST
 ALVO = Path(os.environ["OEDP_MEDIDAS_JSON"]) if os.environ.get("OEDP_MEDIDAS_JSON") else PASTA / "medidas.json"
 MAPA_SAIDA = ALVO.parent / "mapa-de-migracao.json" if os.environ.get("OEDP_MEDIDAS_JSON") else PASTA / "mapa-de-migracao.json"
 CABECA_E1B_MOTOR = "79ab4d5"
-CABECA_E1B_SITIO = "0fa073e9"
+CABECA_E1B_SITIO = "a93635dc"
 # o commit do lugar de direção com as duas leituras e o mandato desta passagem: a base do trabalho do construtor no sítio
-CABECA_DO_MANDATO = "e7a9e908"
+CABECA_DO_MANDATO = "4177a632"
 MEDIDAS = []
 
 
@@ -173,7 +173,7 @@ def medir_emendas():
         linhas.append(r)
     medida("emendas_e1c", {"emendas": linhas, "falhas": falhas},
            "git show <cabeça>:<edição .md> no motor (na cabeça e na da E1b, 79ab4d5) e o texto visível de studies-src/<slug>/<língua>.html "
-           "no sítio (na árvore e na cabeça da E1b, 0fa073e9), contadas as cadeias que saem e as que entram de cada ponto do mandato",
+           "no sítio (na árvore e na cabeça da E1b, a93635dc), contadas as cadeias que saem e as que entram de cada ponto do mandato",
            {"descricao": "cada cadeia que sai estava no motor e no documento alojado na E1b (o mesmo detetor vê-a lá)",
             "cadeias_que_nao_estavam_na_e1b": antes_sem, "mordeu": not antes_sem})
 

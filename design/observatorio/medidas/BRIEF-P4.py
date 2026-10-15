@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""O §0 do brief P4 (os pequenos do sítio depois do UE2), medido sobre a cabeça presa do sítio (642e9d56). Não lê a rede:
+"""O §0 do brief P4 (os pequenos do sítio depois do UE2), medido sobre a cabeça presa do sítio (40588dd5). Não lê a rede:
 lê as réguas à mão, as medidas do K2-c, as declarações das definições, os rótulos e o guião das decisões em vigor na cabeça.
 Escreve design/observatorio/medidas/BRIEF-P4.json (ou o caminho em OEDP_MEDIDAS_JSON). Cada medição leva o comando e um
 conhecido-positivo; o que não conseguir ler fica «NÃO LIDO»."""
 import json, os, pathlib, re, subprocess
 
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "642e9d56"
+CAB = "40588dd5"
 NAO = "NÃO LIDO"
 medidas = []
 
@@ -70,19 +70,19 @@ medicao("palavras_da_nota_do_sucessor_que_dizem_a_reconciliacao", len(re.findall
         f"git show {CAB}:src/data/rotulos-b1.mjs · «reconcilia»", "o rótulo «sucedeu-lhe» existe", "sucedeu-lhe" in rot)
 
 # 5 · o guião das decisões em vigor com um intervalo que tem PNG, NA CABEÇA PRESA: o guião corre-se tal como estava em
-# 642e9d56 (lido com `git show` para um ficheiro transitório em scripts/leituras/, porque ele acha o sítio pelo seu próprio
+# 40588dd5 (lido com `git show` para um ficheiro transitório em scripts/leituras/, porque ele acha o sítio pelo seu próprio
 # caminho, dois níveis acima), e não o da árvore de trabalho, porque o item 6 do bloco corrige precisamente este guião e a
 # medição tem de continuar a dizer o que o §0 mediu. O ficheiro transitório apaga-se logo a seguir, aconteça o que acontecer.
 guiao_preso = mostrar("scripts/leituras/decisoes-em-vigor.py")
 transitorio = SITIO / "scripts" / "leituras" / f".decisoes-em-vigor-{CAB}-medida-p4.py"
 try:
     transitorio.write_text(guiao_preso or "", encoding="utf-8")
-    r = subprocess.run(["python3", str(transitorio), "--intervalo", "74ce7657..642e9d56"], cwd=str(SITIO), capture_output=True, text=True)
+    r = subprocess.run(["python3", str(transitorio), "--intervalo", "f5788ac3..40588dd5"], cwd=str(SITIO), capture_output=True, text=True)
 finally:
     if transitorio.exists():
         transitorio.unlink()
 medicao("codigo_do_decisoes_em_vigor_num_intervalo_com_png", r.returncode if guiao_preso else NAO,
-        f"git show {CAB}:scripts/leituras/decisoes-em-vigor.py > scripts/leituras/<transitório>.py; python3 scripts/leituras/<transitório>.py --intervalo 74ce7657..642e9d56 (o UE2, que tem capturas PNG); apagar o transitório",
+        f"git show {CAB}:scripts/leituras/decisoes-em-vigor.py > scripts/leituras/<transitório>.py; python3 scripts/leituras/<transitório>.py --intervalo f5788ac3..40588dd5 (o UE2, que tem capturas PNG); apagar o transitório",
         "a saída diz que não leu um byte 0x89", "0x89" in (r.stdout + r.stderr))
 
 # 6 · a linha da descrição em CHAVES-EN.md

@@ -56,7 +56,7 @@ Cadeias retiradas: **0**, nas duas línguas. `INVENTARIO-FRASES.md` e `critica/R
 
 Tabela conferida, não aplicada. [Contagem original dos temas e documentos](temas-e-documentos-peca1.json).
 
-Commits novos: **0**. Cabeça inicial e final: `2bf8b238b912fcb89da74096281305c75f0a3b3c`, ramo `b1-2026-09-17`. Não houve commit de implementação, mudança de ramo, push ou escrita fora desta worktree. O relatório, as provas e as capturas de referência ficam por confirmar em Git. O [relatório da primeira corrida](LEIA-ME-peca1-primeira-corrida.md) fica preservado, com o [conflito inicial](conflito-peca1.json).
+Commits novos: **0**. Cabeça inicial e final: `0820794dfb2b7fefa20c22beebf0eaa2b7455856`, ramo `b1-2026-09-17`. Não houve commit de implementação, mudança de ramo, push ou escrita fora desta worktree. O relatório, as provas e as capturas de referência ficam por confirmar em Git. O [relatório da primeira corrida](LEIA-ME-peca1-primeira-corrida.md) fica preservado, com o [conflito inicial](conflito-peca1.json).
 
 | Comando | Código na cabeça acima | Corrida |
 |---|---|---|
@@ -66,7 +66,7 @@ Commits novos: **0**. Cabeça inicial e final: `2bf8b238b912fcb89da74096281305c7
 
 Os códigos continuam em [portoes-peca1.txt](portoes-peca1-primeira-corrida.txt). [Build](build-peca1-primeira-corrida.log), [verify](verify-peca1-primeira-corrida.log), [typecheck](typecheck-peca1-primeira-corrida.log). Não foram repetidos nesta retoma: a cabeça e todas as fontes verificadas são as mesmas. Nesta retoma, o portão de HTML foi exercido sobre a referência e nas três retiradas isoladas, com os códigos 0, 1, 1 e 1 acima. Os verdes não provam uma peça B1 concluída. Não houve leitura independente de uma implementação.
 
-Capturas «antes»: **20**, preservadas e reconferidas por SHA-256. Capturas «depois»: **0**. As medições de referência têm zero deslocamento lateral. [Rotas, larguras e resumos](capturas-antes-peca1.json). A referência usa as fontes de main em `ca4a130709fcc77ee5828f98dc4d39ecf8f7f223`; [comparação guardada](referencia-peca1.json).
+Capturas «antes»: **20**, preservadas e reconferidas por SHA-256. Capturas «depois»: **0**. As medições de referência têm zero deslocamento lateral. [Rotas, larguras e resumos](capturas-antes-peca1.json). A referência usa as fontes de main em `8e6756795f88c58fe2364923cd4c962d849aeb15`; [comparação guardada](referencia-peca1.json).
 
 | Largura | Estudo PT | Estudo EN | Lista PT | Lista EN |
 |---|---|---|---|---|

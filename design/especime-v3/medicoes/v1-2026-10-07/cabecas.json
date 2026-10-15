@@ -1,14 +1,14 @@
 {
   "motor": "f8e07849f57270bd4d3256ccfffde185196f7823",
   "motor_codigo": "f8e07849f57270bd4d3256ccfffde185196f7823",
-  "sitio_antes_do_relatorio": "142adfa9ec91d8624259d088bc1eff121dff87c0",
-  "sitio_codigo": "142adfa9ec91d8624259d088bc1eff121dff87c0",
+  "sitio_antes_do_relatorio": "6ada3b6beadc30305c8877db4cc1b7df34d1caef",
+  "sitio_codigo": "6ada3b6beadc30305c8877db4cc1b7df34d1caef",
   "commits_motor": [
     "26c4bbe346c6a6d0c260782f2843350b43fdeb59 V1: recolher fontes, selar provas e manter a fila diária",
     "f8e07849f57270bd4d3256ccfffde185196f7823 V1: corrigir a continuidade e conservar as corridas verificadas"
   ],
   "commits_sitio_anteriores_ao_relatorio": [
-    "8303c896613b336d52a81a4a3ed03acf42b9e01d V1: conservar a medição inicial e os guiões de conferência",
-    "142adfa9ec91d8624259d088bc1eff121dff87c0 V1: medir versões, fila e identidade do código das corridas"
+    "42c2e6d758181e4b05bc6e0f92795e2326d189c9 V1: conservar a medição inicial e os guiões de conferência",
+    "6ada3b6beadc30305c8877db4cc1b7df34d1caef V1: medir versões, fila e identidade do código das corridas"
   ]
 }

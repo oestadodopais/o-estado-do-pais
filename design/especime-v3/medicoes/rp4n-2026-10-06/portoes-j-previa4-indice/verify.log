@@ -2135,7 +2135,7 @@ check:alvos · planta M-A · etiqueta cortada depois da primeira linha · H14: 3
 > o-estado-do-pais@0.1.0 check:cabeca
 > node tests/inicio/hierarquia-b2.mjs
 
-check:cabeca C1; construção c1a375f7f5d656f47e5b1d1dd3ad456ed9146e0b; 140 cabeças; 4 mordidas; 10 reposições
+check:cabeca C1; construção f544c137e97dffaab82f0beb556d2adbe03d4a69; 140 cabeças; 4 mordidas; 10 reposições
 check:cabeca: PASS
 
 > o-estado-do-pais@0.1.0 check:fontes

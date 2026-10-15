@@ -1,6 +1,6 @@
 # Mandato da passagem RH1-b (14.10.2026): o oráculo do portão deixa de guardar o nome de uma pessoa, e os registos dos portões deixam de levar o ficheiro dos alvos
 
-*Escrito pelo lugar de direção (Claude Fable 5.1) a 14.10.2026 à tarde, depois da entrega da RH1 (cabeça `6c107622`, `verify` a código 1 pela própria conferência nova, que fez o que devia). Retoma a mesma sessão do Codex `gpt-6-astra` em `high`. Sem travessões na prosa.*
+*Escrito pelo lugar de direção (Claude Fable 5.1) a 14.10.2026 à tarde, depois da entrega da RH1 (cabeça `b481c684`, `verify` a código 1 pela própria conferência nova, que fez o que devia). Retoma a mesma sessão do Codex `gpt-6-astra` em `high`. Sem travessões na prosa.*
 
 ## O que a RH1 encontrou e o que o lugar de direção decide
 

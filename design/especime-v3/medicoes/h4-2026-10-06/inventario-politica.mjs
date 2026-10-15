@@ -4,7 +4,7 @@
 import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { POLITICA } from '../../../../src/data/politica-ia.mjs';
-const base = '207d7134';
+const base = '4970eab9';
 const anterior = execFileSync('git', ['show', `${base}:src/data/politica-ia.mjs`], { encoding: 'utf8' });
 const { POLITICA: antes } = await import('data:text/javascript;base64,' + Buffer.from(anterior).toString('base64'));
 const linhas = (p) => ['pt', 'en'].flatMap((lang) => [...p.lugares.intro[lang], ...p.lugares.itens.map((i) => `${i.rotulo[lang]} ${i.texto[lang]}`), ...p.lugares.fecho[lang]]);

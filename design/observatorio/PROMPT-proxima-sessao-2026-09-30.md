@@ -41,26 +41,26 @@
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
 ### O sítio (`<a worktree dos registos>`)
-- `main`: bcec17de · 2026-09-30T06:48:08+01:00 · §1.141: as corridas prontas a armar (o F2.2b, construído pelo Codex e lido a frio quatro vezes pelo Opus, aterra dormente), com as   (`git log -1 main`)
-- `origin/main`: bcec17de · 2026-09-30T06:48:08+01:00 · §1.141: as corridas prontas a armar (o F2.2b, construído pelo Codex e lido a frio quatro vezes pelo Opus, aterra dormente), com as   (`git log -1 origin/main`)
+- `main`: 0b1e471b · 2026-09-30T06:48:08+01:00 · §1.141: as corridas prontas a armar (o F2.2b, construído pelo Codex e lido a frio quatro vezes pelo Opus, aterra dormente), com as   (`git log -1 main`)
+- `origin/main`: 0b1e471b · 2026-09-30T06:48:08+01:00 · §1.141: as corridas prontas a armar (o F2.2b, construído pelo Codex e lido a frio quatro vezes pelo Opus, aterra dormente), com as   (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
-- ramos locais: `main bcec17de`, `registos-2026-09-30 bcec17de`  (`git branch`)
+- ramos locais: `main 0b1e471b`, `registos-2026-09-30 0b1e471b`  (`git branch`)
 - ramos no remoto: `main`  (`git ls-remote --heads origin`)
-- worktree: `<a árvore principal do sítio> bcec17de [main]`
-- worktree: `<a worktree dos registos> bcec17de [registos-2026-09-30]`
+- worktree: `<a árvore principal do sítio> 0b1e471b [main]`
+- worktree: `<a worktree dos registos> 0b1e471b [registos-2026-09-30]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
-- 36677013114 · `bcec17de` · main · portão · **completed / success** · criada 2026-09-30T06:11:55Z · atualizada 2026-09-30T06:22:30Z
-- 36676035692 · `bcec17de` · f22b-2026-09-28 · portão · **completed / success** · criada 2026-09-30T06:00:15Z · atualizada 2026-09-30T06:10:41Z
-- 36649673316 · `3a37b809` · main · portão · **completed / success** · criada 2026-09-30T00:18:24Z · atualizada 2026-09-30T00:29:14Z
-- 36648848845 · `3a37b809` · ue1-2026-09-29 · portão · **completed / success** · criada 2026-09-30T00:08:46Z · atualizada 2026-09-30T00:17:47Z
-- 36571535172 · `8e66b601` · main · portão · **completed / success** · criada 2026-09-29T12:56:35Z · atualizada 2026-09-29T13:07:21Z
-- 36570279731 · `8e66b601` · aterragem-2026-09-29 · portão · **completed / success** · criada 2026-09-29T12:45:38Z · atualizada 2026-09-29T12:54:22Z
+- 36677013114 · `0b1e471b` · main · portão · **completed / success** · criada 2026-09-30T06:11:55Z · atualizada 2026-09-30T06:22:30Z
+- 36676035692 · `0b1e471b` · f22b-2026-09-28 · portão · **completed / success** · criada 2026-09-30T06:00:15Z · atualizada 2026-09-30T06:10:41Z
+- 36649673316 · `160cbaba` · main · portão · **completed / success** · criada 2026-09-30T00:18:24Z · atualizada 2026-09-30T00:29:14Z
+- 36648848845 · `160cbaba` · ue1-2026-09-29 · portão · **completed / success** · criada 2026-09-30T00:08:46Z · atualizada 2026-09-30T00:17:47Z
+- 36571535172 · `8cb6f7a8` · main · portão · **completed / success** · criada 2026-09-29T12:56:35Z · atualizada 2026-09-29T13:07:21Z
+- 36570279731 · `8cb6f7a8` · aterragem-2026-09-29 · portão · **completed / success** · criada 2026-09-29T12:45:38Z · atualizada 2026-09-29T12:54:22Z
 
 ### O que está no ar (`/version.json` do sítio publicado)
-- commit no ar: `bcec17de` · construído em 2026-09-30T06:14:07.583Z · ref `main` · production
-- igual a `origin/main` (`bcec17de`): **sim**
+- commit no ar: `0b1e471b` · construído em 2026-09-30T06:14:07.583Z · ref `main` · production
+- igual a `origin/main` (`0b1e471b`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
 ### O motor (`~/<projetos>/ResearchHub`)

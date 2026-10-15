@@ -1,14 +1,14 @@
 {
   "passagem": "K2-c",
-  "cabeca": "90469a0e941571a69cb3444ebe54bc51f1720d11",
+  "cabeca": "b68cdf4e63a3fd8c674df8bcc8ff5dcabe689cc5",
   "construcao": {
-    "commit": "90469a0e941571a69cb3444ebe54bc51f1720d11",
+    "commit": "b68cdf4e63a3fd8c674df8bcc8ff5dcabe689cc5",
     "construido_em": "2026-10-02T11:43:24.237Z"
   },
   "construcao_do_k2": {
-    "commit": "a6b4de99ee44ec78c8552e1281cb9842ae801d1c"
+    "commit": "b9d8ee3b5d9801911ca36be94fd66e438685b195"
   },
-  "partida": "d72681678edf6bf62ab408aef4922420a558f834",
+  "partida": "650ebdde55e119a672925c8f4a04ba0a1c8c4120",
   "medidas": [
     {
       "nome": "cartoes_da_diferenca_de_emprego_com_a_unidade_da_casa",
@@ -355,7 +355,7 @@
         390,
         1280
       ],
-      "cabeca": "fd62f06619f428d657a20c6e25ef1a8fa763641a",
+      "cabeca": "a2df3f9615f6ca83f09da42871166c0a3b7c92cf",
       "paginas": [
         "emprego",
         "uniao",
@@ -365,7 +365,7 @@
     {
       "nome": "decisoes_citadas_nos_ficheiros_tocados_pela_k2_c",
       "valor": 39,
-      "comando": "python3 scripts/leituras/decisoes-em-vigor.py <os ficheiros de texto do intervalo d7268167..cabeça>",
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py <os ficheiros de texto do intervalo 650ebdde..cabeça>",
       "conhecido_positivo": {
         "o_que": "a §1.127 está na lista",
         "encontrado": true
@@ -402,8 +402,8 @@
           "codigo": 0,
           "segundos": 1
         },
-        "cabeca": "90469a0e941571a69cb3444ebe54bc51f1720d11",
-        "cabeca_no_fim": "90469a0e941571a69cb3444ebe54bc51f1720d11"
+        "cabeca": "b68cdf4e63a3fd8c674df8bcc8ff5dcabe689cc5",
+        "cabeca_no_fim": "b68cdf4e63a3fd8c674df8bcc8ff5dcabe689cc5"
       }
     }
   ]

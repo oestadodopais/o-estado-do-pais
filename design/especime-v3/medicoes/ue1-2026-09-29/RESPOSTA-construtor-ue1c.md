@@ -2,11 +2,11 @@
 
 *Claude Opus 5.5 (a definição `construtor`), 29.09.2026. O relatório está em `design/especime-v3/medicoes/ue1-2026-09-29/LEIA-ME.md`, na secção «UE1c · a passagem de correção depois da leitura a frio».*
 
-**As cabeças.** O sítio: o ramo `ue1-2026-09-29`. A cabeça do código da passagem, onde os portões correram, é `982d6446`; a cabeça final é o commit que traz esta resposta, e só acrescenta e muda provas nesta pasta e na das capturas. O motor: o ramo `ue1-2026-09-29`, cabeça `e394307`, que a passagem não mudou (0 commits). Nada foi publicado.
+**As cabeças.** O sítio: o ramo `ue1-2026-09-29`. A cabeça do código da passagem, onde os portões correram, é `c0eec2a6`; a cabeça final é o commit que traz esta resposta, e só acrescenta e muda provas nesta pasta e na das capturas. O motor: o ramo `ue1-2026-09-29`, cabeça `e394307`, que a passagem não mudou (0 commits). Nada foi publicado.
 
-**Os portões, lidos dos ficheiros** (`portoes/ue1c/*.codigo`, todos da cabeça `982d6446`): `npm run build` 0, `npm run verify` 0, `npm run typecheck` 0.
+**Os portões, lidos dos ficheiros** (`portoes/ue1c/*.codigo`, todos da cabeça `c0eec2a6`): `npm run build` 0, `npm run verify` 0, `npm run typecheck` 0.
 
-**Os commits da passagem.** `baa82bce` (os extremos empatados), `2a12ff68` (o que cada medida conta, no recibo da série), `982d6446` (o mapa do repositório) e o das provas. Antes de cada um correram as conferências que ele tocou: 7, todas a 0.
+**Os commits da passagem.** `3f1dc41d` (os extremos empatados), `fcf58417` (o que cada medida conta, no recibo da série), `c0eec2a6` (o mapa do repositório) e o das provas. Antes de cada um correram as conferências que ele tocou: 7, todas a 0.
 
 **O que se fez.** Num extremo empatado, cada país da ponta leva o seu valor e a sua ressalva, e a F19d confere-os todos, com 6 plantas dos empates a morder em cada corrida da F19 e da K18, entre elas a da marca só no segundo país. O recibo de 7 das 10 séries diz, por baixo do título, o que a medida conta, com a frase da leitura do cartão; as outras 3 (o índice harmonizado de preços no consumidor, o rácio S80/S20 e os preços da habitação) abrem a leitura com o valor de Portugal e ficam sem ela, porque não a inventei. O relatório diz agora 10 páginas com faixa, das 12 que o guião lê.
 

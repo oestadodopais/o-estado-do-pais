@@ -1,8 +1,8 @@
 {
   "comando": "node design/especime-v3/medicoes/rp4-2026-10-04/medir-rp4-b.mjs",
-  "cabeca_do_codigo": "2523e3a022daec489476b9c77b5707892aca9c84",
-  "main": "fb364fe48c43ca71c2fd04ec8ba640c9399de221",
-  "main_no_fecho": "79a0d05c3bc5b8151dff47fbb5ae266ff1fd7798",
+  "cabeca_do_codigo": "21c08531812ae94bce1ddc3f526aa4f848a5641e",
+  "main": "a2bd11772c91e4dee42ea011a24e98c998f3b0a8",
+  "main_no_fecho": "683680e4e7fbaa8c97745119597d503dc999312a",
   "portoes": {
     "build": {
       "codigo": 0,
@@ -712,7 +712,7 @@
     ]
   },
   "capturas": {
-    "cabeca": "2523e3a022daec489476b9c77b5707892aca9c84",
+    "cabeca": "21c08531812ae94bce1ddc3f526aa4f848a5641e",
     "ficheiros": 60,
     "larguras": [
       390,
@@ -833,19 +833,19 @@
     }
   ],
   "commits": [
-    "2523e3a022daec489476b9c77b5707892aca9c84 RP4-b: conferir a integração do H2 e atualizar o mapa",
-    "edac06f246770341d2793f081731732a84a103c3 RP4-b: guardar a leitura do Opus e responder aos achados",
-    "eb62d55679d0b5a045f60446d8c94c7492258d5d RP4-b: corrigir a escala, os pontos isolados e a leitura dos desenhos",
-    "930e4ae3e66eb639ff8b6315f80df4920d45baf5 RP4-b: registar a decisão da I197 e as provas intermédias",
-    "48e4ba5c3a6ec6954975b616b47d8e5dfe99c2ae RP4-b: desenhar a série europeia no cartão da comparação",
-    "37fcea2082c9e45399166912713ba00bbcf4f948 RP4: a I196 fechada (o contador do §0 do brief corrigido em 053a4077)",
-    "75343aa6499166bfee61bd47e0f0da25f0a364a1 RP4: o §0 do brief conta os pontos só na lista pontos: (4 131) e as lacunas declaradas na sua medida (2); a I196 fechada",
-    "be45de471d9f047b2dfbbc438cd4dfc8df5e5255 RP4: guardar as provas dos portões e as capturas",
-    "1d4cedf4ec2befc939afc36935158c5047b45581 RP4: declarar as guias sem preenchimento e provar a paleta",
-    "5a39a6d9183fb2fbde395cc008e8ab1fc3c249bb RP4: conservar a legibilidade dos eixos nos cartões estreitos",
-    "e95a3053122ff8db5b85a6a87765f4046cf2f4e6 RP4: declarar a unidade europeia e manter a série sob as barras",
-    "b167aa65a84d7552ca1cccc0836deb1e545f3f3d RP4: desenhar as séries inteiras e dobrar os recibos por anos",
-    "53e43a8cb6a86a9787fd74ecf67b0c55acda157d RP4: o brief do gráfico das séries (a forma serie-do-pais no cartão, no recibo e no bloco dos preços da primeira página, com o portão que recompõe o desenho) e o seu §0 medido sobre 905105b7"
+    "21c08531812ae94bce1ddc3f526aa4f848a5641e RP4-b: conferir a integração do H2 e atualizar o mapa",
+    "1960061930db6b143d26da77b435d0a05279d84d RP4-b: guardar a leitura do Opus e responder aos achados",
+    "a4897cb31cdb4856c9272bb8b48443b6a36575b8 RP4-b: corrigir a escala, os pontos isolados e a leitura dos desenhos",
+    "9f66c4685937d69b72b05b2a927a27f799ab4645 RP4-b: registar a decisão da I197 e as provas intermédias",
+    "446c365b782ec5b046955ea21101e2cf0f17cd28 RP4-b: desenhar a série europeia no cartão da comparação",
+    "4b9fcb0b0b6a9e35cf0fb12ee86d7c1f172ae97f RP4: a I196 fechada (o contador do §0 do brief corrigido em 053a4077)",
+    "25c78665b644ddbb6b3ab1c7cf37706f63031dc8 RP4: o §0 do brief conta os pontos só na lista pontos: (4 131) e as lacunas declaradas na sua medida (2); a I196 fechada",
+    "2fb3b3d156c973b674fc996591b2dc6312bc3844 RP4: guardar as provas dos portões e as capturas",
+    "af7677f0180d18339c3e766a8a41bebda416f979 RP4: declarar as guias sem preenchimento e provar a paleta",
+    "041e869dbde6cf78150ecdc7b2f69f4b118837fa RP4: conservar a legibilidade dos eixos nos cartões estreitos",
+    "64ff4d40da0a24ab7ce1497ac0051c9de1ebc7a7 RP4: declarar a unidade europeia e manter a série sob as barras",
+    "9c433298bf864e6d5132318d7a8197edc43fcb0b RP4: desenhar as séries inteiras e dobrar os recibos por anos",
+    "8a3782801fadbd174763ff9ece056c344a11dab3 RP4: o brief do gráfico das séries (a forma serie-do-pais no cartão, no recibo e no bloco dos preços da primeira página, com o portão que recompõe o desenho) e o seu §0 medido sobre 4d91d3b2"
   ],
   "conhecido_positivo": {
     "codigo_um": 1,

@@ -1,6 +1,6 @@
 # Quarta leitura cruzada (Codex, sem contexto), 2026-08-21, tarde: a primeira página, o índice e as páginas do livro-razão, os municípios e Évora
 
-*Sobre a construção em `1b54f0f` (depois da etapa 3 e da ronda 2m). Mesmo leitor e pacote; o prompt alargado às páginas interiores; cinco plantas espalhadas: P1 89,7 → 89,8 na primeira página; P2 a unidade «% do PIB» → «% do PNB» no `<title>` da página da dívida; P3 um «Read on» → «Lido a» no índice inglês; P4 população e empresas trocadas na página de Évora; P5 um selo de outra linha aninhado no selo de cabeça da página da dívida. **Quatro de cinco** (1, 15, 2, 3); a P3 escapou (quarta vez que uma palavra portuguesa numa página inglesa passa a este leitor).*
+*Sobre a construção em `528b3c8` (depois da etapa 3 e da ronda 2m). Mesmo leitor e pacote; o prompt alargado às páginas interiores; cinco plantas espalhadas: P1 89,7 → 89,8 na primeira página; P2 a unidade «% do PIB» → «% do PNB» no `<title>` da página da dívida; P3 um «Read on» → «Lido a» no índice inglês; P4 população e empresas trocadas na página de Évora; P5 um selo de outra linha aninhado no selo de cabeça da página da dívida. **Quatro de cinco** (1, 15, 2, 3); a P3 escapou (quarta vez que uma palavra portuguesa numa página inglesa passa a este leitor).*
 
 ## Triagem do lugar de direção
 
@@ -200,7 +200,7 @@ I would **not show this home to the director at all in its current form**. The w
 ## As plantas (plantas.json)
 ```json
 {
-  "commit": "1b54f0f",
+  "commit": "528b3c8",
   "plantas": [
     {
       "ficheiro": "dist/index.html",

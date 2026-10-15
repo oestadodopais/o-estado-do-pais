@@ -1,8 +1,8 @@
 {
   "o_que_e": "EX1: a contagem L1 cresce só pelas duas páginas da primeira explicação, nas duas edições. A lista da cabeça de partida (3664b90d) fica igual página a página (destinos, exemplo e vezes), e os destinos repetidos de cada página nova são os recibos das linhas que uma figura desenha e que o texto cita com o selo, duas vezes cada. A régua não muda; muda a medição que o teto aponta.",
   "data": "2026-10-05T23:32:04.190Z",
-  "cabeca": "2405f8a84f0006726312ced5b0729a422d5170a1",
-  "construcao": "2405f8a84f0006726312ced5b0729a422d5170a1",
+  "cabeca": "f8fdd06bc3f5172dc852d167532adfd4d9ff0ec9",
+  "construcao": "f8fdd06bc3f5172dc852d167532adfd4d9ff0ec9",
   "origem_anterior": "design/especime-v3/medicoes/ex1-2026-10-05/l1-base-3664b90d.log",
   "cabeca_anterior": "3664b90d",
   "origem": "design/especime-v3/medicoes/ex1-2026-10-05/l1-ex1-check-lugar.log",

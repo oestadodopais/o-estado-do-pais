@@ -1,6 +1,6 @@
 # Leitura curta da passagem de correção do bloco de higiene de 13.10.2026
 
-*Lançada pelo lugar de direção às 22:24 UTC sobre o pacote do sítio de `100f724b` a `fb612f00` e do motor de `6bd8b70a` a `b4445499` (a passagem de correção do Codex `gpt-6-astra` em `high`, retomada na mesma sessão, pelo mandato `MANDATO-HIGIENE-b-2026-10-13.md`). O leitor: o Claude Opus 5.5 (a definição `leitor`, M26), em `high`, 126 358 símbolos, 31 chamadas de ferramentas, quatro minutos. As cinco plantas do lugar de direção (`PLANTAS-HIGIENE-b-2026-10-13.json`) foram as cinco mordidas: os achados 1 a 5. O achado 6 (Major) era real: o lugar de direção cortou a frase da EX1-12 e pediu ao mesmo leitor o veredicto sobre o corte, que segue no fim (129 072 símbolos no total do agente, dezoito segundos). Os achados 7 a 10 (Minor) ficam para a higiene seguinte, salvo o 8, que o lugar de direção corrigiu no escrivão (a saída dos processos num ficheiro e não num tubo). O texto do leitor segue como foi entregue, em inglês.*
+*Lançada pelo lugar de direção às 22:24 UTC sobre o pacote do sítio de `80af5c2a` a `2dabb367` e do motor de `6bd8b70a` a `b4445499` (a passagem de correção do Codex `gpt-6-astra` em `high`, retomada na mesma sessão, pelo mandato `MANDATO-HIGIENE-b-2026-10-13.md`). O leitor: o Claude Opus 5.5 (a definição `leitor`, M26), em `high`, 126 358 símbolos, 31 chamadas de ferramentas, quatro minutos. As cinco plantas do lugar de direção (`PLANTAS-HIGIENE-b-2026-10-13.json`) foram as cinco mordidas: os achados 1 a 5. O achado 6 (Major) era real: o lugar de direção cortou a frase da EX1-12 e pediu ao mesmo leitor o veredicto sobre o corte, que segue no fim (129 072 símbolos no total do agente, dezoito segundos). Os achados 7 a 10 (Minor) ficam para a higiene seguinte, salvo o 8, que o lugar de direção corrigiu no escrivão (a saída dos processos num ficheiro e não num tubo). O texto do leitor segue como foi entregue, em inglês.*
 
 ## Blocking
 
@@ -30,7 +30,7 @@
 
 ## «What is fine»
 
-- All four gate codes in `depois-b-2` are 0, with start and end heads equal on both repositories (f44f380f, b4445499). Reference: design/especime-v3/medicoes/higiene-2026-10-13/depois-b-2/verify.codigo:1.
+- All four gate codes in `depois-b-2` are 0, with start and end heads equal on both repositories (8797c798, b4445499). Reference: design/especime-v3/medicoes/higiene-2026-10-13/depois-b-2/verify.codigo:1.
 - Both editions of `saldo-natural` carry the absence sentence in `description` and `og:description`; the two complete JD1 receipts do not. Reference: built/en/ledger/saldo-natural-portugal-2025/index.html:1.
 - The four HIG-5 plants bite at the logged lines, and the gate runs the cell on every receipt page. References: depois-b-2/verify.log:2459-2467, scripts/gate-html.mjs:5096.
 - V1-39 reads «Parcial» in the report table, with the reason, and the V1-d section says the same. References: relatorio-construtor.md:86, design/especime-v3/medicoes/v1-2026-10-07/LEIA-ME.md:162.

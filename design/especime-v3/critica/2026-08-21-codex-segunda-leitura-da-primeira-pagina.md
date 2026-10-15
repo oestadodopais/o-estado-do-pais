@@ -1,6 +1,6 @@
 # Segunda leitura cruzada da primeira página v3 (Codex, sem contexto), 2026-08-21, madrugada
 
-*Corrida pelo lugar de direção (Claude Fable 5) sobre a construção em `51950dc` (depois da ronda 2j, a leitura da pré-visualização n.º 1 pelo diretor), antes de atualizar a pré-visualização. Mesmo leitor, mesmo pacote e mesmo prompt da primeira leitura (`2026-08-20-codex-leitura-da-primeira-pagina.md`), sem memória dela; as mesmas cinco plantas, a P1 reancorada no bloco novo do estado vazio (`<p class="vazio-texto" data-vazio>`). A primeira corrida desta leitura foi cortada aos dez minutos por um limite do harness do lugar de direção, sem relatório; a segunda correu destacada até ao fim.*
+*Corrida pelo lugar de direção (Claude Fable 5) sobre a construção em `47852f2` (depois da ronda 2j, a leitura da pré-visualização n.º 1 pelo diretor), antes de atualizar a pré-visualização. Mesmo leitor, mesmo pacote e mesmo prompt da primeira leitura (`2026-08-20-codex-leitura-da-primeira-pagina.md`), sem memória dela; as mesmas cinco plantas, a P1 reancorada no bloco novo do estado vazio (`<p class="vazio-texto" data-vazio>`). A primeira corrida desta leitura foi cortada aos dez minutos por um limite do harness do lugar de direção, sem relatório; a segunda correu destacada até ao fim.*
 
 | planta | apanhada? |
 |---|---|
@@ -298,7 +298,7 @@ I would **not show this home to the director as is**. The two critical defects a
 
 ```json
 {
-  "commit": "51950dc",
+  "commit": "47852f2",
   "plantas": [
     {
       "ficheiro": "dist/index.html",

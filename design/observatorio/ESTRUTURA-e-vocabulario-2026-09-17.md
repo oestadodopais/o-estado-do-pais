@@ -42,7 +42,7 @@ Temas é o índice destas oito portas, com os mesmos nomes, linhas curtas e orde
 
 Os endereços antigos das entradas redirecionam para os novos. «O meu dinheiro», repartido por três assuntos, redireciona para Temas. A construção exige ausência de ligações internas antigas e publica apenas os novos endereços no mapa do sítio.
 
-A nota do lugar de direção no §5 do brief, em `c0cbc79b`, fecha a divergência dos preços: são seis cartões, como construídos. O conjunto conserva os 47 cartões nacionais.
+A nota do lugar de direção no §5 do brief, em `940e8b0e`, fecha a divergência dos preços: são seis cartões, como construídos. O conjunto conserva os 47 cartões nacionais.
 
 ## 3 · The studies: one door, attached to their place [P]
 

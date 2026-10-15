@@ -1,6 +1,6 @@
 # H3 · a passagem de higiene de 05.10.2026 · o relatório do construtor
 
-*Claude Opus 5.5 (a definição `construtor`), 05.10.2026. O ramo é `h3-2026-10-05`, a partir de `main` em `40f0cb58`, com o brief à cabeça em `⟦base_curta⟧`. O mandato é `design/observatorio/BRIEF-H3-a-passagem-de-higiene-de-05-10.md`, e a mensagem do lugar de direção que o lançou. Cada número deste relatório está num ficheiro desta pasta: a maior parte em `medidas.json`, escrito por `medir-h3.mjs`, cada medida com o comando que a repete e um conhecido-positivo; os outros nos registos que esse guião lê. Os textos do §5 do brief são do diretor e estão à letra; nenhuma outra prosa nova entrou fora das cadeias da casa. Um relatório de construtor não afirma comunicações com o diretor, e este não afirma nenhuma. Sem travessões.*
+*Claude Opus 5.5 (a definição `construtor`), 05.10.2026. O ramo é `h3-2026-10-05`, a partir de `main` em `5c3c4af8`, com o brief à cabeça em `⟦base_curta⟧`. O mandato é `design/observatorio/BRIEF-H3-a-passagem-de-higiene-de-05-10.md`, e a mensagem do lugar de direção que o lançou. Cada número deste relatório está num ficheiro desta pasta: a maior parte em `medidas.json`, escrito por `medir-h3.mjs`, cada medida com o comando que a repete e um conhecido-positivo; os outros nos registos que esse guião lê. Os textos do §5 do brief são do diretor e estão à letra; nenhuma outra prosa nova entrou fora das cadeias da casa. Um relatório de construtor não afirma comunicações com o diretor, e este não afirma nenhuma. Sem travessões.*
 
 ## O que ficou feito
 

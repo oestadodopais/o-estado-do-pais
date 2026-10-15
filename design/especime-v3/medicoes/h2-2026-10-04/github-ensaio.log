@@ -105,7 +105,7 @@ portao	A árvore	2026-10-04T22:08:06.5344579Z  * [new branch]        main       
 portao	A árvore	2026-10-04T22:08:06.5351845Z [command]/usr/bin/git branch --list --remote origin/h2-ensaio-i194-2026-10-04
 portao	A árvore	2026-10-04T22:08:06.5380355Z   origin/h2-ensaio-i194-2026-10-04
 portao	A árvore	2026-10-04T22:08:06.5387664Z [command]/usr/bin/git rev-parse refs/remotes/origin/h2-ensaio-i194-2026-10-04
-portao	A árvore	2026-10-04T22:08:06.5411323Z f7048ce08956d89fbefc54ebd40ea8b75b830d47
+portao	A árvore	2026-10-04T22:08:06.5411323Z 76a70ba7e6e5ded9274e894735ea69b6e83a1501
 portao	A árvore	2026-10-04T22:08:06.5414707Z ##[endgroup]
 portao	A árvore	2026-10-04T22:08:06.5415467Z ##[group]Determining the checkout info
 portao	A árvore	2026-10-04T22:08:06.5416469Z ##[endgroup]
@@ -220,7 +220,7 @@ portao	A árvore	2026-10-04T22:08:13.2420484Z Switched to a new branch 'h2-ensai
 portao	A árvore	2026-10-04T22:08:13.2421831Z branch 'h2-ensaio-i194-2026-10-04' set up to track 'origin/h2-ensaio-i194-2026-10-04'.
 portao	A árvore	2026-10-04T22:08:13.2612031Z ##[endgroup]
 portao	A árvore	2026-10-04T22:08:13.2654024Z [command]/usr/bin/git log -1 --format=%H
-portao	A árvore	2026-10-04T22:08:13.2683308Z f7048ce08956d89fbefc54ebd40ea8b75b830d47
+portao	A árvore	2026-10-04T22:08:13.2683308Z 76a70ba7e6e5ded9274e894735ea69b6e83a1501
 portao	O Node	﻿2026-10-04T22:08:13.4139228Z ##[group]Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
 portao	O Node	2026-10-04T22:08:13.4139542Z with:
 portao	O Node	2026-10-04T22:08:13.4139716Z   node-version-file: .nvmrc
@@ -12155,7 +12155,7 @@ portao	npm run build	2026-10-04T22:09:36.0932939Z > o-estado-do-pais@0.1.0 stamp
 portao	npm run build	2026-10-04T22:09:36.0933347Z > node scripts/stamp-version.mjs
 portao	npm run build	2026-10-04T22:09:36.0933504Z 
 portao	npm run build	2026-10-04T22:09:36.1241038Z 
-portao	npm run build	2026-10-04T22:09:36.1243288Z [90m  versão · f7048ce (h2-ensaio-i194-2026-10-04, git)[0m
+portao	npm run build	2026-10-04T22:09:36.1243288Z [90m  versão · 76a70ba (h2-ensaio-i194-2026-10-04, git)[0m
 portao	npm run build	2026-10-04T22:09:36.2044033Z 
 portao	npm run build	2026-10-04T22:09:36.2044674Z > o-estado-do-pais@0.1.0 cartoes
 portao	npm run build	2026-10-04T22:09:36.2045046Z > node scripts/cartoes.mjs
@@ -14237,7 +14237,7 @@ portao	npm run verify, sem repetir o build	2026-10-04T22:14:14.0349025Z   ✓ pl
 portao	npm run verify, sem repetir o build	2026-10-04T22:14:14.0352766Z   I194 {"planta":"uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D","antes":{"escrito":"1791148453470999000","inode":"2440523","tamanho":"19","resumo":"adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"},"depois":{"escrito":"1791148453470999000","inode":"2440531","tamanho":"19","resumo":"adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"},"passos_da_troca":1,"codigo_da_troca":0,"falhas":["D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"],"mordeu":true}
 portao	npm run verify, sem repetir o build	2026-10-04T22:14:14.0355785Z   as 12 plantas morderam em 0.9 s
 portao	npm run verify, sem repetir o build	2026-10-04T22:14:14.0356034Z 
-portao	npm run verify, sem repetir o build	2026-10-04T22:14:14.0375345Z   4 processo(s) lado a lado · cabeça f7048ce08956d89fbefc54ebd40ea8b75b830d47
+portao	npm run verify, sem repetir o build	2026-10-04T22:14:14.0375345Z   4 processo(s) lado a lado · cabeça 76a70ba7e6e5ded9274e894735ea69b6e83a1501
 portao	npm run verify, sem repetir o build	2026-10-04T22:14:14.0375747Z 
 portao	npm run verify, sem repetir o build	2026-10-04T22:14:14.6199210Z ▶ npm run check:alvos · começou aos 0.0 s
 portao	npm run verify, sem repetir o build	2026-10-04T22:14:14.6227099Z ▶ npm run check:palavras · começou aos 0.0 s
@@ -16553,7 +16553,7 @@ portao	npm run verify, sem repetir o build	2026-10-04T22:16:46.9813778Z
 portao	npm run verify, sem repetir o build	2026-10-04T22:16:46.9814057Z > o-estado-do-pais@0.1.0 check:cabeca
 portao	npm run verify, sem repetir o build	2026-10-04T22:16:46.9814509Z > node tests/inicio/hierarquia-b2.mjs
 portao	npm run verify, sem repetir o build	2026-10-04T22:16:46.9815109Z 
-portao	npm run verify, sem repetir o build	2026-10-04T22:16:46.9815868Z check:cabeca C1; construção f7048ce08956d89fbefc54ebd40ea8b75b830d47; 110 cabeças; 4 mordidas; 10 reposições
+portao	npm run verify, sem repetir o build	2026-10-04T22:16:46.9815868Z check:cabeca C1; construção 76a70ba7e6e5ded9274e894735ea69b6e83a1501; 110 cabeças; 4 mordidas; 10 reposições
 portao	npm run verify, sem repetir o build	2026-10-04T22:16:46.9816816Z check:cabeca: PASS
 portao	npm run verify, sem repetir o build	2026-10-04T22:16:46.9816990Z 
 portao	npm run verify, sem repetir o build	2026-10-04T22:16:46.9817338Z ##[endgroup]
@@ -17420,7 +17420,7 @@ portao	npm run verify, sem repetir o build	2026-10-04T22:22:48.4098084Z   mordeu
 portao	npm run verify, sem repetir o build	2026-10-04T22:22:48.4099723Z {"recorte_livro":{"ficheiro":"13-pagina-livro-razao.html","entradas_na_pagina":428,"entradas_no_recorte":8,"primeiras_preservadas":true,"nota_e_porta_preservadas":true,"pagina_conservada":true,"pagina_sha256":"3c8a516892721a46eeac44e03414d45694bb7229de65b381c36621e849c1f8d1","bytes_cartao":237857,"bytes_sem_recorte":1135656,"teto_bytes":673249,"margem":0.1,"planta":{"nome":"recorte retirado","mordeu":true,"queixa":"1109.0 KiB acima do tecto de 657.4697265625 KiB"}}}
 portao	npm run verify, sem repetir o build	2026-10-04T22:22:48.4101146Z 
 portao	npm run verify, sem repetir o build	2026-10-04T22:22:48.4101343Z [1m  O feixe de cartões do sistema de desenho[0m
-portao	npm run verify, sem repetir o build	2026-10-04T22:22:48.4101914Z [90m  design-system/ · de dist/ no commit f7048ce · 20 cartões, 11 ficheiros de letra e um README[0m
+portao	npm run verify, sem repetir o build	2026-10-04T22:22:48.4101914Z [90m  design-system/ · de dist/ no commit 76a70ba · 20 cartões, 11 ficheiros de letra e um README[0m
 portao	npm run verify, sem repetir o build	2026-10-04T22:22:48.4102305Z 
 portao	npm run verify, sem repetir o build	2026-10-04T22:22:48.4102535Z [90m  ficheiro                          grupo          bytes  ok[0m
 portao	npm run verify, sem repetir o build	2026-10-04T22:22:48.4102939Z   01-cor.html                       Fundamentos   380206  [32m✓[0m
@@ -17480,7 +17480,7 @@ portao	npm run verify, sem repetir o build	2026-10-04T22:22:49.0121741Z     ✓ 
 portao	npm run verify, sem repetir o build	2026-10-04T22:22:49.0122107Z     ✓ npm run mapa:unidades -- --verifica          0.2 s  código 0
 portao	npm run verify, sem repetir o build	2026-10-04T22:22:49.0122537Z   U ✓ 42 passos no verify: 20 corridos pelo build, 22 corridos aqui e verdes
 portao	npm run verify, sem repetir o build	2026-10-04T22:22:49.0123373Z   D ✓ nenhuma escrita durante as conferências nos 14623 ficheiros do dist/ (bytes, hora de escrita e inode) nem nos 16925 ficheiros que o git segue (hora de escrita, inode e tamanho)
-portao	npm run verify, sem repetir o build	2026-10-04T22:22:49.0124481Z   C ✓ a construção é da cabeça f7048ce08956d89fbefc54ebd40ea8b75b830d47, carimbada a 2026-10-04T22:09:36.122Z; prova.json escrito a 2026-10-04T22:11:03.954Z, cadeia.json a 2026-10-04T22:11:07.114Z
+portao	npm run verify, sem repetir o build	2026-10-04T22:22:49.0124481Z   C ✓ a construção é da cabeça 76a70ba7e6e5ded9274e894735ea69b6e83a1501, carimbada a 2026-10-04T22:09:36.122Z; prova.json escrito a 2026-10-04T22:11:03.954Z, cadeia.json a 2026-10-04T22:11:07.114Z
 portao	npm run verify, sem repetir o build	2026-10-04T22:22:49.0125073Z   515.8 s ao todo
 portao	npm run verify, sem repetir o build	2026-10-04T22:22:49.0125181Z 
 portao	npm run typecheck	﻿2026-10-04T22:22:49.0288423Z ##[group]Run npm run typecheck
@@ -17498,7 +17498,7 @@ portao	Os dois ficheiros da prova existem	2026-10-04T22:22:49.4649509Z shell: /u
 portao	Os dois ficheiros da prova existem	2026-10-04T22:22:49.4649742Z ##[endgroup]
 portao	A prova desta corrida	﻿2026-10-04T22:22:49.4785248Z ##[group]Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
 portao	A prova desta corrida	2026-10-04T22:22:49.4785578Z with:
-portao	A prova desta corrida	2026-10-04T22:22:49.4785785Z   name: prova-f7048ce08956d89fbefc54ebd40ea8b75b830d47
+portao	A prova desta corrida	2026-10-04T22:22:49.4785785Z   name: prova-76a70ba7e6e5ded9274e894735ea69b6e83a1501
 portao	A prova desta corrida	2026-10-04T22:22:49.4786049Z   path: dist/prova.json
 portao	A prova desta corrida	dist/cadeia.json
 portao	A prova desta corrida	
@@ -17514,14 +17514,14 @@ portao	A prova desta corrida	2026-10-04T22:22:49.5960346Z The least common ances
 portao	A prova desta corrida	2026-10-04T22:22:49.5961189Z With the provided path, there will be 2 files uploaded
 portao	A prova desta corrida	2026-10-04T22:22:49.5964556Z Artifact name is valid!
 portao	A prova desta corrida	2026-10-04T22:22:49.5965094Z Root directory input is valid!
-portao	A prova desta corrida	2026-10-04T22:22:49.9395484Z Uploading artifact: prova-f7048ce08956d89fbefc54ebd40ea8b75b830d47.zip
+portao	A prova desta corrida	2026-10-04T22:22:49.9395484Z Uploading artifact: prova-76a70ba7e6e5ded9274e894735ea69b6e83a1501.zip
 portao	A prova desta corrida	2026-10-04T22:22:49.9426868Z Beginning upload of artifact content to blob storage
 portao	A prova desta corrida	2026-10-04T22:22:50.1876102Z Uploaded bytes 2992
 portao	A prova desta corrida	2026-10-04T22:22:50.2488366Z Finished uploading artifact content to blob storage!
 portao	A prova desta corrida	2026-10-04T22:22:50.2489348Z SHA256 digest of uploaded artifact is 65b4aed14eb963aeb32ad9f656cf6b7e44bbb7a1a4bae9427edabef891272028
 portao	A prova desta corrida	2026-10-04T22:22:50.2490381Z Finalizing artifact upload
-portao	A prova desta corrida	2026-10-04T22:22:50.5987236Z Artifact prova-f7048ce08956d89fbefc54ebd40ea8b75b830d47 successfully finalized. Artifact ID 11316554912
-portao	A prova desta corrida	2026-10-04T22:22:50.5988583Z Artifact prova-f7048ce08956d89fbefc54ebd40ea8b75b830d47 has been successfully uploaded! Final size is 2992 bytes. Artifact ID is 11316554912
+portao	A prova desta corrida	2026-10-04T22:22:50.5987236Z Artifact prova-76a70ba7e6e5ded9274e894735ea69b6e83a1501 successfully finalized. Artifact ID 11316554912
+portao	A prova desta corrida	2026-10-04T22:22:50.5988583Z Artifact prova-76a70ba7e6e5ded9274e894735ea69b6e83a1501 has been successfully uploaded! Final size is 2992 bytes. Artifact ID is 11316554912
 portao	A prova desta corrida	2026-10-04T22:22:50.5990859Z Artifact download URL: https://github.com/oestadodopais/o-estado-do-pais/actions/runs/37238803296/artifacts/11316554912
 portao	Post O Node	﻿2026-10-04T22:22:50.6128876Z Post job cleanup.
 portao	Post O Node	2026-10-04T22:22:50.7014762Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-1c5a65907773f949668eeb3077323818c8a5eb1491897a7651e891c335903f78, not saving cache.

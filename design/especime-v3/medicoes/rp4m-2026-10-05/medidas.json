@@ -14,7 +14,7 @@
     {
       "nome": "paragrafo_0.series_no_tempo_no_livro",
       "valor": 16,
-      "comando": "git ls-tree fb364fe4 ledger/series/ · os ficheiros .yml com eixo: \"periodo\"",
+      "comando": "git ls-tree a2bd1177 ledger/series/ · os ficheiros .yml com eixo: \"periodo\"",
       "conhecido_positivo": {
         "o_que": "a série do índice harmonizado de Portugal está entre elas",
         "encontrado": true
@@ -23,7 +23,7 @@
     {
       "nome": "paragrafo_0.linhas_presas_a_uma_serie",
       "valor": 7,
-      "comando": "git grep -l '^serie: ' fb364fe4 -- ledger/claims/",
+      "comando": "git grep -l '^serie: ' a2bd1177 -- ledger/claims/",
       "conhecido_positivo": {
         "o_que": "a linha da União está presa",
         "encontrado": true
@@ -32,7 +32,7 @@
     {
       "nome": "paragrafo_0.linhas_do_ipc_com_as_coordenadas_0014666_ou_0014647",
       "valor": 10,
-      "comando": "git grep -l -E '0014666|0014647' fb364fe4 -- ledger/claims/",
+      "comando": "git grep -l -E '0014666|0014647' a2bd1177 -- ledger/claims/",
       "conhecido_positivo": {
         "o_que": "a linha dos combustíveis é uma delas",
         "encontrado": true
@@ -59,7 +59,7 @@
     {
       "nome": "paragrafo_0.meses_entre_a_linha_do_ihpc_de_portugal_e_o_ultimo_ponto_da_sua_serie",
       "valor": 1,
-      "comando": "git show fb364fe4:ledger/claims/ihpc-variacao-homologa.yml (reference_date) e ledger/series/serie-ihpc-variacao-homologa.yml (ultimo_periodo), a diferença em meses",
+      "comando": "git show a2bd1177:ledger/claims/ihpc-variacao-homologa.yml (reference_date) e ledger/series/serie-ihpc-variacao-homologa.yml (ultimo_periodo), a diferença em meses",
       "conhecido_positivo": {
         "o_que": "a linha de Portugal não tem o campo serie",
         "encontrado": true
@@ -68,7 +68,7 @@
     {
       "nome": "paragrafo_0.marca_da_fonte_no_ultimo_ponto_da_serie_do_ihpc_de_portugal",
       "valor": 1,
-      "comando": "git show fb364fe4:ledger/series/serie-ihpc-variacao-homologa.yml · o campo bandeira do ponto ultimo_periodo, 1 se não for vazio",
+      "comando": "git show a2bd1177:ledger/series/serie-ihpc-variacao-homologa.yml · o campo bandeira do ponto ultimo_periodo, 1 se não for vazio",
       "conhecido_positivo": {
         "o_que": "o ponto do último período existe",
         "encontrado": true
@@ -77,7 +77,7 @@
     {
       "nome": "paragrafo_0.series_no_tempo_com_ponto_no_periodo_de_base_de_2015",
       "valor": 13,
-      "comando": "git show fb364fe4:ledger/series/<série>.yml · as séries no tempo com um ponto no período da sua cadência que contém janeiro de 2015",
+      "comando": "git show a2bd1177:ledger/series/<série>.yml · as séries no tempo com um ponto no período da sua cadência que contém janeiro de 2015",
       "conhecido_positivo": {
         "o_que": "a do salário mínimo (semestral, desde 1999) tem o ponto 2015-S1",
         "encontrado": true
@@ -86,7 +86,7 @@
     {
       "nome": "paragrafo_0.pontos_da_serie_da_remuneracao_bruta_mensal_media",
       "valor": 6,
-      "comando": "git show fb364fe4:ledger/series/serie-remuneracao-bruta-mensal-media.yml · as linhas «  - periodo:» da lista pontos:",
+      "comando": "git show a2bd1177:ledger/series/serie-remuneracao-bruta-mensal-media.yml · as linhas «  - periodo:» da lista pontos:",
       "conhecido_positivo": {
         "o_que": "a série começa em 2025-T1, depois do período de base",
         "encontrado": true
@@ -95,7 +95,7 @@
     {
       "nome": "paragrafo_0.series_no_tempo_derivadas",
       "valor": 1,
-      "comando": "git show fb364fe4:ledger/series/<série>.yml · as séries no tempo com o campo derived_from",
+      "comando": "git show a2bd1177:ledger/series/<série>.yml · as séries no tempo com o campo derived_from",
       "conhecido_positivo": {
         "o_que": "a dos cem euros de 2015 é derivada e a do IPC não",
         "encontrado": true
@@ -1200,9 +1200,9 @@
       }
     },
     {
-      "nome": "fusao_com_40f0cb58.linhas_tiradas_do_portao_de_html",
+      "nome": "fusao_com_5c3c4af8.linhas_tiradas_do_portao_de_html",
       "valor": 62,
-      "comando": "git diff -U0 3a253f73 40f0cb58 -- scripts/gate-html.mjs (as linhas tiradas menos as postas, somadas pelos cabeçalhos dos pedaços)",
+      "comando": "git diff -U0 520a02d6 5c3c4af8 -- scripts/gate-html.mjs (as linhas tiradas menos as postas, somadas pelos cabeçalhos dos pedaços)",
       "conhecido_positivo": {
         "o_que": "o diff tem o pedaço da conferência do Sobre retirada",
         "encontrado": true
@@ -1210,7 +1210,7 @@
     },
     {
       "nome": "sitio.cabeca",
-      "valor": "f90d3117c84438103fa383a6495edacf3007b0e9",
+      "valor": "3ada1f0452f86204b52383a3acff7f826aa912da",
       "comando": "git rev-parse HEAD",
       "conhecido_positivo": {
         "o_que": "a cabeça é um resumo de quarenta caracteres",
@@ -1717,13 +1717,13 @@
       "valor": 0,
       "comando": "as duas metades tiradas, contadas nos ficheiros de src/",
       "conhecido_positivo": {
-        "o_que": "o mesmo contador dá 4 no strings.mjs da cabeça 1a186832",
+        "o_que": "o mesmo contador dá 4 no strings.mjs da cabeça ed972397",
         "encontrado": true
       }
     },
     {
       "nome": "rp4mb.dist.commit",
-      "valor": "f90d3117c84438103fa383a6495edacf3007b0e9",
+      "valor": "3ada1f0452f86204b52383a3acff7f826aa912da",
       "comando": "dist/version.json · commit (a construção sobre que se mediu)",
       "conhecido_positivo": {
         "o_que": "a construção é de uma cabeça que já tem as frases novas",
@@ -1732,7 +1732,7 @@
     },
     {
       "nome": "rp4mb.dist.antes.commit",
-      "valor": "1a186832499a6e90ce54d0fee3aa1a221ce53084",
+      "valor": "ed9723978dda64c489f07963a54286ee966a7749",
       "comando": "python3 design/especime-v3/medicoes/rp4m-2026-10-05/medir-rp4mb-dist.py antes · dist_commit",
       "conhecido_positivo": {
         "o_que": "o ficheiro foi escrito",
@@ -1768,7 +1768,7 @@
     },
     {
       "nome": "rp4mb.dist.depois.commit",
-      "valor": "f90d3117c84438103fa383a6495edacf3007b0e9",
+      "valor": "3ada1f0452f86204b52383a3acff7f826aa912da",
       "comando": "python3 design/especime-v3/medicoes/rp4m-2026-10-05/medir-rp4mb-dist.py depois · dist_commit",
       "conhecido_positivo": {
         "o_que": "o ficheiro foi escrito",
@@ -1822,7 +1822,7 @@
     },
     {
       "nome": "rp4mb.conferencias.cabeca",
-      "valor": "f90d3117c84438103fa383a6495edacf3007b0e9",
+      "valor": "3ada1f0452f86204b52383a3acff7f826aa912da",
       "comando": "rp4mb-conferencias/cabeca (git rev-parse HEAD antes da construção)",
       "conhecido_positivo": {
         "o_que": "a construção das conferências é dessa cabeça",
@@ -1957,7 +1957,7 @@
     },
     {
       "nome": "rp4mb.capturas_cabeca",
-      "valor": "f90d3117c84438103fa383a6495edacf3007b0e9",
+      "valor": "3ada1f0452f86204b52383a3acff7f826aa912da",
       "comando": "capturas-rp4mb.json · cabeca (o commit do version.json da construção)",
       "conhecido_positivo": {
         "o_que": "é a cabeça das conferências",

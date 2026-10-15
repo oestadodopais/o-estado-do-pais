@@ -1,6 +1,6 @@
 # A leitura curta da passagem TP1-b pelo Codex `gpt-6-astra` (`high`), 07.10.2026
 
-*Lançada pelo lugar de direção às 10:29 UTC sobre o diff de `07837aec` a `c9d7233f`, sem plantas (a passagem só mudou prosa e textos governados); acabou às 10:32 UTC; a linha «tokens used» do `.eventos.log`: 73 911. Os achados 1 e 3 corrigem-se na TP1-c (o rótulo da regra 10 diz a atribuição e não a decisão; o relatório distingue o português do diretor da tradução inglesa); o 2 é a forma do pacote (os códigos ficaram de fora por o relatório não citar as linhas pela forma do M-A), e os pacotes seguintes levam os registos inteiros; o 4 é a convenção do projeto (a duração e os símbolos de uma leitura citam-se do `.eventos.log`, que não entra no repositório). O texto do leitor fica como veio.*
+*Lançada pelo lugar de direção às 10:29 UTC sobre o diff de `b0eb4f67` a `25c3d889`, sem plantas (a passagem só mudou prosa e textos governados); acabou às 10:32 UTC; a linha «tokens used» do `.eventos.log`: 73 911. Os achados 1 e 3 corrigem-se na TP1-c (o rótulo da regra 10 diz a atribuição e não a decisão; o relatório distingue o português do diretor da tradução inglesa); o 2 é a forma do pacote (os códigos ficaram de fora por o relatório não citar as linhas pela forma do M-A), e os pacotes seguintes levam os registos inteiros; o 4 é a convenção do projeto (a duração e os símbolos de uma leitura citam-se do `.eventos.log`, que não entra no repositório). O texto do leitor fica como veio.*
 
 ## Blocking
 

@@ -1,7 +1,7 @@
 {
   "comando": "node design/especime-v3/medicoes/er1-2026-10-06/fechar.mjs",
-  "base": "f5fb384e5c7a6664a137ada57667700ed5eace96",
-  "cabecaCodigo": "645ecde7ea61c044d7c0648b020c6392a48674ce",
+  "base": "6b5cdbf15596c2b753a407d43200fbaab5210ea1",
+  "cabecaCodigo": "6488636195b0b3a66c467ab47f88cce9a37ceab7",
   "portoes": [
     {
       "nome": "build",
@@ -45,11 +45,11 @@
   "casosNavegador": 19,
   "cookies": 0,
   "commits": [
-    "16ddc66c22876784284c7240ca1d9a5699ea4a08 ER1: incorporar cada número com fonte e atualização pelo JSON",
-    "0c63b7a496dab5a93b238625821897db3455cfbf ER1: guardar o blogue de ensaio e exercer a releitura no navegador",
-    "8252915ed97cc4a96eacc20881722201e470c17d ER1: conferir o código antes de ler a prosa no portão do índice",
-    "eeb282d97baa9dad851a8ba7e0df700a570bbc34 ER1: comparar o texto literal que o navegador copia",
-    "645ecde7ea61c044d7c0648b020c6392a48674ce ER1: conferir o campo usado pelo botão de cópia"
+    "3a913e7a13e4e291a25d5185db76e632f27e6d89 ER1: incorporar cada número com fonte e atualização pelo JSON",
+    "dc176f67e9c4662d3191beb59a27eda29cd2a90f ER1: guardar o blogue de ensaio e exercer a releitura no navegador",
+    "013e54907d21fe556ccdcab06eff1d663781fd73 ER1: conferir o código antes de ler a prosa no portão do índice",
+    "f2fe67272f3cb8b199c4edbfbe82b638e123ae5e ER1: comparar o texto literal que o navegador copia",
+    "6488636195b0b3a66c467ab47f88cce9a37ceab7 ER1: conferir o campo usado pelo botão de cópia"
   ],
   "custo": "A linha tokens used não foi exposta nesta sessão."
 }

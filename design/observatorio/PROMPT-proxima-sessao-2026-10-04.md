@@ -4,7 +4,7 @@
 
 ## 1 · O que está no ar
 
-- `main` em `987f15cd` (o OE1 com as duas emendas do lugar de direção aos cartões de partilha, a última a que fez a Vercel acabar a construção: os cartões em lotes de cem, cada lote no seu processo; o OE1 em si, o dinheiro do Estado por ministério e por função, no ar às 19:16 UTC: 186 linhas seladas no motor e no livro, 150 transcritas e 36 contas, cada uma com o seu nome do projeto nas duas línguas, a unidade com o período acumulado onde é execução, e uma ressalva publicada onde a casa diz o que a fonte não diz, em 182 delas; os recibos em `/livro-razao/<id>` e o índice do livro com o período de cada linha; nenhuma página do leitor nova; o motor no `master` `38457b2`; os registos do fim do dia, a §1.157, aterram por cima desta cabeça, e o estado no fim deste ficheiro foi lido antes dessa aterragem) e de `f27aa38a` (os registos de 04.10, a §1.156, no ar às 13:00 UTC), por cima de `b748a6b4` (o R3, o índice do sítio, no ar às 11:54 UTC: a página «Índice» / «Index» em `/indice` e `/en/index`, gerada da tabela das rotas e dos dados, 414 portas por edição, os 308 concelhos em 29 gavetas por distrito, os estudos por data com a pergunta onde a têm, as 26 séries, «O que mudou» com uma linha por medida e o lugar escrito; a sétima porta do rodapé em todas as páginas; a célula `check:indice-do-sitio` no `verify`; a conferência (g) do `verify:deploy` provou no ar que a Vercel serve `/en/index` da pasta e não a primeira página inglesa) e de `b2fbdd28` (o RP3, as séries no tempo, no ar às 10:27 UTC: dezasseis séries em `ledger/series/` com `eixo: periodo`, 4 131 pontos com excerto literal e marca, sete linhas presas ao último ponto, um recibo por série em `/livro-razao/series/<id>`, as regras S9 a S14 e a célula `check:series`; o motor no `master` `47f12e1`).
+- `main` em `f57624e9` (o OE1 com as duas emendas do lugar de direção aos cartões de partilha, a última a que fez a Vercel acabar a construção: os cartões em lotes de cem, cada lote no seu processo; o OE1 em si, o dinheiro do Estado por ministério e por função, no ar às 19:16 UTC: 186 linhas seladas no motor e no livro, 150 transcritas e 36 contas, cada uma com o seu nome do projeto nas duas línguas, a unidade com o período acumulado onde é execução, e uma ressalva publicada onde a casa diz o que a fonte não diz, em 182 delas; os recibos em `/livro-razao/<id>` e o índice do livro com o período de cada linha; nenhuma página do leitor nova; o motor no `master` `38457b2`; os registos do fim do dia, a §1.157, aterram por cima desta cabeça, e o estado no fim deste ficheiro foi lido antes dessa aterragem) e de `fbc95422` (os registos de 04.10, a §1.156, no ar às 13:00 UTC), por cima de `38cd302f` (o R3, o índice do sítio, no ar às 11:54 UTC: a página «Índice» / «Index» em `/indice` e `/en/index`, gerada da tabela das rotas e dos dados, 414 portas por edição, os 308 concelhos em 29 gavetas por distrito, os estudos por data com a pergunta onde a têm, as 26 séries, «O que mudou» com uma linha por medida e o lugar escrito; a sétima porta do rodapé em todas as páginas; a célula `check:indice-do-sitio` no `verify`; a conferência (g) do `verify:deploy` provou no ar que a Vercel serve `/en/index` da pasta e não a primeira página inglesa) e de `533681ff` (o RP3, as séries no tempo, no ar às 10:27 UTC: dezasseis séries em `ledger/series/` com `eixo: periodo`, 4 131 pontos com excerto literal e marca, sete linhas presas ao último ponto, um recibo por série em `/livro-razao/series/<id>`, as regras S9 a S14 e a célula `check:series`; o motor no `master` `47f12e1`).
 - A §1.156 em `DECISIONS.md` regista o dia: os dois blocos, as cinco leituras a frio (o Sol duas vezes por bloco do Opus, o Opus duas vezes no OE1), a emenda da política (a hora do advogado deixou de ser condição), as questões I190 a I194 e as melhorias M48 (a segunda leitura curta de uma passagem que toca portões) e M49 (o `pacote.sh` a tirar as cópias do diff e a levar o motor, por fazer).
 
 ## 2 · O que está a meio
@@ -44,26 +44,26 @@
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
 ### O sítio (`<sítio>`)
-- `main`: 987f15cd · 2026-10-04T19:50:16+01:00 · OE1-h: os códigos da corrida dos portões na cabeça 8180f883 (build 0, verify 0, typecheck 0), pela tranca  (`git log -1 main`)
-- `origin/main`: 987f15cd · 2026-10-04T19:50:16+01:00 · OE1-h: os códigos da corrida dos portões na cabeça 8180f883 (build 0, verify 0, typecheck 0), pela tranca  (`git log -1 origin/main`)
+- `main`: f57624e9 · 2026-10-04T19:50:16+01:00 · OE1-h: os códigos da corrida dos portões na cabeça 20ba44c6 (build 0, verify 0, typecheck 0), pela tranca  (`git log -1 main`)
+- `origin/main`: f57624e9 · 2026-10-04T19:50:16+01:00 · OE1-h: os códigos da corrida dos portões na cabeça 20ba44c6 (build 0, verify 0, typecheck 0), pela tranca  (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
-- ramos locais: `main 987f15cd`, `oe1-2026-10-04 9db8ab1e`, `r3-2026-10-04 96bfd99e`, `registos-2026-10-04-b 987f15cd`, `rp3-2026-10-04 a60a728b`  (`git branch`)
+- ramos locais: `main f57624e9`, `oe1-2026-10-04 9db8ab1e`, `r3-2026-10-04 96bfd99e`, `registos-2026-10-04-b f57624e9`, `rp3-2026-10-04 a60a728b`  (`git branch`)
 - ramos no remoto: `main`  (`git ls-remote --heads origin`)
-- worktree: `<sítio> 987f15cd [main]`
-- worktree: `<sítio>/<worktrees>/registos-2026-10-04-b 987f15cd [registos-2026-10-04-b]`
+- worktree: `<sítio> f57624e9 [main]`
+- worktree: `<sítio>/<worktrees>/registos-2026-10-04-b f57624e9 [registos-2026-10-04-b]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
-- 37226904802 · `987f15cd` · main · portão · **completed / success** · criada 2026-10-04T19:05:03Z · atualizada 2026-10-04T19:20:37Z
-- 37225965463 · `987f15cd` · oe1h-2026-10-04 · portão · **completed / success** · criada 2026-10-04T18:50:21Z · atualizada 2026-10-04T19:04:08Z
-- 37221668220 · `ae9c4f13` · main · portão · **completed / success** · criada 2026-10-04T17:44:36Z · atualizada 2026-10-04T17:56:32Z
-- 37220404006 · `ae9c4f13` · oe1g-2026-10-04 · portão · **completed / success** · criada 2026-10-04T17:24:39Z · atualizada 2026-10-04T17:43:07Z
-- 37209958258 · `b920f49a` · main · portão · **completed / success** · criada 2026-10-04T14:37:44Z · atualizada 2026-10-04T14:56:23Z
-- 37208972141 · `b920f49a` · oe1-2026-10-04-b · portão · **completed / success** · criada 2026-10-04T14:21:42Z · atualizada 2026-10-04T14:36:53Z
+- 37226904802 · `f57624e9` · main · portão · **completed / success** · criada 2026-10-04T19:05:03Z · atualizada 2026-10-04T19:20:37Z
+- 37225965463 · `f57624e9` · oe1h-2026-10-04 · portão · **completed / success** · criada 2026-10-04T18:50:21Z · atualizada 2026-10-04T19:04:08Z
+- 37221668220 · `be979e31` · main · portão · **completed / success** · criada 2026-10-04T17:44:36Z · atualizada 2026-10-04T17:56:32Z
+- 37220404006 · `be979e31` · oe1g-2026-10-04 · portão · **completed / success** · criada 2026-10-04T17:24:39Z · atualizada 2026-10-04T17:43:07Z
+- 37209958258 · `2ca74db8` · main · portão · **completed / success** · criada 2026-10-04T14:37:44Z · atualizada 2026-10-04T14:56:23Z
+- 37208972141 · `2ca74db8` · oe1-2026-10-04-b · portão · **completed / success** · criada 2026-10-04T14:21:42Z · atualizada 2026-10-04T14:36:53Z
 
 ### O que está no ar (`/version.json` do sítio publicado)
-- commit no ar: `987f15cd` · construído em 2026-10-04T19:07:20.533Z · ref `main` · production
-- igual a `origin/main` (`987f15cd`): **sim**
+- commit no ar: `f57624e9` · construído em 2026-10-04T19:07:20.533Z · ref `main` · production
+- igual a `origin/main` (`f57624e9`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
 ### O motor (`<motor>`)

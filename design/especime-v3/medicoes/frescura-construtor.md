@@ -1,6 +1,6 @@
 # F1.6 · o atraso do IEFP e as duas frases · relatório do construtor
 
-*Ramo `frescura-2026-09-04`, tirado de `origin/main` em `6d63adfd`. Construtor
+*Ramo `frescura-2026-09-04`, tirado de `origin/main` em `e2f9faee`. Construtor
 Claude Opus 5, 04.09.2026. O bloco é o F1.6 do
 `design/observatorio/PLANO-fiabilidade-2026-09-02.md` §3 e cumpre as decisões
 (2), (3) e (5) da `DECISIONS.md` §1.98. Sem travessões na prosa.*
@@ -12,13 +12,13 @@ fusão com `main` mudou e o que os portões mediram nesta cabeça. Tudo o que es
 abaixo dela fica como estava a 04.09, e o «Estado ao pausar» a seguir é o registo
 da paragem.*
 
-**A corrida que ficou por ler está lida.** A `portao` sobre `3ff1f75a`, a cabeça
+**A corrida que ficou por ler está lida.** A `portao` sobre `3c3ae07d`, a cabeça
 da paragem, é a **33862830127** e saiu **verde** em 34m11s (`gh run view
 33862830127 --repo oestadodopais/o-estado-do-pais`). Era o segundo dos quatro
 pontos que a paragem deixou abertos.
 
-**A fusão.** `git merge origin/main` sobre `cc79128e`, commit de fusão
-**`a0a9b4e8`**. Cinco ficheiros vinham mudados dos dois lados e quatro fundiram-se
+**A fusão.** `git merge origin/main` sobre `15cc78ec`, commit de fusão
+**`3834dcac`**. Cinco ficheiros vinham mudados dos dois lados e quatro fundiram-se
 sozinhos, cada um com as duas partes: `DECISIONS.md`,
 `design/especime-v3/INVENTARIO-FRASES.md`, `ledger/allowlist.yml` e
 `src/i18n/strings.mjs`. Um só deu conflito.
@@ -84,7 +84,7 @@ está feito, o que está a meio e por onde se retoma. Escrita antes do último
 commit, e a cabeça que ela nomeia é a que ficou empurrada.*
 
 **A primeira passagem está inteira e correu o `portao` verde** (corrida
-`33854747585`, cabeça `cdcd445a`). Tudo o que está abaixo desta secção descreve
+`33854747585`, cabeça `d143a8e9`). Tudo o que está abaixo desta secção descreve
 essa passagem, com as correções da segunda já aplicadas onde elas mudaram o
 resultado.
 
@@ -109,7 +109,7 @@ Major 3 são elas. A triagem do lugar de direção dá seis itens reais.
    minutos e não cabia na paragem. **Ao retomar, corre-se primeiro**, antes de
    qualquer outra coisa. Os códigos dos três estão na §9.
 2. **O `portao` não correu sobre a cabeça da segunda passagem.** Correu sobre
-   `cdcd445a`, que é a primeira. A corrida nova é do empurrão desta paragem, e
+   `d143a8e9`, que é a primeira. A corrida nova é do empurrão desta paragem, e
    não se esperou por ela.
 3. **A entrada do `DECISIONS.md` passa de §1.99 a §1.100 ao retomar.** O lugar de
    direção compromete o registo do dia como §1.99 primeiro. **O carimbo não
@@ -515,20 +515,20 @@ paralelo.
 
 ## 9 · As três fusões e os três códigos de saída
 
-O ramo saiu de `origin/main` em `6d63adfd` e fundiu `main` três vezes. As duas
+O ramo saiu de `origin/main` em `e2f9faee` e fundiu `main` três vezes. As duas
 primeiras correram enquanto o bloco se construía, sem conflito e sem tocar um
 ficheiro deste bloco:
 
-* `306e4c68`, o F1.1b (a primeira página: `HomeView`, os componentes do início, o
+* `2144f822`, o F1.1b (a primeira página: `HomeView`, os componentes do início, o
   guião e a folha do início, as réguas de `tests/inicio/`). O que os dois blocos
   partilham é o inventário da voz e o registo das revisões, e cada um escreveu a
   sua secção própria;
-* `69ba3abf`, ficheiros de registo e o `portao.yml` a subir o `timeout-minutes`
+* `fd19e801`, ficheiros de registo e o `portao.yml` a subir o `timeout-minutes`
   de 30 para 45.
 
 A terceira é a da retoma, e é a única com conflito:
 
-* `cc79128e`, o fecho de 04.09 (o registo do dia, o bloco F1.4b das datas de
+* `15cc78ec`, o fecho de 04.09 (o registo do dia, o bloco F1.4b das datas de
   publicação, os briefs novos e as leituras a frio). O conflito foi um só,
   `scripts/provar-guardas.mjs`, e a §0 diz como se resolveu.
 

@@ -16,7 +16,7 @@ do B2 (23.09.2026). Escreve `perguntas.json` ao lado. Três partes:
      apanhados pela mesma conferência, ou o guião sai vermelho.
   3. As perguntas que mudaram de texto nesta passagem, lidas das páginas
      construídas e não da declaração: a cópia do depois da primeira passagem de
-     correção, como ela está no commit ed44e493, contra o `dist/` desta
+     correção, como ela está no commit 912c280b, contra o `dist/` desta
      construção, nas duas edições.
 """
 import hashlib
@@ -32,7 +32,7 @@ AQUI = Path(__file__).resolve().parent
 RAIZ = AQUI.parents[3]
 MOTOR = Path(os.environ.get(
     "B2_MOTOR", Path.home() / "<projetos>/ResearchHub/.worktrees/b2-peca1-2026-09-23"))
-COPIA_ANTERIOR = "ed44e493"
+COPIA_ANTERIOR = "912c280b"
 FALHAS = []
 
 

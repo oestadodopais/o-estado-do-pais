@@ -3,7 +3,7 @@
 *Escrito pelo construtor (Claude Opus 5) a 28.08.2026, contra
 `briefs/BRIEF-areas-de-governo.md` e a lista de
 `briefs/ministerios-xxv-2026-08-28.md`. Ramo `areas-2026-08-28`, saído de `main`
-em `45a9708`. Cada commit com `npm run build` (a cadeia inteira das réguas),
+em `2bdf8fa`. Cada commit com `npm run build` (a cadeia inteira das réguas),
 `npm run verify` e `npm run typecheck` verdes antes de ser escrito. Sem fusão e
 sem envio: o ramo fica para o lugar de direção. Sem travessões na prosa.*
 

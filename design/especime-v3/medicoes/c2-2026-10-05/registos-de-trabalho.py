@@ -58,12 +58,12 @@ la, ld = j("leituras-antes.json") or {}, j("leituras-depois.json") or {}
 mot = j("motor/motor-c2.json") or {}
 registos = [
     {"registo": "brief-reproduzido.json", "cabeca": "006685ae", "arvore": "limpa no que o git segue",
-     "prova": "o guião lê só a cabeça presa 3a253f73 pelo git (git show), e não a árvore"},
+     "prova": "o guião lê só a cabeça presa 520a02d6 pelo git (git show), e não a árvore"},
     {"registo": "capturas-antes.json", "cabeca": (j("capturas-antes.json") or {}).get("commit"), "arvore": "uma exportação do commit (git archive)",
      "prova": "o manifesto escreve o commit da exportação"},
     {"registo": "leituras-antes.json", "cabeca": la.get("cabeca"), "arvore": f"{la.get('linhas_do_livro_mudadas_na_arvore')} linha(s) do livro mudada(s)",
      "prova": "o próprio ficheiro escreve a cabeça e as linhas do livro mudadas na árvore"},
-    {"registo": "aplicacao.json e aplicar-releituras.log", "cabeca": "006685ae", "arvore": "as linhas lidas pela cabeça presa 3a253f73 (git show), e escritas na árvore",
+    {"registo": "aplicacao.json e aplicar-releituras.log", "cabeca": "006685ae", "arvore": "as linhas lidas pela cabeça presa 520a02d6 (git show), e escritas na árvore",
      "prova": f"o resumo de cada linha composta é o dos bytes do commit 8dbdcac2 em {sum(iguais)} de {len(iguais)} linhas",
      "linhas_iguais_ao_commit": sum(iguais)},
     {"registo": "selar-historias.log e .codigos, ledger-check-1.log e .codigo, leituras-depois.json", "cabeca": ld.get("cabeca"),
@@ -105,8 +105,8 @@ saida = {"_": "Escrito por design/especime-v3/medicoes/c2-2026-10-05/registos-de
          "registos": registos,
          "linhas_compostas_iguais_ao_commit_8dbdcac2": sum(iguais),
          "linhas_com_o_published_at_iguais_ao_commit_82406f85": sum(iguais_pa),
-         "conhecido_positivo": {"o_que": "a mesma comparação, contra os bytes da cabeça presa 3a253f73, dá diferente nas nove",
-                                "encontrado": all(hashlib.sha256(subprocess.check_output(["git", "show", f"3a253f73:ledger/claims/{l['id']}.yml"])).hexdigest() != l["depois_sha256"]
+         "conhecido_positivo": {"o_que": "a mesma comparação, contra os bytes da cabeça presa 520a02d6, dá diferente nas nove",
+                                "encontrado": all(hashlib.sha256(subprocess.check_output(["git", "show", f"520a02d6:ledger/claims/{l['id']}.yml"])).hexdigest() != l["depois_sha256"]
                                                   for l in ap.get("linhas", [])) and bool(ap.get("linhas"))}}
 with open(os.path.join(PASTA, "registos-de-trabalho.json"), "w", encoding="utf-8") as f:
     json.dump(saida, f, ensure_ascii=False, indent=2)

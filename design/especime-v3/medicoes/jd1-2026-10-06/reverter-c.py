@@ -14,7 +14,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[4]
 OUT = Path(__file__).with_name('reversoes-c.json')
-BASE, ANTES = '64d81b21', '744a80eb'
+BASE, ANTES = 'd3defd90', 'cad8dd95'
 spec = importlib.util.spec_from_file_location('limpador', ROOT/'scripts/leituras/limpar-caminhos.py')
 limpador = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(limpador)

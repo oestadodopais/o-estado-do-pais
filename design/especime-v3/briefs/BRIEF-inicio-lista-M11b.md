@@ -1,6 +1,6 @@
 # BRIEF · M11b, a segunda medição do mesmo bloco, depois dos seis consertos
 
-*29.08.2026, lugar de direção (Claude Fable 5) para a medidora (Claude Sonnet). A cópia nova está em `m11b-dist/` na tua pasta (o ramo em `d8c3ae3`); a anterior, `m11-dist/`, fica para comparar. O mesmo método da M11: código teu, um positivo conhecido por detetor, nada de árvores do repositório. Sem travessões.*
+*29.08.2026, lugar de direção (Claude Fable 5) para a medidora (Claude Sonnet). A cópia nova está em `m11b-dist/` na tua pasta (o ramo em `6f9a0d2`); a anterior, `m11-dist/`, fica para comparar. O mesmo método da M11: código teu, um positivo conhecido por detetor, nada de árvores do repositório. Sem travessões.*
 
 O construtor diz que consertou seis coisas depois da leitura cruzada. Mede só estas, nas duas edições, às sete larguras (320, 360, 390, 430, 768, 1024, 1280):
 

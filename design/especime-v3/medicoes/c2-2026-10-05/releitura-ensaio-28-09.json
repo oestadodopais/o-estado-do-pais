@@ -2,7 +2,7 @@
   "_": "Escrito por indicators/out/c2-2026-10-05/reler.py. Não se edita à mão.",
   "quando": "2026-10-05T11:32:25+00:00",
   "modo": "de-corpos",
-  "cabeca_do_sitio": "3a253f7327de7c7dcc37e4dc49d7a08708b920d7",
+  "cabeca_do_sitio": "520a02d6560be5ebb7a4f17d9cd24ca97b49cc96",
   "cabeca_do_motor": "38457b2723c47ea126984be6c5c1f778967e6847",
   "cliente": "core.http.HttpClient.get",
   "user_agent": "OEstadoDoPais/corredor",

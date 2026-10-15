@@ -11642,7 +11642,7 @@ História do valor: 2 controlos e 4 plantas.
 > node scripts/stamp-version.mjs
 
 
-[90m  versão · 98a9d1b (h3-2026-10-05, git)[0m
+[90m  versão · ee81a00 (h3-2026-10-05, git)[0m
 
 > o-estado-do-pais@0.1.0 cartoes
 > node scripts/cartoes.mjs

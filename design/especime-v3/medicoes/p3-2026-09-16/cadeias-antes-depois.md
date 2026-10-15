@@ -2,7 +2,7 @@
 
 *16.09.2026, ramo `p3-2026-09-16`, bloco P3 «Os nomes das medidas, e a revisão de língua de tudo» (construtor e editor de língua Claude Opus 5). É a tabela do item 7 do brief: **toda a cadeia mudada, retirada ou nova está aqui**, com a chave, o texto antes e depois nas duas edições, e a razão.*
 
-*A tabela é **completa por construção**, e não de uma leitura do diff: `pacote-de-cadeias.mjs` compõe, de cada árvore, o pacote de toda a prosa que um gabarito pode render e compara os dois conjuntos por chave. Os dois pacotes são o da cabeça `796c9032`, tirada com `git archive`, e o da cabeça final deste ramo.*
+*A tabela é **completa por construção**, e não de uma leitura do diff: `pacote-de-cadeias.mjs` compõe, de cada árvore, o pacote de toda a prosa que um gabarito pode render e compara os dois conjuntos por chave. Os dois pacotes são o da cabeça `fab09477`, tirada com `git archive`, e o da cabeça final deste ramo.*
 
 **O ÂMBITO DO PACOTE, dito por extenso**, porque «completa por construção» só quer dizer alguma coisa com o âmbito ao lado:
 
@@ -19,7 +19,7 @@ node design/especime-v3/medicoes/p3-2026-09-16/pacote-de-cadeias.mjs <raiz> > pa
 node design/especime-v3/medicoes/p3-2026-09-16/pacote-de-cadeias.mjs --compara antes.json depois.json
 ```
 
-**A conta.** 2 938 cadeias no pacote de `796c9032`, 3 148 no da cabeça final, **249 diferenças**: 210 são os nomes do projeto que este bloco escreveu (81 medidas e 24 linhas derivadas, nas duas edições, §2 e §3 abaixo), **39 são cadeias de prosa** (§1) e **0 são literais de `.astro`**. Nenhuma cadeia mudou sem estar aqui. (Os totais dos dois pacotes subiram 31 em relação à primeira redação desta tabela, que dizia 2 907 e 3 117: são os 31 literais dos `.astro`, que existiam nas duas árvores e não estavam a ser lidos.)
+**A conta.** 2 938 cadeias no pacote de `fab09477`, 3 148 no da cabeça final, **249 diferenças**: 210 são os nomes do projeto que este bloco escreveu (81 medidas e 24 linhas derivadas, nas duas edições, §2 e §3 abaixo), **39 são cadeias de prosa** (§1) e **0 são literais de `.astro`**. Nenhuma cadeia mudou sem estar aqui. (Os totais dos dois pacotes subiram 31 em relação à primeira redação desta tabela, que dizia 2 907 e 3 117: são os 31 literais dos `.astro`, que existiam nas duas árvores e não estavam a ser lidos.)
 
 **A passagem de correção do fim do dia**, depois da leitura a frio do Codex, mexeu em **treze das 39 cadeias de prosa** (achado 9) e em **46 dos 105 nomes** (achados 6, 7 e 8). As linhas desta tabela dizem o texto de agora; as treze levam a marca da passagem na coluna da razão, e os nomes estão na forma final nas §2 e §3.
 
@@ -82,7 +82,7 @@ node design/especime-v3/medicoes/p3-2026-09-16/pacote-de-cadeias.mjs --compara a
 | `strings.STRINGS.pt.livro.linha.excertoDaCasa` | Esta linha não cita nenhuma frase porque não há nenhuma para citar: o valor é uma contagem do próprio registo desta casa, e é reavaliado a cada construção do sítio. Nenhum documento externo o publica. | Esta linha não cita nenhuma frase porque não há nenhuma para citar: o valor é uma contagem do próprio registo deste projeto, e é reavaliado a cada construção do sítio. Nenhum documento externo o publica. | «do próprio registo desta casa» passa a «do próprio registo deste projeto». A gémea inglesa não muda: nunca disse «house» |
 ## 2 · Os 81 nomes das medidas
 
-*O item 1 do brief. A coluna «degrau» diz de onde vinha o nome que o cartão mostrava: `name` é o rótulo que a fonte imprime por cima da figura, `document.title` é o título do documento de onde a linha foi lida. A lista dos 81 foi medida sobre o `dist/` de `796c9032` e bate certo, linha a linha, com a do §7 da tabela do P2.*
+*O item 1 do brief. A coluna «degrau» diz de onde vinha o nome que o cartão mostrava: `name` é o rótulo que a fonte imprime por cima da figura, `document.title` é o título do documento de onde a linha foi lida. A lista dos 81 foi medida sobre o `dist/` de `fab09477` e bate certo, linha a linha, com a do §7 da tabela do P2.*
 
 **Nenhum dos 81 tem nome oficial confirmado.** `src/data/enquadramento/nomes.json` confirma 17 medidas como `exata`, e são todas do quadro institucional europeu; das três destes 81 que lá aparecem, `licencas-de-construcao-2025` está marcada `proxima` (o INE conta edifícios e a medida é de área licenciada por mil habitantes: não é a mesma medida) e as outras duas não têm correspondência. A regra 2 do §0 do brief fecha aqui: o nome oficial entra no recibo só quando o motor o confirmar como a mesma medida, e nenhum destes o está.
 

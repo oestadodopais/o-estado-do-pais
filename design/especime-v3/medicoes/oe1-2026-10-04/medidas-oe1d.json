@@ -5,13 +5,13 @@
   "cabecas": {
     "motor": "1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3",
     "sitio": "914c53e1a76f541c513b576d0a603b4b7de29261",
-    "main": "b748a6b4b5f6b3949b4fb9805720dcf2016b3a53",
+    "main": "38cd302f5d879271d85fd5074f6123cd3a31ca2d",
     "master": "47f12e15c927bf238522ac680b1f54c9de29f55d"
   },
   "bases": {
     "observacoes_motor": "9bfbb777f7d2f5af8b185475c8dd8027ebd76bad",
     "linhas_sitio": "bde06bf00e5e416f177c50a439018f95c162a6d0",
-    "rebase_main": "b748a6b4b5f6b3949b4fb9805720dcf2016b3a53",
+    "rebase_main": "38cd302f5d879271d85fd5074f6123cd3a31ca2d",
     "rebase_master": "47f12e15c927bf238522ac680b1f54c9de29f55d"
   },
   "guiao_sha256": "be6c14d68ea0ffe3182969777c6ff523e6b0825807537a1a2943dad3c6daad6f",
@@ -19,7 +19,7 @@
   "html_conferido": true,
   "medidas": {
     "base_main_integrada": {
-      "valor": "b748a6b4b5f6b3949b4fb9805720dcf2016b3a53",
+      "valor": "38cd302f5d879271d85fd5074f6123cd3a31ca2d",
       "passou": true,
       "conhecido_positivo": true,
       "planta": "Trocar a base integrada na cópia é recusado.",

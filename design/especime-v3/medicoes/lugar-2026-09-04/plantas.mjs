@@ -271,7 +271,7 @@ const PLANTAS = [
   },
   /* ------------------------------------------------------------------------
      OS TRÊS CAMPOS DE UMA ORIGEM, POR IGUALDADE (14.09.2026, achado 6 da
-     releitura do Codex sobre a cabeça `7b85bb7f`)
+     releitura do Codex sobre a cabeça `9d1f0460`)
      ------------------------------------------------------------------------
      A régua comparava o publicador, o documento e o excerto por CONTENÇÃO no
      texto do bloco inteiro, e a releitura mediu as duas frestas: um campo

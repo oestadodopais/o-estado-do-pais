@@ -3,13 +3,13 @@
   "medido_em": "2026-09-30T00:55:20.262582+00:00",
   "bases": {
     "motor": "1af04566898ddfc2c5244c55c7f229b1c287fee2",
-    "sitio": "24e7c8752f5bf80b263f13530f618278ba474992"
+    "sitio": "f0d72ac0acb7adae833f56d3336ba3e90d2a6230"
   },
   "cabecas_lidas": {
     "motor": "4b46befbac8decf1566f73b5959fd175e5458d66",
-    "sitio": "2ea04eef166359723bcafc05a68630456e9816e4"
+    "sitio": "ea8b7a5360a2e178de241daac1ba867a32acf36f"
   },
-  "cabeca_dos_tres_portoes_do_sitio": "01362b78a810795ee6870b8a6f439c39b9fe25e0",
+  "cabeca_dos_tres_portoes_do_sitio": "c758c51e12471958561069329aa1b86a90abf3c8",
   "conferencia_posterior_aos_portoes": "A fazer pelo lugar de direção na aterragem, entre a cabeça dos portões e a final.",
   "commits_motor": [
     "6432b88b000cdcdc47a08a8721bafac8f7ab023a Prepara a publicação guardada e as rotinas transportáveis",
@@ -29,145 +29,145 @@
     "4b46befbac8decf1566f73b5959fd175e5458d66 F2.2e: provar as duas guardas do painel e os números do relatório"
   ],
   "commits_sitio_anteriores_ao_relatorio": [
-    "2613664f73f178197ea869e9031ac6ba9f2bb0f9 PP1: as declarações do lugar de direção para a primeira página de um leitor comum (os cinco blocos de «O que se passa», com as palavras, as condições que os tornam verdadeiros e os desenhos, e as seis entradas com os cartões que cada uma agrupa) e o ensaio a seco que as rende nas duas edições, a testemunha independente contra o resolvedor do construtor (M31)",
-    "1cbdb8c44045a5053cba33562f5044e02975bc47 O brief do PP1, a primeira página de um leitor comum (o passo 4 da ordem da §1.133, na forma que não precisa das séries): os cinco blocos de «O que se passa» com condições em vez de valores presos, os seus desenhos, as seis entradas por pergunta da vida, os sinais para o lugar de direção e as células que mudam de forma; com o §0 medido por guião na cabeça 2613664f, o guião do construtor e a maqueta que o diretor viu",
-    "db58de3e892625ff91bb8f77bdaddd2506660f8f PP1: as declarações dos blocos e das entradas no sítio, o resolvedor sem Astro, a auditoria das palavras e a comparação com a testemunha",
-    "30b663ffa62ca67ce2d351559305fdb9cac44ac7 PP1: a primeira página de um leitor comum e as cinco páginas das entradas",
-    "3585635ac5841b965a91b202e9385ae740b45a12 PP1: o captor do bloco e as capturas antes, da construção da cabeça de partida 1cbdb8c4",
-    "1c1952c949d53907ac8bf879f47f00d48131ec76 O brief do CI1, a corrida «portão» em metade do tempo sem uma conferência a menos (cada conferência uma vez, as lentas lado a lado, a construção do Astro mais depressa com o mesmo resultado byte a byte), pela pergunta do diretor de 28.09; com o §0 medido por guião na cabeça a677770f, os tempos lidos na API do GitHub e o guião do construtor",
-    "b47a12d76c24218cb9656cab147a5efaf2266ec8 PP1: a lista dos números de cada bloco com a marca das palavras conferidas, a língua do publicador na linha da fonte, a descrição da primeira página pelos nomes das entradas e a porta do veredicto com 44 px",
-    "3015857125337a001e5f24e508f8298c6646ab09 PP1: a célula dos blocos e das entradas, a geometria dos desenhos, os sinais e as plantas da régua das frases",
-    "238bd172a9d308d8ffbb67ca02c3405fd6f608d8 PP1: o inventário das frases e as exceções da voz com a primeira página nova e as cinco entradas",
-    "4d733a89a7754264a8db507783371ebd1668bf16 PP1: os portões que mudam de forma com a primeira página e as cinco entradas, cada um a conservar o que protege",
-    "d04d63b6e090cb519f8be5b2e2b375aaabd6c836 PP1: as plantas dos portões que mudaram de forma, no sítio onde as coisas vivem agora",
-    "b4d929027436eedc7ca8053902c242e50b78d988 PP1: os guiões das medidas do relatório, do valor revisto numa cópia do livro e das capturas depois",
-    "15342ef669f5895e12a7e024f2e0f8ee48b2e600 PP1: os tipos do resolvedor e das declarações, que o typecheck pedia",
-    "85a719b28c5f7a1cac33cd19072b96db563fffac CI1: as ferramentas de medição do bloco (o cronómetro, a prova byte a byte, a sonda do que cada conferência abre, o inventário, o leitor dos perfis de CPU e os tempos de uma corrida lidos na API do GitHub), cada uma com o seu conhecido-positivo",
-    "790e255b719eb63645b1ad09ea357d63c6698cfd CI1, mandato 1 e 2: o verify depois do build, que corre lado a lado as conferências do verify que o build não correu com o mesmo comando, lidas das duas cadeias do package.json, e fecha com as células U (a união é o verify inteiro), D (nenhuma conferência mexeu no dist/) e C (o dist/ é desta cabeça), depois de sete plantas numa cadeia sintética; o npm run verify à mão não muda",
-    "96bbb7f147db4f5f99b84905fecd8221cb82bf9b CI1: a corrida «portão» corre, depois do build, o verify sem repetir o build, no mesmo trabalho portao (a verificação que a proteção de main exige), com os comentários da razão e da prova postos em dia",
-    "27b13b92199b7917ce5bba6d01dfcf471dd70cbb CI1, mandato 3: a paridade das duas línguas confere-se na primeira chamada de t() de cada processo e a árvore das cadeias fica congelada a seguir, em vez de se conferir em cada chamada (53,9 % da construção do Astro, medido no perfil de CPU); cinco plantas novas no provar:guardas provam que a guarda ainda fecha uma chave só numa língua e que a árvore recusa escritas depois da primeira chamada",
-    "ae8951901d0d9abcb0e5302b8205660ee1228f96 PP1: a planta do valor trocado no portão de HTML aponta ao primeiro valor da frase de um bloco que tem valores",
-    "bd1f46dfe33142deb9f71df8b48a287b776ef973 PP1: a frase do veredicto e o rótulo da linha de referência deixam de prender os dados no inventário das frases",
-    "931873d1a56461b6b08c13c7c4b8f4384d696a32 PP1: a planta do valor revisto constrói as duas cabeças pela cadeia inteira e guarda a cauda da saída sem caminhos da máquina, e as medidas leem as páginas congeladas",
-    "7b63369e9d7ccc71f0f71f9609d364a2fbb5a933 CI1: as provas do bloco (as construções antes e depois com as condições da máquina, a prova byte a byte e o controlo do determinismo, o perfil de CPU, o verify inteiro contra o verify sem repetir o build, as 17 conferências repetidas a dizerem o mesmo nas duas corridas, o inventário do que cada conferência abre, as plantas e as contraprovas, a planta na cadeia real, as esperas do check:alvos e a corrida de referência lida na API), o guião que escreve o medidas.json, e o cronómetro a trocar também o rascunho e os caminhos debaixo da casa",
-    "12dc8fbfa2062f24728c9877fefa822a7793ecd4 PP1: o relatório do construtor, as medições, as capturas depois e o mapa dos construtores posto em dia",
-    "5c862efb38055965618a9d29f26ac12a25ac99eb C1e: a terceira leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco, e oito achados reais pequenos), com o registo das plantas, e o guião da passagem C1e: a tentativa sem valor lido diz só isso, a cadeia de cada campo de proveniência confere-se, as plantas prometidas existem, as linhas calculadas dizem a verdade sobre a segunda leitura, o motor pergunta outra vez à rede, o nome do diretor não volta às páginas",
-    "69520d3ac921f80936191c58d69cf50f220048d5 C1e: conferir todas as cadeias de proveniência e expor a falta dos acessos do PRR",
-    "01362b78a810795ee6870b8a6f439c39b9fe25e0 Documenta as três corridas prontas a armar e a transição do portátil",
-    "4653316e42feb4f50c314001ee26b1389caca08f C1e: dizer o resultado da tentativa e o recálculo sem exceder o registo",
-    "abc6743a172e4e05f385b289b0a5f6309ef196af C1e: desenhar o início sem data como limite em aberto",
-    "d65f2bb74dd8edbded0dc5364779903b19a14667 C1e: conferir nomes do Git e caminhos nas páginas construídas",
-    "ab47e595d283ecb9e8b8795cebf8a6e0cbdceede C1e: isolar as condições de endereço nas plantas dos instantâneos",
-    "01b3883c005ae5aca1efec488c969a726cc68145 CI1: os três portões a 0 na cabeça 7b63369e (build, verify e typecheck, cada um no seu comando, com o código escrito num ficheiro depois de o processo acabar), o dist/ do portão igual byte a byte ao da cabeça de partida, o passo novo da corrida verde na mesma cabeça, o medidas.json com 88 medições lidas, o relatório do bloco e a resposta curta do construtor",
-    "1875866b79e7fbad1f4da66549a20f18dbd5cef7 CI1: o caminho do interpretador da máquina sai de uma prova do bloco, trocado por <python>, como na C1d",
-    "18137b6d2ff9ebb3b998170e0bb965fd8a9aff22 PP1: os códigos dos três portões na cabeça do relatório e a resposta curta do construtor",
-    "2d063f9af1e707a4e8657a0e664bdce88eece4b6 C1e: tipar a lista percorrida pela história da proveniência",
-    "9514cc6eea58426d39ef54d7085f9372a68c6cf2 C1e: entregar as provas e registar a paragem da história do PRR",
-    "cb43b2fcec9e67815894a07ceb95c2cba1b589e4 C1f: a decisão do lugar de direção sobre a paragem da C1e (a guarda fica, e os acessos das cinco linhas do PRR reconstituem-se pela história do Git, uma entrada tipada por mudança, com o commit que a fez) e o guião da retoma",
-    "26971885959ab2fb0177e27d979e7b81c5bcc3c8 CI1: a leitura a frio do Codex gpt-5.6-sol (cinco plantas em cinco, e sete achados reais) com o registo das plantas; a primeira corrida medida no GitHub, 8,8 minutos contra 27,7",
-    "ffea781d22aec3cc80b7db14c825394627f8ecf1 C1f: reconstituir pelo Git os acessos das cinco linhas do PRR",
-    "cd5557448c430a225eb58b6b257e7f11ef384818 C1f: registar para leitura as duas contagens do inventário",
-    "5dd1d2d1bb126862b3d5bd7f8bf42b4eb36a2a2d CI1b: o verify depois do build corre o design:feixe, que refaz design-system/, sozinho depois do grupo; a célula D passa a ver também uma escrita reposta (a hora de escrita e o inode de cada ficheiro do dist/, e dos ficheiros que o git segue, além dos bytes), e diz o que não vê; a célula C prova a construção do prova.json e do cadeia.json pela hora de escrita contra o carimbo; doze plantas, e os comentários da corrida postos em dia (achados 6 e 7 da leitura a frio)",
-    "8c51a5197a71600aa352c40275d7f83de9d6f918 CI1b: as ferramentas de medição da passagem: a sonda regista as leituras e o inventário cruza o que cada conferência escreve com o que as outras leem (achado 6); a prova byte a byte escreve e compara manifestos guardáveis, e um defeito antigo dos argumentos sem --json sai (achado 8); a conta crua das repetidas diz o que tira antes de comparar e passa a comparar o canal e as linhas em branco (achado 11); a planta na cadeia real repõe os ficheiros num trap, com a prova da interrupção (achado 12); e a planta da paridade numa construção real (achado 9)",
-    "2986a98df8a01b151d05735f3c90452aff445e32 PP1: a leitura a frio do Codex gpt-5.6-sol (cinco plantas em cinco, e quatro achados reais do bloco) com o registo das plantas",
-    "a7a4ac403a1b4ecb8b33e40a08e982db407c7cd3 CI1b: o mapa do repositório posto em dia (o §1 com a paridade das línguas uma vez por processo, o §3 com a corrida «portão» e o verify depois do build, o §5 com os tempos medidos por portão, duas armadilhas no §7; o conferir-mapa acha as 84 citações), a M38 no registo das melhorias (a guarda da paridade a cada chamada era 53,9 % da construção do Astro), e os tempos de uma corrida a lerem as linhas que o GitHub escreve como ##[group]",
-    "7e0f62409b8d662c1acc5d4fedea0c19104026a7 CI1b: o mapa aponta o inventário da passagem, que regista também as leituras",
-    "71d35e8b65a9326b43f3a60d5bb784fdf7f0d17d PP1b: a pesquisa da primeira página provada a interagir, nas duas edições, com e sem guião",
-    "434d7ae7213554aa5c131c63e7942f6b542f19ca PP1b: as dez páginas das entradas conferidas no mapa do sítio construído",
-    "1a461ad66aeee0e496944d6a7699487f8f5cbc90 PP1b: o mínimo de três blocos também na cadeia do build, e a pesquisa da primeira página no check:primeira",
-    "56c7ed7ba5de90338edf990140f1929095dd39f1 PP1b: o mapa dos construtores com os sinais na cadeia do build, a pesquisa da primeira página e as entradas no mapa do sítio",
-    "eec9dc69a4cbf2f283c9ec3ff95b5ced36276b72 C1f: entregar as provas dos acessos, os portões e os recibos",
-    "b485ae52490920f9a46630a967177f546cd21f5c CI1b: o inventário reduz os caminhos da casa ao que não diz nada da máquina (e o cruzamento faz-se sobre eles, o que só pode juntar caminhos); a planta da paridade guarda as primeiras linhas de rota e as da guarda; e o guião das medidas lê as provas da passagem",
-    "b0a4abe5b374d23894874190bf269d216f256cee PP1b: as capturas e as páginas congeladas da cabeça dos portões, os três portões da passagem, o relatório com a secção PP1b e a resposta curta",
-    "40f7684c21eb4742a6597eb0405a8f3516effec0 C1g: a quarta leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco; a conferência da privacidade na construção de produção dependia da máquina e da história do Git), com o registo das plantas, e o guião da passagem C1g, a última antes da aterragem",
-    "c6eb9ef0d54dd74b14ffdbf6ad4610041941f14a C1g: reservar a privacidade ao verify e excluir nomes genéricos de pasta",
-    "c576cc5f8fa0f5da3e385ee140877ab595d3f247 C1g: conferir o valor na página e limitar as frases e o tracejado ao que os dados sabem",
-    "fc83b7331703bc405ef03cc5268202e75f05023b C1g: afinar as razões do PRR e registar a data e as contagens da edição local",
-    "7b47b1444c8a068f3c6bd6811bbaa03125b14c9f C1g: levar a dependência da contagem para a cópia isolada da travessia",
-    "078186dff44285aa6839e031857621165c923534 CI1b: os três portões a 0 na cabeça b485ae52 (em portoes/ci1b/, cada um no seu comando, com o código escrito num ficheiro depois de o processo acabar), a construção do portão igual byte a byte à de partida, os cinco manifestos das construções comparadas, o inventário com as leituras (0 pares com contacto), a paridade numa construção real, a planta interrompida reposta, a primeira corrida no GitHub lida na API, o medidas.json com 144 medições lidas, a secção CI1b do relatório com as frases da primeira entrega corrigidas, e a resposta curta da passagem",
-    "b83a7866fbb895933d75ccf25c29a0f9a135342f PP1b: a releitura a frio do Codex (gpt-5.6-sol), com as cinco plantas achadas, e a triagem do lugar de direção no cabeçalho",
-    "6711f190459b8b2b8562db762de882184dd57b01 CI1b: o mandato da passagem de correção, à letra, no registo do bloco",
-    "f321d50aa8463b91675e6aec161a5452d96a69ba C1g: entregar as capturas finais, os portões e a retificação do relatório",
-    "40e5760c4784981c88276837b5acf46f2b2fe317 CI1: a segunda corrida medida no GitHub (a 36489174336, na cabeça 078186df: 9,9 minutos, as três células verdes) e a planta vermelha num ramo para deitar fora (a 36489295961: o check:css a falhar de propósito no grupo fecha a célula U e deixa o portao vermelho), lidas na API com o guião do bloco; o ramo da planta foi apagado",
-    "41451479cb7cf8e08d25d711468d04a3173f8338 CI1b: a releitura a frio do Codex (gpt-5.6-sol), com as cinco plantas achadas, a conta da terceira acertada no registo, e a triagem do lugar de direção no cabeçalho",
-    "50c799669071b504fe08663ce767b8fb77e4d402 CI1: juntar ao ramo o C1 antes da aterragem (o ramo c1-2026-09-28 em f321d50a): o verify do C1, com a conferência da privacidade, e o passo novo do CI1; as linhas M35 a M37 do C1 antes da M38 do CI1",
-    "7b28723266f87747248d989010fed631c84c57ba PP1: juntar ao ramo o CI1 com o C1 antes da aterragem (o ramo ci1-2026-09-28 em 50c79966): o verify com as três conferências novas (a privacidade do C1, a primeira página e os sinais do PP1) e o passo do CI1; no inventário e nas revisões, as secções do C1 antes da do PP1",
-    "9d283c6b1e5c69dfa3a7aac34a509fe284c7b8e8 C1h: a quinta leitura a frio do C1 pelo Claude Opus 5.5 (quatro plantas em cinco; a guarda da pasta pessoal deixara de procurar o nome sozinho nesta máquina), com o registo das plantas e a triagem no cabeçalho, e o guião da passagem C1h",
-    "fe2ff91f16914f89cacde1228d188e360bde9b5a PP1: os três portões e o inventário das conferências na cabeça da junção com o CI1 e o C1 (7b287232), pelo lugar de direção: o check:primeira, conferência nova do verify, entra no grupo lado a lado com 0 pares com contacto em 18 conferências",
-    "ed5093914109ed20a968e0303fbf26a6fd81c5c1 C1h: proteger o nome da pasta pessoal sem proibir diretórios genéricos",
-    "168d9093cf151ef94a6b749dd64012c3a8695b26 C1h: entregar as capturas do PRR, os custos e as provas da guarda corrigida",
-    "220861c087694c7212b907a9055b8df86d4615ed PP1: juntar ao ramo a passagem C1h do C1 (o ramo c1-2026-09-28 em 168d9093: a guarda da pasta pessoal reposta, as capturas do PRR e os custos), para os três blocos aterrarem na mesma avançada de main",
-    "0e083396b9444d680b4e90ec1c0b698aee2cd2c5 Os registos de 28 e 29.09: a §1.135 (o C1, lido a frio seis vezes), a §1.136 (a primeira página de um leitor comum) e a §1.137 (a corrida «portão» em um terço do tempo); a sexta leitura a frio do C1 com as plantas; a I169 e a I170 alargadas, e as I171 a I174 abertas; a M37 medida; e as linhas do diretor (a primeira página no ar, o nome de utilizador na história pública)",
-    "8ec02519b651fe9a8d09a5d1bd415b731fa4d966 A cópia do prompt da sessão seguinte (depois de 29.09.2026, de manhã), com o estado lido por estado.py: a aterragem dos três blocos à espera do diretor, e a ordem do que se faz a seguir",
-    "cec84d3cdda1f11a3d74b513429c3ed76533629d Os registos de 29.09: a I174 abria de novo a I157 (o nome de utilizador da máquina na árvore pública, à espera da decisão do diretor desde 26.09); a I157 fica com a recontagem, a I174 só com a lista das contas genéricas do detetor, e a linha duplicada do diretor sai",
-    "7df97fd90353da1571925eec9c5e7b9717d93b46 Redação a pedido do diretor (29.09.2026): o nome de utilizador da máquina, o nome do diretor e o seu correio saem da árvore pública, em 264 ficheiros de texto, pelo guião do lugar de direção; fica só o oráculo do portão (scripts/textos-aprovados.json), que o gate:html e o check:lingua leem para exigir que o nome não chegue a página nenhuma",
-    "5448c76ad058ba93985eb92ba1352760483bc278 §1.138: o detetor do nome procura as duas formas (a inteira e a do primeiro e do último nome), com um conhecido-positivo por forma; o documento alojado do Alentejo e do Algarve em inglês redigido e declarado no manifesto; a auditoria dos segredos e dos dados pessoais, só com contagens; a I157 fechada na árvore, as I175 e I176 abertas, a M39, e o que fica ao diretor",
-    "7914c1dea6de5e01fde0270b077b2d76d9818985 A cópia do prompt da sessão seguinte posta em dia com a §1.138 (a redação e a auditoria de 29.09) e o estado lido de novo",
-    "eb03e4f9a44158e4ebdcc1e1e990025664d421cd §1.138: a frase do diretor sobre a história do Git deixa de dizer um número de linhas do livro-razão que o check:registo lia como a contagem de todas (a forma nova nomeia as linhas do PRR de Évora sem número); a contagem dos 205 ficheiros entra na auditoria",
-    "c53e8d8d81143b6e11be70a42f6499910e73627a §1.138: os resumos dos dois briefs isentos que a redação mudou (o P1 e o P2, que nomeavam o diretor) postos em dia pelo check-briefs.py --escrever-isentos, num diff que só troca esses dois resumos",
-    "1d7fb91cfeb8df4e73126fb19c13f388b7433711 §1.138: a leitura a frio do Codex (cinco plantas em cinco) e a triagem; o nome do ministro da Defesa Nacional reposto na lista do Governo (o único terceiro que a redação atingira); a atribuição do documento alojado do Alentejo e do Algarve reduzida a «Prepared by Claude (claude-fable-5)», com os resumos e as medidas novas no manifesto; as provas da auditoria (os relatórios do gitleaks com os valores redigidos, o do motor só em resumo, o conhecido-positivo e a planta da página antiga); a I177 aberta",
-    "9802d0d01d8f0ff83f21dd694c7adb01e280afe9 A cópia do prompt da sessão seguinte com a I177",
-    "8e66b60180312c7e6ca7fa8cf997700cd55c8bba §1.139: o guião da aterragem passa para o repositório (scripts/aterrar.sh: confere antes de mexer, para no primeiro passo que falhar, tem ensaio, não escreve caminhos da máquina), com as provas do ensaio; o registo da aterragem de 29.09 às 12:03 UTC; a M40; e a regra que o diretor junta para o autorizar",
-    "09bca6c7baa827c84981ec448c46d267fe2eb68d UE1: o brief de onde Portugal fica entre os 27 (a faixa da União nos cartões das dez medidas da primeira página), com o §0 medido pelo guião do brief e os 27 países lidos na API do Eurostat pelo lugar de direção",
-    "a182c200dec4a8d9bf0a74a82c3e64039da0f033 UE1: as dez linhas de série por país atravessam do motor, com a tabela dos nomes dos 27",
-    "42cedfd9c036e94b1400e9f9258b273a30918022 UE1: o livro-razão lê as séries (as regras S1 a S8 no ledger:check, e a travessia no check:cruzamento)",
-    "e1c201470be77d7ecd05cf1341d0f5b1841dd28a UE1: o recibo de cada série, nas duas edições, e as origens das séries no portão de HTML",
-    "7ae82d82a94a2b58e671ff7a829b4f4b4fef120b UE1: a faixa da União nos cartões das dez medidas, com a frase do lugar de Portugal, e a F19 e a K18 que a refazem dos pontos",
-    "ac965c61b61bd8b93897835065382aa5a698c046 UE1: a prova das palavras da frase (acertos-ue1.py), o acerto F0 dito, e as duas datas do recibo em linhas próprias",
-    "b6991e78a284f63f36adb6e7174d7675a2f5404c UE1: tirar a importação que a célula da faixa não lê (numeroDoPortao)",
-    "ee95f3cab7f0cff5a8942be91b41d804260c7958 UE1: o caminho no cabeçalho do recibo de uma série (a L5 do check:lugar)",
-    "33ed14a0a609e7ac9c3830c4fb777c0840b02f36 UE1: o mapa do repositório com a rota das séries e a secção do UE1",
-    "0f75298fce6771cfeec03643598b06041e5c4ca6 UE1: as provas do bloco (os portões da cabeça 33ed14a0 lidos de ficheiro, as 15 plantas, as 40 capturas, as 200 medições das faixas nas cinco larguras, o programa do typecheck, as corridas do motor e os pedidos), o medidas.json, o relatório e a resposta do construtor",
-    "63f54d187e720d2620fcd398fc6a75933f249637 UE1b: o ordinal inglês do lugar de Portugal (o acerto F4, «ranks 15th from the highest»), a ressalva da fonte nas pontas da faixa pelas palavras declaradas em vez da letra crua, e o que quer dizer cada marca ao lado da tabela do recibo da série, com a definição da resposta do Eurostat",
-    "181ce25c7d82c2404eb839cab28f7b743bf9cdbf UE1b: a porta do recibo da linha portuguesa de cada medida para a sua série dos países da União, no bloco «O enquadramento», nas dez medidas e nas duas edições",
-    "c9859d31e53784899a189d9b0d7dbac36a9257f3 UE1b: o mapa do repositório com o ordinal inglês, as ressalvas da fonte, a legenda das marcas do recibo da série e a porta do recibo da linha portuguesa, e as citações que as linhas novas deslocaram postas em dia (conferir-mapa: 126 no sítio, 0 longe, 0 por encontrar)",
-    "a4f59f219ee7537ebaadbf7859c86494f1374ab0 UE1b: as provas da passagem de correção (os portões da cabeça c9859d31 lidos de ficheiro, as conferências entre os commits, as 17 plantas, as 70 capturas, as 200 faixas medidas outra vez, o custo), o medidas-ue1b.json, a secção UE1b do relatório e a resposta curta",
-    "01a8e1974454e36e0a7d85485cc9af83052c6c2e UE1: a nota do lugar de direção na tabela do §1 do brief (o lugar de Portugal na pobreza é 15.º, a par da Áustria e da Suécia, pela regra do mandato; a tabela ordenara sem empates)",
-    "ad21faefb8c939cc44ba9b2831838cdf046d5d72 UE1: as linhas novas do inventário das frases (ue1 e ue1b) lidas pelo lugar de direção, com as quatro palavras novas das marcas da fonte conferidas com as definições do Eurostat",
-    "96a6035e8bf6947b228c8998347adb1ac5b24529 UE1: a leitura a frio do Codex (quatro plantas em cinco) com o registo das plantas e a triagem do lugar de direção, que conferiu os 27 nomes contra os corpos alojados e os 280 pontos contra a sua própria leitura do Eurostat",
-    "77d9e4076eb8098a45e6ca0cd3c27964d54a9301 Regista as provas e a resposta do F2.2b",
-    "baa82bce1486caaec56b9b9f838965803a8584a3 UE1c: num extremo empatado, cada país da ponta da faixa com o seu valor e a sua ressalva da fonte, e não só o primeiro (o achado 5 da leitura a frio)",
-    "2a12ff68c3c888b2158fcca0f9985be9443b7a75 UE1c: o que cada medida conta, por baixo do título do recibo da sua série, com a frase da leitura do cartão (os achados 9 e 10 da leitura a frio)",
-    "982d6446bdc1c312bef02228587da89b36839463 UE1c: o mapa do repositório com os extremos empatados, o que cada medida conta no recibo da série e a armadilha da média europeia calada, e as citações que as linhas novas deslocaram postas em dia (conferir-mapa: 135 no sítio, 0 longe, 0 por encontrar)",
-    "42a368a3077b4c94df95ee2fb37488841d5640b9 UE1c: as provas da passagem depois da leitura a frio (os portões da cabeça 982d6446 lidos de ficheiro, as conferências entre os commits, as 4 plantas, as 70 capturas das cabeças dos recibos, o custo), o medidas-ue1c.json, a secção UE1c do relatório com o ponto onde parei (a §1.124 contra a faixa do cartão da sobrecarga no total), as duas frases das 12 páginas corrigidas para 10, e a resposta curta",
-    "22510cd9119ae01a9bca8a75c4382654cbf7e0b2 F2.2b: juntar main ao ramo antes da passagem de correção (C1, PP1, CI1, a redação de 29.09 e o guião da aterragem), pelo lugar de direção: no registo das melhorias, as linhas M37 a M40 de main e a linha do F2.2b renumerada M41, dentro da tabela; no §2 da frescura, a forma de main da linha datada (a redação de 29.09, em português certo), que substitui a do construtor",
-    "fb1dd0dd442684221a5e4aceae3b8ac5491d5546 F2.2c: a leitura a frio do F2.2b pelo Claude Opus 5.5 (cinco plantas em cinco), com o registo das plantas e a triagem do lugar de direção no cabeçalho, e o guião da passagem de correção do Codex (a poda das quatro reconferências de volta com a guarda exata, a guarda antes de qualquer push para o repositório público, o vigia sem alarmes repetidos nem falsos, o despacho à mão do vigia de volta, o limiar pela causa, o varrimento do portátil igual ao de hoje, e as plantas e as provas que faltavam)",
-    "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc F2.2c: corrigir a ordem da publicação e a natureza das medidas",
-    "530d5edc5d786f02cbe75d10581ab9602c576a68 UE1d: a média da União volta ao cartão da sobrecarga do custo da habitação no total, e nunca sem a ressalva da Comissão (a §1.140 do lugar de direção)",
-    "165650cfa1798bef1c0e6b17b3fa926463877deb UE1d: o que cada medida conta, no recibo da série, com a definição declarada da medida, nas dez séries e nos vinte recibos",
+    "d7d2ca243b90958c5b77f3e563d57ae2c08a1a5a PP1: as declarações do lugar de direção para a primeira página de um leitor comum (os cinco blocos de «O que se passa», com as palavras, as condições que os tornam verdadeiros e os desenhos, e as seis entradas com os cartões que cada uma agrupa) e o ensaio a seco que as rende nas duas edições, a testemunha independente contra o resolvedor do construtor (M31)",
+    "3b85f13dc9f1d2261c6c6f5dfc5ecbd9ea786e77 O brief do PP1, a primeira página de um leitor comum (o passo 4 da ordem da §1.133, na forma que não precisa das séries): os cinco blocos de «O que se passa» com condições em vez de valores presos, os seus desenhos, as seis entradas por pergunta da vida, os sinais para o lugar de direção e as células que mudam de forma; com o §0 medido por guião na cabeça d7d2ca24, o guião do construtor e a maqueta que o diretor viu",
+    "fd97f47ed317d510331748998f19dc13352af726 PP1: as declarações dos blocos e das entradas no sítio, o resolvedor sem Astro, a auditoria das palavras e a comparação com a testemunha",
+    "ab3c722272917883690eea86263d035e89c2610f PP1: a primeira página de um leitor comum e as cinco páginas das entradas",
+    "08b61d7076a11ccb600c954cb6a5ab6fb094c3a4 PP1: o captor do bloco e as capturas antes, da construção da cabeça de partida 3b85f13d",
+    "8ee1b2c4953c1ae17206b0795c4c0ef9e0e5771f O brief do CI1, a corrida «portão» em metade do tempo sem uma conferência a menos (cada conferência uma vez, as lentas lado a lado, a construção do Astro mais depressa com o mesmo resultado byte a byte), pela pergunta do diretor de 28.09; com o §0 medido por guião na cabeça 04438bb9, os tempos lidos na API do GitHub e o guião do construtor",
+    "85862382d4ddde1946d5fb89869779d624d9fdc4 PP1: a lista dos números de cada bloco com a marca das palavras conferidas, a língua do publicador na linha da fonte, a descrição da primeira página pelos nomes das entradas e a porta do veredicto com 44 px",
+    "b0ef893d4adc843fe6fdb897580bb3bf7475823b PP1: a célula dos blocos e das entradas, a geometria dos desenhos, os sinais e as plantas da régua das frases",
+    "355f233e4d2e38dceae9f4bea3552adc76a9b15a PP1: o inventário das frases e as exceções da voz com a primeira página nova e as cinco entradas",
+    "a271f2f005e2fd99930b8257c212a73ba6f565b3 PP1: os portões que mudam de forma com a primeira página e as cinco entradas, cada um a conservar o que protege",
+    "8b829bc4ed25de612bcf05ad165f2acc89b3cd51 PP1: as plantas dos portões que mudaram de forma, no sítio onde as coisas vivem agora",
+    "563efa3f71efb05152f1fb2ec5a3232e17aa8962 PP1: os guiões das medidas do relatório, do valor revisto numa cópia do livro e das capturas depois",
+    "de58101ec7f491b5d02b310bad33a031452db683 PP1: os tipos do resolvedor e das declarações, que o typecheck pedia",
+    "83043a1d526b77259d53a9c12fa0e82b1464ec4d CI1: as ferramentas de medição do bloco (o cronómetro, a prova byte a byte, a sonda do que cada conferência abre, o inventário, o leitor dos perfis de CPU e os tempos de uma corrida lidos na API do GitHub), cada uma com o seu conhecido-positivo",
+    "8af0828b7426390fd5cae71efa9d44d7c53d77b3 CI1, mandato 1 e 2: o verify depois do build, que corre lado a lado as conferências do verify que o build não correu com o mesmo comando, lidas das duas cadeias do package.json, e fecha com as células U (a união é o verify inteiro), D (nenhuma conferência mexeu no dist/) e C (o dist/ é desta cabeça), depois de sete plantas numa cadeia sintética; o npm run verify à mão não muda",
+    "1513f675ec5b5b49e1616706f04ff7906a28cac7 CI1: a corrida «portão» corre, depois do build, o verify sem repetir o build, no mesmo trabalho portao (a verificação que a proteção de main exige), com os comentários da razão e da prova postos em dia",
+    "4d21997041ea5867c079d508f15455303a569851 CI1, mandato 3: a paridade das duas línguas confere-se na primeira chamada de t() de cada processo e a árvore das cadeias fica congelada a seguir, em vez de se conferir em cada chamada (53,9 % da construção do Astro, medido no perfil de CPU); cinco plantas novas no provar:guardas provam que a guarda ainda fecha uma chave só numa língua e que a árvore recusa escritas depois da primeira chamada",
+    "fba586f272d4fed23cc29047781ab713b0a6e966 PP1: a planta do valor trocado no portão de HTML aponta ao primeiro valor da frase de um bloco que tem valores",
+    "fce336bdd77877d0ce6ab89a17e8299e2645e20e PP1: a frase do veredicto e o rótulo da linha de referência deixam de prender os dados no inventário das frases",
+    "69df72535be67fb9b263d2e4754e8b6c739db584 PP1: a planta do valor revisto constrói as duas cabeças pela cadeia inteira e guarda a cauda da saída sem caminhos da máquina, e as medidas leem as páginas congeladas",
+    "41b054ffa2b5b31720577adf7bf9585962ae9f56 CI1: as provas do bloco (as construções antes e depois com as condições da máquina, a prova byte a byte e o controlo do determinismo, o perfil de CPU, o verify inteiro contra o verify sem repetir o build, as 17 conferências repetidas a dizerem o mesmo nas duas corridas, o inventário do que cada conferência abre, as plantas e as contraprovas, a planta na cadeia real, as esperas do check:alvos e a corrida de referência lida na API), o guião que escreve o medidas.json, e o cronómetro a trocar também o rascunho e os caminhos debaixo da casa",
+    "31ec7c373eba591623aa3cd55de10cbe5cd85b66 PP1: o relatório do construtor, as medições, as capturas depois e o mapa dos construtores posto em dia",
+    "938b500d1d0de522b62d68e294ffe01c2993b56a C1e: a terceira leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco, e oito achados reais pequenos), com o registo das plantas, e o guião da passagem C1e: a tentativa sem valor lido diz só isso, a cadeia de cada campo de proveniência confere-se, as plantas prometidas existem, as linhas calculadas dizem a verdade sobre a segunda leitura, o motor pergunta outra vez à rede, o nome do diretor não volta às páginas",
+    "df81cd372729b87642810319d7796bc83214a945 C1e: conferir todas as cadeias de proveniência e expor a falta dos acessos do PRR",
+    "c758c51e12471958561069329aa1b86a90abf3c8 Documenta as três corridas prontas a armar e a transição do portátil",
+    "47660b7cee53452dccf7f7dceac605dd0d575670 C1e: dizer o resultado da tentativa e o recálculo sem exceder o registo",
+    "88ab89defce38b8d4bfa993eb401e1d184c0acbd C1e: desenhar o início sem data como limite em aberto",
+    "8bfc8abf70fd203b65de7129e06282df21845ae2 C1e: conferir nomes do Git e caminhos nas páginas construídas",
+    "ce15897117013ca40f22789b4305f01a6762c4ed C1e: isolar as condições de endereço nas plantas dos instantâneos",
+    "09a65c1d4a980b54f1786c43112b574931548708 CI1: os três portões a 0 na cabeça 41b054ff (build, verify e typecheck, cada um no seu comando, com o código escrito num ficheiro depois de o processo acabar), o dist/ do portão igual byte a byte ao da cabeça de partida, o passo novo da corrida verde na mesma cabeça, o medidas.json com 88 medições lidas, o relatório do bloco e a resposta curta do construtor",
+    "bd0c8523777555a68d2d1a2cafe89745a425b5bb CI1: o caminho do interpretador da máquina sai de uma prova do bloco, trocado por <python>, como na C1d",
+    "979e6b986d9402fc51d967022b5c77ba18413841 PP1: os códigos dos três portões na cabeça do relatório e a resposta curta do construtor",
+    "9046757d2c9f10be57c740ddd2fc4f1c9b2632cd C1e: tipar a lista percorrida pela história da proveniência",
+    "c9f4c301b659f5d56584b0c6186d7814ea0edce6 C1e: entregar as provas e registar a paragem da história do PRR",
+    "855b9a9b1f6de1187ee2f28e149e1cd79a9e53c3 C1f: a decisão do lugar de direção sobre a paragem da C1e (a guarda fica, e os acessos das cinco linhas do PRR reconstituem-se pela história do Git, uma entrada tipada por mudança, com o commit que a fez) e o guião da retoma",
+    "0ae197db7716776f746d525a6abdf70530c9ad26 CI1: a leitura a frio do Codex gpt-5.6-sol (cinco plantas em cinco, e sete achados reais) com o registo das plantas; a primeira corrida medida no GitHub, 8,8 minutos contra 27,7",
+    "8f21e9a49ef41f3004ced769a4d825f108b28eee C1f: reconstituir pelo Git os acessos das cinco linhas do PRR",
+    "48d6560871bf99a1f4cd027db16d62fde67d4737 C1f: registar para leitura as duas contagens do inventário",
+    "14219838e767fbacc30122e4a8a3d57e9b63ba63 CI1b: o verify depois do build corre o design:feixe, que refaz design-system/, sozinho depois do grupo; a célula D passa a ver também uma escrita reposta (a hora de escrita e o inode de cada ficheiro do dist/, e dos ficheiros que o git segue, além dos bytes), e diz o que não vê; a célula C prova a construção do prova.json e do cadeia.json pela hora de escrita contra o carimbo; doze plantas, e os comentários da corrida postos em dia (achados 6 e 7 da leitura a frio)",
+    "33bbede70be91c8b52421dc420ad432894f72cf2 CI1b: as ferramentas de medição da passagem: a sonda regista as leituras e o inventário cruza o que cada conferência escreve com o que as outras leem (achado 6); a prova byte a byte escreve e compara manifestos guardáveis, e um defeito antigo dos argumentos sem --json sai (achado 8); a conta crua das repetidas diz o que tira antes de comparar e passa a comparar o canal e as linhas em branco (achado 11); a planta na cadeia real repõe os ficheiros num trap, com a prova da interrupção (achado 12); e a planta da paridade numa construção real (achado 9)",
+    "f90dd7258ecee0daa8f04f31ae60cf19684b127d PP1: a leitura a frio do Codex gpt-5.6-sol (cinco plantas em cinco, e quatro achados reais do bloco) com o registo das plantas",
+    "88ae8c47cc83932fe8fcfee26c8145b4096b9845 CI1b: o mapa do repositório posto em dia (o §1 com a paridade das línguas uma vez por processo, o §3 com a corrida «portão» e o verify depois do build, o §5 com os tempos medidos por portão, duas armadilhas no §7; o conferir-mapa acha as 84 citações), a M38 no registo das melhorias (a guarda da paridade a cada chamada era 53,9 % da construção do Astro), e os tempos de uma corrida a lerem as linhas que o GitHub escreve como ##[group]",
+    "e8d02c07bd0c5b7eaff835e357df45fe30c0fb4e CI1b: o mapa aponta o inventário da passagem, que regista também as leituras",
+    "63a19d612a2ac3f832aa4a4993c73ef7dd80dabe PP1b: a pesquisa da primeira página provada a interagir, nas duas edições, com e sem guião",
+    "6dd83957810be1f9d8a7e4dcaddb44398f5e009f PP1b: as dez páginas das entradas conferidas no mapa do sítio construído",
+    "e9b0116bbc6777ca49840f678eb4873abf3a7d28 PP1b: o mínimo de três blocos também na cadeia do build, e a pesquisa da primeira página no check:primeira",
+    "adfd389324fbb693b8529a7c9ab2215885c671dd PP1b: o mapa dos construtores com os sinais na cadeia do build, a pesquisa da primeira página e as entradas no mapa do sítio",
+    "72efd67004f21cc7896a7feb728b11ea676d7139 C1f: entregar as provas dos acessos, os portões e os recibos",
+    "e520a402b7949d6f26fde4edff949c99aadf6d74 CI1b: o inventário reduz os caminhos da casa ao que não diz nada da máquina (e o cruzamento faz-se sobre eles, o que só pode juntar caminhos); a planta da paridade guarda as primeiras linhas de rota e as da guarda; e o guião das medidas lê as provas da passagem",
+    "87e3f6cd8072f54071c693a0cee6b0910b778d3e PP1b: as capturas e as páginas congeladas da cabeça dos portões, os três portões da passagem, o relatório com a secção PP1b e a resposta curta",
+    "58543abdbd24433d2e78be469611842593e45f5c C1g: a quarta leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco; a conferência da privacidade na construção de produção dependia da máquina e da história do Git), com o registo das plantas, e o guião da passagem C1g, a última antes da aterragem",
+    "d556156f3bd9c7a305ae7c6ce42567f43e2da186 C1g: reservar a privacidade ao verify e excluir nomes genéricos de pasta",
+    "d007138f8eea7449842ad69b07cc8066a610916e C1g: conferir o valor na página e limitar as frases e o tracejado ao que os dados sabem",
+    "a87e77aabb9dda195c087c55792d95e8be350b9e C1g: afinar as razões do PRR e registar a data e as contagens da edição local",
+    "d1affee7a57c73e316f663270ad778eb88afb321 C1g: levar a dependência da contagem para a cópia isolada da travessia",
+    "0cbee822a307ee991ca3102e5fd114cb95c03c39 CI1b: os três portões a 0 na cabeça e520a402 (em portoes/ci1b/, cada um no seu comando, com o código escrito num ficheiro depois de o processo acabar), a construção do portão igual byte a byte à de partida, os cinco manifestos das construções comparadas, o inventário com as leituras (0 pares com contacto), a paridade numa construção real, a planta interrompida reposta, a primeira corrida no GitHub lida na API, o medidas.json com 144 medições lidas, a secção CI1b do relatório com as frases da primeira entrega corrigidas, e a resposta curta da passagem",
+    "ee44052dc0fc1f3444a7c9da2fa0f1f6bc54abdb PP1b: a releitura a frio do Codex (gpt-5.6-sol), com as cinco plantas achadas, e a triagem do lugar de direção no cabeçalho",
+    "384dc77c099aae3e2116e73dde6189a506c8d067 CI1b: o mandato da passagem de correção, à letra, no registo do bloco",
+    "d86817b627a5be6c7d10f0e52596476c7e943fe8 C1g: entregar as capturas finais, os portões e a retificação do relatório",
+    "d049d1f78559bdf9a328dd3ce468a7b38a1a8bf8 CI1: a segunda corrida medida no GitHub (a 36489174336, na cabeça 0cbee822: 9,9 minutos, as três células verdes) e a planta vermelha num ramo para deitar fora (a 36489295961: o check:css a falhar de propósito no grupo fecha a célula U e deixa o portao vermelho), lidas na API com o guião do bloco; o ramo da planta foi apagado",
+    "eb0b5a4675240f84a8217c01fd9d581d26258a82 CI1b: a releitura a frio do Codex (gpt-5.6-sol), com as cinco plantas achadas, a conta da terceira acertada no registo, e a triagem do lugar de direção no cabeçalho",
+    "a62722f8b1f4b62c50971e7ae987f4ab6ef6dd08 CI1: juntar ao ramo o C1 antes da aterragem (o ramo c1-2026-09-28 em d86817b6): o verify do C1, com a conferência da privacidade, e o passo novo do CI1; as linhas M35 a M37 do C1 antes da M38 do CI1",
+    "7b28723266f87747248d989010fed631c84c57ba PP1: juntar ao ramo o CI1 com o C1 antes da aterragem (o ramo ci1-2026-09-28 em a62722f8): o verify com as três conferências novas (a privacidade do C1, a primeira página e os sinais do PP1) e o passo do CI1; no inventário e nas revisões, as secções do C1 antes da do PP1",
+    "ea0193bdc636395307f08a74a72c06365a1d080e C1h: a quinta leitura a frio do C1 pelo Claude Opus 5.5 (quatro plantas em cinco; a guarda da pasta pessoal deixara de procurar o nome sozinho nesta máquina), com o registo das plantas e a triagem no cabeçalho, e o guião da passagem C1h",
+    "7f97df72183b212ec0125e63e048c1c7bc9fca7f PP1: os três portões e o inventário das conferências na cabeça da junção com o CI1 e o C1 (7b287232), pelo lugar de direção: o check:primeira, conferência nova do verify, entra no grupo lado a lado com 0 pares com contacto em 18 conferências",
+    "c0693ffc9ad51691a3fb733a2fd524bd1cc0f8bd C1h: proteger o nome da pasta pessoal sem proibir diretórios genéricos",
+    "c5500d08ff9b236b5596a13f6d7d1c9f26c41ec7 C1h: entregar as capturas do PRR, os custos e as provas da guarda corrigida",
+    "4ec353fb6a3ca06275871906471118437a9cb67a PP1: juntar ao ramo a passagem C1h do C1 (o ramo c1-2026-09-28 em c5500d08: a guarda da pasta pessoal reposta, as capturas do PRR e os custos), para os três blocos aterrarem na mesma avançada de main",
+    "c1c2f771b78486cc17419a40d580423e6e310f92 Os registos de 28 e 29.09: a §1.135 (o C1, lido a frio seis vezes), a §1.136 (a primeira página de um leitor comum) e a §1.137 (a corrida «portão» em um terço do tempo); a sexta leitura a frio do C1 com as plantas; a I169 e a I170 alargadas, e as I171 a I174 abertas; a M37 medida; e as linhas do diretor (a primeira página no ar, o nome de utilizador na história pública)",
+    "638247f7408e4943962001e8ed764540b8b6389d A cópia do prompt da sessão seguinte (depois de 29.09.2026, de manhã), com o estado lido por estado.py: a aterragem dos três blocos à espera do diretor, e a ordem do que se faz a seguir",
+    "f1f2c88fcb1419a8dc68390a46bc2b310ebaba6c Os registos de 29.09: a I174 abria de novo a I157 (o nome de utilizador da máquina na árvore pública, à espera da decisão do diretor desde 26.09); a I157 fica com a recontagem, a I174 só com a lista das contas genéricas do detetor, e a linha duplicada do diretor sai",
+    "2300a89829e5d1e3c9222a027e54c3f2f1dc356d Redação a pedido do diretor (29.09.2026): o nome de utilizador da máquina, o nome do diretor e o seu correio saem da árvore pública, em 264 ficheiros de texto, pelo guião do lugar de direção; fica só o oráculo do portão (scripts/textos-aprovados.json), que o gate:html e o check:lingua leem para exigir que o nome não chegue a página nenhuma",
+    "7f1932f157426a3b6d9d8a0c909b18f9b03507dc §1.138: o detetor do nome procura as duas formas (a inteira e a do primeiro e do último nome), com um conhecido-positivo por forma; o documento alojado do Alentejo e do Algarve em inglês redigido e declarado no manifesto; a auditoria dos segredos e dos dados pessoais, só com contagens; a I157 fechada na árvore, as I175 e I176 abertas, a M39, e o que fica ao diretor",
+    "dac0f242b17292ba8ef0e5fff303aa23bf0f2a56 A cópia do prompt da sessão seguinte posta em dia com a §1.138 (a redação e a auditoria de 29.09) e o estado lido de novo",
+    "b4d3b8e89d287b7153b181839050839c2447b26f §1.138: a frase do diretor sobre a história do Git deixa de dizer um número de linhas do livro-razão que o check:registo lia como a contagem de todas (a forma nova nomeia as linhas do PRR de Évora sem número); a contagem dos 205 ficheiros entra na auditoria",
+    "30d43952aa0de5aeaf21e25572deb32e9869fe6e §1.138: os resumos dos dois briefs isentos que a redação mudou (o P1 e o P2, que nomeavam o diretor) postos em dia pelo check-briefs.py --escrever-isentos, num diff que só troca esses dois resumos",
+    "b3c761396206acaa1f8ecf76f632f636063fb8ea §1.138: a leitura a frio do Codex (cinco plantas em cinco) e a triagem; o nome do ministro da Defesa Nacional reposto na lista do Governo (o único terceiro que a redação atingira); a atribuição do documento alojado do Alentejo e do Algarve reduzida a «Prepared by Claude (claude-fable-5)», com os resumos e as medidas novas no manifesto; as provas da auditoria (os relatórios do gitleaks com os valores redigidos, o do motor só em resumo, o conhecido-positivo e a planta da página antiga); a I177 aberta",
+    "3645910b58d89c16117c76902ce16089e53c93dd A cópia do prompt da sessão seguinte com a I177",
+    "8cb6f7a893e8bb500c0a66b840019b89b6fc303e §1.139: o guião da aterragem passa para o repositório (scripts/aterrar.sh: confere antes de mexer, para no primeiro passo que falhar, tem ensaio, não escreve caminhos da máquina), com as provas do ensaio; o registo da aterragem de 29.09 às 12:03 UTC; a M40; e a regra que o diretor junta para o autorizar",
+    "341832bf3d9729fd10a7d4fe0939dd9fc04a626d UE1: o brief de onde Portugal fica entre os 27 (a faixa da União nos cartões das dez medidas da primeira página), com o §0 medido pelo guião do brief e os 27 países lidos na API do Eurostat pelo lugar de direção",
+    "1e0819fb397ed669944a9c7a92b8b772e4c4d6a8 UE1: as dez linhas de série por país atravessam do motor, com a tabela dos nomes dos 27",
+    "5c9a8563236fe83f10863fa12f6d1c159c86682f UE1: o livro-razão lê as séries (as regras S1 a S8 no ledger:check, e a travessia no check:cruzamento)",
+    "462e35de315deba4d91cf19bab063853d3976a7b UE1: o recibo de cada série, nas duas edições, e as origens das séries no portão de HTML",
+    "6ea3f6c33b874fbdfe76f5f7990df44b2000a395 UE1: a faixa da União nos cartões das dez medidas, com a frase do lugar de Portugal, e a F19 e a K18 que a refazem dos pontos",
+    "b4c773988e6c8165661f0ec5c3e574455eb56e9b UE1: a prova das palavras da frase (acertos-ue1.py), o acerto F0 dito, e as duas datas do recibo em linhas próprias",
+    "0da6fe2aa1692a3db82dce5811e683aca6780558 UE1: tirar a importação que a célula da faixa não lê (numeroDoPortao)",
+    "894b2526787764ff8f320a6b193a23d4e7bb370d UE1: o caminho no cabeçalho do recibo de uma série (a L5 do check:lugar)",
+    "d88885958683f180c583b52f24d7b7be46c118ec UE1: o mapa do repositório com a rota das séries e a secção do UE1",
+    "b79310d6455f18f1a2c50e0ee772ac0989b200c9 UE1: as provas do bloco (os portões da cabeça d8888595 lidos de ficheiro, as 15 plantas, as 40 capturas, as 200 medições das faixas nas cinco larguras, o programa do typecheck, as corridas do motor e os pedidos), o medidas.json, o relatório e a resposta do construtor",
+    "d0a364928a79b661e5370b52881cdd651b123723 UE1b: o ordinal inglês do lugar de Portugal (o acerto F4, «ranks 15th from the highest»), a ressalva da fonte nas pontas da faixa pelas palavras declaradas em vez da letra crua, e o que quer dizer cada marca ao lado da tabela do recibo da série, com a definição da resposta do Eurostat",
+    "39f34d59674c4550f1b7da66ede4c0c91d9acb4b UE1b: a porta do recibo da linha portuguesa de cada medida para a sua série dos países da União, no bloco «O enquadramento», nas dez medidas e nas duas edições",
+    "d65feab348ac002bd16d69c11a8b8f2d42ef91b2 UE1b: o mapa do repositório com o ordinal inglês, as ressalvas da fonte, a legenda das marcas do recibo da série e a porta do recibo da linha portuguesa, e as citações que as linhas novas deslocaram postas em dia (conferir-mapa: 126 no sítio, 0 longe, 0 por encontrar)",
+    "e4830cb28213820060f9ca8f63cb8e34a157d31c UE1b: as provas da passagem de correção (os portões da cabeça d65feab3 lidos de ficheiro, as conferências entre os commits, as 17 plantas, as 70 capturas, as 200 faixas medidas outra vez, o custo), o medidas-ue1b.json, a secção UE1b do relatório e a resposta curta",
+    "bc4373d717cf6f99c7b1382aa673e7168d05cc45 UE1: a nota do lugar de direção na tabela do §1 do brief (o lugar de Portugal na pobreza é 15.º, a par da Áustria e da Suécia, pela regra do mandato; a tabela ordenara sem empates)",
+    "769287291f7ab0b54160750729781484cb5a50c6 UE1: as linhas novas do inventário das frases (ue1 e ue1b) lidas pelo lugar de direção, com as quatro palavras novas das marcas da fonte conferidas com as definições do Eurostat",
+    "831968b1ece1e2d2385a44435acc791d4bca4183 UE1: a leitura a frio do Codex (quatro plantas em cinco) com o registo das plantas e a triagem do lugar de direção, que conferiu os 27 nomes contra os corpos alojados e os 280 pontos contra a sua própria leitura do Eurostat",
+    "89fa6c6030cd1f07878f34021e00716f21003c93 Regista as provas e a resposta do F2.2b",
+    "3f1dc41db49d8ff0bc43b8bec51e75ecaaab64be UE1c: num extremo empatado, cada país da ponta da faixa com o seu valor e a sua ressalva da fonte, e não só o primeiro (o achado 5 da leitura a frio)",
+    "fcf5841778e271026fb2164a053ea7e379a580f2 UE1c: o que cada medida conta, por baixo do título do recibo da sua série, com a frase da leitura do cartão (os achados 9 e 10 da leitura a frio)",
+    "c0eec2a6927abe5969a6f6f55fd7dd9f7be67617 UE1c: o mapa do repositório com os extremos empatados, o que cada medida conta no recibo da série e a armadilha da média europeia calada, e as citações que as linhas novas deslocaram postas em dia (conferir-mapa: 135 no sítio, 0 longe, 0 por encontrar)",
+    "9b4b4f2a568d3cc7c487aa6567a775ea2ef6b9c9 UE1c: as provas da passagem depois da leitura a frio (os portões da cabeça c0eec2a6 lidos de ficheiro, as conferências entre os commits, as 4 plantas, as 70 capturas das cabeças dos recibos, o custo), o medidas-ue1c.json, a secção UE1c do relatório com o ponto onde parei (a §1.124 contra a faixa do cartão da sobrecarga no total), as duas frases das 12 páginas corrigidas para 10, e a resposta curta",
+    "d4428336ecd0fb6d798329b70d3ca3b8606662e5 F2.2b: juntar main ao ramo antes da passagem de correção (C1, PP1, CI1, a redação de 29.09 e o guião da aterragem), pelo lugar de direção: no registo das melhorias, as linhas M37 a M40 de main e a linha do F2.2b renumerada M41, dentro da tabela; no §2 da frescura, a forma de main da linha datada (a redação de 29.09, em português certo), que substitui a do construtor",
+    "b057626bd2e3bba554f0ceb7269a9f5b6373abea F2.2c: a leitura a frio do F2.2b pelo Claude Opus 5.5 (cinco plantas em cinco), com o registo das plantas e a triagem do lugar de direção no cabeçalho, e o guião da passagem de correção do Codex (a poda das quatro reconferências de volta com a guarda exata, a guarda antes de qualquer push para o repositório público, o vigia sem alarmes repetidos nem falsos, o despacho à mão do vigia de volta, o limiar pela causa, o varrimento do portátil igual ao de hoje, e as plantas e as provas que faltavam)",
+    "9ecc5c8bbbfc0f460a62569a711cd6601334bee9 F2.2c: corrigir a ordem da publicação e a natureza das medidas",
+    "cbe6866d50558624a5f4209445decb5891103b01 UE1d: a média da União volta ao cartão da sobrecarga do custo da habitação no total, e nunca sem a ressalva da Comissão (a §1.140 do lugar de direção)",
+    "13b24aac2d093258cc67e5054079687fc0a1b477 UE1d: o que cada medida conta, no recibo da série, com a definição declarada da medida, nas dez séries e nos vinte recibos",
     "de17f63e86a1754e0cf2667bb04c9a1fa34696e9 UE1d: o mapa do repositório com a média da União de volta ao cartão da sobrecarga no total com a ressalva, a K14 na forma nova e a definição declarada no recibo da série, e as citações que as linhas novas deslocaram postas em dia (conferir-mapa: 138 no sítio, 0 longe, 0 por encontrar)",
-    "cb1600b6e147f2bdc05f73396404f344b3495c2b F2.2c: registar as provas finais e a resposta do construtor",
-    "99b9f73a8221d4f012047ec7dfeaa5768a84c0c2 UE1d: o construtor da prova do check:cartao lê a ressalva declarada sem rebentar quando a declaração não a tem, e a K14 diz porquê",
-    "ff0465368618af80d13dfe16c392bb7aa6b2da6b UE1d: as provas da passagem da §1.140 e das definições (os portões da cabeça 99b9f73a lidos de ficheiro, e os da primeira corrida em de17f63e; as conferências entre os commits; as 8 plantas, e a primeira corrida delas com a planta da declaração a rebentar; as 140 capturas; as medidas com o conhecido-positivo; a secção UE1d do relatório e a resposta curta; e o comando da UE1b que dizia «doze páginas»)",
-    "df1c262242dc94f5b6aef8d8e01f9e554209baf2 F2.2d: a releitura a frio da F2.2c pelo Claude Opus 5.5 (cinco plantas em cinco), com o registo das plantas e a triagem do lugar de direção no cabeçalho, e o mandato da passagem F2.2d do Codex (as plantas do varrimento sem depender de um master local, que o portão do motor no GitHub não tem; o relatório de volta ao bloco inteiro; a recusa e o TLS num runner ditos e provados pela I116; o limiar à parte das linhas e com as mensagens do portátil de volta; e as plantas e as provas que faltavam)",
-    "aba0a48b750ac9aae9afcd2998e7620fdce52224 UE1: as decisões em vigor nos ficheiros de um bloco (scripts/leituras/decisoes-em-vigor.py, a M42, com o conhecido-positivo que o faz sair com 2), depois dos dois choques de 29.09 com decisões escritas no código tocado (a §1.92(2) no F2.2b, a §1.124 no brief do UE1); a I178 (o guião dos acertos do L1 já não descreve o ficheiro das leituras desde o RP1); a revisão ue1d do inventário lida pelo lugar de direção; e a M40 em vigor com a regra do diretor",
-    "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1 F2.2d: repor o relatório do bloco e a proveniência das provas",
-    "a4c202be15e6fe17b31cdebfc6e68cd828d1de2c UE1e: a definição do índice harmonizado no recibo da série sem «em Portugal» (a forma do recibo da série, com as mesmas origens), o recibo a usá-la onde existe, e o portão de HTML a conferir cada recibo contra a forma que deve usar, que a forma é a pergunta do cartão sem o lugar, e que a definição de nenhum recibo de série nomeia Portugal",
-    "9d696d3cdda09325a24f9a6c8883118e0808e731 UE1e: o mapa do repositório com a forma da definição para o recibo da série (a do índice harmonizado, sem o lugar) e as citações do portão de HTML que as linhas novas deslocaram, remapeadas (conferir-mapa: 141 no sítio, 0 longe, 0 por encontrar)",
-    "ad4722fa92bafcacf7b99d3da56363f3b58dcbed F2.2d: guardar as provas e a paragem na referência pessoal do guião",
-    "aca6ea5b515a052b281f253c9984d4bf972f84ad UE1e: as provas da passagem da forma do recibo da série (os portões da cabeça 9d696d3c lidos de ficheiro, as conferências entre os commits, as decisões em vigor sobre o intervalo, as 5 plantas com o controlo, as 20 capturas dos dois recibos do índice harmonizado, as medidas com o conhecido-positivo, a secção UE1e do relatório e a resposta curta)",
-    "3a37b809ea71d98af4fe9e0c89f947f2f1995c26 §1.140: onde Portugal fica entre os 27 (as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, as definições declaradas nos recibos das séries sem o lugar), com a segunda e a terceira leituras a frio do Codex (cinco plantas em cinco nas duas) e as triagens do lugar de direção",
-    "e15037869c95a937e00c9ae60948d39d29463344 F2.2d: fechar a referência fixa e a prova do clone raso",
-    "c1559d893fdc90eb83377ee92ee7daf99cdd78af F2.2e: a terceira leitura a frio do F2.2b pelo Claude Opus 5.5 (cinco plantas em cinco, nenhum achado bloqueante no código), com o registo das plantas e a triagem do lugar de direção no cabeçalho; e a decisão do lugar de direção durante a F2.2d sobre a cópia fixa do guião mensal (só as duas linhas pessoais trocadas por marcas), agora com os prompts",
-    "e97d7da8d81189691df84691ae7f538a032580d0 F2.2e: juntar main ao ramo depois da aterragem do UE1 (a §1.140, a M42, a I178 e o guião das decisões em vigor), pelo lugar de direção: no registo das melhorias, a M40 de main com o estado posto em dia, a M41 do F2.2b e a M42 de main, por esta ordem",
-    "2ea04eef166359723bcafc05a68630456e9816e4 F2.2e: o mandato da passagem do Codex (o master do motor com o UE1, as plantas das duas guardas que não mordiam, e as provas que o relatório afirma)"
+    "0b6446d4920171b9b692328ed36127c28794a2a1 F2.2c: registar as provas finais e a resposta do construtor",
+    "ac39025efaa4e63b605ad65d8b30bb15249cc555 UE1d: o construtor da prova do check:cartao lê a ressalva declarada sem rebentar quando a declaração não a tem, e a K14 diz porquê",
+    "d126adf0e9a0d2b3601095644c2d73318dc4fd8f UE1d: as provas da passagem da §1.140 e das definições (os portões da cabeça ac39025e lidos de ficheiro, e os da primeira corrida em de17f63e; as conferências entre os commits; as 8 plantas, e a primeira corrida delas com a planta da declaração a rebentar; as 140 capturas; as medidas com o conhecido-positivo; a secção UE1d do relatório e a resposta curta; e o comando da UE1b que dizia «doze páginas»)",
+    "d32e2558f18f68120325449f10bbe4ed7979cf7e F2.2d: a releitura a frio da F2.2c pelo Claude Opus 5.5 (cinco plantas em cinco), com o registo das plantas e a triagem do lugar de direção no cabeçalho, e o mandato da passagem F2.2d do Codex (as plantas do varrimento sem depender de um master local, que o portão do motor no GitHub não tem; o relatório de volta ao bloco inteiro; a recusa e o TLS num runner ditos e provados pela I116; o limiar à parte das linhas e com as mensagens do portátil de volta; e as plantas e as provas que faltavam)",
+    "6ff9e8c1fa94b39034fcd8ffd5c42e3c7bdf6947 UE1: as decisões em vigor nos ficheiros de um bloco (scripts/leituras/decisoes-em-vigor.py, a M42, com o conhecido-positivo que o faz sair com 2), depois dos dois choques de 29.09 com decisões escritas no código tocado (a §1.92(2) no F2.2b, a §1.124 no brief do UE1); a I178 (o guião dos acertos do L1 já não descreve o ficheiro das leituras desde o RP1); a revisão ue1d do inventário lida pelo lugar de direção; e a M40 em vigor com a regra do diretor",
+    "985c977dee92f5dfcabb6823d8ced49ea8753318 F2.2d: repor o relatório do bloco e a proveniência das provas",
+    "4ad0dd4ab85a0d500becc1937f7e0f5ac734af99 UE1e: a definição do índice harmonizado no recibo da série sem «em Portugal» (a forma do recibo da série, com as mesmas origens), o recibo a usá-la onde existe, e o portão de HTML a conferir cada recibo contra a forma que deve usar, que a forma é a pergunta do cartão sem o lugar, e que a definição de nenhum recibo de série nomeia Portugal",
+    "0dd05dd69e521be58503732e164e2c9df6e9e6e8 UE1e: o mapa do repositório com a forma da definição para o recibo da série (a do índice harmonizado, sem o lugar) e as citações do portão de HTML que as linhas novas deslocaram, remapeadas (conferir-mapa: 141 no sítio, 0 longe, 0 por encontrar)",
+    "6b2b2f38e30003611983ed76747fe55cf456c548 F2.2d: guardar as provas e a paragem na referência pessoal do guião",
+    "7b305997c0394487c7fe9e06107c7b5de2c9b35b UE1e: as provas da passagem da forma do recibo da série (os portões da cabeça 0dd05dd6 lidos de ficheiro, as conferências entre os commits, as decisões em vigor sobre o intervalo, as 5 plantas com o controlo, as 20 capturas dos dois recibos do índice harmonizado, as medidas com o conhecido-positivo, a secção UE1e do relatório e a resposta curta)",
+    "160cbaba2e73e3d965650a4d7e40a55e37a1c324 §1.140: onde Portugal fica entre os 27 (as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, as definições declaradas nos recibos das séries sem o lugar), com a segunda e a terceira leituras a frio do Codex (cinco plantas em cinco nas duas) e as triagens do lugar de direção",
+    "44688734de482865030ecb644728399f50ebaebc F2.2d: fechar a referência fixa e a prova do clone raso",
+    "07220bd0212f25d84434166c8c1696ace13f764c F2.2e: a terceira leitura a frio do F2.2b pelo Claude Opus 5.5 (cinco plantas em cinco, nenhum achado bloqueante no código), com o registo das plantas e a triagem do lugar de direção no cabeçalho; e a decisão do lugar de direção durante a F2.2d sobre a cópia fixa do guião mensal (só as duas linhas pessoais trocadas por marcas), agora com os prompts",
+    "15916222e988b4a8c223b93ab0fe7eac6c78a5dd F2.2e: juntar main ao ramo depois da aterragem do UE1 (a §1.140, a M42, a I178 e o guião das decisões em vigor), pelo lugar de direção: no registo das melhorias, a M40 de main com o estado posto em dia, a M41 do F2.2b e a M42 de main, por esta ordem",
+    "ea8b7a5360a2e178de241daac1ba867a32acf36f F2.2e: o mandato da passagem do Codex (o master do motor com o UE1, as plantas das duas guardas que não mordiam, e as provas que o relatório afirma)"
   ],
   "commits_dos_relatorios": {
-    "f22b": "77d9e4076eb8098a45e6ca0cd3c27964d54a9301",
-    "f22c": "cb1600b6e147f2bdc05f73396404f344b3495c2b",
-    "f22d": "e15037869c95a937e00c9ae60948d39d29463344",
+    "f22b": "89fa6c6030cd1f07878f34021e00716f21003c93",
+    "f22c": "0b6446d4920171b9b692328ed36127c28794a2a1",
+    "f22d": "44688734de482865030ecb644728399f50ebaebc",
     "f22e": "o último commit desta passagem contém o relatório, as provas e RESPOSTA-construtor-f22e.md; o SHA é dado fora do ramo"
   },
   "alteracoes_protegidas": [],
   "brief_reproduzido": {
     "brief": "design/observatorio/BRIEF-F22b-as-corridas-prontas-a-armar.md",
     "guiao": "design/observatorio/medidas/BRIEF-F22b.py",
-    "cabeca_lida": "a677770f",
+    "cabeca_lida": "04438bb9",
     "medidas": [
       {
         "nome": "portao_corre_em_qualquer_ramo",
         "valor": true,
-        "comando": "git show a677770f:.github/workflows/portao.yml · o bloco on: tem push e não tem branches",
+        "comando": "git show 04438bb9:.github/workflows/portao.yml · o bloco on: tem push e não tem branches",
         "conhecido_positivo": {
           "o_que": "o mesmo detetor vê um filtro de ramos num bloco construído",
           "encontrado": true
@@ -176,7 +176,7 @@
       {
         "nome": "linhas_do_livro",
         "valor": 3009,
-        "comando": "git ls-tree a677770f -- ledger/claims/ · os .yml",
+        "comando": "git ls-tree 04438bb9 -- ledger/claims/ · os .yml",
         "conhecido_positivo": {
           "o_que": "a lista traz a linha da inflação",
           "encontrado": true
@@ -203,7 +203,7 @@
       {
         "nome": "commits_do_painel_semanal",
         "valor": 6,
-        "comando": "git log --format='%h %s' a677770f · os assuntos que começam por «Painel semanal de»",
+        "comando": "git log --format='%h %s' 04438bb9 · os assuntos que começam por «Painel semanal de»",
         "conhecido_positivo": {
           "o_que": "o de 28.09 é um deles",
           "encontrado": true
@@ -212,7 +212,7 @@
       {
         "nome": "ficheiros_do_painel_de_28_09",
         "valor": 93,
-        "comando": "git show --name-only 17758ec7 · os ficheiros do commit",
+        "comando": "git show --name-only c1e834fb · os ficheiros do commit",
         "conhecido_positivo": {
           "o_que": "o estado da verificação é um deles",
           "encontrado": true
@@ -385,7 +385,7 @@
     },
     "site-build": {
       "comando": "npm run build",
-      "cabeca": "01362b78a810795ee6870b8a6f439c39b9fe25e0",
+      "cabeca": "c758c51e12471958561069329aa1b86a90abf3c8",
       "inicio": "2026-09-29T19:48:24.284325+00:00",
       "fim": "2026-09-29T19:59:31.748732+00:00",
       "segundos": 667.472,
@@ -396,7 +396,7 @@
     },
     "site-verify": {
       "comando": "npm run verify",
-      "cabeca": "01362b78a810795ee6870b8a6f439c39b9fe25e0",
+      "cabeca": "c758c51e12471958561069329aa1b86a90abf3c8",
       "inicio": "2026-09-29T19:59:37.590626+00:00",
       "fim": "2026-09-29T20:11:23.873455+00:00",
       "segundos": 706.278,
@@ -407,7 +407,7 @@
     },
     "site-typecheck": {
       "comando": "npm run typecheck",
-      "cabeca": "01362b78a810795ee6870b8a6f439c39b9fe25e0",
+      "cabeca": "c758c51e12471958561069329aa1b86a90abf3c8",
       "inicio": "2026-09-29T20:11:24.047803+00:00",
       "fim": "2026-09-29T20:11:24.834187+00:00",
       "segundos": 0.784,
@@ -510,7 +510,7 @@
         "ambiente_declarado": {
           "OEDP_MEDIDAS_JSON": "<sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/brief-reproduzido.json"
         },
-        "cabeca": "fb1dd0dd442684221a5e4aceae3b8ac5491d5546",
+        "cabeca": "b057626bd2e3bba554f0ceb7269a9f5b6373abea",
         "inicio": "2026-09-29T21:29:34.238247+00:00",
         "fim": "2026-09-29T21:30:29.509905+00:00",
         "segundos": 55.271,
@@ -591,7 +591,7 @@
       "conferencia-relatorio-inicial": {
         "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/conferencia-relatorio-detalhe.json",
         "ambiente_declarado": {},
-        "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+        "cabeca": "9ecc5c8bbbfc0f460a62569a711cd6601334bee9",
         "inicio": "2026-09-29T22:04:20.960522+00:00",
         "fim": "2026-09-29T22:04:21.079798+00:00",
         "segundos": 0.119,
@@ -602,7 +602,7 @@
       "conferencia-relatorio": {
         "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/conferencia-relatorio-detalhe.json",
         "ambiente_declarado": {},
-        "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+        "cabeca": "9ecc5c8bbbfc0f460a62569a711cd6601334bee9",
         "inicio": "2026-09-29T22:05:08.478218+00:00",
         "fim": "2026-09-29T22:05:08.571281+00:00",
         "segundos": 0.093,
@@ -613,7 +613,7 @@
       "conferencia-resposta": {
         "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/RESPOSTA-construtor-f22c.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22c/conferencia-resposta-detalhe.json",
         "ambiente_declarado": {},
-        "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+        "cabeca": "9ecc5c8bbbfc0f460a62569a711cd6601334bee9",
         "inicio": "2026-09-29T22:04:20.138773+00:00",
         "fim": "2026-09-29T22:04:20.245131+00:00",
         "segundos": 0.106,
@@ -772,7 +772,7 @@
       "medidor-planta": {
         "comando": "python3 -B <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provar-medidor.py",
         "ambiente_declarado": {},
-        "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+        "cabeca": "9ecc5c8bbbfc0f460a62569a711cd6601334bee9",
         "inicio": "2026-09-29T21:35:13.527964+00:00",
         "fim": "2026-09-29T21:35:13.681444+00:00",
         "segundos": 0.153,
@@ -875,7 +875,7 @@
       "build": {
         "comando": "npm run build",
         "ambiente_declarado": {},
-        "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+        "cabeca": "9ecc5c8bbbfc0f460a62569a711cd6601334bee9",
         "inicio": "2026-09-29T21:38:14.466043+00:00",
         "fim": "2026-09-29T21:42:06.163860+00:00",
         "segundos": 231.698,
@@ -886,7 +886,7 @@
       "typecheck": {
         "comando": "npm run typecheck",
         "ambiente_declarado": {},
-        "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+        "cabeca": "9ecc5c8bbbfc0f460a62569a711cd6601334bee9",
         "inicio": "2026-09-29T22:00:36.865475+00:00",
         "fim": "2026-09-29T22:00:37.693676+00:00",
         "segundos": 0.828,
@@ -897,7 +897,7 @@
       "verify": {
         "comando": "npm run verify",
         "ambiente_declarado": {},
-        "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+        "cabeca": "9ecc5c8bbbfc0f460a62569a711cd6601334bee9",
         "inicio": "2026-09-29T21:43:32.177392+00:00",
         "fim": "2026-09-29T21:57:41.914627+00:00",
         "segundos": 849.736,
@@ -958,7 +958,7 @@
       "falhas": 0,
       "erros": 0,
       "passou": true,
-      "sitio_real_cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+      "sitio_real_cabeca": "9ecc5c8bbbfc0f460a62569a711cd6601334bee9",
       "nomes": [
         "test_api_cabecalho_da_versao",
         "test_api_erro_permanente_para_logo_com_causa",
@@ -1003,7 +1003,7 @@
       "segundos": 3191.144,
       "limite": "Fotografia anterior ao commit das provas e à resposta final; sem custo monetário medido."
     },
-    "cabeca_dos_portoes_do_sitio": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+    "cabeca_dos_portoes_do_sitio": "9ecc5c8bbbfc0f460a62569a711cd6601334bee9",
     "conferencia_da_aterragem": "Cabeça final contra cabeça dos portões: a cargo do lugar de direção."
   },
   "f22d": {
@@ -1127,9 +1127,9 @@
       "conferencia-relatorio-parcial": {
         "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-detalhe.json",
         "ambiente_declarado": {},
-        "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+        "cabeca": "985c977dee92f5dfcabb6823d8ced49ea8753318",
         "codigo_executado": {
-          "cabeca_base": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+          "cabeca_base": "985c977dee92f5dfcabb6823d8ced49ea8753318",
           "arvore": "7be94f860e3f3d7d164915c756960e28506098f0",
           "tipo": "arvore_de_trabalho",
           "alterados": [
@@ -1217,9 +1217,9 @@
       "conferencia-relatorio": {
         "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-relatorio-detalhe.json",
         "ambiente_declarado": {},
-        "cabeca": "ad4722fa92bafcacf7b99d3da56363f3b58dcbed",
+        "cabeca": "6b2b2f38e30003611983ed76747fe55cf456c548",
         "codigo_executado": {
-          "cabeca_base": "ad4722fa92bafcacf7b99d3da56363f3b58dcbed",
+          "cabeca_base": "6b2b2f38e30003611983ed76747fe55cf456c548",
           "arvore": "c8c5525a02374c8f336c254afd5592386a631879",
           "tipo": "arvore_de_trabalho",
           "alterados": [
@@ -1310,9 +1310,9 @@
       "conferencia-resposta-parcial": {
         "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/RESPOSTA-construtor-f22d.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-detalhe.json",
         "ambiente_declarado": {},
-        "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+        "cabeca": "985c977dee92f5dfcabb6823d8ced49ea8753318",
         "codigo_executado": {
-          "cabeca_base": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+          "cabeca_base": "985c977dee92f5dfcabb6823d8ced49ea8753318",
           "arvore": "767396d6497b46d0e5dcea823fdc2f81ed3b764c",
           "tipo": "arvore_de_trabalho",
           "alterados": [
@@ -1394,9 +1394,9 @@
       "conferencia-resposta": {
         "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/RESPOSTA-construtor-f22d.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22d/conferencia-resposta-detalhe.json",
         "ambiente_declarado": {},
-        "cabeca": "ad4722fa92bafcacf7b99d3da56363f3b58dcbed",
+        "cabeca": "6b2b2f38e30003611983ed76747fe55cf456c548",
         "codigo_executado": {
-          "cabeca_base": "ad4722fa92bafcacf7b99d3da56363f3b58dcbed",
+          "cabeca_base": "6b2b2f38e30003611983ed76747fe55cf456c548",
           "arvore": "e830c1cb77699018c29af2a9c99c4f8830166033",
           "tipo": "arvore_de_trabalho",
           "alterados": [
@@ -1566,9 +1566,9 @@
       "medidor-planta": {
         "comando": "python3 -B <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provar-medidor.py",
         "ambiente_declarado": {},
-        "cabeca": "df1c262242dc94f5b6aef8d8e01f9e554209baf2",
+        "cabeca": "d32e2558f18f68120325449f10bbe4ed7979cf7e",
         "codigo_executado": {
-          "cabeca_base": "df1c262242dc94f5b6aef8d8e01f9e554209baf2",
+          "cabeca_base": "d32e2558f18f68120325449f10bbe4ed7979cf7e",
           "arvore": "9e8bb1e604295ebe27e8d1f82a4ea4ccd228ee11",
           "tipo": "arvore_de_trabalho",
           "alterados": [
@@ -1806,9 +1806,9 @@
       "build": {
         "comando": "npm run build",
         "ambiente_declarado": {},
-        "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+        "cabeca": "985c977dee92f5dfcabb6823d8ced49ea8753318",
         "codigo_executado": {
-          "cabeca_base": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+          "cabeca_base": "985c977dee92f5dfcabb6823d8ced49ea8753318",
           "arvore": "803859ee5384c06a13507515a87c3a91afba6fc4",
           "tipo": "arvore_de_trabalho",
           "alterados": [
@@ -1827,9 +1827,9 @@
       "typecheck": {
         "comando": "npm run typecheck",
         "ambiente_declarado": {},
-        "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+        "cabeca": "985c977dee92f5dfcabb6823d8ced49ea8753318",
         "codigo_executado": {
-          "cabeca_base": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+          "cabeca_base": "985c977dee92f5dfcabb6823d8ced49ea8753318",
           "arvore": "7d19a4f63ef67e4ec10d8c39b6cd2bf771e7e283",
           "tipo": "arvore_de_trabalho",
           "alterados": [
@@ -1896,9 +1896,9 @@
       "verify": {
         "comando": "npm run verify",
         "ambiente_declarado": {},
-        "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+        "cabeca": "985c977dee92f5dfcabb6823d8ced49ea8753318",
         "codigo_executado": {
-          "cabeca_base": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+          "cabeca_base": "985c977dee92f5dfcabb6823d8ced49ea8753318",
           "arvore": "dabe41f0552694c9c587406c0b3a05585f05800b",
           "tipo": "arvore_de_trabalho",
           "alterados": [
@@ -2153,7 +2153,7 @@
       "limite": "Inclui o fecho dos segmentos anteriores às retomas. A F2.2d termina na fotografia do seu contador, antes do último commit e da resposta. Símbolos incluem cache; segundos são tempo decorrido, sem os intervalos entre passagens; não há medição monetária."
     },
     "prompt_reposto": {
-      "fonte": "fb1dd0dd442684221a5e4aceae3b8ac5491d5546",
+      "fonte": "b057626bd2e3bba554f0ceb7269a9f5b6373abea",
       "ficheiro": "prompts/PROMPT-f22c-construtor.md",
       "sha256_fonte": "fa7d458ea26b986f90d3c171f39881149e3f2c2ef9e3c411b1830f97d0cfb835",
       "sha256_reposto": "fa7d458ea26b986f90d3c171f39881149e3f2c2ef9e3c411b1830f97d0cfb835",
@@ -2165,7 +2165,7 @@
     "fecho": {
       "estado": "Concluída no âmbito do mandato; ações externas por executar fora desta passagem.",
       "motor_cabeca": "7c43b0746f8c43d9ace5cfdcb4d71a79927a6813",
-      "sitio_cabeca_dos_portoes": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+      "sitio_cabeca_dos_portoes": "985c977dee92f5dfcabb6823d8ced49ea8753318",
       "portoes_locais": [
         {
           "comando": "python3 -m core.gate",
@@ -2177,21 +2177,21 @@
         {
           "comando": "npm run build",
           "codigo": 0,
-          "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+          "cabeca": "985c977dee92f5dfcabb6823d8ced49ea8753318",
           "segundos": 79.571,
           "ficheiro": "portoes/f22d/build.codigo"
         },
         {
           "comando": "npm run verify",
           "codigo": 0,
-          "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+          "cabeca": "985c977dee92f5dfcabb6823d8ced49ea8753318",
           "segundos": 541.615,
           "ficheiro": "portoes/f22d/verify.codigo"
         },
         {
           "comando": "npm run typecheck",
           "codigo": 0,
-          "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+          "cabeca": "985c977dee92f5dfcabb6823d8ced49ea8753318",
           "segundos": 0.245,
           "ficheiro": "portoes/f22d/typecheck.codigo"
         }
@@ -2255,10 +2255,10 @@
           "indicators/fixtures/monthly-68318e0.sh",
           "indicators/rotinas_f22c_test.py"
         ],
-        "sitio_cabeca_lida": "ad4722fa92bafcacf7b99d3da56363f3b58dcbed",
-        "sitio_cabeca_dos_portoes": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+        "sitio_cabeca_lida": "6b2b2f38e30003611983ed76747fe55cf456c548",
+        "sitio_cabeca_dos_portoes": "985c977dee92f5dfcabb6823d8ced49ea8753318",
         "mudancas_do_sitio_fora_do_pacote": [],
-        "prompt_igual_a_fb1dd0dd": true,
+        "prompt_igual_a_b057626b": true,
         "decisao_dos_portoes": "Conservar os três portões verdes do sítio: a retoma só altera as provas, conforme o mandato final."
       }
     },
@@ -2322,7 +2322,7 @@
       "falhas": 0,
       "erros": 0,
       "passou": true,
-      "sitio_real_cabeca": "ad4722fa92bafcacf7b99d3da56363f3b58dcbed",
+      "sitio_real_cabeca": "6b2b2f38e30003611983ed76747fe55cf456c548",
       "nomes": [
         "test_api_cabecalho_da_versao",
         "test_api_erro_permanente_para_logo_com_causa",
@@ -2370,7 +2370,7 @@
       "master_local": false,
       "codigo": 1
     },
-    "cabeca_dos_portoes_do_sitio": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1"
+    "cabeca_dos_portoes_do_sitio": "985c977dee92f5dfcabb6823d8ced49ea8753318"
   },
   "f22e": {
     "execucoes": {
@@ -2527,9 +2527,9 @@
       "conferencia-relatorio": {
         "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/LEIA-ME.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/conferencia-relatorio-detalhe.json",
         "ambiente_declarado": {},
-        "cabeca": "2ea04eef166359723bcafc05a68630456e9816e4",
+        "cabeca": "ea8b7a5360a2e178de241daac1ba867a32acf36f",
         "codigo_executado": {
-          "cabeca_base": "2ea04eef166359723bcafc05a68630456e9816e4",
+          "cabeca_base": "ea8b7a5360a2e178de241daac1ba867a32acf36f",
           "arvore": "601fa534bff594b4095b4aa2ade3caf09d40018a",
           "tipo": "arvore_de_trabalho",
           "alterados": [
@@ -2608,9 +2608,9 @@
       "conferencia-resposta": {
         "comando": "python3 -B <sitio>/scripts/leituras/conferir-relatorio.py <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/RESPOSTA-construtor-f22e.md <sitio>/design/especime-v3/medicoes/f22b-2026-09-28 --json <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provas/f22e/conferencia-resposta-detalhe.json",
         "ambiente_declarado": {},
-        "cabeca": "2ea04eef166359723bcafc05a68630456e9816e4",
+        "cabeca": "ea8b7a5360a2e178de241daac1ba867a32acf36f",
         "codigo_executado": {
-          "cabeca_base": "2ea04eef166359723bcafc05a68630456e9816e4",
+          "cabeca_base": "ea8b7a5360a2e178de241daac1ba867a32acf36f",
           "arvore": "33c3c5f31c532272bb4ecb093ae0b9f9eec2649b",
           "tipo": "arvore_de_trabalho",
           "alterados": [
@@ -2797,9 +2797,9 @@
       "medidor-planta": {
         "comando": "python3 -B <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provar-medidor.py",
         "ambiente_declarado": {},
-        "cabeca": "2ea04eef166359723bcafc05a68630456e9816e4",
+        "cabeca": "ea8b7a5360a2e178de241daac1ba867a32acf36f",
         "codigo_executado": {
-          "cabeca_base": "2ea04eef166359723bcafc05a68630456e9816e4",
+          "cabeca_base": "ea8b7a5360a2e178de241daac1ba867a32acf36f",
           "arvore": "7194d3cef737cfc0fd50b1143146cbe9af1b5a2f",
           "tipo": "arvore_de_trabalho",
           "alterados": [
@@ -2955,7 +2955,7 @@
         "medidor-planta": {
           "codigo": 0,
           "ficheiro": "provas/f22e/medidor-planta.codigo",
-          "cabeca": "2ea04eef166359723bcafc05a68630456e9816e4",
+          "cabeca": "ea8b7a5360a2e178de241daac1ba867a32acf36f",
           "arvore": "7194d3cef737cfc0fd50b1143146cbe9af1b5a2f",
           "segundos": 0.037
         }

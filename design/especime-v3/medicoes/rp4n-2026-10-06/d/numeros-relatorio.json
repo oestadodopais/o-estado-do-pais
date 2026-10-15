@@ -15,7 +15,7 @@
     "ocorrencias_restantes_por_diferenca": 616,
     "derivacao": "total do portão menos as duas declarações antigas retiradas; não é uma nova contagem dos HTML históricos",
     "fonte": "portoes-c-iniciais/verify.log",
-    "commit_do_inventario": "b268c343",
+    "commit_do_inventario": "0aaf0c5a",
     "linhas_do_diff": [
       "+| conteudo | Conta as empresas não financeiras atribuídas ao concelho (sistema de contas integradas das empresas). | rp4nc | retirada | RP4N-6: a passagem RP4-n já retirou a qualificação não sustentada; esta declaração antiga ficou por sincronizar no inventário. A frase atual está na secção RP4-n-c. |",
       "+| conteudo | Counts the non-financial enterprises attributed to the municipality (integrated business accounts system). | rp4nc | retirada | RP4N-6: a passagem RP4-n já retirou a qualificação não sustentada; esta declaração antiga ficou por sincronizar no inventário. A frase atual está na secção RP4-n-c. |"

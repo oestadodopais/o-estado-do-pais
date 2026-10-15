@@ -13,7 +13,7 @@ import unittest
 PASTA = Path(__file__).resolve().parent
 SITIO = PASTA.parents[3]
 BASE_MOTOR = '3184e07bbc2b0dc58ce6db740f8e49f7dc428d1d'
-BASE_SITIO = 'c8303a60ebff98f386c67713ff73379dff520790'
+BASE_SITIO = '43035f7620b8051ef4d468094406da045373be36'
 
 
 def guardar(nome, dado):
@@ -323,7 +323,7 @@ def main():
     cabecas = {'motor': git(motor, 'rev-parse', 'HEAD'), 'motor_codigo': codigo,
         'sitio_antes_fecho': git(SITIO, 'rev-parse', 'HEAD'), 'sitio_codigo': codigo_sitio,
         'commits_motor': git(motor, 'log', '--reverse', '--format=%H %s', '3184e07..HEAD').splitlines(),
-        'commits_sitio': git(SITIO, 'log', '--reverse', '--format=%H %s', 'c8303a60..HEAD').splitlines()}
+        'commits_sitio': git(SITIO, 'log', '--reverse', '--format=%H %s', '43035f76..HEAD').splitlines()}
     guardar('cabecas-d.json', cabecas)
     novidade = medir_novidade_real(raiz, [r['id'] for r in finais[-2:]])
     guardar('d/novidade-dar.json', novidade)

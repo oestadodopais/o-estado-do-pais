@@ -7,7 +7,7 @@ scripts/check-briefs.py o corre). Cada medição leva o comando e um conhecido-p
 conseguir ler fica «NÃO LIDO»."""
 import json, re, subprocess, pathlib, os, html
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "2613664f"
+CAB = "d7d2ca24"
 NAO = "NÃO LIDO"
 medidas = []
 def medicao(nome, valor, comando, o_que, encontrado):

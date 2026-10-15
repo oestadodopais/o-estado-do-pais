@@ -2,7 +2,7 @@
 
 *For the A2 builder (Claude Opus), 22.08.2026, branch `pos-fusao-v3`, after A1's commit (rebase nothing; just start from HEAD). Managing seat: Claude Fable 5. Read first: `../ISSUES.md` rows I13 and I14; `src/styles/site.css` lines 700 to 760 (the seal's touch area and the stacking exception list at line 735, with its rationale); `src/styles/inicio.css` from line 1275 (the piece's foot-row rule: «o selo é o maior alvo da peça», 160px, the measured reason); `src/components/InstrumentoConvergencia.astro` (the `.glance`, `.brief-text` and `.brief` rows); `public/js/inicio.js` where it swaps the visible region of the instrument; `tests/inicio/matriz.mjs` §5 («o selo, alvo e aninho»: how the area and the overlapping pairs are measured, and that it measures `.peca` only); `../notas/stage-2.md` around line 497 (how I13 closed for the pieces). No em dashes in anything you write.*
 
-## 0 · What the seat measured (22.08, headless Chromium, `dist/` of `8440781`)
+## 0 · What the seat measured (22.08, headless Chromium, `dist/` of `07c5d10`)
 
 `#convergencia` renders **20** seal anchors (`a.src-chip`): 6 in `.glance` (one per region; the read region visible), 8 in `.brief-text`, 6 in `.brief` (the legend row). Per state, **3 are visible**. At 1280 and 1024, in both editions:
 
@@ -12,7 +12,7 @@
 | sentence | `.brief-text` | 53×19 (EN 61×19) | none | `.brief-text` is in the same list |
 | legend | `.brief` | 53×14 | 44×44 | not in the list; fine |
 
-At 1280 the sentence seal sits at y=4256 and the legend seal at y=4293: a 44px area centred on each would overlap by about 9px (the EN run already lists that pair as overlapping when both are given 44). At 390 the instrument is a 97px door and no seal is visible: mobile is not affected. **`.prov-vals` no longer exists on the home** (`grep -c prov-vals dist/index.html` → 0; it left at `1cac621`): I14's seven seals are gone with the row. `.prov-vals` survives only in `src/views/MunicipiosView.astro` (two rows under the map of `/municipios`, one of them a download link, not a seal) and in the exception list.
+At 1280 the sentence seal sits at y=4256 and the legend seal at y=4293: a 44px area centred on each would overlap by about 9px (the EN run already lists that pair as overlapping when both are given 44). At 390 the instrument is a 97px door and no seal is visible: mobile is not affected. **`.prov-vals` no longer exists on the home** (`grep -c prov-vals dist/index.html` → 0; it left at `3221b05`): I14's seven seals are gone with the row. `.prov-vals` survives only in `src/views/MunicipiosView.astro` (two rows under the map of `/municipios`, one of them a download link, not a seal) and in the exception list.
 
 ## 1 · What to do
 
@@ -24,4 +24,4 @@ At 1280 the sentence seal sits at y=4256 and the legend seal at y=4293: a 44px a
 
 ## 2 · Records and exit
 
-`../ISSUES.md`: I13 closed (the measurement after, both editions, 1280/1024/390, six states), I14 closed by removal (`1cac621`, the grep). `../notas/pos-fusao.md` §A2 with the before/after table and the matrix output. Five gates green (`npm run build`), `npm run typecheck`, `node scripts/ortografia.mjs --verificar` at 0. Screenshots of the instrument at 1280 and 390, PT and EN, into `../capturas/pos-fusao/` (use `tests/inicio/capturas.mjs` if it takes a selector; else a small Playwright call in the note). One commit, Portuguese message in the house's voice, trailers `Co-Authored-By: Claude Opus <noreply@anthropic.com>` and `Claude-Session: <your session URL>`. Report in at most 30 lines: the table after, the pairs count, the matrix cells before/after, the commit, model and tokens. Rough scale: 120k to 200k tokens. Stop and ask if a fix needs a new string, a colour, or a change to the instrument's scale.
+`../ISSUES.md`: I13 closed (the measurement after, both editions, 1280/1024/390, six states), I14 closed by removal (`3221b05`, the grep). `../notas/pos-fusao.md` §A2 with the before/after table and the matrix output. Five gates green (`npm run build`), `npm run typecheck`, `node scripts/ortografia.mjs --verificar` at 0. Screenshots of the instrument at 1280 and 390, PT and EN, into `../capturas/pos-fusao/` (use `tests/inicio/capturas.mjs` if it takes a selector; else a small Playwright call in the note). One commit, Portuguese message in the house's voice, trailers `Co-Authored-By: Claude Opus <noreply@anthropic.com>` and `Claude-Session: <your session URL>`. Report in at most 30 lines: the table after, the pairs count, the matrix cells before/after, the commit, model and tokens. Rough scale: 120k to 200k tokens. Stop and ask if a fix needs a new string, a colour, or a change to the instrument's scale.

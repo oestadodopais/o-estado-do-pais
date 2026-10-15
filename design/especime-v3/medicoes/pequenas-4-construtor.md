@@ -1,7 +1,7 @@
 # Correções pequenas, quarta passagem · o relatório do construtor
 
-*Ramo `pequenas-4-2026-08-29`, saído de `main` `fbcab5e` e rebasado sobre `main`
-`04459c7`. Construtor: Claude Opus 5, 29.08.2026. Quatro commits, cada um verde na
+*Ramo `pequenas-4-2026-08-29`, saído de `main` `d9bfac7` e rebasado sobre `main`
+`c8a0c18`. Construtor: Claude Opus 5, 29.08.2026. Quatro commits, cada um verde na
 cadeia inteira (`npm run build`, `npm run verify`, `npm run typecheck`).*
 
 ---
@@ -10,10 +10,10 @@ cadeia inteira (`npm run build`, `npm run verify`, `npm run typecheck`).*
 
 | commit | o que fecha |
 | --- | --- |
-| `2867241` | I91 · a referência legal do selo das áreas leva `lang="pt-PT"` nas duas edições |
-| `4a9f80b` | I89 · o verbo da frase da série sai dos dois valores, e não da cadeia |
-| `ccbe77d` | a régua da voz passa a ver os rótulos que vivem num `<span>`, e treze entram no inventário |
-| `fc1d013` | `data-nome`, a marca irmã de `data-lugar`, com a verificação que a dos lugares não tem |
+| `a0c2930` | I91 · a referência legal do selo das áreas leva `lang="pt-PT"` nas duas edições |
+| `106e5a1` | I89 · o verbo da frase da série sai dos dois valores, e não da cadeia |
+| `339fc0f` | a régua da voz passa a ver os rótulos que vivem num `<span>`, e treze entram no inventário |
+| `79a4fe3` | `data-nome`, a marca irmã de `data-lugar`, com a verificação que a dos lugares não tem |
 
 Os identificadores são os de depois do rebase. Antes dele eram `80ad5ec`,
 `e839e74`, `17ad7ec` e `18de016`.
@@ -22,7 +22,7 @@ Os identificadores são os de depois do rebase. Antes dele eram `80ad5ec`,
 
 ## 1 · O rebase, e o que ele mexeu
 
-`main` andou a meio do trabalho: `04459c7` tira o sinal do cabeçalho, por recusa
+`main` andou a meio do trabalho: `c8a0c18` tira o sinal do cabeçalho, por recusa
 do diretor, e mexe em `src/components/Masthead.astro`, `src/styles/site.css`,
 `tests/inicio/app.mjs` e `DECISIONS.md`. `git rebase main` passou os quatro
 commits **sem um único conflito**, e a razão é que os conjuntos de ficheiros não
@@ -217,7 +217,7 @@ ao lado do rótulo de `/agenda`, numa página construída:
 
 * a régua **nova** fecha a construção e nomeia-o: «bloco por classificar em
   /agenda: "Rótulo plantado que não está no inventário"»;
-* a régua **antiga**, tirada de `fbcab5e` e corrida sobre o mesmo `dist/` com o
+* a régua **antiga**, tirada de `d9bfac7` e corrida sobre o mesmo `dist/` com o
   mesmo estrago, conta **zero** blocos por classificar. Cega, e a contar zero.
 
 E o positivo conhecido das classes: com uma classe plantada que não existe no
@@ -227,7 +227,7 @@ não se rende em página nenhuma de dist/».
 ### A correção a um número do relatório da terceira passagem
 
 O relatório das áreas escreve, duas vezes, «DEZASSEIS OUTRAS VISTAS DO SÍTIO TÊM O
-MESMO DEFEITO». **São quinze.** Procurado em todo o `src/` de `fbcab5e`, com um
+MESMO DEFEITO». **São quinze.** Procurado em todo o `src/` de `d9bfac7`, com um
 positivo conhecido antes do zero (22 ficheiros mencionam `eyebrow`, e a procura
 por `<span class="eyebrow"` acha quinze): `AgendaView`, `CorrecoesView`,
 `DistritoView`, `DistritosView`, `EstudoView`, `LinhaView`, `LivroConcelhoView`,
@@ -351,7 +351,7 @@ portão imprime-a em todas as construções até a leitura cruzada existir.
 4. **`DECISIONS.md` não foi editado**, e nem se aproximou disso.
 5. **As regiões não passaram para a marca nova**, com a razão do §5.
 6. **Nada foi fundido nem enviado.** O ramo fica para o lugar de direção,
-   rebasado sobre `main` `04459c7`.
+   rebasado sobre `main` `c8a0c18`.
 
 ---
 

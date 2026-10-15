@@ -1,6 +1,6 @@
 # Leitura cruzada do Codex · o mapa da primeira página é navegação (26.08.2026)
 
-*Leitura de olhos frescos, `gpt-5.6-sol` com `model_reasoning_effort="xhigh"`, em modo só de leitura e sem repositório, sobre um pacote com as páginas construídas antes (`main`, `b1e9004`) e depois (`bfbdaf9`), o script e a folha das duas construções, catorze capturas (390 e 1280, antes e depois), a Emenda 19 e a nota do construtor. Prompt em `PROMPT.md` do pacote (`scratchpad/codex-mapa/`). Custo: 192 985 símbolos. Quatro estragos plantados nas cópias do «depois», registados com sha256 antes da leitura (`.plantas.json` ao lado).*
+*Leitura de olhos frescos, `gpt-5.6-sol` com `model_reasoning_effort="xhigh"`, em modo só de leitura e sem repositório, sobre um pacote com as páginas construídas antes (`main`, `0750619`) e depois (`c624980`), o script e a folha das duas construções, catorze capturas (390 e 1280, antes e depois), a Emenda 19 e a nota do construtor. Prompt em `PROMPT.md` do pacote (`scratchpad/codex-mapa/`). Custo: 192 985 símbolos. Quatro estragos plantados nas cópias do «depois», registados com sha256 antes da leitura (`.plantas.json` ao lado).*
 
 ## O que se plantou, e o que a leitura apanhou
 

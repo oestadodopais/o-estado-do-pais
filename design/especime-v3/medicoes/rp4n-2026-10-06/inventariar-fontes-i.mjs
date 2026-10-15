@@ -10,9 +10,9 @@ if(!motor) throw Error('RESEARCHHUB_DIR é obrigatório');
 const base='design/especime-v3/medicoes/rp4n-2026-10-06/i';
 fs.mkdirSync(base,{recursive:true});
 const atual=JSON.parse(fs.readFileSync('tests/cartao/leituras-provadas.json'));
-const anterior=JSON.parse(execFileSync('git',['show','c2630801^2:tests/cartao/leituras-provadas.json']));
+const anterior=JSON.parse(execFileSync('git',['show','56248a5f^2:tests/cartao/leituras-provadas.json']));
 const ctx=contextoDasFamilias();
-const alteradas=new Set(execFileSync('git',['diff','--name-only','c2630801^2','--','ledger/claims'],{encoding:'utf8'}).trim().split('\n').map(p=>path.basename(p,'.yml')));
+const alteradas=new Set(execFileSync('git',['diff','--name-only','56248a5f^2','--','ledger/claims'],{encoding:'utf8'}).trim().split('\n').map(p=>path.basename(p,'.yml')));
 
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const catalogo=[];

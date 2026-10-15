@@ -2135,7 +2135,7 @@ check:alvos · planta M-A · etiqueta cortada depois da primeira linha · H14: 3
 > o-estado-do-pais@0.1.0 check:cabeca
 > node tests/inicio/hierarquia-b2.mjs
 
-check:cabeca C1; construção 1fb08e30365399bd817175c90ec5f697ff13645a; 140 cabeças; 4 mordidas; 10 reposições
+check:cabeca C1; construção bdf277d10afa2fca99c105c901742fd919469d41; 140 cabeças; 4 mordidas; 10 reposições
 check:cabeca: PASS
 
 > o-estado-do-pais@0.1.0 check:fontes
@@ -6585,7 +6585,7 @@ sinais · 1 explicação(ões), 1 frase(s) guardada(s) fora da página; o regist
 {"recorte_livro":{"ficheiro":"13-pagina-livro-razao.html","entradas_na_pagina":441,"entradas_no_recorte":8,"primeiras_preservadas":true,"nota_e_porta_preservadas":true,"pagina_conservada":true,"pagina_sha256":"74f0c09b5d3e44582f232f9df9c7d70b5abdf75dd7595194fdbe238f83ddde99","bytes_cartao":242085,"bytes_sem_recorte":1152325,"teto_bytes":673249,"margem":0.1,"planta":{"nome":"recorte retirado","mordeu":true,"queixa":"1125.3 KiB acima do tecto de 657.4697265625 KiB"}}}
 
 [1m  O feixe de cartões do sistema de desenho[0m
-[90m  design-system/ · de dist/ no commit 1fb08e3 · 20 cartões, 11 ficheiros de letra e um README[0m
+[90m  design-system/ · de dist/ no commit bdf277d · 20 cartões, 11 ficheiros de letra e um README[0m
 
 [90m  ficheiro                          grupo          bytes  ok[0m
   01-cor.html                       Fundamentos   380035  [32m✓[0m

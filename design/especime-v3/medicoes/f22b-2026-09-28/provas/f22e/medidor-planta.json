@@ -1,9 +1,9 @@
 {
   "comando": "python3 -B <sitio>/design/especime-v3/medicoes/f22b-2026-09-28/provar-medidor.py",
   "ambiente_declarado": {},
-  "cabeca": "2ea04eef166359723bcafc05a68630456e9816e4",
+  "cabeca": "ea8b7a5360a2e178de241daac1ba867a32acf36f",
   "codigo_executado": {
-    "cabeca_base": "2ea04eef166359723bcafc05a68630456e9816e4",
+    "cabeca_base": "ea8b7a5360a2e178de241daac1ba867a32acf36f",
     "arvore": "7194d3cef737cfc0fd50b1143146cbe9af1b5a2f",
     "tipo": "arvore_de_trabalho",
     "alterados": [

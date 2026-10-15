@@ -1,6 +1,6 @@
 # A medição cega do bloco «a aplicação no telemóvel», M9
 
-Medidor: Claude Sonnet. Fonte: `design/especime-v3/briefs/BRIEF-app-M9.md`. Cópia medida: worktree detached em `dff9c20` (ramo `app-2026-08-28`). Construção «antes»: worktree detached em `162df96` (`main`), criada só para esta medição e removida no fim. Programa: os ficheiros ao lado deste relatório, em `design/especime-v3/medicoes/` (`app-M9-sonnet.mjs` mais `m1` a `m9` mais `lib/`), código próprio, sem importar nada de `scripts/` nem de `src/` do sítio. Exceções, as que o brief autoriza: `npm run verify` e `npm run typecheck` como comandos externos (medição 9) e o Playwright do repositório onde o próprio brief o pede (medições 5 e 6). A medição 7 usa `@resvg/resvg-js`, que já é dependência do projeto, para renderizar SVG a partir de código próprio, sem depender do Chromium do exportador.
+Medidor: Claude Sonnet. Fonte: `design/especime-v3/briefs/BRIEF-app-M9.md`. Cópia medida: worktree detached em `355faf1` (ramo `app-2026-08-28`). Construção «antes»: worktree detached em `49f7399` (`main`), criada só para esta medição e removida no fim. Programa: os ficheiros ao lado deste relatório, em `design/especime-v3/medicoes/` (`app-M9-sonnet.mjs` mais `m1` a `m9` mais `lib/`), código próprio, sem importar nada de `scripts/` nem de `src/` do sítio. Exceções, as que o brief autoriza: `npm run verify` e `npm run typecheck` como comandos externos (medição 9) e o Playwright do repositório onde o próprio brief o pede (medições 5 e 6). A medição 7 usa `@resvg/resvg-js`, que já é dependência do projeto, para renderizar SVG a partir de código próprio, sem depender do Chromium do exportador.
 
 `npm ci` correu na cópia (`node_modules` estava ausente). `npm run build` correu nas duas cópias. `npm run verify` e `npm run typecheck` correram na cópia medida, como medição 9.
 
@@ -146,7 +146,7 @@ A primeira versão desta medição comparava o topo da caixa do SVG (`getBoundin
 | `/en` | 1024 | 316,38 → 316,38 | 0 | 70,72 → 70,72 | 0 | 1 px |
 | `/en` | 1280 | 323,11 → 323,11 | 0 | 70,72 → 70,72 | 0 | **2 px** |
 
-A altura do cabeçalho e a altura do bloco `.wordmark` são idênticas, byte a byte, entre `main@162df96` e `app-2026-08-28`(`dff9c20`), nas 28 combinações: a marca não fez o cabeçalho crescer, que era o ponto da âncora B descrita em `Masthead.astro`. O alinhamento de tinta fica sempre entre 0 e 2 px, dentro da tolerância de ±2 px do BRIEF; as duas leituras de 2 px exactos (`/` e `/en` a 1280px) estão no limite da tolerância e não a violam, mas ficam aqui assinaladas por estarem justamente nesse limite, sensíveis ao limiar de 30 por canal que separa antialiasing residual de tinta (ver `lib.LIMIAR_TINTA` no programa).
+A altura do cabeçalho e a altura do bloco `.wordmark` são idênticas, byte a byte, entre `main@49f7399` e `app-2026-08-28`(`355faf1`), nas 28 combinações: a marca não fez o cabeçalho crescer, que era o ponto da âncora B descrita em `Masthead.astro`. O alinhamento de tinta fica sempre entre 0 e 2 px, dentro da tolerância de ±2 px do BRIEF; as duas leituras de 2 px exactos (`/` e `/en` a 1280px) estão no limite da tolerância e não a violam, mas ficam aqui assinaladas por estarem justamente nesse limite, sensíveis ao limiar de 30 por canal que separa antialiasing residual de tinta (ver `lib.LIMIAR_TINTA` no programa).
 
 ### O «e» claro em escuro
 

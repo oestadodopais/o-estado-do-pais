@@ -3,7 +3,7 @@
 *A tabela que o §1, item 8, do brief pede, e que a regra do dia manda enviar ao
 diretor com as capturas: cada cadeia mudada ou retirada, nas duas edições, com a
 razão. Escrita pelo construtor (Claude Opus 5) na worktree `cartao-2026-09-15`,
-sobre `2ab86986`. Prosa em português, sem travessões.*
+sobre `ef9f0bc6`. Prosa em português, sem travessões.*
 
 ---
 
@@ -135,7 +135,7 @@ O cartão que o diretor leu a 15.09 («Preços da habitação»), pedaço a peda
 
 ## 6 · Os acertos de 15.09 à noite, e as cadeias que eles mexeram
 
-O lugar de direção leu as capturas da cabeça `2dceb7b9` e mandou três acertos.
+O lugar de direção leu as capturas da cabeça `a774d8af` e mandou três acertos.
 
 | chave | antes | depois (pt) | depois (en) | razão |
 | --- | --- | --- | --- | --- |

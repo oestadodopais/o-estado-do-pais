@@ -2,7 +2,7 @@
 
 ## A passagem M-A-b
 
-Cabeça do código: `822fd960ecbe2884b22036742cb3e80dd9324231`. Cabeça do brief e do «antes» limpo: `207d71346ea034943058fffcbbb926ddafa79e90`. A cabeça final é o commit que junta este relatório e as provas, indicado na resposta de entrega.
+Cabeça do código: `a59c2d7887266d9d1b1ad2310e54cf1d1fe6ea6b`. Cabeça do brief e do «antes» limpo: `4970eab9eb634867e060239ee9c857b9b9498e9a`. A cabeça final é o commit que junta este relatório e as provas, indicado na resposta de entrega.
 
 A passagem põe as plantas na cadeia, obriga o GitHub a executar os guiões dos briefs e fecha as falhas da maquinaria apontadas pela leitura a frio. O pacote entregue à primeira leitura foi montado pelo caminho antigo, com registos inteiros; não foi uma utilização real do filtro de citações novo.
 
@@ -21,7 +21,7 @@ A corrida inteira nova levou 414,720 s; o «antes» limpo levou 1482,695 s. O ch
 | auto-teste do país | não medido | 1,681 | 1,007 | 1,237 |
 | typecheck | 0,249 | 0,242 | 0,227 | 0,214 |
 
-Fontes: os `tempos.json` das pastas indicadas nas colunas. As colunas da primeira passagem são históricas e conservam a cabeça escrita nesses ficheiros. O «antes» foi refeito numa worktree temporária de `207d7134`, com o `portoes.sh` dessa cabeça, pela tranca comum, e `estado.inicio` e `estado.fim` vazios. A instrumentação ficou fora da árvore; a shell só acrescentou a opção de saída JSON ao guião dos alvos. O auto-teste interno dessa cabeça não tinha relógio próprio, pelo que o seu tempo fica incluído no `check:pais` e não é inventado em separado.
+Fontes: os `tempos.json` das pastas indicadas nas colunas. As colunas da primeira passagem são históricas e conservam a cabeça escrita nesses ficheiros. O «antes» foi refeito numa worktree temporária de `4970eab9`, com o `portoes.sh` dessa cabeça, pela tranca comum, e `estado.inicio` e `estado.fim` vazios. A instrumentação ficou fora da árvore; a shell só acrescentou a opção de saída JSON ao guião dos alvos. O auto-teste interno dessa cabeça não tinha relógio próprio, pelo que o seu tempo fica incluído no `check:pais` e não é inventado em separado.
 
 A duração inteira é o intervalo entre o primeiro e o último processo instrumentado, não a soma das durações paralelas. A espera pela tranca não entra. Durante as medições esta sessão não lançou outras conferências. O motor foi passado por `RESEARCHHUB_DIR=<motor>` em leitura. A worktree temporária foi removida depois da conferência do estado limpo.
 
@@ -223,18 +223,18 @@ Não houve push, publicação ou alteração do motor. Os testes da aterragem su
 
 ## Commits desta passagem
 
-- `58ab143b` `M-A-b 6`: correr as plantas de leituras na cadeia do verify
-- `ccb8ce6c` `M-A-b 7`: selar só execuções verdes e correr todos os briefs no CI
-- `a1c22ee3` `M-A-b 8`: refazer a referência numa árvore limpa de 207d7134
-- `f7df11a2` `M-A-b 9`: identificar e expirar a tranca, parando o grupo no TERM
-- `dd41cff4` `M-A-b 10`: limpar temporários e preservar palavras com o nome de utilizador
-- `6e9839fd` `M-A-b 11`: reler as citações por um caminho independente na entrega
-- `94377455` `M-A-b 12`: declarar os registos omitidos e permitir cópias inteiras
-- `355726f1` `M-A-b 13`: reservar a saída pela E1 ao auto-teste e provar a cadeia inteira
-- `72e8cdd8` `M-A-b 14`: recusar e retirar partes de tempos de corridas mortas
-- `b0576aa3` `M-A-b 15`: conservar contadores desconhecidos sem TypeError
-- `74eff103` `M-A-b 16`: alinhar o mapa com a cadeia completa e acertar as referências
-- `822fd960` M-A-b Code: tornar a maquinaria legível e repor o estado no finally
+- `01f41bd6` `M-A-b 6`: correr as plantas de leituras na cadeia do verify
+- `aea4e1d3` `M-A-b 7`: selar só execuções verdes e correr todos os briefs no CI
+- `57d42e33` `M-A-b 8`: refazer a referência numa árvore limpa de 4970eab9
+- `04e622ee` `M-A-b 9`: identificar e expirar a tranca, parando o grupo no TERM
+- `c5749b80` `M-A-b 10`: limpar temporários e preservar palavras com o nome de utilizador
+- `6dc30d7e` `M-A-b 11`: reler as citações por um caminho independente na entrega
+- `7955118f` `M-A-b 12`: declarar os registos omitidos e permitir cópias inteiras
+- `51f798c6` `M-A-b 13`: reservar a saída pela E1 ao auto-teste e provar a cadeia inteira
+- `97dfe94b` `M-A-b 14`: recusar e retirar partes de tempos de corridas mortas
+- `793ecb24` `M-A-b 15`: conservar contadores desconhecidos sem TypeError
+- `f3385fb3` `M-A-b 16`: alinhar o mapa com a cadeia completa e acertar as referências
+- `a59c2d78` M-A-b Code: tornar a maquinaria legível e repor o estado no finally
 
 O último commit junta apenas o relatório e as provas. Os trailers pedidos estão nos commits desta passagem.
 

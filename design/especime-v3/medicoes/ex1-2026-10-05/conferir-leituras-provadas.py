@@ -4,7 +4,7 @@
 O mandato: o ficheiro fica com todas as chaves (as leituras com as sete entradas do R4, as comuns, as medidas, as 181
 famílias, as 10 séries e as explicações), é um JSON válido e a K17 passa (a K17 corre-a o `check:cartao`, nas provas).
 Este guião confere a primeira metade: cada chave do main (42c7ed7e) está no ficheiro com o mesmo valor, e a chave das
-explicações é a do ramo antes da fusão (458f3e18). Os conhecidos-positivos, em memória: uma entrada do main tirada e a
+explicações é a do ramo antes da fusão (a0c5cc52). Os conhecidos-positivos, em memória: uma entrada do main tirada e a
 chave das explicações tirada são recusadas.
 
 Uso (da raiz do sítio): python3 design/especime-v3/medicoes/ex1-2026-10-05/conferir-leituras-provadas.py <saída.json>
@@ -16,7 +16,7 @@ from pathlib import Path
 
 SITIO = Path(__file__).resolve().parents[4]
 F = "tests/cartao/leituras-provadas.json"
-MAIN, RAMO = "42c7ed7e", "458f3e18"
+MAIN, RAMO = "42c7ed7e", "a0c5cc52"
 
 
 def git_show(rev):

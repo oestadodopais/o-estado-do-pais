@@ -35,8 +35,8 @@
    "descricao": "a tabela das alturas diz 3600 px na primeira linha, e a diferença (−938), a A2 e o resto do relatório dizem 3700",
    "sha256_antes": "38d4e8742b46595dc3df0d2eb94acd3272f66a9247e5236d648746efbfad5055",
    "sha256_depois": "b2690d0dfd1c6f930b574706e8c6f3d839ec03e4d7de4704361c3162afab50a9",
-   "contexto_antes": "onstruções, em Chromium e em WebKit sem cabeça, depois de\n`document.fonts.ready`.\n\n| estado | antes (69ba3abf) | depois | diferença |\n| --- | --- | --- | --- |\n| `/` com guião · chromium | 4638 px | 3700 px | −938 px |\n| `/` com guião · webkit | 4639 px | 3701 px | −938 px |\n| `/` sem guião · chromium | 4578 px | 4578 px | 0 |\n| `/` sem guião · webkit | 4579 px | 4579 px | 0 ",
-   "contexto_depois": "onstruções, em Chromium e em WebKit sem cabeça, depois de\n`document.fonts.ready`.\n\n| estado | antes (69ba3abf) | depois | diferença |\n| --- | --- | --- | --- |\n| `/` com guião · chromium | 4638 px | 3600 px | −938 px |\n| `/` com guião · webkit | 4639 px | 3701 px | −938 px |\n| `/` sem guião · chromium | 4578 px | 4578 px | 0 |\n| `/` sem guião · webkit | 4579 px | 4579 px | 0 "
+   "contexto_antes": "onstruções, em Chromium e em WebKit sem cabeça, depois de\n`document.fonts.ready`.\n\n| estado | antes (fd19e801) | depois | diferença |\n| --- | --- | --- | --- |\n| `/` com guião · chromium | 4638 px | 3700 px | −938 px |\n| `/` com guião · webkit | 4639 px | 3701 px | −938 px |\n| `/` sem guião · chromium | 4578 px | 4578 px | 0 |\n| `/` sem guião · webkit | 4579 px | 4579 px | 0 ",
+   "contexto_depois": "onstruções, em Chromium e em WebKit sem cabeça, depois de\n`document.fonts.ready`.\n\n| estado | antes (fd19e801) | depois | diferença |\n| --- | --- | --- | --- |\n| `/` com guião · chromium | 4638 px | 3600 px | −938 px |\n| `/` com guião · webkit | 4639 px | 3701 px | −938 px |\n| `/` sem guião · chromium | 4578 px | 4578 px | 0 |\n| `/` sem guião · webkit | 4579 px | 4579 px | 0 "
   },
   {
    "id": "P4",

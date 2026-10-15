@@ -13,7 +13,7 @@ assert.equal(codigo,fs.readFileSync(`${pasta}/portoes-c/cabeca.fim`,'utf8').trim
 const gates=['build','verify','typecheck'].map(nome=>({nome,codigo:Number(fs.readFileSync(`${pasta}/portoes-c/${nome}.codigo`,'utf8'))}));
 for(const g of gates)assert.equal(g.codigo,0);
 for(const c of capturas.capturas)assert.equal(createHash('sha256').update(fs.readFileSync(c.ficheiro)).digest('hex'),c.sha256);
-const commits=execFileSync('git',['log','--reverse','--format=%h %s','87612cee..'+codigo],{encoding:'utf8'}).trim().split('\n');
+const commits=execFileSync('git',['log','--reverse','--format=%h %s','0263e3ea..'+codigo],{encoding:'utf8'}).trim().split('\n');
 const tabela=(titulos,linhas)=>'| '+titulos.join(' | ')+' |\n| '+titulos.map(()=>'---').join(' | ')+' |\n'+linhas.map(l=>'| '+l.map(v=>String(v).replaceAll('|','\\|')).join(' | ')+' |').join('\n');
 const plantas=[...celula.plantas,...navegador.plantas].filter(p=>/marca-isolada|calculada-sem-data|separador-licenca-notas|separador-notas-retirado|metodo-sem-exemplo/.test(p.nome));
 const texto=`

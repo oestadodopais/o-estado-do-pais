@@ -1,7 +1,7 @@
 # O sítio no ecrã principal · o relatório do construtor
 
 *Escrito a 28.08.2026 pelo construtor (Claude Opus 5) para o lugar de direção,
-sobre o ramo `app-2026-08-28`, saído de `main` `162df96`. Responde ao
+sobre o ramo `app-2026-08-28`, saído de `main` `49f7399`. Responde ao
 `design/marca/BRIEF-app.md` §3, com as decisões do diretor de 28.08.2026 a
 preencher os vazios do brief. Todos os números desta nota vêm de um comando que
 está escrito ao lado deles. Sem travessões na prosa; o ponto médio é o separador.*

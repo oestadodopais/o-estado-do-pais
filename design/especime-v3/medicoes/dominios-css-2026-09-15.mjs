@@ -6,7 +6,7 @@
  * O QUE MEDE, E PORQUÊ CADA COISA
  * ---------------------------------------------------------------------------
  * O diretor leu duas coisas na primeira página, no telemóvel, na cabeça
- * 44f0d838: «2. Trabalhoas medidas estão em Economia e finanças públicas», e um
+ * a863f417: «2. Trabalhoas medidas estão em Economia e finanças públicas», e um
  * campo de busca do tamanho de quatro caracteres ao lado de um botão grande.
  *
  *   · O ÍNDICE DOS DOMÍNIOS, em `/`, `/en/`, `/dominios` e `/en/domains`: o

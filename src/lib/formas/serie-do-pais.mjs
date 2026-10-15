@@ -45,7 +45,7 @@ export const PIXEIS_ATE_A_VIZINHA = 64;
  * A LARGURA DE UM ANO ESCRITO NA LETRA DOS EIXOS, em unidades do desenho (bloco RP4-c, o ponto 2): quatro algarismos de
  * largura fixa (`tabular-nums`) da Bitter a 12 píxeis, medidos no Chromium com `getComputedTextLength()` nas 50
  * etiquetas de ano dos 16 desenhos da primeira página, da página dos preços e do recibo da inflação, nas duas edições,
- * sobre a construção da cabeça `983b4585` (todas 30,25; o registo é `letra-dos-eixos-antes.json`, na pasta das
+ * sobre a construção da cabeça `de4bcfc6` (todas 30,25; o registo é `letra-dos-eixos-antes.json`, na pasta das
  * medições do bloco). Um ano de quatro algarismos mede o mesmo em qualquer ano, pela largura fixa dos algarismos.
  */
 export const LARGURA_DE_UM_ANO = 30.25;

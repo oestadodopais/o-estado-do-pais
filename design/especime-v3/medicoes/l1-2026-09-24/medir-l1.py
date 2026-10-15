@@ -40,7 +40,7 @@ BASE = 'f0779f37d71edd3bdc3d3ffd908ad18d50589863'
 # base antiga (`BASE`) fica para as páginas do antes, que foram construídas dela
 # a 24.09.2026, antes do rebase; a base do bloco lê-se do git pelo assunto do
 # commit do brief, porque o rebase lhe mudou o nome.
-RECEBIDA = '6584df72'
+RECEBIDA = '2e1d84d4'
 _VIZINHAS = [RAIZ.parent, RAIZ.parents[3]] if len(RAIZ.parents) > 3 else [RAIZ.parent]
 MOTOR = next((v / 'ResearchHub/.worktrees/l1-2026-09-24' for v in _VIZINHAS if (v / 'ResearchHub/.worktrees/l1-2026-09-24').exists()), None)
 PAGINAS = [('pais', 'pt', 'index.html'), ('pais', 'en', 'en_index.html'), ('temas', 'pt', 'temas_index.html'), ('temas', 'en', 'en_themes_index.html')]

@@ -1,6 +1,6 @@
 # Nota das correções de UX · 25.08.2026
 
-*Construtor (Claude Opus 5, `claude-opus-5[1m]`). Ramo `correcoes-ux-2026-08-25`, a partir de `main` em `cb133d5`. Contrato: `../briefs/BRIEF-correcoes-ux-A.md`, com a `AUDITORIA-UX-2026-08-25.md` por trás, e a Emenda 18 de `direcao.md` para o item A11. Sem travessões nesta prosa; o ponto médio é o separador. **Todos os números desta nota vêm de um comando que está escrito ao lado deles.***
+*Construtor (Claude Opus 5, `claude-opus-5[1m]`). Ramo `correcoes-ux-2026-08-25`, a partir de `main` em `c156148`. Contrato: `../briefs/BRIEF-correcoes-ux-A.md`, com a `AUDITORIA-UX-2026-08-25.md` por trás, e a Emenda 18 de `direcao.md` para o item A11. Sem travessões nesta prosa; o ponto médio é o separador. **Todos os números desta nota vêm de um comando que está escrito ao lado deles.***
 
 ---
 
@@ -23,9 +23,9 @@ As capturas estão em `../capturas/ux-2026-08-25/correcoes-a/`, em JPEG a escala
 
 | commit | o quê |
 |---|---|
-| `696b51a` | os dez itens e a frase de identidade, no código do sítio |
-| `c6e8f03` | as réguas do bloco, a matriz sem as células cujo objecto saiu, o inventário |
-| `bfcb8d1` | as três medições que rebentavam em vez de falhar com o estrago plantado |
+| `0a6d526` | os dez itens e a frase de identidade, no código do sítio |
+| `d2f851b` | as réguas do bloco, a matriz sem as células cujo objecto saiu, o inventário |
+| `9f68f4c` | as três medições que rebentavam em vez de falhar com o estrago plantado |
 
 ### A.2 · O que se mediu, antes e depois
 
@@ -107,7 +107,7 @@ Quatro alvos ficam com a área da sua própria linha, na **mobília do cabeçalh
 ## B · os estudos, o livro-razão e as páginas de leitura
 
 *Construtor (Claude Opus 5, `claude-opus-5[1m]`). Mesmo ramo, a partir do bloco A
-em `62f70f5`. Contrato: `../briefs/BRIEF-correcoes-ux-B.md`. Sem travessões nesta
+em `f34c5d1`. Contrato: `../briefs/BRIEF-correcoes-ux-B.md`. Sem travessões nesta
 prosa; o ponto médio é o separador. **Todos os números desta secção vêm de um
 comando que está escrito ao lado deles.***
 
@@ -270,7 +270,7 @@ foram tocados aqui.
 ## C · o que a leitura cruzada dos blocos A e B apanhou
 
 *Construtor (Claude Opus 5, `claude-opus-5[1m]`). Mesmo ramo, a partir do bloco B
-em `5f60f9a`. Contrato: `../briefs/BRIEF-correcoes-ux-C.md`, com a leitura do
+em `b15b768`. Contrato: `../briefs/BRIEF-correcoes-ux-C.md`, com a leitura do
 Codex e a triagem do lugar de direção por trás
 (`../critica/2026-08-25-codex-leitura-correcoes.md`). Sem travessões nesta prosa;
 o ponto médio é o separador. **Todos os números desta secção vêm de um comando
@@ -293,7 +293,7 @@ node scripts/medir-defeitos.mjs                        (zero blocos por classifi
 ```
 
 **A linha de base do item C2 é outra construção, e está escrita:** `main` em
-`cb133d5`, construída numa árvore de trabalho separada, servida a par com a deste
+`c156148`, construída numa árvore de trabalho separada, servida a par com a deste
 ramo. É o estado **antes do bloco B**, que é contra o que o brief manda medir o
 C2 («volta a caber dez entradas onde cabiam dez»).
 

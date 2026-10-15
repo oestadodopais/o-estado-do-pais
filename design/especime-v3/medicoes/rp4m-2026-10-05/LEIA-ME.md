@@ -4,7 +4,7 @@ Construído pelo Claude Opus 5.5 (a definição `construtor`) a 05.10.2026, em 2
 
 ## O ponto de partida
 
-O `main` andou depois de o ramo nascer, e o ramo fundiu-o 2 vezes antes de mexer no sítio, sem conflitos: `14ba0aaf` (sobre `6fb0d773`) e `ee6e4113` (sobre `3a253f73`). Voltou a andar durante o bloco, e o ramo fundiu-o outra vez antes dos portões finais, também sem conflitos (`6c223e0c`, sobre `40f0cb58`); essa fusão tirou 62 linhas do portão de HTML, e as citações do mapa que apontavam para depois delas andaram com elas (`711d3802`). O §0 do brief, reproduzido pelo seu guião, é igual ao ficheiro selado, medida a medida (`paragrafo_0_reproduzido_igual` em `medidas.json`): 16 séries no tempo, 7 linhas presas a uma série, 10 linhas do IPC com as coordenadas do `0014666` ou do `0014647`, das quais 5 principais e 0 presas, e 13 séries com ponto no período de base de 2015 da regra do RP4.
+O `main` andou depois de o ramo nascer, e o ramo fundiu-o 2 vezes antes de mexer no sítio, sem conflitos: `7307fd0d` (sobre `9b8061c4`) e `5b54249f` (sobre `520a02d6`). Voltou a andar durante o bloco, e o ramo fundiu-o outra vez antes dos portões finais, também sem conflitos (`b0830d8f`, sobre `5c3c4af8`); essa fusão tirou 62 linhas do portão de HTML, e as citações do mapa que apontavam para depois delas andaram com elas (`1cc39b03`). O §0 do brief, reproduzido pelo seu guião, é igual ao ficheiro selado, medida a medida (`paragrafo_0_reproduzido_igual` em `medidas.json`): 16 séries no tempo, 7 linhas presas a uma série, 10 linhas do IPC com as coordenadas do `0014666` ou do `0014647`, das quais 5 principais e 0 presas, e 13 séries com ponto no período de base de 2015 da regra do RP4.
 
 ## O mandato, ponto a ponto
 
@@ -65,7 +65,7 @@ Commits do motor, no ramo `rp4m-2026-10-05`, todos com o portão do pre-commit:
 - `d2f6e44` · a segunda corrida de ensaio do corredor, com as 24 séries
 - `a64ff62` · o README do publicador: o corredor das séries corre à mão e ainda não no trabalho diário
 
-**O sítio.** A corrida `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/rp4m-2026-10-05/portoes`, pela tranca da máquina e com o motor ao lado (`RESEARCHHUB_DIR`, para a metade do motor da S3), na cabeça do código `711d38027e1caa88b54169a43eb5496e86459308`; `portoes/cabeca` e `portoes/cabeca.fim` são iguais, e no fim só estavam por juntar a pasta das medições (as capturas vieram depois dos portões) e a ligação da worktree às dependências, nenhum ficheiro seguido mudado (0). Os códigos foram lidos dos ficheiros, depois de cada processo acabar:
+**O sítio.** A corrida `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/rp4m-2026-10-05/portoes`, pela tranca da máquina e com o motor ao lado (`RESEARCHHUB_DIR`, para a metade do motor da S3), na cabeça do código `1cc39b03c0d4fd1b2353fbd1fe2c1742b089a44c`; `portoes/cabeca` e `portoes/cabeca.fim` são iguais, e no fim só estavam por juntar a pasta das medições (as capturas vieram depois dos portões) e a ligação da worktree às dependências, nenhum ficheiro seguido mudado (0). Os códigos foram lidos dos ficheiros, depois de cada processo acabar:
 
 | Portão | Código lido | Segundos |
 |---|---|---|
@@ -77,13 +77,13 @@ O cruzamento contra o motor (`check:cruzamento --with-origin`), que a cadeia do 
 
 Commits do sítio, no ramo `rp4m-2026-10-05`:
 
-- `14ba0aaf` · fusão com main em `6fb0d773`, sem conflitos
-- `ee6e4113` · fusão com main em `3a253f73`, sem conflitos
-- `9f457ac7` · o ponto 1: as séries do IPC atravessadas do motor, com as linhas presas; a metade do motor do `check:series` nas pastas das séries, com a planta do resumo que nenhum corpo dá
-- `34d6b8c3` · os pontos 4 e 5: as séries do salário real e a figura indexada, a frase do índice e as unidades inglesas, a marca do último ano; a regra da página da F21 e a L1 do `check:lingua` mudadas de forma, com as suas plantas; a segunda forma da S4 e as conferências novas da S6
-- `af2f75b5` · os registos: o mapa do repositório, o `README.md` das séries e o `ISSUES.md`
-- `6c223e0c` · fusão com main em `40f0cb58`, sem conflitos
-- `711d3802` · as citações do portão de HTML no mapa, depois da fusão
+- `7307fd0d` · fusão com main em `9b8061c4`, sem conflitos
+- `5b54249f` · fusão com main em `520a02d6`, sem conflitos
+- `3ab4bd07` · o ponto 1: as séries do IPC atravessadas do motor, com as linhas presas; a metade do motor do `check:series` nas pastas das séries, com a planta do resumo que nenhum corpo dá
+- `2bec4176` · os pontos 4 e 5: as séries do salário real e a figura indexada, a frase do índice e as unidades inglesas, a marca do último ano; a regra da página da F21 e a L1 do `check:lingua` mudadas de forma, com as suas plantas; a segunda forma da S4 e as conferências novas da S6
+- `a5719f99` · os registos: o mapa do repositório, o `README.md` das séries e o `ISSUES.md`
+- `b0830d8f` · fusão com main em `5c3c4af8`, sem conflitos
+- `1cc39b03` · as citações do portão de HTML no mapa, depois da fusão
 
 O commit seguinte guarda só esta pasta e a das capturas; a sua cabeça vai na resposta de entrega.
 
@@ -105,7 +105,7 @@ Modelo: Claude Opus 5.5 em todas as respostas do registo da sessão (`custo.json
 
 ## RP4-m-b, a passagem de correção depois da leitura
 
-Construída pelo Claude Opus 5.5 (a definição `construtor`) a 05.10.2026, nas mesmas duas worktrees do bloco, pelo mandato do lugar de direção depois da leitura a frio do Codex `gpt-6-astra` (raciocínio `xhigh`). Partiu do sítio em `1a186832` e do motor em `7461321`. Os achados da leitura que eram os estragos plantados nas cópias do pacote (o achado 1, o achado 2, o achado 3, o achado 6 e o achado 12) não pedem nada ao código; o lugar de direção tomou para esta passagem o achado 4 e o achado 5 (o corredor das séries), o achado 14 (o ficheiro trancado do motor) e o achado 9 (a frase da conta). Sem `push`. Cada número desta secção está num ficheiro JSON desta pasta: `medidas.json` (escrito por `medir.py`, alargado com as medidas `rp4mb.*`, cada uma com o comando e o conhecido-positivo) e os registos que ele lê, `rp4mb-motor-antes.json` e `rp4mb-motor-depois.json` (escritos por `medir-rp4mb-motor.py`), `portao-do-motor-rp4mb.json`, `rp4mb-pip.json` (`medir-rp4mb-pip.py`), `rp4mb-dist-antes.json` e `rp4mb-dist-depois.json` (`medir-rp4mb-dist.py`), os códigos em `rp4mb-conferencias/` (escritos por `conferencias-rp4mb.sh`), `capturas-rp4mb.json`, `limpeza-rp4mb.json` e `custo-rp4mb.json`.
+Construída pelo Claude Opus 5.5 (a definição `construtor`) a 05.10.2026, nas mesmas duas worktrees do bloco, pelo mandato do lugar de direção depois da leitura a frio do Codex `gpt-6-astra` (raciocínio `xhigh`). Partiu do sítio em `ed972397` e do motor em `7461321`. Os achados da leitura que eram os estragos plantados nas cópias do pacote (o achado 1, o achado 2, o achado 3, o achado 6 e o achado 12) não pedem nada ao código; o lugar de direção tomou para esta passagem o achado 4 e o achado 5 (o corredor das séries), o achado 14 (o ficheiro trancado do motor) e o achado 9 (a frase da conta). Sem `push`. Cada número desta secção está num ficheiro JSON desta pasta: `medidas.json` (escrito por `medir.py`, alargado com as medidas `rp4mb.*`, cada uma com o comando e o conhecido-positivo) e os registos que ele lê, `rp4mb-motor-antes.json` e `rp4mb-motor-depois.json` (escritos por `medir-rp4mb-motor.py`), `portao-do-motor-rp4mb.json`, `rp4mb-pip.json` (`medir-rp4mb-pip.py`), `rp4mb-dist-antes.json` e `rp4mb-dist-depois.json` (`medir-rp4mb-dist.py`), os códigos em `rp4mb-conferencias/` (escritos por `conferencias-rp4mb.sh`), `capturas-rp4mb.json`, `limpeza-rp4mb.json` e `custo-rp4mb.json`.
 
 ### Os pontos do mandato
 
@@ -114,7 +114,7 @@ Construída pelo Claude Opus 5.5 (a definição `construtor`) a 05.10.2026, nas 
 | Ponto 2 · o achado 4, uma segunda revisão do mesmo ponto | **Feito.** O corredor constrói as séries acabadas de pedir sem a história das revisões, que é o que a fonte diz agora; compara-as com as publicadas; apensa a revisão nova de cada ponto mudado, e a de um ponto já revisto é a segunda, com o valor da primeira como antigo e a data do dia; e só então aplica a história inteira aos pontos de agora, nos dois modos, pela regra do construtor (`aplicar_revisoes`). | O mesmo cenário (a pensão média de 2020 no INE e um mês das rendas no Eurostat, revistos numa corrida e mudados outra vez na do dia seguinte), na cabeça que a leitura leu e na final (`rp4mb-motor-antes.json`, `rp4mb-motor-depois.json`): na `7461321` a segunda corrida parava com `Fail`, «a revisão mais recente de 2020 diz «6 058» e o ponto vale «6 059»»; na `2787c99` sai com 2 revisões novas e 0 recusas, a pensão de «6 058» para «6 059» e as rendas de «6,91» para «6,92», com a data de 06.10, e o ensaio não escreve as revisões. |
 | Ponto 3 · o achado 5, um pedido que não se lê | **Feito.** Cada pedido que não se lê (a metainformação do INE, um ano dos dados, a página humana, a série do Eurostat) é uma recusa com o pedido nomeado, o endereço, o estado e o HTTP: «o pedido X não se leu: estado Y; a série fica como estava». A série fica como estava (nenhuma comparação nem revisão se conta por ela, e uma derivada fica com a sua origem); uma série que a corrida pediu e que não se lê da pasta da corrida também é uma recusa, porque o recuo a uma pasta antiga serve só às séries que a corrida não precisou de pedir; a linha do fim diz RECUSA, e o código do ensaio continua 0. Com `--write`, uma recusa recusa a escrita inteira: nada se escreve para a série recusada nem para as outras. | A metainformação da pensão a responder 404: na `7461321`, a linha `CORREDOR_DAS_SERIES: PASS`, 0 recusas, o código 0 e a pensão lida da pasta `rp3`; com `--write`, a corrida alojava a pasta do dia, reescrevia as séries e escrevia as revisões. Na `2787c99`, a linha `CORREDOR_DAS_SERIES: RECUSA`, 1 recusa com o pedido `ine-0014532-meta.json`, o estado e o HTTP 404, o código 0 e a pensão como estava; com `--write`, `Fail`, nada alojado, as séries iguais e nenhuma revisão escrita. |
 | Ponto 4 · o achado 14, o ficheiro trancado do motor | **Feito.** `requirements.lock.txt` com os bytes de `38457b2`, a linha `xlrd==2.0.2` no lugar que o `pip freeze` lhe dá e a contagem do cabeçalho pelo que os ficheiros têm, nas duas frases que a dizem («São 41 pacotes: os dez declarados e as 31 dependências que eles arrastam» e «41 linhas `==`»). Nada mais muda. | Pelo contador de `medir.py` (os pinos são as linhas «nome==versão» do ficheiro trancado; os declarados, as linhas do `requirements.txt` que não são comentário nem vazias; as dependências, a diferença): 41 pinos, 10 declarados, 0 declarados fora do ficheiro trancado e 31 dependências; o mesmo contador dá 40 no ficheiro de `38457b2`. Contra `38457b2`, o diff tira 2 linhas e põe 3. A ordem do ficheiro é a de `sorted(key=str.lower)`, que é a chave da linha 146 de `pip/_internal/operations/freeze.py` no pip `25.2`, e o último pino é o `xlrd`, depois do `uvicorn`. O `xlrd` instalado é o `2.0.2`, e o PyPI responde 200 a essa versão, com 2 ficheiros publicados (`rp4mb-pip.json`, com a hora, o cliente e o sha256 da resposta). |
-| Ponto 5 · o achado 9, a frase da conta | **Feito.** As chaves `derivadaFrase` (do RP3, o recibo dos cem euros de 2015) e `derivadaFraseVarias` (do RP4-m, o recibo do salário real) perdem a segunda metade nas duas edições, e a proveniência fica. | 0 ocorrências das duas metades tiradas nos ficheiros de `src/` (o mesmo contador dá 4 no `strings.mjs` da `1a186832`). Na construção da cabeça do código, 7899 páginas lidas, 4 com a frase nova e 0 com uma das metades tiradas; na construção da `1a186832`, o mesmo laço deu 4 páginas com a metade tirada e 0 com a frase nova, e as 4 páginas de depois são as 4 de antes, os dois recibos nas duas edições (`rp4mb-dist-*.json`). As conferências que a mudança toca, cada uma com o código lido do seu ficheiro, estão abaixo, e as capturas do recibo do salário real foram refeitas. |
+| Ponto 5 · o achado 9, a frase da conta | **Feito.** As chaves `derivadaFrase` (do RP3, o recibo dos cem euros de 2015) e `derivadaFraseVarias` (do RP4-m, o recibo do salário real) perdem a segunda metade nas duas edições, e a proveniência fica. | 0 ocorrências das duas metades tiradas nos ficheiros de `src/` (o mesmo contador dá 4 no `strings.mjs` da `ed972397`). Na construção da cabeça do código, 7899 páginas lidas, 4 com a frase nova e 0 com uma das metades tiradas; na construção da `ed972397`, o mesmo laço deu 4 páginas com a metade tirada e 0 com a frase nova, e as 4 páginas de depois são as 4 de antes, os dois recibos nas duas edições (`rp4mb-dist-*.json`). As conferências que a mudança toca, cada uma com o código lido do seu ficheiro, estão abaixo, e as capturas do recibo do salário real foram refeitas. |
 
 ### Quem recusa um ponto que não bate com a sua revisão mais recente
 
@@ -138,7 +138,7 @@ A decisão que o mandato deixou ao construtor. A recusa morde em cada um destes 
 | motor · corredor das séries | uma corrida datada antes de uma escrita já alojada: as séries pedidas leem-se da pasta mais recente, que não é a da corrida | «foi pedida nesta corrida e leu-se de corredor-series/2026-10-05» |
 | sítio · capturas | a frase da conta com uma metade acrescentada no navegador, nas duas edições | o critério da captura, que compara a frase com a cadeia da edição |
 
-A suíte do corredor tem agora 54 conferências e 14 plantas a morder (eram 25 e 5); a do construtor das séries continua com 64 e 31. O detetor da frase nas páginas (`medir-rp4mb-dist.py`) tem por conhecido-positivo a construção da `1a186832`, onde a metade tirada ainda estava nas 4 páginas.
+A suíte do corredor tem agora 54 conferências e 14 plantas a morder (eram 25 e 5); a do construtor das séries continua com 64 e 31. O detetor da frase nas páginas (`medir-rp4mb-dist.py`) tem por conhecido-positivo a construção da `ed972397`, onde a metade tirada ainda estava nas 4 páginas.
 
 ### Os portões, as conferências e os commits
 
@@ -147,7 +147,7 @@ A suíte do corredor tem agora 54 conferências e 14 plantas a morder (eram 25 e
 - `a35d107` · o ponto 4: o ficheiro trancado reposto, com o `xlrd` no seu lugar e a contagem
 - `2787c99` · o ponto 2 e o ponto 3: a segunda revisão e os pedidos que não se leem, com a suíte, o `README.md` do publicador e o comentário da suíte no `core.gate`
 
-**O sítio.** Os três portões inteiros não os corri: corre-os o lugar de direção na cabeça final, pela tranca. Corri, com a tranca da máquina e na construção da cabeça do código `f90d3117c84438103fa383a6495edacf3007b0e9`, com o código todo junto, o que a frase da conta toca, cada passo no seu comando e com o código lido do seu ficheiro (`rp4mb-conferencias/`):
+**O sítio.** Os três portões inteiros não os corri: corre-os o lugar de direção na cabeça final, pela tranca. Corri, com a tranca da máquina e na construção da cabeça do código `3ada1f0452f86204b52383a3acff7f826aa912da`, com o código todo junto, o que a frase da conta toca, cada passo no seu comando e com o código lido do seu ficheiro (`rp4mb-conferencias/`):
 
 | Passo | Código lido |
 |---|---|
@@ -165,7 +165,7 @@ Nenhum inventário de uma conferência guarda a frase: a rota das séries não e
 
 Commits do sítio, no ramo `rp4m-2026-10-05`:
 
-- `f90d3117` · o ponto 5: as duas frases da conta só com a proveniência, e a secção do `CHAVES-EN.md`
+- `3ada1f04` · o ponto 5: as duas frases da conta só com a proveniência, e a secção do `CHAVES-EN.md`
 - o commit seguinte guarda só esta pasta e as capturas novas; a sua cabeça vai na resposta de entrega
 
 ### As capturas

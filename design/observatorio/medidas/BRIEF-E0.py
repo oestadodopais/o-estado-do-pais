@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """O §0 do brief E0 (as linhas da casa no registo das mudanças, e a correção do desemprego), medido sobre a cabeça presa
-do sítio (2273d725). Não lê a rede: lê o livro-razão, a história selada dos valores e as duas declarações de lugar na
+do sítio (38f3f9d5). Não lê a rede: lê o livro-razão, a história selada dos valores e as duas declarações de lugar na
 cabeça. Escreve design/observatorio/medidas/BRIEF-E0.json (ou o caminho em OEDP_MEDIDAS_JSON). Cada medição leva o
 comando e um conhecido-positivo; o que não conseguir ler fica «NÃO LIDO»."""
 import json, os, pathlib, re, subprocess
 import yaml
 
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "2273d725"
+CAB = "38f3f9d5"
 NAO = "NÃO LIDO"
 medidas = []
 

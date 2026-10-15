@@ -35,8 +35,8 @@
    "descricao": "o recibo inglês do aprovado volta a escrever a data de 04.08.2026 na forma ISO na razão da primeira entrada reconstituída, contra a linha",
    "sha256_antes": "a5257bc830807510096e0c7433aa95f8b024266c51ad8d7b98a755fa56bb8bc2",
    "sha256_depois": "f7d0d530a7d29ae08faefb3196877e7f25a966ff36f91462a55a41a704fe5c2f",
-   "contexto_antes": "/span></span></div><p class=\"log-motivo\" data-correcao-claim=\"evora-prr-aprovado-2026\" data-correcao-n=\"6\" data-correcao-grupo=\"6\" data-correcao-campo=\"reason\">The access moved from 04.08.2026 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 8371e097) the change the row had not recorded.</p></div><div",
-   "contexto_depois": "/span></span></div><p class=\"log-motivo\" data-correcao-claim=\"evora-prr-aprovado-2026\" data-correcao-n=\"6\" data-correcao-grupo=\"6\" data-correcao-campo=\"reason\">The access moved from 2026-08-04 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 8371e097) the change the row had not recorded.</p></div><div"
+   "contexto_antes": "/span></span></div><p class=\"log-motivo\" data-correcao-claim=\"evora-prr-aprovado-2026\" data-correcao-n=\"6\" data-correcao-grupo=\"6\" data-correcao-campo=\"reason\">The access moved from 04.08.2026 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 632b14f4) the change the row had not recorded.</p></div><div",
+   "contexto_depois": "/span></span></div><p class=\"log-motivo\" data-correcao-claim=\"evora-prr-aprovado-2026\" data-correcao-n=\"6\" data-correcao-grupo=\"6\" data-correcao-campo=\"reason\">The access moved from 2026-08-04 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 632b14f4) the change the row had not recorded.</p></div><div"
   },
   {
    "id": "P5",

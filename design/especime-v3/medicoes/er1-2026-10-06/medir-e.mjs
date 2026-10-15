@@ -10,10 +10,10 @@ const pasta = 'design/especime-v3/medicoes/er1-2026-10-06';
 const linhas = allClaims();
 const cabecaCodigo = execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
 assert.equal(JSON.parse(fs.readFileSync('dist/version.json','utf8')).commit,cabecaCodigo);
-const fonteAnterior = execFileSync('git',['show','1352d49a:src/lib/incorporar.mjs'],{encoding:'utf8'})
+const fonteAnterior = execFileSync('git',['show','8dbe1481:src/lib/incorporar.mjs'],{encoding:'utf8'})
   .replace(/from '([^']+)'/g,(_,caminho)=>`from '${new URL(caminho,new URL('../../../../src/lib/incorporar.mjs',import.meta.url)).href}'`);
 const anterior = await import('data:text/javascript;base64,'+Buffer.from(fonteAnterior).toString('base64'));
-const aparencia = {base:'1352d49a',codigosComparados:0,apresentacoesComparadas:0,diferencas:[]};
+const aparencia = {base:'8dbe1481',codigosComparados:0,apresentacoesComparadas:0,diferencas:[]};
 for (const c of linhas) for (const lang of ['pt','en']) {
   if (codigoDaIncorporacao(c,lang)!==anterior.codigoDaIncorporacao(c,lang)) aparencia.diferencas.push({id:c.id,lang,tipo:'codigo'});
   aparencia.codigosComparados++;

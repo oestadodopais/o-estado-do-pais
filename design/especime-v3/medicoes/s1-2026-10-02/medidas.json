@@ -51,7 +51,7 @@
     {
       "nome": "rotas_declaradas_antes",
       "valor": 35,
-      "comando": "git show 62ed13c6:src/lib/routes.mjs · as chaves de ROUTES",
+      "comando": "git show ad62f09e:src/lib/routes.mjs · as chaves de ROUTES",
       "conhecido_positivo": {
         "o_que": "a das correções é uma delas",
         "encontrado": true
@@ -843,7 +843,7 @@
     {
       "nome": "s1b_versoes_da_historia_do_ramo_com_o_nome_da_equipa",
       "valor": 2,
-      "comando": "cada ficheiro mudado em cada commit de 62ed13c6..HEAD (git diff-tree e git show), com o identificador ou o nome",
+      "comando": "cada ficheiro mudado em cada commit de ad62f09e..HEAD (git diff-tree e git show), com o identificador ou o nome",
       "conhecido_positivo": {
         "o_que": "o registo do lugar de direção no commit do brief é uma delas",
         "encontrado": true

@@ -20,7 +20,7 @@ The prompt is not safe to issue as a green light. It orders implementation befor
 ### 2. “Your current Block T state” is stale and no baseline is pinned
 
 - **Prompt says:** Reconcile the plan with “your current Block T state” ([green-light L15–16](leitura/docs/PROMPT-green-light.md:15)).
-- **Evidence says:** The state note explicitly warns that the handoff describes a `main` that no longer exists ([state L3–7](leitura/docs/ESTADO-DO-MAIN.md:3)). At the recorded time, `main`, `origin/main`, and production were `9b9f477` ([state L9–15](leitura/docs/ESTADO-DO-MAIN.md:9)); Block T was already merged and live ([roadmap L115–119](leitura/docs/PLANO-fases.md:115)). The handoff does not know about later receipt, dataset, Método, and PRR changes ([state L25–58](leitura/docs/ESTADO-DO-MAIN.md:25)).
+- **Evidence says:** The state note explicitly warns that the handoff describes a `main` that no longer exists ([state L3–7](leitura/docs/ESTADO-DO-MAIN.md:3)). At the recorded time, `main`, `origin/main`, and production were `97eeaca` ([state L9–15](leitura/docs/ESTADO-DO-MAIN.md:9)); Block T was already merged and live ([roadmap L115–119](leitura/docs/PLANO-fases.md:115)). The handoff does not know about later receipt, dataset, Método, and PRR changes ([state L25–58](leitura/docs/ESTADO-DO-MAIN.md:25)).
 - **Why it matters:** A builder may plan against old components, omit live functionality, or use a drifting `main...branch` comparison whose baseline is not the claimed state.
 - **Exact change:**
 

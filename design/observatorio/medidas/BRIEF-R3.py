@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""O §0 do brief R3 (o índice do sítio), medido sobre a cabeça presa do sítio (1c4dde2f). Não lê a rede: lê a tabela das
+"""O §0 do brief R3 (o índice do sítio), medido sobre a cabeça presa do sítio (2c510494). Não lê a rede: lê a tabela das
 rotas, as listas do menu e do rodapé, os ficheiros de página e os módulos de dados na cabeça. Escreve
 design/observatorio/medidas/BRIEF-R3.json (ou o caminho em OEDP_MEDIDAS_JSON). Cada medição leva o comando e um
 conhecido-positivo; o que não conseguir ler fica «NÃO LIDO»."""
 import json, os, pathlib, re, subprocess
 
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "1c4dde2f"
+CAB = "2c510494"
 NAO = "NÃO LIDO"
 medidas = []
 

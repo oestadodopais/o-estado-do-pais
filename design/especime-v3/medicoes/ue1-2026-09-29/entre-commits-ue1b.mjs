@@ -16,11 +16,11 @@ const le = (f) => {
   return fs.existsSync(p) ? Number(fs.readFileSync(p, 'utf8').trim()) : null;
 };
 const commits = [
-  { commit: '63f54d18', o_que: 'o ordinal inglês, as ressalvas da fonte nas pontas e a legenda das marcas do recibo da série (o estado sem a porta, construído à parte)',
+  { commit: 'd0a36492', o_que: 'o ordinal inglês, as ressalvas da fonte nas pontas e a legenda das marcas do recibo da série (o estado sem a porta, construído à parte)',
     corridas: [['python3 acertos-ue1.py', 'acertos'], ['npm run check:voz (depois de pôr o inventário em dia)', 'voz-b1'], ['npm run build', 'build-A'], ['npm run check:cartao', 'cartao-A'], ['npm run typecheck', 'tipos-A']] },
-  { commit: '181ce25c', o_que: 'a porta do recibo da linha portuguesa para a sua série',
+  { commit: '39f34d59', o_que: 'a porta do recibo da linha portuguesa para a sua série',
     corridas: [['npm run build', 'build-B'], ['npm run check:alvos', 'check-alvos-B'], ['npm run check:lugar', 'check-lugar-B'], ['npm run check:cartao', 'check-cartao-B'], ['npm run typecheck', 'typecheck-B']] },
-  { commit: 'c9859d31', o_que: 'o mapa do repositório',
+  { commit: 'd65feab3', o_que: 'o mapa do repositório',
     corridas: [['python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md', 'mapa-2']] },
 ];
 const saida = commits.map((c) => ({ commit: c.commit, o_que: c.o_que, corridas: c.corridas.map(([comando, f]) => ({ comando, codigo: le(f) })) }));

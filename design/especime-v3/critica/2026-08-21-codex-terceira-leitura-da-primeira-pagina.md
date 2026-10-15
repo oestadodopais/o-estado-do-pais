@@ -1,6 +1,6 @@
 # Terceira leitura cruzada da primeira página v3 (Codex, sem contexto), 2026-08-21, manhã
 
-*Sobre a construção em `dfbd44c` (depois da ronda 2l: Emendas 15 a 17). Mesmo leitor, pacote e prompt das duas leituras anteriores; as plantas P1 e P3 reancoradas (peça vazia; lede nova). **Cinco de cinco plantas apanhadas** (1 P4, 2 P1, 3 P5, 4 P3, 10 P2): a frase portuguesa na edição inglesa, que escapara duas vezes, foi vista desta vez porque a lede nova é curta e o leitor a comparou às duas edições.*
+*Sobre a construção em `1b22893` (depois da ronda 2l: Emendas 15 a 17). Mesmo leitor, pacote e prompt das duas leituras anteriores; as plantas P1 e P3 reancoradas (peça vazia; lede nova). **Cinco de cinco plantas apanhadas** (1 P4, 2 P1, 3 P5, 4 P3, 10 P2): a frase portuguesa na edição inglesa, que escapara duas vezes, foi vista desta vez porque a lede nova é curta e o leitor a comparou às duas edições.*
 
 ## Triagem do lugar de direção
 
@@ -189,7 +189,7 @@ I would **not show this home to the director yet**. The default Portuguese editi
 ## As plantas (plantas.json)
 ```json
 {
-  "commit": "dfbd44c",
+  "commit": "1b22893",
   "plantas": [
     {
       "ficheiro": "dist/index.html",

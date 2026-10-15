@@ -12,14 +12,14 @@ Repositórios sintéticos criados numa pasta temporária; não lê o motor do pr
 
 ## Os dois ensaios sobre o bloco V2-a real (`ensaio-v2a-bloco-inteiro.json`, `ensaio-v2a-intervalo-da-correcao.json`)
 
-Na worktree estacionada do sítio `v2a-2026-10-13` (cabeça `c4b22a56`) e na do motor `v2a-2026-10-13` (cabeça `80268af`), com o brief `MANDATO-V2A-e-2026-10-14.md` e o relatório `design/especime-v3/medicoes/v2a-2026-10-12/LEIA-ME.md` dessa worktree; o ficheiro copiado para esta pasta é o `motor/corpos-alojados.json` de cada pacote.
+Na worktree estacionada do sítio `v2a-2026-10-13` (cabeça `dc8fe5e1`) e na do motor `v2a-2026-10-13` (cabeça `80268af`), com o brief `MANDATO-V2A-e-2026-10-14.md` e o relatório `design/especime-v3/medicoes/v2a-2026-10-12/LEIA-ME.md` dessa worktree; o ficheiro copiado para esta pasta é o `motor/corpos-alojados.json` de cada pacote.
 
 ```
 PACOTE_LOGS=inteiros PACOTE_MOTOR="<motor/worktree v2a> dfeca64d 80268af content/*" \
-  sh scripts/leituras/pacote.sh <sitio/worktree v2a> ef0dc7dd c4b22a56 <pacote-inteiro> <brief> <relatorio>
+  sh scripts/leituras/pacote.sh <sitio/worktree v2a> ef0dc7dd dc8fe5e1 <pacote-inteiro> <brief> <relatorio>
 
 PACOTE_LOGS=inteiros PACOTE_MOTOR="<motor/worktree v2a> 559eac97 80268af" \
-  sh scripts/leituras/pacote.sh <sitio/worktree v2a> 972c1f07 c4b22a56 <pacote-correcao> <brief> <relatorio>
+  sh scripts/leituras/pacote.sh <sitio/worktree v2a> 62165d25 dc8fe5e1 <pacote-correcao> <brief> <relatorio>
 ```
 
 O primeiro cobre o bloco inteiro (o diff do motor sem `content/*`, para provar que os corpos chegam pela M83 e não pelo diff); o segundo cobre só o intervalo da passagem de correção, que é o caso que falhou a 13.10.

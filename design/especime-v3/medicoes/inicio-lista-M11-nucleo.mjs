@@ -12,7 +12,7 @@ import { homedir as jd1Casa } from 'node:os';
  *
  * O algoritmo QUADRADO_INSCRITO (medição 6) é uma cópia literal, creditada, de
  * `tests/inicio/mapa-distritos.mjs` do repositório principal (I82), lida em
- * 29.08.2026 no commit `5b4fc7f` (idêntica ao que está em HEAD, `a76f829`: 0
+ * 29.08.2026 no commit `87df47f` (idêntica ao que está em HEAD, `636b823`: 0
  * linhas de diferença, confirmado com `diff` antes de escrever este ficheiro).
  * Os pontos representativos vêm de `mapa/pais.json`, também idêntico nos dois
  * commits (confirmado com `diff`).

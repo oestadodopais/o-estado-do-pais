@@ -3,13 +3,13 @@
 *O relatório do construtor (Claude Opus 5), na forma do §3 do brief
 `design/observatorio/BRIEF-P2-o-numero-e-o-seu-sentido.md`. Worktree
 `<pasta-das-worktrees>/cartao-2026-09-15`, ramo `cartao-2026-09-15`, sobre
-`2ab86986`. Prosa em português, sem travessões.*
+`ef9f0bc6`. Prosa em português, sem travessões.*
 
 ---
 
 ## 0 · Os três acertos de 15.09 à noite, e o que eles mudaram
 
-O lugar de direção leu as capturas da cabeça `2dceb7b9` e mandou três acertos.
+O lugar de direção leu as capturas da cabeça `a774d8af` e mandou três acertos.
 Estão feitos, cada um no seu commit, e o que eles mudaram está medido:
 
 | o acerto | antes | depois |
@@ -76,7 +76,7 @@ contagem desceu de 9,9 para 6,5. **Se a régua for a mais, é ali que se corta.*
 ## 2 · A contagem dos pedaços de texto por cartão, antes e depois
 
 A contagem é de **nós de texto à vista**, por cartão, depois de tirar o que só um
-leitor de ecrã ouve (`.vh` e `aria-hidden`). Medida sobre o `dist/` de `2ab86986`
+leitor de ecrã ouve (`.vh` e `aria-hidden`). Medida sobre o `dist/` de `ef9f0bc6`
 e sobre o da cabeça final, com o mesmo guião.
 
 | família de página | edição | cartões | antes | sem a régua | com a régua | depois dos acertos |
@@ -258,28 +258,28 @@ cartão novo continua a levar: as duas continuam verdes sem uma linha mudada.
 
 | | |
 | --- | --- |
-| `472f563e` | O brief do bloco, o guião das capturas e as quarenta capturas de antes |
-| `7c25c13c` | A máquina do enquadramento, a escada do nome do cartão e a próxima conferência de uma linha |
-| `b84d47f8` | As cadeias do cartão: a preposição, as três palavras da régua e a segunda data |
-| `a7549270` | O cartão de uma medida: cinco coisas, e nada mais |
-| `9a275352` | A orgânica dita uma vez, e a legenda da marca fora das listas |
-| `0469a6e7` | O recibo ganha a segunda data: quando a fonte volta a publicar |
-| `2abfc41c` | O gabarito do cartão da faixa, e a faixa que deixa de deslizar acima de 768 px |
-| `06e21f54` | A régua do cartão, com oito estragos plantados, entra no verify |
-| `5bafae14` | O inventário das frases e o registo das revisões |
-| `53b706c6` | As linhas do enquadramento e os dois ficheiros do motor |
-| `cebbcd72` | A régua lê as linhas do motor, e uma linha que é régua de outra não é uma medida |
-| `97ac42f3` | O recibo ganha o nome oficial da medida, com a origem de cada um |
-| `0ffd15f7` | A régua do bloco compara as duas testemunhas do valor de referência |
-| `aa84b85e` | O inventário com as linhas do motor, e a contagem do livro-razão datada |
-| `45b2b561` | A catraca da L1 sobe 118, que são as 59 linhas novas vezes duas edições |
-| `4eb57d98` | O tecto do cartão do sistema de desenho sobe, porque o livro-razão cresceu |
-| `2dceb7b9` | O relatório, a tabela das cadeias, as medições e as quarenta capturas de depois |
-| `355d8ed2` | Nenhum cartão fica sem nome: a escada ganha um degrau e deixa de ter fundo |
-| `b2b9a827` | Uma marca da fonte por cartão, e o recibo passa a listar o enquadramento |
-| `8cbca79c` | O valor de referência entre parênteses, e sem a vírgula solta |
-| `d42d1a53` | As duas tabelas das línguas saem de `nomes.mjs`, que já não as usa |
-| `d8bbb6de` | A dispensa que eu tinha escrito no portão nunca dispensou nada, e sai |
+| `b14d464b` | O brief do bloco, o guião das capturas e as quarenta capturas de antes |
+| `d62d4346` | A máquina do enquadramento, a escada do nome do cartão e a próxima conferência de uma linha |
+| `86950c22` | As cadeias do cartão: a preposição, as três palavras da régua e a segunda data |
+| `e153c7b7` | O cartão de uma medida: cinco coisas, e nada mais |
+| `998bdcf5` | A orgânica dita uma vez, e a legenda da marca fora das listas |
+| `136ad6c9` | O recibo ganha a segunda data: quando a fonte volta a publicar |
+| `5d9ceb13` | O gabarito do cartão da faixa, e a faixa que deixa de deslizar acima de 768 px |
+| `8c83447e` | A régua do cartão, com oito estragos plantados, entra no verify |
+| `12a41f3a` | O inventário das frases e o registo das revisões |
+| `d2615fc3` | As linhas do enquadramento e os dois ficheiros do motor |
+| `04b05f12` | A régua lê as linhas do motor, e uma linha que é régua de outra não é uma medida |
+| `34443220` | O recibo ganha o nome oficial da medida, com a origem de cada um |
+| `a35a5686` | A régua do bloco compara as duas testemunhas do valor de referência |
+| `06864a17` | O inventário com as linhas do motor, e a contagem do livro-razão datada |
+| `1195c597` | A catraca da L1 sobe 118, que são as 59 linhas novas vezes duas edições |
+| `60418219` | O tecto do cartão do sistema de desenho sobe, porque o livro-razão cresceu |
+| `a774d8af` | O relatório, a tabela das cadeias, as medições e as quarenta capturas de depois |
+| `262b7d85` | Nenhum cartão fica sem nome: a escada ganha um degrau e deixa de ter fundo |
+| `94e4bad4` | Uma marca da fonte por cartão, e o recibo passa a listar o enquadramento |
+| `0ff3c8b9` | O valor de referência entre parênteses, e sem a vírgula solta |
+| `2e33c36e` | As duas tabelas das línguas saem de `nomes.mjs`, que já não as usa |
+| `a6a508a6` | A dispensa que eu tinha escrito no portão nunca dispensou nada, e sai |
 | (o último) | O relatório e a tabela refeitos com os acertos, e as quarenta capturas de depois outra vez |
 
 **A cabeça final está no §7**, com os códigos dos portões.
@@ -302,7 +302,7 @@ zsh), e só a segunda, com os códigos lidos dos ficheiros, conta.»
 Os três ficheiros ficam em `design/especime-v3/medicoes/p2-2026-09-15/portoes/`:
 `build.code`, `verify.code` e `typecheck.code`. **Os três dizem 0**, e os três
 foram escritos pela corrida que correu sobre a cabeça do código
-(`4eb57d98`, «O tecto do cartão do sistema de desenho sobe»). O commit que se
+(`60418219`, «O tecto do cartão do sistema de desenho sobe»). O commit que se
 segue acrescenta só documentos e imagens: o relatório, as duas tabelas, as
 medições e as 40 capturas de depois, e nenhum deles entra na cadeia de nenhum
 portão (a lista de documentos de `check:registo` é fechada e está escrita em
@@ -627,7 +627,7 @@ nas de domínio.
 `node design/especime-v3/medicoes/p2-2026-09-15/capturas-cartao.mjs --momento=depois`
 sobre a cabeça desta passagem: 40 imagens (quatro rotas × duas edições × cinco
 larguras) em `design/especime-v3/capturas/p2-2026-09-15/`. As de «antes»
-continuam a ser as da cabeça `2ab86986`.
+continuam a ser as da cabeça `ef9f0bc6`.
 
 **As saídas das réguas desta passagem**, ao lado deste ficheiro:
 

@@ -4,7 +4,7 @@ Esta primeira parte regista a entrega inicial do C1. As secções «C1c», «C1d
 
 Entrega parcial: o ponto 3 está parado porque a linha da dívida das famílias da União não pertence ao circuito que o brief manda atualizar. A prova está em `circuito-divida.json`. O valor selado permanece 49,3 e a divergência para 49,2 permanece visível no recibo. Não se inventou uma travessia nem uma `atualizacao` para uma linha que não está no livro de origem indicado.
 
-A cabeça medida do código do sítio é `3885a4e6180961ece14e54f03e46b0d3abbb2e6d`; a do motor é `3e83a271f4c5af0b1f6809436916c1b06d6e0b1c`. Os três portões finais passaram nesta cabeça do sítio. O último commit entrega as provas. O teste de aceitação integral do brief não está satisfeito enquanto o ponto 3 permanecer parado.
+A cabeça medida do código do sítio é `cacef5d1c78dd0f186ccce8c8dbca7af84af9feb`; a do motor é `3e83a271f4c5af0b1f6809436916c1b06d6e0b1c`. Os três portões finais passaram nesta cabeça do sítio. O último commit entrega as provas. O teste de aceitação integral do brief não está satisfeito enquanto o ponto 3 permanecer parado.
 
 ## Mandato e resultado
 
@@ -87,31 +87,31 @@ As larguras prescritas são 390, 768, 1 024, 1 280 e 1 600 px, nas edições por
 
 | Momento | Construção fotografada | Intervalo UTC e resultado |
 |---|---|---|
-| Antes | `48a5a1c181c1753036d301204884c57119bba8a5` | O brief do C1, as correções de confiança (o passo 1 da ordem da §1.133): o espaço entre o número e a unidade, a quarta redação das leituras, a primeira atualização de uma linha cruzada (a dívida das famílias da União revista pelo Eurostat), a releitura do PIB sem ambiguidade, o ficheiro dos indicadores dos concelhos, o que foi conferido em palavras correntes e o calendário de Évora; com o §0 medido por guião e o guião do construtor do Codex |
-| Depois | `3885a4e6180961ece14e54f03e46b0d3abbb2e6d` | C1: fechar os tipos do CSV e retirar a importação sem uso |
+| Antes | `7028e733f8bb4de7bf65f1bb76546304ba1e6db4` | O brief do C1, as correções de confiança (o passo 1 da ordem da §1.133): o espaço entre o número e a unidade, a quarta redação das leituras, a primeira atualização de uma linha cruzada (a dívida das famílias da União revista pelo Eurostat), a releitura do PIB sem ambiguidade, o ficheiro dos indicadores dos concelhos, o que foi conferido em palavras correntes e o calendário de Évora; com o §0 medido por guião e o guião do construtor do Codex |
+| Depois | `cacef5d1c78dd0f186ccce8c8dbca7af84af9feb` | C1: fechar os tipos do CSV e retirar a importação sem uso |
 
-O antes foi construído a partir da base, com a worktree em `28b17e2a2f283ef1b734be7a02f4012eea10f347` quando se capturou, como regista `preparacao/capturas-antes-permitidas.cabeca`. `capturas-antes.json` distingue `dist_construido_de` de `cabeca_da_arvore`; não se confunde a cabeça da árvore com o código fotografado.
+O antes foi construído a partir da base, com a worktree em `afe4013dac16f9de0c5f41fe8a20394c1efc4b11` quando se capturou, como regista `preparacao/capturas-antes-permitidas.cabeca`. `capturas-antes.json` distingue `dist_construido_de` de `cabeca_da_arvore`; não se confunde a cabeça da árvore com o código fotografado.
 
 O antes tem 70 capturas de página e 60 recortes de cartão. `pormenores-antes.json` acrescenta 12 imagens dos recibos e do calendário, nas larguras estreita e larga. As imagens estão em `capturas/`; as cópias estão em `paginas-antes/`. Os índices guardam os resumos para conferir os bytes. O depois tem 70 capturas de página e 60 recortes de cartão, com 0 páginas a transbordar. Os 18 ficheiros congelados estão em `paginas-depois/`. `pormenores-depois.json` guarda os recortes suplementares. `inspecao-visual.json` identifica as imagens abertas e as observações. A distância visual entre valor e unidade manteve-se; o separador textual passou a existir.
 
 ## Cabeças, commits e portões
 
-A base do sítio é `48a5a1c181c1753036d301204884c57119bba8a5`. Os commits do ramo, pela ordem, são:
+A base do sítio é `7028e733f8bb4de7bf65f1bb76546304ba1e6db4`. Os commits do ramo, pela ordem, são:
 
 | Commit | Assunto |
 |---|---|
-| `ada78b694e4cc11975b3172c35a31917fcebfa6b` | C1: alinhar a dívida de Évora com o calendário dos mandatos |
-| `28b17e2a2f283ef1b734be7a02f4012eea10f347` | C1: oferecer as medidas dos concelhos em ficheiro e preparar os rótulos |
-| `005c4a2eb0c55cce1abd762b8c5538dbec7227ca` | C1: separar valores e explicar as leituras e as conferências |
-| `d9ab0805ba9510df7ded6fa2350e65b35a0e8ab3` | C1: registar as três releituras iguais do PIB real por habitante |
-| `7a7d2f8d43f46e4bb599987d2f25080ace880d9b` | C1: separar também as unidades nos cartões dos concelhos |
+| `54f56d1250fc250ee37cb33f2ad1d777790e502a` | C1: alinhar a dívida de Évora com o calendário dos mandatos |
+| `afe4013dac16f9de0c5f41fe8a20394c1efc4b11` | C1: oferecer as medidas dos concelhos em ficheiro e preparar os rótulos |
+| `9b550a2312e292cac0c9bacfea7fc7a6ab34a34f` | C1: separar valores e explicar as leituras e as conferências |
+| `d50078dace78327e4f65a8deda9dc2727e782eee` | C1: registar as três releituras iguais do PIB real por habitante |
+| `8c0200a59a4c17bb298e15aa669f121510598896` | C1: separar também as unidades nos cartões dos concelhos |
 | `8656f66f838c31ec0ad63d58204df2edb5f90e91` | C1: fixar as palavras e preparar a medição da entrega |
-| `3885a4e6180961ece14e54f03e46b0d3abbb2e6d` | C1: fechar os tipos do CSV e retirar a importação sem uso |
-| `6c16c719` | C1: entregar as provas das correções de confiança. É o commit desta entrega; o pai é `3885a4e6180961ece14e54f03e46b0d3abbb2e6d`. |
+| `cacef5d1c78dd0f186ccce8c8dbca7af84af9feb` | C1: fechar os tipos do CSV e retirar a importação sem uso |
+| `c6dc526e` | C1: entregar as provas das correções de confiança. É o commit desta entrega; o pai é `cacef5d1c78dd0f186ccce8c8dbca7af84af9feb`. |
 
 A base do motor é `4eb2867936dd14ad2654751722e390804e68dda3`. O ramo contém o commit `3e83a271f4c5af0b1f6809436916c1b06d6e0b1c`, «C1: reler dimensões do Eurostat pela coordenada selada». Os registos das tentativas anteriores ficam nas provas, mas não são commits adicionais do ramo final.
 
-Os portões finais do sítio são corridos uma vez, separadamente, na cabeça do código `3885a4e6180961ece14e54f03e46b0d3abbb2e6d`. O commit posterior de entrega reúne as provas dessa cabeça. Os códigos têm de ser lidos dos ficheiros escritos por cada comando; uma conferência preparatória não substitui nenhum deles.
+Os portões finais do sítio são corridos uma vez, separadamente, na cabeça do código `cacef5d1c78dd0f186ccce8c8dbca7af84af9feb`. O commit posterior de entrega reúne as provas dessa cabeça. Os códigos têm de ser lidos dos ficheiros escritos por cada comando; uma conferência preparatória não substitui nenhum deles.
 
 | Comando | Código final | Ficheiro |
 |---|---|---|
@@ -138,14 +138,14 @@ O pacote de leitura é montado por `pacote-c1.py` após este commit de entrega, 
 
 Esta secção regista a passagem de correção de 28.09.2026. As secções anteriores
 são o registo da primeira entrega do C1, incluindo a paragem que então houve.
-A cabeça preparada da retoma é `3362a4c0`. Os resultados finais são lidos
+A cabeça preparada da retoma é `3469d833`. Os resultados finais são lidos
 dos ficheiros em `portoes/c1c/` e `c1c/`. O fecho das medições encontra-se
 no fim desta secção.
 
 A reconferência pelo gerador encontrou **49,2** para a dívida das famílias da
 União em 2025. A linha passou de 49,3 para 49,2, com acesso a 28.09.2026 e a
 entrada `atualizacao` nas palavras do mandato. A conferência das 3 009 linhas
-contra `b7f352ce` encontrou uma alteração de valor, esta, e uma alteração de
+contra `472d1a43` encontrou uma alteração de valor, esta, e uma alteração de
 endereço, a proveniência autorizada da DGAL. Não foi aplicada outra revisão
 numérica nem uma normalização da escrita dos outros valores.
 
@@ -165,7 +165,7 @@ numérica nem uma normalização da escrita dos outros valores.
 | 16 | Cada observação de dívida fica no fim do seu ano. | F18 em `c1c/calendario.json`, incluindo a planta que recua os pontos para o início. |
 | 17 | A guarda conta as quantidades, exige uma em cada cartão declarado e falha se não medir nenhum cartão na construção. A contagem de câmaras mantém a proteção independente da V2. | Plantas do seletor que deixa de casar e da contagem colada à unidade. |
 | 18 | Os ramos de sinal das rendas, médias de doze meses, IHPC e restantes leituras do RP1 estão presos às palavras da respetiva edição. | Trocas coerentes de ramos nas duas línguas em `c1c/plantas-confianca.json`. |
-| 20 | A cabeça da árvore nas capturas do antes foi corrigida para `28b17e2a`. O registo do comando deixa de aceitar uma cabeça fornecida pelo ambiente. | `capturas-antes.json`, `paginas-antes/INDICE.json`, `preparacao/capturas-antes-permitidas.cabeca` e `registar-c1.py`. |
+| 20 | A cabeça da árvore nas capturas do antes foi corrigida para `afe4013d`. O registo do comando deixa de aceitar uma cabeça fornecida pelo ambiente. | `capturas-antes.json`, `paginas-antes/INDICE.json`, `preparacao/capturas-antes-permitidas.cabeca` e `registar-c1.py`. |
 | 21 | Foi retirado `pib/releitura.json`: não correspondia ao guião entregue. As provas históricas restantes não são apresentadas como a execução do painel no C1c. | A remoção no Git; `c1c/painel.log` e corpos da nova corrida no motor. |
 | 22 | A afirmação de que houve comunicação ao diretor estava errada. O relatório passa a dizê-lo expressamente. | Parágrafo corrigido na primeira parte deste relatório. |
 | 23 | As cabeças medidas, a entrega e os commits seguintes ficam ligados abaixo. | Lista de commits e registos dos portões. |
@@ -205,7 +205,7 @@ Na primeira passagem foram retiradas a reconferência de 21.09 da dívida
 europeia e a de 01.09 da linha legal, para satisfazer a comparação com o acesso
 atual. **As duas retiradas foram erradas.** Guardá-las só nas provas do antes
 não conservava a história na linha. A decisão da retoma mandou repor ambas,
-iguais a `a677770f`, e validar o acesso em vigor no dia de cada releitura pela
+iguais a `04438bb9`, e validar o acesso em vigor no dia de cada releitura pela
 história tipada. A União ganhou a prova que faltava: a entrada `proveniencia`
 sobre `access_date`, de 15.09.2026 para 28.09.2026, com as razões exatas da
 direção. Entrou pelo mesmo guião de aplicação da atualização. As três
@@ -246,11 +246,11 @@ conferência deriva esse âmbito de `geo=EU27_2020`, por uma via independente.
 A atualização não entra como uma mudança de um valor de Portugal na primeira
 página. Não se acrescentou uma medida, uma série, um gráfico ou uma página.
 
-**Cabeças e entrega.** A primeira cabeça medida foi `3885a4e6`; a entrega das
-provas foi `6c16c719`; seguiram-se a resposta `04ef76eb`, `533fea9d` e
-`b7f352ce`, que é a base desta passagem. Esta sequência substitui o antigo
+**Cabeças e entrega.** A primeira cabeça medida foi `cacef5d1`; a entrega das
+provas foi `c6dc526e`; seguiram-se a resposta `1b62bf6e`, `ad034ac8` e
+`472d1a43`, que é a base desta passagem. Esta sequência substitui o antigo
 «HEAD» ambíguo. A lista completa do ramo, abaixo, liga também a entrega da paragem
-`8d7ddbdb`, a decisão `e38d5f8b` e os commits da retoma.
+`6a9b5aa1`, a decisão `1133bb86` e os commits da retoma.
 
 
 **Paragem medida na primeira corrida completa.** O `build` de `93f0477b`
@@ -261,14 +261,14 @@ fonte. A retirada tinha sido feita para cumprir a outra guarda, que recusa
 uma releitura anterior ao acesso atual. Não se enfraqueceu nenhuma das duas.
 Os ficheiros da recusa ficam em `portoes/c1c/tentativa-93f0477b/`.
 
-A decisão foi autorizada em `e38d5f8b`, no guião
+A decisão foi autorizada em `1133bb86`, no guião
 `prompts/PROMPT-c1c-retoma-codex.md`. A regra 15 passou a reconstituir o acesso
 pelas entradas `proveniencia` sobre `access_date`. O acesso anterior vale antes
 da data da mudança; o novo vale a partir dela. Sem história, vale o acesso
 atual. A cadeia tem de ser coerente e terminar no campo atual.
 
 Antes de alterar a regra, `c1c/enderecos-antes.py` mediu 3 009 linhas na cabeça
-`e38d5f8b`. Encontrou 18 linhas com 19 reconferências de endereço diferente do
+`1133bb86`. Encontrou 18 linhas com 19 reconferências de endereço diferente do
 atual sem história explicativa. Ficam fora da nova comparação de endereços,
 como a decisão autoriza: são pedidos distintos sem prova de uma mudança da
 origem da linha. O levantamento não inventa a razão de cada diferença.
@@ -326,30 +326,30 @@ corrida em `medidas.json`, secção `C1c`.
 
 | Cabeça | Assunto |
 | --- | --- |
-| `ada78b694e4cc11975b3172c35a31917fcebfa6b` | C1: alinhar a dívida de Évora com o calendário dos mandatos |
-| `28b17e2a2f283ef1b734be7a02f4012eea10f347` | C1: oferecer as medidas dos concelhos em ficheiro e preparar os rótulos |
-| `005c4a2eb0c55cce1abd762b8c5538dbec7227ca` | C1: separar valores e explicar as leituras e as conferências |
-| `d9ab0805ba9510df7ded6fa2350e65b35a0e8ab3` | C1: registar as três releituras iguais do PIB real por habitante |
-| `7a7d2f8d43f46e4bb599987d2f25080ace880d9b` | C1: separar também as unidades nos cartões dos concelhos |
+| `54f56d1250fc250ee37cb33f2ad1d777790e502a` | C1: alinhar a dívida de Évora com o calendário dos mandatos |
+| `afe4013dac16f9de0c5f41fe8a20394c1efc4b11` | C1: oferecer as medidas dos concelhos em ficheiro e preparar os rótulos |
+| `9b550a2312e292cac0c9bacfea7fc7a6ab34a34f` | C1: separar valores e explicar as leituras e as conferências |
+| `d50078dace78327e4f65a8deda9dc2727e782eee` | C1: registar as três releituras iguais do PIB real por habitante |
+| `8c0200a59a4c17bb298e15aa669f121510598896` | C1: separar também as unidades nos cartões dos concelhos |
 | `8656f66f838c31ec0ad63d58204df2edb5f90e91` | C1: fixar as palavras e preparar a medição da entrega |
-| `3885a4e6180961ece14e54f03e46b0d3abbb2e6d` | C1: fechar os tipos do CSV e retirar a importação sem uso |
-| `6c16c719f7bbc5164182ea5c62a51b656bf4fd43` | C1: entregar as provas das correções de confiança |
-| `04ef76eb4ff04ac6110012934b76f9b7d0536b34` | C1: a resposta do construtor do Codex |
-| `533fea9d40720e72c009e2aeb0d0ba72ad0d1feb` | Os dois memorandos de 28.09.2026 sobre o que os dados do projeto já dizem e como o mostrar (o Claude Opus 5.5 e o Codex gpt-6-astra, cada um por si a partir do mesmo pedido), com o pedido comum; a síntese do lugar de direção está no Drive do diretor |
-| `b7f352ce253effe7d21dc97bacc1d9b67665e592` | C1c: a leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco) com o registo das plantas, a quinta redação das leituras (o objetivo do BCE no cartão do IHPC, dito como objetivo da zona do euro e não como veredicto), e o guião da passagem de correção para o Codex, com a atualização da dívida das famílias da União pelo circuito do enquadramento |
-| `7d12f4ab3ff0247c0d81b42ddf64d2992dbd0f18` | C1c: atualizar a dívida europeia e repor as bandeiras e a origem legal |
-| `0a9213f5798acd2ceae2bcb66b8163eccd26e00c` | C1c: dizer cada releitura e distinguir o valor encontrado do publicado |
-| `feeb59754996ead2a31dff609a9a0000e99d5816` | C1c: sustentar o objetivo do BCE e explicar a dívida e o câmbio |
+| `cacef5d1c78dd0f186ccce8c8dbca7af84af9feb` | C1: fechar os tipos do CSV e retirar a importação sem uso |
+| `c6dc526e292e21946c6cf99aad7a7efd6946eb76` | C1: entregar as provas das correções de confiança |
+| `1b62bf6e5bf9f3137bc7895c1b25491e18e831d6` | C1: a resposta do construtor do Codex |
+| `ad034ac8fe7551068d6f24dcb41731edf82bdf1f` | Os dois memorandos de 28.09.2026 sobre o que os dados do projeto já dizem e como o mostrar (o Claude Opus 5.5 e o Codex gpt-6-astra, cada um por si a partir do mesmo pedido), com o pedido comum; a síntese do lugar de direção está no Drive do diretor |
+| `472d1a43195856b4ef4624f61b1cb8f018cc86e3` | C1c: a leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco) com o registo das plantas, a quinta redação das leituras (o objetivo do BCE no cartão do IHPC, dito como objetivo da zona do euro e não como veredicto), e o guião da passagem de correção para o Codex, com a atualização da dívida das famílias da União pelo circuito do enquadramento |
+| `d8830e746f238eb70c2670602b7d6c89276e372c` | C1c: atualizar a dívida europeia e repor as bandeiras e a origem legal |
+| `8af545d6a60435981972e1862b1e176251ed70ed` | C1c: dizer cada releitura e distinguir o valor encontrado do publicado |
+| `2754bbb6a5dd17091709d428fa7a0503dd938906` | C1c: sustentar o objetivo do BCE e explicar a dívida e o câmbio |
 | `93f0477b213fb58ac113291bfbaaad3de1bed2ed` | C1c: conservar a nota no ficheiro e situar a dívida no fim do ano |
-| `8d7ddbdba2e5ca98f5745dd144250e0b4c95d875` | C1c: entregar as provas e a paragem na história da fonte legal |
-| `e38d5f8b7aeff11d9e808f893cc6944bed8e1f8e` | C1c: a decisão do lugar de direção sobre a paragem da DGAL (a regra 15 lê o acesso em vigor no dia de cada reconferência, pela história tipada; as duas reconferências retiradas voltam; a linha da União prova o acesso anterior com uma entrada de proveniência) e o guião da retoma do construtor do Codex |
+| `6a9b5aa1c78ddeafae845fe553500b754cc18c0d` | C1c: entregar as provas e a paragem na história da fonte legal |
+| `1133bb86eb7a163ab8327b3a4663d0dae0fe551b` | C1c: a decisão do lugar de direção sobre a paragem da DGAL (a regra 15 lê o acesso em vigor no dia de cada reconferência, pela história tipada; as duas reconferências retiradas voltam; a linha da União prova o acesso anterior com uma entrada de proveniência) e o guião da retoma do construtor do Codex |
 | `aa8f6ff13575af523d68d3263b0a190a4cb1d87d` | C1c: validar as releituras pela proveniência em vigor e repor a história |
 | `7a97bfbe92388c1cbabc487e9d891e7ff1ede6a6` | C1c: citar os nomes antigos e tornar a planta independente do histórico Git |
 | `7aeb6e543b5dc8611e39cccdbae0795acd28fdef` | C1c: marcar a língua da edição também na história da proveniência |
-| `3362a4c0df19410129eaadce534fc3fd8a528318` | C1c: escrever as datas históricas na forma da casa e conferir a mesma data |
+| `3469d83379090a7a1b4410e13613e0ec045f1497` | C1c: escrever as datas históricas na forma da casa e conferir a mesma data |
 
 O último commit, que contém este relatório e `RESPOSTA-codex-c1c.md`, entrega
-as provas como filho direto de `3362a4c0df19410129eaadce534fc3fd8a528318`.
+as provas como filho direto de `3469d83379090a7a1b4410e13613e0ec045f1497`.
 O seu hash não pode estar escrito dentro do próprio commit; esta relação
 identifica-o sem uma cabeça inventada. Só muda a pasta das medições do C1.
 A resposta da sessão dá o hash depois de ele existir, sem reescrever o ficheiro.
@@ -368,16 +368,16 @@ Os dois commits C1c passaram o pre-commit completo. A prova está em
 
 
 **Fecho da retoma.** Os três portões completos terminaram a 0 na mesma cabeça
-`3362a4c0df19410129eaadce534fc3fd8a528318`. Cada um correu no seu comando,
+`3469d83379090a7a1b4410e13613e0ec045f1497`. Cada um correu no seu comando,
 um de cada vez. A tabela seguinte foi preenchida a partir dos ficheiros
 `.codigo`, `.cabeca`, `.inicio` e `.fim` acabados de escrever em `portoes/c1c/`;
 não usa o código de uma tentativa anterior.
 
 | Portão | Código lido | Cabeça | Início UTC | Fim UTC |
 | --- | --- | --- | --- | --- |
-| `build` | 0 | `3362a4c0` | `2026-09-28T15:31:33.937947+00:00` | `2026-09-28T15:36:45.003338+00:00` |
-| `verify` | 0 | `3362a4c0` | `2026-09-28T15:37:48.467671+00:00` | `2026-09-28T15:46:10.847526+00:00` |
-| `typecheck` | 0 | `3362a4c0` | `2026-09-28T15:31:24.190666+00:00` | `2026-09-28T15:31:24.402857+00:00` |
+| `build` | 0 | `3469d833` | `2026-09-28T15:31:33.937947+00:00` | `2026-09-28T15:36:45.003338+00:00` |
+| `verify` | 0 | `3469d833` | `2026-09-28T15:37:48.467671+00:00` | `2026-09-28T15:46:10.847526+00:00` |
+| `typecheck` | 0 | `3469d833` | `2026-09-28T15:31:24.190666+00:00` | `2026-09-28T15:31:24.402857+00:00` |
 
 O livro passou com as duas listas intactas e a nova história do acesso europeu.
 Os recibos finais passaram os 12 casos independentes em
@@ -455,7 +455,7 @@ proveniência do acesso da C1c. A C1d não mudou nenhum valor do livro.
 | 3. Excertos, achado 10 | Cada um dos 17 excertos ganhou a entrada `proveniencia` sobre `excerpt`, com a data e as razões exatas do mandato. Os valores e os acessos ficaram. | `c1d/excertos.json`, o guião `c1d/excertos.py`, as linhas e a conferência final do livro. |
 | 4. Estimativa, achado 4 | A marca `e` rende «valor estimado» / «estimated value» a partir da nota selada, nas mesmas superfícies HTML da marca provisória: leitura, régua, título do recibo e país. | `c1d/plantas-confianca.json`, K17, M8 e `c1d/recibos-finais.json`; capturas das duas edições. |
 | 5. Resultado da releitura, achados 6, 7 e 15 | A tentativa sem resposta só fala desse pedido. A releitura anterior à atualização confirma o valor anterior, que aparece ao lado. A ausência diz «Segunda leitura: ainda nenhuma» / «Second reading: none yet». | `c1d/recibos-finais.json`, plantas de ausência e de valor anterior; frases registadas no inventário. |
-| 6. Limite municipal, achados 7 e 18 | A linha e a entrada no cruzamento voltaram exatamente a `a677770f`, com o anuário, o acesso de agosto e a releitura de setembro, sem as sete entradas posteriores. O cartão conserva o denominador sustentado no literal DGAL. A migração pelo motor está aberta na I168. | `c1d/limite-reposto.json`, `c1d/cruzamento.codigo`, comparação de bytes em `c1d/medir.py`, `c1d/lingua-reposta.json`, K17 e capturas de Évora. |
+| 6. Limite municipal, achados 7 e 18 | A linha e a entrada no cruzamento voltaram exatamente a `04438bb9`, com o anuário, o acesso de agosto e a releitura de setembro, sem as sete entradas posteriores. O cartão conserva o denominador sustentado no literal DGAL. A migração pelo motor está aberta na I168. | `c1d/limite-reposto.json`, `c1d/cruzamento.codigo`, comparação de bytes em `c1d/medir.py`, `c1d/lingua-reposta.json`, K17 e capturas de Évora. |
 | 7. Objetivo do BCE, achado 11 | Tem a classe própria `objetivo-institucional`, definida nas duas edições. O cartão não usa a classe do painel macroeconómico nem dá um veredicto nacional. | `ledger/allowlist.yml`, `c1d/k17.json` e a conferência do cartão em `c1d/recibos-finais.json`. |
 | 8. Competitividade, achado 21 | A origem passou a citar uma frase inteira e contígua do discurso alojado. A frase do Eurostat sustenta o sinal; a do BCE sustenta a ligação entre preços relativos e competitividade. | `c1d/origens.json`, `c1d/medidas.json` em `literais`, K17; resumo do corpo conservado. |
 | 9. PRR, achado 19 | As cinco linhas conservam as entradas corretas de instantâneos. A regra documenta esse caso estreito, confere todas as cadeias e anuncia cada instantâneo aceite. Não há dispensa silenciosa. | Lista abaixo; `ledger/README.md`, `c1d/historia-proveniencia.json`, com plantas de outro conjunto, razão sem identificação e cadeia contraditória sem releitura anterior. |
@@ -518,24 +518,24 @@ que a direção juntou antes do lançamento. Nenhum ficheiro protegido mudou des
 essa base.
 
 **Cabeças, portões e capturas.**
-A base do sítio é `7b4328906d938bd6eeecb8f1e1fc18c1b809e964`. A cabeça de código final
-é `6bbe1cee5f7167ba7bb317733ceef7e4b71ab413`. Os códigos abaixo foram lidos dos ficheiros
+A base do sítio é `047b9b570d5fd405e3b344da00324e732cad2ed6`. A cabeça de código final
+é `ef700579cf26d6ebab1939c1a90853935d17b1fa`. Os códigos abaixo foram lidos dos ficheiros
 acabados de escrever em `portoes/c1d/`, cada portão no seu comando. Antes de
 cada corrida inteira foi consultado `pgrep -fl "astro build|npm run verify"`;
 as corridas de outras worktrees foram deixadas terminar.
 
 | Portão | Código | Cabeça medida |
 | --- | --- | --- |
-| `build` | 0 | `6bbe1cee5f7167ba7bb317733ceef7e4b71ab413` |
-| `verify` | 0 | `6bbe1cee5f7167ba7bb317733ceef7e4b71ab413` |
-| `typecheck` | 0 | `6bbe1cee5f7167ba7bb317733ceef7e4b71ab413` |
+| `build` | 0 | `ef700579cf26d6ebab1939c1a90853935d17b1fa` |
+| `verify` | 0 | `ef700579cf26d6ebab1939c1a90853935d17b1fa` |
+| `typecheck` | 0 | `ef700579cf26d6ebab1939c1a90853935d17b1fa` |
 
 A construção preparatória e as conferências que a corrigiram ficam em `c1d/`,
 com o seu código e estado da árvore. `c1d/tentativas.json` explica as falhas de
 preparação, a anotação de tipo em falta, a declaração sem uso e a construção
 interrompida pelo construtor para a retirar. Regista também o portão da língua:
 a reposição do anuário precisava das declarações que o acompanhavam em
-`a677770f`, repostas sem mudar a guarda, a fonte ou o número. Não são
+`04438bb9`, repostas sem mudar a guarda, a fonte ou o número. Não são
 apresentadas como os
 portões finais. As capturas finais vêm da cabeça dos portões: 330
 páginas e 150 recortes, nas duas edições e nas larguras
@@ -577,40 +577,40 @@ fora do ramo, identifica-o sem reescrever a resposta guardada.
 
 | Árvore | Commit | Assunto |
 | --- | --- | --- |
-| sítio | `ada78b694e4cc11975b3172c35a31917fcebfa6b` | C1: alinhar a dívida de Évora com o calendário dos mandatos |
-| sítio | `28b17e2a2f283ef1b734be7a02f4012eea10f347` | C1: oferecer as medidas dos concelhos em ficheiro e preparar os rótulos |
-| sítio | `005c4a2eb0c55cce1abd762b8c5538dbec7227ca` | C1: separar valores e explicar as leituras e as conferências |
-| sítio | `d9ab0805ba9510df7ded6fa2350e65b35a0e8ab3` | C1: registar as três releituras iguais do PIB real por habitante |
-| sítio | `7a7d2f8d43f46e4bb599987d2f25080ace880d9b` | C1: separar também as unidades nos cartões dos concelhos |
+| sítio | `54f56d1250fc250ee37cb33f2ad1d777790e502a` | C1: alinhar a dívida de Évora com o calendário dos mandatos |
+| sítio | `afe4013dac16f9de0c5f41fe8a20394c1efc4b11` | C1: oferecer as medidas dos concelhos em ficheiro e preparar os rótulos |
+| sítio | `9b550a2312e292cac0c9bacfea7fc7a6ab34a34f` | C1: separar valores e explicar as leituras e as conferências |
+| sítio | `d50078dace78327e4f65a8deda9dc2727e782eee` | C1: registar as três releituras iguais do PIB real por habitante |
+| sítio | `8c0200a59a4c17bb298e15aa669f121510598896` | C1: separar também as unidades nos cartões dos concelhos |
 | sítio | `8656f66f838c31ec0ad63d58204df2edb5f90e91` | C1: fixar as palavras e preparar a medição da entrega |
-| sítio | `3885a4e6180961ece14e54f03e46b0d3abbb2e6d` | C1: fechar os tipos do CSV e retirar a importação sem uso |
-| sítio | `6c16c719f7bbc5164182ea5c62a51b656bf4fd43` | C1: entregar as provas das correções de confiança |
-| sítio | `04ef76eb4ff04ac6110012934b76f9b7d0536b34` | C1: a resposta do construtor do Codex |
-| sítio | `533fea9d40720e72c009e2aeb0d0ba72ad0d1feb` | Os dois memorandos de 28.09.2026 sobre o que os dados do projeto já dizem e como o mostrar (o Claude Opus 5.5 e o Codex gpt-6-astra, cada um por si a partir do mesmo pedido), com o pedido comum; a síntese do lugar de direção está no Drive do diretor |
-| sítio | `b7f352ce253effe7d21dc97bacc1d9b67665e592` | C1c: a leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco) com o registo das plantas, a quinta redação das leituras (o objetivo do BCE no cartão do IHPC, dito como objetivo da zona do euro e não como veredicto), e o guião da passagem de correção para o Codex, com a atualização da dívida das famílias da União pelo circuito do enquadramento |
-| sítio | `7d12f4ab3ff0247c0d81b42ddf64d2992dbd0f18` | C1c: atualizar a dívida europeia e repor as bandeiras e a origem legal |
-| sítio | `0a9213f5798acd2ceae2bcb66b8163eccd26e00c` | C1c: dizer cada releitura e distinguir o valor encontrado do publicado |
-| sítio | `feeb59754996ead2a31dff609a9a0000e99d5816` | C1c: sustentar o objetivo do BCE e explicar a dívida e o câmbio |
+| sítio | `cacef5d1c78dd0f186ccce8c8dbca7af84af9feb` | C1: fechar os tipos do CSV e retirar a importação sem uso |
+| sítio | `c6dc526e292e21946c6cf99aad7a7efd6946eb76` | C1: entregar as provas das correções de confiança |
+| sítio | `1b62bf6e5bf9f3137bc7895c1b25491e18e831d6` | C1: a resposta do construtor do Codex |
+| sítio | `ad034ac8fe7551068d6f24dcb41731edf82bdf1f` | Os dois memorandos de 28.09.2026 sobre o que os dados do projeto já dizem e como o mostrar (o Claude Opus 5.5 e o Codex gpt-6-astra, cada um por si a partir do mesmo pedido), com o pedido comum; a síntese do lugar de direção está no Drive do diretor |
+| sítio | `472d1a43195856b4ef4624f61b1cb8f018cc86e3` | C1c: a leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco) com o registo das plantas, a quinta redação das leituras (o objetivo do BCE no cartão do IHPC, dito como objetivo da zona do euro e não como veredicto), e o guião da passagem de correção para o Codex, com a atualização da dívida das famílias da União pelo circuito do enquadramento |
+| sítio | `d8830e746f238eb70c2670602b7d6c89276e372c` | C1c: atualizar a dívida europeia e repor as bandeiras e a origem legal |
+| sítio | `8af545d6a60435981972e1862b1e176251ed70ed` | C1c: dizer cada releitura e distinguir o valor encontrado do publicado |
+| sítio | `2754bbb6a5dd17091709d428fa7a0503dd938906` | C1c: sustentar o objetivo do BCE e explicar a dívida e o câmbio |
 | sítio | `93f0477b213fb58ac113291bfbaaad3de1bed2ed` | C1c: conservar a nota no ficheiro e situar a dívida no fim do ano |
-| sítio | `8d7ddbdba2e5ca98f5745dd144250e0b4c95d875` | C1c: entregar as provas e a paragem na história da fonte legal |
-| sítio | `e38d5f8b7aeff11d9e808f893cc6944bed8e1f8e` | C1c: a decisão do lugar de direção sobre a paragem da DGAL (a regra 15 lê o acesso em vigor no dia de cada reconferência, pela história tipada; as duas reconferências retiradas voltam; a linha da União prova o acesso anterior com uma entrada de proveniência) e o guião da retoma do construtor do Codex |
+| sítio | `6a9b5aa1c78ddeafae845fe553500b754cc18c0d` | C1c: entregar as provas e a paragem na história da fonte legal |
+| sítio | `1133bb86eb7a163ab8327b3a4663d0dae0fe551b` | C1c: a decisão do lugar de direção sobre a paragem da DGAL (a regra 15 lê o acesso em vigor no dia de cada reconferência, pela história tipada; as duas reconferências retiradas voltam; a linha da União prova o acesso anterior com uma entrada de proveniência) e o guião da retoma do construtor do Codex |
 | sítio | `aa8f6ff13575af523d68d3263b0a190a4cb1d87d` | C1c: validar as releituras pela proveniência em vigor e repor a história |
 | sítio | `7a97bfbe92388c1cbabc487e9d891e7ff1ede6a6` | C1c: citar os nomes antigos e tornar a planta independente do histórico Git |
 | sítio | `7aeb6e543b5dc8611e39cccdbae0795acd28fdef` | C1c: marcar a língua da edição também na história da proveniência |
-| sítio | `3362a4c0df19410129eaadce534fc3fd8a528318` | C1c: escrever as datas históricas na forma da casa e conferir a mesma data |
-| sítio | `6f59ad006b7755ea623adedc8f3a1a30f9d2291e` | C1c: entregar as provas da retoma e fechar a correção da história |
-| sítio | `a02c705c5b99c0f397c4cc784f7b5b3a5403d020` | Os registos de 28.09 à tarde: a §1.134 (a decisão do diretor sobre a atualização, a arrumação e a autonomia editorial, com a forma do ciclo, a ordem pela fase 2 do plano da fiabilidade e o que fica com ele), as I158 a I162 fechadas pelo C1 e as I163 a I167 abertas ou fechadas, as M35 a M37, e as quatro linhas novas do diretor (as chaves e o interruptor das corridas, o teto e a pausa do ciclo, a pré-visualização da primeira página, as calculadoras) |
-| sítio | `7b4328906d938bd6eeecb8f1e1fc18c1b809e964` | C1d: a segunda leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco, e vinte achados reais), com o registo das plantas, e o guião da passagem de correção C1d: o painel do motor volta a distinguir esta máquina da fonte, o livro prende o valor à última atualização, os excertos com a marca da fonte levam a sua entrada, o limite legal volta à forma cruzada do motor, e o recibo diz o que cada releitura confirmou |
-| sítio | `057c6db8456d71134eef328cb1135c7f0fcadce7` | C1d: prender o valor publicado à história e recusar a retirada da atualização |
-| sítio | `2f79c2f2c237731514707b972e09173193563245` | C1d: registar as marcas dos excertos e repor a origem do limite municipal |
-| sítio | `760ed6f7bb3d665c429d0f8c865a5671b91a38d9` | C1d: declarar os instantâneos do PRR e conferir toda a cadeia de endereços |
-| sítio | `03c689bc88cf9313dcf7fd5efdbb9a3d146ffa36` | C1d: começar os mandatos nas instalações seladas e declarar a data em falta |
-| sítio | `d25330a5bc095beabfaaa92c219ad3a2540cf1c1` | C1d: distinguir o objetivo institucional e citar uma frase inteira sobre competitividade |
-| sítio | `966e843589cc9bc4bfafc63425f9a678becdc312` | C1d: mostrar a estimativa e dizer o que cada releitura confirmou |
-| sítio | `6c794fe2edf0eda51f5309ea2c8ff2ed4d13b4dd` | C1d: conferir as frases estimadas no HTML e retirar o exemplo de caminho pessoal |
-| sítio | `e75de25f7c02a194c680261ab7b561f5139d7218` | C1d: declarar o tipo da lista de instantâneos aceite pela história |
-| sítio | `ea0f467d8ac8d1cd872fec9052f139d7917db558` | C1d: retirar as traduções que a nota comum da fonte tornou desnecessárias |
-| sítio | `6bbe1cee5f7167ba7bb317733ceef7e4b71ab413` | C1d: repor as declarações de língua da fonte do limite municipal |
+| sítio | `3469d83379090a7a1b4410e13613e0ec045f1497` | C1c: escrever as datas históricas na forma da casa e conferir a mesma data |
+| sítio | `c6f201e2d3d3a4f54e0a71d0e4d7824dda782792` | C1c: entregar as provas da retoma e fechar a correção da história |
+| sítio | `c775a7e444ce5f218c498376a790a4f757953ac9` | Os registos de 28.09 à tarde: a §1.134 (a decisão do diretor sobre a atualização, a arrumação e a autonomia editorial, com a forma do ciclo, a ordem pela fase 2 do plano da fiabilidade e o que fica com ele), as I158 a I162 fechadas pelo C1 e as I163 a I167 abertas ou fechadas, as M35 a M37, e as quatro linhas novas do diretor (as chaves e o interruptor das corridas, o teto e a pausa do ciclo, a pré-visualização da primeira página, as calculadoras) |
+| sítio | `047b9b570d5fd405e3b344da00324e732cad2ed6` | C1d: a segunda leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco, e vinte achados reais), com o registo das plantas, e o guião da passagem de correção C1d: o painel do motor volta a distinguir esta máquina da fonte, o livro prende o valor à última atualização, os excertos com a marca da fonte levam a sua entrada, o limite legal volta à forma cruzada do motor, e o recibo diz o que cada releitura confirmou |
+| sítio | `2adefef988cdfffc57e008a9c0f63169fd92384d` | C1d: prender o valor publicado à história e recusar a retirada da atualização |
+| sítio | `144f475442a365c2d2c5b67dff1eca43de2fed05` | C1d: registar as marcas dos excertos e repor a origem do limite municipal |
+| sítio | `ddba4e13057b3be422db29c8d1d9abda0ce6cc95` | C1d: declarar os instantâneos do PRR e conferir toda a cadeia de endereços |
+| sítio | `aded12a7d8b657a766b5522a6dc9573c3c9c750b` | C1d: começar os mandatos nas instalações seladas e declarar a data em falta |
+| sítio | `b711b016419f669ad832aff87b6f19d90b62c85a` | C1d: distinguir o objetivo institucional e citar uma frase inteira sobre competitividade |
+| sítio | `116e21232dffaafa78b5ac0ef8d047c8d8535647` | C1d: mostrar a estimativa e dizer o que cada releitura confirmou |
+| sítio | `5eddc2c23f778e7500ed4060774a2e278c888be3` | C1d: conferir as frases estimadas no HTML e retirar o exemplo de caminho pessoal |
+| sítio | `74ff81fa0dfa85861fbe8b0eb809222824224f8c` | C1d: declarar o tipo da lista de instantâneos aceite pela história |
+| sítio | `f1356b0ffc057576b35e5a6e64b45ed04785a005` | C1d: retirar as traduções que a nota comum da fonte tornou desnecessárias |
+| sítio | `ef700579cf26d6ebab1939c1a90853935d17b1fa` | C1d: repor as declarações de língua da fonte do limite municipal |
 | motor | `a75ef1197e968d933906ae363fe1fea3c140c31d` | Painel semanal de 28.09: as quatro saídas da corrida das 08:30 UTC, 91 afirmações reconferidas, 4 alarmes, 19 avisos |
 | motor | `3e83a271f4c5af0b1f6809436916c1b06d6e0b1c` | C1: reler dimensões do Eurostat pela coordenada selada |
 | motor | `cf1082be38dda1bf044f1fbfb9b258357faeb98a` | C1c: ler coordenadas e bandeiras e repetir o painel sem perder a tentativa |
@@ -685,7 +685,7 @@ calendário tem sete plantas por edição, incluindo o início sem data desenhad
 como fechado. A planta dos nomes lê os nomes do Git e injeta-os numa cópia em
 memória de uma página construída. Os nomes não são escritos nos artefactos.
 
-**Cabeças e portões.** A cabeça de código do sítio é `2d063f9af1e707a4e8657a0e664bdce88eece4b6`; a do motor é
+**Cabeças e portões.** A cabeça de código do sítio é `9046757d2c9f10be57c740ddd2fc4f1c9b2632cd`; a do motor é
 `68318e0da2036cc29e4704fa1bb8a96dee246095`. A árvore que o portão do motor leu está em
 `c1e/motor-commit.arvore.json`, com os resumos dos ficheiros ainda por guardar
 nesse instante. A medição compara esses bytes com o commit final do motor.
@@ -697,9 +697,9 @@ ficou registado separadamente, com código acabado de escrever:
 
 | Comando | Código lido | Cabeça | Ficheiro |
 | --- | --- | --- | --- |
-| `npm run build` | 1 | `2d063f9af1e707a4e8657a0e664bdce88eece4b6` | C1e: tipar a lista percorrida pela história da proveniência |
-| `npm run verify` | 1 | `2d063f9af1e707a4e8657a0e664bdce88eece4b6` | C1e: tipar a lista percorrida pela história da proveniência |
-| `npm run typecheck` | 0 | `2d063f9af1e707a4e8657a0e664bdce88eece4b6` | C1e: tipar a lista percorrida pela história da proveniência |
+| `npm run build` | 1 | `9046757d2c9f10be57c740ddd2fc4f1c9b2632cd` | C1e: tipar a lista percorrida pela história da proveniência |
+| `npm run verify` | 1 | `9046757d2c9f10be57c740ddd2fc4f1c9b2632cd` | C1e: tipar a lista percorrida pela história da proveniência |
+| `npm run typecheck` | 0 | `9046757d2c9f10be57c740ddd2fc4f1c9b2632cd` | C1e: tipar a lista percorrida pela história da proveniência |
 
 `build` e `verify` param no livro, pela falta de prova dos acessos anteriores do
 PRR. Não chegaram às restantes células. O portão não foi contornado para
@@ -709,7 +709,7 @@ alargada. A anotação da lista foi corrigida; os dados e a guarda não mudaram.
 `c1e/tentativas.json` distingue esses códigos dos finais.
 
 **Capturas.** Não há capturas novas a apresentar como finais. `dist/` conserva
-`6bbe1cee5f7167ba7bb317733ceef7e4b71ab413`, uma construção anterior à C1e. A guarda nova
+`ef700579cf26d6ebab1939c1a90853935d17b1fa`, uma construção anterior à C1e. A guarda nova
 de privacidade foi exercida sobre essa construção e as suas cópias plantadas;
 isso prova o detetor, não a apresentação das alterações da C1e.
 `c1e/medidas.json`, em `capturas.recibos_a_captar`, enumera os
@@ -739,14 +739,14 @@ da sessão indica-o fora do ramo.
 
 | Cabeça | Assunto |
 | --- | --- |
-| `5cb9023f14143eddc381bd4305bfed83f2817d7f` | C1d: entregar os portões, as capturas, o relatório e a resposta do construtor |
-| `5c862efb38055965618a9d29f26ac12a25ac99eb` | C1e: a terceira leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco, e oito achados reais pequenos), com o registo das plantas, e o guião da passagem C1e: a tentativa sem valor lido diz só isso, a cadeia de cada campo de proveniência confere-se, as plantas prometidas existem, as linhas calculadas dizem a verdade sobre a segunda leitura, o motor pergunta outra vez à rede, o nome do diretor não volta às páginas |
-| `69520d3ac921f80936191c58d69cf50f220048d5` | C1e: conferir todas as cadeias de proveniência e expor a falta dos acessos do PRR |
-| `4653316e42feb4f50c314001ee26b1389caca08f` | C1e: dizer o resultado da tentativa e o recálculo sem exceder o registo |
-| `abc6743a172e4e05f385b289b0a5f6309ef196af` | C1e: desenhar o início sem data como limite em aberto |
-| `d65f2bb74dd8edbded0dc5364779903b19a14667` | C1e: conferir nomes do Git e caminhos nas páginas construídas |
-| `ab47e595d283ecb9e8b8795cebf8a6e0cbdceede` | C1e: isolar as condições de endereço nas plantas dos instantâneos |
-| `2d063f9af1e707a4e8657a0e664bdce88eece4b6` | C1e: tipar a lista percorrida pela história da proveniência |
+| `d0c622224e873e6d8b6d563c811a56a29507cd84` | C1d: entregar os portões, as capturas, o relatório e a resposta do construtor |
+| `938b500d1d0de522b62d68e294ffe01c2993b56a` | C1e: a terceira leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco, e oito achados reais pequenos), com o registo das plantas, e o guião da passagem C1e: a tentativa sem valor lido diz só isso, a cadeia de cada campo de proveniência confere-se, as plantas prometidas existem, as linhas calculadas dizem a verdade sobre a segunda leitura, o motor pergunta outra vez à rede, o nome do diretor não volta às páginas |
+| `df81cd372729b87642810319d7796bc83214a945` | C1e: conferir todas as cadeias de proveniência e expor a falta dos acessos do PRR |
+| `47660b7cee53452dccf7f7dceac605dd0d575670` | C1e: dizer o resultado da tentativa e o recálculo sem exceder o registo |
+| `88ab89defce38b8d4bfa993eb401e1d184c0acbd` | C1e: desenhar o início sem data como limite em aberto |
+| `8bfc8abf70fd203b65de7129e06282df21845ae2` | C1e: conferir nomes do Git e caminhos nas páginas construídas |
+| `ce15897117013ca40f22789b4305f01a6762c4ed` | C1e: isolar as condições de endereço nas plantas dos instantâneos |
+| `9046757d2c9f10be57c740ddd2fc4f1c9b2632cd` | C1e: tipar a lista percorrida pela história da proveniência |
 
 Motor C1e: `68318e0da2036cc29e4704fa1bb8a96dee246095`. Os commits anteriores do motor estão nas secções anteriores e na lista integral de `medidas.json`. Nenhum envio para o remoto.
 
@@ -761,20 +761,20 @@ uma decisão ainda pendente. A direção autorizou a reconstituição deste lado
 com a aceitação prevista no livro para as linhas cruzadas.
 
 **A prova de cada acesso.** O controlo `c1f/conferir-acessos.py` lê os objetos
-do Git até à cabeça recebida, `cb43b2fcec9e67815894a07ceb95c2cba1b589e4`.
+do Git até à cabeça recebida, `855b9a9b1f6de1187ee2f28e149e1cd79a9e53c3`.
 Para cada mudança, lê o ficheiro no commit e no seu pai, a data do commit e o
 diff do campo. Confere a data do instantâneo na mensagem com os ficheiros
 identificados no documento dessa versão. Na entrega C1f, as datas das razões usavam a forma ISO
 que as entradas anteriores do PRR já usavam. A C1g substitui essa escrita pela forma da casa. A prova integral está em
 `c1f/acessos-git.json`, incluindo os resumos completos dos commits.
 
-| Linha | Acesso inicial no Git | Mudança no commit `8371e097`, de 18.08.2026 | Mudança no commit `8b7d9157`, de 20.08.2026 | Circuito |
+| Linha | Acesso inicial no Git | Mudança no commit `632b14f4`, de 18.08.2026 | Mudança no commit `3ff3bf22`, de 20.08.2026 | Circuito |
 | --- | --- | --- | --- | --- |
-| `evora-prr-aprovado-2026` | 04.08.2026, em `180f136d` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |
-| `evora-prr-municipio-contratado` | 04.08.2026, em `180f136d` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |
-| `evora-prr-pago-2026` | 04.08.2026, em `180f136d` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |
-| `evora-prr-universidade-contratado` | 04.08.2026, em `180f136d` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |
-| `evora-prr-vencido-aprovado-2026` | 04.08.2026, em `180f136d` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |
+| `evora-prr-aprovado-2026` | 04.08.2026, em `4db18908` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |
+| `evora-prr-municipio-contratado` | 04.08.2026, em `4db18908` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |
+| `evora-prr-pago-2026` | 04.08.2026, em `4db18908` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |
+| `evora-prr-universidade-contratado` | 04.08.2026, em `4db18908` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |
+| `evora-prr-vencido-aprovado-2026` | 04.08.2026, em `4db18908` | 04.08 → 18.08, instantâneo de 17.08 | 18.08 → 20.08, instantâneo de 19.08 | Aceitação no sítio e registo de Évora atualizado |
 
 Há dez entradas novas, duas por linha. A criação do ficheiro mostra o primeiro
 acesso, não uma mudança, e por isso não recebeu uma entrada inventada.
@@ -801,7 +801,7 @@ do livro: prova a correspondência destas entradas com os commits históricos.
 A conferência isolada do livro e a da travessia deram zero, registados em
 `c1f/livro.codigo` e `c1f/cruzamento.codigo`.
 
-**Cabeças.** O código medido é `cd5557448c430a225eb58b6b257e7f11ef384818`.
+**Cabeças.** O código medido é `48d6560871bf99a1f4cd027db16d62fde67d4737`.
 O motor permanece em `68318e0da2036cc29e4704fa1bb8a96dee246095`, com árvore limpa
 conferida na medição, sem alterações nesta passagem. A lista integral dos
 commits do sítio e do motor está em `medidas.json`, na secção C1f. A tabela
@@ -809,10 +809,10 @@ seguinte continua a lista da C1e, ligando a sua cabeça à entrega e à retoma.
 
 | Cabeça | Assunto |
 | --- | --- |
-| `9514cc6eea58426d39ef54d7085f9372a68c6cf2` | C1e: entregar as provas e registar a paragem da história do PRR |
-| `cb43b2fcec9e67815894a07ceb95c2cba1b589e4` | C1f: a decisão do lugar de direção sobre a paragem da C1e (a guarda fica, e os acessos das cinco linhas do PRR reconstituem-se pela história do Git, uma entrada tipada por mudança, com o commit que a fez) e o guião da retoma |
-| `ffea781d22aec3cc80b7db14c825394627f8ecf1` | C1f: reconstituir pelo Git os acessos das cinco linhas do PRR |
-| `cd5557448c430a225eb58b6b257e7f11ef384818` | C1f: registar para leitura as duas contagens do inventário |
+| `c9f4c301b659f5d56584b0c6186d7814ea0edce6` | C1e: entregar as provas e registar a paragem da história do PRR |
+| `855b9a9b1f6de1187ee2f28e149e1cd79a9e53c3` | C1f: a decisão do lugar de direção sobre a paragem da C1e (a guarda fica, e os acessos das cinco linhas do PRR reconstituem-se pela história do Git, uma entrada tipada por mudança, com o commit que a fez) e o guião da retoma |
+| `8f21e9a49ef41f3004ced769a4d825f108b28eee` | C1f: reconstituir pelo Git os acessos das cinco linhas do PRR |
+| `48d6560871bf99a1f4cd027db16d62fde67d4737` | C1f: registar para leitura as duas contagens do inventário |
 
 O último commit da C1f contém esta versão do relatório, as provas e
 `RESPOSTA-codex-c1f.md`; é filho direto da cabeça de código e entrega apenas
@@ -866,9 +866,9 @@ Cada comando tem o seu código acabado de escrever, lido para a tabela:
 
 | Comando | Código lido | Cabeça | Ficheiro |
 | --- | --- | --- | --- |
-| `npm run build` | 0 | `cd5557448c430a225eb58b6b257e7f11ef384818` | C1f: registar para leitura as duas contagens do inventário |
-| `npm run verify` | 0 | `cd5557448c430a225eb58b6b257e7f11ef384818` | C1f: registar para leitura as duas contagens do inventário |
-| `npm run typecheck` | 0 | `cd5557448c430a225eb58b6b257e7f11ef384818` | C1f: registar para leitura as duas contagens do inventário |
+| `npm run build` | 0 | `48d6560871bf99a1f4cd027db16d62fde67d4737` | C1f: registar para leitura as duas contagens do inventário |
+| `npm run verify` | 0 | `48d6560871bf99a1f4cd027db16d62fde67d4737` | C1f: registar para leitura as duas contagens do inventário |
+| `npm run typecheck` | 0 | `48d6560871bf99a1f4cd027db16d62fde67d4737` | C1f: registar para leitura as duas contagens do inventário |
 
 Os estados da árvore do sítio e as horas de cada corrida acompanham os
 códigos. A árvore do motor está medida em `c1f/medidas.json`, limpa e na mesma
@@ -901,13 +901,13 @@ O registo de Évora passou a datar a edição local de 28.09.2026. `corrections_
 
 **A primeira corrida.** O primeiro `build` desta passagem terminou com código 1 porque o teste isolado da travessia copiava o seu guião sem o novo módulo das contagens. A travessia real já tinha passado. A preparação do teste passou a copiar os dois ficheiros; a guarda não mudou. A corrida falhada fica em `c1g/primeira-corrida/`, e a prova isolada corrigida em `c1g/travessia-isolada.codigo`.
 
-**Cabeças e portões.** A cabeça de código é `7b47b1444c8a068f3c6bd6811bbaa03125b14c9f`. O motor conserva `68318e0da2036cc29e4704fa1bb8a96dee246095`. Antes de cada portão, `pgrep -fl "astro build|npm run verify"` confere a concorrência; os comandos correm separados e os registos guardam a árvore e o código acabado de escrever. Os três códigos abaixo foram lidos dos ficheiros depois de cada comando terminar.
+**Cabeças e portões.** A cabeça de código é `d1affee7a57c73e316f663270ad778eb88afb321`. O motor conserva `68318e0da2036cc29e4704fa1bb8a96dee246095`. Antes de cada portão, `pgrep -fl "astro build|npm run verify"` confere a concorrência; os comandos correm separados e os registos guardam a árvore e o código acabado de escrever. Os três códigos abaixo foram lidos dos ficheiros depois de cada comando terminar.
 
 | Comando | Código lido | Cabeça | Ficheiro |
 | --- | --- | --- | --- |
-| `npm run build` | 0 | `7b47b1444c8a068f3c6bd6811bbaa03125b14c9f` | `portoes/c1g/build.codigo` |
-| `npm run verify` | 0 | `7b47b1444c8a068f3c6bd6811bbaa03125b14c9f` | `portoes/c1g/verify.codigo` |
-| `npm run typecheck` | 0 | `7b47b1444c8a068f3c6bd6811bbaa03125b14c9f` | `portoes/c1g/typecheck.codigo` |
+| `npm run build` | 0 | `d1affee7a57c73e316f663270ad778eb88afb321` | `portoes/c1g/build.codigo` |
+| `npm run verify` | 0 | `d1affee7a57c73e316f663270ad778eb88afb321` | `portoes/c1g/verify.codigo` |
+| `npm run typecheck` | 0 | `d1affee7a57c73e316f663270ad778eb88afb321` | `portoes/c1g/typecheck.codigo` |
 
 O `verify` conferiu 12 485 ficheiros construídos, encontrou 0 caminhos ou nomes e passou as 12 plantas de privacidade. A prova em `c1g/privacidade-dist.json` foi extraída dessa corrida, sem a repetir. `c1g/medidas.json` confere os ficheiros da passagem e os conhecidos-positivos. `c1g/relatorio.json` guarda a conferência do relatório, terminada com zero faltas e o conhecido-positivo detetado. A medição da passagem encontrou zero caminhos ou nomes, com os conhecidos-positivos detetados, e confirmou a matriz completa das capturas. A C1g entregou os portões e as capturas da amostra descrita. A aceitação integral então declarada excedia essas capturas: faltavam os cinco recibos do PRR com as razões revistas, entregues na C1h.
 
@@ -915,12 +915,12 @@ O `verify` conferiu 12 485 ficheiros construídos, encontrou 0 caminhos ou nomes
 
 | Cabeça | Assunto |
 | --- | --- |
-| `eec9dc69a4cbf2f283c9ec3ff95b5ced36276b72` | C1f: entregar as provas dos acessos, os portões e os recibos |
-| `40f7684c21eb4742a6597eb0405a8f3516effec0` | C1g: a quarta leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco; a conferência da privacidade na construção de produção dependia da máquina e da história do Git), com o registo das plantas, e o guião da passagem C1g, a última antes da aterragem |
-| `c6eb9ef0d54dd74b14ffdbf6ad4610041941f14a` | C1g: reservar a privacidade ao verify e excluir nomes genéricos de pasta |
-| `c576cc5f8fa0f5da3e385ee140877ab595d3f247` | C1g: conferir o valor na página e limitar as frases e o tracejado ao que os dados sabem |
-| `fc83b7331703bc405ef03cc5268202e75f05023b` | C1g: afinar as razões do PRR e registar a data e as contagens da edição local |
-| `7b47b1444c8a068f3c6bd6811bbaa03125b14c9f` | C1g: levar a dependência da contagem para a cópia isolada da travessia |
+| `72efd67004f21cc7896a7feb728b11ea676d7139` | C1f: entregar as provas dos acessos, os portões e os recibos |
+| `58543abdbd24433d2e78be469611842593e45f5c` | C1g: a quarta leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco; a conferência da privacidade na construção de produção dependia da máquina e da história do Git), com o registo das plantas, e o guião da passagem C1g, a última antes da aterragem |
+| `d556156f3bd9c7a305ae7c6ce42567f43e2da186` | C1g: reservar a privacidade ao verify e excluir nomes genéricos de pasta |
+| `d007138f8eea7449842ad69b07cc8066a610916e` | C1g: conferir o valor na página e limitar as frases e o tracejado ao que os dados sabem |
+| `a87e77aabb9dda195c087c55792d95e8be350b9e` | C1g: afinar as razões do PRR e registar a data e as contagens da edição local |
+| `d1affee7a57c73e316f663270ad778eb88afb321` | C1g: levar a dependência da contagem para a cópia isolada da travessia |
 
 O último commit entrega apenas as provas, esta secção, `medidas.json` e a resposta curta `RESPOSTA-codex-c1g.md`; é filho direto da cabeça de código. O seu resumo será indicado fora do ramo, porque não pode constar dos seus próprios bytes. Nenhum envio para o remoto.
 
@@ -941,19 +941,19 @@ A lista das pastas-mãe genéricas é a raiz, o diretório comum de contas do ma
 
 A privacidade continua só no `verify`, local e na corrida «portão» configurada com a história inteira. Não se fez uma corrida remota. O `build` de produção continua sem esta dependência.
 
-**Registo comprometido.** A corrida isolada foi feita em `ed5093914109ed20a968e0303fbf26a6fd81c5c1`. O registo não tinha edição local no estado guardado no início da corrida. O resumo SHA-256 do ficheiro coincide com o do objeto desse commit: `69a70ff9351bff1d1170dbbb2eb9f6f41b4b6ee16d56bd07c181a41012d4cc46`. A prova anterior citada na C1g tinha lido uma árvore diferente; fica conservada como histórica, sem a apresentar como esta corrida.
+**Registo comprometido.** A corrida isolada foi feita em `c0693ffc9ad51691a3fb733a2fd524bd1cc0f8bd`. O registo não tinha edição local no estado guardado no início da corrida. O resumo SHA-256 do ficheiro coincide com o do objeto desse commit: `69a70ff9351bff1d1170dbbb2eb9f6f41b4b6ee16d56bd07c181a41012d4cc46`. A prova anterior citada na C1g tinha lido uma árvore diferente; fica conservada como histórica, sem a apresentar como esta corrida.
 
 **Capturas e aceitação.** A aceitação visual desta passagem cobre apenas os cinco recibos do PRR cujas razões mudaram na C1g: `evora-prr-aprovado-2026`, `evora-prr-municipio-contratado`, `evora-prr-pago-2026`, `evora-prr-universidade-contratado` e `evora-prr-vencido-aprovado-2026`. São 50 capturas, nas duas edições e cinco larguras, 390, 768, 1024, 1280 e 1600 px, todas aceites pelo captor, com zero deslocamento horizontal. Duas imagens foram inspecionadas visualmente, registadas em `c1h/inspecao-visual.json`. O captor do bloco confere literalmente as razões com a prova da C1g e sela as páginas e as folhas de estilo servidas. A declaração de aceitação integral da C1g foi retificada no texto e nas medições, conservando o valor declarado na entrega e a razão da retificação.
 
 **Custos.** A C1h regista 4 166 980 símbolos (tokens expostos pelo runtime) e 982,530 segundos, em `c1h/custo.json`. A C1g regista 7 781 991 símbolos (tokens expostos pelo runtime) e 1 611,263 segundos, em `c1g/custo.json`. A duração mede do pedido ao instante do contador usado, sem estimar preço. Entrada em cache está incluída na entrada; raciocínio está incluído na saída. Não se somam duas vezes. O contador da C1g termina na última leitura anterior ao pedido da C1h. O da C1h não inclui o fecho posterior ao corte que o ficheiro declara. Não houve subagentes.
 
-**Portões e cabeças.** A cabeça de código é `ed5093914109ed20a968e0303fbf26a6fd81c5c1`. Antes de cada corrida inteira, o guião confere `pgrep -fl "astro build|npm run verify"`; cada comando guarda o seu código acabado de escrever e o estado da árvore em `portoes/c1h/`. Os três códigos foram lidos dos ficheiros depois de os comandos terminarem:
+**Portões e cabeças.** A cabeça de código é `c0693ffc9ad51691a3fb733a2fd524bd1cc0f8bd`. Antes de cada corrida inteira, o guião confere `pgrep -fl "astro build|npm run verify"`; cada comando guarda o seu código acabado de escrever e o estado da árvore em `portoes/c1h/`. Os três códigos foram lidos dos ficheiros depois de os comandos terminarem:
 
 | Comando | Código lido | Cabeça | Ficheiro |
 | --- | --- | --- | --- |
-| `npm run build` | 0 | `ed5093914109ed20a968e0303fbf26a6fd81c5c1` | `portoes/c1h/build.codigo` |
-| `npm run verify` | 0 | `ed5093914109ed20a968e0303fbf26a6fd81c5c1` | `portoes/c1h/verify.codigo` |
-| `npm run typecheck` | 0 | `ed5093914109ed20a968e0303fbf26a6fd81c5c1` | `portoes/c1h/typecheck.codigo` |
+| `npm run build` | 0 | `c0693ffc9ad51691a3fb733a2fd524bd1cc0f8bd` | `portoes/c1h/build.codigo` |
+| `npm run verify` | 0 | `c0693ffc9ad51691a3fb733a2fd524bd1cc0f8bd` | `portoes/c1h/verify.codigo` |
+| `npm run typecheck` | 0 | `c0693ffc9ad51691a3fb733a2fd524bd1cc0f8bd` | `portoes/c1h/typecheck.codigo` |
 
 O `verify` conferiu 12 485 ficheiros construídos, encontrou zero caminhos ou nomes e passou as 15 plantas de privacidade. `c1h/privacidade-dist.json` conserva essa saída e o resumo do log, sem repetir o portão. A conferência final de `medidas.json` e do relatório fica em `c1h/medidas.json` e `c1h/relatorio.json`.
 
@@ -961,8 +961,8 @@ O `verify` conferiu 12 485 ficheiros construídos, encontrou zero caminhos ou no
 
 | Cabeça | Assunto |
 | --- | --- |
-| `f321d50aa8463b91675e6aec161a5452d96a69ba` | C1g: entregar as capturas finais, os portões e a retificação do relatório |
-| `9d283c6b1e5c69dfa3a7aac34a509fe284c7b8e8` | C1h: a quinta leitura a frio do C1 pelo Claude Opus 5.5 (quatro plantas em cinco; a guarda da pasta pessoal deixara de procurar o nome sozinho nesta máquina), com o registo das plantas e a triagem no cabeçalho, e o guião da passagem C1h |
-| `ed5093914109ed20a968e0303fbf26a6fd81c5c1` | C1h: proteger o nome da pasta pessoal sem proibir diretórios genéricos |
+| `d86817b627a5be6c7d10f0e52596476c7e943fe8` | C1g: entregar as capturas finais, os portões e a retificação do relatório |
+| `ea0193bdc636395307f08a74a72c06365a1d080e` | C1h: a quinta leitura a frio do C1 pelo Claude Opus 5.5 (quatro plantas em cinco; a guarda da pasta pessoal deixara de procurar o nome sozinho nesta máquina), com o registo das plantas e a triagem no cabeçalho, e o guião da passagem C1h |
+| `c0693ffc9ad51691a3fb733a2fd524bd1cc0f8bd` | C1h: proteger o nome da pasta pessoal sem proibir diretórios genéricos |
 
 O último commit contém apenas as provas, este relatório, `medidas.json` e `RESPOSTA-codex-c1h.md`. É filho da cabeça de código; o seu resumo é indicado fora do ramo. Nenhum envio para o remoto.

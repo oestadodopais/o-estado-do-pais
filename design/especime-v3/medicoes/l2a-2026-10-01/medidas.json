@@ -20,7 +20,7 @@
     {
       "nome": "pecas_de_lugares_antes_do_mapa_no_brief",
       "valor": 3,
-      "comando": "design/observatorio/medidas/BRIEF-L2a.json, a medida pecas_de_lugares_antes_do_mapa (o §0 do brief, na cabeça 1395c9de)",
+      "comando": "design/observatorio/medidas/BRIEF-L2a.json, a medida pecas_de_lugares_antes_do_mapa (o §0 do brief, na cabeça f744d46c)",
       "conhecido_positivo": {
         "o_que": "o ficheiro do brief nomeia a cabeça que leu",
         "encontrado": true
@@ -46,7 +46,7 @@
     },
     {
       "nome": "construcao_medida",
-      "valor": "401d057640e3add07e147879891d4098d93e8e01",
+      "valor": "cbad2733b1a44d3abfb56553d6dffde7f3ef2ba7",
       "comando": "dist/version.json, campo commit",
       "conhecido_positivo": {
         "o_que": "o ficheiro da versão existe e nomeia um commit",
@@ -542,7 +542,7 @@
     {
       "nome": "l2a_b_r6_antiga_nao_apanha_a_legenda_movida",
       "valor": 1,
-      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/l2a-b/r6-antiga-com-a-planta-nova.txt (a R6 de 219dbefb com a planta nova)",
+      "comando": "design/especime-v3/medicoes/l2a-2026-10-01/l2a-b/r6-antiga-com-a-planta-nova.txt (a R6 de de17b143 com a planta nova)",
       "conhecido_positivo": {
         "o_que": "o registo traz a linha das outras plantas da R6",
         "encontrado": true

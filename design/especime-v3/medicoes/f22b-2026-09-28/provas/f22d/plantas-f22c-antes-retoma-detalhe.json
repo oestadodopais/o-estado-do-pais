@@ -3,7 +3,7 @@
   "falhas": 0,
   "erros": 0,
   "passou": true,
-  "sitio_real_cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+  "sitio_real_cabeca": "985c977dee92f5dfcabb6823d8ced49ea8753318",
   "nomes": [
     "test_api_cabecalho_da_versao",
     "test_api_erro_permanente_para_logo_com_causa",

@@ -96,7 +96,7 @@ Tabela TEMA_DO_ESTUDO copiada de [fazer.py](../../maquetas/b1/fazer.py), compara
 
 ## Commits e trailers
 
-Saída de `git log --format='%h %s%n%(trailers)' 2bf8b238b912fcb89da74096281305c75f0a3b3c..HEAD`:
+Saída de `git log --format='%h %s%n%(trailers)' 0820794dfb2b7fefa20c22beebf0eaa2b7455856..HEAD`:
 
 ```text
 8de4e841 B1: o relatório mostra o histórico e a comparação dos temas

@@ -1,6 +1,6 @@
 {
   "ramo": "h2-ensaio-i194-2026-10-04",
-  "cabeca_antes": "f7048ce08956d89fbefc54ebd40ea8b75b830d47",
+  "cabeca_antes": "76a70ba7e6e5ded9274e894735ea69b6e83a1501",
   "apagar_comando": "git push origin --delete h2-ensaio-i194-2026-10-04",
   "apagar_codigo": 0,
   "consulta_comando": "git ls-remote --heads origin refs/heads/h2-ensaio-i194-2026-10-04",

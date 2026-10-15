@@ -1,6 +1,6 @@
 # O estado de `main` depois do bloco das ilhas (28.08.2026, madrugada)
 
-*Escrito pelo lugar de direção (Claude Fable 5). O ramo `ilhas-2026-08-28` saiu de `main` `85071df` e está verde: construção, `check:mapa`, `check:voz`, `verify`, `typecheck`, `concelhos` 12 de 12, a matriz 87 de 87, `mapa-distritos`, `regioes`. Medido às cegas (Sonnet, M6, numa cópia: as 30 linhas contra os PDF das fontes) e lido de olhos frescos (Codex, com duas plantas). A §1.76 do `DECISIONS.md` é o registo; no motor, a segunda edição do estudo 12 e `RELEITURA.md`.*
+*Escrito pelo lugar de direção (Claude Fable 5). O ramo `ilhas-2026-08-28` saiu de `main` `5b85aa7` e está verde: construção, `check:mapa`, `check:voz`, `verify`, `typecheck`, `concelhos` 12 de 12, a matriz 87 de 87, `mapa-distritos`, `regioes`. Medido às cegas (Sonnet, M6, numa cópia: as 30 linhas contra os PDF das fontes) e lido de olhos frescos (Codex, com duas plantas). A §1.76 do `DECISIONS.md` é o registo; no motor, a segunda edição do estudo 12 e `RELEITURA.md`.*
 
 ## O que muda no ar
 

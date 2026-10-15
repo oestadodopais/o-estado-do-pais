@@ -2,7 +2,7 @@
 
 O teste de aceitação do §2 está cumprido, com os três portões na cabeça final.
 
-Construção por Codex `gpt-6.1-sol`, no ramo `e0-2026-09-30`. Base: `07549ee1e9ec2b39186f9e9f13eeac4914bf5e76`. Cabeça do ramo: `472cba4257942989faf41f945760f120a6988171`. Cabeça das medidas: `472cba4257942989faf41f945760f120a6988171`.
+Construção por Codex `gpt-6.1-sol`, no ramo `e0-2026-09-30`. Base: `7a82c1477b1710292d23f7efdca7a367f407e134`. Cabeça do ramo: `472cba4257942989faf41f945760f120a6988171`. Cabeça das medidas: `472cba4257942989faf41f945760f120a6988171`.
 
 ## Mandato e medidas
 
@@ -19,7 +19,7 @@ O guião [medir-e0.mjs](medir-e0.mjs) escreve [medidas.json](medidas.json), com 
 
 ## O diagnóstico medido e o mecanismo
 
-A [prova do estado anterior](estado-anterior.json), executada na cabeça `a595201bbc440a6d57d2f23cd95321b26099b7d4`, recompõe em memória as linhas da base `07549ee1e9ec2b39186f9e9f13eeac4914bf5e76` e confirma que os bytes do selador continuam iguais aos dessa base. Sela a entrada 3 para 5 numa cópia de uma linha com source_url nulo e derivação declarada, com código 0. O registo das mudanças recusa a mesma entrada sem lugar, nas duas edições. A cabeça escrita no comprovativo é a da execução, e a base recomposta é outro campo.
+A [prova do estado anterior](estado-anterior.json), executada na cabeça `a595201bbc440a6d57d2f23cd95321b26099b7d4`, recompõe em memória as linhas da base `7a82c1477b1710292d23f7efdca7a367f407e134` e confirma que os bytes do selador continuam iguais aos dessa base. Sela a entrada 3 para 5 numa cópia de uma linha com source_url nulo e derivação declarada, com código 0. O registo das mudanças recusa a mesma entrada sem lugar, nas duas edições. A cabeça escrita no comprovativo é a da execução, e a base recomposta é outro campo.
 
 O selador não precisou de mudar. A localização continua a ser a derivação. O [ensaio para E1](prova-e1.json) usa o mesmo selador numa cópia: conserva as 4 entradas de Évora e acrescenta uma atualização. A linha real de Évora fica em 6. A prova correu na cabeça `a595201bbc440a6d57d2f23cd95321b26099b7d4`.
 

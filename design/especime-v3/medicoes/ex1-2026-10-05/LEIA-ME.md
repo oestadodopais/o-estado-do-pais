@@ -1,12 +1,12 @@
 # EX1 · o espaço das explicações e a leitura semanal · o relatório do construtor
 
-*O construtor é o Claude Opus 5.5 (a definição `construtor`), na worktree do ramo `ex1-2026-10-05`, a partir de `3664b90d`, com o brief em `28022431`; escrito a 06.10.2026. Cada número deste relatório está num ficheiro desta pasta: `medidas.json`, escrito por `medir.py` com o comando e o conhecido-positivo de cada medida, e os JSON que as provas escreveram ao lado. Sem travessões.*
+*O construtor é o Claude Opus 5.5 (a definição `construtor`), na worktree do ramo `ex1-2026-10-05`, a partir de `3664b90d`, com o brief em `ffe1067b`; escrito a 06.10.2026. Cada número deste relatório está num ficheiro desta pasta: `medidas.json`, escrito por `medir.py` com o comando e o conhecido-positivo de cada medida, e os JSON que as provas escreveram ao lado. Sem travessões.*
 
 O relatório tem quatro passagens: a do bloco EX1 (05 e 06.10.2026), nas secções que se seguem; a passagem de correção EX1-b (06.10.2026), com as decisões do lugar de direção sobre as questões I210 a I216 e a régua das frases compostas, na secção «EX1-b, as decisões do lugar de direção»; a passagem EX1-c (06.10.2026), com as correções da leitura a frio do Codex Astra, na secção «EX1-c, a passagem depois da leitura»; e a fusão com o main de 06.10.2026, que trouxe o R4, na secção «A fusão com o main de 06.10 (o R4)». As medidas da segunda vivem em `ex1b/`, as da terceira em `ex1c/` e as da quarta em `fusao/`, com os três portões dela em `portoes/`; as capturas da segunda e da terceira têm os prefixos `ex1b-` e `ex1c-`.
 
 ## As cabeças e os três portões (a passagem EX1)
 
-A cabeça do código é `1d64052a5bbe45e92608a997bebe17742bbcb0aa` (o commit `1d64052a`, a correção que as capturas acharam). Os três portões correram nela pela tranca da máquina, com o motor ao lado (`RESEARCHHUB_DIR`), cada um no seu comando e com o código escrito num ficheiro depois de o processo acabar (em `portoes/`, e guardados em `entrega/portoes/` desde a fusão, para que a corrida dela escrevesse em `portoes/`):
+A cabeça do código é `56ce75fa48f9bb57f8f8ed81960918b104b65015` (o commit `56ce75fa`, a correção que as capturas acharam). Os três portões correram nela pela tranca da máquina, com o motor ao lado (`RESEARCHHUB_DIR`), cada um no seu comando e com o código escrito num ficheiro depois de o processo acabar (em `portoes/`, e guardados em `entrega/portoes/` desde a fusão, para que a corrida dela escrevesse em `portoes/`):
 
 | portão | código (lido de `entrega/portoes/<portão>.codigo`) | segundos |
 |---|---|---|
@@ -18,7 +18,7 @@ A cabeça antes e depois da corrida é a mesma (`entrega/portoes/cabeca-antes-da
 
 ## A primeira corrida, e o que as capturas acharam
 
-Os três portões correram primeiro na cabeça `482546471b44046b9ec4d5b7093b9ac78c2d35f1` (o commit `48254647`) e saíram a 0, 0 e 0 (`primeira-corrida/portoes/`). As capturas dessa construção acharam o que nenhum portão media: a primeira página transbordava a 390 px (536 px de documento na edição portuguesa e 546 na inglesa), e as portas do bloco «Para perceber» e da lista das explicações mostravam «em2026», com a frase da semana partida em colunas. A causa: as duas portas eram contentores flexíveis, e cada pedaço marcado da frase (o ano do título, as datas e as contagens) virava um item, com os espaços das pontas apagados e sem dobrar como prosa. O guião `frases-em-flex.mjs` mediu 12 frases compostas dentro de um contentor flexível nas páginas onde se rendem, a 390 e a 1280 px, e 14 queixas ao todo com os transbordos (`primeira-corrida/frases-em-flex.json`). As duas portas passaram a blocos de texto, com os 44 px pela altura mínima (`1d64052a`), e os portões correram outra vez na cabeça nova; na construção deles, o mesmo guião mede 0 queixas em 20 passagens e 184 pedaços marcados vistos, com a sua planta a morder (`frases-em-flex.json`). As capturas da primeira corrida foram substituídas pelas da segunda; o `primeira-corrida/capturas.json` guarda as medidas e os sha256 delas. Na mesma corrida, 2 plantas do guião das capturas não morderam: com o movimento reduzido, a folha da casa põe a duração das transições em 0,01 ms em todos os elementos, e cada propriedade mudada passava a ser uma transição medida antes de acabar; o guião espera agora dois fotogramas antes de medir.
+Os três portões correram primeiro na cabeça `71f83c4a525271efd9f5d1c78e3ff6a7722970ac` (o commit `71f83c4a`) e saíram a 0, 0 e 0 (`primeira-corrida/portoes/`). As capturas dessa construção acharam o que nenhum portão media: a primeira página transbordava a 390 px (536 px de documento na edição portuguesa e 546 na inglesa), e as portas do bloco «Para perceber» e da lista das explicações mostravam «em2026», com a frase da semana partida em colunas. A causa: as duas portas eram contentores flexíveis, e cada pedaço marcado da frase (o ano do título, as datas e as contagens) virava um item, com os espaços das pontas apagados e sem dobrar como prosa. O guião `frases-em-flex.mjs` mediu 12 frases compostas dentro de um contentor flexível nas páginas onde se rendem, a 390 e a 1280 px, e 14 queixas ao todo com os transbordos (`primeira-corrida/frases-em-flex.json`). As duas portas passaram a blocos de texto, com os 44 px pela altura mínima (`56ce75fa`), e os portões correram outra vez na cabeça nova; na construção deles, o mesmo guião mede 0 queixas em 20 passagens e 184 pedaços marcados vistos, com a sua planta a morder (`frases-em-flex.json`). As capturas da primeira corrida foram substituídas pelas da segunda; o `primeira-corrida/capturas.json` guarda as medidas e os sha256 delas. Na mesma corrida, 2 plantas do guião das capturas não morderam: com o movimento reduzido, a folha da casa põe a duração das transições em 0,01 ms em todos os elementos, e cada propriedade mudada passava a ser uma transição medida antes de acabar; o guião espera agora dois fotogramas antes de medir.
 
 ## O §0 do brief, reproduzido
 
@@ -83,13 +83,13 @@ As plantas em memória, que correm dentro das réguas a cada corrida: 11 de 11 d
 
 | commit | o que traz |
 |---|---|
-| `28022431` | o brief e o seu §0 (do lugar de direção, já na cabeça do ramo) |
-| `c6558836` | as três rotas, a primeira explicação, a leitura da semana, o bloco «Para perceber» e a secção do índice |
-| `bfb97a5b` | o portão de HTML (a décima origem, o `<head>` de uma explicação, a página da semana contada) e a F22 |
-| `2405f8a8` | as células X e W, a auditoria das palavras nas leituras provadas e a voz das três páginas |
-| `c885cb4c` | as réguas que mudaram de forma, as plantas `ex1-` e os guiões das medições |
-| `48254647` | os registos: o mapa, as chaves inglesas e as questões I210 a I216 (a cabeça da primeira corrida) |
-| `1d64052a` | a correção que as capturas acharam: as duas portas em blocos de texto, o guião `frases-em-flex.mjs` e a espera das plantas das capturas (a cabeça do código) |
+| `ffe1067b` | o brief e o seu §0 (do lugar de direção, já na cabeça do ramo) |
+| `753e7ff0` | as três rotas, a primeira explicação, a leitura da semana, o bloco «Para perceber» e a secção do índice |
+| `e68ec221` | o portão de HTML (a décima origem, o `<head>` de uma explicação, a página da semana contada) e a F22 |
+| `f8fdd06b` | as células X e W, a auditoria das palavras nas leituras provadas e a voz das três páginas |
+| `90e5c62b` | as réguas que mudaram de forma, as plantas `ex1-` e os guiões das medições |
+| `71f83c4a` | os registos: o mapa, as chaves inglesas e as questões I210 a I216 (a cabeça da primeira corrida) |
+| `56ce75fa` | a correção que as capturas acharam: as duas portas em blocos de texto, o guião `frases-em-flex.mjs` e a espera das plantas das capturas (a cabeça do código) |
 | o seguinte | as provas: esta pasta e a das capturas |
 
 ## O custo e o modelo
@@ -98,7 +98,7 @@ O custo do bloco inteiro, com as passagens EX1-b e EX1-c e a fusão com o main, 
 
 ## EX1-b, as decisões do lugar de direção
 
-A passagem de correção correu na mesma worktree e no mesmo ramo, a 06.10.2026, com as decisões do lugar de direção sobre as questões I210 a I216 e a régua das frases compostas. A cabeça do código dela é `723a451fca7df75e14b3bd953a7f4f7b1da64b44`, e os três portões correram nela pela tranca da máquina, com o motor ao lado, cada um no seu comando e com o código escrito num ficheiro (`ex1b/portoes/`):
+A passagem de correção correu na mesma worktree e no mesmo ramo, a 06.10.2026, com as decisões do lugar de direção sobre as questões I210 a I216 e a régua das frases compostas. A cabeça do código dela é `f3f0415f4b2f5f36cc0eca7a09a095a9655d5ad8`, e os três portões correram nela pela tranca da máquina, com o motor ao lado, cada um no seu comando e com o código escrito num ficheiro (`ex1b/portoes/`):
 
 | portão | código (lido de `ex1b/portoes/<portão>.codigo`) | segundos |
 |---|---|---|
@@ -131,18 +131,18 @@ Os commits da passagem:
 
 | commit | o que traz |
 |---|---|
-| `20308f1b` | a I210: a medida das portas do menu e o §0 do brief |
-| `f925e4b4` | a I211: a oitava porta do rodapé e a conferência que conta as portas da lista nova |
-| `cbf4d03f` | as I212, I213, I215 e I216 na primeira explicação: o token `maiores`, a frase dos dois totais, o saldo, a frase e as portas do fim; a célula, a auditoria e os acertos |
-| `37b3daf9` | a régua das frases compostas no `verify` e as plantas do EX1-b sobre a construção |
-| `723a451f` | os registos: as questões fechadas, o mapa, as chaves inglesas e o inventário (a cabeça do código da passagem) |
+| `755140ba` | a I210: a medida das portas do menu e o §0 do brief |
+| `9c92bc03` | a I211: a oitava porta do rodapé e a conferência que conta as portas da lista nova |
+| `dcb7bafa` | as I212, I213, I215 e I216 na primeira explicação: o token `maiores`, a frase dos dois totais, o saldo, a frase e as portas do fim; a célula, a auditoria e os acertos |
+| `a9963abf` | a régua das frases compostas no `verify` e as plantas do EX1-b sobre a construção |
+| `f3f0415f` | os registos: as questões fechadas, o mapa, as chaves inglesas e o inventário (a cabeça do código da passagem) |
 | o seguinte | as provas da passagem: `ex1b/` e as capturas `ex1b-` |
 
 O custo da passagem, lido do mesmo registo da sessão desde a primeira entrada dela (`ex1b/custo.json`): 111 respostas do Claude Opus 5.5, 65 452 822 símbolos de entrada e pelo menos 1 398 de saída, em 7 504 segundos.
 
 ## EX1-c, a passagem depois da leitura
 
-A leitura a frio do Codex Astra (`xhigh`) voltou com as cinco plantas mordidas e dez correções, feitas nesta passagem, na mesma worktree e no mesmo ramo; os três portões inteiros corre-os o lugar de direção. As provas correram na construção da cabeça do código, `090dd5dc401b736c105b7f21972515060959ee2a` (`ex1c/provas/`), com as conferências que a passagem toca, cada uma no seu comando, com o código escrito num ficheiro e o estado dos ficheiros seguidos com 0 linhas:
+A leitura a frio do Codex Astra (`xhigh`) voltou com as cinco plantas mordidas e dez correções, feitas nesta passagem, na mesma worktree e no mesmo ramo; os três portões inteiros corre-os o lugar de direção. As provas correram na construção da cabeça do código, `477c3103e22d1efb5e59fc3b7037585fea023bcd` (`ex1c/provas/`), com as conferências que a passagem toca, cada uma no seu comando, com o código escrito num ficheiro e o estado dos ficheiros seguidos com 0 linhas:
 
 | conferência | código (lido de `ex1c/provas/<passo>.codigo`) |
 |---|---|
@@ -184,20 +184,20 @@ Os commits da passagem:
 
 | commit | o que traz |
 |---|---|
-| `c9a31644` | os achados 5 e 14 na semana: as mudanças só da forma de escrever, as marcas comparadas e as frases citadas da primeira página |
-| `955c0a33` | os achados 6, 7, 9, 12, 13, 14, 16 e 17 na explicação: o texto, o token `compara`, a X9, a X10, as marcas comparadas, a auditoria e os acertos |
-| `ac7eb110` | o achado 15: a F22 das figuras declaradas |
-| `97a087bb` | as plantas `ex1c-` sobre a construção e o guião das capturas das três páginas |
-| `f7a4533f` | os registos: as I212, I213, I215 e I216 em `ISSUES.md`, as chaves novas e o mapa |
-| `3ed466fd` | o nome de cada linha na lista dos números, comparado pela F22 |
-| `090dd5dc` | a planta da frase de um bloco citado, no texto visível (a cabeça do código) |
+| `1f04529c` | os achados 5 e 14 na semana: as mudanças só da forma de escrever, as marcas comparadas e as frases citadas da primeira página |
+| `eb234fe8` | os achados 6, 7, 9, 12, 13, 14, 16 e 17 na explicação: o texto, o token `compara`, a X9, a X10, as marcas comparadas, a auditoria e os acertos |
+| `33ef08a3` | o achado 15: a F22 das figuras declaradas |
+| `73c6cfa0` | as plantas `ex1c-` sobre a construção e o guião das capturas das três páginas |
+| `dd06da1b` | os registos: as I212, I213, I215 e I216 em `ISSUES.md`, as chaves novas e o mapa |
+| `c3c2c93d` | o nome de cada linha na lista dos números, comparado pela F22 |
+| `477c3103` | a planta da frase de um bloco citado, no texto visível (a cabeça do código) |
 | o seguinte | as provas da passagem: `ex1c/` e as capturas `ex1c-` |
 
 O custo da passagem, lido do registo da sessão desde a primeira entrada dela (`ex1c/custo.json`): 84 respostas do Claude Opus 5.5, 67 855 298 símbolos de entrada e pelo menos 1 180 de saída, em 5 469 segundos.
 
 ## A fusão com o main de 06.10 (o R4)
 
-O lugar de direção mandou fundir no ramo, antes da aterragem, o `main` de 06.10.2026, que trouxe o R4 (`42c7ed7e`). A fusão é o commit `1cffc9b5`, com os conflitos resolvidos pelas regras do mandato: as leituras provadas com as chaves do main e a das explicações; o registo dos tetos e a régua da L1 com o número medido depois da fusão; o inventário das frases, as chaves inglesas, as revisões do inventário, a voz do país e as plantas com as do main primeiro e as do EX1 depois; as questões do R4 e as do EX1 por ordem de número; e o mapa do main inteiro com a nota e a secção do EX1. Os três portões correram na cabeça do código, `4893eb5d1a2ed07f36af774b28227a0a1bf436ae`, pela tranca da máquina e com o motor ao lado, cada um no seu comando e com o código escrito num ficheiro depois de o processo acabar (`portoes/`):
+O lugar de direção mandou fundir no ramo, antes da aterragem, o `main` de 06.10.2026, que trouxe o R4 (`42c7ed7e`). A fusão é o commit `d51f831a`, com os conflitos resolvidos pelas regras do mandato: as leituras provadas com as chaves do main e a das explicações; o registo dos tetos e a régua da L1 com o número medido depois da fusão; o inventário das frases, as chaves inglesas, as revisões do inventário, a voz do país e as plantas com as do main primeiro e as do EX1 depois; as questões do R4 e as do EX1 por ordem de número; e o mapa do main inteiro com a nota e a secção do EX1. Os três portões correram na cabeça do código, `f69f9c4c158d27825abeba6a08ca6c3c6fe8192b`, pela tranca da máquina e com o motor ao lado, cada um no seu comando e com o código escrito num ficheiro depois de o processo acabar (`portoes/`):
 
 | portão | código (lido de `portoes/<portão>.codigo`) | segundos |
 |---|---|---|
@@ -239,11 +239,11 @@ Os commits da fusão:
 
 | commit | o que traz |
 |---|---|
-| `1cffc9b5` | a fusão do main, com os conflitos resolvidos |
+| `d51f831a` | a fusão do main, com os conflitos resolvidos |
 | `e0ad595d` | os registos: o mapa, a §1.170, a leitura a frio e as suas plantas |
-| `819be89f` | a L1: o teto medido depois da fusão, com a medição e a planta do teto |
-| `9a60ee6d` | os registos dos portões da entrega do EX1 em `entrega/portoes/` |
-| `4893eb5d` | o mapa depois do teto (a cabeça do código) |
+| `aa31ff77` | a L1: o teto medido depois da fusão, com a medição e a planta do teto |
+| `22be8d63` | os registos dos portões da entrega do EX1 em `entrega/portoes/` |
+| `f69f9c4c` | o mapa depois do teto (a cabeça do código) |
 | o seguinte | as provas da fusão: `fusao/`, `portoes/` e esta secção |
 
 Os registos levavam caminhos da máquina, e o guião da limpeza tirou-os: 13 trocas em 8 ficheiros (`limpeza-fusao.json`). Uma delas foi numa expressão do guião `medir-l1-fusao.mjs`, que trazia escrita a pasta temporária e se partiu com a troca; o guião voltou ao do commit, a expressão compõe-se agora por partes, e uma segunda limpeza trocou 0 (`limpeza-fusao-segunda.json`).

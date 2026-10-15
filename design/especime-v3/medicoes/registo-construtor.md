@@ -1,6 +1,6 @@
 # `check:registo` · o portão dos números dos documentos que governam · relatório do construtor
 
-*Bloco F0.6 do `design/observatorio/PLANO-fiabilidade-2026-09-02.md` §2, com a parte numérica de F0.10 dobrada dentro (a régua não fica verde sem ela). Saído de `main` `e2514cbc`, no worktree `registo-2026-09-02`. Construtor: Claude Opus 5. A razão está na `AUDITORIA-2026-09-02.md` §6 («O caso dos 53 011») e na varredura de números do Desktop do diretor (`F-varredura-numeros.md`, 02.09). **Segunda passagem a 02.09.2026**, depois da leitura a frio do Codex (`critica/2026-09-02-codex-leitura-f06-registo.md`, 13 achados, 4 de 4 plantas vistas): a §8 diz o que cada achado mudou. Cada número deste relatório traz ao lado o comando que o produziu, e nenhum foi copiado de outro documento. Sem travessões na prosa.*
+*Bloco F0.6 do `design/observatorio/PLANO-fiabilidade-2026-09-02.md` §2, com a parte numérica de F0.10 dobrada dentro (a régua não fica verde sem ela). Saído de `main` `820ad255`, no worktree `registo-2026-09-02`. Construtor: Claude Opus 5. A razão está na `AUDITORIA-2026-09-02.md` §6 («O caso dos 53 011») e na varredura de números do Desktop do diretor (`F-varredura-numeros.md`, 02.09). **Segunda passagem a 02.09.2026**, depois da leitura a frio do Codex (`critica/2026-09-02-codex-leitura-f06-registo.md`, 13 achados, 4 de 4 plantas vistas): a §8 diz o que cada achado mudou. Cada número deste relatório traz ao lado o comando que o produziu, e nenhum foi copiado de outro documento. Sem travessões na prosa.*
 
 **Modelo: Claude Opus 5.**
 
@@ -145,7 +145,7 @@ O «hoje só `evora`» é prosa: **o portão não o vê**, e não o veria mesmo 
 
 ### O que não se tocou
 
-`DECISIONS.md` (é o registo). O «vazio» do arquivo nos pendentes (prosa, e a linha é do diretor). Os «662 commits e 9 776 blobs» dos pendentes: a varredura de 02.09 mediu 652 e 9 766 em `38d9166` e o plano diz que a base de contagem é a de todos os ramos; não é um facto de estado da casa, não tem palavra de facto, e o portão não o lê. Fica para o resto de F0.10.
+`DECISIONS.md` (é o registo). O «vazio» do arquivo nos pendentes (prosa, e a linha é do diretor). Os «662 commits e 9 776 blobs» dos pendentes: a varredura de 02.09 mediu 652 e 9 766 em `5c40d73` e o plano diz que a base de contagem é a de todos os ramos; não é um facto de estado da casa, não tem palavra de facto, e o portão não o lê. Fica para o resto de F0.10.
 
 ## 5 · Os positivos conhecidos: cada um visto vermelho, e depois verde
 

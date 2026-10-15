@@ -1,8 +1,8 @@
 {
   "bloco": "L2a",
-  "cabeca": "488f62c4cebad710b5f71d9eb783a50472aa5a26",
+  "cabeca": "04afdcf67aa47a43bf57f67c292977543277ec7d",
   "construcao": {
-    "commit": "488f62c4cebad710b5f71d9eb783a50472aa5a26",
+    "commit": "04afdcf67aa47a43bf57f67c292977543277ec7d",
     "ref": "l2a-2026-10-01",
     "env": "local",
     "origem": "git",

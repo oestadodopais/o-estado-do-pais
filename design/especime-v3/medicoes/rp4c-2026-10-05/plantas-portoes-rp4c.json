@@ -1,7 +1,7 @@
 [
   {
     "nome": "rp4c-periodo-trocado",
-    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "cabeca": "212d47f5a145007a11146a4b29db4f93a1137f95",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -19,7 +19,7 @@
   },
   {
     "nome": "rp4c-periodo-de-outro-ponto",
-    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "cabeca": "212d47f5a145007a11146a4b29db4f93a1137f95",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -38,7 +38,7 @@
   },
   {
     "nome": "rp4c-periodo-ingles-na-edicao-portuguesa",
-    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "cabeca": "212d47f5a145007a11146a4b29db4f93a1137f95",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -56,7 +56,7 @@
   },
   {
     "nome": "rp4c-periodo-fora-do-desenho",
-    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "cabeca": "212d47f5a145007a11146a4b29db4f93a1137f95",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -74,7 +74,7 @@
   },
   {
     "nome": "rp4c-periodo-sem-marca",
-    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "cabeca": "212d47f5a145007a11146a4b29db4f93a1137f95",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -92,7 +92,7 @@
   },
   {
     "nome": "rp4c-valor-trocado-na-etiqueta",
-    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "cabeca": "212d47f5a145007a11146a4b29db4f93a1137f95",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -110,7 +110,7 @@
   },
   {
     "nome": "rp4c-f2-algarismo-solto",
-    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "cabeca": "212d47f5a145007a11146a4b29db4f93a1137f95",
     "estado": "",
     "comando": "node scripts/check-formas.mjs",
     "codigo": 1,
@@ -128,7 +128,7 @@
   },
   {
     "nome": "rp4c-f21-marca-sem-simbolo",
-    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "cabeca": "212d47f5a145007a11146a4b29db4f93a1137f95",
     "estado": "",
     "comando": "node scripts/check-formas.mjs",
     "codigo": 1,
@@ -146,7 +146,7 @@
   },
   {
     "nome": "rp4c-f21-legenda-da-unidade-tirada",
-    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "cabeca": "212d47f5a145007a11146a4b29db4f93a1137f95",
     "estado": "",
     "comando": "node scripts/check-formas.mjs",
     "codigo": 1,
@@ -164,7 +164,7 @@
   },
   {
     "nome": "rp4c-formato-simbolo-colado-numa-marca",
-    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "cabeca": "212d47f5a145007a11146a4b29db4f93a1137f95",
     "estado": "",
     "comando": "node tests/inicio/formato-dos-numeros.mjs",
     "codigo": 1,
@@ -182,7 +182,7 @@
   },
   {
     "nome": "rp4c-formato-euro-numa-marca",
-    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "cabeca": "212d47f5a145007a11146a4b29db4f93a1137f95",
     "estado": "",
     "comando": "node tests/inicio/formato-dos-numeros.mjs",
     "codigo": 1,

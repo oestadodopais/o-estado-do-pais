@@ -1,6 +1,6 @@
 # BRIEF · Parte 3, P1 · a travessia dos registos de conteúdo
 
-*Escrito a 24.08.2026 pelo lugar de direção (Claude Fable 5) para o construtor (Claude Opus 5). Sítio: ramo `parte3-2026-08-24`, saído de `main` `8d724f2`, construção de base verde (334 páginas, 33 chaves da prova, 13 s). Motor: `master` `cbaf7ca`, sem remoto, portão de base PASS (74 s). O plano é a `design/especime-v3/ESTIMATIVA-PARTE3-2026-08-24.md`; as onze decisões do diretor estão em `ESTADO-DO-MAIN-2026-08-24.md` e nenhuma se reabre. Sem travessões na prosa deste ficheiro; os nomes de ficheiro dentro de crases levam os caracteres que têm.*
+*Escrito a 24.08.2026 pelo lugar de direção (Claude Fable 5) para o construtor (Claude Opus 5). Sítio: ramo `parte3-2026-08-24`, saído de `main` `a316ca3`, construção de base verde (334 páginas, 33 chaves da prova, 13 s). Motor: `master` `cbaf7ca`, sem remoto, portão de base PASS (74 s). O plano é a `design/especime-v3/ESTIMATIVA-PARTE3-2026-08-24.md`; as onze decisões do diretor estão em `ESTADO-DO-MAIN-2026-08-24.md` e nenhuma se reabre. Sem travessões na prosa deste ficheiro; os nomes de ficheiro dentro de crases levam os caracteres que têm.*
 
 ## 0 · Numa frase
 

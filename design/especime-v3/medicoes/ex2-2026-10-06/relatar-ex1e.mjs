@@ -11,7 +11,7 @@ if (Object.values(codigos).some(c => c !== 0) || x.erros.length || cap.erros.len
 const cabeca = ler('portoes-e/cabeca').trim();
 if (cabeca !== ler('portoes-e/cabeca.fim').trim() || cabeca !== cap.cabeca) throw Error('as cabeças diferem');
 for (const c of cap.capturas) if (createHash('sha256').update(fs.readFileSync(c.ficheiro)).digest('hex') !== c.sha256) throw Error(`a captura mudou: ${c.ficheiro}`);
-const commits = execFileSync('git', ['log', '--reverse', '--format=%h %s', 'f3060fa4..HEAD'], { encoding: 'utf8' }).trim();
+const commits = execFileSync('git', ['log', '--reverse', '--format=%h %s', 'e8deccc1..HEAD'], { encoding: 'utf8' }).trim();
 const esc = s => s.replace(/\|/g, '\\|').replace(/\n/g, '<br>');
 const textos = cap.paginas.map(p => `**${p.lang.toUpperCase()}**\n\n${p.frases.map(f => '> ' + f).join('\n\n')}`).join('\n\n');
 const plantas = x.plantas.map(p => `| ${esc(p.nome)} | ${p.mordeu ? 'sim' : 'não'} | ${esc(p.queixa)} |`).join('\n');
@@ -21,7 +21,7 @@ const secao = `## A passagem EX1-e
 
 A comparação com sinal da EX1-d podia levar o leitor a entender que o défice era maior. Agora compara a dimensão dos défices ou excedentes. As afirmações sem apoio sobre a classificação dos juros e a promessa de atualização saíram. A contabilidade dos ramos voltou a abranger todo o texto de main, com uma mensagem própria e plantas que a exercem.
 
-Base: \`f3060fa4\`, ramo \`ex1d-2026-10-11\`. Cabeça do código: \`${cabeca}\`. O commit final contém apenas este relatório, as capturas e os registos das conferências. As capturas são da construção desta cabeça do código; o commit de entrega não muda o código nem o HTML. Sem mudança de ramo, sem publicação e sem push. A identificação de autoria nos trailers é a pedida no mandato.
+Base: \`e8deccc1\`, ramo \`ex1d-2026-10-11\`. Cabeça do código: \`${cabeca}\`. O commit final contém apenas este relatório, as capturas e os registos das conferências. As capturas são da construção desta cabeça do código; o commit de entrega não muda o código nem o HTML. Sem mudança de ramo, sem publicação e sem push. A identificação de autoria nos trailers é a pedida no mandato.
 
 ### Decisões por achado e questões
 

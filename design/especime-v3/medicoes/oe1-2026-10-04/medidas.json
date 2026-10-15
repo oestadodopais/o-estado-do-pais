@@ -9,15 +9,15 @@
     "medido_em": "2026-10-04T13:17:03.555578+00:00",
     "cabecas": {
       "motor": "38457b2723c47ea126984be6c5c1f778967e6847",
-      "sitio": "f5549dc8be22f4e936d62fbdfe4eac94b538db97",
-      "main": "f27aa38a0939d11908863afe6ee117da03404f5f",
+      "sitio": "9dae3dd81bc2a95640727c40ed0b85b5e340b209",
+      "main": "fbc95422116917dea6acf43557d03cf99926e866",
       "master": "47f12e15c927bf238522ac680b1f54c9de29f55d"
     },
     "bases": {
       "oe1d_sitio": "6f6c7a6712fc2fb9c29bae23a8bfd19d2ea54dde",
       "oe1d_motor": "1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3",
       "observacoes_motor": "9bfbb777f7d2f5af8b185475c8dd8027ebd76bad",
-      "rebase_main": "f27aa38a0939d11908863afe6ee117da03404f5f",
+      "rebase_main": "fbc95422116917dea6acf43557d03cf99926e866",
       "rebase_master": "47f12e15c927bf238522ac680b1f54c9de29f55d"
     },
     "guiao_sha256": "934406bb21192e358753ad28f32e75708e85dfe0b76eefb5bf937d1ca844c45f",
@@ -26,7 +26,7 @@
     "html_conferido": true,
     "medidas": {
       "base_main_integrada": {
-        "valor": "f27aa38a0939d11908863afe6ee117da03404f5f",
+        "valor": "fbc95422116917dea6acf43557d03cf99926e866",
         "passou": true,
         "conhecido_positivo": true,
         "planta": "Trocar a base integrada na cópia é recusado.",
@@ -211,7 +211,7 @@
         "queixa_da_planta": "R2-b: uma frase que devia estar retirada está viva"
       },
       "html_cabeca": {
-        "valor": "f5549dc8be22f4e936d62fbdfe4eac94b538db97",
+        "valor": "9dae3dd81bc2a95640727c40ed0b85b5e340b209",
         "passou": true,
         "conhecido_positivo": true,
         "planta": "Trocar a cabeça da cópia da construção é recusado.",
@@ -3039,12 +3039,12 @@
       "cabecas": {
         "motor": "1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3",
         "sitio": "914c53e1a76f541c513b576d0a603b4b7de29261",
-        "main": "b748a6b4b5f6b3949b4fb9805720dcf2016b3a53",
+        "main": "38cd302f5d879271d85fd5074f6123cd3a31ca2d",
         "master": "47f12e15c927bf238522ac680b1f54c9de29f55d"
       },
       "medidas": {
         "base_main_integrada": {
-          "valor": "b748a6b4b5f6b3949b4fb9805720dcf2016b3a53",
+          "valor": "38cd302f5d879271d85fd5074f6123cd3a31ca2d",
           "passou": true,
           "conhecido_positivo": true,
           "planta": "Trocar a base integrada na cópia é recusado.",

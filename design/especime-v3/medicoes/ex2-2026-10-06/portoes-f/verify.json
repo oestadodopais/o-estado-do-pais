@@ -1,5 +1,5 @@
 {
- "cabeca": "eee10a344e181e520862be5213404816264c7458",
+ "cabeca": "46d75e775252a4f1c213ee295db5368d1acd1f32",
  "paralelo": 4,
  "segundos": 276.73,
  "ok": true,
@@ -326,7 +326,7 @@
   "C": {
    "ok": true,
    "falhas": [],
-   "cabeca": "eee10a344e181e520862be5213404816264c7458",
+   "cabeca": "46d75e775252a4f1c213ee295db5368d1acd1f32",
    "carimbo": "2026-10-12T11:40:39.544Z",
    "escritos": {
     "prova.json": "2026-10-12T11:41:50.403Z",

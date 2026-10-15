@@ -1,7 +1,7 @@
 [
   {
     "nome": "ex1-semana-data-trocada",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -19,7 +19,7 @@
   },
   {
     "nome": "ex1-semana-contagem-trocada",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -37,7 +37,7 @@
   },
   {
     "nome": "ex1-semana-janela-de-outro-dia",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -56,7 +56,7 @@
   },
   {
     "nome": "ex1-semana-janela-de-oito-dias",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -74,7 +74,7 @@
   },
   {
     "nome": "ex1-semana-fora-da-porta",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -92,7 +92,7 @@
   },
   {
     "nome": "ex1-semana-mudanca-a-mais",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -110,7 +110,7 @@
   },
   {
     "nome": "ex1-semana-mudanca-em-falta",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -128,7 +128,7 @@
   },
   {
     "nome": "ex1-unidade-de-outra-linha",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -146,7 +146,7 @@
   },
   {
     "nome": "ex1-unidade-com-a-marca-de-outra-linha",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -164,7 +164,7 @@
   },
   {
     "nome": "ex1-explicacao-titulo-com-outro-ano",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -182,7 +182,7 @@
   },
   {
     "nome": "ex1-explicacao-descricao-mudada",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -200,7 +200,7 @@
   },
   {
     "nome": "ex1-explicacao-numero-trocado",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -218,7 +218,7 @@
   },
   {
     "nome": "ex1-f22-barra-fora-de-escala",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-formas.mjs",
     "codigo": 1,
@@ -236,7 +236,7 @@
   },
   {
     "nome": "ex1-f22-valor-trocado",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-formas.mjs",
     "codigo": 1,
@@ -254,7 +254,7 @@
   },
   {
     "nome": "ex1-indice-sem-as-explicacoes",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node tests/indice/indice.mjs",
     "codigo": 1,
@@ -272,7 +272,7 @@
   },
   {
     "nome": "ex1-voz-frase-por-classificar",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,
@@ -290,7 +290,7 @@
   },
   {
     "nome": "ex1-voz-ramo-do-sinal-trocado",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,
@@ -308,7 +308,7 @@
   },
   {
     "nome": "ex1-voz-porta-da-semana-com-outra-frase",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,
@@ -326,7 +326,7 @@
   },
   {
     "nome": "ex1b-rodape-sem-a-porta-das-explicacoes",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -344,7 +344,7 @@
   },
   {
     "nome": "ex1b-rodape-com-uma-porta-a-mais",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -362,7 +362,7 @@
   },
   {
     "nome": "ex1b-maiores-ordem-trocada",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,
@@ -380,7 +380,7 @@
   },
   {
     "nome": "ex1b-maiores-valor-trocado",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -398,7 +398,7 @@
   },
   {
     "nome": "ex1b-frase-dos-dois-totais-mudada",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,
@@ -416,7 +416,7 @@
   },
   {
     "nome": "ex1b-frases-compostas-num-contentor-flexivel",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node tests/explicacoes/frases-compostas.mjs",
     "codigo": 1,
@@ -434,7 +434,7 @@
   },
   {
     "nome": "ex1b-transbordo-a-390",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node tests/explicacoes/frases-compostas.mjs",
     "codigo": 1,
@@ -452,7 +452,7 @@
   },
   {
     "nome": "ex1c-semana-forma-contada-como-valor",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -470,7 +470,7 @@
   },
   {
     "nome": "ex1c-semana-contagem-da-forma-trocada",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -488,7 +488,7 @@
   },
   {
     "nome": "ex1c-porta-dos-numeros-tirada",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,
@@ -506,7 +506,7 @@
   },
   {
     "nome": "ex1c-lado-da-divida-trocado",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,
@@ -524,7 +524,7 @@
   },
   {
     "nome": "ex1c-nome-de-um-ministerio-trocado",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,
@@ -542,7 +542,7 @@
   },
   {
     "nome": "ex1c-marca-declarada-solta",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,
@@ -560,7 +560,7 @@
   },
   {
     "nome": "ex1c-marca-da-semana-solta",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,
@@ -578,7 +578,7 @@
   },
   {
     "nome": "ex1c-f22-figura-em-falta",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-formas.mjs",
     "codigo": 1,

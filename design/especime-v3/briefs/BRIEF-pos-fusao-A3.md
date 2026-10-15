@@ -2,7 +2,7 @@
 
 *For the A3 builder (Claude Opus), 22.08.2026, branch `pos-fusao-v3`, after A2's commit. Managing seat: Claude Fable 5. Read first: `../ISSUES.md` I59, I58; `scripts/cartoes.mjs` (the renderer; line 560 `render().asPng()`, 570 the write, 579 the digest, 586 the record); `scripts/gate-html.mjs` from line 4187 (the IHDR read and the per-card checks: digest, dimensions, values); `../notas/stage-5.md` §4 (the rasteriser and Vercel), §6 (the record), §7 and §8 (the gate's plants). No em dashes in anything you write.*
 
-## 0 · What the seat measured (22.08, over `dist/cartoes/` of `8440781`)
+## 0 · What the seat measured (22.08, over `dist/cartoes/` of `07c5d10`)
 
 All **532** PNG: **at most 118 distinct colours per card** (528 cards under 100, 4 between 100 and 149; the maximum is `en.en.1200x600.png`), **every pixel opaque** (alpha 255 everywhere). Total 20 064 037 bytes. The home card `inicio.pt.1200x630.png` is 62 554 bytes as RGBA; re-encoded as an 8-bit palette PNG it is about 26 KB (measured with a library the repo will not adopt). The director's condition in the prompt: «a palette encoder if it adds no risk, else record why not».
 

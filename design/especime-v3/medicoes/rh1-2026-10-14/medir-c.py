@@ -64,9 +64,9 @@ def auditar_entrega(fase):
     prefixo = AQUI.relative_to(RAIZ).as_posix() + '/'
     if fase == 'c':
         nomes = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', '-z',
-                                         '5dc59f27', '--', prefixo], cwd=RAIZ).decode().split('\0')
+                                         'c0f09ff8', '--', prefixo], cwd=RAIZ).decode().split('\0')
         nomes = [n for n in nomes if n and n != destino.relative_to(RAIZ).as_posix()]
-        ficheiros = [(n, subprocess.check_output(['git', 'show', '5dc59f27:' + n], cwd=RAIZ)) for n in nomes]
+        ficheiros = [(n, subprocess.check_output(['git', 'show', 'c0f09ff8:' + n], cwd=RAIZ)) for n in nomes]
         for local in ('portoes-b/alvos.json', 'portoes-c/alvos.json'):
             assert prefixo + local not in nomes, 'Alvo histórico inesperadamente seguido.'
             ficheiros.append((prefixo + local, (AQUI / local).read_bytes()))

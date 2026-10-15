@@ -1660,7 +1660,7 @@ check-datas · 25 edição(ões) datadas, 110 data(s) impressa(s) em 46 página(
 > o-estado-do-pais@0.1.0 check:cabeca
 > node tests/inicio/hierarquia-b2.mjs
 
-check:cabeca C1; construção e7a433e983ebdc69130d7d0c3b81c0b2539a3b83; 140 cabeças; 4 mordidas; 10 reposições
+check:cabeca C1; construção 73decc118ffeaf15bfc70c4d179f208725b4c26e; 140 cabeças; 4 mordidas; 10 reposições
 check:cabeca: PASS
 
 > o-estado-do-pais@0.1.0 check:fontes
@@ -5735,7 +5735,7 @@ sinais · 1 explicação(ões), 1 frase(s) guardada(s) fora da página; o regist
 {"recorte_livro":{"ficheiro":"13-pagina-livro-razao.html","entradas_na_pagina":442,"entradas_no_recorte":8,"primeiras_preservadas":true,"nota_e_porta_preservadas":true,"pagina_conservada":true,"pagina_sha256":"88344e331b537beb14469bf1f3d3659f3cd425f7c0f2d33bcbaed2fca215d9a7","bytes_cartao":239900,"bytes_sem_recorte":1163522,"teto_bytes":673249,"margem":0.1,"planta":{"nome":"recorte retirado","mordeu":true,"queixa":"1136.3 KiB acima do tecto de 657.4697265625 KiB"}}}
 
   O feixe de cartões do sistema de desenho
-  design-system/ · de dist/ no commit e7a433e · 20 cartões, 11 ficheiros de letra e um README
+  design-system/ · de dist/ no commit 73decc1 · 20 cartões, 11 ficheiros de letra e um README
 
   ficheiro                          grupo          bytes  ok
   01-cor.html                       Fundamentos   380206  ✓

@@ -1,6 +1,6 @@
 # O estado de `main` depois do bloco das regiões (28.08.2026, madrugada)
 
-*Escrito pelo lugar de direção (Claude Fable 5). O ramo `regioes-2026-08-27` saiu de `main` `e41a557` e está verde: construção com `check:regioes` na cadeia, `verify`, `typecheck`, `check:voz`, a matriz (87 de 87), `regioes` (30 células), `correcoes-a` (32 de 32) refeita nas células que mediam os pontos. Medido às cegas (Sonnet, M7, numa cópia) e lido de olhos frescos (Codex, com três plantas). A Emenda 21 é a regra; a §1.75 do `DECISIONS.md` é o registo.*
+*Escrito pelo lugar de direção (Claude Fable 5). O ramo `regioes-2026-08-27` saiu de `main` `1d24a5e` e está verde: construção com `check:regioes` na cadeia, `verify`, `typecheck`, `check:voz`, a matriz (87 de 87), `regioes` (30 células), `correcoes-a` (32 de 32) refeita nas células que mediam os pontos. Medido às cegas (Sonnet, M7, numa cópia) e lido de olhos frescos (Codex, com três plantas). A Emenda 21 é a regra; a §1.75 do `DECISIONS.md` é o registo.*
 
 ## O que muda no ar
 

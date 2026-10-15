@@ -49,13 +49,13 @@ def principal():
         for ficheiro in ('cabeca', 'cabeca.fim'):
             assert (P / nome / ficheiro).read_text().strip() == tempos[nome]['cabeca']
         assert all(p['codigo'] == 0 for p in tempos[nome]['passos']), nome
-    assert tempos['antes']['cabeca'] == git('rev-parse', '207d7134')
+    assert tempos['antes']['cabeca'] == git('rev-parse', '4970eab9')
     assert (P / 'antes/estado.inicio').read_bytes() == b''
     assert (P / 'antes/estado.fim').read_bytes() == b''
     assert (P / 'antes/portoes.sh').read_bytes() == subprocess.check_output(
-        ['git', '-C', str(RAIZ), 'show', '207d7134:scripts/leituras/portoes.sh'])
+        ['git', '-C', str(RAIZ), 'show', '4970eab9:scripts/leituras/portoes.sh'])
     head = tempos['portoes-b']['cabeca']
-    assert not git('diff', '--name-only', 'beb1e37d', head, '--', '.github/workflows/portao.yml', 'src', 'public', 'ledger')
+    assert not git('diff', '--name-only', '3c59b4e0', head, '--', '.github/workflows/portao.yml', 'src', 'public', 'ledger')
     medidas = {}
     comandos = [('build', 'cadeia:build'), ('verify', 'cadeia:verify'),
                 ('check:briefs', 'npm run check:briefs'), ('check:leituras', 'npm run check:leituras'),
@@ -106,7 +106,7 @@ def principal():
                        ('rotas', 'larguras', 'celulas', 'axe', 'graves', 'alvos_maus')}
     assert all(comparacao_alvos.values()), comparacao_alvos
     observacao = ler(P / 'antes/paginas-observadas.json.gz')
-    fonte_original = subprocess.check_output(['git', '-C', str(RAIZ), 'show', '207d7134:tests/acessibilidade/alvos.mjs'])
+    fonte_original = subprocess.check_output(['git', '-C', str(RAIZ), 'show', '4970eab9:tests/acessibilidade/alvos.mjs'])
     assert observacao['origem_sha256'] == hashlib.sha256(fonte_original).hexdigest()
     assert int((P / 'antes/observacao-alvos.codigo').read_text()) == 0
     assert (P / 'antes/estado.depois-da-observacao').read_bytes() == b''
@@ -134,7 +134,7 @@ def principal():
               '|---|---:|---:|---:|---:|']
     for rotulo in medidas['antes']:
         linhas.append('| ' + rotulo + ' | ' + ' | '.join(segundos(medidas[n][rotulo]) for n in nomes) + ' |')
-    linhas += ['', 'Fontes: os `tempos.json` das pastas indicadas nas colunas. As colunas da primeira passagem são históricas e conservam a cabeça escrita nesses ficheiros. O «antes» foi refeito numa worktree temporária de `207d7134`, com o `portoes.sh` dessa cabeça, pela tranca comum, e `estado.inicio` e `estado.fim` vazios. A instrumentação ficou fora da árvore; a shell só acrescentou a opção de saída JSON ao guião dos alvos. O auto-teste interno dessa cabeça não tinha relógio próprio, pelo que o seu tempo fica incluído no `check:pais` e não é inventado em separado.', '',
+    linhas += ['', 'Fontes: os `tempos.json` das pastas indicadas nas colunas. As colunas da primeira passagem são históricas e conservam a cabeça escrita nesses ficheiros. O «antes» foi refeito numa worktree temporária de `4970eab9`, com o `portoes.sh` dessa cabeça, pela tranca comum, e `estado.inicio` e `estado.fim` vazios. A instrumentação ficou fora da árvore; a shell só acrescentou a opção de saída JSON ao guião dos alvos. O auto-teste interno dessa cabeça não tinha relógio próprio, pelo que o seu tempo fica incluído no `check:pais` e não é inventado em separado.', '',
                'A duração inteira é o intervalo entre o primeiro e o último processo instrumentado, não a soma das durações paralelas. A espera pela tranca não entra. Durante as medições esta sessão não lançou outras conferências. O motor foi passado por `RESEARCHHUB_DIR=<motor>` em leitura. A worktree temporária foi removida depois da conferência do estado limpo.', '',
                ('A corrida final cumpre o teto de doze minutos.' if resumo['menos_de_12_minutos'] else 'A corrida final não cumpre o teto de doze minutos; o limite de tempo fica declarado, sem alterar uma proteção para o cumprir.'), '',
                '## Códigos lidos dos ficheiros', '', '| Corrida | build.codigo | verify.codigo | typecheck.codigo |', '|---|---:|---:|---:|']
@@ -175,7 +175,7 @@ def principal():
                'Não houve push, publicação ou alteração do motor. Os testes da aterragem substituem os comandos externos. A espera por uma tranca de outra worktree foi respeitada.', '',
                '## Commits desta passagem', '']
     linhas += ['- `' + l.split(' ', 1)[0] + '` ' + re.sub(r'^M-A-b (\d+):', r'`M-A-b \1`:', l.split(' ', 1)[1])
-               for l in git('log', '--reverse', '--format=%h %s', 'beb1e37d..' + head).splitlines()]
+               for l in git('log', '--reverse', '--format=%h %s', '3c59b4e0..' + head).splitlines()]
     linhas += ['', 'O último commit junta apenas o relatório e as provas. Os trailers pedidos estão nos commits desta passagem.', '']
     for prefixo in ('U ✓', 'D ✓', 'C ✓', 'npm run check:briefs ·', 'npm run check:leituras ·', 'npm run check:series ·', 'npm run check:pais:auto-teste ·', 'npm run check:alvos ·'):
         linhas.append('<!-- portao: portoes-b/verify.log | ' + prefixo + ' -->')

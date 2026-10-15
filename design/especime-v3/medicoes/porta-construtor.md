@@ -1,6 +1,6 @@
 # F1.13 · as palavras da porta e o índice dos domínios · relatório do construtor
 
-*Ramo `porta-2026-09-15`, tirado de `main` em `bb0b4c39` (a fatia
+*Ramo `porta-2026-09-15`, tirado de `main` em `6a56efbd` (a fatia
 `dominios-css-2026-09-15` já fundida). Construtor Claude Opus 5, 15.09.2026, uma
 passagem. O brief é `design/observatorio/BRIEF-F1.13-as-palavras-da-porta.md`,
 copiado para este repositório no primeiro commit do ramo, sem uma letra mudada
@@ -30,7 +30,7 @@ inteiro abaixo dele, e a fronteira entre os dois está escrita.
 | **P3** | com guião, a gaveta não ocupa píxel nenhum à vista a 390 e a 1 280; sem guião, a lista com os 29 nomes e as portas certas (e, desde o achado 5 da leitura a frio, o terceiro estado: com guião e sem mapa) | com guião, a 390 e a 1 280: caixa **1 × 1 px** em `absolute`, recortada por `rect(0px,0px,0px,0px)`, **área à vista 0**, **29** nomes, **29** invisíveis, **29** portas, **0** fora de `/distritos/`, **0** sem resposta; ao foco do `<summary>` a 390 a caixa volta a **354 × 575,4 px** com **29** nomes e **0** fora do alvo de 44 px. Sem guião: caixa **354 × 45 px** (área **15 930**), `<summary>` à vista, **29** unidades na lista, **29** ligações que respondem 200 | `A5.pt` e `A5.en` reescritas com a decisão citada; `U4 · pt` e `U4 · en` e `U1c` de `mapa-unidades.mjs`; o axe **0 nós em violação** (`check:alvos`, célula H1, 46 rotas × 2 larguras) |
 | **P9** | «selo» e «estados do selo» a 0 nas páginas do leitor fora do Método, nas duas edições; a linha da legenda a 1 em cada página que rende a marca | L3 «selo» **640 → 0** (320 pt + 320 en → 0 + 0); o Método **12** ocorrências (chão 2, uma por edição), fora da conta pela medida P9; a linha da legenda **1 vez** em cada uma das **319** páginas por edição | `check:lugar`, medida L3 (teto 0) e a asserção nova do positivo conhecido; `grep -o … \| wc -l` em quatro páginas de cada edição |
 | **P4** | cada domínio vivo com os nomes das medidas de cabeça na sua linha, iguais aos da faixa, e «e mais N» contado; 0 valores selados | **5** nomes na linha contra **5** na faixa, iguais e pela mesma ordem, nas duas edições; a cauda «, e mais cinco» / «, and five more»; **0** valores selados na secção | `A20.pt` e `A20.en` (célula nova, que compara as duas superfícies do sítio uma com a outra); `check:lugar` 8.13 **0** (teto 0) |
-| **P5** | o primeiro ecrã a 390 × 664 não muda (a altura da cabeça e a manchete medidas antes e depois) | **a cabeça e a manchete não mudaram; a pilha abaixo delas desceu 18,2 px, e o primeiro ecrã continua a levar as cinco coisas.** Ao pormenor: a cabeça e a manchete **não mudaram um píxel**: nome `62 → 97,4` px nas duas construções (pt) e `95,2 → 130,5` (en), manchete **125,5 px** em **3 linhas** em Chromium e em WebKit nas duas. A mobília acima do nome **62 px → 62 px** (pt, teto 64) e **95,2 px → 95,2 px** (en, teto 95,2). O que desceu **18,2 px** foi a pilha abaixo da manchete, e a causa está medida: o rótulo da busca passou de **18,2 px** (uma linha) a **36,4 px** (duas) a 390. O fundo da coisa mais funda do primeiro ecrã: **569,4 → 587,6 px** (pt) e **564,7 → 582,8 px** (en), dentro dos 664 nas duas | `A1.pt`, `A1.en`, `A11.pt`, `A11.en`, antes sobre o `dist/` de `bb0b4c39` e depois sobre o desta cabeça |
+| **P5** | o primeiro ecrã a 390 × 664 não muda (a altura da cabeça e a manchete medidas antes e depois) | **a cabeça e a manchete não mudaram; a pilha abaixo delas desceu 18,2 px, e o primeiro ecrã continua a levar as cinco coisas.** Ao pormenor: a cabeça e a manchete **não mudaram um píxel**: nome `62 → 97,4` px nas duas construções (pt) e `95,2 → 130,5` (en), manchete **125,5 px** em **3 linhas** em Chromium e em WebKit nas duas. A mobília acima do nome **62 px → 62 px** (pt, teto 64) e **95,2 px → 95,2 px** (en, teto 95,2). O que desceu **18,2 px** foi a pilha abaixo da manchete, e a causa está medida: o rótulo da busca passou de **18,2 px** (uma linha) a **36,4 px** (duas) a 390. O fundo da coisa mais funda do primeiro ecrã: **569,4 → 587,6 px** (pt) e **564,7 → 582,8 px** (en), dentro dos 664 nas duas | `A1.pt`, `A1.en`, `A11.pt`, `A11.en`, antes sobre o `dist/` de `6a56efbd` e depois sobre o desta cabeça |
 | **P6** | as capturas de `/`, `/en/` e da página de uma área, a 390, 768, 1 024, 1 280 e 1 600, antes e depois | **40 capturas** (20 antes, 20 depois) em `design/especime-v3/capturas/porta-2026-09-15/` | `design/especime-v3/medicoes/porta-2026-09-15/capturas-porta.mjs --momento=antes\|depois`, com a rota de cada nome declarada no guião |
 | **P7** | `build`, `verify` e `typecheck` a 0, com os códigos lidos dos ficheiros | ver §7 | `npm run build > build.log 2>&1; echo $? > build.exit`, e o mesmo para `verify` e `typecheck` |
 | **P8** | plantas: a frase antiga de volta; uma etiqueta «a página inteira →» de volta; a gaveta visível com guião; um valor selado na linha de um domínio | as **quatro** plantas novas vermelhas, cada uma na sua célula, com o «html mudou» conferido | `node tests/inicio/porta.mjs --vermelhos`; ver §6 |
@@ -722,7 +722,7 @@ da frente, não das palavras dela.*
 
 # F1.1 · a porta da frente · relatório do construtor
 
-*Ramo `porta-2026-09-03`, tirado de `origin/main` em `d8b14a88`. Construtor Claude
+*Ramo `porta-2026-09-03`, tirado de `origin/main` em `dca9e227`. Construtor Claude
 Opus 5, 03.09.2026. O bloco é o F1.1 do
 `design/observatorio/PLANO-fiabilidade-2026-09-02.md` §3, com o brief
 `design/observatorio/BRIEF-F1.1-porta-da-frente.md`. Sem travessões na prosa.*
@@ -767,7 +767,7 @@ passagem, a lista dos 29 nomes por baixo do mapa, é decisão do diretor pelo
 ## 2 · As medidas de aceitação, de partida e de chegada
 
 Tudo medido com a mesma régua, `tests/inicio/porta.mjs`, sobre duas construções: a
-da árvore de partida (`d8b14a88`, guardada à parte e lida com `OEDP_DIST`) e a
+da árvore de partida (`dca9e227`, guardada à parte e lida com `OEDP_DIST`) e a
 desta. O comando é o mesmo nas duas leituras, e **as duas saídas estão no
 repositório**, para que ninguém tenha de acreditar na tabela:
 
@@ -778,7 +778,7 @@ node tests/inicio/porta.mjs \
   --json design/especime-v3/medicoes/porta-medidas-depois.json    → saída 0 · 24 de 24
 ```
 
-| # | medida | antes (`d8b14a88`) | depois | estado |
+| # | medida | antes (`dca9e227`) | depois | estado |
 | --- | --- | --- | --- | --- |
 | A1 pt | 390 × 664: nome, manchete, cartão, selo e porta do concelho sem gesto, **e o selo nos 21 cartões** | cartão até 726,7 px, selo até 714,3 px, **porta não existe**; 21 cartões, 0 sem selo | tudo dentro: nome 97,4 · manchete 328,3 · **porta 477,7** · cartão 653,7 · selo 641,3; 21 cartões, 0 sem selo | ✓ |
 | A1 en | o mesmo | cartão 710,9 · selo 698,5 · porta não existe | nome 97,4 · manchete 297,0 · porta 446,3 · cartão 641,1 · selo 628,7 | ✓ |
@@ -1393,7 +1393,7 @@ Os ficheiros do sítio, das réguas e do registo, sem este relatório e sem as
 capturas:
 
 ```
-git diff --stat d8b14a88 -- src/ public/ tests/ design/especime-v3/INVENTARIO-FRASES.md \
+git diff --stat dca9e227 -- src/ public/ tests/ design/especime-v3/INVENTARIO-FRASES.md \
   design/especime-v3/critica/REVISOES-DO-INVENTARIO.md
 ```
 
@@ -1403,10 +1403,10 @@ Ao todo, com o relatório e as capturas, 57 ficheiros, 1 554 linhas acrescentada
 
 ## 15 · As duas fusões com o `main`, e o que elas custaram
 
-O ramo foi tirado de `origin/main` em `d8b14a88` e fundiu duas vezes antes de ser
+O ramo foi tirado de `origin/main` em `dca9e227` e fundiu duas vezes antes de ser
 empurrado, porque o `main` andou enquanto este bloco se construía.
 
-**A primeira, com `a8459420`** (o F1.9a, o índice das páginas de leitura). Dois
+**A primeira, com `1f08a124`** (o F1.9a, o índice das páginas de leitura). Dois
 conflitos, os dois do mesmo feitio: o F1.9a e este bloco acrescentaram cada um a
 sua secção ao fim do `INVENTARIO-FRASES.md` e a sua linha ao
 `critica/REVISOES-DO-INVENTARIO.md`, e o git não sabe somar dois acrescentos no
@@ -1415,7 +1415,7 @@ nenhum dos dois se perdeu, e está conferido: a linha `| porta |` e a linha
 `| indice-sonnet |` existem as duas no registo das revisões, e as quatro cadeias
 do bloco `porta` continuam no inventário.
 
-**A segunda, com `3093b72b`** (o F1.2, a página do primeiro domínio). Um conflito,
+**A segunda, com `989bc8e4`** (o F1.2, a página do primeiro domínio). Um conflito,
 o mesmo feitio, no `CHAVES-EN.md`; os outros três ficheiros que os dois blocos
 tocam (`src/i18n/strings.mjs`, o inventário e o registo das revisões) o git juntou
 sozinho. Conferido depois da fusão: as quatro chaves deste bloco continuam em

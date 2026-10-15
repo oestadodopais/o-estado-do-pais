@@ -1,6 +1,6 @@
 # Leitura curta da passagem de correção V2-a-d (14.10.2026, de madrugada)
 
-*Lançada pelo lugar de direção às 02:43 UTC sobre o pacote do sítio de `972c1f07` a `c351c12b` e do motor de `559eac97` a `80268af4` (a passagem V2-a-d do Codex `gpt-6-astra` em `high`, retomada na mesma sessão, pelo mandato `MANDATO-V2A-d-2026-10-14.md`), com os documentos alojados e os ficheiros do publicador copiados da cabeça do motor para o pacote. O leitor: o Claude Opus 5.5 (a definição `leitor`, M26), em `xhigh`, 331 237 símbolos, 91 chamadas de ferramentas, quinze minutos. As cinco plantas do lugar de direção (`PLANTAS-V2A-d-2026-10-14.json`, quatro dentro dos hunks do diff e uma numa página construída) foram as cinco mordidas: os achados 1 a 5. O achado 6 (Major) e os 7 a 12 (Minor) são reais e estão decididos no mandato `MANDATO-V2A-e-2026-10-14.md`, para a sessão seguinte; o leitor confirmou os nove cabeçalhos pela tabela do mandato, os dezoito valores, as duas contas, as plantas dos meses, da capa e do título, e os portões a zero. O texto do leitor segue como foi entregue, em inglês.*
+*Lançada pelo lugar de direção às 02:43 UTC sobre o pacote do sítio de `62165d25` a `cb8faccb` e do motor de `559eac97` a `80268af4` (a passagem V2-a-d do Codex `gpt-6-astra` em `high`, retomada na mesma sessão, pelo mandato `MANDATO-V2A-d-2026-10-14.md`), com os documentos alojados e os ficheiros do publicador copiados da cabeça do motor para o pacote. O leitor: o Claude Opus 5.5 (a definição `leitor`, M26), em `xhigh`, 331 237 símbolos, 91 chamadas de ferramentas, quinze minutos. As cinco plantas do lugar de direção (`PLANTAS-V2A-d-2026-10-14.json`, quatro dentro dos hunks do diff e uma numa página construída) foram as cinco mordidas: os achados 1 a 5. O achado 6 (Major) e os 7 a 12 (Minor) são reais e estão decididos no mandato `MANDATO-V2A-e-2026-10-14.md`, para a sessão seguinte; o leitor confirmou os nove cabeçalhos pela tabela do mandato, os dezoito valores, as duas contas, as plantas dos meses, da capa e do título, e os portões a zero. O texto do leitor segue como foi entregue, em inglês.*
 
 ## Blocking
 
@@ -28,7 +28,7 @@
 
 tests/linha/v2a.mjs:39, tests/linha/v2a.mjs:40, tests/linha/v2a.mjs:58, tests/linha/v2a.mjs:74
 
-8. **The report contradicts itself on the order of the final gates.** Row 15 says they ran after the last code-and-proof commit. Lines 335–337 say later commits (f3161ea9 onward, after b9497c1c) carry the captures and measurements. The delivery head and the cited `portoes-pelo-escrivao.sh:10` are not in the package. relatorio-construtor.md:307, relatorio-construtor.md:335, relatorio-construtor.md:337
+8. **The report contradicts itself on the order of the final gates.** Row 15 says they ran after the last code-and-proof commit. Lines 335–337 say later commits (496e0b7d onward, after d9228a71) carry the captures and measurements. The delivery head and the cited `portoes-pelo-escrivao.sh:10` are not in the package. relatorio-construtor.md:307, relatorio-construtor.md:335, relatorio-construtor.md:337
 
 9. **As editor I would cut repetitions on the Health pages.** The PT level sentences print «Conta do Pograma Legado» twice in a row, and they spell out the year in words under a digit heading. The variation pages repeat the comparison in the sentence and again in the ressalva. src/data/o-que-e-das-familias.mjs:3922, ledger/claims/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao.yml:40
 
@@ -46,7 +46,7 @@ tests/linha/v2a.mjs:39, tests/linha/v2a.mjs:40, tests/linha/v2a.mjs:58, tests/li
 16. Both sums hold against the rows: 18 125,9 − 17 858,4 = 267,5 and 1 152 − 263 = 889. The hosted article prints «17 mil 858» and «Menos 267,5» (tests/linha/v2ad-dados.mjs:27).
 17. The month swap is refused without and with the engine, and the cell refuses eleven months in the build (design/especime-v3/medicoes/v2a-2026-10-12/portoes-d/verify.log:2726, design/especime-v3/medicoes/v2a-2026-10-12/portoes-d/build.log:409).
 18. The PIB, «V2AB título» and heading plants bite, and the CFP cover reader handles every month and refuses 31 February (design/especime-v3/medicoes/v2a-2026-10-12/portoes-d/verify.log:2705, design/especime-v3/medicoes/v2a-2026-10-12/d-conferencias/motor.log:26).
-19. The final gates read 0/0/0/0 at b9497c1c and 80268af4, the heads are equal at start and end, and both `estado.fim` files are 0 bytes (design/especime-v3/medicoes/v2a-2026-10-12/portoes-d/build.codigo:1).
+19. The final gates read 0/0/0/0 at d9228a71 and 80268af4, the heads are equal at start and end, and both `estado.fim` files are 0 bytes (design/especime-v3/medicoes/v2a-2026-10-12/portoes-d/build.codigo:1).
 20. These counts reproduce: 450 images against the receipt, 79 plant messages at their cited lines, 8 sealed bodies, 3 211 untouched lines and 2 780 L1 pages (design/especime-v3/medicoes/v2a-2026-10-12/plantas-d.json:1).
 21. The V-2a-c cost matches the mandate (relatorio-construtor.md:385, brief.md:26).
 

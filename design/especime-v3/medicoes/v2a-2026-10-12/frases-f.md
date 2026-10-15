@@ -1,6 +1,6 @@
 # As frases da passagem V2-a-f
 
-Cabeça da construção: `a0440b562734d23344c2c6c431de826f287a6456`. Texto lido no HTML, nas duas edições.
+Cabeça da construção: `b36a7925084dda05eef1e32afd2a31b1772bd2d5`. Texto lido no HTML, nas duas edições.
 
 ## oe-2027-saude-despesa-total-consolidada-variacao
 

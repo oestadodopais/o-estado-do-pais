@@ -9,7 +9,7 @@ mesmo JSON. Cada medição traz o nome por que o §0 a cita, o valor, o comando 
 conhecido-positivo do MESMO predicado (M5, §1.122).
 
 CADA MEDIÇÃO É ESTÁVEL DE PROPÓSITO. As fontes leem-se na cabeça que a leitura de
-fora leu, `d3481ba9` (o que estava no ar a 23.09.2026 de manhã), por `git show`,
+fora leu, `3a483ffd` (o que estava no ar a 23.09.2026 de manhã), por `git show`,
 e por isso não mudam com o trabalho que o bloco faz; as páginas construídas
 leem-se de cópias congeladas em `design/especime-v3/medicoes/r1-2026-09-23/paginas/`,
 presas pelo sha256 escrito no ficheiro. A CI clona com `fetch-depth: 0`, por isso
@@ -23,7 +23,7 @@ import subprocess
 import sys
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-CABECA = 'd3481ba9'
+CABECA = '3a483ffd'
 COPIAS = os.path.join(RAIZ, 'design', 'especime-v3', 'medicoes', 'r1-2026-09-23', 'paginas')
 COMANDO = 'python3 design/observatorio/medidas/BRIEF-R1.py'
 

@@ -1,5 +1,5 @@
 {
-  "cabecaCodigo": "ac4022106fbca310da2fbb2f31739e2a41e486d5",
+  "cabecaCodigo": "d4ad6e3662862f87c6b3e924c7ab96158f97a269",
   "celula": {
     "comando": "node tests/incorporar/conferir.mjs",
     "recibos": 6390,
@@ -3125,7 +3125,7 @@
     ]
   },
   "verify": {
-    "cabeca": "ac4022106fbca310da2fbb2f31739e2a41e486d5",
+    "cabeca": "d4ad6e3662862f87c6b3e924c7ab96158f97a269",
     "paralelo": 4,
     "segundos": 244.246,
     "ok": true,
@@ -3460,7 +3460,7 @@
       "C": {
         "ok": true,
         "falhas": [],
-        "cabeca": "ac4022106fbca310da2fbb2f31739e2a41e486d5",
+        "cabeca": "d4ad6e3662862f87c6b3e924c7ab96158f97a269",
         "carimbo": "2026-10-12T10:59:29.681Z",
         "escritos": {
           "prova.json": "2026-10-12T11:00:29.812Z",

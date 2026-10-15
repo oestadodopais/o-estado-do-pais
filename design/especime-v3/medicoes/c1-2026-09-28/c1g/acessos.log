@@ -1,17 +1,17 @@
 {
-  "base_da_reconstituicao": "cb43b2fcec9e67815894a07ceb95c2cba1b589e4",
+  "base_da_reconstituicao": "855b9a9b1f6de1187ee2f28e149e1cd79a9e53c3",
   "linhas": [
     {
       "id": "evora-prr-aprovado-2026",
       "eventos_git": [
         {
-          "commit": "180f136dd7281e62820c6dc00e185cf08af22dfe",
+          "commit": "4db18908770e4033d43a3c940733e892d28b51c7",
           "date": "2026-08-15",
           "old_value": null,
           "new_value": "2026-08-04"
         },
         {
-          "commit": "8371e09770057bfc489b99652fe08f2f086c03dd",
+          "commit": "632b14f4b3f4e2edead82ce14955f9c8359a758e",
           "date": "2026-08-18",
           "old_value": "2026-08-04",
           "new_value": "2026-08-18",
@@ -22,7 +22,7 @@
           ]
         },
         {
-          "commit": "8b7d91578e18c2cd0280509542c0e19584de3e0d",
+          "commit": "3ff3bf22197e69f233f8d4f0a7f01ed5087a88a4",
           "date": "2026-08-20",
           "old_value": "2026-08-18",
           "new_value": "2026-08-20",
@@ -40,8 +40,8 @@
           "field": "access_date",
           "old_value": "2026-08-04",
           "new_value": "2026-08-18",
-          "reason": "O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8371e097) a mudança que a linha não registava.",
-          "reason_en": "The access moved from 04.08.2026 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 8371e097) the change the row had not recorded."
+          "reason": "O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 632b14f4) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 04.08.2026 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 632b14f4) the change the row had not recorded."
         },
         {
           "date": "2026-08-20",
@@ -49,8 +49,8 @@
           "field": "access_date",
           "old_value": "2026-08-18",
           "new_value": "2026-08-20",
-          "reason": "O acesso passou de 18.08.2026 a 20.08.2026 com o instantâneo do PRR de 19.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8b7d9157) a mudança que a linha não registava.",
-          "reason_en": "The access moved from 18.08.2026 to 20.08.2026 with the PRR snapshot of 19.08.2026; the entry rebuilds from the public repository history (commit 8b7d9157) the change the row had not recorded."
+          "reason": "O acesso passou de 18.08.2026 a 20.08.2026 com o instantâneo do PRR de 19.08.2026; a entrada reconstitui pela história pública do repositório (o commit 3ff3bf22) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 18.08.2026 to 20.08.2026 with the PRR snapshot of 19.08.2026; the entry rebuilds from the public repository history (commit 3ff3bf22) the change the row had not recorded."
         }
       ],
       "erros": []
@@ -59,13 +59,13 @@
       "id": "evora-prr-municipio-contratado",
       "eventos_git": [
         {
-          "commit": "180f136dd7281e62820c6dc00e185cf08af22dfe",
+          "commit": "4db18908770e4033d43a3c940733e892d28b51c7",
           "date": "2026-08-15",
           "old_value": null,
           "new_value": "2026-08-04"
         },
         {
-          "commit": "8371e09770057bfc489b99652fe08f2f086c03dd",
+          "commit": "632b14f4b3f4e2edead82ce14955f9c8359a758e",
           "date": "2026-08-18",
           "old_value": "2026-08-04",
           "new_value": "2026-08-18",
@@ -76,7 +76,7 @@
           ]
         },
         {
-          "commit": "8b7d91578e18c2cd0280509542c0e19584de3e0d",
+          "commit": "3ff3bf22197e69f233f8d4f0a7f01ed5087a88a4",
           "date": "2026-08-20",
           "old_value": "2026-08-18",
           "new_value": "2026-08-20",
@@ -94,8 +94,8 @@
           "field": "access_date",
           "old_value": "2026-08-04",
           "new_value": "2026-08-18",
-          "reason": "O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8371e097) a mudança que a linha não registava.",
-          "reason_en": "The access moved from 04.08.2026 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 8371e097) the change the row had not recorded."
+          "reason": "O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 632b14f4) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 04.08.2026 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 632b14f4) the change the row had not recorded."
         },
         {
           "date": "2026-08-20",
@@ -103,8 +103,8 @@
           "field": "access_date",
           "old_value": "2026-08-18",
           "new_value": "2026-08-20",
-          "reason": "O acesso passou de 18.08.2026 a 20.08.2026 com o instantâneo do PRR de 19.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8b7d9157) a mudança que a linha não registava.",
-          "reason_en": "The access moved from 18.08.2026 to 20.08.2026 with the PRR snapshot of 19.08.2026; the entry rebuilds from the public repository history (commit 8b7d9157) the change the row had not recorded."
+          "reason": "O acesso passou de 18.08.2026 a 20.08.2026 com o instantâneo do PRR de 19.08.2026; a entrada reconstitui pela história pública do repositório (o commit 3ff3bf22) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 18.08.2026 to 20.08.2026 with the PRR snapshot of 19.08.2026; the entry rebuilds from the public repository history (commit 3ff3bf22) the change the row had not recorded."
         }
       ],
       "erros": []
@@ -113,13 +113,13 @@
       "id": "evora-prr-pago-2026",
       "eventos_git": [
         {
-          "commit": "180f136dd7281e62820c6dc00e185cf08af22dfe",
+          "commit": "4db18908770e4033d43a3c940733e892d28b51c7",
           "date": "2026-08-15",
           "old_value": null,
           "new_value": "2026-08-04"
         },
         {
-          "commit": "8371e09770057bfc489b99652fe08f2f086c03dd",
+          "commit": "632b14f4b3f4e2edead82ce14955f9c8359a758e",
           "date": "2026-08-18",
           "old_value": "2026-08-04",
           "new_value": "2026-08-18",
@@ -130,7 +130,7 @@
           ]
         },
         {
-          "commit": "8b7d91578e18c2cd0280509542c0e19584de3e0d",
+          "commit": "3ff3bf22197e69f233f8d4f0a7f01ed5087a88a4",
           "date": "2026-08-20",
           "old_value": "2026-08-18",
           "new_value": "2026-08-20",
@@ -148,8 +148,8 @@
           "field": "access_date",
           "old_value": "2026-08-04",
           "new_value": "2026-08-18",
-          "reason": "O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8371e097) a mudança que a linha não registava.",
-          "reason_en": "The access moved from 04.08.2026 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 8371e097) the change the row had not recorded."
+          "reason": "O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 632b14f4) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 04.08.2026 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 632b14f4) the change the row had not recorded."
         },
         {
           "date": "2026-08-20",
@@ -157,8 +157,8 @@
           "field": "access_date",
           "old_value": "2026-08-18",
           "new_value": "2026-08-20",
-          "reason": "O acesso passou de 18.08.2026 a 20.08.2026 com o instantâneo do PRR de 19.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8b7d9157) a mudança que a linha não registava.",
-          "reason_en": "The access moved from 18.08.2026 to 20.08.2026 with the PRR snapshot of 19.08.2026; the entry rebuilds from the public repository history (commit 8b7d9157) the change the row had not recorded."
+          "reason": "O acesso passou de 18.08.2026 a 20.08.2026 com o instantâneo do PRR de 19.08.2026; a entrada reconstitui pela história pública do repositório (o commit 3ff3bf22) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 18.08.2026 to 20.08.2026 with the PRR snapshot of 19.08.2026; the entry rebuilds from the public repository history (commit 3ff3bf22) the change the row had not recorded."
         }
       ],
       "erros": []
@@ -167,13 +167,13 @@
       "id": "evora-prr-universidade-contratado",
       "eventos_git": [
         {
-          "commit": "180f136dd7281e62820c6dc00e185cf08af22dfe",
+          "commit": "4db18908770e4033d43a3c940733e892d28b51c7",
           "date": "2026-08-15",
           "old_value": null,
           "new_value": "2026-08-04"
         },
         {
-          "commit": "8371e09770057bfc489b99652fe08f2f086c03dd",
+          "commit": "632b14f4b3f4e2edead82ce14955f9c8359a758e",
           "date": "2026-08-18",
           "old_value": "2026-08-04",
           "new_value": "2026-08-18",
@@ -184,7 +184,7 @@
           ]
         },
         {
-          "commit": "8b7d91578e18c2cd0280509542c0e19584de3e0d",
+          "commit": "3ff3bf22197e69f233f8d4f0a7f01ed5087a88a4",
           "date": "2026-08-20",
           "old_value": "2026-08-18",
           "new_value": "2026-08-20",
@@ -202,8 +202,8 @@
           "field": "access_date",
           "old_value": "2026-08-04",
           "new_value": "2026-08-18",
-          "reason": "O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8371e097) a mudança que a linha não registava.",
-          "reason_en": "The access moved from 04.08.2026 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 8371e097) the change the row had not recorded."
+          "reason": "O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 632b14f4) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 04.08.2026 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 632b14f4) the change the row had not recorded."
         },
         {
           "date": "2026-08-20",
@@ -211,8 +211,8 @@
           "field": "access_date",
           "old_value": "2026-08-18",
           "new_value": "2026-08-20",
-          "reason": "O acesso passou de 18.08.2026 a 20.08.2026 com o instantâneo do PRR de 19.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8b7d9157) a mudança que a linha não registava.",
-          "reason_en": "The access moved from 18.08.2026 to 20.08.2026 with the PRR snapshot of 19.08.2026; the entry rebuilds from the public repository history (commit 8b7d9157) the change the row had not recorded."
+          "reason": "O acesso passou de 18.08.2026 a 20.08.2026 com o instantâneo do PRR de 19.08.2026; a entrada reconstitui pela história pública do repositório (o commit 3ff3bf22) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 18.08.2026 to 20.08.2026 with the PRR snapshot of 19.08.2026; the entry rebuilds from the public repository history (commit 3ff3bf22) the change the row had not recorded."
         }
       ],
       "erros": []
@@ -221,13 +221,13 @@
       "id": "evora-prr-vencido-aprovado-2026",
       "eventos_git": [
         {
-          "commit": "180f136dd7281e62820c6dc00e185cf08af22dfe",
+          "commit": "4db18908770e4033d43a3c940733e892d28b51c7",
           "date": "2026-08-15",
           "old_value": null,
           "new_value": "2026-08-04"
         },
         {
-          "commit": "8371e09770057bfc489b99652fe08f2f086c03dd",
+          "commit": "632b14f4b3f4e2edead82ce14955f9c8359a758e",
           "date": "2026-08-18",
           "old_value": "2026-08-04",
           "new_value": "2026-08-18",
@@ -238,7 +238,7 @@
           ]
         },
         {
-          "commit": "8b7d91578e18c2cd0280509542c0e19584de3e0d",
+          "commit": "3ff3bf22197e69f233f8d4f0a7f01ed5087a88a4",
           "date": "2026-08-20",
           "old_value": "2026-08-18",
           "new_value": "2026-08-20",
@@ -256,8 +256,8 @@
           "field": "access_date",
           "old_value": "2026-08-04",
           "new_value": "2026-08-18",
-          "reason": "O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8371e097) a mudança que a linha não registava.",
-          "reason_en": "The access moved from 04.08.2026 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 8371e097) the change the row had not recorded."
+          "reason": "O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 632b14f4) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 04.08.2026 to 18.08.2026 with the PRR snapshot of 17.08.2026; the entry rebuilds from the public repository history (commit 632b14f4) the change the row had not recorded."
         },
         {
           "date": "2026-08-20",
@@ -265,8 +265,8 @@
           "field": "access_date",
           "old_value": "2026-08-18",
           "new_value": "2026-08-20",
-          "reason": "O acesso passou de 18.08.2026 a 20.08.2026 com o instantâneo do PRR de 19.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8b7d9157) a mudança que a linha não registava.",
-          "reason_en": "The access moved from 18.08.2026 to 20.08.2026 with the PRR snapshot of 19.08.2026; the entry rebuilds from the public repository history (commit 8b7d9157) the change the row had not recorded."
+          "reason": "O acesso passou de 18.08.2026 a 20.08.2026 com o instantâneo do PRR de 19.08.2026; a entrada reconstitui pela história pública do repositório (o commit 3ff3bf22) a mudança que a linha não registava.",
+          "reason_en": "The access moved from 18.08.2026 to 20.08.2026 with the PRR snapshot of 19.08.2026; the entry rebuilds from the public repository history (commit 3ff3bf22) the change the row had not recorded."
         }
       ],
       "erros": []

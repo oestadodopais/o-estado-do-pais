@@ -17,16 +17,16 @@
    "descricao": "a razão portuguesa da primeira entrada reconstituída do aprovado volta a escrever a data antiga na forma ISO",
    "sha256_antes": "5f0a9ddca10c80797d177fdc7377f14720f1f6d9884b4dd62a8f76097679c034",
    "sha256_depois": "5343e14c017b68c11c537fc8d3743d8540d0c1fe3a4ab1b7bfc3933b3003d90d",
-   "contexto_antes": "o longer served.\"\n  - date: \"2026-08-18\"\n    kind: \"proveniencia\"\n    field: \"access_date\"\n    old_value: \"2026-08-04\"\n    new_value: \"2026-08-18\"\n    reason: \"O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8371e097) a mudança que a linha não registava.\"\n  ",
-   "contexto_depois": "o longer served.\"\n  - date: \"2026-08-18\"\n    kind: \"proveniencia\"\n    field: \"access_date\"\n    old_value: \"2026-08-04\"\n    new_value: \"2026-08-18\"\n    reason: \"O acesso passou de 2026-08-04 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8371e097) a mudança que a linha não registava.\"\n  "
+   "contexto_antes": "o longer served.\"\n  - date: \"2026-08-18\"\n    kind: \"proveniencia\"\n    field: \"access_date\"\n    old_value: \"2026-08-04\"\n    new_value: \"2026-08-18\"\n    reason: \"O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 632b14f4) a mudança que a linha não registava.\"\n  ",
+   "contexto_depois": "o longer served.\"\n  - date: \"2026-08-18\"\n    kind: \"proveniencia\"\n    field: \"access_date\"\n    old_value: \"2026-08-04\"\n    new_value: \"2026-08-18\"\n    reason: \"O acesso passou de 2026-08-04 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 632b14f4) a mudança que a linha não registava.\"\n  "
   },
   {
    "id": "P3",
    "ficheiro": "built/livro-razao/evora-prr-aprovado-2026/index.html",
-   "descricao": "o recibo português do aprovado cita um commit que não existe (8371e079 em vez de 8371e097)",
+   "descricao": "o recibo português do aprovado cita um commit que não existe (8371e079 em vez de 632b14f4)",
    "sha256_antes": "6cb1c747c785f6d0bd8715b86095e4b76725a503e79bd0e441e5df17012098fd",
    "sha256_depois": "e5da48604e143a591ae3d96c495fc64ccc67f5321adc2377302996f0e5bbdced",
-   "contexto_antes": "reason\">O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8371e097) a mudança que a linha não registava.</p></div><div id=\"alteracao-0\" class=\"historico-entrada\"><div class=\"historico-cabeca\"><span class=\"log-data\" data-correc",
+   "contexto_antes": "reason\">O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 632b14f4) a mudança que a linha não registava.</p></div><div id=\"alteracao-0\" class=\"historico-entrada\"><div class=\"historico-cabeca\"><span class=\"log-data\" data-correc",
    "contexto_depois": "reason\">O acesso passou de 04.08.2026 a 18.08.2026 com o instantâneo do PRR de 17.08.2026; a entrada reconstitui pela história pública do repositório (o commit 8371e079) a mudança que a linha não registava.</p></div><div id=\"alteracao-0\" class=\"historico-entrada\"><div class=\"historico-cabeca\"><span class=\"log-data\" data-correc"
   },
   {

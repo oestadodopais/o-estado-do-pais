@@ -1,4 +1,4 @@
-{'sitio': '1fb08e30365399bd817175c90ec5f697ff13645a', 'motor': 'b75f3170e3bb6b5f925f9654e41c7a32f8484236'}
+{'sitio': 'bdf277d10afa2fca99c105c901742fd919469d41', 'motor': 'b75f3170e3bb6b5f925f9654e41c7a32f8484236'}
 
 > o-estado-do-pais@0.1.0 check:cruzamento
 > node scripts/check-cruzamento.mjs --with-origin
@@ -22,4 +22,4 @@
 
   [32m✓[0m cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou, e são ainda o que o motor tem.
 
-{'sitio': '1fb08e30365399bd817175c90ec5f697ff13645a', 'motor': 'b75f3170e3bb6b5f925f9654e41c7a32f8484236'}
+{'sitio': 'bdf277d10afa2fca99c105c901742fd919469d41', 'motor': 'b75f3170e3bb6b5f925f9654e41c7a32f8484236'}

@@ -1,4 +1,4 @@
-# python3 scripts/leituras/decisoes-em-vigor.py --intervalo aba0a48b..9d696d3c
+# python3 scripts/leituras/decisoes-em-vigor.py --intervalo 6ff9e8c1..0dd05dd6
 # código: 0
 
 §1.3 · Numa linha derivada, os campos de proveniência podem ser `null`

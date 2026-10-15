@@ -278,9 +278,9 @@ for chave, frase in (("na_linha", "citações conferidas na linha citada (±7):"
             "uma citação do bloco com a linha deslocada sessenta linhas para trás, num mapa de prova, sai como longe", achou)
 
 # ---- a terceira fusão com main: as linhas que tirou do portão de HTML ----------------------------------------
-d = git(SITIO, "diff", "-U0", "3a253f73", "40f0cb58", "--", "scripts/gate-html.mjs") or ""
+d = git(SITIO, "diff", "-U0", "520a02d6", "5c3c4af8", "--", "scripts/gate-html.mjs") or ""
 tiradas = sum(int(m.group(2) or 1) - int(m.group(4) or 1) for m in re.finditer(r"^@@ -(\d+)(?:,(\d+))? \+(\d+)(?:,(\d+))? @@", d, re.M))
-medicao("fusao_com_40f0cb58.linhas_tiradas_do_portao_de_html", tiradas if d else NAO, "git diff -U0 3a253f73 40f0cb58 -- scripts/gate-html.mjs (as linhas tiradas menos as postas, somadas pelos cabeçalhos dos pedaços)",
+medicao("fusao_com_5c3c4af8.linhas_tiradas_do_portao_de_html", tiradas if d else NAO, "git diff -U0 520a02d6 5c3c4af8 -- scripts/gate-html.mjs (as linhas tiradas menos as postas, somadas pelos cabeçalhos dos pedaços)",
         "o diff tem o pedaço da conferência do Sobre retirada", "-5261," in d)
 
 # ---- as cabeças e o estado das duas árvores no momento da medição (M50) ------------------------------------
@@ -398,8 +398,8 @@ medicao("rp4mb.xlrd.pypi_ficheiros", len((pipj.get("pypi") or {}).get("ficheiros
 METADES_TIRADAS = (", e a conta refaz-se em cada construção do sítio", ", and the calculation is redone at every build of the site")
 fontes = [f for f in (SITIO / "src").rglob("*") if f.is_file() and f.suffix in (".mjs", ".astro", ".js", ".ts", ".json")]
 medicao("rp4mb.frase.metade_tirada_no_codigo", sum(f.read_text(encoding="utf-8", errors="replace").count(m) for f in fontes for m in METADES_TIRADAS),
-        "as duas metades tiradas, contadas nos ficheiros de src/", "o mesmo contador dá 4 no strings.mjs da cabeça 1a186832",
-        sum((git(SITIO, "show", "1a186832:src/i18n/strings.mjs") or "").count(m) for m in METADES_TIRADAS) == 4)
+        "as duas metades tiradas, contadas nos ficheiros de src/", "o mesmo contador dá 4 no strings.mjs da cabeça ed972397",
+        sum((git(SITIO, "show", "ed972397:src/i18n/strings.mjs") or "").count(m) for m in METADES_TIRADAS) == 4)
 r = subprocess.run(["node", "--input-type=module", "-e",
                     "import { STRINGS } from './src/i18n/strings.mjs'; const k = ['derivadaFrase','derivadaFraseVarias','origensK','indiceAntes','indiceValia','indiceAcima','indiceAbaixo','indiceIgual','indexadaAntes','indexadaDepois']; console.log(JSON.stringify(Object.fromEntries(k.map((c) => [c, [STRINGS.pt.livro.serieNoTempo[c], STRINGS.en.livro.serieNoTempo[c]]]))));"],
                    cwd=str(SITIO), capture_output=True, text=True)
@@ -407,7 +407,7 @@ cadeias = json.loads(r.stdout) if r.returncode == 0 else {}
 versao = ler_json(SITIO / "dist/version.json") or {}
 medicao("rp4mb.dist.commit", versao.get("commit") or NAO, "dist/version.json · commit (a construção sobre que se mediu)",
         "a construção é de uma cabeça que já tem as frases novas", bool(cadeias) and (git(SITIO, "show", f"{versao.get('commit')}:src/i18n/strings.mjs") or "").count(cadeias.get("derivadaFrase", ["\0"])[0]) == 1)
-# A frase nas páginas construídas, contada por `medir-rp4mb-dist.py` antes (a construção da 1a186832, onde a metade
+# A frase nas páginas construídas, contada por `medir-rp4mb-dist.py` antes (a construção da ed972397, onde a metade
 # tirada ainda está: o conhecido-positivo do detetor) e depois (a construção da cabeça do código da passagem).
 da, dd = ler_json(AQUI / "rp4mb-dist-antes.json") or {}, ler_json(AQUI / "rp4mb-dist-depois.json") or {}
 for etiqueta, dj in (("antes", da), ("depois", dd)):

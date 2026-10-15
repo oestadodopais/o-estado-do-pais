@@ -1,6 +1,6 @@
 # CI1 · a corrida «portão» em metade do tempo, sem uma conferência a menos
 
-*Relatório do construtor (Claude Opus 5.5), 28.09.2026, pelo brief `design/observatorio/BRIEF-CI1-o-portao-em-metade-do-tempo.md`, que nasceu da pergunta do diretor desse dia («Is there a way to optimise CI», e «without jeopardise a single bit of quality»). Worktree própria, ramo `ci1-2026-09-28`, a partir de `1c1952c9`. Cada número deste relatório está em `medidas.json`, que `medir-ci1.mjs` escreve a partir das provas de `evidencias/` e de `portoes/`, e cada frase diz ao lado do número o nome da medição. As medições locais foram feitas numa máquina partilhada com outros dois construtores: a condição de cada uma está na tabela dos tempos. Sem travessões.*
+*Relatório do construtor (Claude Opus 5.5), 28.09.2026, pelo brief `design/observatorio/BRIEF-CI1-o-portao-em-metade-do-tempo.md`, que nasceu da pergunta do diretor desse dia («Is there a way to optimise CI», e «without jeopardise a single bit of quality»). Worktree própria, ramo `ci1-2026-09-28`, a partir de `8ee1b2c4`. Cada número deste relatório está em `medidas.json`, que `medir-ci1.mjs` escreve a partir das provas de `evidencias/` e de `portoes/`, e cada frase diz ao lado do número o nome da medição. As medições locais foram feitas numa máquina partilhada com outros dois construtores: a condição de cada uma está na tabela dos tempos. Sem travessões.*
 
 ## O que mudou
 
@@ -60,19 +60,19 @@ O brief deixava as duas formas e pedia a que medisse mais depressa. O tempo do p
 
 | o quê | tempo | cabeça | condições |
 |---|---|---|---|
-| a corrida de referência no GitHub, o trabalho `portao` | 27,75 min (`ci_antes_trabalho_min`); a corrida inteira 27,8 min (`ci_antes_corrida_min`) | `17758ec7` | o anfitrião do GitHub; lida na API por `tempos-da-corrida.mjs` |
-| ... o `build` / o `verify` | 703 s / 883 s (`ci_antes_build_s`, `ci_antes_verify_s`) | `17758ec7` | idem |
-| `build` local, antes | 320 s, com o Astro em 225,6 s (`build_antes_s`, `build_antes_astro_s`) | `1c1952c9` | sem outra construção; um `check:alvos` de outro construtor, com Chromium, a correr ao começar |
-| `build` local perfilado | 323,7 s (`build_perfilada_s`) | `1c1952c9` | com `--cpu-prof` em cada processo Node; o `check:alvos --vermelhos` de outro construtor ao lado |
-| `build` local, depois da correção | 73,1 s, com o Astro em 9,5 s (`build_depois_s`, `build_depois_astro_s`) | `27b13b92` | a máquina livre ao começar; um Chromium de outro construtor no fim |
-| o portão `build` | 75,6 s, com o Astro em 10 s (`portao_build_s`, `portao_build_astro_s`) | `7b63369e` | a máquina livre do princípio ao fim |
-| `npm run verify` inteiro, depois | 471,4 s (`verify_inteiro_depois_s`) | `27b13b92` | livre ao começar; o `gate:html` de outro construtor no fim |
-| o portão `verify` | 473 s (`portao_verify_s`) | `7b63369e` | a máquina livre do princípio ao fim |
-| o `verify` sem repetir o `build`, 4 processos | 200,2 s (`verify_depois_do_build_p4_s`) | `27b13b92` | livre ao começar; a construção de uma planta de outro construtor no fim |
-| o mesmo, 10 processos | 205,4 s (`verify_depois_do_build_p10_s`) | `27b13b92` | idem |
-| o mesmo, 4 processos, na cabeça dos portões | 201,2 s (`verify_depois_do_build_final_s`) | `7b63369e` | livre ao começar; o `verify` de outro construtor no fim |
-| a corrida como era, com o código de hoje, local | 544,5 s (`build_e_verify_inteiro_depois_s`) | `27b13b92` | a soma das duas medições |
-| a corrida como fica, local | 273,4 s (`build_e_guiao_depois_s`) | `27b13b92` | a soma das duas medições |
+| a corrida de referência no GitHub, o trabalho `portao` | 27,75 min (`ci_antes_trabalho_min`); a corrida inteira 27,8 min (`ci_antes_corrida_min`) | `c1e834fb` | o anfitrião do GitHub; lida na API por `tempos-da-corrida.mjs` |
+| ... o `build` / o `verify` | 703 s / 883 s (`ci_antes_build_s`, `ci_antes_verify_s`) | `c1e834fb` | idem |
+| `build` local, antes | 320 s, com o Astro em 225,6 s (`build_antes_s`, `build_antes_astro_s`) | `8ee1b2c4` | sem outra construção; um `check:alvos` de outro construtor, com Chromium, a correr ao começar |
+| `build` local perfilado | 323,7 s (`build_perfilada_s`) | `8ee1b2c4` | com `--cpu-prof` em cada processo Node; o `check:alvos --vermelhos` de outro construtor ao lado |
+| `build` local, depois da correção | 73,1 s, com o Astro em 9,5 s (`build_depois_s`, `build_depois_astro_s`) | `4d219970` | a máquina livre ao começar; um Chromium de outro construtor no fim |
+| o portão `build` | 75,6 s, com o Astro em 10 s (`portao_build_s`, `portao_build_astro_s`) | `41b054ff` | a máquina livre do princípio ao fim |
+| `npm run verify` inteiro, depois | 471,4 s (`verify_inteiro_depois_s`) | `4d219970` | livre ao começar; o `gate:html` de outro construtor no fim |
+| o portão `verify` | 473 s (`portao_verify_s`) | `41b054ff` | a máquina livre do princípio ao fim |
+| o `verify` sem repetir o `build`, 4 processos | 200,2 s (`verify_depois_do_build_p4_s`) | `4d219970` | livre ao começar; a construção de uma planta de outro construtor no fim |
+| o mesmo, 10 processos | 205,4 s (`verify_depois_do_build_p10_s`) | `4d219970` | idem |
+| o mesmo, 4 processos, na cabeça dos portões | 201,2 s (`verify_depois_do_build_final_s`) | `41b054ff` | livre ao começar; o `verify` de outro construtor no fim |
+| a corrida como era, com o código de hoje, local | 544,5 s (`build_e_verify_inteiro_depois_s`) | `4d219970` | a soma das duas medições |
+| a corrida como fica, local | 273,4 s (`build_e_guiao_depois_s`) | `4d219970` | a soma das duas medições |
 | a corrida no GitHub, depois | previsão de 8,3 min (`previsao_ci_depois_min`), contra a metade, 13,9 min | por medir | a fórmula refaz a corrida de referência em 27,6 min contra os 27,75 medidos |
 
 A previsão não conta a disputa dos 4 núcleos do anfitrião nos primeiros minutos, quando as conferências começam ao mesmo tempo, nem o que a correção da paridade tira ao próprio `check:alvos` no anfitrião; por isso é previsão e não medida.
@@ -98,16 +98,16 @@ A previsão não conta a disputa dos 4 núcleos do anfitrião nos primeiros minu
 
 ## Os commits
 
-- `85a719b2` · as ferramentas de medição do bloco.
-- `790e255b` · o `verify` depois do `build` (os mandatos 1 e 2).
-- `96bbb7f1` · a corrida «portão» passa a usá-lo.
-- `27b13b92` · a paridade das línguas uma vez por processo, com as plantas no `provar:guardas` (o mandato 3).
-- `7b63369e` · as provas do bloco e o guião das medidas.
+- `83043a1d` · as ferramentas de medição do bloco.
+- `8af0828b` · o `verify` depois do `build` (os mandatos 1 e 2).
+- `1513f675` · a corrida «portão» passa a usá-lo.
+- `4d219970` · a paridade das línguas uma vez por processo, com as plantas no `provar:guardas` (o mandato 3).
+- `41b054ff` · as provas do bloco e o guião das medidas.
 - o último commit, que traz os portões, o `medidas.json`, este relatório e a resposta curta.
 
 ## Os portões
 
-Na cabeça `7b63369e`, cada um no seu comando, com o código escrito num ficheiro acabado de escrever por `cronometro.mjs` depois de o processo acabar: `npm run build` a 0 (`portao_build_codigo`), em 75,6 s; `npm run verify` a 0 (`portao_verify_codigo`), em 473 s; `npm run typecheck` a 0 (`portao_typecheck_codigo`), em 0,3 s. O último commit só acrescenta ficheiros a esta pasta, que nenhum portão lê.
+Na cabeça `41b054ff`, cada um no seu comando, com o código escrito num ficheiro acabado de escrever por `cronometro.mjs` depois de o processo acabar: `npm run build` a 0 (`portao_build_codigo`), em 75,6 s; `npm run verify` a 0 (`portao_verify_codigo`), em 473 s; `npm run typecheck` a 0 (`portao_typecheck_codigo`), em 0,3 s. O último commit só acrescenta ficheiros a esta pasta, que nenhum portão lê.
 
 ## O custo
 
@@ -159,11 +159,11 @@ As listas inteiras (o que cada conferência escreveu, criou, leu e consultou) es
 
 ### A primeira corrida no GitHub
 
-Medida pelo lugar de direção, na cabeça `1875866b` do ramo (a corrida 36475236795), e lida aqui na API com `tempos-da-corrida.mjs`, que primeiro lê a corrida de referência como conhecido-positivo: 8,97 minutos de corrida (`ci1b_corrida1_min`), 530 s de passos somados (`ci1b_corrida1_passos_s`), contra os 27,75 minutos de trabalho da corrida de referência. O `build` levou 88 s (`ci1b_corrida1_build_s`), com o Astro em 12,9 s (`ci1b_corrida1_astro_s`); o passo novo 241 s (`ci1b_corrida1_passo_novo_s`), que é o tempo do `check:alvos` lá (240,2 s, `ci1b_corrida1_alvos_s`); a árvore 166 s (`ci1b_corrida1_arvore_s`), contra 34 s na corrida de referência: é o passo do `actions/checkout` com a história inteira, e varia do lado do GitHub. As três células passaram (`ci1b_corrida1_celulas_verdes`). A previsão da primeira entrega era de 8,3 minutos sem contar a disputa dos núcleos; a corrida levou 8,97, e a diferença está quase toda na árvore.
+Medida pelo lugar de direção, na cabeça `bd0c8523` do ramo (a corrida 36475236795), e lida aqui na API com `tempos-da-corrida.mjs`, que primeiro lê a corrida de referência como conhecido-positivo: 8,97 minutos de corrida (`ci1b_corrida1_min`), 530 s de passos somados (`ci1b_corrida1_passos_s`), contra os 27,75 minutos de trabalho da corrida de referência. O `build` levou 88 s (`ci1b_corrida1_build_s`), com o Astro em 12,9 s (`ci1b_corrida1_astro_s`); o passo novo 241 s (`ci1b_corrida1_passo_novo_s`), que é o tempo do `check:alvos` lá (240,2 s, `ci1b_corrida1_alvos_s`); a árvore 166 s (`ci1b_corrida1_arvore_s`), contra 34 s na corrida de referência: é o passo do `actions/checkout` com a história inteira, e varia do lado do GitHub. As três células passaram (`ci1b_corrida1_celulas_verdes`). A previsão da primeira entrega era de 8,3 minutos sem contar a disputa dos núcleos; a corrida levou 8,97, e a diferença está quase toda na árvore.
 
 ### Os portões da passagem
 
-Na cabeça `b485ae52`, cada um no seu comando, com o código em `portoes/ci1b/`: `npm run build` a 0 (`ci1b_portao_build_codigo`), em 75,1 s (`ci1b_portao_build_s`), com a máquina livre ao começar; `npm run verify` a 0 (`ci1b_portao_verify_codigo`), em 471,4 s (`ci1b_portao_verify_s`), com um `check:alvos` de outro construtor a correr ao lado do princípio ao fim; `npm run typecheck` a 0 (`ci1b_portao_typecheck_codigo`), em 0,3 s (`ci1b_portao_typecheck_s`). A construção do portão sai igual byte a byte à da cabeça de partida, 0 diferenças fora do carimbo (`ci1b_diferencas_final`), e o seu manifesto é o quinto de `evidencias/manifestos/`. O `verify` sem repetir o `build`, com 4 processos, sobre essa construção: 202,7 s (`ci1b_verify_depois_do_build_s`), as três células verdes, com um `check:alvos` de outro construtor a correr ao lado o tempo todo. Os commits da passagem, a seguir aos que a leitura leu: `5dd1d2d1` (o guião), `8c51a519` (as ferramentas), `a7a4ac40` e `7e0f6240` (o mapa, a M38 e os tempos de uma corrida), `b485ae52` (o inventário, a paridade e as medidas), e o último, com o relatório, as provas, os portões e as duas ferramentas desta pasta acertadas depois deles (o inventário a reduzir também os caminhos de fora da casa, e a planta da paridade a contar as páginas acabadas), que nenhum portão lê.
+Na cabeça `e520a402`, cada um no seu comando, com o código em `portoes/ci1b/`: `npm run build` a 0 (`ci1b_portao_build_codigo`), em 75,1 s (`ci1b_portao_build_s`), com a máquina livre ao começar; `npm run verify` a 0 (`ci1b_portao_verify_codigo`), em 471,4 s (`ci1b_portao_verify_s`), com um `check:alvos` de outro construtor a correr ao lado do princípio ao fim; `npm run typecheck` a 0 (`ci1b_portao_typecheck_codigo`), em 0,3 s (`ci1b_portao_typecheck_s`). A construção do portão sai igual byte a byte à da cabeça de partida, 0 diferenças fora do carimbo (`ci1b_diferencas_final`), e o seu manifesto é o quinto de `evidencias/manifestos/`. O `verify` sem repetir o `build`, com 4 processos, sobre essa construção: 202,7 s (`ci1b_verify_depois_do_build_s`), as três células verdes, com um `check:alvos` de outro construtor a correr ao lado o tempo todo. Os commits da passagem, a seguir aos que a leitura leu: `14219838` (o guião), `33bbede7` (as ferramentas), `88ae8c47` e `e8d02c07` (o mapa, a M38 e os tempos de uma corrida), `e520a402` (o inventário, a paridade e as medidas), e o último, com o relatório, as provas, os portões e as duas ferramentas desta pasta acertadas depois deles (o inventário a reduzir também os caminhos de fora da casa, e a planta da paridade a contar as páginas acabadas), que nenhum portão lê.
 
 ### O custo
 

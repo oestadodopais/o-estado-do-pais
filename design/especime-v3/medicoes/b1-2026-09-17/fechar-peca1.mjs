@@ -25,7 +25,7 @@ for (const c of capturas) {
 const cabeca = git('rev-parse','HEAD');
 if (JSON.parse(fs.readFileSync('dist/version.json','utf8')).commit !== cabeca) throw new Error('Construção de outra cabeça.');
 if (json('capturas-depois-peca1.json').cabeca !== cabeca) throw new Error('Capturas de outra cabeça.');
-const base = '2bf8b238b912fcb89da74096281305c75f0a3b3c';
+const base = '0820794dfb2b7fefa20c22beebf0eaa2b7455856';
 const protegidos = ['studies-src','registos','ledger','src/views/HomeView.astro','src/views/MunicipioView.astro','src/views/AreaView.astro'];
 const alterados = git('diff','--name-only',base,'--',...protegidos);
 if (alterados) throw new Error(`Mudanças fora da peça: ${alterados}`);

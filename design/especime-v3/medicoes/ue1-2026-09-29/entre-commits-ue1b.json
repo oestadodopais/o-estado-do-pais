@@ -2,7 +2,7 @@
   "bloco": "UE1b",
   "commits": [
     {
-      "commit": "63f54d18",
+      "commit": "d0a36492",
       "o_que": "o ordinal inglês, as ressalvas da fonte nas pontas e a legenda das marcas do recibo da série (o estado sem a porta, construído à parte)",
       "corridas": [
         {
@@ -28,7 +28,7 @@
       ]
     },
     {
-      "commit": "181ce25c",
+      "commit": "39f34d59",
       "o_que": "a porta do recibo da linha portuguesa para a sua série",
       "corridas": [
         {
@@ -54,7 +54,7 @@
       ]
     },
     {
-      "commit": "c9859d31",
+      "commit": "d65feab3",
       "o_que": "o mapa do repositório",
       "corridas": [
         {

@@ -18,7 +18,7 @@ const unidades = [...new Set(ambito.map(c => c.unit))].sort().map(unit => {
     origem_dos_valores: cor ? 'uma entrada real do registo' : 'o valor atual, repetido apenas no ensaio da forma',
     edicoes: Object.fromEntries(['pt', 'en'].map(lang => [lang, unidadeDaLinha(unit, lang)])) };
 });
-const cabecaInicial = 'd1becbf8f167643ca8d53a4479f8f6bbee0f7183';
+const cabecaInicial = '83e7a1158ba065153db7c419b01d4222d26bdc56';
 const fc = execFileSync('git', ['show', `${cabecaInicial}:tests/explicacoes/frases-compostas.mjs`], {encoding: 'utf8'});
 const declaracao = fc.match(/const ROTAS = .*?const LARGURAS/s)[0];
 const fixas = [...declaracao.matchAll(/routePath\('([a-zA-Z]+)', lang\)/g)].map(m => m[1]);

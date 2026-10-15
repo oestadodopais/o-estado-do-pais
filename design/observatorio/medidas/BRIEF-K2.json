@@ -1,7 +1,7 @@
 {
   "brief": "design/observatorio/BRIEF-K2-o-cartao-para-o-telemovel.md",
   "guiao": "design/observatorio/medidas/BRIEF-K2.py",
-  "cabeca_lida": "a9509193",
+  "cabeca_lida": "278e258b",
   "cartoes_com_variacao_sob_nome_de_nivel": [
     "custo-unitario-do-trabalho-2025",
     "precos-da-habitacao-2025",
@@ -16,7 +16,7 @@
     {
       "nome": "cartoes_declarados_nos_quadros",
       "valor": 21,
-      "comando": "git show a9509193:src/data/figuras.mjs · as entradas com claim e quadro",
+      "comando": "git show 278e258b:src/data/figuras.mjs · as entradas com claim e quadro",
       "conhecido_positivo": {
         "o_que": "a taxa de atividade é um deles",
         "encontrado": true
@@ -34,7 +34,7 @@
     {
       "nome": "unidade_da_disparidade_de_emprego",
       "valor": "% da população",
-      "comando": "git show a9509193:ledger/claims/disparidade-de-emprego-entre-sexos-2025.yml · unit",
+      "comando": "git show 278e258b:ledger/claims/disparidade-de-emprego-entre-sexos-2025.yml · unit",
       "conhecido_positivo": {
         "o_que": "a linha é do Eurostat",
         "encontrado": true
@@ -52,7 +52,7 @@
     {
       "nome": "frases_das_leituras_com_termos_por_explicar",
       "valor": 11,
-      "comando": "git show a9509193:src/data/leituras.mjs · as ocorrências de «designações», «localizações de projeto vencidas» e «atuarialmente»",
+      "comando": "git show 278e258b:src/data/leituras.mjs · as ocorrências de «designações», «localizações de projeto vencidas» e «atuarialmente»",
       "conhecido_positivo": {
         "o_que": "«atuarialmente» aparece",
         "encontrado": true

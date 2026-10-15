@@ -1,6 +1,6 @@
 # Frases lidas no HTML da passagem V2-a-k
 
-Cabeça `17e6d819c0cb8dc77dda9cd2072d70d27cf9b83e`.
+Cabeça `82b030447079c3a9cfb908e18bdfa063c0b2f1a6`.
 
 ## afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09 · PT
 

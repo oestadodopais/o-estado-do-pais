@@ -9,7 +9,7 @@ import yaml
 
 AQUI = Path(__file__).resolve().parent
 RAIZ = AQUI.parents[4]
-BASE = 'cb43b2fcec9e67815894a07ceb95c2cba1b589e4'
+BASE = '855b9a9b1f6de1187ee2f28e149e1cd79a9e53c3'
 IDS = ['evora-prr-aprovado-2026', 'evora-prr-municipio-contratado',
        'evora-prr-pago-2026', 'evora-prr-universidade-contratado',
        'evora-prr-vencido-aprovado-2026']

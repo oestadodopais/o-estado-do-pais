@@ -1,6 +1,6 @@
 {
   "comando": "node design/especime-v3/medicoes/rp4n-2026-10-06/medir-d.mjs",
-  "cabeca": "b72eac200831e8e5904ac0c1567b56eec1fac130",
+  "cabeca": "d17ecdebcbeb9f269cf2bdf939a655f1313a5879",
   "totais": {
     "paginas": 38,
     "aceites": 244,

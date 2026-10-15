@@ -2,11 +2,11 @@
 
 *Claude Opus 5.5 (a definição `construtor`), 29.09.2026. O relatório inteiro está em `design/especime-v3/medicoes/ue1-2026-09-29/LEIA-ME.md`.*
 
-**As cabeças.** O sítio: o ramo `ue1-2026-09-29`. A cabeça do código, onde os portões correram, é `33ed14a0`; a cabeça final é o commit que traz esta resposta, e só acrescenta provas nesta pasta e na das capturas. O motor: o ramo `ue1-2026-09-29`, cabeça `e394307`. Nada foi publicado.
+**As cabeças.** O sítio: o ramo `ue1-2026-09-29`. A cabeça do código, onde os portões correram, é `d8888595`; a cabeça final é o commit que traz esta resposta, e só acrescenta provas nesta pasta e na das capturas. O motor: o ramo `ue1-2026-09-29`, cabeça `e394307`. Nada foi publicado.
 
-**Os portões, lidos dos ficheiros** (`portoes/*.codigo`, todos da cabeça `33ed14a0`): `npm run build` 0, `npm run verify` 0, `npm run typecheck` 0. No motor, `python3 -m core.gate` 0 na cabeça `e394307` (`motor/core-gate.txt`).
+**Os portões, lidos dos ficheiros** (`portoes/*.codigo`, todos da cabeça `d8888595`): `npm run build` 0, `npm run verify` 0, `npm run typecheck` 0. No motor, `python3 -m core.gate` 0 na cabeça `e394307` (`motor/core-gate.txt`).
 
-**Os commits.** O sítio, depois do brief (`09bca6c7`): `a182c200`, `42cedfd9`, `e1c20147`, `7ae82d82`, `ac965c61`, `b6991e78`, `ee95f3ca`, `33ed14a0`, e o das provas. O motor: `da6df0b`, `50f8352`, `daa5355`, `e394307`.
+**Os commits.** O sítio, depois do brief (`341832bf`): `1e0819fb`, `5c9a8563`, `462e35de`, `6ea3f6c3`, `b4c77398`, `0da6fe2a`, `894b2526`, `d8888595`, e o das provas. O motor: `da6df0b`, `50f8352`, `daa5355`, `e394307`.
 
 **As provas.** `medidas.json` por `medir-ue1.mjs`, cada medida com o comando e um conhecido-positivo; o `conferir-relatorio.py` sobre o relatório sai a 0. As 15 plantas do bloco morderam e foram repostas pelo sha256; as 40 capturas e as 200 medições das faixas nas 5 larguras deram 0 problemas; as 10 séries batem, ponto a ponto, com a testemunha do lugar de direção.
 

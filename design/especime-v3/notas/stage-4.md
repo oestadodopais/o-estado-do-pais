@@ -1,7 +1,7 @@
 # Nota da etapa 4 · a família da leitura
 
 *Construtor D (Claude Opus, `claude-opus-5[1m]`). Ramo `redesenho-v3`, a partir de
-`193952e`. Brief: `../briefs/BRIEF-etapa-4.md`, com as quatro decisões da direção
+`57c7de4`. Brief: `../briefs/BRIEF-etapa-4.md`, com as quatro decisões da direção
 de 21.08.2026, tarde, na sua §2b. Escrita a cada checkpoint, antes da auditoria,
 para que um corte de sessão custe uma subetapa. Sem travessões, por escolha deste
 documento.*
@@ -10,7 +10,7 @@ documento.*
 
 | commit | subetapa | o quê |
 |---|---|---|
-| `6b7dab8` | 4-0 | as quatro decisões da direção de 21.08, tarde: a legenda do selo, as frases de Évora, o localizador e o aparelho da convergência |
+| `d4efe55` | 4-0 | as quatro decisões da direção de 21.08, tarde: a legenda do selo, as frases de Évora, o localizador e o aparelho da convergência |
 | (abaixo) | 4a | Correções: o selo da linha como porta de cada entrada, a extensão do portão provada em duas plantas, e a forma riscada em todas as entradas |
 | (abaixo) | 4b | Método: as duas frases governadas entram com o sim do diretor de 21.08, tarde, e a linha de prova da cor sai; a porta fica |
 
@@ -18,7 +18,7 @@ documento.*
 
 ## 1. Commit 4-0 · as quatro decisões da direção, antes de qualquer subetapa
 
-`6b7dab8`. Nenhum texto governado mexe: nem `src/data/sobre.mjs` nem
+`d4efe55`. Nenhum texto governado mexe: nem `src/data/sobre.mjs` nem
 `src/data/metodo.mjs`. `DECISIONS.md` §1.54.
 
 ### 1.1 · A legenda do selo passa a nomear os dois estados
@@ -785,7 +785,7 @@ A etapa não criou nenhuma identidade nova — `leitura.sumarioK` é «Nesta pá
 
 ### 8.3 · A invariância, contra a construção da 4a
 
-Construção da linha de base num `git worktree` em `3a51cb8` (o commit da 4a),
+Construção da linha de base num `git worktree` em `def04ff` (o commit da 4a),
 comparada com a de agora:
 
 ```
@@ -822,7 +822,7 @@ src/components/inicio/Peca.astro:216:32  tecto → teto
     … {regua.rotulo === 'tecto' && ( <Fragment slot="refer…
 ```
 
-**Corri a mesma régua na construção da linha de base** (`3a51cb8`) e ela falha lá
+**Corri a mesma régua na construção da linha de base** (`def04ff`) e ela falha lá
 exactamente da mesma maneira: é anterior a esta etapa. É uma comparação de
 cadeias dentro de um componente da primeira página, que é de outro construtor, e
 **não é texto publicado**: `grep -o tecto dist/` dá três ficheiros, e os três são
@@ -877,7 +877,7 @@ dois estados e uma captura só mostrava um.
 | | |
 |---|---|
 | modelo | Claude Opus, `claude-opus-5[1m]` |
-| commits | `6b7dab8` (4-0), `3a51cb8` (4a), `66a2866` (4b), `0e0b274` (Évora, I52), `156b256` (4c), `ecd14f7` (4d), `1fec8f8` (4e), e o do fecho |
+| commits | `d4efe55` (4-0), `def04ff` (4a), `ab88f55` (4b), `f138d00` (Évora, I52), `03b4e84` (4c), `8b1ab14` (4d), `04d1147` (4e), e o do fecho |
 | ficheiros abertos fora da lista da §2 do brief, e porquê | `tests/inicio/capturas.mjs` (o modo `--etapa-4`, §5.5 do brief não o previa; precedente do modo `--etapa-3`), `src/styles/site.css` (a regra `.agenda-eixo-svg rect` e as duas do `.placeholder`, que ficaram sem cliente — é o que o I12 e o item M mandam), `src/data/leituras.mjs` (uma frase, §7.2), `src/data/municipios.mjs` e `src/views/MunicipioView.astro` (a decisão da direção sobre Évora, §4), `src/i18n/strings.mjs` famílias `livro.*` e `municipio.*` no commit 4-0 |
 | plantas provadas e revertidas | duas na 4a (a porta do selo), duas no commit 4-0 (a porta do CSV), duas na 4e (a data do arquivo, e a primeira não provava o que era preciso) |
 

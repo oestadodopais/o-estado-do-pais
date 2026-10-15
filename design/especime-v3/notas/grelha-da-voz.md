@@ -1,6 +1,6 @@
 # Nota do construtor · A grelha da voz (26 a 27.08.2026)
 
-*Ramo `grelha-da-voz-2026-08-27`, a partir de `main` em `cfa288b`. Construtor:
+*Ramo `grelha-da-voz-2026-08-27`, a partir de `main` em `6f2410c`. Construtor:
 Claude Opus 5. Brief: `design/especime-v3/briefs/BRIEF-grelha-da-voz.md`, mais
 três acrescentos do diretor pela mesma noite (o rótulo da camada da leitura
 breve, a frase da outra edição, «regulador» e «legível», e o G6, que se tornou o

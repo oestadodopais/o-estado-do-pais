@@ -44,8 +44,8 @@
    "descricao": "o relatório diz 7,97 minutos para a primeira corrida no GitHub, contra os 8,97 das provas",
    "sha256_antes": "9ef6ba7aa42b0dddcf466e6fc0defdaebaf9076d3420c52c60ae4dadec6c88c6",
    "sha256_depois": "b1d8e92bb788cdc067afdd77445690cbcba566634122ec03dd6f4dc871738cc1",
-   "contexto_antes": "ça `1875866b` do ramo (a corrida 36475236795), e lida aqui na API com `tempos-da-corrida.mjs`, que primeiro lê a corrida de referência como conhecido-positivo: 8,97 minutos de corrida (`ci1b_corrida1_min`), 530 s de passos somados (`ci1b_corrida1_passos_s`), contra os 27,75 minutos de trabalho da corrida de referência. O `build` levou 88 s (",
-   "contexto_depois": "ça `1875866b` do ramo (a corrida 36475236795), e lida aqui na API com `tempos-da-corrida.mjs`, que primeiro lê a corrida de referência como conhecido-positivo: 7,97 minutos de corrida (`ci1b_corrida1_min`), 530 s de passos somados (`ci1b_corrida1_passos_s`), contra os 27,75 minutos de trabalho da corrida de referência. O `build` levou 88 s ("
+   "contexto_antes": "ça `bd0c8523` do ramo (a corrida 36475236795), e lida aqui na API com `tempos-da-corrida.mjs`, que primeiro lê a corrida de referência como conhecido-positivo: 8,97 minutos de corrida (`ci1b_corrida1_min`), 530 s de passos somados (`ci1b_corrida1_passos_s`), contra os 27,75 minutos de trabalho da corrida de referência. O `build` levou 88 s (",
+   "contexto_depois": "ça `bd0c8523` do ramo (a corrida 36475236795), e lida aqui na API com `tempos-da-corrida.mjs`, que primeiro lê a corrida de referência como conhecido-positivo: 7,97 minutos de corrida (`ci1b_corrida1_min`), 530 s de passos somados (`ci1b_corrida1_passos_s`), contra os 27,75 minutos de trabalho da corrida de referência. O `build` levou 88 s ("
   }
  ]
 }

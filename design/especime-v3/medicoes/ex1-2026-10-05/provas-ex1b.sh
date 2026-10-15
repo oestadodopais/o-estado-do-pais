@@ -42,6 +42,6 @@ passo plantas-dos-portoes env OEDP_MEDICOES=$B OEDP_EXIGIR_ARVORE_LIMPA=1 node t
 passo plantas-do-ex1b env OEDP_MEDICOES=$B OEDP_EXIGIR_ARVORE_LIMPA=1 node tests/pais/portoes.mjs --prefixo ex1b-
 passo plantas-do-r3 env OEDP_MEDICOES=$B OEDP_EXIGIR_ARVORE_LIMPA=1 node tests/pais/portoes.mjs --lista r3-rodape-sem-a-porta-do-indice,r3-rodape-indice-da-outra-edicao
 passo mapa python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md
-passo mapa-a-mao python3 $A/mapa-a-mao.py 1d64052a 37b3daf9 --json $B/mapa-a-mao.json
+passo mapa-a-mao python3 $A/mapa-a-mao.py 56ce75fa a9963abf --json $B/mapa-a-mao.json
 git rev-parse HEAD > "$O/cabeca.fim"
 git status --porcelain --untracked-files=no > "$O/estado.fim"

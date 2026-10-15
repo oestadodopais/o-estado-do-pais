@@ -10630,7 +10630,7 @@ História do valor: 2 controlos e 4 plantas.
 > node scripts/stamp-version.mjs
 
 
-[90m  versão · 24e7c87 (f22b-2026-09-28, git)[0m
+[90m  versão · f0d72ac (f22b-2026-09-28, git)[0m
 
 > o-estado-do-pais@0.1.0 cartoes
 > node scripts/cartoes.mjs

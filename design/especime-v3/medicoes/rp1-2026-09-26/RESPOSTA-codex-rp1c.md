@@ -1,6 +1,6 @@
-RP1c entregue: sítio `8e6e4405`, motor `4eb2867`.
+RP1c entregue: sítio `37bdcaff`, motor `4eb2867`.
 
-- `build`, `verify` e `typecheck`: 0 na cabeça `68215ae9`.
+- `build`, `verify` e `typecheck`: 0 na cabeça `a8a32525`.
 - Zero valores alterados; zero caminhos pessoais, com conhecido-positivo detetado.
 - Plantas aprovadas, 70 capturas guardadas e relatório sem números por comprovar.
 

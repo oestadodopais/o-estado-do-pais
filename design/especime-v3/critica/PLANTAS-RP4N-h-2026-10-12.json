@@ -39,8 +39,8 @@
    "alcance": "fora do diff da passagem (a referência é outra)",
    "sha256_antes": "27eae97ac578a67c4e265422220d583236aaf2ed64a9159c787181360c159ef7",
    "sha256_depois": "c5d4158a1b226b9a8283107329b26c4b2bedb8125df36214cfa36255939dfe2f",
-   "contexto_antes": ": hosted-copy`; a porta pública da prova é `/provas/pensao-alojamento.json`.\n\n### As marcas e as linhas incompletas\n\n| Medição | Antes | Depois |\n|---|---|---|\n| Páginas com marca | 38 | 28 |\n| Linhas publicadas incompletas | 6 | 4 |\n\nAntes: varredura do `dist/` conservado da cabeça `344081c34eef1f792feef6bfd2d77fd764f7a1b5`, com o ramo em `d430d6dd",
-   "contexto_depois": ": hosted-copy`; a porta pública da prova é `/provas/pensao-alojamento.json`.\n\n### As marcas e as linhas incompletas\n\n| Medição | Antes | Depois |\n|---|---|---|\n| Páginas com marca | 38 | 26 |\n| Linhas publicadas incompletas | 6 | 4 |\n\nAntes: varredura do `dist/` conservado da cabeça `344081c34eef1f792feef6bfd2d77fd764f7a1b5`, com o ramo em `d430d6dd"
+   "contexto_antes": ": hosted-copy`; a porta pública da prova é `/provas/pensao-alojamento.json`.\n\n### As marcas e as linhas incompletas\n\n| Medição | Antes | Depois |\n|---|---|---|\n| Páginas com marca | 38 | 28 |\n| Linhas publicadas incompletas | 6 | 4 |\n\nAntes: varredura do `dist/` conservado da cabeça `344081c34eef1f792feef6bfd2d77fd764f7a1b5`, com o ramo em `b95f67a9",
+   "contexto_depois": ": hosted-copy`; a porta pública da prova é `/provas/pensao-alojamento.json`.\n\n### As marcas e as linhas incompletas\n\n| Medição | Antes | Depois |\n|---|---|---|\n| Páginas com marca | 38 | 26 |\n| Linhas publicadas incompletas | 6 | 4 |\n\nAntes: varredura do `dist/` conservado da cabeça `344081c34eef1f792feef6bfd2d77fd764f7a1b5`, com o ramo em `b95f67a9"
   },
   {
    "id": "P5",

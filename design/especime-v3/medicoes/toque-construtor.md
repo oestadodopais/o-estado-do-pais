@@ -1,8 +1,8 @@
 # F1.1c · uma leitura de cada vez, e nenhuma em repouso
 
 *Construtor: Claude Opus 5, 04.09.2026, ramo `toque-2026-09-04`, a partir de
-`origin/main` em `69ba3abf`. Medido com `tests/inicio/*.mjs` sobre a construção
-deste ramo e sobre a construção de `69ba3abf`, feita na mesma árvore antes de uma
+`origin/main` em `fd19e801`. Medido com `tests/inicio/*.mjs` sobre a construção
+deste ramo e sobre a construção de `fd19e801`, feita na mesma árvore antes de uma
 linha mudar. Todos os números deste relatório saíram de uma corrida; nenhum foi
 escrito de cabeça.*
 
@@ -16,15 +16,15 @@ com o comando que o mediu, o vermelho antes e o verde depois.*
 
 ### A fusão de `origin/main`, sem conflitos
 
-`git fetch origin && git merge origin/main`, com `origin/main` em `9c34bbb0` (o
+`git fetch origin && git merge origin/main`, com `origin/main` em `9912127f` (o
 F1.4b, as datas de publicação medidas uma vez onde a história está, e o painel
 semanal de 07.09). **65 ficheiros mudaram, 2 301 linhas entraram e 239 saíram, e
 não houve um conflito**: nenhum ficheiro deste ramo é tocado pelos dois lados.
 A mensagem do commit de fusão foi reescrita em português com os dois trailers.
 
-E há um número que só se soube por causa dela: a construção de `9c34bbb0` mede
+E há um número que só se soube por causa dela: a construção de `9912127f` mede
 **4 638 px** em `/` e **4 596 px** em `/en` a 390 com guião, que é ao píxel o
-«antes» que a §1 tinha medido em `69ba3abf`. **A fusão não custou nem devolveu
+«antes» que a §1 tinha medido em `fd19e801`. **A fusão não custou nem devolveu
 um píxel à primeira página**, e as duas colunas da tabela continuam
 comparáveis.
 
@@ -49,11 +49,11 @@ a âncora local a existir, nenhum rótulo de destino, e a porta do domínio conf
 onde ela agora vive, com a âncora a existir na página de chegada); a J4, a J12 e a
 J13 de `leitura.mjs`; e a célula «uma leitura abre só a sua» de `matriz.mjs`.
 
-**Vermelho antes** (as réguas novas sobre a construção de `9c34bbb0`, que é a
+**Vermelho antes** (as réguas novas sobre a construção de `9912127f`, que é a
 primeira página sem este item):
 
 ```
-OEDP_DIST=<dist de 9c34bbb0> node tests/inicio/leitura.mjs   → exit 1
+OEDP_DIST=<dist de 9912127f> node tests/inicio/leitura.mjs   → exit 1
   ✗ J12.pt   QUEIXAS: 3 cartão(ões) da faixa da cabeça levam para fora desta
              página (divida-publica-2025, taxa-de-emprego-2025,
              taxa-de-desemprego-2025)
@@ -118,7 +118,7 @@ OEDP_DIST=<dist com a linha sempre à vista> node tests/inicio/leitura.mjs
 ```
 
 A outra metade do Major 4 era planta do pacote (a J13 copiada aceitava um nome à
-vista depois de voltar atrás): o código de `b7afb882` exige zero, e não mudou.
+vista depois de voltar atrás): o código de `b2a2fe66` exige zero, e não mudou.
 
 ### 3 · As duas plantas mordem as quatro células (Major 5)
 
@@ -247,15 +247,15 @@ não como réguas (não recusam nada, não têm células, não saem com 1):
 As medidas ficam guardadas, 20 em cada ficheiro:
 
 ```
-node scripts/medir-toque.mjs <dist de 9c34bbb0> \
+node scripts/medir-toque.mjs <dist de 9912127f> \
   design/especime-v3/medicoes/toque-medidas-antes.json \
-  "--sobre=origin/main em 9c34bbb0, a primeira página sem o F1.1c"
+  "--sobre=origin/main em 9912127f, a primeira página sem o F1.1c"
 node scripts/medir-toque.mjs dist \
   design/especime-v3/medicoes/toque-medidas-depois.json \
-  "--sobre=toque-2026-09-04, a segunda passagem do F1.1c sobre a fusão de origin/main em 9c34bbb0"
+  "--sobre=toque-2026-09-04, a segunda passagem do F1.1c sobre a fusão de origin/main em 9912127f"
 ```
 
-| medida (390 × 664) | antes (`9c34bbb0`) | depois (este ramo) |
+| medida (390 × 664) | antes (`9912127f`) | depois (este ramo) |
 | --- | --- | --- |
 | `/` com guião · chromium | 4638 px | 3700 px |
 | `/` com guião · webkit | 4639 px | 3701 px |
@@ -340,7 +340,7 @@ a partir da página do domínio, que é a metade que o item 1 não podia partir.
 correr. O que está aqui é o estado do ramo `toque-2026-09-04` nesse momento.*
 
 **Está feito, e está commitado e empurrado.** A cabeça do ramo é
-`b7afb882519d8ea16fd5c6b34aaef3a9ae5b9a89`, um commit só, com os onze ficheiros
+`b2a2fe6645e5f7f97ab55a467b57f867499fe176`, um commit só, com os onze ficheiros
 do bloco. O bloco está inteiro: a folha esconde as dobras fechadas quando o guião
 acende a área, a linha do estado vazio entra e sai com as dobras, o toque, o
 Enter e o botão «voltar» fazem o que o brief manda, e sem guião nada muda.
@@ -399,10 +399,10 @@ WebKit sem cabeça, depois de `document.fonts.ready`. A 04.09 ele vivia em
 `.claude/medir-toque.mjs`, fora do repositório; desde a segunda passagem é
 `scripts/medir-toque.mjs`, e as medidas estão em
 `design/especime-v3/medicoes/toque-medidas-antes.json` e `-depois.json` (a
-tabela do item 6 da segunda passagem tem as de 07.09, sobre `9c34bbb0`, e são as
+tabela do item 6 da segunda passagem tem as de 07.09, sobre `9912127f`, e são as
 mesmas ao píxel).
 
-| estado | antes (69ba3abf) | depois | diferença |
+| estado | antes (fd19e801) | depois | diferença |
 | --- | --- | --- | --- |
 | `/` com guião · chromium | 4638 px | 3700 px | −938 px |
 | `/` com guião · webkit | 4639 px | 3701 px | −938 px |
@@ -555,7 +555,7 @@ portão reconta.
 
 ## 5 · As réguas, antes e depois
 
-As treze de `tests/inicio`, corridas sobre a construção de `69ba3abf` e sobre a
+As treze de `tests/inicio`, corridas sobre a construção de `fd19e801` e sobre a
 deste ramo, na mesma árvore. A pasta tem catorze ficheiros, e o décimo quarto é
 `capturas.mjs`, que não é uma régua: fotografa, e por isso não tem células. A
 tabela abaixo tem treze linhas, uma por régua.

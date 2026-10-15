@@ -35,26 +35,26 @@
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
 ### O sítio (`~/<projetos>/OEstadoDoPais/<worktrees>/registos-2026-10-02b`)
-- `main`: 642e9d56 · 2026-10-02T17:39:13+01:00 · UE2-b: os códigos da corrida final dos portões na cabeça d79df840, e a secção do relatório que os diz  (`git log -1 main`)
-- `origin/main`: 642e9d56 · 2026-10-02T17:39:13+01:00 · UE2-b: os códigos da corrida final dos portões na cabeça d79df840, e a secção do relatório que os diz  (`git log -1 origin/main`)
+- `main`: 40588dd5 · 2026-10-02T17:39:13+01:00 · UE2-b: os códigos da corrida final dos portões na cabeça 82dcbf3f, e a secção do relatório que os diz  (`git log -1 main`)
+- `origin/main`: 40588dd5 · 2026-10-02T17:39:13+01:00 · UE2-b: os códigos da corrida final dos portões na cabeça 82dcbf3f, e a secção do relatório que os diz  (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
-- ramos locais: `main 642e9d56`, `registos-2026-10-02b 57f6d995`  (`git branch`)
+- ramos locais: `main 40588dd5`, `registos-2026-10-02b 57f6d995`  (`git branch`)
 - ramos no remoto: `main`  (`git ls-remote --heads origin`)
-- worktree: `~/<projetos>/OEstadoDoPais 642e9d56 [main]`
+- worktree: `~/<projetos>/OEstadoDoPais 40588dd5 [main]`
 - worktree: `~/<projetos>/OEstadoDoPais/<worktrees>/registos-2026-10-02b 57f6d995 [registos-2026-10-02b]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
-- 37037273910 · `642e9d56` · main · portão · **completed / success** · criada 2026-10-02T16:55:56Z · atualizada 2026-10-02T17:06:07Z
-- 37035538107 · `642e9d56` · ue2-2026-10-02 · portão · **completed / success** · criada 2026-10-02T16:40:38Z · atualizada 2026-10-02T16:55:00Z
-- 37010034997 · `74ce7657` · main · portão · **completed / success** · criada 2026-10-02T12:59:13Z · atualizada 2026-10-02T13:13:14Z
-- 37008356034 · `74ce7657` · registos-2026-10-02 · portão · **completed / success** · criada 2026-10-02T12:42:55Z · atualizada 2026-10-02T12:58:20Z
-- 37005360343 · `636cb657` · main · portão · **completed / success** · criada 2026-10-02T12:12:56Z · atualizada 2026-10-02T12:26:52Z
-- 37004185815 · `636cb657` · k2-2026-10-02 · portão · **completed / success** · criada 2026-10-02T12:00:42Z · atualizada 2026-10-02T12:12:12Z
+- 37037273910 · `40588dd5` · main · portão · **completed / success** · criada 2026-10-02T16:55:56Z · atualizada 2026-10-02T17:06:07Z
+- 37035538107 · `40588dd5` · ue2-2026-10-02 · portão · **completed / success** · criada 2026-10-02T16:40:38Z · atualizada 2026-10-02T16:55:00Z
+- 37010034997 · `f5788ac3` · main · portão · **completed / success** · criada 2026-10-02T12:59:13Z · atualizada 2026-10-02T13:13:14Z
+- 37008356034 · `f5788ac3` · registos-2026-10-02 · portão · **completed / success** · criada 2026-10-02T12:42:55Z · atualizada 2026-10-02T12:58:20Z
+- 37005360343 · `444995f3` · main · portão · **completed / success** · criada 2026-10-02T12:12:56Z · atualizada 2026-10-02T12:26:52Z
+- 37004185815 · `444995f3` · k2-2026-10-02 · portão · **completed / success** · criada 2026-10-02T12:00:42Z · atualizada 2026-10-02T12:12:12Z
 
 ### O que está no ar (`/version.json` do sítio publicado)
-- commit no ar: `642e9d56` · construído em 2026-10-02T16:58:21.466Z · ref `main` · production
-- igual a `origin/main` (`642e9d56`): **sim**
+- commit no ar: `40588dd5` · construído em 2026-10-02T16:58:21.466Z · ref `main` · production
+- igual a `origin/main` (`40588dd5`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
 ### O motor (`~/<projetos>/ResearchHub`)

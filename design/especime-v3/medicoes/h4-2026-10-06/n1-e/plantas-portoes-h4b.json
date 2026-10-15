@@ -1,7 +1,7 @@
 [
   {
     "nome": "h4b-menu-sem-explicacoes",
-    "cabeca": "89c54f3480d9503d0fd85281ad5247d9137971c8",
+    "cabeca": "2c5212b7eb75b0161a9e89af0e86d8324e81af3e",
     "estado": "",
     "comando": "node scripts/check-pais.mjs",
     "codigo": 1,
@@ -25,7 +25,7 @@
   },
   {
     "nome": "h4b-menu-rotulo-antigo",
-    "cabeca": "89c54f3480d9503d0fd85281ad5247d9137971c8",
+    "cabeca": "2c5212b7eb75b0161a9e89af0e86d8324e81af3e",
     "estado": "",
     "comando": "node scripts/check-pais.mjs",
     "codigo": 1,
@@ -49,7 +49,7 @@
   },
   {
     "nome": "h4b-menu-destino-e-ordem",
-    "cabeca": "89c54f3480d9503d0fd85281ad5247d9137971c8",
+    "cabeca": "2c5212b7eb75b0161a9e89af0e86d8324e81af3e",
     "estado": "",
     "comando": "node scripts/check-pais.mjs",
     "codigo": 1,

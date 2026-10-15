@@ -1,12 +1,12 @@
 {
   "brief": "design/observatorio/BRIEF-V2a-as-fontes-da-vigilancia-seladas-no-motor.md",
   "guiao": "design/observatorio/medidas/BRIEF-V2a.py",
-  "cabeca_lida": "445451896a74222a4c489b704ea9caf19039a270",
+  "cabeca_lida": "869d869010d4c4aa7132ad29d49f4f6db369ae2c",
   "medidas": [
     {
       "nome": "linhas_do_livro_na_partida",
       "valor": 3211,
-      "comando": "git ls-tree -r --name-only 445451896a74222a4c489b704ea9caf19039a270 ledger/claims | grep -c '\\.yml$'",
+      "comando": "git ls-tree -r --name-only 869d869010d4c4aa7132ad29d49f4f6db369ae2c ledger/claims | grep -c '\\.yml$'",
       "conhecido_positivo": {
         "o_que": "a linha agua-nao-faturada-portugal-2024.yml está na lista",
         "encontrado": true
@@ -15,7 +15,7 @@
     {
       "nome": "linhas_que_citam_o_oe2027_na_partida",
       "valor": 0,
-      "comando": "git grep -l -i -e oe-2027 -e OE2027 -e 'Orçamento do Estado para 2027' 445451896a74222a4c489b704ea9caf19039a270 -- ledger/claims | wc -l",
+      "comando": "git grep -l -i -e oe-2027 -e OE2027 -e 'Orçamento do Estado para 2027' 869d869010d4c4aa7132ad29d49f4f6db369ae2c -- ledger/claims | wc -l",
       "conhecido_positivo": {
         "o_que": "o brief do V2-a, na mesma cabeça, nomeia a linha oe-2027-saude-despesa-total-consolidada-2027 (o detetor vê o padrão onde ele existe)",
         "encontrado": true

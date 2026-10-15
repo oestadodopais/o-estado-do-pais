@@ -1,13 +1,13 @@
 # Medição M8 (Sonnet) · bloco «Os vazios»
 
-Medidor cego: Claude Sonnet 5, na cópia isolada `wt-medidor-2` (worktree destacado, commit `355287c`). Li só `design/especime-v3/briefs/BRIEF-vazios-M8.md`. Nunca li `design/especime-v3/briefs/BRIEF-vazios.md` nem `design/especime-v3/medicoes/vazios-construtor.md` (o brief e o relatório do construtor deste bloco), nunca li `tests/municipio/vazios.mjs` pela mesma razão de não me contaminar com o teste que o construtor pode ter escrito para si próprio, nunca li o trabalho de outros medidores.
+Medidor cego: Claude Sonnet 5, na cópia isolada `wt-medidor-2` (worktree destacado, commit `6b96278`). Li só `design/especime-v3/briefs/BRIEF-vazios-M8.md`. Nunca li `design/especime-v3/briefs/BRIEF-vazios.md` nem `design/especime-v3/medicoes/vazios-construtor.md` (o brief e o relatório do construtor deste bloco), nunca li `tests/municipio/vazios.mjs` pela mesma razão de não me contaminar com o teste que o construtor pode ter escrito para si próprio, nunca li o trabalho de outros medidores.
 
 Li código de `src/` (inteiros: `concelhos.mjs`, `Peca.astro`, `Claim.astro`, `Provenance.astro`, `Frase.astro`; em parte, por excerto: `MunicipioView.astro`, `ledger.mjs`, `prova.mjs`, `livro-concelhos.mjs`, `routes.mjs`, `i18n/strings.mjs`) para saber os contratos do DOM e das linhas (nomes de classes, atributos `data-*`, caminhos de rota): é o que faz falta para escrever um extractor correto sem adivinhar. Nunca importei nada de lá. O instrumento (`vazios-M8-sonnet.mjs`) é código meu, do zero, com três bibliotecas de terceiros já presentes em `node_modules` (o mesmo género de escolha que a M7 fez com Playwright): `js-yaml` para as linhas do livro-razão, `node-html-parser` para o HTML construído, e `pdftotext` (poppler) para os PDFs que o motor aloja.
 
 ## Método
 
-- **Construção:** `npm ci` (node_modules não existia) + `npm run build` na cópia, `355287c`. Correu as réguas do próprio sítio (`ledger:check`, `check:cruzamento`, `check:documentos`, `gate:html`, `check:cadeia`, `check:dados`, `check:mapa`, `check:regioes`, `check:voz`) dentro da cadeia do `build`, todas verdes: 3m09s, código de saída 0. `dist/` com 6586 ficheiros `.html`.
-- **A comparação da medida 2 com `main` `35313eb`:** lida com `git show 35313eb:src/data/concelhos.mjs` (nunca fiz checkout dessa revisão); a lista de oito medidas de lá ficou escrita no instrumento como base do caso conhecido.
+- **Construção:** `npm ci` (node_modules não existia) + `npm run build` na cópia, `6b96278`. Correu as réguas do próprio sítio (`ledger:check`, `check:cruzamento`, `check:documentos`, `gate:html`, `check:cadeia`, `check:dados`, `check:mapa`, `check:regioes`, `check:voz`) dentro da cadeia do `build`, todas verdes: 3m09s, código de saída 0. `dist/` com 6586 ficheiros `.html`.
+- **A comparação da medida 2 com `main` `f174be8`:** lida com `git show f174be8:src/data/concelhos.mjs` (nunca fiz checkout dessa revisão); a lista de oito medidas de lá ficou escrita no instrumento como base do caso conhecido.
 - **O motor:** `<motor>`, só de leitura. Os dois PDFs da DGAL usados na medida 3 vivem em `content/12 Concelhos/source/dgal/pmp-anual-2025-12.pdf` e `.../endividamento-total-2024.pdf`; achei o caminho por leitura directa do directório (o `publisher/recortes/manifest.concelhos.json` não tinha recortes para estas onze linhas, `crops: {}`) e confirmei-o pelo `source_url` e pela `note` de cada linha do YAML, iguais nas duas colunas do endividamento.
 - **Prova antes do zero:** cada detector que pode devolver um zero corre primeiro contra uma cópia alterada de propósito, nunca contra `dist/` real, sempre em `os.tmpdir()`. A corrida provou **15 casos conhecidos, os 15 vistos vermelho**. A lista está na secção final.
 - **Corrida:** código de saída `0`, 45,3s no total (dos quais 37,7s são o `npm run verify` da medida 11). Reprodução: `node design/especime-v3/medicoes/vazios-M8-sonnet.mjs` a partir da raiz da cópia, com `dist/` já construído.
@@ -27,7 +27,7 @@ Cobertura por secção da árvore (nenhuma frase em nenhuma): `municipios` 309 f
 
 ## Medida 2 · as peças por página de concelho, nas duas edições
 
-Caso conhecido: numa cópia de `municipios/agueda/index.html`, enxertei uma 8ª peça («Execução da receita», clonada e renomeada a partir da 6ª) na posição 7. O extractor viu 8 peças, com o nome certo na posição certa, e a sequência bateu carácter a carácter com a lista de `main` `35313eb`.
+Caso conhecido: numa cópia de `municipios/agueda/index.html`, enxertei uma 8ª peça («Execução da receita», clonada e renomeada a partir da 6ª) na posição 7. O extractor viu 8 peças, com o nome certo na posição certa, e a sequência bateu carácter a carácter com a lista de `main` `f174be8`.
 
 | | valor |
 |---|---:|
@@ -227,6 +227,6 @@ Aproximado, pela leitura do contador de orçamento de contexto no início e no f
 
 - `design/especime-v3/medicoes/vazios-M8-sonnet.md` (este ficheiro)
 - `design/especime-v3/medicoes/vazios-M8-sonnet.mjs` (o instrumento, 1377 linhas, corre com `node design/especime-v3/medicoes/vazios-M8-sonnet.mjs` a partir da raiz da cópia)
-- `design/especime-v3/medicoes/vazios-M8-sonnet.resultados.json` (o resultado estruturado da última corrida, commit `355287c`, código de saída 0, 45,3s)
+- `design/especime-v3/medicoes/vazios-M8-sonnet.resultados.json` (o resultado estruturado da última corrida, commit `6b96278`, código de saída 0, 45,3s)
 
 Nada foi corrigido, nada foi commitado, e nada foi tocado fora de `design/especime-v3/medicoes/` nesta cópia.

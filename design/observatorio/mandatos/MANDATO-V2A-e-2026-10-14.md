@@ -8,7 +8,7 @@
 
 **Achado 7 (Minor): as réguas conferem o que dizem conferir.** A V2AD confere a medida também na frase «o que é» de cada página da Saúde (uma planta troca «efetiva» por «total» na frase); os cabeçalhos das parcerias levam o ano pelo token do período e a régua confere-o como token, não como texto; as palavras da conta da RTP (os dois montantes e a subtração) conferem-se contra as linhas; as plantas de HTML correm nas duas edições.
 
-**Achado 8 (Minor): o relatório diz a ordem certa das coisas.** A cabeça do código (`b9497c1c`) é a dos portões finais, e os commits seguintes (as capturas e as medições) não tocam no código: o relatório diz isto em vez de afirmar que os portões correram depois do último commit, e cita o `portoes-pelo-escrivao.sh` pelo caminho no repositório.
+**Achado 8 (Minor): o relatório diz a ordem certa das coisas.** A cabeça do código (`d9228a71`) é a dos portões finais, e os commits seguintes (as capturas e as medições) não tocam no código: o relatório diz isto em vez de afirmar que os portões correram depois do último commit, e cita o `portoes-pelo-escrivao.sh` pelo caminho no repositório.
 
 **Achado 9 (Minor): as repetições saem.** O nome do programa aparece uma vez por frase, entre aspas angulares, com «como o quadro o escreve»; os anos nas frases entram pelo token do período (nunca por extenso); a ressalva das variações não repete a comparação que a frase já faz.
 

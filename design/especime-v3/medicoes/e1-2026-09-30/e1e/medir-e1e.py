@@ -29,7 +29,7 @@ _spec = importlib.util.spec_from_file_location("medir_e1", PASTA / "medir-e1.py"
 m1 = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(m1)
 MOTOR = m1.MOTOR
-CABECA_E1D_SITIO = "90640cf6"
+CABECA_E1D_SITIO = "d717febc"
 CABECA_E1D_MOTOR = "7187b82"
 MEDIDAS = []
 
@@ -122,7 +122,7 @@ def medir_emendas():
                     and v.get("remete_para_o_estudo_das_contas_no_motor", True) for v in edicoes.values())
         medida(nome, {"edicoes": edicoes, "certo": certo},
                "git show <cabeça>:<edição .md> no motor (na cabeça e na da E1d, 7187b82) e o texto visível do documento alojado no sítio "
-               "(na árvore e na cabeça da E1d, 90640cf6), contadas a frase que sai e a que entra; no 18, se a primeira vez que a expressão "
+               "(na árvore e na cabeça da E1d, d717febc), contadas a frase que sai e a que entra; no 18, se a primeira vez que a expressão "
                "aparece traz a explicação logo a seguir; no 17, a ligação ao estudo das contas e as edições que o estudo tem no motor",
                {"descricao": "a frase que sai estava no motor e no documento alojado na E1d (o mesmo detetor vê-a lá), e lá a primeira vez "
                              "não trazia a explicação",

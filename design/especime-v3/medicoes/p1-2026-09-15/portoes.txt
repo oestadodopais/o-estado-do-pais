@@ -1,6 +1,6 @@
 OS TRÊS PORTÕES DO BLOCO P1
 
-Corridos sobre a cabeça c97ae565, que é a cabeça do ramo com tudo o que este
+Corridos sobre a cabeça b8a70f04, que é a cabeça do ramo com tudo o que este
 bloco construiu, incluindo os seis acertos da leitura das capturas. O commit
 que traz ESTE ficheiro é o seguinte, e o que ele acrescenta é só este
 ficheiro e a linha do relatório que o cita: nenhum dos três portões os lê.
@@ -15,7 +15,7 @@ escreveu (`npm run <portao> > log 2>&1 ; echo $? > exit`), e nunca de memória:
   npm run typecheck  ->  0
       o ficheiro: <temporario>
 
-A primeira redação do bloco, sobre a cabeça 1e8058c0, deu os mesmos três zeros.
+A primeira redação do bloco, sobre a cabeça d21c79b8, deu os mesmos três zeros.
 
 As últimas linhas de cada um:
 

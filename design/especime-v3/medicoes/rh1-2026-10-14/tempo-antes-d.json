@@ -1,8 +1,8 @@
 {
   "comando": "python3 scripts/check-privacidade.py --prova",
-  "cabeca": "de3d740bb4b58975ed22fb25e48518ae549425ef",
+  "cabeca": "01da19f90ea291e4bc944f8580f578a6db2a22ae",
   "versao_dist": {
-    "commit": "34129b6f2566a8e43f110b52fa74ab50cdf29576",
+    "commit": "44a1f58eb6d8fb29988bcf6311b4a34c0ca325d7",
     "ref": "rh1-2026-10-14",
     "env": "local",
     "origem": "git",

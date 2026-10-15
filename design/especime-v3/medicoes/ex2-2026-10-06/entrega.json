@@ -1,8 +1,8 @@
 {
   "comando": "node design/especime-v3/medicoes/ex2-2026-10-06/medir-entrega.mjs",
-  "cabeca_lida": "0b456c3c7aaa0b4aa6ee753950d38e9caad6860f",
-  "cabeca_codigo": "0b456c3c7aaa0b4aa6ee753950d38e9caad6860f",
-  "base": "d1becbf8f167643ca8d53a4479f8f6bbee0f7183",
+  "cabeca_lida": "26ef6256f97e185c42f5ba127660af88b0f471cb",
+  "cabeca_codigo": "26ef6256f97e185c42f5ba127660af88b0f471cb",
+  "base": "83e7a1158ba065153db7c419b01d4222d26bdc56",
   "janela": {
     "inicio": "2026-09-30",
     "fim": "2026-10-06"
@@ -12,8 +12,8 @@
     "verify": 0,
     "typecheck": 0
   },
-  "cabeca_portoes": "0b456c3c7aaa0b4aa6ee753950d38e9caad6860f",
-  "cabeca_fim": "0b456c3c7aaa0b4aa6ee753950d38e9caad6860f",
+  "cabeca_portoes": "26ef6256f97e185c42f5ba127660af88b0f471cb",
+  "cabeca_fim": "26ef6256f97e185c42f5ba127660af88b0f471cb",
   "paginas": [
     {
       "lang": "pt",
@@ -397,8 +397,8 @@
   ],
   "ficheiros_protegidos_alterados": [],
   "commits": [
-    "831a7fc9da041b742297d3fbb047191e993aefab EX2: medir as unidades e o âmbito antes da construção",
-    "5f7549e6637bf9257b0cba5ba2557e4fa628b1d0 EX2: mostrar a definição provada sob cada mudança",
-    "0b456c3c7aaa0b4aa6ee753950d38e9caad6860f EX2: conferir as frases dos blocos e dos cartões no navegador"
+    "001b13dafeb733bcd4880ada862357c451396bab EX2: medir as unidades e o âmbito antes da construção",
+    "9ffa95611ea8dc5e24d8c5cab76e8bf9fce0e285 EX2: mostrar a definição provada sob cada mudança",
+    "26ef6256f97e185c42f5ba127660af88b0f471cb EX2: conferir as frases dos blocos e dos cartões no navegador"
   ]
 }

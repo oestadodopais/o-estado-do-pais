@@ -15,15 +15,15 @@ comando que está escrito ao lado deles.*
 
 | Commit | Subetapa | O quê |
 | --- | --- | --- |
-| `a21cc2a` | 1a | `IDENTIDADE`, `DECISIONS` §1.50: a letra passa a ser alojada aqui, e a cor passa a ser o par de estados |
-| `7643251` | 1b | tipos: as três famílias alojadas aqui, convertidas sem perda, e a régua que as mede |
+| `b59aed3` | 1a | `IDENTIDADE`, `DECISIONS` §1.50: a letra passa a ser alojada aqui, e a cor passa a ser o par de estados |
+| `f66c05c` | 1b | tipos: as três famílias alojadas aqui, convertidas sem perda, e a régua que as mede |
 | `7650aed` | 1c | tokens: a paleta v3, o par de estados, e a folha partilhada sem os dois acentos da v2 |
-| `a2fa798` | 1d | cabeçalho, rodapé, selo: a navegação em versaletes, o selo à altura da linha, e o alvo medido |
-| `484da14` | 1e | cabeçalho: a navegação colapsa atrás de «Menu» abaixo de 640px, sem JavaScript |
+| `848c09f` | 1d | cabeçalho, rodapé, selo: a navegação em versaletes, o selo à altura da linha, e o alvo medido |
+| `95b0db8` | 1e | cabeçalho: a navegação colapsa atrás de «Menu» abaixo de 640px, sem JavaScript |
 
-| `2a8df84` | 1f (1/4) | cabeçalho, direcao.md: o oitavo item entra, e a constituição passa de sete para oito |
-| `408221b` | 1f (2/4) | Claim: a palavra «provisório» ao pé de um valor que a fonte marca |
-| `d5e4b51` | 1f (3/4) | tokens, IDENTIDADE §2: o escuro passa de proposta a regra provisória |
+| `d45bbaf` | 1f (1/4) | cabeçalho, direcao.md: o oitavo item entra, e a constituição passa de sete para oito |
+| `180c289` | 1f (2/4) | Claim: a palavra «provisório» ao pé de um valor que a fonte marca |
+| `fa3db83` | 1f (3/4) | tokens, IDENTIDADE §2: o escuro passa de proposta a regra provisória |
 | *(o commit que contém esta nota)* | 1f (4/4) | `DECISIONS.md` §1.51: as sete respostas da direção |
 
 *(O commit final da 1f não se nomeia a si próprio: um ficheiro não pode trazer no
@@ -741,7 +741,7 @@ nas duas edições.
 **As capturas: retirei as 32 e não as cinco que o brief nomeia**, e é um desvio
 com razão. A mobília é de todas as páginas, e uma pasta onde o mesmo cabeçalho
 tem sete itens numa página e oito noutra não é registo de nada; o estado
-anterior fica no git, em `484da14`. **Mudaram 20; as outras 12 são byte a byte
+anterior fica no git, em `95b0db8`. **Mudaram 20; as outras 12 são byte a byte
 iguais**, e são exactamente as 12 a 390px fora da primeira página. Isso é a
 prova, por bytes, de que abaixo de 640px o oitavo item não muda um pixel.
 
@@ -908,7 +908,7 @@ node scripts/medir-contraste.mjs             → 0 falhas de texto nos dois tema
 4. **As páginas de documento de estudo ficam fora da letra da constituição**
    (I11): `src/lib/documentos.mjs` escreve as suas próprias pilhas de sistema.
 5. **`README.md` e `scripts/design-bundle.mjs` descrevem a identidade v2** e
-   ficam errados a partir de `a21cc2a` (I16). Nenhum dos dois entra na
+   ficam errados a partir de `b59aed3` (I16). Nenhum dos dois entra na
    construção.
 6. **Sete selos da primeira página não se deixam medir** (I14), e conferi que já
    era assim antes desta etapa.

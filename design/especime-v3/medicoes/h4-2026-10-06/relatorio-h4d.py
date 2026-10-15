@@ -11,7 +11,7 @@ from executar import limpar
 
 AQUI = Path(__file__).resolve().parent
 RAIZ = Path.cwd()
-PARTIDA = '6a63145dd09444c09612374a37bcfaa41b590788'
+PARTIDA = 'ebff7a44d5d1ac4e4888d63374ee9a460010978b'
 COMANDO = 'python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4d.py'
 
 

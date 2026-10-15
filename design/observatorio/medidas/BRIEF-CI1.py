@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""O §0 do brief CI1 (a corrida «portão» em metade do tempo), medido sobre a cabeça presa do sítio (a677770f).
+"""O §0 do brief CI1 (a corrida «portão» em metade do tempo), medido sobre a cabeça presa do sítio (04438bb9).
 Não lê o motor nem a API do GitHub: o portão dos briefs corre sem eles; os tempos estão no §1 do brief,
 lidos pelo lugar de direção. Escreve design/observatorio/medidas/BRIEF-CI1.json (ou o caminho em
 OEDP_MEDIDAS_JSON). Cada medição leva o comando e um conhecido-positivo; o que não conseguir ler fica
 «NÃO LIDO»."""
 import json, re, subprocess, pathlib, os
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "a677770f"
+CAB = "04438bb9"
 NAO = "NÃO LIDO"
 medidas = []
 def medicao(nome, valor, comando, o_que, encontrado):

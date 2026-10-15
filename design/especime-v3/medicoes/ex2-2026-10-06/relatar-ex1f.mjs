@@ -14,12 +14,12 @@ for (const c of cap.capturas) if (createHash('sha256').update(fs.readFileSync(c.
 const esc = s => String(s).replace(/\|/g, '\\|').replace(/\n/g, '<br>');
 const palavras = x.ramos.palavras.map(p => `| ${esc(p.caminho)} | ${p.ramo} | ${p.contem.join(', ')} | ${p.naoContem.join(', ')} |`).join('\n');
 const plantas = x.plantas.map(p => `| ${esc(p.nome)} | ${p.mordeu ? 'sim' : 'não'} | ${esc(p.queixa)} |`).join('\n');
-const commits = execFileSync('git', ['log', '--reverse', '--format=%h %s', '6f5264b9..HEAD'], { encoding: 'utf8' }).trim();
+const commits = execFileSync('git', ['log', '--reverse', '--format=%h %s', '97cec12d..HEAD'], { encoding: 'utf8' }).trim();
 const secao = `## A passagem EX1-f
 
 A X10 exigia todos os ramos mas não prendia as palavras ao caso que os escolhe. Agora cada token de valor declara, na própria edição, palavras obrigatórias e proibidas para cada ramo. A X10 confere todos, mesmo os não escolhidos, com a mensagem própria «X10 · palavras do ramo». A X6 confere também as palavras do trecho rendido de cada token que consegue isolar pelo prefixo e pelo sufixo do parágrafo. Alterações nesses limites continuam cobertas pela igualdade X6; não se apresenta esta conferência de palavras como um analisador semântico geral.
 
-Base: \`6f5264b9\`, ramo \`ex1d-2026-10-11\`. Cabeça do código: \`${cabeca}\`. As capturas são da construção desta cabeça, a última que muda código; o commit final só acrescenta este relatório, capturas e registos das conferências. Nenhuma mudança de ramo ou publicação. Os trailers seguem o mandato.
+Base: \`97cec12d\`, ramo \`ex1d-2026-10-11\`. Cabeça do código: \`${cabeca}\`. As capturas são da construção desta cabeça, a última que muda código; o commit final só acrescenta este relatório, capturas e registos das conferências. Nenhuma mudança de ramo ou publicação. Os trailers seguem o mandato.
 
 ### Decisões por achado e questões reservadas
 

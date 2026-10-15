@@ -1,6 +1,6 @@
 {
   "procedimento": "Inspeção dos recortes com view_image; SHA-256 lidos dos manifestos e reconferidos nos ficheiros.",
-  "cabeca_inspecionada": "00d92fed9f70fec22f30d72a1018776629f37d10",
+  "cabeca_inspecionada": "b60217d65355594b9262bd11356d02754656e3bd",
   "observacoes": "Os nomes das portas estão inteiros e separados. O menu cabe numa linha nas larguras grandes e em duas na largura de aceitação. Na janela mais estreita da medição, precisa de três linhas, sem transbordo; é a H4-5 pendente.",
   "ficheiros": [
     {
@@ -100,6 +100,6 @@
       "sha256": "b7102683f0864dba86660a040b4b5574e5e7cb9967dc803de1b64ea2bfa1fbd5"
     }
   ],
-  "cabeca_reconferida": "9c44ad9e31972cfbfd9d7138e29b52b9027bb63d",
+  "cabeca_reconferida": "c4d6af8ef7447055651e4c32c1d127288084eb15",
   "resumos_reconferidos": true
 }

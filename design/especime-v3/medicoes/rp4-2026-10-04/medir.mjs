@@ -36,7 +36,7 @@ const antigos = git('ls-tree','-r','--name-only',base,'ledger/series').split('\n
 const contarPeriodos = texto => [...texto.matchAll(/^  - periodo:/gm)].length;
 const amostra = 'pontos:\n  - periodo: "2015"\n    valor: 1\nlacunas:\n  - periodo: "2016"\n    razao: sem publicação\n';
 assert.equal(contarPeriodos(amostra),2);assert.equal(load(amostra).pontos.length,1);assert.equal(load(amostra).lacunas.length,1);
-const historica = '905105b7';
+const historica = '4d91d3b2';
 const textosHistoricos = git('ls-tree','-r','--name-only',historica,'ledger/series').split('\n').filter(f=>f.endsWith('.yml')).map(f=>git('show',historica+':'+f)).filter(t=>serieNoTempo(load(t)));
 const historicos = textosHistoricos.map(t=>load(t));
 const lacunas = series => series.reduce((n,s)=>n+(s.lacunas??[]).length,0);

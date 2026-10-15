@@ -1,6 +1,6 @@
 # O bloco E1, medido · «Évora 2027: o prometido, o painel, o dinheiro» (a metade do sítio)
 
-*16.09.2026, ramo `e1-2026-09-16`, sobre `c032cbfe`. Construtor: **Claude Opus 5**. É a cópia do relatório do bloco, no formato do §1 item 6 do brief (`BRIEF-E1-evora-2027-sitio.md`). As capturas estão em `design/especime-v3/capturas/e1-2026-09-16/`; a régua das tabelas e a das portas repetidas estão nesta pasta, ao lado deste ficheiro.*
+*16.09.2026, ramo `e1-2026-09-16`, sobre `95c83232`. Construtor: **Claude Opus 5**. É a cópia do relatório do bloco, no formato do §1 item 6 do brief (`BRIEF-E1-evora-2027-sitio.md`). As capturas estão em `design/especime-v3/capturas/e1-2026-09-16/`; a régua das tabelas e a das portas repetidas estão nesta pasta, ao lado deste ficheiro.*
 
 **O bloco fecha, e fecha com os três portões a 0.** Os seis itens do mandato estão feitos e medidos.
 
@@ -100,28 +100,28 @@ Mesma forma, mesma variável, mesmo destino conferido no ensaio antes da escrita
 
 ## 4 · Os commits e a cabeça
 
-Dezasseis commits sobre `c032cbfe`, todos com os dois trailers exactos e todos por caminhos explícitos (nunca `git add -A`), em três passagens: **sete** na primeira, **quatro** na segunda (a que fecha a `check:moldura`) e **cinco** na terceira (a da leitura a frio do Codex).
+Dezasseis commits sobre `95c83232`, todos com os dois trailers exactos e todos por caminhos explícitos (nunca `git add -A`), em três passagens: **sete** na primeira, **quatro** na segunda (a que fecha a `check:moldura`) e **cinco** na terceira (a da leitura a frio do Codex).
 
 | cabeça | o que |
 | --- | --- |
-| `1acba6c4` | Arquivo: entra «Évora 2027 — O Prometido, o Painel, o Dinheiro» |
-| `7a12f9fe` | Os bytes das duas edições, com os resumos que o motor prova |
-| `fc102b08` | As duas datas do repositório, medidas e não escritas |
-| `7252a707` | A travessia dos registos: as duas edições do 14, com o D5 a bater |
-| `ad1915fb` | A edição das três contagens muda de data, e a tabela das línguas com ela |
-| `3c330473` | As vinte e quatro capturas e a régua das tabelas largas |
-| `38ad3ec3` | Os dois números que medem o tamanho do arquivo andam com ele |
-| `a5d66b8a` | O relatório do bloco, com a cabeça, os portões, o custo e o que falta (a primeira passagem, com o `verify` a 1) |
-| `81c6915a` | Os bytes refixados: a folha das duas edições passa a ter papel e tinta |
-| `445b4d69` | A combinação que partia, fotografada antes e depois |
-| `01ebdf27` | O relatório refeito: a segunda passagem, e os três portões a 0 |
-| `11266be7` | O título de cada edição é o que o documento imprime |
-| `d7fa77d8` | A proveniência da data diz o commit que escreveu os bytes que estão alojados |
-| `741fdac9` | As três contagens erradas do relatório |
-| `5743ede7` | As prosas que nomeavam o estudo pelo título antigo |
-| (o commit deste ficheiro) | O relatório com a terceira passagem. **É a cabeça final**, e não traz os seus próprios portões porque um commit não se pode nomear a si próprio: os códigos do §5 são os da corrida sobre `5743ede7`, que é a cabeça com todo o código, os bytes, os registos e as capturas. Este commit acrescenta um ficheiro de relatório, e nenhuma das três cadeias o lê: a lista de documentos que o `check:registo` mede tem cinco nomes e não tem este, e o `check:voz` lê o `dist/` |
+| `919baeff` | Arquivo: entra «Évora 2027 — O Prometido, o Painel, o Dinheiro» |
+| `1fd15e3b` | Os bytes das duas edições, com os resumos que o motor prova |
+| `07d9c81a` | As duas datas do repositório, medidas e não escritas |
+| `d184a574` | A travessia dos registos: as duas edições do 14, com o D5 a bater |
+| `14685d6a` | A edição das três contagens muda de data, e a tabela das línguas com ela |
+| `21d5145b` | As vinte e quatro capturas e a régua das tabelas largas |
+| `f9144170` | Os dois números que medem o tamanho do arquivo andam com ele |
+| `72989097` | O relatório do bloco, com a cabeça, os portões, o custo e o que falta (a primeira passagem, com o `verify` a 1) |
+| `51597de5` | Os bytes refixados: a folha das duas edições passa a ter papel e tinta |
+| `06e65dd3` | A combinação que partia, fotografada antes e depois |
+| `5222a31a` | O relatório refeito: a segunda passagem, e os três portões a 0 |
+| `2e1a8953` | O título de cada edição é o que o documento imprime |
+| `3df2850a` | A proveniência da data diz o commit que escreveu os bytes que estão alojados |
+| `618ba160` | As três contagens erradas do relatório |
+| `d7957335` | As prosas que nomeavam o estudo pelo título antigo |
+| (o commit deste ficheiro) | O relatório com a terceira passagem. **É a cabeça final**, e não traz os seus próprios portões porque um commit não se pode nomear a si próprio: os códigos do §5 são os da corrida sobre `d7957335`, que é a cabeça com todo o código, os bytes, os registos e as capturas. Este commit acrescenta um ficheiro de relatório, e nenhuma das três cadeias o lê: a lista de documentos que o `check:registo` mede tem cinco nomes e não tem este, e o `check:voz` lê o `dist/` |
 
-**Um par que não se pode juntar, e fica dito.** `7a12f9fe` pousa os bytes e `fc102b08` mede a data deles, e os dois têm de ser commits diferentes: a data de uma edição é a do commit que a acrescenta, e um ficheiro não pode trazer dentro de si o resumo do commit que o cria. Entre os dois, a conta 3 do `check:datas` fica vermelha, e é a única coisa que fica.
+**Um par que não se pode juntar, e fica dito.** `1fd15e3b` pousa os bytes e `07d9c81a` mede a data deles, e os dois têm de ser commits diferentes: a data de uma edição é a do commit que a acrescenta, e um ficheiro não pode trazer dentro de si o resumo do commit que o cria. Entre os dois, a conta 3 do `check:datas` fica vermelha, e é a única coisa que fica.
 
 **Quatro coisas mexeram fora do que o brief nomeia, e as quatro são consequência mecânica de o arquivo crescer.** Nenhuma é uma escolha de forma, e nenhuma enfraquece um portão:
 
@@ -132,7 +132,7 @@ Dezasseis commits sobre `c032cbfe`, todos com os dois trailers exactos e todos p
 
 ## 5 · Os três portões
 
-Cada comando no seu, com o código lido de um ficheiro, sobre `5743ede7`.
+Cada comando no seu, com o código lido de um ficheiro, sobre `d7957335`.
 
 ```
 npm run build     → 0
@@ -140,7 +140,7 @@ npm run verify    → 0
 npm run typecheck → 0
 ```
 
-Os códigos ficaram em `i-build.code`, `i-verify.code` e `i-typecheck.code`, com as saídas ao lado, no directório de trabalho da sessão. A segunda passagem tinha saído a 0, 0 e 0 sobre `445b4d69`, com os códigos em `g-*.code`.
+Os códigos ficaram em `i-build.code`, `i-verify.code` e `i-typecheck.code`, com as saídas ao lado, no directório de trabalho da sessão. A segunda passagem tinha saído a 0, 0 e 0 sobre `06e65dd3`, com os códigos em `g-*.code`.
 
 **A célula que estava vermelha, agora:**
 
@@ -236,13 +236,13 @@ Daí saíam duas coisas, e as duas eram reais: o `axe` não tinha tela para comp
 
 ## 11 · A terceira passagem: a leitura a frio do Codex
 
-**A leitura a frio sobre `01ebdf27` apanhou as cinco plantas e trouxe três pontos reais.** Cada um levou o seu commit.
+**A leitura a frio sobre `5222a31a` apanhou as cinco plantas e trouxe três pontos reais.** Cada um levou o seu commit.
 
-1. **Os títulos declarados não eram os do documento** (`11266be7`). `studies.mjs` e o `studies-src/manifest.yml` diziam o nome do ficheiro do motor, que é como ele arruma as suas edições em disco. O título passa a ser o que o documento imprime, lido do `<h1>` de cada edição, e as quatro fontes do mesmo facto dizem agora a mesma cadeia, conferida carácter a carácter: o `<h1>`, a etiqueta `<title>`, o campo `title` do registo e o bloco 0 desse registo. **Nenhum portão compara o título com o nome do ficheiro do motor**, e foi conferido antes de mexer.
-2. **A proveniência da data nomeava o commit errado** (`d7fa77d8`). O comentário dizia `c0b19d4` e que os bytes «não voltaram a mudar»; voltaram, com `b99e225`, que é o que o manifesto já dizia. Os dois lugares diziam coisas diferentes sobre o mesmo facto.
-3. **Três contagens deste relatório estavam erradas** (`741fdac9`): vinte e quatro capturas onde são vinte e oito; «155 507 bytes» que eram caracteres (são 157 227 bytes); e «dois novos» entre os vinte ficheiros da travessia, que são quatro, porque cada edição traz um registo e um ficheiro de operações.
+1. **Os títulos declarados não eram os do documento** (`2e1a8953`). `studies.mjs` e o `studies-src/manifest.yml` diziam o nome do ficheiro do motor, que é como ele arruma as suas edições em disco. O título passa a ser o que o documento imprime, lido do `<h1>` de cada edição, e as quatro fontes do mesmo facto dizem agora a mesma cadeia, conferida carácter a carácter: o `<h1>`, a etiqueta `<title>`, o campo `title` do registo e o bloco 0 desse registo. **Nenhum portão compara o título com o nome do ficheiro do motor**, e foi conferido antes de mexer.
+2. **A proveniência da data nomeava o commit errado** (`3df2850a`). O comentário dizia `c0b19d4` e que os bytes «não voltaram a mudar»; voltaram, com `b99e225`, que é o que o manifesto já dizia. Os dois lugares diziam coisas diferentes sobre o mesmo facto.
+3. **Três contagens deste relatório estavam erradas** (`618ba160`): vinte e quatro capturas onde são vinte e oito; «155 507 bytes» que eram caracteres (são 157 227 bytes); e «dois novos» entre os vinte ficheiros da travessia, que são quatro, porque cada edição traz um registo e um ficheiro de operações.
 
-**E uma quarta coisa, que é consequência da primeira e não estava na lista** (`5743ede7`): trocado o título, três prosas ficaram a nomear um título que já não existe. A que importa é a do livro-razão, porque a `derivation` de `estudos-evora-publicados` é impressa na página da linha: um número deste sítio resolve numa linha, e a linha não pode nomear uma coisa que o arquivo não tem. Com ela foram duas gralhas de pontuação da mesma frase, escritas na primeira passagem.
+**E uma quarta coisa, que é consequência da primeira e não estava na lista** (`d7957335`): trocado o título, três prosas ficaram a nomear um título que já não existe. A que importa é a do livro-razão, porque a `derivation` de `estudos-evora-publicados` é impressa na página da linha: um número deste sítio resolve numa linha, e a linha não pode nomear uma coisa que o arquivo não tem. Com ela foram duas gralhas de pontuação da mesma frase, escritas na primeira passagem.
 
 **O que fica da leitura e não é deste bloco**, por decisão do lugar de direção: os guiões do tema nas páginas, o `origin_ref` das oito entradas antigas do registo de travessia, e a catraca L1. São do brief ou do desenho.
 
@@ -252,7 +252,7 @@ Daí saíam duas coisas, e as duas eram reais: o `axe` não tinha tela para comp
 
 ## 12 · A quarta passagem: a leitura de abertura (ramo `e1-abertura-2026-09-16`)
 
-*Sobre `main` `3bdf0b36`, que já tem tudo o que aterrou a 16.09. É um ramo à parte, e não a continuação do `e1-2026-09-16`.*
+*Sobre `main` `7df5c29e`, que já tem tudo o que aterrou a 16.09. É um ramo à parte, e não a continuação do `e1-2026-09-16`.*
 
 **O diretor decidiu, a 16.09.2026 à noite e depois de ver o estudo no ar, que um estudo abre com a leitura do projeto.** O motor pôs as três secções a seguir ao título («Em resumo», «O que este projeto conclui», «O que podia funcionar melhor») e corrigiu com elas a linha das ausências dos contratos da associação. Deste lado refixaram-se os bytes e refez-se a travessia.
 
@@ -280,7 +280,7 @@ Daí saíam duas coisas, e as duas eram reais: o `axe` não tinha tela para comp
 **A §1.111 DO `DECISIONS.md` ENTROU À SEGUNDA, e a primeira tentativa ficou por pôr de propósito.** O campo `**Afecta:**` de uma entrada a partir da §1.38 é vocabulário fechado de quatro palavras (`sobre`, `metodo`, `agenda`, `nenhum`), sozinho na sua linha, e o `ledger:check` recusa qualquer outra coisa: é ele que garante que uma mudança de rumo diz que texto governa. O texto que chegou primeiro punha prosa nesse campo e juntava na mesma linha o `**Decidido por:**` e o `**Aplicado por:**`, e o portão deu três erros. A instrução era não mudar uma palavra: entre mudar o texto e enfraquecer o portão não escolhi nenhuma das duas, disse qual era a linha e o que lhe faltava, e o ramo ficou verde sem a entrada.
 
 O lugar de direção reescreveu-a com `**Afecta:** nenhum` sozinho na sua linha e a prosa da decisão no corpo, como a §1.107 faz, e ela entrou tal como veio, num commit só seu. **É o que esta casa quer que aconteça quando um texto e um portão discordam:** não se calça o portão nem se reescreve o texto de outrem; diz-se onde está a discordância e espera-se.
-**Os três portões desta passagem**, cada comando no seu, com o código lido de um ficheiro, sobre `a53046c9`:
+**Os três portões desta passagem**, cada comando no seu, com o código lido de um ficheiro, sobre `631844b5`:
 
 ```
 npm run build     → 0
@@ -288,16 +288,16 @@ npm run verify    → 0
 npm run typecheck → 0
 ```
 
-Os códigos ficaram em `k-build.code`, `k-verify.code` e `k-typecheck.code`, com as saídas ao lado, no directório de trabalho da sessão. A corrida anterior, sobre `f7c2759b` e ainda sem a §1.111, saiu também a 0, 0 e 0, com os códigos em `j-*.code`.
+Os códigos ficaram em `k-build.code`, `k-verify.code` e `k-typecheck.code`, com as saídas ao lado, no directório de trabalho da sessão. A corrida anterior, sobre `55398b54` e ainda sem a §1.111, saiu também a 0, 0 e 0, com os códigos em `j-*.code`.
 
-**Os commits desta passagem**, sobre `3bdf0b36`:
+**Os commits desta passagem**, sobre `7df5c29e`:
 
 | cabeça | o que |
 | --- | --- |
-| `35601830` | O estudo ganha a leitura de abertura, e os bytes refixam-se com ela |
-| `8133c8a6` | A norma ganha a regra da leitura de abertura |
-| `44d68028` | A leitura cruzada dos seis estudos de Évora entra no repositório |
-| `f7c2759b` | As duas capturas do primeiro ecrã, com a leitura de abertura |
-| `b41a3d1b` | O relatório ganha a passagem da leitura de abertura |
-| `a53046c9` | A §1.111: todo o estudo abre com a leitura do projeto |
+| `8791f361` | O estudo ganha a leitura de abertura, e os bytes refixam-se com ela |
+| `2b94ef8b` | A norma ganha a regra da leitura de abertura |
+| `383232f8` | A leitura cruzada dos seis estudos de Évora entra no repositório |
+| `55398b54` | As duas capturas do primeiro ecrã, com a leitura de abertura |
+| `0a9ae7f3` | O relatório ganha a passagem da leitura de abertura |
+| `631844b5` | A §1.111: todo o estudo abre com a leitura do projeto |
 | (o commit deste ficheiro) | A emenda desta secção, depois de a §1.111 entrar. **É a cabeça final**, e acrescenta um ficheiro de relatório que nenhuma das três cadeias lê |

@@ -36,26 +36,26 @@ No ramo `l1-2026-09-24` do sítio: o brief (`design/observatorio/BRIEF-L1-a-leit
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
 ### O sítio (`<casa>/Instruments/OEstadoDoPais`)
-- `main`: 1415e0c3 · 2026-09-24T09:26:59+01:00 · Os registos de 24.09: a §1.130 (o brief do L1, a gramática com ramos, o ensaio a seco, o construtor Opus 5.5 e o bloco que não ater  (`git log -1 main`)
-- `origin/main`: 1415e0c3 · 2026-09-24T09:26:59+01:00 · Os registos de 24.09: a §1.130 (o brief do L1, a gramática com ramos, o ensaio a seco, o construtor Opus 5.5 e o bloco que não ater  (`git log -1 origin/main`)
+- `main`: 89e9dba8 · 2026-09-24T09:26:59+01:00 · Os registos de 24.09: a §1.130 (o brief do L1, a gramática com ramos, o ensaio a seco, o construtor Opus 5.5 e o bloco que não ater  (`git log -1 main`)
+- `origin/main`: 89e9dba8 · 2026-09-24T09:26:59+01:00 · Os registos de 24.09: a §1.130 (o brief do L1, a gramática com ramos, o ensaio a seco, o construtor Opus 5.5 e o bloco que não ater  (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
-- ramos locais: `l1-2026-09-24 a45dfa3c`, `main 1415e0c3`  (`git branch`)
+- ramos locais: `l1-2026-09-24 a45dfa3c`, `main 89e9dba8`  (`git branch`)
 - ramos no remoto: `l1-2026-09-24`, `main`  (`git ls-remote --heads origin`)
-- worktree: `<casa>/Instruments/OEstadoDoPais 1415e0c3 [main]`
+- worktree: `<casa>/Instruments/OEstadoDoPais 89e9dba8 [main]`
 - worktree: `<casa>/Instruments/OEstadoDoPais/.claude/worktrees/l1-2026-09-24 a45dfa3c [l1-2026-09-24]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
-- 35979504769 · `1415e0c3` · main · portão · **completed / success** · criada 2026-09-24T09:09:17Z · atualizada 2026-09-24T09:31:23Z
-- 35976636461 · `1415e0c3` · registos-2026-09-24 · portão · **completed / success** · criada 2026-09-24T08:40:36Z · atualizada 2026-09-24T09:07:50Z
+- 35979504769 · `89e9dba8` · main · portão · **completed / success** · criada 2026-09-24T09:09:17Z · atualizada 2026-09-24T09:31:23Z
+- 35976636461 · `89e9dba8` · registos-2026-09-24 · portão · **completed / success** · criada 2026-09-24T08:40:36Z · atualizada 2026-09-24T09:07:50Z
 - 35975260297 · `a45dfa3c` · l1-2026-09-24 · portão · **completed / success** · criada 2026-09-24T08:26:34Z · atualizada 2026-09-24T08:53:54Z
-- 35934023469 · `f672bd38` · main · portão · **completed / success** · criada 2026-09-23T23:31:29Z · atualizada 2026-09-23T23:58:23Z
-- 35931602874 · `f672bd38` · b2-peca1-2026-09-23 · portão · **completed / success** · criada 2026-09-23T23:03:11Z · atualizada 2026-09-23T23:30:21Z
-- 35917796199 · `97e84232` · main · portão · **completed / success** · criada 2026-09-23T20:42:53Z · atualizada 2026-09-23T20:59:39Z
+- 35934023469 · `5ea9627e` · main · portão · **completed / success** · criada 2026-09-23T23:31:29Z · atualizada 2026-09-23T23:58:23Z
+- 35931602874 · `5ea9627e` · b2-peca1-2026-09-23 · portão · **completed / success** · criada 2026-09-23T23:03:11Z · atualizada 2026-09-23T23:30:21Z
+- 35917796199 · `401743d2` · main · portão · **completed / success** · criada 2026-09-23T20:42:53Z · atualizada 2026-09-23T20:59:39Z
 
 ### O que está no ar (`/version.json` do sítio publicado)
-- commit no ar: `1415e0c3` · construído em 2026-09-24T09:24:57.560Z · ref `main` · production
-- igual a `origin/main` (`1415e0c3`): **sim**
+- commit no ar: `89e9dba8` · construído em 2026-09-24T09:24:57.560Z · ref `main` · production
+- igual a `origin/main` (`89e9dba8`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
 ### O motor (`<casa>/Instruments/ResearchHub`)
@@ -90,10 +90,10 @@ No ramo `l1-2026-09-24` do sítio: o brief (`design/observatorio/BRIEF-L1-a-leit
     - tokens used 955,117
 
 
-*Acrescentado à mão por baixo do bloco: o `npm run verify:deploy` correu a 0 das 09:51:29 às 09:51:33 UTC contra o lançamento `628v53d7q` (o `version.json` no ar diz `1415e0c3`, construído às 09:24:57 UTC; o lançamento ficou «Ready» ao fim de 22 minutos de construção). A vigia da Vercel escrita pelo lugar de direção fez 40 pedidos sem ver o «Ready», porque a tabela do `vercel ls` sai pelo canal de erro e o guião guardava só a saída normal; a conferência foi feita à mão às 09:51 UTC, e o guião da vigia ficou corrigido no scratchpad da sessão, não no repositório. A semana do Claude passou de 68 por cento (05:19 UTC) a 75 por cento (09:51 UTC) nesta sessão, com a construção do L1 pelo Opus 5.5 dentro. Os ramos e as worktrees `l1-2026-09-24`, no sítio e no motor, ficam de propósito: o bloco espera a leitura a frio de outra família.*
+*Acrescentado à mão por baixo do bloco: o `npm run verify:deploy` correu a 0 das 09:51:29 às 09:51:33 UTC contra o lançamento `628v53d7q` (o `version.json` no ar diz `89e9dba8`, construído às 09:24:57 UTC; o lançamento ficou «Ready» ao fim de 22 minutos de construção). A vigia da Vercel escrita pelo lugar de direção fez 40 pedidos sem ver o «Ready», porque a tabela do `vercel ls` sai pelo canal de erro e o guião guardava só a saída normal; a conferência foi feita à mão às 09:51 UTC, e o guião da vigia ficou corrigido no scratchpad da sessão, não no repositório. A semana do Claude passou de 68 por cento (05:19 UTC) a 75 por cento (09:51 UTC) nesta sessão, com a construção do L1 pelo Opus 5.5 dentro. Os ramos e as worktrees `l1-2026-09-24`, no sítio e no motor, ficam de propósito: o bloco espera a leitura a frio de outra família.*
 
 ## 5 · As horas e os símbolos de 24.09 (lidos dos registos, não de memória)
 
 - **O L1, a construção** (o ramo `l1-2026-09-24` do sítio, cabeça `a45dfa3c`: o commit do brief do lugar de direção `f0779f37`, onze commits do construtor Claude Opus 5.5 e o commit do ensaio a seco do lugar de direção; o motor `1e3b15c`, um commit): o construtor das 05:53:54 às 08:21 UTC (1 487 612 símbolos pelo total cumulativo que a ferramenta lhe reportou; 535 659 símbolos, 450 chamadas a ferramentas e 8 839 segundos pela notificação do harness; o modelo conferido na transcrição, 29 chamadas em 29 com `claude-opus-5-5`); os três portões a 0 na cabeça `d831b453` (o `build` em 300,1 s, o `verify` em 491,0 s, o `typecheck` em 0,2 s, os códigos lidos de `design/especime-v3/medicoes/l1-2026-09-24/portoes/`); o `push` do ramo às 08:26 UTC; a corrida do ramo (35975260297) verde às 08:53:54 UTC. Não aterrou.
-- **Os registos** (o ramo `registos-2026-09-24`, um commit do lugar de direção, cabeça `1415e0c3`): os três portões a 0 (`build` 08:27:13 a 08:32:15 UTC, `verify` 08:32:15 a 08:40:20, `typecheck` 08:40:20 a 08:40:21); o `push` do ramo às 08:40:34; a corrida do ramo (35976636461) verde às 09:07:50; a fusão por avanço rápido às 09:09:07 e o `push` de `main` às 09:09:15; a corrida de `main` (35979504769) verde às 09:31:23; a Vercel (`628v53d7q`) construída às 09:24:57 e «Ready» ao fim de 22 minutos; o `verify:deploy` a 0 às 09:51:33. A worktree e o ramo dos registos apagados, no local e no remoto.
+- **Os registos** (o ramo `registos-2026-09-24`, um commit do lugar de direção, cabeça `89e9dba8`): os três portões a 0 (`build` 08:27:13 a 08:32:15 UTC, `verify` 08:32:15 a 08:40:20, `typecheck` 08:40:20 a 08:40:21); o `push` do ramo às 08:40:34; a corrida do ramo (35976636461) verde às 09:07:50; a fusão por avanço rápido às 09:09:07 e o `push` de `main` às 09:09:15; a corrida de `main` (35979504769) verde às 09:31:23; a Vercel (`628v53d7q`) construída às 09:24:57 e «Ready» ao fim de 22 minutos; o `verify:deploy` a 0 às 09:51:33. A worktree e o ramo dos registos apagados, no local e no remoto.
 - **O lugar de direção** (Fable 5.1) não se mede daqui: o §4 diz o uso da semana lido pela linha de estado.

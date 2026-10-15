@@ -1,7 +1,7 @@
 # I129 · O grupo etário dos jovens que não estudam nem trabalham
 
 *Construtor: Claude Opus 5, 22.09.2026, na worktree `jovens-nem-2026-09-22`
-sobre `83e9df2d`, e no motor na árvore principal sobre `3cf1ccb`. Três passagens:
+sobre `8c50b144`, e no motor na árvore principal sobre `3cf1ccb`. Três passagens:
 a do bloco, a que fechou o que ela deixou nomeado, e a de correção da leitura a
 frio do Codex, cada uma na sua secção. O brief é
 `design/observatorio/BRIEF-I129-o-grupo-etario-dos-jovens-nem.md`. Cada número
@@ -128,7 +128,7 @@ catraca declarada**.
 ## A segunda passagem, 22.09.2026
 
 *A regra do diretor desse dia: nada fica para depois. O que a primeira passagem
-deixou nomeado fecha-se aqui, sobre o sítio `3b6cbf27` e o motor `f408e1c`.*
+deixou nomeado fecha-se aqui, sobre o sítio `2bf221d1` e o motor `f408e1c`.*
 
 **Nove linhas, e não seis.** Cada uma das três medidas tem, além da sua, a linha
 do período anterior e a do agregado da União, pelo mesmo pedido: 3 × 3. Todas
@@ -337,7 +337,7 @@ registar, como estavam. Nenhum `push`.
 
 ## Os portões
 
-**Da primeira passagem**, os três inteiros na cabeça `60729ea3`, cada um no seu
+**Da primeira passagem**, os três inteiros na cabeça `111d4306`, cada um no seu
 comando, com o código lido de um ficheiro acabado de escrever e os `.codigo`
 apagados antes: `build` 0, `verify` 0, `typecheck` 0. Os ficheiros `.inicio`,
 `.fim`, `.cabeca`, `.codigo` e `.log` de cada um ficam ao lado deste relatório.

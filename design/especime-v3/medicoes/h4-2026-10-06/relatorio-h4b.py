@@ -30,7 +30,7 @@ cabeca = (portoes / 'cabeca').read_text().strip()
 assert cabeca == (portoes / 'cabeca.fim').read_text().strip() == depois['cabeca'] == capturas['cabeca']
 codigos = {g: int((portoes / f'{g}.codigo').read_text()) for g in ['build', 'verify', 'typecheck']}
 commits = [dict(zip(['cabeca', 'assunto'], linha.split(' ', 1))) for linha in subprocess.check_output(
-    ['git', 'log', '--reverse', '--format=%H %s', '6538dbc7..' + cabeca], text=True).splitlines()]
+    ['git', 'log', '--reverse', '--format=%H %s', '923a08fd..' + cabeca], text=True).splitlines()]
 resumo_l1 = {
     'antes': l1((AQUI / 'lugar-b-antes.log').read_text()),
     'depois': l1((portoes / 'verify.log').read_text()),

@@ -1,9 +1,9 @@
 {
   "bloco": "UE2",
   "fase": "antes",
-  "cabeca": "ec1a00dbe6fc02c84d4669439a7cdc74c2354614",
+  "cabeca": "13689390a713901a4b7bdf1ac815ae84118e9013",
   "construcao": {
-    "commit": "ec1a00dbe6fc02c84d4669439a7cdc74c2354614",
+    "commit": "13689390a713901a4b7bdf1ac815ae84118e9013",
     "ref": "ue2-2026-10-02",
     "construido_em": "2026-10-02T13:34:17.990Z"
   },

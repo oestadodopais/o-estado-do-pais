@@ -1,7 +1,7 @@
 # M3b · Os dezoito nomes confirmados voltam aos recibos, pela marca por fonte
 
 *Construtor: Claude Opus 5, 22.09.2026, na worktree `nomes-no-sitio-2026-09-22`,
-sobre `d6f46e45`. O brief é
+sobre `d9647a25`. O brief é
 `design/observatorio/BRIEF-M3b-os-nomes-confirmados-voltam-aos-recibos.md`. Cada
 número desta página foi contado num guião que corre sobre o `dist/` construído e
 que fica ao lado; nenhum foi escrito de cabeça. Sem travessões na prosa.*
@@ -165,7 +165,7 @@ fotografa. As quatro capturas estão em
 | `recibo-despesa-em-id-2024-en-1280.png` | `/en/ledger/despesa-em-id-2024/` | 1 602 px | 2 | 0 |
 
 Refeitas na passagem de correção, sobre a cabeça
-`ee3dd513489d9e097c81c6f6839aa585f21280b3`, que é a que o manifesto regista. O
+`3ad27a0b346128098a12647d6ddcf47875461e48`, que é a que o manifesto regista. O
 guião tem o seu conhecido-positivo: se um recibo não tiver os dois nomes, ou se
 algum nome transbordar a página, sai com erro **e não escreve o manifesto**.
 
@@ -235,18 +235,18 @@ a travessia do aviso e 1 sobre a forma do ficheiro.
 
 Correram só as conferências que as mudanças tocam, e são estas: a **construção**
 inteira (`npm run build`, que leva o `gate:html`, o `check:voz` e o
-`check:nomes`) a **0** na cabeça `ee3dd513489d9e097c81c6f6839aa585f21280b3`, e o
+`check:nomes`) a **0** na cabeça `3ad27a0b346128098a12647d6ddcf47875461e48`, e o
 `check:voz` à parte, também a 0, porque a mudança passou por
 `scripts/medir-defeitos.mjs`. As capturas foram refeitas nessa mesma cabeça, e o
 manifesto regista-a. **Os três portões inteiros não correram nesta passagem:**
 ficam para o lugar de direção, na cabeça final, depois de acrescentar os
 registos do bloco. A tabela da secção seguinte é a da primeira passagem, na
-cabeça `50eb7aa3`.
+cabeça `254ce9ee`.
 
 ## Os três portões na cabeça final
 
 Cada um no seu comando, com o código lido de um ficheiro e nunca atrás de um
-`|`, na cabeça `50eb7aa38eaf1d5f22c1550dc875110a9622396b`. Os ficheiros estão ao
+`|`, na cabeça `254ce9ee36e09b9044cd6c41f37e2a6eb78f9d36`. Os ficheiros estão ao
 lado desta página.
 
 | portão | início (UTC) | fim (UTC) | código | registo |

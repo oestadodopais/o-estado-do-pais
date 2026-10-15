@@ -7,7 +7,7 @@ Uso (na raiz do sítio, sobre o `dist/` que lá estiver):
 Escreve `rp4mb-dist-<etiqueta>.json` nesta pasta: o commit do `dist/version.json`, quantas páginas leu, as páginas
 com a frase da conta nova (as cadeias `derivadaFrase` e `derivadaFraseVarias` das duas edições, lidas de
 `src/i18n/strings.mjs` pelo node) e as páginas com uma das duas metades que a passagem tirou. Corre-se com a
-etiqueta `antes` sobre a construção da cabeça 1a186832, onde a metade tirada ainda está (é o conhecido-positivo do
+etiqueta `antes` sobre a construção da cabeça ed972397, onde a metade tirada ainda está (é o conhecido-positivo do
 detetor), e com `depois` sobre a construção da cabeça do código da passagem. Nenhum caminho da máquina no registo.
 """
 import json

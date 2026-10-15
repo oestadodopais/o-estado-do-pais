@@ -1,12 +1,12 @@
 # A lista dos domínios, a linha da busca, e as duas células novas · 15.09.2026
 
-*Ramo `dominios-css-2026-09-15`, de `main` em `44f0d838`. Construtor: Claude Opus 5. Lido a frio pelo Codex (`gpt-5.6-sol`, xhigh) na cabeça `f6d87f28`, com três plantas de três classes, 3 de 3 vistas: `design/especime-v3/critica/2026-09-15-codex-leitura-fatia-dominios-css.md` e o `.plantas.json` ao lado. Os cinco achados reais (5, 7, 8, 9 e 10) fecharam-se antes de a fatia aterrar, e estão ditos onde cada um mordeu; o achado 6 é uma limitação verdadeira da célula C2, está escrita aqui e na própria célula, e passa à fatia `css-alcance-2026-09-16`. Tudo o que está aqui foi medido em Chromium sem cabeça sobre o `dist/` de cada uma das duas cabeças, com `design/especime-v3/medicoes/dominios-css-2026-09-15.mjs`, que é o ficheiro ao lado deste. A régua recusa medir o que não existe: exige 200 em cada rota e exige cada elemento que diz que mede, e morre com o que faltar em vez de imprimir `null` numa coluna de números (achado 8). As capturas estão em `design/especime-v3/capturas/dominios-css-2026-09-15/`.*
+*Ramo `dominios-css-2026-09-15`, de `main` em `a863f417`. Construtor: Claude Opus 5. Lido a frio pelo Codex (`gpt-5.6-sol`, xhigh) na cabeça `ca0d875a`, com três plantas de três classes, 3 de 3 vistas: `design/especime-v3/critica/2026-09-15-codex-leitura-fatia-dominios-css.md` e o `.plantas.json` ao lado. Os cinco achados reais (5, 7, 8, 9 e 10) fecharam-se antes de a fatia aterrar, e estão ditos onde cada um mordeu; o achado 6 é uma limitação verdadeira da célula C2, está escrita aqui e na própria célula, e passa à fatia `css-alcance-2026-09-16`. Tudo o que está aqui foi medido em Chromium sem cabeça sobre o `dist/` de cada uma das duas cabeças, com `design/especime-v3/medicoes/dominios-css-2026-09-15.mjs`, que é o ficheiro ao lado deste. A régua recusa medir o que não existe: exige 200 em cada rota e exige cada elemento que diz que mede, e morre com o que faltar em vez de imprimir `null` numa coluna de números (achado 8). As capturas estão em `design/especime-v3/capturas/dominios-css-2026-09-15/`.*
 
 ## As medidas
 
 ### O índice dos domínios
 
-O «antes» é a cabeça `44f0d838`; o «depois» é a cabeça final deste ramo. A primeira e a segunda coluna são a primeira página, que é onde o defeito estava; a terceira e a quarta são `/dominios`, que é onde ele não estava e onde nada podia mudar.
+O «antes» é a cabeça `a863f417`; o «depois» é a cabeça final deste ramo. A primeira e a segunda coluna são a primeira página, que é onde o defeito estava; a terceira e a quarta são `/dominios`, que é onde ele não estava e onde nada podia mudar.
 
 | medida (a 390 e a 1 280, iguais nas duas larguras) | `/` antes | `/` depois | `/dominios` antes | `/dominios` depois |
 | --- | --- | --- | --- | --- |
@@ -43,7 +43,7 @@ A primeira página cresce **58 px a 390 na edição portuguesa e 57 na inglesa**
 
 ### A linha da busca
 
-Duas passagens no mesmo dia. A primeira pôs o campo a encher a coluna; o lugar de direção leu a medição («972,5 px em `/municipios` a 1 280 é uma caixa de busca do tamanho de uma página») e decidiu o teto. A tabela dá as três colunas: o que estava na cabeça `44f0d838`, o que a primeira passagem deu, e o que fica.
+Duas passagens no mesmo dia. A primeira pôs o campo a encher a coluna; o lugar de direção leu a medição («972,5 px em `/municipios` a 1 280 é uma caixa de busca do tamanho de uma página») e decidiu o teto. A tabela dá as três colunas: o que estava na cabeça `a863f417`, o que a primeira passagem deu, e o que fica.
 
 O teto é `max-width: 36rem` na `.busca-linha`, e **36rem medem 576 px**: o `rem` desta casa é o do navegador, 16 px, medido em `getComputedStyle(document.documentElement).fontSize` em todas as células. O botão mede 111,5 px em todas elas, do princípio ao fim. O transbordo horizontal (`scrollWidth − clientWidth`) é 0 em todas as células das três passagens.
 
@@ -66,7 +66,7 @@ E a largura da linha, que é o campo mais o botão mais os 8 px de goma:
 
 E o que estava antes, para a comparação (só as rotas portuguesas foram medidas nas duas primeiras passagens, que é o achado 5):
 
-| rota | largura | campo em `44f0d838` | campo sem teto | campo com teto |
+| rota | largura | campo em `a863f417` | campo sem teto | campo com teto |
 | --- | --- | --- | --- | --- |
 | `/` | 320 | 100,6 | 164,5 | 164,5 |
 | `/` | 390 | 100,6 | 234,5 | 234,5 |
@@ -97,7 +97,7 @@ O índice dos domínios foi medido outra vez depois do teto, célula a célula: 
 
 Sobre o `dist/` de cada cabeça, com `node scripts/check-css.mjs`:
 
-| | `44f0d838` | cabeça final |
+| | `a863f417` | cabeça final |
 | --- | --- | --- |
 | páginas lidas | 7 224 | 7 224 |
 | documentos de estudo alojados, fora das células | 16 | 16 |
@@ -109,7 +109,7 @@ Sobre o `dist/` de cada cabeça, com `node scripts/check-css.mjs`:
 | C2 · dessas, as que a folha da página separa | 31 403 | 31 367 |
 | **C2 · vermelhos** | **4** | **0** |
 
-Os 12 vermelhos de `44f0d838` são, um a um, o defeito desta fatia e mais nada:
+Os 12 vermelhos de `a863f417` são, um a um, o defeito desta fatia e mais nada:
 
 ```
 C1 · /index.html     rende «dominios-lista», «dominios-item», «dominios-estado»
@@ -163,7 +163,7 @@ Não se fecharam aqui, e a razão é uma: fechar cada um é escolher que folha p
 
 ### C2 · a primeira redação acusava a composição inteira da casa
 
-A célula escrita à letra do brief («dois elementos vizinhos sem espaço entre eles») deu, na cabeça `44f0d838`, **60 526 vermelhos em 146 padrões**. Não eram 60 526 defeitos. Tirando as fronteiras entre duas caixas (`<p>`+`<p>`, `<dt>`+`<dd>`, `<tr>`+`<tr>`: duas caixas nunca fazem uma palavra) ficavam **31 407 em 60 padrões**, e esses são o retrato da composição desta casa: o selo da fonte encostado ao seu número (`.claim-value` + `.src-chip`, umas onze mil vezes), o valor e a sua unidade, o nome e a posição de um cartão, duas portas numa fila de rodapé. Em todos, o espaço é um `gap` escrito de propósito.
+A célula escrita à letra do brief («dois elementos vizinhos sem espaço entre eles») deu, na cabeça `a863f417`, **60 526 vermelhos em 146 padrões**. Não eram 60 526 defeitos. Tirando as fronteiras entre duas caixas (`<p>`+`<p>`, `<dt>`+`<dd>`, `<tr>`+`<tr>`: duas caixas nunca fazem uma palavra) ficavam **31 407 em 60 padrões**, e esses são o retrato da composição desta casa: o selo da fonte encostado ao seu número (`.claim-value` + `.src-chip`, umas onze mil vezes), o valor e a sua unidade, o nome e a posição de um cartão, duas portas numa fila de rodapé. Em todos, o espaço é um `gap` escrito de propósito.
 
 Escrever sessenta exceções para pôr a célula a verde seria a régua a servir o portão. O que separa o defeito do idioma é uma coisa só, e é a que o diretor leu: em `/dominios` a folha chegava e o `gap` estava lá; em `/` a folha não chegava e não estava nada. A pergunta passou a ser essa, medida com as folhas que chegam **àquela** página e com mais nenhumas, e os mesmos 60 526 dão 4 vermelhos, que são a linha do domínio nas duas edições.
 

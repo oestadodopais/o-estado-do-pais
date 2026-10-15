@@ -7,9 +7,9 @@ Research and measurement only. Nothing in either repository was changed; nothing
 |---|---|
 | Written | 2026-08-15 |
 | Live site measured | `https://xn--oestadodopas-2fb.pt` (oestadodopaís.pt) |
-| Live build at time of measurement | `version.json` → commit `b2196e57`, ref `main`, env `production`, origem `vercel`, built `2026-08-15T18:54:33.946Z` |
-| Local `dist/` used for bulk counting | commit `4fb8cb47` (branch `municipio-evora`, built `2026-08-15T13:19:06.819Z`) — **one commit behind live**; `git merge-base` confirms it is an ancestor of `main`. The diff `4fb8cb47..b2196e57` touches `DECISIONS.md`, 4 ledger rows, `cruzamentos/evora.json`, `leituras.mjs`, `municipios.mjs` — no boilerplate strings. |
-| Ledger read from | working tree at `HEAD` = `b2196e57` (= live) |
+| Live build at time of measurement | `version.json` → commit `6270d1fe`, ref `main`, env `production`, origem `vercel`, built `2026-08-15T18:54:33.946Z` |
+| Local `dist/` used for bulk counting | commit `38aa4942` (branch `municipio-evora`, built `2026-08-15T13:19:06.819Z`) — **one commit behind live**; `git merge-base` confirms it is an ancestor of `main`. The diff `38aa4942..6270d1fe` touches `DECISIONS.md`, 4 ledger rows, `cruzamentos/evora.json`, `leituras.mjs`, `municipios.mjs` — no boilerplate strings. |
+| Ledger read from | working tree at `HEAD` = `6270d1fe` (= live) |
 | Reconciliation | every `dist/`-derived row-page count below was independently re-derived from the 132 ledger YAML files at `HEAD` and **matched exactly** (see §3.2). The `dist/` counts are therefore valid for the live site. |
 
 **Scope of the question.** The thesis is that an AI-written observatory earns trust by making every number confirmable by anyone in seconds and every error visible in the open. This brief measures the site as it stands against that: how a stranger confirms a number today, what stands in the way, how much frame text and how many disclaimers the surface carries, and what the engine already holds that the site does not yet show.
@@ -397,7 +397,7 @@ Against the September review, (b) is the item that moves the test, and (d) is th
 | Row reference date | `Dados de` / `Data for` | `LinhaView.astro`, field `reference_date` | per row |
 | Correction dates | `Data` / `Date` inside «Correções» and «Atualizações» | `RegistoCorrecoes.astro` (on `/metodo#correcoes`) and `HistoricoDaLinha.astro` (on each row page) | 3 corrections, 2 updates |
 | Study dates | `Publicação` / `Published`, `Última actualização` / `Last updated` | `src/data/studies.mjs`, hand-maintained. **9 of 11 works have `date: null`** → render as `[a verificar]`. `updated` is `null` on **every** edition of **every** work. | 2 real dates: 2026-08-12, 2026-08-04 |
-| Build stamp | not rendered | `dist/version.json`, written by `scripts/stamp-version.mjs`; read by `npm run verify:deploy` | live: `b2196e57` |
+| Build stamp | not rendered | `dist/version.json`, written by `scripts/stamp-version.mjs`; read by `npm run verify:deploy` | live: `6270d1fe` |
 | Sitemap `lastmod` | **does not exist** | `grep -c lastmod dist/sitemap-0.xml` → 0 | — |
 | Copyright year | **does not exist** | repo-wide grep for `copyright|©` in `src/` + `site.config.mjs` → no matches (known-positive control run) | — |
 
@@ -428,7 +428,7 @@ Reported as it is, not as it should be.
 | Whether the INE JSON endpoints are reachable for an ordinary reader | INE served my first request (200, 37,628 B), then returned 429 and timed out on three serial retries. I cannot separate rate-limiting of my own probing from a reader-facing block. |
 | Whether `watch_next_events.py` has ever been run | It writes no artefact. Filesystem and git evidence show no run; that is not proof of none. |
 | Real reader behaviour (time-on-task, whether anyone clicks a seal) | No analytics on the site; none was added. |
-| Whether the 4 rows changed between `4fb8cb47` and `b2196e57` altered any rendered Évora figure | The ledger YAML was read at `HEAD`, so the ledger-derived counts are current; the `dist/`-derived Évora page text is one commit old. The diff touches `leituras.mjs` and `municipios.mjs`, so some Évora **sentences** in §1 may differ slightly from live. All §1 walk quotes were taken from **live** HTML, not `dist/`. |
+| Whether the 4 rows changed between `38aa4942` and `6270d1fe` altered any rendered Évora figure | The ledger YAML was read at `HEAD`, so the ledger-derived counts are current; the `dist/`-derived Évora page text is one commit old. The diff touches `leituras.mjs` and `municipios.mjs`, so some Évora **sentences** in §1 may differ slightly from live. All §1 walk quotes were taken from **live** HTML, not `dist/`. |
 | Whether the 132 EN row pages carry identical structure | 1 EN row page fetched live and confirmed; the remaining 131 were counted from `dist/`, reconciled to the ledger. |
 | The site's own re-runnable corruption suite | Does not exist (recorded as an open item in the sixth-block note); all fail-tests are hand-run and reverted, so I could not re-run them. |
 | `gate:identidade` | Not built — no script, no npm script. IDENTIDADE §8 promises it. This is why the 18 unsealed front-page claims are still there. |

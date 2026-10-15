@@ -49,8 +49,8 @@
    "alcance": "fora do diff da passagem (a referência é outra)",
    "sha256_antes": "f74da3e2fc517dfda090cb771f37465655e87e3054eb1fa95b64f5a1cb784562",
    "sha256_depois": "d5c327113b9ce4c12a4d87e874412a9989d151a670f1aab40ef86908739dfb4a",
-   "contexto_antes": "o captou as cinco larguras, incluindo 390 e 1 280 px, sobre a cabeça `f44f380f160867fc3e83fbe64bd33b087e25ee38`. O recibo em `entrega-b/capturas.json` confirma 90 capturas de página e 100 recortes, sem falhas. Foram conferidos os resumos criptográficos dos 190 PNG e a ausência de transbordo horizontal nas páginas. Foram lidos visualmente o",
-   "contexto_depois": "o captou as cinco larguras, incluindo 390 e 1 280 px, sobre a cabeça `f44f380f160867fc3e83fbe64bd33b087e25ee38`. O recibo em `entrega-b/capturas.json` confirma 92 capturas de página e 100 recortes, sem falhas. Foram conferidos os resumos criptográficos dos 190 PNG e a ausência de transbordo horizontal nas páginas. Foram lidos visualmente o"
+   "contexto_antes": "o captou as cinco larguras, incluindo 390 e 1 280 px, sobre a cabeça `8797c798c33c9e86c55501cbcbf1b57e54cad49f`. O recibo em `entrega-b/capturas.json` confirma 90 capturas de página e 100 recortes, sem falhas. Foram conferidos os resumos criptográficos dos 190 PNG e a ausência de transbordo horizontal nas páginas. Foram lidos visualmente o",
+   "contexto_depois": "o captou as cinco larguras, incluindo 390 e 1 280 px, sobre a cabeça `8797c798c33c9e86c55501cbcbf1b57e54cad49f`. O recibo em `entrega-b/capturas.json` confirma 92 capturas de página e 100 recortes, sem falhas. Foram conferidos os resumos criptográficos dos 190 PNG e a ausência de transbordo horizontal nas páginas. Foram lidos visualmente o"
   }
  ]
 }

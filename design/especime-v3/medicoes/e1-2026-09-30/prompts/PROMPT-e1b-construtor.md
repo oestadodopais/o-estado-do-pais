@@ -1,6 +1,6 @@
 # A passagem E1b · o mandato do lugar de direção (01.10.2026, de madrugada)
 
-Continuas o bloco E1 nas duas worktrees e nos dois ramos `e1-2026-09-30` (o motor sobre `master`, o sítio sobre `main`), depois da entrega do construtor (`design/especime-v3/medicoes/e1-2026-09-30/RESPOSTA-construtor-e1.md` e o `LEIA-ME.md`, §6) e da revisão das quatro aberturas pelo lugar de direção. As regras do prompt inicial mantêm-se todas. O E0 aterrou em `main` (`dd7f6208`, 01.10.2026 01:32 UTC) com o mecanismo que faltava: o lugar `o-estado-do-pais` no registo das mudanças, para as linhas que medem o próprio projeto.
+Continuas o bloco E1 nas duas worktrees e nos dois ramos `e1-2026-09-30` (o motor sobre `master`, o sítio sobre `main`), depois da entrega do construtor (`design/especime-v3/medicoes/e1-2026-09-30/RESPOSTA-construtor-e1.md` e o `LEIA-ME.md`, §6) e da revisão das quatro aberturas pelo lugar de direção. As regras do prompt inicial mantêm-se todas. O E0 aterrou em `main` (`dc65109b`, 01.10.2026 01:32 UTC) com o mecanismo que faltava: o lugar `o-estado-do-pais` no registo das mudanças, para as linhas que medem o próprio projeto.
 
 ## As decisões do lugar de direção sobre os pontos de paragem
 

@@ -35,25 +35,25 @@
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
 ### O sítio (`<a árvore principal do sítio>`)
-- `main`: e71682f4 · 2026-09-26T19:26:31+01:00 · RP1: o guião do §0 do brief deixa de ler o motor, porque a corrida «portão» do ramo fechou nas duas medições que só a máquina do lu  (`git log -1 main`)
-- `origin/main`: e71682f4 · 2026-09-26T19:26:31+01:00 · RP1: o guião do §0 do brief deixa de ler o motor, porque a corrida «portão» do ramo fechou nas duas medições que só a máquina do lu  (`git log -1 origin/main`)
+- `main`: 4b7b37dc · 2026-09-26T19:26:31+01:00 · RP1: o guião do §0 do brief deixa de ler o motor, porque a corrida «portão» do ramo fechou nas duas medições que só a máquina do lu  (`git log -1 main`)
+- `origin/main`: 4b7b37dc · 2026-09-26T19:26:31+01:00 · RP1: o guião do §0 do brief deixa de ler o motor, porque a corrida «portão» do ramo fechou nas duas medições que só a máquina do lu  (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 14 entrada(s) por registar: `M DECISIONS.md`; `M VISAO.md`; `M design/especime-v3/ISSUES.md`; `M design/especime-v3/PENDENTES-DO-DIRETOR.md`; `M design/observatorio/REGISTO-DE-MELHORIAS.md`; `?? design/especime-v3/critica/LEITURA-rp1bc-2026-09-26.md`; `?? design/especime-v3/critica/LEITURA-rp1bc-2026-09-26.plantas.json`; `?? design/observatorio/BRIEF-RP2-rendimentos-e-precos-os-documentos-e-as-outras-apis.md`  (`git status --short`, código 0)
-- ramos locais: `main e71682f4`  (`git branch`)
+- ramos locais: `main 4b7b37dc`  (`git branch`)
 - ramos no remoto: `main`  (`git ls-remote --heads origin`)
-- worktree: `<a árvore principal do sítio> e71682f4 [main]`
+- worktree: `<a árvore principal do sítio> 4b7b37dc [main]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
-- 36265880639 · `e71682f4` · main · portão · **completed / success** · criada 2026-09-26T19:23:21Z · atualizada 2026-09-26T19:50:51Z
-- 36262554131 · `e71682f4` · rp1-2026-09-26 · portão · **completed / success** · criada 2026-09-26T18:26:35Z · atualizada 2026-09-26T18:54:27Z
-- 36261614642 · `4af5ef88` · rp1-2026-09-26 · portão · **completed / failure** · criada 2026-09-26T18:10:39Z · atualizada 2026-09-26T18:23:24Z
-- 36237004781 · `334cc740` · main · portão · **completed / success** · criada 2026-09-26T10:50:40Z · atualizada 2026-09-26T11:17:51Z
-- 36235901329 · `334cc740` · registos-2026-09-26 · portão · **completed / success** · criada 2026-09-26T10:28:39Z · atualizada 2026-09-26T10:50:30Z
-- 36235148201 · `66b65906` · main · portão · **completed / success** · criada 2026-09-26T10:13:46Z · atualizada 2026-09-26T10:41:05Z
+- 36265880639 · `4b7b37dc` · main · portão · **completed / success** · criada 2026-09-26T19:23:21Z · atualizada 2026-09-26T19:50:51Z
+- 36262554131 · `4b7b37dc` · rp1-2026-09-26 · portão · **completed / success** · criada 2026-09-26T18:26:35Z · atualizada 2026-09-26T18:54:27Z
+- 36261614642 · `7b53a17e` · rp1-2026-09-26 · portão · **completed / failure** · criada 2026-09-26T18:10:39Z · atualizada 2026-09-26T18:23:24Z
+- 36237004781 · `eaffd3c8` · main · portão · **completed / success** · criada 2026-09-26T10:50:40Z · atualizada 2026-09-26T11:17:51Z
+- 36235901329 · `eaffd3c8` · registos-2026-09-26 · portão · **completed / success** · criada 2026-09-26T10:28:39Z · atualizada 2026-09-26T10:50:30Z
+- 36235148201 · `fa2dd418` · main · portão · **completed / success** · criada 2026-09-26T10:13:46Z · atualizada 2026-09-26T10:41:05Z
 
 ### O que está no ar (`/version.json` do sítio publicado)
-- commit no ar: `e71682f4` · construído em 2026-09-26T19:34:15.034Z · ref `main` · production
-- igual a `origin/main` (`e71682f4`): **sim**
+- commit no ar: `4b7b37dc` · construído em 2026-09-26T19:34:15.034Z · ref `main` · production
+- igual a `origin/main` (`4b7b37dc`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
 ### O motor (`~/<projetos>/ResearchHub`)

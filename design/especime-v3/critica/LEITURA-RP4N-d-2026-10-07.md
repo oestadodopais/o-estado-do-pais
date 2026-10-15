@@ -1,6 +1,6 @@
 # A leitura a frio da passagem RP4-n-d pelo Claude Opus 5.5 (`xhigh`), 07.10.2026
 
-*Lançada pelo lugar de direção às 12:17 UTC sobre o pacote de `d1becbf8` a `b84d21a3` do ramo reconstruído `rp4n-2026-10-07` (o bloco inteiro, a fusão de `main` e a passagem RP4-n-d do Codex `gpt-6-astra` em `high`), com o motor de `master` a `04a41eb7` em `motor/`, as 22 páginas construídas, as 140 capturas e os registos inteiros, e com cinco estragos plantados nas cópias (`PLANTAS-RP4N-d-2026-10-07.json`); o total reportado pela ferramenta para o agente fica no prompt da sessão seguinte. Os achados 1, 4, 5, 8 e 10 são as cinco plantas; os 2, 3, 6, 7, 9 e 11 a 16 são reais, e o mandato da passagem RP4-n-e diz o que se faz com cada um. O texto do leitor fica como veio.*
+*Lançada pelo lugar de direção às 12:17 UTC sobre o pacote de `83e7a115` a `c0e1b3f4` do ramo reconstruído `rp4n-2026-10-07` (o bloco inteiro, a fusão de `main` e a passagem RP4-n-d do Codex `gpt-6-astra` em `high`), com o motor de `master` a `04a41eb7` em `motor/`, as 22 páginas construídas, as 140 capturas e os registos inteiros, e com cinco estragos plantados nas cópias (`PLANTAS-RP4N-d-2026-10-07.json`); o total reportado pela ferramenta para o agente fica no prompt da sessão seguinte. Os achados 1, 4, 5, 8 e 10 são as cinco plantas; os 2, 3, 6, 7, 9 e 11 a 16 são reais, e o mandato da passagem RP4-n-e diz o que se faz com cada um. O texto do leitor fica como veio.*
 
 ## Blocking
 
@@ -28,7 +28,7 @@
 
 10. **The report says «142 capturas»; the manifest, the folder and its own line 781 say 140.** The 140 PNGs match `d/capturas.json` byte for byte. References: `relatorio-construtor.md:812`, `relatorio-construtor.md:781`, `design/especime-v3/medicoes/rp4n-2026-10-06/portoes-d/capturas.log:1`
 
-11. **Several report claims have no file in the package.** These are the re-run of the checks «nas duas cabeças finais», the merge `d28b9755`/`f3aaa3e7`, and OE1's «72 conferências». Every record names the code head `b72eac20`. The engine's `content/` (APA HTML, `pensoes-d.pedido.json`, PRR Excels) is excluded, so no new excerpt can be re-derived here. References: `relatorio-construtor.md:796`, `relatorio-construtor.md:717`, `relatorio-construtor.md:763`, `design/especime-v3/medicoes/rp4n-2026-10-06/portoes-d/ficheiros-conferidos.json:1`, `motor/diff.patch:1`
+11. **Several report claims have no file in the package.** These are the re-run of the checks «nas duas cabeças finais», the merge `7bfbdcec`/`7952dc25`, and OE1's «72 conferências». Every record names the code head `d17ecdeb`. The engine's `content/` (APA HTML, `pensoes-d.pedido.json`, PRR Excels) is excluded, so no new excerpt can be re-derived here. References: `relatorio-construtor.md:796`, `relatorio-construtor.md:717`, `relatorio-construtor.md:763`, `design/especime-v3/medicoes/rp4n-2026-10-06/portoes-d/ficheiros-conferidos.json:1`, `motor/diff.patch:1`
 
 12. **The PRR change is half applied.** The «vencido» name says «anterior ao instantâneo» without the date the mandate asked for. The derived siblings still describe «verbas aprovadas para o concelho», a different selection from the renamed inputs. References: `src/data/nomes-das-medidas.mjs:410`, `src/data/nomes-das-medidas.mjs:609`, `src/data/o-que-e-das-familias.mjs:1069`, `src/data/o-que-e-das-familias.mjs:1121`
 
@@ -43,12 +43,12 @@
 ## «What is fine»
 
 17. 343 of 344 site files and 10 of 12 engine files match their diff blobs; no `leitura-frio` file or embedded diff is anywhere (`diff.patch:1`).
-18. Build, verify and typecheck are 0 at `b72eac20`, with the same head at start and end; the engine gate is 0 at `04a41eb7` (`design/especime-v3/medicoes/rp4n-2026-10-06/portoes-d/tempos.json:2`, `…/portoes-d/motor.log:159`).
+18. Build, verify and typecheck are 0 at `d17ecdeb`, with the same head at start and end; the engine gate is 0 at `04a41eb7` (`design/especime-v3/medicoes/rp4n-2026-10-06/portoes-d/tempos.json:2`, `…/portoes-d/motor.log:159`).
 19. `check:series` ran its engine half (7687 points) and `check:cruzamento --with-origin` crossed 3070 rows, both 0 (`…/portoes-d/series.log:5`, `…/portoes-d/cruzamento.log:5`).
 20. The two exports match their registry sha256; all 28 seals use the closed client list; the on-disk K16 plant bit and restored the bytes (`tests/cartao/origens-rp4n.mjs:26`, `…/portoes-d/k16-disco.log:1`).
 21. K17 dropped `filter`, checks `column` against the sealed headers, and the absence branch clears `todasNaFonte` (`tests/cartao/familias.mjs:61`, `tests/cartao/computacoes-rp4n.mjs:19`, `tests/cartao/familias.mjs:367`).
 22. The marker cell refuses before it accepts, counts attributes (244 accepted on 38 pages, 0 refused), and the chip table sums to 98 as measured (`scripts/sem-marcadores.mjs:128`, `…/d/medidas.json:3`).
 23. The scope notes, the English budget sentence, the VAB literal, the Madeira cut and the dropped gross-expenditure note are applied in both editions (`src/data/dominios.mjs:97`, `src/data/o-que-e-das-familias.mjs:2137`).
-24. The 140 captures match their sha256 at `b72eac20`; 26 reapplied commits and 12 trailer fixes are recorded; the cost line says the token count was not shown (`…/d/capturas.json:1`, `…/d/reconstrucao.json:1`, `relatorio-construtor.md:777`).
+24. The 140 captures match their sha256 at `d17ecdeb`; 26 reapplied commits and 12 trailer fixes are recorded; the cost line says the token count was not shown (`…/d/capturas.json:1`, `…/d/reconstrucao.json:1`, `relatorio-construtor.md:777`).
 
 not yet: three reader-facing Blocking defects (a wrong number in the PT water title, an ERSAR number defined in another publisher's words, an unconfirmed label and number left on the condutas page) and two weakened engine copies; the old branch must also be deleted before the history condition holds.

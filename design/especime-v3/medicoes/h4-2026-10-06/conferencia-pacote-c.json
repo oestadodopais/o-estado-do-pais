@@ -1,6 +1,6 @@
 {
   "comando": "python3 design/especime-v3/medicoes/h4-2026-10-06/conferir-pacote.py --passagem-c",
-  "cabeca_codigo": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
+  "cabeca_codigo": "8b30451fef33009019af39dbcdb3eb3bfcb0768c",
   "codigos": {
     "build": 0,
     "verify": 0,

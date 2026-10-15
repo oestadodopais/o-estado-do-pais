@@ -9,7 +9,7 @@ mesmo JSON. Cada medição traz o nome por que o §0 a cita, o valor, o comando 
 conhecido-positivo do MESMO predicado (M5, §1.122).
 
 CADA MEDIÇÃO É ESTÁVEL DE PROPÓSITO. As fontes leem-se na cabeça que estava no ar
-a 23.09.2026 à tarde, `4b99dea3` (o R1 aterrado), por `git show`; as páginas
+a 23.09.2026 à tarde, `a783468f` (o R1 aterrado), por `git show`; as páginas
 construídas leem-se de cópias congeladas em
 `design/especime-v3/medicoes/b2-2026-09-23/paginas/`, presas pelo sha256 escrito
 no ficheiro, construídas dessa cabeça (mais o `nomes.json` do motor de 23.09, que
@@ -27,7 +27,7 @@ import subprocess
 import sys
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-CABECA = '4b99dea3'
+CABECA = 'a783468f'
 COPIAS = os.path.join(RAIZ, 'design', 'especime-v3', 'medicoes', 'b2-2026-09-23', 'paginas')
 COMANDO = 'python3 design/observatorio/medidas/BRIEF-B2.py'
 

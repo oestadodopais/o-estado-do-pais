@@ -1,14 +1,14 @@
 # Cópia de referência do guião usado a 06.10.2026, com os caminhos da máquina substituídos (<sitio>, <motor>, <scratchpad>, <casa>, <utilizador>); não corre assim, reescreve-se com os caminhos reais fora do repositório.
 #!/bin/sh
 # Monta o pacote da leitura do Codex sobre a passagem H4-e (a redação do lugar de direção): o diff desde a cabeça da H4-d
-# (81e3de31) até à cabeça final, os ficheiros mudados inteiros, a pasta das medições, as páginas construídas do Método nas
+# (d88596f4) até à cabeça final, os ficheiros mudados inteiros, a pasta das medições, as páginas construídas do Método nas
 # duas edições, e a leitura curta da H4-d.
 set -eu
 S=<scratchpad>
 R=<sitio>
 O=$R/<worktrees>/aterragem-2026-10-06
 PAC=${PAC_LEITURA:-$S/h4/pacote-leitura-e}
-BASE=${BASE_LEITURA:-81e3de31}
+BASE=${BASE_LEITURA:-d88596f4}
 CAB=${CAB_LEITURA:-$(git -C "$O" rev-parse --short=8 HEAD)}
 rm -rf "$PAC" "$PAC.plantas.json"
 paginas=""

@@ -1,9 +1,9 @@
 {
   "bloco": "R4-b",
   "guiao": "design/especime-v3/medicoes/r4-2026-10-05/captar-r4.mjs --r4b",
-  "cabeca": "db033a39f55bd20374fc16d295d35116353256e5",
+  "cabeca": "789640466729766f9f77a7a3e265eb908ce2cada",
   "estado_seguido": "",
-  "construcao": "090557ab999d324b6e52f22a6f8408e5c3737355",
+  "construcao": "fad491a6661773e8c70dfb9b599b14f0001bc382",
   "por_cima_da_construcao": [
     "design/especime-v3/medicoes/r4-2026-10-05/captar-r4.mjs",
     "design/especime-v3/medicoes/r4-2026-10-05/conferencias-r4b.sh",

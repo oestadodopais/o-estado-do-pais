@@ -12,7 +12,7 @@
     "clamp": true
   },
   "antes": {
-    "cabeca": "7f65829935e838c29129be0187072c5c8d87c39f",
+    "cabeca": "73c5c3fb1da61b0ab5ea3e33e02dc0ae8c1b3e9c",
     "paginas": {
       "pais_pt": {
         "camaras_periodo": null,
@@ -775,7 +775,7 @@
     }
   },
   "depois": {
-    "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+    "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
     "paginas": {
       "pais_pt": {
         "camaras_periodo": "em 2024",
@@ -1514,7 +1514,7 @@
         "falhas": [],
         "origem": "captor antigo do antes, que só escrevia manifesto após as asserções"
       },
-      "cabeca": "7f65829935e838c29129be0187072c5c8d87c39f",
+      "cabeca": "73c5c3fb1da61b0ab5ea3e33e02dc0ae8c1b3e9c",
       "larguras": [
         390,
         768,
@@ -2660,7 +2660,7 @@
         "passou": true,
         "falhas": []
       },
-      "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+      "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
       "larguras": [
         390,
         768,
@@ -6932,38 +6932,38 @@
     "novas_n": 6
   },
   "commits": [
-    "7110ca60 B2: a faixa também nomeia o dono da referência nacional",
+    "85428315 B2: a faixa também nomeia o dono da referência nacional",
     "e774add0 B2: o medidor do bloco conta a marca entre o valor e a unidade no invólucro novo",
-    "d1bf2c2b B2: os guiões da segunda passagem de correção e a leitura a frio da peça 1",
-    "043f7291 B2: o inventário das frases da segunda passagem de correção",
-    "a425f9a3 B2: o apóstrofo tipográfico na frase inglesa do veredicto",
-    "f033b7aa B2: a V2 compara a linha do valor das câmaras parte a parte, a contagem e o período",
-    "2dea9e22 B2: cada pedaço de cada pergunta com a sua origem, e a K16 do check:cartao a conferi-lo",
-    "49a63cca B2: o crescimento da despesa líquida de 2024 provado na nota 9 do parecer do CFP, reexportado do motor",
-    "8f7b2c27 B2: datar o veredicto e nomear o dono das referências",
-    "a4cc0e17 B2: provar o período das câmaras e usar uma porta comum",
-    "6151dec5 B2: integrar a hierarquia das cabeças no verify",
-    "ed44e493 B2: guardar a prova do motor e as plantas que estavam bloqueadas",
-    "5ffcaa94 B2: fechar as provas da correção e a reprodução do relatório",
-    "5d4e0c99 B2: aplicar ao título europeu a regra dos títulos interiores",
-    "f2bd5bff B2: reexportar a associação provada do agregado europeu",
-    "7c381662 B2: relatar a prova e as decisões necessárias à aceitação",
-    "57124036 B2: guardar capturas finais, plantas e medições dos pontos suspensos",
-    "bc44858a B2: levar os estilos da origem ao recibo novo",
-    "1920024c B2: declarar os tipos da língua e das referências opcionais",
-    "4aa1c128 B2: tornar reproduzíveis a medição e a prova do motor",
-    "ff9d5662 B2: conferir as portas obrigatórias e medir as fichas novas",
-    "8479ff91 B2: registar perguntas e estados no inventário das frases",
-    "ffe43c06 B2: tornar acessíveis as origens da pergunta dos inquilinos",
-    "353d7bb8 B2: guardar o antes nas páginas e larguras do mandato",
-    "3283b6b5 B2: compor o veredicto e contar as câmaras contra o limite",
-    "b715dda6 B2: mostrar estado em palavras e unir valor à unidade",
-    "58a0b81d B2: declarar perguntas e referências numa tabela comum",
-    "8999e903 B2: escrever a unidade monetária da linha nas leituras",
-    "f8e82713 B2: importar períodos anteriores e habitação dos inquilinos",
-    "97e84232 A emenda do brief do B2 depois da construção da peça 1: a premissa dos dois títulos estava errada no geral (o guião leu a regra geral e as páginas interiores usam a compacta), a associação da linha da União prova-se na linha e o portão fica, e dois cartões ficam sem régua com a razão da fonte",
-    "13da4dc2 A guarda do caminho absoluto sem as aspas angulares coladas ao nome da variável: o sh lia «$worktree»» como um nome e morria em «unbound variable»; a planta (um caminho relativo) sai com 9 e a razão",
-    "1be30174 O lançamento do construtor do Codex passa ao lugar de direção (§1.128), por decisão do diretor; o guião recusa um caminho relativo da worktree (M29)"
+    "9f479883 B2: os guiões da segunda passagem de correção e a leitura a frio da peça 1",
+    "7d1ab946 B2: o inventário das frases da segunda passagem de correção",
+    "4c408b3e B2: o apóstrofo tipográfico na frase inglesa do veredicto",
+    "43051f39 B2: a V2 compara a linha do valor das câmaras parte a parte, a contagem e o período",
+    "2d277d18 B2: cada pedaço de cada pergunta com a sua origem, e a K16 do check:cartao a conferi-lo",
+    "ee8dc92f B2: o crescimento da despesa líquida de 2024 provado na nota 9 do parecer do CFP, reexportado do motor",
+    "332e6f0d B2: datar o veredicto e nomear o dono das referências",
+    "805c796e B2: provar o período das câmaras e usar uma porta comum",
+    "016cd961 B2: integrar a hierarquia das cabeças no verify",
+    "912c280b B2: guardar a prova do motor e as plantas que estavam bloqueadas",
+    "b49a22ff B2: fechar as provas da correção e a reprodução do relatório",
+    "b42ad8a3 B2: aplicar ao título europeu a regra dos títulos interiores",
+    "7ee4e264 B2: reexportar a associação provada do agregado europeu",
+    "088ea739 B2: relatar a prova e as decisões necessárias à aceitação",
+    "4217553c B2: guardar capturas finais, plantas e medições dos pontos suspensos",
+    "d0543fe6 B2: levar os estilos da origem ao recibo novo",
+    "5f9a67bd B2: declarar os tipos da língua e das referências opcionais",
+    "bf455c5f B2: tornar reproduzíveis a medição e a prova do motor",
+    "9ac7a373 B2: conferir as portas obrigatórias e medir as fichas novas",
+    "f78d1137 B2: registar perguntas e estados no inventário das frases",
+    "de463227 B2: tornar acessíveis as origens da pergunta dos inquilinos",
+    "1096d617 B2: guardar o antes nas páginas e larguras do mandato",
+    "bd9b4b0f B2: compor o veredicto e contar as câmaras contra o limite",
+    "d235f183 B2: mostrar estado em palavras e unir valor à unidade",
+    "3cb29441 B2: declarar perguntas e referências numa tabela comum",
+    "518991a6 B2: escrever a unidade monetária da linha nas leituras",
+    "19b0505a B2: importar períodos anteriores e habitação dos inquilinos",
+    "401743d2 A emenda do brief do B2 depois da construção da peça 1: a premissa dos dois títulos estava errada no geral (o guião leu a regra geral e as páginas interiores usam a compacta), a associação da linha da União prova-se na linha e o portão fica, e dois cartões ficam sem régua com a razão da fonte",
+    "eb890d55 A guarda do caminho absoluto sem as aspas angulares coladas ao nome da variável: o sh lia «$worktree»» como um nome e morria em «unbound variable»; a planta (um caminho relativo) sai com 9 e a razão",
+    "038f273c O lançamento do construtor do Codex passa ao lugar de direção (§1.128), por decisão do diretor; o guião recusa um caminho relativo da worktree (M29)"
   ],
   "commits_n": 32,
   "plantas": {
@@ -7686,7 +7686,7 @@
     "sha256_do_ficheiro": "1b319453b94ba60d95bf2a1d8d175e300495c54236a9858041183f386b837925"
   },
   "hierarquia": {
-    "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+    "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
     "construido_em": "2026-09-23T22:21:11.069Z",
     "inicio": "2026-09-23T22:34:01.091Z",
     "fim": "2026-09-23T22:34:04.148Z",
@@ -9757,7 +9757,7 @@
             ]
           }
         ],
-        "stdout": "check:cabeca C1; construção 7110ca608ef6addba6771a50b5c47685e4e18026; 0 cabeças; 4 mordidas; 0 reposições\ncheck:cabeca: FAIL\n",
+        "stdout": "check:cabeca C1; construção 854283154b3c66ac4594e3798340c4ee4ae4a55f; 0 cabeças; 4 mordidas; 0 reposições\ncheck:cabeca: FAIL\n",
         "stderr": "/uniao-europeia/: C1, wordmark 26.112 px, H1 26 px (pt, 768 px)\n/uniao-europeia/: C1, wordmark 34 px, H1 32.768 px (pt, 1024 px)\n/en/european-union/: C1, wordmark 26.112 px, H1 26 px (en, 768 px)\n/en/european-union/: C1, wordmark 34 px, H1 32.768 px (en, 1024 px)\n"
       }
     ],
@@ -9766,7 +9766,7 @@
     "sha256_do_ficheiro": "c55f7ef4222ab7e0306017848b43c4258e370110fce6157337b263890e2e9d77"
   },
   "hierarquia_resumo": {
-    "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+    "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
     "cabecas_medidas": 110,
     "familias": 11,
     "mordidas": 4,
@@ -9774,8 +9774,8 @@
   },
   "perguntas": {
     "comando": "python3 design/especime-v3/medicoes/b2-2026-09-23/medir-perguntas.py",
-    "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
-    "dist_construido_de": "7110ca608ef6addba6771a50b5c47685e4e18026",
+    "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
+    "dist_construido_de": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
     "motor_cabeca": "0f081711750492991306ff87d056ab4f52dae306",
     "k16": {
       "comando": "node tests/cartao/cartao.mjs --json",
@@ -9852,7 +9852,7 @@
       }
     },
     "copia_anterior": {
-      "commit": "ed44e493",
+      "commit": "912c280b",
       "dist_construido_de": "2415107b6ab38a00bba557dc4da9e101b8b83ea1"
     },
     "perguntas_com_texto_mudado": [
@@ -9965,7 +9965,7 @@
     "sha256_do_ficheiro": "68c3bc10f671f307e9867ca3e2466f803f509f7fc2fe65c71f773fdc9c65e086"
   },
   "plantas_desbloqueadas": {
-    "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+    "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
     "estatuto": "executadas, com base limpa e reposição conferida",
     "portao": "node scripts/gate-html.mjs",
     "base": {
@@ -9976,7 +9976,7 @@
       "codigo": 0,
       "inicio": "2026-09-23T22:34:15.626210+00:00",
       "fim": "2026-09-23T22:34:50.210668+00:00",
-      "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+      "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
       "log": "correcao-html-limpo.log",
       "sha256_log": "0477c436086ff7589f47534f940448a508f211ef3529c6c8a5d382f45b8f05ce"
     },
@@ -9988,7 +9988,7 @@
       "codigo": 0,
       "inicio": "2026-09-23T22:35:59.110476+00:00",
       "fim": "2026-09-23T22:36:33.485471+00:00",
-      "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+      "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
       "log": "correcao-html-reposto.log",
       "sha256_log": "0477c436086ff7589f47534f940448a508f211ef3529c6c8a5d382f45b8f05ce"
     },
@@ -11004,7 +11004,7 @@
       "trabalho": true,
       "estatuto": "árvore de trabalho, sem atribuir a construção a um commit",
       "dist_construido_de": null,
-      "antes_cabeca": "7f65829935e838c29129be0187072c5c8d87c39f",
+      "antes_cabeca": "73c5c3fb1da61b0ab5ea3e33e02dc0ae8c1b3e9c",
       "regua": "check:lugar original de cada árvore, AMOSTRA=100000, com composição independente conferida",
       "codigos": {
         "antes": 0,
@@ -11835,7 +11835,7 @@
       "trabalho": true,
       "estatuto": "árvore de trabalho, sem atribuir a construção a um commit",
       "dist_construido_de": null,
-      "antes_cabeca": "7f65829935e838c29129be0187072c5c8d87c39f",
+      "antes_cabeca": "73c5c3fb1da61b0ab5ea3e33e02dc0ae8c1b3e9c",
       "regua": "check:lugar original de cada árvore, AMOSTRA=100000, com composição independente conferida",
       "codigos": {
         "antes": 0,
@@ -12451,11 +12451,11 @@
       "sha256_do_ficheiro": "b0f23a5e65f35ed352b02acd395e81e7c8376c2ffa4df512ffeb8f8c8bc82f39"
     },
     "final": {
-      "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+      "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
       "trabalho": false,
       "estatuto": "construção com versão do commit conferida",
-      "dist_construido_de": "7110ca608ef6addba6771a50b5c47685e4e18026",
-      "antes_cabeca": "7f65829935e838c29129be0187072c5c8d87c39f",
+      "dist_construido_de": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
+      "antes_cabeca": "73c5c3fb1da61b0ab5ea3e33e02dc0ae8c1b3e9c",
       "regua": "check:lugar original de cada árvore, AMOSTRA=100000, com composição independente conferida",
       "codigos": {
         "antes": 0,
@@ -16790,7 +16790,7 @@
   "portoes": {
     "build": {
       "codigo": 0,
-      "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+      "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
       "motor_cabeca": "0f081711750492991306ff87d056ab4f52dae306",
       "inicio": "2026-09-23T22:17:37.188268+00:00",
       "fim": "2026-09-23T22:22:34.567345+00:00",
@@ -16799,7 +16799,7 @@
     },
     "verify": {
       "codigo": 0,
-      "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+      "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
       "motor_cabeca": "0f081711750492991306ff87d056ab4f52dae306",
       "inicio": "2026-09-23T22:24:05.428412+00:00",
       "fim": "2026-09-23T22:32:10.062685+00:00",
@@ -16808,7 +16808,7 @@
     },
     "typecheck": {
       "codigo": 0,
-      "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+      "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
       "motor_cabeca": "0f081711750492991306ff87d056ab4f52dae306",
       "inicio": "2026-09-23T22:32:33.910678+00:00",
       "fim": "2026-09-23T22:32:34.131207+00:00",
@@ -17077,7 +17077,7 @@
       {
         "portao": "build",
         "comando": "npm run build",
-        "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+        "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
         "codigo": 0,
         "inicio": "2026-09-23T22:17:37.188268+00:00",
         "fim": "2026-09-23T22:22:34.567345+00:00",
@@ -17100,7 +17100,7 @@
       {
         "portao": "verify",
         "comando": "npm run verify",
-        "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+        "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
         "codigo": 0,
         "inicio": "2026-09-23T22:24:05.428412+00:00",
         "fim": "2026-09-23T22:32:10.062685+00:00",
@@ -17123,7 +17123,7 @@
       {
         "portao": "typecheck",
         "comando": "npm run typecheck",
-        "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+        "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
         "codigo": 0,
         "inicio": "2026-09-23T22:32:33.910678+00:00",
         "fim": "2026-09-23T22:32:34.131207+00:00",

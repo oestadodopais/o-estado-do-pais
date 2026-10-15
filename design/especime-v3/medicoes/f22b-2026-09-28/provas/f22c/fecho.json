@@ -12,7 +12,7 @@
       "nome": "build",
       "comando": "npm run build",
       "codigo": 0,
-      "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+      "cabeca": "9ecc5c8bbbfc0f460a62569a711cd6601334bee9",
       "segundos": 231.698,
       "ficheiro": "portoes/f22c/build.codigo"
     },
@@ -20,7 +20,7 @@
       "nome": "verify",
       "comando": "npm run verify",
       "codigo": 0,
-      "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+      "cabeca": "9ecc5c8bbbfc0f460a62569a711cd6601334bee9",
       "segundos": 849.736,
       "ficheiro": "portoes/f22c/verify.codigo"
     },
@@ -28,7 +28,7 @@
       "nome": "typecheck",
       "comando": "npm run typecheck",
       "codigo": 0,
-      "cabeca": "934af43bfb1f8205ad81bafa27b32c0d0fc8aadc",
+      "cabeca": "9ecc5c8bbbfc0f460a62569a711cd6601334bee9",
       "segundos": 0.828,
       "ficheiro": "portoes/f22c/typecheck.codigo"
     }

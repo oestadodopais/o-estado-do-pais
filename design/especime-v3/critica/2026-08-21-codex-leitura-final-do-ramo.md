@@ -1,6 +1,6 @@
 # Leitura cruzada final do ramo (Codex, sem contexto), 2026-08-21, noite: o sítio inteiro antes da fusão
 
-*Sobre a construção em `41161d6` (depois da etapa 5). Leitor e método das leituras anteriores; o prompt alargado ao sítio inteiro e aos registos dos cartões; o pacote com os recortes e os documentos alojados (sem os 532 PNG, de propósito). Cinco plantas: P1 89,7 → 89,8 na primeira página; P2 uma palavra da frase governada «A cor» na página do Método («só onde» → «sempre que»); P3 valor antigo e novo trocados numa entrada do registo de correções; P4 uma edição com data nula a mostrar «Publicação: 2026-08-12»; P5 um registo de cartão com 89,6 contra a linha 89,7. **Cinco de cinco** (achados 1, 2, 3, 8, 4).*
+*Sobre a construção em `69f2f43` (depois da etapa 5). Leitor e método das leituras anteriores; o prompt alargado ao sítio inteiro e aos registos dos cartões; o pacote com os recortes e os documentos alojados (sem os 532 PNG, de propósito). Cinco plantas: P1 89,7 → 89,8 na primeira página; P2 uma palavra da frase governada «A cor» na página do Método («só onde» → «sempre que»); P3 valor antigo e novo trocados numa entrada do registo de correções; P4 uma edição com data nula a mostrar «Publicação: 2026-08-12»; P5 um registo de cartão com 89,6 contra a linha 89,7. **Cinco de cinco** (achados 1, 2, 3, 8, 4).*
 
 ## Triagem do lugar de direção
 
@@ -115,7 +115,7 @@ I would **not merge this site as is**. I would merge it after the critical and h
 ## As plantas (plantas.json)
 ```json
 {
-  "commit": "41161d6",
+  "commit": "69f2f43",
   "plantas": [
     {
       "ficheiro": "dist/index.html",

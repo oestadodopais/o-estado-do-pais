@@ -1,6 +1,6 @@
 # Nota do construtor · A voz do livro-razão (27.08.2026)
 
-*Ramo `voz-do-livro-razao-2026-08-27`, a partir de `main` em `ef46826`.
+*Ramo `voz-do-livro-razao-2026-08-27`, a partir de `main` em `598ce8f`.
 Construtor: Claude Opus 5. Objecto: a decisão do diretor de 27.08.2026 que fecha
 as duas linhas deixadas «à decisão do diretor» no `PROTOCOLO-DAS-LEITURAS.md` e
 nas exceções do `VOZ-MARCADORES.md`.*
@@ -87,7 +87,7 @@ construção: o registo das revisões marca `voz-do-livro-razao` como `por ler`.
 
 **Duas células de `tests/linha/correcoes-b.mjs` já estavam vermelhas em `main`**,
 e continuam: a B10 de `municipio pt` e a de `municipio en`. **Foi medido e não
-deduzido:** com os cinco ficheiros deste bloco repostos aos de `ef46826` e a
+deduzido:** com os cinco ficheiros deste bloco repostos aos de `598ce8f` e a
 árvore reconstruída, a régua sai a 1 com as mesmas duas células, 2 de 32. As duas
 apontam para a página de Évora, que este bloco não toca: um alvo de 82,5 × 18,4 px, que é o
 marcador `[a verificar]` posto no nome do presidente interino pela correção I77

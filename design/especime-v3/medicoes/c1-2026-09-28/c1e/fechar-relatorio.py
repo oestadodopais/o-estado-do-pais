@@ -130,7 +130,7 @@ da sessão indica-o fora do ramo.
 | Cabeça | Assunto |
 | --- | --- |
 '''
-for linha in git('log','--reverse','--format=%H %s','6bbe1cee..HEAD').splitlines():
+for linha in git('log','--reverse','--format=%H %s','ef700579..HEAD').splitlines():
     h,assunto=linha.split(' ',1);texto+=f'| `{h}` | {assunto} |\n'
 texto+=f"\nMotor C1e: `{m['cabeca_motor']}`. Os commits anteriores do motor estão nas secções anteriores e na lista integral de `medidas.json`. Nenhum envio para o remoto.\n"
 p=BLOCO/'LEIA-ME.md';base=p.read_text().split('\n## C1e\n')[0].rstrip()

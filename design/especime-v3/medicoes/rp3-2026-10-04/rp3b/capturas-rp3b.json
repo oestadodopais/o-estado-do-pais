@@ -1,14 +1,14 @@
 {
   "bloco": "RP3",
   "construcao": {
-    "commit": "b3e9e0ac337a960f80fcc641efb001b669bc107c",
+    "commit": "dbaab37d74dea8853c8fa1a89e2929970e658d5c",
     "ref": "rp3-2026-10-04-b",
     "env": "local",
     "origem": "git",
     "motivo": null,
     "construido_em": "2026-10-04T09:20:23.821Z"
   },
-  "cabeca_esperada": "b3e9e0ac337a960f80fcc641efb001b669bc107c",
+  "cabeca_esperada": "dbaab37d74dea8853c8fa1a89e2929970e658d5c",
   "larguras": [
     390,
     768,

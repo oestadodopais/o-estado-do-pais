@@ -1,12 +1,12 @@
 {
   "passagem": "K2-b",
-  "cabeca": "b7718d017da289c27d12a849acc2375b14974a97",
+  "cabeca": "7648068a4190de73dda5cc19f79d3fee7a5e5548",
   "construcao": {
-    "commit": "b7718d017da289c27d12a849acc2375b14974a97",
+    "commit": "7648068a4190de73dda5cc19f79d3fee7a5e5548",
     "construido_em": "2026-10-02T10:27:52.463Z"
   },
   "construcao_do_k2": {
-    "commit": "a6b4de99ee44ec78c8552e1281cb9842ae801d1c"
+    "commit": "b9d8ee3b5d9801911ca36be94fd66e438685b195"
   },
   "medidas": [
     {
@@ -226,7 +226,7 @@
       "valor": true,
       "comando": "design/especime-v3/critica/REVISOES-DO-INVENTARIO.md · a linha «k2»",
       "conhecido_positivo": {
-        "o_que": "o mesmo leitor acha «por ler» na linha do K2 na cabeça cc7734fe",
+        "o_que": "o mesmo leitor acha «por ler» na linha do K2 na cabeça 0ad7bf78",
         "encontrado": true
       }
     },
@@ -243,13 +243,13 @@
         390,
         1280
       ],
-      "cabeca": "1dea65729ee8ffa18c4da7fc69aba505183393ff",
+      "cabeca": "c4a868c3961cf5ee96ce6d32bf73fcf50abc24d2",
       "pedidos_recusados_para_fora": 0
     },
     {
       "nome": "decisoes_citadas_nos_ficheiros_tocados_pela_k2_b",
       "valor": 22,
-      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo cc7734fe..<cabeça>",
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo 0ad7bf78..<cabeça>",
       "conhecido_positivo": {
         "o_que": "a §1.127 está na lista",
         "encontrado": true
@@ -286,8 +286,8 @@
           "codigo": 0,
           "segundos": 0
         },
-        "cabeca": "b7718d017da289c27d12a849acc2375b14974a97",
-        "cabeca_no_fim": "b7718d017da289c27d12a849acc2375b14974a97"
+        "cabeca": "7648068a4190de73dda5cc19f79d3fee7a5e5548",
+        "cabeca_no_fim": "7648068a4190de73dda5cc19f79d3fee7a5e5548"
       }
     }
   ]

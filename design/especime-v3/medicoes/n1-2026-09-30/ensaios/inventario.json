@@ -1,6 +1,6 @@
 {
   "comando": "node scripts/medir-defeitos.mjs --json",
-  "cabeca": "2cbc5cc46327697469347b98a2445494027861f4",
+  "cabeca": "a5139c5535ac4232bd9025fac4c1f8acb10050f8",
   "inicio": "2026-09-30T09:31:08.553Z",
   "fim": "2026-09-30T09:31:30.138Z",
   "segundos": 21.58077275,

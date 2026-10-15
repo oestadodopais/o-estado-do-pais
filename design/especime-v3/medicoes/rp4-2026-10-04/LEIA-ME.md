@@ -4,7 +4,7 @@ Implementação construída nesta worktree, no ramo `rp4-2026-10-04`. Modelo con
 
 ## O ponto de partida
 
-O §0 foi reproduzido antes das alterações, pelo guião do brief, e bate byte a byte com `BRIEF-RP4.json`. A reprodução está em `brief-reproduzido.json`; o resumo e o conhecido-positivo estão em `medidas.json`. O guião lê a cabeça histórica `905105b7`, não a cabeça inicial desta worktree.
+O §0 foi reproduzido antes das alterações, pelo guião do brief, e bate byte a byte com `BRIEF-RP4.json`. A reprodução está em `brief-reproduzido.json`; o resumo e o conhecido-positivo estão em `medidas.json`. O guião lê a cabeça histórica `4d91d3b2`, não a cabeça inicial desta worktree.
 
 O contador do §0 confunde pontos com lacunas: a expressão `^  - periodo:` também conta os períodos da lista de lacunas. Tanto a cabeça histórica como a cabeça recebida, `61519cea8c93badd0a049b8993790e4dfec46637`, têm 4 131 pontos e 2 lacunas. A soma dá os 4 133 que o brief chama pontos. `medidas.json` conserva a leitura do YAML nas duas cabeças e uma amostra que reproduz o erro do contador. Não se perderam pontos entre elas. O brief selado fica intacto; a correção da sua medida fica indicada para o lugar de direção.
 
@@ -116,13 +116,13 @@ Reprodução das medidas: `node design/especime-v3/medicoes/rp4-2026-10-04/medir
 
 ## RP4-b
 
-Passagem de 05.10.2026, pelo mandato de direção depois da leitura a frio. O registo acima conserva a primeira entrega. Esta secção substitui a decisão do cartão europeu e identifica as provas refeitas nesta passagem. A I196 continua fechada: o brief corrigido mede a cabeça histórica `905105b7`.
+Passagem de 05.10.2026, pelo mandato de direção depois da leitura a frio. O registo acima conserva a primeira entrega. Esta secção substitui a decisão do cartão europeu e identifica as provas refeitas nesta passagem. A I196 continua fechada: o brief corrigido mede a cabeça histórica `4d91d3b2`.
 
-A decisão da antiga I195 do RP4, agora I197, está implementada em `48e4ba5c`. O cartão `ihpc-variacao-homologa` desenha a série da linha europeia que a sua régua mostra, com «União Europeia» e a porta para o recibo europeu na edição da página. A regra abrange a série própria e a série da comparação declarada. Saíram o cartão europeu autónomo, a leitura, a sua auditoria e a unidade que só ele usava. A E2 voltou ao catálogo nacional. As cadeias globais do desenho continuam em uso nos recibos; nenhuma delas era exclusiva do cartão retirado.
+A decisão da antiga I195 do RP4, agora I197, está implementada em `446c365b`. O cartão `ihpc-variacao-homologa` desenha a série da linha europeia que a sua régua mostra, com «União Europeia» e a porta para o recibo europeu na edição da página. A regra abrange a série própria e a série da comparação declarada. Saíram o cartão europeu autónomo, a leitura, a sua auditoria e a unidade que só ele usava. A E2 voltou ao catálogo nacional. As cadeias globais do desenho continuam em uso nos recibos; nenhuma delas era exclusiva do cartão retirado.
 
 As conferências intermédias do cartão, das séries, das entradas, da voz e dos tipos passaram. As plantas da K20 incluem um cartão sem série própria nem comparação com série, a ausência da série própria, a ausência da comparação, a troca da série, da legenda e da porta, a ordem e um cartão com ambas as séries. A S5 continua a recusar uma comparação europeia desfasada. Os registos `rp4-b-cartao.json`, `rp4-b-series.json` e `rp4-b-entradas.json` guardam os controlos e as mordidas; estas conferências não substituem os portões finais.
 
-A leitura e o registo das plantas chegaram durante a espera, antes do rebase. A espera e cada conferência ficam em `rp4-b-espera.json`. Os achados foram lidos por inteiro; as correções reais seguintes estão em `eb62d556`, após o rebase. As secções do H2 e do RP4 ficaram nos registos; a I195 do H2 e a I197 do RP4 têm números distintos. O rebase terminou sobre `fb364fe4`. Os três códigos finais, lidos dos ficheiros depois da corrida, são 0; as medidas ficam abaixo. O custo parcial é lido da sessão por `custo-rp4-b.py`; a linha final `tokens used` só fica disponível depois de o lançador terminar.
+A leitura e o registo das plantas chegaram durante a espera, antes do rebase. A espera e cada conferência ficam em `rp4-b-espera.json`. Os achados foram lidos por inteiro; as correções reais seguintes estão em `a4897cb3`, após o rebase. As secções do H2 e do RP4 ficaram nos registos; a I195 do H2 e a I197 do RP4 têm números distintos. O rebase terminou sobre `a2bd1177`. Os três códigos finais, lidos dos ficheiros depois da corrida, são 0; as medidas ficam abaixo. O custo parcial é lido da sessão por `custo-rp4-b.py`; a linha final `tokens used` só fica disponível depois de o lançador terminar.
 
 
 | Achado, pela ordem da leitura | Resposta RP4-b | Prova |
@@ -149,10 +149,10 @@ A leitura e o registo das plantas chegaram durante a espera, antes do rebase. A 
 | 20 · bases indexadas e SVG como raiz | Conservados, com a exclusão parcial acrescentada. | Provas do módulo, F2 e F21. |
 
 
-Commits RP4-b depois do rebase: `48e4ba5c` (decisão da comparação), `930e4ae3` (primeiros registos), `eb62d556` (achados reais) e `edac06f2` (leitura e respostas). Antes do rebase eram, pela mesma ordem, `2348c727`, `20d57add`, `65067f6b` e `8b4541e7`.
+Commits RP4-b depois do rebase: `446c365b` (decisão da comparação), `9f66c468` (primeiros registos), `a4897cb3` (achados reais) e `19600619` (leitura e respostas). Antes do rebase eram, pela mesma ordem, `2348c727`, `20d57add`, `65067f6b` e `8b4541e7`.
 
 
-A cabeça do código conferida é `2523e3a022daec489476b9c77b5707892aca9c84`. Os ficheiros `portoes/cabeca` e `portoes/cabeca.fim` e o carimbo da construção coincidem. O `main` integrado é `fb364fe48c43ca71c2fd04ec8ba640c9399de221`. A corrida começou depois de a tranca da outra construção ser libertada. O commit `2523e3a0` guarda a integração e as referências atualizadas do mapa; `079c0753` guarda apenas o carimbo do inventário, sem alterar as formas ou contagens. O último commit guarda só provas; a sua cabeça fica na resposta de entrega, fora do próprio commit.
+A cabeça do código conferida é `21c08531812ae94bce1ddc3f526aa4f848a5641e`. Os ficheiros `portoes/cabeca` e `portoes/cabeca.fim` e o carimbo da construção coincidem. O `main` integrado é `a2bd11772c91e4dee42ea011a24e98c998f3b0a8`. A corrida começou depois de a tranca da outra construção ser libertada. O commit `21c08531` guarda a integração e as referências atualizadas do mapa; `af4bb0a1` guarda apenas o carimbo do inventário, sem alterar as formas ou contagens. O último commit guarda só provas; a sua cabeça fica na resposta de entrega, fora do próprio commit.
 
 | Portão final RP4-b | Código lido do ficheiro | Segundos medidos |
 |---|---|---|
@@ -160,7 +160,7 @@ A cabeça do código conferida é `2523e3a022daec489476b9c77b5707892aca9c84`. Os
 | `verify` | 0 | 1020 |
 | `typecheck` | 0 | 0 |
 
-As durações são as diferenças entre os carimbos de início e fim, com resolução de um segundo. O `check:briefs` desta corrida conferiu o RP4 corrigido. A reprodução em `rp4-b-brief.json` coincide com o ficheiro selado e continua presa a `905105b7`.
+As durações são as diferenças entre os carimbos de início e fim, com resolução de um segundo. O `check:briefs` desta corrida conferiu o RP4 corrigido. A reprodução em `rp4-b-brief.json` coincide com o ficheiro selado e continua presa a `4d91d3b2`.
 
 | Prova refeita | Resultado medido |
 |---|---|
@@ -174,7 +174,7 @@ As durações são as diferenças entre os carimbos de início e fim, com resolu
 
 A largura máxima do desenho é a largura do seu `viewBox`, sem multiplicador. As capturas foram substituídas também nas páginas afetadas pela limitação de largura e na primeira página que recebeu o H2. Os resumos, as dimensões, os títulos, a posição e os hashes estão em `capturas.json`; a inspeção visual de amostras está em `rp4-b-inspecao-visual.json`. A porta europeia resolve o recibo da sua série nas duas edições e não existe cartão europeu autónomo.
 
-A medição reproduzível é `node design/especime-v3/medicoes/rp4-2026-10-04/medir-rp4-b.mjs`. O guião recusa uma cabeça divergente, um código diferente de zero, um carimbo final anterior ao inicial, uma planta que não morda, uma captura com bytes diferentes, um número de issue repetido e uma mudança no livro ou no carregador das séries. O resultado está em `rp4-b.json`, com a F21 também em `rp4-b-reais-provas.json`. Os ficheiros da leitura e das plantas estão no commit `edac06f2` e os seus hashes no resultado. A correspondência ordenada de cada resposta com cada achado é conferida em `rp4-b-achados.json`, incluindo a recusa de uma resposta retirada.
+A medição reproduzível é `node design/especime-v3/medicoes/rp4-2026-10-04/medir-rp4-b.mjs`. O guião recusa uma cabeça divergente, um código diferente de zero, um carimbo final anterior ao inicial, uma planta que não morda, uma captura com bytes diferentes, um número de issue repetido e uma mudança no livro ou no carregador das séries. O resultado está em `rp4-b.json`, com a F21 também em `rp4-b-reais-provas.json`. Os ficheiros da leitura e das plantas estão no commit `19600619` e os seus hashes no resultado. A correspondência ordenada de cada resposta com cada achado é conferida em `rp4-b-achados.json`, incluindo a recusa de uma resposta retirada.
 
 A limpeza dos registos correu depois dos portões, por `limpar-registos-rp4-b.py`, com os hashes de antes e depois em `rp4-b-limpeza.json`. A conferência de higiene da passagem usa a base integrada do H2 e não encontrou caminhos locais nem nomes pessoais nos ficheiros mudados pelo RP4. A conferência histórica mais larga assinalou quatro ficheiros herdados de `main`, todos byte a byte iguais à base: `DECISIONS.md` e os três registos do H2 listados em `rp4-b-higiene-historica.json`. Não foram alterados por esta passagem; o zero da conferência RP4-b não afirma uma limpeza de todo o repositório.
 

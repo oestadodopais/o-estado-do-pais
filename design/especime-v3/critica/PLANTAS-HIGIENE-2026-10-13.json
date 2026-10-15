@@ -49,8 +49,8 @@
    "alcance": "fora do diff da passagem (a referência é outra)",
    "sha256_antes": "c16eb74975c1ff3ab30ddca6cb6317a85f784edeb5b26597474c8810663eae75",
    "sha256_depois": "d01be19b1684db6742d2ae9f81147640304eee80aade75b2e8f1d21b2f94c778",
-   "contexto_antes": "ultado e `entrega/capturas.json` tem `ok: true`, sem falhas, com a cabeça completa `996a388918d1d4183d2d00700bdd62157f0b0fa8`, igual à de `dist/version.json`.\n\nForam guardadas 70 capturas de página e 80 recortes: sete páginas, nas edições portuguesa e inglesa, a 390, 768, 1 024, 1 280 e 1 600 px. O pedido enumera os recibos de amortizações, juros de 2024 e 2025, minist",
-   "contexto_depois": "ultado e `entrega/capturas.json` tem `ok: true`, sem falhas, com a cabeça completa `996a388918d1d4183d2d00700bdd62157f0b0fa8`, igual à de `dist/version.json`.\n\nForam guardadas 72 capturas de página e 80 recortes: sete páginas, nas edições portuguesa e inglesa, a 390, 768, 1 024, 1 280 e 1 600 px. O pedido enumera os recibos de amortizações, juros de 2024 e 2025, minist"
+   "contexto_antes": "ultado e `entrega/capturas.json` tem `ok: true`, sem falhas, com a cabeça completa `621e8accd61221e0c706a351283b181c33770d4e`, igual à de `dist/version.json`.\n\nForam guardadas 70 capturas de página e 80 recortes: sete páginas, nas edições portuguesa e inglesa, a 390, 768, 1 024, 1 280 e 1 600 px. O pedido enumera os recibos de amortizações, juros de 2024 e 2025, minist",
+   "contexto_depois": "ultado e `entrega/capturas.json` tem `ok: true`, sem falhas, com a cabeça completa `621e8accd61221e0c706a351283b181c33770d4e`, igual à de `dist/version.json`.\n\nForam guardadas 72 capturas de página e 80 recortes: sete páginas, nas edições portuguesa e inglesa, a 390, 768, 1 024, 1 280 e 1 600 px. O pedido enumera os recibos de amortizações, juros de 2024 e 2025, minist"
   }
  ]
 }

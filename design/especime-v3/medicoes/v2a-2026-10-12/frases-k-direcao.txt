@@ -1,5 +1,5 @@
 # A leitura das frases construídas da V2-a-k pelo lugar de direção, antes de lançar a leitura a frio (a emenda à regra 14, 14.10.2026, 22:41 UTC)
-# comando, na worktree do ramo depois de `npm run build` (o dist/ da cabeça 17e6d819):
+# comando, na worktree do ramo depois de `npm run build` (o dist/ da cabeça 82b03044):
 #   python3 design/especime-v3/medicoes/v2a-2026-10-12/conferir-frases-k-direcao.py <worktree> design/especime-v3/medicoes/v2a-2026-10-12/frases-k-pcp-pt.txt design/especime-v3/medicoes/v2a-2026-10-12/frases-k-pcp-en.txt
 # as frases esperadas: as do mandato k, com os tokens rendidos (1 152, 263, 889, 4.25, 5.37, 1 700, os títulos do relatório como provas.json os declara); as do PCP nos dois ficheiros ao lado
 frases conferidas uma vez por página: 32; erros: 0

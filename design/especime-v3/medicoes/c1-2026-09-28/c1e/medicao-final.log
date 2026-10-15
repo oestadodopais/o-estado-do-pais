@@ -2,19 +2,19 @@
   "portoes": {
     "build": {
       "codigo": 1,
-      "cabeca": "2d063f9af1e707a4e8657a0e664bdce88eece4b6",
+      "cabeca": "9046757d2c9f10be57c740ddd2fc4f1c9b2632cd",
       "inicio": "2026-09-28T20:11:24.602172+00:00",
       "fim": "2026-09-28T20:11:25.392793+00:00"
     },
     "verify": {
       "codigo": 1,
-      "cabeca": "2d063f9af1e707a4e8657a0e664bdce88eece4b6",
+      "cabeca": "9046757d2c9f10be57c740ddd2fc4f1c9b2632cd",
       "inicio": "2026-09-28T20:11:28.540121+00:00",
       "fim": "2026-09-28T20:11:28.999676+00:00"
     },
     "typecheck": {
       "codigo": 0,
-      "cabeca": "2d063f9af1e707a4e8657a0e664bdce88eece4b6",
+      "cabeca": "9046757d2c9f10be57c740ddd2fc4f1c9b2632cd",
       "inicio": "2026-09-28T20:11:31.994245+00:00",
       "fim": "2026-09-28T20:11:32.326161+00:00"
     }

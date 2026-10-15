@@ -6,7 +6,7 @@ medição leva o comando e um conhecido-positivo; o que não conseguir ler fica 
 import json, os, pathlib, re, subprocess
 
 SITIO = pathlib.Path(os.environ.get("OEDP_SITIO") or pathlib.Path(__file__).resolve().parents[3])
-CAB = os.environ.get("OEDP_CABECA") or "4b29f707"
+CAB = os.environ.get("OEDP_CABECA") or "8efbd4db"
 NAO = "NÃO LIDO"
 SEMANA = ("2026-09-30", "2026-10-06")  # a janela de sete dias que acaba no dia em que o brief foi escrito
 medidas = []

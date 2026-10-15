@@ -1,6 +1,6 @@
 # Leitura curta da passagem de correção RH1-d (14.10.2026, à noite)
 
-*Lançada pelo lugar de direção às 17:50 UTC sobre o pacote do sítio de `de3d740b` a `f8006eaa` (a passagem RH1-d do Codex `gpt-6-astra` em `high`, retomada na mesma sessão, pelo mandato `MANDATO-RH1-d-2026-10-14.md`), montado por `scripts/leituras/pacote.sh`. O leitor: o Claude Opus 5.5 (a definição `leitor`, M26), em `xhigh`, 141 480 símbolos, 39 chamadas de ferramentas, nove minutos. As cinco plantas do lugar de direção (`PLANTAS-RH1-d-2026-10-14.json`, quatro nos hunks do diff e uma no relatório) foram as cinco mordidas: os achados 3 a 7. Os achados 1 e 2 (Major) e 8 e 9 (Minor) são reais e estão decididos no mandato `MANDATO-RH1-e-2026-10-14.md`. O texto do leitor segue como foi entregue, em inglês.*
+*Lançada pelo lugar de direção às 17:50 UTC sobre o pacote do sítio de `01da19f9` a `b5eeb28e` (a passagem RH1-d do Codex `gpt-6-astra` em `high`, retomada na mesma sessão, pelo mandato `MANDATO-RH1-d-2026-10-14.md`), montado por `scripts/leituras/pacote.sh`. O leitor: o Claude Opus 5.5 (a definição `leitor`, M26), em `xhigh`, 141 480 símbolos, 39 chamadas de ferramentas, nove minutos. As cinco plantas do lugar de direção (`PLANTAS-RH1-d-2026-10-14.json`, quatro nos hunks do diff e uma no relatório) foram as cinco mordidas: os achados 3 a 7. Os achados 1 e 2 (Major) e 8 e 9 (Minor) são reais e estão decididos no mandato `MANDATO-RH1-e-2026-10-14.md`. O texto do leitor segue como foi entregue, em inglês.*
 
 ## Blocking
 

@@ -1,7 +1,7 @@
 # F1.1d · o mapa que cresce, e o nome ao lado
 
 *Construtor Claude Opus 5, 07 e 08.09.2026, ramo `mapa-2026-09-07` (tirado de
-`7dfd36b7`, a cabeça do F1.1c depois de fundir `main`). Brief:
+`f9a76397`, a cabeça do F1.1c depois de fundir `main`). Brief:
 `design/observatorio/BRIEF-F1.1d-os-nomes-do-mapa.md`. Duas passagens: a segunda
 depois da leitura a frio do Codex e da medição às cegas do Sonnet de 08.09.2026,
 e está na secção «Segunda passagem» mais abaixo. Sem travessões na prosa.*
@@ -19,7 +19,7 @@ lugar dela.*
 | P2 | o nome da área apontada num lugar fixo, pelos três gestos e nas duas edições | não havia lugar do nome: **0 áreas** diziam o seu nome em lado nenhum fixo | **9 de 9** regiões e **30 de 30** concelhos, pelo rato, pelo teclado e **pelo dedo**, nas duas edições, e **16 de 16** concelhos de Lisboa numa página de distrito | `node tests/inicio/mapa-regioes.mjs` (P2a a P2d) |
 | P3 | o primeiro toque nunca navega; o segundo, ou a porta, abre | o primeiro toque numa área **navegava** (as 29 áreas eram ligações e mais nada) | o toque numa região **cresce-a**, nos dois motores; o primeiro toque num concelho diz o nome e o segundo abre; a página de uma região abre-se **pela porta** do lugar do nome (decisão de 08.09.2026); um ficheiro que responde 404 devolve a ligação do servidor | `node tests/inicio/mapa-regioes.mjs` (P3a a P3e) |
 | P4 | sem guião, o mapa continua a ser navegação | 29 ligações de área para as páginas de distrito; a lista dos nomes **aberta** | **9 ligações** para as nove páginas de região, **9 de 9 respondem 200**, a gaveta **fechada** com 9 regiões e 29 unidades lá dentro, o segundo nível com **0 nós**, `#regiao=` ignorado sem erro | `node tests/inicio/mapa-regioes.mjs` (P4) |
-| P5 | a altura de `/` a 390, com guião, em repouso | **3 700 px**, que é o que o F1.1c deixou (`design/especime-v3/medicoes/toque-medidas-depois.json`, chave `chromium.pt.com-guiao.repouso`, cabeça `9c34bbb0` fundida no ramo `toque-2026-09-04`) | **3 263 px**, na mesma largura e no mesmo motor: **437 px a menos** | `node tests/inicio/mapa-regioes.mjs` (P5) |
+| P5 | a altura de `/` a 390, com guião, em repouso | **3 700 px**, que é o que o F1.1c deixou (`design/especime-v3/medicoes/toque-medidas-depois.json`, chave `chromium.pt.com-guiao.repouso`, cabeça `9912127f` fundida no ramo `toque-2026-09-04`) | **3 263 px**, na mesma largura e no mesmo motor: **437 px a menos** | `node tests/inicio/mapa-regioes.mjs` (P5) |
 | P6 | o portão da geometria | **7 regras**, 14 estragos | **10 regras**, 24 estragos e 24 apanhados: a R8 alargada, a R9 e a **R10 nova**, que refaz os nove ficheiros do segundo nível das fontes | `node scripts/check-mapa.mjs` e `node scripts/check-mapa.mjs --vermelhos` |
 | P7 | o contraste do lugar do nome e o que se mede do anúncio | não havia lugar do nome | tema claro **6,24 · 16,39 · 16,39 · 16,39**; tema escuro **9,52 · 15,38 · 15,38 · 15,38**; os oito acima de 4,5:1. O `aria-live="polite"` está declarado e a árvore de acessibilidade muda com a área apontada (é isso que se mede, e não um leitor de ecrã a anunciar) | `node tests/inicio/mapa-regioes.mjs` (P7a, P7b, P7c) |
 | P8 | as réguas e os três portões | a régua nova não existia; as outras três já existiam, e as suas contagens antes deste bloco não foram medidas nesta passagem | a régua nova com **27 células**, todas verdes; `lista` **94 de 94**, `mapa-distritos` **20 de 20** (M1, M2 e cinco cliques da M6 retirados com a razão escrita), `mapa-navegacao` **9 de 9**; `build`, `verify` e `typecheck` a **0** | os comandos das quatro réguas, e `npm run build`, `npm run verify`, `npm run typecheck` |
@@ -263,7 +263,7 @@ nenhum.
 `node tests/inicio/mapa-regioes.mjs` (P5). O **antes** é a página como o F1.1c a
 deixou, e o número não se mede outra vez: lê-se do artefacto que esse bloco
 gravou, `design/especime-v3/medicoes/toque-medidas-depois.json`, chave
-`chromium.pt.com-guiao.repouso`, cabeça `9c34bbb0` fundida no ramo
+`chromium.pt.com-guiao.repouso`, cabeça `9912127f` fundida no ramo
 `toque-2026-09-04`, medido a 390 × 664 em Chromium, que é a mesma largura e o
 mesmo motor desta célula: **3 700 px**. O **depois** é esta árvore: **3 263 px**,
 **437 px a menos**. Na mesma construção, a gaveta dos nomes aberta dá 3 953 px e
@@ -513,7 +513,7 @@ são do lugar de direção e estão aplicadas como ele as escreveu.*
 
 ### Os cinco estragos plantados, que não são achados
 
-O pacote da leitura levava a árvore da cabeça `abe7cabd` **mais cinco estragos
+O pacote da leitura levava a árvore da cabeça `36fcf0fc` **mais cinco estragos
 plantados pelo lugar de direção**. O leitor apanhou os cinco, e conferi que
 nenhum existe neste ramo:
 
@@ -535,7 +535,7 @@ nenhum existe neste ramo:
 | **Major 8** · o segundo toque numa região não existe | **decisão escrita, sem código**: a página de uma região abre-se pela porta do lugar do nome, e não por um segundo toque, porque a região cresceu e o seu contorno já não está no ecrã para o receber. A P3c continua a ser a prova, e di-lo no nome e na prova | `tests/inicio/mapa-regioes.mjs` (cabeçalho, P3c); este relatório, P3 |
 | **Major 9** · um `fetch` falhado deixa a ligação morta | a região que falhou fica marcada e **o clique seguinte não é segurado**: segue a ligação do servidor. Sem `fetch` no navegador nem se chega a segurar o primeiro. O lugar do nome di-lo, com uma frase nova nas duas edições. **P3e nova** mede-o com uma região a responder 404, e uma planta (o guião sem a saída) põe-na vermelha | `public/js/mapa-regioes.js` (`falhou`, `abre`, o clique); `src/components/inicio/LugarDoNome.astro`; `src/i18n/strings.mjs`; `tests/inicio/mapa-regioes.mjs` (P3e e a planta) |
 | **Major 10** (parte real) · a planta do primeiro toque tira todos os `preventDefault`; o corredor usa `some` | a planta tira **só a regra do toque no concelho**; o corredor exige que **todas** as células que a planta nomeia fiquem vermelhas (`every`). Isso obrigou a corrigir mais duas plantas que declaravam mais do que mordiam: a do concelho a menos tirava o último da lista, que a amostra da P2b nunca visitava, e a do lugar do nome num distrito só mexia na edição portuguesa | `tests/inicio/mapa-regioes.mjs` (as plantas e o corredor) |
-| **Major 11** · a P5 não mede o antes | a P5 lê o antes do artefacto do F1.1c (`toque-medidas-depois.json`, chave `chromium.pt.com-guiao.repouso`, cabeça `9c34bbb0`), na mesma largura e no mesmo motor, e mede o depois nesta árvore: 3 700 → 3 263 px | `tests/inicio/mapa-regioes.mjs` (P5) |
+| **Major 11** · a P5 não mede o antes | a P5 lê o antes do artefacto do F1.1c (`toque-medidas-depois.json`, chave `chromium.pt.com-guiao.repouso`, cabeça `9912127f`), na mesma largura e no mesmo motor, e mede o depois nesta árvore: 3 700 → 3 263 px | `tests/inicio/mapa-regioes.mjs` (P5) |
 | **Major 12** · a P7 a dizer «anunciado» | a P7 e o relatório dizem o que se mede: o atributo `aria-live="polite"` e a árvore de acessibilidade a mudar. Sem ferramenta nova | `tests/inicio/mapa-regioes.mjs` (cabeçalho, P7b, P7c); este relatório, P7 |
 | **Major 13** · `src/data/regioes.mjs` fora do manifesto | o gerador segue os seus próprios `import` relativos e hasha-os (36 entradas, contra 35); a **R8** lê a mesma lista do ficheiro do gerador e exige que o manifesto a cubra, com uma planta que apaga a entrada | `scripts/mapa-regioes.mjs` (`hashaOsModulosImportados`); `scripts/check-mapa.mjs` (R8 e a planta) |
 | **Minor 14** · o pacote não reproduz a construção nem as corridas | **é assim, e diz-se**: um pacote de leitura leva os ficheiros mudados e não a árvore inteira, e por isso não corre `npm run build` nem tem `dist/`. Os códigos de saída, as horas e os identificadores das corridas do GitHub são afirmações sobre outro ambiente, e ficam aqui como afirmações com o comando que as refaz numa árvore completa. As saídas coladas abaixo são desta árvore | este relatório, «As saídas» |
@@ -669,7 +669,7 @@ inteiro, ou o id seguido de um parêntesis.*
   passa  P4 · en: sem guião, nove ligações para as nove páginas, a lista fechada e o «#regiao=» ignorado
          9 áreas, 9 com destino em «/en/regions/», 9 de 9 respondem 200 · gaveta fechada com 9 regiões e 29 unidades · o lugar do nome não se rende · o segundo nível tem 0 nós
   passa  P5 · a altura de `/` a 390 depois deste bloco é menor do que a que o F1.1c deixou
-         antes 3700 px (design/especime-v3/medicoes/toque-medidas-depois.json, «chromium.pt.com-guiao.repouso», cabeça 9c34bbb0, a fusão de origin/main no ramo toque-2026-09-04) · depois 3263 px, na mesma largura e no mesmo motor (437 px a menos) · na mesma construção, a gaveta dos nomes aberta dá 3953 px e sem guião 4048 px
+         antes 3700 px (design/especime-v3/medicoes/toque-medidas-depois.json, «chromium.pt.com-guiao.repouso», cabeça 9912127f, a fusão de origin/main no ramo toque-2026-09-04) · depois 3263 px, na mesma largura e no mesmo motor (437 px a menos) · na mesma construção, a gaveta dos nomes aberta dá 3953 px e sem guião 4048 px
   passa  P7a · o lugar do nome com contraste de 4,5:1 no tema claro
          vazio 6.24:1 · nome 16.39:1 · porta 16.39:1 · aviso 16.39:1
   passa  P7a · o lugar do nome com contraste de 4,5:1 no tema escuro
@@ -739,14 +739,14 @@ escrito design/especime-v3/medicoes/mapa-alvos-nos-distritos.json · 29 unidades
 
 | corrida | commit | estado |
 | --- | --- | --- |
-| 34158597653 | `4f48283d` a geometria | verde |
-| 34165392815 | `a4283021` os dois níveis | verde |
-| 34167777812 | `08788742` o lugar do nome no distrito | verde |
-| 34169496408 | `53fcda09` o relatório | cancelada pelo empurrão seguinte |
-| 34170522631 | `21834314` o conserto do WebKit | verde |
-| 34171768865 | `2e1b1b52` a medida do nível intermédio | verde |
-| 34174012744 | `abe7cabd` as horas dos portões | verde |
-| 34202581197 | `b0154ce6` a segunda passagem (o portão, o guião e a régua) | verde |
+| 34158597653 | `ff983658` a geometria | verde |
+| 34165392815 | `06a2f77e` os dois níveis | verde |
+| 34167777812 | `a716093e` o lugar do nome no distrito | verde |
+| 34169496408 | `b201fb1d` o relatório | cancelada pelo empurrão seguinte |
+| 34170522631 | `bcd72b7b` o conserto do WebKit | verde |
+| 34171768865 | `7f39eb47` a medida do nível intermédio | verde |
+| 34174012744 | `36fcf0fc` as horas dos portões | verde |
+| 34202581197 | `1f6efbf6` a segunda passagem (o portão, o guião e a régua) | verde |
 | a última | o commit deste relatório | a correr ao fechar o bloco |
 
 ## O que fica por fazer

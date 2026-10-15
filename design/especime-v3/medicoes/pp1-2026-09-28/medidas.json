@@ -1,8 +1,8 @@
 {
   "o_que_e": "As medidas do relatório do bloco PP1, escritas por este guião.",
-  "comando": "node design/especime-v3/medicoes/pp1-2026-09-28/medidas.mjs 1cbdb8c4",
-  "cabeca": "56c7ed7ba5de90338edf990140f1929095dd39f1",
-  "dist_construido_de": "56c7ed7ba5de90338edf990140f1929095dd39f1",
+  "comando": "node design/especime-v3/medicoes/pp1-2026-09-28/medidas.mjs 3b85f13d",
+  "cabeca": "adfd389324fbb693b8529a7c9ab2215885c671dd",
+  "dist_construido_de": "adfd389324fbb693b8529a7c9ab2215885c671dd",
   "medidas": [
     {
       "nome": "cartoes_na_primeira_pagina_antes",
@@ -379,7 +379,7 @@
     {
       "nome": "capturas_refeitas_com_outros_bytes",
       "valor": 0,
-      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json contra o do commit 12dc8fbf · resultados[].sha256",
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json contra o do commit 31ec7c37 · resultados[].sha256",
       "conhecido_positivo": {
         "o_que": "as duas listas têm as mesmas capturas",
         "encontrado": true
@@ -393,7 +393,7 @@
         "o-estado-e-a-economia_index.html",
         "en_state-and-economy_index.html"
       ],
-      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json contra o do commit 12dc8fbf · copias[].sha256 das páginas",
+      "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json contra o do commit 31ec7c37 · copias[].sha256 das páginas",
       "conhecido_positivo": {
         "o_que": "o manifesto antigo tem as mesmas páginas",
         "encontrado": true
@@ -401,7 +401,7 @@
     },
     {
       "nome": "capturas_depois_construidas_de",
-      "valor": "56c7ed7ba5de90338edf990140f1929095dd39f1",
+      "valor": "adfd389324fbb693b8529a7c9ab2215885c671dd",
       "comando": "design/especime-v3/medicoes/pp1-2026-09-28/capturas-depois.json · dist_construido_de",
       "conhecido_positivo": {
         "o_que": "as capturas de antes são de outra cabeça",
@@ -410,7 +410,7 @@
     },
     {
       "nome": "portoes_pp1b_cabeca",
-      "valor": "56c7ed7ba5de90338edf990140f1929095dd39f1",
+      "valor": "adfd389324fbb693b8529a7c9ab2215885c671dd",
       "comando": "design/especime-v3/medicoes/pp1-2026-09-28/portoes/pp1b/build.cabeca",
       "conhecido_positivo": {
         "o_que": "a cabeça dos portões é a das capturas",
@@ -474,7 +474,7 @@
     {
       "nome": "inventario_linhas_que_sairam_do_ficheiro",
       "valor": 2,
-      "comando": "git show 1cbdb8c4:design/especime-v3/INVENTARIO-FRASES.md contra a árvore · os textos das linhas que já não estão",
+      "comando": "git show 3b85f13d:design/especime-v3/INVENTARIO-FRASES.md contra a árvore · os textos das linhas que já não estão",
       "conhecido_positivo": {
         "o_que": "a linha da frase do veredicto estava na cabeça de partida",
         "encontrado": true
@@ -920,7 +920,7 @@
     {
       "nome": "ficheiros_do_ramo_lidos",
       "valor": 266,
-      "comando": "git diff --name-only 1cbdb8c4..HEAD, e git status --porcelain --untracked-files=all",
+      "comando": "git diff --name-only 3b85f13d..HEAD, e git status --porcelain --untracked-files=all",
       "conhecido_positivo": {
         "o_que": "os ficheiros lidos incluem o relatório do bloco",
         "encontrado": true
@@ -947,7 +947,7 @@
     {
       "nome": "linhas_acrescentadas_com_travessao",
       "valor": 8,
-      "comando": "git diff -U0 1cbdb8c4..HEAD nos ficheiros de prosa e de código · as linhas acrescentadas com um travessão",
+      "comando": "git diff -U0 3b85f13d..HEAD nos ficheiros de prosa e de código · as linhas acrescentadas com um travessão",
       "conhecido_positivo": {
         "o_que": "o detetor apanha uma linha de prova com um travessão",
         "encontrado": true

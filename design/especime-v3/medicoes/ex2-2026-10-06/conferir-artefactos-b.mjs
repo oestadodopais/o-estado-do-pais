@@ -22,7 +22,7 @@ const anterior=sha(fs.readFileSync(path.join(pasta,'LEIA-ME.md')));
 execFileSync(process.execPath,[path.join(pasta,'escrever-relatorio.mjs')]);
 const regenerado=sha(fs.readFileSync(path.join(pasta,'LEIA-ME.md')));
 if(anterior!==regenerado)erros.push('O relatório não era a saída do guião');
-const mudados=execFileSync('git',['diff','--name-only','167d86b8','--'],{encoding:'utf8'}).trim().split('\n');
+const mudados=execFileSync('git',['diff','--name-only','24f72b9c','--'],{encoding:'utf8'}).trim().split('\n');
 const novos=execFileSync('git',['ls-files','--others','--exclude-standard'],{encoding:'utf8'}).trim().split('\n');
 for(const f of new Set([...mudados,...novos].filter(Boolean))) {
  if(!fs.existsSync(f)||f.endsWith('.png'))continue;

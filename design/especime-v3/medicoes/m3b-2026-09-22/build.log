@@ -10514,7 +10514,7 @@
 > node scripts/stamp-version.mjs
 
 
-[90m  versão · 50eb7aa (nomes-no-sitio-2026-09-22, git)[0m
+[90m  versão · 254ce9e (nomes-no-sitio-2026-09-22, git)[0m
 
 > o-estado-do-pais@0.1.0 cartoes
 > node scripts/cartoes.mjs

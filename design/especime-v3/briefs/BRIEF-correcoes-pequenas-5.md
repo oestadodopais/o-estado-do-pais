@@ -1,6 +1,6 @@
 # BRIEF · Correções pequenas, quinta passagem (I91, segunda metade; I92)
 
-*Escrito a 29.08.2026 pelo lugar de direção (Claude Fable 5) para o construtor (Claude Opus). Ramo `pequenas-5-2026-08-29` saído de `main` `98fd779`. Decisão do diretor de 29.08 («can you do that?») sobre a recomendação do lugar de direção. Sem travessões na prosa.*
+*Escrito a 29.08.2026 pelo lugar de direção (Claude Fable 5) para o construtor (Claude Opus). Ramo `pequenas-5-2026-08-29` saído de `main` `98b5e1e`. Decisão do diretor de 29.08 («can you do that?») sobre a recomendação do lugar de direção. Sem travessões na prosa.*
 
 ## 0 · As duas, e a linha que as separa
 

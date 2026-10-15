@@ -1,6 +1,6 @@
 # As cinco frases do PRR na passagem V2-a-e
 
-Cabeça da construção: `9ec288fc09a23e65baf94faa6e9e2cda9d14a681`. Texto lido no HTML, nas duas edições.
+Cabeça da construção: `7c945b109a67e61945816c82a17014d9d515f763`. Texto lido no HTML, nas duas edições.
 
 ## oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026
 

@@ -1,6 +1,6 @@
 # BRIEF · Correções pequenas, sexta passagem (o nome de cada linha, o subconjunto dos tipos, I37)
 
-*Escrito a 29.08.2026 pelo lugar de direção (Claude Fable 5) para o construtor (Claude Opus). Ramo `pequenas-6-2026-08-29` saído de `main` `58cc881`. Sem travessões na prosa.*
+*Escrito a 29.08.2026 pelo lugar de direção (Claude Fable 5) para o construtor (Claude Opus). Ramo `pequenas-6-2026-08-29` saído de `main` `f7bfc87`. Sem travessões na prosa.*
 
 ## 0 · As três
 

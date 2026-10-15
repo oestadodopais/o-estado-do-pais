@@ -1,6 +1,6 @@
 # A releitura a frio do UE1 (as passagens UE1c e UE1d) · Codex gpt-5.6-sol, 29.09.2026
 
-*O pacote: o sítio de `96a6035e` (o commit da primeira leitura) a `ff046536`, com 26 páginas construídas (a página da casa e a dos temas, a primeira página e os vinte recibos das séries, nas duas edições); cinco estragos plantados só nas cópias, registados por sha256 em `LEITURA-ue1d-2026-09-29.plantas.json`. Custo: 450 109 símbolos (a linha «tokens used» do registo do Codex), das 22:50:58 às 23:09:47 UTC. A leitura achou as cinco plantas (os achados 1, 2, 3, 4 e 8).*
+*O pacote: o sítio de `831968b1` (o commit da primeira leitura) a `d126adf0`, com 26 páginas construídas (a página da casa e a dos temas, a primeira página e os vinte recibos das séries, nas duas edições); cinco estragos plantados só nas cópias, registados por sha256 em `LEITURA-ue1d-2026-09-29.plantas.json`. Custo: 450 109 símbolos (a linha «tokens used» do registo do Codex), das 22:50:58 às 23:09:47 UTC. A leitura achou as cinco plantas (os achados 1, 2, 3, 4 e 8).*
 
 *A triagem do lugar de direção (Claude Fable 5.1):*
 - *o 5 é real e vai à passagem UE1e. O recibo da série do índice harmonizado mostrava a definição do cartão, que diz «em Portugal», por cima da tabela dos 27. O recibo passa a ter a definição declarada sem o lugar, com a mesma origem, e o portão de HTML ganha a regra de que a definição de nenhum recibo de série nomeia Portugal, com planta. Das 34 definições declaradas, só esta o nomeava, nas duas edições;*

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""O §0 do brief RP4-m (as séries que faltam e o corredor das séries, no motor), medido sobre a cabeça presa do sítio (fb364fe4).
+"""O §0 do brief RP4-m (as séries que faltam e o corredor das séries, no motor), medido sobre a cabeça presa do sítio (a2bd1177).
 Lê só o repositório do sítio, pela cabeça presa (`git show` e `git grep`), nunca a árvore de trabalho (§1.153); o motor não se
 mede aqui porque o portão dos briefs corre numa máquina sem ele (a mesma regra do BRIEF-RP3.py). Escreve
 design/observatorio/medidas/BRIEF-RP4M.json (ou o caminho em OEDP_MEDIDAS_JSON). Cada medição leva o comando e um
@@ -7,7 +7,7 @@ conhecido-positivo; o que não conseguir ler fica «NÃO LIDO»."""
 import json, os, pathlib, re, subprocess
 
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "fb364fe4"
+CAB = "a2bd1177"
 NAO = "NÃO LIDO"
 medidas = []
 

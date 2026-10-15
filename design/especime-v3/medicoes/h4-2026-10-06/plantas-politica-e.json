@@ -1,10 +1,10 @@
 {
   "comando": "node design/especime-v3/medicoes/h4-2026-10-06/provar-politica-e.mjs --passagem-e",
-  "cabeca": "89c54f3480d9503d0fd85281ad5247d9137971c8",
+  "cabeca": "2c5212b7eb75b0161a9e89af0e86d8324e81af3e",
   "estado": "",
   "estado_fim": "",
   "construcao": {
-    "commit": "89c54f3480d9503d0fd85281ad5247d9137971c8",
+    "commit": "2c5212b7eb75b0161a9e89af0e86d8324e81af3e",
     "ref": "aterragem-2026-10-06-tarde",
     "env": "local",
     "origem": "git",

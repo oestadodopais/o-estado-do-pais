@@ -4,7 +4,7 @@ O N1 fica parcialmente construído: falta o ponto 5. O ajuste tipado do desempre
 
 Estão construídas as oito portas, os 47 cartões numa página de assunto por edição, os temas como índice, os domínios como redirecionamentos e os dados municipais em Lugares. Estão guardadas as 90 capturas, as 17 medidas e as plantas.
 
-Relatório: `design/especime-v3/medicoes/n1-2026-09-30/LEIA-ME.md`. Medidas: `medidas.json`, ao lado. Commits anteriores ao fecho: `f76c5898`, `c22c21e8`, `e5143eaa`, `dc5944ae`; este ficheiro integra o commit de fecho.
+Relatório: `design/especime-v3/medicoes/n1-2026-09-30/LEIA-ME.md`. Medidas: `medidas.json`, ao lado. Commits anteriores ao fecho: `7471b3c9`, `f2f87692`, `6c652e9b`, `96c31f29`; este ficheiro integra o commit de fecho.
 
 Depois deste commit correm, separadamente, `npm run build`, `npm run verify` e `npm run typecheck`. Os resultados efetivos e a cabeça final ficam nos ficheiros novos de `portoes/` e na resposta da sessão, fora do ramo. Os comprovativos posteriores ao commit ficam na árvore de trabalho, para não fingir que um commit conhece o próprio identificador. Não houve `push`.
 

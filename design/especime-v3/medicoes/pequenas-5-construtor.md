@@ -1,6 +1,6 @@
 # Correções pequenas, quinta passagem · o relatório do construtor
 
-*Ramo `pequenas-5-2026-08-29`, saído de `main` `98fd779`. Construtor: Claude Opus
+*Ramo `pequenas-5-2026-08-29`, saído de `main` `98b5e1e`. Construtor: Claude Opus
 5, 29.08.2026. Seis commits, cada um verde na cadeia inteira (`npm run build`,
 `npm run verify`, `npm run typecheck`). Sem travessões na prosa.*
 
@@ -10,11 +10,11 @@
 
 | commit | o que fecha |
 | --- | --- |
-| `d5ef2b3` | I92 · a unidade de uma linha é um rótulo, e diz-se na língua da página |
-| `3335d4b` | I91, segunda metade · o título de um documento é um nome, e diz em que língua está |
-| `7f0d36d` | ISSUES (I91 e I92), o brief e a primeira escrita deste relatório |
-| `dbc08a7` | I93 · a régua ganha L8, o atributo escrito duas vezes. A leitura que a pediu era um falso positivo, e §7 di-lo |
-| `d3ce282` | I94 · o nome do trabalho no texto que só se ouve, e o dicionário pela letra da fonte |
+| `79dafce` | I92 · a unidade de uma linha é um rótulo, e diz-se na língua da página |
+| `761e3d7` | I91, segunda metade · o título de um documento é um nome, e diz em que língua está |
+| `0570bb8` | ISSUES (I91 e I92), o brief e a primeira escrita deste relatório |
+| `db028a1` | I93 · a régua ganha L8, o atributo escrito duas vezes. A leitura que a pediu era um falso positivo, e §7 di-lo |
+| `737450f` | I94 · o nome do trabalho no texto que só se ouve, e o dicionário pela letra da fonte |
 | o último | ISSUES (I93 e I94) e a revisão deste relatório |
 
 A ordem não é a do brief, e a razão é a cadeia: a peça partilhada pelas duas
@@ -29,7 +29,7 @@ Medidas com o mesmo instrumento nas duas construções, sobre `dist/en` inteiro
 (3 299 ficheiros HTML). O instrumento lê a língua efectiva de cada elemento subindo pela
 árvore até ao primeiro `lang`, que é o que um leitor de ecrã faz.
 
-| medida | antes (`98fd779`) | depois |
+| medida | antes (`98b5e1e`) | depois |
 | --- | --- | --- |
 | títulos de documento **portugueses** sem `lang="pt-PT"` | **4 518** | **0** |
 | títulos de documento portugueses **com** a marca | 0 | 4 518 |
@@ -401,7 +401,7 @@ construção anterior, que a viu vermelha nas 382.
 ### A frase de atribuição já estava marcada
 
 A leitura pedia também que se conferisse a frase «Published by … in *documento*»
-das páginas de linha inglesas. **Já leva a marca**, desde o commit `3335d4b`:
+das páginas de linha inglesas. **Já leva a marca**, desde o commit `761e3d7`:
 
 ```html
 in <span class="campo-valor" lang="pt-PT" data-linha-claim="abrantes-divida-dgal-2024"

@@ -2,7 +2,7 @@
 
 *Relatório do construtor (Claude Opus 5), 04.09.2026, sobre o brief
 `design/observatorio/BRIEF-F1.1b-a-leitura-breve-e-o-que-vem-a-seguir-ao-mapa.md`.
-Ramo `leitura-2026-09-04`, a partir de `origin/main` em `1dbd1cef`. Sem travessões
+Ramo `leitura-2026-09-04`, a partir de `origin/main` em `d16403f3`. Sem travessões
 na prosa. Nenhum número deste relatório foi escrito à mão: cada um tem ao lado o
 comando que o mediu.*
 
@@ -35,7 +35,7 @@ lugares. **Aparece em dois.** A peça do painel e a leitura breve eram a mesma
 coisa: a peça É a leitura, com a dobra lá dentro.
 
 ```
-node <script de contagem> · dist/index.html e dist/en/index.html de 1dbd1cef
+node <script de contagem> · dist/index.html e dist/en/index.html de d16403f3
   cada um dos 21 nomes: 2 ocorrências (o cartão da faixa e a peça ou a linha social)
   data-medida-nome no documento: 42 (21 cartões + 13 peças + 8 linhas sociais)
 ```
@@ -263,8 +263,8 @@ para a linha, e é lá que a fonte está escrita com as suas três datas.
 
 *(as células e os comandos estão em `tests/inicio/leitura.mjs`, `porta.mjs`,
 `faixa.mjs`, `lista.mjs`, `matriz.mjs` e `numeros-novos.mjs`; o «antes» é a
-construção de `1dbd1cef`, medida numa árvore própria (`git worktree add
-<pasta-das-worktrees>/base-1dbd1cef --detach 1dbd1cef`), e o «depois» é a deste ramo)*
+construção de `d16403f3`, medida numa árvore própria (`git worktree add
+<pasta-das-worktrees>/base-d16403f3 --detach d16403f3`), e o «depois» é a deste ramo)*
 
 | # | medida | antes | depois | régua |
 |---|---|---|---|---|
@@ -297,7 +297,7 @@ node tests/inicio/numeros-novos.mjs --so index.html,en/index.html --json <fichei
 | `data-verbatim` | 6 → 6 | 23 → 23 |
 
 **Estas contagens do sítio inteiro são as deste bloco, medidas antes de
-`origin/main` em `95d5ca95` entrar no ramo**, porque é assim que a diferença é só
+`origin/main` em `f49ffd5c` entrar no ramo**, porque é assim que a diferença é só
 dele. Sobre a árvore já fundida o mesmo comando dá `data-prova` **14 588** e
 `data-nonledger` **108 832** (`data-claim` e `data-verbatim` não mudam): as duas
 subidas são do bloco F1.4, que acrescentou a busca do índice do livro-razão e as
@@ -326,12 +326,12 @@ para 50 e `limiar-do-quadro` de 60 para 56, e `proveniencia` e
 os escalões etários da taxa de emprego e três selos a sair da página. Com a
 leitura inteira reposta, as quatro contas fecham no sítio certo.
 
-As contagens de antes saíram da construção de `1dbd1cef` numa árvore própria; as
+As contagens de antes saíram da construção de `d16403f3` numa árvore própria; as
 de depois, desta. Cada linha da segunda tabela fecha à unidade.
 
 ### 5.2 · J10 · os três comandos e as réguas
 
-Os três, sobre a árvore da primeira passagem, já com `origin/main` em `0b51016d`
+Os três, sobre a árvore da primeira passagem, já com `origin/main` em `06bd7905`
 fundido, com os códigos lidos de ficheiros e não de um `echo` a seguir a um
 comando em segundo plano:
 
@@ -341,7 +341,7 @@ npm run verify    > verify-final.log 2>&1; echo $? > verify-final.code →  0
 npm run typecheck > tc-final.log 2>&1; echo $? > tc-final.code         →  0
 ```
 
-Depois da segunda passagem, e da fusão de `origin/main` em `95d5ca95` (o bloco
+Depois da segunda passagem, e da fusão de `origin/main` em `f49ffd5c` (o bloco
 F1.4, que pôs a `check:indice` dentro da `verify` e mudou o `package.json`), os
 três voltaram a correr sobre a árvore fundida, com um `npm ci` novo pelo meio: os
 códigos estão na §10.2, e são os mesmos.
@@ -350,11 +350,11 @@ códigos estão na §10.2, e são os mesmos.
 décimo quarto ficheiro da pasta, `capturas.mjs`, não conta aqui porque não mede:
 fotografa, e o que ele deu está na §8. O «antes» de cinco delas está medido: `porta` e `faixa` correram na árvore deste
 ramo antes de uma linha mudar, e `matriz`, `correcoes-a` e `mapa-navegacao`
-correram numa árvore própria construída em `1dbd1cef`, para que a diferença fosse
+correram numa árvore própria construída em `d16403f3`, para que a diferença fosse
 do bloco e não de outra coisa. Das outras oito não há medida de partida, e a
 coluna diz isso em vez de a inventar.
 
-| régua | antes (`1dbd1cef`) | depois | o que mudou nela |
+| régua | antes (`d16403f3`) | depois | o que mudou nela |
 |---|---|---|---|
 | `leitura` | não existia | **18 de 18 células, 5 de 5 plantas** | nova; a segunda passagem levou-a de 13 a 18 células (a J3 e a J4 nas duas edições e nos dois motores) |
 | `porta` | 34 de 34 | 34 de 34 | A10 conta dentro das leituras e exige as duas coleções não vazias; A13 lê a faixa da cabeça; A17 lê faixa a faixa; duas plantas mudaram de alvo (a da A3, cujo alvo saiu da página; a da A2, cujos mil píxeis de papel deixaram de chegar) |
@@ -372,7 +372,7 @@ citado» (a exceção aprovada da §1.91, decisão 6). As duas primeiras foram
 medidas na árvore de partida com o mesmo comando.
 
 **As treze correram outra vez sobre a construção da árvore com `origin/main` em
-`95d5ca95` fundido**, e deram os mesmos números, célula a célula: `leitura` 18 de
+`f49ffd5c` fundido**, e deram os mesmos números, célula a célula: `leitura` 18 de
 18, `porta` 34 de 34, `faixa` 80 de 80, `lista` 94 de 94, `app` 39 de 39, `areas`
 22 de 22, `correcoes-a` 32 de 32, `mapa-distritos` 43 de 43, `mapa-navegacao` 9 de
 9, `regioes` 30 de 30, `rotulo` 7 de 7, `numeros-novos` verde, e a `matriz` as
@@ -622,11 +622,11 @@ viu as cinco.
 ## 10 · A cabeça, as duas fusões do `main` e as corridas do portão
 
 *O `main` andou duas vezes enquanto este bloco corria, e as duas entraram no ramo:
-`95d5ca95` (F1.4) na §10.1 a §10.3, e `6d63adfd` (F1.7) na §10.4 a §10.6.*
+`f49ffd5c` (F1.4) na §10.1 a §10.3, e `e2f9faee` (F1.7) na §10.4 a §10.6.*
 
-**`8400fbec`, verde na corrida `portao` n.º 33837745555**, das 04:41:36 às
+**`aff24f80`, verde na corrida `portao` n.º 33837745555**, das 04:41:36 às
 05:05:35 UTC de 04.09.2026 (23m59s). Esta cabeça é a fusão de `origin/main`
-em `95d5ca95` (o bloco F1.4: os nomes, as datas e a busca do índice do
+em `f49ffd5c` (o bloco F1.4: os nomes, as datas e a busca do índice do
 livro-razão) dentro deste ramo.
 
 ### 10.1 · O que a fusão trouxe, e o único conflito
@@ -683,17 +683,17 @@ lê `dist/` não corre ao lado de um comando que o refaz.
 
 ### 10.3 · As corridas deste ramo
 
-*(`8400fbec` é a cabeça que o resto deste relatório mede; as que vêm depois são os
+*(`aff24f80` é a cabeça que o resto deste relatório mede; as que vêm depois são os
 commits que escrevem esta secção, e o parágrafo do fim diz porquê)*
 
 | corrida | cabeça | como acabou |
 | --- | --- | --- |
-| 33828544853 | `0ef0a291` | cancelada pelo empurrão seguinte |
-| 33829193640 | `a3d53ac8` | **verde** em 22m17s (primeira passagem) |
-| 33836453244 | `9f3998fd` | cancelada pelo empurrão seguinte |
-| 33837061176 | `9b20a2b8` | cancelada pelo empurrão seguinte |
-| 33837745555 | `8400fbec` | **verde** em 23m59s (segunda passagem, com o `main` fundido) |
-| 33840337730 | `a81bc122` | **verde** em 18m15s (o commit que escreveu esta secção) |
+| 33828544853 | `ade29681` | cancelada pelo empurrão seguinte |
+| 33829193640 | `32c09ad0` | **verde** em 22m17s (primeira passagem) |
+| 33836453244 | `7485444f` | cancelada pelo empurrão seguinte |
+| 33837061176 | `8f52228e` | cancelada pelo empurrão seguinte |
+| 33837745555 | `aff24f80` | **verde** em 23m59s (segunda passagem, com o `main` fundido) |
+| 33840337730 | `6f9b9cbe` | **verde** em 18m15s (o commit que escreveu esta secção) |
 
 Os três cancelamentos são o `cancel-in-progress` do fluxo de trabalho: cada
 empurrão novo mata a corrida da cabeça anterior. Nenhuma corrida deste ramo ficou
@@ -711,7 +711,7 @@ olhar para a pior e não para a média.
 
 ### 10.4 · A segunda fusão do `main`, com o bloco F1.7, e o que a régua dele apanhou
 
-`origin/main` voltou a andar no mesmo dia, para `6d63adfd`, com o bloco F1.7 (a
+`origin/main` voltou a andar no mesmo dia, para `e2f9faee`, com o bloco F1.7 (a
 acessibilidade e os alvos), e o ramo fundiu-o.
 
 **Dois conflitos, e os dois da mesma espécie**: os dois blocos acrescentaram ao

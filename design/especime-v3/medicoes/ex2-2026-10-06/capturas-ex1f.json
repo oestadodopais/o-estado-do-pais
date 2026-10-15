@@ -1,8 +1,8 @@
 {
   "comando": "RESEARCHHUB_DIR=<motor> node design/especime-v3/medicoes/ex2-2026-10-06/captar-ex1f.mjs",
-  "cabeca": "eee10a344e181e520862be5213404816264c7458",
+  "cabeca": "46d75e775252a4f1c213ee295db5368d1acd1f32",
   "versao": {
-    "commit": "eee10a344e181e520862be5213404816264c7458",
+    "commit": "46d75e775252a4f1c213ee295db5368d1acd1f32",
     "ref": "ex1d-2026-10-11",
     "env": "local",
     "origem": "git",

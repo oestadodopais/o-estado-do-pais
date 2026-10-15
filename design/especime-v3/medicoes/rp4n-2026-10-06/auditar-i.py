@@ -19,7 +19,7 @@ h=json.loads((b/'h/medidas.json').read_text())
 antes=json.loads((b/'h/antes.json').read_text())
 assert f"| Páginas com marca | {len(antes['paginas_com_marcas'])} | {len(h['paginas_com_marcas'])} |" in (b/'LEIA-ME.md').read_text()
 escreve('plantas-da-direcao.json',{'linhas':linhas,'datas_definicoes':m['recibos']['pensao-pt']['datas_rotuladas'],'localizador_legal_en':m['recibos']['legal-en']['localizadores'],'paginas_com_marca_h':len(h['paginas_com_marcas']),'sitio':git(site,'rev-parse','HEAD'),'motor':git(motor,'rev-parse','HEAD')})
-for nome,p,base in [('sitio',site,'c2630801'),('motor',motor,'e2fd95f')]:
+for nome,p,base in [('sitio',site,'56248a5f'),('motor',motor,'e2fd95f')]:
  commits=[]
  for c in git(p,'rev-list','--reverse',base+'..HEAD').splitlines():
   msg=git(p,'show','-s','--format=%B',c)

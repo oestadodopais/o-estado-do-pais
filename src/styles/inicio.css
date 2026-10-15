@@ -1078,7 +1078,7 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
  * ABAIXO DE 1024 É A FORMA EM LINHA, e é esta a base: os nomes correm uns a
  * seguir aos outros e o alvo de cada um faz-se de `padding` e não de uma linha
  * própria. Era uma ligação por linha, e a 390 isso dava 1 238 px de pilha
- * (medido a 29.08 sobre `a76f829`): 29 linhas de 44 px mais os três rótulos.
+ * (medido a 29.08 sobre `636b823`): 29 linhas de 44 px mais os três rótulos.
  *
  * O ALVO TEM 44 px NOS DOIS LADOS, e não só na altura (leitura cruzada de
  * 29.08). A primeira forma desta folha dava 12 px de `padding` em cima e em
@@ -2483,7 +2483,7 @@ a.porta:hover .porta-seta {
      estava entre a manchete e tudo o resto, e a busca era um bloco aberto de
      240 px: os dois juntos punham o primeiro número selado de uma medida a
      2 071,9 px da manchete, ou seja a 2,45 ecrãs de 844 px (medido a 01.09 sobre
-     `307796f`). Com a faixa no lugar deles o primeiro número está no primeiro
+     `4c19c4b`). Com a faixa no lugar deles o primeiro número está no primeiro
      ecrã, e o mapa começa logo a seguir.
 
      `.inicio` já é uma coluna flexível; o que isto faz é numerar-lhe os itens. A
@@ -2631,7 +2631,7 @@ a.porta:hover .porta-seta {
   /* -------------------------------------------------------------------------
      A FILA DO COMANDO CORRE EM VEZ DE EMPURRAR A PÁGINA (01.09.2026)
      -------------------------------------------------------------------------
-     MEDIDO, na construção de partida deste bloco (`307796f`) e nesta: na edição
+     MEDIDO, na construção de partida deste bloco (`4c19c4b`) e nesta: na edição
      INGLESA a primeira página tinha transbordo horizontal de 33 px a 320 e de
      16 px a 390, e nenhum em português. O culpado é esta fila: «Country ·
      Region · Municipality · Areas» pede 334,7 px e a coluna dá 284 a 320. É um

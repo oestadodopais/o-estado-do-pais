@@ -11,7 +11,7 @@ import yaml
 AQUI = Path(__file__).resolve().parent
 SITIO = AQUI.parents[4]
 ALVO = 'divida-das-familias-2025-ue'
-BASE = 'b7f352ce253effe7d21dc97bacc1d9b67665e592'
+BASE = '472d1a43195856b4ef4624f61b1cb8f018cc86e3'
 
 def selado(p):
     return subprocess.check_output(['git', 'show', f'{BASE}:{p.relative_to(SITIO)}'], cwd=SITIO, text=True)
@@ -85,8 +85,8 @@ for k in ('value','excerpt','access_date','source_flag','source_flag_note','sour
 resultado=resultado.replace('corrections: []','corrections:\n'+yaml.safe_dump([correcao,acesso],allow_unicode=True,sort_keys=False,default_flow_style=False).rstrip())
 verificacoes=a.get('verifications',[])
 conservadas=verificacoes
-# A retoma repõe a história exata de a677770f, sem fabricar outra releitura.
-historico=yaml.safe_load(subprocess.check_output(['git','show',f'a677770f:ledger/claims/{ALVO}.yml'],cwd=SITIO,text=True))
+# A retoma repõe a história exata de 04438bb9, sem fabricar outra releitura.
+historico=yaml.safe_load(subprocess.check_output(['git','show',f'04438bb9:ledger/claims/{ALVO}.yml'],cwd=SITIO,text=True))
 assert conservadas==historico['verifications']
 # O bloco antigo sai inteiro, sem tocar nos campos de bandeira acrescentados.
 inicio=resultado.index('verifications:\n')
@@ -111,10 +111,10 @@ for nome,mutacao in [('sem entrada',lambda c:c.update(corrections=[])),('valor a
 escrever('gerador-plantas.json',conferir())
 escrever('comparacao-gerada.json',{'linhas':comparacoes,'ausencias':json.loads((saida/'resumo.json').read_text())['ausencias']})
 escrever('bandeiras.json',{'linhas':planos,'aplicadas':all(yaml.safe_load((SITIO/'ledger/claims'/f"{p['id']}.yml").read_text()).get('source_flag')==p['flag'] for p in planos) or args.aplicar})
-escrever('atualizacao-divida.json',{'antes':a,'depois':b,'antes_sha256':sha(antes.encode()),'depois_sha256':sha(resultado.encode()),'verificacoes_repostas_de':'a677770f','verificacoes_anteriores_ao_novo_acesso_conservadas':[v for v in verificacoes if v['date']<novo['access_date']],'corpo':por_url[novo['source_url']],'plantas':plantas,'aplicada':yaml.safe_load((SITIO/'ledger/claims'/f'{ALVO}.yml').read_text())==b or args.aplicar})
+escrever('atualizacao-divida.json',{'antes':a,'depois':b,'antes_sha256':sha(antes.encode()),'depois_sha256':sha(resultado.encode()),'verificacoes_repostas_de':'04438bb9','verificacoes_anteriores_ao_novo_acesso_conservadas':[v for v in verificacoes if v['date']<novo['access_date']],'corpo':por_url[novo['source_url']],'plantas':plantas,'aplicada':yaml.safe_load((SITIO/'ledger/claims'/f'{ALVO}.yml').read_text())==b or args.aplicar})
 if args.aplicar:
     atual=(SITIO/'ledger/claims'/f'{ALVO}.yml').read_text()
-    entrega_anterior=subprocess.check_output(['git','show',f'e38d5f8b:ledger/claims/{ALVO}.yml'],cwd=SITIO,text=True)
+    entrega_anterior=subprocess.check_output(['git','show',f'1133bb86:ledger/claims/{ALVO}.yml'],cwd=SITIO,text=True)
     assert atual in (antes,resultado,entrega_anterior), 'PARAGEM: a linha mudou depois da comparação; não se sobrepõe'
     (SITIO/'ledger/claims'/f'{ALVO}.yml').write_text(resultado)
     for plano in planos:

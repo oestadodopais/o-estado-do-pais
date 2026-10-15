@@ -3,7 +3,7 @@
  * vazios-M8-sonnet.mjs
  *
  * Medição cega do bloco «vazios» (M8), por Claude Sonnet, sobre o `dist/`
- * construído na cópia `wt-medidor-2` (detached em 355287c).
+ * construído na cópia `wt-medidor-2` (detached em 6b96278).
  *
  * Escrito do zero: não importa nada de `scripts/` nem de `src/` do sítio.
  * Usa três bibliotecas de terceiros já presentes em node_modules (o mesmo
@@ -257,7 +257,7 @@ const NOMES_ACTUAIS = {
     'Average payment time',
   ],
 };
-// As oito medidas em `main` 35313eb, lidas com `git show 35313eb:src/data/concelhos.mjs`
+// As oito medidas em `main` f174be8, lidas com `git show f174be8:src/data/concelhos.mjs`
 // (não construídas: só a lista, como o brief permite).
 const NOMES_35313EB = {
   pt: [

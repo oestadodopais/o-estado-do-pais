@@ -8,7 +8,7 @@
    "nome": "cabecas",
    "valor": {
     "sitio": "441c2eb8a1f3f6ac0f3fb90fc7d57df829094dc6",
-    "sitio_base": "07549ee1e9ec2b39186f9e9f13eeac4914bf5e76",
+    "sitio_base": "7a82c1477b1710292d23f7efdca7a367f407e134",
     "motor": "6ed528bb509b9d2be3a751ef3e7c1b6b29dc29a9",
     "motor_base": "4b46befbac8decf1566f73b5959fd175e5458d66",
     "sitio_arvore_limpa": true
@@ -18,7 +18,7 @@
     "descricao": "git cat-file -t de cada cabeça diz «commit»",
     "resultado": {
      "441c2eb8a1f3f6ac0f3fb90fc7d57df829094dc6": "commit",
-     "07549ee1e9ec2b39186f9e9f13eeac4914bf5e76": "commit",
+     "7a82c1477b1710292d23f7efdca7a367f407e134": "commit",
      "6ed528bb509b9d2be3a751ef3e7c1b6b29dc29a9": "commit",
      "4b46befbac8decf1566f73b5959fd175e5458d66": "commit"
     },
@@ -4521,9 +4521,9 @@
     "nome": "cabecas_e1b",
     "valor": {
      "sitio": {
-      "cabeca_de_codigo": "64ff4b4a14e839d47484c6caef109a3261409bdd",
-      "cabeca_na_medida": "64ff4b4a14e839d47484c6caef109a3261409bdd",
-      "base": "dd7f6208cde1f3a3ef1cba2a6e8f752e8308255a"
+      "cabeca_de_codigo": "b789096d60a7670905f4079139ca208e73948121",
+      "cabeca_na_medida": "b789096d60a7670905f4079139ca208e73948121",
+      "base": "dc65109bb40561c7a357bc6f86b6a722f877bcb4"
      },
      "motor": {
       "cabeca": "79ab4d5082e626dde450eb7953adad9682b9e524",
@@ -4540,8 +4540,8 @@
    {
     "nome": "rebase_sobre_main",
     "valor": {
-     "base": "dd7f6208",
-     "merge_base_da_cabeca": "dd7f6208",
+     "base": "dc65109b",
+     "merge_base_da_cabeca": "dc65109b",
      "rebaseado": true,
      "commits_reposicionados": 11,
      "commits_antes": 11,
@@ -4551,57 +4551,57 @@
      "mapa": [
       {
        "antes": "8e2fe1d6",
-       "depois": "779bb7b6",
+       "depois": "655ee250",
        "assunto": "E1: os documentos dos quatro estudos de Évora, alojados como vieram do motor"
       },
       {
        "antes": "fcc2ad44",
-       "depois": "0f39d121",
+       "depois": "2d87f6d9",
        "assunto": "E1: os registos dos quatro estudos de Évora e os documentos realojados"
       },
       {
        "antes": "1c811075",
-       "depois": "a0bdcdeb",
+       "depois": "a634022a",
        "assunto": "E1: as 69 linhas de Évora mudam de estudo, e o cruzamento conhece as origens"
       },
       {
        "antes": "0abba32c",
-       "depois": "8a4941a0",
+       "depois": "f5ccda57",
        "assunto": "E1: os quatro estudos entram no arquivo, e os seis antigos ficam como edições datadas com a nota do sucessor"
       },
       {
        "antes": "822b93b3",
-       "depois": "43d9f3eb",
+       "depois": "25b7796e",
        "assunto": "E1: a linha dos estudos publicados sobre Évora passa de 6 a 4 pelo mecanismo das linhas derivadas"
       },
       {
        "antes": "b84039d0",
-       "depois": "76157bc8",
+       "depois": "9239be48",
        "assunto": "E1: a estrutura, o plano da fiabilidade, o mapa do repositório e o README dizem os quatro estudos de Évora"
       },
       {
        "antes": "3cab1215",
-       "depois": "ecef4c56",
+       "depois": "1c209ce5",
        "assunto": "E1: a nota dos pelouros do mandato de 2009 a 2013 diz o que o estudo de quem governou a câmara diz"
       },
       {
        "antes": "441c2eb8",
-       "depois": "cbf489b8",
+       "depois": "6e535d11",
        "assunto": "E1: a nota do sucessor diz «a 01.10.2026 sucedeu-lhe», e não «sucedido por»"
       },
       {
        "antes": "c6bdf941",
-       "depois": "1f4cc320",
+       "depois": "202b9ceb",
        "assunto": "E1: o relatório do construtor, as medidas, as capturas e os portões"
       },
       {
        "antes": "413505a4",
-       "depois": "634cfae0",
+       "depois": "0d02caae",
        "assunto": "E1b: o mandato da passagem E1b, com as decisões do lugar de direção sobre os pontos de paragem e as emendas às quatro aberturas"
       },
       {
        "antes": "3741a05b",
-       "depois": "90b1ba0a",
+       "depois": "c3c0c813",
        "assunto": "E1: a corrida final dos portões do construtor anterior na cabeça c6bdf941, deixada na árvore depois do último commit"
       }
      ]
@@ -4625,57 +4625,57 @@
       {
        "edicao": "evora-2027-capital-europeia-da-cultura/pt",
        "data": "2026-10-01",
-       "commit": "779bb7b6",
-       "git": "779bb7b6",
+       "commit": "655ee250",
+       "git": "655ee250",
        "bate": true
       },
       {
        "edicao": "evora-2027-capital-europeia-da-cultura/en",
        "data": "2026-10-01",
-       "commit": "779bb7b6",
-       "git": "779bb7b6",
+       "commit": "655ee250",
+       "git": "655ee250",
        "bate": true
       },
       {
        "edicao": "evora-contas-da-camara-2010-2025/pt",
        "data": "2026-10-01",
-       "commit": "779bb7b6",
-       "git": "779bb7b6",
+       "commit": "655ee250",
+       "git": "655ee250",
        "bate": true
       },
       {
        "edicao": "evora-contas-da-camara-2010-2025/en",
        "data": "2026-10-01",
-       "commit": "779bb7b6",
-       "git": "779bb7b6",
+       "commit": "655ee250",
+       "git": "655ee250",
        "bate": true
       },
       {
        "edicao": "evora-economia-e-dinheiro-publico-de-fora-da-camara/pt",
        "data": "2026-10-01",
-       "commit": "779bb7b6",
-       "git": "779bb7b6",
+       "commit": "655ee250",
+       "git": "655ee250",
        "bate": true
       },
       {
        "edicao": "evora-economia-e-dinheiro-publico-de-fora-da-camara/en",
        "data": "2026-10-01",
-       "commit": "779bb7b6",
-       "git": "779bb7b6",
+       "commit": "655ee250",
+       "git": "655ee250",
        "bate": true
       },
       {
        "edicao": "evora-quem-governou-a-camara-2009-2025/pt",
        "data": "2026-10-01",
-       "commit": "779bb7b6",
-       "git": "779bb7b6",
+       "commit": "655ee250",
+       "git": "655ee250",
        "bate": true
       }
      ]
     },
     "comando": "src/data/datas-de-publicacao.json contra git log --diff-filter=A --format='%ad %H' --date=short -- <ficheiro>",
     "conhecido_positivo": {
-     "descricao": "o mesmo ficheiro antes da passagem (90b1ba0a) aponta para o commit de antes do rebase, e o detetor dá-o por não bater",
+     "descricao": "o mesmo ficheiro antes da passagem (c3c0c813) aponta para o commit de antes do rebase, e o detetor dá-o por não bater",
      "mordeu": true
     }
    },
@@ -4733,7 +4733,7 @@
     },
     "comando": "as duas linhas em ledger/claims, COUNTS de src/data/studies.mjs, ledger/historias-valores.json e LUGAR_DECLARADO_DAS_LINHAS, lidos pelos próprios módulos",
     "conhecido_positivo": {
-     "descricao": "as mesmas linhas antes da passagem (90b1ba0a) diziam 13 e 18 contra a conta de hoje do arquivo, e o detetor vê a diferença",
+     "descricao": "as mesmas linhas antes da passagem (c3c0c813) diziam 13 e 18 contra a conta de hoje do arquivo, e o detetor vê a diferença",
      "mordeu": true,
      "antes": {
       "estudos-publicados": "13",
@@ -5314,7 +5314,7 @@
    {
     "nome": "leitura_do_19_e_pagina_inglesa_do_17",
     "valor": {
-     "construcao": "64ff4b4a14e839d47484c6caef109a3261409bdd",
+     "construcao": "b789096d60a7670905f4079139ca208e73948121",
      "da_cabeca_de_codigo": true,
      "evora_2027": {
       "/estudos/evora-2027-capital-europeia-da-cultura": {
@@ -5368,7 +5368,7 @@
     "nome": "portoes_e1b",
     "valor": {
      "sitio_cabeca_de_codigo": {
-      "cabeca": "64ff4b4a14e839d47484c6caef109a3261409bdd",
+      "cabeca": "b789096d60a7670905f4079139ca208e73948121",
       "build": 0,
       "build_inicio": "2026-10-01T03:37:54Z",
       "build_fim": "2026-10-01T03:39:49Z",
@@ -5381,7 +5381,7 @@
      },
      "sitio_corridas": {
       "1": {
-       "cabeca": "335e0ef048e078eb5e3d0eea502d026f0c5d9a29",
+       "cabeca": "50b2eeec7ff7510a25b3c3a4c1fe93141ad0a60e",
        "build": 1,
        "build_inicio": "2026-10-01T03:13:06Z",
        "build_fim": "2026-10-01T03:14:46Z",
@@ -5407,7 +5407,7 @@
        "typecheck_fim": "2026-10-01T03:23:43Z"
       },
       "2": {
-       "cabeca": "634aea12cd3d004c39a6a32a91eb46d4cc3f0f9b",
+       "cabeca": "27a851e962d0c396fba253d0acb70f85924ef5b9",
        "build": 0,
        "build_inicio": "2026-10-01T03:25:03Z",
        "build_fim": "2026-10-01T03:26:57Z",
@@ -5425,7 +5425,7 @@
        "typecheck_fim": "2026-10-01T03:36:17Z"
       },
       "3": {
-       "cabeca": "64ff4b4a14e839d47484c6caef109a3261409bdd",
+       "cabeca": "b789096d60a7670905f4079139ca208e73948121",
        "build": 0,
        "build_inicio": "2026-10-01T03:37:54Z",
        "build_fim": "2026-10-01T03:39:49Z",
@@ -5455,7 +5455,7 @@
      "capturas": 34,
      "sha256_conferidos": 34,
      "problemas": [],
-     "cabeca": "64ff4b4a14e839d47484c6caef109a3261409bdd",
+     "cabeca": "b789096d60a7670905f4079139ca208e73948121",
      "larguras": [
       390,
       1280
@@ -5495,18 +5495,18 @@
    {
     "nome": "cabecas_e1c",
     "valor": {
-     "sitio": "ca24ea9b72d3342ed02e992cc6be97040239204e",
-     "sitio_base": "dd7f6208cde1f3a3ef1cba2a6e8f752e8308255a",
+     "sitio": "4d88c273b3c435fc7a693a78801ff51dd42edb95",
+     "sitio_base": "dc65109bb40561c7a357bc6f86b6a722f877bcb4",
      "motor": "932eaee2572162753d15a0787186c9c5805c4c2e",
      "motor_base": "4b46befbac8decf1566f73b5959fd175e5458d66",
-     "sitio_na_e1b": "0fa073e9",
+     "sitio_na_e1b": "a93635dc",
      "motor_na_e1b": "79ab4d5",
      "commits_do_sitio_desde_a_e1b": [
-      "ca24ea9b E1c: as réguas do bloco conferem a linha que cada célula cita, exigem as âncoras das reconciliações e apanham a votação por extenso",
-      "d91db6c0 E1c: a leitura do estudo da economia diz que o vencido e o pago se sobrepõem",
-      "bdf5c212 E1c: as fichas dos mandatos de Évora dizem a data da dívida de 2025 e de onde vem, e não que foi deixada ou herdada",
-      "f78a6ead E1c: os documentos e os registos do 16, do 17, do 18 e do 19 voltam do motor depois das emendas",
-      "e7a9e908 E1c: as duas leituras a frio do E1 (o Codex gpt-6.1-sol, quatro plantas em cinco; o gpt-6-astra, cinco em cinco), com o registo das plantas e a triagem comum do lugar de direção, e o mandato da passagem E1c"
+      "4d88c273 E1c: as réguas do bloco conferem a linha que cada célula cita, exigem as âncoras das reconciliações e apanham a votação por extenso",
+      "2346d17c E1c: a leitura do estudo da economia diz que o vencido e o pago se sobrepõem",
+      "fa4b36d5 E1c: as fichas dos mandatos de Évora dizem a data da dívida de 2025 e de onde vem, e não que foi deixada ou herdada",
+      "66208580 E1c: os documentos e os registos do 16, do 17, do 18 e do 19 voltam do motor depois das emendas",
+      "4177a632 E1c: as duas leituras a frio do E1 (o Codex gpt-6.1-sol, quatro plantas em cinco; o gpt-6-astra, cinco em cinco), com o registo das plantas e a triagem comum do lugar de direção, e o mandato da passagem E1c"
      ],
      "commits_do_motor_desde_a_e1b": [
       "932eaee E1c: os registos de conteúdo do 16, do 17, do 18 e do 19 refeitos depois das emendas",
@@ -5518,11 +5518,11 @@
     "conhecido_positivo": {
      "descricao": "git cat-file -t de cada cabeça diz «commit»",
      "resultado": {
-      "ca24ea9b72d3342ed02e992cc6be97040239204e": "commit",
-      "dd7f6208cde1f3a3ef1cba2a6e8f752e8308255a": "commit",
+      "4d88c273b3c435fc7a693a78801ff51dd42edb95": "commit",
+      "dc65109bb40561c7a357bc6f86b6a722f877bcb4": "commit",
       "932eaee2572162753d15a0787186c9c5805c4c2e": "commit",
       "4b46befbac8decf1566f73b5959fd175e5458d66": "commit",
-      "0fa073e9": "commit",
+      "a93635dc": "commit",
       "79ab4d5": "commit"
      },
      "mordeu": true
@@ -8996,7 +8996,7 @@
      ],
      "falhas": []
     },
-    "comando": "git show <cabeça>:<edição .md> no motor (na cabeça e na da E1b, 79ab4d5) e o texto visível de studies-src/<slug>/<língua>.html no sítio (na árvore e na cabeça da E1b, 0fa073e9), contadas as cadeias que saem e as que entram de cada ponto do mandato",
+    "comando": "git show <cabeça>:<edição .md> no motor (na cabeça e na da E1b, 79ab4d5) e o texto visível de studies-src/<slug>/<língua>.html no sítio (na árvore e na cabeça da E1b, a93635dc), contadas as cadeias que saem e as que entram de cada ponto do mandato",
     "conhecido_positivo": {
      "descricao": "cada cadeia que sai estava no motor e no documento alojado na E1b (o mesmo detetor vê-a lá)",
      "cadeias_que_nao_estavam_na_e1b": [],
@@ -9316,7 +9316,7 @@
     "nome": "portoes_e1c",
     "valor": {
      "e1c-codigo": {
-      "cabeca": "ca24ea9b72d3342ed02e992cc6be97040239204e",
+      "cabeca": "4d88c273b3c435fc7a693a78801ff51dd42edb95",
       "build": 0,
       "verify": 0,
       "typecheck": 0
@@ -9335,7 +9335,7 @@
      "capturas": 42,
      "sha256_conferidos": 42,
      "divergem": [],
-     "cabeca": "ca24ea9b72d3342ed02e992cc6be97040239204e",
+     "cabeca": "4d88c273b3c435fc7a693a78801ff51dd42edb95",
      "estado": "cabeca-limpa",
      "problemas": [],
      "pedidos_recusados_para_fora": 0,
@@ -9402,7 +9402,7 @@
     "valor": {
      "modelo": "Claude Opus 5.5",
      "primeiro_commit_do_motor": "2026-10-01T06:32:06+01:00 a8febe0 E1c: as emendas do mandato às edições do 16, do 17, do 18 e do 19",
-     "primeiro_commit_do_sitio": "2026-10-01T06:49:48+01:00 f78a6ead E1c: os documentos e os registos do 16, do 17, do 18 e do 19 voltam do motor depois das emendas",
+     "primeiro_commit_do_sitio": "2026-10-01T06:49:48+01:00 66208580 E1c: os documentos e os registos do 16, do 17, do 18 e do 19 voltam do motor depois das emendas",
      "inicio": "2026-10-01T06:32:06+01:00",
      "medido_em": "2026-10-01T06:24:48+00:00",
      "segundos_de_relogio_desde_o_primeiro_commit": 3162,
@@ -9432,14 +9432,14 @@
    {
     "nome": "cabecas_e1d",
     "valor": {
-     "sitio": "30dcec5cb00b8951383e53135e848873fb8255d0",
+     "sitio": "7f78f4b9e13183b599e0e54cfd2b44b6f89dadd0",
      "motor": "7187b8235c45caac3cbe81b31d2493f0c728edff",
-     "sitio_na_e1c": "e986468d",
+     "sitio_na_e1c": "10fc47e8",
      "motor_na_e1c": "932eaee",
      "commits_do_sitio": [
-      "30dcec5c E1d: os guiões da passagem: as medidas, o realojamento do 18 e as capturas das fichas e do estudo da economia",
-      "b07aa130 E1d: as fichas dos mandatos de 2013 a 2025 dizem a data das dívidas de fim de ano e de onde vêm",
-      "72c680b0 E1d: os documentos e os registos do 18 voltam do motor depois da emenda do corpo"
+      "7f78f4b9 E1d: os guiões da passagem: as medidas, o realojamento do 18 e as capturas das fichas e do estudo da economia",
+      "a797f847 E1d: as fichas dos mandatos de 2013 a 2025 dizem a data das dívidas de fim de ano e de onde vêm",
+      "7805a0e0 E1d: os documentos e os registos do 18 voltam do motor depois da emenda do corpo"
      ],
      "commits_do_motor": [
       "7187b82 E1d: os registos de conteúdo do 18 refeitos depois da emenda do corpo",
@@ -9451,9 +9451,9 @@
     "conhecido_positivo": {
      "descricao": "git cat-file -t de cada cabeça diz «commit»",
      "resultado": {
-      "30dcec5cb00b8951383e53135e848873fb8255d0": "commit",
+      "7f78f4b9e13183b599e0e54cfd2b44b6f89dadd0": "commit",
       "7187b8235c45caac3cbe81b31d2493f0c728edff": "commit",
-      "e986468d": "commit",
+      "10fc47e8": "commit",
       "932eaee": "commit"
      },
      "mordeu": true
@@ -9612,7 +9612,7 @@
      },
      "certo": true
     },
-    "comando": "git show <cabeça>:<edição .md> no motor (na cabeça e na da E1c, 932eaee) e o texto visível do documento alojado no sítio (na árvore e na cabeça da E1c, e986468d), contadas a frase que sai e a que entra",
+    "comando": "git show <cabeça>:<edição .md> no motor (na cabeça e na da E1c, 932eaee) e o texto visível do documento alojado no sítio (na árvore e na cabeça da E1c, 10fc47e8), contadas a frase que sai e a que entra",
     "conhecido_positivo": {
      "descricao": "a frase que sai estava no motor e no documento alojado na E1c (o mesmo detetor vê-a lá)",
      "mordeu": true
@@ -9678,7 +9678,7 @@
     "nome": "portoes_e1d",
     "valor": {
      "construcao_da_cabeca_de_codigo": {
-      "cabeca": "30dcec5cb00b8951383e53135e848873fb8255d0",
+      "cabeca": "7f78f4b9e13183b599e0e54cfd2b44b6f89dadd0",
       "build": 0
      }
     },
@@ -9693,7 +9693,7 @@
     "valor": {
      "capturas": 24,
      "sha256_conferidos": 24,
-     "cabeca": "30dcec5cb00b8951383e53135e848873fb8255d0",
+     "cabeca": "7f78f4b9e13183b599e0e54cfd2b44b6f89dadd0",
      "estado": "cabeca-limpa",
      "problemas": [],
      "pedidos_recusados_para_fora": 0,
@@ -9743,13 +9743,13 @@
    {
     "nome": "cabecas_e1e",
     "valor": {
-     "sitio": "527d8b1c31e982ae19a98ec07a1bf6e878cb8518",
+     "sitio": "315867ef4c8eba8657acc343ab01914c940c6bee",
      "motor": "d2495a7d0d023dccb6eb4014b917bf06554438f6",
-     "sitio_na_e1d": "90640cf6",
+     "sitio_na_e1d": "d717febc",
      "motor_na_e1d": "7187b82",
      "commits_do_sitio": [
-      "527d8b1c E1e: a C3 pede duas linhas para um total, os guiões de medida saem com 1 numa medida real que falha, e a conferência das leituras conta o documento em falta e o gabarito ilegível",
-      "72efe684 E1e: os documentos e os registos do 17 e do 18 voltam do motor depois das emendas"
+      "315867ef E1e: a C3 pede duas linhas para um total, os guiões de medida saem com 1 numa medida real que falha, e a conferência das leituras conta o documento em falta e o gabarito ilegível",
+      "43c6d911 E1e: os documentos e os registos do 17 e do 18 voltam do motor depois das emendas"
      ],
      "commits_do_motor": [
       "d2495a7 E1e: os registos de conteúdo do 17 e do 18 refeitos depois das emendas",
@@ -9760,9 +9760,9 @@
     "conhecido_positivo": {
      "descricao": "git cat-file -t de cada cabeça diz «commit»",
      "resultado": {
-      "527d8b1c31e982ae19a98ec07a1bf6e878cb8518": "commit",
+      "315867ef4c8eba8657acc343ab01914c940c6bee": "commit",
       "d2495a7d0d023dccb6eb4014b917bf06554438f6": "commit",
-      "90640cf6": "commit",
+      "d717febc": "commit",
       "7187b82": "commit"
      },
      "mordeu": true
@@ -9787,7 +9787,7 @@
      },
      "certo": true
     },
-    "comando": "git show <cabeça>:<edição .md> no motor (na cabeça e na da E1d, 7187b82) e o texto visível do documento alojado no sítio (na árvore e na cabeça da E1d, 90640cf6), contadas a frase que sai e a que entra; no 18, se a primeira vez que a expressão aparece traz a explicação logo a seguir; no 17, a ligação ao estudo das contas e as edições que o estudo tem no motor",
+    "comando": "git show <cabeça>:<edição .md> no motor (na cabeça e na da E1d, 7187b82) e o texto visível do documento alojado no sítio (na árvore e na cabeça da E1d, d717febc), contadas a frase que sai e a que entra; no 18, se a primeira vez que a expressão aparece traz a explicação logo a seguir; no 17, a ligação ao estudo das contas e as edições que o estudo tem no motor",
     "conhecido_positivo": {
      "descricao": "a frase que sai estava no motor e no documento alojado na E1d (o mesmo detetor vê-a lá), e lá a primeira vez não trazia a explicação",
      "mordeu": true
@@ -9826,7 +9826,7 @@
      },
      "certo": true
     },
-    "comando": "git show <cabeça>:<edição .md> no motor (na cabeça e na da E1d, 7187b82) e o texto visível do documento alojado no sítio (na árvore e na cabeça da E1d, 90640cf6), contadas a frase que sai e a que entra; no 18, se a primeira vez que a expressão aparece traz a explicação logo a seguir; no 17, a ligação ao estudo das contas e as edições que o estudo tem no motor",
+    "comando": "git show <cabeça>:<edição .md> no motor (na cabeça e na da E1d, 7187b82) e o texto visível do documento alojado no sítio (na árvore e na cabeça da E1d, d717febc), contadas a frase que sai e a que entra; no 18, se a primeira vez que a expressão aparece traz a explicação logo a seguir; no 17, a ligação ao estudo das contas e as edições que o estudo tem no motor",
     "conhecido_positivo": {
      "descricao": "a frase que sai estava no motor e no documento alojado na E1d (o mesmo detetor vê-a lá), e lá a primeira vez não trazia a explicação",
      "mordeu": true

@@ -1,6 +1,6 @@
 {
   "comando": "node design/especime-v3/medicoes/n1-2026-09-30/provar-contador-n1b.mjs",
-  "cabeca": "dfc86083ed53345d1a688486a2a0bcae0dede51a",
+  "cabeca": "00911eb38374ede795af6a9fb1afa16632267430",
   "inicio": "2026-09-30T10:40:55.397Z",
   "fim": "2026-09-30T10:40:55.641Z",
   "segundos": 0.242286583,

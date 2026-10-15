@@ -1,6 +1,6 @@
 {
   "comando": "node design/especime-v3/medicoes/ex2-2026-10-06/conferir-artefactos-b.mjs",
-  "cabeca_codigo": "8c3a08b9dcfb48595be70d6d47385b0427cc3b62",
+  "cabeca_codigo": "140f9458d0556248987d002652336d9d1a56891f",
   "portoes": {
     "build": 0,
     "verify": 0,

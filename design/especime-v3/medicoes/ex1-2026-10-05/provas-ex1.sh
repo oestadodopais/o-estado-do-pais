@@ -37,6 +37,6 @@ passo capturas node $A/captar-ex1.mjs --json capturas.json
 passo frases-em-flex node $A/frases-em-flex.mjs --json $A/frases-em-flex.json
 passo plantas-dos-portoes env OEDP_MEDICOES=$A OEDP_EXIGIR_ARVORE_LIMPA=1 node tests/pais/portoes.mjs --prefixo ex1-
 passo mapa python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md
-passo mapa-a-mao python3 $A/mapa-a-mao.py 3664b90d c885cb4c --json $A/mapa-a-mao.json
+passo mapa-a-mao python3 $A/mapa-a-mao.py 3664b90d 90e5c62b --json $A/mapa-a-mao.json
 git rev-parse HEAD > "$O/cabeca.fim"
 git status --porcelain --untracked-files=no > "$O/estado.fim"

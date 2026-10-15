@@ -1235,7 +1235,7 @@ async function correTudo(soEstas) {
    *
    * A célula nasce de um achado da segunda passagem: as capturas de `/en/` a 320
    * e a 390 saíram com 353 e 406 px de largura. Medido na construção de partida
-   * (`307796f`) e nesta, o transbordo era de 33 e 16 px, só na edição inglesa, e
+   * (`4c19c4b`) e nesta, o transbordo era de 33 e 16 px, só na edição inglesa, e
    * vinha da fila do comando, cujos rótulos são mais longos em inglês. Era um
    * defeito anterior a este bloco que nenhuma régua media: a matriz tem uma
    * célula «largura 320 · sem transbordo horizontal» e ela corre só numa edição.

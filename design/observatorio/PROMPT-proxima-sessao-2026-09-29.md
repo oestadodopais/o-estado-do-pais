@@ -12,7 +12,7 @@
 
 ## 2 · O que se faz a seguir, por esta ordem
 
-1. **A aterragem que ficou à espera do diretor.** Os três blocos estão juntos na cabeça `220861c0` do ramo `pp1-2026-09-28`, com os três portões a 0 às 06:28 UTC de 29.09 e a corrida «portão» verde (a 36531474220, 7,4 minutos); o motor aterra com o ramo `c1-2026-09-28` (`68318e0`). Os registos do dia e a redação de 29.09 estão por cima, no ramo `registos-2026-09-29`, com os seus portões e a sua corrida. A 29.09, perto das 06:40 UTC, a verificação das permissões da sessão recusou o guião da aterragem (o push de `main`, que lança a produção, e o do `master` do motor), e a casa não contorna uma recusa: a aterragem espera o «sim» do diretor, ou que ele a corra. Depois dela: a Vercel vigiada, o `verify:deploy`, a corrida de `main`; os ramos fundidos apagam-se (`c1`, `ci1`, `pp1`, `registos`, no sítio e no motor) e as worktrees saem, em comandos separados dos pushes; e um registo curto diz a avançada, o lançamento e o `verify:deploy`.
+1. **A aterragem que ficou à espera do diretor.** Os três blocos estão juntos na cabeça `4ec353fb` do ramo `pp1-2026-09-28`, com os três portões a 0 às 06:28 UTC de 29.09 e a corrida «portão» verde (a 36531474220, 7,4 minutos); o motor aterra com o ramo `c1-2026-09-28` (`68318e0`). Os registos do dia e a redação de 29.09 estão por cima, no ramo `registos-2026-09-29`, com os seus portões e a sua corrida. A 29.09, perto das 06:40 UTC, a verificação das permissões da sessão recusou o guião da aterragem (o push de `main`, que lança a produção, e o do `master` do motor), e a casa não contorna uma recusa: a aterragem espera o «sim» do diretor, ou que ele a corra. Depois dela: a Vercel vigiada, o `verify:deploy`, a corrida de `main`; os ramos fundidos apagam-se (`c1`, `ci1`, `pp1`, `registos`, no sítio e no motor) e as worktrees saem, em comandos separados dos pushes; e um registo curto diz a avançada, o lançamento e o `verify:deploy`.
 2. **O que o diretor disser da primeira página**, com os amigos, antes de tudo o resto: os selos «fonte» dentro das frases dos blocos são a primeira coisa a pesar.
 3. **O F2.2b** retoma-se na mesma sessão do Codex (`01a0e959-281a-7bb2-8a92-d1a548840313`), com `codex exec … resume`, quando a semana do Codex repuser (03.10.2026 às 17:10 UTC); a leitura a frio é do Opus.
 4. **O que fica do nome do diretor é dele** (§1.138): a árvore foi redigida a 29.09, a pedido dele; ficam a história do Git (limpá-la é um push forçado que muda os resumos que os registos e o livro-razão citam), o correio pessoal como autor dos commits (o endereço privado do GitHub para os seguintes) e o oráculo do portão (a I175, com um segredo do GitHub e uma variável da Vercel que ele cria). A I174 e a I176 fazem-se num bloco próprio de privacidade e manutenção.
@@ -39,30 +39,30 @@
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
 ### O sítio (`<a árvore principal do sítio>`)
-- `main`: a677770f · 2026-09-28T12:23:26+01:00 · A §1.133: o leitor comum primeiro, a decisão do diretor de 28.09.2026 nas palavras dele, depois das duas avaliações de fora de 27.0  (`git log -1 main`)
-- `origin/main`: 17758ec7 · 2026-09-28T11:10:48+01:00 · Painel semanal de 28.09: 91 afirmações reverificadas, 4 alarmes (uma revisão da fonte e três releituras ambíguas), o carimbo avança  (`git log -1 origin/main`)
+- `main`: 04438bb9 · 2026-09-28T12:23:26+01:00 · A §1.133: o leitor comum primeiro, a decisão do diretor de 28.09.2026 nas palavras dele, depois das duas avaliações de fora de 27.0  (`git log -1 main`)
+- `origin/main`: c1e834fb · 2026-09-28T11:10:48+01:00 · Painel semanal de 28.09: 91 afirmações reverificadas, 4 alarmes (uma revisão da fonte e três releituras ambíguas), o carimbo avança  (`git log -1 origin/main`)
 - `main` está 1 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
-- ramos locais: `c1-2026-09-28 168d9093`, `ci1-2026-09-28 50c79966`, `f22b-2026-09-28 01362b78`, `main a677770f`, `pp1-2026-09-28 220861c0`, `registos-2026-09-29 5448c76a`  (`git branch`)
+- ramos locais: `c1-2026-09-28 c5500d08`, `ci1-2026-09-28 a62722f8`, `f22b-2026-09-28 c758c51e`, `main 04438bb9`, `pp1-2026-09-28 4ec353fb`, `registos-2026-09-29 7f1932f1`  (`git branch`)
 - ramos no remoto: `c1-2026-09-28`, `ci1-2026-09-28`, `main`, `pp1-2026-09-28`, `registos-2026-09-29`  (`git ls-remote --heads origin`)
-- worktree: `<a árvore principal do sítio> a677770f [main]`
-- worktree: `<a árvore principal do sítio>/<worktrees>/c1-2026-09-28 168d9093 [c1-2026-09-28]`
-- worktree: `<a árvore principal do sítio>/<worktrees>/ci1-2026-09-28 50c79966 [ci1-2026-09-28]`
-- worktree: `<a árvore principal do sítio>/<worktrees>/f22b-2026-09-28 01362b78 [f22b-2026-09-28]`
-- worktree: `<a árvore principal do sítio>/<worktrees>/pp1-2026-09-28 220861c0 [pp1-2026-09-28]`
-- worktree: `<a árvore principal do sítio>/<worktrees>/registos-2026-09-29 5448c76a [registos-2026-09-29]`
+- worktree: `<a árvore principal do sítio> 04438bb9 [main]`
+- worktree: `<a árvore principal do sítio>/<worktrees>/c1-2026-09-28 c5500d08 [c1-2026-09-28]`
+- worktree: `<a árvore principal do sítio>/<worktrees>/ci1-2026-09-28 a62722f8 [ci1-2026-09-28]`
+- worktree: `<a árvore principal do sítio>/<worktrees>/f22b-2026-09-28 c758c51e [f22b-2026-09-28]`
+- worktree: `<a árvore principal do sítio>/<worktrees>/pp1-2026-09-28 4ec353fb [pp1-2026-09-28]`
+- worktree: `<a árvore principal do sítio>/<worktrees>/registos-2026-09-29 7f1932f1 [registos-2026-09-29]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
-- 36534779659 · `cec84d3c` · registos-2026-09-29 · portão · **completed / success** · criada 2026-09-29T07:07:17Z · atualizada 2026-09-29T07:17:30Z
-- 36531474220 · `220861c0` · pp1-2026-09-28 · portão · **completed / success** · criada 2026-09-29T06:31:04Z · atualizada 2026-09-29T06:38:26Z
+- 36534779659 · `f1f2c88f` · registos-2026-09-29 · portão · **completed / success** · criada 2026-09-29T07:07:17Z · atualizada 2026-09-29T07:17:30Z
+- 36531474220 · `4ec353fb` · pp1-2026-09-28 · portão · **completed / success** · criada 2026-09-29T06:31:04Z · atualizada 2026-09-29T06:38:26Z
 - 36489295961 · `01177aea` · ci1-planta-vermelha-2026-09-28 · portão · **completed / failure** · criada 2026-09-28T21:55:53Z · atualizada 2026-09-28T22:05:35Z
-- 36489174336 · `078186df` · ci1-2026-09-28 · portão · **completed / success** · criada 2026-09-28T21:54:45Z · atualizada 2026-09-28T22:04:39Z
-- 36475236795 · `1875866b` · ci1-2026-09-28 · portão · **completed / success** · criada 2026-09-28T19:52:29Z · atualizada 2026-09-28T20:01:27Z
-- 36451584759 · `a02c705c` · c1-2026-09-28 · portão · **completed / success** · criada 2026-09-28T16:30:54Z · atualizada 2026-09-28T17:08:25Z
+- 36489174336 · `0cbee822` · ci1-2026-09-28 · portão · **completed / success** · criada 2026-09-28T21:54:45Z · atualizada 2026-09-28T22:04:39Z
+- 36475236795 · `bd0c8523` · ci1-2026-09-28 · portão · **completed / success** · criada 2026-09-28T19:52:29Z · atualizada 2026-09-28T20:01:27Z
+- 36451584759 · `c775a7e4` · c1-2026-09-28 · portão · **completed / success** · criada 2026-09-28T16:30:54Z · atualizada 2026-09-28T17:08:25Z
 
 ### O que está no ar (`/version.json` do sítio publicado)
-- commit no ar: `17758ec7` · construído em 2026-09-28T11:05:14.716Z · ref `main` · production
-- igual a `origin/main` (`17758ec7`): **sim**
+- commit no ar: `c1e834fb` · construído em 2026-09-28T11:05:14.716Z · ref `main` · production
+- igual a `origin/main` (`c1e834fb`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
 ### O motor (`~/<projetos>/ResearchHub`)

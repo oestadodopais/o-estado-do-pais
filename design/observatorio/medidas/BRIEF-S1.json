@@ -1,12 +1,12 @@
 {
   "brief": "design/observatorio/BRIEF-S1-a-caixa-das-sugestoes.md",
   "guiao": "design/observatorio/medidas/BRIEF-S1.py",
-  "cabeca_lida": "62ed13c6",
+  "cabeca_lida": "ad62f09e",
   "medidas": [
     {
       "nome": "ficheiros_na_pasta_das_funcoes",
       "valor": 0,
-      "comando": "git ls-tree -r --name-only 62ed13c6:api · conta os ficheiros",
+      "comando": "git ls-tree -r --name-only ad62f09e:api · conta os ficheiros",
       "conhecido_positivo": {
         "o_que": "o mesmo listador conta os guiões de public/js",
         "encontrado": true
@@ -15,7 +15,7 @@
     {
       "nome": "portas_do_rodape_para_escrever_ao_projeto",
       "valor": 1,
-      "comando": "git show 62ed13c6:src/components/SiteFooter.astro · os atributos data-porta-",
+      "comando": "git show ad62f09e:src/components/SiteFooter.astro · os atributos data-porta-",
       "conhecido_positivo": {
         "o_que": "a das correções é uma delas",
         "encontrado": true
@@ -24,7 +24,7 @@
     {
       "nome": "ficheiros_de_codigo_que_leem_a_porta_das_correcoes",
       "valor": 5,
-      "comando": "git grep -l data-porta-correccoes 62ed13c6 -- tests scripts src · só .mjs, .astro e .py",
+      "comando": "git grep -l data-porta-correccoes ad62f09e -- tests scripts src · só .mjs, .astro e .py",
       "conhecido_positivo": {
         "o_que": "o portão de HTML é um deles",
         "encontrado": true
@@ -33,7 +33,7 @@
     {
       "nome": "vistas_com_formulario",
       "valor": 2,
-      "comando": "git grep -l '<form' 62ed13c6 -- src/pages src/views",
+      "comando": "git grep -l '<form' ad62f09e -- src/pages src/views",
       "conhecido_positivo": {
         "o_que": "a dos lugares é uma delas",
         "encontrado": true
@@ -42,7 +42,7 @@
     {
       "nome": "ficheiros_fonte_que_falam_de_sugestoes",
       "valor": 0,
-      "comando": "git grep -il sugest 62ed13c6 -- src",
+      "comando": "git grep -il sugest ad62f09e -- src",
       "conhecido_positivo": {
         "o_que": "o mesmo detetor acha «correc» no rodapé",
         "encontrado": true
@@ -51,7 +51,7 @@
     {
       "nome": "rotas_declaradas",
       "valor": 35,
-      "comando": "git show 62ed13c6:src/lib/routes.mjs · as chaves de ROUTES",
+      "comando": "git show ad62f09e:src/lib/routes.mjs · as chaves de ROUTES",
       "conhecido_positivo": {
         "o_que": "a das correções é uma delas",
         "encontrado": true

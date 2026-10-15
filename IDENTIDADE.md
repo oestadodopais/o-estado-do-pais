@@ -14,7 +14,7 @@ página não precise de um sétimo estudo.
 contra os nove testes de aceitação do `BRIEF-confianca.md` §6.8 com um crítico de
 outra família de modelos, e escolheu a **direção S**, que é a síntese das três e
 não uma delas: `design/DECISAO.md`, 16.08.2026. A v1 fica onde estava, no git:
-`git show e340fa6:IDENTIDADE.md`. O registo deste bloco vai para `DECISIONS.md`
+`git show da00f1a:IDENTIDADE.md`. O registo deste bloco vai para `DECISIONS.md`
 §1.43.
 
 **A grafia mudou com a versão, e não em silêncio.** §9 diz que um documento deste
@@ -518,7 +518,7 @@ rolam dentro da sua caixa, e não empurram a página.
 
 *Redação final do bloco T, 18.08.2026 (`DECISIONS.md` §1.47). O bloco foi
 fundido e está no ar desde a noite de 18.08.2026, pela palavra da direção
-(`main` `28709e1`, `verify:deploy` ✓ a 18.08 e outra vez a 20.08): o que se
+(`main` `482019a`, `verify:deploy` ✓ a 18.08 e outra vez a 20.08): o que se
 segue descreve o que ele deixa, e é o que está no ar. **Dois pontos foram
 reescritos a 20.08.2026** (§1.48), quando a direção decidiu a licença do
 conjunto de dados: são o do conjunto e o das coisas que ficavam à espera dela,

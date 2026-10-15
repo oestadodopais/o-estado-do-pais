@@ -123,7 +123,7 @@
     {
       "nome": "U5 · a altura de `/` a 390 depois deste bloco é igual ou menor do que a de partida",
       "passa": true,
-      "prova": "antes 3263 px (design/especime-v3/medicoes/mapa-medidas.json, «medidas.altura.depois», cabeça c9823939, a cabeça em que o F1.1d fechou o relatório) · depois 3263 px, na mesma largura e no mesmo motor (0 px a menos) · na mesma construção, a gaveta dos nomes aberta dá 3794 px e sem guião 4048 px"
+      "prova": "antes 3263 px (design/especime-v3/medicoes/mapa-medidas.json, «medidas.altura.depois», cabeça d55c39c5, a cabeça em que o F1.1d fechou o relatório) · depois 3263 px, na mesma largura e no mesmo motor (0 px a menos) · na mesma construção, a gaveta dos nomes aberta dá 3794 px e sem guião 4048 px"
     },
     {
       "nome": "U7 · o nível da unidade rendido pelo servidor: os concelhos da unidade, 0 pontos, o concelho da página com o anel, e a porta a abrir o vizinho apontado",
@@ -1121,7 +1121,7 @@
       "antesDe": {
         "ficheiro": "design/especime-v3/medicoes/mapa-medidas.json",
         "chave": "medidas.altura.depois",
-        "cabeca": "c9823939, a cabeça em que o F1.1d fechou o relatório"
+        "cabeca": "d55c39c5, a cabeça em que o F1.1d fechou o relatório"
       },
       "depois": 3263,
       "comAGavetaAberta": 3794,

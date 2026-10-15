@@ -1,8 +1,8 @@
 {
   "comando": "OEDP_TEMA_MENU_JSON=design/especime-v3/medicoes/h4-2026-10-06/tema-menu-d.json node tests/inicio/tema-e-menu.mjs --prova",
-  "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+  "cabeca": "4fe4ab86a2182acce525bddda0996a7b439f5cfa",
   "construcao": {
-    "commit": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+    "commit": "4fe4ab86a2182acce525bddda0996a7b439f5cfa",
     "ref": "h4-2026-10-06",
     "env": "local",
     "origem": "git",

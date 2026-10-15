@@ -3,7 +3,7 @@
 *Escrito pelo lugar de direção (Claude Fable 5) ao fechar a sessão de 20 e 21.08. Tudo lido no repositório ou no sítio no ar; sem travessões.*
 
 ## 1. Onde está `main`
-- `main` = `origin/main` = no ar = **`eac5bfa`** (`ef7832a` + o registo da fusão); `verify:deploy` ✓ às 20:3x BST. Base da fase: `77e82eb`. O ramo `redesenho-v3` está fundido (fast-forward) e é apagável.
+- `main` = `origin/main` = no ar = **`9ff4607`** (`8164911` + o registo da fusão); `verify:deploy` ✓ às 20:3x BST. Base da fase: `77e82eb`. O ramo `redesenho-v3` está fundido (fast-forward) e é apagável.
 - A constituição em vigor: `IDENTIDADE.md` v2 emendada em §1, §2, §5 (20 e 21.08) **e** a Constituição visual v3.1 com as **Emendas 1 a 17** (cofre `Experiments/O Estado do País — Constituição visual v3.1.md`, fonte; cópia `design/especime-v3/direcao.md`). Onde discordam, as Emendas vencem; a regra da frase (nota à Emenda 15): uma frase sobrevive numa página do leitor se a sua remoção fizesse um leitor ler mal um número.
 - Os registos: `DECISIONS.md` §1.50 a §1.56 e §4; `design/especime-v3/PLANO-redesenho-v3.md` (o plano e os factos por etapa, §14a/14b as pré-visualizações e a fusão); `notas/stage-0..5.md`; `RELOCACOES.md`, `CHAVES-EN.md`, `INVENTARIO-FRASES.md`, `ISSUES.md`; `critica/` com as seis leituras do Codex e as suas plantas.
 

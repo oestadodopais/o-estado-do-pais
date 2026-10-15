@@ -1,9 +1,9 @@
 {
   "comando": "npm run verify",
   "ambiente_declarado": {},
-  "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+  "cabeca": "985c977dee92f5dfcabb6823d8ced49ea8753318",
   "codigo_executado": {
-    "cabeca_base": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+    "cabeca_base": "985c977dee92f5dfcabb6823d8ced49ea8753318",
     "arvore": "dabe41f0552694c9c587406c0b3a05585f05800b",
     "tipo": "arvore_de_trabalho",
     "alterados": [

@@ -10,7 +10,7 @@
   },
   "contador_do_brief": {
     "comando": "node design/especime-v3/medicoes/rp4-2026-10-04/medir.mjs",
-    "cabeca": "905105b7",
+    "cabeca": "4d91d3b2",
     "series": 16,
     "pontos": 4131,
     "maior": 944,

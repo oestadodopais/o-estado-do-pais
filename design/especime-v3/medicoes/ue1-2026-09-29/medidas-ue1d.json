@@ -1,7 +1,7 @@
 {
   "bloco": "UE1d",
-  "cabeca_do_codigo": "99b9f73a8221d4f012047ec7dfeaa5768a84c0c2",
-  "base": "42a368a3",
+  "cabeca_do_codigo": "ac39025efaa4e63b605ad65d8b30bb15249cc555",
+  "base": "9b4b4f2a",
   "guiao": "design/especime-v3/medicoes/ue1-2026-09-29/medir-ue1d.mjs",
   "medidas": [
     {
@@ -9,7 +9,7 @@
       "valor": 0,
       "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1d/build.codigo",
       "conhecido_positivo": {
-        "o_que": "o registo da corrida é desta cabeça (99b9f73a)",
+        "o_que": "o registo da corrida é desta cabeça (ac39025e)",
         "encontrado": true
       }
     },
@@ -27,7 +27,7 @@
       "valor": 0,
       "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1d/verify.codigo",
       "conhecido_positivo": {
-        "o_que": "o registo da corrida é desta cabeça (99b9f73a)",
+        "o_que": "o registo da corrida é desta cabeça (ac39025e)",
         "encontrado": true
       }
     },
@@ -45,7 +45,7 @@
       "valor": 0,
       "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1d/typecheck.codigo",
       "conhecido_positivo": {
-        "o_que": "o registo da corrida é desta cabeça (99b9f73a)",
+        "o_que": "o registo da corrida é desta cabeça (ac39025e)",
         "encontrado": true
       }
     },
@@ -301,7 +301,7 @@
     {
       "nome": "ressalva_igual_a_do_commit_base",
       "valor": true,
-      "comando": "git show 42a368a3:src/data/primeira-pagina.mjs, o bloco casa, os dois textos da ressalva, contra a fonte única, carácter a carácter",
+      "comando": "git show 9b4b4f2a:src/data/primeira-pagina.mjs, o bloco casa, os dois textos da ressalva, contra a fonte única, carácter a carácter",
       "conhecido_positivo": {
         "o_que": "os dois textos do commit base leram-se",
         "encontrado": true
@@ -310,7 +310,7 @@
     {
       "nome": "ressalva_da_leitura_antiga_pt_igual_a_da_fonte",
       "valor": true,
-      "comando": "a frase da ressalva que fechava a leitura portuguesa do cartão em 42a368a3 contra o texto português da fonte única",
+      "comando": "a frase da ressalva que fechava a leitura portuguesa do cartão em 9b4b4f2a contra o texto português da fonte única",
       "conhecido_positivo": {
         "o_que": "a frase antiga leu-se",
         "encontrado": true
@@ -319,7 +319,7 @@
     {
       "nome": "ressalva_da_leitura_antiga_en",
       "valor": "This total mixes very different situations, and the European Commission says it should be read together with the tenure structure.",
-      "comando": "a frase da ressalva que fechava a leitura inglesa do cartão em 42a368a3",
+      "comando": "a frase da ressalva que fechava a leitura inglesa do cartão em 9b4b4f2a",
       "conhecido_positivo": {
         "o_que": "a frase antiga leu-se",
         "encontrado": true
@@ -447,7 +447,7 @@
       "valor": 0,
       "comando": "as entradas de FIGURAS com a propriedade semMediaEuropeia",
       "conhecido_positivo": {
-        "o_que": "o commit base tinha a declaração (git show 42a368a3:src/data/figuras.mjs)",
+        "o_que": "o commit base tinha a declaração (git show 9b4b4f2a:src/data/figuras.mjs)",
         "encontrado": true
       }
     },
@@ -456,7 +456,7 @@
       "valor": false,
       "comando": "src/lib/leitura-da-medida.mjs exporta definicaoDaMedida?",
       "conhecido_positivo": {
-        "o_que": "o commit base exportava-a (git show 42a368a3:src/lib/leitura-da-medida.mjs)",
+        "o_que": "o commit base exportava-a (git show 9b4b4f2a:src/lib/leitura-da-medida.mjs)",
         "encontrado": true
       }
     },
@@ -801,7 +801,7 @@
     {
       "nome": "plantas_antes_do_quarto_commit_que_morderam",
       "valor": 2,
-      "comando": "o mesmo, as duas plantas da declaração corridas à mão antes do commit 99b9f73a",
+      "comando": "o mesmo, as duas plantas da declaração corridas à mão antes do commit ac39025e",
       "conhecido_positivo": {
         "o_que": "o mesmo",
         "encontrado": true
@@ -810,7 +810,7 @@
     {
       "nome": "mapa_do_quarto_commit_sem_citacoes_perdidas",
       "valor": true,
-      "comando": "o mesmo, o conferir-mapa antes do commit 99b9f73a",
+      "comando": "o mesmo, o conferir-mapa antes do commit ac39025e",
       "conhecido_positivo": {
         "o_que": "o registo tinha as contas",
         "encontrado": true
@@ -900,7 +900,7 @@
     {
       "nome": "ficheiros_mudados_pela_passagem",
       "valor": 20,
-      "comando": "git diff --name-only 42a368a3 <cabeça>",
+      "comando": "git diff --name-only 9b4b4f2a <cabeça>",
       "conhecido_positivo": {
         "o_que": "o mesmo comando vê o recibo da série mudado",
         "encontrado": true
@@ -939,7 +939,7 @@
     {
       "nome": "linhas_do_livro_mudadas",
       "valor": 0,
-      "comando": "git diff --name-only 42a368a3 <cabeça> -- ledger/claims",
+      "comando": "git diff --name-only 9b4b4f2a <cabeça> -- ledger/claims",
       "conhecido_positivo": {
         "o_que": "o mesmo comando vê o recibo da série mudado",
         "encontrado": true
@@ -957,7 +957,7 @@
     {
       "nome": "definicoes_das_medidas_mudadas",
       "valor": 0,
-      "comando": "as linhas do diff de src/data/figuras.mjs entre 42a368a3 e a cabeça que tocam DEFINICOES_DAS_MEDIDAS ou ORIGENS_DAS_DEFINICOES",
+      "comando": "as linhas do diff de src/data/figuras.mjs entre 9b4b4f2a e a cabeça que tocam DEFINICOES_DAS_MEDIDAS ou ORIGENS_DAS_DEFINICOES",
       "conhecido_positivo": {
         "o_que": "o mesmo diff tem linhas (as da semMediaEuropeia)",
         "encontrado": true
@@ -993,7 +993,7 @@
     {
       "nome": "commits_de_codigo_da_passagem",
       "valor": 4,
-      "comando": "git rev-list --count 42a368a3..<cabeça>",
+      "comando": "git rev-list --count 9b4b4f2a..<cabeça>",
       "conhecido_positivo": {
         "o_que": "a base é antepassada da cabeça",
         "encontrado": true
@@ -1020,7 +1020,7 @@
     {
       "nome": "custo_inicio_da_passagem",
       "valor": "2026-09-29T20:58:38Z",
-      "comando": "git show -s --format=%cI 42a368a3 (o commit das provas da UE1c)",
+      "comando": "git show -s --format=%cI 9b4b4f2a (o commit das provas da UE1c)",
       "conhecido_positivo": {
         "o_que": "a hora leu-se",
         "encontrado": true

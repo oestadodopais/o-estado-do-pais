@@ -1,25 +1,25 @@
 {
   "comando": "python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4b.py",
-  "cabeca_codigo": "9c44ad9e31972cfbfd9d7138e29b52b9027bb63d",
+  "cabeca_codigo": "c4d6af8ef7447055651e4c32c1d127288084eb15",
   "commits": [
     {
-      "cabeca": "e55b1f50cc0f7309fdb234e4954411d60c558188",
+      "cabeca": "9d4629c48f2ffb8e8fd02e49d73c17fe399d0c67",
       "assunto": "H4-b: corrige o espaço e o endereço no brief"
     },
     {
-      "cabeca": "cebf1a97dd1027208e4afb8f410cbb177662f77a",
+      "cabeca": "393cbf36e805b606a81d8526cce382e977c127ae",
       "assunto": "H4-b: dá espaço às sete portas e repõe o nome da União"
     },
     {
-      "cabeca": "a1160dab5e763edde0fe6679fcd351ef3158db28",
+      "cabeca": "0391b732d4d9ed7d068d1404b2a0ac8a86655004",
       "assunto": "H4-b: protege as sete portas, o espaço e os alvos de toque"
     },
     {
-      "cabeca": "00d92fed9f70fec22f30d72a1018776629f37d10",
+      "cabeca": "b60217d65355594b9262bd11356d02754656e3bd",
       "assunto": "H4-b: prepara a medição e a conferência das provas"
     },
     {
-      "cabeca": "9c44ad9e31972cfbfd9d7138e29b52b9027bb63d",
+      "cabeca": "c4d6af8ef7447055651e4c32c1d127288084eb15",
       "assunto": "H4-b: guarda a prova da corrida inteira e distingue integridade de aceitação"
     }
   ],
@@ -111,6 +111,6 @@
   "verificacoes_apos_tm4": {
     "comando": "sh -c 'npm run sinais && npm run check:nomes && npm run check:palavras && npm run design:feixe && npm run check:privacidade && npm run check:sugestoes && npm run check:rotulos && npm run check:series && npm run check:indice-do-sitio && npm run check:explicacoes && npm run check:frases-compostas'",
     "codigo": 0,
-    "cabeca": "9c44ad9e31972cfbfd9d7138e29b52b9027bb63d"
+    "cabeca": "c4d6af8ef7447055651e4c32c1d127288084eb15"
   }
 }

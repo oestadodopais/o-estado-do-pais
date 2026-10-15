@@ -1,13 +1,13 @@
 {
   "bloco": "K2",
-  "cabeca": "a6b4de99ee44ec78c8552e1281cb9842ae801d1c",
+  "cabeca": "b9d8ee3b5d9801911ca36be94fd66e438685b195",
   "construcao": {
-    "commit": "a6b4de99ee44ec78c8552e1281cb9842ae801d1c",
+    "commit": "b9d8ee3b5d9801911ca36be94fd66e438685b195",
     "construido_em": "2026-10-02T09:43:16.575Z"
   },
   "base": {
-    "cabeca": "1722244db19b66e523a7eaf9f0b27e770060bab8",
-    "construcao": "1722244db19b66e523a7eaf9f0b27e770060bab8"
+    "cabeca": "ad529db74e14c6525a4d8bd7e3c06e2e0f440ca0",
+    "construcao": "ad529db74e14c6525a4d8bd7e3c06e2e0f440ca0"
   },
   "medidas": [
     {
@@ -466,7 +466,7 @@
         "encontrado": true
       },
       "de": 160,
-      "construcao": "3ee67971f2e9dc0f3f11dd5b2040dd13390f40f9"
+      "construcao": "a1d40e143d3f36faca586b4746de9e3786c77cb6"
     },
     {
       "nome": "linhas_do_inventario_retiradas",
@@ -481,7 +481,7 @@
     {
       "nome": "folhas_mudadas_nas_leituras_e_perguntas",
       "valor": 38,
-      "comando": "node design/especime-v3/medicoes/k2-2026-10-02/acertos-k2.mjs 1722244db19b66e523a7eaf9f0b27e770060bab8 <saída>",
+      "comando": "node design/especime-v3/medicoes/k2-2026-10-02/acertos-k2.mjs ad529db74e14c6525a4d8bd7e3c06e2e0f440ca0 <saída>",
       "conhecido_positivo": {
         "o_que": "o mesmo comparador acha a folha mudada da diferença de emprego",
         "encontrado": true
@@ -500,7 +500,7 @@
     {
       "nome": "decisoes_citadas_nos_ficheiros_tocados",
       "valor": 51,
-      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo 1722244db19b66e523a7eaf9f0b27e770060bab8..<cabeça>",
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo ad529db74e14c6525a4d8bd7e3c06e2e0f440ca0..<cabeça>",
       "conhecido_positivo": {
         "o_que": "a §1.127 (a ordem da habitação e a T10) está na lista",
         "encontrado": true
@@ -537,8 +537,8 @@
           "codigo": 0,
           "segundos": 0
         },
-        "cabeca": "a6b4de99ee44ec78c8552e1281cb9842ae801d1c",
-        "cabeca_no_fim": "a6b4de99ee44ec78c8552e1281cb9842ae801d1c"
+        "cabeca": "b9d8ee3b5d9801911ca36be94fd66e438685b195",
+        "cabeca_no_fim": "b9d8ee3b5d9801911ca36be94fd66e438685b195"
       }
     }
   ]

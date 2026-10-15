@@ -714,11 +714,11 @@ Esta secção substitui as conclusões de fecho das passagens anteriores. O lan�
 
 ### A forma e a fusão
 
-A base foi `d1becbf8`. A fusão `d28b9755` entrou primeiro, trazendo `main` em `f3aaa3e7`. Os 26 commits antigos foram reaplicados, um a um, sem a pasta `design/especime-v3/medicoes/rp4n-2026-10-06/leitura-frio/`. Não se fez uma eliminação posterior dessa pasta: os novos commits nunca a receberam. As referências anteriores deste relatório às cópias com estragos e ao diff privado descrevem o ramo abandonado e não são uma entrega desta passagem. Não foram criadas plantas de leitura a frio pelo construtor. `d/reconstrucao.json` emparelha as 26 reaplicações, com os assuntos conferidos.
+A base foi `83e7a115`. A fusão `7bfbdcec` entrou primeiro, trazendo `main` em `7952dc25`. Os 26 commits antigos foram reaplicados, um a um, sem a pasta `design/especime-v3/medicoes/rp4n-2026-10-06/leitura-frio/`. Não se fez uma eliminação posterior dessa pasta: os novos commits nunca a receberam. As referências anteriores deste relatório às cópias com estragos e ao diff privado descrevem o ramo abandonado e não são uma entrega desta passagem. Não foram criadas plantas de leitura a frio pelo construtor. `d/reconstrucao.json` emparelha as 26 reaplicações, com os assuntos conferidos.
 
 Nos conflitos, as importações de EX2 e H4 e as de RP4-n ficaram juntas; `TituloDeTrabalho.astro` conserva o tratamento de língua de EX2 e a recusa de título não confirmado; `check-pais.mjs` conserva a proteção global A4 e a recusa da bandeira, retirando apenas a verificação redundante que usava uma variável inexistente; as plantas de `tests/pais/pais.mjs` foram reunidas. O inventário de frases e o seu registo de revisões conservam os dois conjuntos de entradas. Não se descartou um lado inteiro.
 
-`package-lock.json` não mudou com a reconstrução, pelo que não houve `npm ci`. A primeira corrida integral encontrou uma divergência de língua do título inglês da água; o código passou a conservar `pt-PT` nos dados e a normalizá-lo para `pt` no HTML. A segunda encontrou a planta W4 de EX2 dependente de uma ausência real que RP4-n já tinha fechado; a planta passou a introduzir a ausência numa cópia de prova. A terceira corrida, na cabeça `8ffe7e48`, deu zero nos três portões. Só depois começaram as correções do mandato. As duas tentativas e o verde estão em `portoes-fusao-tentativa1/`, `portoes-fusao-tentativa2/` e `portoes-fusao/`.
+`package-lock.json` não mudou com a reconstrução, pelo que não houve `npm ci`. A primeira corrida integral encontrou uma divergência de língua do título inglês da água; o código passou a conservar `pt-PT` nos dados e a normalizá-lo para `pt` no HTML. A segunda encontrou a planta W4 de EX2 dependente de uma ausência real que RP4-n já tinha fechado; a planta passou a introduzir a ausência numa cópia de prova. A terceira corrida, na cabeça `f7c53380`, deu zero nos três portões. Só depois começaram as correções do mandato. As duas tentativas e o verde estão em `portoes-fusao-tentativa1/`, `portoes-fusao-tentativa2/` e `portoes-fusao/`.
 
 A regra 9 exigiu também retirar restos de caminhos já abreviados dos ficheiros herdados. O limpador passou a reconhecer essas estruturas, os dois comandos que tinham destinos locais fixos passaram a descobrir o repositório ou a usar o ambiente, e os resumos dos briefs isentos foram atualizados após a alteração mecânica. As plantas do limpador passaram. Os textos históricos mantêm os factos e a sua atribuição; só os caminhos foram substituídos.
 
@@ -782,7 +782,7 @@ Foram vistas dez capturas: corte da pensão em português a 390 px e em inglês 
 
 ### Cabeças e portões
 
-Cabeça do código do sítio: `b72eac200831e8e5904ac0c1567b56eec1fac130`. Cabeça final do motor: `04a41eb7efcbe5097404614a73062a7f9bcef74a`. A cabeça final do sítio é o commit seguinte, apenas com relatório, capturas e registos das provas, comunicada na entrega.
+Cabeça do código do sítio: `d17ecdebcbeb9f269cf2bdf939a655f1313a5879`. Cabeça final do motor: `04a41eb7efcbe5097404614a73062a7f9bcef74a`. A cabeça final do sítio é o commit seguinte, apenas com relatório, capturas e registos das provas, comunicada na entrega.
 
 | Portão | Ficheiro | Código lido |
 |---|---|---:|
@@ -837,62 +837,62 @@ Os chips aceites que ficam para o bloco dos recibos, conforme o achado 20:
 Sítio, com as mensagens finais:
 
 ```text
-d28b9755 Fundir main antes de reconstruir o bloco RP4-n
-46a83b45 Selar as frases das famílias e séries nas palavras das fontes
-212685dd Prender a frase da União à origem da própria série
-47cb825c Recusar marcas de informação por confirmar nas páginas
-186c26c2 Aplicar a recusa também aos documentos citados
-ecb7811b Completar a receita efetiva com a exclusão dos saldos de gerência
-92ca0dd5 Recusar o nome também nas alternativas e nos apoios misturados
-f88f6841 Exigir o selo documental mesmo quando o apagam da origem
-d6d4becd Guardar as medições e as provas do RP4-n bloqueado na recusa global
-d417c4d8 Mostrar os títulos publicados dos estudos sem marca de tradução
-eed7b34e Separar as marcas de afirmação das ausências autorizadas pela RP4N-1
-eb99bae5 Distinguir a frase do cartão da frase de família no inventário
-39f11f4c Exigir a ausência exata no campo e discriminar as marcas não abrangidas
-87e4dfc7 Gerar o relatório da passagem com as contagens e os códigos medidos
-ae1183c8 Contar uma marca partida sem duplicar a classe e manter a recusa
-9a1fd50f Conferir os campos de data documentais e as duas formas de os render
-b091d3d1 Recusar um título declarado por confirmar mesmo sem marca rendida
-bc989e3d Ligar a medição anterior à cabeça com os trailers conferidos
-3e6cfa9b Guardar também as plantas e os códigos da proteção dos títulos
-f73f053b Guardar a medição final e os registos dos portões da RP4-n-b
-3eaa2e7c Relatar a RP4-n-b e os códigos lidos com a RP4N-5 pendente
-465b73c3 Completar os tipos de marcas aceites pela decisão RP4N-5
-b268c343 Sincronizar o inventário da voz com as frases já publicadas
-ffb7e67e Sincronizar o inventário dos rótulos com as dobras já publicadas
-dd919d51 Guardar as medições e os registos dos portões da RP4-n-c
-cef2d236 Fechar o relatório e os códigos da passagem RP4-n-c
-6571b4d0 RP4-n: a leitura a frio do Claude Opus 5.5 sobre as três passagens (cinco plantas mordidas; os achados reais decididos achado a achado no mandato da passagem RP4-n-d, que reconstrói o ramo sem a pasta de leitura do construtor antes de o publicar), o registo das plantas e o mandato
-5f148673 Acertar as âncoras do mapa depois da reconstrução RP4-n
-a105e13d Conservar a língua canónica dos títulos ao integrar EX2 e RP4-n
-8ffe7e48 Conservar a planta W4 quando todas as frases estão confirmadas
-eb22db2e RP4-n-d 5: definir a água na fonte e registar a busca das ausências
-7346cb15 RP4-n-d 6: nomear o decremento da pensão sem afirmar neutralidade
-7a856784 RP4-n-d 7: alinhar nomes do PRR e ler a data do instantâneo
-9b3c5c69 RP4-n-d 8: dizer a ausência nas notas de alcance e recusar a marca
-2f1062ee RP4-n-d 16: apoiar o VAB na frase que o define
-16c0dbe3 RP4-n-d 18: separar as ausências da contagem de famílias apoiadas na fonte
-2096dcb0 RP4-n-d 21: ligar a previsão inglesa à despesa do orçamento
-b0678be0 RP4-n-d 19: contar e classificar as marcas dos atributos
-422efef8 Trazer os recortes documentais partilhados da passagem RP4-n-d
-a4b95225 Confinar a conferência do instantâneo às famílias do PRR
-90f4bc08 RP4-n-d 15: explicar saldos e consolidação pelas definições da fonte
-0847e2a0 RP4-n-d 17: separar o recorte anual dos recortes de execução
-ec0b62d7 RP4-n-d: fechar os clientes de K16 e provar a alteração em disco
-24d0ce30 RP4-n-d: retirar restos de caminhos locais e tornar portáveis as ferramentas
-be6d1c23 RP4-n-d: conferir as colunas e as palavras do PRR nos Excel selados
-fee0b8f1 RP4-n-d: guardar as plantas dos recortes e das definições corrigidas
-bb15589a RP4-n-d: preparar as capturas das duas edições na cabeça final
-6d93e271 RP4-n-d: alinhar as âncoras do mapa e documentar a prova do PRR
-b3a86d75 RP4-n-d: preparar o inventário final das marcas e dos chips aceites
-6bf594c4 RP4-n-d: reconhecer no compositor o literal conferido no Excel
-0f8d68d3 RP4-n-d: retirar dos recibos a nota não selada da despesa bruta
-c3438fb9 RP4-n-d: declarar o localizador do rótulo da pensão e tipar a data PRR
-97c997a9 RP4-n-d: apoiar a pensão no excerto literal sem criar um rótulo manual
-5498ef6a RP4-n-d: sincronizar as notas de alcance no inventário da voz
-5f131717 RP4-n-d: sincronizar os nomes e a nota de alcance no inventário dos rótulos
-b72eac20 RP4-n-d: corrigir na explicação os apoios afetados pelos achados 9 e 14
+7bfbdcec Fundir main antes de reconstruir o bloco RP4-n
+eee29efa Selar as frases das famílias e séries nas palavras das fontes
+5dc6effc Prender a frase da União à origem da própria série
+38cc7be7 Recusar marcas de informação por confirmar nas páginas
+74ffa0bf Aplicar a recusa também aos documentos citados
+7ad865d5 Completar a receita efetiva com a exclusão dos saldos de gerência
+b0f15aa8 Recusar o nome também nas alternativas e nos apoios misturados
+5872abe6 Exigir o selo documental mesmo quando o apagam da origem
+46a64321 Guardar as medições e as provas do RP4-n bloqueado na recusa global
+5ef3854f Mostrar os títulos publicados dos estudos sem marca de tradução
+f114dbe5 Separar as marcas de afirmação das ausências autorizadas pela RP4N-1
+ea67027f Distinguir a frase do cartão da frase de família no inventário
+8ee74364 Exigir a ausência exata no campo e discriminar as marcas não abrangidas
+f6d1ddbf Gerar o relatório da passagem com as contagens e os códigos medidos
+e0237889 Contar uma marca partida sem duplicar a classe e manter a recusa
+28e4b7d2 Conferir os campos de data documentais e as duas formas de os render
+0e8bd4b4 Recusar um título declarado por confirmar mesmo sem marca rendida
+8cd09f7b Ligar a medição anterior à cabeça com os trailers conferidos
+5d376cda Guardar também as plantas e os códigos da proteção dos títulos
+7796232a Guardar a medição final e os registos dos portões da RP4-n-b
+23742809 Relatar a RP4-n-b e os códigos lidos com a RP4N-5 pendente
+c7558802 Completar os tipos de marcas aceites pela decisão RP4N-5
+0aaf0c5a Sincronizar o inventário da voz com as frases já publicadas
+15674a9e Sincronizar o inventário dos rótulos com as dobras já publicadas
+50ec2c11 Guardar as medições e os registos dos portões da RP4-n-c
+2597cc76 Fechar o relatório e os códigos da passagem RP4-n-c
+8a321051 RP4-n: a leitura a frio do Claude Opus 5.5 sobre as três passagens (cinco plantas mordidas; os achados reais decididos achado a achado no mandato da passagem RP4-n-d, que reconstrói o ramo sem a pasta de leitura do construtor antes de o publicar), o registo das plantas e o mandato
+61a3ab26 Acertar as âncoras do mapa depois da reconstrução RP4-n
+0f52d052 Conservar a língua canónica dos títulos ao integrar EX2 e RP4-n
+f7c53380 Conservar a planta W4 quando todas as frases estão confirmadas
+4f604685 RP4-n-d 5: definir a água na fonte e registar a busca das ausências
+c6d85b94 RP4-n-d 6: nomear o decremento da pensão sem afirmar neutralidade
+f1831b8a RP4-n-d 7: alinhar nomes do PRR e ler a data do instantâneo
+6bbb1f8f RP4-n-d 8: dizer a ausência nas notas de alcance e recusar a marca
+d91067ac RP4-n-d 16: apoiar o VAB na frase que o define
+0fb0a64c RP4-n-d 18: separar as ausências da contagem de famílias apoiadas na fonte
+6064567a RP4-n-d 21: ligar a previsão inglesa à despesa do orçamento
+0c272fa6 RP4-n-d 19: contar e classificar as marcas dos atributos
+a2fedc1b Trazer os recortes documentais partilhados da passagem RP4-n-d
+377c846d Confinar a conferência do instantâneo às famílias do PRR
+8174a7d0 RP4-n-d 15: explicar saldos e consolidação pelas definições da fonte
+7eda5c48 RP4-n-d 17: separar o recorte anual dos recortes de execução
+6cf86d46 RP4-n-d: fechar os clientes de K16 e provar a alteração em disco
+dbb9710e RP4-n-d: retirar restos de caminhos locais e tornar portáveis as ferramentas
+9e92070c RP4-n-d: conferir as colunas e as palavras do PRR nos Excel selados
+219713f2 RP4-n-d: guardar as plantas dos recortes e das definições corrigidas
+8c5df050 RP4-n-d: preparar as capturas das duas edições na cabeça final
+d085d134 RP4-n-d: alinhar as âncoras do mapa e documentar a prova do PRR
+4b604c25 RP4-n-d: preparar o inventário final das marcas e dos chips aceites
+2222b102 RP4-n-d: reconhecer no compositor o literal conferido no Excel
+6a516b0c RP4-n-d: retirar dos recibos a nota não selada da despesa bruta
+0086e90d RP4-n-d: declarar o localizador do rótulo da pensão e tipar a data PRR
+4bb07880 RP4-n-d: apoiar a pensão no excerto literal sem criar um rótulo manual
+e382d00a RP4-n-d: sincronizar as notas de alcance no inventário da voz
+62bdc389 RP4-n-d: sincronizar os nomes e a nota de alcance no inventário dos rótulos
+d17ecdeb RP4-n-d: corrigir na explicação os apoios afetados pelos achados 9 e 14
 ```
 
 Motor:
@@ -1219,8 +1219,8 @@ Usou-se `filter-branch` com um guião limitado aos dois registos indicados. Os r
 
 | Âmbito | Contagem |
 |---|---|
-| História desde b84d21a3, grep -c dos quatro pedaços | 0 |
-| Diff inteiro desde b84d21a3, grep -c dos quatro pedaços | 0 |
+| História desde c0e1b3f4, grep -c dos quatro pedaços | 0 |
+| Diff inteiro desde c0e1b3f4, grep -c dos quatro pedaços | 0 |
 | Cabeça, nome do utilizador e prefixo da pasta pessoal | 0 |
 
 Os quatro pedaços são o nome do utilizador, o prefixo temporário privado, o diretório dos projetos e o segmento das worktrees. A prova executável está em `privacidade-f.py` e a saída em `f/privacidade.json`. Não se declara limpa de todos os caminhos históricos a árvore herdada.
@@ -1229,15 +1229,15 @@ Os quatro pedaços são o nome do utilizador, o prefixo temporário privado, o d
 
 | Antiga | Nova | Commit |
 |---|---|---|
-| a45cf02837fae63da5d506e7a5d2c59c11cabf1a | 0775309eb34c6bfc918b6ba9aa7ddb859542fae6 | docs(rp4n-e): registar leitura, plantas e mandato |
-| 2c815466f33a54b6961725b3a526d893fdbc3ae6 | 0279a053db27fa7cbfef2ba447b750747da8b21a | fix(rp4n-e): recortar o excerto da pensão à medida |
-| a44d10a64d62784c31fa6d3f574fa9e9a9c8fd88 | 892dfa0ac0604eda61bb92e19bdd296630c6baa8 | fix(rp4n-e): uniformizar ausências e concordar avisos |
-| 24f97316b33530f2b108999a3c153833575d9e49 | 5e8d9b1493ba116bc50207f655a13fca5fe0894b | fix(rp4n-e): receber o recorte anual sem o período mensal |
-| 5c95a6aba18ab1aa9b7cc02a70bd4a85754ca849 | ba3c557393647c23e9dc0c621016f5d0f0da05fe | fix(rp4n-e): explicar a quota pelo total do mapa por ministérios |
-| 629557b3cfab84ec5e79acb984fca2c4bb084285 | ac383ec624631d25285b41ce07a8969b170cf2ac | fix(rp4n-e): retirar as condutas da publicação conservando o livro |
-| cfd28a517f27e2e3fc14264965e91f0e63a1dbd5 | 58192aeb5a5a66c9dbae11bbfb2b2d47825a2496 | fix(rp4n-e): auditar também as linhas retiradas sem as publicar |
-| 0345e2fd7efadac2c60555c112289dcb4acc9c75 | 862c26f0f268c242e9507a09555f80adb22e613d | fix(rp4n-e): concordar também os títulos e a conferência das unidades |
-| c46a5ee5987b71216c50aadb92e33e3f777847c5 | 32578d1ddd7a6a686c9ecdbde36ec6a326f8147b | fix(rp4n-e): datar o PRR vencido e alinhar as frases derivadas |
+| a45cf02837fae63da5d506e7a5d2c59c11cabf1a | 5e21b596dc9fcf8acbadeb4a99026535ca1b7519 | docs(rp4n-e): registar leitura, plantas e mandato |
+| 2c815466f33a54b6961725b3a526d893fdbc3ae6 | d7ab4c89214bb901a33f5a81bcb0db6bc02f7bec | fix(rp4n-e): recortar o excerto da pensão à medida |
+| a44d10a64d62784c31fa6d3f574fa9e9a9c8fd88 | 7f05d75dd713907b2dbe912494c6ca1cc3f9eb9d | fix(rp4n-e): uniformizar ausências e concordar avisos |
+| 24f97316b33530f2b108999a3c153833575d9e49 | b85bad03d0fc9a0f90132f2c5f47b3ccba61c49a | fix(rp4n-e): receber o recorte anual sem o período mensal |
+| 5c95a6aba18ab1aa9b7cc02a70bd4a85754ca849 | 803995f814c7b6909731b35074b785801d4af3f2 | fix(rp4n-e): explicar a quota pelo total do mapa por ministérios |
+| 629557b3cfab84ec5e79acb984fca2c4bb084285 | 3fbc79b1fb0cabf711b23310b054a4bcb829e1d7 | fix(rp4n-e): retirar as condutas da publicação conservando o livro |
+| cfd28a517f27e2e3fc14264965e91f0e63a1dbd5 | 23d8ec119c435e96c6e0947ce9ac18692df9815f | fix(rp4n-e): auditar também as linhas retiradas sem as publicar |
+| 0345e2fd7efadac2c60555c112289dcb4acc9c75 | 70c3d9cd87e44ad59d4ecd6d4c24e4ee495c8685 | fix(rp4n-e): concordar também os títulos e a conferência das unidades |
+| c46a5ee5987b71216c50aadb92e33e3f777847c5 | 6e894c7c66e0070f6fe5fb92de073a5c2969630e | fix(rp4n-e): datar o PRR vencido e alinhar as frases derivadas |
 | 650029fd89e0e67b98ffc4d3a30bce80a5a6f7a6 | 91c2871c96abf54d6e996492c8fba422c1c800f1 | fix(rp4n-e): exigir o publicador da medida ou segunda fonte com recibo |
 | 2aae0865ec071dd2b90322ca4750752f14042b71 | 6c9a90465ccbd1d2f9021cafa660f4f8d1e09f2b | fix(rp4n-e): provar a retirada em qualquer página e conservar a auditoria do livro |
 | 050ac3df5e90bf191dfb9328d5e11516d033e591 | 7399a556ca1bfd4b6322f4d43af88d422471de6c | fix(rp4n-e): concordar avisos nos cartões e provar o plural errado |
@@ -1534,7 +1534,7 @@ Foram regenerados 10 resumos de briefs isentos. A prova compara os bytes com a c
 | forma-serie-typecheck | 0 |
 
 ### Comparação das páginas
-O guião `auditar-j.mjs` comparou 36 páginas com a construção conservada da cabeça `3ecc7c72`. As linhas YAML conservaram todos os campos exceto `definition_sources`. O HTML conserva o texto e a estrutura; a comparação só retira esse campo dos blocos JSON antes de exigir igualdade. Não foram necessárias capturas novas.
+O guião `auditar-j.mjs` comparou 36 páginas com a construção conservada da cabeça `d0c3d52e`. As linhas YAML conservaram todos os campos exceto `definition_sources`. O HTML conserva o texto e a estrutura; a comparação só retira esse campo dos blocos JSON antes de exigir igualdade. Não foram necessárias capturas novas.
 
 | Página | Bytes iguais | Igual sem o campo novo |
 |---|---|---|
@@ -1581,23 +1581,23 @@ A comparação alargada encontrou 7935 páginas HTML antes e 7935 depois, com 0 
 
 | Repositório | Base | Cabeça do código |
 |---|---|---|
-| sitio | 3ecc7c72bce1bbc06e207aca368c9dcbb579b7ec | 1fb08e30365399bd817175c90ec5f697ff13645a |
+| sitio | d0c3d52e2249c2ba1b3ac64d1cdca0f8820c8c9b | bdf277d10afa2fca99c105c901742fd919469d41 |
 | motor | 2d32da6f493530aa3158d13690603aa5d6c9c784 | b75f3170e3bb6b5f925f9654e41c7a32f8484236 |
 
 
 | Repositório | Commit | Assunto |
 |---|---|---|
-| sitio | 97c95d2185e1b20b1985654aea0955fd7c500c68 | docs(rp4n-j): registar o mandato de integração com o JD1 |
-| sitio | 546fcd39c1b4fff18a70cc1f7864c2edce758a08 | fix(rp4n-j): importar as segundas fontes declaradas pelo motor |
-| sitio | 8c4d1ca04cd94a192311d459486e0085871e6ba3 | fix(rp4n-j): reler no HTML as contagens após a fusão |
-| sitio | d59887a0ec908c9e08f734abd8a13d36c0f10baf | fix(rp4n-j): completar as declarações e os rótulos vindos do JD1 |
-| sitio | d164a38006213cbf84390cb7657ba85096d0110e | fix(rp4n-j): conservar a apresentação e integrar os selos dos briefs |
-| sitio | ac4ca9c0a257891e95344564fee28047952b15ed | test(rp4n-j): comparar todo o HTML e os JSON exportados |
-| sitio | 1ca31f13faf9e930cd01dc105006194793a511a3 | test(rp4n-j): integrar as marcas de anonimização do JD1 |
-| sitio | c1a375f7f5d656f47e5b1d1dd3ad456ed9146e0b | test(rp4n-j): isolar o motor dos ensaios do executor |
-| sitio | 9a60fa27c9e987ea64fef8d22822529e5429ee97 | test(rp4nj): ligar plantas do índice ao nome do formato |
-| sitio | 877e75cef1988316d68019c4e73e42e17247eea6 | fix(rp4nj): importar o recibo da definição da série JD1 |
-| sitio | 1fb08e30365399bd817175c90ec5f697ff13645a | fix(rp4nj): conferir recibos de definições nas séries |
+| sitio | 33abf45ea7d5ef3a34529ec4cc919efd55e1cf03 | docs(rp4n-j): registar o mandato de integração com o JD1 |
+| sitio | f2ddfe027adcbd53604ef951377922127a61d13d | fix(rp4n-j): importar as segundas fontes declaradas pelo motor |
+| sitio | 4428d3b16603be7b8fac6be3767665c1451266d2 | fix(rp4n-j): reler no HTML as contagens após a fusão |
+| sitio | a1ed32db85ee9e19306e7b57eeaabcb496a40d07 | fix(rp4n-j): completar as declarações e os rótulos vindos do JD1 |
+| sitio | b26726627c0cbbac2d645e0f17452566929d5e48 | fix(rp4n-j): conservar a apresentação e integrar os selos dos briefs |
+| sitio | 15fd9b85920679c0fd4fbd87c63fb374d4a3976d | test(rp4n-j): comparar todo o HTML e os JSON exportados |
+| sitio | 00680ca339f4cfc31b1d4976fe81ebb3429a697f | test(rp4n-j): integrar as marcas de anonimização do JD1 |
+| sitio | f544c137e97dffaab82f0beb556d2adbe03d4a69 | test(rp4n-j): isolar o motor dos ensaios do executor |
+| sitio | 154367ebe1dce8752d6bbdd63ac0965824e107dc | test(rp4nj): ligar plantas do índice ao nome do formato |
+| sitio | f174e32cdc903a3586a4376513d072c7e6f36eb0 | fix(rp4nj): importar o recibo da definição da série JD1 |
+| sitio | bdf277d10afa2fca99c105c901742fd919469d41 | fix(rp4nj): conferir recibos de definições nas séries |
 | motor | 90f1e406173708e90c6ab5a37746d0a9f40a058a | fix(rp4n-j): integrar os rótulos da série de obrigações do JD1 |
 | motor | bc09b6d5f5a7a6bf5895314074331a8eca4fb710 | fix(rp4n-j): declarar as segundas fontes do JD1 com recibos |
 | motor | b75f3170e3bb6b5f925f9654e41c7a32f8484236 | fix(rp4nj): declarar segunda fonte da definição da série JD1 |
@@ -1605,12 +1605,12 @@ A comparação alargada encontrou 7935 páginas HTML antes e 7935 depois, com 0 
 
 | Ficheiro | Código | Cabeças |
 |---|---|---|
-| portoes-j/build.codigo | 0 | 1fb08e30365399bd817175c90ec5f697ff13645a |
-| portoes-j/verify.codigo | 0 | 1fb08e30365399bd817175c90ec5f697ff13645a |
-| portoes-j/typecheck.codigo | 0 | 1fb08e30365399bd817175c90ec5f697ff13645a |
+| portoes-j/build.codigo | 0 | bdf277d10afa2fca99c105c901742fd919469d41 |
+| portoes-j/verify.codigo | 0 | bdf277d10afa2fca99c105c901742fd919469d41 |
+| portoes-j/typecheck.codigo | 0 | bdf277d10afa2fca99c105c901742fd919469d41 |
 | portoes-j/motor.codigo | 0 | b75f3170e3bb6b5f925f9654e41c7a32f8484236 |
-| portoes-j/series.codigo | 0 | 1fb08e30365399bd817175c90ec5f697ff13645a; motor b75f3170e3bb6b5f925f9654e41c7a32f8484236 |
-| portoes-j/cruzamento.codigo | 0 | 1fb08e30365399bd817175c90ec5f697ff13645a; motor b75f3170e3bb6b5f925f9654e41c7a32f8484236 |
+| portoes-j/series.codigo | 0 | bdf277d10afa2fca99c105c901742fd919469d41; motor b75f3170e3bb6b5f925f9654e41c7a32f8484236 |
+| portoes-j/cruzamento.codigo | 0 | bdf277d10afa2fca99c105c901742fd919469d41; motor b75f3170e3bb6b5f925f9654e41c7a32f8484236 |
 
 ### Tentativas anteriores à conferência final
 
@@ -1715,7 +1715,7 @@ Método inglês, atributos `title`: rows with at least one field marked [to veri
 | legal-en | penalização legal | What was checkedCopy hosted on24.08.2026 · Copy recordReading at the sourceNo reading at the source is recorded for this row. The re-reading rule → |
 
 ### Fontes para repetir a leitura
-O inventário `i/fontes-por-frase.json`, medido no sítio `f99ad385789e293373951ddb77f25ac221181daf` e no motor `cc75e215caf71d5e8cfa77850f1896f3b418c75f`, lista 49 ficheiros alojados por frase ou decisão, todos conferidos pelos bytes. Inclui o PDF do MAPA, o PDF da pensão, o manifesto atual e a cópia literal do manifesto original recuperado do commit que prova o alojamento. O manifesto atual não foi confundido com a versão original.
+O inventário `i/fontes-por-frase.json`, medido no sítio `e5f114a89fd868e22cde3a69b3db2f4169ee0a96` e no motor `cc75e215caf71d5e8cfa77850f1896f3b418c75f`, lista 49 ficheiros alojados por frase ou decisão, todos conferidos pelos bytes. Inclui o PDF do MAPA, o PDF da pensão, o manifesto atual e a cópia literal do manifesto original recuperado do commit que prova o alojamento. O manifesto atual não foi confundido com a versão original.
 
 | Ficheiro no motor | sha256 |
 |---|---|
@@ -1774,18 +1774,18 @@ O original de `content/11 Seguranca Social/source/MANIFEST.sha256`, no commit `7
 
 | Repositório | Base | Cabeça do código |
 |---|---|---|
-| sitio | c263080105981e81d0c273e3b0cfc53ac399ce4a | f99ad385789e293373951ddb77f25ac221181daf |
+| sitio | 56248a5fde56dfeec9e83ec15a60733cbc914b0d | e5f114a89fd868e22cde3a69b3db2f4169ee0a96 |
 | motor | e2fd95fde167ad54f36a426bc1487bd6c53c9f2a | cc75e215caf71d5e8cfa77850f1896f3b418c75f |
 
 
 | Ficheiro | Código | Cabeça |
 |---|---|---|
-| portoes-i/build.codigo | 0 | f99ad385789e293373951ddb77f25ac221181daf |
-| portoes-i/verify.codigo | 0 | f99ad385789e293373951ddb77f25ac221181daf |
-| portoes-i/typecheck.codigo | 0 | f99ad385789e293373951ddb77f25ac221181daf |
+| portoes-i/build.codigo | 0 | e5f114a89fd868e22cde3a69b3db2f4169ee0a96 |
+| portoes-i/verify.codigo | 0 | e5f114a89fd868e22cde3a69b3db2f4169ee0a96 |
+| portoes-i/typecheck.codigo | 0 | e5f114a89fd868e22cde3a69b3db2f4169ee0a96 |
 | portoes-i/motor.codigo | 0 | cc75e215caf71d5e8cfa77850f1896f3b418c75f |
-| i/reconferencia-codigo/series.codigo | 0 | f99ad385789e293373951ddb77f25ac221181daf; motor cc75e215caf71d5e8cfa77850f1896f3b418c75f |
-| i/reconferencia-codigo/cruzamento.codigo | 0 | f99ad385789e293373951ddb77f25ac221181daf; motor cc75e215caf71d5e8cfa77850f1896f3b418c75f |
+| i/reconferencia-codigo/series.codigo | 0 | e5f114a89fd868e22cde3a69b3db2f4169ee0a96; motor cc75e215caf71d5e8cfa77850f1896f3b418c75f |
+| i/reconferencia-codigo/cruzamento.codigo | 0 | e5f114a89fd868e22cde3a69b3db2f4169ee0a96; motor cc75e215caf71d5e8cfa77850f1896f3b418c75f |
 
 As árvores do código estavam limpas no início dos portões e as cabeças foram lidas antes e depois. As séries e o cruzamento com `--with-origin` correram depois do último commit que muda os ficheiros que leem. Os commits posteriores conservam apenas provas, capturas e este relato. A cabeça final é comunicada na resposta, sem inventar o hash do commit que contém o próprio relatório.
 As tentativas anteriores foram conservadas: na primeira, o C1 ainda exigia a frase antiga de ausência, e a função nova precisava das declarações de tipos; na segunda, o índice recusou a forma nova do localizador do nome legal. A regra independente, a forma exata do localizador e as plantas foram corrigidas antes da repetição.
@@ -1872,7 +1872,7 @@ A revisão automática recusou uma tentativa de commit por interpretar o ficheir
 | nome legal trocado pelo título do relatório | RP4N-i: o nome legal não é a medida no parágrafo da fonte |
 
 ### Capturas
-O manifesto `i/capturas-i.json` contém 35 capturas nas larguras 390, 768, 1024, 1280, 1600; construção `f99ad385789e293373951ddb77f25ac221181daf`. Inclui o Método inglês, os recibos da pensão e da penalização legal nas duas edições e a frase alterada dos ministérios nas duas edições. Problemas de carga ou transbordo medidos: 0. A inspeção está em `i/inspecao-visual.json`.
+O manifesto `i/capturas-i.json` contém 35 capturas nas larguras 390, 768, 1024, 1280, 1600; construção `e5f114a89fd868e22cde3a69b3db2f4169ee0a96`. Inclui o Método inglês, os recibos da pensão e da penalização legal nas duas edições e a frase alterada dos ministérios nas duas edições. Problemas de carga ou transbordo medidos: 0. A inspeção está em `i/inspecao-visual.json`.
 
 | Ficheiro | sha256 |
 |---|---|
@@ -1922,22 +1922,22 @@ O custo desta passagem só será atribuído se a linha «tokens used» estiver v
 
 | sitio | Mensagem |
 |---|---|
-| 4d92610b3028c78d6dc2b02e3bf12624ea2e0049 | docs(rp4n-i): registar a leitura h, as plantas e o mandato |
-| 6e27d16949d723cc699b2f0c108625d86e0e5cf3 | fix(rp4n-i): conferir a língua em todos os atributos |
-| 40d0849688eb05e7fd58c2ddf32d30e0270ec6c7 | test(rp4n-i): distinguir falha e ausência na procura da cabeça |
-| bddf20857f3ae54a1072840389e08e6b77228e83 | fix(rp4n-i): fechar RP4N-17 com a exceção histórica exata |
-| bf1e71783aa02ce76b6ca05cfe5b07b26eb07cf8 | fix(rp4n-i): não atribuir à cópia a leitura do endereço |
-| 667863d993d98a914d01b1ad2a3f108ee46c8e36 | fix(rp4n-i): anonimizar os registos recebidos de main na cabeça |
-| 22d8cca115331daeecc0661d716e93dc8b81f18e | docs(rp4n-i): medir o excesso de custo e ligar as operações aos registos |
-| 1e11e36c15824ea2b95765897ff30bdf2d1bd7b1 | fix(rp4n-i): explicar os dois totais e inventariar as fontes das decisões |
-| bef0184c90c1aa7e16ddb4c6c7a4bcb8c71b7cdb | test(rp4n-i): exigir leitura própria também no portão das fontes |
-| 333a885c7121663e5b5f61c10fc80efc1f7ebac9 | test(rp4n-i): preparar as medições e o relato pelos ficheiros |
-| b34871dc4269ad715c2bd48e5da4208d8a717a65 | docs(rp4n-i): conservar a versão original do manifesto da pensão |
-| 20d4fda36f183003f0688ece02e3291daaa09813 | fix(rp4n-i): medir as fontes do bloco contra o main recebido |
-| 3eee2de63448b6e81e732879b9c846ee7b543d71 | fix(rp4n-i): apresentar o nome literal da medida e a sua língua |
-| 2aeec1272abab138ccb82ea529433bbce174c624 | fix(rp4n-i): conferir a ausência de leitura própria no C1 |
-| 1ddec358f67093ecc1b83d6850f5654db85b488d | fix(rp4n-i): usar a marca inglesa também nas descrições da página |
-| f99ad385789e293373951ddb77f25ac221181daf | fix(rp4n-i): reconhecer e provar o localizador do nome legal no índice |
+| 5e478bd8eb11625c35d20286b8c6c18f1c7a2831 | docs(rp4n-i): registar a leitura h, as plantas e o mandato |
+| 9097e57a92ead75cb1310c7853cf746f91207b66 | fix(rp4n-i): conferir a língua em todos os atributos |
+| 8cfdf13206704200c9d2e844bcba2bfdde2f6022 | test(rp4n-i): distinguir falha e ausência na procura da cabeça |
+| c4af4f3eb688ff02f79c5c73cf8fed94d5a4d227 | fix(rp4n-i): fechar RP4N-17 com a exceção histórica exata |
+| 7681ee17683b5278272b0d9aa425d514b6832505 | fix(rp4n-i): não atribuir à cópia a leitura do endereço |
+| ca08fb63178509d308025543b05463949ac6d407 | fix(rp4n-i): anonimizar os registos recebidos de main na cabeça |
+| a3ea3b56c696d5060eac0091c25fe6b0fbda97d7 | docs(rp4n-i): medir o excesso de custo e ligar as operações aos registos |
+| ca9655c5b26508f6735a07c9506660b1c3613e39 | fix(rp4n-i): explicar os dois totais e inventariar as fontes das decisões |
+| 9566d3fe5b7fe36be50d9b577816543c17065983 | test(rp4n-i): exigir leitura própria também no portão das fontes |
+| e470604a8f1646fb94b0ff5843d35f2f97156a86 | test(rp4n-i): preparar as medições e o relato pelos ficheiros |
+| 168d172d56632a21291693b201d3ead34561594d | docs(rp4n-i): conservar a versão original do manifesto da pensão |
+| 1286eb50c0ddfcfc09315d31f98167e3f5b17439 | fix(rp4n-i): medir as fontes do bloco contra o main recebido |
+| b666c4fe4a357738bbe9af66c9881b239bb15d49 | fix(rp4n-i): apresentar o nome literal da medida e a sua língua |
+| 0326f2e7ed9d8d8cea640c6f29b312650a5c83c5 | fix(rp4n-i): conferir a ausência de leitura própria no C1 |
+| c1c25bdfc4c38cb79690c1940fa1ccb62d1c11f9 | fix(rp4n-i): usar a marca inglesa também nas descrições da página |
+| e5f114a89fd868e22cde3a69b3db2f4169ee0a96 | fix(rp4n-i): reconhecer e provar o localizador do nome legal no índice |
 
 
 | motor | Mensagem |
@@ -1963,7 +1963,7 @@ O commit `7c0b24700d76cb3a67442f2495178212169c7586`, datado `2026-08-24T11:31:53
 | Páginas com marca | 38 | 28 |
 | Linhas publicadas incompletas | 6 | 4 |
 
-Antes: varredura do `dist/` conservado da cabeça `344081c34eef1f792feef6bfd2d77fd764f7a1b5`, com o ramo em `d430d6dd1e17e4f1f23acc7273321f5e4380beff`. Depois: varredura pela mesma expressão das duas grafias, em `medir-h.mjs`, construção `19723a9f3876bff3ad4364d00bb017c63cda56d3`. O contador lê páginas HTML, incluindo referências legítimas à marca; não confunde páginas com ocorrências. A lista das linhas usa `provenienciaIncompleta`, a mesma regra do livro.
+Antes: varredura do `dist/` conservado da cabeça `344081c34eef1f792feef6bfd2d77fd764f7a1b5`, com o ramo em `b95f67a9c3529f233059a0e0752bf0cbb983eba3`. Depois: varredura pela mesma expressão das duas grafias, em `medir-h.mjs`, construção `7d901d4e0e82b0f8be2218f32c9d9fb2a8daa518`. O contador lê páginas HTML, incluindo referências legítimas à marca; não confunde páginas com ocorrências. A lista das linhas usa `provenienciaIncompleta`, a mesma regra do livro.
 
 Páginas que deixaram de ter marca:
 
@@ -1989,7 +1989,7 @@ Na passagem h, a marca inglesa passou a `[to verify]` nos textos dos componentes
 
 ### Os outros achados
 
-Os achados plantados na cópia não estavam no ramo recebido: água com «noventa e três por cento»: `True`; pensão com «one year early»: `True`; data da linha na base: `"[a verificar]"`; divisão pela DESPESA TOTAL: `True`. A prova da reescrita tem 45 pares. As cabeças destas releituras são `66852410165e7f38b0bd42757e848681e0468db1` e `542fe4ee9d67ecf2245892fd98ccd1c442829704`.
+Os achados plantados na cópia não estavam no ramo recebido: água com «noventa e três por cento»: `True`; pensão com «one year early»: `True`; data da linha na base: `"[a verificar]"`; divisão pela DESPESA TOTAL: `True`. A prova da reescrita tem 45 pares. As cabeças destas releituras são `927fe0ae1f6f3473cea9e0fd2a4fb56901956066` e `542fe4ee9d67ecf2245892fd98ccd1c442829704`.
 
 A reconferência anterior à criação da linha legal saiu; não foi substituída por outra entrada manual. O localizador inglês do rótulo e o localizador do documento das pensões atravessam agora do motor em campos próprios, conferidos literalmente. A planta da sinopse chama a mesma função que o portão da voz: a mensagem antiga do teste era uma descrição sintética, embora a secção anterior a listasse entre mensagens reais; as mensagens abaixo são as devolvidas pelo portão.
 
@@ -2037,18 +2037,18 @@ As definições da água, da pensão e dos ministérios mantêm a redação rece
 
 | Repositório | Base | Cabeça do código |
 |---|---|---|
-| sitio | 66852410165e7f38b0bd42757e848681e0468db1 | 19723a9f3876bff3ad4364d00bb017c63cda56d3 |
+| sitio | 927fe0ae1f6f3473cea9e0fd2a4fb56901956066 | 7d901d4e0e82b0f8be2218f32c9d9fb2a8daa518 |
 | motor | 542fe4ee9d67ecf2245892fd98ccd1c442829704 | e2fd95fde167ad54f36a426bc1487bd6c53c9f2a |
 
 
 | Ficheiro | Código lido | Cabeça |
 |---|---|---|
-| portoes-h/build.codigo | 0 | 19723a9f3876bff3ad4364d00bb017c63cda56d3 |
-| portoes-h/verify.codigo | 0 | 19723a9f3876bff3ad4364d00bb017c63cda56d3 |
-| portoes-h/typecheck.codigo | 0 | 19723a9f3876bff3ad4364d00bb017c63cda56d3 |
+| portoes-h/build.codigo | 0 | 7d901d4e0e82b0f8be2218f32c9d9fb2a8daa518 |
+| portoes-h/verify.codigo | 0 | 7d901d4e0e82b0f8be2218f32c9d9fb2a8daa518 |
+| portoes-h/typecheck.codigo | 0 | 7d901d4e0e82b0f8be2218f32c9d9fb2a8daa518 |
 | portoes-h/motor.codigo | 0 | e2fd95fde167ad54f36a426bc1487bd6c53c9f2a |
-| h/reconferencia-codigo/series.codigo | 0 | 19723a9f3876bff3ad4364d00bb017c63cda56d3; motor e2fd95fde167ad54f36a426bc1487bd6c53c9f2a |
-| h/reconferencia-codigo/cruzamento.codigo | 0 | 19723a9f3876bff3ad4364d00bb017c63cda56d3; motor e2fd95fde167ad54f36a426bc1487bd6c53c9f2a |
+| h/reconferencia-codigo/series.codigo | 0 | 7d901d4e0e82b0f8be2218f32c9d9fb2a8daa518; motor e2fd95fde167ad54f36a426bc1487bd6c53c9f2a |
+| h/reconferencia-codigo/cruzamento.codigo | 0 | 7d901d4e0e82b0f8be2218f32c9d9fb2a8daa518; motor e2fd95fde167ad54f36a426bc1487bd6c53c9f2a |
 
 Os portões correram com as árvores do código limpas, sob a tranca comum. As séries e o cruzamento correram depois do último commit que muda o que leem, com as duas cabeças escritas antes e depois; o cruzamento usou `--with-origin`. O commit posterior contém apenas registos e capturas, que estas duas conferências não leem. A cabeça final é o commit que contém este relatório, identificada na resposta, sem tentar escrever o hash do próprio commit no seu conteúdo.
 
@@ -2061,7 +2061,7 @@ As tentativas anteriores ficam conservadas, sem serem apresentadas como verdes. 
 
 ### Capturas
 
-O manifesto `h/capturas-h.json` regista 60 capturas, nas larguras 390, 768, 1024, 1280, 1600; construção `19723a9f3876bff3ad4364d00bb017c63cda56d3` e cabeça da captura `19723a9f3876bff3ad4364d00bb017c63cda56d3`. Inclui os dois recibos da pensão, os temas, a área Trabalho, os índices dos estudos e o Método, nas duas edições. Problemas medidos de carga, navegação ou transbordo: 0. A inspeção visual e os ficheiros vistos estão em `h/inspecao-visual.json`.
+O manifesto `h/capturas-h.json` regista 60 capturas, nas larguras 390, 768, 1024, 1280, 1600; construção `7d901d4e0e82b0f8be2218f32c9d9fb2a8daa518` e cabeça da captura `7d901d4e0e82b0f8be2218f32c9d9fb2a8daa518`. Inclui os dois recibos da pensão, os temas, a área Trabalho, os índices dos estudos e o Método, nas duas edições. Problemas medidos de carga, navegação ou transbordo: 0. A inspeção visual e os ficheiros vistos estão em `h/inspecao-visual.json`.
 
 | Ficheiro | Largura | sha256 |
 |---|---|---|
@@ -2182,24 +2182,24 @@ O guião leu integralmente 16 ficheiros legados na cabeça: 0 contêm o nome do 
 
 | sitio | Mensagem |
 |---|---|
-| d430d6dd1e17e4f1f23acc7273321f5e4380beff | docs(rp4n-h): registar a leitura, as plantas e o mandato |
-| 4a27f399555bb3e30c9b41b1f7cf507a1499612e | fix(rp4n-h): datar as pensões como cópias alojadas e retirar as marcas |
-| bfe7a6d6f06523641ae67b5041db4f9227c261d8 | fix(rp4n-h): usar a mesma marca inglesa em todas as formas rendidas |
-| 85e88f1108b3925f51058adac83d4eac8a50ec6c | test(rp4n-h): guardar a mensagem real do portão da sinopse |
-| f6ac96e2787c81cf3a94c71abc58242e0b41a4cd | test(rp4n-h): plantar cada identificador local e ler os ficheiros legados |
-| 8b4e849f68c8a70a9a4774c0e6a0e012fcd8eccc | fix(rp4n-h): conservar a prova de alojamento e conferir a marca traduzida |
-| 4e9b60d19e654ac1122eee89c09bf6e35c6295cb | fix(rp4n-h): não atribuir uma reconferência inventada à pensão legal |
-| f6d824ccc013eea74886addcb0447e7cc525359e | fix(rp4n-h): mostrar e conferir os localizadores na língua da edição |
-| 6806e5372550eb7349f6db0f8e2a74387959688d | fix(rp4n-h): abrir o registo da cópia a partir da data do recibo |
-| 28846e8e8f8a2ee5acb739cadf47f7db7f686293 | test(rp4n-h): reconhecer a marca inglesa na conferência dos campos |
-| 55b5412b6fcc146454fc0a208608c722b3bd8f48 | docs(rp4n-h): registar a frase K2 sem a glosa da data ausente |
-| a6e57115d5008e5d3a2301d6ab5add88f4afad7b | test(rp4n-h): medir as marcas, as datas, as capturas e as cabeças lidas |
-| 31050f105e92ae9f0e4e1ef884bc9806d5a97353 | docs(rp4n-h): conservar o retrato anterior e a prova encontrada no motor |
-| b99fd62a0ba6c7ff64344679f221bcc0d98983c5 | fix(rp4n-h): manter retiradas as redações anteriores à explicação dos termos |
-| d3d44fb47d445e375d68def515c4ea500569360f | test(rp4n-h): registar a tentativa e exigir a árvore limpa no motor |
-| 5e4ccb25ef9134cbc1e6dccf031a28656535b85d | docs(rp4n-h): anonimizar o prefixo genérico na leitura recebida |
-| 54e82a758aebe25bab888ab85621509e6b98359d | test(rp4n-h): conferir na K16 a prova de alojamento e os campos novos |
-| 19723a9f3876bff3ad4364d00bb017c63cda56d3 | docs(rp4n-h): conservar as recusas e distinguir a cabeça do histórico |
+| b95f67a9c3529f233059a0e0752bf0cbb983eba3 | docs(rp4n-h): registar a leitura, as plantas e o mandato |
+| 7c05ad2acb6be3b2e3e52f68fb12c20e8d14bac7 | fix(rp4n-h): datar as pensões como cópias alojadas e retirar as marcas |
+| ea7ed89ffc2aa8bd583b733c58866c266a7832fd | fix(rp4n-h): usar a mesma marca inglesa em todas as formas rendidas |
+| 1ef337733c599c0f8311e206f1b928ae5d2b7f5c | test(rp4n-h): guardar a mensagem real do portão da sinopse |
+| 01c0e79c16b4ad1ce8d67d36fa72954ee9719151 | test(rp4n-h): plantar cada identificador local e ler os ficheiros legados |
+| 7c10b0d6e10d61ce904f613306b3b960eadcdfc7 | fix(rp4n-h): conservar a prova de alojamento e conferir a marca traduzida |
+| 50ea102b870fdfcb9e1958fd9a566ad22b74b38f | fix(rp4n-h): não atribuir uma reconferência inventada à pensão legal |
+| 82e62deb5e26dc9fd129345eecb4c27d1102c192 | fix(rp4n-h): mostrar e conferir os localizadores na língua da edição |
+| 26c9f130b785e1255d329254503af322b625358f | fix(rp4n-h): abrir o registo da cópia a partir da data do recibo |
+| cf4db237d2137b8433bc7cc2adb116dbd89c8e7b | test(rp4n-h): reconhecer a marca inglesa na conferência dos campos |
+| cd3335e2bcf8eebc96bba41e33830c7bfa2c2598 | docs(rp4n-h): registar a frase K2 sem a glosa da data ausente |
+| 3b41c79a7515072227fc414b745fd16754f9209f | test(rp4n-h): medir as marcas, as datas, as capturas e as cabeças lidas |
+| 51c27e460b190ef064b684ddd4c44f74e1cccba7 | docs(rp4n-h): conservar o retrato anterior e a prova encontrada no motor |
+| 8ef222a08174ce2203b393d65d687315b56dd11f | fix(rp4n-h): manter retiradas as redações anteriores à explicação dos termos |
+| dc200d3eb3fc172c79974eaffad7d1504f504c64 | test(rp4n-h): registar a tentativa e exigir a árvore limpa no motor |
+| 83d1c075992841c52ae5c66ec839995618937603 | docs(rp4n-h): anonimizar o prefixo genérico na leitura recebida |
+| ae95124acd8b403f03012253cbc939babd1e3963 | test(rp4n-h): conferir na K16 a prova de alojamento e os campos novos |
+| 7d901d4e0e82b0f8be2218f32c9d9fb2a8daa518 | docs(rp4n-h): conservar as recusas e distinguir a cabeça do histórico |
 
 
 | motor | Mensagem |
@@ -2227,7 +2227,7 @@ A reescrita das mensagens veio antes do commit dos registos, e os registos antes
 | sítio | 7d8994e835ee70b4673fc76fa2385713365917dc | 344081c34eef1f792feef6bfd2d77fd764f7a1b5 |
 | motor | 9293361 | 542fe4ee9d67ecf2245892fd98ccd1c442829704 |
 
-A cabeça do sítio depois da reescrita, antes dos novos commits, é `478c83688116401055a7ba26b9aa3318d59f1d37`. A prova comparou 45 pares; árvores idênticas: `true`. O guião foi `git filter-branch -f --msg-filter`, limitado a juntar os trailers. A cópia herdada foi reposta num nome separado depois de o comando substituir o espaço de referências originais. As duas referências de cópia permanecem:
+A cabeça do sítio depois da reescrita, antes dos novos commits, é `ed7a9e198a0316ebd4a102fb018e59c966ad0560`. A prova comparou 45 pares; árvores idênticas: `true`. O guião foi `git filter-branch -f --msg-filter`, limitado a juntar os trailers. A cópia herdada foi reposta num nome separado depois de o comando substituir o espaço de referências originais. As duas referências de cópia permanecem:
 
 - `refs/original/refs/heads/rp4n-2026-10-07 7d8994e835ee70b4673fc76fa2385713365917dc`.
 - `refs/original/rp4n-f/refs/heads/rp4n-2026-10-07 8ed6ed6ae1d60f3a47ccc5c45face2be7fcecd51`.
@@ -2417,7 +2417,7 @@ O caso positivo da ausência e os três ramos da comparação também passaram. 
 
 ### Trailers e privacidade
 
-Na cabeça do código, 69 commits desde a base e 69 trailers Claude-Session lidos pelo Git; 0 falhas de presença ou adjacência. A saída literal está em `g/trailers-codigo.log`, obtida com `git log --format=%(trailers:key=Claude-Session) b84d21a3..HEAD`.
+Na cabeça do código, 69 commits desde a base e 69 trailers Claude-Session lidos pelo Git; 0 falhas de presença ou adjacência. A saída literal está em `g/trailers-codigo.log`, obtida com `git log --format=%(trailers:key=Claude-Session) c0e1b3f4..HEAD`.
 
 | Conferência de privacidade | Saída |
 |---|---|
@@ -2451,51 +2451,51 @@ Padrões: utilizador, casa, temporario, projetos, worktrees. A lista herdada, sa
 
 | Antiga | Nova |
 |---|---|
-| 0775309eb34c6bfc918b6ba9aa7ddb859542fae6 | 0775309eb34c6bfc918b6ba9aa7ddb859542fae6 |
-| 0279a053db27fa7cbfef2ba447b750747da8b21a | 0279a053db27fa7cbfef2ba447b750747da8b21a |
-| 892dfa0ac0604eda61bb92e19bdd296630c6baa8 | 892dfa0ac0604eda61bb92e19bdd296630c6baa8 |
-| 5e8d9b1493ba116bc50207f655a13fca5fe0894b | 5e8d9b1493ba116bc50207f655a13fca5fe0894b |
-| ba3c557393647c23e9dc0c621016f5d0f0da05fe | ba3c557393647c23e9dc0c621016f5d0f0da05fe |
-| ac383ec624631d25285b41ce07a8969b170cf2ac | ac383ec624631d25285b41ce07a8969b170cf2ac |
-| 58192aeb5a5a66c9dbae11bbfb2b2d47825a2496 | 58192aeb5a5a66c9dbae11bbfb2b2d47825a2496 |
-| 862c26f0f268c242e9507a09555f80adb22e613d | 862c26f0f268c242e9507a09555f80adb22e613d |
-| 32578d1ddd7a6a686c9ecdbde36ec6a326f8147b | 32578d1ddd7a6a686c9ecdbde36ec6a326f8147b |
-| 91c2871c96abf54d6e996492c8fba422c1c800f1 | 2ffa3e311ae822278c1b2a07262f2346d26d244b |
-| 6c9a90465ccbd1d2f9021cafa660f4f8d1e09f2b | 4ea6ce486c7251fe56f81c9fe65f02a1a61d9198 |
-| 7399a556ca1bfd4b6322f4d43af88d422471de6c | b98aa6e8857e32d251f10b215c418988c9ae0b94 |
-| 2a35e83cbc26a6ba7669f61281ae54f3a193eb03 | 3ec7bf6fb4e271ce45967c7052db8e5d0a659b80 |
-| c62d323fd614a0b6b05578807562b896a81915da | 5b03263f1d3e0f68470367130e17c87e2a2a1fb1 |
-| 44c6ddc15a9b750dd5bbb9535ff138b2daeecb77 | 11ecc41d9be047a3fddf5d29003342c7326a4463 |
-| d57d91bd897edeeaf3ee0781642cf2e239f5a89a | 097e5c3403c712e98dff3dad53794077fd9dfed5 |
-| 8381f17adaf62cbac4c1c8c9e93bba4881725dca | 0d71a2c552f4a92ae802a13850a0a21b0f404348 |
-| 5a2baef72009bc1b0080100901693b36d0f73277 | 98a90cd74b6ccda5fb5d3ace068e97bbcd4a5dac |
-| 3f8eb89bd837eccf230c63759c0ef8b5ebe72328 | 84bf61357f156c54653bc1340ed95fc200d3f837 |
-| bcbfcc713edbe5c6d7fb57de9123c1375c7ab098 | e51faedcdfc04217a2ecbe28b9357f73291e2f3a |
-| b1962dfabb5167968a1bdb4ace7574c514798e3f | d14e621f46303770690bba1c13d569f4f1213580 |
-| 06b988e09a4f76568eb5342fc9f4632c86ab4c1d | 4d36ce02c29722416f5c92cddd4cdf4a4ef2c881 |
-| c5278bef74106b59767d88968ba1f53615604a75 | dca49e935109778c8f29aedd9fdfa6c93179cac5 |
-| 028f8bfd57c5969368f94a360f96ab98e88fb9f7 | 966cfc3c6b84f9883833d503fec2e0b9c8b0e1f8 |
-| c5b08875b164ac3cad264445c8108f4aa8d499e8 | b0d85b09379f6af3c01a85dc4cf1e36ce861a094 |
-| 46fc3ec5060b6174a6a56c70bbcc68c692722295 | eeb23e13bd305c07d8d1cc13ab9c124e28e74431 |
-| b76e370a946db5122eb3816ee8872056c1e54a32 | 4aaa2ac3742b3ae563704269bb5a1bd869e83e75 |
-| 723b1f732a5af6d8b54cc413e3aca38c120ef7de | 6f98ab805480c37cca3f1e28b8d69df166996e5d |
-| 621e9cb4be383229d80364a204c9690889769ab3 | b14017fc6659cc74a5ff8f31f5e12a7d8f79fcce |
-| ba3df6a4b1870bd19546e83fde418d5f515be78f | dfb3bb65b0907baeeaf59e242f327119c231f903 |
-| 2d4565d178acb48e0ce3b1ebe2b4a2a6e94e4d49 | 1288e95d7b3a71a4cc35bfa117efadefe5813668 |
-| 155dbf8117e718b8d1b0742f99204c40bb98aab1 | 6b28e6c24b18c155fe1a034477d42a22ed9637e1 |
-| de26e52bf675478ee1af329b62abd45293ae8a6f | 219ff1db4d04bc058a97cbff3b11006243dc7837 |
-| b588abcf7227cf9e343c93f1c8e34955647766f1 | 411d82adb5aecf1e0439e3208fff9549a505a62d |
-| d07806c81c778b3392776bb34d7558493a60ffc5 | 1760f21e9df3f3b3b99b2b5e67f8589b79d83b21 |
-| 77b90814ea5c18c05d545e4bbb34278576ee6857 | cedd13a41cc8a0ddcb256641ac4d54b3e12c796e |
-| 91fd9d3aa3bf6727f5c327787055bad0989a8677 | 07a9179f3cc5748c6c3cdfb32efcc6f02d2a5ca1 |
-| c0aae32740eff8292ca0679537b90e595352d418 | 8a0d914f9b1cc95659c679fa901dbd7a199e99bd |
-| 79e98237bc904fed4da1a2b1ed7365641e5844e8 | 5fdf6fc0472aa1fa6f667ef68988e021ebe99ddb |
-| a73fc55ace8dab236e92d1a42b1e2ad475cf1081 | 525ddcc528b3cf9989ddd649c42109b9b609aa48 |
-| 281b3a77e9b625d7e9308b4b19326a9ee4152e0c | 8b824dc08056e8cd749fb6354ed74e93dc8a86c8 |
-| 6f950485dcd4c31f7b035b5216e63a1871ab1cc2 | 008a0a01abac9d20811669256c7e7c0a593f7581 |
-| a10b0ee3d3f9d30c9ab8b31edeb4901efb3d2199 | f06d8763e252d9149674eff7fd3e3b215b1014f6 |
-| 5ddb51449330c2dda319b7e28a05c1913fefd9fd | db4b55d85cf1214c04e9c5c32c15f0edba075420 |
-| 7d8994e835ee70b4673fc76fa2385713365917dc | 478c83688116401055a7ba26b9aa3318d59f1d37 |
+| 5e21b596dc9fcf8acbadeb4a99026535ca1b7519 | 5e21b596dc9fcf8acbadeb4a99026535ca1b7519 |
+| d7ab4c89214bb901a33f5a81bcb0db6bc02f7bec | d7ab4c89214bb901a33f5a81bcb0db6bc02f7bec |
+| 7f05d75dd713907b2dbe912494c6ca1cc3f9eb9d | 7f05d75dd713907b2dbe912494c6ca1cc3f9eb9d |
+| b85bad03d0fc9a0f90132f2c5f47b3ccba61c49a | b85bad03d0fc9a0f90132f2c5f47b3ccba61c49a |
+| 803995f814c7b6909731b35074b785801d4af3f2 | 803995f814c7b6909731b35074b785801d4af3f2 |
+| 3fbc79b1fb0cabf711b23310b054a4bcb829e1d7 | 3fbc79b1fb0cabf711b23310b054a4bcb829e1d7 |
+| 23d8ec119c435e96c6e0947ce9ac18692df9815f | 23d8ec119c435e96c6e0947ce9ac18692df9815f |
+| 70c3d9cd87e44ad59d4ecd6d4c24e4ee495c8685 | 70c3d9cd87e44ad59d4ecd6d4c24e4ee495c8685 |
+| 6e894c7c66e0070f6fe5fb92de073a5c2969630e | 6e894c7c66e0070f6fe5fb92de073a5c2969630e |
+| 91c2871c96abf54d6e996492c8fba422c1c800f1 | 4e793f8c7d124c9a8fbb61edfa30d0f1ad89fe68 |
+| 6c9a90465ccbd1d2f9021cafa660f4f8d1e09f2b | 135ddd9fec78cb2fa1b1ba9ed75bb6e5c2c53cce |
+| 7399a556ca1bfd4b6322f4d43af88d422471de6c | fc3c8d0128e64826d198060b0d4015f6118699b8 |
+| 2a35e83cbc26a6ba7669f61281ae54f3a193eb03 | 6bff524a1f232a26abbdf9af2f39fe5501149252 |
+| c62d323fd614a0b6b05578807562b896a81915da | 4d4da1a365e5484df4283463f14766c7b397ac4c |
+| 44c6ddc15a9b750dd5bbb9535ff138b2daeecb77 | bc708885b82970440454a970362a41c5a06f6d8a |
+| d57d91bd897edeeaf3ee0781642cf2e239f5a89a | d1ab27730e72388c0ee3791e1316266557fb2595 |
+| 8381f17adaf62cbac4c1c8c9e93bba4881725dca | 6e9ec2acbb5f88163035a984b6229e0cf42a2c47 |
+| 5a2baef72009bc1b0080100901693b36d0f73277 | 260ebaec641cc51102fcccde3ce0f77d645df7b4 |
+| 3f8eb89bd837eccf230c63759c0ef8b5ebe72328 | 674e3367b8fb02a0e21f214d03a41d938222af05 |
+| bcbfcc713edbe5c6d7fb57de9123c1375c7ab098 | f0f0002c553d5467fd6b8640b56ae1c8fffafaf5 |
+| b1962dfabb5167968a1bdb4ace7574c514798e3f | 33710088d2d8259aa583bf9164d6413a9a77ce9d |
+| 06b988e09a4f76568eb5342fc9f4632c86ab4c1d | cfc64fcf7d7946dae2a94d76b6160655048ccebf |
+| c5278bef74106b59767d88968ba1f53615604a75 | 5f7fb38f0d6498f31ae37dcc8ac08c44b74717a4 |
+| 028f8bfd57c5969368f94a360f96ab98e88fb9f7 | 8cc130b0720fd53bcaf57718c5ca95c515cd633c |
+| c5b08875b164ac3cad264445c8108f4aa8d499e8 | 45887fc9e0c66949b5a5754bdfa1fd202e963a94 |
+| 46fc3ec5060b6174a6a56c70bbcc68c692722295 | 5add31a0a7b198199fa7547909c6a2e101d17ab5 |
+| b76e370a946db5122eb3816ee8872056c1e54a32 | 222f14c8ef0142581b13fc712eaa188b885f420d |
+| 723b1f732a5af6d8b54cc413e3aca38c120ef7de | c98ae1f4c3f188bc6265a86b19227b3b5ee78195 |
+| 621e9cb4be383229d80364a204c9690889769ab3 | 004ac207aafcfc7c1cd0c5d0c64fee44334e33cb |
+| ba3df6a4b1870bd19546e83fde418d5f515be78f | 187660cb78e0b41f631ccac16495f8d14c53ef91 |
+| 2d4565d178acb48e0ce3b1ebe2b4a2a6e94e4d49 | 48a1c584274d7e916e92400ea5cef17f16388bae |
+| 155dbf8117e718b8d1b0742f99204c40bb98aab1 | 86b907e402feb287db1d99f8227e0ef6326ab1be |
+| de26e52bf675478ee1af329b62abd45293ae8a6f | 422d4fc10eb8514544cac300f1bf94097ca5fcc1 |
+| b588abcf7227cf9e343c93f1c8e34955647766f1 | 2143b3b919662b90b90f6e9d44daf50e645333a8 |
+| d07806c81c778b3392776bb34d7558493a60ffc5 | b1cd97106bb21b744b6f5174eb0528787c1df093 |
+| 77b90814ea5c18c05d545e4bbb34278576ee6857 | fd5e8c09d03f68816446f0e39ec9319ed578e8d1 |
+| 91fd9d3aa3bf6727f5c327787055bad0989a8677 | 4bc0fd0215190dd417f0d9ea2a43a3472c6b4838 |
+| c0aae32740eff8292ca0679537b90e595352d418 | 5c705515c43611c04a9a927c2025cc0feee36a99 |
+| 79e98237bc904fed4da1a2b1ed7365641e5844e8 | 30c3e32f098f29eb7b446b224fc714176f0d35e7 |
+| a73fc55ace8dab236e92d1a42b1e2ad475cf1081 | 24415297eba80bab6372130c59a1caaa09ba519b |
+| 281b3a77e9b625d7e9308b4b19326a9ee4152e0c | 40d81e6f5ef0fdeb64ac825b5979e4bbafe50456 |
+| 6f950485dcd4c31f7b035b5216e63a1871ab1cc2 | 9e3596c0cd584188ffd5fd08fe79e4a72e71d7ae |
+| a10b0ee3d3f9d30c9ab8b31edeb4901efb3d2199 | 99e1166ef4ea53b2249b6e05602aa1c8207aa504 |
+| 5ddb51449330c2dda319b7e28a05c1913fefd9fd | ffac854dab7641956be214ffd3b0171d4adf93e7 |
+| 7d8994e835ee70b4673fc76fa2385713365917dc | ed7a9e198a0316ebd4a102fb018e59c966ad0560 |
 
 ### Commits desta passagem
 
@@ -2548,7 +2548,7 @@ RP4N-23: a direção mediu 405 094 símbolos na passagem i, contra o alvo de 150
 
 RP4N-24: o comando que escreve o inventário é `node design/especime-v3/medicoes/rp4n-2026-10-06/inventario-j.mjs --write`; sem `--write`, confere as declarações contra o HTML sem as alterar.
 
-RP4N-25: o carimbo efetivamente conservado em `j/inventario.json` é `{"commit": "3ecc7c72bce1bbc06e207aca368c9dcbb579b7ec", "ref": "rp4n-2026-10-07", "env": "local", "origem": "git", "motivo": null, "construido_em": "2026-10-12T18:12:06.874Z"}`. É a construção de que esse registo leu as contagens. Não é prova de que as tenha lido na cabeça final da integração. A conferência atual será identificada pelo seu próprio carimbo na entrega da higiene.
+RP4N-25: o carimbo efetivamente conservado em `j/inventario.json` é `{"commit": "d0c3d52e2249c2ba1b3ac64d1cdca0f8820c8c9b", "ref": "rp4n-2026-10-07", "env": "local", "origem": "git", "motivo": null, "construido_em": "2026-10-12T18:12:06.874Z"}`. É a construção de que esse registo leu as contagens. Não é prova de que as tenha lido na cabeça final da integração. A conferência atual será identificada pelo seu próprio carimbo na entrega da higiene.
 
 RP4N-26: a conferência isolada registou 17 recusas, com 10 mensagens distintas. Não se confunde esta lista com uma contagem duplicada de chamadas do portão. As ocorrências, incluindo repetições, são:
 

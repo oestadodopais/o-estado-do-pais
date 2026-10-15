@@ -53,7 +53,7 @@ A `VISAO.md` §4 tem três células desatualizadas (2 602 linhas; o JSON por lin
 
 ### 3.1 O que um leitor encontra hoje [V]
 
-Medido no telemóvel de referência (390 × 844) e na janela real de um iPhone 13 no Safari (390 × 664), e no computador (1 280 × 800), sobre uma cópia da construção de `96af81bc`, que `verify:deploy` confirma ser o que está no ar (28 de 28).
+Medido no telemóvel de referência (390 × 844) e na janela real de um iPhone 13 no Safari (390 × 664), e no computador (1 280 × 800), sobre uma cópia da construção de `af96995a`, que `verify:deploy` confirma ser o que está no ar (28 de 28).
 
 - **A identidade lê-se.** «O Estado do País · Um observatório de Portugal.» chega em menos de um segundo; é a maior melhoria desde 25.08.
 - **Três linhas de telemetria antes do conteúdo.** «Painel europeu · 31.08.2026 · Fontes · 01.09.2026 21:07 WEST · Agenda: 4 em curso · 0 a seguir» ocupam 160 px do primeiro ecrã de todas as páginas e não dizem nada a um estranho.
@@ -98,7 +98,7 @@ Medido no telemóvel de referência (390 × 844) e na janela real de um iPhone 1
 
 - **`npm run typecheck` confere um ficheiro.** `checkJs: false` nos dois `tsconfig`; só `astro.config.mjs` tem `// @ts-check`; nenhum `.astro` está no programa. Com `checkJs` ligado numa cópia: 1 630 erros, 461 em `src/`. Um portão nomeado como verde que não pode falhar compra confiança com nada.
 - **Os 16 documentos alojados** (`/estudos/<slug>/documento` e a edição inglesa) não têm `noindex`, não têm `lang` no `<html>` e não têm o rótulo de IA que a §1.89 diz estar em todas as páginas (a isenção está escrita em `gate-html.mjs:927`). São textos gerados por IA, de até 1 062 254 bytes, ligados das páginas dos estudos, portanto rastreáveis. Se a isenção sobrevive à leitura do advogado é a pergunta 11, que ninguém fez.
-- **A passagem a dados pessoais de 01.09 deixou uma linha.** a linha 67 de `legal/counsel-brief.md` ainda nomeia o país de residência do diretor (o commit `38d9166` tirou-o das linhas 35 e 60 e não desta); o rascunho da carta do PRR traz o correio pessoal. O nome está no sítio por decisão dele (o rótulo de IA nomeia o responsável editorial em todas as páginas), por isso o que fica por tirar é o país. Uma linha, e uma regra que a varredura não tinha.
+- **A passagem a dados pessoais de 01.09 deixou uma linha.** a linha 67 de `legal/counsel-brief.md` ainda nomeia o país de residência do diretor (o commit `5c40d73` tirou-o das linhas 35 e 60 e não desta); o rascunho da carta do PRR traz o correio pessoal. O nome está no sítio por decisão dele (o rótulo de IA nomeia o responsável editorial em todas as páginas), por isso o que fica por tirar é o país. Uma linha, e uma regra que a varredura não tinha.
 
 **O que importa [V]**
 

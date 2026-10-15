@@ -1,11 +1,11 @@
 {
-  "base": "64d81b21",
-  "antes": "744a80eb",
+  "base": "d3defd90",
+  "antes": "cad8dd95",
   "ficheiros": [
     {
       "ficheiro": ".gitignore",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "66cf1a4b6b819c4af93c3b4d85ff4b3b037e6f74169fed73a748bc5c2fe2240c",
       "sha256_antes": "c4afd4d5709fd947226cfc1f46ca87ffe609e1866b37c1a66484fc361fa0a955",
       "sha256_depois": "66cf1a4b6b819c4af93c3b4d85ff4b3b037e6f74169fed73a748bc5c2fe2240c",
@@ -14,7 +14,7 @@
     {
       "ficheiro": "BRIEF-decisoes-2026-08-20.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "5515eb0f54f8e21e7a5d44b914b12a6c24e89194a794903e38a9aa407a8f86d9",
       "sha256_antes": "4d0e7e365357f775d51992fb2497e82033fa4675865cbecd053263e6ef32f276",
       "sha256_depois": "5515eb0f54f8e21e7a5d44b914b12a6c24e89194a794903e38a9aa407a8f86d9",
@@ -23,7 +23,7 @@
     {
       "ficheiro": "BRIEF-republicacao-2026-08-20.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "a4f419873ec2478f2f78d594977e723015cbdfdd73073cd4e7e47ad2bb003a57",
       "sha256_antes": "a15e8daeefca98ca17e546a5341662d0a4d050e2dd09a4265b5cbe9253ef8d72",
       "sha256_depois": "a4f419873ec2478f2f78d594977e723015cbdfdd73073cd4e7e47ad2bb003a57",
@@ -32,7 +32,7 @@
     {
       "ficheiro": "CLAUDE.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "068dc3d5bab1a7b648077406f8de7bc9bf7ee7937b46f83dc823ea35ba00f076",
       "sha256_antes": "478ea6bbcc61b48feefbf2be43d3512156474a4f883b91fce725f8b93a214eb0",
       "sha256_depois": "068dc3d5bab1a7b648077406f8de7bc9bf7ee7937b46f83dc823ea35ba00f076",
@@ -41,7 +41,7 @@
     {
       "ficheiro": "design/BRIEF-construcao-S.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "b9c9eaeeb9095d0c72dd92f63ed60e958c37f2a4a11b72c5e13816abe841b190",
       "sha256_antes": "795b17c3d79442714be8bb3d8374918bd7c661c77d2acc5d6ec45f337eb92856",
       "sha256_depois": "b9c9eaeeb9095d0c72dd92f63ed60e958c37f2a4a11b72c5e13816abe841b190",
@@ -50,7 +50,7 @@
     {
       "ficheiro": "design/direcao-b/CHECK.txt",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "b5b7e006ec0148d06751001fb22de187ee9d8280c0f3cca00463219885532716",
       "sha256_antes": "5a3e83ab5cae4913fb9cfbd3f9864bbecd6a02104652343d1b0920e3ec9b85a4",
       "sha256_depois": "1e44842d75c872fd589530599dd199d3fd3e68fb78740185c247cfff4030d40c",
@@ -59,7 +59,7 @@
     {
       "ficheiro": "design/especime-v3/ESTIMATIVA-PARTE3-2026-08-24.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "8284956fe38553ee44cd990b063c631fb32e0640edab0df95519f9c4e3e03281",
       "sha256_antes": "b10ea29052e6002d49bbdef456b20f7d006c5cde639395df2f25f8d76fdc58d9",
       "sha256_depois": "8284956fe38553ee44cd990b063c631fb32e0640edab0df95519f9c4e3e03281",
@@ -68,7 +68,7 @@
     {
       "ficheiro": "design/especime-v3/ISSUES.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "dda698a2408f281c355a735b8bd20c288be59b7ff8a99ba6201c09bb742a9b78",
       "sha256_antes": "9b21819ffdd673432a07de848925a02e5a9ac044bb59d08cd6a6d54a18168de1",
       "sha256_depois": "dda698a2408f281c355a735b8bd20c288be59b7ff8a99ba6201c09bb742a9b78",
@@ -77,7 +77,7 @@
     {
       "ficheiro": "design/especime-v3/PEDIDOS-AO-MOTOR-2026-08-22.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "47a32f37a5ccfee9a0941847a2c80ed63a5494f3a9309578b0ee162c6848256d",
       "sha256_antes": "a7020c5077e3bb3693e0c445ca0a3df871f1daa41487a95013ba35d9f32b0872",
       "sha256_depois": "47a32f37a5ccfee9a0941847a2c80ed63a5494f3a9309578b0ee162c6848256d",
@@ -86,7 +86,7 @@
     {
       "ficheiro": "design/especime-v3/PROMPT-luz-verde-2026-08-20.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "1d1a71a36ca6e1f098e2afa7e7a3cdffe7a44c938271e22f67487815e24a0bcb",
       "sha256_antes": "131e88260bb61c6a741b23d1301a1d279437fb245386d443a409614bfe2abd8e",
       "sha256_depois": "1d1a71a36ca6e1f098e2afa7e7a3cdffe7a44c938271e22f67487815e24a0bcb",
@@ -95,7 +95,7 @@
     {
       "ficheiro": "design/especime-v3/PROMPT-pos-fusao-2026-08-22.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "5a63e2aad440d56b62caebe31f28562201cf80f2fff6ba30d44fa2f672dc5120",
       "sha256_antes": "693669b42839041902fa86dc9caf7e9751d62a86422b224b2c30b2a5795c1eea",
       "sha256_depois": "5a63e2aad440d56b62caebe31f28562201cf80f2fff6ba30d44fa2f672dc5120",
@@ -104,7 +104,7 @@
     {
       "ficheiro": "design/especime-v3/PROMPT-proxima-sessao-observatorio-2026-08-29.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "b9bf77ef0eeb9a59c291f656c3746d9ae351dff99809db0330d979ae1db24646",
       "sha256_antes": "6e03169d4a1fe40c728f71f8587d1e6383ad38c95090a5b378a53f200f88f881",
       "sha256_depois": "b9bf77ef0eeb9a59c291f656c3746d9ae351dff99809db0330d979ae1db24646",
@@ -113,7 +113,7 @@
     {
       "ficheiro": "design/especime-v3/briefs/BRIEF-auditoria-ux-2026-08-25.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "931d6cfe8f1178cb3e0c380f752a752796a58cfa7eaddd1a040cb456f2e30e18",
       "sha256_antes": "a42c22c9a0fc3c4caeb4bb3272305601bd726b2e7450bccd5a016aada474f6a9",
       "sha256_depois": "a7e0deddb44b8d03a044df8c4fa541ad7fdef7f8e37cc9b16add06fb617865a2",
@@ -122,7 +122,7 @@
     {
       "ficheiro": "design/especime-v3/briefs/BRIEF-concelhos-M5.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "b1e46187fd87d500e917e68d63e3072ec2d556ac6b5defadf8513f856d827c33",
       "sha256_antes": "2ff979af39038b0ea999a23e15907f8c317d6c55dc5dd1c500d22e6a245cb2a4",
       "sha256_depois": "b1e46187fd87d500e917e68d63e3072ec2d556ac6b5defadf8513f856d827c33",
@@ -131,7 +131,7 @@
     {
       "ficheiro": "design/especime-v3/briefs/BRIEF-concelhos-P2-estrutura.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "a3e5884c14c9921ea3cabf4b6f3e187bdc28137898dd0efbe4d45e5151fabbe8",
       "sha256_antes": "6e7dd61167b5e800e3cc12933d33e540ac80f1d10efb2b9ed659a311d6e2e052",
       "sha256_depois": "a3e5884c14c9921ea3cabf4b6f3e187bdc28137898dd0efbe4d45e5151fabbe8",
@@ -140,7 +140,7 @@
     {
       "ficheiro": "design/especime-v3/briefs/BRIEF-correcoes-pequenas-3.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "619cf50ad5c13b69b9a6486f2f8c81e723a0db28a7e73ffa604ed53a38306551",
       "sha256_antes": "c5e55566dd957c545bb5bede202de91c19109f2edf63cb0d5341712479510195",
       "sha256_depois": "619cf50ad5c13b69b9a6486f2f8c81e723a0db28a7e73ffa604ed53a38306551",
@@ -149,7 +149,7 @@
     {
       "ficheiro": "design/especime-v3/briefs/BRIEF-correcoes-pequenas-6.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "ff0f175a9d125cd2584573583b831334c93de108b61bb9142cd41e46c5ce6325",
       "sha256_antes": "6c58aed72257b08f1c84fca4c45146adc7495a7047f5425b16e4300f4f46a03c",
       "sha256_depois": "ff0f175a9d125cd2584573583b831334c93de108b61bb9142cd41e46c5ce6325",
@@ -158,7 +158,7 @@
     {
       "ficheiro": "design/especime-v3/briefs/BRIEF-etapa-2l.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "3bfd4c84f0e66a6014f0f8b39489a19a0b2eb840190653a9a8523bf8534282b1",
       "sha256_antes": "1a0cfb7baf138fe066419b140881ca76c0b053a547921db8052ffee95b49e61c",
       "sha256_depois": "6a955cef0a80dc1abb229e9a0f468425a854c13ca766db27bded08a5f4851119",
@@ -167,7 +167,7 @@
     {
       "ficheiro": "design/especime-v3/briefs/BRIEF-ilhas-M6.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "46fa902212a60ca50a5082c4c2f6f9a35ece440eb84e4b8497c18efc2b892647",
       "sha256_antes": "9f2197d5a22677bbc279aba7bc9867866fa47df1509669becdbe5f9718ec9d4d",
       "sha256_depois": "46fa902212a60ca50a5082c4c2f6f9a35ece440eb84e4b8497c18efc2b892647",
@@ -176,7 +176,7 @@
     {
       "ficheiro": "design/especime-v3/briefs/BRIEF-inicio-lista-M11.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "d2d41c019ba3695bb4a81c0c5b03c30abad8832515c66809fe622b5904e243cd",
       "sha256_antes": "7ea45b03c5e55de54e5b888a1a4b6550ed6c7f552f7dd9d100df769cd26a1aa7",
       "sha256_depois": "30fc89f2c4cd3f2ddee8c1b00ef6a8cacba5e452f0892dfadba2e4d63847ce41",
@@ -185,7 +185,7 @@
     {
       "ficheiro": "design/especime-v3/briefs/BRIEF-mapa-navegacao-M4.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "cea31febceebe5a77c078e470f49ad447ec930c8acc2fddd3aea6901b81cdda1",
       "sha256_antes": "0585e86f8eb7f9cc17d74e60faf2f81535fe14afa15449b50e78d860111894dd",
       "sha256_depois": "b085a1826c8e65149fd12d9e03f3cb15e70d56843a52be07c6e6bc3e734b5778",
@@ -194,7 +194,7 @@
     {
       "ficheiro": "design/especime-v3/briefs/BRIEF-parte3-M1.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "7599263207852e2937862aec0e61cd5328615f6e17947b68eb8a4d0962de26bd",
       "sha256_antes": "912d95cb36874ee011b4572da116a32f3e6d446fdeb9663924682aae2ee42b8a",
       "sha256_depois": "7b4f5be314ed18edf522977f8a144b787606d97fb12492ccabbbdd5f27f85f14",
@@ -203,7 +203,7 @@
     {
       "ficheiro": "design/especime-v3/briefs/BRIEF-vazios-M8.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "581c8c699fdf76677c92183c9ac2d43a92b819c33e918fdedacb596f5c4eaff4",
       "sha256_antes": "40d4d48dc9097644d8fb4388c30fe0266c8676f3437bfb1d77b089d94927c2cd",
       "sha256_depois": "581c8c699fdf76677c92183c9ac2d43a92b819c33e918fdedacb596f5c4eaff4",
@@ -212,7 +212,7 @@
     {
       "ficheiro": "design/especime-v3/briefs/BRIEF-vazios.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "e74fa8e94e9399792427723c2155e20042151cab2abe413843d3c20dc283c9f6",
       "sha256_antes": "1d0cf987d3c1d0a47e8cb8c3a6b8ef2d918d76b46989d3301aee52ac93f2c1b0",
       "sha256_depois": "e74fa8e94e9399792427723c2155e20042151cab2abe413843d3c20dc283c9f6",
@@ -595,7 +595,7 @@
     {
       "ficheiro": "design/especime-v3/critica/medicao-f11e-sonnet/en-paridade.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "4e561c992c4258bfb6705441ea5b5efa8c2aee929f5c98242194285df8d6f864",
       "sha256_antes": "5b82f2b55520ce595f5e8296bc8c18ea95b1a95d0f1f6078933b4ec8751b58ac",
       "sha256_depois": "b55655f2fbdd4d959da5c9b5a5e1cf25767c3980cdd878026b78e33264f4bfff",
@@ -604,7 +604,7 @@
     {
       "ficheiro": "design/especime-v3/critica/medicao-f11e-sonnet/u1-alvo.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "dfac22feabd47230b54d6d1ab134a97e01c4c0ffc804b2253a2e8f143f09524e",
       "sha256_antes": "ce773d9b5cfef84c731eb71fd87394e8509ad303ca4ea3bb7bfbf78b6c288d9b",
       "sha256_depois": "0200ca31b51e641a6b00b751ceb9cf9fa681e3bfa7107eccabbf0b00961b5449",
@@ -613,7 +613,7 @@
     {
       "ficheiro": "design/especime-v3/critica/medicao-f11e-sonnet/u1b-braga-porto.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "79bafa5f7f49dff0819e785f163da299d9f0a567316b8578cbd4b242bb96f60d",
       "sha256_antes": "4133c36e3fedfc548294f4c9781c3bb37d7d95d2c65ab4b06cfe7ba94f272b77",
       "sha256_depois": "18a985379cee640022335b7ce8f9ec9dda8fbbb8a145cdaebf364fc2c93c824f",
@@ -622,7 +622,7 @@
     {
       "ficheiro": "design/especime-v3/critica/medicao-f11e-sonnet/u2-nome-en.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "630fe079332cebda95efcbf467911eabc4c55e0d999c13c8d7ef05a7b5e9bd4f",
       "sha256_antes": "11d0c308b80aef75ef73a039d0965d33b80a998faef96a4c09766cd4597b1dcf",
       "sha256_depois": "313e0a883e2c03b6e7cd5a79f3d064168a75feaa465cd81ba8de6f3d108f0386",
@@ -631,7 +631,7 @@
     {
       "ficheiro": "design/especime-v3/critica/medicao-f11e-sonnet/u2-nome.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "a60b44c09891a3fc536880221fd873bd37985efa6c628a2ef713ca150ee6b9a0",
       "sha256_antes": "a77a7cb6ed3fb08718ea70e9f74556af2492971bf5fa1025e42c7ae3395f70aa",
       "sha256_depois": "0a8cb3710def02969669d42766ea0e48cd85878e07c0b16d23c6fa0aedff95f5",
@@ -640,7 +640,7 @@
     {
       "ficheiro": "design/especime-v3/critica/medicao-f11e-sonnet/u3-toque.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "474a9646760a6fc0ae4d205e9513f8b379285bdd23a8133584ca8b2dc40c5e8d",
       "sha256_antes": "e6421b598d7db9b3d851b4dc1ac935af861018f766ac2008ea3b9203aa3bbabe",
       "sha256_depois": "68680889d002efcd9aae50543b53a7af4c689fa4d1519115cbe586cdcc583eef",
@@ -649,7 +649,7 @@
     {
       "ficheiro": "design/especime-v3/critica/medicao-f11e-sonnet/u3b-rato-concelho.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "70485da59dbe9fe6cd765ea9a2767e21daa3e8026f061c6e8e753b6b926f810d",
       "sha256_antes": "7e2df2e8fee0ab898b1b1b2fc4e3b0812b454cdcf205777d3977a75d0653de32",
       "sha256_depois": "c46f91bb8974ed004006d900792aa2f51e3f94002fe0f00112acfe1c16f81cbd",
@@ -658,7 +658,7 @@
     {
       "ficheiro": "design/especime-v3/critica/medicao-f11e-sonnet/u4-sem-guiao.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "3f3d2f53e425301629880b4b1cdfbe7d7e82d1d0dedc9fa7240ffd6a1cf18f05",
       "sha256_antes": "50eacd25fd64930700ac03a59970fe07d12b5f49bc1522c53ddfaa620db8d919",
       "sha256_depois": "78f97aa4f2bd5a8eee8cd779b82ca29fbe88e24c8028fdd6c32a57c8ea34b578",
@@ -667,7 +667,7 @@
     {
       "ficheiro": "design/especime-v3/maquetas/b1/fazer.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "b6ad8213445408dad68964508fceafaea0a4ca38e8e920d846898852e1fba1f2",
       "sha256_antes": "6c1975d78a3f3e2c75c4475d5229e5d316e6d18599ed26ba6bad0a9d9d0faa5b",
       "sha256_depois": "73e42c96279d8c55a51daab872288e52d81b8b817444199fede35565b658cc33",
@@ -982,7 +982,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/correcao-2/conferir-fonte-cfp.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "bcf8456e1980863ae0cedd3ed97151cf91cd6a5bd81a220822817d7897a50247",
       "sha256_antes": "5700c0ca9a45cf5cad37ef314ae10598b1ce9c8eb37e7a7d69e4250db7674ecb",
       "sha256_depois": "bcf8456e1980863ae0cedd3ed97151cf91cd6a5bd81a220822817d7897a50247",
@@ -1018,7 +1018,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/correr-portao.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "a1ad9b6c06151740d47341f36df32fed9d6050531b984f08dc3b3eca50e556c1",
       "sha256_antes": "a0c7f21337889ee3f48753978ef63a6efb967a47fc7e311831580b4d36d554d0",
       "sha256_depois": "a1ad9b6c06151740d47341f36df32fed9d6050531b984f08dc3b3eca50e556c1",
@@ -1036,7 +1036,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/medir-correcao.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "577f25eb626704ec7d363442d734fab7a4b97273cb19af1686708e0a874c369f",
       "sha256_antes": "6ed213b63a8b84a1eaea67d7237af4cf7f05ff4c7a1c5a0da72e4dce1fdc5341",
       "sha256_depois": "577f25eb626704ec7d363442d734fab7a4b97273cb19af1686708e0a874c369f",
@@ -1045,7 +1045,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/medir-perguntas.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "0b61d8d87d47c4551a7d273a116e63ea8a84894c5bc56be613c388c696d08f2f",
       "sha256_antes": "fefd6817520037a1ce18c6afda0b23ccb78bf05e5b1b38f96d37e3e5adc3dee1",
       "sha256_depois": "0b61d8d87d47c4551a7d273a116e63ea8a84894c5bc56be613c388c696d08f2f",
@@ -1189,7 +1189,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/b2-2026-09-23/recolher-motor.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "c789c3cc75fe669419304360760a25f418f41dc13a07445972d0ab89f209b648",
       "sha256_antes": "e6c6b703c0f7cdc216c04386ef453cf0df2a15a57d2db7aa958fe439714db22a",
       "sha256_depois": "c789c3cc75fe669419304360760a25f418f41dc13a07445972d0ab89f209b648",
@@ -1207,7 +1207,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/c1g/medir.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "6e3c5e18eeb1bbc9f540f85c676d7c5d7af4ccb6f0304517f9a8895000b3050a",
       "sha256_antes": "42b009cf3ba6be54b6d255fa04e4a510ad869c05bba5c459abdc38c66115c223",
       "sha256_depois": "6e3c5e18eeb1bbc9f540f85c676d7c5d7af4ccb6f0304517f9a8895000b3050a",
@@ -1234,7 +1234,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "c7f605a800a0e263e19506c763cbd8094d3939a4205f3be18ab3ce83f473dd66",
       "sha256_antes": "6cef01c6a5a4a3939a286ca3a6d9f964010025a0919ca2d15cfaccc6cd71b420",
       "sha256_depois": "c7f605a800a0e263e19506c763cbd8094d3939a4205f3be18ab3ce83f473dd66",
@@ -1270,7 +1270,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/provar-circuito-divida.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "07741e7244c02704810db7587e49a5d51dafd82427d023a40bf708aea204fe2a",
       "sha256_antes": "43b24198e87b8e848c7d67f4a0fc57f141cff4714bf40f452a0bcbc8d04f0bb9",
       "sha256_depois": "07741e7244c02704810db7587e49a5d51dafd82427d023a40bf708aea204fe2a",
@@ -1279,7 +1279,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/registar-c1.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "b1a838338e15139519ae8d6024a63245f10ed8dc33d74ed3bdbd3f6d7e6e2ebd",
       "sha256_antes": "c3adf1cbb2c4a0027541e814b766563ef65bc3bd60046e8cddcc60dd22b5de03",
       "sha256_depois": "b1a838338e15139519ae8d6024a63245f10ed8dc33d74ed3bdbd3f6d7e6e2ebd",
@@ -1306,7 +1306,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/concelhos-M5-sonnet.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "23d75123db94107a17176b18dfad246582905ab39c61ff41d520edeea994010b",
       "sha256_antes": "0dadd2e1afa8e1583138bbb6453052e37421d894b8d67597167e727b7fc4dccc",
       "sha256_depois": "b4980dcd62864fdcbb7976cd3abb99f2aabc8831f02fec866a7bf5fcf05f5866",
@@ -1324,7 +1324,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/extrai_fontes.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "827123901270753f9fb484af19172b14961fe0f6f62221eb592f85602bb806b9",
       "sha256_antes": "4742efc26cf040551de316398d464d27891850dc01454a2ec788647e95201d40",
       "sha256_depois": "827123901270753f9fb484af19172b14961fe0f6f62221eb592f85602bb806b9",
@@ -1369,7 +1369,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/ilhas-M6-sonnet.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "d4af108216ff6875733bd2e73910f0e2ab29e896727d61601438d687481e6ae9",
       "sha256_antes": "025f4120bb0dbd5883cb4897c4a4672bc1fe05da9e11139b1c21ac8dea18e16c",
       "sha256_depois": "46fdf75dcee14a4e49b2a4fecbdbfacab64f07a5ea6ebd3d26adae9c137c3af9",
@@ -1387,7 +1387,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/inicio-lista-M11-nucleo.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "024ebea37a09b7f09e11393d1ca06b7ed49af5a314994ad295d886b820eef14d",
       "sha256_antes": "7e533a3eb4194ab28c6231d4c2197943ac75052ae895bc19ad7d745157229326",
       "sha256_depois": "e74c1cc748be0dffa5b5b9f8339cf73bf6bdca55c5966f0a20469aaa1d6f6792",
@@ -1396,7 +1396,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/inicio-lista-M11-sonnet.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "ef9b4ef9aa05f5d26a58122eaa32de18db7e944262b5906b04bfc12af13a559f",
       "sha256_antes": "cf8fc040382d4e28dfd58d255aa1e8aefac6b3df43eae8f96c8d2f81112c2187",
       "sha256_depois": "1839c77e948a8c3e86173f1c32af7ab8054c1937d3132307d0aace8e6df04675",
@@ -1405,7 +1405,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/inicio-lista-M11b-sonnet.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "4887870f76308db03c70fed6b106a7e3e18fed878fdde1bd66f974b8daff1c74",
       "sha256_antes": "299807a1fa25fbf19d85ff37b00d208986e3bba76d81b2b427aeca81cb8366c3",
       "sha256_depois": "e1fc6d2608e01304c6062cfddf3f3a7a9feada3b1a3af74ab43198760b9a86dc",
@@ -2270,7 +2270,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/mapa-distritos-M3-sonnet.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "1af0ff249463a1763eb9f9d13f9138b5844015e7bc36ee4c3ed618c374202a48",
       "sha256_antes": "c122528ae343b48353fdaf971dfc6d230e92f977dc13b2644abb1bc90028ab60",
       "sha256_depois": "e2258b705bcc73387dff2b62a5db316ef1e04621ebdb4f612957777657d166d0",
@@ -2279,7 +2279,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/mapa-navegacao-M4-sonnet.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "3d531f71f7882754ca8e37b20ebee2837ead3b9cfcf0ec43609fb3cb00a46cba",
       "sha256_antes": "c85c03282c222d88d7b52da497b2fdd9588fcd37c1b1d831b63c88eddb1128a0",
       "sha256_depois": "aba2717f0fda155758d8890046411a8829bf8786d337108db2fdaaab7867b1ab",
@@ -2378,7 +2378,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/parte3-M1-sonnet.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "76b5244dc35d26b971a073b50589327d2df76f86f3be8218ac33e123b2c9da43",
       "sha256_antes": "8cae5b58fb0bf21d960396125fc2f06d0aadebf35e6f5b4825e6dcda1b334a98",
       "sha256_depois": "a7cc444341639244045503b2b2ef34fc9b00b150e98d12455d8fd5a5e616a42c",
@@ -2396,7 +2396,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/parte3-M2-sonnet.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "eef595ef34b313898de6eda831ea004c7fe0e2512b5b5dc2bf7a4c68402738ae",
       "sha256_antes": "ca3e965d4418bcc3c63fb64aa7319fc46ceafe61a5dbafbd47a6f78f8aef2a8f",
       "sha256_depois": "826ea31eb0e400069b094522637168428e14eaecdba4910aa9c4b929db4fb73f",
@@ -2504,7 +2504,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/pp1-2026-09-28/maqueta/captar.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "c09ae654dc63dda4b27b5e76cde9a17dcc5bc1ce4df5f8b9e0dc588323a8ee69",
       "sha256_antes": "305b18f675d884edb5230aaaa7b0b105b575f27daf13d022b5e7906af179814d",
       "sha256_depois": "c09ae654dc63dda4b27b5e76cde9a17dcc5bc1ce4df5f8b9e0dc588323a8ee69",
@@ -2513,7 +2513,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/pp1-2026-09-28/maqueta/verificar.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "ead02368d26a601c7c64239a54825664e1a1879e502d2a47393bafd3190e5261",
       "sha256_antes": "368388625373b90e7a56a982602a7fa8ab3a15e31525e7136b848e1407ccfe95",
       "sha256_depois": "ead02368d26a601c7c64239a54825664e1a1879e502d2a47393bafd3190e5261",
@@ -2551,7 +2551,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/medir-rp1.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "6d42a12b56759ad3f4da8a78011af95bc9bab271b8e03bb3d81437ebc35ce849",
       "sha256_antes": "254214143b3b949f6024ca9bdf4a1606d90ca6af216c4f52c3151a7b5fe3fa16",
       "sha256_depois": "6d42a12b56759ad3f4da8a78011af95bc9bab271b8e03bb3d81437ebc35ce849",
@@ -2560,7 +2560,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/origens-rp1.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "c5b9c7926a30a6033e38b67ba26048ef9b1677d63e2bce160a9dcc97b76c27ac",
       "sha256_antes": "9c819136460c8d3d0f2c477f98c4a13c34f0766a6f47472a082253686446433e",
       "sha256_depois": "c5b9c7926a30a6033e38b67ba26048ef9b1677d63e2bce160a9dcc97b76c27ac",
@@ -2605,7 +2605,7 @@
     {
       "ficheiro": "design/especime-v3/medicoes/rp1-2026-09-26/registar-rp1.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "a82ce03d40b391c0e0758986b3fbf6004b54edf4daa9978182846685ff4f9f7c",
       "sha256_antes": "b7a07c26f41e89b09e7a4b33ebe5c0f4bfab61f59b38defe3f41037528ea3150",
       "sha256_depois": "a82ce03d40b391c0e0758986b3fbf6004b54edf4daa9978182846685ff4f9f7c",
@@ -2659,7 +2659,7 @@
     {
       "ficheiro": "design/marca/palavra/folha.mjs",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "c6514c0c62f052bfead49dcc90429494d9f608a7e3c0983d61396b0f24725c0d",
       "sha256_antes": "dbdd1005d541abd2265615eb4e77395d335591c2ccc3ec13599063d59cf3a5a1",
       "sha256_depois": "62aa361cb21b92724444c31477f9f2b03fce5cc593e4ac918309478b2053f5bb",
@@ -2668,7 +2668,7 @@
     {
       "ficheiro": "design/observatorio/BRAINSTORM-conteudos-2026-09-28-astra.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "50f344be42ce536ad67e461f170a4f579e8690d90f7b82fe3b3f6961d4865cba",
       "sha256_antes": "985f36519904587bae5926ae764d60a62734a10216a9197d1255e9354228bb97",
       "sha256_depois": "50f344be42ce536ad67e461f170a4f579e8690d90f7b82fe3b3f6961d4865cba",
@@ -2677,7 +2677,7 @@
     {
       "ficheiro": "design/observatorio/BRAINSTORM-conteudos-2026-09-28-pedido.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "b5c9a2dfd66a84fa218b8c77941ce943e0228f6e4234d1142417eaadd4a8e6be",
       "sha256_antes": "21ade16bf020deba905f3bc9f4a02e9549ea580556f42164c017e6d0b8acaa3e",
       "sha256_depois": "b5c9a2dfd66a84fa218b8c77941ce943e0228f6e4234d1142417eaadd4a8e6be",
@@ -2686,7 +2686,7 @@
     {
       "ficheiro": "design/observatorio/BRIEF-B1-as-quatro-paginas.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "8420cf0c63d3df967d70a618d42332c547790f28c73366d9ea7633ea02c75daf",
       "sha256_antes": "f88a0093c5b1e0f967b21d33c3b7e6a50c788c8cc1f8718e554398b5ce0abcdd",
       "sha256_depois": "8420cf0c63d3df967d70a618d42332c547790f28c73366d9ea7633ea02c75daf",
@@ -2695,7 +2695,7 @@
     {
       "ficheiro": "design/observatorio/BRIEF-B2-o-veredicto-e-as-paginas-dos-temas.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "675a1f09b219f94a4cfda8438ce508a01c81f99cf4da7dfc7fd671a055ca94e2",
       "sha256_antes": "7b9b0874fd33004a650e091069a4d22c31651404a5b22462d9a8d09d4321c7e1",
       "sha256_depois": "675a1f09b219f94a4cfda8438ce508a01c81f99cf4da7dfc7fd671a055ca94e2",
@@ -2704,7 +2704,7 @@
     {
       "ficheiro": "design/observatorio/BRIEF-F1.1-porta-da-frente.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "105b30ceff14fde506fc622a9c9e4f05ea96e206430c6cd7e058e2791f279ec9",
       "sha256_antes": "64fca49a12d57f4ed086187d0f931d408c8bcda371072021fef062352e6342f2",
       "sha256_depois": "105b30ceff14fde506fc622a9c9e4f05ea96e206430c6cd7e058e2791f279ec9",
@@ -2713,7 +2713,7 @@
     {
       "ficheiro": "design/observatorio/BRIEF-F1.2-pagina-do-dominio.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "c5052f9910ad53acd3767fba953e2977a5aff61e37ec403c1db8cd75d12e3c98",
       "sha256_antes": "2a8548c216d5c377df3436ccf93bc104a65eb5ca2ad0165edd5c625758f28727",
       "sha256_depois": "c5052f9910ad53acd3767fba953e2977a5aff61e37ec403c1db8cd75d12e3c98",
@@ -2722,7 +2722,7 @@
     {
       "ficheiro": "design/observatorio/BRIEF-F1.6-o-atraso-do-iefp-e-as-duas-frases.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "4abe22136d238480d715c9beba75bcb668b74efd9e517881f27b6f6067786cd1",
       "sha256_antes": "4383ecabbb2316f8bac19acdd578b2b2d111b086eca80be13d608c131c8fceae",
       "sha256_depois": "4abe22136d238480d715c9beba75bcb668b74efd9e517881f27b6f6067786cd1",
@@ -2731,7 +2731,7 @@
     {
       "ficheiro": "design/observatorio/BRIEF-F2.6-o-calendario-a-serio.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "4007bbcd854b5610e386a775560301733248de0ac6886cf261ba2e1822dbfa4b",
       "sha256_antes": "06f4d36a3434eae24bf68c2a9061e4649b7465eb8f7a3c3607d4f4e9cc298bcf",
       "sha256_depois": "4007bbcd854b5610e386a775560301733248de0ac6886cf261ba2e1822dbfa4b",
@@ -2740,7 +2740,7 @@
     {
       "ficheiro": "design/observatorio/BRIEF-I129-o-grupo-etario-dos-jovens-nem.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "384742d47680f834f28c8a435d3a5dbd8632937e3506062d686c3bf50766fe60",
       "sha256_antes": "f900dc938a6b3ff867c7d356a5843116ec255be98d0e8f26c693f8db76dd8539",
       "sha256_depois": "384742d47680f834f28c8a435d3a5dbd8632937e3506062d686c3bf50766fe60",
@@ -2749,7 +2749,7 @@
     {
       "ficheiro": "design/observatorio/BRIEF-L1-a-leitura-de-cada-medida.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "1030d355c92583611b42f05a66e455c8b9a7d52d06026988fca8fe101f810fcc",
       "sha256_antes": "ad3d58eec8b7a58813b5ab8c857ff81cc315ed2e54fb67c0f56b4e769633ad29",
       "sha256_depois": "1030d355c92583611b42f05a66e455c8b9a7d52d06026988fca8fe101f810fcc",
@@ -2758,7 +2758,7 @@
     {
       "ficheiro": "design/observatorio/BRIEF-M1-o-nome-das-entradas-sem-nome.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "bc040df71a6ec83d40a2efa9601b54c90eb27e616d1879b814f3708e01be55d5",
       "sha256_antes": "1b886eb3951360a12f71631592b6f844eeb89205ec3a132fdf001cbf12824427",
       "sha256_depois": "bc040df71a6ec83d40a2efa9601b54c90eb27e616d1879b814f3708e01be55d5",
@@ -2767,7 +2767,7 @@
     {
       "ficheiro": "design/observatorio/BRIEF-M2-o-estudo-14-entra-no-portao-do-motor.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "cb276e41800f33320f96f81c3937d3c60437d43407c9101c43e477305ad45638",
       "sha256_antes": "cc976765a8eeabbe3af2949815a25a5bf48a62c2ad9bd831816aa0d1fb9342f0",
       "sha256_depois": "cb276e41800f33320f96f81c3937d3c60437d43407c9101c43e477305ad45638",
@@ -2776,7 +2776,7 @@
     {
       "ficheiro": "design/observatorio/BRIEF-M3-os-nomes-oficiais-conferidos-no-motor.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "2c4781923fe4488950820dd29958efd5454b72e6c251bba9c2dbc8e68eb4e082",
       "sha256_antes": "0048ea3a652fd09fda1c22273fa529372507bacda8f58d1e09e6747f1ade7cec",
       "sha256_depois": "2c4781923fe4488950820dd29958efd5454b72e6c251bba9c2dbc8e68eb4e082",
@@ -2785,7 +2785,7 @@
     {
       "ficheiro": "design/observatorio/BRIEF-P2-o-numero-e-o-seu-sentido.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "601863038b3207f150b7c5eccf63ee383a89276a878cdcd0b2910ccf82710ff6",
       "sha256_antes": "191304235fe4ff559d65ed15e24734cb8162228e88c190e3d611de185204eb7e",
       "sha256_depois": "51f5a53e46342bc154ce5687c415dd264a999b09b327cabaeec95196949fab2a",
@@ -2794,7 +2794,7 @@
     {
       "ficheiro": "design/observatorio/BRIEF-P3-os-nomes-e-a-lingua.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "c32462d965d8b53ddfb2fe99b2fccd74dde38ee33ba7291fa3d868309ab40f2a",
       "sha256_antes": "2630a9d4d8e364d891d8a9a0cde0d2b333a26f0c9b5386b23fab3acac5657b02",
       "sha256_depois": "c32462d965d8b53ddfb2fe99b2fccd74dde38ee33ba7291fa3d868309ab40f2a",
@@ -2803,7 +2803,7 @@
     {
       "ficheiro": "design/observatorio/BRIEF-R1-o-lado-do-leitor-depois-da-leitura-de-fora.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "da207f66ca0f043c20ded84a87caf851d90718592f59cc0328263d53b312b577",
       "sha256_antes": "00f148394c664496c38fa8248a36670ae9a8351096697d705f4c8d09ee74a385",
       "sha256_depois": "da207f66ca0f043c20ded84a87caf851d90718592f59cc0328263d53b312b577",
@@ -2812,7 +2812,7 @@
     {
       "ficheiro": "design/observatorio/BRIEF-RP1-rendimentos-e-precos-os-cartoes.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "d5800d21a79eb1e0d01f9cb99516d6d49964f6d7fb84a57a072bd59a790340dc",
       "sha256_antes": "4b862304bb4b0dbde01a1022f1676554aa7b780cce742696d1d612ed876afdf9",
       "sha256_depois": "d5800d21a79eb1e0d01f9cb99516d6d49964f6d7fb84a57a072bd59a790340dc",
@@ -2821,7 +2821,7 @@
     {
       "ficheiro": "design/observatorio/CARTA-DOS-CONTEUDOS.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "d8864ef1787df3e16beacb75ab88072ee767d6d9596ffb7c848dce0b7137f49e",
       "sha256_antes": "20ae474d830986a4b73f7001817e4996ace024cc1623171e08fb61c9d64f8994",
       "sha256_depois": "d8864ef1787df3e16beacb75ab88072ee767d6d9596ffb7c848dce0b7137f49e",
@@ -2830,7 +2830,7 @@
     {
       "ficheiro": "design/observatorio/FRESCURA-E-AUTOMACAO.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "1a6584ea114f98aa3f71037138d84842f23c2f1466736a499c3325c41dd9abeb",
       "sha256_antes": "1501f3499d25e15a65747b4e7ddb762c2467202b2e3985d3cb914b24b434ed04",
       "sha256_depois": "1a6584ea114f98aa3f71037138d84842f23c2f1466736a499c3325c41dd9abeb",
@@ -2839,7 +2839,7 @@
     {
       "ficheiro": "design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "718bfed8e5bd052255629b9e829f838d359a8edf6e037feaea26f2d3759c3842",
       "sha256_antes": "a3fccdf64e82126f9084ac2f87ca3b7e2c870b6326e114a764b1eca383720d1b",
       "sha256_depois": "718bfed8e5bd052255629b9e829f838d359a8edf6e037feaea26f2d3759c3842",
@@ -2848,7 +2848,7 @@
     {
       "ficheiro": "design/observatorio/ORDEM-cabeca-2026-09-01.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "228fb1c9d44355bce97f8744206814af87f0ba2ee2dc426d8f8afb5d984cc522",
       "sha256_antes": "a954f502d9e2191273e257274e21a62609cceed7933fdc30b44041d746c7ac98",
       "sha256_depois": "2ebb395d580679a404868cba177da8606c9fc4270f6ce6572bb44b36a27327b9",
@@ -2857,7 +2857,7 @@
     {
       "ficheiro": "design/observatorio/ORDEM-linhas-dominio-1-2-2026-09-01.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "556bd6713016171501aeff8a5d8e597abc41d23f570c202af151d4a48c4b4e19",
       "sha256_antes": "750c88b201e85ae835fe616eaf55a87b7e7000576eb9976857bbaf95a2dd40e6",
       "sha256_depois": "ea7c5b3bf054925a51ca98a5a5c58605ec7a3f09191140707e59d29f4bdb50e6",
@@ -2866,7 +2866,7 @@
     {
       "ficheiro": "design/observatorio/ORDEM-piloto-corredor-2026-09-01.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "0aabae71538b115d71f6588f2e6cdead7825fb709b6fdd2501cfb8d7152b73f7",
       "sha256_antes": "631ed8733ca4f62d116993ec56be9077d6d0c9640d7834a7abc0006dad4f2818",
       "sha256_depois": "0ece602370e8c54eb11cdb31445c19f7610844ec56569f294c8469e085b178b0",
@@ -2875,7 +2875,7 @@
     {
       "ficheiro": "design/observatorio/ORDEM-rotulo-2026-09-01.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "0a6ce5d912e3bca794992e968762340978077c4716fcb93a5f51d34aca4cec75",
       "sha256_antes": "13f2b7c370871f30d31ed25217a1cd4015789147de2b38a2a03af08625b1ea4b",
       "sha256_depois": "f324bbd38150a24d49c6c2f26cf7314284c154352043e83e49c020cb238aa0f2",
@@ -2884,7 +2884,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-01-noite.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "b7402c45c2dcef76fa659d8a2f7241f7758b7f9eb81aa086a4d86ff8fe118809",
       "sha256_antes": "b20261ff8fbb25089a79dcee8b0515ee967b2647e08658b1ad338f4cda568639",
       "sha256_depois": "b7402c45c2dcef76fa659d8a2f7241f7758b7f9eb81aa086a4d86ff8fe118809",
@@ -2893,7 +2893,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-01.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "fd0748047b5737c3d96e9d32464d5b4f67c713699f4eaa18b7472501892c78da",
       "sha256_antes": "6cf46c873021d96185c6c6f2b9c7680a0f94ef744f2393354e8e1ac237de7ce9",
       "sha256_depois": "fd0748047b5737c3d96e9d32464d5b4f67c713699f4eaa18b7472501892c78da",
@@ -2902,7 +2902,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-04.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "9f78fbd7bec10dbb637ba0eab91268306f42323c50f94ed18fa1c401ea7ed9b4",
       "sha256_antes": "c1fdcd07c212611d82521158166b94f9c7a5d9a078c447ffad96f48324ff5dd7",
       "sha256_depois": "9f78fbd7bec10dbb637ba0eab91268306f42323c50f94ed18fa1c401ea7ed9b4",
@@ -2911,7 +2911,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-07.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "7f128dbe0f911c43338166f3b076ead757d37c283005b96377645880646c8b79",
       "sha256_antes": "1afa22849d51cb4d7bf3442584ff0881285fcc777566f1984dd063ae2c8ae919",
       "sha256_depois": "7f128dbe0f911c43338166f3b076ead757d37c283005b96377645880646c8b79",
@@ -2920,7 +2920,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-08.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "6e94f39ab7c2c7e96c09b83e9dbe2e3dc15bf93f16b96cb2ee49dd70df1fbae4",
       "sha256_antes": "6b8b7c2722c7155207d659417c5b528d1facd0f7223527ce9aca628465be066f",
       "sha256_depois": "6e94f39ab7c2c7e96c09b83e9dbe2e3dc15bf93f16b96cb2ee49dd70df1fbae4",
@@ -2929,7 +2929,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-14.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "2b0c0faf58d1d13a24f9668f6499b78f856a5be4fa3ec6960aa7bbaf991512bb",
       "sha256_antes": "b5df9baee0df75c89d96760ef9a601d5e4b8ef01d94c9872c44b0099b61cd64d",
       "sha256_depois": "2b0c0faf58d1d13a24f9668f6499b78f856a5be4fa3ec6960aa7bbaf991512bb",
@@ -2938,7 +2938,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-16.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "9c27d30ee4547dcc63be7da03368e431983808fdea7203acf9ead201d019423b",
       "sha256_antes": "10e7e7c857d4b4eae0886caf3c0ddc3c78b82820b373e341b4ba36f561bb3e4c",
       "sha256_depois": "9c27d30ee4547dcc63be7da03368e431983808fdea7203acf9ead201d019423b",
@@ -2947,7 +2947,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-21.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "e6f39e91ceba569f164d864116b8e7b98a9ae9e36c29c1d8870f55b6c8036564",
       "sha256_antes": "36ea1a10c94e9a3d69881ad0cea8f80c839c63b05d854bda2bf006d54f6b600f",
       "sha256_depois": "e6f39e91ceba569f164d864116b8e7b98a9ae9e36c29c1d8870f55b6c8036564",
@@ -2956,7 +2956,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-22.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "94662bc16a9e9a046a7d5aec342d4f1d9466530c7d61fb90645e7f11980f6971",
       "sha256_antes": "8cf3908bdca450f31c6106c38056d2022f76efc5fe80ca006f5e0d5016fc185a",
       "sha256_depois": "599bb6b6a2dc0b3319e09104f3ce1612bb281fb45cc354dba617f27099f29e83",
@@ -2965,7 +2965,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-23-noite.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "0b72e8f02379834462427d8c90b7d21e5c3788b23fe4ae365045de5edec57db4",
       "sha256_antes": "34759170428751b3e8f202dc2a0526bfe0e550ff5cbdf68363880ac336388d56",
       "sha256_depois": "c2d62f0f42d97bfa5b47cf9df0bb458449b2f54eaff4c45d9305c00fdb86586c",
@@ -2974,7 +2974,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-23.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "8d4a7c442435cf0edf572e973f38fb456cbae0ad40f9949b077e15edc1432a18",
       "sha256_antes": "98956ec51d87c713de00551cf91b8794dbc8cb73256a05ae57d50121e4c350f5",
       "sha256_depois": "e3ef9b942d73e824e8fafea2d23b9894d9ca9a725b08c98549086b1ff8fd22e6",
@@ -2983,7 +2983,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-24.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
+      "razao": "Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa.",
       "sha256_base": "9e82283bb97b8132750130e6625f0bdccc4f3ec4d41e3d906cdfdcbbb4a8f115",
       "sha256_antes": "f558a70ac44068ee343bee9b5a8b9de9d36bc5b6bb0236290612a5a30fd56812",
       "sha256_depois": "84281b67644f909efe0a0351070b431a4ff64d75b97d65fd9168e88c8fd2cb93",
@@ -2992,7 +2992,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-26-noite.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "7838583c6c7fc7bc62e0015c3f9deef0da3b1930dd0050d4e88c28f029ff819e",
       "sha256_antes": "091cab63b607e2ce447fa1ff28c8af7caf7dee59dc442dabf391638596db3a4a",
       "sha256_depois": "7838583c6c7fc7bc62e0015c3f9deef0da3b1930dd0050d4e88c28f029ff819e",
@@ -3001,7 +3001,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-29.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "68f2860d8af093072915226c31679abdcc466fa5fcfd4dc41d285d457de5c728",
       "sha256_antes": "2b7e6730dc7d67c8dc2e75541c5bfe0df07908640edb73fd86d0f6e89abf9127",
       "sha256_depois": "68f2860d8af093072915226c31679abdcc466fa5fcfd4dc41d285d457de5c728",
@@ -3010,7 +3010,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-30-tarde.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "d5e446cb20aa4344023dc62960b3f101620a73023450af97a828b4eb6654602b",
       "sha256_antes": "68f9c83e1c02411980c554f243bdbd1e7932de476ce54f1311fa503f533c88f7",
       "sha256_depois": "d5e446cb20aa4344023dc62960b3f101620a73023450af97a828b4eb6654602b",
@@ -3019,7 +3019,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-09-30.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "d064cf8e34afd1be21252e85e9a88d0e7bd76b446e3d1639694772c9adcdb20c",
       "sha256_antes": "6181c1fb25099afded18001fde973550e5f9d0adda09c5e2f39aadff195b555d",
       "sha256_depois": "d064cf8e34afd1be21252e85e9a88d0e7bd76b446e3d1639694772c9adcdb20c",
@@ -3028,7 +3028,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-10-01.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "3443a44d30af7750dbee1b59d39cb991d7e9083d1a3ab9eb048b7edf02241196",
       "sha256_antes": "5695f01a86600bee570835bc0bc94a896f98393414b2e2bf9fa65c1f6192ab07",
       "sha256_depois": "3443a44d30af7750dbee1b59d39cb991d7e9083d1a3ab9eb048b7edf02241196",
@@ -3037,7 +3037,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-10-02.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "4131f31b8da8dc9e19125b3a7ca0dbfc1082e92d0603633c09746bed2d51a4b6",
       "sha256_antes": "8229f1679df879bc84882c7e10d3c51e9c0cdebf73b09744527b2e9f5a926015",
       "sha256_depois": "4131f31b8da8dc9e19125b3a7ca0dbfc1082e92d0603633c09746bed2d51a4b6",
@@ -3046,7 +3046,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-10-04.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "ca3e8d5fd28184368b1010c071b80a2bb9cdbd50ab8ef810049352b67b148a39",
       "sha256_antes": "e1b97dfc0079af0c589ea4d429c4c1a9e37fc0c6c20f5996d42b456f3cf6d5d2",
       "sha256_depois": "ca3e8d5fd28184368b1010c071b80a2bb9cdbd50ab8ef810049352b67b148a39",
@@ -3055,7 +3055,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-10-05.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "245284d505c0fbf31fd47ea84d888bc0481e62de5798491bf0c54487d683f69a",
       "sha256_antes": "cf4eaf97dee93fbe9076553590709a4679ddbf1bed0b42fddf9ec833b6a5041e",
       "sha256_depois": "245284d505c0fbf31fd47ea84d888bc0481e62de5798491bf0c54487d683f69a",
@@ -3064,7 +3064,7 @@
     {
       "ficheiro": "design/observatorio/PROMPT-proxima-sessao-2026-10-06.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "e9646e98a13a933b18f4ea5b3b83c8bcb860853d07430d336a35884e6519bb2f",
       "sha256_antes": "7166e64cdd6aa3adb41f275ed293641a5013b99025f10ce49df674d9b03b55f3",
       "sha256_depois": "e9646e98a13a933b18f4ea5b3b83c8bcb860853d07430d336a35884e6519bb2f",
@@ -3073,7 +3073,7 @@
     {
       "ficheiro": "design/observatorio/evora/BRIEF-E1-evora-2027-sitio.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "1a78ddf55bfafabfda4da5514c636bf10418efb3692d0ab3abd8961583dbf0f3",
       "sha256_antes": "f8ca013de509efb80556d4db3fd3250be67dcf9268e9c473b123c3275fb8ac83",
       "sha256_depois": "1a78ddf55bfafabfda4da5514c636bf10418efb3692d0ab3abd8961583dbf0f3",
@@ -3082,7 +3082,7 @@
     {
       "ficheiro": "design/observatorio/evora/BRIEF-E1-evora-2027.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "f5623c690b3e1abb671248aa3a2dc882552f415644806c81a7da554b5d4bc2a7",
       "sha256_antes": "6f162b9690bb824210a1e383fcdfff6a4d45bbd6499e724aac0fe522209b9aa7",
       "sha256_depois": "f5623c690b3e1abb671248aa3a2dc882552f415644806c81a7da554b5d4bc2a7",
@@ -3091,7 +3091,7 @@
     {
       "ficheiro": "design/observatorio/evora/FONTES-evora-mandato.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "b55de6d039529debe188cbef1e46b64fd6312c73d48d79e117bb9dd02c32289a",
       "sha256_antes": "26e0a888aedeea9a45fbcaca86d81aa740690dd1ad0b094a4b02c0cb7a556692",
       "sha256_depois": "b55de6d039529debe188cbef1e46b64fd6312c73d48d79e117bb9dd02c32289a",
@@ -3100,7 +3100,7 @@
     {
       "ficheiro": "design/observatorio/inventario/BRIEF-comum.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "4b8c3f434a2aa3b44c63fdd450ee9e23b7c017637fe27a594a6eb2258edf55cc",
       "sha256_antes": "f1065bb6056c3fabcbf023bd0fc20157bd48701728666b8ced21caf4d93b8f6e",
       "sha256_depois": "4b8c3f434a2aa3b44c63fdd450ee9e23b7c017637fe27a594a6eb2258edf55cc",
@@ -3109,7 +3109,7 @@
     {
       "ficheiro": "design/observatorio/inventario/BRIEF-sonnet-amostra.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "b40c117b49398ace5098320c1b70b4b34d4823635ba16fb6bd55f82c972483dd",
       "sha256_antes": "393e2c570f9b7cd84503f23ddd31ce32208045a5c70ecdcf7b537a9fdefa4449",
       "sha256_depois": "b40c117b49398ace5098320c1b70b4b34d4823635ba16fb6bd55f82c972483dd",
@@ -3118,7 +3118,7 @@
     {
       "ficheiro": "design/observatorio/inventario/lote-1-linhas.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "02dd088b7316b861bb5a0f2e7db26df6cd36a677e7920f2faac9637e7b205720",
       "sha256_antes": "3b4d8ff4ef3715e7c71b0c2df409a70901c7ee52f47aabaa9e2f6c2aaa5a0f70",
       "sha256_depois": "02dd088b7316b861bb5a0f2e7db26df6cd36a677e7920f2faac9637e7b205720",
@@ -3127,7 +3127,7 @@
     {
       "ficheiro": "design/observatorio/inventario/lote-2-linhas.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "f53bbda3a734bb5f5f38911b3f967e86c0a4d8bfa0fd214b82f83bead85bd042",
       "sha256_antes": "653afcfd5b8a729d70ffc32e55aa272c5256dd29e7000c77f2878ba1e6b8545f",
       "sha256_depois": "f53bbda3a734bb5f5f38911b3f967e86c0a4d8bfa0fd214b82f83bead85bd042",
@@ -3136,7 +3136,7 @@
     {
       "ficheiro": "design/observatorio/inventario/lote-3-linhas.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "90b0d0766a6b285763526d29b83b37822f847855ad6947404ef184d4f6241b1d",
       "sha256_antes": "2a1c5bbfa44028ee6c14f9efaf641ea291445f68b42c18621a9ab29f7212f397",
       "sha256_depois": "90b0d0766a6b285763526d29b83b37822f847855ad6947404ef184d4f6241b1d",
@@ -3145,7 +3145,7 @@
     {
       "ficheiro": "design/observatorio/inventario/lote-4-linhas.md",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "7075963baa52b8fce24902bbdeebb06adb94745694fe03264a29a10dc65176e5",
       "sha256_antes": "a1333eb8927efe7c821755cab1b33f5787000ed66e29fdd20735370bb45fa8b8",
       "sha256_depois": "7075963baa52b8fce24902bbdeebb06adb94745694fe03264a29a10dc65176e5",
@@ -3154,7 +3154,7 @@
     {
       "ficheiro": "design/observatorio/mandatos/GUIAO-montar-pacote-h4e-2026-10-06.sh.txt",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "e9ebb8f93e3ef52954eeef3265eb517acf0076ac52d7f5ef503dac3d422df7fa",
       "sha256_antes": "fc7a9b09f42c423bd270207e05b93a06ae0eea0535484e247d5c94d4489535e1",
       "sha256_depois": "e9ebb8f93e3ef52954eeef3265eb517acf0076ac52d7f5ef503dac3d422df7fa",
@@ -3163,7 +3163,7 @@
     {
       "ficheiro": "design/observatorio/mandatos/GUIAO-provas-h4e-2026-10-06.sh.txt",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "c61b337d33188169616e3d580b69314201cfb24f9a758545d9e175a9a45d9c50",
       "sha256_antes": "ba193b0abe4ac2556dcf4abb3e86450393a9391f1cc3186ac528ab7149e234f5",
       "sha256_depois": "c61b337d33188169616e3d580b69314201cfb24f9a758545d9e175a9a45d9c50",
@@ -3177,7 +3177,7 @@
     {
       "ficheiro": "design/observatorio/medidas/BRIEF-RP1.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "aa46a47815fcdbda26cd25b9db26188a1600034f539d074cbb27abc2624850b4",
       "sha256_antes": "5f0d9cd55ec19e5335ac852bc426a7ed60e000547fadac90fbd6dc9e6fb36592",
       "sha256_depois": "aa46a47815fcdbda26cd25b9db26188a1600034f539d074cbb27abc2624850b4",
@@ -3186,7 +3186,7 @@
     {
       "ficheiro": "design/observatorio/medidas/isentos.json",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21. O resumo do brief P2 acompanha a retirada da raiz pessoal.",
+      "razao": "Conteúdo de d3defd90. O resumo do brief P2 acompanha a retirada da raiz pessoal.",
       "sha256_base": "9986b21452c5262f42acc20a17514a2d2de7813888de8c3b03b6b640f818d62b",
       "sha256_antes": "c5c46a3b7571ab32f7c1f7e85fa92bcdf72c2039139f49eefa01eba7c706fc20",
       "sha256_depois": "7eaaf569e7266d5940b6edf879c825d1841e1956973601b942492230146a6f25",
@@ -3270,7 +3270,7 @@
     {
       "ficheiro": "scripts/aterrar.sh",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "87b4cc558fafc9e10f30740015273148c9c2edd666f6240595d9928fa04be23e",
       "sha256_antes": "8e08795d380dd73a879094ee511005e894ff7b1c40211ac2d518c1b4d3e61ad7",
       "sha256_depois": "87b4cc558fafc9e10f30740015273148c9c2edd666f6240595d9928fa04be23e",
@@ -3294,7 +3294,7 @@
     {
       "ficheiro": "scripts/leituras/estado.py",
       "decisao": "revertido",
-      "razao": "Conteúdo de 64d81b21.",
+      "razao": "Conteúdo de d3defd90.",
       "sha256_base": "a724c8879cb4e4efbb503231e1b525a7a5570cf00b6670da8ed071b2a5689ad1",
       "sha256_antes": "f0b1aa26ef5e668addb1180e367bc48e28e7999a6823cf9e356caa4a78b64eff",
       "sha256_depois": "a724c8879cb4e4efbb503231e1b525a7a5570cf00b6670da8ed071b2a5689ad1",

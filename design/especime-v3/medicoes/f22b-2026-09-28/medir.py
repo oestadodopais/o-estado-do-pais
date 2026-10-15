@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 BASE_MOTOR = "1af04566898ddfc2c5244c55c7f229b1c287fee2"
-BASE_SITIO = "24e7c8752f5bf80b263f13530f618278ba474992"
+BASE_SITIO = "f0d72ac0acb7adae833f56d3336ba3e90d2a6230"
 
 
 def git(raiz, *args):
@@ -95,9 +95,9 @@ def main():
         "commits_motor": git(a.motor, "log", "--reverse", "--format=%H %s", f"{BASE_MOTOR}..HEAD").splitlines(),
         "commits_sitio_anteriores_ao_relatorio": git(sitio, "log", "--reverse", "--format=%H %s", f"{BASE_SITIO}..HEAD").splitlines(),
         "commits_dos_relatorios": {
-            "f22b": "77d9e4076eb8098a45e6ca0cd3c27964d54a9301",
-            "f22c": "cb1600b6e147f2bdc05f73396404f344b3495c2b",
-            "f22d": "e15037869c95a937e00c9ae60948d39d29463344",
+            "f22b": "89fa6c6030cd1f07878f34021e00716f21003c93",
+            "f22c": "0b6446d4920171b9b692328ed36127c28794a2a1",
+            "f22d": "44688734de482865030ecb644728399f50ebaebc",
             "f22e": "o último commit desta passagem contém o relatório, as provas e RESPOSTA-construtor-f22e.md; o SHA é dado fora do ramo"},
         "alteracoes_protegidas": proibidos,
         "brief_reproduzido": ler(a.provas / "brief.json"),

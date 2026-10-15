@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""O §0 do brief S1 (a caixa das sugestões), medido sobre a cabeça presa do sítio (62ed13c6) e sobre o registo da base
+"""O §0 do brief S1 (a caixa das sugestões), medido sobre a cabeça presa do sítio (ad62f09e) e sobre o registo da base
 que o brief traz (supabase/migrations/2026-10-02-caixa-das-sugestoes.sql, lido da árvore de trabalho porque entra no
 mesmo commit do brief). Não lê a rede nem a base. Escreve design/observatorio/medidas/BRIEF-S1.json (ou o caminho em
 OEDP_MEDIDAS_JSON). Cada medição leva o comando e um conhecido-positivo; o que não conseguir ler fica «NÃO LIDO»."""
 import json, os, pathlib, re, subprocess
 
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "62ed13c6"
+CAB = "ad62f09e"
 NAO = "NÃO LIDO"
 medidas = []
 

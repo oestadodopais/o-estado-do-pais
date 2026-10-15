@@ -1,6 +1,6 @@
 /** K2-b: as medidas da passagem, escritas em `medidas-k2-b.json` ao lado deste guião. Cada medição traz o nome, o valor,
  * o comando que a repete e um conhecido-positivo: o mesmo detetor sobre a construção da cabeça do relatório do K2
- * (`a6b4de99`, guardada fora do repositório, e o ficheiro não a nomeia: guarda a cabeça que o seu `version.json` diz),
+ * (`b9d8ee3b`, guardada fora do repositório, e o ficheiro não a nomeia: guarda a cabeça que o seu `version.json` diz),
  * onde o defeito ainda estava, ou sobre a versão anterior de um ficheiro, lida por `git show`.
  * Uso, da raiz da worktree, depois de construir a cabeça da passagem:
  *   node design/especime-v3/medicoes/k2-2026-10-02/medir-k2-b.mjs <pasta da construção do K2> */
@@ -136,9 +136,9 @@ medicao('nomes_novos_rendidos_em_paginas', Object.values(rendidos).filter((n) =>
 /* 5 · A LINHA DO K2 NO REGISTO DAS REVISÕES DO INVENTÁRIO. */
 const linhaK2 = (texto) => texto.split('\n').find((l) => l.startsWith('| k2 |')) ?? '';
 const revisoes = fs.readFileSync('design/especime-v3/critica/REVISOES-DO-INVENTARIO.md', 'utf8');
-const revisoesK2 = execFileSync('git', ['show', 'cc7734fe:design/especime-v3/critica/REVISOES-DO-INVENTARIO.md'], { encoding: 'utf8' });
+const revisoesK2 = execFileSync('git', ['show', '0ad7bf78:design/especime-v3/critica/REVISOES-DO-INVENTARIO.md'], { encoding: 'utf8' });
 medicao('linha_k2_do_inventario_aprovada', linhaK2(revisoes).includes('aprovada como está'), 'design/especime-v3/critica/REVISOES-DO-INVENTARIO.md · a linha «k2»',
-  'o mesmo leitor acha «por ler» na linha do K2 na cabeça cc7734fe', linhaK2(revisoesK2).includes('por ler'));
+  'o mesmo leitor acha «por ler» na linha do K2 na cabeça 0ad7bf78', linhaK2(revisoesK2).includes('por ler'));
 
 /* 6 · AS CAPTURAS, AS DECISÕES, O CUSTO E OS PORTÕES, dos ficheiros. */
 const cap = lerJson(`${D}/capturas-k2-b.json`);
@@ -146,7 +146,7 @@ medicao('capturas_k2_b', cap.capturas, `node ${D}/captar-k2.mjs k2-b`, 'o manife
   { problemas: cap.problemas.length, larguras: cap.larguras, cabeca: cap.cabeca, pedidos_recusados_para_fora: cap.pedidos_recusados_para_fora });
 if (fs.existsSync(`${D}/decisoes-em-vigor-k2-b.txt`)) {
   const dec = fs.readFileSync(`${D}/decisoes-em-vigor-k2-b.txt`, 'utf8').split('\n').filter((l) => l.startsWith('§'));
-  medicao('decisoes_citadas_nos_ficheiros_tocados_pela_k2_b', dec.length, 'python3 scripts/leituras/decisoes-em-vigor.py --intervalo cc7734fe..<cabeça>', 'a §1.127 está na lista', dec.some((l) => l.startsWith('§1.127 ')));
+  medicao('decisoes_citadas_nos_ficheiros_tocados_pela_k2_b', dec.length, 'python3 scripts/leituras/decisoes-em-vigor.py --intervalo 0ad7bf78..<cabeça>', 'a §1.127 está na lista', dec.some((l) => l.startsWith('§1.127 ')));
 }
 const ci = lerJson(`${D}/custo-inicio-k2-b.json`);
 if (fs.existsSync(`${D}/custo-fim-k2-b.json`)) {

@@ -1,6 +1,6 @@
 # F1.4b · as datas de publicação, e o espaço entre o número e a palavra · relatório do construtor
 
-*Ramo `datas-2026-09-04`, tirado de `origin/main` em `69ba3abf`. Construtor
+*Ramo `datas-2026-09-04`, tirado de `origin/main` em `fd19e801`. Construtor
 Claude Opus 5, 04.09.2026. É uma correção urgente do bloco F1.4
 (`nomes-construtor.md`, item 8 e §10), e não um bloco novo: o âmbito é o defeito
 e mais nada. Sem travessões na prosa.*
@@ -10,7 +10,7 @@ e mais nada. Sem travessões na prosa.*
 *O diretor fechou o portátil. Este bloco está **inteiro e commitado**; o que
 falta é a confirmação da CI e a decisão da fusão, que é dele.*
 
-**Cabeça: `fb0d79b337b3246c5a29f3c0b2b444eb2355d572` (`fb0d79b3`)**, no ramo
+**Cabeça: `8072b7ea275e8315fa3e9b17a8dcfce548905164` (`8072b7ea`)**, no ramo
 `datas-2026-09-04`, empurrado. A árvore está limpa e não há nada por commitar.
 
 **Os três portões correram nesta cabeça, na máquina, e deram 0**: `npm run build`
@@ -23,7 +23,7 @@ foram corridos outra vez com esta secção escrita, e deram 0.
 
 **O `portao` no GitHub: corrida `33861077107`, aberta às 10:00 UTC, ainda a
 correr quando esta secção foi escrita.** Não ficou confirmada. Antes de fundir,
-`gh run view 33861077107` tem de dizer `success` na cabeça `fb0d79b3` (e a
+`gh run view 33861077107` tem de dizer `success` na cabeça `8072b7ea` (e a
 corrida seguinte, se esta secção acrescentou uma).
 
 ### O que está feito, item a item
@@ -90,12 +90,12 @@ true
 $ git rev-list --count HEAD
 1
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/onde-esta-a-agua/pt.html
-2026-09-04 69ba3abf4def15dfd86ab70a6d73e9938814981a
+2026-09-04 fd19e8010e96a9659062deee4038604a63c0976e
 ```
 
-`69ba3abf` é a cabeça de `main` de hoje, e `2026-09-04` é exactamente a data que
+`fd19e801` é a cabeça de `main` de hoje, e `2026-09-04` é exactamente a data que
 a página publicada mostrava. A leitura certa, na árvore com história, é
-`2026-08-12 b4f45d3f`.
+`2026-08-12 eff504f5`.
 
 **A lição não é «pedir história à Vercel».** As definições do serviço são do
 diretor, e uma construção cuja correção depende do ambiente parte-se sozinha
@@ -189,22 +189,22 @@ mostrava esta manhã.
 
 | trabalho (edição) | no ar (04.09) | a data medida | commit | `date` em `studies.mjs` |
 | --- | --- | --- | --- | --- |
-| agua-nao-faturada (pt) | 04.09.2026 | **12.08.2026** | `b4f45d3f` | `null` |
-| agua-nao-faturada (en) | 04.09.2026 | **12.08.2026** | `b4f45d3f` | `null` |
-| alentejo-algarve (en) | 04.09.2026 | **12.08.2026** | `b4f45d3f` | `null` |
-| avaliacao-economica-regional-de-portugal-2026 (pt) | 04.09.2026 | **12.08.2026** | `b4f45d3f` | `null` |
-| evolucao-de-portugal-desde-1981 (pt) | 04.09.2026 | **12.08.2026** | `b4f45d3f` | `null` |
-| evora-economia-investidores-portas-abertas-2026 (pt) | 04.09.2026 | **12.08.2026** | `f30cf277` | `null` |
-| evora-orcamentado-pago-devido-2025 (pt) | 04.09.2026 | **12.08.2026** | `b4f45d3f` | `null` |
-| evora-orcamentado-pago-devido-2025 (en) | 04.09.2026 | **12.08.2026** | `b4f45d3f` | `null` |
-| evora-os-pelouros-quem-os-teve-o-que-fizeram (pt) | 04.09.2026 | **12.08.2026** | `b4f45d3f` | `2026-08-12` |
-| evora-prometido-pago-auditado-2026 (pt) | 04.09.2026 | **15.08.2026** | `ec152217` | `2026-08-04` |
-| evora-prometido-pago-auditado-2026 (en) | 04.09.2026 | **15.08.2026** | `ec152217` | `2026-08-04` |
-| evora-quinze-anos-cinco-mandatos (pt) | 04.09.2026 | **12.08.2026** | `b4f45d3f` | `null` |
-| onde-esta-a-agua (pt) | 04.09.2026 | **12.08.2026** | `b4f45d3f` | `null` |
-| onde-esta-a-agua (en) | 04.09.2026 | **12.08.2026** | `b4f45d3f` | `null` |
-| penalizacoes-por-reforma-antecipada-2026 (pt) | 04.09.2026 | **24.08.2026** | `5cb083ed` | `null` |
-| which-door-is-yours (en) | 04.09.2026 | **12.08.2026** | `b4f45d3f` | `null` |
+| agua-nao-faturada (pt) | 04.09.2026 | **12.08.2026** | `eff504f5` | `null` |
+| agua-nao-faturada (en) | 04.09.2026 | **12.08.2026** | `eff504f5` | `null` |
+| alentejo-algarve (en) | 04.09.2026 | **12.08.2026** | `eff504f5` | `null` |
+| avaliacao-economica-regional-de-portugal-2026 (pt) | 04.09.2026 | **12.08.2026** | `eff504f5` | `null` |
+| evolucao-de-portugal-desde-1981 (pt) | 04.09.2026 | **12.08.2026** | `eff504f5` | `null` |
+| evora-economia-investidores-portas-abertas-2026 (pt) | 04.09.2026 | **12.08.2026** | `f6e0144f` | `null` |
+| evora-orcamentado-pago-devido-2025 (pt) | 04.09.2026 | **12.08.2026** | `eff504f5` | `null` |
+| evora-orcamentado-pago-devido-2025 (en) | 04.09.2026 | **12.08.2026** | `eff504f5` | `null` |
+| evora-os-pelouros-quem-os-teve-o-que-fizeram (pt) | 04.09.2026 | **12.08.2026** | `eff504f5` | `2026-08-12` |
+| evora-prometido-pago-auditado-2026 (pt) | 04.09.2026 | **15.08.2026** | `b556bf81` | `2026-08-04` |
+| evora-prometido-pago-auditado-2026 (en) | 04.09.2026 | **15.08.2026** | `b556bf81` | `2026-08-04` |
+| evora-quinze-anos-cinco-mandatos (pt) | 04.09.2026 | **12.08.2026** | `eff504f5` | `null` |
+| onde-esta-a-agua (pt) | 04.09.2026 | **12.08.2026** | `eff504f5` | `null` |
+| onde-esta-a-agua (en) | 04.09.2026 | **12.08.2026** | `eff504f5` | `null` |
+| penalizacoes-por-reforma-antecipada-2026 (pt) | 04.09.2026 | **24.08.2026** | `a3523249` | `null` |
+| which-door-is-yours (en) | 04.09.2026 | **12.08.2026** | `eff504f5` | `null` |
 
 **Três leituras deste quadro.**
 
@@ -283,14 +283,14 @@ ser item anónimo, que é exactamente o defeito que esteve no ar. Medido:
 - **Não se verificou a hora do lançamento do F1.4 na fonte.** O `vercel ls`
   desta árvore não fala com o projecto do sítio (liga-se ao nome do ramo). A hora
   que a I113 regista é a do brief do diretor; a corroboração que esta árvore tem
-  é o commit `cad7dc29` do F1.4, de 04.09 às 03:34 UTC, e a cabeça `69ba3abf`,
+  é o commit `4f04bc47` do F1.4, de 04.09 às 03:34 UTC, e a cabeça `fd19e801`,
   que é o commit que o clone raso desta manhã devolvia como data de todas as
   edições.
 - **Não se fundiu nada em `main`.** A fusão e o lançamento são do diretor.
 
 ## 6 · Segunda passagem (07.09)
 
-*Ramo `datas-b-2026-09-07`, tirado de `origin/main` em `cc79128e`. Construtor
+*Ramo `datas-b-2026-09-07`, tirado de `origin/main` em `15cc78ec`. Construtor
 Claude Opus 5, 07.09.2026. O bloco fundiu-se em `main` a 04.09 antes da leitura a
 frio, por excepção (`DECISIONS.md` §1.99); a leitura do Codex correu a 07.09
 (`design/especime-v3/critica/2026-09-07-codex-leitura-f14b-datas.md`) e o que ela
@@ -310,7 +310,7 @@ saem deles, e o código de `main` está certo nesses pontos; o quinto (o Minor 1
 | Blocking 2 | a terceira conta invertida (`raso === 'true'`) | a planta P1a e P1b. `scripts/check-datas.mjs` tem `const comHistoria = raso === 'false'`, e a corrida na cópia rasa de hoje escreve a linha «RASA» e salta a conta 3 (§6.5) |
 | Major 4 | a I9 a comparar só o ano (`declarada.data.slice(0, 4)`) | a planta P2. `tests/livro/indice.mjs` compara a data inteira (`declarada.data !== data`) e o commit inteiro |
 | Major 7 | `14.08.2026` na edição inglesa de `evora-prometido-pago-auditado-2026` | a planta P3. A tabela do §3 diz `15.08.2026` nas duas edições, e o `git` desta árvore também (§6.5) |
-| Minor 11 | o relatório copiado sem `medicoes/datas-construtor.md` | é do pacote: o ficheiro está no repositório desde `fb0d79b3`, e é este |
+| Minor 11 | o relatório copiado sem `medicoes/datas-construtor.md` | é do pacote: o ficheiro está no repositório desde `8072b7ea`, e é este |
 
 ### 6.1 · Major 3 · cada data impressa presa à SUA edição
 
@@ -334,7 +334,7 @@ numa rota que o passo não conhece é outra.
 que é OUTRA data declarada no ficheiro.
 
 ```
-$ node scripts/check-datas.mjs      # o portão como estava em cc79128e
+$ node scripts/check-datas.mjs      # o portão como estava em 15cc78ec
 check-datas: história completa · 16 edição(ões) do ficheiro refeitas do `git`.
 check-datas · 16 edição(ões) datadas, 56 data(s) impressa(s) em 26 página(s), 0 edição(ões) sem data e nenhuma caixa de aviso.
 $ echo $?
@@ -345,8 +345,8 @@ $ echo $?
 $ node scripts/check-datas.mjs      # o portão desta passagem
 check-datas: história completa · 16 edição(ões) do ficheiro refeitas do `git`.
 check-datas: 2 falha(s).
-  · /estudos: a linha de evora-prometido-pago-auditado-2026, na porta PT imprime «12.08.2026» e src/data/datas-de-publicacao.json diz que evora-prometido-pago-auditado-2026 (pt) entrou a 15.08.2026 (commit ec152217). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.
-  · /estudos: a linha de evora-prometido-pago-auditado-2026, na porta EN imprime «12.08.2026» e src/data/datas-de-publicacao.json diz que evora-prometido-pago-auditado-2026 (en) entrou a 15.08.2026 (commit ec152217). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.
+  · /estudos: a linha de evora-prometido-pago-auditado-2026, na porta PT imprime «12.08.2026» e src/data/datas-de-publicacao.json diz que evora-prometido-pago-auditado-2026 (pt) entrou a 15.08.2026 (commit b556bf81). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.
+  · /estudos: a linha de evora-prometido-pago-auditado-2026, na porta EN imprime «12.08.2026» e src/data/datas-de-publicacao.json diz que evora-prometido-pago-auditado-2026 (en) entrou a 15.08.2026 (commit b556bf81). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.
 $ echo $?
 1
 ```
@@ -355,7 +355,7 @@ $ echo $?
 imprimir as duas datas, e a página fica sem a marca.
 
 ```
-$ node scripts/check-datas.mjs      # o portão como estava em cc79128e
+$ node scripts/check-datas.mjs      # o portão como estava em 15cc78ec
 check-datas: história completa · 16 edição(ões) do ficheiro refeitas do `git`.
 check-datas · 16 edição(ões) datadas, 54 data(s) impressa(s) em 25 página(s), 0 edição(ões) sem data e nenhuma caixa de aviso.
 $ echo $?
@@ -366,8 +366,8 @@ $ echo $?
 $ node scripts/check-datas.mjs      # o portão desta passagem
 check-datas: história completa · 16 edição(ões) do ficheiro refeitas do `git`.
 check-datas: 2 falha(s).
-  · /estudos/onde-esta-a-agua: o bloco da edição PT não imprime data nenhuma e src/data/datas-de-publicacao.json declara 12.08.2026 (commit b4f45d3f) para onde-esta-a-agua (pt).
-  · /estudos/onde-esta-a-agua: o bloco da edição EN não imprime data nenhuma e src/data/datas-de-publicacao.json declara 12.08.2026 (commit b4f45d3f) para onde-esta-a-agua (en).
+  · /estudos/onde-esta-a-agua: o bloco da edição PT não imprime data nenhuma e src/data/datas-de-publicacao.json declara 12.08.2026 (commit eff504f5) para onde-esta-a-agua (pt).
+  · /estudos/onde-esta-a-agua: o bloco da edição EN não imprime data nenhuma e src/data/datas-de-publicacao.json declara 12.08.2026 (commit eff504f5) para onde-esta-a-agua (en).
 $ echo $?
 1
 ```
@@ -384,7 +384,7 @@ check-datas: 21 falha(s).
   · /qualquer: imprime uma data com a marca `data-nonledger="data-do-repositorio"` e este passo não sabe a que edição a prender. A primeira passagem saltava em silêncio as páginas que não conhecia, e uma data que ninguém prende é uma data que ninguém confere.
   · de 1 página(s) de `dist/`, nenhuma foi conferida edição a edição: não há índice (/estudos, /en/studies) nem página de trabalho. Sem um positivo conhecido a conta 1b não mede nada.
   · 0 página(s) conferida(s) e nenhuma data presa a uma edição: a conta 1b percorreu-as e não prendeu nada.
-  · studies-src/agua-nao-faturada/pt.html: src/data/datas-de-publicacao.json declara 12.08.2026 (commit b4f45d3f) e nenhuma página construída imprime essa data presa a esta edição.
+  · studies-src/agua-nao-faturada/pt.html: src/data/datas-de-publicacao.json declara 12.08.2026 (commit eff504f5) e nenhuma página construída imprime essa data presa a esta edição.
   … e mais 17 linha(s)
 $ echo $?
 1
@@ -418,7 +418,7 @@ cima do ficheiro commitado um resultado parcial, com saída 0.
 $ PATH=<a planta>:$PATH node scripts/datas-de-publicacao.mjs   # o script como estava
 datas-de-publicacao · 15 edição(ões) com data, 1 sem commit de adição (studies-src/onde-esta-a-agua/pt.html)
   src/data/datas-de-publicacao.json escrito
-  b4f45d3f  2026-08-12  agua-nao-faturada (pt)
+  eff504f5  2026-08-12  agua-nao-faturada (pt)
   … e mais 14 linha(s)
 $ echo $?
 0
@@ -452,7 +452,7 @@ E sem a planta, o script continua a dar o mesmo ficheiro byte a byte:
 $ node scripts/datas-de-publicacao.mjs
 datas-de-publicacao · 16 edição(ões) com data, 0 sem commit de adição
   src/data/datas-de-publicacao.json sem mudança
-  b4f45d3f  2026-08-12  agua-nao-faturada (pt)
+  eff504f5  2026-08-12  agua-nao-faturada (pt)
   … e mais 15 linha(s)
 $ git diff --stat -- src/data/datas-de-publicacao.json
 (nada)
@@ -567,7 +567,7 @@ node -e "const fs=require('fs'); const j=JSON.parse(fs.readFileSync('<temporario
 A leitura não podia refazer nenhuma das dezasseis medições porque o pacote não
 levava a história do repositório. A parte real do achado é que o relatório as
 cite. **São estas, tal como saem nesta árvore, que tem a história completa**
-(831 commits na cabeça de que o ramo saiu, `cc79128e`, e 835 depois da fusão do
+(831 commits na cabeça de que o ramo saiu, `15cc78ec`, e 835 depois da fusão do
 painel semanal; `git rev-parse --is-shallow-repository` diz `false` nas duas, e
 as dezasseis linhas são as mesmas antes e depois da fusão); a linha
 que conta é a mais antiga, e cada um destes ficheiros tem exactamente um commit
@@ -575,37 +575,37 @@ de adição:
 
 ```
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/agua-nao-faturada/pt.html
-2026-08-12 b4f45d3f2d02e941dc393bfbc06868c223e35887
+2026-08-12 eff504f5400fa572e55bd0c5b3dae7fd8a4188da
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/agua-nao-faturada/en.html
-2026-08-12 b4f45d3f2d02e941dc393bfbc06868c223e35887
+2026-08-12 eff504f5400fa572e55bd0c5b3dae7fd8a4188da
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/alentejo-algarve/en.html
-2026-08-12 b4f45d3f2d02e941dc393bfbc06868c223e35887
+2026-08-12 eff504f5400fa572e55bd0c5b3dae7fd8a4188da
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/avaliacao-economica-regional-de-portugal-2026/pt.html
-2026-08-12 b4f45d3f2d02e941dc393bfbc06868c223e35887
+2026-08-12 eff504f5400fa572e55bd0c5b3dae7fd8a4188da
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/evolucao-de-portugal-desde-1981/pt.html
-2026-08-12 b4f45d3f2d02e941dc393bfbc06868c223e35887
+2026-08-12 eff504f5400fa572e55bd0c5b3dae7fd8a4188da
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/evora-economia-investidores-portas-abertas-2026/pt.html
-2026-08-12 f30cf277e17c0af8c6096f53fd55d8cda573acf5
+2026-08-12 f6e0144fd63dbbb845978962077f8bbf6ab1845f
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/evora-orcamentado-pago-devido-2025/pt.html
-2026-08-12 b4f45d3f2d02e941dc393bfbc06868c223e35887
+2026-08-12 eff504f5400fa572e55bd0c5b3dae7fd8a4188da
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/evora-orcamentado-pago-devido-2025/en.html
-2026-08-12 b4f45d3f2d02e941dc393bfbc06868c223e35887
+2026-08-12 eff504f5400fa572e55bd0c5b3dae7fd8a4188da
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/evora-os-pelouros-quem-os-teve-o-que-fizeram/pt.html
-2026-08-12 b4f45d3f2d02e941dc393bfbc06868c223e35887
+2026-08-12 eff504f5400fa572e55bd0c5b3dae7fd8a4188da
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/evora-prometido-pago-auditado-2026/pt.html
-2026-08-15 ec152217f0ab7a8490b49cede57886e07f14c8cd
+2026-08-15 b556bf81c6fa293765dffd1ce9500c42098ae975
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/evora-prometido-pago-auditado-2026/en.html
-2026-08-15 ec152217f0ab7a8490b49cede57886e07f14c8cd
+2026-08-15 b556bf81c6fa293765dffd1ce9500c42098ae975
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/evora-quinze-anos-cinco-mandatos/pt.html
-2026-08-12 b4f45d3f2d02e941dc393bfbc06868c223e35887
+2026-08-12 eff504f5400fa572e55bd0c5b3dae7fd8a4188da
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/onde-esta-a-agua/pt.html
-2026-08-12 b4f45d3f2d02e941dc393bfbc06868c223e35887
+2026-08-12 eff504f5400fa572e55bd0c5b3dae7fd8a4188da
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/onde-esta-a-agua/en.html
-2026-08-12 b4f45d3f2d02e941dc393bfbc06868c223e35887
+2026-08-12 eff504f5400fa572e55bd0c5b3dae7fd8a4188da
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/penalizacoes-por-reforma-antecipada-2026/pt.html
-2026-08-24 5cb083eda12859ca40558dd68dde4e457a010c27
+2026-08-24 a3523249d2a33cd0c6db939f937fd889b39acfdf
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/which-door-is-yours/en.html
-2026-08-12 b4f45d3f2d02e941dc393bfbc06868c223e35887
+2026-08-12 eff504f5400fa572e55bd0c5b3dae7fd8a4188da
 ```
 
 Batem, uma a uma, com `src/data/datas-de-publicacao.json` e com a tabela do §3.
@@ -623,12 +623,12 @@ true
 $ git rev-list --count HEAD
 1
 $ git log --diff-filter=A --format='%ad %H' --date=short -- studies-src/onde-esta-a-agua/pt.html
-2026-09-04 cc79128ee72022b5d248e728cdbf3435b373bf6b
+2026-09-04 15cc78ecc28048a2916f3f3c137ce2b384d61081
 ```
 
-`cc79128e` é a cabeça de que este ramo saiu, e `2026-09-04` a data de autoria
+`15cc78ec` é a cabeça de que este ramo saiu, e `2026-09-04` a data de autoria
 dela: numa cópia rasa o comando continua a responder a fronteira do clone. A
-leitura certa, na árvore com história, é `2026-08-12 b4f45d3f`.
+leitura certa, na árvore com história, é `2026-08-12 eff504f5`.
 
 E o portão, na mesma cópia rasa:
 
@@ -666,11 +666,11 @@ desta**, com as saídas tal como saíram:
 $ # 1. a data de uma edição trocada no ficheiro para 2026-09-04
 check-datas: história completa · 16 edição(ões) do ficheiro refeitas do `git`.
 check-datas: 5 falha(s).
-  · /en/studies: a linha de onde-esta-a-agua, na porta PT imprime «12.08.2026» e src/data/datas-de-publicacao.json diz que onde-esta-a-agua (pt) entrou a 04.09.2026 (commit b4f45d3f). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.
-  · /en/studies/onde-esta-a-agua: o bloco da edição PT imprime «12.08.2026» e src/data/datas-de-publicacao.json diz que onde-esta-a-agua (pt) entrou a 04.09.2026 (commit b4f45d3f). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.
-  · /estudos: a linha de onde-esta-a-agua, na porta PT imprime «12.08.2026» e src/data/datas-de-publicacao.json diz que onde-esta-a-agua (pt) entrou a 04.09.2026 (commit b4f45d3f). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.
-  · /estudos/onde-esta-a-agua: o bloco da edição PT imprime «12.08.2026» e src/data/datas-de-publicacao.json diz que onde-esta-a-agua (pt) entrou a 04.09.2026 (commit b4f45d3f). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.
-  · studies-src/onde-esta-a-agua/pt.html: src/data/datas-de-publicacao.json declara 2026-09-04 (b4f45d3f) e o `git` diz 2026-08-12 (b4f45d3f).
+  · /en/studies: a linha de onde-esta-a-agua, na porta PT imprime «12.08.2026» e src/data/datas-de-publicacao.json diz que onde-esta-a-agua (pt) entrou a 04.09.2026 (commit eff504f5). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.
+  · /en/studies/onde-esta-a-agua: o bloco da edição PT imprime «12.08.2026» e src/data/datas-de-publicacao.json diz que onde-esta-a-agua (pt) entrou a 04.09.2026 (commit eff504f5). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.
+  · /estudos: a linha de onde-esta-a-agua, na porta PT imprime «12.08.2026» e src/data/datas-de-publicacao.json diz que onde-esta-a-agua (pt) entrou a 04.09.2026 (commit eff504f5). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.
+  · /estudos/onde-esta-a-agua: o bloco da edição PT imprime «12.08.2026» e src/data/datas-de-publicacao.json diz que onde-esta-a-agua (pt) entrou a 04.09.2026 (commit eff504f5). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.
+  · studies-src/onde-esta-a-agua/pt.html: src/data/datas-de-publicacao.json declara 2026-09-04 (eff504f5) e o `git` diz 2026-08-12 (eff504f5).
 $ echo $?
 1
 ```
@@ -680,7 +680,7 @@ $ # 2. a data trocada na página construída para 04.09.2026 (o defeito que este
 check-datas: história completa · 16 edição(ões) do ficheiro refeitas do `git`.
 check-datas: 2 falha(s).
   · /estudos/onde-esta-a-agua: a página imprime «04.09.2026» como data de repositório e src/data/datas-de-publicacao.json não a declara em edição nenhuma. É exactamente a forma do defeito de 04.09: uma data que saiu do ambiente da construção e não do facto medido.
-  · /estudos/onde-esta-a-agua: o bloco da edição PT imprime «04.09.2026» e src/data/datas-de-publicacao.json diz que onde-esta-a-agua (pt) entrou a 12.08.2026 (commit b4f45d3f). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.
+  · /estudos/onde-esta-a-agua: o bloco da edição PT imprime «04.09.2026» e src/data/datas-de-publicacao.json diz que onde-esta-a-agua (pt) entrou a 12.08.2026 (commit eff504f5). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.
 $ echo $?
 1
 ```
@@ -695,7 +695,7 @@ check-datas: 7 falha(s).
   · /estudos/onde-esta-a-agua: o bloco da edição PT imprime «12.08.2026» e src/data/datas-de-publicacao.json não declara data nenhuma para onde-esta-a-agua (pt). Uma data sem linha no ficheiro é uma data sem origem.
   · /estudos: 1 edição(ões) sem data em src/data/datas-de-publicacao.json e a página mostra 0 caixa(s) de aviso. Tinha de mostrar uma.
   · /en/studies: 1 edição(ões) sem data em src/data/datas-de-publicacao.json e a página mostra 0 caixa(s) de aviso. Tinha de mostrar uma.
-  · studies-src/onde-esta-a-agua/pt.html: o `git` diz que esta edição entrou a 2026-08-12 (b4f45d3f) e src/data/datas-de-publicacao.json não a declara. Refaça o ficheiro com `node scripts/datas-de-publicacao.mjs`.
+  · studies-src/onde-esta-a-agua/pt.html: o `git` diz que esta edição entrou a 2026-08-12 (eff504f5) e src/data/datas-de-publicacao.json não a declara. Refaça o ficheiro com `node scripts/datas-de-publicacao.mjs`.
 $ echo $?
 1
 ```
@@ -722,12 +722,12 @@ dias.
 ### 6.8 · Os portões desta passagem
 
 A fusão de `origin/main` foi feita ANTES dos portões, porque `main` moveu-se hoje
-com o painel semanal (`9c34bbb0`). Não houve conflitos: o painel mexe em 32
+com o painel semanal (`9912127f`). Não houve conflitos: o painel mexe em 32
 ficheiros de `ledger/claims/` e em `src/data/verificacao.mjs`, e este ramo mexe
 nos dois scripts das datas, no guarda, na régua do índice e no relatório. Nenhum
 ficheiro é dos dois.
 
-Os três correram na cabeça da fusão (`1a4ff311`), nesta máquina, com as saídas
+Os três correram na cabeça da fusão (`dca23988`), nesta máquina, com as saídas
 lidas de ficheiro de registo:
 
 | portão | início (UTC) | fim (UTC) | código |

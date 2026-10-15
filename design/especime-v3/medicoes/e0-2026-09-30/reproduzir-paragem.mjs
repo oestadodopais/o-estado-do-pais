@@ -12,7 +12,7 @@ import { LUGAR_DECLARADO_DAS_LINHAS } from '../../../../src/data/lugar-das-linha
 
 const pasta = 'design/especime-v3/medicoes/e0-2026-09-30';
 const id = 'correcoes-publicadas';
-const base = '07549ee1e9ec2b39186f9e9f13eeac4914bf5e76';
+const base = '7a82c1477b1710292d23f7efdca7a367f407e134';
 const linhas = loadClaims();
 const ids = [id, 'taxa-de-desemprego-2025', 'taxa-de-desemprego-mip-2025'];
 const originais = new Map(ids.map(i => [i, linhas.get(i)]));

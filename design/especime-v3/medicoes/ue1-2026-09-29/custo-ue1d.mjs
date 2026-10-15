@@ -1,6 +1,6 @@
 /** UE1d: o custo da passagem da §1.140 e das definições, em custo-ue1d.json.
  *
- * As horas leem-se de ficheiros e do git: o começo é a hora do commit das provas da UE1c (`42a368a3`),
+ * As horas leem-se de ficheiros e do git: o começo é a hora do commit das provas da UE1c (`9b4b4f2a`),
  * depois do qual a passagem começou, e o fim é o de `portoes/ue1d/typecheck.fim`, o último portão. O tempo
  * de espera pela construção de outra árvore lê-se dos dois `espera.log` que o `portao-ue1d.sh` escreve: o da
  * primeira corrida dos portões, na cabeça `de17f63e` (`portoes/ue1d-de17f63e/`), e o da corrida final. Os símbolos são a leitura, à mão, do contador que o ambiente mostra ao agente (o total da sessão
@@ -17,14 +17,14 @@ const PASTA = 'design/especime-v3/medicoes/ue1-2026-09-29';
 const resta = Number(process.argv[2]);
 if (!Number.isInteger(resta) || resta <= 0) throw new Error('passe o que resta do contador, um inteiro');
 const TOTAL = 15000000;
-const inicio = execFileSync('git', ['show', '-s', '--format=%cI', '42a368a3'], { encoding: 'utf8' }).trim();
+const inicio = execFileSync('git', ['show', '-s', '--format=%cI', '9b4b4f2a'], { encoding: 'utf8' }).trim();
 const fim = fs.readFileSync(path.join(PASTA, 'portoes/ue1d/typecheck.fim'), 'utf8').trim();
 const ue1c = JSON.parse(fs.readFileSync(path.join(PASTA, 'custo-ue1c.json'), 'utf8')).medidas.simbolos_da_sessao_no_fecho_da_passagem.valor;
 const espera = ['portoes/ue1d-de17f63e/espera.log', 'portoes/ue1d/espera.log'].flatMap((f) => fs.readFileSync(path.join(PASTA, f), 'utf8').split('\n').filter(Boolean));
 const esperas = espera.map((l) => Number((l.match(/esperei (\d+) s/) ?? [])[1]));
 const segundos = Math.round((Date.parse(fim) - Date.parse(inicio)) / 1000);
 const medidas = {
-  inicio_da_passagem: { valor: new Date(inicio).toISOString().replace('.000Z', 'Z'), comando: 'git show -s --format=%cI 42a368a3 (o commit das provas da UE1c)', o_que: 'a hora leu-se', encontrado: Number.isFinite(Date.parse(inicio)) },
+  inicio_da_passagem: { valor: new Date(inicio).toISOString().replace('.000Z', 'Z'), comando: 'git show -s --format=%cI 9b4b4f2a (o commit das provas da UE1c)', o_que: 'a hora leu-se', encontrado: Number.isFinite(Date.parse(inicio)) },
   fim_dos_portoes: { valor: fim, comando: `cat ${PASTA}/portoes/ue1d/typecheck.fim`, o_que: 'o ficheiro existe e é uma hora UTC', encontrado: Number.isFinite(Date.parse(fim)) },
   segundos_da_passagem: { valor: segundos, comando: 'a diferença entre as duas horas acima', o_que: 'é positiva', encontrado: segundos > 0 },
   segundos_de_espera_pelos_portoes: { valor: esperas.reduce((a, b) => a + b, 0), comando: `a soma dos «esperei N s» das ${espera.length} linhas de ${PASTA}/portoes/ue1d-de17f63e/espera.log e ${PASTA}/portoes/ue1d/espera.log`, o_que: 'cada linha tem o seu número', encontrado: esperas.length > 0 && esperas.every(Number.isFinite) },

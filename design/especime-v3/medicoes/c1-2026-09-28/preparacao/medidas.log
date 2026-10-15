@@ -23,21 +23,21 @@
   "portoes": {
     "build": {
       "codigo": 0,
-      "cabeca": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+      "cabeca": "cacef5d1c78dd0f186ccce8c8dbca7af84af9feb",
       "inicio": "2026-09-28T12:19:39.348771+00:00",
       "fim": "2026-09-28T12:24:44.484406+00:00",
       "segundos": 305.135635
     },
     "verify": {
       "codigo": 0,
-      "cabeca": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+      "cabeca": "cacef5d1c78dd0f186ccce8c8dbca7af84af9feb",
       "inicio": "2026-09-28T12:25:04.433018+00:00",
       "fim": "2026-09-28T12:33:20.583029+00:00",
       "segundos": 496.150011
     },
     "typecheck": {
       "codigo": 0,
-      "cabeca": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+      "cabeca": "cacef5d1c78dd0f186ccce8c8dbca7af84af9feb",
       "inicio": "2026-09-28T12:19:33.074979+00:00",
       "fim": "2026-09-28T12:19:33.236474+00:00",
       "segundos": 0.161495

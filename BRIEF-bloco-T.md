@@ -33,7 +33,7 @@ da direção, fusão e `verify:deploy`. O que atravessa a fronteira motor→sít
 conteúdo estruturado, linhas, **recursos** e um manifesto; nunca saída
 renderizada (`ledger/README.md`, «Linhas cruzadas»).
 
-**Ramos.** Sítio: `confianca`, criado de `main` (`fc8f032`). Motor: `master`
+**Ramos.** Sítio: `confianca`, criado de `main` (`0c1bb21`). Motor: `master`
 (local; nunca se empurra; nunca se põe em palco `.gitignore`,
 `.maintenance-locks/`, `content/05 Fund Access Register/`, `indicators/coverage/`,
 que é de outra sessão a correr em paralelo). No motor, `git add` só com caminhos

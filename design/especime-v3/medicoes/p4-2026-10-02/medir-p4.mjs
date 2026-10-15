@@ -3,7 +3,7 @@
  * de onde vem, e um conhecido-positivo (uma leitura que tem de dar «encontrado» para que um valor vazio ou zero valha
  * alguma coisa). O que não se conseguir ler fica «NÃO LIDO».
  *
- * O antes de cada item é o do §0 do brief, medido pelo lugar de direção na cabeça 642e9d56
+ * O antes de cada item é o do §0 do brief, medido pelo lugar de direção na cabeça 40588dd5
  * (`design/observatorio/medidas/BRIEF-P4.json`), ou, onde o bloco mediu o antes, o ficheiro do antes.
  *
  * Uso, da raiz da worktree:  node design/especime-v3/medicoes/p4-2026-10-02/medir-p4.mjs
@@ -194,7 +194,7 @@ const dUe2 = ler(`${PASTA}/decisoes-em-vigor-intervalo-ue2.txt`) ?? '';
 const dP4 = ler(`${PASTA}/decisoes-em-vigor-depois.txt`) ?? '';
 const bin = (t) => +((t.match(/(\d+) ficheiro\(s\) binário\(s\) saltado\(s\)/) ?? [])[1] ?? NaN);
 medida('codigo_do_decisoes_em_vigor_num_intervalo_com_png', codigo(`${PASTA}/decisoes-em-vigor-intervalo-ue2.codigo`),
-  'python3 scripts/leituras/decisoes-em-vigor.py --intervalo 74ce7657..642e9d56 (o UE2)', 'o guião antigo, no mesmo intervalo, saiu com 1 e «0x89» (decisoes-em-vigor-intervalo-ue2-antes.txt)',
+  'python3 scripts/leituras/decisoes-em-vigor.py --intervalo f5788ac3..40588dd5 (o UE2)', 'o guião antigo, no mesmo intervalo, saiu com 1 e «0x89» (decisoes-em-vigor-intervalo-ue2-antes.txt)',
   /0x89/.test(ler(`${PASTA}/decisoes-em-vigor-intervalo-ue2-antes.txt`) ?? '') && codigo(`${PASTA}/decisoes-em-vigor-intervalo-ue2-antes.codigo`) === 1,
   { antes: antesDoBrief('codigo_do_decisoes_em_vigor_num_intervalo_com_png'), binarios_saltados_no_ue2: bin(dUe2), binarios_saltados_no_p4: bin(dP4), codigo_no_p4: codigo(`${PASTA}/decisoes-em-vigor-depois.codigo`) });
 

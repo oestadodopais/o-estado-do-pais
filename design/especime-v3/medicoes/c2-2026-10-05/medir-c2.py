@@ -158,9 +158,9 @@ medida("linhas_cuja_primeira_geografia_e_portugal_entre_varias", len(varias), "l
 def _tabela(texto):
     return re.findall(r"^\s*'([a-z0-9-]+)': '", texto, re.M)
 tab_agora = _tabela(open("src/data/lugar-das-linhas.mjs", encoding="utf-8").read())
-tab_base = _tabela(git("show", "3a253f73:src/data/lugar-das-linhas.mjs"))
-_base = {n.split("/")[-1][:-4]: yaml.safe_load(git("show", f"3a253f73:{n}")) for n in git("ls-tree", "--name-only", "3a253f73", "ledger/claims/").split()}
-medida("entradas_da_tabela_dos_lugares_na_base", len(tab_base), "git show 3a253f73:src/data/lugar-das-linhas.mjs · as chaves", "a dívida das famílias da União já lá estava", "divida-das-familias-2025-ue" in tab_base)
+tab_base = _tabela(git("show", "520a02d6:src/data/lugar-das-linhas.mjs"))
+_base = {n.split("/")[-1][:-4]: yaml.safe_load(git("show", f"520a02d6:{n}")) for n in git("ls-tree", "--name-only", "520a02d6", "ledger/claims/").split()}
+medida("entradas_da_tabela_dos_lugares_na_base", len(tab_base), "git show 520a02d6:src/data/lugar-das-linhas.mjs · as chaves", "a dívida das famílias da União já lá estava", "divida-das-familias-2025-ue" in tab_base)
 medida("entradas_da_tabela_dos_lugares_agora", len(tab_agora), "src/data/lugar-das-linhas.mjs · as chaves", "a despesa em I&D da União entrou", "despesa-em-id-2024-ue" in tab_agora)
 medida("entradas_da_tabela_na_base_com_portugal_como_unica_geografia", sum(1 for i in tab_base if _geos(_base.get(i) or {}) == ["PT"]), "as chaves da tabela na base cuja linha, na base, tem geo=PT e só esse",
        "a tabela da base tem entradas", len(tab_base) > 0)
@@ -179,7 +179,7 @@ geradores = [l.get("gerador_da_linha") for l in (mot.get("releitura") or {}).get
 medida("das_nove_do_gerador_enquadramento", geradores.count("enquadramento.py"), "motor/motor-c2.json · releitura.linhas[].gerador_da_linha (o cabeçalho de cada linha)", "a soma dos dois geradores é nove", geradores.count("enquadramento.py") + geradores.count("generate_claims.py") == 9)
 medida("das_nove_do_gerador_generate_claims", geradores.count("generate_claims.py"), "motor/motor-c2.json · releitura.linhas[].gerador_da_linha", "a soma dos dois geradores é nove", geradores.count("enquadramento.py") + geradores.count("generate_claims.py") == 9)
 medida("das_nove_com_cadeia_do_excerto_na_base", sum(1 for i in NOVE if any(c.get("kind") == "proveniencia" and c.get("field") == "excerpt" for c in (_base[i].get("corrections") or []))),
-       "git show 3a253f73:ledger/claims/<as nove>.yml · uma entrada proveniencia sobre excerpt", "o custo unitário do trabalho de 2024 tinha-a", any(c.get("field") == "excerpt" for c in _base["custo-unitario-do-trabalho-2024"].get("corrections") or []))
+       "git show 520a02d6:ledger/claims/<as nove>.yml · uma entrada proveniencia sobre excerpt", "o custo unitário do trabalho de 2024 tinha-a", any(c.get("field") == "excerpt" for c in _base["custo-unitario-do-trabalho-2024"].get("corrections") or []))
 alarmes = (mot.get("painel_do_fim") or {}).get("alarmes_do_relatorio") or []
 medida("alarmes_do_painel_da_estrutura", sum(1 for a in alarmes if a["canary"] == "structure"), "motor/motor-c2.json · painel_do_fim.alarmes_do_relatorio, canary structure", "o relatório tem alarmes", len(alarmes) > 0)
 medida("alarmes_do_painel_do_vigia_da_comissao", sum(1 for a in alarmes if a["canary"] == "threshold"), "motor/motor-c2.json · painel_do_fim.alarmes_do_relatorio, canary threshold", "o relatório tem alarmes", len(alarmes) > 0)
@@ -193,11 +193,11 @@ medida("linhas_do_estudo_com_published_at", sum(1 for l in com_pub if l.get("stu
 # ------------------------------------------------------------------ a contagem das revisões de proveniência
 def _proveniencias(textos):
     return sum(sum(1 for c in (yaml.safe_load(x) or {}).get("corrections") or [] if c.get("kind") == "proveniencia") for x in textos)
-_nomes = git("ls-tree", "--name-only", "3a253f73", "ledger/claims/").split()
-na_base = _proveniencias(git("show", f"3a253f73:{n}") for n in _nomes)
+_nomes = git("ls-tree", "--name-only", "520a02d6", "ledger/claims/").split()
+na_base = _proveniencias(git("show", f"520a02d6:{n}") for n in _nomes)
 agora = _proveniencias(open(f, encoding="utf-8").read() for f in sorted(glob.glob("ledger/claims/*.yml")))
-medida("revisoes_de_proveniencia_no_livro_na_base", na_base, "git show 3a253f73:ledger/claims/<linha>.yml · as entradas de corrections com kind proveniencia",
-       "a dívida das famílias da União tem uma na base", "kind: proveniencia" in git("show", "3a253f73:ledger/claims/divida-das-familias-2025-ue.yml"))
+medida("revisoes_de_proveniencia_no_livro_na_base", na_base, "git show 520a02d6:ledger/claims/<linha>.yml · as entradas de corrections com kind proveniencia",
+       "a dívida das famílias da União tem uma na base", "kind: proveniencia" in git("show", "520a02d6:ledger/claims/divida-das-familias-2025-ue.yml"))
 medida("revisoes_de_proveniencia_no_livro_agora", agora, "ledger/claims/*.yml · as entradas de corrections com kind proveniencia", "a soma cresce com as do bloco", agora > na_base)
 medida("revisoes_de_proveniencia_novas_do_bloco", sum(1 for x in (ap.get("linhas") or []) for e in x["entradas_novas"] if e["kind"] == "proveniencia"),
        "aplicacao.json · as entradas novas com kind proveniencia", "a aplicação tem entradas novas", bool(ap.get("linhas")))

@@ -4,15 +4,15 @@ A entrega permite copiar cada número com a sua fonte, período, data, atribuiç
 
 Relatório gerado por `node design/especime-v3/medicoes/er1-2026-10-06/fechar.mjs`, a partir dos ficheiros desta pasta. Construtor indicado no lançamento: Codex gpt-6-astra, raciocínio xhigh.
 
-Base: `f5fb384e5c7a6664a137ada57667700ed5eace96`. Cabeça do código: `645ecde7ea61c044d7c0648b020c6392a48674ce`. A cabeça final da entrega é o commit que contém este relatório e as provas; lê-se com `git rev-parse HEAD` e consta da resposta da sessão. Não se grava aqui um resumo autorreferente.
+Base: `6b5cdbf15596c2b753a407d43200fbaab5210ea1`. Cabeça do código: `6488636195b0b3a66c467ab47f88cce9a37ceab7`. A cabeça final da entrega é o commit que contém este relatório e as provas; lê-se com `git rev-parse HEAD` e consta da resposta da sessão. Não se grava aqui um resumo autorreferente.
 
 | Commit de código |
 |---|
-| 16ddc66c22876784284c7240ca1d9a5699ea4a08 ER1: incorporar cada número com fonte e atualização pelo JSON |
-| 0c63b7a496dab5a93b238625821897db3455cfbf ER1: guardar o blogue de ensaio e exercer a releitura no navegador |
-| 8252915ed97cc4a96eacc20881722201e470c17d ER1: conferir o código antes de ler a prosa no portão do índice |
-| eeb282d97baa9dad851a8ba7e0df700a570bbc34 ER1: comparar o texto literal que o navegador copia |
-| 645ecde7ea61c044d7c0648b020c6392a48674ce ER1: conferir o campo usado pelo botão de cópia |
+| 3a913e7a13e4e291a25d5185db76e632f27e6d89 ER1: incorporar cada número com fonte e atualização pelo JSON |
+| dc176f67e9c4662d3191beb59a27eda29cd2a90f ER1: guardar o blogue de ensaio e exercer a releitura no navegador |
+| 013e54907d21fe556ccdcab06eff1d663781fd73 ER1: conferir o código antes de ler a prosa no portão do índice |
+| f2fe67272f3cb8b199c4edbfbe82b638e123ae5e ER1: comparar o texto literal que o navegador copia |
+| 6488636195b0b3a66c467ab47f88cce9a37ceab7 ER1: conferir o campo usado pelo botão de cópia |
 
 ## O que se mediu antes de construir
 
@@ -191,7 +191,7 @@ leitura/ contém os ficheiros de código alterados, o diff, o brief, a linha JSO
 
 ## Portões inteiros
 
-Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/er1-2026-10-06/portoes`. O guião esperou pelas construções que ocupavam a tranca; tranca-observada.json regista a passagem da espera para outro bloco, com renovação recente. O ER1 não interveio na tranca alheia. Os códigos seguintes foram lidos de ficheiros depois de o guião acabar. Cabeça no início e no fim: `645ecde7ea61c044d7c0648b020c6392a48674ce`; dist/version.json confirma a mesma cabeça.
+Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/er1-2026-10-06/portoes`. O guião esperou pelas construções que ocupavam a tranca; tranca-observada.json regista a passagem da espera para outro bloco, com renovação recente. O ER1 não interveio na tranca alheia. Os códigos seguintes foram lidos de ficheiros depois de o guião acabar. Cabeça no início e no fim: `6488636195b0b3a66c467ab47f88cce9a37ceab7`; dist/version.json confirma a mesma cabeça.
 
 | Portão | Código lido | Início UTC | Fim UTC |
 |---|---|---|---|
@@ -199,7 +199,7 @@ Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/
 | verify | 0 | 2026-10-06T14:22:36Z | 2026-10-06T14:42:50Z |
 | typecheck | 0 | 2026-10-06T14:42:50Z | 2026-10-06T14:42:50Z |
 
-A primeira corrida ficou guardada em portoes-primeira/. O verify terminou com código 1: ✗ I2 · as datas ISO à vista; ✗ I6 · o marcador com um destino só. As datas de atributos e os marcadores dentro do código foram tomados por prosa. O portão do índice passou a usar a mesma comparação integral antes da retirada do campo, com plantas pela sua própria leitura. A corrida seguinte ficou guardada em portoes-segunda/, na cabeça `8252915ed97cc4a96eacc20881722201e470c17d`, com os códigos 0, 0, 0. Depois dessa corrida, as sondagens parser-antes.json e campo-copia-antes.json demonstraram que a comparação genérica perdia comentários literais e que o campo marcado podia estar fora do bloco de cópia. Foram fechadas ambas as falhas, com plantas que afirmam as mensagens de rejeição e uma comparação com inputValue no navegador. As sondagens guardam a cabeça e o resumo do comparador anterior; não são ensaios para repetir contra o comparador corrigido. A corrida inteira em portoes/, na cabeça corrigida, é a que vale para a entrega.
+A primeira corrida ficou guardada em portoes-primeira/. O verify terminou com código 1: ✗ I2 · as datas ISO à vista; ✗ I6 · o marcador com um destino só. As datas de atributos e os marcadores dentro do código foram tomados por prosa. O portão do índice passou a usar a mesma comparação integral antes da retirada do campo, com plantas pela sua própria leitura. A corrida seguinte ficou guardada em portoes-segunda/, na cabeça `013e54907d21fe556ccdcab06eff1d663781fd73`, com os códigos 0, 0, 0. Depois dessa corrida, as sondagens parser-antes.json e campo-copia-antes.json demonstraram que a comparação genérica perdia comentários literais e que o campo marcado podia estar fora do bloco de cópia. Foram fechadas ambas as falhas, com plantas que afirmam as mensagens de rejeição e uma comparação com inputValue no navegador. As sondagens guardam a cabeça e o resumo do comparador anterior; não são ensaios para repetir contra o comparador corrigido. A corrida inteira em portoes/, na cabeça corrigida, é a que vale para a entrega.
 
 Os logs em portoes/ só foram limpos de caminhos locais e nomes da conta. O motor não existe nesta worktree; check:series correu no modo sem motor admitido no lançamento.
 

@@ -1,7 +1,7 @@
 # O rótulo de IA em todas as páginas · relatório do construtor
 
 *Escrito a 01.09.2026 por Claude Opus 5, ramo `rotulo-ia-2026-09-01`, saído de
-`main` `b097d20`, contra `design/observatorio/ORDEM-rotulo-2026-09-01.md` e
+`main` `5d24ddb`, contra `design/observatorio/ORDEM-rotulo-2026-09-01.md` e
 `design/observatorio/BRIEF-divulgacao-via-B.md`. Nada fundido, nada empurrado.
 Sem travessões na prosa nova.*
 
@@ -41,11 +41,11 @@ Cinco commits de código, mais o que traz este relatório.
 
 | commit | passagem | o quê |
 | --- | --- | --- |
-| `fe2ab5b` | primeira | a política da casa e o rótulo de IA em todas as páginas |
-| `06fb12c` | primeira | os dados estruturados dizem a geração por IA |
-| `cea6167` | primeira | a régua do rótulo, com sete células e sete estragos plantados |
-| `2b8e774` | primeira | os travessões saem da prosa nova deste bloco |
-| `82046ad` | **segunda** | o oráculo do portão sai do ficheiro que ele confere, e mais nove (§11) |
+| `ffee197` | primeira | a política da casa e o rótulo de IA em todas as páginas |
+| `2a67673` | primeira | os dados estruturados dizem a geração por IA |
+| `df64959` | primeira | a régua do rótulo, com sete células e sete estragos plantados |
+| `45fbcc1` | primeira | os travessões saem da prosa nova deste bloco |
+| `07052f6` | **segunda** | o oráculo do portão sai do ficheiro que ele confere, e mais nove (§11) |
 
 O quarto é uma reparação minha: escrevi vinte e um travessões contra a regra do
 projeto, nos comentários e em três cadeias de saída da régua, e saem todos. O
@@ -60,10 +60,10 @@ nova no `DECISIONS.md`, que é do lugar de direção), `public/` não foi tocado
 identidade não foi tocada, o motor não foi tocado.
 
 `npm run build`, `npm run verify` e `npm run typecheck` correram a **0** no
-estado de cada um dos cinco commits de código. Este relatório entra no `82046ad`
+estado de cada um dos cinco commits de código. Este relatório entra no `07052f6`
 e a emenda do seu §1 num commit a seguir, porque um relatório não pode conter o
 seu próprio resumo; nenhum passo da cadeia lê `design/especime-v3/medicoes/`, e a
-corrida que provou o `82046ad` provou a árvore em que ele entra, ficheiro a
+corrida que provou o `07052f6` provou a árvore em que ele entra, ficheiro a
 ficheiro.
 
 ## 2 · Ficheiro a ficheiro
@@ -114,7 +114,7 @@ linha.**
 
 ## 3 · As contagens, antes e depois
 
-Todas lidas da saída dos portões, na construção de `b097d20` e na do estado
+Todas lidas da saída dos portões, na construção de `5d24ddb` e na do estado
 final do ramo.
 
 ### 3.1 · O que não podia mudar, e não mudou
@@ -527,7 +527,7 @@ páginas de leitura e as duas fichas).
    uma obrigação por trás). Se a direção preferir o lugar da porta das
    correções, antes do rodapé, é um `<RotuloDeIA/>` movido de ficheiro.
 7. **`tests/inicio/matriz.mjs` continua com quatro células vermelhas, e são as
-   mesmas de antes deste ramo.** Não é uma inferência: construí `b097d20` numa
+   mesmas de antes deste ramo.** Não é uma inferência: construí `5d24ddb` numa
    worktree à parte, corri lá a matriz, e ela dá **as mesmas quatro células, com
    os mesmos nomes e a mesma prova** (a geometria do mapa e da legenda a 1024 e
    acima, o cartão localizador da página do concelho, a pesquisa aberta, e a
@@ -566,7 +566,7 @@ páginas de leitura e as duas fichas).
 | `lista.mjs` | 94 de 94 |
 | `mapa-distritos.mjs` | 43 de 43 |
 | `mapa-navegacao.mjs` | 9 de 9 |
-| `matriz.mjs` | 83 de 87 (as quatro da §7.7, medidas iguais em `b097d20`) |
+| `matriz.mjs` | 83 de 87 (as quatro da §7.7, medidas iguais em `5d24ddb`) |
 | `regioes.mjs` | 30 de 30 |
 | `rotulo.mjs` | **7 de 7**, e 7 de 7 estragos vistos vermelhos |
 
@@ -670,8 +670,8 @@ linha foi escrita. É a aritmética desse contador e não uma contabilidade por
 chamada, e o que vier depois desta linha fica de fora dela.
 
 **Onze construções completas**: dez nesta worktree (a linha de base em
-`b097d20`, quatro na primeira passagem e cinco na segunda) e uma na worktree
-temporária que mediu a matriz em `b097d20`. Cada uma a **2 min 50 s a 3 min**; o
+`5d24ddb`, quatro na primeira passagem e cinco na segunda) e uma na worktree
+temporária que mediu a matriz em `5d24ddb`. Cada uma a **2 min 50 s a 3 min**; o
 `verify` a cerca de 1 min 20 s; os dois corredores de estragos do portão a cerca
 de 6 min e 9 min, porque cada estrago corre o portão inteiro sobre as 6 606
 páginas.

@@ -10,7 +10,7 @@ O QUE LÊ, E SÓ ISTO. Tudo dentro do sítio: as páginas construídas congelada
 `paginas-depois/` (conferidas pelo sha256 do seu índice antes de medir), as
 cópias do antes que o lugar de direção congelou em `paginas/` e o
 `design/observatorio/medidas/BRIEF-R1.json` que as mediu, os ficheiros do sítio
-na cabeça (`git show HEAD:`) e na cabeça de partida (`git show cbe87016:`), as
+na cabeça (`git show HEAD:`) e na cabeça de partida (`git show 27049f83:`), as
 saídas guardadas nesta pasta (plantas, capturas, pesquisa, portões, contraste) e
 o `motor/motor.json` que `recolher-motor.py` escreveu a partir do ramo do motor.
 Onde o brief mediu o antes com um predicado, o depois mede-se com o MESMO
@@ -21,7 +21,7 @@ conferência subordinada falha, e diz quais. As saídas dos três portões na ca
 final entram quando existem (`portoes/`); antes disso o campo diz «por correr».
 
 A CABEÇA LÊ-SE PRESA, E NÃO `HEAD` (passagem de correção, 23.09.2026). O bloco
-mediu o sítio na cabeça `bc68892b`; o lugar de direção acrescentou commits por
+mediu o sítio na cabeça `dcaa43b2`; o lugar de direção acrescentou commits por
 cima e a passagem de correção também, e ler `HEAD` mudava em silêncio os números
 de um relatório que descreve essa cabeça (as mudanças declaradas, por exemplo,
 passaram de 3 a 4 com o M4b). O que é do R1 lê-se em `CABECA_R1`, como o guião
@@ -44,9 +44,9 @@ from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent
 RAIZ = AQUI.parents[3]
-PARTIDA = 'cbe87016'
-# A cabeça do R1: a dos três portões e deste relatório (o código é o de 68b7944c).
-CABECA_R1 = 'bc68892b'
+PARTIDA = '27049f83'
+# A cabeça do R1: a dos três portões e deste relatório (o código é o de 6d79effc).
+CABECA_R1 = 'dcaa43b2'
 COPIAS_DEPOIS = AQUI / 'paginas-depois'
 COPIAS_ANTES = AQUI / 'paginas'
 FALHAS = []
@@ -613,7 +613,7 @@ M['dependencias_externas'] = {
         'chaves': ['rotulo.no_dist', 'titulo_do_recibo.titulos_de_linha_no_dist', 'titulo_do_recibo.colados_no_dist',
                    'frescura.pt', 'frescura.en', 'portoes.gate_html', 'portoes.t9', 'portoes.f17', 'portoes.voz_inventario',
                    'portoes.verify_celulas', 'l1', 'plantas_pais', 'plantas_portoes_r1', 'plantas_alvos', 'plantas_cartao'],
-        'repete_se': ('numa árvore do sítio na cabeça do R1 (o código é o de 68b7944c): npm ci, npm run build, e o medir.py; '
+        'repete_se': ('numa árvore do sítio na cabeça do R1 (o código é o de 6d79effc): npm ci, npm run build, e o medir.py; '
                       'sem construir, os registos dos três portões dessa cabeça estão guardados em portoes/'),
     },
     'git_do_sitio': {
@@ -669,7 +669,7 @@ correcao['plantas']['todas_morderam'] = sum(v['morderam'] for v in tres)
 mc = js('motor/motor-correcao.json')
 correcao['motor'] = mc
 # As mudanças declaradas na cabeça em que o guião corre, pelo MESMO leitor do R1:
-# o M4b acrescentou uma (commit 697df9af), e é por isso que o R1 se lê preso.
+# o M4b acrescentou uma (commit 72069180), e é por isso que o R1 se lê preso.
 correcao['mudancas_declaradas_na_cabeca'] = mudancas(git('show', 'HEAD:src/data/mudancas-do-projeto.mjs'))['declaradas']
 M['correcao'] = correcao
 

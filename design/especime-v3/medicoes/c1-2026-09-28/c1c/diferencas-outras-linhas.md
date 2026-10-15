@@ -1,6 +1,6 @@
 # Comparação das outras linhas geradas
 
-A comparação é contra `b7f352ce`. As diferenças dos campos são conservadas por inteiro em `comparacao-gerada.json`. Nenhum dos valores abaixo foi substituído pelo gerado; as bandeiras foram tratadas separadamente em `bandeiras.json`.
+A comparação é contra `472d1a43`. As diferenças dos campos são conservadas por inteiro em `comparacao-gerada.json`. Nenhum dos valores abaixo foi substituído pelo gerado; as bandeiras foram tratadas separadamente em `bandeiras.json`.
 
 | Linha | Selado | Gerado | Campos diferentes na geração |
 | --- | --- | --- | --- |

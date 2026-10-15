@@ -1,7 +1,7 @@
 [
   {
     "nome": "r4-recibo-sem-frase",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -20,7 +20,7 @@
   },
   {
     "nome": "r4-frase-de-outra-linha",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -38,7 +38,7 @@
   },
   {
     "nome": "r4-titulo-sem-nome",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -56,7 +56,7 @@
   },
   {
     "nome": "r4-voz-nome-da-familia-trocado",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,
@@ -74,7 +74,7 @@
   },
   {
     "nome": "r4-pais-lado-trocado",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-pais.mjs",
     "codigo": 1,
@@ -92,7 +92,7 @@
   },
   {
     "nome": "r4-voz-fragmento-retirado-solto",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,
@@ -111,7 +111,7 @@
   },
   {
     "nome": "r4b-l1-marcador-fora-da-marca",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-lugar.mjs",
     "codigo": 1,
@@ -129,7 +129,7 @@
   },
   {
     "nome": "r4b-pais-sinal-tirado",
-    "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+    "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
     "estado": "",
     "comando": "node scripts/check-pais.mjs",
     "codigo": 1,

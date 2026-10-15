@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """O §0 do brief RP3 (as séries no motor e no livro-razão), medido sobre cabeças presas:
-o sítio em 334cc740, para ser reproduzível depois de o RP1 aterrar; o motor não se lê, porque o portão dos briefs corre numa máquina sem ele.
+o sítio em eaffd3c8, para ser reproduzível depois de o RP1 aterrar; o motor não se lê, porque o portão dos briefs corre numa máquina sem ele.
 Escreve design/observatorio/medidas/BRIEF-RP3.json (ou o caminho em OEDP_MEDIDAS_JSON, que é
 como o scripts/check-briefs.py o corre). Cada medição leva o comando e um conhecido-positivo;
 o que não conseguir ler fica «NÃO LIDO»."""
 import json, re, subprocess, pathlib, os
 SITIO = pathlib.Path(__file__).resolve().parents[3]
 MOTOR = pathlib.Path.home() / "Instruments" / "ResearchHub"
-CAB_SITIO, CAB_MOTOR = "334cc740", "1d10b3f"
+CAB_SITIO, CAB_MOTOR = "eaffd3c8", "1d10b3f"
 NAO = "NÃO LIDO"
 medidas = []
 def medicao(nome, valor, comando, o_que, encontrado):

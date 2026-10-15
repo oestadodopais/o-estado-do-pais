@@ -2,7 +2,7 @@
   "o_que_e": "As leituras provadas depois da fusão com o main de 06.10.2026: cada chave do main com o mesmo valor e a chave das explicações do ramo antes da fusão.",
   "ficheiro": "tests/cartao/leituras-provadas.json",
   "main": "42c7ed7e",
-  "ramo_antes_da_fusao": "458f3e18",
+  "ramo_antes_da_fusao": "a0c5cc52",
   "chaves": {
     "schema": 1,
     "o_que_e": "texto",

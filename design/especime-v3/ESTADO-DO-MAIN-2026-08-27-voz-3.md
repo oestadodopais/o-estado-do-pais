@@ -1,6 +1,6 @@
 # O estado de `main` depois da terceira passagem de voz nos documentos (27.08.2026, noite)
 
-*Escrito pelo lugar de direção (Claude Fable 5). O ramo `voz-3-2026-08-27` saiu de `main` `57addc4` e está verde: construção, `check:documentos` (D5 em sete edições), `check:cadeia` (196 e 2 400), `check:voz`, `verify`, `leitura` 51 de 51, `correcoes-b` 19 de 19, a matriz 88 de 88. A §1.74 do `DECISIONS.md` é o registo; no motor, `publisher/voz-2026-08-27-S4/`.*
+*Escrito pelo lugar de direção (Claude Fable 5). O ramo `voz-3-2026-08-27` saiu de `main` `017ef6f` e está verde: construção, `check:documentos` (D5 em sete edições), `check:cadeia` (196 e 2 400), `check:voz`, `verify`, `leitura` 51 de 51, `correcoes-b` 19 de 19, a matriz 88 de 88. A §1.74 do `DECISIONS.md` é o registo; no motor, `publisher/voz-2026-08-27-S4/`.*
 
 ## O que muda no ar
 

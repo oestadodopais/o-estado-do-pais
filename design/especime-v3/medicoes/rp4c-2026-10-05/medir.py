@@ -59,7 +59,7 @@ repro = ler_json(AQUI / "brief-reproduzido.json")
 medicao("paragrafo_0_reproduzido_igual", (brief == repro) if brief and repro else NAO,
         "OEDP_MEDIDAS_JSON=<pasta>/brief-reproduzido.json python3 design/observatorio/medidas/BRIEF-RP4C.py, comparado com BRIEF-RP4C.json",
         "a reprodução tem as oito medidas do §0", bool(repro) and len(repro.get("medidas", [])) == 8)
-medicao("paragrafo_0_medidas", len((repro or {}).get("medidas", [])) if repro else NAO, "as medidas de brief-reproduzido.json", "a reprodução nomeia a cabeça lida", bool(repro) and repro.get("cabeca_lida") == "5b004ada")
+medicao("paragrafo_0_medidas", len((repro or {}).get("medidas", [])) if repro else NAO, "as medidas de brief-reproduzido.json", "a reprodução nomeia a cabeça lida", bool(repro) and repro.get("cabeca_lida") == "22dd918c")
 for m in (repro or {}).get("medidas", []):
     medicao(f"paragrafo_0.{m['nome']}", m["valor"], m["comando"], m["conhecido_positivo"]["o_que"], m["conhecido_positivo"]["encontrado"])
 
@@ -270,11 +270,11 @@ medicao("mapa.citacoes_na_linha", conta(r"citações conferidas na linha citada 
         "o mapa tem a secção do RP4-c", "## RP4-c" in (ler(SITIO / "design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md") or ""))
 medicao("mapa.citacoes_longe", conta("citação está no ficheiro, mas longe da linha citada"), "idem", "idem", True)
 medicao("mapa.citacoes_por_encontrar", conta("citação não encontrada em nenhum dos ficheiros citados na mesma linha"), "idem", "idem", True)
-diff = subprocess.run(["git", "-C", str(SITIO), "diff", "--numstat", "983b4585", "HEAD", "--", "src/i18n/strings.mjs", "design/especime-v3/INVENTARIO-FRASES.md", "design/especime-v3/CHAVES-EN.md"], capture_output=True, text=True)
+diff = subprocess.run(["git", "-C", str(SITIO), "diff", "--numstat", "de4bcfc6", "HEAD", "--", "src/i18n/strings.mjs", "design/especime-v3/INVENTARIO-FRASES.md", "design/especime-v3/CHAVES-EN.md"], capture_output=True, text=True)
 medicao("registos.linhas_mudadas_nas_cadeias_no_inventario_e_nas_chaves", sum(int(a) + int(b) for a, b, *_ in (l.split("\t") for l in diff.stdout.splitlines())) if diff.returncode == 0 else NAO,
-        "git diff --numstat 983b4585 HEAD -- src/i18n/strings.mjs design/especime-v3/INVENTARIO-FRASES.md design/especime-v3/CHAVES-EN.md",
+        "git diff --numstat de4bcfc6 HEAD -- src/i18n/strings.mjs design/especime-v3/INVENTARIO-FRASES.md design/especime-v3/CHAVES-EN.md",
         "o mesmo comando vê as linhas que o bloco mudou no módulo do desenho",
-        subprocess.run(["git", "-C", str(SITIO), "diff", "--numstat", "983b4585", "HEAD", "--", "src/lib/formas/serie-do-pais.mjs"], capture_output=True, text=True).stdout.strip() != "")
+        subprocess.run(["git", "-C", str(SITIO), "diff", "--numstat", "de4bcfc6", "HEAD", "--", "src/lib/formas/serie-do-pais.mjs"], capture_output=True, text=True).stdout.strip() != "")
 custo = ler_json(AQUI / "custo.json") or {}
 for chave in ("respostas_do_modelo", "simbolos_de_entrada", "simbolos_de_saida_minimo", "respostas_com_a_saida_de_um_momento_do_fluxo", "segundos"):
     medicao(f"custo.{chave}", custo.get(chave, NAO), "python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo da sessão do construtor>",
@@ -282,9 +282,9 @@ for chave in ("respostas_do_modelo", "simbolos_de_entrada", "simbolos_de_saida_m
 medicao("custo.modelos", custo.get("modelos", NAO), "idem", "o registo lido tem respostas do modelo", (custo.get("respostas_do_modelo") or 0) > 0)
 
 # ---- a entrega do RP4-c, lida no seu commit (o relatório do RP4-c diz quantas medidas tinha então) --------------------
-entrega = subprocess.run(["git", "-C", str(SITIO), "show", "46e675d6:design/especime-v3/medicoes/rp4c-2026-10-05/medidas.json"], capture_output=True, text=True)
+entrega = subprocess.run(["git", "-C", str(SITIO), "show", "a617f532:design/especime-v3/medicoes/rp4c-2026-10-05/medidas.json"], capture_output=True, text=True)
 de_entrega = json.loads(entrega.stdout) if entrega.returncode == 0 else None
-medicao("rp4c.medidas_na_entrega", len(de_entrega["medidas"]) if de_entrega else NAO, "git show 46e675d6:design/especime-v3/medicoes/rp4c-2026-10-05/medidas.json · as medidas",
+medicao("rp4c.medidas_na_entrega", len(de_entrega["medidas"]) if de_entrega else NAO, "git show a617f532:design/especime-v3/medicoes/rp4c-2026-10-05/medidas.json · as medidas",
         "o ficheiro da entrega tem a reprodução do §0", bool(de_entrega) and any(x["nome"] == "paragrafo_0_reproduzido_igual" for x in de_entrega["medidas"]))
 
 # ==== A PASSAGEM RP4-c-b (05.10.2026): o peso, as zonas por colunas e só onde a leitura vive ===========================

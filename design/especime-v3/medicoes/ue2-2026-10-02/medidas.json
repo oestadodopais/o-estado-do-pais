@@ -1,7 +1,7 @@
 {
   "bloco": "UE2",
   "guiao": "design/especime-v3/medicoes/ue2-2026-10-02/medir-ue2.mjs",
-  "cabeca_ao_medir": "da6d2d91b706a4201a4fd98bcdfccbbba1d9f3c9",
+  "cabeca_ao_medir": "fa1a5b63d518f16210364a25ee7c12ae191000b1",
   "medido_em": "2026-10-02T15:02:57.793Z",
   "medidas": [
     {
@@ -136,9 +136,9 @@
     {
       "nome": "construcoes_medidas",
       "valor": {
-        "base": "ec1a00dbe6fc02c84d4669439a7cdc74c2354614",
-        "final": "da6d2d91b706a4201a4fd98bcdfccbbba1d9f3c9",
-        "cabeca_ao_medir": "da6d2d91b706a4201a4fd98bcdfccbbba1d9f3c9",
+        "base": "13689390a713901a4b7bdf1ac815ae84118e9013",
+        "final": "fa1a5b63d518f16210364a25ee7c12ae191000b1",
+        "cabeca_ao_medir": "fa1a5b63d518f16210364a25ee7c12ae191000b1",
         "codigo_mudado_desde_a_construcao": []
       },
       "comando": "o version.json de cada construção, e git diff --name-only <final> HEAD -- src scripts public ledger registos studies-src mapa package.json astro.config.mjs site.config.mjs vercel.json",
@@ -514,7 +514,7 @@
     {
       "nome": "portoes_a_zero",
       "valor": {
-        "cabeca": "da6d2d91",
+        "cabeca": "fa1a5b63",
         "build": 0,
         "verify": 0,
         "typecheck": 0,

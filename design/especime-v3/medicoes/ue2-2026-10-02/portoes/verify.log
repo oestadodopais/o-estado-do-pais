@@ -1134,7 +1134,7 @@ História do valor: 2 controlos e 4 plantas.
 > o-estado-do-pais@0.1.0 check:cabeca
 > node tests/inicio/hierarquia-b2.mjs
 
-check:cabeca C1; construção da6d2d91b706a4201a4fd98bcdfccbbba1d9f3c9; 110 cabeças; 4 mordidas; 10 reposições
+check:cabeca C1; construção fa1a5b63d518f16210364a25ee7c12ae191000b1; 110 cabeças; 4 mordidas; 10 reposições
 check:cabeca: PASS
 
 > o-estado-do-pais@0.1.0 check:fontes
@@ -4952,7 +4952,7 @@ sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .si
   mordeu · feixe · imagem externa
 
 [1m  O feixe de cartões do sistema de desenho[0m
-[90m  design-system/ · de dist/ no commit da6d2d9 · 20 cartões, 11 ficheiros de letra e um README[0m
+[90m  design-system/ · de dist/ no commit fa1a5b6 · 20 cartões, 11 ficheiros de letra e um README[0m
 
 [90m  ficheiro                          grupo          bytes  ok[0m
   01-cor.html                       Fundamentos   379745  [32m✓[0m

@@ -1,8 +1,8 @@
 {
-  "comando": "node design/especime-v3/medicoes/jd1-2026-10-06/captar.mjs --code-head 147382c4609c5d4a12677dcaa858abf7ec85638a",
-  "cabeca": "147382c4609c5d4a12677dcaa858abf7ec85638a",
-  "cabeca_codigo": "147382c4609c5d4a12677dcaa858abf7ec85638a",
-  "construcao": "147382c4609c5d4a12677dcaa858abf7ec85638a",
+  "comando": "node design/especime-v3/medicoes/jd1-2026-10-06/captar.mjs --code-head d9e2a972756d5bab75dce9e2d94c8cf797bd9352",
+  "cabeca": "d9e2a972756d5bab75dce9e2d94c8cf797bd9352",
+  "cabeca_codigo": "d9e2a972756d5bab75dce9e2d94c8cf797bd9352",
+  "construcao": "d9e2a972756d5bab75dce9e2d94c8cf797bd9352",
   "linhas": [
     "amortizacoes-e-anulacoes-de-divida-fundada-2025",
     "custo-da-divida-emitida-2026-08",

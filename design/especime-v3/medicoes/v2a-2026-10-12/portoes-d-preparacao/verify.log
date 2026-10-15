@@ -13,7 +13,7 @@
   I194 {"planta":"uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D","antes":{"escrito":"1791937718561000000","inode":"251266187","tamanho":"19","resumo":"adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"},"depois":{"escrito":"1791937718561000000","inode":"251266194","tamanho":"19","resumo":"adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"},"passos_da_troca":1,"codigo_da_troca":0,"falhas":["D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"],"mordeu":true}
   as 12 plantas morderam em 0.9 s
 
-  4 processo(s) lado a lado · cabeça 9c35c95910d0b2612dc00f6652ec11573ef41a66
+  4 processo(s) lado a lado · cabeça c14aebd014a0b723a251a38e14d52de8dd154a02
 
 ▶ npm run check:alvos · começou aos 0.0 s
 ▶ npm run check:palavras · começou aos 0.0 s
@@ -249,7 +249,7 @@
     > o-estado-do-pais@0.1.0 check:cabeca
     > node tests/inicio/hierarquia-b2.mjs
     
-    check:cabeca C1; construção 9c35c95910d0b2612dc00f6652ec11573ef41a66; 140 cabeças; 4 mordidas; 10 reposições
+    check:cabeca C1; construção c14aebd014a0b723a251a38e14d52de8dd154a02; 140 cabeças; 4 mordidas; 10 reposições
     check:cabeca: PASS
     
 ▶ npm run check:css · começou aos 77.4 s
@@ -5497,7 +5497,7 @@
     {"recorte_livro":{"ficheiro":"13-pagina-livro-razao.html","entradas_na_pagina":459,"entradas_no_recorte":8,"primeiras_preservadas":true,"nota_e_porta_preservadas":true,"pagina_conservada":true,"pagina_sha256":"18ba9e94f12be8e4012059d1b84334adf9c2efb0cef4aa7f4b7b0370d6350e77","bytes_cartao":243053,"bytes_sem_recorte":1194098,"teto_bytes":673249,"margem":0.1,"planta":{"nome":"recorte retirado","mordeu":true,"queixa":"1166.1 KiB acima do tecto de 657.4697265625 KiB"}}}
     
     [1m  O feixe de cartões do sistema de desenho[0m
-    [90m  design-system/ · de dist/ no commit 9c35c95 · 20 cartões, 11 ficheiros de letra e um README[0m
+    [90m  design-system/ · de dist/ no commit c14aebd · 20 cartões, 11 ficheiros de letra e um README[0m
     
     [90m  ficheiro                          grupo          bytes  ok[0m
       01-cor.html                       Fundamentos   380035  [32m✓[0m
@@ -5561,7 +5561,7 @@
     ✓ npm run provar:guardas                       0.2 s  código 0
   U ✗ 47 passos no verify: 20 corridos pelo build, 25 corridos aqui e verdes
   D ✓ nenhuma escrita durante as conferências nos 15011 ficheiros do dist/ (bytes, hora de escrita e inode) nem nos 26175 ficheiros que o git segue (hora de escrita, inode e tamanho)
-  C ✓ a construção é da cabeça 9c35c95910d0b2612dc00f6652ec11573ef41a66, carimbada a 2026-10-14T01:25:29.327Z; prova.json escrito a 2026-10-14T01:26:33.362Z, cadeia.json a 2026-10-14T01:26:35.070Z
+  C ✓ a construção é da cabeça c14aebd014a0b723a251a38e14d52de8dd154a02, carimbada a 2026-10-14T01:25:29.327Z; prova.json escrito a 2026-10-14T01:26:33.362Z, cadeia.json a 2026-10-14T01:26:35.070Z
     U: «npm run check:indice» correu e não saiu com 0
     U: «npm run check:cartao» correu e não saiu com 0
   244.1 s ao todo

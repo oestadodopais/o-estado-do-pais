@@ -13,7 +13,7 @@
   I194 {"planta":"uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D","antes":{"escrito":"1791300696913000000","inode":"237155016","tamanho":"19","resumo":"adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"},"depois":{"escrito":"1791300696913000000","inode":"237155023","tamanho":"19","resumo":"adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"},"passos_da_troca":1,"codigo_da_troca":0,"falhas":["D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"],"mordeu":true}
   as 12 plantas morderam em 0.9 s
 
-  4 processo(s) lado a lado · cabeça 5a87309a9acb81fb8f1c40009516e9cb050fd1a4
+  4 processo(s) lado a lado · cabeça c0a1be728abbaab8ad31b846645cd872b1b2e377
 
 ▶ npm run check:alvos · começou aos 0.0 s
 ▶ npm run check:palavras · começou aos 0.0 s
@@ -2325,7 +2325,7 @@
     > o-estado-do-pais@0.1.0 check:cabeca
     > node tests/inicio/hierarquia-b2.mjs
     
-    check:cabeca C1; construção 5a87309a9acb81fb8f1c40009516e9cb050fd1a4; 140 cabeças; 4 mordidas; 10 reposições
+    check:cabeca C1; construção c0a1be728abbaab8ad31b846645cd872b1b2e377; 140 cabeças; 4 mordidas; 10 reposições
     check:cabeca: PASS
     
 ▶ npm run check:css · começou aos 71.9 s
@@ -3350,7 +3350,7 @@
     {"recorte_livro":{"ficheiro":"13-pagina-livro-razao.html","entradas_na_pagina":442,"entradas_no_recorte":8,"primeiras_preservadas":true,"nota_e_porta_preservadas":true,"pagina_conservada":true,"pagina_sha256":"88344e331b537beb14469bf1f3d3659f3cd425f7c0f2d33bcbaed2fca215d9a7","bytes_cartao":239900,"bytes_sem_recorte":1163522,"teto_bytes":673249,"margem":0.1,"planta":{"nome":"recorte retirado","mordeu":true,"queixa":"1136.3 KiB acima do tecto de 657.4697265625 KiB"}}}
     
       O feixe de cartões do sistema de desenho
-      design-system/ · de dist/ no commit 5a87309 · 20 cartões, 11 ficheiros de letra e um README
+      design-system/ · de dist/ no commit c0a1be7 · 20 cartões, 11 ficheiros de letra e um README
     
       ficheiro                          grupo          bytes  ok
       01-cor.html                       Fundamentos   380206  ✓
@@ -3411,7 +3411,7 @@
     ✓ npm run mapa:unidades -- --verifica          0.1 s  código 0
   U ✗ 44 passos no verify: 20 corridos pelo build, 22 corridos aqui e verdes
   D ✓ nenhuma escrita durante as conferências nos 14803 ficheiros do dist/ (bytes, hora de escrita e inode) nem nos 19647 ficheiros que o git segue (hora de escrita, inode e tamanho)
-  C ✓ a construção é da cabeça 5a87309a9acb81fb8f1c40009516e9cb050fd1a4, carimbada a 2026-10-06T16:05:03.561Z; prova.json escrito a 2026-10-06T16:12:08.145Z, cadeia.json a 2026-10-06T16:20:10.624Z
+  C ✓ a construção é da cabeça c0a1be728abbaab8ad31b846645cd872b1b2e377, carimbada a 2026-10-06T16:05:03.561Z; prova.json escrito a 2026-10-06T16:12:08.145Z, cadeia.json a 2026-10-06T16:20:10.624Z
     U: «npm run check:indice» correu e não saiu com 0
     U: «npm run check:rotulos» correu e não saiu com 0
   340.3 s ao todo

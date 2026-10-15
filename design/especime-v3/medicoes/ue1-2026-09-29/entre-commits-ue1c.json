@@ -2,7 +2,7 @@
   "bloco": "UE1c",
   "commits": [
     {
-      "commit": "baa82bce",
+      "commit": "3f1dc41d",
       "o_que": "os extremos empatados na faixa (o estado sem a frase do recibo, construído à parte)",
       "corridas": [
         {
@@ -20,7 +20,7 @@
       ]
     },
     {
-      "commit": "2a12ff68",
+      "commit": "fcf58417",
       "o_que": "o que cada medida conta, no recibo da sua série",
       "corridas": [
         {
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "commit": "982d6446",
+      "commit": "c0eec2a6",
       "o_que": "o mapa do repositório",
       "corridas": [
         {

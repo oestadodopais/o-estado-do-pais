@@ -34,7 +34,7 @@ def provas(guarda):
     ensaio = teste.ensaiar()
     plantas = guarda.plantas_pessoais()
     historico = []
-    for fase, ref in [('c', 'a1f6094e'), ('d', '9157e23e')]:
+    for fase, ref in [('c', '931c4a58'), ('d', '068bdcc0')]:
         m = ModuleType('historico_' + fase)
         m.__file__ = str(RAIZ / DETECTOR)
         exec(compile(git('show', ref + ':' + DETECTOR), '<detetor-historico>', 'exec'), vars(m))
@@ -64,7 +64,7 @@ def referencias():
     d += [(GUARDA, 260, 'def plantas_formas_d'), (PREFIXO + 'medir-c.py', 57, 'def auditar_entrega'),
           (PREFIXO + 'medir-d.py', 23, 'def medir_tempo'), ('tests/leituras/privacidade-rh1d.py', 13, 'def ensaiar')]
     linhas = []
-    for ref, itens in [('a1f6094e', c), ('9157e23e', d)]:
+    for ref, itens in [('931c4a58', c), ('068bdcc0', d)]:
         for ficheiro, numero, inicio in itens:
             texto = git('show', ref + ':' + ficheiro).decode().splitlines()[numero - 1].strip()
             linhas.append({'cabeca': git('rev-parse', ref).decode().strip(), 'ficheiro': ficheiro,
@@ -84,7 +84,7 @@ def referencias():
 
 
 def escopo_d(guarda):
-    ref = 'f8006eaa'
+    ref = 'b5eeb28e'
     nomes = [n for n in git('ls-tree', '-r', '--name-only', '-z', ref, '--', PREFIXO).decode().split('\0') if n]
     proprio = PREFIXO + 'auditoria-entrega-d.json'
     conferidos = [n for n in nomes if n != proprio]

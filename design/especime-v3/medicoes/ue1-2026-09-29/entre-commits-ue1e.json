@@ -2,7 +2,7 @@
   "bloco": "UE1e",
   "commits": [
     {
-      "commit": "a4c202be",
+      "commit": "4ad0dd4a",
       "o_que": "a forma da definição para o recibo da série (a do índice harmonizado sem «em Portugal»), o recibo a usá-la onde existe, e o portão de HTML a conferir cada recibo contra a forma que deve usar e que nenhuma definição de recibo de série nomeia Portugal",
       "corridas": [
         {
@@ -29,7 +29,7 @@
     }
   ],
   "mapa": {
-    "commit": "9d696d3c",
+    "commit": "0dd05dd6",
     "o_que": "o mapa do repositório: as citações que as linhas novas deslocaram, remapeadas, e a forma do recibo da série na entrada do que a medida conta",
     "corrida": {
       "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",

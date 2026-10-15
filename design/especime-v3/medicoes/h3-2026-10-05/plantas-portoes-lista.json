@@ -1,7 +1,7 @@
 [
   {
     "nome": "s1-nota-mudada",
-    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "cabeca": "69dfb859eedefb15f7aae931a79d03a888a37841",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -19,7 +19,7 @@
   },
   {
     "nome": "s1-voz-nota-mudada-com-language",
-    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "cabeca": "69dfb859eedefb15f7aae931a79d03a888a37841",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,
@@ -37,7 +37,7 @@
   },
   {
     "nome": "s1c-voz-nota-com-outra-palavra",
-    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "cabeca": "69dfb859eedefb15f7aae931a79d03a888a37841",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,

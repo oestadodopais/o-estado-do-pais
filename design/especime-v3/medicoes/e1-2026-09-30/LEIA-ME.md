@@ -86,7 +86,7 @@ Nenhum destes protege um número, uma fonte ou uma pessoa de outra maneira do qu
 
 | Medida | O valor | O conhecido-positivo | Mordeu |
 |---|---|---|---|
-| `cabecas` | sítio `441c2eb8` sobre `07549ee1`; motor `6ed528b` sobre `4b46bef` | git cat-file -t de cada cabeça diz «commit» | sim |
+| `cabecas` | sítio `441c2eb8` sobre `7a82c147`; motor `6ed528b` sobre `4b46bef` | git cat-file -t de cada cabeça diz «commit» | sim |
 | `motor_estudos_novos_ficheiros` | 7 edições, 0 ficheiros em falta | uma edição plantada que não existe é dada em falta | sim |
 | `motor_medidas_das_entregas` | 14 de 14 entregas iguais ao registo do portão; a dívida declarada é de atribuições no 17 e no 18 | uma cópia do 16 com «€987 654 321» sem linha dá um órfão a mais | sim |
 | `motor_portao` | código 0 em `6ed528b` | o código lido do ficheiro concorda com a última linha do registo (PASS com 0, FAIL sem 0) | sim |
@@ -133,7 +133,7 @@ No motor, ramo `e1-2026-09-30` sobre `4b46bef`, só com o `Co-Authored-By`, cada
 - `cb89bde` E1: os registos de conteúdo dos quatro estudos novos
 - `2ff34de` E1: os quatro estudos de Évora compostos dos registos dos seis antigos
 
-No sítio, ramo `e1-2026-09-30` sobre `07549ee1`, com o `Co-Authored-By` e o `Claude-Session`:
+No sítio, ramo `e1-2026-09-30` sobre `7a82c147`, com o `Co-Authored-By` e o `Claude-Session`:
 
 - `441c2eb8` E1: a nota do sucessor diz «a 01.10.2026 sucedeu-lhe», e não «sucedido por»
 - `3cab1215` E1: a nota dos pelouros do mandato de 2009 a 2013 diz o que o estudo de quem governou a câmara diz
@@ -225,15 +225,15 @@ No motor, ramo `e1-2026-09-30` sobre `master`, só com o `Co-Authored-By`, cada 
 - `8c8f227` E1b: as emendas do lugar de direção às aberturas do 16, do 18 e do 19
 - `79ab4d5` E1b: os registos de conteúdo do 16, do 18 e do 19 refeitos depois das emendas
 
-No sítio, ramo `e1-2026-09-30`, rebaseado sobre `main` (`dd7f6208`), com o `Co-Authored-By` e o `Claude-Session`:
+No sítio, ramo `e1-2026-09-30`, rebaseado sobre `main` (`dc65109b`), com o `Co-Authored-By` e o `Claude-Session`:
 
-- `90b1ba0a` E1: a corrida final dos portões do construtor anterior na cabeça c6bdf941, deixada na árvore depois do último commit (o primeiro commit desta passagem, feito antes do rebase como `3741a05b`)
-- `992241f5` E1b: as datas de publicação apontam para os commits do ramo rebaseado sobre main
-- `8ffcf085` E1b: as duas contagens do arquivo passam a 17 estudos e a 25 edições pelo mecanismo das linhas do projeto
-- `df9a3f73` E1b: os documentos e os registos do 16, do 18 e do 19 voltam do motor depois das emendas às aberturas
-- `335e0ef0` E1b: o Évora 2027 ganha a sua leitura, e as cópias das leituras dos quatro estudos conferem com o texto do motor
-- `634aea12` E1b: a leitura do Évora 2027 entra no inventário das frases, e a primeira corrida dos portões fica com a razão
-- `64ff4b4a` E1b: a leitura do Évora 2027 diz «a câmara», a palavra do sítio para quem governa o concelho, e a segunda corrida dos portões fica com a razão (a cabeça de código)
+- `c3c0c813` E1: a corrida final dos portões do construtor anterior na cabeça c6bdf941, deixada na árvore depois do último commit (o primeiro commit desta passagem, feito antes do rebase como `3741a05b`)
+- `617a7b16` E1b: as datas de publicação apontam para os commits do ramo rebaseado sobre main
+- `4a7a7a1e` E1b: as duas contagens do arquivo passam a 17 estudos e a 25 edições pelo mecanismo das linhas do projeto
+- `b5c77746` E1b: os documentos e os registos do 16, do 18 e do 19 voltam do motor depois das emendas às aberturas
+- `50b2eeec` E1b: o Évora 2027 ganha a sua leitura, e as cópias das leituras dos quatro estudos conferem com o texto do motor
+- `27a851e9` E1b: a leitura do Évora 2027 entra no inventário das frases, e a primeira corrida dos portões fica com a razão
+- `b789096d` E1b: a leitura do Évora 2027 diz «a câmara», a palavra do sítio para quem governa o concelho, e a segunda corrida dos portões fica com a razão (a cabeça de código)
 - o commit deste relatório, com as provas da passagem, que não pode trazer o seu próprio identificador
 - e o commit seguinte, com os códigos da corrida final dos portões na cabeça do relatório
 
@@ -241,17 +241,17 @@ O rebase deu identificadores novos aos commits do E1 e aos dois primeiros desta 
 
 | antes do rebase | depois | assunto |
 |---|---|---|
-| `8e2fe1d6` | `779bb7b6` | E1: os documentos dos quatro estudos de Évora, alojados como vieram do motor |
-| `fcc2ad44` | `0f39d121` | E1: os registos dos quatro estudos de Évora e os documentos realojados |
-| `1c811075` | `a0bdcdeb` | E1: as 69 linhas de Évora mudam de estudo, e o cruzamento conhece as origens |
-| `0abba32c` | `8a4941a0` | E1: os quatro estudos entram no arquivo, e os seis antigos ficam como edições datadas com a nota do sucessor |
-| `822b93b3` | `43d9f3eb` | E1: a linha dos estudos publicados sobre Évora passa de 6 a 4 pelo mecanismo das linhas derivadas |
-| `b84039d0` | `76157bc8` | E1: a estrutura, o plano da fiabilidade, o mapa do repositório e o README dizem os quatro estudos de Évora |
-| `3cab1215` | `ecef4c56` | E1: a nota dos pelouros do mandato de 2009 a 2013 diz o que o estudo de quem governou a câmara diz |
-| `441c2eb8` | `cbf489b8` | E1: a nota do sucessor diz «a 01.10.2026 sucedeu-lhe», e não «sucedido por» |
-| `c6bdf941` | `1f4cc320` | E1: o relatório do construtor, as medidas, as capturas e os portões |
-| `413505a4` | `634cfae0` | E1b: o mandato da passagem E1b, com as decisões do lugar de direção sobre os pontos de paragem e as emendas às quatro aberturas |
-| `3741a05b` | `90b1ba0a` | E1: a corrida final dos portões do construtor anterior na cabeça c6bdf941, deixada na árvore depois do último commit |
+| `8e2fe1d6` | `655ee250` | E1: os documentos dos quatro estudos de Évora, alojados como vieram do motor |
+| `fcc2ad44` | `2d87f6d9` | E1: os registos dos quatro estudos de Évora e os documentos realojados |
+| `1c811075` | `a634022a` | E1: as 69 linhas de Évora mudam de estudo, e o cruzamento conhece as origens |
+| `0abba32c` | `f5ccda57` | E1: os quatro estudos entram no arquivo, e os seis antigos ficam como edições datadas com a nota do sucessor |
+| `822b93b3` | `25b7796e` | E1: a linha dos estudos publicados sobre Évora passa de 6 a 4 pelo mecanismo das linhas derivadas |
+| `b84039d0` | `9239be48` | E1: a estrutura, o plano da fiabilidade, o mapa do repositório e o README dizem os quatro estudos de Évora |
+| `3cab1215` | `1c209ce5` | E1: a nota dos pelouros do mandato de 2009 a 2013 diz o que o estudo de quem governou a câmara diz |
+| `441c2eb8` | `6e535d11` | E1: a nota do sucessor diz «a 01.10.2026 sucedeu-lhe», e não «sucedido por» |
+| `c6bdf941` | `202b9ceb` | E1: o relatório do construtor, as medidas, as capturas e os portões |
+| `413505a4` | `0d02caae` | E1b: o mandato da passagem E1b, com as decisões do lugar de direção sobre os pontos de paragem e as emendas às quatro aberturas |
+| `3741a05b` | `c3c0c813` | E1: a corrida final dos portões do construtor anterior na cabeça c6bdf941, deixada na árvore depois do último commit |
 
 ### E1b.6 · Os portões
 
@@ -259,9 +259,9 @@ Os três portões do sítio correram sempre pela tranca da máquina (`sh scripts
 
 | Corrida | Cabeça | `npm run build` | `npm run verify` | `npm run typecheck` | O que parou |
 |---|---|---:|---:|---:|---|
-| 1 | `335e0ef0` | 1 | 1 | 0 | o portão da voz: 4 blocos por classificar, a frase da leitura do 19 |
-| 2 | `634aea12` | 0 | 1 | 0 | a L3 do `check:lugar`: 2 ocorrências de «município», na mesma frase |
-| 3, a cabeça de código | `64ff4b4a` | 0 | 0 | 0 | nada: os três a 0, com a árvore limpa no fim |
+| 1 | `50b2eeec` | 1 | 1 | 0 | o portão da voz: 4 blocos por classificar, a frase da leitura do 19 |
+| 2 | `27a851e9` | 0 | 1 | 0 | a L3 do `check:lugar`: 2 ocorrências de «município», na mesma frase |
+| 3, a cabeça de código | `b789096d` | 0 | 0 | 0 | nada: os três a 0, com a árvore limpa no fim |
 
 A corrida final, na cabeça do commit deste relatório, faz-se depois dele, e os seus códigos entram no commit seguinte, em [portoes/e1b/](portoes/e1b/). O portão do motor, `python3 -m core.gate`, na cabeça final do motor: código 0 em `79ab4d5` ([e1b/motor/](e1b/motor/)), de 2026-10-01T03:52:17Z a 2026-10-01T03:56:05Z, com a árvore do motor limpa; e o pre-commit passou nos dois commits do motor. A corrida «portão» do GitHub corre quando o lugar de direção publicar o ramo; esta passagem não faz `push`.
 
@@ -269,7 +269,7 @@ A corrida final, na cabeça do commit deste relatório, faz-se depois dele, e os
 
 | Medida | O valor | O conhecido-positivo | Mordeu |
 |---|---|---|---|
-| `cabecas_e1b` | sítio: a cabeça de código `64ff4b4a` sobre `dd7f6208`; motor: `79ab4d5` sobre `4b46bef`, depois de `6ed528b` | `git cat-file -t` de cada cabeça diz «commit» | sim |
+| `cabecas_e1b` | sítio: a cabeça de código `b789096d` sobre `dc65109b`; motor: `79ab4d5` sobre `4b46bef`, depois de `6ed528b` | `git cat-file -t` de cada cabeça diz «commit» | sim |
 | `rebase_sobre_main` | rebaseado (a base de fusão é a cabeça de `main`), 11 de 11 commits reposicionados, 1 conflito | a cabeça de antes do rebase tem a base antiga por base de fusão | sim |
 | `datas_de_publicacao` | 7 edições novas, 7 a bater com o `git`, 0 com o commit antigo, todas de 01.10.2026 | o ficheiro de antes da passagem não batia em nenhuma das 7 | sim |
 | `contadores_do_arquivo` | 17 contra a conta 17 e 25 contra a conta 25, cada uma com 1 entrada selada e o lugar `o-estado-do-pais` | as mesmas linhas antes da passagem (13 e 18) contra a conta de hoje | sim |
@@ -356,12 +356,12 @@ No motor, ramo `e1-2026-09-30` sobre `master`, só com o `Co-Authored-By`, cada 
 - `a8febe0` E1c: as emendas do mandato às edições do 16, do 17, do 18 e do 19
 - `932eaee` E1c: os registos de conteúdo do 16, do 17, do 18 e do 19 refeitos depois das emendas
 
-No sítio, ramo `e1-2026-09-30` sobre `main` (`dd7f6208`), com o `Co-Authored-By` e o `Claude-Session`:
+No sítio, ramo `e1-2026-09-30` sobre `main` (`dc65109b`), com o `Co-Authored-By` e o `Claude-Session`:
 
-- `f78a6ead` E1c: os documentos e os registos do 16, do 17, do 18 e do 19 voltam do motor depois das emendas
-- `bdf5c212` E1c: as fichas dos mandatos de Évora dizem a data da dívida de 2025 e de onde vem, e não que foi deixada ou herdada
-- `d91db6c0` E1c: a leitura do estudo da economia diz que o vencido e o pago se sobrepõem
-- `ca24ea9b` E1c: as réguas do bloco conferem a linha que cada célula cita, exigem as âncoras das reconciliações e apanham a votação por extenso (a cabeça de código)
+- `66208580` E1c: os documentos e os registos do 16, do 17, do 18 e do 19 voltam do motor depois das emendas
+- `fa4b36d5` E1c: as fichas dos mandatos de Évora dizem a data da dívida de 2025 e de onde vem, e não que foi deixada ou herdada
+- `2346d17c` E1c: a leitura do estudo da economia diz que o vencido e o pago se sobrepõem
+- `4d88c273` E1c: as réguas do bloco conferem a linha que cada célula cita, exigem as âncoras das reconciliações e apanham a votação por extenso (a cabeça de código)
 - o commit desta secção, com as provas, as capturas, o mapa de migração e a resposta curta, que não pode trazer o seu próprio identificador
 - e o commit seguinte, com os códigos da corrida final dos portões na cabeça desta secção
 
@@ -373,9 +373,9 @@ Os três portões do sítio correram sempre pela tranca da máquina: os inteiros
 
 | Corrida | Cabeça | `npm run build` | `npm run verify` | `npm run typecheck` | O que parou |
 |---|---|---:|---:|---:|---|
-| construção sozinha | `e7a9e908`, com as mudanças do sítio ainda sem commit | 1 | | | o portão da voz: as duas frases novas da leitura do estudo da economia por classificar e as duas antigas vivas sem página ([e1c/intermedias/](e1c/intermedias/)) |
+| construção sozinha | `4177a632`, com as mudanças do sítio ainda sem commit | 1 | | | o portão da voz: as duas frases novas da leitura do estudo da economia por classificar e as duas antigas vivas sem página ([e1c/intermedias/](e1c/intermedias/)) |
 | portão da voz sozinho, depois do inventário | a mesma construção | | | | código 0: nada por classificar |
-| a cabeça de código | `ca24ea9b` | 0 | 0 | 0 | nada: os três a 0 ([portoes/e1c-codigo/](portoes/e1c-codigo/)) |
+| a cabeça de código | `4d88c273` | 0 | 0 | 0 | nada: os três a 0 ([portoes/e1c-codigo/](portoes/e1c-codigo/)) |
 
 A corrida final, na cabeça do commit desta secção, faz-se depois dele, e os seus códigos entram no commit seguinte, em [portoes/e1c/](portoes/e1c/). A corrida «portão» do GitHub corre quando o lugar de direção publicar o ramo; esta passagem não faz `push`.
 
@@ -383,7 +383,7 @@ A corrida final, na cabeça do commit desta secção, faz-se depois dele, e os s
 
 | Medida | O valor | O conhecido-positivo | Mordeu |
 |---|---|---|---|
-| `cabecas_e1c` | sítio: a cabeça de código `ca24ea9b` sobre `dd7f6208`; motor: `932eaee` sobre `4b46bef`, depois de `79ab4d5` | `git cat-file -t` de cada cabeça diz «commit» | sim |
+| `cabecas_e1c` | sítio: a cabeça de código `4d88c273` sobre `dc65109b`; motor: `932eaee` sobre `4b46bef`, depois de `79ab4d5` | `git cat-file -t` de cada cabeça diz «commit» | sim |
 | `celulas_e_linha_citada` | 1820 figuras nas células dos sete registos, 242 em linhas que escrevem a página ou a folha, 6 linhas de total da tabela; 0 falhas | três plantas numa cópia do registo do 19: o total de volta à tabela das obras morde na C3, uma obra com a linha de outro valor na C1, o total da folha 43 com a linha da p. 87 na C2 | sim |
 | `celulas_de_tabela_sem_linha` | 0 quantidades sem linha no 16, no 17 e no 18; no 19, 0 por classificar | uma tabela plantada no fim do 16 com «123 456» dá uma célula sem linha a mais | sim |
 | `contradicoes_i180` | as 6 âncoras de 6 nos novos, nenhuma frase que sai fora do seu lugar, nenhuma repetição em dois estudos novos | com os estudos novos vazios, 0 âncoras e a régua falha; com os «cinco votos» plantados no 17, a votação fica em dois estudos e a régua falha | sim |
@@ -397,7 +397,7 @@ A corrida final, na cabeça do commit desta secção, faz-se depois dele, e os s
 | `leitura_da_economia_e1c` | a frase nova nas seis páginas (a lista dos estudos, a página de Évora e a primeira página, nas duas línguas), e a antiga em nenhuma | a frase antiga numa página plantada conta-se uma vez | sim |
 | `travessia_e1c` | 7 documentos realojados dos bytes de `a8febe0`; registos: 7 alterados e 10 inalterados; `check:documentos` 0, e 0 com a origem (17 registos conferidos contra o motor); a conferência das leituras com 0 falhas | os quatro conhecidos-positivos da conferência das leituras morderam | sim |
 | `motor_e1c` | o portão do motor a 0; os dois commits a 0 e 0, e a primeira tentativa a 1; a conta de `dominios-d1` ficou com 24, que o `update` media 25 | o código lido do ficheiro concorda com a última linha do registo, e a primeira tentativa deu código diferente de zero | sim |
-| `portoes_e1c` | a cabeça de código `ca24ea9b`: 0, 0, 0 | o leitor lê o 1 da construção intermédia | sim |
+| `portoes_e1c` | a cabeça de código `4d88c273`: 0, 0, 0 | o leitor lê o 1 da construção intermédia | sim |
 | `capturas_e1c` | 42 de 42 resumos conferidos, 0 problemas, 0 pedidos para fora, cabeça limpa | dois corpos que diferem num byte dão resumos diferentes | sim |
 | `mapa_de_migracao_e1c` | em português, 673 blocos e 678 destinos, a soma a bater; em inglês, 534 blocos, 87 sem destino com a razão | cada bloco tem destino ou a razão de não ter | sim |
 | `custo_e1c` | 3162 segundos desde o primeiro commit da passagem (E1c.8) | o primeiro commit da passagem no motor é o das emendas | sim |
@@ -443,9 +443,9 @@ No motor, só com o `Co-Authored-By`, cada um com o `python3 -m core.gate` do pr
 
 No sítio, com o `Co-Authored-By` e o `Claude-Session`:
 
-- `72c680b0` E1d: os documentos e os registos do 18 voltam do motor depois da emenda do corpo
-- `b07aa130` E1d: as fichas dos mandatos de 2013 a 2025 dizem a data das dívidas de fim de ano e de onde vêm
-- `30dcec5c` E1d: os guiões da passagem: as medidas, o realojamento do 18 e as capturas das fichas e do estudo da economia (a cabeça de código)
+- `7805a0e0` E1d: os documentos e os registos do 18 voltam do motor depois da emenda do corpo
+- `a797f847` E1d: as fichas dos mandatos de 2013 a 2025 dizem a data das dívidas de fim de ano e de onde vêm
+- `7f78f4b9` E1d: os guiões da passagem: as medidas, o realojamento do 18 e as capturas das fichas e do estudo da economia (a cabeça de código)
 - o commit desta secção, com as provas, as capturas e a resposta curta
 - e o commit seguinte, com os códigos da corrida final dos portões
 
@@ -453,13 +453,13 @@ No sítio, com o `Co-Authored-By` e o `Claude-Session`:
 
 O portão do motor na cabeça final do motor: código 0 em `7187b82` ([e1d/motor/](e1d/motor/)), de 2026-10-01T07:06:52Z a 2026-10-01T07:10:40Z. A primeira tentativa do primeiro commit do motor saiu com 1, no `export_records_test` (o registo do 18 na árvore de trabalho ainda era o de antes da emenda, e o portão confere a árvore); com os registos refeitos antes do commit, os dois commits passaram (0 e 0).
 
-No sítio, o `check:documentos` saiu com 0, e com 0 com a origem conferida contra o motor (17 registos); a conferência das leituras da E1c, com 0 falhas. Uma construção na cabeça de código `30dcec5c`, pela tranca, saiu com 0 ([e1d/intermedias/](e1d/intermedias/)), e as capturas são dela. A corrida final dos três portões, pela tranca (`sh scripts/leituras/portoes.sh`), faz-se na cabeça do commit desta secção, depois dele, e os seus códigos entram no commit seguinte, em [portoes/e1d/](portoes/e1d/).
+No sítio, o `check:documentos` saiu com 0, e com 0 com a origem conferida contra o motor (17 registos); a conferência das leituras da E1c, com 0 falhas. Uma construção na cabeça de código `7f78f4b9`, pela tranca, saiu com 0 ([e1d/intermedias/](e1d/intermedias/)), e as capturas são dela. A corrida final dos três portões, pela tranca (`sh scripts/leituras/portoes.sh`), faz-se na cabeça do commit desta secção, depois dele, e os seus códigos entram no commit seguinte, em [portoes/e1d/](portoes/e1d/).
 
 ### E1d.4 · As medidas e os conhecidos-positivos
 
 | Medida | O valor | O conhecido-positivo | Mordeu |
 |---|---|---|---|
-| `cabecas_e1d` | sítio `30dcec5c`, motor `7187b82`, depois da E1c (`e986468d`, `932eaee`) | `git cat-file -t` de cada cabeça diz «commit» | sim |
+| `cabecas_e1d` | sítio `7f78f4b9`, motor `7187b82`, depois da E1c (`10fc47e8`, `932eaee`) | `git cat-file -t` de cada cabeça diz «commit» | sim |
 | `fichas_e1d` | 12 de 12 campos com a frase, a data e a linha, nas duas edições; os de 31.10.2013 sem a frase | a ficha de 2017 a 2021 como estava é dada como errada | sim |
 | `regiao_e1d` | a frase antiga a 0 e a nova presente, no motor e no documento alojado, nas duas edições | a frase antiga estava no motor e no documento alojado na E1c | sim |
 | `travessia_e1d` | 2 documentos realojados dos bytes de `4f3165a`; registos: 2 alterados e 15 inalterados | os conhecidos-positivos da conferência das leituras morderam | sim |
@@ -497,8 +497,8 @@ No motor, só com o `Co-Authored-By`, cada um com o `python3 -m core.gate` do pr
 
 No sítio, com o `Co-Authored-By` e o `Claude-Session`:
 
-- `72efe684` E1e: os documentos e os registos do 17 e do 18 voltam do motor depois das emendas
-- `527d8b1c` E1e: a C3 pede duas linhas para um total, os guiões de medida saem com 1 numa medida real que falha, e a conferência das leituras conta o documento em falta e o gabarito ilegível (a cabeça de código, com as provas)
+- `43c6d911` E1e: os documentos e os registos do 17 e do 18 voltam do motor depois das emendas
+- `315867ef` E1e: a C3 pede duas linhas para um total, os guiões de medida saem com 1 numa medida real que falha, e a conferência das leituras conta o documento em falta e o gabarito ilegível (a cabeça de código, com as provas)
 - o commit desta secção, com as medidas, o guião delas e a resposta curta
 - e o commit seguinte, com os códigos da corrida final dos portões
 

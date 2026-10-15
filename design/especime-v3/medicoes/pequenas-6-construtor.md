@@ -1,7 +1,7 @@
 # Correções pequenas, sexta passagem · relatório do construtor
 
 *Escrito a 29.08.2026 por Claude Opus 5, ramo `pequenas-6-2026-08-29`, saído de
-`main` `58cc881`, contra `briefs/BRIEF-correcoes-pequenas-6.md`. Seis commits, mais
+`main` `f7bfc87`, contra `briefs/BRIEF-correcoes-pequenas-6.md`. Seis commits, mais
 o que traz este relatório, que não pode conter o seu próprio resumo. Nada
 fundido, nada empurrado. Sem travessões na prosa.*
 
@@ -21,16 +21,16 @@ fundido, nada empurrado. Sem travessões na prosa.*
 
 | commit | o quê |
 | --- | --- |
-| `fbe2375` | I37: o byte nulo sai de `ledger.mjs`, e `check-ledger.mjs` recusa bytes de controlo |
-| `7317464` | o formato aprende `name` e `name_source`, e as réguas que os prendem |
-| `0c73bf3` | as 1553 linhas ganham o rótulo, das três corridas do exportador |
-| `1577d1c` | a superfície mostra o nome, com a língua declarada e a régua que a impõe |
-| `c10119e` | os oito tipos cortados, o utensílio, a célula e a §8 do `TIPOS.md` |
-| `b354118` | ISSUES: a I37 fecha, com o commit que a fechou |
+| `adffb58` | I37: o byte nulo sai de `ledger.mjs`, e `check-ledger.mjs` recusa bytes de controlo |
+| `db9f7da` | o formato aprende `name` e `name_source`, e as réguas que os prendem |
+| `9eb2e75` | as 1553 linhas ganham o rótulo, das três corridas do exportador |
+| `f55964b` | a superfície mostra o nome, com a língua declarada e a régua que a impõe |
+| `21a709c` | os oito tipos cortados, o utensílio, a célula e a §8 do `TIPOS.md` |
+| `c684b39` | ISSUES: a I37 fecha, com o commit que a fechou |
 
 Todos com caminhos explícitos, nunca `git add -A`. Todos com os dois trailers.
 `DECISIONS.md` não foi tocado. A cadeia inteira (`npm run build`, `verify`,
-`typecheck`) corre verde em cada um e corre verde em `b354118`.
+`typecheck`) corre verde em cada um e corre verde em `c684b39`.
 
 ## 2 · As contagens
 
@@ -269,7 +269,7 @@ foi encenado, modificado ou apagado.
   corte dos tipos, porque é ele que confere os resumos de `TIPOS.md`, e morre em
   «não encontrei em `src/styles/inicio.css`: a largura do selo do mapa no
   telemóvel (`.movel-selo { width }`)». Não é desta passagem: `.movel-selo` não
-  existe naquela folha em `58cc881` (`grep -c` dá 0 nos dois estados) e a folha
+  existe naquela folha em `f7bfc87` (`grep -c` dá 0 nos dois estados) e a folha
   não foi tocada aqui. O que **é** desta passagem foi conferido à mão com a mesma
   regra de leitura do feixe: **os 11 ficheiros declarados em `TIPOS.md` batem
   certo com os bytes em disco, e os 8 WOFF2 pelos resumos novos da §8.** O

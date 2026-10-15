@@ -58,8 +58,8 @@ def reproduzir_entrega():
     """Conta o âmbito histórico de cada auditoria, antes do próprio registo."""
     prefixo = AQUI.relative_to(RAIZ).as_posix() + '/'
     auditorias = []
-    for revisao, registo, local in [('6c107622', 'auditoria-entrega.json', None),
-                                   ('24f4298c', 'auditoria-entrega-b.json', 'portoes-b/alvos.json')]:
+    for revisao, registo, local in [('b481c684', 'auditoria-entrega.json', None),
+                                   ('64794c3c', 'auditoria-entrega-b.json', 'portoes-b/alvos.json')]:
         cabeca = subprocess.check_output(['git', 'rev-parse', revisao], cwd=RAIZ).decode().strip()
         seguidos = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', '-z',
                                             cabeca, '--', prefixo], cwd=RAIZ).decode().split('\0')

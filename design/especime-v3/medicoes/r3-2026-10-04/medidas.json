@@ -2,8 +2,8 @@
   "bloco": "R3",
   "brief": "design/observatorio/BRIEF-R3-o-indice-do-sitio.md",
   "guiao": "design/especime-v3/medicoes/r3-2026-10-04/medir-r3.mjs",
-  "cabeca": "a6a577feed154622bf427fb94aa47f71fdd7bd85",
-  "construcao": "a6a577feed154622bf427fb94aa47f71fdd7bd85",
+  "cabeca": "5fdbbff54415b6f0948d9e04cd4e5b4bbc63f15e",
+  "construcao": "5fdbbff54415b6f0948d9e04cd4e5b4bbc63f15e",
   "total_de_medidas": 118,
   "medidas": [
     {
@@ -72,7 +72,7 @@
     {
       "nome": "chaves_novas_em_strings",
       "valor": 9,
-      "comando": "node: as chaves de STRINGS.pt na cabeça contra as de 7efcc9ae",
+      "comando": "node: as chaves de STRINGS.pt na cabeça contra as de c4021b85",
       "conhecido_positivo": {
         "o_que": "nav.indice é uma delas",
         "encontrado": true
@@ -90,9 +90,9 @@
     {
       "nome": "ficheiros_do_livro_razao_mudados_no_bloco",
       "valor": 0,
-      "comando": "git diff --name-only 7efcc9ae..HEAD -- ledger/",
+      "comando": "git diff --name-only c4021b85..HEAD -- ledger/",
       "conhecido_positivo": {
-        "o_que": "o mesmo comando sobre o último commit que tocou em ledger/claims (05312266) lista ficheiros",
+        "o_que": "o mesmo comando sobre o último commit que tocou em ledger/claims (9d7c75ab) lista ficheiros",
         "encontrado": true
       }
     },
@@ -638,7 +638,7 @@
     },
     {
       "nome": "cabeca_dos_portoes",
-      "valor": "a6a577feed154622bf427fb94aa47f71fdd7bd85",
+      "valor": "5fdbbff54415b6f0948d9e04cd4e5b4bbc63f15e",
       "comando": "o ficheiro design/especime-v3/medicoes/r3-2026-10-04/portoes/cabeca",
       "conhecido_positivo": {
         "o_que": "a cabeça no fim da corrida é a mesma do princípio",
@@ -647,7 +647,7 @@
     },
     {
       "nome": "main_do_rebase",
-      "valor": "b2fbdd28de97df4a0507eedc18448924060c84d2",
+      "valor": "533681fff88ee42fcb4d1c29006b6af6e259615a",
       "comando": "git -C <árvore principal> rev-parse main, antes do rebase (design/especime-v3/medicoes/r3-2026-10-04/rebase-r3b.json)",
       "conhecido_positivo": {
         "o_que": "o commit do brief no ramo rebaseado tem esse main por pai",
@@ -665,7 +665,7 @@
     },
     {
       "nome": "main_do_primeiro_rebase",
-      "valor": "7af9073132b92ed7aca7fec0c906f1a08626d446",
+      "valor": "91294c419a9d9dbe7b2f4cd80651af4e66a80ae0",
       "comando": "o mesmo registo, o primeiro rebase",
       "conhecido_positivo": {
         "o_que": "a cabeça da corrida dos portões desse rebase descende dele",
@@ -873,7 +873,7 @@
     {
       "nome": "mapa_base_citacoes_na_linha",
       "valor": 304,
-      "comando": "a mesma régua sobre uma extração de 7efcc9ae (git archive, sem checkout)",
+      "comando": "a mesma régua sobre uma extração de c4021b85 (git archive, sem checkout)",
       "conhecido_positivo": {
         "o_que": "a mesma corrida",
         "encontrado": true
@@ -891,7 +891,7 @@
     {
       "nome": "mapa_citacoes_que_andaram_com_o_bloco",
       "valor": 0,
-      "comando": "python3 design/especime-v3/medicoes/r3-2026-10-04/comparar-mapa.py (mapa-citacoes-que-andaram.json): as citações longe da linha que não estavam longe na base e citam um ficheiro mudado em 7efcc9ae..HEAD",
+      "comando": "python3 design/especime-v3/medicoes/r3-2026-10-04/comparar-mapa.py (mapa-citacoes-que-andaram.json): as citações longe da linha que não estavam longe na base e citam um ficheiro mudado em c4021b85..HEAD",
       "conhecido_positivo": {
         "o_que": "a corrida da base tem citações longe da linha, e o mesmo leitor encontra-as",
         "encontrado": true
@@ -990,7 +990,7 @@
     {
       "nome": "decisoes_em_vigor_depois",
       "valor": 61,
-      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo 7efcc9ae..HEAD > design/especime-v3/medicoes/r3-2026-10-04/decisoes-em-vigor-depois.txt",
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo c4021b85..HEAD > design/especime-v3/medicoes/r3-2026-10-04/decisoes-em-vigor-depois.txt",
       "conhecido_positivo": {
         "o_que": "a §1.154 está na lista",
         "encontrado": true

@@ -1,6 +1,6 @@
 {
   "o_que_e": "EX1-b: as capturas da lista, da explicação, da leitura da semana, da primeira página e do rodapé, nas cinco larguras e nas duas edições, com as medidas no ecrã e as plantas no navegador.",
-  "construcao": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+  "construcao": "f3f0415f4b2f5f36cc0eca7a09a095a9655d5ad8",
   "construido_em": "2026-10-06T03:19:08.830Z",
   "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/captar-ex1b.mjs --json ex1b/capturas.json",
   "capturas": [

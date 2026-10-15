@@ -1,6 +1,6 @@
 {
   "cabecas_codigo": {
-    "sitio": "466f83871ae13eff45a9cd28dcb73470a45114cc",
+    "sitio": "0b8b9963562e72be42273cea7734b40efcb8d938",
     "motor": "481e15e2ba384703dfdfb83b7aca62f4b3ae24ef"
   },
   "codigos": {
@@ -33,63 +33,63 @@
   "commits": {
     "sitio": [
       {
-        "cabeca": "64d81b2137f8f97fc5f724d30d2c98de94eceacb",
-        "assunto": "Funde main f3aaa3e7 no ramo JD1 antes da passagem JD1-b"
+        "cabeca": "d3defd90b7145814d78c07b361dad419712535ff",
+        "assunto": "Funde main 7952dc25 no ramo JD1 antes da passagem JD1-b"
       },
       {
-        "cabeca": "9ffbc7bde9d4dc5de3b585dc3bacf22ffd43ed89",
+        "cabeca": "6d1b99fc1f7afb2401a797b98afe09fa593870f7",
         "assunto": "JD1-b: confere fusão verde, mapa e controlos do pacote"
       },
       {
-        "cabeca": "2d16cd4fb3c3aac4f77c420aaab9139c047fd3d6",
+        "cabeca": "9dc1bcc6e11051b16fec1efa4a09e268327bd7a3",
         "assunto": "JD1-b: conservar as leituras distintas do mesmo dia (achado 17)"
       },
       {
-        "cabeca": "828fbcfd362bb7ba1d9e22c5f5c05a16db1fc97d",
+        "cabeca": "5eac45d7c12d367b2ab733274c224a868c98cbb2",
         "assunto": "JD1-b: diz que os valores INE de 2025 são provisórios (achado 5)"
       },
       {
-        "cabeca": "3713016918e8ef3f2812cbae6992d9dd49fcc245",
+        "cabeca": "607c87b38a6a2008700e68b21fca766ffc3980cf",
         "assunto": "JD1-b: fixar as catorze linhas e dizer o alcance da L1 (achado 16)"
       },
       {
-        "cabeca": "3f0f301148bc0380ab64e14c61a796a70251a94c",
+        "cabeca": "e83103f53403747139a7786d8a9fdbdcb386eb1b",
         "assunto": "JD1-b: retirar a estrutura local de todos os ficheiros do ramo (achado 19)"
       },
       {
-        "cabeca": "4c238ab3766f789d095da24cf87191b0f41b6453",
+        "cabeca": "e8356ab051bddaed25077de16aab9921c75dcedc",
         "assunto": "JD1-b: preparar as sessenta capturas e os códigos próprios da passagem"
       },
       {
-        "cabeca": "8f03806257efe050b9928a554849496bcca1da21",
+        "cabeca": "935674788b61dcefd730e7039279739fccdfba37",
         "assunto": "JD1-b: explicar as medidas e dar escala aos recibos (achados 6–8)"
       },
       {
-        "cabeca": "25e8ddcaabfc745bb5c684bbab55e8aa9f59262b",
+        "cabeca": "8f88c9ae8b9020d9eb120729732041d23b4ab28f",
         "assunto": "JD1-b: nomear o perímetro e a base de cada medida (achado 11)"
       },
       {
-        "cabeca": "ca4dc1eb598f7f8daac73f5843e6c04195835aae",
+        "cabeca": "66912f128ccdd9c8109c6091b5ce5fdfb5abee74",
         "assunto": "JD1-b: conferir o caminho JSON da prova europeia (achados 6–8)"
       },
       {
-        "cabeca": "cd760c428d23fa888dec5740616f04d6c35e4d99",
+        "cabeca": "04d4e67be65a10b7b908b582c0b5ff3ced29502b",
         "assunto": "JD1-b: ligar os custos aos rótulos assinalados do gráfico (achado 9)"
       },
       {
-        "cabeca": "1b2076d887edff440ea494910e88c3d839ed72b6",
+        "cabeca": "90d21c7d6ee0350b09074d942883a7ee66499a97",
         "assunto": "JD1-b: conservar o ano e a data tal como a fonte os dá (achado 12)"
       },
       {
-        "cabeca": "6353dcf5954dc85f7a1c72a0536d70f1f4dca18a",
+        "cabeca": "58df5fc74e5a19517310605a125aa2f1f59ece7b",
         "assunto": "JD1-b: cortar o excerto antes dos gráficos vizinhos (achado 9)"
       },
       {
-        "cabeca": "b6b2c08c1df485c601b1f7c42786d519638dcf46",
+        "cabeca": "344e400aa1cd3cb9a2d2e2a0a998527536152471",
         "assunto": "JD1-b: tornar visível a parcela do financiamento no quadro da fonte (achados 6 a 8)"
       },
       {
-        "cabeca": "eba709a8432226298c3f53bb86188bf673121e9a",
+        "cabeca": "3677a08380fc1b5124ac821d780599759054eb7d",
         "assunto": "JD1-b: usar um título por publicação do INE e da execução (achado 13)"
       },
       {
@@ -105,7 +105,7 @@
         "assunto": "JD1-b: atualizar os resumos dos briefs após a limpeza de caminhos (achado 19)"
       },
       {
-        "cabeca": "466f83871ae13eff45a9cd28dcb73470a45114cc",
+        "cabeca": "0b8b9963562e72be42273cea7734b40efcb8d938",
         "assunto": "JD1-b: ligar o fim de agosto ao saldo por pagar"
       }
     ],

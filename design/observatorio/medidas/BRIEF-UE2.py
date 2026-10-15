@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""O §0 do brief UE2 (a página da União como a página dos países), medido sobre a cabeça presa do sítio (636cb657).
+"""O §0 do brief UE2 (a página da União como a página dos países), medido sobre a cabeça presa do sítio (444995f3).
 Não lê a rede: lê as séries, as declarações dos cartões, a faixa da União e as capturas do K2 na cabeça. Escreve
 design/observatorio/medidas/BRIEF-UE2.json (ou o caminho em OEDP_MEDIDAS_JSON). Cada medição leva o comando e um
 conhecido-positivo; o que não conseguir ler fica «NÃO LIDO»."""
 import json, os, pathlib, re, struct, subprocess
 
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "636cb657"
+CAB = "444995f3"
 NAO = "NÃO LIDO"
 medidas = []
 

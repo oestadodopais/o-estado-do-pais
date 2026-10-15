@@ -1,7 +1,7 @@
 {
   "bloco": "UE1e",
-  "cabeca_do_codigo": "9d696d3cdda09325a24f9a6c8883118e0808e731",
-  "base": "aba0a48b",
+  "cabeca_do_codigo": "0dd05dd69e521be58503732e164e2c9df6e9e6e8",
+  "base": "6ff9e8c1",
   "guiao": "design/especime-v3/medicoes/ue1-2026-09-29/medir-ue1e.mjs",
   "medidas": [
     {
@@ -9,7 +9,7 @@
       "valor": 0,
       "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1e/build.codigo",
       "conhecido_positivo": {
-        "o_que": "o registo da corrida é desta cabeça (9d696d3c)",
+        "o_que": "o registo da corrida é desta cabeça (0dd05dd6)",
         "encontrado": true
       }
     },
@@ -27,7 +27,7 @@
       "valor": 0,
       "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1e/verify.codigo",
       "conhecido_positivo": {
-        "o_que": "o registo da corrida é desta cabeça (9d696d3c)",
+        "o_que": "o registo da corrida é desta cabeça (0dd05dd6)",
         "encontrado": true
       }
     },
@@ -45,7 +45,7 @@
       "valor": 0,
       "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/ue1e/typecheck.codigo",
       "conhecido_positivo": {
-        "o_que": "o registo da corrida é desta cabeça (9d696d3c)",
+        "o_que": "o registo da corrida é desta cabeça (0dd05dd6)",
         "encontrado": true
       }
     },
@@ -106,7 +106,7 @@
     {
       "nome": "decisoes_citadas_nos_ficheiros_da_passagem",
       "valor": 25,
-      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo aba0a48b..<cabeça>, guardada em design/especime-v3/medicoes/ue1-2026-09-29/decisoes-em-vigor-ue1e.txt",
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo 6ff9e8c1..<cabeça>, guardada em design/especime-v3/medicoes/ue1-2026-09-29/decisoes-em-vigor-ue1e.txt",
       "conhecido_positivo": {
         "o_que": "a linha final existe (o guião sai com 2 se o seu conhecido-positivo falhar)",
         "encontrado": true
@@ -585,7 +585,7 @@
     {
       "nome": "ficheiros_mudados_pela_passagem",
       "valor": 4,
-      "comando": "git diff --name-only aba0a48b <cabeça>",
+      "comando": "git diff --name-only 6ff9e8c1 <cabeça>",
       "conhecido_positivo": {
         "o_que": "o mesmo comando vê o recibo da série mudado",
         "encontrado": true
@@ -608,7 +608,7 @@
     {
       "nome": "linhas_do_livro_mudadas",
       "valor": 0,
-      "comando": "git diff --name-only aba0a48b <cabeça> -- ledger/claims",
+      "comando": "git diff --name-only 6ff9e8c1 <cabeça> -- ledger/claims",
       "conhecido_positivo": {
         "o_que": "o mesmo comando vê o recibo da série mudado",
         "encontrado": true
@@ -617,7 +617,7 @@
     {
       "nome": "series_do_livro_mudadas",
       "valor": 0,
-      "comando": "git diff --name-only aba0a48b <cabeça> -- as séries, os registos e a tabela dos nomes",
+      "comando": "git diff --name-only 6ff9e8c1 <cabeça> -- as séries, os registos e a tabela dos nomes",
       "conhecido_positivo": {
         "o_que": "o mesmo comando vê o recibo da série mudado",
         "encontrado": true
@@ -626,7 +626,7 @@
     {
       "nome": "auditoria_das_perguntas_mudada",
       "valor": 0,
-      "comando": "git diff --name-only aba0a48b <cabeça> -- a auditoria das perguntas (K16)",
+      "comando": "git diff --name-only 6ff9e8c1 <cabeça> -- a auditoria das perguntas (K16)",
       "conhecido_positivo": {
         "o_que": "o mesmo comando vê o recibo da série mudado",
         "encontrado": true
@@ -635,7 +635,7 @@
     {
       "nome": "leituras_mudadas",
       "valor": 0,
-      "comando": "git diff --name-only aba0a48b <cabeça> -- as leituras dos cartões e a sua auditoria",
+      "comando": "git diff --name-only 6ff9e8c1 <cabeça> -- as leituras dos cartões e a sua auditoria",
       "conhecido_positivo": {
         "o_que": "o mesmo comando vê o recibo da série mudado",
         "encontrado": true
@@ -644,7 +644,7 @@
     {
       "nome": "inventario_das_frases_mudado",
       "valor": 0,
-      "comando": "git diff --name-only aba0a48b <cabeça> -- o inventário das frases",
+      "comando": "git diff --name-only 6ff9e8c1 <cabeça> -- o inventário das frases",
       "conhecido_positivo": {
         "o_que": "o mesmo comando vê o recibo da série mudado",
         "encontrado": true
@@ -653,7 +653,7 @@
     {
       "nome": "brief_mudado",
       "valor": 0,
-      "comando": "git diff --name-only aba0a48b <cabeça> -- o brief",
+      "comando": "git diff --name-only 6ff9e8c1 <cabeça> -- o brief",
       "conhecido_positivo": {
         "o_que": "o mesmo comando vê o recibo da série mudado",
         "encontrado": true
@@ -662,7 +662,7 @@
     {
       "nome": "acertos_l1_mudado",
       "valor": 0,
-      "comando": "git diff --name-only aba0a48b <cabeça> -- a pasta do acertos-l1.py",
+      "comando": "git diff --name-only 6ff9e8c1 <cabeça> -- a pasta do acertos-l1.py",
       "conhecido_positivo": {
         "o_que": "o mesmo comando vê o recibo da série mudado",
         "encontrado": true
@@ -671,7 +671,7 @@
     {
       "nome": "guiao_da_aterragem_mudado",
       "valor": 0,
-      "comando": "git diff --name-only aba0a48b <cabeça> -- scripts/aterrar.sh",
+      "comando": "git diff --name-only 6ff9e8c1 <cabeça> -- scripts/aterrar.sh",
       "conhecido_positivo": {
         "o_que": "o mesmo comando vê o recibo da série mudado",
         "encontrado": true
@@ -680,7 +680,7 @@
     {
       "nome": "commits_de_codigo_da_passagem",
       "valor": 2,
-      "comando": "git rev-list --count aba0a48b..<cabeça>",
+      "comando": "git rev-list --count 6ff9e8c1..<cabeça>",
       "conhecido_positivo": {
         "o_que": "a base é antepassada da cabeça",
         "encontrado": true
@@ -707,7 +707,7 @@
     {
       "nome": "custo_inicio_da_passagem",
       "valor": "2026-09-29T22:53:37Z",
-      "comando": "git show -s --format=%cI aba0a48b (o commit do lugar de direção por cima do qual a passagem se construiu)",
+      "comando": "git show -s --format=%cI 6ff9e8c1 (o commit do lugar de direção por cima do qual a passagem se construiu)",
       "conhecido_positivo": {
         "o_que": "a hora leu-se",
         "encontrado": true

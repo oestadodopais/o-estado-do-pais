@@ -159,7 +159,7 @@ const TIPOS_ORIGEM = path.join(RAIZ, 'public', 'tipos');
  */
 /** O maior cartão medido, em KiB, e a corrida que o mediu. */
 /* A CATRACA MEXEU A 03.10.2026 (o S1, a caixa das sugestões): o cartão do índice do livro-razão mediu 596,8 KiB na corrida
-   dos portões da cabeça rebaseada `35a12e15` (o `verify` do S1), 0,05 KiB acima do tecto de 542,5 + 10 %, porque o índice
+   dos portões da cabeça rebaseada `d908841f` (o `verify` do S1), 0,05 KiB acima do tecto de 542,5 + 10 %, porque o índice
    tem hoje 3 009 linhas e cada página leva a porta nova das sugestões no rodapé. O número medido passa ao de hoje, como a
    regra acima manda, com a data e a corrida ao lado. Fica escrito o que a regra também diz: o dia em que este número voltar
    a bater é o dia de o cartão passar a ser um recorte do índice, e não o índice inteiro.

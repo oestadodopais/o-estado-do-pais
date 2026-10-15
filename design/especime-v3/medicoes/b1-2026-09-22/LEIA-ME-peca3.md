@@ -2,7 +2,7 @@
 
 Três passagens: construção, primeira correção e segunda correção.\
 Estado desta passagem: sete pontos corrigidos e provados, capturas refeitas.\
-Cabeça final do código: `5b76753f`; o commit deste relatório acrescenta as provas e as capturas.\
+Cabeça final do código: `d1007bed`; o commit deste relatório acrescenta as provas e as capturas.\
 Os três portões só se leem na tabela da última passagem, onde aguardam o lugar de direção.\
 O primeiro parágrafo descreve a construção e é história.
 
@@ -91,47 +91,47 @@ Nas 35 capturas depois: deslocamento lateral máximo de 0 px, nenhum valor ou se
 
 ## Commits
 
-Saída de `git log --format='%h %s%n%(trailers)' main..HEAD`, recolhida na cabeça final das réguas, `8ad55589`. A construção e as capturas são de `45f056f8`; os dois commits seguintes só acertam as réguas I11 e K6. O commit seguinte acrescenta apenas este relatório, capturas e medições. Os corpos dos dois primeiros commits estão também em [autoria-peca3.log](autoria-peca3.log).
+Saída de `git log --format='%h %s%n%(trailers)' main..HEAD`, recolhida na cabeça final das réguas, `b87eaa01`. A construção e as capturas são de `746ff1d4`; os dois commits seguintes só acertam as réguas I11 e K6. O commit seguinte acrescenta apenas este relatório, capturas e medições. Os corpos dos dois primeiros commits estão também em [autoria-peca3.log](autoria-peca3.log).
 
 ```text
-8ad55589 B1: conferir as glosas declaradas nas definições dos cartões
+b87eaa01 B1: conferir as glosas declaradas nas definições dos cartões
 Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
 Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
 
-c52483d7 B1: acertar a planta do espaço da porta dos lugares
+52db248f B1: acertar a planta do espaço da porta dos lugares
 Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
 Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
 
-45f056f8 B1: conferir a unidade de cada correção contra a sua linha
+746ff1d4 B1: conferir a unidade de cada correção contra a sua linha
 Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
 Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
 
-d5086779 B1: classificar as unidades do registo de correções
+f41a3d8c B1: classificar as unidades do registo de correções
 Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
 Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
 
-6fc06cb4 B1: conferir os temas, as mudanças e as cinco portas
+e9e97f5f B1: conferir os temas, as mudanças e as cinco portas
 Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
 Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
 
-913caee6 B1: reunir as correções e separar os alvos do rodapé
+60ac2772 B1: reunir as correções e separar os alvos do rodapé
 Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
 Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
 
-1b44de26 B1: leitura do país e medidas reunidas por tema
+1ca900f9 B1: leitura do país e medidas reunidas por tema
 Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
 
-ad6c0d8f B1: cinco portas no menu e rodapé corrido
+347c018f B1: cinco portas no menu e rodapé corrido
 Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
 
-977a1c13 O guião do construtor da peça 3 do B1 (o país e o menu de cinco), fechado com o que a peça 2 deixou
+a3d1d7c5 O guião do construtor da peça 3 do B1 (o país e o menu de cinco), fechado com o que a peça 2 deixou
 Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_016dojDrtR3Thizhpckp9ENd
 ```
 
 ## Conferência final
 
-A construção, as 35 capturas depois e os três comandos completos pertencem a `45f056f86daf6512d1651befce6e0f8e8bd31700`. Cada comando completo correu uma vez, no seu comando, com o código e as horas guardados. Horas em UTC.
+A construção, as 35 capturas depois e os três comandos completos pertencem a `746ff1d426124e451874bb7067ecaf86d3862d7c`. Cada comando completo correu uma vez, no seu comando, com o código e as horas guardados. Horas em UTC.
 
 | Comando completo | Código | Início | Fim |
 | --- | ---: | --- | --- |
@@ -139,21 +139,21 @@ A construção, as 35 capturas depois e os três comandos completos pertencem a 
 | `npm run verify` | 1 | 2026-09-21T20:55:45Z | 2026-09-21T21:02:09Z |
 | `npm run typecheck` | 0 | 2026-09-21T20:50:09Z | 2026-09-21T20:50:10Z |
 
-O `verify` parou em `check:indice`, na planta I11 da mobília antiga. A página tinha espaço; a planta já não o retirava. A correção ficou em `c52483d7`. A continuação isolada encontrou três diferenças K6 nas definições dos cartões dos temas: eram as glosas já declaradas, que a régua não comparava. A correção e as duas plantas ficaram em `8ad55589`. Só estes dois ficheiros de teste mudaram depois da construção. O cartão e o HTML das páginas não mudaram.
+O `verify` parou em `check:indice`, na planta I11 da mobília antiga. A página tinha espaço; a planta já não o retirava. A correção ficou em `52db248f`. A continuação isolada encontrou três diferenças K6 nas definições dos cartões dos temas: eram as glosas já declaradas, que a régua não comparava. A correção e as duas plantas ficaram em `b87eaa01`. Só estes dois ficheiros de teste mudaram depois da construção. O cartão e o HTML das páginas não mudaram.
 
 | Continuação isolada | Código | Cabeça |
 | --- | ---: | --- |
-| `node tests/livro/indice.mjs --navegador` | 0 | `c52483d7` |
-| `npm run check:cartao` | 0 | `8ad55589` |
-| `npm run check:nomes` | 0 | `c52483d7` |
-| `npm run check:palavras` | 0 | `c52483d7` |
-| `npm run design:feixe` | 0 | `c52483d7` |
+| `node tests/livro/indice.mjs --navegador` | 0 | `52db248f` |
+| `npm run check:cartao` | 0 | `b87eaa01` |
+| `npm run check:nomes` | 0 | `52db248f` |
+| `npm run check:palavras` | 0 | `52db248f` |
+| `npm run design:feixe` | 0 | `52db248f` |
 
 Não se reescreveu `verify-peca3.codigo` e não se voltou a correr a cadeia completa. O resultado literal registado continua a ser **0, 1, 0**. A conferência final de tipos das duas réguas também passou. O `verify` mediu os 840 cartões de partilha; a continuação de `check:cartao` conferiu 5 272 cartões de medida, 152 períodos anteriores e as plantas. Os registos de cada continuação têm `.inicio`, `.fim`, `.cabeca` e `.codigo`.
 
 Tempo de parede observável: **pelo menos 1 h 30 min**, desde a criação de `node_modules` pelo `npm ci`, às 2026-09-21T19:39:35.558700+00:00, até ao fecho das medições, às 2026-09-21T21:10:04.784910+00:00. A leitura anterior ao `npm ci` não foi cronometrada. O registo está em `tempo-peca3.json`.
 
-A worktree começou limpa em `977a1c13607709ab70d5f346055898e822cf7687`, um commit de prompt sobre `a5c44893`. `npm ci` correu uma vez. Não houve checkout noutra árvore nem push. Os commits usam caminhos explícitos e contêm os dois textos de autoria pedidos. Nos dois primeiros, uma linha vazia separa os trailers, pelo que `git log --format='%(trailers)'` só reconhece o último. A guarda local bloqueou a tentativa de corrigir as mensagens por rebase interativo. Os commits seguintes usam o bloco contíguo correto; não se contornou a guarda.
+A worktree começou limpa em `a3d1d7c5fa024f0005260ca32568ded36b7ee24e`, um commit de prompt sobre `bf96732d`. `npm ci` correu uma vez. Não houve checkout noutra árvore nem push. Os commits usam caminhos explícitos e contêm os dois textos de autoria pedidos. Nos dois primeiros, uma linha vazia separa os trailers, pelo que `git log --format='%(trailers)'` só reconhece o último. A guarda local bloqueou a tentativa de corrigir as mensagens por rebase interativo. Os commits seguintes usam o bloco contíguo correto; não se contornou a guarda.
 
 O mapa do repositório identificou corretamente as duas proteções P. As cadeias de comandos que transcreve antecedem a entrada de `check:lugares`; a cadeia real do `package.json` foi preservada e ganhou `check:pais`. A necessidade de atualizar a sentinela da célula 10 e as extrações do feixe confirmou os avisos dos relatórios anteriores.
 
@@ -184,20 +184,20 @@ OK planta-correcao-olho-pt: código 1; B1 lista fechada país: /: «Estudos sobr
 OK planta-correcao-publicacao-pt: código 1; B1 lista fechada país: /: «Prosa solta da planta».; bytes repostos true
 ```
 
-A construção ficou em `4c992fb4`, depois do nome e da K1 em `cb426ccb`. O guião `captar-peca3.mjs` refez as 35 capturas depois e as vinte janelas, com os mesmos nomes: as cinco famílias nas cinco larguras portuguesas e a 390 e 1 280 em inglês. Os 35 SHA-256 foram reconferidos contra os PNG; os vinte das janelas também ficaram registados. Zero deslocamentos laterais e nenhum valor ou selo partido. Os registos e as capturas entram antes dos três comandos completos; o último commit fica limitado aos registos desses comandos e a esta tabela. Não houve checkout noutra árvore nem push.
+A construção ficou em `d5da3a6e`, depois do nome e da K1 em `24e9bfe6`. O guião `captar-peca3.mjs` refez as 35 capturas depois e as vinte janelas, com os mesmos nomes: as cinco famílias nas cinco larguras portuguesas e a 390 e 1 280 em inglês. Os 35 SHA-256 foram reconferidos contra os PNG; os vinte das janelas também ficaram registados. Zero deslocamentos laterais e nenhum valor ou selo partido. Os registos e as capturas entram antes dos três comandos completos; o último commit fica limitado aos registos desses comandos e a esta tabela. Não houve checkout noutra árvore nem push.
 
 | Comando completo na cabeça final | Código lido do ficheiro | Início UTC | Fim UTC | Cabeça medida |
 | --- | --- | --- | --- | --- |
-| `npm run build` | 0 | 2026-09-22T03:52:59Z | 2026-09-22T03:57:42Z | `6e3baae0` |
-| `npm run verify` | 0 | 2026-09-22T03:57:55Z | 2026-09-22T04:05:34Z | `6e3baae0` |
-| `npm run typecheck` | 0 | 2026-09-22T04:05:44Z | 2026-09-22T04:05:44Z | `6e3baae0` |
+| `npm run build` | 0 | 2026-09-22T03:52:59Z | 2026-09-22T03:57:42Z | `346bcadb` |
+| `npm run verify` | 0 | 2026-09-22T03:57:55Z | 2026-09-22T04:05:34Z | `346bcadb` |
+| `npm run typecheck` | 0 | 2026-09-22T04:05:44Z | 2026-09-22T04:05:44Z | `346bcadb` |
 
-Os códigos foram lidos dos três ficheiros `.codigo`; cada comando guarda também `.log`, `.inicio`, `.fim` e `.cabeca`. As três cadeias completas passaram à primeira nesta cabeça. Antes delas, as capturas foram repetidas em `6e3baae0`: 55 PNG idênticos aos arquivados e 35 SHA-256 reconferidos. O manifesto conserva a cabeça da construção dos ficheiros, `4c992fb4`. O commit seguinte só regista estas saídas e esta tabela, pela exceção expressa do guião.
+Os códigos foram lidos dos três ficheiros `.codigo`; cada comando guarda também `.log`, `.inicio`, `.fim` e `.cabeca`. As três cadeias completas passaram à primeira nesta cabeça. Antes delas, as capturas foram repetidas em `346bcadb`: 55 PNG idênticos aos arquivados e 35 SHA-256 reconferidos. O manifesto conserva a cabeça da construção dos ficheiros, `d5da3a6e`. O commit seguinte só regista estas saídas e esta tabela, pela exceção expressa do guião.
 
 
 ## A segunda passagem de correção, 22.09.2026
 
-Partida em `6fd5aab7`, sobre `7d323c5f`. Código final em `5b76753f`. As 2 975 linhas do livro-razão e a leitura aprovada continuam idênticas aos bytes da partida. Nenhum push.
+Partida em `701f04e2`, sobre `8f43befe`. Código final em `d1007bed`. As 2 975 linhas do livro-razão e a leitura aprovada continuam idênticas aos bytes da partida. Nenhum push.
 
 | Ponto | Célula | Planta a morder |
 | --- | --- | --- |

@@ -1,5 +1,5 @@
 {
-  "cabeca": "19723a9f3876bff3ad4364d00bb017c63cda56d3",
+  "cabeca": "7d901d4e0e82b0f8be2218f32c9d9fb2a8daa518",
   "ficheiros_vistos": [
     {
       "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/h/corte-pt-390.png",
@@ -155,6 +155,6 @@
     "metodo": "Capturas refeitas na cabeça final, com SHA-256 comparado às imagens anteriormente inspecionadas.",
     "capturas_comparadas": 60,
     "imagens_diferentes": [],
-    "cabeca_da_inspecao_anterior": "d3d44fb47d445e375d68def515c4ea500569360f"
+    "cabeca_da_inspecao_anterior": "dc200d3eb3fc172c79974eaffad7d1504f504c64"
   }
 }

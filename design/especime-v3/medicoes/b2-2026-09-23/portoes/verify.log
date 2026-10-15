@@ -708,7 +708,7 @@
 > o-estado-do-pais@0.1.0 check:cabeca
 > node tests/inicio/hierarquia-b2.mjs
 
-check:cabeca C1; construção 7110ca608ef6addba6771a50b5c47685e4e18026; 110 cabeças; 4 mordidas; 10 reposições
+check:cabeca C1; construção 854283154b3c66ac4594e3798340c4ee4ae4a55f; 110 cabeças; 4 mordidas; 10 reposições
 check:cabeca: PASS
 
 > o-estado-do-pais@0.1.0 check:fontes
@@ -1044,7 +1044,7 @@ A leitura do olho, provada contra o motor:
 
 
 [1m  O feixe de cartões do sistema de desenho[0m
-[90m  design-system/ · de dist/ no commit 7110ca6 · 20 cartões, 11 ficheiros de letra e um README[0m
+[90m  design-system/ · de dist/ no commit 8542831 · 20 cartões, 11 ficheiros de letra e um README[0m
 
 [90m  ficheiro                          grupo          bytes  ok[0m
   01-cor.html                       Fundamentos   375506  [32m✓[0m

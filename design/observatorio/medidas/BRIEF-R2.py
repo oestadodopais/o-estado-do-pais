@@ -5,7 +5,7 @@
 import json, os, pathlib, re, subprocess, collections
 
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "197c6dd4"
+CAB = "96ff1540"
 NAO = "NÃO LIDO"
 medidas = []
 

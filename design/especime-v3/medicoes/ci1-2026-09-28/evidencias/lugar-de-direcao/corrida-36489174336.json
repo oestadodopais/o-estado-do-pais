@@ -9,7 +9,7 @@
  "corridas": [
   {
    "corrida": "36489174336",
-   "cabeca": "078186dff44285aa6839e031857621165c923534",
+   "cabeca": "0cbee822a307ee991ca3102e5fd114cb95c03c39",
    "ramo": "ci1-2026-09-28",
    "evento": "push",
    "conclusao": "success",
@@ -382,7 +382,7 @@
       {
        "celula": "C",
        "ok": true,
-       "texto": "a construção é da cabeça 078186dff44285aa6839e031857621165c923534, carimbada a 2026-09-28T21:56:22.136Z; prova.json escrito a 2026-09-28T21:57:11.761Z, cadeia.json a 2026-09-28T21:57:14.214Z"
+       "texto": "a construção é da cabeça 0cbee822a307ee991ca3102e5fd114cb95c03c39, carimbada a 2026-09-28T21:56:22.136Z; prova.json escrito a 2026-09-28T21:57:11.761Z, cadeia.json a 2026-09-28T21:57:14.214Z"
       }
      ]
     }

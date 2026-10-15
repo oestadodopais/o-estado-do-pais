@@ -28,7 +28,7 @@ proveniência do acesso da C1c. A C1d não mudou nenhum valor do livro.
 | 3. Excertos, achado 10 | Cada um dos 17 excertos ganhou a entrada `proveniencia` sobre `excerpt`, com a data e as razões exatas do mandato. Os valores e os acessos ficaram. | `c1d/excertos.json`, o guião `c1d/excertos.py`, as linhas e a conferência final do livro. |
 | 4. Estimativa, achado 4 | A marca `e` rende «valor estimado» / «estimated value» a partir da nota selada, nas mesmas superfícies HTML da marca provisória: leitura, régua, título do recibo e país. | `c1d/plantas-confianca.json`, K17, M8 e `c1d/recibos-finais.json`; capturas das duas edições. |
 | 5. Resultado da releitura, achados 6, 7 e 15 | A tentativa sem resposta só fala desse pedido. A releitura anterior à atualização confirma o valor anterior, que aparece ao lado. A ausência diz «Segunda leitura: ainda nenhuma» / «Second reading: none yet». | `c1d/recibos-finais.json`, plantas de ausência e de valor anterior; frases registadas no inventário. |
-| 6. Limite municipal, achados 7 e 18 | A linha e a entrada no cruzamento voltaram exatamente a `a677770f`, com o anuário, o acesso de agosto e a releitura de setembro, sem as sete entradas posteriores. O cartão conserva o denominador sustentado no literal DGAL. A migração pelo motor está aberta na I168. | `c1d/limite-reposto.json`, `c1d/cruzamento.codigo`, comparação de bytes em `c1d/medir.py`, `c1d/lingua-reposta.json`, K17 e capturas de Évora. |
+| 6. Limite municipal, achados 7 e 18 | A linha e a entrada no cruzamento voltaram exatamente a `04438bb9`, com o anuário, o acesso de agosto e a releitura de setembro, sem as sete entradas posteriores. O cartão conserva o denominador sustentado no literal DGAL. A migração pelo motor está aberta na I168. | `c1d/limite-reposto.json`, `c1d/cruzamento.codigo`, comparação de bytes em `c1d/medir.py`, `c1d/lingua-reposta.json`, K17 e capturas de Évora. |
 | 7. Objetivo do BCE, achado 11 | Tem a classe própria `objetivo-institucional`, definida nas duas edições. O cartão não usa a classe do painel macroeconómico nem dá um veredicto nacional. | `ledger/allowlist.yml`, `c1d/k17.json` e a conferência do cartão em `c1d/recibos-finais.json`. |
 | 8. Competitividade, achado 21 | A origem passou a citar uma frase inteira e contígua do discurso alojado. A frase do Eurostat sustenta o sinal; a do BCE sustenta a ligação entre preços relativos e competitividade. | `c1d/origens.json`, `c1d/medidas.json` em `literais`, K17; resumo do corpo conservado. |
 | 9. PRR, achado 19 | As cinco linhas conservam as entradas corretas de instantâneos. A regra documenta esse caso estreito, confere todas as cadeias e anuncia cada instantâneo aceite. Não há dispensa silenciosa. | Lista abaixo; `ledger/README.md`, `c1d/historia-proveniencia.json`, com plantas de outro conjunto, razão sem identificação e cadeia contraditória sem releitura anterior. |
@@ -103,7 +103,7 @@ com o seu código e estado da árvore. `c1d/tentativas.json` explica as falhas d
 preparação, a anotação de tipo em falta, a declaração sem uso e a construção
 interrompida pelo construtor para a retirar. Regista também o portão da língua:
 a reposição do anuário precisava das declarações que o acompanhavam em
-`a677770f`, repostas sem mudar a guarda, a fonte ou o número. Não são
+`04438bb9`, repostas sem mudar a guarda, a fonte ou o número. Não são
 apresentadas como os
 portões finais. As capturas finais vêm da cabeça dos portões: {len(capturas['resultados'])}
 páginas e {len(capturas['recortes'])} recortes, nas duas edições e nas larguras

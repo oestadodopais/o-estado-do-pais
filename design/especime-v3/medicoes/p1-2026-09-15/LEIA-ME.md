@@ -1,13 +1,13 @@
 # O relatório do bloco P1 · «O rodapé e a primeira página»
 
-*15.09.2026, ramo `porta-2026-09-15`, sobre a cabeça `2ab86986`. A cabeça final é
+*15.09.2026, ramo `porta-2026-09-15`, sobre a cabeça `ef9f0bc6`. A cabeça final é
 a última do ramo.
 Construtor: Claude Opus 5. Na forma do §3 do brief: a tabela do §1 com a medida
 de cada item preenchida, a tabela das cadeias, o mapeamento dos domínios, os
 commits, os portões, e o que fica para o lugar de direção. Sem travessões.*
 
 **Este relatório tem duas datas.** A primeira redação fechou o bloco na cabeça
-`feba0d69`; o lugar de direção leu as capturas e pediu **seis acertos de forma**,
+`98bcff45`; o lugar de direção leu as capturas e pediu **seis acertos de forma**,
 que estão no §7 com o que cada um mediu. As palavras não mudaram com eles: a
 tabela das cadeias é a mesma.
 
@@ -87,8 +87,8 @@ trabalho passou de um para o outro, e a soma continua 36.
 
 ## 4 · Os commits e os portões
 
-Vinte commits sobre `2ab86986`: doze da primeira redação (a fonte fechava em
-`feba0d69`, e os últimos três traziam os documentos, as capturas e o registo dos
+Vinte commits sobre `ef9f0bc6`: doze da primeira redação (a fonte fechava em
+`98bcff45`, e os últimos três traziam os documentos, as capturas e o registo dos
 portões) e oito dos seis acertos e das três réguas que foram atrás deles.
 
 Os três portões, cada comando no seu, com o código de saída escrito num ficheiro
@@ -100,7 +100,7 @@ por `echo $? > …` e lido de lá, e nunca de memória:
 | `npm run verify` | **0** |
 | `npm run typecheck` | **0** |
 
-Corridos sobre `c97ae565`, que é a cabeça com tudo o que este bloco construiu;
+Corridos sobre `b8a70f04`, que é a cabeça com tudo o que este bloco construiu;
 o commit seguinte acrescenta só o registo dos portões, que nenhum deles lê. O
 `portoes.txt` traz a cabeça da corrida, o caminho de cada ficheiro de código e
 as últimas linhas de cada uma. E depois do último commit correu-se
@@ -174,7 +174,7 @@ estavam vermelhas antes deste bloco.
 
 ## 7 · Os seis acertos da leitura das capturas
 
-*Pedidos pelo lugar de direção depois de ler as capturas da cabeça `9a363dbb`.
+*Pedidos pelo lugar de direção depois de ler as capturas da cabeça `05e3faea`.
 Um commit cada. Nenhum mudou uma cadeia.*
 
 | # | o que era | o que é, medido |
@@ -224,7 +224,7 @@ as torna legíveis num diff.
 | `portoes.txt` | os três portões e os códigos de saída lidos dos ficheiros |
 | `cadeias-antes-depois.md` | a tabela do item 10: toda a cadeia mudada ou retirada, com o antes e o depois nas duas edições |
 
-**O «antes» é a construção da cabeça `2ab86986`**, que é a cabeça de que este
+**O «antes» é a construção da cabeça `ef9f0bc6`**, que é a cabeça de que este
 bloco partiu, e não uma memória: onde há um antes e um depois, os dois lados
 foram medidos pela mesma régua sobre as duas construções, e o comando está na
 linha do ficheiro.
@@ -255,7 +255,7 @@ travessões.*
 **As capturas «depois» foram refeitas** com `node design/especime-v3/medicoes/p1-2026-09-15/capturas-p1.mjs --momento=depois`
 sobre a cabeça desta passagem: 30 imagens (três páginas × duas edições × cinco
 larguras) em `design/especime-v3/capturas/p1-2026-09-15/`. As de «antes»
-continuam a ser as da cabeça `2ab86986` e não foram tocadas.
+continuam a ser as da cabeça `ef9f0bc6` e não foram tocadas.
 
 **E a tabela das cadeias ganhou o §4**, com as duas cadeias que esta passagem
 mudou nesta família.

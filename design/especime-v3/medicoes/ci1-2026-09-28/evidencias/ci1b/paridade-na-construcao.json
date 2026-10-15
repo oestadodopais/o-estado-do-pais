@@ -1,6 +1,6 @@
 {
  "o_que": "o astro build numa cópia da árvore da cabeça: intacta constrói; com uma chave só na edição portuguesa de src/i18n/strings.mjs fecha com a mensagem da guarda, antes de a primeira página se escrever",
- "cabeca": "b485ae52490920f9a46630a967177f546cd21f5c",
+ "cabeca": "e520a402b7949d6f26fde4edff949c99aadf6d74",
  "comando": "git archive HEAD numa pasta temporária, node_modules clonado, node node_modules/astro/bin/astro.mjs build",
  "sha256_de_strings_intacto": "8af8ff723fdf8abc598a70badf68c006e43560b39948045407eea72f77227446",
  "sha256_de_strings_plantado": "e7dd1dd610b10496e8c152e5ae9967b728c92cce79aae99f2036ee4800f91193",

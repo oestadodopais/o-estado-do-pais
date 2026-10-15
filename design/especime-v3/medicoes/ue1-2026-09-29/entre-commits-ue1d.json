@@ -2,7 +2,7 @@
   "bloco": "UE1d",
   "commits": [
     {
-      "commit": "530d5edc",
+      "commit": "cbe6866d",
       "o_que": "a média da União de volta ao cartão da sobrecarga do custo da habitação no total, com a ressalva da Comissão de uma fonte única no cartão e nos recibos, a K14 na forma nova e a K17 a contar as origens da auditoria da primeira página (o estado sem a definição declarada nos recibos das séries, construído à parte)",
       "corridas": [
         {
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "commit": "165650cf",
+      "commit": "13b24aac",
       "o_que": "a definição declarada da medida nos recibos das dez séries, conferida pelo portão de HTML, sem a regra do corte",
       "corridas": [
         {
@@ -50,7 +50,7 @@
       ]
     },
     {
-      "commit": "99b9f73a",
+      "commit": "ac39025e",
       "o_que": "o construtor da prova do check:cartao lê a ressalva declarada sem rebentar quando a declaração não a tem (a planta da declaração, que fechava a construção com um TypeError)",
       "corridas": [
         {
@@ -62,14 +62,14 @@
   ],
   "plantas_antes_do_commit": [
     {
-      "commit": "99b9f73a",
+      "commit": "ac39025e",
       "planta": "a medida tirada da declaração das ressalvas, com --prova",
       "comando": "node tests/cartao/cartao.mjs --prova",
       "codigo": 1,
       "queixa": true
     },
     {
-      "commit": "99b9f73a",
+      "commit": "ac39025e",
       "planta": "a medida tirada da declaração das ressalvas, sem --prova",
       "comando": "node tests/cartao/cartao.mjs",
       "codigo": 1,
@@ -101,8 +101,8 @@
     },
     "nota": "o guião sai sempre com 0; a prova são as contas"
   },
-  "mapa_do_commit_99b9f73a": {
-    "commit": "99b9f73a",
+  "mapa_do_commit_ac39025e": {
+    "commit": "ac39025e",
     "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
     "codigo": 0,
     "contas": {
@@ -113,7 +113,7 @@
     }
   },
   "ue1c_mapa": {
-    "o_que": "a corrida do mapa antes do commit 982d6446 da UE1c, lida agora do registo",
+    "o_que": "a corrida do mapa antes do commit c0eec2a6 da UE1c, lida agora do registo",
     "contas": {
       "conferidas_na_linha_citada": 135,
       "no_ficheiro_mas_longe": 0,
@@ -191,6 +191,6 @@
     "codigo_inexistente_nulo": true,
     "mapa_antes_com_perdidas": true
   },
-  "mapa_do_commit_99b9f73a_sem_citacoes_perdidas": true,
+  "mapa_do_commit_ac39025e_sem_citacoes_perdidas": true,
   "plantas_antes_do_commit_que_morderam": 2
 }

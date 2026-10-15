@@ -1,8 +1,8 @@
 # PP1 · a resposta curta do construtor
 
-*Claude Opus 5.5, construtor do bloco PP1, a 28.09.2026. Worktree `<worktree do sítio>`, ramo `pp1-2026-09-28`, cabeça de partida `1cbdb8c4`. Sem travessões.*
+*Claude Opus 5.5, construtor do bloco PP1, a 28.09.2026. Worktree `<worktree do sítio>`, ramo `pp1-2026-09-28`, cabeça de partida `3b85f13d`. Sem travessões.*
 
-**Os três portões** correram na cabeça `12dc8fbf` (o commit do relatório), cada um no seu comando, com o código lido do ficheiro que acabou de escrever em `portoes/`:
+**Os três portões** correram na cabeça `31ec7c37` (o commit do relatório), cada um no seu comando, com o código lido do ficheiro que acabou de escrever em `portoes/`:
 
 | Portão | Código | Cabeça | Início e fim (UTC) |
 | --- | --- | --- | --- |
@@ -20,7 +20,7 @@ Os registos estão ao lado de cada código. Três linhas deles traziam o caminho
 
 - a manchete de «Portugal na União Europeia» ainda prende as contagens do veredicto no inventário das frases: uma revisão que mude quantas medidas estão fora do valor de referência fecha a construção no `check:voz` (a revisão B de `valor-revisto.json`); é outra página e outra célula, e o bloco não as tocou;
 - a leitura a frio, de outra família; as linhas novas do inventário ficam «por ler» no registo das revisões;
-- as capturas são da construção de `b4d92902`; o que veio depois não muda o que se vê (o relatório diz o quê);
+- as capturas são da construção de `563efa3f`; o que veio depois não muda o que se vê (o relatório diz o quê);
 - o custo em símbolos é o que a ferramenta reporta ao lugar de direção; o construtor não o lê de dentro.
 
-**Os commits do ramo**, por ordem: `db58de3e`, `30b663ff`, `3585635a`, `b47a12d7`, `30158571`, `238bd172`, `4d733a89`, `d04d63b6`, `b4d92902`, `15342ef6`, `ae895190`, `bd1f46df`, `931873d1`, `12dc8fbf` e este, que traz os portões e esta resposta.
+**Os commits do ramo**, por ordem: `fd97f47e`, `ab3c7222`, `08b61d70`, `85862382`, `b0ef893d`, `355f233e`, `a271f2f0`, `8b829bc4`, `563efa3f`, `de58101e`, `fba586f2`, `fce336bd`, `69df7253`, `31ec7c37` e este, que traz os portões e esta resposta.

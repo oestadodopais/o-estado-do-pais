@@ -132,7 +132,7 @@ def main():
                'entrada_de_cada_fonte': all(por_fonte.values()), 'tokens_used': None, 'custo_verificavel': False}
     guardar('aceitacao.json', medidas)
     commits_motor = git(motor, 'log', '--reverse', '--format=%H %s', '465d01e7853f2729fcaa4ba63160b6338ba5de1e..HEAD')
-    commits_sitio = git(SITIO, 'log', '--reverse', '--format=%H %s', '01ccb1e53c5b2d932b5388bb89215b209d40d418..HEAD')
+    commits_sitio = git(SITIO, 'log', '--reverse', '--format=%H %s', 'e6d1a30729d07ba7f22e8cae05bde01af6da3bff..HEAD')
     guardar('cabecas.json', {'motor': medidas['motor_cabeca'], 'motor_codigo': codigo,
                            'sitio_antes_do_relatorio': git(SITIO, 'rev-parse', 'HEAD'), 'sitio_codigo': medidas['sitio_codigo'],
                            'commits_motor': commits_motor.splitlines(), 'commits_sitio_anteriores_ao_relatorio': commits_sitio.splitlines()})

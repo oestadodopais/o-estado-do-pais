@@ -21,11 +21,11 @@ As regras de sempre, as da F2.2c:
 **3 · O relatório dá o bloco inteiro (o achado 5).** O mandato da F2.2c só mandava sair o que não tinha prova. O `LEIA-ME.md` volta a ter, para o bloco todo, o F2.2b, a F2.2c e esta passagem:
 - a tabela do mandato do brief, os pontos 1 a 6, com a medida de cada um no estado corrigido;
 - as plantas;
-- todos os commits dos dois repositórios, incluindo `01362b78` e `77d9e407` no sítio;
+- todos os commits dos dois repositórios, incluindo `c758c51e` e `89fa6c60` no sítio;
 - os portões;
 - o custo do bloco inteiro: a construção, a retoma, a F2.2c e esta, cada uma com o seu contador.
 
-O texto de `77d9e407` serve de base, sem as afirmações que a primeira triagem achou sem prova e com cada comportamento já corrigido. As secções F2.2c e F2.2d ficam depois.
+O texto de `89fa6c60` serve de base, sem as afirmações que a primeira triagem achou sem prova e com cada comportamento já corrigido. As secções F2.2c e F2.2d ficam depois.
 
 **4 · A recusa e o TLS num runner (o achado 7).** Ficam como estão, e passam a estar ditos e provados. Num runner do GitHub, uma ligação recusada e um erro de TLS contam como «sem resposta» e repetem-se noutro runner, nas linhas e no limiar. O INE já bloqueou IPs de runners: a I116 do sítio regista uma noite com a ligação «recusado», a 03.09. Escrever «inacessível» por isso seria falso.
 - É uma regra diferente da do portátil (a C1e), de propósito. O comentário do código di-lo, com a I116.
@@ -42,7 +42,7 @@ O texto de `77d9e407` serve de base, sem as afirmações que a primeira triagem 
 - O comentário da versão da API diz de quem é cada leitura. A do lugar de direção, às 21:03 UTC, com o estado 200, dá «2026-03-10 (latest)». A tua dá a tabela com 2026-03-10 entre as versões suportadas, sem a palavra «latest», e fica com a hora e o excerto. Nenhuma se apresenta como confirmação da outra.
 - As cabeças dos registos de execução dizem onde o código correu. Uma corrida sobre a junção por registar di-lo, com a árvore. O `medidas.json` descreve o commit do relatório como ele é.
 
-**7 · O prompt do lugar de direção (o achado 13).** `prompts/PROMPT-f22c-construtor.md` volta ao texto que o lugar de direção escreveu, que é o de `fb1dd0dd`. O detetor do `medir.py` deixa de contar o exemplo com reticências (`<pasta-pessoal>/...`), que não é um caminho, e o relatório di-lo. Os prompts do lugar de direção não se mudam; um problema com eles diz-se.
+**7 · O prompt do lugar de direção (o achado 13).** `prompts/PROMPT-f22c-construtor.md` volta ao texto que o lugar de direção escreveu, que é o de `b057626b`. O detetor do `medir.py` deixa de contar o exemplo com reticências (`<pasta-pessoal>/...`), que não é um caminho, e o relatório di-lo. Os prompts do lugar de direção não se mudam; um problema com eles diz-se.
 
 ## No fim
 

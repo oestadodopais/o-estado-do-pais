@@ -1,10 +1,10 @@
-/** Atualiza as linhas da política pela redação da passagem H4-e (a partir da H4-d, a cabeça f958bf80) e confere-as com --confere.
+/** Atualiza as linhas da política pela redação da passagem H4-e (a partir da H4-d, a cabeça 4fe4ab86) e confere-as com --confere.
  * node design/especime-v3/medicoes/h4-2026-10-06/inventario-politica-h4e.mjs
  */
 import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { POLITICA } from '../../../../src/data/politica-ia.mjs';
-const base = 'f958bf80eb9ffe366b5e40629b2c395ef71adcb9';
+const base = '4fe4ab86a2182acce525bddda0996a7b439f5cfa';
 const fonte = execFileSync('git', ['show', `${base}:src/data/politica-ia.mjs`], { encoding: 'utf8' });
 const { POLITICA: antes } = await import('data:text/javascript;base64,' + Buffer.from(fonte).toString('base64'));
 const linhas = (p) => ['pt', 'en'].flatMap((l) => [...p.lugares.intro[l], ...p.lugares.itens.map((i) => `${i.rotulo[l]} ${i.texto[l]}`), ...p.lugares.fecho[l]]);

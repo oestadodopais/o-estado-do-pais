@@ -5,7 +5,7 @@
     {
       "nome": "passos_do_build",
       "valor": 21,
-      "comando": "OEDP_MEDIDAS_JSON=<ficheiro> python3 design/observatorio/medidas/BRIEF-CI1.py (git show a677770f:package.json · scripts.build partido em &&)",
+      "comando": "OEDP_MEDIDAS_JSON=<ficheiro> python3 design/observatorio/medidas/BRIEF-CI1.py (git show 04438bb9:package.json · scripts.build partido em &&)",
       "conhecido_positivo": {
         "o_que": "a cadeia do build tem a construção do Astro",
         "encontrado": true
@@ -149,7 +149,7 @@
     {
       "nome": "build_antes_s",
       "valor": 320,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9) · build-A1.json",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 8ee1b2c4) · build-A1.json",
       "conhecido_positivo": {
         "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
         "encontrado": true
@@ -158,7 +158,7 @@
     {
       "nome": "build_antes_astro_s",
       "valor": 225.6,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9) · build-A1.json · astro_build",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 8ee1b2c4) · build-A1.json · astro_build",
       "conhecido_positivo": {
         "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
         "encontrado": true
@@ -167,7 +167,7 @@
     {
       "nome": "build_antes_gate_html_s",
       "valor": 37.5,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9) · build-A1.json · o passo gate:html",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 8ee1b2c4) · build-A1.json · o passo gate:html",
       "conhecido_positivo": {
         "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
         "encontrado": true
@@ -176,7 +176,7 @@
     {
       "nome": "build_antes_check_voz_s",
       "valor": 23.5,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9) · build-A1.json · o passo check:voz",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 8ee1b2c4) · build-A1.json · o passo check:voz",
       "conhecido_positivo": {
         "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
         "encontrado": true
@@ -185,7 +185,7 @@
     {
       "nome": "build_antes_cartoes_s",
       "valor": 12.3,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9) · build-A1.json · o passo cartoes",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 8ee1b2c4) · build-A1.json · o passo cartoes",
       "conhecido_positivo": {
         "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
         "encontrado": true
@@ -194,7 +194,7 @@
     {
       "nome": "build_perfilada_s",
       "valor": 323.7,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9, com --cpu-prof em cada processo Node) · build-A2-perfilada.json",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 8ee1b2c4, com --cpu-prof em cada processo Node) · build-A2-perfilada.json",
       "conhecido_positivo": {
         "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
         "encontrado": true
@@ -203,7 +203,7 @@
     {
       "nome": "build_perfilada_astro_s",
       "valor": 228.7,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9, com --cpu-prof em cada processo Node) · build-A2-perfilada.json · astro_build",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 8ee1b2c4, com --cpu-prof em cada processo Node) · build-A2-perfilada.json · astro_build",
       "conhecido_positivo": {
         "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
         "encontrado": true
@@ -212,7 +212,7 @@
     {
       "nome": "build_perfilada_gate_html_s",
       "valor": 38,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9, com --cpu-prof em cada processo Node) · build-A2-perfilada.json · o passo gate:html",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 8ee1b2c4, com --cpu-prof em cada processo Node) · build-A2-perfilada.json · o passo gate:html",
       "conhecido_positivo": {
         "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
         "encontrado": true
@@ -221,7 +221,7 @@
     {
       "nome": "build_perfilada_check_voz_s",
       "valor": 23.9,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9, com --cpu-prof em cada processo Node) · build-A2-perfilada.json · o passo check:voz",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 8ee1b2c4, com --cpu-prof em cada processo Node) · build-A2-perfilada.json · o passo check:voz",
       "conhecido_positivo": {
         "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
         "encontrado": true
@@ -230,7 +230,7 @@
     {
       "nome": "build_perfilada_cartoes_s",
       "valor": 12.4,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 1c1952c9, com --cpu-prof em cada processo Node) · build-A2-perfilada.json · o passo cartoes",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 8ee1b2c4, com --cpu-prof em cada processo Node) · build-A2-perfilada.json · o passo cartoes",
       "conhecido_positivo": {
         "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
         "encontrado": true
@@ -239,7 +239,7 @@
     {
       "nome": "build_depois_s",
       "valor": 73.1,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 27b13b92) · build-B1.json",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 4d219970) · build-B1.json",
       "conhecido_positivo": {
         "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
         "encontrado": true
@@ -248,7 +248,7 @@
     {
       "nome": "build_depois_astro_s",
       "valor": 9.5,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 27b13b92) · build-B1.json · astro_build",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 4d219970) · build-B1.json · astro_build",
       "conhecido_positivo": {
         "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
         "encontrado": true
@@ -257,7 +257,7 @@
     {
       "nome": "build_depois_gate_html_s",
       "valor": 12.1,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 27b13b92) · build-B1.json · o passo gate:html",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 4d219970) · build-B1.json · o passo gate:html",
       "conhecido_positivo": {
         "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
         "encontrado": true
@@ -266,7 +266,7 @@
     {
       "nome": "build_depois_check_voz_s",
       "valor": 22,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 27b13b92) · build-B1.json · o passo check:voz",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 4d219970) · build-B1.json · o passo check:voz",
       "conhecido_positivo": {
         "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
         "encontrado": true
@@ -275,7 +275,7 @@
     {
       "nome": "build_depois_cartoes_s",
       "valor": 11.1,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 27b13b92) · build-B1.json · o passo cartoes",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run build (na cabeça 4d219970) · build-B1.json · o passo cartoes",
       "conhecido_positivo": {
         "o_que": "o registo tem as marcas do Astro, as 7 404 páginas e o código 0",
         "encontrado": true
@@ -338,7 +338,7 @@
     {
       "nome": "diferencas_controlo",
       "valor": 0,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/comparar-dist.mjs <dist A1> <dist A2, as duas em 1c1952c9> · comparar-A1-A2.json",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/comparar-dist.mjs <dist A1> <dist A2, as duas em 8ee1b2c4> · comparar-A1-A2.json",
       "conhecido_positivo": {
         "o_que": "um byte trocado, um ficheiro a mais e um a menos, vistos numa cópia pequena antes de comparar",
         "encontrado": true
@@ -347,7 +347,7 @@
     {
       "nome": "diferencas_depois",
       "valor": 0,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/comparar-dist.mjs <dist A1 em 1c1952c9> <dist B1 em 27b13b92> · comparar-A1-B1.json",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/comparar-dist.mjs <dist A1 em 8ee1b2c4> <dist B1 em 4d219970> · comparar-A1-B1.json",
       "conhecido_positivo": {
         "o_que": "um byte trocado, um ficheiro a mais e um a menos, vistos numa cópia pequena antes de comparar",
         "encontrado": true
@@ -356,7 +356,7 @@
     {
       "nome": "diferencas_final",
       "valor": 0,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/comparar-dist.mjs <dist A1 em 1c1952c9> <dist do portão build> · comparar-A1-final.json",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/comparar-dist.mjs <dist A1 em 8ee1b2c4> <dist do portão build> · comparar-A1-final.json",
       "conhecido_positivo": {
         "o_que": "um byte trocado, um ficheiro a mais e um a menos, vistos numa cópia pequena antes de comparar",
         "encontrado": true
@@ -392,7 +392,7 @@
     {
       "nome": "verify_inteiro_depois_s",
       "valor": 471.4,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run verify (na cabeça 27b13b92, sobre o dist/ de B1)",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/cronometro.mjs <prefixo> -- npm run verify (na cabeça 4d219970, sobre o dist/ de B1)",
       "conhecido_positivo": {
         "o_que": "o código 0 e 33 marcas do npm além da do verify",
         "encontrado": true
@@ -608,7 +608,7 @@
     {
       "nome": "guardas_casos_antes",
       "valor": 129,
-      "comando": "git show 1c1952c9:scripts/provar-guardas.mjs, corrido em scripts/",
+      "comando": "git show 8ee1b2c4:scripts/provar-guardas.mjs, corrido em scripts/",
       "conhecido_positivo": {
         "o_que": "a linha «guardas · N conferência(s)» na saída",
         "encontrado": true
@@ -1229,7 +1229,7 @@
     {
       "nome": "ci1b_diferencas_final",
       "valor": 0,
-      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/comparar-dist.mjs <dist A1 em 1c1952c9> <dist do portão build da passagem>",
+      "comando": "node design/especime-v3/medicoes/ci1-2026-09-28/comparar-dist.mjs <dist A1 em 8ee1b2c4> <dist do portão build da passagem>",
       "conhecido_positivo": {
         "o_que": "um byte trocado, um ficheiro a mais e um a menos, e a mesma conta pelos manifestos",
         "encontrado": true

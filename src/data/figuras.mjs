@@ -2171,7 +2171,7 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        famílias).
 
        E UMA TERCEIRA, ao fim do dia (achado 3 da releitura do Codex sobre a
-       cabeça `7b85bb7f`). A linha da Comissão repete a exclusão depois do
+       cabeça `9d1f0460`). A linha da Comissão repete a exclusão depois do
        «t-1», e a definição dizia-a uma vez só: «NFC (excl. FDI) consolidated
        credit flow in % of NFC debt stock in t-1 (excl. FDI)». Com uma
        exclusão só, o que a frase qualificava era o FLUXO, e o denominador

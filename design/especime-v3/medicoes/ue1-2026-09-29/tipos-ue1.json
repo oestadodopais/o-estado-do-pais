@@ -1,6 +1,6 @@
 {
   "bloco": "UE1",
-  "cabeca": "33ed14a0a609e7ac9c3830c4fb777c0840b02f36",
+  "cabeca": "d88885958683f180c583b52f24d7b7be46c118ec",
   "comando_do_programa": "node_modules/.bin/tsc -p tsconfig.check.json --listFilesOnly",
   "ficheiros_do_sitio_no_programa": 84,
   "conhecido_positivo_da_lista": {

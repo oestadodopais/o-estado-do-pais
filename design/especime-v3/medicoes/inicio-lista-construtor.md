@@ -1,6 +1,6 @@
 # Os nomes do mapa ao lado, e os dois painéis com nome · relatório do construtor
 
-*Bloco `inicio-lista-2026-08-29`, saído de `main` `a76f829`, num worktree. Construtor: Claude Opus 5. Brief: `design/especime-v3/briefs/BRIEF-inicio-lista-e-paineis.md`. Todas as medições correram em Chromium sem cabeça sobre o `dist/` construído, nas duas edições, e cada número desta página saiu de uma corrida que se diz ao lado dele.*
+*Bloco `inicio-lista-2026-08-29`, saído de `main` `636b823`, num worktree. Construtor: Claude Opus 5. Brief: `design/especime-v3/briefs/BRIEF-inicio-lista-e-paineis.md`. Todas as medições correram em Chromium sem cabeça sobre o `dist/` construído, nas duas edições, e cada número desta página saiu de uma corrida que se diz ao lado dele.*
 
 *Segunda passagem, 29.08.2026, sobre os seis achados da leitura cruzada: os alvos do telemóvel passam a ter 44 px nos dois sentidos, a pontuação entre os nomes sai, a lista passa a vir antes do mapa no documento, a régua passa a medir o que dizia que media, o `data-alvo-abaixo-de` sai por decisão do lugar de direção (I101), e as frases deste relatório que descreviam o estado anterior estão corrigidas. Os números abaixo são todos da construção depois desses seis consertos.*
 
@@ -14,7 +14,7 @@ A decisão do lugar de direção sobre a I101 está aplicada: **a rede não se e
 
 ### 1.1 · A altura da primeira página, nas duas edições
 
-Medida em `document.documentElement.scrollHeight`, com o tipo carregado. O «antes» é `a76f829`.
+Medida em `document.documentElement.scrollHeight`, com o tipo carregado. O «antes» é `636b823`.
 
 | janela | página pt | página en | menos |
 |---|---|---|---|
@@ -175,16 +175,16 @@ Nenhuma frase nova da casa. As oito linhas do inventário são quatro dicas de c
 
 | commit | o quê |
 |---|---|
-| `3adb668` | os nomes na coluna esquerda: a lista sai de `MapaRespira` para `ListaDosNomes.astro`, o par de estado em `:has()`, a forma em linha no telemóvel, os dois painéis com nome, e as oito linhas do inventário |
-| `a8f4ad0` | a primeira forma de `tests/inicio/lista.mjs` |
-| `5b4fc7f` | a primeira forma deste relatório, e as linhas I100 e I101 de `ISSUES.md` |
+| `ab9f0fc` | os nomes na coluna esquerda: a lista sai de `MapaRespira` para `ListaDosNomes.astro`, o par de estado em `:has()`, a forma em linha no telemóvel, os dois painéis com nome, e as oito linhas do inventário |
+| `cd2d6ef` | a primeira forma de `tests/inicio/lista.mjs` |
+| `87df47f` | a primeira forma deste relatório, e as linhas I100 e I101 de `ISSUES.md` |
 | os da segunda passagem | os seis consertos da leitura cruzada: o alvo nos dois sentidos, a pontuação fora, a ordem do documento, a régua a medir o que diz, o `data-alvo-abaixo-de` fora com a decisão da I101, e este relatório corrigido |
 
-*Todos saem de `a76f829`, no ramo `inicio-lista-2026-08-29`, cada um com os dois trailers e com os caminhos nomeados um a um no `git add`.*
+*Todos saem de `636b823`, no ramo `inicio-lista-2026-08-29`, cada um com os dois trailers e com os caminhos nomeados um a um no `git add`.*
 
 ## 5 · O que fica aberto
 
-**I101**, na forma que a decisão do lugar de direção lhe deu: a construção não sabe medir o alvo pela medida da casa, e enquanto o quadrado inscrito não vier do motor no artefacto a rede não se esconde a largura nenhuma. A tabela que sustenta a decisão, medida a 29.08 sobre `a76f829` e igual nesta construção:
+**I101**, na forma que a decisão do lugar de direção lhe deu: a construção não sabe medir o alvo pela medida da casa, e enquanto o quadrado inscrito não vier do motor no artefacto a rede não se esconde a largura nenhuma. A tabela que sustenta a decisão, medida a 29.08 sobre `636b823` e igual nesta construção:
 
 | janela | tela | continente: chega aos 44 px pela caixa | pelo quadrado inscrito |
 |---|---|---|---|
@@ -194,7 +194,7 @@ Nenhuma frase nova da casa. As oito linhas do inventário são quatro dicas de c
 | 430 | 430 | 18 de 18 | **3 de 18** (Beja, Castelo Branco, Évora) |
 | 1280 | 490 | 18 de 18 | 5 de 18 |
 
-**I100**, a célula M4 de `tests/inicio/areas.mjs`, vermelha desde `fc1d013` por não conhecer a marca `data-nome`. Achado fora do brief, não corrigido aqui.
+**I100**, a célula M4 de `tests/inicio/areas.mjs`, vermelha desde `79a4fe3` por não conhecer a marca `data-nome`. Achado fora do brief, não corrigido aqui.
 
 ## 6 · O custo em símbolos
 

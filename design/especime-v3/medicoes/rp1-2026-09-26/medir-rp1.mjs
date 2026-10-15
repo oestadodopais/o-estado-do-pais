@@ -13,7 +13,7 @@ import { auditarPerguntas } from '../../../../tests/cartao/perguntas.mjs';
 import { conferirAuditoriaDasLeituras, conferirLeiturasRendidas } from '../../../../tests/cartao/leituras.mjs';
 const aqui=path.dirname(fileURLToPath(import.meta.url)), raiz=path.resolve(aqui,'../../../..');
 const motor=process.env.RP1_MOTOR??path.join(os.homedir(),'<projetos>/ResearchHub/.worktrees/rp1-2026-09-26');
-const base='42b3cadf';
+const base='d2de831b';
 const git=(...args)=>execFileSync('git',args,{cwd:raiz,encoding:'utf8'}).trim();
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const json=p=>JSON.parse(fs.readFileSync(p,'utf8'));
@@ -99,7 +99,7 @@ const fim=Object.values(portoes).map(p=>p.fim).sort().at(-1),inicio=pedidos[31].
 const motorCodigo=Number(fs.readFileSync(path.join(aqui,'motor-rp1c.codigo'),'utf8'));
 prova(motorCodigo===0,'O commit do motor não passou pelo portão');
 const m={base:git('rev-parse',base),cabeca_do_codigo:cabeca,cabeca_motor:execFileSync('git',['rev-parse','HEAD'],{cwd:motor,encoding:'utf8'}).trim(),
- commits_sitio:git('log','--reverse','--format=%H %s','334cc740..'+cabeca).split('\n'),
+ commits_sitio:git('log','--reverse','--format=%H %s','eaffd3c8..'+cabeca).split('\n'),
  commits_motor:execFileSync('git',['log','--reverse','--format=%H %s','1d10b3f..HEAD'],{cwd:motor,encoding:'utf8'}).trim().split('\n'),
  entrega:{referencia:'HEAD',titulo:'RP1c: entregar as provas da passagem de correção',pai:cabeca},
  achados,plantas_do_pacote:5,

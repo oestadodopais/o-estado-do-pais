@@ -7,7 +7,7 @@ import subprocess
 from pathlib import Path
 AQUI=Path(__file__).resolve().parent
 RAIZ=AQUI.parents[3]
-BASE='38d3627894416097de26c52346c595c45a7b2884'
+BASE='2a4ff50987b7c84735d44d82610d4fadfa28f985'
 def main():
     registo=json.loads((AQUI/'acertos-rp1.json').read_text())
     antigo=subprocess.check_output(['git','show',BASE+':src/data/leituras-das-medidas.mjs'],cwd=RAIZ,text=True)

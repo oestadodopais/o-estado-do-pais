@@ -1,6 +1,6 @@
 {
   "comando": "python3 design/especime-v3/medicoes/h4-2026-10-06/conferir-pacote.py",
-  "cabeca_codigo": "cb9a22296d17bed881a0f091b8f5864dcd72a571",
+  "cabeca_codigo": "55ede05386ab026d7c7987762e1e9c17ccec7851",
   "codigos": {
     "build": 0,
     "verify": 0,

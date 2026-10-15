@@ -1,6 +1,6 @@
 {
   "bloco": "E0",
-  "base": "07549ee1e9ec2b39186f9e9f13eeac4914bf5e76",
+  "base": "7a82c1477b1710292d23f7efdca7a367f407e134",
   "cabeca": "472cba4257942989faf41f945760f120a6988171",
   "medido_em": "2026-10-01T00:33:09.801Z",
   "medidas": [
@@ -1357,7 +1357,7 @@
         "livro_real_conservado": true
       },
       "historia_anterior_conservada": {
-        "base": "07549ee1e9ec2b39186f9e9f13eeac4914bf5e76",
+        "base": "7a82c1477b1710292d23f7efdca7a367f407e134",
         "linhas_anteriores": 9,
         "linha_plantada": "estudos-evora-publicados",
         "indice": 0,

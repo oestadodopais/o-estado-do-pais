@@ -1260,7 +1260,7 @@ def run_all(dist):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dist", type=Path, default=DEFAULT_DIST,
-                     help="raiz das paginas construidas (por omissao, a copia congelada usada em 24.08.2026, commit 180148c)")
+                     help="raiz das paginas construidas (por omissao, a copia congelada usada em 24.08.2026, commit 61fb903)")
     ap.add_argument("--json", type=Path, default=None, help="onde escrever o resultado completo em JSON")
     ap.add_argument("--no-selftest", action="store_true", help="salta as provas de mutacao")
     args = ap.parse_args()

@@ -28,7 +28,7 @@ Cada linha da tabela abaixo feita, com a prova que ela pede; a linha da União d
 | 16 | Os pontos da dívida de Évora ficam no fim do ano a que pertencem (a dívida é a do fim do ano), e não no início; a F18 segue. | a planta |
 | 17 | A célula do valor e da unidade conta os cartões e falha quando não vê nenhum, como já faz com os títulos. | a planta do seletor que deixa de casar |
 | 18 | A guarda que prende a palavra do ramo ao sinal (hoje só na inflação, em `tests/confianca/c1.mjs`) passa a cobrir todos os ramos do sinal das leituras do RP1 (as rendas, as médias dos doze meses, o IHPC). | as plantas das trocas coerentes nas duas edições |
-| 20, 21 | Os registos corrigidos: a cabeça das capturas do antes (`28b17e2a`) e o `pib/releitura.json` regenerado pelo guião entregue, ou retirado com a razão. | os ficheiros |
+| 20, 21 | Os registos corrigidos: a cabeça das capturas do antes (`afe4013d`) e o `pib/releitura.json` regenerado pelo guião entregue, ou retirado com a razão. | os ficheiros |
 | 22 | A frase do relatório que diz que uma mudança «foi comunicada ao diretor durante o trabalho» sai: não houve comunicação nenhuma com o diretor, e o relatório diz que a frase estava errada. | o relatório |
 | 23 | O relatório liga as cabeças: a medida, a da entrega e as seguintes. | o relatório |
 | 24 | O comentário de `indicators/refresh.py` com o nome do utilizador dentro de um anfitrião passa a um exemplo genérico, e o detetor do bloco aprende essa forma, com conhecido-positivo. | a medição a 0 |

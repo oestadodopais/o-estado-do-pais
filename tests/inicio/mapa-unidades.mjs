@@ -1332,7 +1332,7 @@ async function u4() {
 /* ======================================================================= U5 */
 /* A U5 SAIU NO BLOCO P4 (02.10.2026). Media a altura de `/` a 390 px contra a de
    partida do F1.1d (`design/especime-v3/medicoes/mapa-medidas.json`, «medidas.
-   altura.depois», cabeça `c9823939`), para provar que o mapa das unidades não
+   altura.depois», cabeça `d55c39c5`), para provar que o mapa das unidades não
    alongava a primeira página. O L2a tirou o mapa da primeira página (§1.149 e
    §1.150): o objeto da célula, o mapa na primeira página, deixou de existir, e a
    altura da primeira página a 390 px passou a ser uma medida do L2a, nas capturas

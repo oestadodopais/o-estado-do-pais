@@ -1,7 +1,7 @@
 # Nota da etapa 2 · a primeira página, secretária e telemóvel
 
 *Quem construiu: **Claude Opus**, construtor B, sozinho, sem subagentes. Ramo
-`redesenho-v3`, a partir de `d34d8d0` (a etapa 1 fechou em `484da14`). Nada foi
+`redesenho-v3`, a partir de `6c9e968` (a etapa 1 fechou em `95b0db8`). Nada foi
 empurrado, nada foi posto no ar, `vercel.json` não foi tocado, e nenhum byte de
 `src/data/metodo.mjs` ou de `src/data/sobre.mjs` mudou. Escrita no Acordo de
 1990, sem travessões.*
@@ -16,13 +16,13 @@ um comando que está escrito ao lado deles.*
 
 | Commit | Subetapa | O quê |
 | --- | --- | --- |
-| `b80200f` | 2a | prova, figuras: o lado do limiar declarado, as três chaves do painel, e uma só palavra para a cobertura |
-| `0c1ef02` | 2b | início, cabeça: a linha de comando, a cabeça 2+2, o mapa que respira e a banda da região |
-| `1c0f1b7` | 2c | início, painel: as peças nas duas densidades, a régua-espécime, as portas e o instrumento a tinta |
-| `99a2694` | 2d | início, runtime: o estado no endereço, e um script que só escolhe cadeias já validadas |
-| `d7f7a7e` | 2e | início, telemóvel: o âmbito como destinos, o selo do país como único alvo, e as medidas em filas |
-| `2d34617` | 2f | réguas: a invariância como conselheiro, a matriz de aceitação e as 64 capturas |
-| `14c533c` | 2g | início, revisão: as sete correcções do lugar de direcção à primeira página |
+| `3f84e13` | 2a | prova, figuras: o lado do limiar declarado, as três chaves do painel, e uma só palavra para a cobertura |
+| `2a588d2` | 2b | início, cabeça: a linha de comando, a cabeça 2+2, o mapa que respira e a banda da região |
+| `ca73bc4` | 2c | início, painel: as peças nas duas densidades, a régua-espécime, as portas e o instrumento a tinta |
+| `3bfc2d5` | 2d | início, runtime: o estado no endereço, e um script que só escolhe cadeias já validadas |
+| `fea0145` | 2e | início, telemóvel: o âmbito como destinos, o selo do país como único alvo, e as medidas em filas |
+| `85830d5` | 2f | réguas: a invariância como conselheiro, a matriz de aceitação e as 64 capturas |
+| `76bf6d0` | 2g | início, revisão: as sete correcções do lugar de direcção à primeira página |
 | *(o commit que contém esta nota)* | 2h | início, proximidade e duas arestas: o gesto da Emenda 3 atrás de um toque, ISSUES I20 e I21 |
 
 ---
@@ -576,7 +576,7 @@ o que existe é a diferença de dois contadores.
 ## 2g · a revisão do lugar de direção
 
 *Construtor B2, **Claude Opus**, sozinho, sem subagentes, 20.08.2026, a partir de
-`d015fec`. Um commit. Nada foi empurrado, nada foi posto no ar, `vercel.json` não
+`be88a5a`. Um commit. Nada foi empurrado, nada foi posto no ar, `vercel.json` não
 foi tocado, nenhum ficheiro partilhado (`tokens.css`, `site.css`, `Base.astro`,
 `Masthead.astro`, `SiteFooter.astro`, `Claim.astro`, `Provenance.astro`,
 `Frase.astro`, `PortaDeCorreccoes.astro`) mudou um byte, e nem `src/data/metodo.mjs`
@@ -953,7 +953,7 @@ e não o invento.
 ## 2h · a proximidade, e duas arestas
 
 *Construtor B3, **Claude Opus**, sozinho, sem subagentes, 20.08.2026, a partir de
-`14c533c`. Um commit. Nada foi empurrado, nada foi posto no ar, `vercel.json` não
+`76bf6d0`. Um commit. Nada foi empurrado, nada foi posto no ar, `vercel.json` não
 foi tocado, nenhum ficheiro partilhado (`tokens.css`, `site.css`, `Base.astro`,
 `Masthead.astro`, `SiteFooter.astro`, `Claim.astro`, `Provenance.astro`,
 `Frase.astro`, `PortaDeCorreccoes.astro`) mudou um byte, nenhum portão novo,
@@ -1182,7 +1182,7 @@ para lá desta diferença, e não o invento.
 ## 2i · a leitura cruzada
 
 *Construtor B4, **Claude Opus**, sozinho, sem subagentes, 20.08.2026, a partir de
-`b7bff35`. Um commit. Nada foi empurrado, nada foi posto no ar, `vercel.json` não
+`457d9ec`. Um commit. Nada foi empurrado, nada foi posto no ar, `vercel.json` não
 foi tocado, nenhum ficheiro partilhado (`tokens.css`, `site.css`, `Base.astro`,
 `Masthead.astro`, `SiteFooter.astro`, `Claim.astro`, `Provenance.astro`,
 `Frase.astro`, `PortaDeCorreccoes.astro`) mudou um byte, nem `src/data/metodo.mjs`
@@ -1667,7 +1667,7 @@ invariância. Não tenho um número exacto para lá desta diferença, e não o i
 ## 2j · a leitura da pré-visualização n.º 1
 
 *Construtor B5, **Claude Opus**, sozinho, sem subagentes, 21.08.2026, a partir de
-`3c1c078`. Três commits. Nada foi empurrado, nada foi posto no ar, `vercel.json`
+`add4fa6`. Três commits. Nada foi empurrado, nada foi posto no ar, `vercel.json`
 não foi tocado, nem `src/data/metodo.mjs` nem `src/data/sobre.mjs` foram abertos,
 nenhum portão novo, nenhum número inventado. Esta ronda é a única em que um
 construtor tem os ficheiros partilhados E os da primeira página, por decisão da
@@ -1678,16 +1678,16 @@ lado o comando que os produziu.*
 
 | Commit | O quê |
 | --- | --- |
-| `4766aa1` | registo, cabeçalho, tema: as Emendas 10 a 14, a linha de método fora, e o escuro à escolha do leitor |
-| `1a658fc` | início, pontos e peças: o mapa em pontos, a fila fora da cabeça, as peças sem caixas e as oito medidas de um concelho sem página |
+| `8a34eef` | registo, cabeçalho, tema: as Emendas 10 a 14, a linha de método fora, e o escuro à escolha do leitor |
+| `e4c57f4` | início, pontos e peças: o mapa em pontos, a fila fora da cabeça, as peças sem caixas e as oito medidas de um concelho sem página |
 | *(o commit que contém esta nota)* | design/especime-v3: o registo da leitura da pré-visualização n.º 1 |
 
-**A construção de referência.** `git worktree add --detach <dir> 0a8274b`, com
+**A construção de referência.** `git worktree add --detach <dir> 271db2c`, com
 `node_modules` ligado por symlink, e `npm run build` verde. É o estado exacto da
 pré-visualização que a direção leu. Fica dito, porque muda a leitura das réguas:
-`git diff --stat 0a8274b HEAD` no início desta ronda dava **dois ficheiros, os
+`git diff --stat 271db2c HEAD` no início desta ronda dava **dois ficheiros, os
 dois de `design/`** (o plano e o brief da 2j), e por isso a construção de
-`0a8274b` e a de `3c1c078` são a mesma — a referência é exacta e não aproximada.
+`271db2c` e a de `add4fa6` são a mesma — a referência é exacta e não aproximada.
 
 ---
 
@@ -1954,7 +1954,7 @@ visível em cada uma das cinco posturas medidas.
 
 **`InstrumentoMapa.astro` não existe**, e o brief manda aplicar-lhe a mesma regra.
 Saiu na subetapa 2b, com `public/js/mapa.js` (`git log --diff-filter=D` →
-`0c1ef02`), e nenhuma vista o importa: `grep -rn "InstrumentoMapa\|js/mapa.js"
+`2a588d2`), e nenhuma vista o importa: `grep -rn "InstrumentoMapa\|js/mapa.js"
 src/ public/ tests/ scripts/` dá **uma linha**, um comentário em `site.css:1115`.
 O mapa da página de concelho, quando a etapa 3 o desenhar, herda a regra de
 `MapaRespira.astro`, que é o único mapa do sítio. Fica em ISSUES como **I29**.
@@ -2027,7 +2027,7 @@ valor. O SVG desenha-se a 100% da largura do contentor e a altura sai da propor�
 da caixa: encolher a caixa encolhe o instrumento em **todas** as larguras, sem um
 salto de patamar e sem uma segunda regra de folha.
 
-**Medido nas cinco larguras, na construção de `0a8274b` e nesta:**
+**Medido nas cinco larguras, na construção de `271db2c` e nesta:**
 
 | largura | régua, antes | régua, depois | secção, antes | secção, depois | relance, antes | relance, depois |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -2098,7 +2098,7 @@ ficheiros» mede. O que transbordava não era o mapa: era a ficha ao lado dele.
 **Medido nas duas construções, sete estados × duas edições × cinco larguras:**
 
 ```
-node …/transbordo.mjs <dist de 0a8274b>   → 8 de 70 combinações transbordam
+node …/transbordo.mjs <dist de 271db2c>   → 8 de 70 combinações transbordam
    pais-relance, pais-leitura, evora-relance e beja-vazio, a 1024, nas duas edições
    82px em português · 90px em inglês · culpados: .compo-k, .compo-row, .compo-n
 node …/transbordo.mjs <dist desta ronda>  → 0 de 70
@@ -2149,7 +2149,7 @@ folha; assim mede-se o mecanismo.
 
 ### A régua da invariância
 
-`node scripts/medir-invariancia.mjs <dist de 0a8274b> dist`
+`node scripts/medir-invariancia.mjs <dist de 271db2c> dist`
 
 ```
 322 rotas · 15 idênticas em texto · 307 com diferenças
@@ -2195,7 +2195,7 @@ quatro cadeias desta ronda têm inglês próprio.
 **Defeitos.** `node scripts/medir-defeitos.mjs`, sobre a mesma construção que o
 portão varre:
 
-| medida | `0a8274b` | 2j |
+| medida | `271db2c` | 2j |
 | --- | --- | --- |
 | páginas | 307 | 307 |
 | porta de correcções | 307/307 | 307/307 |
@@ -2294,7 +2294,7 @@ exacto para lá desta diferença, e não o invento.
 ## 2k · as duas correções da segunda leitura cruzada
 
 *Construtor B6, **Claude Opus**, sozinho, sem subagentes, 21.08.2026, a partir de
-`838a12f`. Um commit. Nada foi empurrado, nada foi posto no ar, `vercel.json` não
+`8cdfec7`. Um commit. Nada foi empurrado, nada foi posto no ar, `vercel.json` não
 foi tocado, nenhum portão novo, nenhuma chave nova, nenhum número inventado. A
 ronda é a triagem da cadeira sobre a segunda leitura do Codex
 (`critica/2026-08-21-codex-segunda-leitura-da-primeira-pagina.md`): dois achados
@@ -2340,14 +2340,14 @@ selo pela mecânica que já os mostrava e escondia. Nenhuma cadeia é montada em
 tempo de execução.
 
 **Medido, antes e depois, nas duas edições** (a construção de referência é um
-`git worktree --detach 838a12f` com `node_modules` ligado e `npm run build`
+`git worktree --detach 8cdfec7` com `node_modules` ligado e `npm run build`
 verde):
 
 ```
 grep -o 'claim-provisorio">[^<]*' dist/index.html    | sort | uniq -c
 grep -o 'claim-provisorio">[^<]*' dist/en/index.html | sort | uniq -c
 
-   838a12f:   18 provisório   ·   18 provisional
+   8cdfec7:   18 provisório   ·   18 provisional
    2k:        24 provisório   ·   24 provisional
 ```
 
@@ -2355,7 +2355,7 @@ E linha a linha, contadas as **entradas de legenda** (a entrada é o elemento da
 legenda que contém o selo daquela linha; conta quando a palavra está nessa entrada,
 fora do selo e fora do `[data-claim]`):
 
-| linha | cópias desenhadas | entradas com a palavra, `838a12f` | entradas com a palavra, 2k |
+| linha | cópias desenhadas | entradas com a palavra, `8cdfec7` | entradas com a palavra, 2k |
 | --- | --- | --- | --- |
 | `pib-pc-portugal-2024` | 2 | 1 (banda) | **2** (banda, `.brief`) |
 | `pib-pc-grande-lisboa-2024` | 1 | 1 (banda) | **2** (banda, `.brief`) |
@@ -2448,7 +2448,7 @@ grep -o 'aria-controls="[^"]*"' dist/index.html | sort | uniq -c
    1 aria-controls="nav-principal"
 
 páginas do sítio (as 307 que levam o cabeçalho) com aria-controls ou aria-expanded
-   838a12f: 0        2k: 307 com aria-controls, 2 delas com dois
+   8cdfec7: 0        2k: 307 com aria-controls, 2 delas com dois
 ```
 
 **A primeira conta que eu escrevi aqui estava errada, e fica corrigida em vez de
@@ -2495,7 +2495,7 @@ acrescenta uma palavra de onze caracteres (a régua dos defeitos só conta bloco
 cabeçalho partilhado não mexeu em nenhuma página:
 
 ```
-node scripts/medir-invariancia.mjs <dist de 838a12f> dist
+node scripts/medir-invariancia.mjs <dist de 8cdfec7> dist
   322 rotas · 320 idênticas em texto · 2 com diferenças
   /     +6 −0    (+ provisório × 6)
   /en/  +6 −0    (+ provisional × 6)
@@ -2539,7 +2539,7 @@ para lá dessa diferença, e não o invento.
 ## 2l · a segunda leitura da pré-visualização n.º 1
 
 *Construtor B7, **Claude Opus**, sozinho, sem subagentes e sem delegação,
-21.08.2026, a partir de `8b90241`. Quatro commits. Nada foi empurrado, nada foi
+21.08.2026, a partir de `ac30c16`. Quatro commits. Nada foi empurrado, nada foi
 posto no ar, `vercel.json` não foi tocado, nem `src/data/metodo.mjs` nem
 `src/data/sobre.mjs` foram abertos, nenhuma linha do livro-razão foi escrita,
 nenhum portão novo, nenhum número inventado. Como na 2j e na 2k, um construtor
@@ -2550,12 +2550,12 @@ Todos os números abaixo trazem ao lado o comando que os produziu.*
 
 | Commit | O quê |
 | --- | --- |
-| `2096884` | registo: as Emendas 15 a 17 da segunda leitura, e a §1.53 com a correção do «13 dos 14» |
-| `608c277` | início, painel: as 13 linhas do Procedimento com o seu estado, e o Painel Social Europeu por baixo |
-| `1cac621` | início, mobília: a página deixa de se explicar, o mapa vai para a direita e a porta das correções encolhe |
+| `1f08625` | registo: as Emendas 15 a 17 da segunda leitura, e a §1.53 com a correção do «13 dos 14» |
+| `fcbcc0c` | início, painel: as 13 linhas do Procedimento com o seu estado, e o Painel Social Europeu por baixo |
+| `3221b05` | início, mobília: a página deixa de se explicar, o mapa vai para a direita e a porta das correções encolhe |
 | *(o commit que contém esta nota)* | design/especime-v3: as medições, as capturas e o registo da 2l |
 
-**A construção de referência.** `git worktree add --detach <dir> b79672f`, com
+**A construção de referência.** `git worktree add --detach <dir> d62540e`, com
 `node_modules` ligado por symlink e `npm run build` verde. É o estado exacto da
 pré-visualização que a direção leu pela segunda vez.
 
@@ -2919,7 +2919,7 @@ quatro mudaram só de contagem (8 → 13 peças, 8 → 13 marcadores e palavras)
 
 ### A régua da invariância
 
-`node scripts/medir-invariancia.mjs <dist de b79672f> dist`
+`node scripts/medir-invariancia.mjs <dist de d62540e> dist`
 
 ```
 322 rotas · 15 idênticas em texto · 307 com diferenças
@@ -3032,7 +3032,7 @@ para lá desta diferença, e não o invento.
 ## 2m · a terceira leitura da primeira página: o mapa que enche e cresce, a lede que se mantém verdadeira
 
 *Construtor B8, **Claude Opus** (`claude-opus-5[1m]`), sozinho, sem subagentes e
-sem delegação, 21.08.2026, a partir de `44eecb2`. Três commits. Nada foi
+sem delegação, 21.08.2026, a partir de `91b9d37`. Três commits. Nada foi
 empurrado, nada foi posto no ar, `vercel.json` não foi tocado, nem
 `src/data/metodo.mjs` nem `src/data/sobre.mjs` foram abertos, nenhuma linha do
 livro-razão foi escrita, nenhum portão novo, nenhum número inventado. Todos os
@@ -3042,11 +3042,11 @@ números abaixo trazem ao lado o comando que os produziu.*
 
 | Commit | O quê |
 | --- | --- |
-| `b825251` | início, mapa: enche a coluna da cabeça, cresce para se escolher nele e ganha lente |
-| `ac1696b` | início, lede: os nomes saem do painel, e o portão reconta a lista |
+| `0d7e4b8` | início, mapa: enche a coluna da cabeça, cresce para se escolher nele e ganha lente |
+| `417acab` | início, lede: os nomes saem do painel, e o portão reconta a lista |
 | *(o commit que contém esta nota)* | início, pedidos da etapa 3: a conta partilhada, o cartão localizador, as capturas e o registo |
 
-**A construção de referência.** `git worktree add --detach <dir> 44eecb2`, com
+**A construção de referência.** `git worktree add --detach <dir> 91b9d37`, com
 `node_modules` por ligação simbólica e `npm run build` verde. É o estado do ramo
 no fim da etapa 3.
 
@@ -3465,7 +3465,7 @@ célula cada; e a do render sem JavaScript ganha `/?ambito=municipio`, que dá d
 
 ### A régua da invariância
 
-`node scripts/medir-invariancia.mjs <dist de 44eecb2> dist`
+`node scripts/medir-invariancia.mjs <dist de 91b9d37> dist`
 
 ```
 322 rotas · 318 idênticas em texto · 4 com diferenças
@@ -3489,7 +3489,7 @@ da lede (`separador` e `fecha`), e estão em «Identidades aceites» do
 
 **Defeitos.** `node scripts/medir-defeitos.mjs`:
 
-| medida | 44eecb2 (fim da etapa 3) | 2m |
+| medida | 91b9d37 (fim da etapa 3) | 2m |
 | --- | --- | --- |
 | páginas | 307 | 307 |
 | porta de correcções | 307/307 | 307/307 |

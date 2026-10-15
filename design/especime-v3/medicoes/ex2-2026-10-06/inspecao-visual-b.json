@@ -1,7 +1,7 @@
 {
   "comando_capturas": "node design/especime-v3/medicoes/ex2-2026-10-06/captar-ex2.mjs",
   "metodo": "Observação das imagens com view_image pelo construtor Codex, durante a passagem EX2-b. Não é uma leitura a frio nem uma inspeção humana.",
-  "cabeca_codigo": "8c3a08b9dcfb48595be70d6d47385b0427cc3b62",
+  "cabeca_codigo": "140f9458d0556248987d002652336d9d1a56891f",
   "capturas_vistas": [
     {
       "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-390-inteira.png",

@@ -1,8 +1,8 @@
 {
-  "sobre": "origin/main em 9c34bbb0, a primeira página sem o F1.1c",
+  "sobre": "origin/main em 9912127f, a primeira página sem o F1.1c",
   "dist": "<temporario>",
   "medido": "2026-09-07T16:51:43.969Z",
-  "comando": "node scripts/medir-toque.mjs <temporario> design/especime-v3/medicoes/toque-medidas-antes.json --sobre=origin/main em 9c34bbb0, a primeira página sem o F1.1c",
+  "comando": "node scripts/medir-toque.mjs <temporario> design/especime-v3/medicoes/toque-medidas-antes.json --sobre=origin/main em 9912127f, a primeira página sem o F1.1c",
   "medidas": {
     "chromium.pt.com-guiao.repouso": {
       "altura": 4638,

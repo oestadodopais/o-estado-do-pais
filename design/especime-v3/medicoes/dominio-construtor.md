@@ -1,8 +1,8 @@
 # F1.2 · a página do primeiro domínio · relatório do construtor
 
-*Ramo `dominio-2026-09-03`, tirado de `origin/main` em `d8b14a88` e fundido com
-`d447286f` antes de fechar; a construção é o commit `f5f66e30`, o registo e as
-capturas o `45aff385`, e um terceiro commit tira seis travessões que tinham
+*Ramo `dominio-2026-09-03`, tirado de `origin/main` em `dca9e227` e fundido com
+`a9574346` antes de fechar; a construção é o commit `1044ab79`, o registo e as
+capturas o `b49c00a2`, e um terceiro commit tira seis travessões que tinham
 ficado em comentários de código (a regra da casa é sem travessões na prosa, e
 uma prosa que só um construtor lê continua a ser prosa). Construtor
 Claude Opus 5, 03.09.2026. O bloco é o F1.2 do
@@ -356,7 +356,7 @@ Para os pendentes, com o que cada um destrava:
 achados) e a triagem do lugar de direção no cabeçalho daquele ficheiro. A lista
 de conserto era exactamente dez itens (Blocking 2, 3, 4; Major 6, 7, 8, 9, 11,
 13; Minor 14); os Blocking 1 e 5 e o Major 10 e 12 não estavam nela. Trabalhado
-na mesma worktree (`dominio-2026-09-03`), a partir do commit `89ebc2e1` do
+na mesma worktree (`dominio-2026-09-03`), a partir do commit `c8fe21ee` do
 construtor.*
 
 ### Duas conclusões que a medição não confirmou, e ficam ditas
@@ -366,7 +366,7 @@ nomeia, porque um deles descreve um número errado à vista e isso pesa mais do
 que qualquer instrução.
 
 - **Blocking 1** (o valor nacional do ganho médio a sair «1 567,0» no PT e certo
-  no EN): reconstruí `dist/` do commit `89ebc2e1`, sem tocar em código, e o
+  no EN): reconstruí `dist/` do commit `c8fe21ee`, sem tocar em código, e o
   valor sai **«1 576,0» nas duas edições**, carácter a carácter igual ao que a
   linha `ganho-medio-mensal-2024` publica (`grep` sobre
   `dist/dominios/economia-e-financas-publicas/index.html` e o par inglês). O
@@ -378,7 +378,7 @@ que qualquer instrução.
 - **Blocking 5** (a planta P1 da régua a não provar nada, por o portão saltar
   números com vírgula ou aceitar `data-nonledger=""`): corri
   `node tests/dominio/pagina.mjs` sobre o `dist/` real, sem tocar em código, e
-  as **seis plantas do commit `89ebc2e1` veem-se vermelhas e depois verdes**, as
+  as **seis plantas do commit `c8fe21ee` veem-se vermelhas e depois verdes**, as
   seis (registo abaixo, «antes do conserto»). O código de `tests/dominio/pagina.mjs`
   não insere `data-nonledger` nenhum na planta P1, e `temAlgarismo()` não
   distingue vírgulas: o pacote que a leitura a frio auditou tinha um
@@ -387,7 +387,7 @@ que qualquer instrução.
   não prova nada por NENHUMA das duas versões fornecidas»).
 
 ```
-node tests/dominio/pagina.mjs        (sobre 89ebc2e1, antes do conserto)
+node tests/dominio/pagina.mjs        (sobre c8fe21ee, antes do conserto)
   a cópia intacta passa o portão · saída 0
   vermelho ✓ P1 · F2 · … · saída 1
   vermelho ✓ P2 · F5 · … · saída 1
@@ -457,7 +457,7 @@ motivo, nunca se aquele motivo fazia sentido onde apareceu.
 
 `tests/dominio/pagina.mjs` ganha P7, P8 e P9, uma por conferência nova, e o
 cabeçalho do ficheiro passa a falar de nove plantas. As seis do commit
-`89ebc2e1` continuam a ver-se vermelhas (medido acima, sobre o `dist/` daquele
+`c8fe21ee` continuam a ver-se vermelhas (medido acima, sobre o `dist/` daquele
 commit); as nove veem-se vermelhas e depois verdes sobre o `dist/` desta
 passagem:
 

@@ -2,7 +2,7 @@
   {
     "nome": "frases",
     "comando": "node tests/explicacoes/frases-compostas.mjs --json <worktree>/design/especime-v3/medicoes/ex2-2026-10-06/frases-compostas.json",
-    "cabeca": "831a7fc9da041b742297d3fbb047191e993aefab",
+    "cabeca": "001b13dafeb733bcd4880ada862357c451396bab",
     "inicio": "2026-10-06T10:14:17.859Z",
     "fim": "2026-10-06T10:14:50.237Z",
     "codigo": 0

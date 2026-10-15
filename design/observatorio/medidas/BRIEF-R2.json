@@ -1,12 +1,12 @@
 {
   "brief": "design/observatorio/BRIEF-R2-os-rotulos-do-sitio.md",
   "guiao": "design/observatorio/medidas/BRIEF-R2.py",
-  "cabeca_lida": "197c6dd4",
+  "cabeca_lida": "96ff1540",
   "medidas": [
     {
       "nome": "linhas_do_livro",
       "valor": 3009,
-      "comando": "git ls-tree -r 197c6dd4:ledger/claims · os .yml",
+      "comando": "git ls-tree -r 96ff1540:ledger/claims · os .yml",
       "conhecido_positivo": {
         "o_que": "a do índice de dívida de Évora é uma delas",
         "encontrado": true
@@ -60,7 +60,7 @@
     {
       "nome": "entradas_do_dicionario_das_unidades_inglesas",
       "valor": 25,
-      "comando": "git show 197c6dd4:src/i18n/unidades.mjs · as linhas «'pt': 'en'»",
+      "comando": "git show 96ff1540:src/i18n/unidades.mjs · as linhas «'pt': 'en'»",
       "conhecido_positivo": {
         "o_que": "a do índice de dívida está lá",
         "encontrado": true

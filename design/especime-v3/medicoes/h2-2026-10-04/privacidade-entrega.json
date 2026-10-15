@@ -1,11 +1,11 @@
 {
   "comando": "python3 design/especime-v3/medicoes/h2-2026-10-04/conferir-entrega.py",
-  "cabeca_codigo": "a2b8213ae49ca789349cb5dbe050fe5dbb44164f",
+  "cabeca_codigo": "311bcbb5dd9a24e883e975502523faa14fa350d0",
   "ficheiros_lidos": 182,
   "falhas": [],
   "trailers": [
     {
-      "commit": "a2b8213ae49ca789349cb5dbe050fe5dbb44164f",
+      "commit": "311bcbb5dd9a24e883e975502523faa14fa350d0",
       "co_autoria": true,
       "sessao": true
     }

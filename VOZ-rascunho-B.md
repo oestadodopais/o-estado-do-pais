@@ -137,7 +137,7 @@ Footer authorship line — two options:
 - The director's quotation (variant a) — `ABOUT.md` «In the director's words», rendered into Portuguese here; the English is his original wording, lightly punctuated.
 - One row per number, fields, build fails without a row / on mismatch — `ledger/README.md`; `README.md` (build steps); `DECISIONS.md` §2.
 - Seal opens the row; livro-razão public — `DECISIONS.md` §1.24; `IDENTIDADE.md` §5.
-- Corrections public, dated, permanent; three kinds incl. `proveniencia` — `ledger/README.md` (as of `06bf3dc`); `/correcoes` is the planned address (`BRIEF-confianca.md` §6.4) — today the register is on `/metodo`.
+- Corrections public, dated, permanent; three kinds incl. `proveniencia` — `ledger/README.md` (as of `2db4363`); `/correcoes` is the planned address (`BRIEF-confianca.md` §6.4) — today the register is on `/metodo`.
 - Independent re-reading of main figures before publication; weekly baseline re-check with the date shown; provisional flags said in words — `DECISIONS.md` §1.27–§1.28, §1.34–§1.35; `src/data/verificacao.mjs`; the blind re-fetch of 2026-08-15 (vault Experiment note §Sixth block). Stated as practice, not as "every figure".
 - Marker `[a verificar]`, dashed seal, out of search index — `ledger/README.md`; `IDENTIDADE.md` §6.
 - Studies byte-exact + reading page — `studies-src/README.md`; `DECISIONS.md` §1.19–§1.21, §1.35.

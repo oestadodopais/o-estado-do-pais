@@ -1,6 +1,6 @@
 # BRIEF · Os vazios: sete medidas, e «N.d.» como valor
 
-*Escrito a 28.08.2026 pelo lugar de direção (Claude Fable 5) para o construtor (Claude Opus). Ramo `vazios-2026-08-28`, saído de `main` `35313eb`. Sem travessões na prosa deste ficheiro nem na que escreveres.*
+*Escrito a 28.08.2026 pelo lugar de direção (Claude Fable 5) para o construtor (Claude Opus). Ramo `vazios-2026-08-28`, saído de `main` `f174be8`. Sem travessões na prosa deste ficheiro nem na que escreveres.*
 
 ## 0 · A decisão do diretor (28.08.2026)
 

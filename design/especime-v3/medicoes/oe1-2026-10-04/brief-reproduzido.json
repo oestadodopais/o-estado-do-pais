@@ -1,12 +1,12 @@
 {
   "brief": "design/observatorio/BRIEF-OE1-o-dinheiro-do-estado-por-ministerio.md",
   "guiao": "design/observatorio/medidas/BRIEF-OE1.py",
-  "cabeca_lida": "1c4dde2f",
+  "cabeca_lida": "2c510494",
   "medidas": [
     {
       "nome": "linhas_do_livro",
       "valor": 3009,
-      "comando": "git ls-tree -r 1c4dde2f:ledger/claims · os .yml",
+      "comando": "git ls-tree -r 2c510494:ledger/claims · os .yml",
       "conhecido_positivo": {
         "o_que": "a da dívida pública de 2025 é uma delas",
         "encontrado": true
@@ -60,7 +60,7 @@
     {
       "nome": "areas_do_governo_declaradas",
       "valor": 9,
-      "comando": "git show 1c4dde2f:src/data/areas.mjs · as entradas com slug",
+      "comando": "git show 2c510494:src/data/areas.mjs · as entradas com slug",
       "conhecido_positivo": {
         "o_que": "as finanças são uma delas",
         "encontrado": true

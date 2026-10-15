@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""O §0 do brief L2b (o concelho entre os 308), medido sobre a cabeça presa do sítio (a9509193). Não lê a rede: lê o
+"""O §0 do brief L2b (o concelho entre os 308), medido sobre a cabeça presa do sítio (278e258b). Não lê a rede: lê o
 livro-razão, as vistas e as células na cabeça. Escreve design/observatorio/medidas/BRIEF-L2b.json (ou o caminho em
 OEDP_MEDIDAS_JSON). Cada medição leva o comando e um conhecido-positivo; o que não conseguir ler fica «NÃO LIDO»."""
 import json, os, pathlib, re, subprocess
 from collections import Counter
 
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "a9509193"
+CAB = "278e258b"
 NAO = "NÃO LIDO"
 medidas = []
 

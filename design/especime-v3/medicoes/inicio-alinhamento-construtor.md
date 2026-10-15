@@ -1,6 +1,6 @@
 # Relatório do construtor: a cabeça da primeira página alinhada (29.08.2026)
 
-*Construído pelo lugar de direção (Claude Fable 5), por folga do Opus nesta semana, no ramo `inicio-alinhamento-2026-08-29` saído de `main` `a4b45a7`, a partir do brief `briefs/BRIEF-inicio-alinhamento.md` (§1b, a forma que o diretor pediu depois da maqueta). Sem travessões na prosa. Os números abaixo são caixas lidas no Chromium do Playwright sobre o `dist/` construído, a 2× de densidade, um píxel de CSS por unidade.*
+*Construído pelo lugar de direção (Claude Fable 5), por folga do Opus nesta semana, no ramo `inicio-alinhamento-2026-08-29` saído de `main` `4edb0f6`, a partir do brief `briefs/BRIEF-inicio-alinhamento.md` (§1b, a forma que o diretor pediu depois da maqueta). Sem travessões na prosa. Os números abaixo são caixas lidas no Chromium do Playwright sobre o `dist/` construído, a 2× de densidade, um píxel de CSS por unidade.*
 
 ## O que mudou
 
@@ -11,7 +11,7 @@
 
 ## Medido, antes e depois, a 1280 (pt)
 
-| | antes (`a4b45a7`, no ar) | depois |
+| | antes (`4edb0f6`, no ar) | depois |
 |---|---:|---:|
 | grelha da cabeça | 417 a 1154, **737 px** | 417 a 1102, **684 px** |
 | manchete | 423 a 709 | 423 a 709 |

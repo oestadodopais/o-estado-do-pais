@@ -2,7 +2,7 @@
 
 Trabalhas em duas worktrees, e em nenhuma outra árvore:
 - a do motor, `<worktree do motor>`, no ramo `f22b-2026-09-28` (cabeça `5335e12`);
-- a do sítio, `<worktree do sítio>`, no ramo `f22b-2026-09-28`, onde o lugar de direção já juntou `main` (cabeça `22510cd9`, mais o commit da leitura e deste prompt).
+- a do sítio, `<worktree do sítio>`, no ramo `f22b-2026-09-28`, onde o lugar de direção já juntou `main` (cabeça `d4428336`, mais o commit da leitura e deste prompt).
 
 Nunca `git checkout` noutra árvore, nunca `push`, nunca `git add -A` nem `git add .`: só caminhos explícitos. Usa `git -C <worktree>` e caminhos absolutos. Prosa nova em português (Acordo Ortográfico), sem travessões. **Nenhum ficheiro que escrevas leva um caminho da máquina nem o nome do utilizador da máquina.**
 

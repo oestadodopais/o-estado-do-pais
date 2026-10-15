@@ -6,7 +6,7 @@ A peça foi construída pelo construtor do Codex (`gpt-6-astra`), que fez també
 
 ## Cabeças e reprodução
 
-O sítio partiu de `7f65829935e838c29129be0187072c5c8d87c39f` (`antes.cabeca`), e o ramo está rebaseado sobre `main` em `97e84232`. **A cabeça testada é `7110ca608ef6addba6771a50b5c47685e4e18026`** (`depois.cabeca`): o `build`, o `verify` e o `typecheck` correram nela, cada um no seu comando, com o código lido de um ficheiro acabado de escrever, e os códigos em `portoes/` são dessa cabeça (`portoes.build.cabeca`, `portoes.verify.cabeca`, `portoes.typecheck.cabeca`). As capturas do depois, as cópias das páginas e as plantas desta passagem são da construção dessa cabeça. O commit de entrega que traz estas provas é o seguinte a ela e não mexe em nada que os portões leiam; não tem código de portão próprio, e o lugar de direção volta a correr os três portões na cabeça que aterra (achado 11).
+O sítio partiu de `73c5c3fb1da61b0ab5ea3e33e02dc0ae8c1b3e9c` (`antes.cabeca`), e o ramo está rebaseado sobre `main` em `401743d2`. **A cabeça testada é `854283154b3c66ac4594e3798340c4ee4ae4a55f`** (`depois.cabeca`): o `build`, o `verify` e o `typecheck` correram nela, cada um no seu comando, com o código lido de um ficheiro acabado de escrever, e os códigos em `portoes/` são dessa cabeça (`portoes.build.cabeca`, `portoes.verify.cabeca`, `portoes.typecheck.cabeca`). As capturas do depois, as cópias das páginas e as plantas desta passagem são da construção dessa cabeça. O commit de entrega que traz estas provas é o seguinte a ela e não mexe em nada que os portões leiam; não tem código de portão próprio, e o lugar de direção volta a correr os três portões na cabeça que aterra (achado 11).
 
 O motor partiu de `aa35e2e72f09988a07d6706fe0a0b59feeca120d` e está em `0f081711750492991306ff87d056ab4f52dae306` (`motor.base`, `motor.cabeca`), na sua worktree sobre `master`; o diff está em `motor/diff.patch`, sem os corpos das três respostas do Eurostat desta passagem, que ficam no motor (o registo delas vem no diff). Nada foi publicado nem enviado a um remoto.
 
@@ -36,27 +36,27 @@ As frases lidas da construção:
 
 O guião da segunda passagem (`prompts/PROMPT-b2-codex-peca1-correcao-2.md`) traz a decisão do lugar de direção sobre cada achado; o do construtor que a acabou está em `prompts/PROMPT-b2-opus-peca1-correcao-3.md`. O que o Codex deixou mediu-se antes de se decidir: no sítio, os três commits da passagem e os ficheiros por registar da tabela abaixo; no motor, que o guião desta passagem dava por limpo, os ficheiros do achado 6 e a pasta das respostas do achado 8, mudados e por commitar. O `LEIA-ME-peca1.md` que ficou no disco estava inteiro e era o da primeira passagem: o registo da corrida mostra que ela parou quando lia o escritor do relatório, antes de o mudar. Os achados 1 a 5 da leitura a frio são os estragos plantados só nas cópias do pacote e não existem no ramo: na construção medida, a palavra de cada cartão bate com o estado e a cor (`depois.paginas.temas_pt.cores_sem_palavra`, e a K15 no `verify`), os valores das linhas não mudaram (`linhas.valores_alterados`) e as contagens das câmaras são as do brief (`camaras.depois`).
 
-**Achado 6, o crescimento da despesa líquida de 2024 lido de um gráfico.** O Codex achou, na nota 9 da p. 9 do mesmo parecer alojado, a frase que liga o valor à medida, ao ano e ao CFP, escreveu no motor um leitor próprio para ela e uma planta (a nota tirada, o gráfico intacto), e reexportou a linha; nada disso chegou a commit, e o registo do `core.gate` que ele abriu ficou vazio. O construtor Claude acabou: o `pdf_sentence()` do leitor do estudo 13 recusa agora toda a janela que abra na legenda de um gráfico, e uma segunda planta repete a leitura antiga tal como era, pelo índice do gráfico, sobre o ficheiro alojado; o localizador público da linha passou a «p. 9, nota 9», e as linhas da extração ficam na nota. O motor recebeu os commits `8a084b8`, `0f08171`, os dois com o `core.gate` a passar no pre-commit (`motor.passagem_2.commits`), e o teste do estudo vê 35 de 35 estragos com 18 provas verdes e 0 problemas (`motor.passagem_2.plantas_vistas`, `.plantas_total`, `.provas`, `.problemas`). A prova do bloco (`correcao-2/fonte-cfp.json`) confere que a extração alojada é a que o `pdftotext -layout` refaz do PDF registado (`fonte_cfp.fonte.extracao_refeita_identica`), que o controlo sai a 0 (`fonte_cfp.controlo_codigo`), que as duas plantas saem a 1 e a 1 com «um índice em rótulos de gráfico não é prova» (`fonte_cfp.plantas`), e que só a linha de 2024 mudou no motor, com 0 valores alterados (`fonte_cfp.linhas_do_motor`). **O achado 6 deu isto: o valor fica (11,9, `fonte_cfp.valor`), provado por uma frase com localizador inequívoco; nenhuma linha saiu e nenhuma régua passou a ausente.** Commit do sítio `49a63cca`.
+**Achado 6, o crescimento da despesa líquida de 2024 lido de um gráfico.** O Codex achou, na nota 9 da p. 9 do mesmo parecer alojado, a frase que liga o valor à medida, ao ano e ao CFP, escreveu no motor um leitor próprio para ela e uma planta (a nota tirada, o gráfico intacto), e reexportou a linha; nada disso chegou a commit, e o registo do `core.gate` que ele abriu ficou vazio. O construtor Claude acabou: o `pdf_sentence()` do leitor do estudo 13 recusa agora toda a janela que abra na legenda de um gráfico, e uma segunda planta repete a leitura antiga tal como era, pelo índice do gráfico, sobre o ficheiro alojado; o localizador público da linha passou a «p. 9, nota 9», e as linhas da extração ficam na nota. O motor recebeu os commits `8a084b8`, `0f08171`, os dois com o `core.gate` a passar no pre-commit (`motor.passagem_2.commits`), e o teste do estudo vê 35 de 35 estragos com 18 provas verdes e 0 problemas (`motor.passagem_2.plantas_vistas`, `.plantas_total`, `.provas`, `.problemas`). A prova do bloco (`correcao-2/fonte-cfp.json`) confere que a extração alojada é a que o `pdftotext -layout` refaz do PDF registado (`fonte_cfp.fonte.extracao_refeita_identica`), que o controlo sai a 0 (`fonte_cfp.controlo_codigo`), que as duas plantas saem a 1 e a 1 com «um índice em rótulos de gráfico não é prova» (`fonte_cfp.plantas`), e que só a linha de 2024 mudou no motor, com 0 valores alterados (`fonte_cfp.linhas_do_motor`). **O achado 6 deu isto: o valor fica (11,9, `fonte_cfp.valor`), provado por uma frase com localizador inequívoco; nenhuma linha saiu e nenhuma régua passou a ausente.** Commit do sítio `ee8dc92f`.
 
-**Achado 7, a hierarquia das cabeças que nenhum portão corria.** O Codex fez-o no commit `6151dec5`: o `check:cabeca` entra na cadeia do `verify`, o predicado vive em `tests/inicio/cabeca.mjs`, as famílias são as onze da decisão, e a planta corre dentro do próprio portão. O construtor Claude conferiu-o na corrida do `verify` da cabeça testada e mediu-o nela (`hierarquia`, `plantas-titulos-b2.json`).
+**Achado 7, a hierarquia das cabeças que nenhum portão corria.** O Codex fez-o no commit `016cd961`: o `check:cabeca` entra na cadeia do `verify`, o predicado vive em `tests/inicio/cabeca.mjs`, as famílias são as onze da decisão, e a planta corre dentro do próprio portão. O construtor Claude conferiu-o na corrida do `verify` da cabeça testada e mediu-o nela (`hierarquia`, `plantas-titulos-b2.json`).
 
-**Achado 8, as perguntas com um pedaço sem origem.** O Codex começou a auditoria pedaço a pedaço e pediu a metainformação de três indicadores, mas pôs cópias das respostas no repositório público e o registo da sua corrida não guardou o pedido. O construtor Claude refez os três pedidos pelo cliente da casa, que devolveram os mesmos bytes (o `LEIA-ME.md` da pasta no motor di-lo), e selou-os no motor (`motor.passagem_2.pedidos_das_perguntas`); declarou as três origens novas na forma da casa, com o selo do pedido (o endereço, a hora, o cliente e o sha256) e sem cópia da resposta no sítio, e deu o selo às duas origens antigas que também são respostas da API. Releu a auditoria (`tests/cartao/perguntas-provadas.json`) e ligou-a ao `check:cartao` pela K16, que confere os pedaços, os literais, o uso de cada origem declarada e os selos, com plantas na `--prova` (a primeira repete o defeito que a leitura a frio achou) e outras ao nível do portão (`plantas-k16.json`: 3 de 3 mordidas, `plantas.plantas-k16.json`). O guião das perguntas relê cada selo no motor: 5 de 5 conferem (`perguntas.origens_seladas_que_conferem`, `perguntas.origens_seladas`), e os dois conhecidos-positivos são apanhados (`perguntas.conhecidos_positivos`). Mudaram de texto 2 perguntas (`perguntas.perguntas_com_texto_mudado`): a da dívida pública passa a «em percentagem do PIB», porque a origem escreve «in % of GDP» e não define o PIB; e a do desemprego de longa duração passa a dizer a população ativa e o grupo etário que a descrição do `tesem130` diz (`perguntas.mudancas`). As outras duas que ganharam origem guardam o texto (os dois sexos dos jovens, a população inteira da sobrecarga). Commit do sítio `2dea9e22`; commit do motor `0f08171`.
+**Achado 8, as perguntas com um pedaço sem origem.** O Codex começou a auditoria pedaço a pedaço e pediu a metainformação de três indicadores, mas pôs cópias das respostas no repositório público e o registo da sua corrida não guardou o pedido. O construtor Claude refez os três pedidos pelo cliente da casa, que devolveram os mesmos bytes (o `LEIA-ME.md` da pasta no motor di-lo), e selou-os no motor (`motor.passagem_2.pedidos_das_perguntas`); declarou as três origens novas na forma da casa, com o selo do pedido (o endereço, a hora, o cliente e o sha256) e sem cópia da resposta no sítio, e deu o selo às duas origens antigas que também são respostas da API. Releu a auditoria (`tests/cartao/perguntas-provadas.json`) e ligou-a ao `check:cartao` pela K16, que confere os pedaços, os literais, o uso de cada origem declarada e os selos, com plantas na `--prova` (a primeira repete o defeito que a leitura a frio achou) e outras ao nível do portão (`plantas-k16.json`: 3 de 3 mordidas, `plantas.plantas-k16.json`). O guião das perguntas relê cada selo no motor: 5 de 5 conferem (`perguntas.origens_seladas_que_conferem`, `perguntas.origens_seladas`), e os dois conhecidos-positivos são apanhados (`perguntas.conhecidos_positivos`). Mudaram de texto 2 perguntas (`perguntas.perguntas_com_texto_mudado`): a da dívida pública passa a «em percentagem do PIB», porque a origem escreve «in % of GDP» e não define o PIB; e a do desemprego de longa duração passa a dizer a população ativa e o grupo etário que a descrição do `tesem130` diz (`perguntas.mudancas`). As outras duas que ganharam origem guardam o texto (os dois sexos dos jovens, a população inteira da sobrecarga). Commit do sítio `2d277d18`; commit do motor `0f08171`.
 
-**Achados 9 e 10, o veredicto sem ano e a lista colada ao «dentro de».** O Codex fez-o no commit `8f7b2c27`, na forma do lugar de direção, com a V1 a exigir o ano e a forma nova e duas plantas por edição. O construtor Claude trocou o apóstrofo da frase inglesa pelo tipográfico, porque o simples saía como «&#39;» e o inventário não o reconhecia (commit `a425f9a3`), e pôs as cadeias no inventário.
+**Achados 9 e 10, o veredicto sem ano e a lista colada ao «dentro de».** O Codex fez-o no commit `332e6f0d`, na forma do lugar de direção, com a V1 a exigir o ano e a forma nova e duas plantas por edição. O construtor Claude trocou o apóstrofo da frase inglesa pelo tipográfico, porque o simples saía como «&#39;» e o inventário não o reconhecia (commit `4c408b3e`), e pôs as cadeias no inventário.
 
-**Achado 11, a cabeça commitada com os códigos vermelhos.** Os códigos em `portoes/` são da cabeça testada, `7110ca60`, nomeada acima; o commit de entrega é o seguinte a ela.
+**Achado 11, a cabeça commitada com os códigos vermelhos.** Os códigos em `portoes/` são da cabeça testada, `85428315`, nomeada acima; o commit de entrega é o seguinte a ela.
 
 **Achado 12, o zero da marca vindo de um predicado cego.** O Codex escreveu o predicado novo no medidor; o construtor Claude commitou-o (`e774add0`). O zero, o conhecido-positivo e as plantas do `seloDoValorDoCartao()` estão no item 3 do mandato.
 
-**Achado 13, o cartão das câmaras sem período.** O Codex fez-o no commit `a4cc0e17`: o cartão diz o período das linhas contadas, as três contagens exigem que as 308 linhas partilhem o período (`camaras.depois.concelhos`), com plantas. A V2 comparava a linha do valor inteira com uma frase com espaço, e o texto construído não o tem, porque é a folha que separa as partes, como em todos os cartões; a V2 recusava o cartão, e a isenção da porta comum no portão de HTML caía com ela. O construtor Claude mudou-lhe a forma (commit `f033b7aa`): compara a contagem com a unidade e o período cada um na sua parte, e exige que a linha não tenha mais nada, com duas plantas novas. As plantas das câmaras mordem todas (`plantas.plantas-camaras.json`: 15 de 15).
+**Achado 13, o cartão das câmaras sem período.** O Codex fez-o no commit `805c796e`: o cartão diz o período das linhas contadas, as três contagens exigem que as 308 linhas partilhem o período (`camaras.depois.concelhos`), com plantas. A V2 comparava a linha do valor inteira com uma frase com espaço, e o texto construído não o tem, porque é a folha que separa as partes, como em todos os cartões; a V2 recusava o cartão, e a isenção da porta comum no portão de HTML caía com ela. O construtor Claude mudou-lhe a forma (commit `43051f39`): compara a contagem com a unidade e o período cada um na sua parte, e exige que a linha não tenha mais nada, com duas plantas novas. As plantas das câmaras mordem todas (`plantas.plantas-camaras.json`: 15 de 15).
 
-**Achado 14, os títulos das chaves.** O Codex fez-o no commit `a4cc0e17`: «calculado» e «calculated» nas três chaves das câmaras, e «municipalities» na chave `municipios_com_pagina` em inglês. O construtor Claude conferiu que os 308 índices contados são linhas calculadas (`camaras.depois.indices_calculados`), e as dicas rendidas estão em `depois.paginas.pais_en.camaras_dicas`. As chaves do painel que o veredicto põe na primeira página não são novas deste bloco, e os seus títulos foram decididos no P1; ficam como estão, com «inside» no inglês.
+**Achado 14, os títulos das chaves.** O Codex fez-o no commit `805c796e`: «calculado» e «calculated» nas três chaves das câmaras, e «municipalities» na chave `municipios_com_pagina` em inglês. O construtor Claude conferiu que os 308 índices contados são linhas calculadas (`camaras.depois.indices_calculados`), e as dicas rendidas estão em `depois.paginas.pais_en.camaras_dicas`. As chaves do painel que o veredicto põe na primeira página não são novas deste bloco, e os seus títulos foram decididos no P1; ficam como estão, com «inside» no inglês.
 
-**Achado 15, cinco portas para a mesma página.** O Codex fez-o no commit `a4cc0e17`: as contagens deixaram de ser ligações, o cartão tem uma porta comum, e a isenção da L1 estreitou-se a essa porta. A L1 conta 2291 páginas, com 12 entradas só de recibos novos e 0 páginas antigas agravadas (`l1.final.contagens.estudos`, `.recibos_de_linhas_novas`, `.paginas_antigas_agravadas`). Os nomes das câmaras acima do limite ficam para o B3, na linha dos lugares.
+**Achado 15, cinco portas para a mesma página.** O Codex fez-o no commit `805c796e`: as contagens deixaram de ser ligações, o cartão tem uma porta comum, e a isenção da L1 estreitou-se a essa porta. A L1 conta 2291 páginas, com 12 entradas só de recibos novos e 0 páginas antigas agravadas (`l1.final.contagens.estudos`, `.recibos_de_linhas_novas`, `.paginas_antigas_agravadas`). Os nomes das câmaras acima do limite ficam para o B3, na linha dos lugares.
 
-**Achado 16, a referência sem dono.** O Codex fez-o no commit `8f7b2c27` para o cartão, com a K15 a conferir o dono e a planta. A faixa da página do domínio continuava a render a palavra sem ele para o saldo e para a despesa líquida, e a K15 fechou o `verify` na primeira tentativa desta passagem (`portoes-e774add0/`, `portoes_tentativas`); o construtor Claude passou o dono também à faixa (commit `7110ca60`).
+**Achado 16, a referência sem dono.** O Codex fez-o no commit `332e6f0d` para o cartão, com a K15 a conferir o dono e a planta. A faixa da página do domínio continuava a render a palavra sem ele para o saldo e para a despesa líquida, e a K15 fechou o `verify` na primeira tentativa desta passagem (`portoes-e774add0/`, `portoes_tentativas`); o construtor Claude passou o dono também à faixa (commit `85428315`).
 
-**Achado 17, o nome do cartão das câmaras num título.** O Codex fez-o no commit `a4cc0e17`: o nome é um `span`, como nos outros cartões, e a V2 recusa um título, com planta. O nome deixou por isso de ser um bloco que o portão da voz recolha, como os nomes dos outros cartões, e a linha dele saiu do inventário (commit `043f7291`).
+**Achado 17, o nome do cartão das câmaras num título.** O Codex fez-o no commit `805c796e`: o nome é um `span`, como nos outros cartões, e a V2 recusa um título, com planta. O nome deixou por isso de ser um bloco que o portão da voz recolha, como os nomes dos outros cartões, e a linha dele saiu do inventário (commit `7d1ab946`).
 
 **Achado 18, a K7 com o nome errado.** A K7 é a proibição de «limiar» nos cartões; o estado e a cor conferem-se pela T9 do `check:pais` e pela K15 do `check:cartao`. Este relatório já os nomeia assim.
 
@@ -64,13 +64,13 @@ O guião da segunda passagem (`prompts/PROMPT-b2-codex-peca1-correcao-2.md`) tra
 
 | Ficheiro | O que o Codex deixou | O que ficou |
 | --- | --- | --- |
-| `ledger/claims/crescimento-da-despesa-liquida-2024.yml`, `ledger/cruzamentos/dominios.json` | a linha reexportada com a frase da nota 9 e as linhas da extração no localizador | reexportada de novo depois do commit do motor, com o localizador público «p. 9, nota 9»; commit `49a63cca` |
+| `ledger/claims/crescimento-da-despesa-liquida-2024.yml`, `ledger/cruzamentos/dominios.json` | a linha reexportada com a frase da nota 9 e as linhas da extração no localizador | reexportada de novo depois do commit do motor, com o localizador público «p. 9, nota 9»; commit `ee8dc92f` |
 | motor: o leitor, o construtor e o teste do estudo 13, o livro e o manifesto | o leitor da nota 9 e a planta da nota tirada, sem commit | completados com a recusa geral e a planta da leitura antiga; commit `8a084b8`, com o `core.gate` a passar |
 | motor: `indicators/out/b2-2026-09-23/correcao-2-perguntas/` | três respostas com um registo cujo pedido não ficou no registo da corrida | substituída pelos mesmos três pedidos feitos de novo pelo cliente da casa, com os mesmos bytes; commit `0f08171`; a pasta dele saiu |
-| `src/data/figuras.mjs` | três origens novas com cópias no sítio, e duas perguntas reescritas | completado: as origens na forma da casa com o selo do motor, e o selo nas duas origens antigas da API; commit `2dea9e22` |
-| `tests/cartao/perguntas-provadas.json` | a auditoria pedaço a pedaço | relida, com o excerto dos dois sexos acertado, e ligada ao `check:cartao` pela K16; commit `2dea9e22` |
+| `src/data/figuras.mjs` | três origens novas com cópias no sítio, e duas perguntas reescritas | completado: as origens na forma da casa com o selo do motor, e o selo nas duas origens antigas da API; commit `2d277d18` |
+| `tests/cartao/perguntas-provadas.json` | a auditoria pedaço a pedaço | relida, com o excerto dos dois sexos acertado, e ligada ao `check:cartao` pela K16; commit `2d277d18` |
 | `tests/cartao/fontes-perguntas/` | cópias das três respostas no repositório público | retirada: as respostas ficam no motor |
-| `design/especime-v3/INVENTARIO-FRASES.md`, `critica/REVISOES-DO-INVENTARIO.md` | as cadeias novas, e as retiradas com uma sexta coluna | reparados e completados; commit `043f7291` |
+| `design/especime-v3/INVENTARIO-FRASES.md`, `critica/REVISOES-DO-INVENTARIO.md` | as cadeias novas, e as retiradas com uma sexta coluna | reparados e completados; commit `7d1ab946` |
 | `medir.py` | o predicado do invólucro novo | commitado (`e774add0`); as medidas desta passagem entram no commit de entrega |
 | `correcao-2/` | a prova do CFP, uma imagem da p. 9 do PDF, cópias das respostas, a auditoria e uma medida da hierarquia de outra cabeça | a prova do CFP refeita; a imagem e as cópias saíram, porque as cópias das fontes não entram num repositório público; a auditoria vive em `tests/cartao/`; a hierarquia foi medida na cabeça testada |
 | o resto da pasta das medições | as provas da corrida final da primeira passagem | substituídas pela corrida final desta passagem |
@@ -97,9 +97,9 @@ Há 94 ensaios de estragos nos índices de plantas da pasta e 94 mordidas (`plan
 
 | Comando | Código | Cabeça | Medição e ficheiro |
 | --- | --- | --- | --- |
-| `npm run build` | 0 | `7110ca60` | `portoes.build.codigo`, lido de `portoes/build.codigo` |
-| `npm run verify` | 0 | `7110ca60` | `portoes.verify.codigo`, lido de `portoes/verify.codigo` |
-| `npm run typecheck` | 0 | `7110ca60` | `portoes.typecheck.codigo`, lido de `portoes/typecheck.codigo` |
+| `npm run build` | 0 | `85428315` | `portoes.build.codigo`, lido de `portoes/build.codigo` |
+| `npm run verify` | 0 | `85428315` | `portoes.verify.codigo`, lido de `portoes/verify.codigo` |
+| `npm run typecheck` | 0 | `85428315` | `portoes.typecheck.codigo`, lido de `portoes/typecheck.codigo` |
 
 A primeira tentativa desta passagem, na cabeça `e774add0`, está em `portoes-e774add0/`: o `build` saiu a 0 e o `verify` a 1 (`portoes_tentativas`), pela K15 na faixa do domínio (achado 16). As tentativas anteriores, da construção e da primeira passagem, estão nas pastas `portoes-*`.
 
@@ -109,37 +109,37 @@ Os três portões da cabeça testada levaram 782,233879 segundos (`portoes_segun
 
 Os commits do ramo sobre `main`, até à cabeça testada:
 
-- `f8e82713` B2: importar períodos anteriores e habitação dos inquilinos
-- `8999e903` B2: escrever a unidade monetária da linha nas leituras
-- `58a0b81d` B2: declarar perguntas e referências numa tabela comum
-- `b715dda6` B2: mostrar estado em palavras e unir valor à unidade
-- `3283b6b5` B2: compor o veredicto e contar as câmaras contra o limite
-- `353d7bb8` B2: guardar o antes nas páginas e larguras do mandato
-- `ffe43c06` B2: tornar acessíveis as origens da pergunta dos inquilinos
-- `8479ff91` B2: registar perguntas e estados no inventário das frases
-- `ff9d5662` B2: conferir as portas obrigatórias e medir as fichas novas
-- `4aa1c128` B2: tornar reproduzíveis a medição e a prova do motor
-- `1920024c` B2: declarar os tipos da língua e das referências opcionais
-- `bc44858a` B2: levar os estilos da origem ao recibo novo
-- `57124036` B2: guardar capturas finais, plantas e medições dos pontos suspensos
-- `7c381662` B2: relatar a prova e as decisões necessárias à aceitação
-- `f2bd5bff` B2: reexportar a associação provada do agregado europeu
-- `5d4e0c99` B2: aplicar ao título europeu a regra dos títulos interiores
-- `5ffcaa94` B2: fechar as provas da correção e a reprodução do relatório
-- `ed44e493` B2: guardar a prova do motor e as plantas que estavam bloqueadas
-- `6151dec5` B2: integrar a hierarquia das cabeças no verify
-- `a4cc0e17` B2: provar o período das câmaras e usar uma porta comum
-- `8f7b2c27` B2: datar o veredicto e nomear o dono das referências
-- `49a63cca` B2: o crescimento da despesa líquida de 2024 provado na nota 9 do parecer do CFP, reexportado do motor
-- `2dea9e22` B2: cada pedaço de cada pergunta com a sua origem, e a K16 do check:cartao a conferi-lo
-- `f033b7aa` B2: a V2 compara a linha do valor das câmaras parte a parte, a contagem e o período
-- `a425f9a3` B2: o apóstrofo tipográfico na frase inglesa do veredicto
-- `043f7291` B2: o inventário das frases da segunda passagem de correção
-- `d1bf2c2b` B2: os guiões da segunda passagem de correção e a leitura a frio da peça 1
+- `19b0505a` B2: importar períodos anteriores e habitação dos inquilinos
+- `518991a6` B2: escrever a unidade monetária da linha nas leituras
+- `3cb29441` B2: declarar perguntas e referências numa tabela comum
+- `d235f183` B2: mostrar estado em palavras e unir valor à unidade
+- `bd9b4b0f` B2: compor o veredicto e contar as câmaras contra o limite
+- `1096d617` B2: guardar o antes nas páginas e larguras do mandato
+- `de463227` B2: tornar acessíveis as origens da pergunta dos inquilinos
+- `f78d1137` B2: registar perguntas e estados no inventário das frases
+- `9ac7a373` B2: conferir as portas obrigatórias e medir as fichas novas
+- `bf455c5f` B2: tornar reproduzíveis a medição e a prova do motor
+- `5f9a67bd` B2: declarar os tipos da língua e das referências opcionais
+- `d0543fe6` B2: levar os estilos da origem ao recibo novo
+- `4217553c` B2: guardar capturas finais, plantas e medições dos pontos suspensos
+- `088ea739` B2: relatar a prova e as decisões necessárias à aceitação
+- `7ee4e264` B2: reexportar a associação provada do agregado europeu
+- `b42ad8a3` B2: aplicar ao título europeu a regra dos títulos interiores
+- `b49a22ff` B2: fechar as provas da correção e a reprodução do relatório
+- `912c280b` B2: guardar a prova do motor e as plantas que estavam bloqueadas
+- `016cd961` B2: integrar a hierarquia das cabeças no verify
+- `805c796e` B2: provar o período das câmaras e usar uma porta comum
+- `332e6f0d` B2: datar o veredicto e nomear o dono das referências
+- `ee8dc92f` B2: o crescimento da despesa líquida de 2024 provado na nota 9 do parecer do CFP, reexportado do motor
+- `2d277d18` B2: cada pedaço de cada pergunta com a sua origem, e a K16 do check:cartao a conferi-lo
+- `43051f39` B2: a V2 compara a linha do valor das câmaras parte a parte, a contagem e o período
+- `4c408b3e` B2: o apóstrofo tipográfico na frase inglesa do veredicto
+- `7d1ab946` B2: o inventário das frases da segunda passagem de correção
+- `9f479883` B2: os guiões da segunda passagem de correção e a leitura a frio da peça 1
 - `e774add0` B2: o medidor do bloco conta a marca entre o valor e a unidade no invólucro novo
-- `7110ca60` B2: a faixa também nomeia o dono da referência nacional
+- `85428315` B2: a faixa também nomeia o dono da referência nacional
 
-Os desta passagem, depois de `ed44e493`: `6151dec5`, `a4cc0e17`, `8f7b2c27`, `49a63cca`, `2dea9e22`, `f033b7aa`, `a425f9a3`, `043f7291`, `d1bf2c2b`, `e774add0`, `7110ca60`. No motor: `8a084b8`, `0f08171`.
+Os desta passagem, depois de `912c280b`: `016cd961`, `805c796e`, `332e6f0d`, `ee8dc92f`, `2d277d18`, `43051f39`, `4c408b3e`, `7d1ab946`, `9f479883`, `e774add0`, `85428315`. No motor: `8a084b8`, `0f08171`.
 
 ## O que ficou por fazer
 

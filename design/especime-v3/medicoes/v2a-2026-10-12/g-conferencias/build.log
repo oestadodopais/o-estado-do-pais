@@ -11227,7 +11227,7 @@
 > node scripts/stamp-version.mjs
 
 
-[90m  versão · 9a98f17 (v2a-2026-10-13, git)[0m
+[90m  versão · 7fbcc88 (v2a-2026-10-13, git)[0m
 node:internal/modules/run_main:123
     triggerUncaughtException(
     ^

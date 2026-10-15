@@ -2,7 +2,7 @@
 
 *Escrito a 29.08.2026 pelo lugar de direção (Claude Fable 5) para o construtor (Claude Opus), a construir quando houver folga. Ramo `inicio-alinhamento-<data>` saído de `main`, num worktree. Sem travessões na prosa. O diretor viu o bloco no ar e pediu-o («the cities are not aligned with the map… the map could be aligned with the bottom… or a full top for the title»); o lugar de direção mediu e fez a maqueta em `design/especime-v3/medicoes/inicio-alinhamento-maqueta-1280.png`.*
 
-## 0 · O que está, medido no ar a 1280 (`3de3ba7`)
+## 0 · O que está, medido no ar a 1280 (`6138643`)
 
 A grelha da cabeça mede 737 px (417 a 1154). A coluna esquerda tem a manchete (423 a 709) e por baixo os nomes (735 a 1154); a coluna direita tem o mapa (423 a 1069) e por baixo a contagem e a fonte da Carta (1069 a 1137). Os nomes começam 312 px abaixo do topo do mapa e acabam 85 px abaixo do fundo dele; a linha da fonte fica pendurada por baixo do mapa, alinhada com nada.
 

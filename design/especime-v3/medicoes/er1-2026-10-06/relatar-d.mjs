@@ -37,7 +37,7 @@ for (const campo of ['excerpt', 'source_url']) for (const lang of ['pt', 'en']) 
 assert(plantas.every(p => p.mordeu));
 const prova = {cabecaCodigo: codigo, celula, navegador, verify, sha256LogVerify: createHash('sha256').update(log).digest('hex')};
 fs.writeFileSync(`${pasta}/provas-d.json`, JSON.stringify(prova, null, 2) + '\n');
-const commits = execFileSync('git', ['log', '--reverse', '--format=%h %s', '514224f1..' + codigo], {encoding: 'utf8'}).trim().split('\n');
+const commits = execFileSync('git', ['log', '--reverse', '--format=%h %s', '6e9d95b0..' + codigo], {encoding: 'utf8'}).trim().split('\n');
 const tabela = (titulos, linhas) => '| ' + titulos.join(' | ') + ' |\n| ' + titulos.map(() => '---').join(' | ') + ' |\n' + linhas.map(l => '| ' + l.map(v => String(v).replaceAll('|', '\\|')).join(' | ') + ' |').join('\n');
 const texto = `
 

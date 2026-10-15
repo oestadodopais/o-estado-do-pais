@@ -1,7 +1,7 @@
 {
   "bloco": "UE1",
-  "cabeca_do_codigo": "33ed14a0a609e7ac9c3830c4fb777c0840b02f36",
-  "base": "8e66b601",
+  "cabeca_do_codigo": "d88885958683f180c583b52f24d7b7be46c118ec",
+  "base": "8cb6f7a8",
   "guiao": "design/especime-v3/medicoes/ue1-2026-09-29/medir-ue1.mjs",
   "medidas": [
     {
@@ -208,7 +208,7 @@
     {
       "nome": "linhas_do_livro_mudadas",
       "valor": 0,
-      "comando": "git diff --name-only 8e66b601 <cabeça> -- ledger/claims",
+      "comando": "git diff --name-only 8cb6f7a8 <cabeça> -- ledger/claims",
       "conhecido_positivo": {
         "o_que": "o mesmo comando vê as séries novas em ledger/series",
         "encontrado": true
@@ -244,7 +244,7 @@
     {
       "nome": "cruzamentos_anteriores",
       "valor": 6,
-      "comando": "git ls-tree --name-only 8e66b601 ledger/cruzamentos/",
+      "comando": "git ls-tree --name-only 8cb6f7a8 ledger/cruzamentos/",
       "conhecido_positivo": {
         "o_que": "o registo de Évora está entre eles",
         "encontrado": true
@@ -318,7 +318,7 @@
       "valor": 0,
       "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/build.codigo",
       "conhecido_positivo": {
-        "o_que": "o registo da corrida é desta cabeça (33ed14a0)",
+        "o_que": "o registo da corrida é desta cabeça (d8888595)",
         "encontrado": true
       }
     },
@@ -336,7 +336,7 @@
       "valor": 0,
       "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/verify.codigo",
       "conhecido_positivo": {
-        "o_que": "o registo da corrida é desta cabeça (33ed14a0)",
+        "o_que": "o registo da corrida é desta cabeça (d8888595)",
         "encontrado": true
       }
     },
@@ -354,7 +354,7 @@
       "valor": 0,
       "comando": "cat design/especime-v3/medicoes/ue1-2026-09-29/portoes/typecheck.codigo",
       "conhecido_positivo": {
-        "o_que": "o registo da corrida é desta cabeça (33ed14a0)",
+        "o_que": "o registo da corrida é desta cabeça (d8888595)",
         "encontrado": true
       }
     },

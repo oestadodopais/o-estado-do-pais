@@ -1,7 +1,7 @@
 # Nota da ronda pós-fusão · o que ficou por fazer no dia da fusão
 
-*Ramo `pos-fusao-v3`, cortado de `origin/main` = `8440781`; o lugar de direção
-abriu a ronda em `d15273f` (os quatro briefs, os pedidos ao motor e a sonda dos
+*Ramo `pos-fusao-v3`, cortado de `origin/main` = `07c5d10`; o lugar de direção
+abriu a ronda em `4da5032` (os quatro briefs, os pedidos ao motor e a sonda dos
 tipos), que é o commit que `dist/version.json` carimba e que cada cartão nomeia.
 Uma secção por construtor. **Todos os números desta nota vêm de um comando que
 está escrito ao lado deles.***
@@ -184,7 +184,7 @@ por resumo (`001bbf7a…`), e a corrida final está verde.
 
 ### A1.5 · o `README.md`
 
-`grep` antes, sobre o `README.md` de `8440781`:
+`grep` antes, sobre o `README.md` de `07c5d10`:
 
 ```
 244:embebido e nenhum pedido de rede. Abaixo dela, o documento vai byte a byte como
@@ -315,7 +315,7 @@ A folha mudou em três sítios: a lista de excepção, `.controls` e um comentá
 
 Os três selos que o instrumento mostra em cada estado, medidos com o mesmo
 algoritmo que a matriz usa (a caixa do elemento contra a caixa do `::after`, e
-fica a maior das duas). Antes = construção de `f242e51`; depois = construção
+fica a maior das duas). Antes = construção de `0ebe1c8`; depois = construção
 deste commit. Estado `pt`, que é o de defeito; os outros cinco dão as mesmas
 caixas, e as duas frases que levam dois selos vão na linha seguinte.
 
@@ -556,7 +556,7 @@ Quatro ficheiros em `../capturas/pos-fusao/`: `…-1280-pt.png`, `…-1280-en.pn
 da região, o valor e o ponto sobre o eixo não aparecem; os rótulos do eixo, a
 linha da UE-27 e a barra da distância aparecem todos.
 
-Conferido que **não é desta ronda**: construída a folha de `f242e51` e a folha
+Conferido que **não é desta ronda**: construída a folha de `0ebe1c8` e a folha
 deste commit, e fotografada a mesma régua nas duas, as duas imagens são iguais.
 O documento está certo nas duas, com JavaScript e sem ele: `<text class="mk-name"
 x="384.75" y="154">Portugal</text>`, `fill` calculado `rgb(23,25,27)`, `opacity`
@@ -584,7 +584,7 @@ diagnóstico, e as quatro capturas de A2.7 mostram-no.
 
 *Construtor A3 (Claude Opus, `claude-opus-5[1m]`). Brief:
 `../briefs/BRIEF-pos-fusao-A3.md`. Todas as medições nesta máquina, sobre um
-`npm run build` fresco de `e19c1dc`, e cada uma com o comando ao lado dela.*
+`npm run build` fresco de `6cd1b0a`, e cada uma com o comando ao lado dela.*
 
 ### A3.0 · o que este commit faz, em quatro linhas
 
@@ -698,7 +698,7 @@ antiga era optimista; a poupança real é de 55,8% e chega.
 
 ### A3.3 · os tamanhos e os tempos, antes e depois
 
-Antes = `npm run cartoes` com `scripts/cartoes.mjs` em `e19c1dc`; depois = o
+Antes = `npm run cartoes` com `scripts/cartoes.mjs` em `6cd1b0a`; depois = o
 mesmo comando com este commit, sobre o mesmo `dist/` de `astro build`. As
 contagens de bytes são um `fs.statSync` sobre os 532 ficheiros, e não um `du`.
 
@@ -900,7 +900,7 @@ píxel onde ela aconteceu, e o registo desse cartão diz `"rgba"`.
 
 **I61, o marcador do Instrumento n.º 1 que não pintava.** O construtor A2 deixou a observação («não pinta em Chromium sem cabeça; não verificado com janela»). Reproduzido em Chrome com janela sobre a construção local servida por `astro preview`: o nome da região, o valor «82» e o ponto não aparecem, e ficam só dois fios cinzentos onde o rótulo devia estar. Diagnóstico, lido no DOM e na folha: o grupo `.mk` tem cinco filhos por esta ordem, `rect` (a chapa), `text.mk-name`, `text.mk-val`, `circle`, `rect.mk-hit`; o último é a área de toque, e o seu `fill` calculado era `rgb(246, 247, 244)`, o papel. A regra `.rule-svg .mk-hit { fill: transparent }` (`site.css:1158`) perde para `.rule-svg .mk rect { fill: var(--paper) }` (`site.css:1188`, etapa 1c, `7650aed`) por especificidade, 0,2,0 contra 0,2,1. O CSS servido em produção traz as duas regras por esta ordem (`curl https://xn--oestadodopas-2fb.pt/_astro/Base.KO2lSj4k.css | grep -o '\.rule-svg \.mk rect{[^}]*}\|\.rule-svg \.mk-hit{[^}]*}'` → `.rule-svg .mk-hit{fill:#0000}` e `.rule-svg .mk rect{fill:var(--paper)}`), por isso o defeito está no ar desde a fusão de 21.08. A correção é uma regra com a mesma especificidade, depois da outra: `.rule-svg .mk rect.mk-hit { fill: transparent }`.
 
-Prova, em Chromium sem cabeça, `/` e `/en` a 1280, antes (a folha de `5366dd1`, por `git stash`) e depois:
+Prova, em Chromium sem cabeça, `/` e `/en` a 1280, antes (a folha de `9b3b4fb`, por `git stash`) e depois:
 
 | | `fill` calculado de `.mk-hit` | píxeis escuros na caixa do «82» (22×22 com 4px de margem, 900 píxeis) |
 |---|---|---|
@@ -915,7 +915,7 @@ O guião (servidor local sobre `dist/`, `document.fonts.ready`, `scrollIntoView`
 
 ### Réguas e capturas do fecho
 
-`npm run build` ✓ (cinco portões, 12,9 s) · `npm run typecheck` 0 · `ortografia.mjs --verificar` 0 · `medir-defeitos.mjs`: 307 páginas, porta de correcções 307/307, primeira página 0 valores sem selo e 0 selos para outra linha, **frases de moldura 86 distintas · 2 441 ocorrências**, autorreferência 0 nas rotas inventariadas; `medir-contraste.mjs`: 0 falhas de texto, 4 pares de interface abaixo de 3:1 (os mesmos). **Deltas contra a base `8440781`, construída num worktree e medida com as mesmas réguas: nenhum.** A base já media 86 · 2 441 (o «92 · 2 487» do estado de `main` de 21.08 é de uma contagem anterior ao fecho do ramo, e fica assinalado como tal). Nenhum valor e nenhuma contagem moveu; nenhuma chave EN entrou nesta etapa.
+`npm run build` ✓ (cinco portões, 12,9 s) · `npm run typecheck` 0 · `ortografia.mjs --verificar` 0 · `medir-defeitos.mjs`: 307 páginas, porta de correcções 307/307, primeira página 0 valores sem selo e 0 selos para outra linha, **frases de moldura 86 distintas · 2 441 ocorrências**, autorreferência 0 nas rotas inventariadas; `medir-contraste.mjs`: 0 falhas de texto, 4 pares de interface abaixo de 3:1 (os mesmos). **Deltas contra a base `07c5d10`, construída num worktree e medida com as mesmas réguas: nenhum.** A base já media 86 · 2 441 (o «92 · 2 487» do estado de `main` de 21.08 é de uma contagem anterior ao fecho do ramo, e fica assinalado como tal). Nenhum valor e nenhuma contagem moveu; nenhuma chave EN entrou nesta etapa.
 
 Capturas: o Instrumento n.º 1 com o marcador a pintar, 1280 e 390, pt e en (`capturas/pos-fusao/2026-08-22-fecho-a-instrumento-*.png`), além das quatro de A2. Uma observação de forma, vista na captura e deixada para a ronda de notas do diretor: na fila da Leitura breve do instrumento, «provisório» cola-se ao quadrado do selo sem espaço.
 
@@ -940,7 +940,7 @@ Capturas: o Instrumento n.º 1 com o marcador a pintar, 1280 e 390, pt e en (`ca
 
 *Construtor B1 (Claude Opus, `claude-opus-5[1m]`). Brief:
 `../briefs/BRIEF-pos-fusao-B1.md`. Corrido sobre `npm run build` fresco, no ramo
-`pos-fusao-v3` a partir de `cabca1c`. **Nenhum byte de `studies-src/` nem do
+`pos-fusao-v3` a partir de `ad274fc`. **Nenhum byte de `studies-src/` nem do
 manifesto foi tocado**, e há duas provas disso ao fundo. Todos os números desta
 secção vêm de um comando que está escrito ao lado deles.*
 
@@ -1322,7 +1322,7 @@ imagens e os números desta nota.
 
 **B1 revisto na captura** (`capturas/pos-fusao/2026-08-22-b1-faixa-1280-pt.png`): marca em Spectral, rótulo em Spectral SC, a porta Sobre e a porta de regresso, nenhuma frase sobre o sítio; o fio de tinta por baixo lê-se contra o documento claro. Uma observação de forma para a ronda de notas do diretor: a 1280 a porta de regresso dobra para uma segunda linha dentro da coluna do documento. O desvio do construtor (fio de tinta em vez de `--g3`, por medição: 1,01 a 1,08:1 do papel da faixa contra os fundos dos 15 documentos) fica aceite pelo lugar de direção, e a razão é a medição dele.
 
-**A leitura cruzada** (`critica/2026-08-22-codex-leitura-pos-fusao-A-B1.md`): Codex, sem contexto, sobre a construção em `b6e1bef`, com o pacote de desenho dentro do pacote pela primeira vez; **cinco plantas de cinco** (um valor de linha numa página, um registo de cartão desfasado, a frase de autoria reposta numa faixa, um literal de cor v2 num cartão, a regra I61 removida da folha servida, esta última com o diagnóstico certo). Dois achados reais, nenhum desta ronda: **I62** (três frases da casa no instrumento dos mandatos de Évora que a régua do inventário não vê por construção; régua e voz) e **I63** (um «e» português numa `reason_en` escrita pelo exportador; pedido C3 ao motor). Um dissenso registado (as etiquetas das páginas de estudo, classificadas como conteúdo pela direção na 4e). Nenhum ficheiro do sítio mudou por causa da leitura.
+**A leitura cruzada** (`critica/2026-08-22-codex-leitura-pos-fusao-A-B1.md`): Codex, sem contexto, sobre a construção em `612d013`, com o pacote de desenho dentro do pacote pela primeira vez; **cinco plantas de cinco** (um valor de linha numa página, um registo de cartão desfasado, a frase de autoria reposta numa faixa, um literal de cor v2 num cartão, a regra I61 removida da folha servida, esta última com o diagnóstico certo). Dois achados reais, nenhum desta ronda: **I62** (três frases da casa no instrumento dos mandatos de Évora que a régua do inventário não vê por construção; régua e voz) e **I63** (um «e» português numa `reason_en` escrita pelo exportador; pedido C3 ao motor). Um dissenso registado (as etiquetas das páginas de estudo, classificadas como conteúdo pela direção na 4e). Nenhum ficheiro do sítio mudou por causa da leitura.
 
 **Modelo e gasto de B1 e do fecho:** B1 Claude Opus (`claude-opus-5[1m]`) ≈ 300k; a leitura Codex `gpt-5.6-sol` xhigh (o CLI não imprimiu a contagem nesta corrida; `[verify]`); o fecho, Claude Fable 5.
 
@@ -1334,7 +1334,7 @@ Três ficheiros de sítio e dois de conferência. `src/pages/en/404.astro` rende
 
 **A prova na pré-visualização n.º 3, e o que ela encontrou.** `git push -u origin pos-fusao-v3` às 15:2x BST; deployment `o-estado-do-pais-3khe147lw`, pronto em 39 s, alias `o-estado-do-pais-git-pos-fusao-v3-nunos-projects-b945a519.vercel.app`. A pré-visualização responde 302 para a entrada da Vercel a quem não tem sessão, por isso a leitura foi feita no Chrome do diretor, por `fetch` de dentro da página (mesma origem): `/en/nope` → 404 · `en` · «Page not found»; `/en/nope/deeper` → 404 · en; `/nope` → 404 · `pt-PT`; `/en/ledger` → 200; `/en` → 200; `/404` → 404; `/estudos/nao-existe` → 404 · pt; `/en/404` → 200 (a página existe). **E os cabeçalhos:** `x-frame-options`, `x-content-type-options`, `referrer-policy`, `permissions-policy` **ausentes** em `/en/nope` e em `/en/ledger`; presentes só `strict-transport-security` (o da Vercel) e `x-robots-tag` (o da pré-visualização). Controlo na pré-visualização de `redesenho-v3`, sem `routes`, ainda no ar: os seis presentes em `/en/ledger`. Produção (`curl -sI`) traz os cinco da casa. Conclusão: **com `routes` presente a Vercel ignora o bloco `headers`**, e a frase da referência («You can use `routes` alongside `rewrites`, `redirects`, `headers`…») não descreve o que o serviço faz a 22.08. O bloco `routes` saiu; a decisão 1 da §1.62 volta à direção com três formas (ISSUES I53).
 
-**A pré-visualização n.º 3, actualizada de `9d586de`** (deployment `o-estado-do-pais-layta615e`, 40 s): no Chrome do diretor, `/en/ledger` 200 · `/en/nope` 404 (página portuguesa, como em `main`) · `/en/404` 200 · um documento alojado 200 · uma página de linha 200, **os quatro cabeçalhos da casa presentes em todas** (4/4), `version.json` a carimbar `9d586de`, `ref` `pos-fusao-v3`, `env` `preview`. O pacote de desenho foi reenviado ao projecto do Claude Design depois da correção à Emenda 16 (21 ficheiros escritos; o cartão 06 cita a correção).
+**A pré-visualização n.º 3, actualizada de `777a31e`** (deployment `o-estado-do-pais-layta615e`, 40 s): no Chrome do diretor, `/en/ledger` 200 · `/en/nope` 404 (página portuguesa, como em `main`) · `/en/404` 200 · um documento alojado 200 · uma página de linha 200, **os quatro cabeçalhos da casa presentes em todas** (4/4), `version.json` a carimbar `777a31e`, `ref` `pos-fusao-v3`, `env` `preview`. O pacote de desenho foi reenviado ao projecto do Claude Design depois da correção à Emenda 16 (21 ficheiros escritos; o cartão 06 cita a correção).
 
 ### I53, segunda forma · o `vercel.json` inteiro em `routes` (construtor, Claude Opus, `claude-opus-5[1m]`)
 
@@ -1444,6 +1444,6 @@ encaminhamento, uma conferência de rede, um comentário e a documentação.
 
 **Modelo e gasto:** Claude Opus (`claude-opus-5[1m]`), ≈ 130k tokens.
 
-**A prova da segunda forma na pré-visualização, e a saída das sondas** (lugar de direção, 22.08, tarde). Pré-visualização de `c5515d2` (deployment `o-estado-do-pais-55n5ifevb`, 39 s), lida no Chrome do diretor por `fetch` de dentro da página: os cinco cabeçalhos da casa presentes em `/`, `/en/ledger`, `/livro-razao/divida-publica-2025`, `/estudos/evora-orcamentado-pago-devido-2025/documento`, `/municipios/evora`, `/en/nope`, `/nope`, `/404`, `/en/404` e `/en`, com `X-Frame-Options: SAMEORIGIN` (o valor da casa, e não o `DENY` da entrada da Vercel); `X-Sonda: host` presente em todas, que é o mecanismo do `noindex` do alias a funcionar; `/sonda-308` devolve um redireccionamento opaco em modo manual e, seguido, aterra em `/` com `redirected=true`, que é o mecanismo dos três 308 de anfitrião a funcionar; `/en/nope` e `/en/nope/deeper` 404 `en`; `/nope` 404 `pt-PT`; `/404` 404 `pt-PT`; `/en/404` 200 `en`; `version.json` `c5515d2` · `pos-fusao-v3` · `preview`. O código exacto do 308 da sonda não é legível de dentro da página (o `fetch` em modo manual devolve `opaqueredirect`); em produção, `verify:deploy` afirma-o para os três anfitriões reais depois de cada deploy. As duas sondas saíram de `vercel.json` no commit seguinte (`grep -ic sonda vercel.json` → 0; 9 rotas → 7), e a pré-visualização foi relida sem elas.
+**A prova da segunda forma na pré-visualização, e a saída das sondas** (lugar de direção, 22.08, tarde). Pré-visualização de `f357f4a` (deployment `o-estado-do-pais-55n5ifevb`, 39 s), lida no Chrome do diretor por `fetch` de dentro da página: os cinco cabeçalhos da casa presentes em `/`, `/en/ledger`, `/livro-razao/divida-publica-2025`, `/estudos/evora-orcamentado-pago-devido-2025/documento`, `/municipios/evora`, `/en/nope`, `/nope`, `/404`, `/en/404` e `/en`, com `X-Frame-Options: SAMEORIGIN` (o valor da casa, e não o `DENY` da entrada da Vercel); `X-Sonda: host` presente em todas, que é o mecanismo do `noindex` do alias a funcionar; `/sonda-308` devolve um redireccionamento opaco em modo manual e, seguido, aterra em `/` com `redirected=true`, que é o mecanismo dos três 308 de anfitrião a funcionar; `/en/nope` e `/en/nope/deeper` 404 `en`; `/nope` 404 `pt-PT`; `/404` 404 `pt-PT`; `/en/404` 200 `en`; `version.json` `f357f4a` · `pos-fusao-v3` · `preview`. O código exacto do 308 da sonda não é legível de dentro da página (o `fetch` em modo manual devolve `opaqueredirect`); em produção, `verify:deploy` afirma-o para os três anfitriões reais depois de cada deploy. As duas sondas saíram de `vercel.json` no commit seguinte (`grep -ic sonda vercel.json` → 0; 9 rotas → 7), e a pré-visualização foi relida sem elas.
 
-**Relida sem as sondas** (pré-visualização de `a3b9d1d`, deployment `o-estado-do-pais-rlqd0mlbw`, 40 s): cinco cabeçalhos da casa em 5/5 nos oito endereços lidos, `X-Sonda` ausente, `/sonda-308` 404 (a rota saiu), `/en/nope` 404 `en`, `/nope` 404 `pt-PT`, `/en/404` 200, `/404` 404, `version.json` `a3b9d1d`. **A I53 fecha na segunda forma**; o que fica por exercitar em produção (os três 308 dos anfitriões reais e o `noindex` do alias) é afirmado por `verify:deploy` depois da fusão, e se falhar a reversão é um commit.
+**Relida sem as sondas** (pré-visualização de `54a4e56`, deployment `o-estado-do-pais-rlqd0mlbw`, 40 s): cinco cabeçalhos da casa em 5/5 nos oito endereços lidos, `X-Sonda` ausente, `/sonda-308` 404 (a rota saiu), `/en/nope` 404 `en`, `/nope` 404 `pt-PT`, `/en/404` 200, `/404` 404, `version.json` `54a4e56`. **A I53 fecha na segunda forma**; o que fica por exercitar em produção (os três 308 dos anfitriões reais e o `noindex` do alias) é afirmado por `verify:deploy` depois da fusão, e se falhar a reversão é um commit.

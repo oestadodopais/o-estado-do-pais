@@ -1,12 +1,12 @@
 {
   "aparencia": {
-    "base": "1352d49a",
+    "base": "8dbe1481",
     "codigosComparados": 6390,
     "apresentacoesComparadas": 6374,
     "diferencas": []
   },
   "comando": "node design/especime-v3/medicoes/er1-2026-10-06/medir-e.mjs",
-  "cabecaCodigo": "ac4022106fbca310da2fbb2f31739e2a41e486d5",
+  "cabecaCodigo": "d4ad6e3662862f87c6b3e924c7ab96158f97a269",
   "edicoes": {
     "pt": {
       "jsonComCampo": 3187,

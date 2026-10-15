@@ -1,6 +1,6 @@
 # F1.2b · os cartões, o menu e os estudos à vista · relatório do construtor
 
-*Ramo `portas-2026-09-03`, tirado de `origin/main` em `d82bc4cf`. Construtor
+*Ramo `portas-2026-09-03`, tirado de `origin/main` em `8ed5af14`. Construtor
 Claude Opus 5, 03.09.2026. O bloco é o F1.2b do
 `design/observatorio/BRIEF-F1.2b-cartoes-menu-estudos.md`, escrito a partir do
 item 9 do brief do F1.2, da entrada «Domínios» que o F1.2 deixou para depois do
@@ -57,7 +57,7 @@ e por isso este bloco mede-o e deixa-o dito em vez de o inventar.
 ## 2 · As medidas de aceitação, de partida e de chegada
 
 Tudo medido com a mesma régua, `tests/inicio/porta.mjs`, sobre duas construções:
-a da árvore de partida (`d82bc4cf`, construída neste ramo antes de se mexer em
+a da árvore de partida (`8ed5af14`, construída neste ramo antes de se mexer em
 nada e guardada à parte, lida com `OEDP_DIST`) e a desta. **As duas saídas estão
 no repositório**, para que ninguém tenha de acreditar na tabela:
 
@@ -80,7 +80,7 @@ o JSON de partida traz `{"teto": 6941, "tetoDaPartida": 6941, "filaDosEstudos": 
 e o desta construção `{"teto": 6991, "tetoDaPartida": 6941, "filaDosEstudos": 50}`.
 A régua imprime a conta em cada linha.
 
-| # | medida | antes (`d82bc4cf`) | depois | estado |
+| # | medida | antes (`8ed5af14`) | depois | estado |
 | --- | --- | --- | --- | --- |
 | E1 pt | cada cartão da faixa cujo id de linha está na lista de medidas do domínio aponta à página do domínio; os outros à leitura breve | 21 cartões, **0** para a página do domínio, 21 para a leitura breve | 21 cartões, **3** para a página do domínio (`divida-publica-2025` → `#m-e3`, `taxa-de-emprego-2025` → `#m-t1`, `taxa-de-desemprego-2025` → `#m-t2`), 18 para a leitura breve; 0 errados | ✓ |
 | E1 en | o mesmo | 21 · 0 · 21 | 21 · 3 · 18; 0 errados | ✓ |
@@ -288,14 +288,14 @@ três superfícies novas rendem cadeias que já estavam declaradas
 leitor dentro de uma âncora ou de um `<span>` que a régua da voz não recolhe.
 
 ```
-git diff --stat 86632082 HEAD -- src/i18n/strings.mjs   design/especime-v3/INVENTARIO-FRASES.md design/especime-v3/CHAVES-EN.md   design/especime-v3/critica/REVISOES-DO-INVENTARIO.md design/especime-v3/VOZ-MARCADORES.md
+git diff --stat 7a83334d HEAD -- src/i18n/strings.mjs   design/especime-v3/INVENTARIO-FRASES.md design/especime-v3/CHAVES-EN.md   design/especime-v3/critica/REVISOES-DO-INVENTARIO.md design/especime-v3/VOZ-MARCADORES.md
   → sem saída
 ```
 
-**A base da comparação é `86632082` e não `d82bc4cf`, e a razão fica dita**:
+**A base da comparação é `7a83334d` e não `8ed5af14`, e a razão fica dita**:
 contra o ponto de partida do ramo o `strings.mjs` mostra onze linhas
 acrescentadas, e elas são do F1.8 (`documentoDeslocamento`, o nome de uma caixa
-que se desloca), que entrou por fusão. `git log d82bc4cf..HEAD -- src/i18n/strings.mjs`
+que se desloca), que entrou por fusão. `git log 8ed5af14..HEAD -- src/i18n/strings.mjs`
 nomeia os três commits, e nenhum é deste bloco.
 
 **E o portão da voz confirma-o do outro lado**, sobre a construção deste ramo:
@@ -560,7 +560,7 @@ não se via em nenhuma das outras.
 ## 12 · A fusão com o `main`, e o que ela custou
 
 O `main` andou enquanto este bloco se construía: o F1.8 (a moldura à volta do
-documento alojado) fundiu-se em `86632082`. O ramo foi fundido com ele antes de
+documento alojado) fundiu-se em `7a83334d`. O ramo foi fundido com ele antes de
 fechar, e a fusão **não teve um conflito**: os ficheiros que os dois blocos tocam
 não se cruzam. O que entrou do outro lado e que muda a corrida deste:
 
@@ -594,13 +594,13 @@ Os ficheiros do sítio e das réguas, sem este relatório, sem as capturas e sem
 medições:
 
 ```
-git diff --stat d82bc4cf HEAD -- <os doze ficheiros do sítio e das réguas>
+git diff --stat 8ed5af14 HEAD -- <os doze ficheiros do sítio e das réguas>
   → 12 ficheiros, 1 008 linhas acrescentadas e 40 tiradas
 ```
 
 Um ficheiro novo (`src/components/Manchete.astro`) e onze mudados, dos quais dois
 são réguas. Ao todo, com o relatório, as quatro medições e as 30 capturas, **47
-ficheiros** deste bloco. O `git diff --name-only d82bc4cf HEAD` conta 49 fora dos
+ficheiros** deste bloco. O `git diff --name-only 8ed5af14 HEAD` conta 49 fora dos
 ficheiros do F1.8, e os dois a mais são a fusão: `package.json` e
 `package-lock.json` chegam do outro lado.
 
@@ -658,7 +658,7 @@ das 7 238 páginas ficou guardada, condensada, nos dois ficheiros
 das chaves de cada classe: é ele que sustenta «nenhum id entrou nem saiu» sem pôr
 o livro-razão dentro do relatório, e é nele que se lê `numeracao` a passar de 124
 a 10 072. A prova da voz passou a ser um comando com a sua saída, contra
-`86632082`, com a nota de que as onze linhas que o `strings.mjs` mostra contra o
+`7a83334d`, com a nota de que as onze linhas que o `strings.mjs` mostra contra o
 ponto de partida do ramo são do F1.8 e entraram por fusão. Ver a §5.
 
 **Minor 11 · o JSON de partida guardava o teto novo.** Real, e o conserto é mais

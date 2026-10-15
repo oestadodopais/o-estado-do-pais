@@ -47,7 +47,7 @@ construtores = [x for x in sessoes if x['papel'] == 'construtor']
 assert len(construtores) == 1, 'Tem de haver exatamente uma sessão do construtor.'
 assert set(confirmados) == set(contadores_cli), 'Os dois contadores tokens used têm de coincidir com amostras reais da sessão.'
 historicas = []
-for passagem, commit in [('N1', 'dfc86083'), ('N1b', 'ae010fbb')]:
+for passagem, commit in [('N1', '00911eb3'), ('N1b', '39a50b21')]:
     origem = f'{commit}:{pasta}/custo.json'
     amostra = json.loads(subprocess.check_output(['git', 'show', origem], text=True))
     for sessao in amostra['sessoes']:

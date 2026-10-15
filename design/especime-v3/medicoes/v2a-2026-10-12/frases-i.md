@@ -1,6 +1,6 @@
 # As frases da passagem V2-a-i
 
-Cabeça da construção: `b8dd37a2711f2713b2beb77202d345aa826e3a13`. Texto lido no HTML, nas duas edições.
+Cabeça da construção: `68430e312b699a9bd0e2154006f9a3b93a88a63a`. Texto lido no HTML, nas duas edições.
 
 ## afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09
 

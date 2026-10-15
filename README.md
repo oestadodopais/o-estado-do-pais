@@ -551,7 +551,7 @@ As rotas são processadas por ordem, e a ordem é o programa:
    com `continue`, para provar numa pré-visualização o que só produção
    exercitaria: que `has` de anfitrião selecciona, que `status` mais `Location`
    redirecciona, e que um cabeçalho condicionado ao anfitrião com `continue` é
-   mesmo aplicado. Provaram-no e saíram no commit `a3b9d1d`; a leitura está em
+   mesmo aplicado. Provaram-no e saíram no commit `54a4e56`; a leitura está em
    `design/especime-v3/notas/pos-fusao.md`, §I53);*
 5. `{ "handle": "filesystem" }`, a fase que serve o que existe em `dist/`. Está
    marcado como deprecated na referência e continua suportado: é a forma da

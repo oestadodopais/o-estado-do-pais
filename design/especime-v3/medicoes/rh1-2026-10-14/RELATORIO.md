@@ -31,7 +31,7 @@ A suite preliminar de leituras, dentro da sandbox, recusou o servidor local de `
 
 A única conferência vermelha no verify foi `check:privacidade`, a código 1. Leu 14 798 ficheiros de `dist/`, sem ocorrências; a API e o incorporador passaram. O varrimento dos seguidos leu 24 496 ficheiros e encontrou a mesma ocorrência no oráculo. A diferença para a medição anterior são os dois ficheiros de provas entretanto comitados. As células de imutabilidade e de coerência da cabeça passaram. Fontes: `portoes-resumo.json` e `portoes/verify.json`.
 
-A worktree começou limpa em `00fc78e5`, o commit do mandato sobre a base indicada `d8bb2924`. Os commits de implementação são `74842500` e `a56b0fd7`; a cabeça do código é `a56b0fd7a4912241152b24bb1309d9fb8062836b`. O último commit de provas antes dos portões é `f694c58cb4228465d48dafa22905832c5c1ceded`, a cabeça lida de `portoes/cabeca` e de `portoes/cabeca.fim`. A árvore estava limpa ao arrancar. Não houve escrita do construtor durante a corrida. A entrega posterior acrescenta apenas este relatório, o resumo dos resultados e os registos dos portões.
+A worktree começou limpa em `bc884a4f`, o commit do mandato sobre a base indicada `7413e9b9`. Os commits de implementação são `94c3491e` e `493cfe5e`; a cabeça do código é `493cfe5e4bc7e4577653a01f341657ed9540bad9`. O último commit de provas antes dos portões é `f23e4e9c3405f879d594ab35fe7cb1568ea1d8ff`, a cabeça lida de `portoes/cabeca` e de `portoes/cabeca.fim`. A árvore estava limpa ao arrancar. Não houve escrita do construtor durante a corrida. A entrega posterior acrescenta apenas este relatório, o resumo dos resultados e os registos dos portões.
 
 Questões e decisões:
 
@@ -82,7 +82,7 @@ A decisão dos alvos ficou limitada ao que foi mandado: `.gitignore:59` ignora `
 
 As células de união, imutabilidade e coerência da cabeça passaram. A corrida começou com a árvore limpa, e não houve escrita do construtor durante os portões. `check:privacidade`, `check:briefs` e `check:leituras` passaram a zero, incluindo o ensaio RH1-b. O motor não foi tocado e nada foi publicado.
 
-A passagem começou em `fbb4c19b`, o mandato acrescentado pelo lugar de direção. A cabeça do código é `e94cda066090def21ff7b5f36326a24bb1ac659e`. O último commit de provas antes dos portões é `3ad344e339841a369fdebd3771eab96e0a10e2b1`, confirmado em `portoes-b/cabeca` e `portoes-b/cabeca.fim`. O commit posterior de entrega acrescenta apenas os registos, o resumo, a auditoria e esta secção do relatório.
+A passagem começou em `c3f3a017`, o mandato acrescentado pelo lugar de direção. A cabeça do código é `64f9f2b6c7f2bd51df54c677d75d5b3c6f5a1451`. O último commit de provas antes dos portões é `51f25d8c4d825ddc0ebafbfec0698f5d60c9a9e3`, confirmado em `portoes-b/cabeca` e `portoes-b/cabeca.fim`. O commit posterior de entrega acrescenta apenas os registos, o resumo, a auditoria e esta secção do relatório.
 
 - **RH1-6, decidida:** conservar também a forma abreviada, tanto pelo segredo como pelos autores pessoais. A planta do documento alojado, a da forma vinda do Git e a da guarda de saída provam as três utilizações.
 - **RH1-7, decidida:** retirar a conferência cruzada pessoal do rótulo e do Método, redundante com a leitura integral do `dist/` e dos ficheiros seguidos. As plantas de ambas as superfícies ficaram na privacidade; as comparações dos textos aprovados continuam no HTML.
@@ -93,7 +93,7 @@ Não ficou nenhuma questão desta correção por resolver. A reescrita da histó
 
 ## A passagem RH1-c
 
-A passagem começou limpa em `5c48da4c`, com o mandato e a leitura a frio acrescentados pelo lugar de direção. Foram tratados o achado 6, os achados 8 a 11 e a observação sobre as plantas dentro do achado 1. Os defeitos numerados 1, 3, 4, 5 e 7 eram plantas nas cópias do pacote e não existiam no ramo. O achado 2 pertence à reescrita posterior da história; nenhuma cadeia pessoal foi reproduzida nesta entrega.
+A passagem começou limpa em `0883dde4`, com o mandato e a leitura a frio acrescentados pelo lugar de direção. Foram tratados o achado 6, os achados 8 a 11 e a observação sobre as plantas dentro do achado 1. Os defeitos numerados 1, 3, 4, 5 e 7 eram plantas nas cópias do pacote e não existiam no ramo. O achado 2 pertence à reescrita posterior da história; nenhuma cadeia pessoal foi reproduzida nesta entrega.
 
 | Achado real | Correção e referência na cabeça do código |
 |---|---|
@@ -120,7 +120,7 @@ sh scripts/leituras/curto.sh design/especime-v3/medicoes/rh1-2026-10-14/medicao-
 sh scripts/leituras/curto.sh design/especime-v3/medicoes/rh1-2026-10-14/resumo-portoes-c.log python3 design/especime-v3/medicoes/rh1-2026-10-14/medir-c.py --portoes
 ```
 
-A reprodução das auditorias conta os ficheiros nas cabeças históricas `6c107622` e `24f4298c`, excluindo o próprio registo de cada auditoria. Na segunda acrescenta o `portoes-b/alvos.json` local, cuja presença é exigida, pois estava ignorado. Reproduziu 26 e 51 ficheiros. Não conta retroativamente os ficheiros acrescentados na RH1-c. A medição de `marca_depois` lê o `dist/` e o `src/` presentes e publica `versao_dist`, para identificar a construção realmente lida; `alvos` mede o ficheiro local e consulta o Git quanto à exclusão e ao seguimento. O resultado guardado em `medidas-c.json` foi obtido antes dos novos portões, sobre a construção da RH1-b.
+A reprodução das auditorias conta os ficheiros nas cabeças históricas `b481c684` e `64794c3c`, excluindo o próprio registo de cada auditoria. Na segunda acrescenta o `portoes-b/alvos.json` local, cuja presença é exigida, pois estava ignorado. Reproduziu 26 e 51 ficheiros. Não conta retroativamente os ficheiros acrescentados na RH1-c. A medição de `marca_depois` lê o `dist/` e o `src/` presentes e publica `versao_dist`, para identificar a construção realmente lida; `alvos` mede o ficheiro local e consulta o Git quanto à exclusão e ao seguimento. O resultado guardado em `medidas-c.json` foi obtido antes dos novos portões, sobre a construção da RH1-b.
 
 | Portão RH1-c | Código lido | Ficheiro |
 |---|---|---|
@@ -128,7 +128,7 @@ A reprodução das auditorias conta os ficheiros nas cabeças históricas `6c107
 | verify | 0 | `portoes-c/verify.codigo` |
 | typecheck | 0 | `portoes-c/typecheck.codigo` |
 
-As células de união, imutabilidade e coerência da cabeça passaram. A cabeça do código é `a1f6094e0f5625b71f32f9bf2a8c488930ecd49a`. O último commit de provas é `34129b6f2566a8e43f110b52fa74ab50cdf29576`, igual à cabeça de início e de fim dos portões. A árvore estava limpa ao arrancar e não houve escrita do construtor durante a corrida. A entrega posterior acrescenta apenas o relatório e os artefactos dos resultados. O motor não foi tocado e nada foi publicado.
+As células de união, imutabilidade e coerência da cabeça passaram. A cabeça do código é `931c4a58270eb1d18a1a326be642ccdb10f3c095`. O último commit de provas é `44a1f58eb6d8fb29988bcf6311b4a34c0ca325d7`, igual à cabeça de início e de fim dos portões. A árvore estava limpa ao arrancar e não houve escrita do construtor durante a corrida. A entrega posterior acrescenta apenas o relatório e os artefactos dos resultados. O motor não foi tocado e nada foi publicado.
 
 - **RH1-10, aberta e fora deste bloco:** o detetor não descomprime fluxos Flate dos PDF. A contagem pelo `git ls-files -z`, filtrada pela extensão em `medir-c.py:44`, encontrou zero PDF seguidos no repositório do sítio. Os corpos alojados vivem no motor, que não foi conferido nesta passagem. A ausência de PDF seguidos aqui não demonstra proteção de fluxos comprimidos.
 - **RH1-11, decidida:** só LF separa entradas do segredo; CRLF é aceite pelas pontas. Um separador Unicode interior é recusado, em vez de dividir silenciosamente a linha em duas cadeias aceites. As linhas vazias continuam ignoradas, e uma lista vazia em CI continua recusada.
@@ -136,13 +136,13 @@ As células de união, imutabilidade e coerência da cabeça passaram. A cabeça
 
 ## A passagem RH1-d
 
-A passagem começou limpa em `de3d740b`. O achado 1 e os achados 7 a 9 eram reais; os achados 2 a 6 eram plantas nas cópias do pacote e não existiam no ramo. Foram corrigidos os espaços interiores e o custo da conferência, sem retirar nenhuma superfície do varrimento. Nenhuma página ou valor mudou.
+A passagem começou limpa em `01da19f9`. O achado 1 e os achados 7 a 9 eram reais; os achados 2 a 6 eram plantas nas cópias do pacote e não existiam no ramo. Foram corrigidos os espaços interiores e o custo da conferência, sem retirar nenhuma superfície do varrimento. Nenhuma página ou valor mudou.
 
 | Achado real | Correção e referência na cabeça do código RH1-d |
 |---|---|
 | 1, espaços interiores | `_ler_proibidos` colapsa os espaços reconhecidos por `str.split()` antes de NFC e da validação. A procura admite sequências de espaços Unicode, espaços inseparáveis, quebras e as suas representações HTML e Unicode. `design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py:55`, `:106`, `:177`, `:181`. As plantas do segredo e da página vivem em `scripts/check-privacidade.py:260`. |
 | 7, custo | As formas NFC e NFD, em minúsculas e `casefold`, são calculadas uma vez e guardadas em cache. A expressão regular em bytes reúne as codificações e as representações, partilha prefixos e começa os ramos por bytes literais. Cada chamada pesquisa uma única cópia do corpo em bytes minúsculos, sem descodificar o ficheiro nem normalizar o seu texto. `design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py:106`, `:181`. O tempo mede-se em `design/especime-v3/medicoes/rh1-2026-10-14/medir-d.py:23`. |
-| 8, referências | Na secção RH1-c, o filtro dos PDF passou a apontar para `medir-c.py:44` e a mutação para `tests/leituras/privacidade-rh1c.py:58`. As restantes referências dessa secção foram conferidas por `git show` na cabeça `a1f6094e`, que a secção documenta. As referências da presente tabela foram conferidas na cabeça RH1-d. |
+| 8, referências | Na secção RH1-c, o filtro dos PDF passou a apontar para `medir-c.py:44` e a mutação para `tests/leituras/privacidade-rh1c.py:58`. As restantes referências dessa secção foram conferidas por `git show` na cabeça `931c4a58`, que a secção documenta. As referências da presente tabela foram conferidas na cabeça RH1-d. |
 | 9, auditoria | `design/especime-v3/medicoes/rh1-2026-10-14/medir-c.py:57`, com `--auditar c`, escreve a auditoria histórica e reproduziu os 78 ficheiros e `passou=true`. Com `--auditar d`, a mesma função escreve a auditoria desta entrega. Os comandos estão abaixo. |
 
 As 49 plantas novas em memória do portão cobrem o segredo com espaços duplos, inseparáveis e tabuladores; a página com espaços duplos, inseparáveis, quebra de linha, `&nbsp;`, `&#160;` e `&#xA0;`, nas codificações representáveis; e as formas NFC e NFD em minúsculas, `casefold` e maiúsculas, em UTF-8, UTF-16 nas duas ordens e Latin-1. Há controlo inócuo. A forma NFD com marcas combinantes não tem representação literal em Latin-1, pelo que essa combinação não é apresentada como ensaiada.
@@ -190,7 +190,7 @@ print(json.dumps(r,ensure_ascii=False))
 PY
 ```
 
-A auditoria RH1-c lê os ficheiros seguidos em `5dc59f27`, exclui o próprio registo e acrescenta as cópias locais ignoradas dos alvos RH1-b e RH1-c. Confere os corpos desses ficheiros, em vez de apenas recontar os nomes. A auditoria RH1-d confere os ficheiros presentes na pasta das medições, incluindo os alvos locais ignorados, antes de escrever o seu próprio registo; o âmbito atual não é confundido com o histórico. Ambas leem as fontes privadas disponíveis pelo mesmo detetor e conferem a saída antes de a escrever. A auditoria desta entrega passou, sem ocorrências, em `auditoria-entrega-d.json`.
+A auditoria RH1-c lê os ficheiros seguidos em `c0f09ff8`, exclui o próprio registo e acrescenta as cópias locais ignoradas dos alvos RH1-b e RH1-c. Confere os corpos desses ficheiros, em vez de apenas recontar os nomes. A auditoria RH1-d confere os ficheiros presentes na pasta das medições, incluindo os alvos locais ignorados, antes de escrever o seu próprio registo; o âmbito atual não é confundido com o histórico. Ambas leem as fontes privadas disponíveis pelo mesmo detetor e conferem a saída antes de a escrever. A auditoria desta entrega passou, sem ocorrências, em `auditoria-entrega-d.json`.
 
 | Portão RH1-d | Código lido | Ficheiro |
 |---|---|---|
@@ -200,7 +200,7 @@ A auditoria RH1-c lê os ficheiros seguidos em `5dc59f27`, exclui o próprio reg
 
 Os portões conferiram 24 588 ficheiros seguidos e 14 798 ficheiros de `dist/`, sem ocorrências. As 87 plantas dos seguidos e as 26 de `dist/` passaram. `check:leituras`, incluindo RH1, RH1-b, RH1-c, RH1-d e JD1, e `check:briefs` passaram a zero. As células de união, imutabilidade e coerência da cabeça passaram. Fontes: `portoes-d-resumo.json` e `portoes-d/verify.log`.
 
-A cabeça do código é `9157e23ebbf7835e56582895cdf0aa2f2868e0d0`. O último commit de provas é `68711cddb0aaa9cfc18ee7840064a1cde6608540`, igual à cabeça de início e de fim dos portões. A árvore estava limpa ao arrancar e não houve escrita do construtor durante a corrida. O commit posterior acrescenta apenas o relatório e os resultados. O motor não foi tocado e nada foi publicado.
+A cabeça do código é `068bdcc0fa65799f5e36edbe9499a29dbf68d530`. O último commit de provas é `ce6c56282d9870514b60aabfc41f7e54d6ff6044`, igual à cabeça de início e de fim dos portões. A árvore estava limpa ao arrancar e não houve escrita do construtor durante a corrida. O commit posterior acrescenta apenas o relatório e os resultados. O motor não foi tocado e nada foi publicado.
 
 - **RH1-13, decidida pelo mandato, substitui a RH1-11 quanto aos espaços:** LF continua a separar entradas do segredo. Os outros espaços interiores que `str.split()` reconhece passam a um espaço comum antes da validação. Na página, LF também é uma variante de espaço entre palavras. As plantas provam ambos os lados.
 - **RH1-14, decidida pela conservação da proteção:** a procura em bytes conserva também maiúsculas não ASCII, caixa mista, entidades e escapes de letras ASCII e combinações de representações dentro de uma cadeia. Essas formas eram cobertas pela descodificação anterior e têm plantas próprias.
@@ -210,16 +210,16 @@ A questão RH1-10 sobre fluxos Flate de PDF continua aberta e fora deste bloco. 
 
 ## A passagem RH1-e
 
-A leitura encontrou duas perdas reais da RH1-d: formas que a RH1-c detetava e separadores que eram colapsados antes da validação. A afirmação abrangente da RH1-14 fica corrigida por esta passagem. Os achados 1, 2, 8 e 9 foram tratados; os achados 3 a 7 eram plantas nas cópias do pacote e não existiam no ramo. A passagem começou limpa em `41a6c87202e305ac3ef0c999209b915826252bda`.
+A leitura encontrou duas perdas reais da RH1-d: formas que a RH1-c detetava e separadores que eram colapsados antes da validação. A afirmação abrangente da RH1-14 fica corrigida por esta passagem. Os achados 1, 2, 8 e 9 foram tratados; os achados 3 a 7 eram plantas nas cópias do pacote e não existiam no ramo. A passagem começou limpa em `83c1ca87904e3399995d74e0bc0f028992eca22c`.
 
 | Achado real | Correção e referência na cabeça do código RH1-e |
 |---|---|
 | 1, equivalências perdidas | A árvore alterna NFC e NFD por carácter, entidades da tabela HTML5 com e sem ponto e vírgula, expansões e inversões de `casefold`, incluindo `ss`, e as ligaturas de `fi`, `fl`, `ff`, `ffi`, `ffl` e `st`. As alternativas são compiladas antes da pesquisa, nas quatro codificações. Os prefixos e sufixos comuns são partilhados. O corpo continua em bytes, com uma cópia em minúsculas e uma pesquisa, sem descodificação. `design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py:108`, `:122`, `:230`. |
 | 2, separadores interiores | O leitor recusa CR, separador de linha, separador de parágrafo, NEL, VT, FF e RS interiores antes de colapsar espaços. A mensagem indica apenas a linha. Só Zs e tabuladores interiores passam a espaço comum. CRLF continua aceite pelas pontas. `design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py:55`. As recusas voltaram a `tests/leituras/privacidade-rh1c.py`; `tests/leituras/privacidade-rh1d.py` distingue agora o segredo da página. |
-| 8, reprodução do tempo anterior | O invólucro original que produziu `tempo-antes-d.log` ficou guardado, sem alterações, em `medir-tempo-original-d.py`. `medir-d.py:24`, com `--conferir-versao`, recupera do Git o detetor e a conferência da referência indicada e executa-os em memória sobre a árvore e o `dist/` atuais. `medir-d.py:42`, com `--tempo-versao`, temporiza esse subprocesso. A opção foi exercida com `9157e23e`, em `tempo-versao-d.json`. |
+| 8, reprodução do tempo anterior | O invólucro original que produziu `tempo-antes-d.log` ficou guardado, sem alterações, em `medir-tempo-original-d.py`. `medir-d.py:24`, com `--conferir-versao`, recupera do Git o detetor e a conferência da referência indicada e executa-os em memória sobre a árvore e o `dist/` atuais. `medir-d.py:42`, com `--tempo-versao`, temporiza esse subprocesso. A opção foi exercida com `068bdcc0`, em `tempo-versao-d.json`. |
 | 9, âmbito e referências | `medir-e.py:86` reproduz o âmbito da auditoria RH1-d pela cabeça da entrega. `escopo-auditoria-d.json` guarda o manifesto, as parcelas da contagem e a nova conferência dos conteúdos. `medir-e.py:54` confere referências por `git show`; `referencias-e.json` guarda 32 verificações, incluindo as referências históricas da RH1-c e da RH1-d, todas aprovadas. `medir-e.py:108` define a auditoria final desta entrega. |
 
-As referências abreviadas a `medir-d.py` e `medir-e.py` pertencem à presente pasta de medições. A cabeça do código desta tabela é `d1c86aa550c2b53544f01f1086469e66829c4488`.
+As referências abreviadas a `medir-d.py` e `medir-e.py` pertencem à presente pasta de medições. A cabeça do código desta tabela é `99edf379bfc4f7bc0a88e8f6299310419453a566`.
 
 As 114 plantas novas do portão estão em `scripts/check-privacidade.py:291`. Cada um dos seis casos da leitura tem uma planta própria: mistura de NFC e NFD no nome, entidade de acento sem ponto e vírgula, `apos`, `ccaron`, expansão inversa de `ss` e ligatura `fi`. Há também as restantes ligaturas, as direções inversas, outras diferenças entre `lower` e `casefold`, os separadores recusados, duas entradas ligadas por CR, CRLF aceite e controlo inócuo. Os casos de representação percorrem UTF-8, UTF-16 nas duas ordens e Latin-1. Quando um carácter não cabe literalmente em Latin-1, a planta usa a sua entidade numérica e identifica essa condição no rótulo.
 
@@ -239,12 +239,12 @@ O custo ficou perto da RH1-d. Antes da alteração, a chamada a `medir-d.medir_t
 
 Os arredondamentos da RH1-e estão em `custo-e.json`, produzidos por `medir-e.py --portoes`. O perfil inclusivo de `perfil-conferencia-e.json` separa as etapas e a preparação das plantas; os tempos aninhados não se somam como se fossem etapas independentes. O perfil e a comparação em `comparacao-bytes-e.log` serviram para examinar o custo, sem substituir a medição completa.
 
-Para reproduzir uma versão histórica com o corpus atual, a referência é um argumento explícito. A corrida guardada usa `9157e23e`; a versão anterior à RH1-d pode ser medida com `de3d740b`. O valor histórico de 367,6 segundos continua associado à cabeça e ao `dist/` de `tempo-antes-d.json`. O invólucro original agora versionado recebe `antes` como argumento, a partir da raiz dessa árvore histórica, e escreve os metadados completos que aparecem no registo. A opção de versão histórica permite repetir o código antigo sem mudar a worktree.
+Para reproduzir uma versão histórica com o corpus atual, a referência é um argumento explícito. A corrida guardada usa `068bdcc0`; a versão anterior à RH1-d pode ser medida com `01da19f9`. O valor histórico de 367,6 segundos continua associado à cabeça e ao `dist/` de `tempo-antes-d.json`. O invólucro original agora versionado recebe `antes` como argumento, a partir da raiz dessa árvore histórica, e escreve os metadados completos que aparecem no registo. A opção de versão histórica permite repetir o código antigo sem mudar a worktree.
 
 Comandos das provas, do tempo e das auditorias, a partir da raiz da worktree:
 
 ```sh
-sh scripts/leituras/curto.sh design/especime-v3/medicoes/rh1-2026-10-14/tempo-versao-d.log python3 design/especime-v3/medicoes/rh1-2026-10-14/medir-d.py --tempo-versao 9157e23e
+sh scripts/leituras/curto.sh design/especime-v3/medicoes/rh1-2026-10-14/tempo-versao-d.log python3 design/especime-v3/medicoes/rh1-2026-10-14/medir-d.py --tempo-versao 068bdcc0
 sh scripts/leituras/curto.sh design/especime-v3/medicoes/rh1-2026-10-14/tempo-depois-e.log python3 design/especime-v3/medicoes/rh1-2026-10-14/medir-e.py --tempo depois
 sh scripts/leituras/curto.sh design/especime-v3/medicoes/rh1-2026-10-14/medicao-e.log python3 design/especime-v3/medicoes/rh1-2026-10-14/medir-e.py
 sh scripts/leituras/curto.sh design/especime-v3/medicoes/rh1-2026-10-14/referencias-e.log python3 design/especime-v3/medicoes/rh1-2026-10-14/medir-e.py --referencias
@@ -264,7 +264,7 @@ A auditoria RH1-d decorreu depois dos portões RH1-d, antes de escrever o seu pr
 
 A privacidade conferiu 24 646 ficheiros seguidos e 14 798 ficheiros de `dist/`, sem ocorrências. Passaram 201 plantas dos seguidos e 26 de `dist/`; as contagens derivadas das listas estão em `contagens-portoes-e.json`. `check:leituras`, incluindo RH1-e, e `check:briefs` passaram a zero. As células de união, imutabilidade e coerência da cabeça passaram. Fontes: `portoes-e-resumo.json` e `portoes-e/verify.log`.
 
-A cabeça do código é `d1c86aa550c2b53544f01f1086469e66829c4488`. Os commits de código desta passagem são `110f54b3`, `5f3a6846` e `d1c86aa5`. O último commit de provas é `212be398bb17621bb6a3fddb79a7feccfe9c51da`, igual às cabeças de início e de fim dos portões. A árvore estava limpa ao arrancar. A corrida aguardou a tranca comum e não houve escrita do construtor durante a espera nem durante os portões. O commit de entrega posterior acrescenta apenas o relatório e os resultados. O motor não foi tocado e nada foi publicado.
+A cabeça do código é `99edf379bfc4f7bc0a88e8f6299310419453a566`. Os commits de código desta passagem são `057021cd`, `6d100b63` e `99edf379`. O último commit de provas é `4be559795843d2e3801a691d393822541c139a4f`, igual às cabeças de início e de fim dos portões. A árvore estava limpa ao arrancar. A corrida aguardou a tranca comum e não houve escrita do construtor durante a espera nem durante os portões. O commit de entrega posterior acrescenta apenas o relatório e os resultados. O motor não foi tocado e nada foi publicado.
 
 - **RH1-15, decidida pelo mandato, substitui a RH1-13:** os separadores interiores voltam a ser recusados antes de qualquer colapso. Só Zs e tabuladores interiores são normalizados no segredo; a página conserva as variantes de espaços já protegidas.
 - **RH1-16, decidida pela conservação da proteção:** o índice inverso de `casefold` conserva também o s longo e o sigma final, além das sequências e ligaturas expressamente pedidas. Há plantas próprias. A fatorização dos sufixos reduz repetição na compilação sem retirar alternativas.

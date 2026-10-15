@@ -1,13 +1,13 @@
 {
   "brief": "design/observatorio/BRIEF-RP2-rendimentos-e-precos-os-documentos-e-as-outras-apis.md",
   "guiao": "design/observatorio/medidas/BRIEF-RP2.py",
-  "cabeca_lida": "334cc740",
+  "cabeca_lida": "eaffd3c8",
   "memorando": "design/observatorio/MEMO-fontes-rp2-2026-09-26.md",
   "medidas": [
     {
       "nome": "valor_do_salario_minimo_no_sitio",
       "valor": "920,00",
-      "comando": "git show 334cc740:ledger/claims/retribuicao-minima-mensal-garantida-continente-2026.yml · «value»",
+      "comando": "git show eaffd3c8:ledger/claims/retribuicao-minima-mensal-garantida-continente-2026.yml · «value»",
       "conhecido_positivo": {
         "o_que": "a linha existe e tem unidade",
         "encontrado": true
@@ -16,7 +16,7 @@
     {
       "nome": "linhas_de_documento_alojado",
       "valor": 288,
-      "comando": "git cat-file --batch sobre as linhas de 334cc740 · document.kind = «ficheiro»",
+      "comando": "git cat-file --batch sobre as linhas de eaffd3c8 · document.kind = «ficheiro»",
       "conhecido_positivo": {
         "o_que": "há linhas com kind «serie» no mesmo lote",
         "encontrado": true
@@ -25,7 +25,7 @@
     {
       "nome": "linhas_de_serie_de_api",
       "valor": 1358,
-      "comando": "git cat-file --batch sobre as linhas de 334cc740 · document.kind = «serie»",
+      "comando": "git cat-file --batch sobre as linhas de eaffd3c8 · document.kind = «serie»",
       "conhecido_positivo": {
         "o_que": "há linhas com kind «ficheiro» no mesmo lote",
         "encontrado": true
@@ -34,7 +34,7 @@
     {
       "nome": "linhas_do_livro",
       "valor": 2984,
-      "comando": "git ls-tree -r --name-only 334cc740 -- ledger/claims/ · *.yml",
+      "comando": "git ls-tree -r --name-only eaffd3c8 -- ledger/claims/ · *.yml",
       "conhecido_positivo": {
         "o_que": "a lista traz a linha do salário mínimo",
         "encontrado": true

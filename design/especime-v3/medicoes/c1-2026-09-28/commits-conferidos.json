@@ -2,27 +2,27 @@
   "commits_antes_da_entrega": [
     {
       "arvore": "sítio",
-      "hash": "ada78b694e4cc11975b3172c35a31917fcebfa6b",
+      "hash": "54f56d1250fc250ee37cb33f2ad1d777790e502a",
       "trailers_corretos": true
     },
     {
       "arvore": "sítio",
-      "hash": "28b17e2a2f283ef1b734be7a02f4012eea10f347",
+      "hash": "afe4013dac16f9de0c5f41fe8a20394c1efc4b11",
       "trailers_corretos": true
     },
     {
       "arvore": "sítio",
-      "hash": "005c4a2eb0c55cce1abd762b8c5538dbec7227ca",
+      "hash": "9b550a2312e292cac0c9bacfea7fc7a6ab34a34f",
       "trailers_corretos": true
     },
     {
       "arvore": "sítio",
-      "hash": "d9ab0805ba9510df7ded6fa2350e65b35a0e8ab3",
+      "hash": "d50078dace78327e4f65a8deda9dc2727e782eee",
       "trailers_corretos": true
     },
     {
       "arvore": "sítio",
-      "hash": "7a7d2f8d43f46e4bb599987d2f25080ace880d9b",
+      "hash": "8c0200a59a4c17bb298e15aa669f121510598896",
       "trailers_corretos": true
     },
     {
@@ -37,7 +37,7 @@
     },
     {
       "arvore": "sítio",
-      "hash": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+      "hash": "cacef5d1c78dd0f186ccce8c8dbca7af84af9feb",
       "trailers_corretos": true
     }
   ],

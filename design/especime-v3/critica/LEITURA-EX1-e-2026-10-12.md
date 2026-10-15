@@ -1,6 +1,6 @@
 # A leitura curta da passagem EX1-e pelo Claude Opus 5.5 (`high`), 12.10.2026
 
-*Lançada pelo lugar de direção às 11:28 UTC sobre o pacote de `f3060fa4` a `6f5264b9` (a passagem EX1-e do Codex `gpt-6-astra` em `high`), com cinco estragos plantados nas cópias (`PLANTAS-EX1-e-2026-10-12.json`), os registos inteiros, as oito capturas, as cinco linhas e as origens seladas; o total reportado pela ferramenta para o agente: 165 551 símbolos, em 6 minutos e 5 segundos, 39 chamadas de ferramentas. Os achados 1, 2, 3, 4 e 5 são as cinco plantas (todas mordidas); os 6 e 7 são achados reais Major, os 8 a 11 Minor (o 11, o `typecheck` em 0 s, é o compilador nativo do TypeScript 7, provado com um erro plantado a 12.10, M67). O que o lugar de direção decidiu está em `design/observatorio/mandatos/MANDATO-EX1-f-2026-10-12.md`. Sem travessões na prosa do cabeçalho; o corpo é a leitura tal como o leitor a escreveu, em inglês.*
+*Lançada pelo lugar de direção às 11:28 UTC sobre o pacote de `e8deccc1` a `97cec12d` (a passagem EX1-e do Codex `gpt-6-astra` em `high`), com cinco estragos plantados nas cópias (`PLANTAS-EX1-e-2026-10-12.json`), os registos inteiros, as oito capturas, as cinco linhas e as origens seladas; o total reportado pela ferramenta para o agente: 165 551 símbolos, em 6 minutos e 5 segundos, 39 chamadas de ferramentas. Os achados 1, 2, 3, 4 e 5 são as cinco plantas (todas mordidas); os 6 e 7 são achados reais Major, os 8 a 11 Minor (o 11, o `typecheck` em 0 s, é o compilador nativo do TypeScript 7, provado com um erro plantado a 12.10, M67). O que o lugar de direção decidiu está em `design/observatorio/mandatos/MANDATO-EX1-f-2026-10-12.md`. Sem travessões na prosa do cabeçalho; o corpo é a leitura tal como o leitor a escreveu, em inglês.*
 
 # Cold read, EX1-e (Claude Opus 5.5), 12.10.2026
 
@@ -46,7 +46,7 @@
 15. The accounting rule has its own message and reads `main` both with and without the seals. The old per-paragraph absence loop is gone, and both coexistence controls have empty errors (tests/explicacoes/explicacao.mjs:672, diff.patch:3690).
 16. The perimeter plant leaves `data-claim` and `href` untouched and bites through the X6 equality, not X8 (tests/explicacoes/explicacao.mjs:853).
 17. The interest location and the promise of a later update are gone. The transfers clause cites a literal that exists in origens.mjs, and the interest sentence is a `conta` part guarded by `sem_linhas` (src/data/explicacoes/origens.mjs:64, tests/cartao/leituras-provadas.json:14587, tests/cartao/leituras-provadas.json:16684).
-18. Seven gate codes are 0, and `cabeca` equals `cabeca.fim` at 95f2a857 (design/especime-v3/medicoes/ex2-2026-10-06/portoes-e/cabeca:1).
+18. Seven gate codes are 0, and `cabeca` equals `cabeca.fim` at 5256a36b (design/especime-v3/medicoes/ex2-2026-10-06/portoes-e/cabeca:1).
 19. All eight capture sha256 values, which I computed, match the manifest (design/especime-v3/medicoes/ex2-2026-10-06/capturas-ex1e.json:121).
 20. There are 34 of 34 plants, 117 leaves and 165 parts, and every plant name in the report is in the JSON (design/especime-v3/medicoes/ex2-2026-10-06/portoes-e/explicacao.log:1).
 21. The diff contains no machine path, and the cost line does not invent a number (relatorio-construtor.md:564).

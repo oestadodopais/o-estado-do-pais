@@ -1,4 +1,4 @@
-És o construtor Claude Opus 5.5 (a definição `construtor`), chamado pelo lugar de direção para acabar a segunda passagem de correção da peça 1 do bloco B2 do projeto O Estado do País, que o construtor do Codex começou e não acabou: a subscrição do Codex esgotou-se às 21:17 UTC de 23.09.2026, a meio do trabalho, e só volta a 28.09. Trabalhas na worktree do sítio que ele deixou, `<worktree>` (ramo `b2-peca1-2026-09-23`, já rebaseado sobre `main` em `97e84232`; cabeça `8f7b2c27`; 58 ficheiros por registar), e na worktree do motor que ele deixou, `<motor>` (ramo `b2-peca1-2026-09-23`, cabeça `5269763a`, limpa). Nunca `git checkout` nas árvores principais, nunca `push`, nunca `git add -A`: só caminhos explícitos. Prosa nova em português sem travessões.
+És o construtor Claude Opus 5.5 (a definição `construtor`), chamado pelo lugar de direção para acabar a segunda passagem de correção da peça 1 do bloco B2 do projeto O Estado do País, que o construtor do Codex começou e não acabou: a subscrição do Codex esgotou-se às 21:17 UTC de 23.09.2026, a meio do trabalho, e só volta a 28.09. Trabalhas na worktree do sítio que ele deixou, `<worktree>` (ramo `b2-peca1-2026-09-23`, já rebaseado sobre `main` em `401743d2`; cabeça `332e6f0d`; 58 ficheiros por registar), e na worktree do motor que ele deixou, `<motor>` (ramo `b2-peca1-2026-09-23`, cabeça `5269763a`, limpa). Nunca `git checkout` nas árvores principais, nunca `push`, nunca `git add -A`: só caminhos explícitos. Prosa nova em português sem travessões.
 
 ## O que lês primeiro, por esta ordem
 
@@ -9,7 +9,7 @@
 
 ## O que o Codex já fez da segunda passagem, e está commitado
 
-Três commits sobre a cabeça rebaseada: `6151dec5` (o achado 7: a hierarquia das cabeças integrada no `verify`), `a4cc0e17` (os achados 13 e 15: o período das câmaras provado e uma porta comum), `8f7b2c27` (os achados 9, 10 e 16: o veredicto datado e o dono das referências nomeado). Confere cada um contra a decisão do guião da segunda passagem; o que estiver incompleto, acabas.
+Três commits sobre a cabeça rebaseada: `016cd961` (o achado 7: a hierarquia das cabeças integrada no `verify`), `805c796e` (os achados 13 e 15: o período das câmaras provado e uma porta comum), `332e6f0d` (os achados 9, 10 e 16: o veredicto datado e o dono das referências nomeado). Confere cada um contra a decisão do guião da segunda passagem; o que estiver incompleto, acabas.
 
 ## O que ele deixou por registar, e o que fazes com isso
 

@@ -1,24 +1,24 @@
 {
-  "cabeca": "bc68892b0bffcdce9fa58e72109cc2866a9b4f37",
-  "cabeca_da_corrida": "661ccce0b907a9c916fefad9497eb3f740c0b92e",
-  "partida": "cbe87016c7ba60afe8cc0535fa8d0b57aed1112f",
+  "cabeca": "dcaa43b2b9cfe552202bb96ecb91ea2f22d88ec1",
+  "cabeca_da_corrida": "7a414f32d1a3140388b4ce8643916fc0532ae849",
+  "partida": "27049f83df56f0f87cc22f3f8aabf1fee0672b8c",
   "commits_do_ramo": [
-    "bc68892b R1: as saídas dos três portões na cabeça final, e a tabela deles no relatório",
-    "717da1d6 R1: o relatório do bloco, as suas medidas, as plantas, as capturas e as páginas congeladas",
-    "68b7944c R1: o inventário das frases e a sua entrada na revisão, para os mandatos 2, 4, 6, 9, 11 e 12",
-    "34e46d71 R1: a catraca L1 sobe de 2 271 para 2 279 páginas, medida página a página",
-    "a1f90a17 R1 (§1.124): a leitura do país diz as duas leituras oficiais da dívida, e «O que mudou» regista-o",
-    "4ee0d9ef R1 (I147): as três linhas da 2.ª notificação de 2026 do INE atravessam do livro do estudo 13",
-    "d7a39ffe R1 (I140): o Portal BASE deixa de ser fonte no Método, pela decisão de 16.09.2026 que o motor executou",
-    "e5e60b8c R1 (I146): o cartão de um concelho diz, ao pé do período, que a fonte já publicou um mais recente",
-    "fc830a07 R1 (I139): os cartões com valor de referência rendem a cor de estado que o Método promete",
-    "4b7a5faa R1 (I143): no título do recibo, o valor e a unidade com um espaço entre si no texto da página",
-    "cdbc914a R1 (I142): as duas definições das empresas escrevem «sociedades não financeiras», provadas pela resposta do Eurostat",
-    "47e9f952 R1 (I145): o rótulo de IA no topo de todas as páginas, uma vez, e fora do rodapé",
-    "5d7d57b6 R1 (I144): a lista dos estudos é uma só, do mais recente para o mais antigo, com o lugar e o tema em cada entrada",
-    "fc057d1e R1 (I141): as mudanças declaradas do projeto na língua do leitor, e a célula M4 que recusa a do código",
-    "3cb9ede5 R1 (I138): o cartão da sobrecarga da habitação deixa de mostrar a média europeia, e a nota da agenda diz o que é verdade",
-    "8982a767 R1 (I137): a pesquisa dos lugares mostra a lista ao escrever, e o Enter só abre com um resultado"
+    "dcaa43b2 R1: as saídas dos três portões na cabeça final, e a tabela deles no relatório",
+    "d3ae5927 R1: o relatório do bloco, as suas medidas, as plantas, as capturas e as páginas congeladas",
+    "6d79effc R1: o inventário das frases e a sua entrada na revisão, para os mandatos 2, 4, 6, 9, 11 e 12",
+    "d24efa7f R1: a catraca L1 sobe de 2 271 para 2 279 páginas, medida página a página",
+    "e7a6c879 R1 (§1.124): a leitura do país diz as duas leituras oficiais da dívida, e «O que mudou» regista-o",
+    "2b1df491 R1 (I147): as três linhas da 2.ª notificação de 2026 do INE atravessam do livro do estudo 13",
+    "69d33c1d R1 (I140): o Portal BASE deixa de ser fonte no Método, pela decisão de 16.09.2026 que o motor executou",
+    "cd72d3f1 R1 (I146): o cartão de um concelho diz, ao pé do período, que a fonte já publicou um mais recente",
+    "44a1c6a2 R1 (I139): os cartões com valor de referência rendem a cor de estado que o Método promete",
+    "550df0b4 R1 (I143): no título do recibo, o valor e a unidade com um espaço entre si no texto da página",
+    "148a81c7 R1 (I142): as duas definições das empresas escrevem «sociedades não financeiras», provadas pela resposta do Eurostat",
+    "94f829da R1 (I145): o rótulo de IA no topo de todas as páginas, uma vez, e fora do rodapé",
+    "9404c39b R1 (I144): a lista dos estudos é uma só, do mais recente para o mais antigo, com o lugar e o tema em cada entrada",
+    "1266f2cc R1 (I141): as mudanças declaradas do projeto na língua do leitor, e a célula M4 que recusa a do código",
+    "91f25fdd R1 (I138): o cartão da sobrecarga da habitação deixa de mostrar a média europeia, e a nota da agenda diz o que é verdade",
+    "ec854de1 R1 (I137): a pesquisa dos lugares mostra a lista ao escrever, e o Enter só abre com um resultado"
   ],
   "commits_do_ramo_n": 16,
   "brief_antes": {
@@ -53,8 +53,8 @@
     "ine_saldo_2025": "0,7"
   },
   "paginas_depois": {
-    "dist_construido_de": "68b7944cf30beffcd45e1a82180e84103adab614",
-    "cabeca_da_arvore": "68b7944cf30beffcd45e1a82180e84103adab614",
+    "dist_construido_de": "6d79effc132fe2c016dc2615766a99ff363f3cdc",
+    "cabeca_da_arvore": "6d79effc132fe2c016dc2615766a99ff363f3cdc",
     "copias": 16
   },
   "pesquisa": {
@@ -291,7 +291,7 @@
     "origem_excerto_igual_ao_rotulo_da_resposta": true,
     "origem_url_igual_a_do_pedido": true,
     "excerto_da_origem": "Non-financial corporations debt, consolidated - % of GDP",
-    "figuras_lidas_de": "bc68892b:src/data/figuras.mjs",
+    "figuras_lidas_de": "dcaa43b2:src/data/figuras.mjs",
     "rotulo_da_resposta": "Non-financial corporations debt, consolidated - % of GDP",
     "setor_da_resposta": {
       "S11": "Non-financial corporations"
@@ -679,7 +679,7 @@
       "segundos": 288,
       "minutos": 4,
       "resto_segundos": 48,
-      "cabeca": "717da1d6e3ae0acee63ec6aea9d74ab69fc89a9e"
+      "cabeca": "d3ae5927477cdd15eec8158286994ff195cb4a59"
     },
     "verify": {
       "codigo": 0,
@@ -688,7 +688,7 @@
       "segundos": 482,
       "minutos": 8,
       "resto_segundos": 2,
-      "cabeca": "717da1d6e3ae0acee63ec6aea9d74ab69fc89a9e"
+      "cabeca": "d3ae5927477cdd15eec8158286994ff195cb4a59"
     },
     "typecheck": {
       "codigo": 0,
@@ -697,7 +697,7 @@
       "segundos": 0,
       "minutos": 0,
       "resto_segundos": 0,
-      "cabeca": "717da1d6e3ae0acee63ec6aea9d74ab69fc89a9e"
+      "cabeca": "d3ae5927477cdd15eec8158286994ff195cb4a59"
     },
     "gate_html": {
       "rotulo_topo": 7342,
@@ -745,14 +745,14 @@
     "citacoes_que_andaram": 8
   },
   "pacote": {
-    "base_do_ramo": "cbe87016",
-    "pai_do_commit_do_brief": "d4d4dcae",
+    "base_do_ramo": "27049f83",
+    "pai_do_commit_do_brief": "642930a1",
     "paginas_no_ramo": 6,
     "paginas_levadas_com_a_base_do_ramo": 0,
     "brief_json_levado_com_a_base_do_ramo": 0,
     "paginas_levadas_com_o_pai_do_brief": 6,
     "brief_json_levado_com_o_pai_do_brief": 1,
-    "commit_em_que_entraram": "cbe87016"
+    "commit_em_que_entraram": "27049f83"
   },
   "dependencias_externas": {
     "dist": {
@@ -774,7 +774,7 @@
         "plantas_alvos",
         "plantas_cartao"
       ],
-      "repete_se": "numa árvore do sítio na cabeça do R1 (o código é o de 68b7944c): npm ci, npm run build, e o medir.py; sem construir, os registos dos três portões dessa cabeça estão guardados em portoes/"
+      "repete_se": "numa árvore do sítio na cabeça do R1 (o código é o de 6d79effc): npm ci, npm run build, e o medir.py; sem construir, os registos dos três portões dessa cabeça estão guardados em portoes/"
     },
     "git_do_sitio": {
       "o_que": "o git do sítio, com o histórico",
@@ -811,7 +811,7 @@
         "mudanca_declarada",
         "titulo_do_recibo.colados_no_recibo_de_mourao"
       ],
-      "repete_se": "no ramo, nesta pasta: paginas/ e o BRIEF-R1.json (o antes, commit cbe87016) e paginas-depois/ (o depois, presas pelo sha256 do INDICE.json); o pacote só as leva com uma base anterior ao commit do brief (ver pacote)"
+      "repete_se": "no ramo, nesta pasta: paginas/ e o BRIEF-R1.json (o antes, commit 27049f83) e paginas-depois/ (o depois, presas pelo sha256 do INDICE.json); o pacote só as leva com uma base anterior ao commit do brief (ver pacote)"
     },
     "motor": {
       "o_que": "o git do motor, que é privado",
@@ -832,11 +832,11 @@
   },
   "correcao": {
     "commits": [
-      "fb05b52e Depois do R1: a agenda com o excerto da fonte, o pacote das leituras a ler caminhos com acentos, a pergunta do interativo, o mapa repontado, e o rótulo do rodapé sem régua nem regras",
-      "697df9af M4b no sítio: a peça das penalizações republicada com a frase do múltiplo certa, a §1.125, a I125 fechada, a I149, as melhorias M25 e M26, e a leitura a frio do M4b",
-      "715a364e R1, passagem de correção, achado 4: as saídas do motor e as sete plantas, guardadas ao lado do relatório",
-      "748f2c2d R1, passagem de correção, achado 3: o medir.py falha quando o excerto da origem do Eurostat não é o rótulo da resposta",
-      "661ccce0 R1, passagem de correção, achado 6: a planta que põe dois rótulos de IA no topo de uma página"
+      "c466942d Depois do R1: a agenda com o excerto da fonte, o pacote das leituras a ler caminhos com acentos, a pergunta do interativo, o mapa repontado, e o rótulo do rodapé sem régua nem regras",
+      "72069180 M4b no sítio: a peça das penalizações republicada com a frase do múltiplo certa, a §1.125, a I125 fechada, a I149, as melhorias M25 e M26, e a leitura a frio do M4b",
+      "6e574ca7 R1, passagem de correção, achado 4: as saídas do motor e as sete plantas, guardadas ao lado do relatório",
+      "72d95200 R1, passagem de correção, achado 3: o medir.py falha quando o excerto da origem do Eurostat não é o rótulo da resposta",
+      "7a414f32 R1, passagem de correção, achado 6: a planta que põe dois rótulos de IA no topo de uma página"
     ],
     "commits_n": 5,
     "plantas": {

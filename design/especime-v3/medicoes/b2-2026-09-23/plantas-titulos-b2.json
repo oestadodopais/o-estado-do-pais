@@ -1,5 +1,5 @@
 {
-  "cabeca": "7110ca608ef6addba6771a50b5c47685e4e18026",
+  "cabeca": "854283154b3c66ac4594e3798340c4ee4ae4a55f",
   "construido_em": "2026-09-23T22:21:11.069Z",
   "inicio": "2026-09-23T22:34:01.091Z",
   "fim": "2026-09-23T22:34:04.148Z",
@@ -2070,7 +2070,7 @@
           ]
         }
       ],
-      "stdout": "check:cabeca C1; construção 7110ca608ef6addba6771a50b5c47685e4e18026; 0 cabeças; 4 mordidas; 0 reposições\ncheck:cabeca: FAIL\n",
+      "stdout": "check:cabeca C1; construção 854283154b3c66ac4594e3798340c4ee4ae4a55f; 0 cabeças; 4 mordidas; 0 reposições\ncheck:cabeca: FAIL\n",
       "stderr": "/uniao-europeia/: C1, wordmark 26.112 px, H1 26 px (pt, 768 px)\n/uniao-europeia/: C1, wordmark 34 px, H1 32.768 px (pt, 1024 px)\n/en/european-union/: C1, wordmark 26.112 px, H1 26 px (en, 768 px)\n/en/european-union/: C1, wordmark 34 px, H1 32.768 px (en, 1024 px)\n"
     }
   ],

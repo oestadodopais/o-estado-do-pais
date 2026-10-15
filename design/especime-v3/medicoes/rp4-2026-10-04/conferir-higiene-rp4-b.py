@@ -4,7 +4,7 @@ import importlib.util, json, pathlib, subprocess, sys
 sys.dont_write_bytecode = True
 R = pathlib.Path.cwd()
 O = pathlib.Path(__file__).resolve().parent
-BASE = 'fb364fe48c43ca71c2fd04ec8ba640c9399de221'
+BASE = 'a2bd11772c91e4dee42ea011a24e98c998f3b0a8'
 spec = importlib.util.spec_from_file_location('detetor', R/'design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py')
 detetor = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(detetor)

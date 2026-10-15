@@ -8,7 +8,7 @@ Esta passagem começou em 07.10.2026, depois da reposição antecipada da semana
 
 ### Ponto de partida e fusão
 
-O primeiro commit foi a fusão `64d81b2137f8f97fc5f724d30d2c98de94eceacb`, que juntou `main` em `f3aaa3e7` ao ramo do sítio em `d1755ff4`. O motor partiu de `f503a5b1155657d638068d478d66163de429546a`, já com `master` fundido. A fusão do sítio conservou o `package-lock.json`, pelo que não pediu nova instalação de dependências. A fusão terminou sem conflitos. As cinco referências do mapa que ficaram longe foram atualizadas antes das correções do mandato; os três portões partiram de verde.
+O primeiro commit foi a fusão `d3defd90b7145814d78c07b361dad419712535ff`, que juntou `main` em `7952dc25` ao ramo do sítio em `fc3773bb`. O motor partiu de `f503a5b1155657d638068d478d66163de429546a`, já com `master` fundido. A fusão do sítio conservou o `package-lock.json`, pelo que não pediu nova instalação de dependências. A fusão terminou sem conflitos. As cinco referências do mapa que ficaram longe foram atualizadas antes das correções do mandato; os três portões partiram de verde.
 
 O mapa foi conferido antes das correções: 547 citações na linha indicada ou a até sete linhas dela, zero longe, zero por encontrar e zero para lá do fim do ficheiro. A prova está em `mapa-fusao.log`.
 
@@ -75,25 +75,25 @@ O histórico próprio da passagem, por ordem, começa pela fusão do sítio. Os 
 
 Sítio:
 
-- `64d81b21`: Funde main f3aaa3e7 no ramo JD1 antes da passagem JD1-b.
-- `9ffbc7bd`: JD1-b: confere fusão verde, mapa e controlos do pacote.
-- `2d16cd4f`: JD1-b: conservar as leituras distintas do mesmo dia (achado 17).
-- `828fbcfd`: JD1-b: diz que os valores INE de 2025 são provisórios (achado 5).
-- `37130169`: JD1-b: fixar as catorze linhas e dizer o alcance da L1 (achado 16).
-- `3f0f3011`: JD1-b: retirar a estrutura local de todos os ficheiros do ramo (achado 19).
-- `4c238ab3`: JD1-b: preparar as sessenta capturas e os códigos próprios da passagem.
-- `8f038062`: JD1-b: explicar as medidas e dar escala aos recibos (achados 6 a 8).
-- `25e8ddca`: JD1-b: nomear o perímetro e a base de cada medida (achado 11).
-- `ca4dc1eb`: JD1-b: conferir o caminho JSON da prova europeia (achados 6 a 8).
-- `cd760c42`: JD1-b: ligar os custos aos rótulos assinalados do gráfico (achado 9).
-- `1b2076d8`: JD1-b: conservar o ano e a data tal como a fonte os dá (achado 12).
-- `6353dcf5`: JD1-b: cortar o excerto antes dos gráficos vizinhos (achado 9).
-- `b6b2c08c`: JD1-b: tornar visível a parcela do financiamento no quadro da fonte (achados 6 a 8).
-- `eba709a8`: JD1-b: usar um título por publicação do INE e da execução (achado 13).
+- `d3defd90`: Funde main 7952dc25 no ramo JD1 antes da passagem JD1-b.
+- `6d1b99fc`: JD1-b: confere fusão verde, mapa e controlos do pacote.
+- `9dc1bcc6`: JD1-b: conservar as leituras distintas do mesmo dia (achado 17).
+- `5eac45d7`: JD1-b: diz que os valores INE de 2025 são provisórios (achado 5).
+- `607c87b3`: JD1-b: fixar as catorze linhas e dizer o alcance da L1 (achado 16).
+- `e83103f5`: JD1-b: retirar a estrutura local de todos os ficheiros do ramo (achado 19).
+- `e8356ab0`: JD1-b: preparar as sessenta capturas e os códigos próprios da passagem.
+- `93567478`: JD1-b: explicar as medidas e dar escala aos recibos (achados 6 a 8).
+- `8f88c9ae`: JD1-b: nomear o perímetro e a base de cada medida (achado 11).
+- `66912f12`: JD1-b: conferir o caminho JSON da prova europeia (achados 6 a 8).
+- `04d4e67b`: JD1-b: ligar os custos aos rótulos assinalados do gráfico (achado 9).
+- `90d21c7d`: JD1-b: conservar o ano e a data tal como a fonte os dá (achado 12).
+- `58df5fc7`: JD1-b: cortar o excerto antes dos gráficos vizinhos (achado 9).
+- `344e400a`: JD1-b: tornar visível a parcela do financiamento no quadro da fonte (achados 6 a 8).
+- `3677a083`: JD1-b: usar um título por publicação do INE e da execução (achado 13).
 - `79ed513d`: JD1-b: cruzar a escrita normalizada do saldo do motor (achado 15).
 - `da42d05a`: JD1-b: retirar os títulos antigos do catálogo de línguas (achado 13).
 - `1e706931`: JD1-b: atualizar os resumos dos briefs após a limpeza de caminhos (achado 19).
-- `466f8387`: JD1-b: ligar o fim de agosto ao saldo por pagar.
+- `0b8b9963`: JD1-b: ligar o fim de agosto ao saldo por pagar.
 
 Motor:
 
@@ -110,13 +110,13 @@ Houve commits suplementares nos achados 6 a 8, 9, 12, 13 e 19. O caminho JSON e 
 
 ### Provas de fecho
 
-Cabeça do código do sítio: `466f83871ae13eff45a9cd28dcb73470a45114cc`. Cabeça final e do código do motor: `481e15e2ba384703dfdfb83b7aca62f4b3ae24ef`. A cabeça final do sítio é o commit que contém este relatório, as capturas e os registos, sucessor direto da cabeça do código; o seu identificador é comunicado na entrega. Um ficheiro não pode incluir o resumo do próprio commit que o contém.
+Cabeça do código do sítio: `0b8b9963562e72be42273cea7734b40efcb8d938`. Cabeça final e do código do motor: `481e15e2ba384703dfdfb83b7aca62f4b3ae24ef`. A cabeça final do sítio é o commit que contém este relatório, as capturas e os registos, sucessor direto da cabeça do código; o seu identificador é comunicado na entrega. Um ficheiro não pode incluir o resumo do próprio commit que o contém.
 
 | Portão | Ficheiro | Código lido | Cabeça do código |
 |---|---|---:|---|
-| build | `portoes-b/build.codigo` | 0 | `466f83871ae13eff45a9cd28dcb73470a45114cc` |
-| verify | `portoes-b/verify.codigo` | 0 | `466f83871ae13eff45a9cd28dcb73470a45114cc` |
-| typecheck | `portoes-b/typecheck.codigo` | 0 | `466f83871ae13eff45a9cd28dcb73470a45114cc` |
+| build | `portoes-b/build.codigo` | 0 | `0b8b9963562e72be42273cea7734b40efcb8d938` |
+| verify | `portoes-b/verify.codigo` | 0 | `0b8b9963562e72be42273cea7734b40efcb8d938` |
+| typecheck | `portoes-b/typecheck.codigo` | 0 | `0b8b9963562e72be42273cea7734b40efcb8d938` |
 | motor | `portoes-b/motor.codigo` | 0 | `481e15e2ba384703dfdfb83b7aca62f4b3ae24ef` |
 
 Os três portões do sítio correram pelo guião pedido, com a worktree do motor no ambiente. O verify confirma a união completa dos passos do build e do verify, na mesma cabeça e sem mutações. O motor e as conferências complementares tomaram a mesma tranca por criação exclusiva e só a libertaram sendo ainda seus donos. As duas cabeças foram conferidas antes e depois de cada corrida. O motor permaneceu em 481e15e2; depois da última correção exclusiva do sítio repetiram-se os seus três portões e as conferências com origem, conservando a prova completa do motor na mesma cabeça.
@@ -190,7 +190,7 @@ DOMINIOS_SERIES_TEST: PASS · 66 conferências
 
 Foram refeitas e inspecionadas as 60 capturas: catorze recibos e a série, nas duas edições, a 390 e 1 280 px. Os resumos SHA-256 e larguras foram relidos dos PNG; os sessenta ficheiros estão cobertos pelos registos de inspeção visual `inspecao-*.json`. As imagens sem alteração foram revalidadas por igualdade SHA-256 com as imagens já inspecionadas; os recibos alterados da dívida foram novamente lidos visualmente. Nenhum problema ficou registado na corrida final. As quatro interações da série conferiram os pedidos pelo rato e pelo teclado e, quando necessário, o deslocamento da tabela pelo teclado. A planta da disposição da ligação ao documento foi recusada.
 
-Cabeça capturada e carimbo da construção: `466f83871ae13eff45a9cd28dcb73470a45114cc`. Comando: `node design/especime-v3/medicoes/jd1-2026-10-06/captar.mjs --code-head 466f83871ae13eff45a9cd28dcb73470a45114cc`. O manifesto é `capturas-b.json`; as imagens estão em `design/especime-v3/capturas/jd1-2026-10-06/jd1b/`. As cinquenta capturas da primeira passagem continuam separadas.
+Cabeça capturada e carimbo da construção: `0b8b9963562e72be42273cea7734b40efcb8d938`. Comando: `node design/especime-v3/medicoes/jd1-2026-10-06/captar.mjs --code-head 0b8b9963562e72be42273cea7734b40efcb8d938`. O manifesto é `capturas-b.json`; as imagens estão em `design/especime-v3/capturas/jd1-2026-10-06/jd1b/`. As cinquenta capturas da primeira passagem continuam separadas.
 
 A inspeção intermédia encontrou três problemas que foram corrigidos antes desta cabeça: unidades de gráficos vizinhos no excerto do custo de emissão, a parcela do financiamento escondida no texto corrido do quadro e a data do saldo ligada de forma ambígua à emissão da dívida. O primeiro foi cortado no rótulo escolhido; o segundo passou a tabela literal, com as duas células de 2025 assinaladas. O terceiro foi reescrito para dizer quanto ainda estava por pagar no fim de agosto. Não se acrescentou uma décima quinta linha ao livro nem uma dispensa de proveniência numérica.
 
@@ -217,7 +217,7 @@ O bloco acrescenta 14 linhas: 12 leituras diretas e 2 percentagens calculadas so
 
 ### Cabeças do código e portões
 
-Sítio: `e7a433e983ebdc69130d7d0c3b81c0b2539a3b83`. Motor: `f503a5b1155657d638068d478d66163de429546a`.
+Sítio: `73decc118ffeaf15bfc70c4d179f208725b4c26e`. Motor: `f503a5b1155657d638068d478d66163de429546a`.
 
 | Portão | Código lido do ficheiro |
 |---|---:|
@@ -652,7 +652,7 @@ No telemóvel, a porta do documento conserva a mesma âncora e a área de toque.
 
 Capturas: 50. Inspeção visual: 20 imagens, registadas com os seus resumos em `inspecao-visual.json`. Casos de interação conferidos: 10, com a abertura dos pedidos da série e, onde necessário, o deslocamento da tabela pelo teclado. Problemas registados pelo guião: 0. Comando: `node design/especime-v3/medicoes/jd1-2026-10-06/captar.mjs`. Ficheiros em `design/especime-v3/capturas/jd1-2026-10-06/`; dimensões, frases, resumos e cabeça da construção em `capturas.json`.
 
-Para a leitura a frio, o diff do motor é `git diff 465d01e7853f2729fcaa4ba63160b6338ba5de1e f503a5b1155657d638068d478d66163de429546a` na worktree do motor; o do sítio é `git diff 4f49b677 e7a433e983ebdc69130d7d0c3b81c0b2539a3b83` na worktree do sítio. Os documentos e extrações estão na pasta da corrida do motor, os recibos construídos em `dist/livro-razao/` e `dist/en/ledger/`, e as imagens nas capturas desta entrega.
+Para a leitura a frio, o diff do motor é `git diff 465d01e7853f2729fcaa4ba63160b6338ba5de1e f503a5b1155657d638068d478d66163de429546a` na worktree do motor; o do sítio é `git diff 1172e3f8 73decc118ffeaf15bfc70c4d179f208725b4c26e` na worktree do sítio. Os documentos e extrações estão na pasta da corrida do motor, os recibos construídos em `dist/livro-razao/` e `dist/en/ledger/`, e as imagens nas capturas desta entrega.
 
 A entrega inclui as fontes, extrações, recibos e as plantas reproduzíveis para a leitura a frio. Não houve envio para o remoto nem alteração de `ISSUES.md`. Retificação JD1-b: o lançador registou 1 581 631 tokens para esta primeira passagem; ver o custo e os limites da medição na secção atual acima.
 
@@ -662,7 +662,7 @@ A entrega inclui as fontes, extrações, recibos e as plantas reproduzíveis par
 
 O recibo das amortizações identifica o total, o destino da parcela e a comparação com a coluna anterior. O excerto conserva um bloco contínuo do quadro, com os anos e o total, apresentado como tabela nas duas edições. A frase circular do perímetro foi cortada.
 
-Cabeça do código do sítio: `d3649355dab5c75a9ced5eaafc08493e9424263b`. Cabeça do código do motor: `aa4b9e74ee0fe302c351507488335c375d538b60`. A árvore estava limpa no início (`arvore.inicio`); as cabeças de início e fim coincidem. Os portões têm as suas horas reais abaixo. Não houve push nem publicação.
+Cabeça do código do sítio: `e09f917f09306d7dfe530c008dd00d6c505c56ec`. Cabeça do código do motor: `aa4b9e74ee0fe302c351507488335c375d538b60`. A árvore estava limpa no início (`arvore.inicio`); as cabeças de início e fim coincidem. Os portões têm as suas horas reais abaixo. Não houve push nem publicação.
 
 ### Decisões e limites de fonte
 
@@ -744,14 +744,14 @@ Rose from 5 983,4 to 6 028,2.
 
 **sítio**
 
-- `345e40a4 JD1-d: registar a leitura, as plantas e o mandato`
-- `6a6eae98 JD1-d: ligar a parcela ao total e identificar as colunas (achado 6)`
-- `baeb38e7 JD1-d: pôr a planta inócua no âmbito dos registos (achado 9)`
-- `d71b0daa JD1-d: cortar a oração circular do perímetro (achado 10)`
-- `8ffcc7d1 JD1-d: distinguir as horas dos portões anteriores (achado 13)`
-- `29c26f6f JD1-d: recusar células ausentes na comparação (achado 6)`
-- `3fbcd3e1 JD1-d: preparar a recolha das capturas e do fecho`
-- `d3649355 JD1-d: documentar a herança do modo do motor na tentativa interrompida`
+- `14a1579e JD1-d: registar a leitura, as plantas e o mandato`
+- `1c32f570 JD1-d: ligar a parcela ao total e identificar as colunas (achado 6)`
+- `78b8e9ba JD1-d: pôr a planta inócua no âmbito dos registos (achado 9)`
+- `2a23fb7a JD1-d: cortar a oração circular do perímetro (achado 10)`
+- `8aeb713c JD1-d: distinguir as horas dos portões anteriores (achado 13)`
+- `2d573409 JD1-d: recusar células ausentes na comparação (achado 6)`
+- `ddf1245d JD1-d: preparar a recolha das capturas e do fecho`
+- `e09f917f JD1-d: documentar a herança do modo do motor na tentativa interrompida`
 
 **motor**
 
@@ -768,7 +768,7 @@ A linha «tokens used» não foi exposta durante a construção. O custo fica po
 
 Os recibos distinguem o estado de cada ano, dizem a parcela do financiamento por valores selados e a direção da evolução. A dívida direta distingue-se expressamente da dívida de Maastricht. Os guiões fora do bloco recuperam o comportamento anterior.
 
-Cabeça do código do sítio: `147382c4609c5d4a12677dcaa858abf7ec85638a`. Cabeça do código do motor: `67b97e47a19bf1e1203f13380dca362c91015894`. O portão do motor começou em 2026-10-12T12:43:36Z, sobre a cabeça do código do motor, que não mudou depois; os portões do sítio começaram em 2026-10-12T13:12:02Z. Houve recusa da árvore suja antes de cada corrida. `arvore.inicio` diz «limpa»; as diferenças no fim são apenas os registos produzidos pela própria conferência. Os suplementos têm os seus ficheiros de cabeça e de execução.
+Cabeça do código do sítio: `d9e2a972756d5bab75dce9e2d94c8cf797bd9352`. Cabeça do código do motor: `67b97e47a19bf1e1203f13380dca362c91015894`. O portão do motor começou em 2026-10-12T12:43:36Z, sobre a cabeça do código do motor, que não mudou depois; os portões do sítio começaram em 2026-10-12T13:12:02Z. Houve recusa da árvore suja antes de cada corrida. `arvore.inicio` diz «limpa»; as diferenças no fim são apenas os registos produzidos pela própria conferência. Os suplementos têm os seus ficheiros de cabeça e de execução.
 
 A cabeça do último commit de provas não pode estar escrita dentro do próprio commit. Lê-se com `git rev-parse HEAD`; a resposta de entrega identifica-a. Não houve publicação nem envio.
 
@@ -1055,30 +1055,30 @@ Rose from 291 152,8 to 308 538,2.
 
 | Ficheiro | Decisão | Razão |
 |---|---|---|
-| `.gitignore` | revertido | Conteúdo de 64d81b21. |
-| `BRIEF-decisoes-2026-08-20.md` | revertido | Conteúdo de 64d81b21. |
-| `BRIEF-republicacao-2026-08-20.md` | revertido | Conteúdo de 64d81b21. |
-| `CLAUDE.md` | revertido | Conteúdo de 64d81b21. |
-| `design/BRIEF-construcao-S.md` | revertido | Conteúdo de 64d81b21. |
-| `design/direcao-b/CHECK.txt` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/ESTIMATIVA-PARTE3-2026-08-24.md` | revertido | Conteúdo de 64d81b21. |
-| `design/especime-v3/ISSUES.md` | revertido | Conteúdo de 64d81b21. |
-| `design/especime-v3/PEDIDOS-AO-MOTOR-2026-08-22.md` | revertido | Conteúdo de 64d81b21. |
-| `design/especime-v3/PROMPT-luz-verde-2026-08-20.md` | revertido | Conteúdo de 64d81b21. |
-| `design/especime-v3/PROMPT-pos-fusao-2026-08-22.md` | revertido | Conteúdo de 64d81b21. |
-| `design/especime-v3/PROMPT-proxima-sessao-observatorio-2026-08-29.md` | revertido | Conteúdo de 64d81b21. |
-| `design/especime-v3/briefs/BRIEF-auditoria-ux-2026-08-25.md` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/briefs/BRIEF-concelhos-M5.md` | revertido | Conteúdo de 64d81b21. |
-| `design/especime-v3/briefs/BRIEF-concelhos-P2-estrutura.md` | revertido | Conteúdo de 64d81b21. |
-| `design/especime-v3/briefs/BRIEF-correcoes-pequenas-3.md` | revertido | Conteúdo de 64d81b21. |
-| `design/especime-v3/briefs/BRIEF-correcoes-pequenas-6.md` | revertido | Conteúdo de 64d81b21. |
-| `design/especime-v3/briefs/BRIEF-etapa-2l.md` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/briefs/BRIEF-ilhas-M6.md` | revertido | Conteúdo de 64d81b21. |
-| `design/especime-v3/briefs/BRIEF-inicio-lista-M11.md` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/briefs/BRIEF-mapa-navegacao-M4.md` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/briefs/BRIEF-parte3-M1.md` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/briefs/BRIEF-vazios-M8.md` | revertido | Conteúdo de 64d81b21. |
-| `design/especime-v3/briefs/BRIEF-vazios.md` | revertido | Conteúdo de 64d81b21. |
+| `.gitignore` | revertido | Conteúdo de d3defd90. |
+| `BRIEF-decisoes-2026-08-20.md` | revertido | Conteúdo de d3defd90. |
+| `BRIEF-republicacao-2026-08-20.md` | revertido | Conteúdo de d3defd90. |
+| `CLAUDE.md` | revertido | Conteúdo de d3defd90. |
+| `design/BRIEF-construcao-S.md` | revertido | Conteúdo de d3defd90. |
+| `design/direcao-b/CHECK.txt` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/ESTIMATIVA-PARTE3-2026-08-24.md` | revertido | Conteúdo de d3defd90. |
+| `design/especime-v3/ISSUES.md` | revertido | Conteúdo de d3defd90. |
+| `design/especime-v3/PEDIDOS-AO-MOTOR-2026-08-22.md` | revertido | Conteúdo de d3defd90. |
+| `design/especime-v3/PROMPT-luz-verde-2026-08-20.md` | revertido | Conteúdo de d3defd90. |
+| `design/especime-v3/PROMPT-pos-fusao-2026-08-22.md` | revertido | Conteúdo de d3defd90. |
+| `design/especime-v3/PROMPT-proxima-sessao-observatorio-2026-08-29.md` | revertido | Conteúdo de d3defd90. |
+| `design/especime-v3/briefs/BRIEF-auditoria-ux-2026-08-25.md` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/briefs/BRIEF-concelhos-M5.md` | revertido | Conteúdo de d3defd90. |
+| `design/especime-v3/briefs/BRIEF-concelhos-P2-estrutura.md` | revertido | Conteúdo de d3defd90. |
+| `design/especime-v3/briefs/BRIEF-correcoes-pequenas-3.md` | revertido | Conteúdo de d3defd90. |
+| `design/especime-v3/briefs/BRIEF-correcoes-pequenas-6.md` | revertido | Conteúdo de d3defd90. |
+| `design/especime-v3/briefs/BRIEF-etapa-2l.md` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/briefs/BRIEF-ilhas-M6.md` | revertido | Conteúdo de d3defd90. |
+| `design/especime-v3/briefs/BRIEF-inicio-lista-M11.md` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/briefs/BRIEF-mapa-navegacao-M4.md` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/briefs/BRIEF-parte3-M1.md` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/briefs/BRIEF-vazios-M8.md` | revertido | Conteúdo de d3defd90. |
+| `design/especime-v3/briefs/BRIEF-vazios.md` | revertido | Conteúdo de d3defd90. |
 | `design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-da-divida-emitida-2026-08-en-1280.png` | conservado | Ficheiro tocado de propósito pelo bloco. |
 | `design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-da-divida-emitida-2026-08-en-390.png` | conservado | Ficheiro tocado de propósito pelo bloco. |
 | `design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-da-divida-emitida-2026-08-pt-1280.png` | conservado | Ficheiro tocado de propósito pelo bloco. |
@@ -1149,15 +1149,15 @@ Rose from 291 152,8 to 308 538,2.
 | `design/especime-v3/critica/LEITURA-JD1-2026-10-06.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/critica/LEITURA-f22b-2026-09-29.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/critica/LEITURA-f22b-2026-09-29.plantas.json` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/critica/medicao-f11e-sonnet/en-paridade.mjs` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/critica/medicao-f11e-sonnet/u1-alvo.mjs` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/critica/medicao-f11e-sonnet/u1b-braga-porto.mjs` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/critica/medicao-f11e-sonnet/u2-nome-en.mjs` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/critica/medicao-f11e-sonnet/u2-nome.mjs` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/critica/medicao-f11e-sonnet/u3-toque.mjs` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/critica/medicao-f11e-sonnet/u3b-rato-concelho.mjs` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/critica/medicao-f11e-sonnet/u4-sem-guiao.mjs` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/maquetas/b1/fazer.py` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/critica/medicao-f11e-sonnet/en-paridade.mjs` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/critica/medicao-f11e-sonnet/u1-alvo.mjs` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/critica/medicao-f11e-sonnet/u1b-braga-porto.mjs` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/critica/medicao-f11e-sonnet/u2-nome-en.mjs` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/critica/medicao-f11e-sonnet/u2-nome.mjs` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/critica/medicao-f11e-sonnet/u3-toque.mjs` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/critica/medicao-f11e-sonnet/u3b-rato-concelho.mjs` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/critica/medicao-f11e-sonnet/u4-sem-guiao.mjs` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/maquetas/b1/fazer.py` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
 | `design/especime-v3/medicoes/2026-08-21-etapa-2m-invariancia.json` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/b1-2026-09-17/astro-implementacao.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/b1-2026-09-17/build-antes-diagnostico.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
@@ -1192,14 +1192,14 @@ Rose from 291 152,8 to 308 538,2.
 | `design/especime-v3/medicoes/b2-2026-09-23/astro-trabalho-2.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/b2-2026-09-23/astro-trabalho.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/b2-2026-09-23/caso-portao-ue.json` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/b2-2026-09-23/correcao-2/conferir-fonte-cfp.py` | revertido | Conteúdo de 64d81b21. |
+| `design/especime-v3/medicoes/b2-2026-09-23/correcao-2/conferir-fonte-cfp.py` | revertido | Conteúdo de d3defd90. |
 | `design/especime-v3/medicoes/b2-2026-09-23/correcao-2/fonte-cfp-planta-grafico.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/b2-2026-09-23/correcao-2/fonte-cfp-planta-leitura-antiga.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/b2-2026-09-23/correcao/construcao-trabalho.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/b2-2026-09-23/correr-portao.py` | revertido | Conteúdo de 64d81b21. |
+| `design/especime-v3/medicoes/b2-2026-09-23/correr-portao.py` | revertido | Conteúdo de d3defd90. |
 | `design/especime-v3/medicoes/b2-2026-09-23/medidas.json` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/b2-2026-09-23/medir-correcao.py` | revertido | Conteúdo de 64d81b21. |
-| `design/especime-v3/medicoes/b2-2026-09-23/medir-perguntas.py` | revertido | Conteúdo de 64d81b21. |
+| `design/especime-v3/medicoes/b2-2026-09-23/medir-correcao.py` | revertido | Conteúdo de d3defd90. |
+| `design/especime-v3/medicoes/b2-2026-09-23/medir-perguntas.py` | revertido | Conteúdo de d3defd90. |
 | `design/especime-v3/medicoes/b2-2026-09-23/motor/export-ensaio.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/b2-2026-09-23/motor/export-write.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/b2-2026-09-23/motor/passagem-2/exportar.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
@@ -1215,31 +1215,31 @@ Rose from 291 152,8 to 308 538,2.
 | `design/especime-v3/medicoes/b2-2026-09-23/prompts/PROMPT-b2-codex-peca1-correcao.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/b2-2026-09-23/prompts/PROMPT-b2-codex-peca1.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/b2-2026-09-23/prompts/PROMPT-b2-opus-peca1-correcao-3.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/b2-2026-09-23/recolher-motor.py` | revertido | Conteúdo de 64d81b21. |
+| `design/especime-v3/medicoes/b2-2026-09-23/recolher-motor.py` | revertido | Conteúdo de d3defd90. |
 | `design/especime-v3/medicoes/c1-2026-09-28/LEIA-ME.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/c1-2026-09-28/c1g/medir.py` | revertido | Conteúdo de 64d81b21. |
+| `design/especime-v3/medicoes/c1-2026-09-28/c1g/medir.py` | revertido | Conteúdo de d3defd90. |
 | `design/especime-v3/medicoes/c1-2026-09-28/circuito-divida.json` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/c1-2026-09-28/medidas.json` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py` | revertido | Conteúdo de 64d81b21. |
+| `design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py` | revertido | Conteúdo de d3defd90. |
 | `design/especime-v3/medicoes/c1-2026-09-28/motor/commit.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/c1-2026-09-28/prompts/PROMPT-c1-codex.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/c1-2026-09-28/prompts/PROMPT-c1c-codex.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/c1-2026-09-28/provar-circuito-divida.py` | revertido | Conteúdo de 64d81b21. |
-| `design/especime-v3/medicoes/c1-2026-09-28/registar-c1.py` | revertido | Conteúdo de 64d81b21. |
+| `design/especime-v3/medicoes/c1-2026-09-28/provar-circuito-divida.py` | revertido | Conteúdo de d3defd90. |
+| `design/especime-v3/medicoes/c1-2026-09-28/registar-c1.py` | revertido | Conteúdo de d3defd90. |
 | `design/especime-v3/medicoes/c2-2026-10-05/motor/gate-1.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/concelhos-M5-sonnet.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/concelhos-M5-sonnet.mjs` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/medicoes/concelhos-M5-sonnet.mjs` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
 | `design/especime-v3/medicoes/e1-2026-09-16/LEIA-ME.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/extrai_fontes.py` | revertido | Conteúdo de 64d81b21. |
+| `design/especime-v3/medicoes/extrai_fontes.py` | revertido | Conteúdo de d3defd90. |
 | `design/especime-v3/medicoes/higiene-construtor.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/i129-2026-09-22/build.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/i129-2026-09-22/verify.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/ilhas-M6-sonnet.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/ilhas-M6-sonnet.mjs` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/medicoes/ilhas-M6-sonnet.mjs` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
 | `design/especime-v3/medicoes/ilhas-M6-sonnet.resultados.json` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/inicio-lista-M11-nucleo.mjs` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/medicoes/inicio-lista-M11-sonnet.mjs` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/medicoes/inicio-lista-M11b-sonnet.mjs` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/medicoes/inicio-lista-M11-nucleo.mjs` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/medicoes/inicio-lista-M11-sonnet.mjs` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/medicoes/inicio-lista-M11b-sonnet.mjs` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
 | `design/especime-v3/medicoes/jd1-2026-10-06/LEIA-ME.md` | conservado | Ficheiro tocado de propósito pelo bloco. |
 | `design/especime-v3/medicoes/jd1-2026-10-06/captar.mjs` | conservado | Ficheiro tocado de propósito pelo bloco. |
 | `design/especime-v3/medicoes/jd1-2026-10-06/capturas-b.json` | conservado | Ficheiro tocado de propósito pelo bloco. |
@@ -1400,8 +1400,8 @@ Rose from 291 152,8 to 308 538,2.
 | `design/especime-v3/medicoes/m5-2026-09-22/build.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/m5-2026-09-22/verify.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/mapa-distritos-M3-sonnet.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/mapa-distritos-M3-sonnet.mjs` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/especime-v3/medicoes/mapa-navegacao-M4-sonnet.mjs` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/medicoes/mapa-distritos-M3-sonnet.mjs` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/medicoes/mapa-navegacao-M4-sonnet.mjs` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
 | `design/especime-v3/medicoes/nomes-construtor.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/oe1-2026-10-04/corrida-oe1d-lingua-l1.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/p1-2026-09-15/indice.txt` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
@@ -1412,9 +1412,9 @@ Rose from 291 152,8 to 308 538,2.
 | `design/especime-v3/medicoes/p3-2026-09-16/indice.txt` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/p3-2026-09-16/porta-plantas.txt` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/parte3-M1-sonnet.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/parte3-M1-sonnet.py` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/medicoes/parte3-M1-sonnet.py` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
 | `design/especime-v3/medicoes/parte3-M2-sonnet.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/parte3-M2-sonnet.py` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/especime-v3/medicoes/parte3-M2-sonnet.py` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
 | `design/especime-v3/medicoes/pequenas-3-construtor.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/pequenas-6-construtor.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/porta-2026-09-15/coluna-do-valor.txt` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
@@ -1426,85 +1426,85 @@ Rose from 291 152,8 to 308 538,2.
 | `design/especime-v3/medicoes/portas-medidas-depois.json` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/portas-numeros-depois.json` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/pp1-2026-09-28/maqueta/PEDIDO.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/pp1-2026-09-28/maqueta/captar.mjs` | revertido | Conteúdo de 64d81b21. |
-| `design/especime-v3/medicoes/pp1-2026-09-28/maqueta/verificar.mjs` | revertido | Conteúdo de 64d81b21. |
+| `design/especime-v3/medicoes/pp1-2026-09-28/maqueta/captar.mjs` | revertido | Conteúdo de d3defd90. |
+| `design/especime-v3/medicoes/pp1-2026-09-28/maqueta/verificar.mjs` | revertido | Conteúdo de d3defd90. |
 | `design/especime-v3/medicoes/r4-2026-10-05/compor-familias-r4.mjs` | conservado | Ficheiro tocado de propósito pelo bloco. |
 | `design/especime-v3/medicoes/r4-2026-10-05/compor-series-r4.mjs` | conservado | Ficheiro tocado de propósito pelo bloco. |
 | `design/especime-v3/medicoes/r4-2026-10-05/registar-leitura.mjs` | conservado | Ficheiro tocado de propósito pelo bloco. |
 | `design/especime-v3/medicoes/r4-2026-10-05/series-r4.mjs` | conservado | Ficheiro tocado de propósito pelo bloco. |
 | `design/especime-v3/medicoes/resolucao-construtor.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/rp1-2026-09-26/medir-rp1.mjs` | revertido | Conteúdo de 64d81b21. |
-| `design/especime-v3/medicoes/rp1-2026-09-26/origens-rp1.py` | revertido | Conteúdo de 64d81b21. |
+| `design/especime-v3/medicoes/rp1-2026-09-26/medir-rp1.mjs` | revertido | Conteúdo de d3defd90. |
+| `design/especime-v3/medicoes/rp1-2026-09-26/origens-rp1.py` | revertido | Conteúdo de d3defd90. |
 | `design/especime-v3/medicoes/rp1-2026-09-26/portoes/rp1c/preparacao/exportar-corrigido.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/rp1-2026-09-26/prompts/PROMPT-rp1-codex.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/rp1-2026-09-26/prompts/PROMPT-rp1b-codex.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/rp1-2026-09-26/prompts/PROMPT-rp1c-codex.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/especime-v3/medicoes/rp1-2026-09-26/registar-rp1.py` | revertido | Conteúdo de 64d81b21. |
+| `design/especime-v3/medicoes/rp1-2026-09-26/registar-rp1.py` | revertido | Conteúdo de d3defd90. |
 | `design/especime-v3/medicoes/rp3-2026-10-04/motor/export-site-rows-test.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/export-site-rows-test.log` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/toque-medidas-depois.json` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/vazios-M8-sonnet.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
 | `design/especime-v3/medicoes/vazios-construtor.md` | conservado | Só substituição de caminhos num registo; conferida por igualdade de bytes do texto. |
-| `design/marca/palavra/folha.mjs` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/observatorio/BRAINSTORM-conteudos-2026-09-28-astra.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/BRAINSTORM-conteudos-2026-09-28-pedido.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/BRIEF-B1-as-quatro-paginas.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/BRIEF-B2-o-veredicto-e-as-paginas-dos-temas.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/BRIEF-F1.1-porta-da-frente.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/BRIEF-F1.2-pagina-do-dominio.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/BRIEF-F1.6-o-atraso-do-iefp-e-as-duas-frases.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/BRIEF-F2.6-o-calendario-a-serio.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/BRIEF-I129-o-grupo-etario-dos-jovens-nem.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/BRIEF-L1-a-leitura-de-cada-medida.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/BRIEF-M1-o-nome-das-entradas-sem-nome.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/BRIEF-M2-o-estudo-14-entra-no-portao-do-motor.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/BRIEF-M3-os-nomes-oficiais-conferidos-no-motor.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/BRIEF-P2-o-numero-e-o-seu-sentido.md` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/observatorio/BRIEF-P3-os-nomes-e-a-lingua.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/BRIEF-R1-o-lado-do-leitor-depois-da-leitura-de-fora.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/BRIEF-RP1-rendimentos-e-precos-os-cartoes.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/CARTA-DOS-CONTEUDOS.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/FRESCURA-E-AUTOMACAO.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/ORDEM-cabeca-2026-09-01.md` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/observatorio/ORDEM-linhas-dominio-1-2-2026-09-01.md` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/observatorio/ORDEM-piloto-corredor-2026-09-01.md` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/observatorio/ORDEM-rotulo-2026-09-01.md` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-09-01-noite.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-09-01.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-09-04.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-09-07.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-09-08.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-09-14.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-09-16.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-09-21.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-09-22.md` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-09-23-noite.md` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-09-23.md` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-09-24.md` | revertido | Conteúdo de 64d81b21. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-09-26-noite.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-09-29.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-09-30-tarde.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-09-30.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-10-01.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-10-02.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-10-04.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-10-05.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/PROMPT-proxima-sessao-2026-10-06.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/evora/BRIEF-E1-evora-2027-sitio.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/evora/BRIEF-E1-evora-2027.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/evora/FONTES-evora-mandato.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/inventario/BRIEF-comum.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/inventario/BRIEF-sonnet-amostra.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/inventario/lote-1-linhas.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/inventario/lote-2-linhas.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/inventario/lote-3-linhas.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/inventario/lote-4-linhas.md` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/mandatos/GUIAO-montar-pacote-h4e-2026-10-06.sh.txt` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/mandatos/GUIAO-provas-h4e-2026-10-06.sh.txt` | revertido | Conteúdo de 64d81b21. |
+| `design/marca/palavra/folha.mjs` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/observatorio/BRAINSTORM-conteudos-2026-09-28-astra.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/BRAINSTORM-conteudos-2026-09-28-pedido.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/BRIEF-B1-as-quatro-paginas.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/BRIEF-B2-o-veredicto-e-as-paginas-dos-temas.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/BRIEF-F1.1-porta-da-frente.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/BRIEF-F1.2-pagina-do-dominio.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/BRIEF-F1.6-o-atraso-do-iefp-e-as-duas-frases.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/BRIEF-F2.6-o-calendario-a-serio.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/BRIEF-I129-o-grupo-etario-dos-jovens-nem.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/BRIEF-L1-a-leitura-de-cada-medida.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/BRIEF-M1-o-nome-das-entradas-sem-nome.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/BRIEF-M2-o-estudo-14-entra-no-portao-do-motor.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/BRIEF-M3-os-nomes-oficiais-conferidos-no-motor.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/BRIEF-P2-o-numero-e-o-seu-sentido.md` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/observatorio/BRIEF-P3-os-nomes-e-a-lingua.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/BRIEF-R1-o-lado-do-leitor-depois-da-leitura-de-fora.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/BRIEF-RP1-rendimentos-e-precos-os-cartoes.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/CARTA-DOS-CONTEUDOS.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/FRESCURA-E-AUTOMACAO.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/ORDEM-cabeca-2026-09-01.md` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/observatorio/ORDEM-linhas-dominio-1-2-2026-09-01.md` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/observatorio/ORDEM-piloto-corredor-2026-09-01.md` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/observatorio/ORDEM-rotulo-2026-09-01.md` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-09-01-noite.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-09-01.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-09-04.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-09-07.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-09-08.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-09-14.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-09-16.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-09-21.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-09-22.md` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-09-23-noite.md` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-09-23.md` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-09-24.md` | revertido | Conteúdo de d3defd90. Exceção da regra 9: só raízes pessoais substituídas; o destino executável é relativo à casa. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-09-26-noite.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-09-29.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-09-30-tarde.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-09-30.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-10-01.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-10-02.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-10-04.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-10-05.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/PROMPT-proxima-sessao-2026-10-06.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/evora/BRIEF-E1-evora-2027-sitio.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/evora/BRIEF-E1-evora-2027.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/evora/FONTES-evora-mandato.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/inventario/BRIEF-comum.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/inventario/BRIEF-sonnet-amostra.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/inventario/lote-1-linhas.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/inventario/lote-2-linhas.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/inventario/lote-3-linhas.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/inventario/lote-4-linhas.md` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/mandatos/GUIAO-montar-pacote-h4e-2026-10-06.sh.txt` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/mandatos/GUIAO-provas-h4e-2026-10-06.sh.txt` | revertido | Conteúdo de d3defd90. |
 | `design/observatorio/mandatos/MANDATO-JD1-b-2026-10-06.md` | conservado | Ficheiro tocado de propósito pelo bloco. |
-| `design/observatorio/medidas/BRIEF-RP1.py` | revertido | Conteúdo de 64d81b21. |
-| `design/observatorio/medidas/isentos.json` | revertido | Conteúdo de 64d81b21. O resumo do brief P2 acompanha a retirada da raiz pessoal. |
+| `design/observatorio/medidas/BRIEF-RP1.py` | revertido | Conteúdo de d3defd90. |
+| `design/observatorio/medidas/isentos.json` | revertido | Conteúdo de d3defd90. O resumo do brief P2 acompanha a retirada da raiz pessoal. |
 | `ledger/claims/custo-da-divida-emitida-2026-08.yml` | conservado | Ficheiro tocado de propósito pelo bloco. |
 | `ledger/claims/custo-do-stock-da-divida-direta-2025.yml` | conservado | Ficheiro tocado de propósito pelo bloco. |
 | `ledger/claims/divida-direta-do-estado-2026-08.yml` | conservado | Ficheiro tocado de propósito pelo bloco. |
@@ -1520,11 +1520,11 @@ Rose from 291 152,8 to 308 538,2.
 | `package.json` | conservado | Ficheiro tocado de propósito pelo bloco. |
 | `public/recortes/custo-da-divida-emitida-2026-08.webp` | conservado | Ficheiro tocado de propósito pelo bloco. |
 | `public/recortes/custo-do-stock-da-divida-direta-2025.webp` | conservado | Ficheiro tocado de propósito pelo bloco. |
-| `scripts/aterrar.sh` | revertido | Conteúdo de 64d81b21. |
+| `scripts/aterrar.sh` | revertido | Conteúdo de d3defd90. |
 | `scripts/check-lugar.mjs` | conservado | Ficheiro tocado de propósito pelo bloco. |
 | `scripts/check-privacidade.py` | conservado | Ficheiro tocado de propósito pelo bloco. |
 | `scripts/inventario-rotulos.mjs` | conservado | Ficheiro tocado de propósito pelo bloco. |
-| `scripts/leituras/estado.py` | revertido | Conteúdo de 64d81b21. |
+| `scripts/leituras/estado.py` | revertido | Conteúdo de d3defd90. |
 | `scripts/leituras/limpar-caminhos.py` | conservado | Ficheiro tocado de propósito pelo bloco. |
 | `src/components/QuadroFinanciamentoJd1.astro` | conservado | Ficheiro tocado de propósito pelo bloco. |
 | `src/data/o-que-e-das-familias.mjs` | conservado | Ficheiro tocado de propósito pelo bloco. |
@@ -1548,22 +1548,22 @@ Rose from 291 152,8 to 308 538,2.
 
 **sítio**
 
-- `4685343d JD1-c: registar a leitura, as plantas e o mandato`
-- `9c7a2674 JD1-c: repor o comportamento fora do bloco (achado 8)`
-- `b6d633d4 JD1-c: ligar o estado e a comparação à linha (achado 6)`
-- `9f409f85 JD1-c: dizer a parcela do financiamento por tokens (achado 7)`
-- `0633f4a1 JD1-c: explicar a dívida direta e a direção da evolução (achado 9)`
-- `05bb3baf JD1-c: conservar as colunas e descrever os gráficos (achado 11)`
-- `75fac858 JD1-c: recusar árvores sujas e conferir sob a tranca (achado 12)`
-- `43e7450e JD1-c: apoiar o perímetro no INE e conservar o subsetor (achado 14)`
-- `7eaf6406 JD1-c: substituir a leitura refeita do mesmo dia (achado 15)`
-- `d37d553a JD1-c: mostrar a data intacta do cabeçalho (achado 10)`
-- `7557db3b fixup! JD1-c: explicar a dívida direta e a direção da evolução (achado 9)`
-- `d5473935 JD1-c: preparar provas reproduzíveis e capturas da passagem`
-- `9b1617c2 JD1-c: medir os recibos novos antes dos portões`
-- `defea1b0 JD1-c: declarar a matéria da nova linha (achado 7)`
-- `8a137354 JD1-c: integrar a linha no inventário e na língua (achado 7)`
-- `147382c4 JD1-c: completar os vínculos das novas frases`
+- `c1557e8a JD1-c: registar a leitura, as plantas e o mandato`
+- `449ce248 JD1-c: repor o comportamento fora do bloco (achado 8)`
+- `c0e9d544 JD1-c: ligar o estado e a comparação à linha (achado 6)`
+- `9d74fea7 JD1-c: dizer a parcela do financiamento por tokens (achado 7)`
+- `e8261eb7 JD1-c: explicar a dívida direta e a direção da evolução (achado 9)`
+- `107dca29 JD1-c: conservar as colunas e descrever os gráficos (achado 11)`
+- `bb103314 JD1-c: recusar árvores sujas e conferir sob a tranca (achado 12)`
+- `0c2a3f21 JD1-c: apoiar o perímetro no INE e conservar o subsetor (achado 14)`
+- `d247ca94 JD1-c: substituir a leitura refeita do mesmo dia (achado 15)`
+- `244d0fa0 JD1-c: mostrar a data intacta do cabeçalho (achado 10)`
+- `2df4b696 fixup! JD1-c: explicar a dívida direta e a direção da evolução (achado 9)`
+- `acacca97 JD1-c: preparar provas reproduzíveis e capturas da passagem`
+- `50978230 JD1-c: medir os recibos novos antes dos portões`
+- `526b45f7 JD1-c: declarar a matéria da nova linha (achado 7)`
+- `598d4712 JD1-c: integrar a linha no inventário e na língua (achado 7)`
+- `d9e2a972 JD1-c: completar os vínculos das novas frases`
 
 **motor**
 

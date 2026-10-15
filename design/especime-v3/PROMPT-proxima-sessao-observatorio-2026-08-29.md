@@ -10,7 +10,7 @@ Regras verbatim: nunca `git add -A` nem `git add .`, só caminhos explícitos; c
 
 ## 1 · Onde está o sítio (lê antes de fazer)
 
-`main` está em `3de3ba7` ou depois (confirma com `git log --oneline -5` e `npm run verify:deploy`). Lê, por esta ordem: `DECISIONS.md` §1.79 (a marca), §1.84 (a primeira página: os nomes ao lado do mapa, os painéis com nome), §1.85 (a tipografia fecha), §1.86 (a identidade fecha, e o plano dos próximos passos), §1.87 (correções pequenas 7, se já estiver); `design/especime-v3/ESTADO-DO-MAIN-2026-08-29-inicio-lista.md`; `design/especime-v3/LEITORES-PRIMEIRA-RONDA.md`; `design/especime-v3/ISSUES.md` (o que está aberto, I95 em diante); a nota do cofre `~/Obsidian/Experiments/O Estado do País.md` (a secção «Open» e a linha «Next»). A identidade (nome, marca, tipos) está fechada: não se reabre.
+`main` está em `6138643` ou depois (confirma com `git log --oneline -5` e `npm run verify:deploy`). Lê, por esta ordem: `DECISIONS.md` §1.79 (a marca), §1.84 (a primeira página: os nomes ao lado do mapa, os painéis com nome), §1.85 (a tipografia fecha), §1.86 (a identidade fecha, e o plano dos próximos passos), §1.87 (correções pequenas 7, se já estiver); `design/especime-v3/ESTADO-DO-MAIN-2026-08-29-inicio-lista.md`; `design/especime-v3/LEITORES-PRIMEIRA-RONDA.md`; `design/especime-v3/ISSUES.md` (o que está aberto, I95 em diante); a nota do cofre `~/Obsidian/Experiments/O Estado do País.md` (a secção «Open» e a linha «Next»). A identidade (nome, marca, tipos) está fechada: não se reabre.
 
 ## 2 · O que esta sessão entrega (três coisas, por esta ordem)
 

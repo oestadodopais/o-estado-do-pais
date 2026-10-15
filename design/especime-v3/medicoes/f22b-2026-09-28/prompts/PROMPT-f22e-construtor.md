@@ -1,6 +1,6 @@
 A passagem **F2.2e**, a última antes da aterragem: retomas a mesma sessão. A terceira leitura a frio, do Claude Opus 5.5, achou as cinco plantas e nenhum achado bloqueante no código. O teste de aceitação do brief pede cada guarda com a sua planta a morder, e duas guardas não a têm.
 
-A leitura e a triagem estão no sítio, em `design/especime-v3/critica/LEITURA-f22d-2026-09-30.md`. O lugar de direção já juntou `main` ao ramo do sítio (`e97d7da8`), depois de o UE1 aterrar. As regras são as de sempre, e o que não se faz é o §3 do brief, à letra.
+A leitura e a triagem estão no sítio, em `design/especime-v3/critica/LEITURA-f22d-2026-09-30.md`. O lugar de direção já juntou `main` ao ramo do sítio (`15916222`), depois de o UE1 aterrar. As regras são as de sempre, e o que não se faz é o §3 do brief, à letra.
 
 ## O mandato
 

@@ -6,7 +6,7 @@ A medição regista 6 falhas (`falhas_total`) e 0 entradas obrigatórias por com
 
 ## Cabeças e reprodução
 
-O sítio partiu de `7f65829935e838c29129be0187072c5c8d87c39f`, sobre `main`. O HTML do depois e os portões atuais pertencem a `2415107b6ab38a00bba557dc4da9e101b8b83ea1` (`depois.cabeca`, `portoes`). As capturas do antes são da cabeça de partida, e não da cabeça anterior usada pelo brief. As cópias próprias e os respetivos resumos estão em `paginas-antes-peca1/` e `paginas-depois-peca1/`. As cópias congeladas em `paginas/` e o guião do brief não foram alterados.
+O sítio partiu de `73c5c3fb1da61b0ab5ea3e33e02dc0ae8c1b3e9c`, sobre `main`. O HTML do depois e os portões atuais pertencem a `2415107b6ab38a00bba557dc4da9e101b8b83ea1` (`depois.cabeca`, `portoes`). As capturas do antes são da cabeça de partida, e não da cabeça anterior usada pelo brief. As cópias próprias e os respetivos resumos estão em `paginas-antes-peca1/` e `paginas-depois-peca1/`. As cópias congeladas em `paginas/` e o guião do brief não foram alterados.
 
 O motor partiu de `aa35e2e72f09988a07d6706fe0a0b59feeca120d` e ficou em `ead443cd2ae83b05127e6a7774be0c0e939bc85f`, na sua worktree própria sobre `master`. O diff está em `motor/diff.patch`. Não houve publicação nem envio para um remoto.
 

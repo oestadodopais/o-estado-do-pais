@@ -2,7 +2,7 @@
 
 *Relatório do construtor (Claude Opus 5), 04.09.2026, sobre o brief
 `design/observatorio/BRIEF-F1.10-uma-coisa-um-lugar.md`. Ramo `lugar-2026-09-04`,
-a partir de `origin/main` em `306e4c68`. Sem travessões na prosa. Nenhum número
+a partir de `origin/main` em `2144f822`. Sem travessões na prosa. Nenhum número
 deste relatório foi escrito à mão: cada um tem ao lado o comando que o mediu.*
 
 ---
@@ -21,7 +21,7 @@ com o seu positivo conhecido.
 
 | | |
 |---|---|
-| cabeça | **`77620291`** quando esta secção se escreveu, e a última do ramo depois do commit que a acrescenta (`git -C <worktree> rev-parse --short HEAD`): um commit não contém o seu próprio resumo |
+| cabeça | **`3aebf07b`** quando esta secção se escreveu, e a última do ramo depois do commit que a acrescenta (`git -C <worktree> rev-parse --short HEAD`): um commit não contém o seu próprio resumo |
 | `build` · `verify` · `typecheck` | **0 · 0 · 0**, lidos de `build.exit`, `verify.exit` e `typecheck.exit` na árvore |
 | a corrida da CI | lê-se com `gh run list --repo oestadodopais/o-estado-do-pais --branch lugar-2026-09-04`. Um commit não pode conter o número da corrida que ele dispara |
 | o modelo | Claude Opus 5 |
@@ -29,7 +29,7 @@ com o seu positivo conhecido.
 
 ### As medidas de aceitação, antes e depois
 
-*«Antes» é a cabeça `2da5212d`, o fim da oitava sessão desta manhã; «depois» é
+*«Antes» é a cabeça `b92710a4`, o fim da oitava sessão desta manhã; «depois» é
 esta cabeça. A prova de cada linha é um ficheiro em
 `design/especime-v3/medicoes/lugar-2026-09-04/`, com a data e o turno no nome.*
 
@@ -47,7 +47,7 @@ esta cabeça. A prova de cada linha é um ficheiro em
 | §7.10 · valores desenhados sem o seu texto na legenda | 0 (teto 0) | **0** (teto 0) | o mesmo |
 | L7 · a releitura do leitor de primeira vez | não corrida | **não corrida**: é leitura, e a leitura é do lugar de direção | `critica/2026-09-09-codex-releitura-l7-f110.md` |
 | L8 · os três portões e as réguas | portões 0·0·0; `porta` 34/34, `recibo` 13/13, `correcoes-a` 32/32, **`matriz` 12 de 89 falham** | **portões 0·0·0**; `porta` 34/34, `recibo` 13/13, `correcoes-a` 32/32, **`matriz` 89 de 89 passam** e sai a 0 | `porta-`, `recibo-`, `correcoes-a-` e `matriz-2026-09-14-tarde.txt` |
-| L8 · a régua `leitura` | **4 de 26 células**, vermelha desde 08.09 por decisão do item 8.16: media as 21 leituras em `/`, e elas estão em «Portugal na União Europeia» desde `3139099f` | **26 de 26 células**, e as suas plantas **8 de 8 mordem**: por decisão do lugar de direção de 14.09 a régua passou a medir as leituras onde elas vivem, e a J5 passou a medir o índice dos domínios que o 8.13 fez | `leitura-2026-09-14-tarde.txt`, `leitura-plantas-2026-09-14-tarde.txt` |
+| L8 · a régua `leitura` | **4 de 26 células**, vermelha desde 08.09 por decisão do item 8.16: media as 21 leituras em `/`, e elas estão em «Portugal na União Europeia» desde `889f3006` | **26 de 26 células**, e as suas plantas **8 de 8 mordem**: por decisão do lugar de direção de 14.09 a régua passou a medir as leituras onde elas vivem, e a J5 passou a medir o índice dos domínios que o 8.13 fez | `leitura-2026-09-14-tarde.txt`, `leitura-plantas-2026-09-14-tarde.txt` |
 | L9 · plantas vermelhas e depois verdes | 7 de 7 | **11 de 11 morderam, e todas repuseram byte a byte** | `plantas-2026-09-14-tarde.txt`, e `positivos-8-4-2026-09-14.txt` com as seis da declaração |
 
 **A L1 continua a ser uma catraca, e nesta passagem não desceu nem subiu: 2 170,
@@ -144,7 +144,7 @@ onde tinha 10, e a célula voltou a **0 pares em 21 leituras**.
 | 6 · as oito linhas de cobertura e de estrutura | seis são cobertura e saem da voz do leitor (`retirada`, com a descrição pública reescrita para dizer o que a página tem); duas são a estrutura da página e ficam, reclassificadas para `navegacao` com a razão | inventário e `check:voz` |
 | 7 | é o 12 da leitura das definições | ver a linha do achado 12, acima |
 | 8 · as dez linhas vivas que o leitor não achou | **as dez rendem-se**, e cada uma foi conferida contra o `dist/` inteiro (7 239 páginas), uma a uma, e não só pela conta global do `check:voz` (**999 linhas com bloco, 782 vivas, todas rendidas**). O que faltava era o pacote, que levava 31 páginas | a tabela abaixo, com o número de páginas e uma delas |
-| 9 · a conta do registo das revisões | reconciliada por commit, e a secção nova do registo escreve-a: **179** linhas com `bloco` = `lugar` na cabeça `2da5212d` (o mesmo número que a leitura contou), das quais 158 de texto novo e 21 reclassificadas de outro bloco; as quatro entradas que diziam 39, 10, 4 e 26 cobriam quatro dos dezassete commits deste ramo que mexeram no inventário. Depois desta sessão são **213** | `git show -U0 <sha> -- INVENTARIO-FRASES.md` por commit, e o conjunto dos textos da cabeça menos o dos acrescentados é **vazio** |
+| 9 · a conta do registo das revisões | reconciliada por commit, e a secção nova do registo escreve-a: **179** linhas com `bloco` = `lugar` na cabeça `b92710a4` (o mesmo número que a leitura contou), das quais 158 de texto novo e 21 reclassificadas de outro bloco; as quatro entradas que diziam 39, 10, 4 e 26 cobriam quatro dos dezassete commits deste ramo que mexeram no inventário. Depois desta sessão são **213** | `git show -U0 <sha> -- INVENTARIO-FRASES.md` por commit, e o conjunto dos textos da cabeça menos o dos acrescentados é **vazio** |
 | 10 · «nenhum publicador oficial calcula» | a frase da fronteira do domínio passa a dizer a ausência na forma da casa («para a qual não há número público»), pela regra 6 da carta; onde a casa procurou continua no cartão T4a da mesma página | o cartão rende-se **1 vez em cada edição**, com «procurado em» e o código do indicador |
 | 11 · a frase dos quatro níveis | fica `navegacao`, com a razão escrita na linha | inventário |
 | 12 · fora da planta V1 | os dois títulos da página dos números e as duas cadeias de «as medidas estão em» passam a `navegacao`, com a razão | inventário |
@@ -155,7 +155,7 @@ não estão em texto de página nenhuma: estão em atributos (a descrição púb
 `<head>` e a dica de uma chave da prova), que é a razão por que uma leitura que
 só olhe para o corpo das páginas não as encontra.
 
-| a linha, na cabeça `2da5212d` | páginas que a rendem | uma delas |
+| a linha, na cabeça `b92710a4` | páginas que a rendem | uma delas |
 |---|---:|---|
 | 232 · «Os números e as fontes dos concelhos · O Estado do País» | 1 | `/livro-razao/concelhos` |
 | 233 · a gémea inglesa | 1 | `/en/ledger/municipalities` |
@@ -178,7 +178,7 @@ escrito na secção abaixo.*
 
 ### A releitura de verificação, e os dois achados que ela deixou (14.09.2026, ao fim do dia)
 
-*A releitura do Codex sobre a cabeça `7b85bb7f`
+*A releitura do Codex sobre a cabeça `9d1f0460`
 (`critica/2026-09-14-codex-releitura-uniao-definicoes.md`, com o `.plantas.json`
 ao lado) viu as três plantas do lugar de direção, 3 de 3, e deixou dois achados
 reais. Os dois fecharam-se na mesma worktree, antes da aterragem.*
@@ -221,7 +221,7 @@ duas primeiras plantas criam entre os dados e as páginas construídas.*
 
 **1 · A régua `tests/inicio/leitura.mjs` passa a medir as leituras onde elas
 vivem.** Estava a medir `/`, e as 21 leituras mudaram-se para «Portugal na União
-Europeia» com o item 8.16 no commit `3139099f` de 08.09: saía a **4 de 26**, com
+Europeia» com o item 8.16 no commit `889f3006` de 08.09: saía a **4 de 26**, com
 as 22 células que procuram leituras a dizer «0 leitura(s) de 21». As seis células
 das leituras (J1, J3, J4, J12, J13 e J14) passam a `/uniao-europeia` e
 `/en/european-union`, com a decisão citada na própria régua; as três que medem a
@@ -254,7 +254,7 @@ not found», e `Glossary:NFC` responde **500**. A expansão de «NFC» fica
 `[a verificar]`. A régua 8.4 passa a ler **62 origens (esperadas 62)**.
 
 **3 · As quatro linhas do inventário escritas `lugar|` sem espaço** (237 a 240 na
-cabeça `2da5212d`): normalizadas para `| lugar |`, sem uma letra mudada no texto.
+cabeça `b92710a4`): normalizadas para `| lugar |`, sem uma letra mudada no texto.
 Antes, `grep -c '| lugar |'` dava **209** e a conta real era **213**; depois, as
 duas dão **213**, com **150 vivas** e **63 retiradas**, que é exactamente a
 contagem de antes. O `check:voz` lê-as como antes: **999 linhas do inventário com
@@ -277,7 +277,7 @@ apanhou-a a render-se onze vezes na agenda, onde o que falta é uma data.
 
 | | |
 |---|---|
-| cabeça | **`bddbafde`** quando esta secção se escreveu, e a última do ramo depois do commit que a acrescenta (`git -C <worktree> rev-parse --short HEAD`): um commit não contém o seu próprio resumo. O `dist/` que estas medições leem foi construído da fonte que estes commits contêm, e nenhuma fonte do sítio mudou depois dessa construção: o que mudou a seguir foram guiões de medição e este relatório |
+| cabeça | **`d5a5c886`** quando esta secção se escreveu, e a última do ramo depois do commit que a acrescenta (`git -C <worktree> rev-parse --short HEAD`): um commit não contém o seu próprio resumo. O `dist/` que estas medições leem foi construído da fonte que estes commits contêm, e nenhuma fonte do sítio mudou depois dessa construção: o que mudou a seguir foram guiões de medição e este relatório |
 | `build` · `verify` · `typecheck` | **0 · 0 · 0**, lidos de `build.exit`, `verify.exit` e `typecheck.exit` na árvore, e não de memória |
 | a corrida da CI | lê-se com `gh run list --repo oestadodopais/o-estado-do-pais --branch lugar-2026-09-04`. Um commit não pode conter o número da corrida que ele dispara |
 | o que esta sessão fez | os seis itens que faltavam à segunda passagem, na ordem do relatório |
@@ -334,7 +334,7 @@ estado; as seis desta sessão trazem o que ficou e onde.*
 | 5 | Major 6 · as descrições públicas do `<head>` | **feita** | 09.09 |
 | **6** | **Major 7 · o `<noscript>` da busca e do filtro; a A9 a medir o filtro de facto** | **feita** | a célula A9 de `tests/inicio/porta.mjs` foi reescrita e corre em três pernas, cada uma com o seu número: **dois toques e não «até dois»** (`toques === 2`), com cada alvo dentro do primeiro ecrã, e **a página de chegada a render mesmo o concelho** (a cabeça de lugar diz «concelho» e a manchete traz o nome: «concelho · Évora tem 58 567 pessoas»), e não apenas a ter o endereço que se clicou; **sem guião**, a submissão nativa leva a `/municipios?concelho=%C3%89vora` com **308 nomes**, **1 porta daquele concelho** e **88 caracteres** de frase do `<noscript>` (103 na edição inglesa); **o filtro dos estudos**, em `/estudos?concelho=evora`, com **5 entradas, 5 que casam, 5 à vista e a porta da volta acesa**, e sem guião **5 entradas, 0 escondidas e 43 caracteres** de frase (46 na inglesa). A régua sai a 0 com 34 de 34 células |
 | 7 | Major 8 · o título do estudo abre o texto | **feita** | 09.09 |
-| **8** | **Major 10 · `matriz.mjs` e `recibo.mjs` saem com 1 quando há células vermelhas** | **feita** | corridas. `recibo` sai a 0 com **13 de 13**, e o positivo conhecido morde (`RECIBO_ROMPE=1` sai a 1). `matriz` sai a **1**, e é a primeira vez que ela o diz: **12 das 89 células falham**, nas duas edições (o transbordo horizontal de `/` no modo concelho a 320, 390, 768 e 1 024, a régua de uma leitura aberta a 768 e a 1 280, o alvo do selo, o I20, `/uniao-europeia` sem guião e as três células do mapa da cabeça). **Nenhuma delas é desta sessão, e isso foi medido e não deduzido:** a mesma régua correu sobre um `dist/` construído da cabeça `150f64dc`, que é a de pausa, numa árvore à parte, e falharam lá **as mesmas 12 células**, uma a uma (`matriz-na-cabeca-de-pausa-2026-09-14.txt`). As páginas que elas medem também não rendem nenhuma das classes novas desta sessão: `marcador-definicao` e `mun-legenda-val` estão a zero em `/`, `/en` e `/uniao-europeia`. O positivo conhecido também morde, e hoje não distingue nada por já haver vermelho: `MATRIZ_ROMPE=1` sai a 1 com a linha impressa. As saídas estão guardadas |
+| **8** | **Major 10 · `matriz.mjs` e `recibo.mjs` saem com 1 quando há células vermelhas** | **feita** | corridas. `recibo` sai a 0 com **13 de 13**, e o positivo conhecido morde (`RECIBO_ROMPE=1` sai a 1). `matriz` sai a **1**, e é a primeira vez que ela o diz: **12 das 89 células falham**, nas duas edições (o transbordo horizontal de `/` no modo concelho a 320, 390, 768 e 1 024, a régua de uma leitura aberta a 768 e a 1 280, o alvo do selo, o I20, `/uniao-europeia` sem guião e as três células do mapa da cabeça). **Nenhuma delas é desta sessão, e isso foi medido e não deduzido:** a mesma régua correu sobre um `dist/` construído da cabeça `f0f678d5`, que é a de pausa, numa árvore à parte, e falharam lá **as mesmas 12 células**, uma a uma (`matriz-na-cabeca-de-pausa-2026-09-14.txt`). As páginas que elas medem também não rendem nenhuma das classes novas desta sessão: `marcador-definicao` e `mun-legenda-val` estão a zero em `/`, `/en` e `/uniao-europeia`. O positivo conhecido também morde, e hoje não distingue nada por já haver vermelho: `MATRIZ_ROMPE=1` sai a 1 com a linha impressa. As saídas estão guardadas |
 | 9 | Major 11 · a L5 e a L6 | **feita** | 09.09; as duas a 0 nesta cabeça |
 | **10** | **Major 12 · a L2 pela forma, e as plantas por forma** | **feita** | as sete plantas correram e **7 de 7 morderam**, com o ficheiro a voltar byte a byte em todas. Duas não mordiam à primeira, e **o defeito era das plantas**: a da L2a copiava `<ul class="concelhos-lista">` com um regex não guloso e o índice tem vinte e nove listas com esse nome, uma por unidade da Carta, o que plantava 19 portas contra um teto de 30; a da L1 estragava uma página de linha que **já contava** entre as 1 422, e um segundo destino repetido numa página já contada não move uma contagem de páginas. As duas foram corrigidas no próprio guião, com a razão escrita: a da L2a planta as 308 portas, a da L1 escolhe, por conta própria, a primeira página de linha sem nenhum destino repetido. Saída em `plantas-2026-09-14.txt` |
 | 11 | Major 13 · a guarda dos estudos | **feita** | 09.09; 24 · 8 · 2 · 44 · 24 nesta cabeça |
@@ -396,7 +396,7 @@ ponto onde ela parou, pela ordem por que se retoma.
 | | |
 |---|---|
 | cabeça | a última do ramo (`git -C <worktree> rev-parse --short HEAD`) |
-| `main` fundido | **`13372937`**, com o F1.1e inteiro |
+| `main` fundido | **`267e9f6b`**, com o F1.1e inteiro |
 | `build` · `verify` · `typecheck` | lidos de `build.exit`, `verify.exit`, `typecheck.exit` no commit que fecha a sessão |
 | a corrida da CI | lê-se em `gh run list --repo oestadodopais/o-estado-do-pais --branch lugar-2026-09-04`. Um commit não pode conter o número da corrida que ele dispara |
 | o que esta sessão fez | a **segunda passagem do bloco**, sobre a leitura a frio de 09.09.2026 e a releitura do leitor de primeira vez (a régua L7): as vinte e cinco decisões do lugar de direção, na tabela abaixo |
@@ -469,9 +469,9 @@ primeira vez neste bloco: `porta.mjs` 34 de 34, `correcoes-a.mjs` 32 de 32,
 | | |
 |---|---|
 | cabeça | a última do ramo (`git -C <worktree> rev-parse --short HEAD`) |
-| `main` fundido | **`13372937`**, com o F1.1e inteiro |
+| `main` fundido | **`267e9f6b`**, com o F1.1e inteiro |
 | `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
-| a corrida da CI | **34324895358, verde**, na cabeça `1c29d1c1`, que é a árvore inteira desta sessão. A corrida da cabeça do código (`29ec83fd`, a 34324532988) foi **cancelada pelo próprio grupo de concorrência** quando o empurrão seguinte entrou, e por isso a que conta é esta |
+| a corrida da CI | **34324895358, verde**, na cabeça `77666521`, que é a árvore inteira desta sessão. A corrida da cabeça do código (`150f5eaa`, a 34324532988) foi **cancelada pelo próprio grupo de concorrência** quando o empurrão seguinte entrou, e por isso a que conta é esta |
 | feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2**; **8.5**; **§7.1**; **8.17** e **8.17b**; os dois limiares com o seu fixador; **8.4**; **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; **8.11** e **§7.3**; **8.15**; **§9.2**; **§9.7**; a dívida da `matriz.mjs`; o **item 5 do encargo** (o caminho, a busca única, «fonte» diz o publicador, as datas); as outras páginas menos os estudos; a decisão da mobília inglesa (8.9) |
 | feito nesta sessão | **os estudos** (§7.4 e 8.6): as edições numa só forma nas duas superfícies, com a frase que diz o que cada porta abre; a página de capa deixa de ser paragem obrigatória (a leitura a um toque do índice); o «Descarregar · Sem ficheiros» fora; **«arquivo» fora do vocabulário** (§7.4), nas seis cadeias em que vivia, com a §1.105 a registar o texto governado; **as quatro decisões de 09.09**: o §7.7 item 4 desfeito e registado, a **L2a de 2 para 0** com três conferências no lugar de uma isenção, as **quatro células de `porta.mjs`** e as **seis de `correcoes-a.mjs`** a medirem o que os blocos decidiram, e a **frase da fronteira do domínio** na dobra «Como ler» (o §9.6 inglês de **317** para **0**); **a célula dos estudos** na régua da cadeia; **o fecho**: as 52 capturas, as **14 plantas da L9** (14 de 14 morderam), o `REVISOES-DO-INVENTARIO.md`, o `CHAVES-EN.md` e este relatório |
 | a seguir | **nada deste bloco.** O que fica nomeado para o lugar de direção são duas coisas que esta sessão mediu e não decidiu: o **§7.7 item 4** (o selo ao pé do número na manchete, desfeito com a medida) e o **alvo dos quatro elementos da manchete**, que o `check:alvos` recusou crescer e que só se resolve mudando a composição da manchete |
@@ -494,9 +494,9 @@ inglesa em quatro linhas onde o item 8.15 tem um teto de três.
 | | |
 |---|---|
 | cabeça | a última do ramo (`git -C <worktree> rev-parse --short HEAD`) |
-| `main` fundido | **`13372937`**, com o F1.1e inteiro |
+| `main` fundido | **`267e9f6b`**, com o F1.1e inteiro |
 | `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
-| a corrida da CI | **34315983862, verde**, na cabeça do código desta sessão (`87b71288`). A cabeça deste relatório é a do commit que o escreve, e um commit não pode conter o número da corrida que ele dispara |
+| a corrida da CI | **34315983862, verde**, na cabeça do código desta sessão (`13bb9f6a`). A cabeça deste relatório é a do commit que o escreve, e um commit não pode conter o número da corrida que ele dispara |
 | feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2**; **8.5**; **§7.1**; **8.17** e **8.17b**; os dois limiares com o seu fixador; **8.4**; **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; **8.11** e **§7.3**; **8.15**; **§9.2**; **§9.7**; a dívida da `matriz.mjs` |
 | feito nesta sessão | **o item 5 do encargo inteiro**: o caminho no cabeçalho (L5 de **7 213** para **0**), a busca única (§2.6), «fonte» a dizer o publicador (L6 de **26 178** para **0**) e as datas de frescura por palavras nos lugares que faltavam (§7.3); **as outras páginas** menos os estudos: a região (§1 e §7.6, a L2b de **18** para **0**), o domínio (§7.7, itens 1 e 3), os estudos na página do concelho (§1, 8.6 e 8.10, a L2c de **10** para **0**), e o Método no telemóvel (§7.9); **a decisão da mobília inglesa** (item 8.9), escrita na régua com os dois tetos; **o fecho**: as 48 capturas, as **6 plantas da L9** (6 de 6 morderam), o `REVISOES-DO-INVENTARIO.md` e este relatório |
 | a seguir | **os estudos** (§7.4 e 8.6), que é o que falta do encargo; e três coisas que este relatório mede e deixa nomeadas para o lugar de direção: o **§7.7 item 4** (o selo ao pé do número na manchete, que colide com o teto do 8.15), a **L2a** (a segunda lista dos 308 em `/`, que é a fila de resultados da busca) e as **quatro células vermelhas** de `porta.mjs` que são do F1.1d e do F1.1e |
@@ -518,7 +518,7 @@ escrito ao número.
 | | |
 |---|---|
 | cabeça | a última do ramo (`git -C <worktree> rev-parse --short HEAD`) |
-| `main` fundido | **`13372937`**, com o F1.1e inteiro |
+| `main` fundido | **`267e9f6b`**, com o F1.1e inteiro |
 | `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
 | a corrida da CI | lê-se na primeira linha de `gh run list --repo oestadodopais/o-estado-do-pais --branch lugar-2026-09-04`. Um commit não pode conter o número da corrida que ele dispara |
 | feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2**; **8.5**; **§7.1**; **8.17** e **8.17b**; os dois limiares com o seu fixador; **8.4**; **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; **8.11** e **§7.3** |
@@ -534,7 +534,7 @@ escrito ao número.
 | | |
 |---|---|
 | cabeça | a última do ramo (`git rev-parse HEAD`) |
-| `main` fundido | **`13372937`**, com o F1.1e inteiro (a fusão trouxe cinco conflitos, e a resolução de cada um está na secção 4 da quarta sessão) |
+| `main` fundido | **`267e9f6b`**, com o F1.1e inteiro (a fusão trouxe cinco conflitos, e a resolução de cada um está na secção 4 da quarta sessão) |
 | `build` · `verify` · `typecheck` | **0** · **0** · **0** (códigos lidos de `build.exit`, `verify.exit`, `typecheck.exit`) |
 | a corrida da CI | lê-se na primeira linha de `gh run list --branch lugar-2026-09-04`. Um commit não pode conter o número da corrida que ele dispara, e por isso o que aqui fica é o comando |
 | feito nas sessões anteriores | a régua (encargo (b)); **§9.1**; **8.8**; **8.9**; **§7.5**; **8.16**; **8.13**; **8.12**; **8.14 inteiro**; **§2.2**; **8.15**; **8.5**; **§7.1**; **8.17**; os dois limiares com o seu fixador; **8.4** e a segunda metade do **8.14**; **§9.3**, **§9.4**, **§9.5**, **§9.8** e **§9.9**; **§7.3** (as três datas de uma medida por palavras); a régua do primeiro ecrã com o «antes» medido |
@@ -546,8 +546,8 @@ escrito ao número.
 
 ## A tabela das medidas (decisão do lugar de direção, 07.09)
 
-**O «antes» é o `dist/` da fusão de `origin/main` (`43f4b52a`) na cabeça
-`47d957f6`, medido a 08.09.2026.** Nenhum destes números foi escrito à mão: cada
+**O «antes» é o `dist/` da fusão de `origin/main` (`70097881`) na cabeça
+`a0a40208`, medido a 08.09.2026.** Nenhum destes números foi escrito à mão: cada
 um sai do comando que está na última coluna. A régua imprime os catorze de uma
 vez, e cada um tem um teto escrito ao lado no próprio ficheiro, com a data em que
 foi medido: a régua falha quando a medição passa do teto **e também quando ela
@@ -1013,12 +1013,12 @@ da sessão e cerca de 14 515 000 ao escrever esta linha: **da ordem de 485 mil**
 o contador da janela e não a fatura; o número da fatura é o que o harness disser.
 
 **Os seis commits desta sessão**, por ordem: as edições de um estudo numa só
-forma (`e4561d48`); a célula dos estudos na régua, com a L2a e as células
-herdadas (`8b1411e7`); «arquivo» fora do vocabulário e a dobra «Como ler»
-(`29ec83fd`, a cabeça do código); o fecho, com o inventário, as chaves, as
-capturas e este relatório (`1c29d1c1`); a corrida verde lida ao fechar e a conta
-certa de «arquivo» (`ff9da544`); e as duas linhas repetidas da tabela das
-medidas, fundidas (`b4c73896`).
+forma (`73eac2c7`); a célula dos estudos na régua, com a L2a e as células
+herdadas (`7c51155a`); «arquivo» fora do vocabulário e a dobra «Como ler»
+(`150f5eaa`, a cabeça do código); o fecho, com o inventário, as chaves, as
+capturas e este relatório (`77666521`); a corrida verde lida ao fechar e a conta
+certa de «arquivo» (`ec344ee8`); e as duas linhas repetidas da tabela das
+medidas, fundidas (`b4825d46`).
 
 **Os três portões, com os códigos lidos dos ficheiros e não do ecrã**, na árvore
 do último commit de código desta sessão:
@@ -1030,16 +1030,16 @@ npm run typecheck > typecheck.log 2>&1; echo $? > typecheck.exit → 0
 ```
 
 **A corrida da CI que conta é a 34324895358, e saiu verde** (`gh run view --repo
-oestadodopais/o-estado-do-pais 34324895358`), na cabeça `1c29d1c1`, que é a
+oestadodopais/o-estado-do-pais 34324895358`), na cabeça `77666521`, que é a
 árvore com todo o código, todas as réguas, o inventário, as chaves, as capturas e
-este relatório. Os commits seguintes (`ff9da544` e `b4c73896`) só mexem em prosa
+este relatório. Os commits seguintes (`ec344ee8` e `b4825d46`) só mexem em prosa
 deste ficheiro e num comentário de uma régua de fora da cadeia: não tocam numa
 linha que a construção leia.
 
 **E o grupo de concorrência cancelou duas corridas pelo caminho, que é preciso
 dizer para que ninguém as leia como falhas.** A da cabeça do código, a
-**34324532988** em `29ec83fd`, foi cancelada quando o empurrão do fecho entrou
-quatro minutos depois; a **34327017536** em `ff9da544` foi cancelada da mesma
+**34324532988** em `150f5eaa`, foi cancelada quando o empurrão do fecho entrou
+quatro minutos depois; a **34327017536** em `ec344ee8` foi cancelada da mesma
 maneira pelo empurrão seguinte. A mensagem é a do GitHub: «Canceling since a
 higher priority waiting request for portão-push-refs/heads/lugar-2026-09-04
 exists». Nenhuma falhou: as duas cederam o lugar à corrida da árvore que as
@@ -2168,7 +2168,7 @@ nesta sessão.
 ### 4 · O 8.17b fechou: a página do concelho passou a mostrar a unidade dele
 
 **Duas vezes medido no mesmo serão, e a segunda mudou a resposta.** Ao fim da
-noite, `origin/main` estava em `fe6478aa` e o F1.1e não lá estava (`git grep -l
+noite, `origin/main` estava em `816c97b1` e o F1.1e não lá estava (`git grep -l
 "unidadeDoConcelho" origin/main` sem saída, com o conhecido-positivo do
 `MapaRespira` a devolver três ficheiros); o item ficou por fechar e escreveu-se
 porquê. **Depois o lugar de direção mandou dizer que o F1.1e tinha aterrado**, e
@@ -2176,7 +2176,7 @@ a segunda medição confirmou-o:
 
 ```
 git fetch origin && git log origin/main --oneline -1
-  → 13372937   Fusão do ramo distritos-2026-09-08 (o F1.1e …)
+  → 267e9f6b   Fusão do ramo distritos-2026-09-08 (o F1.1e …)
 grep -rn "unidadeDoConcelho" src/lib/*.mjs   → src/lib/mapa.mjs:313
 ```
 
@@ -2558,7 +2558,7 @@ bloco.
 
 ```
 git fetch origin && git log origin/main --oneline -1
-  → fe6478aa   (o mesmo em que este ramo já estava fundido)
+  → 816c97b1   (o mesmo em que este ramo já estava fundido)
 
 git grep -l "MapaRespira" origin/main | head -3      ← o conhecido-positivo
   → origin/main:DECISIONS.md
@@ -2571,7 +2571,7 @@ git show origin/main:src/components/inicio/MapaRespira.astro | grep -n nivel
   → 223:  data-nivel={postura === 'inteiro' ? 'pais' : undefined}
 ```
 
-Os dois commits do F1.1e que estão em `main` (`79887471` e `fe6478aa`) são **só
+Os dois commits do F1.1e que estão em `main` (`f9ad7aa7` e `816c97b1`) são **só
 documentos**: o brief, a linha do plano, o 8.17 emendado e a §1.102. O que a
 mudança precisa — o parâmetro `nivel` do `MapaRespira` e o índice
 `unidadeDoConcelho()` — está no ramo `distritos-2026-09-08`, que existe no
@@ -3122,10 +3122,10 @@ alteração ficou pela metade, e nada foi deixado com um portão vermelho.
 | | |
 |---|---|
 | ramo | `lugar-2026-09-04` |
-| ponto de partida | `origin/main` em `306e4c68` |
+| ponto de partida | `origin/main` em `2144f822` |
 | última cabeça | a corrida a ler é a primeira linha de `gh run list --branch lugar-2026-09-04` |
-| `main` a fundir na sessão seguinte | `69ba3abf` |
-| `build` · `verify` · `typecheck` sobre `c0f623c5` | **0** · **0** · **0** |
+| `main` a fundir na sessão seguinte | `fd19e801` |
+| `build` · `verify` · `typecheck` sobre `a1f19341` | **0** · **0** · **0** |
 
 A §E diz o resto, incluindo o que ficou por acabar no quarto commit e porque é
 que a corrida da CI pode esgotar o tempo neste ramo (o `timeout` de 45 minutos
@@ -3133,7 +3133,7 @@ está em `main` e este ramo ainda não o fundiu).
 
 ### O que a sessão seguinte faz primeiro
 
-`main` andou: está em **`69ba3abf`** (os ficheiros de registo e o
+`main` andou: está em **`fd19e801`** (os ficheiros de registo e o
 `timeout-minutes` do `portao.yml` subido para 45). **Funde `origin/main` antes de
 tocar em código**, torna a correr os três portões, e só então continua pela lista
 de baixo. O `timeout` da CI já não é o aperto que a alínea (b) do encargo
@@ -3346,7 +3346,7 @@ in the archive» continuavam a render-se na primeira página depois de a cadeia 
 
 ---
 
-## B · As medições de partida (sobre `dist/` de `306e4c68`)
+## B · As medições de partida (sobre `dist/` de `2144f822`)
 
 Todas correm sobre a construção verde do ponto de partida, com os guiões que
 ficaram em `design/especime-v3/medicoes/lugar-2026-09-04/`.
@@ -3454,7 +3454,7 @@ node design/especime-v3/medicoes/lugar-2026-09-04/palavras.mjs dist
 
 ### B.5 · «sem limiar», por página (encargo (a))
 
-`grep -o 'sem limiar' <ficheiro> | wc -l`, sobre `dist/` de `306e4c68`:
+`grep -o 'sem limiar' <ficheiro> | wc -l`, sobre `dist/` de `2144f822`:
 
 | página | ocorrências |
 |---|---|
@@ -3533,37 +3533,37 @@ corrida na sessão seguinte antes de o bloco fechar.
 
 ## E · A cabeça e a corrida do portão
 
-O ramo tem quatro commits sobre `306e4c68`, e a cabeça deste relatório é a do
+O ramo tem quatro commits sobre `2144f822`, e a cabeça deste relatório é a do
 quarto. Um commit não pode conter o seu próprio resumo, e por isso o que aqui se
 escreve é o do terceiro, que é o que a CI conferiu primeiro.
 
 | | |
 |---|---|
 | ramo | `lugar-2026-09-04` |
-| ponto de partida | `origin/main` em `306e4c68` |
-| `main` a fundir na sessão seguinte | `69ba3abf` |
-| cabeça com os três portões corridos à mão | `c0f623c5` |
+| ponto de partida | `origin/main` em `2144f822` |
+| `main` a fundir na sessão seguinte | `fd19e801` |
+| cabeça com os três portões corridos à mão | `a1f19341` |
 | corrida `portao` dessa cabeça | `33854329164`, cancelada pelo push seguinte (ver abaixo) |
 
 Os códigos foram lidos dos ficheiros de saída de cada corrida, e não do ecrã.
 
 | corrida | `build` | `verify` | `typecheck` |
 |---|---|---|---|
-| a árvore de `c0f623c5` | **0** | **0** | **0** |
+| a árvore de `a1f19341` | **0** | **0** | **0** |
 | a árvore do quarto commit | **0** | por acabar | **0** |
 
 **O `verify` do quarto commit não chegou ao fim, e diz-se em vez de se supor.**
 Ficou no oitavo dos vinte e um passos quando a sessão fechou, e não por um
 vermelho: o portátil tinha, ao mesmo tempo, a construção de outra worktree
 (`toque-2026-09-04`) a ocupar um núcleo inteiro, e a cadeia do `verify` abre
-navegadores. O que separa esta árvore da de `c0f623c5`, onde o `verify` correu
+navegadores. O que separa esta árvore da de `a1f19341`, onde o `verify` correu
 verde, são **três comentários sem travessões e esta secção**: nenhuma linha de
 código, nenhuma cadeia, nada que chegue ao `dist/`. Quem retomar o bloco corre-o
 outra vez, que é de qualquer modo o primeiro passo depois de fundir o `main`.
 
 **A corrida da CI pode esgotar o tempo, e a razão está escrita.** Este ramo sai
-de `306e4c68`, onde o `portao.yml` ainda diz `timeout-minutes: 30`; a subida para
-45 está em `main`, em `69ba3abf`, que este ramo não fundiu. A corrida
+de `2144f822`, onde o `portao.yml` ainda diz `timeout-minutes: 30`; a subida para
+45 está em `main`, em `fd19e801`, que este ramo não fundiu. A corrida
 `33854329164` ia nos vinte minutos e ainda dentro do `npm run build` quando a
 sessão fechou. **Se ela sair vermelha por tempo, não é um defeito deste ramo:** a
 fusão do `main` na sessão seguinte resolve-a, e o primeiro sinal a acreditar é a

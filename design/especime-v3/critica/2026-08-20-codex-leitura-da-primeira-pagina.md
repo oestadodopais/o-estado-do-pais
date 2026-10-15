@@ -1,6 +1,6 @@
 # Leitura cruzada da primeira página v3 (Codex, sem contexto), 2026-08-20, noite
 
-*Corrida pelo lugar de direção (Claude Fable 5) antes da pré-visualização n.º 1, sobre a construção em `009d8e6` (ramo `redesenho-v3`). Leitor: Codex CLI 0.147.0, `gpt-5.6-sol`, esforço xhigh, sem rede, só leitura, numa pasta fora dos repositórios, com: o `dist/` inteiro (sem os documentos alojados), `ledger/claims/`, os despejos de texto dos estados da matriz, a constituição com as Emendas, o registo de relocações, as chaves PT→EN, os extratos do plano (§3 decisões, §13 esquema) e as duas pranchas vivas. Sem scripts, sem notas, sem capturas. **Cinco estragos plantados em cópias do `dist`** (nunca no repositório), registados antes da leitura em `plantas.json` com o resumo de cada ficheiro do pacote:*
+*Corrida pelo lugar de direção (Claude Fable 5) antes da pré-visualização n.º 1, sobre a construção em `2ddb22a` (ramo `redesenho-v3`). Leitor: Codex CLI 0.147.0, `gpt-5.6-sol`, esforço xhigh, sem rede, só leitura, numa pasta fora dos repositórios, com: o `dist/` inteiro (sem os documentos alojados), `ledger/claims/`, os despejos de texto dos estados da matriz, a constituição com as Emendas, o registo de relocações, as chaves PT→EN, os extratos do plano (§3 decisões, §13 esquema) e as duas pranchas vivas. Sem scripts, sem notas, sem capturas. **Cinco estragos plantados em cópias do `dist`** (nunca no repositório), registados antes da leitura em `plantas.json` com o resumo de cada ficheiro do pacote:*
 
 | planta | o quê | apanhada? |
 |---|---|---|
@@ -212,7 +212,7 @@ For each finding: where (file and line or a quoted fragment), what the files say
 
 ```json
 {
-  "commit": "009d8e6",
+  "commit": "2ddb22a",
   "plantas": [
     {
       "ficheiro": "dist/index.html",

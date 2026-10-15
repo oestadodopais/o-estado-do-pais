@@ -25,7 +25,7 @@ if (versao.commit !== esperado) throw new Error(`A construção declara ${versao
 const sha = (bytes) => createHash('sha256').update(bytes).digest('hex');
 const inicio = new Date();
 const larguras = [390, 768, 1024, 1280, 1600];
-const idsAlterados = git('diff', '--name-only', 'b7f352ce253effe7d21dc97bacc1d9b67665e592', '--', 'ledger/claims').split('\n').filter(Boolean).map(f=>path.basename(f,'.yml'));
+const idsAlterados = git('diff', '--name-only', '472d1a43195856b4ef4624f61b1cb8f018cc86e3', '--', 'ledger/claims').split('\n').filter(Boolean).map(f=>path.basename(f,'.yml'));
 const idsDeRecibos = [...new Set([...idsAlterados, 'ipc-variacao-homologa', 'ihpc-variacao-homologa', 'taxa-de-cambio-efectiva-real-2025', 'evora-indice-de-divida-2024', 'evora-prazo-medio-de-pagamento-2025-12'])].sort();
 const paginas = [
   ['temas','pt','/temas/'], ['temas','en','/en/themes/'],

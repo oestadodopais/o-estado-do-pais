@@ -35,8 +35,8 @@
    "descricao": "a tabela do relatório diz 14.08.2026 na edição inglesa de evora-prometido-pago-auditado-2026, e o JSON e a página dizem 15.08.2026",
    "sha256_antes": "5bf4ee3be7b87dde15ea8bb164f911fc368847aef5bcf304a37e4f3172d621cf",
    "sha256_depois": "68b0c3c4b071feb9c47fd304d75866d4273b709299409125bc9ddd9ba89c2b88",
-   "contexto_antes": "26** | `b4f45d3f` | `2026-08-12` |\n| evora-prometido-pago-auditado-2026 (pt) | 04.09.2026 | **15.08.2026** | `ec152217` | `2026-08-04` |\n| evora-prometido-pago-auditado-2026 (en) | 04.09.2026 | **15.08.2026** | `ec152217` | `2026-08-04` |\n| evora-quinze-anos-cinco-mandatos (pt) | 04.09.2026 | **12.08.2026** | `b4f45d3f` | `null` |\n| onde-esta-a-agua (pt) | 04.09.202",
-   "contexto_depois": "26** | `b4f45d3f` | `2026-08-12` |\n| evora-prometido-pago-auditado-2026 (pt) | 04.09.2026 | **15.08.2026** | `ec152217` | `2026-08-04` |\n| evora-prometido-pago-auditado-2026 (en) | 04.09.2026 | **14.08.2026** | `ec152217` | `2026-08-04` |\n| evora-quinze-anos-cinco-mandatos (pt) | 04.09.2026 | **12.08.2026** | `b4f45d3f` | `null` |\n| onde-esta-a-agua (pt) | 04.09.202"
+   "contexto_antes": "26** | `eff504f5` | `2026-08-12` |\n| evora-prometido-pago-auditado-2026 (pt) | 04.09.2026 | **15.08.2026** | `b556bf81` | `2026-08-04` |\n| evora-prometido-pago-auditado-2026 (en) | 04.09.2026 | **15.08.2026** | `b556bf81` | `2026-08-04` |\n| evora-quinze-anos-cinco-mandatos (pt) | 04.09.2026 | **12.08.2026** | `eff504f5` | `null` |\n| onde-esta-a-agua (pt) | 04.09.202",
+   "contexto_depois": "26** | `eff504f5` | `2026-08-12` |\n| evora-prometido-pago-auditado-2026 (pt) | 04.09.2026 | **15.08.2026** | `b556bf81` | `2026-08-04` |\n| evora-prometido-pago-auditado-2026 (en) | 04.09.2026 | **14.08.2026** | `b556bf81` | `2026-08-04` |\n| evora-quinze-anos-cinco-mandatos (pt) | 04.09.2026 | **12.08.2026** | `eff504f5` | `null` |\n| onde-esta-a-agua (pt) | 04.09.202"
   },
   {
    "id": "P4",

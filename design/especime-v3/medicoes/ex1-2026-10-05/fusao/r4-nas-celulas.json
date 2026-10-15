@@ -1,8 +1,8 @@
 {
   "o_que_e": "As peças do R4 nas páginas que as células do EX1 leem, na construção da fusão, e quantas caem dentro de uma marca das frases compostas do EX1.",
   "data": "2026-10-06T06:50:26.676Z",
-  "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
-  "construcao": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+  "cabeca": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
+  "construcao": "f69f9c4c158d27825abeba6a08ca6c3c6fe8192b",
   "main": "42c7ed7e99ba6428573e3b9115c4e4a229b1423a",
   "seletores": {
     "explicacao_de_um_valor_de_referencia": "[data-veredicto-explica]",

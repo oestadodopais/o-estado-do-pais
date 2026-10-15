@@ -1,6 +1,6 @@
 {
   "comando": "node design/especime-v3/medicoes/rp4-2026-10-04/capturar.mjs",
-  "cabeca": "2523e3a022daec489476b9c77b5707892aca9c84",
+  "cabeca": "21c08531812ae94bce1ddc3f526aa4f848a5641e",
   "construido_em": "2026-10-05T07:51:40.988Z",
   "conhecido_positivo": {
     "transbordo_detetado": true

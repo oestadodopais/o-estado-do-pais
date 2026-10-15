@@ -14,7 +14,7 @@ from html.parser import HTMLParser
 AQUI = Path(__file__).resolve().parent
 BLOCO = AQUI.parent
 SITIO = AQUI.parents[4]
-BASE = 'b7f352ce253effe7d21dc97bacc1d9b67665e592'
+BASE = '472d1a43195856b4ef4624f61b1cb8f018cc86e3'
 BASE_MOTOR = '3e83a271f4c5af0b1f6809436916c1b06d6e0b1c'
 ALVO = 'divida-das-familias-2025-ue'
 
@@ -49,7 +49,7 @@ def mede(motor, final):
     detetor = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(detetor)
     achados, n = [], 0
-    for rotulo, repo, base in [('sítio', SITIO, '48a5a1c181c1753036d301204884c57119bba8a5'), ('motor', motor, '4eb2867936dd14ad2654751722e390804e68dda3')]:
+    for rotulo, repo, base in [('sítio', SITIO, '7028e733f8bb4de7bf65f1bb76546304ba1e6db4'), ('motor', motor, '4eb2867936dd14ad2654751722e390804e68dda3')]:
         nomes = set(git('diff', '--name-only', base, repo=repo).splitlines())
         if repo == SITIO:
             herdados = {f for f in nomes if not f.startswith(('src/', 'scripts/', 'tests/', 'ledger/', str(BLOCO.relative_to(SITIO))+'/'))}
@@ -88,12 +88,12 @@ def mede(motor, final):
     historias = []
     for id in (ALVO, 'indice-de-divida-limite-legal'):
         atual = yaml.safe_load((SITIO/'ledger/claims'/f'{id}.yml').read_text())
-        anterior = yaml.safe_load(git('show', f'a677770f:ledger/claims/{id}.yml'))
+        anterior = yaml.safe_load(git('show', f'04438bb9:ledger/claims/{id}.yml'))
         iguais = atual['verifications'] == anterior['verifications']
-        exige(iguais, f'A história de {id} não é a de a677770f.')
+        exige(iguais, f'A história de {id} não é a de 04438bb9.')
         acessos = [c for c in atual['corrections'] if c.get('kind')=='proveniencia' and c.get('field')=='access_date']
         exige(len(acessos)==1 and acessos[0]['old_value']==anterior['access_date'] and acessos[0]['new_value']==atual['access_date'], f'Falta a história do acesso de {id}.')
-        historias.append({'id':id,'lista_igual_a_a677770f':iguais,'verifications':atual['verifications'],'acessos':acessos})
+        historias.append({'id':id,'lista_igual_a_04438bb9':iguais,'verifications':atual['verifications'],'acessos':acessos})
     enderecos = ler(AQUI/'enderecos-antes.json')
     plantas_historia = ler(AQUI/'historia-plantas.json')
     exige(all(p['mordeu'] and p['falha'] for p in plantas_historia['plantas']) and len(plantas_historia['plantas'])==5, 'Falta uma das cinco plantas da retoma.')
@@ -170,7 +170,7 @@ def mede(motor, final):
     relatorio = ler(AQUI/'relatorio.json') if (AQUI/'relatorio.json').exists() else None
     if final: exige(relatorio is not None and relatorio['numeros_sem_ficheiro']==0 and relatorio['conhecido_positivo']['encontrado'], 'Falta a conferência do relatório a zero.')
     return {'recibos_finais':recibos_finais,'custo_retoma':custo_retoma,'contagens_registo':contagens_registo,'historia':historias,'enderecos_antes':enderecos,'plantas_historia':plantas_historia,'relatorio':relatorio,'base':BASE,'base_motor':BASE_MOTOR,'cabeca_sitio':git('rev-parse','HEAD'),'cabeca_motor':git('rev-parse','HEAD',repo=motor),
-            'commits':{'sitio':commits(SITIO,'48a5a1c181c1753036d301204884c57119bba8a5'),'motor':commits(motor,'4eb2867936dd14ad2654751722e390804e68dda3')},
+            'commits':{'sitio':commits(SITIO,'7028e733f8bb4de7bf65f1bb76546304ba1e6db4'),'motor':commits(motor,'4eb2867936dd14ad2654751722e390804e68dda3')},
             'linhas_conferidas':len(nomes),'mudancas_de_valor_ou_endereco':mudancas,'geradas':geradas,'pib':pib,'pedidos':pedidos,'literais':literais,
             'protegidos_motor_alterados':protegidos,'caminhos':caminhos,'portoes':portoes,'provas':provas,
             'capturas': None if capturas is None else {k:capturas[k] for k in ('dist_construido_de','larguras','idsDeRecibos','cartoes','aceitacao')},'erros':erros}

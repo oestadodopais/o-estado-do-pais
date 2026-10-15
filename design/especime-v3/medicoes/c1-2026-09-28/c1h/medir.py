@@ -10,7 +10,7 @@ sys.dont_write_bytecode = True
 AQUI = Path(__file__).resolve().parent
 BLOCO = AQUI.parent
 RAIZ = AQUI.parents[4]
-BASE = '9d283c6b1e5c69dfa3a7aac34a509fe284c7b8e8'
+BASE = 'ea0193bdc636395307f08a74a72c06365a1d080e'
 def ler(p): return json.loads(p.read_text())
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def git(*args): return subprocess.check_output(['git',*args],cwd=RAIZ,text=True).strip()
@@ -65,7 +65,7 @@ r = {'registado_em':datetime.now(timezone.utc).isoformat(), 'base':BASE, 'cabeca
      'capturas':{'ambito':'Cinco recibos do PRR, nas duas edições e nas cinco larguras.', 'ids':sorted(ids), 'quantidade':len(capturas['resultados']), 'copias':len(indice['copias']), 'cabeca':capturas['dist_construido_de'], 'aceitacao':capturas['aceitacao']},
      'privacidade_dist':privacidade, 'privacidade_da_passagem':{'ficheiros':len(ficheiros),'quantidade':len(achados),'achados':achados,'conhecidos_positivos':positivos},
      'custos':{e:ler(BLOCO/e/'custo.json') for e in ('c1g','c1h')}, 'relatorio':relatorio,
-     'commits':[dict(zip(('hash','assunto'),l.split(' ',1))) for l in git('log','--reverse','--format=%H %s','48a5a1c181c1753036d301204884c57119bba8a5..HEAD').splitlines()],
+     'commits':[dict(zip(('hash','assunto'),l.split(' ',1))) for l in git('log','--reverse','--format=%H %s','7028e733f8bb4de7bf65f1bb76546304ba1e6db4..HEAD').splitlines()],
      'aceitacao_do_mandato_c1h':not erros, 'erros_da_medicao':erros}
 if '--verifica' not in sys.argv:
     (AQUI/'medidas.json').write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n')

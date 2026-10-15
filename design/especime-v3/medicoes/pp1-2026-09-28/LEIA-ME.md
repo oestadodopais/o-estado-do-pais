@@ -1,12 +1,12 @@
 # PP1 · a primeira página de um leitor comum · o relatório do construtor
 
-*Claude Opus 5.5, pela definição `construtor`, a 28.09.2026. Worktree `<worktree do sítio>`, ramo `pp1-2026-09-28`, cabeça de partida `1cbdb8c4`. Cada número deste relatório está num ficheiro desta pasta: `medidas.json`, escrito por `medidas.mjs` com o comando e um conhecido-positivo de cada medida, e os registos que ele lê (`capturas-*.json`, `plantas-*.json`, `l1-pp1.json`, `valor-revisto.json`, `acertos-pp1.json`, `ensaio-contra-resolvedor.json`). O `scripts/leituras/conferir-relatorio.py` confere-os. Os códigos dos três portões estão em `portoes/` (o PP1) e em `portoes/pp1b/` (a passagem de correção, secção 11), com a cabeça em que correram escrita ao lado. Sem travessões.*
+*Claude Opus 5.5, pela definição `construtor`, a 28.09.2026. Worktree `<worktree do sítio>`, ramo `pp1-2026-09-28`, cabeça de partida `3b85f13d`. Cada número deste relatório está num ficheiro desta pasta: `medidas.json`, escrito por `medidas.mjs` com o comando e um conhecido-positivo de cada medida, e os registos que ele lê (`capturas-*.json`, `plantas-*.json`, `l1-pp1.json`, `valor-revisto.json`, `acertos-pp1.json`, `ensaio-contra-resolvedor.json`). O `scripts/leituras/conferir-relatorio.py` confere-os. Os códigos dos três portões estão em `portoes/` (o PP1) e em `portoes/pp1b/` (a passagem de correção, secção 11), com a cabeça em que correram escrita ao lado. Sem travessões.*
 
 ## 1 · O que o leitor recebe
 
 Num telemóvel de 390 px, a primeira página abre com o rótulo de inteligência artificial e, logo a seguir, «O que se passa» e a data dos números mais recentes. Os dois primeiros blocos cabem inteiros nos dois primeiros ecrãs, cada um com o título, a frase, o desenho e a fonte: na edição portuguesa, o título acaba a 224 px, a data a 246 px, a linha da fonte do primeiro bloco a 806 px e a do segundo a 1 598 px, contra o limite de 1 688 px (2 ecrãs de 844 px); na inglesa, as duas fontes acabam a 781 e a 1 552 px. A página tinha 10 812 px de altura a 390 px e tem 6 803 (a inglesa, 10 679 e 6 748).
 
-A primeira página tinha 23 cartões, 9 temas, a leitura do país e 4 mudanças; tem 0 de cada, e 5 blocos e 6 entradas nas duas edições. As 10 páginas das entradas estão construídas. As 84 capturas (5 larguras e 2 edições da primeira página e das 5 entradas, e o escuro a 390 e a 1 280) estão em `capturas/`, com as da cabeça de partida ao lado, e nenhuma transborda de lado. Desde a passagem PP1b, as capturas, as páginas congeladas e as medidas desta secção são da construção da cabeça `56c7ed7b`, que é a que os portões da passagem mediram (`capturas-depois.json`, `dist_construido_de`).
+A primeira página tinha 23 cartões, 9 temas, a leitura do país e 4 mudanças; tem 0 de cada, e 5 blocos e 6 entradas nas duas edições. As 10 páginas das entradas estão construídas. As 84 capturas (5 larguras e 2 edições da primeira página e das 5 entradas, e o escuro a 390 e a 1 280) estão em `capturas/`, com as da cabeça de partida ao lado, e nenhuma transborda de lado. Desde a passagem PP1b, as capturas, as páginas congeladas e as medidas desta secção são da construção da cabeça `adfd3893`, que é a que os portões da passagem mediram (`capturas-depois.json`, `dist_construido_de`).
 
 ## 2 · O mandato, ponto a ponto
 
@@ -82,7 +82,7 @@ A primeira página tinha 23 cartões, 9 temas, a leitura do país e 4 mudanças;
 
 ## 6 · O valor revisto numa cópia do livro
 
-A planta (`valor-revisto.mjs`; o registo em `valor-revisto.json`, da corrida da passagem PP1b, com a cabeça de partida `1cbdb8c4` e a cabeça do bloco `56c7ed7b`, que é a dos portões dessa passagem) extrai a árvore de cada cabeça com `git archive` para uma pasta temporária fora do repositório, revê a linha `precos-da-habitacao-2025`, que a leitura do país prendia (o valor e o excerto, do mesmo modo), e corre a cadeia inteira da construção, `npm run build`. As pastas apagam-se no fim, e nada da planta entra no livro.
+A planta (`valor-revisto.mjs`; o registo em `valor-revisto.json`, da corrida da passagem PP1b, com a cabeça de partida `3b85f13d` e a cabeça do bloco `adfd3893`, que é a dos portões dessa passagem) extrai a árvore de cada cabeça com `git archive` para uma pasta temporária fora do repositório, revê a linha `precos-da-habitacao-2025`, que a leitura do país prendia (o valor e o excerto, do mesmo modo), e corre a cadeia inteira da construção, `npm run build`. As pastas apagam-se no fim, e nada da planta entra no livro.
 
 - **A revisão A** (17,6 passa a 12,4, que não muda nenhuma condição nem nenhuma contagem). Na cabeça de partida, a construção para no Astro, com a frase «B1 leitura do país: precos-da-habitacao-2025 mudou; parar a frase e comunicar à direção.», e o código é 1: é o conhecido-positivo. Na cabeça do bloco, a cadeia inteira passa com o código 0, até ao último passo, que é o dos sinais com as suas plantas; a primeira página mostra os 5 blocos, e o cartão da entrada da casa mostra 12,4 com o seu recibo. **É a medida do brief: uma revisão de rotina de um valor que a primeira página prendia já não parte a construção.**
 - **A revisão B** (17,6 passa a 4,9, abaixo dos 5,5 da União e do limiar da Comissão). Na cabeça do bloco, a peça dos preços das casas sai da primeira página e o sinal nomeia-a («condição falsa: precos-da-habitacao-2025 (4,9) > precos-da-habitacao-2025-ue (5,5)»), e a página fica com os 5 blocos. A construção fecha, com o código 1, no `check:voz`, e não pela primeira página: a manchete de «Portugal na União Europeia» tem, no inventário das frases, uma linha com as contagens escritas por algarismos («Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9 .», e a gémea inglesa, do bloco correcao-p1p2), e uma revisão que mude quantas medidas estão fora do valor de referência muda a manchete. É a mesma classe da linha da frase do veredicto que este bloco tirou do inventário na primeira página (secção 3); não se tocou, porque é outra página e outra célula, e fica dito na secção 8.
@@ -104,35 +104,35 @@ O teto das páginas com dois destinos iguais fora da mobília sobe de 2 341 para
 
 Os do ramo até este relatório, por ordem (a mensagem inteira de cada um diz o que ele faz e porquê):
 
-- `db58de3e` PP1: as declarações dos blocos e das entradas no sítio, o resolvedor sem Astro, a auditoria das palavras e a comparação com a testemunha
-- `30b663ff` PP1: a primeira página de um leitor comum e as cinco páginas das entradas
-- `3585635a` PP1: o captor do bloco e as capturas antes, da construção da cabeça de partida 1cbdb8c4
-- `b47a12d7` PP1: a lista dos números de cada bloco com a marca das palavras conferidas, a língua do publicador na linha da fonte, a descrição da primeira página pelos nomes das entradas e a porta do veredicto com 44 px
-- `30158571` PP1: a célula dos blocos e das entradas, a geometria dos desenhos, os sinais e as plantas da régua das frases
-- `238bd172` PP1: o inventário das frases e as exceções da voz com a primeira página nova e as cinco entradas
-- `4d733a89` PP1: os portões que mudam de forma com a primeira página e as cinco entradas, cada um a conservar o que protege
-- `d04d63b6` PP1: as plantas dos portões que mudaram de forma, no sítio onde as coisas vivem agora
-- `b4d92902` PP1: os guiões das medidas do relatório, do valor revisto numa cópia do livro e das capturas depois
-- `15342ef6` PP1: os tipos do resolvedor e das declarações, que o typecheck pedia
-- `ae895190` PP1: a planta do valor trocado no portão de HTML aponta ao primeiro valor da frase de um bloco que tem valores
-- `bd1f46df` PP1: a frase do veredicto e o rótulo da linha de referência deixam de prender os dados no inventário das frases
-- `931873d1` PP1: a planta do valor revisto constrói as duas cabeças pela cadeia inteira e guarda a cauda da saída sem caminhos da máquina, e as medidas leem as páginas congeladas
+- `fd97f47e` PP1: as declarações dos blocos e das entradas no sítio, o resolvedor sem Astro, a auditoria das palavras e a comparação com a testemunha
+- `ab3c7222` PP1: a primeira página de um leitor comum e as cinco páginas das entradas
+- `08b61d70` PP1: o captor do bloco e as capturas antes, da construção da cabeça de partida 3b85f13d
+- `85862382` PP1: a lista dos números de cada bloco com a marca das palavras conferidas, a língua do publicador na linha da fonte, a descrição da primeira página pelos nomes das entradas e a porta do veredicto com 44 px
+- `b0ef893d` PP1: a célula dos blocos e das entradas, a geometria dos desenhos, os sinais e as plantas da régua das frases
+- `355f233e` PP1: o inventário das frases e as exceções da voz com a primeira página nova e as cinco entradas
+- `a271f2f0` PP1: os portões que mudam de forma com a primeira página e as cinco entradas, cada um a conservar o que protege
+- `8b829bc4` PP1: as plantas dos portões que mudaram de forma, no sítio onde as coisas vivem agora
+- `563efa3f` PP1: os guiões das medidas do relatório, do valor revisto numa cópia do livro e das capturas depois
+- `de58101e` PP1: os tipos do resolvedor e das declarações, que o typecheck pedia
+- `fba586f2` PP1: a planta do valor trocado no portão de HTML aponta ao primeiro valor da frase de um bloco que tem valores
+- `fce336bd` PP1: a frase do veredicto e o rótulo da linha de referência deixam de prender os dados no inventário das frases
+- `69df7253` PP1: a planta do valor revisto constrói as duas cabeças pela cadeia inteira e guarda a cauda da saída sem caminhos da máquina, e as medidas leem as páginas congeladas
 
 E os que vieram a seguir, com a leitura a frio (o commit do lugar de direção) e a passagem PP1b:
 
-- `12dc8fbf` PP1: o relatório do construtor, as medições, as capturas depois e o mapa dos construtores posto em dia
-- `18137b6d` PP1: os códigos dos três portões na cabeça do relatório e a resposta curta do construtor
-- `2986a98d` PP1: a leitura a frio do Codex gpt-5.6-sol (cinco plantas em cinco, e quatro achados reais do bloco) com o registo das plantas
-- `71d35e8b` PP1b: a pesquisa da primeira página provada a interagir, nas duas edições, com e sem guião
-- `434d7ae7` PP1b: as dez páginas das entradas conferidas no mapa do sítio construído
-- `1a461ad6` PP1b: o mínimo de três blocos também na cadeia do build, e a pesquisa da primeira página no check:primeira
-- `56c7ed7b` PP1b: o mapa dos construtores com os sinais na cadeia do build, a pesquisa da primeira página e as entradas no mapa do sítio
+- `31ec7c37` PP1: o relatório do construtor, as medições, as capturas depois e o mapa dos construtores posto em dia
+- `979e6b98` PP1: os códigos dos três portões na cabeça do relatório e a resposta curta do construtor
+- `f90dd725` PP1: a leitura a frio do Codex gpt-5.6-sol (cinco plantas em cinco, e quatro achados reais do bloco) com o registo das plantas
+- `63a19d61` PP1b: a pesquisa da primeira página provada a interagir, nas duas edições, com e sem guião
+- `6dd83957` PP1b: as dez páginas das entradas conferidas no mapa do sítio construído
+- `e9b0116b` PP1b: o mínimo de três blocos também na cadeia do build, e a pesquisa da primeira página no check:primeira
+- `adfd3893` PP1b: o mapa dos construtores com os sinais na cadeia do build, a pesquisa da primeira página e as entradas no mapa do sítio
 
 A seguir vem o último, com este relatório posto em dia, as medições, as capturas refeitas, os códigos dos portões da passagem e a resposta curta.
 
 ## 10 · Os portões
 
-Os três do PP1 correram na cabeça `12dc8fbf`, e os três da passagem PP1b na cabeça `56c7ed7b`, cada um no seu comando, com o código lido de um ficheiro acabado de escrever: `portoes/` e `portoes/pp1b/`, cada pasta com `build.codigo`, `verify.codigo` e `typecheck.codigo`, a cabeça em `*.cabeca` e as horas em `*.inicio` e `*.fim`. Os registos levam o caminho da árvore trocado por `<worktree do sítio>`, e `caminhos-trocados.json` diz quantos em cada um. As respostas curtas são `RESPOSTA-construtor-pp1.md` e `RESPOSTA-construtor-pp1b.md`.
+Os três do PP1 correram na cabeça `31ec7c37`, e os três da passagem PP1b na cabeça `adfd3893`, cada um no seu comando, com o código lido de um ficheiro acabado de escrever: `portoes/` e `portoes/pp1b/`, cada pasta com `build.codigo`, `verify.codigo` e `typecheck.codigo`, a cabeça em `*.cabeca` e as horas em `*.inicio` e `*.fim`. Os registos levam o caminho da árvore trocado por `<worktree do sítio>`, e `caminhos-trocados.json` diz quantos em cada um. As respostas curtas são `RESPOSTA-construtor-pp1.md` e `RESPOSTA-construtor-pp1b.md`.
 
 ## 11 · PP1b · a passagem de correção
 
@@ -141,5 +141,5 @@ A leitura a frio do Codex gpt-5.6-sol (`design/especime-v3/critica/LEITURA-pp1-2
 - **O mínimo de três blocos na construção de produção (achado 6).** A Vercel corre `npm run build` e mais nada, e o mínimo só vivia no `verify`. O passo `npm run sinais` vai agora no fim da cadeia do `build`, depois da construção, e escreve o ficheiro dos sinais em qualquer construção. A terceira planta do guião confere que a cadeia tem o passo depois do `astro build`, e corre-o como a cadeia o corre, com um resolvedor que recusa tudo carregado por `NODE_OPTIONS`: sai com o código 1, e a cadeia, que é de `&&`, para nele (`plantas-sinais.json`: 3 plantas, 3 mordidas). A construção dos portões desta passagem correu o passo, com as 3 plantas.
 - **A pesquisa da primeira página, provada a interagir (achado 7).** `tests/inicio/pesquisa-da-primeira.mjs`, no `check:primeira`, escreve no campo da primeira página os cinco passos da H15, nas 2 edições, a 390 e a 1 280 px: 4 passagens, as 4 a cumprir. E diz o que acontece sem guião, com o JavaScript desligado: a fila não está à vista; «mourao» e o Enter levam a `/lugares?concelho=mourao` (a inglesa, a `/en/places?concelho=mourao`), que abre com o código 200; lá estão à vista 29 portas de distrito, a do distrito de Évora leva a Mourão, e na página do distrito a porta de Mourão está à vista 2 vezes. As 2 plantas mordem: a ligação do campo partida (sem a marca por onde o guião o encontra, «mour» deixa de mostrar Mourão) e o formulário sem destino (sem guião, o Enter dá 404) (`plantas-pesquisa.json`).
 - **As dez entradas no mapa do sítio (achado 8).** A E5 da célula das entradas lê o índice do mapa do sítio e cada mapa que ele nomeia, e exige cada rota declarada das entradas, nas 2 edições, na origem do sítio: 10 de 10, em 1 mapa. As 2 plantas mordem: uma rota tirada do mapa, e um mapa nomeado pelo índice que a construção não tem (`plantas-primeira-pagina.json`, agora com 38 plantas).
-- **As capturas e as páginas congeladas da cabeça dos portões (achado 10).** As 84 capturas e as páginas congeladas foram refeitas na construção da cabeça `56c7ed7b`, que é a que os três portões desta passagem mediram; as medidas da secção 1, a planta do valor revisto (secção 6) e os registos das plantas que leem a construção (a célula dos blocos e das entradas, a geometria, os sinais, a pesquisa, a porta, o país, o veredicto, as câmaras e as duas dos alvos) são dessa cabeça. Os registos das plantas que estragam a própria construção e correm os portões (`plantas-l1-b2.json` e `plantas-portoes-lista.json`) ficam da corrida do PP1: testam portões que esta passagem não mudou. Contra as capturas do PP1, as 84 imagens saíram iguais byte a byte (`capturas_refeitas_com_outros_bytes` a 0), e 4 páginas congeladas mudaram (a primeira página e a entrada «O Estado e a economia», nas 2 edições): é o atributo do rótulo da linha de referência do desenho da dívida, que deixou de ser `data-voz`, e não se vê.
-- **Os portões desta passagem**, na cabeça `56c7ed7b`, cada um no seu comando, com o código em `portoes/pp1b/`: `npm run build`, `npm run verify` e `npm run typecheck`, os 3 a 0. O commit que traz este relatório, as medições e as capturas vem a seguir a essa cabeça e só toca ficheiros desta pasta de medições; dela, os portões só leem `l1-pp1.json` (o registo do teto da L1), que não muda.
+- **As capturas e as páginas congeladas da cabeça dos portões (achado 10).** As 84 capturas e as páginas congeladas foram refeitas na construção da cabeça `adfd3893`, que é a que os três portões desta passagem mediram; as medidas da secção 1, a planta do valor revisto (secção 6) e os registos das plantas que leem a construção (a célula dos blocos e das entradas, a geometria, os sinais, a pesquisa, a porta, o país, o veredicto, as câmaras e as duas dos alvos) são dessa cabeça. Os registos das plantas que estragam a própria construção e correm os portões (`plantas-l1-b2.json` e `plantas-portoes-lista.json`) ficam da corrida do PP1: testam portões que esta passagem não mudou. Contra as capturas do PP1, as 84 imagens saíram iguais byte a byte (`capturas_refeitas_com_outros_bytes` a 0), e 4 páginas congeladas mudaram (a primeira página e a entrada «O Estado e a economia», nas 2 edições): é o atributo do rótulo da linha de referência do desenho da dívida, que deixou de ser `data-voz`, e não se vê.
+- **Os portões desta passagem**, na cabeça `adfd3893`, cada um no seu comando, com o código em `portoes/pp1b/`: `npm run build`, `npm run verify` e `npm run typecheck`, os 3 a 0. O commit que traz este relatório, as medições e as capturas vem a seguir a essa cabeça e só toca ficheiros desta pasta de medições; dela, os portões só leem `l1-pp1.json` (o registo do teto da L1), que não muda.

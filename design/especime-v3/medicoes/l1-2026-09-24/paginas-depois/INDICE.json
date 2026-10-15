@@ -4,8 +4,8 @@
     "passou": true,
     "falhas": []
   },
-  "cabeca_da_arvore": "c1e155f021864214a2d05625afe6ad4dea60e24f",
-  "dist_construido_de": "c1e155f021864214a2d05625afe6ad4dea60e24f",
+  "cabeca_da_arvore": "fb363a11137d7ce29282f80ecdf7bc8b0f7ea65c",
+  "dist_construido_de": "fb363a11137d7ce29282f80ecdf7bc8b0f7ea65c",
   "dist_construido_em": "2026-09-26T09:11:36.061Z",
   "inicio": "2026-09-26T09:21:40.743Z",
   "fim": "2026-09-26T09:22:26.662Z",
@@ -36,11 +36,11 @@
       "sha256": "79ba417c5c930bf4e136f857541673c927701d7ea433694ddaab908be109abc1"
     },
     "cartao-medida.css": {
-      "origem": "src/styles/cartao-medida.css@c1e155f021864214a2d05625afe6ad4dea60e24f",
+      "origem": "src/styles/cartao-medida.css@fb363a11137d7ce29282f80ecdf7bc8b0f7ea65c",
       "sha256": "71fbbdf85d814f8ed956213e401531475fb301cb5f002376d1ff9deba7821639"
     },
     "site.css": {
-      "origem": "src/styles/site.css@c1e155f021864214a2d05625afe6ad4dea60e24f",
+      "origem": "src/styles/site.css@fb363a11137d7ce29282f80ecdf7bc8b0f7ea65c",
       "sha256": "c4cb1cf36109b75b4b6e0271e20889aaca284c8e77f20ef7d2a112cd1f056893"
     }
   }

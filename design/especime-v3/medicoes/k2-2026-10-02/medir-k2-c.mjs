@@ -1,8 +1,8 @@
 /** K2-c: as medidas da passagem, escritas em `medidas-k2-c.json` ao lado deste guião. Cada medição traz o nome, o valor,
  * o comando que a repete e um conhecido-positivo: o mesmo detetor sobre a construção da cabeça do relatório do K2
- * (`a6b4de99`, guardada fora do repositório; o ficheiro guarda a cabeça que o seu `version.json` diz), onde os achados
+ * (`b9d8ee3b`, guardada fora do repositório; o ficheiro guarda a cabeça que o seu `version.json` diz), onde os achados
  * da leitura a frio ainda estavam, ou a versão anterior de uma célula, lida por `git show` da cabeça de partida da
- * passagem (`d7268167`).
+ * passagem (`650ebdde`).
  * Uso, da raiz da worktree, depois de construir a cabeça da passagem:
  *   node design/especime-v3/medicoes/k2-2026-10-02/medir-k2-c.mjs <pasta da construção do K2> */
 import fs from 'node:fs';
@@ -16,7 +16,7 @@ const [DIST_K2] = process.argv.slice(2);
 if (!DIST_K2) throw new Error('Uso: medir-k2-c.mjs <pasta da construção do K2>');
 const D = 'design/especime-v3/medicoes/k2-2026-10-02';
 const DIST = 'dist';
-const PARTIDA = 'd72681678edf6bf62ab408aef4922420a558f834';
+const PARTIDA = '650ebdde55e119a672925c8f4a04ba0a1c8c4120';
 const lerJson = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
 const cabeca = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 const versao = lerJson(path.join(DIST, 'version.json'));
@@ -187,7 +187,7 @@ const cap = lerJson(`${D}/capturas-k2-c.json`);
 medicao('capturas_k2_c', cap.capturas, `node ${D}/captar-k2.mjs k2-c`, 'o manifesto da K2-b tem 16', lerJson(`${D}/capturas-k2-b.json`).capturas === 16,
   { problemas: cap.problemas.length, larguras: cap.larguras, cabeca: cap.cabeca, paginas: [...new Set(cap.resultados.map((r) => r.pagina))] });
 const dec = fs.readFileSync(`${D}/decisoes-em-vigor-k2-c.txt`, 'utf8').split('\n').filter((l) => l.startsWith('§'));
-medicao('decisoes_citadas_nos_ficheiros_tocados_pela_k2_c', dec.length, 'python3 scripts/leituras/decisoes-em-vigor.py <os ficheiros de texto do intervalo d7268167..cabeça>', 'a §1.127 está na lista', dec.some((l) => l.startsWith('§1.127 ')));
+medicao('decisoes_citadas_nos_ficheiros_tocados_pela_k2_c', dec.length, 'python3 scripts/leituras/decisoes-em-vigor.py <os ficheiros de texto do intervalo 650ebdde..cabeça>', 'a §1.127 está na lista', dec.some((l) => l.startsWith('§1.127 ')));
 const ci = lerJson(`${D}/custo-inicio-k2-c.json`);
 if (fs.existsSync(`${D}/custo-fim-k2-c.json`)) {
   const cf = lerJson(`${D}/custo-fim-k2-c.json`);

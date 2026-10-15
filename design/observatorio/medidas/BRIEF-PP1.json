@@ -1,12 +1,12 @@
 {
   "brief": "design/observatorio/BRIEF-PP1-a-primeira-pagina-de-um-leitor-comum.md",
   "guiao": "design/observatorio/medidas/BRIEF-PP1.py",
-  "cabeca_lida": "2613664f",
+  "cabeca_lida": "d7d2ca24",
   "medidas": [
     {
       "nome": "cartoes_na_primeira_pagina",
       "valor": 23,
-      "comando": "git show 2613664f:design/especime-v3/medicoes/c1-2026-09-28/paginas-depois/index.html · a secção pais-temas, os article com data-claim",
+      "comando": "git show d7d2ca24:design/especime-v3/medicoes/c1-2026-09-28/paginas-depois/index.html · a secção pais-temas, os article com data-claim",
       "conhecido_positivo": {
         "o_que": "o cartão da taxa de emprego está entre eles",
         "encontrado": true
@@ -69,7 +69,7 @@
     {
       "nome": "valores_fixos_da_leitura_do_pais",
       "valor": 9,
-      "comando": "git show 2613664f:src/components/inicio/LeituraDoPais.astro · as entradas de const esperados",
+      "comando": "git show d7d2ca24:src/components/inicio/LeituraDoPais.astro · as entradas de const esperados",
       "conhecido_positivo": {
         "o_que": "a dívida pública de 2025 está presa em 89,7",
         "encontrado": true
@@ -87,7 +87,7 @@
     {
       "nome": "blocos_declarados",
       "valor": 5,
-      "comando": "git show 2613664f:design/observatorio/leituras/BLOCOS-primeira-pagina-2026-09-28.mjs · os blocos de primeiro nível",
+      "comando": "git show d7d2ca24:design/observatorio/leituras/BLOCOS-primeira-pagina-2026-09-28.mjs · os blocos de primeiro nível",
       "conhecido_positivo": {
         "o_que": "um deles é o da casa",
         "encontrado": true
@@ -105,7 +105,7 @@
     {
       "nome": "linhas_dos_blocos_no_livro",
       "valor": 30,
-      "comando": "git ls-tree 2613664f -- ledger/claims/ · as linhas dos blocos que lá estão",
+      "comando": "git ls-tree d7d2ca24 -- ledger/claims/ · as linhas dos blocos que lá estão",
       "conhecido_positivo": {
         "o_que": "o mesmo detetor diz ausente uma linha que não existe",
         "encontrado": true
@@ -123,7 +123,7 @@
     {
       "nome": "condicoes_verdadeiras",
       "valor": 18,
-      "comando": "as mesmas condições · avaliadas com os valores das linhas em 2613664f e os limiares de src/data/enquadramento/referencias.json",
+      "comando": "as mesmas condições · avaliadas com os valores das linhas em d7d2ca24 e os limiares de src/data/enquadramento/referencias.json",
       "conhecido_positivo": {
         "o_que": "o mesmo avaliador diz falsa a condição invertida das rendas acima dos combustíveis",
         "encontrado": true
@@ -141,7 +141,7 @@
     {
       "nome": "condicoes_do_mesmo_periodo_verdadeiras",
       "valor": 8,
-      "comando": "as mesmas · os períodos de referência das linhas em 2613664f",
+      "comando": "as mesmas · os períodos de referência das linhas em d7d2ca24",
       "conhecido_positivo": {
         "o_que": "o mesmo detetor vê dois períodos num grupo que mistura um ano e um mês",
         "encontrado": true
@@ -177,7 +177,7 @@
     {
       "nome": "artigos_da_pagina_dos_temas",
       "valor": 48,
-      "comando": "git show 2613664f:design/especime-v3/medicoes/c1-2026-09-28/paginas-depois/temas_index.html · os article com data-claim, pela primeira linha de cada um",
+      "comando": "git show d7d2ca24:design/especime-v3/medicoes/c1-2026-09-28/paginas-depois/temas_index.html · os article com data-claim, pela primeira linha de cada um",
       "conhecido_positivo": {
         "o_que": "a página tem o cartão das necessidades médicas",
         "encontrado": true

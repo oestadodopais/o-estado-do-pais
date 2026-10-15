@@ -40,7 +40,7 @@ Node local: `node -v` → `v22.23.1`. npm local: `npm -v` → `10.9.8`.
 ## 2 · O que o fluxo faz
 
 `.github/workflows/portao.yml`, 91 linhas, mais o `.nvmrc` de uma linha
-(`git show --stat 267d97db` → `2 files changed, 92 insertions(+)`).
+(`git show --stat 5f6a7dfc` → `2 files changed, 92 insertions(+)`).
 
 * **Quando corre:** `on: push` sem filtro de ramo (todos os ramos) e
   `on: pull_request`. Confere a **cabeça** de cada push e de cada pedido, e não
@@ -92,7 +92,7 @@ Node local: `node -v` → `v22.23.1`. npm local: `npm -v` → `10.9.8`.
   e `dist/cadeia.json` (escrito pelo `check:cadeia`), guardados 14 dias. Sobem só
   quando os três portões fecharam verdes, e um passo antes da subida exige os
   dois ficheiros com `test -f` cada (§7.4 e §7.5). Na primeira corrida verde:
-  `prova-267d97db4faec412787b40fcb7d9ff0a3baf9382`, 2 646 bytes, a expirar em
+  `prova-5f6a7dfc831274ba80340349b2f20799dcc7db47`, 2 646 bytes, a expirar em
   `2026-09-16T05:00:05Z`
   (`gh api repos/oestadodopais/o-estado-do-pais/actions/runs/33592347822/artifacts`).
 
@@ -102,7 +102,7 @@ Node local: `node -v` → `v22.23.1`. npm local: `npm -v` → `10.9.8`.
 
 ### 3.1 A corrida verde, à primeira
 
-Ramo `ci-2026-09-02`, commit `267d97db4faec412787b40fcb7d9ff0a3baf9382`.
+Ramo `ci-2026-09-02`, commit `5f6a7dfc831274ba80340349b2f20799dcc7db47`.
 **https://github.com/oestadodopais/o-estado-do-pais/actions/runs/33592347822**
 
 Total da corrida: **9 min 35 s** (575 s), de `2026-09-02T04:50:35Z` a
@@ -253,7 +253,7 @@ O commit deste relatório produziu uma terceira corrida no mesmo ramo, e vale a
 pena escrevê-la porque é a primeira que apanha a cache do npm e a primeira que
 mede a variação entre anfitriões.
 
-Ramo `ci-2026-09-02`, commit `6b746e673b11f6d48ff5c9da66685750ad05f2ef`.
+Ramo `ci-2026-09-02`, commit `b3141b98a3f9a2fd3a44db55a25245587adb29dc`.
 **https://github.com/oestadodopais/o-estado-do-pais/actions/runs/33593721414**
 
 Conclusão `success`. Total: **11 min 43 s** (703 s), de `2026-09-02T05:11:52Z` a
@@ -291,12 +291,12 @@ Duas leituras, e nenhuma delas é uma conclusão:
 
 ### 3.5 A quarta corrida, que desfaz a conclusão da cache
 
-Ramo `ci-2026-09-02`, commit `8144787958451e1836617cfcfec03a6063f4d4eb`.
+Ramo `ci-2026-09-02`, commit `dd72c750e413dc99c57fedeaace05864d6ba0631`.
 **https://github.com/oestadodopais/o-estado-do-pais/actions/runs/33594974810**
 
 Conclusão `success`. Total: **13 min 50 s** (830 s), de `2026-09-02T05:30:55Z` a
 `2026-09-02T05:44:45Z`. Artefacto
-`prova-8144787958451e1836617cfcfec03a6063f4d4eb`, 2 647 bytes.
+`prova-dd72c750e413dc99c57fedeaace05864d6ba0631`, 2 647 bytes.
 
 | passo | 1.ª corrida (cache fria) | 3.ª corrida (cache quente) | 4.ª corrida (cache quente) |
 |---|---|---|---|
@@ -534,7 +534,7 @@ O comentário do ficheiro dizia «duas mil linhas de saída» e o relatório diz
 
 ### 7.8 A corrida que prova a segunda passagem
 
-Ramo `ci-2026-09-02`, commit `29b7a5255fd19c9e4d5951e9ebb2087879fe576d`.
+Ramo `ci-2026-09-02`, commit `765780d027d33a5748a8660e50aa9ea2cc86741b`.
 **https://github.com/oestadodopais/o-estado-do-pais/actions/runs/33597530623**
 
 Conclusão `success`, à primeira. Total: **10 min 40 s** (640 s), de
@@ -567,7 +567,7 @@ O que esta corrida prova, linha a linha do registo:
 * **A guarda dos dois ficheiros corre mesmo.** O passo 8 traz no registo
   `Run test -f dist/prova.json` e `test -f dist/cadeia.json`, as duas linhas.
 * **O artefacto leva os dois ficheiros.** Descarregado e aberto:
-  `gh run download 33597530623 --dir <pasta>` → `prova-29b7a5255fd19c9e4d5951e9ebb2087879fe576d/`
+  `gh run download 33597530623 --dir <pasta>` → `prova-765780d027d33a5748a8660e50aa9ea2cc86741b/`
   com `prova.json` (7 877 bytes) e `cadeia.json` (2 843 bytes); o artefacto tem
   2 646 bytes comprimidos e expira a `2026-09-16T06:18:28Z`. Os dois tamanhos são
   os mesmos dos ficheiros que o `verify` deixou no `dist/` do portátil, o que

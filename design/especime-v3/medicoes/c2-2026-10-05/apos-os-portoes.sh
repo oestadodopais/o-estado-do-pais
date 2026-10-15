@@ -9,10 +9,10 @@ BASE="$1"; CBASE="$2"; EXP="$3"; CAB="$4"
 git rev-parse HEAD > "$D/apos-os-portoes.cabeca"
 git status --short --untracked-files=no > "$D/apos-os-portoes.estado"
 node tests/pais/pais.mjs --json "$D/plantas-pais.json" > "$D/plantas-pais.log" 2>&1; echo $? > "$D/plantas-pais.codigo"
-# O executor das plantas da base (3a253f73), sobre esta mesma construção: a prova de que já rebentava na primeira prova,
+# O executor das plantas da base (520a02d6), sobre esta mesma construção: a prova de que já rebentava na primeira prova,
 # antes de qualquer planta, por não copiar o carimbo da construção. Corre de uma cópia temporária ao lado do de agora
 # (os caminhos dele são relativos à pasta), que se apaga a seguir.
-git show 3a253f73:tests/pais/pais.mjs > tests/pais/pais-da-base-c2.mjs
+git show 520a02d6:tests/pais/pais.mjs > tests/pais/pais-da-base-c2.mjs
 node tests/pais/pais-da-base-c2.mjs > "$D/plantas-pais-antes.log" 2>&1; echo $? > "$D/plantas-pais-antes.codigo"
 rm -f tests/pais/pais-da-base-c2.mjs
 node "$D/recibos-c2.mjs" dist > "$D/recibos-c2.log" 2>&1; echo $? > "$D/recibos-c2.codigo"

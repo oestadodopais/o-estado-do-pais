@@ -2,8 +2,8 @@
 
 Medidor cego: Claude Sonnet 5, numa cópia isolada do repositório (`wt-medidor`, worktree destacado). Leu apenas a Emenda 21 (`design/especime-v3/direcao.md`, §131–133 — **inalterada** entre as duas corridas, confirmado por diff de linha), as linhas `ledger/claims/pib-pc-*.yml` e `ledger/claims/distancia-*.yml`, e a lista de tarefas recebida em cada corrida. Nunca leu `src/`, nunca leu `scripts/` (correu um script de lá — não o leu), nunca leu `DECISIONS.md` nem outras notas ou briefings dos construtores, nunca leu o trabalho de outros medidores.
 
-- **Corrida 1** — commit `9ccfcd9`, 5 regiões (Alentejo, Algarve, Grande Lisboa, Madeira, Península de Setúbal) + Portugal.
-- **Corrida 2** — commits `63aba22` → `a2573b4` → `451d0c6`, 9 regiões (+ Norte, Centro, Oeste e Vale do Tejo, Açores) + Portugal. Recreada pelo coordenador com o `dist/` novo já congelado e o instrumento da corrida 1 já copiado para dentro.
+- **Corrida 1** — commit `67600fb`, 5 regiões (Alentejo, Algarve, Grande Lisboa, Madeira, Península de Setúbal) + Portugal.
+- **Corrida 2** — commits `4973373` → `09fd1e2` → `607ab1c`, 9 regiões (+ Norte, Centro, Oeste e Vale do Tejo, Açores) + Portugal. Recreada pelo coordenador com o `dist/` novo já congelado e o instrumento da corrida 1 já copiado para dentro.
 
 ## Método
 

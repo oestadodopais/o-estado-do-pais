@@ -5,7 +5,7 @@ import subprocess
 import yaml
 AQUI=Path(__file__).resolve().parent
 RAIZ=AQUI.parents[4]
-BASE='e38d5f8b'
+BASE='1133bb86'
 nomes=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'--','ledger/claims'],cwd=RAIZ,text=True).splitlines()
 linhas=[]
 for nome in nomes:

@@ -38,25 +38,25 @@ O dinheiro, a exposição legal, o que sai em nome do projeto para terceiros, os
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
 ### O sítio (`<casa>/Instruments/OEstadoDoPais`)
-- `main`: d3481ba9 · 2026-09-22T17:35:01+01:00 · A §1.122 com o campo «Afecta» na forma que a amarra das decisões exige  (`git log -1 main`)
-- `origin/main`: d3481ba9 · 2026-09-22T17:35:01+01:00 · A §1.122 com o campo «Afecta» na forma que a amarra das decisões exige  (`git log -1 origin/main`)
+- `main`: 3a483ffd · 2026-09-22T17:35:01+01:00 · A §1.122 com o campo «Afecta» na forma que a amarra das decisões exige  (`git log -1 main`)
+- `origin/main`: 3a483ffd · 2026-09-22T17:35:01+01:00 · A §1.122 com o campo «Afecta» na forma que a amarra das decisões exige  (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
-- ramos locais: `main d3481ba9`  (`git branch`)
+- ramos locais: `main 3a483ffd`  (`git branch`)
 - ramos no remoto: `main`  (`git ls-remote --heads origin`)
-- worktree: `<casa>/Instruments/OEstadoDoPais d3481ba9 [main]`
+- worktree: `<casa>/Instruments/OEstadoDoPais 3a483ffd [main]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
-- 35759367080 · `d3481ba9` · main · portão · **completed / success** · criada 2026-09-22T17:14:20Z · atualizada 2026-09-22T17:33:54Z  (lida outra vez ao fechar)
-- 35756471230 · `d3481ba9` · medidas-2026-09-22 · portão · **completed / success** · criada 2026-09-22T16:47:47Z · atualizada 2026-09-22T17:13:10Z
-- 35735075345 · `b03a6efc` · main · portão · **completed / success** · criada 2026-09-22T13:40:54Z · atualizada 2026-09-22T14:05:56Z
-- 35732821779 · `b03a6efc` · oquemudou-2026-09-22 · portão · **completed / success** · criada 2026-09-22T13:20:26Z · atualizada 2026-09-22T13:39:33Z
-- 35726876844 · `95655124` · main · portão · **completed / success** · criada 2026-09-22T12:23:23Z · atualizada 2026-09-22T12:49:14Z
-- 35725204492 · `95655124` · jovens-nem-2026-09-22 · portão · **completed / success** · criada 2026-09-22T12:06:12Z · atualizada 2026-09-22T12:22:17Z
+- 35759367080 · `3a483ffd` · main · portão · **completed / success** · criada 2026-09-22T17:14:20Z · atualizada 2026-09-22T17:33:54Z  (lida outra vez ao fechar)
+- 35756471230 · `3a483ffd` · medidas-2026-09-22 · portão · **completed / success** · criada 2026-09-22T16:47:47Z · atualizada 2026-09-22T17:13:10Z
+- 35735075345 · `590448cb` · main · portão · **completed / success** · criada 2026-09-22T13:40:54Z · atualizada 2026-09-22T14:05:56Z
+- 35732821779 · `590448cb` · oquemudou-2026-09-22 · portão · **completed / success** · criada 2026-09-22T13:20:26Z · atualizada 2026-09-22T13:39:33Z
+- 35726876844 · `2e4853c9` · main · portão · **completed / success** · criada 2026-09-22T12:23:23Z · atualizada 2026-09-22T12:49:14Z
+- 35725204492 · `2e4853c9` · jovens-nem-2026-09-22 · portão · **completed / success** · criada 2026-09-22T12:06:12Z · atualizada 2026-09-22T12:22:17Z
 
 ### O que está no ar (`/version.json` do sítio publicado)
-- commit no ar: `d3481ba9` · construído em 2026-09-22T17:24:02.683Z · ref `main` · production
-- igual a `origin/main` (`d3481ba9`): **sim**
+- commit no ar: `3a483ffd` · construído em 2026-09-22T17:24:02.683Z · ref `main` · production
+- igual a `origin/main` (`3a483ffd`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
 ### O motor (`<casa>/Instruments/ResearchHub`)
@@ -85,7 +85,7 @@ O dinheiro, a exposição legal, o que sai em nome do projeto para terceiros, os
 
 ## 5 · As horas e os símbolos das aterragens de 22.09 à tarde e à noite (lidos dos registos, não de memória)
 
-- **O sítio.** O ramo `medidas-2026-09-22` (o M5 em onze commits do Opus, o mapa e o prompt comum, os registos do dia, os nomes do INE e o brief do M4b), cabeça `d3481ba9`. Os três portões a 0 nessa cabeça, cada um no seu comando com o código lido de ficheiro: `build` 16:35:01 a 16:39:43 UTC, `verify` 16:39:43 a 16:47:24 UTC, `typecheck` 16:47:24 UTC. A corrida `portão` do ramo (35756471230) verde às 17:13:10 UTC, com o `check:briefs` a correr no anfitrião da CI (38 briefs, 2 conferidos, 23 números do §0 ligados). `git merge --ff-only` e `git push origin main` às 17:14:18 UTC; a corrida `portão` de `main` (35759367080) criada às 17:14:20 UTC, com a conclusão lida ao fechar no §4; o lançamento da Vercel construído às 17:24:02 UTC e visto «Ready» pela vigia de um pedido por minuto; `npm run verify:deploy` a 0 às 17:29:12 UTC («o que está no ar é o que está no repositório»). A worktree e o ramo apagados, no local e no remoto.
+- **O sítio.** O ramo `medidas-2026-09-22` (o M5 em onze commits do Opus, o mapa e o prompt comum, os registos do dia, os nomes do INE e o brief do M4b), cabeça `3a483ffd`. Os três portões a 0 nessa cabeça, cada um no seu comando com o código lido de ficheiro: `build` 16:35:01 a 16:39:43 UTC, `verify` 16:39:43 a 16:47:24 UTC, `typecheck` 16:47:24 UTC. A corrida `portão` do ramo (35756471230) verde às 17:13:10 UTC, com o `check:briefs` a correr no anfitrião da CI (38 briefs, 2 conferidos, 23 números do §0 ligados). `git merge --ff-only` e `git push origin main` às 17:14:18 UTC; a corrida `portão` de `main` (35759367080) criada às 17:14:20 UTC, com a conclusão lida ao fechar no §4; o lançamento da Vercel construído às 17:24:02 UTC e visto «Ready» pela vigia de um pedido por minuto; `npm run verify:deploy` a 0 às 17:29:12 UTC («o que está no ar é o que está no repositório»). A worktree e o ramo apagados, no local e no remoto.
 - **O motor.** `e417813` (os três nomes do INE, commit 15:22:34 UTC), `8ae6b53` (o `--help` do portão da exportação, 15:27:36 UTC), e o M4 rebaseado e fundido por avanço rápido como `e60aba6` (15:59:48 UTC), cada um com o `core.gate` a 0 no pre-commit e o `core.gate_test` a 0 (18 conferências), os três publicados em `origin/master`.
 - **Os símbolos.** M4: Claude Opus 245 933 na construção e 335 072 na passagem de correção (581 005); a leitura a frio do Codex 157 890 (15:15:59 a 15:32:51 UTC). M5: Claude Opus 420 838 e 544 585 (965 423); a leitura do Codex 249 603 (15:37:43 a 15:56:19 UTC). A busca das páginas do INE, Sonnet, 163 077. A reparação do mapa, Sonnet, 273 926. Os totais são os que o harness reportou ao lugar de direção no fim de cada agente; os construtores não os viram.
 - **O que não aterrou hoje e fica dito:** a cópia deste prompt no repositório (`design/observatorio/PROMPT-proxima-sessao-2026-09-22.md`) é a da madrugada; esta cópia do Desktop é a que vale, e entra no repositório com a primeira aterragem da sessão seguinte, junto com os registos da I136.

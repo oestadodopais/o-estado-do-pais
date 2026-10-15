@@ -1,6 +1,6 @@
 # A leitura curta da passagem TP1-c pelo Codex `gpt-6-astra` (`high`), 07.10.2026
 
-*Lançada pelo lugar de direção às 10:44 UTC sobre o diff de `c9d7233f` a `69f2fae8`, com os registos inteiros no pacote e sem plantas; acabou às 10:46 UTC; a linha «tokens used» do `.eventos.log`: 60 830. O achado 1 (as conferências registadas sobre uma árvore suja, com as capturas e os registos antigos por registar) corrige-se na TP1-d: o guião das conferências passa a recusar uma árvore suja e uma construção de outra cabeça, e as conferências correram outra vez sobre a árvore limpa; o 2 é a convenção do projeto (a duração e os símbolos citam-se do `.eventos.log`, que fica no bloco de notas da sessão; a corrida do GitHub cita-se na aterragem). O texto do leitor fica como veio.*
+*Lançada pelo lugar de direção às 10:44 UTC sobre o diff de `25c3d889` a `1e65ca84`, com os registos inteiros no pacote e sem plantas; acabou às 10:46 UTC; a linha «tokens used» do `.eventos.log`: 60 830. O achado 1 (as conferências registadas sobre uma árvore suja, com as capturas e os registos antigos por registar) corrige-se na TP1-d: o guião das conferências passa a recusar uma árvore suja e uma construção de outra cabeça, e as conferências correram outra vez sobre a árvore limpa; o 2 é a convenção do projeto (a duração e os símbolos citam-se do `.eventos.log`, que fica no bloco de notas da sessão; a corrida do GitHub cita-se na aterragem). O texto do leitor fica como veio.*
 
 ## Blocking
 

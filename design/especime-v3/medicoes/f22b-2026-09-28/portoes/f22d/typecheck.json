@@ -1,9 +1,9 @@
 {
   "comando": "npm run typecheck",
   "ambiente_declarado": {},
-  "cabeca": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+  "cabeca": "985c977dee92f5dfcabb6823d8ced49ea8753318",
   "codigo_executado": {
-    "cabeca_base": "f97d7d60d3611f011cbaef26fc05cff92c9ac7a1",
+    "cabeca_base": "985c977dee92f5dfcabb6823d8ced49ea8753318",
     "arvore": "7d19a4f63ef67e4ec10d8c39b6cd2bf771e7e283",
     "tipo": "arvore_de_trabalho",
     "alterados": [

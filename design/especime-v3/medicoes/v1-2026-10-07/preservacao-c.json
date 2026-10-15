@@ -1,7 +1,7 @@
 {
   "bases": {
     "motor": "465d01e7853f2729fcaa4ba63160b6338ba5de1e",
-    "sitio": "01ccb1e53c5b2d932b5388bb89215b209d40d418"
+    "sitio": "e6d1a30729d07ba7f22e8cae05bde01af6da3bff"
   },
   "ficheiros": {
     "motor": [
@@ -259,7 +259,7 @@
     "design/observatorio/evora/FONTES-evora-2027.baixar.sh": true,
     "design/observatorio/inventario/amostra-sonnet.py": true
   },
-  "base_preservacao": "7cb8760d36370904919521453072755a31e3baba",
+  "base_preservacao": "14709d6f81eb5d9b2a67aa5c654f902115571941",
   "hashes_preservacao": {
     "design/observatorio/AUDITORIA-2026-09-02.md": {
       "entrada": "62b449a00dde3456163a28e49636ee6e4c143e5efdd5b177646e2a826dfc6b8c",

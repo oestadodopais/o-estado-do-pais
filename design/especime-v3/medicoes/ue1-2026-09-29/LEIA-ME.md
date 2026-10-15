@@ -1,6 +1,6 @@
 # UE1 · onde Portugal fica entre os 27 · o relatório do construtor
 
-*Claude Opus 5.5 (a definição `construtor`), 29.09.2026. O relatório tem 5 partes. A do UE1, até «O que ficou por fazer»: o build, o verify e o typecheck correram na cabeça do código `33ed14a0`, e o commit das provas dela é `0f75298f`. A da passagem de correção UE1b: os portões correram na cabeça do código `c9859d31`, e o commit das provas dela é `a4f59f21`. A da passagem UE1c, depois da leitura a frio do Codex: os portões correram na cabeça do código `982d6446`, e o commit das provas dela é `42a368a3`. A da passagem UE1d, com a decisão da §1.140: os portões correram na cabeça do código `99b9f73a`, e o commit das provas dela é `ff046536`. A da passagem UE1e, no fim, depois da releitura a frio do Codex: os portões correram na cabeça do código `9d696d3c`, por cima do commit do lugar de direção `aba0a48b`, e o último commit do ramo é o das provas dela, que só acrescenta e muda ficheiros nesta pasta e na das capturas. O sítio: o ramo `ue1-2026-09-29`. O motor: o ramo `ue1-2026-09-29` do ResearchHub, cabeça `e394307`, que as passagens UE1b, UE1c, UE1d e UE1e não mudaram. Cada número deste relatório está num JSON desta pasta (`medidas.json`, escrito por `medir-ue1.mjs`, `medidas-ue1b.json`, escrito por `medir-ue1b.mjs`, `medidas-ue1c.json`, escrito por `medir-ue1c.mjs`, `medidas-ue1d.json`, escrito por `medir-ue1d.mjs`, e `medidas-ue1e.json`, escrito por `medir-ue1e.mjs`, que leem os manifestos ao lado, cada medida com o comando e um conhecido-positivo), e o relatório passa o `conferir-relatorio.py`.*
+*Claude Opus 5.5 (a definição `construtor`), 29.09.2026. O relatório tem 5 partes. A do UE1, até «O que ficou por fazer»: o build, o verify e o typecheck correram na cabeça do código `d8888595`, e o commit das provas dela é `b79310d6`. A da passagem de correção UE1b: os portões correram na cabeça do código `d65feab3`, e o commit das provas dela é `e4830cb2`. A da passagem UE1c, depois da leitura a frio do Codex: os portões correram na cabeça do código `c0eec2a6`, e o commit das provas dela é `9b4b4f2a`. A da passagem UE1d, com a decisão da §1.140: os portões correram na cabeça do código `ac39025e`, e o commit das provas dela é `d126adf0`. A da passagem UE1e, no fim, depois da releitura a frio do Codex: os portões correram na cabeça do código `0dd05dd6`, por cima do commit do lugar de direção `6ff9e8c1`, e o último commit do ramo é o das provas dela, que só acrescenta e muda ficheiros nesta pasta e na das capturas. O sítio: o ramo `ue1-2026-09-29`. O motor: o ramo `ue1-2026-09-29` do ResearchHub, cabeça `e394307`, que as passagens UE1b, UE1c, UE1d e UE1e não mudaram. Cada número deste relatório está num JSON desta pasta (`medidas.json`, escrito por `medir-ue1.mjs`, `medidas-ue1b.json`, escrito por `medir-ue1b.mjs`, `medidas-ue1c.json`, escrito por `medir-ue1c.mjs`, `medidas-ue1d.json`, escrito por `medir-ue1d.mjs`, e `medidas-ue1e.json`, escrito por `medir-ue1e.mjs`, que leem os manifestos ao lado, cada medida com o comando e um conhecido-positivo), e o relatório passa o `conferir-relatorio.py`.*
 
 ## O que o leitor vê
 
@@ -32,7 +32,7 @@ No cartão de cada uma das 10 medidas que os blocos da primeira página comparam
 2. **As palavras da frase.** Os acertos estão em `acertos-ue1.json` (8 trocas de cadeia em 3 grupos) e no cabeçalho da declaração, cada um com a razão escrita. F0: o «27» das palavras fixas passa a ser a contagem recontada dos pontos, porque um algarismo sem origem fecha o portão de HTML. F1: «o valor mais baixo é o de {país} ({valor})» passa a «o valor mais baixo é {valor} ({país})», e o mesmo na edição inglesa: em português de Portugal quase todos os nomes dos 27 pedem o artigo («o da Grécia», «o dos Países Baixos», mas «o de Malta»), a tabela de autoridade não o dá, e escrevê-lo à mão era escrever à mão o que os nomes não trazem; em inglês, «Netherlands's» não se escreve. F2: o empate («a par de {país}») vai para o fim da frase do lugar, como «, a par de outro país com o mesmo valor ({país})» ou «, a par de outros países com o mesmo valor ({países})», porque na pobreza os países a par são 2. F3, que não troca palavra nenhuma do brief: um extremo repetido nomearia os países todos, na mesma lista; hoje nenhuma série o tem. Nenhuma das razões é uma recusa da auditoria das frases, e as palavras que ficaram passam-na (o `check:voz` da construção, com as 6 linhas novas vivas e rendidas). Se o lugar de direção preferir outra forma, troca-se num ficheiro só.
 3. **A marca da fonte na frase.** Um ponto com marca mostra-a na ponta da faixa e no recibo; a frase leva os valores sem ela, para não mudar as palavras do brief. Hoje há 2 pontas com marca: a Hungria, a mais alta nos preços da habitação (18,3, marca «p»), e a Espanha, a mais alta no desemprego (10,5, marca «d»).
 4. **Os pedidos saíram sem o intervalo da casa.** O `pedir.py` do bloco criava um cliente por pedido, como o do RP1, e o intervalo por anfitrião vive dentro de cada cliente: os 37 pedidos saíram em 5 segundos, 27 ao Serviço das Publicações e 10 ao Eurostat, sem a espera por anfitrião que o cliente dá (`min_interval_s=2`). Os corpos e os resumos não mudam com isto. O guião passou a usar um cliente só (commit `e394307`), e com ele a segunda chamada seguida ao regulador do mesmo anfitrião espera 2,0 segundos; os pedidos não se repetiram.
-5. **A nota do lugar de direção sobre os tipos** (`tipos-ue1.mjs`, `tipos-ue1.json`). O programa do `npm run typecheck` tem 84 ficheiros do sítio, e `src/lib/series.mjs` é um deles, com o `src/tipos.d.ts` onde `Serie` e `PontoDaSerie` se declaram neste ramo. A corrida limpa dá 0; um nome de tipo que não existe, plantado na linha 70 (a de `@returns {x is Serie}`, onde o editor começava a apontar), fecha-a com o código 1 e a queixa TS2304 nessa linha. O portão lê essas anotações e resolve-as, e não havia nada a corrigir nesse ficheiro. `tests/cartao/faixa.mjs` e `scripts/series-do-portao.mjs` ficam fora do programa: a mesma anotação, acrescentada a cada um, deixa o typecheck a 0 nas 2 plantas. O `include` do `tsconfig.check.json` acaba em `src/lib`, `src/data`, `src/i18n`, no `src/tipos.d.ts` e nas configurações, e deixa `scripts/` de fora com a razão escrita no próprio ficheiro; `tests/` não está lá, sem razão escrita. O `check:mortos` também não lê `tests/` (lê `src/**` e `scripts/**`), e por isso nenhum portão apanhava a importação por ler, que saiu no commit `b6991e78`. Que programa o editor lê não sei: o `tsconfig.json` tem `checkJs` a false e `src/lib/series.mjs` não leva `// @ts-check`, de modo que esse programa não se devia queixar de tipos neste ficheiro; os avisos vêm de uma configuração que não vejo (inferido, não conferido).
+5. **A nota do lugar de direção sobre os tipos** (`tipos-ue1.mjs`, `tipos-ue1.json`). O programa do `npm run typecheck` tem 84 ficheiros do sítio, e `src/lib/series.mjs` é um deles, com o `src/tipos.d.ts` onde `Serie` e `PontoDaSerie` se declaram neste ramo. A corrida limpa dá 0; um nome de tipo que não existe, plantado na linha 70 (a de `@returns {x is Serie}`, onde o editor começava a apontar), fecha-a com o código 1 e a queixa TS2304 nessa linha. O portão lê essas anotações e resolve-as, e não havia nada a corrigir nesse ficheiro. `tests/cartao/faixa.mjs` e `scripts/series-do-portao.mjs` ficam fora do programa: a mesma anotação, acrescentada a cada um, deixa o typecheck a 0 nas 2 plantas. O `include` do `tsconfig.check.json` acaba em `src/lib`, `src/data`, `src/i18n`, no `src/tipos.d.ts` e nas configurações, e deixa `scripts/` de fora com a razão escrita no próprio ficheiro; `tests/` não está lá, sem razão escrita. O `check:mortos` também não lê `tests/` (lê `src/**` e `scripts/**`), e por isso nenhum portão apanhava a importação por ler, que saiu no commit `0da6fe2a`. Que programa o editor lê não sei: o `tsconfig.json` tem `checkJs` a false e `src/lib/series.mjs` não leva `// @ts-check`, de modo que esse programa não se devia queixar de tipos neste ficheiro; os avisos vêm de uma configuração que não vejo (inferido, não conferido).
 6. **As capturas não tinham conhecido-positivo.** O captor media sobreposições e rótulos fora do cartão sem provar que o detetor via algum. `faixas-ue1.mjs` usa as mesmas contas e prova-as com 6 plantas no navegador, 3 em cada edição. A primeira corrida deixou a planta do rótulo por ver: no contexto do captor, com o movimento reduzido, a folha da casa dá a tudo uma transição mínima (`transition-duration: 0.01ms`), e uma leitura logo a seguir a uma troca de posição ainda vê a posição antiga. A planta desliga a transição no elemento plantado; as medições a sério não mudam estilo nenhum.
 7. **O que o prompt situava noutro sítio.** O `IDENTIDADE.md` está na raiz do sítio e não em `design/especime-v3/`; o motor não tem `CLAUDE.md`; e a worktree nova do motor não tinha as caches `snippets.json` que o `export_site_rows_test` lê, e copiei-as da árvore principal do motor, como manda a decisão de 01.09 (§1.92(7), escrita no `.gitignore`), sem as versionar.
 
@@ -66,24 +66,24 @@ Fora da tabela, as 3 do programa do typecheck (`tipos-ue1.json`) e as 6 do detet
 
 ## O que não mudou
 
-Entre a base `8e66b601` e a cabeça do código: 0 ficheiros mudados em `ledger/claims/`, 0 ficheiros da primeira página, 0 das leituras (as das medidas e as do RP1), 0 no guião da aterragem, e 0 nos 6 registos de travessia que já existiam. Nenhum valor de nenhuma linha mudou.
+Entre a base `8cb6f7a8` e a cabeça do código: 0 ficheiros mudados em `ledger/claims/`, 0 ficheiros da primeira página, 0 das leituras (as das medidas e as do RP1), 0 no guião da aterragem, e 0 nos 6 registos de travessia que já existiam. Nenhum valor de nenhuma linha mudou.
 
 ## Os portões
 
-Na cabeça `33ed14a0`, cada um no seu comando, com o código escrito num ficheiro acabado de escrever em `portoes/`: `npm run build` a 0 em 178 segundos, `npm run verify` a 0 em 756 segundos, `npm run typecheck` a 0 em 1 segundo. Os registos têm os caminhos da máquina trocados por marcas (`portoes/caminhos-trocados.json`). No motor, o `core.gate` correu no pre-commit de cada commit do ramo e outra vez na cabeça final, a 0 (`motor/core-gate.txt`).
+Na cabeça `d8888595`, cada um no seu comando, com o código escrito num ficheiro acabado de escrever em `portoes/`: `npm run build` a 0 em 178 segundos, `npm run verify` a 0 em 756 segundos, `npm run typecheck` a 0 em 1 segundo. Os registos têm os caminhos da máquina trocados por marcas (`portoes/caminhos-trocados.json`). No motor, o `core.gate` correu no pre-commit de cada commit do ramo e outra vez na cabeça final, a 0 (`motor/core-gate.txt`).
 
 ## Os commits
 
-O sítio, ramo `ue1-2026-09-29`, depois do brief do lugar de direção (`09bca6c7`):
+O sítio, ramo `ue1-2026-09-29`, depois do brief do lugar de direção (`341832bf`):
 
-- `a182c200` as linhas de série por país atravessam do motor, com a tabela dos nomes;
-- `42cedfd9` o livro-razão lê as séries (as regras S1 a S8 no `ledger:check`, e a travessia no `check:cruzamento`);
-- `e1c20147` o recibo de cada série, nas duas edições, e as origens das séries no portão de HTML;
-- `7ae82d82` a faixa da União nos cartões, com a frase do lugar de Portugal, e a F19 e a K18 que a refazem dos pontos;
-- `ac965c61` a prova das palavras da frase (`acertos-ue1.py`), o acerto F0 dito, e as datas do recibo em linhas próprias;
-- `b6991e78` a importação que a célula da faixa não lia;
-- `ee95f3ca` o caminho no cabeçalho do recibo (a L5 do `check:lugar`);
-- `33ed14a0` o mapa do repositório com a rota das séries e a secção do UE1;
+- `1e0819fb` as linhas de série por país atravessam do motor, com a tabela dos nomes;
+- `5c9a8563` o livro-razão lê as séries (as regras S1 a S8 no `ledger:check`, e a travessia no `check:cruzamento`);
+- `462e35de` o recibo de cada série, nas duas edições, e as origens das séries no portão de HTML;
+- `6ea3f6c3` a faixa da União nos cartões, com a frase do lugar de Portugal, e a F19 e a K18 que a refazem dos pontos;
+- `b4c77398` a prova das palavras da frase (`acertos-ue1.py`), o acerto F0 dito, e as datas do recibo em linhas próprias;
+- `0da6fe2a` a importação que a célula da faixa não lia;
+- `894b2526` o caminho no cabeçalho do recibo (a L5 do `check:lugar`);
+- `d8888595` o mapa do repositório com a rota das séries e a secção do UE1;
 - e o commit da entrega destas provas, o último.
 
 O motor, ramo `ue1-2026-09-29`: `da6df0b` os pedidos e os corpos alojados; `50f8352` o gerador das séries pelas coordenadas seladas; `daa5355` a travessia para o livro-razão do sítio, com as plantas no `core.gate`; `e394307` o cliente partilhado.
@@ -103,7 +103,7 @@ Do primeiro pedido (14:11:43 UTC) ao fim dos portões finais (16:16:29 UTC), 7 4
 
 ## UE1b · a passagem de correção
 
-*Pedida pelo lugar de direção a 29.09.2026, depois da entrega do UE1, nas mesmas worktrees: o ordinal inglês, a marca da fonte na faixa dita por palavras e explicada no recibo da série, e a porta do recibo da linha portuguesa para a sua série. O brief e a tabela do seu §1 não mudaram (0 ficheiros). O motor também não (0 commits desde `e394307`). O build, o verify e o typecheck correram na cabeça do código `c9859d31`, e as medidas estão em `medidas-ue1b.json`, escrito por `medir-ue1b.mjs`.*
+*Pedida pelo lugar de direção a 29.09.2026, depois da entrega do UE1, nas mesmas worktrees: o ordinal inglês, a marca da fonte na faixa dita por palavras e explicada no recibo da série, e a porta do recibo da linha portuguesa para a sua série. O brief e a tabela do seu §1 não mudaram (0 ficheiros). O motor também não (0 commits desde `e394307`). O build, o verify e o typecheck correram na cabeça do código `d65feab3`, e as medidas estão em `medidas-ue1b.json`, escrito por `medir-ue1b.mjs`.*
 
 ### O que o leitor vê agora
 
@@ -154,17 +154,17 @@ E as que correm dentro dos portões a cada corrida: na F19 e na K18, 20 plantas 
 
 ### O que não mudou
 
-Entre o commit das provas do UE1 (`0f75298f`) e a cabeça do código da passagem: 0 ficheiros em `ledger/claims/`, 0 nas séries, nos registos de travessia e na tabela dos nomes, 0 no brief, 0 da primeira página, 0 das leituras e 0 no guião da aterragem; e 0 commits no motor.
+Entre o commit das provas do UE1 (`b79310d6`) e a cabeça do código da passagem: 0 ficheiros em `ledger/claims/`, 0 nas séries, nos registos de travessia e na tabela dos nomes, 0 no brief, 0 da primeira página, 0 das leituras e 0 no guião da aterragem; e 0 commits no motor.
 
 ### Os portões e os commits da passagem
 
-Na cabeça `c9859d31`, cada um no seu comando, com o código num ficheiro acabado de escrever em `portoes/ue1b/`: `npm run build` a 0 em 198 segundos, `npm run verify` a 0 em 830 segundos, `npm run typecheck` a 0 (0 segundos pela diferença das horas). Os registos têm os caminhos da máquina trocados por marcas (`portoes/ue1b/caminhos-trocados.json`).
+Na cabeça `d65feab3`, cada um no seu comando, com o código num ficheiro acabado de escrever em `portoes/ue1b/`: `npm run build` a 0 em 198 segundos, `npm run verify` a 0 em 830 segundos, `npm run typecheck` a 0 (0 segundos pela diferença das horas). Os registos têm os caminhos da máquina trocados por marcas (`portoes/ue1b/caminhos-trocados.json`).
 
 Os 3 commits de código, cada um depois das conferências que tocou (`entre-commits-ue1b.json`):
 
-- `63f54d18` o ordinal inglês, as ressalvas nas pontas e a legenda das marcas do recibo da série, com o inventário das frases e o registo dos acertos (o estado sem a porta foi construído à parte antes do commit);
-- `181ce25c` a porta do recibo da linha portuguesa para a sua série;
-- `c9859d31` o mapa do repositório (o `conferir-mapa.py` dá 126 citações no sítio, 0 longe e 0 por encontrar);
+- `d0a36492` o ordinal inglês, as ressalvas nas pontas e a legenda das marcas do recibo da série, com o inventário das frases e o registo dos acertos (o estado sem a porta foi construído à parte antes do commit);
+- `39f34d59` a porta do recibo da linha portuguesa para a sua série;
+- `d65feab3` o mapa do repositório (o `conferir-mapa.py` dá 126 citações no sítio, 0 longe e 0 por encontrar);
 - e o commit das provas da passagem, o último.
 
 ### O custo da passagem
@@ -180,7 +180,7 @@ Do commit das provas do UE1 (17:18:28 UTC) ao fim dos portões da passagem (18:2
 
 ## UE1c · a passagem de correção depois da leitura a frio
 
-*Pedida pelo lugar de direção a 29.09.2026, depois da leitura a frio do Codex (`design/especime-v3/critica/LEITURA-ue1-2026-09-29.md`, com a triagem no cabeçalho), pelos achados 5, 8, 9, 10 e 11. O motor não mudou (0 commits). O build, o verify e o typecheck correram na cabeça do código `982d6446`, e as medidas estão em `medidas-ue1c.json`, escrito por `medir-ue1c.mjs`.*
+*Pedida pelo lugar de direção a 29.09.2026, depois da leitura a frio do Codex (`design/especime-v3/critica/LEITURA-ue1-2026-09-29.md`, com a triagem no cabeçalho), pelos achados 5, 8, 9, 10 e 11. O motor não mudou (0 commits). O build, o verify e o typecheck correram na cabeça do código `c0eec2a6`, e as medidas estão em `medidas-ue1c.json`, escrito por `medir-ue1c.mjs`.*
 
 ### O mandato da passagem, ponto a ponto
 
@@ -219,7 +219,7 @@ E, dentro dos portões a cada corrida, as 6 plantas dos empates da F19 e as 6 da
 
 ### O que não mudou
 
-Entre o commit da leitura a frio (`96a6035e`) e a cabeça do código da passagem: 0 ficheiros em `ledger/claims/`, 0 nas séries, nos registos de travessia e na tabela dos nomes, 0 nas leituras dos cartões e na sua auditoria, 0 no brief e 0 no guião da aterragem; e 0 commits no motor.
+Entre o commit da leitura a frio (`831968b1`) e a cabeça do código da passagem: 0 ficheiros em `ledger/claims/`, 0 nas séries, nos registos de travessia e na tabela dos nomes, 0 nas leituras dos cartões e na sua auditoria, 0 no brief e 0 no guião da aterragem; e 0 commits no motor.
 
 ### As capturas
 
@@ -227,13 +227,13 @@ Em `design/especime-v3/capturas/ue1-2026-09-29/ue1c/` e `capturas-ue1c.json`: a 
 
 ### Os portões e os commits da passagem
 
-Na cabeça `982d6446`, cada um no seu comando, com o código num ficheiro acabado de escrever em `portoes/ue1c/`: `npm run build` a 0 em 256 segundos, `npm run verify` a 0 em 733 segundos, `npm run typecheck` a 0 em 1 segundo; os registos com os caminhos da máquina trocados por marcas (`portoes/ue1c/caminhos-trocados.json`). Nos portões corre também a K17, com as 190 leituras dos cartões recompostas.
+Na cabeça `c0eec2a6`, cada um no seu comando, com o código num ficheiro acabado de escrever em `portoes/ue1c/`: `npm run build` a 0 em 256 segundos, `npm run verify` a 0 em 733 segundos, `npm run typecheck` a 0 em 1 segundo; os registos com os caminhos da máquina trocados por marcas (`portoes/ue1c/caminhos-trocados.json`). Nos portões corre também a K17, com as 190 leituras dos cartões recompostas.
 
 Os 3 commits de código, cada um depois das conferências que tocou (7, todas a 0, em `entre-commits-ue1c.json`):
 
-- `baa82bce` os extremos empatados (o estado sem a frase do recibo foi construído à parte antes do commit);
-- `2a12ff68` o que cada medida conta, no recibo da sua série;
-- `982d6446` o mapa do repositório (o `conferir-mapa.py` dá 135 citações no sítio, 0 longe e 0 por encontrar);
+- `3f1dc41d` os extremos empatados (o estado sem a frase do recibo foi construído à parte antes do commit);
+- `fcf58417` o que cada medida conta, no recibo da sua série;
+- `c0eec2a6` o mapa do repositório (o `conferir-mapa.py` dá 135 citações no sítio, 0 longe e 0 por encontrar);
 - e o commit das provas da passagem, o último.
 
 ### O custo da passagem
@@ -249,7 +249,7 @@ Do commit da leitura a frio (20:07:33 UTC) ao fim dos portões da passagem (20:5
 
 ## UE1d · a média da União de volta ao cartão da sobrecarga no total, com a ressalva, e a definição declarada no recibo de cada série
 
-*Pedida pelo lugar de direção a 29.09.2026, com a decisão que entra na §1.140: a condição da §1.124 cumpriu-se, e a proteção muda de forma. O motor não mudou (0 commits). O build, o verify e o typecheck correram na cabeça do código `99b9f73a`, e as medidas estão em `medidas-ue1d.json`, escrito por `medir-ue1d.mjs`.*
+*Pedida pelo lugar de direção a 29.09.2026, com a decisão que entra na §1.140: a condição da §1.124 cumpriu-se, e a proteção muda de forma. O motor não mudou (0 commits). O build, o verify e o typecheck correram na cabeça do código `ac39025e`, e as medidas estão em `medidas-ue1d.json`, escrito por `medir-ue1d.mjs`.*
 
 ### O que o leitor vê agora
 
@@ -282,12 +282,12 @@ Do commit da leitura a frio (20:07:33 UTC) ao fim dos portões da passagem (20:5
 1. **Corri a construção do estado do segundo commit ao mesmo tempo que o build do F2.2c do Codex, noutra worktree.** Antes dessa construção, o `pgrep` mostrou os processos do build dele, e o meu comando seguiu para o `npm run build` sem esperar, porque o `pgrep` só escrevia e não travava. É uma falta à regra «uma construção de cada vez». A árvore e o `dist/` dele são outros que os meus, e a construção do estado passou; o que se partilhou foi a máquina. Os portões da passagem correram por `portao-ue1d.sh`, que espera enquanto houver outra construção: o build da primeira corrida esperou pelo verify do Codex (`portoes/ue1d-de17f63e/espera.log`).
 2. **Parei a primeira tentativa dos portões por um diagnóstico errado.** Julguei que ela esperava por si própria, porque a linha de comando dela tinha os nomes dos portões por extenso; o manual do `pgrep` do macOS diz que ele não conta os seus antepassados, e o que ela via era o verify do Codex. Parei-a antes de correr portão nenhum, e o guião que a substituiu espera da mesma maneira, um portão por comando. O comentário do guião dizia o diagnóstico errado e corrigi-o depois das 3 corridas na cabeça `de17f63e`, com 0 linhas de código mudadas (o sha256 do que correu e o do ramo estão em `portoes/ue1d-de17f63e/guiao-dos-portoes.json`); a corrida final dos portões já correu com o guião corrigido.
 3. **O `conferir-mapa.py` sai sempre com 0**, haja ou não citações perdidas: é um guião de leitura, e a prova dele são as contas que escreve. O `entre-commits-ue1c.json` guardou só o código do mapa da UE1c; li agora o registo dessa corrida, com 135 citações no sítio e 0 perdidas, e o `entre-commits-ue1d.json` guarda as contas.
-4. **A planta da declaração rebentava a prova do `check:cartao`.** Na primeira corrida das plantas da passagem, na cabeça `de17f63e`, a planta que tira a medida da declaração das ressalvas fechou a construção, mas com um TypeError no construtor da prova (`montaAProva`, que lia o texto da ressalva sem conferir que ele existia), antes de a K14 poder dizer a razão: 7 das 8 plantas morderam com a queixa esperada (`plantas-ue1d-primeira.json`, com as saídas em `plantas/ue1d-primeira/`). O quarto commit de código, `99b9f73a`, lê o texto sem rebentar: com a prova, o controlo da K14 dá vermelho com «a declaração não tem o texto da ressalva desta medida»; sem ela, a conferência da declaração diz «exige a ressalva e a declaração não a tem». Os portões correram outra vez, na cabeça nova, e a segunda corrida das plantas tem as 8 a morder.
+4. **A planta da declaração rebentava a prova do `check:cartao`.** Na primeira corrida das plantas da passagem, na cabeça `de17f63e`, a planta que tira a medida da declaração das ressalvas fechou a construção, mas com um TypeError no construtor da prova (`montaAProva`, que lia o texto da ressalva sem conferir que ele existia), antes de a K14 poder dizer a razão: 7 das 8 plantas morderam com a queixa esperada (`plantas-ue1d-primeira.json`, com as saídas em `plantas/ue1d-primeira/`). O quarto commit de código, `ac39025e`, lê o texto sem rebentar: com a prova, o controlo da K14 dá vermelho com «a declaração não tem o texto da ressalva desta medida»; sem ela, a conferência da declaração diz «exige a ressalva e a declaração não a tem». Os portões correram outra vez, na cabeça nova, e a segunda corrida das plantas tem as 8 a morder.
 5. **No estado completo, antes de o partir em 2 commits, 2 conferências falharam**, e ficam em `entre-commits-ue1d.json` com o que as resolveu: o build, pelo `check:voz`, com 6 blocos por classificar (a ressalva nova, nas páginas que a rendem) e 2 linhas vivas do inventário que já não se rendiam (a leitura antiga); e o `check:cartao`, pela K17, com 1 origem declarada sem apoio.
 
 ### As plantas da passagem
 
-Em `plantas-ue1d.json`, com as saídas em `plantas/ue1d/`, na cabeça `99b9f73a`: 8 plantas (5 da ressalva, 2 da definição e 1 do typecheck), 8 mordidas com a queixa esperada, 8 repostas pelo sha256, e as 3 corridas limpas a seguir, 3 a 0.
+Em `plantas-ue1d.json`, com as saídas em `plantas/ue1d/`, na cabeça `ac39025e`: 8 plantas (5 da ressalva, 2 da definição e 1 do typecheck), 8 mordidas com a queixa esperada, 8 repostas pelo sha256, e as 3 corridas limpas a seguir, 3 a 0.
 
 | grupo | a planta | o portão que morde |
 |---|---|---|
@@ -304,7 +304,7 @@ E, dentro dos portões a cada corrida, as plantas da prova do `check:cartao` e a
 
 ### O que não mudou
 
-Entre o commit das provas da UE1c (`42a368a3`) e a cabeça do código da passagem: 0 ficheiros em `ledger/claims/`, 0 nas séries, nos registos de travessia e na tabela dos nomes, 0 linhas das definições das medidas e das suas origens, 0 no brief, 0 no guião da aterragem e 0 na pasta do `acertos-l1.py`; e 0 commits no motor. Mudaram 20 ficheiros, com os nomes em `medidas-ue1d.json`.
+Entre o commit das provas da UE1c (`9b4b4f2a`) e a cabeça do código da passagem: 0 ficheiros em `ledger/claims/`, 0 nas séries, nos registos de travessia e na tabela dos nomes, 0 linhas das definições das medidas e das suas origens, 0 no brief, 0 no guião da aterragem e 0 na pasta do `acertos-l1.py`; e 0 commits no motor. Mudaram 20 ficheiros, com os nomes em `medidas-ue1d.json`.
 
 ### As capturas
 
@@ -312,14 +312,14 @@ Em `design/especime-v3/capturas/ue1-2026-09-29/ue1d/` e `capturas-ue1d.json`, na
 
 ### Os portões e os commits da passagem
 
-Na cabeça `99b9f73a`, cada um no seu comando, pelo `portao-ue1d.sh`, com o código num ficheiro acabado de escrever em `portoes/ue1d/`: `npm run build` a 0 em 180 segundos, `npm run verify` a 0 em 797 segundos, `npm run typecheck` a 0 em 1 segundo; os registos com os caminhos da máquina trocados por marcas (`portoes/ue1d/caminhos-trocados.json`). Os 3 portões olharam antes de correr. A primeira corrida dos 3, na cabeça `de17f63e`, antes do quarto commit, deu 0, 0 e 0 (`portoes/ue1d-de17f63e/`); as 2 corridas esperaram ao todo 435 segundos por outra construção, todos no build da primeira, pelo verify do Codex.
+Na cabeça `ac39025e`, cada um no seu comando, pelo `portao-ue1d.sh`, com o código num ficheiro acabado de escrever em `portoes/ue1d/`: `npm run build` a 0 em 180 segundos, `npm run verify` a 0 em 797 segundos, `npm run typecheck` a 0 em 1 segundo; os registos com os caminhos da máquina trocados por marcas (`portoes/ue1d/caminhos-trocados.json`). Os 3 portões olharam antes de correr. A primeira corrida dos 3, na cabeça `de17f63e`, antes do quarto commit, deu 0, 0 e 0 (`portoes/ue1d-de17f63e/`); as 2 corridas esperaram ao todo 435 segundos por outra construção, todos no build da primeira, pelo verify do Codex.
 
 Os 4 commits de código, cada um depois das conferências que tocou (10, todas a 0, em `entre-commits-ue1d.json`):
 
-- `530d5edc` a média da União de volta ao cartão da sobrecarga no total, com a ressalva de uma fonte única, a K14 na forma nova e a K17 a contar as origens da primeira página (o estado sem a definição dos recibos construído à parte antes do commit);
-- `165650cf` a definição declarada da medida no recibo de cada série;
+- `cbe6866d` a média da União de volta ao cartão da sobrecarga no total, com a ressalva de uma fonte única, a K14 na forma nova e a K17 a contar as origens da primeira página (o estado sem a definição dos recibos construído à parte antes do commit);
+- `13b24aac` a definição declarada da medida no recibo de cada série;
 - `de17f63e` o mapa do repositório (o `conferir-mapa.py` dá 138 citações no sítio, 0 longe e 0 por encontrar; antes da emenda dava 5 por encontrar, as linhas que a passagem mudou);
-- `99b9f73a` o construtor da prova do `check:cartao` sem rebentar quando a declaração não tem a ressalva (antes dele, o `check:cartao` limpo a 0, as 2 plantas da declaração a morder com a queixa, e o mapa sem citações perdidas);
+- `ac39025e` o construtor da prova do `check:cartao` sem rebentar quando a declaração não tem a ressalva (antes dele, o `check:cartao` limpo a 0, as 2 plantas da declaração a morder com a queixa, e o mapa sem citações perdidas);
 - e o commit das provas da passagem, o último.
 
 ### O custo da passagem
@@ -335,7 +335,7 @@ Do commit das provas da UE1c ao fim dos portões da passagem, 5 912 segundos. Os
 
 ## UE1e · a definição do índice harmonizado no recibo da série, sem «em Portugal»
 
-*Pedida pelo lugar de direção a 30.09.2026, depois da releitura a frio do Codex, que achou as 5 plantas e um defeito real: o recibo da série do índice harmonizado de preços no consumidor mostrava a definição do cartão, que diz «em Portugal» («in Portugal» na edição inglesa), por cima da tabela dos 27 países. Construída por cima do commit do lugar de direção `aba0a48b`. O motor não mudou (0 commits). O build, o verify e o typecheck correram na cabeça do código `9d696d3c`, e as medidas estão em `medidas-ue1e.json`, escrito por `medir-ue1e.mjs`.*
+*Pedida pelo lugar de direção a 30.09.2026, depois da releitura a frio do Codex, que achou as 5 plantas e um defeito real: o recibo da série do índice harmonizado de preços no consumidor mostrava a definição do cartão, que diz «em Portugal» («in Portugal» na edição inglesa), por cima da tabela dos 27 países. Construída por cima do commit do lugar de direção `6ff9e8c1`. O motor não mudou (0 commits). O build, o verify e o typecheck correram na cabeça do código `0dd05dd6`, e as medidas estão em `medidas-ue1e.json`, escrito por `medir-ue1e.mjs`.*
 
 ### O que o leitor vê agora
 
@@ -363,7 +363,7 @@ O recibo da série do índice harmonizado, em português e em inglês, diz por b
 
 ### As plantas da passagem
 
-Em `plantas-ue1e.json`, com as saídas em `plantas/ue1e/`, na cabeça `9d696d3c`: 5 plantas (3 da regra nova e 2 da forma que cada recibo deve usar), 5 mordidas com a queixa esperada, 5 repostas pelo sha256, e a corrida limpa a seguir, o controlo, a 0 (1 de 1).
+Em `plantas-ue1e.json`, com as saídas em `plantas/ue1e/`, na cabeça `0dd05dd6`: 5 plantas (3 da regra nova e 2 da forma que cada recibo deve usar), 5 mordidas com a queixa esperada, 5 repostas pelo sha256, e a corrida limpa a seguir, o controlo, a 0 (1 de 1).
 
 | grupo | a planta | o portão que morde |
 |---|---|---|
@@ -375,7 +375,7 @@ Em `plantas-ue1e.json`, com as saídas em `plantas/ue1e/`, na cabeça `9d696d3c`
 
 ### O que não mudou
 
-Entre o commit do lugar de direção (`aba0a48b`) e a cabeça do código da passagem: 0 ficheiros em `ledger/claims/`, 0 nas séries, nos registos de travessia e na tabela dos nomes, 0 na auditoria das perguntas, 0 nas leituras dos cartões e na sua auditoria, 0 no inventário das frases, 0 no brief, 0 na pasta do `acertos-l1.py` e 0 no guião da aterragem; e 0 commits no motor. Mudaram 4 ficheiros, com os nomes em `medidas-ue1e.json`.
+Entre o commit do lugar de direção (`6ff9e8c1`) e a cabeça do código da passagem: 0 ficheiros em `ledger/claims/`, 0 nas séries, nos registos de travessia e na tabela dos nomes, 0 na auditoria das perguntas, 0 nas leituras dos cartões e na sua auditoria, 0 no inventário das frases, 0 no brief, 0 na pasta do `acertos-l1.py` e 0 no guião da aterragem; e 0 commits no motor. Mudaram 4 ficheiros, com os nomes em `medidas-ue1e.json`.
 
 ### As capturas
 
@@ -383,12 +383,12 @@ Em `design/especime-v3/capturas/ue1-2026-09-29/ue1e/` e `capturas-ue1e.json`, os
 
 ### Os portões e os commits da passagem
 
-Na cabeça `9d696d3c`, cada um no seu comando, pelo `portao-ue1e.sh` (o da UE1d com a pasta nova), com o código num ficheiro acabado de escrever em `portoes/ue1e/`: `npm run build` a 0 em 81 segundos, `npm run verify` a 0 em 531 segundos, `npm run typecheck` a 0 em 1 segundo; os registos com os caminhos da máquina trocados por marcas (`portoes/ue1e/caminhos-trocados.json`). Os 3 portões olharam antes de correr, e esperaram ao todo 0 segundos por outra construção.
+Na cabeça `0dd05dd6`, cada um no seu comando, pelo `portao-ue1e.sh` (o da UE1d com a pasta nova), com o código num ficheiro acabado de escrever em `portoes/ue1e/`: `npm run build` a 0 em 81 segundos, `npm run verify` a 0 em 531 segundos, `npm run typecheck` a 0 em 1 segundo; os registos com os caminhos da máquina trocados por marcas (`portoes/ue1e/caminhos-trocados.json`). Os 3 portões olharam antes de correr, e esperaram ao todo 0 segundos por outra construção.
 
 Os 2 commits de código, cada um depois das conferências que tocou (4, todas a 0, em `entre-commits-ue1e.json`, e o mapa pelas suas contas):
 
-- `a4c202be` a forma do recibo da série, o recibo a usá-la e as 2 regras do portão de HTML;
-- `9d696d3c` o mapa do repositório: a forma do recibo da série na entrada do que a medida conta, e as citações que as linhas novas do portão deslocaram, remapeadas (o `conferir-mapa.py` dá 141 citações no sítio, 0 longe e 0 por encontrar; antes da emenda dava 14 longe da linha citada);
+- `4ad0dd4a` a forma do recibo da série, o recibo a usá-la e as 2 regras do portão de HTML;
+- `0dd05dd6` o mapa do repositório: a forma do recibo da série na entrada do que a medida conta, e as citações que as linhas novas do portão deslocaram, remapeadas (o `conferir-mapa.py` dá 141 citações no sítio, 0 longe e 0 por encontrar; antes da emenda dava 14 longe da linha citada);
 - e o commit das provas da passagem, o último.
 
 ### O custo da passagem

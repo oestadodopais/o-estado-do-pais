@@ -93,7 +93,7 @@ duas tabelas na entrada §1.48.
   contagens da entrada vêm da régua e do `dist/prova.json`.
 - **Nada inventado.** Se algo não se souber, escreve-se `[a verificar]`.
 - **Sem travessões**, nas cadeias e nos registos.
-- **Ramo:** `decisoes-2026-08-20`, criado de `main` (`0068d33`). Commits
+- **Ramo:** `decisoes-2026-08-20`, criado de `main` (`1bad312`). Commits
   pequenos, mensagens em português na voz da casa (ver `git log`). **Não fundir,
   não empurrar para `main`.** No fim, `git push -u origin decisoes-2026-08-20`
   para a pré-visualização protegida do Vercel e parar.

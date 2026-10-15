@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""O §0 do brief RP4-c (as ajudas de leitura do gráfico das séries), medido sobre a cabeça presa do sítio (3a253f73).
+"""O §0 do brief RP4-c (as ajudas de leitura do gráfico das séries), medido sobre a cabeça presa do sítio (520a02d6).
 Lê só o repositório, pela cabeça presa (`git show`), nunca a árvore de trabalho (§1.153). Escreve
 design/observatorio/medidas/BRIEF-RP4C.json (ou o caminho em OEDP_MEDIDAS_JSON). Cada medição leva o comando e um
 conhecido-positivo; o que não conseguir ler fica «NÃO LIDO»."""
 import json, os, pathlib, re, subprocess
 
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "5b004ada"
+CAB = "22dd918c"
 NAO = "NÃO LIDO"
 medidas = []
 

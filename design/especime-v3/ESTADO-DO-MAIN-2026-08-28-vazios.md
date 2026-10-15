@@ -1,6 +1,6 @@
 # O estado de `main` depois do bloco dos vazios (28.08.2026)
 
-*Escrito pelo lugar de direção (Claude Fable 5). O ramo `vazios-2026-08-28` saiu de `main` `35313eb` e está verde: construção com as réguas todas, `verify`, `typecheck`, `vazios` 8 de 8, `concelhos` 12 de 12, a matriz 87 de 87. Medido às cegas (Sonnet, M8, numa cópia) e lido de olhos frescos (Codex, com três plantas). A §1.77 do `DECISIONS.md` é o registo; no motor, a terceira edição do estudo 12 (`RELATORIO-P3.md`).*
+*Escrito pelo lugar de direção (Claude Fable 5). O ramo `vazios-2026-08-28` saiu de `main` `f174be8` e está verde: construção com as réguas todas, `verify`, `typecheck`, `vazios` 8 de 8, `concelhos` 12 de 12, a matriz 87 de 87. Medido às cegas (Sonnet, M8, numa cópia) e lido de olhos frescos (Codex, com três plantas). A §1.77 do `DECISIONS.md` é o registo; no motor, a terceira edição do estudo 12 (`RELATORIO-P3.md`).*
 
 ## O que muda no ar
 

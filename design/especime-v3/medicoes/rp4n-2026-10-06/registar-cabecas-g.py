@@ -6,7 +6,7 @@ import sys
 import subprocess
 BASE=Path(sys.argv[1]) if len(sys.argv)>1 else Path('design/especime-v3/medicoes/rp4n-2026-10-06/g')
 BASE.mkdir(parents=True,exist_ok=True)
-repos={'sitio':(Path.cwd(),'478c8368'),'motor':(Path(os.environ['RESEARCHHUB_DIR']),'9293361')}
+repos={'sitio':(Path.cwd(),'ed7a9e19'),'motor':(Path(os.environ['RESEARCHHUB_DIR']),'9293361')}
 resultado={}
 for nome,(pasta,base) in repos.items():
  def git(*a):return subprocess.check_output(['git',*a],cwd=pasta,text=True).strip()

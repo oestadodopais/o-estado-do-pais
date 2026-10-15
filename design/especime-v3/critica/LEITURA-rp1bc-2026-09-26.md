@@ -1,6 +1,6 @@
 # A segunda leitura a frio do RP1 (as peças RP1b e RP1c) · Claude Opus 5.5 (`leitor`), 26.09.2026
 
-*O pacote: o sítio de `ed5371ff` a `4af5ef88`, o motor de `6508b05` a `4eb2867`, as quatro páginas e sete recibos construídos, as cópias congeladas, os corpos alojados; cinco estragos plantados só nas cópias, registados por sha256 em `LEITURA-rp1bc-2026-09-26.plantas.json`; o prompt: `scripts/leituras/PROMPT-comum.md` mais a secção do bloco. A leitura achou as cinco plantas (os achados 1, 2, 3, 4 e 9). A triagem do lugar de direção está na §1.132: aterrou-se com os achados 5 (a I155, já aberta), 6 (a I158), 7 (a I159), 8 (a I157) e 10 (a I160) registados para a passagem de correção seguinte.*
+*O pacote: o sítio de `f18703ac` a `7b53a17e`, o motor de `6508b05` a `4eb2867`, as quatro páginas e sete recibos construídos, as cópias congeladas, os corpos alojados; cinco estragos plantados só nas cópias, registados por sha256 em `LEITURA-rp1bc-2026-09-26.plantas.json`; o prompt: `scripts/leituras/PROMPT-comum.md` mais a secção do bloco. A leitura achou as cinco plantas (os achados 1, 2, 3, 4 e 9). A triagem do lugar de direção está na §1.132: aterrou-se com os achados 5 (a I155, já aberta), 6 (a I158), 7 (a I159), 8 (a I157) e 10 (a I160) registados para a passagem de correção seguinte.*
 
 # Cold read of RP1b and RP1c · Claude Opus 5.5 (`leitor`), 26.09.2026
 
@@ -37,7 +37,7 @@ The sign node handles positive, negative and zero, and the sentence follows it u
 References: src/data/leituras-rp1.mjs:33, src/data/leituras-rp1.mjs:46, src/data/leituras-rp1.mjs:105, src/data/leituras-rp1.mjs:614, src/data/leituras-rp1.mjs:672, tests/cartao/leituras-provadas.json:4797, src/data/origens-rp1.mjs:39, relatorio-construtor.md:259
 
 8. **The measured zero for machine paths covers only the head tree and only `<casa> plus the user's name: the director's home path with his name stays in the branch's earlier commits, and two block files still carry the machine's scratch-path prefix.**
-Every `<casa>/…` line in `diff.patch` is a removed line. The commits before 22bacd0c on this branch therefore still contain them, and a fast-forward landing publishes them to the public repository. The detector in `medir-rp1.mjs` searches only for `<root><casa> and the home directory's basename, so it cannot see `/private/tmp/claude-501/`. That prefix remains in the scrub regex and in the RP1c prompt. The package holds 239 of the 498 files the detector read, so the rest of the zero cannot be checked here.
+Every `<casa>/…` line in `diff.patch` is a removed line. The commits before 9fd1f5b6 on this branch therefore still contain them, and a fast-forward landing publishes them to the public repository. The detector in `medir-rp1.mjs` searches only for `<root><casa> and the home directory's basename, so it cannot see `/private/tmp/claude-501/`. That prefix remains in the scrub regex and in the RP1c prompt. The package holds 239 of the 498 files the detector read, so the rest of the zero cannot be checked here.
 References: diff.patch:337, diff.patch:54397, diff.patch:125656, design/especime-v3/medicoes/rp1-2026-09-26/medir-rp1.mjs:23, design/especime-v3/medicoes/rp1-2026-09-26/medir-rp1.mjs:25, design/especime-v3/medicoes/rp1-2026-09-26/registar-rp1.py:17, design/especime-v3/medicoes/rp1-2026-09-26/prompts/PROMPT-rp1c-codex.md:24, design/especime-v3/medicoes/rp1-2026-09-26/medidas.json:8609, relatorio-construtor.md:306
 
 9. **The report says 27 plants in `plantas-rp1.json` bit, but the file, `medidas.json`, the verify log at the measured head and the script that writes this sentence all give 25.**
@@ -82,7 +82,7 @@ References: src/components/CartaoDaMedida.astro:204, src/components/CartaoDaMedi
 `rp1b.tentativa_build.log_sha256` is 6013487a…, which `sanitizacao-rp1c.json` lists as that log's «antes». The file now hashes to a03db83a…, its «depois». `medir-rp1.mjs` recalculates only the three gate logs of the first delivery and of RP1b.
 References: design/especime-v3/medicoes/rp1-2026-09-26/medidas.json:5178, design/especime-v3/medicoes/rp1-2026-09-26/sanitizacao-rp1c.json:80, design/especime-v3/medicoes/rp1-2026-09-26/medir-rp1.mjs:47, relatorio-construtor.md:249
 
-19. **The report says the final commit only delivers proofs and that `relatorio-rp1.py --verifica` checks this, but no output of that script is in the package, and the cumulative diff cannot show what 8e6e4405 changed.**
+19. **The report says the final commit only delivers proofs and that `relatorio-rp1.py --verifica` checks this, but no output of that script is in the package, and the cumulative diff cannot show what 37bdcaff changed.**
 No file in the block folder contains either message the script prints. The RP1c logs cover the gates, the captures, the composition and `medicoes`, and nothing after them. The first read raised the same gap for the first delivery.
 References: relatorio-construtor.md:347, design/especime-v3/medicoes/rp1-2026-09-26/relatorio-rp1.py:24, design/especime-v3/medicoes/rp1-2026-09-26/relatorio-rp1.py:90, design/especime-v3/medicoes/rp1-2026-09-26/RESPOSTA-codex-rp1c.md:1
 

@@ -15,7 +15,7 @@ const dgal = 'indice-de-divida-limite-legal';
 const plantas = [], controlos = [];
 assert.deepEqual(validateLedger().errors, []);
 controlos.push({ nome: 'livro completo com as duas histórias repostas', passou: true });
-/* 05.10.2026 (§1.162): a história de a677770f é o PREFIXO da história em vigor, e não a lista exata, porque o
+/* 05.10.2026 (§1.162): a história de 04438bb9 é o PREFIXO da história em vigor, e não a lista exata, porque o
    painel semanal acrescenta uma releitura por semana a estas linhas e a lista exata recusava cada uma (a primeira,
    a de 05.10, fechou os portões dos registos). O que a célula protege não muda: nenhuma entrada antiga se perde
    nem se reescreve (o prefixo tem de bater carácter a carácter), e nenhuma entrada nova pode ser anterior à
@@ -23,7 +23,7 @@ controlos.push({ nome: 'livro completo com as duas histórias repostas', passou:
 const prefixoDe = (id) => {
   const antigas = JSON.parse(fs.readFileSync('tests/linha/historias-c1c.json', 'utf8')).linhas[id];
   const atuais = linhas.get(id).verifications;
-  assert.deepEqual(atuais.slice(0, antigas.length), antigas, `${id}: a história de a677770f já não é o prefixo da história em vigor`);
+  assert.deepEqual(atuais.slice(0, antigas.length), antigas, `${id}: a história de 04438bb9 já não é o prefixo da história em vigor`);
   for (const nova of atuais.slice(antigas.length)) {
     assert.ok(nova.date > antigas[antigas.length - 1].date, `${id}: a releitura ${nova.date} não é posterior à última antiga ${antigas[antigas.length - 1].date}`);
   }
@@ -31,7 +31,7 @@ const prefixoDe = (id) => {
 };
 for (const id of [uniao, dgal]) {
   const { antigas, atuais } = prefixoDe(id);
-  controlos.push({ nome: `${id}: a história de a677770f é o prefixo das ${atuais.length} entradas em vigor (${antigas.length} antigas)`, passou: true });
+  controlos.push({ nome: `${id}: a história de 04438bb9 é o prefixo das ${atuais.length} entradas em vigor (${antigas.length} antigas)`, passou: true });
 }
 {
   const original = linhas.get(uniao);
@@ -41,7 +41,7 @@ for (const id of [uniao, dgal]) {
   let mordeu = false;
   try { prefixoDe(uniao); } catch (e) { mordeu = /já não é o prefixo/.test(String(e.message)); } finally { linhas.set(uniao, original); }
   assert.ok(mordeu, 'a planta da perda de uma entrada antiga não mordeu');
-  plantas.push({ nome: 'perda de uma entrada antiga da história', mordeu: true, falha: 'a história de a677770f já não é o prefixo' });
+  plantas.push({ nome: 'perda de uma entrada antiga da história', mordeu: true, falha: 'a história de 04438bb9 já não é o prefixo' });
 }
 function plantar(nome, id, mudar, falha) {
   const original = linhas.get(id);

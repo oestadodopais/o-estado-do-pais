@@ -1,7 +1,7 @@
 # Nota da etapa 5 · os cartões de partilha
 
 *Construtor E (Claude Opus, `claude-opus-5[1m]`). Ramo `redesenho-v3`, a partir de
-`d9c19d5`. Brief: `../briefs/BRIEF-etapa-5.md`, com a §5 do
+`39a5156`. Brief: `../briefs/BRIEF-etapa-5.md`, com a §5 do
 `../PLANO-redesenho-v3.md` como contrato da direção, palavra por palavra. Escrita
 a cada checkpoint, antes da auditoria. **Todos os números desta nota vêm de um
 comando que está escrito ao lado deles.***
@@ -10,9 +10,9 @@ comando que está escrito ao lado deles.***
 
 | commit | subetapa | o quê |
 |---|---|---|
-| `a90576e` | 5-0 | as pontas soltas da etapa 4: a régua da ortografia fecha, e a casa fica com um só sinal de dobra |
-| `b403576` | o rasterizador | os 532 cartões, o modelo, os tipos derivados, o passo de construção e as quatro linhas do `Base.astro` |
-| `4257a1f` | o portão | a extensão que confere a imagem que cada página oferece a quem a partilha |
+| `09f6aaf` | 5-0 | as pontas soltas da etapa 4: a régua da ortografia fecha, e a casa fica com um só sinal de dobra |
+| `55b1ad8` | o rasterizador | os 532 cartões, o modelo, os tipos derivados, o passo de construção e as quatro linhas do `Base.astro` |
+| `67b2560` | o portão | a extensão que confere a imagem que cada página oferece a quem a partilha |
 | (este) | as plantas e as medições | as quatro plantas provadas e revertidas, as capturas, esta nota, `CHAVES-EN.md` e `ISSUES.md` |
 
 ---
@@ -587,7 +587,7 @@ chave.
 | | |
 |---|---|
 | modelo | Claude Opus, `claude-opus-5[1m]`, do princípio ao fim; nenhum sub-agente |
-| commits | `a90576e` (5-0), `b403576` (o rasterizador), `4257a1f` (o portão), e o desta nota |
+| commits | `09f6aaf` (5-0), `55b1ad8` (o rasterizador), `67b2560` (o portão), e o desta nota |
 | ficheiros abertos fora da lista do brief, e porquê | `src/lib/inicio.mjs` (uma palavra, a outra ponta da comparação da §1.1), `src/styles/inicio.css` e `src/styles/leitura.css` (a folha do sinal de dobra, que o brief dá como «a folha do glifo de divulgação»), `tipos-cartao/` (novo; os cinco tipos derivados e as duas licenças) |
 | plantas provadas e revertidas | quatro, §8 |
 | o que ficou por fazer, e é do brief | a citação de «A cor» na `IDENTIDADE.md` §2 (§1.4), com a mensagem do portão que a impede |
@@ -597,7 +597,7 @@ chave.
 ## 6 · I56 · a amarra passa a ler o `FECHO`, e a citação de «A cor» entra na §2
 
 *Construtor F (Claude Opus, `claude-opus-5[1m]`). Ramo `redesenho-v3`, a partir de
-`41161d6`. Fecha o pedido n.º 1 da §10, que é a ponta que a §1.4 deixou medida e
+`69f2f43`. Fecha o pedido n.º 1 da §10, que é a ponta que a §1.4 deixou medida e
 não improvisada. A §1.4 e a §10 ficam como foram escritas: são o registo do
 checkpoint, e reescrevê-las apagaria a razão pela qual isto existe.*
 

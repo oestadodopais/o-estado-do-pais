@@ -76,7 +76,7 @@ texto += ['', 'O `check:series` corre só sobre a parte do sítio, sem motor, co
           '- **H4-4.** Falta a leitura a frio pelo Claude Opus, com os estragos nas cópias do pacote, e a conferência da entrega pelo lugar de direção. As plantas do construtor não substituem essa leitura.', '',
           '## Commits e custo', '',
           'Commits lidos do Git no momento de gerar este relatório:', '']
-for linha in git('log', '--reverse', '--format=%H %s', '207d7134..HEAD').splitlines():
+for linha in git('log', '--reverse', '--format=%H %s', '4970eab9..HEAD').splitlines():
     sha, assunto = linha.split(' ', 1)
     texto.append(f'- `{sha}`: {assunto}.')
 texto += ['', 'A cabeça final é a do commit que guarda este relatório e os códigos. A cabeça do código está no ficheiro `portoes/cabeca`; não se atribui a corrida ao commit posterior das provas.', '',

@@ -1,6 +1,6 @@
 # Nota · o mapa da primeira página é navegação · 26.08.2026
 
-*Construtor (Claude Opus 5, `claude-opus-5[1m]`). Ramo `mapa-navegacao-2026-08-26`, a partir de `main` em `b1e9004`. Contrato: `../briefs/BRIEF-mapa-navegacao.md`, com a Emenda 19 de `direcao.md` por trás. Sem travessões nesta prosa; o ponto médio é o separador. **Todos os números desta nota vêm de um comando que está escrito ao lado deles.***
+*Construtor (Claude Opus 5, `claude-opus-5[1m]`). Ramo `mapa-navegacao-2026-08-26`, a partir de `main` em `0750619`. Contrato: `../briefs/BRIEF-mapa-navegacao.md`, com a Emenda 19 de `direcao.md` por trás. Sem travessões nesta prosa; o ponto médio é o separador. **Todos os números desta nota vêm de um comando que está escrito ao lado deles.***
 
 ---
 
@@ -23,14 +23,14 @@ As capturas do antes e do depois estão em `../capturas/mapa-navegacao-2026-08-2
 
 | commit | o quê |
 |---|---|
-| `698c10f` | a vista sai inteira: o esquema, o mapa, a pesquisa, as cadeias, o inventário |
-| `d7df4da` | as réguas: a nova, a matriz reduzida, as capturas, a linha do C1 |
-| `eb01b93` | a §1.67, esta nota, o I51 fechado, o I70 aberto, e as dez capturas |
+| `b618b72` | a vista sai inteira: o esquema, o mapa, a pesquisa, as cadeias, o inventário |
+| `6f19d96` | as réguas: a nova, a matriz reduzida, as capturas, a linha do C1 |
+| `ea1acfa` | a §1.67, esta nota, o I51 fechado, o I70 aberto, e as dez capturas |
 | (o desta ficha) | o ramo morto da pesquisa, encontrado pela busca exaustiva da regra 16 |
 
 ## 2 · O que se mediu, antes e depois
 
-Playwright, Chromium, sobre `dist/`. As duas construções são a de `main` (`b1e9004`, guardada fora do repositório) e a deste ramo.
+Playwright, Chromium, sobre `dist/`. As duas construções são a de `main` (`0750619`, guardada fora do repositório) e a deste ramo.
 
 | medida | antes | depois |
 |---|---|---|

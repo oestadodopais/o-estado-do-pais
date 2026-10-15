@@ -1,14 +1,14 @@
 {
   "bloco": "UE1d",
   "construcao": {
-    "commit": "99b9f73a8221d4f012047ec7dfeaa5768a84c0c2",
+    "commit": "ac39025efaa4e63b605ad65d8b30bb15249cc555",
     "ref": "ue1-2026-09-29",
     "env": "local",
     "origem": "git",
     "motivo": null,
     "construido_em": "2026-09-29T22:21:18.953Z"
   },
-  "cabeca_esperada": "99b9f73a8221d4f012047ec7dfeaa5768a84c0c2",
+  "cabeca_esperada": "ac39025efaa4e63b605ad65d8b30bb15249cc555",
   "larguras": [
     390,
     768,

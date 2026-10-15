@@ -1,7 +1,7 @@
 # Correções pequenas, sétima passagem · relatório do construtor
 
 *Escrito a 29.08.2026 por Claude Opus 5, ramo `pequenas-7-2026-08-29`, saído de
-`main` `3de3ba7`, contra `briefs/BRIEF-correcoes-pequenas-7.md`. Sete commits de
+`main` `6138643`, contra `briefs/BRIEF-correcoes-pequenas-7.md`. Sete commits de
 código, mais o que traz este relatório, que não pode conter o seu próprio
 resumo. Nada fundido. Sem travessões na prosa, e há um commit só para reparar os
 que escrevi contra a regra.*

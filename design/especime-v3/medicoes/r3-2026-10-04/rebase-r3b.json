@@ -1,9 +1,9 @@
 {
   "o_que": "os dois rebases da passagem R3-b do ramo r3-2026-10-04-b, nesta worktree: o main lido com git -C <árvore principal> rev-parse main antes de cada um, as cabeças antes e depois, e os conflitos resolvidos à mão. O main andou entre os dois: o RP3 aterrou enquanto os portões corriam na cabeça do primeiro.",
-  "main": "b2fbdd28de97df4a0507eedc18448924060c84d2",
+  "main": "533681fff88ee42fcb4d1c29006b6af6e259615a",
   "rebases": [
     {
-      "main": "7af9073132b92ed7aca7fec0c906f1a08626d446",
+      "main": "91294c419a9d9dbe7b2f4cd80651af4e66a80ae0",
       "main_lido_as": [
         "2026-10-04T09:42:40Z, na primeira chamada da passagem",
         "2026-10-04T09:57:19Z, logo antes do rebase (a hora do ficheiro onde a leitura ficou escrita)"
@@ -42,11 +42,11 @@
       "portoes": "na cabeça 9d75d831 (depois do commit das citações do mapa), build 0, verify 0, typecheck 0, em portoes-9d75d831/"
     },
     {
-      "main": "b2fbdd28de97df4a0507eedc18448924060c84d2",
+      "main": "533681fff88ee42fcb4d1c29006b6af6e259615a",
       "main_lido_as": "2026-10-04T10:21:22Z, logo antes do segundo rebase (a hora do ficheiro onde a leitura ficou escrita); às 10:18:57Z, no fim dos portões do primeiro, já era este",
       "rebase_comecou_as": "2026-10-04T10:21:23Z (a hora do registo da primeira paragem do segundo rebase)",
       "cabeca_antes_do_rebase": "35efe80399bf546d6428ccb3358c21a3f6ca71ed",
-      "cabeca_rebaseada": "327b3442fb6a1cad9a9ea5bf7268201a80095f4f",
+      "cabeca_rebaseada": "5f5d863212d8eceddf070f3fbca4aee24269ab00",
       "commits_rebaseados": 25,
       "conflitos_resolvidos_a_mao": [
         {
@@ -68,6 +68,6 @@
       "o_que_a_guarda_apanhou": "o resolvedor do índice fechava a construção com as dezasseis séries no tempo do RP3 (eixo «periodo»), por não saber o nome delas; o commit «R3-b (o rebase sobre o RP3)» ensina-lhe o nome"
     }
   ],
-  "merge_base_depois": "b2fbdd28de97df4a0507eedc18448924060c84d2",
+  "merge_base_depois": "533681fff88ee42fcb4d1c29006b6af6e259615a",
   "marcas_de_conflito_na_arvore": "nenhuma depois de cada rebase: git grep das três marcas sobre a árvore deu o código 1, e o mesmo comando acha uma cadeia conhecida em package.json"
 }

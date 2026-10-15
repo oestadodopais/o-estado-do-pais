@@ -1,6 +1,6 @@
 DIREÇÃO B · INSTRUMENTO À FRENTE
 Saída de `node design/direcao-b/check.mjs`, corrida a 2026-08-16 contra o `dist/`
-construído em main e897e06.
+construído em main fd3ad5b.
 
 As cinco regras foram provadas num defeito plantado antes de esta corrida contar:
   · <script> plantado no 04 → apanhado;

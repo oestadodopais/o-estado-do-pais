@@ -50,23 +50,23 @@ sem_cor = lambda t: re.sub(r"\x1b\[[0-9;]*m", "", t)
 # ------------------------------------------------------------------ o ramo e o rebase
 ramo = git("rev-parse", "--abbrev-ref", "HEAD")
 medida("ramo", ramo, "git rev-parse --abbrev-ref HEAD", "é o ramo novo da passagem", ramo == "rp3-2026-10-04-b")
-main = git("rev-parse", "7af90731")
-medida("main_do_rebase", main, "git rev-parse 7af90731 (o main confirmado na árvore principal com git rev-parse main antes do rebase)",
-       "é a base comum do ramo novo", git("merge-base", "HEAD", "7af90731") == main)
-antigo = git("log", "--reverse", "--format=%h %s", "1c4dde2f..rp3-2026-10-04").splitlines()
-novo = git("log", "--reverse", "--format=%h %s", "7af90731..HEAD").splitlines()
+main = git("rev-parse", "91294c41")
+medida("main_do_rebase", main, "git rev-parse 91294c41 (o main confirmado na árvore principal com git rev-parse main antes do rebase)",
+       "é a base comum do ramo novo", git("merge-base", "HEAD", "91294c41") == main)
+antigo = git("log", "--reverse", "--format=%h %s", "2c510494..rp3-2026-10-04").splitlines()
+novo = git("log", "--reverse", "--format=%h %s", "91294c41..HEAD").splitlines()
 por_assunto = {l.split(" ", 1)[1]: l.split(" ", 1)[0] for l in novo}
 correspondencia = [{"antigo": l.split(" ", 1)[0], "novo": por_assunto.get(l.split(" ", 1)[1]), "assunto": l.split(" ", 1)[1]} for l in antigo]
-medida("commits_do_ramo_antigo", len(antigo), "git log 1c4dde2f..rp3-2026-10-04", "o primeiro é o das séries no livro-razão", antigo[0].split(" ", 1)[0] == "35c3be98")
-medida("commits_do_ramo_novo", len(novo), "git log 7af90731..HEAD", "o ramo novo tem mais commits do que o antigo (o mapa da passagem)", len(novo) > len(antigo))
+medida("commits_do_ramo_antigo", len(antigo), "git log 2c510494..rp3-2026-10-04", "o primeiro é o das séries no livro-razão", antigo[0].split(" ", 1)[0] == "35c3be98")
+medida("commits_do_ramo_novo", len(novo), "git log 91294c41..HEAD", "o ramo novo tem mais commits do que o antigo (o mapa da passagem)", len(novo) > len(antigo))
 medida("correspondencia_dos_commits", correspondencia, "os commits do ramo antigo e do rebaseado, emparelhados pelo assunto",
        "cada commit do ramo antigo tem o seu no ramo novo", all(c["novo"] for c in correspondencia))
 medida("commits_so_do_ramo_novo", [l for l in novo if l.split(" ", 1)[1] not in {x.split(" ", 1)[1] for x in antigo}],
        "os commits do ramo novo sem par no antigo", "há o do mapa da passagem", any("o mapa do repositório com a passagem RP3-b" in l for l in novo))
-mt = subprocess.run(["git", "merge-tree", "--write-tree", "--name-only", "--no-messages", "7af90731", "rp3-2026-10-04"], capture_output=True, text=True)
+mt = subprocess.run(["git", "merge-tree", "--write-tree", "--name-only", "--no-messages", "91294c41", "rp3-2026-10-04"], capture_output=True, text=True)
 linhas_mt = mt.stdout.split("\n")
 medida("rp3b_conflitos_do_rebase", [l for l in linhas_mt[1:] if l.strip()],
-       "git merge-tree --write-tree --name-only --no-messages 7af90731 rp3-2026-10-04 (os ficheiros em conflito entre o main e o ramo antigo)",
+       "git merge-tree --write-tree --name-only --no-messages 91294c41 rp3-2026-10-04 (os ficheiros em conflito entre o main e o ramo antigo)",
        "o merge-tree diz que há conflitos (código 1) e a primeira linha é a árvore", mt.returncode == 1 and re.fullmatch(r"[0-9a-f]{40}", linhas_mt[0] or "") is not None)
 pkg = json.loads(ler("package.json"))
 cadeia = [x.strip() for x in pkg["scripts"]["verify"].split("&&")]
@@ -143,8 +143,8 @@ ex = ler(f"{B}/exportacoes.txt").split("\n") if existe(f"{B}/exportacoes.txt") e
 ex = {l.split()[0]: {"commit": l.split()[1], "codigo": int(l.split()[2])} for l in ex if len(l.split()) == 3}
 medida("rp3b_exportacoes", ex, f"{B}/exportacoes.txt (git archive de cada commit, mapa:unidades e astro build, com as mesmas dependências)",
        "as três construções estão lá, cada uma com o seu commit", set(ex) == {"main", "primeira", "cabeca"}
-       and ex["main"]["commit"] == main and ex["primeira"]["commit"] == git("rev-parse", "aefe2838") and ex["cabeca"]["commit"] == cab)
-for qual, base_c, ficheiro in (("passagem", "aefe2838", "paginas-rp3b-passagem.json"), ("main", "7af90731", "paginas-rp3b-main.json")):
+       and ex["main"]["commit"] == main and ex["primeira"]["commit"] == git("rev-parse", "fbe162ed") and ex["cabeca"]["commit"] == cab)
+for qual, base_c, ficheiro in (("passagem", "fbe162ed", "paginas-rp3b-passagem.json"), ("main", "91294c41", "paginas-rp3b-main.json")):
     if not existe(f"{B}/{ficheiro}"):
         medida(f"rp3b_{qual}_comparacao", NAO, f"{B}/{ficheiro}", "o ficheiro existe", False)
         continue

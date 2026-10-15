@@ -215,7 +215,7 @@ const TIPO = {
    fontTools sobre `tipos-cartao/`: nenhum tem o glifo; todos têm o U+00A0). O livro-razão escreve os
    milhares com U+202F, e um texto com um glifo que o tipo não tem manda o rasterizador procurar outro tipo:
    na máquina da casa é rápido, e na construção da Vercel, sem tipos do sistema, o lançamento do OE1
-   (`b920f49a`, 04.10.2026 às 14:37 UTC) ficou 45 minutos neste passo sem acabar, com 372 cartões novos
+   (`2ca74db8`, 04.10.2026 às 14:37 UTC) ficou 45 minutos neste passo sem acabar, com 372 cartões novos
    cheios de valores com milhares, e a Vercel matou a construção. Aqui, antes de medir e de desenhar, o
    espaço fino passa a espaço inseparável normal, que os tipos têm e que se lê igual; a cópia visível do
    registo fica como o modelo a escreveu, e o portão compara os valores com os dois espaços como um só. */
@@ -673,7 +673,7 @@ const destino = path.join(DIST, PASTA);
  * desenho, e um coletor pedido de propósito (`--expose-gc`) não a devolve. Com
  * 860 cartões em duas medidas (1 720 desenhos) o processo chega a 11 GB de
  * pico; na construção da Vercel, com menos memória, o passo parou aos 600
- * cartões e ficou 45 minutos sem acabar, duas vezes (`b920f49a` e `ae9c4f13`,
+ * cartões e ficou 45 minutos sem acabar, duas vezes (`2ca74db8` e `be979e31`,
  * 04.10.2026), e a Vercel matou a construção no seu limite. Até ao OE1 eram 488
  * cartões, e cabiam.
  *

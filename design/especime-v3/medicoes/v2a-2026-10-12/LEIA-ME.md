@@ -4,7 +4,7 @@ As células e as palavras foram lidas nos documentos alojados. O memorando servi
 
 ## Cabeças e âmbito da V2-a inicial
 
-Cabeça do código do sítio: `847dff47db35910a8c47da10b833cf87662f9d61`. Cabeça do código do motor: `dfeca64d1d53d7af1c776c159c4e4c2044257cd2`. Os commits posteriores de entrega contêm apenas provas e este relatório; as cabeças finais ficam na resposta da passagem.
+Cabeça do código do sítio: `8fdf0903677b7c1ed46fc2958045efa0c427f275`. Cabeça do código do motor: `dfeca64d1d53d7af1c776c159c4e4c2044257cd2`. Os commits posteriores de entrega contêm apenas provas e este relatório; as cabeças finais ficam na resposta da passagem.
 
 O guião do brief e `medir.py` contam 3211 linhas na partida e 3229 no fim, com 18 novas. A comparação dos objetos Git encontrou 0 linhas anteriores alteradas. As referências ao OE2027 passaram de 0 a 18. Os conhecidos-positivos do guião passaram.
 
@@ -123,18 +123,18 @@ O cruzamento mantém o aviso anterior do resumo global do livro do OE2026; os re
 
 ## Commits do código
 
-- sitio: `41ffc59663e62e40a5ebce1cf9346c7449edcc23`: V2-a: receber fontes seladas e conferir afirmações literais.
-- sitio: `8066b1b34dd444425c05cb0d7ef0b9b5b8bfd643`: V2-a: completar o tipo das afirmações e o guião das capturas.
-- sitio: `ee6ce409451f3bef744520e1f339d8b7c780352b`: V2-a: declarar Portugal como lugar das fontes do OE2027.
-- sitio: `51960bcb8899dd61a05da53a65c75b3544ae76b1`: V2-a: declarar o âmbito das fontes na cobertura por área.
-- sitio: `e74abc0af81cac3b0cdb679e66e1195f8e77222e`: V2-a: declarar a língua das fontes e atualizar o inventário das frases.
-- sitio: `d075f6b7a5f121d52946ab1c8029c25c79898cf3`: V2-a: medir as portas dos recibos e atualizar o registo da L1.
-- sitio: `b01db695f03069d9844c53e443a4971253e4fd34`: O escrivão corre os três portões do sítio fora da sandbox a pedido do construtor (portoes-pelo-escrivao.sh): o navegador das conferências não arranca dentro dela, como a segunda paragem da higiene mostrou; o prompt comum diz o caminho novo; o pontos.py conta uma sessão retomada pelos turnos dentro do intervalo.
-- sitio: `47df89d6b261d9c2175ae51884bcbdb3c9cf3d8c`: O escrivão captura as páginas fora da sandbox a pedido do construtor (capturar-pelo-escrivao.sh, só o captar.mjs do repositório, sobre o dist da worktree): o navegador não arranca dentro dela, como a V2-a e a higiene mostraram.
-- sitio: `847dff47db35910a8c47da10b833cf87662f9d61`: V2-a: conferir localizadores e apresentar a edição datada.
+- sitio: `38386ca95efe4ef101d4b5fdb6a730ece8c9653f`: V2-a: receber fontes seladas e conferir afirmações literais.
+- sitio: `605b84293ee7f2753bfcf7aa78e910bbf923ee87`: V2-a: completar o tipo das afirmações e o guião das capturas.
+- sitio: `c3eb141fa15160ee8b67ec90329894230806638c`: V2-a: declarar Portugal como lugar das fontes do OE2027.
+- sitio: `b6ecf814ba5fe4f45ee33651e28b46e2a13c4806`: V2-a: declarar o âmbito das fontes na cobertura por área.
+- sitio: `137a57c4fff0b294935fcc6bd8c71f1f3ab81788`: V2-a: declarar a língua das fontes e atualizar o inventário das frases.
+- sitio: `6d21f278c890aeb2043511e89be51ef49c602cfd`: V2-a: medir as portas dos recibos e atualizar o registo da L1.
+- sitio: `c781ccb35f247d37741ddbe48633e480c004a2de`: O escrivão corre os três portões do sítio fora da sandbox a pedido do construtor (portoes-pelo-escrivao.sh): o navegador das conferências não arranca dentro dela, como a segunda paragem da higiene mostrou; o prompt comum diz o caminho novo; o pontos.py conta uma sessão retomada pelos turnos dentro do intervalo.
+- sitio: `e3ff222c2644cfe34080b691838daacb2ccc8e37`: O escrivão captura as páginas fora da sandbox a pedido do construtor (capturar-pelo-escrivao.sh, só o captar.mjs do repositório, sobre o dist da worktree): o navegador não arranca dentro dela, como a V2-a e a higiene mostraram.
+- sitio: `8fdf0903677b7c1ed46fc2958045efa0c427f275`: V2-a: conferir localizadores e apresentar a edição datada.
 - motor: `dfeca64d1d53d7af1c776c159c4e4c2044257cd2`: V2-a: selar fontes do OE2027 e afirmações públicas.
 
-A primeira entrega das provas ficou no commit `367f76135c64fe384a63f76d9106890af290ed1a`. O commit `847dff47db35910a8c47da10b833cf87662f9d61` também guarda as provas da primeira corrida pelo escrivão. A cabeça posterior desta entrega contém apenas o relatório, as medições e as capturas.
+A primeira entrega das provas ficou no commit `683e000ef9883526f4e11296e82e72ff63aebb93`. O commit `8fdf0903677b7c1ed46fc2958045efa0c427f275` também guarda as provas da primeira corrida pelo escrivão. A cabeça posterior desta entrega contém apenas o relatório, as medições e as capturas.
 
 ## Regeneração e custo
 
@@ -176,11 +176,11 @@ A primeira corrida desta correção ficou em `portoes-b-primeira`: build 1, veri
 
 - V2A-23, corrigida: a K8 contava «XXV Governo Constitucional» dentro da conclusão literal do CFP como prosa da casa. A régua mantém uma ocorrência da casa por edição e só retira dessa contagem um `excerpt` cuja marca identifica uma linha existente e cujo texto coincide integralmente com o livro. Cinco plantas mantêm a recusa da citação sem marca, da linha inexistente, do texto alterado e da expressão da casa nas duas línguas. A conclusão do CFP permanece inteira.
 
-- V2A-24, decisão de entrega: o escrivão recusou o pedido único com «mais de quatrocentos ficheiros num pedido; divide-o». As provas foram divididas em dois pedidos, de 270 e 304 ficheiros. O primeiro commit de capturas é `97e6f3c64716aebfcedca57d7d0bdf7addedf9bd`; o segundo fecha o relatório e os restantes comprovativos. Nenhum dos dois altera o código verificado.
+- V2A-24, decisão de entrega: o escrivão recusou o pedido único com «mais de quatrocentos ficheiros num pedido; divide-o». As provas foram divididas em dois pedidos, de 270 e 304 ficheiros. O primeiro commit de capturas é `87bb4281eb80367d94a0ac04114d166a4aa30118`; o segundo fecha o relatório e os restantes comprovativos. Nenhum dos dois altera o código verificado.
 
 A segunda corrida ficou em `portoes-b-segunda`: build 0, verify 1, typecheck 0 e motor 0, lidos dos ficheiros. A única falha do verify foi a K8, corrigida em V2A-23 e conferida pela suite completa dos cartões com código 0.
 
-Cabeça do código do sítio: `9aab322bcc56167511fb6c20b9033814aa27dc4a`. Cabeça do código e final do motor: `b95dc75f8cfaca58aa02c5f02564b0ae4d24259f`. Os commits desta correção são `39b814b1` (medidas, provas e direitos), `468a9de0` (inventário e conferências), `9aab322b` (K8 e citações literais) e `b95dc75f` no motor. O commit final do sítio acrescenta apenas provas e o relatório; a cabeça final fica na resposta. Nas referências da tabela, `familias.mjs` pertence a esta pasta de medições e `motor/` designa a raiz do motor.
+Cabeça do código do sítio: `6d5b9d1312a68fc0c6bb696ab2263a44ec6b5e0a`. Cabeça do código e final do motor: `b95dc75f8cfaca58aa02c5f02564b0ae4d24259f`. Os commits desta correção são `b6b4edc9` (medidas, provas e direitos), `ce85e32a` (inventário e conferências), `6d5b9d13` (K8 e citações literais) e `b95dc75f` no motor. O commit final do sítio acrescenta apenas provas e o relatório; a cabeça final fica na resposta. Nas referências da tabela, `familias.mjs` pertence a esta pasta de medições e `motor/` designa a raiz do motor.
 
 | Portão final | Código lido | Ficheiro |
 |---|---:|---|
@@ -226,7 +226,7 @@ Custo: a V2-a anterior soma 16 pontos da conta e 798 609 símbolos de custo anti
 
 ## A passagem V2-a-c
 
-A entrada do sítio foi `96b6aaa9bc133d475929b3e03fb081f2748f5d2c`, com árvore limpa. A entrada do motor foi `b95dc75f8cfaca58aa02c5f02564b0ae4d24259f`, também limpa. A cabeça final V2-a-b na história atual é `5e694b9f4db99f127717f2fda3929db1a2a4e748`; a cabeça do seu código é `9aab322bcc56167511fb6c20b9033814aa27dc4a`. Os recibos históricos mantêm os carimbos originais; este relatório usa as cabeças reescritas. Os achados 1 a 5 eram plantas nas cópias e não foram transportados para o ramo. A direção tratou a história (6) e a inclusão dos corpos no pacote da leitura (parte do 7).
+A entrada do sítio foi `8e92f6b98e3d1bb4cac8f6bb5c184957786bef86`, com árvore limpa. A entrada do motor foi `b95dc75f8cfaca58aa02c5f02564b0ae4d24259f`, também limpa. A cabeça final V2-a-b na história atual é `339de493b26585547d3631851b17dcce939a929e`; a cabeça do seu código é `6d5b9d1312a68fc0c6bb696ab2263a44ec6b5e0a`. Os recibos históricos mantêm os carimbos originais; este relatório usa as cabeças reescritas. Os achados 1 a 5 eram plantas nas cópias e não foram transportados para o ramo. A direção tratou a história (6) e a inclusão dos corpos no pacote da leitura (parte do 7).
 
 | Achado | Resultado |
 |---|---|
@@ -275,7 +275,7 @@ Questões novas:
 | 14 | `design/especime-v3/medicoes/v2a-2026-10-12/LEIA-ME.md:254`; `custo-b.json`; cabeças e códigos abaixo. |
 | 15 | `scripts/afirmacoes.mjs:16`; `<motor>/publisher/v2a.py:67`; plantas nos dois leitores. |
 
-Cabeça do código conferido do sítio: `d0f5241ae869e592acc26e50960785c302c4d32f`. Cabeça do código e final do motor: `559eac976f84f6b2b9cedb624565b115ed457933`. Os commits de código do sítio são `237b4a88`, `45434201`, `6b8baa7e` e `d0f5241a`; o do motor é `559eac97`. O commit `a9ff9b47` guardou as primeiras provas; o commit `6b8baa7e` completou a régua do índice e guardou a segunda tentativa. O commit `d0f5241a` corrigiu a concordância encontrada nas capturas. A resposta final regista a cabeça posterior dos comprovativos.
+Cabeça do código conferido do sítio: `c5e47d047bb75de21babaeaa94d2a4b712ed2b8c`. Cabeça do código e final do motor: `559eac976f84f6b2b9cedb624565b115ed457933`. Os commits de código do sítio são `f30ac400`, `937c8e31`, `e5ae3751` e `c5e47d04`; o do motor é `559eac97`. O commit `0689d3cc` guardou as primeiras provas; o commit `e5ae3751` completou a régua do índice e guardou a segunda tentativa. O commit `c5e47d04` corrigiu a concordância encontrada nas capturas. A resposta final regista a cabeça posterior dos comprovativos.
 
 Os quatro códigos foram lidos dos ficheiros de `portoes-c/`: `build.codigo = 0`, `verify.codigo = 0`, `typecheck.codigo = 0`, `motor.codigo = 0`. A primeira tentativa, preservada em `portoes-c-primeira/`, foi build 1, verify 125, typecheck 0 e motor 0. A segunda tentativa, em `portoes-c-segunda/`, foi build 0, verify 1, typecheck 0 e motor 0; a recusa do índice motivou a V2A-33. A terceira tentativa, em `portoes-c-terceira/`, teve os quatro códigos a zero, mas a leitura das capturas encontrou a concordância corrigida na V2A-34. A conferência de voz isolada também conserva a recusa e a repetição verde em `c-conferencias/`.
 
@@ -287,7 +287,7 @@ As capturas em `../../capturas/v2a-2026-10-12/c/` pertencem à mesma cabeça do 
 
 Custo: a direção mediu a V2-a-b em 232 turnos, 518 020 de custo antigo e 8 pontos da semana, com a higiene em paralelo. O custo final V2-a-c ainda não foi fornecido: só o lançador o mede depois do encerramento desta passagem. Não foi exposta uma linha «tokens used».
 
-O commit `44345599ff185beab6a1966fbf22462e9536bc3d` guarda as primeiras 270 imagens. As restantes imagens, os recibos e este relatório seguem no commit final, cuja cabeça é indicada na resposta. A divisão respeita o limite de 400 ficheiros por pedido do escrivão.
+O commit `7b31d08b0cfa78191555906ec31494966dfa8c52` guarda as primeiras 270 imagens. As restantes imagens, os recibos e este relatório seguem no commit final, cuja cabeça é indicada na resposta. A divisão respeita o limite de 400 ficheiros por pedido do escrivão.
 
 ## A passagem V2-a-d
 
@@ -304,7 +304,7 @@ O mandato foi lido integralmente com a leitura V2-a-c. Os achados de um a cinco 
 | 12 | O ano da previsão é conferido antes do título da Proposta; plantas para PIB e título do documento. | `tests/linha/v2a.mjs:47` |
 | 13 | A capa do CFP lê os meses portugueses e valida o dia; uma data impossível é recusada. | `<motor>/publisher/v2a.py:175` |
 | 14 | Custo anterior registado; o custo desta passagem será acrescentado pela direção a partir do lançador. | `design/observatorio/mandatos/MANDATO-V2A-d-2026-10-14.md:26` |
-| 15 | Os portões finais conferiram o código de `b9497c1c`, sem escritas durante a corrida; os commits seguintes guardaram capturas, medições e o relatório, sem alterar o código. Os dois estados finais ficaram vazios. | `scripts/leituras/portoes-pelo-escrivao.sh:10` |
+| 15 | Os portões finais conferiram o código de `d9228a71`, sem escritas durante a corrida; os commits seguintes guardaram capturas, medições e o relatório, sem alterar o código. Os dois estados finais ficaram vazios. | `scripts/leituras/portoes-pelo-escrivao.sh:10` |
 
 ### Decisões e questões
 
@@ -322,7 +322,7 @@ O mandato foi lido integralmente com a leitura V2-a-c. Os achados de um a cinco 
 
 A preparação está em `portoes-d-preparacao/`; as mensagens dirigidas em `d-conferencias/`. Os destinos e as multiplicidades da L1 coincidem com a fotografia V2-a-c: 2 780 páginas. A vista foi comparada integralmente com a entrada da passagem, admitindo apenas a importação, a continuação dos cabeçalhos e o bloco das contas; a planta recusa uma alteração alheia.
 
-A primeira corrida completa, em `portoes-d-primeira/`, passou com códigos 0/0/0/0 na cabeça `3fb70eb74a28cc56fa58136e033953e53d82adee`, com o motor `80268af4f3ff23f6b144257bc2922a21b789daff`. O `estado.fim` contém apenas a pasta criada pelo próprio guião.
+A primeira corrida completa, em `portoes-d-primeira/`, passou com códigos 0/0/0/0 na cabeça `f32db3fd052fc96a811fe750e7f37ffa7af6303a`, com o motor `80268af4f3ff23f6b144257bc2922a21b789daff`. O `estado.fim` contém apenas a pasta criada pelo próprio guião.
 
 **V2A-44:** para satisfazer o ficheiro vazio pedido no achado 15, a pasta da corrida seguinte é preparada com um `.gitignore` comitado que exclui só os registos gerados dentro dela. A exclusão foi retirada depois da corrida, para comitar os registos. A primeira prova é conservada integralmente; não se editam os seus estados nem se alteram réguas. Nada foi escrito durante os portões.
 
@@ -332,9 +332,9 @@ Estado da entrega: correções conferidas, portões verdes, estados finais vazio
 
 ### Fecho medido
 
-Código conferido do sítio: `b9497c1cd687cc890f852ca4c81b05c4b45273c6`. Cabeça final e código do motor: `80268af4f3ff23f6b144257bc2922a21b789daff`. Os commits posteriores do sítio guardam apenas capturas, medições e este relatório; a cabeça de entrega é indicada na resposta final.
+Código conferido do sítio: `d9228a717232d72657c5401be55d615d3daf3b62`. Cabeça final e código do motor: `80268af4f3ff23f6b144257bc2922a21b789daff`. Os commits posteriores do sítio guardam apenas capturas, medições e este relatório; a cabeça de entrega é indicada na resposta final.
 
-Commits de implementação e provas: `d49b1aad`, `9c35c959`, `3fb70eb7`, `505d654e`, `b9497c1c`; primeira parte das capturas: `f3161ea9`. Motor: `80268af4`.
+Commits de implementação e provas: `9ee60a07`, `c14aebd0`, `f32db3fd`, `106d9e0d`, `d9228a71`; primeira parte das capturas: `496e0b7d`. Motor: `80268af4`.
 
 | Ficheiro lido | Código |
 |---|---|
@@ -386,7 +386,7 @@ Custo V2-a-c: 250 turnos, 511 796 de custo antigo, 5 pontos da semana sem outra 
 
 ## A passagem V2-a-e
 
-Entrada do sítio: `c4b22a56`; entrada do motor: `80268af4`. As duas árvores estavam limpas. Não foram fundidos os ramos principais. Os achados 1 a 5 eram plantas no pacote, ausentes das worktrees.
+Entrada do sítio: `dc8fe5e1`; entrada do motor: `80268af4`. As duas árvores estavam limpas. Não foram fundidos os ramos principais. Os achados 1 a 5 eram plantas no pacote, ausentes das worktrees.
 
 ### Decisões e questões
 
@@ -396,7 +396,7 @@ Entrada do sítio: `c4b22a56`; entrada do motor: `80268af4`. As duas árvores es
 - **V2A-49:** os complementos das frases são declarados na auditoria da K17. Só admitem palavras sem algarismos, valores do livro, períodos do campo `reference_date` e excertos de linhas de afirmação. A K17 recompõe o texto e confere os tokens no HTML; as plantas retiram cada tipo de marca nas duas edições.
 - **V2A-50:** a conta rodoviária pertence apenas às três linhas rodoviárias. O total nomeia os cinco setores do quadro, com os nomes originais e apoio selado, sem lhe atribuir a conta de um só setor.
 - **V2A-51:** a afirmação do PCP entra pelo token do excerto, atribuída a Paulo Raimundo; ao lado ficam os encargos brutos e líquidos rodoviários por tokens. A transcrição conserva o português também na edição inglesa, com a língua marcada. Não se tira uma conclusão sobre a afirmação.
-- **V2A-52:** o código da passagem D conferido pelos portões finais é `b9497c1c`; os commits posteriores só guardaram capturas, medições e relatório. Foi corrigida a descrição da ordem na tabela da passagem D. O caminho do guião é `scripts/leituras/portoes-pelo-escrivao.sh`.
+- **V2A-52:** o código da passagem D conferido pelos portões finais é `d9228a71`; os commits posteriores só guardaram capturas, medições e relatório. Foi corrigida a descrição da ordem na tabela da passagem D. O caminho do guião é `scripts/leituras/portoes-pelo-escrivao.sh`.
 - **V2A-53:** os portões desta passagem correm pelo escrivão porque o navegador não arranca na sandbox. A pasta própria tem a exclusão temporária dos registos preparada antes do commit de provas. Não há escritas durante a corrida; os registos e as capturas serão comitados depois, sem tocar no código conferido.
 
 ### Custo
@@ -407,7 +407,7 @@ A direção forneceu para V2-a-d: 216 turnos, 358 882 de custo antigo, 5 pontos 
 
 Os valores e as unidades das dezoito linhas coincidem com a entrada; as 3 211 linhas anteriores conservam os objetos Git. A prova está em `inspecao-e.json`. As conferências dirigidas estão em `e-conferencias/`. Os códigos finais, as cabeças e as capturas serão registados depois da corrida.
 
-**V2A-54:** a preparação em `portoes-e-preparacao/` terminou em `a10230b4` com build 1, verify 125 (não executado), typecheck 0 e motor 0. O inventário ainda tinha 26 frases antigas; saíram e entraram as 30 cadeias atuais. A conferência dirigida da voz passou. Corrigiu-se também a planta que trocava primeiro um atributo, em vez do texto visível. As 64 plantas de HTML passaram nas duas edições. A K16 passou a conferir os apoios documentais contra o pacote selado e o cruzamento, com plantas de selo, SHA, hora, página, excerto e porta. Nenhuma regra antiga foi dispensada.
+**V2A-54:** a preparação em `portoes-e-preparacao/` terminou em `77464c55` com build 1, verify 125 (não executado), typecheck 0 e motor 0. O inventário ainda tinha 26 frases antigas; saíram e entraram as 30 cadeias atuais. A conferência dirigida da voz passou. Corrigiu-se também a planta que trocava primeiro um atributo, em vez do texto visível. As 64 plantas de HTML passaram nas duas edições. A K16 passou a conferir os apoios documentais contra o pacote selado e o cruzamento, com plantas de selo, SHA, hora, página, excerto e porta. Nenhuma regra antiga foi dispensada.
 
 **V2A-55:** a tentativa isolada de `npm run check:indice` invocou o navegador por uma opção do comando e foi recusada na sandbox: `browserType.launch: Target page, context or browser has been closed`; o registo inclui `Error: kill EPERM`. A tentativa não foi repetida na sandbox; a conferência completa pertence aos portões pelo escrivão. O excerto do erro está em `e-conferencias/indice-sandbox.txt`.
 
@@ -429,9 +429,9 @@ Os valores e as unidades das dezoito linhas coincidem com a entrada; as 3 211 li
 
 ### Fecho medido da passagem E
 
-Cabeça do código do sítio, dos portões e das capturas: `9ec288fc09a23e65baf94faa6e9e2cda9d14a681`. Cabeça final e do código do motor: `d8410f793fe2f456a8897101670c09796a05fabb`. Os commits seguintes do sítio guardam capturas, medições e relatório; a cabeça final da entrega é indicada na resposta. Nenhuma página, célula dos portões ou linha do livro foi alterada depois da corrida final. No guião que extrai as frases para o relatório foi corrigida a junção da rota com `index.html`, e a extração foi executada com sucesso.
+Cabeça do código do sítio, dos portões e das capturas: `7c945b109a67e61945816c82a17014d9d515f763`. Cabeça final e do código do motor: `d8410f793fe2f456a8897101670c09796a05fabb`. Os commits seguintes do sítio guardam capturas, medições e relatório; a cabeça final da entrega é indicada na resposta. Nenhuma página, célula dos portões ou linha do livro foi alterada depois da corrida final. No guião que extrai as frases para o relatório foi corrigida a junção da rota com `index.html`, e a extração foi executada com sucesso.
 
-Commits de código e provas do sítio: `a10230b4`, `9ec288fc`. Primeira parte das capturas: `74dead0e`. Motor: `d8410f79`. Os portões correram por `scripts/leituras/portoes-pelo-escrivao.sh`, depois do commit `9ec288fc`, sem escritas do construtor durante a corrida.
+Commits de código e provas do sítio: `77464c55`, `7c945b10`. Primeira parte das capturas: `84696e25`. Motor: `d8410f79`. Os portões correram por `scripts/leituras/portoes-pelo-escrivao.sh`, depois do commit `7c945b10`, sem escritas do construtor durante a corrida.
 
 | Ficheiro lido | Código |
 |---|---|
@@ -453,7 +453,7 @@ As cinco frases do PRR, nas duas edições, foram lidas do HTML e estão integra
 
 ## A passagem V2-a-f
 
-Entrada do sítio: `58ae1d64`; entrada do motor: `d8410f79`. As duas árvores estavam limpas. O achado 1 pertence ao guião do pacote, sob responsabilidade da direção. Os achados 2 a 6 eram plantas nas cópias, ausentes do ramo. Não foram fundidos os ramos principais.
+Entrada do sítio: `a8f1bbf6`; entrada do motor: `d8410f79`. As duas árvores estavam limpas. O achado 1 pertence ao guião do pacote, sob responsabilidade da direção. Os achados 2 a 6 eram plantas nas cópias, ausentes do ramo. Não foram fundidos os ramos principais.
 
 ### Decisões e questões
 
@@ -495,7 +495,7 @@ O commit do motor `c239badfd9152633345133e5ab05dee560bd732e` passou o seu `core.
 
 ### Fecho medido da passagem F
 
-Cabeça do código do sítio, dos quatro portões e do `dist/` capturado: `a0440b562734d23344c2c6c431de826f287a6456`. Cabeça final e do código do motor: `c239badfd9152633345133e5ab05dee560bd732e`. As cabeças iniciais e finais dos portões coincidem; `estado.fim` e `motor.estado.fim` têm zero bytes. Os commits seguintes do sítio guardam apenas as provas da entrega. A cabeça final do sítio consta da resposta de entrega.
+Cabeça do código do sítio, dos quatro portões e do `dist/` capturado: `b36a7925084dda05eef1e32afd2a31b1772bd2d5`. Cabeça final e do código do motor: `c239badfd9152633345133e5ab05dee560bd732e`. As cabeças iniciais e finais dos portões coincidem; `estado.fim` e `motor.estado.fim` têm zero bytes. Os commits seguintes do sítio guardam apenas as provas da entrega. A cabeça final do sítio consta da resposta de entrega.
 
 | Ficheiro lido | Código |
 |---|---|
@@ -523,12 +523,12 @@ As capturas estão em `design/especime-v3/capturas/v2a-2026-10-12/f/`: dezasseis
 
 A passagem F fica entregue para a leitura a frio da direção. Não houve fusão de `main` ou `master`, nem publicação ou `git push`.
 
-Commits desta passagem: código e provas do sítio em `a0440b56`; primeira parte das capturas em `0d311c37`; motor em `c239badf`. O commit final do sítio guarda as restantes capturas, os códigos e o relatório, sem mudar o código conferido.
+Commits desta passagem: código e provas do sítio em `b36a7925`; primeira parte das capturas em `d243f85e`; motor em `c239badf`. O commit final do sítio guarda as restantes capturas, os códigos e o relatório, sem mudar o código conferido.
 
 
 ## A passagem V2-a-g
 
-Mandato: `design/observatorio/mandatos/MANDATO-V2A-g-2026-10-14.md`. Entrada do sítio `9a98f179`, motor `c239badf`, ambos limpos. Os achados 1 a 4 e 6 eram plantas no pacote; esta passagem trata o Major 5 e os Minor 7 a 11. As 18 linhas conservam os valores e unidades da entrada, conferidos por `conferir-g.mjs`; as 3 211 linhas anteriores conservam os objetos Git.
+Mandato: `design/observatorio/mandatos/MANDATO-V2A-g-2026-10-14.md`. Entrada do sítio `7fbcc884`, motor `c239badf`, ambos limpos. Os achados 1 a 4 e 6 eram plantas no pacote; esta passagem trata o Major 5 e os Minor 7 a 11. As 18 linhas conservam os valores e unidades da entrada, conferidos por `conferir-g.mjs`; as 3 211 linhas anteriores conservam os objetos Git.
 
 ### Os achados e as decisões
 
@@ -556,12 +556,12 @@ O motor passou 40 conferências específicas. O HTML passou 36 páginas e 114 pl
 
 V2-a-f, conforme o mandato e o lançador: 97 turnos, 291 192 de custo antigo, 4 pontos da semana com outra sessão em paralelo (RH1-c e RH1-d), contexto médio de 131 737. O custo V2-a-g consta da secção H, conforme o mandato seguinte. Não foi exposta uma linha «tokens used».
 
-**V2A-74:** a primeira corrida completa, na cabeça `67093eba559db52595b7e1ac134d176eca3f4bba`, terminou com build 1, verify 125 (não correu por dependência), typecheck 0 e motor 0. Os estados finais estavam vazios e as cabeças não mudaram durante a corrida. Os registos ficam em `portoes-g-preparacao/`. A L10 ainda exigia português no título inglês: `scripts/lingua-das-origens.mjs:12` passou a distinguir `documento_en` da língua do excerto. Quatro plantas conferem título e excerto nas duas edições. O ficheiro `portoes-g-preparacao/motor.fim` regista `2026-10-14T18:11:23Z`; `portoes-g/build.inicio` regista `2026-10-14T18:12:15Z`, 52 segundos depois. Estes registos datam o fim do motor da primeira corrida e o início do build da segunda; não datam a escrita da correção da L10 e não permitem concluir a sua ordem relativamente ao fim da primeira corrida.
+**V2A-74:** a primeira corrida completa, na cabeça `16c88493a8f70fb50116a342b187f924c9e8cddd`, terminou com build 1, verify 125 (não correu por dependência), typecheck 0 e motor 0. Os estados finais estavam vazios e as cabeças não mudaram durante a corrida. Os registos ficam em `portoes-g-preparacao/`. A L10 ainda exigia português no título inglês: `scripts/lingua-das-origens.mjs:12` passou a distinguir `documento_en` da língua do excerto. Quatro plantas conferem título e excerto nas duas edições. O ficheiro `portoes-g-preparacao/motor.fim` regista `2026-10-14T18:11:23Z`; `portoes-g/build.inicio` regista `2026-10-14T18:12:15Z`, 52 segundos depois. Estes registos datam o fim do motor da primeira corrida e o início do build da segunda; não datam a escrita da correção da L10 e não permitem concluir a sua ordem relativamente ao fim da primeira corrida.
 
 
 ### O fecho da passagem G
 
-O último commit de código e provas antes dos portões é `16d59c01c513806e80fd3bb01f1ffec320f3d8a1` no sítio; o motor é `dd5f1d5f1eb060de8803e6594e130023fc8baa00`. O sítio entrou na passagem em `9a98f179`; o motor em `c239badf`. Os commits de implementação são `67093eba` (frases, apoios e réguas), `16d59c01` (língua do título e do excerto) e `dd5f1d5f` no motor (campos dos apoios e segunda fonte). As primeiras 300 imagens foram comitadas em `44cb71e709362e568a883457c70a4aaf2872c995`. O commit que contém este fecho guarda as restantes capturas e os registos finais; não altera código. A sua cabeça final é lida de Git na resposta de entrega.
+O último commit de código e provas antes dos portões é `fe7e6fdb3c2118e929c01bed724c63e6ce4487f4` no sítio; o motor é `dd5f1d5f1eb060de8803e6594e130023fc8baa00`. O sítio entrou na passagem em `7fbcc884`; o motor em `c239badf`. Os commits de implementação são `16c88493` (frases, apoios e réguas), `fe7e6fdb` (língua do título e do excerto) e `dd5f1d5f` no motor (campos dos apoios e segunda fonte). As primeiras 300 imagens foram comitadas em `511c64760c204ef9c5b164989560307f2baffe8b`. O commit que contém este fecho guarda as restantes capturas e os registos finais; não altera código. A sua cabeça final é lida de Git na resposta de entrega.
 
 | Portão | Código lido | Ficheiro |
 | --- | --- | --- |
@@ -583,7 +583,7 @@ As capturas em `design/especime-v3/capturas/v2a-2026-10-12/g/` cobrem 16 página
 
 ## A passagem V2-a-h
 
-Entrada do sítio em `c1e2b934`, motor em `dd5f1d5f`, ambos limpos. Os achados 1 a 4 e 7 eram plantas nas cópias do pacote. Esta passagem trata os achados reais 5, 6 e 8 a 11. Os 18 valores e unidades foram comparados com a entrada; não mudaram.
+Entrada do sítio em `031c12fb`, motor em `dd5f1d5f`, ambos limpos. Os achados 1 a 4 e 7 eram plantas nas cópias do pacote. Esta passagem trata os achados reais 5, 6 e 8 a 11. Os 18 valores e unidades foram comparados com a entrada; não mudaram.
 
 | Achado | O que ganhou | Ficheiro e linha |
 | --- | --- | --- |
@@ -609,12 +609,12 @@ As conferências específicas do motor passaram 44 casos. A régua do HTML passo
 
 V2-a-g, conforme o mandato H e o lançador: 97 turnos, 267 149 de custo antigo, 4 pontos da semana com outra sessão em paralelo, contexto médio de 131 547. O custo V2-a-h cabe ao lançador. Não foi exposta uma linha «tokens used».
 
-**V2A-84:** a primeira corrida H terminou em build 1, verify 125 (não executado por dependência), typecheck 0 e motor 0. O build encontrou quatro entradas vivas da passagem C para as antigas frases dos cenários. As novas frases já estavam inventariadas; as quatro anteriores passam a retiradas, com motivo. `inventario-h.mjs` conserva essa retirada nas recomposições. A corrida fica em `portoes-h-preparacao/`, na cabeça `9f865f732c2c8e5bdff875beaf4e1498ccdc100f`; o motor manteve `83b63a88ee0292c55bf26e96c17680ab747b07d6`. As cabeças de início e fim coincidem e os dois estados finais têm zero bytes. Os ficheiros registam o fim do motor dessa corrida em `2026-10-14T19:28:02Z` e o início do build seguinte em `2026-10-14T19:29:26Z`, separados por 84 segundos. Não registam a hora da escrita da correção.
+**V2A-84:** a primeira corrida H terminou em build 1, verify 125 (não executado por dependência), typecheck 0 e motor 0. O build encontrou quatro entradas vivas da passagem C para as antigas frases dos cenários. As novas frases já estavam inventariadas; as quatro anteriores passam a retiradas, com motivo. `inventario-h.mjs` conserva essa retirada nas recomposições. A corrida fica em `portoes-h-preparacao/`, na cabeça `91c9c2f3a30281d5d862a4a32de3128800cb15cd`; o motor manteve `83b63a88ee0292c55bf26e96c17680ab747b07d6`. As cabeças de início e fim coincidem e os dois estados finais têm zero bytes. Os ficheiros registam o fim do motor dessa corrida em `2026-10-14T19:28:02Z` e o início do build seguinte em `2026-10-14T19:29:26Z`, separados por 84 segundos. Não registam a hora da escrita da correção.
 
 
 ### O fecho da passagem H
 
-O último commit de código e provas antes dos portões é `659f9d27d801cfef740486c73b2a491600642f29` no sítio; o motor tem `83b63a88ee0292c55bf26e96c17680ab747b07d6`. Os commits de implementação são `9f865f73` (frases, apoios e réguas), `659f9d27` (retirada das entradas antigas e primeira corrida conservada) e `83b63a88` no motor (apoios selados e fontes secundárias). As primeiras 300 imagens foram comitadas em `74d988f08a486e1419e9b6ed17c82c01c20406a5`. O commit que contém este fecho guarda as restantes capturas, as medições e o relatório. Estes commits posteriores não alteram código; a cabeça final é lida de Git na resposta de entrega.
+O último commit de código e provas antes dos portões é `4c789dcf56bf1fb1787683b0661dc1fca9184382` no sítio; o motor tem `83b63a88ee0292c55bf26e96c17680ab747b07d6`. Os commits de implementação são `91c9c2f3` (frases, apoios e réguas), `4c789dcf` (retirada das entradas antigas e primeira corrida conservada) e `83b63a88` no motor (apoios selados e fontes secundárias). As primeiras 300 imagens foram comitadas em `0f9608b5fe9756d413a963cc8e82066ebd1e8e76`. O commit que contém este fecho guarda as restantes capturas, as medições e o relatório. Estes commits posteriores não alteram código; a cabeça final é lida de Git na resposta de entrega.
 
 | Portão | Código lido | Ficheiro |
 | --- | --- | --- |
@@ -634,7 +634,7 @@ O pedido `capturas-pedido-h.json` cobre as 18 páginas nas duas edições e nas 
 
 ## A passagem V2-a-i
 
-O mandato I fixa a redação literal. Os achados 1 a 4 e 7 pertencem às plantas do pacote da direção; não foram introduzidos no ramo. Os valores e unidades das dezoito linhas foram comparados com a cabeça de entrada `4b19a3a1`, sem diferenças.
+O mandato I fixa a redação literal. Os achados 1 a 4 e 7 pertencem às plantas do pacote da direção; não foram introduzidos no ramo. Os valores e unidades das dezoito linhas foram comparados com a cabeça de entrada `d31d1c59`, sem diferenças.
 
 | Achado real | O que ganhou | Ficheiro e linha |
 | --- | --- | --- |
@@ -661,12 +661,12 @@ A régua do HTML conferiu 36 páginas e 192 plantas, incluindo a troca de uma pa
 Custo da V2-a-h, conforme o mandato I e o lançador: 111 turnos, 318 546 de custo antigo, 3 pontos da semana sem outra sessão em paralelo, contexto médio de 131 544. O custo da V2-a-i cabe ao lançador. Não foi exposta uma linha «tokens used».
 
 
-**V2A-93:** a primeira corrida I terminou em build 0, verify 1, typecheck 0 e motor 0, códigos lidos dos quatro ficheiros. A régua `check:mortos` recusou a constante `ppp` sem uso em `src/lib/v2a-palavras.mjs`. A correção retira essa declaração. A corrida está em `portoes-i-preparacao/`, na cabeça `9caad0b5ba35c3447c415bb9c91c05062c5cebee` do sítio e `9e370c6dcdd3049df69b7cb5cb9f02fb88a42a72` do motor. As cabeças de início e fim coincidem e os dois estados finais estão vazios. A correção conserva as frases e os valores já conferidos; os quatro portões são repetidos após novo commit de provas.
+**V2A-93:** a primeira corrida I terminou em build 0, verify 1, typecheck 0 e motor 0, códigos lidos dos quatro ficheiros. A régua `check:mortos` recusou a constante `ppp` sem uso em `src/lib/v2a-palavras.mjs`. A correção retira essa declaração. A corrida está em `portoes-i-preparacao/`, na cabeça `541bd3556ed2ed717fd30b44cddbcab6ce259eb5` do sítio e `9e370c6dcdd3049df69b7cb5cb9f02fb88a42a72` do motor. As cabeças de início e fim coincidem e os dois estados finais estão vazios. A correção conserva as frases e os valores já conferidos; os quatro portões são repetidos após novo commit de provas.
 
 
 ### O fecho da passagem I
 
-O código conferido é `b8dd37a2711f2713b2beb77202d345aa826e3a13` no sítio e `9e370c6dcdd3049df69b7cb5cb9f02fb88a42a72` no motor. Os commits de implementação são `9caad0b5` (redação, apoios, publicação e réguas), `b8dd37a2` (constante sem uso e registos da primeira corrida) e `9e370c6d` no motor (retirada do apoio de outra medida). As primeiras 300 imagens estão em `123bff9908c9c3e81b8605235db6775cb8609309`. O commit que contém este fecho guarda as restantes capturas, os códigos e o relatório. As cabeças finais são lidas de Git na resposta; os commits de capturas e relatório não alteram o código conferido.
+O código conferido é `68430e312b699a9bd0e2154006f9a3b93a88a63a` no sítio e `9e370c6dcdd3049df69b7cb5cb9f02fb88a42a72` no motor. Os commits de implementação são `541bd355` (redação, apoios, publicação e réguas), `68430e31` (constante sem uso e registos da primeira corrida) e `9e370c6d` no motor (retirada do apoio de outra medida). As primeiras 300 imagens estão em `1b7bfa8ab816a0a6c202a79a14c9288a7c14dc89`. O commit que contém este fecho guarda as restantes capturas, os códigos e o relatório. As cabeças finais são lidas de Git na resposta; os commits de capturas e relatório não alteram o código conferido.
 
 | Portão | Código lido | Ficheiro |
 | --- | --- | --- |
@@ -688,13 +688,13 @@ O pedido `capturas-pedido-i.json` cobre as dezasseis páginas alteradas, nas dua
 
 ## A passagem V2-a-j
 
-O mandato J emenda duas omissões da redação anterior: a frase do PCP passa a ter as unidades junto dos valores e a citação entre aspas angulares nas duas línguas (`familias.mjs:88` e `:92`); a conta das três páginas rodoviárias passa a dizer «em milhões de euros» ou «in millions of euros» (`src/lib/v2a-palavras.mjs:19`). As expectativas literais em `tests/cartao/v2ai-frases.json` incorporam as emendas. Foram substituídas apenas as quatro frases afetadas no inventário. Os dezoito valores e unidades permanecem iguais à entrada `4fc74676`; o motor não foi alterado.
+O mandato J emenda duas omissões da redação anterior: a frase do PCP passa a ter as unidades junto dos valores e a citação entre aspas angulares nas duas línguas (`familias.mjs:88` e `:92`); a conta das três páginas rodoviárias passa a dizer «em milhões de euros» ou «in millions of euros» (`src/lib/v2a-palavras.mjs:19`). As expectativas literais em `tests/cartao/v2ai-frases.json` incorporam as emendas. Foram substituídas apenas as quatro frases afetadas no inventário. Os dezoito valores e unidades permanecem iguais à entrada `3acbaa34`; o motor não foi alterado.
 
 **V2A-95:** as frases seguem literalmente o mandato J. As 192 plantas existentes passaram na conferência de 36 páginas, incluindo a troca de uma palavra por página e língua. Os portões e as capturas são pedidos pelo escrivão, porque o navegador não arranca na sandbox; os códigos e cabeças finais ficam no fecho abaixo.
 
 Custo da V2-a-i, conforme o mandato J e o lançador: 107 turnos, 290 637 de custo antigo, 3 pontos da semana sem outra sessão em paralelo, contexto médio de 128 541. O custo da V2-a-j cabe ao lançador. Não foi exposta uma linha «tokens used».
 
-Fecho J: o commit de código e provas é `d4aa1f19b163435c8ca808f8c5588b299ba88cb9` (`V2-a-j: repor unidades e aspas nas frases do mandato`). No motor, a cabeça final e a do código conferido continuam em `9e370c6dcdd3049df69b7cb5cb9f02fb88a42a72`, sem commit nesta passagem. O commit final do sítio conserva apenas estes registos e capturas; a sua cabeça é comunicada na entrega, depois de o escrivão a devolver.
+Fecho J: o commit de código e provas é `e7ddb83e354a9e9477988df8d468bfd031ee066a` (`V2-a-j: repor unidades e aspas nas frases do mandato`). No motor, a cabeça final e a do código conferido continuam em `9e370c6dcdd3049df69b7cb5cb9f02fb88a42a72`, sem commit nesta passagem. O commit final do sítio conserva apenas estes registos e capturas; a sua cabeça é comunicada na entrega, depois de o escrivão a devolver.
 
 | Código lido em `portoes-j/` | Resultado |
 | --- | --- |
@@ -719,7 +719,7 @@ Custo da V2-a-j, comunicado pelo lugar de direção no mandato K: 49 turnos, 143
 
 O commit do motor `66c9d0f37cbc6aaa8e2e1c2c844ef25372828495` passou o hook `core.gate`. As conferências preparatórias de cartões, prosa e declarações sem uso passaram. Os portões finais e as capturas serão registados no fecho abaixo.
 
-Fecho K: os portões conferiram `17e6d819c0cb8dc77dda9cd2072d70d27cf9b83e` no sítio e `66c9d0f37cbc6aaa8e2e1c2c844ef25372828495` no motor. Esta é também a cabeça final do motor. O commit do sítio contém as emendas e as provas; os commits seguintes guardam apenas capturas e registos. As cabeças finais são lidas do Git na entrega.
+Fecho K: os portões conferiram `82b030447079c3a9cfb908e18bdfa063c0b2f1a6` no sítio e `66c9d0f37cbc6aaa8e2e1c2c844ef25372828495` no motor. Esta é também a cabeça final do motor. O commit do sítio contém as emendas e as provas; os commits seguintes guardam apenas capturas e registos. As cabeças finais são lidas do Git na entrega.
 
 | Código lido em `portoes-k/` | Resultado |
 | --- | --- |
@@ -732,4 +732,4 @@ Os portões correram pelo escrivão, porque o navegador das conferências não a
 
 As capturas em `../../capturas/v2a-2026-10-12/k/` cobrem as 16 páginas tocadas, nas duas edições e nas larguras 390, 768, 1024, 1280 e 1600: 160 casos, 480 PNG com sha256 conferido e dimensões das páginas inteiras iguais ao recibo. Sem falhas, transbordamentos, recursos externos, erros ou pedidos recusados. Foram vistos os 32 cabeçalhos móveis e 12 cabeçalhos a 1280, sem cortes ou sobreposições; `capturas-k-inspecao.json` identifica os 44 ficheiros observados. Não houve alteração de código depois dos portões.
 
-As capturas portuguesas ficam no commit `3ca9a8e8c12f96435bf354f4154f2cf2d25e9775`; as inglesas, o recibo e os registos finais seguem no commit de fecho. A divisão respeita o limite de ficheiros por pedido ao escrivão.
+As capturas portuguesas ficam no commit `d0b39ddfa4dd6c18e46f2eb7eede33c10d15732e`; as inglesas, o recibo e os registos finais seguem no commit de fecho. A divisão respeita o limite de ficheiros por pedido ao escrivão.

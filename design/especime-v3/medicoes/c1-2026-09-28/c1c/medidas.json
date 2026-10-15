@@ -1,6 +1,6 @@
 {
   "recibos_finais": {
-    "cabeca": "3362a4c0df19410129eaadce534fc3fd8a528318",
+    "cabeca": "3469d83379090a7a1b4410e13613e0ec045f1497",
     "casos": [
       {
         "id": "divida-das-familias-2025-ue",
@@ -213,7 +213,7 @@
   "historia": [
     {
       "id": "divida-das-familias-2025-ue",
-      "lista_igual_a_a677770f": true,
+      "lista_igual_a_04438bb9": true,
       "verifications": [
         {
           "date": "2026-09-21",
@@ -243,7 +243,7 @@
     },
     {
       "id": "indice-de-divida-limite-legal",
-      "lista_igual_a_a677770f": true,
+      "lista_igual_a_04438bb9": true,
       "verifications": [
         {
           "date": "2026-09-01",
@@ -266,7 +266,7 @@
     }
   ],
   "enderecos_antes": {
-    "cabeca": "e38d5f8b",
+    "cabeca": "1133bb86",
     "linhas_lidas": 3009,
     "linhas_com_endereco_diferente": 18,
     "linhas_sem_historia_explicativa": 18,
@@ -688,11 +688,11 @@
         "passou": true
       },
       {
-        "nome": "divida-das-familias-2025-ue: lista exata de a677770f",
+        "nome": "divida-das-familias-2025-ue: lista exata de 04438bb9",
         "passou": true
       },
       {
-        "nome": "indice-de-divida-limite-legal: lista exata de a677770f",
+        "nome": "indice-de-divida-limite-legal: lista exata de 04438bb9",
         "passou": true
       },
       {
@@ -767,30 +767,30 @@
       "anos": 2
     }
   },
-  "base": "b7f352ce253effe7d21dc97bacc1d9b67665e592",
+  "base": "472d1a43195856b4ef4624f61b1cb8f018cc86e3",
   "base_motor": "3e83a271f4c5af0b1f6809436916c1b06d6e0b1c",
-  "cabeca_sitio": "3362a4c0df19410129eaadce534fc3fd8a528318",
+  "cabeca_sitio": "3469d83379090a7a1b4410e13613e0ec045f1497",
   "cabeca_motor": "ba47a125e68c9a87cc4bb5fae4524565bb413e7d",
   "commits": {
     "sitio": [
       {
-        "hash": "ada78b694e4cc11975b3172c35a31917fcebfa6b",
+        "hash": "54f56d1250fc250ee37cb33f2ad1d777790e502a",
         "assunto": "C1: alinhar a dívida de Évora com o calendário dos mandatos"
       },
       {
-        "hash": "28b17e2a2f283ef1b734be7a02f4012eea10f347",
+        "hash": "afe4013dac16f9de0c5f41fe8a20394c1efc4b11",
         "assunto": "C1: oferecer as medidas dos concelhos em ficheiro e preparar os rótulos"
       },
       {
-        "hash": "005c4a2eb0c55cce1abd762b8c5538dbec7227ca",
+        "hash": "9b550a2312e292cac0c9bacfea7fc7a6ab34a34f",
         "assunto": "C1: separar valores e explicar as leituras e as conferências"
       },
       {
-        "hash": "d9ab0805ba9510df7ded6fa2350e65b35a0e8ab3",
+        "hash": "d50078dace78327e4f65a8deda9dc2727e782eee",
         "assunto": "C1: registar as três releituras iguais do PIB real por habitante"
       },
       {
-        "hash": "7a7d2f8d43f46e4bb599987d2f25080ace880d9b",
+        "hash": "8c0200a59a4c17bb298e15aa669f121510598896",
         "assunto": "C1: separar também as unidades nos cartões dos concelhos"
       },
       {
@@ -798,35 +798,35 @@
         "assunto": "C1: fixar as palavras e preparar a medição da entrega"
       },
       {
-        "hash": "3885a4e6180961ece14e54f03e46b0d3abbb2e6d",
+        "hash": "cacef5d1c78dd0f186ccce8c8dbca7af84af9feb",
         "assunto": "C1: fechar os tipos do CSV e retirar a importação sem uso"
       },
       {
-        "hash": "6c16c719f7bbc5164182ea5c62a51b656bf4fd43",
+        "hash": "c6dc526e292e21946c6cf99aad7a7efd6946eb76",
         "assunto": "C1: entregar as provas das correções de confiança"
       },
       {
-        "hash": "04ef76eb4ff04ac6110012934b76f9b7d0536b34",
+        "hash": "1b62bf6e5bf9f3137bc7895c1b25491e18e831d6",
         "assunto": "C1: a resposta do construtor do Codex"
       },
       {
-        "hash": "533fea9d40720e72c009e2aeb0d0ba72ad0d1feb",
+        "hash": "ad034ac8fe7551068d6f24dcb41731edf82bdf1f",
         "assunto": "Os dois memorandos de 28.09.2026 sobre o que os dados do projeto já dizem e como o mostrar (o Claude Opus 5.5 e o Codex gpt-6-astra, cada um por si a partir do mesmo pedido), com o pedido comum; a síntese do lugar de direção está no Drive do diretor"
       },
       {
-        "hash": "b7f352ce253effe7d21dc97bacc1d9b67665e592",
+        "hash": "472d1a43195856b4ef4624f61b1cb8f018cc86e3",
         "assunto": "C1c: a leitura a frio do C1 pelo Claude Opus 5.5 (cinco plantas em cinco) com o registo das plantas, a quinta redação das leituras (o objetivo do BCE no cartão do IHPC, dito como objetivo da zona do euro e não como veredicto), e o guião da passagem de correção para o Codex, com a atualização da dívida das famílias da União pelo circuito do enquadramento"
       },
       {
-        "hash": "7d12f4ab3ff0247c0d81b42ddf64d2992dbd0f18",
+        "hash": "d8830e746f238eb70c2670602b7d6c89276e372c",
         "assunto": "C1c: atualizar a dívida europeia e repor as bandeiras e a origem legal"
       },
       {
-        "hash": "0a9213f5798acd2ceae2bcb66b8163eccd26e00c",
+        "hash": "8af545d6a60435981972e1862b1e176251ed70ed",
         "assunto": "C1c: dizer cada releitura e distinguir o valor encontrado do publicado"
       },
       {
-        "hash": "feeb59754996ead2a31dff609a9a0000e99d5816",
+        "hash": "2754bbb6a5dd17091709d428fa7a0503dd938906",
         "assunto": "C1c: sustentar o objetivo do BCE e explicar a dívida e o câmbio"
       },
       {
@@ -834,11 +834,11 @@
         "assunto": "C1c: conservar a nota no ficheiro e situar a dívida no fim do ano"
       },
       {
-        "hash": "8d7ddbdba2e5ca98f5745dd144250e0b4c95d875",
+        "hash": "6a9b5aa1c78ddeafae845fe553500b754cc18c0d",
         "assunto": "C1c: entregar as provas e a paragem na história da fonte legal"
       },
       {
-        "hash": "e38d5f8b7aeff11d9e808f893cc6944bed8e1f8e",
+        "hash": "1133bb86eb7a163ab8327b3a4663d0dae0fe551b",
         "assunto": "C1c: a decisão do lugar de direção sobre a paragem da DGAL (a regra 15 lê o acesso em vigor no dia de cada reconferência, pela história tipada; as duas reconferências retiradas voltam; a linha da União prova o acesso anterior com uma entrada de proveniência) e o guião da retoma do construtor do Codex"
       },
       {
@@ -854,7 +854,7 @@
         "assunto": "C1c: marcar a língua da edição também na história da proveniência"
       },
       {
-        "hash": "3362a4c0df19410129eaadce534fc3fd8a528318",
+        "hash": "3469d83379090a7a1b4410e13613e0ec045f1497",
         "assunto": "C1c: escrever as datas históricas na forma da casa e conferir a mesma data"
       }
     ],
@@ -2667,19 +2667,19 @@
   "portoes": {
     "build": {
       "codigo": 0,
-      "cabeca": "3362a4c0df19410129eaadce534fc3fd8a528318",
+      "cabeca": "3469d83379090a7a1b4410e13613e0ec045f1497",
       "inicio": "2026-09-28T15:31:33.937947+00:00",
       "fim": "2026-09-28T15:36:45.003338+00:00"
     },
     "verify": {
       "codigo": 0,
-      "cabeca": "3362a4c0df19410129eaadce534fc3fd8a528318",
+      "cabeca": "3469d83379090a7a1b4410e13613e0ec045f1497",
       "inicio": "2026-09-28T15:37:48.467671+00:00",
       "fim": "2026-09-28T15:46:10.847526+00:00"
     },
     "typecheck": {
       "codigo": 0,
-      "cabeca": "3362a4c0df19410129eaadce534fc3fd8a528318",
+      "cabeca": "3469d83379090a7a1b4410e13613e0ec045f1497",
       "inicio": "2026-09-28T15:31:24.190666+00:00",
       "fim": "2026-09-28T15:31:24.402857+00:00"
     }
@@ -4747,7 +4747,7 @@
     }
   },
   "capturas": {
-    "dist_construido_de": "3362a4c0df19410129eaadce534fc3fd8a528318",
+    "dist_construido_de": "3469d83379090a7a1b4410e13613e0ec045f1497",
     "larguras": [
       390,
       768,

@@ -1,10 +1,10 @@
 {
   "bloco": "H3",
   "guiao": "design/especime-v3/medicoes/h3-2026-10-05/medir-h3.mjs",
-  "cabeca_medida": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+  "cabeca_medida": "69dfb859eedefb15f7aae931a79d03a888a37841",
   "arvore_limpa": true,
-  "base_do_ramo": "98a9d1b5",
-  "construcao": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+  "base_do_ramo": "ee81a00a",
+  "construcao": "69dfb859eedefb15f7aae931a79d03a888a37841",
   "quantas_medidas": 128,
   "medidas": [
     {

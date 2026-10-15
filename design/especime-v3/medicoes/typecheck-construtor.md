@@ -1,13 +1,13 @@
 # Bloco F0.4 · o `typecheck` a valer, primeira etapa · relatório do construtor
 
-*Escrito pelo construtor (Claude Opus 5) a 03.09.2026, no ramo `typecheck-2026-09-03`, a partir de `main` em `2ab66578`. O bloco é o F0.4 do `design/observatorio/PLANO-fiabilidade-2026-09-02.md` §2, e o achado é o da `AUDITORIA-2026-09-02.md` §4: «`npm run typecheck` confere um ficheiro». Cada número deste relatório traz o comando que o produziu. `[V]` é medido, `[I]` é inferido. Sem travessões na prosa.*
+*Escrito pelo construtor (Claude Opus 5) a 03.09.2026, no ramo `typecheck-2026-09-03`, a partir de `main` em `21c4b14e`. O bloco é o F0.4 do `design/observatorio/PLANO-fiabilidade-2026-09-02.md` §2, e o achado é o da `AUDITORIA-2026-09-02.md` §4: «`npm run typecheck` confere um ficheiro». Cada número deste relatório traz o comando que o produziu. `[V]` é medido, `[I]` é inferido. Sem travessões na prosa.*
 
 ## 1 · O que estava errado, medido
 
 `tsconfig.check.json` trazia `checkJs: false`. O programa tinha 74 ficheiros do projeto, e **um só era conferido**: o `astro.config.mjs`, o único com `// @ts-check` na cabeça. Os outros 73 entravam no programa e passavam sem uma única conferência de tipo. Um portão nomeado como verde que não podia falhar.
 
 ```
-$ npm run typecheck                                      # em main, 2ab66578
+$ npm run typecheck                                      # em main, 21c4b14e
 EXIT=0                                                   # em 0,401 s
 $ npx tsc -p tsconfig.check.json --listFiles | wc -l
      726                                                 # 74 fora de node_modules
@@ -21,12 +21,12 @@ Ligado o `checkJs` numa cópia de rascunho (`tsconfig.scratch-src.json`, medido 
 
 | onde | erros [V] | comando |
 |---|---|---|
-| no commit da auditoria (`96af81bc`), só `src/` | **461** | `tsc -p <rascunho> --pretty false` numa árvore em `96af81bc` |
+| no commit da auditoria (`af96995a`), só `src/` | **461** | `tsc -p <rascunho> --pretty false` numa árvore em `af96995a` |
 | no commit da auditoria, `src/` mais `site.config.mjs` | 462 | o mesmo |
-| no ponto de partida do ramo (`2ab66578`) | 528 | o mesmo, na árvore do ramo |
+| no ponto de partida do ramo (`21c4b14e`) | 528 | o mesmo, na árvore do ramo |
 | no ponto de partida, dentro do programa final (sem `src/data/sobre.mjs`, §6) | **526** | o mesmo, menos as 2 linhas de `sobre.mjs` |
 
-**O 461 da auditoria reproduz-se exactamente.** A auditoria contou `src/`; a contagem de hoje soma-lhe o `site.config.mjs`, e por isso dá 462 no mesmo commit. Os 67 erros a mais no ponto de partida do ramo são de cinco ficheiros que mexeram entre 02 e 03.09 (`git diff --numstat 96af81bc 2ab66578 -- src/lib src/data src/i18n`): `src/lib/decimal.mjs` (novo, 350 linhas, do bloco F0.5), `src/lib/jsonld.mjs` (novo, 40 linhas), `documentos.mjs` (+387), `eyetext.mjs` (+132), `ledger.mjs` (+114).
+**O 461 da auditoria reproduz-se exactamente.** A auditoria contou `src/`; a contagem de hoje soma-lhe o `site.config.mjs`, e por isso dá 462 no mesmo commit. Os 67 erros a mais no ponto de partida do ramo são de cinco ficheiros que mexeram entre 02 e 03.09 (`git diff --numstat af96995a 21c4b14e -- src/lib src/data src/i18n`): `src/lib/decimal.mjs` (novo, 350 linhas, do bloco F0.5), `src/lib/jsonld.mjs` (novo, 40 linhas), `documentos.mjs` (+387), `eyetext.mjs` (+132), `ledger.mjs` (+114).
 
 ### Por diretório, no programa final
 
@@ -290,7 +290,7 @@ Os doze passos verdes, `npm run build`, `npm run verify` e `npm run typecheck` e
 ## S1 · O que mudou, em números
 
 ```
-$ git diff --stat 2ab66578 | tail -1
+$ git diff --stat 21c4b14e | tail -1
  42 files changed, 2522 insertions(+), 264 deletions(-)
 $ npm run typecheck   → EXIT=0, 0,208 s
 $ npm run verify      → EXIT=0, 58,5 s
@@ -322,7 +322,7 @@ Zero antes do bloco e zero depois: nenhuma dispensa existia e nenhuma se acresce
 A frase «cinco refactorizações; tudo o resto são comentários» estava errada, e o número do leitor está certo em ordem de grandeza. Medido sobre o diff inteiro do ramo, contando como executável toda a linha acrescentada ou retirada que não seja em branco nem comentário:
 
 ```
-$ git diff 2ab66578 -- src/ site.config.mjs scripts/ > diff.patch   # e o contador do §S3
+$ git diff 21c4b14e -- src/ site.config.mjs scripts/ > diff.patch   # e o contador do §S3
 HUNKS COM LINHA EXECUTÁVEL: 110 de 263 hunks
 LINHAS EXECUTÁVEIS: +761 -169
 ```
@@ -373,7 +373,7 @@ design/especime-v3/medicoes/typecheck-dist/dist-antes.sha256    11 420 linhas
 design/especime-v3/medicoes/typecheck-dist/dist-depois.sha256   11 420 linhas
 ```
 
-São a saída crua de `shasum -a 256` sobre todos os ficheiros de `dist/`, por ordem de caminho. **Refizeram-se depois de `main` se mexer** (§S13): o «antes» é agora `origin/main` em `df20ce65`, construído numa árvore de trabalho própria, e o «depois» é a árvore fundida em `8f5d2aa4`. Quem quiser refazer a comparação corre:
+São a saída crua de `shasum -a 256` sobre todos os ficheiros de `dist/`, por ordem de caminho. **Refizeram-se depois de `main` se mexer** (§S13): o «antes» é agora `origin/main` em `028907fe`, construído numa árvore de trabalho própria, e o «depois» é a árvore fundida em `d11ac382`. Quem quiser refazer a comparação corre:
 
 ```
 $ diff design/especime-v3/medicoes/typecheck-dist/dist-antes.sha256 \
@@ -425,7 +425,7 @@ Medido a 03.09.2026: as **29 de 29** unidades de `mapa/pais.json` declaram `parc
 ## S7 · Major 16 · os `any`
 
 ```
-$ git diff -U0 2ab66578 -- src/ site.config.mjs | grep '^+' | grep -v '^+++' | grep -c '\bany\b'
+$ git diff -U0 21c4b14e -- src/ site.config.mjs | grep '^+' | grep -v '^+++' | grep -c '\bany\b'
 ```
 
 **43 na primeira passagem, 0 na segunda** (as únicas ocorrências que sobram da palavra são quatro linhas de prosa em comentários que explicam porque saíram). Onde foram parar:
@@ -549,7 +549,7 @@ Para cada guarda, um caso que tem de ser recusado e um que tem de passar, com a 
 `main` mexeu-se enquanto este bloco corria: entraram as conferências no recibo
 (as 936 reconferências, o formato novo de `src/data/fontes.mjs`, o
 `LinhaView.astro` e a régua `check:fontes`). O ramo foi fundido com `origin/main`
-em `df20ce65` antes do empurrão final.
+em `028907fe` antes do empurrão final.
 
 **O único conflito** foi o `verify` do `package.json`, onde cada lado tinha
 acrescentado uma régua à cadeia: ficam as duas, o `check:fontes` no lugar onde

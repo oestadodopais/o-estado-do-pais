@@ -13,7 +13,7 @@ import unittest
 PASTA = Path(__file__).resolve().parent
 SITIO = PASTA.parents[3]
 BASE_MOTOR = '465d01e7853f2729fcaa4ba63160b6338ba5de1e'
-BASE_SITIO = '01ccb1e53c5b2d932b5388bb89215b209d40d418'
+BASE_SITIO = 'e6d1a30729d07ba7f22e8cae05bde01af6da3bff'
 
 
 def guardar(nome, dado):
@@ -230,7 +230,7 @@ def main():
     cabecas = {'motor': git(motor, 'rev-parse', 'HEAD'), 'motor_codigo': codigo,
         'sitio_antes_fecho': git(SITIO, 'rev-parse', 'HEAD'), 'sitio_codigo': codigo_sitio,
         'commits_motor': git(motor, 'log', '--reverse', '--format=%H %s', 'e3608ab..HEAD').splitlines(),
-        'commits_sitio': git(SITIO, 'log', '--reverse', '--format=%H %s', '7cb8760d..HEAD').splitlines()}
+        'commits_sitio': git(SITIO, 'log', '--reverse', '--format=%H %s', '14709d6f..HEAD').splitlines()}
     guardar('cabecas-c.json', cabecas)
     linhas = ['## A passagem V1-c', '',
         'Medida por `python3 <medicoes>/medir_v1c.py --motor <motor> --provas --portao`. As decisões V1-9, V1-16 e V1-17 ficam substituídas pelas regras desta passagem: limitações separadas das falhas, orçamento próprio do cumulativo, DAR e DR primeiro e reconferência semanal declarada.', '',

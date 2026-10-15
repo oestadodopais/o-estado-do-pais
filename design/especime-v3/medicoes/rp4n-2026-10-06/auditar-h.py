@@ -5,7 +5,7 @@ site=Path.cwd();motor=Path(os.environ['RESEARCHHUB_DIR']);b=Path(__file__).paren
 def git(p,*args):return subprocess.check_output(['git',*args],cwd=p,text=True).strip()
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def escreve(nome,obj):(out/nome).write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n')
-base_s='66852410165e7f38b0bd42757e848681e0468db1';base_m='542fe4ee9d67ecf2245892fd98ccd1c442829704'
+base_s='927fe0ae1f6f3473cea9e0fd2a4fb56901956066';base_m='542fe4ee9d67ecf2245892fd98ccd1c442829704'
 m=json.loads((motor/'publisher/recortes/pensao-rp4n.json').read_text());a=m['alojamento'];rel=Path(a['manifesto']).parent
 principal=Path(git(motor,'rev-parse','--path-format=absolute','--git-common-dir')).parent
 copias=[];pedidos=[]

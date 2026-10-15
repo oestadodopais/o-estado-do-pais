@@ -35,8 +35,8 @@
    "descricao": "o relatório diz que a prova da reescrita comparou 44 pares de commits, na cópia, contra a prova (45 pares) e a lista dos commits",
    "sha256_antes": "985fa6d56f8cb30c8127d6959a294db38c8b8ca4a3130d8070c32f917f47479b",
    "sha256_depois": "1ca80183bf8adae2e5052d14c0b855e686da3dcc76c88b29a74965c89e00d22e",
-   "contexto_antes": "361 | 542fe4ee9d67ecf2245892fd98ccd1c442829704 |\n\nA cabeça do sítio depois da reescrita, antes dos novos commits, é `478c83688116401055a7ba26b9aa3318d59f1d37`. A prova comparou 45 pares; árvores idênticas: `true`. O guião foi `git filter-branch -f --msg-filter`, limitado a juntar os trailers. A cópia herdada foi reposta num nome separado depoi",
-   "contexto_depois": "361 | 542fe4ee9d67ecf2245892fd98ccd1c442829704 |\n\nA cabeça do sítio depois da reescrita, antes dos novos commits, é `478c83688116401055a7ba26b9aa3318d59f1d37`. A prova comparou 44 pares; árvores idênticas: `true`. O guião foi `git filter-branch -f --msg-filter`, limitado a juntar os trailers. A cópia herdada foi reposta num nome separado depoi"
+   "contexto_antes": "361 | 542fe4ee9d67ecf2245892fd98ccd1c442829704 |\n\nA cabeça do sítio depois da reescrita, antes dos novos commits, é `ed7a9e198a0316ebd4a102fb018e59c966ad0560`. A prova comparou 45 pares; árvores idênticas: `true`. O guião foi `git filter-branch -f --msg-filter`, limitado a juntar os trailers. A cópia herdada foi reposta num nome separado depoi",
+   "contexto_depois": "361 | 542fe4ee9d67ecf2245892fd98ccd1c442829704 |\n\nA cabeça do sítio depois da reescrita, antes dos novos commits, é `ed7a9e198a0316ebd4a102fb018e59c966ad0560`. A prova comparou 44 pares; árvores idênticas: `true`. O guião foi `git filter-branch -f --msg-filter`, limitado a juntar os trailers. A cópia herdada foi reposta num nome separado depoi"
   },
   {
    "id": "P5",

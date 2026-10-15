@@ -11,9 +11,9 @@ manda: onde os dois textos discordarem, o número certo é o da §9, porque é o
 *Escrito pelo construtor (Claude Opus 5) a 04.09.2026, sobre o brief
 `design/observatorio/BRIEF-F1.7-acessibilidade-e-alvos.md` e sobre a linha 71 da
 auditoria de 02.09. Ramo `alvos-2026-09-04`, a partir de `origin/main` em
-`8b2bbafc` (o SHA que o brief mandava confirmar era `86632082`; entre a leitura
+`74502a14` (o SHA que o brief mandava confirmar era `7a83334d`; entre a leitura
 do brief e a primeira medição o lugar de direção fundiu o F1.2b e mandou fundir,
-e o ANTES deste relatório é `8b2bbafc`, não `86632082`). Cada número aqui foi
+e o ANTES deste relatório é `74502a14`, não `7a83334d`). Cada número aqui foi
 medido com a régua que este bloco escreve, sobre uma construção do sítio; onde
 uma coisa não se fez, diz-se qual e porquê. Sem travessões na prosa.*
 
@@ -70,7 +70,7 @@ medição que a obrigou:
 
 ## 2 · H1 a H13, antes e depois
 
-O ANTES é a construção de `8b2bbafc`, medida com a MESMA régua (`OEDP_DIST`
+O ANTES é a construção de `74502a14`, medida com a MESMA régua (`OEDP_DIST`
 aponta-a para outra construção, que é a convenção de `tests/documentos/moldura.mjs`).
 
 | # | o que mede | antes | depois |
@@ -430,8 +430,8 @@ O `typecheck` apanhou um defeito deste bloco antes de ele chegar a lado nenhum:
 `ultimoTitulo`, em `src/lib/registo-html.mjs`, ficava com um tipo implícito, e o
 programa é estrito sobre `src/lib`. Levou a declaração que lhe faltava.
 
-Correram duas vezes: sobre a árvore fundida com `origin/main` em `0b51016d`
-(`f5bd1eba`), e outra vez sobre a cabeça final, depois de a régua ganhar o
+Correram duas vezes: sobre a árvore fundida com `origin/main` em `06bd7905`
+(`a8bf71a3`), e outra vez sobre a cabeça final, depois de a régua ganhar o
 segundo canal do estrago (§5), porque essa mudança é código que o `verify`
 corre. Os seis códigos de saída são zero.
 
@@ -475,7 +475,7 @@ nem no endereço da fonte, no título do documento ou nas datas de `LinhaView`.
 1023, 1280): o índice dos concelhos (o primeiro grupo da lista, que é onde as
 fichas se veem), uma linha, uma região, a manchete da primeira página, a
 manchete de um concelho e o rodapé, nas duas edições. O ANTES foi fotografado
-com o mesmo guião sobre a construção de `8b2bbafc` (`OEDP_DIST`).
+com o mesmo guião sobre a construção de `74502a14` (`OEDP_DIST`).
 
 **Na segunda passagem, 30 das 60 são iguais byte a byte, e as 30 que diferem são
 três famílias, todas esperadas:** as fichas dos concelhos (10, mais altas), o

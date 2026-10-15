@@ -10512,7 +10512,7 @@
 > node scripts/stamp-version.mjs
 
 
-[90m  versão · 2a8da70 (b1-peca2-2026-09-21, git)[0m
+[90m  versão · 7c30beb (b1-peca2-2026-09-21, git)[0m
 
 > o-estado-do-pais@0.1.0 cartoes
 > node scripts/cartoes.mjs

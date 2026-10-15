@@ -1,6 +1,6 @@
 # Bloco F1.8 · a moldura dos documentos alojados · o relatório do construtor
 
-*Escrito pelo construtor (Claude Opus 5) a 03.09.2026, no ramo `moldura-2026-09-03` a partir de `origin/main` em `d447286f`. O bloco é o F1.8 do `PLANO-fiabilidade-2026-09-02.md` §3, e o brief é `design/observatorio/BRIEF-F1.8-moldura-dos-documentos.md`. Cada número aqui foi medido com o comando que está ao lado, nos dezasseis documentos alojados e nos dois temas que eles próprios declaram; onde o brief disse uma coisa e a medição disse outra, está escrito qual foi qual. Sem travessões na prosa.*
+*Escrito pelo construtor (Claude Opus 5) a 03.09.2026, no ramo `moldura-2026-09-03` a partir de `origin/main` em `a9574346`. O bloco é o F1.8 do `PLANO-fiabilidade-2026-09-02.md` §3, e o brief é `design/observatorio/BRIEF-F1.8-moldura-dos-documentos.md`. Cada número aqui foi medido com o comando que está ao lado, nos dezasseis documentos alojados e nos dois temas que eles próprios declaram; onde o brief disse uma coisa e a medição disse outra, está escrito qual foi qual. Sem travessões na prosa.*
 
 ## 0 · O que ficou feito, e o que não
 
@@ -25,13 +25,13 @@ node tests/documentos/moldura.mjs --json <ficheiro> --vermelhos     # com as pla
 OEDP_DIST=<outra construção> node tests/documentos/moldura.mjs      # o antes
 ```
 
-O ANTES foi medido sobre a construção de `origin/main` em `d447286f`, extraída com `git archive origin/main | tar -x -C <pasta>` e construída lá (`npm ci` e `npm run build`, saída 0), e depois medida com a MESMA régua por `OEDP_DIST`. Sem isso os dois lados não eram comparáveis: uma régua escrita depois da mudança e corrida só depois da mudança não mede um antes, mede um depois.
+O ANTES foi medido sobre a construção de `origin/main` em `a9574346`, extraída com `git archive origin/main | tar -x -C <pasta>` e construída lá (`npm ci` e `npm run build`, saída 0), e depois medida com a MESMA régua por `OEDP_DIST`. Sem isso os dois lados não eram comparáveis: uma régua escrita depois da mudança e corrida só depois da mudança não mede um antes, mede um depois.
 
 A régua mede o âmbito da moldura quando ela existe e o corpo (menos a faixa) quando não existe, exactamente para que os dois lados contem as mesmas coisas. E **uma medição vazia não é um verde**: a primeira forma da régua dava C2 e C5 verdes sobre a construção antiga porque não encontrava moldura nenhuma e portanto não media nada. As duas células passaram a exigir que o número de coisas medidas seja maior do que zero.
 
 ## 2 · As medidas de aceitação, antes e depois
 
-| # | medida | antes (`d447286f`) | depois | como se mede |
+| # | medida | antes (`a9574346`) | depois | como se mede |
 |---|---|---|---|---|
 | C1 | axe a 0 nas graves («serious» e «critical»), 16 × 2 temas | **2 069** nós: `color-contrast` 2 021, `scrollable-region-focusable` 48. Documentos com 0 graves: **4 de 16** | **1 111** nós: `color-contrast` 1 111, `scrollable-region-focusable` **0**. Documentos com 0 graves: **7 de 16** | `tests/documentos/moldura.mjs`, célula C1 |
 | C2 | filetes ≥ 3:1 e texto das tabelas ≥ 4,5:1, nos dois temas | filetes: 19 264 medidos, **18 936 abaixo de 3:1**, o pior **1,15:1**. Texto próprio das células: 17 014 medidos, **3 070 abaixo de 4,5:1**, o pior **2,63:1** | filetes: 19 264 medidos, **0 abaixo**, o pior **3,23:1**. Texto próprio das células: 17 014 medidos, **0 abaixo**, o pior **6,94:1** | célula C2 |
@@ -187,8 +187,8 @@ O que se vê no par `tabela-pt-1280-antes` / `-depois`: os filetes da grelha pas
 ## 10 · O ramo e a corrida
 
 ```
-ramo:   moldura-2026-09-03, a partir de origin/main d447286f
-SHA:    b66e3ba7 (a cabeça depois da segunda passagem e das quatro fusões de origin/main)
+ramo:   moldura-2026-09-03, a partir de origin/main a9574346
+SHA:    537967b2 (a cabeça depois da segunda passagem e das quatro fusões de origin/main)
 corrida `portao`: 33804407060, verde em 17m54s
 ```
 
@@ -290,11 +290,11 @@ O resultado desta medição está guardado, por inteiro, em `design/especime-v3/
 
 ```
 ramo:              moldura-2026-09-03
-SHA da cabeça:     b66e3ba7
+SHA da cabeça:     537967b2
 corrida `portao`:  33804407060, verde em 17m54s (https://github.com/oestadodopais/o-estado-do-pais/actions/runs/33804407060)
 ```
 
-Entre o `push` que fechou a lista de sete achados e este SHA, `origin/main` moveu-se quatro vezes (fundido a cada uma: `3093b72b`, depois `d82bc4cf`) e a primeira corrida sobre a cabeça fundida (`33802765663`) caiu: `check:moldura`, o portão novo do Major 8, é o primeiro desta árvore a abrir um Chromium, e `npm ci` só instala a biblioteca do Playwright, nunca o motor que ela pilota. Um commit a mais (`b66e3ba7`, «O portão instala o Chromium do Playwright antes de correr», em `.github/workflows/portao.yml`) e a corrida seguinte fechou verde.
+Entre o `push` que fechou a lista de sete achados e este SHA, `origin/main` moveu-se quatro vezes (fundido a cada uma: `989bc8e4`, depois `8ed5af14`) e a primeira corrida sobre a cabeça fundida (`33802765663`) caiu: `check:moldura`, o portão novo do Major 8, é o primeiro desta árvore a abrir um Chromium, e `npm ci` só instala a biblioteca do Playwright, nunca o motor que ela pilota. Um commit a mais (`537967b2`, «O portão instala o Chromium do Playwright antes de correr», em `.github/workflows/portao.yml`) e a corrida seguinte fechou verde.
 
 ### Minor 11 · o `<h1>` visível, o `role` exacto, o `aria-labelledby` que aponta para alguém
 

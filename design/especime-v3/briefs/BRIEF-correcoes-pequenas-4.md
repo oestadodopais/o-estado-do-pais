@@ -1,6 +1,6 @@
 # BRIEF · Correções pequenas, quarta passagem (I89, I91, os rótulos em `span` e a dívida de forma do inventário)
 
-*Escrito a 29.08.2026 pelo lugar de direção (Claude Fable 5) para o construtor (Claude Opus). Ramo `pequenas-4-2026-08-29` saído de `main` `fbcab5e`. Sem travessões na prosa.*
+*Escrito a 29.08.2026 pelo lugar de direção (Claude Fable 5) para o construtor (Claude Opus). Ramo `pequenas-4-2026-08-29` saído de `main` `d9bfac7`. Sem travessões na prosa.*
 
 ## 0 · As quatro
 

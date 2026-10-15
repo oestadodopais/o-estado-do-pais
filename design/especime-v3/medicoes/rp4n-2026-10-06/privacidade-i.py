@@ -26,8 +26,8 @@ for i,nome_planta in enumerate(['utilizador','casa','temporario','projetos','wor
  plantas.append({'nome':nome_planta,'mensagem':mensagem})
 # A exceção é o par commit/linha, nunca um padrão liberado no ramo.
 aceites={
- '5e4ccb25ef9134cbc1e6dccf031a28656535b85d':'1fc80ee96740572e6023836205049c7f3e0cb60c1d4bb79c9dd97f7e1bc75450',
- 'd430d6dd1e17e4f1f23acc7273321f5e4380beff':'3994efec96432c5cc683f15428bd20176e211497d58176c747f51cbfa30bc903',
+ '83d1c075992841c52ae5c66ec839995618937603':'1fc80ee96740572e6023836205049c7f3e0cb60c1d4bb79c9dd97f7e1bc75450',
+ 'b95f67a9c3529f233059a0e0752bf0cbb983eba3':'3994efec96432c5cc683f15428bd20176e211497d58176c747f51cbfa30bc903',
 }
 def conferir_excecao(commit,linha):
  if commit not in aceites:
@@ -37,7 +37,7 @@ def conferir_excecao(commit,linha):
  return []
 def excecao(commit,linha):
  return not conferir_excecao(commit,linha)
-log=git('log','-p','--format=RP4NI-COMMIT:%H','b84d21a3..HEAD')
+log=git('log','-p','--format=RP4NI-COMMIT:%H','c0e1b3f4..HEAD')
 excecoes=[];restantes=[];commit=None
 for linha in log.splitlines():
  if linha.startswith('RP4NI-COMMIT:'):commit=linha.split(':',1)[1]
@@ -50,7 +50,7 @@ for linha in log.splitlines():
    plantas.append({'nome':nome_planta,'mensagem':erros[0]})
  else:restantes.append({'commit':commit,'mensagens':conferir_texto(linha)})
 assert {x['commit'] for x in excecoes}==set(aceites)
-diff=git('diff','b84d21a3','HEAD')
+diff=git('diff','c0e1b3f4','HEAD')
 def procurar(padroes,ref='HEAD'):
  r=subprocess.run(['git','grep','-n','-F',*sum((['-e',x] for x in padroes),[]),ref],capture_output=True,text=True)
  if r.returncode not in (0,1):raise RuntimeError('RP4N-i: erro na procura da cabeça, código '+str(r.returncode))
@@ -68,14 +68,14 @@ head=procurar(pedacos)
 lista=[];novos=[]
 for linha in head.stdout.splitlines():
  _,ficheiro,numero,conteudo=linha.split(':',3)
- anterior=subprocess.run(['git','show','b84d21a3:'+ficheiro],capture_output=True,text=True)
+ anterior=subprocess.run(['git','show','c0e1b3f4:'+ficheiro],capture_output=True,text=True)
  if tmp in conteudo and conteudo in anterior.stdout.splitlines() and not any(x in conteudo for x in pedacos if x!=tmp):
   lista.append({'ficheiro':ficheiro,'linha':int(numero)})
  else:novos.append({'ficheiro':ficheiro,'linha':int(numero),'mensagens':conferir_texto(conteudo)})
 legados=sorted(set(x['ficheiro'] for x in lista))
 legados_com_nome=[f for f in legados if nome in git('show','HEAD:'+f)]
 assert not legados_com_nome
-resultado={'plantas':plantas,'legados_lidos':legados,'legados_com_nome':legados_com_nome,'codigo_procura_cabeca':head.returncode,'cabeca':git('rev-parse','HEAD').strip(),'base':'b84d21a3','historico_grep_c':contar(log,pedacos),'historico_sem_excecoes':len(restantes),'historico_novo':restantes,'RP4N-17':{'estado':'aceite','excecoes':excecoes,'razao':'Prefixo genérico sem nome de utilizador nem disposição da máquina. Exceção aprovada no mandato RP4-n-i; ramo publicado, sem reescrita. Qualquer ocorrência nova continua proibida.'},'diff_grep_c':contar(diff,pedacos),'cabeca_sem_excecoes_grep_c':len(novos),'novos':novos,'padroes':['utilizador','casa','temporario','projetos','worktrees'],'legados_ficheiros':len(set(x['ficheiro'] for x in lista)),'RP4N-14':lista}
+resultado={'plantas':plantas,'legados_lidos':legados,'legados_com_nome':legados_com_nome,'codigo_procura_cabeca':head.returncode,'cabeca':git('rev-parse','HEAD').strip(),'base':'c0e1b3f4','historico_grep_c':contar(log,pedacos),'historico_sem_excecoes':len(restantes),'historico_novo':restantes,'RP4N-17':{'estado':'aceite','excecoes':excecoes,'razao':'Prefixo genérico sem nome de utilizador nem disposição da máquina. Exceção aprovada no mandato RP4-n-i; ramo publicado, sem reescrita. Qualquer ocorrência nova continua proibida.'},'diff_grep_c':contar(diff,pedacos),'cabeca_sem_excecoes_grep_c':len(novos),'novos':novos,'padroes':['utilizador','casa','temporario','projetos','worktrees'],'legados_ficheiros':len(set(x['ficheiro'] for x in lista)),'RP4N-14':lista}
 (BASE/'privacidade.json').write_text(json.dumps(resultado,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(resultado,ensure_ascii=False,indent=2))
 if any(resultado[k] for k in ['historico_sem_excecoes','diff_grep_c','cabeca_sem_excecoes_grep_c']):sys.exit(1)

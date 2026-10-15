@@ -16,7 +16,7 @@ import yaml
 AQUI = Path(__file__).resolve().parent
 BLOCO = AQUI.parent
 SITIO = AQUI.parents[4]
-BASE = 'cb43b2fcec9e67815894a07ceb95c2cba1b589e4'
+BASE = '855b9a9b1f6de1187ee2f28e149e1cd79a9e53c3'
 BASE_MOTOR = '68318e0da2036cc29e4704fa1bb8a96dee246095'
 
 def modulo(nome, p):
@@ -68,7 +68,7 @@ def medir(motor, final):
     exige(motor_estado['cabeca'] == BASE_MOTOR and motor_estado['limpa'] and not motor_estado['ficheiros_alterados'], 'O motor mudou nesta passagem.')
     detetor = modulo('detetor_c1f', BLOCO/'medir-c1.py')
     achados = []; total = 0
-    for rot, repo, base in [('sítio', SITIO, '48a5a1c181c1753036d301204884c57119bba8a5'), ('motor', motor, '4eb2867936dd14ad2654751722e390804e68dda3')]:
+    for rot, repo, base in [('sítio', SITIO, '7028e733f8bb4de7bf65f1bb76546304ba1e6db4'), ('motor', motor, '4eb2867936dd14ad2654751722e390804e68dda3')]:
         nomes = set(git('diff', '--name-only', base, repo=repo).splitlines()) | set(git('ls-files', '--others', '--exclude-standard', repo=repo).splitlines())
         if rot == 'sítio':
             nomes = {n for n in nomes if n.startswith(('src/', 'scripts/', 'tests/', 'ledger/', str(BLOCO.relative_to(SITIO))+'/')) or n in ('design/especime-v3/INVENTARIO-FRASES.md', 'design/especime-v3/ISSUES.md', 'design/especime-v3/critica/REVISOES-DO-INVENTARIO.md')}
@@ -119,7 +119,7 @@ def medir(motor, final):
             cabeca = portoes['build']['cabeca']
             exige(ler(SITIO/'dist/version.json')['commit'] == cabeca and capturas and capturas['dist_construido_de'] == cabeca, 'A construção ou as capturas são de outra cabeça.')
             exige(all(f.startswith(str(BLOCO.relative_to(SITIO))+'/') for f in git('diff', '--name-only', cabeca, 'HEAD').splitlines()), 'Mudou código depois dos portões.')
-    commits = {rot: [dict(zip(('hash','assunto'),l.split(' ',1))) for l in git('log','--reverse','--format=%H %s',base+'..HEAD',repo=repo).splitlines()] for rot,repo,base in [('sitio',SITIO,'48a5a1c181c1753036d301204884c57119bba8a5'),('motor',motor,'4eb2867936dd14ad2654751722e390804e68dda3')]}
+    commits = {rot: [dict(zip(('hash','assunto'),l.split(' ',1))) for l in git('log','--reverse','--format=%H %s',base+'..HEAD',repo=repo).splitlines()] for rot,repo,base in [('sitio',SITIO,'7028e733f8bb4de7bf65f1bb76546304ba1e6db4'),('motor',motor,'4eb2867936dd14ad2654751722e390804e68dda3')]}
     return {'registado_em': datetime.now(timezone.utc).isoformat(), 'base': BASE, 'cabeca_sitio': git('rev-parse','HEAD'), 'motor': motor_estado, 'commits': commits, 'linhas_conferidas': n, 'linhas_alteradas': alteradas, 'valores_alterados': valores, 'revisoes_de_proveniencia': revisoes, 'entradas_reconstituidas': sum(len(e) for e in esperadas.values()), 'acessos': prova, 'portoes': portoes, 'capturas': capturas, 'caminhos': caminhos, 'privacidade_dist': privacidade, 'proveniencia': proveniencia, 'relatorio': relatorio, 'aceitacao_integral': final and not erros, 'erros_da_medicao': erros}
 
 if __name__ == '__main__':

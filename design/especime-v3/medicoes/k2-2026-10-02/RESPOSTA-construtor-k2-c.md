@@ -1,6 +1,6 @@
 # Resposta do construtor da K2-c
 
-*Claude Opus 5.5 (a definição `construtor`), 02.10.2026, ramo `k2-2026-10-02`, sobre `d7268167`. A secção «K2-c» do `LEIA-ME.md` diz o resto; os números estão em `medidas-k2-c.json`. Os achados 3, 4, 5, 8 e 11 da leitura são as plantas e não se tocaram. Sem travessões.*
+*Claude Opus 5.5 (a definição `construtor`), 02.10.2026, ramo `k2-2026-10-02`, sobre `650ebdde`. A secção «K2-c» do `LEIA-ME.md` diz o resto; os números estão em `medidas-k2-c.json`. Os achados 3, 4, 5, 8 e 11 da leitura são as plantas e não se tocaram. Sem travessões.*
 
 - **A diferença de emprego entre sexos** mostra «pontos percentuais» na linha do valor, a unidade que a definição declarada traz, nos 4 cartões (0 com a etiqueta da fonte; 4 antes); a etiqueta do Eurostat fica nos 2 recibos. O portão de HTML confere a unidade da casa contra a declaração, só no cartão da sua linha.
 - **A classe etária dos jovens nem-nem**, «Age class: From 15 to 29 years», aparece ao lado do título que diz «aged 15-24», nas 2 páginas da União, conferida contra os bytes selados no motor; a linha não muda.

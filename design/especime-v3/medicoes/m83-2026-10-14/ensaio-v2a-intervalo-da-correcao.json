@@ -211,7 +211,7 @@
   ],
   "paginas_em_falta": [],
   "dist_version": {
-    "commit": "b9497c1cd687cc890f852ca4c81b05c4b45273c6",
+    "commit": "d9228a717232d72657c5401be55d615d3daf3b62",
     "ref": "v2a-2026-10-13",
     "env": "local",
     "origem": "git",

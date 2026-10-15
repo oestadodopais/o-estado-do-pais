@@ -26,7 +26,7 @@ const plantas = [...celula.plantas,...navegador.plantas].filter(p=>/^(json-recus
 for (const lang of ['pt','en']) for (const nome of ['json-recusado-com-campo-objeto','json-recusado-com-campo-null','json-recusado-com-campo-vazio','json-com-codigo-sem-campo','recusado-isolado-excerpt','recusado-isolado-source_url','separador-leitura-duas-fontes','nao-derivada-sem-data']) assert(plantas.find(p=>p.nome===nome+'-'+lang)?.mordeu);
 const prova = {cabecaCodigo:codigo,celula,navegador,verify,plantasNovas:plantas,sha256LogVerify:createHash('sha256').update(log).digest('hex')};
 fs.writeFileSync(`${pasta}/provas-e.json`,JSON.stringify(prova,null,2)+'\n');
-const commits = execFileSync('git',['log','--reverse','--format=%h %s','1352d49a..'+codigo],{encoding:'utf8'}).trim().split('\n');
+const commits = execFileSync('git',['log','--reverse','--format=%h %s','8dbe1481..'+codigo],{encoding:'utf8'}).trim().split('\n');
 const tabela = (titulos,linhas)=>'| '+titulos.join(' | ')+' |\n| '+titulos.map(()=>'---').join(' | ')+' |\n'+linhas.map(l=>'| '+l.map(v=>String(v).replaceAll('|','\\|')).join(' | ')+' |').join('\n');
 const texto = `
 

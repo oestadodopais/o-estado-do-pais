@@ -1,6 +1,6 @@
 # O estado de `main` depois da marca do diretor nos ícones (29.08.2026)
 
-*Escrito pelo lugar de direção (Claude Fable 5). O ramo `marca-k-aplicada-2026-08-29` saiu de `main` `61bde7b` e entrou como `45c5c59`, verde: construção com as réguas todas, `verify`, `typecheck`, `tests/inicio/app.mjs` 38 de 38 e 10 de 10 estragos plantados; a leitura cruzada trouxe `be3f368` no mesmo dia (a régua consertada: 39 células, 13 estragos, os ícones intactos). O ramo `marca-k-2026-08-29`, que mediu a marca antes de a aplicar, entra a seguir só com registos (`design/marca/`). A emenda das 13:55 à §1.79 do `DECISIONS.md` é o registo.*
+*Escrito pelo lugar de direção (Claude Fable 5). O ramo `marca-k-aplicada-2026-08-29` saiu de `main` `b485df9` e entrou como `e1fb44f`, verde: construção com as réguas todas, `verify`, `typecheck`, `tests/inicio/app.mjs` 38 de 38 e 10 de 10 estragos plantados; a leitura cruzada trouxe `3d8084f` no mesmo dia (a régua consertada: 39 células, 13 estragos, os ícones intactos). O ramo `marca-k-2026-08-29`, que mediu a marca antes de a aplicar, entra a seguir só com registos (`design/marca/`). A emenda das 13:55 à §1.79 do `DECISIONS.md` é o registo.*
 
 ## O que muda no ar
 

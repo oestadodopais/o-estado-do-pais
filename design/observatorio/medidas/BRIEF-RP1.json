@@ -1,14 +1,14 @@
 {
   "brief": "design/observatorio/BRIEF-RP1-rendimentos-e-precos-os-cartoes.md",
   "guiao": "design/observatorio/medidas/BRIEF-RP1.py",
-  "cabeca_lida": "334cc740",
+  "cabeca_lida": "eaffd3c8",
   "copias": "design/especime-v3/medicoes/l1-2026-09-24/paginas-depois/",
   "motor": "1d10b3f",
   "medidas": [
     {
       "nome": "cabeca_lida",
-      "valor": "334cc740",
-      "comando": "git cat-file -e 334cc740^{commit}",
+      "valor": "eaffd3c8",
+      "comando": "git cat-file -e eaffd3c8^{commit}",
       "conhecido_positivo": {
         "o_que": "a cabeça existe no repositório",
         "encontrado": true
@@ -16,7 +16,7 @@
     },
     {
       "nome": "cabeca_das_copias",
-      "valor": "c1e155f0",
+      "valor": "fb363a11",
       "comando": "cat design/especime-v3/medicoes/l1-2026-09-24/portoes/build.cabeca (os 8 primeiros caracteres)",
       "conhecido_positivo": {
         "o_que": "a cabeça existe no repositório",
@@ -26,9 +26,9 @@
     {
       "nome": "ficheiros_que_a_construcao_le_mudados_entre_as_copias_e_a_cabeca",
       "valor": 0,
-      "comando": "git diff --name-only c1e155f0 334cc740 -- src public ledger scripts tests package.json astro.config.mjs, sem scripts/leituras/",
+      "comando": "git diff --name-only fb363a11 eaffd3c8 -- src public ledger scripts tests package.json astro.config.mjs, sem scripts/leituras/",
       "conhecido_positivo": {
-        "o_que": "o mesmo diff entre f672bd38 e 334cc740 apanha ficheiros",
+        "o_que": "o mesmo diff entre 5ea9627e e eaffd3c8 apanha ficheiros",
         "encontrado": true
       }
     },
@@ -99,7 +99,7 @@
     {
       "nome": "temas_da_carta",
       "valor": 18,
-      "comando": "python3 design/observatorio/medidas/BRIEF-RP1.py · linhas «| n |» da tabela do §2 de CARTA-DOS-CONTEUDOS.md@334cc740",
+      "comando": "python3 design/observatorio/medidas/BRIEF-RP1.py · linhas «| n |» da tabela do §2 de CARTA-DOS-CONTEUDOS.md@eaffd3c8",
       "conhecido_positivo": {
         "o_que": "o mesmo padrão apanha a primeira linha da tabela",
         "encontrado": true
@@ -162,7 +162,7 @@
     {
       "nome": "regra_do_periodo_anterior_no_enquadramento",
       "valor": "/^(.*)-(\\d{4})$/",
-      "comando": "python3 design/observatorio/medidas/BRIEF-RP1.py · a expressão de anoDoIdentificador() em enquadramento.mjs@334cc740",
+      "comando": "python3 design/observatorio/medidas/BRIEF-RP1.py · a expressão de anoDoIdentificador() em enquadramento.mjs@eaffd3c8",
       "conhecido_positivo": {
         "o_que": "a expressão só aceita quatro algarismos no fim",
         "encontrado": true

@@ -6,7 +6,7 @@
  *
  * Corre a régua da casa (`scripts/check-lugar.mjs`) sobre o `dist/` desta árvore
  * com `AMOSTRA` alta, para que ela escreva TODAS as páginas da L1 e não seis; lê
- * a mesma lista da construção da cabeça de partida (`cbe87016`), guardada em
+ * a mesma lista da construção da cabeça de partida (`27049f83`), guardada em
  * `l1-antes-check-lugar.txt` pela mesma régua, e compara as duas. Não conta
  * melhor do que a régua: conta a MESMA coisa, e diz que páginas entraram e
  * porquê. Escreve `l1-r1.json` ao lado, que é o ficheiro que

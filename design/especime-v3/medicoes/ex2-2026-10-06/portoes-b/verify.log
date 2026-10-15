@@ -1638,7 +1638,7 @@ História do valor: 2 controlos e 4 plantas.
 > o-estado-do-pais@0.1.0 check:cabeca
 > node tests/inicio/hierarquia-b2.mjs
 
-check:cabeca C1; construção 8c3a08b9dcfb48595be70d6d47385b0427cc3b62; 140 cabeças; 4 mordidas; 10 reposições
+check:cabeca C1; construção 140f9458d0556248987d002652336d9d1a56891f; 140 cabeças; 4 mordidas; 10 reposições
 check:cabeca: PASS
 
 > o-estado-do-pais@0.1.0 check:fontes
@@ -5704,7 +5704,7 @@ sinais · 1 explicação(ões), 0 frase(s) guardada(s) fora da página; o regist
 {"recorte_livro":{"ficheiro":"13-pagina-livro-razao.html","entradas_na_pagina":428,"entradas_no_recorte":8,"primeiras_preservadas":true,"nota_e_porta_preservadas":true,"pagina_conservada":true,"pagina_sha256":"de4486f4b6e8b0a5b40d1f77263058b34506a69aa014b924ac20bed1afa175d0","bytes_cartao":239505,"bytes_sem_recorte":1137070,"teto_bytes":673249,"margem":0.1,"planta":{"nome":"recorte retirado","mordeu":true,"queixa":"1110.4 KiB acima do tecto de 657.4697265625 KiB"}}}
 
 [1m  O feixe de cartões do sistema de desenho[0m
-[90m  design-system/ · de dist/ no commit 8c3a08b · 20 cartões, 11 ficheiros de letra e um README[0m
+[90m  design-system/ · de dist/ no commit 140f945 · 20 cartões, 11 ficheiros de letra e um README[0m
 
 [90m  ficheiro                          grupo          bytes  ok[0m
   01-cor.html                       Fundamentos   380206  [32m✓[0m

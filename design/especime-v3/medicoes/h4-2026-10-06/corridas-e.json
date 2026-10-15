@@ -1,11 +1,11 @@
 {
-  "cabeca": "89c54f3480d9503d0fd85281ad5247d9137971c8",
+  "cabeca": "2c5212b7eb75b0161a9e89af0e86d8324e81af3e",
   "estado_inicial": "",
   "corridas": [
     {
       "nome": "inventario-e",
       "comando": "node design/especime-v3/medicoes/h4-2026-10-06/inventario-politica-h4e4.mjs --confere",
-      "cabeca": "89c54f3480d9503d0fd85281ad5247d9137971c8",
+      "cabeca": "2c5212b7eb75b0161a9e89af0e86d8324e81af3e",
       "estado_inicio": "",
       "estado_fim": "",
       "codigo": 0,
@@ -14,7 +14,7 @@
     {
       "nome": "politica-e",
       "comando": "node design/especime-v3/medicoes/h4-2026-10-06/provar-politica-e.mjs --passagem-e",
-      "cabeca": "89c54f3480d9503d0fd85281ad5247d9137971c8",
+      "cabeca": "2c5212b7eb75b0161a9e89af0e86d8324e81af3e",
       "estado_inicio": "",
       "estado_fim": "",
       "codigo": 0,
@@ -23,7 +23,7 @@
     {
       "nome": "n1-e",
       "comando": "node tests/pais/portoes.mjs --prefixo h4b-",
-      "cabeca": "89c54f3480d9503d0fd85281ad5247d9137971c8",
+      "cabeca": "2c5212b7eb75b0161a9e89af0e86d8324e81af3e",
       "estado_inicio": "",
       "estado_fim": "",
       "codigo": 0,
@@ -32,7 +32,7 @@
     {
       "nome": "capturas-e-corrida",
       "comando": "node design/especime-v3/medicoes/h4-2026-10-06/captar-h4-e.mjs --passagem-e",
-      "cabeca": "89c54f3480d9503d0fd85281ad5247d9137971c8",
+      "cabeca": "2c5212b7eb75b0161a9e89af0e86d8324e81af3e",
       "estado_inicio": "",
       "estado_fim": "",
       "codigo": 0,

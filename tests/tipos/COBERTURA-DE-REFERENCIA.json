@@ -1,13 +1,13 @@
 {
  "_": [
   "A cobertura dos oito ficheiros de tipos INTEIROS, medida a 2026-08-29 antes de",
-  "qualquer subconjunto, com os bytes e o sha256 de cada um como estavam em main 58cc881.",
+  "qualquer subconjunto, com os bytes e o sha256 de cada um como estavam em main f7bfc87.",
   "É contra isto que tests/tipos/subconjunto.mjs compara o corte: sem esta ficha, a",
   "célula compararia o corte com ele próprio, e um glifo perdido não teria contra o",
   "que se desmentir."
  ],
  "medido_em": "2026-08-29",
- "commit": "58cc881",
+ "commit": "f7bfc87",
  "ficheiros": {
   "spectral/Spectral-Regular.woff2": {
    "bytes": 80084,

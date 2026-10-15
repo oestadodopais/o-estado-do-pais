@@ -16,11 +16,11 @@ const le = (f) => {
   return fs.existsSync(p) ? Number(fs.readFileSync(p, 'utf8').trim()) : null;
 };
 const commits = [
-  { commit: 'baa82bce', o_que: 'os extremos empatados na faixa (o estado sem a frase do recibo, construído à parte)',
+  { commit: '3f1dc41d', o_que: 'os extremos empatados na faixa (o estado sem a frase do recibo, construído à parte)',
     corridas: [['npm run build', 'build-D'], ['npm run check:cartao', 'cartao-D'], ['npm run typecheck', 'tipos-D']] },
-  { commit: '2a12ff68', o_que: 'o que cada medida conta, no recibo da sua série',
+  { commit: 'fcf58417', o_que: 'o que cada medida conta, no recibo da sua série',
     corridas: [['npm run build', 'build-E'], ['npm run typecheck', 'tipos-E'], ['npm run check:lugar', 'lugar-E']] },
-  { commit: '982d6446', o_que: 'o mapa do repositório',
+  { commit: 'c0eec2a6', o_que: 'o mapa do repositório',
     corridas: [['python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md', 'mapa-c3']] },
 ];
 const saida = commits.map((c) => ({ commit: c.commit, o_que: c.o_que, corridas: c.corridas.map(([comando, f]) => ({ comando, codigo: le(f) })) }));

@@ -19,7 +19,7 @@ RAIZ = AQUI.parents[3]
 MOTOR = Path(os.environ.get('C1_MOTOR', Path.home() / 'Instruments' / 'ResearchHub' / '.worktrees' / 'c1-2026-09-28'))
 ALVO = 'divida-das-familias-2025-ue'
 POSITIVO = 'ipc-variacao-homologa'
-BASE = 'a677770f'
+BASE = '04438bb9'
 
 
 def git(raiz, *args):

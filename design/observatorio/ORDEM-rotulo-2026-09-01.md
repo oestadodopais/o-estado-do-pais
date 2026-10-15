@@ -4,7 +4,7 @@
 
 ## 1 · Onde
 
-Na worktree `<casa>/Instruments/OEstadoDoPais/.claude/worktrees/rotulo-ia-2026-09-01` (ramo `rotulo-ia-2026-09-01`, saído de `main` em `b097d20`). Só lá: nunca `git checkout` na árvore principal, nunca `push`, nunca fusão. Antes de construir: `npm ci` na worktree (o `package-lock.json` está lá). Commits com caminhos explícitos, prosa em português (Acordo) sem travessões, trailers `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` e `Claude-Session: https://claude.ai/code/session_01RfmmTfG3C9xPwSngA5DDbr`.
+Na worktree `<casa>/Instruments/OEstadoDoPais/.claude/worktrees/rotulo-ia-2026-09-01` (ramo `rotulo-ia-2026-09-01`, saído de `main` em `5d24ddb`). Só lá: nunca `git checkout` na árvore principal, nunca `push`, nunca fusão. Antes de construir: `npm ci` na worktree (o `package-lock.json` está lá). Commits com caminhos explícitos, prosa em português (Acordo) sem travessões, trailers `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>` e `Claude-Session: https://claude.ai/code/session_01RfmmTfG3C9xPwSngA5DDbr`.
 
 ## 2 · O que ler antes (na worktree)
 

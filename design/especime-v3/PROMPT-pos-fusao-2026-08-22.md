@@ -1,7 +1,7 @@
 Green light for the round after the merge of phase 1 of the redesign v3, site repo ~/<projetos>/OEstadoDoPais, on a branch `pos-fusao-v3` from `origin/main`. Site repo only: anything that needs the engine (~/<projetos>/ResearchHub) is an ask, not a task, except where this prompt says «engine session» below, which is its own session in that repo. Nothing outward, no deploy, no merge, without my explicit go. Standing arrangement: Fable manages and reviews, Opus builds, Sonnet does mechanical passes and blind measurements, Codex reads across families with planted defects; say which model ran which part in every report. Verification policy as set on 21.08: the five gates at every commit; full matrices, captures and blind reads only at stage exits and before a preview or merge; fix rounds measure only what they touch; my notes per preview batched into one round.
 
 READ FIRST, IN THIS ORDER
-1. `design/especime-v3/ESTADO-DO-MAIN-2026-08-21.md`: what `main` is today (`53272ac` at the time of writing; say what moved since).
+1. `design/especime-v3/ESTADO-DO-MAIN-2026-08-21.md`: what `main` is today (`ed88e0f` at the time of writing; say what moved since).
 2. `design/especime-v3/PLANO-redesenho-v3.md` §3 (the decided table), §14a/§14b (previews and merge), §15 (deviations); `DECISIONS.md` §1.50 to §1.56 and §4.
 3. The constitution: ~/Obsidian/Experiments/O Estado do País — Constituição visual v3.1.md with Emendas 1 to 17 (binding; the repo copy `design/especime-v3/direcao.md` follows it), including the sentence rule under Emenda 15: a sentence survives on a reader's page only if removing it would make a reader misread a number.
 4. `design/especime-v3/ISSUES.md` (open items), `INVENTARIO-FRASES.md`, `CHAVES-EN.md`, and `notas/stage-5.md` §10 (the last requests).
@@ -22,4 +22,4 @@ NOT IN SCOPE, BY MY DECISION OF 21.08: discoverability and outreach (Search Cons
 
 STOP AND ASK, DO NOT IMPROVISE AROUND: the same five cases as the «luz verde» prompt of 20.08 (a conflict with repo reality, a gate or a standing decision; a value or copy with no row; an editorial call; a new gate; a constitution rule that cannot be met as specified).
 
-REPORTING: as before, at each stage boundary: what shipped, screenshots at 1280 and 390 in both editions where a page changed, gate and ruler status with deltas, EN keys, the ISSUES list, which model ran which part and the tokens. Start by telling me in ten lines what you read, what moved on `main` since `53272ac`, what the Monday refresh did if it has run, and what stage A will commit. Then go.
+REPORTING: as before, at each stage boundary: what shipped, screenshots at 1280 and 390 in both editions where a page changed, gate and ruler status with deltas, EN keys, the ISSUES list, which model ran which part and the tokens. Start by telling me in ten lines what you read, what moved on `main` since `ed88e0f`, what the Monday refresh did if it has run, and what stage A will commit. Then go.

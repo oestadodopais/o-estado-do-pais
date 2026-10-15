@@ -1,7 +1,7 @@
 {
   "brief": "design/observatorio/BRIEF-L2b-o-concelho-entre-os-308.md",
   "guiao": "design/observatorio/medidas/BRIEF-L2b.py",
-  "cabeca_lida": "a9509193",
+  "cabeca_lida": "278e258b",
   "linhas_por_sufixo": {
     "populacao-2025": 308,
     "divida-dgal-2024": 308,
@@ -21,7 +21,7 @@
     {
       "nome": "concelhos_com_linha_de_populacao",
       "valor": 308,
-      "comando": "git ls-tree a9509193:ledger/claims · os ids que acabam em -populacao-2025",
+      "comando": "git ls-tree 278e258b:ledger/claims · os ids que acabam em -populacao-2025",
       "conhecido_positivo": {
         "o_que": "«evora» é um deles",
         "encontrado": true
@@ -48,7 +48,7 @@
     {
       "nome": "linhas_da_faixa_da_uniao_que_contam_o_lugar",
       "valor": 1,
-      "comando": "git show a9509193:src/lib/faixa-da-uniao.mjs · «const lugar = 1 + paises.filter»",
+      "comando": "git show 278e258b:src/lib/faixa-da-uniao.mjs · «const lugar = 1 + paises.filter»",
       "conhecido_positivo": {
         "o_que": "a função posicao existe",
         "encontrado": true
@@ -57,7 +57,7 @@
     {
       "nome": "faixas_na_pagina_do_concelho",
       "valor": 0,
-      "comando": "git show a9509193:src/views/MunicipioView.astro · as ocorrências de <Faixa",
+      "comando": "git show 278e258b:src/views/MunicipioView.astro · as ocorrências de <Faixa",
       "conhecido_positivo": {
         "o_que": "a vista rende cartões do lugar",
         "encontrado": true
@@ -66,7 +66,7 @@
     {
       "nome": "referencias_nacionais_na_leitura_do_lugar",
       "valor": 0,
-      "comando": "git show a9509193:src/lib/lugar.mjs · as citações da linha nacional ganho-medio-mensal-2024",
+      "comando": "git show 278e258b:src/lib/lugar.mjs · as citações da linha nacional ganho-medio-mensal-2024",
       "conhecido_positivo": {
         "o_que": "a leitura do lugar lê as peças por chave",
         "encontrado": true

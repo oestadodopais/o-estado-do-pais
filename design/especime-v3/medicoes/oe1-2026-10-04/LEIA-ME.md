@@ -58,14 +58,14 @@ Corrida completa pela tranca, ledger incluído. O último commit só guarda as p
 | Portão | Código lido | Cabeça da corrida |
 |---|---|---|
 | motor | [0](portoes/motor.codigo) | `38457b2723c47ea126984be6c5c1f778967e6847` |
-| ledger | [0](portoes/ledger.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
-| build | [0](portoes/build.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
-| verify | [0](portoes/verify.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
-| typecheck | [0](portoes/typecheck.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
+| ledger | [0](portoes/ledger.codigo) | `9dae3dd81bc2a95640727c40ed0b85b5e340b209` |
+| build | [0](portoes/build.codigo) | `9dae3dd81bc2a95640727c40ed0b85b5e340b209` |
+| verify | [0](portoes/verify.codigo) | `9dae3dd81bc2a95640727c40ed0b85b5e340b209` |
+| typecheck | [0](portoes/typecheck.codigo) | `9dae3dd81bc2a95640727c40ed0b85b5e340b209` |
 
 ## Commits e cabeças
 
-Motor `38457b2723c47ea126984be6c5c1f778967e6847`, sobre master `47f12e15c927bf238522ac680b1f54c9de29f55d`. Sítio, cabeça de código `f5549dc8be22f4e936d62fbdfe4eac94b538db97`, sobre main `f27aa38a0939d11908863afe6ee117da03404f5f`; o commit seguinte entrega apenas as provas.
+Motor `38457b2723c47ea126984be6c5c1f778967e6847`, sobre master `47f12e15c927bf238522ac680b1f54c9de29f55d`. Sítio, cabeça de código `9dae3dd81bc2a95640727c40ed0b85b5e340b209`, sobre main `fbc95422116917dea6acf43557d03cf99926e866`; o commit seguinte entrega apenas as provas.
 
 Motor:
 
@@ -77,28 +77,28 @@ Motor:
 
 Sítio, depois do rebase:
 
-- `fe296a51 OE1: o brief «o dinheiro do Estado por ministério e por função, selado no motor» com o §0 medido, pela ideia do diretor de 04.10.2026 e pela leitura de fora de 03.10`
-- `f881fbf6 OE1: receber 186 linhas pelo tubo do motor`
-- `3af4d137 OE1: relatar a selagem parcial, as lacunas de fonte e os portões`
-- `66b1317d OE1-b: integrar o conjunto e conferir as bandeiras Eurostat nos dois formatos`
-- `f6274a36 OE1-b: reconferir as duas contagens do livro no inventário`
-- `e5fa5473 OE1-b: comitar o relatório, as plantas e as medições da integração`
-- `35f0fc39 OE1-b: reconferir a L1 com a construção de partida`
-- `09c12e98 OE1-b: guardar as provas e as propostas adicionais`
-- `899f3c3e OE1-b: fechar o relatório com duas extensões pendentes`
-- `a6f1ca07 OE1-c: reconhecer os sete localizadores e plantar as recusas em I1 e I3`
-- `c72b69c4 OE1-c: recortar o espécime do livro e provar o teto com o recorte retirado`
-- `00298a0b OE1-c: registar as plantas, as medições e o protocolo da corrida final`
-- `6c224cf0 OE1-c: guardar a corrida final verde e os seus contadores`
-- `4dc99ef6 OE1-d: dizer a medida, o acumulado e a ressalva nas duas edições`
-- `9be5a921 OE1-d: conferir unidades e ressalvas depois de integrar R2 e RP3`
-- `01714689 OE1-d: fechar avisos, registo da voz e medição reproduzível`
-- `8916f9c8 OE1-d: retirar a edição órfã e provar o formato da medição L1`
-- `74e7126b OE1-d: guardar portões verdes, medições e relato final`
-- `ca1de3de OE1-d: provar as bases integradas e conservar as referências do R3`
-- `a0902a08 OE1-d: guardar as provas verdes da cabeça integrada com o R3`
-- `5888f607 OE1-e: publicar apenas as ressalvas aplicáveis e provar os recibos`
-- `f5549dc8 OE1-e: mostrar o período de cada linha e medir as correções com plantas`
+- `4231b44b OE1: o brief «o dinheiro do Estado por ministério e por função, selado no motor» com o §0 medido, pela ideia do diretor de 04.10.2026 e pela leitura de fora de 03.10`
+- `6490e0f4 OE1: receber 186 linhas pelo tubo do motor`
+- `e9b8d029 OE1: relatar a selagem parcial, as lacunas de fonte e os portões`
+- `76771935 OE1-b: integrar o conjunto e conferir as bandeiras Eurostat nos dois formatos`
+- `f914b1db OE1-b: reconferir as duas contagens do livro no inventário`
+- `b29b41fb OE1-b: comitar o relatório, as plantas e as medições da integração`
+- `79a45d10 OE1-b: reconferir a L1 com a construção de partida`
+- `896e8ced OE1-b: guardar as provas e as propostas adicionais`
+- `322b71eb OE1-b: fechar o relatório com duas extensões pendentes`
+- `fb05d207 OE1-c: reconhecer os sete localizadores e plantar as recusas em I1 e I3`
+- `426c6f96 OE1-c: recortar o espécime do livro e provar o teto com o recorte retirado`
+- `4421c2a6 OE1-c: registar as plantas, as medições e o protocolo da corrida final`
+- `22dee4ca OE1-c: guardar a corrida final verde e os seus contadores`
+- `12f852c4 OE1-d: dizer a medida, o acumulado e a ressalva nas duas edições`
+- `be0f015b OE1-d: conferir unidades e ressalvas depois de integrar R2 e RP3`
+- `e0a38fd4 OE1-d: fechar avisos, registo da voz e medição reproduzível`
+- `d2cb6fd8 OE1-d: retirar a edição órfã e provar o formato da medição L1`
+- `ddf87d68 OE1-d: guardar portões verdes, medições e relato final`
+- `7fe0db17 OE1-d: provar as bases integradas e conservar as referências do R3`
+- `388bc592 OE1-d: guardar as provas verdes da cabeça integrada com o R3`
+- `57f09df6 OE1-e: publicar apenas as ressalvas aplicáveis e provar os recibos`
+- `9dae3dd8 OE1-e: mostrar o período de cada linha e medir as correções com plantas`
 
 ## Decisões em vigor
 
@@ -335,7 +335,7 @@ A guarda --conferir-final foi vista novamente a morder enquanto esta corrida ain
 
 ### Integração e prova da cabeça
 
-O sítio foi rebaseado na própria worktree, no ramo oe1-2026-10-04-b, sobre main `b748a6b4b5f6b3949b4fb9805720dcf2016b3a53`. O motor foi rebaseado sobre master `47f12e15c927bf238522ac680b1f54c9de29f55d`. Na primeira integração, os conflitos do inventário e das guardas foram resolvidos conservando as retiradas do R2, o campo serie e as provas do RP3, além das duas ressalvas. Depois de uma corrida verde, main avançou com o R3 entre a leitura da referência e o commit de provas. Esse resultado anterior está preservado em portoes-oe1d-antes-r3 e não prova a cabeça atual. O ramo foi novamente rebaseado; os conflitos do mapa e do inventário foram resolvidos à mão, conservando as secções dos dois blocos. As referências novas do R3 afetadas pela integração e a contagem dos campos foram atualizadas. O conferidor do mapa encontra todas as citações no ficheiro citado e nenhuma referência para lá do fim; regista ainda cinquenta e duas citações longe do número de linha indicado, listadas em oe1d-mapa-integrado.log. Não é uma prova de que todas as linhas do mapa estejam atualizadas. A nova medição lê a base efetivamente integrada e planta uma base falsa, recusada para cada árvore. As referências principais foram relidas antes da nova corrida integral.
+O sítio foi rebaseado na própria worktree, no ramo oe1-2026-10-04-b, sobre main `38cd302f5d879271d85fd5074f6123cd3a31ca2d`. O motor foi rebaseado sobre master `47f12e15c927bf238522ac680b1f54c9de29f55d`. Na primeira integração, os conflitos do inventário e das guardas foram resolvidos conservando as retiradas do R2, o campo serie e as provas do RP3, além das duas ressalvas. Depois de uma corrida verde, main avançou com o R3 entre a leitura da referência e o commit de provas. Esse resultado anterior está preservado em portoes-oe1d-antes-r3 e não prova a cabeça atual. O ramo foi novamente rebaseado; os conflitos do mapa e do inventário foram resolvidos à mão, conservando as secções dos dois blocos. As referências novas do R3 afetadas pela integração e a contagem dos campos foram atualizadas. O conferidor do mapa encontra todas as citações no ficheiro citado e nenhuma referência para lá do fim; regista ainda cinquenta e duas citações longe do número de linha indicado, listadas em oe1d-mapa-integrado.log. Não é uma prova de que todas as linhas do mapa estejam atualizadas. A nova medição lê a base efetivamente integrada e planta uma base falsa, recusada para cada árvore. As referências principais foram relidas antes da nova corrida integral.
 
 A corrida preparatória em cc4711df deu build=1, verify=1, ledger=0 e typecheck=0: os dois vermelhos eram a entrada em falta do bloco OE1-d no registo do inventário. A entrada por ler, prevista pela regra, resolveu a falta sem mudar o portão. As saídas preparatórias permanecem em portoes-oe1d-preparatorios. As queixas de estragos dentro dos JSON das plantas são resultados esperados, não erros da cabeça.
 
@@ -452,17 +452,17 @@ O módulo OE1 executou **setenta e uma conferências**, código zero em [oe1e-te
 
 A correção do relato R2 mede as declarações efetivas: trinta e três frases retiradas no R2 e seis no R2-b. O antigo --confere do R2 exige também uma secção que o R2-b alterou legitimamente. O instrumento lê apenas as declarações de retirada, confere cada frase no inventário atual e planta uma frase voltada a viva. A secção C1f é comparada inteira com `b37cb066`; a planta troca só o cabeçalho.
 
-A L1 foi medida na construção de `f5549dc8be22f4e936d62fbdfe4eac94b538db97`: **2714 páginas**, teto **2714**, trezentos e setenta e dois recibos OE1. O teto e a margem não mudaram. A prova está em l1-oe1e.json; o instrumento conserva as plantas de lista incompleta e de contagem adulterada do registo que a régua lê.
+A L1 foi medida na construção de `9dae3dd81bc2a95640727c40ed0b85b5e340b209`: **2714 páginas**, teto **2714**, trezentos e setenta e dois recibos OE1. O teto e a margem não mudaram. A prova está em l1-oe1e.json; o instrumento conserva as plantas de lista incompleta e de contagem adulterada do registo que a régua lê.
 
-O sítio foi rebaseado, na sua worktree, sobre main `f27aa38a0939d11908863afe6ee117da03404f5f`. O master do motor mantém-se em `47f12e15c927bf238522ac680b1f54c9de29f55d`, já integrado. A corrida final usa o código do sítio `f5549dc8be22f4e936d62fbdfe4eac94b538db97`. O último commit seguinte contém apenas provas, relatório e resposta; identifica-se pelo commit que contém esta secção. O pai é a cabeça de código escrita em portoes/cabeca e portoes/cabeca.fim. Nenhum ficheiro de código ou linha muda nesse último commit. Os portões do OE1-d foram preservados em portoes-oe1d-final.
+O sítio foi rebaseado, na sua worktree, sobre main `fbc95422116917dea6acf43557d03cf99926e866`. O master do motor mantém-se em `47f12e15c927bf238522ac680b1f54c9de29f55d`, já integrado. A corrida final usa o código do sítio `9dae3dd81bc2a95640727c40ed0b85b5e340b209`. O último commit seguinte contém apenas provas, relatório e resposta; identifica-se pelo commit que contém esta secção. O pai é a cabeça de código escrita em portoes/cabeca e portoes/cabeca.fim. Nenhum ficheiro de código ou linha muda nesse último commit. Os portões do OE1-d foram preservados em portoes-oe1d-final.
 
 | Portão | Código lido | Cabeça da corrida |
 |---|---|---|
 | motor | [0](portoes/motor.codigo) | `38457b2723c47ea126984be6c5c1f778967e6847` |
-| ledger | [0](portoes/ledger.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
-| build | [0](portoes/build.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
-| verify | [0](portoes/verify.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
-| typecheck | [0](portoes/typecheck.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
+| ledger | [0](portoes/ledger.codigo) | `9dae3dd81bc2a95640727c40ed0b85b5e340b209` |
+| build | [0](portoes/build.codigo) | `9dae3dd81bc2a95640727c40ed0b85b5e340b209` |
+| verify | [0](portoes/verify.codigo) | `9dae3dd81bc2a95640727c40ed0b85b5e340b209` |
+| typecheck | [0](portoes/typecheck.codigo) | `9dae3dd81bc2a95640727c40ed0b85b5e340b209` |
 
 Os códigos foram lidos dos ficheiros depois da corrida completa pela tranca. [oe1e-conferir-final.codigo](oe1e-conferir-final.codigo) contém zero para a mesma cabeça de código. O commit final do motor é a cabeça testada. Nenhum push.
 

@@ -2,11 +2,11 @@
 
 *Claude Opus 5.5 (a definição `construtor`), 29.09.2026. O relatório está em `design/especime-v3/medicoes/ue1-2026-09-29/LEIA-ME.md`, na secção «UE1b · a passagem de correção».*
 
-**As cabeças.** O sítio: o ramo `ue1-2026-09-29`. A cabeça do código da passagem, onde os portões correram, é `c9859d31`; a cabeça final é o commit que traz esta resposta, e só acrescenta e muda provas nesta pasta e na das capturas. O motor: o ramo `ue1-2026-09-29`, cabeça `e394307`, que a passagem não mudou (0 commits). Nada foi publicado.
+**As cabeças.** O sítio: o ramo `ue1-2026-09-29`. A cabeça do código da passagem, onde os portões correram, é `d65feab3`; a cabeça final é o commit que traz esta resposta, e só acrescenta e muda provas nesta pasta e na das capturas. O motor: o ramo `ue1-2026-09-29`, cabeça `e394307`, que a passagem não mudou (0 commits). Nada foi publicado.
 
-**Os portões, lidos dos ficheiros** (`portoes/ue1b/*.codigo`, todos da cabeça `c9859d31`): `npm run build` 0, `npm run verify` 0, `npm run typecheck` 0.
+**Os portões, lidos dos ficheiros** (`portoes/ue1b/*.codigo`, todos da cabeça `d65feab3`): `npm run build` 0, `npm run verify` 0, `npm run typecheck` 0.
 
-**Os commits da passagem.** `63f54d18` (o ordinal inglês, as ressalvas da fonte nas pontas e a legenda das marcas do recibo da série), `181ce25c` (a porta do recibo da linha portuguesa para a série), `c9859d31` (o mapa do repositório) e o das provas. Antes de cada um correram as conferências que ele tocou: 11, todas a 0.
+**Os commits da passagem.** `d0a36492` (o ordinal inglês, as ressalvas da fonte nas pontas e a legenda das marcas do recibo da série), `39f34d59` (a porta do recibo da linha portuguesa para a série), `d65feab3` (o mapa do repositório) e o das provas. Antes de cada um correram as conferências que ele tocou: 11, todas a 0.
 
 **O que o leitor vê.** «ranks 15th from the highest» e os outros ordinais ingleses (2nd, 6th, 7th, 8th, 10th, 12th, 13th, 14th e 15th hoje); «Hungria 18,3 (dado provisório)» e «Espanha 10,5 (definição diferente)» nas pontas, e as mesmas em inglês; o recibo de cada série com marcas diz, ao lado da tabela, o que quer dizer cada marca, com as palavras da faixa e a definição da resposta do Eurostat; e o recibo da linha portuguesa das 10 medidas, em português e em inglês, abre a série no enquadramento.
 

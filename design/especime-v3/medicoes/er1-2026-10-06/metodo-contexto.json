@@ -1,6 +1,6 @@
 {
   "comando": "node design/especime-v3/medicoes/er1-2026-10-06/medir-metodo-contexto.mjs",
-  "base": "f5fb384e5c7a6664a137ada57667700ed5eace96",
+  "base": "6b5cdbf15596c2b753a407d43200fbaab5210ea1",
   "fontes": [
     {
       "ficheiro": "src/data/metodo.mjs",

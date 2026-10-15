@@ -1,6 +1,6 @@
 # A leitura curta da passagem ER1-e pelo Claude Opus 5.5 (`high`), 12.10.2026
 
-*Lançada pelo lugar de direção às 11:11 UTC sobre o pacote de `1352d49a` a `9f240c59` (a passagem ER1-e do Codex `gpt-6-astra` em `high`), com cinco estragos plantados nas cópias (`PLANTAS-ER1-e-2026-10-12.json`), os registos inteiros e o JSON das quatro linhas; o total reportado pela ferramenta para o agente: 105 226 símbolos, em 4 minutos e 46 segundos, 32 chamadas de ferramentas. Os achados 1, 2, 3, 4 e 5 são as cinco plantas (todas mordidas); o 6 é um achado real Major; o 7 é a convenção do projeto (a cabeça final não cabe no seu próprio commit) e o 8 é anterior ao bloco. O que o lugar de direção decidiu está em `design/observatorio/mandatos/MANDATO-ER1-f-2026-10-12.md`. Sem travessões na prosa do cabeçalho; o corpo é a leitura tal como o leitor a escreveu, em inglês.*
+*Lançada pelo lugar de direção às 11:11 UTC sobre o pacote de `8dbe1481` a `f22354f0` (a passagem ER1-e do Codex `gpt-6-astra` em `high`), com cinco estragos plantados nas cópias (`PLANTAS-ER1-e-2026-10-12.json`), os registos inteiros e o JSON das quatro linhas; o total reportado pela ferramenta para o agente: 105 226 símbolos, em 4 minutos e 46 segundos, 32 chamadas de ferramentas. Os achados 1, 2, 3, 4 e 5 são as cinco plantas (todas mordidas); o 6 é um achado real Major; o 7 é a convenção do projeto (a cabeça final não cabe no seu próprio commit) e o 8 é anterior ao bloco. O que o lugar de direção decidiu está em `design/observatorio/mandatos/MANDATO-ER1-f-2026-10-12.md`. Sem travessões na prosa do cabeçalho; o corpo é a leitura tal como o leitor a escreveu, em inglês.*
 
 # Cold read of ER1-e (Claude Opus 5.5), 12.10.2026
 
@@ -22,7 +22,7 @@
 
 ## Minor
 
-7. **No file in the package gives the head `9f240c59` the builder reports.** The report only says the final head «consta da resposta da entrega». Its commit table stops at `ac402210`. References: relatorio-construtor.md:653, relatorio-construtor.md:661
+7. **No file in the package gives the head `f22354f0` the builder reports.** The report only says the final head «consta da resposta da entrega». Its commit table stops at `d4ad6e36`. References: relatorio-construtor.md:653, relatorio-construtor.md:661
 
 8. **«[a verificar]» marks are still printed on the refused receipts in both editions: 3 on Évora and 17 on PT2030.** These predate the pass and were deferred to the receipts block (finding 10). This pass changed nothing a reader sees on the four receipts or the Method. Apart from these marks, an editor would print those pages as before. References: built/livro-razao/evora-prr-aprovado-2026/index.html:1, built/en/ledger/avisos-pt2030-abertos/index.html:1
 
@@ -32,7 +32,7 @@
 10. `conferirJson` checks presence and absence with `Object.hasOwn`, so `null` and `''` are both refused, and plants bite for the object, null and empty cases. References: scripts/incorporar-do-portao.mjs:141, tests/incorporar/conferir.mjs:178
 11. `divida-publica-2025` and `abrantes-indice-de-divida-2024` carry all twelve string fields in both editions. The derived Abrantes row reads «calculado por este projeto». References: built/livro-razao/divida-publica-2025.json:16, built/livro-razao/abrantes-indice-de-divida-2024.json:16
 12. I reproduced these from the files: 3187 + 8 = 3195 rows, 6390 receipts, 6374 eligible presentations (3187 × 2), 27 browser cases, 16 new plants, and 0 non-derived rows without a date. Both built Method pages print 3 187 and 8. References: design/especime-v3/medicoes/er1-2026-10-06/contagens-e.json:12, design/especime-v3/medicoes/er1-2026-10-06/provas-e.json:1, built/en/method/index.html:1
-13. All three gate codes are 0, `cabeca` and `cabeca.fim` are both `ac402210`, and `verify.json` names the same head. The sha256 of `verify.log` matches the one recorded in `provas-e.json`. References: design/especime-v3/medicoes/er1-2026-10-06/portoes-e/verify.codigo:1, design/especime-v3/medicoes/er1-2026-10-06/portoes-e/cabeca.fim:1
+13. All three gate codes are 0, `cabeca` and `cabeca.fim` are both `d4ad6e36`, and `verify.json` names the same head. The sha256 of `verify.log` matches the one recorded in `provas-e.json`. References: design/especime-v3/medicoes/er1-2026-10-06/portoes-e/verify.codigo:1, design/especime-v3/medicoes/er1-2026-10-06/portoes-e/cabeca.fim:1
 14. The separator assertion covers the text from the reading to the end of the attribution and is checked against both corrupted sources. On the test row the static reading equals the JSON reading («lido a 05.10.2026»), so the static half bites for the right reason. References: tests/incorporar/navegador.mjs:136, tests/incorporar/navegador.mjs:140, design/especime-v3/medicoes/er1-2026-10-06/portoes-e/verify.log:4221
 15. The client source no longer tests `access_date` or `source`, and ER1-12 is recorded as the mandate asks. References: scripts/incorporar-cliente.mjs:23, relatorio-construtor.md:651
 

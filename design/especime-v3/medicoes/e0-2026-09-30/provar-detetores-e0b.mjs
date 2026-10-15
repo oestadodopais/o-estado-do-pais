@@ -15,7 +15,7 @@ export function provarDetetores() {
     assert.equal(lido, '6.0'); assert.equal(plantado, null);
     return { id, campo_lido: 'excerpt', lido, valor_da_casa: c.value, planta_mordeu: plantado === null };
   });
-  const diff = execFileSync('git', ['diff', '--name-only', '07549ee1e9ec2b39186f9e9f13eeac4914bf5e76', '--', 'src/components', 'src/views', 'src/styles'], { encoding: 'utf8' });
+  const diff = execFileSync('git', ['diff', '--name-only', '7a82c1477b1710292d23f7efdca7a367f407e134', '--', 'src/components', 'src/views', 'src/styles'], { encoding: 'utf8' });
   const anatomia = anatomiaDoDiff(diff);
   assert.ok(anatomia.includes('src/components/RegistoCorrecoes.astro'));
   const plantaDoCartao = anatomiaDoDiff(diff + 'src/components/CartaoDaMedida.astro\n').includes('src/components/CartaoDaMedida.astro');

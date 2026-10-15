@@ -103,9 +103,9 @@ const construcao = (f, rotulo, cab) => {
   medicao(`${rotulo}_cartoes_s`, r1(passo('cartoes')), `${C} · o passo cartoes`, oQue, cp);
   return d;
 };
-construcao('build-A1.json', 'build_antes', '1c1952c9');
-construcao('build-A2-perfilada.json', 'build_perfilada', '1c1952c9, com --cpu-prof em cada processo Node');
-construcao('build-B1.json', 'build_depois', '27b13b92');
+construcao('build-A1.json', 'build_antes', '8ee1b2c4');
+construcao('build-A2-perfilada.json', 'build_perfilada', '8ee1b2c4, com --cpu-prof em cada processo Node');
+construcao('build-B1.json', 'build_depois', '4d219970');
 medicao('paginas_do_astro', le('build-B1.json')?.paginas_do_astro, `${M}/evidencias/build-B1.json · paginas_do_astro`, 'a linha «[build] N page(s) built» do Astro', le('build-B1.json')?.paginas_do_astro > 0);
 
 /* ------------------------------------------------------------------ o perfil */
@@ -124,14 +124,14 @@ medicao('perfil_gate_html_s', gate?.total_s, `node <rascunho>/perfis-por-process
 medicao('perfil_gate_html_paridade_s', gate?.paridade_s, 'o mesmo · o tempo próprio de chaves, assertKeyParity e t', 'o perfil do gate:html achado', Boolean(gate));
 
 /* ------------------------------------------------------- a prova byte a byte */
-for (const [f, nome, cabs] of [['comparar-A1-A2.json', 'diferencas_controlo', 'A1 e A2, as duas em 1c1952c9'], ['comparar-A1-B1.json', 'diferencas_depois', 'A1 em 1c1952c9 e B1 em 27b13b92']]) {
+for (const [f, nome, cabs] of [['comparar-A1-A2.json', 'diferencas_controlo', 'A1 e A2, as duas em 8ee1b2c4'], ['comparar-A1-B1.json', 'diferencas_depois', 'A1 em 8ee1b2c4 e B1 em 4d219970']]) {
   const d = le(f);
   medicao(nome, d?.diferencas, `node ${M}/comparar-dist.mjs <dist ${cabs.split(' e ')[0]}> <dist ${cabs.split(' e ')[1]}> · ${f}`,
     'um byte trocado, um ficheiro a mais e um a menos, vistos numa cópia pequena antes de comparar', d?.conhecido_positivo?.ok);
 }
 {
   const d = le('comparar-A1-final.json');
-  medicao('diferencas_final', d?.diferencas, `node ${M}/comparar-dist.mjs <dist A1 em 1c1952c9> <dist do portão build> · comparar-A1-final.json`,
+  medicao('diferencas_final', d?.diferencas, `node ${M}/comparar-dist.mjs <dist A1 em 8ee1b2c4> <dist do portão build> · comparar-A1-final.json`,
     'um byte trocado, um ficheiro a mais e um a menos, vistos numa cópia pequena antes de comparar', d?.conhecido_positivo?.ok);
   medicao('dist_ficheiros_final', d?.ficheiros_depois, `${M}/evidencias/comparar-A1-final.json · ficheiros_depois`, 'os ficheiros das duas construções contados um a um', d?.ficheiros_antes === d?.ficheiros_depois);
 }
@@ -141,7 +141,7 @@ medicao('carimbo_campos_depois', b1?.carimbo?.length, `${M}/evidencias/comparar-
 
 /* ------------------------------------------------------------------ o verify */
 const inteiro = le('verify-inteiro-B1.json');
-medicao('verify_inteiro_depois_s', r1(inteiro?.segundos), `node ${M}/cronometro.mjs <prefixo> -- npm run verify (na cabeça 27b13b92, sobre o dist/ de B1)`, 'o código 0 e 33 marcas do npm além da do verify', inteiro?.codigo === 0 && (inteiro?.passos?.length ?? 0) >= 34);
+medicao('verify_inteiro_depois_s', r1(inteiro?.segundos), `node ${M}/cronometro.mjs <prefixo> -- npm run verify (na cabeça 4d219970, sobre o dist/ de B1)`, 'o código 0 e 33 marcas do npm além da do verify', inteiro?.codigo === 0 && (inteiro?.passos?.length ?? 0) >= 34);
 for (const [f, nome, n] of [['verify-depois-B1-p4.resultado.json', 'verify_depois_do_build_p4_s', 4], ['verify-depois-B1-p10.resultado.json', 'verify_depois_do_build_p10_s', 10]]) {
   const d = le(f);
   medicao(nome, r1(d?.segundos), `node scripts/verify-depois-do-build.mjs --paralelo ${n} --json <f>`, 'as sete plantas morderam e as três células passaram', d?.ok === true && (d?.plantas ?? []).every((p) => p.mordeu));
@@ -185,7 +185,7 @@ medicao('plantas_do_guiao_mordidas', pv?.mordidas, 'node scripts/verify-depois-d
 medicao('plantas_do_guiao_total', pv?.total, 'o mesmo', 'a cadeia sintética limpa passa', pv?.plantas?.[0]?.mordeu);
 medicao('contraprovas_das_celulas', pv?.contraprova?.apanhados, 'numa cópia do guião, a U, a D e a C a dizerem sempre ok, e a prova corrida', 'cada cópia estragada fechou com 1', (pv?.contraprova?.estragos ?? []).every((e) => e.codigo === 1));
 const pg = le('plantas-guardas.json');
-medicao('guardas_casos_antes', pg?.casos_na_cabeca_de_partida, 'git show 1c1952c9:scripts/provar-guardas.mjs, corrido em scripts/', 'a linha «guardas · N conferência(s)» na saída', typeof pg?.casos_na_cabeca_de_partida === 'number');
+medicao('guardas_casos_antes', pg?.casos_na_cabeca_de_partida, 'git show 8ee1b2c4:scripts/provar-guardas.mjs, corrido em scripts/', 'a linha «guardas · N conferência(s)» na saída', typeof pg?.casos_na_cabeca_de_partida === 'number');
 medicao('guardas_casos_depois', pg?.casos_depois, 'node scripts/provar-guardas.mjs', 'a linha «guardas · N conferência(s)» na saída', typeof pg?.casos_depois === 'number');
 medicao('contraprovas_da_paridade', (pg?.contraprova?.estragos ?? []).filter((e) => e.codigo === 1 && e.casos_que_falharam.length > 0).length,
   'src/i18n/strings.mjs estragado no sítio (sem a conferência; sem congelar), o provar:guardas corrido, e os bytes repostos', 'os bytes repostos têm o sha256 de antes', pg?.contraprova?.reposto_igual);
@@ -333,7 +333,7 @@ medicao('ci1b_feixe_depois_do_grupo', (() => {
   return feixe ? feixe.fase === 'depois' && feixe.inicio_s >= fim : null;
 })(), 'o mesmo · o design:feixe começou depois de a última do grupo acabar', 'as horas de cada passo no registo', (fin1b?.corridos ?? []).every((c) => typeof c.inicio_s === 'number'));
 const cmpFinal1b = le1b('comparar-A1-final-ci1b.json');
-medicao('ci1b_diferencas_final', cmpFinal1b?.diferencas, `node ${M}/comparar-dist.mjs <dist A1 em 1c1952c9> <dist do portão build da passagem>`, 'um byte trocado, um ficheiro a mais e um a menos, e a mesma conta pelos manifestos', cmpFinal1b?.conhecido_positivo?.ok);
+medicao('ci1b_diferencas_final', cmpFinal1b?.diferencas, `node ${M}/comparar-dist.mjs <dist A1 em 8ee1b2c4> <dist do portão build da passagem>`, 'um byte trocado, um ficheiro a mais e um a menos, e a mesma conta pelos manifestos', cmpFinal1b?.conhecido_positivo?.ok);
 
 /* Os portões da passagem. */
 for (const g of ['build', 'verify', 'typecheck']) {

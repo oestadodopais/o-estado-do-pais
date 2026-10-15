@@ -1,6 +1,6 @@
 # N1 · Uma porta por assunto
 
-Construção de 30.09.2026, no ramo `n1-2026-09-30`, por Codex `gpt-6-astra`. Base: `2cbc5cc46327697469347b98a2445494027861f4`.
+Construção de 30.09.2026, no ramo `n1-2026-09-30`, por Codex `gpt-6-astra`. Base: `a5139c5535ac4232bd9025fac4c1f8acb10050f8`.
 
 **Estado atual: ver a secção N1d no fim. A nota do §5 resolveu a contagem dos preços.** O teste de aceitação continua incompleto pelo requisito adicional do contador medido na N1b.
 
@@ -62,7 +62,7 @@ A régua das frases passou com as suas cinco plantas. A geometria e a pesquisa d
 
 A V1 e as células dos cartões leem uma agregação do HTML dos sete assuntos. A V2 lê o cartão das câmaras em Lugares. O F5 mantém as 29 linhas que já protegia e as três datas dos seus 58 recibos nas duas línguas. O teto L1 desceu de 2 349 para 2 337, com a composição em [l1-n1.json](l1-n1.json). A guarda da convergência reconhece agora as nove linhas regionais concretas, para não tomar os valores municipais junto de nove ligações regionais por uma régua da convergência. Nenhuma alteração ao livro-razão, às fontes ou aos valores ficou no ramo.
 
-O primeiro ensaio completo revelou ainda o campo `Afecta` da §1.143 fora do formato admitido pelo livro-razão. O commit separado `f76c5898` repôs o formato do campo e conservou o texto anterior em `Revê`, sem mudar a decisão.
+O primeiro ensaio completo revelou ainda o campo `Afecta` da §1.143 fora do formato admitido pelo livro-razão. O commit separado `7471b3c9` repôs o formato do campo e conservou o texto anterior em `Revê`, sem mudar a decisão.
 
 O primeiro `verify` completo chegou ao feixe de desenho e recusou o retrato integral de Lugares: 1 220,3 KiB e 616 elementos SVG `use`. O feixe passou a mostrar um recorte explicitamente identificado, até às portas geográficas; a página real continua inteira. O teto de 596,75 KiB e a proibição de dependências mantêm-se. Três plantas pela função real recusam tamanho excessivo, dependência SVG e imagem externa, e correm agora em cada `design:feixe`. A conferência dirigida passou, com código 0 em [ensaios/feixe.log](ensaios/feixe.log).
 
@@ -79,24 +79,24 @@ A inspeção visual incluiu Preços e a primeira página a 390 px em português,
 Os códigos são lidos dos ficheiros escritos por [correr.mjs](correr.mjs). O guião guarda saída, código, cabeça, início, fim e segundos, retirando os caminhos e o nome da conta local. Cada portão corre no seu comando. Antes das corridas completas, a lista de processos é consultada e não se inicia outra construção concorrente.
 
 <!-- PORTOES-INICIO -->
-Corridas completas na cabeça final `70ebf9b64ba9f0a7340f69848cd09146f4d7555b`. Códigos e cabeças lidos dos ficheiros acabados de escrever.
+Corridas completas na cabeça final `6af7d581b80651b7796226f02291d31783ea5fad`. Códigos e cabeças lidos dos ficheiros acabados de escrever.
 
 | Comando | Código lido | Cabeça | Segundos |
 | --- | ---: | --- | ---: |
-| `npm run build` | [0](portoes/build.codigo) | `70ebf9b64ba9f0a7340f69848cd09146f4d7555b` | 85.5 |
-| `npm run verify` | [0](portoes/verify.codigo) | `70ebf9b64ba9f0a7340f69848cd09146f4d7555b` | 599.3 |
-| `npm run typecheck` | [0](portoes/typecheck.codigo) | `70ebf9b64ba9f0a7340f69848cd09146f4d7555b` | 0.3 |
+| `npm run build` | [0](portoes/build.codigo) | `6af7d581b80651b7796226f02291d31783ea5fad` | 85.5 |
+| `npm run verify` | [0](portoes/verify.codigo) | `6af7d581b80651b7796226f02291d31783ea5fad` | 599.3 |
+| `npm run typecheck` | [0](portoes/typecheck.codigo) | `6af7d581b80651b7796226f02291d31783ea5fad` | 0.3 |
 <!-- PORTOES-FIM -->
 
 Os primeiros resultados estão conservados em `ensaios/primeiro-*`, incluindo a falha do feixe. Depois do commit de fecho, os três comandos correram na cabeça final e os ficheiros de `portoes/` foram escritos de novo. Este relatório, `medidas.json`, `custo.json` e esses comprovativos finais ficam atualizados na árvore de trabalho, fora do último commit: um commit não pode conter um ficheiro que já conheça o seu próprio identificador. A resposta final da sessão lê estes ficheiros e dá a cabeça efetivamente conferida. Não se confunde a cabeça das capturas com a cabeça posterior que só acrescenta documentação e provas.
 
 ## Commits
 
-- `f76c5898`: Corrige o campo governado da decisão N1.
-- `c22c21e8`: Dá uma página própria a cada assunto.
-- `e5143eaa`: Recorta o retrato dos lugares no feixe de desenho.
-- `dc5944ae`: Regista as medidas e as noventa capturas do N1.
-- `70ebf9b6`: Fecha o relatório parcial e a resposta do construtor N1.
+- `7471b3c9`: Corrige o campo governado da decisão N1.
+- `f2f87692`: Dá uma página própria a cada assunto.
+- `6c652e9b`: Recorta o retrato dos lugares no feixe de desenho.
+- `96c31f29`: Regista as medidas e as noventa capturas do N1.
+- `6af7d581`: Fecha o relatório parcial e a resposta do construtor N1.
 
 O último commit acrescenta este relatório e `RESPOSTA-construtor-n1.md`. O identificador desse commit lê-se em `git rev-parse HEAD` e nos três ficheiros `.cabeca` da conferência final. Não houve `push`.
 
@@ -113,11 +113,11 @@ Aplicar o ponto 5 depois de resolver o tipo de atualização ou o contador deriv
 
 ## N1b · Registos anteriores e requisito adicional do contador
 
-A nota do §5 do brief, em `c0cbc79b`, resolve a contagem dos preços: são os seis cartões já construídos. O mandato desta passagem está em `prompts/PROMPT-n1b-construtor.md`, acrescentado por `59e19d22`.
+A nota do §5 do brief, em `940e8b0e`, resolve a contagem dos preços: são os seis cartões já construídos. O mandato desta passagem está em `prompts/PROMPT-n1b-construtor.md`, acrescentado por `d5f81d13`.
 
 ### 1 · Registos anteriores conservados
 
-O commit `dfc86083` regista, tal como estavam na árvore de trabalho, os doze ficheiros pendentes: o relatório, `medidas.json`, `custo.json` e os comprovativos finais da cabeça `70ebf9b6`. Os três códigos lidos desses ficheiros eram zero. Não se repetiram comandos para substituir esses comprovativos históricos.
+O commit `00911eb3` regista, tal como estavam na árvore de trabalho, os doze ficheiros pendentes: o relatório, `medidas.json`, `custo.json` e os comprovativos finais da cabeça `6af7d581`. Os três códigos lidos desses ficheiros eram zero. Não se repetiram comandos para substituir esses comprovativos históricos.
 
 ### 2 · Ponto 5 parado no requisito adicional
 
@@ -127,7 +127,7 @@ A decisão permite as duas entradas `correcao` do desemprego e a recontagem `3` 
 
 O erro ocorre nas duas edições. O registo exige um lugar para qualquer entrada `correcao` ou `atualizacao`. A linha derivada conta correções do próprio projeto; não está declarada como medida de Portugal, de uma região ou de um concelho. A história do contador precisa de `atualizacao`, porque a contagem anterior estava certa antes das duas publicações novas; classificá-la como `correcao` acrescentaria uma sexta correção.
 
-A [prova reproduzível](provar-contador-n1b.mjs), executada na cabeça `dfc86083`, trabalha apenas em memória e repõe os objetos no fim. O [resultado](prova-contador-n1b.json) e a [saída](ensaios/n1b-contador.log) mostram:
+A [prova reproduzível](provar-contador-n1b.mjs), executada na cabeça `00911eb3`, trabalha apenas em memória e repõe os objetos no fim. O [resultado](prova-contador-n1b.json) e a [saída](ensaios/n1b-contador.log) mostram:
 
 | Passo do ensaio | Português | Inglês |
 | --- | ---: | ---: |
@@ -148,16 +148,16 @@ No estado conservado, as duas linhas portuguesas continuam em `6`, o contador co
 Os três portões desta passagem correm depois do commit que contém `RESPOSTA-construtor-n1b.md`, cada um no seu comando. Os ficheiros novos ficam em `portoes/n1b/`, com cabeça, código, saída e duração. A tabela seguinte é atualizada só depois de ler esses ficheiros; os comprovativos da cabeça final e essa atualização do relatório ficam na árvore de trabalho, depois do último commit.
 
 <!-- N1B-PORTOES-INICIO -->
-Corridas completas na cabeça final `53938d130cbb668579510094b7f22434bc44a0a9`. Códigos e cabeças lidos dos ficheiros acabados de escrever.
+Corridas completas na cabeça final `d2ec92c37e5def58291a5abd78db88e64abe5578`. Códigos e cabeças lidos dos ficheiros acabados de escrever.
 
 | Comando | Código lido | Cabeça | Segundos |
 | --- | ---: | --- | ---: |
-| `npm run build` | [0](portoes/n1b/build.codigo) | `53938d130cbb668579510094b7f22434bc44a0a9` | 85.1 |
-| `npm run verify` | [0](portoes/n1b/verify.codigo) | `53938d130cbb668579510094b7f22434bc44a0a9` | 598.1 |
-| `npm run typecheck` | [0](portoes/n1b/typecheck.codigo) | `53938d130cbb668579510094b7f22434bc44a0a9` | 0.3 |
+| `npm run build` | [0](portoes/n1b/build.codigo) | `d2ec92c37e5def58291a5abd78db88e64abe5578` | 85.1 |
+| `npm run verify` | [0](portoes/n1b/verify.codigo) | `d2ec92c37e5def58291a5abd78db88e64abe5578` | 598.1 |
+| `npm run typecheck` | [0](portoes/n1b/typecheck.codigo) | `d2ec92c37e5def58291a5abd78db88e64abe5578` | 0.3 |
 <!-- N1B-PORTOES-FIM -->
 
-Commits da passagem: `dfc86083` (registos anteriores), `3890bbe3` (prova e medidas) e `53938d13` (relatório da paragem e resposta N1b). A cabeça final completa lê-se nos ficheiros `.cabeca` dos portões finais. Não houve `push`.
+Commits da passagem: `00911eb3` (registos anteriores), `9dea1357` (prova e medidas) e `d2ec92c3` (relatório da paragem e resposta N1b). A cabeça final completa lê-se nos ficheiros `.cabeca` dos portões finais. Não houve `push`.
 
 Amostra do construtor a `2026-09-30T10:57:20.991Z`: **31 778 394 símbolos** cumulativos, dos quais 31 637 335 de entrada (30 692 864 em cache) e 141 059 de saída. Entrada sem cache: 944 471. Tempo decorrido desde o início desta sessão N1 e N1b até à medição: **6766.8 segundos**. São contadores cumulativos da sessão, não o custo isolado desta passagem. A amostra e os revisores automáticos estão separados em [custo.json](custo.json).
 
@@ -182,7 +182,7 @@ A leitura `design/especime-v3/critica/LEITURA-n1-2026-09-30.md`, com a triagem n
 | 10 | 18, conhecidos-positivos | Quatro plantas de ligações antigas, relativas e absolutas, e um ficheiro temporário com caminho fictício exercitam os mesmos detetores. A marca municipal ausente produz erro, com planta. |
 | 11 | 19, custo | O `custo.json` conserva as amostras N1 e N1b lidas do Git e os dois fechos «tokens used», confrontados com os eventos reais. Cada revisor declara a base sem cache e a soma com cache, com totais por amostra. |
 | 12 | 20, voz | O título do bloco fica autorizado só na primeira página; a leitura da justiça em Estado e economia. As razões do ganho médio e do salário mínimo apontam agora a Salários, pensões e apoios. |
-| 13 | 21, estrutura | O §2 fecha a divergência dos preços pela nota do §5 do brief em `c0cbc79b`: seis medidas. |
+| 13 | 21, estrutura | O §2 fecha a divergência dos preços pela nota do §5 do brief em `940e8b0e`: seis medidas. |
 | 14 | 15 e 14, limites | A diferença de precisão continua na primeira página e no cartão do desemprego em `/emprego/` e `/en/employment/`: valor principal `6 %`, régua da União e faixa com `6,0`. As ligações antigas com fragmento não encontram os cartões no índice novo. |
 | 15 | Linhas dos índices | Primeira página e Temas mostram o assunto, sem o prefixo de âmbito. As portas conservam a linha completa. A célula conhece as duas formas; recusa a linha longa no índice e a declaração que perde Portugal. |
 
@@ -201,27 +201,27 @@ O ponto 5 continua parado no requisito adicional do contador, sem aplicar as dua
 <!-- N1C-MEDIDAS-INICIO -->
 O [medidor](medir-n1.mjs), com `--n1c`, produziu **25 medidas**, todas com conhecido-positivo, **41 plantas que mordem** e **zero erros de navegação**. Os quatro conjuntos de 308 pares de identificador e valor dos mapas coincidem com os guardados antes do N1. O ponto 5 permanece falso.
 
-O [captor](captar-n1c.mjs) registou **44 imagens**: primeira página, Temas, União e as oito portas, a 390 e a 1 280 px, nas duas edições. O [manifesto](capturas-n1c.json) prende cada imagem ao seu SHA-256 e à cabeça `ffd62670acdeb441c4a035edf93c2dd8c036101f`. As tabelas municipais e as três leituras da União ficam abertas para mostrar os cabeçalhos e as portas.
+O [captor](captar-n1c.mjs) registou **44 imagens**: primeira página, Temas, União e as oito portas, a 390 e a 1 280 px, nas duas edições. O [manifesto](capturas-n1c.json) prende cada imagem ao seu SHA-256 e à cabeça `b640d2a011cd612428f3e2e6eea2e931090fec40`. As tabelas municipais e as três leituras da União ficam abertas para mostrar os cabeçalhos e as portas.
 
 As dezasseis ocorrências das notas medidas ficam dentro da caixa do respetivo cartão, oito delas a 1 280 px. Não houve transbordo horizontal, cartões a transbordar ou erro de página. A inspeção visual incluiu Salários, pensões e apoios em português a 1 280 px e em inglês a 390 px, e Estado e economia em inglês a 1 280 px.
 
-A primeira inspeção encontrou uma quebra indevida do nome do salário irmão e o espaço colapsado entre valor e unidade. A verificação em curso foi interrompida, com código 1 conservado em `ensaios/n1c-verify-interrompido.codigo`; não foi uma corrida completa. A correção `ffd62670` retira a classe de lista do nome e preserva o espaço. As capturas foram repetidas: a separação medida é de 2,8125 px nas quatro combinações de língua e largura, e a planta que retira esse espaço é detetada nas quatro. A nova inspeção confirmou o nome a correr na frase.
+A primeira inspeção encontrou uma quebra indevida do nome do salário irmão e o espaço colapsado entre valor e unidade. A verificação em curso foi interrompida, com código 1 conservado em `ensaios/n1c-verify-interrompido.codigo`; não foi uma corrida completa. A correção `b640d2a0` retira a classe de lista do nome e preserva o espaço. As capturas foram repetidas: a separação medida é de 2,8125 px nas quatro combinações de língua e largura, e a planta que retira esse espaço é detetada nas quatro. A nova inspeção confirmou o nome a correr na frase.
 
 <!-- N1C-MEDIDAS-FIM -->
 
 ### Portões e commits
 
 <!-- N1C-PORTOES-INICIO -->
-Corridas completas na cabeça do código `ffd62670acdeb441c4a035edf93c2dd8c036101f`. Códigos, cabeças e durações lidos dos ficheiros acabados de escrever.
+Corridas completas na cabeça do código `b640d2a011cd612428f3e2e6eea2e931090fec40`. Códigos, cabeças e durações lidos dos ficheiros acabados de escrever.
 
 | Comando | Código lido | Cabeça | Segundos |
 | --- | ---: | --- | ---: |
-| `npm run build` | [0](portoes/n1c/build.codigo) | `ffd62670acdeb441c4a035edf93c2dd8c036101f` | 88.7 |
-| `npm run verify` | [0](portoes/n1c/verify.codigo) | `ffd62670acdeb441c4a035edf93c2dd8c036101f` | 600.5 |
-| `npm run typecheck` | [0](portoes/n1c/typecheck.codigo) | `ffd62670acdeb441c4a035edf93c2dd8c036101f` | 0.3 |
+| `npm run build` | [0](portoes/n1c/build.codigo) | `b640d2a011cd612428f3e2e6eea2e931090fec40` | 88.7 |
+| `npm run verify` | [0](portoes/n1c/verify.codigo) | `b640d2a011cd612428f3e2e6eea2e931090fec40` | 600.5 |
+| `npm run typecheck` | [0](portoes/n1c/typecheck.codigo) | `b640d2a011cd612428f3e2e6eea2e931090fec40` | 0.3 |
 <!-- N1C-PORTOES-FIM -->
 
-Os commits de código são `b3f0fdf9` (vistas, ordem, guardas, plantas e documentos), `a10ceb40` (medidor, captura, provas do portão e custo), `62d28810` (contrato de tipos da linha curta) e `ffd62670` (correção visual do salário irmão e prova do espaço). O último commit regista apenas os comprovativos, as capturas, este relatório e a resposta curta; o seu identificador lê-se em `git rev-parse HEAD`. Uma cabeça não pode ser escrita em ficheiros que façam parte do próprio commit; por isso, para deixar a árvore limpa, o relatório distingue a cabeça testada da cabeça posterior que regista as provas. Não houve `push`.
+Os commits de código são `503de602` (vistas, ordem, guardas, plantas e documentos), `64bc5c86` (medidor, captura, provas do portão e custo), `a8048536` (contrato de tipos da linha curta) e `b640d2a0` (correção visual do salário irmão e prova do espaço). O último commit regista apenas os comprovativos, as capturas, este relatório e a resposta curta; o seu identificador lê-se em `git rev-parse HEAD`. Uma cabeça não pode ser escrita em ficheiros que façam parte do próprio commit; por isso, para deixar a árvore limpa, o relatório distingue a cabeça testada da cabeça posterior que regista as provas. Não houve `push`.
 
 ### Custo e base de contagem
 
@@ -266,7 +266,7 @@ O ensaio de preparação `navegacao-n1d.json` também identifica a cabeça de ba
 O corredor novo regista o estado da árvore no início e separa código por registar dos comprovativos pendentes. Um estado «árvore por registar» durante os portões finais pode corresponder apenas aos comprovativos que estão a ser escritos; `codigo_por_registar: false` explicita esse caso. Os guiões da própria pasta das medições contam como código.
 
 <!-- N1D-PROVAS-INICIO -->
-As duas provas foram repetidas na cabeça final do código `926e625bf5b704a9eac9c294d8e3491a528142d3`. Em [plantas-n1d-portao.json](plantas-n1d-portao.json), os quatro códigos são `0, 1, 1, 1`: o controlo limpo passa e cada alteração é recusada. O resumo confirma que o HTML foi reposto. Em [prova-formas-n1d.json](prova-formas-n1d.json), os quatro códigos também são `0, 1, 1, 1`; a declaração vazia de domínios não impede os três detetores de morder. O ficheiro original das formas permanece intacto.
+As duas provas foram repetidas na cabeça final do código `7a80f3e8ecb62c9c44700d945c50ef9baed4fabe`. Em [plantas-n1d-portao.json](plantas-n1d-portao.json), os quatro códigos são `0, 1, 1, 1`: o controlo limpo passa e cada alteração é recusada. O resumo confirma que o HTML foi reposto. Em [prova-formas-n1d.json](prova-formas-n1d.json), os quatro códigos também são `0, 1, 1, 1`; a declaração vazia de domínios não impede os três detetores de morder. O ficheiro original das formas permanece intacto.
 <!-- N1D-PROVAS-FIM -->
 
 ### Capturas e medidas
@@ -276,22 +276,22 @@ O [medidor](medir-n1.mjs), com `--n1d`, produziu **27 medidas com conhecido-posi
 
 O [manifesto das capturas](capturas-n1d.json) regista **8 páginas inteiras**: Lugares e Salários, pensões e apoios, a 390 e 1 280 px, nas duas edições. Junta **4 recortes do contexto dos ganhos**, nas mesmas combinações. Os doze resumos SHA-256 foram recalculados e conferidos. Não houve transbordo horizontal, cartão a transbordar ou erro de página. As tabelas ficam abertas nas capturas.
 
-A inspeção visual incluiu o contexto dos ganhos em português a 1 280 px e em inglês a 390 px, e a página dos salários nas mesmas combinações. A frase ajusta o valor, o nome e a unidade continuam legíveis, e a nota conserva a caixa do respetivo cartão. As quatro ocorrências do salário irmão mantêm a separação entre número e unidade, também conferida pela planta do espaço. A cabeça do manifesto é `926e625bf5b704a9eac9c294d8e3491a528142d3`.
+A inspeção visual incluiu o contexto dos ganhos em português a 1 280 px e em inglês a 390 px, e a página dos salários nas mesmas combinações. A frase ajusta o valor, o nome e a unidade continuam legíveis, e a nota conserva a caixa do respetivo cartão. As quatro ocorrências do salário irmão mantêm a separação entre número e unidade, também conferida pela planta do espaço. A cabeça do manifesto é `7a80f3e8ecb62c9c44700d945c50ef9baed4fabe`.
 <!-- N1D-MEDIDAS-FIM -->
 
 ### Portões e commits
 
 <!-- N1D-PORTOES-INICIO -->
-Os três comandos correram separadamente na cabeça final do código `926e625bf5b704a9eac9c294d8e3491a528142d3`. Todos os códigos, cabeças e durações abaixo foram lidos dos ficheiros; os três metadados dizem `codigo_por_registar: false`.
+Os três comandos correram separadamente na cabeça final do código `7a80f3e8ecb62c9c44700d945c50ef9baed4fabe`. Todos os códigos, cabeças e durações abaixo foram lidos dos ficheiros; os três metadados dizem `codigo_por_registar: false`.
 
 | Comando | Código lido | Cabeça | Segundos |
 | --- | ---: | --- | ---: |
-| `npm run build` | [0](portoes/n1d/build.codigo) | `926e625bf5b704a9eac9c294d8e3491a528142d3` | 90.5 |
-| `npm run verify` | [0](portoes/n1d/verify.codigo) | `926e625bf5b704a9eac9c294d8e3491a528142d3` | 604.3 |
-| `npm run typecheck` | [0](portoes/n1d/typecheck.codigo) | `926e625bf5b704a9eac9c294d8e3491a528142d3` | 0.3 |
+| `npm run build` | [0](portoes/n1d/build.codigo) | `7a80f3e8ecb62c9c44700d945c50ef9baed4fabe` | 90.5 |
+| `npm run verify` | [0](portoes/n1d/verify.codigo) | `7a80f3e8ecb62c9c44700d945c50ef9baed4fabe` | 604.3 |
+| `npm run typecheck` | [0](portoes/n1d/typecheck.codigo) | `7a80f3e8ecb62c9c44700d945c50ef9baed4fabe` | 0.3 |
 <!-- N1D-PORTOES-FIM -->
 
-Commits de construção: `4eaf0905` (contexto municipal, frase Eurostat e células) e `926e625b` (guiões, conhecidos-positivos e identificação dos ensaios históricos). O commit seguinte contém apenas medições, capturas, este relatório e `RESPOSTA-construtor-n1d.md`. A cabeça final do ramo lê-se em `git rev-parse HEAD`; a cabeça final do código é a que acompanha os portões. Não houve `push`.
+Commits de construção: `4e826084` (contexto municipal, frase Eurostat e células) e `7a80f3e8` (guiões, conhecidos-positivos e identificação dos ensaios históricos). O commit seguinte contém apenas medições, capturas, este relatório e `RESPOSTA-construtor-n1d.md`. A cabeça final do ramo lê-se em `git rev-parse HEAD`; a cabeça final do código é a que acompanha os portões. Não houve `push`.
 
 ### Custo
 
@@ -301,4 +301,4 @@ Amostra N1d do construtor a `2026-09-30T13:24:22.023Z`: **1 635 872 símbolos co
 Os **8 revisores automáticos** somam **428 310 símbolos cobrados** e **3 502 358 com cache**. Os contadores individuais e as duas bases estão em [custo.json](custo.json), separados do construtor. A base dos revisores é calculada dos eventos `token_count`, sem alegar uma linha individual de terminal que não está disponível.
 <!-- N1D-CUSTO-FIM -->
 
-Os contadores são cumulativos da mesma sessão, com as passagens anteriores e as esperas. Não representam só o incremento N1d nem um preço em euros. As amostras N1 e N1b mantêm-se dentro do `custo.json`; a amostra N1c permanece no commit `471c88d5` e na secção histórica acima. O contador final do CLI desta passagem ainda não existe antes do fecho da sessão, e não foi inventado.
+Os contadores são cumulativos da mesma sessão, com as passagens anteriores e as esperas. Não representam só o incremento N1d nem um preço em euros. As amostras N1 e N1b mantêm-se dentro do `custo.json`; a amostra N1c permanece no commit `7fe359b6` e na secção histórica acima. O contador final do CLI desta passagem ainda não existe antes do fecho da sessão, e não foi inventado.

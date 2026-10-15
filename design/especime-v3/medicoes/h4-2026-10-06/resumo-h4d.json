@@ -1,34 +1,34 @@
 {
   "comando": "python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4d.py",
-  "partida": "6a63145dd09444c09612374a37bcfaa41b590788",
-  "cabeca_codigo": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+  "partida": "ebff7a44d5d1ac4e4888d63374ee9a460010978b",
+  "cabeca_codigo": "4fe4ab86a2182acce525bddda0996a7b439f5cfa",
   "commits": [
     {
-      "cabeca": "f00766e3008a88c0176e7b640550716602c96747",
+      "cabeca": "2001cd2b4256a7bde8399f2a44f58a5c830f00d0",
       "assunto": "H4-d: provar as proteções em falta da TM4 (achado 6)"
     },
     {
-      "cabeca": "efe38f9919de985a59b9a3d90c85080f463dd860",
+      "cabeca": "ee21a55d61ec10854d840f5ab9e5ed6f097f6bd5",
       "assunto": "H4-d: retirar o provisório e atualizar a TM4 no mapa (achado 12)"
     },
     {
-      "cabeca": "aeec3c17ec62ec03bb31a40b2e8a54dfe32df52c",
+      "cabeca": "ab2fd1ac92d8b907ffd57d2249afdeff3fbf3ace",
       "assunto": "H4-d: explicar a exceção do nome da União no menu (achado 13)"
     },
     {
-      "cabeca": "35efa677c73bac12e91e5ea99618d1e975ddb1c6",
+      "cabeca": "15f4e257531329afde7075b6321c4bd5e4cb5617",
       "assunto": "H4-d: dar cabeçalho à tabela do inventário (achado 14)"
     },
     {
-      "cabeca": "fcadc7f797e1212e34ff2cf7938728e95ed65d62",
+      "cabeca": "1a3e394e6de8270cb25a0564ac1334db364e4325",
       "assunto": "H4-d: dizer os lugares como são e em palavras correntes (achados 15 e 16)"
     },
     {
-      "cabeca": "fd9659a08301e0c940a2c156a84d9e7ff10a7f0e",
+      "cabeca": "6096238186f079e76641a2c5751e1ed68501f22d",
       "assunto": "H4-d: prender as provas e capturas à cabeça limpa (achado 11)"
     },
     {
-      "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+      "cabeca": "4fe4ab86a2182acce525bddda0996a7b439f5cfa",
       "assunto": "H4-d: distinguir peça na política do nome de um estudo (H4-6)"
     }
   ],

@@ -13,7 +13,7 @@ const le=f=>JSON.parse(fs.readFileSync(path.join(pasta,f),'utf8'));
 const txt=f=>fs.readFileSync(path.join(pasta,f),'utf8').trim();
 const git=(...args)=>execFileSync('git',args,{encoding:'utf8'}).trim();
 const sha=x=>createHash('sha256').update(x).digest('hex');
-const base='ce325a3cd772b4317436345cec720cd739c2279d';
+const base='fab9afa8cf1a62899ddad58d80df9e7aa35b363f';
 const cabeca=txt('portoes/cabeca');
 const historicoB=le('medidas-h2b.json');
 const cabecaB=historicoB.cabeca_codigo;
@@ -21,7 +21,7 @@ if(txt('portoes-h2b/cabeca')!==cabecaB||txt('portoes-h2b/cabeca.fim')!==cabecaB)
 for(const g of ['build','verify','typecheck']){
  if(Number(txt(`portoes-h2b/${g}.codigo`))!==historicoB.portoes[g].codigo||sha(fs.readFileSync(`${pasta}/portoes-h2b/${g}.log`))!==historicoB.portoes[g].log_sha256)throw Error('O arquivo dos portões H2-b mudou.');
 }
-const baseC='4d85508f736774e1fdca1ae4093eafe5e2b591d3';
+const baseC='e381344b7e6c930f3f1f68802e2da69cec80f3bf';
 // O commit de entrega acrescenta só provas. Reproduzir a medida depois dele
 // continua a ler a cabeça do código que efetivamente passou nos portões.
 const delta=git('diff','--name-only',cabeca,'HEAD');
@@ -138,6 +138,6 @@ medida('simbolos_h2c_parciais',custoC.total_cumulativo_parcial.total_tokens,'cus
 const ui=git('diff','--name-only',baseC,cabeca,'--','src','public');
 medida('ficheiros_da_pagina_alterados_h2c',ui?ui.split('\n').length:0,'git diff em src e public desde a cabeça H2-b','o ficheiro da marca existe na base; o H2-c só altera provas e registos',git('show',`${baseC}:src/components/inicio/EstudoDaLista.astro`).includes('emCurso'));
 
-const saida={base,base_h2c:baseC,cabeca_h2b:cabecaB,portoes_h2b:historicoB.portoes,custo_h2c:custoC,trabalho_h2c:trabalhoC,e1_h2c:e1,pacote_h2c:pacoteC,citacoes_h2c:citacoes,commits_h2c:git('log','--reverse','--format=%H %s',`${baseC}..${cabeca}`).split('\n'),base_h2b:'acc928f23f5954d1cfc51a11fa86e94d4f6da56e',cabeca_codigo:cabeca,modelo:custo.modelo,medidas,primeiras,paginas_de_area:paginasDasAreas,paginas_so_ficheiro:soFicheiros,plantas,plantas_h2b:novas,registos_trabalho:registosTrabalho,portoes,capturas:{larguras:capturas.larguras,total:capturas.resultados.length},github:remoto,i194_remota:i194Remota,custo,custo_h2b:custoB,commits:git('log','--reverse','--fixed-strings','--grep=Co-Authored-By: Codex gpt-6-astra','--format=%H %s',`${base}..${cabeca}`).split('\n'),commits_h2b:git('log','--reverse','--format=%H %s',`acc928f2..${cabecaB}`).split('\n')};
+const saida={base,base_h2c:baseC,cabeca_h2b:cabecaB,portoes_h2b:historicoB.portoes,custo_h2c:custoC,trabalho_h2c:trabalhoC,e1_h2c:e1,pacote_h2c:pacoteC,citacoes_h2c:citacoes,commits_h2c:git('log','--reverse','--format=%H %s',`${baseC}..${cabeca}`).split('\n'),base_h2b:'c392fac7e8a01377ee084114bcf2ff8283f0eecf',cabeca_codigo:cabeca,modelo:custo.modelo,medidas,primeiras,paginas_de_area:paginasDasAreas,paginas_so_ficheiro:soFicheiros,plantas,plantas_h2b:novas,registos_trabalho:registosTrabalho,portoes,capturas:{larguras:capturas.larguras,total:capturas.resultados.length},github:remoto,i194_remota:i194Remota,custo,custo_h2b:custoB,commits:git('log','--reverse','--fixed-strings','--grep=Co-Authored-By: Codex gpt-6-astra','--format=%H %s',`${base}..${cabeca}`).split('\n'),commits_h2b:git('log','--reverse','--format=%H %s',`c392fac7..${cabecaB}`).split('\n')};
 fs.writeFileSync(`${pasta}/medidas.json`,JSON.stringify(saida,null,2)+'\n');
 console.log(`${medidas.filter(m=>m.conhecido_positivo?.encontrado).length} medidas com conhecido-positivo; uma transcrição externa sem conhecido-positivo próprio.`);

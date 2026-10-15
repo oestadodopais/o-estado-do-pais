@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""O §0 do brief C2 (as nove revisões da Eurostat de 02.10.2026, relidas), medido sobre a cabeça presa do sítio (3a253f73).
+"""O §0 do brief C2 (as nove revisões da Eurostat de 02.10.2026, relidas), medido sobre a cabeça presa do sítio (520a02d6).
 Lê só o repositório, pela cabeça presa (`git show`), nunca a árvore de trabalho (§1.153). Escreve
 design/observatorio/medidas/BRIEF-C2.json (ou o caminho em OEDP_MEDIDAS_JSON). Cada medição leva o comando e um
 conhecido-positivo; o que não conseguir ler fica «NÃO LIDO»."""
 import json, os, pathlib, re, subprocess
 
 SITIO = pathlib.Path(__file__).resolve().parents[3]
-CAB = "3a253f73"
+CAB = "520a02d6"
 NAO = "NÃO LIDO"
 medidas = []
 

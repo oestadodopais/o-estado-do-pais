@@ -9,12 +9,12 @@ mesmo JSON. Cada medição traz o nome por que o §0 a cita, o valor, o comando 
 conhecido-positivo do MESMO predicado (M5, §1.122).
 
 CADA MEDIÇÃO É ESTÁVEL DE PROPÓSITO. As fontes leem-se na cabeça que estava no ar
-na manhã de 24.09.2026, `f672bd38` (a peça 1 do B2 aterrada, §1.129), por
+na manhã de 24.09.2026, `5ea9627e` (a peça 1 do B2 aterrada, §1.129), por
 `git show`. As páginas construídas leem-se das cópias congeladas que a peça 1
 deixou no repositório, `design/especime-v3/medicoes/b2-2026-09-23/paginas-depois-peca1/`,
-construídas da cabeça `7110ca60` (o ficheiro `capturas-depois-peca1.cabeca` di-lo)
+construídas da cabeça `85428315` (o ficheiro `capturas-depois-peca1.cabeca` di-lo)
 e presas pelo sha256 escrito no ficheiro. As duas cabeças rendem as mesmas
-páginas, e isso mede-se aqui em vez de se supor: entre `7110ca60` e `f672bd38`
+páginas, e isso mede-se aqui em vez de se supor: entre `85428315` e `5ea9627e`
 nenhum ficheiro que a construção leia mudou (o único ficheiro mudado nas pastas de
 código é um prompt das leituras a frio, que a construção não lê). A CI clona com
 `fetch-depth: 0`, por isso o `git show` de uma cabeça antiga corre lá como aqui.
@@ -27,8 +27,8 @@ import subprocess
 import sys
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-CABECA = 'f672bd38'
-CABECA_ANTERIOR = '97e84232'  # a cabeça de partida da peça 1, para os conhecidos-positivos do diff
+CABECA = '5ea9627e'
+CABECA_ANTERIOR = '401743d2'  # a cabeça de partida da peça 1, para os conhecidos-positivos do diff
 PASTA_DAS_COPIAS = 'design/especime-v3/medicoes/b2-2026-09-23/paginas-depois-peca1'
 COPIAS = os.path.join(RAIZ, PASTA_DAS_COPIAS)
 FICHEIRO_DA_CABECA_DAS_COPIAS = os.path.join(RAIZ, 'design/especime-v3/medicoes/b2-2026-09-23/capturas-depois-peca1.cabeca')

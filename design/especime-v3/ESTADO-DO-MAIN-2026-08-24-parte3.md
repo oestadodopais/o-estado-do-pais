@@ -1,8 +1,8 @@
 # O estado de `main` depois da parte 3 (noite de 24.08.2026)
 
 *Escrito pelo lugar de direção (Claude Fable 5) ao fecho da sessão da parte 3,
-depois da fusão. O ramo `parte3-2026-08-24` saiu de `main` `8d724f2` e voltou a
-`main` por avanço em linha reta em `3e87b2f` (28 commits, 69 ficheiros),
+depois da fusão. O ramo `parte3-2026-08-24` saiu de `main` `a316ca3` e voltou a
+`main` por avanço em linha reta em `3e38dd8` (28 commits, 69 ficheiros),
 empurrado e verificado no ar: construção da Vercel às 21:59 UTC,
 `verify:deploy` ✓ com as invariantes de produção todas verdes. Esta nota e a
 subsecção «A fusão» da §1.64 seguem no commit seguinte. Nada por commitar.*

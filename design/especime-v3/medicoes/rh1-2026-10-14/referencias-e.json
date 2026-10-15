@@ -1,224 +1,224 @@
 {
   "referencias": [
     {
-      "cabeca": "a1f6094e0f5625b71f32f9bf2a8c488930ecd49a",
+      "cabeca": "931c4a58270eb1d18a1a326be642ccdb10f3c095",
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
       "linha": 55,
       "inicio_esperado": "def _ler_proibidos",
       "passou": true
     },
     {
-      "cabeca": "a1f6094e0f5625b71f32f9bf2a8c488930ecd49a",
+      "cabeca": "931c4a58270eb1d18a1a326be642ccdb10f3c095",
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
       "linha": 105,
       "inicio_esperado": "def formas_comparaveis",
       "passou": true
     },
     {
-      "cabeca": "a1f6094e0f5625b71f32f9bf2a8c488930ecd49a",
+      "cabeca": "931c4a58270eb1d18a1a326be642ccdb10f3c095",
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
       "linha": 119,
       "inicio_esperado": "def contem_cadeias",
       "passou": true
     },
     {
-      "cabeca": "a1f6094e0f5625b71f32f9bf2a8c488930ecd49a",
+      "cabeca": "931c4a58270eb1d18a1a326be642ccdb10f3c095",
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
       "linha": 159,
       "inicio_esperado": "def _nomes_dos_autores",
       "passou": true
     },
     {
-      "cabeca": "a1f6094e0f5625b71f32f9bf2a8c488930ecd49a",
+      "cabeca": "931c4a58270eb1d18a1a326be642ccdb10f3c095",
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
       "linha": 171,
       "inicio_esperado": "nomes_dos_autores =",
       "passou": true
     },
     {
-      "cabeca": "a1f6094e0f5625b71f32f9bf2a8c488930ecd49a",
+      "cabeca": "931c4a58270eb1d18a1a326be642ccdb10f3c095",
       "ficheiro": "scripts/check-privacidade.py",
       "linha": 189,
       "inicio_esperado": "def recusar_rastreado",
       "passou": true
     },
     {
-      "cabeca": "a1f6094e0f5625b71f32f9bf2a8c488930ecd49a",
+      "cabeca": "931c4a58270eb1d18a1a326be642ccdb10f3c095",
       "ficheiro": "scripts/check-privacidade.py",
       "linha": 194,
       "inicio_esperado": "def plantas_identidades",
       "passou": true
     },
     {
-      "cabeca": "a1f6094e0f5625b71f32f9bf2a8c488930ecd49a",
+      "cabeca": "931c4a58270eb1d18a1a326be642ccdb10f3c095",
       "ficheiro": "scripts/check-privacidade.py",
       "linha": 212,
       "inicio_esperado": "def plantas_normalizacao",
       "passou": true
     },
     {
-      "cabeca": "a1f6094e0f5625b71f32f9bf2a8c488930ecd49a",
+      "cabeca": "931c4a58270eb1d18a1a326be642ccdb10f3c095",
       "ficheiro": "scripts/check-privacidade.py",
       "linha": 237,
       "inicio_esperado": "def plantas_pessoais",
       "passou": true
     },
     {
-      "cabeca": "a1f6094e0f5625b71f32f9bf2a8c488930ecd49a",
+      "cabeca": "931c4a58270eb1d18a1a326be642ccdb10f3c095",
       "ficheiro": "scripts/check-privacidade.py",
       "linha": 290,
       "inicio_esperado": "def medir_rastreados",
       "passou": true
     },
     {
-      "cabeca": "a1f6094e0f5625b71f32f9bf2a8c488930ecd49a",
+      "cabeca": "931c4a58270eb1d18a1a326be642ccdb10f3c095",
       "ficheiro": "scripts/gate-html.mjs",
       "linha": 374,
       "inicio_esperado": "// RH1-c",
       "passou": true
     },
     {
-      "cabeca": "a1f6094e0f5625b71f32f9bf2a8c488930ecd49a",
+      "cabeca": "931c4a58270eb1d18a1a326be642ccdb10f3c095",
       "ficheiro": "design/especime-v3/medicoes/rh1-2026-10-14/medir-b.py",
       "linha": 57,
       "inicio_esperado": "def reproduzir_entrega",
       "passou": true
     },
     {
-      "cabeca": "a1f6094e0f5625b71f32f9bf2a8c488930ecd49a",
+      "cabeca": "931c4a58270eb1d18a1a326be642ccdb10f3c095",
       "ficheiro": "design/especime-v3/medicoes/rh1-2026-10-14/medir-c.py",
       "linha": 44,
       "inicio_esperado": "'pdf_seguidos':",
       "passou": true
     },
     {
-      "cabeca": "a1f6094e0f5625b71f32f9bf2a8c488930ecd49a",
+      "cabeca": "931c4a58270eb1d18a1a326be642ccdb10f3c095",
       "ficheiro": "tests/leituras/privacidade-rh1c.py",
       "linha": 58,
       "inicio_esperado": "fonte = inspect.getsource",
       "passou": true
     },
     {
-      "cabeca": "9157e23ebbf7835e56582895cdf0aa2f2868e0d0",
+      "cabeca": "068bdcc0fa65799f5e36edbe9499a29dbf68d530",
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
       "linha": 55,
       "inicio_esperado": "def _ler_proibidos",
       "passou": true
     },
     {
-      "cabeca": "9157e23ebbf7835e56582895cdf0aa2f2868e0d0",
+      "cabeca": "068bdcc0fa65799f5e36edbe9499a29dbf68d530",
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
       "linha": 106,
       "inicio_esperado": "def formas_comparaveis",
       "passou": true
     },
     {
-      "cabeca": "9157e23ebbf7835e56582895cdf0aa2f2868e0d0",
+      "cabeca": "068bdcc0fa65799f5e36edbe9499a29dbf68d530",
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
       "linha": 177,
       "inicio_esperado": "def espacos_unicode",
       "passou": true
     },
     {
-      "cabeca": "9157e23ebbf7835e56582895cdf0aa2f2868e0d0",
+      "cabeca": "068bdcc0fa65799f5e36edbe9499a29dbf68d530",
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
       "linha": 181,
       "inicio_esperado": "def contem_cadeias",
       "passou": true
     },
     {
-      "cabeca": "9157e23ebbf7835e56582895cdf0aa2f2868e0d0",
+      "cabeca": "068bdcc0fa65799f5e36edbe9499a29dbf68d530",
       "ficheiro": "scripts/check-privacidade.py",
       "linha": 260,
       "inicio_esperado": "def plantas_formas_d",
       "passou": true
     },
     {
-      "cabeca": "9157e23ebbf7835e56582895cdf0aa2f2868e0d0",
+      "cabeca": "068bdcc0fa65799f5e36edbe9499a29dbf68d530",
       "ficheiro": "design/especime-v3/medicoes/rh1-2026-10-14/medir-c.py",
       "linha": 57,
       "inicio_esperado": "def auditar_entrega",
       "passou": true
     },
     {
-      "cabeca": "9157e23ebbf7835e56582895cdf0aa2f2868e0d0",
+      "cabeca": "068bdcc0fa65799f5e36edbe9499a29dbf68d530",
       "ficheiro": "design/especime-v3/medicoes/rh1-2026-10-14/medir-d.py",
       "linha": 23,
       "inicio_esperado": "def medir_tempo",
       "passou": true
     },
     {
-      "cabeca": "9157e23ebbf7835e56582895cdf0aa2f2868e0d0",
+      "cabeca": "068bdcc0fa65799f5e36edbe9499a29dbf68d530",
       "ficheiro": "tests/leituras/privacidade-rh1d.py",
       "linha": 13,
       "inicio_esperado": "def ensaiar",
       "passou": true
     },
     {
-      "cabeca": "d1c86aa550c2b53544f01f1086469e66829c4488",
+      "cabeca": "99edf379bfc4f7bc0a88e8f6299310419453a566",
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
       "linha": 55,
       "inicio_esperado": "def _ler_proibidos",
       "passou": true
     },
     {
-      "cabeca": "d1c86aa550c2b53544f01f1086469e66829c4488",
+      "cabeca": "99edf379bfc4f7bc0a88e8f6299310419453a566",
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
       "linha": 108,
       "inicio_esperado": "def equivalencias_unicode",
       "passou": true
     },
     {
-      "cabeca": "d1c86aa550c2b53544f01f1086469e66829c4488",
+      "cabeca": "99edf379bfc4f7bc0a88e8f6299310419453a566",
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
       "linha": 122,
       "inicio_esperado": "def formas_comparaveis",
       "passou": true
     },
     {
-      "cabeca": "d1c86aa550c2b53544f01f1086469e66829c4488",
+      "cabeca": "99edf379bfc4f7bc0a88e8f6299310419453a566",
       "ficheiro": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py",
       "linha": 230,
       "inicio_esperado": "def contem_cadeias",
       "passou": true
     },
     {
-      "cabeca": "d1c86aa550c2b53544f01f1086469e66829c4488",
+      "cabeca": "99edf379bfc4f7bc0a88e8f6299310419453a566",
       "ficheiro": "scripts/check-privacidade.py",
       "linha": 291,
       "inicio_esperado": "def plantas_formas_e",
       "passou": true
     },
     {
-      "cabeca": "d1c86aa550c2b53544f01f1086469e66829c4488",
+      "cabeca": "99edf379bfc4f7bc0a88e8f6299310419453a566",
       "ficheiro": "tests/leituras/privacidade-rh1e.py",
       "linha": 14,
       "inicio_esperado": "def ensaiar",
       "passou": true
     },
     {
-      "cabeca": "d1c86aa550c2b53544f01f1086469e66829c4488",
+      "cabeca": "99edf379bfc4f7bc0a88e8f6299310419453a566",
       "ficheiro": "design/especime-v3/medicoes/rh1-2026-10-14/medir-e.py",
       "linha": 32,
       "inicio_esperado": "def provas",
       "passou": true
     },
     {
-      "cabeca": "d1c86aa550c2b53544f01f1086469e66829c4488",
+      "cabeca": "99edf379bfc4f7bc0a88e8f6299310419453a566",
       "ficheiro": "design/especime-v3/medicoes/rh1-2026-10-14/medir-e.py",
       "linha": 54,
       "inicio_esperado": "def referencias",
       "passou": true
     },
     {
-      "cabeca": "d1c86aa550c2b53544f01f1086469e66829c4488",
+      "cabeca": "99edf379bfc4f7bc0a88e8f6299310419453a566",
       "ficheiro": "design/especime-v3/medicoes/rh1-2026-10-14/medir-e.py",
       "linha": 86,
       "inicio_esperado": "def escopo_d",
       "passou": true
     },
     {
-      "cabeca": "d1c86aa550c2b53544f01f1086469e66829c4488",
+      "cabeca": "99edf379bfc4f7bc0a88e8f6299310419453a566",
       "ficheiro": "design/especime-v3/medicoes/rh1-2026-10-14/medir-e.py",
       "linha": 108,
       "inicio_esperado": "def auditar_e",

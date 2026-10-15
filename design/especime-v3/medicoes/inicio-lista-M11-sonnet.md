@@ -1,6 +1,6 @@
 # M11 e M11b · a medição cega do bloco «os nomes do mapa ao lado, e os dois painéis com nome» (Sonnet, 29.08.2026)
 
-*Duas rondas da mesma medidora, com código próprio (`inicio-lista-M11-sonnet.mjs`, `inicio-lista-M11b-sonnet.mjs`, `inicio-lista-M11-nucleo.mjs`), numa cópia congelada de cada construção (`5b4fc7f` e `d8c3ae3`) e nunca na árvore do construtor; os resultados em `inicio-lista-M11-sonnet.resultados.json` e `inicio-lista-M11b-sonnet.resultados.json`. Os briefs: `briefs/BRIEF-inicio-lista-M11.md` e `briefs/BRIEF-inicio-lista-M11b.md`.*
+*Duas rondas da mesma medidora, com código próprio (`inicio-lista-M11-sonnet.mjs`, `inicio-lista-M11b-sonnet.mjs`, `inicio-lista-M11-nucleo.mjs`), numa cópia congelada de cada construção (`87df47f` e `6f9a0d2`) e nunca na árvore do construtor; os resultados em `inicio-lista-M11-sonnet.resultados.json` e `inicio-lista-M11b-sonnet.resultados.json`. Os briefs: `briefs/BRIEF-inicio-lista-M11.md` e `briefs/BRIEF-inicio-lista-M11b.md`.*
 
 ## Primeira ronda (M11)
 
@@ -16,7 +16,7 @@ O antes é o sítio no ar, `https://xn--oestadodopas-2fb.pt/` e `/en/`, pedido e
 
 **Uma segunda nota, encontrada a fazer o par de estado:** `page.hover()` do Playwright mira o centro da caixa delimitadora do elemento, e a I82 já regista, no código que copiei, que esse centro cai fora do polígono para uma unidade côncava (a Ilha da Madeira é o próprio exemplo escrito lá). Medido ao vivo aqui: `page.hover('a[data-uni-porta="ilha-da-madeira"]')` esgota o tempo, porque é o `<svg>` que recebe o ponteiro nesse pixel, não a área. A correcção foi mover o rato com `page.mouse.move()` para o ponto representativo real (o mesmo `ponto` do `mapa/pais.json`, levado a pixels de ecrã pela mesma matriz que a I82 usa), não para o centro da caixa.
 
-**O algoritmo do quadrado inscrito (medição 6) é uma cópia literal de `QUADRADO_INSCRITO` em `tests/inicio/mapa-distritos.mjs`** do repositório principal, lida em HEAD (`a76f829`, que é exactamente o commit «antes» do brief) e conferida por `diff` contra a mesma função no commit `5b4fc7f` (a ponta do ramo do construtor): zero linhas de diferença. Os pontos representativos vêm de `mapa/pais.json`, também conferido por `diff` entre os dois commits: zero linhas de diferença. As duas leituras foram feitas com `git show` e a ferramenta de leitura, nunca com `npm`, nunca a escrever, nunca a mudar de ramo.
+**O algoritmo do quadrado inscrito (medição 6) é uma cópia literal de `QUADRADO_INSCRITO` em `tests/inicio/mapa-distritos.mjs`** do repositório principal, lida em HEAD (`636b823`, que é exactamente o commit «antes» do brief) e conferida por `diff` contra a mesma função no commit `87df47f` (a ponta do ramo do construtor): zero linhas de diferença. Os pontos representativos vêm de `mapa/pais.json`, também conferido por `diff` entre os dois commits: zero linhas de diferença. As duas leituras foram feitas com `git show` e a ferramenta de leitura, nunca com `npm`, nunca a escrever, nunca a mudar de ramo.
 
 ## 1 · Os positivos conhecidos
 
@@ -131,7 +131,7 @@ Segui a definição da casa (I82, `tests/inicio/mapa-distritos.mjs`): o maior qu
 
 O brief só cita 18 (360), 17 (390) e 15 (430) por extenso; a 320 não dá número em prosa, mas a tabela do próprio construtor (§5 do relatório dele, coluna «pelo quadrado inscrito») mostra 0 de 18 a chegar aos 44 px também a 320, que é o mesmo que os meus 18 de 18 a ficar abaixo. Por isso «implícito», e não medido a mais por mim.
 
-**A igualdade entre antes e depois, que o construtor afirma («medido a 29.08 sobre a76f829, e igual na construção deste ramo»), fica confirmada de forma independente**: medi eu própria o quadrado inscrito no sítio ao vivo (antes) e na cópia construída (depois), nas quatro larguras, nas duas edições, e os oito pares batem certo. Faz sentido: `mapa/pais.json` (a geometria e os pontos representativos) é byte a byte idêntico nos dois commits, confirmado por `diff`.
+**A igualdade entre antes e depois, que o construtor afirma («medido a 29.08 sobre 636b823, e igual na construção deste ramo»), fica confirmada de forma independente**: medi eu própria o quadrado inscrito no sítio ao vivo (antes) e na cópia construída (depois), nas quatro larguras, nas duas edições, e os oito pares batem certo. Faz sentido: `mapa/pais.json` (a geometria e os pontos representativos) é byte a byte idêntico nos dois commits, confirmado por `diff`.
 
 Como bónus (não pedido pelo brief, que só pede os 18 do continente, mas calculado pelo mesmo código): pela mesma medida, as 2 unidades da Madeira e as 9 dos Açores ficam sempre abaixo de 44 px, nas quatro larguras, nas duas versões. Nenhuma das 29 unidades passa dos 44 px de quadrado inscrito abaixo de 430 px de largura de mapa.
 
@@ -216,7 +216,7 @@ Medido pela diferença do orçamento de símbolos da sessão, lido nos avisos de
 
 # RELATÓRIO M11b · a segunda medição do mesmo bloco, depois dos seis consertos
 
-*Medidora: Claude Sonnet. Código próprio em `medir-b.mjs`, que reaproveita `nucleo.mjs` (as mesmas funções partilhadas da M11: `novaPagina`, `vaiA`, `medePar`, `pontoDeEcra`, `arrancaServidor`). Esta ronda não pede nada ao sítio no ar: compara duas cópias locais, `m11-dist/` (a cópia antiga, a mesma da M11) em `127.0.0.1:5057` e `m11b-dist/` (a cópia nova, ramo `d8c3ae3`) em `127.0.0.1:5058`, cada uma na sua porta porque cada cópia tem os seus próprios ficheiros `_astro/` com nomes diferentes, e servir as duas da mesma origem faria uma pisar os caminhos absolutos da outra. Resultados brutos completos em `resultados-b.json`.*
+*Medidora: Claude Sonnet. Código próprio em `medir-b.mjs`, que reaproveita `nucleo.mjs` (as mesmas funções partilhadas da M11: `novaPagina`, `vaiA`, `medePar`, `pontoDeEcra`, `arrancaServidor`). Esta ronda não pede nada ao sítio no ar: compara duas cópias locais, `m11-dist/` (a cópia antiga, a mesma da M11) em `127.0.0.1:5057` e `m11b-dist/` (a cópia nova, ramo `6f9a0d2`) em `127.0.0.1:5058`, cada uma na sua porta porque cada cópia tem os seus próprios ficheiros `_astro/` com nomes diferentes, e servir as duas da mesma origem faria uma pisar os caminhos absolutos da outra. Resultados brutos completos em `resultados-b.json`.*
 
 ## 0 · Os positivos conhecidos desta ronda
 

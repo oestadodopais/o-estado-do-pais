@@ -1,6 +1,6 @@
 # Leitura do Codex dos blocos A e B das correções de UX, sem contexto, 25.08.2026
 
-*Corrida pelo lugar de direção (Claude Fable 5): Codex CLI 0.147.0, `gpt-5.6-sol`, esforço xhigh, `codex exec -s read-only --ephemeral`, sem rede, com as páginas construídas de dezassete rotas antes (`main`, `d847008`) e depois (`e95c545`), 114 capturas nas duas larguras (24 anexadas ao prompt), a auditoria e a nota dos construtores como afirmações a conferir. Custo, como o CLI reporta: **364 109 símbolos**, orçamento próprio.*
+*Corrida pelo lugar de direção (Claude Fable 5): Codex CLI 0.147.0, `gpt-5.6-sol`, esforço xhigh, `codex exec -s read-only --ephemeral`, sem rede, com as páginas construídas de dezassete rotas antes (`main`, `bc6a3ab`) e depois (`78030d6`), 114 capturas nas duas larguras (24 anexadas ao prompt), a auditoria e a nota dos construtores como afirmações a conferir. Custo, como o CLI reporta: **364 109 símbolos**, orçamento próprio.*
 
 ## Triagem do lugar de direção
 

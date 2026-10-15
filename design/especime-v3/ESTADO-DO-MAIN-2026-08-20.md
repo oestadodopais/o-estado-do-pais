@@ -8,8 +8,8 @@ a 20.08.2026; onde diz «[a verificar]», não foi. Sem travessões.*
 
 ## 1. Onde está `main`
 
-- `main` = `origin/main` = no ar = **`9b9f477`** (`verify:deploy` ✓ às 14:07 UTC). Os
-  blocos do dia: `ad86efc` (decisões de 20.08, §1.48) e `510dda0` (republicação,
+- `main` = `origin/main` = no ar = **`97eeaca`** (`verify:deploy` ✓ às 14:07 UTC). Os
+  blocos do dia: `313327e` (decisões de 20.08, §1.48) e `16e40e3` (republicação,
   §1.49), ambos fundidos pela palavra da direção por delegação, cada um depois
   de uma leitura cruzada do Codex com estragos plantados (sete de sete, cinco de
   cinco) e de uma pré-visualização protegida.

@@ -1,4 +1,4 @@
-C1e entregue parcialmente na cabeça de código `2d063f9af1e707a4e8657a0e664bdce88eece4b6`.
+C1e entregue parcialmente na cabeça de código `9046757d2c9f10be57c740ddd2fc4f1c9b2632cd`.
 
 A nova guarda travou o livro: 16 entradas de proveniência nas cinco linhas do
 PRR são anteriores ao acesso de 20.08.2026, sem história tipada que sustente

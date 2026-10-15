@@ -4170,21 +4170,21 @@
         "texto": "O regulador",
         "bloco": "grelha-2",
         "estado": "retirada",
-        "razao": "a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `8b55bd3`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `e470212`)"
+        "razao": "a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `1434d2a`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `b1370f5`)"
       },
       {
         "classe": "conteudo",
         "texto": "O regulador publica",
         "bloco": "grelha-2",
         "estado": "retirada",
-        "razao": "a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `8b55bd3`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `e470212`)"
+        "razao": "a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `1434d2a`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `b1370f5`)"
       },
       {
         "classe": "conteudo",
         "texto": "The regulator",
         "bloco": "grelha-2",
         "estado": "retirada",
-        "razao": "a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `8b55bd3`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `e470212`)"
+        "razao": "a Direção-Geral das Autarquias Locais deixou de ser chamada «o regulador» e passou a ter o seu nome (item E11 do bloco dos 308, `1434d2a`; as cadeias que ele não alcançou saíram no G5 da grelha da voz, `b1370f5`)"
       }
     ]
   },
@@ -4595,6 +4595,6 @@
       }
     ],
     "falhou": null,
-    "commitDaCopia": "355287c9595cb6aabb3fc35d7dac94a2f8f4ec57"
+    "commitDaCopia": "6b96278fef069d1277027b27241b6a5f982f05b2"
   }
 }

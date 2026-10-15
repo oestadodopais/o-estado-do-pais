@@ -15,7 +15,7 @@ from html.parser import HTMLParser
 AQUI = Path(__file__).resolve().parent
 BLOCO = AQUI.parent
 SITIO = AQUI.parents[4]
-BASE = '7b4328906d938bd6eeecb8f1e1fc18c1b809e964'
+BASE = '047b9b570d5fd405e3b344da00324e732cad2ed6'
 BASE_MOTOR = '1e77ce06b0053acbcab73c6650ab52983a61c44f'
 def git(*args, repo=SITIO):
     return subprocess.check_output(['git', *args], cwd=repo, text=True).strip()
@@ -39,7 +39,7 @@ def medir(motor, final):
     spec=importlib.util.spec_from_file_location('detetor_c1',BLOCO/'medir-c1.py')
     detetor=importlib.util.module_from_spec(spec);spec.loader.exec_module(detetor)
     achados=[];total=0
-    for rot,repo,base in [('sítio',SITIO,'48a5a1c181c1753036d301204884c57119bba8a5'),('motor',motor,'4eb2867936dd14ad2654751722e390804e68dda3')]:
+    for rot,repo,base in [('sítio',SITIO,'7028e733f8bb4de7bf65f1bb76546304ba1e6db4'),('motor',motor,'4eb2867936dd14ad2654751722e390804e68dda3')]:
         nomes=set(git('diff','--name-only',base,repo=repo).splitlines())|set(git('ls-files','--others','--exclude-standard',repo=repo).splitlines())
         if rot=='sítio':
             nomes={n for n in nomes if n.startswith(('src/','scripts/','tests/','ledger/',str(BLOCO.relative_to(SITIO))+'/')) or n in ('design/especime-v3/INVENTARIO-FRASES.md','design/especime-v3/ISSUES.md','design/especime-v3/critica/REVISOES-DO-INVENTARIO.md')}
@@ -73,9 +73,9 @@ def medir(motor, final):
     exige({(x['id'],x['campo']) for x in mudancas}=={('indice-de-divida-limite-legal','source_url')},'Um valor ou uma fonte mudou fora do mandato C1d.')
     exige(n==len(list((SITIO/'ledger/claims').glob('*.yml'))),'A lista de linhas mudou.')
     limite='ledger/claims/indice-de-divida-limite-legal.yml'
-    exige((SITIO/limite).read_bytes()==subprocess.check_output(['git','show',f'a677770f:{limite}'],cwd=SITIO),'O limite não é exatamente o de a677770f.')
+    exige((SITIO/limite).read_bytes()==subprocess.check_output(['git','show',f'04438bb9:{limite}'],cwd=SITIO),'O limite não é exatamente o de 04438bb9.')
     man=ler(SITIO/'ledger/cruzamentos/evora.json')['rows']['indice-de-divida-limite-legal']
-    exige(man==json.loads(git('show','a677770f:ledger/cruzamentos/evora.json'))['rows']['indice-de-divida-limite-legal'],'O cruzamento do limite difere de a677770f.')
+    exige(man==json.loads(git('show','04438bb9:ledger/cruzamentos/evora.json'))['rows']['indice-de-divida-limite-legal'],'O cruzamento do limite difere de 04438bb9.')
     excertos=ler(AQUI/'excertos.json')
     exige(len(excertos['linhas'])==17,'A lista dos excertos não tem as dezassete entradas.')
     for r in excertos['linhas']:
@@ -136,7 +136,7 @@ def medir(motor, final):
         exige(not provas.get('recibos-finais',{}).get('erros',['em falta']),'Os recibos finais têm falhas.')
     exige(not provas.get('k17',{}).get('erros'),'A K17 tem erros.')
     return {'base':BASE,'base_motor':BASE_MOTOR,'cabeca_sitio':git('rev-parse','HEAD'),'cabeca_motor':git('rev-parse','HEAD',repo=motor),
-        'commits':{'sitio':commits(SITIO,'48a5a1c181c1753036d301204884c57119bba8a5'),'motor':commits(motor,'4eb2867936dd14ad2654751722e390804e68dda3')},
+        'commits':{'sitio':commits(SITIO,'7028e733f8bb4de7bf65f1bb76546304ba1e6db4'),'motor':commits(motor,'4eb2867936dd14ad2654751722e390804e68dda3')},
         'linhas_conferidas':n,'mudancas_de_valor_ou_endereco':mudancas,'contagens_registo':contagens,'caminhos':caminhos,
         'protegidos_motor_alterados':protegidos,'portao_motor':{'codigo':int((AQUI/'motor-commit.codigo').read_text()),'cabeca_dos_bytes_conferidos':estado_motor['conferido_com_commit']},'arvore_do_portao_motor':estado_motor,'portoes':portoes,'excertos':excertos,'bandeiras':bandeiras,
         'literais':literais,'provas':provas,'capturas':None if capturas is None else {'paginas':len(capturas['resultados']),'recortes':len(capturas['recortes']),'cabeca':capturas['dist_construido_de'],'falhas':capturas['aceitacao']['falhas']},'erros':erros}

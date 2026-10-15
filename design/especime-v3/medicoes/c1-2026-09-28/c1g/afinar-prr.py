@@ -11,7 +11,7 @@ RAIZ=AQUI.parents[4]
 p=AQUI.parent/'c1f/conferir-acessos.py'
 s=importlib.util.spec_from_file_location('acessos',p);m=importlib.util.module_from_spec(s);s.loader.exec_module(m)
 p=RAIZ/'ledger/cruzamentos/evora.json';reg=json.loads(p.read_text())
-base=json.loads(subprocess.check_output(['git','show','cb43b2fc:ledger/cruzamentos/evora.json'],cwd=RAIZ,text=True))
+base=json.loads(subprocess.check_output(['git','show','855b9a9b:ledger/cruzamentos/evora.json'],cwd=RAIZ,text=True))
 provas=[]
 for id in m.IDS:
  p=RAIZ/f'ledger/claims/{id}.yml';texto=p.read_text();antes=yaml.safe_load(texto);depois=copy.deepcopy(antes)

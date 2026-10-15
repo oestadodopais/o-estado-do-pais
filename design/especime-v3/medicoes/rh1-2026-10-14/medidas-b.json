@@ -1,5 +1,5 @@
 {
-  "cabeca": "e94cda066090def21ff7b5f36326a24bb1ac659e",
+  "cabeca": "64f9f2b6c7f2bd51df54c677d75d5b3c6f5a1451",
   "marca": {
     "dist": {
       "paginas_lidas": 7935,
@@ -18,7 +18,7 @@
       ]
     },
     "versao_dist": {
-      "commit": "f694c58cb4228465d48dafa22905832c5c1ceded",
+      "commit": "f23e4e9c3405f879d594ab35fe7cb1568ea1d8ff",
       "ref": "rh1-2026-10-14",
       "env": "local",
       "origem": "git",

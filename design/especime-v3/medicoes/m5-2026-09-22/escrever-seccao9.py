@@ -19,7 +19,7 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 # Quatro níveis acima de `m5-2026-09-22`: medicoes, especime-v3, design, raiz.
 RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(AQUI))))
 REL = os.path.join(AQUI, 'LEIA-ME.md')
-BASE = 'b03a6efc'
+BASE = '590448cb'
 MARCA = '## 9 · Os commits, a cabeça e os três portões'
 
 

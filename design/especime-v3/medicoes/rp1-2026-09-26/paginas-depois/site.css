@@ -1102,7 +1102,7 @@ a.src-chip::after {
      não tem elemento não protege nada.
    · `.prov-vals` tem 4 elementos em duas páginas (`/municipios` e a sua edição
      inglesa) e zero selos lá dentro: a fila que os tinha saiu da primeira página
-     em `1cac621`, e o que fica é uma linha de texto e uma porta de descarga, que
+     em `3221b05`, e o que fica é uma linha de texto e uma porta de descarga, que
      não é um selo. É a ISSUES I14, fechada por remoção.
    · `.linha-verificacoes` tem 264 elementos em 264 páginas e zero selos lá
      dentro. A regra nunca chegou a aplicar-se.

@@ -63,7 +63,7 @@ for line in (g/'plantas-motor.log').read_text().splitlines():
   nome,msg=line.removeprefix('PLANTA ').split(': ',1);pl.append((nome,msg))
 s+=tabela(['Planta no motor','Mensagem'],pl)
 s+='### Trailers e privacidade\n\n'
-s+=f"Na cabeça do código, {t['commits']} commits desde a base e {t['trailers_claude_session']} trailers Claude-Session lidos pelo Git; {len(t['problemas'])} falhas de presença ou adjacência. A saída literal está em `g/trailers-codigo.log`, obtida com `git log --format=%(trailers:key=Claude-Session) b84d21a3..HEAD`.\n"
+s+=f"Na cabeça do código, {t['commits']} commits desde a base e {t['trailers_claude_session']} trailers Claude-Session lidos pelo Git; {len(t['problemas'])} falhas de presença ou adjacência. A saída literal está em `g/trailers-codigo.log`, obtida com `git log --format=%(trailers:key=Claude-Session) c0e1b3f4..HEAD`.\n"
 s+=tabela(['Conferência de privacidade','Saída'],[(k,v[k]) for k in ['historico_grep_c','diff_grep_c','cabeca_sem_excecoes_grep_c','legados_ficheiros']])
 s+='Padrões: '+', '.join(v['padroes'])+'. A lista herdada, saída de `privacidade-g.py`, é:\n\n'+''.join(f"- `{x['ficheiro']}:{x['linha']}`.\n" for x in v['RP4N-14'])
 s+='\n### Mapa completo da reescrita\n'+tabela(['Antiga','Nova'],[(x['antiga'],x['nova']) for x in r['pares']])

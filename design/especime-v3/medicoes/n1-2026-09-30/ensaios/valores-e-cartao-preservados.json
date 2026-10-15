@@ -1,6 +1,6 @@
 {
-  "comando": "git diff --exit-code 2cbc5cc46327697469347b98a2445494027861f4 -- ledger src/components/CartaoDaMedida.astro",
-  "cabeca": "c22c21e881696897294e292c0ed63ab5b78cf6b6",
+  "comando": "git diff --exit-code a5139c5535ac4232bd9025fac4c1f8acb10050f8 -- ledger src/components/CartaoDaMedida.astro",
+  "cabeca": "f2f876928b229a6be56f3c52c6d1ab7b9f87dfd5",
   "inicio": "2026-09-30T10:09:22.186Z",
   "fim": "2026-09-30T10:09:22.199Z",
   "segundos": 0.011201667,

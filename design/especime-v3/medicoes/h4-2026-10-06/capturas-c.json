@@ -1,8 +1,8 @@
 {
   "comando": "node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs --passagem-c",
-  "cabeca": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
+  "cabeca": "8b30451fef33009019af39dbcdb3eb3bfcb0768c",
   "construcao": {
-    "commit": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
+    "commit": "8b30451fef33009019af39dbcdb3eb3bfcb0768c",
     "ref": "h4-2026-10-06",
     "env": "local",
     "origem": "git",

@@ -1,5 +1,5 @@
 {
-  "cabeca": "a1f6094e0f5625b71f32f9bf2a8c488930ecd49a",
+  "cabeca": "931c4a58270eb1d18a1a326be642ccdb10f3c095",
   "pdf_seguidos": 0,
   "plantas": {
     "passou": true,
@@ -189,14 +189,14 @@
   "reproducao_b": {
     "auditorias": [
       {
-        "cabeca": "6c107622f6ef09510fb5ba83d31a3ae95a719019",
+        "cabeca": "b481c684c39ed9522b3cf524b75a12c936f7c510",
         "registo_excluido": "auditoria-entrega.json",
         "ficheiro_local_acrescentado": null,
         "ficheiros_conferidos_antes_deste_registo": 26,
         "confere": true
       },
       {
-        "cabeca": "24f4298cc42fae56ce91538f5d1f4a1e9431d529",
+        "cabeca": "64794c3cee10f7d8efa1d822d1fc58ca4877084f",
         "registo_excluido": "auditoria-entrega-b.json",
         "ficheiro_local_acrescentado": "portoes-b/alvos.json",
         "ficheiros_conferidos_antes_deste_registo": 51,
@@ -221,7 +221,7 @@
         ]
       },
       "versao_dist": {
-        "commit": "3ad344e339841a369fdebd3771eab96e0a10e2b1",
+        "commit": "51f25d8c4d825ddc0ebafbfec0698f5d60c9a9e3",
         "ref": "rh1-2026-10-14",
         "env": "local",
         "origem": "git",

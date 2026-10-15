@@ -35,8 +35,8 @@
    "descricao": "o relatório: 'com 0 entrada(s) por registar na árvore' passa a 'com 2 entrada(s)'; o conferencias/cabeca.json diz 0",
    "sha256_antes": "714c0e7bab2525781cfb3d6a985bac12d1e556b20c20a59303da342befce71de",
    "sha256_depois": "71715df02c8df5fc3bdf596092fa1b7d3039f9d9519ef833ef1cd47502531979",
-   "contexto_antes": "usas não mudam. Os textos decididos estão em `brief.md` do pacote e na §1.182.\n\n## Onde parou\n\nA cabeça do código é `48cd92225b198ea9380a4f3b0707d13dece8947b`, com 0 entrada(s) por registar na árvore quando as conferências correram (2026-10-07T10:01:01Z). O último commit do ramo leva só este relatório, as capturas e os códigos. A corrida `portão` do GitHub ",
-   "contexto_depois": "usas não mudam. Os textos decididos estão em `brief.md` do pacote e na §1.182.\n\n## Onde parou\n\nA cabeça do código é `48cd92225b198ea9380a4f3b0707d13dece8947b`, com 2 entrada(s) por registar na árvore quando as conferências correram (2026-10-07T10:01:01Z). O último commit do ramo leva só este relatório, as capturas e os códigos. A corrida `portão` do GitHub "
+   "contexto_antes": "usas não mudam. Os textos decididos estão em `brief.md` do pacote e na §1.182.\n\n## Onde parou\n\nA cabeça do código é `d612a3c7c99602014732fb57b46330788cd7a153`, com 0 entrada(s) por registar na árvore quando as conferências correram (2026-10-07T10:01:01Z). O último commit do ramo leva só este relatório, as capturas e os códigos. A corrida `portão` do GitHub ",
+   "contexto_depois": "usas não mudam. Os textos decididos estão em `brief.md` do pacote e na §1.182.\n\n## Onde parou\n\nA cabeça do código é `d612a3c7c99602014732fb57b46330788cd7a153`, com 2 entrada(s) por registar na árvore quando as conferências correram (2026-10-07T10:01:01Z). O último commit do ramo leva só este relatório, as capturas e os códigos. A corrida `portão` do GitHub "
   },
   {
    "id": "tp1-p5",

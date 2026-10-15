@@ -1,10 +1,10 @@
 # H2 · a passagem de higiene de 04.10.2026
 
-Depois das emendas H2-c, a implementação e as provas locais estão verdes na cabeça de código `a2b8213ae49ca789349cb5dbe050fe5dbb44164f`. O ensaio histórico do H2 está verde na cabeça `f7048ce08956d89fbefc54ebd40ea8b75b830d47`; não houve publicação nesta passagem. A aceitação que exige o portão verde no ramo e em `main` confirma-se na aterragem pelo diretor; este construtor não publicou `main` nem `h2-2026-10-04`. A linha final do H2 já foi transcrita; as das passagens H2-b e H2-c continuam em `[verify]`, separadas dos respetivos contadores parciais medidos.
+Depois das emendas H2-c, a implementação e as provas locais estão verdes na cabeça de código `311bcbb5dd9a24e883e975502523faa14fa350d0`. O ensaio histórico do H2 está verde na cabeça `76a70ba7e6e5ded9274e894735ea69b6e83a1501`; não houve publicação nesta passagem. A aceitação que exige o portão verde no ramo e em `main` confirma-se na aterragem pelo diretor; este construtor não publicou `main` nem `h2-2026-10-04`. A linha final do H2 já foi transcrita; as das passagens H2-b e H2-c continuam em `[verify]`, separadas dos respetivos contadores parciais medidos.
 
 ## A reprodução antes de mexer
 
-Foram lidos o `CLAUDE.md`, o mapa inteiro e o brief. Antes da primeira alteração, o guião do brief produziu `brief-reproduzido.json`: as 11 medidas, os comandos e os conhecidos-positivos são integralmente iguais a `design/observatorio/medidas/BRIEF-H2.json`. Portanto, o §0 bate. Essa referência lê a cabeça presa `905105b7`; a base efetiva desta worktree era `ce325a3cd772b4317436345cec720cd739c2279d`. Não se confundem as duas cabeças.
+Foram lidos o `CLAUDE.md`, o mapa inteiro e o brief. Antes da primeira alteração, o guião do brief produziu `brief-reproduzido.json`: as 11 medidas, os comandos e os conhecidos-positivos são integralmente iguais a `design/observatorio/medidas/BRIEF-H2.json`. Portanto, o §0 bate. Essa referência lê a cabeça presa `4d91d3b2`; a base efetiva desta worktree era `fab9afa8cf1a62899ddad58d80df9e7aa35b363f`. Não se confundem as duas cabeças.
 
 ```sh
 OEDP_MEDIDAS_JSON=design/especime-v3/medicoes/h2-2026-10-04/brief-reproduzido.json python3 design/observatorio/medidas/BRIEF-H2.py
@@ -46,7 +46,7 @@ Na passagem H2-b, as 8 plantas sobre o `dist/` saíram com o código de recusa e
 | `h2-area-porta-antiga` | A porta antiga do texto numa área. |
 | `h2-voz-estado-trocado` | A palavra do estado trocada, recusada pela conferência da voz. |
 
-O registo completo da passagem H2-b está em `plantas-portoes-h2.json`, incluindo comando, mordida esperada e resumos antes e depois da reposição; a saída efetiva de cada recusa está no log da respetiva planta. No H2-b todas correram novamente pelo prefixo H2, na cabeça `1bf209d7d77e4ead4419203fb11f0ed774bc1367` e com o estado seguido vazio antes de cada planta. Reproduzem-se com:
+O registo completo da passagem H2-b está em `plantas-portoes-h2.json`, incluindo comando, mordida esperada e resumos antes e depois da reposição; a saída efetiva de cada recusa está no log da respetiva planta. No H2-b todas correram novamente pelo prefixo H2, na cabeça `f2852826d7967362c4fe1ba60264bc1bdf2aef23` e com o estado seguido vazio antes de cada planta. Reproduzem-se com:
 
 ```sh
 mkdir -p design/especime-v3/medicoes/h2-2026-10-04/reproducao
@@ -63,7 +63,7 @@ A redação anterior punha preparação, cópia, `touch -r` e substituição na 
 
 Foi consultada a corrida histórica `37199669028`: tentativa inicial vermelha e repetição verde na mesma cabeça, guardadas em `github-historico.json`; a queixa original está em `i194-historico.log`. Esses logs não medem a ordem exata dos processos da tentativa antiga, pelo que não a invento. A falha de ordenação está demonstrada pela leitura do divisor da cadeia e da planta; a nova premissa foi medida localmente e no runner.
 
-O único ramo publicado no H2 foi `h2-ensaio-i194-2026-10-04`, na cabeça `f7048ce08956d89fbefc54ebd40ea8b75b830d47`. O H2-b e o H2-c não publicaram nenhum ramo. A [corrida `37238803296`](https://github.com/oestadodopais/o-estado-do-pais/actions/runs/37238803296) passou no `ubuntu-24.04`; `github-i194.json` conserva a medida da troca e a mordida. O ramo remoto foi apagado depois da conclusão; a consulta posterior encontra 0 referências (`github-ramo-apagado.json`). A exigência de duas corridas remotas, ramo e `main`, não é declarada cumprida: a confirmação do portão no ramo e em `main` cabe ao diretor na aterragem, fora do mandato desta passagem.
+O único ramo publicado no H2 foi `h2-ensaio-i194-2026-10-04`, na cabeça `76a70ba7e6e5ded9274e894735ea69b6e83a1501`. O H2-b e o H2-c não publicaram nenhum ramo. A [corrida `37238803296`](https://github.com/oestadodopais/o-estado-do-pais/actions/runs/37238803296) passou no `ubuntu-24.04`; `github-i194.json` conserva a medida da troca e a mordida. O ramo remoto foi apagado depois da conclusão; a consulta posterior encontra 0 referências (`github-ramo-apagado.json`). A exigência de duas corridas remotas, ramo e `main`, não é declarada cumprida: a confirmação do portão no ramo e em `main` cabe ao diretor na aterragem, fora do mandato desta passagem.
 
 ## Os portões na cabeça do código H2-c
 
@@ -71,7 +71,7 @@ O único ramo publicado no H2 foi `h2-ensaio-i194-2026-10-04`, na cabeça `f7048
 sh scripts/leituras/portoes.sh <esta-worktree> design/especime-v3/medicoes/h2-2026-10-04/portoes
 ```
 
-Corrida pela tranca da máquina. Os códigos abaixo foram lidos de `portoes/build.codigo`, `portoes/verify.codigo` e `portoes/typecheck.codigo`, sem cadeia com `|`. `portoes/cabeca` e `portoes/cabeca.fim` contêm ambos `a2b8213ae49ca789349cb5dbe050fe5dbb44164f`. Os resumos dos logs, já sem caminhos locais, estão em `medidas.json`.
+Corrida pela tranca da máquina. Os códigos abaixo foram lidos de `portoes/build.codigo`, `portoes/verify.codigo` e `portoes/typecheck.codigo`, sem cadeia com `|`. `portoes/cabeca` e `portoes/cabeca.fim` contêm ambos `311bcbb5dd9a24e883e975502523faa14fa350d0`. Os resumos dos logs, já sem caminhos locais, estão em `medidas.json`.
 
 | Portão | Código lido | Segundos | Início UTC | Fim UTC |
 |---|---:|---:|---|---|
@@ -81,24 +81,24 @@ Corrida pela tranca da máquina. Os códigos abaixo foram lidos de `portoes/buil
 
 Os tempos dos portões usam carimbos com resolução de 1 segundo; uma duração nula significa que a conferência terminou no mesmo segundo em que começou.
 
-Entre commits correram as conferências tocadas pela mudança. Os registos originais do H2 foram feitos sobre árvores por comitar: os resumos de commit que escrevi não identificavam todo o código testado. O H2-b substitui os registos de `check:pais`, `gate:html`, `check:lugar` e do mapa por corridas na cabeça `1bf209d7d77e4ead4419203fb11f0ed774bc1367`, com `git status --porcelain --untracked-files=no` vazio antes e depois. Os registos adicionais e cada planta sobre o `dist/` também escrevem cabeça e estado. Os restantes registos antigos conservam valor histórico, não são apresentados como provas da cabeça H2-c. No fecho correram os portões inteiros. Não houve paragem por um portão de número, fonte ou pessoa. A comparação com a base encontra 0 ficheiros alterados em `ledger/`, `registos/` ou `studies-src/`.
+Entre commits correram as conferências tocadas pela mudança. Os registos originais do H2 foram feitos sobre árvores por comitar: os resumos de commit que escrevi não identificavam todo o código testado. O H2-b substitui os registos de `check:pais`, `gate:html`, `check:lugar` e do mapa por corridas na cabeça `f2852826d7967362c4fe1ba60264bc1bdf2aef23`, com `git status --porcelain --untracked-files=no` vazio antes e depois. Os registos adicionais e cada planta sobre o `dist/` também escrevem cabeça e estado. Os restantes registos antigos conservam valor histórico, não são apresentados como provas da cabeça H2-c. No fecho correram os portões inteiros. Não houve paragem por um portão de número, fonte ou pessoa. A comparação com a base encontra 0 ficheiros alterados em `ledger/`, `registos/` ou `studies-src/`.
 
 ## Capturas e leitura visual
 
-`captar-h2.mjs` serviu a construção H2-b da cabeça `1bf209d7d77e4ead4419203fb11f0ed774bc1367` apenas localmente, esperou pelas fontes e guardou a primeira página nas larguras 390, 768, 1024, 1280, 1600 px, nas edições portuguesa e inglesa, em `design/especime-v3/capturas/h2-2026-10-04/`. Há uma página inteira e um recorte dos estudos por combinação. `capturas.json` guarda as dimensões, a lista apresentada, as marcas e os resumos dos PNG; não encontrou transbordo horizontal nem erros de página.
+`captar-h2.mjs` serviu a construção H2-b da cabeça `f2852826d7967362c4fe1ba60264bc1bdf2aef23` apenas localmente, esperou pelas fontes e guardou a primeira página nas larguras 390, 768, 1024, 1280, 1600 px, nas edições portuguesa e inglesa, em `design/especime-v3/capturas/h2-2026-10-04/`. Há uma página inteira e um recorte dos estudos por combinação. `capturas.json` guarda as dimensões, a lista apresentada, as marcas e os resumos dos PNG; não encontrou transbordo horizontal nem erros de página.
 
 O H2-c conserva estas capturas: tem 0 ficheiros alterados em `src/` e `public/`. A inspeção visual efetiva H2-b está registada em `leitura-visual.json`, com os ficheiros vistos e os critérios. A marca aparece junto da data, a ordem conserva o estudo em curso à cabeça e o texto permanece legível nas larguras pedidas.
 
 ## Commits e fecho
 
-- `5f7cf57d0ab6a24af520d14db3b288654365e4e1`: H2: executar a substituição da planta I194 num passo indivisível
-- `ea5a0ed8c5903a1aedfea2ba06e177e6ec534025`: H2: montar pacotes com exclusões declaradas e ficheiros do motor
-- `bfa81e08843bfc8a8bd4cee25069d14601ff1b22`: H2: declarar estudos em curso e fechar as falhas de ligações e vocabulário
-- `f7048ce08956d89fbefc54ebd40ea8b75b830d47`: H2: fechar questões e registar as regras e as plantas
-- `bc76aa9f7267c6f3cde81c5bb912fa74c0f8c893`: H2: guardar a prova verde e as capturas da cabeça do código
-- `1bf209d7d77e4ead4419203fb11f0ed774bc1367`: H2-b: decidir prazos vencidos e corrigir a montagem e as provas
-- `4d85508f736774e1fdca1ae4093eafe5e2b591d3`: H2-b: guardar as provas verdes da cabeça limpa e as capturas
-- `a2b8213ae49ca789349cb5dbe050fe5dbb44164f`: H2-c: provar as recusas do pacote e a chamada E1
+- `6d6914f0c9ef40099b6daa24b09aa101060b4886`: H2: executar a substituição da planta I194 num passo indivisível
+- `b6f0fb817974f1cf9cb787d85b4e0f89626866dc`: H2: montar pacotes com exclusões declaradas e ficheiros do motor
+- `775c633246b115220394bc2543690fa7ac23455c`: H2: declarar estudos em curso e fechar as falhas de ligações e vocabulário
+- `76a70ba7e6e5ded9274e894735ea69b6e83a1501`: H2: fechar questões e registar as regras e as plantas
+- `b22ee8081887fb5ebc8e7d996b77e13ac568e80b`: H2: guardar a prova verde e as capturas da cabeça do código
+- `f2852826d7967362c4fe1ba60264bc1bdf2aef23`: H2-b: decidir prazos vencidos e corrigir a montagem e as provas
+- `e381344b7e6c930f3f1f68802e2da69cec80f3bf`: H2-b: guardar as provas verdes da cabeça limpa e as capturas
+- `311bcbb5dd9a24e883e975502523faa14fa350d0`: H2-c: provar as recusas do pacote e a chamada E1
 
 Todos levam os trailers `Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>` e `Claude-Session: https://claude.ai/code/session_019Dr4reeqSo5uscMFC16k9g`. O commit de entrega seguinte contém apenas provas nesta pasta de medições; o seu resumo está na resposta ao diretor, fora do próprio commit para não criar uma referência circular. Nenhum código do sítio mudou depois da cabeça verde acima; o fecho apenas reúne as provas e os seus guiões de recolha e conferência.
 
@@ -114,12 +114,12 @@ A leitura a frio do H2 está em `LEITURA-H2-2026-10-04.md`. Ficam a releitura da
 
 ## H2-b · as emendas depois da leitura a frio (registo histórico)
 
-A passagem parte de `acc928f23f5954d1cfc51a11fa86e94d4f6da56e`. Os achados plantados nas cópias do pacote não estavam no ramo; a divergência real de nome na contagem das áreas foi corrigida: 18 páginas de área, a contagem da `check:areas`, e 20 ficheiros HTML sob as pastas das áreas, com os índices. A medida conserva os dois nomes distintos e confirma as rotas declaradas contra os ficheiros existentes.
+A passagem parte de `c392fac7e8a01377ee084114bcf2ff8283f0eecf`. Os achados plantados nas cópias do pacote não estavam no ramo; a divergência real de nome na contagem das áreas foi corrigida: 18 páginas de área, a contagem da `check:areas`, e 20 ficheiros HTML sob as pastas das áreas, com os índices. A medida conserva os dois nomes distintos e confirma as rotas declaradas contra os ficheiros existentes.
 
 | Achado | Emenda e prova |
 |---|---|
-| 6 · I194 | A linha da questão fecha pela planta determinística e pela corrida de ensaio `37238803296`, no `ubuntu-24.04`, na cabeça `f7048ce0`. A aceitação do brief, o portão verde no ramo e em `main`, confirma-se na aterragem e é registada em `DECISIONS.md` §1.158 pelo lugar de direção. A célula D não foi alterada. |
-| 7 · cabeça das provas | 8 plantas H2 e 8 registos de trabalho correram em `1bf209d7d77e4ead4419203fb11f0ed774bc1367` com `estado` vazio. O coletor recusa um registo de outra cabeça ou com diferenças seguidas. Os resultados ficaram fora da árvore enquanto corriam, para a escrita das provas não sujar a corrida seguinte. |
+| 6 · I194 | A linha da questão fecha pela planta determinística e pela corrida de ensaio `37238803296`, no `ubuntu-24.04`, na cabeça `76a70ba7`. A aceitação do brief, o portão verde no ramo e em `main`, confirma-se na aterragem e é registada em `DECISIONS.md` §1.158 pelo lugar de direção. A célula D não foi alterada. |
+| 7 · cabeça das provas | 8 plantas H2 e 8 registos de trabalho correram em `f2852826d7967362c4fe1ba60264bc1bdf2aef23` com `estado` vazio. O coletor recusa um registo de outra cabeça ou com diferenças seguidas. Os resultados ficaram fora da árvore enquanto corriam, para a escrita das provas não sujar a corrida seguinte. |
 | 8 · argumento relativo | O repositório passa a caminho absoluto real antes da troca por marcas. A planta com `.` confirma que `relatorio.md` e `conferir-relatorio.py` conservam os pontos e que a conferência chega intacta ao pacote. |
 | 9 · árvore suja | O pacote recusa modificações em ficheiros seguidos, com a razão escrita, antes de criar a pasta. Há plantas de alteração no sítio e no motor sintéticos; o controlo limpo inclui um `node_modules` ligado e não seguido. Nenhum ficheiro do motor real foi escrito. |
 | 10 · data e horizonte | A E1 e os testes leem o dia UTC de `dist/version.json`. Uma data anterior exige decidir a ficha. O próprio dia-limite é válido. A marca diz «em curso até 2027» / «ongoing until 2027», com o ano vindo de `emCurso.ate`; as cadeias, o inventário e as capturas foram atualizados. |
@@ -130,11 +130,11 @@ As plantas novas são o prazo passado (com a exigência de decisão), o prazo do
 
 Os 20 controlos e plantas do pacote estão em `pacote-plantas.json`; os testes apenas criam repositórios sintéticos temporários. Os registos de trabalho com a cabeça e o estado são enumerados por `registos_trabalho` em `medidas.json`.
 
-Cabeça do código H2-b: `1bf209d7d77e4ead4419203fb11f0ed774bc1367`. Os códigos históricos são build 0, verify 0 e typecheck 0, conservados em `portoes-h2b/`; os portões atuais da tabela acima são os do H2-c. Os commits desta passagem são:
+Cabeça do código H2-b: `f2852826d7967362c4fe1ba60264bc1bdf2aef23`. Os códigos históricos são build 0, verify 0 e typecheck 0, conservados em `portoes-h2b/`; os portões atuais da tabela acima são os do H2-c. Os commits desta passagem são:
 
-- `1bf209d7d77e4ead4419203fb11f0ed774bc1367`: H2-b: decidir prazos vencidos e corrigir a montagem e as provas
+- `f2852826d7967362c4fe1ba60264bc1bdf2aef23`: H2-b: decidir prazos vencidos e corrigir a montagem e as provas
 
-O commit de provas H2-b é `4d85508f736774e1fdca1ae4093eafe5e2b591d3`. A segunda leitura curta do Opus originou as emendas H2-c abaixo.
+O commit de provas H2-b é `e381344b7e6c930f3f1f68802e2da69cec80f3bf`. A segunda leitura curta do Opus originou as emendas H2-c abaixo.
 
 Modelo desta passagem: `gpt-6-astra`. Até `2026-10-04T23:49:44.123487+00:00` decorreram 3 102,098 segundos desde o mandato H2-b. O parcial medido desta passagem é 13 730 468 símbolos: 13 675 370 de entrada, dos quais 13 439 488 em cache, e 55 098 de saída. É a diferença entre o contador anterior ao mandato e o último contador da mesma sessão, ambos conservados em `custo-h2b.json`; não inclui o trabalho H2 anterior. Linha final «tokens used» desta passagem: `[verify]`.
 
@@ -142,7 +142,7 @@ Não houve `push` nesta passagem. Fica por recolher a linha final do custo H2-b.
 
 ## H2-c · depois da segunda leitura curta
 
-Base: `4d85508f736774e1fdca1ae4093eafe5e2b591d3`. Cabeça do código: `a2b8213ae49ca789349cb5dbe050fe5dbb44164f`. Os estragos plantados nas cópias do pacote não estavam no ramo. Esta passagem responde aos achados reais da segunda leitura, transcrita no mandato do lugar de direção.
+Base: `e381344b7e6c930f3f1f68802e2da69cec80f3bf`. Cabeça do código: `311bcbb5dd9a24e883e975502523faa14fa350d0`. Os estragos plantados nas cópias do pacote não estavam no ramo. Esta passagem responde aos achados reais da segunda leitura, transcrita no mandato do lugar de direção.
 
 | Achado | O que se fez e como se prova |
 |---|---|
@@ -161,7 +161,7 @@ No repositório, os portões atuais estão em `design/especime-v3/medicoes/h2-20
 
 Commits do código desta passagem:
 
-- `a2b8213ae49ca789349cb5dbe050fe5dbb44164f`: H2-c: provar as recusas do pacote e a chamada E1
+- `311bcbb5dd9a24e883e975502523faa14fa350d0`: H2-c: provar as recusas do pacote e a chamada E1
 
 O último commit contém só as provas. A cabeça final fica na resposta H2-c, fora do próprio commit.
 

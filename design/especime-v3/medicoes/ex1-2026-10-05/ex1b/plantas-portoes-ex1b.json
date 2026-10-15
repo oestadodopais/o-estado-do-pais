@@ -1,7 +1,7 @@
 [
   {
     "nome": "ex1b-rodape-sem-a-porta-das-explicacoes",
-    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "cabeca": "f3f0415f4b2f5f36cc0eca7a09a095a9655d5ad8",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -19,7 +19,7 @@
   },
   {
     "nome": "ex1b-rodape-com-uma-porta-a-mais",
-    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "cabeca": "f3f0415f4b2f5f36cc0eca7a09a095a9655d5ad8",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -37,7 +37,7 @@
   },
   {
     "nome": "ex1b-maiores-ordem-trocada",
-    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "cabeca": "f3f0415f4b2f5f36cc0eca7a09a095a9655d5ad8",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,
@@ -55,7 +55,7 @@
   },
   {
     "nome": "ex1b-maiores-valor-trocado",
-    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "cabeca": "f3f0415f4b2f5f36cc0eca7a09a095a9655d5ad8",
     "estado": "",
     "comando": "node scripts/gate-html.mjs",
     "codigo": 1,
@@ -73,7 +73,7 @@
   },
   {
     "nome": "ex1b-porta-do-tema-tirada",
-    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "cabeca": "f3f0415f4b2f5f36cc0eca7a09a095a9655d5ad8",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,
@@ -91,7 +91,7 @@
   },
   {
     "nome": "ex1b-frase-dos-dois-totais-mudada",
-    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "cabeca": "f3f0415f4b2f5f36cc0eca7a09a095a9655d5ad8",
     "estado": "",
     "comando": "node scripts/check-voz.mjs",
     "codigo": 1,
@@ -109,7 +109,7 @@
   },
   {
     "nome": "ex1b-frases-compostas-num-contentor-flexivel",
-    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "cabeca": "f3f0415f4b2f5f36cc0eca7a09a095a9655d5ad8",
     "estado": "",
     "comando": "node tests/explicacoes/frases-compostas.mjs",
     "codigo": 1,
@@ -127,7 +127,7 @@
   },
   {
     "nome": "ex1b-transbordo-a-390",
-    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "cabeca": "f3f0415f4b2f5f36cc0eca7a09a095a9655d5ad8",
     "estado": "",
     "comando": "node tests/explicacoes/frases-compostas.mjs",
     "codigo": 1,

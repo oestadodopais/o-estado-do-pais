@@ -1,6 +1,6 @@
 {
   "build_inicial": {
-    "cabeca": "ffea781d22aec3cc80b7db14c825394627f8ecf1",
+    "cabeca": "8f21e9a49ef41f3004ced769a4d825f108b28eee",
     "codigo": 1,
     "motivo": "Faltava a entrada do bloco c1f no registo das revisões do inventário.",
     "protecao": "Rasto da leitura do diff do inventário, sem alteração da guarda.",
