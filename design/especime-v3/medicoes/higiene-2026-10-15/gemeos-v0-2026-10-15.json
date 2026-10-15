@@ -1,0 +1,655 @@
+{
+ "medido_em": "2026-10-15",
+ "linhas_publicadas_com_fonte": 2859,
+ "linhas_com_tema": 1533,
+ "linhas_sem_tema": 1326,
+ "temas": 18,
+ "temas_candidatos_a_gemeos": 16,
+ "familias_nos_candidatos": 1446,
+ "linhas_pt_nos_candidatos": 1491,
+ "conhecidos_positivos": {
+  "a_defesa_e_candidata": true,
+  "a_divida_pt_e_ue_nao_separa_por_definicao": true
+ },
+ "grupos": [
+  {
+   "tema": "agua",
+   "linhas_pt": 5,
+   "familias": 5,
+   "assinaturas": [
+    {
+     "fonte": "ERSAR",
+     "unidade": "%",
+     "linhas": 1
+    },
+    {
+     "fonte": "INE",
+     "unidade": "empresas",
+     "linhas": 1
+    },
+    {
+     "fonte": "INE",
+     "unidade": "euros por mês",
+     "linhas": 1
+    },
+    {
+     "fonte": "INE",
+     "unidade": "índice (Portugal = 100)",
+     "linhas": 1
+    },
+    {
+     "fonte": "Direção-Geral das Autarquias Locais (DGAL)",
+     "unidade": "dias",
+     "linhas": 1
+    }
+   ],
+   "exemplos_de_familias": [
+    "agua-nao-faturada-portugal",
+    "mortagua-empresas",
+    "mortagua-ganho-medio-mensal",
+    "mortagua-poder-de-compra",
+    "mortagua-prazo-medio-de-pagamento"
+   ]
+  },
+  {
+   "tema": "defesa",
+   "linhas_pt": 6,
+   "familias": 6,
+   "assinaturas": [
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "euros",
+     "linhas": 2
+    },
+    {
+     "fonte": "Eurostat",
+     "unidade": "% do PIB",
+     "linhas": 1
+    },
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "milhões de euros, acumulados de janeiro a julho",
+     "linhas": 1
+    },
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "milhões de euros, acumulados de janeiro a agosto",
+     "linhas": 1
+    },
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "milhões de euros",
+     "linhas": 1
+    }
+   ],
+   "exemplos_de_familias": [
+    "despesa-por-funcao-gf02-pt",
+    "execucao-despesa-funcao-02",
+    "execucao-despesa-programa-009",
+    "oe-despesa-funcao-02",
+    "oe-despesa-ministerio-defesa-nacional",
+    "oe-despesa-programa-009"
+   ]
+  },
+  {
+   "tema": "desemprego",
+   "linhas_pt": 316,
+   "familias": 311,
+   "assinaturas": [
+    {
+     "fonte": "Instituto do Emprego e Formação Profissional (IEFP)",
+     "unidade": "pessoas",
+     "linhas": 280
+    },
+    {
+     "fonte": "Direção Regional de Qualificação Profissional e Emprego (DRQPE)",
+     "unidade": "pessoas",
+     "linhas": 19
+    },
+    {
+     "fonte": "Instituto de Emprego da Madeira, IP-RAM (IEM)",
+     "unidade": "pessoas",
+     "linhas": 11
+    },
+    {
+     "fonte": "Eurostat",
+     "unidade": "% da população ativa",
+     "linhas": 6
+    }
+   ],
+   "exemplos_de_familias": [
+    "abrantes-desemprego-registado",
+    "agueda-desemprego-registado",
+    "aguiar-da-beira-desemprego-registado",
+    "alandroal-desemprego-registado",
+    "albergaria-a-velha-desemprego-registado",
+    "albufeira-desemprego-registado",
+    "alcacer-do-sal-desemprego-registado",
+    "alcanena-desemprego-registado",
+    "alcobaca-desemprego-registado",
+    "alcochete-desemprego-registado",
+    "alcoutim-desemprego-registado",
+    "alenquer-desemprego-registado"
+   ]
+  },
+  {
+   "tema": "despesa-publica",
+   "linhas_pt": 91,
+   "familias": 89,
+   "assinaturas": [
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "euros",
+     "linhas": 33
+    },
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "milhões de euros, acumulados de janeiro a agosto",
+     "linhas": 23
+    },
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "milhões de euros",
+     "linhas": 14
+    },
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "milhões de euros, acumulados de janeiro a julho",
+     "linhas": 13
+    },
+    {
+     "fonte": "Eurostat",
+     "unidade": "% do PIB",
+     "linhas": 7
+    },
+    {
+     "fonte": "Município de Évora",
+     "unidade": "euros",
+     "linhas": 1
+    }
+   ],
+   "exemplos_de_familias": [
+    "despesa-em-id",
+    "despesa-por-funcao-gf01-pt",
+    "despesa-por-funcao-gf03-pt",
+    "despesa-por-funcao-gf04-pt",
+    "despesa-por-funcao-gf05-pt",
+    "despesa-por-funcao-gf08-pt",
+    "evora-despesa-paga",
+    "execucao-ativos-e-passivos-da-despesa-administracao-central",
+    "execucao-despesa-efetiva-administracao-central",
+    "execucao-despesa-efetiva-administracao-central-seguranca-social",
+    "execucao-despesa-funcao-01",
+    "execucao-despesa-funcao-03"
+   ]
+  },
+  {
+   "tema": "divida",
+   "linhas_pt": 648,
+   "familias": 633,
+   "assinaturas": [
+    {
+     "fonte": "Direção-Geral das Autarquias Locais (DGAL)",
+     "unidade": "euros",
+     "linhas": 622
+    },
+    {
+     "fonte": "Município de Évora",
+     "unidade": "euros",
+     "linhas": 10
+    },
+    {
+     "fonte": "Eurostat",
+     "unidade": "% do PIB",
+     "linhas": 8
+    },
+    {
+     "fonte": "IGCP",
+     "unidade": "milhões de euros",
+     "linhas": 3
+    },
+    {
+     "fonte": "IGCP",
+     "unidade": "%",
+     "linhas": 2
+    },
+    {
+     "fonte": "INE",
+     "unidade": "% do PIB",
+     "linhas": 2
+    },
+    {
+     "fonte": "CICF/IPCA — Anuário Financeiro dos Municípios Portugueses",
+     "unidade": "%",
+     "linhas": 1
+    }
+   ],
+   "exemplos_de_familias": [
+    "abrantes-divida-dgal",
+    "abrantes-limite-divida-dgal",
+    "agueda-divida-dgal",
+    "agueda-limite-divida-dgal",
+    "aguiar-da-beira-divida-dgal",
+    "aguiar-da-beira-limite-divida-dgal",
+    "alandroal-divida-dgal",
+    "alandroal-limite-divida-dgal",
+    "albergaria-a-velha-divida-dgal",
+    "albergaria-a-velha-limite-divida-dgal",
+    "albufeira-divida-dgal",
+    "albufeira-limite-divida-dgal"
+   ]
+  },
+  {
+   "tema": "educacao",
+   "linhas_pt": 4,
+   "familias": 3,
+   "assinaturas": [
+    {
+     "fonte": "Eurostat",
+     "unidade": "%",
+     "linhas": 2
+    },
+    {
+     "fonte": "Eurostat",
+     "unidade": "% do PIB",
+     "linhas": 1
+    },
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "euros",
+     "linhas": 1
+    }
+   ],
+   "exemplos_de_familias": [
+    "abandono-escolar-precoce",
+    "despesa-por-funcao-gf09-pt",
+    "oe-despesa-ministerio-educacao-ciencia-e-inovacao"
+   ]
+  },
+  {
+   "tema": "emprego",
+   "linhas_pt": 9,
+   "familias": 6,
+   "assinaturas": [
+    {
+     "fonte": "Eurostat",
+     "unidade": "% da população",
+     "linhas": 4
+    },
+    {
+     "fonte": "Eurostat",
+     "unidade": "variação em três anos, %",
+     "linhas": 2
+    },
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "euros",
+     "linhas": 2
+    },
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "milhões de euros, acumulados de janeiro a agosto",
+     "linhas": 1
+    }
+   ],
+   "exemplos_de_familias": [
+    "custo-unitario-do-trabalho",
+    "disparidade-de-emprego-entre-sexos",
+    "execucao-despesa-programa-016",
+    "oe-despesa-ministerio-trabalho-solidariedade-e-seguranca-social",
+    "oe-despesa-programa-016",
+    "taxa-de-emprego"
+   ]
+  },
+  {
+   "tema": "habitacao",
+   "linhas_pt": 6,
+   "familias": 4,
+   "assinaturas": [
+    {
+     "fonte": "Eurostat",
+     "unidade": "%",
+     "linhas": 4
+    },
+    {
+     "fonte": "Eurostat",
+     "unidade": "% do PIB",
+     "linhas": 1
+    },
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "euros",
+     "linhas": 1
+    }
+   ],
+   "exemplos_de_familias": [
+    "despesa-por-funcao-gf06-pt",
+    "oe-despesa-ministerio-infraestruturas-e-habitacao",
+    "sobrecarga-do-custo-da-habitacao",
+    "sobrecarga-do-custo-da-habitacao-inquilinos-mercado"
+   ]
+  },
+  {
+   "tema": "inflacao",
+   "linhas_pt": 16,
+   "familias": 15,
+   "assinaturas": [
+    {
+     "fonte": "INE",
+     "unidade": "%",
+     "linhas": 14
+    },
+    {
+     "fonte": "Eurostat",
+     "unidade": "variação anual média, %",
+     "linhas": 2
+    }
+   ],
+   "exemplos_de_familias": [
+    "ipc-alimentacao-variacao-homologa",
+    "ipc-alimentacao-variacao-homologa-periodo-anterior",
+    "ipc-combustiveis-variacao-homologa",
+    "ipc-combustiveis-variacao-homologa-periodo-anterior",
+    "ipc-energia-em-casa-variacao-homologa",
+    "ipc-energia-em-casa-variacao-homologa-periodo-anterior",
+    "ipc-rendas-variacao-homologa",
+    "ipc-rendas-variacao-homologa-periodo-anterior",
+    "ipc-sem-habitacao-variacao-media-12-meses",
+    "ipc-sem-habitacao-variacao-media-12-meses-periodo-anterior",
+    "ipc-variacao-homologa",
+    "ipc-variacao-homologa-periodo-anterior"
+   ]
+  },
+  {
+   "tema": "investimento-e-fundos",
+   "linhas_pt": 6,
+   "familias": 5,
+   "assinaturas": [
+    {
+     "fonte": "Estrutura de Missão Recuperar Portugal",
+     "unidade": "euros",
+     "linhas": 4
+    },
+    {
+     "fonte": "Eurostat",
+     "unidade": "% do PIB",
+     "linhas": 2
+    }
+   ],
+   "exemplos_de_familias": [
+    "evora-prr-aprovado",
+    "evora-prr-municipio-contratado",
+    "evora-prr-pago",
+    "evora-prr-vencido-aprovado",
+    "posicao-de-investimento-internacional"
+   ]
+  },
+  {
+   "tema": "pib",
+   "linhas_pt": 18,
+   "familias": 14,
+   "assinaturas": [
+    {
+     "fonte": "Eurostat",
+     "unidade": "índice (UE-27 = 100)",
+     "linhas": 11
+    },
+    {
+     "fonte": "Conselho das Finanças Públicas",
+     "unidade": "%",
+     "linhas": 3
+    },
+    {
+     "fonte": "Instituto Nacional de Estatística",
+     "unidade": "milhões de euros",
+     "linhas": 2
+    },
+    {
+     "fonte": "Eurostat",
+     "unidade": "euros por habitante · volumes encadeados (2015)",
+     "linhas": 2
+    }
+   ],
+   "exemplos_de_familias": [
+    "crescimento-da-despesa-liquida",
+    "oe-cenario-pib-real-crescimento",
+    "pib-nominal-notificacao-setembro",
+    "pib-pc-acores",
+    "pib-pc-alentejo",
+    "pib-pc-algarve",
+    "pib-pc-centro",
+    "pib-pc-grande-lisboa",
+    "pib-pc-madeira",
+    "pib-pc-norte",
+    "pib-pc-oeste-e-vale-do-tejo",
+    "pib-pc-peninsula-de-setubal"
+   ]
+  },
+  {
+   "tema": "pobreza",
+   "linhas_pt": 4,
+   "familias": 2,
+   "assinaturas": [
+    {
+     "fonte": "Eurostat",
+     "unidade": "€ por ano",
+     "linhas": 2
+    },
+    {
+     "fonte": "Eurostat",
+     "unidade": "%",
+     "linhas": 2
+    }
+   ],
+   "exemplos_de_familias": [
+    "linha-de-risco-de-pobreza",
+    "risco-de-pobreza-ou-exclusao"
+   ]
+  },
+  {
+   "tema": "populacao",
+   "linhas_pt": 310,
+   "familias": 309,
+   "assinaturas": [
+    {
+     "fonte": "INE",
+     "unidade": "pessoas",
+     "linhas": 309
+    },
+    {
+     "fonte": "PORDATA",
+     "unidade": "pessoas",
+     "linhas": 1
+    }
+   ],
+   "exemplos_de_familias": [
+    "abrantes-populacao",
+    "agueda-populacao",
+    "aguiar-da-beira-populacao",
+    "alandroal-populacao",
+    "albergaria-a-velha-populacao",
+    "albufeira-populacao",
+    "alcacer-do-sal-populacao",
+    "alcanena-populacao",
+    "alcobaca-populacao",
+    "alcochete-populacao",
+    "alcoutim-populacao",
+    "alenquer-populacao"
+   ]
+  },
+  {
+   "tema": "protecao-social",
+   "linhas_pt": 6,
+   "familias": 4,
+   "assinaturas": [
+    {
+     "fonte": "INE",
+     "unidade": "por mil pessoas em idade ativa",
+     "linhas": 2
+    },
+    {
+     "fonte": "INE",
+     "unidade": "€ por pensionista por ano",
+     "linhas": 2
+    },
+    {
+     "fonte": "Eurostat",
+     "unidade": "% do PIB",
+     "linhas": 1
+    },
+    {
+     "fonte": "Estrutura de Missão Recuperar Portugal",
+     "unidade": "euros",
+     "linhas": 1
+    }
+   ],
+   "exemplos_de_familias": [
+    "beneficiarios-do-rsi-por-mil",
+    "despesa-por-funcao-gf10-pt",
+    "evora-prr-universidade-contratado",
+    "pensao-media-anual"
+   ]
+  },
+  {
+   "tema": "receita-publica",
+   "linhas_pt": 33,
+   "familias": 30,
+   "assinaturas": [
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "milhões de euros",
+     "linhas": 4
+    },
+    {
+     "fonte": "INE",
+     "unidade": "empresas",
+     "linhas": 3
+    },
+    {
+     "fonte": "INE",
+     "unidade": "euros por mês",
+     "linhas": 3
+    },
+    {
+     "fonte": "INE",
+     "unidade": "índice (Portugal = 100)",
+     "linhas": 3
+    },
+    {
+     "fonte": "Direção-Geral das Autarquias Locais (DGAL)",
+     "unidade": "dias",
+     "linhas": 3
+    },
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "milhões de euros, acumulados de janeiro a julho",
+     "linhas": 3
+    },
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "euros",
+     "linhas": 3
+    },
+    {
+     "fonte": "Município de Évora",
+     "unidade": "% do orçamento",
+     "linhas": 2
+    },
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "milhões de euros, acumulados de janeiro a agosto",
+     "linhas": 2
+    },
+    {
+     "fonte": "INE",
+     "unidade": "€ por mês",
+     "linhas": 2
+    },
+    {
+     "fonte": "Eurostat",
+     "unidade": "variação em três anos, %",
+     "linhas": 2
+    },
+    {
+     "fonte": "PCP",
+     "unidade": "milhões de euros",
+     "linhas": 1
+    },
+    {
+     "fonte": "Município de Évora",
+     "unidade": "euros",
+     "linhas": 1
+    },
+    {
+     "fonte": "Ministério das Finanças",
+     "unidade": "milhões de euros",
+     "linhas": 1
+    }
+   ],
+   "exemplos_de_familias": [
+    "afirmacao-pcp-ppp-rodoviarias-oe2027",
+    "castelo-de-paiva-empresas",
+    "castelo-de-paiva-ganho-medio-mensal",
+    "castelo-de-paiva-poder-de-compra",
+    "castelo-de-paiva-prazo-medio-de-pagamento",
+    "evora-execucao-da-receita",
+    "evora-receita-cobrada",
+    "execucao-ativos-e-passivos-da-receita-administracao-central",
+    "execucao-receita-efetiva-administracao-central",
+    "execucao-receita-efetiva-administracao-central-seguranca-social",
+    "execucao-receita-orcamental-administracao-central",
+    "oe-ativos-e-passivos-da-receita-administracao-central"
+   ]
+  },
+  {
+   "tema": "saude",
+   "linhas_pt": 13,
+   "familias": 10,
+   "assinaturas": [
+    {
+     "fonte": "Ministério das Finanças",
+     "unidade": "milhões de euros",
+     "linhas": 6
+    },
+    {
+     "fonte": "Ministério das Finanças",
+     "unidade": "%",
+     "linhas": 3
+    },
+    {
+     "fonte": "RTP",
+     "unidade": "%",
+     "linhas": 1
+    },
+    {
+     "fonte": "RTP",
+     "unidade": "% de queda",
+     "linhas": 1
+    },
+    {
+     "fonte": "Eurostat",
+     "unidade": "% do PIB",
+     "linhas": 1
+    },
+    {
+     "fonte": "Entidade Orçamental",
+     "unidade": "euros",
+     "linhas": 1
+    }
+   ],
+   "exemplos_de_familias": [
+    "afirmacao-leitao-amaro-saude-oe2027",
+    "afirmacao-rtp-saude-queda-oe2027",
+    "despesa-por-funcao-gf07-pt",
+    "oe-despesa-ministerio-saude",
+    "oe-saude-despesa-efetiva-consolidada",
+    "oe-saude-despesa-efetiva-consolidada-sem-prr",
+    "oe-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+    "oe-saude-despesa-efetiva-consolidada-variacao",
+    "oe-saude-despesa-total-consolidada",
+    "oe-saude-despesa-total-consolidada-variacao"
+   ]
+  }
+ ],
+ "nota": "Uma heurística por palavras-chave e assinatura (fonte, unidade); sobrestima (duas fontes do mesmo conceito com a mesma definição contam como candidato) e subestima (um tema sem palavra-chave fica de fora). Serve para o número de partida, não para a régua."
+}
