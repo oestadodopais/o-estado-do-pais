@@ -64,6 +64,11 @@ if(!process.argv.includes('--declaracao')){
   const number=p1.querySelector('[data-claim="nato-defesa-portugal-pib-2026"]');number.set_content(lang==='en'?'2.1':'2,1');
   assert(conferirPaginaDaExplicacao(root,lang,e.slug,linhas).some(x=>/X6/.test(x)));
  }
+ for(const lang of ['pt','en'])for(const id of ['nato-defesa-portugal-pib-2025','nato-defesa-portugal-pib-2026','nato-defesa-portugal-eur-2026']){
+  const root=parse(fs.readFileSync(path.join(dist,lang==='pt'?'livro-razao':'en/ledger',id,'index.html'),'utf8'));
+  const portas=()=>root.querySelectorAll('main a[href]').filter(a=>!a.closest('[data-rotulo-ia]')&&a.getAttribute('href').split('#')[0]===(lang==='pt'?'/metodo':'/en/method'));
+  assert.equal(portas().length,1,'EX3: uma porta para o Método por recibo');
+ }
  console.log('PLANTAS: valor NATO trocado e precisão reduzida recusados pela X6 nas duas edições.');
 }
 if(process.env.RESEARCHHUB_DIR){

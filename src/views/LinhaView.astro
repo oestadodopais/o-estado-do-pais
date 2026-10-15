@@ -1927,7 +1927,8 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
 
       <p class="rodape-nav aparelho-saidas">
         <a href={caminhoDoLivro(lang)}>{s.livro.linha.voltar}</a>
-        <a href={`${routePath('metodo', lang)}#livro-razao`}>{s.livro.metodoLink}</a>
+        {/* EX3: a porta da releitura já abre o Método nestes recibos novos. */}
+        {!(id.startsWith('nato-defesa-portugal-') && verificacoes.length === 0) && <a href={`${routePath('metodo', lang)}#livro-razao`}>{s.livro.metodoLink}</a>}
       </p>
     </aside>
   </div>

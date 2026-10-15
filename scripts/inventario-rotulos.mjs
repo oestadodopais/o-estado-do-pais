@@ -96,9 +96,9 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const INVENTARIO_DECLARADO = path.join(RAIZ, 'design', 'especime-v3', 'rotulos', 'INVENTARIO.json');
 const LINHAS = loadClaims();
 /** O conjunto fechado OE1, conferido contra as linhas e contra cada edição construída. */
-const LINHAS_ESPERADAS = { oe1: 186, jd1: 15, v2a: 18 };
+const LINHAS_ESPERADAS = { oe1: 186, jd1: 15, v2a: 18, ex3: 3 };
 /** O estudo recebe outros blocos; a pertença vem do cruzamento de cada entrega. */
-const BLOCOS_DO_LIVRO = Object.fromEntries(['oe1', 'jd1', 'v2a'].map((bloco) => {
+const BLOCOS_DO_LIVRO = Object.fromEntries(['oe1', 'jd1', 'v2a', 'ex3'].map((bloco) => {
   const ids = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(RAIZ, 'ledger', 'cruzamentos', `${bloco}.json`), 'utf8')).rows));
   return [bloco, { ids, esperado: LINHAS_ESPERADAS[bloco] }];
 }));
@@ -970,6 +970,15 @@ export function plantas(dist) {
       item.remove();
       return true;
     }, new RegExp(`^JD1-unidade · ${rota}: o índice tem ${BLOCOS_DO_LIVRO.jd1.esperado - 1} entradas JD1 e deve ter ${BLOCOS_DO_LIVRO.jd1.esperado}$`));
+  }
+  for (const [lang, rel, rota, unidade] of [['pt', 'livro-razao', '/livro-razao', 'milhões de euros'], ['en', 'en/ledger', '/en/ledger', 'million euros']]) {
+    const id='nato-defesa-portugal-eur-2026';
+    planta(`ex3-unidade-trocada-${lang}`, 'unidade', `${rel}/${id}/index.html`, r=>{
+      const u=r.querySelector('.linha-valor-unidade');if(!u||visivel(u)!==unidade)return false;u.set_content('%');return true;
+    },new RegExp(`^EX3-unidade · ${rota}/${id} · ${id}: a unidade diz «%»`));
+    planta(`ex3-entrada-retirada-${lang}`, 'contagem', `${rel}/index.html`,r=>{
+      const item=r.querySelector(`.livro-item[data-linha-id="${id}"]`);if(!item)return false;item.remove();return true;
+    },new RegExp(`^EX3-unidade · ${rota}: o índice tem 2 entradas EX3 e deve ter 3$`));
   }
   // JD1-b, achado 16: perder a entrada no cruzamento E no HTML nunca baixa a contagem esperada.
   {
