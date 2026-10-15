@@ -13,6 +13,40 @@
  * da medida em `src/data/concelhos.mjs`.
  */
 export const FAMILIAS_DAS_LINHAS = {
+  "nato-defesa-portugal-eur": {
+  "nome": {
+    "pt": "Despesa em defesa de Portugal, em milhões de euros, pela NATO",
+    "en": "Portugal’s defence expenditure in million euros, according to NATO"
+  },
+  "frase": {
+    "pt": [
+      "É a estimativa da NATO para a despesa em defesa de Portugal, pelos pagamentos do governo nacional aliado, sem as administrações regionais e locais. O montante é em milhões de euros, na tabela a preços correntes."
+    ],
+    "en": [
+      "It is NATO’s estimate of Portugal’s defence expenditure, covering payments by the Allied national government, excluding regional and local authorities. The amount is in million euros, in the table at current prices."
+    ]
+  },
+  "origens": [
+    "nato-definicao-despesa-defesa"
+  ]
+},
+  "nato-defesa-portugal-pib": {
+  "nome": {
+    "pt": "Despesa em defesa de Portugal, em percentagem do PIB, pela NATO",
+    "en": "Portugal’s defence expenditure as a share of GDP, according to NATO"
+  },
+  "frase": {
+    "pt": [
+      "É a estimativa da NATO para a despesa em defesa de Portugal, pelos pagamentos do governo nacional aliado, sem as administrações regionais e locais. A percentagem usa o PIB real, na tabela a preços constantes."
+    ],
+    "en": [
+      "It is NATO’s estimate of Portugal’s defence expenditure, covering payments by the Allied national government, excluding regional and local authorities. The percentage uses real GDP, in the table at constant prices."
+    ]
+  },
+  "origens": [
+    "nato-definicao-despesa-defesa"
+  ]
+},
   "abandono-escolar-precoce": {
     "cartao": "abandono-escolar-precoce-2025"
   },

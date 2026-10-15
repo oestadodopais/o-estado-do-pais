@@ -1,0 +1,53 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "nato-defesa-portugal-pib-2026"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "2,10"
+unit: "% do PIB"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Table 3: Core defence expenditure as a share of GDP and annual real change"
+name_source: "Table 3!A1"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "NATO"
+document:
+  title: "Defence Investment of NATO Countries (2014-2026)"
+  edition: "2026"
+  locator: "Table 3!N27; Portugal; 2026e"
+  source_sha256: "11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988"
+  kind: "ficheiro"
+source_url: "https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2026-en.xlsx"
+access_date: "2026-10-15"
+reference_date: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Table 3: Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!N27; Portugal; 2026e: 2.1 (Excel; number_format: 0.00). PDF, página 7: 2.10. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 2,10 e"
+
+# A bandeira tal como a fonte a escreve, e o que ela quer dizer.
+source_flag: "e"
+source_flag_note: "Estimativa da NATO."
+source_flag_note_en: "NATO estimate."
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Estimativa da NATO. Pagamentos feitos por um governo nacional aliado, excluindo as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Percentagem do PIB real, a preços de 2021."
+ressalva_en: "NATO estimate. Payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. Share of real GDP, based on 2021 prices."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: Table 3!N27; Portugal; 2026e. A célula do Excel e a forma impressa do PDF foram conferidas. A marca e vem do cabeçalho do ano. Estimativa da NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-defesa-portugal-pib-2026."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

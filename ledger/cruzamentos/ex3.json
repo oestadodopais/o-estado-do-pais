@@ -1,0 +1,46 @@
+{
+  "_": [
+    "Registo de travessia — ex3. Uma entrada por linha do livro-razão que veio do",
+    "motor de investigação (ResearchHub), com o resumo criptográfico da linha de",
+    "origem e o dos bytes que aqui foram escritos.",
+    "FICHEIRO GERADO. Escrito por ResearchHub/publisher/export_site_rows.py.",
+    "Conferido a cada build por scripts/check-cruzamento.mjs — ver ledger/README.md."
+  ],
+  "exporter": "ResearchHub/publisher/export_site_rows.py",
+  "origin": "ResearchHub",
+  "rows": {
+    "nato-defesa-portugal-eur-2026": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-10-15",
+      "exported_row_sha256": "facfea79fbdb6d8ab858ee909538bc9a5d4304120af44a29faa969ae816110bb",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "bbbfffcbe19bd3ff34161b6dde1a4ff84520721c0080ec70bc72925c0c1c27a1",
+      "rh_id": "nato-defesa-portugal-eur-2026",
+      "rh_ledger_sha256": "67d588e4b2292a8dea1c2a0d1da9da55e4ba7d50fdc74d050c682d7a016828fd",
+      "rh_study": "21 Defesa NATO",
+      "verifications_at_export": 0
+    },
+    "nato-defesa-portugal-pib-2025": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-10-15",
+      "exported_row_sha256": "687b59bd7afe884a23bb36c848e9602865ba2ea5dc2ea12b8a93791e46d05ee6",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "2f8b9e08b94f902a9a036dcc43c61d885ae93fe464c87f251a5a8d8dffa8dffc",
+      "rh_id": "nato-defesa-portugal-pib-2025",
+      "rh_ledger_sha256": "67d588e4b2292a8dea1c2a0d1da9da55e4ba7d50fdc74d050c682d7a016828fd",
+      "rh_study": "21 Defesa NATO",
+      "verifications_at_export": 0
+    },
+    "nato-defesa-portugal-pib-2026": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-10-15",
+      "exported_row_sha256": "7db6a1d328faf7e860e7757b68ee5a30b2e418e23c2d052323125c3f4b124feb",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "8f9b4b28707dd32683488b235ef35e1cfd577738f3b8b8dc373299910258793c",
+      "rh_id": "nato-defesa-portugal-pib-2026",
+      "rh_ledger_sha256": "67d588e4b2292a8dea1c2a0d1da9da55e4ba7d50fdc74d050c682d7a016828fd",
+      "rh_study": "21 Defesa NATO",
+      "verifications_at_export": 0
+    }
+  }
+}

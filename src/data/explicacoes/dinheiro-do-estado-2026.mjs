@@ -95,7 +95,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
   abertura: [
     {
       pt: [
-        'O Orçamento do Estado para ', { periodo: F('01') }, ' diz, euro a euro, para onde vai o dinheiro. De cada cem euros, ',
+        'O Orçamento do Estado para ', { periodo: F('01') }, ' diz, euro a euro, para onde vai o dinheiro. De cada cem euros da despesa efetiva consolidada da administração central, ',
         { claim: F('07') }, ' vão para a ', { nome: F('07') }, ', ', { claim: F('10') }, ' para a ', { nome: F('10') }, ', ',
         { claim: F('09') }, ' para a ', { nome: F('09') }, ' e ', { claim: F('04') }, ' para os ', { nome: F('04') }, '.',
         { se: [A_MAIOR_FUNCAO], partes: [
@@ -104,7 +104,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
         ] },
       ],
       en: [
-        'The State Budget for ', { periodo: F('01') }, ' says, euro by euro, where the money goes. Of every hundred euros, ',
+        'The State Budget for ', { periodo: F('01') }, ' says, euro by euro, where the money goes. Of every hundred euros of central administration\'s consolidated effective expenditure, ',
         { claim: F('07') }, ' go to ', { nome: F('07') }, ', ', { claim: F('10') }, ' to ', { nome: F('10') }, ', ',
         { claim: F('09') }, ' to ', { nome: F('09') }, ' and ', { claim: F('04') }, ' to ', { nome: F('04') }, '.',
         { se: [A_MAIOR_FUNCAO], partes: [
@@ -119,7 +119,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
       id: 'por-funcao',
       titulo: { pt: 'Por função', en: 'By function' },
       conteudo: [
-        { figura: { forma: 'barras-do-livro', id: 'funcoes', linhas: FUNCOES, titulo: { pt: 'As dez funções, de cada cem euros', en: 'The ten functions, of every hundred euros' } } },
+        { figura: { forma: 'barras-do-livro', id: 'funcoes', linhas: FUNCOES, titulo: { pt: 'As dez funções, de cada cem euros da despesa efetiva consolidada da administração central', en: 'The ten functions, of every hundred euros of central administration\'s consolidated effective expenditure' } } },
         {
           paragrafo: {
             pt: [
@@ -134,6 +134,210 @@ export const DINHEIRO_DO_ESTADO_2026 = {
             ],
           },
         },
+        {
+          "paragrafo": {
+            "pt": [
+              "Os ",
+              {
+                "claim": "oe-2026-cem-euros-funcao-02"
+              },
+              " de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central, em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações regionais e locais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Para Portugal, a NATO publica, na tabela a preços constantes, estimativas de ",
+              {
+                "claim": "nato-defesa-portugal-pib-2025",
+                "sufixo": " %"
+              },
+              " do PIB em ",
+              {
+                "periodo": "nato-defesa-portugal-pib-2025"
+              },
+              " e ",
+              {
+                "claim": "nato-defesa-portugal-pib-2026",
+                "sufixo": " %"
+              },
+              " em ",
+              {
+                "periodo": "nato-defesa-portugal-pib-2026"
+              },
+              ". Na tabela a preços correntes, publica ",
+              {
+                "claim": "nato-defesa-portugal-eur-2026"
+              },
+              " milhões de euros em ",
+              {
+                "periodo": "nato-defesa-portugal-eur-2026"
+              },
+              ", também como estimativa. Estas percentagens têm denominadores diferentes: a despesa efetiva consolidada da administração central e o PIB. Não são diretamente comparáveis."
+            ],
+            "en": [
+              "The ",
+              {
+                "claim": "oe-2026-cem-euros-funcao-02"
+              },
+              " of every hundred euros on this page are the «Defence» function of central administration's consolidated effective expenditure, in public accounting. Defence spending as a share of GDP, as NATO publishes it, is another measure, under NATO's own definition: payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. For Portugal, NATO publishes, in the table at constant prices, estimates of ",
+              {
+                "claim": "nato-defesa-portugal-pib-2025",
+                "sufixo": " %"
+              },
+              " of GDP in ",
+              {
+                "periodo": "nato-defesa-portugal-pib-2025"
+              },
+              " and ",
+              {
+                "claim": "nato-defesa-portugal-pib-2026",
+                "sufixo": " %"
+              },
+              " in ",
+              {
+                "periodo": "nato-defesa-portugal-pib-2026"
+              },
+              ". In the table at current prices, it publishes ",
+              {
+                "claim": "nato-defesa-portugal-eur-2026"
+              },
+              " million euros in ",
+              {
+                "periodo": "nato-defesa-portugal-eur-2026"
+              },
+              ", also as an estimate. These percentages have different denominators: central administration's consolidated effective expenditure and GDP. They are not directly comparable."
+            ]
+          }
+        },
+        {
+          "paragrafo": {
+            "pt": [
+              "Noutra conta, a de todas as administrações públicas, com as regionais e as locais, em percentagem do PIB e em contabilidade nacional, o Eurostat publica para ",
+              {
+                "periodo": "despesa-por-funcao-2024-gf02-pt"
+              },
+              ": serviços gerais das administrações públicas ",
+              {
+                "claim": "despesa-por-funcao-2024-gf01-pt",
+                "sufixo": " %"
+              },
+              ", defesa ",
+              {
+                "claim": "despesa-por-funcao-2024-gf02-pt",
+                "sufixo": " %"
+              },
+              ", segurança e ordem pública ",
+              {
+                "claim": "despesa-por-funcao-2024-gf03-pt",
+                "sufixo": " %"
+              },
+              ", assuntos económicos ",
+              {
+                "claim": "despesa-por-funcao-2024-gf04-pt",
+                "sufixo": " %"
+              },
+              ", proteção do ambiente ",
+              {
+                "claim": "despesa-por-funcao-2024-gf05-pt",
+                "sufixo": " %"
+              },
+              ", habitação e infraestruturas coletivas ",
+              {
+                "claim": "despesa-por-funcao-2024-gf06-pt",
+                "sufixo": " %"
+              },
+              ", saúde ",
+              {
+                "claim": "despesa-por-funcao-2024-gf07-pt",
+                "sufixo": " %"
+              },
+              ", desporto, recreação, cultura e religião ",
+              {
+                "claim": "despesa-por-funcao-2024-gf08-pt",
+                "sufixo": " %"
+              },
+              ", educação ",
+              {
+                "claim": "despesa-por-funcao-2024-gf09-pt",
+                "sufixo": " %"
+              },
+              " e proteção social ",
+              {
+                "claim": "despesa-por-funcao-2024-gf10-pt",
+                "sufixo": " %"
+              },
+              " do PIB. Estas percentagens do Eurostat referem-se a ",
+              {
+                "periodo": "despesa-por-funcao-2024-gf02-pt"
+              },
+              " e usam o PIB como denominador. As fatias por função do Orçamento referem-se a ",
+              {
+                "periodo": "oe-2026-cem-euros-funcao-02"
+              },
+              " e usam a despesa efetiva consolidada da administração central. Também diferem o perímetro e a contabilidade."
+            ],
+            "en": [
+              "In another count, that of all public administrations, with the regional and local ones, as a share of GDP and in national accounts, Eurostat publishes for ",
+              {
+                "periodo": "despesa-por-funcao-2024-gf02-pt"
+              },
+              ": general public services ",
+              {
+                "claim": "despesa-por-funcao-2024-gf01-pt",
+                "sufixo": " %"
+              },
+              ", defence ",
+              {
+                "claim": "despesa-por-funcao-2024-gf02-pt",
+                "sufixo": " %"
+              },
+              ", public order and safety ",
+              {
+                "claim": "despesa-por-funcao-2024-gf03-pt",
+                "sufixo": " %"
+              },
+              ", economic affairs ",
+              {
+                "claim": "despesa-por-funcao-2024-gf04-pt",
+                "sufixo": " %"
+              },
+              ", environmental protection ",
+              {
+                "claim": "despesa-por-funcao-2024-gf05-pt",
+                "sufixo": " %"
+              },
+              ", housing and community amenities ",
+              {
+                "claim": "despesa-por-funcao-2024-gf06-pt",
+                "sufixo": " %"
+              },
+              ", health ",
+              {
+                "claim": "despesa-por-funcao-2024-gf07-pt",
+                "sufixo": " %"
+              },
+              ", recreation, culture and religion ",
+              {
+                "claim": "despesa-por-funcao-2024-gf08-pt",
+                "sufixo": " %"
+              },
+              ", education ",
+              {
+                "claim": "despesa-por-funcao-2024-gf09-pt",
+                "sufixo": " %"
+              },
+              " and social protection ",
+              {
+                "claim": "despesa-por-funcao-2024-gf10-pt",
+                "sufixo": " %"
+              },
+              " of GDP. These Eurostat percentages refer to ",
+              {
+                "periodo": "despesa-por-funcao-2024-gf02-pt"
+              },
+              " and use GDP as their denominator. The Budget shares by function refer to ",
+              {
+                "periodo": "oe-2026-cem-euros-funcao-02"
+              },
+              " and use central administration's consolidated effective expenditure. Their coverage and accounting basis also differ."
+            ]
+          }
+        },
       ],
     },
     {
@@ -144,7 +348,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
           paragrafo: {
             pt: [
               { se: [O_MAIOR_MINISTERIO], partes: [
-                'Visto pelos ministérios, o maior é ', { nome: M('financas') }, ', com ', { claim: M('financas') }, ' de cada cem euros, ',
+                'Visto pelos ministérios, o maior é ', { nome: M('financas') }, ', com ', { claim: M('financas') }, ' de cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação, ',
                 { claim: DESPESA_DAS_FINANCAS, sufixo: ' euros' },
                 { se: [OS_QUATRO_MINISTERIOS], partes: [
                   '; seguem-se ', { nome: M('saude') }, ' (', { claim: M('saude') }, '), ', { nome: M('trabalho-solidariedade-e-seguranca-social') }, ' (',
@@ -156,7 +360,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
             ],
             en: [
               { se: [O_MAIOR_MINISTERIO], partes: [
-                'Seen by ministry, the largest is ', { nome: M('financas') }, ', with ', { claim: M('financas') }, ' of every hundred euros, ',
+                'Seen by ministry, the largest is ', { nome: M('financas') }, ', with ', { claim: M('financas') }, ' of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation, ',
                 { claim: DESPESA_DAS_FINANCAS, sufixo: ' euros' },
                 { se: [OS_QUATRO_MINISTERIOS], partes: [
                   '; then come ', { nome: M('saude') }, ' (', { claim: M('saude') }, '), ', { nome: M('trabalho-solidariedade-e-seguranca-social') }, ' (',
@@ -168,7 +372,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
             ],
           },
         },
-        { figura: { forma: 'barras-do-livro', id: 'ministerios', linhas: MINISTERIOS, titulo: { pt: 'Os dezasseis ministérios, de cada cem euros', en: 'The sixteen ministries, of every hundred euros' } } },
+        { figura: { forma: 'barras-do-livro', id: 'ministerios', linhas: MINISTERIOS, titulo: { pt: 'Os dezasseis ministérios, de cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação', en: 'The sixteen ministries, of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation' } } },
         /* Higiene (13.10.2026, EX1-12 e a leitura curta da passagem b): a frase sobre a diferença entre as duas contas
            sai, porque os excertos selados não a explicam, e uma frase sobre os excertos do projeto não é do leitor; fica
            só o que os apoios da auditoria sustentam. */

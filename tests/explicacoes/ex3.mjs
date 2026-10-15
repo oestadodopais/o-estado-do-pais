@@ -1,0 +1,56 @@
+/** EX3: apoios, nomes por código, marcas e plantas sem alterar ficheiros seguidos. */
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import {parse} from 'node-html-parser';
+import {DINHEIRO_DO_ESTADO_2026 as e} from '../../src/data/explicacoes/dinheiro-do-estado-2026.mjs';
+import {ORIGENS_DAS_DEFINICOES} from '../../src/data/figuras.mjs';
+import {loadClaims} from '../../src/lib/ledger.mjs';
+import {explicacaoResolvida} from '../../src/lib/explicacoes.mjs';
+import {valorNaLingua} from '../../src/lib/valor-na-lingua.mjs';
+import {conferirAuditoriaDasExplicacoes,conferirPaginaDaExplicacao} from './explicacao.mjs';
+const linhas=loadClaims(),dist=process.env.OEDP_DIST??'dist';
+const auditoria=JSON.parse(fs.readFileSync('tests/cartao/leituras-provadas.json'));
+assert.deepEqual(conferirAuditoriaDasExplicacoes({auditoria}).erros,[]);
+const bad=structuredClone(auditoria);
+const f=bad.explicacoes.find(x=>x.slug===e.slug).folhas.find(x=>x.caminho==='seccoes[0].conteudo[2].paragrafo[2]');
+f.partes.find(x=>x.apoios.some(a=>a.origem==='nato-definicao-despesa-defesa')).apoios=[];
+assert(conferirAuditoriaDasExplicacoes({auditoria:bad}).erros.some(x=>x.includes('não tem apoio nenhum')));
+console.log('PLANTA: parte da definição sem apoio recusada pela X2.');
+const partes=e.seccoes[0].conteudo[2].paragrafo.pt;
+partes.push({claim:'ex3-linha-inexistente'});
+try{assert.throws(()=>explicacaoResolvida(e.slug,'pt'),/não está no livro|não existe/)}finally{partes.pop()}
+console.log('PLANTA: token sobre linha inexistente recusado pelo resolvedor.');
+const nomes=['general public services','defence','public order and safety','economic affairs','environmental protection','housing and community amenities','health','recreation, culture and religion','education','social protection'];
+for(let i=1;i<=10;i++){
+ const id=`despesa-por-funcao-2024-gf${String(i).padStart(2,'0')}-pt`,r=linhas.get(id);
+ assert.equal(r.name.toLowerCase(),nomes[i-1]);assert.equal(r.source_flag,'p');
+ assert(e.seccoes[0].conteudo[3].paragrafo.en.some(x=>typeof x==='string'&&x.includes(nomes[i-1])));
+}
+assert.equal(valorNaLingua(linhas.get('nato-defesa-portugal-pib-2026'),'en'),'2.10');
+assert.equal(valorNaLingua(linhas.get('nato-defesa-portugal-pib-2026'),'pt'),'2,10');
+for(const [id,r] of linhas)if(!id.startsWith('nato-defesa-portugal-pib-'))assert.equal(valorNaLingua(r,'en'),String(r.value));
+if(!process.argv.includes('--declaracao')){
+ for(const lang of ['pt','en']){
+  const p=path.join(dist,lang==='pt'?'explicacoes':'en/explainers',e.slug,'index.html'),root=parse(fs.readFileSync(p,'utf8'));
+  assert.deepEqual(conferirPaginaDaExplicacao(root,lang,e.slug,linhas),[]);
+  const p2=root.querySelector('[data-explicacao-paragrafo="seccoes[0].conteudo[3].paragrafo"]');
+  assert.equal(p2.querySelectorAll('.claim-provisorio').length,10);
+  const p1=root.querySelector('[data-explicacao-paragrafo="seccoes[0].conteudo[2].paragrafo"]');
+  assert.equal(p1.querySelectorAll('.claim-provisorio').length,3);
+  const changed=new Map([...linhas].map(([id,r])=>[id,{...r}]));changed.get('nato-defesa-portugal-pib-2026').value='9,99';
+  assert(conferirPaginaDaExplicacao(root,lang,e.slug,changed).some(x=>/X6/.test(x)));
+  const number=p1.querySelector('[data-claim="nato-defesa-portugal-pib-2026"]');number.set_content(lang==='en'?'2.1':'2,1');
+  assert(conferirPaginaDaExplicacao(root,lang,e.slug,linhas).some(x=>/X6/.test(x)));
+ }
+ console.log('PLANTAS: valor NATO trocado e precisão reduzida recusados pela X6 nas duas edições.');
+}
+if(process.env.RESEARCHHUB_DIR){
+ const origem=ORIGENS_DAS_DEFINICOES['nato-definicao-despesa-defesa'],p=path.join(process.env.RESEARCHHUB_DIR,origem.alojada.motor),raw=fs.readFileSync(p);
+ assert.equal(crypto.createHash('sha256').update(raw).digest('hex'),origem.alojada.sha256);
+ const root=parse(raw.toString());root.querySelectorAll('script,style,head').forEach(x=>x.remove());
+ const text=root.textContent.replace(/\s+/g,' ');
+ for(const s of origem.excertoEn.split('\n'))assert(text.includes(s));
+}
+console.log('PASS EX3: auditoria, dez nomes ingleses, marcas e precisão.');

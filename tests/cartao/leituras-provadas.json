@@ -16216,6 +16216,110 @@
           ]
         }
       ]
+    },
+    {
+      "chaves": [
+        "nato-defesa-portugal-pib"
+      ],
+      "nome": {
+        "pt": "Despesa em defesa de Portugal, em percentagem do PIB, pela NATO",
+        "en": "Portugal’s defence expenditure as a share of GDP, according to NATO"
+      },
+      "origens": [
+        "nato-definicao-despesa-defesa"
+      ],
+      "folhas": [
+        {
+          "pt": "É a estimativa da NATO para a despesa em defesa de Portugal, pelos pagamentos do governo nacional aliado, sem as administrações regionais e locais. A percentagem usa o PIB real, na tabela a preços constantes.",
+          "en": "It is NATO’s estimate of Portugal’s defence expenditure, covering payments by the Allied national government, excluding regional and local authorities. The percentage uses real GDP, in the table at constant prices.",
+          "partes": [
+            {
+              "pt": "É a estimativa da NATO para a despesa em defesa de Portugal, pelos pagamentos do governo nacional aliado, sem as administrações regionais e locais. A percentagem usa o PIB real, na tabela a preços constantes.",
+              "en": "It is NATO’s estimate of Portugal’s defence expenditure, covering payments by the Allied national government, excluding regional and local authorities. The percentage uses real GDP, in the table at constant prices.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "nato-definicao-despesa-defesa",
+                  "campo": "excertoEn",
+                  "literal": "payments made by an Allied national government (excluding regional, local and municipal authorities)"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Portugal"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Figures for 2025 and 2026 are estimates."
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Share of real GDP (%)"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Based on 2021 prices"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "nato-defesa-portugal-eur"
+      ],
+      "nome": {
+        "pt": "Despesa em defesa de Portugal, em milhões de euros, pela NATO",
+        "en": "Portugal’s defence expenditure in million euros, according to NATO"
+      },
+      "origens": [
+        "nato-definicao-despesa-defesa"
+      ],
+      "folhas": [
+        {
+          "pt": "É a estimativa da NATO para a despesa em defesa de Portugal, pelos pagamentos do governo nacional aliado, sem as administrações regionais e locais. O montante é em milhões de euros, na tabela a preços correntes.",
+          "en": "It is NATO’s estimate of Portugal’s defence expenditure, covering payments by the Allied national government, excluding regional and local authorities. The amount is in million euros, in the table at current prices.",
+          "partes": [
+            {
+              "pt": "É a estimativa da NATO para a despesa em defesa de Portugal, pelos pagamentos do governo nacional aliado, sem as administrações regionais e locais. O montante é em milhões de euros, na tabela a preços correntes.",
+              "en": "It is NATO’s estimate of Portugal’s defence expenditure, covering payments by the Allied national government, excluding regional and local authorities. The amount is in million euros, in the table at current prices.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "nato-definicao-despesa-defesa",
+                  "campo": "excertoEn",
+                  "literal": "payments made by an Allied national government (excluding regional, local and municipal authorities)"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Portugal"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Figures for 2025 and 2026 are estimates."
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Current prices"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Million national currency units"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "series": [
@@ -17173,15 +17277,19 @@
   "explicacoes": [
     {
       "slug": "dinheiro-do-estado-2026",
-      "quem": "Claude Opus 5.5 (EX1 a EX1-c); Codex gpt-6-astra (EX1-d e EX1-e); Codex gpt-6-astra (higiene de 13.10.2026)",
-      "quando": "2026-10-13",
-      "o_que": "a primeira leitura (05.10.2026), a do EX1-b e a do EX1-c (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216, e as correções da leitura a frio), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X17 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam; EX1-d: releitura dos apoios selados, correção dos juros e da referência à posição da execução, e saldo do mesmo perímetro com comparação explícita ao ano inteiro (acertos X18 a X20); EX1-e: comparação dos módulos dos saldos, com sinais diferentes e nulos declarados; os juros não são localizados nem anunciados sem apoio: a frase curta é a ausência calculada pela condição sem_linhas, e as transferências mantêm o literal selado; saldo acumulado sem fecho anual e distinção dos perímetros apoiada nos dois literais da nota interna autorizados pelo mandato EX1-e, sem publicar a nota; Higiene: a frase das transferências sai; os perímetros ficam explícitos pelos apoios já autorizados; o valor negativo é apresentado como saldo do défice. Higiene b, achado 9: os excertos selados não reconciliam os totais por função e por ministério; a frase declara essa ausência limitada aos excertos citados.",
+      "quem": "Claude Opus 5.5 (EX1 a EX1-c); Codex gpt-6-astra (EX1-d e EX1-e); Codex gpt-6-astra (higiene de 13.10.2026); Codex gpt-6-astra (EX3)",
+      "quando": "2026-10-15",
+      "o_que": "a primeira leitura (05.10.2026), a do EX1-b e a do EX1-c (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216, e as correções da leitura a frio), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X17 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam; EX1-d: releitura dos apoios selados, correção dos juros e da referência à posição da execução, e saldo do mesmo perímetro com comparação explícita ao ano inteiro (acertos X18 a X20); EX1-e: comparação dos módulos dos saldos, com sinais diferentes e nulos declarados; os juros não são localizados nem anunciados sem apoio: a frase curta é a ausência calculada pela condição sem_linhas, e as transferências mantêm o literal selado; saldo acumulado sem fecho anual e distinção dos perímetros apoiada nos dois literais da nota interna autorizados pelo mandato EX1-e, sem publicar a nota; Higiene: a frase das transferências sai; os perímetros ficam explícitos pelos apoios já autorizados; o valor negativo é apresentado como saldo do défice. Higiene b, achado 9: os excertos selados não reconciliam os totais por função e por ministério; a frase declara essa ausência limitada aos excertos citados. EX3: denominadores, definição NATO, estimativas e comparação com as dez funções do Eurostat.",
       "origens": [
         "dados-gov-oe-despesa-funcional",
         "eurostat-cofog-divisao-01",
-        "eurostat-gfs-saldo",
+        "nato-definicao-despesa-defesa",
+        "rp4n-total-ministerios",
+        "rp4n-mapa-ministerios",
+        "rp4n-consolidada-ministerios",
         "eurostat-tipsgo10-descricao",
-        "eurostat-tipsna40-descricao"
+        "eurostat-tipsna40-descricao",
+        "eurostat-gfs-saldo"
       ],
       "folhas": [
         {
@@ -17234,8 +17342,8 @@
         },
         {
           "caminho": "abertura[0][2]",
-          "pt": " diz, euro a euro, para onde vai o dinheiro. De cada cem euros, ",
-          "en": " says, euro by euro, where the money goes. Of every hundred euros, ",
+          "pt": " diz, euro a euro, para onde vai o dinheiro. De cada cem euros da despesa efetiva consolidada da administração central, ",
+          "en": " says, euro by euro, where the money goes. Of every hundred euros of central administration's consolidated effective expenditure, ",
           "partes": [
             {
               "pt": " diz, euro a euro,",
@@ -17267,8 +17375,8 @@
               ]
             },
             {
-              "pt": " De cada cem euros, ",
-              "en": " Of every hundred euros, ",
+              "pt": " De cada cem euros da despesa efetiva consolidada da administração central, ",
+              "en": " Of every hundred euros of central administration's consolidated effective expenditure, ",
               "classe": "diz",
               "apoios": [
                 {
@@ -17280,6 +17388,16 @@
                   "linha": "oe-2026-cem-euros-funcao-07",
                   "campo": "derivation_en",
                   "literal": "multiply by one hundred"
+                },
+                {
+                  "linha": "oe-2026-cem-euros-funcao-02",
+                  "campo": "derivation",
+                  "literal": "despesa efetiva consolidada da administração central"
+                },
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "contabilidade pública"
                 }
               ]
             }
@@ -17464,35 +17582,23 @@
         },
         {
           "caminho": "seccoes[0].conteudo[0].figura.titulo",
-          "pt": "As dez funções, de cada cem euros",
-          "en": "The ten functions, of every hundred euros",
+          "pt": "As dez funções, de cada cem euros da despesa efetiva consolidada da administração central",
+          "en": "The ten functions, of every hundred euros of central administration's consolidated effective expenditure",
           "partes": [
             {
-              "pt": "As dez funções",
-              "en": "The ten functions",
+              "pt": "As dez funções, de cada cem euros da despesa efetiva consolidada da administração central",
+              "en": "The ten functions, of every hundred euros of central administration's consolidated effective expenditure",
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "oe-2026-despesa-funcao-07",
-                  "campo": "document.title",
-                  "literal": "classificação funcional"
-                }
-              ]
-            },
-            {
-              "pt": ", de cada cem euros",
-              "en": ", of every hundred euros",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "oe-2026-cem-euros-funcao-07",
+                  "linha": "oe-2026-cem-euros-funcao-02",
                   "campo": "derivation",
-                  "literal": "multiplicar por cem"
+                  "literal": "despesa efetiva consolidada da administração central"
                 },
                 {
-                  "linha": "oe-2026-cem-euros-funcao-07",
-                  "campo": "derivation_en",
-                  "literal": "multiply by one hundred"
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "contabilidade pública"
                 }
               ]
             }
@@ -17638,6 +17744,918 @@
           ]
         },
         {
+          "caminho": "seccoes[0].conteudo[2].paragrafo[0]",
+          "pt": "Os ",
+          "en": "The ",
+          "partes": [
+            {
+              "pt": "Os ",
+              "en": "The ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[2].paragrafo[2]",
+          "pt": " de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central, em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações regionais e locais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Para Portugal, a NATO publica, na tabela a preços constantes, estimativas de ",
+          "en": " of every hundred euros on this page are the «Defence» function of central administration's consolidated effective expenditure, in public accounting. Defence spending as a share of GDP, as NATO publishes it, is another measure, under NATO's own definition: payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. For Portugal, NATO publishes, in the table at constant prices, estimates of ",
+          "partes": [
+            {
+              "pt": " de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central, em contabilidade pública.",
+              "en": " of every hundred euros on this page are the «Defence» function of central administration's consolidated effective expenditure, in public accounting.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-cem-euros-funcao-02",
+                  "campo": "derivation",
+                  "literal": "despesa efetiva consolidada da administração central"
+                },
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "contabilidade pública"
+                }
+              ]
+            },
+            {
+              "pt": " A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações regionais e locais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo.",
+              "en": " Defence spending as a share of GDP, as NATO publishes it, is another measure, under NATO's own definition: payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "nato-definicao-despesa-defesa",
+                  "campo": "excertoEn",
+                  "literal": "Defence expenditure is defined by NATO as payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of (1) its own armed forces, (2) those of other Allies or (3) the needs of the Alliance as a whole."
+                },
+                {
+                  "origem": "nato-definicao-despesa-defesa",
+                  "campo": "excertoEn",
+                  "literal": "Allies agreed to allocate at least 3.5% of GDP to resource core defence requirements and to meet the NATO Capability Targets, based on the agreed definition of NATO defence expenditure (see below)."
+                }
+              ]
+            },
+            {
+              "pt": " Para Portugal, a NATO publica, na tabela a preços constantes, estimativas de ",
+              "en": " For Portugal, NATO publishes, in the table at constant prices, estimates of ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "nato-defesa-portugal-pib-2025",
+                  "campo": "excerpt",
+                  "literal": "Based on 2021 prices"
+                },
+                {
+                  "linha": "nato-defesa-portugal-pib-2025",
+                  "campo": "excerpt",
+                  "literal": "Figures for 2025 and 2026 are estimates."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[2].paragrafo[3].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[2].paragrafo[4]",
+          "pt": " do PIB em ",
+          "en": " of GDP in ",
+          "partes": [
+            {
+              "pt": " do PIB em ",
+              "en": " of GDP in ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "nato-defesa-portugal-pib-2026",
+                  "campo": "excerpt",
+                  "literal": "Based on 2021 prices"
+                },
+                {
+                  "linha": "nato-defesa-portugal-pib-2026",
+                  "campo": "excerpt",
+                  "literal": "Figures for 2025 and 2026 are estimates."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[2].paragrafo[6]",
+          "pt": " e ",
+          "en": " and ",
+          "partes": [
+            {
+              "pt": " e ",
+              "en": " and ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[2].paragrafo[7].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[2].paragrafo[8]",
+          "pt": " em ",
+          "en": " in ",
+          "partes": [
+            {
+              "pt": " em ",
+              "en": " in ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "nato-defesa-portugal-pib-2026",
+                  "campo": "excerpt",
+                  "literal": "Based on 2021 prices"
+                },
+                {
+                  "linha": "nato-defesa-portugal-pib-2026",
+                  "campo": "excerpt",
+                  "literal": "Figures for 2025 and 2026 are estimates."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[2].paragrafo[10]",
+          "pt": ". Na tabela a preços correntes, publica ",
+          "en": ". In the table at current prices, it publishes ",
+          "partes": [
+            {
+              "pt": ". Na tabela a preços correntes, publica ",
+              "en": ". In the table at current prices, it publishes ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "nato-defesa-portugal-eur-2026",
+                  "campo": "excerpt",
+                  "literal": "Current prices"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[2].paragrafo[12]",
+          "pt": " milhões de euros em ",
+          "en": " million euros in ",
+          "partes": [
+            {
+              "pt": " milhões de euros em ",
+              "en": " million euros in ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "nato-defesa-portugal-pib-2026",
+                  "campo": "excerpt",
+                  "literal": "Based on 2021 prices"
+                },
+                {
+                  "linha": "nato-defesa-portugal-pib-2026",
+                  "campo": "excerpt",
+                  "literal": "Figures for 2025 and 2026 are estimates."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[2].paragrafo[14]",
+          "pt": ", também como estimativa. Estas percentagens têm denominadores diferentes: a despesa efetiva consolidada da administração central e o PIB. Não são diretamente comparáveis.",
+          "en": ", also as an estimate. These percentages have different denominators: central administration's consolidated effective expenditure and GDP. They are not directly comparable.",
+          "partes": [
+            {
+              "pt": ", também como estimativa.",
+              "en": ", also as an estimate.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "nato-defesa-portugal-pib-2026",
+                  "campo": "excerpt",
+                  "literal": "Figures for 2025 and 2026 are estimates."
+                }
+              ]
+            },
+            {
+              "pt": " Estas percentagens têm denominadores diferentes: a despesa efetiva consolidada da administração central e o PIB. Não são diretamente comparáveis.",
+              "en": " These percentages have different denominators: central administration's consolidated effective expenditure and GDP. They are not directly comparable.",
+              "classe": "leitura",
+              "sobre": "Os denominadores declarados das duas percentagens são diferentes.",
+              "apoios": [
+                {
+                  "linha": "oe-2026-cem-euros-funcao-02",
+                  "campo": "derivation",
+                  "literal": "despesa efetiva consolidada da administração central"
+                },
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "contabilidade pública"
+                },
+                {
+                  "linha": "nato-defesa-portugal-pib-2026",
+                  "campo": "excerpt",
+                  "literal": "Based on 2021 prices"
+                },
+                {
+                  "linha": "nato-defesa-portugal-pib-2026",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[0]",
+          "pt": "Noutra conta, a de todas as administrações públicas, com as regionais e as locais, em percentagem do PIB e em contabilidade nacional, o Eurostat publica para ",
+          "en": "In another count, that of all public administrations, with the regional and local ones, as a share of GDP and in national accounts, Eurostat publishes for ",
+          "partes": [
+            {
+              "pt": "Noutra conta, a de todas as administrações públicas, com as regionais e as locais, em percentagem do PIB e em contabilidade nacional, o Eurostat publica para ",
+              "en": "In another count, that of all public administrations, with the regional and local ones, as a share of GDP and in national accounts, Eurostat publishes for ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "ressalva",
+                  "literal": "contabilidade nacional, incluindo as administrações regional e local"
+                },
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                },
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "documento",
+                  "literal": "General government expenditure by function (COFOG)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[2]",
+          "pt": ": serviços gerais das administrações públicas ",
+          "en": ": general public services ",
+          "partes": [
+            {
+              "pt": ": serviços gerais das administrações públicas ",
+              "en": ": general public services ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf01-pt",
+                  "campo": "name",
+                  "literal": "General public services"
+                },
+                {
+                  "linha": "oe-2026-cem-euros-funcao-01",
+                  "campo": "nome",
+                  "literal": "serviços gerais das administrações públicas"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[3].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "ressalva",
+                  "literal": "contabilidade nacional, incluindo as administrações regional e local"
+                },
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                },
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "documento",
+                  "literal": "General government expenditure by function (COFOG)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[4]",
+          "pt": ", defesa ",
+          "en": ", defence ",
+          "partes": [
+            {
+              "pt": ", defesa ",
+              "en": ", defence ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "name",
+                  "literal": "Defence"
+                },
+                {
+                  "linha": "oe-2026-cem-euros-funcao-02",
+                  "campo": "nome",
+                  "literal": "defesa"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[5].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "ressalva",
+                  "literal": "contabilidade nacional, incluindo as administrações regional e local"
+                },
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                },
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "documento",
+                  "literal": "General government expenditure by function (COFOG)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[6]",
+          "pt": ", segurança e ordem pública ",
+          "en": ", public order and safety ",
+          "partes": [
+            {
+              "pt": ", segurança e ordem pública ",
+              "en": ", public order and safety ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf03-pt",
+                  "campo": "name",
+                  "literal": "Public order and safety"
+                },
+                {
+                  "linha": "oe-2026-cem-euros-funcao-03",
+                  "campo": "nome",
+                  "literal": "segurança e ordem pública"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[7].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "ressalva",
+                  "literal": "contabilidade nacional, incluindo as administrações regional e local"
+                },
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                },
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "documento",
+                  "literal": "General government expenditure by function (COFOG)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[8]",
+          "pt": ", assuntos económicos ",
+          "en": ", economic affairs ",
+          "partes": [
+            {
+              "pt": ", assuntos económicos ",
+              "en": ", economic affairs ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf04-pt",
+                  "campo": "name",
+                  "literal": "Economic affairs"
+                },
+                {
+                  "linha": "oe-2026-cem-euros-funcao-04",
+                  "campo": "nome",
+                  "literal": "assuntos económicos"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[9].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "ressalva",
+                  "literal": "contabilidade nacional, incluindo as administrações regional e local"
+                },
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                },
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "documento",
+                  "literal": "General government expenditure by function (COFOG)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[10]",
+          "pt": ", proteção do ambiente ",
+          "en": ", environmental protection ",
+          "partes": [
+            {
+              "pt": ", proteção do ambiente ",
+              "en": ", environmental protection ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf05-pt",
+                  "campo": "name",
+                  "literal": "Environmental protection"
+                },
+                {
+                  "linha": "oe-2026-cem-euros-funcao-05",
+                  "campo": "nome",
+                  "literal": "proteção do ambiente"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[11].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "ressalva",
+                  "literal": "contabilidade nacional, incluindo as administrações regional e local"
+                },
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                },
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "documento",
+                  "literal": "General government expenditure by function (COFOG)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[12]",
+          "pt": ", habitação e infraestruturas coletivas ",
+          "en": ", housing and community amenities ",
+          "partes": [
+            {
+              "pt": ", habitação e infraestruturas coletivas ",
+              "en": ", housing and community amenities ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf06-pt",
+                  "campo": "name",
+                  "literal": "Housing and community amenities"
+                },
+                {
+                  "linha": "oe-2026-cem-euros-funcao-06",
+                  "campo": "nome",
+                  "literal": "habitação e infraestruturas coletivas"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[13].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "ressalva",
+                  "literal": "contabilidade nacional, incluindo as administrações regional e local"
+                },
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                },
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "documento",
+                  "literal": "General government expenditure by function (COFOG)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[14]",
+          "pt": ", saúde ",
+          "en": ", health ",
+          "partes": [
+            {
+              "pt": ", saúde ",
+              "en": ", health ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf07-pt",
+                  "campo": "name",
+                  "literal": "Health"
+                },
+                {
+                  "linha": "oe-2026-cem-euros-funcao-07",
+                  "campo": "nome",
+                  "literal": "saúde"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[15].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "ressalva",
+                  "literal": "contabilidade nacional, incluindo as administrações regional e local"
+                },
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                },
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "documento",
+                  "literal": "General government expenditure by function (COFOG)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[16]",
+          "pt": ", desporto, recreação, cultura e religião ",
+          "en": ", recreation, culture and religion ",
+          "partes": [
+            {
+              "pt": ", desporto, recreação, cultura e religião ",
+              "en": ", recreation, culture and religion ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf08-pt",
+                  "campo": "name",
+                  "literal": "Recreation, culture and religion"
+                },
+                {
+                  "linha": "oe-2026-cem-euros-funcao-08",
+                  "campo": "nome",
+                  "literal": "desporto, recreação, cultura e religião"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[17].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "ressalva",
+                  "literal": "contabilidade nacional, incluindo as administrações regional e local"
+                },
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                },
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "documento",
+                  "literal": "General government expenditure by function (COFOG)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[18]",
+          "pt": ", educação ",
+          "en": ", education ",
+          "partes": [
+            {
+              "pt": ", educação ",
+              "en": ", education ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf09-pt",
+                  "campo": "name",
+                  "literal": "Education"
+                },
+                {
+                  "linha": "oe-2026-cem-euros-funcao-09",
+                  "campo": "nome",
+                  "literal": "educação"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[19].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "ressalva",
+                  "literal": "contabilidade nacional, incluindo as administrações regional e local"
+                },
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                },
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "documento",
+                  "literal": "General government expenditure by function (COFOG)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[20]",
+          "pt": " e proteção social ",
+          "en": " and social protection ",
+          "partes": [
+            {
+              "pt": " e proteção social ",
+              "en": " and social protection ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf10-pt",
+                  "campo": "name",
+                  "literal": "Social protection"
+                },
+                {
+                  "linha": "oe-2026-cem-euros-funcao-10",
+                  "campo": "nome",
+                  "literal": "proteção social"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[21].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "ressalva",
+                  "literal": "contabilidade nacional, incluindo as administrações regional e local"
+                },
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                },
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "documento",
+                  "literal": "General government expenditure by function (COFOG)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[22]",
+          "pt": " do PIB. Estas percentagens do Eurostat referem-se a ",
+          "en": " of GDP. These Eurostat percentages refer to ",
+          "partes": [
+            {
+              "pt": " do PIB. Estas percentagens do Eurostat referem-se a ",
+              "en": " of GDP. These Eurostat percentages refer to ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "ressalva",
+                  "literal": "contabilidade nacional, incluindo as administrações regional e local"
+                },
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                },
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "documento",
+                  "literal": "General government expenditure by function (COFOG)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[24]",
+          "pt": " e usam o PIB como denominador. As fatias por função do Orçamento referem-se a ",
+          "en": " and use GDP as their denominator. The Budget shares by function refer to ",
+          "partes": [
+            {
+              "pt": " e usam o PIB como denominador. As fatias por função do Orçamento referem-se a ",
+              "en": " and use GDP as their denominator. The Budget shares by function refer to ",
+              "classe": "leitura",
+              "sobre": "Períodos, denominadores, perímetros e bases contabilísticas das linhas comparadas.",
+              "apoios": [
+                {
+                  "linha": "oe-2026-cem-euros-funcao-02",
+                  "campo": "derivation",
+                  "literal": "despesa efetiva consolidada da administração central"
+                },
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "contabilidade pública"
+                },
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "ressalva",
+                  "literal": "contabilidade nacional, incluindo as administrações regional e local"
+                },
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                },
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "documento",
+                  "literal": "General government expenditure by function (COFOG)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[3].paragrafo[26]",
+          "pt": " e usam a despesa efetiva consolidada da administração central. Também diferem o perímetro e a contabilidade.",
+          "en": " and use central administration's consolidated effective expenditure. Their coverage and accounting basis also differ.",
+          "partes": [
+            {
+              "pt": " e usam a despesa efetiva consolidada da administração central. Também diferem o perímetro e a contabilidade.",
+              "en": " and use central administration's consolidated effective expenditure. Their coverage and accounting basis also differ.",
+              "classe": "leitura",
+              "sobre": "Períodos, denominadores, perímetros e bases contabilísticas das linhas comparadas.",
+              "apoios": [
+                {
+                  "linha": "oe-2026-cem-euros-funcao-02",
+                  "campo": "derivation",
+                  "literal": "despesa efetiva consolidada da administração central"
+                },
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "contabilidade pública"
+                },
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "ressalva",
+                  "literal": "contabilidade nacional, incluindo as administrações regional e local"
+                },
+                {
+                  "linha": "despesa-por-funcao-2024-gf02-pt",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                },
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "documento",
+                  "literal": "General government expenditure by function (COFOG)"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "caminho": "seccoes[1].titulo",
           "pt": "Por ministério",
           "en": "By ministry",
@@ -17694,23 +18712,34 @@
         },
         {
           "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[4]",
-          "pt": " de cada cem euros, ",
-          "en": " of every hundred euros, ",
+          "pt": " de cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação, ",
+          "en": " of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation, ",
           "partes": [
             {
-              "pt": " de cada cem euros, ",
-              "en": " of every hundred euros, ",
-              "classe": "diz",
+              "pt": " de cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação, ",
+              "en": " of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation, ",
+              "classe": "leitura",
+              "sobre": "O denominador é a despesa total antes da consolidação no mapa dos ministérios.",
               "apoios": [
                 {
                   "linha": "oe-2026-cem-euros-ministerio-financas",
                   "campo": "derivation",
-                  "literal": "multiplicar por cem"
+                  "literal": "pela «DESPESA TOTAL» do MAPA 4"
                 },
                 {
-                  "linha": "oe-2026-cem-euros-ministerio-financas",
-                  "campo": "derivation_en",
-                  "literal": "multiply by one hundred"
+                  "origem": "rp4n-total-ministerios",
+                  "campo": "excerto",
+                  "literal": "DESPESA TOTAL\n\n352 472 389 960"
+                },
+                {
+                  "origem": "rp4n-mapa-ministerios",
+                  "campo": "excerto",
+                  "literal": "MAPA 4\nMapa relativo à classificação orgânica das despesas do subsetor da Administração Central"
+                },
+                {
+                  "origem": "rp4n-consolidada-ministerios",
+                  "campo": "excerto",
+                  "literal": "DESPESA TOTAL CONSOLIDADA\n\n245 121 564 003\n\nFonte: MF/EO\nNota:\nA \"DESPESA TOTAL CONSOLIDADA\" exclui os fluxos intrasetoriais e intersetoriais de juros, subsídios, transferências correntes e de capital, ativos e passivos no\nâmbito da Administração Central, bem como da aquisição de bens e serviços efetuada no âmbito do Programa Saúde da Administração Central."
                 }
               ]
             }
@@ -17833,35 +18862,34 @@
         },
         {
           "caminho": "seccoes[1].conteudo[1].figura.titulo",
-          "pt": "Os dezasseis ministérios, de cada cem euros",
-          "en": "The sixteen ministries, of every hundred euros",
+          "pt": "Os dezasseis ministérios, de cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação",
+          "en": "The sixteen ministries, of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation",
           "partes": [
             {
-              "pt": "Os dezasseis ministérios",
-              "en": "The sixteen ministries",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "oe-2026-despesa-ministerio-financas",
-                  "campo": "document.locator",
-                  "literal": "POR MINISTÉRIOS"
-                }
-              ]
-            },
-            {
-              "pt": ", de cada cem euros",
-              "en": ", of every hundred euros",
-              "classe": "diz",
+              "pt": "Os dezasseis ministérios, de cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação",
+              "en": "The sixteen ministries, of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation",
+              "classe": "leitura",
+              "sobre": "O denominador é a despesa total antes da consolidação no mapa dos ministérios.",
               "apoios": [
                 {
                   "linha": "oe-2026-cem-euros-ministerio-financas",
                   "campo": "derivation",
-                  "literal": "multiplicar por cem"
+                  "literal": "pela «DESPESA TOTAL» do MAPA 4"
                 },
                 {
-                  "linha": "oe-2026-cem-euros-ministerio-financas",
-                  "campo": "derivation_en",
-                  "literal": "multiply by one hundred"
+                  "origem": "rp4n-total-ministerios",
+                  "campo": "excerto",
+                  "literal": "DESPESA TOTAL\n\n352 472 389 960"
+                },
+                {
+                  "origem": "rp4n-mapa-ministerios",
+                  "campo": "excerto",
+                  "literal": "MAPA 4\nMapa relativo à classificação orgânica das despesas do subsetor da Administração Central"
+                },
+                {
+                  "origem": "rp4n-consolidada-ministerios",
+                  "campo": "excerto",
+                  "literal": "DESPESA TOTAL CONSOLIDADA\n\n245 121 564 003\n\nFonte: MF/EO\nNota:\nA \"DESPESA TOTAL CONSOLIDADA\" exclui os fluxos intrasetoriais e intersetoriais de juros, subsídios, transferências correntes e de capital, ativos e passivos no\nâmbito da Administração Central, bem como da aquisição de bens e serviços efetuada no âmbito do Programa Saúde da Administração Central."
                 }
               ]
             }
@@ -18816,6 +19844,18 @@
           ]
         },
         {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[7].diferentesNegativo[2]",
+          "pt": ")",
+          "en": ")",
+          "partes": [
+            {
+              "pt": ")",
+              "en": ")",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
           "caminho": "seccoes[2].conteudo[1].paragrafo[7].diferentesPositivo[0]",
           "pt": "o Orçamento previa para o ano inteiro um excedente de ",
           "en": "the Budget forecast for the full year a surplus of ",
@@ -19514,18 +20554,6 @@
               "en": ", with the source of each figure, is in each one’s receipt, one tap away.",
               "classe": "aponta",
               "alvo": "selos"
-            }
-          ]
-        },
-        {
-          "caminho": "seccoes[2].conteudo[1].paragrafo[7].diferentesNegativo[2]",
-          "pt": ")",
-          "en": ")",
-          "partes": [
-            {
-              "pt": ")",
-              "en": ")",
-              "classe": "liga"
             }
           ]
         }

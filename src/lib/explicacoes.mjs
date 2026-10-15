@@ -1,3 +1,4 @@
+import { valorNaLingua } from './valor-na-lingua.mjs';
 /**
  * ===========================================================================
  * AS EXPLICAÇÕES · o resolvedor (bloco EX1, 05.10.2026)
@@ -391,7 +392,7 @@ export function explicacaoResolvida(slug, lang) {
 export function textoDosPedacosDaExplicacao(pedacos, lang) {
   return pedacos.map((p) => {
     if (typeof p === 'string') return p;
-    if ('claim' in p) return `${getClaim(p.claim).value}${p.sufixo ?? ''}`;
+    if ('claim' in p) return `${valorNaLingua(getClaim(p.claim), lang)}${p.sufixo ?? ''}`;
     if ('data' in p) return dataDaCasa(p.data.valor, lang);
     return p.nome.texto;
   }).join('');

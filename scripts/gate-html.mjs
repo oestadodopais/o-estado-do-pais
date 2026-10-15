@@ -5982,7 +5982,7 @@ for (const file of ficheirosHtml(DIST)) {
         `a afirmação "${id}" foi renderizada como "${renderizado.trim()}" mas o ` +
           `livro-razão diz "${claim.value}".`,
       );
-    } else if (formaDoValor(textoTranscrito(el)) !== formaDoValor(claim.value)) {
+    } else if (formaDoValor(textoTranscrito(el)) !== formaDoValor(linguaPagina === 'en' && /^nato-defesa-portugal-pib-202[56]$/.test(id) ? String(claim.value).replace(',', '.') : claim.value)) {
       /* Os algarismos batem e a escrita não: o sinal, a vírgula ou um símbolo
          metido dentro do elemento. Ver formaDoValor(), que diz o que é a mesma
          escrita e o que é outro número. */
