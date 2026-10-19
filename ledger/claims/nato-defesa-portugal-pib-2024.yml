@@ -27,11 +27,11 @@ access_date: "2026-10-15"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!L27; Portugal; 2024: 1.55 (Excel; number_format: 0.00). Forma pelo formato da célula: 1.55. PDF, página 7: 1.55. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 1,55"
+excerpt: "Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!L27; Portugal; 2024: 1.55 (Excel; number_format: 0.00). Forma pelo formato da célula: 1.55. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 1,55"
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
-ressalva: "Pagamentos feitos por um governo nacional aliado, excluindo as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Percentagem do PIB real, a preços de 2021."
-ressalva_en: "Payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. Share of real GDP, based on 2021 prices."
+ressalva: "Pagamentos feitos por um governo nacional aliado, excluindo as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Percentagem do PIB real, a preços de 2021. A forma impressa no PDF não foi lida porque a página não tem texto extraível."
+ressalva_en: "Payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. Share of real GDP, based on 2021 prices. The printed form in the PDF was not read because the page has no extractable text."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -42,7 +42,7 @@ check: null
 
 study: "oe-2026"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Localizador: Table 3!L27; Portugal; 2024. Excerto composto a partir dos cabeçalhos e células do Excel e da forma impressa do PDF. A marca e, quando presente, vem do cabeçalho do ano. Valor publicado pela NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-defesa-portugal-pib-2024."
+note: "[note do motor] Localizador: Table 3!L27; Portugal; 2024. Excerto composto a partir dos cabeçalhos e células do Excel. A forma impressa no PDF não foi lida porque a página não tem texto extraível (página 7). A marca e, quando presente, vem do cabeçalho do ano. Valor publicado pela NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-defesa-portugal-pib-2024."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

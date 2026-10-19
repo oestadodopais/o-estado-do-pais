@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "nato-compromisso-haia-essencial-2035"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "3,5"
+unit: "% do PIB"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Core defence requirements"
+name_source: "Core defence requirements"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "NATO"
+document:
+  title: "Defence investment and NATO's 5% commitment"
+  edition: "2026-10-15"
+  locator: "Core defence requirements"
+  source_sha256: "d42b32910ffc936925c25cb7a34b1e48b88078d578c5bc3760160e2908f5287c"
+  kind: "html"
+source_url: "https://www.nato.int/en/what-we-do/introduction-to-nato/defence-expenditures-and-natos-5-commitment"
+access_date: "2026-10-15"
+reference_date: "2035"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Core defence requirements: Firstly, Allies agreed to allocate at least 3.5% of GDP to resource core defence requirements and to meet the NATO Capability Targets, based on the agreed definition of NATO defence expenditure (see below)."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: Core defence requirements. Compromisso da NATO, transcrito da página alojada.  · Cruzado de ResearchHub content/21 Defesa NATO · nato-compromisso-haia-essencial-2035."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -43,6 +43,7 @@
 
 /** `pt` ou `en`, para cada título distinto do campo `document.title`. */
 export const LINGUA_DOS_TITULOS = {
+  "Defence investment and NATO's 5% commitment": 'en',
   'Defence Investment of NATO Countries (2014-2026)': 'en',
   // V2-a: línguas lidas nos documentos alojados.
   "Leitão Amaro reitera que os portugueses \"têm mais dinheiro no bolso\" e apela à responsabilidade de PS e Chega": 'pt',
@@ -225,6 +226,9 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
 
 /** `pt` ou `en`, para cada rótulo distinto do campo `name`. */
 export const LINGUA_DOS_ROTULOS = {
+  '2014 Wales Summit': 'en',
+  'The 5% Hague defence commitment': 'en',
+  'Core defence requirements': 'en',
   'Table 1: Core defence expenditure': 'en',
   'Share of real GDP (%)': 'en',
   // V2-a: palavras das afirmações, não títulos dos artigos.
@@ -684,6 +688,9 @@ export function linguaDaEdicao(edicao, lang = 'pt') {
 
 /** EX3: localizadores lidos nas folhas inglesas da NATO, declarados por inteiro. */
 export const LINGUA_DOS_LOCALIZADORES = {
+  '2014 Wales Summit': 'en',
+  'The 5% Hague defence commitment': 'en',
+  'Core defence requirements': 'en',
   'Table 1!N27; Portugal (Euros); 2026e': 'en',
   'Table 3!L27; Portugal; 2024': 'en',
   'Table 3!M27; Portugal; 2025e': 'en',

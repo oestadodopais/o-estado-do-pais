@@ -141,7 +141,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
               {
                 "claim": "oe-2026-cem-euros-funcao-02"
               },
-              " de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços), em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo; a definição da NATO inclui as pensões de reforma pagas diretamente pelo governo aos militares na reforma e aos funcionários civis dos departamentos militares. Para Portugal, a NATO publica ",
+              " de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços), em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo; a definição da NATO inclui as pensões de reforma pagas diretamente pelo governo aos militares na reforma e aos funcionários civis dos departamentos militares, e as relativas ao pessoal no ativo. Para Portugal, a NATO publica ",
               {
                 "claim": "nato-defesa-portugal-pib-2024",
                 "sufixo": " %"
@@ -176,14 +176,27 @@ export const DINHEIRO_DO_ESTADO_2026 = {
               {
                 "periodo": "nato-defesa-portugal-eur-2026"
               },
-              " (a tabela a preços correntes, também uma estimativa)."
+              " (a tabela a preços correntes, também uma estimativa).",
+              " A referência da própria NATO é a dos seus compromissos: ",
+              {"claim": "nato-compromisso-gales-2014", "sufixo": " %"},
+              " do PIB desde a cimeira de Gales de ",
+              {"periodo": "nato-compromisso-gales-2014"},
+              ", e, desde a cimeira de Haia de ",
+              {"periodo": "nato-cimeira-haia-2025"},
+              ", ",
+              {"claim": "nato-compromisso-haia-2035", "sufixo": " %"},
+              " do PIB por ano até ",
+              {"periodo": "nato-compromisso-haia-2035"},
+              ", dos quais pelo menos ",
+              {"claim": "nato-compromisso-haia-essencial-2035", "sufixo": " %"},
+              " em requisitos essenciais de defesa pela definição da NATO."
             ],
             "en": [
               "",
               {
                 "claim": "oe-2026-cem-euros-funcao-02"
               },
-              " of every hundred euros on this page are the «Defence» function of central administration's consolidated effective expenditure (spending without transactions in financial assets and liabilities or transfers between its own services), in public accounting. Defence spending as a share of GDP, as NATO publishes it, is another measure, under NATO's own definition: payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole; NATO's definition includes retirement pensions paid directly by the government to retired military and civilian employees of military departments. For Portugal, NATO publishes ",
+              " of every hundred euros on this page are the «Defence» function of central administration's consolidated effective expenditure (spending without transactions in financial assets and liabilities or transfers between its own services), in public accounting. Defence spending as a share of GDP, as NATO publishes it, is another measure, under NATO's own definition: payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole; NATO's definition includes retirement pension payments made directly by the government to retired military and civilian employees of military departments and for active personnel. For Portugal, NATO publishes ",
               {
                 "claim": "nato-defesa-portugal-pib-2024",
                 "sufixo": " %"
@@ -218,7 +231,20 @@ export const DINHEIRO_DO_ESTADO_2026 = {
               {
                 "periodo": "nato-defesa-portugal-eur-2026"
               },
-              " (the table at current prices, also an estimate)."
+              " (the table at current prices, also an estimate).",
+              " NATO's own reference is its commitments: ",
+              {"claim": "nato-compromisso-gales-2014", "sufixo": " %"},
+              " of GDP since the ",
+              {"periodo": "nato-compromisso-gales-2014"},
+              " Wales Summit, and, since the ",
+              {"periodo": "nato-cimeira-haia-2025"},
+              " Hague Summit, ",
+              {"claim": "nato-compromisso-haia-2035", "sufixo": " %"},
+              " of GDP a year by ",
+              {"periodo": "nato-compromisso-haia-2035"},
+              ", of which at least ",
+              {"claim": "nato-compromisso-haia-essencial-2035", "sufixo": " %"},
+              " for core defence requirements under NATO's definition."
             ]
           }
         },

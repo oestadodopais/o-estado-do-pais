@@ -33,7 +33,11 @@ const folhas=folhasDaExplicacao(e).map(folha=>{
   const idx=Number(caminho.match(/paragrafo\[(\d+)\]/)[1]);
   const pib=year=>L(`nato-defesa-portugal-pib-${year}`,'excerpt','as a share of GDP');
   const ano=(kind,year)=>({linha:`nato-defesa-portugal-${kind}-${year}`,campo:'reference_date',forma:'ano'});
-  if(idx===2){
+  if(idx>=19){
+   const ids={19:['nato-compromisso-gales-2014','nato-compromisso-haia-2035'],20:['nato-compromisso-gales-2014'],21:['nato-compromisso-gales-2014'],23:['nato-cimeira-haia-2025','nato-compromisso-gales-2014'],25:['nato-cimeira-haia-2025'],26:['nato-compromisso-haia-2035'],27:['nato-compromisso-haia-2035'],29:['nato-compromisso-haia-essencial-2035'],30:['nato-compromisso-haia-essencial-2035'],31:['nato-compromisso-haia-essencial-2035']};
+   if(!ids[idx])throw Error('Parte do compromisso sem apoio: '+caminho);
+   partes=[diz(pt,en,ids[idx].map(id=>L(id,'excerpt',linhas.get(id).excerpt)))];
+  }else if(idx===2){
    const x=pt.indexOf(' A despesa em defesa'),y=en.indexOf(' Defence spending');
    const z=pt.indexOf('; a definição da NATO'),w=en.indexOf("; NATO's definition");
    const v=pt.indexOf(' Para Portugal,'),q=en.indexOf(' For Portugal,');
@@ -73,7 +77,7 @@ const folhas=folhasDaExplicacao(e).map(folha=>{
  else throw Error('Folha EX3 sem auditoria: '+caminho);
  return {caminho,pt,en,partes};
 });
-anterior.folhas=folhas;anterior.quem='Codex gpt-6-astra (EX3, segunda correção)';anterior.quando='2026-10-19';anterior.o_que='EX3: denominadores, pensões na definição NATO, comparação no mesmo ano e apoios por linha.';
+anterior.folhas=folhas;anterior.quem='Codex gpt-6-astra (EX3, terceira correção)';anterior.quando='2026-10-19';anterior.o_que='EX3: definição completa das pensões e compromissos NATO com apoios por linha.';
 anterior.origens=[...new Set(folhas.flatMap(f=>f.partes.flatMap(p=>(p.apoios??[]).filter(x=>x.origem).map(x=>x.origem))))];
 const r=conferirAuditoriaDasExplicacoes({auditoria:a});
 if(r.erros.length){console.error(r.erros.join('\n'));process.exit(1)}

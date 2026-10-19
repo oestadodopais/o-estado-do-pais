@@ -770,3 +770,9 @@ A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recib
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | ex3 | As duas contagens dos índices incluem a linha da NATO de 2024 | por ler | Codex gpt-6-astra: contagens extraídas do HTML, anteriores retiradas com a razão. A X13 confere os apoios junto dos valores; a X6 confere as frases prescritas. Leitura curta do diff pela direção. |
+
+## EX3: terceira correção de 19.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| ex3 | As contagens incluem os compromissos e a data da cimeira da NATO | por ler | Contagens medidas pela função da prova; as anteriores ficam retiradas. Os portões conferem as frases construídas e os apoios. Leitura curta do diff pela direção. |
