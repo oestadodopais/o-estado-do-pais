@@ -19124,12 +19124,12 @@
         },
         {
           "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[6]",
-          "pt": " da «",
-          "en": " of the “",
+          "pt": ", da «",
+          "en": ", of the “",
           "partes": [
             {
-              "pt": " da «",
-              "en": " of the “",
+              "pt": ", da «",
+              "en": ", of the “",
               "classe": "leitura",
               "sobre": "O denominador é a despesa total antes da consolidação no mapa dos ministérios.",
               "apoios": [

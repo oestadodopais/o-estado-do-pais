@@ -251,7 +251,7 @@ function resolver(partes, lang, onde, ctx) {
     if (!chave) throw defeito(aqui, `um pedaço de tipo desconhecido (${Object.keys(o).join(', ')}).`);
     if (chave === 'verbatim') {
       if (o.verbatim !== 'origem-rp4n-total-ministerios-montante') throw defeito(aqui, 'transcrição de origem não autorizada.');
-      out.push({verbatim: o.verbatim, texto: VERBATIM[o.verbatim].text});
+      out.push({verbatim: o.verbatim, texto: VERBATIM['origem-rp4n-total-ministerios-montante'].text});
       return;
     }
     if (chave === 'termo') {

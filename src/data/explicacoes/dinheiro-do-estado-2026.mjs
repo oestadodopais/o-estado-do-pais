@@ -398,7 +398,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
               { se: [O_MAIOR_MINISTERIO], partes: [
                 'Visto pelos ministérios, o maior é ', { nome: M('financas') }, ', com ', { claim: M('financas') }, ' de cada cem euros, ',
                 { claim: DESPESA_DAS_FINANCAS, sufixo: ' euros' },
-                ' da «', { termo: 'DESPESA TOTAL', lingua: 'pt-PT' }, '» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central (o total antes da consolidação, ',
+                ', da «', { termo: 'DESPESA TOTAL', lingua: 'pt-PT' }, '» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central (o total antes da consolidação, ',
                 { verbatim: 'origem-rp4n-total-ministerios-montante' }, ' euros).',
                 { se: [OS_QUATRO_MINISTERIOS], partes: [
                   ' Seguem-se ', { nome: M('saude') }, ' (', { claim: M('saude') }, '), ', { nome: M('trabalho-solidariedade-e-seguranca-social') }, ' (',
@@ -412,7 +412,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
               { se: [O_MAIOR_MINISTERIO], partes: [
                 'Seen by ministry, the largest is ', { nome: M('financas') }, ', with ', { claim: M('financas') }, ' of every hundred euros, ',
                 { claim: DESPESA_DAS_FINANCAS, sufixo: ' euros' },
-                ' of the “', { termo: 'DESPESA TOTAL', lingua: 'pt-PT' }, '” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector (the total before consolidation, ',
+                ', of the “', { termo: 'DESPESA TOTAL', lingua: 'pt-PT' }, '” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector (the total before consolidation, ',
                 { verbatim: 'origem-rp4n-total-ministerios-montante' }, ' euros).',
                 { se: [OS_QUATRO_MINISTERIOS], partes: [
                   ' Then come ', { nome: M('saude') }, ' (', { claim: M('saude') }, '), ', { nome: M('trabalho-solidariedade-e-seguranca-social') }, ' (',

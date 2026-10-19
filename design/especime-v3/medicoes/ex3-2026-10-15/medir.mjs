@@ -16,7 +16,7 @@ const limpar=s=>s.replaceAll(motor,'<motor>').replaceAll(root,'<worktree>').repl
 const destino=path.join(aqui,'segunda-correcao');fs.mkdirSync(destino,{recursive:true});
 const copiar=(p,nome)=>fs.writeFileSync(path.join(destino,nome),limpar(read(p)));
 const codigos={};
-for(const k of ['build','verify','typecheck','motor']){const p=path.join(portoes,k+'.codigo');codigos[k]=read(p).trim();copiar(p,k+'.codigo');}
+for(const k of ['build','verify','typecheck','motor']){const p=path.join(k==='motor'?(process.env.EX3_MOTOR_PORTOES??portoes):portoes,k+'.codigo');codigos[k]=read(p).trim();copiar(p,k+'.codigo');}
 for(const k of ['series','cruzamento','plantas-sitio','plantas-motor']){const p=path.join(ensaios,k+'.codigo');codigos[k]=read(p).trim();copiar(p,k+'.codigo');copiar(path.join(ensaios,k+'.log'),k+'.log');}
 for(const k of ['cabeca','cabeca.fim'])copiar(path.join(portoes,k),k);
 const manifest=json(path.join(capturas,'capturas.json'));
@@ -48,13 +48,14 @@ out+='- Achado 7: a abertura, a figura das funções e P1 recebem a glosa da fam
 out+='- Achado 8: o compositor deixa de atribuir apoios genéricos de `pib-2026` a P1. A X13 exige que a parte imediatamente junto de cada valor e o seu sufixo citem a linha desse token. As plantas trocam os apoios dos euros, da percentagem e do sufixo. Os preços constantes, os preços correntes, os períodos e as estimativas têm apoios próprios.\n';
 out+='- Achado 13: as percentagens usam o cabeçalho literal `Share of real GDP (%)`, lido em `Table 3!A3`, em vez do título de duas medidas. A navegação, as línguas e a régua dos localizadores acompanham-no. O recibo de 2024 tem uma definição sem a palavra estimativa.\n';
 out+='- Achado 15: cada valor estimado conserva uma só marca entre parênteses, em minúscula e sem ponto. A prosa usa apenas as expressões fixadas no mandato. A célula de 2024 não recebe marca.\n';
-out+='- Achado 18: `printed_cell` lê o valor e o `number_format`. O formato `General` dos euros dá os algarismos da célula; a apresentação agrupada do PDF deriva desses mesmos algarismos. Não existe o literal do montante no gerador. As plantas alteram a célula e o formato.\n';
+out+='- Achado 18: `printed_cell` lê o valor e o `number_format`. O formato `General` dos euros dá os algarismos da célula; a apresentação agrupada do PDF deriva desses mesmos algarismos. A forma impressa do montante não está escrita à mão no gerador. As plantas alteram a célula e o formato.\n';
 out+='- Achado 11, parte incluída: `DESPESA TOTAL` tem `lang="pt-PT"` na frase dos ministérios, incluindo a edição inglesa.\n';
 out+='- Achados 20 e 21, parte incluída: os códigos, os registos das plantas e o manifesto das capturas estão em `segunda-correcao/`; `medicoes.json` e este relatório são escritos por `medir.mjs`, a partir da construção e das provas. As imagens ficam fora do repositório.\n\n';
 out+='### As células lidas pelo motor\n\n| Linha | Célula | Valor | Formato | Cabeçalho do ano | Forma da célula | Forma do PDF |\n| --- | --- | --- | --- | --- | --- | --- |\n';
 for(const c of celulas)out+=`| ${c.id} | ${c.folha}!${c.celula} | ${c.valor} | ${c.number_format} | ${c.cabecalho_periodo} | ${c.forma_celula} | ${c.impresso} |\n`;
 out+='\nComandos: `python3 -m publisher.ex3 --site <worktree>`; `python3 -m publisher.export_site_rows --manifest publisher/manifest.ex3.json --site <worktree> --write`; `node design/especime-v3/medicoes/ex3-2026-10-15/compor.mjs`. A extração de 2024 lê o ano sem sufixo, por isso não o classifica como estimativa. A definição já continha as três frases na cópia alojada; não foi necessário outro pedido HTTP.\n\n### As frases construídas\n\n';
 for(const lang of ['pt','en']){out+=`#### ${lang.toUpperCase()}\n\n`;for(const [k,v] of Object.entries(frases[lang].textos))out+=`${k}: ${v}\n\n`;}
+out+='A primeira corrida desta passagem recusou o inventário das contagens do livro, que ainda tinha o total anterior, e uma indexação sem tipo no novo token de origem. As contagens foram relidas do HTML, o inventário e o registo foram atualizados e a indexação ficou restrita à chave autorizada. A vírgula depois do montante das Finanças foi reposta nas duas edições, tal como no mandato. As páginas foram reconstruídas e os portões repetidos.\n\n';
 out+='### As provas e as cabeças\n\n';
 out+=`Cabeça da construção, dos portões e das capturas: \`${m.cabeca}\`. Motor: \`${m.motor}\`.\n\n| Conferência | Código lido |\n| --- | --- |\n`;
 for(const [k,v] of Object.entries(codigos))out+=`| ${k} | ${v} |\n`;

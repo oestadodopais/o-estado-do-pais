@@ -764,3 +764,9 @@ A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recib
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | ex3 | Contagens dos índices reconciliadas com o HTML construído | por ler | As duas contagens anteriores ficam retiradas. As novas incluem as três linhas da NATO. As frases da explicação são conferidas pelas X1, X2 e X6; as duas exceções de contexto da voz conservam o P1 e o P2 literais do mandato, com plantas fora desses contextos. A leitura cruzada pertence à direção. |
+
+## EX3: segunda correção de 19.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| ex3 | As duas contagens dos índices incluem a linha da NATO de 2024 | por ler | Codex gpt-6-astra: contagens extraídas do HTML, anteriores retiradas com a razão. A X13 confere os apoios junto dos valores; a X6 confere as frases prescritas. Leitura curta do diff pela direção. |

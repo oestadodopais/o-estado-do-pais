@@ -4546,5 +4546,8 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 
 | classe | texto | bloco | estado | razão |
 |---|---|---|---|---|
-| conteudo | 3 229 claims · 368 of 3 229 calculated · 2 767 of 3 229 municipality rows | ex3 | viva | Contagem lida no índice construído após a exportação das três linhas da NATO. |
-| conteudo | 3 229 afirmações · 368 de 3 229 calculadas · 2 767 de 3 229 linhas de concelhos | ex3 | viva | Contagem lida no índice construído após a exportação das três linhas da NATO. |
+| conteudo | 3 229 claims · 368 of 3 229 calculated · 2 767 of 3 229 municipality rows | ex3 | retirada | Substituída pela contagem que inclui a linha da NATO de 2024, na segunda correção EX3. |
+| conteudo | 3 229 afirmações · 368 de 3 229 calculadas · 2 767 de 3 229 linhas de concelhos | ex3 | retirada | Substituída pela contagem que inclui a linha da NATO de 2024, na segunda correção EX3. |
+
+| conteudo | 3 230 claims · 368 of 3 230 calculated · 2 767 of 3 230 municipality rows | ex3 | viva | Contagem lida no HTML construído na segunda correção EX3. |
+| conteudo | 3 230 afirmações · 368 de 3 230 calculadas · 2 767 de 3 230 linhas de concelhos | ex3 | viva | Contagem lida no HTML construído na segunda correção EX3. |
