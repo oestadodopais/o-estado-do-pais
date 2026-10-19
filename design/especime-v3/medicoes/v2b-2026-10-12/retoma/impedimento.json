@@ -1,0 +1,18 @@
+{
+  "observado_em": "2026-10-19T16:30:48.997367+00:00",
+  "cabeca_codigo": "f5ce0ef40e852fee85316e645f80df3b74f3bd7b",
+  "pedido": "pedido-20261019T153920-90258.json",
+  "resultado_escrivao": {
+    "codigo": -9,
+    "codigos": {},
+    "saida": "à espera da tranca da máquina: 2026-10-19T15:36:07Z <worktree> pid=85900 aterragem\n",
+    "recusa": "portoes: passou do teto (50 minutos) e foi interrompido",
+    "quando": "2026-10-19T16:29:21Z"
+  },
+  "codigo_involucro": 247,
+  "codigos_presentes": [],
+  "estado_pedido": "concluído pelo escrivão: interrompido no teto, enquanto esperava pela tranca",
+  "pasta_de_saida": "<temporario>/v2b-portoes-codigo-1",
+  "confirmacao_da_direcao": "pedida, sem resposta até esta observação",
+  "arvore_motor_limpa": true
+}

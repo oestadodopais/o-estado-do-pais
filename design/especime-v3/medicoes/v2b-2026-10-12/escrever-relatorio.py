@@ -1,112 +1,37 @@
-"""Escreve o relatório de paragem a partir das medições desta passagem."""
+"""Relatório reproduzível da retoma V2-b e do impedimento dos portões."""
 import json
 from pathlib import Path
-
-base = Path(__file__).resolve().parent
-data = json.loads((base / 'partida.json').read_text())
-cross = json.loads((base / 'cruzamento.json').read_text())
-checks = json.loads((base / 'verificacoes.json').read_text())
-cfp = data['cfp']
-
-text = f'''# V2-b: paragem antes da construção
-
-A entrega dos três itens está bloqueada. A afirmação qualitativa do CFP não cabe na forma numérica usada pelo V2-a, e a conferência de origem já falha em ficheiros das pensões na cabeça de partida. Nenhuma página nova foi construída, nenhuma linha foi criada ou exportada e nenhum portão foi alterado.
-
-## As provas da paragem
-
-### V2B-1: a linha obrigatória do CFP não tem grandeza numérica
-
-O §0.4 pede `afirmacao-cfp-parecer-05-2026-oe2027`. A linha continua ausente. O documento e as palavras existem: o problema é a forma da linha. A marca do V2-a é `afirmacao: true`, confirmada em `src/lib/ledger.mjs`, nas três linhas e no relatório do V2-a. Não é só o prefixo.
-
-`publisher/oe1_common.py`, função `observation`, exige `value` e `unit` e chama `number(value)`. O validador do sítio, `src/lib/ledger.mjs`, exige uma cadeia de valor não vazia, uma unidade e a presença do valor no excerto. O V2-a já registou esta limitação no seu `LEIA-ME.md`: a conclusão do CFP ficou como apoio, sem número inventado nem afirmação independente.
-
-`medir-partida.py` executa a recusa numérica real do motor e um ensaio do validador real do sítio, só em memória. O ensaio usa o excerto e a data lidos do PDF, deixa `value` e `unit` vazios e não escreve uma linha. As mensagens são:
-
-'''
-for result in data['prova_motor']:
-    text += f"- Motor: `{result['mensagem']}`.\n"
-for error in data['prova_sitio']['errors']:
-    text += f'- Sítio: `{error}`.\n'
-text += '''
-O número do parecer, o ano e a previsão do PIB não são valores desta afirmação. Atribuir-lhe qualquer um deles seria mudar o significado dos dados. Também não se substituiu a citação obrigatória por uma linha do PIB nem por prosa sem token.
-
-Decisão: parar nesta questão, pelo §1 e pela regra dos portões que protegem números. O mandato prevê alargar o resolvedor para ler campos literais, mas não define a forma de uma afirmação sem grandeza nem a apresentação do seu recibo. A solução recomendada para um mandato corrigido é uma forma explícita de afirmação textual, sem `value` nem `unit`, com proveniência, atribuição, data e excerto obrigatórios e plantas próprias nos dois lados da exportação. Isso altera o contrato do livro e dos recibos; não foi tratado como uma ambiguidade pequena nem implementado nesta passagem.
-
-### V2B-2: o endosso e o aviso são uma frase contínua
-
-'''
-text += f'''A capa, lida por `pdftotext -layout` e vista na renderização, diz Parecer n.º {cfp['numero']}, de {cfp['data']}. A conclusão foi lida e vista na página {cfp['pagina_pdf']} do PDF. O corpo corresponde ao recibo do pedido e ao resumo da linha do PIB: `{cfp['sha256']}`.
-
-O parágrafo integral é:
-
-> {cfp['excerto']}
-
-O §0.4 fala em duas frases e manda acabar a do endosso em «endossa as previsões macroeconómicas». O PDF continua «apresentadas, dando nota que os riscos…» na mesma frase. Decisão pequena: a citação fiel é o parágrafo contínuo acima, sem o dividir, repetir ou truncar. Esta decisão não resolve a falta de forma da linha.
-
-A extração selada na linha atual do PIB contém «número 4do artigo»; a leitura por `pdftotext` e a imagem da página mostram o espaço em «número 4 do artigo». A linha existente não foi corrigida nem reexportada nesta passagem. O novo excerto, quando houver forma para o alojar, deve preservar o espaço confirmado.
-
-Documento no motor: `{cfp['ficheiro_motor']}`. Recibo: `{cfp['recibo']}`. `cfp-inspecao.json` regista as imagens da capa e da conclusão vistas nesta passagem, com dimensões e sha256; as imagens ficam fora do repositório. As páginas de direitos já alojadas em `source/v2a/direitos/` ficaram intactas. Nenhum pedido novo à rede; a tranca HTTP alternativa não foi usada.
-
-### V2B-3: a origem das pensões já não coincide na partida
-
-`RESEARCHHUB_DIR=<motor> npm run check:cruzamento -- --with-origin` saiu a {cross['codigo']}. `cruzamento.log` guarda a saída e `cruzamento.json` os resumos. Os ficheiros divergentes são:
-
-'''
-for e in cross['divergencias']:
-    text += f"- `{e['origem']}`: registo `{e['registo']}`; motor `{e['motor']}`.\n"
-text += '''
-Os bytes do commit anterior do motor coincidem com o resumo registado no sítio em ambos os casos. O diff do commit `101887c` troca as referências ao commit antigo pelas referências traduzidas da história nova. Não se alteraram os números; os bytes da proveniência mudaram e o cruzamento acusa essa mudança.
-
-Decisão: manter a recusa. Não atualizar resumos à mão nem tocar nos ficheiros de outra corrida. A retoma precisa de uma travessia regular destes artefactos corrigidos, com a conferência de origem verde. Este erro antecede qualquer alteração do V2-b.
-
-## A repetição do §0
-
-'''
-text += f'''Cabeça do sítio: `{data['cabeca_sitio']}`. Cabeça do motor: `{data['cabeca_motor']}`. `git merge-base --is-ancestor main HEAD` no sítio e `git merge-base --is-ancestor master HEAD` no motor deram {data['ancestral_main']} e {data['ancestral_master']}. Não houve fusão.
-
-O guião conferiu individualmente {data['total']} identificadores: {data['afirmacoes']} afirmações e {data['numericas']} linhas numéricas. `partida.json` guarda, por linha, valor, unidade, período, fonte, documento, atribuição, data, excerto, ressalva e sha256 do YAML. Os valores das quinze linhas coincidem com o §0 após normalizar apenas os espaços de milhares. Todas têm ressalva.
-
-| Identificador | Valor | Unidade | Período |
-|---|---|---|---|
-'''
-for ident, row in data['linhas'].items():
-    text += f"| `{ident}` | {row['value']} | {row['unit']} | {row['reference_date']} |\n"
-text += '\nAs três afirmações, lidas dos ficheiros:\n\n'
-for ident, row in data['linhas'].items():
-    if not row['afirmacao']:
-        continue
-    text += f"- `{ident}`: {row['source']}; «{row['document']['title']}»; {row['document']['locator']}; atribuição «{' / '.join(row['attributed_to'])}»; data {row['reference_date']}; excerto «{row['excerpt']}».\n"
-comparison = data['item_2']
-text += f'''
-A comparação do item 2 foi refeita como números, retirando os espaços de milhares e interpretando a vírgula decimal. Os valores {', '.join(comparison['valores_do_quadro'].values())} são todos diferentes de {comparison['valor_afirmado']}. As condições individuais estão em `partida.json`, campo `item_2.diferentes`. Esta condição não bloqueia o item.
-
-**V2B-4, diferença medida:** a explicação tem as secções `{', '.join(data['explicacao_dinheiro_estado']['seccoes'])}`. O §0 enumera só as três primeiras; existe também `divida-e-saldo`. Nenhuma linha citada pela explicação coincide com as linhas do V2-a. A porta temática continuaria a ser necessária, exatamente na secção `por-funcao` fixada pelo mandato. Não foi acrescentada enquanto os itens estão bloqueados.
-
-## Verificações e entrega
-
-'''
-for label, result in checks['comandos'].items():
-    text += f"- `{label}`: {result['estado']}; código {result['codigo'] if result['codigo'] is not None else 'não disponível'}; registo `{result['registo']}`.\n"
-text += '''
-**V2B-5:** o pedido dos portões de partida foi feito pelo escrivão, com o motor, numa pasta temporária, com a árvore limpa. Estava à espera da tranca de outra worktree quando se confirmou o bloqueio de origem. Tentou-se encerrar apenas esse processo em espera; a sandbox recusou `PermissionError: [Errno 1] Operation not permitted`. Não se pediu escalada nem se removeu a tranca de outra construção. O resultado efetivamente recebido consta da lista acima.
-
-Os ficheiros do lançador foram afastados por mudança de nome, conservando o descritor aberto, e repostos no fim. `registos-lancador.json` compara o sha256 imediatamente antes e depois de cada mudança de nome. O registo pode crescer durante a corrida; não se afirma que o seu conteúdo ficou imóvel entre a saída e o regresso. Nenhum ficheiro `RELATORIO.*` entra no commit.
-
-A medição pode repetir-se com `python3 design/especime-v3/medicoes/v2b-2026-10-12/medir-partida.py --motor <motor> --saida <temporario>/partida.json`. As duas provas da recusa não escrevem nos livros. `escrever-relatorio.py` gera este relatório a partir dos JSON guardados.
-
-| Entrega do mandato | Estado |
-|---|---|
-| Nova afirmação do CFP e exportação | Bloqueadas pela V2B-1 |
-| Três itens e sete partes em cada edição | Não construídos |
-| Auditoria das palavras e cinco plantas dos itens | Não implementadas |
-| Primeira página, rodapé e portas de integração | Não alterados |
-| Capturas das páginas e manifesto | Não realizados, pois as páginas não existem |
-| Prova dos toques no telefone | Não realizada |
-| Portões na cabeça final de implementação | Não há cabeça de implementação |
-| Leitura da direção e leitura a frio | Não lançadas |
-
-Nenhuma parte obrigatória foi omitida numa página publicada, pois nenhuma página foi construída. As frases opcionais não foram selecionadas. Os bloqueios não foram contornados com conclusões, recomendações ou opiniões de substituição. Não houve publicação, push ou commit no motor. A entrega é este relatório de paragem e as medições, não a aceitação do V2-b.
-
-tokens used: não disponível.
-'''
-(base / 'LEIA-ME.md').write_text(text)
+BASE=Path(__file__).resolve().parent
+R=BASE/'retoma'
+p=json.loads((R/'partida.json').read_text())
+b=json.loads((R/'impedimento.json').read_text())
+linhas=p['linhas']; it=p['item_2']
+t='# V2-b: implementação dos dois itens, aceitação por demonstrar\n\n'
+t+='A entrega não está aceite. A implementação está comitada, mas a corrida sobre o código novo não conseguiu adquirir a tranca partilhada. Faltam a conferência do HTML construído, o inventário das frases efetivamente rendidas, os portões finais, as provas de navegação e as capturas. Não houve publicação nem push.\n\n'
+t+=f"Cabeça da implementação: `{b['cabeca_codigo']}`. O pedido `{b['pedido']}` devolveu código {b['codigo_involucro']} no invólucro. Os códigos presentes na pasta de saída são `{b['codigos_presentes']}`. O escrivão registou `-9` e a razão «portoes: passou do teto (50 minutos) e foi interrompido». O código do invólucro não é um resultado de build, verify ou typecheck. O estado do pedido no escrivão, quando se escreveu o relatório, está em `retoma/impedimento.json`.\n\n"
+t+='## O impedimento, V2B-11\n\n'
+t+='A tranca declara um início às 15:36:07 UTC de 19.10.2026, mas o dono aparece como `<worktree>`, não como um caminho identificável. Em duas observações, o conteúdo manteve o mesmo sha256 e a data de modificação avançou. A consulta de existência do processo pelo sinal 0 foi recusada com `PermissionError`; não se enviou nenhum sinal de interrupção. Um ensaio num ficheiro temporário separado demonstrou que a tentativa de aquisição com `set -C` preserva tanto o conteúdo como a data do ficheiro. A renovação da tranca real não é explicada por esse ensaio. Não se conclui que a tranca esteja órfã nem que pertença a outra worktree.\n\n'
+t+='A tranca real ficou intocada. Foi pedida à direção a confirmação de uma corrida ativa. A prova está em `retoma/tranca-anomalia.json`. O pedido não foi duplicado. O escrivão interrompeu esta tentativa ao atingir o teto; o pedido ficou concluído com essa recusa. Antes de uma nova corrida, a direção deve conferir o estado da tranca. Não se contorna a serialização.\n\n'
+t+='## A partida repetida\n\n'
+t+=f"Sítio: `{p['cabeca_sitio']}`. Motor: `{p['cabeca_motor']}`. Ascendência de `main` e `master`: códigos {p['ancestral_main']} e {p['ancestral_master']}. Não houve fusão nesta passagem.\n\n"
+t+=f"`medir-partida.py` conferiu individualmente os {p['total']} identificadores, as {p['afirmacoes']} afirmações e as {p['numericas']} linhas numéricas. A medição, os campos das três afirmações e os sha256 estão em `retoma/partida.json`. Todas as quinze linhas numéricas têm ressalva. A marca de afirmação é `afirmacao: true`, não apenas o prefixo do identificador.\n\n"
+t+='| Identificador | Valor | Unidade | Referência |\n|---|---|---|---|\n'
+for ident,r in linhas.items():t+=f"| `{ident}` | {r['value']} | {r['unit']} | {r['reference_date']} |\n"
+t+='\n## A comparação das parcerias\n\n'
+t+=f"Valor afirmado: {it['valor_afirmado']}. O guião normaliza os espaços de milhares e a vírgula decimal e compara cada valor separadamente.\n\n"
+t+='| Linha | Valor | Diferente do valor afirmado |\n|---|---|---|\n'
+for ident,value in it['valores_do_quadro'].items():t+=f"| `{ident}` | {value} | {'sim' if it['diferentes'][ident] else 'não'} |\n"
+t+='\n## O que se implementou\n\n'
+t+='Os dois itens nas duas edições, com o título e as seis secções prescritas; os tokens literais de citação, atribuição e ressalva no resolvedor comum das explicações; a célula dos itens com os cinco estragos; o bloco na primeira página; a porta do rodapé; as portas por coincidência de linhas e a exceção temática em `por-funcao`. O menu não foi alterado. O motor e os dados do livro-razão não foram alterados. A presença no código não é apresentada como prova do resultado no navegador.\n\n'
+t+='## Decisões e omissões\n\n'
+t+='- V2B-1: o item 3 ficou para o LR1. A afirmação textual do CFP não tem valor nem unidade, exigidos pelos dois livros. Não se criou nem exportou essa linha.\n- V2B-2: o parágrafo contínuo do CFP e a revisão de proveniência do «4do» ficam para o LR1; a linha do PIB ficou intacta.\n- V2B-3: a conferência de origem das pensões e a das séries deram 0 na partida, antes da implementação.\n- V2B-4: a explicação também tem `divida-e-saldo`; a porta temática fica em `por-funcao`.\n- V2B-5: os portões da partida aguardaram a tranca e acabaram a zero. A anomalia da corrida seguinte é a V2B-11, descrita acima.\n- V2B-6: usa-se o resolvedor comum, sem resolvedor paralelo. O token literal admite apenas `excerpt`, `attributed_to` e `ressalva`; os dois primeiros exigem uma afirmação. A atribuição conserva o separador dos recibos; a ressalva inglesa usa `ressalva_en`. `note` não se publica nem apoia os itens.\n- V2B-7: os dois itens têm a mesma data de escrita e conservam a ordem do mandato.\n- V2B-8: a implementação considera também os recibos e o índice do livro-razão na coincidência de linhas. A única exceção temática é a da Saúde. A contagem de portas sobre o HTML final continua pendente.\n- V2B-9: saiu apenas a frase opcional sobre o dinheiro do PRR terminar em 2026, por falta dessa afirmação literal no apoio `v2a-prr-ciclo`, em `src/data/origens-v2a.json`. «Estimativa» e «Orçamento» constam dos excertos e permaneceram. Não se omitiu nenhuma parte obrigatória dos dois itens.\n- V2B-10: os números dos quadros usam os campos de apoio já selados no V2-a. As aspas portuguesas são reconhecidas como pontuação pela auditoria; o nome curto de uma fonte só apoia uma frase quando coincide integralmente com `source`.\n\n'
+t+='## Verificações obtidas e pendentes\n\n| Momento | Comando | Código | Prova |\n|---|---|---|---|\n'
+for nome,cmd in [('build','npm run build'),('verify','npm run verify'),('typecheck','npm run typecheck'),('motor','python3 -m core.gate')]:
+ codigo=int((R/'portoes-partida'/(nome+'.codigo')).read_text())
+ t+=f'| Partida | `{cmd}` | {codigo} | `retoma/portoes-partida/{nome}.log` |\n'
+t+='| Partida | `RESEARCHHUB_DIR=<motor> npm run check:cruzamento -- --with-origin` | 0 | `retoma/cruzamento-partida.log` |\n| Partida | `npm run check:series` | 0 | `retoma/series-partida.log` |\n| Implementação | `npm run typecheck` | 0 | `retoma/typecheck-implementacao.log` |\n| Implementação comitada | `node tests/discussao/itens.mjs --dados` | 0 | `retoma/declaracoes-comitadas.log` |\n'
+t+='\nA conferência `--dados` só confere as declarações e os apoios. Não executa as plantas de HTML nem mede as integrações. O typecheck da implementação foi executado antes do commit, sobre os mesmos ficheiros que esse commit contém.\n\n'
+t+='Permanecem por executar ou concluir: inventariar as frases extraídas do HTML novo e registar a leitura cruzada como pendente; conferir a célula completa e as plantas; obter os três portões finais e as duas conferências com o motor; confirmar os percursos de dois toques, um toque e um toque até aos recibos; capturar as páginas e os recortes nas edições e larguras mandatadas; inspecionar as imagens; extrair as frases construídas para a direção. Não existe prova final de capturas nem de leitura a frio. Nenhum PNG foi comitado.\n\n'
+t+='Os ficheiros `RELATORIO.*` do lançador não foram comitados. Os sha256 das mudanças de nome estão nos registos da partida e da tentativa seguinte. O registo aberto pode crescer durante a corrida; a igualdade conferida é a de cada mudança de nome. Não houve pedido novo para alojar fontes nem uso da tranca HTTP alternativa.\n\ntokens used: não disponível.\n'
+(BASE/'LEIA-ME.md').write_text(t)
+print('Relatório escrito: aceitação por demonstrar.')

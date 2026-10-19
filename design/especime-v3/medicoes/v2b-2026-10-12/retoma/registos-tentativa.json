@@ -1,0 +1,9 @@
+[
+  {
+    "ficheiro": "RELATORIO.escrivao.log",
+    "saida_antes": "e0f0aec1618e24b816eafd986a92f744fcd270f7ab728645adfc6044e3903f11",
+    "saida_depois": "e0f0aec1618e24b816eafd986a92f744fcd270f7ab728645adfc6044e3903f11",
+    "regresso_antes": "b83aac8e20fcca5884f00495574e7f86e63ff0e942fe85c6bb148e538ebbfb4a",
+    "regresso_depois": "b83aac8e20fcca5884f00495574e7f86e63ff0e942fe85c6bb148e538ebbfb4a"
+  }
+]
