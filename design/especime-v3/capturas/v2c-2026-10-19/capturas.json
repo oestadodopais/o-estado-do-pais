@@ -1,0 +1,1748 @@
+{
+  "cabeca": "31e760a13e785d636afdd1f5b303fe64fac52895",
+  "larguras": [
+    360,
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "primeira-pt-360.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 360,
+      "janela": 360,
+      "documento": 360,
+      "corpo": 360,
+      "altura": 8819,
+      "menu": {
+        "coluna": 324,
+        "natural": 826.234375,
+        "linhas": 4,
+        "portas": 8,
+        "caixas": [
+          {
+            "texto": "Portugal",
+            "href": "/",
+            "x": 18,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 101.890625,
+            "fundo": 44
+          },
+          {
+            "texto": "Lugares",
+            "href": "/lugares/",
+            "x": 117.890625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 188.40625,
+            "fundo": 44
+          },
+          {
+            "texto": "Temas",
+            "href": "/temas/",
+            "x": 204.40625,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 257.296875,
+            "fundo": 44
+          },
+          {
+            "texto": "Estudos",
+            "href": "/estudos",
+            "x": 18,
+            "y": 45,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 89.46875,
+            "fundo": 89
+          },
+          {
+            "texto": "Explicações",
+            "href": "/explicacoes",
+            "x": 105.46875,
+            "y": 45,
+            "largura": 106.75,
+            "altura": 44,
+            "direita": 212.21875,
+            "fundo": 89
+          },
+          {
+            "texto": "O que se discute",
+            "href": "/o-que-se-discute/",
+            "x": 18,
+            "y": 90,
+            "largura": 143.921875,
+            "altura": 44,
+            "direita": 161.921875,
+            "fundo": 134
+          },
+          {
+            "texto": "União Europeia",
+            "href": "/uniao-europeia",
+            "x": 177.921875,
+            "y": 90,
+            "largura": 135.359375,
+            "altura": 44,
+            "direita": 313.28125,
+            "fundo": 134
+          },
+          {
+            "texto": "Sobre",
+            "href": "/sobre",
+            "x": 18,
+            "y": 135,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 67.4375,
+            "fundo": 179
+          }
+        ],
+        "ultima": {
+          "texto": "Sobre",
+          "href": "/sobre",
+          "x": 18,
+          "y": 135,
+          "largura": 49.4375,
+          "altura": 44,
+          "direita": 67.4375,
+          "fundo": 179
+        },
+        "gap": 16,
+        "folgas": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "letra": "15px",
+        "espaco_das_letras": "0.75px",
+        "sem_transbordo": true,
+        "cabe_em_duas": false
+      },
+      "discussao": {
+        "x": 18,
+        "y": 367.359375,
+        "width": 324,
+        "height": 171.8125
+      },
+      "sha256": "9fbb40dc3ee6a4d07f3f04b30e9238f805cfce1c353271247839f04c23d0c5da",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pt-360-bloco.png",
+          "seletor": "[data-discussao-inicio]",
+          "sha256": "5e2863ad40211e3336261bfab27ad036c0e4494956aa234def93fe56c73cc211"
+        },
+        {
+          "ficheiro": "primeira-pt-360-menu.png",
+          "seletor": "#nav-principal",
+          "sha256": "43569d93586986957e21f00b26a6846ea50e62993fe733ba9742a8ffcd2b13e5"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pt-390.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8457,
+      "menu": {
+        "coluna": 354,
+        "natural": 826.234375,
+        "linhas": 3,
+        "portas": 8,
+        "caixas": [
+          {
+            "texto": "Portugal",
+            "href": "/",
+            "x": 18,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 101.890625,
+            "fundo": 44
+          },
+          {
+            "texto": "Lugares",
+            "href": "/lugares/",
+            "x": 117.890625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 188.40625,
+            "fundo": 44
+          },
+          {
+            "texto": "Temas",
+            "href": "/temas/",
+            "x": 204.40625,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 257.296875,
+            "fundo": 44
+          },
+          {
+            "texto": "Estudos",
+            "href": "/estudos",
+            "x": 273.296875,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 344.765625,
+            "fundo": 44
+          },
+          {
+            "texto": "Explicações",
+            "href": "/explicacoes",
+            "x": 18,
+            "y": 45,
+            "largura": 106.75,
+            "altura": 44,
+            "direita": 124.75,
+            "fundo": 89
+          },
+          {
+            "texto": "O que se discute",
+            "href": "/o-que-se-discute/",
+            "x": 140.75,
+            "y": 45,
+            "largura": 143.921875,
+            "altura": 44,
+            "direita": 284.671875,
+            "fundo": 89
+          },
+          {
+            "texto": "União Europeia",
+            "href": "/uniao-europeia",
+            "x": 18,
+            "y": 90,
+            "largura": 135.359375,
+            "altura": 44,
+            "direita": 153.359375,
+            "fundo": 134
+          },
+          {
+            "texto": "Sobre",
+            "href": "/sobre",
+            "x": 169.359375,
+            "y": 90,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 218.796875,
+            "fundo": 134
+          }
+        ],
+        "ultima": {
+          "texto": "Sobre",
+          "href": "/sobre",
+          "x": 169.359375,
+          "y": 90,
+          "largura": 49.4375,
+          "altura": 44,
+          "direita": 218.796875,
+          "fundo": 134
+        },
+        "gap": 16,
+        "folgas": [
+          16,
+          16,
+          16,
+          16,
+          16
+        ],
+        "letra": "15px",
+        "espaco_das_letras": "0.75px",
+        "sem_transbordo": true,
+        "cabe_em_duas": false
+      },
+      "discussao": {
+        "x": 18,
+        "y": 288,
+        "width": 354,
+        "height": 171.8125
+      },
+      "sha256": "1c5db734679805ee24ca30801fb149c7010a0eecc41edb5738b3fcc6373b7798",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pt-390-bloco.png",
+          "seletor": "[data-discussao-inicio]",
+          "sha256": "d08142925946808e93d1c442013a282afa87fe2881ef5af35fe326bff67da823"
+        },
+        {
+          "ficheiro": "primeira-pt-390-menu.png",
+          "seletor": "#nav-principal",
+          "sha256": "f1d7512f2870e171ffd9a5f3d7c5bca5545b1b1601c82948cffadedea7d32087"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pt-768.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 6654,
+      "menu": {
+        "coluna": 707,
+        "natural": 864.762375,
+        "linhas": 2,
+        "portas": 8,
+        "caixas": [
+          {
+            "texto": "Portugal",
+            "href": "/",
+            "x": 30.71875,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 114.609375,
+            "fundo": 44
+          },
+          {
+            "texto": "Lugares",
+            "href": "/lugares/",
+            "x": 136.109375,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 206.625,
+            "fundo": 44
+          },
+          {
+            "texto": "Temas",
+            "href": "/temas/",
+            "x": 228.125,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 281.015625,
+            "fundo": 44
+          },
+          {
+            "texto": "Estudos",
+            "href": "/estudos",
+            "x": 302.515625,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 373.984375,
+            "fundo": 44
+          },
+          {
+            "texto": "Explicações",
+            "href": "/explicacoes",
+            "x": 395.484375,
+            "y": 0,
+            "largura": 106.75,
+            "altura": 44,
+            "direita": 502.234375,
+            "fundo": 44
+          },
+          {
+            "texto": "O que se discute",
+            "href": "/o-que-se-discute/",
+            "x": 523.734375,
+            "y": 0,
+            "largura": 143.921875,
+            "altura": 44,
+            "direita": 667.65625,
+            "fundo": 44
+          },
+          {
+            "texto": "União Europeia",
+            "href": "/uniao-europeia",
+            "x": 30.71875,
+            "y": 45,
+            "largura": 135.359375,
+            "altura": 44,
+            "direita": 166.078125,
+            "fundo": 89
+          },
+          {
+            "texto": "Sobre",
+            "href": "/sobre",
+            "x": 187.578125,
+            "y": 45,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 237.015625,
+            "fundo": 89
+          }
+        ],
+        "ultima": {
+          "texto": "Sobre",
+          "href": "/sobre",
+          "x": 187.578125,
+          "y": 45,
+          "largura": 49.4375,
+          "altura": 44,
+          "direita": 237.015625,
+          "fundo": 89
+        },
+        "gap": 21.504,
+        "folgas": [
+          21.5,
+          21.5,
+          21.5,
+          21.5,
+          21.5,
+          21.5
+        ],
+        "letra": "15px",
+        "espaco_das_letras": "0.75px",
+        "sem_transbordo": true,
+        "cabe_em_duas": true
+      },
+      "discussao": {
+        "x": 30.71875,
+        "y": 274.671875,
+        "width": 706.5625,
+        "height": 138.25
+      },
+      "sha256": "1dbb7287903eee41cf4cb437fe85aceb0dcf792df98fa1705f0853ed270f2213",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pt-768-bloco.png",
+          "seletor": "[data-discussao-inicio]",
+          "sha256": "ba074ab2d1cfd36791025703e68d92080a52d63b095bee582e12be05b1e4aeaa"
+        },
+        {
+          "ficheiro": "primeira-pt-768-menu.png",
+          "seletor": "#nav-principal",
+          "sha256": "5e4e1bab678b5cb925f1a08585fa88c0f98dbabcc21f87505cff31554c6b7889"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pt-1024.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 5979,
+      "menu": {
+        "coluna": 942,
+        "natural": 914.938375,
+        "linhas": 1,
+        "portas": 8,
+        "caixas": [
+          {
+            "texto": "Portugal",
+            "href": "/",
+            "x": 40.953125,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 124.84375,
+            "fundo": 44
+          },
+          {
+            "texto": "Lugares",
+            "href": "/lugares/",
+            "x": 153.515625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 224.03125,
+            "fundo": 44
+          },
+          {
+            "texto": "Temas",
+            "href": "/temas/",
+            "x": 252.703125,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 305.59375,
+            "fundo": 44
+          },
+          {
+            "texto": "Estudos",
+            "href": "/estudos",
+            "x": 334.265625,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 405.734375,
+            "fundo": 44
+          },
+          {
+            "texto": "Explicações",
+            "href": "/explicacoes",
+            "x": 434.40625,
+            "y": 0,
+            "largura": 106.75,
+            "altura": 44,
+            "direita": 541.15625,
+            "fundo": 44
+          },
+          {
+            "texto": "O que se discute",
+            "href": "/o-que-se-discute/",
+            "x": 569.828125,
+            "y": 0,
+            "largura": 143.921875,
+            "altura": 44,
+            "direita": 713.75,
+            "fundo": 44
+          },
+          {
+            "texto": "União Europeia",
+            "href": "/uniao-europeia",
+            "x": 742.421875,
+            "y": 0,
+            "largura": 135.359375,
+            "altura": 44,
+            "direita": 877.78125,
+            "fundo": 44
+          },
+          {
+            "texto": "Sobre",
+            "href": "/sobre",
+            "x": 906.453125,
+            "y": 0,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 955.890625,
+            "fundo": 44
+          }
+        ],
+        "ultima": {
+          "texto": "Sobre",
+          "href": "/sobre",
+          "x": 906.453125,
+          "y": 0,
+          "largura": 49.4375,
+          "altura": 44,
+          "direita": 955.890625,
+          "fundo": 44
+        },
+        "gap": 28.672,
+        "folgas": [
+          28.671875,
+          28.671875,
+          28.671875,
+          28.671875,
+          28.671875,
+          28.671875,
+          28.671875
+        ],
+        "letra": "15px",
+        "espaco_das_letras": "0.75px",
+        "sem_transbordo": true,
+        "cabe_em_duas": true
+      },
+      "discussao": {
+        "x": 40.953125,
+        "y": 255.046875,
+        "width": 942.09375,
+        "height": 94.25
+      },
+      "sha256": "8e52cda7a32bb400389b538b753b9dd1dd53fd7cbef720d2abcb6179a12070ef",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pt-1024-bloco.png",
+          "seletor": "[data-discussao-inicio]",
+          "sha256": "6e3a6df886a0b7f4432fff1a30f81c63707885ab5af30010900d0ce3d8deb3aa"
+        },
+        {
+          "ficheiro": "primeira-pt-1024-menu.png",
+          "seletor": "#nav-principal",
+          "sha256": "4b348710c0934765b61046ca4439583d8cfae02c628c47dabfc0d00ea9a50278"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pt-1280.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 5879,
+      "menu": {
+        "coluna": 1092,
+        "natural": 952.234375,
+        "linhas": 1,
+        "portas": 8,
+        "caixas": [
+          {
+            "texto": "Portugal",
+            "href": "/",
+            "x": 94,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 177.890625,
+            "fundo": 44
+          },
+          {
+            "texto": "Lugares",
+            "href": "/lugares/",
+            "x": 211.890625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 282.40625,
+            "fundo": 44
+          },
+          {
+            "texto": "Temas",
+            "href": "/temas/",
+            "x": 316.40625,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 369.296875,
+            "fundo": 44
+          },
+          {
+            "texto": "Estudos",
+            "href": "/estudos",
+            "x": 403.296875,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 474.765625,
+            "fundo": 44
+          },
+          {
+            "texto": "Explicações",
+            "href": "/explicacoes",
+            "x": 508.765625,
+            "y": 0,
+            "largura": 106.75,
+            "altura": 44,
+            "direita": 615.515625,
+            "fundo": 44
+          },
+          {
+            "texto": "O que se discute",
+            "href": "/o-que-se-discute/",
+            "x": 649.515625,
+            "y": 0,
+            "largura": 143.921875,
+            "altura": 44,
+            "direita": 793.4375,
+            "fundo": 44
+          },
+          {
+            "texto": "União Europeia",
+            "href": "/uniao-europeia",
+            "x": 827.4375,
+            "y": 0,
+            "largura": 135.359375,
+            "altura": 44,
+            "direita": 962.796875,
+            "fundo": 44
+          },
+          {
+            "texto": "Sobre",
+            "href": "/sobre",
+            "x": 996.796875,
+            "y": 0,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 1046.234375,
+            "fundo": 44
+          }
+        ],
+        "ultima": {
+          "texto": "Sobre",
+          "href": "/sobre",
+          "x": 996.796875,
+          "y": 0,
+          "largura": 49.4375,
+          "altura": 44,
+          "direita": 1046.234375,
+          "fundo": 44
+        },
+        "gap": 34,
+        "folgas": [
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34
+        ],
+        "letra": "15px",
+        "espaco_das_letras": "0.75px",
+        "sem_transbordo": true,
+        "cabe_em_duas": true
+      },
+      "discussao": {
+        "x": 94,
+        "y": 260,
+        "width": 1092,
+        "height": 94.25
+      },
+      "sha256": "502f812dd9f53fd90c83ca6bc28ba15726732712a9bd8ff2caad914bcac6dc9a",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pt-1280-bloco.png",
+          "seletor": "[data-discussao-inicio]",
+          "sha256": "e33f8412cccc71332320b8b6056ae97b55572dd98356ee44682096d2b798d0e5"
+        },
+        {
+          "ficheiro": "primeira-pt-1280-menu.png",
+          "seletor": "#nav-principal",
+          "sha256": "51320236d76069f0d5ebba7f5e834748f84196248ed89944041c76bf162b2f6b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-pt-1600.png",
+      "rota": "/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 5896,
+      "menu": {
+        "coluna": 1092,
+        "natural": 952.234375,
+        "linhas": 1,
+        "portas": 8,
+        "caixas": [
+          {
+            "texto": "Portugal",
+            "href": "/",
+            "x": 254,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 337.890625,
+            "fundo": 44
+          },
+          {
+            "texto": "Lugares",
+            "href": "/lugares/",
+            "x": 371.890625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 442.40625,
+            "fundo": 44
+          },
+          {
+            "texto": "Temas",
+            "href": "/temas/",
+            "x": 476.40625,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 529.296875,
+            "fundo": 44
+          },
+          {
+            "texto": "Estudos",
+            "href": "/estudos",
+            "x": 563.296875,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 634.765625,
+            "fundo": 44
+          },
+          {
+            "texto": "Explicações",
+            "href": "/explicacoes",
+            "x": 668.765625,
+            "y": 0,
+            "largura": 106.75,
+            "altura": 44,
+            "direita": 775.515625,
+            "fundo": 44
+          },
+          {
+            "texto": "O que se discute",
+            "href": "/o-que-se-discute/",
+            "x": 809.515625,
+            "y": 0,
+            "largura": 143.921875,
+            "altura": 44,
+            "direita": 953.4375,
+            "fundo": 44
+          },
+          {
+            "texto": "União Europeia",
+            "href": "/uniao-europeia",
+            "x": 987.4375,
+            "y": 0,
+            "largura": 135.359375,
+            "altura": 44,
+            "direita": 1122.796875,
+            "fundo": 44
+          },
+          {
+            "texto": "Sobre",
+            "href": "/sobre",
+            "x": 1156.796875,
+            "y": 0,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 1206.234375,
+            "fundo": 44
+          }
+        ],
+        "ultima": {
+          "texto": "Sobre",
+          "href": "/sobre",
+          "x": 1156.796875,
+          "y": 0,
+          "largura": 49.4375,
+          "altura": 44,
+          "direita": 1206.234375,
+          "fundo": 44
+        },
+        "gap": 34,
+        "folgas": [
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34
+        ],
+        "letra": "15px",
+        "espaco_das_letras": "0.75px",
+        "sem_transbordo": true,
+        "cabe_em_duas": true
+      },
+      "discussao": {
+        "x": 254,
+        "y": 260,
+        "width": 1092,
+        "height": 94.25
+      },
+      "sha256": "21ccce5bdf3a4940d8aeb6998752a181db81305aa7c86f351bce12cdc7b2e124",
+      "recortes": [
+        {
+          "ficheiro": "primeira-pt-1600-bloco.png",
+          "seletor": "[data-discussao-inicio]",
+          "sha256": "e33f8412cccc71332320b8b6056ae97b55572dd98356ee44682096d2b798d0e5"
+        },
+        {
+          "ficheiro": "primeira-pt-1600-menu.png",
+          "seletor": "#nav-principal",
+          "sha256": "51320236d76069f0d5ebba7f5e834748f84196248ed89944041c76bf162b2f6b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-en-360.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 360,
+      "janela": 360,
+      "documento": 360,
+      "corpo": 360,
+      "altura": 8758,
+      "menu": {
+        "coluna": 324,
+        "natural": 828.9375,
+        "linhas": 3,
+        "portas": 8,
+        "caixas": [
+          {
+            "texto": "Portugal",
+            "href": "/en",
+            "x": 18,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 101.890625,
+            "fundo": 44
+          },
+          {
+            "texto": "Places",
+            "href": "/en/places/",
+            "x": 117.890625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 175.578125,
+            "fundo": 44
+          },
+          {
+            "texto": "Themes",
+            "href": "/en/themes/",
+            "x": 191.578125,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 255.3125,
+            "fundo": 44
+          },
+          {
+            "texto": "Studies",
+            "href": "/en/studies",
+            "x": 271.3125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 337.203125,
+            "fundo": 44
+          },
+          {
+            "texto": "Explainers",
+            "href": "/en/explainers",
+            "x": 18,
+            "y": 45,
+            "largura": 96.34375,
+            "altura": 44,
+            "direita": 114.34375,
+            "fundo": 89
+          },
+          {
+            "texto": "Under discussion",
+            "href": "/en/under-discussion/",
+            "x": 130.34375,
+            "y": 45,
+            "largura": 153.1875,
+            "altura": 44,
+            "direita": 283.53125,
+            "fundo": 89
+          },
+          {
+            "texto": "European Union",
+            "href": "/en/european-union",
+            "x": 18,
+            "y": 90,
+            "largura": 142,
+            "altura": 44,
+            "direita": 160,
+            "fundo": 134
+          },
+          {
+            "texto": "About",
+            "href": "/en/about",
+            "x": 176,
+            "y": 90,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 230.203125,
+            "fundo": 134
+          }
+        ],
+        "ultima": {
+          "texto": "About",
+          "href": "/en/about",
+          "x": 176,
+          "y": 90,
+          "largura": 54.203125,
+          "altura": 44,
+          "direita": 230.203125,
+          "fundo": 134
+        },
+        "gap": 16,
+        "folgas": [
+          16,
+          16,
+          16,
+          16,
+          16
+        ],
+        "letra": "15px",
+        "espaco_das_letras": "0.75px",
+        "sem_transbordo": true,
+        "cabe_em_duas": false
+      },
+      "discussao": {
+        "x": 18,
+        "y": 366.359375,
+        "width": 324,
+        "height": 171.8125
+      },
+      "sha256": "0ba711214c48515ad5b71d964eba5d5b50bf6ebb10a95f31f02bcff4d6071a30",
+      "recortes": [
+        {
+          "ficheiro": "primeira-en-360-bloco.png",
+          "seletor": "[data-discussao-inicio]",
+          "sha256": "97d11bef345598a68cfac3d8d1fcd19d1766a7e250a6e4d579b13516004e75b0"
+        },
+        {
+          "ficheiro": "primeira-en-360-menu.png",
+          "seletor": "#nav-principal",
+          "sha256": "2df2ecaa36fb862b2a2b54c90a4b15979d382af31bb6a94feb7d6eb770c603b0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-en-390.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 8360,
+      "menu": {
+        "coluna": 354,
+        "natural": 828.9375,
+        "linhas": 3,
+        "portas": 8,
+        "caixas": [
+          {
+            "texto": "Portugal",
+            "href": "/en",
+            "x": 18,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 101.890625,
+            "fundo": 44
+          },
+          {
+            "texto": "Places",
+            "href": "/en/places/",
+            "x": 117.890625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 175.578125,
+            "fundo": 44
+          },
+          {
+            "texto": "Themes",
+            "href": "/en/themes/",
+            "x": 191.578125,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 255.3125,
+            "fundo": 44
+          },
+          {
+            "texto": "Studies",
+            "href": "/en/studies",
+            "x": 271.3125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 337.203125,
+            "fundo": 44
+          },
+          {
+            "texto": "Explainers",
+            "href": "/en/explainers",
+            "x": 18,
+            "y": 45,
+            "largura": 96.34375,
+            "altura": 44,
+            "direita": 114.34375,
+            "fundo": 89
+          },
+          {
+            "texto": "Under discussion",
+            "href": "/en/under-discussion/",
+            "x": 130.34375,
+            "y": 45,
+            "largura": 153.1875,
+            "altura": 44,
+            "direita": 283.53125,
+            "fundo": 89
+          },
+          {
+            "texto": "European Union",
+            "href": "/en/european-union",
+            "x": 18,
+            "y": 90,
+            "largura": 142,
+            "altura": 44,
+            "direita": 160,
+            "fundo": 134
+          },
+          {
+            "texto": "About",
+            "href": "/en/about",
+            "x": 176,
+            "y": 90,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 230.203125,
+            "fundo": 134
+          }
+        ],
+        "ultima": {
+          "texto": "About",
+          "href": "/en/about",
+          "x": 176,
+          "y": 90,
+          "largura": 54.203125,
+          "altura": 44,
+          "direita": 230.203125,
+          "fundo": 134
+        },
+        "gap": 16,
+        "folgas": [
+          16,
+          16,
+          16,
+          16,
+          16
+        ],
+        "letra": "15px",
+        "espaco_das_letras": "0.75px",
+        "sem_transbordo": true,
+        "cabe_em_duas": false
+      },
+      "discussao": {
+        "x": 18,
+        "y": 288,
+        "width": 354,
+        "height": 171.8125
+      },
+      "sha256": "435c62f08946b7b88473fc0959fb2178caacad6eed74ecc2d74233b5ce6ab044",
+      "recortes": [
+        {
+          "ficheiro": "primeira-en-390-bloco.png",
+          "seletor": "[data-discussao-inicio]",
+          "sha256": "e8d7cb3207d7cea74cb924b75beed55b3d02d36b4942164e681abe57dbc15e2d"
+        },
+        {
+          "ficheiro": "primeira-en-390-menu.png",
+          "seletor": "#nav-principal",
+          "sha256": "f48c002ac16def2135c9d625bafa75838eeb937fc222246312e98b8f1a06a9cc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-en-768.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 6718,
+      "menu": {
+        "coluna": 707,
+        "natural": 867.4655,
+        "linhas": 2,
+        "portas": 8,
+        "caixas": [
+          {
+            "texto": "Portugal",
+            "href": "/en",
+            "x": 30.71875,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 114.609375,
+            "fundo": 44
+          },
+          {
+            "texto": "Places",
+            "href": "/en/places/",
+            "x": 136.109375,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 193.796875,
+            "fundo": 44
+          },
+          {
+            "texto": "Themes",
+            "href": "/en/themes/",
+            "x": 215.296875,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 279.03125,
+            "fundo": 44
+          },
+          {
+            "texto": "Studies",
+            "href": "/en/studies",
+            "x": 300.53125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 366.421875,
+            "fundo": 44
+          },
+          {
+            "texto": "Explainers",
+            "href": "/en/explainers",
+            "x": 387.921875,
+            "y": 0,
+            "largura": 96.34375,
+            "altura": 44,
+            "direita": 484.265625,
+            "fundo": 44
+          },
+          {
+            "texto": "Under discussion",
+            "href": "/en/under-discussion/",
+            "x": 505.765625,
+            "y": 0,
+            "largura": 153.1875,
+            "altura": 44,
+            "direita": 658.953125,
+            "fundo": 44
+          },
+          {
+            "texto": "European Union",
+            "href": "/en/european-union",
+            "x": 30.71875,
+            "y": 45,
+            "largura": 142,
+            "altura": 44,
+            "direita": 172.71875,
+            "fundo": 89
+          },
+          {
+            "texto": "About",
+            "href": "/en/about",
+            "x": 194.21875,
+            "y": 45,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 248.421875,
+            "fundo": 89
+          }
+        ],
+        "ultima": {
+          "texto": "About",
+          "href": "/en/about",
+          "x": 194.21875,
+          "y": 45,
+          "largura": 54.203125,
+          "altura": 44,
+          "direita": 248.421875,
+          "fundo": 89
+        },
+        "gap": 21.504,
+        "folgas": [
+          21.5,
+          21.5,
+          21.5,
+          21.5,
+          21.5,
+          21.5
+        ],
+        "letra": "15px",
+        "espaco_das_letras": "0.75px",
+        "sem_transbordo": true,
+        "cabe_em_duas": true
+      },
+      "discussao": {
+        "x": 30.71875,
+        "y": 274.671875,
+        "width": 706.5625,
+        "height": 138.25
+      },
+      "sha256": "9e52d3da575842108461acff94533e75fa654e255ec15cf6a1cd468cf545a56a",
+      "recortes": [
+        {
+          "ficheiro": "primeira-en-768-bloco.png",
+          "seletor": "[data-discussao-inicio]",
+          "sha256": "322697ebc9f901ac4847a0e2e41276c541cb7a46c9f54fb200b82d92ca7f1c47"
+        },
+        {
+          "ficheiro": "primeira-en-768-menu.png",
+          "seletor": "#nav-principal",
+          "sha256": "564d707b30c58620a721124bd2532a1393b312bdf18881741f1659c3cec1d50c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-en-1024.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 6082,
+      "menu": {
+        "coluna": 942,
+        "natural": 917.6415,
+        "linhas": 1,
+        "portas": 8,
+        "caixas": [
+          {
+            "texto": "Portugal",
+            "href": "/en",
+            "x": 40.953125,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 124.84375,
+            "fundo": 44
+          },
+          {
+            "texto": "Places",
+            "href": "/en/places/",
+            "x": 153.515625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 211.203125,
+            "fundo": 44
+          },
+          {
+            "texto": "Themes",
+            "href": "/en/themes/",
+            "x": 239.875,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 303.609375,
+            "fundo": 44
+          },
+          {
+            "texto": "Studies",
+            "href": "/en/studies",
+            "x": 332.28125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 398.171875,
+            "fundo": 44
+          },
+          {
+            "texto": "Explainers",
+            "href": "/en/explainers",
+            "x": 426.84375,
+            "y": 0,
+            "largura": 96.34375,
+            "altura": 44,
+            "direita": 523.1875,
+            "fundo": 44
+          },
+          {
+            "texto": "Under discussion",
+            "href": "/en/under-discussion/",
+            "x": 551.859375,
+            "y": 0,
+            "largura": 153.1875,
+            "altura": 44,
+            "direita": 705.046875,
+            "fundo": 44
+          },
+          {
+            "texto": "European Union",
+            "href": "/en/european-union",
+            "x": 733.71875,
+            "y": 0,
+            "largura": 142,
+            "altura": 44,
+            "direita": 875.71875,
+            "fundo": 44
+          },
+          {
+            "texto": "About",
+            "href": "/en/about",
+            "x": 904.390625,
+            "y": 0,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 958.59375,
+            "fundo": 44
+          }
+        ],
+        "ultima": {
+          "texto": "About",
+          "href": "/en/about",
+          "x": 904.390625,
+          "y": 0,
+          "largura": 54.203125,
+          "altura": 44,
+          "direita": 958.59375,
+          "fundo": 44
+        },
+        "gap": 28.672,
+        "folgas": [
+          28.671875,
+          28.671875,
+          28.671875,
+          28.671875,
+          28.671875,
+          28.671875,
+          28.671875
+        ],
+        "letra": "15px",
+        "espaco_das_letras": "0.75px",
+        "sem_transbordo": true,
+        "cabe_em_duas": true
+      },
+      "discussao": {
+        "x": 40.953125,
+        "y": 255.046875,
+        "width": 942.09375,
+        "height": 94.25
+      },
+      "sha256": "9122e79dae8fc4a9996c02289446fad3684b5ff0202f9a91cdb4334ffc1ec925",
+      "recortes": [
+        {
+          "ficheiro": "primeira-en-1024-bloco.png",
+          "seletor": "[data-discussao-inicio]",
+          "sha256": "c1bf75c1597898f55c493555b714dd964a7f7cc16c1686cae29c57d7a5b2894c"
+        },
+        {
+          "ficheiro": "primeira-en-1024-menu.png",
+          "seletor": "#nav-principal",
+          "sha256": "30d878da56bd219c97692d29fa4a586aaf799918bae480a5031e7c60fcb20047"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-en-1280.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 5879,
+      "menu": {
+        "coluna": 1092,
+        "natural": 954.9375,
+        "linhas": 1,
+        "portas": 8,
+        "caixas": [
+          {
+            "texto": "Portugal",
+            "href": "/en",
+            "x": 94,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 177.890625,
+            "fundo": 44
+          },
+          {
+            "texto": "Places",
+            "href": "/en/places/",
+            "x": 211.890625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 269.578125,
+            "fundo": 44
+          },
+          {
+            "texto": "Themes",
+            "href": "/en/themes/",
+            "x": 303.578125,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 367.3125,
+            "fundo": 44
+          },
+          {
+            "texto": "Studies",
+            "href": "/en/studies",
+            "x": 401.3125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 467.203125,
+            "fundo": 44
+          },
+          {
+            "texto": "Explainers",
+            "href": "/en/explainers",
+            "x": 501.203125,
+            "y": 0,
+            "largura": 96.34375,
+            "altura": 44,
+            "direita": 597.546875,
+            "fundo": 44
+          },
+          {
+            "texto": "Under discussion",
+            "href": "/en/under-discussion/",
+            "x": 631.546875,
+            "y": 0,
+            "largura": 153.1875,
+            "altura": 44,
+            "direita": 784.734375,
+            "fundo": 44
+          },
+          {
+            "texto": "European Union",
+            "href": "/en/european-union",
+            "x": 818.734375,
+            "y": 0,
+            "largura": 142,
+            "altura": 44,
+            "direita": 960.734375,
+            "fundo": 44
+          },
+          {
+            "texto": "About",
+            "href": "/en/about",
+            "x": 994.734375,
+            "y": 0,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 1048.9375,
+            "fundo": 44
+          }
+        ],
+        "ultima": {
+          "texto": "About",
+          "href": "/en/about",
+          "x": 994.734375,
+          "y": 0,
+          "largura": 54.203125,
+          "altura": 44,
+          "direita": 1048.9375,
+          "fundo": 44
+        },
+        "gap": 34,
+        "folgas": [
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34
+        ],
+        "letra": "15px",
+        "espaco_das_letras": "0.75px",
+        "sem_transbordo": true,
+        "cabe_em_duas": true
+      },
+      "discussao": {
+        "x": 94,
+        "y": 260,
+        "width": 1092,
+        "height": 94.25
+      },
+      "sha256": "7fe19e70baa47848f93f2c644a1b17c768c43a6b5bf4913f282d72672d26f8cd",
+      "recortes": [
+        {
+          "ficheiro": "primeira-en-1280-bloco.png",
+          "seletor": "[data-discussao-inicio]",
+          "sha256": "0ddfa953369df83459fa5738d41432d71b345a4d2c96faf8ba50848a31035de3"
+        },
+        {
+          "ficheiro": "primeira-en-1280-menu.png",
+          "seletor": "#nav-principal",
+          "sha256": "086d28568be2e8d5b019feef2416fc221c419a62ed37ce709cc7c6149f1a5bff"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "primeira-en-1600.png",
+      "rota": "/en/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 5967,
+      "menu": {
+        "coluna": 1092,
+        "natural": 954.9375,
+        "linhas": 1,
+        "portas": 8,
+        "caixas": [
+          {
+            "texto": "Portugal",
+            "href": "/en",
+            "x": 254,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 337.890625,
+            "fundo": 44
+          },
+          {
+            "texto": "Places",
+            "href": "/en/places/",
+            "x": 371.890625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 429.578125,
+            "fundo": 44
+          },
+          {
+            "texto": "Themes",
+            "href": "/en/themes/",
+            "x": 463.578125,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 527.3125,
+            "fundo": 44
+          },
+          {
+            "texto": "Studies",
+            "href": "/en/studies",
+            "x": 561.3125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 627.203125,
+            "fundo": 44
+          },
+          {
+            "texto": "Explainers",
+            "href": "/en/explainers",
+            "x": 661.203125,
+            "y": 0,
+            "largura": 96.34375,
+            "altura": 44,
+            "direita": 757.546875,
+            "fundo": 44
+          },
+          {
+            "texto": "Under discussion",
+            "href": "/en/under-discussion/",
+            "x": 791.546875,
+            "y": 0,
+            "largura": 153.1875,
+            "altura": 44,
+            "direita": 944.734375,
+            "fundo": 44
+          },
+          {
+            "texto": "European Union",
+            "href": "/en/european-union",
+            "x": 978.734375,
+            "y": 0,
+            "largura": 142,
+            "altura": 44,
+            "direita": 1120.734375,
+            "fundo": 44
+          },
+          {
+            "texto": "About",
+            "href": "/en/about",
+            "x": 1154.734375,
+            "y": 0,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 1208.9375,
+            "fundo": 44
+          }
+        ],
+        "ultima": {
+          "texto": "About",
+          "href": "/en/about",
+          "x": 1154.734375,
+          "y": 0,
+          "largura": 54.203125,
+          "altura": 44,
+          "direita": 1208.9375,
+          "fundo": 44
+        },
+        "gap": 34,
+        "folgas": [
+          34,
+          34,
+          34,
+          34,
+          34,
+          34,
+          34
+        ],
+        "letra": "15px",
+        "espaco_das_letras": "0.75px",
+        "sem_transbordo": true,
+        "cabe_em_duas": true
+      },
+      "discussao": {
+        "x": 254,
+        "y": 260,
+        "width": 1092,
+        "height": 94.25
+      },
+      "sha256": "34ace6692c2206a3c77401c651e186de02ff6ed52e2ca6ea56ea0c9a767dd390",
+      "recortes": [
+        {
+          "ficheiro": "primeira-en-1600-bloco.png",
+          "seletor": "[data-discussao-inicio]",
+          "sha256": "0ddfa953369df83459fa5738d41432d71b345a4d2c96faf8ba50848a31035de3"
+        },
+        {
+          "ficheiro": "primeira-en-1600-menu.png",
+          "seletor": "#nav-principal",
+          "sha256": "086d28568be2e8d5b019feef2416fc221c419a62ed37ce709cc7c6149f1a5bff"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "01da61629ffbaa812f05ed344038919090f9d2f0c6ab17733a95ba6735b7a93b",
+    "index.html": "2e2ddba44c09da912f3d6a52b4f46cb9b1206b7d6ccec3894f2eb0d3d6a6ad4b",
+    "_astro/primeira-pagina.sUQIxm-E.css": "1d6224df77b82eec35063368cea406822f23ca540f819c078dee626d5cfadff2",
+    "_astro/Base.BHrCWcnd.css": "e131823b7f26169af951b3b7b4df44c7e5e864b5c4f84e7d35862e0ba4714548",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/inicio.DYisJLJ2.css": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9",
+    "_astro/lugar.bxF38FjU.css": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "en/index.html": "bb147757120b97c451bacd0107c0fdfb9d2e2581af6091b0d9d36c12ceba2807"
+  },
+  "falhas": [],
+  "ok": true
+}

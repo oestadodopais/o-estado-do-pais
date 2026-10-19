@@ -1,0 +1,73 @@
+{
+  "cabeca": "31e760a13e785d636afdd1f5b303fe64fac52895",
+  "edicoes": [
+    {
+      "lang": "pt",
+      "caracter": 12312,
+      "marca": 12342,
+      "total": 220314,
+      "seccoes": [
+        "O que se discute →",
+        "O que se passa",
+        "Por onde começar",
+        "Estudos recentes",
+        "Os valores de referência da Comissão Europeia"
+      ],
+      "marcas": {
+        "data-o-que-se-passa": 12915,
+        "data-discussao-inicio": 12342,
+        "data-entradas": 195433
+      },
+      "ordem_anterior": false,
+      "ordem_nova": true,
+      "itens": [
+        {
+          "titulo": "A Saúde no Orçamento: que despesa se está a comparar?",
+          "href": "/o-que-se-discute/#saude-no-orcamento",
+          "um_toque": true
+        },
+        {
+          "titulo": "As parcerias rodoviárias: a afirmação e os valores do relatório",
+          "href": "/o-que-se-discute/#parcerias-rodoviarias",
+          "um_toque": true
+        }
+      ],
+      "h2_um_toque": true,
+      "menu_um_toque": true
+    },
+    {
+      "lang": "en",
+      "caracter": 12326,
+      "marca": 12356,
+      "total": 219180,
+      "seccoes": [
+        "Under discussion →",
+        "What is happening",
+        "Where to start",
+        "Recent studies",
+        "The European Commission’s reference values"
+      ],
+      "marcas": {
+        "data-o-que-se-passa": 12945,
+        "data-discussao-inicio": 12356,
+        "data-entradas": 194199
+      },
+      "ordem_anterior": false,
+      "ordem_nova": true,
+      "itens": [
+        {
+          "titulo": "Health in the Budget: which expenditure is being compared?",
+          "href": "/en/under-discussion/#saude-no-orcamento",
+          "um_toque": true
+        },
+        {
+          "titulo": "The road partnerships: the statement and the report's figures",
+          "href": "/en/under-discussion/#parcerias-rodoviarias",
+          "um_toque": true
+        }
+      ],
+      "h2_um_toque": true,
+      "menu_um_toque": true
+    }
+  ]
+}

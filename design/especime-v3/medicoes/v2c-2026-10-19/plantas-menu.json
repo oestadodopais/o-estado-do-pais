@@ -1,0 +1,98 @@
+[
+  {
+    "nome": "h4b-menu-sem-explicacoes",
+    "cabeca": "31e760a13e785d636afdd1f5b303fe64fac52895",
+    "estado": "",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "N1: menu de oito errado em index\\.html\\.",
+      "N1: menu de oito errado em en\\/index\\.html\\."
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "2e2ddba44c09da912f3d6a52b4f46cb9b1206b7d6ccec3894f2eb0d3d6a6ad4b",
+        "reposto": "2e2ddba44c09da912f3d6a52b4f46cb9b1206b7d6ccec3894f2eb0d3d6a6ad4b"
+      },
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "bb147757120b97c451bacd0107c0fdfb9d2e2581af6091b0d9d36c12ceba2807",
+        "reposto": "bb147757120b97c451bacd0107c0fdfb9d2e2581af6091b0d9d36c12ceba2807"
+      }
+    ]
+  },
+  {
+    "nome": "v2c-menu-sem-discussao",
+    "cabeca": "31e760a13e785d636afdd1f5b303fe64fac52895",
+    "estado": "",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "N1: menu de oito errado em index\\.html\\.",
+      "N1: menu de oito errado em en\\/index\\.html\\."
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "2e2ddba44c09da912f3d6a52b4f46cb9b1206b7d6ccec3894f2eb0d3d6a6ad4b",
+        "reposto": "2e2ddba44c09da912f3d6a52b4f46cb9b1206b7d6ccec3894f2eb0d3d6a6ad4b"
+      },
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "bb147757120b97c451bacd0107c0fdfb9d2e2581af6091b0d9d36c12ceba2807",
+        "reposto": "bb147757120b97c451bacd0107c0fdfb9d2e2581af6091b0d9d36c12ceba2807"
+      }
+    ]
+  },
+  {
+    "nome": "h4b-menu-rotulo-antigo",
+    "cabeca": "31e760a13e785d636afdd1f5b303fe64fac52895",
+    "estado": "",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "N1: menu de oito errado em index\\.html\\.",
+      "N1: menu de oito errado em en\\/index\\.html\\."
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "2e2ddba44c09da912f3d6a52b4f46cb9b1206b7d6ccec3894f2eb0d3d6a6ad4b",
+        "reposto": "2e2ddba44c09da912f3d6a52b4f46cb9b1206b7d6ccec3894f2eb0d3d6a6ad4b"
+      },
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "bb147757120b97c451bacd0107c0fdfb9d2e2581af6091b0d9d36c12ceba2807",
+        "reposto": "bb147757120b97c451bacd0107c0fdfb9d2e2581af6091b0d9d36c12ceba2807"
+      }
+    ]
+  },
+  {
+    "nome": "h4b-menu-destino-e-ordem",
+    "cabeca": "31e760a13e785d636afdd1f5b303fe64fac52895",
+    "estado": "",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "N1: menu de oito errado em index\\.html\\.",
+      "N1: menu de oito errado em en\\/index\\.html\\."
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "2e2ddba44c09da912f3d6a52b4f46cb9b1206b7d6ccec3894f2eb0d3d6a6ad4b",
+        "reposto": "2e2ddba44c09da912f3d6a52b4f46cb9b1206b7d6ccec3894f2eb0d3d6a6ad4b"
+      },
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "bb147757120b97c451bacd0107c0fdfb9d2e2581af6091b0d9d36c12ceba2807",
+        "reposto": "bb147757120b97c451bacd0107c0fdfb9d2e2581af6091b0d9d36c12ceba2807"
+      }
+    ]
+  }
+]

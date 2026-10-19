@@ -1,0 +1,30 @@
+{
+  "cabeca": "31e760a13e785d636afdd1f5b303fe64fac52895",
+  "cabeca_fim": "31e760a13e785d636afdd1f5b303fe64fac52895",
+  "arvore_inicio": "limpa",
+  "estado_fim": "",
+  "codigos": {
+    "build": 0,
+    "check:discussao": 0,
+    "check:navegacao": 0,
+    "check:primeira": 0,
+    "check:cabeca": 0,
+    "gate:html": 0,
+    "check:alvos": 0,
+    "check:css": 0,
+    "check:frases-compostas": 0,
+    "check:lugar": 0
+  },
+  "registos_sha256": {
+    "build": "59d27b6407d06a994bb91a6b9938bb335cb99f7b13d3a54e7d7da4e34476a8c8",
+    "check:discussao": "cc1bec639830742133faad9e75d302f052ece0e684095748df6bd98c8b83e837",
+    "check:navegacao": "10f3685a07c278d7831ec9b5ee600ea0caba2248bfd7c06fac67babea36273cc",
+    "check:primeira": "76432fd0691b4a65c1acd52a7d8dca692ad16cfeaa2ddf4b62e4fbf224a928e9",
+    "check:cabeca": "d181ef01dba948a3ea003e120b4a95a9eb243a76231efb13b08c9a14ac939434",
+    "gate:html": "12b05f0e51cd531fa9382dbdc697b73eb604812851659ce1c09853cd1887d324",
+    "check:alvos": "98e9334a0e4d4e5306529f088ca805d88c296e984f0cc1283e6ac5d7c5cad3b1",
+    "check:css": "ca39371572f089af38821eeff173a9fa10a2e004ca01ddb6e126345318f6ad8e",
+    "check:frases-compostas": "0658220c170053dd9577a1fbe5aa25ddfe64c517f38b36f2a09b34813bc20578",
+    "check:lugar": "1844318e3867370e5900c6111ee38b7567cc070b785c0c6a0a7f6883b412468c"
+  }
+}
