@@ -42,7 +42,7 @@ export function conferirDeclaracoes(itens=ITENS, linhas=loadClaims()) {
  if(!Number.isFinite(a*b)||a*b>=0)erros.push('V2B conclusão: a Saúde não tem variações de sinal contrário');
  return erros;
 }
-export function conferirPagina(root,lang,linhas=loadClaims()) {
+export function conferirPagina(root,lang,linhas=loadClaims(),dist=process.env.OEDP_DIST??path.join(raiz,'dist')) {
  const erros=[];const main=root.querySelector('main');
  if(normal(main?.querySelector('h1')?.text)!==DISCUSSAO.titulo[lang])erros.push('V2B título: página ausente ou trocada');
  const artigos=main?.querySelectorAll('[data-discussao]')??[];
@@ -52,6 +52,12 @@ export function conferirPagina(root,lang,linhas=loadClaims()) {
   const esperado=explicacaoPelaCelula(e,lang,linhas);
   if(normal(a.querySelector('[data-discussao-titulo]')?.text)!==esperado.titulo)erros.push('V2B título: o item não tem o título declarado');
   const seccoes=a.querySelectorAll('[data-discussao-parte]');
+  if(e.slug==='saude-no-orcamento'){
+   const href=lang==='pt'?'/explicacoes/dinheiro-do-estado-2026/':'/en/explainers/dinheiro-do-estado-2026/';
+   const texto=lang==='pt'?'O que é a despesa efetiva consolidada →':'What consolidated effective expenditure is →';
+   const portas=a.querySelectorAll('[data-discussao-explicacao]'),porta=portas[0];
+   if(portas.length!==1||porta?.getAttribute('href')!==href||normal(porta?.text)!==texto||!porta?.hasAttribute('data-voz')||!porta?.closest('.regra-portas.discussao-porta')||porta?.closest('[data-discussao-parte]')?.getAttribute('data-discussao-parte')!=='fontes'||!fs.existsSync(path.join(dist,href,'index.html')))erros.push('V2B explicação: porta ausente, texto ou destino errado');
+  }
   if(seccoes.map(s=>s.getAttribute('data-discussao-parte')).join('|')!==PARTES.map(p=>p[0]).join('|'))erros.push('V2B partes: faltam partes obrigatórias');
   for(const [id,pt,en] of PARTES){const sec=seccoes.find(s=>s.getAttribute('data-discussao-parte')===id);if(normal(sec?.querySelector('h3')?.text)!==(lang==='pt'?pt:en))erros.push(id==='opiniao'?'V2B opinião: opinião sem rótulo':'V2B rótulo: parte sem rótulo');}
   const ps=a.querySelectorAll('[data-discussao-paragrafo]');
@@ -116,6 +122,9 @@ export function plantas(html,lang){
  run('adjetivo junto do nome',r=>{const n=r.querySelector('[data-linha-campo="attributed_to"]');n.set_content('irresponsável '+n.innerHTML);},/pessoas/);
  run('opinião sem rótulo',r=>r.querySelector('[data-discussao-parte="opiniao"] h3').remove(),/opinião/);
  run('item sem uma parte',r=>r.querySelector('[data-discussao-parte="recomendacao"]').remove(),/partes/);
+ const semPorta=parse(html);semPorta.querySelector('[data-discussao-explicacao]')?.remove();
+ const erros=conferirPagina(semPorta,lang);
+ out.push({nome:'porta da explicação ausente',item:'saude-no-orcamento',lang,mordeu:erros.some(x=>x.includes('V2B explicação')),queixa:erros.find(x=>x.includes('V2B explicação'))??null});
  return out;
 }
 export function conferirTudo(dist=path.join(raiz,'dist')){
@@ -123,7 +132,7 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
  for(const lang of ['pt','en']){
   const file=path.join(dist,lang==='pt'?'o-que-se-discute/index.html':'en/under-discussion/index.html');
   if(!fs.existsSync(file)){erros.push('V2B página: página ausente');continue;}
-  const html=fs.readFileSync(file,'utf8');erros.push(...conferirPagina(parse(html),lang));provas.push(...plantas(html,lang));
+  const html=fs.readFileSync(file,'utf8');erros.push(...conferirPagina(parse(html),lang,loadClaims(),dist));provas.push(...plantas(html,lang));
   const home=parse(fs.readFileSync(path.join(dist,lang==='pt'?'index.html':'en/index.html'),'utf8'));erros.push(...conferirInicio(home,lang));
   const broken=parse(home.toString());broken.querySelector('[data-discussao-porta]')?.setAttribute('href','#errado');provas.push({nome:'porta inicial errada',lang,mordeu:conferirInicio(broken,lang).some(x=>x.includes('destino'))});
  }

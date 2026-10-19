@@ -125,12 +125,12 @@
         },
         {
           "caminho": "seccoes[0].conteudo[0].paragrafo[6]",
-          "pt": ". No mesmo dia, ",
+          "pt": ". No mesmo dia, a ",
           "en": ". On the same day, ",
           "ramo": null,
           "partes": [
             {
-              "pt": ". No mesmo dia, ",
+              "pt": ". No mesmo dia, a ",
               "en": ". On the same day, ",
               "classe": "leitura",
               "sobre": "A fonte RTP e a coincidência das datas das duas afirmações.",
@@ -187,13 +187,13 @@
         },
         {
           "caminho": "seccoes[0].conteudo[0].paragrafo[10]",
-          "pt": "».",
-          "en": "».",
+          "pt": "»",
+          "en": "»",
           "ramo": null,
           "partes": [
             {
-              "pt": "».",
-              "en": "».",
+              "pt": "»",
+              "en": "»",
               "classe": "liga"
             }
           ]
@@ -678,15 +678,461 @@
         },
         {
           "caminho": "seccoes[2].conteudo[0].paragrafo[0]",
-          "pt": "Há duas diferenças de perímetro: a despesa total ou a efetiva, e a despesa com ou sem o PRR. Para ver a diferença que o PRR faz, compara-se a variação da despesa efetiva consolidada com a da despesa efetiva consolidada sem o PRR.",
-          "en": "There are two differences of scope: total or effective expenditure, and expenditure with or without the RRP. To see the difference the RRP makes, compare the change in consolidated effective expenditure with the change in consolidated effective expenditure without the RRP.",
+          "pt": "Há duas diferenças de perímetro: a despesa total ou a efetiva, e a despesa com ou sem o PRR, o Plano de Recuperação e Resiliência. Para ver a diferença que o PRR faz, compara-se a variação da despesa efetiva consolidada com a da despesa efetiva consolidada sem o PRR.",
+          "en": "There are two differences of scope: total or effective expenditure, and expenditure with or without the RRP, the Recovery and Resilience Plan. To see the difference the RRP makes, compare the change in consolidated effective expenditure with the change in consolidated effective expenditure without the RRP.",
           "ramo": null,
           "partes": [
             {
-              "pt": "Há duas diferenças de perímetro: a despesa total ou a efetiva, e a despesa com ou sem o PRR. Para ver a diferença que o PRR faz, compara-se a variação da despesa efetiva consolidada com a da despesa efetiva consolidada sem o PRR.",
-              "en": "There are two differences of scope: total or effective expenditure, and expenditure with or without the RRP. To see the difference the RRP makes, compare the change in consolidated effective expenditure with the change in consolidated effective expenditure without the RRP.",
+              "pt": "Há duas diferenças de perímetro: a despesa total ou a efetiva, e a despesa com ou sem o PRR, o Plano de Recuperação e Resiliência. Para ver a diferença que o PRR faz, compara-se a variação da despesa efetiva consolidada com a da despesa efetiva consolidada sem o PRR.",
+              "en": "There are two differences of scope: total or effective expenditure, and expenditure with or without the RRP, the Recovery and Resilience Plan. To see the difference the RRP makes, compare the change in consolidated effective expenditure with the change in consolidated effective expenditure without the RRP.",
               "classe": "leitura",
-              "sobre": "Leitura dos perímetros total, efetivo e sem PRR e das variações impressas; juízo e recomendação editoriais nos lugares assinalados.",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[0]",
+          "pt": "Os números da RTP, a queda, o montante e a diferença, coincidem com a linha da despesa total consolidada do quadro: de ",
+          "en": "RTP's figures, the fall, the amount and the difference, match the table's line for total consolidated expenditure: from ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "Os números da RTP, a queda, o montante e a diferença, coincidem com a linha da despesa total consolidada do quadro: de ",
+              "en": "RTP's figures, the fall, the amount and the difference, match the table's line for total consolidated expenditure: from ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[2]",
+          "pt": " em ",
+          "en": " in ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " em ",
+              "en": " in ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[4]",
+          "pt": " para ",
+          "en": " to ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " para ",
+              "en": " to ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[6]",
+          "pt": " em ",
+          "en": " in ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " em ",
+              "en": " in ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[8]",
+          "pt": ", uma variação de ",
+          "en": ", a change of ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ", uma variação de ",
+              "en": ", a change of ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[9].sufixo",
+          "pt": " %",
+          "en": " %",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[10]",
+          "pt": ".",
+          "en": ".",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[2].paragrafo[0]",
+          "pt": "O número do ministro coincide com a variação da linha da despesa efetiva consolidada sem o PRR, ",
+          "en": "The minister's figure coincides with the change in the line for consolidated effective expenditure without the RRP, ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "O número do ministro coincide com a variação da linha da despesa efetiva consolidada sem o PRR, ",
+              "en": "The minister's figure coincides with the change in the line for consolidated effective expenditure without the RRP, ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[2].paragrafo[1].sufixo",
+          "pt": " %",
+          "en": " %",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[2].paragrafo[2]",
+          "pt": "; o quadro não diz que conta ele fez.",
+          "en": "; the table does not say which calculation he made.",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "; o quadro não diz que conta ele fez.",
+              "en": "; the table does not say which calculation he made.",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[3].paragrafo[0]",
+          "pt": "Em ",
+          "en": "In ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "Em ",
+              "en": "In ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[3].paragrafo[2]",
+          "pt": " a despesa efetiva consolidada é a mesma com e sem o PRR, ",
+          "en": " consolidated effective expenditure is the same with and without the RRP, ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " a despesa efetiva consolidada é a mesma com e sem o PRR, ",
+              "en": " consolidated effective expenditure is the same with and without the RRP, ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[3].paragrafo[4]",
+          "pt": " e ",
+          "en": " and ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " e ",
+              "en": " and ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[3].paragrafo[6]",
+          "pt": "; a diferença que o PRR faz está toda em ",
+          "en": "; the difference the RRP makes is all in ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "; a diferença que o PRR faz está toda em ",
+              "en": "; the difference the RRP makes is all in ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[3].paragrafo[8]",
+          "pt": ", e é por isso que uma linha desce e a outra sobe.",
+          "en": ", which is why one line falls and the other rises.",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ", e é por isso que uma linha desce e a outra sobe.",
+              "en": ", which is why one line falls and the other rises.",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
               "apoios": [
                 {
                   "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
@@ -1486,14 +1932,14 @@
           ]
         },
         {
-          "caminho": "seccoes[2].conteudo[0].paragrafo[2]",
-          "pt": " milhões de euros.",
-          "en": " million euros.",
+          "caminho": "seccoes[2].conteudo[0].paragrafo[1].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
           "ramo": null,
           "partes": [
             {
-              "pt": " milhões de euros.",
-              "en": " million euros.",
+              "pt": " milhões de euros",
+              "en": " million euros",
               "classe": "leitura",
               "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
               "apoios": [
@@ -1523,6 +1969,19 @@
                   "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
                 }
               ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[2]",
+          "pt": ".",
+          "en": ".",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         },

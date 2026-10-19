@@ -782,3 +782,9 @@ A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recib
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | v2b | 58 cadeias novas recolhidas do HTML nas duas edições | por ler | Codex gpt-6-astra, 19.10.2026: títulos, rótulos, prosa e navegação conferidos na construção; os valores, as citações e as atribuições continuam presos aos tokens. A leitura cruzada pertence à direção. |
+
+## V2-b: a correção da leitura a frio
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| v2b | Seis cadeias substituídas; doze de conteúdo e duas de navegação recolhidas do HTML | por ler | Correção de 19.10.2026, à noite. A porta da explicação é navegação; a leitura cruzada pertence à direção. |
