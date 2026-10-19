@@ -776,3 +776,9 @@ A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recib
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | ex3 | As contagens incluem os compromissos e a data da cimeira da NATO | por ler | Contagens medidas pela função da prova; as anteriores ficam retiradas. Os portões conferem as frases construídas e os apoios. Leitura curta do diff pela direção. |
+
+## V2-b: os dois itens e as portas
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| v2b | 58 cadeias novas recolhidas do HTML nas duas edições | por ler | Codex gpt-6-astra, 19.10.2026: títulos, rótulos, prosa e navegação conferidos na construção; os valores, as citações e as atribuições continuam presos aos tokens. A leitura cruzada pertence à direção. |

@@ -638,7 +638,7 @@ function textoAqui(partes, lang, linhas) {
     if (typeof p === 'string') return p;
     if ('literal' in p) {
       const row = linhas.get(p.literal);
-      if (p.campo === 'attributed_to') return row.attributed_to.join(' / ');
+      if (p.campo === 'attributed_to') return row.attributed_to.join(' · ');
       if (p.campo === 'ressalva') return lang === 'pt' ? row.ressalva : row.ressalva_en;
       if (p.campo === 'excerpt') return row.excerpt;
       throw new Error('X6 · campo literal não autorizado');

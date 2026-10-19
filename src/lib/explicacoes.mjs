@@ -53,7 +53,7 @@ import { valorNaLingua } from './valor-na-lingua.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
 import { EXPLICACOES } from '../data/explicacoes/index.mjs';
 import { NOMES_OE1 } from '../data/medidas-oe1.mjs';
-import { hasClaim, getClaim, parsePtNumber, allClaims } from './ledger.mjs';
+import { hasClaim, getClaim, parsePtNumber, allClaims, atribuicaoDaLinha } from './ledger.mjs';
 import { dataDaCasa } from './datas.mjs';
 import { modeloDasBarrasDoLivro } from './formas/barras-do-livro.mjs';
 import { routePath } from './routes.mjs';
@@ -261,7 +261,7 @@ function resolver(partes, lang, onde, ctx) {
       if (['excerpt', 'attributed_to'].includes(o.campo) && row.afirmacao !== true) throw defeito(aqui, 'a citação e a atribuição exigem uma afirmação.');
       const autores = row.attributed_to;
       if (o.campo === 'attributed_to' && (!Array.isArray(autores) || !autores.every(x => typeof x === 'string'))) throw defeito(aqui, 'atribuição sem nomes literais.');
-      const texto = o.campo === 'attributed_to' ? /** @type {string[]} */ (autores).join(' / ') : o.campo === 'excerpt' ? row.excerpt : lang === 'en' ? row.ressalva_en : row.ressalva;
+      const texto = o.campo === 'attributed_to' ? atribuicaoDaLinha(row) : o.campo === 'excerpt' ? row.excerpt : lang === 'en' ? row.ressalva_en : row.ressalva;
       if (typeof texto !== 'string' || !texto.trim()) throw defeito(aqui, 'campo literal ausente.');
       ctx.linhas.add(o.literal);
       out.push({literal: {id: o.literal, campo: o.campo, texto, lingua: o.campo === 'ressalva' ? null : 'pt-PT'}});

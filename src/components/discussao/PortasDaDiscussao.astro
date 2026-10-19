@@ -6,4 +6,4 @@ interface Props { linhas?: string[]; lang?: 'pt' | 'en'; tematica?: boolean; }
 const { linhas = [], lang = 'pt', tematica = false } = Astro.props;
 const itens = itensSobreLinhas(linhas, lang, tematica);
 ---
-{itens.map(e => <p class="regra-portas discussao-porta" data-discussao-integracao={e.slug} data-discussao-condicao={tematica ? 'tematica' : 'linhas'}><a href={portaDoItem(e.slug, lang)}>{DISCUSSAO.porta[lang]} <span>{e.tituloTexto}</span></a></p>)}
+{itens.map(e => <p class="regra-portas discussao-porta" data-discussao-integracao={e.slug} data-discussao-condicao={tematica ? 'tematica' : 'linhas'}><a href={portaDoItem(e.slug, lang)} data-voz>{DISCUSSAO.porta[lang]} <span>{e.tituloTexto}</span></a></p>)}

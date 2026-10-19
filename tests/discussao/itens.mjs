@@ -61,7 +61,7 @@ export function conferirPagina(root,lang,linhas=loadClaims()) {
    for(const campo of ['excerpt','attributed_to']){
     const nodes=a.querySelectorAll(`[data-linha-claim="${id}"][data-linha-campo="${campo}"]`);
     if(nodes.length!==1){erros.push('V2B citação: citação ou atribuição sem token');continue;}
-    const row=linhas.get(id), texto=campo==='excerpt'?row.excerpt:row.attributed_to.join(' / ');
+    const row=linhas.get(id), texto=campo==='excerpt'?row.excerpt:row.attributed_to.join(' · ');
     if(nodes[0].text!==texto)erros.push('V2B literal: citação ou atribuição alterada contra a linha');
     if(nodes[0].getAttribute('lang')!=='pt-PT')erros.push('V2B língua: citação sem marca de português');
     const link=nodes[0].closest('a');
