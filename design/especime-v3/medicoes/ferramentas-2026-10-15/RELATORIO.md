@@ -67,4 +67,4 @@ As cinco plantas correram apenas em cópias temporárias. `plantas-correcao.log`
 
 Os Minor 9, 10, 12, 13, 14, 15 e 16 ficam para a higiene semanal, sem correções adicionais nesta passagem. O custo semanal continua a cargo do lançador; não está disponível uma linha `tokens used` durante esta escrita.
 
-Recibo final: pendente da corrida na cabeça comitada das correções; será acrescentado em `portoes-final.json`, num commit apenas com o recibo e esta linha.
+Recibo final: `portoes-final.json` confirma a cabeça `e7d20ccb9bc504a19846b9d1b7a05ce15847122f` no início e no fim, árvore limpa e build código 0 em 220 segundos, verify código 0 em 340 segundos, typecheck código 0 em 1 segundo, lidos dos ficheiros da corrida pelo escrivão. O commit do recibo contém apenas esse ficheiro e esta linha; a cabeça conferida é a do commit anterior e o recibo não muda código.

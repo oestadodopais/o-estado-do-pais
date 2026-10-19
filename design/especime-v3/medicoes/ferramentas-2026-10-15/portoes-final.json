@@ -1,0 +1,24 @@
+{
+  "cabeca": "e7d20ccb9bc504a19846b9d1b7a05ce15847122f",
+  "cabeca_fim": "e7d20ccb9bc504a19846b9d1b7a05ce15847122f",
+  "portoes": {
+    "build": {
+      "codigo": 0,
+      "inicio": "2026-10-19T11:10:46Z",
+      "fim": "2026-10-19T11:14:26Z",
+      "segundos": 220.0
+    },
+    "verify": {
+      "codigo": 0,
+      "inicio": "2026-10-19T11:14:26Z",
+      "fim": "2026-10-19T11:20:06Z",
+      "segundos": 340.0
+    },
+    "typecheck": {
+      "codigo": 0,
+      "inicio": "2026-10-19T11:20:06Z",
+      "fim": "2026-10-19T11:20:07Z",
+      "segundos": 1.0
+    }
+  }
+}
