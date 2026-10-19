@@ -1,0 +1,94 @@
+{
+  "achados": [
+    {
+      "achado": 6,
+      "correcao": "Votações completas, com datas, reunião, resultado e votos. Arrendamento aprovado e PAN rejeitado em 30.09; Chega rejeitado e Livre aprovado em 16.10.",
+      "prova": "hab-votacao-*; source/parlamento-pt-7.html, parlamento-pt-16.html, parlamento-pt-20.html e parlamento-pt-21.html"
+    },
+    {
+      "achado": 7,
+      "correcao": "Datas do Decreto-Lei e das sete linhas RTP conferidas por seletor. O debate quinzenal noticiado ocorreu em 9 de outubro.",
+      "prova": "document_binding de hab-dl97-* e das sete linhas RTP; cabeçalho DR e elementos time nos HTML"
+    },
+    {
+      "achado": 8,
+      "correcao": "Pendente no bloco das réguas com a TAP. A atribuição ainda não fica ligada mecanicamente ao excerto.",
+      "prova": "HAB-16; publisher/habitacao_documentos.py sem alteração"
+    },
+    {
+      "achado": 9,
+      "correcao": "Pendente no bloco das réguas com a TAP. A regra de frase completa continua opcional para HTML; as citações PM corrigidas nesta passagem foram lidas no artigo.",
+      "prova": "HAB-13 e HAB-16; publisher/habitacao_test.py sem alteração"
+    },
+    {
+      "achado": 10,
+      "correcao": "Pendente no bloco das réguas com a TAP. A preservação de afirmações protege apenas as duas declaradas no ficheiro de plantas.",
+      "prova": "HAB-15 e HAB-16; plantas-tap.json sem alteração"
+    },
+    {
+      "achado": 11,
+      "correcao": "A renda do Porto passa a citar a célula e os cabeçalhos, sem os campos vizinhos. O mesmo formato serve os CSV do INE.",
+      "prova": "hab-ine-renda-porto; Trimestral1.csv, linha 18, coluna 3"
+    },
+    {
+      "achado": 12,
+      "correcao": "As palavras literais de 15 de outubro substituem a moldura da agência. O desmentido de 16 de outubro fica completo até ao ponto final e ligado na nota.",
+      "prova": "hab-imprensa-pm-15 e hab-imprensa-pm-16; source/imprensa-2.html e imprensa-3.html"
+    },
+    {
+      "achado": 13,
+      "correcao": "Os nomes dos recortes de 25 a 34 anos usam o rótulo age da API. Os nomes numéricos INE e do Orçamento foram conferidos e corrigidos quando designavam o documento em vez da medida. O título documental permanece separado.",
+      "prova": "source/eurostat/ilc_lvps08.json; hab-ine-*; hab-oe-*; lista integral de linhas mudadas"
+    },
+    {
+      "achado": 14,
+      "correcao": "Os três endereços sem os dois-pontos foram pedidos de novo. Notícias da PSP e da IGAI devolveram texto sem o comunicado procurado. Imprensa da PSP devolveu Request Rejected apesar de HTTP 200; o catálogo passa a declará-lo, incluindo as recusas antigas.",
+      "prova": "pedidos-correcao.json; source/correcao-psp-pt-41.html, correcao-psp-pt-51.html e correcao-igai-pt-42.html, com recibos"
+    },
+    {
+      "achado": 15,
+      "correcao": "Direitos avaliados por anfitrião; o Livre deixa de receber os termos da Assembleia. Os termos parlamentares são identificados como relativos a XML/JSON, sem autorizar estes HTML/PDF. Outros avisos ficam por ler.",
+      "prova": "source/direitos/avaliacao.json"
+    },
+    {
+      "achado": 16,
+      "correcao": "Todas as linhas de imprensa foram lidas no contexto. O encaminhamento para o hospital fica atribuído à narração da RTP. A linha dos acampados identifica a reprodução pela Lusa.",
+      "prova": "conferencia-imprensa.json; hab-imprensa-hospital e hab-imprensa-acampados"
+    },
+    {
+      "achado": 17,
+      "correcao": "O código comitado medir-cabeca.py escreve a cabeça real, comando, datas, duração e resultado. Os registos integrais do teste e do core.gate acompanham o relatório após a corrida na cabeça final do motor.",
+      "prova": "medir-cabeca.py; correcao-habitacao.log e correcao-gate.log, com metadados JSON"
+    },
+    {
+      "achado": 18,
+      "correcao": "Os períodos trimestrais dos CSV são apresentados na mesma forma ISO das outras linhas INE; o cabeçalho literal permanece no excerto.",
+      "prova": "hab-ine-renda-porto: reference_date=2026-Q2; hab-ine-preco-porto: reference_date=2026-Q1"
+    },
+    {
+      "achado": 19,
+      "correcao": "Lisboa e Porto selados para o primeiro trimestre, pelo destaque e pelo anexo. O calendário novamente alojado continua a anunciar 23 de outubro para o segundo trimestre; não se apresenta um destaque futuro como publicado.",
+      "prova": "hab-ine-preco-lisboa e hab-ine-preco-porto; source/correcao-ine-retoma-pt-36.html"
+    },
+    {
+      "achado": 20,
+      "correcao": "Pendente no bloco das réguas com a TAP. Não se corrigiram as declarações de colunas ou a segunda extração HTML. A leitura a frio continua necessária.",
+      "prova": "HAB-16; publisher/habitacao_documentos.py sem alteração"
+    },
+    {
+      "achado": 21,
+      "correcao": "Título integral do Bloco, rubricas completas do Quadro 3.2 e nomes das ações do Quadro 5.24. Conservada a grafia edificiado do quadro.",
+      "prova": "hab-be-despejos; hab-oe-iva-impacto; hab-oe-irs-rendas-impacto; hab-oe-oferta-publica; hab-oe-apoio-arrendamento; hab-oe-licenciamento"
+    },
+    {
+      "achado": 22,
+      "correcao": "A secção das séries seladas identifica os ficheiros lidos e inclui cópias. A nova resposta tespm140 ainda publica 6.3, perante 6.2 em ilc_lvho07c, com o mesmo updated. Os corpos não explicam a décima; não se inventa uma revisão nem uma diferença populacional.",
+      "prova": "series-consultadas/; gémeo da sobrecarga; source/eurostat/tespm140-correcao.json e ilc_lvho07c.json"
+    },
+    {
+      "achado": 23,
+      "correcao": "A bandeira F foi mantida, com nota expressa de que os corpos BPstat alojados não a definem.",
+      "prova": "hab-bpstat-*; HAB-17"
+    }
+  ]
+}

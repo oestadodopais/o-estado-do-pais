@@ -68,17 +68,18 @@ def main():
         if r.get('afirmacao') or r['id'].startswith('hab-votacao-'):
             who=r.get('document_checks',{}).get('attributed_to',{}).get('text') or ', '.join(r['attributed_to'])
             row(ref(r),who,r.get('published_at'),r['document']['locator'],r['source_excerpt'],r.get('note',''))
-    lines+=['','## Medidas já seladas no sítio, apenas consultadas','']
+    lines+=['','## Medidas já seladas no sítio, apenas consultadas','', 'Leitura de `ledger/series/*-paises.yml` nesta worktree do sítio. Cópias integrais dos ficheiros consultados ficam em `series-consultadas/`, junto deste relatório, com o mesmo SHA-256. Não foram alteradas nem exportadas séries.', '']
     sealed={}
-    table(['Série existente','Portugal','União','SHA-256 do ficheiro consultado'])
+    table(['Série existente e cópia consultada','Portugal','União','SHA-256 do ficheiro consultado'])
     for id in ['precos-da-habitacao-2025-paises','sobrecarga-do-custo-da-habitacao-2025-paises','sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises']:
         file=HERE.parents[3]/'ledger/series'/(id+'.yml');text=file.read_text()
+        snapshot=HERE/'series-consultadas'/file.name;snapshot.parent.mkdir(exist_ok=True);snapshot.write_bytes(file.read_bytes())
         values={}
         for geo in ['PT','EU27_2020']:
             match=re.search(r'- geo: "'+geo+r'"\s+valor: "([^"]+)"',text)
             values[geo]=match[1] if match else 'sem valor na série'
         sealed[id]='Portugal '+values['PT']+'; União '+values['EU27_2020']
-        row(id,values['PT'],values['EU27_2020'],hashlib.sha256(file.read_bytes()).hexdigest())
+        row('['+id+'](series-consultadas/'+file.name+')',values['PT'],values['EU27_2020'],hashlib.sha256(file.read_bytes()).hexdigest())
     lines+=['','## Gémeos: conservar os dois','']
     table(['Par','Linhas ou documentos','Razão da diferença e limite'])
     for twin in notes['gemeos']:
@@ -97,8 +98,27 @@ def main():
        'Os corpos, pedidos e direitos vivem em `content/23 Habitacao/source/`. `fontes.json` distingue prova, descoberta, recusa e documento alheio. O manifesto inclui todos os ficheiros de `source/`, exceto o próprio manifesto. Nenhum corpo está autorizado por este pacote para publicação integral. O alojamento privado foi pedido para investigação. As licenças que não foram confirmadas continuam por confirmar.','']
     table(['Ficheiro','Utilização','HTTP','Bytes','Recibo'])
     for source in sources:row(source['file'],source['status'],source['http'],source['bytes'],source['receipt'])
+    correction_file=HERE/'correcao.json'
+    if correction_file.exists():
+        correction=json.loads(correction_file.read_text())
+        lines+=['','## A passagem de correção de 19.10.2026','',
+                'A leitura a frio identificou os erros corrigidos abaixo. As réguas dos achados 8, 9, 10 e 20 continuam pendentes, com as da TAP. Um teste verde não substitui a conferência semântica dos excertos. O estudo só pode citar linhas conferidas no corpo pela leitura a frio.','']
+        for item in correction['achados']:
+            lines.append('- Achado '+str(item['achado'])+': '+item['correcao']+' Prova: '+item['prova']+'.')
+        lines+=['','### Todas as linhas mudadas','']
+        table(['Linha','Campos mudados','Prova no corpo'])
+        changed=json.loads((HERE/'linhas-alteradas.json').read_text())
+        for item in changed['linhas']:
+            r=by[item['id']]
+            row(ref(r),', '.join(item['campos']),r['evidence']['file']+'; '+r['document']['locator'])
+        lines+=['','Comparação por código com a cabeça inicial do motor `'+changed['base_motor']+'`. Linhas novas identificadas como tal. A lista inclui mudanças de notas e metadados.','']
     lines+=['','## Verificação e execução','']
     for key,value in qa.items():lines.append('- '+key+': '+str(value))
+    for kind in ['habitacao','gate']:
+        proof=HERE/('correcao-'+kind+'.json')
+        if proof.exists():
+            result=json.loads(proof.read_text())
+            lines.append('- `'+result['comando']+'`: código '+str(result['codigo'])+'; cabeça `'+result['cabeca_motor']+'`; '+str(result['segundos'])+' s; [registo integral]('+result['registo']+'); [metadados]('+proof.name+').')
     lines+=['','- Linhas do livro: '+str(len(book))+'.', '- Pedidos no inventário: '+str(len(sources))+'.',
             '- Livro SHA-256: `'+hashlib.sha256((study/'ledger.json').read_bytes()).hexdigest()+'`.',
             '- Manifesto SHA-256: `'+hashlib.sha256((study/'source/MANIFEST.sha256').read_bytes()).hexdigest()+'`.',
