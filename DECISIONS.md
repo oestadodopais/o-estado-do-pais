@@ -14088,7 +14088,9 @@ Tudo aterrou dormente, sem nenhum interruptor.
 
 ### 1.199 A retoma de 15.10.2026 à noite: o conteúdo primeiro e um ciclo por bloco, a direção ao esforço normal, a maquinaria congelada, a vigilância como primeiro produto de cada sessão, a delegação por camadas e a medida de dois blocos de conteúdo por semana; e a primeira sessão sob estas regras (19.10.2026)
 
-**Afecta:** nenhum (o `CLAUDE.md` do projeto, nas secções «O que uma sessão faz primeiro» e «Os lugares», e o prompt da sessão seguinte mudam com esta entrada, mas não são textos governados pela amarra).
+**Afecta:** nenhum
+
+*O `CLAUDE.md` do projeto (as secções «O que uma sessão faz primeiro» e «Os lugares») e o prompt da sessão seguinte mudam com esta entrada; não são textos governados pela amarra.*
 
 **Data:** 15.10.2026, das 21:55 às 22:45 UTC, pela conversa com o financiador («why is this going this way»; «accurate, quick and efficient»; «in a way in which you can delegate»; «can it be improved»), com dois acrescentos dele a 16.10.2026 às 00:20 UTC; escrita no prompt do Desktop nessa noite e nos registos a 19.10.2026, pela primeira sessão sob estas regras, como o prompt mandava. O financiador não respondeu à proposta entre 16 e 19.10: vale até ele dizer outra coisa.
 
