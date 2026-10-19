@@ -53,9 +53,23 @@ cd "$worktree" || exit 9
 # própria worktree (o lugar de direção corre `npm ci` nela antes de lançar).
 rede=""
 if [ "${CODEX_REDE:-0}" = 1 ]; then rede="-c sandbox_workspace_write.network_access=true"; fi
-if [ -L "$worktree/node_modules" ]; then echo "node_modules é uma ligação para fora da worktree; corre npm ci dentro dela antes de lançar (a sandbox recusa a escrita na cache do Vite)" >&2; exit 9; fi
-[ -d "$worktree/node_modules" ] || [ ! -f "$worktree/package.json" ] || { echo "falta node_modules na worktree; corre npm ci nela antes de lançar" >&2; exit 9; }
-base="${relatorio%.md}"
+# O PRÉ-VOO ANTES DO LANÇAMENTO (15.10.2026). Os registos do processo ficam
+# fora do relatório e da worktree; não podem sujar a cabeça durante os portões.
+sitio="$worktree"
+motor="${RESEARCHHUB_DIR:-}"
+for pasta in "$worktree" "$@"; do
+  if [ -f "$pasta/core/gate.py" ]; then motor="$pasta"; fi
+  if [ -f "$pasta/package.json" ]; then sitio="$pasta"; fi
+done
+[ -n "$motor" ] || { echo '9 pré-voo: falta a worktree do motor (RESEARCHHUB_DIR ou pasta adicional)' >&2; exit 9; }
+registos=$(mktemp -d "${TMPDIR:-/tmp}/oedp-construtor.XXXXXX") || exit 9
+base="$registos/RELATORIO"
+OEDP_RELATORIO="$relatorio" OEDP_LANCADOR_BASE="$base" sh "$aqui/pre-voo.sh" "$sitio" "$motor" || exit 9
+RESEARCHHUB_DIR="$motor"
+RESEARCHHUB_LOCK_DIR="${RESEARCHHUB_LOCK_DIR:-$registos/trancas-motor}"
+mkdir -p "$RESEARCHHUB_LOCK_DIR" || exit 9
+export RESEARCHHUB_DIR RESEARCHHUB_LOCK_DIR
+echo "registos do lançador: $base.escrivao.log e $base.pontos.json"
 inicio="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 python3 "$aqui/pontos.py" --antes
 python3 "$aqui/escrivao.py" "$worktree" "$@" > "$base.escrivao.log" 2>&1 &

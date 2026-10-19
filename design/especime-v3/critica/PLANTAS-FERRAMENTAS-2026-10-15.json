@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-19T10:29:20+00:00",
+ "copia": "<pacote-pasta>/pacote-ferramentas",
+ "plantas": [
+  {
+   "id": "fer-p1",
+   "ficheiro": "scripts/leituras/aterrar.py",
+   "descricao": "a fusão em main deixa de ser só por avanço rápido (a regra 7)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c2a449f3f57c2b42c2d9925b753a27173bef25f527ffe090c3b06f896a90be52",
+   "sha256_depois": "7759ae5bb5bef6644e2cc151ba038e439886ea842de2ba6459700f4f39941345",
+   "contexto_antes": "rer('cruzamento', ['npm', 'run', 'check:cruzamento', '--', '--with-origin'])\n            self.conferir_arvores()\n            self.correr('fundir-main', ['git', 'merge', '--ff-only', 'refs/heads/' + self.ramo], cwd=self.principal)\n            self.exigir(git(self.principal, 'rev-parse', 'HEAD') == self.cabeca, 'main não está na cabeça conferida')\n       ",
+   "contexto_depois": "rer('cruzamento', ['npm', 'run', 'check:cruzamento', '--', '--with-origin'])\n            self.conferir_arvores()\n            self.correr('fundir-main', ['git', 'merge', '--no-ff', 'refs/heads/' + self.ramo], cwd=self.principal)\n            self.exigir(git(self.principal, 'rev-parse', 'HEAD') == self.cabeca, 'main não está na cabeça conferida')\n       "
+  },
+  {
+   "id": "fer-p2",
+   "ficheiro": "scripts/leituras/escrivao.py",
+   "descricao": "a deteção de conflitos na operação fundir lê os ficheiros modificados em vez dos não fundidos: um conflito deixa de ser visto e a fusão fica a meio",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "18613bb9e7c61ec2c30523b2d635e9dc02d72e35c8053fd4b3c3c770ba71424f",
+   "sha256_depois": "b61d727ee6a231001aa040350bd657072c80aa2f13ef4217bd737ef35cf7abd5",
+   "contexto_antes": "()\n                excedeu = True\n                break\n        saida_f.seek(0)\n        saida = saida_f.read()\n    conflitos = git(repo, 'diff', '--name-only', '--diff-filter=U', '-z').stdout.rstrip('\\0').split('\\0')\n    conflitos = [f for f in conflitos if f]\n    aborto = None\n    if processo.returncode:\n        # Só aborta a fusão qu",
+   "contexto_depois": "()\n                excedeu = True\n                break\n        saida_f.seek(0)\n        saida = saida_f.read()\n    conflitos = git(repo, 'diff', '--name-only', '--diff-filter=M', '-z').stdout.rstrip('\\0').split('\\0')\n    conflitos = [f for f in conflitos if f]\n    aborto = None\n    if processo.returncode:\n        # Só aborta a fusão qu"
+  },
+  {
+   "id": "fer-p3",
+   "ficheiro": "scripts/leituras/pre-voo.py",
+   "descricao": "o pré-voo deixa de recusar um node_modules que é uma ligação para fora da worktree",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "22a34986deb4067b71ce859e68b8acdc0f1b7fcc79b1ad7e7499c832e28ab80a",
+   "sha256_depois": "c942dcc18b94d229952d3b4242f97982754d6da35e4bf2410d9e28504022772f",
+   "contexto_antes": "cabeça', antepassado(repo, ramo))\n        except (OSError, ValueError) as erro:\n            linha(nome, False, str(erro))\n    linha('node_modules na worktree', (sitio / 'node_modules').is_dir() and not (sitio / 'node_modules').is_symlink())\n    try:\n        origem = principal(motor, 'master')\n        caches = sorted(origem.rglob('snippets.json'))\n        linha('lista das caches da árvore principa",
+   "contexto_depois": "cabeça', antepassado(repo, ramo))\n        except (OSError, ValueError) as erro:\n            linha(nome, False, str(erro))\n    linha('node_modules na worktree', (sitio / 'node_modules').is_dir())\n    try:\n        origem = principal(motor, 'master')\n        caches = sorted(origem.rglob('snippets.json'))\n        linha('lista das caches da árvore principa"
+  },
+  {
+   "id": "fer-p4",
+   "ficheiro": "tests/leituras/ferramenta_aterrar.py",
+   "descricao": "o ensaio que procura a bandeira de forçar no código passa a conferir uma cadeia vazia (um ensaio que não morde)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ef0b2766ee25f499c21cb20fc8bc801d9bc109e48b45ca158c3badcf2be4f434",
+   "sha256_depois": "98373244dfaf8d10054f3a9cff99c5bec0b3ea1aacad6b8e94975c78fd8cdec4",
+   "contexto_antes": ")\n\n    def test_bandeira_de_forcar_ausente(self):\n        for nome in ('aterrar.sh', 'aterrar.py'):\n            texto = (GUIOES / nome).read_text()\n            self.assertNotIn('--' + 'force', texto)\n            self.assertNotIn(\"'-f'\", texto)\n            self.assertNotIn(\"'-D'\", texto)\n\n    def test_tranca_ocupada_para_antes_de_publicar(self):\n        tran",
+   "contexto_depois": ")\n\n    def test_bandeira_de_forcar_ausente(self):\n        for nome in ('aterrar.sh', 'aterrar.py'):\n            texto = (GUIOES / nome).read_text()\n            self.assertNotIn('--' + 'force', '')\n            self.assertNotIn(\"'-f'\", texto)\n            self.assertNotIn(\"'-D'\", texto)\n\n    def test_tranca_ocupada_para_antes_de_publicar(self):\n        tran"
+  },
+  {
+   "id": "fer-p5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 26 ensaios e o registo ensaios.log diz 25",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "78ff0d2a69f5aa8bdedb789f496b7e192f9feb85067f1330630a8133a9e6301f",
+   "sha256_depois": "22aba2683874971d26d540cf8e27563ed5505adb94b47464c3d488fd1efcaf9f",
+   "contexto_antes": "cessos reais nos temporários.\n\n| Comando | Código | Resultado medido |\n|---|---|---|\n| `python3 -m unittest discover -s tests/leituras -p 'ferramenta_*.py' -v` | 0 | 25 ensaios, 25.368 segundos, em `ensaios.log` |\n| `python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md` | 0 | Três linhas novas e três c",
+   "contexto_depois": "cessos reais nos temporários.\n\n| Comando | Código | Resultado medido |\n|---|---|---|\n| `python3 -m unittest discover -s tests/leituras -p 'ferramenta_*.py' -v` | 0 | 26 ensaios, 25.368 segundos, em `ensaios.log` |\n| `python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md` | 0 | Três linhas novas e três c"
+  }
+ ]
+}

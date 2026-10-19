@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-19T11:25:39+00:00",
+ "copia": "<pacote-pasta>/pacote-ferramentas-b",
+ "plantas": [
+  {
+   "id": "ferb-p1",
+   "ficheiro": "scripts/leituras/escrivao.py",
+   "descricao": "a deteção de conflitos volta a ler os modificados em vez dos não fundidos",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "3eae9efec4329d6daec3905f862fd64fa2bec8157ef5b288e6d2b8825f968e4c",
+   "sha256_depois": "11a63430bc4083bcc0bc5ad5e5e2c1861fcea2893203c94cb44eb0bc11896ca4",
+   "contexto_antes": "  processo.wait()\n                excedeu = True\n                break\n        saida_f.seek(0)\n        saida = saida_f.read()\n    conflitos = git(repo, 'diff', '--cached', '--name-only', '--diff-filter=U', '-z').stdout.rstrip('\\0').split('\\0')\n    conflitos = [f for f in conflitos if f]\n    aborto = None\n    if processo.returncode:\n        # Só aborta a fusão qu",
+   "contexto_depois": "  processo.wait()\n                excedeu = True\n                break\n        saida_f.seek(0)\n        saida = saida_f.read()\n    conflitos = git(repo, 'diff', '--cached', '--name-only', '--diff-filter=M', '-z').stdout.rstrip('\\0').split('\\0')\n    conflitos = [f for f in conflitos if f]\n    aborto = None\n    if processo.returncode:\n        # Só aborta a fusão qu"
+  },
+  {
+   "id": "ferb-p2",
+   "ficheiro": "scripts/leituras/escrivao.py",
+   "descricao": "a conferência do trailer Co-Authored-By aceita um trailer sem endereço",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "11a63430bc4083bcc0bc5ad5e5e2c1861fcea2893203c94cb44eb0bc11896ca4",
+   "sha256_depois": "d4711b1991468377f9760c7a3ac28f1900a0eef9e2636da62edea9a63e561c08",
+   "contexto_antes": "dido):\n    mensagem = pedido.get('mensagem')\n    if not isinstance(mensagem, str) or not mensagem.strip():\n        return 'mensagem vazia'\n    if not re.search(r'^Co-Authored-By: \\S[^\\n]* <[^<>\\s]+@[^<>\\s]+>$', mensagem, re.M):\n        return 'a mensagem não traz o trailer Co-Authored-By'\n    if not e_motor(repo) and not re.search(r'^Claude-Session: \\S+$', mensagem, ",
+   "contexto_depois": "dido):\n    mensagem = pedido.get('mensagem')\n    if not isinstance(mensagem, str) or not mensagem.strip():\n        return 'mensagem vazia'\n    if not re.search(r'^Co-Authored-By:', mensagem, re.M):\n        return 'a mensagem não traz o trailer Co-Authored-By'\n    if not e_motor(repo) and not re.search(r'^Claude-Session: \\S+$', mensagem, "
+  },
+  {
+   "id": "ferb-p3",
+   "ficheiro": "scripts/leituras/aterrar.py",
+   "descricao": "o teto da espera pela tranca multiplica-se por sessenta (sessenta horas em vez de sessenta minutos)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "e4caff4b73fdfb841422e193b52b7ed50da1f39cc5b6a68d2466f51d91151523",
+   "sha256_depois": "21185490fb4b9285a59b43b9e147378506828e3b1f2f34e3c87e52c1d85a14e9",
+   "contexto_antes": " break\n            except FileExistsError:\n                agora_mono = time.monotonic()\n                dono = self.tranca.read_text().strip()\n                if agora_mono - inicio >= teto:\n                    self.registar('tranca', 75, dono=dono, teto_segundos=teto,\n                                  espera_segundos=agora_mono - inicio)\n         ",
+   "contexto_depois": " break\n            except FileExistsError:\n                agora_mono = time.monotonic()\n                dono = self.tranca.read_text().strip()\n                if agora_mono - inicio >= teto * 60:\n                    self.registar('tranca', 75, dono=dono, teto_segundos=teto,\n                                  espera_segundos=agora_mono - inicio)\n         "
+  },
+  {
+   "id": "ferb-p5",
+   "ficheiro": "design/especime-v3/medicoes/ferramentas-2026-10-15/portoes-final.json",
+   "descricao": "a cabeça do recibo final dos portões difere num carácter do commit que diz conferir",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "80755d2c59807e906fb68504707a953a560ea4e40dba8eae7ae046d49105919f",
+   "sha256_depois": "8a3d9fc1e65561cccb737e397e3d30426f077d2e0025dd5fa1b9dff6dc968c0e",
+   "contexto_antes": "{\n  \"cabeca\": \"e7d20ccb9bc504a19846b9d1b7a05ce15847122f\",\n  \"cabeca_fim\": \"e7d20ccb9bc504a19846b9d1b7a05ce15847122f\",\n  \"portoes\": {\n    \"build\": {\n      \"codigo\": 0,\n      \"inicio\": \"2026-10-19T11:10:46Z\",\n      \"fi",
+   "contexto_depois": "{\n  \"cabeca\": \"e7d20ccb9bc504a19846b9d1b7a05ce15847122e\",\n  \"cabeca_fim\": \"e7d20ccb9bc504a19846b9d1b7a05ce15847122f\",\n  \"portoes\": {\n    \"build\": {\n      \"codigo\": 0,\n      \"inicio\": \"2026-10-19T11:10:46Z\",\n      \"fi"
+  },
+  {
+   "id": "ferb-p4",
+   "ficheiro": "tests/leituras/ferramenta_aterrar.py",
+   "descricao": "a asserção nova de que nenhum git push aconteceu antes da recusa passa a olhar para pull (deixa de morder)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "da7a1d96945e1f77ca4f0f4a565048d55b323b03db752909fa7675c308e73784",
+   "sha256_depois": "4451ce5266df9296245d389b857d59ebcabc303b6332a482ea2e326b0c4452f7",
+   "contexto_antes": "[0] == 'git'))\n\n    def test_main_recusado(self):\n        r, recibo, chamadas = self.correr(arvore=self.main)\n        self.assertEqual(r.returncode, 9)\n        self.assertFalse(any(c[1:2] == ['push'] for c in chamadas if c[0] == 'git'))\n        self.assertFalse(any(c[0] in ('gh', 'npm', 'vercel') for c in chamadas))\n        self.assertEqual([p['passo'] for p in recibo['passos']], ['tranca', 'p",
+   "contexto_depois": "[0] == 'git'))\n\n    def test_main_recusado(self):\n        r, recibo, chamadas = self.correr(arvore=self.main)\n        self.assertEqual(r.returncode, 9)\n        self.assertFalse(any(c[1:2] == ['pull'] for c in chamadas if c[0] == 'git'))\n        self.assertFalse(any(c[0] in ('gh', 'npm', 'vercel') for c in chamadas))\n        self.assertEqual([p['passo'] for p in recibo['passos']], ['tranca', 'p"
+  }
+ ]
+}
