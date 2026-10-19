@@ -17,6 +17,7 @@
  * números de uma figura, a porta) é da casa e está no inventário.
  */
 import Base from '../layouts/Base.astro';
+import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
 import FraseDaExplicacao from '../components/explicacoes/FraseDaExplicacao.astro';
 import BarrasDoLivro from '../components/formas/BarrasDoLivro.astro';
 import { explicacaoResolvida } from '../lib/explicacoes.mjs';
@@ -43,6 +44,7 @@ const path = routePath('explicacao', lang, { slug });
         {sec.blocos.map((b) => b.tipo === 'figura'
           ? <BarrasDoLivro modelo={b.modelo} lang={lang} explicacao={slug} />
           : <p class="explicacao-p" data-explicacao-paragrafo={b.caminho} data-explicacao-declarado><FraseDaExplicacao partes={b.pedacos} lang={lang} /></p>)}
+        <PortasDaDiscussao lang={lang} linhas={sec.blocos.flatMap(b => b.tipo === 'figura' ? [] : b.pedacos.flatMap(p => typeof p === 'string' ? [] : 'claim' in p ? [p.claim] : 'data' in p ? [p.data.id] : 'literal' in p ? [p.literal.id] : []))} tematica={slug === 'dinheiro-do-estado-2026' && sec.id === 'por-funcao'} />
       </section>
     ))}
     {e.naoDiz.length > 0 && (

@@ -25,6 +25,7 @@
  * Uso (na raiz, depois do build): node tests/explicacoes/frases-compostas.mjs [--json <ficheiro>]
  */
 import fs from 'node:fs/promises';
+import { conferirToques } from '../discussao/toques.mjs';
 import path from 'node:path';
 import http from 'node:http';
 import { fileURLToPath } from 'node:url';
@@ -40,7 +41,7 @@ const i = process.argv.indexOf('--json');
 const SAIDA = i > 1 ? process.argv[i + 1] : process.env.OEDP_FRASES_JSON ?? null;
 const barra = (/** @type {string} */ p) => (p.endsWith('/') ? p : `${p}/`);
 const ROTAS = /** @type {const} */ (['pt', 'en']).flatMap((lang) => [
-  routePath('home', lang), routePath('entradaDinheiro', lang), routePath('indice', lang), routePath('explicacoes', lang), routePath('leituraDaSemana', lang),
+  routePath('home', lang), routePath('discussao', lang), routePath('entradaDinheiro', lang), routePath('indice', lang), routePath('explicacoes', lang), routePath('leituraDaSemana', lang),
   ...EXPLICACOES.map((e) => routePath('explicacao', lang, { slug: e.slug })),
 ].map(barra));
 const LARGURAS = [390, 1280];
@@ -81,7 +82,7 @@ const medir = () => {
      (de um valor conta a caixa do `<Claim>`, que leva o selo: o que tem de ser texto corrido é o pai dessa caixa). */
   const marcados = [...new Set([...document.querySelectorAll('main [data-semana], main [data-de-linha], main [data-explicacao-nome], main [data-claim], main [data-nonledger], main [data-correcao-campo], main [data-linha-campo]')]
     .map((x) => x.closest('.claim') ?? x))]
-    .filter((x) => x.closest('[data-explicacao-declarado], [data-semana-declarado], [data-explicacao-porta], [data-semana-frase], [data-bloco-frase], [data-bloco-ressalva], [data-bloco-titulo], [data-bloco] p[data-bloco-declarado], [data-bloco-serie-unidade], [data-cartao-leitura], [data-o-que-e]'));
+    .filter((x) => x.closest('[data-discussao-paragrafo], [data-explicacao-declarado], [data-semana-declarado], [data-explicacao-porta], [data-semana-frase], [data-bloco-frase], [data-bloco-ressalva], [data-bloco-titulo], [data-bloco] p[data-bloco-declarado], [data-bloco-serie-unidade], [data-cartao-leitura], [data-o-que-e]'));
   const pais = new Set(marcados.map((x) => /** @type {HTMLElement} */ (x.parentElement)));
   const flex = [...pais].filter((el) => /flex|grid/.test(getComputedStyle(el).display))
     .map((el) => ({ tag: el.tagName.toLowerCase(), classe: String(el.className), display: getComputedStyle(el).display, texto: (el.textContent ?? '').trim().slice(0, 70) }));
@@ -170,7 +171,9 @@ try {
   }
   for (const p of plantas) if (!p.mordeu) erros.push(`FC · a planta «${p.nome}» não mordeu`);
   if (!resultados.some((r) => r.pedacos > 0)) erros.push('FC · nenhuma página teve um pedaço marcado: a célula não mediu nada');
-  const resumo = { o_que_e: 'FC · as frases compostas da casa dentro de contentores flexíveis e os documentos mais largos do que a janela nas duas larguras, nas páginas onde as frases compostas se rendem.', construcao: versao.commit, construido_em: versao.construido_em, resultados, plantas, erros };
+  const toques = await conferirToques(abre, origem);
+  console.log(`V2B · ${toques.length} caminhos por clique conferidos a 390 px.`);
+  const resumo = { toques, o_que_e: 'FC · as frases compostas da casa dentro de contentores flexíveis e os documentos mais largos do que a janela nas duas larguras, nas páginas onde as frases compostas se rendem.', construcao: versao.commit, construido_em: versao.construido_em, resultados, plantas, erros };
   if (SAIDA) await fs.writeFile(SAIDA, JSON.stringify(resumo, null, 2) + '\n');
   console.log(`FC · ${resultados.length} passagem(ns) em ${ROTAS.length} páginas, ${resultados.reduce((s, x) => s + x.pedacos, 0)} pedaços marcados vistos, ${resultados.reduce((s, x) => s + x.flex.length, 0)} dentro de um contentor flexível, ${resultados.filter((r) => r.largura_do_documento > r.janela + 1).length} documento(s) mais largos do que a janela; ${plantas.filter((p) => p.mordeu).length} de ${plantas.length} plantas no navegador.`);
 } finally {

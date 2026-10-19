@@ -63,6 +63,7 @@ import { slugsDasExplicacoes, explicacaoResolvida } from './explicacoes.mjs';
  * @type {Record<ChaveDeRota, { como: 'porta'|'lista'|'pela-lista'|'fora', pela?: ChaveDeRota, razao: string }>}
  */
 export const COMO_ENTRA = {
+  discussao: { como: 'porta', razao: 'As afirmações públicas ao lado das fontes, nos itens do V2-b.' },
   home: { como: 'porta', razao: 'A primeira página, com o nome que o menu lhe dá.' },
   temas: { como: 'porta', razao: 'O índice dos temas, com os sete por baixo.' },
   entradaDinheiro: { como: 'lista', razao: 'Uma página de tema, das declarações dos temas (`ENTRADAS`).' },
@@ -289,7 +290,7 @@ export function indiceDoSitio(lang) {
   return {
     pais: {
       titulo: s.indice.seccoes.pais,
-      portas: [pagina('home', lang, r.pais), pagina('temas', lang, s.nav.temas, temas(lang)), pagina('areas', lang, s.nav.areas, areas, 'largas')],
+      portas: [pagina('home', lang, r.pais), pagina('discussao', lang, s.nav.discussao), pagina('temas', lang, s.nav.temas, temas(lang)), pagina('areas', lang, s.nav.areas, areas, 'largas')],
     },
     lugares: {
       titulo: s.indice.seccoes.lugares,

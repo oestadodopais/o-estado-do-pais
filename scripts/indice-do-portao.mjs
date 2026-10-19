@@ -30,6 +30,7 @@
 import { parse } from 'node-html-parser';
 
 /** As oito portas da navegação do rodapé (sete desde o R3, oito desde o EX1-b), por edição e por ordem: o destino e o nome. */
+/** V2-b: a nona porta leva à discussão; destino, ordem e texto continuam conferidos. */
 export const PORTAS_DO_RODAPE = {
   pt: [
     ['/', 'Início'],
@@ -38,6 +39,7 @@ export const PORTAS_DO_RODAPE = {
     ['/correcoes', 'Correções'],
     ['/agenda', 'Agenda'],
     ['/explicacoes', 'Explicações'],
+    ['/o-que-se-discute/', 'O que se discute'],
     ['/uniao-europeia', 'Portugal na União Europeia'],
     ['/indice', 'Índice'],
   ],
@@ -48,6 +50,7 @@ export const PORTAS_DO_RODAPE = {
     ['/en/corrections', 'Corrections'],
     ['/en/agenda', 'Agenda'],
     ['/en/explainers', 'Explainers'],
+    ['/en/under-discussion/', 'Under discussion'],
     ['/en/european-union', 'Portugal in the European Union'],
     ['/en/index', 'Index'],
   ],

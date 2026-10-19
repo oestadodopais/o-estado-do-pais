@@ -42,6 +42,7 @@ const paginas = [
   /* AS EXPLICAÇÕES E A LEITURA DA SEMANA (bloco EX1, 05.10.2026): três famílias interiores novas, com a mesma hierarquia. */
   ['explicacoes', '/explicacoes/', '/en/explainers/'],
   ['semana', '/explicacoes/leitura-da-semana/', '/en/explainers/weekly-reading/'],
+  ['discussao', '/o-que-se-discute/', '/en/under-discussion/'],
   ['explicacao', '/explicacoes/dinheiro-do-estado-2026/', '/en/explainers/dinheiro-do-estado-2026/'],
 ];
 const europeias = paginas.filter(([familia]) => familia === 'europeia');

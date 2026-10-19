@@ -75,7 +75,7 @@ const RAIZ = path.resolve(AQUI, '..', '..');
 export const AUDITORIA = path.join(RAIZ, 'tests', 'cartao', 'leituras-provadas.json');
 
 /** Os campos publicados de uma linha que podem apoiar uma parte de uma explicação; `nome` é o nome do projeto. */
-const CAMPOS_DA_LINHA = new Set(['excerpt', 'unit', 'document.title', 'document.locator', 'name', 'ressalva', 'ressalva_en', 'derivation', 'derivation_en', 'nome']);
+const CAMPOS_DA_LINHA = new Set(['source', 'reference_date', 'excerpt', 'unit', 'document.title', 'document.locator', 'name', 'ressalva', 'ressalva_en', 'derivation', 'derivation_en', 'nome']);
 const NOTA_DO_PERIMETRO = 'execucao-2026-08-saldo-global-administracao-central-seguranca-social';
 const LITERAIS_DA_NOTA = new Set(['Não são grandezas diretamente comparáveis.', 'O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local']);
 const CAMPOS_DA_ORIGEM = new Set(['excerto', 'excertoEn', 'documento', 'publicador']);
@@ -86,7 +86,7 @@ const PALAVRAS_DE_LIGACAO = {
   pt: new Set(['a', 'o', 'os', 'as', 'um', 'uma', 'e', 'em', 'de', 'do', 'da', 'dos', 'das', 'para', 'no', 'na', 'com', 'contra']),
   en: new Set(['the', 'a', 'of', 'and', 'in', 'to', 'for', 'by', 'with', 'on', 'at', 'against']),
 };
-const PONTUACAO = /[\s.,:;()−%’'!?]+/g;
+const PONTUACAO = /[\s.,:;()«»−%’'!?]+/g;
 const PREFIXO = { pt: ' que vai para ', en: ' going to ' };
 /* O NOME DE UM PROGRAMA DA EXECUÇÃO (EX1-b), pela regra desta célula: o que fica entre o começo e o fim do nome do projeto. */
 const PROGRAMA = { pt: ['Despesa executada do programa ', ' ('], en: ['Executed expenditure of the ', ' programme ('] };
@@ -105,6 +105,7 @@ const curto = (/** @type {string} */ s) => (s.length > 70 ? `${s.slice(0, 67)}�
 export function periodoAqui(p, lang) {
   const m = /^(\d{4})-(0[1-9]|1[0-2])$/.exec(p);
   if (m) return lang === 'en' ? `${MESES.en[Number(m[2]) - 1]} ${m[1]}` : `${MESES.pt[Number(m[2]) - 1]} de ${m[1]}`;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(p)) return p.split('-').reverse().join('.');
   return /^\d{4}$/.test(p) ? p : null;
 }
 /** O número de um valor, pela conta desta célula. @param {unknown} v */
@@ -215,7 +216,7 @@ export function linhasDaExplicacao(e, linhas) {
     if (Array.isArray(x)) x.forEach(anda);
     else if (x && typeof x === 'object') {
       for (const [k, v] of Object.entries(x)) {
-        if (['claim', 'periodo', 'nome', 'sinal'].includes(k) && typeof v === 'string') out.add(v);
+        if (['claim', 'literal', 'periodo', 'nome', 'sinal'].includes(k) && typeof v === 'string') out.add(v);
         else if (['linhas', 'primeiros', 'de', 'maiores', 'compara', 'comparaSaldos'].includes(k) && Array.isArray(v)) v.forEach((id) => typeof id === 'string' && out.add(id));
         else anda(v);
       }
@@ -317,7 +318,7 @@ export function conferirAuditoriaDasExplicacoes({
               continue;
             }
             const literal = ap?.literal;
-            if (typeof literal !== 'string' || literal.trim().length < LITERAL_MINIMO) { falha(`X2 · ${qp} cita um literal com menos de ${LITERAL_MINIMO} caracteres`); continue; }
+            if (typeof literal !== 'string' || (literal.trim().length < LITERAL_MINIMO && !(ap.campo === 'source' && literal.length > 0 && linhas.get(ap.linha)?.source === literal))) { falha(`X2 · ${qp} cita um literal com menos de ${LITERAL_MINIMO} caracteres`); continue; }
             if (ap.origem) {
               const o = origensDasExplicacoes[ap.origem] ?? origensDasDefinicoes[ap.origem];
               if (!o) { falha(`X2 · ${qp} apoia-se em «${ap.origem}», que não é uma origem declarada`); continue; }
@@ -635,7 +636,18 @@ function textoAqui(partes, lang, linhas) {
   };
   return (Array.isArray(partes) ? partes : [partes]).map((p) => {
     if (typeof p === 'string') return p;
+    if ('literal' in p) {
+      const row = linhas.get(p.literal);
+      if (p.campo === 'attributed_to') return row.attributed_to.join(' / ');
+      if (p.campo === 'ressalva') return lang === 'pt' ? row.ressalva : row.ressalva_en;
+      if (p.campo === 'excerpt') return row.excerpt;
+      throw new Error('X6 · campo literal não autorizado');
+    }
     if ('verbatim' in p) {
+      if (['origem-v2a-saude-consolidada-quadro', 'origem-v2a-ppp-setores-quadro'].includes(p.verbatim)) {
+        const origem = p.verbatim.slice(7, -7);
+        return JSON.parse(fs.readFileSync(path.join(RAIZ,'src/data/origens-v2a.json'),'utf8'))[origem].quadro;
+      }
       if (p.verbatim !== 'origem-rp4n-total-ministerios-montante') throw new Error('X6 · transcrição desconhecida');
       const excerto = ORIGENS_DAS_DEFINICOES['rp4n-total-ministerios'].excerto;
       const linhas = excerto.split('\n').map(x => x.trim()).filter(Boolean);

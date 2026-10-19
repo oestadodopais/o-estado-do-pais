@@ -229,6 +229,7 @@ export const STRINGS = {
       /* AS EXPLICAÇÕES (bloco EX1, 05.10.2026): o `<h1>` da página da lista, a migalha dela e o nome da secção do
          índice que a abre; uma cadeia só, como a do índice. */
       explicacoes: 'Explicações',
+      discussao: 'O que se discute',
       saltar: 'Saltar para o conteúdo',
       /* O comando que abre a navegação no telemóvel. É a mesma palavra nas duas
          edições, e está na lista de identidades aceites do `CHAVES-EN.md`. */
@@ -3263,6 +3264,7 @@ export const STRINGS = {
       privacidade: 'Privacy',
       /* Ver a razão na edição portuguesa (bloco EX1). */
       explicacoes: 'Explainers',
+      discussao: 'Under discussion',
       saltar: 'Skip to content',
       menu: 'Menu',
       rotuloPrincipal: 'Main navigation',

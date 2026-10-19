@@ -43,6 +43,7 @@
  * algarismos, e nenhum entra por dispensa.
  */
 import Base from '../layouts/Base.astro';
+import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
@@ -1315,6 +1316,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
             </>
           )
         }
+        <PortasDaDiscussao lang={lang} linhas={[id]} />
       </section>
 
       {

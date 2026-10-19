@@ -1,6 +1,7 @@
 /** A lista fechada do B1 para o país e os temas. Os blocos de dados são
  * comparados antes de saírem da leitura; uma marca sozinha não basta. */
 import fs from 'node:fs';
+import { conferirInicio } from '../tests/discussao/itens.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse, NodeType } from 'node-html-parser';
@@ -98,6 +99,11 @@ export function verificaVozPais(raiz) {
           : conferirPortaDaSemana(el, lang, diasAceites(path.join(raiz, 'dist'))));
         if (queixas.length) erros.push(...queixas.map((q) => `B1 lista fechada país: ${rota || '/'}: «Para perceber» não conferido: ${q}`));
         else for (const el of portas) dispensados.add(el);
+      }
+      if (primeira) {
+        const queixas = conferirInicio(main.parentNode, lang);
+        erros.push(...queixas);
+        if (!queixas.length) for (const b of main.querySelectorAll('[data-discussao-inicio]')) dispensados.add(b);
       }
       for (const c of main.querySelectorAll('[data-cartao-camaras]')) dispensados.add(c);
       /* A marca só sai da lista depois de a V1 conferir a frase inteira. */

@@ -61,7 +61,7 @@ import { t } from '../i18n/strings.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
 
 /** Os pedaços calculados que a gramática das explicações conhece, e mais nenhum. */
-export const CHAVES_DA_EXPLICACAO = /** @type {const} */ (['claim', 'verbatim', 'termo', 'periodo', 'nome', 'sinal', 'se', 'maiores', 'compara', 'comparaSaldos']);
+export const CHAVES_DA_EXPLICACAO = /** @type {const} */ (['claim', 'literal', 'verbatim', 'termo', 'periodo', 'nome', 'sinal', 'se', 'maiores', 'compara', 'comparaSaldos']);
 /** O prefixo que separa, no nome do projeto de uma linha, a família do nome da função ou do ministério. */
 export const PREFIXO_DO_NOME = /** @type {const} */ ({ pt: ' que vai para ', en: ' going to ' });
 /**
@@ -83,6 +83,7 @@ export const FORMAS_DAS_FIGURAS = /** @type {const} */ (['barras-do-livro']);
 /**
  * @typedef {string
  *   | { claim: string, sufixo?: string }
+ *   | { literal: { id: string, campo: string, texto: string, lingua: string|null } }
  *   | { verbatim: string, texto: string }
  *   | { termo: string, lingua: string }
  *   | { data: { id: string, campo: 'reference_date', valor: string } }
@@ -250,8 +251,20 @@ function resolver(partes, lang, onde, ctx) {
     const chave = CHAVES_DA_EXPLICACAO.find((k) => k in o);
     if (!chave) throw defeito(aqui, `um pedaço de tipo desconhecido (${Object.keys(o).join(', ')}).`);
     if (chave === 'verbatim') {
-      if (o.verbatim !== 'origem-rp4n-total-ministerios-montante') throw defeito(aqui, 'transcrição de origem não autorizada.');
-      out.push({verbatim: o.verbatim, texto: VERBATIM['origem-rp4n-total-ministerios-montante'].text});
+      if (!['origem-rp4n-total-ministerios-montante', 'origem-v2a-saude-consolidada-quadro', 'origem-v2a-ppp-setores-quadro'].includes(o.verbatim)) throw defeito(aqui, 'transcrição de origem não autorizada.');
+      out.push({verbatim: o.verbatim, texto: VERBATIM[/** @type {keyof typeof VERBATIM} */ (o.verbatim)].text});
+      return;
+    }
+    if (chave === 'literal') {
+      if (Object.keys(o).sort().join(',') !== 'campo,literal' || !['excerpt', 'attributed_to', 'ressalva'].includes(o.campo)) throw defeito(aqui, 'campo literal não autorizado.');
+      const row = getClaim(o.literal);
+      if (['excerpt', 'attributed_to'].includes(o.campo) && row.afirmacao !== true) throw defeito(aqui, 'a citação e a atribuição exigem uma afirmação.');
+      const autores = row.attributed_to;
+      if (o.campo === 'attributed_to' && (!Array.isArray(autores) || !autores.every(x => typeof x === 'string'))) throw defeito(aqui, 'atribuição sem nomes literais.');
+      const texto = o.campo === 'attributed_to' ? /** @type {string[]} */ (autores).join(' / ') : o.campo === 'excerpt' ? row.excerpt : lang === 'en' ? row.ressalva_en : row.ressalva;
+      if (typeof texto !== 'string' || !texto.trim()) throw defeito(aqui, 'campo literal ausente.');
+      ctx.linhas.add(o.literal);
+      out.push({literal: {id: o.literal, campo: o.campo, texto, lingua: o.campo === 'ressalva' ? null : 'pt-PT'}});
       return;
     }
     if (chave === 'termo') {
@@ -363,7 +376,11 @@ export function portasDaExplicacao(e, lang) {
  * @param {string} slug @param {'pt'|'en'} lang
  */
 export function explicacaoResolvida(slug, lang) {
-  const e = /** @type {any} */ (explicacaoDeclarada(slug));
+  return resolverExplicacao(explicacaoDeclarada(slug), lang);
+}
+
+/** O mesmo resolvedor para explicações e itens de discussão. @param {any} e @param {'pt'|'en'} lang */
+export function resolverExplicacao(e, lang) {
   /** @type {{ linhas: Set<string>, sinais: SinalDaExplicacao[] }} */
   const ctx = { linhas: new Set(), sinais: [] };
   const titulo = resolver(e.titulo[lang], lang, 'titulo', ctx);
@@ -405,6 +422,7 @@ export function explicacaoResolvida(slug, lang) {
 export function textoDosPedacosDaExplicacao(pedacos, lang) {
   return pedacos.map((p) => {
     if (typeof p === 'string') return p;
+    if ('literal' in p) return p.literal.texto;
     if ('verbatim' in p) return p.texto;
     if ('termo' in p) return p.termo;
     if ('claim' in p) return `${valorNaLingua(getClaim(p.claim), lang)}${p.sufixo ?? ''}`;
