@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-19T19:34:52+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "C1",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a frase 3 da comparação nomeia a linha errada do quadro na página PT (com o PRR em vez de sem o PRR; a variação dessa linha é −1,4 %, não 3,0 %)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "a339f87ffd69f21c72184aaed44bb5c72f12ec01605c7d0410f10f0863f22fdc",
+   "sha256_depois": "fc1e15acbe0a6170c99eb98c0600d81e165e824c0cfa8c763c66aa4230dc74f4",
+   "contexto_antes": "s</span></span></a></span>.</p><p class=\"explicacao-p\" data-discussao-paragrafo=\"seccoes[2].conteudo[2].paragrafo\" data-astro-cid-i65nnz7s>O número do ministro coincide com a variação da linha da despesa efetiva consolidada sem o PRR, <span class=\"claim claim-com-chip\"><span data-claim=\"oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao\" class=\"claim-value\">3,0</span><span class=\"clai",
+   "contexto_depois": "s</span></span></a></span>.</p><p class=\"explicacao-p\" data-discussao-paragrafo=\"seccoes[2].conteudo[2].paragrafo\" data-astro-cid-i65nnz7s>O número do ministro coincide com a variação da linha da despesa efetiva consolidada com o PRR, <span class=\"claim claim-com-chip\"><span data-claim=\"oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao\" class=\"claim-value\">3,0</span><span class=\"clai"
+  },
+  {
+   "id": "C3",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a porta para a explicação leva um juízo sobre uma pessoa nomeada na página PT (a regra 5)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "fc1e15acbe0a6170c99eb98c0600d81e165e824c0cfa8c763c66aa4230dc74f4",
+   "sha256_depois": "50f2f90fc5b7610bacb7e88daa2839f78eca0224258f30fb16c4eb0738003549",
+   "contexto_antes": "egra-portas discussao-porta\" data-astro-cid-i65nnz7s><a data-discussao-explicacao data-voz href=\"/explicacoes/dinheiro-do-estado-2026/\" data-astro-cid-i65nnz7s>O que é a despesa efetiva consolidada →</a></p></section><section class=\"discussao-seccao\" data-discussao-parte=\"comparacao\" aria-labelledby=\"saude-no-orcamento-titulo saude-no-orcamento-comparacao\" ",
+   "contexto_depois": "egra-portas discussao-porta\" data-astro-cid-i65nnz7s><a data-discussao-explicacao data-voz href=\"/explicacoes/dinheiro-do-estado-2026/\" data-astro-cid-i65nnz7s>Porque é que o ministro se enganou →</a></p></section><section class=\"discussao-seccao\" data-discussao-parte=\"comparacao\" aria-labelledby=\"saude-no-orcamento-titulo saude-no-orcamento-comparacao\" "
+  },
+  {
+   "id": "C4",
+   "ficheiro": "src/data/discussao.mjs",
+   "descricao": "o ano escrito à mão na frase 2 da comparação em vez do token periodo (o resolvedor recusa algarismos nas palavras fixas)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "cbcfc7561d3246d15f17c4bb95537ebb3273988e31f0678acba9790a5ff26f1b",
+   "sha256_depois": "a5dc199d0c313d6646948dfab613756f0f1fcff4cd19ad550fa7aa6deb18d6dd",
+   "contexto_antes": "fference the RRP makes, compare the change in consolidated effective expenditure with the change in consolidated effective expenditure without the RRP.'),\n     p(['Os números da RTP, a queda, o montante e a diferença, coincidem com a linha da despesa total consolidada do quadro: de ', valor(saude+'total-consolidada-2026'), ' em ', periodo(saude+'total-consolidada-2026'), ' para ', valor(saude+'total-consolidada-2027'), ' em ', periodo(saude+'total-consolidada-2027'), ', uma variação de ', valor(saude+'total-consolidada-variaca",
+   "contexto_depois": "fference the RRP makes, compare the change in consolidated effective expenditure with the change in consolidated effective expenditure without the RRP.'),\n     p(['Os números da RTP, a queda, o montante e a diferença, coincidem com a linha da despesa total consolidada do quadro: de ', valor(saude+'total-consolidada-2026'), ' em 2026', ' para ', valor(saude+'total-consolidada-2027'), ' em ', periodo(saude+'total-consolidada-2027'), ', uma variação de ', valor(saude+'total-consolidada-variaca"
+  },
+  {
+   "id": "C2",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "a frase 4 da comparação diz na página EN que as duas linhas descem, contra os valores que a própria frase mostra (uma desce, a outra sobe)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "366597d1623347c7a1f66466f6be24590835915deea1f06fe80dc45084a321ff",
+   "sha256_depois": "fd3970c85429ebcdd855f76cdadd419b65dbbc284eece651ce1105d42615acdf",
+   "contexto_antes": "class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"oe-2027-saude-despesa-efetiva-consolidada-2026\" data-de-campo=\"reference_date\">2026</span>, which is why one line falls and the other rises.</p></section><section class=\"discussao-seccao\" data-discussao-parte=\"conclusao\" aria-labelledby=\"saude-no-orcamento-titulo saude-no-orcamento-conclusao\" data-",
+   "contexto_depois": "class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"oe-2027-saude-despesa-efetiva-consolidada-2026\" data-de-campo=\"reference_date\">2026</span>, which is why both lines fall.</p></section><section class=\"discussao-seccao\" data-discussao-parte=\"conclusao\" aria-labelledby=\"saude-no-orcamento-titulo saude-no-orcamento-conclusao\" data-"
+  },
+  {
+   "id": "C5",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "a frase 2 da comparação nomeia a linha errada do quadro na página EN (consolidated effective em vez de total consolidated)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "fd3970c85429ebcdd855f76cdadd419b65dbbc284eece651ce1105d42615acdf",
+   "sha256_depois": "4d7b7d0464ca31497dc020cd738ac59a75a90d7e1f36e7bd67abe88f2be70d75",
+   "contexto_antes": "=\"explicacao-p\" data-discussao-paragrafo=\"seccoes[2].conteudo[1].paragrafo\" data-astro-cid-i65nnz7s>RTP&#39;s figures, the fall, the amount and the difference, match the table&#39;s line for total consolidated expenditure: from <span class=\"claim claim-com-chip\"><span data-claim=\"oe-2027-saude-despesa-total-consolidada-2026\" class=\"claim-value\">18 125,9</span><a class=\"src-chip\" href=",
+   "contexto_depois": "=\"explicacao-p\" data-discussao-paragrafo=\"seccoes[2].conteudo[1].paragrafo\" data-astro-cid-i65nnz7s>RTP&#39;s figures, the fall, the amount and the difference, match the table&#39;s line for consolidated effective expenditure: from <span class=\"claim claim-com-chip\"><span data-claim=\"oe-2027-saude-despesa-total-consolidada-2026\" class=\"claim-value\">18 125,9</span><a class=\"src-chip\" href="
+  }
+ ]
+}

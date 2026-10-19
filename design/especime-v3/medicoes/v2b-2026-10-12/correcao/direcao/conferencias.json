@@ -1,0 +1,41 @@
+{
+ "nota": "As conferências que o construtor não pôde correr na passagem de correção, corridas pelo lugar de direção na worktree sobre a construção de f3ac9261 (as três do navegador) e contra o motor em master 570e411 (as duas do motor), com os códigos lidos dos ficheiros .codigo.",
+ "cabeca_construida": "f3ac9261",
+ "conferencias": {
+  "frases-compostas": {
+   "codigo": 0,
+   "inicio": "Mon 19 Oct 2026 19:32:59 UTC",
+   "fim": "Mon 19 Oct 2026 19:33:40 UTC",
+   "comando": "npm run check:frases-compostas",
+   "motor": null
+  },
+  "primeira": {
+   "codigo": 0,
+   "inicio": "Mon 19 Oct 2026 19:33:40 UTC",
+   "fim": "Mon 19 Oct 2026 19:35:43 UTC",
+   "comando": "npm run check:primeira",
+   "motor": null
+  },
+  "alvos": {
+   "codigo": 0,
+   "inicio": "Mon 19 Oct 2026 19:35:43 UTC",
+   "fim": "Mon 19 Oct 2026 19:38:33 UTC",
+   "comando": "npm run check:alvos",
+   "motor": null
+  },
+  "series": {
+   "codigo": 0,
+   "inicio": "Mon 19 Oct 2026 19:36:17 UTC",
+   "fim": null,
+   "comando": "npm run check:series",
+   "motor": "570e411"
+  },
+  "cruzamento": {
+   "codigo": 0,
+   "inicio": "Mon 19 Oct 2026 19:36:21 UTC",
+   "fim": null,
+   "comando": "npm run check:cruzamento -- --with-origin",
+   "motor": "570e411"
+  }
+ }
+}
