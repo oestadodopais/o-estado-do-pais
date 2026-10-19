@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-19T14:02:34+00:00",
+ "copia": "<pacote-pasta>/pacote-tap-c",
+ "plantas": [
+  {
+   "id": "tapc-p1",
+   "ficheiro": "motor/content/22 TAP/ledger.json",
+   "descricao": "a frase reposta do comunicado diz «até 18% superior» (o comunicado diz 16%)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "03c706bf44b8cfd38e755fa72e75c544bce31cac19a09ef1cc8a73f901c26e2c",
+   "sha256_depois": "9eaba9b6e966e6330ccbb88249f66c3ba0bf3fd38a7137960c73109ac0ddc062",
+   "contexto_antes": "t\"\n        }\n      ]\n    },\n    {\n      \"id\": \"afirmacao-governo-tap-comparacao-propostas\",\n      \"value\": \"16\",\n      \"source_value\": \"16\",\n      \"unit\": \"%\",\n      \"name\": \"Na componente financeira, a proposta da Lufthansa para a aquisição de até 49,9% do capital social da TAP é até 16% superior à apresentada pela Air France/KLM.\",\n      \"name_source\": \"Comunicado; parágrafo iniciado por «Na componente financeira,»\",\n      \"excerpt\": \"Na componente financeira, a proposta da Lufthansa p",
+   "contexto_depois": "t\"\n        }\n      ]\n    },\n    {\n      \"id\": \"afirmacao-governo-tap-comparacao-propostas\",\n      \"value\": \"16\",\n      \"source_value\": \"16\",\n      \"unit\": \"%\",\n      \"name\": \"Na componente financeira, a proposta da Lufthansa para a aquisição de até 49,9% do capital social da TAP é até 18% superior à apresentada pela Air France/KLM.\",\n      \"name_source\": \"Comunicado; parágrafo iniciado por «Na componente financeira,»\",\n      \"excerpt\": \"Na componente financeira, a proposta da Lufthansa p"
+  },
+  {
+   "id": "tapc-p2",
+   "ficheiro": "motor/content/22 TAP/ledger.json",
+   "descricao": "o comparativo de 2024 do resultado individual volta a sair truncado no excerto (a p. 34 imprime (11.955.562))",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "9eaba9b6e966e6330ccbb88249f66c3ba0bf3fd38a7137960c73109ac0ddc062",
+   "sha256_depois": "1b504011c4f3c149ea9c6842533a11ad6d0bac10d10fbc312c8d3b35ba785495",
+   "contexto_antes": "ue\": \"(80.941.631)\",\n      \"unit\": \"euros\",\n      \"name\": \"Resultado líquido do exercício\",\n      \"name_source\": \"PDF p. 34; Resultado líquido do exercício; coluna 2025\",\n      \"excerpt\": \"Resultado líquido do exercício (80.941.631) (11.955.562)\",\n      \"source_excerpt\": \"Resultado líquido do exercício (80.941.631) (11.955.562)\",\n      \"source_url\": \"https://publish-p133109-e1368204.adobeaemcloud.com/c",
+   "contexto_depois": "ue\": \"(80.941.631)\",\n      \"unit\": \"euros\",\n      \"name\": \"Resultado líquido do exercício\",\n      \"name_source\": \"PDF p. 34; Resultado líquido do exercício; coluna 2025\",\n      \"excerpt\": \"Resultado líquido do exercício (80.941.631) (11.955.56\",\n      \"source_excerpt\": \"Resultado líquido do exercício (80.941.631) (11.955.562)\",\n      \"source_url\": \"https://publish-p133109-e1368204.adobeaemcloud.com/c"
+  },
+  {
+   "id": "tapc-p3",
+   "ficheiro": "motor/publisher/tap.py",
+   "descricao": "uma régua nova do gerador fica vazia (require(True or …)): deixa de recusar o que foi feita para recusar",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "58480e6b9ac9cf627df31b3309056cef8af956486a67f02ea1219ff44179ef68",
+   "sha256_depois": "1b89587dcb69a71ad27710f8e08aaa55272fe1743c08bcc25fb76da549938254",
+   "contexto_antes": "e'].endswith('.pdf'):return\n    page=spec.get('page',1)\n    require(isinstance(page,int) and 1<=page<=len(pages(spec['file'])),'TAP página: fora do documento')\n    require('columns' in spec,'TAP colunas: declaração ausente '+spec['id'])\n    box=spec.get('box')\n    require(spec.get('method','layout')!=spec.get('reference_method','layout'),'TAP continuidade: os caminhos de extração têm de ser di",
+   "contexto_depois": "e'].endswith('.pdf'):return\n    page=spec.get('page',1)\n    require(isinstance(page,int) and 1<=page<=len(pages(spec['file'])),'TAP página: fora do documento')\n    require(True or 'columns' in spec,'TAP colunas: declaração ausente '+spec['id'])\n    box=spec.get('box')\n    require(spec.get('method','layout')!=spec.get('reference_method','layout'),'TAP continuidade: os caminhos de extração têm de ser di"
+  },
+  {
+   "id": "tapc-p4",
+   "ficheiro": "motor/content/22 TAP/fontes.json",
+   "descricao": "o original português das contas de 2023 passa a «tentativa sem documento utilizável» no catálogo, enquanto linhas o citam",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ebd2e77d4e48476d7f0221228c08c22d05c19d0d70d90c815b3c473a81b26a2d",
+   "sha256_depois": "d56477d20e1013ad145800cf5eba76b39fa23529656dedf7d7c53cb1e39b4398",
+   "contexto_antes": "liza Relatório 10/2018, 2.ª Secção, 20 de junho de 2018; corpo não obtido.\",\n    \"receipt\": \"tc-indice-2018.html.pedido.json\",\n    \"document_date\": null\n  },\n  {\n    \"file\": \"tap-2023-contas-pt.pdf\",\n    \"title\": \"Original português das contas\",\n    \"status\": \"original português, prova no livro\",\n    \"note\": \"Original prevalece sobre a tradução.\",\n    \"receipt\": \"tap-2023-contas-pt.pdf.pedido.json\",\n    \"document_date\": null\n  },\n  {\n    \"file\": \"tap-2024-contas-pt.pdf\",\n    \"title\": \"Original português das contas\",\n    \"status\": \"original português, prova no livro\",\n    \"note\": \"Origi",
+   "contexto_depois": "liza Relatório 10/2018, 2.ª Secção, 20 de junho de 2018; corpo não obtido.\",\n    \"receipt\": \"tc-indice-2018.html.pedido.json\",\n    \"document_date\": null\n  },\n  {\n    \"file\": \"tap-2023-contas-pt.pdf\",\n    \"title\": \"Original português das contas\",\n    \"status\": \"tentativa sem documento utilizável\",\n    \"note\": \"Original prevalece sobre a tradução.\",\n    \"receipt\": \"tap-2023-contas-pt.pdf.pedido.json\",\n    \"document_date\": null\n  },\n  {\n    \"file\": \"tap-2024-contas-pt.pdf\",\n    \"title\": \"Original português das contas\",\n    \"status\": \"original português, prova no livro\",\n    \"note\": \"Origi"
+  },
+  {
+   "id": "tapc-p5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a tabela das afirmações do relatório diz «até 18% superior» (a linha e o comunicado dizem 16%)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "08d52b27eb81d62ee37c278fd625f6d06d7add4f7bd73e4d5a1931c3441e20d2",
+   "sha256_depois": "daf12dd10fadc2a7f06dabed8373d594c9da90dd971632ec63e8035b773c2845",
+   "contexto_antes": "gc25/comunicacao/noticias/governo-seleciona-a-lufthansa-para-aquisicao-de-ate-499-do-capital-social-da-tap); Comunicado; parágrafo iniciado por «Na componente financeira,» | «Na componente financeira, a proposta da Lufthansa para a aquisição de até 49,9% do capital social da TAP é até 16% superior à apresentada pela Air France/KLM.» | 16 %. Termo ou projeção anunciado pelo Governo. Não prova assinatura, pagamento, execução das salvaguardas ou realização da valorização futura. Conferir: [",
+   "contexto_depois": "gc25/comunicacao/noticias/governo-seleciona-a-lufthansa-para-aquisicao-de-ate-499-do-capital-social-da-tap); Comunicado; parágrafo iniciado por «Na componente financeira,» | «Na componente financeira, a proposta da Lufthansa para a aquisição de até 49,9% do capital social da TAP é até 18% superior à apresentada pela Air France/KLM.» | 16 %. Termo ou projeção anunciado pelo Governo. Não prova assinatura, pagamento, execução das salvaguardas ou realização da valorização futura. Conferir: ["
+  }
+ ]
+}
