@@ -17,8 +17,8 @@ const itens = itensResolvidos(lang);
     <p class="explicacao-p discussao-ambito">{DISCUSSAO.ambito[lang]}</p>
     <ul class="discussao-sumario">{itens.map(e => <li><a href={portaDoItem(e.slug,lang)} data-discussao-porta={e.slug}>{e.tituloTexto}</a></li>)}</ul>
     {itens.map(e => <article class="discussao-item" id={e.slug} data-discussao={e.slug}>
-      <h2 class="discussao-titulo" data-discussao-titulo>{e.tituloTexto}</h2>
-      {e.seccoes.map(sec => <section class="discussao-seccao" data-discussao-parte={sec.id} aria-labelledby={`${e.slug}-${sec.id}`}>
+      <h2 class="discussao-titulo" id={`${e.slug}-titulo`} data-discussao-titulo>{e.tituloTexto}</h2>
+      {e.seccoes.map(sec => <section class="discussao-seccao" data-discussao-parte={sec.id} aria-labelledby={`${e.slug}-titulo ${e.slug}-${sec.id}`}>
         <h3 class="discussao-rotulo" id={`${e.slug}-${sec.id}`}>{sec.titulo}</h3>
         {sec.blocos.map(b => b.tipo === 'paragrafo' && <p class="explicacao-p" data-discussao-paragrafo={b.caminho}><FraseDaExplicacao partes={b.pedacos} lang={lang} /></p>)}
       </section>)}

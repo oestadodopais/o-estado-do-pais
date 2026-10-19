@@ -11,4 +11,4 @@
 .pp-discussao { margin-block: 2rem; padding-block: 1.25rem; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); }
 .pp-discussao h2 a { color: inherit; }
 .discussao-porta { max-width: var(--measure); }
-.discussao-porta a { line-height: 1.5; }
+.discussao-porta a { display: block; min-height: 44px; padding-block: .5rem; line-height: 1.5; }

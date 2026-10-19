@@ -295,6 +295,11 @@ const TETOS = {
      a família já tinha. Nenhuma página anterior muda de destinos repetidos. medir-l1.mjs prova a
      comparação e planta uma repetição na página da série e uma divergência entre o teto e o registo,
      exigindo a mensagem de cada recusa. O horizonte continua a zero. */
+  /* V2-b: de 2780 para 2782, apenas pelas duas edições novas da discussão.
+     retoma2/l1-v2b.json, nas medições do V2-b, reconcilia a contagem com esta régua,
+     enumera os três destinos repetidos em cada página nova e prova quatro plantas.
+     O conjunto anterior de páginas mantém-se; as multiplicidades históricas não
+     são declaradas iguais. A regra de contar os destinos permanece intacta. */
   l1_paginas: TETO_B1.l1_paginas, // B1: o teto medido está escrito uma só vez no registo.
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.
