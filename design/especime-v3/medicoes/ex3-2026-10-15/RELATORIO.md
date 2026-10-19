@@ -263,3 +263,61 @@ Os achados 10, 12, 14, 16, 17 e 19, e as partes dos achados 11 e 20 que não cab
 Estado: concluído no âmbito do construtor, sujeito à leitura curta do diff.
 
 tokens used: não disponível
+
+## A terceira passagem de correção de 19.10.2026
+
+1. A forma do PDF já não deriva da célula. `pdftotext -layout` lê o corpo alojado; o gerador procura a linha de Portugal na página e compara a coluna com o formato da célula. As páginas usadas pelas quatro linhas não têm texto extraível: as quatro linhas omitem a atribuição «PDF, página» e dizem a ausência na nota interna e na ressalva pública das duas edições. A prova sintética de texto extraível passa; as quatro formas divergentes e as quatro células trocadas são recusadas. `publisher.ex3_test` conserva as plantas anteriores.
+
+2. A frase das pensões inclui agora o pessoal no ativo nas duas edições. O apoio continua a ser a frase inteira da definição selada. A X6 confere a composição e este guião confere a presença da parte reposta no HTML.
+
+3. Os três compromissos da NATO entram pela mesma travessia e com os excertos literais da página alojada. Os recibos das duas edições foram comparados com as linhas exportadas. EX3-12: a gramática recusa algarismos em prosa fixa; `nato-cimeira-haia-2025` é a quarta linha textual autorizada, com «2025 NATO Summit in The Hague» e o período da cimeira, lidos na mesma frase do compromisso. O prazo da linha de Haia continua a ser 2035. As partes novas da auditoria citam as respetivas linhas; P2, ministérios, glosas e os seus apoios mantêm-se.
+
+A extração usa os documentos, recibos e direitos já alojados; nenhum novo pedido HTTP. Comandos: `python3 -m publisher.ex3 --site <worktree>`, `python3 -m publisher.export_site_rows --manifest publisher/manifest.ex3.json --site <worktree> --write`, `node design/especime-v3/medicoes/ex3-2026-10-15/compor.mjs`. As medições desta passagem são escritas por `medir-terceira.mjs` em `terceira-correcao/`, preservando as medições anteriores.
+
+### Linhas e prova documental
+
+| Linha | Valor | Período | Documento selado |
+| --- | --- | --- | --- |
+| nato-cimeira-haia-2025 | 2025 NATO Summit in The Hague | 2025 | d42b32910ffc936925c25cb7a34b1e48b88078d578c5bc3760160e2908f5287c |
+| nato-compromisso-gales-2014 | 2 | 2014 | d42b32910ffc936925c25cb7a34b1e48b88078d578c5bc3760160e2908f5287c |
+| nato-compromisso-haia-2035 | 5 | 2035 | d42b32910ffc936925c25cb7a34b1e48b88078d578c5bc3760160e2908f5287c |
+| nato-compromisso-haia-essencial-2035 | 3,5 | 2035 | d42b32910ffc936925c25cb7a34b1e48b88078d578c5bc3760160e2908f5287c |
+| nato-defesa-portugal-eur-2026 | 6 748 | 2026 | 11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988 |
+| nato-defesa-portugal-pib-2024 | 1,55 | 2024 | 11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988 |
+| nato-defesa-portugal-pib-2025 | 2,01 | 2025 | 11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988 |
+| nato-defesa-portugal-pib-2026 | 2,10 | 2026 | 11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988 |
+
+### P1 copiado das páginas construídas
+
+#### PT
+
+3,25 de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços), em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo; a definição da NATO inclui as pensões de reforma pagas diretamente pelo governo aos militares na reforma e aos funcionários civis dos departamentos militares, e as relativas ao pessoal no ativo. Para Portugal, a NATO publica 1,55 % do PIB em 2024 e, como estimativas, 2,01 % (estimativa da NATO) em 2025 e 2,10 % (estimativa da NATO) em 2026 (a tabela a preços constantes), e 6 748 (estimativa da NATO) milhões de euros em 2026 (a tabela a preços correntes, também uma estimativa). A referência da própria NATO é a dos seus compromissos: 2 % do PIB desde a cimeira de Gales de 2014, e, desde a cimeira de Haia de 2025, 5 % do PIB por ano até 2035, dos quais pelo menos 3,5 % em requisitos essenciais de defesa pela definição da NATO.
+
+#### EN
+
+3,25 of every hundred euros on this page are the «Defence» function of central administration's consolidated effective expenditure (spending without transactions in financial assets and liabilities or transfers between its own services), in public accounting. Defence spending as a share of GDP, as NATO publishes it, is another measure, under NATO's own definition: payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole; NATO's definition includes retirement pension payments made directly by the government to retired military and civilian employees of military departments and for active personnel. For Portugal, NATO publishes 1,55 % of GDP in 2024 and, as estimates, 2,01 % (NATO estimate) in 2025 and 2,10 % (NATO estimate) in 2026 (the table at constant prices), and 6 748 (NATO estimate) million euros in 2026 (the table at current prices, also an estimate). NATO's own reference is its commitments: 2 % of GDP since the 2014 Wales Summit, and, since the 2025 Hague Summit, 5 % of GDP a year by 2035, of which at least 3,5 % for core defence requirements under NATO's definition.
+
+A primeira corrida recusou a falta de cobertura das quatro linhas novas na A7. Foram declaradas fora da distribuição por ministérios, porque são compromissos da Aliança e a data da cimeira. A conferência A7 foi repetida sem mudar a régua. A edição da cópia HTML foi declarada sem língua. O verify detetou ainda o conjunto fechado de rótulos por atualizar, os localizadores HTML por declarar e a porta do Método repetida nos recibos novos. O conjunto inclui agora as linhas efetivamente exportadas, as plantas dos localizadores HTML recusam trocas de identidade, período e rótulo, e os recibos novos têm uma só porta do Método. O teto da L1 foi conservado. Os portões foram repetidos.
+
+### Provas e cabeças
+
+Construção, portões e capturas: `4e04e93f8817daf2ea3178ceddd822ee26669acf`. Motor: `78a5e500be4789cdc5a99618a0b35b0f4f63d912`.
+
+| Conferência | Código lido |
+| --- | --- |
+| build | 0 |
+| verify | 0 |
+| typecheck | 0 |
+| motor | 0 |
+| series | 0 |
+| cruzamento | 0 |
+| plantas-sitio | 0 |
+| plantas-motor | 0 |
+
+Capturas em `<temporario>/ex3-terceira-capturas-1`: 20 páginas, larguras 390, 768, 1024, 1280, 1600 px, 0 falhas; resumos e largura conferidos por guião. P1 e o recibo de 2024 inspecionados nas duas edições a 390 e 1280 px.
+
+O registo do lançador foi preservado em `<temporario>/ex3-terceira-lancador/`, fora dos portões e dos commits. Nenhum PNG no repositório; nenhum push. Leitura curta do diff e aterragem a cargo do lugar de direção. A corrida após o commit deste relatório fica em `<temporario>/ex3-terceira-portoes-final/`, com os códigos e a cabeça próprios; não muda o conteúdo.
+
+Estado: concluído no âmbito do construtor, sujeito à leitura curta do diff.
+
+tokens used: não disponível
