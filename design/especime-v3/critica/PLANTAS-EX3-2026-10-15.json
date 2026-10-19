@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-19T10:50:56+00:00",
+ "copia": "<pacote-pasta>/pacote-ex3",
+ "plantas": [
+  {
+   "id": "ex3-p1",
+   "ficheiro": "built/explicacoes/dinheiro-do-estado-2026/index.html",
+   "descricao": "a parte do PIB da NATO em 2025 na página portuguesa construída passa de 2,01 a 2,10 (a célula Table 3!M27 do Excel alojado e a linha dizem 2,01)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "e3aebf4ed794302adb62701c833ef0cd6103576af402b29489273815ee879b67",
+   "sha256_depois": "86bf85a320c1a590884cda3dde2f38e3b709eea48e5ae3e627843153a27b52cc",
+   "contexto_antes": "a preços constantes, estimativas de <span class=\"claim claim-com-chip claim-com-provisorio\"><span data-claim=\"nato-defesa-portugal-pib-2025\" class=\"claim-value\">2,01</span><span class=\"claim-sufixo\"> %</span><span class=\"claim-provisorio\"> (estimativa da NATO)</span><a class=\"src-chip\" href=\"/livro-razao/nato-defesa-portugal-pib-2",
+   "contexto_depois": "a preços constantes, estimativas de <span class=\"claim claim-com-chip claim-com-provisorio\"><span data-claim=\"nato-defesa-portugal-pib-2025\" class=\"claim-value\">2,10</span><span class=\"claim-sufixo\"> %</span><span class=\"claim-provisorio\"> (estimativa da NATO)</span><a class=\"src-chip\" href=\"/livro-razao/nato-defesa-portugal-pib-2"
+  },
+  {
+   "id": "ex3-p2",
+   "ficheiro": "src/data/origens-ex3.json",
+   "descricao": "a definição da NATO exportada perde «municipal» (a cópia alojada definicao.html e o §0.3 do mandato dizem «regional, local and municipal authorities»)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "5918f5dfe470e1b272eb582b95645e6b835b80203bf804eec9c8bb41a7e39336",
+   "sha256_depois": "54edf3056be7136fc06b58fc24a87eebcad2a18e5c3d2aa5b41bd7b09619f6e0",
+   "contexto_antes": " commitment\",\n    \"url\": \"https://www.nato.int/en/what-we-do/introduction-to-nato/defence-expenditures-and-natos-5-commitment\",\n    \"lido\": \"2026-10-15\",\n    \"excerto\": \"Defence expenditure is defined by NATO as payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of (1) its own armed forces, (2) those of other Allies or (3) the needs of the Alliance as a whole.\\nAllies agreed to allocate ",
+   "contexto_depois": " commitment\",\n    \"url\": \"https://www.nato.int/en/what-we-do/introduction-to-nato/defence-expenditures-and-natos-5-commitment\",\n    \"lido\": \"2026-10-15\",\n    \"excerto\": \"Defence expenditure is defined by NATO as payments made by an Allied national government (excluding regional and local authorities) specifically to meet the needs of (1) its own armed forces, (2) those of other Allies or (3) the needs of the Alliance as a whole.\\nAllies agreed to allocate "
+  },
+  {
+   "id": "ex3-p4",
+   "ficheiro": "built/en/explainers/dinheiro-do-estado-2026/index.html",
+   "descricao": "a marca «(provisional data)» sai só do rótulo «defence 0,9 %» do Eurostat na edição inglesa construída (a linha declara a bandeira p)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "020498f948615546d6a504cb9e303636d533849273bf88df3d4dd9efabef20d9",
+   "sha256_depois": "666a4774c28d9e5df9c4c1f72932a73cd99eea98266db215b1c21da9b26e538d",
+   "contexto_antes": "/span></span></a></span>, defence <span class=\"claim claim-com-chip claim-com-provisorio\"><span data-claim=\"despesa-por-funcao-2024-gf02-pt\" class=\"claim-value\">0,9</span><span class=\"claim-sufixo\"> %</span><span class=\"claim-provisorio\"> (provisional data)</span><a class=\"src-chip\" href=\"/en/ledger/despesa-por-funcao-2024-gf02-pt\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Eurostat\" title=\"Eurostat\"><span class=\"",
+   "contexto_depois": "/span></span></a></span>, defence <span class=\"claim claim-com-chip claim-com-provisorio\"><span data-claim=\"despesa-por-funcao-2024-gf02-pt\" class=\"claim-value\">0,9</span><span class=\"claim-sufixo\"> %</span><a class=\"src-chip\" href=\"/en/ledger/despesa-por-funcao-2024-gf02-pt\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Eurostat\" title=\"Eurostat\"><span class=\""
+  },
+  {
+   "id": "ex3-p5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o sha256 do Excel da NATO alojado no relatório difere num carácter do manifesto e do ficheiro do pacote",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "cb40db407035e1e5d97aadfadb5ef1b87ee0bcc417d18afff29bd95b2cb4adf2",
+   "sha256_depois": "4eeda5fbca29f43cf1082907167bc2fa26711fc2adcc10fee5d10d4ed979c16a",
+   "contexto_antes": "tps://www.nato.int/en/what-we-do/introduction-to-nato/defence-expenditures-and-natos-5-commitment |\n| def-exp-2026-en.xlsx | 2026-10-15T18:46:37.646269+00:00 | 11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988 | https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2026-en.xlsx |\n| def-exp-2026-en.pdf | 2026-10-15T18:46:39.806294+00:00 | efd05e4a7e",
+   "contexto_depois": "tps://www.nato.int/en/what-we-do/introduction-to-nato/defence-expenditures-and-natos-5-commitment |\n| def-exp-2026-en.xlsx | 2026-10-15T18:46:37.646269+00:00 | 11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0989 | https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2026-en.xlsx |\n| def-exp-2026-en.pdf | 2026-10-15T18:46:39.806294+00:00 | efd05e4a7e"
+  },
+  {
+   "id": "ex3-p3",
+   "ficheiro": "motor/content/21 Defesa NATO/ledger.json",
+   "descricao": "o localizador da linha nato-defesa-portugal-pib-2026 no livro do motor passa a Table 3!N26 (a linha de outro país) com o valor igual",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "fb1824dfd968055554c61bc473d948b86466102b917b5c9b477f2cedbfeb055f",
+   "sha256_depois": "afe827885b18601536a4f9314d6a67f57b0ffd7f333f440705578dedd1e7d2cc",
+   "contexto_antes": "no. Estimativa da NATO.\",\n      \"evidence\": {\n        \"file\": \"def-exp-2026-en.xlsx\",\n        \"sha256\": \"11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988\",\n        \"locator\": \"Table 3!N27; Portugal; 2026e\"\n      },\n      \"unit\": \"% do PIB\",\n      \"reference_date\": \"2026\",\n      \"document\": {\n        \"title\": \"Defence Investment of NATO Countries (2014-2026)\",\n   ",
+   "contexto_depois": "no. Estimativa da NATO.\",\n      \"evidence\": {\n        \"file\": \"def-exp-2026-en.xlsx\",\n        \"sha256\": \"11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988\",\n        \"locator\": \"Table 3!N26; Portugal; 2026e\"\n      },\n      \"unit\": \"% do PIB\",\n      \"reference_date\": \"2026\",\n      \"document\": {\n        \"title\": \"Defence Investment of NATO Countries (2014-2026)\",\n   "
+  }
+ ]
+}

@@ -83,6 +83,7 @@
  * (`InstrumentoConvergencia.astro`), e o que fazer com eles é da cadeira: está
  * na nota da etapa e em ISSUES.
  */
+import { valorNaLingua } from '../lib/valor-na-lingua.mjs';
 import { notaDaBandeira } from '../lib/bandeira-da-fonte.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import Provenance from './Provenance.astro';
@@ -193,7 +194,7 @@ const TagDoValor = porta && plano && !chip ? 'a' : Tag;
 /* B1, achado 19: entre algarismos, também o espaço comum e o espaço fino
    passam a U+00A0. O valor mantém os mesmos algarismos e posições; apenas o
    separador dos milhares deixa de admitir uma quebra. */
-const valor = String(claim.value).replace(/(?<=\d)[ \u2009\u202F](?=\d)/g, '\u00A0');
+const valor = valorNaLingua(claim, lang).replace(/(?<=\d)[ \u2009\u202F](?=\d)/g, '\u00A0');
 
 /** As etiquetas de texto de SVG, onde um `<span>` não pode entrar. */
 const TAGS_DE_SVG = new Set(['text', 'tspan', 'textPath']);

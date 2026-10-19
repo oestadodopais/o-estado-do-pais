@@ -758,3 +758,21 @@ A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recib
 | bloco | linhas | leitura | quem, quando |
 | --- | --- | --- | --- |
 | me1 | 64 novas, 14 delas postas em dia na passagem de correção, 8 acrescentadas pela decisão do ME1-21, 5 postas em dia e 2 acrescentadas depois da leitura a frio, e as 2 da escala postas em dia depois da leitura curta; 24 retiradas; 2 saem do ficheiro | lida pelo Codex gpt-6-astra a 15.10.2026, cinco plantas em cinco, e pelo lugar de direção, e a leitura curta da passagem de correção, 15.10.2026, cinco plantas em cinco | Claude Opus 5.5, 15.10.2026: as linhas novas são os blocos do Método como a régua os lê, tirados das páginas construídas por `design/especime-v3/medicoes/me1-2026-10-15/inventario-me1.py`; as retiradas são as da H4, do TP1 e do sinal das fontes, que o Método deixou de render. A leitura cruzada pelo Codex gpt-6-astra, prevista no mandato, fica pendente antes da fusão. Na passagem de correção, depois da leitura das frases construídas pelo lugar de direção, sete parágrafos mudaram nas duas edições e as 14 linhas reescreveram-se pelo mesmo guião, a partir das páginas construídas. Pela decisão do lugar de direção sobre a questão ME1-21, as quatro primeiras recusas do Método entram vivas nas duas edições (8 linhas, divulgação, como a quinta), pelo mesmo guião: estavam na página desde antes do bloco e nenhum portão as prendia. Depois da leitura a frio do Codex, pelas decisões do lugar de direção (§1.196, pontos 8 a 14), as linhas de quatro parágrafos mudados reescreveram-se pelo mesmo guião (5 linhas: duas frases da secção «Como se confere» nas duas edições e a dos estudos de Évora na inglesa), e a frase da escala do fecho entrou em palavras correntes nas duas edições, com a antiga, do bloco dominio, retirada com a razão do achado 11. Depois da leitura curta da passagem de correção (o achado 7), a frase da escala diz «os valores onde a cor muda», nas duas edições, e a redação intermédia, «as classes da escala», fica na secção ME1 como retirada, com a razão. |
+
+## EX3: denominadores e comparação da defesa
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| ex3 | Contagens dos índices reconciliadas com o HTML construído | por ler | As duas contagens anteriores ficam retiradas. As novas incluem as três linhas da NATO. As frases da explicação são conferidas pelas X1, X2 e X6; as duas exceções de contexto da voz conservam o P1 e o P2 literais do mandato, com plantas fora desses contextos. A leitura cruzada pertence à direção. |
+
+## EX3: segunda correção de 19.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| ex3 | As duas contagens dos índices incluem a linha da NATO de 2024 | por ler | Codex gpt-6-astra: contagens extraídas do HTML, anteriores retiradas com a razão. A X13 confere os apoios junto dos valores; a X6 confere as frases prescritas. Leitura curta do diff pela direção. |
+
+## EX3: terceira correção de 19.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| ex3 | As contagens incluem os compromissos e a data da cimeira da NATO | por ler | Contagens medidas pela função da prova; as anteriores ficam retiradas. Os portões conferem as frases construídas e os apoios. Leitura curta do diff pela direção. |

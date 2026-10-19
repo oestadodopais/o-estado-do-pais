@@ -1,0 +1,12 @@
+{
+  "exporter": "ResearchHub/publisher/ex3.py",
+  "files": {
+    "provas.json": {
+      "destino": "ledger/provas/ex3",
+      "origin_path": "content/21 Defesa NATO/provas-alojadas.json",
+      "origin_sha256": "13853835983e8914491cb01cb9f9be27bebc6e73db5841a12444c0b843d507c1",
+      "exported_sha256": "13853835983e8914491cb01cb9f9be27bebc6e73db5841a12444c0b843d507c1",
+      "exporter": "ResearchHub/publisher/ex3.py"
+    }
+  }
+}

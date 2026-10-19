@@ -553,14 +553,9 @@ const ficha = [
      * O LOCALIZADOR ESTÁ NA LÍNGUA DO DOCUMENTO QUE ELE LOCALIZA (I91,
      * 29.08.2026), e por isso leva a marca do título.
      *
-     * «linha de ÁGUEDA, coluna (5) do quadro — Dívida total (Exclui dívidas não
-     * orçamentais, exceções previstas na Lei n.º 73/2013, no OE/2024 e FAM)» é
-     * português, e é onde vivem 928 das ocorrências do nome daquela lei na
-     * edição inglesa. Não é uma suposição: os 2 216 localizadores do
-     * livro-razão pertencem, TODOS, a linhas cujo documento está declarado
-     * português, e `scripts/check-lingua.mjs` fecha a construção no dia em que
-     * um localizador aparecer numa linha de documento inglês — que é o dia em
-     * que esta regra deixa de valer e alguém tem de decidir.
+     * Os localizadores ingleses da NATO também seguem a língua do título.
+     * As cadeias estão declaradas na tabela de línguas; a L7 e a L4b
+     * conferem a declaração e a língua efetiva nas duas edições.
      */
     lingua: lang === 'en' && claim.document?.locator_en ? null : linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
   },
@@ -1932,7 +1927,8 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
 
       <p class="rodape-nav aparelho-saidas">
         <a href={caminhoDoLivro(lang)}>{s.livro.linha.voltar}</a>
-        <a href={`${routePath('metodo', lang)}#livro-razao`}>{s.livro.metodoLink}</a>
+        {/* EX3: a porta da releitura já abre o Método nestes recibos novos. */}
+        {!((id.startsWith('nato-defesa-portugal-') || id.startsWith('nato-compromisso-') || id === 'nato-cimeira-haia-2025') && verificacoes.length === 0) && <a href={`${routePath('metodo', lang)}#livro-razao`}>{s.livro.metodoLink}</a>}
       </p>
     </aside>
   </div>

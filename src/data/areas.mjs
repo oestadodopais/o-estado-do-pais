@@ -703,6 +703,18 @@ export const AREAS = [
  */
 export const SEM_AREA = [
   {
+    estudos: ['oe-2026'],
+    id: /^nato-(?:compromisso-(?:gales-2014|haia-2035|haia-essencial-2035)|cimeira-haia-2025)$/,
+    assunto: 'Compromissos da NATO na explicação EX3',
+    motivo: 'São compromissos da Aliança e a data da cimeira, usados como referência na explicação. Não são despesa atribuída a um ministério português.',
+  },
+  {
+    estudos: ['oe-2026'],
+    id: /^nato-defesa-portugal-(?:pib-202[456]|eur-2026)$/,
+    assunto: 'Valores da NATO para a comparação da explicação EX3',
+    motivo: 'O EX3 compara a medida da NATO com a despesa por função do Orçamento. Não distribui o agregado da NATO pelos ministérios; uma atribuição ministerial não foi declarada neste bloco.',
+  },
+  {
     estudos: ['oe-2027'],
     id: /^(?:oe-2027-(?:saude|ppp|cenario)-|afirmacao-(?:leitao-amaro-saude|pcp-ppp-rodoviarias|rtp-saude-queda)-oe2027-)/,
     assunto: 'Fontes da vigilância do Orçamento do Estado para 2027, bloco V2-a',

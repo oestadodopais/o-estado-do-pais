@@ -1,0 +1,53 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "nato-defesa-portugal-eur-2026"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "6 748"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Table 1: Core defence expenditure"
+name_source: "Table 1!A1"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "NATO"
+document:
+  title: "Defence Investment of NATO Countries (2014-2026)"
+  edition: "2026"
+  locator: "Table 1!N27; Portugal (Euros); 2026e"
+  source_sha256: "11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988"
+  kind: "ficheiro"
+source_url: "https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2026-en.xlsx"
+access_date: "2026-10-15"
+reference_date: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Table 1: Core defence expenditure; Million national currency units; Current prices. Table 1!N27; Portugal (Euros); 2026e: 6748 (Excel; number_format: General). Forma pelo formato da célula: 6748. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 6 748 e"
+
+# A bandeira tal como a fonte a escreve, e o que ela quer dizer.
+source_flag: "e"
+source_flag_note: "estimativa da NATO"
+source_flag_note_en: "NATO estimate"
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Estimativa da NATO. Pagamentos feitos por um governo nacional aliado, excluindo as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Milhões de euros, a preços correntes. A forma impressa no PDF não foi lida porque a página não tem texto extraível."
+ressalva_en: "NATO estimate. Payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. Million euros, at current prices. The printed form in the PDF was not read because the page has no extractable text."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: Table 1!N27; Portugal (Euros); 2026e. Excerto composto a partir dos cabeçalhos e células do Excel. A forma impressa no PDF não foi lida porque a página não tem texto extraível (página 5). A marca e, quando presente, vem do cabeçalho do ano. Estimativa da NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-defesa-portugal-eur-2026."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

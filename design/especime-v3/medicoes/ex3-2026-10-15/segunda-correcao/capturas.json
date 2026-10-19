@@ -1,0 +1,1687 @@
+{
+  "cabeca": "96c315ffa40f8ff90b5fcf0e62ccd438aa83aa68",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "explicacao-pt-390.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 6450,
+      "sha256": "2471d1f81a8ce7f82e0bac4c5628c8676d679ba9207db32f6c3be30f4883e835",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-pt-390-abertura.png",
+          "seletor": "[data-explicacao-paragrafo=\"abertura[0]\"]",
+          "sha256": "415ee8999e3bd81de945034ddc2eb31aaa6907e5f79ef24664ac7c46472db27f"
+        },
+        {
+          "ficheiro": "explicacao-pt-390-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "92247e5241e0a4df46ccbe7bd921628035e4c369aacf6ca20c3247658c6f2e5f"
+        },
+        {
+          "ficheiro": "explicacao-pt-390-p2.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[3].paragrafo\"]",
+          "sha256": "e0bdfd566c6c8a4350988a470d3d24eaa80e6ee36d7570bc280a27adef1778c6"
+        },
+        {
+          "ficheiro": "explicacao-pt-390-ministerios.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[1].conteudo[0].paragrafo\"]",
+          "sha256": "37b322f1a3975406513f6e52678f08122a71dd491c59ba51c220aea8df38584f"
+        },
+        {
+          "ficheiro": "explicacao-pt-390-titulo-funcoes.png",
+          "seletor": "[data-explicacao-secao=\"por-funcao\"] figcaption",
+          "sha256": "a73ee72adfce9ada49b065538ca7de59aa5fc1bf1f334c8376a88b2960e233df"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-pt-768.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4535,
+      "sha256": "1fe1932a7c84777f245cf1e6117d2777aabc2d090910dee27ef8ac5e4746e653",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-pt-768-abertura.png",
+          "seletor": "[data-explicacao-paragrafo=\"abertura[0]\"]",
+          "sha256": "c85dae180ac5869f974392d2ba0d5cd46d04a13e32936e3462eb15c23cb005e7"
+        },
+        {
+          "ficheiro": "explicacao-pt-768-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "97cafe89fac37677af5a1a4e0e70ed3e59a90f2fb8805dbd44e976b05ebd21a6"
+        },
+        {
+          "ficheiro": "explicacao-pt-768-p2.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[3].paragrafo\"]",
+          "sha256": "0d6fb019e46e3d2055a3d51937a9ac0150cfb589617077855e3280afc7af7a8b"
+        },
+        {
+          "ficheiro": "explicacao-pt-768-ministerios.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[1].conteudo[0].paragrafo\"]",
+          "sha256": "8dc34ae49e750e10310074fc3586e0bc3a2d1422091ac782bc8eb8764c9a8d80"
+        },
+        {
+          "ficheiro": "explicacao-pt-768-titulo-funcoes.png",
+          "seletor": "[data-explicacao-secao=\"por-funcao\"] figcaption",
+          "sha256": "d36153d3ac2bf2491effe8ce86997bfc5795b767f553847cb0b96b89b3c88209"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-pt-1024.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 4585,
+      "sha256": "e90deccda6ad7266d6a33b1b5914b4274f66282631a8f76304b89f6a1be53470",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-pt-1024-abertura.png",
+          "seletor": "[data-explicacao-paragrafo=\"abertura[0]\"]",
+          "sha256": "5ad5de34aa4527bdd3cdc0726bdcf2dee7ec968649ea950feba48100500ba88f"
+        },
+        {
+          "ficheiro": "explicacao-pt-1024-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "6b23220d95be6efa81c8ee33ec895070c0ca7a928032d43dbddad24de073d845"
+        },
+        {
+          "ficheiro": "explicacao-pt-1024-p2.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[3].paragrafo\"]",
+          "sha256": "b57515ca29d116267259df6679c5c9bc10bd8105eac52bcc90a515bddfea0faa"
+        },
+        {
+          "ficheiro": "explicacao-pt-1024-ministerios.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[1].conteudo[0].paragrafo\"]",
+          "sha256": "d9f0db613dd0c7212fe556f4c00134b49262324c263517a8bf0915698a5b2b51"
+        },
+        {
+          "ficheiro": "explicacao-pt-1024-titulo-funcoes.png",
+          "seletor": "[data-explicacao-secao=\"por-funcao\"] figcaption",
+          "sha256": "2633a58757e5e37912b7f02968da8afb344f0ea6b0f7c1b0f136997644fa0221"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-pt-1280.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 4681,
+      "sha256": "aaf9c1d194dbe2af3ec99e083c1726083146b01bc6bed839721c9dce6df586cc",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-pt-1280-abertura.png",
+          "seletor": "[data-explicacao-paragrafo=\"abertura[0]\"]",
+          "sha256": "3698a8107f35502434c8408634389da0091aa4acdd20f02a518845aa0c8ae727"
+        },
+        {
+          "ficheiro": "explicacao-pt-1280-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "d5b78e89bb384937f1e6ac6fa08ecdc1f00151f7b39d8050b1bb64a4e9ab7dc5"
+        },
+        {
+          "ficheiro": "explicacao-pt-1280-p2.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[3].paragrafo\"]",
+          "sha256": "39e61d9c62ff607c9f5f49657b669977de6df7c48ec64c6aba8aed6544c21adc"
+        },
+        {
+          "ficheiro": "explicacao-pt-1280-ministerios.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[1].conteudo[0].paragrafo\"]",
+          "sha256": "4e28b574646fcea8632177915022c81bff6e11f1bbc3ee2742f34978d7f51cc4"
+        },
+        {
+          "ficheiro": "explicacao-pt-1280-titulo-funcoes.png",
+          "seletor": "[data-explicacao-secao=\"por-funcao\"] figcaption",
+          "sha256": "1ecde3b382957e9d97e3320d23b344fd6f35f6496a78bb8e6bda477631e639f4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-pt-1600.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 4702,
+      "sha256": "0da4a08cb4adeec8d9301da8e759c0adb6e51d9c72c1d9da0264e57d805c4776",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-pt-1600-abertura.png",
+          "seletor": "[data-explicacao-paragrafo=\"abertura[0]\"]",
+          "sha256": "3698a8107f35502434c8408634389da0091aa4acdd20f02a518845aa0c8ae727"
+        },
+        {
+          "ficheiro": "explicacao-pt-1600-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "7e0169d2746309c15aea26f5e35813444b807bd36cd459728e160b6a4d5e537e"
+        },
+        {
+          "ficheiro": "explicacao-pt-1600-p2.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[3].paragrafo\"]",
+          "sha256": "fe37d0233e539e041a639f1fc9db98649adde1d399f0ad1ca6ad201913ffd941"
+        },
+        {
+          "ficheiro": "explicacao-pt-1600-ministerios.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[1].conteudo[0].paragrafo\"]",
+          "sha256": "df83cfccd81431f268d85a39182f5c31ba76b597d7a58d9649d5bc21ea45b8ed"
+        },
+        {
+          "ficheiro": "explicacao-pt-1600-titulo-funcoes.png",
+          "seletor": "[data-explicacao-secao=\"por-funcao\"] figcaption",
+          "sha256": "1ecde3b382957e9d97e3320d23b344fd6f35f6496a78bb8e6bda477631e639f4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-en-390.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 6410,
+      "sha256": "ba8c2b114a1daff3c1b668e79ca32ce8bfad3f08b598965432acff95d8214cfc",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-en-390-abertura.png",
+          "seletor": "[data-explicacao-paragrafo=\"abertura[0]\"]",
+          "sha256": "306fe041ca586b6cc2f1dd5567d5f7950077c8fc71ebaf8a8ad048ae1d7be8d5"
+        },
+        {
+          "ficheiro": "explicacao-en-390-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "4d47e7c3de0aca8c1016a8c594864ac95ecb850c359a4b82a3b72cf7bb2acceb"
+        },
+        {
+          "ficheiro": "explicacao-en-390-p2.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[3].paragrafo\"]",
+          "sha256": "80a552ed978cac78c5b647ca11721250bb63740f45aab8f02597e95f4151ac23"
+        },
+        {
+          "ficheiro": "explicacao-en-390-ministerios.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[1].conteudo[0].paragrafo\"]",
+          "sha256": "47d698d0189c2b45087f3dc7725bd172743907a2d540d9cfd26afc05dad4696b"
+        },
+        {
+          "ficheiro": "explicacao-en-390-titulo-funcoes.png",
+          "seletor": "[data-explicacao-secao=\"por-funcao\"] figcaption",
+          "sha256": "eb0300a333aaa80c5f2e5e4933d593e24784cff64dc8ba3ca43a8a4493cca9c8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-en-768.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4496,
+      "sha256": "ee07bbeaa0ef864656713417d74fc958631ceb4b7a4ad85dc4be4ff4a73cf52e",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-en-768-abertura.png",
+          "seletor": "[data-explicacao-paragrafo=\"abertura[0]\"]",
+          "sha256": "1d53f14d3d1159ef8baa015e450826c31c8649b11744d92927884ffde732b02e"
+        },
+        {
+          "ficheiro": "explicacao-en-768-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "16e76808dc7a80e0506a4d1c00da60326489c3b7fd1d102f18feb6c6dc5311bc"
+        },
+        {
+          "ficheiro": "explicacao-en-768-p2.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[3].paragrafo\"]",
+          "sha256": "98735139d4381ecc1f98e6f9316789f7e41dd81910a3a63270e266f760afaf42"
+        },
+        {
+          "ficheiro": "explicacao-en-768-ministerios.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[1].conteudo[0].paragrafo\"]",
+          "sha256": "ff3629ed5466c8e449521fecb460373efb76ee8a389c7f618904021848498366"
+        },
+        {
+          "ficheiro": "explicacao-en-768-titulo-funcoes.png",
+          "seletor": "[data-explicacao-secao=\"por-funcao\"] figcaption",
+          "sha256": "8d2d05640f49585026c91a51025b516a7d59c8df552f37a6ade43eec3486c3da"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-en-1024.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 4546,
+      "sha256": "50d07b4f023a57e8a5cc862a82367bd9ab012a2b99374070221597979a8bce62",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-en-1024-abertura.png",
+          "seletor": "[data-explicacao-paragrafo=\"abertura[0]\"]",
+          "sha256": "0b739bd9e3089c7638d04c0da95132b0129ee90c2c3bb5c3ff56ff88139db614"
+        },
+        {
+          "ficheiro": "explicacao-en-1024-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "f4d302613e303ed98f45a11811484e37f565b23fc720cb47d5ce3ff36f4e7415"
+        },
+        {
+          "ficheiro": "explicacao-en-1024-p2.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[3].paragrafo\"]",
+          "sha256": "91187850a06ce2711a16c69c208ac01800f80908dc3c094b6b967d091ca844f9"
+        },
+        {
+          "ficheiro": "explicacao-en-1024-ministerios.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[1].conteudo[0].paragrafo\"]",
+          "sha256": "952107c8032211ad56ebe96978563b309413710a6ba303d65f70b1b797971ef8"
+        },
+        {
+          "ficheiro": "explicacao-en-1024-titulo-funcoes.png",
+          "seletor": "[data-explicacao-secao=\"por-funcao\"] figcaption",
+          "sha256": "9f657e42da18f111f096a8629071d46e65863462c249abbaf911dc187f30eb20"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-en-1280.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 4642,
+      "sha256": "172e1e68ee0f9e54e9e295fcfe7717125b650f7f5f5e2fbc7508084736f2c8fe",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-en-1280-abertura.png",
+          "seletor": "[data-explicacao-paragrafo=\"abertura[0]\"]",
+          "sha256": "e99c57df32fd49f3389474ae2cd8286e8aafc3a9a24612a9cca7bca40cfdf8e0"
+        },
+        {
+          "ficheiro": "explicacao-en-1280-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "e2f583eafda07c89b428587322253d7ddb4385bb0dd1069cb6cd0263c2269713"
+        },
+        {
+          "ficheiro": "explicacao-en-1280-p2.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[3].paragrafo\"]",
+          "sha256": "77bd9d1c84731d8347b16758773f2ca42f64e5aaf5138ff10a9cd719fced933d"
+        },
+        {
+          "ficheiro": "explicacao-en-1280-ministerios.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[1].conteudo[0].paragrafo\"]",
+          "sha256": "87b427fbbeb69f3803b54e7c5b11db52852035a83043a7472f1067249a6bb735"
+        },
+        {
+          "ficheiro": "explicacao-en-1280-titulo-funcoes.png",
+          "seletor": "[data-explicacao-secao=\"por-funcao\"] figcaption",
+          "sha256": "6f3f256a365d721453bf940448920fc3fb7be8b52e8f7c178bcad209b6431986"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-en-1600.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 4663,
+      "sha256": "be20356b825aae3dc2f3e4a79346af816d854f1849933a044cadf95bc163bd6a",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-en-1600-abertura.png",
+          "seletor": "[data-explicacao-paragrafo=\"abertura[0]\"]",
+          "sha256": "e99c57df32fd49f3389474ae2cd8286e8aafc3a9a24612a9cca7bca40cfdf8e0"
+        },
+        {
+          "ficheiro": "explicacao-en-1600-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "71cb5c7920ce1b7ff15e22974713c9b483ea01ee8e6af00f1e51e8b7297cb0df"
+        },
+        {
+          "ficheiro": "explicacao-en-1600-p2.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[3].paragrafo\"]",
+          "sha256": "21ba1510cdb5c5bd8398bf4fa2f184aacb44085ece5ba5af02cdab6b89868505"
+        },
+        {
+          "ficheiro": "explicacao-en-1600-ministerios.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[1].conteudo[0].paragrafo\"]",
+          "sha256": "fee643db0875861cbfd61537e1172472dda168766546e842bf88bdb59ff70e90"
+        },
+        {
+          "ficheiro": "explicacao-en-1600-titulo-funcoes.png",
+          "seletor": "[data-explicacao-secao=\"por-funcao\"] figcaption",
+          "sha256": "5f26ff103ad1482ec3ec039f3e0b8e7bbe5cdbe8b303ba023f62f87bbaf8f9a8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2024-pt-390.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2024/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3346,
+      "sha256": "e842c17c69139fe4c4faf38f9f3ac7172c5fcd3de1873a627b653bdc3312981b",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "fb9c6cd450ff4a7ce94df4484c32995849a7b958ac820c2673b235ed85c1581c"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-pt-390-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2024\"]",
+          "sha256": "4b0ec6f99e7fd320f16875b797601bda667a0b9643e6a4707db878d7525296c1"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-pt-390-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "fe856c9969c5ee22d4b6436f24750336dc88032b6512697c7cd5ed8ef6f7acd3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2024-pt-768.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2024/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3030,
+      "sha256": "6d274ae160299bbd6c01ee9717f9ed5742a626b35c6fcb392e1df656983de6f9",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "62b0f35cf70fcb2cd2d124144c8c6178009789de42e95d4222bd67f41556c4af"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-pt-768-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2024\"]",
+          "sha256": "63bc56367d7ab66ecb06834fc8779f2b1632ad14d9a52a6fc674a112f26aa7a3"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-pt-768-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "00b9d3473d4d9b0201c012862d707234e50cc947adffb8fa5c20312b9ce979d1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2024-pt-1024.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2024/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2388,
+      "sha256": "16d4c97b21e9c079827a8d53fcb70c568c2d8a23a435928c19af013cb37ca939",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "d911421c7e004e6b65070f91fa930856f81676ab664a8962fdbdf423e06b2f09"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-pt-1024-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2024\"]",
+          "sha256": "61a8d90f2741d3636d2be06406f6dad432a1f2a15bb5123a5e5e6e9c150b7449"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-pt-1024-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "a328b1d4af1bf58310667bc90345c32ace3e8bb2593d8c58b70cdd091a996fa3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2024-pt-1280.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2024/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2423,
+      "sha256": "521b5708230ab2af3fc6a4407ae1d2d95d0dc0e3e5fc7ba236d56e0e6ed53698",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "69ec55ff7859187ab0c83902c61149c8d3e82948c6c25c3e0bd1f68b980e4ab8"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-pt-1280-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2024\"]",
+          "sha256": "c7862742d8bd758197bd8b3b92621e3e39f511481b0b34cee0a970561d8b3645"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-pt-1280-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "6930175ad21efcf3162a2872fb0e42bd1f4810795be13b82adb4b0a48974f01e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2024-pt-1600.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2024/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2429,
+      "sha256": "3fb5024c9f682506167c846cf8ac66e82904011caa8a9583fee38ad9c180e2af",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "65b65e925a1f4f4581eed31d4d2eb47353f9e3fdfec0f5ccbd0ec46dad700c1a"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-pt-1600-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2024\"]",
+          "sha256": "c7862742d8bd758197bd8b3b92621e3e39f511481b0b34cee0a970561d8b3645"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-pt-1600-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "6930175ad21efcf3162a2872fb0e42bd1f4810795be13b82adb4b0a48974f01e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2024-en-390.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2024/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3325,
+      "sha256": "73ad71d1e6144b44d17b2bec3d6bc1c136f29f8757a76d5b46fba9fe8530378f",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "5a7c003eb6c9aa188b7a756f6326a03255595c9ff66aac2b682379fe7939614c"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-en-390-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2024\"]",
+          "sha256": "c6d3496f1de794a640c220e2078f57037b2fcdf28645bbf3b9b0f0b2bd0937dd"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-en-390-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "4ad3f5b86fe5c5e3cb4393017a8791fe303100f60fa0093fea5b4e019af8e462"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2024-en-768.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2024/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3010,
+      "sha256": "41c619ef7e63ecfefef20f2ad4882661b1422cb7adf14ad800ed425fb0d12908",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "40f150d5dc3027111361c487a113d8d35477ea99fc3ccca9196aff5bb82a1fa1"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-en-768-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2024\"]",
+          "sha256": "e6410c0028c7d1e4ad1327a160671e1e7d29e5627fc411cbd3200cd7805c623f"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-en-768-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "a03d92cba6300d59ffe82c774774ae5ff46ac6bb212728c536b7ad14a088f19b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2024-en-1024.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2024/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2367,
+      "sha256": "72f9ad68541794a923a079cd9ffcdf1b1993b910c715efc8534ea86d0331698b",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "7027fc3b0adad70f4c5f86269af7803a42a3a8893aab9b717ffeece7cc16b17e"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-en-1024-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2024\"]",
+          "sha256": "f0db3236ef44510c0987420fd7c09f2158d2c01320fc348886395bfe161055d8"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-en-1024-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "97e915824e2c44e2176b47216db2fd5ed9da9e8d0d8e4ebc6defdd9107ff3c5d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2024-en-1280.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2024/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2402,
+      "sha256": "30fdf02bd2e3791228936ece58c2a610c6a55e1f22d8b5ed0957ad041835bd19",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "dafa0572f9ebbdad776da6d686234128eb83e635a17b03188c0ceb6bcdfb3c94"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-en-1280-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2024\"]",
+          "sha256": "2db6179adbaf1e69c68aac11e2ac11cd817a25867504b334a2a7d842a17fefea"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-en-1280-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "f09131e6d5a138431286f1ac7feb14ffa01a2f02be51d5fea89a1568e627236e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2024-en-1600.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2024/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2408,
+      "sha256": "f96e073801870e802e8bf19de4e0d5b96fc46e4148993fec3c89cd8fd6de11bd",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "930e3b233acb31194bc2defea3730c1689b997cf02a1416c9718667ed9b5f482"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-en-1600-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2024\"]",
+          "sha256": "2db6179adbaf1e69c68aac11e2ac11cd817a25867504b334a2a7d842a17fefea"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2024-en-1600-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "f09131e6d5a138431286f1ac7feb14ffa01a2f02be51d5fea89a1568e627236e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2025-pt-390.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2025/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3567,
+      "sha256": "6573803d08bf28e08e73b1f22344ea46239fa3f37d7c07a90da81d7713013461",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "d38f8970a74b5898cfae322b2d97a1f06e2ae2508903ab99affc6afc179aaaba"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-pt-390-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2025\"]",
+          "sha256": "8178239a09bf02f96f3db13b65d9e2afd1a6c43f9a6af6a5dc22001d3d8ccea2"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-pt-390-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "e7bb67492f81fd3ae5a8846bbbf75ea8199b6726434bbf5438917cff27f797ca"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2025-pt-768.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2025/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3223,
+      "sha256": "b9417a53487387e5fcf7c280d7b73499d3b0fb966e1208441364673ca8b6beea",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "a5a81bbfd51c1023e1f9e7fd5b2f3c45d6168bc2f513114b923378c645b0deed"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-pt-768-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2025\"]",
+          "sha256": "17c955b65fbdfb1732805a0e5ed1d4f0ae697e10f43c9cbfc37f8f721803491f"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-pt-768-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "bfa3d5604aabdd719c585655c66b42c6759caaff4cf43e7f2d792723e5698de9"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2025-pt-1024.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2025/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2488,
+      "sha256": "7620edeefdc760e4fd658ac51dd5dde2bfbffa7e12702a4150fef9c9a5bf1042",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "fa38d348534cd285613aa60423574eae18cb8c7882e70dd77630a79d9d6d23b5"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-pt-1024-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2025\"]",
+          "sha256": "72e97880d8072b6f314d0e52b3204530a44f9f6916bbf2757b5bc382f02e5c8d"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-pt-1024-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "4c9b2700089ff3a073c2559d07099d90432e160e397e2056b4fac6a5d17da694"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2025-pt-1280.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2025/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2523,
+      "sha256": "d8a9bee573b50b8c1a8f862088bd93d8d1ce9f0b047bbefaf9c3ec6a1338eff8",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "08afb37d9ca3cc9e0ddd6856450de7b384990b7d9f2fa1e66665be40bb0d5d2a"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-pt-1280-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2025\"]",
+          "sha256": "11fce215cca1c7062fa840f7799c83f4f5639c31bab9b4c1a4a3369e94ed1fec"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-pt-1280-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "06dbcb3e1dbfd75443fe9e9e3284d2f2a230f399c07235876e1a342491771e5d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2025-pt-1600.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2025/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2529,
+      "sha256": "4d0643efdaabf086510a67e59ac5d37267a5073de28bb10d98c42fda0043060b",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "b5f572b689aca33e5631609b165e4a9feb7d15fbae0b6b379ec88f53cb0580f5"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-pt-1600-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2025\"]",
+          "sha256": "11fce215cca1c7062fa840f7799c83f4f5639c31bab9b4c1a4a3369e94ed1fec"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-pt-1600-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "06dbcb3e1dbfd75443fe9e9e3284d2f2a230f399c07235876e1a342491771e5d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2025-en-390.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2025/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3567,
+      "sha256": "791968d11d1032e09778b8c3fd2c7b6c300c59c764d3483ccca67357e9b67d93",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "0a6637254402fb0d6ab7b28930f1bd2751fe27698ca61b1af52476bc30eaad73"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-en-390-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2025\"]",
+          "sha256": "f1d8e8f0291a861096a14dd0158955c3199cb4fdfe815ef7d64d5b77d434771c"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-en-390-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "e6a25cebf494b6f76cd26c9264999ac4afc9c597be9ee751eb628083b432240a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2025-en-768.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2025/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3223,
+      "sha256": "2bfbc82dc68376488279546e28f2a61006b0b5b05094b5bdb13eb721c62b065c",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ae02e7ac88fa80ae7cfed6409ca03f7bdea15258defea7c1d5c84d13e5b82ea7"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-en-768-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2025\"]",
+          "sha256": "90881bf98e79139f8d1b3f2a192b46e341519f7bdc5a54fae0bd9c1088c315c1"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-en-768-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "87390568108277999fcc1c7540c2101a356d7ac86b50988c194f808fca83e5fc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2025-en-1024.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2025/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2488,
+      "sha256": "bce2d2b3cc6369648d9611d384229cf01c52243803894ef39fe7c5b906107cc8",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "c29f4ce58b3a0aa6bb6bd04cd26acfbcbe703c04831a2ab94d7134923921074c"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-en-1024-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2025\"]",
+          "sha256": "511c382a1e7290792e090d0bcc30044990c9a2d7dafe067a97e0af5764d2c0e8"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-en-1024-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "6b0db60660f6ab06c992757412c6ce5b4af921eafdbe85a9c4874727c55e4bf8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2025-en-1280.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2025/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2523,
+      "sha256": "f985f6cb7a2b5820b22a9d4ef6a2f987168052dd703384cedae7eda101224aa6",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "15f969b25aaeadfb72489fe5d63631af281d0366cfb44e1c0cb8dc3e7f4cbfd0"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-en-1280-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2025\"]",
+          "sha256": "3bce081b29d374eb44c20969f42541cf8bff83b3aa32a40d4ac7ecd7616ed287"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-en-1280-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "7baf9b6d80baf68d7558c26de101bc3210ff61e27278d7832edfdc036e532216"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2025-en-1600.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2025/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2529,
+      "sha256": "4dbe9a25380e85714201a135ec9efefc7e69161521baf33f58b73fa2bb9c008b",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "8175fc38cec04e5fe885a324bdbc9d2bf31bfde93231313f67c73c165b2a800f"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-en-1600-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2025\"]",
+          "sha256": "3bce081b29d374eb44c20969f42541cf8bff83b3aa32a40d4ac7ecd7616ed287"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2025-en-1600-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "7baf9b6d80baf68d7558c26de101bc3210ff61e27278d7832edfdc036e532216"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2026-pt-390.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2026/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3567,
+      "sha256": "5abefbba39280b848c73ada323c5b2ed7c068c467f2bc2d8371b85e18daa20c5",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "b0ccab6ab5db080f78089eaaef84eb52857efd8c9f58749d2a1cc079c8615461"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-pt-390-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2026\"]",
+          "sha256": "8178239a09bf02f96f3db13b65d9e2afd1a6c43f9a6af6a5dc22001d3d8ccea2"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-pt-390-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "a9e36795bfdd0557f73bbdcce30d246003bdaffa0b8465e012757238d12b14a6"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2026-pt-768.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2026/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3223,
+      "sha256": "c2d6cf21c58b0ddf2a166d604e1aea4f73db4d42f0e7f4f1786caf52ba9869ea",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "68c7a2c9af93a285dff00bb50524af4d34f0b0d2adbe86603acbf938b444295e"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-pt-768-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2026\"]",
+          "sha256": "17c955b65fbdfb1732805a0e5ed1d4f0ae697e10f43c9cbfc37f8f721803491f"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-pt-768-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "7857715119983f7e3230cf283279cae2744cd8df11296005cb7d4e6a4fbf3463"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2026-pt-1024.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2026/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2488,
+      "sha256": "06e51173705a3bdfc588f6d6c9caf5bef84cab8b880ddcc6c27dddbdf386effb",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "9b392316e01dd12f2d415157937133190d6f7b5e08b18cdf294a8466336b1f7c"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-pt-1024-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2026\"]",
+          "sha256": "72e97880d8072b6f314d0e52b3204530a44f9f6916bbf2757b5bc382f02e5c8d"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-pt-1024-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "dd90d8aae04915a9c1d6216d7f0b769eaa50dd75f671735a19a3f1464b108811"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2026-pt-1280.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2026/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2523,
+      "sha256": "d1f094cda6be32a8dfa193f75b841d285f2c89b405b2b7d2e76e8a6038626f31",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "6626634ebf128c5281ca71c2bd41e85527c9eb0f12594293c9127d9579977a1d"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-pt-1280-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2026\"]",
+          "sha256": "11fce215cca1c7062fa840f7799c83f4f5639c31bab9b4c1a4a3369e94ed1fec"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-pt-1280-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "9120429e2b72aa4667990ec6da9c344825d3ba54caa29eebe497ab4d3c6473d7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2026-pt-1600.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2026/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2529,
+      "sha256": "dca7c30bbd73706dfe1c5ba5c9beb39868976f1d7cc33a341f531eff8567eb90",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "ae09a15e5b052a0d6c935567b9cbd8bcecd7e3e8bcec758b3c3f76eb1c6b2399"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-pt-1600-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2026\"]",
+          "sha256": "11fce215cca1c7062fa840f7799c83f4f5639c31bab9b4c1a4a3369e94ed1fec"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-pt-1600-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "9120429e2b72aa4667990ec6da9c344825d3ba54caa29eebe497ab4d3c6473d7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2026-en-390.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2026/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3567,
+      "sha256": "df0198611925d26bf0ab30560e0d4e98991a581d9333379920e5dd6d91b06327",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "13e3f82d0e17ab0900bc6bf6c3a12c8d1aaf3a3ea41e083c7e0428e33a0e91fa"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-en-390-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2026\"]",
+          "sha256": "f1d8e8f0291a861096a14dd0158955c3199cb4fdfe815ef7d64d5b77d434771c"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-en-390-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "bd283dde3b6e5f52ab893611feab132c8e5d8e46f4e47b3fcd1b0b286d33c764"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2026-en-768.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2026/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3223,
+      "sha256": "76cfaf15ce8358d9c26e61680e90423dba2be8eb9db9c6604f532965bda67eb7",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "7ceecd673a9037e0f447818d29ff34eb55897a5e933b83395b05625bc672888c"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-en-768-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2026\"]",
+          "sha256": "90881bf98e79139f8d1b3f2a192b46e341519f7bdc5a54fae0bd9c1088c315c1"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-en-768-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "8e79d9a4b15a4a75269ecc477f095999a999ab3b1ef3ee1824abdaccb57c7b81"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2026-en-1024.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2026/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2488,
+      "sha256": "393874785b4e50882c51065b9be9e4134c287833dd23e59d5a2e03e6e2244960",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "b0daae53b0a80593019383b47265f162330702e5ae4a35bcf1de54f4772a97f1"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-en-1024-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2026\"]",
+          "sha256": "511c382a1e7290792e090d0bcc30044990c9a2d7dafe067a97e0af5764d2c0e8"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-en-1024-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "79403253dedddae6ca06b69ef1399e1ed4ce0596d5f68a2270d3571ad589e8dd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2026-en-1280.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2026/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2523,
+      "sha256": "38f86cce666fce165cd077320b35a5610d303c95eef7d3cf9bee8a6b0ae4aa22",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "559799312d6e4d175cd2d070fb39172730e896cca00816202f2e7ed9ae616806"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-en-1280-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2026\"]",
+          "sha256": "3bce081b29d374eb44c20969f42541cf8bff83b3aa32a40d4ac7ecd7616ed287"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-en-1280-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "9335aa8d8109ff9ea5018d17a88910c46bfcf8eb213dac66cf62def0e6ef7810"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-pib-2026-en-1600.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2026/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2529,
+      "sha256": "d93f909ef0e9e3f91ecd2093a94b28481c7203f2366429ed4d76b23b6eaea791",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "5dc9adb294220e274c6025cb55ff86151b51e3c5fd99ceb872e23d999fb6d604"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-en-1600-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-pib-2026\"]",
+          "sha256": "3bce081b29d374eb44c20969f42541cf8bff83b3aa32a40d4ac7ecd7616ed287"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-pib-2026-en-1600-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "9335aa8d8109ff9ea5018d17a88910c46bfcf8eb213dac66cf62def0e6ef7810"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-eur-2026-pt-390.png",
+      "rota": "/livro-razao/nato-defesa-portugal-eur-2026/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3446,
+      "sha256": "870dcf44b10a28bea56d8347242151e7c661844d100d3adfc677f294dbc8231d",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-pt-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "f9d7da40299c3e6bc575359ee3c3d15066d27b954f0f10b34a1d40cade0102ce"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-pt-390-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-eur-2026\"]",
+          "sha256": "2605a6db38139ba442e0a656dc5533ef7f3ecc45df6e4255164e2e12ac6bc541"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-pt-390-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "9dfb516e4bee077147d0e130f4eb7da1f3d0e23effd56db447dfcf7db5e945a3"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-eur-2026-pt-768.png",
+      "rota": "/livro-razao/nato-defesa-portugal-eur-2026/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3130,
+      "sha256": "7b8105a05b731c7536411a71e34ac968e7207c2b02d57bdc692f1fe3fc2b5512",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-pt-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "18ae80538f47dc766c29f5fadb7acfa4bc96a1e0f95bc15fa706b94450fa4494"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-pt-768-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-eur-2026\"]",
+          "sha256": "5fc9937444fbfbb32f0c3dff4c36744242c2d8d111b1d16c3842e6fd650cb36e"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-pt-768-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "2c49c58c5f0c880dc5073e3b368aa7f8905d104b84c0e326389686b312c97970"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-eur-2026-pt-1024.png",
+      "rota": "/livro-razao/nato-defesa-portugal-eur-2026/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2488,
+      "sha256": "9d7315363bcb3eff05bfe4ee09fdde4fb7007fd6f830d57d1f878286e77997d3",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-pt-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "8dddc4a08200458011b3d5ca0cd5133cf00ccd95456092232de59f2c3fcfe0cb"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-pt-1024-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-eur-2026\"]",
+          "sha256": "c7acffb6a029afb0a507926c2d5d21b3a33a654daaef0eaaf55f542903684a92"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-pt-1024-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "acd1600f25a2b3aac96dd13d62bfb6dfd7299813aef16d52fbd95c1a3a452fb0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-eur-2026-pt-1280.png",
+      "rota": "/livro-razao/nato-defesa-portugal-eur-2026/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2523,
+      "sha256": "4575a70401946b480b00299d65917706ef4f713113d6ff8d3346804ff551f347",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-pt-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "229a8473ce2f5cfbda269f048a152128d48ebd962144181ba47252e948966dbd"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-pt-1280-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-eur-2026\"]",
+          "sha256": "a5145a00ab1a59b3bcde0178a4509a0858df9ad6b6ef8e6279070ca798f090b4"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-pt-1280-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "d8e4f125636aee919ef403dc4ea70b316054ac209ae3e5f3192653a98000e741"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-eur-2026-pt-1600.png",
+      "rota": "/livro-razao/nato-defesa-portugal-eur-2026/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2529,
+      "sha256": "d4fce3ee2b295715f25a3485e45ffbfc5433b44499fcc95d4bf6d6efa5c7d490",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-pt-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "8907d3c92cefaa9be9bc3cc6a4288b2cd0419606515ce33b1bebbcecaef88a8d"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-pt-1600-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-eur-2026\"]",
+          "sha256": "a5145a00ab1a59b3bcde0178a4509a0858df9ad6b6ef8e6279070ca798f090b4"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-pt-1600-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "d8e4f125636aee919ef403dc4ea70b316054ac209ae3e5f3192653a98000e741"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-eur-2026-en-390.png",
+      "rota": "/en/ledger/nato-defesa-portugal-eur-2026/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3444,
+      "sha256": "aea96f2fbe587d31e65da4b2f9464a5ad88a0fbdd38ebc92c9131fb55f260360",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-en-390-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "42958d283b1f0fdd7c67232ab9eeff88c510e590b8ce570abd9e73900766dd39"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-en-390-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-eur-2026\"]",
+          "sha256": "3cdea6eb1005eccb82f4ef1d9ba126f9b63e9eb4f3dde83f75cf390f71de577e"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-en-390-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "a92d42b75a4fb1030ca899830f010d976529036a4bf8777e0d3c25cff0b57531"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-eur-2026-en-768.png",
+      "rota": "/en/ledger/nato-defesa-portugal-eur-2026/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3109,
+      "sha256": "a8dff9312b7f019ef2163a49eb4d69c9f42c05d3229ab4ac3a88d727951fc60e",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-en-768-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "7625404dc5577332224172d165f6416915a6142c590903810512bc2a76b53d28"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-en-768-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-eur-2026\"]",
+          "sha256": "0743459a0c63f25fb7a7df045949d85a0a15890e8741540ae14008516b3d1ae7"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-en-768-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "ad915609ab121b3f28ba971a5dc1cb5bf96fec2970f2d9a9e5199bb7159b3c2f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-eur-2026-en-1024.png",
+      "rota": "/en/ledger/nato-defesa-portugal-eur-2026/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2467,
+      "sha256": "075370b74b1063b1348109069efb051f27110d22ec8538b9fae89b76635e2ec1",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-en-1024-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "69b287eed646f7a866fe496f1209966bbe8d7a4fd73173d67113cf2da547bd44"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-en-1024-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-eur-2026\"]",
+          "sha256": "9041f5c21e36d7974d902452a6c7244b4716df340f287a7369cad6eb9b0c6d97"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-en-1024-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "840c3089d0f9f51de99101f51dbb1337379878ec6746d32fdc9cb7c6221672a1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-eur-2026-en-1280.png",
+      "rota": "/en/ledger/nato-defesa-portugal-eur-2026/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2502,
+      "sha256": "88cc9aac4c0494e1d77ff1ed473b21e79b164a8565641d13f01cdc3265912381",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-en-1280-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "bdab142c71db4001a49d23ab82c8e223f88daa5224b56a9efeae4c5775214185"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-en-1280-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-eur-2026\"]",
+          "sha256": "f0fe8661099e684682e882e819bb533167562f0022bec0f32cc39f123f12ff46"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-en-1280-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "66282c5a8e78a843d61c2ffa1af4cbe5418f554456f1ba1e0a452fed820a019e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "nato-defesa-portugal-eur-2026-en-1600.png",
+      "rota": "/en/ledger/nato-defesa-portugal-eur-2026/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2508,
+      "sha256": "dc07ede7ab0a66a28df8f006c7705aba6337747e10fc6015e4a6eefbf1a3a1eb",
+      "recortes": [
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-en-1600-cabeca.png",
+          "seletor": ".linha-cabeca",
+          "sha256": "255cbbfab3ae9b8a3a58f99beedf4b5e5079fb3fc61ce33217fd88def9603212"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-en-1600-definicao.png",
+          "seletor": "[data-o-que-e=\"nato-defesa-portugal-eur-2026\"]",
+          "sha256": "f0fe8661099e684682e882e819bb533167562f0022bec0f32cc39f123f12ff46"
+        },
+        {
+          "ficheiro": "nato-defesa-portugal-eur-2026-en-1600-valor.png",
+          "seletor": ".linha-valor",
+          "sha256": "66282c5a8e78a843d61c2ffa1af4cbe5418f554456f1ba1e0a452fed820a019e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "e81ada3f507032b75738c1e618a42cbeda04fb9ba7e09cceb1c8bca7f6edf666",
+    "explicacoes/dinheiro-do-estado-2026/index.html": "f27f494ae2b160b678f5148f25f75f808cb5c05e4cd9b59d3e0a9c4c198a8b32",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.iWxVxik0.css": "b028d1f789d6ec2ee10ea6fd6a1162acc7bf3ae2aae322f9cfe11bc33e563531",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/explainers/dinheiro-do-estado-2026/index.html": "84c289c40efae829a23a0bc2b2af04aa85f266606523e5bdc123045ee9f5cf89",
+    "livro-razao/nato-defesa-portugal-pib-2024/index.html": "17e997f330e49e20751a3bfaa76abe2f6b74606ef3d6ba4d8fdc167a894240a3",
+    "_astro/linha.3Gzj_PkP.css": "c02b8967ab663930fd1ad0a2904b7beef1b14bc2d3c91aec382ee180e3f2d645",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "en/ledger/nato-defesa-portugal-pib-2024/index.html": "3f83a58053201f716fbd682da7bab879ab1b84616d5a0c1a0e5dee71ec3b6726",
+    "livro-razao/nato-defesa-portugal-pib-2025/index.html": "67c70479a1cfbd130e4d87f4fd41c09c2d60a01506a02fd34d18d3b9627adc51",
+    "en/ledger/nato-defesa-portugal-pib-2025/index.html": "8ee7b0b5640bef796e5e04d8eb283c8fa4971fc784f6aeb370b3b3bb034e04cb",
+    "livro-razao/nato-defesa-portugal-pib-2026/index.html": "79aeb89fecfcca19bcd8a979cced1c104f67306a1a1b83eef6e8732b5a390749",
+    "en/ledger/nato-defesa-portugal-pib-2026/index.html": "fb74cf354db9654ec2a54963d5d07e01d41c2fd51694075e4aa1a36804a41917",
+    "livro-razao/nato-defesa-portugal-eur-2026/index.html": "bdc6568575a267a890eaef26e6af2ea2a82ced58dd65badf9b4b6acd0ef12bba",
+    "en/ledger/nato-defesa-portugal-eur-2026/index.html": "fe43bde190a9693d9c266be7e02f5b2c7ec812c0ed333b84ff482b4da689d13a"
+  },
+  "falhas": [],
+  "ok": true
+}

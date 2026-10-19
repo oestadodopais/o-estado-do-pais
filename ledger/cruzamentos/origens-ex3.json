@@ -1,0 +1,12 @@
+{
+  "exporter": "ResearchHub/publisher/ex3.py",
+  "files": {
+    "origens-ex3.json": {
+      "destino": "src/data",
+      "origin_path": "content/21 Defesa NATO/origens.json",
+      "origin_sha256": "5918f5dfe470e1b272eb582b95645e6b835b80203bf804eec9c8bb41a7e39336",
+      "exported_sha256": "5918f5dfe470e1b272eb582b95645e6b835b80203bf804eec9c8bb41a7e39336",
+      "exporter": "ResearchHub/publisher/ex3.py"
+    }
+  }
+}

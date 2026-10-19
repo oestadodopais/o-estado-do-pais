@@ -327,6 +327,13 @@ const LOCALIZADORES_CONHECIDOS = [
   { nome: 'JD1, coordenada dos juros da União', forma: /^freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=EU27_2020; time=2025; \$\.value\["0"\]; \$\.updated$/, onde: 'publisher/jd1.py: célula dos juros no Eurostat', confere: localizadorJd1Confere },
   // V2-a: os localizadores escritos por publisher/v2a.py são conferidos abaixo, sem importar o leitor.
   { nome: 'V2A, rótulo da célula ou da afirmação', forma: /^(?:Quadro (?:5\.37|4\.25|1), .+|Título e corpo da notícia|Intervenção na Assembleia da República)$/, onde: 'publisher/v2a.py: quadros do OE2027, CFP e afirmações', confere: localizadorV2aConfere },
+  {
+    nome: 'cabeçalho A1 das folhas NATO',
+    forma: /^(?:Table 1!A1|Table 3!A3)$/,
+    onde: 'publisher/ex3.py: cabeçalho literal das folhas inglesas da NATO',
+    confere: localizadorNatoConfere,
+  },
+  { nome: 'compromissos e cimeira na página HTML da NATO', forma: /^(?:2014 Wales Summit|The 5% Hague defence commitment|Core defence requirements)$/, onde: 'publisher/ex3.py: excertos literais da página alojada da NATO', confere: localizadorCompromissoNatoConfere },
 ];
 
 /** V2-a: identidade, rótulo, período, página e coluna lidos nas fontes alojadas.
@@ -430,6 +437,34 @@ function localizadorJd1Confere(onde, linha) {
   return id in anuais && linha.name === anuais[id] && linha.reference_date === '2025' && d.page === 45 &&
     d.title === 'Gestão da Tesouraria do Estado e da Dívida Pública · Relatório Anual 2025' &&
     onde === `Quadro 9, ${anuais[id]}, coluna 2025, p. 45`;
+}
+
+const COMPROMISSOS_NATO = [
+  ['nato-compromisso-gales-2014','2014 Wales Summit','2014'],
+  ['nato-compromisso-haia-2035','The 5% Hague defence commitment','2035'],
+  ['nato-compromisso-haia-essencial-2035','Core defence requirements','2035'],
+  ['nato-cimeira-haia-2025','The 5% Hague defence commitment','2025'],
+];
+/** @param {string} onde @param {ContextoDoLocalizador} [linha] */
+function localizadorCompromissoNatoConfere(onde, linha) {
+  const esperado=COMPROMISSOS_NATO.find(([id])=>id===linha?.id);
+  return Boolean(esperado && onde===esperado[1] && linha?.name===esperado[1] && linha?.reference_date===esperado[2] &&
+    linha?.document?.locator===onde && linha?.document?.kind==='html' && linha?.document?.edition==='2026-10-15' &&
+    linha?.document?.title==="Defence investment and NATO's 5% commitment");
+}
+
+/** EX3: o cabeçalho, a folha, a coluna e o ano têm de pertencer à mesma linha. */
+function localizadorNatoConfere(onde, linha) {
+  if (!linha || typeof linha.id !== 'string') return false;
+  const m=/^nato-defesa-portugal-(pib|eur)-(202[456])$/.exec(linha.id);
+  if (!m || (m[1]==='eur' && m[2]!=='2026')) return false;
+  const folha=m[1]==='pib'?'Table 3':'Table 1';
+  const coluna=m[2]==='2024'?'L':m[2]==='2025'?'M':'N';
+  const pais=m[1]==='pib'?'Portugal':'Portugal (Euros)';
+  const nome=m[1]==='pib'?'Share of real GDP (%)':'Table 1: Core defence expenditure';
+  return onde===folha+(m[1]==='pib'?'!A3':'!A1') && linha.name===nome && linha.reference_date===m[2] &&
+    linha.document?.title==='Defence Investment of NATO Countries (2014-2026)' &&
+    linha.document?.locator===`${folha}!${coluna}27; ${pais}; ${m[2]}${m[2]==='2024'?'':'e'}`;
 }
 
 /**
@@ -1873,6 +1908,22 @@ function provaLocalizadores() {
     if (['I1', 'I3'].some((id) => !celulas.find((c) => c.id === id)?.passa)) {
       falhas.push('As plantas dos localizadores exigem I1 e I3 limpas antes do estrago.');
       return '';
+    }
+    for(const id of ['nato-defesa-portugal-pib-2024','nato-defesa-portugal-pib-2025','nato-defesa-portugal-pib-2026','nato-defesa-portugal-eur-2026']) {
+      const original=LINHAS_DA_REGUA.get(id);
+      if (!localizadorNatoConfere(original.name_source,original)) falhas.push('EX3: cabeçalho válido recusado');
+      for(const mudar of [l=>l.name_source='Table 3!A2',l=>l.reference_date='2023',l=>l.document.locator='Table 3!N28; Portugal; 2026e',l=>l.name=l.document.title]) {
+        const l=structuredClone(original);mudar(l);
+        if(localizadorNatoConfere(l.name_source,l))falhas.push('EX3: cabeçalho ou célula trocados passaram');
+      }
+    }
+    for(const [id] of COMPROMISSOS_NATO) {
+      const original=LINHAS_DA_REGUA.get(id);
+      if(!localizadorCompromissoNatoConfere(original.name_source,original))falhas.push('EX3: localizador HTML válido recusado');
+      for(const mudar of [l=>l.id='nato-linha-inexistente',l=>l.name_source='secção desconhecida',l=>l.reference_date='2020',l=>l.document.locator='outra secção',l=>l.name=l.document.title,l=>l.document.kind='pdf']) {
+        const l=structuredClone(original);mudar(l);
+        if(localizadorCompromissoNatoConfere(l.name_source,l))falhas.push('EX3: localizador HTML, período ou rótulo trocado passou');
+      }
     }
     const antigos = LOCALIZADORES_CONHECIDOS.slice(7).map((formato) => {
       const linha = [...LINHAS_DA_REGUA.values()].find((l) => formato.forma.test(l.name_source ?? ''));

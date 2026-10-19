@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "nato-compromisso-gales-2014"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "2"
+unit: "% do PIB"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "2014 Wales Summit"
+name_source: "2014 Wales Summit"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "NATO"
+document:
+  title: "Defence investment and NATO's 5% commitment"
+  edition: "2026-10-15"
+  locator: "2014 Wales Summit"
+  source_sha256: "d42b32910ffc936925c25cb7a34b1e48b88078d578c5bc3760160e2908f5287c"
+  kind: "html"
+source_url: "https://www.nato.int/en/what-we-do/introduction-to-nato/defence-expenditures-and-natos-5-commitment"
+access_date: "2026-10-15"
+reference_date: "2014"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "Previously, at the 2014 Wales Summit, NATO Heads of State and Government had agreed to commit 2% of their national GDP to defence spending, to help ensure the Alliance's continued military readiness."
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: 2014 Wales Summit. Compromisso da NATO, transcrito da página alojada.  · Cruzado de ResearchHub content/21 Defesa NATO · nato-compromisso-gales-2014."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
