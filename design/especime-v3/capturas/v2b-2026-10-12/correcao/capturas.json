@@ -1,0 +1,336 @@
+{
+  "cabeca": "f3ac9261221d5f3c1b0b6a248137d4093d53b078",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "discussao-pt-390.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4658,
+      "sha256": "82a436bcafa147cc023cd31a4b023e179591ef9770b32b72a64efe6e921dc1c6",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-390-saude-no-orcamento.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"]",
+          "sha256": "ea64f7ff6f6d0aba30e89d12ac9209e6e69c1d53f66348f67525f830dd48120a"
+        },
+        {
+          "ficheiro": "discussao-pt-390-parcerias-rodoviarias.png",
+          "seletor": "[data-discussao=\"parcerias-rodoviarias\"]",
+          "sha256": "39bccf14e940f3aa7dbaab26a7c11c3f084f24f58d44f104fd7ce2dcd0c4ea21"
+        },
+        {
+          "ficheiro": "discussao-pt-390-porta-explicacao.png",
+          "seletor": "[data-discussao-explicacao]",
+          "sha256": "0ab8553dc2595020f5dd8a5831e08c02a9e855ee1d9db1e3a0b2f6772531f331"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-768.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3794,
+      "sha256": "5edf5c50f9700971bfd6d35e87e105cd46367dc1e1705c7ff46de55aac27c657",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-768-saude-no-orcamento.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"]",
+          "sha256": "5e92a1f06cc6ca74cd01a4743dedbbc5821e8ca6f54791f2c80057f2cc0265d6"
+        },
+        {
+          "ficheiro": "discussao-pt-768-parcerias-rodoviarias.png",
+          "seletor": "[data-discussao=\"parcerias-rodoviarias\"]",
+          "sha256": "9be87c378eb1a5eb34f834bc2c7dc4ccdfc8cf258fe5773bfc0dd8d9e8274bdd"
+        },
+        {
+          "ficheiro": "discussao-pt-768-porta-explicacao.png",
+          "seletor": "[data-discussao-explicacao]",
+          "sha256": "a934c35a1aabebc600fcdf188969fe734707cffe26c65b3350b2f0bb889b5f10"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-1024.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3835,
+      "sha256": "3f061e4d4ea50257e3cfe6d5075ef812762cdb3114dee62819176d3457fc07b0",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-1024-saude-no-orcamento.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"]",
+          "sha256": "0723924b91c82f04dc7d4ab8184fdbc0402723227396806fa96b41f26f7532d3"
+        },
+        {
+          "ficheiro": "discussao-pt-1024-parcerias-rodoviarias.png",
+          "seletor": "[data-discussao=\"parcerias-rodoviarias\"]",
+          "sha256": "115a85c2c0acf26c203afbea449a66cdaa119fe38ffdb4c391ffd141ca54308e"
+        },
+        {
+          "ficheiro": "discussao-pt-1024-porta-explicacao.png",
+          "seletor": "[data-discussao-explicacao]",
+          "sha256": "609d31b123240a4e2dccae744a694e51a770b6378afdc31035cfd1739eed5fee"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-1280.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3937,
+      "sha256": "2130b84c2fda1d73ce5f3b07d62d211b71d4b47ab3a80be7d9f607e220da84df",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-1280-saude-no-orcamento.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"]",
+          "sha256": "1d02a7bf9951772e6f33e3196f8048b4d051b4b2b5fa37aa4e625276b5199366"
+        },
+        {
+          "ficheiro": "discussao-pt-1280-parcerias-rodoviarias.png",
+          "seletor": "[data-discussao=\"parcerias-rodoviarias\"]",
+          "sha256": "86cd37dff19dbf8b9603fc36f6c5dfb76995db972d5cbc63980152237bb59abc"
+        },
+        {
+          "ficheiro": "discussao-pt-1280-porta-explicacao.png",
+          "seletor": "[data-discussao-explicacao]",
+          "sha256": "68aba0908c1d4a790e5a48a5d1f7b1dac63a0fac461cfdedae065c5cbd6da87e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-pt-1600.png",
+      "rota": "/o-que-se-discute/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3974,
+      "sha256": "bab9a42260113f280565e20e8b568e1f6c1bfad439f853e5351b6f446ae7357a",
+      "recortes": [
+        {
+          "ficheiro": "discussao-pt-1600-saude-no-orcamento.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"]",
+          "sha256": "b3368ee9105c2b3fe5148669ad19497c778abcd59d30e9af581db41ebc32d942"
+        },
+        {
+          "ficheiro": "discussao-pt-1600-parcerias-rodoviarias.png",
+          "seletor": "[data-discussao=\"parcerias-rodoviarias\"]",
+          "sha256": "d4b666cdb69cb24defd6d7766555736432030a4c7c844eab64b0c36eb0b81faa"
+        },
+        {
+          "ficheiro": "discussao-pt-1600-porta-explicacao.png",
+          "seletor": "[data-discussao-explicacao]",
+          "sha256": "68aba0908c1d4a790e5a48a5d1f7b1dac63a0fac461cfdedae065c5cbd6da87e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-390.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 4880,
+      "sha256": "7f9e77f3af36cf7466b9396fa3ea1faec387a41a23f73cef3f22dd8530f1697b",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-390-saude-no-orcamento.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"]",
+          "sha256": "9df6d3a10c07a65f45367871e17f1031cdfb0255e2a42fd4e59df54c56629321"
+        },
+        {
+          "ficheiro": "discussao-en-390-parcerias-rodoviarias.png",
+          "seletor": "[data-discussao=\"parcerias-rodoviarias\"]",
+          "sha256": "52d8239c275b932e46b59f4183711bd060bb7e3108eb9704a44140e833830c1b"
+        },
+        {
+          "ficheiro": "discussao-en-390-porta-explicacao.png",
+          "seletor": "[data-discussao-explicacao]",
+          "sha256": "68757f4c899f240eee02504b3b1d60ef120654ede2c4848acc632c1dba230918"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-768.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3794,
+      "sha256": "ea7d77e03a4371a9382a7fe90fa498547b87c9556e42cb18aa9423ad953dd109",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-768-saude-no-orcamento.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"]",
+          "sha256": "d53b3900ff57f0a411fb0b52f4db32e386364a743a16b0cc419756c2455b70c6"
+        },
+        {
+          "ficheiro": "discussao-en-768-parcerias-rodoviarias.png",
+          "seletor": "[data-discussao=\"parcerias-rodoviarias\"]",
+          "sha256": "0061302bbd1bf1bc4267a07042ccfba1aa7da3a7b60e9fe5ff793f2fb369639d"
+        },
+        {
+          "ficheiro": "discussao-en-768-porta-explicacao.png",
+          "seletor": "[data-discussao-explicacao]",
+          "sha256": "7566e20834cc4cd462390a28ab4812b0e62be405ad75e3e19b1bf1d6635dc0ae"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-1024.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 3835,
+      "sha256": "34861233781f77f8f51651035720c9e8c7829e16c32524412e6bb981c841c881",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-1024-saude-no-orcamento.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"]",
+          "sha256": "e34e8e0941cce74ccd24a76ed8d30faa145e128f984b5b0546905753ead8cc33"
+        },
+        {
+          "ficheiro": "discussao-en-1024-parcerias-rodoviarias.png",
+          "seletor": "[data-discussao=\"parcerias-rodoviarias\"]",
+          "sha256": "4cb336972d9baec233134d2c3ef1736216f95aa0902dec6b34dd37b3fdf2def4"
+        },
+        {
+          "ficheiro": "discussao-en-1024-porta-explicacao.png",
+          "seletor": "[data-discussao-explicacao]",
+          "sha256": "91fa2baa2a8a4752aecb5895a131ec6dc529a76c3b8bd271a8cb81f329965e65"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-1280.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 3937,
+      "sha256": "e8f0c6333f6d46c5728cd7376e1495bd10c2c04521aa5a40231178b96c7c5a81",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-1280-saude-no-orcamento.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"]",
+          "sha256": "9b384a150bf41d58348ea3958f87d06ebbc5313c5df1be2a1e936c209a70183a"
+        },
+        {
+          "ficheiro": "discussao-en-1280-parcerias-rodoviarias.png",
+          "seletor": "[data-discussao=\"parcerias-rodoviarias\"]",
+          "sha256": "38d46fa76cfd492dd303bfcde51a550cb60831280ef1583879697a701d4a3ae5"
+        },
+        {
+          "ficheiro": "discussao-en-1280-porta-explicacao.png",
+          "seletor": "[data-discussao-explicacao]",
+          "sha256": "189b6f646edee811a70fea2e6c1fc2ae1477a66e2594875692630758111e7f8e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "discussao-en-1600.png",
+      "rota": "/en/under-discussion/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 3974,
+      "sha256": "1eba5517700eed421ea3b4a6e86a990a5f8e278ccb4eedb0f04a287df74edc74",
+      "recortes": [
+        {
+          "ficheiro": "discussao-en-1600-saude-no-orcamento.png",
+          "seletor": "[data-discussao=\"saude-no-orcamento\"]",
+          "sha256": "be2a078450708c552cb6fb26350fe901bee55b3977ada739727f3b9cf6d5ccf6"
+        },
+        {
+          "ficheiro": "discussao-en-1600-parcerias-rodoviarias.png",
+          "seletor": "[data-discussao=\"parcerias-rodoviarias\"]",
+          "sha256": "38693a29f9330da48d0f469f199d19fa878cce9f15b1423f22d5bfd1fae61a94"
+        },
+        {
+          "ficheiro": "discussao-en-1600-porta-explicacao.png",
+          "seletor": "[data-discussao-explicacao]",
+          "sha256": "189b6f646edee811a70fea2e6c1fc2ae1477a66e2594875692630758111e7f8e"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "5aba9fb802daeabb2c0aab89efbc59a4a2e6c6f6e5b70f6fe29294816c41167e",
+    "o-que-se-discute/index.html": "a339f87ffd69f21c72184aaed44bb5c72f12ec01605c7d0410f10f0863f22fdc",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.iWxVxik0.css": "b028d1f789d6ec2ee10ea6fd6a1162acc7bf3ae2aae322f9cfe11bc33e563531",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "en/under-discussion/index.html": "366597d1623347c7a1f66466f6be24590835915deea1f06fe80dc45084a321ff"
+  },
+  "falhas": [],
+  "ok": true
+}

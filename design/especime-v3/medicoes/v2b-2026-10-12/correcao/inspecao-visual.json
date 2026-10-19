@@ -1,0 +1,63 @@
+{
+  "cabeca": "f3ac9261221d5f3c1b0b6a248137d4093d53b078",
+  "imagens_inspecionadas": [
+    {
+      "ficheiro": "discussao-pt-390-saude-no-orcamento.png",
+      "largura": 354,
+      "altura": 2279,
+      "sha256": "ea64f7ff6f6d0aba30e89d12ac9209e6e69c1d53f66348f67525f830dd48120a"
+    },
+    {
+      "ficheiro": "discussao-pt-390-parcerias-rodoviarias.png",
+      "largura": 354,
+      "altura": 1432,
+      "sha256": "39bccf14e940f3aa7dbaab26a7c11c3f084f24f58d44f104fd7ce2dcd0c4ea21"
+    },
+    {
+      "ficheiro": "discussao-pt-1280.png",
+      "largura": 1280,
+      "altura": 3937,
+      "sha256": "2130b84c2fda1d73ce5f3b07d62d211b71d4b47ab3a80be7d9f607e220da84df"
+    },
+    {
+      "ficheiro": "discussao-pt-1280-saude-no-orcamento.png",
+      "largura": 528,
+      "altura": 1885,
+      "sha256": "1d02a7bf9951772e6f33e3196f8048b4d051b4b2b5fa37aa4e625276b5199366"
+    },
+    {
+      "ficheiro": "discussao-en-390-saude-no-orcamento.png",
+      "largura": 354,
+      "altura": 2425,
+      "sha256": "9df6d3a10c07a65f45367871e17f1031cdfb0255e2a42fd4e59df54c56629321"
+    },
+    {
+      "ficheiro": "discussao-en-390-parcerias-rodoviarias.png",
+      "largura": 354,
+      "altura": 1459,
+      "sha256": "52d8239c275b932e46b59f4183711bd060bb7e3108eb9704a44140e833830c1b"
+    },
+    {
+      "ficheiro": "discussao-en-1280.png",
+      "largura": 1280,
+      "altura": 3937,
+      "sha256": "e8f0c6333f6d46c5728cd7376e1495bd10c2c04521aa5a40231178b96c7c5a81"
+    },
+    {
+      "ficheiro": "discussao-en-1280-saude-no-orcamento.png",
+      "largura": 528,
+      "altura": 1940,
+      "sha256": "9b384a150bf41d58348ea3958f87d06ebbc5313c5df1be2a1e936c209a70183a"
+    }
+  ],
+  "observacoes": [
+    "Na comparação das parcerias o espaço entre o número e a unidade está visível nas duas edições a 390 px, e o selo vem depois da unidade.",
+    "As quatro comparações da Saúde estão presentes e legíveis nas duas edições, a 390 e a 1280 px; os sufixos de percentagem das comparações conservam o espaço.",
+    "A porta da explicação aparece no fim da parte das fontes.",
+    "As páginas inteiras a 1280 px conservam os dois itens, o menu e o rodapé."
+  ],
+  "limites": [
+    "A imagem não prova os cliques reais nem substitui a régua de acessibilidade.",
+    "As outras larguras têm capturas e medidas, mas não se afirma inspeção visual individual de todos os PNG."
+  ]
+}

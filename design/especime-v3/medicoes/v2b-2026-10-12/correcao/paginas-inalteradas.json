@@ -1,0 +1,240 @@
+{
+  "cabeca": "f3ac9261221d5f3c1b0b6a248137d4093d53b078",
+  "origem": "design/especime-v3/capturas/v2b-2026-10-12/retoma2/capturas.json",
+  "paginas_do_manifesto": 40,
+  "paginas_alteradas": [
+    "o-que-se-discute/index.html",
+    "en/under-discussion/index.html"
+  ],
+  "paginas_inalteradas": [
+    {
+      "pagina": "index.html",
+      "sha256_retoma2": "3848dd2a149e4e87cf482b0ebd7ada65e0f6fd13df3ecc3692977169e94e7f72",
+      "sha256_correcao": "3848dd2a149e4e87cf482b0ebd7ada65e0f6fd13df3ecc3692977169e94e7f72",
+      "igual": true
+    },
+    {
+      "pagina": "en/index.html",
+      "sha256_retoma2": "f9d1a3f7c98d899f5e783c8d17ff7cf7f7316539d3d87062b173afb14a57f566",
+      "sha256_correcao": "f9d1a3f7c98d899f5e783c8d17ff7cf7f7316539d3d87062b173afb14a57f566",
+      "igual": true
+    },
+    {
+      "pagina": "explicacoes/dinheiro-do-estado-2026/index.html",
+      "sha256_retoma2": "ab80165e80e59d53161c670fea8480755de7c054dbfb3b68407aa6791ab2e4cd",
+      "sha256_correcao": "ab80165e80e59d53161c670fea8480755de7c054dbfb3b68407aa6791ab2e4cd",
+      "igual": true
+    },
+    {
+      "pagina": "en/explainers/dinheiro-do-estado-2026/index.html",
+      "sha256_retoma2": "27e903eb978d49a131128e2991b11bdf68c4577dbee93602c2a6427fce9a250d",
+      "sha256_correcao": "27e903eb978d49a131128e2991b11bdf68c4577dbee93602c2a6427fce9a250d",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html",
+      "sha256_retoma2": "340ce8ebbe50c2153766027bc285cdaa265d79322ba80e58941bf295f92a7dd8",
+      "sha256_correcao": "340ce8ebbe50c2153766027bc285cdaa265d79322ba80e58941bf295f92a7dd8",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html",
+      "sha256_retoma2": "3b123f735497b77785e295e499397079fa70d71fa091ab6b90f1c6ffc380fb99",
+      "sha256_correcao": "3b123f735497b77785e295e499397079fa70d71fa091ab6b90f1c6ffc380fb99",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html",
+      "sha256_retoma2": "b734d5f9347210222b1bab02081b25a5405df1a2ade5a0076e373d73bbe655c2",
+      "sha256_correcao": "b734d5f9347210222b1bab02081b25a5405df1a2ade5a0076e373d73bbe655c2",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html",
+      "sha256_retoma2": "fdf17024009e36665734704a8d83eb6e1f5bfafbdff59c50036f961c8cf4f9db",
+      "sha256_correcao": "fdf17024009e36665734704a8d83eb6e1f5bfafbdff59c50036f961c8cf4f9db",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09/index.html",
+      "sha256_retoma2": "6e00efffe4e0c66e59fa5085a81100dd4e7a491f6e01daec8b0172eeb6126d98",
+      "sha256_correcao": "6e00efffe4e0c66e59fa5085a81100dd4e7a491f6e01daec8b0172eeb6126d98",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/afirmacao-rtp-saude-queda-oe2027-2026-10-09/index.html",
+      "sha256_retoma2": "31f035086750c24d2fb558b7130f601c5a12ac08fd8b2b2cbaaf9038da3feece",
+      "sha256_correcao": "31f035086750c24d2fb558b7130f601c5a12ac08fd8b2b2cbaaf9038da3feece",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/index.html",
+      "sha256_retoma2": "8413942f8ec96295c37ec6545e8fdde0eb0701cb1f43d3395612f02f99a86b63",
+      "sha256_correcao": "8413942f8ec96295c37ec6545e8fdde0eb0701cb1f43d3395612f02f99a86b63",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/index.html",
+      "sha256_retoma2": "7835ff3e0fcb85ce5c5e0c7ffa88e8a44eed45f35921926f9211eb4d228469dd",
+      "sha256_correcao": "7835ff3e0fcb85ce5c5e0c7ffa88e8a44eed45f35921926f9211eb4d228469dd",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html",
+      "sha256_retoma2": "cc6cba579aab9cee16c8e2634c82a4de57949f59f3bbfc5d7b65c66916c2cb63",
+      "sha256_correcao": "cc6cba579aab9cee16c8e2634c82a4de57949f59f3bbfc5d7b65c66916c2cb63",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html",
+      "sha256_retoma2": "4dacd5a7acc2ba71905a23ad6a772a4f42b06a6604ebcbe7011ef3ad65e0c832",
+      "sha256_correcao": "4dacd5a7acc2ba71905a23ad6a772a4f42b06a6604ebcbe7011ef3ad65e0c832",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html",
+      "sha256_retoma2": "77f5d12f288dfd866043a9bd7ce59787b8ccce60f0465b1d042ed451efc92ab7",
+      "sha256_correcao": "77f5d12f288dfd866043a9bd7ce59787b8ccce60f0465b1d042ed451efc92ab7",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html",
+      "sha256_retoma2": "26cd34e76c8a10d16f01ab0a126edf8b4ac526a15bcbfdcc4e3f8664256b0a7e",
+      "sha256_correcao": "26cd34e76c8a10d16f01ab0a126edf8b4ac526a15bcbfdcc4e3f8664256b0a7e",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ppp-rodoviario-receitas-2027/index.html",
+      "sha256_retoma2": "aff4e979632afdbb8e31c480c2500a3b438d3cae1e21c8ad915260587a57562a",
+      "sha256_correcao": "aff4e979632afdbb8e31c480c2500a3b438d3cae1e21c8ad915260587a57562a",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ppp-rodoviario-receitas-2027/index.html",
+      "sha256_retoma2": "36f7996397da3abd546490951f54d49a455bc121f5cd242f664673f971a2532b",
+      "sha256_correcao": "36f7996397da3abd546490951f54d49a455bc121f5cd242f664673f971a2532b",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ppp-total-encargos-liquidos-2027/index.html",
+      "sha256_retoma2": "805b506cbe42e8106d3e20a95fd0bff63bdd2b9eb55060d82cd3ce5e692a668e",
+      "sha256_correcao": "805b506cbe42e8106d3e20a95fd0bff63bdd2b9eb55060d82cd3ce5e692a668e",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ppp-total-encargos-liquidos-2027/index.html",
+      "sha256_retoma2": "10f46a27d53161ecc52f54ec5e764c1583c2dd37deac43a9833b086523d22a7f",
+      "sha256_correcao": "10f46a27d53161ecc52f54ec5e764c1583c2dd37deac43a9833b086523d22a7f",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026/index.html",
+      "sha256_retoma2": "de6b0380f75d5bd02ff809c8541977f05f82f1ded5bc6b5f61dc5701869661e2",
+      "sha256_correcao": "de6b0380f75d5bd02ff809c8541977f05f82f1ded5bc6b5f61dc5701869661e2",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026/index.html",
+      "sha256_retoma2": "83106753b51183b9afe7188d632f512153639c965e333a2db5e2f7d2f75e24a3",
+      "sha256_correcao": "83106753b51183b9afe7188d632f512153639c965e333a2db5e2f7d2f75e24a3",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027/index.html",
+      "sha256_retoma2": "880d2a303e242b4de677978b0a82bf3297eff93e1ffc8aa48d53d956b8500812",
+      "sha256_correcao": "880d2a303e242b4de677978b0a82bf3297eff93e1ffc8aa48d53d956b8500812",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027/index.html",
+      "sha256_retoma2": "8767f48b9ecf0dca611266cd8b3ca6d931027777ba920fc4e01a92d66f3d0439",
+      "sha256_correcao": "8767f48b9ecf0dca611266cd8b3ca6d931027777ba920fc4e01a92d66f3d0439",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html",
+      "sha256_retoma2": "652f35254d156489667cf0beef1ac2b858f215409aba6a571d252d0c9e385962",
+      "sha256_correcao": "652f35254d156489667cf0beef1ac2b858f215409aba6a571d252d0c9e385962",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html",
+      "sha256_retoma2": "f3719c68cce42284f796fc21d4558e56e6cfc7e629d510f835bd34cc61043c32",
+      "sha256_correcao": "f3719c68cce42284f796fc21d4558e56e6cfc7e629d510f835bd34cc61043c32",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html",
+      "sha256_retoma2": "3a263d7d683651b4b19048ea9431b2d34e46f9329ae61021d8280ca4b8003166",
+      "sha256_correcao": "3a263d7d683651b4b19048ea9431b2d34e46f9329ae61021d8280ca4b8003166",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html",
+      "sha256_retoma2": "2c31cffb4e1d7b183b29fc8804f06c4bb1fcd5be8fce39509f38fdd9f77df603",
+      "sha256_correcao": "2c31cffb4e1d7b183b29fc8804f06c4bb1fcd5be8fce39509f38fdd9f77df603",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html",
+      "sha256_retoma2": "a706450b6632f9982901b865eae17ed7d7dbe199c61fe013a2e250de5c99e8d2",
+      "sha256_correcao": "a706450b6632f9982901b865eae17ed7d7dbe199c61fe013a2e250de5c99e8d2",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html",
+      "sha256_retoma2": "aa70c1d9468baaf785c2c18857c1fd65ddf63bba2a035b0c85823728dd4358fc",
+      "sha256_correcao": "aa70c1d9468baaf785c2c18857c1fd65ddf63bba2a035b0c85823728dd4358fc",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html",
+      "sha256_retoma2": "4cae167c97945a364879e89aae0605f65e531937213c7fc6b0c7603b5eabbc62",
+      "sha256_correcao": "4cae167c97945a364879e89aae0605f65e531937213c7fc6b0c7603b5eabbc62",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html",
+      "sha256_retoma2": "6fd9bcb5df8dc6dbd3ee3bb8ae9c56e988353b8f1a4d95f5969195bb48189aac",
+      "sha256_correcao": "6fd9bcb5df8dc6dbd3ee3bb8ae9c56e988353b8f1a4d95f5969195bb48189aac",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-total-consolidada-2026/index.html",
+      "sha256_retoma2": "d7a89da3335f29573314713337fa934d2e4623672f150bd72f05b3c3df3dbac7",
+      "sha256_correcao": "d7a89da3335f29573314713337fa934d2e4623672f150bd72f05b3c3df3dbac7",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-total-consolidada-2026/index.html",
+      "sha256_retoma2": "71451276f71747c85e56506c3f0fe41818ef9a47b0c1179b38be4fbb44bb3807",
+      "sha256_correcao": "71451276f71747c85e56506c3f0fe41818ef9a47b0c1179b38be4fbb44bb3807",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-total-consolidada-2027/index.html",
+      "sha256_retoma2": "f0ecd5f3f1eaffaf408fb2fb2a2e7b5bcbd58e5f0aacb46e9a5cacc08784bea2",
+      "sha256_correcao": "f0ecd5f3f1eaffaf408fb2fb2a2e7b5bcbd58e5f0aacb46e9a5cacc08784bea2",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-total-consolidada-2027/index.html",
+      "sha256_retoma2": "6284438684778aefd77eb64192b9e88d36e0ab71203db55a2ae8f51c4ad5965a",
+      "sha256_correcao": "6284438684778aefd77eb64192b9e88d36e0ab71203db55a2ae8f51c4ad5965a",
+      "igual": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-total-consolidada-variacao/index.html",
+      "sha256_retoma2": "0283016a370da819211af2c7ef1e347081448d403ff24d4de16f687c61b7f65e",
+      "sha256_correcao": "0283016a370da819211af2c7ef1e347081448d403ff24d4de16f687c61b7f65e",
+      "igual": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-total-consolidada-variacao/index.html",
+      "sha256_retoma2": "d18c1d171f3e1d51ffbc3afd3f37af6ca42777ccd0ca164fc9c5bacce7f93648",
+      "sha256_correcao": "d18c1d171f3e1d51ffbc3afd3f37af6ca42777ccd0ca164fc9c5bacce7f93648",
+      "igual": true
+    }
+  ],
+  "todas_iguais": true
+}

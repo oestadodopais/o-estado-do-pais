@@ -315,3 +315,117 @@ A statement with a number the table does not print calls for the calculation beh
 Não saiu nenhuma parte obrigatória. A única frase opcional omitida continua a ser a do fim do dinheiro do PRR em 2026, sem esse apoio literal, como a V2B-9 já regista. A leitura a frio e a leitura das frases pela direção são etapas posteriores a esta construção.
 
 tokens used: não disponível.
+
+## A correção da leitura (19.10.2026, à noite)
+
+Item 1: quatro parágrafos ligam cada afirmação à linha do quadro; PRR/RRP por extenso, porta para a explicação e atribuição e pontuação corrigidas.
+Item 2: a unidade passa para dentro do token, antes do selo; o espaço antes dos sufixos das comparações fica preservado no ecrã.
+
+Cabeça final do código conferido: `f3ac9261221d5f3c1b0b6a248137d4093d53b078`. O relatório e as provas entram num commit posterior, sem alterações ao código nem ao HTML medido. As sete linhas da partida conservam os sha256 de `correcao/partida.json`; não houve alterações no livro-razão. A igualdade dos dois valores de despesa efetiva em 2027 foi confirmada antes da edição: 17 803,1 nas duas linhas.
+
+A entrega fica com verificações pendentes. O escrivão disponível só aceita a corrida completa dos portões ou capturas, e o mandato proíbe a corrida completa e o navegador dentro da sandbox. Foi pedida a execução seletiva, sem resposta até este registo. Não correram `check:frases-compostas` com os cliques reais a 390 px, `check:primeira` completo nem a régua `check:alvos`. As capturas e a conferência estática não substituem esses resultados. Prova da limitação em `correcao/navegador-pendente.json`.
+
+Os códigos seguintes foram lidos dos ficheiros `.codigo`, depois de os comandos terminarem. Não correu a união dos três portões nem o `core.gate` do motor.
+
+| Conferência | Código | Ficheiro |
+|---|---:|---|
+| build | 0 | `correcao/build.codigo` |
+| itens | 0 | `correcao/itens.codigo` |
+| palavras | 0 | `correcao/palavras.codigo` |
+| html | 0 | `correcao/html.codigo` |
+| navegacao | 0 | `correcao/navegacao.codigo` |
+| primeira-estatica | 0 | `correcao/primeira-estatica.codigo` |
+| l1 | 0 | `correcao/l1.codigo` |
+| medicao-html | 0 | `correcao/medicao-html.codigo` |
+| capturas | 0 | `correcao/capturas.codigo` |
+| capturas-medidas | 0 | `correcao/capturas-medidas.codigo` |
+
+`primeira-estatica` corresponde a `node tests/inicio/primeira-pagina.mjs --prova`, não ao conjunto completo `check:primeira`. A tentativa inicial de `check:palavras` terminou a 1 enquanto outra construção recriava `dist/`: «não há página em dist/ para plantar». A corrida sobre a construção estável passou, com as plantas; o ensaio inicial não é apresentado como resultado da cabeça final.
+
+A célula dos itens passou com 28 de 28 plantas. A planta nova retira a porta da explicação nas duas edições. A célula confere presença, texto, destino existente, posição na parte das fontes, classe da porta e `data-voz`. A auditoria conserva os apoios das linhas já citadas; o inventário retira seis cadeias substituídas e recebe doze cadeias de conteúdo e duas de navegação.
+
+As quatro frases da comparação e as duas corrigidas, extraídas do HTML construído, com os selos omitidos. Os espaços inseparáveis dos milhares são conservados em `correcao/frases.json`.
+
+**PT**
+
+- Comparação 1: Há duas diferenças de perímetro: a despesa total ou a efetiva, e a despesa com ou sem o PRR, o Plano de Recuperação e Resiliência. Para ver a diferença que o PRR faz, compara-se a variação da despesa efetiva consolidada com a da despesa efetiva consolidada sem o PRR.
+- Comparação 2: Os números da RTP, a queda, o montante e a diferença, coincidem com a linha da despesa total consolidada do quadro: de 18 125,9 em 2026 para 17 858,4 em 2027, uma variação de −1,5 %.
+- Comparação 3: O número do ministro coincide com a variação da linha da despesa efetiva consolidada sem o PRR, 3,0 %; o quadro não diz que conta ele fez.
+- Comparação 4: Em 2027 a despesa efetiva consolidada é a mesma com e sem o PRR, 17 803,1 e 17 803,1; a diferença que o PRR faz está toda em 2026, e é por isso que uma linha desce e a outra sobe.
+- Como foi dito: «Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, num documento publicado pela RTP, a 09.10.2026. No mesmo dia, a RTP publicou: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.»
+- Comparação das parcerias: Nenhum dos quatro valores acima é igual a 1 700 milhões de euros.
+- Porta: «O que é a despesa efetiva consolidada →», para `/explicacoes/dinheiro-do-estado-2026/`. Destino existente: sim. Inventariada como navegação: sim.
+
+**EN**
+
+- Comparação 1: There are two differences of scope: total or effective expenditure, and expenditure with or without the RRP, the Recovery and Resilience Plan. To see the difference the RRP makes, compare the change in consolidated effective expenditure with the change in consolidated effective expenditure without the RRP.
+- Comparação 2: RTP's figures, the fall, the amount and the difference, match the table's line for total consolidated expenditure: from 18 125,9 in 2026 to 17 858,4 in 2027, a change of −1,5 %.
+- Comparação 3: The minister's figure coincides with the change in the line for consolidated effective expenditure without the RRP, 3,0 %; the table does not say which calculation he made.
+- Comparação 4: In 2027 consolidated effective expenditure is the same with and without the RRP, 17 803,1 and 17 803,1; the difference the RRP makes is all in 2026, which is why one line falls and the other rises.
+- Como foi dito: «Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, in a document published by RTP, on 09.10.2026. On the same day, RTP published: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.»
+- Comparação das parcerias: None of the four values above equals 1 700 million euros.
+- Porta: «What consolidated effective expenditure is →», para `/en/explainers/dinheiro-do-estado-2026/`. Destino existente: sim. Inventariada como navegação: sim.
+
+Capturas pelo escrivão: 10 páginas inteiras e 30 recortes, 40 PNG, nas duas edições e nas larguras 390, 768, 1024, 1280, 1600 px. Sha256 reconferidos, 0 erros e 0 avisos. Nenhum PNG entra num commit. Os recortes da ligação nova têm entre 45 e 53 px de altura; esta medida da imagem não prova por si a área clicável nem substitui a régua de acessibilidade.
+
+Os nomes abaixo são relativos a `design/especime-v3/capturas/v2b-2026-10-12/correcao/`. Os sha256 de cada imagem e os recursos servidos estão em `capturas.json`; as dimensões estão também em `correcao/capturas-medidas.json` nas medições. O manifesto da raiz foi criado, pois antes só existia `retoma2/capturas.json`, e remete para essa prova histórica sem a alterar.
+
+| Captura | Largura × altura, px |
+|---|---:|
+| `discussao-pt-390.png` | 390 × 4658 |
+| `discussao-pt-390-saude-no-orcamento.png` | 354 × 2279 |
+| `discussao-pt-390-parcerias-rodoviarias.png` | 354 × 1432 |
+| `discussao-pt-390-porta-explicacao.png` | 323 × 45 |
+| `discussao-pt-768.png` | 768 × 3794 |
+| `discussao-pt-768-saude-no-orcamento.png` | 529 × 1811 |
+| `discussao-pt-768-parcerias-rodoviarias.png` | 529 × 1212 |
+| `discussao-pt-768-porta-explicacao.png` | 283 × 45 |
+| `discussao-pt-1024.png` | 1024 × 3835 |
+| `discussao-pt-1024-saude-no-orcamento.png` | 529 × 1844 |
+| `discussao-pt-1024-parcerias-rodoviarias.png` | 529 × 1244 |
+| `discussao-pt-1024-porta-explicacao.png` | 283 × 45 |
+| `discussao-pt-1280.png` | 1280 × 3937 |
+| `discussao-pt-1280-saude-no-orcamento.png` | 528 × 1885 |
+| `discussao-pt-1280-parcerias-rodoviarias.png` | 528 × 1285 |
+| `discussao-pt-1280-porta-explicacao.png` | 282 × 45 |
+| `discussao-pt-1600.png` | 1600 × 3974 |
+| `discussao-pt-1600-saude-no-orcamento.png` | 528 × 1900 |
+| `discussao-pt-1600-parcerias-rodoviarias.png` | 528 × 1300 |
+| `discussao-pt-1600-porta-explicacao.png` | 282 × 45 |
+| `discussao-en-390.png` | 390 × 4880 |
+| `discussao-en-390-saude-no-orcamento.png` | 354 × 2425 |
+| `discussao-en-390-parcerias-rodoviarias.png` | 354 × 1459 |
+| `discussao-en-390-porta-explicacao.png` | 354 × 53 |
+| `discussao-en-768.png` | 768 × 3794 |
+| `discussao-en-768-saude-no-orcamento.png` | 529 × 1866 |
+| `discussao-en-768-parcerias-rodoviarias.png` | 529 × 1157 |
+| `discussao-en-768-porta-explicacao.png` | 327 × 45 |
+| `discussao-en-1024.png` | 1024 × 3835 |
+| `discussao-en-1024-saude-no-orcamento.png` | 529 × 1899 |
+| `discussao-en-1024-parcerias-rodoviarias.png` | 529 × 1189 |
+| `discussao-en-1024-porta-explicacao.png` | 327 × 45 |
+| `discussao-en-1280.png` | 1280 × 3937 |
+| `discussao-en-1280-saude-no-orcamento.png` | 528 × 1940 |
+| `discussao-en-1280-parcerias-rodoviarias.png` | 528 × 1230 |
+| `discussao-en-1280-porta-explicacao.png` | 326 × 45 |
+| `discussao-en-1600.png` | 1600 × 3974 |
+| `discussao-en-1600-saude-no-orcamento.png` | 528 × 1955 |
+| `discussao-en-1600-parcerias-rodoviarias.png` | 528 × 1245 |
+| `discussao-en-1600-porta-explicacao.png` | 326 × 45 |
+
+As outras páginas não foram recapturadas. O manifesto da retoma 2 contém 40 páginas no total, incluindo as duas páginas da discussão. Há, portanto, 38 páginas restantes, não quarenta: todos os 38 sha256 são iguais aos da retoma 2, medidos por guião. Os pares completos estão em `correcao/paginas-inalteradas.json`.
+
+As primeiras capturas mostraram o número colado à unidade, apesar do espaço presente no HTML. A regra local `white-space: pre` preserva esse espaço apenas nos sufixos das partes de comparação. As capturas finais substituem as da primeira tentativa, feita na cabeça anterior; as imagens do ensaio ficam em `correcao-preparacao/` e não entram no commit. A inspeção visual final está em `correcao/inspecao-visual.json`.
+
+Decisões desta passagem:
+
+- V2B-18: preservar no ecrã o espaço antes da unidade e do sinal de percentagem, com uma regra local às comparações reescritas. O token mantém as palavras exatas do mandato; não se altera a tipografia partilhada.
+- V2B-19: conservar a L1 e o teto em 2782. A porta nova não aumenta a contagem de páginas com destinos repetidos. Os tokens das novas frases repetem os recibos já citados nas fontes; a decomposição fica em `correcao/l1-destinos.json` e a comparação em `correcao/l1.json`.
+- V2B-20: registar a contagem real de 38 páginas inalteradas no manifesto histórico, sem fabricar duas páginas para chegar às quarenta indicadas no pedido.
+- V2B-21: não substituir os portões com navegador por capturas nem contornar o escrivão com uma corrida completa proibida. As três verificações ficam explicitamente pendentes.
+
+O achado 6, o 13 e as duas correções de frase do 15 foram tratados no âmbito pedido. Não se acrescentou uma definição da administração central ao programa Saúde nem um «[sic]» à citação. Os restantes Minor ficam para a higiene, como mandatado.
+
+A consulta de leitura ao motor encontrou a worktree limpa na cabeça `570e41199dc184b7def83f22f571273367e8fae2`, diferente da cabeça indicada no mandato. Não houve edição, commit, fusão nem portão do motor nesta passagem. `correcao/motor-observado.json` regista a observação; não se afirma que a cabeça seja a prevista.
+
+Não houve push nem publicação. O trailer de sessão foi copiado do commit de direção na cabeça de partida, porque o mandato não forneceu uma linha `Claude-Session:` explícita. Os ficheiros `RELATORIO.escrivao.log`, `RELATORIO.pontos.json` e `RELATORIO-correcao.md` não entram nos commits.

@@ -1,0 +1,20 @@
+{
+  "cabeca": "f3ac9261221d5f3c1b0b6a248137d4093d53b078",
+  "codigos_lidos_dos_ficheiros": {
+    "build": 0,
+    "itens": 0,
+    "palavras": 0,
+    "html": 0,
+    "navegacao": 0,
+    "primeira-estatica": 0,
+    "l1": 0,
+    "medicao-html": 0,
+    "capturas": 0,
+    "capturas-medidas": 0
+  },
+  "nao_executados": [
+    "check:frases-compostas",
+    "check:primeira completo",
+    "check:alvos"
+  ]
+}
