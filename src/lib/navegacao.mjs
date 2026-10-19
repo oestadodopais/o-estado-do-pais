@@ -36,7 +36,8 @@
  * natural numa coluna de 354 px, com 16 px entre portas, sem transbordo. A 360 px a dobra natural dá três linhas,
  * sem transbordo. As caixas, as capturas e os seus SHA-256 estão em
  * `design/especime-v3/medicoes/h4-2026-10-06/menu-a-390.json`, antes e depois da mudança. */
-export const ROTAS_NAV = ['home', 'lugares', 'temas', 'estudos', 'explicacoes', 'uniaoEuropeia', 'sobre'];
+/** V2-c: a discussão entra entre as explicações e a União; a dobra natural conserva os alvos. */
+export const ROTAS_NAV = ['home', 'lugares', 'temas', 'estudos', 'explicacoes', 'discussao', 'uniaoEuropeia', 'sobre'];
 export const ROTAS_RODAPE = ['home', 'livro', 'metodo', 'correcoes', 'agenda', 'explicacoes', 'discussao', 'uniaoEuropeia', 'indice'];
 export const ROTAS_SOBRE = ['metodo', 'correcoes', 'agenda', 'livro'];
 export const ETIQUETA_NAV = {

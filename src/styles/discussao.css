@@ -8,7 +8,16 @@
 .discussao-sumario { list-style: none; padding: 0; margin: 0; max-width: var(--measure); }
 .discussao-sumario a { display: block; padding: .75rem 0; min-height: 44px; font-family: var(--f-prosa); font-size: var(--t-leitura); line-height: 1.4; color: inherit; text-underline-offset: 3px; }
 .discussao-literal { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-.pp-discussao { margin-block: 2rem; padding-block: 1.25rem; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); }
+.pp-discussao { margin-block: 1rem 1.5rem; padding-block: .75rem; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); }
 .pp-discussao h2 a { color: inherit; }
 .discussao-porta { max-width: var(--measure); }
 .discussao-porta a { display: block; min-height: 44px; padding-block: .5rem; line-height: 1.5; }
+
+/* V2-c: só o resumo da primeira página se torna compacto. */
+.pp-discussao .discussao-sumario { max-width: none; }
+.pp-discussao .discussao-sumario a { padding-block: .5rem; font-size: 1rem; }
+@media (min-width: 768px) {
+  .pp-discussao .discussao-sumario { display: flex; flex-wrap: wrap; column-gap: .5rem; }
+  .pp-discussao .discussao-sumario li { display: flex; align-items: baseline; max-width: 100%; }
+  .pp-discussao .discussao-sumario li + li::before { content: '·'; margin-right: .5rem; }
+}

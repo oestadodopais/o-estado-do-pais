@@ -11,7 +11,7 @@
  * aplicado antes da primeira pintura; e pôs a página da União no menu, como sexta porta.
  *
  * A N3 e a N1 do `check:pais` conferem o HTML servido de todas as páginas (a raiz sem `data-theme`, a guarda, o
- * guião, o comando, as sete portas). Esta régua confere o que só o navegador sabe, nas três páginas que o diretor
+ * guião, o comando, as oito portas). Esta régua confere o que só o navegador sabe, nas três páginas que o diretor
  * leu (a primeira página, «Lugares» e a página da União), nas duas edições:
  *
  *   TM1 · sem escolha, o sítio é claro em qualquer aparelho: com o aparelho em escuro e nada guardado, a raiz não
@@ -25,8 +25,8 @@
  *         diz-se escolhido; uma recarga continua escura, com o atributo da raiz a mudar ANTES de o `<body>` entrar no
  *         documento (um observador posto antes de a página correr regista a ordem das duas mudanças); um toque em
  *         «claro» tira o atributo, guarda «light» e devolve a cor da mobília; e uma recarga fica clara;
- *   TM4 · H4: sete portas, uma linha quando cabem, com a dobra, o espaço da regra base e o alvo de toque
- *         protegidos. H4-5: no máximo duas linhas a 390 e 430 px, três a 320 e 360 px; nenhuma porta fora do menu ou da janela,
+ *   TM4 · V2-c: oito portas, uma linha quando cabem, com a dobra, o espaço da regra base e o alvo de toque
+ *         protegidos. V2C-1: três linhas a 390 e 430 px, quatro a 320 px e, a 360 px, quatro em PT e três em EN; nenhuma porta fora do menu ou da janela,
  *         e cada porta com pelo menos 44 px de altura. A célula guarda a referência aprovada, independente da folha:
  *         clamp(16px, 2.8vw, 34px), calculado à largura da janela, letra de 15 px e espaço das letras de .05em.
  *         A largura do documento fica no relatório: a 320 px a primeira página já passava da janela por um valor
@@ -38,9 +38,9 @@
  * AS PLANTAS (`--prova`) servem a mesma construção com um estrago, pelo servidor desta régua e sem tocar no `dist/`,
  * e cada uma tem de fazer a sua célula falhar com a queixa esperada: a paleta escura pela preferência do sistema
  * (TM1), a guarda tirada do `<head>`, a guarda no fim do `<body>` e, desde a P4-c, um manipulador que aplica o claro
- * a todos os cliques (TM3), o comando tirado do cabeçalho e um botão com 30 px (TM2), uma oitava porta, o menu
- * apertado a 6 px, o menu sem dobrar a 320 px, quatro linhas a 320 px e uma porta sem 44 px de toque (TM4, nas duas edições).
- * H4-d acrescenta seis portas, a última fora da janela, três linhas a 390 e a 430 px, letra de 13 px e a própria
+ * a todos os cliques (TM3), o comando tirado do cabeçalho e um botão com 30 px (TM2), uma nona porta, o menu
+ * apertado a 6 px, o menu sem dobrar a 320 px, oito linhas a 320 px e uma porta sem 44 px de toque (TM4, nas duas edições).
+ * V2-c conserva a planta da porta ausente, a última fora da janela, excesso de linhas a 390 e a 430 px, letra de 13 px e a própria
  * regra base apertada. Cada planta exige a mensagem da proteção que prova, nas duas edições.
  *
  *   node tests/inicio/tema-e-menu.mjs [--prova] [--json <ficheiro>]      (OEDP_DIST mede outra construção)
@@ -56,8 +56,8 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '.
 const DIST = path.resolve(process.env.OEDP_DIST ?? path.join(RAIZ, 'dist'));
 const LARGURAS = [390, 768, 1024, 1280, 1600];
 const ESTREITAS = [320, 360, 430];
-// H4-5: os limites da dobra natural nas larguras do telefone, decididos no brief.
-const MAX_LINHAS_TELEFONE = { 320: 3, 360: 3, 390: 2, 430: 2 };
+// V2C-1: limites medidos com oito portas, conservando a dobra natural.
+const MAX_LINHAS_TELEFONE = { 320: 4, 360: 4, 390: 3, 430: 3 };
 const PAGINAS = [
   ['/', 'pt'], ['/en/', 'en'],
   ['/lugares/', 'pt'], ['/en/places/', 'en'],
@@ -260,7 +260,7 @@ async function tm4(rota, largura) {
     const e = await estadoDaPagina(p);
     const onde = `${rota} a ${largura} px`;
     const f = [];
-    if (e.menu.portas !== 7) f.push(`TM4 · ${onde}: o menu tem ${e.menu.portas} portas, e são sete.`);
+    if (e.menu.portas !== 8) f.push(`TM4 · ${onde}: o menu tem ${e.menu.portas} portas, e são oito.`);
     if (e.menu.transborda || e.menu.direita > e.janela + 0.5 || !e.menu.dentro) f.push(`TM4 · ${onde}: o menu empurra a página para o lado ou tem uma porta fora da sua caixa (a última porta acaba a ${Math.round(e.menu.direita)} px numa janela de ${e.janela}).`);
     if (!estrago) {
       larguraDoDocumento.push({ rota, largura, documento: e.documento, janela: e.janela });
@@ -268,9 +268,9 @@ async function tm4(rota, largura) {
     }
     if (e.menu.natural <= e.menu.largura + 0.5) {
       if (e.menu.topos !== 1) f.push(`TM4 · ${onde}: as portas não estão numa linha dentro do menu (${e.menu.topos} linha(s)).`);
-    } else if (e.menu.topos < 2) f.push(`TM4 · ${onde}: as sete portas não cabem numa linha e o menu não dobrou.`);
-    const maxLinhas = MAX_LINHAS_TELEFONE[largura];
-    if (maxLinhas && e.menu.topos > maxLinhas) f.push(`TM4 · ${onde}: o menu tem ${e.menu.topos} linhas, e o máximo é ${maxLinhas === 2 ? 'duas' : 'três'}.`);
+    } else if (e.menu.topos < 2) f.push(`TM4 · ${onde}: as oito portas não cabem numa linha e o menu não dobrou.`);
+    const maxLinhas = largura === 360 && rota.startsWith('/en/') ? 3 : MAX_LINHAS_TELEFONE[largura];
+    if (maxLinhas && e.menu.topos > maxLinhas) f.push(`TM4 · ${onde}: o menu tem ${e.menu.topos} linhas, e o máximo é ${({2:'duas',3:'três',4:'quatro'})[maxLinhas]}.`);
     if (!Number.isFinite(e.menu.gapBase) || Math.abs(e.menu.gap - e.menu.gapBase) > 0.1 || e.menu.folgas.some((g) => Math.abs(g - e.menu.gapBase) > 0.1)) {
       f.push(`TM4 · ${onde}: o espaço entre portas na mesma linha não é o da regra base (${e.menu.gapBase} px; lido ${e.menu.gap} px; folgas ${e.menu.folgas.join(', ')}).`);
     }
@@ -311,18 +311,18 @@ try {
       ['o comando tirado do cabeçalho', { html: (s) => s.replace(/<div class="tema"[^>]*data-tema-controlo[^>]*>[\s\S]*?<\/div>/, '') }, () => tm2('/uniao-europeia/', 1024), /TM2 · .*não há comando do tema/],
       ['um botão do tema com 30 px', { html: (s) => s.replace('</head>', '<style>.tema-b{min-height:30px!important;min-width:30px!important;height:30px!important}</style></head>') }, () => tm2('/en/places/', 390), /TM2 · .*mede .* px, e o alvo é de 44 por 44/],
       ...['/', '/en/'].flatMap((rota) => [
-        ['uma oitava porta no menu', { html: (s) => s.replace(/(<nav class="menu-cinco"[^>]*>[\s\S]*?)(<\/nav>)/, '$1<a href="/agenda">Agenda</a>$2') }, () => tm4(rota, 1280), /TM4 · .*o menu tem 8 portas, e são sete\./],
-        ['uma porta a menos no menu', { html: (s) => s.replace(/(<nav class="menu-cinco"[^>]*>)\s*<a\b[^>]*>[\s\S]*?<\/a>/, '$1') }, () => tm4(rota, 1280), /TM4 · .*o menu tem 6 portas, e são sete\./],
+        ['uma nona porta no menu', { html: (s) => s.replace(/(<nav class="menu-cinco"[^>]*>[\s\S]*?)(<\/nav>)/, '$1<a href="/agenda">Agenda</a>$2') }, () => tm4(rota, 1280), /TM4 · .*o menu tem 9 portas, e são oito\./],
+        ['menu sem a discussão', { html: (s) => s.replace(/(<nav class="menu-cinco"[^>]*>[\s\S]*?)<a\b[^>]*href="(?:\/o-que-se-discute|\/en\/under-discussion)\/"[^>]*>[\s\S]*?<\/a>/, '$1') }, () => tm4(rota, 1280), /TM4 · .*o menu tem 7 portas, e são oito\./],
         ['a última porta fora da janela', { html: (s) => s.replace('</head>', '<style>.menu-cinco a:last-child{transform:translateX(100vw)}</style></head>') }, () => tm4(rota, 390), /TM4 · .*o menu empurra a página/],
         ['o menu apertado a 6 px', { html: (s) => s.replace('</head>', '<style>@media (width<=430px){.menu-cinco{gap:0 6px!important}.menu-cinco a{font-size:13px!important;letter-spacing:0!important}}</style></head>') }, () => tm4(rota, 390), /TM4 · .*o espaço entre portas na mesma linha não é o da regra base/],
         ['a letra do menu a 13 px', { html: (s) => s.replace('</head>', '<style>.menu-cinco a{font-size:13px!important}</style></head>') }, () => tm4(rota, 390), /TM4 · .*a letra ou o espaço das letras difere da regra base/],
         ['a regra base apertada', { css: (s) => s
           .replace(/(\.menu-cinco\s*\{[^{}]*?\bgap\s*:)\s*[^;}]+/, '$1 0 6px')
           .replace(/(\.menu-cinco a\s*\{[^{}]*?\bfont-size\s*:)\s*[^;}]+/, '$1 13px') }, () => tm4(rota, 1280), [/TM4 · .*o espaço entre portas na mesma linha não é o da regra base/, /TM4 · .*a letra ou o espaço das letras difere da regra base/]],
-        ['o menu sem dobrar a 320 px', { html: (s) => s.replace('</head>', '<style>.menu-cinco{flex-wrap:nowrap!important}</style></head>') }, () => tm4(rota, 320), /TM4 · .*as sete portas não cabem numa linha e o menu não dobrou\./],
+        ['o menu sem dobrar a 320 px', { html: (s) => s.replace('</head>', '<style>.menu-cinco{flex-wrap:nowrap!important}</style></head>') }, () => tm4(rota, 320), /TM4 · .*as oito portas não cabem numa linha e o menu não dobrou\./],
         // Só a resposta ao navegador recebe a regra base com espaço maior. A folha fonte fica intacta.
-        ['quatro linhas a 320 px', { html: (s) => s.replace('</head>', '<style>.menu-cinco{column-gap:80px!important}</style></head>') }, () => tm4(rota, 320), /TM4 · .* a 320 px: o menu tem 4 linhas, e o máximo é três\./],
-        ...[390, 430].map((largura) => [`três linhas a ${largura} px`, { html: (s) => s.replace('</head>', '<style>.menu-cinco{column-gap:50px!important}</style></head>') }, () => tm4(rota, largura), new RegExp(`TM4 · .* a ${largura} px: o menu tem 3 linhas, e o máximo é duas\\.`)]),
+        ['oito linhas a 320 px', { html: (s) => s.replace('</head>', '<style>.menu-cinco a{flex-basis:100%!important}</style></head>') }, () => tm4(rota, 320), /TM4 · .* a 320 px: o menu tem 8 linhas, e o máximo é quatro\./],
+        ...[390, 430].map((largura) => [`oito linhas a ${largura} px`, { html: (s) => s.replace('</head>', '<style>.menu-cinco a{flex-basis:100%!important}</style></head>') }, () => tm4(rota, largura), new RegExp(`TM4 · .* a ${largura} px: o menu tem 8 linhas, e o máximo é três\\.`)]),
         ['uma porta sem 44 px de toque', { html: (s) => s.replace('</head>', '<style>.menu-cinco a:first-child{min-height:30px!important;height:30px!important}</style></head>') }, () => tm4(rota, 390), /TM4 · .*a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px\./],
       ]),
     ];

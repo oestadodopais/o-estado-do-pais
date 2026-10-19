@@ -94,7 +94,16 @@ correr() {
   return "$codigo"
 }
 usada=0
-for g in build verify typecheck; do
+# V2-c: seleção explícita pedida ao escrivão; a corrida completa mantém-se por omissão.
+# O recibo só escolhe este perfil fechado, nunca comandos arbitrários.
+portoes="build verify typecheck"
+if [ -f "$O/selecao.json" ]; then
+  perfil=$(python3 -c 'import json,sys; r=json.load(open(sys.argv[1])); assert r == {"perfil":"v2c"}; print(r["perfil"])' "$O/selecao.json") || exit 9
+  [ "$perfil" = v2c ] || exit 9
+  [ "${OEDP_CONFERIR_MOTOR:-0}" = 0 ] || exit 9
+  portoes="build check:discussao check:navegacao check:primeira check:cabeca gate:html check:alvos check:css check:frases-compostas check:lugar"
+fi
+for g in $portoes; do
   [ ! -e "$O/$g.codigo" ] || usada=1
 done
 # As partes denunciam também uma corrida morta antes do primeiro código.
@@ -109,9 +118,12 @@ export OEDP_TEMPOS_DIR="$O"
 export npm_config_script_shell="$W/scripts/leituras/tempos-shell.py"
 git rev-parse HEAD > "$O/cabeca"
 printf 'limpa\n' > "$O/arvore.inicio"
-for g in build verify typecheck; do
+for g in $portoes; do
   date -u +%Y-%m-%dT%H:%M:%SZ > "$O/$g.inicio"
-  if [ "$g" = verify ]; then
+  if [ "${perfil:-}" = v2c ] && [ "$g" != build ] && [ "$(cat "$O/build.codigo")" -ne 0 ]; then
+    echo 'não correu: a construção não ficou verde' > "$O/$g.log"
+    codigo=125
+  elif [ "$g" = verify ]; then
     if [ "$(cat "$O/build.codigo")" -ne 0 ]; then
       echo 'verify: não correu; o build não ficou verde e não pode pagar passos da união' > "$O/verify.log"
       codigo=125
@@ -145,8 +157,11 @@ if [ "${OEDP_CONFERIR_MOTOR:-0}" = 1 ]; then
 fi
 git rev-parse HEAD > "$O/cabeca.fim"
 git status --short > "$O/estado.fim"
-echo "FIM $(cut -c1-8 "$O/cabeca") build=$(cat "$O/build.codigo") verify=$(cat "$O/verify.codigo") typecheck=$(cat "$O/typecheck.codigo")"
-for g in build verify typecheck; do
+echo "FIM $(cut -c1-8 "$O/cabeca")"
+for g in $portoes; do
+  echo "$g=$(cat "$O/$g.codigo")"
+done
+for g in $portoes; do
   [ "$(cat "$O/$g.codigo")" -eq 0 ] || exit 1
 done
 if [ "${OEDP_CONFERIR_MOTOR:-0}" = 1 ]; then

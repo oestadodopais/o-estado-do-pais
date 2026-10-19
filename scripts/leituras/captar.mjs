@@ -6,7 +6,8 @@
  * Espera load, fontes e um quadro. Guarda PNG, medidas, erros e sha256 das
  * capturas e dos recursos servidos. Recusa outra cabeça, pedidos externos,
  * erros do navegador, rotas em falta e recortes ausentes ou duplicados.
- * Tema claro, movimento reduzido, escala 1; 390, 768, 1024, 1280 e 1600 px.
+ * Tema claro, movimento reduzido, escala 1; 390, 768, 1024, 1280 e 1600 px por omissão.
+ * `larguras` permite a régua dos telefones; `medirMenu` acrescenta as caixas da H4 e do bloco inicial.
  * Não altera dist/. Cada bloco acrescenta as suas réguas de conteúdo; estas
  * capturas comuns não substituem as células nem a leitura visual do bloco.
  */
@@ -15,6 +16,7 @@ import path from 'node:path';
 import http from 'node:http';
 import { createHash } from 'node:crypto';
 import { chromium } from 'playwright';
+import { medirMenu } from '../../design/especime-v3/medicoes/v2c-2026-10-19/medir-menu.mjs';
 
 const [pedido, pastaDada, distDado = 'dist'] = process.argv.slice(2);
 if (!pedido || !pastaDada) throw new Error('captar: faltam o pedido e a pasta de saída');
@@ -28,6 +30,8 @@ if (!/^[0-9a-f]{40}$/.test(config.cabeca ?? '') || JSON.parse(versao).commit !==
   throw new Error('captar: a cabeça pedida não é a de dist/version.json');
 }
 if (!Array.isArray(config.paginas) || !config.paginas.length) throw new Error('captar: faltam páginas');
+const larguras = config.larguras ?? [390,768,1024,1280,1600];
+if (!Array.isArray(larguras) || !larguras.length || new Set(larguras).size !== larguras.length || larguras.some(w => !Number.isInteger(w) || w < 320 || w > 1600)) throw new Error('captar: larguras inválidas');
 const nomes = new Set();
 for (const p of config.paginas) {
   if (!/^[a-z0-9-]+$/.test(p.nome) || nomes.has(p.nome)) throw new Error('captar: nome inválido ou repetido');
@@ -61,7 +65,7 @@ const origem = `http://127.0.0.1:${servidor.address().port}`;
 let navegador;
 try {
   navegador = await chromium.launch({headless:true});
-  for (const p of config.paginas) for (const lingua of ['pt','en']) for (const largura of [390,768,1024,1280,1600]) {
+  for (const p of config.paginas) for (const lingua of ['pt','en']) for (const largura of larguras) {
     const contexto = await navegador.newContext({viewport:{width:largura,height:900},deviceScaleFactor:1,colorScheme:'light',reducedMotion:'reduce'});
     const externos = [], erros = [], recusados = [];
     await contexto.route('**/*', r => {
@@ -77,6 +81,10 @@ try {
       if (resposta?.status() !== 200) throw new Error(`${prefixo}: a página não respondeu a 200`);
       await pagina.evaluate(async () => { await document.fonts.ready; await new Promise(r => requestAnimationFrame(r)); });
       const medidas = await pagina.evaluate(() => ({janela:innerWidth,documento:document.documentElement.scrollWidth,corpo:document.body.scrollWidth,altura:document.documentElement.scrollHeight}));
+      if (config.medirMenu) {
+        medidas.menu = await pagina.evaluate(medirMenu);
+        medidas.discussao = await pagina.locator('[data-discussao-inicio]').boundingBox();
+      }
       const ficheiro = prefixo+'.png';
       const bytes = await pagina.screenshot({path:path.join(pasta,ficheiro),fullPage:true,animations:'disabled'});
       const recortes = [];
@@ -97,7 +105,7 @@ finally {
   await new Promise(r => servidor.close(r));
 }
 for (const [f,selo] of recursos) if (sha(await fs.readFile(path.join(dist,f))) !== selo) falhas.push(`recurso alterado: ${f}`);
-const recibo = {cabeca:config.cabeca,larguras:[390,768,1024,1280,1600],resultados,recursos:Object.fromEntries(recursos),falhas,ok:falhas.length===0};
+const recibo = {cabeca:config.cabeca,larguras,resultados,recursos:Object.fromEntries(recursos),falhas,ok:falhas.length===0};
 await fs.writeFile(path.join(pasta,'capturas.json'),JSON.stringify(recibo,null,2)+'\n');
 console.log(JSON.stringify({ok:recibo.ok,capturas:resultados.length,falhas}));
 process.exitCode = recibo.ok ? 0 : 1;

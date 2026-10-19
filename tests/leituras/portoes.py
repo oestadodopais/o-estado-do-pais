@@ -40,6 +40,27 @@ with tempfile.TemporaryDirectory(prefix='oedp-portoes-') as tmp:
     assert r.returncode == 9 and 'árvore suja' in r.stderr
     assert not (p / 'suja/build.codigo').exists() and not (comum / 'oedp-construcao.lock').exists()
     casos.append({'planta': 'árvore suja recusada antes da tranca e dos portões', 'codigo': r.returncode, 'mensagem': r.stderr.strip()})
+    for nome, conteudo, esperado in [('v2c', {'perfil': 'v2c'}, 1), ('perfil-invalido', {'perfil': 'outro'}, 9)]:
+        (p / nome).mkdir()
+        (p / nome / 'selecao.json').write_text(json.dumps(conteudo))
+        r = correr(nome)
+        assert r.returncode == esperado
+        assert not (p / nome / 'verify.codigo').exists()
+        assert not (p / nome / 'motor.codigo').exists()
+        if nome == 'v2c':
+            assert (p / nome / 'build.codigo').read_text().strip() == '7'
+            assert (p / nome / 'check:discussao.codigo').read_text().strip() == '125'
+        casos.append({'planta': nome, 'codigo': r.returncode})
+    comando('npm', 'echo "$*" >> "$CHAMADAS"\n')
+    (p / 'v2c-verde').mkdir()
+    (p / 'v2c-verde/selecao.json').write_text(json.dumps({'perfil': 'v2c'}))
+    r = correr('v2c-verde')
+    assert r.returncode == 0
+    nomes = {f.stem for f in (p / 'v2c-verde').glob('*.codigo')}
+    assert nomes == {'build','check:discussao','check:navegacao','check:primeira','check:cabeca','gate:html','check:alvos','check:css','check:frases-compostas','check:lugar'}
+    assert all(f.read_text().strip() == '0' for f in (p / 'v2c-verde').glob('*.codigo'))
+    casos.append({'planta': 'seleção verde exata sem motor', 'codigo': r.returncode})
+    comando('npm', 'echo "$PWD é a pasta de ensaio"\necho "$*" >> "$CHAMADAS"\n[ "$2" != build ] || exit 7\n')
     r = correr('vermelho')
     assert r.returncode == 1
     assert 'o build não ficou verde e não pode pagar passos da união' in (p / 'vermelho/verify.log').read_text()

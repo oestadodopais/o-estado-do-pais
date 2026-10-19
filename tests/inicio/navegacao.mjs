@@ -1,5 +1,6 @@
 /** O portão da navegação N1, chamado na construção e na verificação. */
 import fs from 'node:fs';
+import { conferirMenus } from './menu.mjs';
 import { conferirAcertosN1c, plantasDosAcertosN1c } from './n1c.mjs';
 import { conferirBlocosUnicos, plantasDosBlocosUnicos } from './blocos-unicos.mjs';
 import { conferirEntradas, plantasDasEntradas } from './entradas.mjs';
@@ -22,9 +23,11 @@ r.erros.push(...mapaPrimeiro.erros);
 const faixasDosConcelhos = conferirFaixasDosConcelhos(dist);
 r.erros.push(...faixasDosConcelhos.erros);
 const prova = process.argv.includes('--prova');
+const menus = conferirMenus(dist, prova);
+r.erros.push(...menus.erros);
 const plantasDasFaixas = prova ? plantasDasFaixasDosConcelhos(dist) : { controlo: null, resultados: [] };
 if (plantasDasFaixas.controlo?.erros.length) r.erros.push(...plantasDasFaixas.controlo.erros.map((e) => `o controlo das plantas da faixa do concelho não passou: ${e}`));
-const plantas = prova ? [...plantasDosBlocosUnicos(dist), ...plantasDasEntradas(dist), ...plantasDosConcelhos(dist), ...plantasDosAcertosN1c(dist), ...plantasDoMapaPrimeiro(dist), ...plantasDasFaixas.resultados] : [];
+const plantas = prova ? [...menus.plantas,...plantasDosBlocosUnicos(dist), ...plantasDasEntradas(dist), ...plantasDosConcelhos(dist), ...plantasDosAcertosN1c(dist), ...plantasDoMapaPrimeiro(dist), ...plantasDasFaixas.resultados] : [];
 for (const p of plantas) if (!p.mordeu) r.erros.push(`A planta não mordeu: ${p.nome}`);
 const relatorio = { ...r, entradas: entradas.contas, concelhos: concelhos.contas, acertos: acertos.medidas, mapa_primeiro: mapaPrimeiro.contas, faixas_dos_concelhos: faixasDosConcelhos.contas, plantas };
 const j = process.argv.indexOf('--json');

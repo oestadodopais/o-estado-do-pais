@@ -108,6 +108,8 @@ const recente = periodoDosNumerosMaisRecentes(blocosDaPagina(ids, lang));
 <Base lang={lang} path={path} title={s.home.metaTitle} description={s.home.metaDescription}>
   <Masthead slot="masthead" lang={lang} path={path} />
 
+  <BlocoDaDiscussao lang={lang} />
+
   <section class="pp-o-que-se-passa" data-o-que-se-passa aria-labelledby="o-que-se-passa-k">
     <h2 class="pp-o-que-se-passa-k" id="o-que-se-passa-k">{s.primeira.oQueSePassa}</h2>
     {recente && (
@@ -120,8 +122,6 @@ const recente = periodoDosNumerosMaisRecentes(blocosDaPagina(ids, lang));
         leitura da semana. Fica fora da lista dos cinco blocos, que tem a gramática e a célula deles. */}
     <ParaPerceber lang={lang} />
   </section>
-
-  <BlocoDaDiscussao lang={lang} />
 
   <section class="pp-entradas" data-entradas aria-labelledby="entradas-k">
     <h2 class="pp-sec-k" id="entradas-k">{s.primeira.porOndeComecar}</h2>

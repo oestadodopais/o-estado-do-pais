@@ -1,5 +1,6 @@
 /** V2-b: leitor independente dos itens e das portas, com estragos em memória. */
 import fs from 'node:fs';
+import { routePath } from '../../src/lib/routes.mjs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {parse} from 'node-html-parser';
@@ -94,7 +95,10 @@ export function conferirInicio(root,lang){
  if(links.length!==ITENS.length)erros.push('V2B início: títulos em falta ou a mais');
  for(const [i,e] of ITENS.entries())if(links[i]?.getAttribute('href')!==destino(e.slug,lang)||normal(links[i]?.text)!==normal(e.titulo[lang].join('')))erros.push('V2B início: destino ou título errado');
  const content=root.querySelector('main')?.innerHTML??'';
- if(!(content.indexOf('data-o-que-se-passa')<content.indexOf('data-discussao-inicio')&&content.indexOf('data-discussao-inicio')<content.indexOf('data-entradas')))erros.push('V2B início: bloco fora do lugar');
+ const marcas=['data-discussao-inicio','data-o-que-se-passa','data-entradas'].map(m=>content.indexOf(m));
+ if(marcas.some(n=>n<0)||!(marcas[0]<marcas[1]&&marcas[1]<marcas[2]))erros.push('V2C início: marca ausente ou bloco fora do lugar');
+ if(root.querySelectorAll('[data-discussao-inicio]').length!==1||root.querySelector('main > section')!==bloco)erros.push('V2C início: bloco não é a primeira secção única');
+ if(bloco.querySelector('h2 a')?.getAttribute('href')!==routePath('discussao',lang))erros.push('V2C início: destino do título errado');
  return erros;
 }
 export function conferirIntegracao(root,lang,pagina,linhas=loadClaims()){
@@ -134,6 +138,12 @@ export function conferirTudo(dist=path.join(raiz,'dist')){
   if(!fs.existsSync(file)){erros.push('V2B página: página ausente');continue;}
   const html=fs.readFileSync(file,'utf8');erros.push(...conferirPagina(parse(html),lang,loadClaims(),dist));provas.push(...plantas(html,lang));
   const home=parse(fs.readFileSync(path.join(dist,lang==='pt'?'index.html':'en/index.html'),'utf8'));erros.push(...conferirInicio(home,lang));
+  for(const [nome,estraga] of [
+   ['bloco depois do painel',r=>{const b=r.querySelector('[data-discussao-inicio]');const html=b.toString();b.remove();r.querySelector('[data-o-que-se-passa]').insertAdjacentHTML('afterend',html);}],
+   ...['data-discussao-inicio','data-o-que-se-passa','data-entradas'].map(m=>['marca ausente: '+m,r=>r.querySelector('['+m+']').removeAttribute(m)]),
+   ['bloco duplicado',r=>r.querySelector('main').insertAdjacentHTML('beforeend',r.querySelector('[data-discussao-inicio]').toString())],
+   ['destino do título errado',r=>r.querySelector('[data-discussao-inicio] h2 a').setAttribute('href','#errado')]
+  ]){const r=parse(home.toString());estraga(r);provas.push({nome,lang,mordeu:conferirInicio(r,lang).length>0});}
   const broken=parse(home.toString());broken.querySelector('[data-discussao-porta]')?.setAttribute('href','#errado');provas.push({nome:'porta inicial errada',lang,mordeu:conferirInicio(broken,lang).some(x=>x.includes('destino'))});
  }
  const idsDosItens=[...new Set(ITENS.flatMap(e=>[...linhasDaExplicacao(e,loadClaims())]))];

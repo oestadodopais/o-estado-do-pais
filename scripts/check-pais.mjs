@@ -546,12 +546,12 @@ function anda(dir) {
     paginas++;
     const lang = doc.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt';
     confereTema(doc, path.relative(dist, abs), lang);
-    /* N1 · AS SETE PORTAS (H4, 06.10.2026): Explicações entre Estudos e a União, com o nome inteiro.
+    /* N1 · AS OITO PORTAS (V2-c): a discussão entre as explicações e a União.
        A lista esperada é independente da lista que o cabeçalho rende; conserva contagem, ordem, rótulos e destinos. */
-    const esperado = lang === 'pt' ? ['Portugal','Lugares','Temas','Estudos','Explicações','União Europeia','Sobre'] : ['Portugal','Places','Themes','Studies','Explainers','European Union','About'];
+    const esperado = lang === 'pt' ? ['Portugal','Lugares','Temas','Estudos','Explicações','O que se discute','União Europeia','Sobre'] : ['Portugal','Places','Themes','Studies','Explainers','Under discussion','European Union','About'];
     const portas = doc.querySelectorAll('#nav-principal a');
-    const destinos = lang === 'pt' ? ['/','/lugares/','/temas/','/estudos','/explicacoes','/uniao-europeia','/sobre'] : ['/en','/en/places/','/en/themes/','/en/studies','/en/explainers','/en/european-union','/en/about'];
-    if (JSON.stringify(portas.map(a=>normal(a.textContent))) !== JSON.stringify(esperado) || portas.some((a,i)=>a.getAttribute('href') !== destinos[i]) || doc.querySelector('.nav-menu')) erros.push(`N1: menu de sete errado em ${path.relative(dist, abs)}.`);
+    const destinos = lang === 'pt' ? ['/','/lugares/','/temas/','/estudos','/explicacoes','/o-que-se-discute/','/uniao-europeia','/sobre'] : ['/en','/en/places/','/en/themes/','/en/studies','/en/explainers','/en/under-discussion/','/en/european-union','/en/about'];
+    if (JSON.stringify(portas.map(a=>normal(a.textContent))) !== JSON.stringify(esperado) || portas.some((a,i)=>a.getAttribute('href') !== destinos[i]) || doc.querySelector('.nav-menu')) erros.push(`N1: menu de oito errado em ${path.relative(dist, abs)}.`);
     /* N2 lê o rótulo onde ele está desde o bloco R1 (23.09.2026): no topo de
        cada página, e não no rodapé. O que ela protege é o mesmo, a porta e o
        ponto final numa caixa que não quebra. */
