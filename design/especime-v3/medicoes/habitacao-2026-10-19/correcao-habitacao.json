@@ -1,0 +1,11 @@
+{
+  "cabeca_motor": "84366ddff458bf10a5f8f746a4f41b0404a0928e",
+  "cabeca_motor_no_fim": "84366ddff458bf10a5f8f746a4f41b0404a0928e",
+  "comando": "python3 -m publisher.habitacao_test",
+  "inicio_utc": "2026-10-19T16:13:50.867166+00:00",
+  "fim_utc": "2026-10-19T16:14:03.033103+00:00",
+  "segundos": 12.166,
+  "codigo": 0,
+  "saida_sha256": "06ef743be0797d690f67473d6dfc5e057a8803ea8a811d3d3cb5ba44c48b4c4b",
+  "registo": "correcao-habitacao.log"
+}

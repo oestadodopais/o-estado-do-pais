@@ -1,0 +1,11 @@
+{
+  "Âmbito": "Correção de dados da pesquisa; sem exportação, publicação ou push.",
+  "Teste preliminar": "PASS 83 HAB, código 0; a prova na cabeça final consta dos registos abaixo.",
+  "Conferência das fontes": "Votações e datas lidas nos corpos; contexto de cada linha de imprensa registado em conferencia-imprensa.json; páginas do INE, Diário da República e Quadro 3.2 do OE inspecionadas visualmente.",
+  "Réguas pendentes": "Achados 8, 9, 10 e 20, com a TAP; não corrigidos nesta passagem. As réguas documentais, os testes e as plantas TAP não foram alterados.",
+  "Portões do sítio": "Não corridos: apenas relatório e provas, sem alteração de páginas ou exportações.",
+  "Registos": "medir-cabeca.py comitado antes da corrida escreve a cabeça do motor e os metadados de cada comando. correcao-habitacao.log e correcao-gate.log contêm as saídas integrais, com caminhos locais anonimizados.",
+  "tokens used": "não exposto nesta sessão; custo a cargo do lançador.",
+  "Tempo": "Durações medidas de cada teste nos metadados abaixo; duração total da passagem não registada.",
+  "Código da medição": "medir-cabeca.py; commit do sítio 0b4ce84ee0ba45e19cb6f8ae9774d865b26979e3; SHA-256 1c5af078946d0103dd377885ddaa695c4516d09bf2c8ea89b7340b78498bb118"
+}

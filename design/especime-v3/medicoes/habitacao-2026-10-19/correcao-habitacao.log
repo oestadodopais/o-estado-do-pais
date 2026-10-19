@@ -1,0 +1,5 @@
+Cabeça do motor: 84366ddff458bf10a5f8f746a4f41b0404a0928e
+Comando: python3 -m publisher.habitacao_test
+Início UTC: 2026-10-19T16:13:50.867166+00:00
+PASS 83 HAB: plantas e leituras independentes; livro regenerado, sem rede.
+Código: 0
