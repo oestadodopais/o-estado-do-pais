@@ -1,0 +1,85 @@
+{
+  "metodo": "Renderização PDF por Poppler ou PyMuPDF. Imagens temporárias fora dos repositórios; este ficheiro conserva apenas o manifesto.",
+  "paginas": [
+    {
+      "documento": "governo-apresentacao.pdf",
+      "pagina": 15,
+      "source_sha256": "9c15faf05632e3709d4eb8eb0cbcc71e4cea18daaac6ae0e4becf0d865edfdec",
+      "captura": "slide15.png",
+      "sha256": "a90fb8629ecfbe017144efb3997c7b18fb418c862faff57e9d9749de9699b5d7",
+      "largura": 1400,
+      "altura": 788,
+      "conferencia": "Página renderizada e inspecionada na correção; recortes e sequência visual conferidos."
+    },
+    {
+      "documento": "tap-2025-contas.pdf",
+      "pagina": 31,
+      "source_sha256": "bbfbb9a1e146c4b5d93e54d0de8d3e43aab23621e95369f47f7358a0593ff3b8",
+      "captura": "pessoal.png",
+      "sha256": "0b5edf6779001b4b5c9cd47c7472f3a2216e1ecd006d098d67b128b78235e2e2",
+      "largura": 1400,
+      "altura": 788,
+      "conferencia": "Página renderizada e inspecionada na correção; recortes e sequência visual conferidos."
+    },
+    {
+      "documento": "governo-apresentacao.pdf",
+      "pagina": 9,
+      "source_sha256": "9c15faf05632e3709d4eb8eb0cbcc71e4cea18daaac6ae0e4becf0d865edfdec",
+      "captura": "permuta.png",
+      "sha256": "4169b91a127849e8266583ec18c11a33d360832ef33badb9a005f1f73c49c4bd",
+      "largura": 1400,
+      "altura": 788,
+      "conferencia": "Página renderizada e inspecionada na correção; recortes e sequência visual conferidos."
+    },
+    {
+      "documento": "governo-apresentacao.pdf",
+      "pagina": 11,
+      "source_sha256": "9c15faf05632e3709d4eb8eb0cbcc71e4cea18daaac6ae0e4becf0d865edfdec",
+      "captura": "recuperacao.png",
+      "sha256": "ac8364cb08b89d4a705237e06addb4ec400ed9fed5bf8040977a4aa2d8e0a43b",
+      "largura": 1400,
+      "altura": 788,
+      "conferencia": "Página renderizada e inspecionada na correção; recortes e sequência visual conferidos."
+    },
+    {
+      "documento": "governo-apresentacao.pdf",
+      "pagina": 8,
+      "source_sha256": "9c15faf05632e3709d4eb8eb0cbcc71e4cea18daaac6ae0e4becf0d865edfdec",
+      "captura": "oferta.png",
+      "sha256": "e0ffc2d37546a17441475235a153c35806e0fffaeaea78a87c839ca0256d269f",
+      "largura": 1200,
+      "altura": 675,
+      "conferencia": "Página renderizada e inspecionada na correção; recortes e sequência visual conferidos."
+    },
+    {
+      "documento": "governo-apresentacao.pdf",
+      "pagina": 12,
+      "source_sha256": "9c15faf05632e3709d4eb8eb0cbcc71e4cea18daaac6ae0e4becf0d865edfdec",
+      "captura": "responsabilidades.png",
+      "sha256": "f058d1e279be205eeb434650b111e2946b3c5b44ad71677b6c9a0d94b3d188ac",
+      "largura": 1200,
+      "altura": 675,
+      "conferencia": "Página renderizada e inspecionada na correção; recortes e sequência visual conferidos."
+    },
+    {
+      "documento": "tap-2025-contas.pdf",
+      "pagina": 152,
+      "source_sha256": "bbfbb9a1e146c4b5d93e54d0de8d3e43aab23621e95369f47f7358a0593ff3b8",
+      "captura": "balanco.png",
+      "sha256": "2a75f77f0e822178df9a4dc47aac57749708601faa3e9b0565608a1b32836a7a",
+      "largura": 1200,
+      "altura": 675,
+      "conferencia": "Página renderizada e inspecionada na correção; recortes e sequência visual conferidos."
+    },
+    {
+      "documento": "cge-2022.pdf",
+      "pagina": 130,
+      "source_sha256": "2d34e7f87d70afad287af8b09af06fbb9e0ab41561d47327686fae5fa41ee618",
+      "captura": "cge-quadro.png",
+      "sha256": "6e220a05b51900f8aac555925a6cd65e3281d0334791dd9f65181ae5d8e597b3",
+      "largura": 1300,
+      "altura": 1839,
+      "conferencia": "Conferidos o cabeçalho de unidade, a grafia dos nomes e as linhas distintas da TAP SA e da TAP SGPS."
+    }
+  ]
+}
