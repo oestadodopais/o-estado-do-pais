@@ -1,0 +1,16 @@
+{
+  "Início UTC": "2026-10-19T13:36:22+00:00",
+  "Instante desta medição UTC": "2026-10-19T14:55:48.098463+00:00",
+  "Tempo decorrido medido em segundos": 4766.098,
+  "Regeneração do livro": "código 0; 2187 linhas",
+  "Teste específico": "código 0; PASS 83 HAB: plantas e leituras independentes; livro regenerado, sem rede.",
+  "Portão geral do motor": "código 0; GATE PASS em cada um dos três commits efetuados",
+  "Portões do sítio": "não corridos: relatório de investigação, sem alteração de páginas",
+  "tokens used": "não exposto nesta sessão; medição de custo a cargo do lançador",
+  "Tentativa direta do portão": "interrompida com código 130; não contabilizada como aprovação",
+  "Primeiro pedido de commit": "recusado, código 1: resposta HTML com extensão JSON; corpo preservado e extensão corrigida",
+  "Conferência documental": "duas extrações de PDF e inspeção visual das páginas corrigidas; limites dos excertos de imprensa conferidos por documento",
+  "Higiene": "nenhum caminho local ou identificador pessoal encontrado nos ficheiros preparados",
+  "Commits do motor": "6904e5d9, 06ff62d8, bafec81f",
+  "Regeneração do relatório": "duas execuções com resultado idêntico, verificadas por SHA-256"
+}
