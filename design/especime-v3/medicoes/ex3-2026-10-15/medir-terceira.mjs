@@ -22,6 +22,7 @@ for(const k of ['build','verify','typecheck','motor','series','cruzamento','plan
  const p=path.join(pasta,k+'.codigo');codigos[k]=read(p).trim();copiar(p,k+'.codigo');assert.equal(codigos[k],'0',k);
  if(pasta===ensaios)copiar(path.join(pasta,k+'.log'),k+'.log');
 }
+for(const k of ['indice','rotulos','lingua','areas'])copiar(path.join(ensaios,k+'.log'),k+'.log');
 const cabeca=json(path.join(root,'dist/version.json')).commit,cabecaMotor=read(path.join(portasMotor,'motor.cabeca')).trim();
 for(const k of ['cabeca','cabeca.fim']){assert.equal(read(path.join(portoes,k)).trim(),cabeca);copiar(path.join(portoes,k),k);}
 assert.equal(cabecaMotor,execFileSync('git',['rev-parse','HEAD'],{cwd:motor,encoding:'utf8'}).trim());copiar(path.join(portasMotor,'motor.cabeca'),'motor.cabeca');
@@ -41,6 +42,7 @@ for(const lang of ['pt','en']){
   const file=path.join(root,'dist',lang==='pt'?'livro-razao':'en/ledger',r.id,'index.html'),doc=parse(read(file));
   const literal=doc.querySelector('[data-linha-campo="excerpt"]');assert(literal,'Excerto ausente: '+r.id);
   assert.equal(literal.textContent.trim(),r.excerpt.trim());
+  assert.equal(doc.querySelectorAll('main a[href]').filter(a=>!a.closest('[data-rotulo-ia]')&&a.getAttribute('href').split('#')[0]===(lang==='pt'?'/metodo':'/en/method')).length,1,'Porta do Método repetida: '+r.id);
   if(r.id.startsWith('nato-defesa-')){assert(!literal.textContent.includes('PDF, página'));assert(doc.querySelector('#ressalva').textContent.includes(lang==='pt'?'A forma impressa no PDF não foi lida':'The printed form in the PDF was not read'));}
   recibos[lang][r.id]={pagina:path.relative(root,file),sha256:sha(file),excerto:literal.textContent.trim(),ressalva:doc.querySelector('#ressalva')?.textContent.trim()??null};
  }
@@ -56,7 +58,7 @@ out+='A extração usa os documentos, recibos e direitos já alojados; nenhum no
 out+='### Linhas e prova documental\n\n| Linha | Valor | Período | Documento selado |\n| --- | --- | --- | --- |\n';
 for(const r of linhas)out+=`| ${r.id} | ${r.value} | ${r.reference_date} | ${r.document.source_sha256} |\n`;
 out+='\n### P1 copiado das páginas construídas\n\n';for(const lang of ['pt','en'])out+=`#### ${lang.toUpperCase()}\n\n${frases[lang].p1}\n\n`;
-out+='A primeira corrida recusou a falta de cobertura das quatro linhas novas na A7. Foram declaradas fora da distribuição por ministérios, porque são compromissos da Aliança e a data da cimeira. A conferência A7 e os portões foram repetidos sem mudar a régua.\n\n';
+out+='A primeira corrida recusou a falta de cobertura das quatro linhas novas na A7. Foram declaradas fora da distribuição por ministérios, porque são compromissos da Aliança e a data da cimeira. A conferência A7 foi repetida sem mudar a régua. A edição da cópia HTML foi declarada sem língua. O verify detetou ainda o conjunto fechado de rótulos por atualizar, os localizadores HTML por declarar e a porta do Método repetida nos recibos novos. O conjunto inclui agora as linhas efetivamente exportadas, as plantas dos localizadores HTML recusam trocas de identidade, período e rótulo, e os recibos novos têm uma só porta do Método. O teto da L1 foi conservado. Os portões foram repetidos.\n\n';
 out+='### Provas e cabeças\n\n';out+=`Construção, portões e capturas: \`${cabeca}\`. Motor: \`${cabecaMotor}\`.\n\n| Conferência | Código lido |\n| --- | --- |\n`;for(const [k,v] of Object.entries(codigos))out+=`| ${k} | ${v} |\n`;
 out+=`\nCapturas em \`${m.capturas.pasta}\`: ${m.capturas.paginas} páginas, larguras ${m.capturas.larguras.join(', ')} px, ${m.capturas.falhas} falhas; resumos e largura conferidos por guião. `;
 out+=m.inspecaoVisual?'P1 e o recibo de 2024 inspecionados nas duas edições a 390 e 1280 px.\n':'Inspeção visual por executar.\n';
