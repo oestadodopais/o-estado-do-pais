@@ -181,3 +181,85 @@ As capturas em `<temporario>/ex3-correcao-capturas-1/`, com `capturas.json`, der
 O `RELATORIO.pontos.json` e o registo do escrivão foram preservados em `<temporario>/ex3-correcao-lancador/`, fora dos commits e da worktree durante os portões. Nenhum PNG entrou no Git. Nenhum push. As fusões recusadas continuam pendentes; a leitura a frio e a aterragem ficam a cargo da direção.
 
 tokens used: não disponível
+
+## A segunda passagem de correção de 19.10.2026
+
+Esta secção substitui o estado da primeira correção: as fusões já chegaram pelo lugar de direção. Nesta passagem não se executou merge nem push. As secções anteriores conservam o registo histórico e as suas medições, incluindo as formas entretanto corrigidas.
+
+- Achado 5: P1 diz que a definição da NATO inclui pensões e P2 compara NATO e Eurostat no mesmo ano. A frase das pensões é a terceira frase literal da origem selada `nato-definicao-despesa-defesa`; o setor e a contabilidade do Eurostat são os da linha `despesa-por-funcao-2024-gf02-pt`. A linha nova vem de `Table 3!L27`, com o mesmo documento, recibo e direitos.
+- Achado 6: o montante das Finanças volta a seguir à sua parcela por cem euros. O total antes da consolidação é extraído do excerto de `rp4n-total-ministerios` pelo token `verbatim`, com comparação independente da página e planta de valor trocado. Conserva-se a enumeração dos ministérios seguintes como frase separada.
+- Achado 7: a abertura, a figura das funções e P1 recebem a glosa da família nas duas edições, apoiada em `rp4n-despesa-efetiva` e `rp4n-consolidacao`.
+- Achado 8: o compositor deixa de atribuir apoios genéricos de `pib-2026` a P1. A X13 exige que a parte imediatamente junto de cada valor e o seu sufixo citem a linha desse token. As plantas trocam os apoios dos euros, da percentagem e do sufixo. Os preços constantes, os preços correntes, os períodos e as estimativas têm apoios próprios.
+- Achado 13: as percentagens usam o cabeçalho literal `Share of real GDP (%)`, lido em `Table 3!A3`, em vez do título de duas medidas. A navegação, as línguas e a régua dos localizadores acompanham-no. O recibo de 2024 tem uma definição sem a palavra estimativa.
+- Achado 15: cada valor estimado conserva uma só marca entre parênteses, em minúscula e sem ponto. A prosa usa apenas as expressões fixadas no mandato. A célula de 2024 não recebe marca.
+- Achado 18: `printed_cell` lê o valor e o `number_format`. O formato `General` dos euros dá os algarismos da célula; a apresentação agrupada do PDF deriva desses mesmos algarismos. A forma impressa do montante não está escrita à mão no gerador. As plantas alteram a célula e o formato.
+- Achado 11, parte incluída: `DESPESA TOTAL` tem `lang="pt-PT"` na frase dos ministérios, incluindo a edição inglesa.
+- Achados 20 e 21, parte incluída: os códigos, os registos das plantas e o manifesto das capturas estão em `segunda-correcao/`; `medicoes.json` e este relatório são escritos por `medir.mjs`, a partir da construção e das provas. As imagens ficam fora do repositório.
+
+### As células lidas pelo motor
+
+| Linha | Célula | Valor | Formato | Cabeçalho do ano | Forma da célula | Forma do PDF |
+| --- | --- | --- | --- | --- | --- | --- |
+| nato-defesa-portugal-pib-2024 | Table 3!L27 | 1.55 | 0.00 | 2024 | 1.55 | 1.55 |
+| nato-defesa-portugal-pib-2025 | Table 3!M27 | 2.01 | 0.00 | 2025e | 2.01 | 2.01 |
+| nato-defesa-portugal-pib-2026 | Table 3!N27 | 2.1 | 0.00 | 2026e | 2.10 | 2.10 |
+| nato-defesa-portugal-eur-2026 | Table 1!N27 | 6748 | General | 2026e | 6748 | 6,748 |
+
+Comandos: `python3 -m publisher.ex3 --site <worktree>`; `python3 -m publisher.export_site_rows --manifest publisher/manifest.ex3.json --site <worktree> --write`; `node design/especime-v3/medicoes/ex3-2026-10-15/compor.mjs`. A extração de 2024 lê o ano sem sufixo, por isso não o classifica como estimativa. As páginas do PDF indicadas na tabela foram renderizadas por `pdftoppm` e inspecionadas nesta passagem; a linha de Portugal confirma as formas do Excel e o agrupamento dos euros no PDF. A definição já continha as três frases na cópia alojada; não foi necessário outro pedido HTTP.
+
+### As frases construídas
+
+#### PT
+
+abertura: O Orçamento do Estado para 2026 diz, euro a euro, para onde vai o dinheiro. De cada cem euros da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços), 17,07 vão para a saúde, 13,73 para a proteção social, 10,91 para a educação e 11,77 para os assuntos económicos. A maior fatia, 33,18, é a dos serviços gerais das administrações públicas, onde a classificação das funções conta as transferências entre administrações.
+
+figuraFuncoes: As dez funções, de cada cem euros da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços)
+
+p1: 3,25 de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços), em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo; a definição da NATO inclui as pensões de reforma pagas diretamente pelo governo aos militares na reforma e aos funcionários civis dos departamentos militares. Para Portugal, a NATO publica 1,55 % do PIB em 2024 e, como estimativas, 2,01 % (estimativa da NATO) em 2025 e 2,10 % (estimativa da NATO) em 2026 (a tabela a preços constantes), e 6 748 (estimativa da NATO) milhões de euros em 2026 (a tabela a preços correntes, também uma estimativa).
+
+p2: Noutra conta, a de todas as administrações públicas, com as regionais e as locais, em percentagem do PIB e em contabilidade nacional, o Eurostat publica para 2024: serviços gerais das administrações públicas 5,8 % (dado provisório), defesa 0,9 % (dado provisório), segurança e ordem pública 1,6 % (dado provisório), assuntos económicos 3,6 % (dado provisório), proteção do ambiente 0,7 % (dado provisório), habitação e infraestruturas coletivas 0,6 % (dado provisório), saúde 6,8 % (dado provisório), desporto, recreação, cultura e religião 0,8 % (dado provisório), educação 4,3 % (dado provisório) e proteção social 17,1 % (dado provisório) do PIB. Estas percentagens do Eurostat referem-se a 2024 e usam o PIB como denominador. As fatias por função do Orçamento referem-se a 2026 e usam a despesa efetiva consolidada da administração central. Também diferem o perímetro e a contabilidade. As duas percentagens do PIB não medem a mesma despesa: a do Eurostat é a função «Defesa» de todas as administrações públicas, em contabilidade nacional, e a da NATO é a definição acima, que inclui as pensões. No mesmo ano de 2024, a NATO publica 1,55 % do PIB para Portugal e o Eurostat conta 0,9 % (dado provisório). Esta página mostra as duas medidas, cada uma com a sua definição, e não as soma nem corrige nenhuma.
+
+ministerios: Visto pelos ministérios, o maior é o Ministério das Finanças, com 60,12 de cada cem euros, 211 891 565 579 euros, da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central (o total antes da consolidação, 352 472 389 960 euros). Seguem-se o Ministério da Saúde (13,28), o Ministério do Trabalho, Solidariedade e Segurança Social (10,69) e o Ministério da Educação, Ciência e Inovação (4,16).
+
+#### EN
+
+abertura: The State Budget for 2026 says, euro by euro, where the money goes. Of every hundred euros of central administration's consolidated effective expenditure (spending without transactions in financial assets and liabilities or transfers between its own services), 17,07 go to health, 13,73 to social protection, 10,91 to education and 11,77 to economic affairs. The largest share, 33,18, is general public services, where the classification of functions counts the transfers between levels of government.
+
+figuraFuncoes: The ten functions, of every hundred euros of central administration's consolidated effective expenditure (spending without transactions in financial assets and liabilities or transfers between its own services)
+
+p1: 3,25 of every hundred euros on this page are the «Defence» function of central administration's consolidated effective expenditure (spending without transactions in financial assets and liabilities or transfers between its own services), in public accounting. Defence spending as a share of GDP, as NATO publishes it, is another measure, under NATO's own definition: payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole; NATO's definition includes retirement pensions paid directly by the government to retired military and civilian employees of military departments. For Portugal, NATO publishes 1,55 % of GDP in 2024 and, as estimates, 2,01 % (NATO estimate) in 2025 and 2,10 % (NATO estimate) in 2026 (the table at constant prices), and 6 748 (NATO estimate) million euros in 2026 (the table at current prices, also an estimate).
+
+p2: In another count, that of all public administrations, with the regional and local ones, as a share of GDP and in national accounts, Eurostat publishes for 2024: general public services 5,8 % (provisional data), defence 0,9 % (provisional data), public order and safety 1,6 % (provisional data), economic affairs 3,6 % (provisional data), environmental protection 0,7 % (provisional data), housing and community amenities 0,6 % (provisional data), health 6,8 % (provisional data), recreation, culture and religion 0,8 % (provisional data), education 4,3 % (provisional data) and social protection 17,1 % (provisional data) of GDP. These Eurostat percentages refer to 2024 and use GDP as their denominator. The Budget shares by function refer to 2026 and use central administration's consolidated effective expenditure. Their coverage and accounting basis also differ. The two shares of GDP do not measure the same expenditure: Eurostat's is the «Defence» function of all public administrations, in national accounting, and NATO's is the definition above, which includes pensions. In the same year, 2024, NATO publishes 1,55 % of GDP for Portugal and Eurostat counts 0,9 % (provisional data). This page shows both measures, each with its definition, and neither adds them up nor corrects either.
+
+ministerios: Seen by ministry, the largest is the Ministry of Finance, with 60,12 of every hundred euros, 211 891 565 579 euros, of the “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector (the total before consolidation, 352 472 389 960 euros). Then come the Ministry of Health (13,28), the Ministry of Labour, Solidarity and Social Security (10,69) and the Ministry of Education, Science and Innovation (4,16).
+
+A primeira corrida desta passagem recusou o inventário das contagens do livro, que ainda tinha o total anterior, e uma indexação sem tipo no novo token de origem. As contagens foram relidas do HTML, o inventário e o registo foram atualizados e a indexação ficou restrita à chave autorizada. A vírgula depois do montante das Finanças foi reposta nas duas edições, tal como no mandato. As páginas foram reconstruídas e os portões repetidos.
+
+### As provas e as cabeças
+
+Cabeça da construção, dos portões e das capturas: `96c315ffa40f8ff90b5fcf0e62ccd438aa83aa68`. Motor: `e457f74cfc069e2dc783bcb21a31a84a7ecc4a44`.
+
+| Conferência | Código lido |
+| --- | --- |
+| build | 0 |
+| verify | 0 |
+| typecheck | 0 |
+| motor | 0 |
+| series | 0 |
+| cruzamento | 0 |
+| plantas-sitio | 0 |
+| plantas-motor | 0 |
+
+Capturas: 50 páginas, larguras 390, 768, 1024, 1280, 1600 px, 0 falhas. Pasta: `<temporario>/ex3-segunda-capturas-1`. Os resumos de todas as imagens e recortes foram conferidos. P1, P2, a abertura e a frase dos ministérios foram inspecionados nas duas edições a 390 e 1280 px.
+
+O código do motor foi lido de `<temporario>/ex3-segunda-portoes-1/motor.codigo`, com a cabeça conferida contra `motor.cabeca`. O registo do lançador foi preservado em `<temporario>/ex3-segunda-lancador/`, fora da worktree e dos commits.
+
+A corrida depois do commit do relatório fica em `<temporario>/ex3-segunda-portoes-final/`, com as cabeças e os códigos próprios; não altera o conteúdo. As capturas finais ficam em `<temporario>/ex3-segunda-capturas-final/`.
+
+### O que fica para a higiene
+
+Os achados 10, 12, 14, 16, 17 e 19, e as partes dos achados 11 e 20 que não cabem nesta correção, ficam para a higiene como o mandato determina. Não foram corrigidos nesta passagem. A leitura curta do diff pelo Opus e a aterragem pertencem ao lugar de direção.
+
+Estado: concluído no âmbito do construtor, sujeito à leitura curta do diff.
+
+tokens used: não disponível

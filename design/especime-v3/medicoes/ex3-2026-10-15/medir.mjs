@@ -19,11 +19,16 @@ const codigos={};
 for(const k of ['build','verify','typecheck','motor']){const p=path.join(k==='motor'?(process.env.EX3_MOTOR_PORTOES??portoes):portoes,k+'.codigo');codigos[k]=read(p).trim();copiar(p,k+'.codigo');}
 for(const k of ['series','cruzamento','plantas-sitio','plantas-motor']){const p=path.join(ensaios,k+'.codigo');codigos[k]=read(p).trim();copiar(p,k+'.codigo');copiar(path.join(ensaios,k+'.log'),k+'.log');}
 for(const k of ['cabeca','cabeca.fim'])copiar(path.join(portoes,k),k);
+const portasMotor=process.env.EX3_MOTOR_PORTOES??portoes;
+const cabecaMotor=read(path.join(portasMotor,'motor.cabeca')).trim();
+if(cabecaMotor!==git(motor,'rev-parse','HEAD'))throw Error('O código do motor pertence a outra cabeça');
+copiar(path.join(portasMotor,'motor.cabeca'),'motor.cabeca');
 const manifest=json(path.join(capturas,'capturas.json'));
 for(const r of manifest.resultados)for(const c of [r,...r.recortes])if(sha(path.join(capturas,c.ficheiro))!==c.sha256)throw Error('Captura com resumo diferente: '+c.ficheiro);
 copiar(path.join(capturas,'capturas.json'),'capturas.json');
+if(manifest.resultados.some(r=>r.documento>r.largura||r.corpo>r.largura))throw Error('Captura com transbordo horizontal');
 const versao=json(path.join(root,'dist/version.json'));
-if(manifest.cabeca!==versao.commit||read(path.join(portoes,'cabeca')).trim()!==versao.commit)throw Error('HTML, portões e capturas não têm a mesma cabeça');
+if(manifest.cabeca!==versao.commit||read(path.join(portoes,'cabeca')).trim()!==versao.commit||read(path.join(portoes,'cabeca.fim')).trim()!==versao.commit)throw Error('HTML, portões e capturas não têm a mesma cabeça');
 const seletores={abertura:'[data-explicacao-paragrafo="abertura[0]"]',figuraFuncoes:'#explicacao-figura-funcoes figcaption',p1:'[data-explicacao-paragrafo="seccoes[0].conteudo[2].paragrafo"]',p2:'[data-explicacao-paragrafo="seccoes[0].conteudo[3].paragrafo"]',ministerios:'[data-explicacao-paragrafo="seccoes[1].conteudo[0].paragrafo"]'};
 const frases={};
 for(const lang of ['pt','en']){
@@ -53,7 +58,7 @@ out+='- Achado 11, parte incluída: `DESPESA TOTAL` tem `lang="pt-PT"` na frase 
 out+='- Achados 20 e 21, parte incluída: os códigos, os registos das plantas e o manifesto das capturas estão em `segunda-correcao/`; `medicoes.json` e este relatório são escritos por `medir.mjs`, a partir da construção e das provas. As imagens ficam fora do repositório.\n\n';
 out+='### As células lidas pelo motor\n\n| Linha | Célula | Valor | Formato | Cabeçalho do ano | Forma da célula | Forma do PDF |\n| --- | --- | --- | --- | --- | --- | --- |\n';
 for(const c of celulas)out+=`| ${c.id} | ${c.folha}!${c.celula} | ${c.valor} | ${c.number_format} | ${c.cabecalho_periodo} | ${c.forma_celula} | ${c.impresso} |\n`;
-out+='\nComandos: `python3 -m publisher.ex3 --site <worktree>`; `python3 -m publisher.export_site_rows --manifest publisher/manifest.ex3.json --site <worktree> --write`; `node design/especime-v3/medicoes/ex3-2026-10-15/compor.mjs`. A extração de 2024 lê o ano sem sufixo, por isso não o classifica como estimativa. A definição já continha as três frases na cópia alojada; não foi necessário outro pedido HTTP.\n\n### As frases construídas\n\n';
+out+='\nComandos: `python3 -m publisher.ex3 --site <worktree>`; `python3 -m publisher.export_site_rows --manifest publisher/manifest.ex3.json --site <worktree> --write`; `node design/especime-v3/medicoes/ex3-2026-10-15/compor.mjs`. A extração de 2024 lê o ano sem sufixo, por isso não o classifica como estimativa. As páginas do PDF indicadas na tabela foram renderizadas por `pdftoppm` e inspecionadas nesta passagem; a linha de Portugal confirma as formas do Excel e o agrupamento dos euros no PDF. A definição já continha as três frases na cópia alojada; não foi necessário outro pedido HTTP.\n\n### As frases construídas\n\n';
 for(const lang of ['pt','en']){out+=`#### ${lang.toUpperCase()}\n\n`;for(const [k,v] of Object.entries(frases[lang].textos))out+=`${k}: ${v}\n\n`;}
 out+='A primeira corrida desta passagem recusou o inventário das contagens do livro, que ainda tinha o total anterior, e uma indexação sem tipo no novo token de origem. As contagens foram relidas do HTML, o inventário e o registo foram atualizados e a indexação ficou restrita à chave autorizada. A vírgula depois do montante das Finanças foi reposta nas duas edições, tal como no mandato. As páginas foram reconstruídas e os portões repetidos.\n\n';
 out+='### As provas e as cabeças\n\n';
@@ -61,6 +66,7 @@ out+=`Cabeça da construção, dos portões e das capturas: \`${m.cabeca}\`. Mot
 for(const [k,v] of Object.entries(codigos))out+=`| ${k} | ${v} |\n`;
 out+=`\nCapturas: ${m.capturas.resultados} páginas, larguras ${m.capturas.larguras.join(', ')} px, ${manifest.falhas.length} falhas. Pasta: \`${m.capturas.pasta}\`. Os resumos de todas as imagens e recortes foram conferidos. `;
 out+=m.inspecaoVisual?'P1, P2, a abertura e a frase dos ministérios foram inspecionados nas duas edições a 390 e 1280 px.\n':'Inspeção visual: por executar.\n';
+out+=`\nO código do motor foi lido de \`<temporario>/${path.basename(portasMotor)}/motor.codigo\`, com a cabeça conferida contra \`motor.cabeca\`. O registo do lançador foi preservado em \`<temporario>/ex3-segunda-lancador/\`, fora da worktree e dos commits.\n`;
 out+='\nA corrida depois do commit do relatório fica em `<temporario>/ex3-segunda-portoes-final/`, com as cabeças e os códigos próprios; não altera o conteúdo. As capturas finais ficam em `<temporario>/ex3-segunda-capturas-final/`.\n';
 out+='\n### O que fica para a higiene\n\nOs achados 10, 12, 14, 16, 17 e 19, e as partes dos achados 11 e 20 que não cabem nesta correção, ficam para a higiene como o mandato determina. Não foram corrigidos nesta passagem. A leitura curta do diff pelo Opus e a aterragem pertencem ao lugar de direção.\n\n';
 out+=`Estado: ${Object.values(codigos).every(x=>x==='0')&&!manifest.falhas.length&&m.inspecaoVisual?'concluído no âmbito do construtor, sujeito à leitura curta do diff':'em verificação, não concluído'}.\n\ntokens used: não disponível\n`;
