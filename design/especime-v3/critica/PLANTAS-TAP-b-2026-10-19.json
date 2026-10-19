@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-19T12:35:16+00:00",
+ "copia": "<pacote-pasta>/pacote-tap-b",
+ "plantas": [
+  {
+   "id": "tapb-p1",
+   "ficheiro": "motor/content/22 TAP/ledger.json",
+   "descricao": "o resultado de 2022 da TAP trocado no livro (a p. 52 das contas de 2023 diz 65,597,418)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "a192088c1788f643f23ba3148a17403155270023af881a78a82558c441efe6f2",
+   "sha256_depois": "dc4332f909972ca69bce2c93c7c4dd303c9dc5c66f137abb0155db023790d21e",
+   "contexto_antes": "         490,\n            925,\n            535\n          ],\n          \"method\": \"layout\"\n        }\n      ]\n    },\n    {\n      \"id\": \"tap-2022-resultado\",\n      \"value\": \"65,597,418\",\n      \"source_value\": \"65,597,418\",\n      \"unit\": \"euros\",\n      \"name\": \"Net income/(loss) for the year\",\n      \"name_source\": \"PDF p. 52; Net income/(loss) ",
+   "contexto_depois": "         490,\n            925,\n            535\n          ],\n          \"method\": \"layout\"\n        }\n      ]\n    },\n    {\n      \"id\": \"tap-2022-resultado\",\n      \"value\": \"65,957,418\",\n      \"source_value\": \"65,597,418\",\n      \"unit\": \"euros\",\n      \"name\": \"Net income/(loss) for the year\",\n      \"name_source\": \"PDF p. 52; Net income/(loss) "
+  },
+  {
+   "id": "tapb-p2",
+   "ficheiro": "motor/content/22 TAP/ledger.json",
+   "descricao": "o excerto da afirmação do Governo sobre a SIAVILO diz «excluindo Azul» (o diapositivo 12 diz «incluindo Azul»)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "dc4332f909972ca69bce2c93c7c4dd303c9dc5c66f137abb0155db023790d21e",
+   "sha256_depois": "c97a99d18abdacfa2f77d07279d3339eb4d45bdef7a7f6e434a26c087b51b6ef",
+   "contexto_antes": "as relacionados com insolvência da SIAVILO (incluindo Azul)\",\n      \"name_source\": \"PDF p. 12; Responsabilidades e salvaguardas, insolvência da SIAVILO\",\n      \"excerpt\": \"Estado assume temas relacionados com insolvência da SIAVILO (incluindo Azul)\",\n      \"source_excerpt\": \"Estado assume temas relacionados com insolvência da SIAVILO (incluindo Azul)\",\n      \"source_url\": \"https://portugal.gov.pt/api/media",
+   "contexto_depois": "as relacionados com insolvência da SIAVILO (incluindo Azul)\",\n      \"name_source\": \"PDF p. 12; Responsabilidades e salvaguardas, insolvência da SIAVILO\",\n      \"excerpt\": \"Estado assume temas relacionados com insolvência da SIAVILO (excluindo Azul)\",\n      \"source_excerpt\": \"Estado assume temas relacionados com insolvência da SIAVILO (incluindo Azul)\",\n      \"source_url\": \"https://portugal.gov.pt/api/media"
+  },
+  {
+   "id": "tapb-p3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o excerto do total de trabalhadores no relatório diz 10,116 (o livro e a p. 31 das contas dizem 10,161)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "840f4af6d40d1a2c75e71733b3b854425822a473593bd9b09179fba28ca970bc",
+   "sha256_depois": "fc66f612f1c3998fd7bcd8e9b4b7ebd0f852513be46d766090e37d43a2a122df",
+   "contexto_antes": "ores-total](#tap-2025-trabalhadores-total); PDF p. 31; Recursos humanos; quadro de efetivos. PDF p. 31: «N. Employees (without GB and D) 10,078 8,988 1,090 12% TOTAL 10,161 9,058 1,103 12%»\n\n[tap-oferta-permuta](#tap-oferta-permuta); PDF p. 9; Permuta de ações, segunda fase. PDF p. 9: «Permuta de ações Fase 2 488M€ Equivalente a 5% do grupo LH - ",
+   "contexto_depois": "ores-total](#tap-2025-trabalhadores-total); PDF p. 31; Recursos humanos; quadro de efetivos. PDF p. 31: «N. Employees (without GB and D) 10,078 8,988 1,090 12% TOTAL 10,116 9,058 1,103 12%»\n\n[tap-oferta-permuta](#tap-oferta-permuta); PDF p. 9; Permuta de ações, segunda fase. PDF p. 9: «Permuta de ações Fase 2 488M€ Equivalente a 5% do grupo LH - "
+  },
+  {
+   "id": "tapb-p4",
+   "ficheiro": "motor/content/22 TAP/fontes.json",
+   "descricao": "a Conta Geral do Estado de 2022 passa a «tentativa sem documento utilizável» no catálogo, enquanto três linhas a citam",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "ebd2e77d4e48476d7f0221228c08c22d05c19d0d70d90c815b3c473a81b26a2d",
+   "sha256_depois": "fc7c9fa3c8492b66d9c9da0b9c16af44009fc8b0b2926fda7a2f99fe1c55751c",
+   "contexto_antes": ",\n    \"status\": \"tentativa sem documento utilizável\",\n    \"note\": \"\",\n    \"receipt\": \"ce-2021-reestruturacao.pdf.pedido.json\",\n    \"document_date\": null\n  },\n  {\n    \"file\": \"cge-2022.pdf\",\n    \"title\": \"CONTA GERAL DO ESTADO 2022\",\n    \"status\": \"prova no livro\",\n    \"note\": \"\",\n    \"receipt\": \"cge-2022.pdf.pedido.json\",\n    \"document_date\": null\n  },\n  {\n    \"file\": \"chega-programa.pdf\",\n    \"title\": \"chega-programa.pdf\",\n    \"status\": \"tentativa sem documento utilizável\",\n    \"note\": \"\",\n    \"receipt\": \"c",
+   "contexto_depois": ",\n    \"status\": \"tentativa sem documento utilizável\",\n    \"note\": \"\",\n    \"receipt\": \"ce-2021-reestruturacao.pdf.pedido.json\",\n    \"document_date\": null\n  },\n  {\n    \"file\": \"cge-2022.pdf\",\n    \"title\": \"CONTA GERAL DO ESTADO 2022\",\n    \"status\": \"tentativa sem documento utilizável\",\n    \"note\": \"\",\n    \"receipt\": \"cge-2022.pdf.pedido.json\",\n    \"document_date\": null\n  },\n  {\n    \"file\": \"chega-programa.pdf\",\n    \"title\": \"chega-programa.pdf\",\n    \"status\": \"tentativa sem documento utilizável\",\n    \"note\": \"\",\n    \"receipt\": \"c"
+  },
+  {
+   "id": "tapb-p5",
+   "ficheiro": "motor/content/22 TAP/source/direitos/competition-interface.js.pedido.json",
+   "descricao": "o sha256 do recibo de um corpo alojado nesta passagem difere num carácter do corpo e do manifesto",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "e92378a226880245faad1c55d3fba8831ef7d8121ad5735796fdecb5b47719d1",
+   "sha256_depois": "a9fbea1a2e8a1ba04868ebe93c3410370580cd18c7dc003a197b082c7012a877",
+   "contexto_antes": "{\n  \"estado\": 200,\n  \"ficheiro\": \"direitos/competition-interface.js\",\n  \"bytes\": 1273012,\n  \"sha256\": \"1d07d12fb94665ef4cf1c9b9a3ab4476c6fe82fb8f6b3c3dcdf7671d8f5fcf7c\",\n  \"pedido\": \"https://competition-cases.ec.europa.eu/main-WPNRFSVK.js\",\n  \"endereco_final\": \"https://competition-cases.ec.europa.eu/main-WPNRFSVK.js\",\n  \"acedi",
+   "contexto_depois": "{\n  \"estado\": 200,\n  \"ficheiro\": \"direitos/competition-interface.js\",\n  \"bytes\": 1273012,\n  \"sha256\": \"1d07d12fb94665ef4cf1c9b9a3ab4476c6fe82fb8f6b3c3dcdf7671d8f5fcf70\",\n  \"pedido\": \"https://competition-cases.ec.europa.eu/main-WPNRFSVK.js\",\n  \"endereco_final\": \"https://competition-cases.ec.europa.eu/main-WPNRFSVK.js\",\n  \"acedi"
+  }
+ ]
+}
