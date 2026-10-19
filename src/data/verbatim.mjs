@@ -67,7 +67,12 @@ const ORIGENS_TRANSCRITAS = Object.fromEntries(
   }),
 );
 
+/** EX3: o montante vem do excerto selado, nunca de uma cópia numérica na frase. */
+const totalMinisterios = ORIGENS_DAS_DEFINICOES['rp4n-total-ministerios'].excerto.match(/^DESPESA TOTAL\s+([\d ]+)$/)?.[1]?.trim();
+if (!totalMinisterios) throw new Error('EX3: o total dos ministérios não se lê no excerto selado');
+
 export const VERBATIM = {
+  'origem-rp4n-total-ministerios-montante': {lang: null, origem: 'rp4n-total-ministerios, campo excerto', text: totalMinisterios},
   'estudo-agua-abertura-pt': {
     lang: 'pt', origem: 'studies-src/onde-esta-a-agua/pt.html:215, primeira frase de p.standfirst.',
     text: 'A água de Portugal: onde está, de onde vem e o que a autonomia exigiria de facto.',

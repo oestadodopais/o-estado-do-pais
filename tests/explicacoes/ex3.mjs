@@ -15,7 +15,7 @@ import {valorNaLingua} from '../../src/lib/valor-na-lingua.mjs';
 import {conferirAuditoriaDasExplicacoes,conferirPaginaDaExplicacao} from './explicacao.mjs';
 const linhas=loadClaims(),dist=process.env.OEDP_DIST??'dist';
 const voz=leMarcadores(process.cwd());assert.deepEqual(voz.erros,[]);
-for(const texto of ['de cada cem euros desta página são a função «Defesa»','of every hundred euros on this page are the «Defence» function','Their coverage and accounting basis also differ.']){
+for(const texto of ['de cada cem euros desta página são a função «Defesa»','of every hundred euros on this page are the «Defence» function','Their coverage and accounting basis also differ.','Esta página mostra as duas medidas, cada uma com a sua definição, e não as soma nem corrige nenhuma.','This page shows both measures, each with its definition, and neither adds them up nor corrects either.']){
  assert.deepEqual(analisa(texto,'/explicacoes/dinheiro-do-estado-2026',voz,'explicacao'),[]);
  assert(analisa(texto,'/outra-rota',voz,'home').length>0);
 }
@@ -23,14 +23,14 @@ for(const texto of ['a cobertura desta página','this page is reliable','our cov
 console.log('PLANTAS: marcadores da voz fora dos contextos e da rota continuam a morder.');
 
 const formato=(id,valor,rel)=>conferirFormatoDaPagina(`<span data-claim="${id}">${valor}</span>`,rel);
-for(const [id,valor] of [['nato-defesa-portugal-pib-2025','2.01'],['nato-defesa-portugal-pib-2026','2.10']]){
+for(const [id,valor] of [['nato-defesa-portugal-pib-2024','1.55'],['nato-defesa-portugal-pib-2025','2.01'],['nato-defesa-portugal-pib-2026','2.10']]){
  assert(formato(id,valor,'en/teste/index.html').desvios.some(x=>x.regra==='F2'));
  for(const rel of ['teste/index.html','en/teste/index.html'])assert.equal(formato(id,valor.replace('.',','),rel).desvios.length,0);
  assert(formato(id,valor,'teste/index.html').desvios.some(x=>x.regra==='F2'));
  assert(formato('outra-linha',valor,'en/teste/index.html').desvios.some(x=>x.regra==='F2'));
  assert(formato(id,valor.slice(0,-1),'en/teste/index.html').desvios.some(x=>x.regra==='F2'));
 }
-for(const id of ['nato-defesa-portugal-pib-2025','nato-defesa-portugal-pib-2026','nato-defesa-portugal-eur-2026']){assert.equal(LINGUA_DOS_LOCALIZADORES[linhas.get(id).document.locator],'en');assert(excertoComposto(linhas.get(id)));}
+for(const id of ['nato-defesa-portugal-pib-2024','nato-defesa-portugal-pib-2025','nato-defesa-portugal-pib-2026','nato-defesa-portugal-eur-2026']){assert.equal(LINGUA_DOS_LOCALIZADORES[linhas.get(id).document.locator],'en');assert(excertoComposto(linhas.get(id)));}
 console.log('PLANTAS: ponto decimal recusado nas duas edições; vírgula aceite nas duas percentagens.');
 const auditoria=JSON.parse(fs.readFileSync('tests/cartao/leituras-provadas.json'));
 assert.deepEqual(conferirAuditoriaDasExplicacoes({auditoria}).erros,[]);
@@ -39,6 +39,15 @@ const f=bad.explicacoes.find(x=>x.slug===e.slug).folhas.find(x=>x.caminho==='sec
 f.partes.find(x=>x.apoios.some(a=>a.origem==='nato-definicao-despesa-defesa')).apoios=[];
 assert(conferirAuditoriaDasExplicacoes({auditoria:bad}).erros.some(x=>x.includes('não tem apoio nenhum')));
 console.log('PLANTA: parte da definição sem apoio recusada pela X2.');
+for(const path of ['seccoes[0].conteudo[2].paragrafo[16]','seccoes[0].conteudo[2].paragrafo[4]','seccoes[0].conteudo[2].paragrafo[7].sufixo']){
+ const bad=structuredClone(auditoria),f=bad.explicacoes.find(x=>x.slug===e.slug).folhas.find(x=>x.caminho===path);
+ for(const a of f.partes[0].apoios)if(a.linha)a.linha='nato-defesa-portugal-pib-2026';
+ assert(conferirAuditoriaDasExplicacoes({auditoria:bad}).erros.some(x=>x.startsWith('X13 ·')));
+}
+console.log('PLANTAS X13: apoio dos euros, percentagem e sufixo trocados recusados.');
+assert(!linhas.get('nato-defesa-portugal-pib-2024').source_flag);
+assert.equal(linhas.get('nato-defesa-portugal-pib-2024').name,'Share of real GDP (%)');
+
 const partes=e.seccoes[0].conteudo[2].paragrafo.pt;
 partes.push({claim:'ex3-linha-inexistente'});
 try{assert.throws(()=>explicacaoResolvida(e.slug,'pt'),/não está no livro|não existe/)}finally{partes.pop()}
@@ -57,11 +66,19 @@ if(!process.argv.includes('--declaracao')){
   const p=path.join(dist,lang==='pt'?'explicacoes':'en/explainers',e.slug,'index.html'),root=parse(fs.readFileSync(p,'utf8'));
   assert.deepEqual(conferirPaginaDaExplicacao(root,lang,e.slug,linhas),[]);
   const p2=root.querySelector('[data-explicacao-paragrafo="seccoes[0].conteudo[3].paragrafo"]');
-  assert.equal(p2.querySelectorAll('.claim-provisorio').length,10);
+  assert.equal(p2.querySelectorAll('.claim-provisorio').length,11);
   const p1=root.querySelector('[data-explicacao-paragrafo="seccoes[0].conteudo[2].paragrafo"]');
+  assert(!p1.querySelector('[data-claim="nato-defesa-portugal-pib-2024"]').closest('.claim').querySelector('.claim-provisorio'));
+  const total=root.querySelector('[data-verbatim="origem-rp4n-total-ministerios-montante"]');
+  assert.equal(total.textContent.trim(),ORIGENS_DAS_DEFINICOES['rp4n-total-ministerios'].excerto.split('\n').filter(Boolean).at(-1));
+  const original=total.textContent;total.set_content('0');
+  assert(conferirPaginaDaExplicacao(root,lang,e.slug,linhas).some(x=>/X6/.test(x)));total.set_content(original);
+  const ministry=root.querySelector('[data-explicacao-paragrafo="seccoes[1].conteudo[0].paragrafo"]');
+  assert(ministry.querySelectorAll('[lang="pt-PT"]').some(x=>x.textContent==='DESPESA TOTAL'));
+
   assert.equal(p1.querySelectorAll('.claim-provisorio').length,3);
   assert(p1.querySelectorAll('.claim-provisorio').every(n=>n.textContent.trim()===(lang==='pt'?'(estimativa da NATO)':'(NATO estimate)')));
-  for(const [id,value] of [['nato-defesa-portugal-pib-2025','2,01'],['nato-defesa-portugal-pib-2026','2,10']])assert.equal(p1.querySelector(`[data-claim="${id}"]`).textContent.trim(),value);
+  for(const [id,value] of [['nato-defesa-portugal-pib-2024','1,55'],['nato-defesa-portugal-pib-2025','2,01'],['nato-defesa-portugal-pib-2026','2,10']])assert.equal(p1.querySelector(`[data-claim="${id}"]`).textContent.trim(),value);
   const changed=new Map([...linhas].map(([id,r])=>[id,{...r}]));changed.get('nato-defesa-portugal-pib-2026').value='9,99';
   assert(conferirPaginaDaExplicacao(root,lang,e.slug,changed).some(x=>/X6/.test(x)));
   const number=p1.querySelector('[data-claim="nato-defesa-portugal-pib-2026"]');number.set_content('2.10');
@@ -69,7 +86,7 @@ if(!process.argv.includes('--declaracao')){
   number.set_content('2,1');
   assert(conferirPaginaDaExplicacao(root,lang,e.slug,linhas).some(x=>/X6/.test(x)));
  }
- for(const lang of ['pt','en'])for(const id of ['nato-defesa-portugal-pib-2025','nato-defesa-portugal-pib-2026','nato-defesa-portugal-eur-2026']){
+ for(const lang of ['pt','en'])for(const id of ['nato-defesa-portugal-pib-2024','nato-defesa-portugal-pib-2025','nato-defesa-portugal-pib-2026','nato-defesa-portugal-eur-2026']){
   const root=parse(fs.readFileSync(path.join(dist,lang==='pt'?'livro-razao':'en/ledger',id,'index.html'),'utf8'));
   const notas=root.querySelectorAll('.linha-nota').map(n=>n.textContent.trim());
   assert(notas.includes(lang==='pt'?'Excerto composto a partir da resposta da fonte.':"Excerpt composed from the source's response."));

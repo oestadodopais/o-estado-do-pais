@@ -11,3 +11,11 @@ export const FAMILIAS_EX3 = ['pib', 'eur'].map(tipo => ({
     apoios: [origem, linha('excerpt','Portugal'),linha('excerpt','Figures for 2025 and 2026 are estimates.'),linha('excerpt',tipo === 'pib' ? 'Share of real GDP (%)' : 'Current prices'),linha('excerpt',tipo === 'pib' ? 'Based on 2021 prices' : 'Million national currency units')],
   }],
 }));
+
+// A linha de 2024 não tem a marca de estimativa da família dos anos seguintes.
+const publicado=structuredClone(FAMILIAS_EX3[0]);
+publicado.chaves=['nato-defesa-portugal-pib-2024'];
+publicado.partes[0].pt=publicado.partes[0].pt.replace('É a estimativa da NATO para','É o valor que a NATO publica para');
+publicado.partes[0].en=publicado.partes[0].en.replace('It is NATO’s estimate of','It is the value NATO publishes for');
+publicado.partes[0].apoios=publicado.partes[0].apoios.filter(x=>x.literal!=='Figures for 2025 and 2026 are estimates.');
+FAMILIAS_EX3.push(publicado);

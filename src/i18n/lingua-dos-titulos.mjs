@@ -226,7 +226,7 @@ export function linguaDoTituloDoDocumento(titulo, lang = 'pt') {
 /** `pt` ou `en`, para cada rótulo distinto do campo `name`. */
 export const LINGUA_DOS_ROTULOS = {
   'Table 1: Core defence expenditure': 'en',
-  'Table 3: Core defence expenditure as a share of GDP and annual real change': 'en',
+  'Share of real GDP (%)': 'en',
   // V2-a: palavras das afirmações, não títulos dos artigos.
   "Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%": 'pt',
   "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias": 'pt',
@@ -685,6 +685,7 @@ export function linguaDaEdicao(edicao, lang = 'pt') {
 /** EX3: localizadores lidos nas folhas inglesas da NATO, declarados por inteiro. */
 export const LINGUA_DOS_LOCALIZADORES = {
   'Table 1!N27; Portugal (Euros); 2026e': 'en',
+  'Table 3!L27; Portugal; 2024': 'en',
   'Table 3!M27; Portugal; 2025e': 'en',
   'Table 3!N27; Portugal; 2026e': 'en',
 };

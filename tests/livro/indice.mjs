@@ -329,7 +329,7 @@ const LOCALIZADORES_CONHECIDOS = [
   { nome: 'V2A, rótulo da célula ou da afirmação', forma: /^(?:Quadro (?:5\.37|4\.25|1), .+|Título e corpo da notícia|Intervenção na Assembleia da República)$/, onde: 'publisher/v2a.py: quadros do OE2027, CFP e afirmações', confere: localizadorV2aConfere },
   {
     nome: 'cabeçalho A1 das folhas NATO',
-    forma: /^Table [13]!A1$/,
+    forma: /^(?:Table 1!A1|Table 3!A3)$/,
     onde: 'publisher/ex3.py: cabeçalho literal das folhas inglesas da NATO',
     confere: localizadorNatoConfere,
   },
@@ -441,15 +441,15 @@ function localizadorJd1Confere(onde, linha) {
 /** EX3: o cabeçalho, a folha, a coluna e o ano têm de pertencer à mesma linha. */
 function localizadorNatoConfere(onde, linha) {
   if (!linha || typeof linha.id !== 'string') return false;
-  const m=/^nato-defesa-portugal-(pib|eur)-(202[56])$/.exec(linha.id);
+  const m=/^nato-defesa-portugal-(pib|eur)-(202[456])$/.exec(linha.id);
   if (!m || (m[1]==='eur' && m[2]!=='2026')) return false;
   const folha=m[1]==='pib'?'Table 3':'Table 1';
-  const coluna=m[2]==='2025'?'M':'N';
+  const coluna=m[2]==='2024'?'L':m[2]==='2025'?'M':'N';
   const pais=m[1]==='pib'?'Portugal':'Portugal (Euros)';
-  const nome=folha+': Core defence expenditure'+(m[1]==='pib'?' as a share of GDP and annual real change':'');
-  return onde===folha+'!A1' && linha.name===nome && linha.reference_date===m[2] &&
+  const nome=m[1]==='pib'?'Share of real GDP (%)':'Table 1: Core defence expenditure';
+  return onde===folha+(m[1]==='pib'?'!A3':'!A1') && linha.name===nome && linha.reference_date===m[2] &&
     linha.document?.title==='Defence Investment of NATO Countries (2014-2026)' &&
-    linha.document?.locator===`${folha}!${coluna}27; ${pais}; ${m[2]}e`;
+    linha.document?.locator===`${folha}!${coluna}27; ${pais}; ${m[2]}${m[2]==='2024'?'':'e'}`;
 }
 
 /**
@@ -1894,10 +1894,10 @@ function provaLocalizadores() {
       falhas.push('As plantas dos localizadores exigem I1 e I3 limpas antes do estrago.');
       return '';
     }
-    for(const id of ['nato-defesa-portugal-pib-2025','nato-defesa-portugal-pib-2026','nato-defesa-portugal-eur-2026']) {
+    for(const id of ['nato-defesa-portugal-pib-2024','nato-defesa-portugal-pib-2025','nato-defesa-portugal-pib-2026','nato-defesa-portugal-eur-2026']) {
       const original=LINHAS_DA_REGUA.get(id);
       if (!localizadorNatoConfere(original.name_source,original)) falhas.push('EX3: cabeçalho válido recusado');
-      for(const mudar of [l=>l.name_source='Table 3!A2',l=>l.reference_date='2024',l=>l.document.locator='Table 3!N28; Portugal; 2026e',l=>l.name=l.document.title]) {
+      for(const mudar of [l=>l.name_source='Table 3!A2',l=>l.reference_date='2023',l=>l.document.locator='Table 3!N28; Portugal; 2026e',l=>l.name=l.document.title]) {
         const l=structuredClone(original);mudar(l);
         if(localizadorNatoConfere(l.name_source,l))falhas.push('EX3: cabeçalho ou célula trocados passaram');
       }

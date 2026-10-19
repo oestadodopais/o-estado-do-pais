@@ -1,58 +1,68 @@
-/** EX3: relatório e comparação da declaração anterior com a atual. */
+/** EX3, segunda correção: frases lidas no HTML e provas copiadas das corridas reais. */
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import {execFileSync} from 'node:child_process';
-import {DINHEIRO_DO_ESTADO_2026 as atual} from '../../../../src/data/explicacoes/dinheiro-do-estado-2026.mjs';
+import {parse} from 'node-html-parser';
 import {loadClaims} from '../../../../src/lib/ledger.mjs';
-import {nomeDaLinhaNaExplicacao} from '../../../../src/lib/explicacoes.mjs';
-import {explicacaoPelaCelula,conferirAuditoriaDasExplicacoes} from '../../../../tests/explicacoes/explicacao.mjs';
+import {conferirAuditoriaDasExplicacoes} from '../../../../tests/explicacoes/explicacao.mjs';
 const aqui=path.dirname(new URL(import.meta.url).pathname),root=path.resolve(aqui,'../../../..');
-const motor=process.env.RESEARCHHUB_DIR;if(!motor)throw Error('Falta RESEARCHHUB_DIR');
-const source=path.join(motor,'content/13 Dominios/source/ex3');
-const git=(...args)=>execFileSync('git',args,{cwd:root,encoding:'utf8'}).trim();
-const base='aaac76b91';
-const codigo=execFileSync('git',['show',base+':src/data/explicacoes/dinheiro-do-estado-2026.mjs'],{cwd:root});
-const {DINHEIRO_DO_ESTADO_2026:antes}=await import('data:text/javascript;base64,'+codigo.toString('base64'));
-const linhas=loadClaims(),labels=[];
-for(let i=1;i<=10;i++){
- const code=String(i).padStart(2,'0'),row=linhas.get(`despesa-por-funcao-2024-gf${code}-pt`);
- labels.push({codigo:code,pt:nomeDaLinhaNaExplicacao('oe-2026-cem-euros-funcao-'+code,'pt'),en:row.name.toLowerCase(),name:row.name,source_flag:row.source_flag});
-}
-const frases=Object.fromEntries(['pt','en'].map(lang=>[lang,{antes:explicacaoPelaCelula(antes,lang,linhas),depois:explicacaoPelaCelula(atual,lang,linhas),figurasAntes:antes.seccoes.slice(0,2).flatMap(s=>s.conteudo.filter(b=>b.figura).map(b=>b.figura.titulo[lang])),figurasDepois:atual.seccoes.slice(0,2).flatMap(s=>s.conteudo.filter(b=>b.figura).map(b=>b.figura.titulo[lang]))}]));
-const docs=['robots.txt','definicao.html','def-exp-2026-en.xlsx','def-exp-2026-en.pdf','publicacao.html','faq.html'].map(f=>JSON.parse(fs.readFileSync(path.join(source,f+'.pedido.json'))));
-const claims=[...linhas.values()].filter(r=>r.id.startsWith('nato-defesa-portugal-'));
-const portas=process.env.EX3_PORTOES;
-const codigos={};for(const k of ['build','verify','typecheck','motor']){const p=portas&&path.join(portas,k+'.codigo');codigos[k]=p&&fs.existsSync(p)?fs.readFileSync(p,'utf8').trim():'não executado';}
-for(const k of ['motor','series','cruzamento']){const p='/tmp/ex3-'+k+'.codigo';codigos[k]=fs.existsSync(p)?fs.readFileSync(p,'utf8').trim():'não executado';}
-const medicoes={base,cabeca:git('rev-parse','HEAD'),motor:execFileSync('git',['rev-parse','HEAD'],{cwd:motor,encoding:'utf8'}).trim(),documentos:docs,mapa:labels,frases,linhas:claims,auditoria:conferirAuditoriaDasExplicacoes().contas,codigos};
-fs.writeFileSync(path.join(aqui,'medicoes.json'),JSON.stringify({base,documentos:docs,mapa:labels,frases,linhas:claims,auditoria:medicoes.auditoria},null,2)+'\n');
-const green=Object.values(codigos).every(c=>c==='0');
-let out=`# EX3: relatório da retoma, 15.10.2026\n\nEstado: ${green && process.env.EX3_VISTAS==='1'?'concluído no âmbito do construtor; leitura a frio a cargo da direção':'em verificação; bloco ainda não concluído'}.\n\n## EX3-1: a retoma\n\nOs dois impedimentos da primeira passagem foram resolvidos pelo mandato emendado: P2 usa rótulos literais nas duas edições, e os nomes ingleses foram conferidos contra os campos \`name\`. A auditoria X1/X2 aceita as frases novas. Não se mudou nenhum valor do Orçamento nem nenhuma linha anterior.\n\n## EX3-2: documentos e pedidos\n\nOs corpos estão em \`content/13 Dominios/source/ex3/\` do motor; cada recibo tem o nome do corpo seguido de \`.pedido.json\`. Todos os pedidos da tabela deram HTTP 200.\n\n| Corpo | Data e hora UTC | SHA256 | Endereço |\n| --- | --- | --- | --- |\n`;
-for(const d of docs)out+=`| ${d.ficheiro} | ${d.acedido_em} | ${d.sha256} | ${d.pedido} |\n`;
-out+='\nO HTML da definição tem um resumo diferente do indicado no mandato (`884a966ce2945fd485c69d236116392b92e2b7e412d0e3b0ac5453c9065ab7e4`) e do recebido na primeira passagem (`456780ee9c0ed644d00871495cba09a54584f03d22957e476dd85a1e895ca566`). As três frases mantêm-se. Os resumos do Excel e do PDF coincidem com os do mandato. O título lido na capa do PDF é «Defence Investment of NATO Countries (2014-2026)», e é esse que os recibos usam.\n\n## EX3-3: as células e a definição\n\n';
-const proof=JSON.parse(fs.readFileSync(path.join(motor,'content/21 Defesa NATO/provas.json')));
-for(const c of claims){const p=proof.find(x=>x.id===c.id);out+=`- \`${c.id}\`: ${c.value} ${c.unit}; ${p.folha}!${p.celula}; Excel ${p.valor}, formato \`${p.number_format}\`; PDF p. ${p.pagina_pdf}, «${p.impresso}». Marca \`e\`, «${c.source_flag_note}» / «${c.source_flag_note_en}».\n  Excerto: ${c.excerpt.replaceAll('\n',' ')}\n`;}
-out+='\nA origem `nato-definicao-despesa-defesa`, exportada em `src/data/origens-ex3.json`, contém em `excertoEn` as três frases literais do mandato. A primeira apoia a definição em P1; a segunda liga as despesas essenciais das tabelas à definição. A terceira conserva a inclusão das pensões, sem acrescentar uma comparação não pedida à página. A auditoria usa o mecanismo existente de origens das definições, com o corpo, data, cliente e sha256 em `alojada`, sem campos novos. As ressalvas das linhas distinguem o governo nacional aliado das administrações regionais, locais e municipais, e os preços constantes das percentagens dos preços correntes dos milhões. Não equiparam este perímetro ao S13.\n\n## EX3-4: mapa dos rótulos de P2\n\n| Código | Português, nome da função do Orçamento | Inglês, campo `name` do Eurostat em minúsculas | Marca |\n| --- | --- | --- | --- |\n';
-for(const m of labels)out+=`| ${m.codigo} | ${m.pt} | ${m.en} | ${m.source_flag} |\n`;
-out+='\nNenhum rótulo inglês precisou de correção face ao mandato emendado. Conservam-se as dez marcas de provisório.\n\n## EX3-5: frases antes e depois\n\n';
+const motor=process.env.RESEARCHHUB_DIR,portoes=process.env.EX3_PORTOES,ensaios=process.env.EX3_ENSAIOS,capturas=process.env.EX3_CAPTURAS;
+if(!motor||!portoes||!ensaios||!capturas)throw Error('Faltam RESEARCHHUB_DIR, EX3_PORTOES, EX3_ENSAIOS ou EX3_CAPTURAS');
+const read=p=>fs.readFileSync(p,'utf8'),json=p=>JSON.parse(read(p));
+const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const git=(cwd,...args)=>execFileSync('git',args,{cwd,encoding:'utf8'}).trim();
+const limpar=s=>s.replaceAll(motor,'<motor>').replaceAll(root,'<worktree>').replaceAll('/private/tmp/','<temporario>/').replaceAll('/tmp/','<temporario>/');
+const destino=path.join(aqui,'segunda-correcao');fs.mkdirSync(destino,{recursive:true});
+const copiar=(p,nome)=>fs.writeFileSync(path.join(destino,nome),limpar(read(p)));
+const codigos={};
+for(const k of ['build','verify','typecheck','motor']){const p=path.join(portoes,k+'.codigo');codigos[k]=read(p).trim();copiar(p,k+'.codigo');}
+for(const k of ['series','cruzamento','plantas-sitio','plantas-motor']){const p=path.join(ensaios,k+'.codigo');codigos[k]=read(p).trim();copiar(p,k+'.codigo');copiar(path.join(ensaios,k+'.log'),k+'.log');}
+for(const k of ['cabeca','cabeca.fim'])copiar(path.join(portoes,k),k);
+const manifest=json(path.join(capturas,'capturas.json'));
+for(const r of manifest.resultados)for(const c of [r,...r.recortes])if(sha(path.join(capturas,c.ficheiro))!==c.sha256)throw Error('Captura com resumo diferente: '+c.ficheiro);
+copiar(path.join(capturas,'capturas.json'),'capturas.json');
+const versao=json(path.join(root,'dist/version.json'));
+if(manifest.cabeca!==versao.commit||read(path.join(portoes,'cabeca')).trim()!==versao.commit)throw Error('HTML, portões e capturas não têm a mesma cabeça');
+const seletores={abertura:'[data-explicacao-paragrafo="abertura[0]"]',figuraFuncoes:'#explicacao-figura-funcoes figcaption',p1:'[data-explicacao-paragrafo="seccoes[0].conteudo[2].paragrafo"]',p2:'[data-explicacao-paragrafo="seccoes[0].conteudo[3].paragrafo"]',ministerios:'[data-explicacao-paragrafo="seccoes[1].conteudo[0].paragrafo"]'};
+const frases={};
 for(const lang of ['pt','en']){
- const f=frases[lang];out+=`### ${lang.toUpperCase()}\n\n`;
- for(const c of ['abertura[0]','seccoes[1].conteudo[0].paragrafo']){out+=`Antes: ${f.antes.paragrafos.find(p=>p.caminho===c).texto}\n\nDepois: ${f.depois.paragrafos.find(p=>p.caminho===c).texto}\n\n`;}
- for(let i=0;i<2;i++)out+=`Título antes: ${f.figurasAntes[i]}\n\nTítulo depois: ${f.figurasDepois[i]}\n\n`;
- for(const c of ['seccoes[0].conteudo[2].paragrafo','seccoes[0].conteudo[3].paragrafo'])out+=`Parágrafo novo: ${f.depois.paragrafos.find(p=>p.caminho===c).texto}\n\n`;
+ const pagina=path.join(root,'dist',lang==='pt'?'explicacoes':'en/explainers','dinheiro-do-estado-2026/index.html'),doc=parse(read(pagina));
+ frases[lang]={pagina:path.relative(root,pagina),sha256:sha(pagina),textos:{}};
+ for(const [k,seletor] of Object.entries(seletores)){
+  const el=k==='figuraFuncoes'?doc.querySelector('[data-explicacao-secao="por-funcao"] figcaption'):doc.querySelector(seletor);
+  if(!el)throw Error('Texto ausente: '+k);
+  el.querySelectorAll('.src-chip, .claim-provisorio-chip').forEach(x=>x.remove());
+  frases[lang].textos[k]=el.textContent.replace(/\s+/g,' ').trim();
+ }
 }
-out+='O denominador dos ministérios foi lido em `src/data/o-que-e-das-familias.mjs`: «da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação». A frase X12 atual foi conservada. Ao contrário da descrição histórica do §0, nesta cabeça ela já só diz que a conta por função organiza a despesa por finalidade.\n\n## EX3-6: células e plantas\n\nA auditoria das palavras foi recomposta em `compor.mjs`; as duas famílias novas têm especificação em `familias.mjs`. O compositor R4 histórico falha em famílias anteriores já retiradas e nas famílias posteriores do V2-a, por isso ficou intacto e a composição EX3 acrescenta apenas as entradas deste bloco.\n\nA X6 foi atualizada para ler a marca `e`, já suportada pelo componente, e as duas casas decimais em inglês. A adaptação do portão HTML conserva os mesmos algarismos, precisão e comparação exata da escrita, só trocando a vírgula pelo ponto nas duas percentagens novas da NATO na edição inglesa. Os valores e a apresentação das linhas anteriores ficaram intactos. As frases declaradas continuam cobertas pelo inventário dinâmico e pela célula das frases compostas.\n\nAs plantas em `tests/explicacoes/ex3.mjs` retiram o apoio da definição, acrescentam um token sobre uma linha inexistente, trocam o valor da NATO e retiram uma casa decimal. O teste do motor regenera as células e a definição, confere recibos e travessia e recusa quatro alterações: valor, bandeira, período e excerto.\n\n## EX3-7: direitos e tranca HTTP\n\nA FAQ oficial remete para a política antiga em `http://www.nato.int/cps/en/natolive/68162.htm`; o pedido HTTPS devolveu 404. A ausência e o recibo estão na pasta `direitos/`; não se declarou uma licença que não foi confirmada. Os corpos ficam no motor, sem cópia pública.\n\nCada comando de pedidos à NATO correu com `RESEARCHHUB_LOCK_DIR=<motor>/.http-locks`. Não existiu proteção contra pedidos simultâneos de outros processos que usem a tranca partilhada nesta passagem. A direção aceitou essa limitação no mandato. A pasta `.http-locks` não integra o commit.\n\n## EX3-8: verificação e cabeças\n\n';
-out+=`Cabeça de conteúdo conferida do sítio: \`${medicoes.cabeca}\`. Cabeça do motor: \`${medicoes.motor}\`.\n\n| Conferência | Código |\n| --- | --- |\n`;
-for(const [k,v] of Object.entries(codigos))out+=`| ${k==='motor'?'motor, core.gate no pre-commit':k} | ${v} |\n`;
-out+='\nOs códigos do sítio foram lidos dos ficheiros do escrivão. O código do motor e o resultado `GATE: PASS` foram lidos do pedido de commit aceite; a prova resumida fica em `<temporario>/ex3-motor-portao.json`. O `check:series` foi corrido depois da construção. O `check:cruzamento --with-origin` usou esta worktree do motor: passou, com o aviso anterior sobre o `built_at` do livro do Orçamento, sem divergência em nenhuma linha.\n';
-out+='\nO primeiro commit do motor foi recusado. Faltava declarar o livro novo entre os livros sem entregável narrativo; passou a ser protegido por `publisher.ex3_test`. Três falhas anteriores também impediam o portão: a planta de ausência de recortes perdia as raízes de reserva ao repor a configuração; a prova da pensão consultava um identificador anterior à reescrita; dois identificadores Git numéricos no relatório P4 eram contados como valores. A configuração passou a ser reposta por inteiro; a consulta histórica usa o mapa de commits já existente, mantendo o registo publicado, o resumo, a introdução no manifesto e a data conferidos; os dois identificadores passaram a ligações para os mesmos commits. A contagem do P4 voltou de 39 a 37, sem aumentar nenhum limite e sem alterar linhas existentes. Os testes dirigidos passaram antes do novo pedido de commit.\n\nO primeiro build do sítio parou na A7: faltava a cobertura das três linhas novas. Foram declaradas em `SEM_AREA`, como a comparação EX3, sem atribuição do agregado da NATO a ministérios. A conferência das áreas passou, e os portões foram repetidos. As plantas sobre o HTML construído passaram nas duas edições; o `check:series` passou com 40 de 40 plantas a detetar os estragos.\n\n## EX3-9: pacote e capturas\n\n`ledger/provas/ex3/provas.json`, exportado com registo de travessia, liga cada linha ao Excel alojado pelo caminho e sha256. Declara também o PDF e o HTML da definição. O resolvedor M83 foi exercitado contra as cabeças: encontrou o Excel pelos recibos, e os resumos do PDF e do HTML foram conferidos nos objetos Git do motor. Os documentos, recibos e direitos integram os ficheiros novos do motor para o pacote M83. Não há PNG no repositório.\n\n';
-out+='O portão da voz pediu a reconciliação dos dois contadores do índice e a declaração de dois contextos das frases prescritas: a identificação do número «desta página» em P1 e o perímetro «coverage» em P2. A X2 já aceitava os apoios. As exceções são as cadeias exatas, só na rota da explicação; as plantas provam que os marcadores continuam a morder noutras frases e noutras rotas. O inventário e o registo de revisão acompanham os contadores lidos no HTML.\n\nForam declaradas as línguas do título, dos dois rótulos, do organismo e dos três localizadores ingleses da NATO. A L7 continua a recusar localizadores de documentos ingleses sem declaração, e a L4b confere a língua efetiva dos novos localizadores nas duas edições. A F2 admite o ponto decimal apenas nas duas percentagens da NATO na edição inglesa, com duas casas; plantas recusam outra linha, outra edição ou precisão reduzida. A adaptação não muda o livro-razão nem o seu esquema.\n\n';
-out+='O primeiro verify completo detetou ainda três integrações em falta. A régua do índice passou a reconhecer os cabeçalhos A1 da NATO, conferindo folha, coluna, ano e rótulo, com plantas de troca. A régua das unidades ganhou o conjunto EX3 fechado em três linhas, lido do cruzamento, com as unidades e as entradas do índice conferidas nas duas edições e quatro plantas novas. Os seis recibos novos tinham duas portas para o Método: a da regra da releitura e a saída genérica do aparelho. A segunda deixou de se render nestes recibos enquanto a primeira está presente. Conservou-se o teto da L1, sem o aumentar.\n\n';
-out+='A inspeção visual encontrou uma legenda incorreta nos três recibos: o excerto reúne células e cabeçalhos do Excel, a forma impressa do PDF e a nota de apresentação, mas a página dizia que era uma transcrição palavra por palavra. A nota das linhas passou a declarar «Excerto composto a partir», pelo mecanismo existente, sem campo novo. O prefixo duplicado do cabeçalho foi retirado. A travessia foi refeita; os valores, períodos, estimativas e documentos mantiveram-se. O teste EX3 confere a legenda de excerto composto nas seis páginas e recusa a legenda de transcrição literal. Os portões e as capturas foram repetidos depois desta correção.\n\n';
-out+=`Auditoria das palavras: ${JSON.stringify(medicoes.auditoria)}.\n\n`;
-const capturas=process.env.EX3_CAPTURAS;
-if(capturas){const c=JSON.parse(fs.readFileSync(path.join(capturas,'capturas.json')));out+=`Capturas em \`<temporario>/${path.basename(capturas)}/\`, com \`capturas.json\`: ${c.resultados.length} páginas, nas duas edições, às larguras ${c.larguras.join(', ')} px; ${c.falhas.length} falhas; cabeça \`${c.cabeca}\`. `;if(process.env.EX3_VISTAS==='1')out+='A abertura, os dois parágrafos, as figuras e os três recibos foram inspecionados a 390 e 1280 px nas duas edições, com a conferência das capturas repetida na cabeça final. ';}
-else out+='Capturas: por executar. ';
-out+='Leitura a frio pelo Opus e aterragem: a cargo do lugar de direção, não executadas nesta passagem. Nenhum push.\n\ntokens used: não disponível\n';
-fs.writeFileSync(path.join(aqui,'RELATORIO.md'),out);
-console.log('Relatório e medições escritos; estado dos códigos: '+JSON.stringify(codigos));
+const linhas=[...loadClaims().values()].filter(x=>x.id.startsWith('nato-defesa-portugal-'));
+const celulas=json(path.join(motor,'content/21 Defesa NATO/provas.json'));
+const m={passagem:'segunda-correcao-2026-10-19',base:'fdfcc9f3',cabeca:versao.commit,motor:git(motor,'rev-parse','HEAD'),codigos,linhas,celulas,frases,auditoria:conferirAuditoriaDasExplicacoes().contas,capturas:{cabeca:manifest.cabeca,larguras:manifest.larguras,resultados:manifest.resultados.length,falhas:manifest.falhas,pasta:'<temporario>/'+path.basename(capturas)},inspecaoVisual:process.env.EX3_VISTAS==='1'};
+fs.writeFileSync(path.join(aqui,'medicoes.json'),JSON.stringify(m,null,2)+'\n');
+let out='\n\n## A segunda passagem de correção de 19.10.2026\n\n';
+out+='Esta secção substitui o estado da primeira correção: as fusões já chegaram pelo lugar de direção. Nesta passagem não se executou merge nem push. As secções anteriores conservam o registo histórico e as suas medições, incluindo as formas entretanto corrigidas.\n\n';
+out+='- Achado 5: P1 diz que a definição da NATO inclui pensões e P2 compara NATO e Eurostat no mesmo ano. A frase das pensões é a terceira frase literal da origem selada `nato-definicao-despesa-defesa`; o setor e a contabilidade do Eurostat são os da linha `despesa-por-funcao-2024-gf02-pt`. A linha nova vem de `Table 3!L27`, com o mesmo documento, recibo e direitos.\n';
+out+='- Achado 6: o montante das Finanças volta a seguir à sua parcela por cem euros. O total antes da consolidação é extraído do excerto de `rp4n-total-ministerios` pelo token `verbatim`, com comparação independente da página e planta de valor trocado. Conserva-se a enumeração dos ministérios seguintes como frase separada.\n';
+out+='- Achado 7: a abertura, a figura das funções e P1 recebem a glosa da família nas duas edições, apoiada em `rp4n-despesa-efetiva` e `rp4n-consolidacao`.\n';
+out+='- Achado 8: o compositor deixa de atribuir apoios genéricos de `pib-2026` a P1. A X13 exige que a parte imediatamente junto de cada valor e o seu sufixo citem a linha desse token. As plantas trocam os apoios dos euros, da percentagem e do sufixo. Os preços constantes, os preços correntes, os períodos e as estimativas têm apoios próprios.\n';
+out+='- Achado 13: as percentagens usam o cabeçalho literal `Share of real GDP (%)`, lido em `Table 3!A3`, em vez do título de duas medidas. A navegação, as línguas e a régua dos localizadores acompanham-no. O recibo de 2024 tem uma definição sem a palavra estimativa.\n';
+out+='- Achado 15: cada valor estimado conserva uma só marca entre parênteses, em minúscula e sem ponto. A prosa usa apenas as expressões fixadas no mandato. A célula de 2024 não recebe marca.\n';
+out+='- Achado 18: `printed_cell` lê o valor e o `number_format`. O formato `General` dos euros dá os algarismos da célula; a apresentação agrupada do PDF deriva desses mesmos algarismos. Não existe o literal do montante no gerador. As plantas alteram a célula e o formato.\n';
+out+='- Achado 11, parte incluída: `DESPESA TOTAL` tem `lang="pt-PT"` na frase dos ministérios, incluindo a edição inglesa.\n';
+out+='- Achados 20 e 21, parte incluída: os códigos, os registos das plantas e o manifesto das capturas estão em `segunda-correcao/`; `medicoes.json` e este relatório são escritos por `medir.mjs`, a partir da construção e das provas. As imagens ficam fora do repositório.\n\n';
+out+='### As células lidas pelo motor\n\n| Linha | Célula | Valor | Formato | Cabeçalho do ano | Forma da célula | Forma do PDF |\n| --- | --- | --- | --- | --- | --- | --- |\n';
+for(const c of celulas)out+=`| ${c.id} | ${c.folha}!${c.celula} | ${c.valor} | ${c.number_format} | ${c.cabecalho_periodo} | ${c.forma_celula} | ${c.impresso} |\n`;
+out+='\nComandos: `python3 -m publisher.ex3 --site <worktree>`; `python3 -m publisher.export_site_rows --manifest publisher/manifest.ex3.json --site <worktree> --write`; `node design/especime-v3/medicoes/ex3-2026-10-15/compor.mjs`. A extração de 2024 lê o ano sem sufixo, por isso não o classifica como estimativa. A definição já continha as três frases na cópia alojada; não foi necessário outro pedido HTTP.\n\n### As frases construídas\n\n';
+for(const lang of ['pt','en']){out+=`#### ${lang.toUpperCase()}\n\n`;for(const [k,v] of Object.entries(frases[lang].textos))out+=`${k}: ${v}\n\n`;}
+out+='### As provas e as cabeças\n\n';
+out+=`Cabeça da construção, dos portões e das capturas: \`${m.cabeca}\`. Motor: \`${m.motor}\`.\n\n| Conferência | Código lido |\n| --- | --- |\n`;
+for(const [k,v] of Object.entries(codigos))out+=`| ${k} | ${v} |\n`;
+out+=`\nCapturas: ${m.capturas.resultados} páginas, larguras ${m.capturas.larguras.join(', ')} px, ${manifest.falhas.length} falhas. Pasta: \`${m.capturas.pasta}\`. Os resumos de todas as imagens e recortes foram conferidos. `;
+out+=m.inspecaoVisual?'P1, P2, a abertura e a frase dos ministérios foram inspecionados nas duas edições a 390 e 1280 px.\n':'Inspeção visual: por executar.\n';
+out+='\nA corrida depois do commit do relatório fica em `<temporario>/ex3-segunda-portoes-final/`, com as cabeças e os códigos próprios; não altera o conteúdo. As capturas finais ficam em `<temporario>/ex3-segunda-capturas-final/`.\n';
+out+='\n### O que fica para a higiene\n\nOs achados 10, 12, 14, 16, 17 e 19, e as partes dos achados 11 e 20 que não cabem nesta correção, ficam para a higiene como o mandato determina. Não foram corrigidos nesta passagem. A leitura curta do diff pelo Opus e a aterragem pertencem ao lugar de direção.\n\n';
+out+=`Estado: ${Object.values(codigos).every(x=>x==='0')&&!manifest.falhas.length&&m.inspecaoVisual?'concluído no âmbito do construtor, sujeito à leitura curta do diff':'em verificação, não concluído'}.\n\ntokens used: não disponível\n`;
+const relatorio=path.join(aqui,'RELATORIO.md'),anterior=read(relatorio).split('\n\n## A segunda passagem de correção de 19.10.2026')[0];
+fs.writeFileSync(relatorio,anterior.trimEnd()+out);
+console.log('EX3: relatório e medições escritos dos códigos, células, HTML e capturas. '+JSON.stringify(codigos));

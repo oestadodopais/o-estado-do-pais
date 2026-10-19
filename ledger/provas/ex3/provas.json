@@ -1,5 +1,10 @@
 {
   "rows": {
+    "nato-defesa-portugal-pib-2024": {
+      "motor_path": "content/13 Dominios/source/ex3/def-exp-2026-en.xlsx",
+      "sha256": "11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988",
+      "celula": "L27"
+    },
     "nato-defesa-portugal-pib-2025": {
       "motor_path": "content/13 Dominios/source/ex3/def-exp-2026-en.xlsx",
       "sha256": "11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988",

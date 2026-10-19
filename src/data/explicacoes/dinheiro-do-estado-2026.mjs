@@ -95,7 +95,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
   abertura: [
     {
       pt: [
-        'O Orçamento do Estado para ', { periodo: F('01') }, ' diz, euro a euro, para onde vai o dinheiro. De cada cem euros da despesa efetiva consolidada da administração central, ',
+        'O Orçamento do Estado para ', { periodo: F('01') }, ' diz, euro a euro, para onde vai o dinheiro. De cada cem euros da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços), ',
         { claim: F('07') }, ' vão para a ', { nome: F('07') }, ', ', { claim: F('10') }, ' para a ', { nome: F('10') }, ', ',
         { claim: F('09') }, ' para a ', { nome: F('09') }, ' e ', { claim: F('04') }, ' para os ', { nome: F('04') }, '.',
         { se: [A_MAIOR_FUNCAO], partes: [
@@ -104,7 +104,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
         ] },
       ],
       en: [
-        'The State Budget for ', { periodo: F('01') }, ' says, euro by euro, where the money goes. Of every hundred euros of central administration\'s consolidated effective expenditure, ',
+        'The State Budget for ', { periodo: F('01') }, ' says, euro by euro, where the money goes. Of every hundred euros of central administration\'s consolidated effective expenditure (spending without transactions in financial assets and liabilities or transfers between its own services), ',
         { claim: F('07') }, ' go to ', { nome: F('07') }, ', ', { claim: F('10') }, ' to ', { nome: F('10') }, ', ',
         { claim: F('09') }, ' to ', { nome: F('09') }, ' and ', { claim: F('04') }, ' to ', { nome: F('04') }, '.',
         { se: [A_MAIOR_FUNCAO], partes: [
@@ -119,7 +119,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
       id: 'por-funcao',
       titulo: { pt: 'Por função', en: 'By function' },
       conteudo: [
-        { figura: { forma: 'barras-do-livro', id: 'funcoes', linhas: FUNCOES, titulo: { pt: 'As dez funções, de cada cem euros da despesa efetiva consolidada da administração central', en: 'The ten functions, of every hundred euros of central administration\'s consolidated effective expenditure' } } },
+        { figura: { forma: 'barras-do-livro', id: 'funcoes', linhas: FUNCOES, titulo: { pt: 'As dez funções, de cada cem euros da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços)', en: 'The ten functions, of every hundred euros of central administration\'s consolidated effective expenditure (spending without transactions in financial assets and liabilities or transfers between its own services)' } } },
         {
           paragrafo: {
             pt: [
@@ -137,16 +137,25 @@ export const DINHEIRO_DO_ESTADO_2026 = {
         {
           "paragrafo": {
             "pt": [
-              "Os ",
+              "",
               {
                 "claim": "oe-2026-cem-euros-funcao-02"
               },
-              " de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central, em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações regionais e locais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Para Portugal, a NATO publica, na tabela a preços constantes, estimativas de ",
+              " de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços), em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo; a definição da NATO inclui as pensões de reforma pagas diretamente pelo governo aos militares na reforma e aos funcionários civis dos departamentos militares. Para Portugal, a NATO publica ",
+              {
+                "claim": "nato-defesa-portugal-pib-2024",
+                "sufixo": " %"
+              },
+              " do PIB em ",
+              {
+                "periodo": "nato-defesa-portugal-pib-2024"
+              },
+              " e, como estimativas, ",
               {
                 "claim": "nato-defesa-portugal-pib-2025",
                 "sufixo": " %"
               },
-              " do PIB em ",
+              " em ",
               {
                 "periodo": "nato-defesa-portugal-pib-2025"
               },
@@ -159,7 +168,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
               {
                 "periodo": "nato-defesa-portugal-pib-2026"
               },
-              ". Na tabela a preços correntes, publica ",
+              " (a tabela a preços constantes), e ",
               {
                 "claim": "nato-defesa-portugal-eur-2026"
               },
@@ -167,19 +176,28 @@ export const DINHEIRO_DO_ESTADO_2026 = {
               {
                 "periodo": "nato-defesa-portugal-eur-2026"
               },
-              ", também como estimativa. Estas percentagens têm denominadores diferentes: a despesa efetiva consolidada da administração central e o PIB. Não são diretamente comparáveis."
+              " (a tabela a preços correntes, também uma estimativa)."
             ],
             "en": [
-              "The ",
+              "",
               {
                 "claim": "oe-2026-cem-euros-funcao-02"
               },
-              " of every hundred euros on this page are the «Defence» function of central administration's consolidated effective expenditure, in public accounting. Defence spending as a share of GDP, as NATO publishes it, is another measure, under NATO's own definition: payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. For Portugal, NATO publishes, in the table at constant prices, estimates of ",
+              " of every hundred euros on this page are the «Defence» function of central administration's consolidated effective expenditure (spending without transactions in financial assets and liabilities or transfers between its own services), in public accounting. Defence spending as a share of GDP, as NATO publishes it, is another measure, under NATO's own definition: payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole; NATO's definition includes retirement pensions paid directly by the government to retired military and civilian employees of military departments. For Portugal, NATO publishes ",
+              {
+                "claim": "nato-defesa-portugal-pib-2024",
+                "sufixo": " %"
+              },
+              " of GDP in ",
+              {
+                "periodo": "nato-defesa-portugal-pib-2024"
+              },
+              " and, as estimates, ",
               {
                 "claim": "nato-defesa-portugal-pib-2025",
                 "sufixo": " %"
               },
-              " of GDP in ",
+              " in ",
               {
                 "periodo": "nato-defesa-portugal-pib-2025"
               },
@@ -192,7 +210,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
               {
                 "periodo": "nato-defesa-portugal-pib-2026"
               },
-              ". In the table at current prices, it publishes ",
+              " (the table at constant prices), and ",
               {
                 "claim": "nato-defesa-portugal-eur-2026"
               },
@@ -200,7 +218,7 @@ export const DINHEIRO_DO_ESTADO_2026 = {
               {
                 "periodo": "nato-defesa-portugal-eur-2026"
               },
-              ", also as an estimate. These percentages have different denominators: central administration's consolidated effective expenditure and GDP. They are not directly comparable."
+              " (the table at current prices, also an estimate)."
             ]
           }
         },
@@ -269,7 +287,22 @@ export const DINHEIRO_DO_ESTADO_2026 = {
               {
                 "periodo": "oe-2026-cem-euros-funcao-02"
               },
-              " e usam a despesa efetiva consolidada da administração central. Também diferem o perímetro e a contabilidade."
+              " e usam a despesa efetiva consolidada da administração central. Também diferem o perímetro e a contabilidade.",
+              " As duas percentagens do PIB não medem a mesma despesa: a do Eurostat é a função «Defesa» de todas as administrações públicas, em contabilidade nacional, e a da NATO é a definição acima, que inclui as pensões. No mesmo ano de ",
+              {
+                "periodo": "nato-defesa-portugal-pib-2024"
+              },
+              ", a NATO publica ",
+              {
+                "claim": "nato-defesa-portugal-pib-2024",
+                "sufixo": " %"
+              },
+              " do PIB para Portugal e o Eurostat conta ",
+              {
+                "claim": "despesa-por-funcao-2024-gf02-pt",
+                "sufixo": " %"
+              },
+              ". Esta página mostra as duas medidas, cada uma com a sua definição, e não as soma nem corrige nenhuma."
             ],
             "en": [
               "In another count, that of all public administrations, with the regional and local ones, as a share of GDP and in national accounts, Eurostat publishes for ",
@@ -334,7 +367,22 @@ export const DINHEIRO_DO_ESTADO_2026 = {
               {
                 "periodo": "oe-2026-cem-euros-funcao-02"
               },
-              " and use central administration's consolidated effective expenditure. Their coverage and accounting basis also differ."
+              " and use central administration's consolidated effective expenditure. Their coverage and accounting basis also differ.",
+              " The two shares of GDP do not measure the same expenditure: Eurostat's is the «Defence» function of all public administrations, in national accounting, and NATO's is the definition above, which includes pensions. In the same year, ",
+              {
+                "periodo": "nato-defesa-portugal-pib-2024"
+              },
+              ", NATO publishes ",
+              {
+                "claim": "nato-defesa-portugal-pib-2024",
+                "sufixo": " %"
+              },
+              " of GDP for Portugal and Eurostat counts ",
+              {
+                "claim": "despesa-por-funcao-2024-gf02-pt",
+                "sufixo": " %"
+              },
+              ". This page shows both measures, each with its definition, and neither adds them up nor corrects either."
             ]
           }
         },
@@ -348,26 +396,30 @@ export const DINHEIRO_DO_ESTADO_2026 = {
           paragrafo: {
             pt: [
               { se: [O_MAIOR_MINISTERIO], partes: [
-                'Visto pelos ministérios, o maior é ', { nome: M('financas') }, ', com ', { claim: M('financas') }, ' de cada cem euros da «DESPESA TOTAL» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central, o total antes da consolidação, ',
+                'Visto pelos ministérios, o maior é ', { nome: M('financas') }, ', com ', { claim: M('financas') }, ' de cada cem euros, ',
                 { claim: DESPESA_DAS_FINANCAS, sufixo: ' euros' },
+                ' da «', { termo: 'DESPESA TOTAL', lingua: 'pt-PT' }, '» do mapa relativo à classificação orgânica das despesas do subsetor da Administração Central (o total antes da consolidação, ',
+                { verbatim: 'origem-rp4n-total-ministerios-montante' }, ' euros).',
                 { se: [OS_QUATRO_MINISTERIOS], partes: [
-                  '; seguem-se ', { nome: M('saude') }, ' (', { claim: M('saude') }, '), ', { nome: M('trabalho-solidariedade-e-seguranca-social') }, ' (',
+                  ' Seguem-se ', { nome: M('saude') }, ' (', { claim: M('saude') }, '), ', { nome: M('trabalho-solidariedade-e-seguranca-social') }, ' (',
                   { claim: M('trabalho-solidariedade-e-seguranca-social') }, ') e ', { nome: M('educacao-ciencia-e-inovacao') }, ' (',
-                  { claim: M('educacao-ciencia-e-inovacao') }, ')',
+                  { claim: M('educacao-ciencia-e-inovacao') }, ').',
                 ] },
-                '.',
+                '',
               ] },
             ],
             en: [
               { se: [O_MAIOR_MINISTERIO], partes: [
-                'Seen by ministry, the largest is ', { nome: M('financas') }, ', with ', { claim: M('financas') }, ' of every hundred euros of “DESPESA TOTAL” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector, the total before consolidation, ',
+                'Seen by ministry, the largest is ', { nome: M('financas') }, ', with ', { claim: M('financas') }, ' of every hundred euros, ',
                 { claim: DESPESA_DAS_FINANCAS, sufixo: ' euros' },
+                ' of the “', { termo: 'DESPESA TOTAL', lingua: 'pt-PT' }, '” (total expenditure) in the map of expenditure by administrative organisation for the central administration subsector (the total before consolidation, ',
+                { verbatim: 'origem-rp4n-total-ministerios-montante' }, ' euros).',
                 { se: [OS_QUATRO_MINISTERIOS], partes: [
-                  '; then come ', { nome: M('saude') }, ' (', { claim: M('saude') }, '), ', { nome: M('trabalho-solidariedade-e-seguranca-social') }, ' (',
+                  ' Then come ', { nome: M('saude') }, ' (', { claim: M('saude') }, '), ', { nome: M('trabalho-solidariedade-e-seguranca-social') }, ' (',
                   { claim: M('trabalho-solidariedade-e-seguranca-social') }, ') and ', { nome: M('educacao-ciencia-e-inovacao') }, ' (',
-                  { claim: M('educacao-ciencia-e-inovacao') }, ')',
+                  { claim: M('educacao-ciencia-e-inovacao') }, ').',
                 ] },
-                '.',
+                '',
               ] },
             ],
           },

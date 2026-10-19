@@ -11,34 +11,45 @@
   "rows": {
     "nato-defesa-portugal-eur-2026": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-15",
-      "exported_row_sha256": "929a805492a28068bdf724f67df6aa7aafd66c5a89cea604470caab37fa92da0",
+      "exported_at": "2026-10-19",
+      "exported_row_sha256": "3ac7e71298d345f5d57926a253b380d11d315f3b2760a637d6125c0d98da4559",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "43ab7598e5e1debaa3cc16da383df838737f862cd571c1053d611eea6e773b7e",
+      "origin_row_sha256": "c20923f2a55b95bc0aade03ac2a77107b6c4d8919c32115b1729d1d7a0547ea1",
       "rh_id": "nato-defesa-portugal-eur-2026",
-      "rh_ledger_sha256": "fb1824dfd968055554c61bc473d948b86466102b917b5c9b477f2cedbfeb055f",
+      "rh_ledger_sha256": "6d55405da3428245748d2cee3ebb36d55164b9c4c0d9ccca92eecbb58b929c35",
+      "rh_study": "21 Defesa NATO",
+      "verifications_at_export": 0
+    },
+    "nato-defesa-portugal-pib-2024": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-10-19",
+      "exported_row_sha256": "733c94550f13e0b4b0db3e77fa37f8fbfdf8f5427cb9b7d9804bf19fc90f56da",
+      "exporter": "ResearchHub/publisher/export_site_rows.py",
+      "origin_row_sha256": "200a0c00f54ba1a9db132b52cc4190c6509907416958bf29e6a469021cec3ee2",
+      "rh_id": "nato-defesa-portugal-pib-2024",
+      "rh_ledger_sha256": "6d55405da3428245748d2cee3ebb36d55164b9c4c0d9ccca92eecbb58b929c35",
       "rh_study": "21 Defesa NATO",
       "verifications_at_export": 0
     },
     "nato-defesa-portugal-pib-2025": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-15",
-      "exported_row_sha256": "4a86ae2547cf49ce5fe5a7cf3873b496728d11faf3e7ce84670c482589a44222",
+      "exported_at": "2026-10-19",
+      "exported_row_sha256": "c16f4c434bcdd4af85adf3e19588823c1447e34ff77cd78741d1b4930c488d9c",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "25a896e644b5f6cf74fc676b11fb16d27ce07eec6c333928370f209c512651ff",
+      "origin_row_sha256": "befc42444be960660c9809e60625ed76cce950e815dbd297ba73c932c2af97cd",
       "rh_id": "nato-defesa-portugal-pib-2025",
-      "rh_ledger_sha256": "fb1824dfd968055554c61bc473d948b86466102b917b5c9b477f2cedbfeb055f",
+      "rh_ledger_sha256": "6d55405da3428245748d2cee3ebb36d55164b9c4c0d9ccca92eecbb58b929c35",
       "rh_study": "21 Defesa NATO",
       "verifications_at_export": 0
     },
     "nato-defesa-portugal-pib-2026": {
       "corrections_at_export": 0,
-      "exported_at": "2026-10-15",
-      "exported_row_sha256": "7c941443b2cf38fff6b72cd2fc9814264c02d197225806fd8743a26d6610b41d",
+      "exported_at": "2026-10-19",
+      "exported_row_sha256": "2109c2dbf77ecd250e7e5522df55d5940217d9efd278402a2a96e4c132907c71",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
-      "origin_row_sha256": "fbccd054a7daf3ade03e77f0505dd5d46a248559ebca51fd302472faccd34d84",
+      "origin_row_sha256": "3cc2925371f5983b5b5925819d3f51ca5cde09b779a98fe98a539bab96183033",
       "rh_id": "nato-defesa-portugal-pib-2026",
-      "rh_ledger_sha256": "fb1824dfd968055554c61bc473d948b86466102b917b5c9b477f2cedbfeb055f",
+      "rh_ledger_sha256": "6d55405da3428245748d2cee3ebb36d55164b9c4c0d9ccca92eecbb58b929c35",
       "rh_study": "21 Defesa NATO",
       "verifications_at_export": 0
     }

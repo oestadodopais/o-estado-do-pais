@@ -704,8 +704,8 @@ export const AREAS = [
 export const SEM_AREA = [
   {
     estudos: ['oe-2026'],
-    id: /^nato-defesa-portugal-(?:pib-202[56]|eur-2026)$/,
-    assunto: 'Estimativas da NATO para a comparação da explicação EX3',
+    id: /^nato-defesa-portugal-(?:pib-202[456]|eur-2026)$/,
+    assunto: 'Valores da NATO para a comparação da explicação EX3',
     motivo: 'O EX3 compara a medida da NATO com a despesa por função do Orçamento. Não distribui o agregado da NATO pelos ministérios; uma atribuição ministerial não foi declarada neste bloco.',
   },
   {

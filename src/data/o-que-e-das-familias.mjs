@@ -13,6 +13,23 @@
  * da medida em `src/data/concelhos.mjs`.
  */
 export const FAMILIAS_DAS_LINHAS = {
+  "nato-defesa-portugal-pib-2024": {
+  "nome": {
+    "pt": "Despesa em defesa de Portugal, em percentagem do PIB, pela NATO",
+    "en": "Portugal’s defence expenditure as a share of GDP, according to NATO"
+  },
+  "frase": {
+    "pt": [
+      "É o valor que a NATO publica para a despesa em defesa de Portugal, pelos pagamentos do governo nacional aliado, sem as administrações regionais e locais. A percentagem usa o PIB real, na tabela a preços constantes."
+    ],
+    "en": [
+      "It is the value NATO publishes for Portugal’s defence expenditure, covering payments by the Allied national government, excluding regional and local authorities. The percentage uses real GDP, in the table at constant prices."
+    ]
+  },
+  "origens": [
+    "nato-definicao-despesa-defesa"
+  ]
+},
   "nato-defesa-portugal-eur": {
   "nome": {
     "pt": "Despesa em defesa de Portugal, em milhões de euros, pela NATO",
