@@ -37,5 +37,41 @@
    "comando": "npm run check:cruzamento -- --with-origin",
    "motor": "570e411"
   }
+ },
+ "correcao_b": {
+  "nota": "A linha de CSS do Minor 8 da leitura curta (o espaço antes do sufixo em todas as partes dos itens), construída e conferida pelo lugar de direção na cabeça 8ea384557; as capturas novas das duas páginas da discussão em design/especime-v3/capturas/v2b-2026-10-12/correcao-b/capturas.json (40 PNG, 10 páginas inteiras, 0 falhas), vistas pelo lugar de direção: os sufixos iguais nas partes das fontes e da comparação.",
+  "cabeca_construida": "8ea384557",
+  "conferencias": {
+   "build-b": {
+    "codigo": 0,
+    "inicio": "Mon 19 Oct 2026 19:58:29 UTC",
+    "fim": "Mon 19 Oct 2026 20:02:12 UTC",
+    "comando": "npm run build"
+   },
+   "html-b": {
+    "codigo": 0,
+    "inicio": "Mon 19 Oct 2026 20:02:18 UTC",
+    "fim": null,
+    "comando": "npm run gate:html"
+   },
+   "discussao-b": {
+    "codigo": 0,
+    "inicio": "Mon 19 Oct 2026 20:02:54 UTC",
+    "fim": null,
+    "comando": "npm run check:discussao"
+   },
+   "css-b": {
+    "codigo": 0,
+    "inicio": "Mon 19 Oct 2026 20:02:55 UTC",
+    "fim": null,
+    "comando": "npm run check:css"
+   },
+   "capturas-b": {
+    "codigo": 0,
+    "inicio": "Mon 19 Oct 2026 20:03:11 UTC",
+    "fim": null,
+    "comando": "node scripts/leituras/captar.mjs correcao/capturas-pedido-b.json capturas/v2b-2026-10-12/correcao-b"
+   }
+  }
  }
 }
