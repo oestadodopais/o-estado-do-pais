@@ -1,0 +1,144 @@
+PLANTA main-sem-recusa
+ficheiro: scripts/leituras/aterrar.py
+substituição: "        self.exigir(bool(self.ramo) and self.ramo != 'main', 'a cabeça tem de estar num ramo diferente de main')\n" por ''
+sha256 original: e4caff4b73fdfb841422e193b52b7ed50da1f39cc5b6a68d2466f51d91151523
+sha256 planta: 3a1d21e3f9e5b4643311f028e6e65ab2899b2bb654cabe5767facbda95b66eee
+comando: python3 -m unittest -v ferramenta_aterrar.Aterrar.test_main_recusado
+test_main_recusado (ferramenta_aterrar.Aterrar.test_main_recusado) ... FAIL
+
+======================================================================
+FAIL: test_main_recusado (ferramenta_aterrar.Aterrar.test_main_recusado)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<temporario>/tests/leituras/ferramenta_aterrar.py", line 101, in test_main_recusado
+    self.assertFalse(any(c[1:2] == ['push'] for c in chamadas if c[0] == 'git'))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 1 test in 0.883s
+
+FAILED (failures=1)
+código medido: 1
+
+PLANTA fusao-sem-validacao
+ficheiro: scripts/leituras/escrivao.py
+substituição: "    recusa = validar_mensagem(repo, pedido)\n    if recusa:\n        return {'codigo': 2, 'recusa': recusa}\n" por ''
+sha256 original: 3eae9efec4329d6daec3905f862fd64fa2bec8157ef5b288e6d2b8825f968e4c
+sha256 planta: b744320d406e3b9148fc2c62f4029cd2e9015ca6942d5ce78b49be06266a53e6
+comando: python3 -m unittest -v ferramenta_fundir.Fundir.test_mensagem_sem_trailer_recusada_antes_de_fundir
+test_mensagem_sem_trailer_recusada_antes_de_fundir (ferramenta_fundir.Fundir.test_mensagem_sem_trailer_recusada_antes_de_fundir) ... FAIL
+
+======================================================================
+FAIL: test_mensagem_sem_trailer_recusada_antes_de_fundir (ferramenta_fundir.Fundir.test_mensagem_sem_trailer_recusada_antes_de_fundir)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<temporario>/tests/leituras/ferramenta_fundir.py", line 96, in test_mensagem_sem_trailer_recusada_antes_de_fundir
+    self.assertEqual(r['codigo'], 2, r)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : {'codigo': 0, 'cabeca': '398927569db6474c04916a06bcdf87b8214f364a', 'cabeca_antes': 'a71db5f8f576479cbfc0d6690feeb602cf9ae7b1', 'conflitos': [], 'saida': 'Updating a71db5f..3989275\nFast-forward (no commit created; -m option ignored)\n linha | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)\n', 'tipo_fusao': 'avanco-rapido', 'criou_commit': False}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.289s
+
+FAILED (failures=1)
+código medido: 1
+
+PLANTA fusao-sem-mensagem
+ficheiro: scripts/leituras/escrivao.py
+substituição: "'merge', '-m', mensagem, 'refs/heads/' + ramo" por "'merge', '--no-edit', 'refs/heads/' + ramo"
+sha256 original: 3eae9efec4329d6daec3905f862fd64fa2bec8157ef5b288e6d2b8825f968e4c
+sha256 planta: ad356b1faaf2a4789e3afa5fcbcdfb601c29291e2281b043618158e66a90ac72
+comando: python3 -m unittest -v ferramenta_fundir.Fundir.test_fusao_sem_avanco_rapido
+test_fusao_sem_avanco_rapido (ferramenta_fundir.Fundir.test_fusao_sem_avanco_rapido) ... FAIL
+
+======================================================================
+FAIL: test_fusao_sem_avanco_rapido (ferramenta_fundir.Fundir.test_fusao_sem_avanco_rapido)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<temporario>/tests/leituras/ferramenta_fundir.py", line 135, in test_fusao_sem_avanco_rapido
+    self.assertEqual(git(self.w, 'log', '-1', '--format=%B'), MENSAGEM.strip())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "Merge branch 'refs/heads/main' into ensaio" != 'Fusão de main, 19.10.2026\n\nCorpo conse[123 chars]a786'
+- Merge branch 'refs/heads/main' into ensaio
++ Fusão de main, 19.10.2026
++ 
++ Corpo conservado na fusão.
++ 
++ Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>
++ Claude-Session: e687d1ce-db3c-4833-a78e-958a5a6ba786
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.294s
+
+FAILED (failures=1)
+código medido: 1
+
+PLANTA conflitos-M
+ficheiro: scripts/leituras/escrivao.py
+substituição: "'--diff-filter=U'" por "'--diff-filter=M'"
+sha256 original: 3eae9efec4329d6daec3905f862fd64fa2bec8157ef5b288e6d2b8825f968e4c
+sha256 planta: 11a63430bc4083bcc0bc5ad5e5e2c1861fcea2893203c94cb44eb0bc11896ca4
+comando: python3 -m unittest -v ferramenta_fundir.Fundir.test_conflito_aborta_e_repoe_bytes
+test_conflito_aborta_e_repoe_bytes (ferramenta_fundir.Fundir.test_conflito_aborta_e_repoe_bytes) ... FAIL
+
+======================================================================
+FAIL: test_conflito_aborta_e_repoe_bytes (ferramenta_fundir.Fundir.test_conflito_aborta_e_repoe_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<temporario>/tests/leituras/ferramenta_fundir.py", line 42, in test_conflito_aborta_e_repoe_bytes
+    self.assertEqual(r['conflitos'], ['linha'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['.gitignore'] != ['linha']
+
+First differing element 0:
+'.gitignore'
+'linha'
+
+- ['.gitignore']
++ ['linha']
+
+----------------------------------------------------------------------
+Ran 1 test in 0.320s
+
+FAILED (failures=1)
+código medido: 1
+
+PLANTA tranca-sem-teto
+ficheiro: scripts/leituras/aterrar.py
+substituição: 'if agora_mono - inicio >= teto:' por 'if False:'
+sha256 original: e4caff4b73fdfb841422e193b52b7ed50da1f39cc5b6a68d2466f51d91151523
+sha256 planta: 977a4cf2fa93b2b4f774dd6b1e72983ddb10f02b4a3d34de66657a10d6d736ef
+comando: python3 -m unittest -v ferramenta_aterrar.Aterrar.test_tranca_sempre_fresca_tem_teto
+test_tranca_sempre_fresca_tem_teto (ferramenta_aterrar.Aterrar.test_tranca_sempre_fresca_tem_teto) ... ERROR
+
+======================================================================
+ERROR: test_tranca_sempre_fresca_tem_teto (ferramenta_aterrar.Aterrar.test_tranca_sempre_fresca_tem_teto)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<temporario>/tests/leituras/ferramenta_aterrar.py", line 207, in test_tranca_sempre_fresca_tem_teto
+    r = subprocess.run(['sh', str(GUIOES / 'aterrar.sh'), str(self.w), str(self.saida)],
+                       env=self.env, capture_output=True, text=True, timeout=5)
+  File "<temporario>/lib/python3.14/subprocess.py", line 556, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<temporario>/lib/python3.14/subprocess.py", line 1220, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<temporario>/lib/python3.14/subprocess.py", line 2127, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<temporario>/lib/python3.14/subprocess.py", line 1267, in _check_timeout
+    raise TimeoutExpired(
+    ...<2 lines>...
+            stderr=b''.join(stderr_seq) if stderr_seq else None)
+subprocess.TimeoutExpired: Command '['sh', '<temporario>/scripts/leituras/aterrar.sh', '<temporario>/ensaio-aterrar-v5pgl9v9/ramo', '<temporario>/ensaio-aterrar-v5pgl9v9/saida']' timed out after 5 seconds
+
+----------------------------------------------------------------------
+Ran 1 test in 5.161s
+
+FAILED (errors=1)
+código medido: 1
+
+Todas as plantas ficaram vermelhas pelo ensaio previsto; originais sem alterações.

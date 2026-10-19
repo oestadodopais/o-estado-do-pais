@@ -74,6 +74,11 @@ class Aterragem:
             time.sleep(10)
 
     def tomar_tranca(self):
+        inicio = time.monotonic()
+        # A variável encurta o teto apenas nos ensaios; nunca permite alargá-lo.
+        teto = int(os.environ.get('OEDP_ENSAIO_TRANCA_TETO', '3600'))
+        self.exigir(0 < teto <= 3600, 'teto da tranca inválido')
+        aviso = inicio
         while True:
             try:
                 with self.tranca.open('x') as f:
@@ -81,11 +86,20 @@ class Aterragem:
                     f.write(self.dono)
                 break
             except FileExistsError:
+                agora_mono = time.monotonic()
+                dono = self.tranca.read_text().strip()
+                if agora_mono - inicio >= teto:
+                    self.registar('tranca', 75, dono=dono, teto_segundos=teto,
+                                  espera_segundos=agora_mono - inicio)
+                    raise Parar(75, 'esgotado o teto de espera pela tranca')
                 if time.time() - self.tranca.stat().st_mtime > 2400:
                     expirar(self.tranca)
                 else:
-                    print(higienizar('à espera da tranca: ' + self.tranca.read_text().strip(), self.sitio, self.motor), flush=True)
-                    time.sleep(10)
+                    if agora_mono >= aviso:
+                        texto = f'à espera da tranca (teto {teto} segundos, 60 minutos por omissão): {dono}'
+                        print(higienizar(texto, self.sitio, self.motor), flush=True)
+                        aviso = agora_mono + 300
+                    time.sleep(min(10, max(0, teto - (time.monotonic() - inicio))))
         self.registar('tranca', 0)
 
     def correr(self, nome, args, cwd=None, teto=3000):

@@ -24,6 +24,7 @@ import hashlib
 import json
 import os
 import pathlib
+import re
 import signal
 import subprocess
 import sys
@@ -44,15 +45,24 @@ def git(repo, *args, entrada=None):
     return subprocess.run(['git', '-C', repo, *args], capture_output=True, text=True, input=entrada)
 
 
-def validar(repo, pedido):
+def validar_mensagem(repo, pedido):
     mensagem = pedido.get('mensagem')
-    ficheiros = pedido.get('ficheiros')
     if not isinstance(mensagem, str) or not mensagem.strip():
         return 'mensagem vazia'
-    if 'Co-Authored-By:' not in mensagem:
+    if not re.search(r'^Co-Authored-By: \S[^\n]* <[^<>\s]+@[^<>\s]+>$', mensagem, re.M):
         return 'a mensagem não traz o trailer Co-Authored-By'
-    if '—' in mensagem:
+    if not e_motor(repo) and not re.search(r'^Claude-Session: \S+$', mensagem, re.M):
+        return 'a mensagem do sítio não traz a linha Claude-Session'
+    if any(c in mensagem for c in ('\u2014', '\u2013')):
         return 'travessão na mensagem'
+    return None
+
+
+def validar(repo, pedido):
+    recusa = validar_mensagem(repo, pedido)
+    if recusa:
+        return recusa
+    ficheiros = pedido.get('ficheiros')
     if not isinstance(ficheiros, list) or not ficheiros:
         return 'lista de ficheiros vazia'
     if len(ficheiros) > 400:
@@ -199,6 +209,18 @@ def fundir(repo, pedido, bater=None):
     ramo = pedido.get('ramo')
     if ramo not in ('main', 'master'):
         return {'codigo': 2, 'recusa': 'fundir só aceita main ou master'}
+    recusa = validar_mensagem(repo, pedido)
+    if recusa:
+        return {'codigo': 2, 'recusa': recusa}
+    mensagem = pedido['mensagem'].rstrip('\n') + '\n'
+    titulo = mensagem.splitlines()[0]
+    data = re.search(r'\b\d{2}\.\d{2}\.\d{4}\b', titulo)
+    if not re.search(r'\bfusão\b', titulo, re.I) or not data:
+        return {'codigo': 2, 'recusa': 'a primeira linha tem de dizer a fusão e a data (DD.MM.AAAA)'}
+    try:
+        datetime.datetime.strptime(data.group(), '%d.%m.%Y')
+    except ValueError:
+        return {'codigo': 2, 'recusa': 'data da fusão inválida'}
     estado = git(repo, 'status', '--porcelain', '--untracked-files=no')
     if estado.returncode or estado.stdout.strip():
         return {'codigo': 9, 'recusa': 'a árvore tem modificações seguidas ou não se conseguiu ler'}
@@ -213,7 +235,7 @@ def fundir(repo, pedido, bater=None):
             return {'codigo': 9, 'recusa': 'há uma operação Git em curso'}
     antes = git(repo, 'rev-parse', 'HEAD').stdout.strip()
     with tempfile.TemporaryFile(mode='w+', encoding='utf-8', errors='replace') as saida_f:
-        processo = subprocess.Popen(['git', '-C', repo, '-c', 'rerere.enabled=false', 'merge', '--no-edit', 'refs/heads/' + ramo],
+        processo = subprocess.Popen(['git', '-C', repo, '-c', 'rerere.enabled=false', 'merge', '-m', mensagem, 'refs/heads/' + ramo],
                                     stdout=saida_f, stderr=subprocess.STDOUT, text=True, start_new_session=True)
         inicio = time.monotonic()
         excedeu = False
@@ -233,7 +255,7 @@ def fundir(repo, pedido, bater=None):
                 break
         saida_f.seek(0)
         saida = saida_f.read()
-    conflitos = git(repo, 'diff', '--name-only', '--diff-filter=U', '-z').stdout.rstrip('\0').split('\0')
+    conflitos = git(repo, 'diff', '--cached', '--name-only', '--diff-filter=U', '-z').stdout.rstrip('\0').split('\0')
     conflitos = [f for f in conflitos if f]
     aborto = None
     if processo.returncode:
@@ -244,6 +266,11 @@ def fundir(repo, pedido, bater=None):
     depois = git(repo, 'rev-parse', 'HEAD').stdout.strip()
     resultado = {'codigo': 1 if conflitos else processo.returncode, 'cabeca': depois,
                  'cabeca_antes': antes, 'conflitos': conflitos, 'saida': saida[-6000:]}
+    if processo.returncode == 0:
+        alvo = git(repo, 'rev-parse', 'refs/heads/' + ramo).stdout.strip()
+        resultado['tipo_fusao'] = ('sem-alteracao' if depois == antes else
+                                  'avanco-rapido' if depois == alvo else 'commit-de-fusao')
+        resultado['criou_commit'] = resultado['tipo_fusao'] == 'commit-de-fusao'
     if aborto is not None:
         resultado['aborto_codigo'] = aborto.returncode
         if aborto.returncode or depois != antes or git(repo, 'status', '--porcelain', '--untracked-files=no').stdout.strip():

@@ -43,3 +43,28 @@ A sintaxe das consultas foi conferida na ajuda instalada da Vercel e na document
 ## Custo
 
 A última suite de ensaios mediu 25.368 segundos. O custo semanal em pontos é medido pelo lançador antes e depois da passagem. A linha `tokens used` não está disponível durante a escrita deste relatório; não se atribui uma contagem inferida. A primeira corrida dos portões mediu 548 segundos na soma das três fases, pelos marcadores guardados em `portoes-primeira.json`. A corrida final terá o seu recibo externo, depois do commit deste relatório.
+
+
+## A passagem de correção de 19.10.2026
+
+Esta secção substitui a promessa anterior de deixar os códigos finais apenas na resposta. Não houve publicação nem fusão das worktrees reais. O motor ficou sem alterações, nenhum portão existente foi modificado e o registo aberto do lançador foi preservado fora da worktree antes dos portões.
+
+1. **Portões na cabeça final do código (achado 5).** Depois do commit das correções, os três portões correm por `sh scripts/leituras/portoes-pelo-escrivao.sh <temporario>/portoes`. O recibo seguinte só acrescenta prova: a cabeça conferida é a do commit anterior ao recibo, que não muda código. Este ponto verifica a proveniência dos resultados; as plantas vermelhas abaixo provam as recusas do código, sem modificar os portões.
+2. **Recusa de main antes de publicar (achado 6).** `test_main_recusado` confere código 9, ausência de qualquer `git push`, ausência de chamadas a GitHub, npm e Vercel, e o motivo da recusa antes de qualquer passo de publicação. Na cópia sem a recusa, continua a haver código 9, mas o ensaio fica vermelho porque houve um push simulado: `plantas-correcao.log`, planta `main-sem-recusa`, código 1.
+3. **Mensagem obrigatória em fundir (achado 7).** O cliente recebe `fundir.sh <main|master> <mensagem>` ou `fundir.sh <main|master> -F <ficheiro>`. O escrivão exige título com fusão e data válida em DD.MM.AAAA, autoria e, no sítio, `Claude-Session`, sem travessões. Passa a mensagem inteira a `git merge -m`. A validação comum da mensagem também serve `comitar`, incluindo a linha de sessão no sítio e as duas formas de travessão; esta é a alteração por arrasto necessária para manter as mesmas regras. O resultado distingue avanço rápido, ausência de alterações e commit de fusão. `test_fusao_sem_avanco_rapido` confere pais e mensagem completa, incluindo os trailers; `test_protocolo_cliente_e_batimento` prova o cliente, o ficheiro de mensagem e o avanço rápido sem commit novo. `test_mensagem_sem_trailer_recusada_antes_de_fundir` exige recusa antes de qualquer processo Git, cabeça e bytes conservados. `test_regras_da_mensagem` cobre sessão, título, data, travessões e a exceção da sessão no motor. As cópias sem validação e com `--no-edit` ficam vermelhas, ambas com código 1: plantas `fusao-sem-validacao` e `fusao-sem-mensagem`.
+4. **Conflitos distintos de modificações (achado 4).** A mesma fusão altera `.gitignore` sem conflito e conflita em `linha`. A consulta usa `git diff --cached --name-only --diff-filter=U`: o ficheiro integrado sem conflito está no índice, não na diferença entre o índice e os ficheiros de trabalho. `test_conflito_aborta_e_repoe_bytes` exige só `linha` e repõe cabeça, estado e todos os bytes, incluindo o ficheiro não seguido. Na planta `conflitos-M`, o resultado medido é só `.gitignore`, em vez de `linha`, e o ensaio falha com código 1. Não são os dois ficheiros previstos no mandato: no índice, M exclui o conflito U; a distinção que se queria provar fica demonstrada pela lista errada registada.
+5. **Teto da espera pela tranca (achado 11).** A espera usa relógio monotónico, teto de 60 minutos e aviso inicial repetido a cada cinco minutos. Esgotado o teto, sai a 75, grava dono, teto e duração no passo `tranca` de `aterragem.json`, preserva a tranca alheia e não publica. `test_tranca_sempre_fresca_tem_teto` mantém o batimento em paralelo e encurta o teto para um segundo por `OEDP_ENSAIO_TRANCA_TETO`, variável reservada ao ensaio e que não permite ultrapassar 3 600 segundos. `test_teto_padrao_e_avisos_de_cinco_em_cinco_minutos` mede 3 600 segundos e 12 avisos num relógio simulado. Na planta `tranca-sem-teto`, o processo não termina dentro dos cinco segundos permitidos pelo ensaio; este fica vermelho com `TimeoutExpired` e código 1, sem deixar o processo a correr.
+
+As cinco plantas correram apenas em cópias temporárias. `plantas-correcao.log` guarda cada substituição exata, os sha256 do guião original e da cópia alterada, o comando, a falha e o código medido. O executor das plantas terminou a 0 porque todas deram o vermelho previsto. Os caminhos locais foram substituídos antes de guardar os registos.
+
+| Conferência | Código | Prova |
+|---|---|---|
+| `python3 -m unittest discover -s tests/leituras -p 'ferramenta_*.py' -v`, por `curto.sh` | 0 | `ensaios-correcao.log`: 29 ensaios em 30.860 segundos |
+| Cinco plantas em cópias, por `curto.sh` | 0 no executor; 1 em cada planta | `plantas-correcao.log` |
+| `python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md`, por `curto.sh` | 0 | `mapa-correcao.log`; achado 17 corrigido de linha 2 para linha 1 |
+| `sh -n scripts/leituras/fundir.sh scripts/leituras/aterrar.sh` | 0 | Sintaxe dos clientes |
+| `git diff --check` | 0 | Espaços conferidos antes do commit |
+
+Os Minor 9, 10, 12, 13, 14, 15 e 16 ficam para a higiene semanal, sem correções adicionais nesta passagem. O custo semanal continua a cargo do lançador; não está disponível uma linha `tokens used` durante esta escrita.
+
+Recibo final: pendente da corrida na cabeça comitada das correções; será acrescentado em `portoes-final.json`, num commit apenas com o recibo e esta linha.

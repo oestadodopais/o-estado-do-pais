@@ -1,5 +1,7 @@
 """Aterragem com Git temporário e GitHub, Vercel e npm simulados. Nada se publica."""
 import json
+import importlib
+import sys
 import os
 from pathlib import Path
 import shutil
@@ -7,6 +9,8 @@ import subprocess
 import tempfile
 import unittest
 import time
+import threading
+from unittest.mock import patch
 from apoio_ferramentas import GUIOES, comando, commit, git, repo, worktree
 
 
@@ -92,8 +96,12 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
         self.assertFalse(any(c[1] == 'push' for c in chamadas if c[0] == 'git'))
 
     def test_main_recusado(self):
-        r, _, _ = self.correr(arvore=self.main)
+        r, recibo, chamadas = self.correr(arvore=self.main)
         self.assertEqual(r.returncode, 9)
+        self.assertFalse(any(c[1:2] == ['push'] for c in chamadas if c[0] == 'git'))
+        self.assertFalse(any(c[0] in ('gh', 'npm', 'vercel') for c in chamadas))
+        self.assertEqual([p['passo'] for p in recibo['passos']], ['tranca', 'parou'])
+        self.assertIn('ramo diferente de main', recibo['passos'][-1]['motivo'])
 
     def test_main_por_fundir(self):
         (self.main / 'linha').write_text('main avançou\n')
@@ -184,6 +192,60 @@ print('1m https://example.invalid/lancamento ● '+('Error' if modo=='vercel-fal
             if processo.poll() is None:
                 processo.kill()
                 processo.wait()
+
+    def test_tranca_sempre_fresca_tem_teto(self):
+        tranca = self.p / 'tranca'
+        tranca.write_text('detentor sempre ativo\n')
+        self.env['OEDP_ENSAIO_TRANCA_TETO'] = '1'
+        parar = threading.Event()
+        def renovar():
+            while not parar.wait(0.05):
+                os.utime(tranca, None)
+        detentor = threading.Thread(target=renovar)
+        detentor.start()
+        try:
+            r = subprocess.run(['sh', str(GUIOES / 'aterrar.sh'), str(self.w), str(self.saida)],
+                               env=self.env, capture_output=True, text=True, timeout=5)
+        finally:
+            parar.set()
+            detentor.join()
+        self.assertEqual(r.returncode, 75, r.stdout + r.stderr)
+        self.assertIn('60 minutos por omissão', r.stdout)
+        recibo = json.loads((self.saida / 'aterragem.json').read_text())
+        self.assertEqual(recibo['codigo'], 75)
+        passo = recibo['passos'][0]
+        self.assertEqual(passo['passo'], 'tranca')
+        self.assertEqual(passo['codigo'], 75)
+        self.assertEqual(passo['dono'], 'detentor sempre ativo')
+        self.assertEqual(passo['teto_segundos'], 1)
+        self.assertGreaterEqual(passo['espera_segundos'], 1)
+        self.assertEqual(tranca.read_text(), 'detentor sempre ativo\n')
+        chamadas = [json.loads(l)['cmd'] for l in self.chamadas.read_text().splitlines()]
+        self.assertFalse(any(c[1:2] == ['push'] for c in chamadas))
+
+    def test_teto_padrao_e_avisos_de_cinco_em_cinco_minutos(self):
+        with patch.object(sys, 'path', [str(GUIOES), *sys.path]):
+            aterrar = importlib.import_module('aterrar')
+        tranca = self.p / 'tranca'
+        tranca.write_text('detentor do relógio simulado\n')
+        relogio = [0]
+        def dormir(segundos):
+            relogio[0] += segundos
+            os.utime(tranca, None)
+        ambiente = {k: v for k, v in self.env.items() if k != 'OEDP_ENSAIO_TRANCA_TETO'}
+        with patch.dict(os.environ, ambiente, clear=True):
+            aterragem = aterrar.Aterragem(str(self.w), str(self.saida))
+            with patch.object(aterrar.time, 'monotonic', side_effect=lambda: relogio[0]), \
+                 patch.object(aterrar.time, 'sleep', side_effect=dormir), \
+                 patch('builtins.print') as imprimir:
+                with self.assertRaises(aterrar.Parar) as paragem:
+                    aterragem.tomar_tranca()
+                self.assertEqual(paragem.exception.codigo, 75)
+        self.assertEqual(relogio[0], 3600)
+        self.assertEqual(imprimir.call_count, 12)
+        self.assertTrue(all('teto 3600 segundos' in c.args[0] for c in imprimir.call_args_list))
+        self.assertEqual(aterragem.recibo['passos'][0]['dono'], 'detentor do relógio simulado')
+        self.assertEqual(tranca.read_text(), 'detentor do relógio simulado\n')
 
     def test_tranca_caducada(self):
         tranca = self.p / 'tranca'
