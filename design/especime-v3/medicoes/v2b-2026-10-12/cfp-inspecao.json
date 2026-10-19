@@ -1,0 +1,22 @@
+{
+  "origem": "content/15 Orcamento do Estado 2027/source/v2a/cfp-parecer.pdf",
+  "imagens": [
+    {
+      "pagina_pdf": 1,
+      "ficheiro": "<temporario>/v2b-cfp-capa.png",
+      "largura": 778,
+      "altura": 1100,
+      "sha256": "a367b9866bfa0f5a10fe2f3d879020fdf3a6171d38f38a0e6abdb16992a68839",
+      "vista": true
+    },
+    {
+      "pagina_pdf": 20,
+      "ficheiro": "<temporario>/v2b-cfp-conclusao.png",
+      "largura": 990,
+      "altura": 1400,
+      "sha256": "7f255453a9a8be3b3bf678eceb60267bace7aedf3d32d2e514f4645262273d29",
+      "vista": true
+    }
+  ],
+  "finalidade": "Conferir a capa e a continuidade da frase da conclusão. Não são capturas de páginas do sítio."
+}
