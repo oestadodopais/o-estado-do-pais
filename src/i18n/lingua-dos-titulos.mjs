@@ -542,6 +542,7 @@ export function linguaDaFonte(fonte, lang = 'pt') {
 
 /** `pt`, `en`, ou `null` para uma edição que não está em língua nenhuma. */
 export const LINGUA_DAS_EDICOES = {
+  "2026-10-15": null, // Data da cópia alojada da página da NATO.
   // V2-a: línguas lidas nos documentos alojados.
   "2026-10-09": null,
   "2027": null,
