@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-19T22:05:55+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "D1",
+   "ficheiro": "built/index.html",
+   "descricao": "o título do item 2 no bloco do topo da página PT leva um juízo sobre um partido e difere do título declarado do item (a regra 5)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "2e2ddba44c09da912f3d6a52b4f46cb9b1206b7d6ccec3894f2eb0d3d6a6ad4b",
+   "sha256_depois": "9ea902749e9697a7c0143d9d7637ee0d73870cae67cf2f86873bbc9d088f390a",
+   "contexto_antes": " data-discussao-porta=\"saude-no-orcamento\">A Saúde no Orçamento: que despesa se está a comparar?</a></li><li><a href=\"/o-que-se-discute/#parcerias-rodoviarias\" data-discussao-porta=\"parcerias-rodoviarias\">As parcerias rodoviárias: a afirmação e os valores do relatório</a></li></ul></section><section class=\"pp-o-que-se-passa\" data-o-que-se-passa aria-labelledby=\"o-que-se-passa-k\"><h2 class=\"pp-o-que-se-passa-k\" id=\"o-que-se-passa",
+   "contexto_depois": " data-discussao-porta=\"saude-no-orcamento\">A Saúde no Orçamento: que despesa se está a comparar?</a></li><li><a href=\"/o-que-se-discute/#parcerias-rodoviarias\" data-discussao-porta=\"parcerias-rodoviarias\">As parcerias rodoviárias: a afirmação falsa do PCP</a></li></ul></section><section class=\"pp-o-que-se-passa\" data-o-que-se-passa aria-labelledby=\"o-que-se-passa-k\"><h2 class=\"pp-o-que-se-passa-k\" id=\"o-que-se-passa"
+  },
+  {
+   "id": "D2",
+   "ficheiro": "built/en/index.html",
+   "descricao": "a porta nova do menu na página EN com um rótulo que não é a etiqueta s.nav.discussao («Debates» em vez de «Under discussion»)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "bb147757120b97c451bacd0107c0fdfb9d2e2581af6091b0d9d36c12ceba2807",
+   "sha256_depois": "08f33923c44c4a2d8f0c2107d15c07f97e174e574f5da8caae31ce27f177bfdc",
+   "contexto_antes": "=\"/en/places/\">Places</a><a href=\"/en/themes/\">Themes</a><a href=\"/en/studies\">Studies</a><a href=\"/en/explainers\">Explainers</a><a href=\"/en/under-discussion/\">Under discussion</a><a href=\"/en/european-union\">European Union</a><a href=\"/en/about\">About</a></nav><div class=\"masthead masthead-pais\"><div class=\"masthead-marca\"><h1 class=\"wordmark\">O Estado do País</h1><",
+   "contexto_depois": "=\"/en/places/\">Places</a><a href=\"/en/themes/\">Themes</a><a href=\"/en/studies\">Studies</a><a href=\"/en/explainers\">Explainers</a><a href=\"/en/under-discussion/\">Debates</a><a href=\"/en/european-union\">European Union</a><a href=\"/en/about\">About</a></nav><div class=\"masthead masthead-pais\"><div class=\"masthead-marca\"><h1 class=\"wordmark\">O Estado do País</h1><"
+  },
+  {
+   "id": "D3",
+   "ficheiro": "src/lib/navegacao.mjs",
+   "descricao": "a ordem das portas do menu no código difere do mandato e da página construída (a discussão antes das explicações)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c0a9ed38fa61e3afa2e9231f1ff40bb63ce9ff7f6e896f4c6b9a22fe208292c3",
+   "sha256_depois": "82275a50fb7cbccbffad6f30908bca7517bcfe78edf0974da1aea3f0d29fa73b",
+   "contexto_antes": "h4-2026-10-06/menu-a-390.json`, antes e depois da mudança. */\n/** V2-c: a discussão entra entre as explicações e a União; a dobra natural conserva os alvos. */\nexport const ROTAS_NAV = ['home', 'lugares', 'temas', 'estudos', 'explicacoes', 'discussao', 'uniaoEuropeia', 'sobre'];\nexport const ROTAS_RODAPE = ['home', 'livro', 'metodo', 'correcoes', 'agenda', 'explicacoes', 'discussao', 'uniaoEuropeia', 'indice'];\nexport const ROTAS_SOBRE",
+   "contexto_depois": "h4-2026-10-06/menu-a-390.json`, antes e depois da mudança. */\n/** V2-c: a discussão entra entre as explicações e a União; a dobra natural conserva os alvos. */\nexport const ROTAS_NAV = ['home', 'lugares', 'temas', 'estudos', 'discussao', 'explicacoes', 'uniaoEuropeia', 'sobre'];\nexport const ROTAS_RODAPE = ['home', 'livro', 'metodo', 'correcoes', 'agenda', 'explicacoes', 'discussao', 'uniaoEuropeia', 'indice'];\nexport const ROTAS_SOBRE"
+  },
+  {
+   "id": "D4",
+   "ficheiro": "tests/discussao/itens.mjs",
+   "descricao": "a célula deixa de acusar o bloco fora do lugar (a régua da posição enfraquecida: o erro nunca se regista)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "348beb037cfbcec7306932e3f19e74b4b0195d9a2d98348503a23b6489354130",
+   "sha256_depois": "98bd083126aa4bfed3bf409223247ea7293d80d848f403b4ca83ebd76d74f053",
+   "contexto_antes": "'data-discussao-inicio','data-o-que-se-passa','data-entradas'].map(m=>content.indexOf(m));\n if(marcas.some(n=>n<0)||!(marcas[0]<marcas[1]&&marcas[1]<marcas[2]))erros.push('V2C início: marca ausente ou bloco fora do lugar');\n if(root.querySelectorAll('[data-discussao-inicio]').length!==1||root.querySelector('main > section')!==bloco)erros.push('V2C início: bloco não é a primeira s",
+   "contexto_depois": "'data-discussao-inicio','data-o-que-se-passa','data-entradas'].map(m=>content.indexOf(m));\n if(marcas.some(n=>n<0)||!(marcas[0]<marcas[1]&&marcas[1]<marcas[2]))void 0;\n if(root.querySelectorAll('[data-discussao-inicio]').length!==1||root.querySelector('main > section')!==bloco)erros.push('V2C início: bloco não é a primeira s"
+  },
+  {
+   "id": "D5",
+   "ficheiro": "built/index.html",
+   "descricao": "o título do bloco do topo na página PT liga à secção errada em vez da página «O que se discute»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "9ea902749e9697a7c0143d9d7637ee0d73870cae67cf2f86873bbc9d088f390a",
+   "sha256_depois": "51a05500651ab2552699b86098e1236175afd7af12ead834bbf36aa7c30a2551",
+   "contexto_antes": "\">Método</a>.</span></p></div><section class=\"pp-discussao\" data-discussao-inicio aria-labelledby=\"discussao-inicio\"><h2 class=\"pp-sec-k\" id=\"discussao-inicio\"><a href=\"/o-que-se-discute/\" data-voz>O que se discute →</a></h2><ul class=\"discussao-sumario\"><li><a href=\"/o-que-se-discute/#saude-no-orcamento\" data-discussao-porta=\"saude-no-orcamento\">A Saúde no Orçamento: que despe",
+   "contexto_depois": "\">Método</a>.</span></p></div><section class=\"pp-discussao\" data-discussao-inicio aria-labelledby=\"discussao-inicio\"><h2 class=\"pp-sec-k\" id=\"discussao-inicio\"><a href=\"/o-que-se-passa/\" data-voz>O que se discute →</a></h2><ul class=\"discussao-sumario\"><li><a href=\"/o-que-se-discute/#saude-no-orcamento\" data-discussao-porta=\"saude-no-orcamento\">A Saúde no Orçamento: que despe"
+  }
+ ]
+}
