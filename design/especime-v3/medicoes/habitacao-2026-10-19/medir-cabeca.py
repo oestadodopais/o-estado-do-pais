@@ -20,7 +20,7 @@ def main():
     print('Início UTC: ' + start, flush=True)
     process = subprocess.run([sys.executable, '-m', module], cwd=motor, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     output = process.stdout
-    replacements = [(str(motor), '<motor>'), (str(HERE.parents[3]), '<worktree>'), (str(Path.home()), '<utilizador>')]
+    replacements = [(str(motor), '<motor>'), (str(HERE.parents[3]), '<worktree>'), (str(Path.home()), '<temporario>')]
     if os.environ.get('TMPDIR'): replacements.append((os.environ['TMPDIR'], '<temporario>/'))
     for old, new in replacements: output = output.replace(old, new)
     print(output, end='' if output.endswith('\n') else '\n')
