@@ -1,0 +1,13 @@
+código 0 · 655 s · 258 linhas em <temporario>/motor.log
+--- linhas de falha ou aviso (até quarenta) ---
+21:PROVA vigilancia.tests.test_vigilancia.Provas.test_aviso_descompressao: passou
+66:PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_dois_numeros_dar: «número do DAR omitido do resumo sem aviso»; passou
+--- últimas oito linhas ---
+GATE  editions evora-quem-governou-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-en ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok
+GATE: PASS

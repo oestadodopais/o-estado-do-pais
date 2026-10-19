@@ -1,0 +1,13 @@
+{
+  "commit": "449c8620617bdf765244209b712e778498467586",
+  "ficheiros": [
+    "content/22 TAP/extracoes.json",
+    "content/22 TAP/ledger.json",
+    "publisher/tap.py",
+    "publisher/tap_test.py"
+  ],
+  "inicio": "2026-10-19T12:10:26.147403+00:00",
+  "fim": "2026-10-19T12:26:59.423568+00:00",
+  "codigo": 0,
+  "precommit_pass": true
+}

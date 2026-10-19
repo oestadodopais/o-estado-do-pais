@@ -1,0 +1,161 @@
+cabeça motor: 6b7e0bf8d27fd9514158c081590f060a36670b91
+comando: python3 -m publisher.tap_test
+PASS planta: livro value; TAP livro: diverge dos corpos e seletores conferidos
+PASS planta: livro source_excerpt; TAP livro: diverge dos corpos e seletores conferidos
+PASS planta: livro attributed_to; TAP livro: diverge dos corpos e seletores conferidos
+PASS planta: livro published_at; TAP livro: diverge dos corpos e seletores conferidos
+PASS planta: livro source_url; TAP livro: diverge dos corpos e seletores conferidos
+PASS planta: livro afirmacao; TAP livro: diverge dos corpos e seletores conferidos
+PASS planta: corpo title; TAP title: texto ausente no documento afirmacao-lufthansa-tap-preco
+PASS planta: corpo published_at; TAP published_at: data estruturada divergente afirmacao-lufthansa-tap-preco
+PASS planta: corpo attributed_to; TAP attributed_to: texto ausente no documento afirmacao-ps-tap-recuperacao
+PASS planta: data sem dia e mês; TAP published_at: falta data inteira tap-oferta-referencia
+PASS planta: página fora do documento; TAP página: fora do documento
+PASS planta: página após o fim; TAP página: fora do documento
+PASS planta: segunda extração usa mesmo caminho; TAP continuidade: os caminhos de extração têm de ser distintos tap-2025-resultado
+PASS planta: fluxo sem área de corpo; TAP fluxo: falta área sem cabeçalho e rodapé tap-caderno-direitos-laborais
+PASS planta: valor trocado; TAP valor: diferente do conferido tap-2025-resultado
+PASS planta: início repetido na área; TAP início: ausente ou repetido tap-2025-resultado
+PASS planta: zero ocorrências na página; TAP início: ausente ou repetido na página tap-2025-resultado
+PASS planta: duas ocorrências na página; TAP início: ausente ou repetido na página tap-2025-resultado
+PASS planta: continuidade independente; TAP continuidade: excerto ausente da segunda extração tap-2025-resultado
+PASS planta: cabeçalho a 300 caracteres; TAP cabeçalho: longe do valor tap-2025-resultado
+PASS planta: cabeçalho separado a 300 caracteres; TAP cabeçalho: longe do valor tap-2025-resultado
+PASS planta: unidade a 300 caracteres; TAP unidade: longe do valor tap-2025-resultado
+PASS planta: unidade ausente; TAP unidade: ausente do bloco tap-2025-resultado
+PASS planta: cabeçalho ausente; TAP início: ausente ou repetido tap-2025-resultado-cabecalho
+PASS planta: colunas tap-2023-resultado (tap-2023-contas-pt.pdf); TAP colunas: falta área tap-2023-resultado
+PASS planta: colunas tap-2023-resultado (tap-2023-contas.pdf); TAP colunas: falta área tap-2023-resultado
+PASS planta: colunas tap-2023-resultado-cabecalho (tap-2023-contas.pdf); TAP colunas: falta área tap-2023-resultado-cabecalho
+PASS planta: colunas tap-2023-resultado-cabecalho (tap-2023-contas-pt.pdf); TAP colunas: falta área tap-2023-resultado-cabecalho
+PASS planta: colunas tap-2023-capital-proprio (tap-2023-contas-pt.pdf); TAP colunas: falta área tap-2023-capital-proprio
+PASS planta: colunas tap-2023-capital-proprio (tap-2023-contas.pdf); TAP colunas: falta área tap-2023-capital-proprio
+PASS planta: colunas tap-2023-capital-proprio-cabecalho (tap-2023-contas.pdf); TAP colunas: falta área tap-2023-capital-proprio-cabecalho
+PASS planta: colunas tap-2023-capital-proprio-cabecalho (tap-2023-contas-pt.pdf); TAP colunas: falta área tap-2023-capital-proprio-cabecalho
+PASS planta: colunas tap-2023-capital-social (tap-2023-contas-pt.pdf); TAP colunas: falta área tap-2023-capital-social
+PASS planta: colunas tap-2023-capital-social (tap-2023-contas.pdf); TAP colunas: falta área tap-2023-capital-social
+PASS planta: colunas tap-2023-capital-social-cabecalho (tap-2023-contas.pdf); TAP colunas: falta área tap-2023-capital-social-cabecalho
+PASS planta: colunas tap-2023-capital-social-cabecalho (tap-2023-contas-pt.pdf); TAP colunas: falta área tap-2023-capital-social-cabecalho
+PASS planta: colunas tap-2023-divida-liquida-sem-locacoes (tap-2023-contas-pt.pdf); TAP colunas: falta área tap-2023-divida-liquida-sem-locacoes
+PASS planta: colunas tap-2023-divida-liquida-sem-locacoes (tap-2023-contas.pdf); TAP colunas: falta área tap-2023-divida-liquida-sem-locacoes
+PASS planta: colunas tap-2024-resultado (tap-2024-contas-pt.pdf); TAP colunas: falta área tap-2024-resultado
+PASS planta: colunas tap-2024-resultado (tap-2024-contas.pdf); TAP colunas: falta área tap-2024-resultado
+PASS planta: colunas tap-2024-resultado-cabecalho (tap-2024-contas.pdf); TAP colunas: falta área tap-2024-resultado-cabecalho
+PASS planta: colunas tap-2024-resultado-cabecalho (tap-2024-contas-pt.pdf); TAP colunas: falta área tap-2024-resultado-cabecalho
+PASS planta: colunas tap-2024-capital-proprio (tap-2024-contas-pt.pdf); TAP colunas: falta área tap-2024-capital-proprio
+PASS planta: colunas tap-2024-capital-proprio (tap-2024-contas.pdf); TAP colunas: falta área tap-2024-capital-proprio
+PASS planta: colunas tap-2024-capital-proprio-cabecalho (tap-2024-contas.pdf); TAP colunas: falta área tap-2024-capital-proprio-cabecalho
+PASS planta: colunas tap-2024-capital-proprio-cabecalho (tap-2024-contas-pt.pdf); TAP colunas: falta área tap-2024-capital-proprio-cabecalho
+PASS planta: colunas tap-2024-capital-social (tap-2024-contas-pt.pdf); TAP colunas: falta área tap-2024-capital-social
+PASS planta: colunas tap-2024-capital-social (tap-2024-contas.pdf); TAP colunas: falta área tap-2024-capital-social
+PASS planta: colunas tap-2024-capital-social-cabecalho (tap-2024-contas.pdf); TAP colunas: falta área tap-2024-capital-social-cabecalho
+PASS planta: colunas tap-2024-capital-social-cabecalho (tap-2024-contas-pt.pdf); TAP colunas: falta área tap-2024-capital-social-cabecalho
+PASS planta: colunas tap-2024-divida-liquida-sem-locacoes (tap-2024-contas-pt.pdf); TAP colunas: falta área tap-2024-divida-liquida-sem-locacoes
+PASS planta: colunas tap-2024-divida-liquida-sem-locacoes (tap-2024-contas.pdf); TAP colunas: falta área tap-2024-divida-liquida-sem-locacoes
+PASS planta: colunas tap-2025-resultado (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2025-resultado
+PASS planta: colunas tap-2025-resultado (tap-2025-contas.pdf); TAP colunas: falta área tap-2025-resultado
+PASS planta: colunas tap-2025-resultado-cabecalho (tap-2025-contas.pdf); TAP colunas: falta área tap-2025-resultado-cabecalho
+PASS planta: colunas tap-2025-resultado-cabecalho (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2025-resultado-cabecalho
+PASS planta: colunas tap-2025-capital-proprio (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2025-capital-proprio
+PASS planta: colunas tap-2025-capital-proprio (tap-2025-contas.pdf); TAP colunas: falta área tap-2025-capital-proprio
+PASS planta: colunas tap-2025-capital-proprio-cabecalho (tap-2025-contas.pdf); TAP colunas: falta área tap-2025-capital-proprio-cabecalho
+PASS planta: colunas tap-2025-capital-proprio-cabecalho (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2025-capital-proprio-cabecalho
+PASS planta: colunas tap-2025-capital-social (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2025-capital-social
+PASS planta: colunas tap-2025-capital-social (tap-2025-contas.pdf); TAP colunas: falta área tap-2025-capital-social
+PASS planta: colunas tap-2025-capital-social-cabecalho (tap-2025-contas.pdf); TAP colunas: falta área tap-2025-capital-social-cabecalho
+PASS planta: colunas tap-2025-capital-social-cabecalho (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2025-capital-social-cabecalho
+PASS planta: colunas tap-2025-divida-liquida-sem-locacoes (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2025-divida-liquida-sem-locacoes
+PASS planta: colunas tap-2025-divida-liquida-sem-locacoes (tap-2025-contas.pdf); TAP colunas: falta área tap-2025-divida-liquida-sem-locacoes
+PASS planta: colunas tap-2025-resultado-acionistas (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2025-resultado-acionistas
+PASS planta: colunas tap-2025-resultado-acionistas (tap-2025-contas.pdf); TAP colunas: falta área tap-2025-resultado-acionistas
+PASS planta: colunas tap-2025-resultado-acionistas-cabecalho (tap-2025-contas.pdf); TAP colunas: falta área tap-2025-resultado-acionistas-cabecalho
+PASS planta: colunas tap-2025-resultado-acionistas-cabecalho (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2025-resultado-acionistas-cabecalho
+PASS planta: colunas tap-2025-resultado-individual (tap-2025-individual.pdf); TAP colunas: falta área tap-2025-resultado-individual
+PASS planta: colunas tap-2025-resultado-individual-cabecalho (tap-2025-individual.pdf); TAP colunas: falta área tap-2025-resultado-individual-cabecalho
+PASS planta: colunas tap-2025-capital-proprio-individual (tap-2025-individual.pdf); TAP colunas: falta área tap-2025-capital-proprio-individual
+PASS planta: colunas tap-2025-capital-proprio-individual-cabecalho (tap-2025-individual.pdf); TAP colunas: falta área tap-2025-capital-proprio-individual-cabecalho
+PASS planta: colunas tap-2025-divida-liquida-com-locacoes (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2025-divida-liquida-com-locacoes
+PASS planta: colunas tap-2025-divida-liquida-com-locacoes (tap-2025-contas.pdf); TAP colunas: falta área tap-2025-divida-liquida-com-locacoes
+PASS planta: colunas tap-2025-divida-liquida-com-locacoes-cabecalho (tap-2025-contas.pdf); TAP colunas: falta área tap-2025-divida-liquida-com-locacoes-cabecalho
+PASS planta: colunas tap-2025-divida-liquida-com-locacoes-cabecalho (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2025-divida-liquida-com-locacoes-cabecalho
+PASS planta: colunas tap-2024-divida-liquida-com-locacoes (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2024-divida-liquida-com-locacoes
+PASS planta: colunas tap-2024-divida-liquida-com-locacoes (tap-2025-contas.pdf); TAP colunas: falta área tap-2024-divida-liquida-com-locacoes
+PASS planta: colunas tap-2024-divida-liquida-com-locacoes-cabecalho (tap-2025-contas.pdf); TAP colunas: falta área tap-2024-divida-liquida-com-locacoes-cabecalho
+PASS planta: colunas tap-2024-divida-liquida-com-locacoes-cabecalho (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2024-divida-liquida-com-locacoes-cabecalho
+PASS planta: colunas tap-2024-ativo-original (tap-2024-contas-pt.pdf); TAP colunas: falta área tap-2024-ativo-original
+PASS planta: colunas tap-2024-ativo-original (tap-2024-contas.pdf); TAP colunas: falta área tap-2024-ativo-original
+PASS planta: colunas tap-2024-ativo-original-cabecalho (tap-2024-contas.pdf); TAP colunas: falta área tap-2024-ativo-original-cabecalho
+PASS planta: colunas tap-2024-ativo-original-cabecalho (tap-2024-contas-pt.pdf); TAP colunas: falta área tap-2024-ativo-original-cabecalho
+PASS planta: colunas tap-2024-ativo-reexpresso (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2024-ativo-reexpresso
+PASS planta: colunas tap-2024-ativo-reexpresso (tap-2025-contas.pdf); TAP colunas: falta área tap-2024-ativo-reexpresso
+PASS planta: colunas tap-2024-ativo-reexpresso-cabecalho (tap-2025-contas.pdf); TAP colunas: falta área tap-2024-ativo-reexpresso-cabecalho
+PASS planta: colunas tap-2024-ativo-reexpresso-cabecalho (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2024-ativo-reexpresso-cabecalho
+PASS planta: colunas tap-2025-trabalhadores-media (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2025-trabalhadores-media
+PASS planta: colunas tap-2025-trabalhadores-media (tap-2025-contas.pdf); TAP colunas: falta área tap-2025-trabalhadores-media
+PASS planta: colunas tap-2024-trabalhadores-media (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2024-trabalhadores-media
+PASS planta: colunas tap-2024-trabalhadores-media (tap-2025-contas.pdf); TAP colunas: falta área tap-2024-trabalhadores-media
+PASS planta: colunas tap-2025-trabalhadores-total (tap-2025-contas-pt.pdf); TAP colunas: falta área tap-2025-trabalhadores-total
+PASS planta: colunas tap-2025-trabalhadores-total (tap-2025-contas.pdf); TAP colunas: falta área tap-2025-trabalhadores-total
+PASS planta: colunas tap-cge-2022-quadro-dgtf (cge-2022.pdf); TAP colunas: falta área tap-cge-2022-quadro-dgtf
+PASS planta: colunas tap-cge-2022-quadro-dgtf-cabecalho (cge-2022.pdf); TAP colunas: falta área tap-cge-2022-quadro-dgtf-cabecalho
+PASS planta: colunas tap-governo-aprovacoes (governo-apresentacao.pdf); TAP colunas: falta área tap-governo-aprovacoes
+PASS planta: colunas tap-capital-subscrito-2022 (tap-2024-contas-pt.pdf); TAP colunas: falta área tap-capital-subscrito-2022
+PASS planta: colunas tap-capital-subscrito-2022 (tap-2024-contas.pdf); TAP colunas: falta área tap-capital-subscrito-2022
+PASS planta: colunas tap-capital-calendario-2022 (tap-2024-contas-pt.pdf); TAP colunas: falta área tap-capital-calendario-2022
+PASS planta: colunas tap-capital-calendario-2022 (tap-2024-contas.pdf); TAP colunas: falta área tap-capital-calendario-2022
+PASS planta: colunas tap-capital-segunda-prestacao-adiada (tap-2024-contas-pt.pdf); TAP colunas: falta área tap-capital-segunda-prestacao-adiada
+PASS planta: colunas tap-capital-segunda-prestacao-adiada (tap-2024-contas.pdf); TAP colunas: falta área tap-capital-segunda-prestacao-adiada
+PASS planta: colunas tap-capital-ultima-prestacao-adiada (tap-2024-contas-pt.pdf); TAP colunas: falta área tap-capital-ultima-prestacao-adiada
+PASS planta: colunas tap-capital-ultima-prestacao-adiada (tap-2024-contas.pdf); TAP colunas: falta área tap-capital-ultima-prestacao-adiada
+PASS planta: colunas tap-oferta-referencia (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-referencia
+PASS planta: colunas tap-oferta-referencia-rotulo (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-referencia-rotulo
+PASS planta: colunas tap-oferta-ajustes (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-ajustes
+PASS planta: colunas tap-oferta-ajustes-rotulo (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-ajustes-rotulo
+PASS planta: colunas tap-oferta-trabalhadores (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-trabalhadores
+PASS planta: colunas tap-oferta-trabalhadores-rotulo (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-trabalhadores-rotulo
+PASS planta: colunas tap-oferta-permuta (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-permuta
+PASS planta: colunas tap-oferta-hipotese-fecho (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-hipotese-fecho
+PASS planta: colunas tap-oferta-hipotese-fase2 (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-hipotese-fase2
+PASS planta: colunas tap-governo-assinatura (governo-apresentacao.pdf); TAP colunas: falta área tap-governo-assinatura
+PASS planta: colunas tap-governo-fase2 (governo-apresentacao.pdf); TAP colunas: falta área tap-governo-fase2
+PASS planta: colunas tap-governo-conclusao (governo-apresentacao.pdf); TAP colunas: falta área tap-governo-conclusao
+PASS planta: colunas afirmacao-governo-tap-imoveis-passivos (governo-apresentacao.pdf); TAP colunas: falta área afirmacao-governo-tap-imoveis-passivos
+PASS planta: colunas afirmacao-governo-tap-siavilo (governo-apresentacao.pdf); TAP colunas: falta área afirmacao-governo-tap-siavilo
+PASS planta: colunas tap-recuperacao-fase1 (governo-apresentacao.pdf); TAP colunas: falta área tap-recuperacao-fase1
+PASS planta: colunas tap-recuperacao-fase2 (governo-apresentacao.pdf); TAP colunas: falta área tap-recuperacao-fase2
+PASS planta: colunas tap-recuperacao-acoes-dividendos (governo-apresentacao.pdf); TAP colunas: falta área tap-recuperacao-acoes-dividendos
+PASS planta: colunas tap-recuperacao-acoes-dividendos-nota (governo-apresentacao.pdf); TAP colunas: falta área tap-recuperacao-acoes-dividendos-nota
+PASS planta: colunas tap-recuperacao-total (governo-apresentacao.pdf); TAP colunas: falta área tap-recuperacao-total
+PASS planta: colunas tap-recuperacao-total-nota (governo-apresentacao.pdf); TAP colunas: falta área tap-recuperacao-total-nota
+PASS planta: colunas tap-oferta-premio-qualificado (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-premio-qualificado
+PASS planta: colunas tap-oferta-afklm-earnout (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-afklm-earnout
+PASS planta: colunas tap-oferta-diferenca (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-diferenca
+PASS planta: colunas tap-oferta-premio-earnout (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-premio-earnout
+PASS planta: colunas tap-oferta-diferenca-earnout (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-diferenca-earnout
+PASS planta: colunas tap-oferta-afklm-referencia (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-afklm-referencia
+PASS planta: colunas tap-oferta-afklm-referencia-rotulo (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-afklm-referencia-rotulo
+PASS planta: colunas tap-oferta-afklm-ajustes (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-afklm-ajustes
+PASS planta: colunas tap-oferta-afklm-ajustes-rotulo (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-afklm-ajustes-rotulo
+PASS planta: colunas tap-oferta-afklm-trabalhadores (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-afklm-trabalhadores
+PASS planta: colunas tap-oferta-afklm-trabalhadores-rotulo (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-afklm-trabalhadores-rotulo
+PASS planta: colunas tap-oferta-afklm-total (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-afklm-total
+PASS planta: colunas tap-oferta-afklm-total-rotulo (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-afklm-total-rotulo
+PASS planta: colunas tap-oferta-afklm-earnout (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-afklm-earnout
+PASS planta: colunas tap-oferta-afklm-total-earnout (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-afklm-total-earnout
+PASS planta: colunas tap-oferta-afklm-ebitda-earnout (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-afklm-ebitda-earnout
+PASS planta: colunas tap-oferta-afklm-divida-earnout (governo-apresentacao.pdf); TAP colunas: falta área tap-oferta-afklm-divida-earnout
+PASS planta: colunas tap-2022-resultado (tap-2023-contas-pt.pdf); TAP colunas: falta área tap-2022-resultado
+PASS planta: colunas tap-2022-resultado (tap-2023-contas.pdf); TAP colunas: falta área tap-2022-resultado
+PASS planta: colunas tap-2022-resultado-cabecalho (tap-2023-contas.pdf); TAP colunas: falta área tap-2022-resultado-cabecalho
+PASS planta: colunas tap-2022-resultado-cabecalho (tap-2023-contas-pt.pdf); TAP colunas: falta área tap-2022-resultado-cabecalho
+PASS planta: colunas tap-cge-2022-quadro-sgps (cge-2022.pdf); TAP colunas: falta área tap-cge-2022-quadro-sgps
+PASS planta: colunas tap-cge-2022-quadro-sgps-cabecalho (cge-2022.pdf); TAP colunas: falta área tap-cge-2022-quadro-sgps-cabecalho
+PASS planta: declaração de colunas ausente; TAP colunas: declaração ausente tap-2025-resultado
+PASS planta: área atravessa coluna vizinha; TAP colunas: área atravessa colunas tap-oferta-permuta
+PASS planta: caixa antiga corta comparativo; TAP corte: token numérico cortado tap-2025-resultado-individual
+PASS planta: excerto truncado permanente; TAP parênteses: excerto incompleto tap-2025-resultado-individual
+PASS planta: excerto colado permanente; TAP continuidade: excerto ausente da segunda extração tap-2025-trabalhadores-total
+PASS planta: rodapé no fluxo; TAP continuidade: excerto ausente da segunda extração tap-ce-condicoes
+PASS planta: original aponta comparativo errado; TAP tradução: número divergente tap-2025-resultado
+PASS TAP: 110 linhas; 31 plantas distintas recusadas em 157 execuções; corpos, originais, recibos, direitos e regressões conferidos.
+resultado: {"cabeca": "6b7e0bf8d27fd9514158c081590f060a36670b91", "comando": "python3 -m publisher.tap_test", "codigo": 0, "inicio": "2026-10-19T15:08:09.926474+00:00", "fim": "2026-10-19T15:08:30.088993+00:00", "duracao_s": 20.187, "arvore_limpa_antes_e_depois": true}

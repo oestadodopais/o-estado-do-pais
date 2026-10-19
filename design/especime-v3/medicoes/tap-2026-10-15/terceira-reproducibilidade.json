@@ -1,0 +1,10 @@
+{
+  "primeira_execucao_sha256": "97a708232d5ba631eb828aa3c2a56764b8af90ae95deacf8999cca2771c8eb70",
+  "segunda_execucao_sha256": "97a708232d5ba631eb828aa3c2a56764b8af90ae95deacf8999cca2771c8eb70",
+  "iguais": true,
+  "codigo_segunda_execucao": 0,
+  "linhas_relatorio": 1127,
+  "ligacoes_internas_resolvem": true,
+  "razoes_erradas_e_cabecalhos_cortados_ausentes": true,
+  "caminhos_da_maquina_ausentes": true
+}

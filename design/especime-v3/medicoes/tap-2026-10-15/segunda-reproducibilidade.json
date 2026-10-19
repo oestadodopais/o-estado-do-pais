@@ -1,0 +1,16 @@
+{
+  "motor_commit": "1e920bf31eb621cdfe65176a6c2ecfb03cc53bd8",
+  "execucoes": 2,
+  "codigos": [
+    0,
+    0
+  ],
+  "sha256_por_execucao": [
+    "08d52b27eb81d62ee37c278fd625f6d06d7add4f7bd73e4d5a1931c3441e20d2",
+    "08d52b27eb81d62ee37c278fd625f6d06d7add4f7bd73e4d5a1931c3441e20d2"
+  ],
+  "guião_sha256": "7c5f22eda4f5cf91c8f019624811ec7b9f366df774992e1710929cdd8121665c",
+  "ancoras": 110,
+  "ligacoes_internas_conferidas": 393,
+  "comparativo_rodape_e_distincao_fiscal_conferidos": true
+}

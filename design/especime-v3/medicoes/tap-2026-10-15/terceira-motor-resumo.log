@@ -1,0 +1,13 @@
+código 0 · 681 s · 261 linhas em <medicoes>/terceira-motor.log
+--- linhas de falha ou aviso (até quarenta) ---
+23:PROVA vigilancia.tests.test_vigilancia.Provas.test_aviso_descompressao: passou
+68:PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_dois_numeros_dar: «número do DAR omitido do resumo sem aviso»; passou
+--- últimas oito linhas ---
+GATE  editions evora-economia-dinheiro-de-fora-pt-en ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok
+GATE: PASS
+resultado: {"cabeca": "6b7e0bf8d27fd9514158c081590f060a36670b91", "comando": "python3 -m core.gate", "codigo": 0, "inicio": "2026-10-19T14:56:48.304287+00:00", "fim": "2026-10-19T15:08:09.855255+00:00", "duracao_s": 681.554, "arvore_limpa_antes_e_depois": true}

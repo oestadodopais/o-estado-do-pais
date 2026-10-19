@@ -1,0 +1,12 @@
+código 0 · 65 s · 21 linhas em <temporario>/publisher.tap_test.log
+--- linhas de falha ou aviso (até quarenta) ---
+21:PASS TAP: 110 linhas; 20 plantas recusadas; corpos, originais, recibos, direitos e regressões conferidos.
+--- últimas oito linhas ---
+PASS planta: valor trocado; TAP valor: diferente do conferido tap-2025-resultado
+PASS planta: início repetido; TAP início: ausente ou repetido tap-2025-resultado
+PASS planta: cabeçalho longe do valor; TAP cabeçalho: longe do valor tap-2025-resultado
+PASS planta: excerto antigo atravessa colunas; TAP colunas: área atravessa colunas tap-2025-trabalhadores-total
+PASS planta: colunas tap-oferta-permuta; TAP colunas: área atravessa colunas tap-oferta-permuta
+PASS planta: colunas tap-governo-aprovacoes; TAP colunas: área atravessa colunas tap-governo-aprovacoes
+PASS planta: original português divergente; TAP original: número divergente tap-2025-trabalhadores-total
+PASS TAP: 110 linhas; 20 plantas recusadas; corpos, originais, recibos, direitos e regressões conferidos.

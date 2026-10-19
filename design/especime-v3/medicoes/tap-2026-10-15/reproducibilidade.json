@@ -1,0 +1,14 @@
+{
+  "reproducao_identica": true,
+  "relatorio_sha256": "840f4af6d40d1a2c75e71733b3b854425822a473593bd9b09179fba28ca970bc",
+  "gerador_sha256": "a3cd291d8911b4b1e02a9ddc4465dec8167a51e6c6a47eefc4d47dcb4573051f",
+  "fontes_sha256": {
+    "ledger.json": "a192088c1788f643f23ba3148a17403155270023af881a78a82558c441efe6f2",
+    "extracoes.json": "86cc61d0b9cfc46bf52fa8af81b5d5ec0f2b0300f8046b4a1aca8ef2e68d52d5",
+    "fontes.json": "ebd2e77d4e48476d7f0221228c08c22d05c19d0d70d90c815b3c473a81b26a2d",
+    "source/MANIFEST.sha256": "cf92bd35cbb18c9df5d0607486419b1f5e5bdbaa106066113a57ce8abe552c46"
+  },
+  "ligacoes_internas_conferidas": 329,
+  "comando": "python3 gerar-relatorio.py --motor <motor>",
+  "resultado": "Duas gerações consecutivas produziram o mesmo relatório; todas as ligações internas têm destino."
+}

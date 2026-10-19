@@ -1,0 +1,130 @@
+{
+  "base_commit": "449c8620617bdf765244209b712e778498467586",
+  "linhas_anteriores": 110,
+  "montantes_equivalentes": 84,
+  "grafias_alteradas": 24,
+  "linhas_novas": 0,
+  "alteracoes_de_grafia": [
+    {
+      "id": "tap-2023-resultado",
+      "anterior": "177,260,543",
+      "original_portugues": "177.260.543"
+    },
+    {
+      "id": "tap-2023-capital-proprio",
+      "anterior": "613,923,535",
+      "original_portugues": "613.923.535"
+    },
+    {
+      "id": "tap-2023-capital-social",
+      "anterior": "980,000,000",
+      "original_portugues": "980.000.000"
+    },
+    {
+      "id": "tap-2023-divida-liquida-sem-locacoes",
+      "anterior": "651,059,123",
+      "original_portugues": "651.059.123"
+    },
+    {
+      "id": "tap-2024-resultado",
+      "anterior": "53,721,980",
+      "original_portugues": "53.721.980"
+    },
+    {
+      "id": "tap-2024-capital-proprio",
+      "anterior": "585,348,588",
+      "original_portugues": "585.348.588"
+    },
+    {
+      "id": "tap-2024-capital-social",
+      "anterior": "313,600,000",
+      "original_portugues": "313.600.000"
+    },
+    {
+      "id": "tap-2024-divida-liquida-sem-locacoes",
+      "anterior": "750,337,470",
+      "original_portugues": "750.337.470"
+    },
+    {
+      "id": "tap-2025-resultado",
+      "anterior": "2,115,072",
+      "original_portugues": "2.115.072"
+    },
+    {
+      "id": "tap-2025-capital-proprio",
+      "anterior": "717,006,421",
+      "original_portugues": "717.006.421"
+    },
+    {
+      "id": "tap-2025-capital-social",
+      "anterior": "656,600,000",
+      "original_portugues": "656.600.000"
+    },
+    {
+      "id": "tap-2025-divida-liquida-sem-locacoes",
+      "anterior": "816,857,537",
+      "original_portugues": "816.857.537"
+    },
+    {
+      "id": "tap-2025-resultado-acionistas",
+      "anterior": "4,149,874",
+      "original_portugues": "4.149.874"
+    },
+    {
+      "id": "tap-2025-divida-liquida-com-locacoes",
+      "anterior": "2,102.3",
+      "original_portugues": "2.102,3"
+    },
+    {
+      "id": "tap-2024-divida-liquida-com-locacoes",
+      "anterior": "2,349.6",
+      "original_portugues": "2.349,6"
+    },
+    {
+      "id": "tap-2024-ativo-original",
+      "anterior": "5,739,337,414",
+      "original_portugues": "5.739.337.414"
+    },
+    {
+      "id": "tap-2024-ativo-reexpresso",
+      "anterior": "5,796,905,703",
+      "original_portugues": "5.796.905.703"
+    },
+    {
+      "id": "tap-2025-trabalhadores-media",
+      "anterior": "9,867",
+      "original_portugues": "9.867"
+    },
+    {
+      "id": "tap-2024-trabalhadores-media",
+      "anterior": "8,108",
+      "original_portugues": "8.108"
+    },
+    {
+      "id": "tap-2025-trabalhadores-total",
+      "anterior": "10,161",
+      "original_portugues": "10.161"
+    },
+    {
+      "id": "tap-capital-subscrito-2022",
+      "anterior": "980,000,000",
+      "original_portugues": "980.000.000"
+    },
+    {
+      "id": "tap-capital-calendario-2022",
+      "anterior": "294,000,000",
+      "original_portugues": "294.000.000"
+    },
+    {
+      "id": "tap-capital-ultima-prestacao-adiada",
+      "anterior": "343,000,000",
+      "original_portugues": "343.000.000"
+    },
+    {
+      "id": "tap-2022-resultado",
+      "anterior": "65,597,418",
+      "original_portugues": "65.597.418"
+    }
+  ],
+  "ledger_sha256": "03c706bf44b8cfd38e755fa72e75c544bce31cac19a09ef1cc8a73f901c26e2c"
+}

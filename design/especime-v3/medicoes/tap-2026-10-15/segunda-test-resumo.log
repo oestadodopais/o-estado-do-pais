@@ -1,0 +1,12 @@
+código 0 · 23 s · 156 linhas em <worktree>/design/especime-v3/medicoes/tap-2026-10-15/segunda-publisher.tap_test.log
+--- linhas de falha ou aviso (até quarenta) ---
+155:PASS TAP: 110 linhas; 152 plantas recusadas; corpos, originais, recibos, direitos e regressões conferidos.
+--- últimas oito linhas ---
+PASS planta: área atravessa coluna vizinha; TAP colunas: área atravessa colunas tap-oferta-permuta
+PASS planta: caixa antiga corta comparativo; TAP corte: token numérico cortado tap-2025-resultado-individual
+PASS planta: excerto truncado permanente; TAP parênteses: excerto incompleto tap-2025-resultado-individual
+PASS planta: excerto colado permanente; TAP continuidade: excerto ausente da segunda extração tap-2025-trabalhadores-total
+PASS planta: rodapé no fluxo; TAP continuidade: excerto ausente da segunda extração tap-ce-condicoes
+PASS planta: original aponta comparativo errado; TAP tradução: número divergente tap-2025-resultado
+PASS TAP: 110 linhas; 152 plantas recusadas; corpos, originais, recibos, direitos e regressões conferidos.
+resultado: {"cabeca": "1e920bf31eb621cdfe65176a6c2ecfb03cc53bd8", "comando": "python3 -m publisher.tap_test", "codigo": 0, "inicio": "2026-10-19T13:45:25.078893+00:00", "fim": "2026-10-19T13:45:48.103113+00:00", "duracao_s": 23.047, "arvore_limpa_antes_e_depois": true}

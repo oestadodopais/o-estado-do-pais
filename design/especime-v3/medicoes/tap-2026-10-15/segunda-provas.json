@@ -1,0 +1,20 @@
+{
+  "core.gate": {
+    "cabeca": "1e920bf31eb621cdfe65176a6c2ecfb03cc53bd8",
+    "comando": "python3 -m core.gate",
+    "codigo": 0,
+    "inicio": "2026-10-19T13:45:25.078828+00:00",
+    "fim": "2026-10-19T13:58:20.328701+00:00",
+    "duracao_s": 775.292,
+    "arvore_limpa_antes_e_depois": true
+  },
+  "publisher.tap_test": {
+    "cabeca": "1e920bf31eb621cdfe65176a6c2ecfb03cc53bd8",
+    "comando": "python3 -m publisher.tap_test",
+    "codigo": 0,
+    "inicio": "2026-10-19T13:45:25.078893+00:00",
+    "fim": "2026-10-19T13:45:48.103113+00:00",
+    "duracao_s": 23.047,
+    "arvore_limpa_antes_e_depois": true
+  }
+}
