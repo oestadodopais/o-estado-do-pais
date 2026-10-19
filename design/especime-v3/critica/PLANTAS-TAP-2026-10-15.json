@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-19T10:42:39+00:00",
+ "copia": "<pacote-pasta>/pacote-tap",
+ "plantas": [
+  {
+   "id": "tap-p1",
+   "ficheiro": "motor/content/22 TAP/ledger.json",
+   "descricao": "o valor do resultado líquido de 2023 da TAP trocado (o excerto e o corpo dizem 177,260,543)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "f928fe0734f1b4183b6cc2219f2802d867bab1b1a42b07d09920736356e0a180",
+   "sha256_depois": "2d280902c52467faa994b878aeec2fc23526610801464885a54613217d542a8e",
+   "contexto_antes": "l significa afirmação sem número, nunca zero. Espaços de composição são normalizados na extração.\",\n  \"claims\": [\n    {\n      \"id\": \"tap-2023-resultado\",\n      \"value\": \"177,260,543\",\n      \"source_value\": \"177,260,543\",\n      \"unit\": \"euros\",\n      \"name\": \"Net income/(loss) for the year\",\n      \"name_source\": \"PDF p. 52; Net income/(loss)",
+   "contexto_depois": "l significa afirmação sem número, nunca zero. Espaços de composição são normalizados na extração.\",\n  \"claims\": [\n    {\n      \"id\": \"tap-2023-resultado\",\n      \"value\": \"177,206,543\",\n      \"source_value\": \"177,260,543\",\n      \"unit\": \"euros\",\n      \"name\": \"Net income/(loss) for the year\",\n      \"name_source\": \"PDF p. 52; Net income/(loss)"
+  },
+  {
+   "id": "tap-p2",
+   "ficheiro": "motor/content/22 TAP/ledger.json",
+   "descricao": "o excerto da afirmação do PCP sobre o lucro alterado numa palavra (o corpo diz «está a dar lucro»)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "2d280902c52467faa994b878aeec2fc23526610801464885a54613217d542a8e",
+   "sha256_depois": "465322a81533aa925dc919fd5ad32e931b2b3bf77136cd51282f4bca16a19238",
+   "contexto_antes": "muito a Portugal: está a dar lucro, como a TAP, SA sempre deu ao longo da sua existência;\",\n      \"name_source\": \"Nota do Gabinete de Imprensa, ponto 3\",\n      \"excerpt\": \"E a TAP rende muito a Portugal: está a dar lucro, como a TAP, SA sempre deu ao longo da sua existência;\",\n      \"source_excerpt\": \"E a TAP rende muito a Portugal: está a dar lucro, como a TAP, SA sempre deu a",
+   "contexto_depois": "muito a Portugal: está a dar lucro, como a TAP, SA sempre deu ao longo da sua existência;\",\n      \"name_source\": \"Nota do Gabinete de Imprensa, ponto 3\",\n      \"excerpt\": \"E a TAP rende muito a Portugal: está a dar lucros, como a TAP, SA sempre deu ao longo da sua existência;\",\n      \"source_excerpt\": \"E a TAP rende muito a Portugal: está a dar lucro, como a TAP, SA sempre deu a"
+  },
+  {
+   "id": "tap-p3",
+   "ficheiro": "motor/content/22 TAP/source/governo-anuncio.html.pedido.json",
+   "descricao": "o sha256 do recibo do anúncio do Governo difere do corpo e do manifesto num carácter",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "31bb97a7f91a13fb872938bd54eecce1a25e874b9b962718258b2b9de66bc57e",
+   "sha256_depois": "8b523d3592255262275981da918d3ded1bbfca0ea5243fddf58203292a72a2d9",
+   "contexto_antes": "{\n  \"estado\": 200,\n  \"ficheiro\": \"governo-anuncio.html\",\n  \"bytes\": 227867,\n  \"sha256\": \"dec8f592342e843b59cadc31f770142e22022373968081248de78e60dba10d26\",\n  \"pedido\": \"https://portugal.gov.pt/gc25/comunicacao/noticias/governo-seleciona-a-lufthansa-para-aquisicao-de-ate-499-do-capital-social-da-tap\",\n  \"endereco_",
+   "contexto_depois": "{\n  \"estado\": 200,\n  \"ficheiro\": \"governo-anuncio.html\",\n  \"bytes\": 227867,\n  \"sha256\": \"dec8f592342e843b59cadc31f770142e22022373968081248de78e60dba10d27\",\n  \"pedido\": \"https://portugal.gov.pt/gc25/comunicacao/noticias/governo-seleciona-a-lufthansa-para-aquisicao-de-ate-499-do-capital-social-da-tap\",\n  \"endereco_"
+  },
+  {
+   "id": "tap-p4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a data da afirmação da Lufthansa no relatório passa a 15.10 (a linha e o documento dizem 14.10)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "87f84b82beeda69d03b4ed6f2ba00bee7230c0fd80612bb29ec46fb580ccc2ae",
+   "sha256_depois": "6361efbca3bd2b079d1ce3a7b11abe8d9843314f06600d33ae26164cf850a23c",
+   "contexto_antes": "; parágrafo iniciado por «Na componente financeira,» | Afirmação atribuída. Comparação atribuída ao Governo; propostas concorrentes completas não recolhidas. |\n| `afirmacao-lufthansa-tap-preco` | 1.025 | billion EUR | 2026-10-14 | [Lufthansa Group welcomes selection of its offer in TAP Air Portugal privatization process](https://newsroom.lufthansagroup.com/en/lufthansa-group-welcomes-selection-of-its-offer-in-tap-air-portugal-privatization-process/); Parágrafo do preço oferecido | Afirmação atribuída. Oferta e eventual acréscimo por ações dos trabalhadores e ticking fee, não comprovativo de pagamento. |\n| `afirmacao-lufthansa-tap-participacao` | 44.9 | percent | 2026-10-14 | [Lufthansa Group welcomes selection of its offer in TAP Air Portugal privatization pro",
+   "contexto_depois": "; parágrafo iniciado por «Na componente financeira,» | Afirmação atribuída. Comparação atribuída ao Governo; propostas concorrentes completas não recolhidas. |\n| `afirmacao-lufthansa-tap-preco` | 1.025 | billion EUR | 2026-10-15 | [Lufthansa Group welcomes selection of its offer in TAP Air Portugal privatization process](https://newsroom.lufthansagroup.com/en/lufthansa-group-welcomes-selection-of-its-offer-in-tap-air-portugal-privatization-process/); Parágrafo do preço oferecido | Afirmação atribuída. Oferta e eventual acréscimo por ações dos trabalhadores e ticking fee, não comprovativo de pagamento. |\n| `afirmacao-lufthansa-tap-participacao` | 44.9 | percent | 2026-10-14 | [Lufthansa Group welcomes selection of its offer in TAP Air Portugal privatization pro"
+  },
+  {
+   "id": "tap-p5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o capital próprio de 2023 no relatório com dois algarismos trocados (a linha diz 613,923,535)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "6361efbca3bd2b079d1ce3a7b11abe8d9843314f06600d33ae26164cf850a23c",
+   "sha256_depois": "6225fa9aa2b161aa79d4f59bb33b6166ac0ae50c7d1dab1ef58791fd40e56067",
+   "contexto_antes": "lidadoTAPSA2023EN.pdf); PDF p. 52; Net income/(loss) for the year; coluna 2023 | Contas consolidadas. Capital social e capital próprio são medidas distintas. |\n| `tap-2023-capital-proprio` | 613,923,535 | euros | 2023 | [Management Report and Consolidated Accounts 2023](https://publish-p133109-e1368204.adobeaemcloud.com/content/dam/tap-institucional/media/pdfs/i",
+   "contexto_depois": "lidadoTAPSA2023EN.pdf); PDF p. 52; Net income/(loss) for the year; coluna 2023 | Contas consolidadas. Capital social e capital próprio são medidas distintas. |\n| `tap-2023-capital-proprio` | 613,932,535 | euros | 2023 | [Management Report and Consolidated Accounts 2023](https://publish-p133109-e1368204.adobeaemcloud.com/content/dam/tap-institucional/media/pdfs/i"
+  }
+ ]
+}
