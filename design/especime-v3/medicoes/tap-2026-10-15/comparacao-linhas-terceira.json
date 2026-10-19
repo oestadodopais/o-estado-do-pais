@@ -1,0 +1,1542 @@
+{
+  "segunda": {
+    "antes": "449c862",
+    "depois": "1e920bf",
+    "total": 110,
+    "ledger_antes_sha256": "a192088c1788f643f23ba3148a17403155270023af881a78a82558c441efe6f2",
+    "ledger_depois_sha256": "03c706bf44b8cfd38e755fa72e75c544bce31cac19a09ef1cc8a73f901c26e2c",
+    "linhas": [
+      {
+        "id": "tap-2023-resultado",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2023-capital-proprio",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2023-capital-social",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2023-divida-liquida-sem-locacoes",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2024-resultado",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2024-capital-proprio",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2024-capital-social",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2024-divida-liquida-sem-locacoes",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2025-resultado",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2025-capital-proprio",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2025-capital-social",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2025-divida-liquida-sem-locacoes",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2025-resultado-acionistas",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2025-resultado-individual",
+        "campos": [
+          "document_checks",
+          "excerpt",
+          "excerpt_parts",
+          "source_excerpt",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-2025-capital-proprio-individual",
+        "campos": [
+          "document_checks",
+          "excerpt",
+          "excerpt_parts",
+          "source_excerpt",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-2025-divida-liquida-com-locacoes",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2024-divida-liquida-com-locacoes",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2024-ativo-original",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2024-ativo-reexpresso",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2025-trabalhadores-media",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2024-trabalhadores-media",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-2025-trabalhadores-total",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-participacao",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-trabalhadores",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-preco",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-fase2",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-valor-total",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-permuta",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-dinheiro-fase2",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-recuperacao",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-maioria-estado",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-comparacao-propostas",
+        "campos": [
+          "attributed_to",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "source_excerpt",
+          "source_url",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-lufthansa-tap-preco",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-lufthansa-tap-participacao",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-lufthansa-tap-preco-maximo",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-ce-reestruturacao-aprovada",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-ce-reestruturacao-notificada",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-ce-conversao-emergencia",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-ce-condicoes",
+        "campos": [
+          "document_checks",
+          "excerpt",
+          "excerpt_parts",
+          "source_excerpt"
+        ]
+      },
+      {
+        "id": "tap-ce-slots",
+        "campos": [
+          "document_checks",
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-ce-emergencia-limite",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-ce-emergencia-desembolsada",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-cge-2022-numerario",
+        "campos": [
+          "document_checks",
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-cge-2022-dotacao",
+        "campos": [
+          "document_checks",
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-cge-2022-quadro-dgtf",
+        "campos": [
+          "document_checks",
+          "excerpt",
+          "excerpt_parts",
+          "note",
+          "source_excerpt",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-parpublica-obrigacoes-2016",
+        "campos": [
+          "document_checks",
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-ps-tap-venda-2015-preco",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-ps-tap-venda-2015-parcela",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-ps-tap-recuperacao",
+        "campos": [
+          "invoca",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-pcp-tap-seguranca-social",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-il-tap-retorno",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-il-tap-privatizacao-total",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "afirmacao-pan-tap-custo",
+        "campos": [
+          "excerpt_parts",
+          "note",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-livre-tap-controlo",
+        "campos": [
+          "document_checks",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-ad-tap-privatizacao",
+        "campos": [
+          "document_checks",
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-caderno-direitos-laborais",
+        "campos": [
+          "document_checks",
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-caderno-preferencia",
+        "campos": [
+          "document_checks",
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-caderno-assinatura",
+        "campos": [
+          "document_checks",
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-governo-aprovacoes",
+        "campos": [
+          "excerpt_parts",
+          "note"
+        ]
+      },
+      {
+        "id": "tap-capital-subscrito-2022",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-capital-calendario-2022",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-capital-segunda-prestacao-adiada",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "translation"
+        ]
+      },
+      {
+        "id": "tap-capital-ultima-prestacao-adiada",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "afirmacao-il-tap-capital",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-il-tap-media-anos",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-pan-tap-recapitalizacao",
+        "campos": [
+          "excerpt_parts",
+          "note",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-referencia",
+        "campos": [
+          "excerpt",
+          "excerpt_parts",
+          "name",
+          "source_excerpt",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-ajustes",
+        "campos": [
+          "excerpt",
+          "excerpt_parts",
+          "name",
+          "source_excerpt",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-trabalhadores",
+        "campos": [
+          "excerpt",
+          "excerpt_parts",
+          "name",
+          "source_excerpt",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-permuta",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-hipotese-fecho",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-oferta-hipotese-fase2",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "afirmacao-lufthansa-tap-participacao-maxima",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-frota",
+        "campos": [
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-governo-assinatura",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-governo-fase2",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-governo-conclusao",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-imoveis-passivos",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-siavilo",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-recuperacao-fase1",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-recuperacao-fase2",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-recuperacao-acoes-dividendos",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-recuperacao-total",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-premio-qualificado",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-diferenca",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-premio-earnout",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-diferenca-earnout",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-afklm-referencia",
+        "campos": [
+          "excerpt",
+          "excerpt_parts",
+          "name",
+          "source_excerpt",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-afklm-ajustes",
+        "campos": [
+          "excerpt",
+          "excerpt_parts",
+          "name",
+          "source_excerpt",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-afklm-trabalhadores",
+        "campos": [
+          "excerpt",
+          "excerpt_parts",
+          "name",
+          "source_excerpt",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-afklm-total",
+        "campos": [
+          "excerpt",
+          "excerpt_parts",
+          "name",
+          "source_excerpt",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-afklm-earnout",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-afklm-total-earnout",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-afklm-ebitda-earnout",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-oferta-afklm-divida-earnout",
+        "campos": [
+          "excerpt_parts",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-2022-resultado",
+        "campos": [
+          "access_date",
+          "document",
+          "document_checks",
+          "evidence",
+          "excerpt",
+          "excerpt_parts",
+          "fetched_at",
+          "name",
+          "name_source",
+          "note",
+          "original",
+          "source_excerpt",
+          "source_url",
+          "source_value",
+          "translation",
+          "unit_check",
+          "value"
+        ]
+      },
+      {
+        "id": "tap-cge-2022-quadro-sgps",
+        "campos": [
+          "document_checks",
+          "excerpt",
+          "excerpt_parts",
+          "note",
+          "source_excerpt",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-razoes-infraestruturas",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-razoes-conectividade",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-razoes-escala",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-razoes-investimento",
+        "campos": [
+          "excerpt_parts",
+          "note"
+        ]
+      },
+      {
+        "id": "tap-ce-decisao-inicial-recitada",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-caderno-criterios",
+        "campos": [
+          "document_checks",
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-dl-requisitos",
+        "campos": [
+          "document_checks",
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-dl-criterios",
+        "campos": [
+          "document_checks",
+          "excerpt_parts"
+        ]
+      }
+    ]
+  },
+  "terceira": {
+    "antes": "1e920bf",
+    "depois": "6b7e0bf8d27fd9514158c081590f060a36670b91",
+    "total": 110,
+    "ledger_antes_sha256": "03c706bf44b8cfd38e755fa72e75c544bce31cac19a09ef1cc8a73f901c26e2c",
+    "ledger_depois_sha256": "955c125cf1564db40ab7db2fd3066d6a005e773a47ed63145f7d43c7626c308c",
+    "linhas": [
+      {
+        "id": "tap-2023-capital-social",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-2024-capital-social",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-2025-capital-social",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-2025-resultado-individual",
+        "campos": [
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-2025-divida-liquida-com-locacoes",
+        "campos": [
+          "unit",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-2024-divida-liquida-com-locacoes",
+        "campos": [
+          "unit",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-2025-trabalhadores-media",
+        "campos": [
+          "document",
+          "evidence",
+          "name",
+          "name_source",
+          "unit",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "tap-2024-trabalhadores-media",
+        "campos": [
+          "document",
+          "evidence",
+          "name",
+          "name_source",
+          "unit",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-comparacao-propostas",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-ce-condicoes",
+        "campos": [
+          "document_checks",
+          "published_at"
+        ]
+      },
+      {
+        "id": "tap-ce-slots",
+        "campos": [
+          "document_checks",
+          "published_at"
+        ]
+      },
+      {
+        "id": "tap-cge-2022-quadro-dgtf",
+        "campos": [
+          "note"
+        ]
+      },
+      {
+        "id": "afirmacao-pcp-tap-seguranca-social",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "afirmacao-pcp-tap-lucro",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "afirmacao-pcp-tap-controlo",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "afirmacao-pan-tap-custo",
+        "campos": [
+          "attributed_to",
+          "document_checks",
+          "note"
+        ]
+      },
+      {
+        "id": "tap-caderno-direitos-laborais",
+        "campos": [
+          "document_checks",
+          "published_at"
+        ]
+      },
+      {
+        "id": "tap-caderno-preferencia",
+        "campos": [
+          "document_checks",
+          "published_at"
+        ]
+      },
+      {
+        "id": "tap-caderno-assinatura",
+        "campos": [
+          "document_checks",
+          "published_at"
+        ]
+      },
+      {
+        "id": "tap-governo-aprovacoes",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-capital-subscrito-2022",
+        "campos": [
+          "document",
+          "evidence",
+          "excerpt_parts",
+          "name",
+          "name_source"
+        ]
+      },
+      {
+        "id": "tap-capital-calendario-2022",
+        "campos": [
+          "document",
+          "evidence",
+          "excerpt_parts",
+          "name",
+          "name_source"
+        ]
+      },
+      {
+        "id": "tap-capital-segunda-prestacao-adiada",
+        "campos": [
+          "document",
+          "evidence",
+          "name",
+          "name_source"
+        ]
+      },
+      {
+        "id": "tap-capital-ultima-prestacao-adiada",
+        "campos": [
+          "unit",
+          "unit_check"
+        ]
+      },
+      {
+        "id": "afirmacao-pan-tap-recapitalizacao",
+        "campos": [
+          "attributed_to",
+          "document_checks",
+          "note"
+        ]
+      },
+      {
+        "id": "tap-oferta-referencia",
+        "campos": [
+          "document_checks",
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-oferta-ajustes",
+        "campos": [
+          "document_checks",
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-oferta-trabalhadores",
+        "campos": [
+          "document_checks",
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-oferta-permuta",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-oferta-hipotese-fecho",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-oferta-hipotese-fase2",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-governo-assinatura",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-governo-fase2",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-governo-conclusao",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-imoveis-passivos",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-siavilo",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-recuperacao-fase1",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-recuperacao-fase2",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-recuperacao-acoes-dividendos",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-recuperacao-total",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-oferta-premio-qualificado",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-oferta-diferenca",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-oferta-premio-earnout",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-oferta-diferenca-earnout",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-oferta-afklm-referencia",
+        "campos": [
+          "document_checks",
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-oferta-afklm-ajustes",
+        "campos": [
+          "document_checks",
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-oferta-afklm-trabalhadores",
+        "campos": [
+          "document_checks",
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-oferta-afklm-total",
+        "campos": [
+          "document_checks",
+          "excerpt_parts"
+        ]
+      },
+      {
+        "id": "tap-oferta-afklm-earnout",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-oferta-afklm-total-earnout",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-oferta-afklm-ebitda-earnout",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-oferta-afklm-divida-earnout",
+        "campos": [
+          "document_checks"
+        ]
+      },
+      {
+        "id": "tap-cge-2022-quadro-sgps",
+        "campos": [
+          "note"
+        ]
+      },
+      {
+        "id": "afirmacao-governo-tap-razoes-investimento",
+        "campos": [
+          "note"
+        ]
+      },
+      {
+        "id": "tap-caderno-criterios",
+        "campos": [
+          "document_checks",
+          "published_at"
+        ]
+      },
+      {
+        "id": "tap-dl-requisitos",
+        "campos": [
+          "document",
+          "document_checks",
+          "published_at",
+          "reference_date"
+        ]
+      },
+      {
+        "id": "tap-dl-criterios",
+        "campos": [
+          "document",
+          "document_checks",
+          "published_at",
+          "reference_date"
+        ]
+      }
+    ]
+  },
+  "valores_numericos_inalterados": true,
+  "gerador_inalterado_sha256": "58480e6b9ac9cf627df31b3309056cef8af956486a67f02ea1219ff44179ef68"
+}

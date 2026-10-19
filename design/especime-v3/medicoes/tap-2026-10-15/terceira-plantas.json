@@ -1,0 +1,227 @@
+{
+  "plantas_distintas": 31,
+  "execucoes": 157,
+  "criterio": "Uma operação plantada por grupo; remoção da caixa repetida por seletor e limites inferior/superior de página agrupados.",
+  "grupos": {
+    "livro value": [
+      "livro value"
+    ],
+    "livro source_excerpt": [
+      "livro source_excerpt"
+    ],
+    "livro attributed_to": [
+      "livro attributed_to"
+    ],
+    "livro published_at": [
+      "livro published_at"
+    ],
+    "livro source_url": [
+      "livro source_url"
+    ],
+    "livro afirmacao": [
+      "livro afirmacao"
+    ],
+    "corpo title": [
+      "corpo title"
+    ],
+    "corpo published_at": [
+      "corpo published_at"
+    ],
+    "corpo attributed_to": [
+      "corpo attributed_to"
+    ],
+    "data sem dia e mês": [
+      "data sem dia e mês"
+    ],
+    "página fora dos limites": [
+      "página fora do documento",
+      "página após o fim"
+    ],
+    "segunda extração usa mesmo caminho": [
+      "segunda extração usa mesmo caminho"
+    ],
+    "fluxo sem área de corpo": [
+      "fluxo sem área de corpo"
+    ],
+    "valor trocado": [
+      "valor trocado"
+    ],
+    "início repetido na área": [
+      "início repetido na área"
+    ],
+    "zero ocorrências na página": [
+      "zero ocorrências na página"
+    ],
+    "duas ocorrências na página": [
+      "duas ocorrências na página"
+    ],
+    "continuidade independente": [
+      "continuidade independente"
+    ],
+    "cabeçalho a 300 caracteres": [
+      "cabeçalho a 300 caracteres"
+    ],
+    "cabeçalho separado a 300 caracteres": [
+      "cabeçalho separado a 300 caracteres"
+    ],
+    "unidade a 300 caracteres": [
+      "unidade a 300 caracteres"
+    ],
+    "unidade ausente": [
+      "unidade ausente"
+    ],
+    "cabeçalho ausente": [
+      "cabeçalho ausente"
+    ],
+    "colunas: falta área": [
+      "colunas tap-2023-resultado (tap-2023-contas-pt.pdf)",
+      "colunas tap-2023-resultado (tap-2023-contas.pdf)",
+      "colunas tap-2023-resultado-cabecalho (tap-2023-contas.pdf)",
+      "colunas tap-2023-resultado-cabecalho (tap-2023-contas-pt.pdf)",
+      "colunas tap-2023-capital-proprio (tap-2023-contas-pt.pdf)",
+      "colunas tap-2023-capital-proprio (tap-2023-contas.pdf)",
+      "colunas tap-2023-capital-proprio-cabecalho (tap-2023-contas.pdf)",
+      "colunas tap-2023-capital-proprio-cabecalho (tap-2023-contas-pt.pdf)",
+      "colunas tap-2023-capital-social (tap-2023-contas-pt.pdf)",
+      "colunas tap-2023-capital-social (tap-2023-contas.pdf)",
+      "colunas tap-2023-capital-social-cabecalho (tap-2023-contas.pdf)",
+      "colunas tap-2023-capital-social-cabecalho (tap-2023-contas-pt.pdf)",
+      "colunas tap-2023-divida-liquida-sem-locacoes (tap-2023-contas-pt.pdf)",
+      "colunas tap-2023-divida-liquida-sem-locacoes (tap-2023-contas.pdf)",
+      "colunas tap-2024-resultado (tap-2024-contas-pt.pdf)",
+      "colunas tap-2024-resultado (tap-2024-contas.pdf)",
+      "colunas tap-2024-resultado-cabecalho (tap-2024-contas.pdf)",
+      "colunas tap-2024-resultado-cabecalho (tap-2024-contas-pt.pdf)",
+      "colunas tap-2024-capital-proprio (tap-2024-contas-pt.pdf)",
+      "colunas tap-2024-capital-proprio (tap-2024-contas.pdf)",
+      "colunas tap-2024-capital-proprio-cabecalho (tap-2024-contas.pdf)",
+      "colunas tap-2024-capital-proprio-cabecalho (tap-2024-contas-pt.pdf)",
+      "colunas tap-2024-capital-social (tap-2024-contas-pt.pdf)",
+      "colunas tap-2024-capital-social (tap-2024-contas.pdf)",
+      "colunas tap-2024-capital-social-cabecalho (tap-2024-contas.pdf)",
+      "colunas tap-2024-capital-social-cabecalho (tap-2024-contas-pt.pdf)",
+      "colunas tap-2024-divida-liquida-sem-locacoes (tap-2024-contas-pt.pdf)",
+      "colunas tap-2024-divida-liquida-sem-locacoes (tap-2024-contas.pdf)",
+      "colunas tap-2025-resultado (tap-2025-contas-pt.pdf)",
+      "colunas tap-2025-resultado (tap-2025-contas.pdf)",
+      "colunas tap-2025-resultado-cabecalho (tap-2025-contas.pdf)",
+      "colunas tap-2025-resultado-cabecalho (tap-2025-contas-pt.pdf)",
+      "colunas tap-2025-capital-proprio (tap-2025-contas-pt.pdf)",
+      "colunas tap-2025-capital-proprio (tap-2025-contas.pdf)",
+      "colunas tap-2025-capital-proprio-cabecalho (tap-2025-contas.pdf)",
+      "colunas tap-2025-capital-proprio-cabecalho (tap-2025-contas-pt.pdf)",
+      "colunas tap-2025-capital-social (tap-2025-contas-pt.pdf)",
+      "colunas tap-2025-capital-social (tap-2025-contas.pdf)",
+      "colunas tap-2025-capital-social-cabecalho (tap-2025-contas.pdf)",
+      "colunas tap-2025-capital-social-cabecalho (tap-2025-contas-pt.pdf)",
+      "colunas tap-2025-divida-liquida-sem-locacoes (tap-2025-contas-pt.pdf)",
+      "colunas tap-2025-divida-liquida-sem-locacoes (tap-2025-contas.pdf)",
+      "colunas tap-2025-resultado-acionistas (tap-2025-contas-pt.pdf)",
+      "colunas tap-2025-resultado-acionistas (tap-2025-contas.pdf)",
+      "colunas tap-2025-resultado-acionistas-cabecalho (tap-2025-contas.pdf)",
+      "colunas tap-2025-resultado-acionistas-cabecalho (tap-2025-contas-pt.pdf)",
+      "colunas tap-2025-resultado-individual (tap-2025-individual.pdf)",
+      "colunas tap-2025-resultado-individual-cabecalho (tap-2025-individual.pdf)",
+      "colunas tap-2025-capital-proprio-individual (tap-2025-individual.pdf)",
+      "colunas tap-2025-capital-proprio-individual-cabecalho (tap-2025-individual.pdf)",
+      "colunas tap-2025-divida-liquida-com-locacoes (tap-2025-contas-pt.pdf)",
+      "colunas tap-2025-divida-liquida-com-locacoes (tap-2025-contas.pdf)",
+      "colunas tap-2025-divida-liquida-com-locacoes-cabecalho (tap-2025-contas.pdf)",
+      "colunas tap-2025-divida-liquida-com-locacoes-cabecalho (tap-2025-contas-pt.pdf)",
+      "colunas tap-2024-divida-liquida-com-locacoes (tap-2025-contas-pt.pdf)",
+      "colunas tap-2024-divida-liquida-com-locacoes (tap-2025-contas.pdf)",
+      "colunas tap-2024-divida-liquida-com-locacoes-cabecalho (tap-2025-contas.pdf)",
+      "colunas tap-2024-divida-liquida-com-locacoes-cabecalho (tap-2025-contas-pt.pdf)",
+      "colunas tap-2024-ativo-original (tap-2024-contas-pt.pdf)",
+      "colunas tap-2024-ativo-original (tap-2024-contas.pdf)",
+      "colunas tap-2024-ativo-original-cabecalho (tap-2024-contas.pdf)",
+      "colunas tap-2024-ativo-original-cabecalho (tap-2024-contas-pt.pdf)",
+      "colunas tap-2024-ativo-reexpresso (tap-2025-contas-pt.pdf)",
+      "colunas tap-2024-ativo-reexpresso (tap-2025-contas.pdf)",
+      "colunas tap-2024-ativo-reexpresso-cabecalho (tap-2025-contas.pdf)",
+      "colunas tap-2024-ativo-reexpresso-cabecalho (tap-2025-contas-pt.pdf)",
+      "colunas tap-2025-trabalhadores-media (tap-2025-contas-pt.pdf)",
+      "colunas tap-2025-trabalhadores-media (tap-2025-contas.pdf)",
+      "colunas tap-2024-trabalhadores-media (tap-2025-contas-pt.pdf)",
+      "colunas tap-2024-trabalhadores-media (tap-2025-contas.pdf)",
+      "colunas tap-2025-trabalhadores-total (tap-2025-contas-pt.pdf)",
+      "colunas tap-2025-trabalhadores-total (tap-2025-contas.pdf)",
+      "colunas tap-cge-2022-quadro-dgtf (cge-2022.pdf)",
+      "colunas tap-cge-2022-quadro-dgtf-cabecalho (cge-2022.pdf)",
+      "colunas tap-governo-aprovacoes (governo-apresentacao.pdf)",
+      "colunas tap-capital-subscrito-2022 (tap-2024-contas-pt.pdf)",
+      "colunas tap-capital-subscrito-2022 (tap-2024-contas.pdf)",
+      "colunas tap-capital-calendario-2022 (tap-2024-contas-pt.pdf)",
+      "colunas tap-capital-calendario-2022 (tap-2024-contas.pdf)",
+      "colunas tap-capital-segunda-prestacao-adiada (tap-2024-contas-pt.pdf)",
+      "colunas tap-capital-segunda-prestacao-adiada (tap-2024-contas.pdf)",
+      "colunas tap-capital-ultima-prestacao-adiada (tap-2024-contas-pt.pdf)",
+      "colunas tap-capital-ultima-prestacao-adiada (tap-2024-contas.pdf)",
+      "colunas tap-oferta-referencia (governo-apresentacao.pdf)",
+      "colunas tap-oferta-referencia-rotulo (governo-apresentacao.pdf)",
+      "colunas tap-oferta-ajustes (governo-apresentacao.pdf)",
+      "colunas tap-oferta-ajustes-rotulo (governo-apresentacao.pdf)",
+      "colunas tap-oferta-trabalhadores (governo-apresentacao.pdf)",
+      "colunas tap-oferta-trabalhadores-rotulo (governo-apresentacao.pdf)",
+      "colunas tap-oferta-permuta (governo-apresentacao.pdf)",
+      "colunas tap-oferta-hipotese-fecho (governo-apresentacao.pdf)",
+      "colunas tap-oferta-hipotese-fase2 (governo-apresentacao.pdf)",
+      "colunas tap-governo-assinatura (governo-apresentacao.pdf)",
+      "colunas tap-governo-fase2 (governo-apresentacao.pdf)",
+      "colunas tap-governo-conclusao (governo-apresentacao.pdf)",
+      "colunas afirmacao-governo-tap-imoveis-passivos (governo-apresentacao.pdf)",
+      "colunas afirmacao-governo-tap-siavilo (governo-apresentacao.pdf)",
+      "colunas tap-recuperacao-fase1 (governo-apresentacao.pdf)",
+      "colunas tap-recuperacao-fase2 (governo-apresentacao.pdf)",
+      "colunas tap-recuperacao-acoes-dividendos (governo-apresentacao.pdf)",
+      "colunas tap-recuperacao-acoes-dividendos-nota (governo-apresentacao.pdf)",
+      "colunas tap-recuperacao-total (governo-apresentacao.pdf)",
+      "colunas tap-recuperacao-total-nota (governo-apresentacao.pdf)",
+      "colunas tap-oferta-premio-qualificado (governo-apresentacao.pdf)",
+      "colunas tap-oferta-afklm-earnout (governo-apresentacao.pdf)",
+      "colunas tap-oferta-diferenca (governo-apresentacao.pdf)",
+      "colunas tap-oferta-premio-earnout (governo-apresentacao.pdf)",
+      "colunas tap-oferta-diferenca-earnout (governo-apresentacao.pdf)",
+      "colunas tap-oferta-afklm-referencia (governo-apresentacao.pdf)",
+      "colunas tap-oferta-afklm-referencia-rotulo (governo-apresentacao.pdf)",
+      "colunas tap-oferta-afklm-ajustes (governo-apresentacao.pdf)",
+      "colunas tap-oferta-afklm-ajustes-rotulo (governo-apresentacao.pdf)",
+      "colunas tap-oferta-afklm-trabalhadores (governo-apresentacao.pdf)",
+      "colunas tap-oferta-afklm-trabalhadores-rotulo (governo-apresentacao.pdf)",
+      "colunas tap-oferta-afklm-total (governo-apresentacao.pdf)",
+      "colunas tap-oferta-afklm-total-rotulo (governo-apresentacao.pdf)",
+      "colunas tap-oferta-afklm-earnout (governo-apresentacao.pdf)",
+      "colunas tap-oferta-afklm-total-earnout (governo-apresentacao.pdf)",
+      "colunas tap-oferta-afklm-ebitda-earnout (governo-apresentacao.pdf)",
+      "colunas tap-oferta-afklm-divida-earnout (governo-apresentacao.pdf)",
+      "colunas tap-2022-resultado (tap-2023-contas-pt.pdf)",
+      "colunas tap-2022-resultado (tap-2023-contas.pdf)",
+      "colunas tap-2022-resultado-cabecalho (tap-2023-contas.pdf)",
+      "colunas tap-2022-resultado-cabecalho (tap-2023-contas-pt.pdf)",
+      "colunas tap-cge-2022-quadro-sgps (cge-2022.pdf)",
+      "colunas tap-cge-2022-quadro-sgps-cabecalho (cge-2022.pdf)"
+    ],
+    "declaração de colunas ausente": [
+      "declaração de colunas ausente"
+    ],
+    "área atravessa coluna vizinha": [
+      "área atravessa coluna vizinha"
+    ],
+    "caixa antiga corta comparativo": [
+      "caixa antiga corta comparativo"
+    ],
+    "excerto truncado permanente": [
+      "excerto truncado permanente"
+    ],
+    "excerto colado permanente": [
+      "excerto colado permanente"
+    ],
+    "rodapé no fluxo": [
+      "rodapé no fluxo"
+    ],
+    "original aponta comparativo errado": [
+      "original aponta comparativo errado"
+    ]
+  },
+  "resultado": "PASS TAP: 110 linhas; 31 plantas distintas recusadas em 157 execuções; corpos, originais, recibos, direitos e regressões conferidos."
+}

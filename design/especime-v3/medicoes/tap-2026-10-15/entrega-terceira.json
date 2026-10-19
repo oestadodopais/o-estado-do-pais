@@ -1,0 +1,37 @@
+{
+  "commit_motor": "6b7e0bf8d27fd9514158c081590f060a36670b91",
+  "core_gate_conteudo_commit": "6b7e0bf8d27fd9514158c081590f060a36670b91",
+  "core_gate_codigo": 0,
+  "core_gate_duracao_s": 681.554,
+  "tap_test_conteudo_commit": "6b7e0bf8d27fd9514158c081590f060a36670b91",
+  "tap_test_codigo": 0,
+  "tap_test_duracao_s": 20.187,
+  "tap_test_resultado": "PASS TAP: 110 linhas; 31 plantas distintas recusadas em 157 execuções; corpos, originais, recibos, direitos e regressões conferidos.",
+  "arvore_limpa_antes_e_depois": true,
+  "fontes_sha256": {
+    "ledger.json": "955c125cf1564db40ab7db2fd3066d6a005e773a47ed63145f7d43c7626c308c",
+    "extracoes.json": "530983fbc5b3a50cc602160450eacd177fe41f3fdf2b0f76b3f8c9e7ee753c1f",
+    "plantas.json": "4978d393bc5309e6345af66aa2e1da328103aa1f92a75f4ca61b2f79631ad112",
+    "fontes.json": "ebd2e77d4e48476d7f0221228c08c22d05c19d0d70d90c815b3c473a81b26a2d",
+    "conferencia-terceira.json": "564a62d6c1a3b8b61c08097015ee15f0a24c656b834913e26d6efb7ae8efebf5",
+    "source/MANIFEST.sha256": "6b44a01b09d7343449800f5e44eca42d239ad0d21a34dbb82cc701d76db4cb20"
+  },
+  "gerador_sha256": "1f4f230a310b147d03beee9b1a9a708eb2bca6c5a5f54eb05278840cf380abc0",
+  "gerador_motor_sha256": "58480e6b9ac9cf627df31b3309056cef8af956486a67f02ea1219ff44179ef68",
+  "teste_motor_sha256": "356833c94415cb9e2a5ea8219e49437ab7abe19cc7e48abdc49597ac2f4bb235",
+  "involucro_sha256": "b2afa7374f5c2be385e88a052f6dfaad5ad77aa69e4890207595f7f3cc044cbc",
+  "medidor_sha256": "ebace2d586ed4855a32fecac745bdd7673fd17502bbe8649623da84dd9208415",
+  "registos_sha256": {
+    "terceira-motor.log": "1a9547e0095357de84a0503c9d17c411123c346c6bd11268ec3cf45dc13cca16",
+    "terceira-publisher.tap_test.log": "a00f344321490379651925f40bcc59c3a8f97ed1d3e4ae73ecb9e1ed4b8cd628",
+    "terceira-motor-prova.json": "5a265d795fab0ef71d4a2e795df6d45047cc81541afc5dd5bd9234fd9c89a343",
+    "terceira-teste-prova.json": "cde485eb6ffba83d670cb3f1be6a998790befcee1aaf69b6d103c3b20fe8bc7d",
+    "terceira-plantas.json": "d0940feca5247412ada45f70a9bcbce65d1c7a30ee37860fa972e17a93c2b059",
+    "terceira-commit-motor.log": "ba7ad7abc9c1f96feda1902fbf0a6c3d03fc09e4aed9d1f9b4400b3b92109086",
+    "comparacao-linhas-terceira.json": "2440252694ed507f9024c14925b743027a6fe2dd52ca461d62bd79fae12bd24e",
+    "terceira-conferencia-visual.json": "d404c687bd61b1983326ef843aa67386cb91136d2522b12a4f008fa05f39ead4"
+  },
+  "tokens_used": "não exposto",
+  "exportacao_para_paginas": false,
+  "limite": "As réguas dos achados 8 e 9 não foram alteradas; datas ISO do decreto conferidas documentalmente."
+}
