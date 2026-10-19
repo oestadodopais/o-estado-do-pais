@@ -12,18 +12,19 @@ assert(motor&&portoes&&ensaios&&capturas,'Faltam as pastas das provas');
 const read=p=>fs.readFileSync(p,'utf8'),json=p=>JSON.parse(read(p));
 const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
 const limpar=s=>s.replaceAll(motor,'<motor>').replaceAll(root,'<worktree>').replaceAll('/private/tmp/','<temporario>/').replaceAll('/tmp/','<temporario>/');
+const portasMotor=process.env.EX3_MOTOR_PORTOES??portoes;
 const destino=path.join(aqui,'terceira-correcao');fs.mkdirSync(destino,{recursive:true});
 const copiar=(p,nome)=>fs.writeFileSync(path.join(destino,nome),limpar(read(p)));
 const escopo=json(path.join(ensaios,'escopo.json'));assert(escopo.declaracaoForaDeP1Identica&&escopo.apoiosForaDeP1Identicos);copiar(path.join(ensaios,'escopo.json'),'escopo.json');
 const codigos={};
 for(const k of ['build','verify','typecheck','motor','series','cruzamento','plantas-sitio','plantas-motor']){
- const pasta=['build','verify','typecheck','motor'].includes(k)?portoes:ensaios;
+ const pasta=k==='motor'?portasMotor:['build','verify','typecheck'].includes(k)?portoes:ensaios;
  const p=path.join(pasta,k+'.codigo');codigos[k]=read(p).trim();copiar(p,k+'.codigo');assert.equal(codigos[k],'0',k);
  if(pasta===ensaios)copiar(path.join(pasta,k+'.log'),k+'.log');
 }
-const cabeca=json(path.join(root,'dist/version.json')).commit,cabecaMotor=read(path.join(portoes,'motor.cabeca')).trim();
+const cabeca=json(path.join(root,'dist/version.json')).commit,cabecaMotor=read(path.join(portasMotor,'motor.cabeca')).trim();
 for(const k of ['cabeca','cabeca.fim']){assert.equal(read(path.join(portoes,k)).trim(),cabeca);copiar(path.join(portoes,k),k);}
-assert.equal(cabecaMotor,execFileSync('git',['rev-parse','HEAD'],{cwd:motor,encoding:'utf8'}).trim());copiar(path.join(portoes,'motor.cabeca'),'motor.cabeca');
+assert.equal(cabecaMotor,execFileSync('git',['rev-parse','HEAD'],{cwd:motor,encoding:'utf8'}).trim());copiar(path.join(portasMotor,'motor.cabeca'),'motor.cabeca');
 const manifest=json(path.join(capturas,'capturas.json'));assert.equal(manifest.cabeca,cabeca);assert.deepEqual(manifest.falhas,[]);
 for(const r of manifest.resultados){assert(r.documento<=r.largura&&r.corpo<=r.largura);for(const c of [r,...r.recortes])assert.equal(sha(path.join(capturas,c.ficheiro)),c.sha256);}
 copiar(path.join(capturas,'capturas.json'),'capturas.json');
@@ -45,7 +46,7 @@ for(const lang of ['pt','en']){
  }
 }
 const celulas=json(path.join(motor,'content/21 Defesa NATO/provas.json'));assert(celulas.every(c=>c.impresso===null&&c.ausencia_pdf));
-const m={cabeca,escopo,motor:cabecaMotor,codigos,celulas,linhas,frases,recibos,capturas:{pasta:limpar(capturas),paginas:manifest.resultados.length,larguras:manifest.larguras,falhas:manifest.falhas.length},inspecaoVisual:process.env.EX3_VISUAL==='1'};
+const m={cabeca,escopo,portoesMotor:limpar(portasMotor),motor:cabecaMotor,codigos,celulas,linhas,frases,recibos,capturas:{pasta:limpar(capturas),paginas:manifest.resultados.length,larguras:manifest.larguras,falhas:manifest.falhas.length},inspecaoVisual:process.env.EX3_VISUAL==='1'};
 fs.writeFileSync(path.join(destino,'medicoes.json'),JSON.stringify(m,null,2)+'\n');
 let out='\n\n## A terceira passagem de correção de 19.10.2026\n\n';
 out+='1. A forma do PDF já não deriva da célula. `pdftotext -layout` lê o corpo alojado; o gerador procura a linha de Portugal na página e compara a coluna com o formato da célula. As páginas alojadas não têm texto extraível: as quatro linhas omitem a atribuição «PDF, página» e dizem a ausência na nota e na ressalva pública, nas duas edições. A prova sintética de texto extraível passa; as quatro formas divergentes e as quatro células trocadas são recusadas. `publisher.ex3_test` conserva as plantas anteriores.\n\n';
@@ -55,10 +56,11 @@ out+='A extração usa os documentos, recibos e direitos já alojados; nenhum no
 out+='### Linhas e prova documental\n\n| Linha | Valor | Período | Documento selado |\n| --- | --- | --- | --- |\n';
 for(const r of linhas)out+=`| ${r.id} | ${r.value} | ${r.reference_date} | ${r.document.source_sha256} |\n`;
 out+='\n### P1 copiado das páginas construídas\n\n';for(const lang of ['pt','en'])out+=`#### ${lang.toUpperCase()}\n\n${frases[lang].p1}\n\n`;
+out+='A primeira corrida recusou a falta de cobertura das quatro linhas novas na A7. Foram declaradas fora da distribuição por ministérios, porque são compromissos da Aliança e a data da cimeira. A conferência A7 e os portões foram repetidos sem mudar a régua.\n\n';
 out+='### Provas e cabeças\n\n';out+=`Construção, portões e capturas: \`${cabeca}\`. Motor: \`${cabecaMotor}\`.\n\n| Conferência | Código lido |\n| --- | --- |\n`;for(const [k,v] of Object.entries(codigos))out+=`| ${k} | ${v} |\n`;
 out+=`\nCapturas em \`${m.capturas.pasta}\`: ${m.capturas.paginas} páginas, larguras ${m.capturas.larguras.join(', ')} px, ${m.capturas.falhas} falhas; resumos e largura conferidos por guião. `;
 out+=m.inspecaoVisual?'P1 e o recibo de 2024 inspecionados nas duas edições a 390 e 1280 px.\n':'Inspeção visual por executar.\n';
-out+='\nO registo do lançador foi preservado em `<temporario>/ex3-terceira-lancador/`, fora dos portões e dos commits. Nenhum PNG no repositório; nenhum push. Leitura curta do diff e aterragem a cargo do lugar de direção.\n\n';
+out+='\nO registo do lançador foi preservado em `<temporario>/ex3-terceira-lancador/`, fora dos portões e dos commits. Nenhum PNG no repositório; nenhum push. Leitura curta do diff e aterragem a cargo do lugar de direção. A corrida após o commit deste relatório fica em `<temporario>/ex3-terceira-portoes-final/`, com os códigos e a cabeça próprios; não muda o conteúdo.\n\n';
 out+=`Estado: ${m.inspecaoVisual?'concluído no âmbito do construtor, sujeito à leitura curta do diff':'em verificação'}.\n\ntokens used: não disponível\n`;
 const relatorio=path.join(aqui,'RELATORIO.md');fs.writeFileSync(relatorio,read(relatorio).split('\n\n## A terceira passagem de correção de 19.10.2026')[0].trimEnd()+out);
 console.log('EX3 terceira correção: relatório, frases, recibos e provas conferidos. '+JSON.stringify(codigos));
