@@ -1,3 +1,4 @@
+import { valorNaLingua } from './valor-na-lingua.mjs';
 /**
  * ===========================================================================
  * AS EXPLICAÇÕES · o resolvedor (bloco EX1, 05.10.2026)
@@ -49,6 +50,7 @@
  * OS NÚMEROS COMPARAM-SE COMO NÚMEROS, por `parsePtNumber()`, que lê «211 891 565 579» e «−58,3».
  */
 
+import { VERBATIM } from '../data/verbatim.mjs';
 import { EXPLICACOES } from '../data/explicacoes/index.mjs';
 import { NOMES_OE1 } from '../data/medidas-oe1.mjs';
 import { hasClaim, getClaim, parsePtNumber, allClaims } from './ledger.mjs';
@@ -59,7 +61,7 @@ import { t } from '../i18n/strings.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
 
 /** Os pedaços calculados que a gramática das explicações conhece, e mais nenhum. */
-export const CHAVES_DA_EXPLICACAO = /** @type {const} */ (['claim', 'periodo', 'nome', 'sinal', 'se', 'maiores', 'compara', 'comparaSaldos']);
+export const CHAVES_DA_EXPLICACAO = /** @type {const} */ (['claim', 'verbatim', 'termo', 'periodo', 'nome', 'sinal', 'se', 'maiores', 'compara', 'comparaSaldos']);
 /** O prefixo que separa, no nome do projeto de uma linha, a família do nome da função ou do ministério. */
 export const PREFIXO_DO_NOME = /** @type {const} */ ({ pt: ' que vai para ', en: ' going to ' });
 /**
@@ -81,6 +83,8 @@ export const FORMAS_DAS_FIGURAS = /** @type {const} */ (['barras-do-livro']);
 /**
  * @typedef {string
  *   | { claim: string, sufixo?: string }
+ *   | { verbatim: string, texto: string }
+ *   | { termo: string, lingua: string }
  *   | { data: { id: string, campo: 'reference_date', valor: string } }
  *   | { nome: { id: string, texto: string } }
  * } PedacoDaExplicacao
@@ -245,6 +249,16 @@ function resolver(partes, lang, onde, ctx) {
     const o = /** @type {Record<string, any>} */ (p ?? {});
     const chave = CHAVES_DA_EXPLICACAO.find((k) => k in o);
     if (!chave) throw defeito(aqui, `um pedaço de tipo desconhecido (${Object.keys(o).join(', ')}).`);
+    if (chave === 'verbatim') {
+      if (o.verbatim !== 'origem-rp4n-total-ministerios-montante') throw defeito(aqui, 'transcrição de origem não autorizada.');
+      out.push({verbatim: o.verbatim, texto: VERBATIM['origem-rp4n-total-ministerios-montante'].text});
+      return;
+    }
+    if (chave === 'termo') {
+      if (typeof o.termo !== 'string' || /\d/.test(o.termo) || o.lingua !== 'pt-PT') throw defeito(aqui, 'termo sem língua ou com algarismos.');
+      out.push({termo: o.termo, lingua: o.lingua});
+      return;
+    }
     if (chave === 'claim') {
       if (!hasClaim(o.claim)) throw defeito(aqui, `a linha «${o.claim}» não está no livro-razão.`);
       if ('sufixo' in o && /\d/.test(String(o.sufixo))) throw defeito(aqui, 'o sufixo traz um algarismo.');
@@ -391,7 +405,9 @@ export function explicacaoResolvida(slug, lang) {
 export function textoDosPedacosDaExplicacao(pedacos, lang) {
   return pedacos.map((p) => {
     if (typeof p === 'string') return p;
-    if ('claim' in p) return `${getClaim(p.claim).value}${p.sufixo ?? ''}`;
+    if ('verbatim' in p) return p.texto;
+    if ('termo' in p) return p.termo;
+    if ('claim' in p) return `${valorNaLingua(getClaim(p.claim), lang)}${p.sufixo ?? ''}`;
     if ('data' in p) return dataDaCasa(p.data.valor, lang);
     return p.nome.texto;
   }).join('');

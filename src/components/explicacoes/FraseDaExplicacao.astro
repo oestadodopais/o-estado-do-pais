@@ -18,6 +18,8 @@ const { partes, lang = 'pt', selos = true } = Astro.props;
 {
   partes.map((/** @type {any} */ p) => {
     if (typeof p === 'string') return <Fragment set:text={p} />;
+    if (p.verbatim) return <span data-verbatim={p.verbatim} set:text={p.texto} />;
+    if (p.termo) return <span lang={p.lingua} set:text={p.termo} />;
     if (p.claim) return <Claim id={p.claim} lang={lang} chip={selos} sufixo={p.sufixo ?? ''} />;
     if (p.data) return <DataDaLinha id={p.data.id} campo={p.data.campo} valor={p.data.valor} lang={lang} />;
     return <span class="explicacao-nome" data-explicacao-nome={p.nome.id} set:text={p.nome.texto} />;

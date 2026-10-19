@@ -13,6 +13,117 @@
  * da medida em `src/data/concelhos.mjs`.
  */
 export const FAMILIAS_DAS_LINHAS = {
+  "nato-cimeira-haia-2025": {
+  "nome": {
+    "pt": "Cimeira de Haia em que a NATO assumiu o compromisso",
+    "en": "Hague Summit at which NATO made the commitment"
+  },
+  "frase": {
+    "pt": [
+      "É a cimeira de Haia em que os aliados assumiram o compromisso anual de investimento em defesa; o período indica o ano da cimeira."
+    ],
+    "en": [
+      "It is the Hague Summit at which Allies made the annual defence investment commitment; the reference period gives the year of the summit."
+    ]
+  },
+  "origens": []
+},
+  "nato-compromisso-haia-essencial-2035": {
+  "nome": {
+    "pt": "Compromisso da NATO para requisitos essenciais de defesa",
+    "en": "NATO commitment for core defence requirements"
+  },
+  "frase": {
+    "pt": [
+      "É a percentagem mínima do PIB acordada para os requisitos essenciais de defesa e as metas de capacidades da NATO, pela definição de despesa em defesa da NATO."
+    ],
+    "en": [
+      "It is the minimum share of GDP agreed for core defence requirements and NATO Capability Targets, under NATO’s definition of defence expenditure."
+    ]
+  },
+  "origens": []
+},
+  "nato-compromisso-haia-2035": {
+  "nome": {
+    "pt": "Compromisso anual da NATO na cimeira de Haia",
+    "en": "Annual NATO commitment at the Hague Summit"
+  },
+  "frase": {
+    "pt": [
+      "É a percentagem do PIB que os aliados se comprometeram a investir anualmente em defesa, até ao prazo indicado, na cimeira de Haia."
+    ],
+    "en": [
+      "It is the share of GDP that Allies committed to investing annually on defence by the stated deadline at the Hague Summit."
+    ]
+  },
+  "origens": []
+},
+  "nato-compromisso-gales-2014": {
+  "nome": {
+    "pt": "Compromisso da NATO na cimeira de Gales",
+    "en": "NATO commitment at the Wales Summit"
+  },
+  "frase": {
+    "pt": [
+      "É a percentagem do PIB nacional que os aliados acordaram destinar à defesa na cimeira de Gales."
+    ],
+    "en": [
+      "It is the share of national GDP that Allies agreed to commit to defence spending at the Wales Summit."
+    ]
+  },
+  "origens": []
+},
+  "nato-defesa-portugal-pib-2024": {
+  "nome": {
+    "pt": "Despesa em defesa de Portugal, em percentagem do PIB, pela NATO",
+    "en": "Portugal’s defence expenditure as a share of GDP, according to NATO"
+  },
+  "frase": {
+    "pt": [
+      "É o valor que a NATO publica para a despesa em defesa de Portugal, pelos pagamentos do governo nacional aliado, sem as administrações regionais e locais. A percentagem usa o PIB real, na tabela a preços constantes."
+    ],
+    "en": [
+      "It is the value NATO publishes for Portugal’s defence expenditure, covering payments by the Allied national government, excluding regional and local authorities. The percentage uses real GDP, in the table at constant prices."
+    ]
+  },
+  "origens": [
+    "nato-definicao-despesa-defesa"
+  ]
+},
+  "nato-defesa-portugal-eur": {
+  "nome": {
+    "pt": "Despesa em defesa de Portugal, em milhões de euros, pela NATO",
+    "en": "Portugal’s defence expenditure in million euros, according to NATO"
+  },
+  "frase": {
+    "pt": [
+      "É a estimativa da NATO para a despesa em defesa de Portugal, pelos pagamentos do governo nacional aliado, sem as administrações regionais e locais. O montante é em milhões de euros, na tabela a preços correntes."
+    ],
+    "en": [
+      "It is NATO’s estimate of Portugal’s defence expenditure, covering payments by the Allied national government, excluding regional and local authorities. The amount is in million euros, in the table at current prices."
+    ]
+  },
+  "origens": [
+    "nato-definicao-despesa-defesa"
+  ]
+},
+  "nato-defesa-portugal-pib": {
+  "nome": {
+    "pt": "Despesa em defesa de Portugal, em percentagem do PIB, pela NATO",
+    "en": "Portugal’s defence expenditure as a share of GDP, according to NATO"
+  },
+  "frase": {
+    "pt": [
+      "É a estimativa da NATO para a despesa em defesa de Portugal, pelos pagamentos do governo nacional aliado, sem as administrações regionais e locais. A percentagem usa o PIB real, na tabela a preços constantes."
+    ],
+    "en": [
+      "It is NATO’s estimate of Portugal’s defence expenditure, covering payments by the Allied national government, excluding regional and local authorities. The percentage uses real GDP, in the table at constant prices."
+    ]
+  },
+  "origens": [
+    "nato-definicao-despesa-defesa"
+  ]
+},
   "abandono-escolar-precoce": {
     "cartao": "abandono-escolar-precoce-2025"
   },

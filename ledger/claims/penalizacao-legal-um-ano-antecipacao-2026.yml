@@ -48,7 +48,7 @@ check: null
 study: penalizacoes-por-reforma-antecipada-2026
 note: A fonte escreve «equivalente a cerca de 6% por ano». Valor aproximado; penalização
   mensal isolada, sem o fator de sustentabilidade. Cópia alojada conferida pelo sha256;
-  data de alojamento provada pelo commit 7c0b24700d76cb3a67442f2495178212169c7586 e pelo manifesto de content/11 Seguranca Social/source/. Não é a data de um pedido HTTP.
+  data de alojamento provada pelo commit aea58d514196824c3a13220cc78949afab2305c9 e pelo manifesto de content/11 Seguranca Social/source/. Não é a data de um pedido HTTP.
 corrections: []
 ressalva: 'Valor aproximado: a fonte escreve «cerca de».'
 ressalva_en: 'Approximate value: the source says “about”.'

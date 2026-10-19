@@ -1,0 +1,17 @@
+{
+  "nato-definicao-despesa-defesa": {
+    "publicador": "NATO",
+    "documento": "Defence investment and NATO's 5% commitment",
+    "url": "https://www.nato.int/en/what-we-do/introduction-to-nato/defence-expenditures-and-natos-5-commitment",
+    "lido": "2026-10-15",
+    "excerto": "Defence expenditure is defined by NATO as payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of (1) its own armed forces, (2) those of other Allies or (3) the needs of the Alliance as a whole.\nAllies agreed to allocate at least 3.5% of GDP to resource core defence requirements and to meet the NATO Capability Targets, based on the agreed definition of NATO defence expenditure (see below).\nRetirement pensions payments made directly by the government to retired military and civilian employees of military departments and for active personnel is included in the NATO defence expenditure definition.",
+    "excertoEn": "Defence expenditure is defined by NATO as payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of (1) its own armed forces, (2) those of other Allies or (3) the needs of the Alliance as a whole.\nAllies agreed to allocate at least 3.5% of GDP to resource core defence requirements and to meet the NATO Capability Targets, based on the agreed definition of NATO defence expenditure (see below).\nRetirement pensions payments made directly by the government to retired military and civilian employees of military departments and for active personnel is included in the NATO defence expenditure definition.",
+    "alojada": {
+      "motor": "content/13 Dominios/source/ex3/definicao.html",
+      "campo": "Texto HTML, as três frases da definição e da ligação às despesas essenciais",
+      "hora": "2026-10-15T18:46:35Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "d42b32910ffc936925c25cb7a34b1e48b88078d578c5bc3760160e2908f5287c"
+    }
+  }
+}
