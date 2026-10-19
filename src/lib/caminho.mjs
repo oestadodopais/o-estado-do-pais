@@ -110,6 +110,7 @@ export const PAI_DA_ROTA = {
   /* AS EXPLICAÇÕES (bloco EX1, 05.10.2026): a lista é uma página fixa, «Início › Explicações», e a leitura da semana
      e cada explicação são filhas dela, como um estudo é filho da lista dos estudos. */
   explicacoes: 'home',
+  discussao: 'home',
   leituraDaSemana: 'explicacoes',
   explicacao: 'explicacoes',
   marcador: 'home',
@@ -212,6 +213,7 @@ function etiquetaDaRota(chave, lang) {
     privacidade: s.nav.privacidade,
     /* A lista das explicações e a leitura da semana chamam-se pelo seu `<h1>` (bloco EX1). */
     explicacoes: s.nav.explicacoes,
+    discussao: s.nav.discussao,
     leituraDaSemana: s.semana.titulo,
   };
   /* O nome de uma entrada é o da declaração do lugar de direção, que é o `<h1>` da página. */

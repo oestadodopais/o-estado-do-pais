@@ -1,0 +1,324 @@
+{
+  "construcao": "643ae038504a5b69b8142c7fe78502e751a1a53e",
+  "contagens": {
+    "estudos": 2782,
+    "anteriores": 2780,
+    "novas": 2
+  },
+  "novas": {
+    "/en/under-discussion": {
+      "/en/under-discussion": 2,
+      "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09": 2,
+      "/en/ledger/oe-2027-ppp-total-encargos-liquidos-2027": 2
+    },
+    "/o-que-se-discute": {
+      "/o-que-se-discute": 2,
+      "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09": 2,
+      "/livro-razao/oe-2027-ppp-total-encargos-liquidos-2027": 2
+    }
+  },
+  "plantas": [
+    {
+      "nome": "página anterior acrescentada",
+      "mordeu": true
+    },
+    {
+      "nome": "edição em falta",
+      "mordeu": true
+    },
+    {
+      "nome": "multiplicidade nova aumentada",
+      "mordeu": true
+    },
+    {
+      "nome": "contagem diferente da régua",
+      "mordeu": true
+    }
+  ],
+  "mudancas_desde_fotografia_v2a": [
+    {
+      "pagina": "/en/explainers/dinheiro-do-estado-2026",
+      "antes": {
+        "/en/ledger/oe-2026-cem-euros-funcao-07": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-10": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-09": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-04": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-01": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-03": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-02": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-05": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-06": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-08": 2,
+        "/en/ledger/oe-2026-cem-euros-ministerio-financas": 2,
+        "/en/ledger/oe-2026-cem-euros-ministerio-saude": 2,
+        "/en/ledger/oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social": 2,
+        "/en/ledger/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao": 2
+      },
+      "depois": {
+        "/en/ledger/oe-2026-cem-euros-funcao-07": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-10": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-09": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-04": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-01": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-03": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-02": 3,
+        "/en/ledger/oe-2026-cem-euros-funcao-05": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-06": 2,
+        "/en/ledger/oe-2026-cem-euros-funcao-08": 2,
+        "/en/ledger/nato-defesa-portugal-pib-2024": 2,
+        "/en/ledger/despesa-por-funcao-2024-gf02-pt": 2,
+        "/en/ledger/oe-2026-cem-euros-ministerio-financas": 2,
+        "/en/ledger/oe-2026-cem-euros-ministerio-saude": 2,
+        "/en/ledger/oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social": 2,
+        "/en/ledger/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao": 2
+      }
+    },
+    {
+      "pagina": "/en",
+      "antes": {
+        "/en/ledger/ipc-combustiveis-variacao-homologa": 2,
+        "/en/ledger/ipc-variacao-homologa": 2,
+        "/en/ledger/ihpc-variacao-homologa": 2,
+        "/en/ledger/ihpc-variacao-homologa-ue": 2,
+        "/en/prices": 2,
+        "/en/ledger/precos-da-habitacao-2025": 2,
+        "/en/ledger/precos-da-habitacao-2025-ue": 2,
+        "/en/ledger/ipc-sem-habitacao-variacao-media-12-meses": 2,
+        "/en/housing": 2,
+        "/en/ledger/remuneracao-bruta-mensal-media-periodo-anterior": 2,
+        "/en/ledger/remuneracao-bruta-mensal-media": 2,
+        "/en/employment": 2,
+        "/en/ledger/divida-publica-2025-notificacao-ine-2026-09": 2,
+        "/en/state-and-economy": 2,
+        "/en/ledger/racio-s80-s20-2025": 2,
+        "/en/ledger/racio-s80-s20-2025-ue": 2,
+        "/en/poverty-and-inequality": 2
+      },
+      "depois": {
+        "/en/ledger/ipc-combustiveis-variacao-homologa": 2,
+        "/en/ledger/ipc-variacao-homologa": 2,
+        "/en/ledger/ihpc-variacao-homologa": 2,
+        "/en/ledger/ihpc-variacao-homologa-ue": 2,
+        "/en/prices": 2,
+        "/en/ledger/precos-da-habitacao-2025": 2,
+        "/en/ledger/precos-da-habitacao-2025-ue": 2,
+        "/en/ledger/ipc-sem-habitacao-variacao-media-12-meses": 2,
+        "/en/housing": 2,
+        "/en/ledger/remuneracao-bruta-mensal-media-periodo-anterior": 2,
+        "/en/ledger/remuneracao-bruta-mensal-media": 2,
+        "/en/employment": 2,
+        "/en/ledger/divida-publica-2025-notificacao-ine-2026-09": 2,
+        "/en/state-and-economy": 2,
+        "/en/ledger/racio-s80-s20-2025": 2,
+        "/en/ledger/racio-s80-s20-2025-ue": 2,
+        "/en/poverty-and-inequality": 2,
+        "/en/under-discussion": 3
+      }
+    },
+    {
+      "pagina": "/en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "antes": {
+        "/en/method": 2
+      },
+      "depois": {
+        "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true": 3,
+        "/en/method": 2
+      }
+    },
+    {
+      "pagina": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "antes": {
+        "/en/method": 2
+      },
+      "depois": {
+        "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true": 2,
+        "/en/method": 2
+      }
+    },
+    {
+      "pagina": "/en/ledger/afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "antes": {
+        "/en/method": 2
+      },
+      "depois": {
+        "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true": 2,
+        "/en/method": 2
+      }
+    },
+    {
+      "pagina": "/en/ledger",
+      "antes": {
+        "/en/ledger": 4,
+        "/en/ledger/municipalities": 2,
+        "/en/to-verify": 3
+      },
+      "depois": {
+        "/en/ledger": 4,
+        "/en/ledger/municipalities": 2,
+        "/en/to-verify": 3,
+        "/en/under-discussion": 2
+      }
+    },
+    {
+      "pagina": "/en/method",
+      "antes": {
+        "/en/ledger": 31,
+        "/en/agenda": 7,
+        "/en/european-union": 3,
+        "/en/corrections": 7,
+        "/en/studies": 5,
+        "/en/to-verify": 2,
+        "/en/method": 4
+      },
+      "depois": {
+        "/en/ledger": 8,
+        "/en/european-union": 2,
+        "/en/to-verify": 2,
+        "/en/corrections": 5
+      }
+    },
+    {
+      "pagina": "/explicacoes/dinheiro-do-estado-2026",
+      "antes": {
+        "/livro-razao/oe-2026-cem-euros-funcao-07": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-10": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-09": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-04": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-01": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-03": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-02": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-05": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-06": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-08": 2,
+        "/livro-razao/oe-2026-cem-euros-ministerio-financas": 2,
+        "/livro-razao/oe-2026-cem-euros-ministerio-saude": 2,
+        "/livro-razao/oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social": 2,
+        "/livro-razao/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao": 2
+      },
+      "depois": {
+        "/livro-razao/oe-2026-cem-euros-funcao-07": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-10": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-09": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-04": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-01": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-03": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-02": 3,
+        "/livro-razao/oe-2026-cem-euros-funcao-05": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-06": 2,
+        "/livro-razao/oe-2026-cem-euros-funcao-08": 2,
+        "/livro-razao/nato-defesa-portugal-pib-2024": 2,
+        "/livro-razao/despesa-por-funcao-2024-gf02-pt": 2,
+        "/livro-razao/oe-2026-cem-euros-ministerio-financas": 2,
+        "/livro-razao/oe-2026-cem-euros-ministerio-saude": 2,
+        "/livro-razao/oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social": 2,
+        "/livro-razao/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao": 2
+      }
+    },
+    {
+      "pagina": "/",
+      "antes": {
+        "/livro-razao/ipc-combustiveis-variacao-homologa": 2,
+        "/livro-razao/ipc-variacao-homologa": 2,
+        "/livro-razao/ihpc-variacao-homologa": 2,
+        "/livro-razao/ihpc-variacao-homologa-ue": 2,
+        "/precos": 2,
+        "/livro-razao/precos-da-habitacao-2025": 2,
+        "/livro-razao/precos-da-habitacao-2025-ue": 2,
+        "/livro-razao/ipc-sem-habitacao-variacao-media-12-meses": 2,
+        "/habitacao": 2,
+        "/livro-razao/remuneracao-bruta-mensal-media-periodo-anterior": 2,
+        "/livro-razao/remuneracao-bruta-mensal-media": 2,
+        "/emprego": 2,
+        "/livro-razao/divida-publica-2025-notificacao-ine-2026-09": 2,
+        "/estado-e-economia": 2,
+        "/livro-razao/racio-s80-s20-2025": 2,
+        "/livro-razao/racio-s80-s20-2025-ue": 2,
+        "/pobreza-e-desigualdade": 2
+      },
+      "depois": {
+        "/livro-razao/ipc-combustiveis-variacao-homologa": 2,
+        "/livro-razao/ipc-variacao-homologa": 2,
+        "/livro-razao/ihpc-variacao-homologa": 2,
+        "/livro-razao/ihpc-variacao-homologa-ue": 2,
+        "/precos": 2,
+        "/livro-razao/precos-da-habitacao-2025": 2,
+        "/livro-razao/precos-da-habitacao-2025-ue": 2,
+        "/livro-razao/ipc-sem-habitacao-variacao-media-12-meses": 2,
+        "/habitacao": 2,
+        "/livro-razao/remuneracao-bruta-mensal-media-periodo-anterior": 2,
+        "/livro-razao/remuneracao-bruta-mensal-media": 2,
+        "/emprego": 2,
+        "/livro-razao/divida-publica-2025-notificacao-ine-2026-09": 2,
+        "/estado-e-economia": 2,
+        "/livro-razao/racio-s80-s20-2025": 2,
+        "/livro-razao/racio-s80-s20-2025-ue": 2,
+        "/pobreza-e-desigualdade": 2,
+        "/o-que-se-discute": 3
+      }
+    },
+    {
+      "pagina": "/livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+      "antes": {
+        "/metodo": 2
+      },
+      "depois": {
+        "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true": 3,
+        "/metodo": 2
+      }
+    },
+    {
+      "pagina": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+      "antes": {
+        "/metodo": 2
+      },
+      "depois": {
+        "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true": 2,
+        "/metodo": 2
+      }
+    },
+    {
+      "pagina": "/livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+      "antes": {
+        "/metodo": 2
+      },
+      "depois": {
+        "https://app.parlamento.pt/webutils/docs/doc.pdf?path=9exY41AobJv1LNYysXCGH9U1lI%252fZxpk1O81D0xjk9Vax2dgMv3FOCmoClvBJrljeyAj7EAtXdDDLS6p3Xo24ttH5TSsu2h25iR%252f%252fW2o%252bVZEehCB%252bRyU0xvWG7ihXjD2tnLq17zg%252fTXLCyblTa%252fEwf2cUM%252fLoHJWP1lrdTsvsaAKazIAUuR5m%252fn1Eq%252b2S%252bk92%252bV%252fyxg1dXT8IqGRegjAAvu1RbwsN377vxBVwX47huLEHpf%252bkU4cPtBYEJpiHUr5qpQJfbn1rS%252fOQ9GDBNE98YPaegtiZopoesH1%252fyMWHpFYbQPOFVmStnd800ZGrNryU2PH%252bRnbcHgA1l%252bhQD6ss2ySXahbj03MniVJpcnmPo7U%253d&fich=9f7df920-f4f9-4d0e-a884-df3cde4db960.pdf&Inline=true": 2,
+        "/metodo": 2
+      }
+    },
+    {
+      "pagina": "/livro-razao",
+      "antes": {
+        "/livro-razao": 4,
+        "/livro-razao/concelhos": 2,
+        "/a-verificar": 3
+      },
+      "depois": {
+        "/livro-razao": 4,
+        "/livro-razao/concelhos": 2,
+        "/a-verificar": 3,
+        "/o-que-se-discute": 2
+      }
+    },
+    {
+      "pagina": "/metodo",
+      "antes": {
+        "/livro-razao": 31,
+        "/agenda": 7,
+        "/uniao-europeia": 3,
+        "/correcoes": 7,
+        "/estudos": 5,
+        "/a-verificar": 2,
+        "/metodo": 4
+      },
+      "depois": {
+        "/livro-razao": 8,
+        "/uniao-europeia": 2,
+        "/a-verificar": 2,
+        "/correcoes": 5
+      }
+    }
+  ],
+  "razao": "A contagem integral coincide com a régua atual. O conjunto de páginas anteriores com destinos repetidos permanece o da fotografia V2-a. Entram apenas as duas edições da discussão. Cada uma repete os três destinos obrigatórios declarados, duas vezes cada. A regra da L1 não muda.",
+  "limite": "A fotografia V2-a é anterior ao ME1 e ao EX3. Não se afirma igualdade de multiplicidades nas páginas antigas: as diferenças ficam enumeradas, incluindo as portas mandatadas da primeira página e do índice, que a L1 conta sem fragmento. Nenhuma página antiga passou a integrar a contagem por causa do V2-b."
+}

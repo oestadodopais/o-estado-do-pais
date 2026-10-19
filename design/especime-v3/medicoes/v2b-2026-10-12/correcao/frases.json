@@ -1,0 +1,49 @@
+{
+  "cabeca": "f3ac9261221d5f3c1b0b6a248137d4093d53b078",
+  "edicoes": {
+    "pt": {
+      "comparacao_saude": [
+        "Há duas diferenças de perímetro: a despesa total ou a efetiva, e a despesa com ou sem o PRR, o Plano de Recuperação e Resiliência. Para ver a diferença que o PRR faz, compara-se a variação da despesa efetiva consolidada com a da despesa efetiva consolidada sem o PRR.",
+        "Os números da RTP, a queda, o montante e a diferença, coincidem com a linha da despesa total consolidada do quadro: de 18 125,9 em 2026 para 17 858,4 em 2027, uma variação de −1,5 %.",
+        "O número do ministro coincide com a variação da linha da despesa efetiva consolidada sem o PRR, 3,0 %; o quadro não diz que conta ele fez.",
+        "Em 2027 a despesa efetiva consolidada é a mesma com e sem o PRR, 17 803,1 e 17 803,1; a diferença que o PRR faz está toda em 2026, e é por isso que uma linha desce e a outra sobe."
+      ],
+      "como_foi_dito": "«Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, num documento publicado pela RTP, a 09.10.2026. No mesmo dia, a RTP publicou: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.»",
+      "comparacao_ppp": "Nenhum dos quatro valores acima é igual a 1 700 milhões de euros.",
+      "porta": {
+        "texto": "O que é a despesa efetiva consolidada →",
+        "href": "/explicacoes/dinheiro-do-estado-2026/",
+        "destino_existe": true,
+        "navegacao": true
+      },
+      "ordem_numero_unidade_selo": [
+        "claim-value",
+        "claim-sufixo",
+        "src-chip"
+      ],
+      "unidade_antes_do_selo": true
+    },
+    "en": {
+      "comparacao_saude": [
+        "There are two differences of scope: total or effective expenditure, and expenditure with or without the RRP, the Recovery and Resilience Plan. To see the difference the RRP makes, compare the change in consolidated effective expenditure with the change in consolidated effective expenditure without the RRP.",
+        "RTP's figures, the fall, the amount and the difference, match the table's line for total consolidated expenditure: from 18 125,9 in 2026 to 17 858,4 in 2027, a change of −1,5 %.",
+        "The minister's figure coincides with the change in the line for consolidated effective expenditure without the RRP, 3,0 %; the table does not say which calculation he made.",
+        "In 2027 consolidated effective expenditure is the same with and without the RRP, 17 803,1 and 17 803,1; the difference the RRP makes is all in 2026, which is why one line falls and the other rises."
+      ],
+      "como_foi_dito": "«Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, in a document published by RTP, on 09.10.2026. On the same day, RTP published: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.»",
+      "comparacao_ppp": "None of the four values above equals 1 700 million euros.",
+      "porta": {
+        "texto": "What consolidated effective expenditure is →",
+        "href": "/en/explainers/dinheiro-do-estado-2026/",
+        "destino_existe": true,
+        "navegacao": true
+      },
+      "ordem_numero_unidade_selo": [
+        "claim-value",
+        "claim-sufixo",
+        "src-chip"
+      ],
+      "unidade_antes_do_selo": true
+    }
+  }
+}

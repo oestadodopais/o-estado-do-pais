@@ -19,6 +19,7 @@
  * nomeia-os lado a lado.
  */
 import Base from '../layouts/Base.astro';
+import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import NomeDaMedida from '../components/NomeDaMedida.astro';
@@ -331,6 +332,7 @@ const p = prova(lang);
             </div>
           </div>
         ))}
+        <PortasDaDiscussao lang={lang} linhas={listadas.map(c => c.id)} />
       </div>
       {/* ------------------------------------------------------------------
           OS RESULTADOS DA BUSCA SOBRE O LIVRO-RAZÃO INTEIRO (Major 6)

@@ -1,0 +1,15 @@
+{
+  "mudancas_de_nome": [
+    {
+      "nome": "RELATORIO.escrivao.log",
+      "saida": {
+        "antes": "10f6ac555540776cdb3e4a75a6438771357a6f1517290fa8de871209413d26bf",
+        "depois": "10f6ac555540776cdb3e4a75a6438771357a6f1517290fa8de871209413d26bf"
+      },
+      "regresso": {
+        "antes": "ad48c1e93ab7d6d100ffea3410ffe0260f4c12141c933fd07f7f0488384a6395",
+        "depois": "ad48c1e93ab7d6d100ffea3410ffe0260f4c12141c933fd07f7f0488384a6395"
+      }
+    }
+  ]
+}

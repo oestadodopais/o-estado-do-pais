@@ -1,0 +1,14 @@
+/* V2-b: a mesma tipografia, tinta e medida das explicações. */
+.discussao { max-width: var(--measure); }
+.discussao-item { margin-top: 3rem; padding-top: 1.5rem; border-top: 2px solid var(--ink); scroll-margin-top: 1rem; }
+.discussao-titulo { font-family: var(--f-prosa); font-size: clamp(25px, 3.4vw, 34px); font-weight: 500; line-height: 1.17; text-wrap: balance; margin: 0 0 1.75rem; }
+.discussao-seccao { margin-top: 1.5rem; }
+.discussao-rotulo { font-family: var(--f-instr); font-size: 1rem; line-height: 1.4; margin: 0 0 .5rem; }
+.discussao-seccao[data-discussao-parte="opiniao"] { border-top: 1px solid var(--rule); padding-top: 1.25rem; }
+.discussao-sumario { list-style: none; padding: 0; margin: 0; max-width: var(--measure); }
+.discussao-sumario a { display: block; padding: .75rem 0; min-height: 44px; font-family: var(--f-prosa); font-size: var(--t-leitura); line-height: 1.4; color: inherit; text-underline-offset: 3px; }
+.discussao-literal { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.pp-discussao { margin-block: 2rem; padding-block: 1.25rem; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); }
+.pp-discussao h2 a { color: inherit; }
+.discussao-porta { max-width: var(--measure); }
+.discussao-porta a { display: block; min-height: 44px; padding-block: .5rem; line-height: 1.5; }

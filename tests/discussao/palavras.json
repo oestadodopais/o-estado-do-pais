@@ -1,0 +1,2197 @@
+{
+  "explicacoes": [
+    {
+      "slug": "saude-no-orcamento",
+      "origens": [],
+      "folhas": [
+        {
+          "caminho": "titulo[0]",
+          "pt": "A Saúde no Orçamento: que despesa se está a comparar?",
+          "en": "Health in the Budget: which expenditure is being compared?",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "A Saúde no Orçamento: que despesa se está a comparar?",
+              "en": "Health in the Budget: which expenditure is being compared?",
+              "classe": "leitura",
+              "sobre": "Leitura dos perímetros total, efetivo e sem PRR e das variações impressas; juízo e recomendação editoriais nos lugares assinalados.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].titulo",
+          "pt": "Como foi dito",
+          "en": "As it was said",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "Como foi dito",
+              "en": "As it was said",
+              "classe": "leitura",
+              "sobre": "A fonte RTP e a coincidência das datas das duas afirmações.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+                  "campo": "source",
+                  "literal": "RTP"
+                },
+                {
+                  "linha": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+                  "campo": "reference_date",
+                  "literal": "2026-10-09"
+                },
+                {
+                  "linha": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+                  "campo": "reference_date",
+                  "literal": "2026-10-09"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[0]",
+          "pt": "«",
+          "en": "«",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "«",
+              "en": "«",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[2]",
+          "pt": "», ",
+          "en": "», ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "», ",
+              "en": "», ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[4]",
+          "pt": ", num documento publicado pela RTP, a ",
+          "en": ", in a document published by RTP, on ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ", num documento publicado pela RTP, a ",
+              "en": ", in a document published by RTP, on ",
+              "classe": "leitura",
+              "sobre": "A fonte RTP e a coincidência das datas das duas afirmações.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+                  "campo": "source",
+                  "literal": "RTP"
+                },
+                {
+                  "linha": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+                  "campo": "reference_date",
+                  "literal": "2026-10-09"
+                },
+                {
+                  "linha": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+                  "campo": "reference_date",
+                  "literal": "2026-10-09"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[6]",
+          "pt": ". No mesmo dia, a ",
+          "en": ". On the same day, ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ". No mesmo dia, a ",
+              "en": ". On the same day, ",
+              "classe": "leitura",
+              "sobre": "A fonte RTP e a coincidência das datas das duas afirmações.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+                  "campo": "source",
+                  "literal": "RTP"
+                },
+                {
+                  "linha": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+                  "campo": "reference_date",
+                  "literal": "2026-10-09"
+                },
+                {
+                  "linha": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+                  "campo": "reference_date",
+                  "literal": "2026-10-09"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[8]",
+          "pt": " publicou: «",
+          "en": " published: «",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " publicou: «",
+              "en": " published: «",
+              "classe": "leitura",
+              "sobre": "A fonte RTP e a coincidência das datas das duas afirmações.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+                  "campo": "source",
+                  "literal": "RTP"
+                },
+                {
+                  "linha": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+                  "campo": "reference_date",
+                  "literal": "2026-10-09"
+                },
+                {
+                  "linha": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+                  "campo": "reference_date",
+                  "literal": "2026-10-09"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[10]",
+          "pt": "»",
+          "en": "»",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "»",
+              "en": "»",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].titulo",
+          "pt": "O que as fontes dizem",
+          "en": "What the sources say",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "O que as fontes dizem",
+              "en": "What the sources say",
+              "classe": "leitura",
+              "sobre": "Leitura dos perímetros total, efetivo e sem PRR e das variações impressas; juízo e recomendação editoriais nos lugares assinalados.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0]",
+          "pt": "O quadro ",
+          "en": "Table ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "O quadro ",
+              "en": "Table ",
+              "classe": "leitura",
+              "sobre": "A rubrica e os cabeçalhos do quadro da Saúde, com a unidade e os perímetros impressos.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "campo": "document.locator",
+                  "literal": "Quadro 5.37"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[2]",
+          "pt": " do relatório do Orçamento, o programa Saúde, em milhões de euros.",
+          "en": " of the Budget report, the Health programme, in million euros.",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " do relatório do Orçamento, o programa Saúde, em milhões de euros.",
+              "en": " of the Budget report, the Health programme, in million euros.",
+              "classe": "leitura",
+              "sobre": "A rubrica e os cabeçalhos do quadro da Saúde, com a unidade e os perímetros impressos.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "campo": "document.locator",
+                  "literal": "Quadro 5.37"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[0]",
+          "pt": "A despesa total consolidada passa de ",
+          "en": "Total consolidated expenditure goes from ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "A despesa total consolidada passa de ",
+              "en": "Total consolidated expenditure goes from ",
+              "classe": "leitura",
+              "sobre": "A rubrica e os cabeçalhos do quadro da Saúde, com a unidade e os perímetros impressos.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "campo": "document.locator",
+                  "literal": "Quadro 5.37"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[2]",
+          "pt": " em ",
+          "en": " in ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " em ",
+              "en": " in ",
+              "classe": "leitura",
+              "sobre": "A rubrica e os cabeçalhos do quadro da Saúde, com a unidade e os perímetros impressos.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "campo": "document.locator",
+                  "literal": "Quadro 5.37"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[4]",
+          "pt": " para ",
+          "en": " to ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " para ",
+              "en": " to ",
+              "classe": "leitura",
+              "sobre": "A rubrica e os cabeçalhos do quadro da Saúde, com a unidade e os perímetros impressos.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "campo": "document.locator",
+                  "literal": "Quadro 5.37"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[6]",
+          "pt": " em ",
+          "en": " in ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " em ",
+              "en": " in ",
+              "classe": "leitura",
+              "sobre": "A rubrica e os cabeçalhos do quadro da Saúde, com a unidade e os perímetros impressos.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "campo": "document.locator",
+                  "literal": "Quadro 5.37"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[8]",
+          "pt": ", uma variação de ",
+          "en": ", a change of ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ", uma variação de ",
+              "en": ", a change of ",
+              "classe": "leitura",
+              "sobre": "A rubrica e os cabeçalhos do quadro da Saúde, com a unidade e os perímetros impressos.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-2026",
+                  "campo": "document.locator",
+                  "literal": "Quadro 5.37"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[9].sufixo",
+          "pt": " %",
+          "en": " %",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[10]",
+          "pt": ".",
+          "en": ".",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[2].paragrafo[0]",
+          "pt": "A despesa efetiva consolidada passa de ",
+          "en": "Consolidated effective expenditure goes from ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "A despesa efetiva consolidada passa de ",
+              "en": "Consolidated effective expenditure goes from ",
+              "classe": "leitura",
+              "sobre": "A rubrica e os cabeçalhos do quadro da Saúde, com a unidade e os perímetros impressos.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+                  "campo": "document.locator",
+                  "literal": "Quadro 5.37"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[2].paragrafo[2]",
+          "pt": ", na estimativa, para ",
+          "en": ", in the estimate, to ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ", na estimativa, para ",
+              "en": ", in the estimate, to ",
+              "classe": "leitura",
+              "sobre": "A rubrica e os cabeçalhos do quadro da Saúde, com a unidade e os perímetros impressos.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+                  "campo": "document.locator",
+                  "literal": "Quadro 5.37"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[2].paragrafo[4]",
+          "pt": ", no Orçamento, uma variação de ",
+          "en": ", in the Budget, a change of ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ", no Orçamento, uma variação de ",
+              "en": ", in the Budget, a change of ",
+              "classe": "leitura",
+              "sobre": "A rubrica e os cabeçalhos do quadro da Saúde, com a unidade e os perímetros impressos.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+                  "campo": "document.locator",
+                  "literal": "Quadro 5.37"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[2].paragrafo[5].sufixo",
+          "pt": " %",
+          "en": " %",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[2].paragrafo[6]",
+          "pt": ".",
+          "en": ".",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[3].paragrafo[0]",
+          "pt": "A despesa efetiva consolidada sem o PRR passa de ",
+          "en": "Consolidated effective expenditure without the RRP goes from ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "A despesa efetiva consolidada sem o PRR passa de ",
+              "en": "Consolidated effective expenditure without the RRP goes from ",
+              "classe": "leitura",
+              "sobre": "A rubrica e os cabeçalhos do quadro da Saúde, com a unidade e os perímetros impressos.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+                  "campo": "document.locator",
+                  "literal": "Quadro 5.37"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[3].paragrafo[2]",
+          "pt": " para ",
+          "en": " to ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " para ",
+              "en": " to ",
+              "classe": "leitura",
+              "sobre": "A rubrica e os cabeçalhos do quadro da Saúde, com a unidade e os perímetros impressos.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+                  "campo": "document.locator",
+                  "literal": "Quadro 5.37"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[3].paragrafo[4]",
+          "pt": ", uma variação de ",
+          "en": ", a change of ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ", uma variação de ",
+              "en": ", a change of ",
+              "classe": "leitura",
+              "sobre": "A rubrica e os cabeçalhos do quadro da Saúde, com a unidade e os perímetros impressos.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+                  "campo": "document.locator",
+                  "literal": "Quadro 5.37"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[3].paragrafo[5].sufixo",
+          "pt": " %",
+          "en": " %",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[3].paragrafo[6]",
+          "pt": ".",
+          "en": ".",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].titulo",
+          "pt": "A comparação",
+          "en": "The comparison",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "A comparação",
+              "en": "The comparison",
+              "classe": "leitura",
+              "sobre": "Leitura dos perímetros total, efetivo e sem PRR e das variações impressas; juízo e recomendação editoriais nos lugares assinalados.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[0]",
+          "pt": "Há duas diferenças de perímetro: a despesa total ou a efetiva, e a despesa com ou sem o PRR, o Plano de Recuperação e Resiliência. Para ver a diferença que o PRR faz, compara-se a variação da despesa efetiva consolidada com a da despesa efetiva consolidada sem o PRR.",
+          "en": "There are two differences of scope: total or effective expenditure, and expenditure with or without the RRP, the Recovery and Resilience Plan. To see the difference the RRP makes, compare the change in consolidated effective expenditure with the change in consolidated effective expenditure without the RRP.",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "Há duas diferenças de perímetro: a despesa total ou a efetiva, e a despesa com ou sem o PRR, o Plano de Recuperação e Resiliência. Para ver a diferença que o PRR faz, compara-se a variação da despesa efetiva consolidada com a da despesa efetiva consolidada sem o PRR.",
+              "en": "There are two differences of scope: total or effective expenditure, and expenditure with or without the RRP, the Recovery and Resilience Plan. To see the difference the RRP makes, compare the change in consolidated effective expenditure with the change in consolidated effective expenditure without the RRP.",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[0]",
+          "pt": "Os números da RTP, a queda, o montante e a diferença, coincidem com a linha da despesa total consolidada do quadro: de ",
+          "en": "RTP's figures, the fall, the amount and the difference, match the table's line for total consolidated expenditure: from ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "Os números da RTP, a queda, o montante e a diferença, coincidem com a linha da despesa total consolidada do quadro: de ",
+              "en": "RTP's figures, the fall, the amount and the difference, match the table's line for total consolidated expenditure: from ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[2]",
+          "pt": " em ",
+          "en": " in ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " em ",
+              "en": " in ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[4]",
+          "pt": " para ",
+          "en": " to ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " para ",
+              "en": " to ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[6]",
+          "pt": " em ",
+          "en": " in ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " em ",
+              "en": " in ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[8]",
+          "pt": ", uma variação de ",
+          "en": ", a change of ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ", uma variação de ",
+              "en": ", a change of ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[9].sufixo",
+          "pt": " %",
+          "en": " %",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[1].paragrafo[10]",
+          "pt": ".",
+          "en": ".",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[2].paragrafo[0]",
+          "pt": "O número do ministro coincide com a variação da linha da despesa efetiva consolidada sem o PRR, ",
+          "en": "The minister's figure coincides with the change in the line for consolidated effective expenditure without the RRP, ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "O número do ministro coincide com a variação da linha da despesa efetiva consolidada sem o PRR, ",
+              "en": "The minister's figure coincides with the change in the line for consolidated effective expenditure without the RRP, ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[2].paragrafo[1].sufixo",
+          "pt": " %",
+          "en": " %",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[2].paragrafo[2]",
+          "pt": "; o quadro não diz que conta ele fez.",
+          "en": "; the table does not say which calculation he made.",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "; o quadro não diz que conta ele fez.",
+              "en": "; the table does not say which calculation he made.",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[3].paragrafo[0]",
+          "pt": "Em ",
+          "en": "In ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "Em ",
+              "en": "In ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[3].paragrafo[2]",
+          "pt": " a despesa efetiva consolidada é a mesma com e sem o PRR, ",
+          "en": " consolidated effective expenditure is the same with and without the RRP, ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " a despesa efetiva consolidada é a mesma com e sem o PRR, ",
+              "en": " consolidated effective expenditure is the same with and without the RRP, ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[3].paragrafo[4]",
+          "pt": " e ",
+          "en": " and ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " e ",
+              "en": " and ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[3].paragrafo[6]",
+          "pt": "; a diferença que o PRR faz está toda em ",
+          "en": "; the difference the RRP makes is all in ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "; a diferença que o PRR faz está toda em ",
+              "en": "; the difference the RRP makes is all in ",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[3].paragrafo[8]",
+          "pt": ", e é por isso que uma linha desce e a outra sobe.",
+          "en": ", which is why one line falls and the other rises.",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ", e é por isso que uma linha desce e a outra sobe.",
+              "en": ", which is why one line falls and the other rises.",
+              "classe": "leitura",
+              "sobre": "Correspondência dos números citados com as linhas do quadro, sem atribuir ao ministro uma conta; igualdade da despesa efetiva no Orçamento e diferença na estimativa com e sem PRR.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].titulo",
+          "pt": "A conclusão",
+          "en": "The conclusion",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "A conclusão",
+              "en": "The conclusion",
+              "classe": "leitura",
+              "sobre": "Leitura dos perímetros total, efetivo e sem PRR e das variações impressas; juízo e recomendação editoriais nos lugares assinalados.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[0]",
+          "pt": "O quadro dá variações de sinal contrário conforme o perímetro da despesa; comparar exige dizer que medida se usa em cada caso.",
+          "en": "The table gives changes of opposite sign depending on the scope of expenditure; comparing requires saying which measure is used in each case.",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "O quadro dá variações de sinal contrário conforme o perímetro da despesa; comparar exige dizer que medida se usa em cada caso.",
+              "en": "The table gives changes of opposite sign depending on the scope of expenditure; comparing requires saying which measure is used in each case.",
+              "classe": "leitura",
+              "sobre": "Leitura dos perímetros total, efetivo e sem PRR e das variações impressas; juízo e recomendação editoriais nos lugares assinalados.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[4].titulo",
+          "pt": "A recomendação",
+          "en": "The recommendation",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "A recomendação",
+              "en": "The recommendation",
+              "classe": "leitura",
+              "sobre": "Leitura dos perímetros total, efetivo e sem PRR e das variações impressas; juízo e recomendação editoriais nos lugares assinalados.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[4].conteudo[0].paragrafo[0]",
+          "pt": "Quem cita o orçamento da Saúde diz o perímetro: a despesa total ou a efetiva, com ou sem o PRR.",
+          "en": "Whoever quotes the Health budget states the scope: total or effective expenditure, with or without the RRP.",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "Quem cita o orçamento da Saúde diz o perímetro: a despesa total ou a efetiva, com ou sem o PRR.",
+              "en": "Whoever quotes the Health budget states the scope: total or effective expenditure, with or without the RRP.",
+              "classe": "leitura",
+              "sobre": "Leitura dos perímetros total, efetivo e sem PRR e das variações impressas; juízo e recomendação editoriais nos lugares assinalados.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[5].titulo",
+          "pt": "A opinião do lugar de direção",
+          "en": "The editorial seat's opinion",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "A opinião do lugar de direção",
+              "en": "The editorial seat's opinion",
+              "classe": "leitura",
+              "sobre": "Leitura dos perímetros total, efetivo e sem PRR e das variações impressas; juízo e recomendação editoriais nos lugares assinalados.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[5].conteudo[0].paragrafo[0]",
+          "pt": "A apresentação pública devia dar o mesmo destaque à despesa total consolidada e à despesa efetiva consolidada, com e sem o PRR. Dizer só a conta que sobe, ou só a que desce, é escolher o que o leitor fica a pensar.",
+          "en": "Public presentation should give the same prominence to total consolidated expenditure and to consolidated effective expenditure, with and without the RRP. Giving only the count that rises, or only the one that falls, is choosing what the reader is left thinking.",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "A apresentação pública devia dar o mesmo destaque à despesa total consolidada e à despesa efetiva consolidada, com e sem o PRR. Dizer só a conta que sobe, ou só a que desce, é escolher o que o leitor fica a pensar.",
+              "en": "Public presentation should give the same prominence to total consolidated expenditure and to consolidated effective expenditure, with and without the RRP. Giving only the count that rises, or only the one that falls, is choosing what the reader is left thinking.",
+              "classe": "leitura",
+              "sobre": "Leitura dos perímetros total, efetivo e sem PRR e das variações impressas; juízo e recomendação editoriais nos lugares assinalados.",
+              "apoios": [
+                {
+                  "linha": "oe-2027-saude-despesa-total-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa total consolidada                               18 125,9            17 354,8        17 858,4           17 858,4          -1,5              2,9\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                },
+                {
+                  "linha": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+                  "campo": "excerpt",
+                  "literal": "Despesa efetiva consolidada                             18 062,4            17 291,3        17 803,1           17 803,1          -1,4              3,0\n\nQuadro 5.37. Saúde (PL15) — Conta do Pograma Legado (milhões de euros) 2026 2027 Variação Estrutura 2027 Variação Estrutura 2027 Classificador Económico (Sem PRR) (Sem PRR) Estimativa Orçamento (%) (%) Estimativa Orçamento (%) (%) (Sem PRR) (Sem PRR)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "parcerias-rodoviarias",
+      "origens": [],
+      "folhas": [
+        {
+          "caminho": "titulo[0]",
+          "pt": "As parcerias rodoviárias: a afirmação e os valores do relatório",
+          "en": "The road partnerships: the statement and the report's figures",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "As parcerias rodoviárias: a afirmação e os valores do relatório",
+              "en": "The road partnerships: the statement and the report's figures",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].titulo",
+          "pt": "Como foi dito",
+          "en": "As it was said",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "Como foi dito",
+              "en": "As it was said",
+              "classe": "leitura",
+              "sobre": "O lugar da intervenção é o localizador do documento do partido.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "document.locator",
+                  "literal": "Intervenção na Assembleia da República"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[0]",
+          "pt": "«",
+          "en": "«",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "«",
+              "en": "«",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[2]",
+          "pt": "», ",
+          "en": "», ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "», ",
+              "en": "», ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[4]",
+          "pt": ", na Assembleia da República, a ",
+          "en": ", in the Assembleia da República, on ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ", na Assembleia da República, a ",
+              "en": ", in the Assembleia da República, on ",
+              "classe": "leitura",
+              "sobre": "O lugar da intervenção é o localizador do documento do partido.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "document.locator",
+                  "literal": "Intervenção na Assembleia da República"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].paragrafo[6]",
+          "pt": ".",
+          "en": ".",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].titulo",
+          "pt": "O que as fontes dizem",
+          "en": "What the sources say",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "O que as fontes dizem",
+              "en": "What the sources say",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0]",
+          "pt": "O quadro ",
+          "en": "Table ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "O quadro ",
+              "en": "Table ",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[2]",
+          "pt": " do relatório do Orçamento, as parcerias público-privadas, ",
+          "en": " of the Budget report, the public-private partnerships, ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " do relatório do Orçamento, as parcerias público-privadas, ",
+              "en": " of the Budget report, the public-private partnerships, ",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[4]",
+          "pt": ", em milhões de euros.",
+          "en": ", in million euros.",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ", em milhões de euros.",
+              "en": ", in million euros.",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[0]",
+          "pt": "Os encargos brutos do setor rodoviário são ",
+          "en": "Gross charges for the road sector are ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "Os encargos brutos do setor rodoviário são ",
+              "en": "Gross charges for the road sector are ",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[2]",
+          "pt": "; as receitas, ",
+          "en": "; revenue, ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "; as receitas, ",
+              "en": "; revenue, ",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[4]",
+          "pt": "; os encargos líquidos, ",
+          "en": "; net charges, ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "; os encargos líquidos, ",
+              "en": "; net charges, ",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[6]",
+          "pt": ". O total líquido impresso para todos os setores das parcerias é ",
+          "en": ". The printed net total for all partnership sectors is ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ". O total líquido impresso para todos os setores das parcerias é ",
+              "en": ". The printed net total for all partnership sectors is ",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[8]",
+          "pt": ". ",
+          "en": ". ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ". ",
+              "en": ". ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].paragrafo[10]",
+          "pt": " O quadro diz que os valores são de caixa e, quando aplicável, incluem o IVA.",
+          "en": " The table says the values are on a cash basis and, where applicable, include VAT.",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " O quadro diz que os valores são de caixa e, quando aplicável, incluem o IVA.",
+              "en": " The table says the values are on a cash basis and, where applicable, include VAT.",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].titulo",
+          "pt": "A comparação",
+          "en": "The comparison",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "A comparação",
+              "en": "The comparison",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[0]",
+          "pt": "Nenhum dos quatro valores acima é igual a ",
+          "en": "None of the four values above equals ",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "Nenhum dos quatro valores acima é igual a ",
+              "en": "None of the four values above equals ",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[1].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[2]",
+          "pt": ".",
+          "en": ".",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].titulo",
+          "pt": "A conclusão",
+          "en": "The conclusion",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "A conclusão",
+              "en": "The conclusion",
+              "classe": "leitura",
+              "sobre": "O excerto integral não contém ano nem qualifica o encargo como bruto ou líquido.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[0]",
+          "pt": "O excerto citado não diz se o encargo é bruto ou líquido, nem a que ano se refere.",
+          "en": "The quoted excerpt does not say whether the charge is gross or net, nor which year it refers to.",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "O excerto citado não diz se o encargo é bruto ou líquido, nem a que ano se refere.",
+              "en": "The quoted excerpt does not say whether the charge is gross or net, nor which year it refers to.",
+              "classe": "leitura",
+              "sobre": "O excerto integral não contém ano nem qualifica o encargo como bruto ou líquido.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[4].titulo",
+          "pt": "A recomendação",
+          "en": "The recommendation",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "A recomendação",
+              "en": "The recommendation",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[4].conteudo[0].paragrafo[0]",
+          "pt": "Quem cita um encargo com as parcerias diz o quadro, o ano e se é bruto ou líquido.",
+          "en": "Whoever quotes a charge for the partnerships states the table, the year and whether it is gross or net.",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "Quem cita um encargo com as parcerias diz o quadro, o ano e se é bruto ou líquido.",
+              "en": "Whoever quotes a charge for the partnerships states the table, the year and whether it is gross or net.",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[5].titulo",
+          "pt": "A opinião do lugar de direção",
+          "en": "The editorial seat's opinion",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "A opinião do lugar de direção",
+              "en": "The editorial seat's opinion",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[5].conteudo[0].paragrafo[0]",
+          "pt": "Uma afirmação com um número que o quadro não imprime pede a conta que lhe deu origem; até ela ser mostrada, o leitor fica com os valores do quadro, os brutos, as receitas e os líquidos, sem escolher nenhum deles como o sentido da afirmação.",
+          "en": "A statement with a number the table does not print calls for the calculation behind it; until it is shown, the reader is left with the table's values, gross, revenue and net, without picking any of them as the meaning of the statement.",
+          "ramo": null,
+          "partes": [
+            {
+              "pt": "Uma afirmação com um número que o quadro não imprime pede a conta que lhe deu origem; até ela ser mostrada, o leitor fica com os valores do quadro, os brutos, as receitas e os líquidos, sem escolher nenhum deles como o sentido da afirmação.",
+              "en": "A statement with a number the table does not print calls for the calculation behind it; until it is shown, the reader is left with the table's values, gross, revenue and net, without picking any of them as the meaning of the statement.",
+              "classe": "leitura",
+              "sobre": "Leitura do excerto da afirmação e dos quatro valores impressos; a comparação é refeita pela célula, e a recomendação e o juízo são editoriais.",
+              "apoios": [
+                {
+                  "linha": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+                  "campo": "excerpt",
+                  "literal": "Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias"
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nencargos brutos       1 230   1 152    965     863     728     656      474     349        336     275     189     162     183       50\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-receitas-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nreceitas           287     263     260     215     948     265      230     195        196     198     185     149     162        2\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nRodoviário             942     889     705     648    (220)    391      244     154        140      77       4      13      22       49\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                },
+                {
+                  "linha": "oe-2027-ppp-total-encargos-liquidos-2027",
+                  "campo": "excerpt",
+                  "literal": "Setores       2026    2027    2028    2029    2030    2031    2032     2033       2034    2035    2036    2037    2038     2039\nTotal                 1 346   1 438   1 169    925     152     677      489     370        351     285     209     215     204      220\n\n1 — Os valores são apresentados em milhões de euros, numa ótica de fluxo de caixa e, quando aplicável, incluem imposto sobre o valor acrescentado (IVA) à taxa legal em vigor. 2 — Os valores de 2026 correspondem a estimativas para o fecho do ano, a preços do ano corrente. 3 — Os valores futuros estão a preços constantes de 2027."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

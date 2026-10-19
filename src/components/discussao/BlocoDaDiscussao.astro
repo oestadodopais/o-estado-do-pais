@@ -1,0 +1,11 @@
+---
+import { DISCUSSAO } from '../../data/discussao.mjs';
+import { itensResolvidos, portaDoItem } from '../../lib/discussao.mjs';
+import { routePath } from '../../lib/routes.mjs';
+interface Props { lang?: 'pt' | 'en'; }
+const { lang = 'pt' } = Astro.props;
+---
+<section class="pp-discussao" data-discussao-inicio aria-labelledby="discussao-inicio">
+  <h2 class="pp-sec-k" id="discussao-inicio"><a href={routePath('discussao', lang)} data-voz>{DISCUSSAO.titulo[lang]} →</a></h2>
+  <ul class="discussao-sumario">{itensResolvidos(lang).map(e => <li><a href={portaDoItem(e.slug, lang)} data-discussao-porta={e.slug}>{e.tituloTexto}</a></li>)}</ul>
+</section>

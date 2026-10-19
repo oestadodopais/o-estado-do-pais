@@ -1,0 +1,21 @@
+{
+  "observado_em": "2026-10-19T16:12:51.880156+00:00",
+  "inicio_declarado": "2026-10-19T15:36:07Z",
+  "dono_e_marcador": true,
+  "pid": 85900,
+  "sha256": "a85b304bbe45848c0a8d3b3efd9b3db04ee5602e2d671b23a2e5016f578b484e",
+  "mtime": 1792426365.203008,
+  "conferencia_do_processo": "PermissionError ao consultar a existência com sinal 0; nenhum sinal de interrupção enviado",
+  "acao": "aguardar; tranca intocada",
+  "segunda_observacao": {
+    "observado_em": "2026-10-19T16:17:45.455582+00:00",
+    "sha256": "a85b304bbe45848c0a8d3b3efd9b3db04ee5602e2d671b23a2e5016f578b484e",
+    "mtime": 1792426659.805198
+  },
+  "ensaio_noclobber": {
+    "codigo": 1,
+    "conteudo_preservado": true,
+    "mtime_preservado": true,
+    "alvo": "ficheiro temporário isolado; não a tranca real"
+  }
+}

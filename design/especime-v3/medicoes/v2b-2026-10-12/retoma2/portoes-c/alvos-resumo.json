@@ -1,0 +1,61 @@
+{
+  "quando": "2026-10-19T18:19:59.926Z",
+  "larguras": [
+    390,
+    641,
+    768,
+    1023,
+    1280
+  ],
+  "graves": 0,
+  "axe": {},
+  "leis": {
+    "comMarca": 944,
+    "emTranscricao": 5,
+    "semMarca": 0,
+    "paginasEn": 3992,
+    "paginasComDiploma": 944,
+    "paginasSemDiploma": 3048,
+    "documentosAlojados": 3,
+    "especies": [],
+    "exemplos": []
+  },
+  "plantas_da_espera": [
+    {
+      "nome": "folha atrasada reduz o alvo",
+      "celula": "H16",
+      "mensagem": "7988 página(s) do dist/: 7963 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 25 sem ela (e 25 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 370 de 370 passagens com uma porta no seu marco; 74 porta(s) a 390 e 74 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 1 abaixo de 44 px (1× button.sugestoes-enviar «Enviar a sugestão» · 88×32 de toque (caixa 127.3×30)) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade",
+      "folha_servida": true,
+      "mordeu": true
+    },
+    {
+      "nome": "alvo abaixo de 44 px",
+      "celula": "H16",
+      "mensagem": "7988 página(s) do dist/: 7963 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 25 sem ela (e 25 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 370 de 370 passagens com uma porta no seu marco; 74 porta(s) a 390 e 74 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 1 abaixo de 44 px (1× button.sugestoes-enviar «Enviar a sugestão» · 88×32 de toque (caixa 127.3×30)) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade",
+      "folha_servida": true,
+      "mordeu": true
+    },
+    {
+      "nome": "etiqueta cortada depois da primeira linha",
+      "celula": "H14",
+      "mensagem": "370 passagens de todas as famílias com o rótulo de IA no topo: 1 sem linha única, corpo de 12 px ou posição antes do título (sugestoes/pt@390)",
+      "folha_servida": true,
+      "mordeu": true
+    }
+  ],
+  "relatorio_integral": {
+    "ficheiro": "<temporario>/v2b-retoma2/portoes-c/alvos.json",
+    "sha256": "a8178f37cee6381f36793535527b1bc38947aa953c7fd7f143cf533711a03c27",
+    "bytes": 33019584
+  },
+  "contagens_estruturais": {
+    "rotas": 74,
+    "celulas": 14,
+    "paginas": 370,
+    "buraco": 124,
+    "alvos_maus": 13433,
+    "caixas": 16,
+    "plantas": 0
+  },
+  "nota": "As contagens estruturais não são contagens de falhas do portão. O código e a decisão do portão estão no verify.json e no verify.log da mesma corrida. O relatório integral fica no disco."
+}

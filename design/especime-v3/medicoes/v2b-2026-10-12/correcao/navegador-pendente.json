@@ -1,0 +1,19 @@
+{
+  "estado": "pendente",
+  "motivo": "O escrivão disponível aceita somente os pedidos portoes (build, verify e typecheck completos) e capturas. O mandato proíbe a corrida completa e o navegador dentro da sandbox. Foi pedida a execução seletiva; não há resposta nesta medição.",
+  "ficheiro_lido": "scripts/leituras/escrivao.py",
+  "pedidos_disponiveis": [
+    "portoes",
+    "capturas"
+  ],
+  "nao_executados": [
+    "check:frases-compostas com cliques reais a 390 px",
+    "check:primeira completo, incluindo os módulos com navegador",
+    "check:alvos sobre a discussão"
+  ],
+  "nao_substituidos_por": [
+    "capturas",
+    "verificação estática da primeira página",
+    "altura do recorte da porta"
+  ]
+}

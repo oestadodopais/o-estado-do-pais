@@ -6724,7 +6724,9 @@ for (const file of ficheirosHtml(DIST)) {
     const unidadeDeMapaDosLugares = rota?.key === 'lugares' && campo === 'unit' && mapaDaUnidade !== null &&
       (el.closest('thead') !== null || el.closest('.forma-mapa-unidade') !== null) &&
       mapaDaUnidade.querySelectorAll('tbody [data-claim]').some((n) => n.getAttribute('data-claim') === id);
-    if (!paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {
+    const campoDaDiscussao = rota?.key === 'discussao' && ['excerpt', 'attributed_to', 'ressalva'].includes(String(campo)) &&
+      el.closest('[data-discussao]') !== null && el.closest('[data-discussao-literal]')?.getAttribute('data-discussao-literal') === campo;
+    if (!campoDaDiscussao && !paginaDoLivro && !unidadeDeCartaoDoLugar && !unidadeDeCartaoDoPais && !unidadeDeCorrecaoDoPais && !nomeDeCorrecao && !campoDeBloco && !unidadeDeMapaDosLugares) {
       err(
         `data-linha-claim="${id}" numa página que não é do livro-razão. ` +
           `Esta marca é dos campos de uma linha, na página dessa linha ou no índice.\n` +

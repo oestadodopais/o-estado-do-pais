@@ -1,0 +1,10 @@
+{
+  "pedido": "pedido-20261019T170220-75618.json",
+  "processo": 75632,
+  "identidade_conferida": true,
+  "instante": "2026-10-19T17:51:51+00:00",
+  "sinal": "SIGTERM",
+  "razao": "Saída ordenada antes do teto de cinquenta minutos, depois da longa espera; a L1 já exige nova corrida.",
+  "enviado": false,
+  "recusa": "[Errno 1] Operation not permitted"
+}

@@ -1,0 +1,139 @@
+{
+  "cabeca": "f3ac9261221d5f3c1b0b6a248137d4093d53b078",
+  "registos": [
+    {
+      "nome": "build",
+      "comando": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "codigo": 0,
+      "linhas": 14093,
+      "registo_original_sha256": "40b0757876a5a9fd90030dfa70f387d04b6ad5414f11fee87fef2f8109a0c8d9",
+      "ultimas_linhas": [
+        "  mordeu · uma condição falsa numa cópia das declarações (código 0)",
+        "  mordeu · um resolvedor que recusa tudo (código 1)",
+        "  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)",
+        "",
+        "> o-estado-do-pais@0.1.0 check:discussao",
+        "> node tests/discussao/itens.mjs",
+        "",
+        "V2B · 0 erro(s), 28 de 28 plantas, 38 portas de integração."
+      ]
+    },
+    {
+      "nome": "itens",
+      "comando": [
+        "node",
+        "tests/discussao/itens.mjs",
+        "--json",
+        "design/especime-v3/medicoes/v2b-2026-10-12/correcao/itens.json"
+      ],
+      "codigo": 0,
+      "linhas": 1,
+      "registo_original_sha256": "f64b62d32564e576f85710359f00ced591330960b2382023fc7a91fe3ea1f354",
+      "ultimas_linhas": [
+        "V2B · 0 erro(s), 28 de 28 plantas, 38 portas de integração."
+      ]
+    },
+    {
+      "nome": "palavras",
+      "comando": [
+        "npm",
+        "run",
+        "check:palavras"
+      ],
+      "codigo": 0,
+      "linhas": 5,
+      "registo_original_sha256": "01f6753c1083d49d554b8662e33a6c81516200404d224fe339bd995eb683cccd",
+      "ultimas_linhas": [
+        "",
+        "> o-estado-do-pais@0.1.0 check:palavras",
+        "> node tests/voz/palavras-proibidas.mjs --prova",
+        "",
+        "  palavras ✓ 23 de 23 plantas vistas (14 palavras, 9 buracos da superfície) · 7989 página(s) medidas em repouso, 0 achados · 59 página(s) com a superfície estreitada por rota declarada"
+      ]
+    },
+    {
+      "nome": "html",
+      "comando": [
+        "npm",
+        "run",
+        "gate:html"
+      ],
+      "codigo": 0,
+      "linhas": 608,
+      "registo_original_sha256": "ecb18cf79fa47f6d0e975e64e0733a3bb018d50187566d71962235c32922f41e",
+      "ultimas_linhas": [
+        "    · a afirmação \"vinhais-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"viseu-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"vizela-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "    · a afirmação \"vouzela-limite-divida-dgal-2024\" está no livro-razão e tem página própria, mas nenhuma outra página a cita.",
+        "",
+        "  ✓ nenhum algarismo sem proveniência nas páginas construídas.",
+        "    prova · 92 chaves reconferidas pelo portão · 96 números marcados nas páginas · 2 lista(s) de nomes recontada(s) · 300925 ligações internas (0 relativas, 16457 âncoras) · 80 recortes · 6 ficheiros alojados · 10 contas sobre ficheiros não alojados (12 com cópia arquivada) · 894 páginas de série · 1876 cartões de partilha (10652 valores recalculados, 1876 nomeados por páginas) · 2 manifestos (7 ícones medidos na cabeça do PNG) · escrito em /prova.json",
+        ""
+      ]
+    },
+    {
+      "nome": "navegacao",
+      "comando": [
+        "npm",
+        "run",
+        "check:navegacao"
+      ],
+      "codigo": 0,
+      "linhas": 645,
+      "registo_original_sha256": "4d55f44174a9418ddcd20e3ae7d8ab4675707f7db044b12fa8280cf8ad64afff",
+      "ultimas_linhas": [
+        "    {",
+        "      \"nome\": \"r2-base-do-indice-trocada\",",
+        "      \"celula\": \"FC5\",",
+        "      \"mordeu\": true,",
+        "      \"queixa\": \"FC5 · /municipios/evora/ · poderDeCompra: a comparação diz «Está acima da média de Portugal (101).» e a recomposição dá «Está acima da média de Portugal (100).»\"",
+        "    }",
+        "  ]",
+        "}"
+      ]
+    },
+    {
+      "nome": "primeira-estatica",
+      "comando": [
+        "node",
+        "tests/inicio/primeira-pagina.mjs",
+        "--prova",
+        "--json",
+        "design/especime-v3/medicoes/v2b-2026-10-12/correcao/primeira-estatica.json"
+      ],
+      "codigo": 0,
+      "linhas": 2,
+      "registo_original_sha256": "0928aa5f8f75734bc24a7a3a592f0385e39fe1e16630371b863f36abe4e46668",
+      "ultimas_linhas": [
+        "check:primeira · auditoria: 81 folhas, 128 partes (76 diz, 24 conta, 28 liga), 103 apoios, 14 algarismos · 16 páginas, 10 blocos rendidos e recontados · entradas: 0 cartões nos temas, 94 nas entradas, 0 fora por declaração, 16 páginas das entradas no mapa do sítio · 76 de 76 plantas mordidas",
+        "check:primeira · todas as conferências a 0."
+      ]
+    },
+    {
+      "nome": "l1",
+      "comando": [
+        "node",
+        "scripts/check-lugar.mjs"
+      ],
+      "codigo": 0,
+      "linhas": 40,
+      "registo_original_sha256": "ef0300d194225654f05d3dec063da55a7826a71d686f1d0158d6dc1f6bb7613f",
+      "ultimas_linhas": [
+        "  §7.4 e 8.6, o que a régua leu: estudo 34 · texto 17 · indice 2 · edicoes 34 · linhas 22",
+        "  as exceções, e quantas vezes cada uma foi precisa:",
+        "      · «peça»     1 · a política de IA copia a POLITICA-DA-AUTONOMIA.md e fica como a fonte a escreveu",
+        "      · «trabalho»    37 · «trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo",
+        "      · «trabalho»     1 · o grupo de trabalho é o publicador identificado do relatório das pensões, não o nome de um estudo",
+        "      · «indicador»     1 · «indicador» a nomear o campo que o publicador dá, e não uma medida da casa",
+        "      · «indicador»    26 · «indicador» dentro do endereço da API do INE (`json_indicador`), que é um caminho da fonte e não uma palavra da casa",
+        "check:lugar · verde."
+      ]
+    }
+  ],
+  "limite": "Resumos dos registos completos guardados na pasta temporária; os códigos foram lidos dos ficheiros .codigo."
+}

@@ -1,0 +1,24 @@
+{
+  "comando": "RESEARCHHUB_DIR=<motor> npm run check:cruzamento -- --with-origin",
+  "codigo": 1,
+  "registo": "cruzamento.log",
+  "cabeca_motor": "101887c7621b314e07f12acedcf78829e0a3e745",
+  "divergencias": [
+    {
+      "ficheiro": "penalizacao-legal-um-ano-antecipacao-2026.yml",
+      "origem": "publisher/recortes/penalizacao-legal-um-ano-antecipacao-2026.yml",
+      "registo": "6d9c0cf390e73c3e0e68f6effbaf6e01b49b1c8dd03de847c3b40384d8542049",
+      "motor": "47e45757e6bbc0f9d3012eb24b7d4320080e9dfec2fb100c7ef4389c293cc5dd",
+      "motor_anterior": "6d9c0cf390e73c3e0e68f6effbaf6e01b49b1c8dd03de847c3b40384d8542049",
+      "origem_anterior_confere": true
+    },
+    {
+      "ficheiro": "pensao-rp4n.json",
+      "origem": "content/13 Dominios/pensao-rp4n.json",
+      "registo": "e27a34453a0d8c92a8548b2067f247a23e64195934e721238cca70fc69c44108",
+      "motor": "3ebe8c2d6fc96479d795fbf7d5dbdf044ecb575e5cd87dd6cd0e761def3d5684",
+      "motor_anterior": "e27a34453a0d8c92a8548b2067f247a23e64195934e721238cca70fc69c44108",
+      "origem_anterior_confere": true
+    }
+  ]
+}

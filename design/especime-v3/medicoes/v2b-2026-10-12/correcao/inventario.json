@@ -1,0 +1,82 @@
+{
+  "retiradas": [
+    "Há duas diferenças de perímetro: a despesa total ou a efetiva, e a despesa com ou sem o PRR. Para ver a diferença que o PRR faz, compara-se a variação da despesa efetiva consolidada com a da despesa efetiva consolidada sem o PRR.",
+    "Nenhum dos quatro valores acima é igual a milhões de euros.",
+    "« », , num documento publicado pela RTP, a . No mesmo dia, publicou: « ».",
+    "None of the four values above equals million euros.",
+    "There are two differences of scope: total or effective expenditure, and expenditure with or without the RRP. To see the difference the RRP makes, compare the change in consolidated effective expenditure with the change in consolidated effective expenditure without the RRP.",
+    "« », , in a document published by RTP, on . On the same day, published: « »."
+  ],
+  "novas": [
+    {
+      "rota": "/en/under-discussion",
+      "texto": "In consolidated effective expenditure is the same with and without the RRP, and ; the difference the RRP makes is all in , which is why one line falls and the other rises.",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/en/under-discussion",
+      "texto": "None of the four values above equals million euros .",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/en/under-discussion",
+      "texto": "RTP&#39;s figures, the fall, the amount and the difference, match the table&#39;s line for total consolidated expenditure: from in to in , a change of % .",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/en/under-discussion",
+      "texto": "The minister&#39;s figure coincides with the change in the line for consolidated effective expenditure without the RRP, % ; the table does not say which calculation he made.",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/en/under-discussion",
+      "texto": "There are two differences of scope: total or effective expenditure, and expenditure with or without the RRP, the Recovery and Resilience Plan. To see the difference the RRP makes, compare the change in consolidated effective expenditure with the change in consolidated effective expenditure without the RRP.",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/en/under-discussion",
+      "texto": "What consolidated effective expenditure is →",
+      "classe": "navegacao"
+    },
+    {
+      "rota": "/en/under-discussion",
+      "texto": "« », , in a document published by RTP, on . On the same day, published: « »",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/o-que-se-discute",
+      "texto": "Em a despesa efetiva consolidada é a mesma com e sem o PRR, e ; a diferença que o PRR faz está toda em , e é por isso que uma linha desce e a outra sobe.",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/o-que-se-discute",
+      "texto": "Há duas diferenças de perímetro: a despesa total ou a efetiva, e a despesa com ou sem o PRR, o Plano de Recuperação e Resiliência. Para ver a diferença que o PRR faz, compara-se a variação da despesa efetiva consolidada com a da despesa efetiva consolidada sem o PRR.",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/o-que-se-discute",
+      "texto": "Nenhum dos quatro valores acima é igual a milhões de euros .",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/o-que-se-discute",
+      "texto": "O número do ministro coincide com a variação da linha da despesa efetiva consolidada sem o PRR, % ; o quadro não diz que conta ele fez.",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/o-que-se-discute",
+      "texto": "O que é a despesa efetiva consolidada →",
+      "classe": "navegacao"
+    },
+    {
+      "rota": "/o-que-se-discute",
+      "texto": "Os números da RTP, a queda, o montante e a diferença, coincidem com a linha da despesa total consolidada do quadro: de em para em , uma variação de % .",
+      "classe": "conteudo"
+    },
+    {
+      "rota": "/o-que-se-discute",
+      "texto": "« », , num documento publicado pela RTP, a . No mesmo dia, a publicou: « »",
+      "classe": "conteudo"
+    }
+  ]
+}

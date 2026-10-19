@@ -469,6 +469,7 @@ const ROTAS_COM_ORIGEM_LIDA = new Set([
   'explicacoes',
   'leituraDaSemana',
   'explicacao',
+  'discussao',
 ]);
 const MEDIDA_DECLARADA = '[data-medida-nome],[data-medida-unidade]';
 const ROTAS_DO_INVENTARIO = new Set([
@@ -574,6 +575,7 @@ const ROTAS_DO_INVENTARIO = new Set([
   'explicacoes',
   'leituraDaSemana',
   'explicacao',
+  'discussao',
 ]);
 
 /**

@@ -1,0 +1,43 @@
+{
+  "pedido": "sh scripts/leituras/portoes-pelo-escrivao.sh <temporario>/v2b-portoes-partida motor",
+  "codigo_agregado": 0,
+  "cabeca_sitio": "9b10c3f4ad381f98b32ece7d2935329d4f0816a7",
+  "cabeca_motor": "101887c7621b314e07f12acedcf78829e0a3e745",
+  "comandos": {
+    "npm run build": {
+      "estado": "passou na cabeça de partida",
+      "codigo": 0,
+      "registo": "portoes-partida/build.log"
+    },
+    "npm run verify": {
+      "estado": "passou na cabeça de partida",
+      "codigo": 0,
+      "registo": "portoes-partida/verify.log"
+    },
+    "npm run typecheck": {
+      "estado": "passou na cabeça de partida",
+      "codigo": 0,
+      "registo": "portoes-partida/typecheck.log"
+    },
+    "python3 -m core.gate": {
+      "estado": "passou na cabeça de partida",
+      "codigo": 0,
+      "registo": "portoes-partida/motor.log"
+    },
+    "RESEARCHHUB_DIR=<motor> npm run check:series": {
+      "estado": "passou com a origem",
+      "codigo": 0,
+      "registo": "series.log"
+    },
+    "RESEARCHHUB_DIR=<motor> npm run check:cruzamento -- --with-origin": {
+      "estado": "falhou na cabeça de partida",
+      "codigo": 1,
+      "registo": "cruzamento.log"
+    },
+    "medir-partida.py": {
+      "estado": "passou, incluindo as provas da recusa esperada",
+      "codigo": 0,
+      "registo": "medicao.log"
+    }
+  }
+}

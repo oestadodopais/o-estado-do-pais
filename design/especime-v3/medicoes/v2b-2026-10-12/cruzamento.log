@@ -1,0 +1,33 @@
+
+> o-estado-do-pais@0.1.0 check:cruzamento
+> node scripts/check-cruzamento.mjs --with-origin
+
+
+[90m  cruzamentos · 3104 linha(s) de origem externa em 8 registo(s) · 3104 conferida(s) contra o motor · 2155 com reconferência de programa acrescentada (3077 entrada(s)) · 5 planta(s) vista(s)[0m
+[90m  rótulos da fonte · 2080 de 3229 linha(s) com "name", todas vindas do motor · 3 planta(s) vista(s)[0m
+[90m  séries · 35 linha(s) de série em 1 registo(s) · 35 conferida(s) contra o motor · 4 planta(s) vista(s)[0m
+[90m  cruzamentos · 13 ficheiro(s) inteiro(s) em 8 registo(s) · 13 conferido(s) contra o motor · 5 item(ns) da agenda reconferidos[0m
+[90m    agua-nao-faturada: 1[0m
+[90m    avaliacao-economica-regional-de-portugal-2026: 8[0m
+[90m    concelhos-2026: 2767[0m
+[90m    dominios-2026: 40[0m
+[90m    evora-contas-da-camara-2010-2025: 33[0m
+[90m    evora-economia-e-dinheiro-publico-de-fora-da-camara: 17[0m
+[90m    evora-quem-governou-a-camara-2009-2025: 19[0m
+[90m    oe-2026: 201[0m
+[90m    oe-2027: 18[0m
+
+[33m  1 aviso(s):[0m
+[90m    · o ledger.json de "20 Orcamento do Estado" já não é o que atravessou. Por si só isto não quer dizer nada: o ficheiro traz um "built_at" que muda a cada reconstrução. O que prende é o resumo de cada LINHA — se nenhuma foi nomeada acima, nenhuma mudou.[0m
+
+[31m  A TRAVESSIA NÃO CONFERE — 2 erro(s):[0m
+
+    [31m✗[0m --with-origin: [pensao-rp4n.json] penalizacao-legal-um-ano-antecipacao-2026.yml ← publisher/recortes/penalizacao-legal-um-ano-antecipacao-2026.yml já não é o ficheiro do motor que atravessou.
+        registo: 6d9c0cf390e73c3e0e68f6effbaf6e01b49b1c8dd03de847c3b40384d8542049
+        motor:   47e45757e6bbc0f9d3012eb24b7d4320080e9dfec2fb100c7ef4389c293cc5dd
+        Volte a cruzar: python3 publisher/export_agenda.py --destino <sítio>/src/data/
+    [31m✗[0m --with-origin: [pensao-rp4n.json] pensao-rp4n.json ← content/13 Dominios/pensao-rp4n.json já não é o ficheiro do motor que atravessou.
+        registo: e27a34453a0d8c92a8548b2067f247a23e64195934e721238cca70fc69c44108
+        motor:   3ebe8c2d6fc96479d795fbf7d5dbdf044ecb575e5cd87dd6cd0e761def3d5684
+        Volte a cruzar: python3 publisher/export_agenda.py --destino <sítio>/src/data/
+

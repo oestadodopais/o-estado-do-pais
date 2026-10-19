@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import FraseDaExplicacao from '../components/explicacoes/FraseDaExplicacao.astro';
+import { DISCUSSAO } from '../data/discussao.mjs';
+import { itensResolvidos, portaDoItem } from '../lib/discussao.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { SITE_NAME } from '../../site.config.mjs';
+import '../styles/explicacoes.css';
+import '../styles/discussao.css';
+interface Props { lang?: 'pt' | 'en'; }
+const { lang = 'pt' } = Astro.props;
+const itens = itensResolvidos(lang);
+---
+<Base lang={lang} path={routePath('discussao',lang)} title={`${DISCUSSAO.titulo[lang]} · ${SITE_NAME}`} description={DISCUSSAO.ambito[lang]}>
+  <div class="discussao">
+    <h1 class="explicacao-titulo">{DISCUSSAO.titulo[lang]}</h1>
+    <p class="explicacao-p discussao-ambito">{DISCUSSAO.ambito[lang]}</p>
+    <ul class="discussao-sumario">{itens.map(e => <li><a href={portaDoItem(e.slug,lang)} data-discussao-porta={e.slug}>{e.tituloTexto}</a></li>)}</ul>
+    {itens.map(e => <article class="discussao-item" id={e.slug} data-discussao={e.slug}>
+      <h2 class="discussao-titulo" id={`${e.slug}-titulo`} data-discussao-titulo>{e.tituloTexto}</h2>
+      {e.seccoes.map(sec => <section class="discussao-seccao" data-discussao-parte={sec.id} aria-labelledby={`${e.slug}-titulo ${e.slug}-${sec.id}`}>
+        <h3 class="discussao-rotulo" id={`${e.slug}-${sec.id}`}>{sec.titulo}</h3>
+        {sec.blocos.map(b => b.tipo === 'paragrafo' && <p class="explicacao-p" data-discussao-paragrafo={b.caminho}><FraseDaExplicacao partes={b.pedacos} lang={lang} /></p>)}
+        {e.slug === 'saude-no-orcamento' && sec.id === 'fontes' && <p class="regra-portas discussao-porta"><a data-discussao-explicacao data-voz href={lang === 'pt' ? '/explicacoes/dinheiro-do-estado-2026/' : '/en/explainers/dinheiro-do-estado-2026/'}>{lang === 'pt' ? 'O que é a despesa efetiva consolidada →' : 'What consolidated effective expenditure is →'}</a></p>}
+      </section>)}
+    </article>)}
+  </div>
+</Base>
+
+<style>
+  .discussao-seccao :global(.claim-sufixo) { white-space: pre; }
+</style>

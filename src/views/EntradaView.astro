@@ -1,6 +1,7 @@
 ---
 /** N1: uma página por assunto, com os cartões e os estudos próprios. */
 import Base from '../layouts/Base.astro';
+import PortasDaDiscussao from '../components/discussao/PortasDaDiscussao.astro';
 import EstudoDaLista from '../components/inicio/EstudoDaLista.astro';
 import CartaoDaMedida from '../components/CartaoDaMedida.astro';
 import ValorIrmao from '../components/ValorIrmao.astro';
@@ -48,6 +49,7 @@ const referencias = ['E2', 'E3', 'E4'].map(medidaPelaChave);
           </div>
         ))}
       </div>
+      <PortasDaDiscussao lang={lang} linhas={seccao.cartoes} />
     </section>
   ))}
 

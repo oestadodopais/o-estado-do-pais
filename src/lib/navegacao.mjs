@@ -37,14 +37,14 @@
  * sem transbordo. As caixas, as capturas e os seus SHA-256 estão em
  * `design/especime-v3/medicoes/h4-2026-10-06/menu-a-390.json`, antes e depois da mudança. */
 export const ROTAS_NAV = ['home', 'lugares', 'temas', 'estudos', 'explicacoes', 'uniaoEuropeia', 'sobre'];
-export const ROTAS_RODAPE = ['home', 'livro', 'metodo', 'correcoes', 'agenda', 'explicacoes', 'uniaoEuropeia', 'indice'];
+export const ROTAS_RODAPE = ['home', 'livro', 'metodo', 'correcoes', 'agenda', 'explicacoes', 'discussao', 'uniaoEuropeia', 'indice'];
 export const ROTAS_SOBRE = ['metodo', 'correcoes', 'agenda', 'livro'];
 export const ETIQUETA_NAV = {
   home: 'inicio', lugares: 'lugares', temas: 'temas', municipios: 'municipios',
   regioes: 'regioes', distritos: 'distritos', areas: 'areas', dominios: 'dominios',
   uniaoEuropeia: 'uniaoEuropeia', estudos: 'estudos', livro: 'livro',
   agenda: 'agenda', metodo: 'metodo', correcoes: 'correcoes', sobre: 'sobre',
-  indice: 'indice', explicacoes: 'explicacoes',
+  indice: 'indice', explicacoes: 'explicacoes', discussao: 'discussao',
 };
 /** As etiquetas do menu do cabeçalho: as do rodapé, com «União Europeia» / «European Union» na porta da União. */
 export const ETIQUETA_NO_MENU = { ...ETIQUETA_NAV, uniaoEuropeia: 'uniaoEuropeiaNoMenu' };

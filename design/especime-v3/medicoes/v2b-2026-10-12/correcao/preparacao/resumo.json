@@ -1,0 +1,24 @@
+{
+  "cabeca_antes_da_correcao_visual": "67b99bc30778dd4fa871204fec8c21cb551fe0d6",
+  "codigos": {
+    "palavras.codigo": 0,
+    "itens-preparacao.codigo": 0,
+    "palavras-preparacao.codigo": 1,
+    "l1.codigo": 0,
+    "navegacao.codigo": 0,
+    "html.codigo": 0,
+    "capturas-medidas.codigo": 0,
+    "medicao-html.codigo": 0,
+    "primeira-estatica-preparacao.codigo": 0,
+    "build-preparacao.codigo": 0,
+    "capturas.codigo": 0,
+    "primeira-estatica.codigo": 0,
+    "itens.codigo": 0,
+    "build.codigo": 0
+  },
+  "falha_da_primeira_corrida_de_palavras": "«buraco · o motivo inglês de uma correção de uma série é prosa deste projeto, e o nome na fonte não é (RP3-b)»: não há página em dist/ para plantar",
+  "limite": "A primeira corrida coincidiu com uma reconstrução de dist; a corrida estável passou. Nenhum destes códigos substitui os da cabeça final.",
+  "falha_visual": "O espaço no início do sufixo era colapsado no ecrã. A comparação das parcerias mostrava o número colado à unidade.",
+  "capturas": "design/especime-v3/capturas/v2b-2026-10-12/correcao-preparacao/capturas.json",
+  "capturas_sha256": "ba1b43fa850dc82d497c88635e55f56162c5eb32497956f594c18ae8999ddd9a"
+}

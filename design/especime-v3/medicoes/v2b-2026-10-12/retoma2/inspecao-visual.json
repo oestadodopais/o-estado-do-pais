@@ -1,0 +1,49 @@
+{
+  "metodo": "Leitura das imagens pelo visualizador, depois da captura pelo escrivão.",
+  "ficheiros_inspecionados": [
+    "discussao-pt-390-saude-no-orcamento.png",
+    "discussao-pt-390-parcerias-rodoviarias.png",
+    "discussao-pt-768-saude-no-orcamento.png",
+    "discussao-pt-768-parcerias-rodoviarias.png",
+    "discussao-pt-1024-saude-no-orcamento.png",
+    "discussao-pt-1024-parcerias-rodoviarias.png",
+    "discussao-pt-1280-saude-no-orcamento.png",
+    "discussao-pt-1280-parcerias-rodoviarias.png",
+    "discussao-pt-1600-saude-no-orcamento.png",
+    "discussao-pt-1600-parcerias-rodoviarias.png",
+    "discussao-en-390-saude-no-orcamento.png",
+    "discussao-en-390-parcerias-rodoviarias.png",
+    "discussao-en-768-saude-no-orcamento.png",
+    "discussao-en-768-parcerias-rodoviarias.png",
+    "discussao-en-1024-saude-no-orcamento.png",
+    "discussao-en-1024-parcerias-rodoviarias.png",
+    "discussao-en-1280-saude-no-orcamento.png",
+    "discussao-en-1280-parcerias-rodoviarias.png",
+    "discussao-en-1600-saude-no-orcamento.png",
+    "discussao-en-1600-parcerias-rodoviarias.png",
+    "primeira-pt-390-bloco.png",
+    "primeira-pt-1280-bloco.png",
+    "primeira-en-390-bloco.png",
+    "primeira-en-1280-bloco.png",
+    "orcamento-pt-390-por-funcao.png",
+    "orcamento-pt-1280-por-funcao.png",
+    "orcamento-en-390-por-funcao.png",
+    "orcamento-en-1280-por-funcao.png",
+    "discussao-pt-390.png",
+    "discussao-en-1280.png",
+    "primeira-pt-390.png",
+    "primeira-en-1280.png",
+    "oe-2027-ppp-total-encargos-liquidos-2027-pt-390-integracao.png",
+    "oe-2027-ppp-total-encargos-liquidos-2027-en-1280-integracao.png"
+  ],
+  "observacoes": [
+    "Nos dois itens, títulos, seis rótulos, citações, valores e selos visíveis, sem cortes nem sobreposições observados nas cinco larguras e nas duas edições.",
+    "Os blocos da primeira página e as portas da explicação estão visíveis e quebram as linhas dentro da coluna.",
+    "A página completa mantém sumário, separação dos itens e rodapé. Na primeira página o bloco fica depois dos blocos existentes e antes das portas dos temas.",
+    "A porta no recibo do total das parcerias aparece no fim da prova."
+  ],
+  "limites": [
+    "Não houve inspeção visual individual de todos os PNG. Os sha256 e as dimensões são conferidos automaticamente em todos.",
+    "As imagens livro-razao-pt-390-integracao.png e livro-razao-en-1280-integracao.png foram abertas, mas a altura da lista torna a redução do visualizador ilegível. Não se afirma uma inspeção visual das portas nesse recorte; presença, destino e navegação são conferidos pelo HTML e pelas células."
+  ]
+}

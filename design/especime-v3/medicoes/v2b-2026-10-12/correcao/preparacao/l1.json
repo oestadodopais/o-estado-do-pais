@@ -1,0 +1,48 @@
+{
+  "antes": 2782,
+  "depois": 2782,
+  "teto_antes": 2782,
+  "teto_depois": 2782,
+  "teto_alterado": false,
+  "origem_antes": "retoma2/l1-v2b.json",
+  "origem_depois": "correcao/l1-destinos.json",
+  "discussao": {
+    "/en/under-discussion": {
+      "antes": {
+        "/en/under-discussion": 2,
+        "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09": 2,
+        "/en/ledger/oe-2027-ppp-total-encargos-liquidos-2027": 2
+      },
+      "depois": {
+        "/en/under-discussion": 2,
+        "/en/ledger/oe-2027-saude-despesa-total-consolidada-2026": 2,
+        "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027": 2,
+        "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao": 2,
+        "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027": 2,
+        "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027": 2,
+        "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao": 2,
+        "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09": 2,
+        "/en/ledger/oe-2027-ppp-total-encargos-liquidos-2027": 2
+      }
+    },
+    "/o-que-se-discute": {
+      "antes": {
+        "/o-que-se-discute": 2,
+        "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09": 2,
+        "/livro-razao/oe-2027-ppp-total-encargos-liquidos-2027": 2
+      },
+      "depois": {
+        "/o-que-se-discute": 2,
+        "/livro-razao/oe-2027-saude-despesa-total-consolidada-2026": 2,
+        "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027": 2,
+        "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao": 2,
+        "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027": 2,
+        "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027": 2,
+        "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao": 2,
+        "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09": 2,
+        "/livro-razao/oe-2027-ppp-total-encargos-liquidos-2027": 2
+      }
+    }
+  },
+  "razao": "As duas páginas da discussão já tinham destinos repetidos. A porta da explicação aparece uma vez em cada edição; a contagem de páginas não aumenta. Os novos tokens repetem recibos já citados na parte das fontes."
+}

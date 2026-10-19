@@ -1,0 +1,48 @@
+{
+  "cabeca": "78a6765bae2a66996e619f7a799957e6c014b982",
+  "linhas": [
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2026",
+      "valor": "18 125,9",
+      "periodo": "2026",
+      "sha256": "8cd21e3c191ec32be31835091a7e384fc4d767ec3f26ee53f79905cd95ad9e20"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-2027",
+      "valor": "17 858,4",
+      "periodo": "2027",
+      "sha256": "2b95eba77875f8132d578ba75a66d55d6e04a135e58a523b068a2a985fed8b58"
+    },
+    {
+      "id": "oe-2027-saude-despesa-total-consolidada-variacao",
+      "valor": "−1,5",
+      "periodo": "2027",
+      "sha256": "24819f192eb1e37f3d7cc9e99e247c543044e4d0b8a5075fafb18780dedec73b"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+      "valor": "17 803,1",
+      "periodo": "2027",
+      "sha256": "f39679c845cdbdc35e37fb193ed49b5e18903530cd66e980374fe0dea883c0c3"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+      "valor": "17 803,1",
+      "periodo": "2027",
+      "sha256": "c36c3834c5afcb36051ab991dc4bd5a5e64707ea9679d5a5c9c389658ad18e6c"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+      "valor": "3,0",
+      "periodo": "2027",
+      "sha256": "4518d910c43c80f529effc44d31a471161177ad1d3977763e86606f20dea4708"
+    },
+    {
+      "id": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+      "valor": "18 062,4",
+      "periodo": "2026",
+      "sha256": "c81e7d9b55bc2cc006f7dd4e149459599d40baedaf6e89cb05449be40e37d748"
+    }
+  ],
+  "igualdade_efetiva_2027_com_e_sem_prr": true
+}

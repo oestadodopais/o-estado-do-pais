@@ -218,6 +218,7 @@ const FAMILIAS = [
   /* AS EXPLICAÇÕES E A LEITURA DA SEMANA (bloco EX1, 05.10.2026): a lista, a página da semana (as portas das mudanças, o
      selo de cada uma) e a primeira explicação (os selos do texto, as figuras das barras e a lista dobrada dos números de
      cada figura), com o axe a zero e os alvos nas larguras desta régua, como as outras páginas do leitor. */
+  ['discussao', null],
   ['explicacoes', null],
   ['leituraDaSemana', null],
   ['explicacao', { slug: 'dinheiro-do-estado-2026' }],

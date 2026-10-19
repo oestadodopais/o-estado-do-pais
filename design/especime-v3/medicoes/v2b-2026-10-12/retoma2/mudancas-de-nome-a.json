@@ -1,0 +1,16 @@
+[
+  {
+    "ficheiro": "RELATORIO.escrivao.log",
+    "operacao": "retirar",
+    "antes": "c8ad04d46f5bab92cbb06665d0fe1264dda79cff7164af9240d25391f58baa7c",
+    "depois": "c8ad04d46f5bab92cbb06665d0fe1264dda79cff7164af9240d25391f58baa7c",
+    "igual": true
+  },
+  {
+    "ficheiro": "RELATORIO.escrivao.log",
+    "operacao": "repor",
+    "antes": "7c5b83b0e9fd124bfef7dc2c1773c3b02d6c74cb7d0f9d6dbfae16507dda074a",
+    "depois": "7c5b83b0e9fd124bfef7dc2c1773c3b02d6c74cb7d0f9d6dbfae16507dda074a",
+    "igual": true
+  }
+]
