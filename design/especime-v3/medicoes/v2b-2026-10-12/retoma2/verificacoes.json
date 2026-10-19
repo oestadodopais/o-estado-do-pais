@@ -1,0 +1,37 @@
+{
+  "cabeca_partida": "376afce9487f6341fe3d454f6c8f62c764daed67",
+  "cabeca_codigo": "1cb1cde0cab39309a101e8fe19335069122108fc",
+  "motor": "78a5e500be4789cdc5a99618a0b35b0f4f63d912",
+  "ascendencia_sitio": 0,
+  "ascendencia_motor": 0,
+  "motor_codigo": 0,
+  "series": 0,
+  "cruzamento": 0,
+  "capturas": 0,
+  "portoes": [
+    {
+      "corrida": "portoes-a",
+      "build": 1,
+      "verify": 125,
+      "typecheck": 0,
+      "motor": 0
+    },
+    {
+      "corrida": "portoes-b",
+      "build": 0,
+      "verify": "não escrito",
+      "typecheck": "não escrito",
+      "motor": "não escrito"
+    },
+    {
+      "corrida": "portoes-c",
+      "build": 0,
+      "verify": 0,
+      "typecheck": 0,
+      "motor": "não repetido"
+    }
+  ],
+  "segundos_ate_build_total": 4166,
+  "png_seguidos": 0,
+  "motor_limpo": true
+}

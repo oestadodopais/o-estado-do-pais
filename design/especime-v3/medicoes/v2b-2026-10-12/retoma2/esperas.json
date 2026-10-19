@@ -1,0 +1,23 @@
+[
+  {
+    "corrida": "portoes-a",
+    "pedido": "pedido-20261019T163717-28031.json",
+    "pedido_inicio": "2026-10-19T16:37:19Z",
+    "build_inicio": "2026-10-19T16:49:32Z",
+    "segundos_ate_build": 733
+  },
+  {
+    "corrida": "portoes-b",
+    "pedido": "pedido-20261019T170220-75618.json",
+    "pedido_inicio": "2026-10-19T17:02:20Z",
+    "build_inicio": "2026-10-19T17:42:29Z",
+    "segundos_ate_build": 2409
+  },
+  {
+    "corrida": "portoes-c",
+    "pedido": "pedido-20261019T175516-41953.json",
+    "pedido_inicio": "2026-10-19T17:55:17Z",
+    "build_inicio": "2026-10-19T18:12:21Z",
+    "segundos_ate_build": 1024
+  }
+]

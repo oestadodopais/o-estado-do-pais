@@ -1,0 +1,1271 @@
+{
+  "cabeca": "1cb1cde0cab39309a101e8fe19335069122108fc",
+  "paginas_lidas": 7963,
+  "edicoes": {
+    "pt": {
+      "rota": "/o-que-se-discute/",
+      "itens": [
+        {
+          "slug": "saude-no-orcamento",
+          "titulo": "A Saúde no Orçamento: que despesa se está a comparar?",
+          "partes": [
+            {
+              "id": "como-foi-dito",
+              "titulo": "Como foi dito",
+              "paragrafos": [
+                "«Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, num documento publicado pela RTP, a 09.10.2026. No mesmo dia, RTP publicou: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.»."
+              ]
+            },
+            {
+              "id": "fontes",
+              "titulo": "O que as fontes dizem",
+              "paragrafos": [
+                "O quadro 5.37 do relatório do Orçamento, o programa Saúde, em milhões de euros.",
+                "A despesa total consolidada passa de 18 125,9 em 2026 para 17 858,4 em 2027, uma variação de −1,5 %.",
+                "A despesa efetiva consolidada passa de 18 062,4, na estimativa, para 17 803,1, no Orçamento, uma variação de −1,4 %.",
+                "A despesa efetiva consolidada sem o PRR passa de 17 291,3 para 17 803,1, uma variação de 3,0 %."
+              ]
+            },
+            {
+              "id": "comparacao",
+              "titulo": "A comparação",
+              "paragrafos": [
+                "Há duas diferenças de perímetro: a despesa total ou a efetiva, e a despesa com ou sem o PRR. Para ver a diferença que o PRR faz, compara-se a variação da despesa efetiva consolidada com a da despesa efetiva consolidada sem o PRR."
+              ]
+            },
+            {
+              "id": "conclusao",
+              "titulo": "A conclusão",
+              "paragrafos": [
+                "O quadro dá variações de sinal contrário conforme o perímetro da despesa; comparar exige dizer que medida se usa em cada caso."
+              ]
+            },
+            {
+              "id": "recomendacao",
+              "titulo": "A recomendação",
+              "paragrafos": [
+                "Quem cita o orçamento da Saúde diz o perímetro: a despesa total ou a efetiva, com ou sem o PRR."
+              ]
+            },
+            {
+              "id": "opiniao",
+              "titulo": "A opinião do lugar de direção",
+              "paragrafos": [
+                "A apresentação pública devia dar o mesmo destaque à despesa total consolidada e à despesa efetiva consolidada, com e sem o PRR. Dizer só a conta que sobe, ou só a que desce, é escolher o que o leitor fica a pensar."
+              ]
+            }
+          ],
+          "linhas": [
+            "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+            "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+            "oe-2027-saude-despesa-total-consolidada-2026",
+            "oe-2027-saude-despesa-total-consolidada-2027",
+            "oe-2027-saude-despesa-total-consolidada-variacao",
+            "oe-2027-saude-despesa-efetiva-consolidada-2026",
+            "oe-2027-saude-despesa-efetiva-consolidada-2027",
+            "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+            "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+            "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+            "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao"
+          ],
+          "numeros": [
+            {
+              "id": "oe-2027-saude-despesa-total-consolidada-2026",
+              "valor": "18 125,9",
+              "recibo": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2026",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-total-consolidada-2027",
+              "valor": "17 858,4",
+              "recibo": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-total-consolidada-variacao",
+              "valor": "−1,5",
+              "recibo": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+              "valor": "18 062,4",
+              "recibo": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+              "valor": "17 803,1",
+              "recibo": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+              "valor": "−1,4",
+              "recibo": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+              "valor": "17 291,3",
+              "recibo": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+              "valor": "17 803,1",
+              "recibo": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+              "valor": "3,0",
+              "recibo": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            }
+          ],
+          "recibos": [
+            {
+              "id": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+              "href": "/livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+              "href": "/livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-total-consolidada-2026",
+              "href": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2026",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-total-consolidada-2027",
+              "href": "/livro-razao/oe-2027-saude-despesa-total-consolidada-2027",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-total-consolidada-variacao",
+              "href": "/livro-razao/oe-2027-saude-despesa-total-consolidada-variacao",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+              "href": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+              "href": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+              "href": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+              "href": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+              "href": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+              "href": "/livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+              "presente": true,
+              "destino_existe": true
+            }
+          ],
+          "inicio": {
+            "via_pagina": true,
+            "toques_via_pagina": 2,
+            "direto": true,
+            "toques_direto": 1
+          }
+        },
+        {
+          "slug": "parcerias-rodoviarias",
+          "titulo": "As parcerias rodoviárias: a afirmação e os valores do relatório",
+          "partes": [
+            {
+              "id": "como-foi-dito",
+              "titulo": "Como foi dito",
+              "paragrafos": [
+                "«Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias», Paulo Raimundo · PCP, na Assembleia da República, a 09.10.2026."
+              ]
+            },
+            {
+              "id": "fontes",
+              "titulo": "O que as fontes dizem",
+              "paragrafos": [
+                "O quadro 4.25 do relatório do Orçamento, as parcerias público-privadas, 2027, em milhões de euros.",
+                "Os encargos brutos do setor rodoviário são 1 152; as receitas, 263; os encargos líquidos, 889. O total líquido impresso para todos os setores das parcerias é 1 438. Previsão, não execução. As linhas setoriais do quadro não somam exatamente o total impresso; o quadro não explica a diferença. O quadro diz que os valores são de caixa e, quando aplicável, incluem o IVA."
+              ]
+            },
+            {
+              "id": "comparacao",
+              "titulo": "A comparação",
+              "paragrafos": [
+                "Nenhum dos quatro valores acima é igual a 1 700 milhões de euros."
+              ]
+            },
+            {
+              "id": "conclusao",
+              "titulo": "A conclusão",
+              "paragrafos": [
+                "O excerto citado não diz se o encargo é bruto ou líquido, nem a que ano se refere."
+              ]
+            },
+            {
+              "id": "recomendacao",
+              "titulo": "A recomendação",
+              "paragrafos": [
+                "Quem cita um encargo com as parcerias diz o quadro, o ano e se é bruto ou líquido."
+              ]
+            },
+            {
+              "id": "opiniao",
+              "titulo": "A opinião do lugar de direção",
+              "paragrafos": [
+                "Uma afirmação com um número que o quadro não imprime pede a conta que lhe deu origem; até ela ser mostrada, o leitor fica com os valores do quadro, os brutos, as receitas e os líquidos, sem escolher nenhum deles como o sentido da afirmação."
+              ]
+            }
+          ],
+          "linhas": [
+            "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+            "oe-2027-ppp-total-encargos-liquidos-2027",
+            "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+            "oe-2027-ppp-rodoviario-receitas-2027",
+            "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
+          ],
+          "numeros": [
+            {
+              "id": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+              "valor": "1 152",
+              "recibo": "/livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-ppp-rodoviario-receitas-2027",
+              "valor": "263",
+              "recibo": "/livro-razao/oe-2027-ppp-rodoviario-receitas-2027",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+              "valor": "889",
+              "recibo": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-ppp-total-encargos-liquidos-2027",
+              "valor": "1 438",
+              "recibo": "/livro-razao/oe-2027-ppp-total-encargos-liquidos-2027",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+              "valor": "1 700",
+              "recibo": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            }
+          ],
+          "recibos": [
+            {
+              "id": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+              "href": "/livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-ppp-total-encargos-liquidos-2027",
+              "href": "/livro-razao/oe-2027-ppp-total-encargos-liquidos-2027",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+              "href": "/livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-ppp-rodoviario-receitas-2027",
+              "href": "/livro-razao/oe-2027-ppp-rodoviario-receitas-2027",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+              "href": "/livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+              "presente": true,
+              "destino_existe": true
+            }
+          ],
+          "inicio": {
+            "via_pagina": true,
+            "toques_via_pagina": 2,
+            "direto": true,
+            "toques_direto": 1
+          }
+        }
+      ],
+      "tematica": {
+        "href": "/o-que-se-discute/#saude-no-orcamento",
+        "toques": 1,
+        "correta": true
+      }
+    },
+    "en": {
+      "rota": "/en/under-discussion/",
+      "itens": [
+        {
+          "slug": "saude-no-orcamento",
+          "titulo": "Health in the Budget: which expenditure is being compared?",
+          "partes": [
+            {
+              "id": "como-foi-dito",
+              "titulo": "As it was said",
+              "paragrafos": [
+                "«Ora, esta verba do PRR foi excecional. Se retirarmos isso, o orçamento da Saúde sobre 3%», António Leitão Amaro, ministro da Presidência, in a document published by RTP, on 09.10.2026. On the same day, RTP published: «O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.»."
+              ]
+            },
+            {
+              "id": "fontes",
+              "titulo": "What the sources say",
+              "paragrafos": [
+                "Table 5.37 of the Budget report, the Health programme, in million euros.",
+                "Total consolidated expenditure goes from 18 125,9 in 2026 to 17 858,4 in 2027, a change of −1,5 %.",
+                "Consolidated effective expenditure goes from 18 062,4, in the estimate, to 17 803,1, in the Budget, a change of −1,4 %.",
+                "Consolidated effective expenditure without the RRP goes from 17 291,3 to 17 803,1, a change of 3,0 %."
+              ]
+            },
+            {
+              "id": "comparacao",
+              "titulo": "The comparison",
+              "paragrafos": [
+                "There are two differences of scope: total or effective expenditure, and expenditure with or without the RRP. To see the difference the RRP makes, compare the change in consolidated effective expenditure with the change in consolidated effective expenditure without the RRP."
+              ]
+            },
+            {
+              "id": "conclusao",
+              "titulo": "The conclusion",
+              "paragrafos": [
+                "The table gives changes of opposite sign depending on the scope of expenditure; comparing requires saying which measure is used in each case."
+              ]
+            },
+            {
+              "id": "recomendacao",
+              "titulo": "The recommendation",
+              "paragrafos": [
+                "Whoever quotes the Health budget states the scope: total or effective expenditure, with or without the RRP."
+              ]
+            },
+            {
+              "id": "opiniao",
+              "titulo": "The editorial seat's opinion",
+              "paragrafos": [
+                "Public presentation should give the same prominence to total consolidated expenditure and to consolidated effective expenditure, with and without the RRP. Giving only the count that rises, or only the one that falls, is choosing what the reader is left thinking."
+              ]
+            }
+          ],
+          "linhas": [
+            "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+            "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+            "oe-2027-saude-despesa-total-consolidada-2026",
+            "oe-2027-saude-despesa-total-consolidada-2027",
+            "oe-2027-saude-despesa-total-consolidada-variacao",
+            "oe-2027-saude-despesa-efetiva-consolidada-2026",
+            "oe-2027-saude-despesa-efetiva-consolidada-2027",
+            "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+            "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+            "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+            "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao"
+          ],
+          "numeros": [
+            {
+              "id": "oe-2027-saude-despesa-total-consolidada-2026",
+              "valor": "18 125,9",
+              "recibo": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2026",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-total-consolidada-2027",
+              "valor": "17 858,4",
+              "recibo": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-total-consolidada-variacao",
+              "valor": "−1,5",
+              "recibo": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+              "valor": "18 062,4",
+              "recibo": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+              "valor": "17 803,1",
+              "recibo": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+              "valor": "−1,4",
+              "recibo": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+              "valor": "17 291,3",
+              "recibo": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+              "valor": "17 803,1",
+              "recibo": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+              "valor": "3,0",
+              "recibo": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            }
+          ],
+          "recibos": [
+            {
+              "id": "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+              "href": "/en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+              "href": "/en/ledger/afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-total-consolidada-2026",
+              "href": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2026",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-total-consolidada-2027",
+              "href": "/en/ledger/oe-2027-saude-despesa-total-consolidada-2027",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-total-consolidada-variacao",
+              "href": "/en/ledger/oe-2027-saude-despesa-total-consolidada-variacao",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-2026",
+              "href": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-2027",
+              "href": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+              "href": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+              "href": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+              "href": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+              "href": "/en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+              "presente": true,
+              "destino_existe": true
+            }
+          ],
+          "inicio": {
+            "via_pagina": true,
+            "toques_via_pagina": 2,
+            "direto": true,
+            "toques_direto": 1
+          }
+        },
+        {
+          "slug": "parcerias-rodoviarias",
+          "titulo": "The road partnerships: the statement and the report's figures",
+          "partes": [
+            {
+              "id": "como-foi-dito",
+              "titulo": "As it was said",
+              "paragrafos": [
+                "«Vem com um orçamento que entrega 1 700 milhões às parcerias público-privadas rodoviárias», Paulo Raimundo · PCP, in the Assembleia da República, on 09.10.2026."
+              ]
+            },
+            {
+              "id": "fontes",
+              "titulo": "What the sources say",
+              "paragrafos": [
+                "Table 4.25 of the Budget report, the public-private partnerships, 2027, in million euros.",
+                "Gross charges for the road sector are 1 152; revenue, 263; net charges, 889. The printed net total for all partnership sectors is 1 438. Forecast, not outturn. The sector rows in the table do not add up exactly to the printed total; the table does not explain the difference. The table says the values are on a cash basis and, where applicable, include VAT."
+              ]
+            },
+            {
+              "id": "comparacao",
+              "titulo": "The comparison",
+              "paragrafos": [
+                "None of the four values above equals 1 700 million euros."
+              ]
+            },
+            {
+              "id": "conclusao",
+              "titulo": "The conclusion",
+              "paragrafos": [
+                "The quoted excerpt does not say whether the charge is gross or net, nor which year it refers to."
+              ]
+            },
+            {
+              "id": "recomendacao",
+              "titulo": "The recommendation",
+              "paragrafos": [
+                "Whoever quotes a charge for the partnerships states the table, the year and whether it is gross or net."
+              ]
+            },
+            {
+              "id": "opiniao",
+              "titulo": "The editorial seat's opinion",
+              "paragrafos": [
+                "A statement with a number the table does not print calls for the calculation behind it; until it is shown, the reader is left with the table's values, gross, revenue and net, without picking any of them as the meaning of the statement."
+              ]
+            }
+          ],
+          "linhas": [
+            "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+            "oe-2027-ppp-total-encargos-liquidos-2027",
+            "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+            "oe-2027-ppp-rodoviario-receitas-2027",
+            "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
+          ],
+          "numeros": [
+            {
+              "id": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+              "valor": "1 152",
+              "recibo": "/en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-ppp-rodoviario-receitas-2027",
+              "valor": "263",
+              "recibo": "/en/ledger/oe-2027-ppp-rodoviario-receitas-2027",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+              "valor": "889",
+              "recibo": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-ppp-total-encargos-liquidos-2027",
+              "valor": "1 438",
+              "recibo": "/en/ledger/oe-2027-ppp-total-encargos-liquidos-2027",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+              "valor": "1 700",
+              "recibo": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+              "toques": 1,
+              "adjacente": true,
+              "destino_existe": true
+            }
+          ],
+          "recibos": [
+            {
+              "id": "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+              "href": "/en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-ppp-total-encargos-liquidos-2027",
+              "href": "/en/ledger/oe-2027-ppp-total-encargos-liquidos-2027",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+              "href": "/en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-ppp-rodoviario-receitas-2027",
+              "href": "/en/ledger/oe-2027-ppp-rodoviario-receitas-2027",
+              "presente": true,
+              "destino_existe": true
+            },
+            {
+              "id": "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+              "href": "/en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+              "presente": true,
+              "destino_existe": true
+            }
+          ],
+          "inicio": {
+            "via_pagina": true,
+            "toques_via_pagina": 2,
+            "direto": true,
+            "toques_direto": 1
+          }
+        }
+      ],
+      "tematica": {
+        "href": "/en/under-discussion/#saude-no-orcamento",
+        "toques": 1,
+        "correta": true
+      }
+    }
+  },
+  "integracoes": [
+    {
+      "pagina": "en/explainers/dinheiro-do-estado-2026/index.html",
+      "lang": "en",
+      "item": "saude-no-orcamento",
+      "condicao": "tematica",
+      "linhas_comuns": [],
+      "href": "/en/under-discussion/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html",
+      "lang": "en",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+        "oe-2027-saude-despesa-efetiva-consolidada-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+      ],
+      "href": "/en/under-discussion/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html",
+      "lang": "en",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+        "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+        "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
+      ],
+      "href": "/en/under-discussion/#parcerias-rodoviarias",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/afirmacao-rtp-saude-queda-oe2027-2026-10-09/index.html",
+      "lang": "en",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+        "oe-2027-saude-despesa-total-consolidada-2027",
+        "oe-2027-saude-despesa-total-consolidada-2026"
+      ],
+      "href": "/en/under-discussion/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/index.html",
+      "lang": "en",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+        "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+        "oe-2027-saude-despesa-efetiva-consolidada-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+        "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+        "oe-2027-saude-despesa-total-consolidada-2026",
+        "oe-2027-saude-despesa-total-consolidada-2027",
+        "oe-2027-saude-despesa-total-consolidada-variacao"
+      ],
+      "href": "/en/under-discussion/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/index.html",
+      "lang": "en",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+        "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+        "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+        "oe-2027-ppp-rodoviario-receitas-2027",
+        "oe-2027-ppp-total-encargos-liquidos-2027"
+      ],
+      "href": "/en/under-discussion/#parcerias-rodoviarias",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html",
+      "lang": "en",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+        "oe-2027-ppp-rodoviario-receitas-2027",
+        "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
+      ],
+      "href": "/en/under-discussion/#parcerias-rodoviarias",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html",
+      "lang": "en",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+        "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+        "oe-2027-ppp-rodoviario-receitas-2027"
+      ],
+      "href": "/en/under-discussion/#parcerias-rodoviarias",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ppp-rodoviario-receitas-2027/index.html",
+      "lang": "en",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-ppp-rodoviario-receitas-2027",
+        "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+        "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
+      ],
+      "href": "/en/under-discussion/#parcerias-rodoviarias",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ppp-total-encargos-liquidos-2027/index.html",
+      "lang": "en",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-ppp-total-encargos-liquidos-2027"
+      ],
+      "href": "/en/under-discussion/#parcerias-rodoviarias",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026/index.html",
+      "lang": "en",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-efetiva-consolidada-2026"
+      ],
+      "href": "/en/under-discussion/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027/index.html",
+      "lang": "en",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-efetiva-consolidada-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-2026"
+      ],
+      "href": "/en/under-discussion/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html",
+      "lang": "en",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+      ],
+      "href": "/en/under-discussion/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html",
+      "lang": "en",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+      ],
+      "href": "/en/under-discussion/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html",
+      "lang": "en",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+      ],
+      "href": "/en/under-discussion/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html",
+      "lang": "en",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+        "oe-2027-saude-despesa-efetiva-consolidada-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+      ],
+      "href": "/en/under-discussion/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-total-consolidada-2026/index.html",
+      "lang": "en",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-total-consolidada-2026"
+      ],
+      "href": "/en/under-discussion/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-total-consolidada-2027/index.html",
+      "lang": "en",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-total-consolidada-2027",
+        "oe-2027-saude-despesa-total-consolidada-2026"
+      ],
+      "href": "/en/under-discussion/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-total-consolidada-variacao/index.html",
+      "lang": "en",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-total-consolidada-variacao",
+        "oe-2027-saude-despesa-total-consolidada-2026",
+        "oe-2027-saude-despesa-total-consolidada-2027"
+      ],
+      "href": "/en/under-discussion/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "explicacoes/dinheiro-do-estado-2026/index.html",
+      "lang": "pt",
+      "item": "saude-no-orcamento",
+      "condicao": "tematica",
+      "linhas_comuns": [],
+      "href": "/o-que-se-discute/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html",
+      "lang": "pt",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+        "oe-2027-saude-despesa-efetiva-consolidada-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+      ],
+      "href": "/o-que-se-discute/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html",
+      "lang": "pt",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+        "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+        "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
+      ],
+      "href": "/o-que-se-discute/#parcerias-rodoviarias",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09/index.html",
+      "lang": "pt",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+        "oe-2027-saude-despesa-total-consolidada-2027",
+        "oe-2027-saude-despesa-total-consolidada-2026"
+      ],
+      "href": "/o-que-se-discute/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/index.html",
+      "lang": "pt",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "afirmacao-leitao-amaro-saude-oe2027-2026-10-09",
+        "afirmacao-rtp-saude-queda-oe2027-2026-10-09",
+        "oe-2027-saude-despesa-efetiva-consolidada-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+        "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+        "oe-2027-saude-despesa-total-consolidada-2026",
+        "oe-2027-saude-despesa-total-consolidada-2027",
+        "oe-2027-saude-despesa-total-consolidada-variacao"
+      ],
+      "href": "/o-que-se-discute/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/index.html",
+      "lang": "pt",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09",
+        "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+        "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+        "oe-2027-ppp-rodoviario-receitas-2027",
+        "oe-2027-ppp-total-encargos-liquidos-2027"
+      ],
+      "href": "/o-que-se-discute/#parcerias-rodoviarias",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html",
+      "lang": "pt",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+        "oe-2027-ppp-rodoviario-receitas-2027",
+        "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
+      ],
+      "href": "/o-que-se-discute/#parcerias-rodoviarias",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html",
+      "lang": "pt",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-ppp-rodoviario-encargos-liquidos-2027",
+        "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+        "oe-2027-ppp-rodoviario-receitas-2027"
+      ],
+      "href": "/o-que-se-discute/#parcerias-rodoviarias",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ppp-rodoviario-receitas-2027/index.html",
+      "lang": "pt",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-ppp-rodoviario-receitas-2027",
+        "oe-2027-ppp-rodoviario-encargos-brutos-2027",
+        "oe-2027-ppp-rodoviario-encargos-liquidos-2027"
+      ],
+      "href": "/o-que-se-discute/#parcerias-rodoviarias",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ppp-total-encargos-liquidos-2027/index.html",
+      "lang": "pt",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-ppp-total-encargos-liquidos-2027"
+      ],
+      "href": "/o-que-se-discute/#parcerias-rodoviarias",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026/index.html",
+      "lang": "pt",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-efetiva-consolidada-2026"
+      ],
+      "href": "/o-que-se-discute/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027/index.html",
+      "lang": "pt",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-efetiva-consolidada-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-2026"
+      ],
+      "href": "/o-que-se-discute/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html",
+      "lang": "pt",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+      ],
+      "href": "/o-que-se-discute/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html",
+      "lang": "pt",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026"
+      ],
+      "href": "/o-que-se-discute/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html",
+      "lang": "pt",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+      ],
+      "href": "/o-que-se-discute/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html",
+      "lang": "pt",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-efetiva-consolidada-variacao",
+        "oe-2027-saude-despesa-efetiva-consolidada-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-2027",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026",
+        "oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027"
+      ],
+      "href": "/o-que-se-discute/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-total-consolidada-2026/index.html",
+      "lang": "pt",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-total-consolidada-2026"
+      ],
+      "href": "/o-que-se-discute/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-total-consolidada-2027/index.html",
+      "lang": "pt",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-total-consolidada-2027",
+        "oe-2027-saude-despesa-total-consolidada-2026"
+      ],
+      "href": "/o-que-se-discute/#saude-no-orcamento",
+      "destino_existe": true
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-total-consolidada-variacao/index.html",
+      "lang": "pt",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas",
+      "linhas_comuns": [
+        "oe-2027-saude-despesa-total-consolidada-variacao",
+        "oe-2027-saude-despesa-total-consolidada-2026",
+        "oe-2027-saude-despesa-total-consolidada-2027"
+      ],
+      "href": "/o-que-se-discute/#saude-no-orcamento",
+      "destino_existe": true
+    }
+  ],
+  "recursos": {
+    "o-que-se-discute/index.html": "ce0e6568347929ff5e0707a5f3549e528d83dcbb1516dea93f8e762904093444",
+    "en/under-discussion/index.html": "18a33fb99502aaea73d3e86793555d156ec4288d1cbd73b23752f8b45c2c0420",
+    "en/explainers/dinheiro-do-estado-2026/index.html": "27e903eb978d49a131128e2991b11bdf68c4577dbee93602c2a6427fce9a250d",
+    "en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html": "3b123f735497b77785e295e499397079fa70d71fa091ab6b90f1c6ffc380fb99",
+    "en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html": "fdf17024009e36665734704a8d83eb6e1f5bfafbdff59c50036f961c8cf4f9db",
+    "en/ledger/afirmacao-rtp-saude-queda-oe2027-2026-10-09/index.html": "31f035086750c24d2fb558b7130f601c5a12ac08fd8b2b2cbaaf9038da3feece",
+    "en/ledger/index.html": "7835ff3e0fcb85ce5c5e0c7ffa88e8a44eed45f35921926f9211eb4d228469dd",
+    "en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html": "4dacd5a7acc2ba71905a23ad6a772a4f42b06a6604ebcbe7011ef3ad65e0c832",
+    "en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html": "26cd34e76c8a10d16f01ab0a126edf8b4ac526a15bcbfdcc4e3f8664256b0a7e",
+    "en/ledger/oe-2027-ppp-rodoviario-receitas-2027/index.html": "36f7996397da3abd546490951f54d49a455bc121f5cd242f664673f971a2532b",
+    "en/ledger/oe-2027-ppp-total-encargos-liquidos-2027/index.html": "10f46a27d53161ecc52f54ec5e764c1583c2dd37deac43a9833b086523d22a7f",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026/index.html": "83106753b51183b9afe7188d632f512153639c965e333a2db5e2f7d2f75e24a3",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027/index.html": "8767f48b9ecf0dca611266cd8b3ca6d931027777ba920fc4e01a92d66f3d0439",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html": "f3719c68cce42284f796fc21d4558e56e6cfc7e629d510f835bd34cc61043c32",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html": "2c31cffb4e1d7b183b29fc8804f06c4bb1fcd5be8fce39509f38fdd9f77df603",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html": "aa70c1d9468baaf785c2c18857c1fd65ddf63bba2a035b0c85823728dd4358fc",
+    "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html": "6fd9bcb5df8dc6dbd3ee3bb8ae9c56e988353b8f1a4d95f5969195bb48189aac",
+    "en/ledger/oe-2027-saude-despesa-total-consolidada-2026/index.html": "71451276f71747c85e56506c3f0fe41818ef9a47b0c1179b38be4fbb44bb3807",
+    "en/ledger/oe-2027-saude-despesa-total-consolidada-2027/index.html": "6284438684778aefd77eb64192b9e88d36e0ab71203db55a2ae8f51c4ad5965a",
+    "en/ledger/oe-2027-saude-despesa-total-consolidada-variacao/index.html": "d18c1d171f3e1d51ffbc3afd3f37af6ca42777ccd0ca164fc9c5bacce7f93648",
+    "explicacoes/dinheiro-do-estado-2026/index.html": "ab80165e80e59d53161c670fea8480755de7c054dbfb3b68407aa6791ab2e4cd",
+    "livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html": "340ce8ebbe50c2153766027bc285cdaa265d79322ba80e58941bf295f92a7dd8",
+    "livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html": "b734d5f9347210222b1bab02081b25a5405df1a2ade5a0076e373d73bbe655c2",
+    "livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09/index.html": "6e00efffe4e0c66e59fa5085a81100dd4e7a491f6e01daec8b0172eeb6126d98",
+    "livro-razao/index.html": "8413942f8ec96295c37ec6545e8fdde0eb0701cb1f43d3395612f02f99a86b63",
+    "livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html": "cc6cba579aab9cee16c8e2634c82a4de57949f59f3bbfc5d7b65c66916c2cb63",
+    "livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html": "77f5d12f288dfd866043a9bd7ce59787b8ccce60f0465b1d042ed451efc92ab7",
+    "livro-razao/oe-2027-ppp-rodoviario-receitas-2027/index.html": "aff4e979632afdbb8e31c480c2500a3b438d3cae1e21c8ad915260587a57562a",
+    "livro-razao/oe-2027-ppp-total-encargos-liquidos-2027/index.html": "805b506cbe42e8106d3e20a95fd0bff63bdd2b9eb55060d82cd3ce5e692a668e",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026/index.html": "de6b0380f75d5bd02ff809c8541977f05f82f1ded5bc6b5f61dc5701869661e2",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027/index.html": "880d2a303e242b4de677978b0a82bf3297eff93e1ffc8aa48d53d956b8500812",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html": "652f35254d156489667cf0beef1ac2b858f215409aba6a571d252d0c9e385962",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html": "3a263d7d683651b4b19048ea9431b2d34e46f9329ae61021d8280ca4b8003166",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html": "a706450b6632f9982901b865eae17ed7d7dbe199c61fe013a2e250de5c99e8d2",
+    "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html": "4cae167c97945a364879e89aae0605f65e531937213c7fc6b0c7603b5eabbc62",
+    "livro-razao/oe-2027-saude-despesa-total-consolidada-2026/index.html": "d7a89da3335f29573314713337fa934d2e4623672f150bd72f05b3c3df3dbac7",
+    "livro-razao/oe-2027-saude-despesa-total-consolidada-2027/index.html": "f0ecd5f3f1eaffaf408fb2fb2a2e7b5bcbd58e5f0aacb46e9a5cacc08784bea2",
+    "livro-razao/oe-2027-saude-despesa-total-consolidada-variacao/index.html": "0283016a370da819211af2c7ef1e347081448d403ff24d4de16f687c61b7f65e"
+  },
+  "erros": []
+}

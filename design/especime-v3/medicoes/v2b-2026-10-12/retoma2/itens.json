@@ -1,0 +1,363 @@
+{
+  "erros": [],
+  "plantas": [
+    {
+      "nome": "citação sem token",
+      "item": "saude-no-orcamento",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B citação: citação ou atribuição sem token"
+    },
+    {
+      "nome": "citação sem token",
+      "item": "parcerias-rodoviarias",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B citação: citação ou atribuição sem token"
+    },
+    {
+      "nome": "citação alterada",
+      "item": "saude-no-orcamento",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B literal: citação ou atribuição alterada contra a linha"
+    },
+    {
+      "nome": "citação alterada",
+      "item": "parcerias-rodoviarias",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B literal: citação ou atribuição alterada contra a linha"
+    },
+    {
+      "nome": "adjetivo junto do nome",
+      "item": "saude-no-orcamento",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B pessoas: adjetivo colado a uma atribuição"
+    },
+    {
+      "nome": "adjetivo junto do nome",
+      "item": "parcerias-rodoviarias",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B pessoas: adjetivo colado a uma atribuição"
+    },
+    {
+      "nome": "opinião sem rótulo",
+      "item": "saude-no-orcamento",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B opinião: opinião sem rótulo"
+    },
+    {
+      "nome": "opinião sem rótulo",
+      "item": "parcerias-rodoviarias",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B opinião: opinião sem rótulo"
+    },
+    {
+      "nome": "item sem uma parte",
+      "item": "saude-no-orcamento",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B partes: faltam partes obrigatórias"
+    },
+    {
+      "nome": "item sem uma parte",
+      "item": "parcerias-rodoviarias",
+      "lang": "pt",
+      "mordeu": true,
+      "queixa": "V2B partes: faltam partes obrigatórias"
+    },
+    {
+      "nome": "porta inicial errada",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "citação sem token",
+      "item": "saude-no-orcamento",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B citação: citação ou atribuição sem token"
+    },
+    {
+      "nome": "citação sem token",
+      "item": "parcerias-rodoviarias",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B citação: citação ou atribuição sem token"
+    },
+    {
+      "nome": "citação alterada",
+      "item": "saude-no-orcamento",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B literal: citação ou atribuição alterada contra a linha"
+    },
+    {
+      "nome": "citação alterada",
+      "item": "parcerias-rodoviarias",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B literal: citação ou atribuição alterada contra a linha"
+    },
+    {
+      "nome": "adjetivo junto do nome",
+      "item": "saude-no-orcamento",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B pessoas: adjetivo colado a uma atribuição"
+    },
+    {
+      "nome": "adjetivo junto do nome",
+      "item": "parcerias-rodoviarias",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B pessoas: adjetivo colado a uma atribuição"
+    },
+    {
+      "nome": "opinião sem rótulo",
+      "item": "saude-no-orcamento",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B opinião: opinião sem rótulo"
+    },
+    {
+      "nome": "opinião sem rótulo",
+      "item": "parcerias-rodoviarias",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B opinião: opinião sem rótulo"
+    },
+    {
+      "nome": "item sem uma parte",
+      "item": "saude-no-orcamento",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B partes: faltam partes obrigatórias"
+    },
+    {
+      "nome": "item sem uma parte",
+      "item": "parcerias-rodoviarias",
+      "lang": "en",
+      "mordeu": true,
+      "queixa": "V2B partes: faltam partes obrigatórias"
+    },
+    {
+      "nome": "porta inicial errada",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "porta por coincidência ausente",
+      "mordeu": true
+    },
+    {
+      "nome": "porta sem coincidência",
+      "mordeu": true
+    },
+    {
+      "nome": "destino de outro item",
+      "mordeu": true
+    },
+    {
+      "nome": "declaração sem token",
+      "mordeu": true
+    }
+  ],
+  "integracoes": [
+    {
+      "pagina": "en/explainers/dinheiro-do-estado-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "tematica"
+    },
+    {
+      "pagina": "en/ledger/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/afirmacao-rtp-saude-queda-oe2027-2026-10-09/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ppp-rodoviario-receitas-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-ppp-total-encargos-liquidos-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-total-consolidada-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-total-consolidada-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "en/ledger/oe-2027-saude-despesa-total-consolidada-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "explicacoes/dinheiro-do-estado-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "tematica"
+    },
+    {
+      "pagina": "livro-razao/afirmacao-leitao-amaro-saude-oe2027-2026-10-09/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/afirmacao-rtp-saude-queda-oe2027-2026-10-09/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ppp-rodoviario-encargos-brutos-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ppp-rodoviario-encargos-liquidos-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ppp-rodoviario-receitas-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-ppp-total-encargos-liquidos-2027/index.html",
+      "item": "parcerias-rodoviarias",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-sem-prr-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-efetiva-consolidada-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-total-consolidada-2026/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-total-consolidada-2027/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    },
+    {
+      "pagina": "livro-razao/oe-2027-saude-despesa-total-consolidada-variacao/index.html",
+      "item": "saude-no-orcamento",
+      "condicao": "linhas"
+    }
+  ]
+}

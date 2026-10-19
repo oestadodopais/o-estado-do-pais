@@ -1,0 +1,10 @@
+{
+  "codigo": 0,
+  "codigos": {
+    "build": "0",
+    "verify": "0",
+    "typecheck": "0"
+  },
+  "saida": "à espera da tranca da máquina: 2026-10-19T17:42:29Z <worktree> pid=75632\ntranca com mais de quarenta minutos (2026-10-19T17:42:29Z <worktree> pid=75632); ignora-se\nFIM 1cb1cde0 build=0 verify=0 typecheck=0\n",
+  "quando": "2026-10-19T18:23:14Z"
+}

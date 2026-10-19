@@ -1,0 +1,414 @@
+{
+  "cabeca": "376afce9487f6341fe3d454f6c8f62c764daed67",
+  "total": 58,
+  "frases": [
+    {
+      "texto": "O que se discute →",
+      "classe": "navegacao",
+      "rotas": [
+        "/"
+      ]
+    },
+    {
+      "texto": "Under discussion →",
+      "classe": "navegacao",
+      "rotas": [
+        "/en"
+      ]
+    },
+    {
+      "texto": "A Saúde no Orçamento: que despesa se está a comparar?",
+      "classe": "navegacao",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "A apresentação pública devia dar o mesmo destaque à despesa total consolidada e à despesa efetiva consolidada, com e sem o PRR. Dizer só a conta que sobe, ou só a que desce, é escolher o que o leitor fica a pensar.",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "A comparação",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "A conclusão",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "A despesa efetiva consolidada passa de , na estimativa, para , no Orçamento, uma variação de % .",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "A despesa efetiva consolidada sem o PRR passa de para , uma variação de % .",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "A despesa total consolidada passa de em para em , uma variação de % .",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "A opinião do lugar de direção",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "A recomendação",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "As afirmações públicas, ao lado do que as fontes dizem.",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "As parcerias rodoviárias: a afirmação e os valores do relatório",
+      "classe": "navegacao",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "Como foi dito",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "Há duas diferenças de perímetro: a despesa total ou a efetiva, e a despesa com ou sem o PRR. Para ver a diferença que o PRR faz, compara-se a variação da despesa efetiva consolidada com a da despesa efetiva consolidada sem o PRR.",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "Nenhum dos quatro valores acima é igual a milhões de euros.",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "O excerto citado não diz se o encargo é bruto ou líquido, nem a que ano se refere.",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "O quadro do relatório do Orçamento, as parcerias público-privadas, , em milhões de euros.",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "O quadro do relatório do Orçamento, o programa Saúde, em milhões de euros.",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "O quadro dá variações de sinal contrário conforme o perímetro da despesa; comparar exige dizer que medida se usa em cada caso.",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "O que as fontes dizem",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "O que se discute",
+      "classe": "navegacao",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "Os encargos brutos do setor rodoviário são ; as receitas, ; os encargos líquidos, . O total líquido impresso para todos os setores das parcerias é . O quadro diz que os valores são de caixa e, quando aplicável, incluem o IVA.",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "Quem cita o orçamento da Saúde diz o perímetro: a despesa total ou a efetiva, com ou sem o PRR.",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "Quem cita um encargo com as parcerias diz o quadro, o ano e se é bruto ou líquido.",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "Uma afirmação com um número que o quadro não imprime pede a conta que lhe deu origem; até ela ser mostrada, o leitor fica com os valores do quadro, os brutos, as receitas e os líquidos, sem escolher nenhum deles como o sentido da afirmação.",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "« », , na Assembleia da República, a .",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "« », , num documento publicado pela RTP, a . No mesmo dia, publicou: « ».",
+      "classe": "conteudo",
+      "rotas": [
+        "/o-que-se-discute"
+      ]
+    },
+    {
+      "texto": "A statement with a number the table does not print calls for the calculation behind it; until it is shown, the reader is left with the table&#39;s values, gross, revenue and net, without picking any of them as the meaning of the statement.",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "As it was said",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "Consolidated effective expenditure goes from , in the estimate, to , in the Budget, a change of % .",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "Consolidated effective expenditure without the RRP goes from to , a change of % .",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "Gross charges for the road sector are ; revenue, ; net charges, . The printed net total for all partnership sectors is . The table says the values are on a cash basis and, where applicable, include VAT.",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "Health in the Budget: which expenditure is being compared?",
+      "classe": "navegacao",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "None of the four values above equals million euros.",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "Public presentation should give the same prominence to total consolidated expenditure and to consolidated effective expenditure, with and without the RRP. Giving only the count that rises, or only the one that falls, is choosing what the reader is left thinking.",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "Public statements, next to what the sources say.",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "Table of the Budget report, the Health programme, in million euros.",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "Table of the Budget report, the public-private partnerships, , in million euros.",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "The comparison",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "The conclusion",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "The editorial seat&#39;s opinion",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "The quoted excerpt does not say whether the charge is gross or net, nor which year it refers to.",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "The recommendation",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "The road partnerships: the statement and the report&#39;s figures",
+      "classe": "navegacao",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "The table gives changes of opposite sign depending on the scope of expenditure; comparing requires saying which measure is used in each case.",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "There are two differences of scope: total or effective expenditure, and expenditure with or without the RRP. To see the difference the RRP makes, compare the change in consolidated effective expenditure with the change in consolidated effective expenditure without the RRP.",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "Total consolidated expenditure goes from in to in , a change of % .",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "Under discussion",
+      "classe": "navegacao",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "What the sources say",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "Whoever quotes a charge for the partnerships states the table, the year and whether it is gross or net.",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "Whoever quotes the Health budget states the scope: total or effective expenditure, with or without the RRP.",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "« », , in a document published by RTP, on . On the same day, published: « ».",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "« », , in the Assembleia da República, on .",
+      "classe": "conteudo",
+      "rotas": [
+        "/en/under-discussion"
+      ]
+    },
+    {
+      "texto": "O que se discute sobre isto → A Saúde no Orçamento: que despesa se está a comparar?",
+      "classe": "navegacao",
+      "rotas": [
+        "/explicacoes/dinheiro-do-estado-2026",
+        "/livro-razao"
+      ]
+    },
+    {
+      "texto": "What is being discussed about this → Health in the Budget: which expenditure is being compared?",
+      "classe": "navegacao",
+      "rotas": [
+        "/en/explainers/dinheiro-do-estado-2026",
+        "/en/ledger"
+      ]
+    },
+    {
+      "texto": "O que se discute sobre isto → As parcerias rodoviárias: a afirmação e os valores do relatório",
+      "classe": "navegacao",
+      "rotas": [
+        "/livro-razao"
+      ]
+    },
+    {
+      "texto": "What is being discussed about this → The road partnerships: the statement and the report&#39;s figures",
+      "classe": "navegacao",
+      "rotas": [
+        "/en/ledger"
+      ]
+    }
+  ]
+}
