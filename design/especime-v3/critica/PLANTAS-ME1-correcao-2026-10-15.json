@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-15T08:07:33+00:00",
+ "copia": "<scratchpad>/pacote-leitura-curta-me1",
+ "plantas": [
+  {
+   "id": "me1c-p1",
+   "ficheiro": "built/metodo/index.html",
+   "descricao": "uma palavra trocada na frase nova da escala (§3.9): «por este projeto» passa a «pelo INE»; a referência é o §3.9 do brief",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "7eca8237d50bec2c0c3548950428b6362b2cfd8062b3819fea7cfffbac7caf5d",
+   "sha256_depois": "91a2faebd283293cebdb701ca320bd07bbdd636ec8415693cfc7530c6c1d0a27",
+   "contexto_antes": "></div><div class=\"regra-linha\" id=\"a-escala\"><span class=\"regra-k\">A escala</span><div class=\"regra-v\"><p class=\"metodo-p\">Nos mapas, as classes da escala são números redondos escolhidos por este projeto, e não um limite oficial.</p></div></div><div class=\"regra-linha\" id=\"a-letra\"><span class=\"regra-k\">A letra</span><div class=\"regra-v\"><p class=\"metodo-p\">Os ",
+   "contexto_depois": "></div><div class=\"regra-linha\" id=\"a-escala\"><span class=\"regra-k\">A escala</span><div class=\"regra-v\"><p class=\"metodo-p\">Nos mapas, as classes da escala são números redondos escolhidos pelo INE, e não um limite oficial.</p></div></div><div class=\"regra-linha\" id=\"a-letra\"><span class=\"regra-k\">A letra</span><div class=\"regra-v\"><p class=\"metodo-p\">Os "
+  },
+  {
+   "id": "me1c-p2",
+   "ficheiro": "scripts/lugares-ia-do-portao.mjs",
+   "descricao": "a régua dos nomes deixa de ler o noscript (a etiqueta comparada passa a noscript-ignorado): o décimo segundo caso descrito no relatório deixaria de morder; a referência é o relatório e o próprio ficheiro",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "572c48c050172535b859bafb045257271fa74275edd4fbe0bf5950064fd2db26",
+   "sha256_depois": "7627da52937d4be1f6843710f88c79e384937e532a5472a8e0d7f5d8236e7f5b",
+   "contexto_antes": ".text ?? n.rawText ?? '');\n    const tag = String(n.rawTagName ?? '').toLowerCase();\n    if (tag === 'script' || tag === 'style' || tag === 'template') return;\n    if (tag === 'noscript') {\n      for (const f of parse(n.innerHTML ?? n.rawText ?? '').childNodes ?? []) anda(f);\n      return;\n    }\n    for (const f of n.childNodes ?? []) anda(f);\n  }",
+   "contexto_depois": ".text ?? n.rawText ?? '');\n    const tag = String(n.rawTagName ?? '').toLowerCase();\n    if (tag === 'script' || tag === 'style' || tag === 'template') return;\n    if (tag === 'noscript-ignorado') {\n      for (const f of parse(n.innerHTML ?? n.rawText ?? '').childNodes ?? []) anda(f);\n      return;\n    }\n    for (const f of n.childNodes ?? []) anda(f);\n  }"
+  },
+  {
+   "id": "me1c-p3",
+   "ficheiro": "DECISIONS.md",
+   "descricao": "o resumo do Método na §1.196 trocado num carácter: a amarra citada deixa de bater com o ficheiro src/data/metodo.mjs copiado; o leitor recalcula o sha256",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "5332fb686768a218dd75f2cf3e583c3df032756c58fd7ad30920409b09cf77e1",
+   "sha256_depois": "2c83fed90b16cd917e33f055f6937c5b5b62cd0519bfca7d42df0a8b10819b79",
+   "contexto_antes": " leva ao princípio dela, e os nomes de modelos e de fornecedores saem da página para o documento público da política\n\n**Afecta:** metodo · politica\n\n**Texto:** metodo fcb1354596d4 · politica 62e42b67cf86\n\n**Data:** 15.10.2026 (o mandato `MANDATO-ME1-2026-10-15.md`, pela leitura do financiador de 14.10.2026 à noite; o construtor, o Claude Opus 5.5; a leitura a f",
+   "contexto_depois": " leva ao princípio dela, e os nomes de modelos e de fornecedores saem da página para o documento público da política\n\n**Afecta:** metodo · politica\n\n**Texto:** metodo fcb1354596d5 · politica 62e42b67cf86\n\n**Data:** 15.10.2026 (o mandato `MANDATO-ME1-2026-10-15.md`, pela leitura do financiador de 14.10.2026 à noite; o construtor, o Claude Opus 5.5; a leitura a f"
+  },
+  {
+   "id": "me1c-p4",
+   "ficheiro": "built/en/method/index.html",
+   "descricao": "a frase inglesa dos estudos de Évora passa a dizer «two of them have» em vez de «one of them has»; a medida estudos-aberturas.json e o §3.7 do brief desmentem-no",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "d1e94b8762b83949a7d2a6053bd71779e3097a5052afdb30fc476481c688ad22",
+   "sha256_depois": "2e711d0ccb1e0d9b3340ee001fe0a36a9d5dd37f171f3a547bbbc9e67f37e31d",
+   "contexto_antes": " studies open with the question they answer and with this project&#39;s reading: what the numbers show, what this project concludes and what could work better; one of them has that opening in the Portuguese edition only. The older studies have the text and the sources, without that opening.</p><p class=\"regra-portas\"><a href=\"/en/agenda\">The agenda →</a><a href=\"/en/studies\">T",
+   "contexto_depois": " studies open with the question they answer and with this project&#39;s reading: what the numbers show, what this project concludes and what could work better; two of them have that opening in the Portuguese edition only. The older studies have the text and the sources, without that opening.</p><p class=\"regra-portas\"><a href=\"/en/agenda\">The agenda →</a><a href=\"/en/studies\">T"
+  },
+  {
+   "id": "me1c-p5",
+   "ficheiro": "design/especime-v3/critica/REVISOES-DO-INVENTARIO.md",
+   "descricao": "a entrada me1 do registo das revisões volta a «por ler»; o relatório e o mandato (ponto 8) dizem que foi lida pelo Codex e pelo lugar de direção",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "aebb2078b8c0ba9813890403bbfb3af91e30785f4d021ccd2543455ca10ec8e0",
+   "sha256_depois": "d75ac12e0e990b2c703a2eb64a40964f46c043f856b4374fef002100fd050e8d",
+   "contexto_antes": " passagem de correção, 8 acrescentadas pela decisão do ME1-21, e 5 postas em dia e 2 acrescentadas depois da leitura a frio; 22 retiradas; 2 saem do ficheiro | lida pelo Codex gpt-6-astra a 15.10.2026, cinco plantas em cinco, e pelo lugar de direção | Claude Opus 5.5, 15.10.2026: as linhas novas são os blocos do Método como a régua os lê, tirados das páginas construídas por `design/especime-v3/medicoes/me1",
+   "contexto_depois": " passagem de correção, 8 acrescentadas pela decisão do ME1-21, e 5 postas em dia e 2 acrescentadas depois da leitura a frio; 22 retiradas; 2 saem do ficheiro | por ler | Claude Opus 5.5, 15.10.2026: as linhas novas são os blocos do Método como a régua os lê, tirados das páginas construídas por `design/especime-v3/medicoes/me1"
+  }
+ ]
+}

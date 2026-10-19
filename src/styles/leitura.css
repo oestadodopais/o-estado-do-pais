@@ -156,18 +156,17 @@
 }
 
 /* ==========================================================================
-   SUBETAPA 4b · O MÉTODO: O SUMÁRIO, AS DOBRAS E A ENTRADA DE FECHO
+   SUBETAPA 4b · O MÉTODO: O SUMÁRIO E A ENTRADA DE FECHO
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    O SUMÁRIO
    --------------------------------------------------------------------------
-   O índice desta página: os dez nomes e a entrada de fecho, cada um a âncora da
-   sua secção. Duas colunas em qualquer largura, porque onze destinos numa coluna
-   são uma parede, e desde que cada destino leva 44px de alvo (bloco B, item
-   B10) a parede numa coluna mede 586px a 390, que é quase um ecrã. O número vai
-   na letra do instrumento e em `--g1`, como o número da regra, e não é um
-   algarismo do sítio: é numeração, e vai marcada. */
+   O índice desta página: as nove secções, cada uma a âncora da sua secção, sem
+   números desde o bloco ME1 (15.10.2026), que tirou o número das regras e as
+   dobras. Duas colunas em qualquer largura, porque nove destinos numa coluna são
+   uma parede, e desde que cada destino leva 44px de alvo (bloco B, item B10) a
+   parede numa coluna mede quase um ecrã a 390. */
 .metodo-sumario {
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
@@ -203,119 +202,14 @@
   font-size: 15px;
   line-height: 1.5;
 }
-.metodo-sumario-n {
-  font-family: var(--f-instr);
-  font-variant-numeric: tabular-nums lining-nums;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--muted);
-  min-width: 1.6em;
-}
-/* A entrada de fecho não tem número, e o lugar dele fica: uma lista cujos itens
-   não alinham não é uma lista. */
-.metodo-sumario-fecho {
-  padding-left: calc(1.6em + 10px);
-}
-
-/* --------------------------------------------------------------------------
-   AS DOBRAS
-   --------------------------------------------------------------------------
-   «Abre no sítio» (`IDENTIDADE.md` §4): a profundidade abre-se nesta página e
-   nunca noutra. Cada regra é um `<details>` e não há JavaScript nenhum.
-
-   A DISPOSIÇÃO A SOBREVIVE À DOBRA, e é o que esta regra existe para fazer: a
-   `.metodo-secao` era a grelha de duas colunas e os seus dois filhos eram a
-   cabeça e o corpo; com o `<details>` pelo meio, o filho passa a ser um só. A
-   grelha desce para o `<details>`, com as mesmas medidas, e a página não muda de
-   disposição por ter ganho um comando. */
-.metodo-secao > .regra-dobra {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: clamp(16px, 3vw, 34px);
-  align-items: start;
-}
-@media (max-width: 780px) {
-  .metodo-secao > .regra-dobra {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   UM SÓ SINAL DE DOBRA NO SÍTIO INTEIRO (ISSUES I54, commit 5-0)
-   --------------------------------------------------------------------------
-   O marcador nativo sai — cada navegador desenha o seu — e o que o substitui é
-   o MESMO sinal que as outras dobras da casa já desenhavam: o triângulo de
-   tinta que roda 90° ao abrir (`.deep` em `site.css`, `.aparelho` em
-   `inicio.css`, `.nav-menu` em `site.css`). As dobras que as subetapas 4b e 4c
-   criaram desenhavam `+` fechado e `−` aberto, e a casa ficou com dois sinais
-   para o mesmo gesto — exactamente a porta que a Emenda 10 fecha («um glifo, um
-   significado»).
-
-   A GEOMETRIA É COPIADA À LETRA das outras três, e não aproximada: bordo
-   esquerdo de 5px em `currentColor`, bordos de cima e de baixo de 4px
-   transparentes, rotação de 90° com origem a 30% 50% e a mesma transição de
-   0,16s. O que muda em relação a elas é o SÍTIO (à direita do nome, porque este
-   `<summary>` é um título de regra e não um rótulo de aparelho) e a COR de
-   repouso, que fica no cinzento que a 4b escolheu e passa a tinta ao apontar —
-   é a mesma decisão de ênfase da 4b, e o cinzento não é cor no sentido da
-   IDENTIDADE §2.
-
-   O `top` é dado em `em` do próprio pseudo-elemento: a 16px com entrelinha de
-   1,2 a caixa da linha mede 19,2px e o triângulo mede 8px, e 0,35em = 5,6px
-   é exactamente o que os centra um no outro. Nada disto depende do tamanho do
-   título, que é fluido.
-   -------------------------------------------------------------------------- */
-.regra-dobra > summary {
-  cursor: pointer;
-  list-style: none;
-  position: relative;
-  padding-right: 22px;
-}
-.regra-dobra > summary::-webkit-details-marker {
-  display: none;
-}
-.regra-titulo {
-  font-size: clamp(19px, 2vw, 23px);
-  margin: 0;
-}
-.regra-dobra > summary::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0.35em;
-  font-size: 16px;
-  line-height: 1.2;
-  width: 0;
-  height: 0;
-  color: var(--muted);
-  border-left: 5px solid currentColor;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  transition: transform 0.16s ease;
-  transform-origin: 30% 50%;
-}
-.regra-dobra[open] > summary::after {
-  transform: rotate(90deg);
-}
-.regra-dobra > summary:hover::after,
-.regra-dobra > summary:focus-visible::after {
-  color: var(--ink);
-}
-/* Sem foco visível, um comando que só se abre com o rato. */
-.regra-dobra > summary:focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-}
 
 /* --------------------------------------------------------------------------
    A ENTRADA DE FECHO
    --------------------------------------------------------------------------
-   Duas linhas rotuladas depois das dez regras. Não dobra: são duas frases, e uma
-   dobra por cima de uma frase é mobília a esconder o que a página fecha a dizer.
-   O rótulo de cada uma usa a coluna de `.regra-linha`, que é a mesma da prova e
-   do mecanismo, para que a página feche na gramática com que se leu. */
+   As linhas rotuladas com que a página acaba (a cor, a escala e a letra). Não
+   dobra: são três frases, e uma dobra por cima de uma frase é mobília a esconder
+   o que a página fecha a dizer. O rótulo de cada uma usa a coluna de
+   `.regra-linha`, a forma de antes do bloco ME1, que o fecho conserva. */
 .metodo-fecho .metodo-p {
   margin: 0;
 }
@@ -324,23 +218,6 @@
 }
 .metodo-fecho .regra-linha:first-child {
   margin-top: 0;
-}
-
-/* --------------------------------------------------------------------------
-   O QUE SE MEDE A SEGUIR · o rótulo da vaga
-   --------------------------------------------------------------------------
-   `.dominios-vaga` veio de `dominio.css` a 15.09.2026, e a razão é a mesma que
-   tirou a lista dos domínios de lá: a regra vivia numa folha que a sua única
-   página não importa. Desde o §9.1 (08.09.2026) as vagas saíram do índice dos
-   domínios e vieram para esta secção do Método, e `MetodoView.astro` importa
-   `leitura.css` e mais nada. O rótulo rendia-se no serif do corpo em vez do tipo
-   de instrumento, e sem a coluna da direita. A regra segue o seu único uso. */
-.dominios-vaga {
-  font-family: var(--f-instr);
-  font-size: 14px;
-  color: var(--muted);
-  min-width: 11ch;
-  text-align: right;
 }
 
 /* ==========================================================================
@@ -384,9 +261,10 @@ ul.metodo-sumario-lista li {
 .agenda-dobra > summary::-webkit-details-marker {
   display: none;
 }
-/* O mesmo sinal do Método, que passou a ser o mesmo do sítio inteiro (I54,
-   commit 5-0): o triângulo que roda ao abrir. A declaração é, linha a linha, a
-   do `.regra-dobra` acima — se um dia mudar, mudam as duas. */
+/* O mesmo sinal de dobra do sítio inteiro (I54, commit 5-0): o triângulo que
+   roda ao abrir, com a geometria do `.deep` de `site.css`. As dobras do Método,
+   que tinham a mesma declaração linha a linha, saíram com o bloco ME1
+   (15.10.2026); se um dia o sinal mudar, muda aqui e lá. */
 .agenda-dobra > summary::after {
   content: '';
   position: absolute;
@@ -420,8 +298,7 @@ ul.metodo-sumario-lista li {
  * B10 · O CHÃO DE 12 px, a parte desta folha
  * ------------------------------------------------------------------------- */
 @media (max-width: 640px) {
-  .metodo-sumario-k,
-  .metodo-sumario-n {
+  .metodo-sumario-k {
     font-size: 12px;
   }
 }

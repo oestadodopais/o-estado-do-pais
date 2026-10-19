@@ -1,0 +1,20 @@
+{
+ "conhecido_positivo": {
+  "o_que": "os resumos da regra 5 de antes são os de REFERENCIAS_METODO antes do ME1",
+  "antes": [
+   "2c0adb43dabc8b688009f7fdaf06d925d6bf1afe1f5d031365d8416a927c57d9",
+   "9db1e65032c9e887071fae2df91c472656f1d300435daee34fd91f9568e90429"
+  ],
+  "encontrado": true
+ },
+ "depois": [
+  {
+   "pagina": "metodo/index.html",
+   "resumo": "25d0c6233aa836b0222c1af58df28bc1eaf6344802d31eef2458a55f56929d87"
+  },
+  {
+   "pagina": "en/method/index.html",
+   "resumo": "92b1978e63c8cbc927e1454f1931d895a3841e7935badf21197472780bddc199"
+  }
+ ]
+}

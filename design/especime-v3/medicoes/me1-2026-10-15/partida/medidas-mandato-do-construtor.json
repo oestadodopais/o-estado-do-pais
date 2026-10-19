@@ -1,0 +1,260 @@
+{
+ "medido_em": "2026-10-15T03:20:28Z",
+ "raiz": "<sitio>",
+ "medidas": {
+  "metodo_pt_h2": {
+   "valor": [
+    "Nesta página",
+    "As fontes",
+    "O motor",
+    "O livro-razão",
+    "A construção",
+    "O selo",
+    "A releitura",
+    "As correções",
+    "O que se mede a seguir",
+    "A intervenção humana",
+    "O que o observatório não faz",
+    "Como a inteligência artificial escreve este sítio",
+    "A forma",
+    "O que se mede a seguir"
+   ],
+   "comando": "curl https://oestadodopais.pt/metodo/ | h2"
+  },
+  "metodo_pt_posicao_da_seccao_da_politica": {
+   "valor": {
+    "posicao": 12,
+    "de": 14
+   },
+   "comando": "o índice do <h2> cujo texto fala da inteligência artificial, entre todos os <h2> da página"
+  },
+  "metodo_pt_nomes_de_modelos": {
+   "valor": [
+    "anthropic",
+    "claude",
+    "codex",
+    "openai"
+   ],
+   "comando": "as ocorrências distintas de Claude, Anthropic, Codex, OpenAI, Opus, Fable ou gpt- no texto visível"
+  },
+  "metodo_pt_frases_com_nomes": {
+   "valor": 1,
+   "comando": "as frases do texto visível com um desses nomes"
+  },
+  "metodo_pt_id_politica_presente": {
+   "valor": true,
+   "comando": "grep id=\"politica-de-ia\""
+  },
+  "metodo_en_h2": {
+   "valor": [
+    "On this page",
+    "The sources",
+    "The engine",
+    "The ledger",
+    "The build",
+    "The seal",
+    "The re-reading",
+    "The corrections",
+    "What gets measured next",
+    "Human intervention",
+    "What the observatory does not do",
+    "How artificial intelligence writes this site",
+    "The form",
+    "What gets measured next"
+   ],
+   "comando": "curl https://oestadodopais.pt/en/method/ | h2"
+  },
+  "metodo_en_posicao_da_seccao_da_politica": {
+   "valor": {
+    "posicao": 12,
+    "de": 14
+   },
+   "comando": "o índice do <h2> cujo texto fala da inteligência artificial, entre todos os <h2> da página"
+  },
+  "metodo_en_nomes_de_modelos": {
+   "valor": [
+    "anthropic",
+    "claude",
+    "codex",
+    "openai"
+   ],
+   "comando": "as ocorrências distintas de Claude, Anthropic, Codex, OpenAI, Opus, Fable ou gpt- no texto visível"
+  },
+  "metodo_en_frases_com_nomes": {
+   "valor": 1,
+   "comando": "as frases do texto visível com um desses nomes"
+  },
+  "metodo_en_id_politica_presente": {
+   "valor": true,
+   "comando": "grep id=\"politica-de-ia\""
+  },
+  "outras_paginas_nomes_de_modelos": {
+   "valor": {
+    "/": [],
+    "/sobre/": [],
+    "/precos/": [],
+    "/en/": [],
+    "/en/about/": [],
+    "/livro-razao/divida-publica-2025/": []
+   },
+   "comando": "as mesmas ocorrências em seis páginas que não são o Método",
+   "conhecido_positivo": "o Método tem de dar nomes com o mesmo guião (conhecido-positivo acima)"
+  },
+  "rotulo_href": {
+   "valor": [
+    "/metodo#politica-de-ia"
+   ],
+   "comando": "os href para /metodo# na página /precos/"
+  },
+  "rotulo_texto": {
+   "valor": "Texto gerado por inteligência artificial, segundo o Método .",
+   "comando": "o texto do <div class=\"rotulo-ia…\"> de /precos/"
+  },
+  "afirmacoes": {
+   "valor": {
+    "linhas": 3,
+    "fontes": {
+     "afirmacao-leitao-amaro-saude-oe2027-2026-10-09.yml": "RTP",
+     "afirmacao-pcp-ppp-rodoviarias-oe2027-2026-10-09.yml": "PCP",
+     "afirmacao-rtp-saude-queda-oe2027-2026-10-09.yml": "RTP"
+    }
+   },
+   "comando": "git grep -l '^afirmacao: true' -- ledger/claims; o campo source de cada uma"
+  },
+  "linhas_do_livro": {
+   "valor": 3229,
+   "comando": "ls ledger/claims/*.yml | wc -l"
+  },
+  "direito_de_resposta": {
+   "valor": [
+    "src/i18n/strings.mjs",
+    "src/views/CorrecoesView.astro"
+   ],
+   "comando": "git grep -l direitoDeResposta -- src"
+  },
+  "ficheiros_da_ancora": {
+   "valor": [
+    "scripts/check-lugar.mjs",
+    "scripts/gate-html.mjs",
+    "scripts/lugares-ia-do-portao.mjs",
+    "scripts/textos-aprovados.json",
+    "src/components/RotuloDeIA.astro",
+    "src/data/politica-ia.mjs",
+    "src/lib/documentos.mjs",
+    "src/views/MetodoView.astro",
+    "src/views/SobreView.astro",
+    "tests/pais/portoes.mjs"
+   ],
+   "comando": "git grep -l 'ancora_da_politica\\|ANCORA_DA_POLITICA\\|politica-de-ia' -- src scripts tests"
+  },
+  "oraculo_chaves": {
+   "valor": [
+    "ancora_da_politica",
+    "rotulo",
+    "porta",
+    "frase",
+    "ficha",
+    "o_projeto",
+    "contacto"
+   ],
+   "comando": "as chaves de scripts/textos-aprovados.json"
+  },
+  "oraculo_ancora": {
+   "valor": "politica-de-ia",
+   "comando": "textos-aprovados.json ancora_da_politica"
+  },
+  "identidade_citacoes_metodo": {
+   "valor": [
+    148,
+    212
+   ],
+   "comando": "grep -n '(`metodo`)' IDENTIDADE.md (linhas)"
+  },
+  "ultima_entrada_texto_metodo": {
+   "valor": {
+    "linha": 13875,
+    "texto": "**Texto:** metodo d69dd4ebec1d"
+   },
+   "comando": "a última linha '**Texto:**' com metodo em DECISIONS.md"
+  },
+  "metodo_mjs_sha12_hoje": {
+   "valor": "d69dd4ebec1d",
+   "comando": "sha256 de src/data/metodo.mjs, 12 primeiros hex (a conta de scripts/check-ledger.mjs)",
+   "conhecido_positivo": "tem de ser igual ao da última entrada Texto: metodo"
+  },
+  "fontes_mjs_conferidoEm": {
+   "valor": "2026-09-01T20:07:57+00:00",
+   "comando": "grep conferidoEm src/data/fontes.mjs"
+  },
+  "verifications_data_maxima": {
+   "valor": "2026-10-12",
+   "comando": "o máximo das datas '- date:' sob verifications nas linhas"
+  },
+  "estudos_o_que_este_projeto_conclui": {
+   "valor": {
+    "ficheiros": 17,
+    "exemplos": [
+     "registos/evora-2027-capital-europeia-da-cultura/pt.record.json",
+     "registos/evora-2027-prometido-painel-dinheiro/pt.record.json",
+     "registos/evora-contas-da-camara-2010-2025/pt.record.json",
+     "registos/evora-economia-e-dinheiro-publico-de-fora-da-camara/pt.record.json",
+     "registos/evora-quem-governou-a-camara-2009-2025/pt.record.json"
+    ]
+   },
+   "comando": "git grep -l 'O que este projeto conclui' -- src registos studies-src"
+  },
+  "chaves_da_prova": {
+   "valor": [
+    "fontes",
+    "tipos_de_documento",
+    "linhas_cruzadas",
+    "linhas_anteriores_ao_tubo",
+    "leituras",
+    "afirmacoes",
+    "indexaveis",
+    "divida",
+    "derivadas",
+    "aritmetica_reavaliada",
+    "releituras_registadas",
+    "linhas_reconferidas",
+    "releituras_divergentes",
+    "painel_reconferido_em",
+    "series_atrasadas",
+    "linhas_atrasadas",
+    "correcoes",
+    "atualizacoes",
+    "revisoes_de_proveniencia",
+    "valores_creditados",
+    "painel_total",
+    "painel_com_limiar",
+    "painel_fora_do_limiar",
+    "painel_dentro_do_limiar",
+    "painel_social_total",
+    "municipios_com_pagina",
+    "camaras_acima_do_limite",
+    "camaras_dentro_do_limite",
+    "camaras_sem_valor",
+    "concelhos_linhas",
+    "concelhos_no_livro",
+    "concelhos_linhas_completas",
+    "municipios_total",
+    "estudos",
+    "edicoes",
+    "agenda",
+    "endereco_correcoes",
+    "registos_edicoes",
+    "registos_blocos",
+    "registos_algarismos",
+    "registos_resolvidos",
+    "registos_por_resolver",
+    "registos_com_linha_do_sitio",
+    "registos_com_resumo_de_origem",
+    "registos_sem_resumo_de_origem",
+    "mapa_unidades",
+    "regioes_total",
+    "regioes_com_linha"
+   ],
+   "comando": "as chaves com descrição pt em src/lib/prova.mjs"
+  }
+ }
+}

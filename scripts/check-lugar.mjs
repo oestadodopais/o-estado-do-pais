@@ -77,7 +77,7 @@ import { WORKS } from '../src/data/studies.mjs';
    descrição pública com a frase de abertura do documento, que é transcrição
    registada. Ver `textoDaCabeca()`. */
 import { VERBATIM } from '../src/data/verbatim.mjs';
-import { ANCORA_DA_POLITICA } from '../src/data/politica-ia.mjs';
+import { portaDaPolitica } from '../src/data/politica-ia.mjs';
 import { temRegisto } from '../src/lib/registos.mjs';
 import { documentosDoEstudo } from '../src/lib/documentos.mjs';
 import { portasObrigatoriasB2 } from './portas-b2.mjs';
@@ -608,10 +608,21 @@ const EXCECOES_DO_VOCABULARIO = [
        descrição da primeira página, que diz as seis entradas); a secção do custo do trabalho dessa
        entrada chama-se «O custo do trabalho»; e o bloco do emprego de «O que se passa» abre com «O
        trabalho:». As três são das declarações do lugar de direção (`src/data/primeira-pagina.mjs`), e
-       nenhuma nomeia um estudo: é o trabalho de quem lê. */
+       nenhuma nomeia um estudo: é o trabalho de quem lê.
+
+       MUDA A 15.10.2026, com o bloco ME1: o Método passa a falar ao leitor, e as três frases novas que
+       dizem a palavra são do mandato, palavra por palavra («O trabalho divide-se em três papéis», «conferem
+       o trabalho entregue», «não conhece o trabalho de antemão»), todas no sentido de LABOR, como a antiga
+       «trabalho de quem não escreveu a linha», que saiu com a regra 5 e sai daqui com ela. Sai também «dirige o
+       trabalho», da redação dos lugares anterior à H4-e, que nenhuma página de 15.10.2026 rende. Depois da leitura das
+       frases construídas, o bloco de «não conhece o trabalho de antemão» diz também «cada trabalho novo», e a exceção
+       dispensa o bloco inteiro, como faz a todos os blocos que casam com ela. Depois da leitura a frio do Codex
+       (15.10.2026, o achado 10), a frase da leitura por outra família deixou de repetir o que a primeira secção diz e
+       já não diz «não conhece o trabalho de antemão»: essa alternativa sai, porque nenhuma página a rende, e entra
+       «cada trabalho novo», o mesmo labor, que fica a ser o que dispensa aquele bloco. */
     conta: 'trabalho',
     porque: '«trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo',
-    padrao: /procuram trabalho|custo unitário do trabalho|custo nominal do trabalho|Trabalho, Solidariedade e Segurança Social|mercado de trabalho|postos de trabalho|condições de trabalho|sem trabalho|intensidade de trabalho|trabalho de quem não escreveu|dirige o trabalho|[Oo] custo do trabalho|O trabalho: mais emprego/,
+    padrao: /procuram trabalho|custo unitário do trabalho|custo nominal do trabalho|Trabalho, Solidariedade e Segurança Social|mercado de trabalho|postos de trabalho|condições de trabalho|sem trabalho|intensidade de trabalho|O trabalho divide-se em três papéis|conferem o trabalho entregue|cada trabalho novo|[Oo] custo do trabalho|O trabalho: mais emprego/,
   },
   {
     conta: 'trabalho',
@@ -1143,9 +1154,10 @@ for (const ficheiro of paginas) {
        páginas de linha o recibo também liga ao Método. Contá-la como segunda
        porta era contar a obrigação como escolha. Só se dispensa o destino EXATO
        da política, e só dentro do rótulo: uma segunda porta para o Método
-       noutro sítio da página continua a contar. */
+       noutro sítio da página continua a contar. Desde o bloco ME1 (15.10.2026)
+       o destino é o princípio do Método, composto por `portaDaPolitica()`. */
     if (a.closest('[data-rotulo-ia="topo"]') &&
-        href === `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`) continue;
+        href === portaDaPolitica(lang)) continue;
     /* E O MARCADOR DE UMA FRASE POR CONFIRMAR NA FONTE, pela mesma regra e com o mesmo mecanismo (passagem R4-b,
        06.10.2026). A frase «o que é» de um recibo com uma parte que nem a fonte nem a conta declarada dizem leva o
        marcador da casa, com a classe `marcador-da-frase`, dentro de `[data-por-confirmar-na-fonte]`; é obrigatório onde

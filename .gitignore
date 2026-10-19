@@ -57,3 +57,9 @@ __pycache__/
 
 # RH1-b: os alvos ficam na máquina, sem cópias nos registos comitados.
 design/especime-v3/medicoes/**/alvos.json
+
+# §1.197 (15.10.2026): as capturas PNG deixam de entrar no repositório; entram só os manifestos
+# `capturas.json` (o nome, a largura, a altura e o sha256 de cada captura), que são a prova. As pranchas
+# de `design/marca/`, `design/tipografia/`, `design/especime-v3/maquetas/` e `critica/` não se tocam.
+design/especime-v3/capturas/**/*.png
+design/especime-v3/medicoes/**/*.png

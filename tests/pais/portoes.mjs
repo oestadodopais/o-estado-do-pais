@@ -142,9 +142,10 @@ planta('r1-frescura-que-falta','scripts/check-formas.mjs',[
  ['municipios/mourao/index.html',r=>r.querySelector('[data-frescura]').remove()]
 ],[/frase\(s\) da frescura; tem de ter uma \(F17\)/]);
 /* A porta da política repetida FORA do rótulo continua a contar na L1: a
-   dispensa é do destino exato e só dentro do rótulo (I145). */
+   dispensa é do destino exato e só dentro do rótulo (I145). Desde o ME1
+   (15.10.2026) o destino é o princípio do Método, sem âncora. */
 planta('r1-porta-da-politica-fora-do-rotulo','scripts/check-lugar.mjs',[
- ['temas/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p><a href="/metodo#politica-de-ia">Método</a> <a href="/metodo#politica-de-ia">Método</a></p>')]
+ ['temas/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p><a href="/metodo">Método</a> <a href="/metodo">Método</a></p>')]
 ],[/L1 .*ACIMA DO TETO/]);
 /* Uma sinopse da lista dos estudos com uma palavra trocada, na entrada de um
    estudo de Évora cuja leitura traz sufixos da leitura (I144). A lista passou
@@ -925,3 +926,43 @@ if (!prefixo || prefixo.startsWith('ex1c') || 'ex1c-'.startsWith(prefixo)) {
   ['explicacoes/dinheiro-do-estado-2026/index.html',r=>r.querySelector('[data-instrumento="explicacao-dinheiro-do-estado-2026-ministerios"]').remove()]
  ],[/F22 · a figura declarada «ministerios» da explicação «dinheiro-do-estado-2026» não está na página/]);
 }
+/* ME1 (15.10.2026): as réguas que mudaram de forma com o Método para o leitor, cada uma com a sua planta.
+   A primeira é a prova de aceitação do mandato: «Opus 5» numa frase do Método tem de fechar a construção. */
+planta('me1-nome-de-modelo-no-metodo','scripts/gate-html.mjs',[
+ ['metodo/index.html',r=>r.querySelector('#fontes .metodo-corpo').insertAdjacentHTML('beforeend','<p class="metodo-p">A direção é do Opus 5, que decide o que se publica.</p>')]
+],[/ME1 nomes: o Método diz \d+ nome\(s\) de modelo ou de fornecedor \(Opus\)/]);
+/* A leitura a frio do Codex (15.10.2026, o achado 9): o texto de `noscript`, que quem lê sem JavaScript vê, conta.
+   O portão de HTML lê as páginas com esse conteúdo deitado fora, e a régua dos nomes lê o HTML da página outra vez. */
+planta('me1-nome-dentro-de-noscript','scripts/gate-html.mjs',[
+ ['metodo/index.html',r=>r.querySelector('#fontes .metodo-corpo').insertAdjacentHTML('beforeend','<noscript><p class="metodo-p">A direção é do Opus 5, que decide o que se publica.</p></noscript>')]
+],[/ME1 nomes: o Método diz \d+ nome\(s\) de modelo ou de fornecedor \(Opus\)/]);
+planta('me1-papeis-mudados','scripts/gate-html.mjs',[
+ ['en/method/index.html',r=>{const p=r.querySelector('[data-papeis]');p.set_content(p.innerHTML.replace('three roles','four roles'));}]
+],[/ME1 IA: os papéis não são os da redação decidida/]);
+planta('me1-familias-com-a-porta-trocada','scripts/gate-html.mjs',[
+ ['metodo/index.html',r=>r.querySelector('[data-familias] a').setAttribute('href','https://github.com/oestadodopais/o-estado-do-pais')]
+],[/ME1 IA: a porta para o documento público da política não é a decidida/]);
+/* A porta do rótulo abre o princípio do Método: a forma antiga, com a âncora, deixa de ser a porta. */
+planta('me1-porta-do-rotulo-com-a-ancora-antiga','scripts/gate-html.mjs',[
+ ['precos/index.html',r=>r.querySelector('[data-rotulo-ia="topo"] a').setAttribute('href','/metodo#politica-de-ia')]
+],[/tem 0 porta\(s\) para a política \("\/metodo"\)/]);
+planta('me1-faixa-do-documento-com-a-ancora-antiga','scripts/gate-html.mjs',[
+ ['estudos/agua-nao-faturada/documento/index.html',r=>r.querySelector('[data-oedp-rotulo-ia] a').setAttribute('href','/metodo#politica-de-ia')]
+],[/a porta da política abre "\/metodo#politica-de-ia" e devia abrir "\/metodo"/]);
+/* O parágrafo que cita o marcador passa pelo seu resumo, e uma palavra mudada perde a dispensa. */
+planta('me1-marcador-num-paragrafo-mudado','scripts/gate-html.mjs',[
+ ['metodo/index.html',r=>{const p=r.querySelector('#por-confirmar p.metodo-p');p.set_content(p.innerHTML.replace('não o esconde','não o tapa'));}]
+],[/RP4N: uma página de leitor contém uma marca de informação por confirmar/]);
+/* «trabalho» no sentido de labor só passa nas três frases do mandato; noutra frase do Método conta na L3. */
+planta('me1-trabalho-fora-da-excecao','scripts/check-lugar.mjs',[
+ ['metodo/index.html',r=>r.querySelector('#fontes .metodo-corpo').insertAdjacentHTML('beforeend','<p class="metodo-p">O trabalho de cada estudo lê-se na lista.</p>')]
+],[/L3 .*ACIMA DO TETO/]);
+/* As linhas novas do inventário são sentinelas: uma palavra mudada no Método deixa a linha sem página. */
+planta('me1-linha-do-inventario-mudada','scripts/check-voz.mjs',[
+ ['metodo/index.html',r=>{const p=r.querySelector('#fontes p.metodo-p');p.set_content(p.innerHTML.replace('vêm de fontes oficiais','vêm das fontes oficiais'));}]
+],[/linha «viva» que não se rende em rota nenhuma/,/Os números destas páginas vêm de fontes oficiais/]);
+/* A decisão do ME1-21: as quatro primeiras recusas, que nenhum portão prendia, entram no inventário como linhas
+   vivas, e uma palavra mudada numa delas, no Método construído, deixa a linha sem página. */
+planta('me1-primeira-recusa-mudada','scripts/check-voz.mjs',[
+ ['en/method/index.html',r=>{const li=r.querySelectorAll('.politica-recusas li').find(x=>x.textContent.includes('takes no money'));li.set_content(li.innerHTML.replace('takes no money','accepts no money'));}]
+],[/linha «viva» que não se rende em rota nenhuma/,/This project takes no money from any entity it measures/]);

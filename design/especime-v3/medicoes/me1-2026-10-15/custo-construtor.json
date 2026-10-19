@@ -1,0 +1,20 @@
+{
+  "registo_sha256": "93b01c451d1edd662a0624ae307b45a74e30293e998e1270a9733035b0318759",
+  "desde": null,
+  "primeira_entrada": "2026-10-15T03:17:16.008Z",
+  "ultima_entrada": "2026-10-15T08:05:34.755Z",
+  "segundos": 17298.747,
+  "formato": "Claude",
+  "respostas_do_modelo": 640,
+  "modelos": [
+    "claude-opus-5-5"
+  ],
+  "simbolos": {
+    "input_tokens": 1300,
+    "cache_creation_input_tokens": 9491100,
+    "cache_read_input_tokens": 299271561,
+    "output_tokens": 41990
+  },
+  "saida_minima": true,
+  "respostas_com_saida_parcial": 481
+}

@@ -1,0 +1,737 @@
+{
+ "medido_em": "2026-10-15T06:00:23.313Z",
+ "cabeca_do_dist": "93a884f695280974aa2c5ba5ae714f613f78032d",
+ "construido_em": "2026-10-15T05:33:35.453Z",
+ "medidas": {
+  "palavras_do_corpo_do_metodo": {
+   "valor": {
+    "pt": {
+     "antes": 2477,
+     "depois": 1727,
+     "depois_sobre_antes": 0.697,
+     "menos_de_metade": false
+    },
+    "en": {
+     "antes": 2477,
+     "depois": 1722,
+     "depois_sobre_antes": 0.695,
+     "menos_de_metade": false
+    },
+    "antes_cabeca": "61919ee14a8aecb189bc60c99cb005d79b0aea36",
+    "depois_cabeca": "93a884f695280974aa2c5ba5ae714f613f78032d",
+    "definicao": "o texto de <main> (sem o cabeçalho, o menu e o rodapé), lido elemento a elemento, sem guiões nem folhas de estilo; uma palavra é uma sequência sem espaços com uma letra ou um algarismo"
+   },
+   "comando": "node design/especime-v3/medicoes/me1-2026-10-15/medir-me1.mjs (o antes lê antes/metodo.html.gz e antes/en-method.html.gz, guardados da construção de 61919ee1)",
+   "conhecido_positivo": {
+    "o_que": "a frase «Um dois, três · quatro → 5» tem cinco palavras pela mesma conta (o ponto médio e a seta não contam)",
+    "encontrado": true
+   }
+  },
+  "palavras_por_parte_do_metodo": {
+   "valor": {
+    "pt": {
+     "rotulo": 8,
+     "titulo_e_abertura": 26,
+     "sumario": 41,
+     "politica-de-ia": 242,
+     "fontes": 164,
+     "livro-razao": 184,
+     "releitura": 461,
+     "por-confirmar": 108,
+     "correcoes": 111,
+     "agenda": 129,
+     "o-que-nao-faz": 145,
+     "a-forma": 108
+    },
+    "en": {
+     "rotulo": 9,
+     "titulo_e_abertura": 30,
+     "sumario": 42,
+     "politica-de-ia": 244,
+     "fontes": 159,
+     "livro-razao": 176,
+     "releitura": 471,
+     "por-confirmar": 106,
+     "correcoes": 108,
+     "agenda": 114,
+     "o-que-nao-faz": 160,
+     "a-forma": 103
+    },
+    "soma_pt": 1727,
+    "soma_en": 1722
+   },
+   "comando": "node design/especime-v3/medicoes/me1-2026-10-15/medir-me1.mjs (a mesma conta, parte a parte de <main>)",
+   "conhecido_positivo": {
+    "o_que": "a soma das partes é a contagem do corpo inteiro, nas duas edições",
+    "encontrado": true
+   }
+  },
+  "nomes_de_modelos_no_metodo": {
+   "valor": {
+    "pt": [],
+    "en": []
+   },
+   "comando": "node design/especime-v3/medicoes/me1-2026-10-15/medir-me1.mjs (a expressão NOMES_DE_MODELOS de scripts/lugares-ia-do-portao.mjs sobre o texto visível)",
+   "conhecido_positivo": {
+    "o_que": "o Método de antes do bloco diz claude, anthropic, codex e openai pela mesma conta",
+    "antes_pt": [
+     "anthropic",
+     "claude",
+     "codex",
+     "openai"
+    ],
+    "antes_en": [
+     "anthropic",
+     "claude",
+     "codex",
+     "openai"
+    ],
+    "encontrado": true
+   }
+  },
+  "nomes_de_modelos_noutras_paginas": {
+   "valor": {
+    "index.html": [],
+    "sobre/index.html": [],
+    "precos/index.html": [],
+    "en/index.html": [],
+    "en/about/index.html": [],
+    "livro-razao/divida-publica-2025/index.html": []
+   },
+   "comando": "node design/especime-v3/medicoes/me1-2026-10-15/medir-me1.mjs (as mesmas seis páginas que o §0 do mandato mediu no ar)",
+   "conhecido_positivo": {
+    "o_que": "o mesmo detetor acha os nomes no Método de antes (a medida acima)",
+    "encontrado": true
+   }
+  },
+  "porta_do_rotulo": {
+   "valor": {
+    "precos/index.html": [
+     "/metodo"
+    ],
+    "en/prices/index.html": [
+     "/en/method"
+    ],
+    "metodo/index.html": [
+     "/metodo"
+    ],
+    "sobre/index.html": [
+     "/metodo"
+    ]
+   },
+   "comando": "node design/especime-v3/medicoes/me1-2026-10-15/medir-me1.mjs (os href dentro de [data-rotulo-ia=\"topo\"])",
+   "conhecido_positivo": {
+    "o_que": "no Método de antes do bloco o rótulo abre /metodo#politica-de-ia",
+    "antes": [
+     "/metodo#politica-de-ia"
+    ],
+    "encontrado": true
+   }
+  },
+  "porta_do_sobre": {
+   "valor": {
+    "pt": [
+     {
+      "href": "/metodo",
+      "texto": "→ Quem escreve estas páginas"
+     }
+    ],
+    "en": [
+     {
+      "href": "/en/method",
+      "texto": "→ Who writes these pages"
+     }
+    ]
+   },
+   "comando": "node design/especime-v3/medicoes/me1-2026-10-15/medir-me1.mjs (a ligação de p.sobre-porta)",
+   "conhecido_positivo": {
+    "o_que": "no Sobre de antes a porta abria /metodo#politica-de-ia",
+    "antes": [
+     {
+      "href": "/metodo#politica-de-ia",
+      "texto": "→ Como a inteligência artificial escreve este sítio"
+     }
+    ],
+    "encontrado": true
+   }
+  },
+  "seccoes_do_metodo": {
+   "valor": {
+    "pt": [
+     {
+      "id": "politica-de-ia",
+      "titulo": "Quem escreve estas páginas"
+     },
+     {
+      "id": "fontes",
+      "titulo": "De onde vêm os números"
+     },
+     {
+      "id": "livro-razao",
+      "titulo": "O recibo de cada número"
+     },
+     {
+      "id": "releitura",
+      "titulo": "Como se confere"
+     },
+     {
+      "id": "por-confirmar",
+      "titulo": "O que está por confirmar"
+     },
+     {
+      "id": "correcoes",
+      "titulo": "As correções"
+     },
+     {
+      "id": "agenda",
+      "titulo": "O que se mede, e quem decide"
+     },
+     {
+      "id": "o-que-nao-faz",
+      "titulo": "O que este projeto não faz"
+     },
+     {
+      "id": "a-forma",
+      "titulo": "A forma"
+     }
+    ],
+    "en": [
+     {
+      "id": "politica-de-ia",
+      "titulo": "Who writes these pages"
+     },
+     {
+      "id": "fontes",
+      "titulo": "Where the numbers come from"
+     },
+     {
+      "id": "livro-razao",
+      "titulo": "The receipt for each number"
+     },
+     {
+      "id": "releitura",
+      "titulo": "How it is checked"
+     },
+     {
+      "id": "por-confirmar",
+      "titulo": "What is still to be confirmed"
+     },
+     {
+      "id": "correcoes",
+      "titulo": "Corrections"
+     },
+     {
+      "id": "agenda",
+      "titulo": "What gets measured, and who decides"
+     },
+     {
+      "id": "o-que-nao-faz",
+      "titulo": "What this project does not do"
+     },
+     {
+      "id": "a-forma",
+      "titulo": "The form"
+     }
+    ],
+    "posicao_da_seccao_da_politica": {
+     "pt": 1,
+     "en": 1,
+     "de": 9
+    }
+   },
+   "comando": "node design/especime-v3/medicoes/me1-2026-10-15/medir-me1.mjs (as section.metodo-secao de <main>, com o id e o <h2>)",
+   "conhecido_positivo": {
+    "o_que": "no Método de antes, a secção da política não era a primeira das secções com metodo-secao (antes: quantas eram; posicao_antes: a dela)",
+    "antes": 13,
+    "posicao_antes": 11,
+    "encontrado": true
+   }
+  },
+  "ancoras_antigas_do_metodo": {
+   "valor": {
+    "ficam": [
+     "sumario",
+     "fontes",
+     "livro-razao",
+     "construcao",
+     "selo",
+     "releitura",
+     "correcoes",
+     "agenda",
+     "o-que-nao-faz",
+     "politica-de-ia",
+     "a-forma",
+     "a-cor",
+     "a-escala",
+     "a-letra"
+    ],
+    "saem": [
+     "motor",
+     "intervencao-humana",
+     "a-seguir"
+    ],
+    "nova": [
+     "por-confirmar"
+    ]
+   },
+   "comando": "node design/especime-v3/medicoes/me1-2026-10-15/medir-me1.mjs (os id das duas edições)",
+   "conhecido_positivo": {
+    "o_que": "as dezassete âncoras existiam todas no Método de antes",
+    "encontrado": true
+   }
+  },
+  "tokens_da_prova_no_texto_corrido": {
+   "valor": {
+    "pt": [
+     {
+      "chave": "afirmacoes",
+      "valor": "3 226",
+      "porta": "/livro-razao"
+     },
+     {
+      "chave": "indexaveis",
+      "valor": "3 222",
+      "porta": "/livro-razao"
+     },
+     {
+      "chave": "divida",
+      "valor": "4",
+      "porta": "/livro-razao"
+     },
+     {
+      "chave": "linhas_reconferidas",
+      "valor": "2 636",
+      "porta": "/livro-razao"
+     },
+     {
+      "chave": "releituras_registadas",
+      "valor": "3 861",
+      "porta": "/livro-razao"
+     },
+     {
+      "chave": "releituras_divergentes",
+      "valor": "11",
+      "porta": "/livro-razao"
+     },
+     {
+      "chave": "painel_reconferido_em",
+      "valor": "12.10.2026",
+      "porta": "/uniao-europeia#painel"
+     },
+     {
+      "chave": "correcoes",
+      "valor": "7",
+      "porta": "/correcoes"
+     },
+     {
+      "chave": "atualizacoes",
+      "valor": "28",
+      "porta": "/correcoes"
+     },
+     {
+      "chave": "revisoes_de_proveniencia",
+      "valor": "72",
+      "porta": "/correcoes#registo"
+     }
+    ],
+    "en": [
+     {
+      "chave": "afirmacoes",
+      "valor": "3 226",
+      "porta": "/en/ledger"
+     },
+     {
+      "chave": "indexaveis",
+      "valor": "3 222",
+      "porta": "/en/ledger"
+     },
+     {
+      "chave": "divida",
+      "valor": "4",
+      "porta": "/en/ledger"
+     },
+     {
+      "chave": "linhas_reconferidas",
+      "valor": "2 636",
+      "porta": "/en/ledger"
+     },
+     {
+      "chave": "releituras_registadas",
+      "valor": "3 861",
+      "porta": "/en/ledger"
+     },
+     {
+      "chave": "releituras_divergentes",
+      "valor": "11",
+      "porta": "/en/ledger"
+     },
+     {
+      "chave": "painel_reconferido_em",
+      "valor": "12.10.2026",
+      "porta": "/en/european-union#painel"
+     },
+     {
+      "chave": "correcoes",
+      "valor": "7",
+      "porta": "/en/corrections"
+     },
+     {
+      "chave": "atualizacoes",
+      "valor": "28",
+      "porta": "/en/corrections"
+     },
+     {
+      "chave": "revisoes_de_proveniencia",
+      "valor": "72",
+      "porta": "/en/corrections#registo"
+     }
+    ],
+    "contagem": {
+     "pt": 10,
+     "en": 10
+    }
+   },
+   "comando": "node design/especime-v3/medicoes/me1-2026-10-15/medir-me1.mjs (os [data-prova] dentro de p.metodo-p, com o texto e a porta)"
+  },
+  "ligacoes_para_fora_do_metodo": {
+   "valor": {
+    "pt": [
+     "https://github.com/oestadodopais/o-estado-do-pais/blob/main/design/observatorio/POLITICA-DA-AUTONOMIA.md"
+    ],
+    "en": [
+     "https://github.com/oestadodopais/o-estado-do-pais/blob/main/design/observatorio/POLITICA-DA-AUTONOMIA.md"
+    ],
+    "antes_pt": []
+   },
+   "comando": "node design/especime-v3/medicoes/me1-2026-10-15/medir-me1.mjs (os href com esquema http ou https dentro de <main>)",
+   "conhecido_positivo": {
+    "o_que": "uma página de ensaio com uma ligação https e uma interna dá uma ligação para fora",
+    "encontrado": true
+   }
+  },
+  "resumo_de_metodo_mjs": {
+   "valor": {
+    "resumo": "893a8b5e47d9",
+    "carimbo_da_entrada_1_196": "893a8b5e47d9",
+    "iguais": true
+   },
+   "comando": "node -e \"const c=require('crypto'),f=require('fs');console.log(c.createHash('sha256').update(f.readFileSync('src/data/metodo.mjs','utf8').replace(/\\r\\n/g,'\\n'),'utf8').digest('hex').slice(0,12))\" (a conta de resumoDoTexto em scripts/check-ledger.mjs); e shasum -a 256 src/data/metodo.mjs",
+   "conhecido_positivo": {
+    "o_que": "a mesma conta sobre o metodo.mjs da cabeça de partida dá d69dd4ebec1d, o carimbo da §1.184",
+    "antes": "d69dd4ebec1d",
+    "encontrado": true
+   }
+  },
+  "linhas_com_a_pordata_por_fonte": {
+   "valor": {
+    "linhas": 1,
+    "ficheiros": [
+     "saldo-natural-portugal-2025.yml"
+    ]
+   },
+   "comando": "o campo source de ledger/claims/*.yml igual a «PORDATA» (o mesmo leitor do §0 do mandato)",
+   "conhecido_positivo": {
+    "o_que": "o mesmo leitor acha as linhas com o INE por fonte",
+    "linhas_ine": 1261,
+    "encontrado": true
+   }
+  },
+  "ledger_tocado_no_ramo": {
+   "valor": {
+    "ficheiros": 0,
+    "lista": [],
+    "de": "4b50b92e",
+    "ate": "93a884f695280974aa2c5ba5ae714f613f78032d"
+   },
+   "comando": "git diff --name-only 4b50b92e HEAD -- ledger/",
+   "conhecido_positivo": {
+    "o_que": "o mesmo comando sobre o último commit que tocou ledger/ antes da partida lista os ficheiros dele",
+    "commit": "17e6d819c0cb8dc77dda9cd2072d70d27cf9b83e",
+    "ficheiros": 5,
+    "encontrado": true
+   }
+  },
+  "linhas_por_confirmar": {
+   "valor": {
+    "linhas": 4,
+    "ids": [
+     "evora-prr-aprovado-2026",
+     "evora-prr-pago-2026",
+     "evora-prr-vencido-aprovado-2026",
+     "saldo-natural-portugal-2025"
+    ],
+    "a_da_pordata_entre_elas": true
+   },
+   "comando": "provenienciaIncompleta() de src/lib/ledger.mjs sobre as linhas de loadClaims(), o mesmo predicado da contagem «divida» de src/lib/prova.mjs",
+   "conhecido_positivo": {
+    "o_que": "o mesmo predicado dá falso numa linha de origem completa (divida-publica-2025) e verdadeiro na mesma linha com o excerto trocado por «[a verificar]»",
+    "completa_da_falso": true,
+    "plantada_da_verdadeiro": true,
+    "encontrado": true
+   }
+  },
+  "o_metodo_na_regua_da_voz": {
+   "valor": {
+    "metodo_inventariado": false,
+    "sobre_inventariado": false,
+    "linha_inventariada": false,
+    "isentas": [
+     "sobre",
+     "metodo",
+     "linha"
+    ]
+   },
+   "comando": "os conjuntos ROTAS_DO_INVENTARIO e ROTAS_QUE_PROVAM_A_RENDICAO de scripts/medir-defeitos.mjs, lidos do código (a célula 3 do check:voz, «um bloco de rota inventariada fora do INVENTARIO-FRASES.md», só corre nas inventariadas)",
+   "conhecido_positivo": {
+    "o_que": "o mesmo leitor acha «correcoes» entre as rotas inventariadas",
+    "encontrado": true
+   }
+  },
+  "textos_das_paginas_fora_da_amarra": {
+   "valor": {
+    "amarra": [
+     {
+      "nome": "sobre",
+      "ficheiro": "src/data/sobre.mjs"
+     },
+     {
+      "nome": "metodo",
+      "ficheiro": "src/data/metodo.mjs"
+     }
+    ],
+    "vistas": {
+     "metodo": [
+      {
+       "ficheiro": "src/data/metodo.mjs",
+       "nomes": [
+        "SECOES",
+        "ABERTURA",
+        "FECHO"
+       ],
+       "na_amarra": true
+      },
+      {
+       "ficheiro": "src/data/politica-ia.mjs",
+       "nomes": [
+        "DOCUMENTO_DA_POLITICA",
+        "FRASE",
+        "ID_DA_SECCAO_DA_POLITICA",
+        "POLITICA"
+       ],
+       "na_amarra": false
+      }
+     ],
+     "sobre": [
+      {
+       "ficheiro": "src/data/sobre.mjs",
+       "nomes": [
+        "SOBRE"
+       ],
+       "na_amarra": true
+      },
+      {
+       "ficheiro": "src/data/politica-ia.mjs",
+       "nomes": [
+        "CONTACTO",
+        "O_PROJETO",
+        "POLITICA",
+        "portaDaPolitica"
+       ],
+       "na_amarra": false
+      },
+      {
+       "ficheiro": "src/data/metodo.mjs",
+       "nomes": [
+        "ENDERECO_CORRECOES"
+       ],
+       "na_amarra": true
+      }
+     ]
+    },
+    "textos_da_primeira_seccao_do_metodo_pt": {
+     "titulo": {
+      "no_oraculo": false,
+      "na_copia_do_portao": false,
+      "numa_linha_viva_do_inventario": true
+     },
+     "frase": {
+      "no_oraculo": true,
+      "na_copia_do_portao": false,
+      "numa_linha_viva_do_inventario": false
+     },
+     "papeis": {
+      "no_oraculo": false,
+      "na_copia_do_portao": true,
+      "numa_linha_viva_do_inventario": true
+     },
+     "familias": {
+      "no_oraculo": false,
+      "na_copia_do_portao": true,
+      "numa_linha_viva_do_inventario": true
+     },
+     "publicacao": {
+      "no_oraculo": false,
+      "na_copia_do_portao": false,
+      "numa_linha_viva_do_inventario": true
+     },
+     "recusas": [
+      {
+       "no_oraculo": false,
+       "na_copia_do_portao": false,
+       "numa_linha_viva_do_inventario": false
+      },
+      {
+       "no_oraculo": false,
+       "na_copia_do_portao": false,
+       "numa_linha_viva_do_inventario": false
+      },
+      {
+       "no_oraculo": false,
+       "na_copia_do_portao": false,
+       "numa_linha_viva_do_inventario": false
+      },
+      {
+       "no_oraculo": false,
+       "na_copia_do_portao": false,
+       "numa_linha_viva_do_inventario": false
+      },
+      {
+       "no_oraculo": false,
+       "na_copia_do_portao": false,
+       "numa_linha_viva_do_inventario": true
+      }
+     ]
+    },
+    "recusas": 5,
+    "recusas_sem_portao_que_as_prenda": 4
+   },
+   "comando": "o objeto TEXTOS de scripts/check-ledger.mjs, os import de ../data/ de src/views/MetodoView.astro e SobreView.astro, e cada texto da primeira secção (pt) procurado em scripts/textos-aprovados.json, scripts/lugares-ia-do-portao.mjs e nas linhas vivas de design/especime-v3/INVENTARIO-FRASES.md",
+   "conhecido_positivo": {
+    "o_que": "o mesmo leitor acha src/data/metodo.mjs e src/data/sobre.mjs na amarra, cada um importado pela sua página",
+    "metodo_na_amarra": true,
+    "sobre_na_amarra": true,
+    "encontrado": true
+   }
+  },
+  "inventario_do_metodo": {
+   "valor": {
+    "linhas_novas_vivas": 54,
+    "por_classe": {
+     "navegacao": 14,
+     "divulgacao": 6,
+     "autorreferencia": 34
+    },
+    "retiradas_pelo_me1": 20,
+    "retiradas_por_bloco": {
+     "frescura": 6,
+     "h4": 10,
+     "tp1": 4
+    },
+    "titulos_que_sairam_do_ficheiro_ainda_presentes": 0
+   },
+   "comando": "as linhas de cinco colunas de design/especime-v3/INVENTARIO-FRASES.md com o bloco me1, e as retiradas cuja razão começa por «ME1 (15.10.2026)»",
+   "conhecido_positivo": {
+    "o_que": "o mesmo leitor conta as linhas do bloco h4, que existiam antes do ME1",
+    "linhas_h4": 51,
+    "encontrado": true
+   }
+  },
+  "plantas_do_bloco": {
+   "valor": {
+    "em_memoria_no_portao_de_html": 11,
+    "me1_sobre_o_dist": {
+     "corridas": 8,
+     "morderam": 8,
+     "nomes": [
+      "me1-nome-de-modelo-no-metodo",
+      "me1-papeis-mudados",
+      "me1-familias-com-a-porta-trocada",
+      "me1-porta-do-rotulo-com-a-ancora-antiga",
+      "me1-faixa-do-documento-com-a-ancora-antiga",
+      "me1-marcador-num-paragrafo-mudado",
+      "me1-trabalho-fora-da-excecao",
+      "me1-linha-do-inventario-mudada"
+     ]
+    },
+    "antigas_que_o_bloco_tocou": {
+     "corridas": 2,
+     "morderam": 2,
+     "nomes": [
+      "r1-porta-da-politica-fora-do-rotulo",
+      "s1c-voz-recusa-do-metodo-mudada"
+     ]
+    },
+    "da_amarra": {
+     "corridas": 3,
+     "morderam": 3,
+     "nomes": [
+      "me1-citacao-do-selo-mudada",
+      "me1-citacao-sem-marca",
+      "me1-texto-governado-sem-entrada"
+     ]
+    },
+    "das_frases": {
+     "corridas": 20,
+     "morderam": 20
+    }
+   },
+   "comando": "os registos que as plantas escreveram: plantas/plantas-portoes-me1.json, plantas/plantas-portoes-lista.json, plantas/plantas-da-amarra.json, frases/conferencia-das-frases.json, e PLANTAS_DO_METODO de scripts/lugares-ia-do-portao.mjs"
+  },
+  "frases_do_mandato_no_metodo": {
+   "valor": {
+    "paragrafos": 40,
+    "por_edicao": {
+     "pt": 20,
+     "en": 20
+    },
+    "diferencas": 0
+   },
+   "comando": "node design/especime-v3/medicoes/me1-2026-10-15/conferir-frases.mjs dist <frases-do-mandato.json> design/especime-v3/medicoes/me1-2026-10-15/frases",
+   "conhecido_positivo": {
+    "o_que": "uma palavra trocada em cada secção é recusada nessa secção",
+    "encontrado": true
+   }
+  },
+  "capturas": {
+   "valor": {
+    "metodo": {
+     "capturas": 10,
+     "recortes": 30,
+     "falhas": 0,
+     "ok": true,
+     "cabeca": "93a884f695280974aa2c5ba5ae714f613f78032d",
+     "sem_transbordo": 10
+    },
+    "primeira-e-sobre": {
+     "capturas": 20,
+     "recortes": 20,
+     "falhas": 0,
+     "ok": true,
+     "cabeca": "99b572ec961e13dfa7357f8f9684926431c620ad",
+     "sem_transbordo": 20
+    }
+   },
+   "comando": "os capturas.json de design/especime-v3/capturas/me1-2026-10-15/*/, escritos por scripts/leituras/captar.mjs"
+  },
+  "portoes": {
+   "valor": {
+    "build": 0,
+    "verify": 0,
+    "typecheck": 0,
+    "cabeca": "93a884f695280974aa2c5ba5ae714f613f78032d",
+    "cabeca_fim": "93a884f695280974aa2c5ba5ae714f613f78032d",
+    "partida": {
+     "build": 0,
+     "verify": 0,
+     "typecheck": 0,
+     "cabeca": "61919ee14a8aecb189bc60c99cb005d79b0aea36"
+    },
+    "motor": {
+     "check_series": 0,
+     "check_cruzamento_com_origem": 0
+    }
+   },
+   "comando": "os ficheiros .codigo que scripts/leituras/portoes.sh escreveu em portoes/ e partida/portoes/, e os de motor/, escritos depois de cada processo acabar"
+  }
+ }
+}

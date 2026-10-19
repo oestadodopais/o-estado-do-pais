@@ -23,7 +23,8 @@ import {
 } from '../src/lib/ledger.mjs';
 import { lerSeries, validateSeries, paisesDaUniao, SERIES_DIR } from '../src/lib/series.mjs';
 import { Decimal } from '../src/lib/decimal.mjs';
-import { REGRAS, ABERTURA, LEITURA_BREVE, FECHO } from '../src/data/metodo.mjs';
+import * as METODO from '../src/data/metodo.mjs';
+import * as POLITICA_IA from '../src/data/politica-ia.mjs';
 import { SOBRE } from '../src/data/sobre.mjs';
 import { conferirCasasDecimais, plantasDasCasasDecimais } from './casas-decimais.mjs';
 
@@ -781,9 +782,9 @@ console.log('');
  *
  *   · toda a entrada do `DECISIONS.md` a partir da §1.38 declara, na primeira
  *     linha por baixo do título, o que a decisão governa:
- *     `**Afecta:** sobre · metodo · agenda · nenhum`;
+ *     `**Afecta:** sobre · metodo · politica · agenda · nenhum`;
  *   · para cada texto nomeado que não seja `agenda`, a entrada carrega
- *     `**Texto:** sobre <sha256, 12 primeiros hex> · metodo <…>`, tal como os
+ *     `**Texto:** sobre <sha256, 12 primeiros hex> · metodo <…> · politica <…>`, tal como os
  *     ficheiros estavam quando a entrada foi escrita, e ou o texto mudou no
  *     bloco, ou a entrada diz `**Sem alteração:** <motivo>`;
  *   · uma entrada que nomeie `agenda` carrega `**Agenda:** <id do item>
@@ -816,10 +817,30 @@ console.log('');
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '..');
 
-/** Os textos que a regra governa, e o ficheiro de cada um. */
+/**
+ * Os textos que a regra governa, e o ficheiro de cada um.
+ *
+ * A POLÍTICA ENTRA NO BLOCO ME1 (15.10.2026, a decisão do lugar de direção sobre a
+ * questão ME1-21). O Método diz ao leitor que o texto dele e o do Sobre só mudam com
+ * uma decisão registada que carimbe a versão nova, e as duas páginas rendem também o
+ * texto de `src/data/politica-ia.mjs`: no Método, a primeira secção e as cinco
+ * recusas; no Sobre, a frase do projeto, a do contacto e a porta da política. Esse
+ * texto estava preso por outros portões (o oráculo, a cópia do lado do portão, o
+ * inventário), nenhum dos quais pede uma decisão, e quatro das recusas por nenhum.
+ * A frase fica, e passa a ser verdadeira por este portão a mais.
+ *
+ * Um nome novo não precisa de mais nada aqui: a primeira entrada que o nomeia (para a
+ * política, a §1.196) não tem entrada anterior com que se compare, e as duas regras
+ * que comparam com a anterior (o resumo repetido sem «Sem alteração», e o «Sem
+ * alteração» com resumo novo) saltam-na, porque `ultimaQueNomeia[nome]` ainda não
+ * existe; a conferência que fecha o círculo compara-a com o ficheiro de hoje, como a
+ * qualquer outra. As cadeias da interface (`src/i18n/strings.mjs`) ficam fora desta
+ * amarra.
+ */
 const TEXTOS = {
   sobre: path.join(RAIZ, 'src', 'data', 'sobre.mjs'),
   metodo: path.join(RAIZ, 'src', 'data', 'metodo.mjs'),
+  politica: path.join(RAIZ, 'src', 'data', 'politica-ia.mjs'),
 };
 const NOMES_ACEITES = new Set([...Object.keys(TEXTOS), 'agenda', 'nenhum']);
 
@@ -933,13 +954,13 @@ function confereAmarra() {
     if (e.afecta === null) {
       erros.push(
         `${onde} não declara **Afecta:**. Toda a entrada a partir da §1.38 diz o que governa ` +
-          `(sobre · metodo · agenda · nenhum). Uma mudança de rumo não sai em silêncio.`,
+          `(${[...NOMES_ACEITES].join(' · ')}). Uma mudança de rumo não sai em silêncio.`,
       );
       continue;
     }
     for (const nome of e.afecta) {
       if (!NOMES_ACEITES.has(nome)) {
-        erros.push(`${onde}: **Afecta:** nomeia "${nome}", que não é um dos quatro.`);
+        erros.push(`${onde}: **Afecta:** nomeia "${nome}", que não é um dos nomes aceites (${[...NOMES_ACEITES].join(' · ')}).`);
       }
     }
     if (e.afecta.includes('nenhum') && e.afecta.length > 1) {
@@ -1077,7 +1098,8 @@ function confereAmarra() {
  *
  * A CONVENÇÃO, escrita na `IDENTIDADE.md` §8 e usada por ela: uma frase de um
  * texto governado citada na constituição vai entre «…» e traz o nome do
- * ficheiro logo a seguir, entre parênteses e em código: (`metodo`), (`sobre`).
+ * ficheiro logo a seguir, entre parênteses e em código: (`metodo`), (`sobre`), e desde o
+ * ME1 (`politica`).
  * São os mesmos nomes curtos do `**Afecta:**`, e não um segundo vocabulário.
  *
  * O QUE ISTO CONFERE, e são três coisas:
@@ -1123,6 +1145,16 @@ function achata(s) {
  * existe em src/data/metodo.mjs» com a frase a estar lá, e `grep -c` a dar 1. O
  * objeto entra inteiro e nas duas línguas, pelo mesmo `anda()` que já percorre
  * os outros três: quem acrescentar uma entrada ao fecho não tem de tocar aqui.
+ *
+ * E DESDE O BLOCO ME1 (15.10.2026) PERCORRE O MÓDULO INTEIRO. O texto governado do
+ * Método passou a ser as sete secções de `SECOES`, a `ABERTURA`, o `FECHO` e o
+ * marcador (a primeira secção da página é a da política, em `politica-ia.mjs`), a
+ * `LEITURA_BREVE` saiu com o desenho do mecanismo, e uma lista de nomes escrita aqui
+ * deixava de fora a primeira exportação nova que o texto governado ganhasse. Lê-se
+ * o que o módulo exporta, e uma citação marcada bate se for um pedaço de uma das
+ * suas cadeias. O módulo da política entra pela mesma porta desde a decisão do ME1-21:
+ * lê-se o que ele exporta, e as funções (a porta, o rótulo e o contacto compostos)
+ * não são cadeias e ficam de fora, como ficam as do Método.
  */
 function cadeiasDoTexto(nome) {
   const out = [];
@@ -1131,8 +1163,10 @@ function cadeiasDoTexto(nome) {
     else if (Array.isArray(v)) v.forEach(anda);
     else if (v && typeof v === 'object') Object.values(v).forEach(anda);
   };
-  if (nome === 'metodo') anda([REGRAS, ABERTURA, LEITURA_BREVE, FECHO]);
+  if (nome === 'metodo') anda(Object.values(METODO));
+  else if (nome === 'politica') anda(Object.values(POLITICA_IA));
   else if (nome === 'sobre') anda(SOBRE);
+  else throw new Error(`cadeiasDoTexto: "${nome}" é um texto governado que esta função não sabe ler.`);
   return out;
 }
 
@@ -1200,7 +1234,7 @@ function confereCitacoes() {
   }
 
   /* Uma marca que não vem a seguir a uma citação não nomeia nada. */
-  const MARCA_SOLTA = /(^|[^»*\s])\s*\(`(metodo|sobre)`\)/g;
+  const MARCA_SOLTA = new RegExp(`(^|[^»*\\s])\\s*\\(\`(${Object.keys(TEXTOS).join('|')})\`\\)`, 'g');
   let s;
   MARCA_SOLTA.lastIndex = 0;
   const inteiro = achata(texto);

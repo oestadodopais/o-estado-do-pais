@@ -1,0 +1,204 @@
+{
+ "cabeca": "99b572ec961e13dfa7357f8f9684926431c620ad",
+ "construido_em": "2026-10-15T04:40:06.707Z",
+ "edicoes": {
+  "pt": {
+   "pagina": "dist/metodo/index.html",
+   "paragrafos": 20,
+   "diferencas": []
+  },
+  "en": {
+   "pagina": "dist/en/method/index.html",
+   "paragrafos": 20,
+   "diferencas": []
+  }
+ },
+ "plantas": [
+  {
+   "lingua": "pt",
+   "seccao": "politica-de-ia",
+   "onde": "o primeiro parágrafo",
+   "palavra": "Escrito",
+   "trocada": "Escritx",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "pt",
+   "seccao": "fontes",
+   "onde": "o primeiro parágrafo",
+   "palavra": "números",
+   "trocada": "númerox",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "pt",
+   "seccao": "livro-razao",
+   "onde": "o primeiro parágrafo",
+   "palavra": "Todos",
+   "trocada": "Todox",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "pt",
+   "seccao": "releitura",
+   "onde": "o primeiro parágrafo",
+   "palavra": "Estas",
+   "trocada": "Estax",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "pt",
+   "seccao": "por-confirmar",
+   "onde": "o primeiro parágrafo",
+   "palavra": "Quando",
+   "trocada": "Quandx",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "pt",
+   "seccao": "correcoes",
+   "onde": "o primeiro parágrafo",
+   "palavra": "registo",
+   "trocada": "registx",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "pt",
+   "seccao": "agenda",
+   "onde": "o primeiro parágrafo",
+   "palavra": "mede",
+   "trocada": "medx",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "pt",
+   "seccao": "o-que-nao-faz",
+   "onde": "o primeiro parágrafo",
+   "palavra": "classifica",
+   "trocada": "classificx",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "pt",
+   "seccao": "o-que-nao-faz",
+   "onde": "uma recusa",
+   "palavra": "Este",
+   "trocada": "Estx",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "pt",
+   "seccao": "a-forma",
+   "onde": "a forma",
+   "palavra": "aparece",
+   "trocada": "aparecx",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "en",
+   "seccao": "politica-de-ia",
+   "onde": "o primeiro parágrafo",
+   "palavra": "Written",
+   "trocada": "Writtex",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "en",
+   "seccao": "fontes",
+   "onde": "o primeiro parágrafo",
+   "palavra": "numbers",
+   "trocada": "numberx",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "en",
+   "seccao": "livro-razao",
+   "onde": "o primeiro parágrafo",
+   "palavra": "Every",
+   "trocada": "Everx",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "en",
+   "seccao": "releitura",
+   "onde": "o primeiro parágrafo",
+   "palavra": "These",
+   "trocada": "Thesx",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "en",
+   "seccao": "por-confirmar",
+   "onde": "o primeiro parágrafo",
+   "palavra": "When",
+   "trocada": "Whex",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "en",
+   "seccao": "correcoes",
+   "onde": "o primeiro parágrafo",
+   "palavra": "public",
+   "trocada": "publix",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "en",
+   "seccao": "agenda",
+   "onde": "o primeiro parágrafo",
+   "palavra": "What",
+   "trocada": "Whax",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "en",
+   "seccao": "o-que-nao-faz",
+   "onde": "o primeiro parágrafo",
+   "palavra": "does",
+   "trocada": "doex",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "en",
+   "seccao": "o-que-nao-faz",
+   "onde": "uma recusa",
+   "palavra": "This",
+   "trocada": "Thix",
+   "mordeu": true,
+   "diferencas": 1
+  },
+  {
+   "lingua": "en",
+   "seccao": "a-forma",
+   "onde": "a forma",
+   "palavra": "Colour",
+   "trocada": "Coloux",
+   "mordeu": true,
+   "diferencas": 1
+  }
+ ],
+ "totais": {
+  "paragrafos": 40,
+  "diferencas": 0,
+  "plantas": 20,
+  "plantas_que_morderam": 20
+ }
+}

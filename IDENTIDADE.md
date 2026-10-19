@@ -76,7 +76,7 @@ diretor de 24.08.2026, `DECISIONS.md` §1.64).
 **A escala da leitura, desde a v2.** A prosa das camadas de leitura passa a 17 a
 18px de base, com entrelinha entre 1,55 e 1,6 (`design/DECISAO.md` escreve 1,55;
 a de hoje é 1,6 sobre 16px, e a entrelinha absoluta não desce). Cresce onde se
-lê a sério: leitura breve, Fundo, as dez regras do Método, a frase de atribuição de
+lê a sério: leitura breve, Fundo, as secções do Método, a frase de atribuição de
 uma linha. A mobília não cresce, porque continua a ser mobília: a diferença de
 escala entre a prosa e o aparelho é o que faz a página ler-se como instrumento e
 não como jornal.
@@ -176,8 +176,9 @@ Um tipo de página novo escolhe **uma destas três**. Não inventa a quarta.
 - **C · Instrumento**, largura toda, o instrumento enche-a. Só para instrumentos.
 
 **Um instrumento dentro de uma página não é uma quarta disposição.** A primeira
-página, a página do município e o Método já o fazem: a página mantém a sua
-disposição, e o instrumento tem a largura que os instrumentos têm.
+página e a página do município já o fazem (o Método fazia-o até ao bloco ME1, de
+15.10.2026, que tirou o desenho do mecanismo): a página mantém a sua disposição, e
+o instrumento tem a largura que os instrumentos têm.
 
 **O cabeçalho não é uma caixa.** A marca na sua escala, a linha de método, e um
 fio: nenhuma moldura à volta do cabeçalho inteiro. Debaixo dele, **duas leituras
@@ -207,9 +208,9 @@ tem.
 
 ## 5. O selo de proveniência
 
-A regra 5 do Método promete, nas duas línguas: *«Ao lado de cada medição há um
-selo que abre a sua linha: cheio quando a origem está completa, a tracejado
-quando falta um campo.»* (`metodo`) Então:
+O Método promete, nas duas línguas, na secção do recibo de cada número: *«Ao lado
+de cada medição há um selo que abre a sua entrada, o recibo do número: cheio quando
+a origem está completa, a tracejado quando falta um campo.»* (`metodo`) Então:
 
 1. **O selo é sempre uma ligação** para a linha do livro-razão. Um selo que não
    liga a lado nenhum não é um selo: é uma legenda, e a promessa fica falsa.
@@ -320,10 +321,10 @@ regra desta constituição ganhou em máquina:
   silêncio.
 
 **Como esta constituição cita um texto governado, e é uma convenção fixa.** Uma
-frase do Método ou do Sobre citada aqui escreve-se entre «…» e **traz logo a
-seguir, entre parênteses e em código, o nome curto do texto**: `metodo` ou
-`sobre`, os mesmos nomes do `**Afecta:**` das decisões. A §5 é o exemplo, e é o
-único uso de hoje.
+frase do Método, do Sobre ou da política de IA citada aqui escreve-se entre «…» e
+**traz logo a seguir, entre parênteses e em código, o nome curto do texto**:
+`metodo`, `sobre` ou `politica` (este desde o bloco ME1, 15.10.2026), os mesmos
+nomes do `**Afecta:**` das decisões. A §5 é o exemplo, e é o único uso de hoje.
 A amarra das decisões lê este ficheiro, procura cada citação assim marcada e
 exige que a frase exista, palavra por palavra, no texto que ela nomeia. Existe
 porque a §5 citou durante dois blocos uma frase que o bloco V tinha apagado do

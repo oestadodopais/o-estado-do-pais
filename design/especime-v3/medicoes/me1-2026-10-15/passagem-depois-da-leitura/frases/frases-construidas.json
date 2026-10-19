@@ -1,0 +1,775 @@
+{
+ "cabeca": "c8825d0954052282da2aa66c4273d8b090936188",
+ "construido_em": "2026-10-15T07:34:03.587Z",
+ "mandato": "design/observatorio/mandatos/MANDATO-ME1-2026-10-15.md",
+ "edicoes": {
+  "pt": {
+   "titulo": "Método",
+   "abertura": "Como estas páginas são feitas, conferidas e corrigidas, para quem quer saber se pode confiar num número e o que fazer se encontrar um errado.",
+   "descricao": "Como as páginas de O Estado do País são feitas, conferidas e corrigidas: as fontes, o recibo de cada número, as verificações, as correções e o que o projeto não faz.",
+   "sumario": [
+    {
+     "texto": "Quem escreve estas páginas",
+     "destino": "#politica-de-ia"
+    },
+    {
+     "texto": "De onde vêm os números",
+     "destino": "#fontes"
+    },
+    {
+     "texto": "O recibo de cada número",
+     "destino": "#livro-razao"
+    },
+    {
+     "texto": "Como se confere",
+     "destino": "#releitura"
+    },
+    {
+     "texto": "O que está por confirmar",
+     "destino": "#por-confirmar"
+    },
+    {
+     "texto": "As correções",
+     "destino": "#correcoes"
+    },
+    {
+     "texto": "O que se mede, e quem decide",
+     "destino": "#agenda"
+    },
+    {
+     "texto": "O que este projeto não faz",
+     "destino": "#o-que-nao-faz"
+    },
+    {
+     "texto": "A forma",
+     "destino": "#a-forma"
+    }
+   ],
+   "seccoes": [
+    {
+     "id": "politica-de-ia",
+     "titulo": "Quem escreve estas páginas",
+     "paragrafos": [
+      {
+       "n": 1,
+       "id": null,
+       "marca": "frase-da-politica",
+       "texto": "Escrito, conferido e atualizado por sistemas de inteligência artificial, segundo regras publicadas; nenhum humano revê cada mudança antes de se publicar, e as regras e as recusas estão nesta página.",
+       "valores": []
+      },
+      {
+       "n": 2,
+       "id": null,
+       "marca": "papeis",
+       "texto": "O trabalho divide-se em três papéis, todos de sistemas de inteligência artificial. A direção decide o que se faz, encomenda cada mudança, revê-a antes de se publicar e escreve os textos sobre este projeto, como este. A construção faz as páginas e o programa que lê as fontes; cada número que publica traz a sua fonte e a data em que foi lido, ou diz o que está por confirmar. A leitura é feita por sistemas que não participaram na construção e conferem o trabalho entregue antes de se publicar.",
+       "valores": []
+      },
+      {
+       "n": 3,
+       "id": null,
+       "marca": "familias",
+       "texto": "A construção e a leitura são sempre de famílias diferentes de sistemas: o que construiu uma mudança nunca é o que a lê. Um sistema novo só entra num papel depois de passar as mesmas provas que o anterior passou, e cada troca de sistema fica escrita com a data no documento público da política deste projeto.",
+       "valores": [
+        {
+         "token": "politica",
+         "valor": "no documento público da política deste projeto",
+         "porta": "https://github.com/oestadodopais/o-estado-do-pais/blob/main/design/observatorio/POLITICA-DA-AUTONOMIA.md"
+        }
+       ]
+      },
+      {
+       "n": 4,
+       "id": null,
+       "marca": null,
+       "texto": "Um valor novo da mesma medida, no mesmo formato e da mesma fonte publica-se quando passa em todas as verificações automáticas, sem uma leitura individual. Tudo o resto espera a decisão da direção: uma medida nova, uma definição mudada, um ficheiro que o programa já não reconhece, uma revisão da fonte, uma verificação que falha, uma fonte que deixou de responder.",
+       "valores": []
+      }
+     ],
+     "lista": [],
+     "portas": []
+    },
+    {
+     "id": "fontes",
+     "titulo": "De onde vêm os números",
+     "paragrafos": [
+      {
+       "n": 1,
+       "id": null,
+       "marca": null,
+       "texto": "Os números destas páginas vêm de fontes oficiais e de autoridades reconhecidas: os institutos de estatística, os reguladores, os tribunais, os ministérios, as câmaras municipais, as universidades e os institutos independentes de interesse público. Cada valor é lido no documento onde a fonte o publicou, e não em quem o cita; as entradas em que isso ainda não aconteceu contam-se abaixo, entre as que estão por confirmar. Quando este projeto calcula um número, o recibo mostra a conta e os valores de onde ele vem.",
+       "valores": []
+      },
+      {
+       "n": 2,
+       "id": null,
+       "marca": null,
+       "texto": "A imprensa não é fonte de nenhum número, e um observatório que compila dados oficiais é onde um número se encontra, não onde se cita. O que uma pessoa ou um partido afirmou em público entra de outra maneira: como foi dito, no documento onde foi dito, com quem o disse, ao lado do que as fontes oficiais mostram sobre a mesma medida, no mesmo período e para a mesma população.",
+       "valores": []
+      }
+     ],
+     "lista": [],
+     "portas": [
+      {
+       "texto": "Ver o livro-razão →",
+       "destino": "/livro-razao"
+      }
+     ]
+    },
+    {
+     "id": "livro-razao",
+     "titulo": "O recibo de cada número",
+     "paragrafos": [
+      {
+       "n": 1,
+       "id": null,
+       "marca": null,
+       "texto": "Todos os números publicados estão numa só lista, a que este projeto chama livro-razão: uma entrada por medição, com o organismo que a publicou, o documento, a página, o excerto exato, a data em que foi lida e, quando o número é calculado, a conta e os números de onde vem. A lista é pública, entrada a entrada, nas duas edições.",
+       "valores": []
+      },
+      {
+       "n": 2,
+       "id": "selo",
+       "marca": null,
+       "texto": "Ao lado de cada medição há um selo que abre a sua entrada, o recibo do número: cheio quando a origem está completa, a tracejado quando falta um campo.",
+       "valores": []
+      },
+      {
+       "n": 3,
+       "id": null,
+       "marca": null,
+       "texto": "Hoje a lista tem 3 226 entradas; 3 222 têm a origem completa e 4 esperam a confirmação de um campo na fonte.",
+       "valores": [
+        {
+         "token": "afirmacoes",
+         "valor": "3 226",
+         "porta": "/livro-razao"
+        },
+        {
+         "token": "indexaveis",
+         "valor": "3 222",
+         "porta": "/livro-razao"
+        },
+        {
+         "token": "divida",
+         "valor": "4",
+         "porta": "/livro-razao"
+        }
+       ]
+      },
+      {
+       "n": 4,
+       "id": null,
+       "marca": null,
+       "texto": "O recibo inclui um código para mostrar o número noutra página, com a fonte, a data em que foi lido e a ligação para o recibo; esse código acompanha as atualizações do número neste projeto. Este projeto não guarda nenhum registo de quem incorpora um número. A licença é a do conjunto de dados, Creative Commons de atribuição.",
+       "valores": []
+      }
+     ],
+     "lista": [],
+     "portas": [
+      {
+       "texto": "Ver o livro-razão →",
+       "destino": "/livro-razao"
+      },
+      {
+       "texto": "Ver um recibo de exemplo →",
+       "destino": "/livro-razao/divida-publica-2025"
+      }
+     ]
+    },
+    {
+     "id": "releitura",
+     "titulo": "Como se confere",
+     "paragrafos": [
+      {
+       "n": 1,
+       "id": "construcao",
+       "marca": null,
+       "texto": "Estas páginas são geradas a partir dessa lista. De cada vez que são construídas, um programa lê o texto de todas elas: cada algarismo tem de ter uma origem declarada, uma entrada da lista ou uma das razões escritas numa lista fechada, como um número de ordem ou a data da própria página; um algarismo sem origem trava a publicação, e um valor diferente do da sua entrada, também. O que esse programa não vê: um número escrito por extenso, um número no código que a página carrega, ou um número guardado fora do texto que se lê, passam. A revisão junta estas verificações a leituras por amostra; nenhuma página é lida uma a uma antes de sair.",
+       "valores": []
+      },
+      {
+       "n": 2,
+       "id": null,
+       "marca": null,
+       "texto": "Antes de uma mudança chegar a estas páginas, as mesmas verificações recusam, entre outras coisas, uma frase copiada de uma fonte que não seja igual à da fonte, um nome ou uma definição que a fonte não dá a essa medida, e qualquer dado pessoal, segredo ou caminho de uma máquina. As frases que este projeto escreve sobre si e sobre os números estão num inventário, e nas páginas que ele cobre, que são quase todas, uma frase nova que não esteja lá trava a publicação; o texto desta página e o da página «Sobre» só mudam com uma decisão registada que carimbe a versão nova. E cada trabalho novo, uma página, uma regra, um texto, é lido antes de se publicar por um sistema de outra família, com cinco erros plantados de propósito que tem de encontrar todos; o que ele encontra que mude um número ou uma frase corrige-se antes de publicar, e os reparos pequenos juntam-se numa passagem semanal.",
+       "valores": []
+      },
+      {
+       "n": 3,
+       "id": null,
+       "marca": null,
+       "texto": "Estas verificações provam que o que a página mostra é o que a lista guarda; a releitura na fonte prova que a lista diz o que a fonte imprimiu; nenhuma prova que a fonte esteja certa, nem que as conclusões deste projeto o estejam. Cada recibo diz se o seu número já foi relido na fonte por um caminho diferente e por um sistema que não o publicou, em que data e com que resultado. O painel europeu, na página «Portugal na União Europeia», é reconferido contra a fonte todas as semanas, e essa página diz quando foi a última vez.",
+       "valores": []
+      },
+      {
+       "n": 4,
+       "id": null,
+       "marca": null,
+       "texto": "Hoje 2 636 entradas têm pelo menos uma reconferência escrita, em 3 861 reconferências; em 11 a fonte dizia outra coisa. Quando a fonte diz outra coisa, o valor novo não entra sozinho: espera a decisão da direção e, quando entra, fica no registo das correções com o valor anterior à vista. A última reconferência do painel europeu foi a 12.10.2026.",
+       "valores": [
+        {
+         "token": "linhas_reconferidas",
+         "valor": "2 636",
+         "porta": "/livro-razao"
+        },
+        {
+         "token": "releituras_registadas",
+         "valor": "3 861",
+         "porta": "/livro-razao"
+        },
+        {
+         "token": "releituras_divergentes",
+         "valor": "11",
+         "porta": "/livro-razao"
+        },
+        {
+         "token": "painel_reconferido_em",
+         "valor": "12.10.2026",
+         "porta": "/uniao-europeia#painel"
+        }
+       ]
+      }
+     ],
+     "lista": [],
+     "portas": [
+      {
+       "texto": "Os resultados das verificações desta construção →",
+       "destino": "/prova.json"
+      },
+      {
+       "texto": "Portugal na União Europeia →",
+       "destino": "/uniao-europeia"
+      }
+     ]
+    },
+    {
+     "id": "por-confirmar",
+     "titulo": "O que está por confirmar",
+     "paragrafos": [
+      {
+       "n": 1,
+       "id": null,
+       "marca": null,
+       "texto": "Quando um campo da origem de um número não pôde ser confirmado na fonte, o recibo diz o que falta e marca esse campo com [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado; a página do número não o esconde, e a entrada fica fora dos motores de busca até estar completa. Quando a fonte marca um valor como provisório, a página di-lo por palavras. Quando a fonte já publicou um período mais recente do que o que estas páginas mostram, a página do número di-lo também.",
+       "valores": [
+        {
+         "token": "marcador",
+         "valor": "[a verificar]",
+         "porta": "/a-verificar"
+        },
+        {
+         "token": "definicao-do-marcador",
+         "valor": "· um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
+        }
+       ]
+      }
+     ],
+     "lista": [],
+     "portas": [
+      {
+       "texto": "O que quer dizer este marcador →",
+       "destino": "/a-verificar"
+      }
+     ]
+    },
+    {
+     "id": "correcoes",
+     "titulo": "As correções",
+     "paragrafos": [
+      {
+       "n": 1,
+       "id": null,
+       "marca": null,
+       "texto": "O registo público das correções distingue três tipos de alteração: a correção, quando um valor estava errado; a atualização, quando um valor estava certo e ficou desatualizado; a revisão de proveniência, quando o valor se mantém e muda a documentação da sua origem. Cada alteração é datada e permanente, com o valor anterior à vista. Até hoje: 7 correções, 28 atualizações e 72 revisões de proveniência.",
+       "valores": [
+        {
+         "token": "correcoes",
+         "valor": "7",
+         "porta": "/correcoes"
+        },
+        {
+         "token": "atualizacoes",
+         "valor": "28",
+         "porta": "/correcoes"
+        },
+        {
+         "token": "revisoes_de_proveniencia",
+         "valor": "72",
+         "porta": "/correcoes#registo"
+        }
+       ]
+      },
+      {
+       "n": 2,
+       "id": null,
+       "marca": null,
+       "texto": "Quem encontrar um erro escreve para correcoes@oestadodopais.pt; há em todas as páginas uma ligação para o fazer. Quem for nomeado numa página pode responder para o mesmo endereço, e a resposta publica-se ao lado do texto em causa, sem edição.",
+       "valores": [
+        {
+         "token": "email",
+         "valor": "correcoes@oestadodopais.pt",
+         "porta": "mailto:correcoes@oestadodopais.pt"
+        }
+       ]
+      }
+     ],
+     "lista": [],
+     "portas": [
+      {
+       "texto": "O registo inteiro →",
+       "destino": "/correcoes"
+      }
+     ]
+    },
+    {
+     "id": "agenda",
+     "titulo": "O que se mede, e quem decide",
+     "paragrafos": [
+      {
+       "n": 1,
+       "id": null,
+       "marca": null,
+       "texto": "O que se mede a seguir decide-se por critérios declarados: os problemas que as instituições identificam ao avaliar Portugal, o que as fontes oficiais vão publicar, o que os leitores perguntam ou corrigem. A direção decide, e a agenda mostra, item a item, o critério, quem propôs, quem decidiu e cada mudança de estado com a sua data. A pergunta de um estudo fixa-se e guarda-se antes de se recolherem os dados.",
+       "valores": []
+      },
+      {
+       "n": 2,
+       "id": null,
+       "marca": null,
+       "texto": "Os estudos de Évora abrem com a pergunta a que respondem e com a leitura deste projeto: o que os números mostram, o que este projeto conclui e o que podia funcionar melhor. Os estudos mais antigos têm o texto e as fontes, sem essa abertura.",
+       "valores": []
+      }
+     ],
+     "lista": [],
+     "portas": [
+      {
+       "texto": "A agenda →",
+       "destino": "/agenda"
+      },
+      {
+       "texto": "Os estudos →",
+       "destino": "/estudos"
+      }
+     ]
+    },
+    {
+     "id": "o-que-nao-faz",
+     "titulo": "O que este projeto não faz",
+     "paragrafos": [
+      {
+       "n": 1,
+       "id": null,
+       "marca": null,
+       "texto": "Não classifica partidos nem faz médias por partido: regista quem decidiu o quê e o que aconteceu, com o nome tal como consta do documento e o rótulo partidário como facto de registo. Não corrige em silêncio. É financiado em privado, sem publicidade nem dinheiro de instituições.",
+       "valores": []
+      }
+     ],
+     "lista": [
+      "Este projeto não aceita dinheiro de nenhuma entidade que mede.",
+      "Este projeto não escreve para ter leitores a mais: mede-se por citações, não por visitas.",
+      "Este projeto não publica um número que não tenha lido na fonte, não estima o que não existe e diz o que falta.",
+      "Este projeto não chama jornalista à inteligência artificial e não se diz jornalístico.",
+      "Este projeto só guarda dados pessoais de quem usa a caixa das sugestões, pelo tempo e para o fim que a página «Privacidade» diz, e nunca os põe no repositório."
+     ],
+     "portas": [
+      {
+       "texto": "Privacidade →",
+       "destino": "/privacidade"
+      }
+     ]
+    },
+    {
+     "id": "a-forma",
+     "titulo": "A forma",
+     "paragrafos": [],
+     "lista": [],
+     "portas": []
+    }
+   ]
+  },
+  "en": {
+   "titulo": "Method",
+   "abertura": "How these pages are made, checked and corrected, for anyone who wants to know whether a number can be trusted and what to do on finding a wrong one.",
+   "descricao": "How the pages of O Estado do País are made, checked and corrected: the sources, the receipt for each number, the checks, the corrections and what the project does not do.",
+   "sumario": [
+    {
+     "texto": "Who writes these pages",
+     "destino": "#politica-de-ia"
+    },
+    {
+     "texto": "Where the numbers come from",
+     "destino": "#fontes"
+    },
+    {
+     "texto": "The receipt for each number",
+     "destino": "#livro-razao"
+    },
+    {
+     "texto": "How it is checked",
+     "destino": "#releitura"
+    },
+    {
+     "texto": "What is still to be confirmed",
+     "destino": "#por-confirmar"
+    },
+    {
+     "texto": "Corrections",
+     "destino": "#correcoes"
+    },
+    {
+     "texto": "What gets measured, and who decides",
+     "destino": "#agenda"
+    },
+    {
+     "texto": "What this project does not do",
+     "destino": "#o-que-nao-faz"
+    },
+    {
+     "texto": "The form",
+     "destino": "#a-forma"
+    }
+   ],
+   "seccoes": [
+    {
+     "id": "politica-de-ia",
+     "titulo": "Who writes these pages",
+     "paragrafos": [
+      {
+       "n": 1,
+       "id": null,
+       "marca": "frase-da-politica",
+       "texto": "Written, checked and updated by artificial intelligence systems, under published rules; no human reviews each change before it is published, and the rules and the refusals are on this page.",
+       "valores": []
+      },
+      {
+       "n": 2,
+       "id": null,
+       "marca": "papeis",
+       "texto": "The work is divided into three roles, all held by artificial intelligence systems. Direction decides what is done, commissions each change, reviews it before it is published and writes the texts about this project, such as this one. Building makes the pages and the program that reads the sources; every number it publishes carries its source and the date it was read, or says what is still to be confirmed. Reading is done by systems that took no part in the building and check the delivered work before it is published.",
+       "valores": []
+      },
+      {
+       "n": 3,
+       "id": null,
+       "marca": "familias",
+       "texto": "Building and reading are always done by different families of systems: the one that built a change is never the one that reads it. A new system takes a role only after passing the same tests the previous one passed, and every replacement of a system is recorded with its date in this project's public policy document.",
+       "valores": [
+        {
+         "token": "politica",
+         "valor": "in this project's public policy document",
+         "porta": "https://github.com/oestadodopais/o-estado-do-pais/blob/main/design/observatorio/POLITICA-DA-AUTONOMIA.md"
+        }
+       ]
+      },
+      {
+       "n": 4,
+       "id": null,
+       "marca": null,
+       "texto": "A new value of the same measure, in the same format and from the same source, is published when it passes every automated check, without an individual review. Everything else waits for direction's decision: a new measure, a changed definition, a file the program no longer recognises, a revision at the source, a check that fails, a source that has stopped answering.",
+       "valores": []
+      }
+     ],
+     "lista": [],
+     "portas": []
+    },
+    {
+     "id": "fontes",
+     "titulo": "Where the numbers come from",
+     "paragrafos": [
+      {
+       "n": 1,
+       "id": null,
+       "marca": null,
+       "texto": "The numbers on these pages come from official sources and recognised authorities: the statistics institutes, regulators, courts, ministries, municipal councils, universities and independent public-interest institutes. Each value is read in the document where the source published it, not in whoever quotes it; the entries where that has not yet happened are counted below, among those still to be confirmed. When this project calculates a number, the receipt shows the arithmetic and the values it comes from.",
+       "valores": []
+      },
+      {
+       "n": 2,
+       "id": null,
+       "marca": null,
+       "texto": "The press is not a source for any number, and an observatory that compiles official data is where a number is found, not where it is quoted from. What a person or a party stated in public enters in another way: as it was said, in the document where it was said, with who said it, beside what the official sources show for the same measure, in the same period and for the same population.",
+       "valores": []
+      }
+     ],
+     "lista": [],
+     "portas": [
+      {
+       "texto": "See the ledger →",
+       "destino": "/en/ledger"
+      }
+     ]
+    },
+    {
+     "id": "livro-razao",
+     "titulo": "The receipt for each number",
+     "paragrafos": [
+      {
+       "n": 1,
+       "id": null,
+       "marca": null,
+       "texto": "Every published number is in a single list, which this project calls the ledger: one entry per measurement, with the body that published it, the document, the page, the exact excerpt, the date it was read and, when the number is calculated, the arithmetic and the numbers it comes from. The list is public, entry by entry, in both editions.",
+       "valores": []
+      },
+      {
+       "n": 2,
+       "id": "selo",
+       "marca": null,
+       "texto": "Beside every measurement there is a seal that opens its entry, the number's receipt: filled when the origin is complete, dashed when a field is missing.",
+       "valores": []
+      },
+      {
+       "n": 3,
+       "id": null,
+       "marca": null,
+       "texto": "Today the list has 3 226 entries; 3 222 have their origin complete and 4 await the confirmation of a field at the source.",
+       "valores": [
+        {
+         "token": "afirmacoes",
+         "valor": "3 226",
+         "porta": "/en/ledger"
+        },
+        {
+         "token": "indexaveis",
+         "valor": "3 222",
+         "porta": "/en/ledger"
+        },
+        {
+         "token": "divida",
+         "valor": "4",
+         "porta": "/en/ledger"
+        }
+       ]
+      },
+      {
+       "n": 4,
+       "id": null,
+       "marca": null,
+       "texto": "The receipt includes code to show the number on another page, with its source, the date it was read and the link to the receipt; that code follows the updates of the number in this project. This project keeps no record of who embeds a number. The licence is the dataset's, Creative Commons attribution.",
+       "valores": []
+      }
+     ],
+     "lista": [],
+     "portas": [
+      {
+       "texto": "See the ledger →",
+       "destino": "/en/ledger"
+      },
+      {
+       "texto": "See an example receipt →",
+       "destino": "/en/ledger/divida-publica-2025"
+      }
+     ]
+    },
+    {
+     "id": "releitura",
+     "titulo": "How it is checked",
+     "paragrafos": [
+      {
+       "n": 1,
+       "id": "construcao",
+       "marca": null,
+       "texto": "These pages are generated from that list. Every time they are built, a program reads the text of all of them: every digit must have a declared origin, an entry in the list or one of the reasons written on a closed list, such as an ordinal or the page's own date; a digit without an origin stops publication, and so does a value that differs from its entry. What that program does not see: a number written out in words, a number in the code the page loads, or a number stored outside the text one reads, all pass. Review combines these checks with sample readings; no page is read one by one before it goes out.",
+       "valores": []
+      },
+      {
+       "n": 2,
+       "id": null,
+       "marca": null,
+       "texto": "Before a change reaches these pages, the same checks refuse, among other things, a sentence copied from a source that is not identical to the source's, a name or a definition the source does not give to that measure, and any personal data, secret or machine path. The sentences this project writes about itself and about the numbers are kept in an inventory, and on the pages it covers, which are nearly all of them, a new sentence that is not in it stops publication; the text of this page and of the «About» page changes only with a recorded decision that stamps the new version. And every new piece of work, a page, a rule, a text, is read before publication by a system from another family, with five errors planted on purpose that it must find, all of them; whatever it finds that changes a number or a sentence is corrected before publishing, and the small repairs are gathered into a weekly pass.",
+       "valores": []
+      },
+      {
+       "n": 3,
+       "id": null,
+       "marca": null,
+       "texto": "These checks prove that what the page shows is what the list holds; the re-reading at the source proves that the list says what the source printed; neither proves that the source is right, nor that this project's conclusions are. Each receipt says whether its number has been read again at the source by a different route and by a system that did not publish it, on what date and with what result. The European panel, on the page «Portugal in the European Union», is re-checked against the source every week, and that page says when the last time was.",
+       "valores": []
+      },
+      {
+       "n": 4,
+       "id": null,
+       "marca": null,
+       "texto": "Today 2 636 entries have at least one re-check written, in 3 861 re-checks; in 11 the source said something else. When the source says something else, the new value does not enter on its own: it waits for direction's decision and, when it enters, it goes into the corrections register with the previous value in plain sight. The European panel was last re-checked on 12.10.2026.",
+       "valores": [
+        {
+         "token": "linhas_reconferidas",
+         "valor": "2 636",
+         "porta": "/en/ledger"
+        },
+        {
+         "token": "releituras_registadas",
+         "valor": "3 861",
+         "porta": "/en/ledger"
+        },
+        {
+         "token": "releituras_divergentes",
+         "valor": "11",
+         "porta": "/en/ledger"
+        },
+        {
+         "token": "painel_reconferido_em",
+         "valor": "12.10.2026",
+         "porta": "/en/european-union#painel"
+        }
+       ]
+      }
+     ],
+     "lista": [],
+     "portas": [
+      {
+       "texto": "The results of this build's checks →",
+       "destino": "/prova.json"
+      },
+      {
+       "texto": "Portugal in the European Union →",
+       "destino": "/en/european-union"
+      }
+     ]
+    },
+    {
+     "id": "por-confirmar",
+     "titulo": "What is still to be confirmed",
+     "paragrafos": [
+      {
+       "n": 1,
+       "id": null,
+       "marca": null,
+       "texto": "When a field in a number's origin could not be confirmed at the source, the receipt says what is missing and marks that field with [to verify] · a field not confirmed against the source, not a doubt about what is published; the number's page does not hide it, and the entry stays out of search engines until it is complete. When the source marks a value as provisional, the page says so in words. When the source has already published a more recent period than the one these pages show, the number's page says so too.",
+       "valores": [
+        {
+         "token": "marcador",
+         "valor": "[to verify]",
+         "porta": "/en/to-verify"
+        },
+        {
+         "token": "definicao-do-marcador",
+         "valor": "· a field not confirmed against the source, not a doubt about what is published"
+        }
+       ]
+      }
+     ],
+     "lista": [],
+     "portas": [
+      {
+       "texto": "What this marker means →",
+       "destino": "/en/to-verify"
+      }
+     ]
+    },
+    {
+     "id": "correcoes",
+     "titulo": "Corrections",
+     "paragrafos": [
+      {
+       "n": 1,
+       "id": null,
+       "marca": null,
+       "texto": "The public register of corrections distinguishes three types of change: a correction, when a value was wrong; an update, when a value was right and became outdated; a provenance revision, when the value stays the same and the documentation of its origin changes. Each change is dated and permanent, with the previous value in plain sight. So far: 7 corrections, 28 updates and 72 provenance revisions.",
+       "valores": [
+        {
+         "token": "correcoes",
+         "valor": "7",
+         "porta": "/en/corrections"
+        },
+        {
+         "token": "atualizacoes",
+         "valor": "28",
+         "porta": "/en/corrections"
+        },
+        {
+         "token": "revisoes_de_proveniencia",
+         "valor": "72",
+         "porta": "/en/corrections#registo"
+        }
+       ]
+      },
+      {
+       "n": 2,
+       "id": null,
+       "marca": null,
+       "texto": "Anyone who finds an error writes to correcoes@oestadodopais.pt; every page has a link for doing so. Anyone named on a page may reply to the same address, and the reply is published alongside the text in question, unedited.",
+       "valores": [
+        {
+         "token": "email",
+         "valor": "correcoes@oestadodopais.pt",
+         "porta": "mailto:correcoes@oestadodopais.pt"
+        }
+       ]
+      }
+     ],
+     "lista": [],
+     "portas": [
+      {
+       "texto": "The whole register →",
+       "destino": "/en/corrections"
+      }
+     ]
+    },
+    {
+     "id": "agenda",
+     "titulo": "What gets measured, and who decides",
+     "paragrafos": [
+      {
+       "n": 1,
+       "id": null,
+       "marca": null,
+       "texto": "What gets measured next is decided by declared criteria: the problems institutions identify when assessing Portugal, what the official sources will publish, what readers ask about or correct. Direction decides, and the agenda shows, item by item, the criterion, who proposed, who decided and every change of state with its date. The question of a study is fixed and stored before the data are collected.",
+       "valores": []
+      },
+      {
+       "n": 2,
+       "id": null,
+       "marca": null,
+       "texto": "The Évora studies open with the question they answer and with this project's reading: what the numbers show, what this project concludes and what could work better; one of them has that opening in the Portuguese edition only. The older studies have the text and the sources, without that opening.",
+       "valores": []
+      }
+     ],
+     "lista": [],
+     "portas": [
+      {
+       "texto": "The agenda →",
+       "destino": "/en/agenda"
+      },
+      {
+       "texto": "The studies →",
+       "destino": "/en/studies"
+      }
+     ]
+    },
+    {
+     "id": "o-que-nao-faz",
+     "titulo": "What this project does not do",
+     "paragrafos": [
+      {
+       "n": 1,
+       "id": null,
+       "marca": null,
+       "texto": "It does not rank or classify parties and does not average by party: it records who decided what and what happened, with the name as the document gives it and the party label as a fact of record. It does not correct in silence. It is privately funded, with no advertising and no money from institutions.",
+       "valores": []
+      }
+     ],
+     "lista": [
+      "This project takes no money from any entity it measures.",
+      "This project does not write to gain more readers: it is measured by citations, not by visits.",
+      "This project publishes no figure it has not read at the source, does not estimate what does not exist, and says what is missing.",
+      "This project does not call artificial intelligence a journalist and does not call itself journalism.",
+      "This project keeps personal data only of those who use the suggestions box, for the time and the purpose that the Privacy page states, and never puts it in the repository."
+     ],
+     "portas": [
+      {
+       "texto": "Privacy →",
+       "destino": "/en/privacy"
+      }
+     ]
+    },
+    {
+     "id": "a-forma",
+     "titulo": "The form",
+     "paragrafos": [],
+     "lista": [],
+     "portas": []
+    }
+   ]
+  }
+ }
+}
