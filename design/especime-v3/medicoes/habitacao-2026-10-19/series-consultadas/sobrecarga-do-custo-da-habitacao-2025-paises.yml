@@ -1,0 +1,163 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/series_paises.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "sobrecarga-do-custo-da-habitacao-2025-paises"
+eixo: "pais"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve.
+name: "Housing cost overburden rate"
+name_source: "label"
+unit: "%"
+# O período de todos os pontos: numa série de países, um só.
+periodo: "2025"
+
+# Proveniência.
+source: "Eurostat"
+document:
+  title: "Housing cost overburden rate"
+  edition: "tespm140, freq=A, unit=PC, rskpovth=TOTAL, age=TOTAL, sex=T"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tespm140/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&sex=T"
+access_date: "2026-09-29"
+published_at: "2026-09-17"
+
+# O literal da série: as etiquetas do conjunto e das coordenadas, e o período,
+# como a resposta os escreve. O excerto de cada ponto começa por ele.
+excerpt: "Housing cost overburden rate — Percentage — 2025"
+
+# As gémeas: a linha da União e a linha portuguesa que o cartão já mostra.
+linha_da_uniao: "sobrecarga-do-custo-da-habitacao-2025-ue"
+linha_de_portugal: "sobrecarga-do-custo-da-habitacao-2025"
+
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta
+# lhes dá (extension.status.label).
+bandeiras:
+  "b": "break in time series"
+  "p": "provisional"
+
+# Os 28 pontos: os 27 países pela ordem protocolar, e a União.
+pontos:
+  - geo: "BE"
+    valor: "6,7"
+    excerto: "Housing cost overburden rate — Percentage — Belgium — 2025: 6.7"
+    bandeira: null
+  - geo: "BG"
+    valor: "6,9"
+    excerto: "Housing cost overburden rate — Percentage — Bulgaria — 2025: 6.9"
+    bandeira: null
+  - geo: "CZ"
+    valor: "8,2"
+    excerto: "Housing cost overburden rate — Percentage — Czechia — 2025: 8.2"
+    bandeira: null
+  - geo: "DK"
+    valor: "23,4"
+    excerto: "Housing cost overburden rate — Percentage — Denmark — 2025: 23.4 b"
+    bandeira: "b"
+  - geo: "DE"
+    valor: "11,2"
+    excerto: "Housing cost overburden rate — Percentage — Germany — 2025: 11.2"
+    bandeira: null
+  - geo: "EE"
+    valor: "8,8"
+    excerto: "Housing cost overburden rate — Percentage — Estonia — 2025: 8.8"
+    bandeira: null
+  - geo: "IE"
+    valor: "5,3"
+    excerto: "Housing cost overburden rate — Percentage — Ireland — 2025: 5.3"
+    bandeira: null
+  - geo: "EL"
+    valor: "26,4"
+    excerto: "Housing cost overburden rate — Percentage — Greece — 2025: 26.4"
+    bandeira: null
+  - geo: "ES"
+    valor: "7,2"
+    excerto: "Housing cost overburden rate — Percentage — Spain — 2025: 7.2"
+    bandeira: null
+  - geo: "FR"
+    valor: "6,4"
+    excerto: "Housing cost overburden rate — Percentage — France — 2025: 6.4"
+    bandeira: null
+  - geo: "HR"
+    valor: "3,2"
+    excerto: "Housing cost overburden rate — Percentage — Croatia — 2025: 3.2"
+    bandeira: null
+  - geo: "IT"
+    valor: "5,0"
+    excerto: "Housing cost overburden rate — Percentage — Italy — 2025: 5.0"
+    bandeira: null
+  - geo: "CY"
+    valor: "2,4"
+    excerto: "Housing cost overburden rate — Percentage — Cyprus — 2025: 2.4"
+    bandeira: null
+  - geo: "LV"
+    valor: "5,7"
+    excerto: "Housing cost overburden rate — Percentage — Latvia — 2025: 5.7"
+    bandeira: null
+  - geo: "LT"
+    valor: "5,7"
+    excerto: "Housing cost overburden rate — Percentage — Lithuania — 2025: 5.7 p"
+    bandeira: "p"
+  - geo: "LU"
+    valor: "8,1"
+    excerto: "Housing cost overburden rate — Percentage — Luxembourg — 2025: 8.1 b"
+    bandeira: "b"
+  - geo: "HU"
+    valor: "5,3"
+    excerto: "Housing cost overburden rate — Percentage — Hungary — 2025: 5.3"
+    bandeira: null
+  - geo: "MT"
+    valor: "6,0"
+    excerto: "Housing cost overburden rate — Percentage — Malta — 2025: 6.0"
+    bandeira: null
+  - geo: "NL"
+    valor: "6,5"
+    excerto: "Housing cost overburden rate — Percentage — Netherlands — 2025: 6.5"
+    bandeira: null
+  - geo: "AT"
+    valor: "6,1"
+    excerto: "Housing cost overburden rate — Percentage — Austria — 2025: 6.1"
+    bandeira: null
+  - geo: "PL"
+    valor: "4,1"
+    excerto: "Housing cost overburden rate — Percentage — Poland — 2025: 4.1"
+    bandeira: null
+  - geo: "PT"
+    valor: "6,3"
+    excerto: "Housing cost overburden rate — Percentage — Portugal — 2025: 6.3"
+    bandeira: null
+  - geo: "RO"
+    valor: "5,0"
+    excerto: "Housing cost overburden rate — Percentage — Romania — 2025: 5.0"
+    bandeira: null
+  - geo: "SI"
+    valor: "3,5"
+    excerto: "Housing cost overburden rate — Percentage — Slovenia — 2025: 3.5"
+    bandeira: null
+  - geo: "SK"
+    valor: "3,5"
+    excerto: "Housing cost overburden rate — Percentage — Slovakia — 2025: 3.5"
+    bandeira: null
+  - geo: "FI"
+    valor: "4,7"
+    excerto: "Housing cost overburden rate — Percentage — Finland — 2025: 4.7"
+    bandeira: null
+  - geo: "SE"
+    valor: "10,8"
+    excerto: "Housing cost overburden rate — Percentage — Sweden — 2025: 10.8"
+    bandeira: null
+  - geo: "EU27_2020"
+    valor: "7,7"
+    excerto: "Housing cost overburden rate — Percentage — European Union - 27 countries (from 2020) — 2025: 7.7"
+    bandeira: null
+
+attributed_to:
+  - "Eurostat"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "UE1. Linha de série por país (eixo: pais) da medida «sobrecarga-do-custo-da-habitacao-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «sobrecarga-do-custo-da-habitacao-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, unit=PC, rskpovth=TOTAL, age=TOTAL, sex=T, time=2025. Corpo alojado: ue1/034-eurostat-sobrecarga-do-custo-da-habitacao-2025-paises.json (sha256 5848b25b94a6f530…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []

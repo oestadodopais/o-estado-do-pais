@@ -1,0 +1,163 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/series_paises.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "precos-da-habitacao-2025-paises"
+eixo: "pais"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve.
+name: "House price index, nominal - annual data"
+name_source: "label"
+unit: "variação anual média, %"
+# O período de todos os pontos: numa série de países, um só.
+periodo: "2025"
+
+# Proveniência.
+source: "Eurostat"
+document:
+  title: "House price index, nominal - annual data"
+  edition: "tipsho20, freq=A, unit=RCH_A_AVG"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/tipsho20/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho20?format=JSON&lang=EN&geo=BE&geo=BG&geo=CZ&geo=DK&geo=DE&geo=EE&geo=IE&geo=EL&geo=ES&geo=FR&geo=HR&geo=IT&geo=CY&geo=LV&geo=LT&geo=LU&geo=HU&geo=MT&geo=NL&geo=AT&geo=PL&geo=PT&geo=RO&geo=SI&geo=SK&geo=FI&geo=SE&geo=EU27_2020&unit=RCH_A_AVG"
+access_date: "2026-09-29"
+published_at: "2026-07-02"
+
+# O literal da série: as etiquetas do conjunto e das coordenadas, e o período,
+# como a resposta os escreve. O excerto de cada ponto começa por ele.
+excerpt: "House price index, nominal - annual data — Annual average rate of change — 2025"
+
+# As gémeas: a linha da União e a linha portuguesa que o cartão já mostra.
+linha_da_uniao: "precos-da-habitacao-2025-ue"
+linha_de_portugal: "precos-da-habitacao-2025"
+
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta
+# lhes dá (extension.status.label).
+bandeiras:
+  "ep": "estimated, provisional"
+  "p": "provisional"
+
+# Os 28 pontos: os 27 países pela ordem protocolar, e a União.
+pontos:
+  - geo: "BE"
+    valor: "3,2"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Belgium — 2025: 3.2"
+    bandeira: null
+  - geo: "BG"
+    valor: "14,6"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Bulgaria — 2025: 14.6"
+    bandeira: null
+  - geo: "CZ"
+    valor: "10,4"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Czechia — 2025: 10.4"
+    bandeira: null
+  - geo: "DK"
+    valor: "7,5"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Denmark — 2025: 7.5"
+    bandeira: null
+  - geo: "DE"
+    valor: "3,2"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Germany — 2025: 3.2"
+    bandeira: null
+  - geo: "EE"
+    valor: "5,2"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Estonia — 2025: 5.2"
+    bandeira: null
+  - geo: "IE"
+    valor: "7,5"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Ireland — 2025: 7.5"
+    bandeira: null
+  - geo: "EL"
+    valor: "8,1"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Greece — 2025: 8.1 ep"
+    bandeira: "ep"
+  - geo: "ES"
+    valor: "12,7"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Spain — 2025: 12.7"
+    bandeira: null
+  - geo: "FR"
+    valor: "0,7"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — France — 2025: 0.7"
+    bandeira: null
+  - geo: "HR"
+    valor: "13,9"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Croatia — 2025: 13.9"
+    bandeira: null
+  - geo: "IT"
+    valor: "4,0"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Italy — 2025: 4.0"
+    bandeira: null
+  - geo: "CY"
+    valor: "4,5"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Cyprus — 2025: 4.5"
+    bandeira: null
+  - geo: "LV"
+    valor: "7,6"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Latvia — 2025: 7.6"
+    bandeira: null
+  - geo: "LT"
+    valor: "9,8"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Lithuania — 2025: 9.8"
+    bandeira: null
+  - geo: "LU"
+    valor: "1,6"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Luxembourg — 2025: 1.6"
+    bandeira: null
+  - geo: "HU"
+    valor: "18,3"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Hungary — 2025: 18.3 p"
+    bandeira: "p"
+  - geo: "MT"
+    valor: "6,0"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Malta — 2025: 6.0 p"
+    bandeira: "p"
+  - geo: "NL"
+    valor: "8,5"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Netherlands — 2025: 8.5"
+    bandeira: null
+  - geo: "AT"
+    valor: "2,6"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Austria — 2025: 2.6"
+    bandeira: null
+  - geo: "PL"
+    valor: "4,9"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Poland — 2025: 4.9"
+    bandeira: null
+  - geo: "PT"
+    valor: "17,6"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Portugal — 2025: 17.6"
+    bandeira: null
+  - geo: "RO"
+    valor: "5,7"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Romania — 2025: 5.7"
+    bandeira: null
+  - geo: "SI"
+    valor: "7,3"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Slovenia — 2025: 7.3"
+    bandeira: null
+  - geo: "SK"
+    valor: "12,4"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Slovakia — 2025: 12.4"
+    bandeira: null
+  - geo: "FI"
+    valor: "−2,3"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Finland — 2025: -2.3"
+    bandeira: null
+  - geo: "SE"
+    valor: "1,0"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — Sweden — 2025: 1.0"
+    bandeira: null
+  - geo: "EU27_2020"
+    valor: "5,5"
+    excerto: "House price index, nominal - annual data — Annual average rate of change — European Union - 27 countries (from 2020) — 2025: 5.5"
+    bandeira: null
+
+attributed_to:
+  - "Eurostat"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "UE1. Linha de série por país (eixo: pais) da medida «precos-da-habitacao-2025», pelo mesmo conjunto e pelas mesmas coordenadas seladas da linha «precos-da-habitacao-2025-ue», com os 27 países no lugar da União. Coordenadas: freq=A, unit=RCH_A_AVG, time=2025. Corpo alojado: ue1/031-eurostat-precos-da-habitacao-2025-paises.json (sha256 725fe353012ab916…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []

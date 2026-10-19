@@ -1,0 +1,582 @@
+{
+  "base_motor": "0df19354693290281800576feebca742b1bb6c38",
+  "livro_sha256": "2da34d0d894b50797077a989b3f4c739846e050dc689e53d41cb8fc0d23c7777",
+  "linhas": [
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2015",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2016",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2017",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2018",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2019",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2020",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2021",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2022",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2023",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2024",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-eu27_2020-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-be-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-bg-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-cz-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-dk-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-de-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-ee-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-ie-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-el-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-es-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-fr-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-hr-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-it-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-cy-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-lv-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-lt-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-lu-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-hu-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-mt-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-nl-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-at-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pl-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2015",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2016",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2017",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2018",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2019",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2020",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2021",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2022",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2023",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2024",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-pt-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-ro-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-si-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-sk-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-fi-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ilc-lvps08-a-y25-34-t-pc-se-2025",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-bpstat-12533735",
+      "campos": [
+        "note"
+      ]
+    },
+    {
+      "id": "hab-bpstat-12533724",
+      "campos": [
+        "note"
+      ]
+    },
+    {
+      "id": "hab-bpstat-12557378",
+      "campos": [
+        "note"
+      ]
+    },
+    {
+      "id": "hab-ine-iphab-homologa",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ine-renda-portugal",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ine-renda-lisboa",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ine-preco-mediano",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-ine-juro-implicito",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-be-despejos",
+      "campos": [
+        "document",
+        "document_checks"
+      ]
+    },
+    {
+      "id": "hab-votacao-arrendamento",
+      "campos": [
+        "document",
+        "document_checks",
+        "evidence",
+        "excerpt",
+        "excerpt_parts",
+        "name_source",
+        "published_at",
+        "reference_date",
+        "source_excerpt"
+      ]
+    },
+    {
+      "id": "hab-votacao-chega",
+      "campos": [
+        "document",
+        "document_checks",
+        "evidence",
+        "excerpt",
+        "excerpt_parts",
+        "name_source",
+        "published_at",
+        "reference_date",
+        "source_excerpt"
+      ]
+    },
+    {
+      "id": "hab-votacao-pan",
+      "campos": [
+        "document",
+        "document_checks",
+        "evidence",
+        "excerpt",
+        "excerpt_parts",
+        "name_source",
+        "published_at",
+        "reference_date",
+        "source_excerpt"
+      ]
+    },
+    {
+      "id": "hab-votacao-livre",
+      "campos": [
+        "document",
+        "document_checks",
+        "evidence",
+        "excerpt",
+        "excerpt_parts",
+        "name_source",
+        "published_at",
+        "reference_date",
+        "source_excerpt"
+      ]
+    },
+    {
+      "id": "hab-oe-iva-impacto",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-oe-irs-rendas-impacto",
+      "campos": [
+        "name"
+      ]
+    },
+    {
+      "id": "hab-oe-oferta-publica",
+      "campos": [
+        "excerpt_parts",
+        "name"
+      ]
+    },
+    {
+      "id": "hab-oe-apoio-arrendamento",
+      "campos": [
+        "excerpt_parts",
+        "name"
+      ]
+    },
+    {
+      "id": "hab-dl97-irs",
+      "campos": [
+        "document",
+        "document_checks",
+        "name",
+        "published_at",
+        "reference_date"
+      ]
+    },
+    {
+      "id": "hab-ine-vagos-total",
+      "campos": [
+        "excerpt",
+        "excerpt_parts",
+        "name",
+        "note",
+        "source_excerpt"
+      ]
+    },
+    {
+      "id": "hab-imprensa-pm-15",
+      "campos": [
+        "excerpt",
+        "excerpt_parts",
+        "name",
+        "note",
+        "source_excerpt"
+      ]
+    },
+    {
+      "id": "hab-imprensa-pm-16",
+      "campos": [
+        "excerpt",
+        "excerpt_parts",
+        "name",
+        "note",
+        "source_excerpt"
+      ]
+    },
+    {
+      "id": "hab-imprensa-igai",
+      "campos": [
+        "document",
+        "document_checks",
+        "note",
+        "published_at",
+        "reference_date"
+      ]
+    },
+    {
+      "id": "hab-imprensa-acampados",
+      "campos": [
+        "document",
+        "document_checks",
+        "note",
+        "published_at",
+        "reference_date"
+      ]
+    },
+    {
+      "id": "hab-imprensa-feridos37",
+      "campos": [
+        "document",
+        "document_checks",
+        "note",
+        "published_at",
+        "reference_date"
+      ]
+    },
+    {
+      "id": "hab-dl97-deducao",
+      "campos": [
+        "document",
+        "document_checks",
+        "name",
+        "published_at",
+        "reference_date"
+      ]
+    },
+    {
+      "id": "hab-oe-licenciamento",
+      "campos": [
+        "excerpt_parts",
+        "name",
+        "note"
+      ]
+    },
+    {
+      "id": "hab-imprensa-assistidos",
+      "campos": [
+        "document",
+        "document_checks",
+        "note",
+        "published_at",
+        "reference_date"
+      ]
+    },
+    {
+      "id": "hab-imprensa-hospital",
+      "campos": [
+        "attributed_to",
+        "document",
+        "document_checks",
+        "note",
+        "published_at",
+        "reference_date"
+      ]
+    },
+    {
+      "id": "hab-imprensa-debate-custos",
+      "campos": [
+        "document",
+        "document_checks",
+        "note",
+        "published_at",
+        "reference_date"
+      ]
+    },
+    {
+      "id": "hab-imprensa-debate-protecao",
+      "campos": [
+        "document",
+        "document_checks",
+        "note",
+        "published_at",
+        "reference_date"
+      ]
+    },
+    {
+      "id": "hab-ine-preco-lisboa",
+      "campos": [
+        "linha nova"
+      ]
+    },
+    {
+      "id": "hab-ine-renda-porto",
+      "campos": [
+        "excerpt",
+        "excerpt_kind",
+        "reference_date",
+        "source_excerpt"
+      ]
+    },
+    {
+      "id": "hab-ine-preco-porto",
+      "campos": [
+        "linha nova"
+      ]
+    }
+  ],
+  "retiradas": []
+}
