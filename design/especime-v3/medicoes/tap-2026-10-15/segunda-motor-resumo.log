@@ -1,0 +1,13 @@
+código 0 · 775 s · 261 linhas em <worktree>/design/especime-v3/medicoes/tap-2026-10-15/segunda-motor.log
+--- linhas de falha ou aviso (até quarenta) ---
+23:PROVA vigilancia.tests.test_vigilancia.Provas.test_aviso_descompressao: passou
+68:PLANTA vigilancia.tests.test_vigilancia.Provas.test_planta_dois_numeros_dar: «número do DAR omitido do resumo sem aviso»; passou
+--- últimas oito linhas ---
+GATE  editions evora-economia-dinheiro-de-fora-pt-en ok
+GATE  editions evora-economia-dinheiro-de-fora-pt-md-html ok
+GATE  editions evora-economia-dinheiro-de-fora-en-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-en ok
+GATE  editions evora-2027-capital-europeia-da-cultura-pt-md-html ok
+GATE  editions evora-2027-capital-europeia-da-cultura-en-md-html ok
+GATE: PASS
+resultado: {"cabeca": "1e920bf31eb621cdfe65176a6c2ecfb03cc53bd8", "comando": "python3 -m core.gate", "codigo": 0, "inicio": "2026-10-19T13:45:25.078828+00:00", "fim": "2026-10-19T13:58:20.328701+00:00", "duracao_s": 775.292, "arvore_limpa_antes_e_depois": true}

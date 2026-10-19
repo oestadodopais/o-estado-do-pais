@@ -1,0 +1,30 @@
+[
+  {
+    "fonte": "cge-2022.pdf",
+    "pagina_pdf": 130,
+    "sha256_fonte": "2d34e7f87d70afad287af8b09af06fbb9e0ab41561d47327686fae5fa41ee618",
+    "sha256_imagem_temporaria": "2bc54d373f87926c8172966d1914c41d9523ac4509d1ebcf1e2301bb57ca937e",
+    "leitura": "Cabeçalho milhões de euros e linhas TAP SA e TAP SGPS conferidos; escala não reconciliada com a prosa."
+  },
+  {
+    "fonte": "tap-2025-individual.pdf",
+    "pagina_pdf": 34,
+    "sha256_fonte": "d59ed3ef53bd40512daa07c0aa648eda11dd4475a56f9add01e5467f717f5489",
+    "sha256_imagem_temporaria": "f797851c12f002d98e8073608383e0afe4fb5b47101282a626bf0146f1d95f77",
+    "leitura": "Comparativo completo (11.955.562) e resultado (80.941.631), ambos entre parênteses."
+  },
+  {
+    "fonte": "governo-apresentacao.pdf",
+    "pagina_pdf": 8,
+    "sha256_fonte": "9c15faf05632e3709d4eb8eb0cbcc71e4cea18daaac6ae0e4becf0d865edfdec",
+    "sha256_imagem_temporaria": "98f435dc422da44eaea04aa7ffc9c204053a611aa0887f01fd6f10556108a68c",
+    "leitura": "Colunas AF-KLM e Lufthansa, prémio qualificado e nota de earn-out conferidos na imagem."
+  },
+  {
+    "fonte": "ce-2021-decisao.pdf",
+    "pagina_pdf": 68,
+    "sha256_fonte": "1e6381352e1eeafe46ab11864f230c8bd0239a16849a218b5976aef2407102e0",
+    "sha256_imagem_temporaria": "f53d66ffbbbcf3f58b982f07cc0e4cdeb026f1d4d7bbce5ae32daa06c2da3402",
+    "leitura": "Artigo 2(2) seguido de (a); o número (3) e o rodapé EN pertencem a posições distintas e não integram o excerto."
+  }
+]

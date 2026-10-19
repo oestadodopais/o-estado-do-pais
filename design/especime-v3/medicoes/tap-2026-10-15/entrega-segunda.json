@@ -1,0 +1,32 @@
+{
+  "commit_motor": "1e920bf31eb621cdfe65176a6c2ecfb03cc53bd8",
+  "core_gate_conteudo_commit": "1e920bf31eb621cdfe65176a6c2ecfb03cc53bd8",
+  "core_gate_codigo": 0,
+  "core_gate_duracao_s": 775.292,
+  "core_gate_comando": "sh <worktree>/scripts/leituras/curto.sh <medicoes>/segunda-motor.log python3 <temporario>/tap-logged.py <temporario>/tap-final-gate.json python3 -m core.gate",
+  "tap_test_conteudo_commit": "1e920bf31eb621cdfe65176a6c2ecfb03cc53bd8",
+  "tap_test_codigo": 0,
+  "tap_test_resultado": "PASS TAP: 110 linhas; 152 plantas recusadas; corpos, originais, recibos, direitos e regressões conferidos.",
+  "precommit_motor_pass": true,
+  "fontes_sha256": {
+    "ledger.json": "03c706bf44b8cfd38e755fa72e75c544bce31cac19a09ef1cc8a73f901c26e2c",
+    "extracoes.json": "acdf1eb37b973142b87e08b33584246177601d2bac2d441f53007d019e74d587",
+    "plantas.json": "4978d393bc5309e6345af66aa2e1da328103aa1f92a75f4ca61b2f79631ad112",
+    "fontes.json": "ebd2e77d4e48476d7f0221228c08c22d05c19d0d70d90c815b3c473a81b26a2d",
+    "source/MANIFEST.sha256": "5720561ffcf83481586e01572e357a5c43df1500182099c568980a5b58790650"
+  },
+  "gerador_sha256": "7c5f22eda4f5cf91c8f019624811ec7b9f366df774992e1710929cdd8121665c",
+  "registos_sha256": {
+    "segunda-motor.log": "adfca6d46a13aa29e9b41475f445e45ce7fc77b306ac6d84774a2f7d53c4aec0",
+    "segunda-publisher.tap_test.log": "8e186229c34d9ba7c9b26fbea795c0876401a03d6619bfc685da64e040a5a4dd",
+    "segunda-commit-motor.log": "87f4a529e08507b25a3862dd136a79e1b1179b787ed90663ffee178c5a09e5a4",
+    "segunda-provas.json": "8456793183acd65f4f449728f5a7768a5d76884d0e95e26fa460aff34c8f9092",
+    "segunda-plantas.json": "4db1856a18b061022f0001455ef94296705e61dae3355bbdb7e2f16f1300ca66"
+  },
+  "inicio_intervalo_medido": "2026-10-19T13:21:27.394660+00:00",
+  "fim_intervalo_medido": "2026-10-19T13:58:25.198057+00:00",
+  "duracao_intervalo_s": 2217.803,
+  "limite_da_medicao_de_tempo": "Intervalo parcial desde a criação do guião temporário de migração; exclui o trabalho inicial e o commit final do relatório.",
+  "tokens_used": "não exposto",
+  "exportacao_para_paginas": false
+}
