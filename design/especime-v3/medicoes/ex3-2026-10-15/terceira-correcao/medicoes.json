@@ -1,0 +1,448 @@
+{
+  "cabeca": "4e04e93f8817daf2ea3178ceddd822ee26669acf",
+  "escopo": {
+    "cabecaInicial": "744ca0a884dfa564dd34aa1191c84a013654db1b",
+    "declaracaoForaDeP1Identica": true,
+    "apoiosForaDeP1Identicos": true
+  },
+  "portoesMotor": "<temporario>/ex3-terceira-portoes-2",
+  "motor": "78a5e500be4789cdc5a99618a0b35b0f4f63d912",
+  "codigos": {
+    "build": "0",
+    "verify": "0",
+    "typecheck": "0",
+    "motor": "0",
+    "series": "0",
+    "cruzamento": "0",
+    "plantas-sitio": "0",
+    "plantas-motor": "0"
+  },
+  "celulas": [
+    {
+      "id": "nato-defesa-portugal-pib-2024",
+      "folha": "Table 3",
+      "celula": "L27",
+      "valor": 1.55,
+      "number_format": "0.00",
+      "pagina_pdf": 7,
+      "impresso": null,
+      "ausencia_pdf": "a página não tem texto extraível",
+      "forma_celula": "1.55",
+      "cabecalho_periodo": "2024",
+      "nome": "Share of real GDP (%)",
+      "nome_celula": "Table 3!A3",
+      "estimativa": false,
+      "sha256_pdf": "efd05e4a7e715b361617390016356df04af83ea6febecb9475ce173bf2cffb75"
+    },
+    {
+      "id": "nato-defesa-portugal-pib-2025",
+      "folha": "Table 3",
+      "celula": "M27",
+      "valor": 2.01,
+      "number_format": "0.00",
+      "pagina_pdf": 7,
+      "impresso": null,
+      "ausencia_pdf": "a página não tem texto extraível",
+      "forma_celula": "2.01",
+      "cabecalho_periodo": "2025e",
+      "nome": "Share of real GDP (%)",
+      "nome_celula": "Table 3!A3",
+      "estimativa": true,
+      "sha256_pdf": "efd05e4a7e715b361617390016356df04af83ea6febecb9475ce173bf2cffb75"
+    },
+    {
+      "id": "nato-defesa-portugal-pib-2026",
+      "folha": "Table 3",
+      "celula": "N27",
+      "valor": 2.1,
+      "number_format": "0.00",
+      "pagina_pdf": 7,
+      "impresso": null,
+      "ausencia_pdf": "a página não tem texto extraível",
+      "forma_celula": "2.10",
+      "cabecalho_periodo": "2026e",
+      "nome": "Share of real GDP (%)",
+      "nome_celula": "Table 3!A3",
+      "estimativa": true,
+      "sha256_pdf": "efd05e4a7e715b361617390016356df04af83ea6febecb9475ce173bf2cffb75"
+    },
+    {
+      "id": "nato-defesa-portugal-eur-2026",
+      "folha": "Table 1",
+      "celula": "N27",
+      "valor": 6748,
+      "number_format": "General",
+      "pagina_pdf": 5,
+      "impresso": null,
+      "ausencia_pdf": "a página não tem texto extraível",
+      "forma_celula": "6748",
+      "cabecalho_periodo": "2026e",
+      "nome": "Table 1: Core defence expenditure",
+      "nome_celula": "Table 1!A1",
+      "estimativa": true,
+      "sha256_pdf": "efd05e4a7e715b361617390016356df04af83ea6febecb9475ce173bf2cffb75"
+    }
+  ],
+  "linhas": [
+    {
+      "id": "nato-cimeira-haia-2025",
+      "value": "2025 NATO Summit in The Hague",
+      "unit": "cimeira",
+      "name": "The 5% Hague defence commitment",
+      "name_source": "The 5% Hague defence commitment",
+      "source": "NATO",
+      "document": {
+        "title": "Defence investment and NATO's 5% commitment",
+        "edition": "2026-10-15",
+        "locator": "The 5% Hague defence commitment",
+        "source_sha256": "d42b32910ffc936925c25cb7a34b1e48b88078d578c5bc3760160e2908f5287c",
+        "kind": "html"
+      },
+      "source_url": "https://www.nato.int/en/what-we-do/introduction-to-nato/defence-expenditures-and-natos-5-commitment",
+      "access_date": "2026-10-15",
+      "reference_date": "2025",
+      "excerpt": "At the 2025 NATO Summit in The Hague, Allies committed to investing 5% of GDP annually on defence by 2035.",
+      "derivation": null,
+      "derivation_en": null,
+      "derived_from": [],
+      "check": null,
+      "study": "oe-2026",
+      "note": "[note do motor] Cimeira e data transcritas da página alojada da NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-cimeira-haia-2025.",
+      "corrections": [],
+      "__file": "nato-cimeira-haia-2025.yml"
+    },
+    {
+      "id": "nato-compromisso-gales-2014",
+      "value": "2",
+      "unit": "% do PIB",
+      "name": "2014 Wales Summit",
+      "name_source": "2014 Wales Summit",
+      "source": "NATO",
+      "document": {
+        "title": "Defence investment and NATO's 5% commitment",
+        "edition": "2026-10-15",
+        "locator": "2014 Wales Summit",
+        "source_sha256": "d42b32910ffc936925c25cb7a34b1e48b88078d578c5bc3760160e2908f5287c",
+        "kind": "html"
+      },
+      "source_url": "https://www.nato.int/en/what-we-do/introduction-to-nato/defence-expenditures-and-natos-5-commitment",
+      "access_date": "2026-10-15",
+      "reference_date": "2014",
+      "excerpt": "Previously, at the 2014 Wales Summit, NATO Heads of State and Government had agreed to commit 2% of their national GDP to defence spending, to help ensure the Alliance's continued military readiness.",
+      "derivation": null,
+      "derivation_en": null,
+      "derived_from": [],
+      "check": null,
+      "study": "oe-2026",
+      "note": "[note do motor] Localizador: 2014 Wales Summit. Compromisso da NATO, transcrito da página alojada.  · Cruzado de ResearchHub content/21 Defesa NATO · nato-compromisso-gales-2014.",
+      "corrections": [],
+      "__file": "nato-compromisso-gales-2014.yml"
+    },
+    {
+      "id": "nato-compromisso-haia-2035",
+      "value": "5",
+      "unit": "% do PIB",
+      "name": "The 5% Hague defence commitment",
+      "name_source": "The 5% Hague defence commitment",
+      "source": "NATO",
+      "document": {
+        "title": "Defence investment and NATO's 5% commitment",
+        "edition": "2026-10-15",
+        "locator": "The 5% Hague defence commitment",
+        "source_sha256": "d42b32910ffc936925c25cb7a34b1e48b88078d578c5bc3760160e2908f5287c",
+        "kind": "html"
+      },
+      "source_url": "https://www.nato.int/en/what-we-do/introduction-to-nato/defence-expenditures-and-natos-5-commitment",
+      "access_date": "2026-10-15",
+      "reference_date": "2035",
+      "excerpt": "At the 2025 NATO Summit in The Hague, Allies committed to investing 5% of GDP annually on defence by 2035.",
+      "derivation": null,
+      "derivation_en": null,
+      "derived_from": [],
+      "check": null,
+      "study": "oe-2026",
+      "note": "[note do motor] Localizador: The 5% Hague defence commitment. Compromisso da NATO, transcrito da página alojada.  · Cruzado de ResearchHub content/21 Defesa NATO · nato-compromisso-haia-2035.",
+      "corrections": [],
+      "__file": "nato-compromisso-haia-2035.yml"
+    },
+    {
+      "id": "nato-compromisso-haia-essencial-2035",
+      "value": "3,5",
+      "unit": "% do PIB",
+      "name": "Core defence requirements",
+      "name_source": "Core defence requirements",
+      "source": "NATO",
+      "document": {
+        "title": "Defence investment and NATO's 5% commitment",
+        "edition": "2026-10-15",
+        "locator": "Core defence requirements",
+        "source_sha256": "d42b32910ffc936925c25cb7a34b1e48b88078d578c5bc3760160e2908f5287c",
+        "kind": "html"
+      },
+      "source_url": "https://www.nato.int/en/what-we-do/introduction-to-nato/defence-expenditures-and-natos-5-commitment",
+      "access_date": "2026-10-15",
+      "reference_date": "2035",
+      "excerpt": "Core defence requirements: Firstly, Allies agreed to allocate at least 3.5% of GDP to resource core defence requirements and to meet the NATO Capability Targets, based on the agreed definition of NATO defence expenditure (see below).",
+      "derivation": null,
+      "derivation_en": null,
+      "derived_from": [],
+      "check": null,
+      "study": "oe-2026",
+      "note": "[note do motor] Localizador: Core defence requirements. Compromisso da NATO, transcrito da página alojada.  · Cruzado de ResearchHub content/21 Defesa NATO · nato-compromisso-haia-essencial-2035.",
+      "corrections": [],
+      "__file": "nato-compromisso-haia-essencial-2035.yml"
+    },
+    {
+      "id": "nato-defesa-portugal-eur-2026",
+      "value": "6 748",
+      "unit": "milhões de euros",
+      "name": "Table 1: Core defence expenditure",
+      "name_source": "Table 1!A1",
+      "source": "NATO",
+      "document": {
+        "title": "Defence Investment of NATO Countries (2014-2026)",
+        "edition": "2026",
+        "locator": "Table 1!N27; Portugal (Euros); 2026e",
+        "source_sha256": "11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988",
+        "kind": "ficheiro"
+      },
+      "source_url": "https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2026-en.xlsx",
+      "access_date": "2026-10-15",
+      "reference_date": "2026",
+      "excerpt": "Table 1: Core defence expenditure; Million national currency units; Current prices. Table 1!N27; Portugal (Euros); 2026e: 6748 (Excel; number_format: General). Forma pelo formato da célula: 6748. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 6 748 e",
+      "source_flag": "e",
+      "source_flag_note": "estimativa da NATO",
+      "source_flag_note_en": "NATO estimate",
+      "ressalva": "Estimativa da NATO. Pagamentos feitos por um governo nacional aliado, excluindo as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Milhões de euros, a preços correntes. A forma impressa no PDF não foi lida porque a página não tem texto extraível.",
+      "ressalva_en": "NATO estimate. Payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. Million euros, at current prices. The printed form in the PDF was not read because the page has no extractable text.",
+      "derivation": null,
+      "derivation_en": null,
+      "derived_from": [],
+      "check": null,
+      "study": "oe-2026",
+      "note": "[note do motor] Localizador: Table 1!N27; Portugal (Euros); 2026e. Excerto composto a partir dos cabeçalhos e células do Excel. A forma impressa no PDF não foi lida porque a página não tem texto extraível (página 5). A marca e, quando presente, vem do cabeçalho do ano. Estimativa da NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-defesa-portugal-eur-2026.",
+      "corrections": [],
+      "__file": "nato-defesa-portugal-eur-2026.yml"
+    },
+    {
+      "id": "nato-defesa-portugal-pib-2024",
+      "value": "1,55",
+      "unit": "% do PIB",
+      "name": "Share of real GDP (%)",
+      "name_source": "Table 3!A3",
+      "source": "NATO",
+      "document": {
+        "title": "Defence Investment of NATO Countries (2014-2026)",
+        "edition": "2026",
+        "locator": "Table 3!L27; Portugal; 2024",
+        "source_sha256": "11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988",
+        "kind": "ficheiro"
+      },
+      "source_url": "https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2026-en.xlsx",
+      "access_date": "2026-10-15",
+      "reference_date": "2024",
+      "excerpt": "Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!L27; Portugal; 2024: 1.55 (Excel; number_format: 0.00). Forma pelo formato da célula: 1.55. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 1,55",
+      "ressalva": "Pagamentos feitos por um governo nacional aliado, excluindo as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Percentagem do PIB real, a preços de 2021. A forma impressa no PDF não foi lida porque a página não tem texto extraível.",
+      "ressalva_en": "Payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. Share of real GDP, based on 2021 prices. The printed form in the PDF was not read because the page has no extractable text.",
+      "derivation": null,
+      "derivation_en": null,
+      "derived_from": [],
+      "check": null,
+      "study": "oe-2026",
+      "note": "[note do motor] Localizador: Table 3!L27; Portugal; 2024. Excerto composto a partir dos cabeçalhos e células do Excel. A forma impressa no PDF não foi lida porque a página não tem texto extraível (página 7). A marca e, quando presente, vem do cabeçalho do ano. Valor publicado pela NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-defesa-portugal-pib-2024.",
+      "corrections": [],
+      "__file": "nato-defesa-portugal-pib-2024.yml"
+    },
+    {
+      "id": "nato-defesa-portugal-pib-2025",
+      "value": "2,01",
+      "unit": "% do PIB",
+      "name": "Share of real GDP (%)",
+      "name_source": "Table 3!A3",
+      "source": "NATO",
+      "document": {
+        "title": "Defence Investment of NATO Countries (2014-2026)",
+        "edition": "2026",
+        "locator": "Table 3!M27; Portugal; 2025e",
+        "source_sha256": "11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988",
+        "kind": "ficheiro"
+      },
+      "source_url": "https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2026-en.xlsx",
+      "access_date": "2026-10-15",
+      "reference_date": "2025",
+      "excerpt": "Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!M27; Portugal; 2025e: 2.01 (Excel; number_format: 0.00). Forma pelo formato da célula: 2.01. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 2,01 e",
+      "source_flag": "e",
+      "source_flag_note": "estimativa da NATO",
+      "source_flag_note_en": "NATO estimate",
+      "ressalva": "Estimativa da NATO. Pagamentos feitos por um governo nacional aliado, excluindo as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Percentagem do PIB real, a preços de 2021. A forma impressa no PDF não foi lida porque a página não tem texto extraível.",
+      "ressalva_en": "NATO estimate. Payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. Share of real GDP, based on 2021 prices. The printed form in the PDF was not read because the page has no extractable text.",
+      "derivation": null,
+      "derivation_en": null,
+      "derived_from": [],
+      "check": null,
+      "study": "oe-2026",
+      "note": "[note do motor] Localizador: Table 3!M27; Portugal; 2025e. Excerto composto a partir dos cabeçalhos e células do Excel. A forma impressa no PDF não foi lida porque a página não tem texto extraível (página 7). A marca e, quando presente, vem do cabeçalho do ano. Estimativa da NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-defesa-portugal-pib-2025.",
+      "corrections": [],
+      "__file": "nato-defesa-portugal-pib-2025.yml"
+    },
+    {
+      "id": "nato-defesa-portugal-pib-2026",
+      "value": "2,10",
+      "unit": "% do PIB",
+      "name": "Share of real GDP (%)",
+      "name_source": "Table 3!A3",
+      "source": "NATO",
+      "document": {
+        "title": "Defence Investment of NATO Countries (2014-2026)",
+        "edition": "2026",
+        "locator": "Table 3!N27; Portugal; 2026e",
+        "source_sha256": "11e302d3f556b6df87b05413654714b0fcbb9a47ebfadfc92caed76e6a4e0988",
+        "kind": "ficheiro"
+      },
+      "source_url": "https://www.nato.int/content/dam/nato/webready/documents/finance/def-exp-2026-en.xlsx",
+      "access_date": "2026-10-15",
+      "reference_date": "2026",
+      "excerpt": "Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!N27; Portugal; 2026e: 2.1 (Excel; number_format: 0.00). Forma pelo formato da célula: 2.10. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 2,10 e",
+      "source_flag": "e",
+      "source_flag_note": "estimativa da NATO",
+      "source_flag_note_en": "NATO estimate",
+      "ressalva": "Estimativa da NATO. Pagamentos feitos por um governo nacional aliado, excluindo as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Percentagem do PIB real, a preços de 2021. A forma impressa no PDF não foi lida porque a página não tem texto extraível.",
+      "ressalva_en": "NATO estimate. Payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. Share of real GDP, based on 2021 prices. The printed form in the PDF was not read because the page has no extractable text.",
+      "derivation": null,
+      "derivation_en": null,
+      "derived_from": [],
+      "check": null,
+      "study": "oe-2026",
+      "note": "[note do motor] Localizador: Table 3!N27; Portugal; 2026e. Excerto composto a partir dos cabeçalhos e células do Excel. A forma impressa no PDF não foi lida porque a página não tem texto extraível (página 7). A marca e, quando presente, vem do cabeçalho do ano. Estimativa da NATO. · Cruzado de ResearchHub content/21 Defesa NATO · nato-defesa-portugal-pib-2026.",
+      "corrections": [],
+      "__file": "nato-defesa-portugal-pib-2026.yml"
+    }
+  ],
+  "frases": {
+    "pt": {
+      "pagina": "dist/explicacoes/dinheiro-do-estado-2026/index.html",
+      "sha256": "2b832c17a1686fd0401e6032817317ada3ac635ac6ea597af6f7d5d2a8221b6f",
+      "p1": "3,25 de cada cem euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços), em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo; a definição da NATO inclui as pensões de reforma pagas diretamente pelo governo aos militares na reforma e aos funcionários civis dos departamentos militares, e as relativas ao pessoal no ativo. Para Portugal, a NATO publica 1,55 % do PIB em 2024 e, como estimativas, 2,01 % (estimativa da NATO) em 2025 e 2,10 % (estimativa da NATO) em 2026 (a tabela a preços constantes), e 6 748 (estimativa da NATO) milhões de euros em 2026 (a tabela a preços correntes, também uma estimativa). A referência da própria NATO é a dos seus compromissos: 2 % do PIB desde a cimeira de Gales de 2014, e, desde a cimeira de Haia de 2025, 5 % do PIB por ano até 2035, dos quais pelo menos 3,5 % em requisitos essenciais de defesa pela definição da NATO."
+    },
+    "en": {
+      "pagina": "dist/en/explainers/dinheiro-do-estado-2026/index.html",
+      "sha256": "c3272fa64cd402fb7822e6f191795174333677fd48651f65a36c159a49028581",
+      "p1": "3,25 of every hundred euros on this page are the «Defence» function of central administration's consolidated effective expenditure (spending without transactions in financial assets and liabilities or transfers between its own services), in public accounting. Defence spending as a share of GDP, as NATO publishes it, is another measure, under NATO's own definition: payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole; NATO's definition includes retirement pension payments made directly by the government to retired military and civilian employees of military departments and for active personnel. For Portugal, NATO publishes 1,55 % of GDP in 2024 and, as estimates, 2,01 % (NATO estimate) in 2025 and 2,10 % (NATO estimate) in 2026 (the table at constant prices), and 6 748 (NATO estimate) million euros in 2026 (the table at current prices, also an estimate). NATO's own reference is its commitments: 2 % of GDP since the 2014 Wales Summit, and, since the 2025 Hague Summit, 5 % of GDP a year by 2035, of which at least 3,5 % for core defence requirements under NATO's definition."
+    }
+  },
+  "recibos": {
+    "pt": {
+      "nato-cimeira-haia-2025": {
+        "pagina": "dist/livro-razao/nato-cimeira-haia-2025/index.html",
+        "sha256": "bd7997ee1e7d583f7de4862fc18c7a37a03fd2aceb7a94ea304ee8848e1e28c9",
+        "excerto": "At the 2025 NATO Summit in The Hague, Allies committed to investing 5% of GDP annually on defence by 2035.",
+        "ressalva": null
+      },
+      "nato-compromisso-gales-2014": {
+        "pagina": "dist/livro-razao/nato-compromisso-gales-2014/index.html",
+        "sha256": "382acee264dcd8e6ce6bc6a0459c0c2bd3c89fc6cf8a9dc7b937d5b0e51294b4",
+        "excerto": "Previously, at the 2014 Wales Summit, NATO Heads of State and Government had agreed to commit 2% of their national GDP to defence spending, to help ensure the Alliance's continued military readiness.",
+        "ressalva": null
+      },
+      "nato-compromisso-haia-2035": {
+        "pagina": "dist/livro-razao/nato-compromisso-haia-2035/index.html",
+        "sha256": "ede722124eb363b1d5ebd217855b252106f425943a934351417f32d85112f5f2",
+        "excerto": "At the 2025 NATO Summit in The Hague, Allies committed to investing 5% of GDP annually on defence by 2035.",
+        "ressalva": null
+      },
+      "nato-compromisso-haia-essencial-2035": {
+        "pagina": "dist/livro-razao/nato-compromisso-haia-essencial-2035/index.html",
+        "sha256": "f7b93e4c0736ca58abfe9d1dc3caf9d627723035f6122517a5aa041a775f5558",
+        "excerto": "Core defence requirements: Firstly, Allies agreed to allocate at least 3.5% of GDP to resource core defence requirements and to meet the NATO Capability Targets, based on the agreed definition of NATO defence expenditure (see below).",
+        "ressalva": null
+      },
+      "nato-defesa-portugal-eur-2026": {
+        "pagina": "dist/livro-razao/nato-defesa-portugal-eur-2026/index.html",
+        "sha256": "fa6816e6615ba5949251e04438aede908787869577fe96e43c115983e80de468",
+        "excerto": "Table 1: Core defence expenditure; Million national currency units; Current prices. Table 1!N27; Portugal (Euros); 2026e: 6748 (Excel; number_format: General). Forma pelo formato da célula: 6748. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 6 748 e",
+        "ressalva": "Estimativa da NATO. Pagamentos feitos por um governo nacional aliado, excluindo as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Milhões de euros, a preços correntes. A forma impressa no PDF não foi lida porque a página não tem texto extraível."
+      },
+      "nato-defesa-portugal-pib-2024": {
+        "pagina": "dist/livro-razao/nato-defesa-portugal-pib-2024/index.html",
+        "sha256": "353ee434c0aea9fbe61926b9f7c0b273b77da9833578d941dfe1c0c6ad504a78",
+        "excerto": "Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!L27; Portugal; 2024: 1.55 (Excel; number_format: 0.00). Forma pelo formato da célula: 1.55. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 1,55",
+        "ressalva": "Pagamentos feitos por um governo nacional aliado, excluindo as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Percentagem do PIB real, a preços de 2021. A forma impressa no PDF não foi lida porque a página não tem texto extraível."
+      },
+      "nato-defesa-portugal-pib-2025": {
+        "pagina": "dist/livro-razao/nato-defesa-portugal-pib-2025/index.html",
+        "sha256": "bd475a462b93d9d87c6fc5a999c5f59de1031c9b89f5b44e16ded013ed7d4992",
+        "excerto": "Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!M27; Portugal; 2025e: 2.01 (Excel; number_format: 0.00). Forma pelo formato da célula: 2.01. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 2,01 e",
+        "ressalva": "Estimativa da NATO. Pagamentos feitos por um governo nacional aliado, excluindo as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Percentagem do PIB real, a preços de 2021. A forma impressa no PDF não foi lida porque a página não tem texto extraível."
+      },
+      "nato-defesa-portugal-pib-2026": {
+        "pagina": "dist/livro-razao/nato-defesa-portugal-pib-2026/index.html",
+        "sha256": "88d8528e43a92a7d67be472c809a3a370aa6ca03736460bd1aa8f7cfe81ad773",
+        "excerto": "Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!N27; Portugal; 2026e: 2.1 (Excel; number_format: 0.00). Forma pelo formato da célula: 2.10. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 2,10 e",
+        "ressalva": "Estimativa da NATO. Pagamentos feitos por um governo nacional aliado, excluindo as administrações regionais, locais e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo. Percentagem do PIB real, a preços de 2021. A forma impressa no PDF não foi lida porque a página não tem texto extraível."
+      }
+    },
+    "en": {
+      "nato-cimeira-haia-2025": {
+        "pagina": "dist/en/ledger/nato-cimeira-haia-2025/index.html",
+        "sha256": "42b76f1a03155da85400e74e4251c26b0a837c1670d22c4634e2fc2329a6caa8",
+        "excerto": "At the 2025 NATO Summit in The Hague, Allies committed to investing 5% of GDP annually on defence by 2035.",
+        "ressalva": null
+      },
+      "nato-compromisso-gales-2014": {
+        "pagina": "dist/en/ledger/nato-compromisso-gales-2014/index.html",
+        "sha256": "dcb70c3439e2cf6c0e57095318342f0f37d6e8594fba120145a355a60bbe5c1a",
+        "excerto": "Previously, at the 2014 Wales Summit, NATO Heads of State and Government had agreed to commit 2% of their national GDP to defence spending, to help ensure the Alliance's continued military readiness.",
+        "ressalva": null
+      },
+      "nato-compromisso-haia-2035": {
+        "pagina": "dist/en/ledger/nato-compromisso-haia-2035/index.html",
+        "sha256": "7ef4c78b86fd8cc417104ef3f479dc396508ddc932f905d57c5228073fe12bff",
+        "excerto": "At the 2025 NATO Summit in The Hague, Allies committed to investing 5% of GDP annually on defence by 2035.",
+        "ressalva": null
+      },
+      "nato-compromisso-haia-essencial-2035": {
+        "pagina": "dist/en/ledger/nato-compromisso-haia-essencial-2035/index.html",
+        "sha256": "21b70032937384c43f9edb43f1b11ae7d8b0ebe1a08a11f2e701f2d53713869e",
+        "excerto": "Core defence requirements: Firstly, Allies agreed to allocate at least 3.5% of GDP to resource core defence requirements and to meet the NATO Capability Targets, based on the agreed definition of NATO defence expenditure (see below).",
+        "ressalva": null
+      },
+      "nato-defesa-portugal-eur-2026": {
+        "pagina": "dist/en/ledger/nato-defesa-portugal-eur-2026/index.html",
+        "sha256": "41965a3f0e83c03be08a0fa535a7bf524a5ff70128345cd9cfc4b412ea438832",
+        "excerto": "Table 1: Core defence expenditure; Million national currency units; Current prices. Table 1!N27; Portugal (Euros); 2026e: 6748 (Excel; number_format: General). Forma pelo formato da célula: 6748. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 6 748 e",
+        "ressalva": "NATO estimate. Payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. Million euros, at current prices. The printed form in the PDF was not read because the page has no extractable text."
+      },
+      "nato-defesa-portugal-pib-2024": {
+        "pagina": "dist/en/ledger/nato-defesa-portugal-pib-2024/index.html",
+        "sha256": "0fa57652fdc432c9c272da0e9ff2390755051329da5e369b8fafe8b016d300ab",
+        "excerto": "Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!L27; Portugal; 2024: 1.55 (Excel; number_format: 0.00). Forma pelo formato da célula: 1.55. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 1,55",
+        "ressalva": "Payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. Share of real GDP, based on 2021 prices. The printed form in the PDF was not read because the page has no extractable text."
+      },
+      "nato-defesa-portugal-pib-2025": {
+        "pagina": "dist/en/ledger/nato-defesa-portugal-pib-2025/index.html",
+        "sha256": "478c2214813812c78f102d52a99bb0266c5d3974b7c01c28f16fb462036f487e",
+        "excerto": "Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!M27; Portugal; 2025e: 2.01 (Excel; number_format: 0.00). Forma pelo formato da célula: 2.01. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 2,01 e",
+        "ressalva": "NATO estimate. Payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. Share of real GDP, based on 2021 prices. The printed form in the PDF was not read because the page has no extractable text."
+      },
+      "nato-defesa-portugal-pib-2026": {
+        "pagina": "dist/en/ledger/nato-defesa-portugal-pib-2026/index.html",
+        "sha256": "d66f72ff4501d2ddb2e3f5bed9b48704242b462700dcd17601c9923b399cc199",
+        "excerto": "Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 2021 prices. Table 3!N27; Portugal; 2026e: 2.1 (Excel; number_format: 0.00). Forma pelo formato da célula: 2.10. Figures for 2025 and 2026 are estimates.\nForma de apresentação portuguesa, com a marca da coluna: 2,10 e",
+        "ressalva": "NATO estimate. Payments made by an Allied national government (excluding regional, local and municipal authorities) specifically to meet the needs of its own armed forces, those of other Allies or the needs of the Alliance as a whole. Share of real GDP, based on 2021 prices. The printed form in the PDF was not read because the page has no extractable text."
+      }
+    }
+  },
+  "capturas": {
+    "pasta": "<temporario>/ex3-terceira-capturas-1",
+    "paginas": 20,
+    "larguras": [
+      390,
+      768,
+      1024,
+      1280,
+      1600
+    ],
+    "falhas": 0
+  },
+  "inspecaoVisual": true
+}

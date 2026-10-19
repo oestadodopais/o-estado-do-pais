@@ -54,6 +54,7 @@
  * raras, para que quem lê veja primeiro o que mais se rende.
  */
 export const UNIDADES = {
+  cimeira: 'summit', // NATO: «2025 NATO Summit in The Hague», na linha da cimeira.
   '% do valor contratado': '% of contracted amount',
   // RP4-n-e: unidade de contagem traduzida; o singular depende do valor.
   // OE1: tradução de dicionário da unidade monetária.

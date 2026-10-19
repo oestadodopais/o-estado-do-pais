@@ -1146,3 +1146,9 @@ afirmação.
 `publication: "withdrawn"` conserva a linha no livro em disco e na validação integral, mas exclui-a do carregador de publicação, dos recibos, dos cartões, dos índices, das descargas e das contagens do Método. O acesso explícito de auditoria usa `loadClaims({ includeWithdrawn: true })`. Qualquer outro valor do campo é recusado.
 
 `definition_sources` declara as fontes secundárias da definição, separadas da fonte do valor. Cada entrada tem `publisher`, `url` e `receipt` (ficheiro no motor, sha256, cliente e hora). A K17 exige correspondência com a origem citada; o motor confere os bytes antes de exportar. Nas linhas calculadas, a definição pode citar as fontes das linhas de origem.
+
+## As estimativas de defesa da NATO (EX3, 15.10.2026)
+
+As linhas `nato-defesa-portugal-pib-2025`, `nato-defesa-portugal-pib-2026` e `nato-defesa-portugal-eur-2026` são exportadas por `publisher/export_site_rows.py`, pelo manifesto `publisher/manifest.ex3.json`. As células do Excel da NATO são relidas por `publisher/ex3.py`; o excerto identifica a folha, célula, coluna, preços, unidade, formato numérico e forma impressa no PDF da mesma edição. A marca `e` corresponde à nota de estimativa da fonte e acompanha os valores nas duas edições.
+
+A origem `nato-definicao-despesa-defesa` apoia a definição e a ligação à medida essencial da NATO. O HTML, Excel, PDF, recibos e pasta de direitos ficam no motor. Percentagem do PIB e percentagem da despesa efetiva consolidada da administração central têm denominadores diferentes. A explicação também apresenta a despesa por função do Eurostat, com o seu período, perímetro e contabilidade, conservando as marcas de provisório.

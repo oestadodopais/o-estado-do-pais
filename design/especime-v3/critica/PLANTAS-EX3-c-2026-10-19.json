@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-19T12:25:04+00:00",
+ "copia": "<pacote-pasta>/pacote-ex3-c",
+ "plantas": [
+  {
+   "id": "ex3c-p1",
+   "ficheiro": "built/explicacoes/dinheiro-do-estado-2026/index.html",
+   "descricao": "a página portuguesa construída diz que a definição da NATO exclui as pensões (a página alojada da NATO diz que as inclui)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f27f494ae2b160b678f5148f25f75f808cb5c05e4cd9b59d3e0a9c4c198a8b32",
+   "sha256_depois": "c074ec6946a2ddf533b843496905a0c38a43fe9e1378064f77133bfcbc2d6d5a",
+   "contexto_antes": "is e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo; a definição da NATO inclui as pensões de reforma pagas diretamente pelo governo aos militares na reforma e aos funcionários civis dos departamentos militares. Para Portugal, a NATO publica <span class=\"claim ",
+   "contexto_depois": "is e municipais, especificamente para satisfazer as necessidades das suas forças armadas, das dos outros aliados ou da Aliança no seu todo; a definição da NATO exclui as pensões de reforma pagas diretamente pelo governo aos militares na reforma e aos funcionários civis dos departamentos militares. Para Portugal, a NATO publica <span class=\"claim "
+  },
+  {
+   "id": "ex3c-p2",
+   "ficheiro": "motor/content/21 Defesa NATO/ledger.json",
+   "descricao": "o valor da linha de 2024 no livro do motor passa a 1,45 (a célula L27 do Excel diz 1.55)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "6d55405da3428245748d2cee3ebb36d55164b9c4c0d9ccca92eecbb58b929c35",
+   "sha256_depois": "10ff49cbe14b6320de9981c785983e7b2fad8a767ca604dee99dfd9bfc49840b",
+   "contexto_antes": "{\n  \"description\": \"Células da despesa em defesa da NATO para Portugal, EX3.\",\n  \"claims\": [\n    {\n      \"id\": \"nato-defesa-portugal-pib-2024\",\n      \"value\": \"1,55\",\n      \"source_value\": \"1,55\",\n      \"excerpt\": \"Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 20",
+   "contexto_depois": "{\n  \"description\": \"Células da despesa em defesa da NATO para Portugal, EX3.\",\n  \"claims\": [\n    {\n      \"id\": \"nato-defesa-portugal-pib-2024\",\n      \"value\": \"1,45\",\n      \"source_value\": \"1,55\",\n      \"excerpt\": \"Table 3: Core defence expenditure as a share of GDP and annual real change; Share of real GDP (%); Based on 20"
+  },
+  {
+   "id": "ex3c-p4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório dá o localizador da linha de 2024 como L26 (o livro e o Excel dizem L27)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "86bce332826a16c8430fad2cc9b11d85fe92afd7e683d7e38dd91350f7115e16",
+   "sha256_depois": "5fd78dc93248b574cf811dbe1628f67937e6eb2a0a119ccf1f1432efddf7bb26",
+   "contexto_antes": " células lidas pelo motor\n\n| Linha | Célula | Valor | Formato | Cabeçalho do ano | Forma da célula | Forma do PDF |\n| --- | --- | --- | --- | --- | --- | --- |\n| nato-defesa-portugal-pib-2024 | Table 3!L27 | 1.55 | 0.00 | 2024 | 1.55 | 1.55 |\n| nato-defesa-portugal-pib-2025 | Table 3!M27 | 2.01 | 0.00 | 2025e | 2.01 | 2.01 |\n| nato-defesa-portugal-pib-2026 | Table ",
+   "contexto_depois": " células lidas pelo motor\n\n| Linha | Célula | Valor | Formato | Cabeçalho do ano | Forma da célula | Forma do PDF |\n| --- | --- | --- | --- | --- | --- | --- |\n| nato-defesa-portugal-pib-2024 | Table 3!L26 | 1.55 | 0.00 | 2024 | 1.55 | 1.55 |\n| nato-defesa-portugal-pib-2025 | Table 3!M27 | 2.01 | 0.00 | 2025e | 2.01 | 2.01 |\n| nato-defesa-portugal-pib-2026 | Table "
+  },
+  {
+   "id": "ex3c-p5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a cópia do P1 no relatório perde metade da glosa do denominador (a página construída tem-na inteira)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "5fd78dc93248b574cf811dbe1628f67937e6eb2a0a119ccf1f1432efddf7bb26",
+   "sha256_depois": "7e693f0ed1b68240d369975d6320708bd97a022d366d040f432124e300ad74c4",
+   "contexto_antes": " euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços), em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações re",
+   "contexto_depois": " euros desta página são a função «Defesa» da despesa efetiva consolidada da administração central (a despesa sem as operações com ativos e passivos financeiros ), em contabilidade pública. A despesa em defesa em percentagem do PIB que a NATO publica é outra medida, pela definição da própria NATO: os pagamentos feitos por um governo nacional, sem as administrações re"
+  },
+  {
+   "id": "ex3c-p3",
+   "ficheiro": "built/en/explainers/dinheiro-do-estado-2026/index.html",
+   "descricao": "a edição inglesa construída mostra 1,65 na comparação do mesmo ano (a linha, a célula L27 e a edição portuguesa dizem 1,55)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "84c289c40efae829a23a0bc2b2af04aa85f266606523e5bdc123045ee9f5cf89",
+   "sha256_depois": "0c1e7ebd4a19ed5a2600c69f0015f9b88e88d7fa903a8a83f6ad19edd420c794",
+   "contexto_antes": "udes pensions. In the same year, <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"nato-defesa-portugal-pib-2024\" data-de-campo=\"reference_date\">2024</span>, NATO publishes <span class=\"claim claim-com-chip\"><span data-claim=\"nato-defesa-portugal-pib-2024\" class=\"claim-value\">1,55</span><span class=\"claim-sufixo\"> %</span><a class=\"src-chip\" href=\"/en/ledger/nato-defesa-portugal-pib-2024\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"NATO\" ",
+   "contexto_depois": "udes pensions. In the same year, <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"nato-defesa-portugal-pib-2024\" data-de-campo=\"reference_date\">2024</span>, NATO publishes <span class=\"claim claim-com-chip\"><span data-claim=\"nato-defesa-portugal-pib-2024\" class=\"claim-value\">1,65</span><span class=\"claim-sufixo\"> %</span><a class=\"src-chip\" href=\"/en/ledger/nato-defesa-portugal-pib-2024\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"NATO\" "
+  }
+ ]
+}

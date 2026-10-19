@@ -60,7 +60,7 @@
     "sinais": "node scripts/sinais-da-primeira-pagina.mjs --prova",
     "check:navegacao": "node tests/inicio/navegacao.mjs --prova",
     "check:indice-do-sitio": "node tests/indice/indice.mjs --prova",
-    "check:explicacoes": "node tests/explicacoes/explicacao.mjs --prova && node tests/explicacoes/semana.mjs --prova",
+    "check:explicacoes": "node tests/explicacoes/explicacao.mjs --prova && node tests/explicacoes/semana.mjs --prova && node tests/explicacoes/ex3.mjs",
     "check:frases-compostas": "node tests/explicacoes/frases-compostas.mjs",
     "check:formato": "node tests/inicio/formato-dos-numeros.mjs --prova",
     "check:sugestoes": "node tests/sugestoes/funcao.mjs --prova",

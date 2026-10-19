@@ -1,3 +1,4 @@
+import ORIGENS_EX3 from './origens-ex3.json' with {type: 'json'};
 import ORIGENS_V2A from './origens-v2a.json' with {type: 'json'};
 import ORIGENS_PENSAO from './pensao-rp4n.json' with {type: 'json'};
 import ORIGENS_RP4N from './origens-rp4n.json' with {type: 'json'};
@@ -691,6 +692,7 @@ const LISTA_SOCIAL = [
  * extenso. O nome por extenso é do glossário do Eurostat, e é ele que o declara.
  */
 export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
+  ...ORIGENS_EX3,
   ...ORIGENS_PENSAO,
   ...ORIGENS_C1C,
   /* TRÊS ORIGENS SELADAS NO MOTOR (B2, peça 1, segunda passagem de correção,

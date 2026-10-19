@@ -170,6 +170,11 @@ export function folhasDaExplicacao(e) {
       for (const r of ['maior', 'menor', 'igual']) if (r in a) anda(a[r], b[r], `${c}.${r}`, 'compara');
       return;
     }
+    if ('termo' in a) {
+      if (a.lingua !== b.lingua || a.termo !== b.termo) throw new Error(`X1 · termos diferentes em ${c}`);
+      out.push({caminho: `${c}.termo`, pt: a.termo, en: b.termo, ramo});
+      return;
+    }
     if ('claim' in a) {
       if (a.claim !== b.claim) throw new Error(`X1 · as duas edições citam linhas diferentes em ${c}`);
       if (typeof a.sufixo === 'string') out.push({ caminho: `${c}.sufixo`, pt: a.sufixo, en: b.sufixo, ramo });
@@ -240,6 +245,23 @@ function campoDaLinha(linha, campo, id) {
  * X1, X2 e X4: a auditoria das palavras de cada explicação.
  * @param {{ auditoria?: any, explicacoes?: any[], linhas?: Map<string, any>, origensDasExplicacoes?: Record<string, any>, origensDasDefinicoes?: Record<string, any> }} [entrada]
  */
+/** EX3: a parte imediatamente após cada valor e o seu sufixo citam a mesma linha. */
+export function conferirApoiosAdjacentesNato(e, auditoria) {
+  if(e.slug !== 'dinheiro-do-estado-2026') return [];
+  const caminho='seccoes[0].conteudo[2].paragrafo';
+  const partes=e.seccoes[0].conteudo[2].paragrafo.pt, erros=[];
+  for(const [i,token] of partes.entries()) {
+    if(!token?.claim) continue;
+    const locais=[`${caminho}[${i+1}]`, ...(token.sufixo?[`${caminho}[${i}].sufixo`]:[])];
+    for(const local of locais){
+      const folha=auditoria.folhas.find(x=>x.caminho===local);
+      const apoios=folha?.partes?.[0]?.apoios??[];
+      if(!apoios.some(x=>x.linha===token.claim)) erros.push(`X13 · ${local}: a parte junto do valor não cita a linha ${token.claim}`);
+    }
+  }
+  return erros;
+}
+
 export function conferirAuditoriaDasExplicacoes({
   auditoria = JSON.parse(fs.readFileSync(AUDITORIA, 'utf8')),
   explicacoes = EXPLICACOES,
@@ -256,6 +278,7 @@ export function conferirAuditoriaDasExplicacoes({
     const a = lista.find((x) => x?.slug === e.slug);
     const falha = (/** @type {string} */ m) => erros.push(`X · ${e.slug}: ${m}`);
     if (!a) { falha('a explicação não tem auditoria'); continue; }
+    erros.push(...conferirApoiosAdjacentesNato(e,a));
     contas.explicacoes++;
     let folhas;
     try { folhas = folhasDaExplicacao(e); } catch (err) { falha(err instanceof Error ? err.message : String(err)); continue; }
@@ -606,10 +629,20 @@ function textoAqui(partes, lang, linhas) {
   const valor = (id, sufixo) => {
     const l = linhas.get(id);
     const provisorio = l?.source_flag === 'p' || (l?.source_flag === '&' && l?.source_flag_note === 'Dado provisório');
-    return `${l?.value}${sufixo}${provisorio ? ` (${s.prov.dadoProvisorio})` : ''}`;
+    const n = l?.value;
+    const nota = l?.source_flag === 'e' ? (lang === 'en' ? l.source_flag_note_en : l.source_flag_note) : provisorio ? s.prov.dadoProvisorio : '';
+    return `${n}${sufixo}${nota ? ` (${nota})` : ''}`;
   };
   return (Array.isArray(partes) ? partes : [partes]).map((p) => {
     if (typeof p === 'string') return p;
+    if ('verbatim' in p) {
+      if (p.verbatim !== 'origem-rp4n-total-ministerios-montante') throw new Error('X6 · transcrição desconhecida');
+      const excerto = ORIGENS_DAS_DEFINICOES['rp4n-total-ministerios'].excerto;
+      const linhas = excerto.split('\n').map(x => x.trim()).filter(Boolean);
+      if (linhas.length !== 2 || linhas[0] !== 'DESPESA TOTAL' || !/^\d[\d ]+$/.test(linhas[1])) throw new Error('X6 · total sem origem');
+      return linhas[1];
+    }
+    if ('termo' in p) return p.termo;
     if ('claim' in p) return valor(p.claim, p.sufixo ?? '');
     if ('maiores' in p) {
       const r = maioresAqui(p, linhas);

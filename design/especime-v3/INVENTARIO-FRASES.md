@@ -4345,8 +4345,8 @@ As frases já publicadas nas páginas dos concelhos, nas duas edições, e confe
 | conteudo | It is the harmonised index of consumer prices rate in the macroeconomic forecast scenario. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
 | conteudo | É o valor publicado na afirmação citada, com a atribuição que o documento apresenta. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
 | conteudo | It is the value published in the quoted statement, with the attribution given by the document. | v2a | retirada | Substituída na V2-a-b: medida, autoria e base da comparação explícitas. |
-| conteudo | 3 226 claims · 368 of 3 226 calculated · 2 767 of 3 226 municipality rows | v2a | viva | Contagem relida no índice construído na V2-a-c. |
-| conteudo | 3 226 afirmações · 368 de 3 226 calculadas · 2 767 de 3 226 linhas de concelhos | v2a | viva | Contagem relida no índice construído na V2-a-c. |
+| conteudo | 3 226 claims · 368 of 3 226 calculated · 2 767 of 3 226 municipality rows | v2a | retirada | O EX3 acrescentou as três linhas da NATO; contagem substituída pela do HTML construído. |
+| conteudo | 3 226 afirmações · 368 de 3 226 calculadas · 2 767 de 3 226 linhas de concelhos | v2a | retirada | O EX3 acrescentou as três linhas da NATO; contagem substituída pela do HTML construído. |
 
 ## V2-a-b: frases corrigidas das fontes da vigilância
 
@@ -4541,3 +4541,16 @@ ainda por explicar (o achado 7), fica aqui como retirada.*
 | autorreferencia | On the maps, the values where the colour changes are round numbers chosen by this project, not an official limit. | me1 | viva | A mesma frase na edição inglesa (o achado 11 da leitura a frio e o achado 7 da leitura curta). |
 | autorreferencia | Nos mapas, as classes da escala são números redondos escolhidos por este projeto, e não um limite oficial. | me1 | retirada | ME1 (15.10.2026), a leitura curta da passagem de correção pelo Codex, o achado 7: «as classes da escala» era um termo ainda por explicar para um leitor de primeira vez, e a frase viva diz «os valores onde a cor muda». |
 | autorreferencia | On the maps, the scale classes are round numbers chosen by this project, not an official limit. | me1 | retirada | ME1 (15.10.2026), a leitura curta da passagem de correção pelo Codex, o achado 7: «as classes da escala» era um termo ainda por explicar para um leitor de primeira vez, e a frase viva diz «os valores onde a cor muda». |
+
+## EX3: contagens depois da exportação da NATO
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | 3 229 claims · 368 of 3 229 calculated · 2 767 of 3 229 municipality rows | ex3 | retirada | Substituída pela contagem que inclui a linha da NATO de 2024, na segunda correção EX3. |
+| conteudo | 3 229 afirmações · 368 de 3 229 calculadas · 2 767 de 3 229 linhas de concelhos | ex3 | retirada | Substituída pela contagem que inclui a linha da NATO de 2024, na segunda correção EX3. |
+
+| conteudo | 3 230 claims · 368 of 3 230 calculated · 2 767 of 3 230 municipality rows | ex3 | retirada | Substituída pela contagem com os compromissos e a data da cimeira da NATO, na terceira correção EX3. |
+| conteudo | 3 230 afirmações · 368 de 3 230 calculadas · 2 767 de 3 230 linhas de concelhos | ex3 | retirada | Substituída pela contagem com os compromissos e a data da cimeira da NATO, na terceira correção EX3. |
+
+| conteudo | 3 234 afirmações · 368 de 3 234 calculadas · 2 767 de 3 234 linhas de concelhos | ex3 | viva | Contagem medida pela função da prova na terceira correção EX3; conferida contra o HTML pelos portões. |
+| conteudo | 3 234 claims · 368 of 3 234 calculated · 2 767 of 3 234 municipality rows | ex3 | viva | Contagem medida pela função da prova na terceira correção EX3; conferida contra o HTML pelos portões. |

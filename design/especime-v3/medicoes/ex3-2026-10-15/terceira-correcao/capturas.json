@@ -1,0 +1,501 @@
+{
+  "cabeca": "4e04e93f8817daf2ea3178ceddd822ee26669acf",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "explicacao-pt-390.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 6643,
+      "sha256": "c77c361132e6ca8cf9d848c10544be72d38f34c2d64f17adf8606374f097dfd9",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-pt-390-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "c87622928ca2dcc1956e6f895a31016c8f3ce818a4a759b229eae91a9071b4bb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-pt-768.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4674,
+      "sha256": "668ad77559f301f874119c517f760abed99c9e7e824214fc1dc8fd8fea464c38",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-pt-768-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "fe5c5ad911a27b57bf8e66f5f61e92041d90c14b4fb9971e82a8d3da3489b03a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-pt-1024.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 4723,
+      "sha256": "30a614da78fe584ee44fe711a66a29baa3dd2eab73a21988210538de4a39e90a",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-pt-1024-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "c966aa254d62702d07df460161968e1c84a39714e2a02582554549018773d969"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-pt-1280.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 4819,
+      "sha256": "e46419d878f7bff27b61890995287bfa1b4dbfc7112cf1d8b70a85e427002a01",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-pt-1280-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "409071a4ce262142cbeb192eb4b09a533ffe1062695d7993e68f8478b841abc8"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-pt-1600.png",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 4841,
+      "sha256": "6e975b3057f60227cbba90c888aa7bcca21768dc0d127c3e3dc62a5460af4971",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-pt-1600-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "a63a49916f8bd67342d1aad1d41143d00bbfad03710ccb2c8d13e35ed78765ba"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-en-390.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 6603,
+      "sha256": "6008633a8e39fc603152e0265cb6ab7fe11a58ec6e010aeb2eddb05ca3b3d6db",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-en-390-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "2e041951a24799fe70669ba6c342f2aca0040a402a025b8a10429d1c1c34e967"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-en-768.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 4607,
+      "sha256": "7adba3df8694b7d4b2887ad55421a0287d190bbc82b2ae01c15b8c79fb082d82",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-en-768-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "0e5909856638da329a114c73ae8ffe9bafbf798596eccac030278b3408e25d11"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-en-1024.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 4656,
+      "sha256": "a820ac0020948f6a42f5d60fbb753deb92dd9f9bbe12fabdfa0cbd6e25b116e9",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-en-1024-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "0c781ebcb8a0577130cbc98fe8393d4fdfda6b5b8fbbda7a493ea415be829f07"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-en-1280.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 4752,
+      "sha256": "c99f39a00ee3021c0a17565463523b1582ea666034ec3972b408cb89f822a1aa",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-en-1280-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "6798ecad8b4b5f6ec0f70e7f2cce2d119fc6cf05a552a0a52d5c2905833443c4"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "explicacao-en-1600.png",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 4774,
+      "sha256": "4f2d5b9a8b2d94b6f75b4aae532fb83965302ea818678ba79585454f14d9db96",
+      "recortes": [
+        {
+          "ficheiro": "explicacao-en-1600-p1.png",
+          "seletor": "[data-explicacao-paragrafo=\"seccoes[0].conteudo[2].paragrafo\"]",
+          "sha256": "5f63b6902655e36982499ffe0a2f2c68c223d8cb3b2784b1da0dcd255c5ddd47"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-2024-pt-390.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2024/",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3344,
+      "sha256": "4849c6c788a5300f78f060f0e37004879ebb18293b07f661f0f83cd4088d3bf5",
+      "recortes": [
+        {
+          "ficheiro": "recibo-2024-pt-390-ressalva.png",
+          "seletor": "#ressalva",
+          "sha256": "fcf373e3d62b9c93ae9ca18cf0ae413a18f6d31b61d7f991d0eb7e51cf6b49c0"
+        },
+        {
+          "ficheiro": "recibo-2024-pt-390-excerto.png",
+          "seletor": "[data-linha-campo=\"excerpt\"]",
+          "sha256": "ebfeea677ac1be01ed577d763ba817d34d2df02dde3ff3397d32c05107095248"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-2024-pt-768.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2024/",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3051,
+      "sha256": "edd5279aafabb11916f32a74dfea042f81ce6256ce7b124eb296d199de526655",
+      "recortes": [
+        {
+          "ficheiro": "recibo-2024-pt-768-ressalva.png",
+          "seletor": "#ressalva",
+          "sha256": "99c56fac6a17083540e26db73ba2048ae5c940a050f44f5d2bfb75954bf481b9"
+        },
+        {
+          "ficheiro": "recibo-2024-pt-768-excerto.png",
+          "seletor": "[data-linha-campo=\"excerpt\"]",
+          "sha256": "6deebb59773e23756d025afa4b7e54c25c03f77bf74bb95efee145625322b4ee"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-2024-pt-1024.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2024/",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2409,
+      "sha256": "67b843a1a080cdd543c991fe9b62838a6fccbc134cad215e9902cb98bfb97f72",
+      "recortes": [
+        {
+          "ficheiro": "recibo-2024-pt-1024-ressalva.png",
+          "seletor": "#ressalva",
+          "sha256": "7a88b3ca424d66bb0c58a2e33eeced4c2e387ed1d77fbe04b284d82ea708da29"
+        },
+        {
+          "ficheiro": "recibo-2024-pt-1024-excerto.png",
+          "seletor": "[data-linha-campo=\"excerpt\"]",
+          "sha256": "521e430497e941c76350c13bc25caadc82a639ca701ce5e9d6ffc15fe73b3804"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-2024-pt-1280.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2024/",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2444,
+      "sha256": "e4fc04a4127adfcd8862af616e85132a4f2897f15481b178f156a64dd895653f",
+      "recortes": [
+        {
+          "ficheiro": "recibo-2024-pt-1280-ressalva.png",
+          "seletor": "#ressalva",
+          "sha256": "8ee8cf016a66f2a0aef51a75af571a3ea022865b87a79365f37d7edde0133755"
+        },
+        {
+          "ficheiro": "recibo-2024-pt-1280-excerto.png",
+          "seletor": "[data-linha-campo=\"excerpt\"]",
+          "sha256": "f12c6f353ed4a1493289db0d5679a7e5af65ac7c195956ca5dbaf44ada752f42"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-2024-pt-1600.png",
+      "rota": "/livro-razao/nato-defesa-portugal-pib-2024/",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2450,
+      "sha256": "9b1f9bd5b6f643073f5f34bc975e4f1794ebf1932550c7ccae2b4c102111f922",
+      "recortes": [
+        {
+          "ficheiro": "recibo-2024-pt-1600-ressalva.png",
+          "seletor": "#ressalva",
+          "sha256": "8ee8cf016a66f2a0aef51a75af571a3ea022865b87a79365f37d7edde0133755"
+        },
+        {
+          "ficheiro": "recibo-2024-pt-1600-excerto.png",
+          "seletor": "[data-linha-campo=\"excerpt\"]",
+          "sha256": "f12c6f353ed4a1493289db0d5679a7e5af65ac7c195956ca5dbaf44ada752f42"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-2024-en-390.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2024/",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3344,
+      "sha256": "be0564ae83867c60421cfe16336a579064abe473023bc1075fe5c6ba186ba082",
+      "recortes": [
+        {
+          "ficheiro": "recibo-2024-en-390-ressalva.png",
+          "seletor": "#ressalva",
+          "sha256": "9836888a0c211ce06dcb587ae821a9681b13c0f41bb6e67a34ef0ac8d3aac243"
+        },
+        {
+          "ficheiro": "recibo-2024-en-390-excerto.png",
+          "seletor": "[data-linha-campo=\"excerpt\"]",
+          "sha256": "ebfeea677ac1be01ed577d763ba817d34d2df02dde3ff3397d32c05107095248"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-2024-en-768.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2024/",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3030,
+      "sha256": "5a3c6fd7d9afdade03c738a6c426795929ec18685f762abb0391dd748d9b3dcc",
+      "recortes": [
+        {
+          "ficheiro": "recibo-2024-en-768-ressalva.png",
+          "seletor": "#ressalva",
+          "sha256": "2e08f8f7158449fb37682aa6936cc02e626bf2fb5bd769c9de7feaec0ebf095c"
+        },
+        {
+          "ficheiro": "recibo-2024-en-768-excerto.png",
+          "seletor": "[data-linha-campo=\"excerpt\"]",
+          "sha256": "f4c014989c72baf404742399cf6870e8fbf0511f824b58aa518d3c698e93bdeb"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-2024-en-1024.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2024/",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2388,
+      "sha256": "66d3db87e18e5fa2af4945f374d3da2f2df318787781fc069be221d13aef9ee9",
+      "recortes": [
+        {
+          "ficheiro": "recibo-2024-en-1024-ressalva.png",
+          "seletor": "#ressalva",
+          "sha256": "6030dc602384822a0e166069eb6c68e73efacc4d97f3d57a849152e7241cd371"
+        },
+        {
+          "ficheiro": "recibo-2024-en-1024-excerto.png",
+          "seletor": "[data-linha-campo=\"excerpt\"]",
+          "sha256": "4ada8485840d2d3a6d514411c4670db00d5da34e636e992b401b0e05ac61b4f0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-2024-en-1280.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2024/",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2423,
+      "sha256": "6fddb43f3f48e3979498efaa9152ec602a6be58b19216bd847323dac6330dd11",
+      "recortes": [
+        {
+          "ficheiro": "recibo-2024-en-1280-ressalva.png",
+          "seletor": "#ressalva",
+          "sha256": "4d7b0b5fff0be8496eb68177bcf416fa3a1be51a1f2c1dbe7871cb04f5015859"
+        },
+        {
+          "ficheiro": "recibo-2024-en-1280-excerto.png",
+          "seletor": "[data-linha-campo=\"excerpt\"]",
+          "sha256": "2a0fc7314f66686e6218a52fd42adfd0b1052538db6414a4e413f46174dbbbab"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "recibo-2024-en-1600.png",
+      "rota": "/en/ledger/nato-defesa-portugal-pib-2024/",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2429,
+      "sha256": "67dee4a993ea864d9fb0c2d9afaaeab8969beebd7290a50bc7c1e3110d50ea06",
+      "recortes": [
+        {
+          "ficheiro": "recibo-2024-en-1600-ressalva.png",
+          "seletor": "#ressalva",
+          "sha256": "4d7b0b5fff0be8496eb68177bcf416fa3a1be51a1f2c1dbe7871cb04f5015859"
+        },
+        {
+          "ficheiro": "recibo-2024-en-1600-excerto.png",
+          "seletor": "[data-linha-campo=\"excerpt\"]",
+          "sha256": "2a0fc7314f66686e6218a52fd42adfd0b1052538db6414a4e413f46174dbbbab"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "c06559a0dc053d6665f86c599b5440d242112615bfbc639977af6ceea216d8cc",
+    "explicacoes/dinheiro-do-estado-2026/index.html": "2b832c17a1686fd0401e6032817317ada3ac635ac6ea597af6f7d5d2a8221b6f",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "_astro/Base.iWxVxik0.css": "b028d1f789d6ec2ee10ea6fd6a1162acc7bf3ae2aae322f9cfe11bc33e563531",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/explainers/dinheiro-do-estado-2026/index.html": "c3272fa64cd402fb7822e6f191795174333677fd48651f65a36c159a49028581",
+    "livro-razao/nato-defesa-portugal-pib-2024/index.html": "353ee434c0aea9fbe61926b9f7c0b273b77da9833578d941dfe1c0c6ad504a78",
+    "_astro/linha.3Gzj_PkP.css": "c02b8967ab663930fd1ad0a2904b7beef1b14bc2d3c91aec382ee180e3f2d645",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "en/ledger/nato-defesa-portugal-pib-2024/index.html": "0fa57652fdc432c9c272da0e9ff2390755051329da5e369b8fafe8b016d300ab"
+  },
+  "falhas": [],
+  "ok": true
+}
