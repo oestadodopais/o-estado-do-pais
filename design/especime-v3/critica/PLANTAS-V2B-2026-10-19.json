@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-19T18:34:28+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "um algarismo do valor da despesa total consolidada de 2027 alterado na página construída (a linha e o recibo dizem 17 858,4)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "ce0e6568347929ff5e0707a5f3549e528d83dcbb1516dea93f8e762904093444",
+   "sha256_depois": "e50f62a9f47efb157271faec2f45f41cd0149a741f3cfec2fe84bf7cbdb4dab2",
+   "contexto_antes": "lidada-2026\" data-de-campo=\"reference_date\">2026</span> para <span class=\"claim claim-com-chip\"><span data-claim=\"oe-2027-saude-despesa-total-consolidada-2027\" class=\"claim-value\">17 858,4</span><a class=\"src-chip\" href=\"/livro-razao/oe-2027-saude-despesa-total-consolidada-2027\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Ministério das Finanças\" ",
+   "contexto_depois": "lidada-2026\" data-de-campo=\"reference_date\">2026</span> para <span class=\"claim claim-com-chip\"><span data-claim=\"oe-2027-saude-despesa-total-consolidada-2027\" class=\"claim-value\">17 758,4</span><a class=\"src-chip\" href=\"/livro-razao/oe-2027-saude-despesa-total-consolidada-2027\" data-nonledger=\"proveniencia\" data-selo-etiqueta=\"Ministério das Finanças\" "
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/o-que-se-discute/index.html",
+   "descricao": "a citação da RTP alterada na página construída contra a linha e o corpo alojado («Cai 1,5 por cento»)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "e50f62a9f47efb157271faec2f45f41cd0149a741f3cfec2fe84bf7cbdb4dab2",
+   "sha256_depois": "dac7b472d72e1f5e47a2d1e35cad67c05af4e3d0ffe8a10804223c2cf5be97c7",
+   "contexto_antes": "po-valor\" lang=\"pt-PT\" data-linha-claim=\"afirmacao-rtp-saude-queda-oe2027-2026-10-09\" data-linha-campo=\"excerpt\">O orçamento para Saúde sofre um corte em 2027. Cai 1,5 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.</span></a>».</p></section><section class=\"discussao-seccao\" data-discussao-parte=\"fontes\" ari",
+   "contexto_depois": "po-valor\" lang=\"pt-PT\" data-linha-claim=\"afirmacao-rtp-saude-queda-oe2027-2026-10-09\" data-linha-campo=\"excerpt\">O orçamento para Saúde sofre um corte em 2027. Cai 1,8 por cento. Estão atribuídos 17 mil 858 milhões de euros. Menos 267,5 milhões do que este ano.</span></a>».</p></section><section class=\"discussao-seccao\" data-discussao-parte=\"fontes\" ari"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "um adjetivo colado ao nome de uma pessoa na atribuição da edição inglesa, que a linha não tem",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "18a33fb99502aaea73d3e86793555d156ec4288d1cbd73b23752f8b45c2c0420",
+   "sha256_depois": "86de6274137213a414c7881c5f0c8ce62c8e5bd179e85270e98ada644b6603d8",
+   "contexto_antes": "teral=\"attributed_to\"><span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"afirmacao-leitao-amaro-saude-oe2027-2026-10-09\" data-linha-campo=\"attributed_to\">António Leitão Amaro, ministro da Presidência</span></a>, in a document published by RTP, on <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"afirmacao-leitao-amaro-saude-oe2027-2026-10-0",
+   "contexto_depois": "teral=\"attributed_to\"><span class=\"campo-valor\" lang=\"pt-PT\" data-linha-claim=\"afirmacao-leitao-amaro-saude-oe2027-2026-10-09\" data-linha-campo=\"attributed_to\">António Leitão Amaro, o controverso ministro da Presidência</span></a>, in a document published by RTP, on <span class=\"data-da-linha\" data-nonledger=\"data-da-linha\" data-de-linha=\"afirmacao-leitao-amaro-saude-oe2027-2026-10-0"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "built/en/under-discussion/index.html",
+   "descricao": "o rótulo da opinião do item 2 trocado na edição inglesa (a parte deixa de estar marcada como opinião)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "86de6274137213a414c7881c5f0c8ce62c8e5bd179e85270e98ada644b6603d8",
+   "sha256_depois": "b6e76287e531267aada64600810fdf18fc8cab1c273ff03511232e538ad2966f",
+   "contexto_antes": "ass=\"discussao-seccao\" data-discussao-parte=\"opiniao\" aria-labelledby=\"parcerias-rodoviarias-titulo parcerias-rodoviarias-opiniao\"><h3 class=\"discussao-rotulo\" id=\"parcerias-rodoviarias-opiniao\">The editorial seat&#39;s opinion</h3><p class=\"explicacao-p\" data-discussao-paragrafo=\"seccoes[5].conteudo[0].paragrafo\">A statement with a number the table does not print calls for the calculation",
+   "contexto_depois": "ass=\"discussao-seccao\" data-discussao-parte=\"opiniao\" aria-labelledby=\"parcerias-rodoviarias-titulo parcerias-rodoviarias-opiniao\"><h3 class=\"discussao-rotulo\" id=\"parcerias-rodoviarias-opiniao\">Our view</h3><p class=\"explicacao-p\" data-discussao-paragrafo=\"seccoes[5].conteudo[0].paragrafo\">A statement with a number the table does not print calls for the calculation"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "src/data/discussao.mjs",
+   "descricao": "os algarismos da afirmação do PCP escritos à mão na comparação em vez do token da linha",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "bdb4702c59ef38667a170bd63fa91fcba5e79d5cb5ad4632f141d75fc4fe66e3",
+   "sha256_depois": "b9f39d0960350699430a40edbb3bf49f462df01e930751227523adb750c154c3",
+   "contexto_antes": " '. ', literal(ppp+'total-encargos-liquidos-2027', 'ressalva'), ' The table says the values are on a cash basis and, where applicable, include VAT.'])],\n    [p(['Nenhum dos quatro valores acima é igual a ', valor(PCP), ' milhões de euros.'], ['None of the four values above equals ', valor(PCP), ' million euros.'])],\n    [p('O excerto citado não diz se o encargo é bruto ou líquido, nem a que ano se",
+   "contexto_depois": " '. ', literal(ppp+'total-encargos-liquidos-2027', 'ressalva'), ' The table says the values are on a cash basis and, where applicable, include VAT.'])],\n    [p(['Nenhum dos quatro valores acima é igual a 1 700 milhões de euros.'], ['None of the four values above equals ', valor(PCP), ' million euros.'])],\n    [p('O excerto citado não diz se o encargo é bruto ou líquido, nem a que ano se"
+  }
+ ]
+}
