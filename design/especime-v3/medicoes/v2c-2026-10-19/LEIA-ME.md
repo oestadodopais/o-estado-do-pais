@@ -17,6 +17,8 @@ A página da discussão passa também a ter uma porta no menu, entre as explica�
 - V2C-4: o escrivão só oferecia a corrida completa. Acrescenta-se o perfil fechado `v2c` ao pedido dos portões, com os dez comandos do mandato e sem motor. A corrida completa continua a ser a omissão. Os ensaios exercem a seleção verde, o build vermelho, a recusa de um perfil desconhecido e a tranca existente. O captor aceita larguras explícitas e a medição do menu pelo método da H4, para incluir 360 px fora da sandbox.
 - V2C-5: `check:cabeca` só mede a hierarquia do H1 e da marca, e as outras células da primeira página encontram os seus blocos pelas marcas. Não codificam a primeira secção. A ordem nova e as marcas ausentes são protegidas na célula dos itens, com plantas próprias; a navegação ganha uma lista independente e plantas do menu.
 
+- V2C-6: a primeira corrida fechou em H2. A 641 px, pontos a meio píxel da aresta inferior de «Estudos» e «Explainers» respondiam às portas da fila seguinte. Uma prova no navegador, com espera de dois quadros depois da mudança da folha, confirmou que 1 px entre filas devolve todos os pontos às suas portas. Acrescenta-se esse intervalo vertical, conservando altura, letra, espaço das letras e intervalo horizontal. A TM4 passa a sondar os oito pontos do alvo, inclui 641 px e planta o intervalo removido. A regra H2 não muda. A prova está em `diagnostico-alvos.json`.
+
 ## Estado das provas
 
 A construção de partida passou. A construção intermédia detetou uma diferença entre a barra final da rota real da discussão e a rota escrita na célula nova do menu; a expectativa foi corrigida a partir do HTML construído. Medidas, códigos e manifesto finais ainda por acrescentar.

@@ -54,7 +54,7 @@ import { chromium } from 'playwright';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.resolve(process.env.OEDP_DIST ?? path.join(RAIZ, 'dist'));
-const LARGURAS = [390, 768, 1024, 1280, 1600];
+const LARGURAS = [390, 641, 768, 1024, 1280, 1600];
 const ESTREITAS = [320, 360, 430];
 // V2C-1: limites medidos com oito portas, conservando a dobra natural.
 const MAX_LINHAS_TELEFONE = { 320: 4, 360: 4, 390: 3, 430: 3 };
@@ -164,7 +164,15 @@ const estadoDaPagina = (p) => p.evaluate((referencia) => {
       return { portas: as.length, topos: topos.length, gapBase,
         gap: n ? parseFloat(getComputedStyle(n).columnGap) : null, folgas,
         largura: c?.width ?? 0, natural: as.reduce((s, a) => s + a.width, 0) + gapBase * (as.length - 1),
-        alvos: portas.map((a, i) => ({ texto: a.textContent.trim(), altura: as[i].height })),
+        alvos: portas.map((a, i) => {
+          const r = as[i], cx = (r.left + r.right) / 2, cy = (r.top + r.bottom) / 2;
+          // A mesma sondagem de oito pontos da H2: a caixa sozinha não prova o alvo.
+          const toque44 = [[0,-21.5],[0,21.5],[-21.5,0],[21.5,0],[-21.5,-21.5],[-21.5,21.5],[21.5,-21.5],[21.5,21.5]].every(([x,y]) => {
+            const quem = document.elementFromPoint(cx+x, cy+y);
+            return quem === a || a.contains(quem);
+          });
+          return { texto: a.textContent.trim(), altura: r.height, toque44 };
+        }),
         letras: portas.map((a) => ({ letra: getComputedStyle(a).fontSize, espaco: getComputedStyle(a).letterSpacing })),
         letraBase, espacoLetrasBase,
         dentro: !!c && as.every((a) => a.left >= c.left - 0.5 && a.right <= c.right + 0.5 && a.left >= 0 && a.right <= innerWidth + 0.5),
@@ -275,6 +283,7 @@ async function tm4(rota, largura) {
       f.push(`TM4 · ${onde}: o espaço entre portas na mesma linha não é o da regra base (${e.menu.gapBase} px; lido ${e.menu.gap} px; folgas ${e.menu.folgas.join(', ')}).`);
     }
     if (e.menu.letras.some((l) => l.letra !== e.menu.letraBase || l.espaco !== e.menu.espacoLetrasBase)) f.push(`TM4 · ${onde}: a letra ou o espaço das letras difere da regra base (${e.menu.letraBase}, ${e.menu.espacoLetrasBase}).`);
+    for (const a of e.menu.alvos) if (!a.toque44) f.push(`TM4 · ${onde}: a porta «${a.texto}» perdeu pontos do alvo de toque de 44 px.`);
     for (const a of e.menu.alvos) if (a.altura < 44 - 0.01) f.push(`TM4 · ${onde}: a porta «${a.texto}» mede ${a.altura} px de altura, e o alvo de toque é de 44 px.`);
     return f;
   } finally { await ctx.close(); }
@@ -313,6 +322,7 @@ try {
       ...['/', '/en/'].flatMap((rota) => [
         ['uma nona porta no menu', { html: (s) => s.replace(/(<nav class="menu-cinco"[^>]*>[\s\S]*?)(<\/nav>)/, '$1<a href="/agenda">Agenda</a>$2') }, () => tm4(rota, 1280), /TM4 · .*o menu tem 9 portas, e são oito\./],
         ['menu sem a discussão', { html: (s) => s.replace(/(<nav class="menu-cinco"[^>]*>[\s\S]*?)<a\b[^>]*href="(?:\/o-que-se-discute|\/en\/under-discussion)\/"[^>]*>[\s\S]*?<\/a>/, '$1') }, () => tm4(rota, 1280), /TM4 · .*o menu tem 7 portas, e são oito\./],
+        ['filas sem intervalo', { html: (s) => s.replace('</head>', '<style>.menu-cinco{row-gap:0!important}</style></head>') }, () => tm4(rota, 641), /TM4 · .*perdeu pontos do alvo de toque de 44 px/],
         ['a última porta fora da janela', { html: (s) => s.replace('</head>', '<style>.menu-cinco a:last-child{transform:translateX(100vw)}</style></head>') }, () => tm4(rota, 390), /TM4 · .*o menu empurra a página/],
         ['o menu apertado a 6 px', { html: (s) => s.replace('</head>', '<style>@media (width<=430px){.menu-cinco{gap:0 6px!important}.menu-cinco a{font-size:13px!important;letter-spacing:0!important}}</style></head>') }, () => tm4(rota, 390), /TM4 · .*o espaço entre portas na mesma linha não é o da regra base/],
         ['a letra do menu a 13 px', { html: (s) => s.replace('</head>', '<style>.menu-cinco a{font-size:13px!important}</style></head>') }, () => tm4(rota, 390), /TM4 · .*a letra ou o espaço das letras difere da regra base/],

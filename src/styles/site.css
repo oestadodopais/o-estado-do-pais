@@ -5427,7 +5427,8 @@ a.marcador::after {
 }
 
 /* H4: sete portas, com o mesmo espaço e a mesma letra em todas as larguras; a fila dobra quando precisa. */
-.menu-cinco { display: flex; flex-wrap: wrap; align-items: center; gap: 0 clamp(16px, 2.8vw, 34px); border-bottom: 1px solid var(--rule); }
+/* V2C-6: um píxel entre filas impede que o toque na aresta caia na porta da fila seguinte. */
+.menu-cinco { display: flex; flex-wrap: wrap; align-items: center; gap: 1px clamp(16px, 2.8vw, 34px); border-bottom: 1px solid var(--rule); }
 .menu-cinco a { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--f-versal); font-size: 15px; font-weight: 600; letter-spacing: .05em; text-transform: lowercase; color: var(--muted); text-decoration: none; white-space: nowrap; }
 .menu-cinco a[aria-current='page'], .menu-cinco a:hover { color: var(--ink); }
 .masthead-pais { border-bottom: 0; padding: clamp(24px, 4.4vw, 50px) 0 clamp(14px, 2.2vw, 22px); }

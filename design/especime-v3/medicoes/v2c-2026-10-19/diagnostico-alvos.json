@@ -1,0 +1,2887 @@
+{
+  "cabeca_construida": "c6c6d8588bfbdaf1679f1129e637a01c0b1d5f4b",
+  "tipo": "prova de trabalho com mudança temporária da folha só no navegador",
+  "largura": 641,
+  "medidas": [
+    {
+      "lingua": "pt",
+      "antes": [
+        {
+          "texto": "Portugal",
+          "rect": {
+            "x": 25.625,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 109.515625,
+            "fundo": 44
+          },
+          "falhas": [
+            {
+              "x": 67.5703125,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "O que se discute"
+            },
+            {
+              "x": 46.0703125,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "O que se discute"
+            },
+            {
+              "x": 89.0703125,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "O que se discute"
+            }
+          ],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 67.5703125,
+                  "y": -0.5
+                },
+                {
+                  "x": 46.0703125,
+                  "y": -0.5
+                },
+                {
+                  "x": 89.0703125,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": [
+                {
+                  "x": 67.5703125,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                },
+                {
+                  "x": 46.0703125,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                },
+                {
+                  "x": 89.0703125,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                }
+              ]
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 67.5703125,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                },
+                {
+                  "x": 46.0703125,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                },
+                {
+                  "x": 89.0703125,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 67.5703125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                },
+                {
+                  "x": 46.0703125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                },
+                {
+                  "x": 89.0703125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Lugares",
+          "rect": {
+            "x": 127.453125,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 197.96875,
+            "fundo": 44
+          },
+          "falhas": [
+            {
+              "x": 162.7109375,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "O que se discute"
+            },
+            {
+              "x": 141.2109375,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "O que se discute"
+            }
+          ],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 162.7109375,
+                  "y": -0.5
+                },
+                {
+                  "x": 141.2109375,
+                  "y": -0.5
+                },
+                {
+                  "x": 184.2109375,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": [
+                {
+                  "x": 162.7109375,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                },
+                {
+                  "x": 141.2109375,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                }
+              ]
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 162.7109375,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                },
+                {
+                  "x": 141.2109375,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                },
+                {
+                  "x": 184.2109375,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 162.7109375,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                },
+                {
+                  "x": 141.2109375,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                },
+                {
+                  "x": 184.2109375,
+                  "y": 44.5,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Temas",
+          "rect": {
+            "x": 215.90625,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 268.796875,
+            "fundo": 44
+          },
+          "falhas": [
+            {
+              "x": 242.3515625,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "União Europeia"
+            },
+            {
+              "x": 220.8515625,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "União Europeia"
+            },
+            {
+              "x": 263.8515625,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "União Europeia"
+            }
+          ],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 242.3515625,
+                  "y": -0.5
+                },
+                {
+                  "x": 220.8515625,
+                  "y": -0.5
+                },
+                {
+                  "x": 263.8515625,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": [
+                {
+                  "x": 242.3515625,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                },
+                {
+                  "x": 220.8515625,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                },
+                {
+                  "x": 263.8515625,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                }
+              ]
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 242.3515625,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                },
+                {
+                  "x": 220.8515625,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                },
+                {
+                  "x": 263.8515625,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 242.3515625,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                },
+                {
+                  "x": 220.8515625,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                },
+                {
+                  "x": 263.8515625,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Estudos",
+          "rect": {
+            "x": 286.734375,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 358.203125,
+            "fundo": 44
+          },
+          "falhas": [
+            {
+              "x": 322.46875,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "União Europeia"
+            },
+            {
+              "x": 300.96875,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "União Europeia"
+            },
+            {
+              "x": 343.96875,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "Sobre"
+            }
+          ],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 322.46875,
+                  "y": -0.5
+                },
+                {
+                  "x": 300.96875,
+                  "y": -0.5
+                },
+                {
+                  "x": 343.96875,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": [
+                {
+                  "x": 322.46875,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                },
+                {
+                  "x": 300.96875,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                },
+                {
+                  "x": 343.96875,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "Sobre"
+                }
+              ]
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 322.46875,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                },
+                {
+                  "x": 300.96875,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                },
+                {
+                  "x": 343.96875,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "Sobre"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 322.46875,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                },
+                {
+                  "x": 300.96875,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                },
+                {
+                  "x": 343.96875,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "Sobre"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Explicações",
+          "rect": {
+            "x": 376.140625,
+            "y": 0,
+            "largura": 106.75,
+            "altura": 44,
+            "direita": 482.890625,
+            "fundo": 44
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 429.515625,
+                  "y": -0.5
+                },
+                {
+                  "x": 408.015625,
+                  "y": -0.5
+                },
+                {
+                  "x": 451.015625,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 429.515625,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 408.015625,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 451.015625,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 429.515625,
+                  "y": 44.5,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 408.015625,
+                  "y": 44.5,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 451.015625,
+                  "y": 44.5,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "O que se discute",
+          "rect": {
+            "x": 25.625,
+            "y": 44,
+            "largura": 143.921875,
+            "altura": 44,
+            "direita": 169.546875,
+            "fundo": 88
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": []
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 97.5859375,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 76.0859375,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 119.0859375,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 97.5859375,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                },
+                {
+                  "x": 76.0859375,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                },
+                {
+                  "x": 119.0859375,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "União Europeia",
+          "rect": {
+            "x": 187.484375,
+            "y": 44,
+            "largura": 135.359375,
+            "altura": 44,
+            "direita": 322.84375,
+            "fundo": 88
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": []
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 255.1640625,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 233.6640625,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 276.6640625,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 255.1640625,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                },
+                {
+                  "x": 233.6640625,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                },
+                {
+                  "x": 276.6640625,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Sobre",
+          "rect": {
+            "x": 340.78125,
+            "y": 44,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 390.21875,
+            "fundo": 88
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": []
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 365.5,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 344,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 387,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 365.5,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                },
+                {
+                  "x": 344,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                },
+                {
+                  "x": 387,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comIntervalo": [
+        {
+          "texto": "Portugal",
+          "rect": {
+            "x": 25.625,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 109.515625,
+            "fundo": 44
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 67.5703125,
+                  "y": -0.5
+                },
+                {
+                  "x": 46.0703125,
+                  "y": -0.5
+                },
+                {
+                  "x": 89.0703125,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 67.5703125,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 46.0703125,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 89.0703125,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 67.5703125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                },
+                {
+                  "x": 46.0703125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                },
+                {
+                  "x": 89.0703125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Lugares",
+          "rect": {
+            "x": 127.453125,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 197.96875,
+            "fundo": 44
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 162.7109375,
+                  "y": -0.5
+                },
+                {
+                  "x": 141.2109375,
+                  "y": -0.5
+                },
+                {
+                  "x": 184.2109375,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 162.7109375,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 141.2109375,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 184.2109375,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 162.7109375,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                },
+                {
+                  "x": 141.2109375,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "O que se discute"
+                },
+                {
+                  "x": 184.2109375,
+                  "y": 44.5,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Temas",
+          "rect": {
+            "x": 215.90625,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 268.796875,
+            "fundo": 44
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 242.3515625,
+                  "y": -0.5
+                },
+                {
+                  "x": 220.8515625,
+                  "y": -0.5
+                },
+                {
+                  "x": 263.8515625,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 242.3515625,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 220.8515625,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 263.8515625,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 242.3515625,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                },
+                {
+                  "x": 220.8515625,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                },
+                {
+                  "x": 263.8515625,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Estudos",
+          "rect": {
+            "x": 286.734375,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 358.203125,
+            "fundo": 44
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 322.46875,
+                  "y": -0.5
+                },
+                {
+                  "x": 300.96875,
+                  "y": -0.5
+                },
+                {
+                  "x": 343.96875,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 322.46875,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 300.96875,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 343.96875,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 322.46875,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                },
+                {
+                  "x": 300.96875,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "União Europeia"
+                },
+                {
+                  "x": 343.96875,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "Sobre"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Explicações",
+          "rect": {
+            "x": 376.140625,
+            "y": 0,
+            "largura": 106.75,
+            "altura": 44,
+            "direita": 482.890625,
+            "fundo": 44
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 429.515625,
+                  "y": -0.5
+                },
+                {
+                  "x": 408.015625,
+                  "y": -0.5
+                },
+                {
+                  "x": 451.015625,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 429.515625,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 408.015625,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 451.015625,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 429.515625,
+                  "y": 44.5,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 408.015625,
+                  "y": 44.5,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 451.015625,
+                  "y": 44.5,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "O que se discute",
+          "rect": {
+            "x": 25.625,
+            "y": 45,
+            "largura": 143.921875,
+            "altura": 44,
+            "direita": 169.546875,
+            "fundo": 89
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": []
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 97.5859375,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 76.0859375,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 119.0859375,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 97.5859375,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                },
+                {
+                  "x": 76.0859375,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                },
+                {
+                  "x": 119.0859375,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "União Europeia",
+          "rect": {
+            "x": 187.484375,
+            "y": 45,
+            "largura": 135.359375,
+            "altura": 44,
+            "direita": 322.84375,
+            "fundo": 89
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": []
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 255.1640625,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 233.6640625,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 276.6640625,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 255.1640625,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                },
+                {
+                  "x": 233.6640625,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                },
+                {
+                  "x": 276.6640625,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Sobre",
+          "rect": {
+            "x": 340.78125,
+            "y": 45,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 390.21875,
+            "fundo": 89
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": []
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 365.5,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 344,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                },
+                {
+                  "x": 387,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalLugaresTemasEstudosExplicaçõesO que s"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 365.5,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                },
+                {
+                  "x": 344,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                },
+                {
+                  "x": 387,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paísclaroescuro"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "estilo": {
+        "display": "flex",
+        "gap": "1px"
+      }
+    },
+    {
+      "lingua": "en",
+      "antes": [
+        {
+          "texto": "Portugal",
+          "rect": {
+            "x": 25.625,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 109.515625,
+            "fundo": 44
+          },
+          "falhas": [
+            {
+              "x": 67.5703125,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "Under discussion"
+            },
+            {
+              "x": 46.0703125,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "Under discussion"
+            },
+            {
+              "x": 89.0703125,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "Under discussion"
+            }
+          ],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 67.5703125,
+                  "y": -0.5
+                },
+                {
+                  "x": 46.0703125,
+                  "y": -0.5
+                },
+                {
+                  "x": 89.0703125,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": [
+                {
+                  "x": 67.5703125,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                },
+                {
+                  "x": 46.0703125,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                },
+                {
+                  "x": 89.0703125,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                }
+              ]
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 67.5703125,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                },
+                {
+                  "x": 46.0703125,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                },
+                {
+                  "x": 89.0703125,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 67.5703125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                },
+                {
+                  "x": 46.0703125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                },
+                {
+                  "x": 89.0703125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Places",
+          "rect": {
+            "x": 127.453125,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 185.140625,
+            "fundo": 44
+          },
+          "falhas": [
+            {
+              "x": 156.296875,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "Under discussion"
+            },
+            {
+              "x": 134.796875,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "Under discussion"
+            },
+            {
+              "x": 177.796875,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "Under discussion"
+            }
+          ],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 156.296875,
+                  "y": -0.5
+                },
+                {
+                  "x": 134.796875,
+                  "y": -0.5
+                },
+                {
+                  "x": 177.796875,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": [
+                {
+                  "x": 156.296875,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                },
+                {
+                  "x": 134.796875,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                },
+                {
+                  "x": 177.796875,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                }
+              ]
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 156.296875,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                },
+                {
+                  "x": 134.796875,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                },
+                {
+                  "x": 177.796875,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 156.296875,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                },
+                {
+                  "x": 134.796875,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                },
+                {
+                  "x": 177.796875,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Themes",
+          "rect": {
+            "x": 203.078125,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 266.8125,
+            "fundo": 44
+          },
+          "falhas": [
+            {
+              "x": 234.9453125,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "European Union"
+            },
+            {
+              "x": 213.4453125,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "European Union"
+            },
+            {
+              "x": 256.4453125,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "European Union"
+            }
+          ],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 234.9453125,
+                  "y": -0.5
+                },
+                {
+                  "x": 213.4453125,
+                  "y": -0.5
+                },
+                {
+                  "x": 256.4453125,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": [
+                {
+                  "x": 234.9453125,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "European Union"
+                },
+                {
+                  "x": 213.4453125,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "European Union"
+                },
+                {
+                  "x": 256.4453125,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "European Union"
+                }
+              ]
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 234.9453125,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "European Union"
+                },
+                {
+                  "x": 213.4453125,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "European Union"
+                },
+                {
+                  "x": 256.4453125,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "European Union"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 234.9453125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "European Union"
+                },
+                {
+                  "x": 213.4453125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "European Union"
+                },
+                {
+                  "x": 256.4453125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "European Union"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Studies",
+          "rect": {
+            "x": 284.75,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 350.640625,
+            "fundo": 44
+          },
+          "falhas": [
+            {
+              "x": 317.6953125,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "European Union"
+            },
+            {
+              "x": 296.1953125,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "European Union"
+            }
+          ],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 317.6953125,
+                  "y": -0.5
+                },
+                {
+                  "x": 296.1953125,
+                  "y": -0.5
+                },
+                {
+                  "x": 339.1953125,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": [
+                {
+                  "x": 317.6953125,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "European Union"
+                },
+                {
+                  "x": 296.1953125,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "European Union"
+                }
+              ]
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 317.6953125,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "European Union"
+                },
+                {
+                  "x": 296.1953125,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "European Union"
+                },
+                {
+                  "x": 339.1953125,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 317.6953125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "European Union"
+                },
+                {
+                  "x": 296.1953125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "European Union"
+                },
+                {
+                  "x": 339.1953125,
+                  "y": 44.5,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Explainers",
+          "rect": {
+            "x": 368.578125,
+            "y": 0,
+            "largura": 96.34375,
+            "altura": 44,
+            "direita": 464.921875,
+            "fundo": 44
+          },
+          "falhas": [
+            {
+              "x": 395.25,
+              "y": 43.5,
+              "quem": "A",
+              "texto": "About"
+            }
+          ],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 416.75,
+                  "y": -0.5
+                },
+                {
+                  "x": 395.25,
+                  "y": -0.5
+                },
+                {
+                  "x": 438.25,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": [
+                {
+                  "x": 395.25,
+                  "y": 43.5,
+                  "quem": "A",
+                  "texto": "About"
+                }
+              ]
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 416.75,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 395.25,
+                  "y": 44,
+                  "quem": "A",
+                  "texto": "About"
+                },
+                {
+                  "x": 438.25,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 416.75,
+                  "y": 44.5,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 395.25,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "About"
+                },
+                {
+                  "x": 438.25,
+                  "y": 44.5,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Under discussion",
+          "rect": {
+            "x": 25.625,
+            "y": 44,
+            "largura": 153.1875,
+            "altura": 44,
+            "direita": 178.8125,
+            "fundo": 88
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": []
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 102.21875,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 80.71875,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 123.71875,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 102.21875,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                },
+                {
+                  "x": 80.71875,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                },
+                {
+                  "x": 123.71875,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "European Union",
+          "rect": {
+            "x": 196.75,
+            "y": 44,
+            "largura": 142,
+            "altura": 44,
+            "direita": 338.75,
+            "fundo": 88
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": []
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 267.75,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 246.25,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 289.25,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 267.75,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                },
+                {
+                  "x": 246.25,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                },
+                {
+                  "x": 289.25,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "About",
+          "rect": {
+            "x": 356.6875,
+            "y": 44,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 410.890625,
+            "fundo": 88
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": []
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 383.7890625,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 362.2890625,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 405.2890625,
+                  "y": 88,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 383.7890625,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                },
+                {
+                  "x": 362.2890625,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                },
+                {
+                  "x": 405.2890625,
+                  "y": 88.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comIntervalo": [
+        {
+          "texto": "Portugal",
+          "rect": {
+            "x": 25.625,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 109.515625,
+            "fundo": 44
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 67.5703125,
+                  "y": -0.5
+                },
+                {
+                  "x": 46.0703125,
+                  "y": -0.5
+                },
+                {
+                  "x": 89.0703125,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 67.5703125,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 46.0703125,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 89.0703125,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 67.5703125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                },
+                {
+                  "x": 46.0703125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                },
+                {
+                  "x": 89.0703125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Places",
+          "rect": {
+            "x": 127.453125,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 185.140625,
+            "fundo": 44
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 156.296875,
+                  "y": -0.5
+                },
+                {
+                  "x": 134.796875,
+                  "y": -0.5
+                },
+                {
+                  "x": 177.796875,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 156.296875,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 134.796875,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 177.796875,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 156.296875,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                },
+                {
+                  "x": 134.796875,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                },
+                {
+                  "x": 177.796875,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "Under discussion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Themes",
+          "rect": {
+            "x": 203.078125,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 266.8125,
+            "fundo": 44
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 234.9453125,
+                  "y": -0.5
+                },
+                {
+                  "x": 213.4453125,
+                  "y": -0.5
+                },
+                {
+                  "x": 256.4453125,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 234.9453125,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 213.4453125,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 256.4453125,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 234.9453125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "European Union"
+                },
+                {
+                  "x": 213.4453125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "European Union"
+                },
+                {
+                  "x": 256.4453125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "European Union"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Studies",
+          "rect": {
+            "x": 284.75,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 350.640625,
+            "fundo": 44
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 317.6953125,
+                  "y": -0.5
+                },
+                {
+                  "x": 296.1953125,
+                  "y": -0.5
+                },
+                {
+                  "x": 339.1953125,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 317.6953125,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 296.1953125,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 339.1953125,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 317.6953125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "European Union"
+                },
+                {
+                  "x": 296.1953125,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "European Union"
+                },
+                {
+                  "x": 339.1953125,
+                  "y": 44.5,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Explainers",
+          "rect": {
+            "x": 368.578125,
+            "y": 0,
+            "largura": 96.34375,
+            "altura": 44,
+            "direita": 464.921875,
+            "fundo": 44
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": [
+                {
+                  "x": 416.75,
+                  "y": -0.5
+                },
+                {
+                  "x": 395.25,
+                  "y": -0.5
+                },
+                {
+                  "x": 438.25,
+                  "y": -0.5
+                }
+              ]
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 416.75,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 395.25,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 438.25,
+                  "y": 44,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 416.75,
+                  "y": 44.5,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 395.25,
+                  "y": 44.5,
+                  "quem": "A",
+                  "texto": "About"
+                },
+                {
+                  "x": 438.25,
+                  "y": 44.5,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "Under discussion",
+          "rect": {
+            "x": 25.625,
+            "y": 45,
+            "largura": 153.1875,
+            "altura": 44,
+            "direita": 178.8125,
+            "fundo": 89
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": []
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 102.21875,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 80.71875,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 123.71875,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 102.21875,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                },
+                {
+                  "x": 80.71875,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                },
+                {
+                  "x": 123.71875,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "European Union",
+          "rect": {
+            "x": 196.75,
+            "y": 45,
+            "largura": 142,
+            "altura": 44,
+            "direita": 338.75,
+            "fundo": 89
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": []
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 267.75,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 246.25,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 289.25,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 267.75,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                },
+                {
+                  "x": 246.25,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                },
+                {
+                  "x": 289.25,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "texto": "About",
+          "rect": {
+            "x": 356.6875,
+            "y": 45,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 410.890625,
+            "fundo": 89
+          },
+          "falhas": [],
+          "deslocamentos": [
+            {
+              "dy": -1,
+              "falhas": []
+            },
+            {
+              "dy": -0.5,
+              "falhas": []
+            },
+            {
+              "dy": 0,
+              "falhas": []
+            },
+            {
+              "dy": 0.5,
+              "falhas": [
+                {
+                  "x": 383.7890625,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 362.2890625,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                },
+                {
+                  "x": 405.2890625,
+                  "y": 89,
+                  "quem": "NAV",
+                  "texto": "PortugalPlacesThemesStudiesExplainersUnder di"
+                }
+              ]
+            },
+            {
+              "dy": 1,
+              "falhas": [
+                {
+                  "x": 383.7890625,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                },
+                {
+                  "x": 362.2890625,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                },
+                {
+                  "x": 405.2890625,
+                  "y": 89.5,
+                  "quem": "DIV",
+                  "texto": "O Estado do Paíslightdark"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "estilo": {
+        "display": "flex",
+        "gap": "1px"
+      }
+    }
+  ]
+}
