@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-10-19T15:01:49+00:00",
+ "copia": "<pacote-pasta>/pacote-habitacao",
+ "plantas": [
+  {
+   "id": "hab-p1",
+   "ficheiro": "motor/content/23 Habitacao/ledger.json",
+   "descricao": "a parte dos proprietários com empréstimo em Portugal em 2025 passa de 31.5 a 31.6 (o conjunto alojado ilc_lvho02 diz 31.5)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "e55465a4b7e89187eecf4c4d40abb599f1bb3f159ec1d1edc0288a3fc12ea185",
+   "sha256_depois": "b41d40363c2a55e2d9c6529af6f8d007b4ff563681ac5b2b00e19fa1162a28d3",
+   "contexto_antes": "     \"note\": \"A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula. \",\n      \"status\": \"conferido\"\n    },\n    {\n      \"id\": \"hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025\",\n      \"value\": \"31.5\",\n      \"source_value\": \"31.5\",\n      \"unit\": \"Percentage\",\n      \"source_flag\": null,\n      \"name\": \"Distribution of population by tenure status, type of house",
+   "contexto_depois": "     \"note\": \"A União é o agregado publicado, nunca a média simples dos países. A bandeira pertence à célula. \",\n      \"status\": \"conferido\"\n    },\n    {\n      \"id\": \"hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025\",\n      \"value\": \"31.6\",\n      \"source_value\": \"31.5\",\n      \"unit\": \"Percentage\",\n      \"source_flag\": null,\n      \"name\": \"Distribution of population by tenure status, type of house"
+  },
+  {
+   "id": "hab-p2",
+   "ficheiro": "motor/content/23 Habitacao/ledger.json",
+   "descricao": "uma palavra do excerto da afirmação do PAN sobre as cauções trocada (o documento alojado diz «tetos»)",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "b41d40363c2a55e2d9c6529af6f8d007b4ff563681ac5b2b00e19fa1162a28d3",
+   "sha256_depois": "975651dee81e83baae8a71736090a2eb90850d9706e18361477889f1869c81cc",
+   "contexto_antes": " que é comportável pelos respectivos orçamentos familiares.\",\n      \"name_source\": \"PDF p. 3; parágrafo identificado pelo início; área física declarada\",\n      \"excerpt\": \"Em segundo lugar, o PAN propõe o estabelecimento de tetos às cauções, que devem estar ajustados à realidade económica das famílias. Estes devem ter em conta os rendimentos familiares e respetiva taxa de esforço dos arrendatários, ",
+   "contexto_depois": " que é comportável pelos respectivos orçamentos familiares.\",\n      \"name_source\": \"PDF p. 3; parágrafo identificado pelo início; área física declarada\",\n      \"excerpt\": \"Em segundo lugar, o PAN propõe o estabelecimento de limites às cauções, que devem estar ajustados à realidade económica das famílias. Estes devem ter em conta os rendimentos familiares e respetiva taxa de esforço dos arrendatários, "
+  },
+  {
+   "id": "hab-p3",
+   "ficheiro": "motor/content/23 Habitacao/source/igai-pt-42.html.pedido.json",
+   "descricao": "o sha256 do recibo da página da IGAI difere num carácter do corpo e do manifesto",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "132ba50d2c2da31a7568307ccedcc1a0f4fb68350c3334db4614f8fd6d7eb00b",
+   "sha256_depois": "b2d7b67eae887aafc792723128174d31921da1661c1bae94e22eefcb69e760fd",
+   "contexto_antes": "\": 200,\n  \"tipo\": \"text/html; charset=utf-8\",\n  \"segundos\": 0.21,\n  \"erro\": null,\n  \"redirecionamentos\": [],\n  \"ficheiro\": \"igai-pt-42.html\",\n  \"bytes\": 247,\n  \"sha256\": \"64ae51a649e05e227b859b08b6b06c8dabbfabecf853fa87a458c72b98b59e47\"\n}\n",
+   "contexto_depois": "\": 200,\n  \"tipo\": \"text/html; charset=utf-8\",\n  \"segundos\": 0.21,\n  \"erro\": null,\n  \"redirecionamentos\": [],\n  \"ficheiro\": \"igai-pt-42.html\",\n  \"bytes\": 247,\n  \"sha256\": \"64ae51a649e05e227b859b08b6b06c8dabbfabecf853fa87a458c72b98b59e40\"\n}\n"
+  },
+  {
+   "id": "hab-p4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a tabela do Eurostat no relatório dá 31.6 para os proprietários com empréstimo em Portugal (o livro e o conjunto dizem 31.5)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "46b53e610808df2e8ad593e1814d61d96823da0aac462575386c3d99739c5594",
+   "sha256_depois": "65dedcfc074d0b5f74dbba21b9446aa8d42287f1377f010e7db6dbcd7d404183",
+   "contexto_antes": "elhor ou pior automático; distribuição, índice, preço, idade ou volume. | nenhum |\n| `ilc_lvho02`; rskpovth=TOTAL, hhcomp=TOTAL, tenure=OWN_L, unit=PC | 2025 | 31.5 (`hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025`) | 24.8 (`hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025`) | RO 1.1 (`hab-ilc-lvho02-a-total-total-own-l-pc-ro-2025`) | NL 57.9 (`hab-ilc-lvho02-a-total-t",
+   "contexto_depois": "elhor ou pior automático; distribuição, índice, preço, idade ou volume. | nenhum |\n| `ilc_lvho02`; rskpovth=TOTAL, hhcomp=TOTAL, tenure=OWN_L, unit=PC | 2025 | 31.6 (`hab-ilc-lvho02-a-total-total-own-l-pc-pt-2025`) | 24.8 (`hab-ilc-lvho02-a-total-total-own-l-pc-eu27_2020-2025`) | RO 1.1 (`hab-ilc-lvho02-a-total-total-own-l-pc-ro-2025`) | NL 57.9 (`hab-ilc-lvho02-a-total-t"
+  },
+  {
+   "id": "hab-p5",
+   "ficheiro": "motor/content/23 Habitacao/source/MANIFEST.sha256",
+   "descricao": "a linha do manifesto da página do PSD difere num carácter do sha256 do corpo e do recibo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "d6ec2987025d7f62e5863c410b82a0d0ec5921d36420e9b61753e6e80217edd7",
+   "sha256_depois": "499443f72bdad89f1abcb43e4cb429631e143f539c1cc18b4f79687b52dfe092",
+   "contexto_antes": "379c1b560e5f7d6ca89f343f25f8f293213466a55cfd1d8bae  psd-pt-23.html\n04d377d30f4a5be2d20391c2aa1cb6a16d055f4f59cf00c7a1202200384d9cd9  psd-pt-23.html.pedido.json\n5a2cfab7f7d23e4e4cb28fe970a6ceeec34aad3f98289b13b978ae9482ad69c9  psd-pt-24.html\n063f34bd8ed8294c8cf9bd5f80a2b011975281a7d78eb0951ab68e2544ca06e4  psd-pt-24.html.pedido.json\nbc2111389af825b7bada8c7e4baf1f1dc8642840c757f436198bcfe3ed516baa  ",
+   "contexto_depois": "379c1b560e5f7d6ca89f343f25f8f293213466a55cfd1d8bae  psd-pt-23.html\n04d377d30f4a5be2d20391c2aa1cb6a16d055f4f59cf00c7a1202200384d9cd9  psd-pt-23.html.pedido.json\n5a2cfab7f7d23e4e4cb28fe970a6ceeec34aad3f98289b13b978ae9482ad69c0  psd-pt-24.html\n063f34bd8ed8294c8cf9bd5f80a2b011975281a7d78eb0951ab68e2544ca06e4  psd-pt-24.html.pedido.json\nbc2111389af825b7bada8c7e4baf1f1dc8642840c757f436198bcfe3ed516baa  "
+  }
+ ]
+}
